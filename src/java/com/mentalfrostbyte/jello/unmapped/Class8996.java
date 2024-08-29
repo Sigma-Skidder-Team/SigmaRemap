@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import mapped.Class5501;
-import mapped.Minecraft;
+import net.minecraft.client.Minecraft;
 
 import java.util.Date;
 import java.util.HashMap;

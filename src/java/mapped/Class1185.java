@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.*;
 
 import java.util.List;
@@ -75,22 +77,22 @@ public class Class1185 extends Class1178<Class1185> {
       ITextComponent var16 = this.method5620();
       int var17;
       if (var16 != StringTextComponent.EMPTY) {
-         Class1193.method5686(var1, var4, var3, var4 + var5, var3 + var6, field6406);
+         AbstractGui.method5686(var1, var4, var3, var4 + var5, var3 + var6, field6406);
          var17 = var3 + (var6 - 18) / 2;
          this.field6388.fontRenderer.method38805(var1, var16, (float)var15, (float)(var17 + 12), field6408);
       } else {
-         Class1193.method5686(var1, var4, var3, var4 + var5, var3 + var6, field6405);
+         AbstractGui.method5686(var1, var4, var3, var4 + var5, var3 + var6, field6405);
          var17 = var3 + (var6 - 9) / 2;
       }
 
       this.field6388.getTextureManager().bindTexture(this.field6392.get());
-      Class1193.method5698(var1, var13, var14, 24, 24, 8.0F, 8.0F, 8, 8, 64, 64);
+      AbstractGui.method5698(var1, var13, var14, 24, 24, 8.0F, 8.0F, 8, 8, 64, 64);
       RenderSystem.enableBlend();
-      Class1193.method5698(var1, var13, var14, 24, 24, 40.0F, 8.0F, 8, 8, 64, 64);
+      AbstractGui.method5698(var1, var13, var14, 24, 24, 40.0F, 8.0F, 8, 8, 64, 64);
       RenderSystem.disableBlend();
       this.field6388.fontRenderer.method38801(var1, this.field6391, (float)var15, (float)var17, field6407);
       if (this.field6393) {
-         Class1193.method5686(var1, var13, var14, var13 + 24, var14 + 24, field6404);
+         AbstractGui.method5686(var1, var13, var14, var13 + 24, var14 + 24, field6404);
       }
 
       if (this.field6394 != null && this.field6395 != null) {

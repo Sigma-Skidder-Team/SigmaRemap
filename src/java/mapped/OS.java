@@ -1,17 +1,12 @@
 package mapped;
 
-import org.apache.commons.io.IOUtils;
+import net.minecraft.client.util.Util;
 
-import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.security.AccessController;
-import java.security.PrivilegedActionException;
-import java.security.PrivilegedExceptionAction;
 
 public enum OS {
    LINUX,

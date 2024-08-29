@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 public class Class9140 {
    private static String[] field41995;
    public static Minecraft field41996 = Minecraft.getInstance();

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public class Class8468 {
    private static String[] field36289;
 

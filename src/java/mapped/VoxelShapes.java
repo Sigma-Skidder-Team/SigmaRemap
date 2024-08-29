@@ -7,6 +7,9 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4398;
 import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
+import net.minecraft.client.util.Util;
+import net.minecraft.util.math.AxisAlignedBB;
+
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Objects;

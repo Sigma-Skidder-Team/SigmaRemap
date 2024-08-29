@@ -1,5 +1,10 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.UUID;
 
 public class Class1058 extends Class1056 implements Class1011 {

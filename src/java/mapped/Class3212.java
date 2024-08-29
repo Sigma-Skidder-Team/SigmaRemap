@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 public class Class3212 extends Block {
    private static String[] field18621;
 

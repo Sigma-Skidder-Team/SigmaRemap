@@ -3,6 +3,8 @@ package mapped;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.util.text.ITextProperties;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.Style;

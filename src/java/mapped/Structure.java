@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.*;
 import com.mojang.serialization.Codec;
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

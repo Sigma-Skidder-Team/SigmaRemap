@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public abstract class Class226<T extends Entity, M extends Class2827<T>> extends Class219<T, M> {
    public Class226(Class5714<T, M> var1) {
       super(var1);

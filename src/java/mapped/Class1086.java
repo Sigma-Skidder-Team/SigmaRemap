@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.Optional;

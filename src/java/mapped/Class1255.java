@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -64,10 +66,10 @@ public abstract class Class1255 extends Class1254 {
 
          int var8 = this.field6652.field25580 + var2;
          int var9 = this.field6652.field25581 + var3;
-         Class1193.method5686(var1, var8, var9, var8 + 16, var9 + 16, 822018048);
+         AbstractGui.method5686(var1, var8, var9, var8 + 16, var9 + 16, 822018048);
          this.field6642.getItemRenderer().method795(this.field6642.player, this.method5867().method11742(), var8, var9);
          RenderSystem.depthFunc(516);
-         Class1193.method5686(var1, var8, var9, var8 + 16, var9 + 16, 822083583);
+         AbstractGui.method5686(var1, var8, var9, var8 + 16, var9 + 16, 822083583);
          RenderSystem.depthFunc(515);
       }
    }

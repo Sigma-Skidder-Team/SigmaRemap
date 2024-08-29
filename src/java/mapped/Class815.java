@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -379,7 +381,7 @@ public class Class815 extends Class813 {
    private void method2284(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.field4562.getTextureManager().bindTexture(field4410);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
+      AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
          this.field4420 = field4415;
       }
@@ -389,9 +391,9 @@ public class Class815 extends Class813 {
       this.field4562.getTextureManager().bindTexture(field4411);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       if (this.field4434 % 20 >= 10) {
-         Class1193.method5699(var1, var2, var3, 10.0F, 0.0F, 10, 28, 20, 28);
+         AbstractGui.method5699(var1, var2, var3, 10.0F, 0.0F, 10, 28, 20, 28);
       } else {
-         Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 20, 28);
+         AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 20, 28);
       }
 
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
@@ -410,7 +412,7 @@ public class Class815 extends Class813 {
    private void method2286(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.field4562.getTextureManager().bindTexture(field4408);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
+      AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
          this.field4420 = field4418;
       }
@@ -419,7 +421,7 @@ public class Class815 extends Class813 {
    private void method2287(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.field4562.getTextureManager().bindTexture(field4409);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
+      AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
          this.field4420 = field4419;
       }

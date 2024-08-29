@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.Entity;
 
 public class Class3741<E extends Class880> extends Class3676<E> {
    private static String[] field19867;

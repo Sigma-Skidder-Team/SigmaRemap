@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import javax.annotation.Nullable;
 
 public class Class1677 implements Class1663 {

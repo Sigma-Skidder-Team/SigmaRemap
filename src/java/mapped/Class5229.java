@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5229 extends Module {
     public ModuleCategory field23576;

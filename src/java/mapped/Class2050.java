@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 public enum Class2050 implements Class2051 {
    field13375;
 

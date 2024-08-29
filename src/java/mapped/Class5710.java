@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class5710 extends Class5651<Class1103, Class2886<Class1103>> {
    private static final ResourceLocation field25083 = new ResourceLocation("textures/entity/blaze.png");
 

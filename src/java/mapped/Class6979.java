@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.datafixers.util.Pair;
 import java.util.Objects;
 import javax.annotation.Nullable;
+
+import net.minecraft.client.util.Util;
 import org.apache.commons.lang3.tuple.Triple;
 
 public final class Class6979 {

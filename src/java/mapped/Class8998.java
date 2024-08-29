@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.entity.Entity;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;

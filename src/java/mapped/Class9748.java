@@ -12,6 +12,7 @@ import java.util.Map.Entry;
 import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 

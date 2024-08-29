@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
+import net.minecraft.entity.Entity;
 
 public class Class6597 {
    public static final Class6597 field29027 = new Class6597(

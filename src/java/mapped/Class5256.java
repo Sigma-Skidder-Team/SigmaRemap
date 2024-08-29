@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
+import net.minecraft.entity.Entity;
 
 public class Class5256 extends PremiumModule {
     public boolean field23643 = false;

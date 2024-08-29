@@ -4,6 +4,9 @@ import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 

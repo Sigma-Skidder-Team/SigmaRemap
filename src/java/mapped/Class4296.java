@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.account.Ban;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.Collections;

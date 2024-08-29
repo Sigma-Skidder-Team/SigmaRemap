@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+
 import java.util.function.Predicate;
 
 public class Class1054 extends Class1049 {

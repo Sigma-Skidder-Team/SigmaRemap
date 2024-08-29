@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.io.IOException;
 import java.util.UUID;
 import javax.annotation.Nullable;

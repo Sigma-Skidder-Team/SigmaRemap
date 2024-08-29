@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
+import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.Iterator;

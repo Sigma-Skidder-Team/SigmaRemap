@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 

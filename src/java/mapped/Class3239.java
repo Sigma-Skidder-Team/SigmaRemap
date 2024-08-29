@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 public class Class3239 extends Class3238 {
    private static String[] field18689;
    private final VoxelShape[] field18690;

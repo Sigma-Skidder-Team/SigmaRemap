@@ -1,6 +1,10 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.function.BiPredicate;

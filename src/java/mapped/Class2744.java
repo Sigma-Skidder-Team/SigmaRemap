@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.EnumSet;
 import java.util.Random;
 

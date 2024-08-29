@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4137 extends Class4135 {
    public Class4137() {
       super(EntityType.field41056, "tnt_minecart", 0.5F);

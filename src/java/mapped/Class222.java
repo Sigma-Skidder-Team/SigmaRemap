@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Map;
 import java.util.Set;
 

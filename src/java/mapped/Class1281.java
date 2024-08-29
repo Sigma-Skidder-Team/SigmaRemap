@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1281 extends Class1274<Class1167> {

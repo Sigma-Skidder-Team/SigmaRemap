@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 
 public class Class5945 extends Class5942<Class955> {

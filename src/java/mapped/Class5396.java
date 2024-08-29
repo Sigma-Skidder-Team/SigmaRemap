@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Random;
 
 public class Class5396 implements Class5391 {

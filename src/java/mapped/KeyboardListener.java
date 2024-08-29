@@ -4,6 +4,10 @@ import java.util.Locale;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;

@@ -3,6 +3,9 @@ package mapped;
 import com.google.common.collect.Lists;
 import java.io.File;
 import java.util.List;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

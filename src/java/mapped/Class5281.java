@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.unmapped.Class6000;
 import com.mentalfrostbyte.jello.unmapped.Class6002;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import net.minecraft.entity.Entity;
 
 import java.util.*;
 

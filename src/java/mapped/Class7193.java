@@ -5,6 +5,8 @@ import com.mojang.serialization.Codec;
 import java.util.BitSet;
 import java.util.Random;
 import java.util.function.Function;
+
+import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
 public class Class7193 extends Class7194 {

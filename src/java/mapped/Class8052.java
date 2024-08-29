@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;

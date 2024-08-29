@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.LoadingCache;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 

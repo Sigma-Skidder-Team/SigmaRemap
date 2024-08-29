@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
+
 public class Class8627 {
    private static String[] field38806;
    private static Minecraft field38807 = Minecraft.getInstance();

@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
+
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.mutable.MutableObject;
 
 public final class Class9777 {

@@ -4,6 +4,7 @@ import com.google.common.hash.Hashing;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4423;
 import com.mojang.authlib.GameProfile;
+import net.minecraft.client.Minecraft;
 
 import javax.annotation.Nullable;
 import java.io.File;

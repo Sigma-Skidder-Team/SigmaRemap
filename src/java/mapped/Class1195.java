@@ -1,8 +1,11 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class1195 extends Class1193 implements Class1196 {
+public class Class1195 extends AbstractGui implements Class1196 {
    private static final ResourceLocation field6469 = new ResourceLocation("textures/gui/widgets.png");
    public static final ResourceLocation field6470 = new ResourceLocation("textures/gui/spectator_widgets.png");
    private final Minecraft field6471;

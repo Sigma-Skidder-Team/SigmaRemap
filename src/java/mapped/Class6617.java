@@ -4,6 +4,9 @@ import com.google.common.collect.Lists;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;

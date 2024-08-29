@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4063 extends Class4060 {
    public Class4063() {
       super(EntityType.field41099, "vindicator", 0.5F, new String[]{"vindication_illager"});

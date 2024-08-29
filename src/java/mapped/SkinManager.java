@@ -13,6 +13,9 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import com.mojang.authlib.properties.Property;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
+
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;

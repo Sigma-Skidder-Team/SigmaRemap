@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.util.animation.Animation;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.image.BufferedImage;

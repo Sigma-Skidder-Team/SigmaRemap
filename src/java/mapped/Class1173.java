@@ -2,6 +2,10 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.hash.Hashing;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.lang3.StringUtils;
@@ -56,36 +60,36 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field6351.getTextureManager().bindTexture(this.field6356 == null ? Class1276.method6071() : this.field6354);
       RenderSystem.enableBlend();
-      Class1193.method5699(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
+      AbstractGui.method5699(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
       RenderSystem.disableBlend();
       if (this.field6351.gameSettings.touchscreen || var9) {
          this.field6351.getTextureManager().bindTexture(Class1276.method6072());
-         Class1193.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
+         AbstractGui.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          int var16 = var7 - var4;
          boolean var17 = var16 < 32;
          int var18 = !var17 ? 0 : 32;
          if (!this.field6353.method8656()) {
             if (!this.field6353.method8653()) {
-               Class1193.method5699(var1, var4, var3, 0.0F, (float)var18, 32, 32, 256, 256);
+               AbstractGui.method5699(var1, var4, var3, 0.0F, (float)var18, 32, 32, 256, 256);
             } else {
-               Class1193.method5699(var1, var4, var3, 32.0F, (float)var18, 32, 32, 256, 256);
+               AbstractGui.method5699(var1, var4, var3, 32.0F, (float)var18, 32, 32, 256, 256);
                if (!this.field6353.method8654()) {
                   if (!SharedConstants.getVersion().isStable()) {
-                     Class1193.method5699(var1, var4, var3, 64.0F, (float)var18, 32, 32, 256, 256);
+                     AbstractGui.method5699(var1, var4, var3, 64.0F, (float)var18, 32, 32, 256, 256);
                      if (var17) {
                         this.field6352.method6421(ImmutableList.of(Class1276.method6076().func_241878_f(), Class1276.method6077().func_241878_f()));
                      }
                   }
                } else {
-                  Class1193.method5699(var1, var4, var3, 96.0F, (float)var18, 32, 32, 256, 256);
+                  AbstractGui.method5699(var1, var4, var3, 96.0F, (float)var18, 32, 32, 256, 256);
                   if (var17) {
                      this.field6352.method6421(ImmutableList.of(Class1276.method6074().func_241878_f(), Class1276.method6075().func_241878_f()));
                   }
                }
             }
          } else {
-            Class1193.method5699(var1, var4, var3, 96.0F, (float)var18, 32, 32, 256, 256);
+            AbstractGui.method5699(var1, var4, var3, 96.0F, (float)var18, 32, 32, 256, 256);
             if (var17) {
                this.field6352.method6421(this.field6351.fontRenderer.method38828(Class1276.method6073(), 175));
             }

@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import net.minecraft.util.math.BlockPos;
 
 public class Class9449 {
    public static final Class9449 field43899 = new Class9449((ITag<Block>)null, (Block)null, Class7340.field31445, Class8811.field39645);

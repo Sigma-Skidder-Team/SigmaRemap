@@ -1,6 +1,8 @@
-package mapped;
+package net.minecraft.client.util;
 
 import com.google.common.collect.Lists;
+import mapped.*;
+import net.minecraft.client.Minecraft;
 
 import javax.annotation.Nullable;
 import java.io.BufferedReader;

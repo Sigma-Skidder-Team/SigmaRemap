@@ -3,6 +3,7 @@ package com.mentalfrostbyte.jello.unmapped;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 public class Class4242 extends Class4240 {

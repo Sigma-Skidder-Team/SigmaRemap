@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4426;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.event.impl.Class4431;
+import mapped.*;
 import org.lwjgl.glfw.GLFWDropCallback;
 
 public class MouseHelper {

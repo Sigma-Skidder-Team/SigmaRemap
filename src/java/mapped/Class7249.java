@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
+import net.minecraft.client.Minecraft;
 
 import java.util.List;
 import java.util.UUID;

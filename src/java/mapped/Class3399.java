@@ -3,6 +3,9 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import net.minecraft.client.util.Util;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Map;
 import java.util.Random;
 import java.util.function.Function;

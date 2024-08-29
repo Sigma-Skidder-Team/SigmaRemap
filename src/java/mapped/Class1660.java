@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 
 public interface Class1660 extends Class1678, Class1661 {

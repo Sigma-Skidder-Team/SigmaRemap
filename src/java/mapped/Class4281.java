@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.util.timer.Timer;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;

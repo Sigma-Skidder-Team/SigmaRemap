@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.EntityType;
+
 import java.util.function.BiPredicate;
 
 public class Class3705 extends Class3676<Class880> {

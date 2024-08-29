@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class7632 extends Fluid {
    private static String[] field32711;
 

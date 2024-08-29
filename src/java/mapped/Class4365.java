@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.network.Account;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.client.Minecraft;
 
 public class Class4365 extends Class4247 {
    public float field21334 = 0.0F;

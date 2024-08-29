@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class MinecraftSoundManager extends Class6338 {
    private static String[] field27866;
 

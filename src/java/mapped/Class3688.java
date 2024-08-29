@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.BlockPos;
 
 public class Class3688 extends Class3676<Class1042> {
    private static String[] field19705;

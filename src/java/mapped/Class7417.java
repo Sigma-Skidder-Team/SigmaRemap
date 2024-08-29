@@ -7,6 +7,8 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import java.util.List;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
+
+import net.minecraft.client.util.Util;
 import org.apache.logging.log4j.LogManager;
 
 public class Class7417<T extends Class5104> {

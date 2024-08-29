@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public interface Class1663 extends Class1665 {
    float method6877(Direction var1, boolean var2);
 

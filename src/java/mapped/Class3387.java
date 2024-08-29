@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import javax.annotation.Nullable;
 
 public class Class3387 extends Class3386 implements Class3207 {

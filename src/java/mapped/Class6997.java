@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+import net.minecraft.util.math.BlockPos;
+
 public class Class6997 extends Class6990 {
    private static String[] field30271;
    private boolean field30272;

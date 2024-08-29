@@ -5,9 +5,9 @@ import com.mentalfrostbyte.jello.command.CommandManager;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import totalcross.json.JSONArray;
-import mapped.Entity;
+import net.minecraft.entity.Entity;
 import mapped.Class8906;
-import mapped.Minecraft;
+import net.minecraft.client.Minecraft;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

@@ -1,6 +1,9 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+
 import java.util.List;
 import javax.annotation.Nullable;
 
@@ -47,16 +50,16 @@ public class Class9235 {
          int var11 = var10.method27660() + var3;
          int var12 = var10.method27661() + var4;
          if (var9 == 0 && var5) {
-            Class1193.method5686(var1, var11 - 4, var12 - 4, var11 + 20, var12 + 20, 822018048);
+            AbstractGui.method5686(var1, var11 - 4, var12 - 4, var11 + 20, var12 + 20, 822018048);
          } else {
-            Class1193.method5686(var1, var11, var12, var11 + 16, var12 + 16, 822018048);
+            AbstractGui.method5686(var1, var11, var12, var11 + 16, var12 + 16, 822018048);
          }
 
          ItemStack var13 = var10.method27662();
          ItemRenderer var14 = var2.getItemRenderer();
          var14.method794(var13, var11, var12);
          RenderSystem.depthFunc(516);
-         Class1193.method5686(var1, var11, var12, var11 + 16, var12 + 16, 822083583);
+         AbstractGui.method5686(var1, var11, var12, var11 + 16, var12 + 16, 822083583);
          RenderSystem.depthFunc(515);
          if (var9 == 0) {
             var14.method797(var2.fontRenderer, var13, var11, var12);

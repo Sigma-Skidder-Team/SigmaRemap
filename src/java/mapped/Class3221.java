@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 
 public class Class3221 extends Block {

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Optional;
 
 public class Class5923 extends Class5924 {

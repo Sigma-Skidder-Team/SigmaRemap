@@ -3,6 +3,7 @@ package mapped;
 import java.awt.Font;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 public class Class7430 extends ClientResource {

@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4307;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 
 public class Class4326 extends Class4307 {

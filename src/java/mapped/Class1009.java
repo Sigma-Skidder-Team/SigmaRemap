@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 import java.util.function.Predicate;
 

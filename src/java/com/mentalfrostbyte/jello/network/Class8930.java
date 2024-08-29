@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.network;
 
 import com.mentalfrostbyte.jello.unmapped.Class8402;
 import mapped.Class8499;
-import mapped.Minecraft;
+import net.minecraft.client.Minecraft;
 
 import java.util.HashMap;
 

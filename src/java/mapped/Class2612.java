@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.EnumSet;
 
 public class Class2612 extends Class2595 {

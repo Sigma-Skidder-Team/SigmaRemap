@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 import java.util.Objects;
 import java.util.function.Function;
 

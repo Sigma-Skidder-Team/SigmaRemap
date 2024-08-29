@@ -10,6 +10,8 @@ import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.Class8603;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;

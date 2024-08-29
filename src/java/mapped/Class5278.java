@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.event.impl.Class4413;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;

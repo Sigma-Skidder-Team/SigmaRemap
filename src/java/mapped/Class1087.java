@@ -1,5 +1,10 @@
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 public class Class1087 extends Class1018 {
    private static String[] field5955;
 

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 

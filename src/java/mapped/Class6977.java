@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 public class Class6977 {
    private static String[] field30191;
    private static final float[] field30192 = Util.<float[]>make(new float[256], var0 -> {

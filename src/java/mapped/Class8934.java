@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public final class Class8934 implements Class8933 {
    private static String[] field40419;
    public final Class7984 field40420;

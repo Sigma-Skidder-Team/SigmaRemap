@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import net.minecraft.util.math.BlockPos;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;

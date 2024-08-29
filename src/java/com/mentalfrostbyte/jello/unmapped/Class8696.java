@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import mapped.Class5554;
 import mapped.Class5594;
 import mapped.Class9567;
-import mapped.Minecraft;
+import net.minecraft.client.Minecraft;
 
 public class Class8696 {
    private static String[] field39247;

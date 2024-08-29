@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class1277 extends Class1274<Class1169> {
    private static String[] field6816;
    public final Class1305 field6817;

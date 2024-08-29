@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.authlib.GameProfile;
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.UUID;

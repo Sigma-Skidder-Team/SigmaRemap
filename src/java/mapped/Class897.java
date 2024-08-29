@@ -1,5 +1,10 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+
 public class Class897 extends Entity implements Class889 {
    private static final DataParameter<ItemStack> field5132 = EntityDataManager.<ItemStack>method35441(Class897.class, Class7784.field33396);
    private double field5133;

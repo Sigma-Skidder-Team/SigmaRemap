@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
+import net.minecraft.client.Minecraft;
 
 import java.util.Random;
 

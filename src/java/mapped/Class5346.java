@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class Class5346 extends Module {
     public Vector3d method16770(Vector3d var1) {
         return var1.method11338(
                 new Vector3d(
-                        -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320(),
+                        - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320(),
                         -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321(),
                         -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322()
                 )

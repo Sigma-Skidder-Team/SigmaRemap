@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

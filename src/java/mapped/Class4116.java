@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
 
 public class Class4116 extends Class4057 {
    public Class4116() {

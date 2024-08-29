@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4123 extends Class4117 {
    public Class4123() {
       super(EntityType.field41039, "husk", 0.5F);

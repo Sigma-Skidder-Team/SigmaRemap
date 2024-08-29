@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
+
 public class Class4591 extends Class4588 {
    private int field22073;
    private final ParticleManager field22074;

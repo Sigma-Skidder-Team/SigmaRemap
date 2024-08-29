@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public enum Class1890 implements Class1876 {
    field11072("is_alive"),
    field11073("is_burning"),

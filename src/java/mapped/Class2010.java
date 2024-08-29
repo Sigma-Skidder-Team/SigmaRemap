@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletableFuture;
 

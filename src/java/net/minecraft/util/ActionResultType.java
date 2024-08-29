@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.util;
 
 public enum ActionResultType {
    field14818,

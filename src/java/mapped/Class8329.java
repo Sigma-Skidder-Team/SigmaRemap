@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
+import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.List;

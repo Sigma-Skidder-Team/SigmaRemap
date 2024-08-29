@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.lang3.ArrayUtils;
 

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class991 extends Class919 {

@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import com.mentalfrostbyte.jello.unmapped.Class6000;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import mapped.*;
+import net.minecraft.client.Minecraft;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;

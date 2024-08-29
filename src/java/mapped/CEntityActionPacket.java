@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.io.IOException;
 
 public class CEntityActionPacket implements Packet<IServerPlayNetHandler> {

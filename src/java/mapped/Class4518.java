@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 import java.util.Optional;
 
 public class Class4518 extends Class4510 {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class BlockRayTraceResult extends RayTraceResult {
    private static String[] field39317;
    private final Direction field39318;

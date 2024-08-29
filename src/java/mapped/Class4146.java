@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4146 extends Class4051 {
    public Class4146() {
       super(EntityType.field41058, "mooshroom", 0.7F);

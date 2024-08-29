@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 import javax.annotation.Nullable;
 import java.util.Optional;
 

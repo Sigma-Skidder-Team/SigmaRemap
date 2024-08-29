@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class5731 extends Class5715<ExperienceOrbEntity> {
    private static final ResourceLocation field25141 = new ResourceLocation("textures/entity/experience_orb.png");
    private static final RenderType field25142 = RenderType.method14315(field25141);

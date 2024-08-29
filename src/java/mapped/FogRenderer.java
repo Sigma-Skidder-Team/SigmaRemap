@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 public class FogRenderer {
    private static String[] field40347;
    public static float field40348;

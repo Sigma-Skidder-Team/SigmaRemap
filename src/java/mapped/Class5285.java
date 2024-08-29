@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 
 public class Class5285 extends Module {

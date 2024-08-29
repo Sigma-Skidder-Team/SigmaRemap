@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.UUID;
 
 public class Class5995 {

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
+import net.minecraft.util.math.BlockPos;
 
 public class Class3272 extends Item implements Class3260 {
    private final Multimap<Class4869, Class9689> field18772;

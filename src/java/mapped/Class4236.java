@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.unmapped.Class8603;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 public class Class4236 extends Class4235 implements Class4238 {

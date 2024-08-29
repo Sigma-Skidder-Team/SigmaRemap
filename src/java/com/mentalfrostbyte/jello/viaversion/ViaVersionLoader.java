@@ -7,6 +7,9 @@ import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mojang.datafixers.util.Pair;
 import com.mentalfrostbyte.jello.Client;
 import mapped.*;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.function.Function;
 
 public abstract class Class2827<T extends Entity> extends Class2828 {

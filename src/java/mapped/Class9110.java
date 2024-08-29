@@ -1,5 +1,10 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 public class Class9110 {
    private static String[] field41864;
    private double field41865;

@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.*;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.text.*;
 
 import javax.annotation.Nullable;

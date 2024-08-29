@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 import javax.annotation.Nullable;
 
 public class Class1078 extends Class1066 {

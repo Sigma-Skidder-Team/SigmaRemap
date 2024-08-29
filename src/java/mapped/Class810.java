@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 import javax.annotation.Nullable;
 
 public class Class810 extends Class798 {

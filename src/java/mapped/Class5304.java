@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
+import net.minecraft.util.math.AxisAlignedBB;
 
 @InDevelopment
 public class Class5304 extends Module {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 public final class Class4514 extends Class4513 {
    private final int field21785;
 

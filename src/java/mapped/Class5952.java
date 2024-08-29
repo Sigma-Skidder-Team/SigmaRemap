@@ -4,6 +4,9 @@ import com.google.common.collect.Maps;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
+
 import java.util.Map;
 
 public class Class5952 extends Class5942<SkullTileEntity> {

@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import net.minecraft.client.Minecraft;
 import org.apache.commons.codec.binary.Base64;
 import org.lwjgl.opengl.GL11;
 

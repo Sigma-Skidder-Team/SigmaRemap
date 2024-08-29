@@ -3,6 +3,9 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Ordering;
 import com.google.common.collect.Sets;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.*;
 import java.util.Map.Entry;

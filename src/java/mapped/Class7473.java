@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Optional;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -105,15 +106,15 @@ public class Class1162 extends Class1161 {
             }
 
             int var18 = !var17 ? 1 : 2;
-            Class1193.method5699(var2, var15, var16, 0.0F, (float)(46 + var18 * 20), var13 / 2, 8, 256, 256);
-            Class1193.method5699(var2, var15 + var13 / 2, var16, (float)(200 - var13 / 2), (float)(46 + var18 * 20), var13 / 2, 8, 256, 256);
-            Class1193.method5699(var2, var15, var16 + 8, 0.0F, (float)(46 + var18 * 20 + 12), var13 / 2, 8, 256, 256);
-            Class1193.method5699(var2, var15 + var13 / 2, var16 + 8, (float)(200 - var13 / 2), (float)(46 + var18 * 20 + 12), var13 / 2, 8, 256, 256);
+            AbstractGui.method5699(var2, var15, var16, 0.0F, (float)(46 + var18 * 20), var13 / 2, 8, 256, 256);
+            AbstractGui.method5699(var2, var15 + var13 / 2, var16, (float)(200 - var13 / 2), (float)(46 + var18 * 20), var13 / 2, 8, 256, 256);
+            AbstractGui.method5699(var2, var15, var16 + 8, 0.0F, (float)(46 + var18 * 20 + 12), var13 / 2, 8, 256, 256);
+            AbstractGui.method5699(var2, var15 + var13 / 2, var16 + 8, (float)(200 - var13 / 2), (float)(46 + var18 * 20 + 12), var13 / 2, 8, 256, 256);
             RenderSystem.disableBlend();
             int var19 = var4 + 11 + 5;
             int var20 = !var17 ? 16777215 : 16777120;
             Class806.method2147(this.field6317).method38805(var2, var23, (float)(var3 + 2), (float)(var19 + 1), 15553363);
-            Class1193.method5691(var2, Class806.method2148(this.field6317), var24, var15 + var13 / 2, var19 + 1, var20);
+            AbstractGui.method5691(var2, Class806.method2148(this.field6317), var24, var15 + var13 / 2, var19 + 1, var20);
          } else {
             if (var1.field27455 != Class2049.field13370) {
                Class806.method2153(this.field6317).method38801(var2, var1.method18906(), (float)(var3 + 2), (float)(var4 + 12), 7105644);
@@ -131,17 +132,17 @@ public class Class1162 extends Class1161 {
          Class806.method2155(this.field6317).method38801(var2, var1.method18907(), (float)(var3 + 2), (float)(var4 + 1), 16777215);
          Class8087.method27973(var1.field27449, () -> {
             RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-            Class1193.method5698(var2, var3 - 36, var4, 32, 32, 8.0F, 8.0F, 8, 8, 64, 64);
-            Class1193.method5698(var2, var3 - 36, var4, 32, 32, 40.0F, 8.0F, 8, 8, 64, 64);
+            AbstractGui.method5698(var2, var3 - 36, var4, 32, 32, 8.0F, 8.0F, 8, 8, 64, 64);
+            AbstractGui.method5698(var2, var3 - 36, var4, 32, 32, 40.0F, 8.0F, 8, 8, 64, 64);
          });
       } else {
          Class806.method2123(this.field6317).getTextureManager().bindTexture(Class806.method2122());
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.disableAlphaTest();
-         Class1193.method5699(var2, var3 + 10, var4 + 6, 0.0F, 0.0F, 40, 20, 40, 20);
+         AbstractGui.method5699(var2, var3 + 10, var4 + 6, 0.0F, 0.0F, 40, 20, 40, 20);
          float var21 = 0.5F + (1.0F + MathHelper.sin((float)Class806.method2124(this.field6317) * 0.25F)) * 0.25F;
          int var22 = 0xFF000000 | (int)(127.0F * var21) << 16 | (int)(255.0F * var21) << 8 | (int)(127.0F * var21);
-         Class1193.method5691(var2, Class806.method2125(this.field6317), Class806.method2126(), var3 + 10 + 40 + 75, var4 + 12, var22);
+         AbstractGui.method5691(var2, Class806.method2125(this.field6317), Class806.method2126(), var3 + 10 + 40 + 75, var4 + 12, var22);
       }
    }
 

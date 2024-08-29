@@ -1,12 +1,14 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 import java.util.Map;
 
-public class Class1271 extends Class1193 {
+public class Class1271 extends AbstractGui {
    private static String[] field6747;
    private final Minecraft field6748;
    private final AdvancementsScreen field6749;

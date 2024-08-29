@@ -3,6 +3,9 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import java.util.Map;
+
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9222 {

@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client.gui;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -7,13 +7,18 @@ import com.google.common.collect.Ordering;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4407;
 import com.mojang.datafixers.util.Pair;
+import mapped.*;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.*;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class IngameGui extends Class1193 {
+public class IngameGui extends AbstractGui {
     private static final ResourceLocation field6711 = new ResourceLocation("textures/misc/vignette.png");
     private static final ResourceLocation field6712 = new ResourceLocation("textures/gui/widgets.png");
     private static final ResourceLocation field6713 = new ResourceLocation("textures/misc/pumpkinblur.png");
@@ -479,7 +484,7 @@ public class IngameGui extends Class1193 {
                         var19 = var8 - 91 - 22;
                     }
 
-                    this.field6716.getTextureManager().bindTexture(Class1193.field6453);
+                    this.field6716.getTextureManager().bindTexture(AbstractGui.field6453);
                     int var15 = (int) (var17 * 19.0F);
                     RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
                     this.method5696(var2, var19, var18, 0, 94, 18, 18);
@@ -494,7 +499,7 @@ public class IngameGui extends Class1193 {
 
     public void method5967(MatrixStack var1, int var2) {
         this.field6716.getProfiler().startSection("jumpBar");
-        this.field6716.getTextureManager().bindTexture(Class1193.field6453);
+        this.field6716.getTextureManager().bindTexture(AbstractGui.field6453);
         float var5 = this.field6716.player.method5406();
         short var6 = 182;
         int var7 = (int) (var5 * 183.0F);
@@ -509,7 +514,7 @@ public class IngameGui extends Class1193 {
 
     public void method5968(MatrixStack var1, int var2) {
         this.field6716.getProfiler().startSection("expBar");
-        this.field6716.getTextureManager().bindTexture(Class1193.field6453);
+        this.field6716.getTextureManager().bindTexture(AbstractGui.field6453);
         int var5 = this.field6716.player.method2930();
         if (var5 > 0) {
             short var6 = 182;

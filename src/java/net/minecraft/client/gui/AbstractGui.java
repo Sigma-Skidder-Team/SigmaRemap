@@ -1,10 +1,11 @@
-package mapped;
+package net.minecraft.client.gui;
 
+import mapped.*;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.function.BiConsumer;
 
-public abstract class Class1193 {
+public abstract class AbstractGui {
    public static final ResourceLocation field6451 = new ResourceLocation("textures/gui/options_background.png");
    public static final ResourceLocation field6452 = new ResourceLocation("textures/gui/container/stats_icons.png");
    public static final ResourceLocation field6453 = new ResourceLocation("textures/gui/icons.png");

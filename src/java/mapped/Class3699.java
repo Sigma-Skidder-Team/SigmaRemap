@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Predicate;
 
 public class Class3699 extends Class3676<Class880> {

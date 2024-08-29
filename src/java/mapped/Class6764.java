@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.util.math.BlockPos;
 
 public abstract class Class6764 {
    public Class1667 field29475;

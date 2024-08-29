@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 import java.util.List;
 
 public class Class603 implements Runnable {

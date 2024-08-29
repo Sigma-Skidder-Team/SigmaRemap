@@ -10,6 +10,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 

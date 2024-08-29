@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4125 extends Class4124 {
    public Class4125() {
       super(EntityType.field41035, "giant", 3.0F);

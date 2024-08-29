@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
+
 import java.io.InputStream;
 import java.util.Optional;
 import java.util.Properties;

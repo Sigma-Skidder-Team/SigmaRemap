@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.function.Predicate;
 
 public class Class165 implements Predicate<Entity> {

@@ -2,6 +2,10 @@ package mapped;
 
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
+import net.minecraft.client.util.Util;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 
 public class Class3475 extends Block implements Class3476 {

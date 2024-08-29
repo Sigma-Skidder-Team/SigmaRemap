@@ -1,8 +1,10 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
+
 import javax.annotation.Nullable;
 
-public abstract class Class1150 extends Class1193 implements Class1151 {
+public abstract class Class1150 extends AbstractGui implements Class1151 {
    private Class1152 field6288;
    private boolean field6289;
 

@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 

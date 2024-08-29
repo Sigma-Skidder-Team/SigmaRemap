@@ -12,6 +12,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+
+import net.minecraft.entity.Entity;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8700 implements ArgumentType<Class8429> {

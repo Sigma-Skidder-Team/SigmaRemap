@@ -1,5 +1,11 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 import javax.annotation.Nullable;
 import java.util.Objects;
 import java.util.Optional;

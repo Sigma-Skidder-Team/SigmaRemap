@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
 
 public class Class8920 {
    private static String[] field40380;

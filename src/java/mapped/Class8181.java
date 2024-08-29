@@ -2,6 +2,9 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4398;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Objects;
 import java.util.Spliterators.AbstractSpliterator;

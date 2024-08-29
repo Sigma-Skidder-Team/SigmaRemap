@@ -11,6 +11,8 @@ import com.mojang.brigadier.exceptions.Dynamic3CommandExceptionType;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import java.util.UUID;
+
+import net.minecraft.entity.Entity;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6987 {

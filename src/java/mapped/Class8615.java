@@ -9,6 +9,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 import java.util.HashSet;
+
+import net.minecraft.entity.Entity;
 import net.minecraft.util.text.TextComponentUtils;
 import net.minecraft.util.text.TranslationTextComponent;
 

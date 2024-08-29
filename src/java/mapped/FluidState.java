@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 import javax.annotation.Nullable;
 

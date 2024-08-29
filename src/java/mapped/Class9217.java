@@ -2,6 +2,9 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.RandomUtils;
 
 import java.util.ArrayList;

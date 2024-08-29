@@ -6,6 +6,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 import javax.imageio.ImageIO;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 

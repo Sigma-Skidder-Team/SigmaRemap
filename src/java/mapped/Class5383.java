@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.entity.Entity;
 
 public class Class5383 extends Module {
    public Class5383() {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class1995 implements Comparable<Class1995> {
    private static String[] field13015;
    private final int field13016;

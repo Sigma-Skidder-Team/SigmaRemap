@@ -2,6 +2,8 @@ package mapped;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
+import net.minecraft.client.util.Util;
+
 import javax.annotation.Nullable;
 
 public abstract class Class6349 {

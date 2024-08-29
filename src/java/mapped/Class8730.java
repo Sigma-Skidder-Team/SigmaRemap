@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import net.minecraft.client.Minecraft;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

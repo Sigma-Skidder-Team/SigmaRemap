@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
+import net.minecraft.util.math.BlockPos;
 
 public class ItemSword extends Class3266 implements Class3260 {
    private final float field18761;

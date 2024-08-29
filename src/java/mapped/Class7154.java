@@ -5,6 +5,8 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Locale;
 import java.util.UUID;
 import java.util.function.Function;
+
+import net.minecraft.entity.Entity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 

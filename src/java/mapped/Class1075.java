@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+
 import javax.annotation.Nullable;
 
 public class Class1075 extends AbstractHorseEntity {

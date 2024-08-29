@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4066 extends Class4057 {
    public Class4066() {
       super(EntityType.field41041, "iron_golem", 0.5F);

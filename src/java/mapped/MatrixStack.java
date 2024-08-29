@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Queues;
+import net.minecraft.client.util.Util;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 

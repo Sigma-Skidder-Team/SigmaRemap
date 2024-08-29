@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class229<T extends Entity> extends Class226<T, Class2806<T>> {
    private static final RenderType field874 = RenderType.method14325(new ResourceLocation("textures/entity/phantom_eyes.png"));
 

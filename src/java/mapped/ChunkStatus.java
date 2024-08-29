@@ -5,6 +5,8 @@ import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Either;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.client.util.Util;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;

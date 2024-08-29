@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
+
 public class Class1166 extends Class1155<Class1166> {
    private static String[] field6328;
    private final Class6114 field6329;
@@ -37,8 +39,8 @@ public class Class1166 extends Class1155<Class1166> {
       Class824.method2430(this.field6330, var1, Class824.method2425(this.field6330) + Class824.method2427(this.field6330) - 22, var4 + 2, var5, var6);
       Class8087.method27973(var2.method18877(), () -> {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-         Class1193.method5698(var1, Class824.method2425(this.field6330) + 2 + 2, var4 + 1, 8, 8, 8.0F, 8.0F, 8, 8, 64, 64);
-         Class1193.method5698(var1, Class824.method2425(this.field6330) + 2 + 2, var4 + 1, 8, 8, 40.0F, 8.0F, 8, 8, 64, 64);
+         AbstractGui.method5698(var1, Class824.method2425(this.field6330) + 2 + 2, var4 + 1, 8, 8, 8.0F, 8.0F, 8, 8, 64, 64);
+         AbstractGui.method5698(var1, Class824.method2425(this.field6330) + 2 + 2, var4 + 1, 8, 8, 40.0F, 8.0F, 8, 8, 64, 64);
       });
    }
 }

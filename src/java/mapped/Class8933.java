@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public interface Class8933 {
    Class8933 field40418 = method32664(
       Class7984.<Block>method27141(), Class7984.<Item>method27141(), Class7984.<Fluid>method27141(), Class7984.<EntityType<?>>method27141()

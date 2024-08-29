@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.EntityType;
+
 public abstract class Class898 extends Class901 implements Class889 {
    private static final DataParameter<ItemStack> field5138 = EntityDataManager.<ItemStack>method35441(Class898.class, Class7784.field33396);
 

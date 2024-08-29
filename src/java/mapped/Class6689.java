@@ -1,6 +1,8 @@
 package mapped;
 
 import java.util.UUID;
+
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
 

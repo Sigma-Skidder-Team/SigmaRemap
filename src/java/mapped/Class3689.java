@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.longs.Long2LongMap;
 import it.unimi.dsi.fastutil.longs.Long2LongOpenHashMap;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Stream;

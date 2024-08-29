@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.io.IOException;
 
 public class Class5495 implements Packet<Class5116> {

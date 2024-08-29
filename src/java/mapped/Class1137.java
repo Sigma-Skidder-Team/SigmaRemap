@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1137 extends Class1135 {

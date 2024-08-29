@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
+
 public class Class1171 extends Class1155<Class1171> {
    public final Class1282 field6346;
 
@@ -36,7 +38,7 @@ public class Class1171 extends Class1155<Class1171> {
 
    public void method5577(MatrixStack var1, Class9007<?> var2, int var3, int var4, boolean var5) {
       String var8 = var2 != null ? var2.method33277(Class1305.method6193(this.field6346.field6846).method28961(var2)) : "-";
-      Class1193.method5692(
+      AbstractGui.method5692(
          var1, this.field6346.field6846.field4568, var8, var3 - this.field6346.field6846.field4568.getStringWidth(var8), var4 + 5, !var5 ? 9474192 : 16777215
       );
    }

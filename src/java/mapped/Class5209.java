@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.entity.Entity;
 import org.lwjgl.glfw.GLFW;
 
 public class Class5209 extends Module {

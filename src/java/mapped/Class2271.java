@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public enum Class2271 implements Class2272 {
    field14774(Class7377::getCollisionShape),
    field14775(Class7377::method23413),

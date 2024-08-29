@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.EntityType;
 
 import java.util.Set;
 import java.util.stream.Collectors;

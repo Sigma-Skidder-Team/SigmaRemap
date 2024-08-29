@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 
 public class Class3403 extends Block {

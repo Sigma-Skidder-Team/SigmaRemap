@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.IntSupplier;
 import java.util.function.LongSupplier;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.util.Supplier;

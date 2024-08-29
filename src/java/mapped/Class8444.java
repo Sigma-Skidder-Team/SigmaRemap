@@ -4,6 +4,7 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 
 import com.mentalfrostbyte.jello.Client;
+import net.minecraft.util.math.BlockPos;
 import org.lwjgl.BufferUtils;
 
 public class Class8444 {

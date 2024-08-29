@@ -7,6 +7,8 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
 

@@ -3,6 +3,9 @@ package mapped;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import it.unimi.dsi.fastutil.objects.ObjectList;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;

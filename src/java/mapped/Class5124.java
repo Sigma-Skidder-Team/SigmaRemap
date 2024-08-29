@@ -1,6 +1,8 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5124 implements Class5119 {
    private static String[] field23304;

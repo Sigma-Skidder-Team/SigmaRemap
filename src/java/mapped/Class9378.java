@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Objects;
 
 public final class Class9378 {

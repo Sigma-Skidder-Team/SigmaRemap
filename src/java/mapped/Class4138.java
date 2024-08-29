@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4138 extends Class4057 {
    public Class4138() {
       super(EntityType.field41028, "evoker_fangs", 0.0F, new String[]{"evocation_fangs"});

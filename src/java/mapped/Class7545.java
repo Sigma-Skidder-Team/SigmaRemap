@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.client.Minecraft;
+
 import java.io.IOException;
 import javax.annotation.Nullable;
 

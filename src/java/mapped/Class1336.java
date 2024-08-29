@@ -2,6 +2,9 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.google.common.hash.Hashing;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;

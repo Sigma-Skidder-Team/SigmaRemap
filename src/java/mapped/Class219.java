@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public abstract class Class219<T extends Entity, M extends Class2827<T>> {
    private final Class5714<T, M> field863;
 

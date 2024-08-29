@@ -1,12 +1,15 @@
 package mapped;
 
 import com.google.common.collect.Queues;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.util.Util;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.Deque;
 
-public class ToastGui extends Class1193 {
+public class ToastGui extends AbstractGui {
    private final Minecraft field6688;
    private final Class9765<?>[] field6689 = new Class9765[5];
    private final Deque<Class7601> field6690 = Queues.newArrayDeque();

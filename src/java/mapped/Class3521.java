@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
+
 import javax.annotation.Nullable;
 
 public class Class3521 implements Class3499<Class7439> {

@@ -1,6 +1,8 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;
+import net.minecraft.client.util.Util;
+
 import java.util.SortedMap;
 
 public class RenderTypeBuffers {

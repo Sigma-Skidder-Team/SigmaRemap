@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 
 import com.mentalfrostbyte.jello.Client;
+import net.minecraft.client.Minecraft;
 
 public class HighDPI extends Command {
    public HighDPI() {

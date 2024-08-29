@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 public class Class8919 {
    private static String[] field40379;
 

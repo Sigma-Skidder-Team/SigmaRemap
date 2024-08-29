@@ -1,6 +1,9 @@
 package mapped;
 
 import java.util.Objects;
+
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

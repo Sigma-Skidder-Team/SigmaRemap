@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.unmapped.Class4307;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import net.minecraft.client.Minecraft;
 import org.apache.commons.lang3.ArrayUtils;
 import org.lwjgl.opengl.GL11;
 

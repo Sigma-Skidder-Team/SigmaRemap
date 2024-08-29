@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;

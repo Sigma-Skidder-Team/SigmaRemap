@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 import java.awt.Dimension;
 
 public class Class7078 {

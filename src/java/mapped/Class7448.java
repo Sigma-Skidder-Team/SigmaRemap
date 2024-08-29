@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;

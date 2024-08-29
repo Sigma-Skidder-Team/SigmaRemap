@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.util.Util;
+
 import java.util.Map;
 
 public class Class5694 extends Class5651<Class1086, Class2870<Class1086>> {

@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.util.concurrent.Runnables;
+import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

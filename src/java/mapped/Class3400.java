@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.base.Predicates;
+import net.minecraft.util.math.BlockPos;
 
 public class Class3400 extends Block {
    public static final Class8553 field19053 = Class3198.field18484;

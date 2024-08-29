@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public interface Class1659 extends Class1660 {
    ServerWorld method6970();
 

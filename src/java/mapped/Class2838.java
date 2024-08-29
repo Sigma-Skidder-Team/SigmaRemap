@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;

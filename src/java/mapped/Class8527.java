@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class8527 {
    private static String[] field38300;
    public static final Class8980 field38301 = Biome::method32510;

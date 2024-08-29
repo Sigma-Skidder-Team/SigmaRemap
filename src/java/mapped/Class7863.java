@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class7863 implements Class7864 {
    private final BlockPos field33675;
    private final Vector3d field33676;

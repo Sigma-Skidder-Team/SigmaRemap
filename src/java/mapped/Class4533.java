@@ -6,6 +6,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.entity.Entity;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class4533 {

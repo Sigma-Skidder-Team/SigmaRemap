@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
+import net.minecraft.util.math.BlockPos;
 
 public class Class209 extends Class208<Class7585> {
 

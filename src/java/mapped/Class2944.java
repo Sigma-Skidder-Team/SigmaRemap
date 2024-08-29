@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.LoadingCache;
 import com.mojang.serialization.Codec;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
 import java.util.Random;

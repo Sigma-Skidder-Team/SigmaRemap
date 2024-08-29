@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class4593 extends Class4587 {
    private static String[] field22080;
    private final RenderTypeBuffers field22081;

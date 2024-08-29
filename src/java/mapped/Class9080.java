@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9080 extends Class9081 {

@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 public class Class5129 implements Class5119 {
    private static String[] field23318;
    private final Minecraft field23319;

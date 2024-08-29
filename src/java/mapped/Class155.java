@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class155 implements ILootCondition {
    private static String[] field506;
    private final Class8576 field507;

@@ -3,6 +3,11 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.UnmodifiableIterator;
 import com.google.common.collect.ImmutableList.Builder;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Optional;
 import java.util.Random;
 

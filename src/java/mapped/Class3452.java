@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 
 public abstract class Class3452 extends Class3444 implements Class3196 {

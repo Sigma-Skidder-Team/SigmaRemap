@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;

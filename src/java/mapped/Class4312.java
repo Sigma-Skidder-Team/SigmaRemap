@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.unmapped.Class4307;
 import com.mentalfrostbyte.jello.unmapped.Class8433;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
+import net.minecraft.client.Minecraft;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;

@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.List;
 
 public class Class5948 extends Class5942<Class958> {

@@ -22,6 +22,8 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.util.FileUtil;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
 import totalcross.json.JSONArray;
 import org.lwjgl.BufferUtils;
 import totalcross.json.JSONException2;

@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.client.Minecraft;
 
 import java.util.Iterator;
 import java.util.Map.Entry;

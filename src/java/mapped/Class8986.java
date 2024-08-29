@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.entity.Entity;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.io.IOException;
 
 public class Class5578 implements Packet<IServerPlayNetHandler> {

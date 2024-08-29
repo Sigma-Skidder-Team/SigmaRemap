@@ -23,6 +23,7 @@ import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.FileUtil;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import mapped.*;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL11;
 import totalcross.json.JSONObject;

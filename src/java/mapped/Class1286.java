@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 import java.util.Collection;
 
 public abstract class Class1286<E extends Class1155<E>> extends Class1274<E> {

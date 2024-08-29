@@ -1,6 +1,10 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
 
 public class Class8878<T extends Entity> {
    private static String[] field40180;

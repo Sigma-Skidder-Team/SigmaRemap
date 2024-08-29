@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4415;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 public class Class5314 extends Module {
@@ -21,7 +22,7 @@ public class Class5314 extends Module {
     @EventTarget
     private void method16692(Class4415 var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (!Minecraft.getInstance().gameSettings.hideGUI) {
+            if (! Minecraft.getInstance().gameSettings.hideGUI) {
                 if (!(mc.currentScreen instanceof ChatScreen)) {
                     float var4 = mc.player.rotationYaw % 360.0F - this.field23851 % 360.0F;
                     this.field23851 = this.field23851 + var4 / (float) Minecraft.getFps() * 1.5F;

@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client.gui;
 
 import com.ibm.icu.text.ArabicShaping;
 import com.ibm.icu.text.ArabicShapingException;
@@ -6,6 +6,8 @@ import com.ibm.icu.text.Bidi;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
+
+import mapped.*;
 import net.minecraft.util.text.CharacterManager;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextProperties;

@@ -4,6 +4,9 @@ import com.google.common.collect.Lists;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.util.text.ITextProperties;
 import net.minecraft.util.text.LanguageMap;
 import net.minecraft.util.text.Style;
@@ -15,7 +18,7 @@ public class Class6885 {
    private static final Class9125 field29839 = Class9125.method34037(32, Style.EMPTY);
 
    private static String method20970(String var0) {
-      return !Minecraft.getInstance().gameSettings.field44612 ? TextFormatting.getTextWithoutFormattingCodes(var0) : var0;
+      return ! Minecraft.getInstance().gameSettings.field44612 ? TextFormatting.getTextWithoutFormattingCodes(var0) : var0;
    }
 
    public static List<Class9125> method20971(ITextProperties var0, int var1, FontRenderer var2) {

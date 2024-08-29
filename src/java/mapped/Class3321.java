@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.util.ActionResultType;
+
 import java.util.Map;
 
 public class Class3321 extends Item {

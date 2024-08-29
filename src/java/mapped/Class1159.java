@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
+
 public class Class1159 extends Class1156 {
    private final Minecraft field6310 = Minecraft.getInstance();
 

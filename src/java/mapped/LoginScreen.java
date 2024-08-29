@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.network.Class9507;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.client.util.Util;
 
 public class LoginScreen extends Class4247 {
    private Class4287 field21352;

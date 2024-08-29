@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+
 public class Class5127 implements Class5119 {
    private static String[] field23314;
    private final Minecraft field23315;

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4119 extends Class4117 {
    public Class4119() {
       super(EntityType.field41109, "zombie_villager", 0.5F);

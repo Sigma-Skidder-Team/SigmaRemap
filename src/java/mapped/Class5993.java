@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.FontRenderer;
+
 import java.util.List;
 
 public final class Class5993 implements Class5991 {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.io.IOException;
 
 public class CPlayerDiggingPacket implements Packet<IServerPlayNetHandler> {

@@ -5,6 +5,8 @@ import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Iterator;
 import java.util.stream.Stream;

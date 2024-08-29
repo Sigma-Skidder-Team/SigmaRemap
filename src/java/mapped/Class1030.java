@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;

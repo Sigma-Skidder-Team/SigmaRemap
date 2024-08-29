@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
+import net.minecraft.client.Minecraft;
 
 public class Class9164 {
    private static String[] field42070;

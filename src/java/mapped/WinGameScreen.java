@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import org.apache.commons.io.IOUtils;
@@ -133,7 +134,7 @@ public class WinGameScreen extends Screen {
    }
 
    private void method6433(int var1, int var2, float var3) {
-      this.field4562.getTextureManager().bindTexture(Class1193.field6451);
+      this.field4562.getTextureManager().bindTexture(AbstractGui.field6451);
       int var6 = this.field4564;
       float var7 = -this.field7127 * 0.5F * this.field7131;
       float var8 = (float)this.field4565 - this.field7127 * 0.5F * this.field7131;

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4059 extends Class4057 {
    public Class4059() {
       this("end_crystal");

@@ -1,11 +1,13 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
 
 import java.util.Collections;
 import java.util.List;
 
-public class Class1263 extends Class1193 implements Class1190, Class1152 {
+public class Class1263 extends AbstractGui implements Class1190, Class1152 {
    private static final ResourceLocation field6677 = new ResourceLocation("textures/gui/recipe_book.png");
    private final List<Class1251> field6678 = Lists.newArrayList();
    private boolean field6679;

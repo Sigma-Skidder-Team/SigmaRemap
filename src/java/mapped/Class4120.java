@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4120 extends Class4117 {
    public Class4120() {
       super(EntityType.field41097, "vex", 0.3F);

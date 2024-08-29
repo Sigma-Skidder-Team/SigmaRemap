@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.UnmodifiableIterator;
 import com.mojang.serialization.Codec;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.List;
 import java.util.Random;
 import javax.annotation.Nullable;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 

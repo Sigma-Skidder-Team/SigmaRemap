@@ -3,6 +3,9 @@ package mapped;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
+
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class3292 extends Item {

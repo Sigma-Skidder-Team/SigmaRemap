@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 import java.util.Arrays;
 
 public enum Class2239 {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 

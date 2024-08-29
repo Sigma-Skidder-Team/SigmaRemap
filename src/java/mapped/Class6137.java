@@ -23,6 +23,9 @@ import java.util.OptionalInt;
 import java.util.function.BiPredicate;
 import java.util.function.BinaryOperator;
 import java.util.function.IntFunction;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6137 {

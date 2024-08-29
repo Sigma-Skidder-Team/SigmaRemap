@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
@@ -400,7 +404,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
             if (!var20) {
                this.field6418.drawStringWithShadow(var1, "_", (float)var17, (float)var14, var19);
             } else {
-               Class1193.method5686(var1, var17, var14 - 1, var17 + 1, var14 + 1 + 9, -3092272);
+               AbstractGui.method5686(var1, var17, var14 - 1, var17 + 1, var14 + 1 + 9, -3092272);
             }
          }
 

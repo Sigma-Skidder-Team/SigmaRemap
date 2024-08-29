@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class1134 extends Screen {

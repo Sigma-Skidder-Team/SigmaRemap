@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class335 implements Runnable {
    private static String[] field1458;
    public final BlockPos field1459;

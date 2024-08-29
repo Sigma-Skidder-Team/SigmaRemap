@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.OptionalInt;
 
 public class Class888 extends Class882 implements Class889 {

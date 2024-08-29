@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
+import net.minecraft.entity.EntityType;
 
 @InDevelopment
 public class Class5318 extends Module {

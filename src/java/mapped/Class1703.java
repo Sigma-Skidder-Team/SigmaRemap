@@ -4,6 +4,10 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.DataFixer;
 import com.mojang.datafixers.util.Either;
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;

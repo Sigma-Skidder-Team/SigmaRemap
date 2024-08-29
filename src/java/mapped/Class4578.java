@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class4578 extends Class4566 {
    private static String[] field22020;
    private final float field22021;

@@ -1,6 +1,9 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.longs.LongSet;
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 import java.util.BitSet;

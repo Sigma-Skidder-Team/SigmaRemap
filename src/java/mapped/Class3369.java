@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 import javax.annotation.Nullable;
 
 public class Class3369 extends Class3241 {

@@ -6,6 +6,8 @@ import it.unimi.dsi.fastutil.objects.Object2LongMap;
 import it.unimi.dsi.fastutil.objects.Object2LongOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import it.unimi.dsi.fastutil.objects.Object2LongMap.Entry;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Collection;
 import javax.annotation.Nullable;
 

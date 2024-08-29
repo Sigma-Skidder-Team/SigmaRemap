@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mojang.authlib.GameProfile;
+import net.minecraft.util.math.AxisAlignedBB;
 
 public class Class5298 extends Module {
     public static PlayerEntity field23814;

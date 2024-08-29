@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Predicate;
 
 public final class Class4834 extends Class4833 {

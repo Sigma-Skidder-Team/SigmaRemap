@@ -2,6 +2,9 @@ package mapped;
 
 import com.google.common.base.Charsets;
 import com.google.common.collect.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 import java.io.IOException;

@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.entity.Entity;
 
 import java.util.Iterator;
 import java.util.List;

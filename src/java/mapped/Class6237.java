@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.List;
 
 public final class Class6237 extends Class6230 {

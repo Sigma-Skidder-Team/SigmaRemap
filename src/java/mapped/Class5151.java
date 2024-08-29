@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -180,7 +181,7 @@ public class Class5151 extends Module {
    @HigestPriority
    private void method15957(Class4415 var1) {
       if (this.isEnabled() && mc.player != null) {
-         if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
+         if (! Minecraft.getInstance().gameSettings.showDebugInfo) {
             if (!Minecraft.getInstance().gameSettings.hideGUI) {
                this.method15958();
 

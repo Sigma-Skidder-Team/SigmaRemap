@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.util;
 
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import mapped.ClientColors;
-import mapped.Minecraft;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 

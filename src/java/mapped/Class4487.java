@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.entity.Entity;
 
 import java.util.Collection;
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class1699 implements AutoCloseable {
    private final Class291 field9248;
    private final Class1806 field9249;

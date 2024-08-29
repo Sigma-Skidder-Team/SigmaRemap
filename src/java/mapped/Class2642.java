@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public abstract class Class2642 extends Class2595 {
    public Class1006 field16974;
    public BlockPos field16975 = BlockPos.ZERO;

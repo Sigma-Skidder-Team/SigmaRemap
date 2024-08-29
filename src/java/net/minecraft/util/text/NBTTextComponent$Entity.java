@@ -3,6 +3,7 @@ package net.minecraft.util.text;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.*;
+import net.minecraft.entity.Entity;
 
 import javax.annotation.Nullable;
 import java.util.List;

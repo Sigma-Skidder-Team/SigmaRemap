@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+
 import java.util.EnumSet;
 import java.util.List;
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.Entity;
 
 import java.util.function.BiPredicate;
 

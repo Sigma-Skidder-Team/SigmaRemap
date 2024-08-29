@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class Class1181 extends Class1180 {
 
    @Override
    public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
-      Class1193.method5691(var1, this.field6378.field4562.fontRenderer, this.field6380, var4 + var5 / 2, var3 + 5, 16777215);
+      AbstractGui.method5691(var1, this.field6378.field4562.fontRenderer, this.field6380, var4 + var5 / 2, var3 + 5, 16777215);
    }
 
    @Override

@@ -15,6 +15,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Map.Entry;
+
+import net.minecraft.client.Minecraft;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

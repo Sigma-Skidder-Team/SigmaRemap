@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public interface Class6226 {
    Class6226 field27722 = (var0, var1) -> var1;
 

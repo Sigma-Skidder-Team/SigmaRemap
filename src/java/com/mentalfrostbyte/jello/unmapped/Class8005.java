@@ -3,6 +3,7 @@ package com.mentalfrostbyte.jello.unmapped;
 import com.google.gson.JsonObject;
 import io.netty.channel.Channel;
 import mapped.*;
+import net.minecraft.client.Minecraft;
 
 import java.io.File;
 import java.nio.file.Path;

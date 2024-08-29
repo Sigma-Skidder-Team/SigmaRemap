@@ -26,6 +26,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentUtils;
@@ -313,7 +317,7 @@ public class Class6850 {
 
          for (Class9125 var8 : this.field29757) {
             int var9 = !this.field29755 ? 72 + 12 * var6 : this.field29748.field4565 - 14 - 13 - 12 * var6;
-            Class1193.method5686(var1, this.field29758 - 1, var9, this.field29758 + this.field29759 + 1, var9 + 12, this.field29756);
+            AbstractGui.method5686(var1, this.field29758 - 1, var9, this.field29758 + this.field29759 + 1, var9 + 12, this.field29756);
             this.field29750.method38802(var1, var8, (float)this.field29758, (float)(var9 + 2), -1);
             var6++;
          }

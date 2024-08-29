@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 import javax.annotation.Nullable;
 
 public abstract class Class1035 extends Class1009 {

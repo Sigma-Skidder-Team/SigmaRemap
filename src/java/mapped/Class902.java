@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+
 public class Class902 extends Class901 {
    private static String[] field5144;
    private static final DataParameter<Boolean> field5145 = EntityDataManager.<Boolean>method35441(Class902.class, Class7784.field33398);

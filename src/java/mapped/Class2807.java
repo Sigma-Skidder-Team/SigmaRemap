@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Arrays;
 
 public class Class2807<T extends Entity> extends Class2803<T> {

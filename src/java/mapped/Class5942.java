@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public abstract class Class5942<T extends TileEntity> {
    public final TileEntityRendererDispatcher field25928;
    private Class4387 field25929 = null;

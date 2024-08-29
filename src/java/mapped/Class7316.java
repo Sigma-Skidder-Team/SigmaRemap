@@ -1,5 +1,10 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 public class Class7316 extends PlayerController {
    private static String[] field31370;
    private boolean field31371 = false;

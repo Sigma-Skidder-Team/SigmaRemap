@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
+import net.minecraft.client.Minecraft;
 
 import java.util.Collection;
 import java.util.List;

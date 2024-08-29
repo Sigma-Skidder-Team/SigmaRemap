@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 public class Class3291 extends Item {
    public Class3291(Class5643 var1) {
       super(var1);

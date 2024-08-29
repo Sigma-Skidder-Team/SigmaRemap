@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 public class Class5683 extends Class5651<Class1057, Class2887<Class1057>> {
    public static final ResourceLocation field25048 = new ResourceLocation("textures/" +Class8624.field38782.method26197().getPath()  + ".png");
    public static final ResourceLocation[] field25049 = Class8624.field38783

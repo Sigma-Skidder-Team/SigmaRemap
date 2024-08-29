@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+
 public interface Class7624 {
    void method24979(double var1, double var3, double var5);
 

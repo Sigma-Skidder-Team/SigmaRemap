@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 import java.lang.reflect.Array;
 import java.util.*;
 

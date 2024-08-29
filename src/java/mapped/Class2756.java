@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 public class Class2756 extends Class2754 {
    private static String[] field17296;
    private static final int[] field17297 = new int[]{0, 1, 4, 5, 6, 7};

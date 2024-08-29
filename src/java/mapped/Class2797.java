@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
+import net.minecraft.entity.Entity;
 
 import java.util.function.Function;
 

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4080 extends Class4057 {
    public Class4080() {
       super(EntityType.field41077, "silverfish", 0.3F);

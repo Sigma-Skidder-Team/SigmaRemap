@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class338 implements Runnable {
    public final float field1477;
    public final KillAura field1478;

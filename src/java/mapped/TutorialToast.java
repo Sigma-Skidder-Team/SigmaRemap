@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.ITextComponent;
 
 public class TutorialToast implements Class7601 {
@@ -34,7 +35,7 @@ public class TutorialToast implements Class7601 {
       }
 
       if (this.field32629) {
-         Class1193.method5686(var1, 3, 28, 157, 29, -1);
+         AbstractGui.method5686(var1, 3, 28, 157, 29, -1);
          float var7 = (float) MathHelper.method37779((double)this.field32627, (double)this.field32628, (double)((float)(var3 - this.field32626) / 100.0F));
          int var8;
          if (!(this.field32628 >= this.field32627)) {
@@ -43,7 +44,7 @@ public class TutorialToast implements Class7601 {
             var8 = -16755456;
          }
 
-         Class1193.method5686(var1, 3, 28, (int)(3.0F + 154.0F * var7), 29, var8);
+         AbstractGui.method5686(var1, 3, 28, (int)(3.0F + 154.0F * var7), 29, var8);
          this.field32627 = var7;
          this.field32626 = var3;
       }
@@ -76,7 +77,7 @@ public class TutorialToast implements Class7601 {
           this.field13902 = var4;
        }
 
-       public void method8813(MatrixStack var1, Class1193 var2, int var3, int var4) {
+       public void method8813(MatrixStack var1, AbstractGui var2, int var3, int var4) {
           RenderSystem.enableBlend();
           var2.method5696(var1, var3, var4, 176 + this.field13901 * 20, this.field13902 * 20, 20, 20);
           RenderSystem.enableBlend();

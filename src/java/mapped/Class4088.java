@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4088 extends Class4057 {
    public Class4088() {
       super(EntityType.field41080, "slime", 0.25F);

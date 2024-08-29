@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 public class Class7516 {
    private static String[] field32242;
    private static final Class7680 field32243 = Util.<Class7680>make(new Class7680(0.2F, 1.0F, -0.7F), Class7680::method25280);

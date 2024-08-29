@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -281,7 +283,7 @@ public class Class819 extends Class798 {
          RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
       }
 
-      Class1193.method5699(var1, var2 + 3, var3 + 3, 0.0F, 0.0F, 74, 74, 74, 74);
+      AbstractGui.method5699(var1, var2 + 3, var3 + 3, 0.0F, 0.0F, 74, 74, 74, 74);
       this.field4562.getTextureManager().bindTexture(Class1218.field6535);
       if (!var6) {
          RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
@@ -289,7 +291,7 @@ public class Class819 extends Class798 {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       }
 
-      Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 80, 80, 80, 80);
+      AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 80, 80, 80, 80);
       method5690(var1, this.field4568, var7, var2 + 40, var3 + 66, 16777215);
    }
 }

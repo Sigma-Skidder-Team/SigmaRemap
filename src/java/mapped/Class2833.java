@@ -1,6 +1,8 @@
 package mapped;
 
 import java.util.function.Consumer;
+
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class2833 implements Consumer<Consumer<Class7952>> {

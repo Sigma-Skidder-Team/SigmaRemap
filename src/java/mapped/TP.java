@@ -4,6 +4,8 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
 
 import java.util.Collections;
 import java.util.List;

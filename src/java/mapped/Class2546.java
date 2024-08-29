@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.util.text.Color;
 import net.minecraft.util.text.Style;
 

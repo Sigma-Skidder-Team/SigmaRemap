@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class5733 extends Class5732<Class993> {
    private static String[] field25145;
 

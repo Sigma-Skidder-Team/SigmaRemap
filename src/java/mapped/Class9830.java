@@ -1,6 +1,9 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.client.util.Util;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

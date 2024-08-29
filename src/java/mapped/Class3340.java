@@ -1,5 +1,10 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.List;
 
 public class Class3340 extends Item {

@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.objects.Object2IntMap.Entry;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
+import net.minecraft.client.util.Util;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;

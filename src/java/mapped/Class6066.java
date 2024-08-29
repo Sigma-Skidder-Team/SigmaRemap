@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
+
 public class Class6066 extends Class6065 {
    private static String[] field26311;
    public final Class1160 field26312;
@@ -14,7 +16,7 @@ public class Class6066 extends Class6065 {
       Class823.method2403(this.field26312.field6314).getTextureManager().bindTexture(Class823.method2402());
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var7 = !var4 ? 0.0F : 19.0F;
-      Class1193.method5699(var1, var2, var3, var7, 0.0F, 18, 18, 37, 18);
+      AbstractGui.method5699(var1, var2, var3, var7, 0.0F, 18, 18, 37, 18);
       if (var4) {
          Class823.method2399(this.field26312.field6314, Class823.method2404());
       }

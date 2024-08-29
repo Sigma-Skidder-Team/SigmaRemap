@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -147,7 +150,7 @@ public class Class814 extends Class813 {
          RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
       }
 
-      Class1193.method5699(var1, var2 + 2, var3 + 14, 0.0F, 0.0F, 56, 56, 56, 56);
+      AbstractGui.method5699(var1, var2 + 2, var3 + 14, 0.0F, 0.0F, 56, 56, 56, 56);
       this.field4562.getTextureManager().bindTexture(field4389);
       if (!var6) {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -155,7 +158,7 @@ public class Class814 extends Class813 {
          RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
       }
 
-      Class1193.method5699(var1, var2, var3 + 12, 0.0F, 0.0F, 60, 60, 60, 60);
+      AbstractGui.method5699(var1, var2, var3 + 12, 0.0F, 0.0F, 60, 60, 60, 60);
       int var10 = !var6 ? 16777215 : 10526880;
       method5691(var1, this.field4568, var4, var2 + 30, var3, var10);
    }

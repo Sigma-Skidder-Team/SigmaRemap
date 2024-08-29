@@ -70,7 +70,7 @@ public class ModuleManager {
         this.register(new Class5252());
         this.register(new Class5326());
         this.register(new Class5282());
-        this.register(new Class5288());
+        this.register(new AntiBot());
         this.register(new Class5189());
         this.register(new Class5309());
         this.register(new Class5272());

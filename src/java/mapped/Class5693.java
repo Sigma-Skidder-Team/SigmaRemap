@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class5693 extends Class5651<Class1079, Class2881<Class1079>> {
    private static final ResourceLocation field25062 = new ResourceLocation("textures/entity/wither/wither_invulnerable.png");
    private static final ResourceLocation field25063 = new ResourceLocation("textures/entity/wither/wither.png");

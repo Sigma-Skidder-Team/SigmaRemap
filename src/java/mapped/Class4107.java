@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4107 extends Class4057 {
    public Class4107() {
       super(EntityType.field41017, "creeper", 0.5F);

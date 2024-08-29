@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4144 extends Class4057 {
    public Class4144() {
       super(EntityType.field41036, "guardian", 0.5F);

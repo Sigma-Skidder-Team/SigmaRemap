@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;

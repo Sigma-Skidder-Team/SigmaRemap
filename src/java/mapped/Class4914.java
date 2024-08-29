@@ -12,6 +12,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class4914 implements ArgumentType<Integer> {

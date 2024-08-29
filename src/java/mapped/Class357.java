@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.main.Main;
 
 public final class Class357 extends Thread {

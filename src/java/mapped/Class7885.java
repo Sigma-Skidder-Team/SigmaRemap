@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.EntityType;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;

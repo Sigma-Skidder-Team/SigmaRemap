@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.RateLimiter;
+import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;

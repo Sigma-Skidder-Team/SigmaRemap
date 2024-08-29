@@ -1,6 +1,10 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

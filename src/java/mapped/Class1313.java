@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;

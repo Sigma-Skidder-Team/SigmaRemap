@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class5738 extends Class5715<Class904> {
    private static final ResourceLocation field25159 = new ResourceLocation("textures/entity/fishing_hook.png");
    private static final RenderType field25160 = RenderType.getEntityCutout(field25159);

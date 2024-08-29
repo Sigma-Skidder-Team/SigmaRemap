@@ -11,6 +11,9 @@ import java.util.Random;
 import java.util.Map.Entry;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
+
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.Entity;
 import org.apache.commons.lang3.mutable.MutableFloat;
 import org.apache.commons.lang3.mutable.MutableInt;
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Arrays;
 import java.util.Map;

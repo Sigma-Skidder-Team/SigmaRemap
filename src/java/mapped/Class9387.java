@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;

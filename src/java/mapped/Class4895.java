@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.entity.Entity;
+
 import java.util.Collection;
 
 public class Class4895 extends Class4874<Class4487> {

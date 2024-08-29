@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class8507 {
    private final ResourceLocation field37202;
    private ClientWorld field37203;

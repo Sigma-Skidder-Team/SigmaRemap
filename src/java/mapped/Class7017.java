@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.List;
 import java.util.Random;
 

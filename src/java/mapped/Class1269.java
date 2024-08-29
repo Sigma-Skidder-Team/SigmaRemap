@@ -1,12 +1,15 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Iterator;
 import java.util.List;
 
-public class Class1269 extends Class1193 implements Class1270 {
+public class Class1269 extends AbstractGui implements Class1270 {
    private final Minecraft field6744;
    private final List<Class9113> field6745 = Lists.newArrayList();
    private boolean field6746;

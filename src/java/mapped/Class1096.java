@@ -1,5 +1,10 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;

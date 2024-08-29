@@ -2,6 +2,9 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class8603;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+
 import java.util.HashMap;
 import java.util.UUID;
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public interface ISpawnWorldInfo extends Class6612 {
    void method20035(int var1);
 

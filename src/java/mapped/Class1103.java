@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public class Class1103 extends Class1009 {
    private static String[] field6059;
    private float field6060 = 0.5F;

@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Queues;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -12,7 +14,7 @@ import javax.annotation.Nullable;
 import java.util.Deque;
 import java.util.List;
 
-public class Class1266 extends Class1193 {
+public class Class1266 extends AbstractGui {
    private static final Logger field6698 = LogManager.getLogger();
    private final Minecraft field6699;
    private final List<String> field6700 = Lists.newArrayList();

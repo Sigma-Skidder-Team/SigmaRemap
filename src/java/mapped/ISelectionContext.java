@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 public interface ISelectionContext {
    static ISelectionContext method14947() {
       return Class4833.field22607;

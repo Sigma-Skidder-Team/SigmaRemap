@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 import java.util.List;

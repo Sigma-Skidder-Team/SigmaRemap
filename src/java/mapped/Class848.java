@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class848 extends Class838 {

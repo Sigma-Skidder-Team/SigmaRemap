@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Optional;
 
 public final class Class6474 implements Class6466<Optional<BlockPos>> {

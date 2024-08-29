@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4121 extends Class4117 {
    public Class4121() {
       super(EntityType.field41087, "stray", 0.7F);

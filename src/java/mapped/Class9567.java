@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
+import net.minecraft.client.Minecraft;
 
 public class Class9567 {
    private static String[] field44553;

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.base.MoreObjects;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4400;
+import net.minecraft.client.Minecraft;
 
 import java.util.Objects;
 

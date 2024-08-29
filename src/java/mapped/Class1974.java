@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 public enum Class1974 {
    field12848(0, 1, 2, 3),
    field12849(2, 3, 0, 1),

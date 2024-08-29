@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.ITextComponent;
 
 public interface Class8457<T extends Class5812, U extends Screen & Class867<T>> {

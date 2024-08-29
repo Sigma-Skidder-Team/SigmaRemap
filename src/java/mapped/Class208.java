@@ -3,6 +3,7 @@ package mapped;
 import it.unimi.dsi.fastutil.longs.*;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap.Entry;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
+import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 

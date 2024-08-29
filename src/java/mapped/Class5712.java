@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4410;
 import com.mentalfrostbyte.jello.event.impl.Class4433;
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.TextFormatting;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -1,6 +1,9 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.client.util.Util;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 
 public class Class6697 extends Class6698 {

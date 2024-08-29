@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Supplier;
 
 public abstract class Class3346<E extends TileEntity> extends Class3241 {

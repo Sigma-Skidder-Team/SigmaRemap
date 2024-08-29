@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;

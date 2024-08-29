@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Map;
 
 public class Class3415 extends Block implements Class3207 {

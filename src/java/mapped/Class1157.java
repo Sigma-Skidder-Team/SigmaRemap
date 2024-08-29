@@ -1,6 +1,9 @@
 package mapped;
 
 import com.google.common.hash.Hashing;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.*;
 import org.apache.commons.lang3.Validate;
 
@@ -111,8 +114,8 @@ public class Class1157 extends Class1156 {
       }
 
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field6297.getTextureManager().bindTexture(Class1193.field6453);
-      Class1193.method5699(var1, var4 + var5 - 15, var3, (float)(var17 * 10), (float)(176 + var18 * 8), 10, 8, 256, 256);
+      this.field6297.getTextureManager().bindTexture(AbstractGui.field6453);
+      AbstractGui.method5699(var1, var4 + var5 - 15, var3, (float)(var17 * 10), (float)(176 + var18 * 8), 10, 8, 256, 256);
       String var21 = this.field6298.method25580();
       if (!Objects.equals(var21, this.field6300)) {
          if (!this.method5549(var21)) {
@@ -139,31 +142,31 @@ public class Class1157 extends Class1156 {
 
       if (this.field6297.gameSettings.touchscreen || var9) {
          this.field6297.getTextureManager().bindTexture(Class1279.method6090());
-         Class1193.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
+         AbstractGui.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          int var24 = var7 - var4;
          int var25 = var8 - var3;
          if (this.method5548()) {
             if (var24 < 32 && var24 > 16) {
-               Class1193.method5699(var1, var4, var3, 0.0F, 32.0F, 32, 32, 256, 256);
+               AbstractGui.method5699(var1, var4, var3, 0.0F, 32.0F, 32, 32, 256, 256);
             } else {
-               Class1193.method5699(var1, var4, var3, 0.0F, 0.0F, 32, 32, 256, 256);
+               AbstractGui.method5699(var1, var4, var3, 0.0F, 0.0F, 32, 32, 256, 256);
             }
          }
 
          if (var2 > 0) {
             if (var24 < 16 && var25 < 16) {
-               Class1193.method5699(var1, var4, var3, 96.0F, 32.0F, 32, 32, 256, 256);
+               AbstractGui.method5699(var1, var4, var3, 96.0F, 32.0F, 32, 32, 256, 256);
             } else {
-               Class1193.method5699(var1, var4, var3, 96.0F, 0.0F, 32, 32, 256, 256);
+               AbstractGui.method5699(var1, var4, var3, 96.0F, 0.0F, 32, 32, 256, 256);
             }
          }
 
          if (var2 < this.field6296.method6242().method27099() - 1) {
             if (var24 < 16 && var25 > 16) {
-               Class1193.method5699(var1, var4, var3, 64.0F, 32.0F, 32, 32, 256, 256);
+               AbstractGui.method5699(var1, var4, var3, 64.0F, 32.0F, 32, 32, 256, 256);
             } else {
-               Class1193.method5699(var1, var4, var3, 64.0F, 0.0F, 32, 32, 256, 256);
+               AbstractGui.method5699(var1, var4, var3, 64.0F, 0.0F, 32, 32, 256, 256);
             }
          }
       }
@@ -176,7 +179,7 @@ public class Class1157 extends Class1156 {
    public void method5547(MatrixStack var1, int var2, int var3, ResourceLocation var4) {
       this.field6297.getTextureManager().bindTexture(var4);
       RenderSystem.enableBlend();
-      Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 32, 32, 32, 32);
+      AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 32, 32, 32, 32);
       RenderSystem.disableBlend();
    }
 

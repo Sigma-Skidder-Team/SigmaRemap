@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public abstract class Class4117 extends Class4057 {
    public Class4117(EntityType var1, String var2, float var3) {
       super(var1, var2, var3);

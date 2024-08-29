@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 public abstract class Class3373 extends Class3241 implements Class3207 {
    public static final Class8551 field18966 = Class8820.field39710;
    public static final VoxelShape field18967 = Block.method11539(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);

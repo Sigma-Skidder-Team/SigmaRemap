@@ -5,6 +5,8 @@ import com.google.common.collect.Sets;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.DynamicOps;
+import net.minecraft.client.util.Util;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.util.Util;
+
 public class Class816 extends Class798 {
    private static final ResourceLocation field4436 = new ResourceLocation("realms", "textures/gui/realms/invite_icon.png");
    private static final ResourceLocation field4437 = new ResourceLocation("realms", "textures/gui/realms/trial_icon.png");
@@ -75,7 +78,7 @@ public class Class816 extends Class798 {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.pushMatrix();
          RenderSystem.scalef(0.4F, 0.4F, 0.4F);
-         Class1193.method5699(var1, (int)((double)(var9 + 2 - var11) * 2.5), (int)((double)var10 * 2.5), 0.0F, 0.0F, 40, 40, 40, 40);
+         AbstractGui.method5699(var1, (int)((double)(var9 + 2 - var11) * 2.5), (int)((double)var10 * 2.5), 0.0F, 0.0F, 40, 40, 40, 40);
          RenderSystem.popMatrix();
          var11 += 14;
       }
@@ -83,7 +86,7 @@ public class Class816 extends Class798 {
       if (var6 != 0) {
          this.field4562.getTextureManager().bindTexture(field4436);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-         Class1193.method5699(var1, var9 - var11, var10 - 6, 0.0F, 0.0F, 15, 25, 31, 25);
+         AbstractGui.method5699(var1, var9 - var11, var10 - 6, 0.0F, 0.0F, 15, 25, 31, 25);
          var11 += 16;
       }
 
@@ -95,7 +98,7 @@ public class Class816 extends Class798 {
             var12 = 8;
          }
 
-         Class1193.method5699(var1, var9 + 4 - var11, var10 + 4, 0.0F, (float)var12, 8, 8, 8, 16);
+         AbstractGui.method5699(var1, var9 + 4 - var11, var10 + 4, 0.0F, (float)var12, 8, 8, 8, 16);
       }
    }
 

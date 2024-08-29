@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.util.math.BlockPos;
 
 public class BlockFlySmoothMode extends Module {
     private float field23969;

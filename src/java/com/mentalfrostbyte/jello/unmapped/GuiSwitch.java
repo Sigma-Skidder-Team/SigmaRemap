@@ -5,6 +5,8 @@ import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
 
 import java.net.MalformedURLException;
 import java.net.URL;

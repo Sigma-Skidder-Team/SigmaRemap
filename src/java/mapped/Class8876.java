@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public class Class8876 {
    public static final Class49<Block> field40096 = method32295("mined", Registry.BLOCK);
    public static final Class49<Item> field40097 = method32295("crafted", Registry.ITEM);

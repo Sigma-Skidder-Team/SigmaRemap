@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.DialogTexts;
+
 public class Class1203 extends Class1202 {
    private static String[] field6502;
    public final Class872 field6503;

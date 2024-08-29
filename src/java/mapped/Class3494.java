@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 public class Class3494 extends Class3194 {
    private static String[] field18470;
    public static final VoxelShape field19364 = Block.method11539(1.0, 0.0, 1.0, 15.0, 1.5, 15.0);

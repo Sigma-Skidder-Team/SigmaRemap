@@ -2,6 +2,8 @@ package mapped;
 
 import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
+import net.minecraft.client.util.Util;
+
 import java.util.Arrays;
 
 public final class Class6409 extends VoxelShape {

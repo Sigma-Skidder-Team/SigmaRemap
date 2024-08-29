@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4140 extends Class4057 {
    public Class4140() {
       super(EntityType.field41104, "wither_skull", 0.0F);

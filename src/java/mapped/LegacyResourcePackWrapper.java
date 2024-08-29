@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
+import net.minecraft.client.util.Util;
 
 import javax.annotation.Nullable;
 import java.io.IOException;

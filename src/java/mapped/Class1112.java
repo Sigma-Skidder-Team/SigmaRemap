@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 
 public class Class1112 extends Class1111 implements Class1008 {

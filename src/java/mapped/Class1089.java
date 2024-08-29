@@ -1,5 +1,10 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+
 public class Class1089 extends Class1018 {
    private static final Class120 field5964 = Class120.method339(Items.field37841, Items.field37960, Items.field37959, Items.field38112);
    public float field5965;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public final class Class386 extends Thread {
    private static String[] field1651;
 

@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 import java.util.Map.Entry;

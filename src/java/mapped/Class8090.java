@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.TreeSet;
+
+import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 public class Class8090 {

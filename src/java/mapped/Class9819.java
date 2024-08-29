@@ -7,6 +7,8 @@ import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.timer.Timer;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
 
 import java.util.List;
 

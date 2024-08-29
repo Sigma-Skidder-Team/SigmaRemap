@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.hash.Hashing;
+import net.minecraft.util.math.BlockPos;
 
 public class BiomeManager {
    private static String[] field29238;

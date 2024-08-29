@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public abstract class Class1047 extends Class1046 {
    public Class1047(EntityType<? extends Class1047> var1, World var2) {
       super(var1, var2);

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Mutable extends BlockPos {
    public Mutable() {
       this(0, 0, 0);

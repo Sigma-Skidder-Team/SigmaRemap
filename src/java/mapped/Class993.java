@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+
 public class Class993 extends AbstractMinecartEntity {
    private int field5480 = -1;
 

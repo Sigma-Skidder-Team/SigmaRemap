@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import javax.annotation.Nullable;
 
 public enum Class199 implements Class198 {

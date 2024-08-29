@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+
 public class Class5658 extends Class5651<Class1105, Class2820> {
    private static final ResourceLocation field25020 = new ResourceLocation("textures/entity/guardian.png");
    private static final ResourceLocation field25021 = new ResourceLocation("textures/entity/guardian_beam.png");

@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.Class4307;
+import net.minecraft.client.Minecraft;
 import totalcross.json.JSONObject;
 
 import java.util.ArrayList;

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.entity.Entity;
 
 public class Class4906 extends Class4874<Class4473> {
    private static final ResourceLocation field22740 = new ResourceLocation("target_hit");

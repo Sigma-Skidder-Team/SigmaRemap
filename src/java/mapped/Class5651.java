@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 public abstract class Class5651<T extends Class1006, M extends Class2827<T>> extends Class5712<T, M> {
    public Class5651(EntityRendererManager var1, M var2, float var3) {
       super(var1, (M)var2, var3);

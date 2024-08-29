@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
+import net.minecraft.entity.Entity;
 
 
 public class EntityDesync extends Command {

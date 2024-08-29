@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,8 +35,8 @@ public class Class1160 extends Class1155<Class1160> {
       Class6065.method18804(var1, this.field6313, Class823.method2390(this.field6314), var3, var4, var5, var6);
       Class8087.method27973(var2.field27373, () -> {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-         Class1193.method5698(var1, var3, var4, 32, 32, 8.0F, 8.0F, 8, 8, 64, 64);
-         Class1193.method5698(var1, var3, var4, 32, 32, 40.0F, 8.0F, 8, 8, 64, 64);
+         AbstractGui.method5698(var1, var3, var4, 32, 32, 8.0F, 8.0F, 8, 8, 64, 64);
+         AbstractGui.method5698(var1, var3, var4, 32, 32, 40.0F, 8.0F, 8, 8, 64, 64);
       });
    }
 

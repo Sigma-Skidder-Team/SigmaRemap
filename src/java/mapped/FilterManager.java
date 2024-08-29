@@ -4,6 +4,9 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.minecraft.SocialInteractionsService;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
+
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;

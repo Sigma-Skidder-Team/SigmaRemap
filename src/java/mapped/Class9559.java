@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class9559 {
    private static String[] field44526;
    public final Vector3d field44527;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 
 public class Class7862 extends Class7859 {

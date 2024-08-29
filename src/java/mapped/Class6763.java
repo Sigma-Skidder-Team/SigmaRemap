@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.EnumSet;
 import java.util.Set;
 import javax.annotation.Nullable;

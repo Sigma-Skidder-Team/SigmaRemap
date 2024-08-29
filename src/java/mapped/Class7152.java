@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Locale;
 import java.util.function.Function;
+
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 

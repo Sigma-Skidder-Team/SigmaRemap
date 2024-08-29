@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4079 extends Class4057 {
    public Class4079() {
       super(EntityType.field41095, "tropical_fish_b", 0.2F);

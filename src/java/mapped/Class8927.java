@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
+import net.minecraft.entity.EntityType;
 
 public class Class8927 extends Class8924 {
    private static String[] field40404;

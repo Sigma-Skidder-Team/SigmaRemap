@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class5730 extends Class5715<Class905> {
    private static final ResourceLocation field25138 = new ResourceLocation("textures/entity/shulker/spark.png");
    private static final RenderType field25139 = RenderType.method14318(field25138);

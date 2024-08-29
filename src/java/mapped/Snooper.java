@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.mentalfrostbyte.jello.Client;
+import net.minecraft.client.Minecraft;
 
 import java.net.MalformedURLException;
 import java.net.URL;

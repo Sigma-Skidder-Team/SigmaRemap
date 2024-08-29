@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;

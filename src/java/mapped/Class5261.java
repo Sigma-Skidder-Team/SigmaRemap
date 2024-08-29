@@ -11,6 +11,8 @@ import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.unmapped.Class8603;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
 import org.lwjgl.opengl.GL11;
 
 import java.util.List;
@@ -74,7 +76,7 @@ public class Class5261 extends PremiumModule {
     public void method16450(Class4415 var1) {
         if (field23663 != null) {
             if (this.isEnabled()) {
-                if (!Minecraft.getInstance().gameSettings.hideGUI) {
+                if (! Minecraft.getInstance().gameSettings.hideGUI) {
                     if (!this.getBooleanValueFromSetttingName("Smart Visibility")) {
                         this.field23662.changeDirection(mc.currentScreen != null && !this.getBooleanValueFromSetttingName("Show in GUI") ? Direction.BACKWARDS : Direction.FORWARDS);
                     } else {

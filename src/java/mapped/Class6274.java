@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.stream.Stream;

@@ -11,6 +11,8 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
+
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8031 {

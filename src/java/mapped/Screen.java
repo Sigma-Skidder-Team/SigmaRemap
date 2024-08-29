@@ -2,6 +2,9 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.event.*;

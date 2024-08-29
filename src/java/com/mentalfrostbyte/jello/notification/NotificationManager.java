@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import mapped.RenderUtil;
 import mapped.Class9782;
-import mapped.Minecraft;
+import net.minecraft.client.Minecraft;
 
 import java.awt.*;
 import java.util.ArrayList;

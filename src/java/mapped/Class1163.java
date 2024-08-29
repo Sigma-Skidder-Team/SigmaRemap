@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class1163 extends Class1161 {
@@ -36,7 +37,7 @@ public class Class1163 extends Class1161 {
       }
 
       for (ITextComponent var14 : Class806.method2166()) {
-         Class1193.method5691(var1, Class806.method2167(this.field6319), var14, this.field6319.field4564 / 2, var9 + var10, var12);
+         AbstractGui.method5691(var1, Class806.method2167(this.field6319), var14, this.field6319.field4564 / 2, var9 + var10, var12);
          var10 += 10;
       }
    }

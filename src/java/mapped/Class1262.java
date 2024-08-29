@@ -8,6 +8,12 @@ import com.mojang.datafixers.DataFixUtils;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import it.unimi.dsi.fastutil.longs.LongSets;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 
 import javax.annotation.Nullable;
@@ -17,8 +23,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Class1262 extends Class1193 {
-   private static final Map<Class101, String> field6664 = Util.<EnumMap<Class101, String>>make(
+public class Class1262 extends AbstractGui {
+   private static final Map<Class101, String> field6664 = Util.make(
       new EnumMap<Class101, String>(Class101.class), var0 -> {
          var0.put(Class101.field295, "SW");
          var0.put(Class101.field296, "S");

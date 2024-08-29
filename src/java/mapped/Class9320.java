@@ -2,6 +2,8 @@ package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
+import net.minecraft.client.util.Util;
+
 import java.util.function.LongFunction;
 
 public class Class9320 {

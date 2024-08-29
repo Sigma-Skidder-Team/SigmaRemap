@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.base.Predicates;
+import net.minecraft.entity.Entity;
+
 import java.util.function.Predicate;
 
 public final class Class8088 {

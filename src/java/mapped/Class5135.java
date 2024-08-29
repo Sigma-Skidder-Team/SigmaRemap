@@ -1,6 +1,10 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.util.Util;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Locale;
 import java.util.Map;
 

@@ -9,6 +9,8 @@ import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
+
+import net.minecraft.entity.Entity;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6795 {

@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ public class Class5302 extends Module {
     @EventTarget
     private void method16657(Class4415 var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (!Minecraft.getInstance().gameSettings.hideGUI) {
+            if (! Minecraft.getInstance().gameSettings.hideGUI) {
                 byte var4 = 5;
                 byte var5 = 60;
                 int var6 = !Minecraft.getInstance().gameSettings.showDebugInfo ? 0 : 60;

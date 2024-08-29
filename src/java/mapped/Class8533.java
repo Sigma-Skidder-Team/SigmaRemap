@@ -18,6 +18,10 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.ToDoubleFunction;
 import javax.annotation.Nullable;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8533 {

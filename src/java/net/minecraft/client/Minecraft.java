@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Queues;
@@ -21,6 +21,17 @@ import com.mojang.datafixers.util.Function4;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
 import com.mojang.serialization.Lifecycle;
+import mapped.*;
+import net.minecraft.client.util.Util;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Timer;
+import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.IngameGui;
+import net.minecraft.client.util.Splashes;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

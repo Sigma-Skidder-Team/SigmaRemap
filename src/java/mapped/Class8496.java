@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class8496 {
    private static String[] field37166;
    private static boolean field37167 = true;

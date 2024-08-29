@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
+import net.minecraft.entity.EntityType;
 
 public final class Class8925 extends Class8924 {
    @Override

@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 
 public class Class9363 {

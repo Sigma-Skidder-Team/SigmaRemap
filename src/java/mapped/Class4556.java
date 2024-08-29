@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.AbstractIterator;
+import net.minecraft.util.math.BlockPos;
 
 public final class Class4556 extends AbstractIterator<Mutable> {
    private static String[] field21968;

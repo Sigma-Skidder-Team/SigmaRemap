@@ -4,6 +4,8 @@ import java.io.PrintStream;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.function.Function;
+
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.text.LanguageMap;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

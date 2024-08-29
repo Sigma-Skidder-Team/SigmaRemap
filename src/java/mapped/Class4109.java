@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4109 extends Class4057 {
    public Class4109() {
       super(EntityType.field41102, "wither", 0.5F);

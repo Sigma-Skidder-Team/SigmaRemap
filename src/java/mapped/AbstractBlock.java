@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
 

@@ -1,6 +1,8 @@
 package mapped;
 
 import java.util.function.IntConsumer;
+
+import net.minecraft.client.util.Util;
 import org.apache.commons.lang3.Validate;
 
 public class Class7776 {

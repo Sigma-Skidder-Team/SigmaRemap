@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.unmapped.Class1537;
+import net.minecraft.client.Minecraft;
 
 import java.util.UUID;
 

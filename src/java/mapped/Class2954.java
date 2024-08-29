@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.client.Minecraft;
 
 import javax.annotation.Nullable;
 import java.util.List;

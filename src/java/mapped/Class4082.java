@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4082 extends Class4057 {
    public Class4082() {
       super(EntityType.field41070, "puffer_fish_small", 0.2F);

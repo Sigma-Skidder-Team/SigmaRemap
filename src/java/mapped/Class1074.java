@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+
 import javax.annotation.Nullable;
 import java.util.UUID;
 

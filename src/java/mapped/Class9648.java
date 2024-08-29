@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 
 public class Class9648 {
    public static final Codec<Class9648> field45108 = RecordCodecBuilder.create(

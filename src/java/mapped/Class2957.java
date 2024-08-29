@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class2957 implements Class2956 {
    private static String[] field18044;
    private final ServerWorld field18045;

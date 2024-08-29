@@ -2,6 +2,9 @@ package mapped;
 
 import java.util.List;
 import java.util.Optional;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;

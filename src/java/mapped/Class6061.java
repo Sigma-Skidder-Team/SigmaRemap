@@ -4,6 +4,8 @@ import javax.annotation.Nullable;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4427;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.tuple.Pair;
 
 public class Class6061 {

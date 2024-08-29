@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
+import net.minecraft.entity.EntityType;
 
 import java.util.List;
 

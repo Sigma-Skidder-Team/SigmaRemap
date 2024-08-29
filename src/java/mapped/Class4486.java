@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.math.BlockPos;
 
 public class Class4486 extends Class4457 {
    private final Block field21682;

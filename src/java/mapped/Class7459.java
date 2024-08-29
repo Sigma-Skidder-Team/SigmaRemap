@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class7459 implements Class7458 {
    private static String[] field32079;
    private TileEntity field32080;

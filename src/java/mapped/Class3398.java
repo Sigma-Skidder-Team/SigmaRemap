@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class3398 extends AbstractFireBlock {
    private static String[] field19036;
 

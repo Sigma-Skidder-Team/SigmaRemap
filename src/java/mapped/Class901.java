@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+
 public abstract class Class901 extends Class882 {
    public double field5141;
    public double field5142;

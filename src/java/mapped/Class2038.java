@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.google.gson.JsonObject;
+import net.minecraft.client.util.Util;
 
 import java.util.Map;
 import java.util.function.Function;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class4509 extends Class4505 {
    public Class4509(boolean var1) {
       super("overlay", () -> {

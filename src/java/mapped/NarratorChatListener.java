@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.text2speech.Narrator;
 import java.util.UUID;
+
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;

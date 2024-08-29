@@ -1,6 +1,8 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Optional;
 import java.util.Random;
 

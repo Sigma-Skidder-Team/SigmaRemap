@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.client.util.Util;
 
 import javax.annotation.Nullable;
 import java.io.ByteArrayInputStream;

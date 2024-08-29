@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Arrays;
 
 public class Class3436 extends Class3433 {

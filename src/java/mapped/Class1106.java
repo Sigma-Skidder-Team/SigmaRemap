@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 import java.util.List;
 
 public class Class1106 extends Class1105 {

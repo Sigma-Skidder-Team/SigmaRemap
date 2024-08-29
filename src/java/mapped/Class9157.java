@@ -3,6 +3,8 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
+import net.minecraft.entity.Entity;
+
 import javax.annotation.Nullable;
 
 public class Class9157 {

@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4307;
 import com.mentalfrostbyte.jello.util.animation.Animation;
+import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.Base64;

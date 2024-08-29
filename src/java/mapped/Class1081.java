@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+
 import java.util.Collection;
 
 public class Class1081 extends Class1009 implements Class1080 {

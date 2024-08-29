@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.account;
 import mapped.ServerData;
 import mapped.Class7970;
 import totalcross.json.JSONObject;
-import mapped.Minecraft;
+import net.minecraft.client.Minecraft;
 
 import java.util.Calendar;
 import java.util.Date;

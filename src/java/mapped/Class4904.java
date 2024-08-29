@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.math.BlockPos;
 
 public class Class4904 extends Class4874<Class4458> {
    private static final ResourceLocation field22738 = new ResourceLocation("item_used_on_block");

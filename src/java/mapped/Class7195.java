@@ -6,6 +6,8 @@ import java.util.BitSet;
 import java.util.Random;
 import java.util.Set;
 import java.util.function.Function;
+
+import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
 public abstract class Class7195<C extends Class4729> {

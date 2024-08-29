@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ActionResultType;
+
 public class Class6794<T> {
    private static String[] field29595;
    private final ActionResultType field29596;

@@ -5,7 +5,7 @@ import com.google.gson.stream.JsonReader;
 import mapped.ResourceLocation;
 import mapped.JSONUtils;
 import mapped.Class9681;
-import mapped.Util;
+import net.minecraft.client.util.Util;
 
 import javax.annotation.Nullable;
 import java.io.IOException;

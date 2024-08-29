@@ -5,7 +5,7 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.Class6619;
-import mapped.Entity;
+import net.minecraft.entity.Entity;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$Action;
 

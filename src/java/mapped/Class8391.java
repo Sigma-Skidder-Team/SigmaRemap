@@ -1,6 +1,8 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.List;

@@ -1,6 +1,8 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 

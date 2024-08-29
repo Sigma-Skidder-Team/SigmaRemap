@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+
 public class Class2721 extends Class2709<PlayerEntity> {
    private static String[] field17187;
    public final Class1057 field17207;

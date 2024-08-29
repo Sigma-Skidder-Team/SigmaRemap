@@ -1,5 +1,10 @@
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 import javax.annotation.Nullable;
 
 public class Class1021 extends Class1056 implements Class1020, Class1022 {

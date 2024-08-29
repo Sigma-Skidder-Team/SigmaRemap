@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.suggestion.Suggestion;
 import java.util.List;
+
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.TextComponentUtils;
 
 public class Class8368 {
@@ -39,7 +41,7 @@ public class Class8368 {
       }
 
       if (var10) {
-         Class1193.method5686(
+         AbstractGui.method5686(
             var1,
             this.field35920.method36780(),
             this.field35920.method36781() - 1,
@@ -47,7 +49,7 @@ public class Class8368 {
             this.field35920.method36781(),
             Class6850.method20849(this.field35928)
          );
-         Class1193.method5686(
+         AbstractGui.method5686(
             var1,
             this.field35920.method36780(),
             this.field35920.method36781() + this.field35920.method36783(),
@@ -58,7 +60,7 @@ public class Class8368 {
          if (var8) {
             for (int var12 = 0; var12 < this.field35920.method36782(); var12++) {
                if (var12 % 2 == 0) {
-                  Class1193.method5686(
+                  AbstractGui.method5686(
                      var1,
                      this.field35920.method36780() + var12,
                      this.field35920.method36781() - 1,
@@ -73,7 +75,7 @@ public class Class8368 {
          if (var9) {
             for (int var15 = 0; var15 < this.field35920.method36782(); var15++) {
                if (var15 % 2 == 0) {
-                  Class1193.method5686(
+                  AbstractGui.method5686(
                      var1,
                      this.field35920.method36780() + var15,
                      this.field35920.method36781() + this.field35920.method36783(),
@@ -90,7 +92,7 @@ public class Class8368 {
 
       for (int var13 = 0; var13 < var6; var13++) {
          Suggestion var14 = this.field35922.get(var13 + this.field35923);
-         Class1193.method5686(
+         AbstractGui.method5686(
             var1,
             this.field35920.method36780(),
             this.field35920.method36781() + 12 * var13,

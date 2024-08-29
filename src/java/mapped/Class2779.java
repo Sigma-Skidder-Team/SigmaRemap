@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.AxisAlignedBB;
+
 import java.util.List;
 
 public class Class2779<T extends Class1006 & Class1011> extends Class2595 {

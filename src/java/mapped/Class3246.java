@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;

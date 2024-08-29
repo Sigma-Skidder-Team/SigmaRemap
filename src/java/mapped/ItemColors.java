@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class ItemColors {
    private final Class2352<Class7216> field41160 = new Class2352<Class7216>(32);
 

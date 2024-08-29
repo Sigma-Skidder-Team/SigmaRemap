@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.datafixers.DataFixUtils;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 

@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.entity.EntityType;
 
 public class Class6692 extends Class6691 {
    public static final Codec<Class6692> field29310 = RecordCodecBuilder.create(

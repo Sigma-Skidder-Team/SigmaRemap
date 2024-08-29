@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.entity.Entity;
 import net.minecraft.util.text.ITextComponent;
 import org.lwjgl.opengl.GL11;
 

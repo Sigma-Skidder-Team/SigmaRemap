@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 public class Class4915 {
    private static String field22781 = "MC_";
    public static final String field22782 = "MC_VERSION";

@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 
 public class GameIdler extends Module {

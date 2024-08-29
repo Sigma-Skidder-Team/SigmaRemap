@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ActionResultType;
+
 public class Class3327 extends Item {
    private static String[] field18835;
 

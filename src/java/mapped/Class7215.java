@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.annotations.VisibleForTesting;
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Predicate;
 
 public class Class7215 {

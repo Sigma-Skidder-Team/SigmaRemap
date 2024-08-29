@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
 import java.util.HashMap;

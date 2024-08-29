@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class4305;
+import net.minecraft.client.Minecraft;
 
 public class Class6666 implements Class6664 {
    private static String[] field29236;

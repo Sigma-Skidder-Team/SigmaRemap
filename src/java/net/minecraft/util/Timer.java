@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.util;
 
 public class Timer {
    private static String[] field40355;

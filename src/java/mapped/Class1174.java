@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
+
 public class Class1174 extends Class1155<Class1174> {
    public final Class1285 field6359;
 
@@ -66,7 +68,7 @@ public class Class1174 extends Class1155<Class1174> {
 
    private void method5597(MatrixStack var1, int var2, int var3) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      Class1285.method6107(this.field6359).getTextureManager().bindTexture(Class1193.field6452);
-      Class1193.method5697(var1, var2, var3, this.field6359.field6849.method5702(), 0.0F, 0.0F, 18, 18, 128, 128);
+      Class1285.method6107(this.field6359).getTextureManager().bindTexture(AbstractGui.field6452);
+      AbstractGui.method5697(var1, var2, var3, this.field6359.field6849.method5702(), 0.0F, 0.0F, 18, 18, 128, 128);
    }
 }

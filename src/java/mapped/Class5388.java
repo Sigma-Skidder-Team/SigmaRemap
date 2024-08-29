@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.util.math.AxisAlignedBB;
 
 public class Class5388 extends Module {
    private boolean field24023;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class7880 {
    private static String[] field33822;
    private static IBakedModel field33823 = null;

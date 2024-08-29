@@ -3,6 +3,8 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import net.minecraft.client.Minecraft;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;

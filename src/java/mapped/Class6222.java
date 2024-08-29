@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 import java.util.Random;
 
 public final class Class6222 extends Class6218 {

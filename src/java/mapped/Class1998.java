@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.base.MoreObjects;
 import com.mojang.serialization.Codec;
+import net.minecraft.client.util.Util;
 
 import javax.annotation.concurrent.Immutable;
 import java.util.stream.IntStream;

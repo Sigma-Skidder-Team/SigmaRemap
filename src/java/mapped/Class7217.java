@@ -2,6 +2,8 @@ package mapped;
 
 import it.unimi.dsi.fastutil.longs.Long2FloatLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2IntLinkedOpenHashMap;
+import net.minecraft.client.util.Util;
+import net.minecraft.util.math.BlockPos;
 
 public class Class7217 {
    private static String[] field31024;

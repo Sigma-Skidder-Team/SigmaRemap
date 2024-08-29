@@ -13,6 +13,8 @@ import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService;
 import io.socket.client.Socket;
 import mapped.*;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
 import totalcross.json.JSONObject;

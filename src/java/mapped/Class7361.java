@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 import javax.annotation.Nullable;
 
 public abstract class Class7361 implements Class7373 {

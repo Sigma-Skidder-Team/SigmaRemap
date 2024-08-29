@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class7223 implements Class7222 {
@@ -26,9 +28,9 @@ public class Class7223 implements Class7222 {
    public void method22699(MatrixStack var1, float var2, int var3) {
       Minecraft.getInstance().getTextureManager().bindTexture(Class1195.field6470);
       if (this.field31053 >= 0) {
-         Class1193.method5699(var1, 0, 0, 160.0F, 0.0F, 16, 16, 256, 256);
+         AbstractGui.method5699(var1, 0, 0, 160.0F, 0.0F, 16, 16, 256, 256);
       } else {
-         Class1193.method5699(var1, 0, 0, 144.0F, 0.0F, 16, 16, 256, 256);
+         AbstractGui.method5699(var1, 0, 0, 144.0F, 0.0F, 16, 16, 256, 256);
       }
    }
 

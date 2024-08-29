@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.AxisAlignedBB;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

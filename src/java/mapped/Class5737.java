@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
+
 public class Class5737 extends Class5715<PaintingEntity> {
    private static String[] field25158;
 

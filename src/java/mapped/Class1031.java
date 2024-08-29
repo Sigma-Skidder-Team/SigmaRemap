@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public abstract class Class1031 extends Class1025 {
    private static final DataParameter<Byte> field5733 = EntityDataManager.<Byte>method35441(Class1031.class, Class7784.field33390);
    public int field5734;

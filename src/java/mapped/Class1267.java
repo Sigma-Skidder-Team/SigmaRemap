@@ -1,12 +1,14 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Map;
 import java.util.UUID;
 
-public class Class1267 extends Class1193 {
+public class Class1267 extends AbstractGui {
    private static final ResourceLocation field6708 = new ResourceLocation("textures/gui/bars.png");
    private final Minecraft field6709;
    private final Map<UUID, Class3626> field6710 = Maps.newLinkedHashMap();

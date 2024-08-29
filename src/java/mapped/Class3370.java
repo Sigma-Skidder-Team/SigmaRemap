@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class3370 extends Class3241 {
    private static String[] field18958;
 

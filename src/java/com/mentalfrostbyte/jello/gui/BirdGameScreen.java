@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.unmapped.Class4307;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.Timer;
 import mapped.*;
+import net.minecraft.client.Minecraft;
 
 public class BirdGameScreen extends Class4307 {
    public Minecraft field21044 = Minecraft.getInstance();

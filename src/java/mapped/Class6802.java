@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public interface Class6802<T> {
    boolean method20718(BlockPos var1, T var2);
 

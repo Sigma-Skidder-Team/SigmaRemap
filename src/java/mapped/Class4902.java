@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.gson.JsonObject;
+import net.minecraft.entity.Entity;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;

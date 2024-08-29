@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
+
 public class Class994 extends AbstractMinecartEntity {
    private static final DataParameter<Boolean> field5481 = EntityDataManager.<Boolean>method35441(Class994.class, Class7784.field33398);
    private int field5482;

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4142 extends Class4057 {
    public Class4142() {
       super(EntityType.field41010, "blaze", 0.5F);

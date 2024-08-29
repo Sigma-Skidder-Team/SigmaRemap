@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Map;
 import java.util.Set;
 

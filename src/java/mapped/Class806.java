@@ -3,6 +3,11 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.RateLimiter;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -599,7 +604,7 @@ public class Class806 extends Class798 {
             var9 = 8;
          }
 
-         Class1193.method5699(
+         AbstractGui.method5699(
             var1,
             this.field4303.field6477 + this.field4303.method5740() - 8 - 4,
             this.field4303.field6478 + this.field4303.method5728() / 2 - 4,
@@ -618,7 +623,7 @@ public class Class806 extends Class798 {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.pushMatrix();
       RenderSystem.scalef(0.5F, 0.5F, 0.5F);
-      Class1193.method5699(var1, var2 * 2, var3 * 2 - 5, 0.0F, 0.0F, 200, 50, 200, 50);
+      AbstractGui.method5699(var1, var2 * 2, var3 * 2 - 5, 0.0F, 0.0F, 200, 50, 200, 50);
       RenderSystem.popMatrix();
    }
 
@@ -666,15 +671,15 @@ public class Class806 extends Class798 {
       this.field4562.getTextureManager().bindTexture(field4238);
       boolean var10 = false;
       byte var9 = 32;
-      Class1193.method5699(var1, 0, 32, 0.0F, 0.0F, this.field4564, this.field4565 - 40 - 32, 310, 166);
+      AbstractGui.method5699(var1, 0, 32, 0.0F, 0.0F, this.field4564, this.field4565 - 40 - 32, 310, 166);
       RenderSystem.disableBlend();
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field4562.getTextureManager().bindTexture(field4237);
-      Class1193.method5699(var1, var6, var7, 0.0F, 0.0F, 310, 166, 310, 166);
+      AbstractGui.method5699(var1, var6, var7, 0.0F, 0.0F, 310, 166, 310, 166);
       if (!field4261.isEmpty()) {
          this.field4562.getTextureManager().bindTexture(field4261.get(this.field4292));
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-         Class1193.method5699(var1, var6 + 7, var7 + 7, 0.0F, 0.0F, 195, 152, 195, 152);
+         AbstractGui.method5699(var1, var6 + 7, var7 + 7, 0.0F, 0.0F, 195, 152, 195, 152);
          if (this.field4293 % 95 >= 5) {
             this.field4294 = false;
          } else if (!this.field4294) {
@@ -713,7 +718,7 @@ public class Class806 extends Class798 {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       boolean var20 = var7 && var6;
       float var22 = !var20 ? 0.0F : 16.0F;
-      Class1193.method5699(var1, var4, var5 - 6, var22, 0.0F, 15, 25, 31, 25);
+      AbstractGui.method5699(var1, var4, var5 - 6, var22, 0.0F, 15, 25, 31, 25);
       boolean var15 = var7 && var10 != 0;
       if (var15) {
          int var16 = (Math.min(var10, 6) - 1) * 8;
@@ -723,7 +728,7 @@ public class Class806 extends Class798 {
          this.field4562.getTextureManager().bindTexture(field4230);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          float var18 = !var11 ? 0.0F : 8.0F;
-         Class1193.method5699(var1, var4 + 4, var5 + 4 + var17, (float)var16, var18, 8, 8, 48, 16);
+         AbstractGui.method5699(var1, var4 + 4, var5 + 4 + var17, (float)var16, var18, 8, 8, 48, 16);
       }
 
       int var23 = var2 + 12;
@@ -781,7 +786,7 @@ public class Class806 extends Class798 {
    private void method2049(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.field4562.getTextureManager().bindTexture(field4227);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
+      AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.field4565 - 40 && var5 > 32 && !this.method2012()) {
          this.method2062(field4252);
       }
@@ -791,9 +796,9 @@ public class Class806 extends Class798 {
       this.field4562.getTextureManager().bindTexture(field4228);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       if (this.field4283 % 20 >= 10) {
-         Class1193.method5699(var1, var2, var3, 10.0F, 0.0F, 10, 28, 20, 28);
+         AbstractGui.method5699(var1, var2, var3, 10.0F, 0.0F, 10, 28, 20, 28);
       } else {
-         Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 20, 28);
+         AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 20, 28);
       }
 
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.field4565 - 40 && var5 > 32 && !this.method2012()) {
@@ -812,7 +817,7 @@ public class Class806 extends Class798 {
    private void method2051(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.field4562.getTextureManager().bindTexture(field4225);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
+      AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.field4565 - 40 && var5 > 32 && !this.method2012()) {
          this.method2062(field4255);
       }
@@ -821,7 +826,7 @@ public class Class806 extends Class798 {
    private void method2052(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.field4562.getTextureManager().bindTexture(field4226);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
+      AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.field4565 - 40 && var5 > 32 && !this.method2012()) {
          this.method2062(field4256);
       }
@@ -836,7 +841,7 @@ public class Class806 extends Class798 {
       this.field4562.getTextureManager().bindTexture(field4229);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 28.0F;
-      Class1193.method5699(var1, var2, var3, var9, 0.0F, 28, 28, 56, 28);
+      AbstractGui.method5699(var1, var2, var3, var9, 0.0F, 28, 28, 56, 28);
       if (var8) {
          this.method2062(field4257);
          this.field4299 = Class1982.field12941;
@@ -852,7 +857,7 @@ public class Class806 extends Class798 {
       this.field4562.getTextureManager().bindTexture(field4234);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 28.0F;
-      Class1193.method5699(var1, var2, var3, var9, 0.0F, 28, 28, 56, 28);
+      AbstractGui.method5699(var1, var2, var3, var9, 0.0F, 28, 28, 56, 28);
       if (var8) {
          this.method2062(field4258);
          this.field4299 = Class1982.field12942;
@@ -895,7 +900,7 @@ public class Class806 extends Class798 {
       this.field4562.getTextureManager().bindTexture(field4235);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var10 = !var6 ? 0.0F : 20.0F;
-      Class1193.method5699(var1, var4, var5, var10, 0.0F, 20, 20, 40, 20);
+      AbstractGui.method5699(var1, var4, var5, var10, 0.0F, 20, 20, 40, 20);
       if (var9) {
          this.method2062(field4259);
       }
@@ -916,7 +921,7 @@ public class Class806 extends Class798 {
 
       boolean var12 = var8 && var7;
       float var13 = !var12 ? 0.0F : 20.0F;
-      Class1193.method5699(var1, var5, var6, var13, 0.0F, 20, 20, 40, 20);
+      AbstractGui.method5699(var1, var5, var6, var13, 0.0F, 20, 20, 40, 20);
       if (var11 && var8) {
          this.method2062(field4260);
       }
@@ -930,7 +935,7 @@ public class Class806 extends Class798 {
             : 0;
          this.field4562.getTextureManager().bindTexture(field4230);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-         Class1193.method5699(var1, var5 + 10, var6 + 2 + var14, 40.0F, 0.0F, 8, 8, 48, 16);
+         AbstractGui.method5699(var1, var5 + 10, var6 + 2 + var14, 40.0F, 0.0F, 8, 8, 48, 16);
       }
    }
 

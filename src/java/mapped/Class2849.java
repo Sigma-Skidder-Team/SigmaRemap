@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class2849 extends Class2828 {
    public Class7219 field17652;
    public Class7219 field17653;

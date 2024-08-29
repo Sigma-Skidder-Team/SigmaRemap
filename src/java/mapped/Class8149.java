@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class8149 {

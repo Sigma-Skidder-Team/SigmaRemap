@@ -9,6 +9,10 @@ import java.util.UUID;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.TextComponentUtils;
 

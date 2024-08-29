@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+
 public class Class3344 extends Class3343 {
    private static Class9803 field18857;
    private static Class9803 field18858;

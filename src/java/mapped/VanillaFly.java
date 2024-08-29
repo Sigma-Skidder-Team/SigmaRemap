@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
+import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.ArrayList;
 import java.util.Collections;

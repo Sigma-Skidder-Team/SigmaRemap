@@ -6,6 +6,8 @@ import com.mojang.authlib.properties.PropertyMap;
 import com.mojang.authlib.properties.PropertyMap.Serializer;
 import joptsimple.*;
 import mapped.*;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

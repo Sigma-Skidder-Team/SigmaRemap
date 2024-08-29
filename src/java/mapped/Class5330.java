@@ -4,6 +4,8 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4434;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5330 extends ModuleWithModuleSettings {
     public static int field23887;

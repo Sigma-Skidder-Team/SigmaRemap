@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4064 extends Class4060 {
    public Class4064() {
       super(EntityType.field41027, "evoker", 0.5F, new String[]{"evocation_illager"});

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 public class Class3626 extends Class3625 {
    private static String[] field19641;
    public float field19642;

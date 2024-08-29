@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4130 extends Class4117 {
    public Class4130() {
       super(EntityType.field41103, "wither_skeleton", 0.7F);

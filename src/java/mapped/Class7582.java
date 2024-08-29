@@ -9,6 +9,8 @@ import java.nio.IntBuffer;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

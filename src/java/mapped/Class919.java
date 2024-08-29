@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+
 import javax.annotation.Nullable;
 
 public abstract class Class919 extends AbstractMinecartEntity implements Class920, Class949 {

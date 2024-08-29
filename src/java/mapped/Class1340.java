@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 
 public final class Class1340 implements Class1339 {

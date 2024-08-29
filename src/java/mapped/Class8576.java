@@ -5,6 +5,8 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.mojang.serialization.JsonOps;
 import java.util.Optional;
+
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

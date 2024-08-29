@@ -1,11 +1,13 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.HashMap;
 
-public class Class7250 extends Class7249 {
+public class HypixelAntiBot extends Class7249 {
    public HashMap<Entity, Boolean> field31124 = new HashMap<Entity, Boolean>();
 
-   public Class7250() {
+   public HypixelAntiBot() {
       super("Hypixel", "Detects bots on Hypixel based on entity names", Class2124.field13865);
    }
 

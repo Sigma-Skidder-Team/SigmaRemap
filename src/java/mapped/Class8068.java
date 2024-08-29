@@ -3,6 +3,8 @@ package mapped;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+
+import net.minecraft.client.Minecraft;
 import org.apache.commons.io.FileUtils;
 
 public class Class8068 {

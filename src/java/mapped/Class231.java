@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Random;
 
 public abstract class Class231<T extends Class880, M extends Class2894<T>> extends Class219<T, M> {

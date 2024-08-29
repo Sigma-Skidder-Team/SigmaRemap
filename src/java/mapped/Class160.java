@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.Entity;
 
 import java.util.Map;
 import java.util.Map.Entry;

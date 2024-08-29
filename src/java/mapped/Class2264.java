@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 public enum Class2264 {
    field14716(
       new Class9827(Class8993.field41132, Class8993.field41131, Class8993.field41127),

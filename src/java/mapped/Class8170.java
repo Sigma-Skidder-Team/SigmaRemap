@@ -6,6 +6,10 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

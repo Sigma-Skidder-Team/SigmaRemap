@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+
 public class Class899 extends Class898 {
    public int field5139 = 1;
 

@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
+import net.minecraft.client.Minecraft;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.IOUtils;
 

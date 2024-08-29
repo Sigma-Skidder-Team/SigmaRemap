@@ -3,6 +3,8 @@ package mapped;
 import java.util.Random;
 import java.util.UUID;
 import java.util.function.IntPredicate;
+
+import net.minecraft.client.util.Util;
 import org.apache.commons.lang3.math.NumberUtils;
 
 public class MathHelper {

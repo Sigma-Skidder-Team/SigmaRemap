@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.List;
 
 public class Class8464 {

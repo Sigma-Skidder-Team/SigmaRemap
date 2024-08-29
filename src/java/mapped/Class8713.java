@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
+import net.minecraft.entity.Entity;
 
 public class Class8713 {
    public static final Class8713 field39324 = new Class8713(false);

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class AirBlock extends Block {
    private static String[] field19128;
 

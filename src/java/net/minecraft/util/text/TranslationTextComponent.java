@@ -3,7 +3,7 @@ package net.minecraft.util.text;
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.Class6619;
-import mapped.Entity;
+import net.minecraft.entity.Entity;
 
 import java.util.Arrays;
 import java.util.List;

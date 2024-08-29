@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+
 public class Class3317<T extends Entity & Class1071> extends Item {
    private static String[] field18825;
    private final EntityType<T> field18826;

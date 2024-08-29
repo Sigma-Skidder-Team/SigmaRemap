@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.booleans.BooleanArrayList;
 import it.unimi.dsi.fastutil.booleans.BooleanList;
+import net.minecraft.client.util.Util;
 
 import java.util.Arrays;
 import java.util.Map;

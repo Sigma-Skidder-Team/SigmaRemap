@@ -2,6 +2,9 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.mojang.serialization.Codec;
+import net.minecraft.client.util.Util;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Map;
 
 public class Class7091 extends Class7092 {

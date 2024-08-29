@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.math.AxisAlignedBB;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;

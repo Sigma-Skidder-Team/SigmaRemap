@@ -2,6 +2,8 @@ package mapped;
 
 import it.unimi.dsi.fastutil.shorts.ShortIterator;
 import it.unimi.dsi.fastutil.shorts.ShortSet;
+import net.minecraft.util.math.BlockPos;
+
 import java.io.IOException;
 import java.util.function.BiConsumer;
 

@@ -34,6 +34,10 @@ import java.util.stream.Stream;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ClientResource;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpEntity;

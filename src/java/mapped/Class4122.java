@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4122 extends Class4117 {
    public Class4122() {
       super(EntityType.field41078, "skeleton", 0.7F);

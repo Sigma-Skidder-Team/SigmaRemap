@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 import java.util.function.Consumer;
+
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class2835 implements Consumer<Consumer<Class7952>> {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class9047 {
    private static String[] field41425;
    private static final Minecraft field41426 = Minecraft.getInstance();

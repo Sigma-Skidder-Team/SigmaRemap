@@ -4,6 +4,10 @@ import com.google.common.collect.ImmutableMap;
 import com.mentalfrostbyte.jello.event.impl.Class4424;
 import com.mojang.serialization.MapCodec;
 import com.mentalfrostbyte.jello.Client;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
 import java.util.Random;

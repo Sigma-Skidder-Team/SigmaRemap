@@ -1,6 +1,9 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public class Class3690<T> extends Class3676<Class1046> {

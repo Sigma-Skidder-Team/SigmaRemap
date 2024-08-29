@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.*;

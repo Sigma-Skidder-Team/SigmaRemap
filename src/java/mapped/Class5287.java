@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class8480;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.client.Minecraft;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -64,7 +65,7 @@ public class Class5287 extends Module {
     private void method16590(Class4422 var1) {
         if (this.isEnabled() && mc.player != null) {
             if (Client.getInstance().getGuiManager().method33472()) {
-                if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
+                if (! Minecraft.getInstance().gameSettings.showDebugInfo) {
                     if (!Minecraft.getInstance().gameSettings.hideGUI) {
                         Class8480.method29971(this.field23768, this.field23769, this.field23770, this.field23771);
                         if (this.field23781) {

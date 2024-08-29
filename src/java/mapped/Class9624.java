@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 
 public class Class9624 {
    private static String[] field45004;

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.base.Joiner;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
+import net.minecraft.entity.EntityType;
 
 public abstract class Class8924 {
    public static final Class8924 field40401 = new Class8925();

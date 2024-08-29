@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.EnumSet;
 
 public abstract class Class2628 extends Class2595 {

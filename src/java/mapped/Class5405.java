@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
+
 public class Class5405 extends Class5404 {
    private static String[] field24088;
    private Chunk field24089;

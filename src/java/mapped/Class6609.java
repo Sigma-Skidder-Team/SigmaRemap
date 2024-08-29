@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.UUID;
 
 public class Class6609 implements Class6608 {

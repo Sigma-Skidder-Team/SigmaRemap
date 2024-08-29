@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class5720 extends Class5715<Class903> {
    private static final ResourceLocation field25117 = new ResourceLocation("textures/entity/enderdragon/dragon_fireball.png");
    private static final RenderType field25118 = RenderType.getEntityCutoutNoCull(field25117);

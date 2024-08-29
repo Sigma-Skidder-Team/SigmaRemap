@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.logging.log4j.LogManager;

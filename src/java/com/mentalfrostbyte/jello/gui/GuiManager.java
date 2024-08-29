@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4415;
 import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.FileUtil;
 import mapped.*;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.opengl.GL11;

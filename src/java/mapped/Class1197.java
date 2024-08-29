@@ -1,12 +1,16 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.Objects;
 
-public abstract class Class1197 extends Class1193 implements Class1190, Class1152 {
+public abstract class Class1197 extends AbstractGui implements Class1190, Class1152 {
    public static final ResourceLocation field6474 = new ResourceLocation("textures/gui/widgets.png");
    public int field6475;
    public int field6476;

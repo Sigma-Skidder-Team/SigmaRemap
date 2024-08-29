@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.entity;
 
 import com.google.common.collect.ImmutableSet;
 import java.util.Optional;
@@ -6,6 +6,11 @@ import java.util.UUID;
 import java.util.function.Function;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
+
+import mapped.*;
+import net.minecraft.client.util.Util;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;

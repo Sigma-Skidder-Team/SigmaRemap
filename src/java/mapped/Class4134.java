@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4134 extends Class4057 {
    public Class4134() {
       super(EntityType.field41086, "squid", 0.7F);

@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
+
+import net.minecraft.entity.EntityType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

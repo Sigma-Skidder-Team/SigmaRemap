@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5174 extends Module {
     private int field23464;

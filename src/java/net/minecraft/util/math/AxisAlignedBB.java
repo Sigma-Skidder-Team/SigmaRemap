@@ -1,4 +1,6 @@
-package mapped;
+package net.minecraft.util.math;
+
+import mapped.*;
 
 import java.util.Optional;
 import javax.annotation.Nullable;

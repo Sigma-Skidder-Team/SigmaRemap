@@ -9,6 +9,11 @@ import com.google.common.collect.Sets;
 import java.util.*;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

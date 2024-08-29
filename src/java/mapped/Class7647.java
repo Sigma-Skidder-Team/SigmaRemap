@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+
 public class Class7647 {
    private static String[] field32823;
    private final Class7755[] field32824 = new Class7755[6];

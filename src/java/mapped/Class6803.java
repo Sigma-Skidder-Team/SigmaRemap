@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public class Class6803<T> implements Class6802<T> {

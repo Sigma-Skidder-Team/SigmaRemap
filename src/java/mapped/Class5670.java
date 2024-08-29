@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class5670 extends Class5661<Class1100, Class2896> {
    private static final ResourceLocation field25034 = new ResourceLocation("textures/entity/illager/vex.png");
    private static final ResourceLocation field25035 = new ResourceLocation("textures/entity/illager/vex_charging.png");

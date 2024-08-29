@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mojang.authlib.GameProfile;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 import java.io.IOException;

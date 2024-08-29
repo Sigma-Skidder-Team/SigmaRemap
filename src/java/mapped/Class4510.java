@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
+
 import java.util.OptionalDouble;
 
 public abstract class Class4510 {

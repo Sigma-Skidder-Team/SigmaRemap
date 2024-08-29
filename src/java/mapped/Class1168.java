@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
+
 import java.text.DateFormat;
 import java.util.Date;
 
@@ -46,7 +48,7 @@ public class Class1168 extends Class1155<Class1168> {
       RenderSystem.pushMatrix();
       RenderSystem.scalef(0.5F, 0.5F, 0.5F);
       float var9 = !var8 ? 0.0F : 28.0F;
-      Class1193.method5699(var1, var2 * 2, var3 * 2, 0.0F, var9, 23, 28, 23, 56);
+      AbstractGui.method5699(var1, var2 * 2, var3 * 2, 0.0F, var9, 23, 28, 23, 56);
       RenderSystem.popMatrix();
       if (var8) {
          Class807.method2200(this.field6334, Class807.method2201());
@@ -60,7 +62,7 @@ public class Class1168 extends Class1155<Class1168> {
       RenderSystem.pushMatrix();
       RenderSystem.scalef(0.5F, 0.5F, 0.5F);
       float var9 = !var8 ? 0.0F : 15.0F;
-      Class1193.method5699(var1, var2 * 2, var3 * 2, 0.0F, var9, 15, 15, 15, 30);
+      AbstractGui.method5699(var1, var2 * 2, var3 * 2, 0.0F, var9, 15, 15, 15, 30);
       RenderSystem.popMatrix();
       if (var8) {
          Class807.method2200(this.field6334, Class807.method2204());

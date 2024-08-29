@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
+
 public class Class1177 extends Class1155<Class1177> {
    private final Class6130 field6371;
    public final Class804 field6372;
@@ -30,10 +32,10 @@ public class Class1177 extends Class1155<Class1177> {
    private void method5604(MatrixStack var1, int var2, int var3, int var4, int var5, Class6130 var6) {
       Class8087.method27972(var6.field27464, var6.field27469);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      Class1193.method5699(var1, var2 + 1, var3 + 1, 0.0F, 0.0F, 38, 38, 38, 38);
+      AbstractGui.method5699(var1, var2 + 1, var3 + 1, 0.0F, 0.0F, 38, 38, 38, 38);
       Class804.method1988(this.field6372).getTextureManager().bindTexture(Class804.method1987());
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      Class1193.method5699(var1, var2, var3, 0.0F, 0.0F, 40, 40, 40, 40);
+      AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 40, 40, 40, 40);
    }
 
    private void method5605(MatrixStack var1, int var2, int var3, int var4, int var5, String var6, String var7, String var8) {
@@ -63,7 +65,7 @@ public class Class1177 extends Class1155<Class1177> {
          RenderSystem.pushMatrix();
          RenderSystem.scalef(1.0F, 1.0F, 1.0F);
          float var15 = !var12 ? 0.0F : 15.0F;
-         Class1193.method5699(var1, var2 + var11, var3, var15, 0.0F, 15, 15, 30, 15);
+         AbstractGui.method5699(var1, var2 + var11, var3, var15, 0.0F, 15, 15, 30, 15);
          RenderSystem.popMatrix();
       }
 
@@ -74,7 +76,7 @@ public class Class1177 extends Class1155<Class1177> {
          RenderSystem.scalef(1.0F, 1.0F, 1.0F);
          int var17 = var2 + var11 + (!var14 ? 17 : 0);
          float var16 = !var13 ? 0.0F : 15.0F;
-         Class1193.method5699(var1, var17, var3, var16, 0.0F, 15, 15, 30, 15);
+         AbstractGui.method5699(var1, var17, var3, var16, 0.0F, 15, 15, 30, 15);
          RenderSystem.popMatrix();
       }
 

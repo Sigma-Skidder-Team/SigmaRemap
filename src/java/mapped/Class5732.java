@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
    private static final ResourceLocation field25143 = new ResourceLocation("textures/entity/minecart.png");
    public final Class2827<T> field25144 = new Class2818<T>();

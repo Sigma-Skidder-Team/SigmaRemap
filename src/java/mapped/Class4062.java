@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4062 extends Class4060 {
    public Class4062() {
       super(EntityType.field41067, "pillager", 0.5F);

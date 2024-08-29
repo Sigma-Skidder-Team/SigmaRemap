@@ -2,6 +2,9 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.ArrayList;
 import java.util.Collections;

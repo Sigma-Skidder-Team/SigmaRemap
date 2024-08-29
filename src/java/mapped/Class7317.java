@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class7317 {
    private static String[] field31374;
    public static final float field31375 = (float) Math.PI;

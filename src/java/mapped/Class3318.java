@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import java.util.ArrayList;
 import java.util.List;
+
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;

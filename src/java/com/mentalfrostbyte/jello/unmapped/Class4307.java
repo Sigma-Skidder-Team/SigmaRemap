@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.unmapped;
 
 import totalcross.json.JSONObject;
-import mapped.Minecraft;
+import net.minecraft.client.Minecraft;
 
 public abstract class Class4307 extends Class4305 {
     public static int field20939 = 0;

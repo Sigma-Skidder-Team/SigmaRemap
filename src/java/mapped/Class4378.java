@@ -13,6 +13,7 @@ import com.thizzer.jtouchbar.item.TouchBarItem;
 import com.thizzer.jtouchbar.item.view.TouchBarButton;
 import com.thizzer.jtouchbar.item.view.TouchBarButton$ButtonType;
 import com.thizzer.jtouchbar.item.view.TouchBarTextField;
+import net.minecraft.client.Minecraft;
 import totalcross.json.JSONArray;
 import org.lwjgl.glfw.GLFWNativeCocoa;
 import totalcross.json.JSONObject;

@@ -1,12 +1,14 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.*;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class Class1194 extends Class1193 {
+public class Class1194 extends AbstractGui {
    private static final ResourceLocation field6455 = new ResourceLocation("textures/gui/advancements/widgets.png");
    private static final int[] field6456 = new int[]{0, 10, -10, 25, -25};
    private final Class1271 field6457;

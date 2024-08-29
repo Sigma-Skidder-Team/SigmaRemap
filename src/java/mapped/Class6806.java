@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.shorts.ShortList;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.function.Function;
 import java.util.function.Predicate;

@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 public class Class5283 extends Module {
@@ -46,7 +47,7 @@ public class Class5283 extends Module {
     private void method16579(Class4415 var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
-                if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
+                if (! Minecraft.getInstance().gameSettings.showDebugInfo) {
                     if (!Minecraft.getInstance().gameSettings.hideGUI) {
                         float var4 = Math.min(1.0F, 0.6F + this.field23756.calcPercent() * 4.0F);
                         String var5 = mc.player.getPosition().getX()

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.StringTextComponent;
 
 public abstract class Class1201 extends Class1200 {

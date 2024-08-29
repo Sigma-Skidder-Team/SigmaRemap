@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client.gui;
 
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.List;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class5652 extends Class5651<Class1109, Class2882<Class1109>> {
    private static final ResourceLocation field25004 = new ResourceLocation("textures/entity/slime/magmacube.png");
 

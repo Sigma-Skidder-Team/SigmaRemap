@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.Class4307;
+import net.minecraft.client.Minecraft;
 
 public class Class4337 extends Class4305 {
    public final Class4254 field21186;

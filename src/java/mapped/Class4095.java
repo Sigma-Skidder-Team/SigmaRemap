@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4095 extends Class4094 {
    public Class4095() {
       super(EntityType.field41101, "witch", 0.5F);

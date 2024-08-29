@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+
 import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.List;
@@ -157,7 +160,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
       Tessellator var9 = Tessellator.getInstance();
       BufferBuilder var10 = var9.getBuffer();
       if (this.field6798) {
-         this.field6782.getTextureManager().bindTexture(Class1193.field6451);
+         this.field6782.getTextureManager().bindTexture(AbstractGui.field6451);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          float var11 = 32.0F;
          var10.begin(7, DefaultVertexFormats.field43346);
@@ -188,7 +191,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
 
       this.method6052(var1, var16, var12, var2, var3, var4);
       if (this.field6799) {
-         this.field6782.getTextureManager().bindTexture(Class1193.field6451);
+         this.field6782.getTextureManager().bindTexture(AbstractGui.field6451);
          RenderSystem.enableDepthTest();
          RenderSystem.depthFunc(519);
          float var13 = 32.0F;

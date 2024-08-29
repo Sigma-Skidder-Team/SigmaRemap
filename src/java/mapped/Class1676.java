@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class1676 extends Chunk {
    private static String[] field9136;
    private Class8870 field9137;

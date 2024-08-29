@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.primitives.Doubles;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Collections;
 import java.util.Map;

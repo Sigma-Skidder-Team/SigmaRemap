@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Optional;
 import java.util.Random;
 import javax.annotation.Nullable;

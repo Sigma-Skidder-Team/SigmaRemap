@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.BiPredicate;
 import java.util.function.Function;
 

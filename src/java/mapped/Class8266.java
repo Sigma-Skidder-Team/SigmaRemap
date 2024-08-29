@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class8266 {
    public final BlockPos field35530;
    public final BlockState field35531;

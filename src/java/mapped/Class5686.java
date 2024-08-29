@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
+import net.minecraft.entity.EntityType;
+
 import java.util.Map;
 
 public class Class5686 extends Class5685<AbstractHorseEntity, Class2856<AbstractHorseEntity>> {

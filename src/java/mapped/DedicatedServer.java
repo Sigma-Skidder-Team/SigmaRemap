@@ -6,6 +6,8 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.GameProfileRepository;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.datafixers.DataFixer;
+import net.minecraft.client.util.Util;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.filter.ChatFilterClient;
 import net.minecraft.util.text.filter.IChatFilter;
 import org.apache.logging.log4j.LogManager;

@@ -5,6 +5,10 @@ import com.google.common.collect.LinkedHashMultiset;
 import com.google.common.collect.Multisets;
 import java.util.List;
 import javax.annotation.Nullable;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class6606 implements ISpawnWorldInfo {
    private static String[] field29048;
    private final boolean field29049;

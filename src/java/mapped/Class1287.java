@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class1287 extends Class1286<Class1161> {
    private boolean field6850;
    public final Class806 field6851;

@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
 import java.util.Random;

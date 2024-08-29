@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+
 import java.util.List;
 import java.util.UUID;
 import java.util.function.Predicate;

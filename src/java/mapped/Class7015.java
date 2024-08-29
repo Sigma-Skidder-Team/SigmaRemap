@@ -1,6 +1,9 @@
 package mapped;
 
 import javax.annotation.Nullable;
+
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4436;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5219 extends Module {
     private int field23552;

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4128 extends Class4127 {
    public Class4128() {
       super(EntityType.field41110, "zombified_piglin", 0.5F);

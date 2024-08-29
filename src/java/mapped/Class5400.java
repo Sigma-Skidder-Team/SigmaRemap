@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;

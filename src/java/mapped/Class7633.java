@@ -7,6 +7,8 @@ import it.unimi.dsi.fastutil.shorts.Short2BooleanMap;
 import it.unimi.dsi.fastutil.shorts.Short2BooleanOpenHashMap;
 import it.unimi.dsi.fastutil.shorts.Short2ObjectMap;
 import it.unimi.dsi.fastutil.shorts.Short2ObjectOpenHashMap;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Map.Entry;

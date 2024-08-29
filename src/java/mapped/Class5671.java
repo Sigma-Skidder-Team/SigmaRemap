@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.EntityType;
+
 import java.util.Map;
 
 public class Class5671 extends Class5661<Class1006, Class2895<Class1006>> {

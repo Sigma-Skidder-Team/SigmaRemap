@@ -4,19 +4,22 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import mapped.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Class7248 extends Class7249 {
+public class MovementAntiBot extends Class7249 {
    public List<Integer> field31115 = new CopyOnWriteArrayList<Integer>();
    public HashMap<Entity, Integer> field31116 = new HashMap<Entity, Integer>();
    public HashMap<Entity, ArrayList<Integer>> field31117 = new HashMap<Entity, ArrayList<Integer>>();
    public int field31118 = 30;
 
-   public Class7248() {
+   public MovementAntiBot() {
       super("Movement", "Detects bots based on movement patterns", Class2124.field13866);
    }
 

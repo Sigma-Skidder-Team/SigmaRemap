@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.AbstractIterator;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 
 public final class Class4551 extends AbstractIterator<BlockPos> {

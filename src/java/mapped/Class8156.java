@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 import java.io.File;
 import java.util.regex.Pattern;
 

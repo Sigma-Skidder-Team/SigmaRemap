@@ -5,6 +5,8 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import java.util.Collection;
 import java.util.Collections;
+
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6587 {

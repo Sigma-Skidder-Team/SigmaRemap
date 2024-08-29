@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class4307;
+import net.minecraft.client.Minecraft;
 
 public class Class4324 extends Class4307 {
    private static Minecraft field21107 = Minecraft.getInstance();

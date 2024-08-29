@@ -14,6 +14,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import org.apache.commons.io.IOUtils;
 
 public class Class7803 {

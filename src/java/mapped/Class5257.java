@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
+import net.minecraft.entity.Entity;
 
 import java.util.ArrayList;
 import java.util.Iterator;

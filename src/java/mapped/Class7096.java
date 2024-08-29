@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.math.BlockPos;
+
 import javax.annotation.Nullable;
 
 public class Class7096 extends Class7092 {

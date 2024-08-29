@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client.util;
 
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
@@ -8,6 +8,7 @@ import com.mojang.datafixers.DataFixUtils;
 import com.mojang.datafixers.types.Type;
 import com.mojang.serialization.DataResult;
 import it.unimi.dsi.fastutil.Hash.Strategy;
+import mapped.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

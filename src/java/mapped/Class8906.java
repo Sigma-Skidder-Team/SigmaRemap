@@ -5,6 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class8906 {

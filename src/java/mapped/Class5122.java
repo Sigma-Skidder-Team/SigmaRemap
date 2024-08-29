@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Set;
 
 public class Class5122 implements Class5119 {

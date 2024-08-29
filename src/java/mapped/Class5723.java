@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class5723 extends Class5715<EnderCrystalEntity> {
    private static final ResourceLocation field25122 = new ResourceLocation("textures/entity/end_crystal/end_crystal.png");
    private static final RenderType field25123 = RenderType.getEntityCutoutNoCull(field25122);

@@ -2,6 +2,9 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.mutable.MutableBoolean;
@@ -393,7 +396,7 @@ public class Class828 extends Screen {
          if (var3) {
             this.field4568.method38801(var1, "_", (float)var2.field27614, (float)var2.field27615, 0);
          } else {
-            Class1193.method5686(var1, var2.field27614, var2.field27615 - 1, var2.field27614 + 1, var2.field27615 + 9, -16777216);
+            AbstractGui.method5686(var1, var2.field27614, var2.field27615 - 1, var2.field27614 + 1, var2.field27615 + 9, -16777216);
          }
       }
    }

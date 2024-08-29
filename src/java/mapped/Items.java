@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public class Items {
    public static final Item field37222 = method30156(Blocks.AIR, new Class3280(Blocks.AIR, new Class5643()));
    public static final Item field37223 = method30154(Blocks.STONE, ItemGroup.field31665);

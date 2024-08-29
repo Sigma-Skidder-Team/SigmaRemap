@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4069 extends Class4057 {
    public Class4069() {
       super(EntityType.field41026, "endermite", 0.3F);

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4072 extends Class4071 {
    public Class4072() {
       super(EntityType.field41079, "skeleton_horse", 0.75F);

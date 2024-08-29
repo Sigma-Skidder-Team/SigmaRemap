@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 import java.util.stream.Collectors;
 
 public class Class9443 {

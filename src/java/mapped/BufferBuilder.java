@@ -12,6 +12,8 @@ import java.nio.IntBuffer;
 import java.util.Arrays;
 import java.util.BitSet;
 import java.util.List;
+
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.opengl.GL11;

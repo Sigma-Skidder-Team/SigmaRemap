@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.common.collect.UnmodifiableIterator;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Map;
 import java.util.Random;

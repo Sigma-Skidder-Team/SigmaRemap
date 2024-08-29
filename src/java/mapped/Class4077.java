@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4077 extends Class4076 {
    public Class4077() {
       super(EntityType.field41013, "cave_spider", 0.7F);

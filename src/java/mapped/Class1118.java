@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.hash.Hashing;
 import com.mojang.authlib.GameProfile;
+import net.minecraft.client.Minecraft;
 
 import javax.annotation.Nullable;
 import java.io.File;

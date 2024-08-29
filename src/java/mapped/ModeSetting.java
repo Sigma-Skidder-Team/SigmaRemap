@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.Class2314;
 import com.mentalfrostbyte.jello.unmapped.Setting;
+import net.minecraft.client.Minecraft;
 import totalcross.json.JSONObject;
 
 import java.util.ArrayList;

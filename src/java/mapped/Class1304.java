@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class1304 extends Class1189 {

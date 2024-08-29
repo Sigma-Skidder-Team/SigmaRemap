@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.Entity;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;

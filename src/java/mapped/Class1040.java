@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
 
 import javax.annotation.Nullable;
 import java.util.UUID;

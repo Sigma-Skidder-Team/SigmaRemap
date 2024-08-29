@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 import java.nio.file.Path;
 
 public class Class4453 extends Class4441<EntityType<?>> {

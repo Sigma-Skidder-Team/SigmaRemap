@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -146,7 +149,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
          this.method6158();
          Tessellator var9 = Tessellator.getInstance();
          BufferBuilder var10 = var9.getBuffer();
-         this.field6870.getTextureManager().bindTexture(Class1193.field6451);
+         this.field6870.getTextureManager().bindTexture(AbstractGui.field6451);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          float var11 = 32.0F;
          var10.begin(7, DefaultVertexFormats.field43346);
@@ -408,7 +411,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    public void method6171(int var1, int var2, int var3, int var4) {
       Tessellator var7 = Tessellator.getInstance();
       BufferBuilder var8 = var7.getBuffer();
-      this.field6870.getTextureManager().bindTexture(Class1193.field6451);
+      this.field6870.getTextureManager().bindTexture(AbstractGui.field6451);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = 32.0F;
       var8.begin(7, DefaultVertexFormats.field43346);

@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.FontRenderer;
 
 import java.util.List;
 import java.util.Random;

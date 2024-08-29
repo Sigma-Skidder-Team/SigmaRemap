@@ -4,6 +4,8 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5362 extends Module {
     public Class5362() {

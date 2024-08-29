@@ -6,6 +6,9 @@ import com.mojang.brigadier.tree.LiteralCommandNode;
 import java.util.Collection;
 import java.util.UUID;
 import java.util.function.Consumer;
+
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.Entity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;

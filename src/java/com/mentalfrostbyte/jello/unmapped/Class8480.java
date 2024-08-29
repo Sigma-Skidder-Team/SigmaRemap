@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import mapped.*;
+import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 public class Class8480 {

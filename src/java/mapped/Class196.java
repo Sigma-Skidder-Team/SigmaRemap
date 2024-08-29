@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class196 implements Class197 {
    private final Class200<?, ?> field741;
    private final Class200<?, ?> field742;

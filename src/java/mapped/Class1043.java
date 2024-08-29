@@ -1,6 +1,9 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
 
 import javax.annotation.Nullable;
 import java.util.Set;

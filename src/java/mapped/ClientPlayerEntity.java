@@ -5,6 +5,10 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4408;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;

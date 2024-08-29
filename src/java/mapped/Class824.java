@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -258,7 +261,7 @@ public class Class824 extends Class798 {
       this.field4562.getTextureManager().bindTexture(field4520);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 7.0F;
-      Class1193.method5699(var1, var2, var3, 0.0F, var9, 8, 7, 8, 14);
+      AbstractGui.method5699(var1, var2, var3, 0.0F, var9, 8, 7, 8, 14);
       if (var8) {
          this.field4526 = field4524;
          this.field4540 = Class2162.field14181;
@@ -270,7 +273,7 @@ public class Class824 extends Class798 {
       this.field4562.getTextureManager().bindTexture(field4518);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 8.0F;
-      Class1193.method5699(var1, var2, var3, 0.0F, var9, 8, 8, 8, 16);
+      AbstractGui.method5699(var1, var2, var3, 0.0F, var9, 8, 8, 8, 16);
       if (var8) {
          this.field4526 = field4523;
          this.field4540 = Class2162.field14180;
@@ -282,7 +285,7 @@ public class Class824 extends Class798 {
       this.field4562.getTextureManager().bindTexture(field4519);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 8.0F;
-      Class1193.method5699(var1, var2, var3, 0.0F, var9, 8, 8, 8, 16);
+      AbstractGui.method5699(var1, var2, var3, 0.0F, var9, 8, 8, 8, 16);
       if (var8) {
          this.field4526 = field4522;
          this.field4540 = Class2162.field14180;

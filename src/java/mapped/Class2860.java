@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
 
 public class Class2860<T extends Entity> extends Class2855<T> {
    public final Class7219 field17722;

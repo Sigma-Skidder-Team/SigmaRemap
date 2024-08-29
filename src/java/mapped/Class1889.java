@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public enum Class1889 implements Class1884 {
    field11051("limb_swing"),
    field11052("limb_speed"),

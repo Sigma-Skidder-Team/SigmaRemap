@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public class Class992 extends AbstractMinecartEntity {
    private static String[] field5478;
    private final Class7574 field5479 = new Class7575(this);

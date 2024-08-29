@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 
 public class Class5279 extends Module {

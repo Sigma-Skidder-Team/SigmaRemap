@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -11,7 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-public class Class1254 extends Class1193 implements Class1190, Class1152, Class1259, Class1253<Class120> {
+public class Class1254 extends AbstractGui implements Class1190, Class1152, Class1259, Class1253<Class120> {
    public static final ResourceLocation field6630 = new ResourceLocation("textures/gui/recipe_book.png");
    private static final ITextComponent field6631 = new TranslationTextComponent("gui.recipebook.search_hint")
       .mergeStyle(TextFormatting.ITALIC)

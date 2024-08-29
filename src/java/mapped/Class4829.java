@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
+
 public class Class4829 {
    private static String[] field22601;
    private final TextureAtlasSprite[] field22602 = new TextureAtlasSprite[2];

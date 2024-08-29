@@ -1,6 +1,8 @@
 package mapped;
 
 import java.io.IOException;
+
+import net.minecraft.entity.Entity;
 import org.apache.commons.lang3.Validate;
 
 public class Class5546 implements Packet<Class5116> {

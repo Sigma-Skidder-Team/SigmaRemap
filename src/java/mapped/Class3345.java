@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.authlib.GameProfile;
 import java.util.UUID;
+
+import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class3345 extends Class3343 {

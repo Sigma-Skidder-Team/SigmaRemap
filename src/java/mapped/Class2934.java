@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
 import java.util.Random;

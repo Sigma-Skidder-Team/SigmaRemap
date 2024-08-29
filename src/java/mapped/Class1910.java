@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public enum Class1910 {
    field11209("biome"),
    field11210("biome_category"),

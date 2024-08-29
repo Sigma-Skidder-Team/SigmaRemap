@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public abstract class Class3232 extends Class3231 {
    public Class3232(AbstractBlock var1) {
       super(var1);

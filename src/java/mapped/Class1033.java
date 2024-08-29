@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.AxisAlignedBB;
+
 public class Class1033 extends Class1031 implements Class1022 {
    private static String[] field5738;
    private int field5739;

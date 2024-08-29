@@ -5,7 +5,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.Class6619;
 import mapped.Class8429;
 import mapped.Class8533;
-import mapped.Entity;
+import net.minecraft.entity.Entity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

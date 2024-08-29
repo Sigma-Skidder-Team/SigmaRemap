@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.command;
 
 import mapped.Class6669;
 import mapped.Class8623;
-import mapped.Minecraft;
+import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.Collections;

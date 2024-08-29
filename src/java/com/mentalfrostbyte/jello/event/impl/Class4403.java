@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 import com.mentalfrostbyte.jello.event.CancellableEvent;
-import mapped.Entity;
+import net.minecraft.entity.Entity;
 
 public class Class4403 extends CancellableEvent {
     private static String[] field21515;

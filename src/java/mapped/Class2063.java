@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public enum Class2063 {
    field13447("this", Class9525.field44330),
    field13448("killer", Class9525.field44333),

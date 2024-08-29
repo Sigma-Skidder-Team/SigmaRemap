@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.client.Minecraft;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.function.IntSupplier;

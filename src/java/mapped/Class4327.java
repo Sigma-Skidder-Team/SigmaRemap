@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.Class4307;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.client.Minecraft;
 
 public class Class4327 extends Class4305 {
    private final Class4240 field21123;

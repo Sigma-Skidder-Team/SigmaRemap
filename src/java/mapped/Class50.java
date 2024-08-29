@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Iterator;
 
 public final class Class50 implements Iterable<BlockPos> {

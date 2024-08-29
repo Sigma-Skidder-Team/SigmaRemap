@@ -4,6 +4,8 @@ import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.UUID;
 import javax.annotation.Nullable;
+
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class7784 {

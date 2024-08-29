@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.AxisAlignedBB;
+
 public class Class6487 extends AxisAlignedBB {
    private static String[] field28446;
    private int field28447 = -1;

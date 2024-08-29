@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import com.mojang.authlib.GameProfile;
 import java.util.ArrayList;
 import java.util.Objects;
+
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;

@@ -1,6 +1,13 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Collections;
 import java.util.Map;
 
@@ -246,7 +253,7 @@ public class EntityRendererManager {
                   }
                }
 
-               if (this.field40022 && !var1.method3342() && !Minecraft.getInstance().isReducedDebug()) {
+               if (this.field40022 && !var1.method3342() && ! Minecraft.getInstance().isReducedDebug()) {
                   this.method32220(var10, var11.method25597(RenderType.method14345()), var1, var9);
                }
 

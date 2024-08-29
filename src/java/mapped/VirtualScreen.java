@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public final class VirtualScreen implements AutoCloseable {
    private static String[] field9259;
    private final Minecraft field9260;

@@ -3,6 +3,9 @@ package mapped;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.CharacterManager;
 import net.minecraft.util.text.TextFormatting;
 

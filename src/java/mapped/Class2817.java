@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
+import net.minecraft.entity.Entity;
+
 import java.util.Random;
 
 public class Class2817<T extends Entity> extends Class2803<T> {

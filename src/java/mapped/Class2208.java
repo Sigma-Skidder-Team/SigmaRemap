@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 public enum Class2208 {
    field14432(
       new Direction[]{Direction.WEST, Direction.EAST, Direction.NORTH, Direction.SOUTH},

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public final class Class212 extends Class200<Class7587, Class210> {

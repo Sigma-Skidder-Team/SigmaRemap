@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;

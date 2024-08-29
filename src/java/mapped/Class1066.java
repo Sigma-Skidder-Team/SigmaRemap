@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.ActionResultType;
+
 public abstract class Class1066 extends AbstractHorseEntity {
    private static final DataParameter<Boolean> field5877 = EntityDataManager.<Boolean>method35441(Class1066.class, Class7784.field33398);
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+
 public final class Class371 extends Thread {
    public Class371(String var1) {
       super(var1);

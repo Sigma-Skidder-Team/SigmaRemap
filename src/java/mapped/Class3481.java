@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class3481 extends Class3480 {
    private static String[] field19333;
    private static final VoxelShape[] field19336 = new VoxelShape[]{

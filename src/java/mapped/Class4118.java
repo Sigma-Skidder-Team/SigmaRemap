@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4118 extends Class4117 {
    public Class4118() {
       super(EntityType.field41006, "armor_stand", 0.0F);

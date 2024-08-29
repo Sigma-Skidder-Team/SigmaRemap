@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.base.MoreObjects;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Random;
 import javax.annotation.Nullable;
 

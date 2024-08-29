@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.entity.Entity;
 
 public class Class4884 extends Class4874<Class4492> {
    private static final ResourceLocation field22718 = new ResourceLocation("thrown_item_picked_up_by_entity");

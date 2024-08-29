@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4139 extends Class4057 {
    public Class4139() {
       super(EntityType.field41049, "magma_cube", 0.5F);

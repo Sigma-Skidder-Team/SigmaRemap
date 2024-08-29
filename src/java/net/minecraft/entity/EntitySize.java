@@ -1,4 +1,7 @@
-package mapped;
+package net.minecraft.entity;
+
+import net.minecraft.util.math.AxisAlignedBB;
+import mapped.Vector3d;
 
 public class EntitySize {
    public final float field39968;

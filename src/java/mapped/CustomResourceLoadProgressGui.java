@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
 import org.lwjgl.opengl.GL11;
 
 import java.util.Optional;

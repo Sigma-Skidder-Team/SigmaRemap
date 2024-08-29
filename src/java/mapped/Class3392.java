@@ -1,6 +1,9 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.util.Util;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Map;
 
 public class Class3392 extends Block {

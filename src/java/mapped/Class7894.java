@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.Entity;
+
 import java.util.Set;
 
 public class Class7894 extends Class7882<Class880> {

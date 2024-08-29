@@ -24,6 +24,8 @@ import java.util.Date;
 import java.util.Map;
 import java.util.UUID;
 import javax.annotation.Nullable;
+
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 

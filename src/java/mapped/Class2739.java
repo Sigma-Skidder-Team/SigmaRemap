@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.stream.Collectors;

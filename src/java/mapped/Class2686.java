@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.EnumSet;
 import java.util.List;

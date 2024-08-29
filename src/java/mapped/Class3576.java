@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 import java.util.Comparator;
 
 public final class Class3576 implements Comparator<Entity> {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public abstract class Class2858<E extends Entity> extends Class2855<E> {
    private float field17708 = 1.0F;
    private float field17709 = 1.0F;

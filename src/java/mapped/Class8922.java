@@ -5,6 +5,8 @@ import java.util.EnumSet;
 import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.Set;
+
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5162 extends Module {
     private int field23428;

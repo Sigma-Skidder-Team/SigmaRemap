@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

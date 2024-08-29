@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
+
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.EntityType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

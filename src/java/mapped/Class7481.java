@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 

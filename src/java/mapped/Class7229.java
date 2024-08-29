@@ -4,6 +4,9 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import java.util.Map;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -40,8 +43,8 @@ public class Class7229 implements Class7222 {
    public void method22699(MatrixStack var1, float var2, int var3) {
       Minecraft.getInstance().getTextureManager().bindTexture(this.field31071);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, (float)var3 / 255.0F);
-      Class1193.method5698(var1, 2, 2, 12, 12, 8.0F, 8.0F, 8, 8, 64, 64);
-      Class1193.method5698(var1, 2, 2, 12, 12, 40.0F, 8.0F, 8, 8, 64, 64);
+      AbstractGui.method5698(var1, 2, 2, 12, 12, 8.0F, 8.0F, 8, 8, 64, 64);
+      AbstractGui.method5698(var1, 2, 2, 12, 12, 40.0F, 8.0F, 8, 8, 64, 64);
    }
 
    @Override

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+
 public abstract class Class893 extends Class882 {
    public Class893(EntityType<? extends Class893> var1, World var2) {
       super(var1, var2);

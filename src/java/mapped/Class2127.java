@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public enum Class2127 {
    field13877(EntityType.field41099, new int[]{0, 0, 2, 0, 1, 4, 2, 5}),
    field13878(EntityType.field41027, new int[]{0, 0, 0, 0, 0, 1, 1, 2}),

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class6804<T> implements Class6802<T> {
    private static final Class6804<Object> field29618 = new Class6804<Object>();
 

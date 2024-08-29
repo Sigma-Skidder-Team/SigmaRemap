@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class EntityRayTraceResult extends RayTraceResult {
    private static String[] field39314;
    private final Entity field39315;

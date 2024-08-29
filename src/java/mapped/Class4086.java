@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4086 extends Class4057 {
    public Class4086() {
       super(EntityType.field41076, "shulker_bullet", 0.0F);

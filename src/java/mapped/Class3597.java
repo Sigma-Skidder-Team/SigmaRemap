@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.Module;
+import net.minecraft.entity.Entity;
 
 import java.util.Comparator;
 

@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import net.minecraft.client.util.Util;
+
 import java.util.ArrayList;
 import java.util.Map;
 

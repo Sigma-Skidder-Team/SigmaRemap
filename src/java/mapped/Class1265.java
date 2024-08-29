@@ -2,6 +2,10 @@ package mapped;
 
 import com.google.common.collect.Ordering;
 import com.mojang.authlib.GameProfile;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.IngameGui;
+import net.minecraft.client.util.Util;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -9,7 +13,7 @@ import net.minecraft.util.text.TextFormatting;
 
 import java.util.List;
 
-public class Class1265 extends Class1193 {
+public class Class1265 extends AbstractGui {
    private static final Ordering<Class6589> field6691 = Ordering.from(new Class3590());
    private final Minecraft field6692;
    private final IngameGui field6693;
@@ -133,11 +137,11 @@ public class Class1265 extends Class1193 {
                this.field6692.getTextureManager().bindTexture(var28.method19973());
                int var32 = 8 + (!var31 ? 0 : 8);
                int var33 = 8 * (!var31 ? 1 : -1);
-               Class1193.method5698(var1, var26, var27, 8, 8, 8.0F, (float)var32, 8, var33, 64, 64);
+               AbstractGui.method5698(var1, var26, var27, 8, 8, 8.0F, (float)var32, 8, var33, 64, 64);
                if (var30 != null && var30.method2962(Class2318.field15885)) {
                   int var34 = 8 + (!var31 ? 0 : 8);
                   int var35 = 8 * (!var31 ? 1 : -1);
-                  Class1193.method5698(var1, var26, var27, 8, 8, 40.0F, (float)var34, 8, var35, 64, 64);
+                  AbstractGui.method5698(var1, var26, var27, 8, 8, 40.0F, (float)var34, 8, var35, 64, 64);
                }
 
                var26 += 9;

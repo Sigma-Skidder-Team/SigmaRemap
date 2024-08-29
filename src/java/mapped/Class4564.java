@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.cache.CacheLoader;
+import net.minecraft.util.math.BlockPos;
 
 public class Class4564 extends CacheLoader<BlockPos, Class9632> {
    private static String[] field21999;

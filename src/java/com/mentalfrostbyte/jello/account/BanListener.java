@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import mapped.*;
+import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.Arrays;

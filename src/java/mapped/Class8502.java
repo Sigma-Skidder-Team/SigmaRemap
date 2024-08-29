@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class8502 {
    private static String[] field37181;
    private final Vector3d field37182;

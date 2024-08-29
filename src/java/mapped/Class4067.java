@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 import java.util.Iterator;
 
 public class Class4067 extends Class4057 {

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.util.Util;
+import net.minecraft.entity.EntityType;
+
 import javax.annotation.Nullable;
 
 public class Class1052 extends Class1050 {

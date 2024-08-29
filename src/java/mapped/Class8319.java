@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.event.impl.Class4426;
 import com.mentalfrostbyte.jello.gui.GuiManager;
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 

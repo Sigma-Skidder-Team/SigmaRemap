@@ -7,6 +7,8 @@ import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
 import java.util.Collections;

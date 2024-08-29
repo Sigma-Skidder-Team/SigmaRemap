@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.EntityType;
+
 public class Class885 extends AbstractArrowEntity {
    private int field5110 = 200;
 

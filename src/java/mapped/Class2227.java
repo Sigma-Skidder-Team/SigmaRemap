@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public enum Class2227 {
    field14567(Direction.DOWN),
    field14568(Direction.field673),

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+
 public interface Class1681 {
    boolean setBlockState(BlockPos var1, BlockState var2, int var3, int var4);
 

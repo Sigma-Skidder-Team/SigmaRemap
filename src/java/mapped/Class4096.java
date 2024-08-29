@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
+
 public class Class4096 extends Class4057 {
    public Class4096() {
       super(EntityType.field41105, "wolf", 0.5F);

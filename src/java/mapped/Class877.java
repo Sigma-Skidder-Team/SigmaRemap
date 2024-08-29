@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class877 implements Class876 {
    private static String[] field4852;
    private final Minecraft field4853;

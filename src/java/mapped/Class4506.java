@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.Minecraft;
+
 public class Class4506 extends Class4505 {
    public Class4506(boolean var1) {
       super("lightmap", () -> {

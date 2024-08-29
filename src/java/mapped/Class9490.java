@@ -9,6 +9,8 @@ import com.mojang.serialization.RecordBuilder;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.stream.Stream;
+
+import net.minecraft.client.util.Util;
 import org.apache.commons.lang3.mutable.MutableObject;
 
 public final class Class9490<E extends Class880> extends MapCodec<Class6947<E>> {

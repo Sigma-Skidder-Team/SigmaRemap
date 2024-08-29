@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.entity;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -8,6 +8,11 @@ import com.mentalfrostbyte.jello.event.impl.Class4432;
 import com.mentalfrostbyte.jello.event.impl.Class4434;
 import it.unimi.dsi.fastutil.objects.Object2DoubleArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2DoubleMap;
+import mapped.*;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;

@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
 
 import java.util.ArrayList;
 import java.util.Collections;

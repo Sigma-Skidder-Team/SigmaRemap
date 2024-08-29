@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+
 public class Class2755 extends Class2754 {
    private static String[] field17294;
    public final Class1095 field17295;

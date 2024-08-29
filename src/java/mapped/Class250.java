@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+
 public class Class250<T extends PlayerEntity> extends Class219<T, Class2894<T>> {
    private final Class2814 field907 = new Class2814();
 

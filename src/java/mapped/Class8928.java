@@ -1,6 +1,9 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.Util;
+
 import java.util.Map;
 
 public class Class8928 {

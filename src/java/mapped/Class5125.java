@@ -3,6 +3,9 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
