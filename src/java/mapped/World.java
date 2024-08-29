@@ -52,7 +52,17 @@ public abstract class World implements Class1660, AutoCloseable {
       if (dimensionType.getCoordinateScale() == 1.0) {
          this.worldBorder = new WorldBorder();
       } else {
-         this.worldBorder = new WorldBorder1(this, dimensionType);
+         this.worldBorder = new WorldBorder()
+         {
+            public double getCenterX()
+            {
+               return super.getCenterX() / dimensionType.getCoordinateScale();
+            }
+            public double getCenterZ()
+            {
+               return super.getCenterZ() / dimensionType.getCoordinateScale();
+            }
+         };
       }
 
       this.mainThread = Thread.currentThread();
