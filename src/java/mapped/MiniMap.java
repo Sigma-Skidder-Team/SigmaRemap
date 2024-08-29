@@ -73,7 +73,7 @@ public class MiniMap extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         this.field23716.clear();
     }
 
@@ -81,11 +81,11 @@ public class MiniMap extends Module {
     private void method16500(TickEvent var1) {
         if (this.isEnabled() && mc.player != null && mc.world != null) {
             this.field23707++;
-            if ((double) field23708 < mc.player.getPosY() && mc.player.field5036) {
+            if ((double) field23708 < mc.player.getPosY() && mc.player.onGround) {
                 field23708 += 0.5F;
             }
 
-            if ((double) field23708 > mc.player.getPosY() && mc.player.field5036) {
+            if ((double) field23708 > mc.player.getPosY() && mc.player.onGround) {
                 field23708 -= 0.5F;
             }
 
@@ -94,7 +94,7 @@ public class MiniMap extends Module {
 
                 for (int var5 = -this.field23715 / 2; var5 < this.field23715 / 2; var5++) {
                     for (int var6 = -this.field23715 / 2; var6 < this.field23715 / 2; var6++) {
-                        var4.add(mc.world.method6824(mc.player.field5072 + var5, mc.player.field5074 + var6));
+                        var4.add(mc.world.method6824(mc.player.chunkCoordX + var5, mc.player.chunkCoordZ + var6));
                     }
                 }
 
@@ -102,7 +102,7 @@ public class MiniMap extends Module {
 
                 while (var11.hasNext()) {
                     Class8444 var12 = (Class8444) var11.next();
-                    int var7 = var12.field36184.method7072().method24365(new Class7481(mc.player.field5072, mc.player.field5074));
+                    int var7 = var12.field36184.method7072().method24365(new Class7481(mc.player.chunkCoordX, mc.player.chunkCoordZ));
                     if (var7 > 7) {
                         var11.remove();
                     }
@@ -132,8 +132,8 @@ public class MiniMap extends Module {
                     var16.method29696();
                 }
 
-                this.field23717 = (mc.player.getPosX() - (double) (mc.player.field5072 * 16)) / 16.0;
-                this.field23718 = (mc.player.getPosZ() - (double) (mc.player.field5074 * 16)) / 16.0;
+                this.field23717 = (mc.player.getPosX() - (double) (mc.player.chunkCoordX * 16)) / 16.0;
+                this.field23718 = (mc.player.getPosZ() - (double) (mc.player.chunkCoordZ * 16)) / 16.0;
                 this.field23704 = this.method16502(this.field23706);
                 this.field23714 = mc.player.getPosition();
                 this.field23707 = 0;
@@ -154,22 +154,22 @@ public class MiniMap extends Module {
                             String var5 = "^";
                             ClientResource var6 = ResourceRegistry.JelloMediumFont20;
                             float var7 = 1.5F;
-                            Class3192.method11424((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, -7687425);
+                            RenderUtil.method11424((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, -7687425);
                             GL11.glPushMatrix();
                             float var8 = (float) (this.field23710 / this.field23715);
                             float var9 = (float) ((double) (var8 * var7) * this.field23718);
                             float var10 = (float) ((double) (-var8 * var7) * this.field23717);
                             GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2), (float) (this.field23712 + this.field23709 / 2), 0.0F);
-                            GL11.glRotatef(90.0F - mc.player.field5031, 0.0F, 0.0F, 1.0F);
+                            GL11.glRotatef(90.0F - mc.player.rotationYaw, 0.0F, 0.0F, 1.0F);
                             GL11.glTranslatef((float) (-this.field23710 / 2), (float) (-this.field23709 / 2), 0.0F);
                             float var11 = (float) this.field23710 * var7;
                             float var12 = (float) this.field23709 * var7;
-                            Class3192.method11420(this.field23711, this.field23712, this.field23711 + this.field23710, this.field23712 + this.field23709);
-                            Class3192.method11455(0.0F, 0.0F, 0.0F, 0.0F, ResourcesDecrypter.shoutIconPNG);
+                            RenderUtil.method11420(this.field23711, this.field23712, this.field23711 + this.field23710, this.field23712 + this.field23709);
+                            RenderUtil.method11455(0.0F, 0.0F, 0.0F, 0.0F, ResourcesDecrypter.shoutIconPNG);
                             float var13 = -var11 / 2.0F + (float) (this.field23710 / 2) + var9;
                             float var14 = -var12 / 2.0F + (float) (this.field23709 / 2) + var10;
-                            Class3192.method11455(0.0F, 0.0F, 0.0F, 0.0F, ResourcesDecrypter.gingerbreadIconPNG);
-                            Class3192.method11453(
+                            RenderUtil.method11455(0.0F, 0.0F, 0.0F, 0.0F, ResourcesDecrypter.gingerbreadIconPNG);
+                            RenderUtil.method11453(
                                     var13,
                                     var14,
                                     var11,
@@ -183,22 +183,22 @@ public class MiniMap extends Module {
                                     true,
                                     false
                             );
-                            Class3192.method11422();
+                            RenderUtil.method11422();
                             GL11.glPopMatrix();
                             GL11.glPushMatrix();
                             int var15 = (int) Class9567.method37083()[0];
                             GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2 + 1), (float) (this.field23712 + this.field23709 / 2 + 3), 0.0F);
-                            GL11.glRotatef((float) (270 + var15) - mc.player.field5031, 0.0F, 0.0F, 1.0F);
+                            GL11.glRotatef((float) (270 + var15) - mc.player.rotationYaw, 0.0F, 0.0F, 1.0F);
                             GL11.glTranslatef((float) (-(this.field23711 + this.field23710 / 2 + 1)), (float) (-(this.field23712 + this.field23709 / 2)), 0.0F);
-                            Class3192.method11439(
+                            RenderUtil.method11439(
                                     var6, (float) (this.field23711 + this.field23710 / 2 - 4), (float) (this.field23712 + this.field23709 / 2 - 8), var5, 1879048192
                             );
                             GL11.glPopMatrix();
                             GL11.glPushMatrix();
                             GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2 + 1), (float) (this.field23712 + this.field23709 / 2), 0.0F);
-                            GL11.glRotatef((float) (270 + var15) - mc.player.field5031, 0.0F, 0.0F, 1.0F);
+                            GL11.glRotatef((float) (270 + var15) - mc.player.rotationYaw, 0.0F, 0.0F, 1.0F);
                             GL11.glTranslatef((float) (-(this.field23711 + this.field23710 / 2 + 1)), (float) (-(this.field23712 + this.field23709 / 2)), 0.0F);
-                            Class3192.method11439(
+                            RenderUtil.method11439(
                                     var6,
                                     (float) (this.field23711 + this.field23710 / 2 - 4),
                                     (float) (this.field23712 + this.field23709 / 2 - 8),
@@ -206,8 +206,8 @@ public class MiniMap extends Module {
                                     ClientColors.LIGHT_GREYISH_BLUE.getColor
                             );
                             GL11.glPopMatrix();
-                            Class3192.method11464((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 23.0F, 0.75F);
-                            Class3192.method11463((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 8.0F, 0.7F);
+                            RenderUtil.method11464((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 23.0F, 0.75F);
+                            RenderUtil.method11463((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 8.0F, 0.7F);
                         }
 
                         var1.method13962(this.field23709 + 10);
@@ -222,7 +222,7 @@ public class MiniMap extends Module {
 
         for (int var5 = -this.field23715 / 2; var5 < this.field23715 / 2; var5++) {
             for (int var6 = -this.field23715 / 2; var6 < this.field23715 / 2; var6++) {
-                var4.add(mc.world.method6824(mc.player.field5072 + var5, mc.player.field5074 + var6));
+                var4.add(mc.world.method6824(mc.player.chunkCoordX + var5, mc.player.chunkCoordZ + var6));
             }
         }
 

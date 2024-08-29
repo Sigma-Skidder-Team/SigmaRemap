@@ -12,11 +12,11 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    public static final Class8553 field18865 = Class3198.field18484;
    public static final Class8552<Class111> field18866 = Class8820.field39765;
    public static final Class8551 field18867 = Class8820.field39710;
-   public static final Class6408 field18868 = Block.method11539(1.0, 0.0, 0.0, 15.0, 14.0, 15.0);
-   public static final Class6408 field18869 = Block.method11539(1.0, 0.0, 1.0, 15.0, 14.0, 16.0);
-   public static final Class6408 field18870 = Block.method11539(0.0, 0.0, 1.0, 15.0, 14.0, 15.0);
-   public static final Class6408 field18871 = Block.method11539(1.0, 0.0, 1.0, 16.0, 14.0, 15.0);
-   public static final Class6408 field18872 = Block.method11539(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
+   public static final VoxelShape field18868 = Block.method11539(1.0, 0.0, 0.0, 15.0, 14.0, 15.0);
+   public static final VoxelShape field18869 = Block.method11539(1.0, 0.0, 1.0, 15.0, 14.0, 16.0);
+   public static final VoxelShape field18870 = Block.method11539(0.0, 0.0, 1.0, 15.0, 14.0, 15.0);
+   public static final VoxelShape field18871 = Block.method11539(1.0, 0.0, 1.0, 16.0, 14.0, 15.0);
+   public static final VoxelShape field18872 = Block.method11539(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
    private static final Class6139<Class941, Optional<Class920>> field18873 = new Class6140();
    private static final Class6139<Class941, Optional<Class949>> field18874 = new Class6142();
 
@@ -67,7 +67,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       if (var1.<Class111>method23463(field18866) == Class111.field379) {
          return field18872;
       } else {
@@ -219,7 +219,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    private static boolean method11915(Class1660 var0, BlockPos var1) {
       List<Class1098> var4 = var0.method7182(
          Class1098.class,
-         new Class6488(
+         new AxisAlignedBB(
             (double)var1.getX(),
             (double)(var1.getY() + 1),
             (double)var1.getZ(),

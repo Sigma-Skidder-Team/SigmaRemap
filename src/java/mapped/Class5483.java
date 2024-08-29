@@ -17,8 +17,8 @@ public class Class5483 implements Packet<IServerPlayNetHandler> {
       this.field24346 = var1.getPosX();
       this.field24347 = var1.getPosY();
       this.field24348 = var1.getPosZ();
-      this.field24349 = var1.field5031;
-      this.field24350 = var1.field5032;
+      this.field24349 = var1.rotationYaw;
+      this.field24350 = var1.rotationPitch;
    }
 
    @Override

@@ -11,8 +11,8 @@ public class Class3592 implements Comparator<Entity> {
    }
 
    public int compare(Entity var1, Entity var2) {
-      float var5 = Class9142.method34143(Class9142.method34147(var1).field32084, Class5282.method16574().player.field5031);
-      float var6 = Class9142.method34143(Class9142.method34147(var2).field32084, Class5282.method16575().player.field5031);
+      float var5 = Class9142.method34143(Class9142.method34147(var1).field32084, Class5282.method16574().player.rotationYaw);
+      float var6 = Class9142.method34143(Class9142.method34147(var2).field32084, Class5282.method16575().player.rotationYaw);
       if (!(var5 - var6 < 0.0F)) {
          if (var5 - var6 != 0.0F) {
             return 1;

@@ -13,7 +13,7 @@ public class Class8183 implements Class8184 {
    }
 
    @Override
-   public <T> boolean method28480(Function<ResourceLocation, Class7608<T>> var1, Function<ResourceLocation, T> var2, Consumer<T> var3) {
+   public <T> boolean method28480(Function<ResourceLocation, ITag<T>> var1, Function<ResourceLocation, T> var2, Consumer<T> var3) {
       T var6 = var2.apply(this.field35201);
       if (var6 != null) {
          var3.accept(var6);

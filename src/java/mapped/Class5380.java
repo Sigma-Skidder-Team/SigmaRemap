@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -22,8 +22,8 @@ public class Class5380 extends Module {
     @EventTarget
     public void method16943(Class4435 var1) {
         if (this.isEnabled()) {
-            if (mc.player.field5036
-                    && mc.player.field5038
+            if (mc.player.onGround
+                    && mc.player.collidedVertically
                     && (mc.player.field4984 != 0.0F || mc.player.field4982 != 0.0F)
                     && this.getBooleanValueFromSetttingName("AutoJump")) {
                 mc.player.method2914();
@@ -56,7 +56,7 @@ public class Class5380 extends Module {
                 this.field24014 = Math.min(1.0F, this.field24014 + 0.1F);
             }
 
-            if (mc.player.field5036 && !this.field24013) {
+            if (mc.player.onGround && !this.field24013) {
                 this.field24011 = 0.0F;
                 this.field24012 = 0.0F;
                 this.field24014 = Math.min(1.0F, this.field24014 + 0.33F);
@@ -67,10 +67,10 @@ public class Class5380 extends Module {
     }
 
     @EventTarget
-    private void method16944(Class4396 var1) {
+    private void method16944(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (mc.player != null && var1.method13898() instanceof Class5590) {
-                Class5590 var4 = (Class5590) var1.method13898();
+            if (mc.player != null && var1.getPacket() instanceof Class5590) {
+                Class5590 var4 = (Class5590) var1.getPacket();
                 if (var4.method17565() == mc.player.method3205()) {
                     this.field24011 = this.field24011 + (float) var4.field24801 / 8000.0F;
                     this.field24012 = this.field24012 + (float) var4.field24803 / 8000.0F;

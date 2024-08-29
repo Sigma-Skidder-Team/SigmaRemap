@@ -25,7 +25,7 @@ public final class Class8934 implements Class8933 {
    }
 
    @Override
-   public Class7984<Class7631> method32659() {
+   public Class7984<Fluid> method32659() {
       return this.field40422;
    }
 

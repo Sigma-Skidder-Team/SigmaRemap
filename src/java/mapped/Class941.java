@@ -97,7 +97,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
 
       for (PlayerEntity var10 : var0.<PlayerEntity>method7182(
          PlayerEntity.class,
-         new Class6488(
+         new AxisAlignedBB(
             (double)((float)var2 - 5.0F),
             (double)((float)var3 - 5.0F),
             (double)((float)var4 - 5.0F),

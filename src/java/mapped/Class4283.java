@@ -47,7 +47,7 @@ public class Class4283 extends Class4278 {
       GL11.glRotated(1.0 * Math.abs(var4 * var6), var6, var4, 0.0);
       GL11.glTranslatef((float)(-this.field20895 - this.field20897 / 2), (float)(-this.field20896 - this.field20898 / 2), 0.0F);
       GL11.glDisable(2929);
-      Class3192.method11424((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, ClientColors.PALE_YELLOW.getColor);
+      RenderUtil.method11424((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, ClientColors.PALE_YELLOW.getColor);
       GL11.glPopMatrix();
       super.method13027(var1);
    }

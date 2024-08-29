@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class PlayerInventory implements Class920, Class933 {
+public class PlayerInventory implements Class920, INameable {
    public final NonNullList<ItemStack> field5439 = NonNullList.<ItemStack>method68(36, ItemStack.EMPTY);
    public final NonNullList<ItemStack> field5440 = NonNullList.<ItemStack>method68(4, ItemStack.EMPTY);
    public final NonNullList<ItemStack> field5441 = NonNullList.<ItemStack>method68(1, ItemStack.EMPTY);
@@ -525,7 +525,7 @@ public class PlayerInventory implements Class920, Class933 {
 
    @Override
    public boolean method3623(PlayerEntity var1) {
-      return !this.field5444.field5041 ? !(var1.getDistanceSq(this.field5444) > 64.0) : false;
+      return !this.field5444.removed ? !(var1.getDistanceSq(this.field5444) > 64.0) : false;
    }
 
    public boolean method4058(ItemStack var1) {
@@ -540,7 +540,7 @@ public class PlayerInventory implements Class920, Class933 {
       return false;
    }
 
-   public boolean method4059(Class7608<Item> var1) {
+   public boolean method4059(ITag<Item> var1) {
       for (NonNullList<ItemStack> var5 : this.field5442) {
          for (ItemStack var7 : var5) {
             if (!var7.isEmpty() && var1.method24917(var7.getItem())) {

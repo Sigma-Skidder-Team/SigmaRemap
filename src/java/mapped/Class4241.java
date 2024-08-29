@@ -25,7 +25,7 @@ public class Class4241 extends Class4240 {
       this.method13277(1.0F + this.field20589.calcPercent());
       this.method13278(1.0F + this.field20589.calcPercent());
       this.method13224();
-      Class3192.method11439(
+      RenderUtil.method11439(
          this.method13305(), (float)this.method13263(), (float)this.method13265(), "" + this.field20589.calcPercent(), ClientColors.DEEP_TEAL.getColor
       );
       GL11.glPushMatrix();

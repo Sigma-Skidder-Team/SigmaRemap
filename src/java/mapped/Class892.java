@@ -27,9 +27,9 @@ public class Class892 extends Class890 {
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),
-                  ((double)this.field5054.nextFloat() - 0.5) * 0.08,
-                  ((double)this.field5054.nextFloat() - 0.5) * 0.08,
-                  ((double)this.field5054.nextFloat() - 0.5) * 0.08
+                  ((double)this.rand.nextFloat() - 0.5) * 0.08,
+                  ((double)this.rand.nextFloat() - 0.5) * 0.08,
+                  ((double)this.rand.nextFloat() - 0.5) * 0.08
                );
          }
       }
@@ -45,16 +45,16 @@ public class Class892 extends Class890 {
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
       if (!this.world.field9020) {
-         if (this.field5054.nextInt(8) == 0) {
+         if (this.rand.nextInt(8) == 0) {
             byte var4 = 1;
-            if (this.field5054.nextInt(32) == 0) {
+            if (this.rand.nextInt(32) == 0) {
                var4 = 4;
             }
 
             for (int var5 = 0; var5 < var4; var5++) {
                Class1089 var6 = EntityType.field41014.method33215(this.world);
                var6.method4770(-24000);
-               var6.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.field5031, 0.0F);
+               var6.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
                this.world.method6916(var6);
             }
          }

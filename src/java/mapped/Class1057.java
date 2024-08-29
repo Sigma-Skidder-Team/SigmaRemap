@@ -9,10 +9,10 @@ import java.util.UUID;
 public class Class1057 extends Class1056 implements Class1008 {
    private static final UUID field5839 = UUID.fromString("7E0292F2-9434-48D5-A29F-9583AF7DF27F");
    private static final Class9689 field5840 = new Class9689(field5839, "Covered armor bonus", 20.0, Class2045.field13352);
-   public static final Class9289<Direction> field5841 = Class9361.<Direction>method35441(Class1057.class, Class7784.field33403);
-   public static final Class9289<Optional<BlockPos>> field5842 = Class9361.<Optional<BlockPos>>method35441(Class1057.class, Class7784.field33402);
-   public static final Class9289<Byte> field5843 = Class9361.<Byte>method35441(Class1057.class, Class7784.field33390);
-   public static final Class9289<Byte> field5844 = Class9361.<Byte>method35441(Class1057.class, Class7784.field33390);
+   public static final DataParameter<Direction> field5841 = EntityDataManager.<Direction>method35441(Class1057.class, Class7784.field33403);
+   public static final DataParameter<Optional<BlockPos>> field5842 = EntityDataManager.<Optional<BlockPos>>method35441(Class1057.class, Class7784.field33402);
+   public static final DataParameter<Byte> field5843 = EntityDataManager.<Byte>method35441(Class1057.class, Class7784.field33390);
+   public static final DataParameter<Byte> field5844 = EntityDataManager.<Byte>method35441(Class1057.class, Class7784.field33390);
    private float field5845;
    private float field5846;
    private BlockPos field5847 = null;
@@ -67,12 +67,12 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5841, Direction.DOWN);
-      this.field5063.method35442(field5842, Optional.<BlockPos>empty());
-      this.field5063.method35442(field5843, (byte)0);
-      this.field5063.method35442(field5844, (byte)16);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5841, Direction.DOWN);
+      this.dataManager.register(field5842, Optional.<BlockPos>empty());
+      this.dataManager.register(field5843, (byte)0);
+      this.dataManager.register(field5844, (byte)16);
    }
 
    public static Class7037 method4843() {
@@ -87,25 +87,25 @@ public class Class1057 extends Class1056 implements Class1008 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.field5063.method35446(field5841, Direction.method546(var1.method120("AttachFace")));
-      this.field5063.method35446(field5843, var1.method120("Peek"));
-      this.field5063.method35446(field5844, var1.method120("Color"));
+      this.dataManager.method35446(field5841, Direction.method546(var1.method120("AttachFace")));
+      this.dataManager.method35446(field5843, var1.method120("Peek"));
+      this.dataManager.method35446(field5844, var1.method120("Color"));
       if (!var1.contains("APX")) {
-         this.field5063.method35446(field5842, Optional.<BlockPos>empty());
+         this.dataManager.method35446(field5842, Optional.<BlockPos>empty());
       } else {
          int var4 = var1.method122("APX");
          int var5 = var1.method122("APY");
          int var6 = var1.method122("APZ");
-         this.field5063.method35446(field5842, Optional.<BlockPos>of(new BlockPos(var4, var5, var6)));
+         this.dataManager.method35446(field5842, Optional.<BlockPos>of(new BlockPos(var4, var5, var6)));
       }
    }
 
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method100("AttachFace", (byte)this.field5063.<Direction>method35445(field5841).method533());
-      var1.method100("Peek", this.field5063.<Byte>method35445(field5843));
-      var1.method100("Color", this.field5063.<Byte>method35445(field5844));
+      var1.method100("AttachFace", (byte)this.dataManager.<Direction>method35445(field5841).method533());
+      var1.method100("Peek", this.dataManager.<Byte>method35445(field5843));
+      var1.method100("Color", this.dataManager.<Byte>method35445(field5844));
       BlockPos var4 = this.method4849();
       if (var4 != null) {
          var1.method102("APX", var4.getX());
@@ -117,13 +117,13 @@ public class Class1057 extends Class1056 implements Class1008 {
    @Override
    public void tick() {
       super.tick();
-      BlockPos var3 = this.field5063.<Optional<BlockPos>>method35445(field5842).orElse((BlockPos)null);
+      BlockPos var3 = this.dataManager.<Optional<BlockPos>>method35445(field5842).orElse((BlockPos)null);
       if (var3 == null && !this.world.field9020) {
          var3 = this.getPosition();
-         this.field5063.method35446(field5842, Optional.<BlockPos>of(var3));
+         this.dataManager.method35446(field5842, Optional.<BlockPos>of(var3));
       }
 
-      if (!this.method3328()) {
+      if (!this.isPassenger()) {
          if (!this.world.field9020) {
             BlockState var4 = this.world.getBlockState(var3);
             if (!var4.isAir()) {
@@ -136,7 +136,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                         this.method4846();
                      } else {
                         var3 = var3.method8349(var5);
-                        this.field5063.method35446(field5842, Optional.<BlockPos>of(var3));
+                        this.dataManager.method35446(field5842, Optional.<BlockPos>of(var3));
                      }
                   }
                } else {
@@ -145,7 +145,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                      this.method4846();
                   } else {
                      var3 = var3.method8349(var19);
-                     this.field5063.method35446(field5842, Optional.<BlockPos>of(var3));
+                     this.dataManager.method35446(field5842, Optional.<BlockPos>of(var3));
                   }
                }
             }
@@ -156,14 +156,14 @@ public class Class1057 extends Class1056 implements Class1008 {
                if (var6 == null) {
                   this.method4846();
                } else {
-                  this.field5063.method35446(field5841, var6);
+                  this.dataManager.method35446(field5841, var6);
                }
             }
          }
       } else {
          var3 = null;
-         float var17 = this.getRidingEntity().field5031;
-         this.field5031 = var17;
+         float var17 = this.getRidingEntity().rotationYaw;
+         this.rotationYaw = var17;
          this.field4965 = var17;
          this.field4966 = var17;
          this.field5848 = 0;
@@ -193,7 +193,7 @@ public class Class1057 extends Class1056 implements Class1008 {
          double var9 = 0.5 - (double) MathHelper.sin((0.5F + this.field5845) * (float) Math.PI) * 0.5;
          Direction var11 = this.method4848().method536();
          this.method3391(
-            new Class6488(
+            new AxisAlignedBB(
                   this.getPosX() - 0.5,
                   this.getPosY(),
                   this.getPosZ() - 0.5,
@@ -205,10 +205,10 @@ public class Class1057 extends Class1056 implements Class1008 {
          );
          double var12 = var7 - var9;
          if (var12 > 0.0) {
-            List<Entity> var14 = this.world.method7181(this, this.method3389());
+            List<Entity> var14 = this.world.method7181(this, this.getBoundingBox());
             if (!var14.isEmpty()) {
                for (Entity var16 : var14) {
-                  if (!(var16 instanceof Class1057) && !var16.field5052) {
+                  if (!(var16 instanceof Class1057) && !var16.noClip) {
                      var16.move(
                         Class2107.field13746,
                         new Vector3d(var12 * (double)var11.method539(), var12 * (double)var11.method540(), var12 * (double)var11.method541())
@@ -230,15 +230,15 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public void method3215(double var1, double var3, double var5) {
-      super.method3215(var1, var3, var5);
-      if (this.field5063 != null && this.field5055 != 0) {
-         Optional var9 = this.field5063.method35445(field5842);
+   public void setPosition(double var1, double var3, double var5) {
+      super.setPosition(var1, var3, var5);
+      if (this.dataManager != null && this.ticksExisted != 0) {
+         Optional var9 = this.dataManager.method35445(field5842);
          Optional var10 = Optional.<BlockPos>of(new BlockPos(var1, var3, var5));
          if (!var10.equals(var9)) {
-            this.field5063.method35446(field5842, var10);
-            this.field5063.method35446(field5843, (byte)0);
-            this.field5078 = true;
+            this.dataManager.method35446(field5842, var10);
+            this.dataManager.method35446(field5843, (byte)0);
+            this.isAirBorne = true;
          }
       }
    }
@@ -264,17 +264,17 @@ public class Class1057 extends Class1056 implements Class1008 {
          BlockPos var3 = this.getPosition();
 
          for (int var4 = 0; var4 < 5; var4++) {
-            BlockPos var5 = var3.method8336(8 - this.field5054.nextInt(17), 8 - this.field5054.nextInt(17), 8 - this.field5054.nextInt(17));
+            BlockPos var5 = var3.method8336(8 - this.rand.nextInt(17), 8 - this.rand.nextInt(17), 8 - this.rand.nextInt(17));
             if (var5.getY() > 0
                && this.world.method7007(var5)
                && this.world.method6810().method24523(var5)
-               && this.world.method7053(this, new Class6488(var5))) {
+               && this.world.method7053(this, new AxisAlignedBB(var5))) {
                Direction var6 = this.method4844(var5);
                if (var6 != null) {
-                  this.field5063.method35446(field5841, var6);
+                  this.dataManager.method35446(field5841, var6);
                   this.method2863(Sounds.field27054, 1.0F, 1.0F);
-                  this.field5063.method35446(field5842, Optional.<BlockPos>of(var5));
-                  this.field5063.method35446(field5843, (byte)0);
+                  this.dataManager.method35446(field5842, Optional.<BlockPos>of(var5));
+                  this.dataManager.method35446(field5843, (byte)0);
                   this.method4233((Class880)null);
                   return true;
                }
@@ -290,7 +290,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    @Override
    public void method2871() {
       super.method2871();
-      this.method3434(Vector3d.field18047);
+      this.method3434(Vector3d.ZERO);
       if (!this.method4305()) {
          this.field4966 = 0.0F;
          this.field4965 = 0.0F;
@@ -298,8 +298,8 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
-      if (field5842.equals(var1) && this.world.field9020 && !this.method3328()) {
+   public void method3155(DataParameter<?> var1) {
+      if (field5842.equals(var1) && this.world.field9020 && !this.isPassenger()) {
          BlockPos var4 = this.method4849();
          if (var4 != null) {
             if (this.field5847 != null) {
@@ -332,7 +332,7 @@ public class Class1057 extends Class1056 implements Class1008 {
       if (!super.method2741(var1, var2)) {
          return false;
       } else {
-         if ((double)this.method3042() < (double)this.method3075() * 0.5 && this.field5054.nextInt(4) == 0) {
+         if ((double)this.method3042() < (double)this.method3075() * 0.5 && this.rand.nextInt(4) == 0) {
             this.method4846();
          }
 
@@ -350,20 +350,20 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    public Direction method4848() {
-      return this.field5063.<Direction>method35445(field5841);
+      return this.dataManager.<Direction>method35445(field5841);
    }
 
    @Nullable
    public BlockPos method4849() {
-      return this.field5063.<Optional<BlockPos>>method35445(field5842).orElse((BlockPos)null);
+      return this.dataManager.<Optional<BlockPos>>method35445(field5842).orElse((BlockPos)null);
    }
 
    public void method4850(BlockPos var1) {
-      this.field5063.method35446(field5842, Optional.<BlockPos>ofNullable(var1));
+      this.dataManager.method35446(field5842, Optional.<BlockPos>ofNullable(var1));
    }
 
    public int method4851() {
-      return this.field5063.<Byte>method35445(field5843);
+      return this.dataManager.<Byte>method35445(field5843);
    }
 
    public void method4852(int var1) {
@@ -377,7 +377,7 @@ public class Class1057 extends Class1056 implements Class1008 {
          }
       }
 
-      this.field5063.method35446(field5843, (byte)var1);
+      this.dataManager.method35446(field5843, (byte)var1);
    }
 
    public float method4853(float var1) {
@@ -393,7 +393,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return 0.5F;
    }
 
@@ -422,32 +422,32 @@ public class Class1057 extends Class1056 implements Class1008 {
 
    @Nullable
    public Class112 method4857() {
-      Byte var3 = this.field5063.<Byte>method35445(field5844);
+      Byte var3 = this.dataManager.<Byte>method35445(field5844);
       return var3 != 16 && var3 <= 15 ? Class112.method315(var3) : null;
    }
 
    // $VF: synthetic method
    public static Random method4858(Class1057 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4859(Class1057 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4860(Class1057 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4861(Class1057 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4862(Class1057 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 }

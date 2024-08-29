@@ -17,8 +17,8 @@ public class Class5206 extends Module {
     private void method16217(Class4435 var1) {
         if (this.isEnabled() && mc.player.method3063()) {
             boolean var4 = Class8005.method27349() >= Class5989.field26130.method18582() || mc.getCurrentServerData() == null;
-            if (!mc.player.field5037 && (!mc.player.field4981 || !var4)) {
-                if (this.getStringSettingValueByName("Down mode").equals("OnSneak") && mc.gameSettings.field44637.isKeyDown()
+            if (!mc.player.collidedHorizontally && (!mc.player.field4981 || !var4)) {
+                if (this.getStringSettingValueByName("Down mode").equals("OnSneak") && mc.gameSettings.keyBindSneak.isKeyDown()
                         || this.getStringSettingValueByName("Down mode").equals("Always")) {
                     var1.method13995(-this.getNumberValueBySettingName("Motion"));
                 }

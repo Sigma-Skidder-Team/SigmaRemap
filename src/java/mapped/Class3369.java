@@ -7,18 +7,18 @@ public class Class3369 extends Class3241 {
    public static final Class8553 field18943 = Class3198.field18484;
    public static final Class8552<Class85> field18944 = Class8820.field39725;
    public static final Class8551 field18945 = Class8820.field39704;
-   private static final Class6408 field18946 = Block.method11539(0.0, 0.0, 4.0, 16.0, 16.0, 12.0);
-   private static final Class6408 field18947 = Block.method11539(4.0, 0.0, 0.0, 12.0, 16.0, 16.0);
-   private static final Class6408 field18948 = Block.method11539(5.0, 6.0, 5.0, 11.0, 13.0, 11.0);
-   private static final Class6408 field18949 = Block.method11539(4.0, 4.0, 4.0, 12.0, 6.0, 12.0);
-   private static final Class6408 field18950 = Class8022.method27431(field18949, field18948);
-   private static final Class6408 field18951 = Class8022.method27431(field18950, Block.method11539(7.0, 13.0, 0.0, 9.0, 15.0, 16.0));
-   private static final Class6408 field18952 = Class8022.method27431(field18950, Block.method11539(0.0, 13.0, 7.0, 16.0, 15.0, 9.0));
-   private static final Class6408 field18953 = Class8022.method27431(field18950, Block.method11539(0.0, 13.0, 7.0, 13.0, 15.0, 9.0));
-   private static final Class6408 field18954 = Class8022.method27431(field18950, Block.method11539(3.0, 13.0, 7.0, 16.0, 15.0, 9.0));
-   private static final Class6408 field18955 = Class8022.method27431(field18950, Block.method11539(7.0, 13.0, 0.0, 9.0, 15.0, 13.0));
-   private static final Class6408 field18956 = Class8022.method27431(field18950, Block.method11539(7.0, 13.0, 3.0, 9.0, 15.0, 16.0));
-   private static final Class6408 field18957 = Class8022.method27431(field18950, Block.method11539(7.0, 13.0, 7.0, 9.0, 16.0, 9.0));
+   private static final VoxelShape field18946 = Block.method11539(0.0, 0.0, 4.0, 16.0, 16.0, 12.0);
+   private static final VoxelShape field18947 = Block.method11539(4.0, 0.0, 0.0, 12.0, 16.0, 16.0);
+   private static final VoxelShape field18948 = Block.method11539(5.0, 6.0, 5.0, 11.0, 13.0, 11.0);
+   private static final VoxelShape field18949 = Block.method11539(4.0, 4.0, 4.0, 12.0, 6.0, 12.0);
+   private static final VoxelShape field18950 = VoxelShapes.method27431(field18949, field18948);
+   private static final VoxelShape field18951 = VoxelShapes.method27431(field18950, Block.method11539(7.0, 13.0, 0.0, 9.0, 15.0, 16.0));
+   private static final VoxelShape field18952 = VoxelShapes.method27431(field18950, Block.method11539(0.0, 13.0, 7.0, 16.0, 15.0, 9.0));
+   private static final VoxelShape field18953 = VoxelShapes.method27431(field18950, Block.method11539(0.0, 13.0, 7.0, 13.0, 15.0, 9.0));
+   private static final VoxelShape field18954 = VoxelShapes.method27431(field18950, Block.method11539(3.0, 13.0, 7.0, 16.0, 15.0, 9.0));
+   private static final VoxelShape field18955 = VoxelShapes.method27431(field18950, Block.method11539(7.0, 13.0, 0.0, 9.0, 15.0, 13.0));
+   private static final VoxelShape field18956 = VoxelShapes.method27431(field18950, Block.method11539(7.0, 13.0, 3.0, 9.0, 15.0, 16.0));
+   private static final VoxelShape field18957 = VoxelShapes.method27431(field18950, Block.method11539(7.0, 13.0, 7.0, 9.0, 16.0, 9.0));
 
    public Class3369(AbstractBlock var1) {
       super(var1);
@@ -106,7 +106,7 @@ public class Class3369 extends Class3241 {
       }
    }
 
-   private Class6408 method11963(BlockState var1) {
+   private VoxelShape method11963(BlockState var1) {
       Direction var4 = var1.<Direction>method23463(field18943);
       Class85 var5 = var1.<Class85>method23463(field18944);
       if (var5 != Class85.field212) {
@@ -133,12 +133,12 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.method11963(var1);
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.method11963(var1);
    }
 

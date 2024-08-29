@@ -10,7 +10,7 @@ public class Class3404 extends Block implements Class3405 {
    public static final Class8554 field19079 = Class8820.field39755;
    public final Class7633 field19080;
    private final List<Class7379> field19081;
-   public static final Class6408 field19082 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+   public static final VoxelShape field19082 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
 
    public Class3404(Class7633 var1, AbstractBlock var2) {
       super(var2);
@@ -27,12 +27,12 @@ public class Class3404 extends Block implements Class3405 {
    }
 
    @Override
-   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return var4.method14950(field19082, var3, true)
             && var1.<Integer>method23463(field19079) == 0
             && var4.method14952(var2.method6739(var3.method8311()), this.field19080)
          ? field19082
-         : Class8022.method27425();
+         : VoxelShapes.method27425();
    }
 
    @Override
@@ -77,8 +77,8 @@ public class Class3404 extends Block implements Class3405 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
-      return Class8022.method27425();
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+      return VoxelShapes.method27425();
    }
 
    @Override
@@ -140,7 +140,7 @@ public class Class3404 extends Block implements Class3405 {
    }
 
    @Override
-   public Class7631 method11533(Class1660 var1, BlockPos var2, BlockState var3) {
+   public Fluid method11533(Class1660 var1, BlockPos var2, BlockState var3) {
       if (var3.<Integer>method23463(field19079) != 0) {
          return Class9479.field44064;
       } else {

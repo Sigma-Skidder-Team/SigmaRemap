@@ -11,7 +11,7 @@ public final class Class59 implements Class56 {
    private final int field131;
 
    public Class59(int var1, int var2) {
-      this.field128 = new Class53((int)Class8022.method27430(var1, var2));
+      this.field128 = new Class53((int) VoxelShapes.method27430(var1, var2));
       this.field129 = var1;
       this.field130 = var2;
       this.field131 = IntMath.gcd(var1, var2);

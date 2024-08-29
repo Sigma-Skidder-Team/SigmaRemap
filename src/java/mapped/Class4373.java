@@ -36,7 +36,7 @@ public class Class4373 extends Class4247 {
    @Override
    public void method13027(float var1) {
       float var4 = !this.method13212() ? 0.43F : 0.6F;
-      Class3192.method11475(
+      RenderUtil.method11475(
          (float)this.field20895,
          (float)this.field20896,
          (float)this.field20897,
@@ -45,7 +45,7 @@ public class Class4373 extends Class4247 {
          Class5628.method17688(-4144960, var4 * this.field21370.calcPercent() * var1)
       );
       float var5 = (1.0F - this.field21370.calcPercent()) * var1;
-      Class3192.method11475(
+      RenderUtil.method11475(
          (float)this.field20895,
          (float)this.field20896,
          (float)this.field20897,
@@ -57,7 +57,7 @@ public class Class4373 extends Class4247 {
       GL11.glTranslatef((float)(this.method13263() + this.method13267() / 2), (float)(this.method13265() + this.method13269() / 2), 0.0F);
       GL11.glScalef(1.5F - 0.5F * var5, 1.5F - 0.5F * var5, 0.0F);
       GL11.glTranslatef((float)(-this.method13263() - this.method13267() / 2), (float)(-this.method13265() - this.method13269() / 2), 0.0F);
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)this.field20895,
          (float)this.field20896,
          (float)this.field20897,

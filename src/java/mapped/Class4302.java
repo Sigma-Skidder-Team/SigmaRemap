@@ -13,7 +13,7 @@ public class Class4302 extends Class4278 {
    @Override
    public void method13027(float var1) {
       if (this.method13287()) {
-         Class3192.method11449(
+         RenderUtil.method11449(
             (float)(this.field20895 + 30),
             (float)(this.field20896 + 30),
             187.0F,

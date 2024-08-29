@@ -13,10 +13,10 @@ import java.util.Map.Entry;
 
 public class Class999 extends Entity {
    private static final Logger field5497 = LogManager.getLogger();
-   private static final Class9289<Float> field5498 = Class9361.<Float>method35441(Class999.class, Class7784.field33392);
-   private static final Class9289<Integer> field5499 = Class9361.<Integer>method35441(Class999.class, Class7784.field33391);
-   private static final Class9289<Boolean> field5500 = Class9361.<Boolean>method35441(Class999.class, Class7784.field33398);
-   private static final Class9289<Class7436> field5501 = Class9361.<Class7436>method35441(Class999.class, Class7784.field33399);
+   private static final DataParameter<Float> field5498 = EntityDataManager.<Float>method35441(Class999.class, Class7784.field33392);
+   private static final DataParameter<Integer> field5499 = EntityDataManager.<Integer>method35441(Class999.class, Class7784.field33391);
+   private static final DataParameter<Boolean> field5500 = EntityDataManager.<Boolean>method35441(Class999.class, Class7784.field33398);
+   private static final DataParameter<Class7436> field5501 = EntityDataManager.<Class7436>method35441(Class999.class, Class7784.field33399);
    private Class8812 field5502 = Class8137.field34976;
    private final List<Class2023> field5503 = Lists.newArrayList();
    private final Map<Entity, Integer> field5504 = Maps.newHashMap();
@@ -32,21 +32,21 @@ public class Class999 extends Entity {
 
    public Class999(EntityType<? extends Class999> var1, World var2) {
       super(var1, var2);
-      this.field5052 = true;
+      this.noClip = true;
       this.method4097(3.0F);
    }
 
    public Class999(World var1, double var2, double var4, double var6) {
       this(EntityType.field41005, var1);
-      this.method3215(var2, var4, var6);
+      this.setPosition(var2, var4, var6);
    }
 
    @Override
-   public void method2850() {
-      this.method3210().method35442(field5499, 0);
-      this.method3210().method35442(field5498, 0.5F);
-      this.method3210().method35442(field5500, false);
-      this.method3210().method35442(field5501, Class7940.field34068);
+   public void registerData() {
+      this.method3210().register(field5499, 0);
+      this.method3210().register(field5498, 0.5F);
+      this.method3210().register(field5500, false);
+      this.method3210().register(field5501, Class7940.field34068);
    }
 
    public void method4097(float var1) {
@@ -61,7 +61,7 @@ public class Class999 extends Entity {
       double var5 = this.getPosY();
       double var7 = this.getPosZ();
       super.method3385();
-      this.method3215(var3, var5, var7);
+      this.setPosition(var3, var5, var7);
    }
 
    public float method4098() {
@@ -129,12 +129,12 @@ public class Class999 extends Entity {
       boolean var3 = this.method4107();
       float var4 = this.method4098();
       if (!this.world.field9020) {
-         if (this.field5055 >= this.field5506 + this.field5505) {
+         if (this.ticksExisted >= this.field5506 + this.field5505) {
             this.method2904();
             return;
          }
 
-         boolean var5 = this.field5055 < this.field5506;
+         boolean var5 = this.ticksExisted < this.field5506;
          if (var3 != var5) {
             this.method4106(var5);
          }
@@ -153,12 +153,12 @@ public class Class999 extends Entity {
             this.method4097(var4);
          }
 
-         if (this.field5055 % 5 == 0) {
+         if (this.ticksExisted % 5 == 0) {
             Iterator var6 = this.field5504.entrySet().iterator();
 
             while (var6.hasNext()) {
                Entry var7 = (Entry)var6.next();
-               if (this.field5055 >= (Integer)var7.getValue()) {
+               if (this.ticksExisted >= (Integer)var7.getValue()) {
                   var6.remove();
                }
             }
@@ -171,7 +171,7 @@ public class Class999 extends Entity {
 
             var27.addAll(this.field5503);
             if (!var27.isEmpty()) {
-               List<Class880> var30 = this.world.<Class880>method7182(Class880.class, this.method3389());
+               List<Class880> var30 = this.world.<Class880>method7182(Class880.class, this.getBoundingBox());
                if (!var30.isEmpty()) {
                   for (Class880 var10 : var30) {
                      if (!this.field5504.containsKey(var10) && var10.method3169()) {
@@ -179,7 +179,7 @@ public class Class999 extends Entity {
                         double var18 = var10.getPosZ() - this.getPosZ();
                         double var20 = var16 * var16 + var18 * var18;
                         if (var20 <= (double)(var4 * var4)) {
-                           this.field5504.put(var10, this.field5055 + this.field5507);
+                           this.field5504.put(var10, this.ticksExisted + this.field5507);
 
                            for (Class2023 var23 : var27) {
                               if (!var23.method8627().method22292()) {
@@ -220,8 +220,8 @@ public class Class999 extends Entity {
             float var25 = (float) Math.PI * var4 * var4;
 
             for (int var28 = 0; (float)var28 < var25; var28++) {
-               float var31 = this.field5054.nextFloat() * (float) (Math.PI * 2);
-               float var34 = MathHelper.method37765(this.field5054.nextFloat()) * var4;
+               float var31 = this.rand.nextFloat() * (float) (Math.PI * 2);
+               float var34 = MathHelper.method37765(this.rand.nextFloat()) * var4;
                float var36 = MathHelper.cos(var31) * var34;
                float var11 = MathHelper.sin(var31) * var34;
                if (var24.method24011() != Class7940.field34068) {
@@ -231,9 +231,9 @@ public class Class999 extends Entity {
                         this.getPosX() + (double)var36,
                         this.getPosY(),
                         this.getPosZ() + (double)var11,
-                        (0.5 - this.field5054.nextDouble()) * 0.15,
+                        (0.5 - this.rand.nextDouble()) * 0.15,
                         0.01F,
-                        (0.5 - this.field5054.nextDouble()) * 0.15
+                        (0.5 - this.rand.nextDouble()) * 0.15
                      );
                } else {
                   int var12 = this.method4102();
@@ -252,16 +252,16 @@ public class Class999 extends Entity {
                      );
                }
             }
-         } else if (this.field5054.nextBoolean()) {
+         } else if (this.rand.nextBoolean()) {
             for (int var26 = 0; var26 < 2; var26++) {
-               float var29 = this.field5054.nextFloat() * (float) (Math.PI * 2);
-               float var32 = MathHelper.method37765(this.field5054.nextFloat()) * 0.2F;
+               float var29 = this.rand.nextFloat() * (float) (Math.PI * 2);
+               float var32 = MathHelper.method37765(this.rand.nextFloat()) * 0.2F;
                float var35 = MathHelper.cos(var29) * var32;
                float var37 = MathHelper.sin(var29) * var32;
                if (var24.method24011() != Class7940.field34068) {
                   this.world.method6748(var24, this.getPosX() + (double)var35, this.getPosY(), this.getPosZ() + (double)var37, 0.0, 0.0, 0.0);
                } else {
-                  int var38 = !this.field5054.nextBoolean() ? this.method4102() : 16777215;
+                  int var38 = !this.rand.nextBoolean() ? this.method4102() : 16777215;
                   int var39 = var38 >> 16 & 0xFF;
                   int var40 = var38 >> 8 & 0xFF;
                   int var41 = var38 & 0xFF;
@@ -312,7 +312,7 @@ public class Class999 extends Entity {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      this.field5055 = var1.method122("Age");
+      this.ticksExisted = var1.method122("Age");
       this.field5505 = var1.method122("Duration");
       this.field5506 = var1.method122("WaitTime");
       this.field5507 = var1.method122("ReapplicationDelay");
@@ -355,7 +355,7 @@ public class Class999 extends Entity {
 
    @Override
    public void method2724(CompoundNBT var1) {
-      var1.method102("Age", this.field5055);
+      var1.method102("Age", this.ticksExisted);
       var1.method102("Duration", this.field5505);
       var1.method102("WaitTime", this.field5506);
       var1.method102("ReapplicationDelay", this.field5507);
@@ -388,7 +388,7 @@ public class Class999 extends Entity {
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       if (field5498.equals(var1)) {
          this.method3385();
       }
@@ -407,7 +407,7 @@ public class Class999 extends Entity {
    }
 
    @Override
-   public Class8847 method2981(Class2090 var1) {
-      return Class8847.method32101(this.method4098() * 2.0F, 0.5F);
+   public EntitySize method2981(Pose var1) {
+      return EntitySize.method32101(this.method4098() * 2.0F, 0.5F);
    }
 }

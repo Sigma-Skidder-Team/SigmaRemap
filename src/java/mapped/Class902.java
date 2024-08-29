@@ -2,7 +2,7 @@ package mapped;
 
 public class Class902 extends Class901 {
    private static String[] field5144;
-   private static final Class9289<Boolean> field5145 = Class9361.<Boolean>method35441(Class902.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5145 = EntityDataManager.<Boolean>method35441(Class902.class, Class7784.field33398);
 
    public Class902(EntityType<? extends Class902> var1, World var2) {
       super(var1, var2);
@@ -90,16 +90,16 @@ public class Class902 extends Class901 {
    }
 
    @Override
-   public void method2850() {
-      this.field5063.method35442(field5145, false);
+   public void registerData() {
+      this.dataManager.register(field5145, false);
    }
 
    public boolean method3532() {
-      return this.field5063.<Boolean>method35445(field5145);
+      return this.dataManager.<Boolean>method35445(field5145);
    }
 
    public void method3533(boolean var1) {
-      this.field5063.method35446(field5145, var1);
+      this.dataManager.method35446(field5145, var1);
    }
 
    @Override

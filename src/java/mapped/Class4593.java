@@ -39,9 +39,9 @@ public class Class4593 extends Class4587 {
 
       float var7 = ((float)this.field22084 + var3) / 3.0F;
       var7 *= var7;
-      double var8 = MathHelper.method37822((double)var3, this.field22083.field5048, this.field22083.getPosX());
-      double var10 = MathHelper.method37822((double)var3, this.field22083.field5049, this.field22083.getPosY()) + 0.5;
-      double var12 = MathHelper.method37822((double)var3, this.field22083.field5050, this.field22083.getPosZ());
+      double var8 = MathHelper.method37822((double)var3, this.field22083.lastTickPosX, this.field22083.getPosX());
+      double var10 = MathHelper.method37822((double)var3, this.field22083.lastTickPosY, this.field22083.getPosY()) + 0.5;
+      double var12 = MathHelper.method37822((double)var3, this.field22083.lastTickPosZ, this.field22083.getPosZ());
       double var14 = MathHelper.method37822((double)var7, this.field22082.getPosX(), var8);
       double var16 = MathHelper.method37822((double)var7, this.field22082.getPosY(), var10);
       double var18 = MathHelper.method37822((double)var7, this.field22082.getPosZ(), var12);
@@ -53,7 +53,7 @@ public class Class4593 extends Class4587 {
             var14 - var21.method11320(),
             var16 - var21.method11321(),
             var18 - var21.method11322(),
-            this.field22082.field5031,
+            this.field22082.rotationYaw,
             var3,
             new MatrixStack(),
             var20,

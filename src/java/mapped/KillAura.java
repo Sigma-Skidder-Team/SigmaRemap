@@ -147,7 +147,7 @@ public class KillAura extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23950 = new ArrayList<Class8012>();
         field23948 = null;
         field23949 = null;
@@ -156,8 +156,8 @@ public class KillAura extends Module {
         this.field23942 = 0;
         field23954 = 0;
         this.field23953 = new Class7461(mc.player.field6122, mc.player.field6123);
-        this.field23952 = new Class7461(mc.player.field5031, mc.player.field5032);
-        field23951 = new Class7461(mc.player.field5031, mc.player.field5032);
+        this.field23952 = new Class7461(mc.player.rotationYaw, mc.player.rotationPitch);
+        field23951 = new Class7461(mc.player.rotationYaw, mc.player.rotationPitch);
         this.field23957 = -1.0F;
         this.field23938
                 .method36814(mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof ItemSword && mc.gameSettings.keyBindUseItem.isKeyDown());
@@ -165,20 +165,20 @@ public class KillAura extends Module {
         this.field23946 = -1;
         this.field23938.field44349.clear();
         this.field23961.clear();
-        if (mc.player.field5036) {
+        if (mc.player.onGround) {
             this.field23941 = 1;
         }
 
-        super.isInDevelopment();
+        super.onEnable();
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         field23948 = null;
         field23949 = null;
         this.field23950 = null;
         field23937 = false;
-        super.method15965();
+        super.onDisable();
     }
 
     @EventTarget
@@ -253,13 +253,13 @@ public class KillAura extends Module {
                 if (this.field23950 != null && !this.field23950.isEmpty()) {
                     this.field23939++;
                     float var4 = this.getNumberValueBySettingName("Hit box expand");
-                    Class5325 var5 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Class5332.class);
+                    ModuleWithModuleSettings var5 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Class5332.class);
                     if (var5.isEnabled() && var5.getStringSettingValueByName("Type").equalsIgnoreCase("Minis")) {
                         this.method16828(var1, var5.method16726().getStringSettingValueByName("Mode"), var5.method16726().getBooleanValueFromSetttingName("Avoid Fall Damage"));
                     }
 
                     this.method16831();
-                    if (var1.method13917() - mc.player.field5031 != 0.0F) {
+                    if (var1.method13917() - mc.player.rotationYaw != 0.0F) {
                         this.field23952.field32084 = var1.method13917();
                         this.field23952.field32085 = var1.method13915();
                     }
@@ -298,8 +298,8 @@ public class KillAura extends Module {
         if (field23949 != null && !this.getBooleanValueFromSetttingName("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
             float var4 = MathHelper.method37792(this.field23953.field32084 + (this.field23952.field32084 - this.field23953.field32084) * mc.getRenderPartialTicks());
             float var5 = MathHelper.method37792(this.field23953.field32085 + (this.field23952.field32085 - this.field23953.field32085) * mc.getRenderPartialTicks());
-            mc.player.field5031 = var4;
-            mc.player.field5032 = var5;
+            mc.player.rotationYaw = var4;
+            mc.player.rotationPitch = var5;
         }
     }
 
@@ -339,8 +339,8 @@ public class KillAura extends Module {
     }
 
     @EventTarget
-    public void method16824(Class4396 var1) {
-        Packet var4 = var1.method13898();
+    public void method16824(RecievePacketEvent var1) {
+        Packet var4 = var1.getPacket();
         if (!(var4 instanceof Class5476)) {
             if (var4 instanceof Class5464) {
                 Class5464 var5 = (Class5464) var4;
@@ -355,7 +355,7 @@ public class KillAura extends Module {
                     Entity var8 = (Entity) var7.getKey();
                     List var9 = (List) var7.getValue();
                     if (var11.method17233(mc.world) == var8) {
-                        Vector3d var10 = var8.field5076.method11344(2.4414062E-4F);
+                        Vector3d var10 = var8.field_242272_av.method11344(2.4414062E-4F);
                         var9.add(new Class9629<Vector3d, Long>(var10, System.currentTimeMillis()));
                     }
                 }
@@ -376,9 +376,9 @@ public class KillAura extends Module {
         }
 
         GL11.glTranslated(
-                var1.field5048 + (var1.getPosX() - var1.field5048) * var4,
-                var1.field5049 + (var1.getPosY() - var1.field5049) * var4,
-                var1.field5050 + (var1.getPosZ() - var1.field5050) * var4
+                var1.lastTickPosX + (var1.getPosX() - var1.lastTickPosX) * var4,
+                var1.lastTickPosY + (var1.getPosY() - var1.lastTickPosY) * var4,
+                var1.lastTickPosZ + (var1.getPosZ() - var1.lastTickPosZ) * var4
         );
         GL11.glTranslated(
                 -mc.gameRenderer.getActiveRenderInfo().method37504().method11320(),
@@ -486,7 +486,7 @@ public class KillAura extends Module {
             }
         }
 
-        boolean var9 = !Jesus.method16953() && (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F));
+        boolean var9 = !Jesus.method16953() && (mc.player.onGround || Class5628.method17730(mc.player, 0.001F));
         if (!var9) {
             this.field23941 = 0;
             this.field23940 = 0;
@@ -497,7 +497,7 @@ public class KillAura extends Module {
                             || Client.getInstance().getModuleManager().getModuleByClass(Class5341.class).getStringSettingValueByName("Type").equalsIgnoreCase("Cubecraft")
                             || Client.getInstance().getModuleManager().getModuleByClass(Class5341.class).getStringSettingValueByName("Type").equalsIgnoreCase("Vanilla")
             )
-                    && mc.player.field5038
+                    && mc.player.collidedVertically
                     && var9
                     && !mc.player.field4981
                     && !mc.player.method3250()
@@ -524,7 +524,7 @@ public class KillAura extends Module {
         List var6 = this.field23938.method36823(Math.max(var3, var4));
         var6 = this.field23938.method36824(var6);
         if (this.field23952 == null) {
-            this.isInDevelopment();
+            this.onEnable();
         }
 
         if (var6 != null && var6.size() != 0 && !mc.gameSettings.keyBindAttack.isPressed()) {
@@ -540,8 +540,8 @@ public class KillAura extends Module {
                 this.field23939 = (int) this.field23938.method36819(0);
                 this.field23940 = 0;
                 field23937 = false;
-                this.field23952.field32084 = mc.player.field5031;
-                this.field23952.field32085 = mc.player.field5032;
+                this.field23952.field32084 = mc.player.rotationYaw;
+                this.field23952.field32085 = mc.player.rotationPitch;
                 field23951.field32084 = this.field23952.field32084;
                 field23951.field32085 = this.field23952.field32085;
                 this.field23957 = -1.0F;
@@ -626,8 +626,8 @@ public class KillAura extends Module {
             this.field23939 = (int) this.field23938.method36819(0);
             this.field23940 = 0;
             field23937 = false;
-            this.field23952.field32084 = mc.player.field5031;
-            this.field23952.field32085 = mc.player.field5032;
+            this.field23952.field32084 = mc.player.rotationYaw;
+            this.field23952.field32085 = mc.player.rotationPitch;
             field23951.field32084 = this.field23952.field32084;
             field23951.field32085 = this.field23952.field32085;
             this.field23957 = -1.0F;
@@ -673,7 +673,7 @@ public class KillAura extends Module {
                     this.field23952.field32084 = this.field23952.field32084 + this.field23958 + (float) this.method16832(-var13, var13);
                 }
 
-                if (mc.player.field5055 % 5 == 0) {
+                if (mc.player.ticksExisted % 5 == 0) {
                     double var32 = 10.0;
                     this.field23952.field32084 = this.field23952.field32084
                             + (float) this.method16832(-var32, var32) / (mc.player.method3275(var3) + 1.0F);
@@ -705,8 +705,8 @@ public class KillAura extends Module {
                 }
 
                 float var29 = this.field23957 / Math.max(1.0F, this.field23956);
-                double var33 = var3.getPosX() - var3.field5048;
-                double var34 = var3.getPosZ() - var3.field5050;
+                double var33 = var3.getPosX() - var3.lastTickPosX;
+                double var34 = var3.getPosZ() - var3.lastTickPosZ;
                 float var35 = (float) Math.sqrt(var33 * var33 + var34 * var34);
                 float var36 = Class8603.method30791(var29, 0.57, -0.135, 0.095, -0.3);
                 float var37 = Math.min(1.0F, Class8603.method30791(var29, 0.57, -0.135, 0.095, -0.3));
@@ -745,8 +745,8 @@ public class KillAura extends Module {
             case "None":
                 this.field23953.field32084 = this.field23952.field32084;
                 this.field23953.field32085 = this.field23952.field32085;
-                this.field23952.field32084 = mc.player.field5031;
-                this.field23952.field32085 = mc.player.field5032;
+                this.field23952.field32084 = mc.player.rotationYaw;
+                this.field23952.field32085 = mc.player.rotationPitch;
                 break;
             case "LockView":
                 this.field23953.field32084 = this.field23952.field32084;
@@ -773,8 +773,8 @@ public class KillAura extends Module {
                 }
 
                 float var10 = this.field23957 / Math.max(1.0F, this.field23956);
-                double var15 = var3.getPosX() - var3.field5048;
-                double var17 = var3.getPosZ() - var3.field5050;
+                double var15 = var3.getPosX() - var3.lastTickPosX;
+                double var17 = var3.getPosZ() - var3.lastTickPosZ;
                 float var19 = (float) Math.sqrt(var15 * var15 + var17 * var17);
                 float var20 = Class8603.method30791(var10, 0.57, -0.135, 0.095, -0.3);
                 float var21 = Math.min(1.0F, Class8603.method30791(var10, 0.57, -0.135, 0.095, -0.3));

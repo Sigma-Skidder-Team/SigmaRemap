@@ -12,13 +12,13 @@ public class Class3415 extends Block implements Class3207 {
    public static final Class8552<Class184> field19109 = Class8820.field39728;
    public static final Class8552<Class184> field19110 = Class8820.field39729;
    public static final Class8551 field19111 = Class8820.field39710;
-   private final Map<BlockState, Class6408> field19112;
-   private final Map<BlockState, Class6408> field19113;
-   private static final Class6408 field19114 = Block.method11539(7.0, 0.0, 7.0, 9.0, 16.0, 9.0);
-   private static final Class6408 field19115 = Block.method11539(7.0, 0.0, 0.0, 9.0, 16.0, 9.0);
-   private static final Class6408 field19116 = Block.method11539(7.0, 0.0, 7.0, 9.0, 16.0, 16.0);
-   private static final Class6408 field19117 = Block.method11539(0.0, 0.0, 7.0, 9.0, 16.0, 9.0);
-   private static final Class6408 field19118 = Block.method11539(7.0, 0.0, 7.0, 16.0, 16.0, 9.0);
+   private final Map<BlockState, VoxelShape> field19112;
+   private final Map<BlockState, VoxelShape> field19113;
+   private static final VoxelShape field19114 = Block.method11539(7.0, 0.0, 7.0, 9.0, 16.0, 9.0);
+   private static final VoxelShape field19115 = Block.method11539(7.0, 0.0, 0.0, 9.0, 16.0, 9.0);
+   private static final VoxelShape field19116 = Block.method11539(7.0, 0.0, 7.0, 9.0, 16.0, 16.0);
+   private static final VoxelShape field19117 = Block.method11539(0.0, 0.0, 7.0, 9.0, 16.0, 9.0);
+   private static final VoxelShape field19118 = Block.method11539(7.0, 0.0, 7.0, 16.0, 16.0, 9.0);
 
    public Class3415(AbstractBlock var1) {
       super(var1);
@@ -36,28 +36,28 @@ public class Class3415 extends Block implements Class3207 {
       this.field19113 = this.method12054(4.0F, 3.0F, 24.0F, 0.0F, 24.0F, 24.0F);
    }
 
-   private static Class6408 method12053(Class6408 var0, Class184 var1, Class6408 var2, Class6408 var3) {
+   private static VoxelShape method12053(VoxelShape var0, Class184 var1, VoxelShape var2, VoxelShape var3) {
       if (var1 != Class184.field669) {
-         return var1 != Class184.field668 ? var0 : Class8022.method27431(var0, var2);
+         return var1 != Class184.field668 ? var0 : VoxelShapes.method27431(var0, var2);
       } else {
-         return Class8022.method27431(var0, var3);
+         return VoxelShapes.method27431(var0, var3);
       }
    }
 
-   private Map<BlockState, Class6408> method12054(float var1, float var2, float var3, float var4, float var5, float var6) {
+   private Map<BlockState, VoxelShape> method12054(float var1, float var2, float var3, float var4, float var5, float var6) {
       float var9 = 8.0F - var1;
       float var10 = 8.0F + var1;
       float var11 = 8.0F - var2;
       float var12 = 8.0F + var2;
-      Class6408 var13 = Block.method11539((double)var9, 0.0, (double)var9, (double)var10, (double)var3, (double)var10);
-      Class6408 var14 = Block.method11539((double)var11, (double)var4, 0.0, (double)var12, (double)var5, (double)var12);
-      Class6408 var15 = Block.method11539((double)var11, (double)var4, (double)var11, (double)var12, (double)var5, 16.0);
-      Class6408 var16 = Block.method11539(0.0, (double)var4, (double)var11, (double)var12, (double)var5, (double)var12);
-      Class6408 var17 = Block.method11539((double)var11, (double)var4, (double)var11, 16.0, (double)var5, (double)var12);
-      Class6408 var18 = Block.method11539((double)var11, (double)var4, 0.0, (double)var12, (double)var6, (double)var12);
-      Class6408 var19 = Block.method11539((double)var11, (double)var4, (double)var11, (double)var12, (double)var6, 16.0);
-      Class6408 var20 = Block.method11539(0.0, (double)var4, (double)var11, (double)var12, (double)var6, (double)var12);
-      Class6408 var21 = Block.method11539((double)var11, (double)var4, (double)var11, 16.0, (double)var6, (double)var12);
+      VoxelShape var13 = Block.method11539((double)var9, 0.0, (double)var9, (double)var10, (double)var3, (double)var10);
+      VoxelShape var14 = Block.method11539((double)var11, (double)var4, 0.0, (double)var12, (double)var5, (double)var12);
+      VoxelShape var15 = Block.method11539((double)var11, (double)var4, (double)var11, (double)var12, (double)var5, 16.0);
+      VoxelShape var16 = Block.method11539(0.0, (double)var4, (double)var11, (double)var12, (double)var5, (double)var12);
+      VoxelShape var17 = Block.method11539((double)var11, (double)var4, (double)var11, 16.0, (double)var5, (double)var12);
+      VoxelShape var18 = Block.method11539((double)var11, (double)var4, 0.0, (double)var12, (double)var6, (double)var12);
+      VoxelShape var19 = Block.method11539((double)var11, (double)var4, (double)var11, (double)var12, (double)var6, 16.0);
+      VoxelShape var20 = Block.method11539(0.0, (double)var4, (double)var11, (double)var12, (double)var6, (double)var12);
+      VoxelShape var21 = Block.method11539((double)var11, (double)var4, (double)var11, 16.0, (double)var6, (double)var12);
       Builder var22 = ImmutableMap.builder();
 
       for (Boolean var24 : field19106.method30474()) {
@@ -65,13 +65,13 @@ public class Class3415 extends Block implements Class3207 {
             for (Class184 var28 : field19108.method30474()) {
                for (Class184 var30 : field19110.method30474()) {
                   for (Class184 var32 : field19109.method30474()) {
-                     Class6408 var33 = Class8022.method27425();
+                     VoxelShape var33 = VoxelShapes.method27425();
                      var33 = method12053(var33, var26, var17, var21);
                      var33 = method12053(var33, var30, var16, var20);
                      var33 = method12053(var33, var28, var14, var18);
                      var33 = method12053(var33, var32, var15, var19);
                      if (var24) {
-                        var33 = Class8022.method27431(var33, var13);
+                        var33 = VoxelShapes.method27431(var33, var13);
                      }
 
                      BlockState var34 = this.method11579()
@@ -92,12 +92,12 @@ public class Class3415 extends Block implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.field19112.get(var1);
    }
 
    @Override
-   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.field19113.get(var1);
    }
 
@@ -152,8 +152,8 @@ public class Class3415 extends Block implements Class3207 {
       return var0.method23463(var1) != Class184.field667;
    }
 
-   private static boolean method12057(Class6408 var0, Class6408 var1) {
-      return !Class8022.method27435(var1, var0, Class9477.field44041);
+   private static boolean method12057(VoxelShape var0, VoxelShape var1) {
+      return ! VoxelShapes.compare(var1, var0, IBooleanFunction.field44041);
    }
 
    private BlockState method12058(Class1662 var1, BlockState var2, BlockPos var3, BlockState var4) {
@@ -176,12 +176,12 @@ public class Class3415 extends Block implements Class3207 {
    }
 
    private BlockState method12060(Class1662 var1, BlockState var2, BlockPos var3, BlockState var4, boolean var5, boolean var6, boolean var7, boolean var8) {
-      Class6408 var11 = var4.method23414(var1, var3).method19526(Direction.DOWN);
+      VoxelShape var11 = var4.method23414(var1, var3).method19526(Direction.DOWN);
       BlockState var12 = this.method12062(var2, var5, var6, var7, var8, var11);
       return var12.method23465(field19106, Boolean.valueOf(this.method12061(var12, var4, var11)));
    }
 
-   private boolean method12061(BlockState var1, BlockState var2, Class6408 var3) {
+   private boolean method12061(BlockState var1, BlockState var2, VoxelShape var3) {
       boolean var6 = var2.getBlock() instanceof Class3415 && var2.<Boolean>method23463(field19106);
       if (!var6) {
          Class184 var7 = var1.<Class184>method23463(field19108);
@@ -204,14 +204,14 @@ public class Class3415 extends Block implements Class3207 {
       }
    }
 
-   private BlockState method12062(BlockState var1, boolean var2, boolean var3, boolean var4, boolean var5, Class6408 var6) {
+   private BlockState method12062(BlockState var1, boolean var2, boolean var3, boolean var4, boolean var5, VoxelShape var6) {
       return var1.method23465(field19108, this.method12063(var2, var6, field19115))
          .method23465(field19107, this.method12063(var3, var6, field19118))
          .method23465(field19109, this.method12063(var4, var6, field19116))
          .method23465(field19110, this.method12063(var5, var6, field19117));
    }
 
-   private Class184 method12063(boolean var1, Class6408 var2, Class6408 var3) {
+   private Class184 method12063(boolean var1, VoxelShape var2, VoxelShape var3) {
       if (!var1) {
          return Class184.field667;
       } else {

@@ -97,7 +97,7 @@ public class ClientPlayNetHandler implements Class5116 {
       this.field23272.loadWorld(this.field23273);
       if (this.field23272.player == null) {
          this.field23272.player = this.field23272.playerController.createPlayer(this.field23273, new Class8286(), new Class6943());
-         this.field23272.player.field5031 = -180.0F;
+         this.field23272.player.rotationYaw = -180.0F;
          if (this.field23272.getIntegratedServer() != null) {
             this.field23272.getIntegratedServer().method6489(this.field23272.player.getUniqueID());
          }
@@ -338,10 +338,10 @@ public class ClientPlayNetHandler implements Class5116 {
 
       if (var11 != null) {
          int var16 = var1.method17256();
-         ((Entity)var11).method3201(var4, var6, var8);
+         ((Entity)var11).setPacketCoordinates(var4, var6, var8);
          ((Entity)var11).method2794(var4, var6, var8);
-         ((Entity)var11).field5032 = (float)(var1.method17264() * 360) / 256.0F;
-         ((Entity)var11).field5031 = (float)(var1.method17265() * 360) / 256.0F;
+         ((Entity)var11).rotationPitch = (float)(var1.method17264() * 360) / 256.0F;
+         ((Entity)var11).rotationYaw = (float)(var1.method17265() * 360) / 256.0F;
          ((Entity)var11).method3206(var16);
          ((Entity)var11).method3374(var1.method17257());
          this.field23273.method6846(var16, (Entity)var11);
@@ -358,9 +358,9 @@ public class ClientPlayNetHandler implements Class5116 {
       double var6 = var1.method17355();
       double var8 = var1.method17356();
       ExperienceOrbEntity var10 = new ExperienceOrbEntity(this.field23273, var4, var6, var8, var1.method17357());
-      var10.method3201(var4, var6, var8);
-      var10.field5031 = 0.0F;
-      var10.field5032 = 0.0F;
+      var10.setPacketCoordinates(var4, var6, var8);
+      var10.rotationYaw = 0.0F;
+      var10.rotationPitch = 0.0F;
       var10.method3206(var1.method17353());
       this.field23273.method6846(var1.method17353(), var10);
    }
@@ -405,7 +405,7 @@ public class ClientPlayNetHandler implements Class5116 {
          Class1116 var13 = new Class1116(this.field23272.world, this.method15792(var1.method17593()).method19966());
          var13.method3206(var12);
          var13.method3274(var4, var6, var8);
-         var13.method3201(var4, var6, var8);
+         var13.setPacketCoordinates(var4, var6, var8);
          var13.method3269(var4, var6, var8, var10, var11);
          this.field23273.method6845(var12, var13);
       }
@@ -419,7 +419,7 @@ public class ClientPlayNetHandler implements Class5116 {
          double var5 = var1.method17586();
          double var7 = var1.method17587();
          double var9 = var1.method17588();
-         var4.method3201(var5, var7, var9);
+         var4.setPacketCoordinates(var5, var7, var9);
          if (!var4.method3418()) {
             float var11 = (float)(var1.method17589() * 360) / 256.0F;
             float var12 = (float)(var1.method17590() * 360) / 256.0F;
@@ -449,10 +449,10 @@ public class ClientPlayNetHandler implements Class5116 {
                var4.method3131(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var5, var6, 3, false);
             }
          } else {
-            Vector3d var8 = var1.method17231(var4.method3203());
-            var4.method3202(var8);
-            float var9 = !var1.method17236() ? var4.field5031 : (float)(var1.method17234() * 360) / 256.0F;
-            float var7 = !var1.method17236() ? var4.field5032 : (float)(var1.method17235() * 360) / 256.0F;
+            Vector3d var8 = var1.method17231(var4.func_242274_V());
+            var4.func_242277_a(var8);
+            float var9 = !var1.method17236() ? var4.rotationYaw : (float)(var1.method17234() * 360) / 256.0F;
+            float var7 = !var1.method17236() ? var4.rotationPitch : (float)(var1.method17235() * 360) / 256.0F;
             var4.method3131(var8.method11320(), var8.method11321(), var8.method11322(), var9, var7, 3, false);
          }
 
@@ -493,11 +493,11 @@ public class ClientPlayNetHandler implements Class5116 {
       if (!var6) {
          var9 = 0.0;
          var11 = var1.method17214();
-         var4.field5048 = var11;
+         var4.lastTickPosX = var11;
       } else {
          var9 = var5.method11320();
          var11 = var4.getPosX() + var1.method17214();
-         var4.field5048 = var4.field5048 + var1.method17214();
+         var4.lastTickPosX = var4.lastTickPosX + var1.method17214();
       }
 
       double var13;
@@ -505,11 +505,11 @@ public class ClientPlayNetHandler implements Class5116 {
       if (!var7) {
          var13 = 0.0;
          var15 = var1.method17215();
-         var4.field5049 = var15;
+         var4.lastTickPosY = var15;
       } else {
          var13 = var5.method11321();
          var15 = var4.getPosY() + var1.method17215();
-         var4.field5049 = var4.field5049 + var1.method17215();
+         var4.lastTickPosY = var4.lastTickPosY + var1.method17215();
       }
 
       double var17;
@@ -517,35 +517,35 @@ public class ClientPlayNetHandler implements Class5116 {
       if (!var8) {
          var17 = 0.0;
          var19 = var1.method17216();
-         var4.field5050 = var19;
+         var4.lastTickPosZ = var19;
       } else {
          var17 = var5.method11322();
          var19 = var4.getPosZ() + var1.method17216();
-         var4.field5050 = var4.field5050 + var1.method17216();
+         var4.lastTickPosZ = var4.lastTickPosZ + var1.method17216();
       }
 
-      if (var4.field5055 > 0 && var4.getRidingEntity() != null) {
+      if (var4.ticksExisted > 0 && var4.getRidingEntity() != null) {
          var4.method2895();
       }
 
       var4.method3446(var11, var15, var19);
-      var4.field5025 = var11;
-      var4.field5026 = var15;
-      var4.field5027 = var19;
+      var4.prevPosX = var11;
+      var4.prevPosY = var15;
+      var4.prevPosZ = var19;
       var4.method3435(var9, var13, var17);
       float var21 = var1.method17217();
       float var22 = var1.method17218();
       if (var1.method17220().contains(Class2033.field13202)) {
-         var22 += var4.field5032;
+         var22 += var4.rotationPitch;
       }
 
       if (var1.method17220().contains(Class2033.field13201)) {
-         var21 += var4.field5031;
+         var21 += var4.rotationYaw;
       }
 
       var4.method3269(var11, var15, var19, var21, var22);
       this.field23269.sendPacket(new Class5580(var1.method17219()));
-      this.field23269.sendPacket(new Class5604(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.field5031, var4.field5032, false));
+      this.field23269.sendPacket(new Class5604(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch, false));
       if (!this.field23275) {
          this.field23275 = true;
          this.field23272.displayGuiScreen((Screen)null);
@@ -731,7 +731,7 @@ public class ClientPlayNetHandler implements Class5116 {
       if (var12 == null) {
          field23267.warn("Skipping Entity with id {}", var1.method17537());
       } else {
-         var12.method3201(var4, var6, var8);
+         var12.setPacketCoordinates(var4, var6, var8);
          var12.field4965 = (float)(var1.method17546() * 360) / 256.0F;
          var12.field4967 = (float)(var1.method17546() * 360) / 256.0F;
          if (var12 instanceof Class1007) {
@@ -782,14 +782,14 @@ public class ClientPlayNetHandler implements Class5116 {
       Entity var4 = this.field23273.method6774(var1.method17253());
       if (var4 != null) {
          boolean var5 = var4.method3417(this.field23272.player);
-         var4.method3315();
+         var4.removePassengers();
 
          for (int var9 : var1.method17252()) {
             Entity var10 = this.field23273.method6774(var9);
             if (var10 != null) {
                var10.method2758(var4, true);
                if (var10 == this.field23272.player && !var5) {
-                  this.field23272.ingameGUI.method5985(new TranslationTextComponent("mount.onboard", this.field23272.gameSettings.field44637.method8521()), false);
+                  this.field23272.ingameGUI.method5985(new TranslationTextComponent("mount.onboard", this.field23272.gameSettings.keyBindSneak.method8521()), false);
                }
             }
          }
@@ -895,7 +895,7 @@ public class ClientPlayNetHandler implements Class5116 {
       var13.method2869();
       var13.method5394(var12);
       this.field23273.method6845(var7, var13);
-      var13.field5031 = -180.0F;
+      var13.rotationYaw = -180.0F;
       var13.field6131 = new Class9451(this.field23272.gameSettings);
       this.field23272.playerController.method23127(var13);
       var13.method2965(var6.hasReducedDebug());

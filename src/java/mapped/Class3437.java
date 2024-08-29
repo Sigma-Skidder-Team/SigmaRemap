@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class Class3437 extends Class3433 {
    private static String[] field19233;
-   public static final Class6408 field19234 = Block.method11539(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
-   public static final Class6408 field19235 = Block.method11539(6.0, 6.0, 0.0, 10.0, 10.0, 16.0);
-   public static final Class6408 field19236 = Block.method11539(0.0, 6.0, 6.0, 16.0, 10.0, 10.0);
+   public static final VoxelShape field19234 = Block.method11539(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
+   public static final VoxelShape field19235 = Block.method11539(6.0, 6.0, 0.0, 10.0, 10.0, 16.0);
+   public static final VoxelShape field19236 = Block.method11539(0.0, 6.0, 6.0, 16.0, 10.0, 10.0);
 
    public Class3437(AbstractBlock var1) {
       super(var1);
@@ -24,7 +24,7 @@ public class Class3437 extends Class3433 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       switch (Class8694.field39238[var1.<Direction>method23463(field19198).method544().ordinal()]) {
          case 1:
          default:

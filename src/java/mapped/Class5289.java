@@ -24,10 +24,10 @@ public class Class5289 extends Module {
         if (this.isEnabled()) {
             if (mc.player != null && mc.world != null) {
                 this.method16612();
-                Class3192.method11476();
+                RenderUtil.method11476();
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 this.method16607(Class2191.field14328);
-                Class3192.method11477(Class2329.field15941);
+                RenderUtil.method11477(Class2329.field15941);
                 GL11.glLineWidth(1.0F);
                 this.method16606();
                 this.method16607(Class2191.field14329);
@@ -37,7 +37,7 @@ public class Class5289 extends Module {
                 GL11.glEnable(3042);
                 GL11.glDisable(2896);
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-                Class3192.method11478();
+                RenderUtil.method11478();
                 this.method16613();
                 this.field23795.method25602();
             }
@@ -61,7 +61,7 @@ public class Class5289 extends Module {
                                 GL11.glTranslatef(0.0F, 0.1F, 0.0F);
                                 GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37507(), 0.0F, -1.0F, 0.0F);
                                 GL11.glScalef(-0.11F, -0.11F, -0.11F);
-                                Class3192.method11450(
+                                RenderUtil.method11450(
                                         -var3x.method3429() * 22.0F,
                                         -var3x.method3430() * 5.5F,
                                         var3x.method3429() * 44.0F,
@@ -139,10 +139,10 @@ public class Class5289 extends Module {
     }
 
     public void method16608(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9, Class7733 var10) {
-        double var13 = MathHelper.method37822(var8, var1.field5048, var1.getPosX());
-        double var15 = MathHelper.method37822(var8, var1.field5049, var1.getPosY());
-        double var17 = MathHelper.method37822(var8, var1.field5050, var1.getPosZ());
-        float var19 = MathHelper.method37821(var8, var1.field5033, var1.field5031);
+        double var13 = MathHelper.method37822(var8, var1.lastTickPosX, var1.getPosX());
+        double var15 = MathHelper.method37822(var8, var1.lastTickPosY, var1.getPosY());
+        double var17 = MathHelper.method37822(var8, var1.lastTickPosZ, var1.getPosZ());
+        float var19 = MathHelper.method37821(var8, var1.prevRotationYaw, var1.rotationYaw);
         mc.worldRenderer.field941.method32219(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
     }
 

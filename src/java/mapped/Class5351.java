@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -18,7 +18,7 @@ public class Class5351 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         field23907 = 20;
     }
 
@@ -26,10 +26,10 @@ public class Class5351 extends Module {
     private void method16788(Class4435 var1) {
         if (this.isEnabled() && mc.player != null) {
             if (this.method16790()) {
-                if (field23907 == 0 && !mc.player.field5036 && mc.player.field4952 > 0 && mc.player.field5045 < 2.0F) {
+                if (field23907 == 0 && !mc.player.onGround && mc.player.field4952 > 0 && mc.player.fallDistance < 2.0F) {
                     mc.player.method3280(0.0, -1.0, 0.0);
                     Class5628.method17725(mc.player.method3433().method11321());
-                    mc.player.field5036 = true;
+                    mc.player.onGround = true;
                     field23907 = 20;
                 }
             } else {
@@ -63,9 +63,9 @@ public class Class5351 extends Module {
     }
 
     @EventTarget
-    private void method16789(Class4396 var1) {
+    private void method16789(RecievePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            Packet var4 = var1.method13898();
+            Packet var4 = var1.getPacket();
             if (var4 instanceof Class5590) {
                 if (this.method16790()) {
                     field23907 = 0;
@@ -80,7 +80,7 @@ public class Class5351 extends Module {
                 }
             }
 
-            if (var1.method13898() instanceof Class5515) {
+            if (var1.getPacket() instanceof Class5515) {
                 Class5515 var6 = (Class5515) var4;
             }
         }

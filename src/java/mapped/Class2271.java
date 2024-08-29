@@ -1,7 +1,7 @@
 package mapped;
 
 public enum Class2271 implements Class2272 {
-   field14774(Class7377::method23415),
+   field14774(Class7377::getCollisionShape),
    field14775(Class7377::method23413),
    field14776(Class7377::method23417);
 
@@ -13,7 +13,7 @@ public enum Class2271 implements Class2272 {
    }
 
    @Override
-   public Class6408 method8998(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method8998(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.field14777.method8998(var1, var2, var3, var4);
    }
 }

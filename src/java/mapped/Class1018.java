@@ -33,9 +33,9 @@ public abstract class Class1018 extends Class1045 {
       if (this.field5702 > 0) {
          this.field5702--;
          if (this.field5702 % 10 == 0) {
-            double var3 = this.field5054.nextGaussian() * 0.02;
-            double var5 = this.field5054.nextGaussian() * 0.02;
-            double var7 = this.field5054.nextGaussian() * 0.02;
+            double var3 = this.rand.nextGaussian() * 0.02;
+            double var5 = this.rand.nextGaussian() * 0.02;
+            double var7 = this.rand.nextGaussian() * 0.02;
             this.world.method6746(Class7940.field34080, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var3, var5, var7);
          }
       }
@@ -211,9 +211,9 @@ public abstract class Class1018 extends Class1045 {
          super.method2866(var1);
       } else {
          for (int var4 = 0; var4 < 7; var4++) {
-            double var5 = this.field5054.nextGaussian() * 0.02;
-            double var7 = this.field5054.nextGaussian() * 0.02;
-            double var9 = this.field5054.nextGaussian() * 0.02;
+            double var5 = this.rand.nextGaussian() * 0.02;
+            double var7 = this.rand.nextGaussian() * 0.02;
+            double var9 = this.rand.nextGaussian() * 0.02;
             this.world.method6746(Class7940.field34080, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var5, var7, var9);
          }
       }

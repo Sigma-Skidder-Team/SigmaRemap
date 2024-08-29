@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.StopUseItemEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
@@ -18,7 +18,7 @@ public class Class5218 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23549 = -1;
         this.field23551 = 20;
     }
@@ -88,14 +88,14 @@ public class Class5218 extends Module {
     }
 
     @EventTarget
-    public void method16249(Class4396 var1) {
+    public void method16249(RecievePacketEvent var1) {
         if (this.isEnabled() && this.field23549 > 1) {
-            Packet var4 = var1.method13898();
+            Packet var4 = var1.getPacket();
             if (var4 instanceof Class5553) {
                 Class5553 var5 = (Class5553) var4;
                 if (var5.method17470() == mc.player.method3205()) {
                     for (Class9773 var7 : var5.method17469()) {
-                        Class9289 var8 = var7.method38447();
+                        DataParameter var8 = var7.method38447();
                         if (var8.method35015() == 14) {
                             mc.player.inventory.currentItem = this.field23550;
                             this.field23550 = -1;

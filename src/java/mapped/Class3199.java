@@ -5,22 +5,22 @@ public class Class3199 extends Class3198 {
    public static final Class8551 field18486 = Class8820.field39702;
    public static final Class8551 field18487 = Class8820.field39704;
    public static final Class8551 field18488 = Class8820.field39698;
-   public static final Class6408 field18489 = Block.method11539(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
-   public static final Class6408 field18490 = Block.method11539(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
-   public static final Class6408 field18491 = Block.method11539(0.0, 0.0, 6.0, 16.0, 13.0, 10.0);
-   public static final Class6408 field18492 = Block.method11539(6.0, 0.0, 0.0, 10.0, 13.0, 16.0);
-   public static final Class6408 field18493 = Block.method11539(0.0, 0.0, 6.0, 16.0, 24.0, 10.0);
-   public static final Class6408 field18494 = Block.method11539(6.0, 0.0, 0.0, 10.0, 24.0, 16.0);
-   public static final Class6408 field18495 = Class8022.method27431(
+   public static final VoxelShape field18489 = Block.method11539(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
+   public static final VoxelShape field18490 = Block.method11539(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
+   public static final VoxelShape field18491 = Block.method11539(0.0, 0.0, 6.0, 16.0, 13.0, 10.0);
+   public static final VoxelShape field18492 = Block.method11539(6.0, 0.0, 0.0, 10.0, 13.0, 16.0);
+   public static final VoxelShape field18493 = Block.method11539(0.0, 0.0, 6.0, 16.0, 24.0, 10.0);
+   public static final VoxelShape field18494 = Block.method11539(6.0, 0.0, 0.0, 10.0, 24.0, 16.0);
+   public static final VoxelShape field18495 = VoxelShapes.method27431(
       Block.method11539(0.0, 5.0, 7.0, 2.0, 16.0, 9.0), Block.method11539(14.0, 5.0, 7.0, 16.0, 16.0, 9.0)
    );
-   public static final Class6408 field18496 = Class8022.method27431(
+   public static final VoxelShape field18496 = VoxelShapes.method27431(
       Block.method11539(7.0, 5.0, 0.0, 9.0, 16.0, 2.0), Block.method11539(7.0, 5.0, 14.0, 9.0, 16.0, 16.0)
    );
-   public static final Class6408 field18497 = Class8022.method27431(
+   public static final VoxelShape field18497 = VoxelShapes.method27431(
       Block.method11539(0.0, 2.0, 7.0, 2.0, 13.0, 9.0), Block.method11539(14.0, 2.0, 7.0, 16.0, 13.0, 9.0)
    );
-   public static final Class6408 field18498 = Class8022.method27431(
+   public static final VoxelShape field18498 = VoxelShapes.method27431(
       Block.method11539(7.0, 2.0, 0.0, 9.0, 13.0, 2.0), Block.method11539(7.0, 2.0, 14.0, 9.0, 13.0, 16.0)
    );
 
@@ -36,7 +36,7 @@ public class Class3199 extends Class3198 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       if (!var1.<Boolean>method23463(field18488)) {
          return var1.<Direction>method23463(field18484).method544() != Class113.field413 ? field18489 : field18490;
       } else {
@@ -56,16 +56,16 @@ public class Class3199 extends Class3198 {
    }
 
    @Override
-   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       if (!var1.<Boolean>method23463(field18486)) {
          return var1.<Direction>method23463(field18484).method544() != Class113.field415 ? field18494 : field18493;
       } else {
-         return Class8022.method27425();
+         return VoxelShapes.method27425();
       }
    }
 
    @Override
-   public Class6408 method11503(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11503(BlockState var1, Class1665 var2, BlockPos var3) {
       if (!var1.<Boolean>method23463(field18488)) {
          return var1.<Direction>method23463(field18484).method544() != Class113.field413 ? field18495 : field18496;
       } else {

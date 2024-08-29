@@ -91,13 +91,13 @@ public class Class8533 {
    }
 
    public Class8429 method30268() {
-      Class6488 var3;
+      AxisAlignedBB var3;
       if (this.field38349 == null && this.field38350 == null && this.field38351 == null) {
          if (this.field38344.method32003() == null) {
             var3 = null;
          } else {
             float var4 = this.field38344.method32003();
-            var3 = new Class6488((double)(-var4), (double)(-var4), (double)(-var4), (double)(var4 + 1.0F), (double)(var4 + 1.0F), (double)(var4 + 1.0F));
+            var3 = new AxisAlignedBB((double)(-var4), (double)(-var4), (double)(-var4), (double)(var4 + 1.0F), (double)(var4 + 1.0F), (double)(var4 + 1.0F));
          }
       } else {
          var3 = this.method30269(
@@ -133,7 +133,7 @@ public class Class8533 {
       );
    }
 
-   private Class6488 method30269(double var1, double var3, double var5) {
+   private AxisAlignedBB method30269(double var1, double var3, double var5) {
       boolean var9 = var1 < 0.0;
       boolean var10 = var3 < 0.0;
       boolean var11 = var5 < 0.0;
@@ -143,16 +143,16 @@ public class Class8533 {
       double var18 = (!var9 ? var1 : 0.0) + 1.0;
       double var20 = (!var10 ? var3 : 0.0) + 1.0;
       double var22 = (!var11 ? var5 : 0.0) + 1.0;
-      return new Class6488(var12, var14, var16, var18, var20, var22);
+      return new AxisAlignedBB(var12, var14, var16, var18, var20, var22);
    }
 
    private void method30270() {
       if (this.field38352 != Class9795.field45809) {
-         this.field38354 = this.field38354.and(this.method30271(this.field38352, var0 -> (double)var0.field5032));
+         this.field38354 = this.field38354.and(this.method30271(this.field38352, var0 -> (double)var0.rotationPitch));
       }
 
       if (this.field38353 != Class9795.field45809) {
-         this.field38354 = this.field38354.and(this.method30271(this.field38353, var0 -> (double)var0.field5031));
+         this.field38354 = this.field38354.and(this.method30271(this.field38353, var0 -> (double)var0.rotationYaw));
       }
 
       if (!this.field38345.method32004()) {

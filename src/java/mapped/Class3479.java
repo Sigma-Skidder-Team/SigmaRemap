@@ -4,14 +4,14 @@ import java.util.Random;
 
 public class Class3479 extends Class3194 implements Class3196 {
    private static String[] field18470;
-   public static final Class6408 field19332 = Block.method11539(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
+   public static final VoxelShape field19332 = Block.method11539(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
 
    public Class3479(AbstractBlock var1) {
       super(var1);
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19332;
    }
 

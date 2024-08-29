@@ -46,7 +46,7 @@ public class Class3342 extends Class3198 implements Class3255 {
             var15.method3273((double)var12.getX() + 0.5, (double)var12.getY() + 0.05, (double)var12.getZ() + 0.5, 0.0F, 0.0F);
             var1.method6916(var15);
 
-            for (ServerPlayerEntity var9 : var1.<ServerPlayerEntity>method7182(ServerPlayerEntity.class, var15.method3389().method19664(5.0))) {
+            for (ServerPlayerEntity var9 : var1.<ServerPlayerEntity>method7182(ServerPlayerEntity.class, var15.getBoundingBox().method19664(5.0))) {
                CriteriaTriggers.field44478.method15080(var9, var15);
             }
 
@@ -69,7 +69,7 @@ public class Class3342 extends Class3198 implements Class3255 {
          var14.method3273((double)var17.getX() + 0.5, (double)var17.getY() + 0.05, (double)var17.getZ() + 0.5, 0.0F, 0.0F);
          var1.method6916(var14);
 
-         for (ServerPlayerEntity var23 : var1.<ServerPlayerEntity>method7182(ServerPlayerEntity.class, var14.method3389().method19664(5.0))) {
+         for (ServerPlayerEntity var23 : var1.<ServerPlayerEntity>method7182(ServerPlayerEntity.class, var14.getBoundingBox().method19664(5.0))) {
             CriteriaTriggers.field44478.method15080(var23, var14);
          }
 

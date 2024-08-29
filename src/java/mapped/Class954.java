@@ -128,7 +128,7 @@ public class Class954 extends TileEntity {
       String var4 = var1 != null ? var1.getName().getString() : "Sign";
       Object var5 = var1 != null ? var1.getDisplayName() : new StringTextComponent("Sign");
       return new Class6619(
-         Class909.field5189,
+         ICommandSource.field5189,
          Vector3d.method11328(this.field5325),
          Class8513.field37212,
          (ServerWorld)this.field5324,

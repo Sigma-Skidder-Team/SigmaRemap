@@ -16,7 +16,7 @@ public class Class3317<T extends Entity & Class1071> extends Item {
       ItemStack var6 = var2.getHeldItem(var3);
       if (!var1.field9020) {
          Entity var7 = var2.getRidingEntity();
-         if (var2.method3328() && var7 instanceof Class1071 && var7.getType() == this.field18826) {
+         if (var2.isPassenger() && var7 instanceof Class1071 && var7.getType() == this.field18826) {
             Class1071 var8 = (Class1071)var7;
             if (var8.method4982()) {
                var6.method32121(this.field18827, var2, var1x -> var1x.method3185(var3));

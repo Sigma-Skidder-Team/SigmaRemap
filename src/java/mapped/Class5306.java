@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -11,7 +11,7 @@ public class Class5306 extends Module {
     }
 
     @EventTarget
-    private void method16679(Class4402 var1) {
+    private void method16679(SendPacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.method13932() instanceof Class5522) {
                 Class5522 var4 = (Class5522) var1.method13932();

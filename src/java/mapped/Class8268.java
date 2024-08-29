@@ -131,7 +131,7 @@ public class Class8268 {
    private CompletableFuture<Suggestions> method28844(SuggestionsBuilder var1, Class7984<Block> var2) {
       String var5 = var1.getRemaining().toLowerCase(Locale.ROOT);
       if (this.field35551 != null && !this.field35551.method8292().isEmpty()) {
-         Class7608<Block> var6 = var2.method27135(this.field35551);
+         ITag<Block> var6 = var2.method27135(this.field35551);
          if (var6 != null) {
             for (Block var8 : var6.method24918()) {
                for (Class8550 var10 : var8.getStateContainer().method35395()) {
@@ -159,7 +159,7 @@ public class Class8268 {
          return this.field35549.getBlock().isTileEntityProvider();
       } else {
          if (this.field35551 != null) {
-            Class7608<Block> var4 = var1.method27135(this.field35551);
+            ITag<Block> var4 = var1.method27135(this.field35551);
             if (var4 != null) {
                for (Block var6 : var4.method24918()) {
                   if (var6.isTileEntityProvider()) {
@@ -208,7 +208,7 @@ public class Class8268 {
    private CompletableFuture<Suggestions> method28850(SuggestionsBuilder var1, Class7984<Block> var2, String var3) {
       boolean var6 = false;
       if (this.field35551 != null && !this.field35551.method8292().isEmpty()) {
-         Class7608<Block> var7 = var2.method27135(this.field35551);
+         ITag<Block> var7 = var2.method27135(this.field35551);
          if (var7 != null) {
             for (Block var9 : var7.method24918()) {
                Class8550 var10 = var9.getStateContainer().method35396(var3);
@@ -238,7 +238,7 @@ public class Class8268 {
 
    private CompletableFuture<Suggestions> method28851(SuggestionsBuilder var1, Class7984<Block> var2) {
       if (var1.getRemaining().isEmpty()) {
-         Class7608<Block> var5 = var2.method27135(this.field35551);
+         ITag<Block> var5 = var2.method27135(this.field35551);
          if (var5 != null) {
             boolean var6 = false;
             boolean var7 = false;

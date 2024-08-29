@@ -6,15 +6,15 @@ import com.mojang.serialization.MapCodec;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public final class Class7379 extends Class7378<Class7631, Class7379> {
+public final class Class7379 extends Class7378<Fluid, Class7379> {
    private static String[] field31583;
-   public static final Codec<Class7379> field31584 = method23469(Registry.field16070, Class7631::method25049).stable();
+   public static final Codec<Class7379> field31584 = method23469(Registry.field16070, Fluid::method25049).stable();
 
-   public Class7379(Class7631 var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<Class7379> var3) {
+   public Class7379(Fluid var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<Class7379> var3) {
       super(var1, var2, var3);
    }
 
-   public Class7631 method23472() {
+   public Fluid method23472() {
       return this.field31579;
    }
 
@@ -81,7 +81,7 @@ public final class Class7379 extends Class7378<Class7631, Class7379> {
       return this.method23472().method25054();
    }
 
-   public boolean method23486(Class7608<Class7631> var1) {
+   public boolean method23486(ITag<Fluid> var1) {
       return this.method23472().method25067(var1);
    }
 
@@ -89,11 +89,11 @@ public final class Class7379 extends Class7378<Class7631, Class7379> {
       return this.method23472().method25060();
    }
 
-   public boolean method23488(Class1665 var1, BlockPos var2, Class7631 var3, Direction var4) {
+   public boolean method23488(Class1665 var1, BlockPos var2, Fluid var3, Direction var4) {
       return this.method23472().method25055(this, var1, var2, var3, var4);
    }
 
-   public Class6408 method23489(Class1665 var1, BlockPos var2) {
+   public VoxelShape method23489(Class1665 var1, BlockPos var2) {
       return this.method23472().method25068(this, var1, var2);
    }
 }

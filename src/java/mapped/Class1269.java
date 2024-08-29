@@ -30,11 +30,11 @@ public class Class1269 extends Class1193 implements Class1270 {
          RenderSystem.method27938();
          Vector3d var4 = new Vector3d(this.field6744.player.getPosX(), this.field6744.player.method3442(), this.field6744.player.getPosZ());
          Vector3d var5 = new Vector3d(0.0, 0.0, -1.0)
-            .method11350(-this.field6744.player.field5032 * (float) (Math.PI / 180.0))
-            .method11351(-this.field6744.player.field5031 * (float) (Math.PI / 180.0));
+            .method11350(-this.field6744.player.rotationPitch * (float) (Math.PI / 180.0))
+            .method11351(-this.field6744.player.rotationYaw * (float) (Math.PI / 180.0));
          Vector3d var6 = new Vector3d(0.0, 1.0, 0.0)
-            .method11350(-this.field6744.player.field5032 * (float) (Math.PI / 180.0))
-            .method11351(-this.field6744.player.field5031 * (float) (Math.PI / 180.0));
+            .method11350(-this.field6744.player.rotationPitch * (float) (Math.PI / 180.0))
+            .method11351(-this.field6744.player.rotationYaw * (float) (Math.PI / 180.0));
          Vector3d var7 = var5.method11335(var6);
          int var8 = 0;
          int var9 = 0;

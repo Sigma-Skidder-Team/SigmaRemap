@@ -6,8 +6,8 @@ import javax.annotation.Nullable;
 public class Class3410 extends Block {
    private static String[] field19091;
    public static final Class8554 field19092 = Class8820.field39750;
-   public static final Class6408[] field19093 = new Class6408[]{
-      Class8022.method27425(),
+   public static final VoxelShape[] field19093 = new VoxelShape[]{
+      VoxelShapes.method27425(),
       Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
       Block.method11539(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
       Block.method11539(0.0, 0.0, 0.0, 16.0, 6.0, 16.0),
@@ -38,22 +38,22 @@ public class Class3410 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19093[var1.<Integer>method23463(field19092)];
    }
 
    @Override
-   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19093[var1.<Integer>method23463(field19092) - 1];
    }
 
    @Override
-   public Class6408 method11995(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11995(BlockState var1, Class1665 var2, BlockPos var3) {
       return field19093[var1.<Integer>method23463(field19092)];
    }
 
    @Override
-   public Class6408 method11635(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11635(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19093[var1.<Integer>method23463(field19092)];
    }
 

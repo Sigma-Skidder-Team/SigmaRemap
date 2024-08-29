@@ -26,10 +26,10 @@ public class Class2607 extends Class2605 {
             if (!this.method10803()) {
                return false;
             } else {
-               if (this.field16858.field5055 % 20 == 0) {
+               if (this.field16858.ticksExisted % 20 == 0) {
                   List<Class1098> var4 = this.field16858
                      .world
-                     .method6772(Class1098.class, this.field16858.method3389().method19664(16.0), Class8088.field34757);
+                     .method6772(Class1098.class, this.field16858.getBoundingBox().method19664(16.0), Class8088.field34757);
                   if (!var4.isEmpty()) {
                      for (Class1098 var6 : var4) {
                         var6.method5258();
@@ -63,8 +63,8 @@ public class Class2607 extends Class2605 {
    public void method10805() {
       Class880 var3 = this.field16858.method4232();
       Class1110.method5351(this.field16858, new Vector3d(var3.getPosX(), var3.method3440(0.5), var3.getPosZ()));
-      if (!this.field16858.method3389().method19664(0.2F).method19670(var3.method3389())) {
-         if (this.field16858.field5037 || this.field16858.field4952 > 0) {
+      if (!this.field16858.getBoundingBox().method19664(0.2F).method19670(var3.getBoundingBox())) {
+         if (this.field16858.collidedHorizontally || this.field16858.field4952 > 0) {
             Class1110.method5352(this.field16858, Class2143.field14028);
          }
       } else {

@@ -1,24 +1,24 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 
 public class Class8920 {
    private static String[] field40380;
 
-   public static void method32597(Class4396 var0, Class8982 var1) {
-      if (var0.method13898() instanceof Class5607) {
-         Class5607 var4 = (Class5607)var0.method13898();
+   public static void method32597(RecievePacketEvent var0, Class8982 var1) {
+      if (var0.getPacket() instanceof Class5607) {
+         Class5607 var4 = (Class5607)var0.getPacket();
          var1.method33183(var4.method17632(), var4.method17631());
          if (var1 != null) {
             var1.method33174();
          }
 
-         var1.method33180(var0.method13898());
+         var1.method33180(var0.getPacket());
          var0.method13900(true);
       }
 
-      if (var0.method13898() instanceof Class5549) {
-         Class5549 var17 = (Class5549)var0.method13898();
+      if (var0.getPacket() instanceof Class5549) {
+         Class5549 var17 = (Class5549)var0.getPacket();
 
          for (int var5 = 0; var5 < var17.field24643.length; var5++) {
             BlockPos var6 = var17.field24642.method8405(var17.field24643[var5]);
@@ -28,12 +28,12 @@ public class Class8920 {
          }
 
          var1.method33174();
-         var1.method33180(var0.method13898());
+         var1.method33180(var0.getPacket());
          var0.method13900(true);
       }
 
-      if (var0.method13898() instanceof Class5526 && Minecraft.getInstance().world != null) {
-         Class5526 var18 = (Class5526)var0.method13898();
+      if (var0.getPacket() instanceof Class5526 && Minecraft.getInstance().world != null) {
+         Class5526 var18 = (Class5526)var0.getPacket();
 
          try {
             while (Minecraft.getInstance().getConnection() == null) {

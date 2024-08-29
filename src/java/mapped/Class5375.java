@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4403;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
@@ -23,11 +23,11 @@ public class Class5375 extends Module {
         if (this.isEnabled() && var1.method13935() != null && var1.method13937()) {
             Entity var4 = var1.method13935();
             if (var4 instanceof Class880
-                    && var4.field5061 <= (int) this.getNumberValueBySettingName("HurtTime")
+                    && var4.hurtResistantTime <= (int) this.getNumberValueBySettingName("HurtTime")
                     && Class5330.field23887 > 1
-                    && (this.field23998.method27121() > 200L || var4.field5061 > 0)
-                    && mc.player.field5036
-                    && mc.player.field5038) {
+                    && (this.field23998.method27121() > 200L || var4.hurtResistantTime > 0)
+                    && mc.player.onGround
+                    && mc.player.collidedVertically) {
                 double[] var5 = new double[]{0.2, 0.0};
                 if (this.getStringSettingValueByName("Mode").equals("Hypixel")) {
                     var5 = new double[]{
@@ -50,14 +50,14 @@ public class Class5375 extends Module {
 
     @EventTarget
     @HigherPriority
-    private void method16924(Class4402 var1) {
+    private void method16924(SendPacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.method13932() instanceof Class5603) {
                 if (!this.field23998.method27123()) {
                     this.field23998.method27118();
                 }
 
-                if (this.field23999 && mc.player.field5036) {
+                if (this.field23999 && mc.player.onGround) {
                     var1.method13900(true);
                     this.field23999 = false;
                 }

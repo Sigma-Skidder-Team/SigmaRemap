@@ -23,7 +23,7 @@ public class Class5201 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Client.getInstance().method19950().method31738();
         this.field23515 = null;
     }
@@ -45,13 +45,13 @@ public class Class5201 extends Module {
     }
 
     public boolean method16194() {
-        return this.field23513 == null || this.field23513.field5028.method11341(this.field23514) > 6.0;
+        return this.field23513 == null || this.field23513.positionVec.method11341(this.field23514) > 6.0;
     }
 
     @EventTarget
     public void method16195(TickEvent var1) {
         if (mc.player != null) {
-            if (mc.player.field5055 % 14 == 0) {
+            if (mc.player.ticksExisted % 14 == 0) {
                 Entity var4 = this.method16193();
                 if (this.field23515 == null
                         && (this.field23512 == null || this.field23512.isEmpty() || (var4 != this.field23513 || this.method16194()) && var4 != null)) {
@@ -63,7 +63,7 @@ public class Class5201 extends Module {
                             Class9823 var4x = new Class9823();
                             Class9510 var5 = new Class9510(new Class9110(mc.player.getPosition()));
                             Class7860 var6 = new Class7860(this.field23513 = var4);
-                            this.field23514 = this.field23513.field5028;
+                            this.field23514 = this.field23513.positionVec;
                             Class7267 var7 = new Class7267(var5, var6);
                             var7.field31173 = true;
                             var7.field31176 = 310;

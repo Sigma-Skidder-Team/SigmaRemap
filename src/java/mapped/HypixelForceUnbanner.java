@@ -37,7 +37,7 @@ public class HypixelForceUnbanner extends Module {
    }
 
    @Override
-   public void isInDevelopment() {
+   public void onEnable() {
       try {
          String var3 = "D8374378";
          String var4 = mc.session.getUsername();

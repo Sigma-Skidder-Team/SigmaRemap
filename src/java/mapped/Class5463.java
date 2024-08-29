@@ -242,7 +242,7 @@ public class Class5463 {
             if (!var37.isEmpty()) {
                for (TileEntity var30 : var37) {
                   if (var33) {
-                     Class6488 var31 = (Class6488)Class9299.method35070(var30, Class9299.field42943);
+                     AxisAlignedBB var31 = (AxisAlignedBB)Class9299.method35070(var30, Class9299.field42943);
                      if (var31 != null && !var34.method25122(var31)) {
                         continue;
                      }

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Class1024 extends Class1025 implements Class1023 {
-   private static final Class9289<Boolean> field5710 = Class9361.<Boolean>method35441(Class1024.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5710 = EntityDataManager.<Boolean>method35441(Class1024.class, Class7784.field33398);
    private final Class927 field5711 = new Class927(5);
 
    public Class1024(EntityType<? extends Class1024> var1, World var2) {
@@ -38,9 +38,9 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5710, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5710, false);
    }
 
    @Override
@@ -49,12 +49,12 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    public boolean method4542() {
-      return this.field5063.<Boolean>method35445(field5710);
+      return this.dataManager.<Boolean>method35445(field5710);
    }
 
    @Override
    public void method4535(boolean var1) {
-      this.field5063.method35446(field5710, var1);
+      this.dataManager.method35446(field5710, var1);
    }
 
    @Override
@@ -132,7 +132,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    @Override
    public void method4274(float var1) {
       super.method4274(var1);
-      if (this.field5054.nextInt(300) == 0) {
+      if (this.rand.nextInt(300) == 0) {
          ItemStack var4 = this.method3090();
          if (var4.getItem() == Items.field38148) {
             Map var5 = Class7858.method26312(var4);
@@ -149,7 +149,7 @@ public class Class1024 extends Class1025 implements Class1023 {
          return true;
       } else {
          return var1 instanceof Class880 && ((Class880)var1).method3089() == Class7809.field33508
-            ? this.method3344() == null && var1.method3344() == null
+            ? this.getTeam() == null && var1.getTeam() == null
             : false;
       }
    }
@@ -220,7 +220,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    @Override
    public void method4545(int var1, boolean var2) {
       Class7699 var5 = this.method4551();
-      boolean var6 = this.field5054.nextFloat() <= var5.method25436();
+      boolean var6 = this.rand.nextFloat() <= var5.method25436();
       if (var6) {
          ItemStack var7 = new ItemStack(Items.field38148);
          HashMap var8 = Maps.newHashMap();

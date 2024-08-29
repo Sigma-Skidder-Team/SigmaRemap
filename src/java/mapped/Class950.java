@@ -112,7 +112,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
                for (ServerPlayerEntity var13 : this.field5324
                   .<ServerPlayerEntity>method7182(
                      ServerPlayerEntity.class,
-                     new Class6488((double)var3, (double)var4, (double)var5, (double)var3, (double)(var4 - 4), (double)var5).method19663(10.0, 5.0, 10.0)
+                     new AxisAlignedBB((double)var3, (double)var4, (double)var5, (double)var3, (double)(var4 - 4), (double)var5).method19663(10.0, 5.0, 10.0)
                   )) {
                   CriteriaTriggers.field44476.method15096(var13, this);
                }
@@ -164,7 +164,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
          }
 
          int var6 = (9 + this.field5342 * 2) * 20;
-         Class6488 var7 = new Class6488(this.field5325).method19664(var3).method19662(0.0, (double)this.field5324.method7034(), 0.0);
+         AxisAlignedBB var7 = new AxisAlignedBB(this.field5325).method19664(var3).method19662(0.0, (double)this.field5324.method7034(), 0.0);
          List<PlayerEntity> var8 = this.field5324.<PlayerEntity>method7182(PlayerEntity.class, var7);
 
          for (PlayerEntity var10 : var8) {

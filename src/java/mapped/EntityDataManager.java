@@ -16,7 +16,7 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class9361 {
+public class EntityDataManager {
    private static final Logger field43430 = LogManager.getLogger();
    private static final Map<Class<? extends Entity>, Integer> field43431 = Maps.newHashMap();
    private final Entity field43432;
@@ -27,11 +27,11 @@ public class Class9361 {
    public Biome field43437 = Class8708.field39311;
    public BlockPos field43438 = BlockPos.ZERO;
 
-   public Class9361(Entity var1) {
+   public EntityDataManager(Entity var1) {
       this.field43432 = var1;
    }
 
-   public static <T> Class9289<T> method35441(Class<? extends Entity> var0, Class6466<T> var1) {
+   public static <T> DataParameter<T> method35441(Class<? extends Entity> var0, Class6466<T> var1) {
       if (field43430.isDebugEnabled()) {
          try {
             Class var4 = Class.forName(Thread.currentThread().getStackTrace()[2].getClassName());
@@ -68,7 +68,7 @@ public class Class9361 {
       }
    }
 
-   public <T> void method35442(Class9289<T> var1, T var2) {
+   public <T> void register(DataParameter<T> var1, T var2) {
       int var5 = var1.method35015();
       if (var5 <= 254) {
          if (!this.field43433.containsKey(var5)) {
@@ -85,7 +85,7 @@ public class Class9361 {
       }
    }
 
-   private <T> void method35443(Class9289<T> var1, T var2) {
+   private <T> void method35443(DataParameter<T> var1, T var2) {
       Class9773<T> var5 = new Class9773<>(var1, var2);
       this.field43434.writeLock().lock();
       this.field43433.put(var1.method35015(), var5);
@@ -93,7 +93,7 @@ public class Class9361 {
       this.field43434.writeLock().unlock();
    }
 
-   private <T> Class9773<T> method35444(Class9289<T> var1) {
+   private <T> Class9773<T> method35444(DataParameter<T> var1) {
       this.field43434.readLock().lock();
 
       Class9773 var4;
@@ -111,11 +111,11 @@ public class Class9361 {
       return var4;
    }
 
-   public <T> T method35445(Class9289<T> var1) {
+   public <T> T method35445(DataParameter<T> var1) {
       return this.<T>method35444(var1).method38449();
    }
 
-   public <T> void method35446(Class9289<T> var1, T var2) {
+   public <T> void method35446(DataParameter<T> var1, T var2) {
       Class9773 var5 = this.method35444(var1);
       if (ObjectUtils.notEqual(var2, var5.method38449())) {
          var5.method38448(var2);
@@ -183,7 +183,7 @@ public class Class9361 {
    }
 
    private static <T> void method35451(PacketBuffer var0, Class9773<T> var1) throws IOException {
-      Class9289 var4 = var1.method38447();
+      DataParameter var4 = var1.method38447();
       int var5 = Class7784.method25806(var4.method35016());
       if (var5 >= 0) {
          var0.writeByte(var4.method35015());

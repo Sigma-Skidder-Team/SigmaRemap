@@ -6,9 +6,9 @@ import javax.annotation.Nullable;
 public abstract class Class3444 extends Block {
    public final Direction field19256;
    public final boolean field19257;
-   public final Class6408 field19258;
+   public final VoxelShape field19258;
 
-   public Class3444(AbstractBlock var1, Direction var2, Class6408 var3, boolean var4) {
+   public Class3444(AbstractBlock var1, Direction var2, VoxelShape var3, boolean var4) {
       super(var1);
       this.field19256 = var2;
       this.field19258 = var3;
@@ -48,7 +48,7 @@ public abstract class Class3444 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.field19258;
    }
 

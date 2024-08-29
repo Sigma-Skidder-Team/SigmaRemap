@@ -48,7 +48,7 @@ public class ServerWorld extends World implements Class1658 {
    private final Class6805<Block> field9051 = new Class6805<Block>(
       this, var0 -> var0 == null || var0.method11579().isAir(), Registry.BLOCK::getKey, this::method6906
    );
-   private final Class6805<Class7631> field9052 = new Class6805<Class7631>(
+   private final Class6805<Fluid> field9052 = new Class6805<Fluid>(
       this, var0 -> var0 == null || var0 == Class9479.field44064, Registry.field16070::getKey, this::method6905
    );
    private final Set<Class6990> field9053 = Sets.newHashSet();
@@ -266,27 +266,27 @@ public class ServerWorld extends World implements Class1658 {
             }
 
             var4.startSection("checkDespawn");
-            if (!var17.field5041) {
+            if (!var17.removed) {
                var17.method3447();
             }
 
             var4.endSection();
             if (var20 != null) {
-               if (!var20.field5041 && var20.method3409(var17)) {
+               if (!var20.removed && var20.method3409(var17)) {
                   continue;
                }
 
-               var17.method2759();
+               var17.stopRiding();
             }
 
             var4.startSection("tick");
-            if (!var17.field5041 && !(var17 instanceof Class908)) {
+            if (!var17.removed && !(var17 instanceof Class908)) {
                this.method6754(this::method6907, var17);
             }
 
             var4.endSection();
             var4.startSection("remove");
-            if (var17.field5041) {
+            if (var17.removed) {
                this.method6933(var17);
                var15.remove();
                this.method6930(var17);
@@ -349,7 +349,7 @@ public class ServerWorld extends World implements Class1658 {
                Class1076 var13 = EntityType.field41079.method33215(this);
                var13.method5001(true);
                var13.method4770(0);
-               var13.method3215((double)var10.getX(), (double)var10.getY(), (double)var10.getZ());
+               var13.setPosition((double)var10.getX(), (double)var10.getY(), (double)var10.getZ());
                this.method6916(var13);
             }
 
@@ -408,7 +408,7 @@ public class ServerWorld extends World implements Class1658 {
 
    public BlockPos method6900(BlockPos var1) {
       BlockPos var4 = this.method7006(Class101.field299, var1);
-      Class6488 var5 = new Class6488(var4, new BlockPos(var4.getX(), this.method7034(), var4.getZ())).method19664(3.0);
+      AxisAlignedBB var5 = new AxisAlignedBB(var4, new BlockPos(var4.getX(), this.method7034(), var4.getZ())).method19664(3.0);
       List var6 = this.<Class880>method6772(Class880.class, var5, var1x -> var1x != null && var1x.method3066() && this.method7022(var1x.getPosition()));
       if (var6.isEmpty()) {
          if (var4.getY() == -1) {
@@ -460,7 +460,7 @@ public class ServerWorld extends World implements Class1658 {
       this.field9049 = 0;
    }
 
-   private void method6905(Class8269<Class7631> var1) {
+   private void method6905(Class8269<Fluid> var1) {
       Class7379 var4 = this.method6739(var1.field35556);
       if (var4.method23472() == var1.method28874()) {
          var4.method23479(this, var1.field35556);
@@ -479,10 +479,10 @@ public class ServerWorld extends World implements Class1658 {
          this.method6909(var1);
       } else {
          var1.method3274(var1.getPosX(), var1.getPosY(), var1.getPosZ());
-         var1.field5033 = var1.field5031;
-         var1.field5034 = var1.field5032;
-         if (var1.field5071) {
-            var1.field5055++;
+         var1.prevRotationYaw = var1.rotationYaw;
+         var1.prevRotationPitch = var1.rotationPitch;
+         if (var1.addedToChunk) {
+            var1.ticksExisted++;
             IProfiler var4 = this.method6820();
             var4.method22504(() -> Registry.ENTITY_TYPE.getKey(var1.getType()).toString());
             var4.func_230035_c_("tickNonPassenger");
@@ -491,7 +491,7 @@ public class ServerWorld extends World implements Class1658 {
          }
 
          this.method6909(var1);
-         if (var1.field5071) {
+         if (var1.addedToChunk) {
             for (Entity var5 : var1.method3408()) {
                this.method6908(var1, var5);
             }
@@ -500,14 +500,14 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    public void method6908(Entity var1, Entity var2) {
-      if (var2.field5041 || var2.getRidingEntity() != var1) {
-         var2.method2759();
+      if (var2.removed || var2.getRidingEntity() != var1) {
+         var2.stopRiding();
       } else if (var2 instanceof PlayerEntity || this.method6883().method7351(var2)) {
          var2.method3274(var2.getPosX(), var2.getPosY(), var2.getPosZ());
-         var2.field5033 = var2.field5031;
-         var2.field5034 = var2.field5032;
-         if (var2.field5071) {
-            var2.field5055++;
+         var2.prevRotationYaw = var2.rotationYaw;
+         var2.prevRotationPitch = var2.rotationPitch;
+         if (var2.addedToChunk) {
+            var2.ticksExisted++;
             IProfiler var5 = this.method6820();
             var5.method22504(() -> Registry.ENTITY_TYPE.getKey(var2.getType()).toString());
             var5.func_230035_c_("tickPassenger");
@@ -516,7 +516,7 @@ public class ServerWorld extends World implements Class1658 {
          }
 
          this.method6909(var2);
-         if (var2.field5071) {
+         if (var2.addedToChunk) {
             for (Entity var6 : var2.method3408()) {
                this.method6908(var2, var6);
             }
@@ -530,17 +530,17 @@ public class ServerWorld extends World implements Class1658 {
          int var4 = MathHelper.floor(var1.getPosX() / 16.0);
          int var5 = MathHelper.floor(var1.getPosY() / 16.0);
          int var6 = MathHelper.floor(var1.getPosZ() / 16.0);
-         if (!var1.field5071 || var1.field5072 != var4 || var1.field5073 != var5 || var1.field5074 != var6) {
-            if (var1.field5071 && this.method6843(var1.field5072, var1.field5074)) {
-               this.method6824(var1.field5072, var1.field5074).method7133(var1, var1.field5073);
+         if (!var1.addedToChunk || var1.chunkCoordX != var4 || var1.chunkCoordY != var5 || var1.chunkCoordZ != var6) {
+            if (var1.addedToChunk && this.method6843(var1.chunkCoordX, var1.chunkCoordZ)) {
+               this.method6824(var1.chunkCoordX, var1.chunkCoordZ).method7133(var1, var1.chunkCoordY);
             }
 
             if (!var1.method3405() && !this.method6843(var4, var6)) {
-               if (var1.field5071) {
+               if (var1.addedToChunk) {
                   field8997.warn("Entity {} left loaded chunk area", var1);
                }
 
-               var1.field5071 = false;
+               var1.addedToChunk = false;
             } else {
                this.method6824(var4, var6).method7063(var1);
             }
@@ -638,10 +638,10 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    public void method6918(Entity var1) {
-      boolean var4 = var1.field5023;
-      var1.field5023 = true;
+      boolean var4 = var1.forceSpawn;
+      var1.forceSpawn = true;
       this.method6917(var1);
-      var1.field5023 = var4;
+      var1.forceSpawn = var4;
       this.method6909(var1);
    }
 
@@ -667,7 +667,7 @@ public class ServerWorld extends World implements Class1658 {
       Entity var4 = this.field9040.get(var1.getUniqueID());
       if (var4 != null) {
          field8997.warn("Force-added player with duplicate UUID {}", var1.getUniqueID().toString());
-         var4.method3200();
+         var4.detach();
          this.method6934((ServerPlayerEntity)var4);
       }
 
@@ -684,10 +684,10 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    private boolean method6924(Entity var1) {
-      if (!var1.field5041) {
+      if (!var1.removed) {
          if (!this.method6926(var1)) {
             Class1670 var4 = this.method6724(
-               MathHelper.floor(var1.getPosX() / 16.0), MathHelper.floor(var1.getPosZ() / 16.0), Class9176.field42145, var1.field5023
+               MathHelper.floor(var1.getPosX() / 16.0), MathHelper.floor(var1.getPosZ() / 16.0), Class9176.field42145, var1.forceSpawn
             );
             if (var4 instanceof Class1674) {
                var4.method7063(var1);
@@ -828,7 +828,7 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    private void method6933(Entity var1) {
-      Class1670 var4 = this.method6724(var1.field5072, var1.field5074, Class9176.field42145, false);
+      Class1670 var4 = this.method6724(var1.chunkCoordX, var1.chunkCoordZ, Class9176.field42145, false);
       if (var4 instanceof Class1674) {
          ((Class1674)var4).method7132(var1);
       }
@@ -907,9 +907,9 @@ public class ServerWorld extends World implements Class1658 {
    @Override
    public void method6731(BlockPos var1, BlockState var2, BlockState var3, int var4) {
       this.method6883().method7372(var1);
-      Class6408 var7 = var2.method23414(this, var1);
-      Class6408 var8 = var3.method23414(this, var1);
-      if (Class8022.method27435(var7, var8, Class9477.field44043)) {
+      VoxelShape var7 = var2.method23414(this, var1);
+      VoxelShape var8 = var3.method23414(this, var1);
+      if (VoxelShapes.compare(var7, var8, IBooleanFunction.field44043)) {
          for (Class6990 var10 : this.field9053) {
             if (!var10.method21646()) {
                var10.method21676(var1);
@@ -980,7 +980,7 @@ public class ServerWorld extends World implements Class1658 {
       return this.field9051;
    }
 
-   public Class6805<Class7631> method6861() {
+   public Class6805<Fluid> method6861() {
       return this.field9052;
    }
 

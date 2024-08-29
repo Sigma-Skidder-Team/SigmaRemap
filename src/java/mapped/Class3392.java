@@ -20,24 +20,24 @@ public class Class3392 extends Block {
       var0.put(Direction.field673, field19023);
       var0.put(Direction.DOWN, field19024);
    });
-   public final Class6408[] field19026;
+   public final VoxelShape[] field19026;
 
    public Class3392(float var1, AbstractBlock var2) {
       super(var2);
       this.field19026 = this.method12001(var1);
    }
 
-   private Class6408[] method12001(float var1) {
+   private VoxelShape[] method12001(float var1) {
       float var4 = 0.5F - var1;
       float var5 = 0.5F + var1;
-      Class6408 var6 = Block.method11539(
+      VoxelShape var6 = Block.method11539(
          (double)(var4 * 16.0F), (double)(var4 * 16.0F), (double)(var4 * 16.0F), (double)(var5 * 16.0F), (double)(var5 * 16.0F), (double)(var5 * 16.0F)
       );
-      Class6408[] var7 = new Class6408[field19018.length];
+      VoxelShape[] var7 = new VoxelShape[field19018.length];
 
       for (int var8 = 0; var8 < field19018.length; var8++) {
          Direction var9 = field19018[var8];
-         var7[var8] = Class8022.method27427(
+         var7[var8] = VoxelShapes.method27427(
             0.5 + Math.min((double)(-var1), (double)var9.method539() * 0.5),
             0.5 + Math.min((double)(-var1), (double)var9.method540() * 0.5),
             0.5 + Math.min((double)(-var1), (double)var9.method541() * 0.5),
@@ -47,14 +47,14 @@ public class Class3392 extends Block {
          );
       }
 
-      Class6408[] var12 = new Class6408[64];
+      VoxelShape[] var12 = new VoxelShape[64];
 
       for (int var13 = 0; var13 < 64; var13++) {
-         Class6408 var10 = var6;
+         VoxelShape var10 = var6;
 
          for (int var11 = 0; var11 < field19018.length; var11++) {
             if ((var13 & 1 << var11) != 0) {
-               var10 = Class8022.method27431(var10, var7[var11]);
+               var10 = VoxelShapes.method27431(var10, var7[var11]);
             }
          }
 
@@ -70,7 +70,7 @@ public class Class3392 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.field19026[this.method12002(var1)];
    }
 

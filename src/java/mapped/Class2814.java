@@ -64,7 +64,7 @@ public class Class2814 extends Class2803<Class1015> {
    }
 
    public void method10998(Class1015 var1, float var2, float var3, float var4, float var5, float var6) {
-      this.method11020(method11022(var1), var1.field5055, var2, var3, var4, var5, var6);
+      this.method11020(method11022(var1), var1.ticksExisted, var2, var3, var4, var5, var6);
    }
 
    public void method10997(Class1015 var1, float var2, float var3, float var4) {

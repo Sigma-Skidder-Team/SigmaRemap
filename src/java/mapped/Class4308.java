@@ -238,7 +238,7 @@ public class Class4308 extends Class4307 {
          ? this.method13317(field20942.calcPercent(), 0.8F) * 0.5F + 0.5F
          : (!field20944 ? 1.0F : this.method13317(field20942.calcPercent(), 1.0F));
       float var5 = 0.2F * var1 * var4;
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.field20895,
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
@@ -259,7 +259,7 @@ public class Class4308 extends Class4307 {
 
       if (Client.getInstance().getModuleManager().method14667().method20770() != null) {
          String var12 = Client.getInstance().getModuleManager().method14667().method20770().field31263;
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.JelloLightFont20,
             (float)(this.field20897 - ResourceRegistry.JelloLightFont20.method23942(var12) - 80),
             (float)(this.field20898 - 47),

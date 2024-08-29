@@ -21,7 +21,7 @@ public class Class2887<T extends Class1057> extends Class2803<T> {
    }
 
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
-      float var9 = var4 - (float)var1.field5055;
+      float var9 = var4 - (float)var1.ticksExisted;
       float var10 = (0.5F + var1.method4853(var9)) * (float) Math.PI;
       float var11 = -1.0F + MathHelper.sin(var10);
       float var12 = 0.0F;

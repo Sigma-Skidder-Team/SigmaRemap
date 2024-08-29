@@ -71,7 +71,7 @@ public class Class5133 implements Class5119 {
    private void method15875() {
       this.field23332.entrySet().removeIf(var1 -> {
          Entity var4 = this.field23330.world.method6774(var1.getValue().field40363);
-         return var4 == null || var4.field5041;
+         return var4 == null || var4.removed;
       });
    }
 

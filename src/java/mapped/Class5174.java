@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
@@ -18,13 +18,13 @@ public class Class5174 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23464 = -1;
         this.field23465 = null;
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Class5628.method17725(-0.08);
         double var3 = Class9567.method37075();
         Class9567.method37090(var3);
@@ -36,7 +36,7 @@ public class Class5174 extends Module {
         if (this.isEnabled() && (mc.player.method3331() || !this.method16004().getBooleanValueFromSetttingName("Sneak"))) {
             if (var1.method13976() == ClickEvent.Button.RIGHT) {
                 BlockRayTraceResult var4 = Class9217.method34567(
-                        mc.player.field5031, mc.player.field5032, this.method16004().getNumberValueBySettingName("Maximum range")
+                        mc.player.rotationYaw, mc.player.rotationPitch, this.method16004().getNumberValueBySettingName("Maximum range")
                 );
                 BlockPos var5 = null;
                 if (var4 != null) {
@@ -60,10 +60,10 @@ public class Class5174 extends Module {
     }
 
     @EventTarget
-    public void method16105(Class4396 var1) {
+    public void method16105(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof Class5473) {
-                Class5473 var4 = (Class5473) var1.method13898();
+            if (var1.getPacket() instanceof Class5473) {
+                Class5473 var4 = (Class5473) var1.getPacket();
                 if (var4.field24297 == (double) this.field23465.getX() + 0.5
                         && var4.field24298 == (double) (this.field23465.getY() + 1)
                         && var4.field24299 == (double) this.field23465.getZ() + 0.5) {

@@ -87,21 +87,21 @@ public class Class5359 extends Module {
                         GL11.glTranslated(-3.0, 0.0, 0.0);
                     }
 
-                    Class3192.method11426(
+                    RenderUtil.method11426(
                             (float) (var7 - var19 - 3), (float) (var6 + 1), (float) (var7 + 2), (float) (var6 + var20 + 1), new java.awt.Color(0, 0, 0, 150).getRGB()
                     );
                     if (!var5.equalsIgnoreCase("None")) {
                         if (!var5.equalsIgnoreCase("All")) {
                             if (!var5.equalsIgnoreCase("Left")) {
                                 if (var5.equalsIgnoreCase("Right")) {
-                                    Class3192.method11426((float) (var7 + 2), (float) (var6 + 1), (float) (var7 + 7), (float) (var6 + 1 + var20), var10);
+                                    RenderUtil.method11426((float) (var7 + 2), (float) (var6 + 1), (float) (var7 + 7), (float) (var6 + 1 + var20), var10);
                                 }
                             } else {
-                                Class3192.method11426((float) (var7 - var19 - 6), (float) (var6 + 1), (float) (var7 - var19 - 3), (float) (var6 + 1 + var20), var10);
+                                RenderUtil.method11426((float) (var7 - var19 - 6), (float) (var6 + 1), (float) (var7 - var19 - 3), (float) (var6 + 1 + var20), var10);
                             }
                         } else {
-                            Class3192.method11426((float) (var7 - var19 - 5), (float) (var6 + 1), (float) (var7 - var19 - 3), (float) (var6 + 1 + var20), var10);
-                            Class3192.method11426((float) (var7 - var19 - 3), (float) (var6 + 1), (float) (var7 - var11 - 5), (float) (var6 + 3), var10);
+                            RenderUtil.method11426((float) (var7 - var19 - 5), (float) (var6 + 1), (float) (var7 - var19 - 3), (float) (var6 + 1 + var20), var10);
+                            RenderUtil.method11426((float) (var7 - var19 - 3), (float) (var6 + 1), (float) (var7 - var11 - 5), (float) (var6 + 3), var10);
                         }
                     }
 
@@ -111,7 +111,7 @@ public class Class5359 extends Module {
                         GL11.glTranslated((float) var19 * Class9782.method38557(var15.calcPercent(), 0.0F, 1.0F, 1.0F), 0.0, 0.0);
                     }
 
-                    Class3192.method11418(
+                    RenderUtil.method11418(
                             (float) (var7 - var19 - 3),
                             (float) (var6 + 1),
                             (float) var7,
@@ -125,7 +125,7 @@ public class Class5359 extends Module {
                                     this.method16856(var16),
                                     new Color(160, 160, 160)
                             );
-                    Class3192.method11422();
+                    RenderUtil.method11422();
                     RenderSystem.disableBlend();
                     var6 += var20;
                     RenderSystem.popMatrix();
@@ -138,7 +138,7 @@ public class Class5359 extends Module {
             }
 
             if (var5.equalsIgnoreCase("All") && var11 > 0) {
-                Class3192.method11426((float) (var7 - var11 - 5), (float) (var6 + 1), (float) (var7 + 2), (float) (var6 + 3), var10);
+                RenderUtil.method11426((float) (var7 - var11 - 5), (float) (var6 + 1), (float) (var7 + 2), (float) (var6 + 3), var10);
             }
         }
     }

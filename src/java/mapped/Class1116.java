@@ -8,13 +8,13 @@ import java.util.UUID;
 public class Class1116 extends AbstractClientPlayerEntity {
    public Class1116(ClientWorld var1, GameProfile var2) {
       super(var1, var2);
-      this.field5051 = 1.0F;
-      this.field5052 = true;
+      this.stepHeight = 1.0F;
+      this.noClip = true;
    }
 
    @Override
    public boolean method3291(double var1) {
-      double var5 = this.method3389().method19675() * 10.0;
+      double var5 = this.getBoundingBox().method19675() * 10.0;
       if (Double.isNaN(var5)) {
          var5 = 1.0;
       }
@@ -40,11 +40,11 @@ public class Class1116 extends AbstractClientPlayerEntity {
          double var4 = this.getPosX() + (this.field4986 - this.getPosX()) / (double)this.field4985;
          double var6 = this.getPosY() + (this.field4987 - this.getPosY()) / (double)this.field4985;
          double var8 = this.getPosZ() + (this.field4988 - this.getPosZ()) / (double)this.field4985;
-         this.field5031 = (float)((double)this.field5031 + MathHelper.method37793(this.field4989 - (double)this.field5031) / (double)this.field4985);
-         this.field5032 = (float)((double)this.field5032 + (this.field4990 - (double)this.field5032) / (double)this.field4985);
+         this.rotationYaw = (float)((double)this.rotationYaw + MathHelper.method37793(this.field4989 - (double)this.rotationYaw) / (double)this.field4985);
+         this.rotationPitch = (float)((double)this.rotationPitch + (this.field4990 - (double)this.rotationPitch) / (double)this.field4985);
          this.field4985--;
-         this.method3215(var4, var6, var8);
-         this.method3214(this.field5031, this.field5032);
+         this.setPosition(var4, var6, var8);
+         this.method3214(this.rotationYaw, this.rotationPitch);
       }
 
       if (this.field4992 > 0) {
@@ -55,13 +55,13 @@ public class Class1116 extends AbstractClientPlayerEntity {
       this.field4908 = this.field4909;
       this.method3084();
       float var3;
-      if (this.field5036 && !this.getShouldBeDead()) {
+      if (this.onGround && !this.getShouldBeDead()) {
          var3 = Math.min(0.1F, MathHelper.method37766(method3234(this.method3433())));
       } else {
          var3 = 0.0F;
       }
 
-      if (!this.field5036 && !this.getShouldBeDead()) {
+      if (!this.onGround && !this.getShouldBeDead()) {
          float var11 = (float)Math.atan(-this.method3433().field18049 * 0.2F) * 15.0F;
       } else {
          float var10 = 0.0F;

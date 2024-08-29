@@ -22,10 +22,10 @@ public class Class5276 extends Module {
         if (this.isEnabled()) {
             if (mc.player != null && mc.world != null) {
                 this.method16509();
-                Class3192.method11476();
+                RenderUtil.method11476();
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 this.method16508(false);
-                Class3192.method11477(Class2329.field15941);
+                RenderUtil.method11477(Class2329.field15941);
                 GL11.glLineWidth(3.0F);
                 RenderSystem.method27819(518, 0.0F);
                 RenderSystem.disableAlphaTest();
@@ -35,7 +35,7 @@ public class Class5276 extends Module {
                 GL11.glDisable(2896);
                 this.method16508(true);
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-                Class3192.method11478();
+                RenderUtil.method11478();
                 this.method16510();
             }
         }
@@ -60,7 +60,7 @@ public class Class5276 extends Module {
                                     GL11.glTranslatef(0.0F, 0.1F, 0.0F);
                                     GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37507(), 0.0F, -1.0F, 0.0F);
                                     GL11.glScalef(-0.11F, -0.11F, -0.11F);
-                                    Class3192.method11450(
+                                    RenderUtil.method11450(
                                             -var2.method3429() * 22.0F,
                                             -var2.method3430() * 5.5F,
                                             var2.method3429() * 44.0F,
@@ -94,14 +94,14 @@ public class Class5276 extends Module {
                     GL11.glDisable(2929);
                     GL11.glEnable(3042);
                     int var10 = this.parseSettingValueToIntBySettingName("Color");
-                    double var11 = (var5.getPosX() - var5.field5048) * (double) mc.timer.renderPartialTicks - (var5.getPosX() - var5.field5048);
-                    double var13 = (var5.getPosY() - var5.field5049) * (double) mc.timer.renderPartialTicks - (var5.getPosY() - var5.field5049);
-                    double var15 = (var5.getPosZ() - var5.field5050) * (double) mc.timer.renderPartialTicks - (var5.getPosZ() - var5.field5050);
-                    Class9388 var17 = new Class9388(var5.method3389().method19667(var11, var13, var15)).method35648(0.1F);
+                    double var11 = (var5.getPosX() - var5.lastTickPosX) * (double) mc.timer.renderPartialTicks - (var5.getPosX() - var5.lastTickPosX);
+                    double var13 = (var5.getPosY() - var5.lastTickPosY) * (double) mc.timer.renderPartialTicks - (var5.getPosY() - var5.lastTickPosY);
+                    double var15 = (var5.getPosZ() - var5.lastTickPosZ) * (double) mc.timer.renderPartialTicks - (var5.getPosZ() - var5.lastTickPosZ);
+                    Class9388 var17 = new Class9388(var5.getBoundingBox().method19667(var11, var13, var15)).method35648(0.1F);
                     if (var1) {
-                        Class3192.method11462(var17, 3.0F, Class5628.method17688(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
+                        RenderUtil.method11462(var17, 3.0F, Class5628.method17688(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
                     } else {
-                        Class3192.method11459(var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                        RenderUtil.method11459(var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     }
 
                     GL11.glDisable(3042);

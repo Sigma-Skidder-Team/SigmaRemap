@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
@@ -30,20 +30,20 @@ public class Class5192 extends Module {
     }
 
     @EventTarget
-    public void method16163(Class4396 var1) {
+    public void method16163(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof Class5607) {
-                Class5607 var4 = (Class5607) var1.method13898();
+            if (var1.getPacket() instanceof Class5607) {
+                Class5607 var4 = (Class5607) var1.getPacket();
                 this.method16164(mc.world.method6722(var4.method17632()).method7072());
             }
 
-            if (var1.method13898() instanceof Class5549) {
-                Class5549 var5 = (Class5549) var1.method13898();
+            if (var1.getPacket() instanceof Class5549) {
+                Class5549 var5 = (Class5549) var1.getPacket();
                 this.method16164(new Class7481(var5.field24642.field13027, var5.field24642.field13029));
             }
 
-            if (var1.method13898() instanceof Class5526 && Minecraft.getInstance().world != null) {
-                Class5526 var6 = (Class5526) var1.method13898();
+            if (var1.getPacket() instanceof Class5526 && Minecraft.getInstance().world != null) {
+                Class5526 var6 = (Class5526) var1.getPacket();
                 this.method16164(new Class7481(var6.method17378(), var6.method17379()));
             }
         }
@@ -122,7 +122,7 @@ public class Class5192 extends Module {
     @EventTarget
     public void method16168(TickEvent var1) {
         if (this.isEnabled()) {
-            if (mc.player.field5055 < 20) {
+            if (mc.player.ticksExisted < 20) {
                 this.field23499.clear();
             } else {
                 int var4 = (int) this.getNumberValueBySettingName("Chunk Range");
@@ -130,7 +130,7 @@ public class Class5192 extends Module {
 
                 for (int var6 = -5; var6 < 5; var6++) {
                     for (int var7 = -5; var7 < 5; var7++) {
-                        var5.add(new Class7481(mc.player.field5072 + var6, mc.player.field5074 + var7));
+                        var5.add(new Class7481(mc.player.chunkCoordX + var6, mc.player.chunkCoordZ + var7));
                     }
                 }
 
@@ -138,7 +138,7 @@ public class Class5192 extends Module {
 
                 while (var11.hasNext()) {
                     Class7871 var12 = (Class7871) var11.next();
-                    if (var12.method26391(new Class7481(mc.player.field5072, mc.player.field5074)) > 7
+                    if (var12.method26391(new Class7481(mc.player.chunkCoordX, mc.player.chunkCoordZ)) > 7
                             || this.field23500.contains(var12.method26392())) {
                         var11.remove();
                     }
@@ -162,7 +162,7 @@ public class Class5192 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23499.clear();
         this.field23500.clear();
     }
@@ -185,7 +185,7 @@ public class Class5192 extends Module {
                 double var10 = (double) var7.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
                 double var12 = (double) var7.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                 Class9388 var14 = new Class9388(var8, var10, var12, var8 + 1.0, var10 + 1.0, var12 + 1.0);
-                Class3192.method11459(var14, var3);
+                RenderUtil.method11459(var14, var3);
             }
         }
 

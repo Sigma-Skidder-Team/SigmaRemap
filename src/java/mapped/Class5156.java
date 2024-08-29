@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4400;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
@@ -95,11 +95,11 @@ public class Class5156 extends Module {
     @EventTarget
     @LowerPriority
     @Class5631
-    private void method16021(Class4396 var1) {
+    private void method16021(RecievePacketEvent var1) {
         if (this.isEnabled() || Class8005.method27372() == Class5989.field26129) {
             if (mc.player != null) {
-                if (var1.method13898() instanceof Class5588) {
-                    Class5588 var4 = (Class5588) var1.method13898();
+                if (var1.getPacket() instanceof Class5588) {
+                    Class5588 var4 = (Class5588) var1.getPacket();
 
                     var4.method17562().removeIf(var6 -> var4.method17561() == mc.player.method3205()
                             && var6.getFirst() == Class2106.field13732

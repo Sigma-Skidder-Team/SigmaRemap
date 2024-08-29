@@ -7,7 +7,7 @@ public abstract class Class893 extends Class882 {
 
    public Class893(EntityType<? extends Class893> var1, double var2, double var4, double var6, World var8) {
       this(var1, var8);
-      this.method3215(var2, var4, var6);
+      this.setPosition(var2, var4, var6);
    }
 
    public Class893(EntityType<? extends Class893> var1, Class880 var2, World var3) {
@@ -17,7 +17,7 @@ public abstract class Class893 extends Class882 {
 
    @Override
    public boolean method3291(double var1) {
-      double var5 = this.method3389().method19675() * 4.0;
+      double var5 = this.getBoundingBox().method19675() * 4.0;
       if (Double.isNaN(var5)) {
          var5 = 4.0;
       }
@@ -86,7 +86,7 @@ public abstract class Class893 extends Class882 {
          this.method3435(var18.field18048, var18.field18049 - (double)this.method3515(), var18.field18050);
       }
 
-      this.method3215(var6, var8, var10);
+      this.setPosition(var6, var8, var10);
    }
 
    public float method3515() {

@@ -73,7 +73,7 @@ public class Class4321 extends Class4307 {
     @Override
     public void method13027(float var1) {
         float var4 = field21079.calcPercent();
-        Class3192.method11426(
+        RenderUtil.method11426(
                 (float) this.field20895,
                 (float) this.field20896,
                 (float) (this.field20895 + this.field20897),

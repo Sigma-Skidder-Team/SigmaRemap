@@ -5,14 +5,14 @@ import java.util.Random;
 public class Class3201 extends Class3200 {
    private static String[] field18499;
    public static final Class8551 field18501 = Class8820.field39704;
-   public static final Class6408 field18502 = Block.method11539(5.0, 4.0, 10.0, 11.0, 12.0, 16.0);
-   public static final Class6408 field18503 = Block.method11539(5.0, 4.0, 0.0, 11.0, 12.0, 6.0);
-   public static final Class6408 field18504 = Block.method11539(10.0, 4.0, 5.0, 16.0, 12.0, 11.0);
-   public static final Class6408 field18505 = Block.method11539(0.0, 4.0, 5.0, 6.0, 12.0, 11.0);
-   public static final Class6408 field18506 = Block.method11539(5.0, 0.0, 4.0, 11.0, 6.0, 12.0);
-   public static final Class6408 field18507 = Block.method11539(4.0, 0.0, 5.0, 12.0, 6.0, 11.0);
-   public static final Class6408 field18508 = Block.method11539(5.0, 10.0, 4.0, 11.0, 16.0, 12.0);
-   public static final Class6408 field18509 = Block.method11539(4.0, 10.0, 5.0, 12.0, 16.0, 11.0);
+   public static final VoxelShape field18502 = Block.method11539(5.0, 4.0, 10.0, 11.0, 12.0, 16.0);
+   public static final VoxelShape field18503 = Block.method11539(5.0, 4.0, 0.0, 11.0, 12.0, 6.0);
+   public static final VoxelShape field18504 = Block.method11539(10.0, 4.0, 5.0, 16.0, 12.0, 11.0);
+   public static final VoxelShape field18505 = Block.method11539(0.0, 4.0, 5.0, 6.0, 12.0, 11.0);
+   public static final VoxelShape field18506 = Block.method11539(5.0, 0.0, 4.0, 11.0, 6.0, 12.0);
+   public static final VoxelShape field18507 = Block.method11539(4.0, 0.0, 5.0, 12.0, 6.0, 11.0);
+   public static final VoxelShape field18508 = Block.method11539(5.0, 10.0, 4.0, 11.0, 16.0, 12.0);
+   public static final VoxelShape field18509 = Block.method11539(4.0, 10.0, 5.0, 12.0, 16.0, 11.0);
 
    public Class3201(AbstractBlock var1) {
       super(var1);
@@ -26,7 +26,7 @@ public class Class3201 extends Class3200 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       switch (Class6596.field29026[var1.<Class103>method23463(field18500).ordinal()]) {
          case 1:
             switch (Class6596.field29024[var1.<Direction>method23463(field18484).method544().ordinal()]) {

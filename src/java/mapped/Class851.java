@@ -587,7 +587,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    @Override
    public void tick() {
       super.tick();
-      if (!this.field4562.player.method3066() || this.field4562.player.field5041) {
+      if (!this.field4562.player.method3066() || this.field4562.player.removed) {
          this.field4562.player.method2772();
       }
    }

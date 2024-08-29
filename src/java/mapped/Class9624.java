@@ -7,7 +7,7 @@ public class Class9624 {
    private boolean field45005;
    private Class1665 field45006;
    private Entity field45007;
-   private Vector3d field45008 = Vector3d.field18047;
+   private Vector3d field45008 = Vector3d.ZERO;
    private final Mutable field45009 = new Mutable();
    private final Class7680 field45010 = new Class7680(0.0F, 0.0F, 1.0F);
    private final Class7680 field45011 = new Class7680(0.0F, 1.0F, 0.0F);
@@ -28,9 +28,9 @@ public class Class9624 {
       this.field45017 = var4;
       this.method37501(var2.method3136(var5), var2.method3282(var5));
       this.method37502(
-         MathHelper.method37822((double)var5, var2.field5025, var2.getPosX()),
-         MathHelper.method37822((double)var5, var2.field5026, var2.getPosY()) + (double) MathHelper.method37821(var5, this.field45019, this.field45018),
-         MathHelper.method37822((double)var5, var2.field5027, var2.getPosZ())
+         MathHelper.method37822((double)var5, var2.prevPosX, var2.getPosX()),
+         MathHelper.method37822((double)var5, var2.prevPosY, var2.getPosY()) + (double) MathHelper.method37821(var5, this.field45019, this.field45018),
+         MathHelper.method37822((double)var5, var2.prevPosZ, var2.getPosZ())
       );
       if (!var3) {
          if (var2 instanceof Class880 && ((Class880)var2).isSleeping()) {

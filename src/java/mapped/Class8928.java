@@ -249,7 +249,7 @@ public class Class8928 {
       var0.put(Blocks.field36889, var6);
       var0.put(Blocks.field37013, var6);
    });
-   private static final Map<Class7631, RenderType> field40408 = Util.<Map<Class7631, RenderType>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<Fluid, RenderType> field40408 = Util.<Map<Fluid, RenderType>>method38508(Maps.newHashMap(), var0 -> {
       RenderType var3 = RenderType.method14304();
       var0.put(Class9479.field44065, var3);
       var0.put(Class9479.field44066, var3);

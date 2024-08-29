@@ -58,7 +58,7 @@ public class Class6201 implements Class6196 {
       }
    }
 
-   public static boolean method19106(ClientPlayerEntity var0, Class7608<Item> var1) {
+   public static boolean method19106(ClientPlayerEntity var0, ITag<Item> var1) {
       for (Item var5 : var1.method24918()) {
          if (var0.method5396().method28961(Class8876.field40097.method172(var5)) > 0) {
             return true;

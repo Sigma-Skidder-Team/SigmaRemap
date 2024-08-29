@@ -75,7 +75,7 @@ public class Class4315 extends Class4307 {
       float var4 = Class9747.method38214(var1, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       float var5 = 0.25F * var1;
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.field20895,
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),

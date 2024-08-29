@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5334 extends Class5325 {
+public class Class5334 extends ModuleWithModuleSettings {
     public Class5334() {
         super(
                 ModuleCategory.COMBAT,

@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.event.impl.Class4436;
@@ -28,7 +28,7 @@ public class Class5353 extends Module {
     @EventTarget
     public void method16796(Class4399 var1) {
         if (this.isEnabled() && mc.player != null && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-            if (mc.player.field5036 && var1.method13921()) {
+            if (mc.player.onGround && var1.method13921()) {
                 var1.method13912(var1.method13911() + 1.0E-14);
             }
         }
@@ -37,8 +37,8 @@ public class Class5353 extends Module {
     @EventTarget
     public void method16797(Class4435 var1) {
         if (this.isEnabled()) {
-            if (mc.player.field5036
-                    && mc.player.field5038
+            if (mc.player.onGround
+                    && mc.player.collidedVertically
                     && (mc.player.field4984 != 0.0F || mc.player.field4982 != 0.0F)
                     && this.getBooleanValueFromSetttingName("AutoJump")) {
                 mc.player.method2914();
@@ -58,7 +58,7 @@ public class Class5353 extends Module {
                 this.field23917 = Math.min(1.0F, this.field23917 + 0.1F);
             }
 
-            if (mc.player.field5036 && !this.field23915) {
+            if (mc.player.onGround && !this.field23915) {
                 this.field23913 = 0.0F;
                 this.field23914 = 0.0F;
                 this.field23917 = Math.min(1.0F, this.field23917 + 0.33F);
@@ -82,10 +82,10 @@ public class Class5353 extends Module {
     }
 
     @EventTarget
-    private void method16799(Class4396 var1) {
+    private void method16799(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (mc.player != null && var1.method13898() instanceof Class5590) {
-                Class5590 var4 = (Class5590) var1.method13898();
+            if (mc.player != null && var1.getPacket() instanceof Class5590) {
+                Class5590 var4 = (Class5590) var1.getPacket();
                 if (var4.method17565() != mc.player.method3205()) {
                 }
             }

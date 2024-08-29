@@ -110,7 +110,7 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
 
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
       boolean var9 = var1.method4943();
-      boolean var10 = var1.method3329();
+      boolean var10 = var1.isBeingRidden();
 
       for (Class7219 var14 : this.field17703) {
          var14.field31039 = var9;
@@ -147,7 +147,7 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
       super.method10997(var1, var2, var3, var4);
       float var7 = MathHelper.method37828(var1.field4966, var1.field4965, var4);
       float var8 = MathHelper.method37828(var1.field4968, var1.field4967, var4);
-      float var9 = MathHelper.method37821(var4, var1.field5034, var1.field5032);
+      float var9 = MathHelper.method37821(var4, var1.prevRotationPitch, var1.rotationPitch);
       float var10 = var8 - var7;
       float var11 = var9 * (float) (Math.PI / 180.0);
       if (var10 > 20.0F) {
@@ -167,7 +167,7 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
       float var14 = 1.0F - var13;
       float var15 = var1.method4965(var4);
       boolean var16 = var1.field5887 != 0;
-      float var17 = (float)var1.field5055 + var4;
+      float var17 = (float)var1.ticksExisted + var4;
       this.field17693.field31033 = 4.0F;
       this.field17693.field31034 = -12.0F;
       this.field17692.field31035 = 0.0F;

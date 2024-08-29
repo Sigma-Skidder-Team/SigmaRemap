@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.account;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import mapped.*;
 
 import java.util.ArrayList;
@@ -16,10 +16,10 @@ public class BanListener {
     public Minecraft field38719 = Minecraft.getInstance();
 
     @EventTarget
-    private void method30840(Class4396 var1) {
+    private void method30840(RecievePacketEvent var1) {
         if (this.field38719.getCurrentServerData() != null) {
-            if (var1.method13898() instanceof SChatPacket) {
-                SChatPacket var4 = (SChatPacket) var1.method13898();
+            if (var1.getPacket() instanceof SChatPacket) {
+                SChatPacket var4 = (SChatPacket) var1.getPacket();
                 ArrayList var5 = new ArrayList<String>(
                         Arrays.asList(
                                 "You are permanently banned from MinemenClub. ",
@@ -40,9 +40,9 @@ public class BanListener {
                 }
             }
 
-            if (!(var1.method13898() instanceof Class5490)) {
-                if (!(var1.method13898() instanceof Class5530)) {
-                    if (var1.method13898() instanceof Class5598) {
+            if (!(var1.getPacket() instanceof Class5490)) {
+                if (!(var1.getPacket() instanceof Class5530)) {
+                    if (var1.getPacket() instanceof Class5598) {
                         long var11 = System.currentTimeMillis();
                         if (this.field38719.getCurrentServerData() == null) {
                             return;
@@ -57,7 +57,7 @@ public class BanListener {
                         }
                     }
                 } else {
-                    Class5530 var13 = (Class5530) var1.method13898();
+                    Class5530 var13 = (Class5530) var1.getPacket();
                     long var8 = this.method30841(var13.method17390().getString());
                     if (var8 == 0L) {
                         return;
@@ -72,7 +72,7 @@ public class BanListener {
                     }
                 }
             } else {
-                Class5490 var14 = (Class5490) var1.method13898();
+                Class5490 var14 = (Class5490) var1.getPacket();
                 long var19 = this.method30841(var14.method17270().getString());
                 if (var19 == 0L) {
                     return;

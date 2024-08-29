@@ -33,7 +33,7 @@ public class Class6233 extends Class6230 {
    }
 
    private static boolean method19207(ServerWorld var0, BlockPos var1) {
-      for (Class880 var5 : var0.method6772(Class880.class, new Class6488(var1), Class8088.field34763)) {
+      for (Class880 var5 : var0.method6772(Class880.class, new AxisAlignedBB(var1), Class8088.field34763)) {
          if (var5 instanceof Class1020) {
             Class1020 var6 = (Class1020)var5;
             if (var6.method4516()) {

@@ -13,7 +13,7 @@ public final class Class6243 extends Class6218 {
       if (!(var8 instanceof Class3405)) {
          return super.method19192(var1, var2);
       } else {
-         Class7631 var9 = ((Class3405)var8).method11533(var5, var6, var7);
+         Fluid var9 = ((Class3405)var8).method11533(var5, var6, var7);
          if (var9 instanceof Class7633) {
             Item var10 = var9.method25050();
             var2.method32182(1);

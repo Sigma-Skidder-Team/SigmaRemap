@@ -257,7 +257,7 @@ public class BlockPos extends Class1998 {
       );
    }
 
-   public static Stream<BlockPos> method8362(Class6488 var0) {
+   public static Stream<BlockPos> method8362(AxisAlignedBB var0) {
       return method8363(
          MathHelper.floor(var0.field28449),
          MathHelper.floor(var0.field28450),

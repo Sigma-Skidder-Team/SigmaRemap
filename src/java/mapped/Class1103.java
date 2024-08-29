@@ -4,7 +4,7 @@ public class Class1103 extends Class1009 {
    private static String[] field6059;
    private float field6060 = 0.5F;
    private int field6061;
-   private static final Class9289<Byte> field6062 = Class9361.<Byte>method35441(Class1103.class, Class7784.field33390);
+   private static final DataParameter<Byte> field6062 = EntityDataManager.<Byte>method35441(Class1103.class, Class7784.field33390);
 
    public Class1103(EntityType<? extends Class1103> var1, World var2) {
       super(var1, var2);
@@ -31,9 +31,9 @@ public class Class1103 extends Class1009 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field6062, (byte)0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field6062, (byte)0);
    }
 
    @Override
@@ -58,12 +58,12 @@ public class Class1103 extends Class1009 {
 
    @Override
    public void method2871() {
-      if (!this.field5036 && this.method3433().field18049 < 0.0) {
+      if (!this.onGround && this.method3433().field18049 < 0.0) {
          this.method3434(this.method3433().method11347(1.0, 0.6, 1.0));
       }
 
       if (this.world.field9020) {
-         if (this.field5054.nextInt(24) == 0 && !this.method3245()) {
+         if (this.rand.nextInt(24) == 0 && !this.method3245()) {
             this.world
                .method6745(
                   this.getPosX() + 0.5,
@@ -71,8 +71,8 @@ public class Class1103 extends Class1009 {
                   this.getPosZ() + 0.5,
                   Sounds.field26403,
                   this.method2864(),
-                  1.0F + this.field5054.nextFloat(),
-                  this.field5054.nextFloat() * 0.7F + 0.3F,
+                  1.0F + this.rand.nextFloat(),
+                  this.rand.nextFloat() * 0.7F + 0.3F,
                   false
                );
          }
@@ -95,14 +95,14 @@ public class Class1103 extends Class1009 {
       this.field6061--;
       if (this.field6061 <= 0) {
          this.field6061 = 100;
-         this.field6060 = 0.5F + (float)this.field5054.nextGaussian() * 3.0F;
+         this.field6060 = 0.5F + (float)this.rand.nextGaussian() * 3.0F;
       }
 
       Class880 var3 = this.method4232();
       if (var3 != null && var3.method3442() > this.method3442() + (double)this.field6060 && this.method3026(var3)) {
          Vector3d var4 = this.method3433();
          this.method3434(this.method3433().method11339(0.0, (0.3F - var4.field18049) * 0.3F, 0.0));
-         this.field5078 = true;
+         this.isAirBorne = true;
       }
 
       super.method4258();
@@ -119,18 +119,18 @@ public class Class1103 extends Class1009 {
    }
 
    private boolean method5293() {
-      return (this.field5063.<Byte>method35445(field6062) & 1) != 0;
+      return (this.dataManager.<Byte>method35445(field6062) & 1) != 0;
    }
 
    private void method5294(boolean var1) {
-      byte var4 = this.field5063.method35445(field6062);
+      byte var4 = this.dataManager.method35445(field6062);
       if (!var1) {
          var4 = (byte)(var4 & -2);
       } else {
          var4 = (byte)(var4 | 1);
       }
 
-      this.field5063.method35446(field6062, var4);
+      this.dataManager.method35446(field6062, var4);
    }
 
    // $VF: synthetic method

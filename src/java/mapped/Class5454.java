@@ -10,12 +10,12 @@ public class Class5454 extends Class5444<Class4726> {
    public void method17109(DynamicRegistries var1, Class5646 var2, Class8761 var3, int var4, int var5, Biome var6, Class4726 var7) {
       Class8299 var10 = new Class8299();
       Class2219 var11;
-      if (var7.field22393 != Class107.field337) {
-         if (var7.field22393 != Class107.field338) {
-            if (var7.field22393 != Class107.field339) {
-               if (var7.field22393 != Class107.field340) {
-                  if (var7.field22393 != Class107.field341) {
-                     if (var7.field22393 != Class107.field342) {
+      if (var7.field22393 != Class107.DESERT) {
+         if (var7.field22393 != Class107.JUNGLE) {
+            if (var7.field22393 != Class107.SWAMP) {
+               if (var7.field22393 != Class107.MOUNTAIN) {
+                  if (var7.field22393 != Class107.OCEAN) {
+                     if (var7.field22393 != Class107.NETHER) {
                         boolean var12 = this.field24201.nextFloat() < 0.5F;
                         var11 = !var12 ? Class2219.field14494 : Class2219.field14498;
                         var10.field35676 = var12 || this.field24201.nextFloat() < 0.5F;
@@ -73,7 +73,7 @@ public class Class5454 extends Class5444<Class4726> {
       int var22 = var2.method17797(var20, var21, Class4184.method12959(var11)) - 1;
       int var23 = Class2978.method11390(this.field24201, var2, var11, var10.field35676, var22, var18.method38399(), var18);
       BlockPos var24 = new BlockPos(var17.getX(), var23, var17.getZ());
-      if (var7.field22393 == Class107.field340 || var7.field22393 == Class107.field341 || var7.field22393 == Class107.field336) {
+      if (var7.field22393 == Class107.MOUNTAIN || var7.field22393 == Class107.OCEAN || var7.field22393 == Class107.STANDARD) {
          var10.field35674 = Class2978.method11391(var24, var6);
       }
 

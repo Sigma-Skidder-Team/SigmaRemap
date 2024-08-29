@@ -19,12 +19,12 @@ public class Class5288 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.method16603();
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Client.getInstance().getCombatManager().field35946 = null;
         Client.getInstance().getCombatManager().field35947.clear();
     }

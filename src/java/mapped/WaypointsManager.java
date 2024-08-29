@@ -135,7 +135,7 @@ public class WaypointsManager {
          if (this.field36371 != null) {
             boolean var4 = false;
             if (!var4) {
-               if (this.field36365.player.field5055 % 140 == 0) {
+               if (this.field36365.player.ticksExisted % 140 == 0) {
                   Class2531 var5 = Class7927.method26605(this.field36365.world.method7011(this.field36365.player.getPosition()).method7072());
                   Iterator var6 = this.field36372.entrySet().iterator();
 

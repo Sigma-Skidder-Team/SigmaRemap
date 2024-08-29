@@ -22,7 +22,7 @@ public class Class2723<T extends Class1028> extends Class2595 {
    @Override
    public boolean method10803() {
       boolean var3 = this.field17212.world.method6783() < this.field17215;
-      return this.field17212.method4579() && this.field17212.method4232() == null && !this.field17212.method3329() && this.field17212.method4575() && !var3;
+      return this.field17212.method4579() && this.field17212.method4232() == null && !this.field17212.isBeingRidden() && this.field17212.method4575() && !var3;
    }
 
    @Override
@@ -70,7 +70,7 @@ public class Class2723<T extends Class1028> extends Class2595 {
    private List<Class1028> method10931() {
       return this.field17212
          .world
-         .<Class1028>method6772(Class1028.class, this.field17212.method3389().method19664(16.0), var1 -> var1.method4549() && !var1.method3359(this.field17212));
+         .<Class1028>method6772(Class1028.class, this.field17212.getBoundingBox().method19664(16.0), var1 -> var1.method4549() && !var1.method3359(this.field17212));
    }
 
    private boolean method10932() {

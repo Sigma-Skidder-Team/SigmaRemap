@@ -14,7 +14,7 @@ public class Class5386 extends Module {
    @EventTarget
    private void method16968(Class4435 var1) {
       if (this.isEnabled()) {
-         if (mc.player.field5037) {
+         if (mc.player.collidedHorizontally) {
             var1.method13995((double)this.getNumberValueBySettingName("Motion"));
          }
       }

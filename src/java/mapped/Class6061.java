@@ -12,7 +12,7 @@ public class Class6061 {
    public static void method18789(Minecraft var0, MatrixStack var1) {
       RenderSystem.method27817();
       ClientPlayerEntity var4 = var0.player;
-      if (!var4.field5052) {
+      if (!var4.noClip) {
          if (Class9299.field42849.method20214() && Class9299.field42822.method20214()) {
             Pair var8 = method18791(var4);
             if (var8 != null) {
@@ -112,8 +112,8 @@ public class Class6061 {
       float var9 = -1.0F;
       float var10 = 1.0F;
       float var11 = -0.5F;
-      float var12 = -var0.player.field5031 / 64.0F;
-      float var13 = var0.player.field5032 / 64.0F;
+      float var12 = -var0.player.rotationYaw / 64.0F;
+      float var13 = var0.player.rotationPitch / 64.0F;
       Class9367 var14 = var1.method35296().method32361();
       var4.begin(7, DefaultVertexFormats.field43345);
       var4.method17040(var14, -1.0F, -1.0F, -0.5F).method17033(var5, var5, var5, 0.1F).method17027(4.0F + var12, 4.0F + var13).endVertex();

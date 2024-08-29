@@ -39,13 +39,13 @@ public class Class4239 extends Class4240 implements Class4238 {
       int var6 = (int)((float)this.method13269() * this.field20581);
       int var7 = this.method13263() - (var5 - this.method13267()) / 2;
       int var8 = this.method13265() - (var6 - this.method13269()) / 2;
-      Class3192.method11420(
+      RenderUtil.method11420(
          this.method13271() + var7 - this.field20895,
          this.method13272() + var8 - this.field20896,
          this.method13271() + var7 - this.field20895 + var5,
          this.method13272() + var8 - this.field20896 + var6
       );
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)var7,
          (float)var8,
          (float)(var7 + var5),
@@ -53,7 +53,7 @@ public class Class4239 extends Class4240 implements Class4238 {
          Class5628.method17688(Class5628.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var4), var1)
       );
       if (this.method13303() != null) {
-         Class3192.method11440(
+         RenderUtil.method11440(
             this.method13305(),
             (float)(var7 + var5 / 2),
             (float)(var8 + var6 / 2),
@@ -64,7 +64,7 @@ public class Class4239 extends Class4240 implements Class4238 {
          );
       }
 
-      Class3192.method11422();
+      RenderUtil.method11422();
       super.method13226(var1);
    }
 

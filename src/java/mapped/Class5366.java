@@ -18,11 +18,11 @@ public class Class5366 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23981 = 0;
         this.field23982 = 0.0;
     }
@@ -30,7 +30,7 @@ public class Class5366 extends Module {
     @EventTarget
     public void method16895(Class4435 var1) {
         double var4 = Math.sqrt(var1.method13992() * var1.method13992() + var1.method13996() * var1.method13996());
-        if (mc.player.field5036) {
+        if (mc.player.onGround) {
             if (this.field23981 > 0) {
                 this.field23981 = 0;
                 if (this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
@@ -80,7 +80,7 @@ public class Class5366 extends Module {
                 Class9567.method37088(var1, (double) this.getNumberValueBySettingName("Boost") * var7);
                 var1.method13995((double) this.getNumberValueBySettingName("Heigh") * Class9567.method37080());
                 this.field23982 = 1.0;
-            } else if (var1.method13994() < 0.0 && mc.player.field5045 < 3.0F) {
+            } else if (var1.method13994() < 0.0 && mc.player.fallDistance < 3.0F) {
                 this.field23982 = this.field23982 - var1.method13994();
             }
         }

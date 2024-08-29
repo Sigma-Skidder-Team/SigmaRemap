@@ -130,7 +130,7 @@ public class Class7832 {
       }
    }
 
-   public static Class6488 method26239(Class6488 var0, Class2260 var1, BlockPos var2) {
+   public static AxisAlignedBB method26239(AxisAlignedBB var0, Class2260 var1, BlockPos var2) {
       int var5 = var2.getX();
       int var6 = var2.getZ();
       long var7 = (long)(var5 * 3129871) ^ (long)var6 * 116129781L;

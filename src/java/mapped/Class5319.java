@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -20,10 +20,10 @@ public class Class5319 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23865 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
-        this.field23866 = mc.player.field5031;
-        this.field23867 = mc.player.field5032;
+        this.field23866 = mc.player.rotationYaw;
+        this.field23867 = mc.player.rotationPitch;
         field23863 = new Class1116(mc.world, mc.player.getGameProfile());
         field23863.inventory = mc.player.inventory;
         field23863.method3269(this.field23865.field18048, this.field23865.field18049, this.field23865.field18050, this.field23866, this.field23867);
@@ -32,7 +32,7 @@ public class Class5319 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         int var3 = this.field23864.size();
 
         for (int var4 = 0; var4 < var3; var4++) {
@@ -44,7 +44,7 @@ public class Class5319 extends Module {
     }
 
     @EventTarget
-    private void method16710(Class4402 var1) {
+    private void method16710(SendPacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null && var1.method13932() instanceof CEntityActionPacket
                     || var1.method13932() instanceof Class5603

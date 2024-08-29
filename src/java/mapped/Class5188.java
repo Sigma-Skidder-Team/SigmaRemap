@@ -37,11 +37,11 @@ public class Class5188 extends Module {
                     int var13 = Math.round(var9.field37221);
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float) (-var11 / 2), (float) (-var4), 0.0F);
-                    Class3192.method11424((float) var12, (float) var13, (float) var11, 20.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F));
-                    Class3192.method11439(
+                    RenderUtil.method11424((float) var12, (float) var13, (float) var11, 20.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                    RenderUtil.method11439(
                             ClassicDecryption.bold16, (float) (var12 + 3), (float) var13, var10, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F)
                     );
-                    Class3192.method11439(ClassicDecryption.bold16, (float) (var12 + 3), (float) (var13 - 1), var10, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                    RenderUtil.method11439(ClassicDecryption.bold16, (float) (var12 + 3), (float) (var13 - 1), var10, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     GL11.glPopMatrix();
                     List var14 = Class7789.method25877(var8);
                     if (var14.size() != 0) {
@@ -107,7 +107,7 @@ public class Class5188 extends Module {
                 if (var5 instanceof PlayerEntity && !(var5 instanceof ClientPlayerEntity)) {
                     PlayerEntity var6 = (PlayerEntity) var5;
                     Class9425 var7 = Class9647.method37623(var6);
-                    double[] var8 = Class3192.method11482(var7.field43722, var7.field43723 + (double) var6.method3430() + 0.3F, var7.field43724);
+                    double[] var8 = RenderUtil.method11482(var7.field43722, var7.field43723 + (double) var6.method3430() + 0.3F, var7.field43724);
                     if (var8 != null && var8[2] >= 0.0 && var8[2] < 1.0) {
                         this.field23493.put(var6, new Class8513((float) var8[0], (float) var8[1]));
                     }

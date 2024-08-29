@@ -12,7 +12,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class ResourcesDecrypter {
@@ -88,7 +87,7 @@ public class ResourcesDecrypter {
     public static Texture youtubePNG;
     public static Texture guildedPNG;
     public static Texture redditPNG;
-    private static final byte[] field32484 = new byte[]{89, -73, -35, -84, 17, -87, -79, -44};
+    private static final byte[] xorKey = new byte[]{89, -73, -35, -84, 17, -87, -79, -44};
 
     public static void decrypt() {
         multiplayerPNG = loadTexture("com/mentalfrostbyte/gui/resources/jello/icons/multiplayer.png");
@@ -236,7 +235,7 @@ public class ResourcesDecrypter {
 
                     while ((bytesRead = resourceStream.read(buffer)) != -1) {
                         for (int i = 0; i < bytesRead; i++) {
-                            buffer[i] ^= field32484[xorIndex++ % field32484.length];
+                            buffer[i] ^= xorKey[xorIndex++ % xorKey.length];
                         }
                         decryptedOutputStream.write(buffer, 0, bytesRead);
                     }

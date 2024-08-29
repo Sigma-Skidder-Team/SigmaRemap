@@ -15,7 +15,7 @@ public class Class2602 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      List<BoatEntity> var3 = this.field16845.world.method7182(BoatEntity.class, this.field16845.method3389().method19664(5.0));
+      List<BoatEntity> var3 = this.field16845.world.method7182(BoatEntity.class, this.field16845.getBoundingBox().method19664(5.0));
       boolean var4 = false;
 
       for (BoatEntity var6 : var3) {
@@ -40,13 +40,13 @@ public class Class2602 extends Class2595 {
    @Override
    public boolean method10806() {
       return this.field16846 != null
-         && this.field16846.method3328()
+         && this.field16846.isPassenger()
          && (MathHelper.method37771(this.field16846.field4982) > 0.0F || MathHelper.method37771(this.field16846.field4984) > 0.0F);
    }
 
    @Override
    public void method10804() {
-      for (BoatEntity var4 : this.field16845.world.<BoatEntity>method7182(BoatEntity.class, this.field16845.method3389().method19664(5.0))) {
+      for (BoatEntity var4 : this.field16845.world.<BoatEntity>method7182(BoatEntity.class, this.field16845.getBoundingBox().method19664(5.0))) {
          if (var4.method3407() != null && var4.method3407() instanceof PlayerEntity) {
             this.field16846 = (PlayerEntity)var4.method3407();
             break;

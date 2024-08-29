@@ -46,8 +46,8 @@ public final class Class212 extends Class200<Class7587, Class210> {
 
                BlockState var21 = this.method647(var1, (MutableInt)null);
                if (var20 == null) {
-                  Class6408 var22 = this.method648(var21, var1, Direction.DOWN);
-                  if (Class8022.method27444(var22, Class8022.method27425())) {
+                  VoxelShape var22 = this.method648(var21, var1, Direction.DOWN);
+                  if (VoxelShapes.method27444(var22, VoxelShapes.method27425())) {
                      return 15;
                   }
 
@@ -57,14 +57,14 @@ public final class Class212 extends Class200<Class7587, Class210> {
                      return 15;
                   }
 
-                  Class6408 var25 = this.method648(var9, var3, var24.method536());
-                  if (Class8022.method27444(Class8022.method27425(), var25)) {
+                  VoxelShape var25 = this.method648(var9, var3, var24.method536());
+                  if (VoxelShapes.method27444(VoxelShapes.method27425(), var25)) {
                      return 15;
                   }
                } else {
-                  Class6408 var26 = this.method648(var21, var1, var20);
-                  Class6408 var28 = this.method648(var9, var3, var20.method536());
-                  if (Class8022.method27444(var26, var28)) {
+                  VoxelShape var26 = this.method648(var21, var1, var20);
+                  VoxelShape var28 = this.method648(var9, var3, var20.method536());
+                  if (VoxelShapes.method27444(var26, var28)) {
                      return 15;
                   }
                }

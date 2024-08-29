@@ -70,7 +70,7 @@ public class Class2663 extends Class2661 {
          if (this.field17031.method4422()) {
             if (!this.field17031.world.method6795()) {
                if (!this.method10862()) {
-                  if (this.field17031.field5055 % 20 == 0 && !Class1017.method4470(this.field17031, Class1017.method4469(this.field17031))) {
+                  if (this.field17031.ticksExisted % 20 == 0 && !Class1017.method4470(this.field17031, Class1017.method4469(this.field17031))) {
                      Class1017.method4473(this.field17031, null);
                      return false;
                   } else {

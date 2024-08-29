@@ -2,8 +2,8 @@ package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import mapped.Class5554;
 import mapped.Class5594;
@@ -19,7 +19,7 @@ public class Class8696 {
    private boolean field39252 = false;
    private long field39253 = System.currentTimeMillis();
    private float field39254 = 1.0F;
-   private Minecraft field39255 = Minecraft.getInstance();
+   private Minecraft mc = Minecraft.getInstance();
 
    public void method31323() {
       Client.getInstance().getEventManager().register(this);
@@ -31,11 +31,11 @@ public class Class8696 {
       this.field39249++;
       this.field39250++;
       this.field39251++;
-      if (!this.field39255.player.field5036) {
+      if (!this.mc.player.onGround) {
          this.field39249 = 0;
       }
 
-      if (this.field39255.currentScreen != null) {
+      if (this.mc.currentScreen != null) {
          this.field39248 = 0;
       }
 
@@ -44,21 +44,21 @@ public class Class8696 {
          this.field39252 = true;
       }
 
-      if (this.field39255.player.field5055 <= 1) {
+      if (this.mc.player.ticksExisted <= 1) {
          this.field39252 = false;
       }
    }
 
    @EventTarget
-   private void method31325(Class4402 var1) {
+   private void method31325(SendPacketEvent var1) {
       if (var1.method13932() instanceof Class5594) {
          this.field39251 = 0;
       }
    }
 
    @EventTarget
-   private void method31326(Class4396 var1) {
-      if (var1.method13898() instanceof Class5554) {
+   private void method31326(RecievePacketEvent var1) {
+      if (var1.getPacket() instanceof Class5554) {
          long var4 = System.currentTimeMillis() - this.field39253;
          this.field39254 = Math.min(1.05F, Math.max(0.0F, 15000.0F / (float)var4));
          this.field39253 = System.currentTimeMillis();

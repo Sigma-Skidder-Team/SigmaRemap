@@ -35,7 +35,7 @@ public class ActiveMods extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.setFontSize();
     }
 
@@ -80,7 +80,7 @@ public class ActiveMods extends Module {
                 Class8375 var5 = null;
                 Class8218 var6 = var4.method20998(mc.player.method2956());
                 if (var6 != null) {
-                    int var7 = var6.method28591().getColorIndex();
+                    int var7 = var6.getColor().getColorIndex();
                     if (var7 >= 0) {
                         var5 = var4.method20989(3 + var7);
                     }
@@ -163,7 +163,7 @@ public class ActiveMods extends Module {
                     GL11.glScalef(var14, var14, 1.0F);
                     GL11.glTranslatef((float) (-var17), (float) (-var18), 0.0F);
                     float var19 = (float) Math.sqrt(Math.min(1.2F, (float) var8.method23942(var22) / 63.0F));
-                    Class3192.method11449(
+                    RenderUtil.method11449(
                             (float) var6 - (float) var8.method23942(var22) * 1.5F - (float) var20 - 20.0F,
                             (float) (var7 - 20),
                             (float) var8.method23942(var22) * 3.0F,
@@ -171,7 +171,7 @@ public class ActiveMods extends Module {
                             ResourcesDecrypter.shadowPNG,
                             Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.36F * var15 * var19)
                     );
-                    Class3192.method11439(
+                    RenderUtil.method11439(
                             var8, (float) (var6 - var20 - var8.method23942(var22)), (float) var7, var22, var15 != 1.0F ? Class5628.method17688(-1, var15 * 0.95F) : var11
                     );
                     GL11.glPopMatrix();

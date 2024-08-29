@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5327 extends Class5325 {
+public class Class5327 extends ModuleWithModuleSettings {
     public Class5327() {
         super(ModuleCategory.MOVEMENT, "LongJump", "Makes you jump far away", new Class5178(), new Class5193(), new Class5292(), new Class5366());
         this.registerSetting(new BooleanSetting("Auto Disable", "Disable Longjump when landing", true));
@@ -17,7 +17,7 @@ public class Class5327 extends Class5325 {
         if (var1 < 0 || var1 >= var4.length) {
             return mc.player.method3433().field18049;
         } else {
-            return Class5628.method17686() && !mc.player.field5037 ? var4[var1] : var5[var1];
+            return Class5628.method17686() && !mc.player.collidedHorizontally ? var4[var1] : var5[var1];
         }
     }
 

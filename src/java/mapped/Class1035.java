@@ -3,7 +3,7 @@ package mapped;
 import javax.annotation.Nullable;
 
 public abstract class Class1035 extends Class1009 {
-   public static final Class9289<Boolean> field5750 = Class9361.<Boolean>method35441(Class1035.class, Class7784.field33398);
+   public static final DataParameter<Boolean> field5750 = EntityDataManager.<Boolean>method35441(Class1035.class, Class7784.field33398);
    public int field5751 = 0;
 
    public Class1035(EntityType<? extends Class1035> var1, World var2) {
@@ -31,9 +31,9 @@ public abstract class Class1035 extends Class1009 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5750, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5750, false);
    }
 
    @Override

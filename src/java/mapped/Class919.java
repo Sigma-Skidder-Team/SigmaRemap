@@ -90,7 +90,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
 
    @Override
    public boolean method3623(PlayerEntity var1) {
-      return !this.field5041 ? !(var1.getDistanceSq(this) > 64.0) : false;
+      return !this.removed ? !(var1.getDistanceSq(this) > 64.0) : false;
    }
 
    @Nullable

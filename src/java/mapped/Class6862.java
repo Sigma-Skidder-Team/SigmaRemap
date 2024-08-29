@@ -10,7 +10,7 @@ public class Class6862 implements Class6861<MinecraftServer> {
 
    public void run(MinecraftServer var1, Class8559<MinecraftServer> var2, long var3) {
       Class7268 var7 = var1.method1397();
-      Class7608<Class7744> var8 = var7.method22830(this.field29789);
+      ITag<Class7744> var8 = var7.method22830(this.field29789);
 
       for (Class7744 var10 : var8.method24918()) {
          var7.method22825(var10, var7.method22828());

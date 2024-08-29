@@ -23,8 +23,8 @@ public class Class5209 extends Module {
     @EventTarget
     public void method16220(TickEvent var1) {
         if (this.isEnabled()) {
-            mc.gameSettings.field44637.field13071 = false;
-            if (!(mc.player.method3433().field18049 < 0.08) || mc.player.field5036) {
+            mc.gameSettings.keyBindSneak.field13071 = false;
+            if (!(mc.player.method3433().field18049 < 0.08) || mc.player.onGround) {
                 mc.player.method3349(7, false);
                 if (mc.player.method3331()) {
                     this.method15999(false);
@@ -66,7 +66,7 @@ public class Class5209 extends Module {
                 var1.method13995(this.field23530);
             }
 
-            int var7 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.field44637.field13070.field34875);
+            int var7 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.keyBindSneak.field13070.field34875);
             if (var7 == 1 && this.getBooleanValueFromSetttingName("NCP")) {
                 var1.method13995(-0.9F);
             } else if (!mc.player.method3331()) {
@@ -82,10 +82,10 @@ public class Class5209 extends Module {
     }
 
     @EventTarget
-    private void method16222(Class4396 var1) {
+    private void method16222(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (mc.player != null && var1.method13898() instanceof Class5590) {
-                Class5590 var4 = (Class5590) var1.method13898();
+            if (mc.player != null && var1.getPacket() instanceof Class5590) {
+                Class5590 var4 = (Class5590) var1.getPacket();
                 Entity var5 = mc.world.method6774(var4.method17565());
                 if (var5 instanceof Class888) {
                     Class888 var6 = (Class888) var5;
@@ -136,7 +136,7 @@ public class Class5209 extends Module {
 
     @EventTarget
     @HigherPriority
-    private void method16224(Class4402 var1) {
+    private void method16224(SendPacketEvent var1) {
         if (!this.isEnabled()) {
         }
     }
@@ -148,14 +148,14 @@ public class Class5209 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
-        if (mc.player.field5036) {
+    public void onEnable() {
+        if (mc.player.onGround) {
             Class5628.method17725(0.3994F);
         }
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         if (!Class9567.method37087()) {
             Class5628.method17724(0.0);
             Class5628.method17726(0.0);

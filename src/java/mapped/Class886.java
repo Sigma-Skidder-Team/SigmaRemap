@@ -3,8 +3,8 @@ package mapped;
 import javax.annotation.Nullable;
 
 public class Class886 extends AbstractArrowEntity {
-   private static final Class9289<Byte> field5111 = Class9361.<Byte>method35441(Class886.class, Class7784.field33390);
-   private static final Class9289<Boolean> field5112 = Class9361.<Boolean>method35441(Class886.class, Class7784.field33398);
+   private static final DataParameter<Byte> field5111 = EntityDataManager.<Byte>method35441(Class886.class, Class7784.field33390);
+   private static final DataParameter<Boolean> field5112 = EntityDataManager.<Boolean>method35441(Class886.class, Class7784.field33398);
    private ItemStack field5113 = new ItemStack(Items.field38144);
    private boolean field5114;
    public int field5115;
@@ -16,8 +16,8 @@ public class Class886 extends AbstractArrowEntity {
    public Class886(World var1, Class880 var2, ItemStack var3) {
       super(EntityType.field41093, var2, var1);
       this.field5113 = var3.copy();
-      this.field5063.method35446(field5111, (byte)Class7858.method26336(var3));
-      this.field5063.method35446(field5112, var3.method32159());
+      this.dataManager.method35446(field5111, (byte)Class7858.method26336(var3));
+      this.dataManager.method35446(field5112, var3.method32159());
    }
 
    public Class886(World var1, double var2, double var4, double var6) {
@@ -25,10 +25,10 @@ public class Class886 extends AbstractArrowEntity {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5111, (byte)0);
-      this.field5063.method35442(field5112, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5111, (byte)0);
+      this.dataManager.register(field5112, false);
    }
 
    @Override
@@ -39,7 +39,7 @@ public class Class886 extends AbstractArrowEntity {
 
       Entity var3 = this.method3460();
       if ((this.field5114 || this.method3493()) && var3 != null) {
-         byte var4 = this.field5063.<Byte>method35445(field5111);
+         byte var4 = this.dataManager.<Byte>method35445(field5111);
          if (var4 > 0 && !this.method3495()) {
             if (!this.world.field9020 && this.field5102 == Class2192.field14332) {
                this.method3303(this.method3480(), 0.1F);
@@ -51,7 +51,7 @@ public class Class886 extends AbstractArrowEntity {
             Vector3d var5 = new Vector3d(var3.getPosX() - this.getPosX(), var3.method3442() - this.getPosY(), var3.getPosZ() - this.getPosZ());
             this.method3446(this.getPosX(), this.getPosY() + var5.field18049 * 0.015 * (double)var4, this.getPosZ());
             if (this.world.field9020) {
-               this.field5049 = this.getPosY();
+               this.lastTickPosY = this.getPosY();
             }
 
             double var6 = 0.05 * (double)var4;
@@ -78,7 +78,7 @@ public class Class886 extends AbstractArrowEntity {
    }
 
    public boolean method3496() {
-      return this.field5063.<Boolean>method35445(field5112);
+      return this.dataManager.<Boolean>method35445(field5112);
    }
 
    @Nullable
@@ -154,7 +154,7 @@ public class Class886 extends AbstractArrowEntity {
       }
 
       this.field5114 = var1.method132("DealtDamage");
-      this.field5063.method35446(field5111, (byte)Class7858.method26336(this.field5113));
+      this.dataManager.method35446(field5111, (byte)Class7858.method26336(this.field5113));
    }
 
    @Override
@@ -166,7 +166,7 @@ public class Class886 extends AbstractArrowEntity {
 
    @Override
    public void method3474() {
-      byte var3 = this.field5063.<Byte>method35445(field5111);
+      byte var3 = this.dataManager.<Byte>method35445(field5111);
       if (this.field5102 != Class2192.field14332 || var3 <= 0) {
          super.method3474();
       }

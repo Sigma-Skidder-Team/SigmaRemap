@@ -81,7 +81,7 @@ public class Class4266 extends Class4247 {
          }
 
          if (this.field20688 != null) {
-            Class3192.method11463(
+            RenderUtil.method11463(
                (float)(this.field20895 + var5),
                (float)(this.field20896 + var5),
                (float)(this.field20897 - var5 * 2),
@@ -89,7 +89,7 @@ public class Class4266 extends Class4247 {
                20.0F,
                var1 * 0.5F
             );
-            Class3192.method11463(
+            RenderUtil.method11463(
                (float)(this.field20895 + var5),
                (float)(this.field20896 + var5),
                (float)(this.field20897 - var5 * 2),
@@ -98,12 +98,12 @@ public class Class4266 extends Class4247 {
                var1
             );
             GL11.glPushMatrix();
-            Class3192.method11476();
-            Class3192.method11474(
+            RenderUtil.method11476();
+            RenderUtil.method11474(
                (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, 8.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor
             );
-            Class3192.method11477(Class2329.field15940);
-            Class3192.method11448(
+            RenderUtil.method11477(Class2329.field15940);
+            RenderUtil.method11448(
                (float)(this.field20895 - 1),
                (float)(this.field20896 - 1),
                (float)(this.field20897 + 2),
@@ -117,22 +117,22 @@ public class Class4266 extends Class4247 {
                int var7 = this.field20898 / 2;
                int var8 = this.field20896 + (var11.field30491 ? 0 : var7);
                int var9 = this.field20897 / 2;
-               Class3192.method11421(this.field20895, var8, this.field20895 + this.field20897, var8 + var7, true);
-               Class3192.method11436(
+               RenderUtil.method11421(this.field20895, var8, this.field20895 + this.field20897, var8 + var7, true);
+               RenderUtil.method11436(
                   (float)(this.field20895 + var9),
                   (float)(var8 + this.field20898 / 4),
                   (float)(var9 * 2 - 4) * var11.field30490 + 4.0F,
                   Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - var11.field30490 * (0.5F + var11.field30490 * 0.5F)) * 0.4F)
                );
-               Class3192.method11422();
+               RenderUtil.method11422();
                var11.field30490 = Math.min(var11.field30490 + 3.0F / (float) Minecraft.getFps(), 1.0F);
                if (var11.field30490 == 1.0F) {
                   var4.remove();
                }
             }
 
-            Class3192.method11478();
-            Class3192.method11475(
+            RenderUtil.method11478();
+            RenderUtil.method11475(
                (float)this.field20895,
                (float)this.field20896,
                (float)this.field20897,
@@ -141,14 +141,14 @@ public class Class4266 extends Class4247 {
                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F)
             );
             GL11.glPopMatrix();
-            Class3192.method11439(
+            RenderUtil.method11439(
                ResourceRegistry.JelloMediumFont20,
                (float)(this.field20895 + 14),
                (float)(this.field20896 + 8),
                "+",
                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
             );
-            Class3192.method11424(
+            RenderUtil.method11424(
                (float)(this.field20895 + 16), (float)(this.field20896 + 65), 8.0F, 2.0F, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
             );
          }

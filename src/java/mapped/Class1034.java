@@ -9,9 +9,9 @@ import java.util.Random;
 import java.util.UUID;
 
 public class Class1034 extends Class1035 implements Class1023 {
-   private static final Class9289<Boolean> field5741 = Class9361.<Boolean>method35441(Class1034.class, Class7784.field33398);
-   private static final Class9289<Boolean> field5742 = Class9361.<Boolean>method35441(Class1034.class, Class7784.field33398);
-   private static final Class9289<Boolean> field5743 = Class9361.<Boolean>method35441(Class1034.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5741 = EntityDataManager.<Boolean>method35441(Class1034.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5742 = EntityDataManager.<Boolean>method35441(Class1034.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5743 = EntityDataManager.<Boolean>method35441(Class1034.class, Class7784.field33398);
    private static final UUID field5744 = UUID.fromString("766bfa64-11f3-11ea-8d71-362b9e155667");
    private static final Class9689 field5745 = new Class9689(field5744, "Baby speed boost", 0.2F, Class2045.field13353);
    private final Class927 field5746 = new Class927(8);
@@ -104,15 +104,15 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5741, false);
-      this.field5063.method35442(field5742, false);
-      this.field5063.method35442(field5743, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5741, false);
+      this.dataManager.register(field5742, false);
+      this.dataManager.register(field5743, false);
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       super.method3155(var1);
       if (field5741.equals(var1)) {
          this.method3385();
@@ -203,7 +203,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return !this.method3005() ? 1.74F : 0.93F;
    }
 
@@ -260,16 +260,16 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    private ItemStack method4620() {
-      return !((double)this.field5054.nextFloat() < 0.5) ? new ItemStack(Items.field37815) : new ItemStack(Items.field38148);
+      return !((double)this.rand.nextFloat() < 0.5) ? new ItemStack(Items.field37815) : new ItemStack(Items.field38148);
    }
 
    private boolean method4621() {
-      return this.field5063.<Boolean>method35445(field5742);
+      return this.dataManager.<Boolean>method35445(field5742);
    }
 
    @Override
    public void method4535(boolean var1) {
-      this.field5063.method35446(field5742, var1);
+      this.dataManager.method35446(field5742, var1);
    }
 
    @Override
@@ -295,11 +295,11 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    public boolean method4623() {
-      return this.field5063.<Boolean>method35445(field5743);
+      return this.dataManager.<Boolean>method35445(field5743);
    }
 
    public void method4624(boolean var1) {
-      this.field5063.method35446(field5743, var1);
+      this.dataManager.method35446(field5743, var1);
    }
 
    @Override

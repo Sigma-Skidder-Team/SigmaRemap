@@ -67,7 +67,7 @@ public class Class4260 extends Class4247 {
       }
 
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.field20895,
          (float)this.field20896,
          (float)this.field20897,
@@ -75,7 +75,7 @@ public class Class4260 extends Class4247 {
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.45F * var1)
       );
       super.method13224();
-      Class3192.method11475(
+      RenderUtil.method11475(
          (float)this.field20664,
          (float)this.field20663,
          (float)this.field20665,
@@ -83,7 +83,7 @@ public class Class4260 extends Class4247 {
          10.0F,
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloMediumFont40,
          (float)this.field20664,
          (float)(this.field20663 - 60),
@@ -91,15 +91,15 @@ public class Class4260 extends Class4247 {
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       byte var5 = 30;
-      Class3192.method11419((float)this.field20664, (float)this.field20663, (float)(this.field20665 - 30), (float)this.field20666);
-      Class3192.method11439(
+      RenderUtil.method11419((float)this.field20664, (float)this.field20663, (float)(this.field20665 - 30), (float)this.field20666);
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont20,
          (float)(var5 + this.field20664),
          (float)(var5 + this.field20663),
          this.field20669.getDescription(),
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.7F)
       );
-      Class3192.method11422();
+      RenderUtil.method11422();
       super.method13027(var1);
    }
 }

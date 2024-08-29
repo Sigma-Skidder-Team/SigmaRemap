@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5329 extends Class5325 {
+public class Class5329 extends ModuleWithModuleSettings {
     public Class5329() {
         super(ModuleCategory.RENDER, "ESP", "See entities anywhere anytime", new Class5183(), new Class5278(), new Class5276(), new Class5293());
         this.registerSetting(new BooleanSetting("Show Players", "Draws a line arround players", true));

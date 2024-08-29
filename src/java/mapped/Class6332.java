@@ -25,7 +25,7 @@ public class Class6332 extends Class6333 {
 
    @Override
    public void method19269() {
-      if (!this.field27844.field5041) {
+      if (!this.field27844.removed) {
          this.field27858 = (double)((float)this.field27844.getPosX());
          this.field27859 = (double)((float)this.field27844.getPosY());
          this.field27860 = (double)((float)this.field27844.getPosZ());

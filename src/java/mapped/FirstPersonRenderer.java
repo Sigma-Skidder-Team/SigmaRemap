@@ -184,7 +184,7 @@ public class FirstPersonRenderer {
    public void method37590(float var1, MatrixStack var2, Class7735 var3, ClientPlayerEntity var4, int var5) {
       float var8 = var4.method3137(var1);
       Hand var9 = (Hand)MoreObjects.firstNonNull(var4.field4948, Hand.MAIN_HAND);
-      float var10 = MathHelper.method37821(var1, var4.field5034, var4.field5032);
+      float var10 = MathHelper.method37821(var1, var4.prevRotationPitch, var4.rotationPitch);
       boolean var11 = true;
       boolean var12 = true;
       if (!var4.isHandActive()) {

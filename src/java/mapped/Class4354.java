@@ -209,7 +209,7 @@ public class Class4354 extends Class4247 {
          float var8 = this.method13602(this.field21282.calcPercent(), 1.0F);
          var4 = (int)((float)var4 * var8);
          var5 = (int)((float)var5 * var8);
-         Class3192.method11448(
+         RenderUtil.method11448(
             -5.0F,
             -5.0F,
             (float)(this.method13267() + 10),
@@ -217,11 +217,11 @@ public class Class4354 extends Class4247 {
             this.field21281,
             Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
          );
-         Class3192.method11426(
+         RenderUtil.method11426(
             0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F * var7)
          );
          if (var4 > 0) {
-            Class3192.method11465(
+            RenderUtil.method11465(
                (this.field20897 - var4) / 2, (this.field20898 - var5) / 2, var4, var5, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
             );
          }

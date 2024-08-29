@@ -89,10 +89,10 @@ public class Class5718 extends Class5715<Class1007> {
       var4.method35295();
       if (var1.field5637 != null) {
          var4.push();
-         float var25 = (float)(var1.field5637.getPosX() - MathHelper.method37822((double)var3, var1.field5025, var1.getPosX()));
-         float var27 = (float)(var1.field5637.getPosY() - MathHelper.method37822((double)var3, var1.field5026, var1.getPosY()));
-         float var28 = (float)(var1.field5637.getPosZ() - MathHelper.method37822((double)var3, var1.field5027, var1.getPosZ()));
-         method17906(var25, var27 + Class5723.method17909(var1.field5637, var3), var28, var3, var1.field5055, var4, var5, var6);
+         float var25 = (float)(var1.field5637.getPosX() - MathHelper.method37822((double)var3, var1.prevPosX, var1.getPosX()));
+         float var27 = (float)(var1.field5637.getPosY() - MathHelper.method37822((double)var3, var1.prevPosY, var1.getPosY()));
+         float var28 = (float)(var1.field5637.getPosZ() - MathHelper.method37822((double)var3, var1.prevPosZ, var1.getPosZ()));
+         method17906(var25, var27 + Class5723.method17909(var1.field5637, var3), var28, var3, var1.ticksExisted, var4, var5, var6);
          var4.method35295();
       }
 

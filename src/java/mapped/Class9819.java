@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.notification.Notification;
@@ -63,19 +63,19 @@ public class Class9819 {
 
                         for (Class8472 var9x : var6x) {
                            if (var7 != null) {
-                              var7.field5028.field18048 = var9x.method29876() + 0.5;
-                              var7.field5028.field18049 = var9x.method29877();
-                              var7.field5028.field18050 = var9x.method29878() + 0.5;
+                              var7.positionVec.field18048 = var9x.method29876() + 0.5;
+                              var7.positionVec.field18049 = var9x.method29877();
+                              var7.positionVec.field18050 = var9x.method29878() + 0.5;
                               this.field45880.getConnection().sendPacket(new Class5538(false, false));
                               this.field45880
                                  .getConnection()
-                                 .sendPacket(new Class5606(this.field45880.player.field5031, this.field45880.player.field5032, false));
+                                 .sendPacket(new Class5606(this.field45880.player.rotationYaw, this.field45880.player.rotationPitch, false));
                               this.field45880.getConnection().sendPacket(new Class5471(0.0F, 1.0F, false, false));
                               BoatEntity var10 = new BoatEntity(
                                  this.field45880.world, var9x.method29876() + 0.5, var9x.method29877(), var9x.method29878() + 0.5
                               );
-                              var10.field5031 = var7.field5031;
-                              var10.field5032 = var7.field5032;
+                              var10.rotationYaw = var7.rotationYaw;
+                              var10.rotationPitch = var7.rotationPitch;
                               this.field45880.getConnection().sendPacket(new Class5483(var10));
                            } else if (var4) {
                               this.field45880.getConnection().sendPacket(new Class5605(var9x.method29876(), var9x.method29877(), var9x.method29878(), false));
@@ -88,7 +88,7 @@ public class Class9819 {
                            this.field45880.getConnection().sendPacket(new Class5605(var4x.field36296, var4x.field36297, var4x.field36298, false));
                         }
 
-                        this.field45880.player.method3215(var4x.field36296, var4x.field36297, var4x.field36298);
+                        this.field45880.player.setPosition(var4x.field36296, var4x.field36297, var4x.field36298);
                         this.field45879 = null;
                         if (var4) {
                            Class6799 var12 = new Class6799();
@@ -121,7 +121,7 @@ public class Class9819 {
             this.field45878 = 0;
             this.field45879 = null;
          } else if (!this.field45880.player.method3331()) {
-            double var4 = this.field45879.getPosY() - this.field45879.field5049;
+            double var4 = this.field45879.getPosY() - this.field45879.lastTickPosY;
             if (var4 < -2.0 && Class5628.method17763(this.field45879) && this.field45879.getPosY() - this.field45880.player.getPosY() < -10.0) {
                this.field45878 = 0;
                this.field45879 = null;
@@ -143,9 +143,9 @@ public class Class9819 {
 
    @EventTarget
    @Class5631
-   public void method38765(Class4396 var1) {
+   public void method38765(RecievePacketEvent var1) {
       if (this.field45878 == 1) {
-         if (var1.method13898() instanceof Class5473) {
+         if (var1.getPacket() instanceof Class5473) {
             this.field45878 = 2;
          }
       }

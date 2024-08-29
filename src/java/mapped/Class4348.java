@@ -76,8 +76,8 @@ public class Class4348 extends Class4278 {
             }
          }
 
-         Class3192.method11415(this);
-         Class3192.method11426(
+         RenderUtil.method11415(this);
+         RenderUtil.method11426(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
@@ -96,7 +96,7 @@ public class Class4348 extends Class4278 {
          GL11.glScaled(1.0 + 0.4 * (double)var4, 1.0 + 0.4 * (double)var4, 0.0);
          GL11.glTranslatef((float)(-this.method13263() - var9), (float)(-this.method13265() - var7), 0.0F);
          if (this.field21246 != null) {
-            Class3192.method11449(
+            RenderUtil.method11449(
                (float)this.field20895,
                (float)(this.field20896 - (this.field20897 - this.field20898) / 2),
                (float)this.field20897,
@@ -107,8 +107,8 @@ public class Class4348 extends Class4278 {
          }
 
          GL11.glPopMatrix();
-         Class3192.method11422();
-         Class3192.method11426(
+         RenderUtil.method11422();
+         RenderUtil.method11426(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
@@ -142,11 +142,11 @@ public class Class4348 extends Class4278 {
       GL11.glTranslatef((float)(-this.method13263() - 44), (float)(-this.method13265() - 44), 0.0F);
       if (this.field21245 == null) {
          Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("textures/misc/unknown_server.png"));
-         Class3192.method11457(
+         RenderUtil.method11457(
             (float)(this.field20895 + 12), (float)(this.field20896 + 12), 64.0F, 64.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.0F, 0.0F, 64.0F, 64.0F
          );
       } else {
-         Class3192.method11450(
+         RenderUtil.method11450(
             (float)(this.field20895 + 12), (float)(this.field20896 + 12), 64.0F, 64.0F, this.field21245, ClientColors.LIGHT_GREYISH_BLUE.getColor, true
          );
       }
@@ -162,7 +162,7 @@ public class Class4348 extends Class4278 {
       int var6 = (int)(var3 / 60000L % 60L);
       int var7 = (int)(var3 / 3600000L % 24L);
       int var8 = (int)(var3 / 86400000L);
-      Class3192.method11420(
+      RenderUtil.method11420(
          this.method13271() + this.method13280(),
          this.method13272() + this.method13282(),
          this.method13271() + this.method13280() + this.field20897,
@@ -179,7 +179,7 @@ public class Class4348 extends Class4278 {
       GL11.glTranslatef((float)(this.method13263() + 76), (float)(this.method13265() + 44), 0.0F);
       GL11.glScaled(1.0 - 0.1 * (double)var11, 1.0 - 0.1 * (double)var11, 0.0);
       GL11.glTranslatef((float)(-this.method13263() - 76), (float)(-this.method13265() - 44), 0.0F);
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloMediumFont25,
          (float)(this.field20895 + 94),
          (float)(this.field20896 + 16),
@@ -192,7 +192,7 @@ public class Class4348 extends Class4278 {
       byte var13 = 46;
       if (this.field21243.method31735().getTime() != 9223372036854775806L) {
          if (var3 > 0L && this.field21243.method31735().getTime() != Long.MAX_VALUE) {
-            Class3192.method11439(
+            RenderUtil.method11439(
                ResourceRegistry.JelloLightFont18,
                (float)(this.field20895 + var12),
                (float)(this.field20896 + var13),
@@ -200,7 +200,7 @@ public class Class4348 extends Class4278 {
                Class5628.method17690(ClientColors.DEEP_TEAL.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
             );
          } else if (this.field21243.method31735().getTime() != Long.MAX_VALUE) {
-            Class3192.method11439(
+            RenderUtil.method11439(
                ResourceRegistry.JelloLightFont18,
                (float)(this.field20895 + var12),
                (float)(this.field20896 + var13),
@@ -208,7 +208,7 @@ public class Class4348 extends Class4278 {
                Class5628.method17690(ClientColors.DARK_SLATE_GREY.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
             );
          } else {
-            Class3192.method11439(
+            RenderUtil.method11439(
                ResourceRegistry.JelloLightFont18,
                (float)(this.field20895 + var12),
                (float)(this.field20896 + var13),
@@ -217,7 +217,7 @@ public class Class4348 extends Class4278 {
             );
          }
       } else {
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.JelloLightFont18,
             (float)(this.field20895 + var12),
             (float)(this.field20896 + var13),
@@ -227,7 +227,7 @@ public class Class4348 extends Class4278 {
       }
 
       GL11.glPopMatrix();
-      Class3192.method11422();
+      RenderUtil.method11422();
    }
 
    public static BufferedImage method13578(String var0) {

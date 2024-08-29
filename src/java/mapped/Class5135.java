@@ -53,7 +53,7 @@ public class Class5135 implements Class5119 {
       BlockPos var12 = var0.method28712();
       if (method15906(var12, var4, var6, var8) <= 80.0F) {
          DebugRenderer.method27457(
-            new Class6488(
+            new AxisAlignedBB(
                   (double)((float)var12.getX() + 0.25F),
                   (double)((float)var12.getY() + 0.25F),
                   (double)var12.getZ() + 0.25,
@@ -74,7 +74,7 @@ public class Class5135 implements Class5119 {
                float var15 = var13 != var0.method28699() ? 0.0F : 1.0F;
                float var16 = var13 != var0.method28699() ? 1.0F : 0.0F;
                DebugRenderer.method27457(
-                  new Class6488(
+                  new AxisAlignedBB(
                         (double)((float)var14.field30847 + 0.5F - var1),
                         (double)((float)var14.field30848 + 0.01F * (float)var13),
                         (double)((float)var14.field30849 + 0.5F - var1),
@@ -96,7 +96,7 @@ public class Class5135 implements Class5119 {
          for (Class7176 var25 : var0.method28710()) {
             if (method15906(var25.method22531(), var4, var6, var8) <= 80.0F) {
                DebugRenderer.method27457(
-                  new Class6488(
+                  new AxisAlignedBB(
                         (double)((float)var25.field30847 + 0.5F - var1 / 2.0F),
                         (double)((float)var25.field30848 + 0.01F),
                         (double)((float)var25.field30849 + 0.5F - var1 / 2.0F),
@@ -116,7 +116,7 @@ public class Class5135 implements Class5119 {
          for (Class7176 var26 : var0.method28709()) {
             if (method15906(var26.method22531(), var4, var6, var8) <= 80.0F) {
                DebugRenderer.method27457(
-                  new Class6488(
+                  new AxisAlignedBB(
                         (double)((float)var26.field30847 + 0.5F - var1 / 2.0F),
                         (double)((float)var26.field30848 + 0.01F),
                         (double)((float)var26.field30849 + 0.5F - var1 / 2.0F),

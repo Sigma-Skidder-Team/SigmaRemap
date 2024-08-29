@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -14,7 +14,7 @@ public class Class5291 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23801 = 0;
     }
 
@@ -32,7 +32,7 @@ public class Class5291 extends Module {
     }
 
     @EventTarget
-    public void method16620(Class4396 var1) {
+    public void method16620(RecievePacketEvent var1) {
         if (!this.isEnabled()) {
         }
     }

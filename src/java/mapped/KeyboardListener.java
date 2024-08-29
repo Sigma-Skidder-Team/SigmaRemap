@@ -77,8 +77,8 @@ public class KeyboardListener {
                         this.field43915.player.getPosX(),
                         this.field43915.player.getPosY(),
                         this.field43915.player.getPosZ(),
-                        this.field43915.player.field5031,
-                        this.field43915.player.field5032
+                        this.field43915.player.rotationYaw,
+                        this.field43915.player.rotationPitch
                      )
                   );
                   return true;

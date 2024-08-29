@@ -74,7 +74,7 @@ public class Class4288 extends Class4278 {
          var4 = 0;
          var6 -= 7;
          var5 += 7;
-         Class3192.method11426(
+         RenderUtil.method11426(
             (float)var5,
             (float)(this.field20896 + var4),
             (float)(var5 + var6),
@@ -82,9 +82,9 @@ public class Class4288 extends Class4278 {
             Class5628.method17688(ClientColors.MID_GREY.getColor, 1.0F * var1)
          );
       } else {
-         Class3192.method11454((float)var5, (float)this.field20896, (float)var6, (float)var4, ResourcesDecrypter.verticalScrollBarTopPNG, var1);
-         Class3192.method11454((float)var5, (float)(this.field20896 + this.field20898 - var4), (float)var6, (float)var4, ResourcesDecrypter.verticalScrollBarBottomPNG, var1);
-         Class3192.method11426(
+         RenderUtil.method11454((float)var5, (float)this.field20896, (float)var6, (float)var4, ResourcesDecrypter.verticalScrollBarTopPNG, var1);
+         RenderUtil.method11454((float)var5, (float)(this.field20896 + this.field20898 - var4), (float)var6, (float)var4, ResourcesDecrypter.verticalScrollBarBottomPNG, var1);
+         RenderUtil.method11426(
             (float)var5,
             (float)(this.field20896 + var4),
             (float)(var5 + var6),

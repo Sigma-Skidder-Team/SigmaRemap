@@ -111,7 +111,7 @@ public abstract class Module {
 
     public void method15985() {
         if (this.enabled) {
-            this.method15965();
+            this.onDisable();
         }
 
         this.enabled = false;
@@ -150,7 +150,7 @@ public abstract class Module {
         }
 
         if (this.enabled && mc.world != null) {
-            this.isInDevelopment();
+            this.onEnable();
         }
 
         return var1;
@@ -174,14 +174,14 @@ public abstract class Module {
         }
     }
 
-    public void isInDevelopment() {
+    public void onEnable() {
         if (this.getClass().isAnnotationPresent(InDevelopment.class) && !moduleList.contains(this.getClass())) {
             Client.getInstance().getLogger().warn("This mod is still in development. Be careful!");
             moduleList.add(this.getClass());
         }
     }
 
-    public void method15965() {
+    public void onDisable() {
     }
 
     public boolean method15988() {
@@ -234,10 +234,10 @@ public abstract class Module {
         if (this.enabled != enabled) {
             if (!(this.enabled = enabled)) {
                 Client.getInstance().getEventManager().unsubscribe(this);
-                this.method15965();
+                this.onDisable();
             } else {
                 Client.getInstance().getEventManager().subscribe(this);
-                this.isInDevelopment();
+                this.onEnable();
             }
         }
 
@@ -257,7 +257,7 @@ public abstract class Module {
         if (this.enabled != newEnabled) {
             if (!(this.enabled = newEnabled)) {
                 Client.getInstance().getEventManager().unsubscribe(this);
-                if (!(this instanceof Class5325)) {
+                if (!(this instanceof ModuleWithModuleSettings)) {
                     if (Client.getInstance().getClientMode() == ClientMode.JELLO
                             && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSetttingName("Sound")) {
                         Client.getInstance().getSoundManager().play("deactivate");
@@ -269,7 +269,7 @@ public abstract class Module {
                     }
                 }
 
-                this.method15965();
+                this.onDisable();
             } else {
                 Client.getInstance().getEventManager().subscribe(this);
                 if (Client.getInstance().getClientMode() == ClientMode.JELLO
@@ -282,7 +282,7 @@ public abstract class Module {
                     Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.STONE_BUTTON_CLICK_ON, 0.7F));
                 }
 
-                this.isInDevelopment();
+                this.onEnable();
                 this.randomAssOffset++;
             }
         }

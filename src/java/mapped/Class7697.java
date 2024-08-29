@@ -9,7 +9,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
-import java.util.ArrayList;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -411,7 +411,7 @@ public class Class7697 {
    }
 
    private static int method25335(Class6619 var0, Class8218 var1, TextFormatting var2) throws CommandSyntaxException {
-      if (var1.method28591() != var2) {
+      if (var1.getColor() != var2) {
          var1.method28590(var2);
          var0.method20179(new TranslationTextComponent("commands.team.option.color.success", var1.method28569(), var2.getFriendlyName()), true);
          return 0;

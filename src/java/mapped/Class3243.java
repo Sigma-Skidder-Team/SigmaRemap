@@ -47,7 +47,7 @@ public class Class3243 extends Class3241 {
    }
 
    @Override
-   public boolean method11650(BlockState var1, Class7631 var2) {
+   public boolean method11650(BlockState var1, Fluid var2) {
       return false;
    }
 }

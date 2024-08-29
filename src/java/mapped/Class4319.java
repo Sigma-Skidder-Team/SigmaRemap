@@ -25,7 +25,7 @@ public class Class4319 extends Class4307 {
       var4 = Math.min(var4, (int)((float) Minecraft.getInstance().mainWindow.method8044() / 1.65F));
       var5 = Math.min(var5, (int)((float) Minecraft.getInstance().mainWindow.method8044() / 1.65F));
       this.method13416();
-      Class3192.method11426(
+      RenderUtil.method11426(
          0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * this.field21072)
       );
       float var6 = Class9747.method38214(!((double)this.field21072 < 0.5) ? (float)((double)this.field21072 - 0.5) * 2.0F : 0.0F, 0.0F, 1.0F, 1.0F);
@@ -36,11 +36,11 @@ public class Class4319 extends Class4307 {
       String var7 = "##Jello \n";
       String var8 = "Jello by MF";
       ClientResource var9 = ResourceRegistry.JelloLightFont25;
-      Class3192.method11439(
+      RenderUtil.method11439(
          var9, (float)((this.method13267() - var9.method23942(var8)) / 2), (float)(this.method13269() - 110), var8, ClientColors.DEEP_TEAL.getColor
       );
       GL11.glPopMatrix();
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)(this.method13267() / 2) - ((float)var4 - (float)var4 * (this.field21072 - 1.0F) * this.field21072) / 2.0F,
          (float)(
             (double)(Math.max((float)var5 * 1.2F, (float)(this.method13269() / 2)) - (float)var5)
@@ -79,7 +79,7 @@ public class Class4319 extends Class4307 {
 
       float var5 = var4 - (float)this.field21073;
       float var6 = (float)(var3 - this.field21074);
-      Class3192.method11455(
+      RenderUtil.method11455(
          (float)this.field21074, (float)this.field21073, (float)(this.method13267() * 2), (float)(this.method13269() + 114), ResourcesDecrypter.panoramaPNG
       );
       float var7 = 0.5F;

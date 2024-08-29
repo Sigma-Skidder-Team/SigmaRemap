@@ -74,25 +74,25 @@ public class Class9438 {
       "village_taiga", Structure.field18073.method11368(new Class4700(() -> Class8481.field36359, 6))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43858 = method36275(
-      "ruined_portal", Structure.field18064.method11368(new Class4726(Class107.field336))
+      "ruined_portal", Structure.field18064.method11368(new Class4726(Class107.STANDARD))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43859 = method36275(
-      "ruined_portal_desert", Structure.field18064.method11368(new Class4726(Class107.field337))
+      "ruined_portal_desert", Structure.field18064.method11368(new Class4726(Class107.DESERT))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43860 = method36275(
-      "ruined_portal_jungle", Structure.field18064.method11368(new Class4726(Class107.field338))
+      "ruined_portal_jungle", Structure.field18064.method11368(new Class4726(Class107.JUNGLE))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43861 = method36275(
-      "ruined_portal_swamp", Structure.field18064.method11368(new Class4726(Class107.field339))
+      "ruined_portal_swamp", Structure.field18064.method11368(new Class4726(Class107.SWAMP))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43862 = method36275(
-      "ruined_portal_mountain", Structure.field18064.method11368(new Class4726(Class107.field340))
+      "ruined_portal_mountain", Structure.field18064.method11368(new Class4726(Class107.MOUNTAIN))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43863 = method36275(
-      "ruined_portal_ocean", Structure.field18064.method11368(new Class4726(Class107.field341))
+      "ruined_portal_ocean", Structure.field18064.method11368(new Class4726(Class107.OCEAN))
    );
    public static final Class9300<Class4726, ? extends Structure<Class4726>> field43864 = method36275(
-      "ruined_portal_nether", Structure.field18064.method11368(new Class4726(Class107.field342))
+      "ruined_portal_nether", Structure.field18064.method11368(new Class4726(Class107.NETHER))
    );
 
    private static <FC extends Class4698, F extends Structure<FC>> Class9300<FC, F> method36275(String var0, Class9300<FC, F> var1) {

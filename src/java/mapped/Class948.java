@@ -80,7 +80,7 @@ public class Class948 extends TileEntity implements Class946, Class949 {
 
       Vector3d var6 = Vector3d.method11328(this.field5325);
       return new Class6619(
-         Class909.field5189, var6, Class8513.field37212, (ServerWorld)this.field5324, 2, var4, (ITextComponent)var5, this.field5324.method6715(), var1
+         ICommandSource.field5189, var6, Class8513.field37212, (ServerWorld)this.field5324, 2, var4, (ITextComponent)var5, this.field5324.method6715(), var1
       );
    }
 

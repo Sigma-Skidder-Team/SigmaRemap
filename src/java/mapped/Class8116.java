@@ -7,7 +7,7 @@ public class Class8116 implements Class8117 {
    private double field34881;
    private double field34882;
    private double field34883;
-   private Class6408 field34884;
+   private VoxelShape field34884;
    public final Class7522 field34885;
 
    public Class8116(Class7522 var1, double var2) {
@@ -66,9 +66,9 @@ public class Class8116 implements Class8117 {
       this.field34881 = Math.max(this.field34885.method24535() - this.field34879 / 2.0, (double)(-Class7522.method24558(this.field34885)));
       this.field34882 = Math.min(this.field34885.method24534() + this.field34879 / 2.0, (double)Class7522.method24558(this.field34885));
       this.field34883 = Math.min(this.field34885.method24535() + this.field34879 / 2.0, (double)Class7522.method24558(this.field34885));
-      this.field34884 = Class8022.method27433(
-         Class8022.field34463,
-         Class8022.method27427(
+      this.field34884 = VoxelShapes.method27433(
+         VoxelShapes.field34463,
+         VoxelShapes.method27427(
             Math.floor(this.method28105()),
             Double.NEGATIVE_INFINITY,
             Math.floor(this.method28107()),
@@ -76,7 +76,7 @@ public class Class8116 implements Class8117 {
             Double.POSITIVE_INFINITY,
             Math.ceil(this.method28108())
          ),
-         Class9477.field44041
+         IBooleanFunction.field44041
       );
    }
 
@@ -96,7 +96,7 @@ public class Class8116 implements Class8117 {
    }
 
    @Override
-   public Class6408 method28118() {
+   public VoxelShape method28118() {
       return this.field34884;
    }
 }

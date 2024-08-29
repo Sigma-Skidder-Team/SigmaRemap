@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-public class Class958 extends TileEntity implements Class933 {
+public class Class958 extends TileEntity implements INameable {
    private ITextComponent field5376;
    private Class112 field5377 = Class112.field386;
    private ListNBT field5378;

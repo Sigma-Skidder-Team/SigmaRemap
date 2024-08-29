@@ -23,7 +23,7 @@ public class Class5314 extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (!Minecraft.getInstance().gameSettings.hideGUI) {
                 if (!(mc.currentScreen instanceof ChatScreen)) {
-                    float var4 = mc.player.field5031 % 360.0F - this.field23851 % 360.0F;
+                    float var4 = mc.player.rotationYaw % 360.0F - this.field23851 % 360.0F;
                     this.field23851 = this.field23851 + var4 / (float) Minecraft.getFps() * 1.5F;
                     boolean var5 = false;
                     int var6 = 14;
@@ -60,7 +60,7 @@ public class Class5314 extends Module {
     public int method16694(int var1, int var2) {
         String var5 = "Facing South";
         String var6 = this.method16693(this.getStringSettingValueByName("Cords").equals("Precise"));
-        Class3192.method11439(
+        RenderUtil.method11439(
                 ResourceRegistry.JelloMediumFont20,
                 (float) var1,
                 (float) (mc.mainWindow.method8044() - var2),
@@ -78,12 +78,12 @@ public class Class5314 extends Module {
             if (!(var7.getItem() instanceof Class3280)) {
                 var5++;
                 int var8 = var2 - 32 * var5;
-                Class3192.method11479(var7, var1, var8, 32, 32);
+                RenderUtil.method11479(var7, var1, var8, 32, 32);
                 GL11.glDisable(2896);
                 float var9 = 1.0F - (float) var7.method32117() / (float) var7.method32119();
                 if (var9 != 1.0F) {
-                    Class3192.method11424((float) (var1 + 2), (float) (var8 + 28), 28.0F, 5.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F));
-                    Class3192.method11424(
+                    RenderUtil.method11424((float) (var1 + 2), (float) (var8 + 28), 28.0F, 5.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                    RenderUtil.method11424(
                             (float) (var1 + 2),
                             (float) (var8 + 28),
                             28.0F * var9,

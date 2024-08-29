@@ -338,12 +338,12 @@ public class Class4281 extends Class4278 {
          var6 = this.field20912.replaceAll(".", this.field20755);
       }
 
-      Class3192.method11421(this.method13263(), this.method13265(), this.method13263() + this.field20897, this.method13265() + this.field20898, true);
+      RenderUtil.method11421(this.method13263(), this.method13265(), this.method13263() + this.field20897, this.method13265() + this.field20898, true);
       int var7 = this.field20895 + 4;
       int var8 = this.field20897 - 4;
       float var9 = (float)var7 + this.field20746 + (float)this.field20913.method23942(var6.substring(0, this.field20749));
       if (this.method13297()) {
-         Class3192.method11426(
+         RenderUtil.method11426(
             var9 + (float)(var6.isEmpty() ? 0 : -1),
             (float)(this.field20896 + this.field20898 / 2 - this.field20913.method23941(var6) / 2 + 2),
             var9 + (float)(var6.isEmpty() ? 1 : 0),
@@ -366,7 +366,7 @@ public class Class4281 extends Class4278 {
       this.field20751 = Math.min(Math.max(0, this.field20751), var6.length());
       float var14 = (float)var7 + this.field20746 + (float)this.field20913.method23942(var6.substring(0, this.field20750));
       float var11 = (float)var7 + this.field20746 + (float)this.field20913.method23942(var6.substring(0, this.field20751));
-      Class3192.method11426(
+      RenderUtil.method11426(
          var14,
          (float)(this.field20896 + this.field20898 / 2 - this.field20913.method23941(var6) / 2),
          var11,
@@ -375,7 +375,7 @@ public class Class4281 extends Class4278 {
       );
       Class2218 var12 = this.field20914.method19411();
       Class2218 var13 = this.field20914.method19413();
-      Class3192.method11440(
+      RenderUtil.method11440(
          this.field20913,
          (float)var7 + this.field20746,
          (float)(this.field20896 + this.field20898 / 2),
@@ -384,9 +384,9 @@ public class Class4281 extends Class4278 {
          var12,
          var13
       );
-      Class3192.method11422();
+      RenderUtil.method11422();
       if (this.field20758) {
-         Class3192.method11426(
+         RenderUtil.method11426(
             (float)this.field20895,
             (float)(this.field20896 + this.field20898 - 2),
             (float)(this.field20895 + this.field20897),

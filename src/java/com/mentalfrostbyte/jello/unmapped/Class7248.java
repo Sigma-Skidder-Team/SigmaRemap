@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import mapped.*;
 
@@ -27,7 +27,7 @@ public class Class7248 extends Class7249 {
 
    @EventTarget
    private void method22752(TickEvent var1) {
-      if (field31119.player.field5055 < 10) {
+      if (field31119.player.ticksExisted < 10) {
          this.field31116.clear();
       }
 
@@ -37,7 +37,7 @@ public class Class7248 extends Class7249 {
                || !Class5628.method17730(var5, 0.01F)
                || var5.method3342()
                || !(var5.method3275(field31119.player) > 5.0F)
-                  && (var5.getPosX() != var5.field5048 || var5.getPosZ() != var5.field5050 || var5.getPosY() != var5.field5049)) {
+                  && (var5.getPosX() != var5.lastTickPosX || var5.getPosZ() != var5.lastTickPosZ || var5.getPosY() != var5.lastTickPosY)) {
                if (this.field31116.getOrDefault(var5, 0) < this.field31118) {
                   this.field31116.put(var5, 0);
                }
@@ -49,14 +49,14 @@ public class Class7248 extends Class7249 {
    }
 
    @EventTarget
-   private void method22753(Class4396 var1) {
+   private void method22753(RecievePacketEvent var1) {
       if (field31119.player != null && this.field31116 != null) {
-         if (field31119.player.field5055 < 10) {
+         if (field31119.player.ticksExisted < 10) {
             this.field31116.clear();
          }
 
-         if (var1.method13898() instanceof Class5477) {
-            Class5477 var4 = (Class5477)var1.method13898();
+         if (var1.getPacket() instanceof Class5477) {
+            Class5477 var4 = (Class5477)var1.getPacket();
             if (!(var4.method17233(field31119.world) instanceof PlayerEntity)) {
                return;
             }
@@ -121,17 +121,17 @@ public class Class7248 extends Class7249 {
 
    public boolean method22756(Entity var1) {
       if (!field31119.world.getBlockState(var1.getPosition()).method23410()) {
-         Class6488 var4 = new Class6488(
-            var1.field5035.field28449,
-            var1.field5035.field28450 - 0.5,
-            var1.field5035.field28451,
-            var1.field5035.field28452,
-            var1.field5035.field28453,
-            var1.field5035.field28454
+         AxisAlignedBB var4 = new AxisAlignedBB(
+            var1.boundingBox.field28449,
+            var1.boundingBox.field28450 - 0.5,
+            var1.boundingBox.field28451,
+            var1.boundingBox.field28452,
+            var1.boundingBox.field28453,
+            var1.boundingBox.field28454
          );
 
          for (BlockPos var6 : method22757(var1)) {
-            Class6408 var7 = field31119.world.getBlockState(var6).method23412(field31119.world, var6);
+            VoxelShape var7 = field31119.world.getBlockState(var6).method23412(field31119.world, var6);
             if (!var7.method19516() && var4.method19670(var7.method19514().method19668(var6))) {
                return true;
             }

@@ -25,5 +25,5 @@ public interface Class8117 {
 
    Class8117 method28117();
 
-   Class6408 method28118();
+   VoxelShape method28118();
 }

@@ -48,7 +48,7 @@ public class Class2784 extends Class2595 {
    }
 
    private boolean method10974() {
-      for (Class1098 var4 : this.field17401.world.<Class1098>method7182(Class1098.class, new Class6488(this.field17403).method19664(2.0))) {
+      for (Class1098 var4 : this.field17401.world.<Class1098>method7182(Class1098.class, new AxisAlignedBB(this.field17403).method19664(2.0))) {
          if (var4 != this.field17401 && (var4.method5253() || var4.method5255())) {
             return true;
          }

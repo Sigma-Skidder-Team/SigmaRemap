@@ -30,7 +30,7 @@ public class Class7505 implements ArgumentType<Class8439> {
       if (var4.method28837() == null) {
          ResourceLocation var6 = var4.method28839();
          return var2 -> {
-            Class7608 var5x = var2.method32657().method27135(var6);
+            ITag var5x = var2.method32657().method27135(var6);
             if (var5x != null) {
                return new Class170(var5x, var4.method28863(), var4.method28838());
             } else {

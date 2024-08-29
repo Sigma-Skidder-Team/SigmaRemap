@@ -19,7 +19,7 @@ public class Class5239 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         int var3 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.field44632.field13070.field34875);
         mc.gameSettings.field44632.field13071 = var3 == 1;
     }

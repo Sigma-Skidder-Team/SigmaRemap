@@ -77,7 +77,7 @@ public class Class896 extends Class890 implements Class889 {
    }
 
    private void method3517() {
-      Class6488 var3 = this.method3389().method19663(4.0, 2.0, 4.0);
+      AxisAlignedBB var3 = this.getBoundingBox().method19663(4.0, 2.0, 4.0);
       List<Class880> var4 = this.world.method6772(Class880.class, var3, field5131);
       if (!var4.isEmpty()) {
          for (Class880 var6 : var4) {
@@ -90,7 +90,7 @@ public class Class896 extends Class890 implements Class889 {
    }
 
    private void method3518(List<Class2023> var1, Entity var2) {
-      Class6488 var5 = this.method3389().method19663(4.0, 2.0, 4.0);
+      AxisAlignedBB var5 = this.getBoundingBox().method19663(4.0, 2.0, 4.0);
       List<Class880> var6 = this.world.method7182(Class880.class, var5);
       if (!var6.isEmpty()) {
          for (Class880 var8 : var6) {

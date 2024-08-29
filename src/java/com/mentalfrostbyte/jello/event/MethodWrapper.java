@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.event;
 
 import com.mentalfrostbyte.jello.event.priority.Priority;
-import com.mentalfrostbyte.jello.unmapped.Class5259;
+import com.mentalfrostbyte.jello.unmapped.NCPPhase;
 import com.mentalfrostbyte.jello.unmapped.Class8733;
 import mapped.Class8756;
 
@@ -32,7 +32,7 @@ public class MethodWrapper {
         }
 
         this.field35686 = var4;
-        this.field35687 = var1.getClass().getSuperclass() == Class5259.class.getSuperclass();
+        this.field35687 = var1.getClass().getSuperclass() == NCPPhase.class.getSuperclass();
     }
 
     public Object method29022() {

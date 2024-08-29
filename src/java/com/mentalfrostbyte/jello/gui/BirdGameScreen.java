@@ -34,7 +34,7 @@ public class BirdGameScreen extends Class4307 {
       float var4 = Class9747.method38214(var1, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       float var5 = 0.25F * var1;
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.field20895,
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
@@ -42,7 +42,7 @@ public class BirdGameScreen extends Class4307 {
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var5)
       );
       super.method13224();
-      Class3192.method11463(
+      RenderUtil.method11463(
          (float)this.field21046.method13263(),
          (float)this.field21046.method13265(),
          (float)this.field21046.method13267(),
@@ -50,7 +50,7 @@ public class BirdGameScreen extends Class4307 {
          40.0F,
          var1
       );
-      Class3192.method11475(
+      RenderUtil.method11475(
          (float)(this.field21046.method13263() - 20),
          (float)(this.field21046.method13265() - 20),
          (float)(this.field21046.method13267() + 40),
@@ -61,10 +61,10 @@ public class BirdGameScreen extends Class4307 {
       super.method13027(var1);
       int var6 = (this.field20897 - this.field21046.method13267()) / 2;
       int var7 = (this.field20898 - this.field21046.method13269()) / 2;
-      Class3192.method11439(ResourceRegistry.JelloMediumFont40, (float)var6, (float)(var7 - 60), "Bird", ClientColors.LIGHT_GREYISH_BLUE.getColor);
+      RenderUtil.method11439(ResourceRegistry.JelloMediumFont40, (float)var6, (float)(var7 - 60), "Bird", ClientColors.LIGHT_GREYISH_BLUE.getColor);
 //      this.field21048 = Math.max(this.field21046.method13179(), this.field21048);
       String var8 = "Max: " + this.field21048 + "   |   Score: 0";
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont20,
          (float)(var6 + this.field21046.method13267() - ResourceRegistry.JelloLightFont20.method23942(var8)),
          (float)(var7 - 50),

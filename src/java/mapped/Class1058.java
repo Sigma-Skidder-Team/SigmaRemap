@@ -3,7 +3,7 @@ package mapped;
 import java.util.UUID;
 
 public class Class1058 extends Class1056 implements Class1011 {
-   public static final Class9289<Byte> field5849 = Class9361.<Byte>method35441(Class1058.class, Class7784.field33390);
+   public static final DataParameter<Byte> field5849 = EntityDataManager.<Byte>method35441(Class1058.class, Class7784.field33390);
    private int field5850;
    private int field5851;
    private static final Class8369 field5852 = Class8763.method31620(20, 39);
@@ -12,7 +12,7 @@ public class Class1058 extends Class1056 implements Class1011 {
 
    public Class1058(EntityType<? extends Class1058> var1, World var2) {
       super(var1, var2);
-      this.field5051 = 1.0F;
+      this.stepHeight = 1.0F;
    }
 
    @Override
@@ -33,9 +33,9 @@ public class Class1058 extends Class1056 implements Class1011 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5849, (byte)0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5849, (byte)0);
    }
 
    public static Class7037 method4863() {
@@ -71,7 +71,7 @@ public class Class1058 extends Class1056 implements Class1011 {
          this.field5851--;
       }
 
-      if (method3234(this.method3433()) > 2.5000003E-7F && this.field5054.nextInt(5) == 0) {
+      if (method3234(this.method3433()) > 2.5000003E-7F && this.rand.nextInt(5) == 0) {
          int var3 = MathHelper.floor(this.getPosX());
          int var4 = MathHelper.floor(this.getPosY() - 0.2F);
          int var5 = MathHelper.floor(this.getPosZ());
@@ -80,12 +80,12 @@ public class Class1058 extends Class1056 implements Class1011 {
             this.world
                .method6746(
                   new Class7439(Class7940.field34051, var6),
-                  this.getPosX() + ((double)this.field5054.nextFloat() - 0.5) * (double)this.method3429(),
+                  this.getPosX() + ((double)this.rand.nextFloat() - 0.5) * (double)this.method3429(),
                   this.getPosY() + 0.1,
-                  this.getPosZ() + ((double)this.field5054.nextFloat() - 0.5) * (double)this.method3429(),
-                  4.0 * ((double)this.field5054.nextFloat() - 0.5),
+                  this.getPosZ() + ((double)this.rand.nextFloat() - 0.5) * (double)this.method3429(),
+                  4.0 * ((double)this.rand.nextFloat() - 0.5),
                   0.5,
-                  ((double)this.field5054.nextFloat() - 0.5) * 4.0
+                  ((double)this.rand.nextFloat() - 0.5) * 4.0
                );
          }
       }
@@ -120,7 +120,7 @@ public class Class1058 extends Class1056 implements Class1011 {
 
    @Override
    public void method4346() {
-      this.method4347(field5852.method29319(this.field5054));
+      this.method4347(field5852.method29319(this.rand));
    }
 
    @Override
@@ -152,7 +152,7 @@ public class Class1058 extends Class1056 implements Class1011 {
       this.field5850 = 10;
       this.world.method6786(this, (byte)4);
       float var4 = this.method4864();
-      float var5 = (int)var4 <= 0 ? var4 : var4 / 2.0F + (float)this.field5054.nextInt((int)var4);
+      float var5 = (int)var4 <= 0 ? var4 : var4 / 2.0F + (float)this.rand.nextInt((int)var4);
       boolean var6 = var1.method2741(Class8654.method31115(this), var5);
       if (var6) {
          var1.method3434(var1.method3433().method11339(0.0, 0.4F, 0.0));
@@ -228,7 +228,7 @@ public class Class1058 extends Class1056 implements Class1011 {
          float var7 = this.method3042();
          this.method3041(25.0F);
          if (this.method3042() != var7) {
-            float var8 = 1.0F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F;
+            float var8 = 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F;
             this.method2863(Sounds.field26704, 1.0F, var8);
             if (!var1.abilities.isCreativeMode) {
                var5.method32182(1);
@@ -253,15 +253,15 @@ public class Class1058 extends Class1056 implements Class1011 {
    }
 
    public boolean method4869() {
-      return (this.field5063.<Byte>method35445(field5849) & 1) != 0;
+      return (this.dataManager.<Byte>method35445(field5849) & 1) != 0;
    }
 
    public void method4870(boolean var1) {
-      byte var4 = this.field5063.<Byte>method35445(field5849);
+      byte var4 = this.dataManager.<Byte>method35445(field5849);
       if (!var1) {
-         this.field5063.method35446(field5849, (byte)(var4 & -2));
+         this.dataManager.method35446(field5849, (byte)(var4 & -2));
       } else {
-         this.field5063.method35446(field5849, (byte)(var4 | 1));
+         this.dataManager.method35446(field5849, (byte)(var4 | 1));
       }
    }
 

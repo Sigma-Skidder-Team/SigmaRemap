@@ -11,15 +11,15 @@ public class ArmorStandEntity extends Class880 {
    private static final Class7087 field5568 = new Class7087(-15.0F, 0.0F, 10.0F);
    private static final Class7087 field5569 = new Class7087(-1.0F, 0.0F, -1.0F);
    private static final Class7087 field5570 = new Class7087(1.0F, 0.0F, 1.0F);
-   private static final Class8847 field5571 = new Class8847(0.0F, 0.0F, true);
-   private static final Class8847 field5572 = EntityType.field41006.method33221().method32099(0.5F);
-   public static final Class9289<Byte> field5573 = Class9361.<Byte>method35441(ArmorStandEntity.class, Class7784.field33390);
-   public static final Class9289<Class7087> field5574 = Class9361.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
-   public static final Class9289<Class7087> field5575 = Class9361.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
-   public static final Class9289<Class7087> field5576 = Class9361.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
-   public static final Class9289<Class7087> field5577 = Class9361.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
-   public static final Class9289<Class7087> field5578 = Class9361.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
-   public static final Class9289<Class7087> field5579 = Class9361.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
+   private static final EntitySize field5571 = new EntitySize(0.0F, 0.0F, true);
+   private static final EntitySize field5572 = EntityType.field41006.getSize().method32099(0.5F);
+   public static final DataParameter<Byte> field5573 = EntityDataManager.<Byte>method35441(ArmorStandEntity.class, Class7784.field33390);
+   public static final DataParameter<Class7087> field5574 = EntityDataManager.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
+   public static final DataParameter<Class7087> field5575 = EntityDataManager.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
+   public static final DataParameter<Class7087> field5576 = EntityDataManager.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
+   public static final DataParameter<Class7087> field5577 = EntityDataManager.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
+   public static final DataParameter<Class7087> field5578 = EntityDataManager.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
+   public static final DataParameter<Class7087> field5579 = EntityDataManager.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
    private static final Predicate<Entity> field5580 = var0 -> var0 instanceof AbstractMinecartEntity && ((AbstractMinecartEntity)var0).getMinecartType() == MinecartType.MINECART;
    private final NonNullList<ItemStack> field5581 = NonNullList.<ItemStack>method68(2, ItemStack.EMPTY);
    private final NonNullList<ItemStack> field5582 = NonNullList.<ItemStack>method68(4, ItemStack.EMPTY);
@@ -35,12 +35,12 @@ public class ArmorStandEntity extends Class880 {
 
    public ArmorStandEntity(EntityType<? extends ArmorStandEntity> var1, World var2) {
       super(var1, var2);
-      this.field5051 = 0.0F;
+      this.stepHeight = 0.0F;
    }
 
    public ArmorStandEntity(World var1, double var2, double var4, double var6) {
       this(EntityType.field41006, var1);
-      this.method3215(var2, var4, var6);
+      this.setPosition(var2, var4, var6);
    }
 
    @Override
@@ -49,7 +49,7 @@ public class ArmorStandEntity extends Class880 {
       double var5 = this.getPosY();
       double var7 = this.getPosZ();
       super.method3385();
-      this.method3215(var3, var5, var7);
+      this.setPosition(var3, var5, var7);
    }
 
    private boolean method4185() {
@@ -62,15 +62,15 @@ public class ArmorStandEntity extends Class880 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5573, (byte)0);
-      this.field5063.method35442(field5574, field5565);
-      this.field5063.method35442(field5575, field5566);
-      this.field5063.method35442(field5576, field5567);
-      this.field5063.method35442(field5577, field5568);
-      this.field5063.method35442(field5578, field5569);
-      this.field5063.method35442(field5579, field5570);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5573, (byte)0);
+      this.dataManager.register(field5574, field5565);
+      this.dataManager.register(field5575, field5566);
+      this.dataManager.register(field5576, field5567);
+      this.dataManager.register(field5577, field5568);
+      this.dataManager.register(field5578, field5569);
+      this.dataManager.register(field5579, field5570);
    }
 
    @Override
@@ -215,7 +215,7 @@ public class ArmorStandEntity extends Class880 {
       this.field5585 = var1.method122("DisabledSlots");
       this.method4200(var1.method132("NoBasePlate"));
       this.method4202(var1.method132("Marker"));
-      this.field5052 = !this.method4185();
+      this.noClip = !this.method4185();
       CompoundNBT var7 = var1.getCompound("Pose");
       this.method4186(var7);
    }
@@ -275,7 +275,7 @@ public class ArmorStandEntity extends Class880 {
 
    @Override
    public void method3126() {
-      List var3 = this.world.method6770(this, this.method3389(), field5580);
+      List var3 = this.world.method6770(this, this.getBoundingBox(), field5580);
 
       for (int var4 = 0; var4 < var3.size(); var4++) {
          Entity var5 = (Entity)var3.get(var4);
@@ -372,7 +372,7 @@ public class ArmorStandEntity extends Class880 {
 
    @Override
    public boolean method2741(Class8654 var1, float var2) {
-      if (this.world.field9020 || this.field5041) {
+      if (this.world.field9020 || this.removed) {
          return false;
       } else if (Class8654.field39004.equals(var1)) {
          this.method2904();
@@ -437,7 +437,7 @@ public class ArmorStandEntity extends Class880 {
 
    @Override
    public boolean method3291(double var1) {
-      double var5 = this.method3389().method19675() * 4.0;
+      double var5 = this.getBoundingBox().method19675() * 4.0;
       if (Double.isNaN(var5) || var5 == 0.0) {
          var5 = 4.0;
       }
@@ -506,13 +506,13 @@ public class ArmorStandEntity extends Class880 {
 
    @Override
    public float method3123(float var1, float var2) {
-      this.field4966 = this.field5033;
-      this.field4965 = this.field5031;
+      this.field4966 = this.prevRotationYaw;
+      this.field4965 = this.rotationYaw;
       return 0.0F;
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return var2.field39969 * (!this.method3005() ? 0.9F : 0.5F);
    }
 
@@ -530,45 +530,45 @@ public class ArmorStandEntity extends Class880 {
 
    @Override
    public void method3144(float var1) {
-      this.field4966 = this.field5033 = var1;
+      this.field4966 = this.prevRotationYaw = var1;
       this.field4968 = this.field4967 = var1;
    }
 
    @Override
    public void method3143(float var1) {
-      this.field4966 = this.field5033 = var1;
+      this.field4966 = this.prevRotationYaw = var1;
       this.field4968 = this.field4967 = var1;
    }
 
    @Override
    public void tick() {
       super.tick();
-      Class7087 var3 = this.field5063.<Class7087>method35445(field5574);
+      Class7087 var3 = this.dataManager.<Class7087>method35445(field5574);
       if (!this.field5586.equals(var3)) {
          this.method4205(var3);
       }
 
-      Class7087 var4 = this.field5063.<Class7087>method35445(field5575);
+      Class7087 var4 = this.dataManager.<Class7087>method35445(field5575);
       if (!this.field5587.equals(var4)) {
          this.method4206(var4);
       }
 
-      Class7087 var5 = this.field5063.<Class7087>method35445(field5576);
+      Class7087 var5 = this.dataManager.<Class7087>method35445(field5576);
       if (!this.field5588.equals(var5)) {
          this.method4207(var5);
       }
 
-      Class7087 var6 = this.field5063.<Class7087>method35445(field5577);
+      Class7087 var6 = this.dataManager.<Class7087>method35445(field5577);
       if (!this.field5589.equals(var6)) {
          this.method4208(var6);
       }
 
-      Class7087 var7 = this.field5063.<Class7087>method35445(field5578);
+      Class7087 var7 = this.dataManager.<Class7087>method35445(field5578);
       if (!this.field5590.equals(var7)) {
          this.method4209(var7);
       }
 
-      Class7087 var8 = this.field5063.<Class7087>method35445(field5579);
+      Class7087 var8 = this.dataManager.<Class7087>method35445(field5579);
       if (!this.field5591.equals(var8)) {
          this.method4210(var8);
       }
@@ -606,35 +606,35 @@ public class ArmorStandEntity extends Class880 {
    }
 
    private void method4196(boolean var1) {
-      this.field5063.method35446(field5573, this.method4204(this.field5063.<Byte>method35445(field5573), 1, var1));
+      this.dataManager.method35446(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 1, var1));
    }
 
    public boolean method4197() {
-      return (this.field5063.<Byte>method35445(field5573) & 1) != 0;
+      return (this.dataManager.<Byte>method35445(field5573) & 1) != 0;
    }
 
    private void method4198(boolean var1) {
-      this.field5063.method35446(field5573, this.method4204(this.field5063.<Byte>method35445(field5573), 4, var1));
+      this.dataManager.method35446(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 4, var1));
    }
 
    public boolean method4199() {
-      return (this.field5063.<Byte>method35445(field5573) & 4) != 0;
+      return (this.dataManager.<Byte>method35445(field5573) & 4) != 0;
    }
 
    private void method4200(boolean var1) {
-      this.field5063.method35446(field5573, this.method4204(this.field5063.<Byte>method35445(field5573), 8, var1));
+      this.dataManager.method35446(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 8, var1));
    }
 
    public boolean method4201() {
-      return (this.field5063.<Byte>method35445(field5573) & 8) != 0;
+      return (this.dataManager.<Byte>method35445(field5573) & 8) != 0;
    }
 
    private void method4202(boolean var1) {
-      this.field5063.method35446(field5573, this.method4204(this.field5063.<Byte>method35445(field5573), 16, var1));
+      this.dataManager.method35446(field5573, this.method4204(this.dataManager.<Byte>method35445(field5573), 16, var1));
    }
 
    public boolean method4203() {
-      return (this.field5063.<Byte>method35445(field5573) & 16) != 0;
+      return (this.dataManager.<Byte>method35445(field5573) & 16) != 0;
    }
 
    private byte method4204(byte var1, int var2, boolean var3) {
@@ -649,32 +649,32 @@ public class ArmorStandEntity extends Class880 {
 
    public void method4205(Class7087 var1) {
       this.field5586 = var1;
-      this.field5063.method35446(field5574, var1);
+      this.dataManager.method35446(field5574, var1);
    }
 
    public void method4206(Class7087 var1) {
       this.field5587 = var1;
-      this.field5063.method35446(field5575, var1);
+      this.dataManager.method35446(field5575, var1);
    }
 
    public void method4207(Class7087 var1) {
       this.field5588 = var1;
-      this.field5063.method35446(field5576, var1);
+      this.dataManager.method35446(field5576, var1);
    }
 
    public void method4208(Class7087 var1) {
       this.field5589 = var1;
-      this.field5063.method35446(field5577, var1);
+      this.dataManager.method35446(field5577, var1);
    }
 
    public void method4209(Class7087 var1) {
       this.field5590 = var1;
-      this.field5063.method35446(field5578, var1);
+      this.dataManager.method35446(field5578, var1);
    }
 
    public void method4210(Class7087 var1) {
       this.field5591 = var1;
-      this.field5063.method35446(field5579, var1);
+      this.dataManager.method35446(field5579, var1);
    }
 
    public Class7087 method4211() {
@@ -743,10 +743,10 @@ public class ArmorStandEntity extends Class880 {
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       if (field5573.equals(var1)) {
          this.method3385();
-         this.field5019 = !this.method4203();
+         this.preventEntitySpawning = !this.method4203();
       }
 
       super.method3155(var1);
@@ -758,13 +758,13 @@ public class ArmorStandEntity extends Class880 {
    }
 
    @Override
-   public Class8847 method2981(Class2090 var1) {
+   public EntitySize method2981(Pose var1) {
       return this.method4217(this.method4203());
    }
 
-   private Class8847 method4217(boolean var1) {
+   private EntitySize method4217(boolean var1) {
       if (!var1) {
-         return !this.method3005() ? this.getType().method33221() : field5572;
+         return !this.method3005() ? this.getType().getSize() : field5572;
       } else {
          return field5571;
       }
@@ -775,7 +775,7 @@ public class ArmorStandEntity extends Class880 {
       if (!this.method4203()) {
          return super.method3287(var1);
       } else {
-         Class6488 var4 = this.method4217(false).method32097(this.getPositionVec());
+         AxisAlignedBB var4 = this.method4217(false).method32097(this.getPositionVec());
          BlockPos var5 = this.getPosition();
          int var6 = Integer.MIN_VALUE;
 

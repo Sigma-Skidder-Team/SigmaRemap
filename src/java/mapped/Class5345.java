@@ -17,11 +17,11 @@ public class Class5345 extends Module {
     @EventTarget
     private void method16765(Class4420 var1) {
         if (this.isEnabled()) {
-            if (!(mc.player.field5032 > 45.0F)) {
+            if (!(mc.player.rotationPitch > 45.0F)) {
                 Entity var4 = ((Class5335) this.method16004()).method16750(this.getNumberValueBySettingName("Range"));
                 if (var4 != null) {
-                    double var5 = mc.player.field5032 - this.method16766(var4)[1];
-                    double var7 = mc.player.field5031 - this.method16766(var4)[0];
+                    double var5 = mc.player.rotationPitch - this.method16766(var4)[1];
+                    double var7 = mc.player.rotationYaw - this.method16766(var4)[0];
                     if (var7 < 0.0) {
                         var7 *= -1.0;
                     }
@@ -30,31 +30,31 @@ public class Class5345 extends Module {
                         var5 *= -1.0;
                     }
 
-                    double var9 = var4.getPosX() - var4.field5048;
-                    double var11 = var4.getPosZ() - var4.field5050;
+                    double var9 = var4.getPosX() - var4.lastTickPosX;
+                    double var11 = var4.getPosZ() - var4.lastTickPosZ;
                     double var13 = var9 * 2.14 + var11 * 2.14;
                     if (var13 < 0.0) {
                         var13 *= -1.0;
                     }
 
                     double var15 = 0.05 * (double) Minecraft.getFps() * (var13 + 1.0);
-                    if (mc.player.field5032 > this.method16766(var4)[1]) {
-                        mc.player.field5032 = (float) ((double) mc.player.field5032 - (var15 * var5 / 90.0 + Math.min(0.5, var7)));
+                    if (mc.player.rotationPitch > this.method16766(var4)[1]) {
+                        mc.player.rotationPitch = (float) ((double) mc.player.rotationPitch - (var15 * var5 / 90.0 + Math.min(0.5, var7)));
                     }
 
-                    if (mc.player.field5032 < this.method16766(var4)[1]) {
-                        mc.player.field5032 = (float) ((double) mc.player.field5032 + var15 * var5 / 90.0 + Math.min(0.5, var7));
+                    if (mc.player.rotationPitch < this.method16766(var4)[1]) {
+                        mc.player.rotationPitch = (float) ((double) mc.player.rotationPitch + var15 * var5 / 90.0 + Math.min(0.5, var7));
                     }
 
-                    if (mc.player.field5031 > this.method16766(var4)[0]) {
-                        mc.player.field5031 = (float) ((double) mc.player.field5031 - (var15 * var7 / 90.0 + Math.min(0.5, var5)));
+                    if (mc.player.rotationYaw > this.method16766(var4)[0]) {
+                        mc.player.rotationYaw = (float) ((double) mc.player.rotationYaw - (var15 * var7 / 90.0 + Math.min(0.5, var5)));
                     }
 
-                    if (mc.player.field5031 < this.method16766(var4)[0]) {
-                        mc.player.field5031 = (float) ((double) mc.player.field5031 + var15 * var7 / 90.0 + Math.min(0.5, var5));
+                    if (mc.player.rotationYaw < this.method16766(var4)[0]) {
+                        mc.player.rotationYaw = (float) ((double) mc.player.rotationYaw + var15 * var7 / 90.0 + Math.min(0.5, var5));
                     }
 
-                    mc.player.field4967 = mc.player.field5031;
+                    mc.player.field4967 = mc.player.rotationYaw;
                 }
             }
         }
@@ -70,8 +70,8 @@ public class Class5345 extends Module {
         double var6 = var1.getPosY() - 1.6 - this.field23895 + (double) var1.method3393() - mc.player.getPosY();
         double var8 = var1.getPosZ() - mc.player.getPosZ() + Math.sin((double) (var1.method3142() + 90.0F) * Math.PI / 180.0) * 0.14;
         double var10 = MathHelper.method37766(var4 * var4 + var8 * var8);
-        float var12 = this.method16767(mc.player.field5031, (float) (Math.atan2(var8, var4) * 180.0 / Math.PI) - 90.0F, 360.0F);
-        float var13 = this.method16767(mc.player.field5032, (float) (-(Math.atan2(var6, var10) * 180.0 / Math.PI)), 360.0F);
+        float var12 = this.method16767(mc.player.rotationYaw, (float) (Math.atan2(var8, var4) * 180.0 / Math.PI) - 90.0F, 360.0F);
+        float var13 = this.method16767(mc.player.rotationPitch, (float) (-(Math.atan2(var6, var10) * 180.0 / Math.PI)), 360.0F);
         return new float[]{var12, var13};
     }
 

@@ -316,14 +316,14 @@ public class MathHelper {
       return var5 >> 16;
    }
 
-   public static UUID method37811(Random var0) {
+   public static UUID getRandomUUID(Random var0) {
       long var3 = var0.nextLong() & -61441L | 16384L;
       long var5 = var0.nextLong() & 4611686018427387903L | Long.MIN_VALUE;
       return new UUID(var3, var5);
    }
 
    public static UUID method37812() {
-      return method37811(field45218);
+      return getRandomUUID(field45218);
    }
 
    public static double method37813(double var0, double var2, double var4) {

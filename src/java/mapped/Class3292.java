@@ -109,7 +109,7 @@ public class Class3292 extends Item {
 
    public boolean method11841(Class5909 var1, BlockState var2) {
       PlayerEntity var5 = var1.method18358();
-      Class4832 var6 = var5 != null ? Class4832.method14948(var5) : Class4832.method14947();
+      ISelectionContext var6 = var5 != null ? ISelectionContext.forEntity(var5) : ISelectionContext.method14947();
       return (!this.method11842() || var2.method23443(var1.method18360(), var1.method18345())) && var1.method18360().method7049(var2, var1.method18345(), var6);
    }
 

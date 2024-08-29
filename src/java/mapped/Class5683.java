@@ -33,7 +33,7 @@ public class Class5683 extends Class5651<Class1057, Class2887<Class1057>> {
          if (var1.method4854() > 0 && var1.method4856()) {
             Vector3d var11 = Vector3d.method11329(var1.method4849());
             Vector3d var12 = Vector3d.method11329(var1.method4855());
-            if (var2.method25122(new Class6488(var12.field18048, var12.field18049, var12.field18050, var11.field18048, var11.field18049, var11.field18050))) {
+            if (var2.method25122(new AxisAlignedBB(var12.field18048, var12.field18049, var12.field18050, var11.field18048, var11.field18049, var11.field18050))) {
                return true;
             }
          }

@@ -6,7 +6,7 @@ import java.time.temporal.ChronoField;
 import java.util.Random;
 
 public class Class1114 extends Class1113 {
-   private static final Class9289<Byte> field6093 = Class9361.<Byte>method35441(Class1114.class, Class7784.field33390);
+   private static final DataParameter<Byte> field6093 = EntityDataManager.<Byte>method35441(Class1114.class, Class7784.field33390);
    private static final Class8522 field6094 = new Class8522().method30203(4.0).method30205();
    private BlockPos field6095;
 
@@ -16,9 +16,9 @@ public class Class1114 extends Class1113 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field6093, (byte)0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field6093, (byte)0);
    }
 
    @Override
@@ -34,7 +34,7 @@ public class Class1114 extends Class1113 {
    @Nullable
    @Override
    public Class9455 method4241() {
-      return this.method5364() && this.field5054.nextInt(4) != 0 ? null : Sounds.field26380;
+      return this.method5364() && this.rand.nextInt(4) != 0 ? null : Sounds.field26380;
    }
 
    @Override
@@ -65,15 +65,15 @@ public class Class1114 extends Class1113 {
    }
 
    public boolean method5364() {
-      return (this.field5063.<Byte>method35445(field6093) & 1) != 0;
+      return (this.dataManager.<Byte>method35445(field6093) & 1) != 0;
    }
 
    public void method5365(boolean var1) {
-      int var4 = this.field5063.<Byte>method35445(field6093);
+      int var4 = this.dataManager.<Byte>method35445(field6093);
       if (!var1) {
-         this.field5063.method35446(field6093, (byte)(var4 & -2));
+         this.dataManager.method35446(field6093, (byte)(var4 & -2));
       } else {
-         this.field5063.method35446(field6093, (byte)(var4 | 1));
+         this.dataManager.method35446(field6093, (byte)(var4 | 1));
       }
    }
 
@@ -83,7 +83,7 @@ public class Class1114 extends Class1113 {
       if (!this.method5364()) {
          this.method3434(this.method3433().method11347(1.0, 0.6, 1.0));
       } else {
-         this.method3434(Vector3d.field18047);
+         this.method3434(Vector3d.ZERO);
          this.method3446(this.getPosX(), (double) MathHelper.floor(this.getPosY()) + 1.0 - (double)this.method3430(), this.getPosZ());
       }
    }
@@ -98,11 +98,11 @@ public class Class1114 extends Class1113 {
             this.field6095 = null;
          }
 
-         if (this.field6095 == null || this.field5054.nextInt(30) == 0 || this.field6095.method8317(this.getPositionVec(), 2.0)) {
+         if (this.field6095 == null || this.rand.nextInt(30) == 0 || this.field6095.method8317(this.getPositionVec(), 2.0)) {
             this.field6095 = new BlockPos(
-               this.getPosX() + (double)this.field5054.nextInt(7) - (double)this.field5054.nextInt(7),
-               this.getPosY() + (double)this.field5054.nextInt(6) - 2.0,
-               this.getPosZ() + (double)this.field5054.nextInt(7) - (double)this.field5054.nextInt(7)
+               this.getPosX() + (double)this.rand.nextInt(7) - (double)this.rand.nextInt(7),
+               this.getPosY() + (double)this.rand.nextInt(6) - 2.0,
+               this.getPosZ() + (double)this.rand.nextInt(7) - (double)this.rand.nextInt(7)
             );
          }
 
@@ -117,10 +117,10 @@ public class Class1114 extends Class1113 {
          );
          this.method3434(var13);
          float var14 = (float)(MathHelper.method37814(var13.field18050, var13.field18048) * 180.0F / (float)Math.PI) - 90.0F;
-         float var15 = MathHelper.method37792(var14 - this.field5031);
+         float var15 = MathHelper.method37792(var14 - this.rotationYaw);
          this.field4984 = 0.5F;
-         this.field5031 += var15;
-         if (this.field5054.nextInt(100) == 0 && this.world.getBlockState(var4).method23400(this.world, var4)) {
+         this.rotationYaw += var15;
+         if (this.rand.nextInt(100) == 0 && this.world.getBlockState(var4).method23400(this.world, var4)) {
             this.method5365(true);
          }
       } else {
@@ -131,8 +131,8 @@ public class Class1114 extends Class1113 {
                this.world.method6869((PlayerEntity)null, 1025, var3, 0);
             }
          } else {
-            if (this.field5054.nextInt(200) == 0) {
-               this.field4967 = (float)this.field5054.nextInt(360);
+            if (this.rand.nextInt(200) == 0) {
+               this.field4967 = (float)this.rand.nextInt(360);
             }
 
             if (this.world.method7188(field6094, this) != null) {
@@ -180,13 +180,13 @@ public class Class1114 extends Class1113 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.field5063.method35446(field6093, var1.method120("BatFlags"));
+      this.dataManager.method35446(field6093, var1.method120("BatFlags"));
    }
 
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method100("BatFlags", this.field5063.<Byte>method35445(field6093));
+      var1.method100("BatFlags", this.dataManager.<Byte>method35445(field6093));
    }
 
    public static boolean method5366(EntityType<Class1114> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
@@ -215,7 +215,7 @@ public class Class1114 extends Class1113 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return var2.field39969 / 2.0F;
    }
 }

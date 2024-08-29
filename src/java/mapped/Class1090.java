@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Class1090 extends Class1018 {
    private static final Class120 field5972 = Class120.method339(Items.field37909, Items.field37910);
-   private static final Class9289<Boolean> field5973 = Class9361.<Boolean>method35441(Class1090.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5973 = EntityDataManager.<Boolean>method35441(Class1090.class, Class7784.field33398);
    private Class2775<PlayerEntity> field5974;
    private Class2681 field5975;
 
@@ -15,11 +15,11 @@ public class Class1090 extends Class1018 {
    }
 
    private boolean method5072() {
-      return this.field5063.<Boolean>method35445(field5973);
+      return this.dataManager.<Boolean>method35445(field5973);
    }
 
    private void method5073(boolean var1) {
-      this.field5063.method35446(field5973, var1);
+      this.dataManager.method35446(field5973, var1);
       this.method5077();
    }
 
@@ -36,9 +36,9 @@ public class Class1090 extends Class1018 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5973, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5973, false);
    }
 
    @Override
@@ -58,20 +58,20 @@ public class Class1090 extends Class1018 {
    @Override
    public void method4258() {
       if (!this.method4228().method20811()) {
-         this.method3211(Class2090.field13619);
+         this.method3211(Pose.STANDING);
          this.setSprinting(false);
       } else {
          double var3 = this.method4228().method20812();
          if (var3 != 0.6) {
             if (var3 != 1.33) {
-               this.method3211(Class2090.field13619);
+               this.method3211(Pose.STANDING);
                this.setSprinting(false);
             } else {
-               this.method3211(Class2090.field13619);
+               this.method3211(Pose.STANDING);
                this.setSprinting(true);
             }
          } else {
-            this.method3211(Class2090.field13624);
+            this.method3211(Pose.field13624);
             this.setSprinting(false);
          }
       }
@@ -79,7 +79,7 @@ public class Class1090 extends Class1018 {
 
    @Override
    public boolean method4254(double var1) {
-      return !this.method5072() && this.field5055 > 2400;
+      return !this.method5072() && this.ticksExisted > 2400;
    }
 
    public static Class7037 method5074() {
@@ -132,7 +132,7 @@ public class Class1090 extends Class1018 {
       if ((this.field5975 == null || this.field5975.method10900()) && !this.method5072() && this.method4381(var5) && var1.getDistanceSq(this) < 9.0) {
          this.method4501(var1, var5);
          if (!this.world.field9020) {
-            if (this.field5054.nextInt(3) != 0) {
+            if (this.rand.nextInt(3) != 0) {
                this.method5076(false);
                this.world.method6786(this, (byte)40);
             } else {
@@ -168,9 +168,9 @@ public class Class1090 extends Class1018 {
       }
 
       for (int var5 = 0; var5 < 7; var5++) {
-         double var6 = this.field5054.nextGaussian() * 0.02;
-         double var8 = this.field5054.nextGaussian() * 0.02;
-         double var10 = this.field5054.nextGaussian() * 0.02;
+         double var6 = this.rand.nextGaussian() * 0.02;
+         double var8 = this.rand.nextGaussian() * 0.02;
+         double var10 = this.rand.nextGaussian() * 0.02;
          this.world.method6746(var4, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var6, var8, var10);
       }
    }
@@ -201,7 +201,7 @@ public class Class1090 extends Class1018 {
 
    @Override
    public boolean method4266(Class1662 var1) {
-      if (var1.method7050(this) && !var1.method7014(this.method3389())) {
+      if (var1.method7050(this) && !var1.method7014(this.getBoundingBox())) {
          BlockPos var4 = this.getPosition();
          if (var4.getY() < var1.method6776()) {
             return false;

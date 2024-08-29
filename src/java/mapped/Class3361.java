@@ -7,7 +7,7 @@ import java.util.Map;
 public class Class3361 extends Class3359 {
    private static String[] field18909;
    public static final Class8553 field18910 = Class3198.field18484;
-   private static final Map<Direction, Class6408> field18911 = Maps.newEnumMap(
+   private static final Map<Direction, VoxelShape> field18911 = Maps.newEnumMap(
       ImmutableMap.of(
          Direction.NORTH,
          Block.method11539(0.0, 0.0, 14.0, 16.0, 12.5, 16.0),
@@ -43,7 +43,7 @@ public class Class3361 extends Class3359 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field18911.get(var1.<Direction>method23463(field18910));
    }
 

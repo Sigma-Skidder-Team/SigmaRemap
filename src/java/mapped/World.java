@@ -610,7 +610,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public List<Entity> method6770(Entity var1, Class6488 var2, Predicate<? super Entity> var3) {
+   public List<Entity> method6770(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3) {
       this.method6820().func_230035_c_("getEntities");
       ArrayList var6 = Lists.newArrayList();
       int var7 = MathHelper.floor((var2.field28449 - 2.0) / 16.0);
@@ -631,7 +631,7 @@ public abstract class World implements Class1660, AutoCloseable {
       return var6;
    }
 
-   public <T extends Entity> List<T> method6771(EntityType<T> var1, Class6488 var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method6771(EntityType<T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.method6820().func_230035_c_("getEntities");
       int var6 = MathHelper.floor((var2.field28449 - 2.0) / 16.0);
       int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
@@ -652,7 +652,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public <T extends Entity> List<T> method6772(Class<? extends T> var1, Class6488 var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method6772(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.method6820().func_230035_c_("getEntities");
       int var6 = MathHelper.floor((var2.field28449 - 2.0) / 16.0);
       int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
@@ -674,7 +674,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public <T extends Entity> List<T> method6773(Class<? extends T> var1, Class6488 var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method6773(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.method6820().func_230035_c_("getLoadedEntities");
       int var6 = MathHelper.floor((var2.field28449 - 2.0) / 16.0);
       int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);

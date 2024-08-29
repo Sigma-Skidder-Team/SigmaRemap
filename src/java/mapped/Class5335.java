@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import java.util.Iterator;
 import java.util.List;
 
-public class Class5335 extends Class5325 {
+public class Class5335 extends ModuleWithModuleSettings {
     public Class5335() {
         super(ModuleCategory.COMBAT, "Aimbot", "Automatically aim at players", new Class5383(), new Class5345(), new Class5350());
         this.registerSetting(new BooleanSetting("Players", "Aim at players", true));

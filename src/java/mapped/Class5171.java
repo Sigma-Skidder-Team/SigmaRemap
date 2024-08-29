@@ -177,9 +177,9 @@ public class Class5171 extends Module {
 
     private Class8472 method16090(Class4420 var1, PlayerEntity var2) {
         float var5 = mc.getRenderPartialTicks();
-        double var6 = var2.field5048 + (var2.getPosX() - var2.field5048) * (double) var5;
-        double var8 = var2.field5049 + (var2.getPosY() - var2.field5049) * (double) var5;
-        double var10 = var2.field5050 + (var2.getPosZ() - var2.field5050) * (double) var5;
+        double var6 = var2.lastTickPosX + (var2.getPosX() - var2.lastTickPosX) * (double) var5;
+        double var8 = var2.lastTickPosY + (var2.getPosY() - var2.lastTickPosY) * (double) var5;
+        double var10 = var2.lastTickPosZ + (var2.getPosZ() - var2.lastTickPosZ) * (double) var5;
         return new Class8472(var6, var8, var10);
     }
 

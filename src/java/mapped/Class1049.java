@@ -3,7 +3,7 @@ package mapped;
 import java.util.Random;
 
 public abstract class Class1049 extends Class1047 {
-   private static final Class9289<Boolean> field5809 = Class9361.<Boolean>method35441(Class1049.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5809 = EntityDataManager.<Boolean>method35441(Class1049.class, Class7784.field33398);
 
    public Class1049(EntityType<? extends Class1049> var1, World var2) {
       super(var1, var2);
@@ -11,7 +11,7 @@ public abstract class Class1049 extends Class1047 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.65F;
    }
 
@@ -39,17 +39,17 @@ public abstract class Class1049 extends Class1047 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5809, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5809, false);
    }
 
    private boolean method4793() {
-      return this.field5063.<Boolean>method35445(field5809);
+      return this.dataManager.<Boolean>method35445(field5809);
    }
 
    public void method4794(boolean var1) {
-      this.field5063.method35446(field5809, var1);
+      this.dataManager.method35446(field5809, var1);
    }
 
    @Override
@@ -93,13 +93,13 @@ public abstract class Class1049 extends Class1047 {
 
    @Override
    public void method2871() {
-      if (!this.method3250() && this.field5036 && this.field5038) {
+      if (!this.method3250() && this.onGround && this.collidedVertically) {
          this.method3434(
             this.method3433()
-               .method11339((double)((this.field5054.nextFloat() * 2.0F - 1.0F) * 0.05F), 0.4F, (double)((this.field5054.nextFloat() * 2.0F - 1.0F) * 0.05F))
+               .method11339((double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.05F), 0.4F, (double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.05F))
          );
-         this.field5036 = false;
-         this.field5078 = true;
+         this.onGround = false;
+         this.isAirBorne = true;
          this.method2863(this.method4798(), this.method3099(), this.method3100());
       }
 

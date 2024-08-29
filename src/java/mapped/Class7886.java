@@ -11,7 +11,7 @@ public class Class7886 extends Class7882<Class880> {
 
    @Override
    public void method26425(ServerWorld var1, Class880 var2) {
-      Class6488 var5 = var2.method3389().method19663(16.0, 16.0, 16.0);
+      AxisAlignedBB var5 = var2.getBoundingBox().method19663(16.0, 16.0, 16.0);
       List<Class880> var6 = var1.<Class880>method6772(Class880.class, var5, var1x -> var1x != var2 && var1x.method3066());
       var6.sort(Comparator.comparingDouble(var2::getDistanceSq));
       Class6947 var7 = var2.method2992();

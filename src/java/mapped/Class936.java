@@ -321,7 +321,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
 
       if (var9 == null) {
          List var14 = var0.method6770(
-            (Entity)null, new Class6488(var1 - 0.5, var3 - 0.5, var5 - 0.5, var1 + 0.5, var3 + 0.5, var5 + 0.5), Class8088.field34760
+            (Entity)null, new AxisAlignedBB(var1 - 0.5, var3 - 0.5, var5 - 0.5, var1 + 0.5, var3 + 0.5, var5 + 0.5), Class8088.field34760
          );
          if (!var14.isEmpty()) {
             var9 = (Class920)var14.get(var0.field9016.nextInt(var14.size()));
@@ -383,10 +383,10 @@ public class Class936 extends Class939 implements Class937, Class935 {
    public void method3726(Entity var1) {
       if (var1 instanceof ItemEntity) {
          BlockPos var4 = this.getPos();
-         if (Class8022.method27435(
-            Class8022.method27428(var1.method3389().method19667((double)(-var4.getX()), (double)(-var4.getY()), (double)(-var4.getZ()))),
+         if (VoxelShapes.compare(
+            VoxelShapes.create(var1.getBoundingBox().method19667((double)(-var4.getX()), (double)(-var4.getY()), (double)(-var4.getZ()))),
             this.method3733(),
-            Class9477.field44045
+            IBooleanFunction.AND
          )) {
             this.method3699(() -> method3707(this, (ItemEntity)var1));
          }

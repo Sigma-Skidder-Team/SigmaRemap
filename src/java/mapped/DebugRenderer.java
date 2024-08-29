@@ -84,7 +84,7 @@ public class DebugRenderer {
          Vector3d var4 = var0.method3286(1.0F);
          Vector3d var5 = var0.method3281(1.0F).method11344((double)var1);
          Vector3d var6 = var4.method11338(var5);
-         Class6488 var7 = var0.method3389().method19661(var5).method19664(1.0);
+         AxisAlignedBB var7 = var0.getBoundingBox().method19661(var5).method19664(1.0);
          int var8 = var1 * var1;
          Predicate<Entity> var9 = var0x -> !var0x.isSpectator() && var0x.method3139();
          EntityRayTraceResult var10 = Class9456.method36386(var0, var4, var6, var7, var9, (double)var8);
@@ -102,7 +102,7 @@ public class DebugRenderer {
       Class9624 var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
       if (var8.method37510()) {
          Vector3d var9 = var8.method37504().method11345();
-         Class6488 var10 = new Class6488(var0, var1).method19669(var9);
+         AxisAlignedBB var10 = new AxisAlignedBB(var0, var1).method19669(var9);
          method27457(var10, var2, var3, var4, var5);
       }
    }
@@ -111,12 +111,12 @@ public class DebugRenderer {
       Class9624 var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
       if (var8.method37510()) {
          Vector3d var9 = var8.method37504().method11345();
-         Class6488 var10 = new Class6488(var0).method19669(var9).method19664((double)var1);
+         AxisAlignedBB var10 = new AxisAlignedBB(var0).method19669(var9).method19664((double)var1);
          method27457(var10, var2, var3, var4, var5);
       }
    }
 
-   public static void method27457(Class6488 var0, float var1, float var2, float var3, float var4) {
+   public static void method27457(AxisAlignedBB var0, float var1, float var2, float var3, float var4) {
       method27458(var0.field28449, var0.field28450, var0.field28451, var0.field28452, var0.field28453, var0.field28454, var1, var2, var3, var4);
    }
 

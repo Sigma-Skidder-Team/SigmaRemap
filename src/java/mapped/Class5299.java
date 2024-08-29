@@ -17,15 +17,15 @@ public class Class5299 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23832 = false;
     }
 
     @EventTarget
     private void method16651(Class4435 var1) {
-        if (!mc.player.field5037) {
+        if (!mc.player.collidedHorizontally) {
             this.field23832 = false;
-        } else if (!mc.player.field5036) {
+        } else if (!mc.player.onGround) {
             if (mc.player.getPositionVec().field18049 != (double) ((int) mc.player.getPositionVec().field18049)) {
                 if (var1.method13994() < 0.0
                         && mc.player.getPositionVec().field18049 + var1.method13994() < (double) ((int) mc.player.getPositionVec().field18049)) {
@@ -35,7 +35,7 @@ public class Class5299 extends Module {
             } else if (this.getBooleanValueFromSetttingName("AutoJump") || mc.gameSettings.field44636.isKeyDown()) {
                 mc.player.method2914();
                 var1.method13995(mc.player.method3433().field18049);
-            } else if (!mc.gameSettings.field44637.isKeyDown()) {
+            } else if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
                 Class9567.method37088(var1, 0.28 + (double) Class9567.method37078() * 0.05);
                 var1.method13995(0.0);
             } else {
@@ -55,8 +55,8 @@ public class Class5299 extends Module {
             Class9629 var4 = Class5628.method17760(1.0E-4);
             String var5 = this.getStringSettingValueByName("Mode");
             if (this.getBooleanValueFromSetttingName("Ceiling")
-                    && !mc.player.field5036
-                    && mc.world.method7055(mc.player, mc.player.field5035.method19667(0.0, 1.0E-6, 0.0)).count() > 0L) {
+                    && !mc.player.onGround
+                    && mc.world.method7055(mc.player, mc.player.boundingBox.method19667(0.0, 1.0E-6, 0.0)).count() > 0L) {
                 var1.method13912(var1.method13911() + 4.9E-7);
             }
 
@@ -106,7 +106,7 @@ public class Class5299 extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (var1.method13903() != null
                     && !var1.method13903().method19516()
-                    && var1.method13903().method19514().field28450 > mc.player.field5035.field28450 + 1.0) {
+                    && var1.method13903().method19514().field28450 > mc.player.boundingBox.field28450 + 1.0) {
                 var1.method13900(true);
             }
         }

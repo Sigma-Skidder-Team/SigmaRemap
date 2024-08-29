@@ -148,7 +148,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
             super.method17842(var1, var2, var3, var4, var5);
          } else {
             super.method17842(var1, var2, var3, var4, var5);
-            float var9 = !var1.method3250() ? -90.0F : -90.0F - var1.field5032;
+            float var9 = !var1.method3250() ? -90.0F : -90.0F - var1.rotationPitch;
             float var10 = MathHelper.method37821(var8, 0.0F, var9);
             var2.method35293(Class7680.field32898.method25286(var10));
             if (var1.method3166()) {
@@ -160,7 +160,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
          float var21 = (float)var1.method3167() + var5;
          float var22 = MathHelper.method37777(var21 * var21 / 100.0F, 0.0F, 1.0F);
          if (!var1.method3130()) {
-            var2.method35293(Class7680.field32898.method25286(var22 * (-90.0F - var1.field5032)));
+            var2.method35293(Class7680.field32898.method25286(var22 * (-90.0F - var1.rotationPitch)));
          }
 
          Vector3d var11 = var1.method3281(var5);

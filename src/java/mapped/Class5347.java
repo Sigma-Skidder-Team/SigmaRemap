@@ -45,14 +45,14 @@ public class Class5347 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23898 = false;
         this.field23897 = (int) (20.0F / this.method16004().getNumberValueBySettingName("CPS"));
         this.field23899 = (float) this.field23897;
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         this.field23900.clear();
         this.field23898 = false;
         this.field23901 = null;
@@ -118,15 +118,15 @@ public class Class5347 extends Module {
             if (var5 == null) {
                 mc.getConnection().sendPacket(new Class5605(var8.method29876(), var8.method29877(), var8.method29878(), true));
             } else {
-                var5.field5028.field18048 = var8.method29876() + 0.5;
-                var5.field5028.field18049 = var8.method29877();
-                var5.field5028.field18050 = var8.method29878() + 0.5;
+                var5.positionVec.field18048 = var8.method29876() + 0.5;
+                var5.positionVec.field18049 = var8.method29877();
+                var5.positionVec.field18050 = var8.method29878() + 0.5;
                 mc.getConnection().sendPacket(new Class5538(false, false));
-                mc.getConnection().sendPacket(new Class5606(mc.player.field5031, mc.player.field5032, false));
+                mc.getConnection().sendPacket(new Class5606(mc.player.rotationYaw, mc.player.rotationPitch, false));
                 mc.getConnection().sendPacket(new Class5471(0.0F, 1.0F, false, false));
                 BoatEntity var9 = new BoatEntity(mc.world, var8.method29876() + 0.5, var8.method29877(), var8.method29878() + 0.5);
-                var9.field5031 = var5.field5031;
-                var9.field5032 = var5.field5032;
+                var9.rotationYaw = var5.rotationYaw;
+                var9.rotationPitch = var5.rotationPitch;
                 mc.getConnection().sendPacket(new Class5483(var9));
             }
         }

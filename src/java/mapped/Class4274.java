@@ -45,7 +45,7 @@ public class Class4274 extends Class4247 {
          int var7 = this.method13305().method23942(this.method13303());
          byte var8 = 18;
          float var9 = (float)Math.pow((double)this.field20711.calcPercent(), 3.0);
-         Class3192.method11440(
+         RenderUtil.method11440(
             this.method13305(),
             (float)var5,
             (float)var6,
@@ -54,7 +54,7 @@ public class Class4274 extends Class4247 {
             this.field20914.method19411(),
             this.field20914.method19413()
          );
-         Class3192.method11426(
+         RenderUtil.method11426(
             (float)var5 - (float)(var7 / 2) * var9,
             (float)(var6 + var8),
             (float)var5 + (float)(var7 / 2) * var9,

@@ -3,8 +3,8 @@ package mapped;
 import java.util.Random;
 
 public class Class1110 extends Class1111 implements Class1008 {
-   private static final Class9289<Integer> field6087 = Class9361.<Integer>method35441(Class1110.class, Class7784.field33391);
-   private Vector3d field6088 = Vector3d.field18047;
+   private static final DataParameter<Integer> field6087 = EntityDataManager.<Integer>method35441(Class1110.class, Class7784.field33391);
+   private Vector3d field6088 = Vector3d.ZERO;
    private BlockPos field6089 = BlockPos.ZERO;
    private Class2143 field6090 = Class2143.field14028;
 
@@ -29,13 +29,13 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field6087, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field6087, 0);
    }
 
    public void method5336(int var1) {
-      this.field5063.method35446(field6087, MathHelper.method37775(var1, 0, 64));
+      this.dataManager.method35446(field6087, MathHelper.method37775(var1, 0, 64));
    }
 
    private void method5337() {
@@ -44,16 +44,16 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    public int method5338() {
-      return this.field5063.<Integer>method35445(field6087);
+      return this.dataManager.<Integer>method35445(field6087);
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.35F;
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       if (field6087.equals(var1)) {
          this.method5337();
       }
@@ -70,8 +70,8 @@ public class Class1110 extends Class1111 implements Class1008 {
    public void tick() {
       super.tick();
       if (this.world.field9020) {
-         float var3 = MathHelper.cos((float)(this.method3205() * 3 + this.field5055) * 0.13F + (float) Math.PI);
-         float var4 = MathHelper.cos((float)(this.method3205() * 3 + this.field5055 + 1) * 0.13F + (float) Math.PI);
+         float var3 = MathHelper.cos((float)(this.method3205() * 3 + this.ticksExisted) * 0.13F + (float) Math.PI);
+         float var4 = MathHelper.cos((float)(this.method3205() * 3 + this.ticksExisted + 1) * 0.13F + (float) Math.PI);
          if (var3 > 0.0F && var4 <= 0.0F) {
             this.world
                .method6745(
@@ -80,15 +80,15 @@ public class Class1110 extends Class1111 implements Class1008 {
                   this.getPosZ(),
                   Sounds.field26921,
                   this.method2864(),
-                  0.95F + this.field5054.nextFloat() * 0.05F,
-                  0.95F + this.field5054.nextFloat() * 0.05F,
+                  0.95F + this.rand.nextFloat() * 0.05F,
+                  0.95F + this.rand.nextFloat() * 0.05F,
                   false
                );
          }
 
          int var5 = this.method5338();
-         float var6 = MathHelper.cos(this.field5031 * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
-         float var7 = MathHelper.sin(this.field5031 * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
+         float var6 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
+         float var7 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
          float var8 = (0.3F + var3 * 0.45F) * ((float)var5 * 0.2F + 1.0F);
          this.world
             .method6746(
@@ -182,9 +182,9 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public Class8847 method2981(Class2090 var1) {
+   public EntitySize method2981(Pose var1) {
       int var4 = this.method5338();
-      Class8847 var5 = super.method2981(var1);
+      EntitySize var5 = super.method2981(var1);
       float var6 = (var5.field39968 + 0.2F * (float)var4) / var5.field39968;
       return var5.method32099(var6);
    }
@@ -201,42 +201,42 @@ public class Class1110 extends Class1111 implements Class1008 {
 
    // $VF: synthetic method
    public static Random method5341(Class1110 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5342(Class1110 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5343(Class1110 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5344(Class1110 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5345(Class1110 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5346(Class1110 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5347(Class1110 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5348(Class1110 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -261,21 +261,21 @@ public class Class1110 extends Class1111 implements Class1008 {
 
    // $VF: synthetic method
    public static Random method5353(Class1110 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5354(Class1110 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5355(Class1110 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5356(Class1110 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 }

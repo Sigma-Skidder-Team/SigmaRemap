@@ -13,9 +13,9 @@ public class Class6765 extends Class6764 {
    @Override
    public Class7176 method20615() {
       return super.method20641(
-         MathHelper.floor(this.field29476.method3389().field28449),
-         MathHelper.floor(this.field29476.method3389().field28450 + 0.5),
-         MathHelper.floor(this.field29476.method3389().field28451)
+         MathHelper.floor(this.field29476.getBoundingBox().field28449),
+         MathHelper.floor(this.field29476.getBoundingBox().field28450 + 0.5),
+         MathHelper.floor(this.field29476.getBoundingBox().field28451)
       );
    }
 

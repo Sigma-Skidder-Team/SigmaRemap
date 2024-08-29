@@ -19,7 +19,7 @@ public class Class5376 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         mc.timer.field40360 = 1.0F;
     }
 }

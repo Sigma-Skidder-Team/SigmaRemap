@@ -16,7 +16,7 @@ public class Class2781 extends Class2595 {
       if (this.field17386.method3066()) {
          if (!this.field17386.method3250()) {
             if (this.field17386.method3226()) {
-               if (!this.field17386.field5039) {
+               if (!this.field17386.velocityChanged) {
                   PlayerEntity var3 = this.field17386.method4740();
                   if (var3 != null) {
                      return !(this.field17386.getDistanceSq(var3) > 16.0) ? var3.field4905 != null : false;

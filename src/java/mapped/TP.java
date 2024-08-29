@@ -23,7 +23,7 @@ public class TP extends Command {
          throw new CommandException();
       } else if (var2.length > 1) {
          throw new CommandException("Too many arguments");
-      } else if (!mc.player.field5036 && Class5628.method17716()) {
+      } else if (!mc.player.onGround && Class5628.method17716()) {
          throw new CommandException("Use this command on ground");
       } else if (var2[0].method30899().equalsIgnoreCase(mc.getSession().username)) {
          throw new CommandException("You can not tp to yourself");

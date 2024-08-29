@@ -12,14 +12,14 @@ import java.util.Iterator;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-public final class Class8022 {
+public final class VoxelShapes {
    private static String[] field34461;
-   private static final Class6408 field34462 = Util.<Class6410>method38507(() -> {
+   private static final VoxelShape field34462 = Util.<Class6410>method38507(() -> {
       Class7937 var2 = new Class7937(1, 1, 1);
       var2.method26718(0, 0, 0, true, true);
       return new Class6410(var2);
    });
-   public static final Class6408 field34463 = method27427(
+   public static final VoxelShape field34463 = method27427(
       Double.NEGATIVE_INFINITY,
       Double.NEGATIVE_INFINITY,
       Double.NEGATIVE_INFINITY,
@@ -27,23 +27,23 @@ public final class Class8022 {
       Double.POSITIVE_INFINITY,
       Double.POSITIVE_INFINITY
    );
-   private static final Class6408 field34464 = new Class6409(
+   private static final VoxelShape field34464 = new Class6409(
       new Class7937(0, 0, 0), new DoubleArrayList(new double[]{0.0}), new DoubleArrayList(new double[]{0.0}), new DoubleArrayList(new double[]{0.0})
    );
 
-   public static Class6408 method27425() {
+   public static VoxelShape method27425() {
       return field34464;
    }
 
-   public static Class6408 method27426() {
+   public static VoxelShape method27426() {
       return field34462;
    }
 
-   public static Class6408 method27427(double var0, double var2, double var4, double var6, double var8, double var10) {
-      return method27428(new Class6488(var0, var2, var4, var6, var8, var10));
+   public static VoxelShape method27427(double var0, double var2, double var4, double var6, double var8, double var10) {
+      return create(new AxisAlignedBB(var0, var2, var4, var6, var8, var10));
    }
 
-   public static Class6408 method27428(Class6488 var0) {
+   public static VoxelShape create(AxisAlignedBB var0) {
       int var3 = method27429(var0.field28449, var0.field28452);
       int var4 = method27429(var0.field28450, var0.field28453);
       int var5 = method27429(var0.field28451, var0.field28454);
@@ -104,19 +104,19 @@ public final class Class8022 {
       return (long)var0 * (long)(var1 / IntMath.gcd(var0, var1));
    }
 
-   public static Class6408 method27431(Class6408 var0, Class6408 var1) {
-      return method27433(var0, var1, Class9477.field44051);
+   public static VoxelShape method27431(VoxelShape var0, VoxelShape var1) {
+      return method27433(var0, var1, IBooleanFunction.field44051);
    }
 
-   public static Class6408 method27432(Class6408 var0, Class6408... var1) {
-      return Arrays.<Class6408>stream(var1).reduce(var0, Class8022::method27431);
+   public static VoxelShape method27432(VoxelShape var0, VoxelShape... var1) {
+      return Arrays.<VoxelShape>stream(var1).reduce(var0, VoxelShapes::method27431);
    }
 
-   public static Class6408 method27433(Class6408 var0, Class6408 var1, Class9477 var2) {
+   public static VoxelShape method27433(VoxelShape var0, VoxelShape var1, IBooleanFunction var2) {
       return method27434(var0, var1, var2).method19518();
    }
 
-   public static Class6408 method27434(Class6408 var0, Class6408 var1, Class9477 var2) {
+   public static VoxelShape method27434(VoxelShape var0, VoxelShape var1, IBooleanFunction var2) {
       if (!var2.method36569(false, false)) {
          if (var0 == var1) {
             return !var2.method36569(true, true) ? method27425() : var0;
@@ -137,7 +137,7 @@ public final class Class8022 {
                      var6
                   );
                   Class7937 var10 = Class7937.method26724(var0.field28033, var1.field28033, var7, var8, var9, var2);
-                  return (Class6408)(var7 instanceof Class59 && var8 instanceof Class59 && var9 instanceof Class59
+                  return (VoxelShape)(var7 instanceof Class59 && var8 instanceof Class59 && var9 instanceof Class59
                      ? new Class6410(var10)
                      : new Class6409(var10, var7.method194(), var8.method194(), var9.method194()));
                }
@@ -150,7 +150,7 @@ public final class Class8022 {
       }
    }
 
-   public static boolean method27435(Class6408 var0, Class6408 var1, Class9477 var2) {
+   public static boolean compare(VoxelShape var0, VoxelShape var1, IBooleanFunction var2) {
       if (var2.method36569(false, false)) {
          throw (IllegalArgumentException) Util.method38516(new IllegalArgumentException());
       } else if (var0 == var1) {
@@ -186,7 +186,7 @@ public final class Class8022 {
       }
    }
 
-   private static boolean method27436(Class56 var0, Class56 var1, Class56 var2, Class7938 var3, Class7938 var4, Class9477 var5) {
+   private static boolean method27436(Class56 var0, Class56 var1, Class56 var2, Class7938 var3, Class7938 var4, IBooleanFunction var5) {
       return !var0.method192(
          (var5x, var6, var7) -> var1.method192(
                (var6x, var7x, var8) -> var2.method192(
@@ -196,7 +196,7 @@ public final class Class8022 {
       );
    }
 
-   public static double method27437(Class113 var0, Class6488 var1, Stream<Class6408> var2, double var3) {
+   public static double method27437(Class113 var0, AxisAlignedBB var1, Stream<VoxelShape> var2, double var3) {
       Iterator var7 = var2.iterator();
 
       while (var7.hasNext()) {
@@ -204,17 +204,17 @@ public final class Class8022 {
             return 0.0;
          }
 
-         var3 = ((Class6408)var7.next()).method19528(var0, var1, var3);
+         var3 = ((VoxelShape)var7.next()).method19528(var0, var1, var3);
       }
 
       return var3;
    }
 
-   public static double method27438(Class113 var0, Class6488 var1, Class1662 var2, double var3, Class4832 var5, Stream<Class6408> var6, boolean var7) {
+   public static double method27438(Class113 var0, AxisAlignedBB var1, Class1662 var2, double var3, ISelectionContext var5, Stream<VoxelShape> var6, boolean var7) {
       return method27439(var1, var2, var3, var5, Class2321.method9101(var0, Class113.field415), var6, var7);
    }
 
-   private static double method27439(Class6488 var0, Class1662 var1, double var2, Class4832 var4, Class2321 var5, Stream<Class6408> var6, boolean var7) {
+   private static double method27439(AxisAlignedBB var0, Class1662 var1, double var2, ISelectionContext var4, Class2321 var5, Stream<VoxelShape> var6, boolean var7) {
       if (var0.method19676() < 1.0E-6 || var0.method19677() < 1.0E-6 || var0.method19678() < 1.0E-6) {
          return var2;
       } else if (Math.abs(var2) < 1.0E-7) {
@@ -256,7 +256,7 @@ public final class Class8022 {
                      var14.method8376(var10, var28, var29, var27);
                      BlockState var31 = var1.getBlockState(var14);
                      if ((var30 != 1 || var31.method23390()) && (var30 != 2 || var31.method23448(Blocks.MOVING_PISTON))) {
-                        Class6408 var32 = var31.method23415(var1, var14, var4);
+                        VoxelShape var32 = var31.getCollisionShape(var1, var14, var4);
                         if (var7) {
                            Class4398 var33 = new Class4398(var14, var32);
                            Client.getInstance().getEventManager().call(var33);
@@ -287,24 +287,24 @@ public final class Class8022 {
       return !(var0 > 0.0) ? MathHelper.floor(var2 + var0) - 1 : MathHelper.floor(var4 + var0) + 1;
    }
 
-   public static boolean method27441(Class6408 var0, Class6408 var1, Direction var2) {
+   public static boolean method27441(VoxelShape var0, VoxelShape var1, Direction var2) {
       if (var0 == method27426() && var1 == method27426()) {
          return true;
       } else if (!var1.method19516()) {
          Class113 var5 = var2.method544();
          Class1892 var6 = var2.method535();
-         Class6408 var7 = var6 != Class1892.field11092 ? var1 : var0;
-         Class6408 var8 = var6 != Class1892.field11092 ? var0 : var1;
-         Class9477 var9 = var6 != Class1892.field11092 ? Class9477.field44039 : Class9477.field44041;
+         VoxelShape var7 = var6 != Class1892.field11092 ? var1 : var0;
+         VoxelShape var8 = var6 != Class1892.field11092 ? var0 : var1;
+         IBooleanFunction var9 = var6 != Class1892.field11092 ? IBooleanFunction.field44039 : IBooleanFunction.field44041;
          return DoubleMath.fuzzyEquals(var7.method19513(var5), 1.0, 1.0E-7)
             && DoubleMath.fuzzyEquals(var8.method19512(var5), 0.0, 1.0E-7)
-            && !method27435(new Class6407(var7, var5, var7.field28033.method26732(var5) - 1), new Class6407(var8, var5, 0), var9);
+            && ! compare(new Class6407(var7, var5, var7.field28033.method26732(var5) - 1), new Class6407(var8, var5, 0), var9);
       } else {
          return false;
       }
    }
 
-   public static Class6408 method27442(Class6408 var0, Direction var1) {
+   public static VoxelShape method27442(VoxelShape var0, Direction var1) {
       if (var0 != method27426()) {
          Class113 var4 = var1.method544();
          boolean var5;
@@ -317,18 +317,18 @@ public final class Class8022 {
             var6 = var0.field28033.method26732(var4) - 1;
          }
 
-         return (Class6408)(var5 ? new Class6407(var0, var4, var6) : method27425());
+         return (VoxelShape)(var5 ? new Class6407(var0, var4, var6) : method27425());
       } else {
          return method27426();
       }
    }
 
-   public static boolean method27443(Class6408 var0, Class6408 var1, Direction var2) {
+   public static boolean method27443(VoxelShape var0, VoxelShape var1, Direction var2) {
       if (var0 != method27426() && var1 != method27426()) {
          Class113 var5 = var2.method544();
          Class1892 var6 = var2.method535();
-         Class6408 var7 = var6 != Class1892.field11092 ? var1 : var0;
-         Class6408 var8 = var6 != Class1892.field11092 ? var0 : var1;
+         VoxelShape var7 = var6 != Class1892.field11092 ? var1 : var0;
+         VoxelShape var8 = var6 != Class1892.field11092 ? var0 : var1;
          if (!DoubleMath.fuzzyEquals(var7.method19513(var5), 1.0, 1.0E-7)) {
             var7 = method27425();
          }
@@ -337,23 +337,23 @@ public final class Class8022 {
             var8 = method27425();
          }
 
-         return !method27435(
+         return ! compare(
             method27426(),
-            method27434(new Class6407(var7, var5, var7.field28033.method26732(var5) - 1), new Class6407(var8, var5, 0), Class9477.field44051),
-            Class9477.field44041
+            method27434(new Class6407(var7, var5, var7.field28033.method26732(var5) - 1), new Class6407(var8, var5, 0), IBooleanFunction.field44051),
+            IBooleanFunction.field44041
          );
       } else {
          return true;
       }
    }
 
-   public static boolean method27444(Class6408 var0, Class6408 var1) {
+   public static boolean method27444(VoxelShape var0, VoxelShape var1) {
       if (var0 == method27426() || var1 == method27426()) {
          return true;
       } else {
          return var0.method19516() && var1.method19516()
             ? false
-            : !method27435(method27426(), method27434(var0, var1, Class9477.field44051), Class9477.field44041);
+            : ! compare(method27426(), method27434(var0, var1, IBooleanFunction.field44051), IBooleanFunction.field44041);
       }
    }
 

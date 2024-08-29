@@ -21,7 +21,7 @@ public class Jesus extends Module {
    }
 
    @Override
-   public void method15965() {
+   public void onDisable() {
    }
 
    @EventTarget
@@ -34,9 +34,9 @@ public class Jesus extends Module {
                (double)var1.method13902().getY()
                   >= mc.player.getPosY() - (double)(mc.player.getPosY() % 0.5 != 0.0 ? 0.0F : 0.5F)
             )) {
-               if (!this.method16951(mc.player.field5035)) {
+               if (!this.method16951(mc.player.boundingBox)) {
                   if (!mc.player.method3331()) {
-                     if (!(mc.player.field5045 > 10.0F)) {
+                     if (!(mc.player.fallDistance > 10.0F)) {
                         BlockState var4 = mc.world.getBlockState(var1.method13902());
                         int var5 = var4.method23449().method23477();
                         float var6 = 0.0F;
@@ -44,11 +44,11 @@ public class Jesus extends Module {
                            var6++;
                         }
 
-                        if (mc.player.field5045 > 10.0F) {
+                        if (mc.player.fallDistance > 10.0F) {
                            var6 -= 0.8F;
                         }
 
-                        Class6408 var7 = Class8022.method27427(0.0, 0.0, 0.0, 1.0, (double)var6, 1.0);
+                        VoxelShape var7 = VoxelShapes.method27427(0.0, 0.0, 0.0, 1.0, (double)var6, 1.0);
                         var1.method13905(var7);
                      }
                   }
@@ -61,13 +61,13 @@ public class Jesus extends Module {
    @EventTarget
    public void method16946(Class4399 var1) {
       if (this.isEnabled() && mc.world != null && var1.method13921() && mc.getCurrentServerData() != null) {
-         if (method16953() && !this.method16951(mc.player.field5035)) {
+         if (method16953() && !this.method16951(mc.player.boundingBox)) {
             this.field24017++;
          } else {
             this.field24017 = 0;
          }
 
-         if (method16953() && !this.method16951(mc.player.field5035)) {
+         if (method16953() && !this.method16951(mc.player.boundingBox)) {
             mc.player.field4999 = 0;
             var1.method13908(true);
             this.field24015++;
@@ -75,7 +75,7 @@ public class Jesus extends Module {
                var1.method13912(var1.method13911() - 0.001);
             }
          } else {
-            this.field24015 = !mc.player.field5036 ? 1 : 0;
+            this.field24015 = !mc.player.onGround ? 1 : 0;
          }
       }
    }
@@ -84,7 +84,7 @@ public class Jesus extends Module {
    @LowerPriority
    public void method16947(Class4435 var1) {
       if (this.isEnabled() && mc.world != null && !Class5258.method16421()) {
-         if (this.method16951(mc.player.field5035) && !mc.player.method3331()) {
+         if (this.method16951(mc.player.boundingBox) && !mc.player.method3331()) {
             BlockState var4 = mc.world.getBlockState(mc.player.getPosition());
             if (var4 != null && !var4.method23449().method23474()) {
                double var5 = (double)var4.method23449().method23476();
@@ -93,12 +93,12 @@ public class Jesus extends Module {
                      var1.method13995(0.13);
                   }
 
-                  boolean var7 = this.method16951(mc.player.field5035.method19667(0.0, var1.method13994(), 0.0));
+                  boolean var7 = this.method16951(mc.player.boundingBox.method19667(0.0, var1.method13994(), 0.0));
                   if (!var7) {
                      double var8 = (double)((int) mc.player.getPosY() + 1);
                      double var10 = var8 - mc.player.getPosY();
                      var1.method13995(var10);
-                     mc.player.field5036 = true;
+                     mc.player.onGround = true;
                      this.field24015 = 1;
                   }
                }
@@ -113,7 +113,7 @@ public class Jesus extends Module {
                   if (Class5628.method17730(mc.player, 0.001F)) {
                      this.field24016 = 0;
                   } else {
-                     if (mc.player.method3331() || mc.player.field5038) {
+                     if (mc.player.method3331() || mc.player.collidedVertically) {
                         this.field24016 = 0;
                         return;
                      }
@@ -175,11 +175,11 @@ public class Jesus extends Module {
       return Class9567.method37081();
    }
 
-   public boolean method16951(Class6488 var1) {
+   public boolean method16951(AxisAlignedBB var1) {
       return this.method16952(var1, Class8649.field38941) || this.method16952(var1, Class8649.field38943);
    }
 
-   public boolean method16952(Class6488 var1, Class8649 var2) {
+   public boolean method16952(AxisAlignedBB var1, Class8649 var2) {
       int var5 = MathHelper.floor(var1.field28449);
       int var6 = MathHelper.method37774(var1.field28452);
       int var7 = MathHelper.floor(var1.field28450);
@@ -191,14 +191,14 @@ public class Jesus extends Module {
    }
 
    public static boolean method16953() {
-      Class6488 var2 = mc.player.field5035.method19667(0.0, -0.001, 0.0);
+      AxisAlignedBB var2 = mc.player.boundingBox.method19667(0.0, -0.001, 0.0);
       Stream var3 = mc.world.method7055(mc.player, var2);
       Iterator var4 = var3.iterator();
       boolean var5 = true;
       if (var4.hasNext()) {
          while (var4.hasNext()) {
-            Class6408 var6 = (Class6408)var4.next();
-            Class6488 var7 = var6.method19514();
+            VoxelShape var6 = (VoxelShape)var4.next();
+            AxisAlignedBB var7 = var6.method19514();
             BlockPos var8 = new BlockPos(var7.method19685());
             Block var9 = mc.world.getBlockState(var8).getBlock();
             if (var9 != Blocks.WATER

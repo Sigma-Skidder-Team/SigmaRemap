@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -19,10 +19,10 @@ public class Class5349 extends Module {
     }
 
     @EventTarget
-    private void method16786(Class4396 var1) {
+    private void method16786(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof Class5526) {
-                Class5526 var4 = (Class5526) var1.method13898();
+            if (var1.getPacket() instanceof Class5526) {
+                Class5526 var4 = (Class5526) var1.getPacket();
                 Class7481 var5 = new Class7481(var4.method17378(), var4.method17379());
                 if (!var4.method17381()) {
                     this.field23906.add(var5);
@@ -51,12 +51,12 @@ public class Class5349 extends Module {
                     double var11 = -mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
                     GL11.glDisable(2929);
                     Class9388 var13 = new Class9388(var7, var11, var9, var7 + 16.0, var11, var9 + 16.0);
-                    Class3192.method11459(var13, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.1F));
-                    Class3192.method11461(var13, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.1F));
+                    RenderUtil.method11459(var13, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.1F));
+                    RenderUtil.method11461(var13, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.1F));
                     GL11.glColor3f(1.0F, 1.0F, 1.0F);
                     GL11.glEnable(2929);
-                    int var14 = mc.player.field5072 - var6.field32174;
-                    int var15 = mc.player.field5074 - var6.field32175;
+                    int var14 = mc.player.chunkCoordX - var6.field32174;
+                    int var15 = mc.player.chunkCoordZ - var6.field32175;
                     double var16 = Math.sqrt(var14 * var14 + var15 * var15);
                     if (var16 > 30.0) {
                         var18.remove();
@@ -67,7 +67,7 @@ public class Class5349 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         this.field23906.clear();
         this.field23905.clear();
     }

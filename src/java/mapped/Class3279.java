@@ -24,7 +24,7 @@ public class Class3279 extends Item implements Class3255 {
 
    public static boolean method11804(Class2956 var0, ItemStack var1) {
       BlockPos var4 = var0.method11323().method8349(var0.method11324().<Direction>method23463(Class3357.field18899));
-      List var5 = var0.method11326().<Entity>method6772(Class880.class, new Class6488(var4), Class8088.field34763.and(new Class165(var1)));
+      List var5 = var0.method11326().<Entity>method6772(Class880.class, new AxisAlignedBB(var4), Class8088.field34763.and(new Class165(var1)));
       if (!var5.isEmpty()) {
          Class880 var6 = (Class880)var5.get(0);
          Class2106 var7 = Class1006.method4271(var1);

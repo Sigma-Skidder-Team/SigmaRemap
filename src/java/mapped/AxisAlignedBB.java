@@ -3,7 +3,7 @@ package mapped;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-public class Class6488 {
+public class AxisAlignedBB {
    public final double field28449;
    public final double field28450;
    public final double field28451;
@@ -11,7 +11,7 @@ public class Class6488 {
    public final double field28453;
    public final double field28454;
 
-   public Class6488(double var1, double var3, double var5, double var7, double var9, double var11) {
+   public AxisAlignedBB(double var1, double var3, double var5, double var7, double var9, double var11) {
       this.field28449 = Math.min(var1, var7);
       this.field28450 = Math.min(var3, var9);
       this.field28451 = Math.min(var5, var11);
@@ -20,7 +20,7 @@ public class Class6488 {
       this.field28454 = Math.max(var5, var11);
    }
 
-   public Class6488(BlockPos var1) {
+   public AxisAlignedBB(BlockPos var1) {
       this(
          (double)var1.getX(),
          (double)var1.getY(),
@@ -31,7 +31,7 @@ public class Class6488 {
       );
    }
 
-   public Class6488(BlockPos var1, BlockPos var2) {
+   public AxisAlignedBB(BlockPos var1, BlockPos var2) {
       this(
          (double)var1.getX(),
          (double)var1.getY(),
@@ -42,12 +42,12 @@ public class Class6488 {
       );
    }
 
-   public Class6488(Vector3d var1, Vector3d var2) {
+   public AxisAlignedBB(Vector3d var1, Vector3d var2) {
       this(var1.field18048, var1.field18049, var1.field18050, var2.field18048, var2.field18049, var2.field18050);
    }
 
-   public static Class6488 method19656(Class9764 var0) {
-      return new Class6488(
+   public static AxisAlignedBB method19656(Class9764 var0) {
+      return new AxisAlignedBB(
          (double)var0.field45678,
          (double)var0.field45679,
          (double)var0.field45680,
@@ -57,8 +57,8 @@ public class Class6488 {
       );
    }
 
-   public static Class6488 method19657(Vector3d var0) {
-      return new Class6488(var0.field18048, var0.field18049, var0.field18050, var0.field18048 + 1.0, var0.field18049 + 1.0, var0.field18050 + 1.0);
+   public static AxisAlignedBB method19657(Vector3d var0) {
+      return new AxisAlignedBB(var0.field18048, var0.field18049, var0.field18050, var0.field18048 + 1.0, var0.field18049 + 1.0, var0.field18050 + 1.0);
    }
 
    public double method19658(Class113 var1) {
@@ -72,8 +72,8 @@ public class Class6488 {
    @Override
    public boolean equals(Object var1) {
       if (this != var1) {
-         if (var1 instanceof Class6488) {
-            Class6488 var4 = (Class6488)var1;
+         if (var1 instanceof AxisAlignedBB) {
+            AxisAlignedBB var4 = (AxisAlignedBB)var1;
             if (Double.compare(var4.field28449, this.field28449) == 0) {
                if (Double.compare(var4.field28450, this.field28450) == 0) {
                   if (Double.compare(var4.field28451, this.field28451) == 0) {
@@ -115,7 +115,7 @@ public class Class6488 {
       return 31 * var5 + (int)(var3 ^ var3 >>> 32);
    }
 
-   public Class6488 method19660(double var1, double var3, double var5) {
+   public AxisAlignedBB method19660(double var1, double var3, double var5) {
       double var9 = this.field28449;
       double var11 = this.field28450;
       double var13 = this.field28451;
@@ -146,14 +146,14 @@ public class Class6488 {
          var13 -= var5;
       }
 
-      return new Class6488(var9, var11, var13, var15, var17, var19);
+      return new AxisAlignedBB(var9, var11, var13, var15, var17, var19);
    }
 
-   public Class6488 method19661(Vector3d var1) {
+   public AxisAlignedBB method19661(Vector3d var1) {
       return this.method19662(var1.field18048, var1.field18049, var1.field18050);
    }
 
-   public Class6488 method19662(double var1, double var3, double var5) {
+   public AxisAlignedBB method19662(double var1, double var3, double var5) {
       double var9 = this.field28449;
       double var11 = this.field28450;
       double var13 = this.field28451;
@@ -184,51 +184,51 @@ public class Class6488 {
          var13 += var5;
       }
 
-      return new Class6488(var9, var11, var13, var15, var17, var19);
+      return new AxisAlignedBB(var9, var11, var13, var15, var17, var19);
    }
 
-   public Class6488 method19663(double var1, double var3, double var5) {
+   public AxisAlignedBB method19663(double var1, double var3, double var5) {
       double var9 = this.field28449 - var1;
       double var11 = this.field28450 - var3;
       double var13 = this.field28451 - var5;
       double var15 = this.field28452 + var1;
       double var17 = this.field28453 + var3;
       double var19 = this.field28454 + var5;
-      return new Class6488(var9, var11, var13, var15, var17, var19);
+      return new AxisAlignedBB(var9, var11, var13, var15, var17, var19);
    }
 
-   public Class6488 method19664(double var1) {
+   public AxisAlignedBB method19664(double var1) {
       return this.method19663(var1, var1, var1);
    }
 
-   public Class6488 method19665(Class6488 var1) {
+   public AxisAlignedBB method19665(AxisAlignedBB var1) {
       double var4 = Math.max(this.field28449, var1.field28449);
       double var6 = Math.max(this.field28450, var1.field28450);
       double var8 = Math.max(this.field28451, var1.field28451);
       double var10 = Math.min(this.field28452, var1.field28452);
       double var12 = Math.min(this.field28453, var1.field28453);
       double var14 = Math.min(this.field28454, var1.field28454);
-      return new Class6488(var4, var6, var8, var10, var12, var14);
+      return new AxisAlignedBB(var4, var6, var8, var10, var12, var14);
    }
 
-   public Class6488 method19666(Class6488 var1) {
+   public AxisAlignedBB method19666(AxisAlignedBB var1) {
       double var4 = Math.min(this.field28449, var1.field28449);
       double var6 = Math.min(this.field28450, var1.field28450);
       double var8 = Math.min(this.field28451, var1.field28451);
       double var10 = Math.max(this.field28452, var1.field28452);
       double var12 = Math.max(this.field28453, var1.field28453);
       double var14 = Math.max(this.field28454, var1.field28454);
-      return new Class6488(var4, var6, var8, var10, var12, var14);
+      return new AxisAlignedBB(var4, var6, var8, var10, var12, var14);
    }
 
-   public Class6488 method19667(double var1, double var3, double var5) {
-      return new Class6488(
+   public AxisAlignedBB method19667(double var1, double var3, double var5) {
+      return new AxisAlignedBB(
          this.field28449 + var1, this.field28450 + var3, this.field28451 + var5, this.field28452 + var1, this.field28453 + var3, this.field28454 + var5
       );
    }
 
-   public Class6488 method19668(BlockPos var1) {
-      return new Class6488(
+   public AxisAlignedBB method19668(BlockPos var1) {
+      return new AxisAlignedBB(
          this.field28449 + (double)var1.getX(),
          this.field28450 + (double)var1.getY(),
          this.field28451 + (double)var1.getZ(),
@@ -238,11 +238,11 @@ public class Class6488 {
       );
    }
 
-   public Class6488 method19669(Vector3d var1) {
+   public AxisAlignedBB method19669(Vector3d var1) {
       return this.method19667(var1.field18048, var1.field18049, var1.field18050);
    }
 
-   public boolean method19670(Class6488 var1) {
+   public boolean method19670(AxisAlignedBB var1) {
       return this.method19671(var1.field28449, var1.field28450, var1.field28451, var1.field28452, var1.field28453, var1.field28454);
    }
 
@@ -298,7 +298,7 @@ public class Class6488 {
       return this.field28454 - this.field28451;
    }
 
-   public Class6488 method19679(double var1) {
+   public AxisAlignedBB method19679(double var1) {
       return this.method19664(-var1);
    }
 
@@ -317,14 +317,14 @@ public class Class6488 {
    }
 
    @Nullable
-   public static BlockRayTraceResult method19681(Iterable<Class6488> var0, Vector3d var1, Vector3d var2, BlockPos var3) {
+   public static BlockRayTraceResult method19681(Iterable<AxisAlignedBB> var0, Vector3d var1, Vector3d var2, BlockPos var3) {
       double[] var6 = new double[]{1.0};
       Direction var7 = null;
       double var8 = var2.field18048 - var1.field18048;
       double var10 = var2.field18049 - var1.field18049;
       double var12 = var2.field18050 - var1.field18050;
 
-      for (Class6488 var17 : var0) {
+      for (AxisAlignedBB var17 : var0) {
          var7 = method19682(var17.method19668(var3), var1, var6, var7, var8, var10, var12);
       }
 
@@ -337,7 +337,7 @@ public class Class6488 {
    }
 
    @Nullable
-   private static Direction method19682(Class6488 var0, Vector3d var1, double[] var2, Direction var3, double var4, double var6, double var8) {
+   private static Direction method19682(AxisAlignedBB var0, Vector3d var1, double[] var2, Direction var3, double var4, double var6, double var8) {
       if (!(var4 > 1.0E-7)) {
          if (var4 < -1.0E-7) {
             var3 = method19683(
@@ -517,7 +517,7 @@ public class Class6488 {
       );
    }
 
-   public static Class6488 method19686(double var0, double var2, double var4) {
-      return new Class6488(-var0 / 2.0, -var2 / 2.0, -var4 / 2.0, var0 / 2.0, var2 / 2.0, var4 / 2.0);
+   public static AxisAlignedBB method19686(double var0, double var2, double var4) {
+      return new AxisAlignedBB(-var0 / 2.0, -var2 / 2.0, -var4 / 2.0, var0 / 2.0, var2 / 2.0, var4 / 2.0);
    }
 }

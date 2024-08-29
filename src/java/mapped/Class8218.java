@@ -12,7 +12,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$Action;
 
-public class Class8218 extends Class8219 {
+public class Class8218 extends Team {
    private final Class6886 field35295;
    private final String field35296;
    private final Set<String> field35297 = Sets.newHashSet();
@@ -45,7 +45,7 @@ public class Class8218 extends Class8219 {
 
    public IFormattableTextComponent method28569() {
       IFormattableTextComponent var3 = TextComponentUtils.wrapWithSquareBrackets(this.field35298.deepCopy().mergeStyle(this.field35307));
-      TextFormatting var4 = this.method28591();
+      TextFormatting var4 = this.getColor();
       if (var4 != TextFormatting.RESET) {
          var3.mergeStyle(var4);
       }
@@ -88,7 +88,7 @@ public class Class8218 extends Class8219 {
    @Override
    public IFormattableTextComponent method28576(ITextComponent var1) {
       IFormattableTextComponent var4 = new StringTextComponent("").append(this.field35299).append(var1).append(this.field35300);
-      TextFormatting var5 = this.method28591();
+      TextFormatting var5 = this.getColor();
       if (var5 != TextFormatting.RESET) {
          var4.mergeStyle(var5);
       }
@@ -96,7 +96,7 @@ public class Class8218 extends Class8219 {
       return var4;
    }
 
-   public static IFormattableTextComponent method28577(Class8219 var0, ITextComponent var1) {
+   public static IFormattableTextComponent method28577(Team var0, ITextComponent var1) {
       return var0 != null ? var0.method28576(var1) : var1.deepCopy();
    }
 
@@ -183,7 +183,7 @@ public class Class8218 extends Class8219 {
    }
 
    @Override
-   public TextFormatting method28591() {
+   public TextFormatting getColor() {
       return this.field35305;
    }
 }

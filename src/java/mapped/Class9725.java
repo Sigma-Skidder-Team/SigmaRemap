@@ -33,7 +33,7 @@ public class Class9725 {
       );
       Class8922 var12 = !var9.method119("UpgradeData", 10) ? Class8922.field40388 : new Class8922(var9.getCompound("UpgradeData"));
       Class6806 var13 = new Class6806<Block>(var0x -> var0x == null || var0x.method11579().isAir(), var3, var9.method131("ToBeTicked", 9));
-      Class6806 var14 = new Class6806<Class7631>(var0x -> var0x == null || var0x == Class9479.field44064, var3, var9.method131("LiquidsToBeTicked", 9));
+      Class6806 var14 = new Class6806<Fluid>(var0x -> var0x == null || var0x == Class9479.field44064, var3, var9.method131("LiquidsToBeTicked", 9));
       boolean var15 = var9.method132("isLightOn");
       ListNBT var16 = var9.method131("Sections", 10);
       byte var17 = 16;
@@ -102,11 +102,11 @@ public class Class9725 {
          if (!var9.method119("LiquidTicks", 9)) {
             var44 = var14;
          } else {
-            var44 = Class6801.<Class7631>method20722(var9.method131("LiquidTicks", 10), Registry.field16070::getKey, Registry.field16070::method9184);
+            var44 = Class6801.<Fluid>method20722(var9.method131("LiquidTicks", 10), Registry.field16070::getKey, Registry.field16070::method9184);
          }
 
          var43 = new Class1674(
-            var0.method6970(), var3, var11, var12, (Class6802<Block>)var41, (Class6802<Class7631>)var44, var23, var18, var1x -> method38090(var9, var1x)
+            var0.method6970(), var3, var11, var12, (Class6802<Block>)var41, (Class6802<Fluid>)var44, var23, var18, var1x -> method38090(var9, var1x)
          );
       }
 

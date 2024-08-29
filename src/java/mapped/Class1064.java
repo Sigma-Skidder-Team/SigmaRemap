@@ -4,9 +4,9 @@ import javax.annotation.Nullable;
 
 public class Class1064 extends Class1066 implements Class1022 {
    private static final Class120 field5869 = Class120.method339(Items.field37842, Blocks.field36777.method11581());
-   private static final Class9289<Integer> field5870 = Class9361.<Integer>method35441(Class1064.class, Class7784.field33391);
-   private static final Class9289<Integer> field5871 = Class9361.<Integer>method35441(Class1064.class, Class7784.field33391);
-   private static final Class9289<Integer> field5872 = Class9361.<Integer>method35441(Class1064.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5870 = EntityDataManager.<Integer>method35441(Class1064.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5871 = EntityDataManager.<Integer>method35441(Class1064.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5872 = EntityDataManager.<Integer>method35441(Class1064.class, Class7784.field33391);
    private boolean field5873;
    private Class1064 field5874;
    private Class1064 field5875;
@@ -20,16 +20,16 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    private void method4885(int var1) {
-      this.field5063.method35446(field5870, Math.max(1, Math.min(5, var1)));
+      this.dataManager.method35446(field5870, Math.max(1, Math.min(5, var1)));
    }
 
    private void method4886() {
-      int var3 = !(this.field5054.nextFloat() < 0.04F) ? 3 : 5;
-      this.method4885(1 + this.field5054.nextInt(var3));
+      int var3 = !(this.rand.nextFloat() < 0.04F) ? 3 : 5;
+      this.method4885(1 + this.rand.nextInt(var3));
    }
 
    public int method4887() {
-      return this.field5063.<Integer>method35445(field5870);
+      return this.dataManager.<Integer>method35445(field5870);
    }
 
    @Override
@@ -75,19 +75,19 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5870, 0);
-      this.field5063.method35442(field5871, -1);
-      this.field5063.method35442(field5872, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5870, 0);
+      this.dataManager.register(field5871, -1);
+      this.dataManager.register(field5872, 0);
    }
 
    public int method4889() {
-      return MathHelper.method37775(this.field5063.<Integer>method35445(field5872), 0, 3);
+      return MathHelper.method37775(this.dataManager.<Integer>method35445(field5872), 0, 3);
    }
 
    public void method4890(int var1) {
-      this.field5063.method35446(field5872, var1);
+      this.dataManager.method35446(field5872, var1);
    }
 
    @Override
@@ -101,7 +101,7 @@ public class Class1064 extends Class1066 implements Class1022 {
          float var4 = MathHelper.cos(this.field4965 * (float) (Math.PI / 180.0));
          float var5 = MathHelper.sin(this.field4965 * (float) (Math.PI / 180.0));
          float var6 = 0.3F;
-         var1.method3215(
+         var1.setPosition(
             this.getPosX() + (double)(0.3F * var5), this.getPosY() + this.method3310() + var1.method2894(), this.getPosZ() - (double)(0.3F * var4)
          );
       }
@@ -178,7 +178,7 @@ public class Class1064 extends Class1066 implements Class1022 {
                   this.method4894(),
                   this.method2864(),
                   1.0F,
-                  1.0F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F
+                  1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F
                );
          }
       }
@@ -197,7 +197,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       this.method4886();
       int var8;
       if (!(var4 instanceof Class5101)) {
-         var8 = this.field5054.nextInt(4);
+         var8 = this.rand.nextInt(4);
          var4 = new Class5101(var8);
       } else {
          var8 = ((Class5101)var4).field23198;
@@ -240,7 +240,7 @@ public class Class1064 extends Class1066 implements Class1022 {
 
    @Override
    public void method4895() {
-      this.method2863(Sounds.field26736, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+      this.method2863(Sounds.field26736, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
    }
 
    @Override
@@ -282,7 +282,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       Class112 var4 = this.method4906();
       super.method4902(var1);
       Class112 var5 = this.method4906();
-      if (this.field5055 > 20 && var5 != null && var5 != var4) {
+      if (this.ticksExisted > 20 && var5 != null && var5 != var4) {
          this.method2863(Sounds.field26742, 0.5F, 1.0F);
       }
    }
@@ -296,7 +296,7 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    private void method4904(Class112 var1) {
-      this.field5063.method35446(field5871, var1 != null ? var1.method309() : -1);
+      this.dataManager.method35446(field5871, var1 != null ? var1.method309() : -1);
    }
 
    @Nullable
@@ -307,7 +307,7 @@ public class Class1064 extends Class1066 implements Class1022 {
 
    @Nullable
    public Class112 method4906() {
-      int var3 = this.field5063.<Integer>method35445(field5871);
+      int var3 = this.dataManager.<Integer>method35445(field5871);
       return var3 != -1 ? Class112.method315(var3) : null;
    }
 
@@ -325,13 +325,13 @@ public class Class1064 extends Class1066 implements Class1022 {
       Class1064 var5 = this.method4908();
       this.method4962(var2, var5);
       Class1064 var6 = (Class1064)var2;
-      int var7 = this.field5054.nextInt(Math.max(this.method4887(), var6.method4887())) + 1;
-      if (this.field5054.nextFloat() < 0.03F) {
+      int var7 = this.rand.nextInt(Math.max(this.method4887(), var6.method4887())) + 1;
+      if (this.rand.nextFloat() < 0.03F) {
          var7++;
       }
 
       var5.method4885(var7);
-      var5.method4890(!this.field5054.nextBoolean() ? var6.method4889() : this.method4889());
+      var5.method4890(!this.rand.nextBoolean() ? var6.method4889() : this.method4889());
       return var5;
    }
 
@@ -356,7 +356,7 @@ public class Class1064 extends Class1066 implements Class1022 {
                Sounds.field26740,
                this.method2864(),
                1.0F,
-               1.0F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F
+               1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F
             );
       }
 
@@ -376,7 +376,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       } else {
          if (var1 >= 6.0F) {
             this.method2741(Class8654.field39002, (float)var5);
-            if (this.method3329()) {
+            if (this.isBeingRidden()) {
                for (Entity var7 : this.method3411()) {
                   var7.method2741(Class8654.field39002, (float)var5);
                }

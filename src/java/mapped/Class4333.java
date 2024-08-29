@@ -20,18 +20,18 @@ public class Class4333 extends Class4305 {
       float var4 = Class8603.method30791(1.0F - this.field21149.calcPercent(), 0.9, 0.0, 0.9, 0.0);
       float var5 = (float)this.method13267() * var4 / 2.0F;
       float var6 = (float)(this.method13269() + 10) * var4 / 2.0F;
-      Class3192.method11418(
+      RenderUtil.method11418(
          (float)this.method13271() + var5,
          (float)this.method13272() + var6,
          (float)(this.method13271() + this.method13267()) - var5,
          (float)(this.method13272() + this.method13269()) - var6
       );
       if (var4 != 0.0F) {
-         Class3192.method11424(
+         RenderUtil.method11424(
             (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, Class5628.method17688(-2500135, 0.9F)
          );
       } else {
-         Class3192.method11475(
+         RenderUtil.method11475(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20897 - 1),
@@ -43,7 +43,7 @@ public class Class4333 extends Class4305 {
 
       ClientResource var7 = !this.field20891.equals("Sigma") ? ClassicDecryption.regular25 : ClassicDecryption.regular28;
       if (!this.field20891.equals("Sigma")) {
-         Class3192.method11439(
+         RenderUtil.method11439(
             var7,
             (float)this.field20895 + (float)(this.method13267() - var7.method23942(this.field20891)) / 2.0F,
             (float)(this.field20896 + 18),
@@ -51,7 +51,7 @@ public class Class4333 extends Class4305 {
             -16777216
          );
       } else {
-         Class3192.method11439(
+         RenderUtil.method11439(
             var7,
             (float)this.field20895 + (float)(this.method13267() - var7.method23942(this.field20891)) / 2.0F,
             (float)(this.field20896 + 10),
@@ -61,6 +61,6 @@ public class Class4333 extends Class4305 {
       }
 
       super.method13027(var1);
-      Class3192.method11422();
+      RenderUtil.method11422();
    }
 }

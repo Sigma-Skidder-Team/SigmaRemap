@@ -68,7 +68,7 @@ public class Class1063 extends Class1038 implements Class1011 {
       }
 
       if (this.method4369()) {
-         this.field4971 = this.field5055;
+         this.field4971 = this.ticksExisted;
       }
 
       super.method4258();
@@ -89,7 +89,7 @@ public class Class1063 extends Class1038 implements Class1011 {
             this.method4877();
          }
 
-         this.field5868 = field5867.method29319(this.field5054);
+         this.field5868 = field5867.method29319(this.rand);
       } else {
          this.field5868--;
       }
@@ -97,7 +97,7 @@ public class Class1063 extends Class1038 implements Class1011 {
 
    private void method4877() {
       double var3 = this.method3086(Class9173.field42106);
-      Class6488 var5 = Class6488.method19657(this.getPositionVec()).method19663(var3, 10.0, var3);
+      AxisAlignedBB var5 = AxisAlignedBB.method19657(this.getPositionVec()).method19663(var3, 10.0, var3);
       this.world
          .<Class1063>method7183(Class1063.class, var5)
          .stream()
@@ -114,8 +114,8 @@ public class Class1063 extends Class1038 implements Class1011 {
    @Override
    public void method4233(Class880 var1) {
       if (this.method4232() == null && var1 != null) {
-         this.field5863 = field5862.method29319(this.field5054);
-         this.field5868 = field5867.method29319(this.field5054);
+         this.field5863 = field5862.method29319(this.rand);
+         this.field5868 = field5867.method29319(this.rand);
       }
 
       if (var1 instanceof PlayerEntity) {
@@ -127,7 +127,7 @@ public class Class1063 extends Class1038 implements Class1011 {
 
    @Override
    public void method4346() {
-      this.method4347(field5864.method29319(this.field5054));
+      this.method4347(field5864.method29319(this.rand));
    }
 
    public static boolean method4879(EntityType<Class1063> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
@@ -136,7 +136,7 @@ public class Class1063 extends Class1038 implements Class1011 {
 
    @Override
    public boolean method4266(Class1662 var1) {
-      return var1.method7050(this) && !var1.method7014(this.method3389());
+      return var1.method7050(this) && !var1.method7014(this.getBoundingBox());
    }
 
    @Override

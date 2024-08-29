@@ -13,7 +13,7 @@ public class Class8878<T extends Entity> {
    private boolean field40187;
    private int field40188 = 5;
    private int field40189 = 3;
-   private Class8847 field40190 = Class8847.method32101(0.6F, 1.8F);
+   private EntitySize field40190 = EntitySize.method32101(0.6F, 1.8F);
 
    private Class8878(Class9283<T> var1, Class179 var2) {
       this.field40181 = var1;
@@ -30,7 +30,7 @@ public class Class8878<T extends Entity> {
    }
 
    public Class8878<T> method32301(float var1, float var2) {
-      this.field40190 = Class8847.method32101(var1, var2);
+      this.field40190 = EntitySize.method32101(var1, var2);
       return this;
    }
 

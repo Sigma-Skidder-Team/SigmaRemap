@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class934 extends TileEntity implements Class933, Class935 {
+public class Class934 extends TileEntity implements INameable, Class935 {
    public int field5281;
    public float field5282;
    public float field5283;

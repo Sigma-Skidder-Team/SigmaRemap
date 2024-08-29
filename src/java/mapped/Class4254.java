@@ -35,12 +35,12 @@ public class Class4254 extends Class4247 {
 
       this.method13285((int)(-25.0F * var4));
       this.method13225();
-      Class3192.method11455((float)(this.field20895 + 20), (float)this.field20896, 100.0F, 100.0F, this.field20631);
+      RenderUtil.method11455((float)(this.field20895 + 20), (float)this.field20896, 100.0F, 100.0F, this.field20631);
       int var5 = this.field20895 + 12 - (ClassicDecryption.regular20.method23942(this.field20891) - this.field20897) / 2;
       int var6 = this.field20896 + 102;
       GL11.glAlphaFunc(516, 0.1F);
-      Class3192.method11439(ClassicDecryption.regular20, (float)var5, (float)(var6 + 1), this.field20891, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F));
-      Class3192.method11439(ClassicDecryption.regular20, (float)var5, (float)var6, this.field20891, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+      RenderUtil.method11439(ClassicDecryption.regular20, (float)var5, (float)(var6 + 1), this.field20891, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F));
+      RenderUtil.method11439(ClassicDecryption.regular20, (float)var5, (float)var6, this.field20891, ClientColors.LIGHT_GREYISH_BLUE.getColor);
       GL11.glAlphaFunc(519, 0.0F);
       super.method13226(var1);
    }

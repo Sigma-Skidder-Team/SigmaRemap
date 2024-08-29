@@ -78,9 +78,9 @@ public enum Class1890 implements Class1876 {
                case 9:
                   return var5.method3226();
                case 10:
-                  return var5.method3329();
+                  return var5.isBeingRidden();
                case 11:
-                  return var5.method3328();
+                  return var5.isPassenger();
                case 12:
                   return var5.method3336();
                case 13:

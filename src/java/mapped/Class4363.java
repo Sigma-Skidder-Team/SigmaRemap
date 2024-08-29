@@ -194,14 +194,14 @@ public class Class4363 extends Class4247 {
 
    @Override
    public void method13027(float var1) {
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269()),
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21330.calcPercent())
       );
-      Class3192.method11463(
+      RenderUtil.method11463(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)this.method13267(),
@@ -209,7 +209,7 @@ public class Class4363 extends Class4247 {
          6.0F,
          var1 * 0.1F * this.field21330.calcPercent()
       );
-      Class3192.method11463(
+      RenderUtil.method11463(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)this.method13267(),
@@ -218,7 +218,7 @@ public class Class4363 extends Class4247 {
          var1 * 0.2F * this.field21330.calcPercent()
       );
       if (this.method13303() != null) {
-         Class3192.method11415(this);
+         RenderUtil.method11415(this);
          String var4 = "";
 
          for (Entry var6 : this.field21331.entrySet()) {
@@ -227,19 +227,19 @@ public class Class4363 extends Class4247 {
             }
          }
 
-         Class3192.method11439(
+         RenderUtil.method11439(
             this.method13305(),
             (float)(this.method13263() + 10),
             (float)(this.method13265() + (this.method13269() - this.method13305().method23952()) / 2 + 1),
             this.method13303() + var4,
             Class5628.method17688(this.field20914.method19405(), var1 * 0.7F)
          );
-         Class3192.method11422();
+         RenderUtil.method11422();
       }
 
       boolean var8 = this.field21330.calcPercent() < 1.0F;
       if (var8) {
-         Class3192.method11420(
+         RenderUtil.method11420(
             this.method13271(), this.method13272(), this.method13271() + this.method13267() + 140, this.method13272() + this.method13269() + this.method13647()
          );
       }
@@ -251,7 +251,7 @@ public class Class4363 extends Class4247 {
 
       GL11.glPopMatrix();
       if (var8) {
-         Class3192.method11422();
+         RenderUtil.method11422();
       }
 
       int var9 = this.method13267() - (int)((float)this.method13269() / 2.0F + 0.5F);
@@ -260,7 +260,7 @@ public class Class4363 extends Class4247 {
       GL11.glTranslatef((float)(this.method13263() + var9), (float)(this.method13265() + var10), 0.0F);
       GL11.glRotatef(90.0F * this.field21330.calcPercent(), 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-this.method13263() - var9), (float)(-this.method13265() - var10), 0.0F);
-      Class3192.method11439(
+      RenderUtil.method11439(
          this.field20913,
          (float)(this.method13263() + var9 - 6),
          (float)(this.method13265() + var10 - 14),

@@ -70,13 +70,13 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.field31577 == null ? this.getBlock().method11996(this.method23457(), var1, var2) : Class6486.method19653(this.field31577);
    }
 
-   public Class6408 method23388(Class1665 var1, BlockPos var2, Direction var3) {
+   public VoxelShape method23388(Class1665 var1, BlockPos var2, Direction var3) {
       return this.field31577 != null && Class6486.method19654(this.field31577) != null
          ? Class6486.method19654(this.field31577)[var3.ordinal()]
-         : Class8022.method27442(this.method23389(var1, var2), var3);
+         : VoxelShapes.method27442(this.method23389(var1, var2), var3);
    }
 
-   public Class6408 method23389(Class1665 var1, BlockPos var2) {
+   public VoxelShape method23389(Class1665 var1, BlockPos var2) {
       return this.getBlock().method11503(this.method23457(), var1, var2);
    }
 
@@ -175,31 +175,31 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11634(this.method23457(), var1, var2);
    }
 
-   public Class6408 method23412(Class1665 var1, BlockPos var2) {
-      return this.method23413(var1, var2, Class4832.method14947());
+   public VoxelShape method23412(Class1665 var1, BlockPos var2) {
+      return this.method23413(var1, var2, ISelectionContext.method14947());
    }
 
-   public Class6408 method23413(Class1665 var1, BlockPos var2, Class4832 var3) {
+   public VoxelShape method23413(Class1665 var1, BlockPos var2, ISelectionContext var3) {
       return this.getBlock().method11483(this.method23457(), var1, var2, var3);
    }
 
-   public Class6408 method23414(Class1665 var1, BlockPos var2) {
-      return this.field31577 == null ? this.method23415(var1, var2, Class4832.method14947()) : this.field31577.field28442;
+   public VoxelShape method23414(Class1665 var1, BlockPos var2) {
+      return this.field31577 == null ? this.getCollisionShape(var1, var2, ISelectionContext.method14947()) : this.field31577.field28442;
    }
 
-   public Class6408 method23415(Class1665 var1, BlockPos var2, Class4832 var3) {
+   public VoxelShape getCollisionShape(Class1665 var1, BlockPos var2, ISelectionContext var3) {
       return this.getBlock().method11502(this.method23457(), var1, var2, var3);
    }
 
-   public Class6408 method23416(Class1665 var1, BlockPos var2) {
+   public VoxelShape method23416(Class1665 var1, BlockPos var2) {
       return this.getBlock().method11995(this.method23457(), var1, var2);
    }
 
-   public Class6408 method23417(Class1665 var1, BlockPos var2, Class4832 var3) {
+   public VoxelShape method23417(Class1665 var1, BlockPos var2, ISelectionContext var3) {
       return this.getBlock().method11635(this.method23457(), var1, var2, var3);
    }
 
-   public Class6408 method23418(Class1665 var1, BlockPos var2) {
+   public VoxelShape method23418(Class1665 var1, BlockPos var2) {
       return this.getBlock().method11938(this.method23457(), var1, var2);
    }
 
@@ -208,7 +208,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
    }
 
    public final boolean method23420(Class1665 var1, BlockPos var2, Entity var3, Direction var4) {
-      return Block.method11549(this.method23415(var1, var2, Class4832.method14948(var3)), var4);
+      return Block.method11549(this.getCollisionShape(var1, var2, ISelectionContext.forEntity(var3)), var4);
    }
 
    public Vector3d method23421(Class1665 var1, BlockPos var2) {
@@ -221,7 +221,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
             ((double)((float)(var6 >> 8 & 15L) / 15.0F) - 0.5) * 0.5
          );
       } else {
-         return Vector3d.field18047;
+         return Vector3d.ZERO;
       }
    }
 
@@ -313,7 +313,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11497(this.method23457(), var1);
    }
 
-   public boolean method23442(Class7631 var1) {
+   public boolean method23442(Fluid var1) {
       return this.getBlock().method11650(this.method23457(), var1);
    }
 
@@ -330,11 +330,11 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11528(this.method23457(), var1, var2);
    }
 
-   public boolean method23446(Class7608<Block> var1) {
+   public boolean method23446(ITag<Block> var1) {
       return this.getBlock().method11540(var1);
    }
 
-   public boolean method23447(Class7608<Block> var1, Predicate<Class7377> var2) {
+   public boolean method23447(ITag<Block> var1, Predicate<Class7377> var2) {
       return this.getBlock().method11540(var1) && var2.test(this);
    }
 

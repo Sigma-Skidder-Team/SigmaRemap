@@ -39,8 +39,8 @@ public class Class2669 extends Class2595 {
    private AbstractHorseEntity method10886(Class9755 var1) {
       Class1076 var4 = EntityType.field41079.method33215(this.field17046.world);
       var4.method4276((ServerWorld)this.field17046.world, var1, Class2202.field14401, (Class5093)null, (CompoundNBT)null);
-      var4.method3215(this.field17046.getPosX(), this.field17046.getPosY(), this.field17046.getPosZ());
-      var4.field5061 = 60;
+      var4.setPosition(this.field17046.getPosX(), this.field17046.getPosY(), this.field17046.getPosZ());
+      var4.hurtResistantTime = 60;
       var4.method4278();
       var4.method4936(true);
       var4.method4770(0);
@@ -50,8 +50,8 @@ public class Class2669 extends Class2595 {
    private Class1085 method10887(Class9755 var1, AbstractHorseEntity var2) {
       Class1085 var5 = EntityType.field41078.method33215(var2.world);
       var5.method4276((ServerWorld)var2.world, var1, Class2202.field14401, (Class5093)null, (CompoundNBT)null);
-      var5.method3215(var2.getPosX(), var2.getPosY(), var2.getPosZ());
-      var5.field5061 = 60;
+      var5.setPosition(var2.getPosX(), var2.getPosY(), var2.getPosZ());
+      var5.hurtResistantTime = 60;
       var5.method4278();
       if (var5.method2943(Class2106.field13736).isEmpty()) {
          var5.method2944(Class2106.field13736, new ItemStack(Items.field37852));

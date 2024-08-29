@@ -61,7 +61,7 @@ public class Class4290 extends Class4278 {
    public void method13027(float var1) {
       int var4 = 20;
       if (!((double)var1 < 0.6)) {
-         Class3192.method11465(
+         RenderUtil.method11465(
             this.field20895 + var4,
             this.field20896 + var4,
             this.field20897 - var4 * 2,

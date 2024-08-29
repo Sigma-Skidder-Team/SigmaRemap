@@ -125,14 +125,14 @@ public class Class4259 extends Class4247 {
       TextureManager var10000 = var4.getTextureManager();
       var4.getTextureManager();
       var10000.bindTexture(TextureManager.field1094);
-      Class3192.method11421(this.field20895, this.field20896, this.field20895 + this.field20897, this.field20896 + this.field20898, true);
+      RenderUtil.method11421(this.field20895, this.field20896, this.field20895 + this.field20897, this.field20896 + this.field20898, true);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(this.field20895 + this.field20897 / 2), (float)(this.field20896 + this.field20898 / 2), 0.0F);
       GL11.glScalef(var9, var9, 0.0F);
       GL11.glRotatef(-90.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-this.field20895 - this.field20897 / 2), (float)(-this.field20896 - this.field20898 / 2), 0.0F);
       GL11.glTranslated(-var11, var13, 0.0);
-      Class3192.method11453(
+      RenderUtil.method11453(
          (float)(this.field20895 + var7),
          (float)(this.field20896 + var8),
          (float)var6,
@@ -154,7 +154,7 @@ public class Class4259 extends Class4247 {
          float var19 = (float)var16.field35890 - var17 + 1.0F;
          float var20 = (float)var16.field35891 - var18 + 1.0F;
          float var21 = (float)var6 / ((float)(this.field20649 - 1) * 2.0F);
-         Class3192.method11449(
+         RenderUtil.method11449(
             (float)(this.field20895 + Math.round(var19 * var21 / 16.0F) + this.field20897 / 2 - 16),
             (float)(this.field20896 + Math.round(var20 * var21 / 16.0F) + this.field20898 / 2 - 42),
             32.0F,
@@ -164,11 +164,11 @@ public class Class4259 extends Class4247 {
          );
       }
 
-      Class3192.method11422();
+      RenderUtil.method11422();
       int var22 = Math.round((float)(this.field20648.field32174 * 16) - this.field20651 * 16.0F);
       int var23 = Math.round((float)(this.field20648.field32175 * 16) - this.field20650 * 16.0F);
       String var24 = var22 + "  " + var23;
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont14,
          (float)(this.field20895 - ResourceRegistry.JelloLightFont14.method23942(var24) - 23),
          (float)(this.field20896 + 35),

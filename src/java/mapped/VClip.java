@@ -23,8 +23,8 @@ public class VClip extends Command {
                         mc.player.getPosX(),
                         mc.player.getPosY() + var2[0].method30896(),
                         mc.player.getPosZ(),
-                        mc.player.field5031,
-                        mc.player.field5032,
+                        mc.player.rotationYaw,
+                        mc.player.rotationPitch,
                         Collections.<Class2033>emptySet(),
                         (int)(2.147483647E9 * Math.random())
                      )

@@ -8,8 +8,8 @@ import java.util.Random;
 import java.util.Set;
 import java.util.function.Supplier;
 
-public interface Class7608<T> {
-   static <T> Codec<Class7608<T>> method24916(Supplier<Class7984<T>> var0) {
+public interface ITag<T> {
+   static <T> Codec<ITag<T>> method24916(Supplier<Class7984<T>> var0) {
       return ResourceLocation.field13020
          .flatXmap(
             var1 -> Optional.ofNullable(var0.get().method27135(var1))
@@ -30,7 +30,7 @@ public interface Class7608<T> {
       return (T)var4.get(var1.nextInt(var4.size()));
    }
 
-   static <T> Class7608<T> method24920(Set<T> var0) {
+   static <T> ITag<T> method24920(Set<T> var0) {
       return Class7609.<T>method24926(var0);
    }
 }

@@ -6,12 +6,12 @@ public class Class3206 extends Class3198 implements Class3207 {
    public static final Class8552<Class99> field18595 = Class8820.field39735;
    public static final Class8551 field18596 = Class8820.field39704;
    public static final Class8551 field18597 = Class8820.field39710;
-   public static final Class6408 field18598 = Block.method11539(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
-   public static final Class6408 field18599 = Block.method11539(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field18600 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
-   public static final Class6408 field18601 = Block.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field18602 = Block.method11539(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
-   public static final Class6408 field18603 = Block.method11539(0.0, 13.0, 0.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field18598 = Block.method11539(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
+   public static final VoxelShape field18599 = Block.method11539(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field18600 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
+   public static final VoxelShape field18601 = Block.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field18602 = Block.method11539(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
+   public static final VoxelShape field18603 = Block.method11539(0.0, 13.0, 0.0, 16.0, 16.0, 16.0);
 
    public Class3206(AbstractBlock var1) {
       super(var1);
@@ -27,7 +27,7 @@ public class Class3206 extends Class3198 implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       if (!var1.<Boolean>method23463(field18594)) {
          return var1.method23463(field18595) == Class99.field270 ? field18603 : field18602;
       } else {

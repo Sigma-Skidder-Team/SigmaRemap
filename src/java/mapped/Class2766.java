@@ -43,7 +43,7 @@ public class Class2766 extends Class2595 {
    @Override
    public void method10805() {
       Class880 var3 = this.field17340.method4232();
-      if (!this.field17340.method3389().method19670(var3.method3389())) {
+      if (!this.field17340.getBoundingBox().method19670(var3.getBoundingBox())) {
          double var4 = this.field17340.getDistanceSq(var3);
          if (var4 < 9.0) {
             Vector3d var6 = var3.method3286(1.0F);

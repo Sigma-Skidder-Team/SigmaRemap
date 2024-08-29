@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
@@ -32,15 +32,15 @@ public class Class5235 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         field23588 = null;
     }
 
     @EventTarget
-    private void method16319(Class4396 var1) {
+    private void method16319(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof SChatPacket) {
-                SChatPacket var4 = (SChatPacket) var1.method13898();
+            if (var1.getPacket() instanceof SChatPacket) {
+                SChatPacket var4 = (SChatPacket) var1.getPacket();
                 if (var4.method17648().getString().equals("§9Game> §r§7You cannot eat your own cake!§r")) {
                     var1.method13900(true);
                 }
@@ -52,7 +52,7 @@ public class Class5235 extends Module {
     @HigherPriority
     private void method16320(Class4399 var1) {
         if (this.isEnabled()) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Fly.class);
+            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Fly.class);
             if (var4.method16726() instanceof MineplexFly) {
                 MineplexFly var5 = (MineplexFly) var4.method16726();
                 if (var5.method16456()) {

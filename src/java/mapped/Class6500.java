@@ -3,14 +3,14 @@ package mapped;
 import java.util.Random;
 
 public class Class6500 {
-   private final Class9361 field28460;
-   private final Class9289<Integer> field28461;
-   private final Class9289<Boolean> field28462;
+   private final EntityDataManager field28460;
+   private final DataParameter<Integer> field28461;
+   private final DataParameter<Boolean> field28462;
    public boolean field28463;
    public int field28464;
    public int field28465;
 
-   public Class6500(Class9361 var1, Class9289<Integer> var2, Class9289<Boolean> var3) {
+   public Class6500(EntityDataManager var1, DataParameter<Integer> var2, DataParameter<Boolean> var3) {
       this.field28460 = var1;
       this.field28461 = var2;
       this.field28462 = var3;

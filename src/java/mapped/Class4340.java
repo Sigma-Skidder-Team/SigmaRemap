@@ -129,7 +129,7 @@ public class Class4340 extends Class4339 {
 
       super.method13027(var1);
       int var8 = Math.round(Class9782.method38556(1.0F - this.field21211.calcPercent(), 0.0F, 1.0F, 1.0F) * 30.0F);
-      Class3192.method11450(
+      RenderUtil.method11450(
          (float)(this.field20895 - var8 + 18),
          (float)(this.field20898 - 46),
          22.0F,

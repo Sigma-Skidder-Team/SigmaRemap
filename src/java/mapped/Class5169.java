@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
@@ -31,20 +31,20 @@ public class Class5169 extends Module {
    }
 
    @EventTarget
-   public void method16075(Class4396 var1) {
+   public void method16075(RecievePacketEvent var1) {
       if (this.isEnabled()) {
-         if (var1.method13898() instanceof Class5607) {
-            Class5607 var4 = (Class5607)var1.method13898();
+         if (var1.getPacket() instanceof Class5607) {
+            Class5607 var4 = (Class5607)var1.getPacket();
             this.method16076(mc.world.method6722(var4.method17632()).method7072());
          }
 
-         if (var1.method13898() instanceof Class5549) {
-            Class5549 var5 = (Class5549)var1.method13898();
+         if (var1.getPacket() instanceof Class5549) {
+            Class5549 var5 = (Class5549)var1.getPacket();
             this.method16076(new Class7481(var5.field24642.field13027, var5.field24642.field13029));
          }
 
-         if (var1.method13898() instanceof Class5526 && Minecraft.getInstance().world != null) {
-            Class5526 var6 = (Class5526)var1.method13898();
+         if (var1.getPacket() instanceof Class5526 && Minecraft.getInstance().world != null) {
+            Class5526 var6 = (Class5526)var1.getPacket();
             this.method16076(new Class7481(var6.method17378(), var6.method17379()));
          }
       }
@@ -90,7 +90,7 @@ public class Class5169 extends Module {
    @EventTarget
    public void method16079(TickEvent var1) {
       if (this.isEnabled()) {
-         if (mc.player.field5055 < 20) {
+         if (mc.player.ticksExisted < 20) {
             this.field23451.clear();
          } else {
             int var4 = (int)this.getNumberValueBySettingName("Chunk Range");
@@ -98,7 +98,7 @@ public class Class5169 extends Module {
 
             for (int var6 = -4; var6 < 4; var6++) {
                for (int var7 = -4; var7 < 4; var7++) {
-                  var5.add(new Class7481(mc.player.field5072 + var6, mc.player.field5074 + var7));
+                  var5.add(new Class7481(mc.player.chunkCoordX + var6, mc.player.chunkCoordZ + var7));
                }
             }
 
@@ -106,7 +106,7 @@ public class Class5169 extends Module {
 
             while (var12.hasNext()) {
                Class6203 var13 = (Class6203)var12.next();
-               if (var13.method19108(new Class7481(mc.player.field5072, mc.player.field5074)) > 7
+               if (var13.method19108(new Class7481(mc.player.chunkCoordX, mc.player.chunkCoordZ)) > 7
                   || this.field23452.contains(var13.method19109())) {
                   var12.remove();
                }
@@ -128,7 +128,7 @@ public class Class5169 extends Module {
                break;
             }
 
-            if (!var14 && mc.player.field5036 && !Client.getInstance().method19950().method31742() && this.field23454 == null) {
+            if (!var14 && mc.player.onGround && !Client.getInstance().method19950().method31742() && this.field23454 == null) {
                List<BlockPos> var15 = this.method16081();
                Client.getInstance().getNotificationManager().post(new Notification("AutoMiner", "Computing...", ResourcesDecrypter.directionIconPNG));
                this.field23454 = new Thread(
@@ -184,7 +184,7 @@ public class Class5169 extends Module {
             }
 
             if (this.isEnabled() && this.field23453 != null && this.field23454 != null) {
-               if (mc.player.field5055 % 20 == 0) {
+               if (mc.player.ticksExisted % 20 == 0) {
                   this.field23458 = this.field23457;
                   this.field23457 = this.method16085();
                }
@@ -235,7 +235,7 @@ public class Class5169 extends Module {
    }
 
    @Override
-   public void isInDevelopment() {
+   public void onEnable() {
       if (this.field23454 != null) {
          this.field23454.interrupt();
       }
@@ -248,7 +248,7 @@ public class Class5169 extends Module {
    }
 
    @Override
-   public void method15965() {
+   public void onDisable() {
       if (this.field23454 != null) {
          this.field23454.interrupt();
       }
@@ -336,7 +336,7 @@ public class Class5169 extends Module {
          GL11.glLineWidth(1.4F);
          GL11.glColor4d(1.0, 1.0, 1.0, 0.44F);
          GL11.glBegin(3);
-         float var3 = Math.min(1.0F, ((float)(mc.player.field5055 % 20) + mc.timer.renderPartialTicks) / 20.0F);
+         float var3 = Math.min(1.0F, ((float)(mc.player.ticksExisted % 20) + mc.timer.renderPartialTicks) / 20.0F);
 
          for (int var4 = 0; var4 < (int)((float)this.field23457.size() * var3); var4++) {
             Class9110 var5 = this.field23457.get(var4);

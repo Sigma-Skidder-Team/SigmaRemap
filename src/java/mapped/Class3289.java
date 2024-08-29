@@ -19,7 +19,7 @@ public class Class3289 extends Item {
          BlockPos var7 = var6.method18345();
          ItemStack var8 = var1.method18357();
          Vector3d var9 = Vector3d.method11330(var7);
-         Class6488 var10 = EntityType.field41006.method33221().method32098(var9.method11320(), var9.method11321(), var9.method11322());
+         AxisAlignedBB var10 = EntityType.field41006.getSize().method32098(var9.method11320(), var9.method11321(), var9.method11322());
          if (var5.method7054((Entity)null, var10, var0 -> true) && var5.method7181((Entity)null, var10).isEmpty()) {
             if (var5 instanceof ServerWorld) {
                ServerWorld var11 = (ServerWorld)var5;

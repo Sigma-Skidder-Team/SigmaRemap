@@ -48,7 +48,7 @@ public class Class4349 extends Class4278 {
       this.field21252 = Math.min(1.0F, Math.max(0.0F, this.field21252));
       this.field21258 = Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
       if (this.field21254 || this.method13212() || this.method13298()) {
-         Class3192.method11426(
+         RenderUtil.method11426(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
@@ -59,7 +59,7 @@ public class Class4349 extends Class4278 {
 
       if (!this.method13212()) {
          if (this.method13298() && this.field21254) {
-            Class3192.method11429(
+            RenderUtil.method11429(
                (float)this.field20895,
                (float)this.field20896,
                (float)(this.field20895 + this.field20897),
@@ -69,7 +69,7 @@ public class Class4349 extends Class4278 {
             );
          } else if (!this.method13298()) {
             if (this.field21254) {
-               Class3192.method11429(
+               RenderUtil.method11429(
                   (float)this.field20895,
                   (float)this.field20896,
                   (float)(this.field20895 + this.field20897),
@@ -79,7 +79,7 @@ public class Class4349 extends Class4278 {
                );
             }
          } else {
-            Class3192.method11429(
+            RenderUtil.method11429(
                (float)this.field20895,
                (float)this.field20896,
                (float)(this.field20895 + this.field20897),
@@ -89,7 +89,7 @@ public class Class4349 extends Class4278 {
             );
          }
       } else {
-         Class3192.method11429(
+         RenderUtil.method11429(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
@@ -99,12 +99,12 @@ public class Class4349 extends Class4278 {
          );
       }
 
-      Class3192.method11421(this.field20895, this.field20896, this.field20895 + this.field20897, this.field20896 + this.field20898, true);
+      RenderUtil.method11421(this.field20895, this.field20896, this.field20895 + this.field20897, this.field20896 + this.field20898, true);
       if (this.field21249 != null) {
          this.method13584();
-         Class3192.method11422();
+         RenderUtil.method11422();
          if (this.field21252 > 0.0F && this.field20898 > 55) {
-            Class3192.method11449(
+            RenderUtil.method11449(
                (float)(this.field20895 + this.method13267()),
                (float)this.field20896 + (float)(26 * this.field20898) / 100.0F,
                18.0F * this.field21252 * (float)this.field20898 / 100.0F,
@@ -119,11 +119,11 @@ public class Class4349 extends Class4278 {
    }
 
    public void method13583() {
-      Class3192.method11450(
+      RenderUtil.method11450(
          (float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, this.field21249.setSkinTexture(), ClientColors.LIGHT_GREYISH_BLUE.getColor, true
       );
-      Class3192.method11464((float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, 20.0F, 1.0F);
-      Class3192.method11449(
+      RenderUtil.method11464((float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, 20.0F, 1.0F);
+      RenderUtil.method11449(
          (float)(this.field20895 + 1),
          (float)this.field20896,
          100.0F,
@@ -139,7 +139,7 @@ public class Class4349 extends Class4278 {
          var3 = this.field21249.getEmail();
       }
 
-      Class3192.method11440(
+      RenderUtil.method11440(
          ResourceRegistry.field38868,
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + 20),
@@ -148,7 +148,7 @@ public class Class4349 extends Class4278 {
          Class2218.field14492,
          Class2218.field14492
       );
-      Class3192.method11440(
+      RenderUtil.method11440(
          ResourceRegistry.field38868,
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + 18),
@@ -158,7 +158,7 @@ public class Class4349 extends Class4278 {
          Class2218.field14492
       );
       if (!this.field21249.isEmailAValidEmailFormat()) {
-         Class3192.method11441(
+         RenderUtil.method11441(
             ResourceRegistry.field38868,
             (float)(this.field20895 + this.field20897 / 2),
             (float)(this.field20896 + 32),
@@ -169,7 +169,7 @@ public class Class4349 extends Class4278 {
             true
          );
       } else {
-         Class3192.method11441(
+         RenderUtil.method11441(
             ResourceRegistry.field38868,
             (float)(this.field20895 + this.field20897 / 2),
             (float)(this.field20896 + 29),

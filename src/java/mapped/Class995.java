@@ -20,15 +20,15 @@ public abstract class Class995 extends Entity {
    }
 
    @Override
-   public void method2850() {
+   public void registerData() {
    }
 
    public void method4077(Direction var1) {
       Validate.notNull(var1);
       Validate.isTrue(var1.method544().method324());
       this.field5489 = var1;
-      this.field5031 = (float)(this.field5489.method534() * 90);
-      this.field5033 = this.field5031;
+      this.rotationYaw = (float)(this.field5489.method534() * 90);
+      this.prevRotationYaw = this.rotationYaw;
       this.method4078();
    }
 
@@ -59,7 +59,7 @@ public abstract class Class995 extends Entity {
          var16 /= 32.0;
          var18 /= 32.0;
          var20 /= 32.0;
-         this.method3391(new Class6488(var3 - var16, var5 - var18, var7 - var20, var3 + var16, var5 + var18, var7 + var20));
+         this.method3391(new AxisAlignedBB(var3 - var16, var5 - var18, var7 - var20, var3 + var16, var5 + var18, var7 + var20));
       }
    }
 
@@ -76,7 +76,7 @@ public abstract class Class995 extends Entity {
 
          if (this.field5487++ == 100) {
             this.field5487 = 0;
-            if (!this.field5041 && !this.method4080()) {
+            if (!this.removed && !this.method4080()) {
                this.method2904();
                this.method4083((Entity)null);
             }
@@ -106,7 +106,7 @@ public abstract class Class995 extends Entity {
             }
          }
 
-         return this.world.method6770(this, this.method3389(), field5486).isEmpty();
+         return this.world.method6770(this, this.getBoundingBox(), field5486).isEmpty();
       }
    }
 
@@ -133,7 +133,7 @@ public abstract class Class995 extends Entity {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.method2760(var1)) {
-         if (!this.field5041 && !this.world.field9020) {
+         if (!this.removed && !this.world.field9020) {
             this.method2904();
             this.method3141();
             this.method4083(var1.method31109());
@@ -147,7 +147,7 @@ public abstract class Class995 extends Entity {
 
    @Override
    public void move(Class2107 var1, Vector3d var2) {
-      if (!this.world.field9020 && !this.field5041 && var2.method11349() > 0.0) {
+      if (!this.world.field9020 && !this.removed && var2.method11349() > 0.0) {
          this.method2904();
          this.method4083((Entity)null);
       }
@@ -155,7 +155,7 @@ public abstract class Class995 extends Entity {
 
    @Override
    public void method3280(double var1, double var3, double var5) {
-      if (!this.world.field9020 && !this.field5041 && var1 * var1 + var3 * var3 + var5 * var5 > 0.0) {
+      if (!this.world.field9020 && !this.removed && var1 * var1 + var3 * var3 + var5 * var5 > 0.0) {
          this.method2904();
          this.method4083((Entity)null);
       }
@@ -202,10 +202,10 @@ public abstract class Class995 extends Entity {
    }
 
    @Override
-   public void method3215(double var1, double var3, double var5) {
+   public void setPosition(double var1, double var3, double var5) {
       this.field5488 = new BlockPos(var1, var3, var5);
       this.method4078();
-      this.field5078 = true;
+      this.isAirBorne = true;
    }
 
    public BlockPos method4085() {
@@ -227,7 +227,7 @@ public abstract class Class995 extends Entity {
          }
       }
 
-      float var4 = MathHelper.method37792(this.field5031);
+      float var4 = MathHelper.method37792(this.rotationYaw);
       switch (Class9399.field43617[var1.ordinal()]) {
          case 1:
             return var4 + 180.0F;

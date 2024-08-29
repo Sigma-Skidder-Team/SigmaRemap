@@ -22,11 +22,11 @@ public class Class5283 extends Module {
     @EventTarget
     private void method16578(TickEvent var1) {
         if (this.isEnabled()) {
-            if (Class5628.method17705() > this.field23755 && mc.player.field5055 % 3 == 0) {
+            if (Class5628.method17705() > this.field23755 && mc.player.ticksExisted % 3 == 0) {
                 this.field23755++;
             }
 
-            if (Class5628.method17705() < this.field23755 && mc.player.field5055 % 3 == 0) {
+            if (Class5628.method17705() < this.field23755 && mc.player.ticksExisted % 3 == 0) {
                 this.field23755--;
             }
 
@@ -69,7 +69,7 @@ public class Class5283 extends Module {
                         GL11.glTranslatef(var6, (float) (var7 + 10), 0.0F);
                         GL11.glScalef(var10, var10, 1.0F);
                         GL11.glTranslatef((float) (-var6), (float) (-var7 - 10), 0.0F);
-                        Class3192.method11440(
+                        RenderUtil.method11440(
                                 ResourceRegistry.JelloLightFont18_1,
                                 var6,
                                 (float) var7,
@@ -78,7 +78,7 @@ public class Class5283 extends Module {
                                 Class2218.field14492,
                                 Class2218.field14488
                         );
-                        Class3192.method11440(
+                        RenderUtil.method11440(
                                 ResourceRegistry.JelloLightFont18,
                                 var6,
                                 (float) var7,

@@ -32,7 +32,7 @@ public class Class2616 extends Class2612 {
                      this.field16881.getPosX(),
                      this.field16881.method3442(),
                      this.field16881.getPosZ(),
-                     this.field16881.method3389().method19663((double)this.field16883, 3.0, (double)this.field16883)
+                     this.field16881.getBoundingBox().method19663((double)this.field16883, 3.0, (double)this.field16883)
                   );
             } else {
                this.field16882 = this.field16881

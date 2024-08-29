@@ -17,12 +17,12 @@ public class Class5224 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         field23568 = false;
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         field23568 = true;
     }
 }

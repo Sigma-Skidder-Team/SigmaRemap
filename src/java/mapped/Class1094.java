@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class Class1094 extends Class1018 {
-   private static final Class9289<Integer> field5986 = Class9361.<Integer>method35441(Class1094.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5986 = EntityDataManager.<Integer>method35441(Class1094.class, Class7784.field33391);
    private static final ResourceLocation field5987 = new ResourceLocation("killer_bunny");
    private int field5988;
    private int field5989;
@@ -37,7 +37,7 @@ public class Class1094 extends Class1018 {
 
    @Override
    public float method3103() {
-      if (!this.field5037 && (!this.field5596.method20811() || !(this.field5596.method20818() > this.getPosY() + 0.5))) {
+      if (!this.collidedHorizontally && (!this.field5596.method20811() || !(this.field5596.method20818() > this.getPosY() + 0.5))) {
          Class8238 var3 = this.field5599.method21657();
          if (var3 != null && !var3.method28693()) {
             Vector3d var4 = var3.method28703(this);
@@ -81,7 +81,7 @@ public class Class1094 extends Class1018 {
    public void method3133(boolean var1) {
       super.method3133(var1);
       if (var1) {
-         this.method2863(this.method5112(), this.method3099(), ((this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F) * 0.8F);
+         this.method2863(this.method5112(), this.method3099(), ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F) * 0.8F);
       }
    }
 
@@ -92,9 +92,9 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5986, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5986, 0);
    }
 
    @Override
@@ -104,13 +104,13 @@ public class Class1094 extends Class1018 {
       }
 
       if (this.field5992 > 0) {
-         this.field5992 = this.field5992 - this.field5054.nextInt(3);
+         this.field5992 = this.field5992 - this.rand.nextInt(3);
          if (this.field5992 < 0) {
             this.field5992 = 0;
          }
       }
 
-      if (this.field5036) {
+      if (this.onGround) {
          if (!this.field5990) {
             this.method3133(false);
             this.method5110();
@@ -143,7 +143,7 @@ public class Class1094 extends Class1018 {
          }
       }
 
-      this.field5990 = this.field5036;
+      this.field5990 = this.onGround;
    }
 
    @Override
@@ -152,7 +152,7 @@ public class Class1094 extends Class1018 {
    }
 
    private void method5106(double var1, double var3) {
-      this.field5031 = (float)(MathHelper.method37814(var3 - this.getPosZ(), var1 - this.getPosX()) * 180.0F / (float)Math.PI) - 90.0F;
+      this.rotationYaw = (float)(MathHelper.method37814(var3 - this.getPosZ(), var1 - this.getPosX()) * 180.0F / (float)Math.PI) - 90.0F;
    }
 
    private void method5107() {
@@ -232,7 +232,7 @@ public class Class1094 extends Class1018 {
       if (this.method5114() != 99) {
          return var1.method2741(Class8654.method31115(this), 3.0F);
       } else {
-         this.method2863(Sounds.field26988, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+         this.method2863(Sounds.field26988, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
          return var1.method2741(Class8654.method31115(this), 8.0F);
       }
    }
@@ -254,8 +254,8 @@ public class Class1094 extends Class1018 {
    public Class1094 method4389(ServerWorld var1, Class1045 var2) {
       Class1094 var5 = EntityType.field41071.method33215(var1);
       int var6 = this.method5116(var1);
-      if (this.field5054.nextInt(20) != 0) {
-         if (var2 instanceof Class1094 && this.field5054.nextBoolean()) {
+      if (this.rand.nextInt(20) != 0) {
+         if (var2 instanceof Class1094 && this.rand.nextBoolean()) {
             var6 = ((Class1094)var2).method5114();
          } else {
             var6 = this.method5114();
@@ -272,7 +272,7 @@ public class Class1094 extends Class1018 {
    }
 
    public int method5114() {
-      return this.field5063.<Integer>method35445(field5986);
+      return this.dataManager.<Integer>method35445(field5986);
    }
 
    public void method5115(int var1) {
@@ -287,7 +287,7 @@ public class Class1094 extends Class1018 {
          }
       }
 
-      this.field5063.method35446(field5986, var1);
+      this.dataManager.method35446(field5986, var1);
    }
 
    @Nullable
@@ -306,7 +306,7 @@ public class Class1094 extends Class1018 {
 
    private int method5116(Class1660 var1) {
       Biome var4 = var1.getBiome(this.getPosition());
-      int var5 = this.field5054.nextInt(100);
+      int var5 = this.rand.nextInt(100);
       if (var4.method32500() != Class87.field225) {
          if (var4.getCategory() != Class100.field286) {
             return var5 >= 50 ? (var5 >= 90 ? 2 : 5) : 0;

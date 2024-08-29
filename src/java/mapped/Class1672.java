@@ -33,7 +33,7 @@ public class Class1672 implements Class1670 {
    private final Map<Structure<?>, LongSet> field9102 = Maps.newHashMap();
    private final Class8922 field9103;
    private final Class6806<Block> field9104;
-   private final Class6806<Class7631> field9105;
+   private final Class6806<Fluid> field9105;
    private long field9106;
    private final Map<Class97, BitSet> field9107 = new Object2ObjectArrayMap();
    private volatile boolean field9108;
@@ -44,11 +44,11 @@ public class Class1672 implements Class1670 {
          var2,
          (Class7038[])null,
          new Class6806<Block>(var0 -> var0 == null || var0.method11579().isAir(), var1),
-         new Class6806<Class7631>(var0 -> var0 == null || var0 == Class9479.field44064, var1)
+         new Class6806<Fluid>(var0 -> var0 == null || var0 == Class9479.field44064, var1)
       );
    }
 
-   public Class1672(Class7481 var1, Class8922 var2, Class7038[] var3, Class6806<Block> var4, Class6806<Class7631> var5) {
+   public Class1672(Class7481 var1, Class8922 var2, Class7038[] var3, Class6806<Block> var4, Class6806<Fluid> var5) {
       this.field9089 = var1;
       this.field9103 = var2;
       this.field9104 = var4;
@@ -201,7 +201,7 @@ public class Class1672 implements Class1670 {
 
    @Override
    public void method7063(Entity var1) {
-      if (!var1.method3328()) {
+      if (!var1.isPassenger()) {
          CompoundNBT var4 = new CompoundNBT();
          var1.method3293(var4);
          this.method7108(var4);
@@ -372,7 +372,7 @@ public class Class1672 implements Class1670 {
       return this.field9104;
    }
 
-   public Class6806<Class7631> method7090() {
+   public Class6806<Fluid> method7090() {
       return this.field9105;
    }
 

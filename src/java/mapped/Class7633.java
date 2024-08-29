@@ -11,7 +11,7 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public abstract class Class7633 extends Class7631 {
+public abstract class Class7633 extends Fluid {
    public static final Class8551 field32712 = Class8820.field39690;
    public static final Class8554 field32713 = Class8820.field39753;
    private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Class8570>> field32714 = ThreadLocal.<Object2ByteLinkedOpenHashMap<Class8570>>withInitial(
@@ -21,10 +21,10 @@ public abstract class Class7633 extends Class7631 {
          return var2;
       }
    );
-   private final Map<Class7379, Class6408> field32715 = Maps.newIdentityHashMap();
+   private final Map<Class7379, VoxelShape> field32715 = Maps.newIdentityHashMap();
 
    @Override
-   public void method25046(Class7558<Class7631, Class7379> var1) {
+   public void method25046(Class7558<Fluid, Class7379> var1) {
       var1.method24737(field32712);
    }
 
@@ -189,9 +189,9 @@ public abstract class Class7633 extends Class7631 {
          }
       }
 
-      Class6408 var14 = var4.method23414(var2, var3);
-      Class6408 var12 = var6.method23414(var2, var5);
-      boolean var13 = !Class8022.method27443(var14, var12, var1);
+      VoxelShape var14 = var4.method23414(var2, var3);
+      VoxelShape var12 = var6.method23414(var2, var5);
+      boolean var13 = ! VoxelShapes.method27443(var14, var12, var1);
       if (var9 != null) {
          if (var9.size() == 200) {
             var9.removeLastByte();
@@ -203,13 +203,13 @@ public abstract class Class7633 extends Class7631 {
       return var13;
    }
 
-   public abstract Class7631 method25075();
+   public abstract Fluid method25075();
 
    public Class7379 method25076(int var1, boolean var2) {
       return this.method25075().method25049().method23465(field32713, Integer.valueOf(var1)).method23465(field32712, Boolean.valueOf(var2));
    }
 
-   public abstract Class7631 method25077();
+   public abstract Fluid method25077();
 
    public Class7379 method25078(boolean var1) {
       return this.method25077().method25049().method23465(field32712, Boolean.valueOf(var1));
@@ -282,7 +282,7 @@ public abstract class Class7633 extends Class7631 {
       return var11;
    }
 
-   private boolean method25084(Class1665 var1, Class7631 var2, BlockPos var3, BlockState var4, BlockPos var5, BlockState var6) {
+   private boolean method25084(Class1665 var1, Fluid var2, BlockPos var3, BlockState var4, BlockPos var5, BlockState var6) {
       if (this.method25074(Direction.DOWN, var1, var3, var4, var5, var6)) {
          return !var6.method23449().method23472().method25066(this) ? this.method25090(var1, var5, var6, var2) : true;
       } else {
@@ -290,7 +290,7 @@ public abstract class Class7633 extends Class7631 {
       }
    }
 
-   private boolean method25085(Class1665 var1, Class7631 var2, BlockPos var3, BlockState var4, Direction var5, BlockPos var6, BlockState var7, Class7379 var8) {
+   private boolean method25085(Class1665 var1, Fluid var2, BlockPos var3, BlockState var4, Direction var5, BlockPos var6, BlockState var7, Class7379 var8) {
       return !this.method25086(var8) && this.method25074(var5, var1, var3, var4, var6, var7) && this.method25090(var1, var6, var7, var2);
    }
 
@@ -357,7 +357,7 @@ public abstract class Class7633 extends Class7631 {
       return var7;
    }
 
-   private boolean method25090(Class1665 var1, BlockPos var2, BlockState var3, Class7631 var4) {
+   private boolean method25090(Class1665 var1, BlockPos var2, BlockState var3, Fluid var4) {
       Block var7 = var3.getBlock();
       if (!(var7 instanceof Class3449)) {
          if (!(var7 instanceof Class3461)
@@ -377,7 +377,7 @@ public abstract class Class7633 extends Class7631 {
       }
    }
 
-   public boolean method25091(Class1665 var1, BlockPos var2, BlockState var3, Direction var4, BlockPos var5, BlockState var6, Class7379 var7, Class7631 var8) {
+   public boolean method25091(Class1665 var1, BlockPos var2, BlockState var3, Direction var4, BlockPos var5, BlockState var6, Class7379 var7, Fluid var8) {
       return var7.method23488(var1, var5, var8, var4) && this.method25074(var4, var1, var2, var3, var5, var6) && this.method25090(var1, var5, var6, var8);
    }
 
@@ -428,9 +428,9 @@ public abstract class Class7633 extends Class7631 {
    }
 
    @Override
-   public Class6408 method25068(Class7379 var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method25068(Class7379 var1, Class1665 var2, BlockPos var3) {
       return var1.method23477() == 9 && method25095(var1, var2, var3)
-         ? Class8022.method27426()
-         : this.field32715.computeIfAbsent(var1, var2x -> Class8022.method27427(0.0, 0.0, 0.0, 1.0, (double)var2x.method23475(var2, var3), 1.0));
+         ? VoxelShapes.method27426()
+         : this.field32715.computeIfAbsent(var1, var2x -> VoxelShapes.method27427(0.0, 0.0, 0.0, 1.0, (double)var2x.method23475(var2, var3), 1.0));
    }
 }

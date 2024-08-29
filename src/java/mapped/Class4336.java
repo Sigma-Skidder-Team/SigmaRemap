@@ -61,11 +61,11 @@ public class Class4336 extends Class4305 {
 
       this.method13285((int)(150.0F * (1.0F - var4)));
       this.method13225();
-      Class3192.method11439(ResourceRegistry.field38860, 100.0F, 100.0F, "Changelog", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
+      RenderUtil.method11439(ResourceRegistry.field38860, 100.0F, 100.0F, "Changelog", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
       ClientResource var10000 = ResourceRegistry.JelloLightFont25;
       StringBuilder var10003 = new StringBuilder().append("You're currently using Sigma ");
       Client.getInstance();
-      Class3192.method11439(
+      RenderUtil.method11439(
          var10000, 100.0F, 150.0F, var10003.append(Client.VERSION).toString(), Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1)
       );
       super.method13027(var1);

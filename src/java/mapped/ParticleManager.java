@@ -378,7 +378,7 @@ public class ParticleManager implements Class268 {
       }
 
       if (var6) {
-         Class6408 var9 = var2.method23412(this.field1168, var1);
+         VoxelShape var9 = var2.method23412(this.field1168, var1);
          double var7 = 0.25;
          var9.method19520(
             (var3, var5x, var7x, var9x, var11, var13) -> {
@@ -426,7 +426,7 @@ public class ParticleManager implements Class268 {
          int var7 = var1.getY();
          int var8 = var1.getZ();
          float var9 = 0.1F;
-         Class6488 var10 = var5.method23412(this.field1168, var1).method19514();
+         AxisAlignedBB var10 = var5.method23412(this.field1168, var1).method19514();
          double var11 = (double)var6 + this.field1172.nextDouble() * (var10.field28452 - var10.field28449 - 0.2F) + 0.1F + var10.field28449;
          double var13 = (double)var7 + this.field1172.nextDouble() * (var10.field28453 - var10.field28450 - 0.2F) + 0.1F + var10.field28450;
          double var15 = (double)var8 + this.field1172.nextDouble() * (var10.field28454 - var10.field28451 - 0.2F) + 0.1F + var10.field28451;

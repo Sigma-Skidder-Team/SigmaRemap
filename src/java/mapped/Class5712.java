@@ -48,9 +48,9 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
 
          var4.push();
          this.field25086.field17600 = this.method17885((T)var1, var3);
-         this.field25086.field17601 = var1.method3328();
+         this.field25086.field17601 = var1.isPassenger();
          if (Class9299.field42838.method20214()) {
-            this.field25086.field17601 = var1.method3328() && var1.getRidingEntity() != null && Class9299.method35064(var1.getRidingEntity(), Class9299.field42838);
+            this.field25086.field17601 = var1.isPassenger() && var1.getRidingEntity() != null && Class9299.method35064(var1.getRidingEntity(), Class9299.field42838);
          }
 
          this.field25086.field17602 = var1.method3005();
@@ -78,7 +78,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
             var11 = var10 - var9;
          }
 
-         float var31 = MathHelper.method37821(var3, var1.field5034, var1.field5032);
+         float var31 = MathHelper.method37821(var3, var1.prevRotationPitch, var1.rotationPitch);
          Class4410 var33 = new Class4410(var9, var10, var11, var31, var3, var1);
          Client.getInstance().getEventManager().call(var33);
          if (var33.isCancelled()) {
@@ -90,10 +90,10 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          var10 = var33.method13945();
          var11 = var33.method13946();
          var31 = var33.method13947();
-         if (var1.method3212() == Class2090.field13621) {
+         if (var1.method3212() == Pose.field13621) {
             Direction var14 = var1.method3179();
             if (var14 != null) {
-               float var15 = var1.method3392(Class2090.field13619) - 0.1F;
+               float var15 = var1.method3392(Pose.STANDING) - 0.1F;
                var4.translate((double)((float)(-var14.method539()) * var15), 0.0, (double)((float)(-var14.method541()) * var15));
             }
          }
@@ -105,7 +105,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          var4.translate(0.0, -1.501F, 0.0);
          float var35 = 0.0F;
          float var16 = 0.0F;
-         if (!var1.method3328() && var1.method3066()) {
+         if (!var1.isPassenger() && var1.method3066()) {
             var35 = MathHelper.method37821(var3, var1.field4959, var1.field4960);
             var16 = var1.field4961 - var1.field4960 * (1.0F - var3);
             if (var1.method3005()) {
@@ -229,17 +229,17 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
 
    public void method17842(T var1, MatrixStack var2, float var3, float var4, float var5) {
       if (this.method17860((T)var1)) {
-         var4 += (float)(Math.cos((double)var1.field5055 * 3.25) * Math.PI * 0.4F);
+         var4 += (float)(Math.cos((double)var1.ticksExisted * 3.25) * Math.PI * 0.4F);
       }
 
-      Class2090 var8 = var1.method3212();
-      if (var8 != Class2090.field13621) {
+      Pose var8 = var1.method3212();
+      if (var8 != Pose.field13621) {
          var2.method35293(Class7680.field32900.method25286(180.0F - var4));
       }
 
       if (var1.field4955 <= 0) {
          if (!var1.method3130()) {
-            if (var8 != Class2090.field13621) {
+            if (var8 != Pose.field13621) {
                if (var1.method3381() || var1 instanceof PlayerEntity) {
                   String var9 = TextFormatting.getTextWithoutFormattingCodes(var1.getName().getString());
                   if (("Dinnerbone".equals(var9) || "Grumm".equals(var9)) && (!(var1 instanceof PlayerEntity) || ((PlayerEntity)var1).method2962(Class2318.field15879))
@@ -257,8 +257,8 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
                var2.method35293(Class7680.field32900.method25286(270.0F));
             }
          } else {
-            var2.method35293(Class7680.field32898.method25286(-90.0F - var1.field5032));
-            var2.method35293(Class7680.field32900.method25286(((float)var1.field5055 + var5) * -75.0F));
+            var2.method35293(Class7680.field32898.method25286(-90.0F - var1.rotationPitch));
+            var2.method35293(Class7680.field32900.method25286(((float)var1.ticksExisted + var5) * -75.0F));
          }
       } else {
          float var12 = ((float)var1.field4955 + var5 - 1.0F) / 20.0F * 1.6F;
@@ -276,7 +276,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
    }
 
    public float method17871(T var1, float var2) {
-      return (float)var1.field5055 + var2;
+      return (float)var1.ticksExisted + var2;
    }
 
    public float method17865(T var1) {
@@ -305,8 +305,8 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
             ClientPlayerEntity var9 = var8.player;
             boolean var10 = !var1.method3343(var9);
             if (var1 != var9) {
-               Class8219 var11 = var1.method3344();
-               Class8219 var12 = var9.method3344();
+               Team var11 = var1.getTeam();
+               Team var12 = var9.getTeam();
                if (var11 != null) {
                   Class2225 var13 = var11.method28582();
                   switch (Class8663.field39039[var13.ordinal()]) {
@@ -324,7 +324,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
                }
             }
 
-            return Minecraft.isGuiEnabled() && var1 != var8.getRenderViewEntity() && var10 && !var1.method3329();
+            return Minecraft.isGuiEnabled() && var1 != var8.getRenderViewEntity() && var10 && !var1.isBeingRidden();
          }
       }
    }

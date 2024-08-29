@@ -68,6 +68,6 @@ public class Class5911 {
    }
 
    public float method18352() {
-      return this.field25721 != null ? this.field25721.field5031 : 0.0F;
+      return this.field25721 != null ? this.field25721.rotationYaw : 0.0F;
    }
 }

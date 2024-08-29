@@ -42,16 +42,16 @@ public abstract class Class6006 extends Setting<Boolean> {
    }
 
    @Override
-   public JSONObject addDataToJSONObject(JSONObject var1) {
+   public JSONObject addDataToJSONObject(JSONObject jsonObject) {
       JSONArray var4 = new JSONArray();
 
       for (Setting var6 : this.method18635()) {
          var4.put(var6.addDataToJSONObject(new JSONObject()));
       }
 
-      var1.put("children", var4);
-      var1.put("name", this.getName());
-      return super.addDataToJSONObject(var1);
+      jsonObject.put("children", var4);
+      jsonObject.put("name", this.getName());
+      return super.addDataToJSONObject(jsonObject);
    }
 
    public List<Setting> method18635() {

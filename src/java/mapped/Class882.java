@@ -61,7 +61,7 @@ public abstract class Class882 extends Entity {
       Entity var3 = this.method3460();
       if (var3 != null) {
          for (Entity var5 : this.world
-            .method6770(this, this.method3389().method19661(this.method3433()).method19664(1.0), var0 -> !var0.isSpectator() && var0.method3139())) {
+            .method6770(this, this.getBoundingBox().method19661(this.method3433()).method19664(1.0), var0 -> !var0.isSpectator() && var0.method3139())) {
             if (var5.method3415() == var3.method3415()) {
                return false;
             }
@@ -75,17 +75,17 @@ public abstract class Class882 extends Entity {
       Vector3d var11 = new Vector3d(var1, var3, var5)
          .method11333()
          .method11339(
-            this.field5054.nextGaussian() * 0.0075F * (double)var8,
-            this.field5054.nextGaussian() * 0.0075F * (double)var8,
-            this.field5054.nextGaussian() * 0.0075F * (double)var8
+            this.rand.nextGaussian() * 0.0075F * (double)var8,
+            this.rand.nextGaussian() * 0.0075F * (double)var8,
+            this.rand.nextGaussian() * 0.0075F * (double)var8
          )
          .method11344((double)var7);
       this.method3434(var11);
       float var12 = MathHelper.method37766(method3234(var11));
-      this.field5031 = (float)(MathHelper.method37814(var11.field18048, var11.field18050) * 180.0F / (float)Math.PI);
-      this.field5032 = (float)(MathHelper.method37814(var11.field18049, (double)var12) * 180.0F / (float)Math.PI);
-      this.field5033 = this.field5031;
-      this.field5034 = this.field5032;
+      this.rotationYaw = (float)(MathHelper.method37814(var11.field18048, var11.field18050) * 180.0F / (float)Math.PI);
+      this.rotationPitch = (float)(MathHelper.method37814(var11.field18049, (double)var12) * 180.0F / (float)Math.PI);
+      this.prevRotationYaw = this.rotationYaw;
+      this.prevRotationPitch = this.rotationPitch;
    }
 
    public void method3463(Entity var1, float var2, float var3, float var4, float var5, float var6) {
@@ -119,13 +119,13 @@ public abstract class Class882 extends Entity {
    @Override
    public void method3325(double var1, double var3, double var5) {
       this.method3435(var1, var3, var5);
-      if (this.field5034 == 0.0F && this.field5033 == 0.0F) {
+      if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F) {
          float var9 = MathHelper.method37766(var1 * var1 + var5 * var5);
-         this.field5032 = (float)(MathHelper.method37814(var3, (double)var9) * 180.0F / (float)Math.PI);
-         this.field5031 = (float)(MathHelper.method37814(var1, var5) * 180.0F / (float)Math.PI);
-         this.field5034 = this.field5032;
-         this.field5033 = this.field5031;
-         this.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.field5031, this.field5032);
+         this.rotationPitch = (float)(MathHelper.method37814(var3, (double)var9) * 180.0F / (float)Math.PI);
+         this.rotationYaw = (float)(MathHelper.method37814(var1, var5) * 180.0F / (float)Math.PI);
+         this.prevRotationPitch = this.rotationPitch;
+         this.prevRotationYaw = this.rotationYaw;
+         this.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
       }
    }
 
@@ -141,8 +141,8 @@ public abstract class Class882 extends Entity {
    public void method3468() {
       Vector3d var3 = this.method3433();
       float var4 = MathHelper.method37766(method3234(var3));
-      this.field5032 = method3469(this.field5034, (float)(MathHelper.method37814(var3.field18049, (double)var4) * 180.0F / (float)Math.PI));
-      this.field5031 = method3469(this.field5033, (float)(MathHelper.method37814(var3.field18048, var3.field18050) * 180.0F / (float)Math.PI));
+      this.rotationPitch = method3469(this.prevRotationPitch, (float)(MathHelper.method37814(var3.field18049, (double)var4) * 180.0F / (float)Math.PI));
+      this.rotationYaw = method3469(this.prevRotationYaw, (float)(MathHelper.method37814(var3.field18048, var3.field18050) * 180.0F / (float)Math.PI));
    }
 
    public static float method3469(float var0, float var1) {

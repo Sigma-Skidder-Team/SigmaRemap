@@ -25,17 +25,17 @@ public class BlockFlyAACMode extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23523 = mc.player.inventory.currentItem;
-        this.field23520 = mc.player.field5031;
-        this.field23521 = mc.player.field5032;
+        this.field23520 = mc.player.rotationYaw;
+        this.field23521 = mc.player.rotationPitch;
         this.field23522 = (int) mc.player.getPosY();
         this.field23525 = -1;
         ((BlockFly) this.method16004()).field23884 = -1;
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         if (this.field23523 != -1 && this.method16004().getStringSettingValueByName("ItemSpoof").equals("Switch")) {
             mc.player.inventory.currentItem = this.field23523;
         }
@@ -51,7 +51,7 @@ public class BlockFlyAACMode extends Module {
 
     @EventTarget
     @LowerPriority
-    public void method16202(Class4402 var1) {
+    public void method16202(SendPacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
             if (var1.method13932() instanceof Class5539 && ((BlockFly) this.method16004()).field23884 >= 0) {
                 var1.method13900(true);
@@ -60,9 +60,9 @@ public class BlockFlyAACMode extends Module {
     }
 
     @EventTarget
-    public void method16203(Class4396 var1) {
+    public void method16203(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            Packet var4 = var1.method13898();
+            Packet var4 = var1.getPacket();
             if (var4 instanceof Class5473) {
                 this.field23525 = 0;
             }
@@ -72,7 +72,7 @@ public class BlockFlyAACMode extends Module {
     @EventTarget
     public void method16204(Class4417 var1) {
         if (this.isEnabled()) {
-            if (mc.player.field5036 && Client.getInstance().getModuleManager().getModuleByClass(Class5363.class).isEnabled()) {
+            if (mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Class5363.class).isEnabled()) {
                 var1.method13966(true);
             }
         }
@@ -92,7 +92,7 @@ public class BlockFlyAACMode extends Module {
 
             ((BlockFly) this.method16004()).method16741(var1);
             if (this.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
-                if (!mc.player.field5036 || mc.player.field4984 == 0.0F && mc.player.field4982 == 0.0F) {
+                if (!mc.player.onGround || mc.player.field4984 == 0.0F && mc.player.field4982 == 0.0F) {
                     if (this.field23524 >= 0) {
                         this.field23524++;
                     }
@@ -105,7 +105,7 @@ public class BlockFlyAACMode extends Module {
                     }
                 }
 
-                if (mc.player.field4984 == 0.0F && mc.player.field4982 == 0.0F || mc.player.field5037) {
+                if (mc.player.field4984 == 0.0F && mc.player.field4982 == 0.0F || mc.player.collidedHorizontally) {
                     this.field23525 = 0;
                 }
 
@@ -137,7 +137,7 @@ public class BlockFlyAACMode extends Module {
                 }
             }
 
-            if (this.getBooleanValueFromSetttingName("Haphe (AACAP)") && !mc.player.field4981 && !mc.player.field5036) {
+            if (this.getBooleanValueFromSetttingName("Haphe (AACAP)") && !mc.player.field4981 && !mc.player.onGround) {
                 if (var3.getFace() == Direction.field673) {
                     return false;
                 }
@@ -203,7 +203,7 @@ public class BlockFlyAACMode extends Module {
     private void method16210(Class4399 var1) {
         if (this.isEnabled()) {
             if (!var1.method13921()) {
-                if (Class9567.method37087() && mc.player.field5036 && this.getBooleanValueFromSetttingName("Haphe (AACAP)") && !mc.player.field4981) {
+                if (Class9567.method37087() && mc.player.onGround && this.getBooleanValueFromSetttingName("Haphe (AACAP)") && !mc.player.field4981) {
                     mc.player.method2914();
                 }
 

@@ -29,7 +29,7 @@ public class Class5185 extends Module {
 
     @EventTarget
     public void method16142(TickEvent var1) {
-        this.field23490 = Class9217.method34567(mc.player.field5031, mc.player.field5032, 200.0F);
+        this.field23490 = Class9217.method34567(mc.player.rotationYaw, mc.player.rotationPitch, 200.0F);
         if (this.field23491 != null && this.field23492 != null) {
             Client.getInstance()
                     .getNotificationManager()
@@ -49,7 +49,7 @@ public class Class5185 extends Module {
                 double var8 = (double) var5.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
                 double var10 = (double) var5.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                 Class9388 var12 = new Class9388(var6, var8, var10, var6 + 1.0, var8 + 1.0, var10 + 1.0);
-                Class3192.method11459(var12, var4);
+                RenderUtil.method11459(var12, var4);
                 GL11.glEnable(2929);
                 GL11.glPopMatrix();
             }

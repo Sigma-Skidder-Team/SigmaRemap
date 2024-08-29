@@ -18,7 +18,7 @@ public class Class9388 {
       this.field43574 = var11;
    }
 
-   public Class9388(Class6488 var1) {
+   public Class9388(AxisAlignedBB var1) {
       this.field43569 = var1.field28449;
       this.field43570 = var1.field28450;
       this.field43571 = var1.field28451;

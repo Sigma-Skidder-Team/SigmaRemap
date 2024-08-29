@@ -411,7 +411,7 @@ public class Class7819 {
          BlockPos var5 = var3.method8339(1);
 
          for (Direction var7 : Class76.field161) {
-            List var8 = this.field33538.<EnderCrystalEntity>method7182(EnderCrystalEntity.class, new Class6488(var5.method8350(var7, 2)));
+            List var8 = this.field33538.<EnderCrystalEntity>method7182(EnderCrystalEntity.class, new AxisAlignedBB(var5.method8350(var7, 2)));
             if (var8.isEmpty()) {
                return;
             }

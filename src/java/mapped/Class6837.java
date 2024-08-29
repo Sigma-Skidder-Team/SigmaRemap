@@ -28,7 +28,7 @@ public class Class6837 extends Class6829 {
    }
 
    private boolean method20820(Vector3d var1, int var2) {
-      Class6488 var5 = this.field29724.method3389();
+      AxisAlignedBB var5 = this.field29724.getBoundingBox();
 
       for (int var6 = 1; var6 < var2; var6++) {
          var5 = var5.method19669(var1);

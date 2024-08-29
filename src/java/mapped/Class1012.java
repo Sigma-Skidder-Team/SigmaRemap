@@ -6,9 +6,9 @@ import java.util.UUID;
 import java.util.function.Predicate;
 
 public class Class1012 extends Class1013 implements Class1011 {
-   private static final Class9289<Boolean> field5656 = Class9361.<Boolean>method35441(Class1012.class, Class7784.field33398);
-   private static final Class9289<Integer> field5657 = Class9361.<Integer>method35441(Class1012.class, Class7784.field33391);
-   private static final Class9289<Integer> field5658 = Class9361.<Integer>method35441(Class1012.class, Class7784.field33391);
+   private static final DataParameter<Boolean> field5656 = EntityDataManager.<Boolean>method35441(Class1012.class, Class7784.field33398);
+   private static final DataParameter<Integer> field5657 = EntityDataManager.<Integer>method35441(Class1012.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5658 = EntityDataManager.<Integer>method35441(Class1012.class, Class7784.field33391);
    public static final Predicate<Class880> field5659 = var0 -> {
       EntityType var3 = var0.getType();
       return var3 == EntityType.field41074 || var3 == EntityType.field41071 || var3 == EntityType.field41033;
@@ -55,11 +55,11 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5656, false);
-      this.field5063.method35442(field5657, Class112.field400.method309());
-      this.field5063.method35442(field5658, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5656, false);
+      this.dataManager.register(field5657, Class112.field400.method309());
+      this.dataManager.register(field5658, 0);
    }
 
    @Override
@@ -87,7 +87,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    @Override
    public Class9455 method4241() {
       if (!this.method4369()) {
-         if (this.field5054.nextInt(3) != 0) {
+         if (this.rand.nextInt(3) != 0) {
             return Sounds.field27249;
          } else {
             return this.method4393() && this.method3042() < 10.0F ? Sounds.field27257 : Sounds.field27254;
@@ -115,7 +115,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    @Override
    public void method2871() {
       super.method2871();
-      if (!this.world.field9020 && this.field5662 && !this.field5663 && !this.method4772() && this.field5036) {
+      if (!this.world.field9020 && this.field5662 && !this.field5663 && !this.method4772() && this.onGround) {
          this.field5663 = true;
          this.field5664 = 0.0F;
          this.field5665 = 0.0F;
@@ -141,7 +141,7 @@ public class Class1012 extends Class1013 implements Class1011 {
          if (!this.method3254()) {
             if ((this.field5662 || this.field5663) && this.field5663) {
                if (this.field5664 == 0.0F) {
-                  this.method2863(Sounds.field27255, this.method3099(), (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+                  this.method2863(Sounds.field27255, this.method3099(), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                }
 
                this.field5665 = this.field5664;
@@ -159,8 +159,8 @@ public class Class1012 extends Class1013 implements Class1011 {
                   Vector3d var5 = this.method3433();
 
                   for (int var6 = 0; var6 < var4; var6++) {
-                     float var7 = (this.field5054.nextFloat() * 2.0F - 1.0F) * this.method3429() * 0.5F;
-                     float var8 = (this.field5054.nextFloat() * 2.0F - 1.0F) * this.method3429() * 0.5F;
+                     float var7 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.method3429() * 0.5F;
+                     float var8 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.method3429() * 0.5F;
                      this.world
                         .method6746(
                            Class7940.field34099,
@@ -225,7 +225,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.8F;
    }
 
@@ -283,7 +283,7 @@ public class Class1012 extends Class1013 implements Class1011 {
                   var5.method32182(1);
                }
 
-               if (this.field5054.nextInt(3) != 0) {
+               if (this.rand.nextInt(3) != 0) {
                   this.world.method6786(this, (byte)6);
                } else {
                   this.method4399(var1);
@@ -372,17 +372,17 @@ public class Class1012 extends Class1013 implements Class1011 {
 
    @Override
    public int method4348() {
-      return this.field5063.<Integer>method35445(field5658);
+      return this.dataManager.<Integer>method35445(field5658);
    }
 
    @Override
    public void method4347(int var1) {
-      this.field5063.method35446(field5658, var1);
+      this.dataManager.method35446(field5658, var1);
    }
 
    @Override
    public void method4346() {
-      this.method4347(field5666.method29319(this.field5054));
+      this.method4347(field5666.method29319(this.rand));
    }
 
    @Nullable
@@ -397,11 +397,11 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    public Class112 method4382() {
-      return Class112.method315(this.field5063.<Integer>method35445(field5657));
+      return Class112.method315(this.dataManager.<Integer>method35445(field5657));
    }
 
    public void method4383(Class112 var1) {
-      this.field5063.method35446(field5657, var1.method309());
+      this.dataManager.method35446(field5657, var1.method309());
    }
 
    public Class1012 method4389(ServerWorld var1, Class1045 var2) {
@@ -416,7 +416,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    public void method4385(boolean var1) {
-      this.field5063.method35446(field5656, var1);
+      this.dataManager.method35446(field5656, var1);
    }
 
    @Override
@@ -440,7 +440,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    public boolean method4387() {
-      return this.field5063.<Boolean>method35445(field5656);
+      return this.dataManager.<Boolean>method35445(field5656);
    }
 
    @Override
@@ -471,7 +471,7 @@ public class Class1012 extends Class1013 implements Class1011 {
 
    // $VF: synthetic method
    public static Random method4391(Class1012 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    public class Class2773<T extends Class880> extends Class2770<T> {

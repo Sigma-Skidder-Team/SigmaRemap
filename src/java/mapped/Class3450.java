@@ -5,14 +5,14 @@ import javax.annotation.Nullable;
 
 public class Class3450 extends Class3194 implements Class3196, Class3449 {
    private static String[] field18470;
-   public static final Class6408 field19264 = Block.method11539(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
+   public static final VoxelShape field19264 = Block.method11539(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
 
    public Class3450(AbstractBlock var1) {
       super(var1);
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19264;
    }
 
@@ -65,7 +65,7 @@ public class Class3450 extends Class3194 implements Class3196, Class3449 {
    }
 
    @Override
-   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Class7631 var4) {
+   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Fluid var4) {
       return false;
    }
 

@@ -187,8 +187,8 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public Class6806<Class7631> method7090() {
-      return new Class6806<Class7631>(var0 -> var0 == Class9479.field44064, this.method7072());
+   public Class6806<Fluid> method7090() {
+      return new Class6806<Fluid>(var0 -> var0 == Class9479.field44064, this.method7072());
    }
 
    @Override

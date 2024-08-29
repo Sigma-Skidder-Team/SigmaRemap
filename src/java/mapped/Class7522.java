@@ -30,7 +30,7 @@ public class Class7522 {
          && (double)var1.method24357() < this.method24533();
    }
 
-   public boolean method24525(Class6488 var1) {
+   public boolean method24525(AxisAlignedBB var1) {
       return var1.field28452 > this.method24530()
          && var1.field28449 < this.method24532()
          && var1.field28454 > this.method24531()
@@ -41,7 +41,7 @@ public class Class7522 {
       return this.method24528(var1.getPosX(), var1.getPosZ());
    }
 
-   public Class6408 method24527() {
+   public VoxelShape method24527() {
       return this.field32266.method28118();
    }
 

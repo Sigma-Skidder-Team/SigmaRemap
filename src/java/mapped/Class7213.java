@@ -5,11 +5,11 @@ import org.apache.commons.lang3.mutable.MutableObject;
 public final class Class7213 {
    private static String[] field31017;
    private final Class4193 field31018;
-   private final MutableObject<Class6408> field31019;
+   private final MutableObject<VoxelShape> field31019;
    private final int field31020;
    private final int field31021;
 
-   public Class7213(Class4193 var1, MutableObject<Class6408> var2, int var3, int var4) {
+   public Class7213(Class4193 var1, MutableObject<VoxelShape> var2, int var3, int var4) {
       this.field31018 = var1;
       this.field31019 = var2;
       this.field31020 = var3;

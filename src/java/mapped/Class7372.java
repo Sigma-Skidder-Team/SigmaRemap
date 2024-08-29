@@ -28,7 +28,7 @@ public class Class7372 extends Class7361 {
       double var3 = this.field31552 != null
          ? this.field31552.method11343(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ())
          : 0.0;
-      if (var3 < 100.0 || var3 > 22500.0 || this.field31519.field5037 || this.field31519.field5038) {
+      if (var3 < 100.0 || var3 > 22500.0 || this.field31519.collidedHorizontally || this.field31519.collidedVertically) {
          this.method23377();
       }
    }

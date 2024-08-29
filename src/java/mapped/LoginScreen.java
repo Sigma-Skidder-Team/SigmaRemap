@@ -84,20 +84,20 @@ public class LoginScreen extends Class4247 {
       super.method13224();
       super.method13225();
       byte var4 = 28;
-      Class3192.method11454((float)(this.field20895 + var4), (float)(this.field20896 + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
+      RenderUtil.method11454((float)(this.field20895 + var4), (float)(this.field20896 + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
       Class9507 var5 = Client.getInstance().getNetworkManager().method30452();
       if (var5 != null) {
          this.field21355.method13288(var5.method36702());
          if (var5.method36702()) {
-            Class3192.method11424(
+            RenderUtil.method11424(
                (float)(this.field20895 + 330), (float)(this.field20896 + 255), 114.0F, 40.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.04F)
             );
          }
 
          if (var5.method36701() != null) {
-            Class3192.method11419((float)(this.field20895 + 316), (float)(this.field20896 + 255), 190.0F, 50.0F);
-            Class3192.method11455((float)(this.field20895 + 316), (float)(this.field20896 + 255), 190.0F, 190.0F, var5.method36701());
-            Class3192.method11422();
+            RenderUtil.method11419((float)(this.field20895 + 316), (float)(this.field20896 + 255), 190.0F, 50.0F);
+            RenderUtil.method11455((float)(this.field20895 + 316), (float)(this.field20896 + 255), 190.0F, 190.0F, var5.method36701());
+            RenderUtil.method11422();
          }
       }
 

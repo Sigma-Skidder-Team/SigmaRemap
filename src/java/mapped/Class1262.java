@@ -312,7 +312,7 @@ public class Class1262 extends Class1193 {
          );
          var16.add(
             String.format(
-               Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", var11, var12, MathHelper.method37792(var10.field5031), MathHelper.method37792(var10.field5032)
+               Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", var11, var12, MathHelper.method37792(var10.rotationYaw), MathHelper.method37792(var10.rotationPitch)
             )
          );
          if (this.field6665.world != null) {

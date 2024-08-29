@@ -129,13 +129,13 @@ public class Class4322 extends Class4307 {
       this.field21088.method13278(var4);
       this.field21089.method13277(var4);
       this.field21089.method13278(var4);
-      Rectangle var5 = Class3192.method11413(Class3192.method11414(this.field21088), this.field21088.method13273(), this.field21088.method13275());
+      Rectangle var5 = RenderUtil.method11413(RenderUtil.method11414(this.field21088), this.field21088.method13273(), this.field21088.method13275());
       if (this.field21089.method13287()) {
-         var5 = Class3192.method11413(Class3192.method11414(this.field21089), this.field21089.method13273(), this.field21089.method13275());
+         var5 = RenderUtil.method11413(RenderUtil.method11414(this.field21089), this.field21089.method13273(), this.field21089.method13275());
       }
 
       if ((double)var4 > 0.1) {
-         Class3192.method11465(
+         RenderUtil.method11465(
             (int)((double)this.field20897 - var5.getWidth()) / 2,
             (int)((double)this.field20898 - var5.getHeight()) / 2,
             (int)var5.getWidth(),
@@ -156,20 +156,20 @@ public class Class4322 extends Class4307 {
          int var10 = var8 + Math.max(ResourceRegistry.JelloMediumFont40.method23942(welcomeBackSign), ResourceRegistry.field38860.method23942(username)) + var9 * 10;
          int var11 = (this.field20897 - var10) / 2;
          int var12 = (this.field20898 - var8 * 2) / 2;
-         Class3192.method11426(
+         RenderUtil.method11426(
             0.0F,
             0.0F,
             (float)this.field20897,
             (float)this.field20898,
             Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.45F * this.field21093.calcPercent())
          );
-         Class3192.method11454(
+         RenderUtil.method11454(
             (float)(var11 + 20), (float)(var12 + 40), (float)(var8 + 30), (float)(var8 + 30), ResourcesDecrypter.sigmaPNG, this.field21093.calcPercent()
          );
          int var13 = 165;
          int var14 = 54;
-         Class3192.method11439(ResourceRegistry.JelloMediumFont40, (float)(var11 + var13), (float)(var12 + var14), welcomeBackSign, ClientColors.LIGHT_GREYISH_BLUE.getColor);
-         Class3192.method11439(ResourceRegistry.field38860, (float)(var11 + var13), (float)(var12 + var14 + 45), username, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+         RenderUtil.method11439(ResourceRegistry.JelloMediumFont40, (float)(var11 + var13), (float)(var12 + var14), welcomeBackSign, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+         RenderUtil.method11439(ResourceRegistry.field38860, (float)(var11 + var13), (float)(var12 + var14 + 45), username, ClientColors.LIGHT_GREYISH_BLUE.getColor);
       }
 
       GL11.glPushMatrix();
@@ -195,7 +195,7 @@ public class Class4322 extends Class4307 {
       GL11.glTranslatef((float)this.field20897 / 2.0F, (float)this.field20897 / 2.0F, 0.0F);
       GL11.glScalef(1.0F + var7 * 0.2F, 1.0F + var7 * 0.2F, 0.0F);
       GL11.glTranslatef((float)(-this.field20897) / 2.0F, (float)(-this.field20897) / 2.0F, 0.0F);
-      Class3192.method11448(
+      RenderUtil.method11448(
          (float)this.field21083,
          (float)this.field21082,
          (float)(this.method13267() * 2),

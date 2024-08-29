@@ -3,7 +3,7 @@ package mapped;
 import javax.annotation.Nullable;
 
 public abstract class Class1045 extends Class1046 {
-   private static final Class9289<Boolean> field5800 = Class9361.<Boolean>method35441(Class1045.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5800 = EntityDataManager.<Boolean>method35441(Class1045.class, Class7784.field33398);
    public int field5801;
    public int field5802;
    public int field5803;
@@ -19,7 +19,7 @@ public abstract class Class1045 extends Class1046 {
       }
 
       Class5097 var8 = (Class5097)var4;
-      if (var8.method15582() && var8.method15580() > 0 && this.field5054.nextFloat() <= var8.method15583()) {
+      if (var8.method15582() && var8.method15580() > 0 && this.rand.nextFloat() <= var8.method15583()) {
          this.method4770(-24000);
       }
 
@@ -31,9 +31,9 @@ public abstract class Class1045 extends Class1046 {
    public abstract Class1045 method4389(ServerWorld var1, Class1045 var2);
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5800, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5800, false);
    }
 
    public boolean method4700() {
@@ -44,7 +44,7 @@ public abstract class Class1045 extends Class1046 {
       if (!this.world.field9020) {
          return this.field5801;
       } else {
-         return !this.field5063.<Boolean>method35445(field5800) ? 1 : -1;
+         return !this.dataManager.<Boolean>method35445(field5800) ? 1 : -1;
       }
    }
 
@@ -77,7 +77,7 @@ public abstract class Class1045 extends Class1046 {
       int var4 = this.field5801;
       this.field5801 = var1;
       if (var4 < 0 && var1 >= 0 || var4 >= 0 && var1 < 0) {
-         this.field5063.method35446(field5800, var1 < 0);
+         this.dataManager.method35446(field5800, var1 < 0);
          this.method4679();
       }
    }
@@ -97,7 +97,7 @@ public abstract class Class1045 extends Class1046 {
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       if (field5800.equals(var1)) {
          this.method3385();
       }

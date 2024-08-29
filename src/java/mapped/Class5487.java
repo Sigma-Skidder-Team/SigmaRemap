@@ -47,8 +47,8 @@ public class Class5487 implements Packet<Class5116> {
          var1.getPosX(),
          var1.getPosY(),
          var1.getPosZ(),
-         var1.field5032,
-         var1.field5031,
+         var1.rotationPitch,
+         var1.rotationYaw,
          var1.getType(),
          var2,
          var1.method3433()
@@ -62,8 +62,8 @@ public class Class5487 implements Packet<Class5116> {
          (double)var4.getX(),
          (double)var4.getY(),
          (double)var4.getZ(),
-         var1.field5032,
-         var1.field5031,
+         var1.rotationPitch,
+         var1.rotationYaw,
          var2,
          var3,
          var1.method3433()

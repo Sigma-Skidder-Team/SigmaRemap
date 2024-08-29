@@ -362,7 +362,7 @@ public class EntityType<T extends Entity> {
    private String field41122;
    private ITextComponent field41123;
    private ResourceLocation field41124;
-   private final Class8847 field41125;
+   private final EntitySize field41125;
 
    private static <T extends Entity> EntityType<T> method33197(String var0, Class8878<T> var1) {
       return Registry.<EntityType<T>>method9194(Registry.ENTITY_TYPE, var0, var1.method32309(var0));
@@ -384,7 +384,7 @@ public class EntityType<T extends Entity> {
       boolean var5,
       boolean var6,
       ImmutableSet<Block> var7,
-      Class8847 var8,
+      EntitySize var8,
       int var9,
       int var10
    ) {
@@ -425,8 +425,8 @@ public class EntityType<T extends Entity> {
          if (!var7) {
             var12 = 0.0;
          } else {
-            var11.method3215((double)var5.getX() + 0.5, (double)(var5.getY() + 1), (double)var5.getZ() + 0.5);
-            var12 = method33203(var1, var5, var8, var11.method3389());
+            var11.setPosition((double)var5.getX() + 0.5, (double)(var5.getY() + 1), (double)var5.getZ() + 0.5);
+            var12 = method33203(var1, var5, var8, var11.getBoundingBox());
          }
 
          var11.method3273(
@@ -438,8 +438,8 @@ public class EntityType<T extends Entity> {
          );
          if (var11 instanceof Class1006) {
             Class1006 var14 = (Class1006)var11;
-            var14.field4967 = var14.field5031;
-            var14.field4965 = var14.field5031;
+            var14.field4967 = var14.rotationYaw;
+            var14.field4965 = var14.rotationYaw;
             var14.method4276(var1, var1.method6807(var14.getPosition()), var6, (Class5093)null, var2);
             var14.method4237();
          }
@@ -455,14 +455,14 @@ public class EntityType<T extends Entity> {
       }
    }
 
-   public static double method33203(Class1662 var0, BlockPos var1, boolean var2, Class6488 var3) {
-      Class6488 var6 = new Class6488(var1);
+   public static double method33203(Class1662 var0, BlockPos var1, boolean var2, AxisAlignedBB var3) {
+      AxisAlignedBB var6 = new AxisAlignedBB(var1);
       if (var2) {
          var6 = var6.method19662(0.0, -1.0, 0.0);
       }
 
       Stream var7 = var0.method7047((Entity)null, var6, var0x -> true);
-      return 1.0 + Class8022.method27437(Class113.field414, var3, var7, !var2 ? -1.0 : -2.0);
+      return 1.0 + VoxelShapes.method27437(Class113.field414, var3, var7, !var2 ? -1.0 : -2.0);
    }
 
    public static void method33204(World var0, PlayerEntity var1, Entity var2, CompoundNBT var3) {
@@ -559,9 +559,9 @@ public class EntityType<T extends Entity> {
       return var1 != null ? var1.method33215(var0) : null;
    }
 
-   public Class6488 method33219(double var1, double var3, double var5) {
+   public AxisAlignedBB method33219(double var1, double var3, double var5) {
       float var9 = this.method33213() / 2.0F;
-      return new Class6488(var1 - (double)var9, var3, var5 - (double)var9, var1 + (double)var9, var3 + (double)this.method33214(), var5 + (double)var9);
+      return new AxisAlignedBB(var1 - (double)var9, var3, var5 - (double)var9, var1 + (double)var9, var3 + (double)this.method33214(), var5 + (double)var9);
    }
 
    public boolean method33220(BlockState var1) {
@@ -578,7 +578,7 @@ public class EntityType<T extends Entity> {
       }
    }
 
-   public Class8847 method33221() {
+   public EntitySize getSize() {
       return this.field41125;
    }
 
@@ -633,7 +633,7 @@ public class EntityType<T extends Entity> {
          && this != field41028;
    }
 
-   public boolean method33228(Class7608<EntityType<?>> var1) {
+   public boolean method33228(ITag<EntityType<?>> var1) {
       return var1.method24917(this);
    }
 }

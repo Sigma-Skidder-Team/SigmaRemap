@@ -147,8 +147,8 @@ public class Class5278 extends Module {
                                 var15 = -256;
                             }
 
-                            Class3192.method11430(var13, var10, var14, var11, 2.25, Class7211.method22645(0, 0, 0, 0), var15);
-                            Class3192.method11430(
+                            RenderUtil.method11430(var13, var10, var14, var11, 2.25, Class7211.method22645(0, 0, 0, 0), var15);
+                            RenderUtil.method11430(
                                     (double) var13 - 0.5,
                                     (double) var10 - 0.5,
                                     (double) var14 + 0.5,
@@ -157,7 +157,7 @@ public class Class5278 extends Module {
                                     Class7211.method22643(0, 0),
                                     Class7211.method22642(0)
                             );
-                            Class3192.method11430(
+                            RenderUtil.method11430(
                                     (double) var13 + 2.5,
                                     (double) var10 + 2.5,
                                     (double) var14 - 2.5,
@@ -166,7 +166,7 @@ public class Class5278 extends Module {
                                     Class7211.method22643(0, 0),
                                     Class7211.method22642(0)
                             );
-                            Class3192.method11430(
+                            RenderUtil.method11430(
                                     var13 - 5.0F,
                                     var10 - 1.0F,
                                     var13 - 1.0F,
@@ -181,7 +181,7 @@ public class Class5278 extends Module {
                             float var19 = var16 * 5.0F * 0.01F;
                             Color var20 = method16516(var17, var18, var19).brighter();
                             float var21 = var11 + (var10 - var11) * var16 * 5.0F * 0.01F;
-                            Class3192.method11426(var13 - 4.0F, var11 - 1.0F, var13 - 2.0F, var21, var20.getRGB());
+                            RenderUtil.method11426(var13 - 4.0F, var11 - 1.0F, var13 - 2.0F, var21, var20.getRGB());
                             if ((int) Class9784.method38568(var16 * 5.0F, 1.0) != 100 && var5) {
                                 RenderSystem.pushMatrix();
                                 RenderSystem.scalef(2.0F, 2.0F, 2.0F);
@@ -214,26 +214,26 @@ public class Class5278 extends Module {
         for (Object var11 : mc.world.method6835()) {
             if (var11 instanceof PlayerEntity && !(var11 instanceof ClientPlayerEntity)) {
                 PlayerEntity var12 = (PlayerEntity) var11;
-                double var13 = var12.field5049 + (var12.getPosY() - var12.field5049) * (double) var9 - var5;
-                double var15 = var12.field5048 + (var12.getPosX() + 10.0 - (var12.field5048 + 10.0)) * (double) var9 - var3;
-                double var17 = var12.field5050 + (var12.getPosZ() + 10.0 - (var12.field5050 + 10.0)) * (double) var9 - var7;
+                double var13 = var12.lastTickPosY + (var12.getPosY() - var12.lastTickPosY) * (double) var9 - var5;
+                double var15 = var12.lastTickPosX + (var12.getPosX() + 10.0 - (var12.lastTickPosX + 10.0)) * (double) var9 - var3;
+                double var17 = var12.lastTickPosZ + (var12.getPosZ() + 10.0 - (var12.lastTickPosZ + 10.0)) * (double) var9 - var7;
                 var13 += (double) var12.method3430() + 0.2;
-                double[] var19 = Class3192.method11482(var15, var13, var17);
-                double var20 = Math.abs(Class3192.method11482(var15, var13 + 1.0, var17)[1] - Class3192.method11482(var15, var13, var17)[1]);
+                double[] var19 = RenderUtil.method11482(var15, var13, var17);
+                double var20 = Math.abs(RenderUtil.method11482(var15, var13 + 1.0, var17)[1] - RenderUtil.method11482(var15, var13, var17)[1]);
                 if (!field23730 && var19 == null) {
                     throw new AssertionError();
                 }
 
                 if (var19[2] >= 0.0 && var19[2] < 1.0) {
                     field23728.put(var12, new double[]{var19[0], var19[1], var20, var19[2]});
-                    var13 = var12.field5049 + (var12.getPosY() - 2.2 - (var12.field5049 - 2.2)) * (double) var9 - var5;
+                    var13 = var12.lastTickPosY + (var12.getPosY() - 2.2 - (var12.lastTickPosY - 2.2)) * (double) var9 - var5;
                     field23729.put(
                             var12,
                             new double[]{
-                                    Class3192.method11482(var15, var13, var17)[0],
-                                    Class3192.method11482(var15, var13, var17)[1],
+                                    RenderUtil.method11482(var15, var13, var17)[0],
+                                    RenderUtil.method11482(var15, var13, var17)[1],
                                     var20,
-                                    Class3192.method11482(var15, var13, var17)[2]
+                                    RenderUtil.method11482(var15, var13, var17)[2]
                             }
                     );
                 }

@@ -23,7 +23,7 @@ public class Class5317 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         field23862 = 0;
     }
 
@@ -53,7 +53,7 @@ public class Class5317 extends Module {
             }
 
             boolean var4 = !this.getBooleanValueFromSetttingName("KillAura") || KillAura.field23948 != null || KillAura.field23949 != null;
-            if (mc.player.field5036 && mc.player.field5038 && var4) {
+            if (mc.player.onGround && mc.player.collidedVertically && var4) {
                 field23862++;
                 mc.player.field6120 = 0.0;
                 if (field23862 != 2) {

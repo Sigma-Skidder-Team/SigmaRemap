@@ -29,7 +29,7 @@ public class Class4491 extends Class4457 {
 
       for (int var4 = 0; var4 < var0.length; var4++) {
          var3[var4] = new Class8634(
-            (Class7608<Item>)null,
+            (ITag<Item>)null,
             var0[var4].method11581(),
             Class8840.field39936,
             Class8840.field39936,

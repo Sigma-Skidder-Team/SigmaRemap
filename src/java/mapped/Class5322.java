@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -17,7 +17,7 @@ public class Class5322 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23868 = 0;
     }
 
@@ -45,7 +45,7 @@ public class Class5322 extends Module {
                 }
 
                 mc.player.field6120 = 0.0;
-                if (mc.player.field5055 <= 1) {
+                if (mc.player.ticksExisted <= 1) {
                     this.field23869.clear();
                 }
 
@@ -63,9 +63,9 @@ public class Class5322 extends Module {
     }
 
     @EventTarget
-    public void method16716(Class4396 var1) {
+    public void method16716(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            Packet var4 = var1.method13898();
+            Packet var4 = var1.getPacket();
             if (var4 instanceof Class5554) {
                 Class5554 var5 = (Class5554) var4;
                 var1.method13900(true);

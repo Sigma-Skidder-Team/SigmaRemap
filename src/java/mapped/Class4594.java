@@ -2,10 +2,10 @@ package mapped;
 
 public class Class4594 extends Class4566 {
    private static String[] field22086;
-   private final Class7631 field22087;
+   private final Fluid field22087;
    public boolean field22088;
 
-   public Class4594(ClientWorld var1, double var2, double var4, double var6, Class7631 var8) {
+   public Class4594(ClientWorld var1, double var2, double var4, double var6, Fluid var8) {
       super(var1, var2, var4, var6);
       this.method14519(0.01F, 0.01F);
       this.field22057 = 0.06F;

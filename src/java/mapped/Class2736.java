@@ -32,7 +32,7 @@ public class Class2736 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if (!this.field17258.method3329()) {
+      if (!this.field17258.isBeingRidden()) {
          if (!this.field17264) {
             if (this.field17265 && this.field17258.method3021() >= 100) {
                return false;
@@ -65,7 +65,7 @@ public class Class2736 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      return !this.field17258.method4230().method21664() && !this.field17258.method3329();
+      return !this.field17258.method4230().method21664() && !this.field17258.isBeingRidden();
    }
 
    @Override

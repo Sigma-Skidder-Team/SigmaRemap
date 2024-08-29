@@ -76,7 +76,7 @@ public class Class7517 {
       );
    }
 
-   private static int method24505(Class6619 var0, Pair<ResourceLocation, Either<Class7744, Class7608<Class7744>>> var1, int var2, boolean var3) throws CommandSyntaxException {
+   private static int method24505(Class6619 var0, Pair<ResourceLocation, Either<Class7744, ITag<Class7744>>> var1, int var2, boolean var3) throws CommandSyntaxException {
       if (var2 != 0) {
          long var6 = var0.method20172().method6783() + (long)var2;
          ResourceLocation var8 = (ResourceLocation)var1.getFirst();

@@ -5,8 +5,8 @@ public interface Class6466<T> {
 
    T method19645(PacketBuffer var1);
 
-   default Class9289<T> method19647(int var1) {
-      return new Class9289<T>(var1, this);
+   default DataParameter<T> method19647(int var1) {
+      return new DataParameter<T>(var1, this);
    }
 
    T method19644(T var1);

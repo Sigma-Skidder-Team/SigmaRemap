@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 public class Block extends Class3390 implements Class3303 {
    public static final Logger field18609 = LogManager.getLogger();
    public static final Class2352<BlockState> field18610 = new Class2352<BlockState>();
-   private static final LoadingCache<Class6408, Boolean> field18611 = CacheBuilder.newBuilder().maximumSize(512L).weakKeys().build(new Class4562());
+   private static final LoadingCache<VoxelShape, Boolean> field18611 = CacheBuilder.newBuilder().maximumSize(512L).weakKeys().build(new Class4562());
    public final Class9348<Block, BlockState> field18612;
    private BlockState field18613;
    private String field18614;
@@ -51,22 +51,22 @@ public class Block extends Class3390 implements Class3303 {
    }
 
    public static BlockState method11538(BlockState var0, BlockState var1, World var2, BlockPos var3) {
-      Class6408 var6 = Class8022.method27434(var0.method23414(var2, var3), var1.method23414(var2, var3), Class9477.field44039)
-         .method19517((double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
+      VoxelShape var6 = VoxelShapes.method27434(var0.method23414(var2, var3), var1.method23414(var2, var3), IBooleanFunction.field44039)
+         .withOffset((double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
 
       for (Entity var8 : var2.method7181((Entity)null, var6.method19514())) {
-         double var9 = Class8022.method27437(Class113.field414, var8.method3389().method19667(0.0, 1.0, 0.0), Stream.<Class6408>of(var6), -1.0);
+         double var9 = VoxelShapes.method27437(Class113.field414, var8.getBoundingBox().method19667(0.0, 1.0, 0.0), Stream.<VoxelShape>of(var6), -1.0);
          var8.method2793(var8.getPosX(), var8.getPosY() + 1.0 + var9, var8.getPosZ());
       }
 
       return var1;
    }
 
-   public static Class6408 method11539(double var0, double var2, double var4, double var6, double var8, double var10) {
-      return Class8022.method27427(var0 / 16.0, var2 / 16.0, var4 / 16.0, var6 / 16.0, var8 / 16.0, var10 / 16.0);
+   public static VoxelShape method11539(double var0, double var2, double var4, double var6, double var8, double var10) {
+      return VoxelShapes.method27427(var0 / 16.0, var2 / 16.0, var4 / 16.0, var6 / 16.0, var8 / 16.0, var10 / 16.0);
    }
 
-   public boolean method11540(Class7608<Block> var1) {
+   public boolean method11540(ITag<Block> var1) {
       return var1.method24917(this);
    }
 
@@ -137,9 +137,9 @@ public class Block extends Class3390 implements Class3303 {
                   Object2ByteLinkedOpenHashMap var10 = field18616.get();
                   byte var11 = var10.getAndMoveToFirst(var9);
                   if (var11 == 127) {
-                     Class6408 var12 = var0.method23388(var1, var2, var3);
-                     Class6408 var13 = var7.method23388(var1, var6, var3.method536());
-                     boolean var14 = Class8022.method27435(var12, var13, Class9477.field44041);
+                     VoxelShape var12 = var0.method23388(var1, var2, var3);
+                     VoxelShape var13 = var7.method23388(var1, var6, var3.method536());
+                     boolean var14 = VoxelShapes.compare(var12, var13, IBooleanFunction.field44041);
                      if (var10.size() == 2048) {
                         var10.removeLastByte();
                      }
@@ -170,12 +170,12 @@ public class Block extends Class3390 implements Class3303 {
       return var2 == Direction.DOWN && var5.method23446(Class7645.field32813) ? false : var5.method23455(var0, var1, var2, Class2156.field14141);
    }
 
-   public static boolean method11549(Class6408 var0, Direction var1) {
-      Class6408 var4 = var0.method19526(var1);
+   public static boolean method11549(VoxelShape var0, Direction var1) {
+      VoxelShape var4 = var0.method19526(var1);
       return method11550(var4);
    }
 
-   public static boolean method11550(Class6408 var0) {
+   public static boolean method11550(VoxelShape var0) {
       return (Boolean)field18611.getUnchecked(var0);
    }
 

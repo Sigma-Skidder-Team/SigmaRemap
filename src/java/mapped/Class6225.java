@@ -30,7 +30,7 @@ public class Class6225 extends Class6218 {
 
       BoatEntity var16 = new BoatEntity(var6, var7, var9 + var14, var11);
       var16.method4171(this.field27721);
-      var16.field5031 = var5.method551();
+      var16.rotationYaw = var5.method551();
       var6.method6916(var16);
       var2.method32182(1);
       return var2;

@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public abstract class AbstractArrowEntity extends Class882 {
-   private static final Class9289<Byte> field5097 = Class9361.<Byte>method35441(AbstractArrowEntity.class, Class7784.field33390);
-   private static final Class9289<Byte> field5098 = Class9361.<Byte>method35441(AbstractArrowEntity.class, Class7784.field33390);
+   private static final DataParameter<Byte> field5097 = EntityDataManager.<Byte>method35441(AbstractArrowEntity.class, Class7784.field33390);
+   private static final DataParameter<Byte> field5098 = EntityDataManager.<Byte>method35441(AbstractArrowEntity.class, Class7784.field33390);
    private BlockState field5099;
    public boolean field5100;
    public int field5101;
@@ -28,7 +28,7 @@ public abstract class AbstractArrowEntity extends Class882 {
 
    public AbstractArrowEntity(EntityType<? extends AbstractArrowEntity> var1, double var2, double var4, double var6, World var8) {
       this(var1, var8);
-      this.method3215(var2, var4, var6);
+      this.setPosition(var2, var4, var6);
    }
 
    public AbstractArrowEntity(EntityType<? extends AbstractArrowEntity> var1, Class880 var2, World var3) {
@@ -45,7 +45,7 @@ public abstract class AbstractArrowEntity extends Class882 {
 
    @Override
    public boolean method3291(double var1) {
-      double var5 = this.method3389().method19675() * 10.0;
+      double var5 = this.getBoundingBox().method19675() * 10.0;
       if (Double.isNaN(var5)) {
          var5 = 1.0;
       }
@@ -55,9 +55,9 @@ public abstract class AbstractArrowEntity extends Class882 {
    }
 
    @Override
-   public void method2850() {
-      this.field5063.method35442(field5097, (byte)0);
-      this.field5063.method35442(field5098, (byte)0);
+   public void registerData() {
+      this.dataManager.register(field5097, (byte)0);
+      this.dataManager.register(field5098, (byte)0);
    }
 
    @Override
@@ -68,7 +68,7 @@ public abstract class AbstractArrowEntity extends Class882 {
 
    @Override
    public void method3131(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
-      this.method3215(var1, var3, var5);
+      this.setPosition(var1, var3, var5);
       this.method3214(var7, var8);
    }
 
@@ -83,22 +83,22 @@ public abstract class AbstractArrowEntity extends Class882 {
       super.tick();
       boolean var3 = this.method3493();
       Vector3d var4 = this.method3433();
-      if (this.field5034 == 0.0F && this.field5033 == 0.0F) {
+      if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F) {
          float var5 = MathHelper.method37766(method3234(var4));
-         this.field5031 = (float)(MathHelper.method37814(var4.field18048, var4.field18050) * 180.0F / (float)Math.PI);
-         this.field5032 = (float)(MathHelper.method37814(var4.field18049, (double)var5) * 180.0F / (float)Math.PI);
-         this.field5033 = this.field5031;
-         this.field5034 = this.field5032;
+         this.rotationYaw = (float)(MathHelper.method37814(var4.field18048, var4.field18050) * 180.0F / (float)Math.PI);
+         this.rotationPitch = (float)(MathHelper.method37814(var4.field18049, (double)var5) * 180.0F / (float)Math.PI);
+         this.prevRotationYaw = this.rotationYaw;
+         this.prevRotationPitch = this.rotationPitch;
       }
 
       BlockPos var32 = this.getPosition();
       BlockState var6 = this.world.getBlockState(var32);
       if (!var6.isAir() && !var3) {
-         Class6408 var7 = var6.method23414(this.world, var32);
+         VoxelShape var7 = var6.method23414(this.world, var32);
          if (!var7.method19516()) {
             Vector3d var8 = this.getPositionVec();
 
-            for (Class6488 var23 : var7.method19521()) {
+            for (AxisAlignedBB var23 : var7.method19521()) {
                if (var23.method19668(var32).method19673(var8)) {
                   this.field5100 = true;
                   break;
@@ -132,7 +132,7 @@ public abstract class AbstractArrowEntity extends Class882 {
             var34 = ((RayTraceResult)var35).method31419();
          }
 
-         while (!this.field5041) {
+         while (!this.removed) {
             EntityRayTraceResult var36 = this.method3479(var33, var34);
             if (var36 != null) {
                var35 = var36;
@@ -149,7 +149,7 @@ public abstract class AbstractArrowEntity extends Class882 {
 
             if (var35 != null && !var3) {
                this.method3464((RayTraceResult)var35);
-               this.field5078 = true;
+               this.isAirBorne = true;
             }
 
             if (var36 == null || this.method3489() <= 0) {
@@ -183,14 +183,14 @@ public abstract class AbstractArrowEntity extends Class882 {
          double var20 = this.getPosZ() + var14;
          float var22 = MathHelper.method37766(method3234(var4));
          if (!var3) {
-            this.field5031 = (float)(MathHelper.method37814(var10, var14) * 180.0F / (float)Math.PI);
+            this.rotationYaw = (float)(MathHelper.method37814(var10, var14) * 180.0F / (float)Math.PI);
          } else {
-            this.field5031 = (float)(MathHelper.method37814(-var10, -var14) * 180.0F / (float)Math.PI);
+            this.rotationYaw = (float)(MathHelper.method37814(-var10, -var14) * 180.0F / (float)Math.PI);
          }
 
-         this.field5032 = (float)(MathHelper.method37814(var12, (double)var22) * 180.0F / (float)Math.PI);
-         this.field5032 = method3469(this.field5034, this.field5032);
-         this.field5031 = method3469(this.field5033, this.field5031);
+         this.rotationPitch = (float)(MathHelper.method37814(var12, (double)var22) * 180.0F / (float)Math.PI);
+         this.rotationPitch = method3469(this.prevRotationPitch, this.rotationPitch);
+         this.rotationYaw = method3469(this.prevRotationYaw, this.rotationYaw);
          float var27 = 0.99F;
          float var28 = 0.05F;
          if (this.method3250()) {
@@ -208,20 +208,20 @@ public abstract class AbstractArrowEntity extends Class882 {
             this.method3435(var37.field18048, var37.field18049 - 0.05F, var37.field18050);
          }
 
-         this.method3215(var16, var18, var20);
+         this.setPosition(var16, var18, var20);
          this.method3240();
       }
    }
 
    private boolean method3472() {
-      return this.field5100 && this.world.method7051(new Class6488(this.getPositionVec(), this.getPositionVec()).method19664(0.06));
+      return this.field5100 && this.world.method7051(new AxisAlignedBB(this.getPositionVec(), this.getPositionVec()).method19664(0.06));
    }
 
    private void method3473() {
       this.field5100 = false;
       Vector3d var3 = this.method3433();
       this.method3434(
-         var3.method11347((double)(this.field5054.nextFloat() * 0.2F), (double)(this.field5054.nextFloat() * 0.2F), (double)(this.field5054.nextFloat() * 0.2F))
+         var3.method11347((double)(this.rand.nextFloat() * 0.2F), (double)(this.rand.nextFloat() * 0.2F), (double)(this.rand.nextFloat() * 0.2F))
       );
       this.field5104 = 0;
    }
@@ -275,7 +275,7 @@ public abstract class AbstractArrowEntity extends Class882 {
       }
 
       if (this.method3487()) {
-         long var9 = (long)this.field5054.nextInt(var6 / 2 + 2);
+         long var9 = (long)this.rand.nextInt(var6 / 2 + 2);
          var6 = (int)Math.min(var9 + (long)var6, 2147483647L);
       }
 
@@ -299,8 +299,8 @@ public abstract class AbstractArrowEntity extends Class882 {
       if (!var4.method2741(var8, (float)var6)) {
          var4.method2966(var12);
          this.method3434(this.method3433().method11344(-0.1));
-         this.field5031 += 180.0F;
-         this.field5033 += 180.0F;
+         this.rotationYaw += 180.0F;
+         this.prevRotationYaw += 180.0F;
          if (!this.world.field9020 && this.method3433().method11349() < 1.0E-7) {
             if (this.field5102 == Class2192.field14332) {
                this.method3303(this.method3480(), 0.1F);
@@ -350,7 +350,7 @@ public abstract class AbstractArrowEntity extends Class882 {
             }
          }
 
-         this.method2863(this.field5107, 1.0F, 1.2F / (this.field5054.nextFloat() * 0.2F + 0.9F));
+         this.method2863(this.field5107, 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
          if (this.method3489() <= 0) {
             this.method2904();
          }
@@ -365,7 +365,7 @@ public abstract class AbstractArrowEntity extends Class882 {
       this.method3434(var4);
       Vector3d var5 = var4.method11333().method11344(0.05F);
       this.method3446(this.getPosX() - var5.field18048, this.getPosY() - var5.field18049, this.getPosZ() - var5.field18050);
-      this.method2863(this.method3477(), 1.0F, 1.2F / (this.field5054.nextFloat() * 0.2F + 0.9F));
+      this.method2863(this.method3477(), 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
       this.field5100 = true;
       this.field5103 = 7;
       this.method3484(false);
@@ -388,7 +388,7 @@ public abstract class AbstractArrowEntity extends Class882 {
 
    @Nullable
    public EntityRayTraceResult method3479(Vector3d var1, Vector3d var2) {
-      return Class9456.method36387(this.world, this, var1, var2, this.method3389().method19661(this.method3433()).method19664(1.0), this::method3467);
+      return Class9456.method36387(this.world, this, var1, var2, this.getBoundingBox().method19661(this.method3433()).method19664(1.0), this::method3467);
    }
 
    @Override
@@ -495,7 +495,7 @@ public abstract class AbstractArrowEntity extends Class882 {
    }
 
    @Override
-   public float method3181(Class2090 var1, Class8847 var2) {
+   public float method3181(Pose var1, EntitySize var2) {
       return 0.13F;
    }
 
@@ -504,36 +504,36 @@ public abstract class AbstractArrowEntity extends Class882 {
    }
 
    public void method3485(byte var1) {
-      this.field5063.method35446(field5098, var1);
+      this.dataManager.method35446(field5098, var1);
    }
 
    private void method3486(int var1, boolean var2) {
-      byte var5 = this.field5063.<Byte>method35445(field5097);
+      byte var5 = this.dataManager.<Byte>method35445(field5097);
       if (!var2) {
-         this.field5063.method35446(field5097, (byte)(var5 & ~var1));
+         this.dataManager.method35446(field5097, (byte)(var5 & ~var1));
       } else {
-         this.field5063.method35446(field5097, (byte)(var5 | var1));
+         this.dataManager.method35446(field5097, (byte)(var5 | var1));
       }
    }
 
    public boolean method3487() {
-      byte var3 = this.field5063.<Byte>method35445(field5097);
+      byte var3 = this.dataManager.<Byte>method35445(field5097);
       return false;
    }
 
    public boolean method3488() {
-      byte var3 = this.field5063.<Byte>method35445(field5097);
+      byte var3 = this.dataManager.<Byte>method35445(field5097);
       return false;
    }
 
    public byte method3489() {
-      return this.field5063.<Byte>method35445(field5098);
+      return this.dataManager.<Byte>method35445(field5098);
    }
 
    public void method3490(Class880 var1, float var2) {
       int var5 = Class7858.method26322(Class8122.field34919, var1);
       int var6 = Class7858.method26322(Class8122.field34920, var1);
-      this.method3481((double)(var2 * 2.0F) + this.field5054.nextGaussian() * 0.25 + (double)((float)this.world.method6997().method8905() * 0.11F));
+      this.method3481((double)(var2 * 2.0F) + this.rand.nextGaussian() * 0.25 + (double)((float)this.world.method6997().method8905() * 0.11F));
       if (var5 > 0) {
          this.method3481(this.method3482() + (double)var5 * 0.5 + 0.5);
       }
@@ -552,12 +552,12 @@ public abstract class AbstractArrowEntity extends Class882 {
    }
 
    public void method3492(boolean var1) {
-      this.field5052 = var1;
+      this.noClip = var1;
       this.method3486(2, var1);
    }
 
    public boolean method3493() {
-      return this.world.field9020 ? (this.field5063.<Byte>method35445(field5097) & 2) != 0 : this.field5052;
+      return this.world.field9020 ? (this.dataManager.<Byte>method35445(field5097) & 2) != 0 : this.noClip;
    }
 
    public void method3494(boolean var1) {

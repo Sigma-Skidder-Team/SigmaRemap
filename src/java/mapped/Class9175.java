@@ -34,14 +34,14 @@ public class Class9175 {
 
    private static int method34286(Class6619 var0, ITextComponent var1) throws CommandSyntaxException {
       Entity var4 = var0.method20174();
-      Class8218 var5 = (Class8218)var4.method3344();
+      Class8218 var5 = (Class8218)var4.getTeam();
       if (var5 != null) {
          IFormattableTextComponent var6 = var5.method28569().mergeStyle(field42128);
          List<ServerPlayerEntity> var7 = var0.method20177().getPlayerList().method19488();
 
          for (ServerPlayerEntity var9 : var7) {
             if (var9 != var4) {
-               if (var9.method3344() == var5) {
+               if (var9.getTeam() == var5) {
                   var9.sendMessage(new TranslationTextComponent("chat.type.team.text", var6, var0.method20169(), var1), var4.getUniqueID());
                }
             } else {

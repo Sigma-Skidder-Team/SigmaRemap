@@ -19,7 +19,7 @@ public class Class1109 extends Class1108 {
 
    @Override
    public boolean method4266(Class1662 var1) {
-      return var1.method7050(this) && !var1.method7014(this.method3389());
+      return var1.method7050(this) && !var1.method7014(this.getBoundingBox());
    }
 
    @Override
@@ -62,17 +62,17 @@ public class Class1109 extends Class1108 {
    public void method2914() {
       Vector3d var3 = this.method3433();
       this.method3435(var3.field18048, (double)(this.method3103() + (float)this.method5319() * 0.1F), var3.field18050);
-      this.field5078 = true;
+      this.isAirBorne = true;
    }
 
    @Override
-   public void method3105(Class7608<Class7631> var1) {
+   public void method3105(ITag<Fluid> var1) {
       if (var1 != Class8953.field40470) {
          super.method3105(var1);
       } else {
          Vector3d var4 = this.method3433();
          this.method3435(var4.field18048, (double)(0.22F + (float)this.method5319() * 0.05F), var4.field18050);
-         this.field5078 = true;
+         this.isAirBorne = true;
       }
    }
 

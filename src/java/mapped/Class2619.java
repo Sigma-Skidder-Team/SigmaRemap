@@ -33,7 +33,7 @@ public class Class2619 extends Class2595 {
       if (!this.field16903
          && !this.field16901.method4395()
          && !this.field16901.method4296()
-         && this.field16901.method3389().method19670(this.field16902.method3389())) {
+         && this.field16901.getBoundingBox().method19670(this.field16902.getBoundingBox())) {
          this.field16903 = this.field16901.method4404(this.field16902);
       }
    }

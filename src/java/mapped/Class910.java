@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.util.UUID;
 
-public final class Class910 implements Class909 {
+public final class Class910 implements ICommandSource {
    private static String[] field5190;
 
    @Override

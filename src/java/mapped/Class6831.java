@@ -13,8 +13,8 @@ public class Class6831 extends Class6829 {
 
    @Override
    public void method20810() {
-      if (this.field29717.field5037) {
-         this.field29717.field5031 += 180.0F;
+      if (this.field29717.collidedHorizontally) {
+         this.field29717.rotationYaw += 180.0F;
          this.field29716 = 0.1F;
       }
 
@@ -27,21 +27,21 @@ public class Class6831 extends Class6829 {
       var5 = (float)((double)var5 * var8);
       var6 = (double) MathHelper.method37765(var3 * var3 + var5 * var5);
       double var10 = (double) MathHelper.method37765(var3 * var3 + var5 * var5 + var4 * var4);
-      float var12 = this.field29717.field5031;
+      float var12 = this.field29717.rotationYaw;
       float var13 = (float) MathHelper.method37814((double)var5, (double)var3);
-      float var14 = MathHelper.method37792(this.field29717.field5031 + 90.0F);
+      float var14 = MathHelper.method37792(this.field29717.rotationYaw + 90.0F);
       float var15 = MathHelper.method37792(var13 * (180.0F / (float)Math.PI));
-      this.field29717.field5031 = MathHelper.method37798(var14, var15, 4.0F) - 90.0F;
-      this.field29717.field4965 = this.field29717.field5031;
-      if (!(MathHelper.method37795(var12, this.field29717.field5031) < 3.0F)) {
+      this.field29717.rotationYaw = MathHelper.method37798(var14, var15, 4.0F) - 90.0F;
+      this.field29717.field4965 = this.field29717.rotationYaw;
+      if (!(MathHelper.method37795(var12, this.field29717.rotationYaw) < 3.0F)) {
          this.field29716 = MathHelper.method37797(this.field29716, 0.2F, 0.025F);
       } else {
          this.field29716 = MathHelper.method37797(this.field29716, 1.8F, 0.005F * (1.8F / this.field29716));
       }
 
       float var16 = (float)(-(MathHelper.method37814((double)(-var4), var6) * 180.0F / (float)Math.PI));
-      this.field29717.field5032 = var16;
-      float var17 = this.field29717.field5031 + 90.0F;
+      this.field29717.rotationPitch = var16;
+      float var17 = this.field29717.rotationYaw + 90.0F;
       double var18 = (double)(this.field29716 * MathHelper.cos(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var3 / var10);
       double var20 = (double)(this.field29716 * MathHelper.sin(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var5 / var10);
       double var22 = (double)(this.field29716 * MathHelper.sin(var16 * (float) (Math.PI / 180.0))) * Math.abs((double)var4 / var10);

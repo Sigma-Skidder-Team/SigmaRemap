@@ -159,7 +159,7 @@ public class Class4305 implements Class4328 {
             }
         } catch (ConcurrentModificationException var7) {
             var7.printStackTrace();
-            Client.method19919().error("FUCK! Why does this shit happen"); //What happens?
+            Client.getClientLogger().error("FUCK! Why does this shit happen"); //What happens?
         }
 
         this.field20909 = this.field20909 & this.field20908;

@@ -3,12 +3,12 @@ package mapped;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4427;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.unmapped.Class5259;
+import com.mentalfrostbyte.jello.unmapped.NCPPhase;
 
-public class Class5336 extends Class5325 {
+public class Class5336 extends ModuleWithModuleSettings {
     public Class5336() {
         super(
-                ModuleCategory.MOVEMENT, "Phase", "Allows you to go through blocks", new Class5270(), new Class5259(), new Class5284(), new Class5307(), new Class5320()
+                ModuleCategory.MOVEMENT, "Phase", "Allows you to go through blocks", new Class5270(), new NCPPhase(), new Class5284(), new Class5307(), new Class5320()
         );
     }
 

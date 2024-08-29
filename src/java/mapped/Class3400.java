@@ -5,9 +5,9 @@ import com.google.common.base.Predicates;
 public class Class3400 extends Block {
    public static final Class8553 field19053 = Class3198.field18484;
    public static final Class8551 field19054 = Class8820.field39689;
-   public static final Class6408 field19055 = Block.method11539(0.0, 0.0, 0.0, 16.0, 13.0, 16.0);
-   public static final Class6408 field19056 = Block.method11539(4.0, 13.0, 4.0, 12.0, 16.0, 12.0);
-   public static final Class6408 field19057 = Class8022.method27431(field19055, field19056);
+   public static final VoxelShape field19055 = Block.method11539(0.0, 0.0, 0.0, 16.0, 13.0, 16.0);
+   public static final VoxelShape field19056 = Block.method11539(4.0, 13.0, 4.0, 12.0, 16.0, 12.0);
+   public static final VoxelShape field19057 = VoxelShapes.method27431(field19055, field19056);
    private static Class9803 field19058;
 
    public Class3400(AbstractBlock var1) {
@@ -21,7 +21,7 @@ public class Class3400 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return !var1.<Boolean>method23463(field19054) ? field19055 : field19057;
    }
 

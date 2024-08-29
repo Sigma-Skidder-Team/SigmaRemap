@@ -17,8 +17,8 @@ public class Class5536 implements Packet<Class5116> {
       this.field24578 = var1.getPosX();
       this.field24579 = var1.getPosY();
       this.field24580 = var1.getPosZ();
-      this.field24581 = var1.field5031;
-      this.field24582 = var1.field5032;
+      this.field24581 = var1.rotationYaw;
+      this.field24582 = var1.rotationPitch;
    }
 
    @Override

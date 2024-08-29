@@ -25,7 +25,7 @@ public class Class7552 {
       return this;
    }
 
-   public Class7552 method24702(Class7608<EntityType<?>> var1) {
+   public Class7552 method24702(ITag<EntityType<?>> var1) {
       this.field32377 = Class8924.method32628(var1);
       return this;
    }

@@ -32,7 +32,7 @@ public class Class3704<E extends Class1006> extends Class3676<E> {
    public void method12502(ServerWorld var1, E var2, long var3) {
       var2.method2992().method21406(Class8830.field39825, new Class7865(this.method12583((E)var2), true));
       var2.method4228().method20814(-this.field19765, 0.0F);
-      var2.field5031 = MathHelper.method37796(var2.field5031, var2.field4967, 0.0F);
+      var2.rotationYaw = MathHelper.method37796(var2.rotationYaw, var2.field4967, 0.0F);
    }
 
    private boolean method12581(E var1) {

@@ -34,8 +34,8 @@ public class Class9140 {
          var0 *= var6;
          var1 *= var6;
          var2 *= var6;
-         float var7 = MathHelper.sin(field41996.player.field5031 * (float) (Math.PI / 180.0));
-         float var8 = MathHelper.cos(field41996.player.field5031 * (float) (Math.PI / 180.0));
+         float var7 = MathHelper.sin(field41996.player.rotationYaw * (float) (Math.PI / 180.0));
+         float var8 = MathHelper.cos(field41996.player.rotationYaw * (float) (Math.PI / 180.0));
          field42005 += (double)(var0 * var8 - var2 * var7);
          field42006 += (double)var1;
          field42007 += (double)(var2 * var8 + var0 * var7);
@@ -52,7 +52,7 @@ public class Class9140 {
             var9 = 3.0F;
          }
 
-         if (!field41996.player.field5036) {
+         if (!field41996.player.onGround) {
             var9 *= 0.5F;
          }
 
@@ -70,14 +70,14 @@ public class Class9140 {
             field42006 -= 0.02;
          }
 
-         if (field41996.player.field5037
+         if (field41996.player.collidedHorizontally
             && field41996.player.method3224(field42005, field42006 + 0.6F - field41996.player.getPosY() + var5, field42007)) {
             field42006 = 0.3F;
          }
       }
    }
 
-   public static boolean method34125(Class6488 var0, Class8649 var1) {
+   public static boolean method34125(AxisAlignedBB var0, Class8649 var1) {
       int var4 = MathHelper.floor(var0.field28449);
       int var5 = MathHelper.method37774(var0.field28452);
       int var6 = MathHelper.floor(var0.field28450);
@@ -115,6 +115,6 @@ public class Class9140 {
    }
 
    public static boolean method34129() {
-      return method34125(field41996.player.method3389().method19662(0.0, -0.4F, 0.0).method19660(0.001, 0.001, 0.001), Class8649.field38941);
+      return method34125(field41996.player.getBoundingBox().method19662(0.0, -0.4F, 0.0).method19660(0.001, 0.001, 0.001), Class8649.field38941);
    }
 }

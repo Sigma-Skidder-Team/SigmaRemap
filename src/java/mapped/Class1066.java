@@ -1,7 +1,7 @@
 package mapped;
 
 public abstract class Class1066 extends AbstractHorseEntity {
-   private static final Class9289<Boolean> field5877 = Class9361.<Boolean>method35441(Class1066.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5877 = EntityDataManager.<Boolean>method35441(Class1066.class, Class7784.field33398);
 
    public Class1066(EntityType<? extends Class1066> var1, World var2) {
       super(var1, var2);
@@ -14,9 +14,9 @@ public abstract class Class1066 extends AbstractHorseEntity {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5877, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5877, false);
    }
 
    public static Class7037 method4926() {
@@ -24,11 +24,11 @@ public abstract class Class1066 extends AbstractHorseEntity {
    }
 
    public boolean method4927() {
-      return this.field5063.<Boolean>method35445(field5877);
+      return this.dataManager.<Boolean>method35445(field5877);
    }
 
    public void method4928(boolean var1) {
-      this.field5063.method35446(field5877, var1);
+      this.dataManager.method35446(field5877, var1);
    }
 
    @Override
@@ -122,7 +122,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
             return ActionResultType.method9002(this.world.field9020);
          }
 
-         if (this.method3329()) {
+         if (this.isBeingRidden()) {
             return super.method4285(var1, var2);
          }
       }
@@ -163,7 +163,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
    }
 
    public void method4895() {
-      this.method2863(Sounds.field26510, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+      this.method2863(Sounds.field26510, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
    }
 
    public int method4897() {

@@ -38,7 +38,7 @@ public class Class2755 extends Class2754 {
       Class880 var3 = this.field17295.method4232();
       if (var3 != null && var3.method3066()) {
          double var4 = this.field17295.method3433().field18049;
-         return (!(var4 * var4 < 0.05F) || !(Math.abs(this.field17295.field5032) < 15.0F) || !this.field17295.field5036) && !this.field17295.method5131();
+         return (!(var4 * var4 < 0.05F) || !(Math.abs(this.field17295.rotationPitch) < 15.0F) || !this.field17295.onGround) && !this.field17295.method5131();
       } else {
          return false;
       }
@@ -84,22 +84,22 @@ public class Class2755 extends Class2754 {
 
       if (!this.field17295.method5131()) {
          Vector3d var4 = this.field17295.method3433();
-         if (var4.field18049 * var4.field18049 < 0.03F && this.field17295.field5032 != 0.0F) {
-            this.field17295.field5032 = MathHelper.method37828(this.field17295.field5032, 0.0F, 0.2F);
+         if (var4.field18049 * var4.field18049 < 0.03F && this.field17295.rotationPitch != 0.0F) {
+            this.field17295.rotationPitch = MathHelper.method37828(this.field17295.rotationPitch, 0.0F, 0.2F);
          } else {
             double var5 = Math.sqrt(Entity.method3234(var4));
             double var7 = Math.signum(-var4.field18049) * Math.acos(var5 / var4.method11348()) * 180.0F / (float)Math.PI;
-            this.field17295.field5032 = (float)var7;
+            this.field17295.rotationPitch = (float)var7;
          }
       }
 
       if (var3 != null && this.field17295.method3275(var3) <= 2.0F) {
          this.field17295.method3114(var3);
-      } else if (this.field17295.field5032 > 0.0F
-         && this.field17295.field5036
+      } else if (this.field17295.rotationPitch > 0.0F
+         && this.field17295.onGround
          && (float)this.field17295.method3433().field18049 != 0.0F
          && this.field17295.world.getBlockState(this.field17295.getPosition()).method23448(Blocks.SNOW)) {
-         this.field17295.field5032 = 60.0F;
+         this.field17295.rotationPitch = 60.0F;
          this.field17295.method4233((Class880)null);
          Class1095.method5170(this.field17295, true);
       }

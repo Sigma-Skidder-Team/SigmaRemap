@@ -7,7 +7,7 @@ public class Class1089 extends Class1018 {
    public float field5967;
    public float field5968;
    public float field5969 = 1.0F;
-   public int field5970 = this.field5054.nextInt(6000) + 6000;
+   public int field5970 = this.rand.nextInt(6000) + 6000;
    public boolean field5971;
 
    public Class1089(EntityType<? extends Class1089> var1, World var2) {
@@ -28,7 +28,7 @@ public class Class1089 extends Class1018 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return !this.method3005() ? var2.field39969 * 0.92F : var2.field39969 * 0.85F;
    }
 
@@ -41,23 +41,23 @@ public class Class1089 extends Class1018 {
       super.method2871();
       this.field5968 = this.field5965;
       this.field5967 = this.field5966;
-      this.field5966 = (float)((double)this.field5966 + (double)(!this.field5036 ? 4 : -1) * 0.3);
+      this.field5966 = (float)((double)this.field5966 + (double)(!this.onGround ? 4 : -1) * 0.3);
       this.field5966 = MathHelper.method37777(this.field5966, 0.0F, 1.0F);
-      if (!this.field5036 && this.field5969 < 1.0F) {
+      if (!this.onGround && this.field5969 < 1.0F) {
          this.field5969 = 1.0F;
       }
 
       this.field5969 = (float)((double)this.field5969 * 0.9);
       Vector3d var3 = this.method3433();
-      if (!this.field5036 && var3.field18049 < 0.0) {
+      if (!this.onGround && var3.field18049 < 0.0) {
          this.method3434(var3.method11347(1.0, 0.6, 1.0));
       }
 
       this.field5965 = this.field5965 + this.field5969 * 2.0F;
       if (!this.world.field9020 && this.method3066() && !this.method3005() && !this.method5070() && --this.field5970 <= 0) {
-         this.method2863(Sounds.field26452, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+         this.method2863(Sounds.field26452, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
          this.method3300(Items.field37904);
-         this.field5970 = this.field5054.nextInt(6000) + 6000;
+         this.field5970 = this.rand.nextInt(6000) + 6000;
       }
    }
 
@@ -128,7 +128,7 @@ public class Class1089 extends Class1018 {
       float var5 = MathHelper.cos(this.field4965 * (float) (Math.PI / 180.0));
       float var6 = 0.1F;
       float var7 = 0.0F;
-      var1.method3215(this.getPosX() + (double)(0.1F * var4), this.method3440(0.5) + var1.method2894() + 0.0, this.getPosZ() - (double)(0.1F * var5));
+      var1.setPosition(this.getPosX() + (double)(0.1F * var4), this.method3440(0.5) + var1.method2894() + 0.0, this.getPosZ() - (double)(0.1F * var5));
       if (var1 instanceof Class880) {
          ((Class880)var1).field4965 = this.field4965;
       }

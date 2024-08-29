@@ -130,8 +130,8 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
-      return Class8022.method27425();
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+      return VoxelShapes.method27425();
    }
 
    @Override
@@ -145,7 +145,7 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public Class7631 method11533(Class1660 var1, BlockPos var2, BlockState var3) {
+   public Fluid method11533(Class1660 var1, BlockPos var2, BlockState var3) {
       var1.method6725(var2, Blocks.AIR.method11579(), 11);
       return Class9479.field44066;
    }

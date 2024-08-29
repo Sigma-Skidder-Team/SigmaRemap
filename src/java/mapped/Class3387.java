@@ -5,9 +5,9 @@ import javax.annotation.Nullable;
 public class Class3387 extends Class3386 implements Class3207 {
    private static String[] field18993;
    public static final Class8551 field18995 = Class8820.field39710;
-   public static final Class6408 field18996 = Block.method11539(6.5, 0.0, 6.5, 9.5, 16.0, 9.5);
-   public static final Class6408 field18997 = Block.method11539(6.5, 6.5, 0.0, 9.5, 9.5, 16.0);
-   public static final Class6408 field18998 = Block.method11539(0.0, 6.5, 6.5, 16.0, 9.5, 9.5);
+   public static final VoxelShape field18996 = Block.method11539(6.5, 0.0, 6.5, 9.5, 16.0, 9.5);
+   public static final VoxelShape field18997 = Block.method11539(6.5, 6.5, 0.0, 9.5, 9.5, 16.0);
+   public static final VoxelShape field18998 = Block.method11539(0.0, 6.5, 6.5, 16.0, 9.5, 9.5);
 
    public Class3387(AbstractBlock var1) {
       super(var1);
@@ -15,7 +15,7 @@ public class Class3387 extends Class3386 implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       switch (Class9607.field44929[var1.<Class113>method23463(field18994).ordinal()]) {
          case 1:
          default:

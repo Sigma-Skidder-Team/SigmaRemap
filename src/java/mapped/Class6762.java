@@ -11,7 +11,7 @@ public class Class6762 extends Class6764 {
    private static String[] field29471;
    public float field29472;
    private final Long2ObjectMap<Class2163> field29473 = new Long2ObjectOpenHashMap();
-   private final Object2BooleanMap<Class6488> field29474 = new Object2BooleanOpenHashMap();
+   private final Object2BooleanMap<AxisAlignedBB> field29474 = new Object2BooleanOpenHashMap();
 
    @Override
    public void method20613(Class1667 var1, Class1006 var2) {
@@ -67,7 +67,7 @@ public class Class6762 extends Class6764 {
       BlockPos var11 = this.field29476.getPosition();
       Class2163 var7 = this.method20632(this.field29476, var11.getX(), var4, var11.getZ());
       if (this.field29476.method4223(var7) < 0.0F) {
-         Class6488 var8 = this.field29476.method3389();
+         AxisAlignedBB var8 = this.field29476.getBoundingBox();
          if (this.method20622(var3.method8373(var8.field28449, (double)var4, var8.field28451))
             || this.method20622(var3.method8373(var8.field28449, (double)var4, var8.field28454))
             || this.method20622(var3.method8373(var8.field28452, (double)var4, var8.field28451))
@@ -102,7 +102,7 @@ public class Class6762 extends Class6764 {
       Class2163 var7 = this.method20632(this.field29476, var2.field30847, var2.field30848 + 1, var2.field30849);
       Class2163 var8 = this.method20632(this.field29476, var2.field30847, var2.field30848, var2.field30849);
       if (this.field29476.method4223(var7) >= 0.0F && var8 != Class2163.field14206) {
-         var6 = MathHelper.method37767(Math.max(1.0F, this.field29476.field5051));
+         var6 = MathHelper.method37767(Math.max(1.0F, this.field29476.stepHeight));
       }
 
       double var9 = method20626(this.field29475, new BlockPos(var2.field30847, var2.field30848, var2.field30849));
@@ -176,7 +176,7 @@ public class Class6762 extends Class6764 {
          (double)var1.field30848 - this.field29476.getPosY(),
          (double)var1.field30849 - this.field29476.getPosZ()
       );
-      Class6488 var5 = this.field29476.method3389();
+      AxisAlignedBB var5 = this.field29476.getBoundingBox();
       int var6 = MathHelper.method37774(var4.method11348() / var5.method19675());
       var4 = var4.method11344((double)(1.0F / (float)var6));
 
@@ -192,7 +192,7 @@ public class Class6762 extends Class6764 {
 
    public static double method20626(Class1665 var0, BlockPos var1) {
       BlockPos var4 = var1.method8313();
-      Class6408 var5 = var0.getBlockState(var4).method23414(var0, var4);
+      VoxelShape var5 = var0.getBlockState(var4).method23414(var0, var4);
       return (double)var4.getY() + (!var5.method19516() ? var5.method19513(Class113.field414) : 0.0);
    }
 
@@ -229,7 +229,7 @@ public class Class6762 extends Class6764 {
                   && this.field29476.method3429() < 1.0F) {
                   double var19 = (double)(var1 - var7.method539()) + 0.5;
                   double var21 = (double)(var3 - var7.method541()) + 0.5;
-                  Class6488 var23 = new Class6488(
+                  AxisAlignedBB var23 = new AxisAlignedBB(
                      var19 - var17,
                      method20626(this.field29475, var12.method8373(var19, (double)(var2 + 1), var21)) + 0.001,
                      var21 - var17,
@@ -313,7 +313,7 @@ public class Class6762 extends Class6764 {
       }
    }
 
-   private boolean method20628(Class6488 var1) {
+   private boolean method20628(AxisAlignedBB var1) {
       return (Boolean)this.field29474.computeIfAbsent(var1, var2 -> !this.field29475.method7053(this.field29476, var1));
    }
 

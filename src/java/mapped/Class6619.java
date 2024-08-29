@@ -22,7 +22,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class6619 implements Class6618 {
    public static final SimpleCommandExceptionType field29122 = new SimpleCommandExceptionType(new TranslationTextComponent("permissions.requires.player"));
    public static final SimpleCommandExceptionType field29123 = new SimpleCommandExceptionType(new TranslationTextComponent("permissions.requires.entity"));
-   private final Class909 field29124;
+   private final ICommandSource field29124;
    private final Vector3d field29125;
    private final ServerWorld field29126;
    private final int field29127;
@@ -35,13 +35,13 @@ public class Class6619 implements Class6618 {
    private final Class2062 field29134;
    private final Class8513 field29135;
 
-   public Class6619(Class909 var1, Vector3d var2, Class8513 var3, ServerWorld var4, int var5, String var6, ITextComponent var7, MinecraftServer var8, Entity var9) {
+   public Class6619(ICommandSource var1, Vector3d var2, Class8513 var3, ServerWorld var4, int var5, String var6, ITextComponent var7, MinecraftServer var8, Entity var9) {
       this(var1, var2, var3, var4, var5, var6, var7, var8, var9, false, (var0, var1x, var2x) -> {
       }, Class2062.field13441);
    }
 
    public Class6619(
-      Class909 var1,
+      ICommandSource var1,
       Vector3d var2,
       Class8513 var3,
       ServerWorld var4,

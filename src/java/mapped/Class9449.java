@@ -6,13 +6,13 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 
 public class Class9449 {
-   public static final Class9449 field43899 = new Class9449((Class7608<Block>)null, (Block)null, Class7340.field31445, Class8811.field39645);
-   private final Class7608<Block> field43900;
+   public static final Class9449 field43899 = new Class9449((ITag<Block>)null, (Block)null, Class7340.field31445, Class8811.field39645);
+   private final ITag<Block> field43900;
    private final Block field43901;
    private final Class7340 field43902;
    private final Class8811 field43903;
 
-   public Class9449(Class7608<Block> var1, Block var2, Class7340 var3, Class8811 var4) {
+   public Class9449(ITag<Block> var1, Block var2, Class7340 var3, Class8811 var4) {
       this.field43900 = var1;
       this.field43901 = var2;
       this.field43902 = var3;
@@ -56,7 +56,7 @@ public class Class9449 {
             var5 = Registry.BLOCK.method9184(var6);
          }
 
-         Class7608 var8 = null;
+         ITag var8 = null;
          if (var3.has("tag")) {
             ResourceLocation var7 = new ResourceLocation(JSONUtils.method32763(var3, "tag"));
             var8 = Class9443.method36296().method32657().method27135(var7);

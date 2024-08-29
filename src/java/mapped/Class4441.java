@@ -35,9 +35,9 @@ public abstract class Class4441<T> implements Class4442 {
    public void method14013(Class8297 var1) {
       this.field21601.clear();
       this.method14010();
-      Class7608<T> var4 = Class7609.method24925();
+      ITag<T> var4 = Class7609.method24925();
 
-      Function<ResourceLocation, Class7608<T>> var5 = var2 -> !this.field21601.containsKey(var2) ? null : var4;
+      Function<ResourceLocation, ITag<T>> var5 = var2 -> !this.field21601.containsKey(var2) ? null : var4;
       Function<ResourceLocation, T> var6 = var1x -> this.field21600.method9187(var1x).orElse(null);
       this.field21601
          .forEach(

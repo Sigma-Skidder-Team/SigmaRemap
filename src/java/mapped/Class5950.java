@@ -45,7 +45,7 @@ public class Class5950 extends Class5942<Class967> {
          this.method18480(
             var3,
             var4,
-            var11.<Class82>method23463(Class3250.field18713) == Class82.field205,
+            var11.<Class82>method23463(Class3250.field18713) == Class82.HEAD,
             var11.<Direction>method23463(Class3250.field18484),
             var9,
             var13,

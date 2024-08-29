@@ -15,9 +15,9 @@ public class Class5240 extends Module {
     private void method16337(Class4417 var1) {
         if (this.isEnabled() && mc.player != null) {
             if (!var1.method13967()) {
-                mc.player.field5051 = this.getNumberValueBySettingName("Maximum heigh");
+                mc.player.stepHeight = this.getNumberValueBySettingName("Maximum heigh");
             } else {
-                mc.player.field5051 = 0.5F;
+                mc.player.stepHeight = 0.5F;
             }
         }
     }

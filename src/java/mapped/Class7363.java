@@ -34,9 +34,9 @@ public class Class7363 extends Class7362 {
       } else if (this.field31523 <= 25) {
          Vector3d var4 = new Vector3d(var3.getPosX() - this.field31519.getPosX(), 0.0, var3.getPosZ() - this.field31519.getPosZ()).method11333();
          Vector3d var5 = new Vector3d(
-               (double) MathHelper.sin(this.field31519.field5031 * (float) (Math.PI / 180.0)),
+               (double) MathHelper.sin(this.field31519.rotationYaw * (float) (Math.PI / 180.0)),
                0.0,
-               (double)(-MathHelper.cos(this.field31519.field5031 * (float) (Math.PI / 180.0)))
+               (double)(-MathHelper.cos(this.field31519.rotationYaw * (float) (Math.PI / 180.0)))
             )
             .method11333();
          float var6 = (float)var5.method11334(var4);
@@ -45,7 +45,7 @@ public class Class7363 extends Class7362 {
             double var8 = var3.getPosX() - this.field31519.field5624.getPosX();
             double var10 = var3.getPosZ() - this.field31519.field5624.getPosZ();
             double var12 = MathHelper.method37778(
-               MathHelper.method37793(180.0 - MathHelper.method37814(var8, var10) * 180.0F / (float)Math.PI - (double)this.field31519.field5031), -100.0, 100.0
+               MathHelper.method37793(180.0 - MathHelper.method37814(var8, var10) * 180.0F / (float)Math.PI - (double)this.field31519.rotationYaw), -100.0, 100.0
             );
             this.field31519.field5636 *= 0.8F;
             float var14 = MathHelper.method37766(var8 * var8 + var10 * var10) + 1.0F;
@@ -55,7 +55,7 @@ public class Class7363 extends Class7362 {
             }
 
             this.field31519.field5636 = (float)((double)this.field31519.field5636 + var12 * (double)(0.7F / var14 / var15));
-            this.field31519.field5031 = this.field31519.field5031 + this.field31519.field5636;
+            this.field31519.rotationYaw = this.field31519.rotationYaw + this.field31519.field5636;
          }
       } else {
          this.field31519.method4336().method32671(Class9598.field44903);

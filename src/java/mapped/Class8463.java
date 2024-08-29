@@ -6,12 +6,12 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 
 public class Class8463 {
-   public static final Class8463 field36278 = new Class8463((Class7608<Class7631>)null, (Class7631)null, Class7340.field31445);
-   private final Class7608<Class7631> field36279;
-   private final Class7631 field36280;
+   public static final Class8463 field36278 = new Class8463((ITag<Fluid>)null, (Fluid)null, Class7340.field31445);
+   private final ITag<Fluid> field36279;
+   private final Fluid field36280;
    private final Class7340 field36281;
 
-   public Class8463(Class7608<Class7631> var1, Class7631 var2, Class7340 var3) {
+   public Class8463(ITag<Fluid> var1, Fluid var2, Class7340 var3) {
       this.field36279 = var1;
       this.field36280 = var2;
       this.field36281 = var3;
@@ -21,7 +21,7 @@ public class Class8463 {
       if (this != field36278) {
          if (var1.method6763(var2)) {
             Class7379 var5 = var1.method6739(var2);
-            Class7631 var6 = var5.method23472();
+            Fluid var6 = var5.method23472();
             if (this.field36279 != null && !this.field36279.method24917(var6)) {
                return false;
             } else {
@@ -38,13 +38,13 @@ public class Class8463 {
    public static Class8463 method29763(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
          JsonObject var3 = JSONUtils.method32781(var0, "fluid");
-         Class7631 var4 = null;
+         Fluid var4 = null;
          if (var3.has("fluid")) {
             ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var3, "fluid"));
             var4 = Registry.field16070.method9184(var5);
          }
 
-         Class7608 var7 = null;
+         ITag var7 = null;
          if (var3.has("tag")) {
             ResourceLocation var6 = new ResourceLocation(JSONUtils.method32763(var3, "tag"));
             var7 = Class9443.method36296().method32659().method27135(var6);

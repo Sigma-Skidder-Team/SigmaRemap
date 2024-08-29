@@ -3,7 +3,7 @@ package mapped;
 import java.util.Random;
 
 public class Class1112 extends Class1111 implements Class1008 {
-   private static final Class9289<Boolean> field6091 = Class9361.<Boolean>method35441(Class1112.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field6091 = EntityDataManager.<Boolean>method35441(Class1112.class, Class7784.field33398);
    private int field6092 = 1;
 
    public Class1112(EntityType<? extends Class1112> var1, World var2) {
@@ -22,11 +22,11 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    public boolean method5357() {
-      return this.field5063.<Boolean>method35445(field6091);
+      return this.dataManager.<Boolean>method35445(field6091);
    }
 
    public void method5358(boolean var1) {
-      this.field5063.method35446(field6091, var1);
+      this.dataManager.method35446(field6091, var1);
    }
 
    public int method5359() {
@@ -53,9 +53,9 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field6091, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field6091, false);
    }
 
    public static Class7037 method5360() {
@@ -111,7 +111,7 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return 2.6F;
    }
 }

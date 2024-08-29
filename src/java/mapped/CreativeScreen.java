@@ -24,7 +24,7 @@ public class CreativeScreen extends Class860<Class5820> {
    private Class877 field4782;
    private boolean field4783;
    private boolean field4784;
-   private final Map<ResourceLocation, Class7608<Item>> field4785 = Maps.newTreeMap();
+   private final Map<ResourceLocation, ITag<Item>> field4785 = Maps.newTreeMap();
 
    public CreativeScreen(PlayerEntity var1) {
       super(new Class5820(var1), var1.inventory, StringTextComponent.EMPTY);
@@ -340,7 +340,7 @@ public class CreativeScreen extends Class860<Class5820> {
 
       Class7984<Item> var8 = Class5985.method18561();
       var8.method27137().stream().filter(var7).forEach(var2 -> {
-         Class7608 var5x = this.field4785.put(var2, var8.method27135(var2));
+         ITag var5x = this.field4785.put(var2, var8.method27135(var2));
       });
    }
 

@@ -13,7 +13,7 @@ public class Class907 extends Entity {
    private int field5181 = 40;
    private float field5182 = 2.0F;
    public CompoundNBT field5183;
-   public static final Class9289<BlockPos> field5184 = Class9361.<BlockPos>method35441(Class907.class, Class7784.field33401);
+   public static final DataParameter<BlockPos> field5184 = EntityDataManager.<BlockPos>method35441(Class907.class, Class7784.field33401);
 
    public Class907(EntityType<? extends Class907> var1, World var2) {
       super(var1, var2);
@@ -22,12 +22,12 @@ public class Class907 extends Entity {
    public Class907(World var1, double var2, double var4, double var6, BlockState var8) {
       this(EntityType.field41031, var1);
       this.field5176 = var8;
-      this.field5019 = true;
-      this.method3215(var2, var4 + (double)((1.0F - this.method3430()) / 2.0F), var6);
-      this.method3434(Vector3d.field18047);
-      this.field5025 = var2;
-      this.field5026 = var4;
-      this.field5027 = var6;
+      this.preventEntitySpawning = true;
+      this.setPosition(var2, var4 + (double)((1.0F - this.method3430()) / 2.0F), var6);
+      this.method3434(Vector3d.ZERO);
+      this.prevPosX = var2;
+      this.prevPosY = var4;
+      this.prevPosZ = var6;
       this.method3552(this.getPosition());
    }
 
@@ -37,11 +37,11 @@ public class Class907 extends Entity {
    }
 
    public void method3552(BlockPos var1) {
-      this.field5063.method35446(field5184, var1);
+      this.dataManager.method35446(field5184, var1);
    }
 
    public BlockPos method3553() {
-      return this.field5063.<BlockPos>method35445(field5184);
+      return this.dataManager.<BlockPos>method35445(field5184);
    }
 
    @Override
@@ -50,13 +50,13 @@ public class Class907 extends Entity {
    }
 
    @Override
-   public void method2850() {
-      this.field5063.method35442(field5184, BlockPos.ZERO);
+   public void registerData() {
+      this.dataManager.register(field5184, BlockPos.ZERO);
    }
 
    @Override
    public boolean method3139() {
-      return !this.field5041;
+      return !this.removed;
    }
 
    @Override
@@ -89,7 +89,7 @@ public class Class907 extends Entity {
                BlockRayTraceResult var9 = this.world
                   .method7036(
                      new Class6809(
-                        new Vector3d(this.field5025, this.field5026, this.field5027), this.getPositionVec(), Class2271.field14774, Class1985.field12963, this
+                        new Vector3d(this.prevPosX, this.prevPosY, this.prevPosZ), this.getPositionVec(), Class2271.field14774, Class1985.field12963, this
                      )
                   );
                if (var9.getType() != RayTraceResult.Type.MISS && this.world.method6739(var9.getPos()).method23486(Class8953.field40469)) {
@@ -98,7 +98,7 @@ public class Class907 extends Entity {
                }
             }
 
-            if (!this.field5036 && !var6) {
+            if (!this.onGround && !var6) {
                if (!this.world.field9020 && (this.field5177 > 100 && (var18.getY() < 1 || var18.getY() > 256) || this.field5177 > 600)) {
                   if (this.field5178 && this.world.method6789().method17135(Class5462.field24229)) {
                      this.method3300(var3);
@@ -169,7 +169,7 @@ public class Class907 extends Entity {
       if (this.field5180) {
          int var5 = MathHelper.method37773(var1 - 1.0F);
          if (var5 > 0) {
-            List<Entity> var6 = Lists.newArrayList(this.world.method7181(this, this.method3389()));
+            List<Entity> var6 = Lists.newArrayList(this.world.method7181(this, this.getBoundingBox()));
             boolean var7 = this.field5176.method23446(Class7645.field32765);
             Class8654 var8 = !var7 ? Class8654.field39009 : Class8654.field39008;
 
@@ -177,7 +177,7 @@ public class Class907 extends Entity {
                var10.method2741(var8, (float)Math.min(MathHelper.method37767((float)var5 * this.field5182), this.field5181));
             }
 
-            if (var7 && (double)this.field5054.nextFloat() < 0.05F + (double)var5 * 0.05) {
+            if (var7 && (double)this.rand.nextFloat() < 0.05F + (double)var5 * 0.05) {
                BlockState var11 = Class3218.method11607(this.field5176);
                if (var11 != null) {
                   this.field5176 = var11;

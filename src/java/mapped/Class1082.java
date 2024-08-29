@@ -50,7 +50,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
          ItemStack var4 = this.method2943(Class2106.field13736);
          if (!var4.isEmpty()) {
             if (var4.method32115()) {
-               var4.method32118(var4.method32117() + this.field5054.nextInt(2));
+               var4.method32118(var4.method32117() + this.rand.nextInt(2));
                if (var4.method32117() >= var4.method32119()) {
                   this.method3184(Class2106.field13736);
                   this.method2944(Class2106.field13736, ItemStack.EMPTY);
@@ -90,13 +90,13 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
       this.method4270(var2);
       this.method4273(var2);
       this.method5031();
-      this.method4281(this.field5054.nextFloat() < 0.55F * var2.method38330());
+      this.method4281(this.rand.nextFloat() < 0.55F * var2.method38330());
       if (this.method2943(Class2106.field13736).isEmpty()) {
          LocalDate var8 = LocalDate.now();
          int var9 = var8.get(ChronoField.DAY_OF_MONTH);
          int var10 = var8.get(ChronoField.MONTH_OF_YEAR);
-         if (var10 == 10 && var9 == 31 && this.field5054.nextFloat() < 0.25F) {
-            this.method2944(Class2106.field13736, new ItemStack(!(this.field5054.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
+         if (var10 == 10 && var9 == 31 && this.rand.nextFloat() < 0.25F) {
+            this.method2944(Class2106.field13736, new ItemStack(!(this.rand.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
             this.field5607[Class2106.field13736.method8773()] = 0.0F;
          }
       }
@@ -160,7 +160,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return 1.74F;
    }
 

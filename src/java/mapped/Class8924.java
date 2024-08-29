@@ -36,7 +36,7 @@ public abstract class Class8924 {
       return new Class8927(var0);
    }
 
-   public static Class8924 method32628(Class7608<EntityType<?>> var0) {
+   public static Class8924 method32628(ITag<EntityType<?>> var0) {
       return new Class8926(var0);
    }
 }

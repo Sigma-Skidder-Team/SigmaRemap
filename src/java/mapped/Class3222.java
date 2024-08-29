@@ -19,8 +19,8 @@ public class Class3222 extends Block {
    public static final Map<Direction, Class8552<Class98>> field18652 = Maps.newEnumMap(
       ImmutableMap.of(Direction.NORTH, field18647, Direction.EAST, field18648, Direction.SOUTH, field18649, Direction.WEST, field18650)
    );
-   private static final Class6408 field18653 = Block.method11539(3.0, 0.0, 3.0, 13.0, 1.0, 13.0);
-   private static final Map<Direction, Class6408> field18654 = Maps.newEnumMap(
+   private static final VoxelShape field18653 = Block.method11539(3.0, 0.0, 3.0, 13.0, 1.0, 13.0);
+   private static final Map<Direction, VoxelShape> field18654 = Maps.newEnumMap(
       ImmutableMap.of(
          Direction.NORTH,
          Block.method11539(3.0, 0.0, 0.0, 13.0, 1.0, 13.0),
@@ -32,19 +32,19 @@ public class Class3222 extends Block {
          Block.method11539(0.0, 0.0, 3.0, 13.0, 1.0, 13.0)
       )
    );
-   private static final Map<Direction, Class6408> field18655 = Maps.newEnumMap(
+   private static final Map<Direction, VoxelShape> field18655 = Maps.newEnumMap(
       ImmutableMap.of(
          Direction.NORTH,
-         Class8022.method27431(field18654.get(Direction.NORTH), Block.method11539(3.0, 0.0, 0.0, 13.0, 16.0, 1.0)),
+         VoxelShapes.method27431(field18654.get(Direction.NORTH), Block.method11539(3.0, 0.0, 0.0, 13.0, 16.0, 1.0)),
          Direction.SOUTH,
-         Class8022.method27431(field18654.get(Direction.SOUTH), Block.method11539(3.0, 0.0, 15.0, 13.0, 16.0, 16.0)),
+         VoxelShapes.method27431(field18654.get(Direction.SOUTH), Block.method11539(3.0, 0.0, 15.0, 13.0, 16.0, 16.0)),
          Direction.EAST,
-         Class8022.method27431(field18654.get(Direction.EAST), Block.method11539(15.0, 0.0, 3.0, 16.0, 16.0, 13.0)),
+         VoxelShapes.method27431(field18654.get(Direction.EAST), Block.method11539(15.0, 0.0, 3.0, 16.0, 16.0, 13.0)),
          Direction.WEST,
-         Class8022.method27431(field18654.get(Direction.WEST), Block.method11539(0.0, 0.0, 3.0, 1.0, 16.0, 13.0))
+         VoxelShapes.method27431(field18654.get(Direction.WEST), Block.method11539(0.0, 0.0, 3.0, 1.0, 16.0, 13.0))
       )
    );
-   private final Map<BlockState, Class6408> field18656 = Maps.newHashMap();
+   private final Map<BlockState, VoxelShape> field18656 = Maps.newHashMap();
    private static final Class7680[] field18657 = new Class7680[16];
    private final BlockState field18658;
    private boolean field18659 = true;
@@ -75,17 +75,17 @@ public class Class3222 extends Block {
       }
    }
 
-   private Class6408 method11613(BlockState var1) {
-      Class6408 var4 = field18653;
+   private VoxelShape method11613(BlockState var1) {
+      VoxelShape var4 = field18653;
 
       for (Direction var6 : Class76.field161) {
          Class98 var7 = var1.<Class98>method23463(field18652.get(var6));
          if (var7 != Class98.field266) {
             if (var7 == Class98.field265) {
-               var4 = Class8022.method27431(var4, field18655.get(var6));
+               var4 = VoxelShapes.method27431(var4, field18655.get(var6));
             }
          } else {
-            var4 = Class8022.method27431(var4, field18654.get(var6));
+            var4 = VoxelShapes.method27431(var4, field18654.get(var6));
          }
       }
 
@@ -93,7 +93,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.field18656.get(var1.method23465(field18651, Integer.valueOf(0)));
    }
 

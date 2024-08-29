@@ -5,12 +5,12 @@ import javax.annotation.Nullable;
 
 public abstract class Class7637 extends Class7633 {
    @Override
-   public Class7631 method25075() {
+   public Fluid method25075() {
       return Class9479.field44067;
    }
 
    @Override
-   public Class7631 method25077() {
+   public Fluid method25077() {
       return Class9479.field44068;
    }
 
@@ -122,7 +122,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public boolean method25066(Class7631 var1) {
+   public boolean method25066(Fluid var1) {
       return var1 == Class9479.field44068 || var1 == Class9479.field44067;
    }
 
@@ -132,7 +132,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public boolean method25055(Class7379 var1, Class1665 var2, BlockPos var3, Class7631 var4, Direction var5) {
+   public boolean method25055(Class7379 var1, Class1665 var2, BlockPos var3, Fluid var4, Direction var5) {
       return var1.method23475(var2, var3) >= 0.44444445F && var4.method25067(Class8953.field40469);
    }
 

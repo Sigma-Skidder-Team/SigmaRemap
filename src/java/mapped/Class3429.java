@@ -1,8 +1,8 @@
 package mapped;
 
 public abstract class Class3429 extends Block {
-   public static final Class6408 field19187 = Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
-   public static final Class6408 field19188 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+   public static final VoxelShape field19187 = Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
+   public static final VoxelShape field19188 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
    private final boolean field19189;
 
    public static boolean method12086(World var0, BlockPos var1) {
@@ -23,7 +23,7 @@ public abstract class Class3429 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       Class96 var7 = !var1.method23448(this) ? null : var1.<Class96>method23463(this.method12093());
       return var7 != null && var7.method275() ? field19188 : field19187;
    }

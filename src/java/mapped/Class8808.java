@@ -12,6 +12,6 @@ public class Class8808 implements Class8807 {
 
    @Override
    public void method31803(byte[] var1, int var2, int var3) {
-      Client.method19919().dummyMethod("DONE");
+      Client.getClientLogger().dummyMethod("DONE");
    }
 }

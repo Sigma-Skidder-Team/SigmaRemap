@@ -19,8 +19,8 @@ public class Class3338 extends Item {
             double var14 = var3.getPosX() + (var3.method3013().nextDouble() - 0.5) * 16.0;
             double var16 = MathHelper.method37778(var3.getPosY() + (double)(var3.method3013().nextInt(16) - 8), 0.0, (double)(var2.method6998() - 1));
             double var18 = var3.getPosZ() + (var3.method3013().nextDouble() - 0.5) * 16.0;
-            if (var3.method3328()) {
-               var3.method2759();
+            if (var3.isPassenger()) {
+               var3.stopRiding();
             }
 
             if (var3.method3168(var14, var16, var18, true)) {

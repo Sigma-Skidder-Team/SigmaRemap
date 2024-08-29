@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.UUID;
 
 public class Class1086 extends Class1087 implements Class1020 {
-   private static final Class9289<String> field5951 = Class9361.<String>method35441(Class1086.class, Class7784.field33393);
+   private static final DataParameter<String> field5951 = EntityDataManager.<String>method35441(Class1086.class, Class7784.field33393);
    private Class7144 field5952;
    private int field5953;
    private UUID field5954;
@@ -36,9 +36,9 @@ public class Class1086 extends Class1087 implements Class1020 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5951, Class2210.method8936(Class2210.field14452));
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5951, Class2210.method8936(Class2210.field14452));
    }
 
    @Override
@@ -91,11 +91,11 @@ public class Class1086 extends Class1087 implements Class1020 {
                this.world
                   .method6746(
                      Class7940.field34063,
-                     this.getPosX() + this.field5054.nextDouble() / 2.0,
+                     this.getPosX() + this.rand.nextDouble() / 2.0,
                      this.method3440(0.5),
-                     this.getPosZ() + this.field5054.nextDouble() / 2.0,
+                     this.getPosZ() + this.rand.nextDouble() / 2.0,
                      0.0,
-                     this.field5054.nextDouble() / 5.0,
+                     this.rand.nextDouble() / 5.0,
                      0.0
                   );
             }
@@ -108,11 +108,11 @@ public class Class1086 extends Class1087 implements Class1020 {
                this.world
                   .method6746(
                      Class7940.field34092,
-                     this.getPosX() + this.field5054.nextDouble() / 2.0,
+                     this.getPosX() + this.rand.nextDouble() / 2.0,
                      this.method3440(0.5),
-                     this.getPosZ() + this.field5054.nextDouble() / 2.0,
+                     this.getPosZ() + this.rand.nextDouble() / 2.0,
                      0.0,
-                     this.field5054.nextDouble() / 5.0,
+                     this.rand.nextDouble() / 5.0,
                      0.0
                   );
             }
@@ -131,7 +131,7 @@ public class Class1086 extends Class1087 implements Class1020 {
          ((ServerWorld)this.world).method6939(Class7940.field34070, this.getPosX(), this.method3440(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
          this.method2904();
          Class1087 var4 = EntityType.field41016.method33215(this.world);
-         var4.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.field5031, this.field5032);
+         var4.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var4.method3043(this.method3042());
          var4.field4965 = this.field4965;
          if (this.method3381()) {
@@ -203,11 +203,11 @@ public class Class1086 extends Class1087 implements Class1020 {
    }
 
    private void method5036(Class2210 var1) {
-      this.field5063.method35446(field5951, Class2210.method8936(var1));
+      this.dataManager.method35446(field5951, Class2210.method8936(var1));
    }
 
    public Class2210 method5037() {
-      return Class2210.method8938(this.field5063.<String>method35445(field5951));
+      return Class2210.method8938(this.dataManager.<String>method35445(field5951));
    }
 
    public Class1086 method4389(ServerWorld var1, Class1045 var2) {
@@ -220,10 +220,10 @@ public class Class1086 extends Class1087 implements Class1020 {
       Class2210 var4 = this.method5037();
       Class2210 var5 = var1.method5037();
       Class2210 var6;
-      if (var4 == var5 && this.field5054.nextInt(1024) == 0) {
+      if (var4 == var5 && this.rand.nextInt(1024) == 0) {
          var6 = var4 != Class2210.field14453 ? Class2210.field14453 : Class2210.field14452;
       } else {
-         var6 = !this.field5054.nextBoolean() ? var5 : var4;
+         var6 = !this.rand.nextBoolean() ? var5 : var4;
       }
 
       return var6;

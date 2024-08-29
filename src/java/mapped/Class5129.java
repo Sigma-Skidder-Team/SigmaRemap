@@ -23,7 +23,7 @@ public class Class5129 implements Class5119 {
          if (var15.method23486(Class8953.field40469)) {
             double var16 = (double)((float)var14.getY() + var15.method23475(var12, var14));
             DebugRenderer.method27457(
-               new Class6488(
+               new AxisAlignedBB(
                      (double)((float)var14.getX() + 0.01F),
                      (double)((float)var14.getY() + 0.01F),
                      (double)((float)var14.getZ() + 0.01F),

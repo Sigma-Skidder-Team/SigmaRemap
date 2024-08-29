@@ -14,8 +14,8 @@ public class Class5309 extends Module {
     @EventTarget
     private void method16684(ClickEvent var1) {
         if (this.isEnabled()) {
-            Entity var4 = Class5628.method17711(mc.player.field5031, mc.player.field5032, this.getNumberValueBySettingName("Range"), 0.0);
-            BlockRayTraceResult var5 = Class9217.method34567(mc.player.field5031, mc.player.field5032, this.getNumberValueBySettingName("Range"));
+            Entity var4 = Class5628.method17711(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Range"), 0.0);
+            BlockRayTraceResult var5 = Class9217.method34567(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Range"));
             if (var4 != null && mc.objectMouseOver.getType() == RayTraceResult.Type.MISS) {
                 mc.objectMouseOver = new EntityRayTraceResult(var4);
             }

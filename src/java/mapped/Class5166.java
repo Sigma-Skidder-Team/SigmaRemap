@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -14,10 +14,10 @@ public class Class5166 extends Module {
    }
 
    @EventTarget
-   private void method16068(Class4396 var1) {
+   private void method16068(RecievePacketEvent var1) {
       if (this.isEnabled()) {
-         if (mc.player != null && var1.method13898() instanceof Class5590) {
-            Class5590 var4 = (Class5590)var1.method13898();
+         if (mc.player != null && var1.getPacket() instanceof Class5590) {
+            Class5590 var4 = (Class5590)var1.getPacket();
             if (var4.method17565() == mc.player.method3205()) {
                if (this.getNumberValueBySettingName("H-Multiplier") == 0.0F && this.getNumberValueBySettingName("V-Multiplier") == 0.0F) {
                   var1.method13900(true);
@@ -29,8 +29,8 @@ public class Class5166 extends Module {
             }
          }
 
-         if (var1.method13898() instanceof Class5515 && this.getBooleanValueFromSetttingName("Explosions")) {
-            Class5515 var5 = (Class5515)var1.method13898();
+         if (var1.getPacket() instanceof Class5515 && this.getBooleanValueFromSetttingName("Explosions")) {
+            Class5515 var5 = (Class5515)var1.getPacket();
             var5.field24473 = var5.field24473 * this.getNumberValueBySettingName("H-Multiplier");
             var5.field24475 = var5.field24475 * this.getNumberValueBySettingName("H-Multiplier");
             var5.field24474 = var5.field24474 * this.getNumberValueBySettingName("V-Multiplier");

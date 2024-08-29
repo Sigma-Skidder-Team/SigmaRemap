@@ -36,7 +36,7 @@ public class Class4331 extends Class4305 {
       StringBuilder var10000 = new StringBuilder().append("You're currently using Sigma ");
       Client.getInstance();
       String var4 = var10000.append(Client.VERSION).toString();
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont20,
          (float)(this.field20895 + (this.method13267() - ResourceRegistry.JelloLightFont20.method23942(var4)) / 2),
          (float)(this.field20896 + 70),
@@ -46,7 +46,7 @@ public class Class4331 extends Class4305 {
       String var5 = "Click GUI is currently bound to: "
          + Class5628.method17736(Client.getInstance().getModuleManager().method14668().method13728(Class1145.class))
          + " Key";
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont20,
          (float)(this.method13263() + (this.method13267() - ResourceRegistry.JelloLightFont20.method23942(var5)) / 2),
          (float)(this.method13265() + this.method13269() - 180),
@@ -54,7 +54,7 @@ public class Class4331 extends Class4305 {
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1)
       );
       String var6 = "Configure all your keybinds in the keybind manager!";
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + (this.method13267() - ResourceRegistry.JelloLightFont14.method23942(var6)) / 2),
          (float)(this.method13265() + this.method13269() - 150),
@@ -62,7 +62,7 @@ public class Class4331 extends Class4305 {
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F * var1)
       );
       String var7 = "GUI Blur: ";
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont20,
          (float)(this.method13263() + (this.method13267() - ResourceRegistry.JelloLightFont20.method23942(var7)) / 2 - 114),
          (float)(this.method13265() + this.method13269() - 221),
@@ -70,7 +70,7 @@ public class Class4331 extends Class4305 {
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * var1)
       );
       String var8 = "GPU Accelerated: ";
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont20,
          (float)(this.method13263() + (this.method13267() - ResourceRegistry.JelloLightFont20.method23942(var8)) / 2 + 52),
          (float)(this.method13265() + this.method13269() - 221),
@@ -81,8 +81,8 @@ public class Class4331 extends Class4305 {
    }
 
    private void method13463(int var1, int var2, float var3) {
-      Class3192.method11439(ResourceRegistry.JelloMediumFont40, (float)var1, (float)(var2 + 1), "Jello", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3));
-      Class3192.method11439(
+      RenderUtil.method11439(ResourceRegistry.JelloMediumFont40, (float)var1, (float)(var2 + 1), "Jello", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3));
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont25, (float)(var1 + 95), (float)(var2 + 14), "for Sigma", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.86F * var3)
       );
    }

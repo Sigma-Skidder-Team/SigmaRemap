@@ -5,8 +5,8 @@ import javax.annotation.Nullable;
 
 public class Class3441 extends Block {
    private static String[] field19240;
-   private static final Class6408 field19241 = Block.method11539(3.0, 0.0, 3.0, 12.0, 7.0, 12.0);
-   private static final Class6408 field19242 = Block.method11539(1.0, 0.0, 1.0, 15.0, 7.0, 15.0);
+   private static final VoxelShape field19241 = Block.method11539(3.0, 0.0, 3.0, 12.0, 7.0, 12.0);
+   private static final VoxelShape field19242 = Block.method11539(1.0, 0.0, 1.0, 15.0, 7.0, 15.0);
    public static final Class8554 field19243 = Class8820.field39749;
    public static final Class8554 field19244 = Class8820.field39748;
 
@@ -114,7 +114,7 @@ public class Class3441 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return var1.<Integer>method23463(field19244) <= 1 ? field19241 : field19242;
    }
 

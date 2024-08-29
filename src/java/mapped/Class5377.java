@@ -104,7 +104,7 @@ public class Class5377 extends Module {
     }
 
     @EventTarget
-    private void method16927(Class4402 var1) {
+    private void method16927(SendPacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.method13932() instanceof Class5570) {
                 Class5570 var4 = (Class5570) var1.method13932();
@@ -132,10 +132,10 @@ public class Class5377 extends Module {
     }
 
     @EventTarget
-    private void method16928(Class4396 var1) {
+    private void method16928(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof Class5498) {
-                Class5498 var4 = (Class5498) var1.method13898();
+            if (var1.getPacket() instanceof Class5498) {
+                Class5498 var4 = (Class5498) var1.getPacket();
                 if (var4.method17285() != Class8298.field35661) {
                     return;
                 }
@@ -143,8 +143,8 @@ public class Class5377 extends Module {
                 this.field24000.put(this.field24001, new Class7070(var4.method17284()));
             }
 
-            if (var1.method13898() instanceof Class5501) {
-                Class5501 var6 = (Class5501) var1.method13898();
+            if (var1.getPacket() instanceof Class5501) {
+                Class5501 var6 = (Class5501) var1.getPacket();
                 Class7070 var5 = this.method16929(var6.method17303());
                 if (var5 == null) {
                     return;
@@ -162,8 +162,8 @@ public class Class5377 extends Module {
                 }
             }
 
-            if (var1.method13898() instanceof Class5480) {
-                Class5480 var7 = (Class5480) var1.method13898();
+            if (var1.getPacket() instanceof Class5480) {
+                Class5480 var7 = (Class5480) var1.getPacket();
                 Class7070 var8 = this.method16929(var7.method17239());
                 if (var8 == null) {
                     return;
@@ -216,7 +216,7 @@ public class Class5377 extends Module {
                         var7,
                         null
                 );
-                var6.method3210().method35446(Entity.field5067, false);
+                var6.method3210().method35446(Entity.CUSTOM_NAME_VISIBLE, false);
             }
 
             for (Entry var11 : this.field24000.entrySet()) {
@@ -263,7 +263,7 @@ public class Class5377 extends Module {
                                         var8,
                                         this.field24007.get(var14)
                                 );
-                                var12.method3210().method35446(Entity.field5067, false);
+                                var12.method3210().method35446(Entity.CUSTOM_NAME_VISIBLE, false);
                             }
                         }
                     }
@@ -332,24 +332,24 @@ public class Class5377 extends Module {
         int var18 = 85 + var13 * 2;
         GL11.glTranslated(-var17 / 2, -var18 / 2, 0.0);
         byte var19 = 40;
-        Class3192.method11426(0.0F, 0.0F, (float) var17, (float) var18, this.field24008);
-        Class3192.method11463(0.0F, 0.0F, (float) var17, (float) var18, 20.0F, 0.5F);
-        Class3192.method11439(var6, var13, (float) (var13 - 5), "Furnace", ClientColors.LIGHT_GREYISH_BLUE.getColor);
+        RenderUtil.method11426(0.0F, 0.0F, (float) var17, (float) var18, this.field24008);
+        RenderUtil.method11463(0.0F, 0.0F, (float) var17, (float) var18, 20.0F, 0.5F);
+        RenderUtil.method11439(var6, var13, (float) (var13 - 5), "Furnace", ClientColors.LIGHT_GREYISH_BLUE.getColor);
         if (var16 == null) {
-            Class3192.method11439(
+            RenderUtil.method11439(
                     ResourceRegistry.JelloLightFont20, (float) (var13 + 15), (float) (var13 + 40), "Empty", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
             );
         }
 
         ItemStack var20 = var2.method21987();
         if (var20 != null) {
-            Class3192.method11479(var20, var13, var13 + 27, 45, 45);
-            Class3192.method11439(ResourceRegistry.JelloLightFont20, (float) (var13 + 51), 40.0F, var20.method32149().getString(), ClientColors.LIGHT_GREYISH_BLUE.getColor);
-            Class3192.method11439(ResourceRegistry.JelloLightFont14, (float) (var13 + 51), 62.0F, "Count: " + var20.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+            RenderUtil.method11479(var20, var13, var13 + 27, 45, 45);
+            RenderUtil.method11439(ResourceRegistry.JelloLightFont20, (float) (var13 + 51), 40.0F, var20.method32149().getString(), ClientColors.LIGHT_GREYISH_BLUE.getColor);
+            RenderUtil.method11439(ResourceRegistry.JelloLightFont14, (float) (var13 + 51), 62.0F, "Count: " + var20.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
         }
 
-        Class3192.method11426(0.0F, (float) var18 - 12.0F, Math.min((float) var17 * var12, (float) var17), (float) var18 - 6.0F, Class5628.method17688(-106750, 0.3F));
-        Class3192.method11426(
+        RenderUtil.method11426(0.0F, (float) var18 - 12.0F, Math.min((float) var17 * var12, (float) var17), (float) var18 - 6.0F, Class5628.method17688(-106750, 0.3F));
+        RenderUtil.method11426(
                 0.0F, (float) var18 - 6.0F, Math.min((float) var17 * var11, (float) var17), (float) var18, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.75F)
         );
         GL11.glPopMatrix();
@@ -401,10 +401,10 @@ public class Class5377 extends Module {
             );
             int var21 = var12.method23942(var13) / 2;
             if (!field24003.containsKey(var13)) {
-                Class3192.method11463((float) (-var21 - 10), -25.0F, (float) (var21 * 2 + 20), (float) (var12.method23952() + 27), 20.0F, 0.5F);
+                RenderUtil.method11463((float) (-var21 - 10), -25.0F, (float) (var21 * 2 + 20), (float) (var12.method23952() + 27), 20.0F, 0.5F);
             } else {
                 int var22 = Color.getHSBColor((float) (System.currentTimeMillis() % 10000L) / 10000.0F, 0.5F, 1.0F).getRGB();
-                Class3192.method11449(
+                RenderUtil.method11449(
                         (float) (-var21 - 10 - 31),
                         -25.0F,
                         (float) (var12.method23952() + 27),
@@ -412,7 +412,7 @@ public class Class5377 extends Module {
                         field24003.get(var13),
                         Class5628.method17688(var22, 0.7F)
                 );
-                Class3192.method11449(
+                RenderUtil.method11449(
                         (float) (-var21 - 10 - 31 + var12.method23952() + 27),
                         -25.0F,
                         14.0F,
@@ -420,12 +420,12 @@ public class Class5377 extends Module {
                         ResourcesDecrypter.shadowRightPNG,
                         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
                 );
-                Class3192.method11463((float) (-var21 - 10 - 31), -25.0F, (float) (var21 * 2 + 20 + 31 + 27), (float) (var12.method23952() + 27), 20.0F, 0.5F);
+                RenderUtil.method11463((float) (-var21 - 10 - 31), -25.0F, (float) (var21 * 2 + 20 + 31 + 27), (float) (var12.method23952() + 27), 20.0F, 0.5F);
                 GL11.glTranslatef(27.0F, 0.0F, 0.0F);
             }
 
-            Class3192.method11426((float) (-var21 - 10), -25.0F, (float) (var21 + 10), (float) (var12.method23952() + 2), var19);
-            Class3192.method11426(
+            RenderUtil.method11426((float) (-var21 - 10), -25.0F, (float) (var21 + 10), (float) (var12.method23952() + 2), var19);
+            RenderUtil.method11426(
                     (float) (-var21 - 10),
                     (float) (var12.method23952() - 1) - (float) ((Class880) var7).field4952 / 3.0F,
                     Math.min((float) (var21 * 2 + 20) * (var18 - 0.5F), (float) (var21 + 10)),
@@ -441,11 +441,11 @@ public class Class5377 extends Module {
                 var23 = "H: ";
             }
 
-            Class3192.method11439(var12, 0.0F, -20.0F, var13, ClientColors.LIGHT_GREYISH_BLUE.getColor);
-            Class3192.method11439(ResourceRegistry.JelloLightFont14, 0.0F, 10.0F, var23 + var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+            RenderUtil.method11439(var12, 0.0F, -20.0F, var13, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+            RenderUtil.method11439(ResourceRegistry.JelloLightFont14, 0.0F, 10.0F, var23 + var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             Class8433 var25 = Client.getInstance().getNetworkManager().field38429.method29512(var7);
             if (var25 != null) {
-                Class3192.method11439(ResourceRegistry.JelloLightFont14, 0.0F, -30.0F, var25.field36141, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                RenderUtil.method11439(ResourceRegistry.JelloLightFont14, 0.0F, -30.0F, var25.field36141, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             }
 
             GL11.glPopMatrix();

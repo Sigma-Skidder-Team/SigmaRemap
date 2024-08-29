@@ -9,20 +9,20 @@ public enum Class2156 {
    },
    field14141 {
       private final int field14144 = 1;
-      private final Class6408 field14145 = Block.method11539(7.0, 0.0, 7.0, 9.0, 10.0, 9.0);
+      private final VoxelShape field14145 = Block.method11539(7.0, 0.0, 7.0, 9.0, 10.0, 9.0);
 
       @Override
       public boolean method8876(BlockState blockState, Class1665 class1665, BlockPos var3, Direction var4) {
-         return !Class8022.method27435(blockState.method23416(class1665, var3).method19526(var4), this.field14145, Class9477.field44039);
+         return ! VoxelShapes.compare(blockState.method23416(class1665, var3).method19526(var4), this.field14145, IBooleanFunction.field44039);
       }
    },
    field14142 {
       private final int field14146 = 2;
-      private final Class6408 field14147 = Class8022.method27433(Class8022.method27426(), Block.method11539(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), Class9477.field44041);
+      private final VoxelShape field14147 = VoxelShapes.method27433(VoxelShapes.method27426(), Block.method11539(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), IBooleanFunction.field44041);
 
       @Override
       public boolean method8876(BlockState blockState, Class1665 class1665, BlockPos var3, Direction var4) {
-         return !Class8022.method27435(blockState.method23416(class1665, var3).method19526(var4), this.field14147, Class9477.field44039);
+         return ! VoxelShapes.compare(blockState.method23416(class1665, var3).method19526(var4), this.field14147, IBooleanFunction.field44039);
       }
    };
 

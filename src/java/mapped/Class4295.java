@@ -31,7 +31,7 @@ public class Class4295 extends Class4278 {
    @Override
    public void method13027(float var1) {
       if (!this.field20809) {
-         Class3192.method11426(
+         RenderUtil.method11426(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
@@ -39,7 +39,7 @@ public class Class4295 extends Class4278 {
             Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
       } else {
-         Class3192.method11426(
+         RenderUtil.method11426(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
@@ -48,7 +48,7 @@ public class Class4295 extends Class4278 {
          );
       }
 
-      Class3192.method11428(
+      RenderUtil.method11428(
          (float)(this.field20895 - 1),
          (float)(this.field20896 - 1),
          (float)(this.field20895 + this.field20897),

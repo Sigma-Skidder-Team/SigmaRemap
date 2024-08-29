@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
@@ -14,16 +14,16 @@ public class Class5249 extends Module {
     }
 
     @EventTarget
-    public void method16364(Class4396 var1) {
+    public void method16364(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof Class5584 || var1.method13898() instanceof Class5475) {
+            if (var1.getPacket() instanceof Class5584 || var1.getPacket() instanceof Class5475) {
                 if (mc.player.method3090() != null) {
                     if (mc.player.method3090().getItem() instanceof Class3259) {
-                        if (!(var1.method13898() instanceof Class5584)) {
-                            if (var1.method13898() instanceof Class5475 && !((Class5475) var1.method13898()).field24315.equals("entity.bobber.splash")) {
+                        if (!(var1.getPacket() instanceof Class5584)) {
+                            if (var1.getPacket() instanceof Class5475 && !((Class5475) var1.getPacket()).field24315.equals("entity.bobber.splash")) {
                                 return;
                             }
-                        } else if (!((Class5584) var1.method13898()).method17549().equals(Sounds.field26585)) {
+                        } else if (!((Class5584) var1.getPacket()).method17549().equals(Sounds.field26585)) {
                             return;
                         }
 

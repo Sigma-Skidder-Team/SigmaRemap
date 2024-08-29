@@ -44,7 +44,7 @@ public class Class4240 extends Class4247 {
       int var8 = var5 >> 8 & 0xFF;
       int var9 = var5 & 0xFF;
       if (this.field20586 <= 0) {
-         Class3192.method11426(
+         RenderUtil.method11426(
             (float)this.method13263(),
             (float)this.method13265(),
             (float)(this.method13263() + this.method13267()),
@@ -52,7 +52,7 @@ public class Class4240 extends Class4247 {
             var5
          );
       } else {
-         Class3192.method11474(
+         RenderUtil.method11474(
             (float)this.method13263(), (float)this.method13265(), (float)this.method13267(), (float)this.method13269(), (float)this.field20586, var5
          );
       }
@@ -70,7 +70,7 @@ public class Class4240 extends Class4247 {
                : (this.field20914.method19413() != Class2218.field14491 ? this.method13269() / 2 : this.method13269())
          );
       if (this.method13303() != null) {
-         Class3192.method11440(
+         RenderUtil.method11440(
             this.method13305(),
             (float)(this.field20585 + var10),
             (float)var11,

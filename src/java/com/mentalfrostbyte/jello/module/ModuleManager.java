@@ -216,16 +216,16 @@ public class ModuleManager {
         for (Module var18 : this.moduleMap.values()) {
             if (var18.isEnabled()) {
                 Client.getInstance().getEventManager().subscribe(var18);
-                if (var18 instanceof Class5325) {
-                    Class5325 var20 = (Class5325) var18;
+                if (var18 instanceof ModuleWithModuleSettings) {
+                    ModuleWithModuleSettings var20 = (ModuleWithModuleSettings) var18;
                     if (var20.module != null) {
                         Client.getInstance().getEventManager().subscribe(var20.module);
                     }
                 }
             } else {
                 Client.getInstance().getEventManager().unsubscribe(var18);
-                if (var18 instanceof Class5325) {
-                    Class5325 var19 = (Class5325) var18;
+                if (var18 instanceof ModuleWithModuleSettings) {
+                    ModuleWithModuleSettings var19 = (ModuleWithModuleSettings) var18;
 
                     for (Module var11 : var19.moduleArray) {
                         Client.getInstance().getEventManager().unsubscribe(var11);
@@ -259,8 +259,8 @@ public class ModuleManager {
                     var3++;
                 }
 
-                if (var6 instanceof Class5325) {
-                    for (Module var12 : ((Class5325) var6).moduleArray) {
+                if (var6 instanceof ModuleWithModuleSettings) {
+                    for (Module var12 : ((ModuleWithModuleSettings) var6).moduleArray) {
                         for (Setting var14 : var12.method15989().values()) {
                             if (var14.method18623()) {
                                 var3++;

@@ -26,8 +26,8 @@ public class Class139 extends Class128 {
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
       Object var5 = var2.method26081(this.field468.field14001);
-      if (var5 instanceof Class933) {
-         Class933 var6 = (Class933)var5;
+      if (var5 instanceof INameable) {
+         INameable var6 = (INameable)var5;
          if (var6.method3381()) {
             var1.method32150(var6.getDisplayName());
          }

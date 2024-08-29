@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class Class286 implements Class268 {
    private final Class9768<Block> field1088 = new Class9768<Block>(Registry.BLOCK::method9187, "tags/blocks", "block");
    private final Class9768<Item> field1089 = new Class9768<Item>(Registry.ITEM::method9187, "tags/items", "item");
-   private final Class9768<Class7631> field1090 = new Class9768<Class7631>(Registry.field16070::method9187, "tags/fluids", "fluid");
+   private final Class9768<Fluid> field1090 = new Class9768<Fluid>(Registry.field16070::method9187, "tags/fluids", "fluid");
    private final Class9768<EntityType<?>> field1091 = new Class9768<EntityType<?>>(Registry.ENTITY_TYPE::method9187, "tags/entity_types", "entity_type");
    private Class8933 field1092 = Class8933.field40418;
 

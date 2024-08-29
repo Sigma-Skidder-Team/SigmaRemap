@@ -79,12 +79,12 @@ public class Class4339 extends Class4304 {
       this.method13224();
       if (!this.field21203 || this.method13287()) {
          if (this.field21206) {
-            Class3192.method11415(this);
+            RenderUtil.method11415(this);
          }
 
          super.method13027(var1);
          if (this.field21206) {
-            Class3192.method11422();
+            RenderUtil.method11422();
          }
       }
    }

@@ -11,7 +11,7 @@ public class Class1029 extends Class1026 {
 
    public Class1029(EntityType<? extends Class1029> var1, World var2) {
       super(var1, var2);
-      this.field5051 = 1.0F;
+      this.stepHeight = 1.0F;
       this.field5594 = 20;
    }
 
@@ -108,9 +108,9 @@ public class Class1029 extends Class1026 {
             this.method3085(Class9173.field42108).method38661(0.0);
          }
 
-         if (this.field5037 && this.world.method6789().method17135(Class5462.field24224)) {
+         if (this.collidedHorizontally && this.world.method6789().method17135(Class5462.field24224)) {
             boolean var7 = false;
-            Class6488 var8 = this.method3389().method19664(0.2);
+            AxisAlignedBB var8 = this.getBoundingBox().method19664(0.2);
 
             for (BlockPos var10 : BlockPos.method8364(
                MathHelper.floor(var8.field28449),
@@ -127,7 +127,7 @@ public class Class1029 extends Class1026 {
                }
             }
 
-            if (!var7 && this.field5036) {
+            if (!var7 && this.onGround) {
                this.method2914();
             }
          }
@@ -155,14 +155,14 @@ public class Class1029 extends Class1026 {
    }
 
    private void method4582() {
-      if (this.field5054.nextInt(6) == 0) {
+      if (this.rand.nextInt(6) == 0) {
          double var3 = this.getPosX()
             - (double)this.method3429() * Math.sin((double)(this.field4965 * (float) (Math.PI / 180.0)))
-            + (this.field5054.nextDouble() * 0.6 - 0.3);
+            + (this.rand.nextDouble() * 0.6 - 0.3);
          double var5 = this.getPosY() + (double)this.method3430() - 0.3;
          double var7 = this.getPosZ()
             + (double)this.method3429() * Math.cos((double)(this.field4965 * (float) (Math.PI / 180.0)))
-            + (this.field5054.nextDouble() * 0.6 - 0.3);
+            + (this.rand.nextDouble() * 0.6 - 0.3);
          this.world.method6746(Class7940.field34068, var3, var5, var7, 0.4980392156862745, 0.5137254901960784, 0.5725490196078431);
       }
    }
@@ -180,7 +180,7 @@ public class Class1029 extends Class1026 {
    @Override
    public void method3045(Class880 var1) {
       if (this.field5730 == 0) {
-         if (!(this.field5054.nextDouble() < 0.5)) {
+         if (!(this.rand.nextDouble() < 0.5)) {
             this.method4584(var1);
          } else {
             this.field5729 = 40;
@@ -189,13 +189,13 @@ public class Class1029 extends Class1026 {
             var1.method3101(this);
          }
 
-         var1.field5039 = true;
+         var1.velocityChanged = true;
       }
    }
 
    private void method4583() {
       if (this.method3066()) {
-         for (Entity var4 : this.world.<Entity>method6772(Class880.class, this.method3389().method19664(4.0), field5727)) {
+         for (Entity var4 : this.world.<Entity>method6772(Class880.class, this.getBoundingBox().method19664(4.0), field5727)) {
             if (!(var4 instanceof Class1025)) {
                var4.method2741(Class8654.method31115(this), 6.0F);
             }
@@ -203,12 +203,12 @@ public class Class1029 extends Class1026 {
             this.method4584(var4);
          }
 
-         Vector3d var11 = this.method3389().method19685();
+         Vector3d var11 = this.getBoundingBox().method19685();
 
          for (int var12 = 0; var12 < 40; var12++) {
-            double var5 = this.field5054.nextGaussian() * 0.2;
-            double var7 = this.field5054.nextGaussian() * 0.2;
-            double var9 = this.field5054.nextGaussian() * 0.2;
+            double var5 = this.rand.nextGaussian() * 0.2;
+            double var7 = this.rand.nextGaussian() * 0.2;
+            double var9 = this.rand.nextGaussian() * 0.2;
             this.world.method6746(Class7940.field34089, var11.field18048, var11.field18049, var11.field18050, var5, var7, var9);
          }
       }
@@ -278,7 +278,7 @@ public class Class1029 extends Class1026 {
 
    @Override
    public boolean method4266(Class1662 var1) {
-      return !var1.method7014(this.method3389());
+      return !var1.method7014(this.getBoundingBox());
    }
 
    @Override

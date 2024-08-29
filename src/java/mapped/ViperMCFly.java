@@ -6,34 +6,34 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5238 extends Module {
+public class ViperMCFly extends Module {
     private int field23594;
     private int field23595;
     private double field23596;
     private double field23597;
     private boolean field23598;
 
-    public Class5238() {
+    public ViperMCFly() {
         super(ModuleCategory.MOVEMENT, "ViperMC", "A fly for ViperMC");
         this.registerSetting(new NumberSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.2F, 6.0F, 0.1F));
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23596 = mc.player.getPosY();
         this.field23594 = 0;
-        if (!mc.gameSettings.field44637.isKeyDown()) {
-            if (!mc.gameSettings.field44637.isKeyDown()) {
+        if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
+            if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
                 this.field23598 = false;
             }
         } else {
-            mc.gameSettings.field44637.field13071 = false;
+            mc.gameSettings.keyBindSneak.field13071 = false;
             this.field23598 = true;
         }
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Class9567.method37090(0.0);
         if (mc.player.method3433().field18049 > 0.0) {
             Class5628.method17725(-0.0789);
@@ -43,7 +43,7 @@ public class Class5238 extends Module {
     @EventTarget
     private void method16329(Class4430 var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
+            if (var1.method13977() == mc.gameSettings.keyBindSneak.field13070.field34875) {
                 var1.method13900(true);
                 this.field23598 = true;
             }
@@ -53,7 +53,7 @@ public class Class5238 extends Module {
     @EventTarget
     private void method16330(Class4426 var1) {
         if (this.isEnabled()) {
-            if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
+            if (var1.method13973() == mc.gameSettings.keyBindSneak.field13070.field34875) {
                 var1.method13900(true);
                 this.field23598 = false;
             }
@@ -122,9 +122,9 @@ public class Class5238 extends Module {
     }
 
     @EventTarget
-    public void method16333(Class4396 var1) {
+    public void method16333(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            Packet var4 = var1.method13898();
+            Packet var4 = var1.getPacket();
             if (!(var4 instanceof Class5473)) {
                 if (var4 instanceof SChatPacket) {
                     SChatPacket var5 = (SChatPacket) var4;
@@ -142,14 +142,14 @@ public class Class5238 extends Module {
 
                 this.field23597 = this.field23596;
                 this.field23596 = var7.field24298;
-                var7.field24300 = mc.player.field5031;
-                var7.field24301 = mc.player.field5032;
+                var7.field24300 = mc.player.rotationYaw;
+                var7.field24301 = mc.player.rotationPitch;
             }
         }
     }
 
     @EventTarget
-    public void method16334(Class4402 var1) {
+    public void method16334(SendPacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.method13932();
             if (var4 instanceof Class5603) {
@@ -166,10 +166,10 @@ public class Class5238 extends Module {
         if (this.isEnabled()) {
             double var4 = this.field23596 - this.field23597;
             double var6 = this.field23596;
-            mc.player.field5028.field18049 = var6;
-            mc.player.field5049 = var6;
+            mc.player.positionVec.field18049 = var6;
+            mc.player.lastTickPosY = var6;
             mc.player.field4915 = var6;
-            mc.player.field5026 = var6;
+            mc.player.prevPosY = var6;
         }
     }
 }

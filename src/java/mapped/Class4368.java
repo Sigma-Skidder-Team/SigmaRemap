@@ -22,21 +22,21 @@ public class Class4368 extends Class4247 {
 
    @Override
    public void method13027(float var1) {
-      Class3192.method11439(
+      RenderUtil.method11439(
          ClassicDecryption.regular17,
          (float)(this.field20895 + 10),
          (float)(this.field20896 + 8),
          this.field21351.getSuffix(),
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, !this.field21351.isEnabled() ? 0.5F : 0.9F)
       );
-      Class3192.method11439(
+      RenderUtil.method11439(
          ClassicDecryption.regular15,
          (float)(this.field20895 + 15),
          (float)(this.field20896 + 33),
          "Bind",
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 1.0F)
       );
-      Class3192.method11439(
+      RenderUtil.method11439(
          ClassicDecryption.regular15,
          (float)(this.field20895 + 15),
          (float)(this.field20896 + 52),
@@ -44,7 +44,7 @@ public class Class4368 extends Class4247 {
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.7F)
       );
       if (this.field21351.method15989().size() > 1) {
-         Class3192.method11439(
+         RenderUtil.method11439(
             ClassicDecryption.regular12,
             (float)(this.field20895 + 84),
             (float)(this.field20896 + 34),

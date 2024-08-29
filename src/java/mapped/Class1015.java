@@ -9,7 +9,7 @@ import java.util.*;
 import java.util.function.Predicate;
 
 public class Class1015 extends Class1014 implements Class1016 {
-   private static final Class9289<Integer> field5672 = Class9361.<Integer>method35441(Class1015.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5672 = EntityDataManager.<Integer>method35441(Class1015.class, Class7784.field33391);
    private static final Predicate<Class1006> field5673 = new Class119();
    private static final Item field5674 = Items.field37954;
    private static final Set<Item> field5675 = Sets.newHashSet(
@@ -69,7 +69,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    @Nullable
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      this.method4415(this.field5054.nextInt(5));
+      this.method4415(this.rand.nextInt(5));
       if (var4 == null) {
          var4 = new Class5097(false);
       }
@@ -108,7 +108,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.6F;
    }
 
@@ -142,15 +142,15 @@ public class Class1015 extends Class1014 implements Class1016 {
    private void method4408() {
       this.field5680 = this.field5677;
       this.field5679 = this.field5678;
-      this.field5678 = (float)((double)this.field5678 + (double)(!this.field5036 && !this.method3328() ? 4 : -1) * 0.3);
+      this.field5678 = (float)((double)this.field5678 + (double)(!this.onGround && !this.isPassenger() ? 4 : -1) * 0.3);
       this.field5678 = MathHelper.method37777(this.field5678, 0.0F, 1.0F);
-      if (!this.field5036 && this.field5681 < 1.0F) {
+      if (!this.onGround && this.field5681 < 1.0F) {
          this.field5681 = 1.0F;
       }
 
       this.field5681 = (float)((double)this.field5681 * 0.9);
       Vector3d var3 = this.method3433();
-      if (!this.field5036 && var3.field18049 < 0.0) {
+      if (!this.onGround && var3.field18049 < 0.0) {
          this.method3434(var3.method11347(1.0, 0.6, 1.0));
       }
 
@@ -159,7 +159,7 @@ public class Class1015 extends Class1014 implements Class1016 {
 
    public static boolean method4409(World var0, Entity var1) {
       if (var1.method3066() && !var1.method3245() && var0.field9016.nextInt(2) == 0) {
-         List var4 = var0.<Class1006>method6772(Class1006.class, var1.method3389().method19664(20.0), field5673);
+         List var4 = var0.<Class1006>method6772(Class1006.class, var1.getBoundingBox().method19664(20.0), field5673);
          if (!var4.isEmpty()) {
             Class1006 var5 = (Class1006)var4.get(var0.field9016.nextInt(var4.size()));
             if (!var5.method3245()) {
@@ -195,12 +195,12 @@ public class Class1015 extends Class1014 implements Class1016 {
                   Sounds.field26882,
                   this.method2864(),
                   1.0F,
-                  1.0F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F
+                  1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F
                );
          }
 
          if (!this.world.field9020) {
-            if (this.field5054.nextInt(10) != 0) {
+            if (this.rand.nextInt(10) != 0) {
                this.world.method6786(this, (byte)6);
             } else {
                this.method4399(var1);
@@ -321,7 +321,7 @@ public class Class1015 extends Class1014 implements Class1016 {
 
    @Override
    public float method3100() {
-      return method4413(this.field5054);
+      return method4413(this.rand);
    }
 
    public static float method4413(Random var0) {
@@ -356,17 +356,17 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    public int method4414() {
-      return MathHelper.method37775(this.field5063.<Integer>method35445(field5672), 0, 4);
+      return MathHelper.method37775(this.dataManager.<Integer>method35445(field5672), 0, 4);
    }
 
    public void method4415(int var1) {
-      this.field5063.method35446(field5672, var1);
+      this.dataManager.method35446(field5672, var1);
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5672, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5672, 0);
    }
 
    @Override
@@ -382,7 +382,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    public boolean method4416() {
-      return !this.field5036;
+      return !this.onGround;
    }
 
    @Override

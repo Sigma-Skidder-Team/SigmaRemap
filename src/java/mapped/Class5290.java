@@ -25,7 +25,7 @@ public class Class5290 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         if (!this.field23796.method27123()) {
             this.field23796.method27118();
         }
@@ -35,7 +35,7 @@ public class Class5290 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         field23798 = false;
     }
 
@@ -58,9 +58,9 @@ public class Class5290 extends Module {
                         this.field23799 = true;
                         break;
                     case "On Use":
-                        if (!mc.player.field5036 && mc.player.field4999 == 0 && mc.player.field4981 && !this.field23800) {
+                        if (!mc.player.onGround && mc.player.field4999 == 0 && mc.player.field4981 && !this.field23800) {
                             this.field23799 = true;
-                        } else if (mc.player.field5036) {
+                        } else if (mc.player.onGround) {
                             this.field23799 = false;
                         }
                 }

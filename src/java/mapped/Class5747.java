@@ -25,7 +25,7 @@ public class Class5747 extends Class5651<Class1098, Class2861<Class1098>> {
          var2.method35293(Class7680.field32902.method25286(MathHelper.method37827(var8, 0.0F, 90.0F)));
          BlockPos var9 = var1.getPosition();
 
-         for (PlayerEntity var11 : var1.world.<PlayerEntity>method7182(PlayerEntity.class, new Class6488(var9).method19663(2.0, 2.0, 2.0))) {
+         for (PlayerEntity var11 : var1.world.<PlayerEntity>method7182(PlayerEntity.class, new AxisAlignedBB(var9).method19663(2.0, 2.0, 2.0))) {
             if (var11.isSleeping()) {
                var2.translate((double)(0.15F * var8), 0.0, 0.0);
                break;

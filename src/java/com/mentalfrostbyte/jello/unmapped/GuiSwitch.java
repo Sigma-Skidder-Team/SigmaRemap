@@ -9,12 +9,12 @@ import mapped.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Class4318 extends Class4307 {
+public class GuiSwitch extends Class4307 {
     public static Animation field21069 = new Animation(300, 200, Direction.BACKWARDS);
     public static float field21070;
     public static float field21071;
 
-    public Class4318() {
+    public GuiSwitch() {
         super("Switch");
         this.method13300(false);
         int var3 = 537;
@@ -85,7 +85,7 @@ public class Class4318 extends Class4307 {
             int var4 = 40;
             float var5 = -field21070 / (float) Minecraft.getInstance().mainWindow.method8043();
             float var6 = -field21071 / (float) Minecraft.getInstance().mainWindow.method8044();
-            Class3192.method11455(
+            RenderUtil.method11455(
                     (float) var4 * var5,
                     (float) var4 * var6,
                     (float) (Minecraft.getInstance().mainWindow.method8043() + var4),
@@ -95,7 +95,7 @@ public class Class4318 extends Class4307 {
             float var7 = Class8603.method30791(field21069.calcPercent(), 0.16, 0.71, 0.0, 0.99);
             int var8 = (Minecraft.getInstance().mainWindow.method8043() - 455) / 2;
             int var9 = (int) ((float) ((Minecraft.getInstance().mainWindow.method8044() - 78) / 2 - 14) - 116.0F * var7);
-            Class3192.method11424(
+            RenderUtil.method11424(
                     0.0F,
                     0.0F,
                     (float) Minecraft.getInstance().mainWindow.method8043(),
@@ -103,7 +103,7 @@ public class Class4318 extends Class4307 {
                     Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F)
             );
             super.method13027(var1);
-            Class3192.method11449(
+            RenderUtil.method11449(
                     0.0F,
                     0.0F,
                     (float) Minecraft.getInstance().mainWindow.method8043(),
@@ -111,14 +111,14 @@ public class Class4318 extends Class4307 {
                     CustomResourceLoadProgressGui.field6780,
                     Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - field21069.calcPercent())
             );
-            Class3192.method11424(
+            RenderUtil.method11424(
                     0.0F,
                     0.0F,
                     (float) Minecraft.getInstance().mainWindow.method8043(),
                     (float) Minecraft.getInstance().mainWindow.method8044(),
                     Class5628.method17688(0, 0.75F * (1.0F - field21069.calcPercent()))
             );
-            Class3192.method11455((float) var8, (float) var9, 455.0F, 78.0F, CustomResourceLoadProgressGui.field6778);
+            RenderUtil.method11455((float) var8, (float) var9, 455.0F, 78.0F, CustomResourceLoadProgressGui.field6778);
         }
     }
 

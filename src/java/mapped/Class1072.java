@@ -6,10 +6,10 @@ import javax.annotation.Nullable;
 
 public class Class1072 extends Class1018 implements Class1071, Class1069 {
    private static String[] field5911;
-   private static final Class9289<Boolean> field5912 = Class9361.<Boolean>method35441(Class1072.class, Class7784.field33398);
-   private static final Class9289<Integer> field5913 = Class9361.<Integer>method35441(Class1072.class, Class7784.field33391);
+   private static final DataParameter<Boolean> field5912 = EntityDataManager.<Boolean>method35441(Class1072.class, Class7784.field33398);
+   private static final DataParameter<Integer> field5913 = EntityDataManager.<Integer>method35441(Class1072.class, Class7784.field33391);
    private static final Class120 field5914 = Class120.method339(Items.field38052, Items.field38053, Items.field38111);
-   private final Class6500 field5915 = new Class6500(this.field5063, field5913, field5912);
+   private final Class6500 field5915 = new Class6500(this.dataManager, field5913, field5912);
 
    public Class1072(EntityType<? extends Class1072> var1, World var2) {
       super(var1, var2);
@@ -50,7 +50,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       if (field5913.equals(var1) && this.world.field9020) {
          this.field5915.method19689();
       }
@@ -59,10 +59,10 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5912, false);
-      this.field5063.method35442(field5913, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5912, false);
+      this.dataManager.register(field5913, 0);
    }
 
    @Override
@@ -100,7 +100,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       boolean var5 = this.method4381(var1.getHeldItem(var2));
-      if (!var5 && this.method4943() && !this.method3329() && !var1.method2851()) {
+      if (!var5 && this.method4943() && !this.isBeingRidden() && !var1.method2851()) {
          if (!this.world.field9020) {
             var1.method3311(this);
          }
@@ -155,8 +155,8 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
          UnmodifiableIterator var8 = var1.method2982().iterator();
 
          while (var8.hasNext()) {
-            Class2090 var9 = (Class2090)var8.next();
-            Class6488 var10 = var1.method3172(var9);
+            Pose var9 = (Pose)var8.next();
+            AxisAlignedBB var10 = var1.method3172(var9);
 
             for (int[] var14 : var5) {
                var7.method8372(var6.getX() + var14[0], var6.getY(), var6.getZ() + var14[1]);
@@ -182,7 +182,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
       } else {
          Class1063 var5 = EntityType.field41110.method33215(var1);
          var5.method2944(Class2106.field13731, new ItemStack(Items.field37815));
-         var5.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.field5031, this.field5032);
+         var5.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method4302(this.method4305());
          var5.method4308(this.method3005());
          if (this.method3381()) {

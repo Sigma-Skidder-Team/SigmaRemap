@@ -70,9 +70,9 @@ public class ViaVersionLoader {
    @HigestPriority
    public void method23345(Class4415 var1) {
       if (this.mc.player != null
-         && this.mc.player.method3212() == Class2090.field13622
+         && this.mc.player.method3212() == Pose.field13622
          && (Class8005.method27349() < Class5989.field26140.method18582() || Class5628.method17716())) {
-         this.mc.player.method3211(Class2090.field13619);
+         this.mc.player.method3211(Pose.STANDING);
       }
    }
 
@@ -82,17 +82,17 @@ public class ViaVersionLoader {
       if (this.mc.world != null && this.mc.player != null) {
          Block var4 = this.mc.world.getBlockState(var1.method13902()).getBlock();
          if (Class8005.method27349() == Class5989.field26129.method18582() && var4 instanceof Class3411) {
-            Class6408 var5 = Class8022.method27427(0.0, 0.0, 0.0, 1.0, 1.0, 1.0);
+            VoxelShape var5 = VoxelShapes.method27427(0.0, 0.0, 0.0, 1.0, 1.0, 1.0);
             var1.method13905(var5);
          }
 
          if (Class8005.method27349() == Class5989.field26129.method18582()) {
-            if (this.mc.player.field5035.field28453 - this.mc.player.field5035.field28450 == 1.5) {
-               this.mc.player.field5035 = this.mc.player.field5035.method19662(0.0, 0.29999995F, 0.0);
+            if (this.mc.player.boundingBox.field28453 - this.mc.player.boundingBox.field28450 == 1.5) {
+               this.mc.player.boundingBox = this.mc.player.boundingBox.method19662(0.0, 0.29999995F, 0.0);
             }
 
-            if (this.mc.player.field5092 == 1.27F) {
-               this.mc.player.field5092 = 1.38F;
+            if (this.mc.player.eyeHeight == 1.27F) {
+               this.mc.player.eyeHeight = 1.38F;
             }
          }
       }
@@ -138,13 +138,13 @@ public class ViaVersionLoader {
 
          for (int var11 = -5; var11 < 5; var11++) {
             for (int var12 = -5; var12 < 5; var12++) {
-               Class1674 var13 = this.mc.world.method6824(this.mc.player.field5072 + var11, this.mc.player.field5074 + var12);
+               Class1674 var13 = this.mc.world.method6824(this.mc.player.chunkCoordX + var11, this.mc.player.chunkCoordZ + var12);
                if (var13 instanceof Class1675) {
-                  int var10001 = this.mc.player.field5072 + var11;
-                  int var14 = this.mc.world.method6883().field9291.method31823(var10001, this.mc.player.field5074 + var12);
+                  int var10001 = this.mc.player.chunkCoordX + var11;
+                  int var14 = this.mc.world.method6883().field9291.method31823(var10001, this.mc.player.chunkCoordZ + var12);
                   Class1674 var15 = new Class1674(
                      this.mc.world,
-                     new Class7481(this.mc.player.field5072 + var11, this.mc.player.field5074 + var12),
+                     new Class7481(this.mc.player.chunkCoordX + var11, this.mc.player.chunkCoordZ + var12),
                      var13.method7077()
                   );
                   this.mc.world.method6883().field9291.method31824(var14, var15);
@@ -155,7 +155,7 @@ public class ViaVersionLoader {
    }
 
    @EventTarget
-   public void method23348(Class4402 var1) {
+   public void method23348(SendPacketEvent var1) {
       if (var1.method13932() instanceof Class5539) {
          int var4 = ((Class5539)var1.method13932()).method17416();
          if (PlayerInventory.isHotbar(var4)) {
@@ -175,13 +175,13 @@ public class ViaVersionLoader {
 
    @EventTarget
    @HigestPriority
-   public void method23349(Class4396 var1) {
+   public void method23349(RecievePacketEvent var1) {
       if (!Client.getInstance().getModuleManager().getModuleByClass(Class5156.class).isEnabled() && Class8005.method27349() != Class5989.field26129.method18582()) {
          if (!field31493.isEmpty()) {
             field31493.clear();
          }
-      } else if (var1.method13898() instanceof Class5588) {
-         Class5588 var4 = (Class5588)var1.method13898();
+      } else if (var1.getPacket() instanceof Class5588) {
+         Class5588 var4 = (Class5588)var1.getPacket();
 
          for (Pair var6 : var4.method17562()) {
             if (var6.getFirst() == Class2106.field13732
@@ -209,15 +209,15 @@ public class ViaVersionLoader {
 
       if (this.method23351()) {
          Class8920.method32597(var1, this.field31495);
-         if (!(var1.method13898() instanceof Class5608)) {
-            if (var1.method13898() instanceof Class5567 && Class5628.method17717()) {
+         if (!(var1.getPacket() instanceof Class5608)) {
+            if (var1.getPacket() instanceof Class5567 && Class5628.method17717()) {
                var1.method13900(true);
-            } else if (!(var1.method13898() instanceof Class5469)) {
-               if (var1.method13898() instanceof Class5579 && this.mc.player != null) {
-                  Class5579 var10 = (Class5579)var1.method13898();
-               } else if (!(var1.method13898() instanceof Class5502)) {
-                  if (var1.method13898() instanceof Class5472) {
-                     Class5472 var8 = (Class5472)var1.method13898();
+            } else if (!(var1.getPacket() instanceof Class5469)) {
+               if (var1.getPacket() instanceof Class5579 && this.mc.player != null) {
+                  Class5579 var10 = (Class5579)var1.getPacket();
+               } else if (!(var1.getPacket() instanceof Class5502)) {
+                  if (var1.getPacket() instanceof Class5472) {
+                     Class5472 var8 = (Class5472)var1.getPacket();
                      if (var8.method17206() != Class2151.field14064) {
                         if (this.field31497 != null && var8.method17206() == Class2151.field14065) {
                            if (this.field31497.compareTo(var8.method17205()) != 0) {
@@ -235,17 +235,17 @@ public class ViaVersionLoader {
                      }
                   }
                } else {
-                  Class5502 var9 = (Class5502)var1.method13898();
+                  Class5502 var9 = (Class5502)var1.getPacket();
                }
             } else {
-               Class5469 var11 = (Class5469)var1.method13898();
+               Class5469 var11 = (Class5469)var1.getPacket();
                Entity var13 = this.mc.world.method6774(var11.method17192());
                if (var13 != null && var11.method17193() == 3 && Class8005.method27349() == Class5989.field26129.method18582()) {
                   var1.method13900(true);
                }
             }
          } else {
-            int var12 = ((Class5608)var1.method13898()).method17633();
+            int var12 = ((Class5608)var1.getPacket()).method17633();
             if (PlayerInventory.isHotbar(var12)) {
                field31494 = var12;
             }
@@ -267,7 +267,7 @@ public class ViaVersionLoader {
                var8 = 3.0F;
             }
 
-            if (!this.mc.player.field5036) {
+            if (!this.mc.player.onGround) {
                var8 *= 0.5F;
             }
 
@@ -284,7 +284,7 @@ public class ViaVersionLoader {
                this.mc.player.setSprinting(true);
             }
 
-            var7 *= !this.mc.player.method3337() ? 1.0F : (!this.mc.player.field5036 ? 1.3F : 1.5F);
+            var7 *= !this.mc.player.method3337() ? 1.0F : (!this.mc.player.onGround ? 1.3F : 1.5F);
             Class9140.method34123(this.mc.player.field4982, this.mc.player.field4983, this.mc.player.field4984, var7);
             Class9140.method34126(Class9140.field42005, Class9140.field42006, Class9140.field42007);
             Class9140.field42005 *= (double)var6;
@@ -294,7 +294,7 @@ public class ViaVersionLoader {
                Class9140.field42006 -= 0.02;
             }
 
-            if (this.mc.player.field5037
+            if (this.mc.player.collidedHorizontally
                && this.mc
                   .player
                   .method3224(Class9140.field42005, Class9140.field42006 + 0.6F - this.mc.player.getPosY() + var4, Class9140.field42007)) {
@@ -352,10 +352,10 @@ public class ViaVersionLoader {
                if (this.field31499) {
                   var1.method13949(MathHelper.method37827(var1.method13948(), Class4399.field21498, var1.method13953().field4965));
                   var1.method13950(MathHelper.method37827(var1.method13948(), Class4399.field21498, var1.method13953().field4967));
-                  var1.method13952(MathHelper.method37821(var1.method13948(), Class4399.field21499, var1.method13953().field5032));
+                  var1.method13952(MathHelper.method37821(var1.method13948(), Class4399.field21499, var1.method13953().rotationPitch));
                   var1.method13951(var1.method13945() - var1.method13944());
-                  var1.method13953().field5034 = Class4399.field21499;
-                  var1.method13953().field5033 = Class4399.field21498;
+                  var1.method13953().prevRotationPitch = Class4399.field21499;
+                  var1.method13953().prevRotationYaw = Class4399.field21498;
                   var1.method13953().field4968 = Class4399.field21498;
                   var1.method13953().field4966 = Class4399.field21498;
                   this.field31499 = !this.field31499;

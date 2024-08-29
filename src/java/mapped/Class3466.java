@@ -6,10 +6,10 @@ public class Class3466 extends Block implements Class3207 {
    private static String[] field19307;
    public static final Class8551 field19308 = Class8820.field39691;
    public static final Class8551 field19309 = Class8820.field39710;
-   public static final Class6408 field19310 = Class8022.method27431(
+   public static final VoxelShape field19310 = VoxelShapes.method27431(
       Block.method11539(5.0, 0.0, 5.0, 11.0, 7.0, 11.0), Block.method11539(6.0, 7.0, 6.0, 10.0, 9.0, 10.0)
    );
-   public static final Class6408 field19311 = Class8022.method27431(
+   public static final VoxelShape field19311 = VoxelShapes.method27431(
       Block.method11539(5.0, 1.0, 5.0, 11.0, 8.0, 11.0), Block.method11539(6.0, 8.0, 6.0, 10.0, 10.0, 10.0)
    );
 
@@ -36,7 +36,7 @@ public class Class3466 extends Block implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return !var1.<Boolean>method23463(field19308) ? field19310 : field19311;
    }
 

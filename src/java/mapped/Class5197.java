@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -25,14 +25,14 @@ public class Class5197 extends Module {
     }
 
     @EventTarget
-    private void method16184(Class4396 var1) {
+    private void method16184(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof Class5476) {
-                Class5476 var4 = (Class5476) var1.method13898();
+            if (var1.getPacket() instanceof Class5476) {
+                Class5476 var4 = (Class5476) var1.getPacket();
             }
 
-            if (var1.method13898() instanceof Class5503) {
-                Class5503 var5 = (Class5503) var1.method13898();
+            if (var1.getPacket() instanceof Class5503) {
+                Class5503 var5 = (Class5503) var1.getPacket();
                 new Thread(() -> {
                     try {
                         Thread.sleep(2000L);

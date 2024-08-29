@@ -12,6 +12,6 @@ public class Class7397 extends Class7395 {
    @Override
    public void method23626() {
       this.field31661.field4967 = this.field31661.field4965;
-      this.field31661.field4965 = this.field31661.field5031;
+      this.field31661.field4965 = this.field31661.rotationYaw;
    }
 }

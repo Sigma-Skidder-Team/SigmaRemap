@@ -1,10 +1,10 @@
 package mapped;
 
-public class Class9289<T> {
+public class DataParameter<T> {
    private final int field42712;
    private final Class6466<T> field42713;
 
-   public Class9289(int var1, Class6466<T> var2) {
+   public DataParameter(int var1, Class6466<T> var2) {
       this.field42712 = var1;
       this.field42713 = var2;
    }
@@ -21,7 +21,7 @@ public class Class9289<T> {
    public boolean equals(Object var1) {
       if (this != var1) {
          if (var1 != null && this.getClass() == var1.getClass()) {
-            Class9289 var4 = (Class9289)var1;
+            DataParameter var4 = (DataParameter)var1;
             return this.field42712 == var4.field42712;
          } else {
             return false;

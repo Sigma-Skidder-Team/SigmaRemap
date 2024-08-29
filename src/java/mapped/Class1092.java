@@ -35,7 +35,7 @@ public interface Class1092 {
          Vector3d var17 = new Vector3d(var10, 0.0, var12).method11333().method11344(var15).method11351(var14);
          double var18 = var8 * (double)var0.world.field9016.nextFloat() * 0.5;
          var1.method3280(var17.field18048, var18, var17.field18050);
-         var1.field5039 = true;
+         var1.velocityChanged = true;
       }
    }
 }

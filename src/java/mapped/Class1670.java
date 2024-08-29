@@ -111,7 +111,7 @@ public interface Class1670 extends Class1665, Class1671 {
 
    Class6802<Block> method7089();
 
-   Class6802<Class7631> method7090();
+   Class6802<Fluid> method7090();
 
    Class8922 method7091();
 

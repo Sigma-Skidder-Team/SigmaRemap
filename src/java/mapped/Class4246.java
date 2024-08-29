@@ -47,7 +47,7 @@ public class Class4246 extends Class4240 {
 
       byte var5 = 5;
       float var6 = (float)this.method13267();
-      Class3192.method11463(
+      RenderUtil.method11463(
          (float)(this.method13263() + var5),
          (float)(this.method13265() + var5),
          (float)(this.method13267() - var5 * 2),
@@ -55,7 +55,7 @@ public class Class4246 extends Class4240 {
          10.0F,
          var1 * 0.8F
       );
-      Class3192.method11438(
+      RenderUtil.method11438(
          (float)(this.method13263() + this.method13267() / 2),
          (float)(this.method13265() + this.method13267() / 2),
          var6,

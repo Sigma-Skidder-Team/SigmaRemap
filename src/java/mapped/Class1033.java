@@ -11,8 +11,8 @@ public class Class1033 extends Class1031 implements Class1022 {
       this.field5740 = new Vector3d[2][4];
 
       for (int var5 = 0; var5 < 4; var5++) {
-         this.field5740[0][var5] = Vector3d.field18047;
-         this.field5740[1][var5] = Vector3d.field18047;
+         this.field5740[0][var5] = Vector3d.ZERO;
+         this.field5740[1][var5] = Vector3d.ZERO;
       }
    }
 
@@ -44,13 +44,13 @@ public class Class1033 extends Class1031 implements Class1022 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
+   public void registerData() {
+      super.registerData();
    }
 
    @Override
-   public Class6488 method3186() {
-      return this.method3389().method19663(3.0, 0.0, 3.0);
+   public AxisAlignedBB method3186() {
+      return this.getBoundingBox().method19663(3.0, 0.0, 3.0);
    }
 
    @Override
@@ -62,7 +62,7 @@ public class Class1033 extends Class1031 implements Class1022 {
             this.field5739 = 0;
          }
 
-         if (this.field4952 == 1 || this.field5055 % 1200 == 0) {
+         if (this.field4952 == 1 || this.ticksExisted % 1200 == 0) {
             this.field5739 = 3;
             float var6 = -6.0F;
             byte var4 = 13;
@@ -70,9 +70,9 @@ public class Class1033 extends Class1031 implements Class1022 {
             for (int var5 = 0; var5 < 4; var5++) {
                this.field5740[0][var5] = this.field5740[1][var5];
                this.field5740[1][var5] = new Vector3d(
-                  (double)(-6.0F + (float)this.field5054.nextInt(13)) * 0.5,
-                  (double)Math.max(0, this.field5054.nextInt(6) - 4),
-                  (double)(-6.0F + (float)this.field5054.nextInt(13)) * 0.5
+                  (double)(-6.0F + (float)this.rand.nextInt(13)) * 0.5,
+                  (double)Math.max(0, this.rand.nextInt(6) - 4),
+                  (double)(-6.0F + (float)this.rand.nextInt(13)) * 0.5
                );
             }
 
@@ -119,7 +119,7 @@ public class Class1033 extends Class1031 implements Class1022 {
          return true;
       } else {
          return var1 instanceof Class880 && ((Class880)var1).method3089() == Class7809.field33508
-            ? this.method3344() == null && var1.method3344() == null
+            ? this.getTeam() == null && var1.getTeam() == null
             : false;
       }
    }

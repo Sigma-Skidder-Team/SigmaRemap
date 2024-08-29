@@ -143,8 +143,8 @@ public class Class9651 {
             var2.getPosY(),
             var2.getPosZ(),
             EnumSet.<Class2033>noneOf(Class2033.class),
-            var2.field5031,
-            var2.field5032,
+            var2.rotationYaw,
+            var2.rotationPitch,
             (Class8502)null
          );
       }
@@ -193,7 +193,7 @@ public class Class9651 {
          if (var4 != null) {
             method37647(var0, var12, var2, var8.field18048, var8.field18049, var8.field18050, var10, var9.field37221, var9.field37220, var5);
          } else {
-            method37647(var0, var12, var2, var8.field18048, var8.field18049, var8.field18050, var10, var12.field5031, var12.field5032, var5);
+            method37647(var0, var12, var2, var8.field18048, var8.field18049, var8.field18050, var10, var12.rotationYaw, var12.rotationPitch, var5);
          }
       }
 
@@ -223,7 +223,7 @@ public class Class9651 {
             float var17 = MathHelper.method37792(var11);
             var17 = MathHelper.method37777(var17, -90.0F, 90.0F);
             if (var2 != var1.world) {
-               var1.method3200();
+               var1.detach();
                Entity var18 = var1;
                var1 = var1.getType().method33215(var2);
                if (var1 == null) {
@@ -234,7 +234,7 @@ public class Class9651 {
                var1.method3273(var3, var5, var7, var16, var17);
                var1.method3143(var16);
                var2.method6918(var1);
-               var18.field5041 = true;
+               var18.removed = true;
             } else {
                var1.method3273(var3, var5, var7, var16, var17);
                var1.method3143(var16);
@@ -242,7 +242,7 @@ public class Class9651 {
          } else {
             Class7481 var19 = new Class7481(new BlockPos(var3, var5, var7));
             var2.method6883().method7374(Class8561.field38486, var19, 1, var1.method3205());
-            var1.method2759();
+            var1.stopRiding();
             if (((ServerPlayerEntity)var1).isSleeping()) {
                ((ServerPlayerEntity)var1).stopSleepInBed(true, true);
             }

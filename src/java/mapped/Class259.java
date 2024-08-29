@@ -12,8 +12,8 @@ public class Class259 extends Class219<Class1048, Class2805<Class1048>> {
       var1.push();
       float var14 = 1.0F;
       float var15 = -1.0F;
-      float var16 = MathHelper.method37771(var4.field5032) / 60.0F;
-      if (!(var4.field5032 < 0.0F)) {
+      float var16 = MathHelper.method37771(var4.rotationPitch) / 60.0F;
+      if (!(var4.rotationPitch < 0.0F)) {
          var1.translate(0.0, (double)(1.0F + var16 * 0.8F), (double)(-1.0F + var16 * 0.2F));
       } else {
          var1.translate(0.0, (double)(1.0F - var16 * 0.5F), (double)(-1.0F + var16 * 0.5F));

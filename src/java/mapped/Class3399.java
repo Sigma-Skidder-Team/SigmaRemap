@@ -21,12 +21,12 @@ public class Class3399 extends Class3397 {
       .stream()
       .filter(var0 -> var0.getKey() != Direction.DOWN)
       .collect(Util.<Direction, Class8551>method38484());
-   private static final Class6408 field19045 = Block.method11539(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
-   private static final Class6408 field19046 = Block.method11539(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
-   private static final Class6408 field19047 = Block.method11539(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   private static final Class6408 field19048 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 1.0);
-   private static final Class6408 field19049 = Block.method11539(0.0, 0.0, 15.0, 16.0, 16.0, 16.0);
-   private final Map<BlockState, Class6408> field19050;
+   private static final VoxelShape field19045 = Block.method11539(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
+   private static final VoxelShape field19046 = Block.method11539(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
+   private static final VoxelShape field19047 = Block.method11539(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   private static final VoxelShape field19048 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 1.0);
+   private static final VoxelShape field19049 = Block.method11539(0.0, 0.0, 15.0, 16.0, 16.0, 16.0);
+   private final Map<BlockState, VoxelShape> field19050;
    private final Object2IntMap<Block> field19051 = new Object2IntOpenHashMap();
    private final Object2IntMap<Block> field19052 = new Object2IntOpenHashMap();
 
@@ -51,26 +51,26 @@ public class Class3399 extends Class3397 {
       );
    }
 
-   private static Class6408 method12015(BlockState var0) {
-      Class6408 var3 = Class8022.method27425();
+   private static VoxelShape method12015(BlockState var0) {
+      VoxelShape var3 = VoxelShapes.method27425();
       if (var0.<Boolean>method23463(field19043)) {
          var3 = field19045;
       }
 
       if (var0.<Boolean>method23463(field19039)) {
-         var3 = Class8022.method27431(var3, field19048);
+         var3 = VoxelShapes.method27431(var3, field19048);
       }
 
       if (var0.<Boolean>method23463(field19041)) {
-         var3 = Class8022.method27431(var3, field19049);
+         var3 = VoxelShapes.method27431(var3, field19049);
       }
 
       if (var0.<Boolean>method23463(field19040)) {
-         var3 = Class8022.method27431(var3, field19047);
+         var3 = VoxelShapes.method27431(var3, field19047);
       }
 
       if (var0.<Boolean>method23463(field19042)) {
-         var3 = Class8022.method27431(var3, field19046);
+         var3 = VoxelShapes.method27431(var3, field19046);
       }
 
       return !var3.method19516() ? var3 : field19035;
@@ -82,7 +82,7 @@ public class Class3399 extends Class3397 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.field19050.get(var1.method23465(field19038, Integer.valueOf(0)));
    }
 

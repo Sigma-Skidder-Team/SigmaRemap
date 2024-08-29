@@ -21,18 +21,18 @@ public class Class5311 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23845 = 0;
-        if (!mc.gameSettings.field44637.isKeyDown()) {
-            if (!mc.gameSettings.field44637.isKeyDown()) {
+        if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
+            if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
                 this.field23846 = false;
             }
         } else {
-            mc.gameSettings.field44637.field13071 = false;
+            mc.gameSettings.keyBindSneak.field13071 = false;
             this.field23846 = true;
         }
 
-        if (mc.player.field5036) {
+        if (mc.player.onGround) {
             this.field23847 = this.field23848 = false;
         }
 
@@ -42,19 +42,19 @@ public class Class5311 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Class5628.method17725(-0.078);
         Class9567.method37090(0.2);
         mc.timer.field40360 = 1.0F;
         if (this.field23846) {
-            mc.gameSettings.field44637.field13071 = true;
+            mc.gameSettings.keyBindSneak.field13071 = true;
         }
     }
 
     @EventTarget
     private void method16686(Class4430 var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
+            if (var1.method13977() == mc.gameSettings.keyBindSneak.field13070.field34875) {
                 var1.method13900(true);
                 this.field23846 = true;
             }
@@ -64,7 +64,7 @@ public class Class5311 extends Module {
     @EventTarget
     private void method16687(Class4426 var1) {
         if (this.isEnabled()) {
-            if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
+            if (var1.method13973() == mc.gameSettings.keyBindSneak.field13070.field34875) {
                 var1.method13900(true);
                 this.field23846 = false;
             }
@@ -75,7 +75,7 @@ public class Class5311 extends Module {
     @Class5631
     public void method16688(Class4435 var1) {
         if (!this.isEnabled()) {
-            if (mc.player.field5036) {
+            if (mc.player.onGround) {
                 this.field23847 = this.field23848 = false;
             }
         } else if (Class5628.method17718()) {
@@ -117,7 +117,7 @@ public class Class5311 extends Module {
                     if (!Class5628.method17730(mc.player, 0.001F)) {
                         var1.method13995(0.0);
                         Class9567.method37088(var1, 0.0);
-                        if (mc.player.field5045 > 4.0F) {
+                        if (mc.player.fallDistance > 4.0F) {
                             mc.getConnection().sendPacket(new Class5603(true));
                             this.field23848 = true;
                         }
@@ -150,11 +150,11 @@ public class Class5311 extends Module {
         } else {
             Class9567.method37088(var1, Class9567.method37075());
             var1.method13995(0.0);
-            if (mc.player.field5055 % 2 == 0) {
+            if (mc.player.ticksExisted % 2 == 0) {
                 double var4 = mc.player.getPosX();
                 double var6 = mc.player.getPosY();
                 double var8 = mc.player.getPosZ();
-                mc.player.method3215(var4, var6 + 1.0E-10, var8);
+                mc.player.setPosition(var4, var6 + 1.0E-10, var8);
             }
         }
     }
@@ -174,9 +174,9 @@ public class Class5311 extends Module {
     }
 
     @EventTarget
-    public void method16690(Class4396 var1) {
+    public void method16690(RecievePacketEvent var1) {
         if (mc.world != null && mc.getConnection() != null && Class5628.method17718()) {
-            Packet var4 = var1.method13898();
+            Packet var4 = var1.getPacket();
             if (!(var4 instanceof Class5473)) {
                 if (var4 instanceof Class5590) {
                     Class5590 var5 = (Class5590) var4;

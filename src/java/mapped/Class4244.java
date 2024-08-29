@@ -26,7 +26,7 @@ public class Class4244 extends Class4240 {
             float var6 = 0.0F;
          }
 
-         Class3192.method11474(
+         RenderUtil.method11474(
             (float)this.method13263(),
             (float)this.method13265(),
             (float)this.method13267(),
@@ -35,7 +35,7 @@ public class Class4244 extends Class4240 {
             Class5628.method17688(this.field20914.method19405(), var1)
          );
          if (this.method13303() != null) {
-            Class3192.method11440(
+            RenderUtil.method11440(
                this.method13305(),
                (float)(this.method13263() + this.method13267() / 2),
                (float)(this.method13265() + this.method13269() / 2),

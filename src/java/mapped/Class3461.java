@@ -9,10 +9,10 @@ public class Class3461 extends Block {
    public static final Class8552<Class183> field19295 = Class8820.field39767;
    public static final Class8551 field19296 = Class8820.field39704;
    public static final Class8552<Class84> field19297 = Class8820.field39734;
-   public static final Class6408 field19298 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
-   public static final Class6408 field19299 = Block.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19300 = Block.method11539(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19301 = Block.method11539(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
+   public static final VoxelShape field19298 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
+   public static final VoxelShape field19299 = Block.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field19300 = Block.method11539(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field19301 = Block.method11539(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
 
    public Class3461(AbstractBlock var1) {
       super(var1);
@@ -28,7 +28,7 @@ public class Class3461 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       Direction var7 = var1.<Direction>method23463(field19293);
       boolean var8 = !var1.<Boolean>method23463(field19294);
       boolean var9 = var1.<Class183>method23463(field19295) == Class183.field665;

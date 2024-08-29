@@ -21,8 +21,8 @@ public class Class1055 extends Class1047 {
 
    public Class1055(EntityType<? extends Class1055> var1, World var2) {
       super(var1, var2);
-      this.field5054.setSeed((long)this.method3205());
-      this.field5834 = 1.0F / (this.field5054.nextFloat() + 1.0F) * 0.2F;
+      this.rand.setSeed((long)this.method3205());
+      this.field5834 = 1.0F / (this.rand.nextFloat() + 1.0F) * 0.2F;
    }
 
    @Override
@@ -36,7 +36,7 @@ public class Class1055 extends Class1047 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.5F;
    }
 
@@ -76,8 +76,8 @@ public class Class1055 extends Class1047 {
       if ((double)this.field5829 > Math.PI * 2) {
          if (!this.world.field9020) {
             this.field5829 = (float)((double)this.field5829 - (Math.PI * 2));
-            if (this.field5054.nextInt(10) == 0) {
-               this.field5834 = 1.0F / (this.field5054.nextFloat() + 1.0F) * 0.2F;
+            if (this.rand.nextInt(10) == 0) {
+               this.field5834 = 1.0F / (this.rand.nextFloat() + 1.0F) * 0.2F;
             }
 
             this.world.method6786(this, (byte)19);
@@ -126,7 +126,7 @@ public class Class1055 extends Class1047 {
          float var4 = MathHelper.method37766(method3234(var7));
          this.field4965 = this.field4965
             + (-((float) MathHelper.method37814(var7.field18048, var7.field18050)) * (180.0F / (float)Math.PI) - this.field4965) * 0.1F;
-         this.field5031 = this.field4965;
+         this.rotationYaw = this.field4965;
          this.field5827 = (float)((double)this.field5827 + Math.PI * (double)this.field5835 * 1.5);
          this.field5825 = this.field5825 + (-((float) MathHelper.method37814((double)var4, var7.field18049)) * (180.0F / (float)Math.PI) - this.field5825) * 0.1F;
       }
@@ -152,8 +152,8 @@ public class Class1055 extends Class1047 {
       Vector3d var3 = this.method4837(new Vector3d(0.0, -1.0, 0.0)).method11339(this.getPosX(), this.getPosY(), this.getPosZ());
 
       for (int var4 = 0; var4 < 30; var4++) {
-         Vector3d var5 = this.method4837(new Vector3d((double)this.field5054.nextFloat() * 0.6 - 0.3, -1.0, (double)this.field5054.nextFloat() * 0.6 - 0.3));
-         Vector3d var6 = var5.method11344(0.3 + (double)(this.field5054.nextFloat() * 2.0F));
+         Vector3d var5 = this.method4837(new Vector3d((double)this.rand.nextFloat() * 0.6 - 0.3, -1.0, (double)this.rand.nextFloat() * 0.6 - 0.3));
+         Vector3d var6 = var5.method11344(0.3 + (double)(this.rand.nextFloat() * 2.0F));
          ((ServerWorld)this.world)
             .method6939(
                Class7940.field34095, var3.field18048, var3.field18049 + 0.5, var3.field18050, 0, var6.field18048, var6.field18049, var6.field18050, 0.1F
@@ -191,6 +191,6 @@ public class Class1055 extends Class1047 {
 
    // $VF: synthetic method
    public static boolean method4842(Class1055 var0) {
-      return var0.field5057;
+      return var0.inWater;
    }
 }

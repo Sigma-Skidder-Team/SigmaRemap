@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class Class1079 extends Class1009 implements Class1080, Class1022 {
-   private static final Class9289<Integer> field5923 = Class9361.<Integer>method35441(Class1079.class, Class7784.field33391);
-   private static final Class9289<Integer> field5924 = Class9361.<Integer>method35441(Class1079.class, Class7784.field33391);
-   private static final Class9289<Integer> field5925 = Class9361.<Integer>method35441(Class1079.class, Class7784.field33391);
-   private static final List<Class9289<Integer>> field5926 = ImmutableList.of(field5923, field5924, field5925);
-   private static final Class9289<Integer> field5927 = Class9361.<Integer>method35441(Class1079.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5923 = EntityDataManager.<Integer>method35441(Class1079.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5924 = EntityDataManager.<Integer>method35441(Class1079.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5925 = EntityDataManager.<Integer>method35441(Class1079.class, Class7784.field33391);
+   private static final List<DataParameter<Integer>> field5926 = ImmutableList.of(field5923, field5924, field5925);
+   private static final DataParameter<Integer> field5927 = EntityDataManager.<Integer>method35441(Class1079.class, Class7784.field33391);
    private final float[] field5928 = new float[2];
    private final float[] field5929 = new float[2];
    private final float[] field5930 = new float[2];
@@ -42,12 +42,12 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5923, 0);
-      this.field5063.method35442(field5924, 0);
-      this.field5063.method35442(field5925, 0);
-      this.field5063.method35442(field5927, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5923, 0);
+      this.dataManager.register(field5924, 0);
+      this.dataManager.register(field5925, 0);
+      this.dataManager.register(field5927, 0);
    }
 
    @Override
@@ -109,7 +109,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
 
       this.method3434(var3);
       if (method3234(var3) > 0.05) {
-         this.field5031 = (float) MathHelper.method37814(var3.field18050, var3.field18048) * (180.0F / (float)Math.PI) - 90.0F;
+         this.rotationYaw = (float) MathHelper.method37814(var3.field18050, var3.field18048) * (180.0F / (float)Math.PI) - 90.0F;
       }
 
       super.method2871();
@@ -152,9 +152,9 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
          this.world
             .method6746(
                Class7940.field34092,
-               var27 + this.field5054.nextGaussian() * 0.3F,
-               var29 + this.field5054.nextGaussian() * 0.3F,
-               var31 + this.field5054.nextGaussian() * 0.3F,
+               var27 + this.rand.nextGaussian() * 0.3F,
+               var29 + this.rand.nextGaussian() * 0.3F,
+               var31 + this.rand.nextGaussian() * 0.3F,
                0.0,
                0.0,
                0.0
@@ -163,9 +163,9 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
             this.world
                .method6746(
                   Class7940.field34068,
-                  var27 + this.field5054.nextGaussian() * 0.3F,
-                  var29 + this.field5054.nextGaussian() * 0.3F,
-                  var31 + this.field5054.nextGaussian() * 0.3F,
+                  var27 + this.rand.nextGaussian() * 0.3F,
+                  var29 + this.rand.nextGaussian() * 0.3F,
+                  var31 + this.rand.nextGaussian() * 0.3F,
                   0.7F,
                   0.7F,
                   0.5
@@ -178,9 +178,9 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
             this.world
                .method6746(
                   Class7940.field34068,
-                  this.getPosX() + this.field5054.nextGaussian(),
-                  this.getPosY() + (double)(this.field5054.nextFloat() * 3.3F),
-                  this.getPosZ() + this.field5054.nextGaussian(),
+                  this.getPosX() + this.rand.nextGaussian(),
+                  this.getPosY() + (double)(this.rand.nextFloat() * 3.3F),
+                  this.getPosZ() + this.rand.nextGaussian(),
                   0.7F,
                   0.7F,
                   0.9F
@@ -195,8 +195,8 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
          super.method4258();
 
          for (int var3 = 1; var3 < 3; var3++) {
-            if (this.field5055 >= this.field5932[var3 - 1]) {
-               this.field5932[var3 - 1] = this.field5055 + 10 + this.field5054.nextInt(10);
+            if (this.ticksExisted >= this.field5932[var3 - 1]) {
+               this.field5932[var3 - 1] = this.ticksExisted + 10 + this.rand.nextInt(10);
                if (this.world.method6997() == Class2197.field14353 || this.world.method6997() == Class2197.field14354) {
                   int var4 = var3 - 1;
                   int var5 = this.field5933[var3 - 1];
@@ -204,9 +204,9 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
                   if (var5 > 15) {
                      float var6 = 10.0F;
                      float var7 = 5.0F;
-                     double var8 = MathHelper.method37784(this.field5054, this.getPosX() - 10.0, this.getPosX() + 10.0);
-                     double var10 = MathHelper.method37784(this.field5054, this.getPosY() - 5.0, this.getPosY() + 5.0);
-                     double var12 = MathHelper.method37784(this.field5054, this.getPosZ() - 10.0, this.getPosZ() + 10.0);
+                     double var8 = MathHelper.method37784(this.rand, this.getPosX() - 10.0, this.getPosX() + 10.0);
+                     double var10 = MathHelper.method37784(this.rand, this.getPosY() - 5.0, this.getPosY() + 5.0);
+                     double var12 = MathHelper.method37784(this.rand, this.getPosZ() - 10.0, this.getPosZ() + 10.0);
                      this.method5009(var3 + 1, var8, var10, var12, true);
                      this.field5933[var3 - 1] = 0;
                   }
@@ -214,10 +214,10 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
 
                int var23 = this.method5014(var3);
                if (var23 <= 0) {
-                  List var27 = this.world.<Class880>method7195(Class880.class, field5937, this, this.method3389().method19663(20.0, 8.0, 20.0));
+                  List var27 = this.world.<Class880>method7195(Class880.class, field5937, this, this.getBoundingBox().method19663(20.0, 8.0, 20.0));
 
                   for (int var29 = 0; var29 < 10 && !var27.isEmpty(); var29++) {
-                     Class880 var31 = (Class880)var27.get(this.field5054.nextInt(var27.size()));
+                     Class880 var31 = (Class880)var27.get(this.rand.nextInt(var27.size()));
                      if (var31 != this && var31.method3066() && this.method3135(var31)) {
                         if (!(var31 instanceof PlayerEntity)) {
                            this.method5015(var3, var31.method3205());
@@ -237,7 +237,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
                      this.method5015(var3, 0);
                   } else {
                      this.method5008(var3 + 1, (Class880)var26);
-                     this.field5932[var3 - 1] = this.field5055 + 40 + this.field5054.nextInt(20);
+                     this.field5932[var3 - 1] = this.ticksExisted + 40 + this.rand.nextInt(20);
                      this.field5933[var3 - 1] = 0;
                   }
                }
@@ -279,7 +279,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
             }
          }
 
-         if (this.field5055 % 20 == 0) {
+         if (this.ticksExisted % 20 == 0) {
             this.method3041(1.0F);
          }
 
@@ -295,7 +295,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
          }
 
          this.method5013(var22);
-         if (this.field5055 % 10 == 0) {
+         if (this.ticksExisted % 10 == 0) {
             this.method3041(10.0F);
          }
       }
@@ -365,7 +365,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
 
    private void method5008(int var1, Class880 var2) {
       this.method5009(
-         var1, var2.getPosX(), var2.getPosY() + (double)var2.method3393() * 0.5, var2.getPosZ(), var1 == 0 && this.field5054.nextFloat() < 0.001F
+         var1, var2.getPosX(), var2.getPosY() + (double)var2.method3393() * 0.5, var2.getPosZ(), var1 == 0 && this.rand.nextFloat() < 0.001F
       );
    }
 
@@ -473,19 +473,19 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    }
 
    public int method5012() {
-      return this.field5063.<Integer>method35445(field5927);
+      return this.dataManager.<Integer>method35445(field5927);
    }
 
    public void method5013(int var1) {
-      this.field5063.method35446(field5927, var1);
+      this.dataManager.method35446(field5927, var1);
    }
 
    public int method5014(int var1) {
-      return this.field5063.<Integer>method35445(field5926.get(var1));
+      return this.dataManager.<Integer>method35445(field5926.get(var1));
    }
 
    public void method5015(int var1, int var2) {
-      this.field5063.method35446(field5926.get(var1), var2);
+      this.dataManager.method35446(field5926.get(var1), var2);
    }
 
    @Override

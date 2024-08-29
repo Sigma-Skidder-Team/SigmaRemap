@@ -9,10 +9,10 @@ public class Class3459 extends Block {
    public static final Class8553 field19281 = Class3198.field18484;
    public static final Class8551 field19282 = Class8820.field39704;
    public static final Class8551 field19283 = Class8820.field39682;
-   public static final Class6408 field19284 = Block.method11539(5.0, 0.0, 10.0, 11.0, 10.0, 16.0);
-   public static final Class6408 field19285 = Block.method11539(5.0, 0.0, 0.0, 11.0, 10.0, 6.0);
-   public static final Class6408 field19286 = Block.method11539(10.0, 0.0, 5.0, 16.0, 10.0, 11.0);
-   public static final Class6408 field19287 = Block.method11539(0.0, 0.0, 5.0, 6.0, 10.0, 11.0);
+   public static final VoxelShape field19284 = Block.method11539(5.0, 0.0, 10.0, 11.0, 10.0, 16.0);
+   public static final VoxelShape field19285 = Block.method11539(5.0, 0.0, 0.0, 11.0, 10.0, 6.0);
+   public static final VoxelShape field19286 = Block.method11539(10.0, 0.0, 5.0, 16.0, 10.0, 11.0);
+   public static final VoxelShape field19287 = Block.method11539(0.0, 0.0, 5.0, 6.0, 10.0, 11.0);
 
    public Class3459(AbstractBlock var1) {
       super(var1);
@@ -26,7 +26,7 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       switch (Class7594.field32602[var1.<Direction>method23463(field19281).ordinal()]) {
          case 1:
          default:

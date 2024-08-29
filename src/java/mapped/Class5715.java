@@ -28,12 +28,12 @@ public abstract class Class5715<T extends Entity> {
 
    public boolean method17854(T var1, Class7647 var2, double var3, double var5, double var7) {
       if (var1.method3290(var3, var5, var7)) {
-         if (var1.field5077) {
+         if (var1.ignoreFrustumCheck) {
             return true;
          } else {
-            Class6488 var11 = var1.method3186().method19664(0.5);
+            AxisAlignedBB var11 = var1.method3186().method19664(0.5);
             if (var11.method19684() || var11.method19675() == 0.0) {
-               var11 = new Class6488(
+               var11 = new AxisAlignedBB(
                   var1.getPosX() - 2.0,
                   var1.getPosY() - 2.0,
                   var1.getPosZ() - 2.0,
@@ -51,7 +51,7 @@ public abstract class Class5715<T extends Entity> {
    }
 
    public Vector3d method17867(T var1, float var2) {
-      return Vector3d.field18047;
+      return Vector3d.ZERO;
    }
 
    public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {

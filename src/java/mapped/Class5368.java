@@ -2,9 +2,9 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -24,8 +24,8 @@ public class Class5368 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
-        if (!mc.player.field5036) {
+    public void onEnable() {
+        if (!mc.player.onGround) {
             this.field23984 = false;
         } else {
             double var3 = mc.player.getPosX();
@@ -46,7 +46,7 @@ public class Class5368 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         this.field23985.method27120();
         this.field23985.method27118();
         if (this.field23984) {
@@ -65,7 +65,7 @@ public class Class5368 extends Module {
     @EventTarget
     public void method16898(Class4399 var1) {
         if (mc.player != null) {
-            if (!this.field23984 && mc.player.field5036) {
+            if (!this.field23984 && mc.player.onGround) {
                 if (!this.getBooleanValueFromSetttingName("Instant")) {
                     Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Wait 5s..."));
                 } else {
@@ -106,7 +106,7 @@ public class Class5368 extends Module {
     }
 
     @EventTarget
-    private void method16900(Class4402 var1) {
+    private void method16900(SendPacketEvent var1) {
         if (mc.getConnection() != null) {
             if (this.field23984) {
                 if (var1.method13932() instanceof CEntityActionPacket
@@ -125,15 +125,15 @@ public class Class5368 extends Module {
     }
 
     @EventTarget
-    public void method16901(Class4396 var1) {
+    public void method16901(RecievePacketEvent var1) {
         if (mc.player != null && this.field23984) {
             if (this.isEnabled() || this.getBooleanValueFromSetttingName("Instant")) {
-                if (var1.method13898() instanceof Class5473) {
+                if (var1.getPacket() instanceof Class5473) {
                     this.method16004().method16000();
                     if (!this.getBooleanValueFromSetttingName("Instant")) {
                         Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "You can do what you want for 5s"));
                     } else {
-                        Class5473 var4 = (Class5473) var1.method13898();
+                        Class5473 var4 = (Class5473) var1.getPacket();
                         var1.method13900(true);
                         mc.getConnection()
                                 .sendPacket(new Class5604(var4.field24297, var4.field24298, var4.field24299, var4.field24300, var4.field24301, false));

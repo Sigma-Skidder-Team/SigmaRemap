@@ -19,8 +19,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       Items.field37872,
       Items.field37873
    );
-   private static final Class9289<Byte> field5882 = Class9361.<Byte>method35441(AbstractHorseEntity.class, Class7784.field33390);
-   private static final Class9289<Optional<UUID>> field5883 = Class9361.<Optional<UUID>>method35441(AbstractHorseEntity.class, Class7784.field33404);
+   private static final DataParameter<Byte> field5882 = EntityDataManager.<Byte>method35441(AbstractHorseEntity.class, Class7784.field33390);
+   private static final DataParameter<Optional<UUID>> field5883 = EntityDataManager.<Optional<UUID>>method35441(AbstractHorseEntity.class, Class7784.field33404);
    private int field5884;
    private int field5885;
    private int field5886;
@@ -42,7 +42,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    public AbstractHorseEntity(EntityType<? extends AbstractHorseEntity> var1, World var2) {
       super(var1, var2);
-      this.field5051 = 1.0F;
+      this.stepHeight = 1.0F;
       this.method4948();
    }
 
@@ -63,22 +63,22 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5882, (byte)0);
-      this.field5063.method35442(field5883, Optional.<UUID>empty());
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5882, (byte)0);
+      this.dataManager.register(field5883, Optional.<UUID>empty());
    }
 
    public boolean method4930(int var1) {
-      return (this.field5063.<Byte>method35445(field5882) & var1) != 0;
+      return (this.dataManager.<Byte>method35445(field5882) & var1) != 0;
    }
 
    public void method4931(int var1, boolean var2) {
-      byte var5 = this.field5063.<Byte>method35445(field5882);
+      byte var5 = this.dataManager.<Byte>method35445(field5882);
       if (!var2) {
-         this.field5063.method35446(field5882, (byte)(var5 & ~var1));
+         this.dataManager.method35446(field5882, (byte)(var5 & ~var1));
       } else {
-         this.field5063.method35446(field5882, (byte)(var5 | var1));
+         this.dataManager.method35446(field5882, (byte)(var5 | var1));
       }
    }
 
@@ -88,11 +88,11 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Nullable
    public UUID method4933() {
-      return this.field5063.<Optional<UUID>>method35445(field5883).orElse((UUID)null);
+      return this.dataManager.<Optional<UUID>>method35445(field5883).orElse((UUID)null);
    }
 
    public void method4934(UUID var1) {
-      this.field5063.method35446(field5883, Optional.<UUID>ofNullable(var1));
+      this.dataManager.method35446(field5883, Optional.<UUID>ofNullable(var1));
    }
 
    public boolean method4935() {
@@ -164,7 +164,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Override
    public boolean method3140() {
-      return !this.method3329();
+      return !this.isBeingRidden();
    }
 
    private void method4947() {
@@ -181,7 +181,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                   var3,
                   this.method2864(),
                   1.0F,
-                  1.0F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F
+                  1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F
                );
          }
       }
@@ -198,7 +198,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          return false;
       } else {
          this.method2741(Class8654.field39002, (float)var5);
-         if (this.method3329()) {
+         if (this.isBeingRidden()) {
             for (Entity var7 : this.method3411()) {
                var7.method2741(Class8654.field39002, (float)var5);
             }
@@ -247,7 +247,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public void method4902(Class920 var1) {
       boolean var4 = this.method4943();
       this.method4903();
-      if (this.field5055 > 20 && !var4 && this.method4943()) {
+      if (this.ticksExisted > 20 && !var4 && this.method4943()) {
          this.method2863(Sounds.field26677, 0.5F, 1.0F);
       }
    }
@@ -270,7 +270,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Nullable
    @Override
    public Class9455 method2879(Class8654 var1) {
-      if (this.field5054.nextInt(3) == 0) {
+      if (this.rand.nextInt(3) == 0) {
          this.method4958();
       }
 
@@ -280,7 +280,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Nullable
    @Override
    public Class9455 method4241() {
-      if (this.field5054.nextInt(10) == 0 && !this.method2896()) {
+      if (this.rand.nextInt(10) == 0 && !this.method2896()) {
          this.method4958();
       }
 
@@ -302,7 +302,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             var6 = var5.method23452();
          }
 
-         if (this.method3329() && this.field5900) {
+         if (this.isBeingRidden() && this.field5900) {
             this.field5901++;
             if (this.field5901 > 5 && this.field5901 % 3 == 0) {
                this.method4950(var6);
@@ -345,7 +345,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public void openGUI(PlayerEntity var1) {
-      if (!this.world.field9020 && (!this.method3329() || this.method3409(var1)) && this.method4932()) {
+      if (!this.world.field9020 && (!this.isBeingRidden() || this.method3409(var1)) && this.method4932()) {
          var1.method2768(this, this.field5890);
       }
    }
@@ -444,15 +444,15 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       this.method4956(false);
       this.method4957(false);
       if (!this.world.field9020) {
-         var1.field5031 = this.field5031;
-         var1.field5032 = this.field5032;
+         var1.rotationYaw = this.rotationYaw;
+         var1.rotationPitch = this.rotationPitch;
          var1.method3311(this);
       }
    }
 
    @Override
    public boolean method2896() {
-      return super.method2896() && this.method3329() && this.method4943() || this.method4938() || this.method4939();
+      return super.method2896() && this.isBeingRidden() && this.method4943() || this.method4938() || this.method4939();
    }
 
    @Override
@@ -479,20 +479,20 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Override
    public void method2871() {
-      if (this.field5054.nextInt(200) == 0) {
+      if (this.rand.nextInt(200) == 0) {
          this.method4954();
       }
 
       super.method2871();
       if (!this.world.field9020 && this.method3066()) {
-         if (this.field5054.nextInt(900) == 0 && this.field4955 == 0) {
+         if (this.rand.nextInt(900) == 0 && this.field4955 == 0) {
             this.method3041(1.0F);
          }
 
          if (this.method4917()) {
             if (!this.method4938()
-               && !this.method3329()
-               && this.field5054.nextInt(300) == 0
+               && !this.isBeingRidden()
+               && this.rand.nextInt(300) == 0
                && this.world.getBlockState(this.getPosition().method8313()).method23448(Blocks.field36395)) {
                this.method4956(true);
             }
@@ -511,7 +511,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       if (this.method4940() && this.method3005() && !this.method4938()) {
          Class880 var3 = this.world
             .<AbstractHorseEntity>method7191(
-               AbstractHorseEntity.class, field5880, this, this.getPosX(), this.getPosY(), this.getPosZ(), this.method3389().method19664(16.0)
+               AbstractHorseEntity.class, field5880, this, this.getPosX(), this.getPosY(), this.getPosZ(), this.getBoundingBox().method19664(16.0)
             );
          if (var3 != null && this.getDistanceSq(var3) > 4.0) {
             this.field5599.method21652(var3, 0);
@@ -640,13 +640,13 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Override
    public void method2915(Vector3d var1) {
       if (this.method3066()) {
-         if (this.method3329() && this.method4277() && this.method4943()) {
+         if (this.isBeingRidden() && this.method4277() && this.method4943()) {
             Class880 var4 = (Class880)this.method3407();
-            this.field5031 = var4.field5031;
-            this.field5033 = this.field5031;
-            this.field5032 = var4.field5032 * 0.5F;
-            this.method3214(this.field5031, this.field5032);
-            this.field4965 = this.field5031;
+            this.rotationYaw = var4.rotationYaw;
+            this.prevRotationYaw = this.rotationYaw;
+            this.rotationPitch = var4.rotationPitch * 0.5F;
+            this.method3214(this.rotationYaw, this.rotationPitch);
+            this.field4965 = this.rotationYaw;
             this.field4967 = this.field4965;
             float var5 = var4.field4982 * 0.5F;
             float var6 = var4.field4984;
@@ -655,12 +655,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                this.field5901 = 0;
             }
 
-            if (this.field5036 && this.field5892 == 0.0F && this.method4939() && !this.field5893) {
+            if (this.onGround && this.field5892 == 0.0F && this.method4939() && !this.field5893) {
                var5 = 0.0F;
                var6 = 0.0F;
             }
 
-            if (this.field5892 > 0.0F && !this.method4935() && this.field5036) {
+            if (this.field5892 > 0.0F && !this.method4935() && this.onGround) {
                double var7 = this.method4949() * (double)this.field5892 * (double)this.method3229();
                double var9;
                if (!this.method3033(Class8254.field35474)) {
@@ -672,10 +672,10 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                Vector3d var11 = this.method3433();
                this.method3435(var11.field18048, var9, var11.field18050);
                this.method4937(true);
-               this.field5078 = true;
+               this.isAirBorne = true;
                if (var6 > 0.0F) {
-                  float var12 = MathHelper.sin(this.field5031 * (float) (Math.PI / 180.0));
-                  float var13 = MathHelper.cos(this.field5031 * (float) (Math.PI / 180.0));
+                  float var12 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0));
+                  float var13 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0));
                   this.method3434(this.method3433().method11339((double)(-0.4F * var12 * this.field5892), 0.0, (double)(0.4F * var13 * this.field5892)));
                }
 
@@ -685,14 +685,14 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             this.field4969 = this.method2918() * 0.1F;
             if (!this.method3418()) {
                if (var4 instanceof PlayerEntity) {
-                  this.method3434(Vector3d.field18047);
+                  this.method3434(Vector3d.ZERO);
                }
             } else {
                this.method3113((float)this.method3086(Class9173.field42108));
                super.method2915(new Vector3d((double)var5, var1.field18049, (double)var6));
             }
 
-            if (this.field5036) {
+            if (this.onGround) {
                this.field5892 = 0.0F;
                this.method4937(false);
             }
@@ -760,7 +760,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public boolean method4961() {
-      return !this.method3329() && !this.method3328() && this.method4932() && !this.method3005() && this.method3042() >= this.method3075() && this.method4507();
+      return !this.isBeingRidden() && !this.isPassenger() && this.method4932() && !this.method3005() && this.method3042() >= this.method3075() && this.method4507();
    }
 
    @Nullable
@@ -833,9 +833,9 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       Class7435 var4 = !var1 ? Class7940.field34092 : Class7940.field34080;
 
       for (int var5 = 0; var5 < 7; var5++) {
-         double var6 = this.field5054.nextGaussian() * 0.02;
-         double var8 = this.field5054.nextGaussian() * 0.02;
-         double var10 = this.field5054.nextGaussian() * 0.02;
+         double var6 = this.rand.nextGaussian() * 0.02;
+         double var8 = this.rand.nextGaussian() * 0.02;
+         double var10 = this.rand.nextGaussian() * 0.02;
          this.world.method6746(var4, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var6, var8, var10);
       }
    }
@@ -866,7 +866,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          float var5 = MathHelper.cos(this.field4965 * (float) (Math.PI / 180.0));
          float var6 = 0.7F * this.field5897;
          float var7 = 0.15F * this.field5897;
-         var1.method3215(
+         var1.setPosition(
             this.getPosX() + (double)(var6 * var8),
             this.getPosY() + this.method3310() + var1.method2894() + (double)var7,
             this.getPosZ() - (double)(var6 * var5)
@@ -878,15 +878,15 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public float method4971() {
-      return 15.0F + (float)this.field5054.nextInt(8) + (float)this.field5054.nextInt(9);
+      return 15.0F + (float)this.rand.nextInt(8) + (float)this.rand.nextInt(9);
    }
 
    public double method4972() {
-      return 0.4F + this.field5054.nextDouble() * 0.2 + this.field5054.nextDouble() * 0.2 + this.field5054.nextDouble() * 0.2;
+      return 0.4F + this.rand.nextDouble() * 0.2 + this.rand.nextDouble() * 0.2 + this.rand.nextDouble() * 0.2;
    }
 
    public double method4973() {
-      return (0.45F + this.field5054.nextDouble() * 0.3 + this.field5054.nextDouble() * 0.3 + this.field5054.nextDouble() * 0.3) * 0.25;
+      return (0.45F + this.rand.nextDouble() * 0.3 + this.rand.nextDouble() * 0.3 + this.rand.nextDouble() * 0.3) * 0.25;
    }
 
    @Override
@@ -895,7 +895,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.95F;
    }
 
@@ -944,15 +944,15 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Nullable
    private Vector3d method4974(Vector3d var1, Class880 var2) {
       double var5 = this.getPosX() + var1.field18048;
-      double var7 = this.method3389().field28450;
+      double var7 = this.getBoundingBox().field28450;
       double var9 = this.getPosZ() + var1.field18050;
       Mutable var11 = new Mutable();
       UnmodifiableIterator var12 = var2.method2982().iterator();
 
       while (var12.hasNext()) {
-         Class2090 var13 = (Class2090)var12.next();
+         Pose var13 = (Pose)var12.next();
          var11.method8373(var5, var7, var9);
-         double var14 = this.method3389().field28453 + 0.75;
+         double var14 = this.getBoundingBox().field28453 + 0.75;
 
          do {
             double var16 = this.world.method7039(var11);
@@ -961,7 +961,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             }
 
             if (Class4527.method14423(var16)) {
-               Class6488 var18 = var2.method3172(var13);
+               AxisAlignedBB var18 = var2.method3172(var13);
                Vector3d var19 = new Vector3d(var5, (double)var11.getY() + var16, var9);
                if (Class4527.method14424(this.world, var2, var18.method19669(var19))) {
                   var2.method3211(var13);
@@ -979,12 +979,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Override
    public Vector3d method3420(Class880 var1) {
       Vector3d var4 = method3419(
-         (double)this.method3429(), (double)var1.method3429(), this.field5031 + (var1.method2967() != Class2205.field14418 ? -90.0F : 90.0F)
+         (double)this.method3429(), (double)var1.method3429(), this.rotationYaw + (var1.method2967() != Class2205.field14418 ? -90.0F : 90.0F)
       );
       Vector3d var5 = this.method4974(var4, var1);
       if (var5 == null) {
          Vector3d var6 = method3419(
-            (double)this.method3429(), (double)var1.method3429(), this.field5031 + (var1.method2967() != Class2205.field14417 ? -90.0F : 90.0F)
+            (double)this.method3429(), (double)var1.method3429(), this.rotationYaw + (var1.method2967() != Class2205.field14417 ? -90.0F : 90.0F)
          );
          Vector3d var7 = this.method4974(var6, var1);
          return var7 == null ? this.getPositionVec() : var7;

@@ -18,10 +18,10 @@ public class Class6003 extends Setting<List<String>> {
    }
 
    @Override
-   public JSONObject addDataToJSONObject(JSONObject var1) {
-      var1.put("name", this.getName());
-      var1.put("value", new JSONArray(this.currentValue.toArray()));
-      return var1;
+   public JSONObject addDataToJSONObject(JSONObject jsonObject) {
+      jsonObject.put("name", this.getName());
+      jsonObject.put("value", new JSONArray(this.currentValue.toArray()));
+      return jsonObject;
    }
 
    @Override

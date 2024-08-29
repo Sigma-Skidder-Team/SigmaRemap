@@ -117,7 +117,7 @@ public class Class5234 extends Module {
                         for (Class2132 var7 : Class2132.values()) {
                             Class9268 var8 = var7.method8814();
                             Class9268 var9 = var7.method8815();
-                            Class3192.method11420(
+                            RenderUtil.method11420(
                                     this.field23585 + var8.field42635,
                                     this.field23586 + var8.field42636,
                                     this.field23585 + var8.field42635 + var9.field42635,
@@ -125,7 +125,7 @@ public class Class5234 extends Module {
                             );
                             Class8480.method29971(this.field23585 + var8.field42635, this.field23586 + var8.field42636, var9.field42635, var9.field42636);
                             Class8480.method29974();
-                            Class3192.method11422();
+                            RenderUtil.method11422();
                         }
                     }
 
@@ -148,14 +148,14 @@ public class Class5234 extends Module {
                             var12 = "L";
                         }
 
-                        Class3192.method11426(
+                        RenderUtil.method11426(
                                 (float) (this.field23585 + var21.field42635),
                                 (float) (this.field23586 + var21.field42636),
                                 (float) (this.field23585 + var21.field42635 + var23.field42635),
                                 (float) (this.field23586 + var21.field42636 + var23.field42636),
                                 Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F * var10)
                         );
-                        Class3192.method11463(
+                        RenderUtil.method11463(
                                 (float) (this.field23585 + var21.field42635),
                                 (float) (this.field23586 + var21.field42636),
                                 (float) var23.field42635,
@@ -163,7 +163,7 @@ public class Class5234 extends Module {
                                 10.0F,
                                 0.75F * var11
                         );
-                        Class3192.method11439(
+                        RenderUtil.method11439(
                                 ResourceRegistry.JelloLightFont18,
                                 (float) (this.field23585 + var21.field42635 + (var23.field42635 - ResourceRegistry.JelloLightFont18.method23942(var12)) / 2),
                                 (float) (this.field23586 + var21.field42636 + 12),
@@ -179,7 +179,7 @@ public class Class5234 extends Module {
                         Class2132 var18 = var16.field33987;
                         Class9268 var20 = var18.method8814();
                         Class9268 var22 = var18.method8815();
-                        Class3192.method11420(
+                        RenderUtil.method11420(
                                 this.field23585 + var20.field42635,
                                 this.field23586 + var20.field42636,
                                 this.field23585 + var20.field42635 + var22.field42635,
@@ -204,13 +204,13 @@ public class Class5234 extends Module {
                             var29 = Class5628.method17688(-1, (1.0F - var27 * (0.5F + var27 * 0.5F)) * 0.8F);
                         }
 
-                        Class3192.method11436(
+                        RenderUtil.method11436(
                                 (float) (this.field23585 + var20.field42635 + var22.method34904() / 2),
                                 (float) (this.field23586 + var20.field42636 + var22.field42636 / 2),
                                 (float) (var22.method34904() - 4) * var27 + 4.0F,
                                 var29
                         );
-                        Class3192.method11422();
+                        RenderUtil.method11422();
                         if (var16.field33988.calcPercent() == 1.0F) {
                             var14.remove();
                         }

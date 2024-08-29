@@ -18,7 +18,7 @@ public class Class5202 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23517 = 0;
     }
 

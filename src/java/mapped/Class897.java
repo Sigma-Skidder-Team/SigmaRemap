@@ -1,7 +1,7 @@
 package mapped;
 
 public class Class897 extends Entity implements Class889 {
-   private static final Class9289<ItemStack> field5132 = Class9361.<ItemStack>method35441(Class897.class, Class7784.field33396);
+   private static final DataParameter<ItemStack> field5132 = EntityDataManager.<ItemStack>method35441(Class897.class, Class7784.field33396);
    private double field5133;
    private double field5134;
    private double field5135;
@@ -15,7 +15,7 @@ public class Class897 extends Entity implements Class889 {
    public Class897(World var1, double var2, double var4, double var6) {
       this(EntityType.field41030, var1);
       this.field5136 = 0;
-      this.method3215(var2, var4, var6);
+      this.setPosition(var2, var4, var6);
    }
 
    public void method3522(ItemStack var1) {
@@ -35,13 +35,13 @@ public class Class897 extends Entity implements Class889 {
    }
 
    @Override
-   public void method2850() {
-      this.method3210().method35442(field5132, ItemStack.EMPTY);
+   public void registerData() {
+      this.method3210().register(field5132, ItemStack.EMPTY);
    }
 
    @Override
    public boolean method3291(double var1) {
-      double var5 = this.method3389().method19675() * 4.0;
+      double var5 = this.getBoundingBox().method19675() * 4.0;
       if (Double.isNaN(var5)) {
          var5 = 4.0;
       }
@@ -68,18 +68,18 @@ public class Class897 extends Entity implements Class889 {
       }
 
       this.field5136 = 0;
-      this.field5137 = this.field5054.nextInt(5) > 0;
+      this.field5137 = this.rand.nextInt(5) > 0;
    }
 
    @Override
    public void method3325(double var1, double var3, double var5) {
       this.method3435(var1, var3, var5);
-      if (this.field5034 == 0.0F && this.field5033 == 0.0F) {
+      if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F) {
          float var9 = MathHelper.method37766(var1 * var1 + var5 * var5);
-         this.field5031 = (float)(MathHelper.method37814(var1, var5) * 180.0F / (float)Math.PI);
-         this.field5032 = (float)(MathHelper.method37814(var3, (double)var9) * 180.0F / (float)Math.PI);
-         this.field5033 = this.field5031;
-         this.field5034 = this.field5032;
+         this.rotationYaw = (float)(MathHelper.method37814(var1, var5) * 180.0F / (float)Math.PI);
+         this.rotationPitch = (float)(MathHelper.method37814(var3, (double)var9) * 180.0F / (float)Math.PI);
+         this.prevRotationYaw = this.rotationYaw;
+         this.prevRotationPitch = this.rotationPitch;
       }
    }
 
@@ -91,8 +91,8 @@ public class Class897 extends Entity implements Class889 {
       double var6 = this.getPosY() + var3.field18049;
       double var8 = this.getPosZ() + var3.field18050;
       float var10 = MathHelper.method37766(method3234(var3));
-      this.field5032 = Class882.method3469(this.field5034, (float)(MathHelper.method37814(var3.field18049, (double)var10) * 180.0F / (float)Math.PI));
-      this.field5031 = Class882.method3469(this.field5033, (float)(MathHelper.method37814(var3.field18048, var3.field18050) * 180.0F / (float)Math.PI));
+      this.rotationPitch = Class882.method3469(this.prevRotationPitch, (float)(MathHelper.method37814(var3.field18049, (double)var10) * 180.0F / (float)Math.PI));
+      this.rotationYaw = Class882.method3469(this.prevRotationYaw, (float)(MathHelper.method37814(var3.field18048, var3.field18050) * 180.0F / (float)Math.PI));
       if (!this.world.field9020) {
          double var12 = this.field5133 - var4;
          double var14 = this.field5135 - var8;
@@ -115,9 +115,9 @@ public class Class897 extends Entity implements Class889 {
          this.world
             .method6746(
                Class7940.field34090,
-               var4 - var3.field18048 * 0.25 + this.field5054.nextDouble() * 0.6 - 0.3,
+               var4 - var3.field18048 * 0.25 + this.rand.nextDouble() * 0.6 - 0.3,
                var6 - var3.field18049 * 0.25 - 0.5,
-               var8 - var3.field18050 * 0.25 + this.field5054.nextDouble() * 0.6 - 0.3,
+               var8 - var3.field18050 * 0.25 + this.rand.nextDouble() * 0.6 - 0.3,
                var3.field18048,
                var3.field18049,
                var3.field18050
@@ -140,7 +140,7 @@ public class Class897 extends Entity implements Class889 {
       if (this.world.field9020) {
          this.method3446(var4, var6, var8);
       } else {
-         this.method3215(var4, var6, var8);
+         this.setPosition(var4, var6, var8);
          this.field5136++;
          if (this.field5136 > 80 && !this.world.field9020) {
             this.method2863(Sounds.field26543, 1.0F, 1.0F);

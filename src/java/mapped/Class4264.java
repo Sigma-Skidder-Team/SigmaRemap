@@ -28,7 +28,7 @@ public class Class4264 extends Class4247 {
    public void method13027(float var1) {
       for (int var4 = 0; var4 < this.field20897; var4++) {
          float var5 = (float)var4 / (float)this.field20897;
-         Class3192.method11424(
+         RenderUtil.method11424(
             (float)(this.field20895 + var4),
             (float)this.field20896,
             1.0F,
@@ -37,7 +37,7 @@ public class Class4264 extends Class4247 {
          );
       }
 
-      Class3192.method11428(
+      RenderUtil.method11428(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),

@@ -67,20 +67,20 @@ public class Class940 extends Class939 implements Class930, Class935 {
       return this.field5307;
    }
 
-   public Class6488 method3747(BlockState var1) {
+   public AxisAlignedBB method3747(BlockState var1) {
       return this.method3748(var1.<Direction>method23463(Class3368.field18939));
    }
 
-   public Class6488 method3748(Direction var1) {
+   public AxisAlignedBB method3748(Direction var1) {
       float var4 = this.method3755(1.0F);
-      return Class8022.method27426()
+      return VoxelShapes.method27426()
          .method19514()
          .method19662(
             (double)(0.5F * var4 * (float)var1.method539()), (double)(0.5F * var4 * (float)var1.method540()), (double)(0.5F * var4 * (float)var1.method541())
          );
    }
 
-   private Class6488 method3749(Direction var1) {
+   private AxisAlignedBB method3749(Direction var1) {
       Direction var4 = var1.method536();
       return this.method3748(var1).method19660((double)var4.method539(), (double)var4.method540(), (double)var4.method541());
    }
@@ -89,7 +89,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
       BlockState var3 = this.field5324.getBlockState(this.getPos());
       if (var3.getBlock() instanceof Class3368) {
          Direction var4 = var3.<Direction>method23463(Class3368.field18939);
-         Class6488 var5 = this.method3749(var4).method19668(this.field5325);
+         AxisAlignedBB var5 = this.method3749(var4).method19668(this.field5325);
          List var6 = this.field5324.method7181((Entity)null, var5);
          if (!var6.isEmpty()) {
             for (int var7 = 0; var7 < var6.size(); var7++) {
@@ -98,7 +98,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
                   double var9 = 0.0;
                   double var11 = 0.0;
                   double var13 = 0.0;
-                  Class6488 var15 = var8.method3389();
+                  AxisAlignedBB var15 = var8.getBoundingBox();
                   switch (Class9671.field45163[var4.method544().ordinal()]) {
                      case 1:
                         if (var4.method535() == Class1892.field11092) {

@@ -181,7 +181,7 @@ public class InvManager extends PremiumModule {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23659 = mc.currentScreen instanceof InventoryScreen;
         this.field23660 = false;
     }

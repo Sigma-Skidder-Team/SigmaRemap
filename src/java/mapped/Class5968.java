@@ -34,7 +34,7 @@ public class Class5968 {
       GL11.glTranslatef((float)(-Class5263.method16470().mainWindow.method8043() / 2), (float)(-Class5263.method16471().mainWindow.method8044() / 2), 0.0F);
       int var5 = Color.getHSBColor((float)(System.currentTimeMillis() % 4000L) / 4000.0F, 0.3F, 1.0F).getRGB();
       float var6 = 60.0F * this.field26021;
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)this.field26022 - var6 / 2.0F, (float)this.field26023 - var6 / 2.0F, var6, var6, ResourcesDecrypter.particlePNG, Class5628.method17688(var5, var4 * 0.9F)
       );
       GL11.glPopMatrix();

@@ -10,7 +10,7 @@ public interface Class1660 extends Class1678, Class1661 {
 
    Class6802<Block> method6860();
 
-   Class6802<Class7631> method6861();
+   Class6802<Fluid> method6861();
 
    Class6612 getWorldInfo();
 

@@ -17,12 +17,12 @@ public class Class5722 extends Class5715<Class915> {
          }
 
          var4.push();
-         var4.method35293(Class7680.field32900.method25286(90.0F - var1.field5031));
+         var4.method35293(Class7680.field32900.method25286(90.0F - var1.rotationYaw));
          var4.method35292(-var10, -var10, var10);
          float var11 = 0.03125F;
          var4.translate(0.0, -0.626F, 0.0);
          var4.method35292(0.5F, 0.5F, 0.5F);
-         this.field25121.method10998(var1, var9, 0.0F, 0.0F, var1.field5031, var1.field5032);
+         this.field25121.method10998(var1, var9, 0.0F, 0.0F, var1.rotationYaw, var1.rotationPitch);
          Class5422 var12 = var5.method25597(this.field25121.method11028(field25120));
          this.field25121.method11016(var4, var12, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
          var4.method35295();

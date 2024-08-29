@@ -33,9 +33,9 @@ public final class Class201 extends Class200<Class7585, Class209> {
                   BlockState var13 = this.method647(var3, var12);
                   if (var12.getValue() < 15) {
                      BlockState var14 = this.method647(var1, (MutableInt)null);
-                     Class6408 var15 = this.method648(var14, var1, var11);
-                     Class6408 var16 = this.method648(var13, var3, var11.method536());
-                     return !Class8022.method27444(var15, var16) ? var5 + Math.max(1, var12.getValue()) : 15;
+                     VoxelShape var15 = this.method648(var14, var1, var11);
+                     VoxelShape var16 = this.method648(var13, var3, var11.method536());
+                     return ! VoxelShapes.method27444(var15, var16) ? var5 + Math.max(1, var12.getValue()) : 15;
                   } else {
                      return 15;
                   }

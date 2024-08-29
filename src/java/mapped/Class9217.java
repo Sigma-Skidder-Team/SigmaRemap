@@ -25,7 +25,7 @@ public class Class9217 {
    }
 
    public static boolean method34538(Block var0, BlockPos var1) {
-      Class6408 var4 = var0.method11579().method23414(field42414.world, var1);
+      VoxelShape var4 = var0.method11579().method23414(field42414.world, var1);
       return !method34578(var1)
          && field42414.world.method7048(field42414.player, var4)
          && var1.getY() <= field42414.player.getPosition().getY();
@@ -38,10 +38,10 @@ public class Class9217 {
       double var9 = (double) MathHelper.method37766(var3 * var3 + var7 * var7);
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
-      Minecraft.getInstance().player.field5031 = Minecraft.getInstance().player.field5031
-         + MathHelper.method37792(var11 - Minecraft.getInstance().player.field5031);
-      Minecraft.getInstance().player.field5032 = Minecraft.getInstance().player.field5032
-         + MathHelper.method37792(var12 - Minecraft.getInstance().player.field5032);
+      Minecraft.getInstance().player.rotationYaw = Minecraft.getInstance().player.rotationYaw
+         + MathHelper.method37792(var11 - Minecraft.getInstance().player.rotationYaw);
+      Minecraft.getInstance().player.rotationPitch = Minecraft.getInstance().player.rotationPitch
+         + MathHelper.method37792(var12 - Minecraft.getInstance().player.rotationPitch);
    }
 
    public static void method34540(BlockPos var0) {
@@ -55,9 +55,9 @@ public class Class9217 {
          .getConnection()
          .sendPacket(
             new Class5606(
-               Minecraft.getInstance().player.field5031 + MathHelper.method37792(var11 - Minecraft.getInstance().player.field5031),
-               Minecraft.getInstance().player.field5032 + MathHelper.method37792(var12 - Minecraft.getInstance().player.field5032),
-               Minecraft.getInstance().player.field5036
+               Minecraft.getInstance().player.rotationYaw + MathHelper.method37792(var11 - Minecraft.getInstance().player.rotationYaw),
+               Minecraft.getInstance().player.rotationPitch + MathHelper.method37792(var12 - Minecraft.getInstance().player.rotationPitch),
+               Minecraft.getInstance().player.onGround
             )
          );
    }
@@ -70,8 +70,8 @@ public class Class9217 {
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
       return new float[]{
-         Minecraft.getInstance().player.field5031 + MathHelper.method37792(var11 - Minecraft.getInstance().player.field5031),
-         Minecraft.getInstance().player.field5032 + MathHelper.method37792(var12 - Minecraft.getInstance().player.field5032)
+         Minecraft.getInstance().player.rotationYaw + MathHelper.method37792(var11 - Minecraft.getInstance().player.rotationYaw),
+         Minecraft.getInstance().player.rotationPitch + MathHelper.method37792(var12 - Minecraft.getInstance().player.rotationPitch)
       };
    }
 
@@ -108,8 +108,8 @@ public class Class9217 {
       float var15 = (float)(Math.atan2(var11, var7) * 180.0 / Math.PI) - 90.0F;
       float var16 = (float)(-(Math.atan2(var9, var13) * 180.0 / Math.PI));
       return new float[]{
-         Minecraft.getInstance().player.field5031 + MathHelper.method37792(var15 - Minecraft.getInstance().player.field5031),
-         Minecraft.getInstance().player.field5032 + MathHelper.method37792(var16 - Minecraft.getInstance().player.field5032)
+         Minecraft.getInstance().player.rotationYaw + MathHelper.method37792(var15 - Minecraft.getInstance().player.rotationYaw),
+         Minecraft.getInstance().player.rotationPitch + MathHelper.method37792(var16 - Minecraft.getInstance().player.rotationPitch)
       };
    }
 
@@ -162,8 +162,8 @@ public class Class9217 {
       float var15 = (float)(Math.atan2(var11, var7) * 180.0 / Math.PI) - 90.0F;
       float var16 = (float)(-(Math.atan2(var9, var13) * 180.0 / Math.PI));
       return new float[]{
-         Minecraft.getInstance().player.field5031 + MathHelper.method37792(var15 - Minecraft.getInstance().player.field5031),
-         Minecraft.getInstance().player.field5032 + MathHelper.method37792(var16 - Minecraft.getInstance().player.field5032)
+         Minecraft.getInstance().player.rotationYaw + MathHelper.method37792(var15 - Minecraft.getInstance().player.rotationYaw),
+         Minecraft.getInstance().player.rotationPitch + MathHelper.method37792(var16 - Minecraft.getInstance().player.rotationPitch)
       };
    }
 
@@ -375,8 +375,8 @@ public class Class9217 {
          float var17 = (float)(Math.atan2(var13, var9) * 180.0 / Math.PI) - 90.0F;
          float var18 = (float)(-(Math.atan2(var11, var15) * 180.0 / Math.PI));
          return new float[]{
-            Minecraft.getInstance().player.field5031 + MathHelper.method37792(var17 - Minecraft.getInstance().player.field5031),
-            Minecraft.getInstance().player.field5032 + MathHelper.method37792(var18 - Minecraft.getInstance().player.field5032)
+            Minecraft.getInstance().player.rotationYaw + MathHelper.method37792(var17 - Minecraft.getInstance().player.rotationYaw),
+            Minecraft.getInstance().player.rotationPitch + MathHelper.method37792(var18 - Minecraft.getInstance().player.rotationPitch)
          };
       } else {
          return null;

@@ -6,22 +6,22 @@ import java.util.Random;
 public class Class3197 extends Class3198 implements Class3196 {
    private static String[] field18478;
    public static final Class8554 field18479 = Class8820.field39739;
-   public static final Class6408[] field18480 = new Class6408[]{
+   public static final VoxelShape[] field18480 = new VoxelShape[]{
       Block.method11539(11.0, 7.0, 6.0, 15.0, 12.0, 10.0),
       Block.method11539(9.0, 5.0, 5.0, 15.0, 12.0, 11.0),
       Block.method11539(7.0, 3.0, 4.0, 15.0, 12.0, 12.0)
    };
-   public static final Class6408[] field18481 = new Class6408[]{
+   public static final VoxelShape[] field18481 = new VoxelShape[]{
       Block.method11539(1.0, 7.0, 6.0, 5.0, 12.0, 10.0),
       Block.method11539(1.0, 5.0, 5.0, 7.0, 12.0, 11.0),
       Block.method11539(1.0, 3.0, 4.0, 9.0, 12.0, 12.0)
    };
-   public static final Class6408[] field18482 = new Class6408[]{
+   public static final VoxelShape[] field18482 = new VoxelShape[]{
       Block.method11539(6.0, 7.0, 1.0, 10.0, 12.0, 5.0),
       Block.method11539(5.0, 5.0, 1.0, 11.0, 12.0, 7.0),
       Block.method11539(4.0, 3.0, 1.0, 12.0, 12.0, 9.0)
    };
-   public static final Class6408[] field18483 = new Class6408[]{
+   public static final VoxelShape[] field18483 = new VoxelShape[]{
       Block.method11539(6.0, 7.0, 11.0, 10.0, 12.0, 15.0),
       Block.method11539(5.0, 5.0, 9.0, 11.0, 12.0, 15.0),
       Block.method11539(4.0, 3.0, 7.0, 12.0, 12.0, 15.0)
@@ -54,7 +54,7 @@ public class Class3197 extends Class3198 implements Class3196 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       int var7 = var1.<Integer>method23463(field18479);
       switch (Class9737.field45471[var1.<Direction>method23463(field18484).ordinal()]) {
          case 1:

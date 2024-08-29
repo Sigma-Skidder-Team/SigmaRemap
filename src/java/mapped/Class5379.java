@@ -13,12 +13,12 @@ public class Class5379 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field24009 = 1;
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Class9567.method37090(0.28F);
         mc.timer.field40360 = 1.0F;
     }

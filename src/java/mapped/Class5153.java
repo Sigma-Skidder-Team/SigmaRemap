@@ -19,9 +19,9 @@ public class Class5153 extends Module {
             && mc.player.method2932().method37574() > 17
             && mc.player.method3042() < 20.0F
             && mc.player.method3042() != 0.0F
-            && (mc.player.field5036 || !this.getBooleanValueFromSetttingName("Only OnGround"))) {
+            && (mc.player.onGround || !this.getBooleanValueFromSetttingName("Only OnGround"))) {
             for (int var4 = 0; (float)var4 < this.getNumberValueBySettingName("Packet amount"); var4++) {
-               mc.getConnection().sendPacket(new Class5603(mc.player.field5036));
+               mc.getConnection().sendPacket(new Class5603(mc.player.onGround));
             }
          }
       }

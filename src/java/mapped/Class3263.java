@@ -27,7 +27,7 @@ public class Class3263 extends Class3262 implements Class3260 {
                if (!var2.field9020) {
                   Class3308 var13 = (Class3308)(!(var9.getItem() instanceof Class3308) ? Items.field37797 : var9.getItem());
                   AbstractArrowEntity var14 = var13.method11850(var2, var9, var7);
-                  var14.method3463(var7, var7.field5032, var7.field5031, 0.0F, var11 * 3.0F, 1.0F);
+                  var14.method3463(var7, var7.rotationPitch, var7.rotationYaw, 0.0F, var11 * 3.0F, 1.0F);
                   if (var11 == 1.0F) {
                      var14.method3484(true);
                   }

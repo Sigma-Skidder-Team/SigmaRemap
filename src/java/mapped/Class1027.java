@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 public class Class1027 extends Class1026 implements Class1022 {
    private static final UUID field5718 = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
    private static final Class9689 field5719 = new Class9689(field5718, "Drinking speed penalty", -0.25, Class2045.field13352);
-   private static final Class9289<Boolean> field5720 = Class9361.<Boolean>method35441(Class1027.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5720 = EntityDataManager.<Boolean>method35441(Class1027.class, Class7784.field33398);
    private int field5721;
    private Class2712<Class1026> field5722;
    private Class2711<PlayerEntity> field5723;
@@ -34,9 +34,9 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.method3210().method35442(field5720, false);
+   public void registerData() {
+      super.registerData();
+      this.method3210().register(field5720, false);
    }
 
    @Override
@@ -78,15 +78,15 @@ public class Class1027 extends Class1026 implements Class1022 {
 
          if (!this.method4568()) {
             Class8812 var7 = null;
-            if (this.field5054.nextFloat() < 0.15F && this.method3263(Class8953.field40469) && !this.method3033(Class8254.field35479)) {
+            if (this.rand.nextFloat() < 0.15F && this.method3263(Class8953.field40469) && !this.method3033(Class8254.field35479)) {
                var7 = Class8137.field34999;
-            } else if (this.field5054.nextFloat() < 0.15F
+            } else if (this.rand.nextFloat() < 0.15F
                && (this.method3327() || this.method3047() != null && this.method3047().method31141())
                && !this.method3033(Class8254.field35478)) {
                var7 = Class8137.field34988;
-            } else if (this.field5054.nextFloat() < 0.05F && this.method3042() < this.method3075()) {
+            } else if (this.rand.nextFloat() < 0.05F && this.method3042() < this.method3075()) {
                var7 = Class8137.field35001;
-            } else if (this.field5054.nextFloat() < 0.5F
+            } else if (this.rand.nextFloat() < 0.5F
                && this.method4232() != null
                && !this.method3033(Class8254.field35467)
                && this.method4232().getDistanceSq(this) > 121.0) {
@@ -107,7 +107,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                         Sounds.field27236,
                         this.method2864(),
                         1.0F,
-                        0.8F + this.field5054.nextFloat() * 0.4F
+                        0.8F + this.rand.nextFloat() * 0.4F
                      );
                }
 
@@ -131,7 +131,7 @@ public class Class1027 extends Class1026 implements Class1022 {
             this.method3085(Class9173.field42108).method38670(field5719);
          }
 
-         if (this.field5054.nextFloat() < 7.5E-4F) {
+         if (this.rand.nextFloat() < 7.5E-4F) {
             this.world.method6786(this, (byte)15);
          }
       }
@@ -149,13 +149,13 @@ public class Class1027 extends Class1026 implements Class1022 {
       if (var1 != 15) {
          super.method2866(var1);
       } else {
-         for (int var4 = 0; var4 < this.field5054.nextInt(35) + 10; var4++) {
+         for (int var4 = 0; var4 < this.rand.nextInt(35) + 10; var4++) {
             this.world
                .method6746(
                   Class7940.field34100,
-                  this.getPosX() + this.field5054.nextGaussian() * 0.13F,
-                  this.method3389().field28453 + 0.5 + this.field5054.nextGaussian() * 0.13F,
-                  this.getPosZ() + this.field5054.nextGaussian() * 0.13F,
+                  this.getPosX() + this.rand.nextGaussian() * 0.13F,
+                  this.getBoundingBox().field28453 + 0.5 + this.rand.nextGaussian() * 0.13F,
+                  this.getPosZ() + this.rand.nextGaussian() * 0.13F,
                   0.0,
                   0.0,
                   0.0
@@ -192,7 +192,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                var13 = Class8137.field34993;
             } else if (var1.method3042() >= 8.0F && !var1.method3033(Class8254.field35485)) {
                var13 = Class8137.field35005;
-            } else if (var12 <= 3.0F && !var1.method3033(Class8254.field35484) && this.field5054.nextFloat() < 0.25F) {
+            } else if (var12 <= 3.0F && !var1.method3033(Class8254.field35484) && this.rand.nextFloat() < 0.25F) {
                var13 = Class8137.field35014;
             }
          } else {
@@ -207,7 +207,7 @@ public class Class1027 extends Class1026 implements Class1022 {
 
          Class896 var14 = new Class896(this.world, this);
          var14.method3511(Class9741.method38187(new ItemStack(Items.field38115), var13));
-         var14.field5032 -= -20.0F;
+         var14.rotationPitch -= -20.0F;
          var14.method3462(var6, var8 + (double)(var12 * 0.2F), var10, 0.75F, 8.0F);
          if (!this.method3245()) {
             this.world
@@ -219,7 +219,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                   Sounds.field27238,
                   this.method2864(),
                   1.0F,
-                  0.8F + this.field5054.nextFloat() * 0.4F
+                  0.8F + this.rand.nextFloat() * 0.4F
                );
          }
 
@@ -228,7 +228,7 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return 1.62F;
    }
 

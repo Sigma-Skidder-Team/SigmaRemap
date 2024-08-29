@@ -23,15 +23,15 @@ public class Class5302 extends Module {
                 byte var4 = 5;
                 byte var5 = 60;
                 int var6 = !Minecraft.getInstance().gameSettings.showDebugInfo ? 0 : 60;
-                List<Integer> var7 = this.method16660((int) this.method16662(mc.player.field5031), var4);
+                List<Integer> var7 = this.method16660((int) this.method16662(mc.player.rotationYaw), var4);
                 int var8 = (Integer) var7.get(var4);
-                if (var8 == 0 && this.method16662(mc.player.field5031) > 345.0F) {
+                if (var8 == 0 && this.method16662(mc.player.rotationYaw) > 345.0F) {
                     var8 = 360;
                 }
 
-                float var9 = 7.0F + this.method16662(mc.player.field5031) - (float) var8;
+                float var9 = 7.0F + this.method16662(mc.player.rotationYaw) - (float) var8;
                 double var10 = var9 / 15.0F * (float) var5;
-                Class3192.method11449(
+                RenderUtil.method11449(
                         (float) (mc.mainWindow.method8043() / 2) - (float) (var4 * var5) * 1.5F,
                         -40.0F,
                         (float) (var4 * var5 * 2) * 1.5F,
@@ -88,7 +88,7 @@ public class Class5302 extends Module {
 
         if (!var8.matches(".*\\d+.*")) {
             if (var8.length() != 1) {
-                Class3192.method11439(
+                RenderUtil.method11439(
                         ResourceRegistry.JelloLightFont25,
                         (float) (var1 + (var3 - ResourceRegistry.JelloLightFont25.method23942(var8)) / 2),
                         (float) (var2 + 20),
@@ -96,7 +96,7 @@ public class Class5302 extends Module {
                         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
                 );
             } else {
-                Class3192.method11439(
+                RenderUtil.method11439(
                         ResourceRegistry.JelloMediumFont40,
                         (float) (var1 + (var3 - ResourceRegistry.JelloMediumFont40.method23942(var8)) / 2),
                         (float) (var2 + 10),
@@ -105,14 +105,14 @@ public class Class5302 extends Module {
                 );
             }
         } else {
-            Class3192.method11426(
+            RenderUtil.method11426(
                     (float) (var1 + var3 / 2 - 1),
                     (float) (var2 + 28),
                     (float) (var1 + var3 / 2 + 1),
                     (float) (var2 + 38),
                     Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * 0.5F)
             );
-            Class3192.method11439(
+            RenderUtil.method11439(
                     ResourceRegistry.JelloLightFont18,
                     (float) (var1 + (var3 - ResourceRegistry.JelloLightFont18.method23942(var8)) / 2),
                     (float) (var2 + 40),

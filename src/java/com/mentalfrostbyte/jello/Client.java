@@ -75,7 +75,7 @@ public class Client {
         return instance != null ? instance : (instance = new Client());
     }
 
-    public static Logger method19919() {
+    public static Logger getClientLogger() { // Why is this even a seperate method lmao
         return getInstance().getLogger();
     }
 

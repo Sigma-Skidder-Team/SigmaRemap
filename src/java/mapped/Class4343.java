@@ -263,8 +263,8 @@ public class Class4343 extends Class4339 implements Class4342 {
       }
 
       int var17 = var4;
-      if (this.field21219 instanceof Class5325) {
-         Class5325 var18 = (Class5325)this.field21219;
+      if (this.field21219 instanceof ModuleWithModuleSettings) {
+         ModuleWithModuleSettings var18 = (ModuleWithModuleSettings)this.field21219;
 
          for (Module var10 : var18.moduleArray) {
             int var11 = 0;
@@ -321,21 +321,21 @@ public class Class4343 extends Class4339 implements Class4342 {
       super.method13027(var1);
       GL11.glPopMatrix();
       this.field21225.changeDirection(!var4 ? Direction.BACKWARDS : Direction.FORWARDS);
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + 10),
          (float)(this.method13265() + this.method13269() + 24),
          this.field21227,
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
       );
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + 11),
          (float)(this.method13265() + this.method13269() + 24),
          this.field21227,
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
       );
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + 14 + ResourceRegistry.JelloLightFont14.method23942(this.field21227) + 2),
          (float)(this.method13265() + this.method13269() + 24),

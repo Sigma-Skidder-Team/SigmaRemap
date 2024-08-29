@@ -2,7 +2,7 @@ package mapped;
 
 public class Class3239 extends Class3238 {
    private static String[] field18689;
-   private final Class6408[] field18690;
+   private final VoxelShape[] field18690;
 
    public Class3239(AbstractBlock var1) {
       super(2.0F, 2.0F, 16.0F, 16.0F, 24.0F, var1);
@@ -19,12 +19,12 @@ public class Class3239 extends Class3238 {
    }
 
    @Override
-   public Class6408 method11503(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11503(BlockState var1, Class1665 var2, BlockPos var3) {
       return this.field18690[this.method11641(var1)];
    }
 
    @Override
-   public Class6408 method11635(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11635(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.method11483(var1, var2, var3, var4);
    }
 

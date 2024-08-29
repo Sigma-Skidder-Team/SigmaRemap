@@ -14,7 +14,7 @@ public class Class917 extends AbstractMinecartEntity {
    @Override
    public ActionResultType method3304(PlayerEntity var1, Hand var2) {
       if (!var1.method2851()) {
-         if (!this.method3329()) {
+         if (!this.isBeingRidden()) {
             if (this.world.field9020) {
                return ActionResultType.field14818;
             } else {
@@ -31,8 +31,8 @@ public class Class917 extends AbstractMinecartEntity {
    @Override
    public void method3589(int var1, int var2, int var3, boolean var4) {
       if (var4) {
-         if (this.method3329()) {
-            this.method3315();
+         if (this.isBeingRidden()) {
+            this.removePassengers();
          }
 
          if (this.method3599() == 0) {

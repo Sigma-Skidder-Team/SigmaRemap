@@ -351,7 +351,7 @@ public class PlayerController {
    }
 
    public boolean isRidingHorse() {
-      return this.field31358.player.method3328() && this.field31358.player.getRidingEntity() instanceof AbstractHorseEntity;
+      return this.field31358.player.isPassenger() && this.field31358.player.getRidingEntity() instanceof AbstractHorseEntity;
    }
 
    public boolean method23155() {
@@ -386,7 +386,7 @@ public class PlayerController {
       if ((var8 == null || !var5 || var4 != CPlayerDiggingPacket.Action.field13484 && var9 != var3) && var9 != var3) {
          var1.method6851(var2, var3);
          ClientPlayerEntity var10 = this.field31358.player;
-         if (var8 != null && var1 == var10.world && var10.method3198(var2, var3)) {
+         if (var8 != null && var1 == var10.world && var10.func_242278_a(var2, var3)) {
             var10.method3270(var8.field18048, var8.field18049, var8.field18050);
          }
       }

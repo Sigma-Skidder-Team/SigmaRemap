@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
@@ -20,7 +20,7 @@ public class Class5228 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23574 = 0;
     }
 
@@ -45,7 +45,7 @@ public class Class5228 extends Module {
     @EventTarget
     public void method16287(Class4399 var1) {
         if (this.isEnabled() && var1.method13921()) {
-            if (!mc.player.field5036 && !Class5628.method17730(mc.player, 0.001F)) {
+            if (!mc.player.onGround && !Class5628.method17730(mc.player, 0.001F)) {
                 if ((float) this.field23574 >= this.getNumberValueBySettingName("Flags") && this.field23575 == 0) {
                     this.field23575 = 60;
                     Client.getInstance().getNotificationManager().post(new Notification("Unstuck", "Trying to unstuck you.."));
@@ -66,10 +66,10 @@ public class Class5228 extends Module {
     }
 
     @EventTarget
-    public void method16288(Class4396 var1) {
+    public void method16288(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
-                if (var1.method13898() instanceof Class5473 && !Class5628.method17730(mc.player, 0.3F) && mc.player.field5055 > 10) {
+                if (var1.getPacket() instanceof Class5473 && !Class5628.method17730(mc.player, 0.3F) && mc.player.ticksExisted > 10) {
                     this.field23574++;
                     if ((float) this.field23574 > this.getNumberValueBySettingName("Flags")) {
                         var1.method13900(true);

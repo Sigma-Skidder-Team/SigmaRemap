@@ -4,7 +4,7 @@ import javax.annotation.Nullable;
 
 public class Class1101 extends Class1009 {
    private static String[] field6056;
-   private static final Class9289<Byte> field6057 = Class9361.<Byte>method35441(Class1101.class, Class7784.field33390);
+   private static final DataParameter<Byte> field6057 = EntityDataManager.<Byte>method35441(Class1101.class, Class7784.field33390);
 
    public Class1101(EntityType<? extends Class1101> var1, World var2) {
       super(var1, var2);
@@ -34,16 +34,16 @@ public class Class1101 extends Class1009 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field6057, (byte)0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field6057, (byte)0);
    }
 
    @Override
    public void tick() {
       super.tick();
       if (!this.world.field9020) {
-         this.method5290(this.field5037);
+         this.method5290(this.collidedHorizontally);
       }
    }
 
@@ -94,18 +94,18 @@ public class Class1101 extends Class1009 {
    }
 
    public boolean method5289() {
-      return (this.field5063.<Byte>method35445(field6057) & 1) != 0;
+      return (this.dataManager.<Byte>method35445(field6057) & 1) != 0;
    }
 
    public void method5290(boolean var1) {
-      byte var4 = this.field5063.<Byte>method35445(field6057);
+      byte var4 = this.dataManager.<Byte>method35445(field6057);
       if (!var1) {
          var4 = (byte)(var4 & -2);
       } else {
          var4 = (byte)(var4 | 1);
       }
 
-      this.field5063.method35446(field6057, var4);
+      this.dataManager.method35446(field6057, var4);
    }
 
    @Nullable
@@ -114,7 +114,7 @@ public class Class1101 extends Class1009 {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (var1.method6814().nextInt(100) == 0) {
          Class1085 var8 = EntityType.field41078.method33215(this.world);
-         var8.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.field5031, 0.0F);
+         var8.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
          var8.method4276(var1, var2, var3, (Class5093)null, (CompoundNBT)null);
          var8.method3311(this);
       }
@@ -137,7 +137,7 @@ public class Class1101 extends Class1009 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return 0.65F;
    }
 }

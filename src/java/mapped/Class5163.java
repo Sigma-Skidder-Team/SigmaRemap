@@ -58,7 +58,7 @@ public class Class5163 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
-        this.field23437 = (int) mc.player.field5031;
+    public void onEnable() {
+        this.field23437 = (int) mc.player.rotationYaw;
     }
 }

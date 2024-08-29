@@ -17,7 +17,7 @@ public class Class5252 extends Module {
         if (this.isEnabled()) {
             if (mc.player.method3090() != null
                     && mc.player.method3090().getItem() instanceof Class3263
-                    && mc.player.field5036) {
+                    && mc.player.onGround) {
                 for (int var4 = 0; var4 < 25; var4++) {
                     mc.getConnection().sendPacket(new Class5603(true));
                 }

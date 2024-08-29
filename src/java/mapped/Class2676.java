@@ -17,11 +17,11 @@ public class Class2676 extends Class2672 {
    public boolean method10803() {
       if (this.field17070.method4232() == null) {
          if (!this.field17070.method4594()) {
-            if (this.field17070.field5055 >= this.field17058) {
+            if (this.field17070.ticksExisted >= this.field17058) {
                if (this.field17070.world.method6789().method17135(Class5462.field24224)) {
                   List var3 = this.field17070
                      .world
-                     .<Class1019>method7195(Class1019.class, this.field17069, this.field17070, this.field17070.method3389().method19663(16.0, 4.0, 16.0));
+                     .<Class1019>method7195(Class1019.class, this.field17069, this.field17070, this.field17070.getBoundingBox().method19663(16.0, 4.0, 16.0));
                   if (!var3.isEmpty()) {
                      Class1032.method4609(this.field17070, (Class1019)var3.get(Class1032.method4608(this.field17070).nextInt(var3.size())));
                      return true;

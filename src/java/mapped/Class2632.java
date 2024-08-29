@@ -42,7 +42,7 @@ public class Class2632 extends Class2628 {
    @Override
    public void method10807() {
       super.method10807();
-      this.field16946.field5045 = 1.0F;
+      this.field16946.fallDistance = 1.0F;
    }
 
    @Override

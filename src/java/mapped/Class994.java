@@ -1,7 +1,7 @@
 package mapped;
 
 public class Class994 extends AbstractMinecartEntity {
-   private static final Class9289<Boolean> field5481 = Class9361.<Boolean>method35441(Class994.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5481 = EntityDataManager.<Boolean>method35441(Class994.class, Class7784.field33398);
    private int field5482;
    public double field5483;
    public double field5484;
@@ -21,9 +21,9 @@ public class Class994 extends AbstractMinecartEntity {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5481, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5481, false);
    }
 
    @Override
@@ -42,7 +42,7 @@ public class Class994 extends AbstractMinecartEntity {
          this.method4076(this.field5482 > 0);
       }
 
-      if (this.method4075() && this.field5054.nextInt(4) == 0) {
+      if (this.method4075() && this.rand.nextInt(4) == 0) {
          this.world.method6746(Class7940.field34085, this.getPosX(), this.getPosY() + 0.8, this.getPosZ(), 0.0, 0.0, 0.0);
       }
    }
@@ -127,11 +127,11 @@ public class Class994 extends AbstractMinecartEntity {
    }
 
    public boolean method4075() {
-      return this.field5063.<Boolean>method35445(field5481);
+      return this.dataManager.<Boolean>method35445(field5481);
    }
 
    public void method4076(boolean var1) {
-      this.field5063.method35446(field5481, var1);
+      this.dataManager.method35446(field5481, var1);
    }
 
    @Override

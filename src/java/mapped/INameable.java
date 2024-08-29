@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 
-public interface Class933 {
+public interface INameable {
    ITextComponent getName();
 
    default boolean method3381() {

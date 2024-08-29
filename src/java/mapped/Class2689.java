@@ -11,7 +11,7 @@ public class Class2689 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field17118 < this.field17117.field5055
+      return this.field17118 < this.field17117.ticksExisted
          && this.field17117.method5210()
          && this.field17117.method5230()
          && Class1097.method5234(this.field17117).nextInt(400) == 1;
@@ -33,6 +33,6 @@ public class Class2689 extends Class2595 {
    @Override
    public void method10807() {
       this.field17117.method5192(false);
-      this.field17118 = this.field17117.field5055 + 200;
+      this.field17118 = this.field17117.ticksExisted + 200;
    }
 }

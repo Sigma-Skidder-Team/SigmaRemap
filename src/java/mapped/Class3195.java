@@ -7,10 +7,10 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
    private static String[] field18471;
    public static final Class8554 field18472 = Class8820.field39758;
    public static final Class8551 field18473 = Class8820.field39710;
-   public static final Class6408 field18474 = Block.method11539(6.0, 0.0, 6.0, 10.0, 6.0, 10.0);
-   public static final Class6408 field18475 = Block.method11539(3.0, 0.0, 3.0, 13.0, 6.0, 13.0);
-   public static final Class6408 field18476 = Block.method11539(2.0, 0.0, 2.0, 14.0, 6.0, 14.0);
-   public static final Class6408 field18477 = Block.method11539(2.0, 0.0, 2.0, 14.0, 7.0, 14.0);
+   public static final VoxelShape field18474 = Block.method11539(6.0, 0.0, 6.0, 10.0, 6.0, 10.0);
+   public static final VoxelShape field18475 = Block.method11539(3.0, 0.0, 3.0, 13.0, 6.0, 13.0);
+   public static final VoxelShape field18476 = Block.method11539(2.0, 0.0, 2.0, 14.0, 6.0, 14.0);
+   public static final VoxelShape field18477 = Block.method11539(2.0, 0.0, 2.0, 14.0, 7.0, 14.0);
 
    public Class3195(AbstractBlock var1) {
       super(var1);
@@ -64,7 +64,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       switch (var1.<Integer>method23463(field18472)) {
          case 1:
          default:

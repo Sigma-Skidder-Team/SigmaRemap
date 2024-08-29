@@ -8,7 +8,7 @@ public class Class1099 extends Class1009 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return 10.440001F;
    }
 

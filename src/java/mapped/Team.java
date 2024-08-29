@@ -5,8 +5,8 @@ import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 
-public abstract class Class8219 {
-   public boolean method28592(Class8219 var1) {
+public abstract class Team {
+   public boolean method28592(Team var1) {
       return var1 != null ? this == var1 : false;
    }
 
@@ -20,7 +20,7 @@ public abstract class Class8219 {
 
    public abstract Class2225 method28582();
 
-   public abstract TextFormatting method28591();
+   public abstract TextFormatting getColor();
 
    public abstract Collection<String> method28575();
 

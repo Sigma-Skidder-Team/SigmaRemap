@@ -44,8 +44,8 @@ public class Class1076 extends AbstractHorseEntity {
 
    @Override
    public Class9455 method2859() {
-      if (this.field5036) {
-         if (!this.method3329()) {
+      if (this.onGround) {
+         if (!this.isBeingRidden()) {
             return Sounds.field27068;
          }
 
@@ -64,7 +64,7 @@ public class Class1076 extends AbstractHorseEntity {
 
    @Override
    public void method3242(float var1) {
-      if (!this.field5036) {
+      if (!this.onGround) {
          super.method3242(Math.min(0.1F, var1 * 25.0F));
       } else {
          super.method3242(0.3F);
@@ -149,7 +149,7 @@ public class Class1076 extends AbstractHorseEntity {
       if (this.method4932()) {
          if (!this.method3005()) {
             if (!var1.method2851()) {
-               if (!this.method3329()) {
+               if (!this.isBeingRidden()) {
                   if (!var5.isEmpty()) {
                      if (var5.getItem() == Items.field37886 && !this.method4943()) {
                         this.openGUI(var1);

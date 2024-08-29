@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mojang.brigadier.suggestion.Suggestion;
@@ -23,7 +23,7 @@ public class Class5237 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23591 = null;
         this.field23592.clear();
         this.field23593.clear();
@@ -32,7 +32,7 @@ public class Class5237 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Class5628.method17678("Done.");
         Class5628.method17678("§aPlugins:");
         StringBuilder var3 = new StringBuilder();
@@ -75,10 +75,10 @@ public class Class5237 extends Module {
     }
 
     @EventTarget
-    private void method16327(Class4396 var1) {
+    private void method16327(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof Class5543) {
-                for (Suggestion var6 : ((Class5543) var1.method13898()).method17425().getList()) {
+            if (var1.getPacket() instanceof Class5543) {
+                for (Suggestion var6 : ((Class5543) var1.getPacket()).method17425().getList()) {
                     String[] var7 = var6.getText().split(":");
                     if (var7.length > 1) {
                         String var8 = var7[0].substring(1);

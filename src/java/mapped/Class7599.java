@@ -10,8 +10,8 @@ public class Class7599 {
    }
 
    public static String method24889(TileEntity var0) {
-      if (var0 instanceof Class933) {
-         Class933 var3 = (Class933)var0;
+      if (var0 instanceof INameable) {
+         INameable var3 = (INameable)var0;
          method24890(var0);
          return var3.method3381() ? var3.method3380().getUnformattedComponentText() : null;
       } else {
@@ -38,10 +38,10 @@ public class Class7599 {
    }
 
    public static ITextComponent method24892(TileEntity var0) {
-      if (!(var0 instanceof Class933)) {
+      if (!(var0 instanceof INameable)) {
          return !(var0 instanceof Class950) ? null : (ITextComponent)Class9299.method35072(var0, Class9299.field43159);
       } else {
-         return ((Class933)var0).method3380();
+         return ((INameable)var0).method3380();
       }
    }
 

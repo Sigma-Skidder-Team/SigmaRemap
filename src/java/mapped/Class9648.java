@@ -19,7 +19,7 @@ public class Class9648 {
    private final int field45111;
    private final int field45112;
    private final boolean field45113;
-   private final Class6488 field45114;
+   private final AxisAlignedBB field45114;
 
    public Class9648(int var1, int var2, int var3, int var4, boolean var5) {
       this.field45109 = var1;
@@ -27,7 +27,7 @@ public class Class9648 {
       this.field45111 = var3;
       this.field45112 = var4;
       this.field45113 = var5;
-      this.field45114 = new Class6488((double)(var1 - var3), 0.0, (double)(var2 - var3), (double)(var1 + var3), 256.0, (double)(var2 + var3));
+      this.field45114 = new AxisAlignedBB((double)(var1 - var3), 0.0, (double)(var2 - var3), (double)(var1 + var3), 256.0, (double)(var2 + var3));
    }
 
    public boolean method37625(BlockPos var1) {
@@ -54,7 +54,7 @@ public class Class9648 {
       return this.field45113;
    }
 
-   public Class6488 method37631() {
+   public AxisAlignedBB method37631() {
       return this.field45114;
    }
 }

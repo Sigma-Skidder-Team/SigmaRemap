@@ -144,9 +144,9 @@ public class Class4351 extends Class4278 {
       this.field21263.method13296(this.field21265.calcPercent() == 1.0F);
       this.field21263.method13268(Math.max(0, (int)((float)this.field21270 * var5)));
       this.field21263.method13284((int)((float)this.field21270 * (1.0F - var5)));
-      Class3192.method11415(this);
+      RenderUtil.method11415(this);
       float var6 = this.method13212() && this.field21265.method25319().equals(Direction.BACKWARDS) ? 0.03F : 0.0F;
-      Class3192.method11424(
+      RenderUtil.method11424(
          (float)this.field20895,
          (float)this.field20896,
          (float)this.field20897,
@@ -154,7 +154,7 @@ public class Class4351 extends Class4278 {
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.04F * this.field21264.calcPercent() + var6)
       );
       if (!this.field21268.method13297()) {
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.field38859,
             (float)(this.field20895 + 20) - var5 * (float)this.field20897,
             (float)(this.field20896 + 18),
@@ -165,7 +165,7 @@ public class Class4351 extends Class4278 {
 
       this.field21268.method13284(Math.round(-var5 * (float)this.field20897));
       if (Client.getInstance().getModuleManager().method14667().method20770() == this.field21267) {
-         Class3192.method11449(
+         RenderUtil.method11449(
             (float)(this.method13263() + this.method13267() - 35) - var5 * (float)this.field20897,
             (float)(this.method13265() + 27),
             17.0F,
@@ -176,6 +176,6 @@ public class Class4351 extends Class4278 {
       }
 
       super.method13027(var1);
-      Class3192.method11422();
+      RenderUtil.method11422();
    }
 }

@@ -42,7 +42,7 @@ public class Class3272 extends Item implements Class3260 {
                   var1.method32121(1, var7, var1x -> var1x.method3185(var3.method3149()));
                   if (var9 == 0) {
                      Class886 var10 = new Class886(var2, var7, var1);
-                     var10.method3463(var7, var7.field5032, var7.field5031, 0.0F, 2.5F + (float)var9 * 0.5F, 1.0F);
+                     var10.method3463(var7, var7.rotationPitch, var7.rotationYaw, 0.0F, 2.5F + (float)var9 * 0.5F, 1.0F);
                      if (var7.abilities.isCreativeMode) {
                         var10.field5102 = Class2192.field14333;
                      }
@@ -57,8 +57,8 @@ public class Class3272 extends Item implements Class3260 {
 
                var7.method2913(Class8876.field40098.method172(this));
                if (var9 > 0) {
-                  float var18 = var7.field5031;
-                  float var11 = var7.field5032;
+                  float var18 = var7.rotationYaw;
+                  float var11 = var7.rotationPitch;
                   float var12 = -MathHelper.sin(var18 * (float) (Math.PI / 180.0)) * MathHelper.cos(var11 * (float) (Math.PI / 180.0));
                   float var13 = -MathHelper.sin(var11 * (float) (Math.PI / 180.0));
                   float var14 = MathHelper.cos(var18 * (float) (Math.PI / 180.0)) * MathHelper.cos(var11 * (float) (Math.PI / 180.0));

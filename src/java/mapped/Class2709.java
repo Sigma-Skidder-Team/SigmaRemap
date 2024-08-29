@@ -36,8 +36,8 @@ public class Class2709<T extends Class880> extends Class2699 {
       }
    }
 
-   public Class6488 method10921(double var1) {
-      return this.field17153.method3389().method19663(var1, 4.0, var1);
+   public AxisAlignedBB method10921(double var1) {
+      return this.field17153.getBoundingBox().method19663(var1, 4.0, var1);
    }
 
    public void method10922() {

@@ -11,7 +11,7 @@ public class Class5211 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10041));
     }
 

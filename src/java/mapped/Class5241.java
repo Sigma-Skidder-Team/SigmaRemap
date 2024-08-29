@@ -17,13 +17,13 @@ public class Class5241 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23600 = Class9567.method37075();
         this.field23599 = 2;
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Class9567.method37090(Class9567.method37075());
     }
 
@@ -33,7 +33,7 @@ public class Class5241 extends Module {
             boolean var4 = this.getBooleanValueFromSetttingName("AutoJump");
             double var5 = Class9567.method37075();
             boolean var7 = Class5628.method17686();
-            if (!mc.player.field5036) {
+            if (!mc.player.onGround) {
                 this.field23599++;
                 this.field23600 = 0.36 - (double) this.field23599 / 250.0;
                 if (this.field23600 < var5) {

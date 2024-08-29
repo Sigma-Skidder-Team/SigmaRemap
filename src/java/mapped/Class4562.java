@@ -2,10 +2,10 @@ package mapped;
 
 import com.google.common.cache.CacheLoader;
 
-public final class Class4562 extends CacheLoader<Class6408, Boolean> {
+public final class Class4562 extends CacheLoader<VoxelShape, Boolean> {
    private static String[] field21998;
 
-   public Boolean load(Class6408 var1) {
-      return !Class8022.method27435(Class8022.method27426(), var1, Class9477.field44043);
+   public Boolean load(VoxelShape var1) {
+      return ! VoxelShapes.compare(VoxelShapes.method27426(), var1, IBooleanFunction.field44043);
    }
 }

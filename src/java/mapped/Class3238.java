@@ -18,8 +18,8 @@ public class Class3238 extends Block implements Class3207 {
       .stream()
       .filter(var0 -> var0.getKey().method544().method324())
       .collect(Util.<Direction, Class8551>method38484());
-   public final Class6408[] field18686;
-   public final Class6408[] field18687;
+   public final VoxelShape[] field18686;
+   public final VoxelShape[] field18687;
    private final Object2IntMap<BlockState> field18688 = new Object2IntOpenHashMap();
 
    public Class3238(float var1, float var2, float var3, float var4, float var5, AbstractBlock var6) {
@@ -34,39 +34,39 @@ public class Class3238 extends Block implements Class3207 {
       }
    }
 
-   public Class6408[] method11639(float var1, float var2, float var3, float var4, float var5) {
+   public VoxelShape[] method11639(float var1, float var2, float var3, float var4, float var5) {
       float var8 = 8.0F - var1;
       float var9 = 8.0F + var1;
       float var10 = 8.0F - var2;
       float var11 = 8.0F + var2;
-      Class6408 var12 = Block.method11539((double)var8, 0.0, (double)var8, (double)var9, (double)var3, (double)var9);
-      Class6408 var13 = Block.method11539((double)var10, (double)var4, 0.0, (double)var11, (double)var5, (double)var11);
-      Class6408 var14 = Block.method11539((double)var10, (double)var4, (double)var10, (double)var11, (double)var5, 16.0);
-      Class6408 var15 = Block.method11539(0.0, (double)var4, (double)var10, (double)var11, (double)var5, (double)var11);
-      Class6408 var16 = Block.method11539((double)var10, (double)var4, (double)var10, 16.0, (double)var5, (double)var11);
-      Class6408 var17 = Class8022.method27431(var13, var16);
-      Class6408 var18 = Class8022.method27431(var14, var15);
-      Class6408[] var19 = new Class6408[]{
-         Class8022.method27425(),
+      VoxelShape var12 = Block.method11539((double)var8, 0.0, (double)var8, (double)var9, (double)var3, (double)var9);
+      VoxelShape var13 = Block.method11539((double)var10, (double)var4, 0.0, (double)var11, (double)var5, (double)var11);
+      VoxelShape var14 = Block.method11539((double)var10, (double)var4, (double)var10, (double)var11, (double)var5, 16.0);
+      VoxelShape var15 = Block.method11539(0.0, (double)var4, (double)var10, (double)var11, (double)var5, (double)var11);
+      VoxelShape var16 = Block.method11539((double)var10, (double)var4, (double)var10, 16.0, (double)var5, (double)var11);
+      VoxelShape var17 = VoxelShapes.method27431(var13, var16);
+      VoxelShape var18 = VoxelShapes.method27431(var14, var15);
+      VoxelShape[] var19 = new VoxelShape[]{
+         VoxelShapes.method27425(),
          var14,
          var15,
          var18,
          var13,
-         Class8022.method27431(var14, var13),
-         Class8022.method27431(var15, var13),
-         Class8022.method27431(var18, var13),
+         VoxelShapes.method27431(var14, var13),
+         VoxelShapes.method27431(var15, var13),
+         VoxelShapes.method27431(var18, var13),
          var16,
-         Class8022.method27431(var14, var16),
-         Class8022.method27431(var15, var16),
-         Class8022.method27431(var18, var16),
+         VoxelShapes.method27431(var14, var16),
+         VoxelShapes.method27431(var15, var16),
+         VoxelShapes.method27431(var18, var16),
          var17,
-         Class8022.method27431(var14, var17),
-         Class8022.method27431(var15, var17),
-         Class8022.method27431(var18, var17)
+         VoxelShapes.method27431(var14, var17),
+         VoxelShapes.method27431(var15, var17),
+         VoxelShapes.method27431(var18, var17)
       };
 
       for (int var20 = 0; var20 < 16; var20++) {
-         var19[var20] = Class8022.method27431(var12, var19[var20]);
+         var19[var20] = VoxelShapes.method27431(var12, var19[var20]);
       }
 
       return var19;
@@ -78,12 +78,12 @@ public class Class3238 extends Block implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.field18687[this.method11641(var1)];
    }
 
    @Override
-   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.field18686[this.method11641(var1)];
    }
 

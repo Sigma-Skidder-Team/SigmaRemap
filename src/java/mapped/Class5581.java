@@ -30,7 +30,7 @@ public class Class5581 implements Packet<Class5116> {
          this.field24758 = var1.method28588();
          this.field24753 = var1.method28582().field14559;
          this.field24754 = var1.method28586().field14467;
-         this.field24755 = var1.method28591();
+         this.field24755 = var1.getColor();
          this.field24751 = var1.method28572();
          this.field24752 = var1.method28574();
       }

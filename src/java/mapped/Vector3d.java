@@ -3,7 +3,7 @@ package mapped;
 import java.util.EnumSet;
 
 public class Vector3d implements Class2955 {
-   public static final Vector3d field18047 = new Vector3d(0.0, 0.0, 0.0);
+   public static final Vector3d ZERO = new Vector3d(0.0, 0.0, 0.0);
    public double field18048;
    public double field18049;
    public double field18050;
@@ -47,7 +47,7 @@ public class Vector3d implements Class2955 {
 
    public Vector3d method11333() {
       double var3 = (double) MathHelper.method37766(this.field18048 * this.field18048 + this.field18049 * this.field18049 + this.field18050 * this.field18050);
-      return !(var3 < 1.0E-4) ? new Vector3d(this.field18048 / var3, this.field18049 / var3, this.field18050 / var3) : field18047;
+      return !(var3 < 1.0E-4) ? new Vector3d(this.field18048 / var3, this.field18049 / var3, this.field18050 / var3) : ZERO;
    }
 
    public double method11334(Vector3d var1) {

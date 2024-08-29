@@ -21,13 +21,13 @@ public class Class5248 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23618 = 0;
         this.field23620 = -1.0;
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         mc.timer.field40360 = 1.0F;
         Class9567.method37090(0.2);
         if (mc.player.method3433().field18049 > 0.0) {
@@ -80,7 +80,7 @@ public class Class5248 extends Module {
                     Class9567.method37088(var1, this.field23619);
                     break;
                 case "Hop":
-                    if (!mc.player.field5038 || !Class5628.method17730(mc.player, 0.001F) || !Class9567.method37087()) {
+                    if (!mc.player.collidedVertically || !Class5628.method17730(mc.player, 0.001F) || !Class9567.method37087()) {
                         this.field23618++;
                         if (this.field23618 == 1) {
                             this.field23619 = 0.4 + (double) Class9567.method37078() * 0.1;
@@ -100,7 +100,7 @@ public class Class5248 extends Module {
                     }
                     break;
                 case "YPort":
-                    if (mc.player.field5036) {
+                    if (mc.player.onGround) {
                         if (Class5628.method17686()) {
                             var1.method13995(0.53000000000001);
                             Class9567.method37088(var1, 3.67 * (double) this.getNumberValueBySettingName("Speed"));
@@ -130,14 +130,14 @@ public class Class5248 extends Module {
     @EventTarget
     public void method16362(Class4422 var1) {
         if (this.isEnabled() && !(this.field23620 < 0.0) && this.getStringSettingValueByName("Mode").equals("YPort")) {
-            if (mc.player.field5036 && Class5628.method17730(mc.player, 0.001F)) {
+            if (mc.player.onGround && Class5628.method17730(mc.player, 0.001F)) {
                 this.field23620 = mc.player.getPosY();
             }
 
-            mc.player.field5028.field18049 = this.field23620;
-            mc.player.field5049 = this.field23620;
+            mc.player.positionVec.field18049 = this.field23620;
+            mc.player.lastTickPosY = this.field23620;
             mc.player.field4915 = this.field23620;
-            mc.player.field5026 = this.field23620;
+            mc.player.prevPosY = this.field23620;
             if (Class9567.method37087()) {
                 mc.player.field4909 = 0.099999994F;
             }

@@ -52,7 +52,7 @@ public abstract class Class7195<C extends Class4729> {
          Blocks.PACKED_ICE
       }
    );
-   public Set<Class7631> field30898 = ImmutableSet.of(Class9479.field44066);
+   public Set<Fluid> field30898 = ImmutableSet.of(Class9479.field44066);
    private final Codec<Class6815<C>> field30899;
    public final int field30900;
 

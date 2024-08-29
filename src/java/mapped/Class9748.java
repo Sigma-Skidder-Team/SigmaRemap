@@ -222,7 +222,7 @@ public class Class9748 {
             String var4 = var0.method30277().readUnquotedString();
             var0.method30278(var2 -> {
                if (var2 instanceof Class880) {
-                  Class8219 var5 = var2.method3344();
+                  Team var5 = var2.getTeam();
                   String var6 = var5 != null ? var5.method28567() : "";
                   return var6.equals(var4) != var3;
                } else {

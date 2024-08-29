@@ -103,7 +103,7 @@ public class Class5223 extends Module {
             double var5 = (double) this.field23566.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
             double var7 = (double) this.field23566.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
             double var9 = (double) this.field23566.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
-            Class6488 var11 = mc.world.getBlockState(this.field23566).method23414(mc.world, this.field23566).method19514();
+            AxisAlignedBB var11 = mc.world.getBlockState(this.field23566).method23414(mc.world, this.field23566).method19514();
             Class9388 var12 = new Class9388(
                     var5 + var11.field28449,
                     var7 + var11.field28450,
@@ -112,7 +112,7 @@ public class Class5223 extends Module {
                     var7 + var11.field28453,
                     var9 + var11.field28454
             );
-            Class3192.method11459(var12, var4);
+            RenderUtil.method11459(var12, var4);
             GL11.glEnable(2929);
             GL11.glPopMatrix();
         }

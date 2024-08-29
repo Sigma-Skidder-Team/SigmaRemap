@@ -50,9 +50,9 @@ public class Class9716 {
       Long2ByteLinkedOpenHashMap var11 = var4.method29439();
       byte var12 = var11.getAndMoveToFirst(var9);
       if (var12 == 0) {
-         Class6408 var13 = var0.method23388(var1, var2, var3);
-         Class6408 var14 = var5.method23388(var1, var6, var3.method536());
-         boolean var15 = Class8022.method27435(var13, var14, Class9477.field44041);
+         VoxelShape var13 = var0.method23388(var1, var2, var3);
+         VoxelShape var14 = var5.method23388(var1, var6, var3.method536());
+         boolean var15 = VoxelShapes.compare(var13, var14, IBooleanFunction.field44041);
          if (var11.size() > 400) {
             var11.removeLastByte();
          }

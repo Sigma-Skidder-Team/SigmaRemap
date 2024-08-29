@@ -37,7 +37,7 @@ public class Class5346 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         this.field23896.clear();
     }
 
@@ -55,9 +55,9 @@ public class Class5346 extends Module {
     public void method16771(Class4420 var1) {
         if (this.isEnabled()) {
             Vector3d var4 = new Vector3d(
-                    mc.player.field5048 - (mc.player.field5048 - mc.player.getPosX()) * (double) mc.getRenderPartialTicks(),
-                    mc.player.field5049 - (mc.player.field5049 - mc.player.getPosY()) * (double) mc.getRenderPartialTicks(),
-                    mc.player.field5050 - (mc.player.field5050 - mc.player.getPosZ()) * (double) mc.getRenderPartialTicks()
+                    mc.player.lastTickPosX - (mc.player.lastTickPosX - mc.player.getPosX()) * (double) mc.getRenderPartialTicks(),
+                    mc.player.lastTickPosY - (mc.player.lastTickPosY - mc.player.getPosY()) * (double) mc.getRenderPartialTicks(),
+                    mc.player.lastTickPosZ - (mc.player.lastTickPosZ - mc.player.getPosZ()) * (double) mc.getRenderPartialTicks()
             );
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(3042);

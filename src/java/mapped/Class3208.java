@@ -6,8 +6,8 @@ public class Class3208 extends Block implements Class3207 {
    private static String[] field18604;
    public static final Class8552<Class86> field18605 = Class8820.field39770;
    public static final Class8551 field18606 = Class8820.field39710;
-   public static final Class6408 field18607 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
-   public static final Class6408 field18608 = Block.method11539(0.0, 8.0, 0.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field18607 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+   public static final VoxelShape field18608 = Block.method11539(0.0, 8.0, 0.0, 16.0, 16.0, 16.0);
 
    public Class3208(AbstractBlock var1) {
       super(var1);
@@ -25,11 +25,11 @@ public class Class3208 extends Block implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       Class86 var7 = var1.<Class86>method23463(field18605);
       switch (Class3497.field19372[var7.ordinal()]) {
          case 1:
-            return Class8022.method27426();
+            return VoxelShapes.method27426();
          case 2:
             return field18608;
          default:
@@ -84,7 +84,7 @@ public class Class3208 extends Block implements Class3207 {
    }
 
    @Override
-   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Class7631 var4) {
+   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Fluid var4) {
       return var3.method23463(field18605) == Class86.field220 ? false : Class3207.super.method11531(var1, var2, var3, var4);
    }
 

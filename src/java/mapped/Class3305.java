@@ -22,12 +22,12 @@ public class Class3305 extends Item {
       } else {
          Vector3d var8 = var2.method3281(1.0F);
          double var9 = 5.0;
-         List<Entity> var11 = var1.method6770(var2, var2.method3389().method19661(var8.method11344(5.0)).method19664(1.0), field18811);
+         List<Entity> var11 = var1.method6770(var2, var2.getBoundingBox().method19661(var8.method11344(5.0)).method19664(1.0), field18811);
          if (!var11.isEmpty()) {
             Vector3d var12 = var2.method3286(1.0F);
 
             for (Entity var14 : var11) {
-               Class6488 var15 = var14.method3389().method19664((double)var14.method3319());
+               AxisAlignedBB var15 = var14.getBoundingBox().method19664((double)var14.method3319());
                if (var15.method19673(var12)) {
                   return Class6794.<ItemStack>method20698(var6);
                }
@@ -39,8 +39,8 @@ public class Class3305 extends Item {
          } else {
             BoatEntity var16 = new BoatEntity(var1, var7.method31419().field18048, var7.method31419().field18049, var7.method31419().field18050);
             var16.method4171(this.field18812);
-            var16.field5031 = var2.field5031;
-            if (var1.method7053(var16, var16.method3389().method19664(-0.1))) {
+            var16.rotationYaw = var2.rotationYaw;
+            if (var1.method7053(var16, var16.getBoundingBox().method19664(-0.1))) {
                if (!var1.field9020) {
                   var1.method6916(var16);
                   if (!var2.abilities.isCreativeMode) {

@@ -18,7 +18,7 @@ public class Class4489 extends Class4457 {
       return new Class4489(
          Class9587.field44822,
          new Class8634(
-            (Class7608<Item>)null,
+            (ITag<Item>)null,
             var0.method11581(),
             Class8840.field39936,
             Class8840.field39936,

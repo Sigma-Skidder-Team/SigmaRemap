@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class7632 extends Class7631 {
+public class Class7632 extends Fluid {
    private static String[] field32711;
 
    @Override
@@ -9,13 +9,13 @@ public class Class7632 extends Class7631 {
    }
 
    @Override
-   public boolean method25055(Class7379 var1, Class1665 var2, BlockPos var3, Class7631 var4, Direction var5) {
+   public boolean method25055(Class7379 var1, Class1665 var2, BlockPos var3, Fluid var4, Direction var5) {
       return true;
    }
 
    @Override
    public Vector3d method25056(Class1665 var1, BlockPos var2, Class7379 var3) {
-      return Vector3d.field18047;
+      return Vector3d.ZERO;
    }
 
    @Override
@@ -59,7 +59,7 @@ public class Class7632 extends Class7631 {
    }
 
    @Override
-   public Class6408 method25068(Class7379 var1, Class1665 var2, BlockPos var3) {
-      return Class8022.method27425();
+   public VoxelShape method25068(Class7379 var1, Class1665 var2, BlockPos var3) {
+      return VoxelShapes.method27425();
    }
 }

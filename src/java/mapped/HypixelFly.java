@@ -31,15 +31,15 @@ public class HypixelFly extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         String var3 = this.getStringSettingValueByName("Mode");
         this.field23561 = 1.0F;
         this.field23563 = -1;
-        if (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F)) {
+        if (mc.player.onGround || Class5628.method17730(mc.player, 0.001F)) {
             this.field23561 = this.getNumberValueBySettingName("Timer Boost");
         }
 
-        if (mc.player.field5036) {
+        if (mc.player.onGround) {
             switch (var3) {
                 case "Basic":
                     this.field23560 = 0.0;
@@ -64,7 +64,7 @@ public class HypixelFly extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         double var3 = Class9567.method37075();
         Class9567.method37090(var3 * 0.7);
         this.field23561 = 1.0F;
@@ -83,7 +83,7 @@ public class HypixelFly extends Module {
     @EventTarget
     @LowestPriority
     @Class5631
-    public void method16258(Class4402 var1) {
+    public void method16258(SendPacketEvent var1) {
         if (Class5628.method17716()) {
             Packet var4 = var1.method13932();
             if (var4 instanceof Class5594) {
@@ -96,9 +96,9 @@ public class HypixelFly extends Module {
     @EventTarget
     @Class5631
     @HigestPriority
-    public void method16259(Class4396 var1) {
+    public void method16259(RecievePacketEvent var1) {
         if (mc.getConnection() != null && Class5628.method17716()) {
-            Packet var4 = var1.method13898();
+            Packet var4 = var1.getPacket();
             if (this.isEnabled()) {
                 if (var4 instanceof Class5473) {
                     this.method16004().method16000();
@@ -174,7 +174,7 @@ public class HypixelFly extends Module {
 
             double var6 = 0.99375 - (double) this.field23563 * 1.0E-13;
             this.field23560 *= var6;
-            if (mc.player.field5037 || mc.player.field5038) {
+            if (mc.player.collidedHorizontally || mc.player.collidedVertically) {
                 this.field23560 = 0.0;
             }
 
@@ -186,7 +186,7 @@ public class HypixelFly extends Module {
             }
 
             Class9567.method37088(var1, this.field23560);
-            if (!mc.player.field5036 || !Class5628.method17730(mc.player, 0.001F)) {
+            if (!mc.player.onGround || !Class5628.method17730(mc.player, 0.001F)) {
                 this.field23563++;
                 var1.method13995(0.0);
                 Class5628.method17725(0.0);
@@ -194,7 +194,7 @@ public class HypixelFly extends Module {
                     double var12 = mc.player.getPosX();
                     double var14 = mc.player.getPosY();
                     double var16 = mc.player.getPosZ();
-                    mc.player.method3215(var12, var14 + 1.0E-14, var16);
+                    mc.player.setPosition(var12, var14 + 1.0E-14, var16);
                 }
             }
 

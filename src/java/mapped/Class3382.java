@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 public class Class3382 extends Class3381 {
    private static String[] field18982;
    public static final Class8553 field18985 = Class3198.field18484;
-   private static final Map<Direction, Class6408> field18986 = Maps.newEnumMap(
+   private static final Map<Direction, VoxelShape> field18986 = Maps.newEnumMap(
       ImmutableMap.of(
          Direction.NORTH,
          Block.method11539(5.5, 3.0, 11.0, 10.5, 13.0, 16.0),
@@ -33,11 +33,11 @@ public class Class3382 extends Class3381 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return method11980(var1);
    }
 
-   public static Class6408 method11980(BlockState var0) {
+   public static VoxelShape method11980(BlockState var0) {
       return field18986.get(var0.<Direction>method23463(field18985));
    }
 

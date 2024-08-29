@@ -36,23 +36,23 @@ public class Class6879 {
       return this.method20944(new Class8185(var1), var2);
    }
 
-   public <T> Optional<Class7608<T>> method20947(Function<ResourceLocation, Class7608<T>> var1, Function<ResourceLocation, T> var2) {
+   public <T> Optional<ITag<T>> method20947(Function<ResourceLocation, ITag<T>> var1, Function<ResourceLocation, T> var2) {
       Builder var5 = ImmutableSet.builder();
 
       for (Class7794 var7 : this.field29819) {
          if (!var7.method25884().method28480(var1, var2, var5::add)) {
-            return Optional.<Class7608<T>>empty();
+            return Optional.<ITag<T>>empty();
          }
       }
 
-      return Optional.<Class7608<T>>of(Class7608.<T>method24920(var5.build()));
+      return Optional.<ITag<T>>of(ITag.<T>method24920(var5.build()));
    }
 
    public Stream<Class7794> method20948() {
       return this.field29819.stream();
    }
 
-   public <T> Stream<Class7794> method20949(Function<ResourceLocation, Class7608<T>> var1, Function<ResourceLocation, T> var2) {
+   public <T> Stream<Class7794> method20949(Function<ResourceLocation, ITag<T>> var1, Function<ResourceLocation, T> var2) {
       return this.method20948().filter(var2x -> !var2x.method25884().method28480(var1, var2, var0x -> {
          }));
    }

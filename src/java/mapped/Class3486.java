@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 public class Class3486 extends Class3194 implements Class3196 {
    private static String[] field18470;
    public static final Class8554 field19347 = Class8820.field39742;
-   public static final Class6408[] field19348 = new Class6408[]{
+   public static final VoxelShape[] field19348 = new VoxelShape[]{
       Block.method11539(7.0, 0.0, 7.0, 9.0, 2.0, 9.0),
       Block.method11539(7.0, 0.0, 7.0, 9.0, 4.0, 9.0),
       Block.method11539(7.0, 0.0, 7.0, 9.0, 6.0, 9.0),
@@ -25,7 +25,7 @@ public class Class3486 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19348[var1.<Integer>method23463(field19347)];
    }
 

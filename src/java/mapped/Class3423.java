@@ -6,10 +6,10 @@ public class Class3423 extends Block implements Class3207 {
    private static String[] field19153;
    public static final Class8553 field19154 = Class3198.field18484;
    public static final Class8551 field19155 = Class8820.field39710;
-   public static final Class6408 field19156 = Block.method11539(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
-   public static final Class6408 field19157 = Block.method11539(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19158 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
-   public static final Class6408 field19159 = Block.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field19156 = Block.method11539(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
+   public static final VoxelShape field19157 = Block.method11539(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field19158 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
+   public static final VoxelShape field19159 = Block.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
 
    public Class3423(AbstractBlock var1) {
       super(var1);
@@ -17,7 +17,7 @@ public class Class3423 extends Block implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       switch (Class9442.field43870[var1.<Direction>method23463(field19154).ordinal()]) {
          case 1:
             return field19159;

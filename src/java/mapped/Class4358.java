@@ -188,7 +188,7 @@ public class Class4358 extends Class4247 {
          this.method13624(this.field21309);
       }
 
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.field20895,
          (float)this.field20896,
          (float)this.field20897,
@@ -196,7 +196,7 @@ public class Class4358 extends Class4247 {
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F * var1)
       );
       super.method13224();
-      Class3192.method11475(
+      RenderUtil.method11475(
          (float)this.field21304,
          (float)this.field21303,
          (float)this.field21305,
@@ -205,7 +205,7 @@ public class Class4358 extends Class4247 {
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       byte var5 = 30;
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.field38860,
          (float)(var5 + this.field21304),
          (float)(var5 + this.field21303),

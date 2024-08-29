@@ -135,7 +135,7 @@ public class Class5189 extends Module {
 
     private boolean method16153(Vector3d var1) {
         if (!(mc.player.getPositionVec().field18049 < 1.0)) {
-            Class6488 var4 = new Class6488(var1.method11339(-0.15, 0.0, -0.15), var1.method11339(0.15, (double) mc.player.method3430(), 0.15));
+            AxisAlignedBB var4 = new AxisAlignedBB(var1.method11339(-0.15, 0.0, -0.15), var1.method11339(0.15, (double) mc.player.method3430(), 0.15));
             var4 = var4.method19662(0.0, -mc.player.getPositionVec().field18049, 0.0);
             return mc.world.method7055(mc.player, var4).count() == 0L;
         } else {
@@ -144,6 +144,6 @@ public class Class5189 extends Module {
     }
 
     private boolean method16154(double var1, double var3, double var5) {
-        return mc.world.method7055(mc.player, mc.player.field5035.method19667(var1, var3, var5)).count() == 0L;
+        return mc.world.method7055(mc.player, mc.player.boundingBox.method19667(var1, var3, var5)).count() == 0L;
     }
 }

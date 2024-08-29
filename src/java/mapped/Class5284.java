@@ -23,7 +23,7 @@ public class Class5284 extends Module {
     public void method16581(Class4398 var1) {
         if (this.isEnabled() && mc.world != null) {
             if ((double) var1.method13902().getY() >= mc.player.getPosY()) {
-                var1.method13905(Class8022.method27425());
+                var1.method13905(VoxelShapes.method27425());
             }
         }
     }
@@ -32,16 +32,16 @@ public class Class5284 extends Module {
     public void method16582(TickEvent var1) {
         if (this.isEnabled()) {
             mc.player.field4999 = 3;
-            if (mc.player.field5055 % 2 == 0) {
-                if (mc.player.field5036) {
+            if (mc.player.ticksExisted % 2 == 0) {
+                if (mc.player.onGround) {
                     if (!mc.player.field4981) {
                         if (mc.player.method3331()) {
                             mc.player
-                                    .method3215(mc.player.getPosX(), mc.player.getPosY() - 1.0, mc.player.getPosZ());
+                                    .setPosition(mc.player.getPosX(), mc.player.getPosY() - 1.0, mc.player.getPosZ());
                         }
                     } else {
                         mc.player
-                                .method3215(mc.player.getPosX(), mc.player.getPosY() + 1.0, mc.player.getPosZ());
+                                .setPosition(mc.player.getPosX(), mc.player.getPosY() + 1.0, mc.player.getPosZ());
                     }
                 }
             }

@@ -21,7 +21,7 @@ public class Class5157 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         if (Class5628.method17730(mc.player, 0.001F)) {
             this.field23411 = this.getStringSettingValueByName("Offset").equals("OldHypixel");
             this.field23410 = !this.field23411 ? 1 : 2;
@@ -54,7 +54,7 @@ public class Class5157 extends Module {
     @HigherPriority
     private void method16036(Class4399 var1) {
         if (this.isEnabled()) {
-            if (mc.player.field5036) {
+            if (mc.player.onGround) {
                 this.field23413 = false;
                 if (this.field23412 && this.field23410 != 1) {
                     this.field23412 = !this.field23412;

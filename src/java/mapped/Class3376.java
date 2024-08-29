@@ -5,7 +5,7 @@ import java.util.Random;
 public class Class3376 extends Class3241 {
    private static String[] field18974;
    public static final Class8551[] field18975 = new Class8551[]{Class8820.field39692, Class8820.field39693, Class8820.field39694};
-   public static final Class6408 field18976 = Class8022.method27431(
+   public static final VoxelShape field18976 = VoxelShapes.method27431(
       Block.method11539(1.0, 0.0, 1.0, 15.0, 2.0, 15.0), Block.method11539(7.0, 0.0, 7.0, 9.0, 14.0, 9.0)
    );
 
@@ -31,7 +31,7 @@ public class Class3376 extends Class3241 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field18976;
    }
 

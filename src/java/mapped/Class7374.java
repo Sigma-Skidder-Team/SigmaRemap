@@ -52,9 +52,9 @@ public class Class7374 extends Class7361 {
                )
                .method11333();
             Vector3d var16 = new Vector3d(
-                  (double) MathHelper.sin(this.field31519.field5031 * (float) (Math.PI / 180.0)),
+                  (double) MathHelper.sin(this.field31519.rotationYaw * (float) (Math.PI / 180.0)),
                   0.0,
-                  (double)(-MathHelper.cos(this.field31519.field5031 * (float) (Math.PI / 180.0)))
+                  (double)(-MathHelper.cos(this.field31519.rotationYaw * (float) (Math.PI / 180.0)))
                )
                .method11333();
             float var17 = (float)var16.method11334(var15);

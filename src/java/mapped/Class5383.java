@@ -17,8 +17,8 @@ public class Class5383 extends Module {
          Entity var4 = ((Class5335)this.method16004()).method16750(this.getNumberValueBySettingName("Range"));
          if (var4 != null) {
             float[] var5 = Class9142.method34137(var4);
-            mc.player.field5031 = var5[0];
-            mc.player.field5032 = var5[1];
+            mc.player.rotationYaw = var5[0];
+            mc.player.rotationPitch = var5[1];
          }
       }
    }

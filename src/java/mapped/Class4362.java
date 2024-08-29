@@ -67,14 +67,14 @@ public class Class4362 extends Class4247 {
 
    @Override
    public void method13027(float var1) {
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269() + this.method13635()),
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
-      Class3192.method11463(
+      RenderUtil.method11463(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)this.method13267(),
@@ -82,7 +82,7 @@ public class Class4362 extends Class4247 {
          6.0F,
          var1 * 0.1F
       );
-      Class3192.method11463(
+      RenderUtil.method11463(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)this.method13267(),

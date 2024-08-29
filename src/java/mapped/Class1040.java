@@ -7,8 +7,8 @@ import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class Class1040 extends Class1038 implements Class1041 {
-   private static final Class9289<Boolean> field5769 = Class9361.<Boolean>method35441(Class1040.class, Class7784.field33398);
-   private static final Class9289<Class7921> field5770 = Class9361.<Class7921>method35441(Class1040.class, Class7784.field33406);
+   private static final DataParameter<Boolean> field5769 = EntityDataManager.<Boolean>method35441(Class1040.class, Class7784.field33398);
+   private static final DataParameter<Class7921> field5770 = EntityDataManager.<Class7921>method35441(Class1040.class, Class7784.field33406);
    private int field5771;
    private UUID field5772;
    private Class30 field5773;
@@ -17,14 +17,14 @@ public class Class1040 extends Class1038 implements Class1041 {
 
    public Class1040(EntityType<? extends Class1040> var1, World var2) {
       super(var1, var2);
-      this.method4673(this.method4674().method26574(Registry.field16090.method9254(this.field5054)));
+      this.method4673(this.method4674().method26574(Registry.field16090.method9254(this.rand)));
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5769, false);
-      this.field5063.method35442(field5770, new Class7921(Class9564.field44542, Class8395.field36011, 1));
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5769, false);
+      this.dataManager.register(field5770, new Class7921(Class9564.field44542, Class8395.field36011, 1));
    }
 
    @Override
@@ -32,7 +32,7 @@ public class Class1040 extends Class1038 implements Class1041 {
       super.method2724(var1);
       Class7921.field33913
          .encodeStart(NBTDynamicOps.INSTANCE, this.method4674())
-         .resultOrPartial(field5012::error)
+         .resultOrPartial(LOGGER::error)
          .ifPresent(var1x -> var1.put("VillagerData", var1x));
       if (this.field5774 != null) {
          var1.put("Offers", this.field5774);
@@ -55,7 +55,7 @@ public class Class1040 extends Class1038 implements Class1041 {
       super.method2723(var1);
       if (var1.method119("VillagerData", 10)) {
          DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, var1.method116("VillagerData")));
-         var4.resultOrPartial(field5012::error).ifPresent(this::method4673);
+         var4.resultOrPartial(LOGGER::error).ifPresent(this::method4673);
       }
 
       if (var1.method119("Offers", 10)) {
@@ -101,7 +101,7 @@ public class Class1040 extends Class1038 implements Class1041 {
          }
 
          if (!this.world.field9020) {
-            this.method4668(var1.getUniqueID(), this.field5054.nextInt(2401) + 3600);
+            this.method4668(var1.getUniqueID(), this.rand.nextInt(2401) + 3600);
          }
 
          return ActionResultType.field14818;
@@ -143,8 +143,8 @@ public class Class1040 extends Class1038 implements Class1041 {
                this.getPosZ(),
                Sounds.field27301,
                this.method2864(),
-               1.0F + this.field5054.nextFloat(),
-               this.field5054.nextFloat() * 0.7F + 0.3F,
+               1.0F + this.rand.nextFloat(),
+               this.rand.nextFloat() * 0.7F + 0.3F,
                false
             );
       }
@@ -194,7 +194,7 @@ public class Class1040 extends Class1038 implements Class1041 {
 
    private int method4670() {
       int var3 = 1;
-      if (this.field5054.nextFloat() < 0.01F) {
+      if (this.rand.nextFloat() < 0.01F) {
          int var4 = 0;
          Mutable var5 = new Mutable();
 
@@ -203,7 +203,7 @@ public class Class1040 extends Class1038 implements Class1041 {
                for (int var8 = (int)this.getPosZ() - 4; var8 < (int)this.getPosZ() + 4 && var4 < 14; var8++) {
                   Block var9 = this.world.getBlockState(var5.method8372(var6, var7, var8)).getBlock();
                   if (var9 == Blocks.IRON_BARS || var9 instanceof Class3250) {
-                     if (this.field5054.nextFloat() < 0.3F) {
+                     if (this.rand.nextFloat() < 0.3F) {
                         var3++;
                      }
 
@@ -220,8 +220,8 @@ public class Class1040 extends Class1038 implements Class1041 {
    @Override
    public float method3100() {
       return !this.method3005()
-         ? (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F
-         : (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 2.0F;
+         ? (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F
+         : (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 2.0F;
    }
 
    @Override
@@ -270,12 +270,12 @@ public class Class1040 extends Class1038 implements Class1041 {
          this.field5774 = null;
       }
 
-      this.field5063.method35446(field5770, var1);
+      this.dataManager.method35446(field5770, var1);
    }
 
    @Override
    public Class7921 method4674() {
-      return this.field5063.<Class7921>method35445(field5770);
+      return this.dataManager.<Class7921>method35445(field5770);
    }
 
    public void method4675(int var1) {

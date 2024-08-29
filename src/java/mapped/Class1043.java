@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 import java.util.Set;
 
 public abstract class Class1043 extends Class1045 implements Class1059, Class1060 {
-   private static final Class9289<Integer> field5794 = Class9361.<Integer>method35441(Class1043.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5794 = EntityDataManager.<Integer>method35441(Class1043.class, Class7784.field33391);
    private PlayerEntity field5795;
    public Class46 field5796;
    private final Class927 field5797 = new Class927(8);
@@ -27,11 +27,11 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    public int method4738() {
-      return this.field5063.<Integer>method35445(field5794);
+      return this.dataManager.<Integer>method35445(field5794);
    }
 
    public void method4739(int var1) {
-      this.field5063.method35446(field5794, var1);
+      this.dataManager.method35446(field5794, var1);
    }
 
    @Override
@@ -40,14 +40,14 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return !this.method3005() ? 1.62F : 0.81F;
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5794, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5794, 0);
    }
 
    @Override
@@ -161,9 +161,9 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
 
    public void method4751(Class7436 var1) {
       for (int var4 = 0; var4 < 5; var4++) {
-         double var5 = this.field5054.nextGaussian() * 0.02;
-         double var7 = this.field5054.nextGaussian() * 0.02;
-         double var9 = this.field5054.nextGaussian() * 0.02;
+         double var5 = this.rand.nextGaussian() * 0.02;
+         double var7 = this.rand.nextGaussian() * 0.02;
+         double var9 = this.rand.nextGaussian() * 0.02;
          this.world.method6746(var1, this.method3438(1.0), this.method3441() + 1.0, this.method3445(1.0), var5, var7, var9);
       }
    }
@@ -207,13 +207,13 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
          }
       } else {
          while (var6.size() < var3) {
-            var6.add(this.field5054.nextInt(var2.length));
+            var6.add(this.rand.nextInt(var2.length));
          }
       }
 
       for (Integer var8 : var6) {
          Class5391 var9 = var2[var8];
-         Class9346 var10 = var9.method16977(this, this.field5054);
+         Class9346 var10 = var9.method16977(this, this.rand);
          if (var10 != null) {
             var1.add(var10);
          }
@@ -223,7 +223,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    @Override
    public Vector3d method2986(float var1) {
       float var4 = MathHelper.method37821(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
-      Vector3d var5 = new Vector3d(0.0, this.method3389().method19677() - 1.0, 0.2);
+      Vector3d var5 = new Vector3d(0.0, this.getBoundingBox().method19677() - 1.0, 0.2);
       return this.method3288(var1).method11338(var5.method11351(-var4));
    }
 }

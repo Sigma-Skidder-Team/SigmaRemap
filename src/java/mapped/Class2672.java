@@ -17,7 +17,7 @@ public abstract class Class2672 extends Class2595 {
       if (var3 == null || !var3.method3066()) {
          return false;
       } else {
-         return !this.field17059.method4594() ? this.field17059.field5055 >= this.field17058 : false;
+         return !this.field17059.method4594() ? this.field17059.ticksExisted >= this.field17058 : false;
       }
    }
 
@@ -31,7 +31,7 @@ public abstract class Class2672 extends Class2595 {
    public void method10804() {
       this.field17057 = this.method10891();
       this.field17059.field5734 = this.method10892();
-      this.field17058 = this.field17059.field5055 + this.method10893();
+      this.field17058 = this.field17059.ticksExisted + this.method10893();
       Class9455 var3 = this.method10894();
       if (var3 != null) {
          this.field17059.method2863(var3, 1.0F, 1.0F);

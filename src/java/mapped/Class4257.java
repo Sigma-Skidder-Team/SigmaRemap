@@ -22,7 +22,7 @@ public class Class4257 extends Class4247 {
    public void method13027(float var1) {
       this.field20639.method13145(true);
       byte var4 = 10;
-      Class3192.method11463(
+      RenderUtil.method11463(
          (float)(this.field20895 + var4 / 2),
          (float)(this.field20896 + var4 / 2),
          (float)(this.field20897 - var4),
@@ -30,7 +30,7 @@ public class Class4257 extends Class4247 {
          9.0F,
          var1 * 0.9F
       );
-      Class3192.method11463(
+      RenderUtil.method11463(
          (float)(this.field20895 + var4 / 2),
          (float)(this.field20896 + var4 / 2),
          (float)(this.field20897 - var4),
@@ -38,7 +38,7 @@ public class Class4257 extends Class4247 {
          30.0F,
          var1 * 0.4F
       );
-      Class3192.method11475(
+      RenderUtil.method11475(
          (float)this.field20895,
          (float)this.field20896,
          (float)this.field20897,
@@ -46,7 +46,7 @@ public class Class4257 extends Class4247 {
          (float)var4,
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.97F)
       );
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)(this.field20895 + 20),
          (float)(this.field20896 + 20),
          20.0F,
@@ -60,7 +60,7 @@ public class Class4257 extends Class4247 {
          String var7 = this.field20640
             + ((Module)var5.get(0)).getName().substring(this.field20640.length(), var6.length())
             + (!((Module)var5.get(0)).isEnabled() ? " - Disabled" : " - Enabled");
-         Class3192.method11439(
+         RenderUtil.method11439(
             this.field20639.method13305(),
             (float)(this.field20895 + 54),
             (float)(this.field20896 + 14),

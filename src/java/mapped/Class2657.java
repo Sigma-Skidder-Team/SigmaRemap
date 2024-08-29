@@ -9,7 +9,7 @@ public class Class2657 extends Class2647 {
 
    @Override
    public boolean method10803() {
-      return super.method10803() && !this.field16990.method3329();
+      return super.method10803() && !this.field16990.isBeingRidden();
    }
 
    @Override

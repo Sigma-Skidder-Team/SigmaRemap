@@ -26,7 +26,7 @@ public interface Class1665 {
       return 256;
    }
 
-   default Stream<BlockState> method7035(Class6488 var1) {
+   default Stream<BlockState> method7035(AxisAlignedBB var1) {
       return BlockPos.method8362(var1).<BlockState>map(this::getBlockState);
    }
 
@@ -38,9 +38,9 @@ public interface Class1665 {
             Class7379 var6 = this.method6739(var2);
             Vector3d var7 = var1x.method20745();
             Vector3d var8 = var1x.method20744();
-            Class6408 var9 = var1x.method20746(var5, this, var2);
+            VoxelShape var9 = var1x.method20746(var5, this, var2);
             BlockRayTraceResult var10 = this.method7037(var7, var8, var2, var9, var5);
-            Class6408 var11 = var1x.method20747(var6, this, var2);
+            VoxelShape var11 = var1x.method20747(var6, this, var2);
             BlockRayTraceResult var12 = var11.method19525(var7, var8, var2);
             double var13 = var10 != null ? var1x.method20745().method11342(var10.method31419()) : Double.MAX_VALUE;
             double var15 = var12 != null ? var1x.method20745().method11342(var12.method31419()) : Double.MAX_VALUE;
@@ -56,7 +56,7 @@ public interface Class1665 {
    }
 
    @Nullable
-   default BlockRayTraceResult method7037(Vector3d var1, Vector3d var2, BlockPos var3, Class6408 var4, BlockState var5) {
+   default BlockRayTraceResult method7037(Vector3d var1, Vector3d var2, BlockPos var3, VoxelShape var4, BlockState var5) {
       BlockRayTraceResult var8 = var4.method19525(var1, var2, var3);
       if (var8 != null) {
          BlockRayTraceResult var9 = var5.method23418(this, var3).method19525(var1, var2, var3);
@@ -68,9 +68,9 @@ public interface Class1665 {
       return var8;
    }
 
-   default double method7038(Class6408 var1, Supplier<Class6408> var2) {
+   default double method7038(VoxelShape var1, Supplier<VoxelShape> var2) {
       if (var1.method19516()) {
-         double var5 = ((Class6408)var2.get()).method19513(Class113.field414);
+         double var5 = ((VoxelShape)var2.get()).method19513(Class113.field414);
          return !(var5 >= 1.0) ? Double.NEGATIVE_INFINITY : var5 - 1.0;
       } else {
          return var1.method19513(Class113.field414);

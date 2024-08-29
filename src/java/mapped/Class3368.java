@@ -176,9 +176,9 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       TileEntity var7 = var2.getTileEntity(var3);
-      return !(var7 instanceof Class940) ? Class8022.method27426() : Class8022.method27428(((Class940)var7).method3747(var1));
+      return !(var7 instanceof Class940) ? VoxelShapes.method27426() : VoxelShapes.create(((Class940)var7).method3747(var1));
    }
 
    @Override

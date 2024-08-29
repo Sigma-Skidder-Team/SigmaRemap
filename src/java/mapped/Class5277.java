@@ -25,7 +25,7 @@ public class Class5277 extends Module {
 
     @Override
     
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23721 = (float) ((double) (mc.mainWindow.method8043() - this.field23725.field41839) * Math.random());
         this.field23722 = (float) ((double) (mc.mainWindow.method8044() - this.field23725.field41840) * Math.random());
         this.method16513();
@@ -59,7 +59,7 @@ public class Class5277 extends Module {
 
             this.field23721 = this.field23721 + this.field23723 * (float) var6;
             this.field23722 = this.field23722 + this.field23724 * (float) var6;
-            Class3192.method11449(
+            RenderUtil.method11449(
                     this.field23721,
                     this.field23722,
                     (float) this.field23725.field41839,

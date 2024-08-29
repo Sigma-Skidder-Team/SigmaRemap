@@ -32,7 +32,7 @@ public class Class2611 extends Class2595 {
    public boolean method10803() {
       List<Class1006> var3 = this.field16871
          .world
-         .method6772(Class1006.class, this.field16871.method3389().method19664((double)this.field16879), this.field16872);
+         .method6772(Class1006.class, this.field16871.getBoundingBox().method19664((double)this.field16879), this.field16872);
       if (!var3.isEmpty()) {
          for (Class1006 var5 : var3) {
             if (!var5.method3342()) {

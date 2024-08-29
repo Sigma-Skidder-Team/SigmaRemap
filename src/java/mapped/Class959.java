@@ -132,7 +132,7 @@ public class Class959 extends TileEntity implements Class935 {
       int var5 = this.field5325.getX();
       int var6 = this.field5325.getY();
       int var7 = this.field5325.getZ();
-      Class6488 var8 = new Class6488((double)var5, (double)var6, (double)var7, (double)(var5 + 1), (double)(var6 + 1), (double)(var7 + 1))
+      AxisAlignedBB var8 = new AxisAlignedBB((double)var5, (double)var6, (double)var7, (double)(var5 + 1), (double)(var6 + 1), (double)(var7 + 1))
          .method19664((double)var4)
          .method19662(0.0, (double)this.field5324.method7034(), 0.0);
       List<PlayerEntity> var9 = this.field5324.<PlayerEntity>method7182(PlayerEntity.class, var8);
@@ -200,11 +200,11 @@ public class Class959 extends TileEntity implements Class935 {
       }
    }
 
-   private Class6488 method3900() {
+   private AxisAlignedBB method3900() {
       int var3 = this.field5325.getX();
       int var4 = this.field5325.getY();
       int var5 = this.field5325.getZ();
-      return new Class6488((double)var3, (double)var4, (double)var5, (double)(var3 + 1), (double)(var4 + 1), (double)(var5 + 1)).method19664(8.0);
+      return new AxisAlignedBB((double)var3, (double)var4, (double)var5, (double)(var3 + 1), (double)(var4 + 1), (double)(var5 + 1)).method19664(8.0);
    }
 
    @Nullable

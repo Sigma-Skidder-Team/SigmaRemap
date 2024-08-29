@@ -43,7 +43,7 @@ public class Class2739 extends Class2736 {
    @Nullable
    private Vector3d method10948() {
       ServerWorld var3 = (ServerWorld)this.field17258.world;
-      List var4 = var3.<Class1042>method6771(EntityType.field41098, this.field17258.method3389().method19664(32.0), this::method10952);
+      List var4 = var3.<Class1042>method6771(EntityType.field41098, this.field17258.getBoundingBox().method19664(32.0), this::method10952);
       if (!var4.isEmpty()) {
          Class1042 var5 = (Class1042)var4.get(this.field17258.world.field9016.nextInt(var4.size()));
          Vector3d var6 = var5.getPositionVec();

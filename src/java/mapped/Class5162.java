@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
@@ -27,7 +27,7 @@ public class Class5162 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23428 = (int) this.getNumberValueBySettingName("Refill delay");
         this.field23431 = (int) this.getNumberValueBySettingName("Refill delay");
         this.field23432 = false;
@@ -67,7 +67,7 @@ public class Class5162 extends Module {
     }
 
     @EventTarget
-    private void method16058(Class4402 var1) {
+    private void method16058(SendPacketEvent var1) {
         if (this.isEnabled()) {
             if (this.field23433 && var1.method13932() instanceof CClientStatusPacket) {
                 CClientStatusPacket var4 = (CClientStatusPacket) var1.method13932();

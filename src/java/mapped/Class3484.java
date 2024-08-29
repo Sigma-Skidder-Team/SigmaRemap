@@ -5,8 +5,8 @@ import java.util.Random;
 public class Class3484 extends Class3194 implements Class3196 {
    private static String[] field19341;
    public static final Class8554 field19342 = Class8820.field39740;
-   private static final Class6408 field19343 = Block.method11539(3.0, 0.0, 3.0, 13.0, 8.0, 13.0);
-   private static final Class6408 field19344 = Block.method11539(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+   private static final VoxelShape field19343 = Block.method11539(3.0, 0.0, 3.0, 13.0, 8.0, 13.0);
+   private static final VoxelShape field19344 = Block.method11539(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
 
    public Class3484(AbstractBlock var1) {
       super(var1);
@@ -19,7 +19,7 @@ public class Class3484 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       if (var1.<Integer>method23463(field19342) != 0) {
          return var1.<Integer>method23463(field19342) >= 3 ? super.method11483(var1, var2, var3, var4) : field19344;
       } else {
@@ -44,9 +44,9 @@ public class Class3484 extends Class3194 implements Class3196 {
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (var4 instanceof Class880 && var4.getType() != EntityType.field41033 && var4.getType() != EntityType.field41009) {
          var4.method2928(var1, new Vector3d(0.8F, 0.75, 0.8F));
-         if (!var2.field9020 && var1.<Integer>method23463(field19342) > 0 && (var4.field5048 != var4.getPosX() || var4.field5050 != var4.getPosZ())) {
-            double var7 = Math.abs(var4.getPosX() - var4.field5048);
-            double var9 = Math.abs(var4.getPosZ() - var4.field5050);
+         if (!var2.field9020 && var1.<Integer>method23463(field19342) > 0 && (var4.lastTickPosX != var4.getPosX() || var4.lastTickPosZ != var4.getPosZ())) {
+            double var7 = Math.abs(var4.getPosX() - var4.lastTickPosX);
+            double var9 = Math.abs(var4.getPosZ() - var4.lastTickPosZ);
             if (var7 >= 0.003F || var9 >= 0.003F) {
                var4.method2741(Class8654.field39012, 1.0F);
             }

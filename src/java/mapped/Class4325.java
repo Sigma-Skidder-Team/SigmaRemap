@@ -47,7 +47,7 @@ public class Class4325 extends Class4307 {
 
       int var6 = Class5628.method17690(-1072689136, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F), var5);
       int var7 = Class5628.method17690(-804253680, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F), var5);
-      Class3192.method11431(0, 0, this.method13267(), this.method13269(), var6, var7);
+      RenderUtil.method11431(0, 0, this.method13267(), this.method13269(), var6, var7);
       this.method13279(var4, var4);
       this.method13224();
       super.method13027(field21112.calcPercent());
@@ -66,7 +66,7 @@ public class Class4325 extends Class4307 {
       float var7 = (float)(var4 - this.field21110);
       GL11.glPushMatrix();
       if (this.field21113 != null) {
-         Class3192.method11448(
+         RenderUtil.method11448(
                  (float)this.field21110,
                  (float)this.field21109,
                  (float)(this.method13267() * 2),

@@ -14,7 +14,7 @@ public class Class3756 extends Class3676<Class880> {
 
    @Override
    public boolean method12508(ServerWorld var1, Class880 var2) {
-      if (var2.method3328()) {
+      if (var2.isPassenger()) {
          return false;
       } else {
          Class6947<?> var5 = var2.method2992();

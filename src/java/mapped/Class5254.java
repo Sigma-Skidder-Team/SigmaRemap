@@ -83,8 +83,8 @@ public class Class5254 extends PremiumModule {
 
     private static void method16383() {
         if (field23631) {
-            field23629 = mc.player.field5031;
-            field23630 = mc.player.field5032;
+            field23629 = mc.player.rotationYaw;
+            field23630 = mc.player.rotationPitch;
             field23631 = false;
         }
     }
@@ -145,7 +145,7 @@ public class Class5254 extends PremiumModule {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23628.method27120();
         this.field23628.method27118();
         this.field23635 = null;
@@ -170,7 +170,7 @@ public class Class5254 extends PremiumModule {
             if ((float) this.field23636 >= 20.0F / this.getNumberValueBySettingName("CPS")) {
                 EnderCrystalEntity var5 = mc.world
                         .method6772(
-                                Entity.class, this.field23633.field5035.method19662(2.0, 4.0, 2.0).method19662(-2.0, -3.0, -2.0), var0 -> var0 instanceof EnderCrystalEntity
+                                Entity.class, this.field23633.boundingBox.method19662(2.0, 4.0, 2.0).method19662(-2.0, -3.0, -2.0), var0 -> var0 instanceof EnderCrystalEntity
                         )
                         .stream()
                         .map(var0 -> (EnderCrystalEntity) var0)
@@ -179,7 +179,7 @@ public class Class5254 extends PremiumModule {
                         .min(Comparator.comparing(var1x -> method16380(var1x.getPosX(), var1x.getPosY(), var1x.getPosZ(), this.field23633)))
                         .orElse(null);
                 if (var5 != null) {
-                    Class7461 var9 = Class9142.method34148(var5.field5028);
+                    Class7461 var9 = Class9142.method34148(var5.positionVec);
                     var1.method13918(var9.field32084);
                     var1.method13916(var9.field32085);
                     this.field23636 = 0;
@@ -228,7 +228,7 @@ public class Class5254 extends PremiumModule {
             double var9 = (double) var6.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
             double var11 = (double) var6.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
             Class9388 var13 = new Class9388(var7, var9 + 1.0, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
-            Class3192.method11459(var13, var4);
+            RenderUtil.method11459(var13, var4);
         }
 
         var4 = Class5628.method17688(9000000, 1.0F);
@@ -238,7 +238,7 @@ public class Class5254 extends PremiumModule {
             double var20 = this.field23633.getPosZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
             float var16 = 0.3F;
             Class9388 var17 = new Class9388(var14 - (double) var16, var19 + 0.9, var20 - (double) var16, var14 + (double) var16, var19 + 1.0, var20 + (double) var16);
-            Class3192.method11459(var17, var4);
+            RenderUtil.method11459(var17, var4);
         }
 
         GL11.glEnable(2929);
@@ -260,7 +260,7 @@ public class Class5254 extends PremiumModule {
         )
                 && mc.world.getBlockState(var4).getBlock() == Blocks.AIR
                 && mc.world.getBlockState(var5).getBlock() == Blocks.AIR
-                && mc.world.method7182(Entity.class, new Class6488(var4)).isEmpty();
+                && mc.world.method7182(Entity.class, new AxisAlignedBB(var4)).isEmpty();
     }
 
     public List<BlockPos> method16379(BlockPos var1, float var2, int var3, boolean var4, boolean var5, int var6) {

@@ -27,7 +27,7 @@ public class Class6344 extends Class6333 {
 
    @Override
    public void method19269() {
-      if (!this.field27875.field5041 && this.field27874.method3328() && this.field27874.getRidingEntity() == this.field27875) {
+      if (!this.field27875.removed && this.field27874.isPassenger() && this.field27874.getRidingEntity() == this.field27875) {
          float var3 = MathHelper.method37766(Entity.method3234(this.field27875.method3433()));
          if (!((double)var3 >= 0.01)) {
             this.field27856 = 0.0F;

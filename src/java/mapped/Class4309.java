@@ -135,7 +135,7 @@ public class Class4309 extends Class4307 {
       float var4 = Class9747.method38214(var1, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       float var5 = 0.25F * var1;
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.field20895,
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
@@ -143,7 +143,7 @@ public class Class4309 extends Class4307 {
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var5)
       );
       super.method13224();
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloMediumFont40,
          (float)((this.field20897 - 1060) / 2),
          (float)((this.field20898 - 357) / 2 - 90),

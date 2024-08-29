@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.MethodWrapper;
 import com.mentalfrostbyte.jello.event.priority.Priority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.unmapped.Setting;
-import mapped.Class5325;
+import mapped.ModuleWithModuleSettings;
 import mapped.Class6715;
 import mapped.Handler;
 
@@ -66,8 +66,8 @@ public class PacketHandler {
                         var28.method18622();
                     }
 
-                    if (var23 instanceof Class5325) {
-                        for (Module var33 : ((Class5325) var23).moduleArray) {
+                    if (var23 instanceof ModuleWithModuleSettings) {
+                        for (Module var33 : ((ModuleWithModuleSettings) var23).moduleArray) {
                             for (Setting var37 : var33.method15989().values()) {
                                 var37.method18622();
                             }
@@ -76,16 +76,16 @@ public class PacketHandler {
 
                     if (var23.isEnabled()) {
                         Client.getInstance().getEventManager().subscribe(var23);
-                        if (var23 instanceof Class5325) {
-                            Class5325 var27 = (Class5325) var23;
+                        if (var23 instanceof ModuleWithModuleSettings) {
+                            ModuleWithModuleSettings var27 = (ModuleWithModuleSettings) var23;
                             if (var27.module != null) {
                                 Client.getInstance().getEventManager().subscribe(var27.module);
                             }
                         }
                     } else {
                         Client.getInstance().getEventManager().unsubscribe(var23);
-                        if (var23 instanceof Class5325) {
-                            Class5325 var26 = (Class5325) var23;
+                        if (var23 instanceof ModuleWithModuleSettings) {
+                            ModuleWithModuleSettings var26 = (ModuleWithModuleSettings) var23;
 
                             for (Module var36 : var26.moduleArray) {
                                 Client.getInstance().getEventManager().unsubscribe(var36);

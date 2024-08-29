@@ -22,7 +22,7 @@ public class Class2690 extends Class2595 {
          return false;
       } else {
          this.field17121 = 60;
-         List<PlayerEntity> var3 = this.field17122.world.method7194(this.field17120, this.field17122, this.field17122.method3389().method19663(16.0, 64.0, 16.0));
+         List<PlayerEntity> var3 = this.field17122.world.method7194(this.field17120, this.field17122, this.field17122.getBoundingBox().method19663(16.0, 64.0, 16.0));
          if (!var3.isEmpty()) {
             var3.sort(Comparator.<Entity, Double>comparing(Entity::getPosY).reversed());
 

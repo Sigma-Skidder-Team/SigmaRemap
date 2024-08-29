@@ -107,7 +107,7 @@ public class Class9299 {
    public static Class6631 field42849 = new Class6631(field42843, "renderBlockOverlay");
    public static Class6631 field42850 = new Class6631(field42843, "renderFireOverlay");
    public static Class6631 field42851 = new Class6631(field42843, "renderWaterOverlay");
-   public static Class6636 field42852 = new Class6636(Class7631.class);
+   public static Class6636 field42852 = new Class6636(Fluid.class);
    public static Class6631 field42853 = new Class6631(field42852, "getTags");
    public static Class6636 field42854 = new Class6636("net.minecraftforge.common.ForgeHooks");
    public static Class6631 field42855 = new Class6631(field42854, "onDifficultyChange");
@@ -272,7 +272,7 @@ public class Class9299 {
    public static Class6634 field43004 = new Class6634(field43003, new Class[]{Class1660.class});
    private static boolean field43005 = method35096("*** Reflector Vanilla ***");
    public static Class6636 field43006 = new Class6636(ItemEntity.class);
-   public static Class6633 field43007 = new Class6633(field43006, Class9289.class);
+   public static Class6633 field43007 = new Class6633(field43006, DataParameter.class);
    public static Class6636 field43008 = new Class6636(Class5718.class);
    public static Class6633 field43009 = new Class6633(field43008, Class2875.class);
    public static Class6636 field43010 = new Class6636(MainMenuScreen.class);

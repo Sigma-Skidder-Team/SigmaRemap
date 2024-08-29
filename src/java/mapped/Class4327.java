@@ -188,7 +188,7 @@ public class Class4327 extends Class4305 {
          var4 = ResourcesDecrypter.logoLarge2xPNG;
       }
 
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)(this.method13267() / 2 - var5 / 2),
          (float)(this.method13269() / 2 - var6),
          (float)var5,

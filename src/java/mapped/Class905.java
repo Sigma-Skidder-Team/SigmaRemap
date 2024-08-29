@@ -16,12 +16,12 @@ public class Class905 extends Class882 {
 
    public Class905(EntityType<? extends Class905> var1, World var2) {
       super(var1, var2);
-      this.field5052 = true;
+      this.noClip = true;
    }
 
    public Class905(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       this(EntityType.field41076, var1);
-      this.method3273(var2, var4, var6, this.field5031, this.field5032);
+      this.method3273(var2, var4, var6, this.rotationYaw, this.rotationPitch);
       this.method3435(var8, var10, var12);
    }
 
@@ -32,7 +32,7 @@ public class Class905 extends Class882 {
       double var8 = (double)var7.getX() + 0.5;
       double var10 = (double)var7.getY() + 0.5;
       double var12 = (double)var7.getZ() + 0.5;
-      this.method3273(var8, var10, var12, this.field5031, this.field5032);
+      this.method3273(var8, var10, var12, this.rotationYaw, this.rotationPitch);
       this.field5163 = var3;
       this.field5164 = Direction.field673;
       this.method3548(var4);
@@ -77,7 +77,7 @@ public class Class905 extends Class882 {
    }
 
    @Override
-   public void method2850() {
+   public void registerData() {
    }
 
    private void method3547(Direction var1) {
@@ -125,12 +125,12 @@ public class Class905 extends Class882 {
             }
          }
 
-         var13 = Direction.method552(this.field5054);
+         var13 = Direction.method552(this.rand);
          if (!var23.isEmpty()) {
-            var13 = (Direction)var23.get(this.field5054.nextInt(var23.size()));
+            var13 = (Direction)var23.get(this.rand.nextInt(var23.size()));
          } else {
             for (int var24 = 5; !this.world.method7007(var22.method8349(var13)) && var24 > 0; var24--) {
-               var13 = Direction.method552(this.field5054);
+               var13 = Direction.method552(this.rand);
             }
          }
 
@@ -154,8 +154,8 @@ public class Class905 extends Class882 {
          this.field5168 = 0.0;
       }
 
-      this.field5078 = true;
-      this.field5165 = 10 + this.field5054.nextInt(5) * 10;
+      this.isAirBorne = true;
+      this.field5165 = 10 + this.rand.nextInt(5) * 10;
    }
 
    @Override
@@ -198,10 +198,10 @@ public class Class905 extends Class882 {
 
       this.method3240();
       Vector3d var8 = this.method3433();
-      this.method3215(this.getPosX() + var8.field18048, this.getPosY() + var8.field18049, this.getPosZ() + var8.field18050);
+      this.setPosition(this.getPosX() + var8.field18048, this.getPosY() + var8.field18049, this.getPosZ() + var8.field18050);
       Class9456.method36388(this, 0.5F);
       if (!this.world.field9020) {
-         if (this.field5163 != null && !this.field5163.field5041) {
+         if (this.field5163 != null && !this.field5163.removed) {
             if (this.field5165 > 0) {
                this.field5165--;
                if (this.field5165 == 0) {
@@ -240,7 +240,7 @@ public class Class905 extends Class882 {
 
    @Override
    public boolean method3467(Entity var1) {
-      return super.method3467(var1) && !var1.field5052;
+      return super.method3467(var1) && !var1.noClip;
    }
 
    @Override

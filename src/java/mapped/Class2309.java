@@ -67,16 +67,16 @@ public enum Class2309 {
 
    public List<Class9110> method9086() {
       ArrayList var3 = new ArrayList();
-      float var4 = (float)Math.toRadians((double)Class5280.method16526().player.field5031);
-      float var5 = (float)Math.toRadians((double)Class5280.method16527().player.field5032);
-      double var6 = Class5280.method16528().player.field5048
-         + (Class5280.method16529().player.getPosX() - Class5280.method16530().player.field5048)
+      float var4 = (float)Math.toRadians((double)Class5280.method16526().player.rotationYaw);
+      float var5 = (float)Math.toRadians((double)Class5280.method16527().player.rotationPitch);
+      double var6 = Class5280.method16528().player.lastTickPosX
+         + (Class5280.method16529().player.getPosX() - Class5280.method16530().player.lastTickPosX)
             * (double)Class5280.method16531().timer.renderPartialTicks;
-      double var8 = Class5280.method16532().player.field5049
-         + (Class5280.method16533().player.getPosY() - Class5280.method16534().player.field5049)
+      double var8 = Class5280.method16532().player.lastTickPosY
+         + (Class5280.method16533().player.getPosY() - Class5280.method16534().player.lastTickPosY)
             * (double)Class5280.method16535().timer.renderPartialTicks;
-      double var10 = Class5280.method16536().player.field5050
-         + (Class5280.method16537().player.getPosZ() - Class5280.method16538().player.field5050)
+      double var10 = Class5280.method16536().player.lastTickPosZ
+         + (Class5280.method16537().player.getPosZ() - Class5280.method16538().player.lastTickPosZ)
             * (double)Class5280.method16539().timer.renderPartialTicks;
       this.field15825 = var6;
       this.field15826 = var8 + (double)Class5280.method16540().player.method3393() - 0.1F;
@@ -95,7 +95,7 @@ public enum Class2309 {
             this.field15825 + (double)this.field15828, this.field15826 + (double)this.field15829, this.field15827 + (double)this.field15830
          );
          float var15 = (float)(!(this.field15821 instanceof Class3263) ? 0.25 : 0.3);
-         Class6488 var16 = new Class6488(
+         AxisAlignedBB var16 = new AxisAlignedBB(
             this.field15825 - (double)var15,
             this.field15826 - (double)var15,
             this.field15827 - (double)var15,

@@ -8,13 +8,13 @@ public class Class3475 extends Block implements Class3476 {
    private static String[] field19325;
    public static final Class8554 field19326 = Class8820.field39752;
    public static final Object2FloatMap<Class3303> field19327 = new Object2FloatOpenHashMap();
-   private static final Class6408 field19328 = Class8022.method27426();
-   private static final Class6408[] field19329 = Util.<Class6408[]>method38508(
-      new Class6408[9],
+   private static final VoxelShape field19328 = VoxelShapes.method27426();
+   private static final VoxelShape[] field19329 = Util.<VoxelShape[]>method38508(
+      new VoxelShape[9],
       var0 -> {
          for (int var3 = 0; var3 < 8; var3++) {
-            var0[var3] = Class8022.method27433(
-               field19328, Block.method11539(2.0, (double)Math.max(2, 1 + var3 * 2), 2.0, 14.0, 16.0, 14.0), Class9477.field44041
+            var0[var3] = VoxelShapes.method27433(
+               field19328, Block.method11539(2.0, (double)Math.max(2, 1 + var3 * 2), 2.0, 14.0, 16.0, 14.0), IBooleanFunction.field44041
             );
          }
 
@@ -153,17 +153,17 @@ public class Class3475 extends Block implements Class3476 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19329[var1.<Integer>method23463(field19326)];
    }
 
    @Override
-   public Class6408 method11938(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11938(BlockState var1, Class1665 var2, BlockPos var3) {
       return field19328;
    }
 
    @Override
-   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19329[0];
    }
 

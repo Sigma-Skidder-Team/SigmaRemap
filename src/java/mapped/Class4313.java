@@ -295,7 +295,7 @@ public class Class4313 extends Class4307 {
    @Override
    public void method13027(float var1) {
       this.method13371();
-      Class3192.method11465(
+      RenderUtil.method11465(
          (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21014),
          114,
          (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21015) - this.field21016,
@@ -322,7 +322,7 @@ public class Class4313 extends Class4307 {
       float var3 = this.field21021 < 25.0F ? this.field21021 / 25.0F : 1.0F;
       GL11.glTexParameteri(3553, 10241, 9728);
       if (this.field21020 != null) {
-         Class3192.method11449(
+         RenderUtil.method11449(
             0.0F,
             0.0F,
             (float)((int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21014) - 15),
@@ -342,8 +342,8 @@ public class Class4313 extends Class4307 {
       int var3 = this.field20895 + this.field21016;
       int var4 = this.field20896 + this.field21016;
       int var5 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.8F);
-      Class3192.method11439(ResourceRegistry.JelloLightFont40, (float)var3, (float)var4, "Jello", var5);
-      Class3192.method11439(ResourceRegistry.JelloLightFont25, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
+      RenderUtil.method11439(ResourceRegistry.JelloLightFont40, (float)var3, (float)var4, "Jello", var5);
+      RenderUtil.method11439(ResourceRegistry.JelloLightFont25, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
    }
 
    private void method13367() {
@@ -426,7 +426,7 @@ public class Class4313 extends Class4307 {
 
       float var5 = var4 - this.field21006;
       float var6 = (float)(var3 - this.field21005);
-      Class3192.method11455((float)this.field21005, this.field21006, (float)(this.method13267() * 2), (float)(this.method13269() + 114), ResourcesDecrypter.panoramaPNG);
+      RenderUtil.method11455((float)this.field21005, this.field21006, (float)(this.method13267() * 2), (float)(this.method13269() + 114), ResourcesDecrypter.panoramaPNG);
       float var7 = 0.5F;
       if (var4 != this.field21006) {
          this.field21006 += var5 * var7;
@@ -436,7 +436,7 @@ public class Class4313 extends Class4307 {
          this.field21005 = (int)((float)this.field21005 + var6 * var7);
       }
 
-      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
+      RenderUtil.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
    }
 
    @Override

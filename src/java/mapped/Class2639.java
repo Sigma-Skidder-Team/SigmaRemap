@@ -47,7 +47,7 @@ public class Class2639 extends Class2595 {
 
             Class899 var16 = new Class899(var6, this.field16963, var10, var12, var14);
             var16.field5139 = this.field16963.method5359();
-            var16.method3215(
+            var16.setPosition(
                this.field16963.getPosX() + var9.field18048 * 4.0, this.field16963.method3440(0.5) + 0.5, var16.getPosZ() + var9.field18050 * 4.0
             );
             var6.method6916(var16);

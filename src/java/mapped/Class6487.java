@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class6487 extends Class6488 {
+public class Class6487 extends AxisAlignedBB {
    private static String[] field28446;
    private int field28447 = -1;
    private boolean field28448 = false;

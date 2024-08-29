@@ -46,7 +46,7 @@ public class Class4273 extends Class4247 {
          }
 
          if (var10) {
-            Class3192.method11426(
+            RenderUtil.method11426(
                (float)this.field20895,
                (float)this.field20896,
                (float)(this.field20895 + this.field20897),
@@ -62,14 +62,14 @@ public class Class4273 extends Class4247 {
             var13 = ClientColors.LIGHT_GREYISH_BLUE.getColor;
          }
 
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + var11 + 50),
             (float)(this.field20896 + var12 + 5),
             this.field20912,
             Class5628.method17688(var13, var1)
          );
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.JelloLightFont12,
             (float)(this.field20895 + var11 + 50),
             (float)(this.field20896 + var12 + 19),

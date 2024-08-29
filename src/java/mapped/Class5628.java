@@ -128,14 +128,14 @@ public class Class5628 {
 
    public static final boolean method17684(Entity var0) {
       ClientWorld var3 = field24949.world;
-      Class6488 var4 = var0.field5035;
+      AxisAlignedBB var4 = var0.boundingBox;
       return var3.method7014(var4);
    }
 
    public static final boolean method17685(Entity var0) {
-      double var3 = var0.getPosX() - var0.field5048;
-      double var5 = var0.getPosY() - var0.field5049;
-      double var7 = var0.getPosZ() - var0.field5050;
+      double var3 = var0.getPosX() - var0.lastTickPosX;
+      double var5 = var0.getPosY() - var0.lastTickPosY;
+      double var7 = var0.getPosZ() - var0.lastTickPosZ;
       return var3 != 0.0 || var5 != 0.0 || var7 != 0.0;
    }
 
@@ -151,8 +151,8 @@ public class Class5628 {
       float var16 = (float)(Math.atan2(var12, var8) * 180.0 / Math.PI) - 90.0F;
       float var17 = (float)(-(Math.atan2(var10, var14) * 180.0 / Math.PI));
       return new float[]{
-         field24949.player.field5031 + MathHelper.method37792(var16 - field24949.player.field5031),
-         field24949.player.field5032 + MathHelper.method37792(var17 - field24949.player.field5032)
+         field24949.player.rotationYaw + MathHelper.method37792(var16 - field24949.player.rotationYaw),
+         field24949.player.rotationPitch + MathHelper.method37792(var17 - field24949.player.rotationPitch)
       };
    }
 
@@ -480,7 +480,7 @@ public class Class5628 {
          Vector3d var11 = method17721(var1, var0);
          Vector3d var12 = var7.method11339(var11.field18048 * var9, var11.field18049 * var9, var11.field18050 * var9);
          float var13 = 1.0F;
-         Class6488 var14 = var8.method3389().method19661(var11.method11344(var9)).method19663(1.0, 1.0, 1.0);
+         AxisAlignedBB var14 = var8.getBoundingBox().method19661(var11.method11344(var9)).method19663(1.0, 1.0, 1.0);
          return method17713(
             field24949.world, var8, var7, var12, var14, var0x -> var0x instanceof Class880 || var0x instanceof Class907, (double)(var2 * var2), var3
          );
@@ -490,13 +490,13 @@ public class Class5628 {
    }
 
    public static EntityRayTraceResult method17713(
-           World var0, Entity var1, Vector3d var2, Vector3d var3, Class6488 var4, Predicate<Entity> var5, double var6, double var8
+           World var0, Entity var1, Vector3d var2, Vector3d var3, AxisAlignedBB var4, Predicate<Entity> var5, double var6, double var8
    ) {
       double var12 = var6;
       Entity var14 = null;
 
       for (Entity var16 : var0.method6770(var1, var4, var5)) {
-         Class6488 var17 = var16.method3389().method19664(var8);
+         AxisAlignedBB var17 = var16.getBoundingBox().method19664(var8);
          Optional var18 = var17.method19680(var2, var3);
          if (!var18.isPresent()) {
             if (method17715(var1.getPositionVec(), var17)) {
@@ -526,8 +526,8 @@ public class Class5628 {
       Vector3d var14 = var12.method11339(var13.field18048 * var8, var13.field18049 * var8, var13.field18050 * var8);
 
       for (Entity var16 : field24949.world
-         .method6770(field24949.player, field24949.player.method3389().method19661(var13.method11344(var8)).method19663(1.0, 1.0, 1.0), var3)) {
-         Class6488 var17 = var16.method3389();
+         .method6770(field24949.player, field24949.player.getBoundingBox().method19661(var13.method11344(var8)).method19663(1.0, 1.0, 1.0), var3)) {
+         AxisAlignedBB var17 = var16.getBoundingBox();
          Optional var18 = var17.method19680(var12, var14);
          if (var18.isPresent()) {
             double var19 = var12.method11342((Vector3d)var18.get());
@@ -542,7 +542,7 @@ public class Class5628 {
       return var10 != null && var11 != null ? new EntityRayTraceResult(var10, var11) : null;
    }
 
-   public static boolean method17715(Vector3d var0, Class6488 var1) {
+   public static boolean method17715(Vector3d var0, AxisAlignedBB var1) {
       return var0.field18048 >= var1.field28449
          && var0.field18048 <= var1.field28452
          && var0.field18049 >= var1.field28450
@@ -609,12 +609,12 @@ public class Class5628 {
    }
 
    public static boolean method17727(double var0, double var2, boolean var4) {
-      Class6488 var7 = field24949.player.field5035;
+      AxisAlignedBB var7 = field24949.player.boundingBox;
       if (var4) {
          var7 = var7.method19663(1.235F, 0.0, 1.235F);
       }
 
-      Class6488 var8 = new Class6488(
+      AxisAlignedBB var8 = new AxisAlignedBB(
          var7.field28449 + var0, var7.field28450 - 1.5, var7.field28451 + var2, var7.field28452 + var0, var7.field28453, var7.field28454 + var2
       );
       Stream var9 = field24949.world.method7055(field24949.player, var8);
@@ -626,11 +626,11 @@ public class Class5628 {
    }
 
    public static boolean method17729() {
-      Class6488 var2 = field24949.player.field5035.method19667(0.0, -1.0, 0.0);
+      AxisAlignedBB var2 = field24949.player.boundingBox.method19667(0.0, -1.0, 0.0);
       if (field24949.player.getRidingEntity() != null) {
-         double var4 = field24949.player.getRidingEntity().field5025 - field24949.player.getRidingEntity().getPosX();
-         double var6 = field24949.player.getRidingEntity().field5027 - field24949.player.getRidingEntity().getPosZ();
-         var2 = field24949.player.getRidingEntity().field5035.method19662(Math.abs(var4), 1.0, Math.abs(var6));
+         double var4 = field24949.player.getRidingEntity().prevPosX - field24949.player.getRidingEntity().getPosX();
+         double var6 = field24949.player.getRidingEntity().prevPosZ - field24949.player.getRidingEntity().getPosZ();
+         var2 = field24949.player.getRidingEntity().boundingBox.method19662(Math.abs(var4), 1.0, Math.abs(var6));
       }
 
       Stream var3 = field24949.world.method7055(field24949.player, var2);
@@ -638,13 +638,13 @@ public class Class5628 {
    }
 
    public static boolean method17730(Entity var0, float var1) {
-      Class6488 var4 = new Class6488(
-         var0.field5035.field28449,
-         var0.field5035.field28450 - (double)var1,
-         var0.field5035.field28451,
-         var0.field5035.field28452,
-         var0.field5035.field28453,
-         var0.field5035.field28454
+      AxisAlignedBB var4 = new AxisAlignedBB(
+         var0.boundingBox.field28449,
+         var0.boundingBox.field28450 - (double)var1,
+         var0.boundingBox.field28451,
+         var0.boundingBox.field28452,
+         var0.boundingBox.field28453,
+         var0.boundingBox.field28454
       );
       Stream var5 = field24949.world.method7055(field24949.player, var4);
       return var5.count() != 0L;
@@ -704,13 +704,13 @@ public class Class5628 {
 
          boolean var6 = (double)field24949.player.method2974(0.5F) > 0.9 || var4;
          boolean var7 = var6
-            && field24949.player.field5045 > 0.0F
-            && !field24949.player.field5036
+            && field24949.player.fallDistance > 0.0F
+            && !field24949.player.onGround
             && !field24949.player.method3063()
             && !field24949.player.method3250()
             && !field24949.player.method3033(Class8254.field35481)
-            && !field24949.player.method3328();
-         if (var7 || field24949.player.field5036 && Client.getInstance().getModuleManager().getModuleByClass(Class5332.class).isEnabled()) {
+            && !field24949.player.isPassenger();
+         if (var7 || field24949.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Class5332.class).isEnabled()) {
             field24949.particles.method1195(var5.method13935(), Class7940.field34054);
          }
 
@@ -1079,10 +1079,10 @@ public class Class5628 {
    }
 
    public static Vector3d method17751(Entity var0) {
-      return method17752(var0.field5035);
+      return method17752(var0.boundingBox);
    }
 
-   public static Vector3d method17752(Class6488 var0) {
+   public static Vector3d method17752(AxisAlignedBB var0) {
       double var3 = var0.method19685().field18048;
       double var5 = var0.field28450;
       double var7 = var0.method19685().field18050;
@@ -1096,7 +1096,7 @@ public class Class5628 {
    }
 
    public static float method17753(float var0) {
-      float var3 = MathHelper.method37792(field24949.player.field5031);
+      float var3 = MathHelper.method37792(field24949.player.rotationYaw);
       float var4 = 180.0F;
       float var5 = 0.0F;
       MovementInput var6 = field24949.player.field6131;
@@ -1146,7 +1146,7 @@ public class Class5628 {
       return Math.sqrt(var3 * var3 + var5 * var5 + var7 * var7);
    }
 
-   public static double method17755(Class6488 var0) {
+   public static double method17755(AxisAlignedBB var0) {
       Vector3d var3 = method17752(var0);
       return method17754(var3);
    }
@@ -1192,7 +1192,7 @@ public class Class5628 {
    }
 
    public static Direction method17759(double var0) {
-      Class6488 var4 = field24949.player.field5035;
+      AxisAlignedBB var4 = field24949.player.boundingBox;
       Direction[] var5 = new Direction[]{Direction.EAST, Direction.WEST, Direction.SOUTH, Direction.NORTH};
 
       for (Direction var9 : var5) {
@@ -1208,7 +1208,7 @@ public class Class5628 {
    }
 
    public static Class9629<Direction, Vector3d> method17760(double var0) {
-      Class6488 var4 = field24949.player.field5035;
+      AxisAlignedBB var4 = field24949.player.boundingBox;
       Direction[] var5 = new Direction[]{Direction.EAST, Direction.WEST, Direction.SOUTH, Direction.NORTH};
 
       for (Direction var9 : var5) {
@@ -1229,7 +1229,7 @@ public class Class5628 {
    public static boolean method17761() {
       double var2 = 1.0E-7;
       return field24949.world
-            .method7055(field24949.player, field24949.player.field5035.method19662(var2, 0.0, var2).method19662(-var2, 0.0, -var2))
+            .method7055(field24949.player, field24949.player.boundingBox.method19662(var2, 0.0, var2).method19662(-var2, 0.0, -var2))
             .count()
          > 0L;
    }
@@ -1243,8 +1243,8 @@ public class Class5628 {
 
    public static boolean method17763(Entity var0) {
       if (!(var0.getPosY() < 1.0)) {
-         if (!var0.field5036) {
-            Class6488 var3 = var0.method3389();
+         if (!var0.onGround) {
+            AxisAlignedBB var3 = var0.getBoundingBox();
             var3 = var3.method19662(0.0, -var0.getPosY(), 0.0);
             return field24949.world.method7055(field24949.player, var3).count() == 0L;
          } else {

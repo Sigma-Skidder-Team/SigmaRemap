@@ -8,7 +8,7 @@ public class Class8781 {
    }
 
    public static int method31663(PlayerEntity var0) {
-      Class8218 var3 = (Class8218)var0.method3344();
-      return var3 != null && var3.method28591().getColor() != null ? var3.method28591().getColor() : 16777215;
+      Class8218 var3 = (Class8218)var0.getTeam();
+      return var3 != null && var3.getColor().getColor() != null ? var3.getColor().getColor() : 16777215;
    }
 }

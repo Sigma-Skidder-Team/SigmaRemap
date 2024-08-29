@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.event.impl.Class4436;
@@ -21,12 +21,12 @@ public class Class5292 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Class9567.method37090(Class9567.method37075() * 0.7);
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23807 = true;
         this.field23804 = -1;
         this.field23805 = 0;
@@ -43,7 +43,7 @@ public class Class5292 extends Module {
     @EventTarget
     public void method16622(Class4435 var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (!mc.player.field5036) {
+            if (!mc.player.onGround) {
                 if (this.field23804 >= 0) {
                     if (this.field23807 && !Class5628.method17686()) {
                         this.field23807 = !this.field23807;
@@ -65,12 +65,12 @@ public class Class5292 extends Module {
                         this.field23803 -= 0.05;
                     }
 
-                    if (mc.player.field5037) {
+                    if (mc.player.collidedHorizontally) {
                         this.field23802 = 0.35;
                         this.field23805 = 1;
                     }
 
-                    if (mc.player.field5038) {
+                    if (mc.player.collidedVertically) {
                         this.field23803 = -0.078;
                         this.field23804 = 23;
                     }
@@ -132,9 +132,9 @@ public class Class5292 extends Module {
     }
 
     @EventTarget
-    public void method16624(Class4396 var1) {
+    public void method16624(RecievePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (var1.method13898() instanceof Class5473) {
+            if (var1.getPacket() instanceof Class5473) {
                 this.field23804 = -1;
                 this.field23805 = 0;
             }

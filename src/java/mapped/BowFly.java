@@ -10,16 +10,16 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.timer.Timer;
 
-public class Class5195 extends Module {
+public class BowFly extends Module {
     private int field23504;
     private final Timer field23505 = new Timer();
 
-    public Class5195() {
+    public BowFly() {
         super(ModuleCategory.MOVEMENT, "Bow", "Fly for Bow");
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         if (mc.timer.field40360 == 0.1F) {
             mc.timer.field40360 = 1.0F;
         }
@@ -86,7 +86,7 @@ public class Class5195 extends Module {
                         return;
                     }
 
-                    float var5 = mc.player.field5031;
+                    float var5 = mc.player.rotationYaw;
                     float var6 = -90.0F;
                     if (mc.player.field4984 != 0.0F || mc.player.field4982 != 0.0F) {
                         var6 = -80.0F;
@@ -102,7 +102,7 @@ public class Class5195 extends Module {
 
                     var1.method13916(var6);
                     var1.method13918(var5);
-                    if (mc.player.field5036 && mc.player.field5038) {
+                    if (mc.player.onGround && mc.player.collidedVertically) {
                         mc.player.method2914();
                     } else if (!(mc.player.method3433().field18049 < 0.0)) {
                         if (mc.timer.field40360 == 0.1F) {

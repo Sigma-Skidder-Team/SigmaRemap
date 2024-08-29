@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.gui.GuiManager;
@@ -35,8 +35,8 @@ public class Class8480 {
    }
 
    @EventTarget
-   public void method29972(Class4396 var1) {
-      if (var1.method13898() instanceof Class5586) {
+   public void method29972(RecievePacketEvent var1) {
+      if (var1.getPacket() instanceof Class5586) {
          Class5628.method17742();
       }
    }
@@ -87,9 +87,9 @@ public class Class8480 {
             1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0
          );
          int var4 = 35;
-         Class3192.method11420(field36354, field36355 - var4, field36356, field36357 + var4);
+         RenderUtil.method11420(field36354, field36355 - var4, field36356, field36357 + var4);
          field36351.method6526(mc.timer.renderPartialTicks);
-         Class3192.method11422();
+         RenderUtil.method11422();
          GL11.glEnable(3008);
          field36352.bindFramebuffer(true);
          mc.framebuffer.bindFramebuffer(true);

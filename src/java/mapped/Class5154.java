@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4422;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.event.impl.Class4436;
@@ -25,7 +25,7 @@ public class Class5154 extends Module {
    }
 
    @Override
-   public void isInDevelopment() {
+   public void onEnable() {
       this.field23398 = -1;
       this.field23399 = 0;
       this.field23403 = mc.player.getPosY();
@@ -34,14 +34,14 @@ public class Class5154 extends Module {
    }
 
    @Override
-   public void method15965() {
+   public void onDisable() {
       Class9567.method37093(0.27, Class9567.method37083()[0], this.field23404, 45.0F);
    }
 
    @EventTarget
-   public void method16008(Class4396 var1) {
+   public void method16008(RecievePacketEvent var1) {
       if (this.isEnabled()) {
-         if (var1.method13898() instanceof Class5473) {
+         if (var1.getPacket() instanceof Class5473) {
             this.field23399 = 0;
          }
       }
@@ -68,7 +68,7 @@ public class Class5154 extends Module {
          }
 
          if (mc.player.field4984 == 0.0F && mc.player.field4982 == 0.0F
-            || mc.player.field5037
+            || mc.player.collidedHorizontally
             || mc.player.field4984 <= 0.0F) {
             this.field23399 = 0;
          }
@@ -94,7 +94,7 @@ public class Class5154 extends Module {
             this.field23401 = 0.0;
          }
 
-         if (mc.player.field5037) {
+         if (mc.player.collidedHorizontally) {
             this.field23401 = this.field23401 * 0.9 < 0.27 ? 0.27 : this.field23401 * 0.9;
          }
 
@@ -110,7 +110,7 @@ public class Class5154 extends Module {
    public void method16010(Class4422 var1) {
       if (this.isEnabled()) {
          if (this.getBooleanValueFromSetttingName("Fluid Fix")) {
-            if (!mc.player.field5037 && !mc.player.field5038) {
+            if (!mc.player.collidedHorizontally && !mc.player.collidedVertically) {
                String var4 = this.getStringSettingValueByName("Mode");
                float var5 = 13.0F;
                if (!var4.equals("Fast1")) {
@@ -123,11 +123,11 @@ public class Class5154 extends Module {
 
                if (!((float)this.field23398 > var5) && this.field23398 >= 0) {
                   double var6 = Math.cos(Math.toRadians((double)((float)this.field23398 / var5 * 180.0F - 90.0F)));
-                  mc.player.field5028.field18049 = this.field23403 + var6;
+                  mc.player.positionVec.field18049 = this.field23403 + var6;
                   mc.player.field4909 = 0.0F;
                }
             } else {
-               mc.player.field5028.field18049 = mc.player.method3389().field28450;
+               mc.player.positionVec.field18049 = mc.player.getBoundingBox().field28450;
                this.field23403 = mc.player.getPosY();
                this.field23398 = -1;
             }
@@ -305,7 +305,7 @@ public class Class5154 extends Module {
             var5 -= 0.06;
          }
 
-         if (mc.player.field5037) {
+         if (mc.player.collidedHorizontally) {
             var5 -= 0.1;
             var2.run();
          }

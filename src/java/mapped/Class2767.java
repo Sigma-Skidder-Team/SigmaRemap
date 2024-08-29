@@ -12,7 +12,7 @@ public class Class2767 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      List var3 = this.field17342.world.<Class880>method6772(Class880.class, this.field17342.method3389().method19664(2.0), Class1054.method4833());
+      List var3 = this.field17342.world.<Class880>method6772(Class880.class, this.field17342.getBoundingBox().method19664(2.0), Class1054.method4833());
       return !var3.isEmpty();
    }
 
@@ -29,7 +29,7 @@ public class Class2767 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      List var3 = this.field17342.world.<Class880>method6772(Class880.class, this.field17342.method3389().method19664(2.0), Class1054.method4833());
+      List var3 = this.field17342.world.<Class880>method6772(Class880.class, this.field17342.getBoundingBox().method19664(2.0), Class1054.method4833());
       return !var3.isEmpty();
    }
 }

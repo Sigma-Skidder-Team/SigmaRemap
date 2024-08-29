@@ -87,10 +87,10 @@ public class Class8118 implements Class8117 {
    }
 
    @Override
-   public Class6408 method28118() {
-      return Class8022.method27433(
-         Class8022.field34463,
-         Class8022.method27427(
+   public VoxelShape method28118() {
+      return VoxelShapes.method27433(
+         VoxelShapes.field34463,
+         VoxelShapes.method27427(
             Math.floor(this.method28105()),
             Double.NEGATIVE_INFINITY,
             Math.floor(this.method28107()),
@@ -98,7 +98,7 @@ public class Class8118 implements Class8117 {
             Double.POSITIVE_INFINITY,
             Math.ceil(this.method28108())
          ),
-         Class9477.field44041
+         IBooleanFunction.field44041
       );
    }
 }

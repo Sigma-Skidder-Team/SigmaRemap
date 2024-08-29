@@ -17,7 +17,7 @@ public class Class5272 extends Module {
 
     @EventTarget
     public void method16498(TickEvent var1) {
-        if (this.isEnabled() && mc.player.field5055 > 10 && mc.getIntegratedServer() == null && mc.getCurrentServerData() != null) {
+        if (this.isEnabled() && mc.player.ticksExisted > 10 && mc.getIntegratedServer() == null && mc.getCurrentServerData() != null) {
             float var4 = mc.player.method3042() / mc.player.method3075() * 10.0F;
             if (var4 < this.getNumberValueBySettingName("Min Health") || Class7789.method25878(Items.field38126) == 0) {
                 boolean var5 = this.getBooleanValueFromSetttingName("One Time Use");

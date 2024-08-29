@@ -8,7 +8,7 @@ public final class Class6237 extends Class6230 {
    @Override
    public ItemStack method19192(Class2956 var1, ItemStack var2) {
       BlockPos var5 = var1.method11323().method8349(var1.method11324().<Direction>method23463(Class3357.field18899));
-      List var6 = var1.method11326().<Class880>method6772(Class880.class, new Class6488(var5), var0 -> {
+      List var6 = var1.method11326().<Class880>method6772(Class880.class, new AxisAlignedBB(var5), var0 -> {
          if (!(var0 instanceof Class1069)) {
             return false;
          } else {

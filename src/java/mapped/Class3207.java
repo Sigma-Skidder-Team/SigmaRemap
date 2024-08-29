@@ -2,7 +2,7 @@ package mapped;
 
 public interface Class3207 extends Class3405, Class3449 {
    @Override
-   default boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Class7631 var4) {
+   default boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Fluid var4) {
       return !var3.<Boolean>method23463(Class8820.field39710) && var4 == Class9479.field44066;
    }
 
@@ -21,7 +21,7 @@ public interface Class3207 extends Class3405, Class3449 {
    }
 
    @Override
-   default Class7631 method11533(Class1660 var1, BlockPos var2, BlockState var3) {
+   default Fluid method11533(Class1660 var1, BlockPos var2, BlockState var3) {
       if (!var3.<Boolean>method23463(Class8820.field39710)) {
          return Class9479.field44064;
       } else {

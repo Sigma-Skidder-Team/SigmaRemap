@@ -77,29 +77,29 @@ public class Class4271 extends Class4247 {
 
    @Override
    public void method13027(float var1) {
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269() + this.method13108()),
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
-      Class3192.method11463(
+      RenderUtil.method11463(
          (float)this.method13263(), (float)this.method13265(), (float)this.method13267(), (float)(this.method13269() + this.method13108()), 6.0F, var1 * 0.21F
       );
       if (this.method13303() != null) {
-         Class3192.method11415(this);
-         Class3192.method11439(
+         RenderUtil.method11415(this);
+         RenderUtil.method11439(
             this.method13305(),
             (float)(this.method13263() + 10),
             (float)(this.method13265() + (this.method13269() - this.method13305().method23952()) / 2 + 1),
             this.field20912,
             Class5628.method17688(this.field20914.method19405(), var1 * 0.7F)
          );
-         Class3192.method11422();
+         RenderUtil.method11422();
       }
 
-      Class3192.method11420(
+      RenderUtil.method11420(
          this.method13271(), this.method13272(), this.method13271() + this.method13267(), this.method13272() + this.method13269() + this.method13108()
       );
       GL11.glPushMatrix();
@@ -108,8 +108,8 @@ public class Class4271 extends Class4247 {
       }
 
       GL11.glPopMatrix();
-      Class3192.method11422();
-      Class3192.method11428(
+      RenderUtil.method11422();
+      RenderUtil.method11428(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
@@ -122,7 +122,7 @@ public class Class4271 extends Class4247 {
       GL11.glTranslatef((float)(this.method13263() + var4), (float)(this.method13265() + var5), 0.0F);
       GL11.glRotatef(90.0F * this.field20702, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-this.method13263() - var4), (float)(-this.method13265() - var5), 0.0F);
-      Class3192.method11439(
+      RenderUtil.method11439(
          this.field20913,
          (float)(this.method13263() + var4 - 6),
          (float)(this.method13265() + var5 - 14),

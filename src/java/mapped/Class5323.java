@@ -1,9 +1,9 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -24,7 +24,7 @@ public class Class5323 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23870 = null;
 
         for (BlockPos var4 : Class9217.method34545(Class9217.method34561(mc.playerController.method23135()))) {
@@ -109,7 +109,7 @@ public class Class5323 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
     }
 
     @EventTarget
@@ -121,7 +121,7 @@ public class Class5323 extends Module {
                 double var5 = (double) var4.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
                 double var7 = (double) var4.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
                 double var9 = (double) var4.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
-                Class3192.method11459(
+                RenderUtil.method11459(
                         new Class9388(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.3F)
                 );
                 GL11.glColor3f(1.0F, 1.0F, 1.0F);
@@ -245,10 +245,10 @@ public class Class5323 extends Module {
     }
 
     @EventTarget
-    private void method16721(Class4396 var1) {
+    private void method16721(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof Class5498) {
-                this.field23876 = (Class5498) var1.method13898();
+            if (var1.getPacket() instanceof Class5498) {
+                this.field23876 = (Class5498) var1.getPacket();
                 if (this.isEnabled() && this.field23876.method17285() == Class8298.field35663) {
                     var1.method13900(true);
                 }
@@ -257,8 +257,8 @@ public class Class5323 extends Module {
                 this.field23877 = false;
             }
 
-            if (var1.method13898() instanceof Class5501) {
-                Class5501 var4 = (Class5501) var1.method13898();
+            if (var1.getPacket() instanceof Class5501) {
+                Class5501 var4 = (Class5501) var1.getPacket();
                 int var5 = var4.method17304();
                 ItemStack var6 = var4.method17305();
                 int var7 = var4.method17303();
@@ -286,14 +286,14 @@ public class Class5323 extends Module {
                 }
             }
 
-            if (var1.method13898() instanceof Class5586) {
+            if (var1.getPacket() instanceof Class5586) {
                 this.method15999(false);
             }
         }
     }
 
     @EventTarget
-    private void method16722(Class4402 var1) {
+    private void method16722(SendPacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.method13932() instanceof Class5482) {
                 var1.method13900(true);

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ConcurrentModificationException;
 
-public class Class5340 extends Class5325 {
+public class Class5340 extends ModuleWithModuleSettings {
     private ArrayList<String> field23888 = new ArrayList<String>();
     private final ArrayList<String> field23889 = new ArrayList<String>();
     private Class7200 field23890;
@@ -39,7 +39,7 @@ public class Class5340 extends Class5325 {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         if (!this.field23891.method27123()) {
             this.field23891.method27118();
         }
@@ -50,7 +50,7 @@ public class Class5340 extends Class5325 {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         this.field23891.method27120();
         this.field23891.method27119();
         this.field23890 = null;
@@ -84,7 +84,7 @@ public class Class5340 extends Class5325 {
                 String var4 = this.getStringSettingValueByName("Type");
 
                 try {
-                    if (mc.player.field5055 <= 3) {
+                    if (mc.player.ticksExisted <= 3) {
                         this.field23889.clear();
                     }
 

@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.unmapped;
 import com.google.gson.JsonArray;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.network.Class8930;
 import com.mentalfrostbyte.jello.network.NetworkManager;
@@ -83,7 +83,7 @@ public class Class8402 {
 
     @EventTarget
     private void method29513(TickEvent var1) {
-        if (this.field36050.player.field5055 % 100 == 0) {
+        if (this.field36050.player.ticksExisted % 100 == 0) {
             this.method29514();
             List<AbstractClientPlayerEntity> var4 = this.field36050.world.method6870();
             Iterator<AbstractClientPlayerEntity> var5 = var4.iterator();
@@ -143,7 +143,7 @@ public class Class8402 {
     }
 
     @EventTarget
-    private void method29516(Class4396 var1) {
+    private void method29516(RecievePacketEvent var1) {
       /*  if (var1.method13898() instanceof Class5598) {
             Class5598 var4 = (Class5598) var1.method13898();
             Client.method19919().info("Connecting...");
@@ -170,7 +170,7 @@ public class Class8402 {
         YggdrasilMinecraftSessionService var7 = (YggdrasilMinecraftSessionService) var6.createMinecraftSessionService();
         var7.joinServer(var1, var5, var2);
         Client.getInstance();
-        Client.method19919().info("Jello Connect: successfully reached out mojangs servers " + var2);
+        Client.getClientLogger().info("Jello Connect: successfully reached out mojangs servers " + var2);
         System.out
                 .println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + var2 + "&username=" + this.field36050.session.getUsername());
     }

@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class ItemEntity extends Entity {
-   private static final Class9289<ItemStack> field5514 = Class9361.<ItemStack>method35441(ItemEntity.class, Class7784.field33396);
+   private static final DataParameter<ItemStack> field5514 = EntityDataManager.<ItemStack>method35441(ItemEntity.class, Class7784.field33396);
    private int field5515;
    private int field5516;
    private int field5517 = 5;
@@ -23,9 +23,9 @@ public class ItemEntity extends Entity {
 
    public ItemEntity(World var1, double var2, double var4, double var6) {
       this(EntityType.field41042, var1);
-      this.method3215(var2, var4, var6);
-      this.field5031 = this.field5054.nextFloat() * 360.0F;
-      this.method3435(this.field5054.nextDouble() * 0.2 - 0.1, 0.2, this.field5054.nextDouble() * 0.2 - 0.1);
+      this.setPosition(var2, var4, var6);
+      this.rotationYaw = this.rand.nextFloat() * 360.0F;
+      this.method3435(this.rand.nextDouble() * 0.2 - 0.1, 0.2, this.rand.nextDouble() * 0.2 - 0.1);
    }
 
    public ItemEntity(World var1, double var2, double var4, double var6, ItemStack var8) {
@@ -47,8 +47,8 @@ public class ItemEntity extends Entity {
    }
 
    @Override
-   public void method2850() {
-      this.method3210().method35442(field5514, ItemStack.EMPTY);
+   public void registerData() {
+      this.method3210().register(field5514, ItemStack.EMPTY);
    }
 
    @Override
@@ -59,9 +59,9 @@ public class ItemEntity extends Entity {
             this.field5516--;
          }
 
-         this.field5025 = this.getPosX();
-         this.field5026 = this.getPosY();
-         this.field5027 = this.getPosZ();
+         this.prevPosX = this.getPosX();
+         this.prevPosY = this.getPosY();
+         this.prevPosZ = this.getPosZ();
          Vector3d var3 = this.method3433();
          float var4 = this.method3393() - 0.11111111F;
          if (this.method3250() && this.method3427(Class8953.field40469) > (double)var4) {
@@ -73,24 +73,24 @@ public class ItemEntity extends Entity {
          }
 
          if (!this.world.field9020) {
-            this.field5052 = !this.world.method7052(this);
-            if (this.field5052) {
-               this.pushOutOfBlocks(this.getPosX(), (this.method3389().field28450 + this.method3389().field28453) / 2.0, this.getPosZ());
+            this.noClip = !this.world.method7052(this);
+            if (this.noClip) {
+               this.pushOutOfBlocks(this.getPosX(), (this.getBoundingBox().field28450 + this.getBoundingBox().field28453) / 2.0, this.getPosZ());
             }
          } else {
-            this.field5052 = false;
+            this.noClip = false;
          }
 
-         if (!this.field5036 || method3234(this.method3433()) > 1.0E-5F || (this.field5055 + this.method3205()) % 4 == 0) {
+         if (!this.onGround || method3234(this.method3433()) > 1.0E-5F || (this.ticksExisted + this.method3205()) % 4 == 0) {
             this.move(Class2107.field13742, this.method3433());
             float var5 = 0.98F;
-            if (this.field5036) {
+            if (this.onGround) {
                var5 = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).getBlock().method11571()
                   * 0.98F;
             }
 
             this.method3434(this.method3433().method11347((double)var5, 0.98, (double)var5));
-            if (this.field5036) {
+            if (this.onGround) {
                Vector3d var6 = this.method3433();
                if (var6.field18049 < 0.0) {
                   this.method3434(var6.method11347(1.0, -0.5, 1.0));
@@ -98,13 +98,13 @@ public class ItemEntity extends Entity {
             }
          }
 
-         boolean var9 = MathHelper.floor(this.field5025) != MathHelper.floor(this.getPosX())
-            || MathHelper.floor(this.field5026) != MathHelper.floor(this.getPosY())
-            || MathHelper.floor(this.field5027) != MathHelper.floor(this.getPosZ());
+         boolean var9 = MathHelper.floor(this.prevPosX) != MathHelper.floor(this.getPosX())
+            || MathHelper.floor(this.prevPosY) != MathHelper.floor(this.getPosY())
+            || MathHelper.floor(this.prevPosZ) != MathHelper.floor(this.getPosZ());
          int var10 = !var9 ? 40 : 2;
-         if (this.field5055 % var10 == 0) {
+         if (this.ticksExisted % var10 == 0) {
             if (this.world.method6739(this.getPosition()).method23486(Class8953.field40470) && !this.method3249()) {
-               this.method2863(Sounds.field26606, 0.4F, 2.0F + this.field5054.nextFloat() * 0.4F);
+               this.method2863(Sounds.field26606, 0.4F, 2.0F + this.rand.nextFloat() * 0.4F);
             }
 
             if (!this.world.field9020 && this.method4118()) {
@@ -116,11 +116,11 @@ public class ItemEntity extends Entity {
             this.field5515++;
          }
 
-         this.field5078 = this.field5078 | this.method3257();
+         this.isAirBorne = this.isAirBorne | this.method3257();
          if (!this.world.field9020) {
             double var7 = this.method3433().method11336(var3).method11349();
             if (var7 > 0.01) {
-               this.field5078 = true;
+               this.isAirBorne = true;
             }
          }
 
@@ -145,10 +145,10 @@ public class ItemEntity extends Entity {
    private void method4117() {
       if (this.method4118()) {
          for (ItemEntity var4 : this.world
-            .<ItemEntity>method6772(ItemEntity.class, this.method3389().method19663(0.5, 0.0, 0.5), var1 -> var1 != this && var1.method4118())) {
+            .<ItemEntity>method6772(ItemEntity.class, this.getBoundingBox().method19663(0.5, 0.0, 0.5), var1 -> var1 != this && var1.method4118())) {
             if (var4.method4118()) {
                this.method4119(var4);
-               if (this.field5041) {
+               if (this.removed) {
                   break;
                }
             }
@@ -322,7 +322,7 @@ public class ItemEntity extends Entity {
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       super.method3155(var1);
       if (field5514.equals(var1)) {
          this.method4124().method32166(this);

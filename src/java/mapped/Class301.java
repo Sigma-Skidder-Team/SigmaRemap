@@ -39,7 +39,7 @@ public class Class301 implements Class268 {
       return this.field1164;
    }
 
-   public Class7608<Class7744> method1180(ResourceLocation var1) {
+   public ITag<Class7744> method1180(ResourceLocation var1) {
       return this.field1164.method27132(var1);
    }
 
@@ -58,8 +58,8 @@ public class Class301 implements Class268 {
             var3x -> {
                Map<ResourceLocation, CompletableFuture<Class7744>> var6x = Maps.newHashMap();
                Class6619 var7 = new Class6619(
-                  Class909.field5189,
-                  Vector3d.field18047,
+                  ICommandSource.field5189,
+                  Vector3d.ZERO,
                   Class8513.field37212,
                        null,
                   this.field1165,

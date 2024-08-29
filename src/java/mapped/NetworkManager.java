@@ -3,8 +3,8 @@ package mapped;
 import com.google.common.collect.Queues;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -124,14 +124,14 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
    @Override
    public void channelRead0(ChannelHandlerContext var1, Packet<?> var2) throws Exception {
       if (this.field38648.isOpen()) {
-         Class4396 var5 = new Class4396(var2);
+         RecievePacketEvent var5 = new RecievePacketEvent(var2);
          Client.getInstance().getEventManager().call(var5);
          if (var5.isCancelled()) {
             return;
          }
 
          try {
-            method30691(var5.method13898(), this.field38650);
+            method30691(var5.getPacket(), this.field38650);
          } catch (Class2466 var7) {
          }
 
@@ -153,7 +153,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
    }
 
    public void method30694(Packet<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
-      Class4402 var5 = new Class4402(var1);
+      SendPacketEvent var5 = new SendPacketEvent(var1);
       Client.getInstance().getEventManager().call(var5);
       var1 = var5.method13932();
       if (!var5.isCancelled()) {

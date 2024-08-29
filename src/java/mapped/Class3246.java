@@ -74,7 +74,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    private ItemFrameEntity method11663(World var1, Direction var2, BlockPos var3) {
       List var6 = var1.<ItemFrameEntity>method6772(
          ItemFrameEntity.class,
-         new Class6488(
+         new AxisAlignedBB(
             (double)var3.getX(),
             (double)var3.getY(),
             (double)var3.getZ(),

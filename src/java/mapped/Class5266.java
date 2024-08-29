@@ -14,7 +14,7 @@ public class Class5266 extends PremiumModule {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23695 = 0;
     }
 
@@ -102,9 +102,9 @@ public class Class5266 extends PremiumModule {
                                 .sendPacket(
                                         new Class5605(
                                                 mc.player.getPosX(),
-                                                mc.player.method3389().field28450,
+                                                mc.player.getBoundingBox().field28450,
                                                 mc.player.getPosZ() + 9999.0,
-                                                mc.player.field5036
+                                                mc.player.onGround
                                         )
                                 );
                         if (this.field23695++ >= 200) {

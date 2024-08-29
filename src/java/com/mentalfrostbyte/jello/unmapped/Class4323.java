@@ -132,7 +132,7 @@ public class Class4323 extends Class4307 {
                 (int) ((float) (-this.method13269() / 100) + this.field21105 / 100.0F) - var4,
                 0.0
         );
-        Class3192.method11455(-10.0F, -10.0F, (float) (this.method13267() + 20), (float) (this.method13269() + 20), ClassicDecryption.mainmenubackground);
+        RenderUtil.method11455(-10.0F, -10.0F, (float) (this.method13267() + 20), (float) (this.method13269() + 20), ClassicDecryption.mainmenubackground);
         GL11.glPopMatrix();
         this.field21103
                 .method13286(

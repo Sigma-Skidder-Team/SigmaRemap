@@ -13,8 +13,8 @@ public class Class3586 implements Comparator<Class8012> {
    public int compare(Class8012 var1, Class8012 var2) {
       Entity var5 = var1.method27397();
       Entity var6 = var2.method27397();
-      float var7 = Class9142.method34143(Class9142.method34147(var5).field32084, this.field19529.field44347.player.field5031);
-      float var8 = Class9142.method34143(Class9142.method34147(var6).field32084, this.field19529.field44347.player.field5031);
+      float var7 = Class9142.method34143(Class9142.method34147(var5).field32084, this.field19529.field44347.player.rotationYaw);
+      float var8 = Class9142.method34143(Class9142.method34147(var6).field32084, this.field19529.field44347.player.rotationYaw);
       if (!(var7 - var8 < 0.0F)) {
          if (var7 - var8 != 0.0F) {
             return 1;

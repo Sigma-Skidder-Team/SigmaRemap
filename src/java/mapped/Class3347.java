@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class3347 extends Class3346<Class943> implements Class3207 {
    public static final Class8553 field18860 = Class3198.field18484;
    public static final Class8551 field18861 = Class8820.field39710;
-   public static final Class6408 field18862 = Block.method11539(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
+   public static final VoxelShape field18862 = Block.method11539(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
    private static final ITextComponent field18863 = new TranslationTextComponent("container.enderchest");
 
    public Class3347(AbstractBlock var1) {
@@ -21,7 +21,7 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field18862;
    }
 

@@ -22,7 +22,7 @@ public class Class903 extends Class901 {
       super.method3464(var1);
       Entity var4 = this.method3460();
       if ((var1.getType() != RayTraceResult.Type.ENTITY || !((EntityRayTraceResult)var1).getEntity().method3359(var4)) && !this.world.field9020) {
-         List<Class880> var5 = this.world.method7182(Class880.class, this.method3389().method19663(4.0, 2.0, 4.0));
+         List<Class880> var5 = this.world.method7182(Class880.class, this.getBoundingBox().method19663(4.0, 2.0, 4.0));
          Class999 var6 = new Class999(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
          if (var4 instanceof Class880) {
             var6.method4113((Class880)var4);
@@ -37,7 +37,7 @@ public class Class903 extends Class901 {
             for (Class880 var8 : var5) {
                double var9 = this.getDistanceSq(var8);
                if (var9 < 16.0) {
-                  var6.method3215(var8.getPosX(), var8.getPosY(), var8.getPosZ());
+                  var6.setPosition(var8.getPosX(), var8.getPosY(), var8.getPosZ());
                   break;
                }
             }

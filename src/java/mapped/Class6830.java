@@ -28,8 +28,8 @@ public class Class6830 extends Class6829 {
 
          if (var4 != 0.0 || var8 != 0.0) {
             float var10 = (float)(MathHelper.method37814(var8, var4) * 180.0F / (float)Math.PI) - 90.0F;
-            this.field29715.field5031 = this.method20816(this.field29715.field5031, var10, 90.0F);
-            this.field29715.field4965 = this.field29715.field5031;
+            this.field29715.rotationYaw = this.method20816(this.field29715.rotationYaw, var10, 90.0F);
+            this.field29715.field4965 = this.field29715.rotationYaw;
          }
       } else {
          this.field29715.method3113(0.0F);

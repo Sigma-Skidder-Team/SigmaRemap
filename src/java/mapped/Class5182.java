@@ -19,7 +19,7 @@ public class Class5182 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         String var3 = "Error";
         if (!this.getStringSettingValueByName("Jargon").equals("Excuse")) {
             if (!this.getStringSettingValueByName("Jargon").equals("Techincal")) {

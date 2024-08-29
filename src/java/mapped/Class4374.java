@@ -17,14 +17,14 @@ public class Class4374 extends Class4247 {
 
    @Override
    public void method13027(float var1) {
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.field20895,
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
          (float)this.field20896 + (float)this.field20898 * this.field21372,
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.2F)
       );
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.field20895,
          (float)(this.field20896 + this.field20898),
          (float)(this.field20895 + this.field20897),

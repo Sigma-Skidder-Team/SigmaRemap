@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class Class4828 implements Class4826 {
-   private final Class7608<Item> field22600;
+   private final ITag<Item> field22600;
 
-   public Class4828(Class7608<Item> var1) {
+   public Class4828(ITag<Item> var1) {
       this.field22600 = var1;
    }
 

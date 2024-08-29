@@ -24,13 +24,13 @@ public class Class2757 extends Class2595 {
          if (var3.getDistanceSq(this.field17302) < 4096.0) {
             double var6 = var3.getPosX() - this.field17302.getPosX();
             double var8 = var3.getPosZ() - this.field17302.getPosZ();
-            this.field17302.field5031 = -((float) MathHelper.method37814(var6, var8)) * (180.0F / (float)Math.PI);
-            this.field17302.field4965 = this.field17302.field5031;
+            this.field17302.rotationYaw = -((float) MathHelper.method37814(var6, var8)) * (180.0F / (float)Math.PI);
+            this.field17302.field4965 = this.field17302.rotationYaw;
          }
       } else {
          Vector3d var10 = this.field17302.method3433();
-         this.field17302.field5031 = -((float) MathHelper.method37814(var10.field18048, var10.field18050)) * (180.0F / (float)Math.PI);
-         this.field17302.field4965 = this.field17302.field5031;
+         this.field17302.rotationYaw = -((float) MathHelper.method37814(var10.field18048, var10.field18050)) * (180.0F / (float)Math.PI);
+         this.field17302.field4965 = this.field17302.rotationYaw;
       }
    }
 }

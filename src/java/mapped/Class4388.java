@@ -136,7 +136,7 @@ public class Class4388 {
          ImmutableList.<Class3676<? super Class1034>>of(
             new Class3741<>(0.8F),
             new Class3738(Class4388::method13875, 8.0F),
-            new Class3740<>(Entity::method3328, method13807()),
+            new Class3740<>(Entity::isPassenger, method13807()),
             new Class3755<>(8, Class4388::method13828)
          ),
          Class8830.field39830
@@ -190,7 +190,7 @@ public class Class4388 {
 
       var0.method4304(var3.method21404(Class8830.field39826));
       if (!var3.method21404(Class8830.field39830) && method13813(var0)) {
-         var0.method2759();
+         var0.stopRiding();
       }
 
       if (!var3.method21404(Class8830.field39856)) {
@@ -416,7 +416,7 @@ public class Class4388 {
    }
 
    public static void method13832(PlayerEntity var0, boolean var1) {
-      List<Class1034> var4 = var0.world.method7182(Class1034.class, var0.method3389().method19664(16.0));
+      List<Class1034> var4 = var0.world.method7182(Class1034.class, var0.getBoundingBox().method19664(16.0));
       var4.stream().filter(Class4388::method13865).filter(var2 -> !var1 || Class6983.method21583(var2, var0)).forEach(var1x -> {
          if (!var1x.world.method6789().method17135(Class5462.field24255)) {
             method13849(var1x, var0);

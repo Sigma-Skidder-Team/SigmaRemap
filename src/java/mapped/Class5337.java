@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import org.lwjgl.opengl.GL11;
 
-public class Class5337 extends Class5325 {
+public class Class5337 extends ModuleWithModuleSettings {
     public Class5337() {
         super(ModuleCategory.MOVEMENT, "ClickTP", "TP's you when you click", new Class5236(), new Class5174());
         this.registerSetting(new BooleanSetting("Sneak", "Allows teleport only when sneaking", true));
@@ -16,7 +16,7 @@ public class Class5337 extends Class5325 {
     @EventTarget
     public void method16752(Class4420 var1) {
         if (this.isEnabled() && (mc.player.method3331() || !this.getBooleanValueFromSetttingName("Sneak"))) {
-            BlockRayTraceResult var4 = Class9217.method34567(mc.player.field5031, mc.player.field5032, this.getNumberValueBySettingName("Maximum range"));
+            BlockRayTraceResult var4 = Class9217.method34567(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Maximum range"));
             BlockPos var5 = null;
             if (var4 != null) {
                 var5 = var4.getPos();
@@ -32,7 +32,7 @@ public class Class5337 extends Class5325 {
     }
 
     private double method16753() {
-        return MathHelper.sin((float) Math.toRadians(90.0F - mc.player.field5032)) * 10.0F;
+        return MathHelper.sin((float) Math.toRadians(90.0F - mc.player.rotationPitch)) * 10.0F;
     }
 
     private void method16754(double var1, double var3, double var5, double var7) {
@@ -44,7 +44,7 @@ public class Class5337 extends Class5325 {
         GL11.glDepthMask(false);
         GL11.glPushMatrix();
         GL11.glTranslated(var3, var5, var7);
-        GL11.glRotatef((float) (mc.player.field5055 % 90 * 4), 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef((float) (mc.player.ticksExisted % 90 * 4), 0.0F, 1.0F, 0.0F);
         this.method16756();
         GL11.glPopMatrix();
         GL11.glEnable(3553);

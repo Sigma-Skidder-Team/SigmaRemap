@@ -134,7 +134,7 @@ public abstract class Class6395 {
       }
 
       this.method19484(var19.mergeStyle(TextFormatting.YELLOW), ChatType.SYSTEM, Util.DUMMY_UUID);
-      var15.method15668(var2.getPosX(), var2.getPosY(), var2.getPosZ(), var2.field5031, var2.field5032);
+      var15.method15668(var2.getPosX(), var2.getPosY(), var2.getPosZ(), var2.rotationYaw, var2.rotationPitch);
       this.field27991.add(var2);
       this.field27992.put(var2.getUniqueID(), var2);
       this.method19456(new Class5503(Class2176.field14281, var2));
@@ -176,7 +176,7 @@ public abstract class Class6395 {
                var2.method2758(var27, true);
             }
 
-            if (!var2.method3328()) {
+            if (!var2.isPassenger()) {
                field27988.warn("Couldn't reattach entity to player");
                var12.method6932(var27);
 
@@ -245,24 +245,24 @@ public abstract class Class6395 {
       ServerWorld var4 = var1.getServerWorld();
       var1.method2911(Class8876.field40105);
       this.method19449(var1);
-      if (var1.method3328()) {
+      if (var1.isPassenger()) {
          Entity var5 = var1.method3415();
          if (var5.method3413()) {
             field27988.debug("Removing player mount");
-            var1.method2759();
+            var1.stopRiding();
             var4.method6932(var5);
-            var5.field5041 = true;
+            var5.removed = true;
 
             for (Entity var7 : var5.method3411()) {
                var4.method6932(var7);
-               var7.field5041 = true;
+               var7.removed = true;
             }
 
-            var4.method6824(var1.field5072, var1.field5074).method7137();
+            var4.method6824(var1.chunkCoordX, var1.chunkCoordZ).method7137();
          }
       }
 
-      var1.method3200();
+      var1.detach();
       var4.method6934(var1);
       var1.method2823().method27403();
       this.field27991.remove(var1);
@@ -394,7 +394,7 @@ public abstract class Class6395 {
       }
 
       while (!var10.method7052(var12) && var12.getPosY() < 256.0) {
-         var12.method3215(var12.getPosX(), var12.getPosY() + 1.0, var12.getPosZ());
+         var12.setPosition(var12.getPosX(), var12.getPosY() + 1.0, var12.getPosZ());
       }
 
       Class6612 var21 = var12.world.getWorldInfo();
@@ -411,7 +411,7 @@ public abstract class Class6395 {
                var2
             )
          );
-      var12.field4855.method15668(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var12.field5031, var12.field5032);
+      var12.field4855.method15668(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var12.rotationYaw, var12.rotationPitch);
       var12.field4855.sendPacket(new Class5525(var10.method6947(), var10.method6948()));
       var12.field4855.sendPacket(new Class5535(var21.method20047(), var21.method20048()));
       var12.field4855.sendPacket(new Class5507(var12.field4922, var12.field4921, var12.field4920));
@@ -463,7 +463,7 @@ public abstract class Class6395 {
    }
 
    public void method19458(PlayerEntity var1, ITextComponent var2) {
-      Class8219 var5 = var1.method3344();
+      Team var5 = var1.getTeam();
       if (var5 != null) {
          for (String var7 : var5.method28575()) {
             ServerPlayerEntity var8 = this.method19465(var7);
@@ -475,11 +475,11 @@ public abstract class Class6395 {
    }
 
    public void method19459(PlayerEntity var1, ITextComponent var2) {
-      Class8219 var5 = var1.method3344();
+      Team var5 = var1.getTeam();
       if (var5 != null) {
          for (int var6 = 0; var6 < this.field27991.size(); var6++) {
             ServerPlayerEntity var7 = this.field27991.get(var6);
-            if (var7.method3344() != var5) {
+            if (var7.getTeam() != var5) {
                var7.sendMessage(var2, var1.getUniqueID());
             }
          }

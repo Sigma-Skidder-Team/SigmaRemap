@@ -16,14 +16,14 @@ public class Class4282 extends Class4281 {
    @Override
    public void method13027(float var1) {
       this.method13306(ResourceRegistry.field38868);
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.field20895,
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
          (float)(this.field20896 + this.field20898),
          ClientColors.DEEP_TEAL.getColor
       );
-      Class3192.method11429(
+      RenderUtil.method11429(
          (float)(this.field20895 - 2),
          (float)this.field20896,
          (float)(this.field20895 + this.field20897 + 2),

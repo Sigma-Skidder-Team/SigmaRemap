@@ -2,15 +2,15 @@ package mapped;
 
 import java.util.function.Predicate;
 
-public class Class4833 implements Class4832 {
+public class Class4833 implements ISelectionContext {
    private static String[] field22606;
-   public static final Class4832 field22607 = new Class4834(false, -Double.MAX_VALUE, Items.field37222, var0 -> false);
+   public static final ISelectionContext field22607 = new Class4834(false, -Double.MAX_VALUE, Items.field37222, var0 -> false);
    private final boolean field22608;
    private final double field22609;
    private final Item field22610;
-   private final Predicate<Class7631> field22611;
+   private final Predicate<Fluid> field22611;
 
-   public Class4833(boolean var1, double var2, Item var4, Predicate<Class7631> var5) {
+   public Class4833(boolean var1, double var2, Item var4, Predicate<Fluid> var5) {
       this.field22608 = var1;
       this.field22609 = var2;
       this.field22610 = var4;
@@ -43,7 +43,7 @@ public class Class4833 implements Class4832 {
    }
 
    @Override
-   public boolean method14950(Class6408 var1, BlockPos var2, boolean var3) {
+   public boolean method14950(VoxelShape var1, BlockPos var2, boolean var3) {
       return this.field22609 > (double)var2.getY() + var1.method19513(Class113.field414) - 1.0E-5F;
    }
 }

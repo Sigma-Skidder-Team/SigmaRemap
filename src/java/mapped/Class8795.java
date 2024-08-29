@@ -82,16 +82,16 @@ public class Class8795 {
             }
 
             BlockPos var15 = this.field39612.player.getPosition();
-            if (this.field39612.player.field5028.field18049 % 1.0 >= 0.93) {
+            if (this.field39612.player.positionVec.field18049 % 1.0 >= 0.93) {
                var15 = var15.method8311();
             }
 
             boolean var16 = var8.field44271.method33979().equals(var15);
-            if (var14 && this.field39612.player.field5045 < 2.0F) {
+            if (var14 && this.field39612.player.fallDistance < 2.0F) {
                var16 |= var8.field44271.method33979().method8311().equals(var15);
             }
 
-            if (this.field39612.player.field5036 || this.field39618 != null && this.field39618.field44279 == Class2317.field15874) {
+            if (this.field39612.player.onGround || this.field39618 != null && this.field39618.field44279 == Class2317.field15874) {
                if (this.method31751() != null && this.method31751().field44282.size() > 0) {
                   var16 &= var10 < 0.1;
                }
@@ -129,8 +129,8 @@ public class Class8795 {
                float var18 = Class9142.method34145(this.field39612.player.getPositionVec(), var8.field44271.method33972())[0];
                float var19 = Class9142.method34145(new Vector3d(0.0, 0.0, 0.0), this.field39612.player.method3433().method11333())[0];
                float var20 = Math.abs(Class5628.method17756(var19, var18));
-               if (!this.field39612.player.field5036 && var20 > 60.0F
-                  || !this.field39612.player.field5036 && var20 > 45.0F && this.field39612.player.method3433().method11348() > 0.24
+               if (!this.field39612.player.onGround && var20 > 60.0F
+                  || !this.field39612.player.onGround && var20 > 45.0F && this.field39612.player.method3433().method11348() > 0.24
                   || var20 > 110.0F) {
                   Class5628.method17724(this.field39612.player.method3433().field18048 * 0.25);
                   Class5628.method17726(this.field39612.player.method3433().field18050 * 0.25);
@@ -138,19 +138,19 @@ public class Class8795 {
             }
 
             if (var10 < var12
-               && (var14 || var8.field44281.size() > 0 && (double)this.field39612.player.field5029.field13028 > var8.field44271.method33970())) {
+               && (var14 || var8.field44281.size() > 0 && (double)this.field39612.player.position.field13028 > var8.field44271.method33970())) {
                Class5628.method17724(this.field39612.player.method3433().field18048 * 0.5);
                Class5628.method17726(this.field39612.player.method3433().field18050 * 0.5);
             }
 
             float var43 = Class9142.method34145(this.field39612.player.getPositionVec(), var8.field44271.method33972())[0];
             this.field39614 = var43;
-            double var21 = Math.cos(Math.toRadians((double)(this.field39612.player.field5031 - var43)));
-            double var23 = Math.sin(Math.toRadians((double)(this.field39612.player.field5031 - var43)));
+            double var21 = Math.cos(Math.toRadians((double)(this.field39612.player.rotationYaw - var43)));
+            double var23 = Math.sin(Math.toRadians((double)(this.field39612.player.rotationYaw - var43)));
             boolean var25 = Class8627.method30924(var8);
             this.field39612.player.setSprinting(var8.field44281.isEmpty());
             double var26 = Math.min(1.0 / Math.abs(var21), 1.0 / Math.abs(var23));
-            boolean var28 = !this.field39612.player.field5036 && this.field39612.player.field5037 && var9 == Class2317.field15874;
+            boolean var28 = !this.field39612.player.onGround && this.field39612.player.collidedHorizontally && var9 == Class2317.field15874;
             if (!var28) {
                this.field39612.player.field4984 = (float)(var21 * var26);
                this.field39612.player.field4982 = (float)(var23 * var26);
@@ -169,20 +169,20 @@ public class Class8795 {
             boolean var33 = Class8627.method30925();
             boolean var34 = this.field39612
                   .world
-                  .method7055(this.field39612.player, this.field39612.player.method3389().method19667(var29, -1.0, var31))
+                  .method7055(this.field39612.player, this.field39612.player.getBoundingBox().method19667(var29, -1.0, var31))
                   .count()
                == 0L;
             boolean var35 = false;
             boolean var36 = false;
-            float var37 = this.field39612.player.field5031;
-            this.field39612.player.field5031 = var43;
+            float var37 = this.field39612.player.rotationYaw;
+            this.field39612.player.rotationYaw = var43;
             switch (Class8612.field38732[var9.ordinal()]) {
                case 1:
                   boolean var38 = true;
                   if (var8.field44280 == Class2285.field15126) {
                      var38 = var10 < 1.14;
                      if (this.field39618 != null) {
-                        var38 &= (double)this.field39612.player.field5029.field13028 - var8.field44271.method33970() != 0.0;
+                        var38 &= (double)this.field39612.player.position.field13028 - var8.field44271.method33970() != 0.0;
                      }
                   }
 
@@ -211,8 +211,8 @@ public class Class8795 {
                case 5:
             }
 
-            this.field39612.player.field5031 = var37;
-            if (var36 && !this.field39612.player.field5036 && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+            this.field39612.player.rotationYaw = var37;
+            if (var36 && !this.field39612.player.onGround && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
                Class5628.method17724(0.0);
                Class5628.method17726(0.0);
             } else {
@@ -323,7 +323,7 @@ public class Class8795 {
          int var4 = this.field39613.size() - 1;
          Class9510 var5 = this.field39613.get(var4);
          if (var5 != null && var5.field44282.contains(var1.method13902().method8332())) {
-            Class6408 var6 = Class8022.method27427(0.0, 0.0, 0.0, 1.0, 0.1, 1.0);
+            VoxelShape var6 = VoxelShapes.method27427(0.0, 0.0, 0.0, 1.0, 0.1, 1.0);
             var1.method13905(var6);
          }
       }
@@ -331,7 +331,7 @@ public class Class8795 {
 
    @EventTarget
    public void method31749(Class4417 var1) {
-      if (this.method31743() && this.field39612.player.field5036) {
+      if (this.method31743() && this.field39612.player.onGround) {
          int var4 = this.field39613.size() - 1;
          Class9510 var5 = this.field39613.get(var4);
          if (var5.field44279 == Class2317.field15876) {
@@ -360,7 +360,7 @@ public class Class8795 {
             }
          }
 
-         BlockPos var17 = Class9217.method34564(this.field39612.player.field5031, this.field39612.player.field5032, 100.0F);
+         BlockPos var17 = Class9217.method34564(this.field39612.player.rotationYaw, this.field39612.player.rotationPitch, 100.0F);
          if (var17 != null) {
             if (this.field39613 != null && this.field39613.size() > 0) {
                int var18 = Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.02F);
@@ -375,7 +375,7 @@ public class Class8795 {
                      double var12 = (double)var9.getY() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11321();
                      double var14 = (double)var9.getZ() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11322();
                      Class9388 var16 = new Class9388(var10, var12, var14, var10 + 1.0, var12 + 1.0, var14 + 1.0);
-                     Class3192.method11459(var16, var18);
+                     RenderUtil.method11459(var16, var18);
                   }
                }
 
@@ -386,7 +386,7 @@ public class Class8795 {
                      double var23 = (double)var21.getY() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11321();
                      double var24 = (double)var21.getZ() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11322();
                      Class9388 var25 = new Class9388(var22, var23, var24, var22 + 1.0, var23 + 1.0, var24 + 1.0);
-                     Class3192.method11459(var25, var6);
+                     RenderUtil.method11459(var25, var6);
                   }
                }
 
@@ -418,7 +418,7 @@ public class Class8795 {
       ClientResource var10 = ResourceRegistry.JelloLightFont25;
       GL11.glPushMatrix();
       GL11.glScalef(-0.01F, -0.01F, -0.01F);
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)(-var10.method23942(var7) / 2 - 10),
          0.0F,
          (float)(var10.method23942(var7) / 2 + 10),
@@ -426,7 +426,7 @@ public class Class8795 {
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F)
       );
       GL11.glTranslated((double)(-var10.method23942(var7) / 2), 0.0, 0.0);
-      Class3192.method11439(var10, 0.0F, 0.0F, var7, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
+      RenderUtil.method11439(var10, 0.0F, 0.0F, var7, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
       GL11.glPopMatrix();
       GL11.glPopMatrix();
       GL11.glEnable(3553);

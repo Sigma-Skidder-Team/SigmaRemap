@@ -79,7 +79,7 @@ public class Class2725 extends Class2595 {
       this.field17220.method4227().method28040(this.field17221, 10.0F, (float)this.field17220.method4259());
       if (--this.field17225 <= 0) {
          this.field17225 = 10;
-         if (!this.field17220.method4296() && !this.field17220.method3328()) {
+         if (!this.field17220.method4296() && !this.field17220.isPassenger()) {
             if (!(this.field17220.getDistanceSq(this.field17221) >= 144.0)) {
                this.field17224.method21655(this.field17221, this.field17223);
             } else {
@@ -107,7 +107,7 @@ public class Class2725 extends Class2595 {
       if (Math.abs((double)var1 - this.field17221.getPosX()) < 2.0 && Math.abs((double)var3 - this.field17221.getPosZ()) < 2.0) {
          return false;
       } else if (this.method10936(new BlockPos(var1, var2, var3))) {
-         this.field17220.method3273((double)var1 + 0.5, (double)var2, (double)var3 + 0.5, this.field17220.field5031, this.field17220.field5032);
+         this.field17220.method3273((double)var1 + 0.5, (double)var2, (double)var3 + 0.5, this.field17220.rotationYaw, this.field17220.rotationPitch);
          this.field17224.method21666();
          return true;
       } else {
@@ -123,7 +123,7 @@ public class Class2725 extends Class2595 {
             return false;
          } else {
             BlockPos var6 = var1.method8338(this.field17220.getPosition());
-            return this.field17222.method7053(this.field17220, this.field17220.method3389().method19668(var6));
+            return this.field17222.method7053(this.field17220, this.field17220.getBoundingBox().method19668(var6));
          }
       } else {
          return false;

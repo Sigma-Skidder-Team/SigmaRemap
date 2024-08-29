@@ -21,7 +21,7 @@ public class Class1691 implements Class1658 {
    private final Random field9208;
    private final Class9535 field9209;
    private final Class6802<Block> field9210 = new Class6803<Block>(var1x -> this.method7011(var1x).method7089());
-   private final Class6802<Class7631> field9211 = new Class6803<Class7631>(var1x -> this.method7011(var1x).method7090());
+   private final Class6802<Fluid> field9211 = new Class6803<Fluid>(var1x -> this.method7011(var1x).method7090());
    private final Class6668 field9212;
    private final Class7481 field9213;
    private final Class7481 field9214;
@@ -292,7 +292,7 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public Class6802<Class7631> method6861() {
+   public Class6802<Fluid> method6861() {
       return this.field9211;
    }
 
@@ -334,12 +334,12 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public <T extends Entity> List<T> method6772(Class<? extends T> var1, Class6488 var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method6772(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       return Collections.<T>emptyList();
    }
 
    @Override
-   public List<Entity> method6770(Entity var1, Class6488 var2, Predicate<? super Entity> var3) {
+   public List<Entity> method6770(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3) {
       return Collections.<Entity>emptyList();
    }
 

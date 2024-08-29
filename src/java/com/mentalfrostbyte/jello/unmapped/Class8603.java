@@ -22,7 +22,7 @@ public class Class8603 {
     }
 
     public static float method30791(float var0, double... var1) {
-        ArrayList var4 = new ArrayList();
+        ArrayList<Class9778> var4 = new ArrayList<>();
         var4.add(new Class9778(0.0, 0.0));
         var4.add(new Class9778(var1[0], var1[1]));
         var4.add(new Class9778(var1[2], var1[3]));
@@ -89,7 +89,7 @@ public class Class8603 {
                 Class9778 var5 = var1.get(1);
                 Class9778 var6 = var1.get(2);
                 Class9778 var7 = var1.size() != 4 ? null : var1.get(3);
-                ArrayList var11 = new ArrayList();
+                ArrayList<Class9778> var11 = new ArrayList<>();
                 Class9778 var8 = var4;
                 double var9 = 0.0;
 

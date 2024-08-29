@@ -7,7 +7,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class Class1091 extends Class1018 implements Class1008, Class1092 {
-   private static final Class9289<Boolean> field5976 = Class9361.<Boolean>method35441(Class1091.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5976 = EntityDataManager.<Boolean>method35441(Class1091.class, Class7784.field33398);
    private int field5977;
    private int field5978 = 0;
    private boolean field5979 = false;
@@ -219,9 +219,9 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5976, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5976, false);
    }
 
    @Override

@@ -3,7 +3,7 @@ package mapped;
 import java.util.Random;
 
 public abstract class Class3247 extends Class3198 {
-   public static final Class6408 field18707 = Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
+   public static final VoxelShape field18707 = Block.method11539(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
    public static final Class8551 field18708 = Class8820.field39704;
 
    public Class3247(AbstractBlock var1) {
@@ -11,7 +11,7 @@ public abstract class Class3247 extends Class3198 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field18707;
    }
 

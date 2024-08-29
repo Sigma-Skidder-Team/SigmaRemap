@@ -5,22 +5,22 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 
 public class Class9567 {
    private static String[] field44553;
-   public static Minecraft field44554 = Minecraft.getInstance();
+   public static Minecraft mc = Minecraft.getInstance();
 
    public static double method37075() {
       double var2 = 0.2873;
       float var4 = 1.0F;
-      Class9805 var5 = field44554.player.method3085(Class9173.field42108);
-      var4 = (float)((double)var4 * ((var5.method38674() / (double)field44554.player.abilities.method20716() + 1.0) / 2.0));
-      if (field44554.player.method3337()) {
+      Class9805 var5 = mc.player.method3085(Class9173.field42108);
+      var4 = (float)((double)var4 * ((var5.method38674() / (double) mc.player.abilities.method20716() + 1.0) / 2.0));
+      if (mc.player.method3337()) {
          var4 = (float)((double)var4 - 0.15);
       }
 
-      if (field44554.player.method3033(Class8254.field35467) && field44554.player.method3337()) {
-         var4 = (float)((double)var4 - 0.03000002 * (double)(field44554.player.method3034(Class8254.field35467).method8629() + 1));
+      if (mc.player.method3033(Class8254.field35467) && mc.player.method3337()) {
+         var4 = (float)((double)var4 - 0.03000002 * (double)(mc.player.method3034(Class8254.field35467).method8629() + 1));
       }
 
-      if (field44554.player.method3331()) {
+      if (mc.player.method3331()) {
          var2 *= 0.25;
       }
 
@@ -33,7 +33,7 @@ public class Class9567 {
 
    public static double method37076() {
       double var2 = 0.2873 + (double)method37078() * 0.057;
-      if (field44554.player.method3331()) {
+      if (mc.player.method3331()) {
          var2 *= 0.25;
       }
 
@@ -42,7 +42,7 @@ public class Class9567 {
 
    public static double method37077() {
       double var2 = 0.2873;
-      if (field44554.player.method3331()) {
+      if (mc.player.method3331()) {
          var2 *= 0.25;
       }
 
@@ -54,11 +54,11 @@ public class Class9567 {
    }
 
    public static int method37078() {
-      return !field44554.player.method3033(Class8254.field35467) ? 0 : field44554.player.method3034(Class8254.field35467).method8629() + 1;
+      return ! mc.player.method3033(Class8254.field35467) ? 0 : mc.player.method3034(Class8254.field35467).method8629() + 1;
    }
 
    public static int method37079() {
-      return !field44554.player.method3033(Class8254.field35474) ? 0 : field44554.player.method3034(Class8254.field35474).method8629() + 1;
+      return ! mc.player.method3033(Class8254.field35474) ? 0 : mc.player.method3034(Class8254.field35474).method8629() + 1;
    }
 
    public static double method37080() {
@@ -66,25 +66,25 @@ public class Class9567 {
    }
 
    public static boolean method37081() {
-      return field44554.player.method3250();
+      return mc.player.method3250();
    }
 
    public static float[] method37082() {
-      MovementInput var2 = field44554.player.field6131;
+      MovementInput var2 = mc.player.field6131;
       float var3 = var2.field43908;
       float var4 = var2.field43907;
       return method37084(var3, var4);
    }
 
    public static float[] method37083() {
-      MovementInput var2 = field44554.player.field6131;
+      MovementInput var2 = mc.player.field6131;
       float var3 = var2.field43908;
       float var4 = var2.field43907;
       return method37085(var3, var4);
    }
 
    public static float[] method37084(float var0, float var1) {
-      float var4 = field44554.player.field5031 + 90.0F;
+      float var4 = mc.player.rotationYaw + 90.0F;
       if (Client.getInstance().method19950().method31744() != -999.0F) {
          var4 = Client.getInstance().method19950().method31744() + 90.0F;
       }
@@ -111,7 +111,7 @@ public class Class9567 {
 
       if (Client.getInstance().method19950().method31742()
          && !Client.getInstance().method19950().method31741()
-         && (field44554.player.field4984 != 0.0F || field44554.player.field4982 != 0.0F)) {
+         && (mc.player.field4984 != 0.0F || mc.player.field4982 != 0.0F)) {
          var0 = 1.0F;
       }
 
@@ -119,7 +119,7 @@ public class Class9567 {
    }
 
    public static float[] method37085(float var0, float var1) {
-      float var4 = field44554.player.field5031 + 90.0F;
+      float var4 = mc.player.rotationYaw + 90.0F;
       if (var0 == 0.0F) {
          if (var1 != 0.0F) {
             var4 += (float)(!(var1 > 0.0F) ? 90 : -90);
@@ -150,10 +150,10 @@ public class Class9567 {
    }
 
    public static float method37086() {
-      float var2 = field44554.player.field4984;
-      float var3 = field44554.player.field4982;
-      float var4 = field44554.player.field5031 + 90.0F;
-      if (var2 > 0.0F && field44554.gameSettings.field44634.isKeyDown()) {
+      float var2 = mc.player.field4984;
+      float var3 = mc.player.field4982;
+      float var4 = mc.player.rotationYaw + 90.0F;
+      if (var2 > 0.0F && mc.gameSettings.field44634.isKeyDown()) {
          var2 = -1.0F;
       }
 
@@ -179,10 +179,10 @@ public class Class9567 {
    }
 
    public static boolean method37087() {
-      boolean var2 = field44554.gameSettings.field44632.isKeyDown();
-      boolean var3 = field44554.gameSettings.field44633.isKeyDown();
-      boolean var4 = field44554.gameSettings.field44635.isKeyDown();
-      boolean var5 = field44554.gameSettings.field44634.isKeyDown();
+      boolean var2 = mc.gameSettings.field44632.isKeyDown();
+      boolean var3 = mc.gameSettings.field44633.isKeyDown();
+      boolean var4 = mc.gameSettings.field44635.isKeyDown();
+      boolean var5 = mc.gameSettings.field44634.isKeyDown();
       return var2 || var3 || var4 || var5;
    }
 
@@ -244,16 +244,16 @@ public class Class9567 {
    }
 
    public static void method37091() {
-      double var2 = field44554.player.getPosX();
-      double var4 = field44554.player.getPosY();
-      double var6 = field44554.player.getPosZ();
+      double var2 = mc.player.getPosX();
+      double var4 = mc.player.getPosY();
+      double var6 = mc.player.getPosZ();
 
       for (int var8 = 0; var8 < 49 + method37079() * 17; var8++) {
-         field44554.getConnection().sendPacket(new Class5605(var2, var4 + 0.06248, var6, false));
-         field44554.getConnection().sendPacket(new Class5605(var2, var4, var6, false));
+         mc.getConnection().sendPacket(new Class5605(var2, var4 + 0.06248, var6, false));
+         mc.getConnection().sendPacket(new Class5605(var2, var4, var6, false));
       }
 
-      field44554.getConnection().sendPacket(new Class5605(var2, var4, var6, true));
+      mc.getConnection().sendPacket(new Class5605(var2, var4, var6, true));
    }
 
    public static float method37092(Class4435 var0, double var1, float var3, float var4, float var5) {
@@ -287,13 +287,13 @@ public class Class9567 {
    }
 
    public static Vector3d method37094(boolean var0, double var1, double var3) {
-      Vector3d var7 = new Vector3d(var1, (double)field44554.player.field4983, var3);
+      Vector3d var7 = new Vector3d(var1, (double) mc.player.field4983, var3);
       double var8 = var7.method11349();
       float var10 = 0.6F;
-      double var11 = !var0 ? (double)field44554.player.field4969 : (double)(field44554.player.method2918() * (0.21600002F / (var10 * var10 * var10)));
+      double var11 = !var0 ? (double) mc.player.field4969 : (double)(mc.player.method2918() * (0.21600002F / (var10 * var10 * var10)));
       Vector3d var13 = (!(var8 > 1.0) ? var7 : var7.method11333()).method11344(var11);
-      float var14 = MathHelper.sin(field44554.player.field5031 * (float) (Math.PI / 180.0));
-      float var15 = MathHelper.cos(field44554.player.field5031 * (float) (Math.PI / 180.0));
+      float var14 = MathHelper.sin(mc.player.rotationYaw * (float) (Math.PI / 180.0));
+      float var15 = MathHelper.cos(mc.player.rotationYaw * (float) (Math.PI / 180.0));
       return new Vector3d(
          var13.field18048 * (double)var15 - var13.field18050 * (double)var14,
          var13.field18049,
@@ -302,9 +302,9 @@ public class Class9567 {
    }
 
    public static void method37095(double var0) {
-      double var4 = (double)field44554.player.field6131.field43908;
-      double var6 = (double)field44554.player.field6131.field43907;
-      float var8 = field44554.player.field5031;
+      double var4 = (double) mc.player.field6131.field43908;
+      double var6 = (double) mc.player.field6131.field43907;
+      float var8 = mc.player.rotationYaw;
       if (var4 != 0.0) {
          if (!(var6 > 0.0)) {
             if (var6 < 0.0) {
@@ -324,11 +324,11 @@ public class Class9567 {
          }
       }
 
-      double var9 = field44554.player.getPosX();
-      double var11 = field44554.player.getPosY();
-      double var13 = field44554.player.getPosZ();
+      double var9 = mc.player.getPosX();
+      double var11 = mc.player.getPosY();
+      double var13 = mc.player.getPosZ();
       double var15 = var4 * var0 * Math.cos(Math.toRadians((double)(var8 + 90.0F))) + var6 * var0 * Math.sin(Math.toRadians((double)(var8 + 90.0F)));
       double var17 = var4 * var0 * Math.sin(Math.toRadians((double)(var8 + 90.0F))) - var6 * var0 * Math.cos(Math.toRadians((double)(var8 + 90.0F)));
-      field44554.player.method3215(var9 + var15, var11, var13 + var17);
+      mc.player.setPosition(var9 + var15, var11, var13 + var17);
    }
 }

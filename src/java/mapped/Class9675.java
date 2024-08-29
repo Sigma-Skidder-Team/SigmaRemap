@@ -5,7 +5,7 @@ import org.lwjgl.openal.AL10;
 public class Class9675 {
    private static String[] field45175;
    private float field45176 = 1.0F;
-   private Vector3d field45177 = Vector3d.field18047;
+   private Vector3d field45177 = Vector3d.ZERO;
 
    public void method37745(Vector3d var1) {
       this.field45177 = var1;
@@ -32,7 +32,7 @@ public class Class9675 {
    }
 
    public void method37750() {
-      this.method37745(Vector3d.field18047);
+      this.method37745(Vector3d.ZERO);
       this.method37747(Class7680.field32901, Class7680.field32900);
    }
 }

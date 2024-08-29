@@ -19,12 +19,12 @@ public class Class915 extends Entity {
       this(EntityType.field41028, var1);
       this.field5207 = var9;
       this.method3581(var10);
-      this.field5031 = var8 * (180.0F / (float)Math.PI);
-      this.method3215(var2, var4, var6);
+      this.rotationYaw = var8 * (180.0F / (float)Math.PI);
+      this.setPosition(var2, var4, var6);
    }
 
    @Override
-   public void method2850() {
+   public void registerData() {
    }
 
    public void method3581(Class880 var1) {
@@ -66,7 +66,7 @@ public class Class915 extends Entity {
       if (!this.world.field9020) {
          if (--this.field5207 < 0) {
             if (this.field5207 == -8) {
-               for (Class880 var16 : this.world.<Class880>method7182(Class880.class, this.method3389().method19663(0.2, 0.0, 0.2))) {
+               for (Class880 var16 : this.world.<Class880>method7182(Class880.class, this.getBoundingBox().method19663(0.2, 0.0, 0.2))) {
                   this.method3583(var16);
                }
             }
@@ -84,12 +84,12 @@ public class Class915 extends Entity {
          this.field5209--;
          if (this.field5209 == 14) {
             for (int var17 = 0; var17 < 12; var17++) {
-               double var4 = this.getPosX() + (this.field5054.nextDouble() * 2.0 - 1.0) * (double)this.method3429() * 0.5;
-               double var6 = this.getPosY() + 0.05 + this.field5054.nextDouble();
-               double var8 = this.getPosZ() + (this.field5054.nextDouble() * 2.0 - 1.0) * (double)this.method3429() * 0.5;
-               double var10 = (this.field5054.nextDouble() * 2.0 - 1.0) * 0.3;
-               double var12 = 0.3 + this.field5054.nextDouble() * 0.3;
-               double var14 = (this.field5054.nextDouble() * 2.0 - 1.0) * 0.3;
+               double var4 = this.getPosX() + (this.rand.nextDouble() * 2.0 - 1.0) * (double)this.method3429() * 0.5;
+               double var6 = this.getPosY() + 0.05 + this.rand.nextDouble();
+               double var8 = this.getPosZ() + (this.rand.nextDouble() * 2.0 - 1.0) * (double)this.method3429() * 0.5;
+               double var10 = (this.rand.nextDouble() * 2.0 - 1.0) * 0.3;
+               double var12 = 0.3 + this.rand.nextDouble() * 0.3;
+               double var14 = (this.rand.nextDouble() * 2.0 - 1.0) * 0.3;
                this.world.method6746(Class7940.field34054, var4, var6 + 1.0, var8, var10, var12, var14);
             }
          }
@@ -125,7 +125,7 @@ public class Class915 extends Entity {
                   Sounds.field26563,
                   this.method2864(),
                   1.0F,
-                  this.field5054.nextFloat() * 0.2F + 0.85F,
+                  this.rand.nextFloat() * 0.2F + 0.85F,
                   false
                );
          }

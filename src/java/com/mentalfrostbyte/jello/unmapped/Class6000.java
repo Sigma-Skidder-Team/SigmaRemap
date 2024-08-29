@@ -16,10 +16,10 @@ public class Class6000 extends Setting<Class9318> {
     }
 
     @Override
-    public JSONObject addDataToJSONObject(JSONObject var1) {
-        var1.put("name", this.getName());
-        var1.put("value", this.getCurrentValue().method35208());
-        return var1;
+    public JSONObject addDataToJSONObject(JSONObject jsonObject) {
+        jsonObject.put("name", this.getName());
+        jsonObject.put("value", this.getCurrentValue().method35208());
+        return jsonObject;
     }
 
     public void method18612(float var1, float var2, float var3, float var4) {

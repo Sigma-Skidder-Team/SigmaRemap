@@ -29,7 +29,7 @@ public class Class4287 extends Class4278 {
    public void method13027(float var1) {
       if (this.field20779) {
          GL11.glAlphaFunc(518, 0.01F);
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.JelloLightFont18_1,
             (float)this.method13263(),
             (float)this.method13265(),
@@ -40,7 +40,7 @@ public class Class4287 extends Class4278 {
       }
 
       if (this.field20912 != null) {
-         Class3192.method11439(
+         RenderUtil.method11439(
             this.method13305(),
             (float)this.method13263(),
             (float)this.method13265(),

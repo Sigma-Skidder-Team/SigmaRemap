@@ -13,8 +13,8 @@ public class Class3465 extends Block {
    }
 
    @Override
-   public Class6408 method11995(BlockState var1, Class1665 var2, BlockPos var3) {
-      return Class8022.method27425();
+   public VoxelShape method11995(BlockState var1, Class1665 var2, BlockPos var3) {
+      return VoxelShapes.method27425();
    }
 
    @Override

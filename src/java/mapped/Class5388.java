@@ -19,13 +19,13 @@ public class Class5388 extends Module {
    }
 
    @Override
-   public void isInDevelopment() {
+   public void onEnable() {
       this.field24023 = false;
    }
 
    @EventTarget
    public void method16970(Class4417 var1) {
-      if (this.isEnabled() && mc.player.field5036) {
+      if (this.isEnabled() && mc.player.onGround) {
          var1.method13966(true);
       }
    }
@@ -37,7 +37,7 @@ public class Class5388 extends Module {
             this.method16004().method16000();
          }
 
-         if (!mc.player.field5036 && this.field24023) {
+         if (!mc.player.onGround && this.field24023) {
             this.field24024 = Math.max(this.field24024, 0.499);
             Class9567.method37088(var1, this.field24024);
             this.field24024 -= 0.007;
@@ -60,7 +60,7 @@ public class Class5388 extends Module {
    @EventTarget
    public void method16972(Class4404 var1) {
       if (this.isEnabled()) {
-         if (mc.player.field5036) {
+         if (mc.player.onGround) {
             if (this.field24023) {
                this.field24023 = !this.field24023;
                Class9567.method37090(0.0);
@@ -76,13 +76,13 @@ public class Class5388 extends Module {
             double var8 = mc.player.getPosY();
             double var10 = (double) mc.player.field6131.field43908;
             double var12 = (double) mc.player.field6131.field43907;
-            float var14 = mc.player.field5031;
+            float var14 = mc.player.rotationYaw;
             double var15 = 0.1;
             double var17 = var4
                + (var10 * 0.45 * Math.cos(Math.toRadians((double)(var14 + 90.0F))) + var12 * 0.45 * Math.sin(Math.toRadians((double)(var14 + 90.0F)))) * var15;
             double var19 = var6
                + (var10 * 0.45 * Math.sin(Math.toRadians((double)(var14 + 90.0F))) - var12 * 0.45 * Math.cos(Math.toRadians((double)(var14 + 90.0F)))) * var15;
-            Class6488 var21 = new Class6488(var17 - 0.3, var8 - 1.0, var19 - 0.3, var17 + 0.3, var8 + 2.0, var19 + 0.3);
+            AxisAlignedBB var21 = new AxisAlignedBB(var17 - 0.3, var8 - 1.0, var19 - 0.3, var17 + 0.3, var8 + 2.0, var19 + 0.3);
             if (mc.world.method7055(mc.player, var21).count() == 0L) {
                double var22 = this.method16975(var21);
                if (var22 != 11.0) {
@@ -93,7 +93,7 @@ public class Class5388 extends Module {
                   mc.getConnection().sendPacket(var27);
                   mc.getConnection().sendPacket(var26);
                   this.field24026 = var24 + 0.42;
-                  mc.player.method3215(var17, var24, var19);
+                  mc.player.setPosition(var17, var24, var19);
                   this.field24025 = (double)this.getNumberValueBySettingName("Motion");
                   this.field24024 = 0.81;
                }
@@ -103,9 +103,9 @@ public class Class5388 extends Module {
    }
 
    @EventTarget
-   public void method16973(Class4396 var1) {
+   public void method16973(RecievePacketEvent var1) {
       if (this.isEnabled()) {
-         Packet var4 = var1.method13898();
+         Packet var4 = var1.getPacket();
          if (var4 instanceof Class5473) {
             this.method16004().method16000();
          }
@@ -115,19 +115,19 @@ public class Class5388 extends Module {
    @EventTarget
    public void method16974(Class4422 var1) {
       if (this.isEnabled() && this.field24023 && !(mc.player.getPosY() < this.field24026) && this.getBooleanValueFromSetttingName("Fake fly")) {
-         mc.player.field5028.field18049 = this.field24026;
-         mc.player.field5049 = this.field24026;
+         mc.player.positionVec.field18049 = this.field24026;
+         mc.player.lastTickPosY = this.field24026;
          mc.player.field4915 = this.field24026;
-         mc.player.field5026 = this.field24026;
+         mc.player.prevPosY = this.field24026;
          if (Class9567.method37087()) {
             mc.player.field4909 = 0.099999994F;
          }
       }
    }
 
-   public double method16975(Class6488 var1) {
+   public double method16975(AxisAlignedBB var1) {
       double var4 = 6.0;
-      Class6488 var6 = var1.method19667(0.0, -var4, 0.0);
+      AxisAlignedBB var6 = var1.method19667(0.0, -var4, 0.0);
 
       do {
          var6 = var1.method19667(0.0, -var4, 0.0);

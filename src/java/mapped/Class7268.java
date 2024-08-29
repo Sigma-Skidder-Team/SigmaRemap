@@ -118,7 +118,7 @@ public class Class7268 {
       return this.field31187.method1177(var1);
    }
 
-   public Class7608<Class7744> method22830(ResourceLocation var1) {
+   public ITag<Class7744> method22830(ResourceLocation var1) {
       return this.field31187.method1180(var1);
    }
 

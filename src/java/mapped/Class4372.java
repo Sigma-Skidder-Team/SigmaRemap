@@ -16,7 +16,7 @@ public class Class4372 extends Class4247 {
    public void method13027(float var1) {
       byte var4 = 5;
       if (this.method13700() || this.method13298()) {
-         Class3192.method11464(
+         RenderUtil.method11464(
             (float)this.field20895,
             (float)this.field20896,
             (float)this.field20897,
@@ -26,7 +26,7 @@ public class Class4372 extends Class4247 {
          );
       }
 
-      Class3192.method11479(this.field21366, this.field20895 + var4, this.field20896 + var4, this.field20897 - var4 * 2, this.field20898 - var4 * 2);
+      RenderUtil.method11479(this.field21366, this.field20895 + var4, this.field20896 + var4, this.field20897 - var4 * 2, this.field20898 - var4 * 2);
       super.method13027(var1);
    }
 

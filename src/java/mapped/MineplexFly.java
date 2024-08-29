@@ -24,7 +24,7 @@ public class MineplexFly extends PremiumModule {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23668 = -1;
         this.field23671 = Class9567.method37075();
         this.field23669 = 0;
@@ -35,7 +35,7 @@ public class MineplexFly extends PremiumModule {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         double var3 = Class9567.method37075() * 0.5;
         Class9567.method37090(var3);
         if (this.field23670 != -1) {
@@ -67,14 +67,14 @@ public class MineplexFly extends PremiumModule {
         return this.isEnabled()
                 && this.field23670 != -1
                 && this.field23671 < (double) this.getNumberValueBySettingName("Boost")
-                && (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F))
+                && (mc.player.onGround || Class5628.method17730(mc.player, 0.001F))
                 && !this.field23675;
     }
 
     @EventTarget
     public void method16457(Class4417 var1) {
         if (this.isEnabled() && this.field23675 && mc.player != null) {
-            if (mc.player.field5036) {
+            if (mc.player.onGround) {
                 var1.method13966(true);
             }
         }
@@ -86,8 +86,8 @@ public class MineplexFly extends PremiumModule {
             if (this.field23675) {
                 Class9567.method37088(var1, 0.01);
             } else {
-                float var4 = mc.player.field5031 + 90.0F;
-                if (!mc.player.field5036 && !Class5628.method17730(mc.player, 0.001F)) {
+                float var4 = mc.player.rotationYaw + 90.0F;
+                if (!mc.player.onGround && !Class5628.method17730(mc.player, 0.001F)) {
                     if (this.field23668 != -1) {
                         if (this.field23674 && !Class5628.method17686()) {
                             this.field23674 = !this.field23674;
@@ -110,7 +110,7 @@ public class MineplexFly extends PremiumModule {
                         }
 
                         var1.method13995(this.field23672);
-                        if (mc.player.field5037 || !Class5628.method17686()) {
+                        if (mc.player.collidedHorizontally || !Class5628.method17686()) {
                             this.field23671 = 0.35;
                         }
 
@@ -170,9 +170,9 @@ public class MineplexFly extends PremiumModule {
     }
 
     @EventTarget
-    public void method16459(Class4396 var1) {
+    public void method16459(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof Class5473) {
+            if (var1.getPacket() instanceof Class5473) {
                 this.field23675 = true;
                 Client.getInstance().getNotificationManager().post(new Notification("Mineplex fly", "Please try again"));
             }
@@ -180,12 +180,12 @@ public class MineplexFly extends PremiumModule {
     }
 
     @EventTarget
-    public void method16460(Class4402 var1) {
+    public void method16460(SendPacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.method13932() instanceof Class5539
                     && this.field23670 != -1
                     && this.field23671 < (double) this.getNumberValueBySettingName("Boost")
-                    && (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F))
+                    && (mc.player.onGround || Class5628.method17730(mc.player, 0.001F))
                     && !this.field23675) {
                 var1.method13900(true);
             }
@@ -225,10 +225,10 @@ public class MineplexFly extends PremiumModule {
     @EventTarget
     public void method16462(Class4422 var1) {
         if (this.isEnabled() && this.getBooleanValueFromSetttingName("Fake") && !(this.field23673 < 0.0) && !(mc.player.getPosY() < this.field23673)) {
-            mc.player.field5028.field18049 = this.field23673;
-            mc.player.field5049 = this.field23673;
+            mc.player.positionVec.field18049 = this.field23673;
+            mc.player.lastTickPosY = this.field23673;
             mc.player.field4915 = this.field23673;
-            mc.player.field5026 = this.field23673;
+            mc.player.prevPosY = this.field23673;
             if (Class9567.method37087()) {
                 mc.player.field4909 = 0.099999994F;
             }

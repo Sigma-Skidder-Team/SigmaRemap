@@ -139,8 +139,8 @@ public class Class8901 {
    }
 
    public static boolean method32449(int var0, int var1, int var2, boolean var3) {
-      Class6488 var6 = field40291.player.getRidingEntity() != null ? field40291.player.getRidingEntity().method3389() : field40291.player.method3389();
-      Class6488 var7 = new Class6488(
+      AxisAlignedBB var6 = field40291.player.getRidingEntity() != null ? field40291.player.getRidingEntity().getBoundingBox() : field40291.player.getBoundingBox();
+      AxisAlignedBB var7 = new AxisAlignedBB(
          (double)((float)var0 + 0.5F) - var6.method19676() / 2.0,
          (double)var1,
          (double)((float)var2 + 0.5F) - var6.method19678() / 2.0,

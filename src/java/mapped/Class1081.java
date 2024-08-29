@@ -3,9 +3,9 @@ package mapped;
 import java.util.Collection;
 
 public class Class1081 extends Class1009 implements Class1080 {
-   private static final Class9289<Integer> field5938 = Class9361.<Integer>method35441(Class1081.class, Class7784.field33391);
-   private static final Class9289<Boolean> field5939 = Class9361.<Boolean>method35441(Class1081.class, Class7784.field33398);
-   private static final Class9289<Boolean> field5940 = Class9361.<Boolean>method35441(Class1081.class, Class7784.field33398);
+   private static final DataParameter<Integer> field5938 = EntityDataManager.<Integer>method35441(Class1081.class, Class7784.field33391);
+   private static final DataParameter<Boolean> field5939 = EntityDataManager.<Boolean>method35441(Class1081.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5940 = EntityDataManager.<Boolean>method35441(Class1081.class, Class7784.field33398);
    private int field5941;
    private int field5942;
    private int field5943 = 30;
@@ -51,17 +51,17 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5938, -1);
-      this.field5063.method35442(field5939, false);
-      this.field5063.method35442(field5940, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5938, -1);
+      this.dataManager.register(field5939, false);
+      this.dataManager.register(field5940, false);
    }
 
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      if (this.field5063.<Boolean>method35445(field5939)) {
+      if (this.dataManager.<Boolean>method35445(field5939)) {
          var1.method115("powered", true);
       }
 
@@ -73,7 +73,7 @@ public class Class1081 extends Class1009 implements Class1080 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.field5063.method35446(field5939, var1.method132("powered"));
+      this.dataManager.method35446(field5939, var1.method132("powered"));
       if (var1.method119("Fuse", 99)) {
          this.field5943 = var1.method121("Fuse");
       }
@@ -144,7 +144,7 @@ public class Class1081 extends Class1009 implements Class1080 {
 
    @Override
    public boolean method5016() {
-      return this.field5063.<Boolean>method35445(field5939);
+      return this.dataManager.<Boolean>method35445(field5939);
    }
 
    public float method5019(float var1) {
@@ -152,17 +152,17 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    public int method5020() {
-      return this.field5063.<Integer>method35445(field5938);
+      return this.dataManager.<Integer>method35445(field5938);
    }
 
    public void method5021(int var1) {
-      this.field5063.method35446(field5938, var1);
+      this.dataManager.method35446(field5938, var1);
    }
 
    @Override
    public void method3353(ServerWorld var1, Class906 var2) {
       super.method3353(var1, var2);
-      this.field5063.method35446(field5939, true);
+      this.dataManager.method35446(field5939, true);
    }
 
    @Override
@@ -180,7 +180,7 @@ public class Class1081 extends Class1009 implements Class1080 {
                Sounds.field26587,
                this.method2864(),
                1.0F,
-               this.field5054.nextFloat() * 0.4F + 0.8F
+               this.rand.nextFloat() * 0.4F + 0.8F
             );
          if (!this.world.field9020) {
             this.method5025();
@@ -221,11 +221,11 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    public boolean method5024() {
-      return this.field5063.<Boolean>method35445(field5940);
+      return this.dataManager.<Boolean>method35445(field5940);
    }
 
    public void method5025() {
-      this.field5063.method35446(field5940, true);
+      this.dataManager.method35446(field5940, true);
    }
 
    public boolean method5026() {

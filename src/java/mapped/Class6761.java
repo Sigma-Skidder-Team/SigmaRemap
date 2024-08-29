@@ -27,9 +27,9 @@ public class Class6761 extends Class6762 {
    @Override
    public Class7176 method20615() {
       return this.method20641(
-         MathHelper.floor(this.field29476.method3389().field28449),
-         MathHelper.floor(this.field29476.method3389().field28450 + 0.5),
-         MathHelper.floor(this.field29476.method3389().field28451)
+         MathHelper.floor(this.field29476.getBoundingBox().field28449),
+         MathHelper.floor(this.field29476.getBoundingBox().field28450 + 0.5),
+         MathHelper.floor(this.field29476.getBoundingBox().field28451)
       );
    }
 
@@ -114,7 +114,7 @@ public class Class6761 extends Class6762 {
          return (double)var1.getY() + 0.5;
       } else {
          BlockPos var4 = var1.method8313();
-         Class6408 var5 = this.field29475.getBlockState(var4).method23414(this.field29475, var4);
+         VoxelShape var5 = this.field29475.getBlockState(var4).method23414(this.field29475, var4);
          return (double)var4.getY() + (!var5.method19516() ? var5.method19513(Class113.field414) : 0.0);
       }
    }
@@ -140,7 +140,7 @@ public class Class6761 extends Class6762 {
             }
 
             if (var13 == Class2163.field14185) {
-               Class6488 var17 = new Class6488(
+               AxisAlignedBB var17 = new AxisAlignedBB(
                   (double)var1 - var15 + 0.5,
                   (double)var2 + 0.001,
                   (double)var3 - var15 + 0.5,

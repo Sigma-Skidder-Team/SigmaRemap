@@ -3,16 +3,16 @@ package mapped;
 import java.util.Random;
 
 public abstract class Class3468 extends Block {
-   public static final Class6408 field19313 = Block.method11539(1.0, 0.0, 1.0, 15.0, 0.5, 15.0);
-   public static final Class6408 field19314 = Block.method11539(1.0, 0.0, 1.0, 15.0, 1.0, 15.0);
-   public static final Class6488 field19315 = new Class6488(0.125, 0.0, 0.125, 0.875, 0.25, 0.875);
+   public static final VoxelShape field19313 = Block.method11539(1.0, 0.0, 1.0, 15.0, 0.5, 15.0);
+   public static final VoxelShape field19314 = Block.method11539(1.0, 0.0, 1.0, 15.0, 1.0, 15.0);
+   public static final AxisAlignedBB field19315 = new AxisAlignedBB(0.125, 0.0, 0.125, 0.875, 0.25, 0.875);
 
    public Class3468(AbstractBlock var1) {
       super(var1);
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.method12158(var1) <= 0 ? field19314 : field19313;
    }
 

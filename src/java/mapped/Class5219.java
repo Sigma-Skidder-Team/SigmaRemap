@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4434;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.event.impl.Class4436;
@@ -24,7 +24,7 @@ public class Class5219 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Class9567.method37090(Class9567.method37075() * 0.7);
         if (mc.player.inventory.currentItem != this.field23554) {
             mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
@@ -33,7 +33,7 @@ public class Class5219 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23553 = 0;
         this.field23552 = 0;
         this.field23554 = -1;
@@ -47,8 +47,8 @@ public class Class5219 extends Module {
                 && !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()
                 && !Class5628.method17684(mc.player)) {
             double var4 = this.getNumberValueBySettingName("OnGround Speed");
-            if (!mc.player.field5036) {
-                if (mc.player.field5037) {
+            if (!mc.player.onGround) {
+                if (mc.player.collidedHorizontally) {
                     this.field23555 = 0.35;
                     this.field23553 = 1;
                 }
@@ -96,7 +96,7 @@ public class Class5219 extends Module {
                 Class5570 var10 = new Class5570(Hand.MAIN_HAND, var9);
                 mc.getConnection().sendPacket(var10);
                 this.field23555 += var4 / 4.0;
-                if (mc.player.field5037) {
+                if (mc.player.collidedHorizontally) {
                     this.field23555 /= 2.0;
                 }
 
@@ -137,9 +137,9 @@ public class Class5219 extends Module {
     }
 
     @EventTarget
-    public void method16252(Class4396 var1) {
+    public void method16252(RecievePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (var1.method13898() instanceof Class5473) {
+            if (var1.getPacket() instanceof Class5473) {
                 this.field23553 = 0;
                 this.field23555 = 0.0;
             }

@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5338 extends Class5325 {
+public class Class5338 extends ModuleWithModuleSettings {
     public Class5338() {
         super(ModuleCategory.RENDER, "ChestESP", "Allows you to see chests through blocks", new Class5384(), new Class5232());
         this.registerSetting(new BooleanSetting("Show Regular Chests", "Renders the regular chest esp", true));

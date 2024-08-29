@@ -5,7 +5,7 @@ import java.util.Random;
 
 public abstract class Class3397 extends Block {
    private final float field19034;
-   public static final Class6408 field19035 = Block.method11539(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
+   public static final VoxelShape field19035 = Block.method11539(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
 
    public Class3397(AbstractBlock var1, float var2) {
       super(var1);
@@ -24,7 +24,7 @@ public abstract class Class3397 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19035;
    }
 

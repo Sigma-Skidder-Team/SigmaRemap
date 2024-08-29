@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class3412 extends Block {
    private static final ITextComponent field19096 = new TranslationTextComponent("container.stonecutter");
    public static final Class8553 field19097 = Class3198.field18484;
-   public static final Class6408 field19098 = Block.method11539(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
+   public static final VoxelShape field19098 = Block.method11539(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
 
    public Class3412(AbstractBlock var1) {
       super(var1);
@@ -37,7 +37,7 @@ public class Class3412 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19098;
    }
 

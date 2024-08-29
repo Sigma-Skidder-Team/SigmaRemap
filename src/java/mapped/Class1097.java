@@ -5,12 +5,12 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public class Class1097 extends Class1018 {
-   private static final Class9289<Integer> field6017 = Class9361.<Integer>method35441(Class1097.class, Class7784.field33391);
-   private static final Class9289<Integer> field6018 = Class9361.<Integer>method35441(Class1097.class, Class7784.field33391);
-   private static final Class9289<Integer> field6019 = Class9361.<Integer>method35441(Class1097.class, Class7784.field33391);
-   private static final Class9289<Byte> field6020 = Class9361.<Byte>method35441(Class1097.class, Class7784.field33390);
-   private static final Class9289<Byte> field6021 = Class9361.<Byte>method35441(Class1097.class, Class7784.field33390);
-   private static final Class9289<Byte> field6022 = Class9361.<Byte>method35441(Class1097.class, Class7784.field33390);
+   private static final DataParameter<Integer> field6017 = EntityDataManager.<Integer>method35441(Class1097.class, Class7784.field33391);
+   private static final DataParameter<Integer> field6018 = EntityDataManager.<Integer>method35441(Class1097.class, Class7784.field33391);
+   private static final DataParameter<Integer> field6019 = EntityDataManager.<Integer>method35441(Class1097.class, Class7784.field33391);
+   private static final DataParameter<Byte> field6020 = EntityDataManager.<Byte>method35441(Class1097.class, Class7784.field33390);
+   private static final DataParameter<Byte> field6021 = EntityDataManager.<Byte>method35441(Class1097.class, Class7784.field33390);
+   private static final DataParameter<Byte> field6022 = EntityDataManager.<Byte>method35441(Class1097.class, Class7784.field33390);
    private static final Class8522 field6023 = new Class8522().method30203(8.0).method30205().method30204();
    private boolean field6024;
    private boolean field6025;
@@ -43,11 +43,11 @@ public class Class1097 extends Class1018 {
    }
 
    public int method5186() {
-      return this.field5063.<Integer>method35445(field6017);
+      return this.dataManager.<Integer>method35445(field6017);
    }
 
    public void method5187(int var1) {
-      this.field5063.method35446(field6017, var1);
+      this.dataManager.method35446(field6017, var1);
    }
 
    public boolean method5188() {
@@ -71,19 +71,19 @@ public class Class1097 extends Class1018 {
    }
 
    public boolean method5193() {
-      return this.field5063.<Integer>method35445(field6019) > 0;
+      return this.dataManager.<Integer>method35445(field6019) > 0;
    }
 
    public void method5194(boolean var1) {
-      this.field5063.method35446(field6019, !var1 ? 0 : 1);
+      this.dataManager.method35446(field6019, !var1 ? 0 : 1);
    }
 
    private int method5195() {
-      return this.field5063.<Integer>method35445(field6019);
+      return this.dataManager.<Integer>method35445(field6019);
    }
 
    private void method5196(int var1) {
-      this.field5063.method35446(field6019, var1);
+      this.dataManager.method35446(field6019, var1);
    }
 
    public void method5197(boolean var1) {
@@ -94,35 +94,35 @@ public class Class1097 extends Class1018 {
    }
 
    public int method5198() {
-      return this.field5063.<Integer>method35445(field6018);
+      return this.dataManager.<Integer>method35445(field6018);
    }
 
    public void method5199(int var1) {
-      this.field5063.method35446(field6018, var1);
+      this.dataManager.method35446(field6018, var1);
    }
 
    public Class2293 method5200() {
-      return Class2293.method9046(this.field5063.<Byte>method35445(field6020));
+      return Class2293.method9046(this.dataManager.<Byte>method35445(field6020));
    }
 
    public void method5201(Class2293 var1) {
       if (var1.method9042() > 6) {
-         var1 = Class2293.method9048(this.field5054);
+         var1 = Class2293.method9048(this.rand);
       }
 
-      this.field5063.method35446(field6020, (byte)var1.method9042());
+      this.dataManager.method35446(field6020, (byte)var1.method9042());
    }
 
    public Class2293 method5202() {
-      return Class2293.method9046(this.field5063.<Byte>method35445(field6021));
+      return Class2293.method9046(this.dataManager.<Byte>method35445(field6021));
    }
 
    public void method5203(Class2293 var1) {
       if (var1.method9042() > 6) {
-         var1 = Class2293.method9048(this.field5054);
+         var1 = Class2293.method9048(this.rand);
       }
 
-      this.field5063.method35446(field6021, (byte)var1.method9042());
+      this.dataManager.method35446(field6021, (byte)var1.method9042());
    }
 
    public boolean method5204() {
@@ -134,26 +134,26 @@ public class Class1097 extends Class1018 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field6017, 0);
-      this.field5063.method35442(field6018, 0);
-      this.field5063.method35442(field6020, (byte)0);
-      this.field5063.method35442(field6021, (byte)0);
-      this.field5063.method35442(field6022, (byte)0);
-      this.field5063.method35442(field6019, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field6017, 0);
+      this.dataManager.register(field6018, 0);
+      this.dataManager.register(field6020, (byte)0);
+      this.dataManager.register(field6021, (byte)0);
+      this.dataManager.register(field6022, (byte)0);
+      this.dataManager.register(field6019, 0);
    }
 
    private boolean method5206(int var1) {
-      return (this.field5063.<Byte>method35445(field6022) & var1) != 0;
+      return (this.dataManager.<Byte>method35445(field6022) & var1) != 0;
    }
 
    private void method5207(int var1, boolean var2) {
-      byte var5 = this.field5063.<Byte>method35445(field6022);
+      byte var5 = this.dataManager.<Byte>method35445(field6022);
       if (!var2) {
-         this.field5063.method35446(field6022, (byte)(var5 & ~var1));
+         this.dataManager.method35446(field6022, (byte)(var5 & ~var1));
       } else {
-         this.field5063.method35446(field6022, (byte)(var5 | var1));
+         this.dataManager.method35446(field6022, (byte)(var5 | var1));
       }
    }
 
@@ -296,7 +296,7 @@ public class Class1097 extends Class1018 {
       }
 
       if (this.method5189()) {
-         this.field5032 = 0.0F;
+         this.rotationPitch = 0.0F;
       }
 
       this.method5217();
@@ -314,7 +314,7 @@ public class Class1097 extends Class1018 {
          && this.method5189()
          && !this.method5214()
          && !this.method2943(Class2106.field13731).isEmpty()
-         && this.field5054.nextInt(80) == 1) {
+         && this.rand.nextInt(80) == 1) {
          this.method5194(true);
       } else if (this.method2943(Class2106.field13731).isEmpty() || !this.method5189()) {
          this.method5194(false);
@@ -322,7 +322,7 @@ public class Class1097 extends Class1018 {
 
       if (this.method5193()) {
          this.method5216();
-         if (!this.world.field9020 && this.method5195() > 80 && this.field5054.nextInt(20) == 1) {
+         if (!this.world.field9020 && this.method5195() > 80 && this.rand.nextInt(20) == 1) {
             if (this.method5195() > 100 && this.method5229(this.method2943(Class2106.field13731))) {
                if (!this.world.field9020) {
                   this.method2944(Class2106.field13731, ItemStack.EMPTY);
@@ -342,17 +342,17 @@ public class Class1097 extends Class1018 {
    private void method5216() {
       if (this.method5195() % 5 == 0) {
          this.method2863(
-            Sounds.field26873, 0.5F + 0.5F * (float)this.field5054.nextInt(2), (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F
+            Sounds.field26873, 0.5F + 0.5F * (float)this.rand.nextInt(2), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F
          );
 
          for (int var3 = 0; var3 < 6; var3++) {
             Vector3d var4 = new Vector3d(
-               ((double)this.field5054.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, ((double)this.field5054.nextFloat() - 0.5) * 0.1
+               ((double)this.rand.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, ((double)this.rand.nextFloat() - 0.5) * 0.1
             );
-            var4 = var4.method11350(-this.field5032 * (float) (Math.PI / 180.0));
-            var4 = var4.method11351(-this.field5031 * (float) (Math.PI / 180.0));
-            double var5 = (double)(-this.field5054.nextFloat()) * 0.6 - 0.3;
-            Vector3d var7 = new Vector3d(((double)this.field5054.nextFloat() - 0.5) * 0.8, var5, 1.0 + ((double)this.field5054.nextFloat() - 0.5) * 0.4);
+            var4 = var4.method11350(-this.rotationPitch * (float) (Math.PI / 180.0));
+            var4 = var4.method11351(-this.rotationYaw * (float) (Math.PI / 180.0));
+            double var5 = (double)(-this.rand.nextFloat()) * 0.6 - 0.3;
+            Vector3d var7 = new Vector3d(((double)this.rand.nextFloat() - 0.5) * 0.8, var5, 1.0 + ((double)this.rand.nextFloat() - 0.5) * 0.4);
             var7 = var7.method11351(-this.field4965 * (float) (Math.PI / 180.0));
             var7 = var7.method11339(this.getPosX(), this.method3442() + 1.0, this.getPosZ());
             this.world
@@ -417,10 +417,10 @@ public class Class1097 extends Class1018 {
                if ((float)this.field6026 != 7.0F && (float)this.field6026 != 15.0F && (float)this.field6026 != 23.0F) {
                   this.method3435(this.field6027.field18048, var3.field18049, this.field6027.field18050);
                } else {
-                  this.method3435(0.0, !this.field5036 ? var3.field18049 : 0.27, 0.0);
+                  this.method3435(0.0, !this.onGround ? var3.field18049 : 0.27, 0.0);
                }
             } else {
-               float var4 = this.field5031 * (float) (Math.PI / 180.0);
+               float var4 = this.rotationYaw * (float) (Math.PI / 180.0);
                float var5 = !this.method3005() ? 0.2F : 0.1F;
                this.field6027 = new Vector3d(
                   var3.field18048 + (double)(-MathHelper.sin(var4) * var5), 0.0, var3.field18050 + (double)(MathHelper.cos(var4) * var5)
@@ -447,13 +447,13 @@ public class Class1097 extends Class1018 {
          );
       this.method2863(Sounds.field26870, 1.0F, 1.0F);
 
-      for (Class1097 var5 : this.world.<Class1097>method7182(Class1097.class, this.method3389().method19664(10.0))) {
-         if (!var5.method3005() && var5.field5036 && !var5.method3250() && var5.method5230()) {
+      for (Class1097 var5 : this.world.<Class1097>method7182(Class1097.class, this.getBoundingBox().method19664(10.0))) {
+         if (!var5.method3005() && var5.onGround && !var5.method3250() && var5.method5230()) {
             var5.method2914();
          }
       }
 
-      if (!this.world.method6714() && this.field5054.nextInt(700) == 0 && this.world.method6789().method17135(Class5462.field24227)) {
+      if (!this.world.method6714() && this.rand.nextInt(700) == 0 && this.world.method6789().method17135(Class5462.field24227)) {
          this.method3300(Items.field37901);
       }
    }
@@ -479,8 +479,8 @@ public class Class1097 extends Class1018 {
    @Nullable
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      this.method5201(Class2293.method9048(this.field5054));
-      this.method5203(Class2293.method9048(this.field5054));
+      this.method5201(Class2293.method9048(this.rand));
+      this.method5203(Class2293.method9048(this.rand));
       this.method5227();
       if (var4 == null) {
          var4 = new Class5097(0.2F);
@@ -491,32 +491,32 @@ public class Class1097 extends Class1018 {
 
    public void method5225(Class1097 var1, Class1097 var2) {
       if (var2 != null) {
-         if (!this.field5054.nextBoolean()) {
+         if (!this.rand.nextBoolean()) {
             this.method5201(var2.method5226());
             this.method5203(var1.method5226());
          } else {
             this.method5201(var1.method5226());
             this.method5203(var2.method5226());
          }
-      } else if (!this.field5054.nextBoolean()) {
-         this.method5201(Class2293.method9048(this.field5054));
+      } else if (!this.rand.nextBoolean()) {
+         this.method5201(Class2293.method9048(this.rand));
          this.method5203(var1.method5226());
       } else {
          this.method5201(var1.method5226());
-         this.method5203(Class2293.method9048(this.field5054));
+         this.method5203(Class2293.method9048(this.rand));
       }
 
-      if (this.field5054.nextInt(32) == 0) {
-         this.method5201(Class2293.method9048(this.field5054));
+      if (this.rand.nextInt(32) == 0) {
+         this.method5201(Class2293.method9048(this.rand));
       }
 
-      if (this.field5054.nextInt(32) == 0) {
-         this.method5203(Class2293.method9048(this.field5054));
+      if (this.rand.nextInt(32) == 0) {
+         this.method5203(Class2293.method9048(this.rand));
       }
    }
 
    private Class2293 method5226() {
-      return !this.field5054.nextBoolean() ? this.method5202() : this.method5200();
+      return !this.rand.nextBoolean() ? this.method5202() : this.method5200();
    }
 
    public void method5227() {
@@ -624,27 +624,27 @@ public class Class1097 extends Class1018 {
 
    // $VF: synthetic method
    public static Random method5232(Class1097 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5233(Class1097 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5234(Class1097 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5235(Class1097 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5236(Class1097 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -669,12 +669,12 @@ public class Class1097 extends Class1018 {
 
    // $VF: synthetic method
    public static Random method5241(Class1097 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5242(Class1097 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -684,12 +684,12 @@ public class Class1097 extends Class1018 {
 
    // $VF: synthetic method
    public static Random method5244(Class1097 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5245(Class1097 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -699,11 +699,11 @@ public class Class1097 extends Class1018 {
 
    // $VF: synthetic method
    public static Random method5247(Class1097 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5248(Class1097 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 }

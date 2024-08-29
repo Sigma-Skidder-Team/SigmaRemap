@@ -27,7 +27,7 @@ public class Class8888 {
       return new Class8888(var0, var1);
    }
 
-   public Class8888 method32343(Class7608<Item> var1) {
+   public Class8888 method32343(ITag<Item> var1) {
       return this.method32346(Class120.method342(var1));
    }
 

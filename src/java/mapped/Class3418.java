@@ -5,9 +5,9 @@ import javax.annotation.Nullable;
 
 public class Class3418 extends Block implements Class3196 {
    private static String[] field19121;
-   public static final Class6408 field19122 = Block.method11539(5.0, 0.0, 5.0, 11.0, 16.0, 11.0);
-   public static final Class6408 field19123 = Block.method11539(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
-   public static final Class6408 field19124 = Block.method11539(6.5, 0.0, 6.5, 9.5, 16.0, 9.5);
+   public static final VoxelShape field19122 = Block.method11539(5.0, 0.0, 5.0, 11.0, 16.0, 11.0);
+   public static final VoxelShape field19123 = Block.method11539(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
+   public static final VoxelShape field19124 = Block.method11539(6.5, 0.0, 6.5, 9.5, 16.0, 9.5);
    public static final Class8554 field19125 = Class8820.field39738;
    public static final Class8552<Class181> field19126 = Class8820.field39773;
    public static final Class8554 field19127 = Class8820.field39760;
@@ -39,10 +39,10 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
-      Class6408 var7 = var1.method23463(field19126) != Class181.field644 ? field19122 : field19123;
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+      VoxelShape var7 = var1.method23463(field19126) != Class181.field644 ? field19122 : field19123;
       Vector3d var8 = var1.method23421(var2, var3);
-      return var7.method19517(var8.field18048, var8.field18049, var8.field18050);
+      return var7.withOffset(var8.field18048, var8.field18049, var8.field18050);
    }
 
    @Override
@@ -51,9 +51,9 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       Vector3d var7 = var1.method23421(var2, var3);
-      return field19124.method19517(var7.field18048, var7.field18049, var7.field18050);
+      return field19124.withOffset(var7.field18048, var7.field18049, var7.field18050);
    }
 
    @Nullable

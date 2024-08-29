@@ -30,7 +30,7 @@ public class Class2724 extends Class2595 {
       this.field17218 = -10;
       this.field17217.method4230().method21666();
       this.field17217.method4227().method28040(this.field17217.method4232(), 90.0F, 90.0F);
-      this.field17217.field5078 = true;
+      this.field17217.isAirBorne = true;
    }
 
    @Override

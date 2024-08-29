@@ -23,7 +23,7 @@ public class Class9016 {
    private final Executor field41236;
    private World field41237;
    private final WorldRenderer field41238;
-   private Vector3d field41239 = Vector3d.field18047;
+   private Vector3d field41239 = Vector3d.ZERO;
    private int field41240;
    private List<Class7828> field41241 = new ArrayList<Class7828>();
    public static final RenderType[] field41242 = RenderType.method14349().<RenderType>toArray(new RenderType[0]);

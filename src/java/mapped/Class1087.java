@@ -66,7 +66,7 @@ public class Class1087 extends Class1018 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return !this.method3005() ? 1.3F : var2.field39969 * 0.95F;
    }
 }

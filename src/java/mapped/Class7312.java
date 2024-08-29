@@ -100,7 +100,7 @@ public class Class7312 {
    public void method23109(int var1, int var2, int var3, int var4, float var5) {
       int var8 = this.field31340 % this.field31345 * this.field31342;
       int var9 = this.field31340 / this.field31345 * this.field31343;
-      Class3192.method11451(
+      RenderUtil.method11451(
          (float)var1,
          (float)var2,
          (float)var3,

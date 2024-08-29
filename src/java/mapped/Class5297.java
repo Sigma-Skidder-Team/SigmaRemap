@@ -18,7 +18,7 @@ public class Class5297 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23813 = false;
     }
 
@@ -26,16 +26,16 @@ public class Class5297 extends Module {
     private void method16636(Class4435 var1) {
         double var4 = 1.0E-5;
         boolean var6 = mc.world
-                .method7055(mc.player, mc.player.field5035.method19662(var4, 0.0, var4).method19662(-var4, 0.0, -var4))
+                .method7055(mc.player, mc.player.boundingBox.method19662(var4, 0.0, var4).method19662(-var4, 0.0, -var4))
                 .count()
                 > 0L;
         if (var6) {
-            if (!mc.player.field5037) {
-                if (!mc.player.field5036) {
-                    var1.method13995(!mc.gameSettings.field44637.isKeyDown() ? 0.0 : var1.method13994());
+            if (!mc.player.collidedHorizontally) {
+                if (!mc.player.onGround) {
+                    var1.method13995(!mc.gameSettings.keyBindSneak.isKeyDown() ? 0.0 : var1.method13994());
                 }
             } else if (!this.getBooleanValueFromSetttingName("AutoClimb") && !mc.gameSettings.field44636.isKeyDown()) {
-                var1.method13995(!mc.gameSettings.field44637.isKeyDown() ? 0.0 : var1.method13994());
+                var1.method13995(!mc.gameSettings.keyBindSneak.isKeyDown() ? 0.0 : var1.method13994());
             } else {
                 var1.method13995(0.6);
             }
@@ -44,9 +44,9 @@ public class Class5297 extends Module {
         }
 
         if (Class5628.method17730(mc.player, 0.001F) && this.getBooleanValueFromSetttingName("SneakVClip")) {
-            if (mc.gameSettings.field44637.isKeyDown()
+            if (mc.gameSettings.keyBindSneak.isKeyDown()
                     && !this.field23813
-                    && mc.world.method7055(mc.player, mc.player.field5035.method19667(0.0, -2.8, 0.0)).count() == 0L) {
+                    && mc.world.method7055(mc.player, mc.player.boundingBox.method19667(0.0, -2.8, 0.0)).count() == 0L) {
                 mc.getConnection()
                         .sendPacket(
                                 new Class5605(
@@ -57,13 +57,13 @@ public class Class5297 extends Module {
                                 )
                         );
                 mc.player
-                        .method3215(
+                        .setPosition(
                                 mc.player.getPositionVec().field18048,
                                 mc.player.getPositionVec().field18049 - 2.8,
                                 mc.player.getPositionVec().field18050
                         );
-                mc.gameSettings.field44637.field13071 = false;
-                mc.player.field5036 = false;
+                mc.gameSettings.keyBindSneak.field13071 = false;
+                mc.player.onGround = false;
                 mc.timer.field40360 = 0.08F;
                 var1.method13900(true);
                 this.field23813 = true;
@@ -71,8 +71,8 @@ public class Class5297 extends Module {
             }
         } else {
             if (this.getBooleanValueFromSetttingName("Ceiling")
-                    && !mc.gameSettings.field44637.isKeyDown()
-                    && mc.world.method7055(mc.player, mc.player.field5035.method19667(0.0, 0.01, 0.0)).count() > 0L) {
+                    && !mc.gameSettings.keyBindSneak.isKeyDown()
+                    && mc.world.method7055(mc.player, mc.player.boundingBox.method19667(0.0, 0.01, 0.0)).count() > 0L) {
                 var1.method13995(1.0E-14);
                 Class9567.method37088(var1, 0.689 + (double) Class9567.method37078() * 0.06);
             }
@@ -93,15 +93,15 @@ public class Class5297 extends Module {
         if (this.isEnabled() && var1.method13921()) {
             Class9629 var4 = Class5628.method17760(1.0E-4);
             if (this.getBooleanValueFromSetttingName("Ceiling")
-                    && !mc.player.field5036
-                    && mc.world.method7055(mc.player, mc.player.field5035.method19667(0.0, 1.0E-6, 0.0)).count() > 0L) {
+                    && !mc.player.onGround
+                    && mc.world.method7055(mc.player, mc.player.boundingBox.method19667(0.0, 1.0E-6, 0.0)).count() > 0L) {
                 var1.method13912(var1.method13911() + 4.9E-7);
             }
 
             double var5 = 1.0E-5;
             if (var4 != null
                     && mc.world
-                    .method7055(mc.player, mc.player.field5035.method19662(var5, 0.0, var5).method19662(-var5, 0.0, -var5))
+                    .method7055(mc.player, mc.player.boundingBox.method19662(var5, 0.0, var5).method19662(-var5, 0.0, -var5))
                     .count()
                     > 0L) {
                 if (!Class5628.method17730(mc.player, 1.0E-4F)) {
@@ -129,7 +129,7 @@ public class Class5297 extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (var1.method13903() != null
                     && !var1.method13903().method19516()
-                    && var1.method13903().method19514().field28450 > mc.player.field5035.field28450 + 1.0) {
+                    && var1.method13903().method19514().field28450 > mc.player.boundingBox.field28450 + 1.0) {
                 var1.method13900(true);
             }
         }

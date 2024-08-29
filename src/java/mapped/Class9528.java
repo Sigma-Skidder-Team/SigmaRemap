@@ -141,7 +141,7 @@ public class Class9528 {
       }
 
       Iterator var24 = var4.iterator();
-      Class5325 var25 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Class5344.class);
+      ModuleWithModuleSettings var25 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Class5344.class);
       float var7 = 150.0F;
       if (var25.isEnabled() && var25.getStringSettingValueByName("Type").equalsIgnoreCase("PingSpoof")) {
          var7 += var25.method16726().getNumberValueBySettingName("Lag");
@@ -212,12 +212,12 @@ public class Class9528 {
                      for (Class9629<Vector3d, Long> var30 : var27) {
                         Vector3d var31 = var30.method37538();
                         double var19 = 0.15;
-                        Class6488 var21 = new Class6488(
+                        AxisAlignedBB var21 = new AxisAlignedBB(
                            var31.field18048 - var19,
                            var31.field18049,
                            var31.field18050 - var19,
                            var31.field18048 + var19,
-                           var31.field18049 + this.field44347.player.field5035.method19677(),
+                           var31.field18049 + this.field44347.player.boundingBox.method19677(),
                            var31.field18050 + var19
                         );
                         double var22 = Class5628.method17755(var21);

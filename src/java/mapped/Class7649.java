@@ -8,7 +8,7 @@ public class Class7649 extends Class7647 {
    }
 
    @Override
-   public boolean method25122(Class6488 var1) {
+   public boolean method25122(AxisAlignedBB var1) {
       return true;
    }
 }

@@ -23,7 +23,7 @@ public class Class7353 implements Class7352 {
    }
 
    @Override
-   public Pair<ResourceLocation, Either<Class7744, Class7608<Class7744>>> method23306(CommandContext<Class6619> var1) throws CommandSyntaxException {
+   public Pair<ResourceLocation, Either<Class7744, ITag<Class7744>>> method23306(CommandContext<Class6619> var1) throws CommandSyntaxException {
       return Pair.of(this.field31471, Either.left(Class7566.method24775(var1, this.field31471)));
    }
 }

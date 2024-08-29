@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class Class8634 {
    public static final Class8634 field38839 = new Class8634();
-   private final Class7608<Item> field38840;
+   private final ITag<Item> field38840;
    private final Item field38841;
    private final Class8840 field38842;
    private final Class8840 field38843;
@@ -31,7 +31,7 @@ public class Class8634 {
    }
 
    public Class8634(
-           Class7608<Item> var1, Item var2, Class8840 var3, Class8840 var4, Class8605[] var5, Class8605[] var6, Class8812 var7, Class8811 var8
+           ITag<Item> var1, Item var2, Class8840 var3, Class8840 var4, Class8605[] var5, Class8605[] var6, Class8812 var7, Class8811 var8
    ) {
       this.field38840 = var1;
       this.field38841 = var2;
@@ -101,7 +101,7 @@ public class Class8634 {
                var7 = Registry.ITEM.method9187(var8).orElseThrow(() -> new JsonSyntaxException("Unknown item id '" + var8 + "'"));
             }
 
-            Class7608 var12 = null;
+            ITag var12 = null;
             if (var3.has("tag")) {
                ResourceLocation var9 = new ResourceLocation(JSONUtils.method32763(var3, "tag"));
                var12 = Class9443.method36296().method32658().method27135(var9);

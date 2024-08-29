@@ -4,25 +4,25 @@ import java.util.Random;
 
 public class Class3409 extends Block {
    private static String[] field19089;
-   public static final Class6408 field19090 = Block.method11539(0.0, 0.0, 0.0, 16.0, 14.0, 16.0);
+   public static final VoxelShape field19090 = Block.method11539(0.0, 0.0, 0.0, 16.0, 14.0, 16.0);
 
    public Class3409(AbstractBlock var1) {
       super(var1);
    }
 
    @Override
-   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19090;
    }
 
    @Override
-   public Class6408 method11995(BlockState var1, Class1665 var2, BlockPos var3) {
-      return Class8022.method27426();
+   public VoxelShape method11995(BlockState var1, Class1665 var2, BlockPos var3) {
+      return VoxelShapes.method27426();
    }
 
    @Override
-   public Class6408 method11635(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
-      return Class8022.method27426();
+   public VoxelShape method11635(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+      return VoxelShapes.method27426();
    }
 
    @Override

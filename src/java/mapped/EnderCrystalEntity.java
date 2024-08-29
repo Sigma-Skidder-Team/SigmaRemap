@@ -4,19 +4,19 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 
 public class EnderCrystalEntity extends Entity {
-   private static final Class9289<Optional<BlockPos>> field5521 = Class9361.<Optional<BlockPos>>method35441(EnderCrystalEntity.class, Class7784.field33402);
-   private static final Class9289<Boolean> field5522 = Class9361.<Boolean>method35441(EnderCrystalEntity.class, Class7784.field33398);
+   private static final DataParameter<Optional<BlockPos>> field5521 = EntityDataManager.<Optional<BlockPos>>method35441(EnderCrystalEntity.class, Class7784.field33402);
+   private static final DataParameter<Boolean> field5522 = EntityDataManager.<Boolean>method35441(EnderCrystalEntity.class, Class7784.field33398);
    public int field5523;
 
    public EnderCrystalEntity(EntityType<? extends EnderCrystalEntity> var1, World var2) {
       super(var1, var2);
-      this.field5019 = true;
-      this.field5523 = this.field5054.nextInt(100000);
+      this.preventEntitySpawning = true;
+      this.field5523 = this.rand.nextInt(100000);
    }
 
    public EnderCrystalEntity(World var1, double var2, double var4, double var6) {
       this(EntityType.field41023, var1);
-      this.method3215(var2, var4, var6);
+      this.setPosition(var2, var4, var6);
    }
 
    @Override
@@ -25,9 +25,9 @@ public class EnderCrystalEntity extends Entity {
    }
 
    @Override
-   public void method2850() {
-      this.method3210().method35442(field5521, Optional.<BlockPos>empty());
-      this.method3210().method35442(field5522, true);
+   public void registerData() {
+      this.method3210().register(field5521, Optional.<BlockPos>empty());
+      this.method3210().register(field5522, true);
    }
 
    @Override
@@ -70,7 +70,7 @@ public class EnderCrystalEntity extends Entity {
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.method2760(var1)) {
          if (!(var1.method31109() instanceof Class1007)) {
-            if (!this.field5041 && !this.world.field9020) {
+            if (!this.removed && !this.world.field9020) {
                this.method2904();
                if (!var1.method31131()) {
                   this.world.method6755((Entity)null, this.getPosX(), this.getPosY(), this.getPosZ(), 6.0F, Class2141.field14016);

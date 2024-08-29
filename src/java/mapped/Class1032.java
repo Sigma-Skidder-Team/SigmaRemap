@@ -35,8 +35,8 @@ public class Class1032 extends Class1031 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
+   public void registerData() {
+      super.registerData();
    }
 
    @Override
@@ -69,7 +69,7 @@ public class Class1032 extends Class1031 {
                return this.method3345(((Class1100)var1).method5270());
             } else {
                return var1 instanceof Class880 && ((Class880)var1).method3089() == Class7809.field33508
-                  ? this.method3344() == null && var1.method3344() == null
+                  ? this.getTeam() == null && var1.getTeam() == null
                   : false;
             }
          } else {
@@ -120,27 +120,27 @@ public class Class1032 extends Class1031 {
 
    // $VF: synthetic method
    public static Random method4604(Class1032 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4605(Class1032 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4606(Class1032 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4607(Class1032 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4608(Class1032 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method

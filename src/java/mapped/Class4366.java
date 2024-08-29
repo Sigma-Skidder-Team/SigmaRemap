@@ -91,14 +91,14 @@ public class Class4366 extends Class4247 {
 
    @Override
    public void method13027(float var1) {
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269()),
          -14540254
       );
-      Class3192.method11428(
+      RenderUtil.method11428(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
@@ -106,7 +106,7 @@ public class Class4366 extends Class4247 {
          ClientColors.DEEP_TEAL.getColor
       );
       if (this.method13114(this.method13309(), this.method13310()) && this.method13310() - this.method13272() < this.method13269()) {
-         Class3192.method11428(
+         RenderUtil.method11428(
             (float)(this.method13263() + 1),
             (float)(this.method13265() + 1),
             (float)(this.method13263() + this.method13267() - 1),
@@ -118,9 +118,9 @@ public class Class4366 extends Class4247 {
       int var4 = this.method13263() + this.method13267() - 11;
       int var5 = this.method13265() + this.method13269() - 12;
       if (!this.method13673()) {
-         Class3192.method11434((float)var4, (float)var5, (float)(var4 + 6), (float)var5, (float)(var4 + 3), (float)(var5 + 3), ClientColors.MID_GREY.getColor);
+         RenderUtil.method11434((float)var4, (float)var5, (float)(var4 + 6), (float)var5, (float)(var4 + 3), (float)(var5 + 3), ClientColors.MID_GREY.getColor);
       } else {
-         Class3192.method11434(
+         RenderUtil.method11434(
             (float)var4, (float)(var5 + 3), (float)(var4 + 6), (float)(var5 + 3), (float)(var4 + 3), (float)var5, ClientColors.MID_GREY.getColor
          );
       }
@@ -132,24 +132,24 @@ public class Class4366 extends Class4247 {
       }
 
       if (this.method13303() != null) {
-         Class3192.method11415(this);
-         Class3192.method11439(
+         RenderUtil.method11415(this);
+         RenderUtil.method11439(
             this.method13305(),
             (float)(this.method13263() + 7),
             (float)(this.method13265() + (this.method13269() - this.method13305().method23952()) / 2),
             this.method13303(),
             Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * 0.5F)
          );
-         Class3192.method11422();
+         RenderUtil.method11422();
       }
 
       if (!this.method13673()) {
-         Class3192.method11415(this);
+         RenderUtil.method11415(this);
       }
 
       super.method13027(var1);
       if (!this.method13673()) {
-         Class3192.method11422();
+         RenderUtil.method11422();
       }
    }
 

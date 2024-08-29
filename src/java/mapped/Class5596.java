@@ -22,8 +22,8 @@ public class Class5596 implements Packet<Class5116> {
       this.field24835 = var1.getPosX();
       this.field24836 = var1.getPosY();
       this.field24837 = var1.getPosZ();
-      this.field24838 = (byte)((int)(var1.field5031 * 256.0F / 360.0F));
-      this.field24839 = (byte)((int)(var1.field5032 * 256.0F / 360.0F));
+      this.field24838 = (byte)((int)(var1.rotationYaw * 256.0F / 360.0F));
+      this.field24839 = (byte)((int)(var1.rotationPitch * 256.0F / 360.0F));
    }
 
    @Override

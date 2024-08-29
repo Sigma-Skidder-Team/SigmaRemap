@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class Class1093 extends Class1009 implements Class1008, Class1092 {
-   private static final Class9289<Boolean> field5982 = Class9361.<Boolean>method35441(Class1093.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5982 = EntityDataManager.<Boolean>method35441(Class1093.class, Class7784.field33398);
    private int field5983;
    public static final ImmutableList<? extends Class7963<? extends Class7882<? super Class1093>>> field5984 = ImmutableList.of(
       Class7963.field34239, Class7963.field34240
@@ -90,13 +90,13 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5982, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5982, false);
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       super.method3155(var1);
       if (field5982.equals(var1)) {
          this.method3385();

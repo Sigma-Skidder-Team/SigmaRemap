@@ -70,8 +70,8 @@ public class Class4329 extends Class4305 {
       if (var5 != null) {
          this.field21138.method13288(var5.method36702());
          if (var5.method36701() != null) {
-            Class3192.method11419((float)(this.field20895 + 295), (float)(this.field20896 + 280), 190.0F, 50.0F);
-            Class3192.method11449(
+            RenderUtil.method11419((float)(this.field20895 + 295), (float)(this.field20896 + 280), 190.0F, 50.0F);
+            RenderUtil.method11449(
                (float)(this.field20895 + 316),
                (float)(this.field20896 + 280),
                190.0F,
@@ -79,19 +79,19 @@ public class Class4329 extends Class4305 {
                var5.method36701(),
                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
             );
-            Class3192.method11422();
+            RenderUtil.method11422();
          }
       }
 
-      Class3192.method11439(ResourceRegistry.field38860, 100.0F, 100.0F, "Redeem Premium", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
-      Class3192.method11439(
+      RenderUtil.method11439(ResourceRegistry.field38860, 100.0F, 100.0F, "Redeem Premium", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont25,
          100.0F,
          150.0F,
          "Visit http://sigmaclient.info for more info",
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1)
       );
-      Class3192.method11439(ResourceRegistry.JelloLightFont18, 100.0F, 263.0F, this.field21135, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1));
+      RenderUtil.method11439(ResourceRegistry.JelloLightFont18, 100.0F, 263.0F, this.field21135, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1));
       super.method13027(var1);
    }
 }

@@ -366,9 +366,9 @@ public class Class7699 {
 
          for (Class1026 var7 : var5) {
             BlockPos var8 = var7.getPosition();
-            if (var7.field5041 || var7.world.getDimensionKey() != this.field32978.getDimensionKey() || this.field32977.method8318(var8) >= 12544.0) {
+            if (var7.removed || var7.world.getDimensionKey() != this.field32978.getDimensionKey() || this.field32977.method8318(var8) >= 12544.0) {
                var4.add(var7);
-            } else if (var7.field5055 > 600) {
+            } else if (var7.ticksExisted > 600) {
                if (this.field32978.method6942(var7.getUniqueID()) == null) {
                   var4.add(var7);
                }
@@ -467,7 +467,7 @@ public class Class7699 {
          var2.method4548(true);
          var2.method4558(0);
          if (!var4 && var3 != null) {
-            var2.method3215((double)var3.getX() + 0.5, (double)var3.getY() + 1.0, (double)var3.getZ() + 0.5);
+            var2.setPosition((double)var3.getX() + 0.5, (double)var3.getY() + 1.0, (double)var3.getZ() + 0.5);
             var2.method4276(this.field32978, this.field32978.method6807(var3), Class2202.field14398, (Class5093)null, (CompoundNBT)null);
             var2.method4545(var1, false);
             var2.method3061(true);

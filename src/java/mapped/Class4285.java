@@ -25,7 +25,7 @@ public class Class4285 extends Class4278 {
          GL11.glTranslatef((float)(this.field20895 + this.field20897 / 2), (float)(this.field20896 + this.field20898 / 2), 0.0F);
          GL11.glRotatef(var4 * 30.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-this.field20895 - this.field20897 / 2), (float)(-this.field20896 - this.field20898 / 2), 0.0F);
-         Class3192.method11449(
+         RenderUtil.method11449(
             (float)this.field20895,
             (float)this.field20896,
             (float)this.field20897,

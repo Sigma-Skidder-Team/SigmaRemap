@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class Class1074 extends AbstractHorseEntity {
    private static final UUID field5916 = UUID.fromString("556E1665-8B10-40C8-8F9D-CF9B1667F295");
-   private static final Class9289<Integer> field5917 = Class9361.<Integer>method35441(Class1074.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5917 = EntityDataManager.<Integer>method35441(Class1074.class, Class7784.field33391);
 
    public Class1074(EntityType<? extends Class1074> var1, World var2) {
       super(var1, var2);
@@ -19,9 +19,9 @@ public class Class1074 extends AbstractHorseEntity {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5917, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5917, 0);
    }
 
    @Override
@@ -57,11 +57,11 @@ public class Class1074 extends AbstractHorseEntity {
    }
 
    private void method4992(int var1) {
-      this.field5063.method35446(field5917, var1);
+      this.dataManager.method35446(field5917, var1);
    }
 
    private int method4993() {
-      return this.field5063.<Integer>method35445(field5917);
+      return this.dataManager.<Integer>method35445(field5917);
    }
 
    private void method4994(Class2190 var1, Class2102 var2) {
@@ -103,7 +103,7 @@ public class Class1074 extends AbstractHorseEntity {
       ItemStack var4 = this.method4990();
       super.method4902(var1);
       ItemStack var5 = this.method4990();
-      if (this.field5055 > 20 && this.method4900(var5) && var4 != var5) {
+      if (this.ticksExisted > 20 && this.method4900(var5) && var4 != var5) {
          this.method2863(Sounds.field26669, 0.5F, 1.0F);
       }
    }
@@ -111,7 +111,7 @@ public class Class1074 extends AbstractHorseEntity {
    @Override
    public void method4950(Class8447 var1) {
       super.method4950(var1);
-      if (this.field5054.nextInt(10) == 0) {
+      if (this.rand.nextInt(10) == 0) {
          this.method2863(Sounds.field26670, var1.method29710() * 0.6F, var1.method29711());
       }
    }
@@ -155,7 +155,7 @@ public class Class1074 extends AbstractHorseEntity {
             return ActionResultType.method9002(this.world.field9020);
          }
 
-         if (this.method3329()) {
+         if (this.isBeingRidden()) {
             return super.method4285(var1, var2);
          }
       }
@@ -205,11 +205,11 @@ public class Class1074 extends AbstractHorseEntity {
       if (!(var2 instanceof Class1067)) {
          Class1074 var5 = (Class1074)var2;
          var6 = EntityType.field41038.method33215(var1);
-         int var7 = this.field5054.nextInt(9);
+         int var7 = this.rand.nextInt(9);
          Class2190 var8;
          if (var7 >= 4) {
             if (var7 >= 8) {
-               var8 = Util.<Class2190>method38518(Class2190.values(), this.field5054);
+               var8 = Util.<Class2190>method38518(Class2190.values(), this.rand);
             } else {
                var8 = var5.method4995();
             }
@@ -217,11 +217,11 @@ public class Class1074 extends AbstractHorseEntity {
             var8 = this.method4995();
          }
 
-         int var9 = this.field5054.nextInt(5);
+         int var9 = this.rand.nextInt(5);
          Class2102 var10;
          if (var9 >= 2) {
             if (var9 >= 4) {
-               var10 = Util.<Class2102>method38518(Class2102.values(), this.field5054);
+               var10 = Util.<Class2102>method38518(Class2102.values(), this.rand);
             } else {
                var10 = var5.method4996();
             }
@@ -253,13 +253,13 @@ public class Class1074 extends AbstractHorseEntity {
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       Class2190 var8;
       if (!(var4 instanceof Class5098)) {
-         var8 = Util.<Class2190>method38518(Class2190.values(), this.field5054);
+         var8 = Util.<Class2190>method38518(Class2190.values(), this.rand);
          var4 = new Class5098(var8);
       } else {
          var8 = ((Class5098)var4).field23195;
       }
 
-      this.method4994(var8, Util.<Class2102>method38518(Class2102.values(), this.field5054));
+      this.method4994(var8, Util.<Class2102>method38518(Class2102.values(), this.rand));
       return super.method4276(var1, var2, var3, (Class5093)var4, var5);
    }
 }

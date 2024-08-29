@@ -7,15 +7,15 @@ import javax.annotation.Nullable;
 
 public class Class3218 extends Class3213 {
    public static final Class8553 field18627 = Class3198.field18484;
-   private static final Class6408 field18628 = Block.method11539(2.0, 0.0, 2.0, 14.0, 4.0, 14.0);
-   private static final Class6408 field18629 = Block.method11539(3.0, 4.0, 4.0, 13.0, 5.0, 12.0);
-   private static final Class6408 field18630 = Block.method11539(4.0, 5.0, 6.0, 12.0, 10.0, 10.0);
-   private static final Class6408 field18631 = Block.method11539(0.0, 10.0, 3.0, 16.0, 16.0, 13.0);
-   private static final Class6408 field18632 = Block.method11539(4.0, 4.0, 3.0, 12.0, 5.0, 13.0);
-   private static final Class6408 field18633 = Block.method11539(6.0, 5.0, 4.0, 10.0, 10.0, 12.0);
-   private static final Class6408 field18634 = Block.method11539(3.0, 10.0, 0.0, 13.0, 16.0, 16.0);
-   private static final Class6408 field18635 = Class8022.method27432(field18628, field18629, field18630, field18631);
-   private static final Class6408 field18636 = Class8022.method27432(field18628, field18632, field18633, field18634);
+   private static final VoxelShape field18628 = Block.method11539(2.0, 0.0, 2.0, 14.0, 4.0, 14.0);
+   private static final VoxelShape field18629 = Block.method11539(3.0, 4.0, 4.0, 13.0, 5.0, 12.0);
+   private static final VoxelShape field18630 = Block.method11539(4.0, 5.0, 6.0, 12.0, 10.0, 10.0);
+   private static final VoxelShape field18631 = Block.method11539(0.0, 10.0, 3.0, 16.0, 16.0, 13.0);
+   private static final VoxelShape field18632 = Block.method11539(4.0, 4.0, 3.0, 12.0, 5.0, 13.0);
+   private static final VoxelShape field18633 = Block.method11539(6.0, 5.0, 4.0, 10.0, 10.0, 12.0);
+   private static final VoxelShape field18634 = Block.method11539(3.0, 10.0, 0.0, 13.0, 16.0, 16.0);
+   private static final VoxelShape field18635 = VoxelShapes.method27432(field18628, field18629, field18630, field18631);
+   private static final VoxelShape field18636 = VoxelShapes.method27432(field18628, field18632, field18633, field18634);
    private static final ITextComponent field18637 = new TranslationTextComponent("container.repair");
 
    public Class3218(AbstractBlock var1) {
@@ -46,7 +46,7 @@ public class Class3218 extends Class3213 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       Direction var7 = var1.<Direction>method23463(field18627);
       return var7.method544() != Class113.field413 ? field18636 : field18635;
    }

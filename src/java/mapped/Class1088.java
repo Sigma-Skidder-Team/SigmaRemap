@@ -5,12 +5,12 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public class Class1088 extends Class1018 {
-   private static final Class9289<BlockPos> field5956 = Class9361.<BlockPos>method35441(Class1088.class, Class7784.field33401);
-   private static final Class9289<Boolean> field5957 = Class9361.<Boolean>method35441(Class1088.class, Class7784.field33398);
-   private static final Class9289<Boolean> field5958 = Class9361.<Boolean>method35441(Class1088.class, Class7784.field33398);
-   private static final Class9289<BlockPos> field5959 = Class9361.<BlockPos>method35441(Class1088.class, Class7784.field33401);
-   private static final Class9289<Boolean> field5960 = Class9361.<Boolean>method35441(Class1088.class, Class7784.field33398);
-   private static final Class9289<Boolean> field5961 = Class9361.<Boolean>method35441(Class1088.class, Class7784.field33398);
+   private static final DataParameter<BlockPos> field5956 = EntityDataManager.<BlockPos>method35441(Class1088.class, Class7784.field33401);
+   private static final DataParameter<Boolean> field5957 = EntityDataManager.<Boolean>method35441(Class1088.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5958 = EntityDataManager.<Boolean>method35441(Class1088.class, Class7784.field33398);
+   private static final DataParameter<BlockPos> field5959 = EntityDataManager.<BlockPos>method35441(Class1088.class, Class7784.field33401);
+   private static final DataParameter<Boolean> field5960 = EntityDataManager.<Boolean>method35441(Class1088.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5961 = EntityDataManager.<Boolean>method35441(Class1088.class, Class7784.field33398);
    private int field5962;
    public static final Predicate<Class880> field5963 = var0 -> var0.method3005() && !var0.method3250();
 
@@ -18,67 +18,67 @@ public class Class1088 extends Class1018 {
       super(var1, var2);
       this.method4224(Class2163.field14191, 0.0F);
       this.field5596 = new Class6838(this);
-      this.field5051 = 1.0F;
+      this.stepHeight = 1.0F;
    }
 
    public void method5041(BlockPos var1) {
-      this.field5063.method35446(field5956, var1);
+      this.dataManager.method35446(field5956, var1);
    }
 
    private BlockPos method5042() {
-      return this.field5063.<BlockPos>method35445(field5956);
+      return this.dataManager.<BlockPos>method35445(field5956);
    }
 
    private void method5043(BlockPos var1) {
-      this.field5063.method35446(field5959, var1);
+      this.dataManager.method35446(field5959, var1);
    }
 
    private BlockPos method5044() {
-      return this.field5063.<BlockPos>method35445(field5959);
+      return this.dataManager.<BlockPos>method35445(field5959);
    }
 
    public boolean method5045() {
-      return this.field5063.<Boolean>method35445(field5957);
+      return this.dataManager.<Boolean>method35445(field5957);
    }
 
    private void method5046(boolean var1) {
-      this.field5063.method35446(field5957, var1);
+      this.dataManager.method35446(field5957, var1);
    }
 
    public boolean method5047() {
-      return this.field5063.<Boolean>method35445(field5958);
+      return this.dataManager.<Boolean>method35445(field5958);
    }
 
    private void method5048(boolean var1) {
       this.field5962 = !var1 ? 0 : 1;
-      this.field5063.method35446(field5958, var1);
+      this.dataManager.method35446(field5958, var1);
    }
 
    private boolean method5049() {
-      return this.field5063.<Boolean>method35445(field5960);
+      return this.dataManager.<Boolean>method35445(field5960);
    }
 
    private void method5050(boolean var1) {
-      this.field5063.method35446(field5960, var1);
+      this.dataManager.method35446(field5960, var1);
    }
 
    private boolean method5051() {
-      return this.field5063.<Boolean>method35445(field5961);
+      return this.dataManager.<Boolean>method35445(field5961);
    }
 
    private void method5052(boolean var1) {
-      this.field5063.method35446(field5961, var1);
+      this.dataManager.method35446(field5961, var1);
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5956, BlockPos.ZERO);
-      this.field5063.method35442(field5957, false);
-      this.field5063.method35442(field5959, BlockPos.ZERO);
-      this.field5063.method35442(field5960, false);
-      this.field5063.method35442(field5961, false);
-      this.field5063.method35442(field5958, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5956, BlockPos.ZERO);
+      this.dataManager.register(field5957, false);
+      this.dataManager.register(field5959, BlockPos.ZERO);
+      this.dataManager.register(field5960, false);
+      this.dataManager.register(field5961, false);
+      this.dataManager.register(field5958, false);
    }
 
    @Override
@@ -159,7 +159,7 @@ public class Class1088 extends Class1018 {
    @Nullable
    @Override
    public Class9455 method4241() {
-      return !this.method3250() && this.field5036 && !this.method3005() ? Sounds.field27164 : super.method4241();
+      return !this.method3250() && this.onGround && !this.method3005() ? Sounds.field27164 : super.method4241();
    }
 
    @Override
@@ -197,7 +197,7 @@ public class Class1088 extends Class1018 {
 
    @Override
    public float method3238() {
-      return this.field5044 + 0.15F;
+      return this.distanceWalkedOnStepModified + 0.15F;
    }
 
    @Override
@@ -300,7 +300,7 @@ public class Class1088 extends Class1018 {
 
    // $VF: synthetic method
    public static Random method5061(Class1088 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -320,7 +320,7 @@ public class Class1088 extends Class1018 {
 
    // $VF: synthetic method
    public static Random method5065(Class1088 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method

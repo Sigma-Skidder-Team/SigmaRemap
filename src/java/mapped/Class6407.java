@@ -2,13 +2,13 @@ package mapped;
 
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 
-public class Class6407 extends Class6408 {
+public class Class6407 extends VoxelShape {
    private static String[] field28029;
-   private final Class6408 field28030;
+   private final VoxelShape field28030;
    private final Class113 field28031;
    private static final DoubleList field28032 = new Class53(1);
 
-   public Class6407(Class6408 var1, Class113 var2, int var3) {
+   public Class6407(VoxelShape var1, Class113 var2, int var3) {
       super(method19510(var1.field28033, var2, var3));
       this.field28030 = var1;
       this.field28031 = var2;

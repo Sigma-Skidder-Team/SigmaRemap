@@ -88,8 +88,8 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
       }
    }
 
-   public Class6408 method648(BlockState var1, long var2, Direction var4) {
-      return !var1.method23410() ? Class8022.method27425() : var1.method23388(this.field746.method7386(), this.field750.method8375(var2), var4);
+   public VoxelShape method648(BlockState var1, long var2, Direction var4) {
+      return !var1.method23410() ? VoxelShapes.method27425() : var1.method23388(this.field746.method7386(), this.field750.method8375(var2), var4);
    }
 
    public static int method649(Class1665 var0, BlockState var1, BlockPos var2, BlockState var3, BlockPos var4, Direction var5, int var6) {
@@ -98,9 +98,9 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
       if (!var9 && !var10) {
          return var6;
       } else {
-         Class6408 var11 = !var9 ? Class8022.method27425() : var1.method23389(var0, var2);
-         Class6408 var12 = !var10 ? Class8022.method27425() : var3.method23389(var0, var4);
-         return !Class8022.method27443(var11, var12, var5) ? var6 : 16;
+         VoxelShape var11 = !var9 ? VoxelShapes.method27425() : var1.method23389(var0, var2);
+         VoxelShape var12 = !var10 ? VoxelShapes.method27425() : var3.method23389(var0, var4);
+         return ! VoxelShapes.method27443(var11, var12, var5) ? var6 : 16;
       }
    }
 

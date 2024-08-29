@@ -149,7 +149,7 @@ public class Class7473 {
       return this.method24203() && this.field32115 == this.field32118 * this.field32117;
    }
 
-   public static Vector3d method24206(Class9502 var0, Class113 var1, Vector3d var2, Class8847 var3) {
+   public static Vector3d method24206(Class9502 var0, Class113 var1, Vector3d var2, EntitySize var3) {
       double var6 = (double)var0.field44254 - (double)var3.field39968;
       double var8 = (double)var0.field44255 - (double)var3.field39969;
       BlockPos var10 = var0.field44253;
@@ -174,7 +174,7 @@ public class Class7473 {
       return new Vector3d(var11, var14, var17);
    }
 
-   public static Class9761 method24207(ServerWorld var0, Class9502 var1, Class113 var2, Vector3d var3, Class8847 var4, Vector3d var5, float var6, float var7) {
+   public static Class9761 method24207(ServerWorld var0, Class9502 var1, Class113 var2, Vector3d var3, EntitySize var4, Vector3d var5, float var6, float var7) {
       BlockPos var10 = var1.field44253;
       BlockState var11 = var0.getBlockState(var10);
       Class113 var12 = var11.<Class113>method23463(Class8820.field39712);

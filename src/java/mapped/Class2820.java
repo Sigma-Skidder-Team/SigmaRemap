@@ -55,7 +55,7 @@ public class Class2820 extends Class2803<Class1105> {
    }
 
    public void method10998(Class1105 var1, float var2, float var3, float var4, float var5, float var6) {
-      float var9 = var4 - (float)var1.field5055;
+      float var9 = var4 - (float)var1.ticksExisted;
       this.field17572.field31036 = var5 * (float) (Math.PI / 180.0);
       this.field17572.field31035 = var6 * (float) (Math.PI / 180.0);
       float var10 = (1.0F - var1.method5309(var9)) * 0.55F;

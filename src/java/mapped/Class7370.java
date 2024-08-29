@@ -40,7 +40,7 @@ public class Class7370 extends Class7361 {
       }
 
       double var3 = this.field31544.method11343(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ());
-      if (!(var3 < 100.0) && !(var3 > 22500.0) && !this.field31519.field5037 && !this.field31519.field5038) {
+      if (!(var3 < 100.0) && !(var3 > 22500.0) && !this.field31519.collidedHorizontally && !this.field31519.collidedVertically) {
          this.field31519.method3043(1.0F);
       } else {
          this.field31519.method3043(0.0F);

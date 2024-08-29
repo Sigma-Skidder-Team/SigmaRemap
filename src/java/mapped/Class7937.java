@@ -106,7 +106,7 @@ public final class Class7937 extends Class7938 {
       this.field34029.set(this.method26716(var3, var4, var1), this.method26716(var3, var4, var2), var5);
    }
 
-   public static Class7937 method26724(Class7938 var0, Class7938 var1, Class56 var2, Class56 var3, Class56 var4, Class9477 var5) {
+   public static Class7937 method26724(Class7938 var0, Class7938 var1, Class56 var2, Class56 var3, Class56 var4, IBooleanFunction var5) {
       Class7937 var8 = new Class7937(var2.method194().size() - 1, var3.method194().size() - 1, var4.method194().size() - 1);
       int[] var9 = new int[]{Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
       var2.method192((var7, var8x, var9x) -> {

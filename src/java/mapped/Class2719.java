@@ -9,18 +9,18 @@ public class Class2719 extends Class2709<Class880> {
 
    @Override
    public boolean method10803() {
-      return this.field17153.method3344() != null ? super.method10803() : false;
+      return this.field17153.getTeam() != null ? super.method10803() : false;
    }
 
    @Override
-   public Class6488 method10921(double var1) {
+   public AxisAlignedBB method10921(double var1) {
       Direction var5 = ((Class1057)this.field17153).method4848();
       if (var5.method544() != Class113.field413) {
          return var5.method544() != Class113.field415
-            ? this.field17153.method3389().method19663(var1, 4.0, var1)
-            : this.field17153.method3389().method19663(var1, var1, 4.0);
+            ? this.field17153.getBoundingBox().method19663(var1, 4.0, var1)
+            : this.field17153.getBoundingBox().method19663(var1, var1, 4.0);
       } else {
-         return this.field17153.method3389().method19663(4.0, var1, var1);
+         return this.field17153.getBoundingBox().method19663(4.0, var1, var1);
       }
    }
 }

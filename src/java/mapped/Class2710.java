@@ -57,7 +57,7 @@ public class Class2710 extends Class2709<PlayerEntity> {
       }
 
       if (this.field17193 == null) {
-         if (this.field17190 != null && !this.field17192.method3328()) {
+         if (this.field17190 != null && !this.field17192.isPassenger()) {
             if (!Class1010.method4362(this.field17192, (PlayerEntity)this.field17190)) {
                if (this.field17190.getDistanceSq(this.field17192) > 256.0 && this.field17195++ >= 30 && Class1010.method4363(this.field17192, this.field17190)) {
                   this.field17195 = 0;

@@ -104,7 +104,7 @@ public class Class4272 extends Class4247 {
 
       this.method13270((int)((float)this.field20704 * var4));
       if (this.field20703.calcPercent() != 0.0F) {
-         Class3192.method11449(
+         RenderUtil.method11449(
             (float)this.field20895,
             (float)(this.field20896 + this.field20898),
             (float)this.field20897,
@@ -112,12 +112,12 @@ public class Class4272 extends Class4247 {
             ResourcesDecrypter.shadowBottomPNG,
             Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20703.calcPercent() * var1 * 0.3F)
          );
-         Class3192.method11415(this);
-         Class3192.method11424(
+         RenderUtil.method11415(this);
+         RenderUtil.method11424(
             (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, Class5628.method17688(-723724, var1)
          );
          if (field20706 != null && Class8233.field35347 != null && Class8233.field35347.isEmpty()) {
-            Class3192.method11439(
+            RenderUtil.method11439(
                ResourceRegistry.JelloLightFont14,
                (float)(this.field20895 + 40),
                (float)(this.field20896 + 110),
@@ -127,7 +127,7 @@ public class Class4272 extends Class4247 {
          }
 
          super.method13027(var1);
-         Class3192.method11422();
+         RenderUtil.method11422();
       }
    }
 }

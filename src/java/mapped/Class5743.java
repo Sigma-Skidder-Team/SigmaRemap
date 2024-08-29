@@ -22,15 +22,15 @@ public class Class5743<T extends Entity> extends Class5712<AbstractClientPlayerE
       var11.method11009(false);
       var11.field17432.field31039 = true;
       float var12 = var1.field4967;
-      float var13 = var1.field5032;
+      float var13 = var1.rotationPitch;
       float var14 = Class8603.method30791(var8, 0.15, 0.84, 0.34, 1.0);
-      float var15 = ((float) Minecraft.getInstance().player.field5055 + Minecraft.getInstance().getRenderPartialTicks()) * 3.0F + var14 * 160.0F;
+      float var15 = ((float) Minecraft.getInstance().player.ticksExisted + Minecraft.getInstance().getRenderPartialTicks()) * 3.0F + var14 * 160.0F;
       var1.field4967 = var15;
-      var1.field5032 = -10.0F;
+      var1.rotationPitch = -10.0F;
       this.field25096 = var7;
       super.method17853(var1, var2, 1.0F, var4, var5, var6);
       var1.field4967 = var12;
-      var1.field5032 = var13;
+      var1.rotationPitch = var13;
    }
 
    public Vector3d method17867(AbstractClientPlayerEntity var1, float var2) {

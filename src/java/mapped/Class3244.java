@@ -6,12 +6,12 @@ import java.util.Random;
 
 public class Class3244 extends Class3241 implements Class3207 {
    private static String[] field18696;
-   public static final Class6408 field18697 = Block.method11539(0.0, 0.0, 0.0, 16.0, 7.0, 16.0);
+   public static final VoxelShape field18697 = Block.method11539(0.0, 0.0, 0.0, 16.0, 7.0, 16.0);
    public static final Class8551 field18698 = Class8820.field39699;
    public static final Class8551 field18699 = Class8820.field39706;
    public static final Class8551 field18700 = Class8820.field39710;
    public static final Class8553 field18701 = Class8820.field39722;
-   private static final Class6408 field18702 = Block.method11539(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
+   private static final VoxelShape field18702 = Block.method11539(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
    private final boolean field18703;
    private final int field18704;
 
@@ -99,7 +99,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field18697;
    }
 
@@ -219,7 +219,7 @@ public class Class3244 extends Class3241 implements Class3207 {
             return true;
          }
 
-         boolean var7 = Class8022.method27435(field18702, var6.method23415(var0, var1, Class4832.method14947()), Class9477.field44045);
+         boolean var7 = VoxelShapes.compare(field18702, var6.getCollisionShape(var0, var1, ISelectionContext.method14947()), IBooleanFunction.AND);
          if (var7) {
             BlockState var8 = var0.getBlockState(var5.method8313());
             return method11655(var8);

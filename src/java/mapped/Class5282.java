@@ -58,7 +58,7 @@ public class Class5282 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         this.field23754.clear();
     }
 
@@ -84,8 +84,8 @@ public class Class5282 extends Module {
         if (this.isEnabled() && !this.getBooleanValueFromSetttingName("Silent")) {
             if (!this.field23754.isEmpty()) {
                 float[] var4 = Class9142.method34146((Class880) this.field23754.get(0));
-                mc.player.field5031 = var4[0];
-                mc.player.field5032 = var4[1];
+                mc.player.rotationYaw = var4[0];
+                mc.player.rotationPitch = var4[1];
             }
         }
     }

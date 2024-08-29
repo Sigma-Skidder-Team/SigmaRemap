@@ -17,7 +17,7 @@ import org.lwjgl.opengl.GL11;
 import java.util.Arrays;
 import java.util.List;
 
-public class BlockFly extends Class5325 {
+public class BlockFly extends ModuleWithModuleSettings {
     public static List<Block> blocksToNotPlace;
     public int field23884;
     public Animation field23885 = new Animation(114, 114, Direction.BACKWARDS);
@@ -264,7 +264,7 @@ public class BlockFly extends Class5325 {
             mc.timer.field40360 = 1.0F;
         }
 
-        if (this.method16735() != 0 && (!mc.player.field5038 || this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
+        if (this.method16735() != 0 && (!mc.player.collidedVertically || this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
             if (!Class5628.method17686() || this.getBooleanValueFromSetttingName("Tower while moving")) {
                 String var4 = this.getStringSettingValueByName("Tower Mode");
                 switch (var4) {
@@ -311,9 +311,9 @@ public class BlockFly extends Class5325 {
                     case "Vanilla":
                         if (mc.gameSettings.field44636.field13071
                                 && Class5628.method17730(mc.player, 0.001F)
-                                && mc.world.method7055(mc.player, mc.player.field5035.method19667(0.0, 1.0, 0.0)).count() == 0L) {
+                                && mc.world.method7055(mc.player, mc.player.boundingBox.method19667(0.0, 1.0, 0.0)).count() == 0L) {
                             mc.player
-                                    .method3215(mc.player.getPosX(), mc.player.getPosY() + 1.0, mc.player.getPosZ());
+                                    .setPosition(mc.player.getPosX(), mc.player.getPosY() + 1.0, mc.player.getPosZ());
                             var1.method13995(0.0);
                             Class9567.method37088(var1, 0.0);
                             mc.timer.field40360 = 0.8038576F;
@@ -357,9 +357,9 @@ public class BlockFly extends Class5325 {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         this.field23885.changeDirection(Direction.BACKWARDS);
-        super.method15965();
+        super.onDisable();
     }
 
     @EventTarget
@@ -387,14 +387,14 @@ public class BlockFly extends Class5325 {
     public void method16744(int var1, int var2, float var3) {
         var3 = (float) (0.5 + 0.5 * (double) var3);
         GL11.glAlphaFunc(518, 0.1F);
-        Class3192.method11439(
+        RenderUtil.method11439(
                 ClassicDecryption.medium17,
                 (float) (var1 + 10),
                 (float) (var2 + 5),
                 this.field23886 + " Blocks",
                 Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var3 * 0.3F)
         );
-        Class3192.method11439(
+        RenderUtil.method11439(
                 ClassicDecryption.medium17,
                 (float) (var1 + 10),
                 (float) (var2 + 4),
@@ -413,11 +413,11 @@ public class BlockFly extends Class5325 {
         byte var9 = 32;
         var1 -= var8 / 2;
         GL11.glPushMatrix();
-        Class3192.method11465(var1, var2, var8, var9, Class5628.method17688(-15461356, 0.8F * var3));
-        Class3192.method11439(
+        RenderUtil.method11465(var1, var2, var8, var9, Class5628.method17688(-15461356, 0.8F * var3));
+        RenderUtil.method11439(
                 ResourceRegistry.JelloLightFont18, (float) (var1 + 10), (float) (var2 + 4), this.field23886 + "", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3)
         );
-        Class3192.method11439(
+        RenderUtil.method11439(
                 ResourceRegistry.JelloLightFont14, (float) (var1 + 10 + var7), (float) (var2 + 8), "Blocks", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var3)
         );
         var1 += 11 + var8 / 2;
@@ -426,7 +426,7 @@ public class BlockFly extends Class5325 {
         GL11.glTranslatef((float) var1, (float) var2, 0.0F);
         GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
         GL11.glTranslatef((float) (-var1), (float) (-var2), 0.0F);
-        Class3192.method11449((float) var1, (float) var2, 9.0F, 23.0F, ResourcesDecrypter.selectPNG, Class5628.method17688(-15461356, 0.8F * var3));
+        RenderUtil.method11449((float) var1, (float) var2, 9.0F, 23.0F, ResourcesDecrypter.selectPNG, Class5628.method17688(-15461356, 0.8F * var3));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
     }

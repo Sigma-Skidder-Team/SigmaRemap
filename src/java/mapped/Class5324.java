@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -11,16 +11,16 @@ public class Class5324 extends Module {
     }
 
     @EventTarget
-    private void method16723(Class4396 var1) {
+    private void method16723(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
-                if (mc.player.field5055 >= 10) {
-                    if (mc.player != null && var1.method13898() instanceof Class5473) {
-                        Class5473 var4 = (Class5473) var1.method13898();
-                        mc.player.field5033 = var4.field24300;
-                        mc.player.field5034 = var4.field24301;
-                        var4.field24300 = mc.player.field5031;
-                        var4.field24301 = mc.player.field5032;
+                if (mc.player.ticksExisted >= 10) {
+                    if (mc.player != null && var1.getPacket() instanceof Class5473) {
+                        Class5473 var4 = (Class5473) var1.getPacket();
+                        mc.player.prevRotationYaw = var4.field24300;
+                        mc.player.prevRotationPitch = var4.field24301;
+                        var4.field24300 = mc.player.rotationYaw;
+                        var4.field24301 = mc.player.rotationPitch;
                     }
                 }
             }

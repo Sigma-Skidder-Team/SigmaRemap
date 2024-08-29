@@ -88,7 +88,7 @@ public class Class5287 extends Module {
                     this.field23787 = this.field23787 + Math.min(var4, var4 * 0.14F * this.field23780) * (float) (!var5 ? 1 : -1);
                     this.field23769 = var1.method13960();
                     this.method16600(this.field23768, this.field23769, this.field23770, this.field23771, this.field23763, null, this.field23764, 1.0F);
-                    Class3192.method11419((float) this.field23768, (float) this.field23769, (float) this.field23770, (float) this.field23771);
+                    RenderUtil.method11419((float) this.field23768, (float) this.field23769, (float) this.field23770, (float) this.field23771);
                     this.method16596(
                             this.field23768,
                             this.field23769 - Math.round(this.field23787),
@@ -99,7 +99,7 @@ public class Class5287 extends Module {
                             1.0F
                     );
                     this.method16595(this.field23768, this.field23769 - Math.round(this.field23787), this.field23792);
-                    Class3192.method11422();
+                    RenderUtil.method11422();
                     if (this.field23781) {
                         this.field23783 = this.method16593(this.field23782).size() * this.field23778 + this.field23779;
                         this.method16600(170, this.field23769, this.field23786, this.field23783, this.field23765, this.field23767, this.field23766, 1.0F);
@@ -146,7 +146,7 @@ public class Class5287 extends Module {
             }
 
             if (var9.isEnabled()) {
-                Class3192.method11439(
+                RenderUtil.method11439(
                         ResourceRegistry.JelloMediumFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
                         (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloMediumFont20.method23952() / 2 + 3 + var7 * this.field23778),
@@ -154,7 +154,7 @@ public class Class5287 extends Module {
                         ClientColors.LIGHT_GREYISH_BLUE.getColor
                 );
             } else {
-                Class3192.method11439(
+                RenderUtil.method11439(
                         ResourceRegistry.JelloLightFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
                         (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2 + var7 * this.field23778),
@@ -185,7 +185,7 @@ public class Class5287 extends Module {
                 this.field23773.put(var8, this.field23773.get(var8) - this.field23780);
             }
 
-            Class3192.method11439(
+            RenderUtil.method11439(
                     ResourceRegistry.JelloLightFont20,
                     (float) (var1 + 11) + this.field23773.get(var8),
                     (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2 + var6 * this.field23778),
@@ -248,14 +248,14 @@ public class Class5287 extends Module {
             this.field23776 = Math.max(this.field23776, 120 + Math.round(this.field23787));
         }
 
-        Class3192.method11426(
+        RenderUtil.method11426(
                 (float) var1,
                 var10 >= 0 ? (float) (var10 + var2) : (float) var2,
                 (float) (var1 + var4),
                 var10 + this.field23779 + this.field23778 <= var3 ? (float) (var10 + var2 + this.field23778 + this.field23779) : (float) (var2 + var3 + this.field23779),
                 this.field23790
         );
-        Class3192.method11449(
+        RenderUtil.method11449(
                 (float) var1,
                 var10 + this.field23779 + this.field23778 <= var3 ? (float) (var10 + var2 + this.field23778 - 10) : (float) (var2 + var3 - 10),
                 (float) var4,
@@ -263,8 +263,8 @@ public class Class5287 extends Module {
                 ResourcesDecrypter.shadowTopPNG,
                 this.field23791
         );
-        Class3192.method11449((float) var1, var10 >= 0 ? (float) (var10 + var2) : (float) var2, (float) var4, 14.0F, ResourcesDecrypter.shadowBottomPNG, this.field23791);
-        Class3192.method11420(
+        RenderUtil.method11449((float) var1, var10 >= 0 ? (float) (var10 + var2) : (float) var2, (float) var4, 14.0F, ResourcesDecrypter.shadowBottomPNG, this.field23791);
+        RenderUtil.method11420(
                 var1,
                 var10 >= 0 ? var10 + var2 : var2,
                 var1 + var4,
@@ -281,7 +281,7 @@ public class Class5287 extends Module {
                     var14 = Class5628.method17688(-1, (1.0F - var13) * 0.14F);
                 }
 
-                Class3192.method11436(
+                RenderUtil.method11436(
                         (float) var1, var10 >= 0 ? (float) (var10 + var2 + 14) : (float) var2, (float) var4 * Class9782.method38557(var13, 0.0F, 1.0F, 1.0F) + 4.0F, var14
                 );
                 if (var12.field35323.calcPercent() == 1.0F) {
@@ -290,7 +290,7 @@ public class Class5287 extends Module {
             }
         }
 
-        Class3192.method11422();
+        RenderUtil.method11422();
     }
 
     private List<ModuleCategory> method16597() {
@@ -386,15 +386,15 @@ public class Class5287 extends Module {
         }
 
         if (!var11) {
-            Class3192.method11431(var1, var2, var1 + var3, var2 + var4, var14, var15);
+            RenderUtil.method11431(var1, var2, var1 + var3, var2 + var4, var14, var15);
         } else {
-            Class3192.method11419((float) var1, (float) var2, (float) var3, (float) var4);
+            RenderUtil.method11419((float) var1, (float) var2, (float) var3, (float) var4);
             Class8480.method29974();
-            Class3192.method11422();
-            Class3192.method11426((float) var1, (float) var2, (float) (var1 + var3), (float) (var2 + var4), this.field23793);
+            RenderUtil.method11422();
+            RenderUtil.method11426((float) var1, (float) var2, (float) (var1 + var3), (float) (var2 + var4), this.field23793);
         }
 
-        Class3192.method11463((float) var1, (float) var2, (float) var3, (float) var4, 8.0F, 0.7F * var8);
+        RenderUtil.method11463((float) var1, (float) var2, (float) var3, (float) var4, 8.0F, 0.7F * var8);
     }
 
     private void method16601() {
@@ -421,7 +421,7 @@ public class Class5287 extends Module {
     }
 
     private Color method16602(int var1, int var2, Color var3) {
-        Color var6 = Class3192.method11481(var1, var2, var3);
+        Color var6 = RenderUtil.method11481(var1, var2, var3);
         if (var3 != null) {
             var6 = Class5628.method17681(var6, var3, 0.08F * this.field23780);
         }

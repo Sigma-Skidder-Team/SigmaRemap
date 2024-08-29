@@ -1,8 +1,8 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -22,16 +22,16 @@ public class Class5203 extends Module {
     }
 
     @EventTarget
-    private void method16198(Class4396 var1) {
+    private void method16198(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof Class5515) {
-                Class5515 var4 = (Class5515) var1.method13898();
+            if (var1.getPacket() instanceof Class5515) {
+                Class5515 var4 = (Class5515) var1.getPacket();
                 this.field23518.add(var4);
                 var1.method13900(true);
             }
 
-            if (mc.player != null && var1.method13898() instanceof Class5590) {
-                Class5590 var5 = (Class5590) var1.method13898();
+            if (mc.player != null && var1.getPacket() instanceof Class5590) {
+                Class5590 var5 = (Class5590) var1.getPacket();
                 if (var5.method17565() == mc.player.method3205()) {
                     this.field23518.add(var5);
                     var1.method13900(true);
@@ -44,12 +44,12 @@ public class Class5203 extends Module {
     }
 
     @EventTarget
-    private void method16199(Class4402 var1) {
+    private void method16199(SendPacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.method13932() instanceof CUseEntityPacket) {
                 CUseEntityPacket var4 = (CUseEntityPacket) var1.method13932();
-                CUseEntityPacketAction var5 = var4.getAction();
-                if (var5 != CUseEntityPacketAction.ATTACK) {
+                CUseEntityPacket.Action var5 = var4.getAction();
+                if (var5 != CUseEntityPacket.Action.ATTACK) {
                 }
             }
         }

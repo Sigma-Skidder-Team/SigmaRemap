@@ -23,7 +23,7 @@ public abstract class Class6334 extends Class6333 {
          this.field27847 = true;
       }
 
-      if (!this.field27846.field5041 && !this.field27847) {
+      if (!this.field27846.removed && !this.field27847) {
          this.field27858 = (double)((float)this.field27846.getPosX());
          this.field27859 = (double)((float)this.field27846.getPosY());
          this.field27860 = (double)((float)this.field27846.getPosZ());

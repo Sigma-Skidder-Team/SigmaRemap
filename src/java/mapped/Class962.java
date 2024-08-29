@@ -91,8 +91,8 @@ public class Class962 extends TileEntity implements Class935 {
 
    public void method3922(Entity var1, boolean var2, int var3) {
       if (this.field5392.size() < 3) {
-         var1.method2759();
-         var1.method3315();
+         var1.stopRiding();
+         var1.removePassengers();
          CompoundNBT var6 = new CompoundNBT();
          var1.method3293(var6);
          this.field5392.add(new Class9327(var6, var3, !var2 ? 600 : 2400));
@@ -172,7 +172,7 @@ public class Class962 extends TileEntity implements Class935 {
                   double var18 = (double)var7.getX() + 0.5 + var16 * (double)var9.method539();
                   double var20 = (double)var7.getY() + 0.5 - (double)(var12.method3430() / 2.0F);
                   double var22 = (double)var7.getZ() + 0.5 + var16 * (double)var9.method541();
-                  var12.method3273(var18, var20, var22, var12.field5031, var12.field5032);
+                  var12.method3273(var18, var20, var22, var12.rotationYaw, var12.rotationPitch);
                }
 
                this.field5324.method6742((PlayerEntity)null, var7, Sounds.field26397, Class2266.field14732, 1.0F, 1.0F);

@@ -4,18 +4,18 @@ public class Class908 extends Entity {
    private static String[] field5185;
    public final Class1007 field5186;
    public final String field5187;
-   private final Class8847 field5188;
+   private final EntitySize field5188;
 
    public Class908(Class1007 var1, String var2, float var3, float var4) {
       super(var1.getType(), var1.world);
-      this.field5188 = Class8847.method32101(var3, var4);
+      this.field5188 = EntitySize.method32101(var3, var4);
       this.method3385();
       this.field5186 = var1;
       this.field5187 = var2;
    }
 
    @Override
-   public void method2850() {
+   public void registerData() {
    }
 
    @Override
@@ -47,7 +47,7 @@ public class Class908 extends Entity {
    }
 
    @Override
-   public Class8847 method2981(Class2090 var1) {
+   public EntitySize method2981(Pose var1) {
       return this.field5188;
    }
 }

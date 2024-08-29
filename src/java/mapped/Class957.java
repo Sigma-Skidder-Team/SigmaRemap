@@ -56,7 +56,7 @@ public class Class957 extends Class956 implements Class935 {
       this.field5372++;
       if (!var4) {
          if (!this.field5324.field9020) {
-            List var5 = this.field5324.<Entity>method6772(Entity.class, new Class6488(this.getPos()), Class957::method3871);
+            List var5 = this.field5324.<Entity>method6772(Entity.class, new AxisAlignedBB(this.getPos()), Class957::method3871);
             if (!var5.isEmpty()) {
                this.method3877((Entity)var5.get(this.field5324.field9016.nextInt(var5.size())));
             }

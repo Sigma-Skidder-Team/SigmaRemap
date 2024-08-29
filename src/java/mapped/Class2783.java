@@ -88,7 +88,7 @@ public class Class2783 extends Class2595 {
                         var9,
                         var11 + this.field17396.method3013().nextGaussian() * (double)var13
                      );
-                     var15.method3215(var15.getPosX(), this.field17396.method3440(0.5) + 0.5, var15.getPosZ());
+                     var15.setPosition(var15.getPosX(), this.field17396.method3440(0.5) + 0.5, var15.getPosZ());
                      this.field17396.world.method6916(var15);
                   }
                }

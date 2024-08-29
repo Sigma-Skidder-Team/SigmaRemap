@@ -2,7 +2,7 @@ package mapped;
 
 import java.nio.file.Path;
 
-public class Class4440 extends Class4441<Class7631> {
+public class Class4440 extends Class4441<Fluid> {
    public Class4440(Class9068 var1) {
       super(var1, Registry.field16070);
    }

@@ -41,7 +41,7 @@ public abstract class Class2642 extends Class2595 {
    @Override
    public boolean method10803() {
       if (Class8100.method28053(this.field16974)) {
-         if (this.field16974.field5037) {
+         if (this.field16974.collidedHorizontally) {
             Class6991 var3 = (Class6991)this.field16974.method4230();
             Class8238 var4 = var3.method21657();
             if (var4 != null && !var4.method28693() && var3.method21683()) {

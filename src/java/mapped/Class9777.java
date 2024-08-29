@@ -30,13 +30,13 @@ public final class Class9777 {
       this.field45739 = var7;
    }
 
-   private void method38546(Class4193 var1, MutableObject<Class6408> var2, int var3, int var4, boolean var5) {
+   private void method38546(Class4193 var1, MutableObject<VoxelShape> var2, int var3, int var4, boolean var5) {
       Class7487 var8 = var1.method12977();
       BlockPos var9 = var1.method12978();
       Class80 var10 = var1.method12940();
       Class109 var11 = var8.method24382();
       boolean var12 = var11 == Class109.field367;
-      MutableObject<Class6408> var13 = new MutableObject();
+      MutableObject<VoxelShape> var13 = new MutableObject();
       Class9764 var14 = var1.method12915();
       int var15 = var14.field45679;
 
@@ -56,7 +56,7 @@ public final class Class9777 {
             Optional<Class9369> var26 = this.field45733.method9187(var25);
             if (var26.isPresent() && (((Class9369)var26.get()).method35538() != 0 || Objects.equals(var25, Class9837.field45937.method31399()))) {
                boolean var27 = var14.method38396(var20);
-               MutableObject<Class6408> var28;
+               MutableObject<VoxelShape> var28;
                int var29;
                if (!var27) {
                   var28 = var2;
@@ -65,7 +65,7 @@ public final class Class9777 {
                   var28 = var13;
                   var29 = var15;
                   if (var13.getValue() == null) {
-                     var13.setValue(Class8022.method27428(Class6488.method19656(var14)));
+                     var13.setValue(VoxelShapes.create(AxisAlignedBB.method19656(var14)));
                   }
                }
 
@@ -133,11 +133,11 @@ public final class Class9777 {
                               var50.field45682 = var50.field45679 + var52;
                            }
 
-                           if (!Class8022.method27435(
-                              (Class6408)var28.getValue(), Class8022.method27428(Class6488.method19656(var50).method19679(0.25)), Class9477.field44039
+                           if (! VoxelShapes.compare(
+                              (VoxelShape)var28.getValue(), VoxelShapes.create(AxisAlignedBB.method19656(var50).method19679(0.25)), IBooleanFunction.field44039
                            )) {
                               var28.setValue(
-                                 Class8022.method27434((Class6408)var28.getValue(), Class8022.method27428(Class6488.method19656(var50)), Class9477.field44041)
+                                 VoxelShapes.method27434((VoxelShape)var28.getValue(), VoxelShapes.create(AxisAlignedBB.method19656(var50)), IBooleanFunction.field44041)
                               );
                               int var56 = var1.method12979();
                               int var53;

@@ -40,10 +40,10 @@ public class Class4365 extends Class4247 {
       this.method13264(Minecraft.getInstance().mainWindow.method8043() - this.field20897 - 20);
       boolean var6 = this.field21337 >= this.field20895 && this.field21338 <= this.field20896 + this.method13269();
       this.field21334 = Math.max(0.0F, Math.min(1.0F, this.field21334 + (!var6 ? -0.1F : 0.1F)));
-      Class3192.method11463(
+      RenderUtil.method11463(
          (float)this.field20895, (float)this.field20896, (float)this.method13267(), (float)this.method13269(), 20.0F, this.field21334 * 0.2F * var1
       );
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.field20895,
          (float)this.field20896,
          (float)(this.field20895 + this.method13267()),
@@ -52,7 +52,7 @@ public class Class4365 extends Class4247 {
       );
       float var7 = (float)(this.field20895 + this.field20897 - 60 - 10);
       float var8 = (float)(this.field20896 + 10);
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)(this.field20895 + this.field20897 - 60 - 10),
          (float)(this.field20896 + 10),
          60.0F,
@@ -60,7 +60,7 @@ public class Class4365 extends Class4247 {
          var5,
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
       );
-      Class3192.method11439(
+      RenderUtil.method11439(
          this.field20913,
          (float)(this.field20895 + this.field20897 - 90 - this.field20913.method23942(var4)),
          (float)(this.field20896 + 27),

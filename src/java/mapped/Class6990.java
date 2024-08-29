@@ -13,7 +13,7 @@ public abstract class Class6990 {
    public double field30246;
    public int field30247;
    public int field30248;
-   public Vector3d field30249 = Vector3d.field18047;
+   public Vector3d field30249 = Vector3d.ZERO;
    public Class1998 field30250 = Class1998.field13026;
    public long field30251;
    public long field30252;

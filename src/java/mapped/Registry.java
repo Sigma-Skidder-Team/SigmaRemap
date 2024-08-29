@@ -23,7 +23,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Class2349<Class2349<?>> field16034 = new Class2350<Class2349<?>>(createKey("root"), Lifecycle.experimental());
    public static final Registry<? extends Registry<?>> field16035 = field16034;
    public static final RegistryKey<Registry<Class9455>> field16036 = createKey("sound_event");
-   public static final RegistryKey<Registry<Class7631>> field16037 = createKey("fluid");
+   public static final RegistryKey<Registry<Fluid>> field16037 = createKey("fluid");
    public static final RegistryKey<Registry<Class7144>> field16038 = createKey("mob_effect");
    public static final RegistryKey<Registry<Block>> field16039 = createKey("block");
    public static final RegistryKey<Registry<Class6069>> field16040 = createKey("enchantment");
@@ -56,7 +56,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<World>> field16067 = createKey("dimension");
    public static final RegistryKey<Registry<Class9459>> field16068 = createKey("dimension");
    public static final Registry<Class9455> field16069 = method9175(field16036, () -> Sounds.field26714);
-   public static final Class2351<Class7631> field16070 = method9176(field16037, "empty", () -> Class9479.field44064);
+   public static final Class2351<Fluid> field16070 = method9176(field16037, "empty", () -> Class9479.field44064);
    public static final Registry<Class7144> field16071 = method9175(field16038, () -> Class8254.field35492);
    public static final Class2351<Block> BLOCK = method9176(field16039, "air", () -> Blocks.AIR);
    public static final Registry<Class6069> field16073 = method9175(field16040, () -> Class8122.field34918);

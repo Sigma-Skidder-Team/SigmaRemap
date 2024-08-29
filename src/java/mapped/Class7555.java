@@ -43,7 +43,7 @@ public class Class7555 extends Class7554 {
 
    @Override
    public void method24718(float var1) {
-      Class3192.method11424(
+      RenderUtil.method11424(
          (float)this.method24720(),
          (float)this.method24721(),
          (float)this.method24719(),
@@ -57,7 +57,7 @@ public class Class7555 extends Class7554 {
       byte var7 = 25;
       int var8 = -15781024;
       int var9 = -15626304;
-      Class3192.method11432(var4, var5, var4 + var6, var5 + var7, var8, var9, var9, var8);
+      RenderUtil.method11432(var4, var5, var4 + var6, var5 + var7, var8, var9, var9, var8);
       byte var10 = 6;
 
       for (String var12 : this.field32400) {
@@ -67,7 +67,7 @@ public class Class7555 extends Class7554 {
             var13 = ClientColors.MID_GREY.getColor;
          }
 
-         Class3192.method11439(
+         RenderUtil.method11439(
             this.field32394,
             (float)(7 + this.method24720()),
             (float)(this.method24721() + var10),

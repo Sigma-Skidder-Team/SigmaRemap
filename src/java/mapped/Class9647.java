@@ -20,9 +20,9 @@ public class Class9647 {
 
    public static Class9425 method37622(Entity var0) {
       return new Class9425(
-         var0.field5048 + (var0.getPosX() - var0.field5048) * (double)field45107.timer.renderPartialTicks,
-         var0.field5049 + (var0.getPosY() - var0.field5049) * (double)field45107.timer.renderPartialTicks,
-         var0.field5050 + (var0.getPosZ() - var0.field5050) * (double)field45107.timer.renderPartialTicks
+         var0.lastTickPosX + (var0.getPosX() - var0.lastTickPosX) * (double)field45107.timer.renderPartialTicks,
+         var0.lastTickPosY + (var0.getPosY() - var0.lastTickPosY) * (double)field45107.timer.renderPartialTicks,
+         var0.lastTickPosZ + (var0.getPosZ() - var0.lastTickPosZ) * (double)field45107.timer.renderPartialTicks
       );
    }
 

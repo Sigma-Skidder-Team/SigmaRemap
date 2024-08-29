@@ -21,7 +21,7 @@ public class Class5244 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23608 = 1;
         double var3 = mc.player.method3433().field18048;
         double var5 = mc.player.method3433().field18050;
@@ -54,7 +54,7 @@ public class Class5244 extends Module {
                     this.field23608++;
                 }
 
-                if (!mc.player.field5036) {
+                if (!mc.player.onGround) {
                     if (this.field23607 >= 0) {
                         this.field23607++;
                         double var4 = this.field23609;

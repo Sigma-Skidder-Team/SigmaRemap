@@ -13,10 +13,10 @@ public class ExperienceOrbEntity extends Entity {
 
    public ExperienceOrbEntity(World var1, double var2, double var4, double var6, int var8) {
       this(EntityType.field41029, var1);
-      this.method3215(var2, var4, var6);
-      this.field5031 = (float)(this.field5054.nextDouble() * 360.0);
+      this.setPosition(var2, var4, var6);
+      this.rotationYaw = (float)(this.rand.nextDouble() * 360.0);
       this.method3435(
-         (this.field5054.nextDouble() * 0.2F - 0.1F) * 2.0, this.field5054.nextDouble() * 0.2 * 2.0, (this.field5054.nextDouble() * 0.2F - 0.1F) * 2.0
+         (this.rand.nextDouble() * 0.2F - 0.1F) * 2.0, this.rand.nextDouble() * 0.2 * 2.0, (this.rand.nextDouble() * 0.2F - 0.1F) * 2.0
       );
       this.field5559 = var8;
    }
@@ -31,7 +31,7 @@ public class ExperienceOrbEntity extends Entity {
    }
 
    @Override
-   public void method2850() {
+   public void registerData() {
    }
 
    @Override
@@ -41,9 +41,9 @@ public class ExperienceOrbEntity extends Entity {
          this.field5557--;
       }
 
-      this.field5025 = this.getPosX();
-      this.field5026 = this.getPosY();
-      this.field5027 = this.getPosZ();
+      this.prevPosX = this.getPosX();
+      this.prevPosY = this.getPosY();
+      this.prevPosZ = this.getPosZ();
       if (!this.method3263(Class8953.field40469)) {
          if (!this.method3247()) {
             this.method3434(this.method3433().method11339(0.0, -0.03, 0.0));
@@ -54,15 +54,15 @@ public class ExperienceOrbEntity extends Entity {
 
       if (this.world.method6739(this.getPosition()).method23486(Class8953.field40470)) {
          this.method3435(
-            (double)((this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F),
+            (double)((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F),
             0.2F,
-            (double)((this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F)
+            (double)((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F)
          );
-         this.method2863(Sounds.field26606, 0.4F, 2.0F + this.field5054.nextFloat() * 0.4F);
+         this.method2863(Sounds.field26606, 0.4F, 2.0F + this.rand.nextFloat() * 0.4F);
       }
 
-      if (!this.world.method7051(this.method3389())) {
-         this.pushOutOfBlocks(this.getPosX(), (this.method3389().field28450 + this.method3389().field28453) / 2.0, this.getPosZ());
+      if (!this.world.method7051(this.getBoundingBox())) {
+         this.pushOutOfBlocks(this.getPosX(), (this.getBoundingBox().field28450 + this.getBoundingBox().field28453) / 2.0, this.getPosZ());
       }
 
       double var3 = 8.0;
@@ -93,12 +93,12 @@ public class ExperienceOrbEntity extends Entity {
 
       this.move(Class2107.field13742, this.method3433());
       float var10 = 0.98F;
-      if (this.field5036) {
+      if (this.onGround) {
          var10 = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).getBlock().method11571() * 0.98F;
       }
 
       this.method3434(this.method3433().method11347((double)var10, 0.98, (double)var10));
-      if (this.field5036) {
+      if (this.onGround) {
          this.method3434(this.method3433().method11347(1.0, -0.9, 1.0));
       }
 

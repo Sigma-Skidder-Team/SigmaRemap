@@ -28,8 +28,8 @@ public class Class5582 implements Packet<Class5116> {
       this.field24763 = var1.getPosX();
       this.field24764 = var1.getPosY();
       this.field24765 = var1.getPosZ();
-      this.field24769 = (byte)((int)(var1.field5031 * 256.0F / 360.0F));
-      this.field24770 = (byte)((int)(var1.field5032 * 256.0F / 360.0F));
+      this.field24769 = (byte)((int)(var1.rotationYaw * 256.0F / 360.0F));
+      this.field24770 = (byte)((int)(var1.rotationPitch * 256.0F / 360.0F));
       this.field24771 = (byte)((int)(var1.field4967 * 256.0F / 360.0F));
       double var4 = 3.9;
       Vector3d var6 = var1.method3433();

@@ -1,11 +1,11 @@
 package mapped;
 
 public enum Class82 implements Class83 {
-   field205("head"),
-   field206("foot");
+   HEAD("head"),
+   FOOT("foot");
 
    private final String field207;
-   private static final Class82[] field208 = new Class82[]{field205, field206};
+   private static final Class82[] field208 = new Class82[]{HEAD, FOOT};
 
    private Class82(String var3) {
       this.field207 = var3;

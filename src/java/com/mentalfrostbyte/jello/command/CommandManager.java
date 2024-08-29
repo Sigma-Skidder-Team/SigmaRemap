@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.command;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import mapped.*;
 
@@ -103,7 +103,7 @@ public class CommandManager {
     }
 
     @EventTarget
-    private void method30239(Class4402 var1) {
+    private void method30239(SendPacketEvent var1) {
         if (Client.getInstance().getClientMode() != ClientMode.NOADDONS) {
             if (var1.method13932() instanceof Class5522) {
                 Class5522 var4 = (Class5522) var1.method13932();

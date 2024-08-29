@@ -63,13 +63,13 @@ public class Class6829 {
             }
 
             float var11 = (float)(MathHelper.method37814(var14, var12) * 180.0F / (float)Math.PI) - 90.0F;
-            this.field29707.field5031 = this.method20816(this.field29707.field5031, var11, 90.0F);
+            this.field29707.rotationYaw = this.method20816(this.field29707.rotationYaw, var11, 90.0F);
             this.field29707.method3113((float)(this.field29711 * this.field29707.method3086(Class9173.field42108)));
             BlockPos var20 = this.field29707.getPosition();
             BlockState var21 = this.field29707.world.getBlockState(var20);
             Block var22 = var21.getBlock();
-            Class6408 var23 = var21.method23414(this.field29707.world, var20);
-            if (var16 > (double)this.field29707.field5051 && var12 * var12 + var14 * var14 < (double)Math.max(1.0F, this.field29707.method3429())
+            VoxelShape var23 = var21.method23414(this.field29707.world, var20);
+            if (var16 > (double)this.field29707.stepHeight && var12 * var12 + var14 * var14 < (double)Math.max(1.0F, this.field29707.method3429())
                || !var23.method19516()
                   && this.field29707.getPosY() < var23.method19513(Class113.field414) + (double)var20.getY()
                   && !var22.method11540(Class7645.field32748)
@@ -91,8 +91,8 @@ public class Class6829 {
          var7 = var4 / var7;
          var5 *= var7;
          var6 *= var7;
-         float var8 = MathHelper.sin(this.field29707.field5031 * (float) (Math.PI / 180.0));
-         float var9 = MathHelper.cos(this.field29707.field5031 * (float) (Math.PI / 180.0));
+         float var8 = MathHelper.sin(this.field29707.rotationYaw * (float) (Math.PI / 180.0));
+         float var9 = MathHelper.cos(this.field29707.rotationYaw * (float) (Math.PI / 180.0));
          float var10 = var5 * var9 - var6 * var8;
          float var27 = var6 * var9 + var5 * var8;
          if (!this.method20815(var10, var27)) {

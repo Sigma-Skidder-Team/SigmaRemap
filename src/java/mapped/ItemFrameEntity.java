@@ -6,8 +6,8 @@ import org.apache.logging.log4j.Logger;
 
 public class ItemFrameEntity extends Class995 {
    private static final Logger field5491 = LogManager.getLogger();
-   private static final Class9289<ItemStack> field5492 = Class9361.<ItemStack>method35441(ItemFrameEntity.class, Class7784.field33396);
-   private static final Class9289<Integer> field5493 = Class9361.<Integer>method35441(ItemFrameEntity.class, Class7784.field33391);
+   private static final DataParameter<ItemStack> field5492 = EntityDataManager.<ItemStack>method35441(ItemFrameEntity.class, Class7784.field33396);
+   private static final DataParameter<Integer> field5493 = EntityDataManager.<Integer>method35441(ItemFrameEntity.class, Class7784.field33391);
    private float field5494 = 1.0F;
    private boolean field5495;
 
@@ -21,14 +21,14 @@ public class ItemFrameEntity extends Class995 {
    }
 
    @Override
-   public float method3181(Class2090 var1, Class8847 var2) {
+   public float method3181(Pose var1, EntitySize var2) {
       return 0.0F;
    }
 
    @Override
-   public void method2850() {
-      this.method3210().method35442(field5492, ItemStack.EMPTY);
-      this.method3210().method35442(field5493, 0);
+   public void registerData() {
+      this.method3210().register(field5492, ItemStack.EMPTY);
+      this.method3210().register(field5493, 0);
    }
 
    @Override
@@ -36,15 +36,15 @@ public class ItemFrameEntity extends Class995 {
       Validate.notNull(var1);
       this.field5489 = var1;
       if (!var1.method544().method324()) {
-         this.field5032 = (float)(-90 * var1.method535().method8150());
-         this.field5031 = 0.0F;
+         this.rotationPitch = (float)(-90 * var1.method535().method8150());
+         this.rotationYaw = 0.0F;
       } else {
-         this.field5032 = 0.0F;
-         this.field5031 = (float)(this.field5489.method534() * 90);
+         this.rotationPitch = 0.0F;
+         this.rotationYaw = (float)(this.field5489.method534() * 90);
       }
 
-      this.field5034 = this.field5032;
-      this.field5033 = this.field5031;
+      this.prevRotationPitch = this.rotationPitch;
+      this.prevRotationYaw = this.rotationYaw;
       this.method4078();
    }
 
@@ -74,7 +74,7 @@ public class ItemFrameEntity extends Class995 {
          var11 /= 32.0;
          var13 /= 32.0;
          var15 /= 32.0;
-         this.method3391(new Class6488(var5 - var11, var7 - var13, var9 - var15, var5 + var11, var7 + var13, var9 + var15));
+         this.method3391(new AxisAlignedBB(var5 - var11, var7 - var13, var9 - var15, var5 + var11, var7 + var13, var9 + var15));
       }
    }
 
@@ -87,7 +87,7 @@ public class ItemFrameEntity extends Class995 {
             BlockState var3 = this.world.getBlockState(this.field5488.method8349(this.field5489.method536()));
             return !var3.method23384().method31086() && (!this.field5489.method544().method324() || !Class3247.method11672(var3))
                ? false
-               : this.world.method6770(this, this.method3389(), field5486).isEmpty();
+               : this.world.method6770(this, this.getBoundingBox(), field5486).isEmpty();
          }
       } else {
          return true;
@@ -189,7 +189,7 @@ public class ItemFrameEntity extends Class995 {
             if (!var5.isEmpty()) {
                var5 = var5.copy();
                this.method4089(var5);
-               if (this.field5054.nextFloat() < this.field5494) {
+               if (this.rand.nextFloat() < this.field5494) {
                   this.method3302(var5);
                }
             }
@@ -245,7 +245,7 @@ public class ItemFrameEntity extends Class995 {
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       if (var1.equals(field5492)) {
          ItemStack var4 = this.method4090();
          if (!var4.isEmpty() && var4.method32167() != this) {
@@ -320,7 +320,7 @@ public class ItemFrameEntity extends Class995 {
             if (var6) {
                this.method2863(Sounds.field26712, 1.0F, 1.0F);
                this.method4094(this.method4093() + 1);
-            } else if (var7 && !this.field5041) {
+            } else if (var7 && !this.removed) {
                this.method4091(var5);
                if (!var1.abilities.isCreativeMode) {
                   var5.method32182(1);

@@ -667,7 +667,7 @@ public final class ItemStack {
                return Lists.newArrayList(new ITextComponent[]{var4.getBlock().method11565().mergeStyle(TextFormatting.DARK_GRAY)});
             }
 
-            Class7608<Block> var8 = Class7645.method25115().method27135(var5);
+            ITag<Block> var8 = Class7645.method25115().method27135(var5);
             if (var8 != null) {
                List<Block> var9 = var8.method24918();
                if (!var9.isEmpty()) {

@@ -157,8 +157,8 @@ public class Class7535 extends Class7530 {
          CompoundNBT var6 = new CompoundNBT();
          var6.method109("Name", var5.method28567());
          var6.method109("DisplayName", ITextComponent$Serializer.toJson(var5.method28568()));
-         if (var5.method28591().getColorIndex() >= 0) {
-            var6.method109("TeamColor", var5.method28591().getFriendlyName());
+         if (var5.getColor().getColorIndex() >= 0) {
+            var6.method109("TeamColor", var5.getColor().getFriendlyName());
          }
 
          var6.method115("AllowFriendlyFire", var5.method28578());

@@ -21,7 +21,7 @@ public class Class5313 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         if (this.getStringSettingValueByName("Type").equals("Normal")) {
             mc.gameSettings.field44672 = 999.0;
         }
@@ -51,7 +51,7 @@ public class Class5313 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         mc.gameSettings.field44672 = 1.0;
     }
 }

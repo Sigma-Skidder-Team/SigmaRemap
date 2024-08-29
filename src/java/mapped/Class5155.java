@@ -17,7 +17,7 @@ public class Class5155 extends Module {
    }
 
    @Override
-   public void isInDevelopment() {
+   public void onEnable() {
       this.field23405 = -1;
       this.field23406 = false;
       this.field23407 = 999.0;
@@ -26,7 +26,7 @@ public class Class5155 extends Module {
    @EventTarget
    public void method16018(Class4435 var1) {
       if (this.isEnabled() && mc.player != null) {
-         if (mc.player.field5045 > 3.0F + this.getNumberValueBySettingName("Motion") * 4.0F && var1.method13994() < -0.3) {
+         if (mc.player.fallDistance > 3.0F + this.getNumberValueBySettingName("Motion") * 4.0F && var1.method13994() < -0.3) {
             if (this.field23406) {
                if (mc.player.getPosY() + var1.method13994() < this.field23407) {
                   var1.method13995(this.field23407 - mc.player.getPosY());

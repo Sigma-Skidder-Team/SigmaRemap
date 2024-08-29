@@ -4,7 +4,7 @@ public class Class3372 extends Class3241 {
    private static String[] field18962;
    public static final Class8554 field18963 = Class8820.field39759;
    public static final Class8551 field18964 = Class8820.field39697;
-   public static final Class6408 field18965 = Block.method11539(0.0, 0.0, 0.0, 16.0, 6.0, 16.0);
+   public static final VoxelShape field18965 = Block.method11539(0.0, 0.0, 0.0, 16.0, 6.0, 16.0);
 
    public Class3372(AbstractBlock var1) {
       super(var1);
@@ -12,7 +12,7 @@ public class Class3372 extends Class3241 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field18965;
    }
 

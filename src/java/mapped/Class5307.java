@@ -55,7 +55,7 @@ public class Class5307 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23843 = (int) mc.player.getPosY();
         this.field23844 = (double) this.field23843 - mc.player.getPosY();
     }

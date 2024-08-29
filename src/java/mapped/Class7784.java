@@ -27,7 +27,7 @@ public class Class7784 {
    public static final Class6466<CompoundNBT> field33405 = new Class6480();
    public static final Class6466<Class7921> field33406 = new Class6472();
    public static final Class6466<OptionalInt> field33407 = new Class6473();
-   public static final Class6466<Class2090> field33408 = new Class6475();
+   public static final Class6466<Pose> field33408 = new Class6475();
 
    public static void method25804(Class6466<?> var0) {
       field33389.method9272(var0);

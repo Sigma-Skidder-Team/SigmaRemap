@@ -33,7 +33,7 @@ public class Class993 extends AbstractMinecartEntity {
          this.world.method6746(Class7940.field34092, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
       }
 
-      if (this.field5037) {
+      if (this.collidedHorizontally) {
          double var3 = method3234(this.method3433());
          if (var3 >= 0.01F) {
             this.method4071(var3);
@@ -64,7 +64,7 @@ public class Class993 extends AbstractMinecartEntity {
          }
       } else if (this.field5480 < 0) {
          this.method4072();
-         this.field5480 = this.field5054.nextInt(20) + this.field5054.nextInt(20);
+         this.field5480 = this.rand.nextInt(20) + this.rand.nextInt(20);
       }
    }
 
@@ -77,7 +77,7 @@ public class Class993 extends AbstractMinecartEntity {
 
          this.world
             .method6755(
-               this, this.getPosX(), this.getPosY(), this.getPosZ(), (float)(4.0 + this.field5054.nextDouble() * 1.5 * var5), Class2141.field14015
+               this, this.getPosX(), this.getPosY(), this.getPosZ(), (float)(4.0 + this.rand.nextDouble() * 1.5 * var5), Class2141.field14015
             );
          this.method2904();
       }

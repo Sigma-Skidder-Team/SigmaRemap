@@ -59,7 +59,7 @@ public class Class4250 extends Class4247 {
       float var8 = var4[1];
       float var9 = var4[2];
       float var10 = var4[3];
-      Class3192.method11475(
+      RenderUtil.method11475(
          (float)(this.field20895 + var5),
          (float)(this.field20896 + var5),
          (float)(this.field20897 - var5 * 2),
@@ -74,7 +74,7 @@ public class Class4250 extends Class4247 {
       var11.add(new Class9778(1.0, 1.0));
       Class8603 var12 = new Class8603((double)(1.0F / var6 * 2.0F));
       double var13 = var12.method30789(var11, Math.min(0.8F, this.field20611.calcPercent()) * 1.25F);
-      Class3192.method11438(
+      RenderUtil.method11438(
          (float)((double)this.field20895 + (double)var6 * var13 + (double)var5),
          (float)(this.field20896 - var5 / 2 + this.field20898),
          14.0F,

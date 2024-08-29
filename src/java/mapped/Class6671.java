@@ -123,7 +123,7 @@ public class Class6671 {
                            return false;
                         } else {
                            if (this.field29254 != null) {
-                              Class8219 var6 = var3.method3344();
+                              Team var6 = var3.getTeam();
                               if (var6 == null || !this.field29254.equals(var6.method28567())) {
                                  return false;
                               }

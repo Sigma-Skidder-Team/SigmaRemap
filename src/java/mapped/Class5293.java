@@ -27,7 +27,7 @@ public class Class5293 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         for (Entity var4 : mc.world.method6835()) {
             var4.method3341(false);
         }

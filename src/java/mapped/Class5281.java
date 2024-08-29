@@ -100,12 +100,12 @@ public class Class5281 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23739 = 0.0;
         this.field23751 = new Animation(1000, 100000, Direction.FORWARDS);
-        this.field23745 = MathHelper.method37792(mc.player.field5031);
+        this.field23745 = MathHelper.method37792(mc.player.rotationYaw);
         this.field23745 = 39.0F;
-        this.field23746 = mc.player.field5032;
+        this.field23746 = mc.player.rotationPitch;
         double var3 = mc.player.getPosX();
         double var5 = mc.player.getPosY();
         double var7 = mc.player.getPosZ();
@@ -115,7 +115,7 @@ public class Class5281 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         mc.timer.field40360 = 1.0F;
     }
 
@@ -187,7 +187,7 @@ public class Class5281 extends Module {
 
     @EventTarget
     @LowestPriority
-    public void method16558(Class4402 var1) {
+    public void method16558(SendPacketEvent var1) {
         Packet var4 = var1.method13932();
         if (this.isEnabled() && mc.player != null) {
             if (!(var4 instanceof CUseEntityPacket)) {
@@ -248,7 +248,7 @@ public class Class5281 extends Module {
                     String var10000 = "null";
                 }
 
-                if (var18.getAction() != CUseEntityPacketAction.ATTACK) {
+                if (var18.getAction() != CUseEntityPacket.Action.ATTACK) {
                 }
             }
 
@@ -258,8 +258,8 @@ public class Class5281 extends Module {
     }
 
     @EventTarget
-    public void method16559(Class4396 var1) {
-        Packet var4 = var1.method13898();
+    public void method16559(RecievePacketEvent var1) {
+        Packet var4 = var1.getPacket();
         if (this.isEnabled()) {
             if (!(var4 instanceof Class5476)) {
             }
@@ -272,10 +272,10 @@ public class Class5281 extends Module {
                                 if (!(var4 instanceof Class5581)) {
                                     if (!(var4 instanceof Class5590)) {
                                         if (var4 instanceof Class5515 && this.getBooleanValueFromSetttingName("Explosions")) {
-                                            Class5515 var5 = (Class5515) var1.method13898();
+                                            Class5515 var5 = (Class5515) var1.getPacket();
                                         }
                                     } else {
-                                        Class5590 var8 = (Class5590) var1.method13898();
+                                        Class5590 var8 = (Class5590) var1.getPacket();
                                         if (var8.method17565() != mc.player.method3205()) {
                                         }
                                     }

@@ -25,31 +25,31 @@ public class VanillaFly extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
-        if (!mc.gameSettings.field44637.isKeyDown()) {
-            if (!mc.gameSettings.field44637.isKeyDown()) {
+    public void onEnable() {
+        if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
+            if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
                 this.field23995 = false;
             }
         } else {
-            mc.gameSettings.field44637.field13071 = false;
+            mc.gameSettings.keyBindSneak.field13071 = false;
             this.field23995 = true;
         }
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Class5628.method17725(-0.08);
         double var3 = Class9567.method37075();
         Class9567.method37090(var3);
         if (this.field23995) {
-            mc.gameSettings.field44637.field13071 = true;
+            mc.gameSettings.keyBindSneak.field13071 = true;
         }
     }
 
     @EventTarget
     private void method16916(Class4430 var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
+            if (var1.method13977() == mc.gameSettings.keyBindSneak.field13070.field34875) {
                 var1.method13900(true);
                 this.field23995 = true;
             }
@@ -59,7 +59,7 @@ public class VanillaFly extends Module {
     @EventTarget
     private void method16917(Class4426 var1) {
         if (this.isEnabled()) {
-            if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
+            if (var1.method13973() == mc.gameSettings.keyBindSneak.field13070.field34875) {
                 var1.method13900(true);
                 this.field23995 = false;
             }
@@ -69,7 +69,7 @@ public class VanillaFly extends Module {
     @EventTarget
     public void method16918(Class4399 var1) {
         if (this.isEnabled()) {
-            if (!mc.player.field5036 && this.getBooleanValueFromSetttingName("Kick bypass")) {
+            if (!mc.player.onGround && this.getBooleanValueFromSetttingName("Kick bypass")) {
                 if (this.field23996 > 0 && this.field23996 % 30 == 0 && !Class5628.method17730(mc.player, 0.01F)) {
                     if (Class8005.method27349() != Class5989.field26129.method18582()) {
                         var1.method13912(var1.method13911() - 0.04);
@@ -122,7 +122,7 @@ public class VanillaFly extends Module {
 
             double var4 = this.getNumberValueBySettingName("Speed");
             double var6 = !mc.gameSettings.field44636.field13071 ? 0.0 : var4 / 2.0;
-            if (mc.gameSettings.field44636.field13071 && mc.gameSettings.field44637.field13071) {
+            if (mc.gameSettings.field44636.field13071 && mc.gameSettings.keyBindSneak.field13071) {
                 var6 = 0.0;
             } else if (!this.field23995) {
                 if (mc.gameSettings.field44636.field13071) {
@@ -140,13 +140,13 @@ public class VanillaFly extends Module {
 
     private double method16920() {
         if (!(mc.player.getPositionVec().field18049 < 1.0)) {
-            if (!mc.player.field5036) {
-                Class6488 var3 = mc.player.field5035.method19662(0.0, -mc.player.getPositionVec().field18049, 0.0);
+            if (!mc.player.onGround) {
+                AxisAlignedBB var3 = mc.player.boundingBox.method19662(0.0, -mc.player.getPositionVec().field18049, 0.0);
                 Iterator var4 = mc.world.method7055(mc.player, var3).iterator();
                 double var5 = -1.0;
 
                 while (var4.hasNext()) {
-                    Class6408 var7 = (Class6408) var4.next();
+                    VoxelShape var7 = (VoxelShape) var4.next();
                     if (var7.method19514().field28453 > var5) {
                         var5 = var7.method19514().field28453;
                     }

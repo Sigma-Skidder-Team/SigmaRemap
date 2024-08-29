@@ -4,7 +4,7 @@ public class Class3448 extends Class3445 implements Class3449 {
    private static String[] field19263;
 
    public Class3448(AbstractBlock var1) {
-      super(var1, Direction.field673, Class8022.method27426(), true);
+      super(var1, Direction.field673, VoxelShapes.method27426(), true);
    }
 
    @Override
@@ -18,7 +18,7 @@ public class Class3448 extends Class3445 implements Class3449 {
    }
 
    @Override
-   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Class7631 var4) {
+   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Fluid var4) {
       return false;
    }
 

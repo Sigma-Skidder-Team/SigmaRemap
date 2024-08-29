@@ -25,25 +25,25 @@ public class Class4245 extends Class4240 {
       }
 
       int var4 = (int)(Class9747.method38217(this.field20599.calcPercent(), 0.0F, 1.0F, 1.0F, 7.0F) * 3.0F);
-      Class3192.method11438(
+      RenderUtil.method11438(
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + this.field20898 / 2),
          25.0F,
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.025F * var1 * this.field20599.calcPercent())
       );
-      Class3192.method11438(
+      RenderUtil.method11438(
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + this.field20898 / 2),
          23.0F,
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.05F * var1 * this.field20599.calcPercent())
       );
-      Class3192.method11438(
+      RenderUtil.method11438(
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + this.field20898 / 2),
          (float)(18 + var4),
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field20599.calcPercent())
       );
-      Class3192.method11438(
+      RenderUtil.method11438(
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + this.field20898 / 2),
          (float)(18 - var4),

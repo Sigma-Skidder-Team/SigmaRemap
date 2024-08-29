@@ -15,7 +15,7 @@ public class Class3725 extends Class3676<Class1042> {
    }
 
    public boolean method12508(ServerWorld var1, Class1042 var2) {
-      if (var2.field5055 % 10 == 0 && (this.field19816 == 0L || this.field19816 + 160L <= (long)var2.field5055)) {
+      if (var2.ticksExisted % 10 == 0 && (this.field19816 == 0L || this.field19816 + 160L <= (long)var2.ticksExisted)) {
          if (var2.method4752().method3634(Items.field37934) > 0) {
             this.field19818 = this.method12625(var1, var2);
             return this.field19818.isPresent();
@@ -75,7 +75,7 @@ public class Class3725 extends Class3676<Class1042> {
 
    public void method12506(ServerWorld var1, Class1042 var2, long var3) {
       var2.method2944(Class2106.field13731, ItemStack.EMPTY);
-      this.field19816 = (long)var2.field5055;
+      this.field19816 = (long)var2.ticksExisted;
    }
 
    public void method12504(ServerWorld var1, Class1042 var2, long var3) {

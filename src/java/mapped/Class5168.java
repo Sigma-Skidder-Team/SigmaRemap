@@ -68,7 +68,7 @@ public class Class5168 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         File var3 = new File(Client.getInstance().getFile() + "/shematics/" + (String) this.getSettingValueBySettingName("Shematics"));
         if (var3.exists()) {
             this.field23440 = new Class8817(var3);
@@ -106,9 +106,9 @@ public class Class5168 extends Module {
                     double var9 = (double) var6.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
                     double var11 = (double) var6.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                     Class9388 var13 = new Class9388(var7, var9, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
-                    Class3192.method11459(var13, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.02F));
+                    RenderUtil.method11459(var13, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.02F));
                     GL11.glEnable(2848);
-                    Class3192.method11461(var13, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.03F));
+                    RenderUtil.method11461(var13, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.03F));
                     GL11.glColor3f(1.0F, 1.0F, 1.0F);
                 }
             }
@@ -119,8 +119,8 @@ public class Class5168 extends Module {
                 double var18 = (double) var16.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
                 double var19 = (double) var16.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                 Class9388 var20 = new Class9388(var17, var18, var19, var17 + 1.0, var18 + 1.0, var19 + 1.0);
-                Class3192.method11459(var20, Class5628.method17688(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
-                Class3192.method11461(var20, Class5628.method17688(ClientColors.DARK_BLUE_GREY.getColor, 0.2F));
+                RenderUtil.method11459(var20, Class5628.method17688(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
+                RenderUtil.method11461(var20, Class5628.method17688(ClientColors.DARK_BLUE_GREY.getColor, 0.2F));
                 GL11.glColor3f(1.0F, 1.0F, 1.0F);
             }
         }

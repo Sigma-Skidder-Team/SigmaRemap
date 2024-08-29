@@ -271,15 +271,15 @@ public class EntityRendererManager {
          float var7 = var3.method3429() / 2.0F;
          this.method32221(var1, var2, var3, 1.0F, 1.0F, 1.0F);
          if (var3 instanceof Class1007) {
-            double var10 = -MathHelper.method37822((double)var4, var3.field5048, var3.getPosX());
-            double var12 = -MathHelper.method37822((double)var4, var3.field5049, var3.getPosY());
-            double var14 = -MathHelper.method37822((double)var4, var3.field5050, var3.getPosZ());
+            double var10 = -MathHelper.method37822((double)var4, var3.lastTickPosX, var3.getPosX());
+            double var12 = -MathHelper.method37822((double)var4, var3.lastTickPosY, var3.getPosY());
+            double var14 = -MathHelper.method37822((double)var4, var3.lastTickPosZ, var3.getPosZ());
 
             for (Class908 var19 : ((Class1007)var3).method4332()) {
                var1.push();
-               double var20 = var10 + MathHelper.method37822((double)var4, var19.field5048, var19.getPosX());
-               double var22 = var12 + MathHelper.method37822((double)var4, var19.field5049, var19.getPosY());
-               double var24 = var14 + MathHelper.method37822((double)var4, var19.field5050, var19.getPosZ());
+               double var20 = var10 + MathHelper.method37822((double)var4, var19.lastTickPosX, var19.getPosX());
+               double var22 = var12 + MathHelper.method37822((double)var4, var19.lastTickPosY, var19.getPosY());
+               double var24 = var14 + MathHelper.method37822((double)var4, var19.lastTickPosZ, var19.getPosZ());
                var1.translate(var20, var22, var24);
                this.method32221(var1, var2, var19, 0.25F, 1.0F, 0.0F);
                var1.method35295();
@@ -314,7 +314,7 @@ public class EntityRendererManager {
    }
 
    private void method32221(MatrixStack var1, Class5422 var2, Entity var3, float var4, float var5, float var6) {
-      Class6488 var9 = var3.method3389().method19667(-var3.getPosX(), -var3.getPosY(), -var3.getPosZ());
+      AxisAlignedBB var9 = var3.getBoundingBox().method19667(-var3.getPosX(), -var3.getPosY(), -var3.getPosZ());
       WorldRenderer.method897(var1, var2, var9, var4, var5, var6, 1.0F);
    }
 
@@ -389,9 +389,9 @@ public class EntityRendererManager {
             }
          }
 
-         double var10 = MathHelper.method37822((double)var4, var2.field5048, var2.getPosX());
-         double var12 = MathHelper.method37822((double)var4, var2.field5049, var2.getPosY());
-         double var14 = MathHelper.method37822((double)var4, var2.field5050, var2.getPosZ());
+         double var10 = MathHelper.method37822((double)var4, var2.lastTickPosX, var2.getPosX());
+         double var12 = MathHelper.method37822((double)var4, var2.lastTickPosY, var2.getPosY());
+         double var14 = MathHelper.method37822((double)var4, var2.lastTickPosZ, var2.getPosZ());
          int var16 = MathHelper.floor(var10 - (double)var9);
          int var17 = MathHelper.floor(var10 + (double)var9);
          int var18 = MathHelper.floor(var12 - (double)var9);
@@ -413,7 +413,7 @@ public class EntityRendererManager {
       BlockPos var14 = var3.method8313();
       BlockState var15 = var2.getBlockState(var14);
       if (var15.getRenderType() != BlockRenderType.field9885 && var2.method7015(var3) > 3 && var15.method23456(var2, var14)) {
-         Class6408 var16 = var15.method23412(var2, var3.method8313());
+         VoxelShape var16 = var15.method23412(var2, var3.method8313());
          if (!var16.method19516()) {
             float var17 = (float)(((double)var11 - (var6 - (double)var3.getY()) / 2.0) * 0.5 * (double)var2.method7009(var3));
             if (var17 >= 0.0F) {
@@ -421,7 +421,7 @@ public class EntityRendererManager {
                   var17 = 1.0F;
                }
 
-               Class6488 var18 = var16.method19514();
+               AxisAlignedBB var18 = var16.method19514();
                double var19 = (double)var3.getX() + var18.field28449;
                double var21 = (double)var3.getX() + var18.field28452;
                double var23 = (double)var3.getY() + var18.field28450;

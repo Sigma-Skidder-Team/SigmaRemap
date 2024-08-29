@@ -60,14 +60,14 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
-      return Class8022.method27425();
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+      return VoxelShapes.method27425();
    }
 
    @Override
-   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       Class955 var7 = this.method11930(var2, var3);
-      return var7 == null ? Class8022.method27425() : var7.method3866(var2, var3);
+      return var7 == null ? VoxelShapes.method27425() : var7.method3866(var2, var3);
    }
 
    @Nullable

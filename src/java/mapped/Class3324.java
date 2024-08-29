@@ -13,7 +13,7 @@ public class Class3324 extends Class3323 {
       if (!var1.field9020) {
          Class896 var7 = new Class896(var1, var2);
          var7.method3511(var6);
-         var7.method3463(var2, var2.field5032, var2.field5031, -20.0F, 0.5F, 1.0F);
+         var7.method3463(var2, var2.rotationPitch, var2.rotationYaw, -20.0F, 0.5F, 1.0F);
          var1.method6916(var7);
       }
 

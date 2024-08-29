@@ -90,7 +90,7 @@ public class Class4338 extends Class4304 {
       super.method13224();
       super.method13225();
       int var4 = (int)(1.0F + 10.0F * (1.0F - this.field21195));
-      Class3192.method11463(
+      RenderUtil.method11463(
          (float)(this.method13263() + (var4 - 1)),
          (float)(this.method13265() + (var4 - 1)),
          (float)(this.method13267() - (var4 - 1) * 2),
@@ -98,14 +98,14 @@ public class Class4338 extends Class4304 {
          (float)this.field21199 + (1.0F - this.field21195) * (float)var4,
          var1
       );
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + 60),
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 0.9F * this.field21195))
       );
-      Class3192.method11424(
+      RenderUtil.method11424(
          (float)this.method13263(),
          (float)this.method13265() + 60.0F * this.field21195,
          (float)this.method13267(),
@@ -121,7 +121,7 @@ public class Class4338 extends Class4304 {
       }
 
       String var5 = this.method13506().getName();
-      Class3192.method11440(
+      RenderUtil.method11440(
          ResourceRegistry.JelloLightFont25,
          (float)(this.method13263() + 20),
          (float)(this.method13265() + 30),
@@ -134,7 +134,7 @@ public class Class4338 extends Class4304 {
       super.method13027(var1 * var1);
       GL11.glPopMatrix();
       if (this.field21194.method13513() > 0) {
-         Class3192.method11449(
+         RenderUtil.method11449(
             (float)this.method13263(),
             (float)(this.method13265() + 60),
             (float)this.method13267(),

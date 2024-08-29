@@ -11,7 +11,7 @@ public abstract class Class901 extends Class882 {
 
    public Class901(EntityType<? extends Class901> var1, double var2, double var4, double var6, double var8, double var10, double var12, World var14) {
       this(var1, var14);
-      this.method3273(var2, var4, var6, this.field5031, this.field5032);
+      this.method3273(var2, var4, var6, this.rotationYaw, this.rotationPitch);
       this.method3216();
       double var17 = (double) MathHelper.method37766(var8 * var8 + var10 * var10 + var12 * var12);
       if (var17 != 0.0) {
@@ -24,16 +24,16 @@ public abstract class Class901 extends Class882 {
    public Class901(EntityType<? extends Class901> var1, Class880 var2, double var3, double var5, double var7, World var9) {
       this(var1, var2.getPosX(), var2.getPosY(), var2.getPosZ(), var3, var5, var7, var9);
       this.method3459(var2);
-      this.method3214(var2.field5031, var2.field5032);
+      this.method3214(var2.rotationYaw, var2.rotationPitch);
    }
 
    @Override
-   public void method2850() {
+   public void registerData() {
    }
 
    @Override
    public boolean method3291(double var1) {
-      double var5 = this.method3389().method19675() * 4.0;
+      double var5 = this.getBoundingBox().method19675() * 4.0;
       if (Double.isNaN(var5)) {
          var5 = 4.0;
       }
@@ -45,7 +45,7 @@ public abstract class Class901 extends Class882 {
    @Override
    public void tick() {
       Entity var3 = this.method3460();
-      if (this.world.field9020 || (var3 == null || !var3.field5041) && this.world.method7017(this.getPosition())) {
+      if (this.world.field9020 || (var3 == null || !var3.removed) && this.world.method7017(this.getPosition())) {
          super.tick();
          if (this.method3529()) {
             this.method3221(1);
@@ -83,7 +83,7 @@ public abstract class Class901 extends Class882 {
 
          this.method3434(var5.method11339(this.field5141, this.field5142, this.field5143).method11344((double)var12));
          this.world.method6746(this.method3530(), var6, var8 + 0.5, var10, 0.0, 0.0, 0.0);
-         this.method3215(var6, var8, var10);
+         this.setPosition(var6, var8, var10);
       } else {
          this.method2904();
       }
@@ -91,7 +91,7 @@ public abstract class Class901 extends Class882 {
 
    @Override
    public boolean method3467(Entity var1) {
-      return super.method3467(var1) && !var1.field5052;
+      return super.method3467(var1) && !var1.noClip;
    }
 
    public boolean method3529() {
@@ -171,8 +171,8 @@ public abstract class Class901 extends Class882 {
          this.getPosX(),
          this.getPosY(),
          this.getPosZ(),
-         this.field5032,
-         this.field5031,
+         this.rotationPitch,
+         this.rotationYaw,
          this.getType(),
          var4,
          new Vector3d(this.field5141, this.field5142, this.field5143)

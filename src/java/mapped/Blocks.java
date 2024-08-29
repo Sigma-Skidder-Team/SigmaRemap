@@ -2876,7 +2876,7 @@ public class Blocks {
       return new Class3250(
          var0,
          AbstractBlock.method26612(
-               Class8649.field38960, var1 -> var1.method23463(Class3250.field18713) != Class82.field206 ? Class7210.field30950 : var0.method312()
+               Class8649.field38960, var1 -> var1.method23463(Class3250.field18713) != Class82.FOOT ? Class7210.field30950 : var0.method312()
             )
             .method26619(Class8447.field36200)
             .method26623(0.2F)

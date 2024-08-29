@@ -7,9 +7,9 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public class Class1048 extends Class1047 {
-   private static final Class9289<BlockPos> field5804 = Class9361.<BlockPos>method35441(Class1048.class, Class7784.field33401);
-   private static final Class9289<Boolean> field5805 = Class9361.<Boolean>method35441(Class1048.class, Class7784.field33398);
-   private static final Class9289<Integer> field5806 = Class9361.<Integer>method35441(Class1048.class, Class7784.field33391);
+   private static final DataParameter<BlockPos> field5804 = EntityDataManager.<BlockPos>method35441(Class1048.class, Class7784.field33401);
+   private static final DataParameter<Boolean> field5805 = EntityDataManager.<Boolean>method35441(Class1048.class, Class7784.field33398);
+   private static final DataParameter<Integer> field5806 = EntityDataManager.<Integer>method35441(Class1048.class, Class7784.field33391);
    private static final Class8522 field5807 = new Class8522().method30203(10.0).method30205().method30204().method30206();
    public static final Predicate<ItemEntity> field5808 = var0 -> !var0.method4135() && var0.method3066() && var0.method3250();
 
@@ -23,8 +23,8 @@ public class Class1048 extends Class1047 {
    @Nullable
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      this.method3352(this.method3350());
-      this.field5032 = 0.0F;
+      this.method3352(this.getMaxAir());
+      this.rotationPitch = 0.0F;
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
@@ -38,35 +38,35 @@ public class Class1048 extends Class1047 {
    }
 
    public void method4776(BlockPos var1) {
-      this.field5063.method35446(field5804, var1);
+      this.dataManager.method35446(field5804, var1);
    }
 
    public BlockPos method4777() {
-      return this.field5063.<BlockPos>method35445(field5804);
+      return this.dataManager.<BlockPos>method35445(field5804);
    }
 
    public boolean method4778() {
-      return this.field5063.<Boolean>method35445(field5805);
+      return this.dataManager.<Boolean>method35445(field5805);
    }
 
    public void method4779(boolean var1) {
-      this.field5063.method35446(field5805, var1);
+      this.dataManager.method35446(field5805, var1);
    }
 
    public int method4780() {
-      return this.field5063.<Integer>method35445(field5806);
+      return this.dataManager.<Integer>method35445(field5806);
    }
 
    public void method4781(int var1) {
-      this.field5063.method35446(field5806, var1);
+      this.dataManager.method35446(field5806, var1);
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5804, BlockPos.ZERO);
-      this.field5063.method35442(field5805, false);
-      this.field5063.method35442(field5806, 2400);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5804, BlockPos.ZERO);
+      this.dataManager.register(field5805, false);
+      this.dataManager.register(field5806, 2400);
    }
 
    @Override
@@ -128,17 +128,17 @@ public class Class1048 extends Class1047 {
    }
 
    @Override
-   public int method3350() {
+   public int getMaxAir() {
       return 4800;
    }
 
    @Override
    public int method3012(int var1) {
-      return this.method3350();
+      return this.getMaxAir();
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return 0.3F;
    }
 
@@ -187,14 +187,14 @@ public class Class1048 extends Class1047 {
                this.method2741(Class8654.field39011, 1.0F);
             }
 
-            if (this.field5036) {
+            if (this.onGround) {
                this.method3434(
                   this.method3433()
-                     .method11339((double)((this.field5054.nextFloat() * 2.0F - 1.0F) * 0.2F), 0.5, (double)((this.field5054.nextFloat() * 2.0F - 1.0F) * 0.2F))
+                     .method11339((double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.2F), 0.5, (double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.2F))
                );
-               this.field5031 = this.field5054.nextFloat() * 360.0F;
-               this.field5036 = false;
-               this.field5078 = true;
+               this.rotationYaw = this.rand.nextFloat() * 360.0F;
+               this.onGround = false;
+               this.isAirBorne = true;
             }
          } else {
             this.method4781(2400);
@@ -202,9 +202,9 @@ public class Class1048 extends Class1047 {
 
          if (this.world.field9020 && this.method3250() && this.method3433().method11349() > 0.03) {
             Vector3d var3 = this.method3281(0.0F);
-            float var4 = MathHelper.cos(this.field5031 * (float) (Math.PI / 180.0)) * 0.3F;
-            float var5 = MathHelper.sin(this.field5031 * (float) (Math.PI / 180.0)) * 0.3F;
-            float var6 = 1.2F - this.field5054.nextFloat() * 0.7F;
+            float var4 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)) * 0.3F;
+            float var5 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)) * 0.3F;
+            float var6 = 1.2F - this.rand.nextFloat() * 0.7F;
 
             for (int var7 = 0; var7 < 2; var7++) {
                this.world
@@ -230,7 +230,7 @@ public class Class1048 extends Class1047 {
             }
          }
       } else {
-         this.method3352(this.method3350());
+         this.method3352(this.getMaxAir());
       }
    }
 
@@ -245,9 +245,9 @@ public class Class1048 extends Class1047 {
 
    private void method4783(Class7436 var1) {
       for (int var4 = 0; var4 < 7; var4++) {
-         double var5 = this.field5054.nextGaussian() * 0.01;
-         double var7 = this.field5054.nextGaussian() * 0.01;
-         double var9 = this.field5054.nextGaussian() * 0.01;
+         double var5 = this.rand.nextGaussian() * 0.01;
+         double var7 = this.rand.nextGaussian() * 0.01;
+         double var9 = this.rand.nextGaussian() * 0.01;
          this.world.method6746(var1, this.method3438(1.0), this.method3441() + 0.2, this.method3445(1.0), var5, var7, var9);
       }
    }
@@ -337,17 +337,17 @@ public class Class1048 extends Class1047 {
 
    // $VF: synthetic method
    public static Random method4787(Class1048 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4788(Class1048 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4789(Class1048 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method

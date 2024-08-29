@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import mapped.Class5501;
 import mapped.Minecraft;
 
@@ -19,9 +19,9 @@ public class Class8996 {
    }
 
    @EventTarget
-   private void method33237(Class4396 var1) {
-      if (var1.method13898() instanceof Class5501) {
-         Class5501 var4 = (Class5501)var1.method13898();
+   private void method33237(RecievePacketEvent var1) {
+      if (var1.getPacket() instanceof Class5501) {
+         Class5501 var4 = (Class5501)var1.getPacket();
          if (var4.method17303() != 0) {
             return;
          }

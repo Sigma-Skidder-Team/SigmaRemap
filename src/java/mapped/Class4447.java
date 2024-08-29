@@ -3438,11 +3438,11 @@ public class Class4447 implements Class4442 {
          .method38785(var0, Registry.ITEM.getKey(var2.method11581()).method8292() + "_smithing");
    }
 
-   private static void method14049(Consumer<Class4664> var0, Class3303 var1, Class7608<Item> var2) {
+   private static void method14049(Consumer<Class4664> var0, Class3303 var1, ITag<Item> var2) {
       Class8888.method32342(var1, 4).method32343(var2).method32349("planks").method32348("has_log", method14076(var2)).method32350(var0);
    }
 
-   private static void method14050(Consumer<Class4664> var0, Class3303 var1, Class7608<Item> var2) {
+   private static void method14050(Consumer<Class4664> var0, Class3303 var1, ITag<Item> var2) {
       Class8888.method32342(var1, 4).method32343(var2).method32349("planks").method32348("has_logs", method14076(var2)).method32350(var0);
    }
 
@@ -3722,7 +3722,7 @@ public class Class4447 implements Class4442 {
       return method14077(Class9735.method38146().method38147(var0).method38151());
    }
 
-   private static Class4491 method14076(Class7608<Item> var0) {
+   private static Class4491 method14076(ITag<Item> var0) {
       return method14077(Class9735.method38146().method38148(var0).method38151());
    }
 

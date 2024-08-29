@@ -2,17 +2,17 @@ package mapped;
 
 public class Class9773<T> {
    private static String[] field45709;
-   private final Class9289<T> field45710;
+   private final DataParameter<T> field45710;
    private T field45711;
    private boolean field45712;
 
-   public Class9773(Class9289<T> var1, T var2) {
+   public Class9773(DataParameter<T> var1, T var2) {
       this.field45710 = var1;
       this.field45711 = (T)var2;
       this.field45712 = true;
    }
 
-   public Class9289<T> method38447() {
+   public DataParameter<T> method38447() {
       return this.field45710;
    }
 
@@ -37,7 +37,7 @@ public class Class9773<T> {
    }
 
    // $VF: synthetic method
-   public static Class9289 method38453(Class9773 var0) {
+   public static DataParameter method38453(Class9773 var0) {
       return var0.field45710;
    }
 

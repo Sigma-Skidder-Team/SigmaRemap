@@ -57,20 +57,20 @@ public class Class4294 extends Class4278 {
       var5 += var4;
       if (var5 - var4 <= var8) {
          if (var7 != 0.0F) {
-            Class3192.method11467(
+            RenderUtil.method11467(
                this.field20895,
                var5,
                this.field20897,
                Math.max(20, var6),
                Class5628.method17688(!this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808, var7)
             );
-            Class3192.method11421(this.field20895, var5, this.field20895 + this.field20897 + 20, var5 + var6, true);
+            RenderUtil.method11421(this.field20895, var5, this.field20895 + this.field20897 + 20, var5 + var6, true);
             if (this.selectedAccount != null) {
                this.method13169();
                this.method13170();
                this.method13171(var7);
                if (this.field20803.calcPercent() > 0.0F && var6 > 55) {
-                  Class3192.method11449(
+                  RenderUtil.method11449(
                      (float)(this.field20895 + this.method13267()),
                      (float)var5 + (float)(26 * var6) / 100.0F,
                      18.0F * this.field20803.calcPercent() * (float)var6 / 100.0F,
@@ -81,7 +81,7 @@ public class Class4294 extends Class4278 {
                }
 
                super.method13027(var1 * var7);
-               Class3192.method11422();
+               RenderUtil.method11422();
             }
          }
       } else {
@@ -90,11 +90,11 @@ public class Class4294 extends Class4278 {
    }
 
    public void method13169() {
-      Class3192.method11450(
+      RenderUtil.method11450(
          (float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, this.selectedAccount.setSkinTexture(), ClientColors.LIGHT_GREYISH_BLUE.getColor, true
       );
-      Class3192.method11464((float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, 20.0F, 1.0F);
-      Class3192.method11449(
+      RenderUtil.method11464((float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, 20.0F, 1.0F);
+      RenderUtil.method11449(
          (float)(this.field20895 + 1),
          (float)this.field20896,
          100.0F,
@@ -106,31 +106,31 @@ public class Class4294 extends Class4278 {
 
    public void method13170() {
       if (this.selectedAccount.isEmailAValidEmailFormat()) {
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.selectedAccount.getEmail(), ClientColors.DEEP_TEAL.getColor
          );
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 50),
             "Username: " + this.selectedAccount.getEmail(),
             ClientColors.MID_GREY.getColor
          );
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.JelloLightFont14, (float)(this.field20895 + 110), (float)(this.field20896 + 65), "Offline account", ClientColors.MID_GREY.getColor
          );
       } else {
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.selectedAccount.getKnownName(), ClientColors.DEEP_TEAL.getColor
          );
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 50),
             "Email: " + this.selectedAccount.getEmail(),
             ClientColors.MID_GREY.getColor
          );
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 65),
@@ -146,7 +146,7 @@ public class Class4294 extends Class4278 {
       this.field20806 = Math.max(0, this.field20806 - 1);
       float var4 = this.field20806 <= 20 ? 20.0F : -20.0F;
       float var5 = (float)this.field20806 >= var4 && (float)this.field20806 <= (float)this.field20807 - var4 ? 1.0F : (float)this.field20806 % var4 / var4;
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)(this.field20895 + this.field20897 - 45),
          (float)(this.field20896 + 42),
          17.0F,
@@ -154,7 +154,7 @@ public class Class4294 extends Class4278 {
          ResourcesDecrypter.errorsPNG,
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * var1)
       );
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)(this.field20895 + this.field20897 - 45),
          (float)(this.field20896 + 45),
          17.0F,

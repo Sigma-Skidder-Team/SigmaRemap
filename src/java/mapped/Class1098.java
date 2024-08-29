@@ -8,10 +8,10 @@ import java.util.function.Predicate;
 
 public class Class1098 extends Class1013 {
    private static final Class120 field6036 = Class120.method339(Items.field37909, Items.field37910);
-   private static final Class9289<Integer> field6037 = Class9361.<Integer>method35441(Class1098.class, Class7784.field33391);
-   private static final Class9289<Boolean> field6038 = Class9361.<Boolean>method35441(Class1098.class, Class7784.field33398);
-   private static final Class9289<Boolean> field6039 = Class9361.<Boolean>method35441(Class1098.class, Class7784.field33398);
-   private static final Class9289<Integer> field6040 = Class9361.<Integer>method35441(Class1098.class, Class7784.field33391);
+   private static final DataParameter<Integer> field6037 = EntityDataManager.<Integer>method35441(Class1098.class, Class7784.field33391);
+   private static final DataParameter<Boolean> field6038 = EntityDataManager.<Boolean>method35441(Class1098.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field6039 = EntityDataManager.<Boolean>method35441(Class1098.class, Class7784.field33398);
+   private static final DataParameter<Integer> field6040 = EntityDataManager.<Integer>method35441(Class1098.class, Class7784.field33391);
    public static final Map<Integer, ResourceLocation> field6041 = Util.<Map<Integer, ResourceLocation>>method38508(Maps.newHashMap(), var0 -> {
       var0.put(0, new ResourceLocation("textures/entity/cat/tabby.png"));
       var0.put(1, new ResourceLocation("textures/entity/cat/black.png"));
@@ -62,48 +62,48 @@ public class Class1098 extends Class1013 {
    }
 
    public int method5250() {
-      return this.field5063.<Integer>method35445(field6037);
+      return this.dataManager.<Integer>method35445(field6037);
    }
 
    public void method5251(int var1) {
       if (var1 < 0 || var1 >= 11) {
-         var1 = this.field5054.nextInt(10);
+         var1 = this.rand.nextInt(10);
       }
 
-      this.field5063.method35446(field6037, var1);
+      this.dataManager.method35446(field6037, var1);
    }
 
    public void method5252(boolean var1) {
-      this.field5063.method35446(field6038, var1);
+      this.dataManager.method35446(field6038, var1);
    }
 
    public boolean method5253() {
-      return this.field5063.<Boolean>method35445(field6038);
+      return this.dataManager.<Boolean>method35445(field6038);
    }
 
    public void method5254(boolean var1) {
-      this.field5063.method35446(field6039, var1);
+      this.dataManager.method35446(field6039, var1);
    }
 
    public boolean method5255() {
-      return this.field5063.<Boolean>method35445(field6039);
+      return this.dataManager.<Boolean>method35445(field6039);
    }
 
    public Class112 method5256() {
-      return Class112.method315(this.field5063.<Integer>method35445(field6040));
+      return Class112.method315(this.dataManager.<Integer>method35445(field6040));
    }
 
    public void method5257(Class112 var1) {
-      this.field5063.method35446(field6040, var1.method309());
+      this.dataManager.method35446(field6040, var1.method309());
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field6037, 1);
-      this.field5063.method35442(field6038, false);
-      this.field5063.method35442(field6039, false);
-      this.field5063.method35442(field6040, Class112.field400.method309());
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field6037, 1);
+      this.dataManager.register(field6038, false);
+      this.dataManager.register(field6039, false);
+      this.dataManager.register(field6040, Class112.field400.method309());
    }
 
    @Override
@@ -125,20 +125,20 @@ public class Class1098 extends Class1013 {
    @Override
    public void method4258() {
       if (!this.method4228().method20811()) {
-         this.method3211(Class2090.field13619);
+         this.method3211(Pose.STANDING);
          this.setSprinting(false);
       } else {
          double var3 = this.method4228().method20812();
          if (var3 != 0.6) {
             if (var3 != 1.33) {
-               this.method3211(Class2090.field13619);
+               this.method3211(Pose.STANDING);
                this.setSprinting(false);
             } else {
-               this.method3211(Class2090.field13619);
+               this.method3211(Pose.STANDING);
                this.setSprinting(true);
             }
          } else {
-            this.method3211(Class2090.field13624);
+            this.method3211(Pose.field13624);
             this.setSprinting(false);
          }
       }
@@ -150,7 +150,7 @@ public class Class1098 extends Class1013 {
       if (!this.method4393()) {
          return Sounds.field26434;
       } else if (!this.method4507()) {
-         return this.field5054.nextInt(4) != 0 ? Sounds.field26433 : Sounds.field26441;
+         return this.rand.nextInt(4) != 0 ? Sounds.field26433 : Sounds.field26441;
       } else {
          return Sounds.field26440;
       }
@@ -205,7 +205,7 @@ public class Class1098 extends Class1013 {
    @Override
    public void tick() {
       super.tick();
-      if (this.field6043 != null && this.field6043.method10900() && !this.method4393() && this.field5055 % 100 == 0) {
+      if (this.field6043 != null && this.field6043.method10900() && !this.method4393() && this.ticksExisted % 100 == 0) {
          this.method2863(Sounds.field26438, 1.0F, 1.0F);
       }
 
@@ -213,8 +213,8 @@ public class Class1098 extends Class1013 {
    }
 
    private void method5261() {
-      if ((this.method5253() || this.method5255()) && this.field5055 % 5 == 0) {
-         this.method2863(Sounds.field26440, 0.6F + 0.4F * (this.field5054.nextFloat() - this.field5054.nextFloat()), 1.0F);
+      if ((this.method5253() || this.method5255()) && this.ticksExisted % 5 == 0) {
+         this.method2863(Sounds.field26440, 0.6F + 0.4F * (this.rand.nextFloat() - this.rand.nextFloat()), 1.0F);
       }
 
       this.method5262();
@@ -257,7 +257,7 @@ public class Class1098 extends Class1013 {
    public Class1098 method4389(ServerWorld var1, Class1045 var2) {
       Class1098 var5 = EntityType.field41012.method33215(var1);
       if (var2 instanceof Class1098) {
-         if (!this.field5054.nextBoolean()) {
+         if (!this.rand.nextBoolean()) {
             var5.method5251(((Class1098)var2).method5250());
          } else {
             var5.method5251(this.method5250());
@@ -266,7 +266,7 @@ public class Class1098 extends Class1013 {
          if (this.method4393()) {
             var5.method4398(this.method4397());
             var5.method4379(true);
-            if (!this.field5054.nextBoolean()) {
+            if (!this.rand.nextBoolean()) {
                var5.method5257(((Class1098)var2).method5256());
             } else {
                var5.method5257(this.method5256());
@@ -296,9 +296,9 @@ public class Class1098 extends Class1013 {
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (!(var1.method7000() > 0.9F)) {
-         this.method5251(this.field5054.nextInt(10));
+         this.method5251(this.rand.nextInt(10));
       } else {
-         this.method5251(this.field5054.nextInt(11));
+         this.method5251(this.rand.nextInt(11));
       }
 
       ServerWorld var8 = var1.method6970();
@@ -318,7 +318,7 @@ public class Class1098 extends Class1013 {
          if (!this.method4393()) {
             if (this.method4381(var5)) {
                this.method4501(var1, var5);
-               if (this.field5054.nextInt(3) != 0) {
+               if (this.rand.nextInt(3) != 0) {
                   this.world.method6786(this, (byte)6);
                } else {
                   this.method4399(var1);
@@ -376,13 +376,13 @@ public class Class1098 extends Class1013 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.5F;
    }
 
    @Override
    public boolean method4254(double var1) {
-      return !this.method4393() && this.field5055 > 2400;
+      return !this.method4393() && this.ticksExisted > 2400;
    }
 
    @Override

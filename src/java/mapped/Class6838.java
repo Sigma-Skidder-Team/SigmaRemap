@@ -11,7 +11,7 @@ public class Class6838 extends Class6829 {
 
    private void method20821() {
       if (!this.field29726.method3250()) {
-         if (this.field29726.field5036) {
+         if (this.field29726.onGround) {
             this.field29726.method3113(Math.max(this.field29726.method2918() / 2.0F, 0.06F));
          }
       } else {
@@ -36,8 +36,8 @@ public class Class6838 extends Class6829 {
          double var9 = (double) MathHelper.method37766(var3 * var3 + var5 * var5 + var7 * var7);
          var5 /= var9;
          float var11 = (float)(MathHelper.method37814(var7, var3) * 180.0F / (float)Math.PI) - 90.0F;
-         this.field29726.field5031 = this.method20816(this.field29726.field5031, var11, 90.0F);
-         this.field29726.field4965 = this.field29726.field5031;
+         this.field29726.rotationYaw = this.method20816(this.field29726.rotationYaw, var11, 90.0F);
+         this.field29726.field4965 = this.field29726.rotationYaw;
          float var12 = (float)(this.field29711 * this.field29726.method3086(Class9173.field42108));
          this.field29726.method3113(MathHelper.method37821(0.125F, this.field29726.method2918(), var12));
          this.field29726.method3434(this.field29726.method3433().method11339(0.0, (double)this.field29726.method2918() * var5 * 0.1, 0.0));

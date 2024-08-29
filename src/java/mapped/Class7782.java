@@ -63,7 +63,7 @@ public class Class7782 {
    }
 
    public static float method25783(Vector3d var0, Entity var1) {
-      Class6488 var4 = var1.method3389();
+      AxisAlignedBB var4 = var1.getBoundingBox();
       double var5 = 1.0 / ((var4.field28452 - var4.field28449) * 2.0 + 1.0);
       double var7 = 1.0 / ((var4.field28453 - var4.field28450) * 2.0 + 1.0);
       double var9 = 1.0 / ((var4.field28454 - var4.field28451) * 2.0 + 1.0);
@@ -147,7 +147,7 @@ public class Class7782 {
       int var10 = MathHelper.floor(this.field33376 - (double)var53 - 1.0);
       int var11 = MathHelper.floor(this.field33376 + (double)var53 + 1.0);
       List var12 = this.field33373
-         .method7181(this.field33377, new Class6488((double)var54, (double)var8, (double)var10, (double)var55, (double)var9, (double)var11));
+         .method7181(this.field33377, new AxisAlignedBB((double)var54, (double)var8, (double)var10, (double)var55, (double)var9, (double)var11));
       Vector3d var13 = new Vector3d(this.field33374, this.field33375, this.field33376);
 
       for (int var14 = 0; var14 < var12.size(); var14++) {

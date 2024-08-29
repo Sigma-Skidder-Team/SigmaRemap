@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Class1019 extends Class1018 implements Class1020 {
-   private static final Class9289<Byte> field5704 = Class9361.<Byte>method35441(Class1019.class, Class7784.field33390);
+   private static final DataParameter<Byte> field5704 = EntityDataManager.<Byte>method35441(Class1019.class, Class7784.field33390);
    private static final Map<Class112, Class3303> field5705 = Util.<Map<Class112, Class3303>>method38508(Maps.newEnumMap(Class112.class), var0 -> {
       var0.put(Class112.field386, Blocks.WHITE_WOOL);
       var0.put(Class112.field387, Blocks.ORANGE_WOOL);
@@ -87,9 +87,9 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5704, (byte)0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5704, (byte)0);
    }
 
    @Override
@@ -161,7 +161,7 @@ public class Class1019 extends Class1018 implements Class1020 {
          float var4 = ((float)(this.field5707 - 4) - var1) / 32.0F;
          return (float) (Math.PI / 5) + 0.21991149F * MathHelper.sin(var4 * 28.7F);
       } else {
-         return this.field5707 <= 0 ? this.field5032 * (float) (Math.PI / 180.0) : (float) (Math.PI / 5);
+         return this.field5707 <= 0 ? this.rotationPitch * (float) (Math.PI / 180.0) : (float) (Math.PI / 5);
       }
    }
 
@@ -183,7 +183,7 @@ public class Class1019 extends Class1018 implements Class1020 {
    public void method4515(Class2266 var1) {
       this.world.method6744((PlayerEntity)null, this, Sounds.field27033, var1, 1.0F, 1.0F);
       this.method4520(true);
-      int var4 = 1 + this.field5054.nextInt(3);
+      int var4 = 1 + this.rand.nextInt(3);
 
       for (int var5 = 0; var5 < var4; var5++) {
          ItemEntity var6 = this.method3301(field5705.get(this.method4517()), 1);
@@ -191,9 +191,9 @@ public class Class1019 extends Class1018 implements Class1020 {
             var6.method3434(
                var6.method3433()
                   .method11339(
-                     (double)((this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.1F),
-                     (double)(this.field5054.nextFloat() * 0.05F),
-                     (double)((this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.1F)
+                     (double)((this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F),
+                     (double)(this.rand.nextFloat() * 0.05F),
+                     (double)((this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F)
                   )
             );
          }
@@ -240,24 +240,24 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    public Class112 method4517() {
-      return Class112.method315(this.field5063.<Byte>method35445(field5704) & 15);
+      return Class112.method315(this.dataManager.<Byte>method35445(field5704) & 15);
    }
 
    public void method4518(Class112 var1) {
-      byte var4 = this.field5063.<Byte>method35445(field5704);
-      this.field5063.method35446(field5704, (byte)(var4 & 240 | var1.method309() & 15));
+      byte var4 = this.dataManager.<Byte>method35445(field5704);
+      this.dataManager.method35446(field5704, (byte)(var4 & 240 | var1.method309() & 15));
    }
 
    public boolean method4519() {
-      return (this.field5063.<Byte>method35445(field5704) & 16) != 0;
+      return (this.dataManager.<Byte>method35445(field5704) & 16) != 0;
    }
 
    public void method4520(boolean var1) {
-      byte var4 = this.field5063.<Byte>method35445(field5704);
+      byte var4 = this.dataManager.<Byte>method35445(field5704);
       if (!var1) {
-         this.field5063.method35446(field5704, (byte)(var4 & -17));
+         this.dataManager.method35446(field5704, (byte)(var4 & -17));
       } else {
-         this.field5063.method35446(field5704, (byte)(var4 | 16));
+         this.dataManager.method35446(field5704, (byte)(var4 | 16));
       }
    }
 
@@ -327,7 +327,7 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return 0.95F * var2.field39969;
    }
 }

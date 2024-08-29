@@ -13,7 +13,7 @@ public class Class5301 extends Module {
     @EventTarget
     public void method16656(Class4404 var1) {
         if (this.isEnabled()) {
-            if (mc.player.field5036) {
+            if (mc.player.onGround) {
                 if (!Class5628.method17729()) {
                     mc.player.method2914();
                 }

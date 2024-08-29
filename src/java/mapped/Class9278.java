@@ -24,7 +24,7 @@ public class Class9278 {
    private int field42675;
    private int field42676;
    private int field42677;
-   private Vector3d field42678 = Vector3d.field18047;
+   private Vector3d field42678 = Vector3d.ZERO;
    private int field42679;
    private int field42680;
    private List<Entity> field42681 = Collections.<Entity>emptyList();
@@ -38,8 +38,8 @@ public class Class9278 {
       this.field42669 = var3;
       this.field42670 = var4;
       this.method34974();
-      this.field42675 = MathHelper.method37767(var2.field5031 * 256.0F / 360.0F);
-      this.field42676 = MathHelper.method37767(var2.field5032 * 256.0F / 360.0F);
+      this.field42675 = MathHelper.method37767(var2.rotationYaw * 256.0F / 360.0F);
+      this.field42676 = MathHelper.method37767(var2.rotationPitch * 256.0F / 360.0F);
       this.field42677 = MathHelper.method37767(var2.method3142() * 256.0F / 360.0F);
       this.field42683 = var2.method3226();
    }
@@ -69,11 +69,11 @@ public class Class9278 {
          this.method34973();
       }
 
-      if (this.field42679 % this.field42669 == 0 || this.field42668.field5078 || this.field42668.method3210().method35447()) {
-         if (!this.field42668.method3328()) {
+      if (this.field42679 % this.field42669 == 0 || this.field42668.isAirBorne || this.field42668.method3210().method35447()) {
+         if (!this.field42668.isPassenger()) {
             this.field42680++;
-            int var22 = MathHelper.method37767(this.field42668.field5031 * 256.0F / 360.0F);
-            int var25 = MathHelper.method37767(this.field42668.field5032 * 256.0F / 360.0F);
+            int var22 = MathHelper.method37767(this.field42668.rotationYaw * 256.0F / 360.0F);
+            int var25 = MathHelper.method37767(this.field42668.rotationPitch * 256.0F / 360.0F);
             Vector3d var27 = this.field42668.getPositionVec().method11336(Class5476.method17232(this.field42672, this.field42673, this.field42674));
             boolean var28 = var27.method11349() >= 7.6293945E-6F;
             Object var29 = null;
@@ -111,7 +111,7 @@ public class Class9278 {
                }
             }
 
-            if ((this.field42670 || this.field42668.field5078 || this.field42668 instanceof Class880 && ((Class880)this.field42668).method3165())
+            if ((this.field42670 || this.field42668.isAirBorne || this.field42668 instanceof Class880 && ((Class880)this.field42668).method3165())
                && this.field42679 > 0) {
                Vector3d var18 = this.field42668.method3433();
                double var19 = var18.method11342(this.field42678);
@@ -137,8 +137,8 @@ public class Class9278 {
 
             this.field42682 = false;
          } else {
-            int var21 = MathHelper.method37767(this.field42668.field5031 * 256.0F / 360.0F);
-            int var24 = MathHelper.method37767(this.field42668.field5032 * 256.0F / 360.0F);
+            int var21 = MathHelper.method37767(this.field42668.rotationYaw * 256.0F / 360.0F);
+            int var24 = MathHelper.method37767(this.field42668.rotationPitch * 256.0F / 360.0F);
             boolean var26 = Math.abs(var21 - this.field42675) >= 1 || Math.abs(var24 - this.field42676) >= 1;
             if (var26) {
                this.field42671.accept(new Class5479(this.field42668.method3205(), (byte)var21, (byte)var24, this.field42668.method3226()));
@@ -157,13 +157,13 @@ public class Class9278 {
             this.field42677 = var23;
          }
 
-         this.field42668.field5078 = false;
+         this.field42668.isAirBorne = false;
       }
 
       this.field42679++;
-      if (this.field42668.field5039) {
+      if (this.field42668.velocityChanged) {
          this.method34976(new Class5590(this.field42668));
-         this.field42668.field5039 = false;
+         this.field42668.velocityChanged = false;
       }
    }
 
@@ -179,7 +179,7 @@ public class Class9278 {
    }
 
    public void method34972(Consumer<Packet<?>> var1) {
-      if (this.field42668.field5041) {
+      if (this.field42668.removed) {
          field42666.warn("Fetching packet for removed entity " + this.field42668);
       }
 
@@ -234,7 +234,7 @@ public class Class9278 {
          var1.accept(new Class5485(this.field42668));
       }
 
-      if (this.field42668.method3328()) {
+      if (this.field42668.isPassenger()) {
          var1.accept(new Class5485(this.field42668.getRidingEntity()));
       }
 
@@ -247,7 +247,7 @@ public class Class9278 {
    }
 
    private void method34973() {
-      Class9361 var3 = this.field42668.method3210();
+      EntityDataManager var3 = this.field42668.method3210();
       if (var3.method35447()) {
          this.method34976(new Class5553(this.field42668.method3205(), var3, false));
       }

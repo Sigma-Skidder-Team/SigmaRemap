@@ -979,7 +979,7 @@ public class Class1649 extends Class1648 implements Class1650 {
 
        for (Class8998 var9 : this.field8973.values()) {
            Entity var10 = Class8998.method33247(var9);
-           if (var10 != var1 && var10.field5072 == var3.method7072().field32174 && var10.field5074 == var3.method7072().field32175) {
+           if (var10 != var1 && var10.chunkCoordX == var3.method7072().field32174 && var10.chunkCoordZ == var3.method7072().field32175) {
                var9.method33243(var1);
                if (var10 instanceof Class1006 && ((Class1006) var10).method4297() != null) {
                    var6.add(var10);

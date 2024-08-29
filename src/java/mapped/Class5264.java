@@ -19,7 +19,7 @@ public class Class5264 extends PremiumModule {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23678 = -1;
         this.field23680 = 20;
         this.field23681 = -1;

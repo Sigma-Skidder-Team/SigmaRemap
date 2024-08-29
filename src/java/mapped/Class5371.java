@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -25,14 +25,14 @@ public class Class5371 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23989.clear();
         this.field23991 = false;
         this.field23990.method27120();
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         for (Packet var4 : this.field23989) {
             mc.getConnection().getNetworkManager().method30695(var4);
         }
@@ -48,7 +48,7 @@ public class Class5371 extends Module {
     }
 
     @EventTarget
-    private void method16911(Class4402 var1) {
+    private void method16911(SendPacketEvent var1) {
         if (this.isEnabled() && mc.getConnection() != null) {
             if (!this.field23991) {
                 if ((float) this.field23990.method27121() > this.getNumberValueBySettingName("Delay") * 1000.0F) {

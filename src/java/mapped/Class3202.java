@@ -5,22 +5,22 @@ import java.util.Random;
 
 public abstract class Class3202 extends Class3200 {
    public static final Class8551 field18510 = Class8820.field39704;
-   public static final Class6408 field18511 = Block.method11539(6.0, 14.0, 5.0, 10.0, 16.0, 11.0);
-   public static final Class6408 field18512 = Block.method11539(5.0, 14.0, 6.0, 11.0, 16.0, 10.0);
-   public static final Class6408 field18513 = Block.method11539(6.0, 0.0, 5.0, 10.0, 2.0, 11.0);
-   public static final Class6408 field18514 = Block.method11539(5.0, 0.0, 6.0, 11.0, 2.0, 10.0);
-   public static final Class6408 field18515 = Block.method11539(5.0, 6.0, 14.0, 11.0, 10.0, 16.0);
-   public static final Class6408 field18516 = Block.method11539(5.0, 6.0, 0.0, 11.0, 10.0, 2.0);
-   public static final Class6408 field18517 = Block.method11539(14.0, 6.0, 5.0, 16.0, 10.0, 11.0);
-   public static final Class6408 field18518 = Block.method11539(0.0, 6.0, 5.0, 2.0, 10.0, 11.0);
-   public static final Class6408 field18519 = Block.method11539(6.0, 15.0, 5.0, 10.0, 16.0, 11.0);
-   public static final Class6408 field18520 = Block.method11539(5.0, 15.0, 6.0, 11.0, 16.0, 10.0);
-   public static final Class6408 field18521 = Block.method11539(6.0, 0.0, 5.0, 10.0, 1.0, 11.0);
-   public static final Class6408 field18522 = Block.method11539(5.0, 0.0, 6.0, 11.0, 1.0, 10.0);
-   public static final Class6408 field18523 = Block.method11539(5.0, 6.0, 15.0, 11.0, 10.0, 16.0);
-   public static final Class6408 field18524 = Block.method11539(5.0, 6.0, 0.0, 11.0, 10.0, 1.0);
-   public static final Class6408 field18525 = Block.method11539(15.0, 6.0, 5.0, 16.0, 10.0, 11.0);
-   public static final Class6408 field18526 = Block.method11539(0.0, 6.0, 5.0, 1.0, 10.0, 11.0);
+   public static final VoxelShape field18511 = Block.method11539(6.0, 14.0, 5.0, 10.0, 16.0, 11.0);
+   public static final VoxelShape field18512 = Block.method11539(5.0, 14.0, 6.0, 11.0, 16.0, 10.0);
+   public static final VoxelShape field18513 = Block.method11539(6.0, 0.0, 5.0, 10.0, 2.0, 11.0);
+   public static final VoxelShape field18514 = Block.method11539(5.0, 0.0, 6.0, 11.0, 2.0, 10.0);
+   public static final VoxelShape field18515 = Block.method11539(5.0, 6.0, 14.0, 11.0, 10.0, 16.0);
+   public static final VoxelShape field18516 = Block.method11539(5.0, 6.0, 0.0, 11.0, 10.0, 2.0);
+   public static final VoxelShape field18517 = Block.method11539(14.0, 6.0, 5.0, 16.0, 10.0, 11.0);
+   public static final VoxelShape field18518 = Block.method11539(0.0, 6.0, 5.0, 2.0, 10.0, 11.0);
+   public static final VoxelShape field18519 = Block.method11539(6.0, 15.0, 5.0, 10.0, 16.0, 11.0);
+   public static final VoxelShape field18520 = Block.method11539(5.0, 15.0, 6.0, 11.0, 16.0, 10.0);
+   public static final VoxelShape field18521 = Block.method11539(6.0, 0.0, 5.0, 10.0, 1.0, 11.0);
+   public static final VoxelShape field18522 = Block.method11539(5.0, 0.0, 6.0, 11.0, 1.0, 10.0);
+   public static final VoxelShape field18523 = Block.method11539(5.0, 6.0, 15.0, 11.0, 10.0, 16.0);
+   public static final VoxelShape field18524 = Block.method11539(5.0, 6.0, 0.0, 11.0, 10.0, 1.0);
+   public static final VoxelShape field18525 = Block.method11539(15.0, 6.0, 5.0, 16.0, 10.0, 11.0);
+   public static final VoxelShape field18526 = Block.method11539(0.0, 6.0, 5.0, 1.0, 10.0, 11.0);
    private final boolean field18527;
 
    public Class3202(boolean var1, AbstractBlock var2) {
@@ -40,7 +40,7 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       Direction var7 = var1.<Direction>method23463(field18484);
       boolean var8 = var1.<Boolean>method23463(field18510);
       switch (Class6392.field27980[var1.<Class103>method23463(field18500).ordinal()]) {

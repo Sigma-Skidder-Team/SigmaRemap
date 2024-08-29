@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.event.impl.Class4436;
 import com.mentalfrostbyte.jello.module.Module;
@@ -20,11 +20,11 @@ public class Class5210 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23537 = Client.getInstance().method19939().method31329() <= 0 ? 1 : 0;
         this.field23534 = Class9567.method37075();
         this.field23535 = Class9567.method37083()[0];
@@ -33,7 +33,7 @@ public class Class5210 extends Module {
     @EventTarget
     public void method16226(Class4435 var1) {
         if (this.isEnabled()) {
-            if (!mc.player.field5036) {
+            if (!mc.player.onGround) {
                 if (Class5628.method17686() && Class5351.field23907 >= 7) {
                     this.field23536++;
                     if (this.field23536 == 1) {
@@ -46,7 +46,7 @@ public class Class5210 extends Module {
                         }
                     }
 
-                    if (mc.player.field5037) {
+                    if (mc.player.collidedHorizontally) {
                         this.field23534 = Class9567.method37075();
                     }
 
@@ -89,9 +89,9 @@ public class Class5210 extends Module {
     }
 
     @EventTarget
-    public void method16228(Class4396 var1) {
+    public void method16228(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof Class5473) {
+            if (var1.getPacket() instanceof Class5473) {
                 this.field23537 = 0;
                 this.field23534 = Class9567.method37075();
             }

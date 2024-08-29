@@ -196,7 +196,7 @@ public class MusicManager {
                         float var6 = 1.0F - (float) (var5 + 1) / var3;
                         float var7 = (float) field32143.mainWindow.method8044() / 1080.0F;
                         float var8 = ((float) (Math.sqrt(this.field32165.get(var5)) / 12.0) - 5.0F) * var7;
-                        Class3192.method11424(
+                        RenderUtil.method11424(
                                 (float) var5 * var4,
                                 (float) field32143.mainWindow.method8044() - var8,
                                 var4,
@@ -205,20 +205,20 @@ public class MusicManager {
                         );
                     }
 
-                    Class3192.method11476();
+                    RenderUtil.method11476();
 
                     for (int var13 = 0; (float) var13 < var3; var13++) {
                         float var14 = (float) field32143.mainWindow.method8044() / 1080.0F;
                         float var15 = ((float) (Math.sqrt(this.field32165.get(var13)) / 12.0) - 5.0F) * var14;
-                        Class3192.method11424((float) var13 * var4, (float) field32143.mainWindow.method8044() - var15, var4, var15, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                        RenderUtil.method11424((float) var13 * var4, (float) field32143.mainWindow.method8044() - var15, var4, var15, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     }
 
-                    Class3192.method11477(Class2329.field15940);
+                    RenderUtil.method11477(Class2329.field15940);
                     if (this.field32151 != null && this.field32153 != null) {
-                        Class3192.method11454(0.0F, 0.0F, (float) field32143.mainWindow.method8043(), (float) field32143.mainWindow.method8044(), this.field32153, 0.4F);
+                        RenderUtil.method11454(0.0F, 0.0F, (float) field32143.mainWindow.method8043(), (float) field32143.mainWindow.method8044(), this.field32153, 0.4F);
                     }
 
-                    Class3192.method11478();
+                    RenderUtil.method11478();
                     double var9 = 0.0;
                     short var16 = 4750;
 
@@ -231,20 +231,20 @@ public class MusicManager {
                     GL11.glTranslated(60.0, field32143.mainWindow.method8044() - 55, 0.0);
                     GL11.glScalef(var18, var18, 0.0F);
                     GL11.glTranslated(-60.0, -(field32143.mainWindow.method8044() - 55), 0.0);
-                    Class3192.method11455(10.0F, (float) (field32143.mainWindow.method8044() - 110), 100.0F, 100.0F, this.field32151);
-                    Class3192.method11463(10.0F, (float) (field32143.mainWindow.method8044() - 110), 100.0F, 100.0F, 14.0F, 0.3F);
+                    RenderUtil.method11455(10.0F, (float) (field32143.mainWindow.method8044() - 110), 100.0F, 100.0F, this.field32151);
+                    RenderUtil.method11463(10.0F, (float) (field32143.mainWindow.method8044() - 110), 100.0F, 100.0F, 14.0F, 0.3F);
                     GL11.glPopMatrix();
                     String[] var11 = this.field32150.split(" - ");
                     int var12 = 30;
                     if (var11.length <= 1) {
-                        Class3192.method11439(
+                        RenderUtil.method11439(
                                 ResourceRegistry.JelloLightFont18_1,
                                 130.0F,
                                 (float) (field32143.mainWindow.method8044() - 70),
                                 var11[0],
                                 Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F)
                         );
-                        Class3192.method11439(
+                        RenderUtil.method11439(
                                 ResourceRegistry.JelloLightFont18,
                                 130.0F,
                                 (float) (field32143.mainWindow.method8044() - 70),
@@ -252,28 +252,28 @@ public class MusicManager {
                                 Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)
                         );
                     } else {
-                        Class3192.method11439(
+                        RenderUtil.method11439(
                                 ResourceRegistry.JelloMediumFont20_1,
                                 130.0F,
                                 (float) (field32143.mainWindow.method8044() - 81),
                                 var11[0],
                                 Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.4F)
                         );
-                        Class3192.method11439(
+                        RenderUtil.method11439(
                                 ResourceRegistry.JelloLightFont18_1,
                                 130.0F,
                                 (float) (field32143.mainWindow.method8044() - 56),
                                 var11[1],
                                 Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F)
                         );
-                        Class3192.method11439(
+                        RenderUtil.method11439(
                                 ResourceRegistry.JelloLightFont18,
                                 130.0F,
                                 (float) (field32143.mainWindow.method8044() - 56),
                                 var11[1],
                                 Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)
                         );
-                        Class3192.method11439(
+                        RenderUtil.method11439(
                                 ResourceRegistry.JelloMediumFont20,
                                 130.0F,
                                 (float) (field32143.mainWindow.method8044() - 81),
@@ -345,7 +345,7 @@ public class MusicManager {
 
                         for (int var4 = this.field32159; var4 < this.field32145.field44778.size(); var4++) {
                             URL var5 = Class9275.method34960(this.field32145.field44778.get(var4).field41970);
-                            Client.method19919().dummyMethod(var5.toString());
+                            Client.getClientLogger().dummyMethod(var5.toString());
                             this.field32157 = var4;
                             this.field32160 = this.field32145.field44778.get(var4);
                             this.field32163.clear();
@@ -369,7 +369,7 @@ public class MusicManager {
 
                             try {
                                 URL var28 = this.method24323(var5);
-                                Client.method19919().dummyMethod(var28 == null ? "No stream" : var28.toString());
+                                Client.getClientLogger().dummyMethod(var28 == null ? "No stream" : var28.toString());
                                 if (var28 != null) {
                                     URLConnection var7 = var28.openConnection();
                                     var7.setConnectTimeout(14000);
@@ -383,7 +383,7 @@ public class MusicManager {
                                     Class8583 var11 = var10.method30073();
                                     List var12 = var11.method30672();
                                     if (var12.isEmpty()) {
-                                        Client.method19919().dummyMethod("No content");
+                                        Client.getClientLogger().dummyMethod("No content");
                                     }
 
                                     Class7356 var13 = (Class7356) var11.method30672().get(1);

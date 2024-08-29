@@ -36,14 +36,14 @@ public class Class5261 extends PremiumModule {
     public void method16447(TickEvent var1) {
         if (this.isEnabled()) {
             if (field23663 != null && (field23663.field35732 != mc.mainWindow.getFramebufferWidth() || field23663.field35733 != mc.mainWindow.getFramebufferHeight())) {
-                this.isInDevelopment();
+                this.onEnable();
             }
 
             if (this.getBooleanValueFromSetttingName("Smart Visibility")) {
                 List var4 = mc.world
                         .method6772(
                                 PlayerEntity.class,
-                                mc.player.method3389().method19664(14.0),
+                                mc.player.getBoundingBox().method19664(14.0),
                                 var1x -> var1x.method3275(mc.player) < 12.0F
                                         && !this.method16448(var1x)
                                         && mc.player != var1x
@@ -62,7 +62,7 @@ public class Class5261 extends PremiumModule {
 
     public boolean method16448(Class880 var1) {
         float var4 = Class9142.method34138(var1, mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ())[0];
-        return this.method16449(mc.player.field5031, var4) <= 90.0F;
+        return this.method16449(mc.player.rotationYaw, var4) <= 90.0F;
     }
 
     public float method16449(float var1, float var2) {
@@ -96,7 +96,7 @@ public class Class5261 extends PremiumModule {
                         var8 = (int) ((float) var8 * Class8603.method30791(this.field23662.calcPercent(), 0.3, 0.88, 0.47, 1.0));
                     }
 
-                    Class3192.method11463(
+                    RenderUtil.method11463(
                             (float) (mc.mainWindow.method8043() - var7 - var5),
                             (float) (mc.mainWindow.method8044() + var8),
                             (float) var5,
@@ -180,7 +180,7 @@ public class Class5261 extends PremiumModule {
         if (this.isEnabled()) {
             if (field23663 != null) {
                 if (mc.currentScreen == null || this.getBooleanValueFromSetttingName("Show in GUI") || this.field23667 != 0) {
-                    Class3192.method11468();
+                    RenderUtil.method11468();
                     RenderSystem.pushMatrix();
                     RenderSystem.clear(16640, false);
                     field23663.bindFramebuffer(true);
@@ -190,8 +190,8 @@ public class Class5261 extends PremiumModule {
                     int var5 = Math.min(Minecraft.getFps(), var4);
                     var5 = Math.max(var5, 60);
                     long var6 = Util.nanoTime() - var1.field21555;
-                    float var8 = mc.player.field5031;
-                    mc.player.field5031 += 180.0F;
+                    float var8 = mc.player.rotationYaw;
+                    mc.player.rotationYaw += 180.0F;
                     RenderSystem.enableDepthTest();
                     GL11.glAlphaFunc(519, 0.0F);
                     double var9 = mc.gameSettings.field44669;
@@ -205,25 +205,25 @@ public class Class5261 extends PremiumModule {
                     Client.field28993 = false;
                     mc.gameRenderer.field814 = true;
                     mc.gameSettings.field44669 = var9;
-                    mc.player.field5031 = var8;
+                    mc.player.rotationYaw = var8;
                     RenderSystem.popMatrix();
                     mc.getFramebuffer().bindFramebuffer(true);
                 }
             } else {
-                this.isInDevelopment();
+                this.onEnable();
             }
         }
     }
 
     @Override
-    public void isInDevelopment() {
-        Class3192.method11469(mc.getFramebuffer());
+    public void onEnable() {
+        RenderUtil.method11469(mc.getFramebuffer());
         field23663 = new Framebuffer(mc.mainWindow.getFramebufferWidth(), mc.mainWindow.getFramebufferHeight(), true, Minecraft.IS_RUNNING_ON_MAC);
         field23663.setFramebufferColor(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         this.field23662.changeDirection(Direction.BACKWARDS);
     }
 }

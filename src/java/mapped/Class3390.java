@@ -139,7 +139,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public boolean method11650(BlockState var1, Class7631 var2) {
+   public boolean method11650(BlockState var1, Fluid var2) {
       return this.field19004.method31089() || !this.field19004.method31086();
    }
 
@@ -162,18 +162,18 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public Class6408 method11503(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11503(BlockState var1, Class1665 var2, BlockPos var3) {
       return var1.method23412(var2, var3);
    }
 
    @Deprecated
-   public Class6408 method11995(BlockState var1, Class1665 var2, BlockPos var3) {
-      return this.method11502(var1, var2, var3, Class4832.method14947());
+   public VoxelShape method11995(BlockState var1, Class1665 var2, BlockPos var3) {
+      return this.method11502(var1, var2, var3, ISelectionContext.method14947());
    }
 
    @Deprecated
-   public Class6408 method11938(BlockState var1, Class1665 var2, BlockPos var3) {
-      return Class8022.method27425();
+   public VoxelShape method11938(BlockState var1, Class1665 var2, BlockPos var3) {
+      return VoxelShapes.method27425();
    }
 
    @Deprecated
@@ -207,17 +207,17 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
-      return Class8022.method27426();
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+      return VoxelShapes.method27426();
    }
 
    @Deprecated
-   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
-      return !this.field19005 ? Class8022.method27425() : var1.method23412(var2, var3);
+   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+      return !this.field19005 ? VoxelShapes.method27425() : var1.method23412(var2, var3);
    }
 
    @Deprecated
-   public Class6408 method11635(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11635(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return this.method11502(var1, var2, var3, var4);
    }
 

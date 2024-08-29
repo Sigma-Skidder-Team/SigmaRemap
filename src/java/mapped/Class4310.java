@@ -180,14 +180,14 @@ public class Class4310 extends Class4307 {
          int var17 = (int)(600.0F * var16);
          int var18 = (int)(450.0F * var16);
          byte var19 = 0;
-         Class3192.method11455(
+         RenderUtil.method11455(
             (float)this.field20967 - (float)var17 * var12,
             (float)this.field20966,
             (float)(this.method13267() * 2 + var17),
             (float)(this.method13269() + 114),
             ResourcesDecrypter.backgroundPNG
          );
-         Class3192.method11455(
+         RenderUtil.method11455(
             (float)this.field20967 - (float)var18 * var12,
             (float)this.field20966,
             (float)(this.method13267() * 2 + var18),
@@ -201,7 +201,7 @@ public class Class4310 extends Class4307 {
             GL11.glPopMatrix();
          }
 
-         Class3192.method11455(
+         RenderUtil.method11455(
             (float)this.field20967 - (float)var19 * var12,
             (float)this.field20966,
             (float)(this.method13267() * 2 + var19),
@@ -215,7 +215,7 @@ public class Class4310 extends Class4307 {
             var26 = ResourcesDecrypter.logoLarge2xPNG;
          }
 
-         Class3192.method11450(
+         RenderUtil.method11450(
             (float)this.field20967,
             (float)(this.field20966 - 50),
             (float)(this.method13267() * 2),
@@ -224,7 +224,7 @@ public class Class4310 extends Class4307 {
             Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4),
             false
          );
-         Class3192.method11424(
+         RenderUtil.method11424(
             0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var4 * 0.3F)
          );
 
@@ -261,7 +261,7 @@ public class Class4310 extends Class4307 {
          }
 
          if (this.field20973.method25319() == Direction.FORWARDS) {
-            Class3192.method11440(
+            RenderUtil.method11440(
                ResourceRegistry.JelloMediumFont50,
                (float)(this.field20897 / 2),
                (float)(this.field20898 / 2 - 30),
@@ -270,7 +270,7 @@ public class Class4310 extends Class4307 {
                Class2218.field14492,
                Class2218.field14492
             );
-            Class3192.method11440(
+            RenderUtil.method11440(
                ResourceRegistry.JelloLightFont18,
                (float)(this.field20897 / 2),
                (float)(this.field20898 / 2 + 30),

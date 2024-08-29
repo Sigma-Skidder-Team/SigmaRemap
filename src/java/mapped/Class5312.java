@@ -9,9 +9,9 @@ public class Class5312 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         String var3 = "op " + mc.player.getName();
         var3.replace("&", "§");
-        this.method15965();
+        this.onDisable();
     }
 }

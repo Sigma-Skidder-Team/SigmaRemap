@@ -13,15 +13,18 @@ import totalcross.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * For example the Fly module
+ */
 @InDevelopment
-public class Class5325 extends Module {
+public class ModuleWithModuleSettings extends Module {
     private final List<Class6547> field23882 = new ArrayList<>();
     public Module[] moduleArray;
     public Module module;
     public ModeSetting modeSetting;
     private final List<String> stringList = new ArrayList<>();
 
-    public Class5325(ModuleCategory category, String type, String description, Module... modules) {
+    public ModuleWithModuleSettings(ModuleCategory category, String type, String description, Module... modules) {
         super(category, type, description);
         this.moduleArray = modules;
 
@@ -148,7 +151,7 @@ public class Class5325 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.method16724();
         if (this.module instanceof PremiumModule && !Client.getInstance().getNetworkManager().isPremium()) {
             this.method15998(false);
@@ -156,7 +159,7 @@ public class Class5325 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         for (Module var6 : this.moduleArray) {
             var6.method15999(false);
         }
@@ -171,7 +174,7 @@ public class Class5325 extends Module {
         super.method15985();
     }
 
-    public final Class5325 method16727(Class6547 var1) {
+    public final ModuleWithModuleSettings method16727(Class6547 var1) {
         this.field23882.add(var1);
         return this;
     }

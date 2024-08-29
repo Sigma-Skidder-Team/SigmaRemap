@@ -61,7 +61,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       this.field4856 = var1;
       this.field4860 = var1.getPlayerList().method19485(this);
       this.field4859 = var1.getPlayerList().method19486(this);
-      this.field5051 = 1.0F;
+      this.stepHeight = 1.0F;
       this.method2721(var2);
       this.field4888 = var1.method1438(this);
    }
@@ -101,7 +101,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          this.method3272(var4, 0.0F, 0.0F);
 
          while (!var1.method7052(this) && this.getPosY() < 255.0) {
-            this.method3215(this.getPosX(), this.getPosY() + 1.0, this.getPosZ());
+            this.setPosition(this.getPosX(), this.getPosY() + 1.0, this.getPosZ());
          }
       }
    }
@@ -246,8 +246,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    public void tick() {
       this.field4857.method33856();
       this.field4871--;
-      if (this.field5061 > 0) {
-         this.field5061--;
+      if (this.hurtResistantTime > 0) {
+         this.hurtResistantTime--;
       }
 
       this.field4905.method18130();
@@ -275,7 +275,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          if (!var7.method3066()) {
             this.method2815(this);
          } else {
-            this.method3269(var7.getPosX(), var7.getPosY(), var7.getPosZ(), var7.field5031, var7.field5032);
+            this.method3269(var7.getPosX(), var7.getPosY(), var7.getPosZ(), var7.rotationYaw, var7.rotationPitch);
             this.getServerWorld().method6883().method7376(this);
             if (this.method2852()) {
                this.method2815(this);
@@ -285,7 +285,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
       CriteriaTriggers.field44487.method15046(this);
       if (this.field4879 != null) {
-         CriteriaTriggers.field44485.method15118(this, this.field4879, this.field5055 - this.field4880);
+         CriteriaTriggers.field44485.method15118(this, this.field4879, this.ticksExisted - this.field4880);
       }
 
       this.field4859.method27414(this);
@@ -349,7 +349,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
             this.field4855.sendPacket(new Class5507(this.field4922, this.field4921, this.field4920));
          }
 
-         if (this.field5055 % 20 == 0) {
+         if (this.ticksExisted % 20 == 0) {
             CriteriaTriggers.field44480.method15062(this);
          }
       } catch (Throwable var6) {
@@ -387,7 +387,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
                   }
                }
             );
-         Class8219 var6 = this.method3344();
+         Team var6 = this.getTeam();
          if (var6 == null || var6.method28583() == Class2225.field14554) {
             this.field4856.getPlayerList().method19484(var5, ChatType.SYSTEM, Util.DUMMY_UUID);
          } else if (var6.method28583() != Class2225.field14556) {
@@ -426,7 +426,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    private void method2738() {
-      Class6488 var3 = new Class6488(this.getPosition()).method19663(32.0, 10.0, 32.0);
+      AxisAlignedBB var3 = new AxisAlignedBB(this.getPosition()).method19663(32.0, 10.0, 32.0);
       this.world
          .<Class1006>method7183(Class1006.class, var3)
          .stream()
@@ -458,7 +458,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    private void method2740(String var1, String var2, Class9008[] var3) {
       Class8218 var6 = this.method2953().method20998(var2);
       if (var6 != null) {
-         int var7 = var6.method28591().getColorIndex();
+         int var7 = var6.getColor().getColorIndex();
          if (var7 >= 0 && var7 < var3.length) {
             this.method2953().method20978(var3[var7], var1, Class9411::method36049);
          }
@@ -509,7 +509,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       Class9761 var4 = super.method2744(var1);
       if (var4 != null && this.world.getDimensionKey() == World.field8999 && var1.getDimensionKey() == World.THE_END) {
          Vector3d var5 = var4.field45665.method11339(0.0, -1.0, 0.0);
-         return new Class9761(var5, Vector3d.field18047, 90.0F, 0.0F);
+         return new Class9761(var5, Vector3d.ZERO, 90.0F, 0.0F);
       } else {
          return var4;
       }
@@ -522,7 +522,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       ServerWorld var4 = this.getServerWorld();
       RegistryKey var5 = var4.getDimensionKey();
       if (var5 == World.THE_END && var1.getDimensionKey() == World.field8999) {
-         this.method3200();
+         this.detach();
          this.getServerWorld().method6934(this);
          if (!this.queuedEndExit) {
             this.queuedEndExit = true;
@@ -550,7 +550,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          Class6395 var7 = this.field4856.getPlayerList();
          var7.method19454(this);
          var4.method6934(this);
-         this.field5041 = false;
+         this.removed = false;
          Class9761 var8 = this.method2744(var1);
          if (var8 != null) {
             var4.method6820().startSection("moving");
@@ -604,7 +604,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    public Optional<Class9502> method2747(ServerWorld var1, BlockPos var2, boolean var3) {
       Optional var6 = super.method2747(var1, var2, var3);
       if (!var6.isPresent()) {
-         Class113 var7 = this.world.getBlockState(this.field5082).<Class113>method23464(Class3401.field19060).orElse(Class113.field413);
+         Class113 var7 = this.world.getBlockState(this.field_242271_ac).<Class113>method23464(Class3401.field19060).orElse(Class113.field413);
          Optional var8 = var1.method6937().method12332(var2, var7);
          if (!var8.isPresent()) {
             field4854.error("Unable to create a portal, likely target out of worldborder");
@@ -663,7 +663,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       } else if (!this.method2754(var1, var4)) {
          return Either.left(Class2104.field13716);
       } else if (!this.method2756(var1, var4)) {
-         this.method2829(this.world.getDimensionKey(), var1, this.field5031, false, true);
+         this.method2829(this.world.getDimensionKey(), var1, this.rotationYaw, false, true);
          if (!this.world.method6740()) {
             if (!this.isCreative()) {
                double var6 = 8.0;
@@ -672,7 +672,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
                List var11 = this.world
                   .<Class1009>method6772(
                      Class1009.class,
-                     new Class6488(
+                     new AxisAlignedBB(
                         var10.method11320() - 8.0,
                         var10.method11321() - 5.0,
                         var10.method11322() - 8.0,
@@ -731,7 +731,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
       super.stopSleepInBed(var1, var2);
       if (this.field4855 != null) {
-         this.field4855.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.field5031, this.field5032);
+         this.field4855.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
       }
    }
 
@@ -741,7 +741,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       if (super.method2758(var1, var2)) {
          Entity var6 = this.getRidingEntity();
          if (var6 != var5 && this.field4855 != null) {
-            this.field4855.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.field5031, this.field5032);
+            this.field4855.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          }
 
          return true;
@@ -751,12 +751,12 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2759() {
+   public void stopRiding() {
       Entity var3 = this.getRidingEntity();
-      super.method2759();
+      super.stopRiding();
       Entity var4 = this.getRidingEntity();
       if (var4 != var3 && this.field4855 != null) {
-         this.field4855.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.field5031, this.field5032);
+         this.field4855.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
       }
    }
 
@@ -900,7 +900,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    public void method2775(float var1, float var2, boolean var3, boolean var4) {
-      if (this.method3328()) {
+      if (this.isPassenger()) {
          if (var1 >= -1.0F && var1 <= 1.0F) {
             this.field4982 = var1;
          }
@@ -955,7 +955,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    public void method2782() {
       this.field4881 = true;
-      this.method3315();
+      this.removePassengers();
       if (this.isSleeping()) {
          this.stopSleepInBed(true, false);
       }
@@ -1011,7 +1011,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          this.field4921 = var1.field4921;
          this.field4922 = var1.field4922;
          this.method2875(var1.method2874());
-         this.field5082 = var1.field5082;
+         this.field_242271_ac = var1.field_242271_ac;
       }
 
       this.field4923 = var1.field4923;
@@ -1033,7 +1033,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       super.method2790(var1);
       this.field4855.sendPacket(new Class5537(this.method3205(), var1));
       if (var1.method8627() == Class8254.field35491) {
-         this.field4880 = this.field5055;
+         this.field4880 = this.ticksExisted;
          this.field4879 = this.getPositionVec();
       }
 
@@ -1060,7 +1060,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    @Override
    public void method2793(double var1, double var3, double var5) {
-      this.field4855.method15668(var1, var3, var5, this.field5031, this.field5032);
+      this.field4855.method15668(var1, var3, var5, this.rotationYaw, this.rotationPitch);
    }
 
    @Override
@@ -1099,7 +1099,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          this.method2815(this);
       } else {
          this.method2949();
-         this.method2759();
+         this.stopRiding();
       }
 
       this.method2797();
@@ -1259,7 +1259,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    public void method2824(ServerWorld var1, double var2, double var4, double var6, float var8, float var9) {
       this.method2815(this);
-      this.method2759();
+      this.stopRiding();
       if (var1 != this.world) {
          ServerWorld var12 = this.getServerWorld();
          Class6612 var13 = var1.getWorldInfo();
@@ -1279,7 +1279,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          this.field4855.sendPacket(new Class5535(var13.method20047(), var13.method20048()));
          this.field4856.getPlayerList().method19454(this);
          var12.method6934(this);
-         this.field5041 = false;
+         this.removed = false;
          this.method3273(var2, var4, var6, var8, var9);
          this.method3268(var1);
          var1.method6919(this);

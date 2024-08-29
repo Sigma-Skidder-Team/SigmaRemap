@@ -38,36 +38,36 @@ public class Class895 extends Class890 {
             .method6746(
                Class7940.field34090,
                this.getPosX(),
-               this.getPosY() + this.field5054.nextDouble() * 2.0,
+               this.getPosY() + this.rand.nextDouble() * 2.0,
                this.getPosZ(),
-               this.field5054.nextGaussian(),
+               this.rand.nextGaussian(),
                0.0,
-               this.field5054.nextGaussian()
+               this.rand.nextGaussian()
             );
       }
 
-      if (!this.world.field9020 && !this.field5041) {
+      if (!this.world.field9020 && !this.removed) {
          if (!(var4 instanceof ServerPlayerEntity)) {
             if (var4 != null) {
                var4.method2793(this.getPosX(), this.getPosY(), this.getPosZ());
-               var4.field5045 = 0.0F;
+               var4.fallDistance = 0.0F;
             }
          } else {
             ServerPlayerEntity var7 = (ServerPlayerEntity)var4;
             if (var7.field4855.getNetworkManager().isChannelOpen() && var7.world == this.world && !var7.isSleeping()) {
-               if (this.field5054.nextFloat() < 0.05F && this.world.method6789().method17135(Class5462.field24226)) {
+               if (this.rand.nextFloat() < 0.05F && this.world.method6789().method17135(Class5462.field24226)) {
                   Class1104 var6 = EntityType.field41026.method33215(this.world);
                   var6.method5298(true);
-                  var6.method3273(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.field5031, var4.field5032);
+                  var6.method3273(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch);
                   this.world.method6916(var6);
                }
 
-               if (var4.method3328()) {
-                  var4.method2759();
+               if (var4.isPassenger()) {
+                  var4.stopRiding();
                }
 
                var4.method2793(this.getPosX(), this.getPosY(), this.getPosZ());
-               var4.field5045 = 0.0F;
+               var4.fallDistance = 0.0F;
                var4.method2741(Class8654.field39002, 5.0F);
             }
          }

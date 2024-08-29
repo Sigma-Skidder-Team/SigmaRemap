@@ -5,8 +5,8 @@ import java.util.Random;
 import java.util.UUID;
 
 public class Class1017 extends Class1018 implements Class1011, Class1016 {
-   private static final Class9289<Byte> field5684 = Class9361.<Byte>method35441(Class1017.class, Class7784.field33390);
-   private static final Class9289<Integer> field5685 = Class9361.<Integer>method35441(Class1017.class, Class7784.field33391);
+   private static final DataParameter<Byte> field5684 = EntityDataManager.<Byte>method35441(Class1017.class, Class7784.field33390);
+   private static final DataParameter<Integer> field5685 = EntityDataManager.<Integer>method35441(Class1017.class, Class7784.field33391);
    private static final Class8369 field5686 = Class8763.method31620(20, 39);
    private UUID field5687;
    private float field5688;
@@ -36,10 +36,10 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5684, (byte)0);
-      this.field5063.method35442(field5685, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5684, (byte)0);
+      this.dataManager.register(field5685, 0);
    }
 
    @Override
@@ -141,8 +141,8 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    @Override
    public void tick() {
       super.tick();
-      if (this.method4438() && this.method4434() < 10 && this.field5054.nextFloat() < 0.05F) {
-         for (int var3 = 0; var3 < this.field5054.nextInt(2) + 1; var3++) {
+      if (this.method4438() && this.method4434() < 10 && this.rand.nextFloat() < 0.05F) {
+         for (int var3 = 0; var3 < this.rand.nextInt(2) + 1; var3++) {
             this.method4419(
                this.world,
                this.getPosX() - 0.3F,
@@ -256,7 +256,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
       if (var3) {
          this.field5690++;
-         if (this.field5690 % 5 == 0 && this.field5054.nextInt(MathHelper.method37775(1200 - this.field5690, 1, 1200)) == 0) {
+         if (this.field5690 % 5 == 0 && this.rand.nextInt(MathHelper.method37775(1200 - this.field5690, 1, 1200)) == 0) {
             this.method2741(Class8654.field39005, this.method3042());
          }
       }
@@ -285,12 +285,12 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    @Override
    public int method4348() {
-      return this.field5063.<Integer>method35445(field5685);
+      return this.dataManager.<Integer>method35445(field5685);
    }
 
    @Override
    public void method4347(int var1) {
-      this.field5063.method35446(field5685, var1);
+      this.dataManager.method35446(field5685, var1);
    }
 
    @Override
@@ -305,7 +305,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    @Override
    public void method4346() {
-      this.method4347(field5686.method29319(this.field5054));
+      this.method4347(field5686.method29319(this.rand));
    }
 
    private boolean method4431(BlockPos var1) {
@@ -358,7 +358,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
          boolean var3 = this.method4369() && !this.method4440() && this.method4232() != null && this.method4232().getDistanceSq(this) < 4.0;
          this.method4443(var3);
-         if (this.field5055 % 20 == 0 && !this.method4437()) {
+         if (this.ticksExisted % 20 == 0 && !this.method4437()) {
             this.field5697 = null;
          }
       }
@@ -407,14 +407,14 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    private void method4445(int var1, boolean var2) {
       if (!var2) {
-         this.field5063.method35446(field5684, (byte)(this.field5063.<Byte>method35445(field5684) & ~var1));
+         this.dataManager.method35446(field5684, (byte)(this.dataManager.<Byte>method35445(field5684) & ~var1));
       } else {
-         this.field5063.method35446(field5684, (byte)(this.field5063.<Byte>method35445(field5684) | var1));
+         this.dataManager.method35446(field5684, (byte)(this.dataManager.<Byte>method35445(field5684) | var1));
       }
    }
 
    private boolean method4446(int var1) {
-      return (this.field5063.<Byte>method35445(field5684) & var1) != 0;
+      return (this.dataManager.<Byte>method35445(field5684) & var1) != 0;
    }
 
    public static Class7037 method4447() {
@@ -473,7 +473,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return !this.method3005() ? var2.field39969 * 0.5F : var2.field39969 * 0.5F;
    }
 
@@ -516,7 +516,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    @Override
-   public void method3105(Class7608<Class7631> var1) {
+   public void method3105(ITag<Fluid> var1) {
       this.method3434(this.method3433().method11339(0.0, 0.01, 0.0));
    }
 
@@ -661,7 +661,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    // $VF: synthetic method
    public static Random method4477(Class1017 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -671,7 +671,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    // $VF: synthetic method
    public static Random method4479(Class1017 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -686,7 +686,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    // $VF: synthetic method
    public static Random method4482(Class1017 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -696,7 +696,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    // $VF: synthetic method
    public static Random method4484(Class1017 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -716,7 +716,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    // $VF: synthetic method
    public static Random method4488(Class1017 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -726,12 +726,12 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    // $VF: synthetic method
    public static Random method4490(Class1017 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4491(Class1017 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -756,7 +756,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    // $VF: synthetic method
    public static Random method4496(Class1017 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method

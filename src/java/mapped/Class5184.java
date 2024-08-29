@@ -15,7 +15,7 @@ public class Class5184 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         mc.worldRenderer.loadRenderers();
         Class5313 var3 = (Class5313) Client.getInstance().getModuleManager().getModuleByClass(Class5313.class);
         if (!var3.isEnabled()) {
@@ -24,7 +24,7 @@ public class Class5184 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         mc.worldRenderer.loadRenderers();
     }
 

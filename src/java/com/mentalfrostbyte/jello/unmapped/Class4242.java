@@ -30,20 +30,20 @@ public class Class4242 extends Class4240 {
             var4 = Class8603.method30791(this.field20592.calcPercent(), 0.71, 0.18, 0.95, 0.57);
         }
 
-        Class3192.method11419((float) this.method13263(), (float) this.method13265() - var4 * 3.0F, (float) this.method13267(), (float) this.method13269());
+        RenderUtil.method11419((float) this.method13263(), (float) this.method13265() - var4 * 3.0F, (float) this.method13267(), (float) this.method13269());
         int var5 = 40;
-        float var6 = -Class4318.field21070 / (float) Minecraft.getInstance().mainWindow.method8043();
-        float var7 = -Class4318.field21071 / (float) Minecraft.getInstance().mainWindow.method8044();
-        Class3192.method11455(
+        float var6 = - GuiSwitch.field21070 / (float) Minecraft.getInstance().mainWindow.method8043();
+        float var7 = - GuiSwitch.field21071 / (float) Minecraft.getInstance().mainWindow.method8044();
+        RenderUtil.method11455(
                 (float) var5 * var6,
                 (float) var5 * var7,
                 (float) (Minecraft.getInstance().mainWindow.method8043() + var5),
                 (float) (Minecraft.getInstance().mainWindow.method8044() + var5),
                 CustomResourceLoadProgressGui.field6780
         );
-        Class3192.method11422();
+        RenderUtil.method11422();
         if (this.field20591) {
-            Class3192.method11424(
+            RenderUtil.method11424(
                     (float) this.method13263(),
                     (float) this.method13265() - var4 * 3.0F,
                     (float) this.method13267(),
@@ -52,7 +52,7 @@ public class Class4242 extends Class4240 {
             );
         }
 
-        Class3192.method11449(
+        RenderUtil.method11449(
                 (float) this.method13263(),
                 (float) this.method13265() - var4 * 3.0F,
                 (float) this.method13267(),

@@ -114,7 +114,7 @@ public class Class4375 extends Class4247 {
       super.method13224();
       byte var5 = 10;
       int var6 = Class5628.method17688(-723724, Class9782.method38557(var1, 0.0F, 1.0F, 1.0F));
-      Class3192.method11463(
+      RenderUtil.method11463(
          (float)(this.field20895 + var5 / 2),
          (float)(this.field20896 + var5 / 2),
          (float)(this.field20897 - var5),
@@ -122,19 +122,19 @@ public class Class4375 extends Class4247 {
          35.0F,
          var1
       );
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)(this.field20895 + var5 / 2),
          (float)(this.field20896 + var5 / 2),
          (float)(this.field20895 - var5 / 2 + this.field20897),
          (float)(this.field20896 - var5 / 2 + this.field20898),
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
       );
-      Class3192.method11475((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, (float)var5, var6);
+      RenderUtil.method11475((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, (float)var5, var6);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)this.field20895, (float)this.field20896, 0.0F);
       GL11.glRotatef(!this.field21378 ? -90.0F : 90.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-this.field20895), (float)(-this.field20896), 0.0F);
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)(this.field20895 + (!this.field21378 ? 0 : this.field20898)),
          (float)this.field20896 + (float)((this.field20897 - 47) / 2) * (!this.field21378 ? 1.0F : -1.5F),
          18.0F,
@@ -143,14 +143,14 @@ public class Class4375 extends Class4247 {
          var6
       );
       GL11.glPopMatrix();
-      Class3192.method11439(
+      RenderUtil.method11439(
          ResourceRegistry.JelloLightFont25,
          (float)(this.field20895 + 25),
          (float)(this.field20896 + 20),
          this.field20912 + " Key",
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
       );
-      Class3192.method11426(
+      RenderUtil.method11426(
          (float)(this.field20895 + 25),
          (float)(this.field20896 + 68),
          (float)(this.field20895 + this.field20897 - 25),

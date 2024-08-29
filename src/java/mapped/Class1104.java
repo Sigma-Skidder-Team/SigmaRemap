@@ -23,7 +23,7 @@ public class Class1104 extends Class1009 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return 0.13F;
    }
 
@@ -72,13 +72,13 @@ public class Class1104 extends Class1009 {
 
    @Override
    public void tick() {
-      this.field4965 = this.field5031;
+      this.field4965 = this.rotationYaw;
       super.tick();
    }
 
    @Override
    public void method3144(float var1) {
-      this.field5031 = var1;
+      this.rotationYaw = var1;
       super.method3144(var1);
    }
 
@@ -114,9 +114,9 @@ public class Class1104 extends Class1009 {
                   this.method3438(0.5),
                   this.method3441(),
                   this.method3445(0.5),
-                  (this.field5054.nextDouble() - 0.5) * 2.0,
-                  -this.field5054.nextDouble(),
-                  (this.field5054.nextDouble() - 0.5) * 2.0
+                  (this.rand.nextDouble() - 0.5) * 2.0,
+                  -this.rand.nextDouble(),
+                  (this.rand.nextDouble() - 0.5) * 2.0
                );
          }
       }

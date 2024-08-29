@@ -22,8 +22,8 @@ public class Class4249 extends Class4247 {
 
    @Override
    public void method13027(float var1) {
-      Class3192.method11419((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898);
-      Class3192.method11449(
+      RenderUtil.method11419((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898);
+      RenderUtil.method11449(
          (float)(this.field20895 - this.field20607.field719 * this.field20897),
          (float)this.field20896,
          (float)(this.field20897 * 3),
@@ -31,7 +31,7 @@ public class Class4249 extends Class4247 {
          ResourcesDecrypter.repeatPNG,
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.35F)
       );
-      Class3192.method11422();
+      RenderUtil.method11422();
       super.method13027(var1);
    }
 }

@@ -6,7 +6,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 import javax.annotation.Nullable;
 
-public abstract class Class932 extends TileEntity implements Class920, Class949, Class933 {
+public abstract class Class932 extends TileEntity implements Class920, Class949, INameable {
    private Class7969 field5279 = Class7969.field34259;
    private ITextComponent field5280;
 

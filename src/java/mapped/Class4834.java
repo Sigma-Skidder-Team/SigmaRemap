@@ -8,7 +8,7 @@ public final class Class4834 extends Class4833 {
    }
 
    @Override
-   public boolean method14950(Class6408 var1, BlockPos var2, boolean var3) {
+   public boolean method14950(VoxelShape var1, BlockPos var2, boolean var3) {
       return var3;
    }
 }

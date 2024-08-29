@@ -34,7 +34,7 @@ public class Class1674 implements Class1670 {
    private final Map<Structure<?>, LongSet> field9122 = Maps.newHashMap();
    private final ShortList[] field9123 = new ShortList[16];
    private Class6802<Block> field9124;
-   private Class6802<Class7631> field9125;
+   private Class6802<Fluid> field9125;
    private boolean field9126;
    private long field9127;
    private volatile boolean field9128;
@@ -51,7 +51,7 @@ public class Class1674 implements Class1670 {
          var3,
          Class8922.field40388,
          Class6804.<Block>method20727(),
-         Class6804.<Class7631>method20727(),
+         Class6804.<Fluid>method20727(),
          0L,
          (Class7038[])null,
          (Consumer<Class1674>)null
@@ -64,7 +64,7 @@ public class Class1674 implements Class1670 {
       Class1684 var3,
       Class8922 var4,
       Class6802<Block> var5,
-      Class6802<Class7631> var6,
+      Class6802<Fluid> var6,
       long var7,
       Class7038[] var9,
       Consumer<Class1674> var10
@@ -298,7 +298,7 @@ public class Class1674 implements Class1670 {
       int var5 = MathHelper.floor(var1.getPosZ() / 16.0);
       if (var4 != this.field9132.field32174 || var5 != this.field9132.field32175) {
          field9110.warn("Wrong location! ({}, {}) should be ({}, {}), {}", var4, var5, this.field9132.field32174, this.field9132.field32175, var1);
-         var1.field5041 = true;
+         var1.removed = true;
       }
 
       int var6 = MathHelper.floor(var1.getPosY() / 16.0);
@@ -310,10 +310,10 @@ public class Class1674 implements Class1670 {
          var6 = this.field9120.length - 1;
       }
 
-      var1.field5071 = true;
-      var1.field5072 = this.field9132.field32174;
-      var1.field5073 = var6;
-      var1.field5074 = this.field9132.field32175;
+      var1.addedToChunk = true;
+      var1.chunkCoordX = this.field9132.field32174;
+      var1.chunkCoordY = var6;
+      var1.chunkCoordZ = this.field9132.field32175;
       this.field9120[var6].add(var1);
    }
 
@@ -323,7 +323,7 @@ public class Class1674 implements Class1670 {
    }
 
    public void method7132(Entity var1) {
-      this.method7133(var1, var1.field5073);
+      this.method7133(var1, var1.chunkCoordY);
    }
 
    public void method7133(Entity var1, int var2) {
@@ -446,7 +446,7 @@ public class Class1674 implements Class1670 {
       this.field9128 = true;
    }
 
-   public void method7138(Entity var1, Class6488 var2, List<Entity> var3, Predicate<? super Entity> var4) {
+   public void method7138(Entity var1, AxisAlignedBB var2, List<Entity> var3, Predicate<? super Entity> var4) {
       int var7 = MathHelper.floor((var2.field28450 - 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.field28453 + 2.0) / 16.0);
       var7 = MathHelper.method37775(var7, 0, this.field9120.length - 1);
@@ -459,14 +459,14 @@ public class Class1674 implements Class1670 {
 
          for (int var13 = 0; var13 < var12; var13++) {
             Entity var14 = (Entity)var11.get(var13);
-            if (var14.method3389().method19670(var2) && var14 != var1) {
+            if (var14.getBoundingBox().method19670(var2) && var14 != var1) {
                if (var4 == null || var4.test(var14)) {
                   var3.add(var14);
                }
 
                if (var14 instanceof Class1007) {
                   for (Class908 var18 : ((Class1007)var14).method4332()) {
-                     if (var18 != var1 && var18.method3389().method19670(var2) && (var4 == null || var4.test(var18))) {
+                     if (var18 != var1 && var18.getBoundingBox().method19670(var2) && (var4 == null || var4.test(var18))) {
                         var3.add(var18);
                      }
                   }
@@ -476,7 +476,7 @@ public class Class1674 implements Class1670 {
       }
    }
 
-   public <T extends Entity> void method7139(EntityType<?> var1, Class6488 var2, List<? super T> var3, Predicate<? super T> var4) {
+   public <T extends Entity> void method7139(EntityType<?> var1, AxisAlignedBB var2, List<? super T> var3, Predicate<? super T> var4) {
       int var7 = MathHelper.floor((var2.field28450 - 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.field28453 + 2.0) / 16.0);
       var7 = MathHelper.method37775(var7, 0, this.field9120.length - 1);
@@ -484,14 +484,14 @@ public class Class1674 implements Class1670 {
 
       for (int var9 = var7; var9 <= var8; var9++) {
          for (Entity var11 : this.field9120[var9].method176(Entity.class)) {
-            if ((var1 == null || var11.getType() == var1) && var11.method3389().method19670(var2) && var4.test((T)var11)) {
+            if ((var1 == null || var11.getType() == var1) && var11.getBoundingBox().method19670(var2) && var4.test((T)var11)) {
                var3.add((T)var11);
             }
          }
       }
    }
 
-   public <T extends Entity> void method7140(Class<? extends T> var1, Class6488 var2, List<T> var3, Predicate<? super T> var4) {
+   public <T extends Entity> void method7140(Class<? extends T> var1, AxisAlignedBB var2, List<T> var3, Predicate<? super T> var4) {
       int var7 = MathHelper.floor((var2.field28450 - 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.field28453 + 2.0) / 16.0);
       var7 = MathHelper.method37775(var7, 0, this.field9120.length - 1);
@@ -499,7 +499,7 @@ public class Class1674 implements Class1670 {
 
       for (int var9 = var7; var9 <= var8; var9++) {
          for (Entity var11 : this.field9120[var9].method176(var1)) {
-            if (var11.method3389().method19670(var2) && (var4 == null || var4.test((T)var11))) {
+            if (var11.getBoundingBox().method19670(var2) && (var4 == null || var4.test((T)var11))) {
                var3.add((T)var11);
             }
          }
@@ -597,7 +597,7 @@ public class Class1674 implements Class1670 {
    }
 
    @Override
-   public Class6802<Class7631> method7090() {
+   public Class6802<Fluid> method7090() {
       return this.field9125;
    }
 
@@ -755,7 +755,7 @@ public class Class1674 implements Class1670 {
             this.field9125 = Class6804.method20727();
          }
       } else {
-         ((Class6806<Class7631>)this.field9125).method20738(this.field9116.method6861(), var1 -> this.method6739(var1).method23472());
+         ((Class6806<Fluid>)this.field9125).method20738(this.field9116.method6861(), var1 -> this.method6739(var1).method23472());
          this.field9125 = Class6804.method20727();
       }
    }
@@ -768,7 +768,7 @@ public class Class1674 implements Class1670 {
          this.method7078(true);
       }
 
-      if (this.field9125 == Class6804.<Class7631>method20727()) {
+      if (this.field9125 == Class6804.<Fluid>method20727()) {
          this.field9125 = new Class6801<>(
                  Registry.field16070::getKey, var1.method6861().method20729(this.field9132, true, false), var1.method6783()
          );

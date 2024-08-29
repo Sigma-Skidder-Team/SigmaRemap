@@ -3,22 +3,22 @@ package mapped;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public abstract class Class7631 {
+public abstract class Fluid {
    public static final Class2352<Class7379> field32708 = new Class2352<Class7379>();
-   public final Class9348<Class7631, Class7379> field32709;
+   public final Class9348<Fluid, Class7379> field32709;
    private Class7379 field32710;
 
-   public Class7631() {
-      Class7558<Class7631, Class7379> var3 = new Class7558<>(this);
+   public Fluid() {
+      Class7558<Fluid, Class7379> var3 = new Class7558<>(this);
       this.method25046(var3);
-      this.field32709 = var3.method24739(Class7631::method25049, Class7379::new);
+      this.field32709 = var3.method24739(Fluid::method25049, Class7379::new);
       this.method25048(this.field32709.method35393());
    }
 
-   public void method25046(Class7558<Class7631, Class7379> var1) {
+   public void method25046(Class7558<Fluid, Class7379> var1) {
    }
 
-   public Class9348<Class7631, Class7379> method25047() {
+   public Class9348<Fluid, Class7379> method25047() {
       return this.field32709;
    }
 
@@ -46,7 +46,7 @@ public abstract class Class7631 {
       return null;
    }
 
-   public abstract boolean method25055(Class7379 var1, Class1665 var2, BlockPos var3, Class7631 var4, Direction var5);
+   public abstract boolean method25055(Class7379 var1, Class1665 var2, BlockPos var3, Fluid var4, Direction var5);
 
    public abstract Vector3d method25056(Class1665 var1, BlockPos var2, Class7379 var3);
 
@@ -72,13 +72,13 @@ public abstract class Class7631 {
 
    public abstract int method25065(Class7379 var1);
 
-   public boolean method25066(Class7631 var1) {
+   public boolean method25066(Fluid var1) {
       return var1 == this;
    }
 
-   public boolean method25067(Class7608<Class7631> var1) {
+   public boolean method25067(ITag<Fluid> var1) {
       return var1.method24917(this);
    }
 
-   public abstract Class6408 method25068(Class7379 var1, Class1665 var2, BlockPos var3);
+   public abstract VoxelShape method25068(Class7379 var1, Class1665 var2, BlockPos var3);
 }

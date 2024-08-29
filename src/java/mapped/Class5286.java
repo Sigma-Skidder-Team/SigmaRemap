@@ -22,7 +22,7 @@ public class Class5286 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23758 = 0;
     }
 
@@ -122,9 +122,9 @@ public class Class5286 extends Module {
     private void method16589(Class4417 var1) {
         if (this.isEnabled() && mc.player != null) {
             if (!var1.method13967()) {
-                mc.player.field5051 = 1.07F;
+                mc.player.stepHeight = 1.07F;
             } else {
-                mc.player.field5051 = 0.5F;
+                mc.player.stepHeight = 0.5F;
             }
         }
     }

@@ -1,7 +1,7 @@
 package mapped;
 
 public abstract class Class1031 extends Class1025 {
-   private static final Class9289<Byte> field5733 = Class9361.<Byte>method35441(Class1031.class, Class7784.field33390);
+   private static final DataParameter<Byte> field5733 = EntityDataManager.<Byte>method35441(Class1031.class, Class7784.field33390);
    public int field5734;
    private Class2031 field5735 = Class2031.field13181;
 
@@ -10,9 +10,9 @@ public abstract class Class1031 extends Class1025 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5733, (byte)0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5733, (byte)0);
    }
 
    @Override
@@ -37,16 +37,16 @@ public abstract class Class1031 extends Class1025 {
    }
 
    public boolean method4594() {
-      return !this.world.field9020 ? this.field5734 > 0 : this.field5063.<Byte>method35445(field5733) > 0;
+      return !this.world.field9020 ? this.field5734 > 0 : this.dataManager.<Byte>method35445(field5733) > 0;
    }
 
    public void method4595(Class2031 var1) {
       this.field5735 = var1;
-      this.field5063.method35446(field5733, (byte)Class2031.method8665(var1));
+      this.dataManager.method35446(field5733, (byte)Class2031.method8665(var1));
    }
 
    public Class2031 method4596() {
-      return this.world.field9020 ? Class2031.method8664(this.field5063.<Byte>method35445(field5733)) : this.field5735;
+      return this.world.field9020 ? Class2031.method8664(this.dataManager.<Byte>method35445(field5733)) : this.field5735;
    }
 
    @Override
@@ -65,7 +65,7 @@ public abstract class Class1031 extends Class1025 {
          double var4 = Class2031.method8666(var3)[0];
          double var6 = Class2031.method8666(var3)[1];
          double var8 = Class2031.method8666(var3)[2];
-         float var10 = this.field4965 * (float) (Math.PI / 180.0) + MathHelper.cos((float)this.field5055 * 0.6662F) * 0.25F;
+         float var10 = this.field4965 * (float) (Math.PI / 180.0) + MathHelper.cos((float)this.ticksExisted * 0.6662F) * 0.25F;
          float var11 = MathHelper.cos(var10);
          float var12 = MathHelper.sin(var10);
          this.world

@@ -67,13 +67,13 @@ public class Class4311 extends Class4307 {
 
    @Override
    public void method13027(float var1) {
-      Class3192.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClassicDecryption.mainmenubackground);
-      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.PALE_RED.getColor, 0.1F));
-      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.95F));
-      Class3192.method11440(
+      RenderUtil.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClassicDecryption.mainmenubackground);
+      RenderUtil.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.PALE_RED.getColor, 0.1F));
+      RenderUtil.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.95F));
+      RenderUtil.method11440(
          ResourceRegistry.field38868, (float)(this.method13267() / 2), 38.0F, "Add Login", ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14492, Class2218.field14488
       );
-      Class3192.method11441(
+      RenderUtil.method11441(
          ResourceRegistry.field38868,
          (float)(this.method13267() / 2),
          58.0F,

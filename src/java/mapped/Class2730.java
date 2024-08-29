@@ -18,7 +18,7 @@ public class Class2730<T extends Class1026> extends Class2595 {
    @Override
    public boolean method10803() {
       return this.field17241.method4232() == null
-         && !this.field17241.method3329()
+         && !this.field17241.isBeingRidden()
          && this.field17241.method4552()
          && !this.field17241.method4551().method25388()
          && !((ServerWorld)this.field17241.world).method6952(this.field17241.getPosition());
@@ -36,7 +36,7 @@ public class Class2730<T extends Class1026> extends Class2595 {
    public void method10805() {
       if (this.field17241.method4552()) {
          Class7699 var3 = this.field17241.method4551();
-         if (this.field17241.field5055 % 20 == 0) {
+         if (this.field17241.ticksExisted % 20 == 0) {
             this.method10940(var3);
          }
 
@@ -55,7 +55,7 @@ public class Class2730<T extends Class1026> extends Class2595 {
          List<Class1026> var5 = this.field17241
             .world
             .method6772(
-               Class1026.class, this.field17241.method3389().method19664(16.0), var1x -> !var1x.method4552() && Class7531.method24612(var1x, var1)
+               Class1026.class, this.field17241.getBoundingBox().method19664(16.0), var1x -> !var1x.method4552() && Class7531.method24612(var1x, var1)
             );
          var4.addAll(var5);
 

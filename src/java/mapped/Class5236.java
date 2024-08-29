@@ -20,12 +20,12 @@ public class Class5236 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23589.clear();
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         this.field23589.clear();
     }
 
@@ -34,7 +34,7 @@ public class Class5236 extends Module {
         if (this.isEnabled() && (mc.player.method3331() || !this.method16004().getBooleanValueFromSetttingName("Sneak"))) {
             if (var1.method13976() == ClickEvent.Button.RIGHT) {
                 BlockRayTraceResult var4 = Class9217.method34567(
-                        mc.player.field5031, mc.player.field5032, this.method16004().getNumberValueBySettingName("Maximum range")
+                        mc.player.rotationYaw, mc.player.rotationPitch, this.method16004().getNumberValueBySettingName("Maximum range")
                 );
                 BlockPos var5 = null;
                 if (var4 != null) {
@@ -68,7 +68,7 @@ public class Class5236 extends Module {
                     var32 -= var26;
                     var34 -= var28;
                     double var37 = 0.3;
-                    Class6488 var39 = new Class6488(var30 - var37, var34, var32 - var37, var30 + var37, var34 + 1.9, var32 + var37);
+                    AxisAlignedBB var39 = new AxisAlignedBB(var30 - var37, var34, var32 - var37, var30 + var37, var34 + 1.9, var32 + var37);
                     if (mc.world.method7055(mc.player, var39).count() == 0L) {
                         mc.getConnection().sendPacket(new Class5605(var30, var34, var32, true));
                     }
@@ -77,7 +77,7 @@ public class Class5236 extends Module {
                 }
 
                 this.field23589.add(new Class8472(var6, var8, var10));
-                mc.player.method3215(var6, var8, var10);
+                mc.player.setPosition(var6, var8, var10);
                 this.field23590.method27120();
                 this.field23590.method27118();
                 if (this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
@@ -128,7 +128,7 @@ public class Class5236 extends Module {
                         var12.method29877() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321() + 1.6F,
                         var8 + 0.3F
                 );
-                Class3192.method11459(var10, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.2F));
+                RenderUtil.method11459(var10, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.2F));
             }
 
             GL11.glPushMatrix();

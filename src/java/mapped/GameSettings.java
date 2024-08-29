@@ -97,7 +97,7 @@ public class GameSettings {
    public final KeyBinding field44634 = new KeyBinding("key.back", 83, "key.categories.movement");
    public final KeyBinding field44635 = new KeyBinding("key.right", 68, "key.categories.movement");
    public final KeyBinding field44636 = new KeyBinding("key.jump", 32, "key.categories.movement");
-   public final KeyBinding field44637 = new Class2008("key.sneak", 340, "key.categories.movement", () -> this.field44628);
+   public final KeyBinding keyBindSneak = new Class2008("key.sneak", 340, "key.categories.movement", () -> this.field44628);
    public final KeyBinding field44638 = new Class2008("key.sprint", 341, "key.categories.movement", () -> this.field44629);
    public final KeyBinding field44639 = new KeyBinding("key.inventory", 69, "key.categories.inventory");
    public final KeyBinding keyBindSwapHands = new KeyBinding("key.swapOffhand", 70, "key.categories.inventory");
@@ -137,7 +137,7 @@ public class GameSettings {
          this.field44634,
          this.field44635,
          this.field44636,
-         this.field44637,
+         this.keyBindSneak,
          this.field44638,
          this.keyBindDrop,
          this.field44639,
@@ -2290,7 +2290,7 @@ public class GameSettings {
          Class9299.method35070(this.field44634, Class9299.field42930, var1);
          Class9299.method35070(this.field44635, Class9299.field42930, var1);
          Class9299.method35070(this.field44636, Class9299.field42930, var1);
-         Class9299.method35070(this.field44637, Class9299.field42930, var1);
+         Class9299.method35070(this.keyBindSneak, Class9299.field42930, var1);
          Class9299.method35070(this.field44638, Class9299.field42930, var1);
          Class9299.method35070(this.keyBindAttack, Class9299.field42930, var1);
          Class9299.method35070(this.keyBindChat, Class9299.field42930, var1);

@@ -40,7 +40,7 @@ public final class Class8178 implements Class8176 {
                   var13 = this.method28471((ItemFrameEntity)var6);
                }
             } else {
-               var13 = (double)var3.field5031;
+               var13 = (double)var3.rotationYaw;
             }
 
             var13 = MathHelper.method37790(var13 / 360.0, 1.0);

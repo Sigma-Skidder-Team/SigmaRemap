@@ -65,13 +65,13 @@ public class Class5305 extends Module {
                         GL11.glEnable(3042);
                         GL11.glAlphaFunc(516, 0.0F);
                         GL11.glEnable(2848);
-                        Class3192.method11459(
+                        RenderUtil.method11459(
                                 new Class9388(
                                         var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
                                 ),
                                 Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F)
                         );
-                        Class3192.method11462(
+                        RenderUtil.method11462(
                                 new Class9388(
                                         var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
                                 ),
@@ -107,9 +107,9 @@ public class Class5305 extends Module {
             double var8 = var1.getPosY() - mc.player.getPosY() - (double) mc.player.method3430() + 0.4F;
             double var10 = var1.getPosZ() - mc.player.getPosZ();
             double var12 = MathHelper.method37766(var6 * var6 + var10 * var10);
-            float var14 = Class9142.method34135(mc.player.field5031, (float) (Math.atan2(var10, var6) * 180.0 / Math.PI) - 90.0F, 360.0F);
-            float var15 = Class9142.method34135(mc.player.field5032, (float) (-(Math.atan2(var8, var12) * 180.0 / Math.PI)), 360.0F);
-            return this.method16673(mc.player.field5031, var14) <= var5 && this.method16673(mc.player.field5032, var15) <= var5;
+            float var14 = Class9142.method34135(mc.player.rotationYaw, (float) (Math.atan2(var10, var6) * 180.0 / Math.PI) - 90.0F, 360.0F);
+            float var15 = Class9142.method34135(mc.player.rotationPitch, (float) (-(Math.atan2(var8, var12) * 180.0 / Math.PI)), 360.0F);
+            return this.method16673(mc.player.rotationYaw, var14) <= var5 && this.method16673(mc.player.rotationPitch, var15) <= var5;
         }
     }
 
@@ -167,8 +167,8 @@ public class Class5305 extends Module {
 
                     GL11.glPushMatrix();
                     GL11.glTranslatef(0.0F, 0.0F, 1000.0F);
-                    GL11.glScalef(1.0F / Class3192.method11417(), 1.0F / Class3192.method11417(), 0.0F);
-                    int var9 = Math.round(16.0F * Class3192.method11417());
+                    GL11.glScalef(1.0F / RenderUtil.method11417(), 1.0F / RenderUtil.method11417(), 0.0F);
+                    int var9 = Math.round(16.0F * RenderUtil.method11417());
                     byte var10 = 1;
                     byte var11 = 12;
                     int var12 = ResourceRegistry.JelloLightFont25.method23952();
@@ -192,26 +192,26 @@ public class Class5305 extends Module {
     private void method16676(int var1, int var2, List<ItemStack> var3, String var4, boolean var5) {
         byte var8 = 12;
         int var9 = ResourceRegistry.JelloLightFont25.method23952();
-        int var10 = Math.round(16.0F * Class3192.method11417());
+        int var10 = Math.round(16.0F * RenderUtil.method11417());
         byte var11 = 1;
         int var12 = (int) Math.ceil((float) var3.size() / 9.0F) * (var10 + var11) + var8 * 2 + var9;
         int var13 = 9 * (var10 + var11) + var8 * 2;
         RenderSystem.method27821();
         GL11.glAlphaFunc(519, 0.0F);
         if (!var5) {
-            Class3192.method11424(
+            RenderUtil.method11424(
                     (float) var1,
                     (float) var2,
                     (float) var13,
                     (float) var12,
                     Class5628.method17688(Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.7F)
             );
-            Class3192.method11463((float) var1, (float) var2, (float) var13, (float) var12, 10.0F, 0.5F);
+            RenderUtil.method11463((float) var1, (float) var2, (float) var13, (float) var12, 10.0F, 0.5F);
         } else {
-            Class3192.method11467(var1, var2, var13, var12, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.94F));
+            RenderUtil.method11467(var1, var2, var13, var12, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.94F));
         }
 
-        Class3192.method11439(
+        RenderUtil.method11439(
                 ResourceRegistry.JelloLightFont25, (float) (var1 + var8), (float) (var2 + var8 - 3), var4, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
         );
         RenderSystem.method27820();
@@ -222,16 +222,16 @@ public class Class5305 extends Module {
             int var17 = var1 + var8 + var14 % 9 * (var10 + var11);
             RenderSystem.method27821();
             if (var14 == this.field23841 && var5) {
-                Class3192.method11424((float) var17, (float) var16, (float) var10, (float) var10, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.15F));
+                RenderUtil.method11424((float) var17, (float) var16, (float) var10, (float) var10, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.15F));
             }
 
-            Class3192.method11479(var15, var17, var16, var10, var10);
+            RenderUtil.method11479(var15, var17, var16, var10, var10);
             if (var15.field39976 > 1) {
                 int var18 = var10 - ResourceRegistry.JelloLightFont20.method23942("" + var15.field39976);
                 int var19 = ResourceRegistry.JelloLightFont20.method23942("" + var15.field39976);
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderSystem.method27821();
-                Class3192.method11450(
+                RenderUtil.method11450(
                         (float) (var17 + var18 - 17 - var19 / 4),
                         (float) (var16 + 7),
                         (float) (40 + var19),
@@ -240,7 +240,7 @@ public class Class5305 extends Module {
                         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F),
                         false
                 );
-                Class3192.method11439(ResourceRegistry.JelloLightFont20, (float) (var17 + var18), (float) (var16 + 13), "" + var15.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                RenderUtil.method11439(ResourceRegistry.JelloLightFont20, (float) (var17 + var18), (float) (var16 + 13), "" + var15.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                 RenderSystem.method27820();
             }
 
@@ -260,21 +260,21 @@ public class Class5305 extends Module {
                     var29 = Math.max(var29, mc.fontRenderer.getStringWidth((String) var32.get(var20)));
                 }
 
-                var29 = (int) ((float) var29 * Class3192.method11417());
+                var29 = (int) ((float) var29 * RenderUtil.method11417());
                 int var33 = var32.size();
-                Class3192.method11424(
+                RenderUtil.method11424(
                         (float) var27,
                         (float) (var25 + var10),
-                        (float) var29 + 9.0F * Class3192.method11417(),
-                        10.0F * Class3192.method11417() * (float) var33 + 7.0F * Class3192.method11417(),
+                        (float) var29 + 9.0F * RenderUtil.method11417(),
+                        10.0F * RenderUtil.method11417() * (float) var33 + 7.0F * RenderUtil.method11417(),
                         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.8F)
                 );
                 GL11.glPushMatrix();
-                GL11.glScalef(Class3192.method11417(), Class3192.method11417(), 0.0F);
-                var25 = (int) ((float) var25 * (1.0F / Class3192.method11417()));
-                var27 = (int) ((float) var27 * (1.0F / Class3192.method11417()));
-                var10 = (int) ((float) var10 * (1.0F / Class3192.method11417()));
-                var29 = (int) ((float) var29 * (1.0F / Class3192.method11417()));
+                GL11.glScalef(RenderUtil.method11417(), RenderUtil.method11417(), 0.0F);
+                var25 = (int) ((float) var25 * (1.0F / RenderUtil.method11417()));
+                var27 = (int) ((float) var27 * (1.0F / RenderUtil.method11417()));
+                var10 = (int) ((float) var10 * (1.0F / RenderUtil.method11417()));
+                var29 = (int) ((float) var29 * (1.0F / RenderUtil.method11417()));
 
                 for (int var21 = 0; var21 < var32.size(); var21++) {
                     String var22 = (String) var32.get(var21);

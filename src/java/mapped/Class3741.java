@@ -13,7 +13,7 @@ public class Class3741<E extends Class880> extends Class3676<E> {
 
    @Override
    public boolean method12508(ServerWorld var1, E var2) {
-      return !var2.method3328();
+      return !var2.isPassenger();
    }
 
    @Override

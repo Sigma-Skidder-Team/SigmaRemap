@@ -129,7 +129,7 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
    }
 
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
-      float var9 = var4 - (float)var1.field5055;
+      float var9 = var4 - (float)var1.ticksExisted;
       this.field17831.field31035 = var6 * (float) (Math.PI / 180.0);
       this.field17827.field31035 = var6 * (float) (Math.PI / 180.0);
       this.field17828.field31035 = var6 * (float) (Math.PI / 180.0);

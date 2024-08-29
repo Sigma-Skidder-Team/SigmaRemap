@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 public class Class887 extends AbstractArrowEntity {
-   private static final Class9289<Integer> field5116 = Class9361.<Integer>method35441(Class887.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5116 = EntityDataManager.<Integer>method35441(Class887.class, Class7784.field33391);
    private Class8812 field5117 = Class8137.field34976;
    private final Set<Class2023> field5118 = Sets.newHashSet();
    private boolean field5119;
@@ -28,7 +28,7 @@ public class Class887 extends AbstractArrowEntity {
          if (var1.getItem() == Items.field37797) {
             this.field5117 = Class8137.field34976;
             this.field5118.clear();
-            this.field5063.method35446(field5116, -1);
+            this.dataManager.method35446(field5116, -1);
          }
       } else {
          this.field5117 = Class9741.method38185(var1);
@@ -56,9 +56,9 @@ public class Class887 extends AbstractArrowEntity {
    private void method3499() {
       this.field5119 = false;
       if (this.field5117 == Class8137.field34976 && this.field5118.isEmpty()) {
-         this.field5063.method35446(field5116, -1);
+         this.dataManager.method35446(field5116, -1);
       } else {
-         this.field5063.method35446(field5116, Class9741.method38184(Class9741.method38177(this.field5117, this.field5118)));
+         this.dataManager.method35446(field5116, Class9741.method38184(Class9741.method38177(this.field5117, this.field5118)));
       }
    }
 
@@ -68,9 +68,9 @@ public class Class887 extends AbstractArrowEntity {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5116, -1);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5116, -1);
    }
 
    @Override
@@ -81,7 +81,7 @@ public class Class887 extends AbstractArrowEntity {
             this.world.method6786(this, (byte)0);
             this.field5117 = Class8137.field34976;
             this.field5118.clear();
-            this.field5063.method35446(field5116, -1);
+            this.dataManager.method35446(field5116, -1);
          }
       } else if (!this.field5100) {
          this.method3501(2);
@@ -104,12 +104,12 @@ public class Class887 extends AbstractArrowEntity {
    }
 
    public int method3502() {
-      return this.field5063.<Integer>method35445(field5116);
+      return this.dataManager.<Integer>method35445(field5116);
    }
 
    private void method3503(int var1) {
       this.field5119 = true;
-      this.field5063.method35446(field5116, var1);
+      this.dataManager.method35446(field5116, var1);
    }
 
    @Override

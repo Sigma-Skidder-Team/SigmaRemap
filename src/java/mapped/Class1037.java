@@ -12,7 +12,7 @@ public class Class1037 extends Class1038 implements Class1022 {
 
    public Class1037(EntityType<? extends Class1037> var1, World var2) {
       super(var1, var2);
-      this.field5051 = 1.0F;
+      this.stepHeight = 1.0F;
       this.field5596 = new Class6835(this);
       this.method4224(Class2163.field14191, 0.0F);
       this.field5756 = new Class6997(this, var2);
@@ -37,7 +37,7 @@ public class Class1037 extends Class1038 implements Class1022 {
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
-      if (this.method2943(Class2106.field13732).isEmpty() && this.field5054.nextFloat() < 0.03F) {
+      if (this.method2943(Class2106.field13732).isEmpty() && this.rand.nextFloat() < 0.03F) {
          this.method2944(Class2106.field13732, new ItemStack(Items.field38146));
          this.field5605[Class2106.field13732.method8773()] = 2.0F;
       }
@@ -97,8 +97,8 @@ public class Class1037 extends Class1038 implements Class1022 {
 
    @Override
    public void method4270(Class9755 var1) {
-      if ((double)this.field5054.nextFloat() > 0.9) {
-         int var4 = this.field5054.nextInt(16);
+      if ((double)this.rand.nextFloat() > 0.9) {
+         int var4 = this.rand.nextInt(16);
          if (var4 >= 10) {
             this.method2944(Class2106.field13731, new ItemStack(Items.field37906));
          } else {

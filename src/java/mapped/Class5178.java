@@ -23,14 +23,14 @@ public class Class5178 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         this.field23479 = false;
         mc.timer.field40360 = 1.0F;
         Class9567.method37090(Class9567.method37076() * 0.7);
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23479 = false;
         this.field23477 = 0;
     }
@@ -38,7 +38,7 @@ public class Class5178 extends Module {
     @EventTarget
     public void method16122(Class4435 var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (mc.player.field5036) {
+            if (mc.player.onGround) {
                 this.field23478 = 0;
                 this.field23477++;
                 if (this.field23479 && var1.method13994() != 0.599 && this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
@@ -88,7 +88,7 @@ public class Class5178 extends Module {
                         }
                     }
 
-                    if (mc.player.field5037 || !Class5628.method17686()) {
+                    if (mc.player.collidedHorizontally || !Class5628.method17686()) {
                         this.field23480 = var5;
                     }
 

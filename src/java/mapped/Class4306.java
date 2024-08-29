@@ -76,7 +76,7 @@ public class Class4306 extends Class4305 {
    public void method13027(float var1) {
       float var4 = 0.07F;
       float var5 = 0.3F;
-      Class3192.method11436(
+      RenderUtil.method11436(
          (float)this.field20895,
          (float)this.field20896,
          (float)this.method13267(),

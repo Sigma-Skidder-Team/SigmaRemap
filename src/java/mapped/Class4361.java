@@ -14,7 +14,7 @@ public class Class4361 extends Class4247 {
 
    @Override
    public void method13027(float var1) {
-      Class3192.method11455((float)this.field20895, (float)this.field20896, 30.0F, 30.0F, !this.method13298() ? Class4334.field21177 : Class4334.field21178);
+      RenderUtil.method11455((float)this.field20895, (float)this.field20896, 30.0F, 30.0F, !this.method13298() ? Class4334.field21177 : Class4334.field21178);
       super.method13027(var1);
    }
 }

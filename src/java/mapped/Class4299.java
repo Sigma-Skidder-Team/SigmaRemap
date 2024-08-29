@@ -62,10 +62,10 @@ public class Class4299 extends Class4278 {
    @Override
    public void method13027(float var1) {
       this.method13184();
-      Class3192.method11415(this);
+      RenderUtil.method11415(this);
 
       for (int var4 = 0; var4 < 3; var4++) {
-         Class3192.method11455((float)(this.field20895 + 288 * var4), (float)this.field20896, 288.0F, 512.0F, this.field20829);
+         RenderUtil.method11455((float)(this.field20895 + 288 * var4), (float)this.field20896, 288.0F, 512.0F, this.field20829);
       }
 
       float var16 = 60.0F / (float) Minecraft.getFps();
@@ -80,7 +80,7 @@ public class Class4299 extends Class4278 {
          int var11 = (int)((Long)var10.getKey() - System.currentTimeMillis());
          float var12 = (float)var11 / 12.0F;
          float var13 = (float)var7 / 12.0F;
-         Class3192.method11449(
+         RenderUtil.method11449(
             (float)this.field20895 + var13 + var12,
             (float)(this.field20896 - 320 + (int)((double)var8 * (Double)var10.getValue()) - var6 / 2),
             52.0F,
@@ -88,7 +88,7 @@ public class Class4299 extends Class4278 {
             this.field20831,
             ClientColors.LIGHT_GREYISH_BLUE.getColor
          );
-         Class3192.method11449(
+         RenderUtil.method11449(
             (float)this.field20895 + var13 + var12,
             (float)(this.field20896 + (int)((double)var8 * (Double)var10.getValue()) + var6 / 2),
             52.0F,
@@ -109,13 +109,13 @@ public class Class4299 extends Class4278 {
       float var18 = (float)(System.currentTimeMillis() % (long)var17) / (float)var17;
 
       for (int var19 = 0; var19 < 4; var19++) {
-         Class3192.method11455((float)(this.field20895 + 288 * var19) - 288.0F * var18, (float)(this.field20896 + var8), 288.0F, 112.0F, this.field20830);
+         RenderUtil.method11455((float)(this.field20895 + 288 * var19) - 288.0F * var18, (float)(this.field20896 + var8), 288.0F, 112.0F, this.field20830);
       }
 
-      Class3192.method11436(
+      RenderUtil.method11436(
          (float)this.field20895 + (float)var7 / 12.0F, (float)this.field20896 + (float)var8 * (1.0F - this.field20835), 10.0F, ClientColors.PALE_YELLOW.getColor
       );
-      Class3192.method11422();
+      RenderUtil.method11422();
       this.field20837 = System.currentTimeMillis();
       super.method13027(var1);
    }

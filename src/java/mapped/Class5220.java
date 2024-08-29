@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -12,11 +12,11 @@ public class Class5220 extends Module {
     }
 
     @EventTarget
-    public void method16255(Class4396 var1) {
+    public void method16255(RecievePacketEvent var1) {
         if (this.isEnabled() && mc.getCurrentServerData() != null) {
-            if (!(var1.method13898() instanceof Class5554)) {
-                if (var1.method13898() instanceof Class5542) {
-                    Class5542 var4 = (Class5542) var1.method13898();
+            if (!(var1.getPacket() instanceof Class5554)) {
+                if (var1.getPacket() instanceof Class5542) {
+                    Class5542 var4 = (Class5542) var1.getPacket();
                     if (var4.method17422() < 0 || !this.getBooleanValueFromSetttingName("Inv Bypass")) {
                         var1.method13900(true);
                     }

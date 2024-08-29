@@ -215,8 +215,8 @@ public class Item implements Class3303 {
    }
 
    public static BlockRayTraceResult method11735(World var0, PlayerEntity var1, Class1985 var2) {
-      float var5 = var1.field5032;
-      float var6 = var1.field5031;
+      float var5 = var1.rotationPitch;
+      float var6 = var1.rotationYaw;
       Vector3d var7 = var1.method3286(1.0F);
       float var8 = MathHelper.cos(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
       float var9 = MathHelper.sin(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
@@ -265,7 +265,7 @@ public class Item implements Class3303 {
       return new ItemStack(this);
    }
 
-   public boolean method11743(Class7608<Item> var1) {
+   public boolean method11743(ITag<Item> var1) {
       return var1.method24917(this);
    }
 

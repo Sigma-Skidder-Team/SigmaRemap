@@ -6,7 +6,7 @@ import java.util.Map;
 public class Class3460 extends Block {
    private static String[] field19288;
    private static final Map<Block, Block> field19289 = Maps.newHashMap();
-   public static final Class6408 field19290 = Block.method11539(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
+   public static final VoxelShape field19290 = Block.method11539(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
    private final Block field19291;
 
    public Class3460(Block var1, AbstractBlock var2) {
@@ -16,7 +16,7 @@ public class Class3460 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19290;
    }
 

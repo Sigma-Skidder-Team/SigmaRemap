@@ -15,7 +15,7 @@ public class Class8430 {
       double var9 = var0.method11321() - (double)var5;
       double var11 = var0.method11322() - (double)var6;
       double var13 = 0.0;
-      Vector3d var15 = Vector3d.field18047;
+      Vector3d var15 = Vector3d.ZERO;
 
       for (int var16 = 0; var16 < 6; var16++) {
          double var17 = MathHelper.method37822(var7, field36123[var16 + 1], field36123[var16]);

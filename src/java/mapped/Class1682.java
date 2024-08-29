@@ -10,29 +10,29 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public interface Class1682 {
-   List<Entity> method6770(Entity var1, Class6488 var2, Predicate<? super Entity> var3);
+   List<Entity> method6770(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3);
 
-   <T extends Entity> List<T> method6772(Class<? extends T> var1, Class6488 var2, Predicate<? super T> var3);
+   <T extends Entity> List<T> method6772(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3);
 
-   default <T extends Entity> List<T> method6773(Class<? extends T> var1, Class6488 var2, Predicate<? super T> var3) {
+   default <T extends Entity> List<T> method6773(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       return this.<T>method6772(var1, var2, var3);
    }
 
    List<? extends PlayerEntity> method6870();
 
-   default List<Entity> method7181(Entity var1, Class6488 var2) {
+   default List<Entity> method7181(Entity var1, AxisAlignedBB var2) {
       return this.method6770(var1, var2, Class8088.field34763);
    }
 
-   default boolean method7048(Entity var1, Class6408 var2) {
+   default boolean method7048(Entity var1, VoxelShape var2) {
       if (var2.method19516()) {
          return true;
       } else {
          for (Entity var6 : this.method7181(var1, var2.method19514())) {
-            if (!var6.field5041
-               && var6.field5019
+            if (!var6.removed
+               && var6.preventEntitySpawning
                && (var1 == null || !var6.method3416(var1))
-               && Class8022.method27435(var2, Class8022.method27428(var6.method3389()), Class9477.field44045)) {
+               && VoxelShapes.compare(var2, VoxelShapes.create(var6.getBoundingBox()), IBooleanFunction.AND)) {
                return false;
             }
          }
@@ -41,19 +41,19 @@ public interface Class1682 {
       }
    }
 
-   default <T extends Entity> List<T> method7182(Class<? extends T> var1, Class6488 var2) {
+   default <T extends Entity> List<T> method7182(Class<? extends T> var1, AxisAlignedBB var2) {
       return this.<T>method6772(var1, var2, Class8088.field34763);
    }
 
-   default <T extends Entity> List<T> method7183(Class<? extends T> var1, Class6488 var2) {
+   default <T extends Entity> List<T> method7183(Class<? extends T> var1, AxisAlignedBB var2) {
       return this.<T>method6773(var1, var2, Class8088.field34763);
    }
 
-   default Stream<Class6408> method7046(Entity var1, Class6488 var2, Predicate<Entity> var3) {
+   default Stream<VoxelShape> method7046(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
       if (!(var2.method19675() < 1.0E-7)) {
-         Class6488 var6 = var2.method19664(1.0E-7);
+         AxisAlignedBB var6 = var2.method19664(1.0E-7);
          return this.method6770(var1, var6, var3.and(var2x -> {
-            if (var2x.method3389().method19670(var6)) {
+            if (var2x.getBoundingBox().method19670(var6)) {
                if (var1 != null) {
                   if (var1.method3305(var2x)) {
                      return true;
@@ -64,9 +64,9 @@ public interface Class1682 {
             }
 
             return false;
-         })).stream().<Class6488>map(Entity::method3389).<Class6408>map(Class8022::method27428);
+         })).stream().<AxisAlignedBB>map(Entity::getBoundingBox).<VoxelShape>map(VoxelShapes::create);
       } else {
-         return Stream.<Class6408>empty();
+         return Stream.<VoxelShape>empty();
       }
    }
 
@@ -128,12 +128,12 @@ public interface Class1682 {
    }
 
    @Nullable
-   default <T extends Class880> T method7191(Class<? extends T> var1, Class8522 var2, Class880 var3, double var4, double var6, double var8, Class6488 var10) {
+   default <T extends Class880> T method7191(Class<? extends T> var1, Class8522 var2, Class880 var3, double var4, double var6, double var8, AxisAlignedBB var10) {
       return this.<T>method7193(this.method6772(var1, var10, (Predicate<? super T>)null), var2, var3, var4, var6, var8);
    }
 
    @Nullable
-   default <T extends Class880> T method7192(Class<? extends T> var1, Class8522 var2, Class880 var3, double var4, double var6, double var8, Class6488 var10) {
+   default <T extends Class880> T method7192(Class<? extends T> var1, Class8522 var2, Class880 var3, double var4, double var6, double var8, AxisAlignedBB var10) {
       return this.<T>method7193(this.method6773(var1, var10, (Predicate<? super T>)null), var2, var3, var4, var6, var8);
    }
 
@@ -155,7 +155,7 @@ public interface Class1682 {
       return (T)var14;
    }
 
-   default List<PlayerEntity> method7194(Class8522 var1, Class880 var2, Class6488 var3) {
+   default List<PlayerEntity> method7194(Class8522 var1, Class880 var2, AxisAlignedBB var3) {
       ArrayList var6 = Lists.newArrayList();
 
       for (PlayerEntity var8 : this.method6870()) {
@@ -167,7 +167,7 @@ public interface Class1682 {
       return var6;
    }
 
-   default <T extends Class880> List<T> method7195(Class<? extends T> var1, Class8522 var2, Class880 var3, Class6488 var4) {
+   default <T extends Class880> List<T> method7195(Class<? extends T> var1, Class8522 var2, Class880 var3, AxisAlignedBB var4) {
       List<Class880> var7 = this.method6772(var1, var4, null);
       ArrayList var8 = Lists.newArrayList();
 

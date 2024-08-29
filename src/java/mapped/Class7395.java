@@ -25,7 +25,7 @@ public class Class7395 {
             }
          }
       } else {
-         this.field31657.field4965 = this.field31657.field5031;
+         this.field31657.field4965 = this.field31657.rotationYaw;
          this.method23628();
          this.field31659 = this.field31657.field4967;
          this.field31658 = 0;
@@ -52,8 +52,8 @@ public class Class7395 {
    }
 
    private boolean method23631() {
-      double var3 = this.field31657.getPosX() - this.field31657.field5025;
-      double var5 = this.field31657.getPosZ() - this.field31657.field5027;
+      double var3 = this.field31657.getPosX() - this.field31657.prevPosX;
+      double var5 = this.field31657.getPosZ() - this.field31657.prevPosZ;
       return var3 * var3 + var5 * var5 > 2.5000003E-7F;
    }
 }

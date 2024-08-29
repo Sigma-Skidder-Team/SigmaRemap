@@ -18,13 +18,13 @@ public class Class4265 extends Class4247 {
    public void method13027(float var1) {
       this.field20683.changeDirection(!this.method13298() ? Direction.BACKWARDS : Direction.FORWARDS);
       var1 *= 0.09F + 0.25F * this.field20683.calcPercent() + (this.field20682 ? 0.0F : 0.2F);
-      Class3192.method11424(
+      RenderUtil.method11424(
          (float)(this.field20895 + 10), (float)(this.field20896 + 16), 5.0F, 14.0F, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
-      Class3192.method11424(
+      RenderUtil.method11424(
          (float)(this.field20895 + 17), (float)(this.field20896 + 10), 5.0F, 20.0F, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
-      Class3192.method11424(
+      RenderUtil.method11424(
          (float)(this.field20895 + 24), (float)(this.field20896 + 20), 5.0F, 10.0F, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       super.method13027(var1);

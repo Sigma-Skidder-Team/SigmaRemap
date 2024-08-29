@@ -49,6 +49,6 @@ public class Class2620 extends Class2595 {
    @Override
    public void method10805() {
       this.field16905.method4262(this.field16905.method4232(), 10.0F, 10.0F);
-      ((Class6841)this.field16905.method4228()).method20822(this.field16905.field5031, this.field16905.method5325());
+      ((Class6841)this.field16905.method4228()).method20822(this.field16905.rotationYaw, this.field16905.method5325());
    }
 }

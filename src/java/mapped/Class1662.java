@@ -20,7 +20,7 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
       return this.getBiomeManager().method20323(var1);
    }
 
-   default Stream<BlockState> method7004(Class6488 var1) {
+   default Stream<BlockState> method7004(AxisAlignedBB var1) {
       int var4 = MathHelper.floor(var1.field28449);
       int var5 = MathHelper.floor(var1.field28452);
       int var6 = MathHelper.floor(var1.field28450);
@@ -109,7 +109,7 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
       return this.method6739(var1).method23486(Class8953.field40469);
    }
 
-   default boolean method7014(Class6488 var1) {
+   default boolean method7014(AxisAlignedBB var1) {
       int var4 = MathHelper.floor(var1.field28449);
       int var5 = MathHelper.method37774(var1.field28452);
       int var6 = MathHelper.floor(var1.field28450);

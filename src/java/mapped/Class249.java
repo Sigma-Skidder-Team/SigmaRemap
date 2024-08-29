@@ -15,11 +15,11 @@ public class Class249 extends Class219<Class1019, Class2869<Class1019>> {
          float var16;
          if (var4.method3381() && "jeb_".equals(var4.getName().getUnformattedComponentText())) {
             byte var24 = 25;
-            int var17 = var4.field5055 / 25 + var4.method3205();
+            int var17 = var4.ticksExisted / 25 + var4.method3205();
             int var18 = Class112.values().length;
             int var19 = var17 % var18;
             int var20 = (var17 + 1) % var18;
-            float var21 = ((float)(var4.field5055 % 25) + var7) / 25.0F;
+            float var21 = ((float)(var4.ticksExisted % 25) + var7) / 25.0F;
             float[] var22 = Class1019.method4511(Class112.method315(var19));
             float[] var23 = Class1019.method4511(Class112.method315(var20));
             if (Class7944.method26911()) {

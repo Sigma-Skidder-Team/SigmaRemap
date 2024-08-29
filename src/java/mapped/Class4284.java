@@ -17,11 +17,11 @@ public class Class4284 extends Class4278 {
       if (this.method13267() != 0) {
          this.method13225();
          float var4 = 1.0F - Math.min(1.0F, Math.max((float)this.method13267() / (float)this.field20768, 0.0F));
-         Class3192.method11424(
+         RenderUtil.method11424(
             (float)this.field20895, (float)this.field20896, (float)this.field20768, (float)this.field20898, Class5628.method17688(-3254955, var1)
          );
          super.method13027(var1 * (1.0F - var4));
-         Class3192.method11449(
+         RenderUtil.method11449(
             0.0F, 0.0F, 20.0F, (float)this.field20898, ResourcesDecrypter.shadowRightPNG, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
          );
       }

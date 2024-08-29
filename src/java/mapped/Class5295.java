@@ -28,7 +28,7 @@ public class Class5295 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23811 = 0;
     }
 
@@ -48,7 +48,7 @@ public class Class5295 extends Module {
                     var5[2] = 1;
                 }
 
-                if (!mc.player.field5036) {
+                if (!mc.player.onGround) {
                     this.field23809 = 0;
                 } else {
                     this.field23809++;
@@ -86,9 +86,9 @@ public class Class5295 extends Module {
 
     public float[] method16630() {
         double var3 = mc.player.getPosX() + mc.player.method3433().field18048 * 26.0;
-        double var5 = mc.player.field5035.field28450 - 3.6;
+        double var5 = mc.player.boundingBox.field28450 - 3.6;
         double var7 = mc.player.getPosZ() + mc.player.method3433().field18050 * 26.0;
-        return !this.getBooleanValueFromSetttingName("Predict") ? new float[]{mc.player.field5031, 90.0F} : Class9142.method34144(var3, var7, var5);
+        return !this.getBooleanValueFromSetttingName("Predict") ? new float[]{mc.player.rotationYaw, 90.0F} : Class9142.method34144(var3, var7, var5);
     }
 
     public int method16631() {
@@ -180,7 +180,7 @@ public class Class5295 extends Module {
                     var1.method13918(var9[0]);
                     var1.method13916(var9[1]);
                 } else {
-                    mc.getConnection().sendPacket(new Class5606(var9[0], var9[1], !var8 && mc.player.field5036));
+                    mc.getConnection().sendPacket(new Class5606(var9[0], var9[1], !var8 && mc.player.onGround));
                     mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
                     mc.getConnection().sendPacket(new Class5555(Hand.field183));
                     mc.player.inventory.currentItem = var7;

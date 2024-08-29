@@ -19,7 +19,7 @@ public class Class8627 {
    }
 
    public static boolean method30925() {
-      return field38807.player.field5036
-         && field38807.world.method7055(field38807.player, field38807.player.method3389().method19667(0.0, 1.0, 0.0)).count() == 0L;
+      return field38807.player.onGround
+         && field38807.world.method7055(field38807.player, field38807.player.getBoundingBox().method19667(0.0, 1.0, 0.0)).count() == 0L;
    }
 }

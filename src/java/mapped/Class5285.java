@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.module.Module;
@@ -28,7 +28,7 @@ public class Class5285 extends Module {
     }
 
     @EventTarget
-    private void method16584(Class4402 var1) {
+    private void method16584(SendPacketEvent var1) {
         if (this.isEnabled()) {
             if (this.field23757 && var1.method13932() instanceof CEntityActionPacket && this.getBooleanValueFromSetttingName("AACP")) {
                 CEntityActionPacket var4 = (CEntityActionPacket) var1.method13932();
@@ -87,7 +87,7 @@ public class Class5285 extends Module {
 
                 for (KeyBinding var7 : mc.gameSettings.field44658) {
                     if (var7.field13070.field34875 > 0
-                            && mc.gameSettings.field44637.field13070.field34875 != var7.field13070.field34875
+                            && mc.gameSettings.keyBindSneak.field13070.field34875 != var7.field13070.field34875
                             && var7.field13070.field34875 > 4) {
                         int var8 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), var7.field13070.field34875);
                         var7.field13071 = var8 == 1;

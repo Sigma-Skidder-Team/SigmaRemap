@@ -3,7 +3,7 @@ package mapped;
 import javax.annotation.Nullable;
 
 public class Class1021 extends Class1056 implements Class1020, Class1022 {
-   private static final Class9289<Byte> field5709 = Class9361.<Byte>method35441(Class1021.class, Class7784.field33390);
+   private static final DataParameter<Byte> field5709 = EntityDataManager.<Byte>method35441(Class1021.class, Class7784.field33390);
 
    public Class1021(EntityType<? extends Class1021> var1, World var2) {
       super(var1, var2);
@@ -23,9 +23,9 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5709, (byte)16);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5709, (byte)16);
    }
 
    @Override
@@ -92,7 +92,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return 1.7F;
    }
 
@@ -126,15 +126,15 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    }
 
    public boolean method4531() {
-      return (this.field5063.<Byte>method35445(field5709) & 16) != 0;
+      return (this.dataManager.<Byte>method35445(field5709) & 16) != 0;
    }
 
    public void method4532(boolean var1) {
-      byte var4 = this.field5063.<Byte>method35445(field5709);
+      byte var4 = this.dataManager.<Byte>method35445(field5709);
       if (!var1) {
-         this.field5063.method35446(field5709, (byte)(var4 & -17));
+         this.dataManager.method35446(field5709, (byte)(var4 & -17));
       } else {
-         this.field5063.method35446(field5709, (byte)(var4 | 16));
+         this.dataManager.method35446(field5709, (byte)(var4 | 16));
       }
    }
 

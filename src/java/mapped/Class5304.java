@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
@@ -24,11 +24,11 @@ public class Class5304 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23837 = 0.0;
         this.field23839 = 0;
         this.field23838 = 0;
-        if (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F)) {
+        if (mc.player.onGround || Class5628.method17730(mc.player, 0.001F)) {
             this.field23840 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
         }
     }
@@ -36,7 +36,7 @@ public class Class5304 extends Module {
     @EventTarget
     private void method16664(Class4435 var1) {
         if (this.isEnabled()) {
-            if (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F)) {
+            if (mc.player.onGround || Class5628.method17730(mc.player, 0.001F)) {
                 this.field23840 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
             }
 
@@ -56,7 +56,7 @@ public class Class5304 extends Module {
 
                 if (mc.player.method3433().field18049 < -0.08 && !var8) {
                     this.field23837 = this.field23837 - mc.player.method3433().field18049;
-                } else if (mc.player.field5036) {
+                } else if (mc.player.onGround) {
                     this.field23837 = 0.0;
                 }
             } else {
@@ -85,9 +85,9 @@ public class Class5304 extends Module {
     }
 
     @EventTarget
-    private void method16666(Class4396 var1) {
+    private void method16666(RecievePacketEvent var1) {
         if (this.isEnabled() && this.field23839 != 0) {
-            if (var1.method13898() instanceof Class5473) {
+            if (var1.getPacket() instanceof Class5473) {
                 this.field23839 = 0;
                 this.field23838 = 4;
             }
@@ -96,8 +96,8 @@ public class Class5304 extends Module {
 
     private boolean method16667() {
         if (!(mc.player.getPositionVec().field18049 < 1.0)) {
-            if (!mc.player.field5036) {
-                Class6488 var3 = mc.player.field5035;
+            if (!mc.player.onGround) {
+                AxisAlignedBB var3 = mc.player.boundingBox;
                 var3 = var3.method19662(0.0, -mc.player.getPositionVec().field18049, 0.0);
                 return mc.world.method7055(mc.player, var3).count() == 0L;
             } else {

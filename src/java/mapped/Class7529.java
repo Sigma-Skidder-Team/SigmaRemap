@@ -151,7 +151,7 @@ public class Class7529 extends Class7530 {
       for (int var9 = 0; var9 < this.field32324.size(); var9++) {
          Class8541 var6 = this.field32324.get(var9);
          String var7 = var6.field38390.getName().getString();
-         if (!var6.field38390.field5041 && (var6.field38390.inventory.method4058(var2) || var2.method32165())) {
+         if (!var6.field38390.removed && (var6.field38390.inventory.method4058(var2) || var2.method32165())) {
             if (!var2.method32165() && var6.field38390.world.getDimensionKey() == this.field32318 && this.field32319) {
                this.method24596(
                   MapDecorationType.field14516,
@@ -159,7 +159,7 @@ public class Class7529 extends Class7530 {
                   var7,
                   var6.field38390.getPosX(),
                   var6.field38390.getPosZ(),
-                  (double)var6.field38390.field5031,
+                  (double)var6.field38390.rotationYaw,
                   (ITextComponent)null
                );
             }

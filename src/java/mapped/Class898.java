@@ -1,7 +1,7 @@
 package mapped;
 
 public abstract class Class898 extends Class901 implements Class889 {
-   private static final Class9289<ItemStack> field5138 = Class9361.<ItemStack>method35441(Class898.class, Class7784.field33396);
+   private static final DataParameter<ItemStack> field5138 = EntityDataManager.<ItemStack>method35441(Class898.class, Class7784.field33396);
 
    public Class898(EntityType<? extends Class898> var1, World var2) {
       super(var1, var2);
@@ -32,8 +32,8 @@ public abstract class Class898 extends Class901 implements Class889 {
    }
 
    @Override
-   public void method2850() {
-      this.method3210().method35442(field5138, ItemStack.EMPTY);
+   public void registerData() {
+      this.method3210().register(field5138, ItemStack.EMPTY);
    }
 
    @Override

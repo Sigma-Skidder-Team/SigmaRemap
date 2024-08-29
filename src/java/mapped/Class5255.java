@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -56,8 +56,8 @@ public class Class5255 extends PremiumModule {
         GL11.glDepthMask(false);
         GL11.glColor4d(1.0, 1.0, 1.0, 1.0);
         Vector3d var9 = new Vector3d(0.0, 0.0, 1.0)
-                .method11350(-((float) Math.toRadians(Minecraft.getInstance().player.field5032)))
-                .method11351(-((float) Math.toRadians(Minecraft.getInstance().player.field5031)));
+                .method11350(-((float) Math.toRadians(Minecraft.getInstance().player.rotationPitch)))
+                .method11351(-((float) Math.toRadians(Minecraft.getInstance().player.rotationYaw)));
         GL11.glBegin(1);
         GL11.glVertex3d(var9.field18048, var9.field18049, var9.field18050);
         GL11.glVertex3d(var3, var5, var7);
@@ -82,12 +82,12 @@ public class Class5255 extends PremiumModule {
                     Class5628.method17678("§cNoteBlockPlayer isn't available in creative mode!");
                     this.method15999(false);
                 } else {
-                    if (!this.method16407(this.field23641) && mc.player.field5055 % 4 == 0) {
+                    if (!this.method16407(this.field23641) && mc.player.ticksExisted % 4 == 0) {
                         this.method16408(this.field23641);
                     }
 
                     if (this.method16406(this.field23641)) {
-                        if (Math.floor((float) mc.player.field5055 % this.field23639.method9958()) / 20.0 == 0.0) {
+                        if (Math.floor((float) mc.player.ticksExisted % this.field23639.method9958()) / 20.0 == 0.0) {
                             if (this.field23638 > this.field23639.method9952()) {
                                 this.field23638 = 0;
                             }
@@ -106,7 +106,7 @@ public class Class5255 extends PremiumModule {
                                                 var9 = Class9217.method34542(var8.field28401, Direction.DOWN);
                                             }
 
-                                            mc.getConnection().sendPacket(new Class5606(var9[0], var9[1], mc.player.field5036));
+                                            mc.getConnection().sendPacket(new Class5606(var9[0], var9[1], mc.player.onGround));
                                             mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, var8.field28401, Direction.field673));
                                             mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
                                             this.field23642.add(var8.field28401);
@@ -138,7 +138,7 @@ public class Class5255 extends PremiumModule {
         for (Class6463 var5 : var1) {
             if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.method23135()) {
                 float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
-                mc.getConnection().sendPacket(new Class5606(var6[0], var6[1], mc.player.field5036));
+                mc.getConnection().sendPacket(new Class5606(var6[0], var6[1], mc.player.onGround));
                 mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, var5.field28401, Direction.field673));
                 this.field23642.clear();
                 this.field23642.add(var5.field28401);
@@ -156,7 +156,7 @@ public class Class5255 extends PremiumModule {
                 if (0 == 0) {
                     float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
                     mc.player.swingArm(Hand.MAIN_HAND);
-                    mc.getConnection().sendPacket(new Class5606(var6[0], var6[1], mc.player.field5036));
+                    mc.getConnection().sendPacket(new Class5606(var6[0], var6[1], mc.player.onGround));
                     mc.getConnection()
                             .sendPacket(new Class5570(Hand.MAIN_HAND, Class9217.method34567(var6[0], var6[1], mc.playerController.method23135() + 1.0F)));
                     this.field23642.clear();
@@ -197,11 +197,11 @@ public class Class5255 extends PremiumModule {
     }
 
     @EventTarget
-    private void method16412(Class4396 var1) {
+    private void method16412(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             if (this.field23641 != null) {
-                if (var1.method13898() instanceof Class5584) {
-                    Class5584 var4 = (Class5584) var1.method13898();
+                if (var1.getPacket() instanceof Class5584) {
+                    Class5584 var4 = (Class5584) var1.getPacket();
 
                     for (int var5 = 0; var5 < this.field23641.size(); var5++) {
                         Class6463 var6 = this.field23641.get(var5);
@@ -212,8 +212,8 @@ public class Class5255 extends PremiumModule {
                     }
                 }
 
-                if (var1.method13898() instanceof Class5475) {
-                    Class5475 var7 = (Class5475) var1.method13898();
+                if (var1.getPacket() instanceof Class5475) {
+                    Class5475 var7 = (Class5475) var1.getPacket();
 
                     for (int var8 = 0; var8 < this.field23641.size(); var8++) {
                         Class6463 var9 = this.field23641.get(var8);
@@ -246,7 +246,7 @@ public class Class5255 extends PremiumModule {
         ClientResource var10 = ResourceRegistry.JelloLightFont25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.01F, -0.01F, -0.01F);
-        Class3192.method11426(
+        RenderUtil.method11426(
                 (float) (-var10.method23942(var7) / 2 - 10),
                 0.0F,
                 (float) (var10.method23942(var7) / 2 + 10),
@@ -254,7 +254,7 @@ public class Class5255 extends PremiumModule {
                 Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.4F)
         );
         GL11.glTranslated(-var10.method23942(var7) / 2, 0.0, 0.0);
-        Class3192.method11439(var10, 0.0F, 0.0F, var7, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+        RenderUtil.method11439(var10, 0.0F, 0.0F, var7, ClientColors.LIGHT_GREYISH_BLUE.getColor);
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);
@@ -265,7 +265,7 @@ public class Class5255 extends PremiumModule {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         if (!mc.playerController.isInCreativeMode()) {
             if (this.field23640.isEmpty()) {
                 Class5628.method17678("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");

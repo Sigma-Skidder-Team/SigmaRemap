@@ -3,7 +3,7 @@ package mapped;
 public class Class8831 {
    private static String[] field39873;
    private Block field39874;
-   private Class7608<Block> field39875;
+   private ITag<Block> field39875;
    private Class7340 field39876 = Class7340.field31445;
    private Class8811 field39877 = Class8811.field39645;
 
@@ -19,7 +19,7 @@ public class Class8831 {
       return this;
    }
 
-   public Class8831 method31931(Class7608<Block> var1) {
+   public Class8831 method31931(ITag<Block> var1) {
       this.field39875 = var1;
       return this;
    }

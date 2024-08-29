@@ -50,8 +50,8 @@ public class Class5232 extends Module {
                         var7.method3775().method23412(mc.world, var7.getPos()).method19514().method19667(var11, var13, var15)
                 );
                 GL11.glAlphaFunc(519, 0.0F);
-                Class3192.method11459(var18, var17);
-                Class3192.method11462(var18, 2.0F, var17);
+                RenderUtil.method11459(var18, var17);
+                RenderUtil.method11462(var18, 2.0F, var17);
                 GL11.glDisable(3042);
             }
         }

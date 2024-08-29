@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 
 public class Class3485 extends Class3194 implements Class3196 {
    private static String[] field18470;
-   public static final Class6408 field19345 = Block.method11539(4.0, 0.0, 4.0, 12.0, 9.0, 12.0);
+   public static final VoxelShape field19345 = Block.method11539(4.0, 0.0, 4.0, 12.0, 9.0, 12.0);
    private final Supplier<Class7909<Class4709, ?>> field19346;
 
    public Class3485(AbstractBlock var1, Supplier<Class7909<Class4709, ?>> var2) {
@@ -14,7 +14,7 @@ public class Class3485 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19345;
    }
 

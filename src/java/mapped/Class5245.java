@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
@@ -25,7 +25,7 @@ public class Class5245 extends Module {
     @EventTarget
     private void method16351(Class4435 var1) {
         double var4 = this.field23611 * (double) (1.0F - this.getNumberValueBySettingName("Delay")) - this.field23611 / 2.0;
-        if (mc.player.field5036 && this.field23610 <= 0) {
+        if (mc.player.onGround && this.field23610 <= 0) {
         }
 
         if (this.field23610 == 1 && var1.method13994() < var4) {
@@ -39,9 +39,9 @@ public class Class5245 extends Module {
     }
 
     @EventTarget
-    private void method16352(Class4396 var1) {
-        if (var1.method13898() instanceof Class5590) {
-            Class5590 var4 = (Class5590) var1.method13898();
+    private void method16352(RecievePacketEvent var1) {
+        if (var1.getPacket() instanceof Class5590) {
+            Class5590 var4 = (Class5590) var1.getPacket();
             if (var4.method17565() == mc.player.method3205()) {
                 this.field23610 = 1;
                 this.field23611 = (double) var4.method17567() / 8000.0;

@@ -40,7 +40,7 @@ public class Class4235 extends Class4240 {
    @Override
    public void method13027(float var1) {
       float var4 = !this.method13295() ? 0.3F : (!this.method13216() ? (!this.method13212() ? Math.max(var1 * this.field20584, 0.0F) : 1.5F) : 0.0F);
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)this.method13267(),
@@ -52,7 +52,7 @@ public class Class4235 extends Class4240 {
          )
       );
       if (this.method13303() != null) {
-         Class3192.method11440(
+         RenderUtil.method11440(
             this.method13305(),
             (float)(this.method13263() + this.method13267() / 2),
             (float)(this.method13265() + this.method13269() / 2),

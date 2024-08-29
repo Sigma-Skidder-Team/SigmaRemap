@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public abstract class Class1026 extends Class1028 {
-   public static final Class9289<Boolean> field5712 = Class9361.<Boolean>method35441(Class1026.class, Class7784.field33398);
+   public static final DataParameter<Boolean> field5712 = EntityDataManager.<Boolean>method35441(Class1026.class, Class7784.field33398);
    private static final Predicate<ItemEntity> field5713 = var0 -> !var0.method4135()
          && var0.method3066()
          && ItemStack.method32128(var0.method4124(), Class7699.method25421());
@@ -28,9 +28,9 @@ public abstract class Class1026 extends Class1028 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5712, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5712, false);
    }
 
    public abstract void method4545(int var1, boolean var2);
@@ -151,11 +151,11 @@ public abstract class Class1026 extends Class1028 {
    }
 
    public boolean method4555() {
-      return this.field5063.<Boolean>method35445(field5712);
+      return this.dataManager.<Boolean>method35445(field5712);
    }
 
    public void method4556(boolean var1) {
-      this.field5063.method35446(field5712, var1);
+      this.dataManager.method35446(field5712, var1);
    }
 
    @Override
@@ -195,7 +195,7 @@ public abstract class Class1026 extends Class1028 {
          Class2106 var6 = Class2106.field13736;
          ItemStack var7 = this.method2943(var6);
          double var8 = (double)this.method4269(var6);
-         if (!var7.isEmpty() && (double)Math.max(this.field5054.nextFloat() - 0.1F, 0.0F) < var8) {
+         if (!var7.isEmpty() && (double)Math.max(this.rand.nextFloat() - 0.1F, 0.0F) < var8) {
             this.method3302(var7);
          }
 
@@ -248,7 +248,7 @@ public abstract class Class1026 extends Class1028 {
 
    // $VF: synthetic method
    public static Random method4560(Class1026 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -263,17 +263,17 @@ public abstract class Class1026 extends Class1028 {
 
    // $VF: synthetic method
    public static Random method4563(Class1026 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4564(Class1026 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method4565(Class1026 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method

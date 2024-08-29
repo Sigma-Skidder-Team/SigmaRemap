@@ -29,19 +29,19 @@ public class Class5258 extends PremiumModule {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         field23649 = -1;
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         field23649 = -1;
     }
 
     @EventTarget
     private void method16422(Class4435 var1) {
         if (this.isEnabled()) {
-            if (field23649 > 0 && !mc.player.field5036) {
+            if (field23649 > 0 && !mc.player.onGround) {
                 Class9567.method37088(var1, 0.0);
             }
         }
@@ -77,8 +77,8 @@ public class Class5258 extends PremiumModule {
             int var7 = this.method16424();
             if (!Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()
                     && var7 != -1
-                    && !mc.player.field5036
-                    && mc.player.field5045 > 3.0F) {
+                    && !mc.player.onGround
+                    && mc.player.fallDistance > 3.0F) {
                 BlockPos var5 = this.method16425();
                 if (var5 != null) {
                     if (var1.method13921() && field23649 == -1) {
@@ -142,14 +142,14 @@ public class Class5258 extends PremiumModule {
         double var3 = mc.player.method3433().field18048;
         double var5 = mc.player.method3433().field18049;
         double var7 = mc.player.method3433().field18050;
-        Class6488 var9 = mc.player.field5035.method19662(var3, 0.0, var7).method19667(0.0, var5, 0.0);
+        AxisAlignedBB var9 = mc.player.boundingBox.method19662(var3, 0.0, var7).method19667(0.0, var5, 0.0);
         Stream var10 = mc.world.method7055(mc.player, var9);
         Iterator var11 = var10.iterator();
         BlockPos var12 = null;
 
         while (var11.hasNext()) {
-            Class6408 var13 = (Class6408) var11.next();
-            Class6488 var14 = var13.method19514();
+            VoxelShape var13 = (VoxelShape) var11.next();
+            AxisAlignedBB var14 = var13.method19514();
             BlockPos var15 = new BlockPos(var14.method19685());
             if (Class9217.method34578(var15)
                     && (double) (var15.getY() + 1) < mc.player.getPosY()
@@ -168,13 +168,13 @@ public class Class5258 extends PremiumModule {
             return var12;
         } else {
             var5 = mc.player.method3433().field18049 - 1.0;
-            var9 = mc.player.field5035.method19662(var3, 0.0, var7).method19667(0.0, var5, 0.0);
+            var9 = mc.player.boundingBox.method19662(var3, 0.0, var7).method19667(0.0, var5, 0.0);
             var10 = mc.world.method7055(mc.player, var9);
             var11 = var10.iterator();
 
             while (var11.hasNext()) {
-                Class6408 var20 = (Class6408) var11.next();
-                Class6488 var21 = var20.method19514();
+                VoxelShape var20 = (VoxelShape) var11.next();
+                AxisAlignedBB var21 = var20.method19514();
                 BlockPos var22 = new BlockPos(var21.method19685());
                 if (Class9217.method34578(var22)
                         && (double) (var22.getY() + 1) < mc.player.getPosY()

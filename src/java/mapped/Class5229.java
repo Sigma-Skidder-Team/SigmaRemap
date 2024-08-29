@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -25,8 +25,8 @@ public class Class5229 extends Module {
     @EventTarget
     private void method16289(ClickEvent var1) {
         if (this.isEnabled()) {
-            if (mc.gameSettings.field44637.isKeyDown() && var1.method13976() == ClickEvent.Button.RIGHT) {
-                if (!(mc.player.field5032 < 0.0F)) {
+            if (mc.gameSettings.keyBindSneak.isKeyDown() && var1.method13976() == ClickEvent.Button.RIGHT) {
+                if (!(mc.player.rotationPitch < 0.0F)) {
                     this.method16294(this.method16292());
                 } else {
                     this.method16294(this.method16293());
@@ -36,7 +36,7 @@ public class Class5229 extends Module {
     }
 
     @EventTarget
-    private void method16290(Class4402 var1) {
+    private void method16290(SendPacketEvent var1) {
         if (var1.method13932() instanceof Class5522) {
             Class5522 var4 = (Class5522) var1.method13932();
             String var5 = var4.method17359();
@@ -52,11 +52,11 @@ public class Class5229 extends Module {
                 var7 = Integer.parseInt(var5);
             }
 
-            float var8 = (float) Math.toRadians(mc.player.field5031 + 90.0F);
+            float var8 = (float) Math.toRadians(mc.player.rotationYaw + 90.0F);
             double var9 = MathHelper.cos(var8) * (float) var7;
             double var11 = MathHelper.sin(var8) * (float) var7;
             mc.player
-                    .method3215(mc.player.getPosX() + var9, mc.player.getPosY(), mc.player.getPosZ() + var11);
+                    .setPosition(mc.player.getPosX() + var9, mc.player.getPosY(), mc.player.getPosZ() + var11);
         }
     }
 
@@ -103,7 +103,7 @@ public class Class5229 extends Module {
                             new Class5605(mc.player.getPosX(), mc.player.getPosY() + (double) var1, mc.player.getPosZ(), false)
                     );
             mc.player
-                    .method3215(mc.player.getPosX(), mc.player.getPosY() + (double) var1, mc.player.getPosZ());
+                    .setPosition(mc.player.getPosX(), mc.player.getPosY() + (double) var1, mc.player.getPosZ());
             Client.getInstance().getNotificationManager().post(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, ResourcesDecrypter.directionIconPNG));
         }
     }

@@ -24,7 +24,7 @@ public class GameIdler extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Minecraft.getInstance().mainWindow.setFramerateLimit(mc.gameSettings.framerateLimit);
     }
 }

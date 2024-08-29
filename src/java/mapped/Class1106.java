@@ -47,7 +47,7 @@ public class Class1106 extends Class1105 {
    public void method4258() {
       super.method4258();
       short var3 = 1200;
-      if ((this.field5055 + this.method3205()) % 1200 == 0) {
+      if ((this.ticksExisted + this.method3205()) % 1200 == 0) {
          Class7144 var4 = Class8254.field35470;
          List<ServerPlayerEntity> var5 = ((ServerWorld)this.world).method6914(var1 -> this.getDistanceSq(var1) < 2500.0 && var1.field4857.method33865());
 

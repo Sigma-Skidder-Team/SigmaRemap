@@ -17,7 +17,7 @@ public class Class4255 extends Class4247 {
    @Override
    public void method13027(float var1) {
       GL11.glAlphaFunc(518, 0.1F);
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)(this.field20895 + (this.field20897 - 64) / 2),
          (float)(this.field20896 + 10),
          64.0F,
@@ -27,7 +27,7 @@ public class Class4255 extends Class4247 {
       );
       int var4 = this.method13267() / 2 + this.field20895;
       int var5 = this.method13269() / 2 + this.field20896;
-      Class3192.method11439(
+      RenderUtil.method11439(
          ClassicDecryption.regular25,
          (float)(this.field20895 + (this.method13267() - ClassicDecryption.regular25.method23942(this.field20912)) / 2),
          (float)(this.field20896 + this.method13269() - 50),

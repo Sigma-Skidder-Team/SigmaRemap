@@ -80,12 +80,12 @@ public class Class955 extends TileEntity implements Class935 {
    private void method3855(float var1) {
       Direction var4 = this.method3860();
       double var5 = (double)(var1 - this.field5366);
-      Class6408 var7 = this.method3854().method23414(this.field5324, this.getPos());
+      VoxelShape var7 = this.method3854().method23414(this.field5324, this.getPos());
       if (!var7.method19516()) {
-         Class6488 var8 = this.method3862(var7.method19514());
+         AxisAlignedBB var8 = this.method3862(var7.method19514());
          List var9 = this.field5324.method7181((Entity)null, Class7769.method25747(var8, var4, var5).method19666(var8));
          if (!var9.isEmpty()) {
-            List<Class6488> var10 = var7.method19521();
+            List<AxisAlignedBB> var10 = var7.method19521();
             boolean var11 = this.field5361.method23448(Blocks.field36764);
             Iterator var12 = var9.iterator();
 
@@ -126,9 +126,9 @@ public class Class955 extends TileEntity implements Class935 {
 
                double var21 = 0.0;
 
-               for (Class6488 var24 : var10) {
-                  Class6488 var25 = Class7769.method25747(this.method3862(var24), var4, var5);
-                  Class6488 var26 = var13.method3389();
+               for (AxisAlignedBB var24 : var10) {
+                  AxisAlignedBB var25 = Class7769.method25747(this.method3862(var24), var4, var5);
+                  AxisAlignedBB var26 = var13.getBoundingBox();
                   if (var25.method19670(var26)) {
                      var21 = Math.max(var21, method3861(var25, var4, var26));
                      if (var21 >= var5) {
@@ -160,7 +160,7 @@ public class Class955 extends TileEntity implements Class935 {
          Direction var4 = this.method3860();
          if (var4.method544().method324()) {
             double var5 = this.field5361.method23414(this.field5324, this.field5325).method19513(Class113.field414);
-            Class6488 var7 = this.method3862(new Class6488(0.0, var5, 0.0, 1.0, 1.5000000999999998, 1.0));
+            AxisAlignedBB var7 = this.method3862(new AxisAlignedBB(0.0, var5, 0.0, 1.0, 1.5000000999999998, 1.0));
             double var8 = (double)(var1 - this.field5366);
 
             for (Entity var11 : this.field5324.method6770((Entity)null, var7, var1x -> method3858(var7, var1x))) {
@@ -170,7 +170,7 @@ public class Class955 extends TileEntity implements Class935 {
       }
    }
 
-   private static boolean method3858(Class6488 var0, Entity var1) {
+   private static boolean method3858(AxisAlignedBB var0, Entity var1) {
       return var1.method3422() == Class2315.field15862
          && var1.method3226()
          && var1.getPosX() >= var0.field28449
@@ -187,7 +187,7 @@ public class Class955 extends TileEntity implements Class935 {
       return !this.field5363 ? this.field5362.method536() : this.field5362;
    }
 
-   private static double method3861(Class6488 var0, Direction var1, Class6488 var2) {
+   private static double method3861(AxisAlignedBB var0, Direction var1, AxisAlignedBB var2) {
       switch (Class8024.field34487[var1.ordinal()]) {
          case 1:
             return var0.field28452 - var2.field28449;
@@ -205,7 +205,7 @@ public class Class955 extends TileEntity implements Class935 {
       }
    }
 
-   private Class6488 method3862(Class6488 var1) {
+   private AxisAlignedBB method3862(AxisAlignedBB var1) {
       double var4 = (double)this.method3853(this.field5366);
       return var1.method19667(
          (double)this.field5325.getX() + var4 * (double)this.field5362.method539(),
@@ -215,8 +215,8 @@ public class Class955 extends TileEntity implements Class935 {
    }
 
    private void method3863(Entity var1, Direction var2, double var3) {
-      Class6488 var7 = var1.method3389();
-      Class6488 var8 = Class8022.method27426().method19514().method19668(this.field5325);
+      AxisAlignedBB var7 = var1.getBoundingBox();
+      AxisAlignedBB var8 = VoxelShapes.method27426().method19514().method19668(this.field5325);
       if (var7.method19670(var8)) {
          Direction var9 = var2.method536();
          double var10 = method3861(var8, var9, var7) + 0.01;
@@ -308,12 +308,12 @@ public class Class955 extends TileEntity implements Class935 {
       return var1;
    }
 
-   public Class6408 method3866(Class1665 var1, BlockPos var2) {
-      Class6408 var5;
+   public VoxelShape method3866(Class1665 var1, BlockPos var2) {
+      VoxelShape var5;
       if (!this.field5363 && this.field5364) {
          var5 = this.field5361.method23465(Class3435.field19202, Boolean.valueOf(true)).method23414(var1, var2);
       } else {
-         var5 = Class8022.method27425();
+         var5 = VoxelShapes.method27425();
       }
 
       Direction var6 = field5365.get();
@@ -334,7 +334,7 @@ public class Class955 extends TileEntity implements Class935 {
          double var9 = (double)((float)this.field5362.method539() * var8);
          double var11 = (double)((float)this.field5362.method540() * var8);
          double var13 = (double)((float)this.field5362.method541() * var8);
-         return Class8022.method27431(var5, var7.method23414(var1, var2).method19517(var9, var11, var13));
+         return VoxelShapes.method27431(var5, var7.method23414(var1, var2).withOffset(var9, var11, var13));
       }
    }
 

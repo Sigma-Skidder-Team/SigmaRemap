@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import java.util.Set;
 
-public class Class7609<T> implements Class7608<T> {
+public class Class7609<T> implements ITag<T> {
    private static String[] field32652;
    private final ImmutableList<T> field32653;
    private final Set<T> field32654;

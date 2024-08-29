@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-public abstract class Class911 implements Class909 {
+public abstract class Class911 implements ICommandSource {
    private static final SimpleDateFormat field5191 = new SimpleDateFormat("HH:mm:ss");
    private static final ITextComponent field5192 = new StringTextComponent("@");
    private long field5193 = -1L;

@@ -141,18 +141,18 @@ public class Class5280 extends Module {
             if (mc.player.method3090() != null) {
                 Class2309 var4 = Class2309.method9085(mc.player.method3090().getItem());
                 if (var4 != null) {
-                    float var5 = (float) Math.toRadians(mc.player.field5031 - 25.0F);
-                    float var6 = (float) Math.toRadians(mc.player.field5032);
+                    float var5 = (float) Math.toRadians(mc.player.rotationYaw - 25.0F);
+                    float var6 = (float) Math.toRadians(mc.player.rotationPitch);
                     double var7 = 0.2F;
-                    double var9 = mc.player.field5035.method19675() / 2.0;
+                    double var9 = mc.player.boundingBox.method19675() / 2.0;
                     double var11 = (double) MathHelper.cos(var5) * var9;
                     double var13 = (double) MathHelper.sin(var5) * var9;
-                    double var15 = mc.player.field5048
-                            + (mc.player.getPosX() - mc.player.field5048) * (double) mc.timer.renderPartialTicks;
-                    double var17 = mc.player.field5049
-                            + (mc.player.getPosY() - mc.player.field5049) * (double) mc.timer.renderPartialTicks;
-                    double var19 = mc.player.field5050
-                            + (mc.player.getPosZ() - mc.player.field5050) * (double) mc.timer.renderPartialTicks;
+                    double var15 = mc.player.lastTickPosX
+                            + (mc.player.getPosX() - mc.player.lastTickPosX) * (double) mc.timer.renderPartialTicks;
+                    double var17 = mc.player.lastTickPosY
+                            + (mc.player.getPosY() - mc.player.lastTickPosY) * (double) mc.timer.renderPartialTicks;
+                    double var19 = mc.player.lastTickPosZ
+                            + (mc.player.getPosZ() - mc.player.lastTickPosZ) * (double) mc.timer.renderPartialTicks;
                     GL11.glPushMatrix();
                     GL11.glEnable(2848);
                     GL11.glBlendFunc(770, 771);
@@ -206,20 +206,20 @@ public class Class5280 extends Module {
                     GL11.glDisable(2929);
                     if (var4.field15831 == null) {
                         if (var4.field15832 != null) {
-                            double var31 = var4.field15832.field5048
-                                    + (var4.field15832.getPosX() - var4.field15832.field5048) * (double) mc.timer.renderPartialTicks
+                            double var31 = var4.field15832.lastTickPosX
+                                    + (var4.field15832.getPosX() - var4.field15832.lastTickPosX) * (double) mc.timer.renderPartialTicks
                                     - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
-                            double var41 = var4.field15832.field5049
-                                    + (var4.field15832.getPosY() - var4.field15832.field5049) * (double) mc.timer.renderPartialTicks
+                            double var41 = var4.field15832.lastTickPosY
+                                    + (var4.field15832.getPosY() - var4.field15832.lastTickPosY) * (double) mc.timer.renderPartialTicks
                                     - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-                            double var44 = var4.field15832.field5050
-                                    + (var4.field15832.getPosZ() - var4.field15832.field5050) * (double) mc.timer.renderPartialTicks
+                            double var44 = var4.field15832.lastTickPosZ
+                                    + (var4.field15832.getPosZ() - var4.field15832.lastTickPosZ) * (double) mc.timer.renderPartialTicks
                                     - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                             double var47 = var4.field15832.method3429() / 2.0F + 0.2F;
                             double var35 = var4.field15832.method3430() + 0.1F;
                             Class9388 var37 = new Class9388(var31 - var47, var41, var44 - var47, var31 + var47, var41 + var35, var44 + var47);
-                            Class3192.method11459(var37, Class5628.method17688(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
-                            Class3192.method11461(var37, Class5628.method17688(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
+                            RenderUtil.method11459(var37, Class5628.method17688(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
+                            RenderUtil.method11461(var37, Class5628.method17688(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
                         }
                     } else {
                         double var49 = var4.field15825 - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
@@ -242,8 +242,8 @@ public class Class5280 extends Module {
                         );
                         GL11.glTranslatef(-0.5F, 0.0F, -0.5F);
                         Class9388 var34 = new Class9388(0.0, 0.0, 0.0, 1.0, 0.0, 1.0);
-                        Class3192.method11459(var34, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.1F));
-                        Class3192.method11461(var34, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.1F));
+                        RenderUtil.method11459(var34, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.1F));
+                        RenderUtil.method11461(var34, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.1F));
                         GL11.glPopMatrix();
                     }
 

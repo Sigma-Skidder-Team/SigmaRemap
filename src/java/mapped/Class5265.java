@@ -45,7 +45,7 @@ public class Class5265 extends PremiumModule {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
     }
 
     @EventTarget
@@ -85,7 +85,7 @@ public class Class5265 extends PremiumModule {
     private void method16475(int var1) {
         if (mc.currentScreen == null || mc.currentScreen instanceof ChatScreen) {
             GL11.glPushMatrix();
-            Class3192.method11421(var1 - 20, this.field23683 - 20, var1 + 200, this.field23683 + 120, true);
+            RenderUtil.method11421(var1 - 20, this.field23683 - 20, var1 + 200, this.field23683 + 120, true);
             EntityRendererManager var4 = Minecraft.getInstance().getRenderManager();
             Class5743 var5 = new Class5743(var4);
             short var6 = 150;
@@ -166,13 +166,13 @@ public class Class5265 extends PremiumModule {
             var12.method25602();
             var4.method32215(true);
             RenderSystem.popMatrix();
-            Class3192.method11422();
+            RenderUtil.method11422();
             GL11.glPopMatrix();
         }
     }
 
     private Color method16476(int var1, int var2, Color var3) {
-        Color var6 = Class3192.method11481(var1, var2, var3);
+        Color var6 = RenderUtil.method11481(var1, var2, var3);
         if (var3 != null) {
             var6 = Class5628.method17681(var6, var3, 0.08F * this.field23686);
         }
@@ -243,7 +243,7 @@ public class Class5265 extends PremiumModule {
 
         while (var4.hasNext()) {
             ItemStack var6 = (ItemStack) var4.next();
-            Class3192.method11480(var6, var1, this.field23683 + this.field23685 / 2 - var5 * 35, 1.0F);
+            RenderUtil.method11480(var6, var1, this.field23683 + this.field23685 / 2 - var5 * 35, 1.0F);
             if (++var5 == 2) {
                 var1 -= 35;
                 var5 -= 2;

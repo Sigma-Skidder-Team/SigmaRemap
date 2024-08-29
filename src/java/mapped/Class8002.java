@@ -62,7 +62,7 @@ public class Class8002 {
          var8.method109("id", var1.toString());
          ServerWorld var9 = var0.method20172();
          Entity var10 = EntityType.method33223(var8, var9, var1x -> {
-            var1x.method3273(var2.field18048, var2.field18049, var2.field18050, var1x.field5031, var1x.field5032);
+            var1x.method3273(var2.field18048, var2.field18049, var2.field18050, var1x.rotationYaw, var1x.rotationPitch);
             return var1x;
          });
          if (var10 != null) {

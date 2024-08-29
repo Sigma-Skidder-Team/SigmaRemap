@@ -2,7 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 
-public final class Class6410 extends Class6408 {
+public final class Class6410 extends VoxelShape {
    private static String[] field28038;
 
    public Class6410(Class7938 var1) {

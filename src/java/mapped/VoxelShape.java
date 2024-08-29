@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nullable;
 
-public abstract class Class6408 {
+public abstract class VoxelShape {
    public final Class7938 field28033;
-   private Class6408[] field28034;
+   private VoxelShape[] field28034;
 
-   public Class6408(Class7938 var1) {
+   public VoxelShape(Class7938 var1) {
       this.field28033 = var1;
    }
 
@@ -25,9 +25,9 @@ public abstract class Class6408 {
       return var4 > 0 ? this.method19515(var1, var4) : Double.NEGATIVE_INFINITY;
    }
 
-   public Class6488 method19514() {
+   public AxisAlignedBB method19514() {
       if (!this.method19516()) {
-         return new Class6488(
+         return new AxisAlignedBB(
             this.method19512(Class113.field413),
             this.method19512(Class113.field414),
             this.method19512(Class113.field415),
@@ -50,22 +50,22 @@ public abstract class Class6408 {
       return this.field28033.method26719();
    }
 
-   public Class6408 method19517(double var1, double var3, double var5) {
-      return (Class6408)(!this.method19516()
+   public VoxelShape withOffset(double var1, double var3, double var5) {
+      return (VoxelShape)(!this.method19516()
          ? new Class6409(
             this.field28033,
             new Class54(this.method19511(Class113.field413), var1),
             new Class54(this.method19511(Class113.field414), var3),
             new Class54(this.method19511(Class113.field415), var5)
          )
-         : Class8022.method27425());
+         : VoxelShapes.method27425());
    }
 
-   public Class6408 method19518() {
-      Class6408[] var3 = new Class6408[]{Class8022.method27425()};
+   public VoxelShape method19518() {
+      VoxelShape[] var3 = new VoxelShape[]{VoxelShapes.method27425()};
       this.method19520(
-         (var1, var3x, var5, var7, var9, var11) -> var3[0] = Class8022.method27434(
-               var3[0], Class8022.method27427(var1, var3x, var5, var7, var9, var11), Class9477.field44051
+         (var1, var3x, var5, var7, var9, var11) -> var3[0] = VoxelShapes.method27434(
+               var3[0], VoxelShapes.method27427(var1, var3x, var5, var7, var9, var11), IBooleanFunction.field44051
             )
       );
       return var3[0];
@@ -99,9 +99,9 @@ public abstract class Class6408 {
          );
    }
 
-   public List<Class6488> method19521() {
+   public List<AxisAlignedBB> method19521() {
       ArrayList var3 = Lists.newArrayList();
-      this.method19520((var1, var3x, var5, var7, var9, var11) -> var3.add(new Class6488(var1, var3x, var5, var7, var9, var11)));
+      this.method19520((var1, var3x, var5, var7, var9, var11) -> var3.add(new AxisAlignedBB(var1, var3x, var5, var7, var9, var11)));
       return var3;
    }
 
@@ -138,7 +138,7 @@ public abstract class Class6408 {
             return !this.method19524(
                   var7.field18048 - (double)var3.getX(), var7.field18049 - (double)var3.getY(), var7.field18050 - (double)var3.getZ()
                )
-               ? Class6488.method19681(this.method19521(), var1, var2, var3)
+               ? AxisAlignedBB.method19681(this.method19521(), var1, var2, var3)
                : new BlockRayTraceResult(var7, Direction.method553(var6.field18048, var6.field18049, var6.field18050).method536(), var3, true);
          } else {
             return null;
@@ -148,18 +148,18 @@ public abstract class Class6408 {
       }
    }
 
-   public Class6408 method19526(Direction var1) {
-      if (!this.method19516() && this != Class8022.method27426()) {
+   public VoxelShape method19526(Direction var1) {
+      if (!this.method19516() && this != VoxelShapes.method27426()) {
          if (this.field28034 == null) {
-            this.field28034 = new Class6408[6];
+            this.field28034 = new VoxelShape[6];
          } else {
-            Class6408 var4 = this.field28034[var1.ordinal()];
+            VoxelShape var4 = this.field28034[var1.ordinal()];
             if (var4 != null) {
                return var4;
             }
          }
 
-         Class6408 var5 = this.method19527(var1);
+         VoxelShape var5 = this.method19527(var1);
          this.field28034[var1.ordinal()] = var5;
          return var5;
       } else {
@@ -167,7 +167,7 @@ public abstract class Class6408 {
       }
    }
 
-   private Class6408 method19527(Direction var1) {
+   private VoxelShape method19527(Direction var1) {
       Class113 var4 = var1.method544();
       Class1892 var5 = var1.method535();
       DoubleList var6 = this.method19511(var4);
@@ -179,11 +179,11 @@ public abstract class Class6408 {
       }
    }
 
-   public double method19528(Class113 var1, Class6488 var2, double var3) {
+   public double method19528(Class113 var1, AxisAlignedBB var2, double var3) {
       return this.method19529(Class2321.method9101(var1, Class113.field413), var2, var3);
    }
 
-   public double method19529(Class2321 var1, Class6488 var2, double var3) {
+   public double method19529(Class2321 var1, AxisAlignedBB var2, double var3) {
       if (!this.method19516()) {
          if (Math.abs(var3) < 1.0E-7) {
             return 0.0;

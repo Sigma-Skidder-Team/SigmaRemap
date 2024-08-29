@@ -39,7 +39,7 @@ public class PaintingEntity extends Class995 {
             }
          }
 
-         this.field5496 = (Class9078)var6.get(this.field5054.nextInt(var6.size()));
+         this.field5496 = (Class9078)var6.get(this.rand.nextInt(var6.size()));
       }
 
       this.method4077(var3);
@@ -98,13 +98,13 @@ public class PaintingEntity extends Class995 {
 
    @Override
    public void method3273(double var1, double var3, double var5, float var7, float var8) {
-      this.method3215(var1, var3, var5);
+      this.setPosition(var1, var3, var5);
    }
 
    @Override
    public void method3131(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
       BlockPos var13 = this.field5488.method8335(var1 - this.getPosX(), var3 - this.getPosY(), var5 - this.getPosZ());
-      this.method3215((double)var13.getX(), (double)var13.getY(), (double)var13.getZ());
+      this.setPosition((double)var13.getX(), (double)var13.getY(), (double)var13.getZ());
    }
 
    @Override

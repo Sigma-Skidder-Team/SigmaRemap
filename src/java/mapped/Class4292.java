@@ -83,7 +83,7 @@ public class Class4292 extends Class4278 implements Class4293 {
          var4 = 0;
          var7 -= 8;
          var6 += 8;
-         Class3192.method11426(
+         RenderUtil.method11426(
             (float)var6,
             (float)(this.field20896 + var4),
             (float)(var6 + var7),
@@ -91,9 +91,9 @@ public class Class4292 extends Class4278 implements Class4293 {
             Class5628.method17688(ClientColors.MID_GREY.getColor, 0.1F * var1)
          );
       } else {
-         Class3192.method11454((float)var6, (float)this.field20896, (float)var7, 5.0F, ResourcesDecrypter.verticalScrollBarTopPNG, 0.45F * var1);
-         Class3192.method11454((float)var6, (float)(this.field20896 + this.field20898 - var4), (float)var7, 5.0F, ResourcesDecrypter.verticalScrollBarBottomPNG, 0.45F * var1);
-         Class3192.method11426((float)var6, (float)(this.field20896 + var4), (float)(var6 + var7), (float)(this.field20896 + this.field20898 - var4), var5);
+         RenderUtil.method11454((float)var6, (float)this.field20896, (float)var7, 5.0F, ResourcesDecrypter.verticalScrollBarTopPNG, 0.45F * var1);
+         RenderUtil.method11454((float)var6, (float)(this.field20896 + this.field20898 - var4), (float)var7, 5.0F, ResourcesDecrypter.verticalScrollBarBottomPNG, 0.45F * var1);
+         RenderUtil.method11426((float)var6, (float)(this.field20896 + var4), (float)(var6 + var7), (float)(this.field20896 + this.field20898 - var4), var5);
       }
 
       super.method13027(var1);

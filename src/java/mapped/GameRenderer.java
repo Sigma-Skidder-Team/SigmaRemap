@@ -256,7 +256,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          Vector3d var12 = var4.method3281(1.0F);
          Vector3d var13 = var7.method11339(var12.field18048 * var5, var12.field18049 * var5, var12.field18050 * var5);
          float var14 = 1.0F;
-         Class6488 var15 = var4.method3389().method19661(var12.method11344(var5)).method19663(1.0, 1.0, 1.0);
+         AxisAlignedBB var15 = var4.getBoundingBox().method19661(var12.method11344(var5)).method19663(1.0, 1.0, 1.0);
          EntityRayTraceResult var16 = Class9456.method36386(var4, var7, var13, var15, var0 -> !var0.isSpectator() && var0.method3139(), var10);
          if (var16 != null) {
             Entity var17 = var16.getEntity();
@@ -371,8 +371,8 @@ public class GameRenderer implements Class215, AutoCloseable {
    private void method745(MatrixStack var1, float var2) {
       if (this.field802.getRenderViewEntity() instanceof PlayerEntity) {
          PlayerEntity var5 = (PlayerEntity)this.field802.getRenderViewEntity();
-         float var6 = var5.field5043 - var5.field5042;
-         float var7 = -(var5.field5043 + var6 * var2);
+         float var6 = var5.distanceWalkedModified - var5.prevDistanceWalkedModified;
+         float var7 = -(var5.distanceWalkedModified + var6 * var2);
          float var8 = MathHelper.method37821(var2, var5.field4908, var5.field4909);
          var1.translate(
             (double)(MathHelper.sin(var7 * (float) Math.PI) * var8 * 0.5F),

@@ -24,9 +24,9 @@ public class Class4829 {
       if (!var4.method23410()) {
          return false;
       } else {
-         Class6408 var7 = Class8022.method27427(0.0, 0.0, 0.0, 1.0, (double)var2, 1.0);
-         Class6408 var8 = var4.method23389(var0, var3);
-         return Class8022.method27441(var7, var8, var1);
+         VoxelShape var7 = VoxelShapes.method27427(0.0, 0.0, 0.0, 1.0, (double)var2, 1.0);
+         VoxelShape var8 = var4.method23389(var0, var3);
+         return VoxelShapes.method27441(var7, var8, var1);
       }
    }
 
@@ -372,7 +372,7 @@ public class Class4829 {
       return (var7 <= var8 ? var8 : var7) | (var9 <= var10 ? var10 : var9) << 16;
    }
 
-   private float method14929(Class1665 var1, BlockPos var2, Class7631 var3) {
+   private float method14929(Class1665 var1, BlockPos var2, Fluid var3) {
       int var6 = 0;
       float var7 = 0.0F;
 

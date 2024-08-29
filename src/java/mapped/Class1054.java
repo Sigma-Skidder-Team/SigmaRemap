@@ -3,7 +3,7 @@ package mapped;
 import java.util.function.Predicate;
 
 public class Class1054 extends Class1049 {
-   private static final Class9289<Integer> field5820 = Class9361.<Integer>method35441(Class1054.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5820 = EntityDataManager.<Integer>method35441(Class1054.class, Class7784.field33391);
    private int field5821;
    private int field5822;
    private static final Predicate<Class880> field5823 = var0 -> {
@@ -19,21 +19,21 @@ public class Class1054 extends Class1049 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5820, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5820, 0);
    }
 
    public int method4828() {
-      return this.field5063.<Integer>method35445(field5820);
+      return this.dataManager.<Integer>method35445(field5820);
    }
 
    public void method4829(int var1) {
-      this.field5063.method35446(field5820, var1);
+      this.dataManager.method35446(field5820, var1);
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       if (field5820.equals(var1)) {
          this.method3385();
       }
@@ -101,7 +101,7 @@ public class Class1054 extends Class1049 {
    public void method2871() {
       super.method2871();
       if (this.method3066() && this.method4828() > 0) {
-         for (Class1006 var4 : this.world.method6772(Class1006.class, this.method3389().method19664(0.3), field5823)) {
+         for (Class1006 var4 : this.world.method6772(Class1006.class, this.getBoundingBox().method19664(0.3), field5823)) {
             if (var4.method3066()) {
                this.method4830(var4);
             }
@@ -150,7 +150,7 @@ public class Class1054 extends Class1049 {
    }
 
    @Override
-   public Class8847 method2981(Class2090 var1) {
+   public EntitySize method2981(Pose var1) {
       return super.method2981(var1).method32099(method4831(this.method4828()));
    }
 

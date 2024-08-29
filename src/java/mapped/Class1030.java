@@ -105,7 +105,7 @@ public class Class1030 extends Class1025 {
          return true;
       } else {
          return var1 instanceof Class880 && ((Class880)var1).method3089() == Class7809.field33508
-            ? this.method3344() == null && var1.method3344() == null
+            ? this.getTeam() == null && var1.getTeam() == null
             : false;
       }
    }
@@ -142,7 +142,7 @@ public class Class1030 extends Class1025 {
          var7 = 2;
       }
 
-      boolean var8 = this.field5054.nextFloat() <= var6.method25436();
+      boolean var8 = this.rand.nextFloat() <= var6.method25436();
       if (var8) {
          HashMap var9 = Maps.newHashMap();
          var9.put(Class8122.field34908, Integer.valueOf(var7));
@@ -159,7 +159,7 @@ public class Class1030 extends Class1025 {
 
    // $VF: synthetic method
    public static Random method4592(Class1030 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method

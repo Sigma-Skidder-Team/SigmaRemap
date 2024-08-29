@@ -17,7 +17,7 @@ public class Class2608 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if (!this.field16860.method3329()) {
+      if (!this.field16860.isBeingRidden()) {
          if (!this.field16860.world.method6740()) {
             if (this.field16860.method3013().nextInt(this.field16861) == 0) {
                ServerWorld var3 = (ServerWorld)this.field16860.world;

@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5332 extends Class5325 {
+public class Class5332 extends ModuleWithModuleSettings {
     public Class5332() {
         super(
                 ModuleCategory.COMBAT,

@@ -29,7 +29,7 @@ public class EntityDesync extends Command {
                   }
 
                   mc.player.method3311(this.field25711);
-                  this.field25711.field5071 = true;
+                  this.field25711.addedToChunk = true;
                   var3.method20327("Remounted entity " + this.field25711.getType().method33211().getUnformattedComponentText());
                   this.field25711 = null;
                } else {
@@ -39,8 +39,8 @@ public class EntityDesync extends Command {
                   }
 
                   this.field25711 = mc.player.getRidingEntity();
-                  this.field25711.field5071 = true;
-                  mc.player.method2759();
+                  this.field25711.addedToChunk = true;
+                  mc.player.stopRiding();
                   var3.method20327("Dismounted entity " + this.field25711.getType().method33211().getUnformattedComponentText());
                }
             }

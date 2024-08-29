@@ -2,8 +2,8 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
@@ -25,7 +25,7 @@ public class Class5173 extends Module {
     @EventTarget
     public void method16100(WorldLoadEvent var1) {
         if (!this.isEnabled()) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Class5344.class);
+            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Class5344.class);
             if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSetttingName("Ping spoof")) {
                 return;
             }
@@ -37,7 +37,7 @@ public class Class5173 extends Module {
     @EventTarget
     public void method16101(TickEvent var1) {
         if (!this.isEnabled()) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Class5344.class);
+            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Class5344.class);
             if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSetttingName("Ping spoof")) {
                 return;
             }
@@ -45,7 +45,7 @@ public class Class5173 extends Module {
 
         this.field23462++;
         if (mc.player != null && mc.getCurrentServerData() != null) {
-            if (mc.player.field5055 <= 1) {
+            if (mc.player.ticksExisted <= 1) {
                 this.field23461.clear();
             }
 
@@ -67,7 +67,7 @@ public class Class5173 extends Module {
     }
 
     @EventTarget
-    public void method16102(Class4402 var1) {
+    public void method16102(SendPacketEvent var1) {
         Packet var4 = var1.method13932();
         if (var4 instanceof Class5594) {
             Class5594 var5 = (Class5594) var4;
@@ -76,16 +76,16 @@ public class Class5173 extends Module {
     }
 
     @EventTarget
-    public void method16103(Class4396 var1) {
+    public void method16103(RecievePacketEvent var1) {
         if (!this.isEnabled()) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Class5344.class);
+            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Class5344.class);
             if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSetttingName("Ping spoof")) {
                 return;
             }
         }
 
         if (mc.getCurrentServerData() != null) {
-            Packet var7 = var1.method13898();
+            Packet var7 = var1.getPacket();
             if (!(var7 instanceof Class5554)) {
                 if (!(var7 instanceof Class5542)) {
                     if (var7 instanceof Class5473 && this.field23462 > 0) {

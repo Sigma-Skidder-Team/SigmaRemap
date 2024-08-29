@@ -247,7 +247,7 @@ public class IngameGui extends Class1193 {
             Class8375 var21 = null;
             Class8218 var25 = var17.method20998(this.field6716.player.method2956());
             if (var25 != null) {
-                int var27 = var25.method28591().getColorIndex();
+                int var27 = var25.getColor().getColorIndex();
                 if (var27 >= 0) {
                     var21 = var17.method20989(3 + var27);
                 }
@@ -698,10 +698,10 @@ public class IngameGui extends Class1193 {
             int var5 = MathHelper.method37773(var4.method3042());
             boolean var6 = this.field6740 > (long) this.field6719 && (this.field6740 - (long) this.field6719) / 3L % 2L == 1L;
             long var7 = Util.milliTime();
-            if (var5 < this.field6737 && var4.field5061 > 0) {
+            if (var5 < this.field6737 && var4.hurtResistantTime > 0) {
                 this.field6739 = var7;
                 this.field6740 = (long) (this.field6719 + 20);
-            } else if (var5 > this.field6737 && var4.field5061 > 0) {
+            } else if (var5 > this.field6737 && var4.hurtResistantTime > 0) {
                 this.field6739 = var7;
                 this.field6740 = (long) (this.field6719 + 10);
             }
@@ -846,7 +846,7 @@ public class IngameGui extends Class1193 {
             }
 
             this.field6716.getProfiler().endStartSection("air");
-            int var38 = var4.method3350();
+            int var38 = var4.getMaxAir();
             int var40 = Math.min(var4.method3351(), var38);
             if (var4.method3263(Class8953.field40469) || var40 < var38) {
                 int var42 = this.method5975(var36) - 1;

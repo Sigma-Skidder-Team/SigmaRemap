@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -24,10 +24,10 @@ public class Class5300 extends Module {
     }
 
     @EventTarget
-    private void method16654(Class4396 var1) throws IOException {
+    private void method16654(RecievePacketEvent var1) throws IOException {
         if (this.isEnabled()) {
-            if (var1.method13898() instanceof Class5588) {
-                Class5588 var4 = (Class5588) var1.method13898();
+            if (var1.getPacket() instanceof Class5588) {
+                Class5588 var4 = (Class5588) var1.getPacket();
 
                 for (Pair var6 : var4.method17562()) {
                     if (var6.getSecond() != null
@@ -49,7 +49,7 @@ public class Class5300 extends Module {
                 }
             }
 
-            if (var1.method13898() instanceof Class5545) {
+            if (var1.getPacket() instanceof Class5545) {
                 this.field23836 = false;
             }
         }
@@ -69,11 +69,11 @@ public class Class5300 extends Module {
                     }
 
                     if (this.field23834 != null) {
-                        Class3192.method11426(
+                        RenderUtil.method11426(
                                 (float) (var6 - var4.method23942(this.field23833) - 90), (float) (var7 - 130), (float) (var6 - 10), (float) (var7 - 10), 1342177280
                         );
-                        Class3192.method11455((float) (var6 - var4.method23942(this.field23833) - 80), (float) (var7 - 120), 50.0F, 100.0F, this.field23834);
-                        Class3192.method11439(
+                        RenderUtil.method11455((float) (var6 - var4.method23942(this.field23833) - 80), (float) (var7 - 120), 50.0F, 100.0F, this.field23834);
+                        RenderUtil.method11439(
                                 var4, (float) (var6 - var4.method23942(this.field23833) - 20), (float) (var7 - var4.method23941(this.field23833) - 60), this.field23833, -1
                         );
                     }

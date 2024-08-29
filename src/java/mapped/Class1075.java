@@ -53,7 +53,7 @@ public class Class1075 extends AbstractHorseEntity {
       if (this.method4932()) {
          if (!this.method3005()) {
             if (!var1.method2851()) {
-               if (!this.method3329()) {
+               if (!this.isBeingRidden()) {
                   if (!var5.isEmpty()) {
                      if (var5.getItem() == Items.field37886 && !this.method4943()) {
                         this.openGUI(var1);

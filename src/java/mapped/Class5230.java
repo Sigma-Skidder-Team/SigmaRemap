@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -18,9 +18,9 @@ public class Class5230 extends Module {
     }
 
     @EventTarget
-    private void method16295(Class4396 var1) {
+    private void method16295(RecievePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            Packet var4 = var1.method13898();
+            Packet var4 = var1.getPacket();
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.method17648().getString();

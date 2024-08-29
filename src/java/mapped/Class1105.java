@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class Class1105 extends Class1009 {
    private static String[] field6065;
-   private static final Class9289<Boolean> field6066 = Class9361.<Boolean>method35441(Class1105.class, Class7784.field33398);
-   private static final Class9289<Integer> field6067 = Class9361.<Integer>method35441(Class1105.class, Class7784.field33391);
+   private static final DataParameter<Boolean> field6066 = EntityDataManager.<Boolean>method35441(Class1105.class, Class7784.field33398);
+   private static final DataParameter<Integer> field6067 = EntityDataManager.<Integer>method35441(Class1105.class, Class7784.field33391);
    private float field6068;
    private float field6069;
    private float field6070;
@@ -23,7 +23,7 @@ public class Class1105 extends Class1009 {
       this.field5594 = 10;
       this.method4224(Class2163.field14191, 0.0F);
       this.field5596 = new Class6828(this);
-      this.field6068 = this.field5054.nextFloat();
+      this.field6068 = this.rand.nextFloat();
       this.field6069 = this.field6068;
    }
 
@@ -56,10 +56,10 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field6066, false);
-      this.field5063.method35442(field6067, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field6066, false);
+      this.dataManager.register(field6067, 0);
    }
 
    @Override
@@ -73,11 +73,11 @@ public class Class1105 extends Class1009 {
    }
 
    public boolean method5301() {
-      return this.field5063.<Boolean>method35445(field6066);
+      return this.dataManager.<Boolean>method35445(field6066);
    }
 
    private void method5302(boolean var1) {
-      this.field5063.method35446(field6066, var1);
+      this.dataManager.method35446(field6066, var1);
    }
 
    public int method5303() {
@@ -85,11 +85,11 @@ public class Class1105 extends Class1009 {
    }
 
    private void method5304(int var1) {
-      this.field5063.method35446(field6067, var1);
+      this.dataManager.method35446(field6067, var1);
    }
 
    public boolean method5305() {
-      return this.field5063.<Integer>method35445(field6067) != 0;
+      return this.dataManager.<Integer>method35445(field6067) != 0;
    }
 
    @Nullable
@@ -98,7 +98,7 @@ public class Class1105 extends Class1009 {
          if (!this.world.field9020) {
             return this.method4232();
          } else if (this.field6073 == null) {
-            Entity var3 = this.world.method6774(this.field5063.<Integer>method35445(field6067));
+            Entity var3 = this.world.method6774(this.dataManager.<Integer>method35445(field6067));
             if (!(var3 instanceof Class880)) {
                return null;
             } else {
@@ -114,7 +114,7 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       super.method3155(var1);
       if (field6067.equals(var1)) {
          this.field6074 = 0;
@@ -148,7 +148,7 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.5F;
    }
 
@@ -189,7 +189,7 @@ public class Class1105 extends Class1009 {
                   this.field6071 = this.field6071 + (0.0F - this.field6071) * 0.25F;
                }
             } else {
-               this.field6071 = this.field5054.nextFloat();
+               this.field6071 = this.rand.nextFloat();
             }
 
             if (this.method5301() && this.method3250()) {
@@ -226,10 +226,10 @@ public class Class1105 extends Class1009 {
                   var7 /= var13;
                   var9 /= var13;
                   var11 /= var13;
-                  double var15 = this.field5054.nextDouble();
+                  double var15 = this.rand.nextDouble();
 
                   while (var15 < var13) {
-                     var15 += 1.8 - var5 + this.field5054.nextDouble() * (1.7 - var5);
+                     var15 += 1.8 - var5 + this.rand.nextDouble() * (1.7 - var5);
                      this.world
                         .method6746(
                            Class7940.field34052,
@@ -246,21 +246,21 @@ public class Class1105 extends Class1009 {
          }
 
          if (!this.method3255()) {
-            if (this.field5036) {
+            if (this.onGround) {
                this.method3434(
                   this.method3433()
-                     .method11339((double)((this.field5054.nextFloat() * 2.0F - 1.0F) * 0.4F), 0.5, (double)((this.field5054.nextFloat() * 2.0F - 1.0F) * 0.4F))
+                     .method11339((double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.4F), 0.5, (double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.4F))
                );
-               this.field5031 = this.field5054.nextFloat() * 360.0F;
-               this.field5036 = false;
-               this.field5078 = true;
+               this.rotationYaw = this.rand.nextFloat() * 360.0F;
+               this.onGround = false;
+               this.isAirBorne = true;
             }
          } else {
             this.method3352(300);
          }
 
          if (this.method5305()) {
-            this.field5031 = this.field4967;
+            this.rotationYaw = this.field4967;
          }
       }
 

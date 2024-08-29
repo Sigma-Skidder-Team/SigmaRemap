@@ -107,9 +107,9 @@ public class Class9271 {
 
       for (Entity var5 : var0) {
          if (!(var5 instanceof PlayerEntity)) {
-            var3.add((Class8219)null);
+            var3.add((Team)null);
          } else {
-            var3.add(var5.method3344());
+            var3.add(var5.getTeam());
          }
       }
 
@@ -207,7 +207,7 @@ public class Class9271 {
          if (!var4) {
             var13 = var2[var9++];
          } else {
-            Class8219 var14 = !(var12 instanceof PlayerEntity) ? null : var12.method3344();
+            Team var14 = !(var12 instanceof PlayerEntity) ? null : var12.getTeam();
             if (!var10.containsKey(var14)) {
                var10.put(var14, var2[var9++]);
             }

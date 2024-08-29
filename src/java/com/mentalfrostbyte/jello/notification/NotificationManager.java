@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import mapped.Class3192;
+import mapped.RenderUtil;
 import mapped.Class9782;
 import mapped.Minecraft;
 
@@ -83,27 +83,27 @@ public class NotificationManager {
                 int var10 = new Color(0.14F, 0.14F, 0.14F, var9 * 0.93F).getRGB();
                 int var11 = new Color(0.0F, 0.0F, 0.0F, Math.min(var6 * 0.075F, 1.0F)).getRGB();
                 int var12 = new Color(1.0F, 1.0F, 1.0F, var9).getRGB();
-                Class3192.method11463((float) var7, (float) var8, (float) this.field39923, (float) this.field39924, 10.0F, var9);
-                Class3192.method11426((float) var7, (float) var8, (float) (var7 + this.field39923), (float) (var8 + this.field39924), var10);
-                Class3192.method11426((float) var7, (float) var8, (float) (var7 + this.field39923), (float) (var8 + 1), var11);
-                Class3192.method11426((float) var7, (float) (var8 + this.field39924 - 1), (float) (var7 + this.field39923), (float) (var8 + this.field39924), var11);
-                Class3192.method11426((float) var7, (float) (var8 + 1), (float) (var7 + 1), (float) (var8 + this.field39924 - 1), var11);
-                Class3192.method11426(
+                RenderUtil.method11463((float) var7, (float) var8, (float) this.field39923, (float) this.field39924, 10.0F, var9);
+                RenderUtil.method11426((float) var7, (float) var8, (float) (var7 + this.field39923), (float) (var8 + this.field39924), var10);
+                RenderUtil.method11426((float) var7, (float) var8, (float) (var7 + this.field39923), (float) (var8 + 1), var11);
+                RenderUtil.method11426((float) var7, (float) (var8 + this.field39924 - 1), (float) (var7 + this.field39923), (float) (var8 + this.field39924), var11);
+                RenderUtil.method11426((float) var7, (float) (var8 + 1), (float) (var7 + 1), (float) (var8 + this.field39924 - 1), var11);
+                RenderUtil.method11426(
                         (float) (var7 + this.field39923 - 1), (float) (var8 + 1), (float) (var7 + this.field39923), (float) (var8 + this.field39924 - 1), var11
                 );
-                Class3192.method11420(var7, var8, var7 + this.field39923 - this.field39927, var8 + this.field39924);
-                Class3192.method11439(
+                RenderUtil.method11420(var7, var8, var7 + this.field39923 - this.field39927, var8 + this.field39924);
+                RenderUtil.method11439(
                         this.field39929, (float) (var7 + this.field39924 + this.field39927 - 2), (float) (var8 + this.field39927), var5.field43603, var12
                 );
-                Class3192.method11439(
+                RenderUtil.method11439(
                         this.field39928,
                         (float) (var7 + this.field39924 + this.field39927 - 2),
                         (float) (var8 + this.field39927 + this.field39929.method23941(var5.field43603)),
                         var5.field43604,
                         var12
                 );
-                Class3192.method11422();
-                Class3192.method11455(
+                RenderUtil.method11422();
+                RenderUtil.method11455(
                         (float) (var7 + this.field39927 / 2),
                         (float) (var8 + this.field39927 / 2),
                         (float) (this.field39924 - this.field39927),
@@ -144,8 +144,8 @@ public class NotificationManager {
                     - var3 * (int) ((float) this.field39924 * this.method31994(var3) + (float) this.field39927 * this.method31994(var3));
 
             for (int var8 = 0; var8 < 3; var8++) {
-                var4.field43608[var8] = Class3192.method11481(var6 + this.field39923 / 3 * var8, var7, var4.field43608[var8]);
-                var4.field43609[var8] = Class3192.method11481(var6 + this.field39923 / 3 * var8, var7 + this.field39924, var4.field43609[var8]);
+                var4.field43608[var8] = RenderUtil.method11481(var6 + this.field39923 / 3 * var8, var7, var4.field43608[var8]);
+                var4.field43609[var8] = RenderUtil.method11481(var6 + this.field39923 / 3 * var8, var7 + this.field39924, var4.field43609[var8]);
             }
         }
     }

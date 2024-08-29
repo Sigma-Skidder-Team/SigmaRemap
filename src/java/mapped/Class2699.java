@@ -29,8 +29,8 @@ public abstract class Class2699 extends Class2595 {
 
       if (var3 != null) {
          if (var3.method3066()) {
-            Class8219 var4 = this.field17153.method3344();
-            Class8219 var5 = var3.method3344();
+            Team var4 = this.field17153.getTeam();
+            Team var5 = var3.getTeam();
             if (var4 != null && var5 == var4) {
                return false;
             } else {

@@ -34,7 +34,7 @@ public class Class3329 extends Item {
 
       for (Class1006 var13 : var1.<Class1006>method7182(
          Class1006.class,
-         new Class6488((double)var9 - 7.0, (double)var10 - 7.0, (double)var11 - 7.0, (double)var9 + 7.0, (double)var10 + 7.0, (double)var11 + 7.0)
+         new AxisAlignedBB((double)var9 - 7.0, (double)var10 - 7.0, (double)var11 - 7.0, (double)var9 + 7.0, (double)var10 + 7.0, (double)var11 + 7.0)
       )) {
          if (var13.method4297() == var0) {
             if (var5 == null) {

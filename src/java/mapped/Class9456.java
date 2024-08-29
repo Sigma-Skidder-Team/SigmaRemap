@@ -17,7 +17,7 @@ public final class Class9456 {
          var7 = ((RayTraceResult)var8).method31419();
       }
 
-      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.method3389().method19661(var0.method3433()).method19664(1.0), var1);
+      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.getBoundingBox().method19661(var0.method3433()).method19664(1.0), var1);
       if (var9 != null) {
          var8 = var9;
       }
@@ -26,14 +26,14 @@ public final class Class9456 {
    }
 
    @Nullable
-   public static EntityRayTraceResult method36386(Entity var0, Vector3d var1, Vector3d var2, Class6488 var3, Predicate<Entity> var4, double var5) {
+   public static EntityRayTraceResult method36386(Entity var0, Vector3d var1, Vector3d var2, AxisAlignedBB var3, Predicate<Entity> var4, double var5) {
       World var9 = var0.world;
       double var10 = var5;
       Entity var12 = null;
       Vector3d var13 = null;
 
       for (Entity var15 : var9.method6770(var0, var3, var4)) {
-         Class6488 var16 = var15.method3389().method19664((double)var15.method3319());
+         AxisAlignedBB var16 = var15.getBoundingBox().method19664((double)var15.method3319());
          Optional<Vector3d> var17 = var16.method19680(var1, var2);
          if (!var16.method19673(var1)) {
             if (var17.isPresent()) {
@@ -61,12 +61,12 @@ public final class Class9456 {
    }
 
    @Nullable
-   public static EntityRayTraceResult method36387(World var0, Entity var1, Vector3d var2, Vector3d var3, Class6488 var4, Predicate<Entity> var5) {
+   public static EntityRayTraceResult method36387(World var0, Entity var1, Vector3d var2, Vector3d var3, AxisAlignedBB var4, Predicate<Entity> var5) {
       double var8 = Double.MAX_VALUE;
       Entity var10 = null;
 
       for (Entity var12 : var0.method6770(var1, var4, var5)) {
-         Class6488 var13 = var12.method3389().method19664(0.3F);
+         AxisAlignedBB var13 = var12.getBoundingBox().method19664(0.3F);
          Optional var14 = var13.method19680(var2, var3);
          if (var14.isPresent()) {
             double var15 = var2.method11342((Vector3d)var14.get());
@@ -84,27 +84,27 @@ public final class Class9456 {
       Vector3d var4 = var0.method3433();
       if (var4.method11349() != 0.0) {
          float var5 = MathHelper.method37766(Entity.method3234(var4));
-         var0.field5031 = (float)(MathHelper.method37814(var4.field18050, var4.field18048) * 180.0F / (float)Math.PI) + 90.0F;
-         var0.field5032 = (float)(MathHelper.method37814((double)var5, var4.field18049) * 180.0F / (float)Math.PI) - 90.0F;
+         var0.rotationYaw = (float)(MathHelper.method37814(var4.field18050, var4.field18048) * 180.0F / (float)Math.PI) + 90.0F;
+         var0.rotationPitch = (float)(MathHelper.method37814((double)var5, var4.field18049) * 180.0F / (float)Math.PI) - 90.0F;
 
-         while (var0.field5032 - var0.field5034 < -180.0F) {
-            var0.field5034 -= 360.0F;
+         while (var0.rotationPitch - var0.prevRotationPitch < -180.0F) {
+            var0.prevRotationPitch -= 360.0F;
          }
 
-         while (var0.field5032 - var0.field5034 >= 180.0F) {
-            var0.field5034 += 360.0F;
+         while (var0.rotationPitch - var0.prevRotationPitch >= 180.0F) {
+            var0.prevRotationPitch += 360.0F;
          }
 
-         while (var0.field5031 - var0.field5033 < -180.0F) {
-            var0.field5033 -= 360.0F;
+         while (var0.rotationYaw - var0.prevRotationYaw < -180.0F) {
+            var0.prevRotationYaw -= 360.0F;
          }
 
-         while (var0.field5031 - var0.field5033 >= 180.0F) {
-            var0.field5033 += 360.0F;
+         while (var0.rotationYaw - var0.prevRotationYaw >= 180.0F) {
+            var0.prevRotationYaw += 360.0F;
          }
 
-         var0.field5032 = MathHelper.method37821(var1, var0.field5034, var0.field5032);
-         var0.field5031 = MathHelper.method37821(var1, var0.field5033, var0.field5031);
+         var0.rotationPitch = MathHelper.method37821(var1, var0.prevRotationPitch, var0.rotationPitch);
+         var0.rotationYaw = MathHelper.method37821(var1, var0.prevRotationYaw, var0.rotationYaw);
       }
    }
 

@@ -11,12 +11,12 @@ public class LeashKnotEntity extends Class995 {
 
    public LeashKnotEntity(World var1, BlockPos var2) {
       super(EntityType.field41045, var1, var2);
-      this.method3215((double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5);
+      this.setPosition((double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5);
       float var5 = 0.125F;
       float var6 = 0.1875F;
       float var7 = 0.25F;
       this.method3391(
-         new Class6488(
+         new AxisAlignedBB(
             this.getPosX() - 0.1875,
             this.getPosY() - 0.25 + 0.125,
             this.getPosZ() - 0.1875,
@@ -25,12 +25,12 @@ public class LeashKnotEntity extends Class995 {
             this.getPosZ() + 0.1875
          )
       );
-      this.field5023 = true;
+      this.forceSpawn = true;
    }
 
    @Override
-   public void method3215(double var1, double var3, double var5) {
-      super.method3215((double) MathHelper.floor(var1) + 0.5, (double) MathHelper.floor(var3) + 0.5, (double) MathHelper.floor(var5) + 0.5);
+   public void setPosition(double var1, double var3, double var5) {
+      super.setPosition((double) MathHelper.floor(var1) + 0.5, (double) MathHelper.floor(var3) + 0.5, (double) MathHelper.floor(var5) + 0.5);
    }
 
    @Override
@@ -53,7 +53,7 @@ public class LeashKnotEntity extends Class995 {
    }
 
    @Override
-   public float method3181(Class2090 var1, Class8847 var2) {
+   public float method3181(Pose var1, EntitySize var2) {
       return -0.0625F;
    }
 
@@ -85,7 +85,7 @@ public class LeashKnotEntity extends Class995 {
          List<Class1006> var8 = this.world
             .<Class1006>method7182(
                Class1006.class,
-               new Class6488(
+               new AxisAlignedBB(
                   this.getPosX() - 7.0,
                   this.getPosY() - 7.0,
                   this.getPosZ() - 7.0,
@@ -128,7 +128,7 @@ public class LeashKnotEntity extends Class995 {
       int var6 = var1.getZ();
 
       for (LeashKnotEntity var8 : var0.<LeashKnotEntity>method7182(
-         LeashKnotEntity.class, new Class6488((double)var4 - 1.0, (double)var5 - 1.0, (double)var6 - 1.0, (double)var4 + 1.0, (double)var5 + 1.0, (double)var6 + 1.0)
+         LeashKnotEntity.class, new AxisAlignedBB((double)var4 - 1.0, (double)var5 - 1.0, (double)var6 - 1.0, (double)var4 + 1.0, (double)var5 + 1.0, (double)var6 + 1.0)
       )) {
          if (var8.method4085().equals(var1)) {
             return var8;

@@ -19,7 +19,7 @@ import java.util.function.BiPredicate;
 import java.util.stream.Collectors;
 
 public class Class1042 extends Class1043 implements Class1062, Class1041 {
-   private static final Class9289<Class7921> field5776 = Class9361.<Class7921>method35441(Class1042.class, Class7784.field33406);
+   private static final DataParameter<Class7921> field5776 = EntityDataManager.<Class7921>method35441(Class1042.class, Class7784.field33406);
    public static final Map<Item, Integer> field5777 = ImmutableMap.of(
       Items.field37843, 4, Items.field38053, 1, Items.field38052, 1, Items.field38111, 1
    );
@@ -202,7 +202,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          this.field5781 = null;
       }
 
-      if (!this.method4305() && this.field5054.nextInt(100) == 0) {
+      if (!this.method4305() && this.rand.nextInt(100) == 0) {
          Class7699 var3 = ((ServerWorld)this.world).method6957(this.getPosition());
          if (var3 != null && var3.method25433() && !var3.method25388()) {
             this.world.method6786(this, (byte)42);
@@ -380,9 +380,9 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5776, new Class7921(Class9564.field44542, Class8395.field36011, 1));
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5776, new Class7921(Class9564.field44542, Class8395.field36011, 1));
    }
 
    @Override
@@ -390,7 +390,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       super.method2724(var1);
       Class7921.field33913
          .encodeStart(NBTDynamicOps.INSTANCE, this.method4674())
-         .resultOrPartial(field5012::error)
+         .resultOrPartial(LOGGER::error)
          .ifPresent(var1x -> var1.put("VillagerData", var1x));
       var1.method100("FoodLevel", this.field5782);
       var1.put("Gossips", (Class30)this.field5783.method25528(NBTDynamicOps.INSTANCE).getValue());
@@ -408,7 +408,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       super.method2723(var1);
       if (var1.method119("VillagerData", 10)) {
          DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, var1.method116("VillagerData")));
-         var4.resultOrPartial(field5012::error).ifPresent(this::method4695);
+         var4.resultOrPartial(LOGGER::error).ifPresent(this::method4695);
       }
 
       if (var1.method119("Offers", 10)) {
@@ -476,17 +476,17 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          this.field5796 = null;
       }
 
-      this.field5063.method35446(field5776, var1);
+      this.dataManager.method35446(field5776, var1);
    }
 
    @Override
    public Class7921 method4674() {
-      return this.field5063.<Class7921>method35445(field5776);
+      return this.dataManager.<Class7921>method35445(field5776);
    }
 
    @Override
    public void method4696(Class9346 var1) {
-      int var4 = 3 + this.field5054.nextInt(4);
+      int var4 = 3 + this.rand.nextInt(4);
       this.field5786 = this.field5786 + var1.method35381();
       this.field5781 = this.method4740();
       if (this.method4707()) {
@@ -514,7 +514,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Override
    public void method2737(Class8654 var1) {
-      field5012.info("Villager {} died, message: '{}'", this, var1.method31110(this).getString());
+      LOGGER.info("Villager {} died, message: '{}'", this, var1.method31110(this).getString());
       Entity var4 = var1.method31109();
       if (var4 != null) {
          this.method4698(var4);
@@ -662,7 +662,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    public Class1042 method4389(ServerWorld var1, Class1045 var2) {
-      double var5 = this.field5054.nextDouble();
+      double var5 = this.rand.nextDouble();
       Class9564 var7;
       if (!(var5 < 0.5)) {
          if (!(var5 < 0.75)) {
@@ -684,9 +684,9 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       if (var1.method6997() == Class2197.field14351) {
          super.method3353(var1, var2);
       } else {
-         field5012.info("Villager {} was struck by lightning {}.", this, var2);
+         LOGGER.info("Villager {} was struck by lightning {}.", this, var2);
          Class1027 var5 = EntityType.field41101.method33215(var1);
-         var5.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.field5031, this.field5032);
+         var5.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method4276(var1, var1.method6807(var5.getPosition()), Class2202.field14399, (Class5093)null, (CompoundNBT)null);
          var5.method4302(this.method4305());
          if (this.method3381()) {
@@ -760,7 +760,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    public void method4714(ServerWorld var1, Class1042 var2, long var3) {
       if ((var3 < this.field5784 || var3 >= this.field5784 + 1200L) && (var3 < var2.field5784 || var3 >= var2.field5784 + 1200L)) {
-         this.field5783.method25525(var2.field5783, this.field5054, 10);
+         this.field5783.method25525(var2.field5783, this.rand, 10);
          this.field5784 = var3;
          var2.field5784 = var3;
          this.method4716(var1, var3, 5);
@@ -781,7 +781,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    public void method4716(ServerWorld var1, long var2, int var4) {
       if (this.method4717(var2)) {
-         Class6488 var7 = this.method3389().method19663(10.0, 10.0, 10.0);
+         AxisAlignedBB var7 = this.getBoundingBox().method19663(10.0, 10.0, 10.0);
          List<Class1042> var8 = var1.method7182(Class1042.class, var7);
          List<Class1042> var9 = var8.stream().filter(var2x -> var2x.method4717(var2)).limit(5L).collect(Collectors.toList());
          if (var9.size() >= var4) {

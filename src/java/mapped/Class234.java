@@ -14,11 +14,11 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
             var1.push();
             var1.translate(0.0, 0.0, 0.125);
             double var14 = MathHelper.method37822((double)var7, var4.field4911, var4.field4914)
-               - MathHelper.method37822((double)var7, var4.field5025, var4.getPosX());
+               - MathHelper.method37822((double)var7, var4.prevPosX, var4.getPosX());
             double var16 = MathHelper.method37822((double)var7, var4.field4912, var4.field4915)
-               - MathHelper.method37822((double)var7, var4.field5026, var4.getPosY());
+               - MathHelper.method37822((double)var7, var4.prevPosY, var4.getPosY());
             double var18 = MathHelper.method37822((double)var7, var4.field4913, var4.field4916)
-               - MathHelper.method37822((double)var7, var4.field5027, var4.getPosZ());
+               - MathHelper.method37822((double)var7, var4.prevPosZ, var4.getPosZ());
             float var20 = var4.field4966 + (var4.field4965 - var4.field4966);
             double var21 = (double) MathHelper.sin(var20 * (float) (Math.PI / 180.0));
             double var23 = (double)(-MathHelper.cos(var20 * (float) (Math.PI / 180.0)));
@@ -41,7 +41,7 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
             }
 
             float var28 = MathHelper.method37821(var7, var4.field4908, var4.field4909);
-            var25 += MathHelper.sin(MathHelper.method37821(var7, var4.field5042, var4.field5043) * 6.0F) * 32.0F * var28;
+            var25 += MathHelper.sin(MathHelper.method37821(var7, var4.prevDistanceWalkedModified, var4.distanceWalkedModified) * 6.0F) * 32.0F * var28;
             if (var4.method3336()) {
                var25 += 25.0F;
             }

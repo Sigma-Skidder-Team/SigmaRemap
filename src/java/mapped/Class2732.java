@@ -13,9 +13,9 @@ public class Class2732 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if ((this.field17250.method3005() || this.field17250.method5212()) && this.field17250.field5036) {
+      if ((this.field17250.method3005() || this.field17250.method5212()) && this.field17250.onGround) {
          if (this.field17250.method5230()) {
-            float var3 = this.field17250.field5031 * (float) (Math.PI / 180.0);
+            float var3 = this.field17250.rotationYaw * (float) (Math.PI / 180.0);
             int var4 = 0;
             int var5 = 0;
             float var6 = -MathHelper.sin(var3);

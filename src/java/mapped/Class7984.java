@@ -13,19 +13,19 @@ import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
 public interface Class7984<T> {
-   Map<ResourceLocation, Class7608<T>> method27134();
+   Map<ResourceLocation, ITag<T>> method27134();
 
    @Nullable
-   default Class7608<T> method27135(ResourceLocation var1) {
+   default ITag<T> method27135(ResourceLocation var1) {
       return this.method27134().get(var1);
    }
 
-   Class7608<T> method27132(ResourceLocation var1);
+   ITag<T> method27132(ResourceLocation var1);
 
    @Nullable
-   ResourceLocation method27133(Class7608<T> var1);
+   ResourceLocation method27133(ITag<T> var1);
 
-   default ResourceLocation method27136(Class7608<T> var1) {
+   default ResourceLocation method27136(ITag<T> var1) {
       ResourceLocation var4 = this.method27133(var1);
       if (var4 != null) {
          return var4;
@@ -42,7 +42,7 @@ public interface Class7984<T> {
       ArrayList var4 = Lists.newArrayList();
 
       for (Entry var6 : this.method27134().entrySet()) {
-         if (((Class7608)var6.getValue()).method24917(var1)) {
+         if (((ITag)var6.getValue()).method24917(var1)) {
             var4.add(var6.getKey());
          }
       }
@@ -51,14 +51,14 @@ public interface Class7984<T> {
    }
 
    default void method27139(PacketBuffer var1, Class2351<T> var2) {
-      Map<ResourceLocation, Class7608<T>> var5 = this.method27134();
+      Map<ResourceLocation, ITag<T>> var5 = this.method27134();
       var1.writeVarInt(var5.size());
 
-      for (Entry<ResourceLocation, Class7608<T>> var7 : var5.entrySet()) {
+      for (Entry<ResourceLocation, ITag<T>> var7 : var5.entrySet()) {
          var1.method35732((ResourceLocation)var7.getKey());
-         var1.writeVarInt(((Class7608)var7.getValue()).method24918().size());
+         var1.writeVarInt(((ITag)var7.getValue()).method24918().size());
 
-         for (Object var9 : ((Class7608)var7.getValue()).method24918()) {
+         for (Object var9 : ((ITag)var7.getValue()).method24918()) {
             var1.writeVarInt(var2.method9171((T) var9));
          }
       }
@@ -77,7 +77,7 @@ public interface Class7984<T> {
             var9.add(var1.method9172(var0.method35714()));
          }
 
-         var4.put(var7, Class7608.method24920(var9.build()));
+         var4.put(var7, ITag.method24920(var9.build()));
       }
 
       return method27142(var4);
@@ -87,7 +87,7 @@ public interface Class7984<T> {
       return method27142(ImmutableBiMap.of());
    }
 
-   static <T> Class7984<T> method27142(Map<ResourceLocation, Class7608<T>> var0) {
+   static <T> Class7984<T> method27142(Map<ResourceLocation, ITag<T>> var0) {
       ImmutableBiMap var3 = ImmutableBiMap.copyOf(var0);
       return new Class7983(var3);
    }

@@ -3,7 +3,7 @@ package mapped;
 import javax.annotation.Nullable;
 
 public class Class1052 extends Class1050 {
-   private static final Class9289<Integer> field5813 = Class9361.<Integer>method35441(Class1052.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5813 = EntityDataManager.<Integer>method35441(Class1052.class, Class7784.field33391);
    private static final ResourceLocation[] field5814 = new ResourceLocation[]{
       new ResourceLocation("textures/entity/fish/tropical_a.png"), new ResourceLocation("textures/entity/fish/tropical_b.png")
    };
@@ -76,9 +76,9 @@ public class Class1052 extends Class1050 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5813, 0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5813, 0);
    }
 
    @Override
@@ -94,7 +94,7 @@ public class Class1052 extends Class1050 {
    }
 
    public void method4817(int var1) {
-      this.field5063.method35446(field5813, var1);
+      this.dataManager.method35446(field5813, var1);
    }
 
    @Override
@@ -103,7 +103,7 @@ public class Class1052 extends Class1050 {
    }
 
    public int method4818() {
-      return this.field5063.<Integer>method35445(field5813);
+      return this.dataManager.<Integer>method35445(field5813);
    }
 
    @Override
@@ -187,14 +187,14 @@ public class Class1052 extends Class1050 {
          int var10;
          int var11;
          if (!(var4 instanceof Class5095)) {
-            if (!((double)this.field5054.nextFloat() < 0.9)) {
+            if (!((double)this.rand.nextFloat() < 0.9)) {
                this.field5818 = false;
-               var8 = this.field5054.nextInt(2);
-               var9 = this.field5054.nextInt(6);
-               var10 = this.field5054.nextInt(15);
-               var11 = this.field5054.nextInt(15);
+               var8 = this.rand.nextInt(2);
+               var9 = this.rand.nextInt(6);
+               var10 = this.rand.nextInt(15);
+               var11 = this.rand.nextInt(15);
             } else {
-               int var12 = Util.method38519(field5817, this.field5054);
+               int var12 = Util.method38519(field5817, this.rand);
                var8 = var12 & 0xFF;
                var9 = (var12 & 0xFF00) >> 8;
                var10 = (var12 & 0xFF0000) >> 16;

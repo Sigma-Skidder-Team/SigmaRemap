@@ -71,7 +71,7 @@ public class Class4236 extends Class4235 implements Class4238 {
       int var9 = (int)((double)(this.method13265() - (var7 - this.method13269()) / 2) - (double)((float)(this.method13269() / 2) * var5) * 0.2);
       float[] var10 = Class5628.method17701(this.method13025().getWidth(), this.method13025().getHeight(), (float)var6, (float)var7);
       byte var11 = 85;
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)var8 + var10[0] - (float)var11,
          (float)var9 + var10[1] - (float)var11,
          var10[2] + (float)(var11 * 2),
@@ -79,7 +79,7 @@ public class Class4236 extends Class4235 implements Class4238 {
          ResourcesDecrypter.shadowPNG,
          Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20578.calcPercent() * 0.7F * var1)
       );
-      Class3192.method11449(
+      RenderUtil.method11449(
          (float)var8 + var10[0],
          (float)var9 + var10[1],
          var10[2],
@@ -88,7 +88,7 @@ public class Class4236 extends Class4235 implements Class4238 {
          Class5628.method17688(Class5628.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var4), var1)
       );
       if (this.method13303() != null) {
-         Class3192.method11440(
+         RenderUtil.method11440(
             this.method13305(),
             (float)(var8 + var6 / 2),
             (float)(var9 + var7 / 2),
@@ -109,7 +109,7 @@ public class Class4236 extends Class4235 implements Class4238 {
          );
          GL11.glScalef(var13, var13, var13);
          GL11.glAlphaFunc(519, 0.0F);
-         Class3192.method11454(
+         RenderUtil.method11454(
             (1.0F - var13) * (float)var12.method23942(var14) / 2.0F + 1.0F - (float)var12.method23942(var14) / 2.0F,
             (float)var12.method23941(var14) / 3.0F,
             (float)(var12.method23942(var14) * 2),
@@ -117,7 +117,7 @@ public class Class4236 extends Class4235 implements Class4238 {
             ResourcesDecrypter.shadowPNG,
             var5 * 0.6F * var1
          );
-         Class3192.method11439(
+         RenderUtil.method11439(
             var12,
             (1.0F - var13) * (float)var12.method23942(var14) / 2.0F + 1.0F,
             40.0F,

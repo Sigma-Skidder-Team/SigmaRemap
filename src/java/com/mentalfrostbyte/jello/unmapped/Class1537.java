@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
-import mapped.Class5325;
+import mapped.ModuleWithModuleSettings;
 import mapped.Minecraft;
 
 import java.util.ArrayList;
@@ -38,13 +38,13 @@ public class Class1537 implements Runnable {
                         List<Module> var5 = new ArrayList<>(Client.getInstance().getModuleManager().getModuleMap().values());
 
                         for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
-                            if (var7 instanceof Class5325) {
-                                var5.addAll(Arrays.asList(((Class5325) var7).moduleArray));
+                            if (var7 instanceof ModuleWithModuleSettings) {
+                                var5.addAll(Arrays.asList(((ModuleWithModuleSettings) var7).moduleArray));
                             }
                         }
 
                         for (Module var10 : var5) {
-                            if (var10.getClass().getSuperclass() != Module.class && var10.getClass().getSuperclass() != Class5325.class) {
+                            if (var10.getClass().getSuperclass() != Module.class && var10.getClass().getSuperclass() != ModuleWithModuleSettings.class) {
                                 var3 = true;
                                 if (field8343.containsKey(var10) && field8343.get(var10) != var10.method15994()) {
                                     var4 = true;

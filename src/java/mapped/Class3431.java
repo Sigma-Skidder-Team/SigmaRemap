@@ -129,9 +129,9 @@ public class Class3431 extends Class3429 {
       return var1.<T>method6772(var3, this.method12097(var2), var4);
    }
 
-   private Class6488 method12097(BlockPos var1) {
+   private AxisAlignedBB method12097(BlockPos var1) {
       double var4 = 0.2;
-      return new Class6488(
+      return new AxisAlignedBB(
          (double)var1.getX() + 0.2,
          (double)var1.getY(),
          (double)var1.getZ() + 0.2,

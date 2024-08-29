@@ -112,7 +112,7 @@ public final class Class120 implements Predicate<ItemStack> {
       return method338(var0.filter(var0x -> !var0x.isEmpty()).map(var0x -> new Class4827(var0x)));
    }
 
-   public static Class120 method342(Class7608<Item> var0) {
+   public static Class120 method342(ITag<Item> var0) {
       return method338(Stream.of(new Class4828(var0)));
    }
 
@@ -146,7 +146,7 @@ public final class Class120 implements Predicate<ItemStack> {
             throw new JsonParseException("An ingredient entry needs either a tag or an item");
          } else {
             ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var0, "tag"));
-            Class7608 var6 = Class9443.method36296().method32658().method27135(var5);
+            ITag var6 = Class9443.method36296().method32658().method27135(var5);
             if (var6 != null) {
                return new Class4828(var6);
             } else {

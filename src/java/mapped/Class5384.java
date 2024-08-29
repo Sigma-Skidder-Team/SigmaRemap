@@ -16,10 +16,10 @@ public class Class5384 extends Module {
       if (this.isEnabled()) {
          if (mc.player != null && mc.world != null) {
             this.method16965();
-            Class3192.method11476();
+            RenderUtil.method11476();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.method16964(false);
-            Class3192.method11477(Class2329.field15941);
+            RenderUtil.method11477(Class2329.field15941);
             GL11.glLineWidth(3.0F);
             RenderSystem.method27819(518, 0.0F);
             RenderSystem.disableAlphaTest();
@@ -28,7 +28,7 @@ public class Class5384 extends Module {
             GL11.glDisable(2896);
             this.method16964(true);
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-            Class3192.method11478();
+            RenderUtil.method11478();
             this.method16966();
          }
       }
@@ -62,9 +62,9 @@ public class Class5384 extends Module {
                var8.method3775().method23412(mc.world, var8.getPos()).method19514().method19667(var12, var14, var16)
             );
             if (var1) {
-               Class3192.method11462(var19, 3.0F, var18);
+               RenderUtil.method11462(var19, 3.0F, var18);
             } else {
-               Class3192.method11459(var19, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+               RenderUtil.method11459(var19, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             }
 
             GL11.glDisable(3042);

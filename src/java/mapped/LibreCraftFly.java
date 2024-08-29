@@ -6,30 +6,30 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5352 extends Module {
+public class LibreCraftFly extends Module {
     private int field23910;
     private boolean field23911;
 
-    public Class5352() {
+    public LibreCraftFly() {
         super(ModuleCategory.MOVEMENT, "LibreCraft", "A fly for LibreCraft");
         this.registerSetting(new NumberSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 10.0F, 0.1F));
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23910 = 0;
-        if (!mc.gameSettings.field44637.isKeyDown()) {
-            if (!mc.gameSettings.field44637.isKeyDown()) {
+        if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
+            if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
                 this.field23911 = false;
             }
         } else {
-            mc.gameSettings.field44637.field13071 = false;
+            mc.gameSettings.keyBindSneak.field13071 = false;
             this.field23911 = true;
         }
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Class9567.method37090(0.0);
         if (mc.player.method3433().field18049 > 0.0) {
             Class5628.method17725(-0.0789);
@@ -39,7 +39,7 @@ public class Class5352 extends Module {
     @EventTarget
     private void method16791(Class4430 var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
+            if (var1.method13977() == mc.gameSettings.keyBindSneak.field13070.field34875) {
                 var1.method13900(true);
                 this.field23911 = true;
             }
@@ -49,7 +49,7 @@ public class Class5352 extends Module {
     @EventTarget
     private void method16792(Class4426 var1) {
         if (this.isEnabled()) {
-            if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
+            if (var1.method13973() == mc.gameSettings.keyBindSneak.field13070.field34875) {
                 var1.method13900(true);
                 this.field23911 = false;
             }
@@ -100,17 +100,17 @@ public class Class5352 extends Module {
     }
 
     @EventTarget
-    public void method16795(Class4396 var1) {
+    public void method16795(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            Packet var4 = var1.method13898();
+            Packet var4 = var1.getPacket();
             if (mc.player != null && var4 instanceof Class5473) {
                 Class5473 var5 = (Class5473) var4;
                 if (this.field23910 >= 1) {
                     this.field23910 = -1;
                 }
 
-                var5.field24300 = mc.player.field5031;
-                var5.field24301 = mc.player.field5032;
+                var5.field24300 = mc.player.rotationYaw;
+                var5.field24301 = mc.player.rotationPitch;
             }
         }
     }

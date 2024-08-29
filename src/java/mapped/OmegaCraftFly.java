@@ -1,25 +1,25 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5271 extends Module {
+public class OmegaCraftFly extends Module {
     private int field23700;
     private int field23701;
     private double field23702;
     private final double[] field23703 = new double[]{0.0, 0.25, 0.5, 0.75, 1.0};
 
-    public Class5271() {
+    public OmegaCraftFly() {
         super(ModuleCategory.MOVEMENT, "OmegaCraft", "A fly for OmegaCraft anticheat");
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23701 = 0;
         this.field23700 = -1;
         double var3 = this.field23703[0];
@@ -34,11 +34,11 @@ public class Class5271 extends Module {
         }
 
         this.field23702 = (double) ((int) mc.player.getPositionVec().field18049) + var3;
-        mc.player.method3215(mc.player.getPositionVec().field18048, this.field23702, mc.player.getPositionVec().field18050);
+        mc.player.setPosition(mc.player.getPositionVec().field18048, this.field23702, mc.player.getPositionVec().field18050);
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Class9567.method37090(0.2);
         if (mc.player.method3433().field18049 > 0.03) {
             Class5628.method17725(-0.0784);
@@ -61,7 +61,7 @@ public class Class5271 extends Module {
         }
 
         this.field23702 = (double) ((int) mc.player.getPositionVec().field18049) + var4;
-        mc.player.method3215(mc.player.getPositionVec().field18048, this.field23702, mc.player.getPositionVec().field18050);
+        mc.player.setPosition(mc.player.getPositionVec().field18048, this.field23702, mc.player.getPositionVec().field18050);
     }
 
     @EventTarget
@@ -89,8 +89,8 @@ public class Class5271 extends Module {
         var1.method13995(0.0);
         if (this.field23700 != 1) {
             if (this.field23700 > 1) {
-                mc.player.method3215(mc.player.getPositionVec().field18048, this.field23702, mc.player.getPositionVec().field18050);
-                double var4 = !mc.gameSettings.field44637.isKeyDown() ? 0.405 + (double) Class9567.method37078() * 0.02 : 0.25;
+                mc.player.setPosition(mc.player.getPositionVec().field18048, this.field23702, mc.player.getPositionVec().field18050);
+                double var4 = !mc.gameSettings.keyBindSneak.isKeyDown() ? 0.405 + (double) Class9567.method37078() * 0.02 : 0.25;
                 Class9567.method37088(var1, var4);
                 this.field23700 = 0;
             }
@@ -102,7 +102,7 @@ public class Class5271 extends Module {
                 this.field23700 = 0;
             }
 
-            double var6 = !mc.gameSettings.field44637.isKeyDown() ? 0.6 : 0.25;
+            double var6 = !mc.gameSettings.keyBindSneak.isKeyDown() ? 0.6 : 0.25;
             Class9567.method37088(var1, var6);
         }
 
@@ -112,9 +112,9 @@ public class Class5271 extends Module {
     }
 
     @EventTarget
-    public void method16497(Class4396 var1) {
-        if (var1.method13898() instanceof Class5473) {
-            Class5473 var4 = (Class5473) var1.method13898();
+    public void method16497(RecievePacketEvent var1) {
+        if (var1.getPacket() instanceof Class5473) {
+            Class5473 var4 = (Class5473) var1.getPacket();
             double var5 = this.field23703[0];
             int var7 = this.field23703.length;
             double var8 = var4.field24298 - (double) ((int) var4.field24298);

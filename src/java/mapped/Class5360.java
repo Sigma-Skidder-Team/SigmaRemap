@@ -15,7 +15,7 @@ public class Class5360 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23966 = 0;
     }
 
@@ -23,9 +23,9 @@ public class Class5360 extends Module {
     @HigherPriority
     private void method16861(Class4399 var1) {
         if (var1.method13921()) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Class5334.class);
+            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Class5334.class);
             if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("Minemen")) {
-                if (!mc.player.field5036) {
+                if (!mc.player.onGround) {
                     this.field23966 = 0;
                 } else {
                     if (this.field23966 > 0) {
@@ -40,7 +40,7 @@ public class Class5360 extends Module {
                     var1.method13908(true);
                 }
 
-                if (mc.playerController.getIsHittingBlock() && mc.player.field5036) {
+                if (mc.playerController.getIsHittingBlock() && mc.player.onGround) {
                     this.field23966 = 0;
                     var1.method13912(mc.player.getPosY());
                     var1.method13920(true);

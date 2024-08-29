@@ -62,7 +62,7 @@ public class Class4296 extends Class4278 {
       if (this.field20813 == null) {
          int var4 = this.field20897 - 30;
          int var5 = this.field20895 + 5;
-         Class3192.method11455(
+         RenderUtil.method11455(
             (float)var5,
             (float)((Minecraft.getInstance().mainWindow.method8044() - var4 * 342 / 460) / 2 - 60),
             (float)var4,
@@ -74,7 +74,7 @@ public class Class4296 extends Class4278 {
       if (this.field20813 != null) {
          int var6 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.2F);
          int var7 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.7F);
-         Class3192.method11439(
+         RenderUtil.method11439(
             ResourceRegistry.field38860,
             (float)(this.field20895 + (this.field20897 - ResourceRegistry.field38860.method23942(this.field20813.getKnownName())) / 2),
             (float)this.field20896,

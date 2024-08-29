@@ -3,13 +3,13 @@ package mapped;
 public class Class3413 extends Block {
    private static String[] field19099;
    public static final Class8554 field19100 = Class8820.field39751;
-   private static final Class6408 field19101 = method11539(2.0, 4.0, 2.0, 14.0, 16.0, 14.0);
-   public static final Class6408 field19102 = Class8022.method27433(
-      Class8022.method27426(),
-      Class8022.method27432(
+   private static final VoxelShape field19101 = method11539(2.0, 4.0, 2.0, 14.0, 16.0, 14.0);
+   public static final VoxelShape field19102 = VoxelShapes.method27433(
+      VoxelShapes.method27426(),
+      VoxelShapes.method27432(
          method11539(0.0, 0.0, 4.0, 16.0, 3.0, 12.0), method11539(4.0, 0.0, 0.0, 12.0, 3.0, 16.0), method11539(2.0, 0.0, 2.0, 14.0, 3.0, 14.0), field19101
       ),
-      Class9477.field44041
+      IBooleanFunction.field44041
    );
 
    public Class3413(AbstractBlock var1) {
@@ -18,12 +18,12 @@ public class Class3413 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field19102;
    }
 
    @Override
-   public Class6408 method11938(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11938(BlockState var1, Class1665 var2, BlockPos var3) {
       return field19101;
    }
 

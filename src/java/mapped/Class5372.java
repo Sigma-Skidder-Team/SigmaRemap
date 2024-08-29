@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4402;
+import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4417;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4434;
@@ -23,7 +23,7 @@ public class Class5372 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23992 = -1.0F;
         this.field23994 = 0;
     }
@@ -101,9 +101,9 @@ public class Class5372 extends Module {
             }
 
             if (!var1.method13967()) {
-                mc.player.field5051 = this.getNumberValueBySettingName("Maximum heigh");
+                mc.player.stepHeight = this.getNumberValueBySettingName("Maximum heigh");
             } else {
-                mc.player.field5051 = 0.5F;
+                mc.player.stepHeight = 0.5F;
                 if (this.field23992 != -1.0F) {
                     this.field23992 = -1.0F;
                     mc.timer.field40360 = 1.0F;
@@ -113,7 +113,7 @@ public class Class5372 extends Module {
     }
 
     @EventTarget
-    private void method16915(Class4402 var1) {
+    private void method16915(SendPacketEvent var1) {
         if (var1.method13932() instanceof Class5603 && !this.field23993.isEmpty()) {
             this.field23993.add(var1.method13932());
             var1.method13900(true);

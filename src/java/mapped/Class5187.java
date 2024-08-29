@@ -40,9 +40,9 @@ public class Class5187 extends Module {
     private void method16146(Class4417 var1) {
         if (this.isEnabled() && mc.player != null) {
             if (!var1.method13967()) {
-                mc.player.field5051 = 1.0F;
+                mc.player.stepHeight = 1.0F;
             } else {
-                mc.player.field5051 = 0.5F;
+                mc.player.stepHeight = 0.5F;
             }
         }
     }

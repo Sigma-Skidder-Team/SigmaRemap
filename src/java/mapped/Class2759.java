@@ -34,7 +34,7 @@ public class Class2759 extends Class2595 {
 
       for (Class1026 var4 : this.field17314
          .world
-         .<Class1026>method7195(Class1026.class, this.field17316, this.field17314, this.field17314.method3389().method19663(8.0, 8.0, 8.0))) {
+         .<Class1026>method7195(Class1026.class, this.field17316, this.field17314, this.field17314.getBoundingBox().method19663(8.0, 8.0, 8.0))) {
          var4.method4233(this.field17314.method4232());
       }
    }
@@ -46,7 +46,7 @@ public class Class2759 extends Class2595 {
       if (var3 != null) {
          for (Class1026 var5 : this.field17314
             .world
-            .<Class1026>method7195(Class1026.class, this.field17316, this.field17314, this.field17314.method3389().method19663(8.0, 8.0, 8.0))) {
+            .<Class1026>method7195(Class1026.class, this.field17316, this.field17314, this.field17314.getBoundingBox().method19663(8.0, 8.0, 8.0))) {
             var5.method4233(var3);
             var5.method4304(true);
          }

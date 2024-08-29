@@ -155,8 +155,8 @@ public class Class4345 extends Class4339 {
          }
       }
 
-      if (this.field21229 instanceof Class5325) {
-         Class5325 var16 = (Class5325)this.field21229;
+      if (this.field21229 instanceof ModuleWithModuleSettings) {
+         ModuleWithModuleSettings var16 = (ModuleWithModuleSettings)this.field21229;
 
          for (Module var11 : var16.moduleArray) {
             int var12 = 10;
@@ -198,9 +198,9 @@ public class Class4345 extends Class4339 {
          var4 = Math.round((float)this.method13269() * Class8056.method27663(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
       }
 
-      Class3192.method11419((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4);
-      Class3192.method11424((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4, -2631721);
+      RenderUtil.method11419((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4);
+      RenderUtil.method11424((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4, -2631721);
       super.method13027(var1);
-      Class3192.method11422();
+      RenderUtil.method11422();
    }
 }

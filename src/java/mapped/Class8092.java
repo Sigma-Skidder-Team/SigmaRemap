@@ -37,7 +37,7 @@ public class Class8092 {
 
    public void method28037() {
       if (this.method28038()) {
-         this.field34812.field5032 = 0.0F;
+         this.field34812.rotationPitch = 0.0F;
       }
 
       if (!this.field34815) {
@@ -45,7 +45,7 @@ public class Class8092 {
       } else {
          this.field34815 = false;
          this.field34812.field4967 = this.method28049(this.field34812.field4967, this.method28048(), this.field34813);
-         this.field34812.field5032 = this.method28049(this.field34812.field5032, this.method28047(), this.field34814);
+         this.field34812.rotationPitch = this.method28049(this.field34812.rotationPitch, this.method28047(), this.field34814);
       }
 
       if (!this.field34812.method4230().method21664()) {
@@ -94,6 +94,6 @@ public class Class8092 {
    }
 
    private static double method28050(Entity var0) {
-      return !(var0 instanceof Class880) ? (var0.method3389().field28450 + var0.method3389().field28453) / 2.0 : var0.method3442();
+      return !(var0 instanceof Class880) ? (var0.getBoundingBox().field28450 + var0.getBoundingBox().field28453) / 2.0 : var0.method3442();
    }
 }

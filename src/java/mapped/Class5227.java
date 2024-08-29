@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.module.Module;
@@ -32,25 +32,25 @@ public class Class5227 extends Module {
     }
 
     @EventTarget
-    public void method16275(Class4396 var1) {
+    public void method16275(RecievePacketEvent var1) {
         if (mc.world != null) {
-            if (!(var1.method13898() instanceof Class5484)) {
-                if (!(var1.method13898() instanceof Class5487)) {
-                    if (!(var1.method13898() instanceof Class5582)) {
-                        if (var1.method13898() instanceof Class5596) {
-                            Class5596 var4 = (Class5596) var1.method13898();
+            if (!(var1.getPacket() instanceof Class5484)) {
+                if (!(var1.getPacket() instanceof Class5487)) {
+                    if (!(var1.getPacket() instanceof Class5582)) {
+                        if (var1.getPacket() instanceof Class5596) {
+                            Class5596 var4 = (Class5596) var1.getPacket();
                             this.field23572.remove(var4.method17593());
                         }
                     } else {
-                        Class5582 var10 = (Class5582) var1.method13898();
+                        Class5582 var10 = (Class5582) var1.getPacket();
                         this.field23572.remove(var10.method17536());
                     }
                 } else {
-                    Class5487 var11 = (Class5487) var1.method13898();
+                    Class5487 var11 = (Class5487) var1.getPacket();
                     this.field23572.remove(var11.method17257());
                 }
             } else {
-                Class5484 var12 = (Class5484) var1.method13898();
+                Class5484 var12 = (Class5484) var1.getPacket();
 
                 for (int var8 : var12.method17251()) {
                     Entity var9 = mc.world.method6774(var8);
@@ -75,11 +75,11 @@ public class Class5227 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         this.field23572.clear();
     }
 
@@ -237,13 +237,13 @@ public class Class5227 extends Module {
         GL11.glPushMatrix();
         GL11.glColor4fv(Class5628.method17709(var5));
         GL11.glTranslated((double) var1 + 0.5, var2 + 0.7F, (double) var3 + 0.5);
-        GL11.glRotatef((float) (mc.player.field5055 % 90 * 4), 0.0F, -1.0F, 0.0F);
+        GL11.glRotatef((float) (mc.player.ticksExisted % 90 * 4), 0.0F, -1.0F, 0.0F);
         GL11.glLineWidth(1.4F + 1.0F / var6 * 1.4F);
         this.method16281(0.6F);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glTranslated((double) var1 + 0.5, var2 + 0.7F, (double) var3 + 0.5);
-        GL11.glRotatef((float) (mc.player.field5055 % 90 * 4), 0.0F, 1.0F, 0.0F);
+        GL11.glRotatef((float) (mc.player.ticksExisted % 90 * 4), 0.0F, 1.0F, 0.0F);
         this.method16278(var5);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
@@ -256,14 +256,14 @@ public class Class5227 extends Module {
         GL11.glScalef(-0.009F * var6, -0.009F * var6, -0.009F * var6);
         GL11.glTranslated(0.0, -20.0 * Math.sqrt(Math.sqrt(var6)), 0.0);
         int var11 = Class5628.method17688(Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.5F);
-        Class3192.method11426(
+        RenderUtil.method11426(
                 (float) (-var9.method23942(var4) / 2 - 14), -5.0F, (float) var9.method23942(var4) / 2.0F + 14.0F, (float) (var9.method23952() + 7), var11
         );
-        Class3192.method11463(
+        RenderUtil.method11463(
                 (float) (-var9.method23942(var4) / 2 - 14), -5.0F, (float) (var9.method23942(var4) + 28), (float) (var9.method23952() + 12), 20.0F, 0.5F
         );
         GL11.glTranslated(-var9.method23942(var4) / 2, 0.0, 0.0);
-        Class3192.method11439(var9, 0.0F, 0.0F, var4, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F));
+        RenderUtil.method11439(var9, 0.0F, 0.0F, var4, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);

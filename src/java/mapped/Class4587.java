@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.stream.Stream;
 
 public abstract class Class4587 {
-   private static final Class6488 field22036 = new Class6488(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+   private static final AxisAlignedBB field22036 = new AxisAlignedBB(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
    public final ClientWorld field22037;
    public double field22038;
    public double field22039;
@@ -15,7 +15,7 @@ public abstract class Class4587 {
    public double field22044;
    public double field22045;
    public double field22046;
-   private Class6488 field22047 = field22036;
+   private AxisAlignedBB field22047 = field22036;
    public boolean field22048;
    public boolean field22049 = true;
    private boolean field22050;
@@ -138,11 +138,11 @@ public abstract class Class4587 {
       if (var1 != this.field22052 || var2 != this.field22053) {
          this.field22052 = var1;
          this.field22053 = var2;
-         Class6488 var5 = this.method14523();
+         AxisAlignedBB var5 = this.method14523();
          double var6 = (var5.field28449 + var5.field28452 - (double)var1) / 2.0;
          double var8 = (var5.field28451 + var5.field28454 - (double)var1) / 2.0;
          this.method14524(
-            new Class6488(
+            new AxisAlignedBB(
                var6, var5.field28450, var8, var6 + (double)this.field22052, var5.field28450 + (double)this.field22053, var8 + (double)this.field22052
             )
          );
@@ -155,7 +155,7 @@ public abstract class Class4587 {
       this.field22043 = var5;
       float var9 = this.field22052 / 2.0F;
       float var10 = this.field22053;
-      this.method14524(new Class6488(var1 - (double)var9, var3, var5 - (double)var9, var1 + (double)var9, var3 + (double)var10, var5 + (double)var9));
+      this.method14524(new AxisAlignedBB(var1 - (double)var9, var3, var5 - (double)var9, var1 + (double)var9, var3 + (double)var10, var5 + (double)var9));
    }
 
    public void method14511(double var1, double var3, double var5) {
@@ -169,8 +169,8 @@ public abstract class Class4587 {
                new Vector3d(var1, var3, var5),
                this.method14523(),
                this.field22037,
-               Class4832.method14947(),
-               new Class8544<Class6408>(Stream.<Class6408>empty())
+               ISelectionContext.method14947(),
+               new Class8544<VoxelShape>(Stream.<VoxelShape>empty())
             );
             var1 = var15.field18048;
             var3 = var15.field18049;
@@ -198,7 +198,7 @@ public abstract class Class4587 {
    }
 
    public void method14521() {
-      Class6488 var3 = this.method14523();
+      AxisAlignedBB var3 = this.method14523();
       this.field22041 = (var3.field28449 + var3.field28452) / 2.0;
       this.field22042 = var3.field28450;
       this.field22043 = (var3.field28451 + var3.field28454) / 2.0;
@@ -213,11 +213,11 @@ public abstract class Class4587 {
       return !this.field22051;
    }
 
-   public Class6488 method14523() {
+   public AxisAlignedBB method14523() {
       return this.field22047;
    }
 
-   public void method14524(Class6488 var1) {
+   public void method14524(AxisAlignedBB var1) {
       this.field22047 = var1;
    }
 

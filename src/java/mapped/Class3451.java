@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 
 public class Class3451 extends Class3452 implements Class3449 {
    private static String[] field19265;
-   public static final Class6408 field19266 = Block.method11539(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
+   public static final VoxelShape field19266 = Block.method11539(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
 
    public Class3451(AbstractBlock var1) {
       super(var1, Direction.field673, field19266, true, 0.14);
@@ -27,7 +27,7 @@ public class Class3451 extends Class3452 implements Class3449 {
    }
 
    @Override
-   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Class7631 var4) {
+   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Fluid var4) {
       return false;
    }
 

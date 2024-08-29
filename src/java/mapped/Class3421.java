@@ -9,28 +9,28 @@ public class Class3421 extends Block implements Class3207 {
    public static final Class8552<Class99> field19132 = Class8820.field39735;
    public static final Class8552<Class106> field19133 = Class8820.field39771;
    public static final Class8551 field19134 = Class8820.field39710;
-   public static final Class6408 field19135 = Class3208.field18608;
-   public static final Class6408 field19136 = Class3208.field18607;
-   public static final Class6408 field19137 = Block.method11539(0.0, 0.0, 0.0, 8.0, 8.0, 8.0);
-   public static final Class6408 field19138 = Block.method11539(0.0, 0.0, 8.0, 8.0, 8.0, 16.0);
-   public static final Class6408 field19139 = Block.method11539(0.0, 8.0, 0.0, 8.0, 16.0, 8.0);
-   public static final Class6408 field19140 = Block.method11539(0.0, 8.0, 8.0, 8.0, 16.0, 16.0);
-   public static final Class6408 field19141 = Block.method11539(8.0, 0.0, 0.0, 16.0, 8.0, 8.0);
-   public static final Class6408 field19142 = Block.method11539(8.0, 0.0, 8.0, 16.0, 8.0, 16.0);
-   public static final Class6408 field19143 = Block.method11539(8.0, 8.0, 0.0, 16.0, 16.0, 8.0);
-   public static final Class6408 field19144 = Block.method11539(8.0, 8.0, 8.0, 16.0, 16.0, 16.0);
-   public static final Class6408[] field19145 = method12069(field19135, field19137, field19141, field19138, field19142);
-   public static final Class6408[] field19146 = method12069(field19136, field19139, field19143, field19140, field19144);
+   public static final VoxelShape field19135 = Class3208.field18608;
+   public static final VoxelShape field19136 = Class3208.field18607;
+   public static final VoxelShape field19137 = Block.method11539(0.0, 0.0, 0.0, 8.0, 8.0, 8.0);
+   public static final VoxelShape field19138 = Block.method11539(0.0, 0.0, 8.0, 8.0, 8.0, 16.0);
+   public static final VoxelShape field19139 = Block.method11539(0.0, 8.0, 0.0, 8.0, 16.0, 8.0);
+   public static final VoxelShape field19140 = Block.method11539(0.0, 8.0, 8.0, 8.0, 16.0, 16.0);
+   public static final VoxelShape field19141 = Block.method11539(8.0, 0.0, 0.0, 16.0, 8.0, 8.0);
+   public static final VoxelShape field19142 = Block.method11539(8.0, 0.0, 8.0, 16.0, 8.0, 16.0);
+   public static final VoxelShape field19143 = Block.method11539(8.0, 8.0, 0.0, 16.0, 16.0, 8.0);
+   public static final VoxelShape field19144 = Block.method11539(8.0, 8.0, 8.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape[] field19145 = method12069(field19135, field19137, field19141, field19138, field19142);
+   public static final VoxelShape[] field19146 = method12069(field19136, field19139, field19143, field19140, field19144);
    private static final int[] field19147 = new int[]{12, 5, 3, 10, 14, 13, 7, 11, 13, 7, 11, 14, 8, 4, 1, 2, 4, 1, 2, 8};
    private final Block field19148;
    private final BlockState field19149;
 
-   private static Class6408[] method12069(Class6408 var0, Class6408 var1, Class6408 var2, Class6408 var3, Class6408 var4) {
-      return IntStream.range(0, 16).<Class6408>mapToObj(var5 -> method12070(var5, var0, var1, var2, var3, var4)).<Class6408>toArray(Class6408[]::new);
+   private static VoxelShape[] method12069(VoxelShape var0, VoxelShape var1, VoxelShape var2, VoxelShape var3, VoxelShape var4) {
+      return IntStream.range(0, 16).<VoxelShape>mapToObj(var5 -> method12070(var5, var0, var1, var2, var3, var4)).<VoxelShape>toArray(VoxelShape[]::new);
    }
 
    // $VF: Irreducible bytecode was duplicated to produce valid code
-   private static Class6408 method12070(int var0, Class6408 var1, Class6408 var2, Class6408 var3, Class6408 var4, Class6408 var5) {
+   private static VoxelShape method12070(int var0, VoxelShape var1, VoxelShape var2, VoxelShape var3, VoxelShape var4, VoxelShape var5) {
       int var6 = -1615302540;
 
       label28:
@@ -76,7 +76,7 @@ public class Class3421 extends Block implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return (var1.method23463(field19132) != Class99.field270 ? field19146 : field19145)[field19147[this.method12071(var1)]];
    }
 

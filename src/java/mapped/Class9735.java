@@ -8,7 +8,7 @@ public class Class9735 {
    private final List<Class8605> field45459 = Lists.newArrayList();
    private final List<Class8605> field45460 = Lists.newArrayList();
    private Item field45461;
-   private Class7608<Item> field45462;
+   private ITag<Item> field45462;
    private Class8840 field45463 = Class8840.field39936;
    private Class8840 field45464 = Class8840.field39936;
    private Class8812 field45465;
@@ -26,7 +26,7 @@ public class Class9735 {
       return this;
    }
 
-   public Class9735 method38148(Class7608<Item> var1) {
+   public Class9735 method38148(ITag<Item> var1) {
       this.field45462 = var1;
       return this;
    }

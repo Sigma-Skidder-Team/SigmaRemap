@@ -72,9 +72,9 @@ public class Class8998 {
                this.field41147.method34970(var1);
             }
          } else {
-            boolean var7 = this.field41148.field5023;
+            boolean var7 = this.field41148.forceSpawn;
             if (!var7) {
-               Class7481 var8 = new Class7481(this.field41148.field5072, this.field41148.field5074);
+               Class7481 var8 = new Class7481(this.field41148.chunkCoordX, this.field41148.chunkCoordZ);
                Class8641 var9 = this.field41152.method6539(var8.method24352());
                if (var9 != null && var9.method31043() != null) {
                   var7 = Class1649.method6635(var8, var1, false) <= Class1649.method6634(this.field41152);

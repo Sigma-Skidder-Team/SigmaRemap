@@ -2,12 +2,12 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 
-public class Class5341 extends Class5325 {
+public class Class5341 extends ModuleWithModuleSettings {
     public static int field23893;
 
     public Class5341() {
@@ -41,10 +41,10 @@ public class Class5341 extends Class5325 {
     }
 
     @EventTarget
-    public void method16763(Class4396 var1) {
-        if (var1.method13898() instanceof Class5473 && mc.player != null) {
+    public void method16763(RecievePacketEvent var1) {
+        if (var1.getPacket() instanceof Class5473 && mc.player != null) {
             field23893 = 0;
-            if (this.getBooleanValueFromSetttingName("Lag back checker") && this.isEnabled() && mc.player.field5055 > 2) {
+            if (this.getBooleanValueFromSetttingName("Lag back checker") && this.isEnabled() && mc.player.ticksExisted > 2) {
                 Client.getInstance().getNotificationManager().post(new Notification("Speed", "Disabled speed due to lagback."));
                 this.method16000();
             }

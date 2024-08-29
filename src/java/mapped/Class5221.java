@@ -23,7 +23,7 @@ public class Class5221 extends Module {
     public void method16256(TickEvent var1) {
         if (this.isEnabled()) {
             Vector3d var4 = new Vector3d(mc.player.getPosX(), 0.0, mc.player.getPosZ());
-            if (mc.player.field5036 && this.field23558 != null) {
+            if (mc.player.onGround && this.field23558 != null) {
                 double var5 = var4.method11341(this.field23558) / (double) this.field23557;
                 var5 *= mc.timer.field40360;
                 boolean var7 = Client.getInstance().method19939().method31329() > 1 && mc.player.field4999 == 0;
@@ -51,7 +51,7 @@ public class Class5221 extends Module {
                 );
             }
 
-            this.field23557 = !mc.player.field5036 ? this.field23557++ : 1;
+            this.field23557 = !mc.player.onGround ? this.field23557++ : 1;
             this.field23558 = var4;
         }
     }

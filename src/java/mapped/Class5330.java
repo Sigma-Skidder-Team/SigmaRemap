@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4434;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5330 extends Class5325 {
+public class Class5330 extends ModuleWithModuleSettings {
     public static int field23887;
 
     public Class5330() {
@@ -13,9 +13,9 @@ public class Class5330 extends Class5325 {
     }
 
     @Override
-    public void method15965() {
-        super.method15965();
-        mc.player.field5051 = 0.6F;
+    public void onDisable() {
+        super.onDisable();
+        mc.player.stepHeight = 0.6F;
     }
 
     @EventTarget
@@ -39,8 +39,8 @@ public class Class5330 extends Class5325 {
         double var6 = mc.player.getPosZ() + var1.method13991().field18050;
         double var8 = 0.41;
         double var10 = var1.method13988() - var1.method13990();
-        Class6488 var12 = new Class6488(
-                var4 - var8, mc.player.field5035.field28450, var6 - var8, var4 + var8, mc.player.field5035.field28450 + var10, var6 + var8
+        AxisAlignedBB var12 = new AxisAlignedBB(
+                var4 - var8, mc.player.boundingBox.field28450, var6 - var8, var4 + var8, mc.player.boundingBox.field28450 + var10, var6 + var8
         );
         Object[] var13 = mc.world.method7055(mc.player, var12).toArray();
         int var14 = var13.length;
@@ -49,7 +49,7 @@ public class Class5330 extends Class5325 {
         double var17 = 0.0;
 
         for (int var19 = 0; var19 < var14; var19++) {
-            Class6408 var20 = (Class6408) var13[var19];
+            VoxelShape var20 = (VoxelShape) var13[var19];
             BlockPos var21 = new BlockPos(var20.method19512(Class113.field413), var20.method19512(Class113.field414), var20.method19512(Class113.field415));
             BlockState var22 = mc.world.getBlockState(var21);
             if (var15 == null || var20.method19514().field28453 > var17) {
@@ -61,9 +61,9 @@ public class Class5330 extends Class5325 {
 
         if (!mc.player.method3250() && !mc.player.method3264()) {
             if (var15 != null) {
-                if (!mc.player.field5036) {
+                if (!mc.player.onGround) {
                     if (var15.getBlock() instanceof Class3208) {
-                        Class6408 var24 = var15.method23412(mc.world, var16);
+                        VoxelShape var24 = var15.method23412(mc.world, var16);
                         if (var24.method19514().field28453 == 1.0) {
                             return Class2131.field13904;
                         }
@@ -82,7 +82,7 @@ public class Class5330 extends Class5325 {
                             return Class2131.field13905;
                         }
                     } else {
-                        Class6408 var23 = var15.method23412(mc.world, var16);
+                        VoxelShape var23 = var15.method23412(mc.world, var16);
                         if (var23.method19514().field28453 == 1.0) {
                             return Class2131.field13906;
                         }

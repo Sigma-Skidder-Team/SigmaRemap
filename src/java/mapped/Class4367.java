@@ -39,11 +39,11 @@ public class Class4367 extends Class4247 {
       int var4 = Class5628.method17688(Color.HSBtoRGB(this.field21347, 0.0F, 1.0F), var1);
       int var5 = Class5628.method17688(Color.HSBtoRGB(this.field21347, 1.0F, 1.0F), var1);
       int var6 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1);
-      Class3192.method11415(this);
-      Class3192.method11432(
+      RenderUtil.method11415(this);
+      RenderUtil.method11432(
          this.method13263(), this.method13265(), this.method13263() + this.method13267(), this.method13265() + this.method13269(), var4, var5, var5, var4
       );
-      Class3192.method11432(
+      RenderUtil.method11432(
          this.method13263(),
          this.method13265(),
          this.method13263() + this.method13267(),
@@ -59,14 +59,14 @@ public class Class4367 extends Class4247 {
          Color.HSBtoRGB(this.field21347, this.field21348, this.field21349),
          var1
       );
-      Class3192.method11428(
+      RenderUtil.method11428(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269()),
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.25F * var1)
       );
-      Class3192.method11422();
+      RenderUtil.method11422();
       super.method13027(var1);
    }
 

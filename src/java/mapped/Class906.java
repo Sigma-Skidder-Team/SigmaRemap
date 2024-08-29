@@ -12,10 +12,10 @@ public class Class906 extends Entity {
 
    public Class906(EntityType<? extends Class906> var1, World var2) {
       super(var1, var2);
-      this.field5077 = true;
+      this.ignoreFrustumCheck = true;
       this.field5171 = 2;
-      this.field5172 = this.field5054.nextLong();
-      this.field5173 = this.field5054.nextInt(3) + 1;
+      this.field5172 = this.rand.nextLong();
+      this.field5173 = this.rand.nextInt(3) + 1;
    }
 
    public void method3549(boolean var1) {
@@ -49,7 +49,7 @@ public class Class906 extends Entity {
                Sounds.field26732,
                Class2266.field14731,
                10000.0F,
-               0.8F + this.field5054.nextFloat() * 0.2F
+               0.8F + this.rand.nextFloat() * 0.2F
             );
          this.world
             .method6743(
@@ -60,17 +60,17 @@ public class Class906 extends Entity {
                Sounds.field26731,
                Class2266.field14731,
                2.0F,
-               0.5F + this.field5054.nextFloat() * 0.2F
+               0.5F + this.rand.nextFloat() * 0.2F
             );
       }
 
       this.field5171--;
       if (this.field5171 < 0) {
          if (this.field5173 != 0) {
-            if (this.field5171 < -this.field5054.nextInt(10)) {
+            if (this.field5171 < -this.rand.nextInt(10)) {
                this.field5173--;
                this.field5171 = 1;
-               this.field5172 = this.field5054.nextLong();
+               this.field5172 = this.rand.nextLong();
                this.method3551(0);
             }
          } else {
@@ -85,7 +85,7 @@ public class Class906 extends Entity {
                List<Entity> var6 = this.world
                   .method6770(
                      this,
-                     new Class6488(
+                     new AxisAlignedBB(
                         this.getPosX() - 3.0,
                         this.getPosY() - 3.0,
                         this.getPosZ() - 3.0,
@@ -119,7 +119,7 @@ public class Class906 extends Entity {
          }
 
          for (int var6 = 0; var6 < var1; var6++) {
-            BlockPos var7 = var4.method8336(this.field5054.nextInt(3) - 1, this.field5054.nextInt(3) - 1, this.field5054.nextInt(3) - 1);
+            BlockPos var7 = var4.method8336(this.rand.nextInt(3) - 1, this.rand.nextInt(3) - 1, this.rand.nextInt(3) - 1);
             var5 = Class3397.method12009(this.world, var7);
             if (this.world.getBlockState(var7).isAir() && var5.method23443(this.world, var7)) {
                this.world.method6730(var7, var5);
@@ -135,7 +135,7 @@ public class Class906 extends Entity {
    }
 
    @Override
-   public void method2850() {
+   public void registerData() {
    }
 
    @Override

@@ -20,7 +20,7 @@ public class Class8429 {
    private final Predicate<Entity> field36112;
    private final Class8841 field36113;
    private final Function<Vector3d, Vector3d> field36114;
-   private final Class6488 field36115;
+   private final AxisAlignedBB field36115;
    private final BiConsumer<Vector3d, List<? extends Entity>> field36116;
    private final boolean field36117;
    private final String field36118;
@@ -35,7 +35,7 @@ public class Class8429 {
       Predicate<Entity> var4,
       Class8841 var5,
       Function<Vector3d, Vector3d> var6,
-      Class6488 var7,
+      AxisAlignedBB var7,
       BiConsumer<Vector3d, List<? extends Entity>> var8,
       boolean var9,
       String var10,
@@ -192,8 +192,8 @@ public class Class8429 {
    private Predicate<Entity> method29621(Vector3d var1) {
       Predicate<Entity> var4 = this.field36112;
       if (this.field36115 != null) {
-         Class6488 var5 = this.field36115.method19669(var1);
-         var4 = var4.and(var1x -> var5.method19670(var1x.method3389()));
+         AxisAlignedBB var5 = this.field36115.method19669(var1);
+         var4 = var4.and(var1x -> var5.method19670(var1x.getBoundingBox()));
       }
 
       if (!this.field36113.method32004()) {

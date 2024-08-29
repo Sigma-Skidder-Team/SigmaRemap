@@ -51,13 +51,13 @@ public class Class8039 {
    public void method27599(Class8654 var1, float var2, float var3) {
       this.method27606();
       this.method27598();
-      Class9569 var6 = new Class9569(var1, this.field34542.field5055, var2, var3, this.field34548, this.field34542.field5045);
+      Class9569 var6 = new Class9569(var1, this.field34542.ticksExisted, var2, var3, this.field34548, this.field34542.fallDistance);
       this.field34541.add(var6);
-      this.field34543 = this.field34542.field5055;
+      this.field34543 = this.field34542.ticksExisted;
       this.field34547 = true;
       if (var6.method37103() && !this.field34546 && this.field34542.method3066()) {
          this.field34546 = true;
-         this.field34544 = this.field34542.field5055;
+         this.field34544 = this.field34542.ticksExisted;
          this.field34545 = this.field34544;
          this.field34542.method2730();
       }
@@ -164,7 +164,7 @@ public class Class8039 {
    }
 
    public int method27604() {
-      return !this.field34546 ? this.field34545 - this.field34544 : this.field34542.field5055 - this.field34544;
+      return !this.field34546 ? this.field34545 - this.field34544 : this.field34542.ticksExisted - this.field34544;
    }
 
    private void method27605() {
@@ -173,11 +173,11 @@ public class Class8039 {
 
    public void method27606() {
       int var3 = !this.field34546 ? 100 : 300;
-      if (this.field34547 && (!this.field34542.method3066() || this.field34542.field5055 - this.field34543 > var3)) {
+      if (this.field34547 && (!this.field34542.method3066() || this.field34542.ticksExisted - this.field34543 > var3)) {
          boolean var4 = this.field34546;
          this.field34547 = false;
          this.field34546 = false;
-         this.field34545 = this.field34542.field5055;
+         this.field34545 = this.field34542.ticksExisted;
          if (var4) {
             this.field34542.method2731();
          }

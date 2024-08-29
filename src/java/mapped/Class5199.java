@@ -23,7 +23,7 @@ public class Class5199 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23507 = false;
         this.field23508 = false;
         this.field23509 = 0.0;
@@ -34,8 +34,8 @@ public class Class5199 extends Module {
     private void method16187(Class4435 var1) {
         if (this.isEnabled()) {
             if (var1.method13994() < -0.5
-                    && (double) mc.player.field5045 > 2.0 + (double) Class9567.method37079() * 0.5
-                    && !mc.player.field5036
+                    && (double) mc.player.fallDistance > 2.0 + (double) Class9567.method37079() * 0.5
+                    && !mc.player.onGround
                     && this.getStringSettingValueByName("Mode").equals("Hypixel")
                     && Class5628.method17716()) {
                 double[] var4 = Class5628.method17747();
@@ -53,7 +53,7 @@ public class Class5199 extends Module {
                     }
 
                     if (var13 > var17 && var13 < var15) {
-                        Class6488 var19 = mc.player.field5035.method19667(var1.method13992(), var1.method13994() + var13 + var17, var1.method13996());
+                        AxisAlignedBB var19 = mc.player.boundingBox.method19667(var1.method13992(), var1.method13994() + var13 + var17, var1.method13996());
                         if (mc.world.method7055(mc.player, var19).count() != 0L) {
                             var13 -= 1.0E-5;
                             var1.method13995(var1.method13994() + var13);
@@ -107,7 +107,7 @@ public class Class5199 extends Module {
                         }
                         break;
                     case "Hypixel":
-                        if (var1.method13921() && mc.player.method3433().field18049 < 0.0 && !mc.player.field5036 && Class5628.method17716()) {
+                        if (var1.method13921() && mc.player.method3433().field18049 < 0.0 && !mc.player.onGround && Class5628.method17716()) {
                             for (double var10 : Class5628.method17747()) {
                                 if ((double) ((int) var1.method13911()) - var1.method13911() + var10 == 0.0) {
                                     var1.method13920(true);
@@ -123,7 +123,7 @@ public class Class5199 extends Module {
                                 return;
                             }
 
-                            if (mc.player.method3433().field18049 < -0.1 && mc.player.field5045 > 3.0F) {
+                            if (mc.player.method3433().field18049 < -0.1 && mc.player.fallDistance > 3.0F) {
                                 this.field23509++;
                                 if (this.field23509 == 1.0) {
                                     mc.getConnection().sendPacket(new Class5603(true));
@@ -135,11 +135,11 @@ public class Class5199 extends Module {
                         break;
                     case "AAC":
                         if (var1.method13921()) {
-                            if (mc.player.field5055 == 1) {
+                            if (mc.player.ticksExisted == 1) {
                                 this.field23507 = false;
                             }
 
-                            if (!this.field23507 && mc.player.field5045 > 3.0F && this.getStringSettingValueByName("Mode").equals("AAC")) {
+                            if (!this.field23507 && mc.player.fallDistance > 3.0F && this.getStringSettingValueByName("Mode").equals("AAC")) {
                                 this.field23507 = !this.field23507;
                                 Class5605 var7 = new Class5605(mc.player.getPosX(), Double.NaN, mc.player.getPosZ(), true);
                                 mc.getConnection().sendPacket(var7);
@@ -156,11 +156,11 @@ public class Class5199 extends Module {
                             var1.method13920(true);
                         }
 
-                        if (mc.player.field5045 > 3.0F) {
+                        if (mc.player.fallDistance > 3.0F) {
                             this.field23510 = true;
                         }
 
-                        if (this.field23510 && mc.player.field5036 && !mc.player.method3250()) {
+                        if (this.field23510 && mc.player.onGround && !mc.player.method3250()) {
                             double var12 = mc.player.getPosX();
                             double var14 = mc.player.getPosY();
                             double var16 = mc.player.getPosZ();
@@ -173,11 +173,11 @@ public class Class5199 extends Module {
                         break;
                     case "NCPSpigot":
                         if (var1.method13921()) {
-                            if (mc.player.field5045 > 3.0F) {
+                            if (mc.player.fallDistance > 3.0F) {
                                 this.field23508 = true;
                             }
 
-                            if (this.field23508 && Client.getInstance().method19939().method31329() == 0 && mc.player.field5036) {
+                            if (this.field23508 && Client.getInstance().method19939().method31329() == 0 && mc.player.onGround) {
                                 var1.method13912(var1.method13911() - 11.0);
                                 this.field23508 = false;
                             }

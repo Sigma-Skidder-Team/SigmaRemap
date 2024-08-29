@@ -6,7 +6,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class3363 extends Class3241 {
    private static String[] field18929;
-   public static final Class6408 field18930 = Block.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
+   public static final VoxelShape field18930 = Block.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
 
    public Class3363(AbstractBlock var1) {
       super(var1);
@@ -18,7 +18,7 @@ public class Class3363 extends Class3241 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field18930;
    }
 
@@ -83,7 +83,7 @@ public class Class3363 extends Class3241 {
       if (!(var6 instanceof Class934)) {
          return null;
       } else {
-         ITextComponent var7 = ((Class933)var6).getDisplayName();
+         ITextComponent var7 = ((INameable)var6).getDisplayName();
          return new Class953((var2x, var3x, var4) -> new Class5822(var2x, var3x, Class8786.method31714(var2, var3)), var7);
       }
    }

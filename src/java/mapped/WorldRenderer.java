@@ -71,7 +71,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
    private int field978 = Integer.MIN_VALUE;
    private int field979 = Integer.MIN_VALUE;
    private int field980 = Integer.MIN_VALUE;
-   private Vector3d field981 = Vector3d.field18047;
+   private Vector3d field981 = Vector3d.ZERO;
    private CloudOption field982;
    private Class9016 field983;
    private final Class7831 field984 = DefaultVertexFormats.field43334;
@@ -353,7 +353,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var15 = var3.nextDouble();
                BlockState var17 = var4.getBlockState(var11);
                Class7379 var18 = var4.method6739(var11);
-               Class6408 var19 = var17.method23414(var4, var11);
+               VoxelShape var19 = var17.method23414(var4, var11);
                double var20 = var19.method19522(Class113.field414, var13, var15);
                double var22 = (double)var18.method23475(var4, var11);
                double var24 = Math.max(var20, var22);
@@ -746,16 +746,16 @@ public class WorldRenderer implements Class215, AutoCloseable {
       double var7 = this.field939.player.getPosX() - this.field967;
       double var9 = this.field939.player.getPosY() - this.field968;
       double var11 = this.field939.player.getPosZ() - this.field969;
-      if (this.field970 != this.field939.player.field5072
-         || this.field971 != this.field939.player.field5073
-         || this.field972 != this.field939.player.field5074
+      if (this.field970 != this.field939.player.chunkCoordX
+         || this.field971 != this.field939.player.chunkCoordY
+         || this.field972 != this.field939.player.chunkCoordZ
          || var7 * var7 + var9 * var9 + var11 * var11 > 16.0) {
          this.field967 = this.field939.player.getPosX();
          this.field968 = this.field939.player.getPosY();
          this.field969 = this.field939.player.getPosZ();
-         this.field970 = this.field939.player.field5072;
-         this.field971 = this.field939.player.field5073;
-         this.field972 = this.field939.player.field5074;
+         this.field970 = this.field939.player.chunkCoordX;
+         this.field971 = this.field939.player.chunkCoordY;
+         this.field972 = this.field939.player.chunkCoordZ;
          this.field947.method34759(this.field939.player.getPosX(), this.field939.player.getPosZ());
       }
 
@@ -1216,10 +1216,10 @@ public class WorldRenderer implements Class215, AutoCloseable {
       for (List<Entity> var58 : this.field1026.values()) {
          for (Entity var65 : var58) {
             this.field986++;
-            if (var65.field5055 == 0) {
-               var65.field5048 = var65.getPosX();
-               var65.field5049 = var65.getPosY();
-               var65.field5050 = var65.getPosZ();
+            if (var65.ticksExisted == 0) {
+               var65.lastTickPosX = var65.getPosX();
+               var65.lastTickPosY = var65.getPosY();
+               var65.lastTickPosZ = var65.getPosZ();
             }
 
             Object var71;
@@ -1227,7 +1227,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                var38 = true;
                Class7734 var76 = this.field942.method26538();
                var71 = var76;
-               int var81 = var65.method3199();
+               int var81 = var65.getTeamColor();
                short var85 = 255;
                int var48 = var81 >> 16 & 0xFF;
                int var49 = var81 >> 8 & 0xFF;
@@ -1269,7 +1269,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          if (!var72.isEmpty()) {
             for (TileEntity var82 : var72) {
                if (var57) {
-                  Class6488 var86 = (Class6488)Class9299.method35070(var82, Class9299.field42943);
+                  AxisAlignedBB var86 = (AxisAlignedBB)Class9299.method35070(var82, Class9299.field42943);
                   if (var86 != null && !var59.method25122(var86)) {
                      continue;
                   }
@@ -1311,7 +1311,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       synchronized (this.field946) {
          for (TileEntity var73 : this.field946) {
             if (var57) {
-               Class6488 var78 = (Class6488)Class9299.method35070(var73, Class9299.field42943);
+               AxisAlignedBB var78 = (AxisAlignedBB)Class9299.method35070(var73, Class9299.field42943);
                if (var78 != null && !var59.method25122(var78)) {
                   continue;
                }
@@ -1534,10 +1534,10 @@ public class WorldRenderer implements Class215, AutoCloseable {
    }
 
    public void method879(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9, Class7733 var10) {
-      double var11 = MathHelper.method37822((double)var8, var1.field5048, var1.getPosX());
-      double var13 = MathHelper.method37822((double)var8, var1.field5049, var1.getPosY());
-      double var15 = MathHelper.method37822((double)var8, var1.field5050, var1.getPosZ());
-      float var17 = MathHelper.method37821(var8, var1.field5033, var1.field5031);
+      double var11 = MathHelper.method37822((double)var8, var1.lastTickPosX, var1.getPosX());
+      double var13 = MathHelper.method37822((double)var8, var1.lastTickPosY, var1.getPosY());
+      double var15 = MathHelper.method37822((double)var8, var1.lastTickPosZ, var1.getPosZ());
+      float var17 = MathHelper.method37821(var8, var1.prevRotationYaw, var1.rotationYaw);
       this.field941.method32219(var1, var11 - var2, var13 - var4, var15 - var6, var17, var8, var9, var10, this.field941.method32208(var1, var8));
    }
 
@@ -2649,7 +2649,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       method896(
          var1,
          var2,
-         var11.method23413(this.field943, var10, Class4832.method14948(var3)),
+         var11.method23413(this.field943, var10, ISelectionContext.forEntity(var3)),
          (double)var10.getX() - var4,
          (double)var10.getY() - var6,
          (double)var10.getZ() - var8,
@@ -2661,24 +2661,24 @@ public class WorldRenderer implements Class215, AutoCloseable {
    }
 
    public static void method895(
-           MatrixStack var0, Class5422 var1, Class6408 var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
+           MatrixStack var0, Class5422 var1, VoxelShape var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
    ) {
       List var13 = var2.method19521();
       int var14 = MathHelper.method37774((double)var13.size() / 3.0);
 
       for (int var15 = 0; var15 < var13.size(); var15++) {
-         Class6488 var16 = (Class6488)var13.get(var15);
+         AxisAlignedBB var16 = (AxisAlignedBB)var13.get(var15);
          float var17 = ((float)var15 % (float)var14 + 1.0F) / (float)var14;
          float var18 = (float)(var15 / var14);
          float var19 = var17 * (float)(var18 == 0.0F ? 1 : 0);
          float var20 = var17 * (float)(var18 == 1.0F ? 1 : 0);
          float var21 = var17 * (float)(var18 == 2.0F ? 1 : 0);
-         method896(var0, var1, Class8022.method27428(var16.method19667(0.0, 0.0, 0.0)), var3, var5, var7, var19, var20, var21, 1.0F);
+         method896(var0, var1, VoxelShapes.create(var16.method19667(0.0, 0.0, 0.0)), var3, var5, var7, var19, var20, var21, 1.0F);
       }
    }
 
    private static void method896(
-           MatrixStack var0, Class5422 var1, Class6408 var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
+           MatrixStack var0, Class5422 var1, VoxelShape var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
    ) {
       Class9367 var13 = var0.method35296().method32361();
       var2.method19519((var12x, var14, var16, var18, var20, var22) -> {
@@ -2687,7 +2687,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       });
    }
 
-   public static void method897(MatrixStack var0, Class5422 var1, Class6488 var2, float var3, float var4, float var5, float var6) {
+   public static void method897(MatrixStack var0, Class5422 var1, AxisAlignedBB var2, float var3, float var4, float var5, float var6) {
       method899(
          var0,
          var1,
@@ -2887,7 +2887,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
    }
 
    private void method910(World var1, BlockPos var2, boolean var3) {
-      for (Class880 var5 : var1.<Class880>method7182(Class880.class, new Class6488(var2).method19664(3.0))) {
+      for (Class880 var5 : var1.<Class880>method7182(Class880.class, new AxisAlignedBB(var2).method19664(3.0))) {
          var5.method3171(var2, var3);
       }
    }

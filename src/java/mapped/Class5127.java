@@ -26,8 +26,8 @@ public class Class5127 implements Class5119 {
          double var16 = 256.0 - var5;
          RenderSystem.disableTexture();
          RenderSystem.disableBlend();
-         double var18 = (double)(var11.field5072 << 4) - var3;
-         double var20 = (double)(var11.field5074 << 4) - var7;
+         double var18 = (double)(var11.chunkCoordX << 4) - var3;
+         double var20 = (double)(var11.chunkCoordZ << 4) - var7;
          RenderSystem.lineWidth(1.0F);
          var13.begin(3, DefaultVertexFormats.POSITION_COLOR);
 

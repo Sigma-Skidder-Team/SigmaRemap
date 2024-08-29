@@ -55,7 +55,7 @@ public abstract class Class1028 extends Class1009 {
       if (var3 != Class2202.field14406
          && var3 != Class2202.field14398
          && var3 != Class2202.field14394
-         && this.field5054.nextFloat() < 0.06F
+         && this.rand.nextFloat() < 0.06F
          && this.method4570()) {
          this.field5725 = true;
       }
@@ -108,7 +108,7 @@ public abstract class Class1028 extends Class1009 {
    }
 
    public void method4578() {
-      this.field5724 = this.getPosition().method8336(-500 + this.field5054.nextInt(1000), 0, -500 + this.field5054.nextInt(1000));
+      this.field5724 = this.getPosition().method8336(-500 + this.rand.nextInt(1000), 0, -500 + this.rand.nextInt(1000));
       this.field5726 = true;
    }
 

@@ -8,7 +8,7 @@ public class Class1044 extends Class1043 {
 
    public Class1044(EntityType<? extends Class1044> var1, World var2) {
       super(var1, var2);
-      this.field5023 = true;
+      this.forceSpawn = true;
    }
 
    @Override
@@ -87,9 +87,9 @@ public class Class1044 extends Class1043 {
       if (var3 != null && var4 != null) {
          Class46 var5 = this.method4742();
          this.method4754(var5, var3, 5);
-         int var6 = this.field5054.nextInt(var4.length);
+         int var6 = this.rand.nextInt(var4.length);
          Class5391 var7 = var4[var6];
-         Class9346 var8 = var7.method16977(this, this.field5054);
+         Class9346 var8 = var7.method16977(this, this.rand);
          if (var8 != null) {
             var5.add(var8);
          }
@@ -127,7 +127,7 @@ public class Class1044 extends Class1043 {
    @Override
    public void method4696(Class9346 var1) {
       if (var1.method35385()) {
-         int var4 = 3 + this.field5054.nextInt(4);
+         int var4 = 3 + this.rand.nextInt(4);
          this.world.method6916(new ExperienceOrbEntity(this.world, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), var4));
       }
    }

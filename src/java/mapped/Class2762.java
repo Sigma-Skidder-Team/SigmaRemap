@@ -18,7 +18,7 @@ public class Class2762 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if (!this.field17325.method4932() && this.field17325.method3329()) {
+      if (!this.field17325.method4932() && this.field17325.isBeingRidden()) {
          Vector3d var3 = Class8037.method27581(this.field17325, 5, 4);
          if (var3 != null) {
             this.field17327 = var3.field18048;
@@ -40,7 +40,7 @@ public class Class2762 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      return !this.field17325.method4932() && !this.field17325.method4230().method21664() && this.field17325.method3329();
+      return !this.field17325.method4932() && !this.field17325.method4230().method21664() && this.field17325.isBeingRidden();
    }
 
    @Override
@@ -62,7 +62,7 @@ public class Class2762 extends Class2595 {
             this.field17325.method4946(5);
          }
 
-         this.field17325.method3315();
+         this.field17325.removePassengers();
          this.field17325.method4896();
          this.field17325.world.method6786(this.field17325, (byte)6);
       }

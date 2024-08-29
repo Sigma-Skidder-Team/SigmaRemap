@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5316 extends Module {
+public class OmegaCraftTestFly extends Module {
     private int field23854;
     private int field23855;
     private double field23856;
@@ -16,12 +16,12 @@ public class Class5316 extends Module {
     private double field23860;
     private double field23861;
 
-    public Class5316() {
+    public OmegaCraftTestFly() {
         super(ModuleCategory.MOVEMENT, "Test", "A fly for OmegaCraft");
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23856 = mc.player.getPosX();
         this.field23857 = mc.player.getPosY();
         this.field23858 = mc.player.getPosZ();
@@ -31,7 +31,7 @@ public class Class5316 extends Module {
     }
 
     @Override
-    public void method15965() {
+    public void onDisable() {
         Class9567.method37090(0.0);
         if (mc.player.method3433().field18049 > 0.0) {
             Class5628.method17725(-0.0789);
@@ -89,11 +89,11 @@ public class Class5316 extends Module {
     }
 
     @EventTarget
-    public void method16702(Class4396 var1) {
+    public void method16702(RecievePacketEvent event) {
         if (this.isEnabled()) {
-            Packet var4 = var1.method13898();
-            if (var4 instanceof Class5473) {
-                Class5473 var5 = (Class5473) var4;
+            Packet<?> packet = event.getPacket();
+            if (packet instanceof Class5473) {
+                Class5473 var5 = (Class5473) packet;
                 if (this.field23854 >= 1) {
                     this.field23854 = -1;
                 }
@@ -103,18 +103,18 @@ public class Class5316 extends Module {
                 this.field23856 = var5.field24297;
                 this.field23857 = var5.field24298;
                 this.field23858 = var5.field24299;
-                var5.field24300 = mc.player.field5031;
-                var5.field24301 = mc.player.field5032;
+                var5.field24300 = mc.player.rotationYaw;
+                var5.field24301 = mc.player.rotationPitch;
             }
         }
     }
 
     @EventTarget
-    public void method16703(Class4402 var1) {
+    public void method16703(SendPacketEvent event) {
         if (this.isEnabled()) {
-            Packet var4 = var1.method13932();
-            if (var4 instanceof Class5603) {
-                Class5603 var5 = (Class5603) var4;
+            Packet<?> packet = event.method13932();
+            if (packet instanceof Class5603) {
+                Class5603 var5 = (Class5603) packet;
                 if (this.field23854 == -1) {
                     var5.field24883 = true;
                 }

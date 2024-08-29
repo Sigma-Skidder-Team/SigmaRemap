@@ -10,21 +10,21 @@ import java.util.Optional;
 public class Class3250 extends Class3198 implements Class3245 {
    public static final Class8552<Class82> field18713 = Class8820.field39764;
    public static final Class8551 field18714 = Class8820.field39701;
-   public static final Class6408 field18715 = Block.method11539(0.0, 3.0, 0.0, 16.0, 9.0, 16.0);
-   public static final Class6408 field18716 = Block.method11539(0.0, 0.0, 0.0, 3.0, 3.0, 3.0);
-   public static final Class6408 field18717 = Block.method11539(0.0, 0.0, 13.0, 3.0, 3.0, 16.0);
-   public static final Class6408 field18718 = Block.method11539(13.0, 0.0, 0.0, 16.0, 3.0, 3.0);
-   public static final Class6408 field18719 = Block.method11539(13.0, 0.0, 13.0, 16.0, 3.0, 16.0);
-   public static final Class6408 field18720 = Class8022.method27432(field18715, field18716, field18718);
-   public static final Class6408 field18721 = Class8022.method27432(field18715, field18717, field18719);
-   public static final Class6408 field18722 = Class8022.method27432(field18715, field18716, field18717);
-   public static final Class6408 field18723 = Class8022.method27432(field18715, field18718, field18719);
+   public static final VoxelShape field18715 = Block.method11539(0.0, 3.0, 0.0, 16.0, 9.0, 16.0);
+   public static final VoxelShape field18716 = Block.method11539(0.0, 0.0, 0.0, 3.0, 3.0, 3.0);
+   public static final VoxelShape field18717 = Block.method11539(0.0, 0.0, 13.0, 3.0, 3.0, 16.0);
+   public static final VoxelShape field18718 = Block.method11539(13.0, 0.0, 0.0, 16.0, 3.0, 3.0);
+   public static final VoxelShape field18719 = Block.method11539(13.0, 0.0, 13.0, 16.0, 3.0, 16.0);
+   public static final VoxelShape field18720 = VoxelShapes.method27432(field18715, field18716, field18718);
+   public static final VoxelShape field18721 = VoxelShapes.method27432(field18715, field18717, field18719);
+   public static final VoxelShape field18722 = VoxelShapes.method27432(field18715, field18716, field18717);
+   public static final VoxelShape field18723 = VoxelShapes.method27432(field18715, field18718, field18719);
    private final Class112 field18724;
 
    public Class3250(Class112 var1, AbstractBlock var2) {
       super(var2);
       this.field18724 = var1;
-      this.method11578(this.field18612.method35393().method23465(field18713, Class82.field206).method23465(field18714, Boolean.valueOf(false)));
+      this.method11578(this.field18612.method35393().method23465(field18713, Class82.FOOT).method23465(field18714, Boolean.valueOf(false)));
    }
 
    @Nullable
@@ -36,7 +36,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.field9020) {
-         if (var1.<Class82>method23463(field18713) != Class82.field205) {
+         if (var1.<Class82>method23463(field18713) != Class82.HEAD) {
             var3 = var3.method8349(var1.<Direction>method23463(field18484));
             var1 = var2.getBlockState(var3);
             if (!var1.method23448(this)) {
@@ -89,7 +89,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    private boolean method11680(World var1, BlockPos var2) {
-      List var5 = var1.<Class1042>method6772(Class1042.class, new Class6488(var2), Class880::isSleeping);
+      List var5 = var1.<Class1042>method6772(Class1042.class, new AxisAlignedBB(var2), Class880::isSleeping);
       if (!var5.isEmpty()) {
          ((Class1042)var5.get(0)).method2907();
          return true;
@@ -132,17 +132,17 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    private static Direction method11682(Class82 var0, Direction var1) {
-      return var0 != Class82.field206 ? var1.method536() : var1;
+      return var0 != Class82.FOOT ? var1.method536() : var1;
    }
 
    @Override
    public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       if (!var1.field9020 && var4.isCreative()) {
          Class82 var7 = var3.<Class82>method23463(field18713);
-         if (var7 == Class82.field206) {
+         if (var7 == Class82.FOOT) {
             BlockPos var8 = var2.method8349(method11682(var7, var3.<Direction>method23463(field18484)));
             BlockState var9 = var1.getBlockState(var8);
-            if (var9.getBlock() == this && var9.<Class82>method23463(field18713) == Class82.field205) {
+            if (var9.getBlock() == this && var9.<Class82>method23463(field18713) == Class82.HEAD) {
                var1.method6725(var8, Blocks.AIR.method11579(), 35);
                var1.method6869(var4, 2001, var8, Block.method11535(var9));
             }
@@ -162,7 +162,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       Direction var7 = method11683(var1).method536();
       switch (Class8903.field40297[var7.ordinal()]) {
          case 1:
@@ -178,12 +178,12 @@ public class Class3250 extends Class3198 implements Class3245 {
 
    public static Direction method11683(BlockState var0) {
       Direction var3 = var0.<Direction>method23463(field18484);
-      return var0.method23463(field18713) != Class82.field205 ? var3 : var3.method536();
+      return var0.method23463(field18713) != Class82.HEAD ? var3 : var3.method536();
    }
 
    public static Class1895 method11684(BlockState var0) {
       Class82 var3 = var0.<Class82>method23463(field18713);
-      return var3 != Class82.field205 ? Class1895.field11111 : Class1895.field11110;
+      return var3 != Class82.HEAD ? Class1895.field11111 : Class1895.field11110;
    }
 
    private static boolean method11685(Class1665 var0, BlockPos var1) {
@@ -270,7 +270,7 @@ public class Class3250 extends Class3198 implements Class3245 {
       super.method11563(var1, var2, var3, var4, var5);
       if (!var1.field9020) {
          BlockPos var8 = var2.method8349(var3.<Direction>method23463(field18484));
-         var1.method6725(var8, var3.method23465(field18713, Class82.field205), 3);
+         var1.method6725(var8, var3.method23465(field18713, Class82.HEAD), 3);
          var1.method6964(var2, Blocks.AIR);
          var3.method23424(var1, var2, 3);
       }
@@ -282,7 +282,7 @@ public class Class3250 extends Class3198 implements Class3245 {
 
    @Override
    public long method11691(BlockState var1, BlockPos var2) {
-      BlockPos var5 = var2.method8350(var1.<Direction>method23463(field18484), var1.method23463(field18713) != Class82.field205 ? 1 : 0);
+      BlockPos var5 = var2.method8350(var1.<Direction>method23463(field18484), var1.method23463(field18713) != Class82.HEAD ? 1 : 0);
       return MathHelper.method37810(var5.getX(), var2.getY(), var5.getZ());
    }
 

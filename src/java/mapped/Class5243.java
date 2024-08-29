@@ -20,7 +20,7 @@ public class Class5243 extends Module {
     @EventTarget
     public void method16343(TickEvent var1) {
         if (this.isEnabled()) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class);
+            ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class);
             Module var5 = var4.module;
             if (var5 == null || !var5.isEnabled() || !(var5 instanceof BlockFlyAACMode) || var5.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
                 mc.player.setSprinting(mc.player.field4984 > 0.0F && !((BlockFly) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class)).method16732());

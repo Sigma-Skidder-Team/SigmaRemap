@@ -10,12 +10,12 @@ import java.util.Map.Entry;
 public class Class3435 extends Class3433 {
    private static String[] field19201;
    public static final Class8551 field19202 = Class8820.field39688;
-   public static final Class6408 field19203 = Block.method11539(0.0, 0.0, 0.0, 12.0, 16.0, 16.0);
-   public static final Class6408 field19204 = Block.method11539(4.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19205 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 12.0);
-   public static final Class6408 field19206 = Block.method11539(0.0, 0.0, 4.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19207 = Block.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
-   public static final Class6408 field19208 = Block.method11539(0.0, 4.0, 0.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field19203 = Block.method11539(0.0, 0.0, 0.0, 12.0, 16.0, 16.0);
+   public static final VoxelShape field19204 = Block.method11539(4.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field19205 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 12.0);
+   public static final VoxelShape field19206 = Block.method11539(0.0, 0.0, 4.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field19207 = Block.method11539(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
+   public static final VoxelShape field19208 = Block.method11539(0.0, 4.0, 0.0, 16.0, 16.0, 16.0);
    private final boolean field19209;
 
    public Class3435(boolean var1, AbstractBlock var2) {
@@ -25,7 +25,7 @@ public class Class3435 extends Class3433 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       if (var1.<Boolean>method23463(field19202)) {
          switch (Class7273.field31199[var1.<Direction>method23463(field19198).ordinal()]) {
             case 1:
@@ -43,7 +43,7 @@ public class Class3435 extends Class3433 {
                return field19203;
          }
       } else {
-         return Class8022.method27426();
+         return VoxelShapes.method27426();
       }
    }
 

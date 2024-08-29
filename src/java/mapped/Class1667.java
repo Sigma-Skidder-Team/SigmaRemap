@@ -82,12 +82,12 @@ public class Class1667 implements Class1665, Class1668 {
    }
 
    @Override
-   public Stream<Class6408> method7046(Entity var1, Class6488 var2, Predicate<Entity> var3) {
-      return Stream.<Class6408>empty();
+   public Stream<VoxelShape> method7046(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
+      return Stream.<VoxelShape>empty();
    }
 
    @Override
-   public Stream<Class6408> method7047(Entity var1, Class6488 var2, Predicate<Entity> var3) {
+   public Stream<VoxelShape> method7047(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
       return this.method7055(var1, var2);
    }
 

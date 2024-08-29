@@ -17,7 +17,7 @@ public class HClip extends Command {
             if (var2[0].method30895() != Class2193.field14336) {
                throw new CommandException("Invalid distance \"" + var2[0].method30899() + "\"");
             } else {
-               float var6 = (float)Math.toRadians((double)(mc.player.field5031 + 90.0F));
+               float var6 = (float)Math.toRadians((double)(mc.player.rotationYaw + 90.0F));
                double var7 = (double) MathHelper.cos(var6) * var2[0].method30896();
                double var9 = (double) MathHelper.sin(var6) * var2[0].method30896();
                mc.getConnection()
@@ -26,8 +26,8 @@ public class HClip extends Command {
                         mc.player.getPosX() + var7,
                         mc.player.getPosY(),
                         mc.player.getPosZ() + var9,
-                        mc.player.field5031,
-                        mc.player.field5032,
+                        mc.player.rotationYaw,
+                        mc.player.rotationPitch,
                         Collections.<Class2033>emptySet(),
                         0
                      )

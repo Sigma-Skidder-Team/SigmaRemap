@@ -20,15 +20,15 @@ public class Class6828 extends Class6829 {
          double var8 = var3.field18049 / var4;
          double var10 = var3.field18050 / var4;
          float var12 = (float)(MathHelper.method37814(var3.field18050, var3.field18048) * 180.0F / (float)Math.PI) - 90.0F;
-         this.field29705.field5031 = this.method20816(this.field29705.field5031, var12, 90.0F);
-         this.field29705.field4965 = this.field29705.field5031;
+         this.field29705.rotationYaw = this.method20816(this.field29705.rotationYaw, var12, 90.0F);
+         this.field29705.field4965 = this.field29705.rotationYaw;
          float var13 = (float)(this.field29711 * this.field29705.method3086(Class9173.field42108));
          float var14 = MathHelper.method37821(0.125F, this.field29705.method2918(), var13);
          this.field29705.method3113(var14);
-         double var15 = Math.sin((double)(this.field29705.field5055 + this.field29705.method3205()) * 0.5) * 0.05;
-         double var17 = Math.cos((double)(this.field29705.field5031 * (float) (Math.PI / 180.0)));
-         double var19 = Math.sin((double)(this.field29705.field5031 * (float) (Math.PI / 180.0)));
-         double var21 = Math.sin((double)(this.field29705.field5055 + this.field29705.method3205()) * 0.75) * 0.05;
+         double var15 = Math.sin((double)(this.field29705.ticksExisted + this.field29705.method3205()) * 0.5) * 0.05;
+         double var17 = Math.cos((double)(this.field29705.rotationYaw * (float) (Math.PI / 180.0)));
+         double var19 = Math.sin((double)(this.field29705.rotationYaw * (float) (Math.PI / 180.0)));
+         double var21 = Math.sin((double)(this.field29705.ticksExisted + this.field29705.method3205()) * 0.75) * 0.05;
          this.field29705
             .method3434(this.field29705.method3433().method11339(var15 * var17, var21 * (var19 + var17) * 0.25 + (double)var14 * var8 * 0.1, var15 * var19));
          Class8092 var23 = this.field29705.method4227();

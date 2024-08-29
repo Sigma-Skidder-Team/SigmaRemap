@@ -59,13 +59,13 @@ public class Class2680 extends Class2595 {
                return false;
             }
 
-            if (Math.abs((double)this.field17086.field5032 - this.field17084) > 5.0 || Math.abs((double)this.field17086.field5031 - this.field17085) > 5.0) {
+            if (Math.abs((double)this.field17086.rotationPitch - this.field17084) > 5.0 || Math.abs((double)this.field17086.rotationYaw - this.field17085) > 5.0) {
                return false;
             }
          }
 
-         this.field17084 = (double)this.field17086.field5032;
-         this.field17085 = (double)this.field17086.field5031;
+         this.field17084 = (double)this.field17086.rotationPitch;
+         this.field17085 = (double)this.field17086.rotationYaw;
       }
 
       return this.method10803();

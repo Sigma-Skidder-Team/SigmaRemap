@@ -28,11 +28,11 @@ public class Class4289 extends Class4278 {
          var9 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1);
       }
 
-      Class3192.method11474((float)var4, (float)var5, (float)var6, (float)var7, 9.0F, var8);
+      RenderUtil.method11474((float)var4, (float)var5, (float)var6, (float)var7, 9.0F, var8);
       int var10 = 0;
 
       for (String var14 : this.field20783.field42047) {
-         Class3192.method11439(ResourceRegistry.JelloLightFont18, (float)(var4 + 10), (float)(var5 + 5 + var10 * ResourceRegistry.JelloLightFont18.method23952()), var14, var9);
+         RenderUtil.method11439(ResourceRegistry.JelloLightFont18, (float)(var4 + 10), (float)(var5 + 5 + var10 * ResourceRegistry.JelloLightFont18.method23952()), var14, var9);
          var10++;
       }
 

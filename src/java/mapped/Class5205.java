@@ -74,8 +74,8 @@ public class Class5205 extends Module {
                 var2 - mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
                 var4 - mc.gameRenderer.getActiveRenderInfo().method37504().method11322()
         );
-        GL11.glRotated(var6.field5055 % 180 * 2, 0.0, -1.0, 0.0);
-        float var9 = (float) (var6.field5055 % 100 - 50);
+        GL11.glRotated(var6.ticksExisted % 180 * 2, 0.0, -1.0, 0.0);
+        float var9 = (float) (var6.ticksExisted % 100 - 50);
         if (var9 < 0.0F) {
             var9 *= -1.0F;
         }
@@ -97,9 +97,9 @@ public class Class5205 extends Module {
             for (Entity var5 : Class9217.method34549(Class5628.method17680())) {
                 if (var5 != mc.player && !Client.getInstance().getCombatManager().method29346(var5)) {
                     method16216(
-                            var5.field5048 + (var5.getPosX() - var5.field5048) * (double) Minecraft.getInstance().timer.renderPartialTicks,
-                            var5.field5049 + (double) var5.method3430() + (var5.getPosY() - var5.field5049) * (double) Minecraft.getInstance().timer.renderPartialTicks,
-                            var5.field5050 + (var5.getPosZ() - var5.field5050) * (double) Minecraft.getInstance().timer.renderPartialTicks,
+                            var5.lastTickPosX + (var5.getPosX() - var5.lastTickPosX) * (double) Minecraft.getInstance().timer.renderPartialTicks,
+                            var5.lastTickPosY + (double) var5.method3430() + (var5.getPosY() - var5.lastTickPosY) * (double) Minecraft.getInstance().timer.renderPartialTicks,
+                            var5.lastTickPosZ + (var5.getPosZ() - var5.lastTickPosZ) * (double) Minecraft.getInstance().timer.renderPartialTicks,
                             var5
                     );
                 }

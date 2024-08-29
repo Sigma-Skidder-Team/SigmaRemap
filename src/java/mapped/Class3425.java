@@ -14,8 +14,8 @@ public class Class3425 extends Block {
    public static final Class8551 field19168 = Class3392.field19021;
    public static final Class8551 field19169 = Class3392.field19022;
    private static final Map<Direction, Class8551> field19170 = Class3238.field18685;
-   public static final Class6408 field19171 = Block.method11539(0.0, 1.0, 0.0, 16.0, 2.5, 16.0);
-   public static final Class6408 field19172 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+   public static final VoxelShape field19171 = Block.method11539(0.0, 1.0, 0.0, 16.0, 2.5, 16.0);
+   public static final VoxelShape field19172 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
    private final Class3459 field19173;
 
    public Class3425(Class3459 var1, AbstractBlock var2) {
@@ -35,7 +35,7 @@ public class Class3425 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return !var1.<Boolean>method23463(field19164) ? field19172 : field19171;
    }
 

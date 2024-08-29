@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4396;
+import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -22,7 +22,7 @@ public class Class5212 extends Module {
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23538 = mc.world.method6792(1.0F);
         if (mc.world.method6792(1.0F) != 1.0F) {
             if (mc.world.method6792(1.0F) == 0.0F) {
@@ -62,11 +62,11 @@ public class Class5212 extends Module {
     }
 
     @EventTarget
-    private void method16231(Class4396 var1) {
+    private void method16231(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (!(var1.method13898() instanceof Class5577)) {
-                if (var1.method13898() instanceof Class5534) {
-                    Class5534 var4 = (Class5534) var1.method13898();
+            if (!(var1.getPacket() instanceof Class5577)) {
+                if (var1.getPacket() instanceof Class5534) {
+                    Class5534 var4 = (Class5534) var1.getPacket();
                     if (var4.method17397().field43543 == 7) {
                         if (var4.method17398() != 1.0F) {
                             if (var4.method17398() == 0.0F) {

@@ -4,8 +4,8 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class918 extends AbstractMinecartEntity {
-   private static final Class9289<String> field5232 = Class9361.<String>method35441(Class918.class, Class7784.field33393);
-   private static final Class9289<ITextComponent> field5233 = Class9361.<ITextComponent>method35441(Class918.class, Class7784.field33394);
+   private static final DataParameter<String> field5232 = EntityDataManager.<String>method35441(Class918.class, Class7784.field33393);
+   private static final DataParameter<ITextComponent> field5233 = EntityDataManager.<ITextComponent>method35441(Class918.class, Class7784.field33394);
    private final Class911 field5234 = new Class912(this);
    private int field5235;
 
@@ -18,10 +18,10 @@ public class Class918 extends AbstractMinecartEntity {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.method3210().method35442(field5232, "");
-      this.method3210().method35442(field5233, StringTextComponent.EMPTY);
+   public void registerData() {
+      super.registerData();
+      this.method3210().register(field5232, "");
+      this.method3210().register(field5233, StringTextComponent.EMPTY);
    }
 
    @Override
@@ -54,9 +54,9 @@ public class Class918 extends AbstractMinecartEntity {
 
    @Override
    public void method3589(int var1, int var2, int var3, boolean var4) {
-      if (var4 && this.field5055 - this.field5235 >= 4) {
+      if (var4 && this.ticksExisted - this.field5235 >= 4) {
          this.method3614().method3564(this.world);
-         this.field5235 = this.field5055;
+         this.field5235 = this.ticksExisted;
       }
    }
 
@@ -66,7 +66,7 @@ public class Class918 extends AbstractMinecartEntity {
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       super.method3155(var1);
       if (field5233.equals(var1)) {
          try {
@@ -84,12 +84,12 @@ public class Class918 extends AbstractMinecartEntity {
    }
 
    // $VF: synthetic method
-   public static Class9289 method3615() {
+   public static DataParameter method3615() {
       return field5232;
    }
 
    // $VF: synthetic method
-   public static Class9289 method3616() {
+   public static DataParameter method3616() {
       return field5233;
    }
 }

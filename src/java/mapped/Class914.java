@@ -5,7 +5,7 @@ import net.minecraft.util.text.StringTextComponent;
 
 import java.util.UUID;
 
-public class Class914 implements Class909 {
+public class Class914 implements ICommandSource {
    private static final StringTextComponent field5204 = new StringTextComponent("Rcon");
    private final StringBuffer field5205 = new StringBuffer();
    private final MinecraftServer field5206;

@@ -26,7 +26,7 @@ public class Class5389 extends Module {
                      int var7 = mc.player.method3159() + 2;
 
                      for (int var8 = 0; var8 < var7; var8++) {
-                        mc.getConnection().sendPacket(new Class5603(mc.player.field5036));
+                        mc.getConnection().sendPacket(new Class5603(mc.player.onGround));
                         mc.player.method3161();
                      }
                      break;

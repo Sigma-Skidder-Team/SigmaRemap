@@ -90,7 +90,7 @@ public abstract class Class7574 {
                   ServerWorld var23 = (ServerWorld)var3;
                   if (Class6914.method21122((EntityType)var14.get(), var23, Class2202.field14393, new BlockPos(var17, var19, var21), var3.method6814())) {
                      Entity var24 = EntityType.method33223(var13, var3, var6x -> {
-                        var6x.method3273(var17, var19, var21, var6x.field5031, var6x.field5032);
+                        var6x.method3273(var17, var19, var21, var6x.rotationYaw, var6x.rotationPitch);
                         return var6x;
                      });
                      if (var24 == null) {
@@ -100,7 +100,7 @@ public abstract class Class7574 {
 
                      int var25 = var3.method7182(
                            var24.getClass(),
-                           new Class6488(
+                           new AxisAlignedBB(
                                  (double)var4.getX(),
                                  (double)var4.getY(),
                                  (double)var4.getZ(),

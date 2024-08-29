@@ -16,7 +16,7 @@ public class Class6995 extends Class6990 {
 
    @Override
    public boolean method21668() {
-      return this.method21675() && this.method21669() || !this.field30243.method3328();
+      return this.method21675() && this.method21669() || !this.field30243.isPassenger();
    }
 
    @Override

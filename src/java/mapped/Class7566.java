@@ -39,8 +39,8 @@ public class Class7566 implements ArgumentType<Class7352> {
       return ((Class6619)var0.getSource()).method20177().method1397().method22829(var1).orElseThrow(() -> field32499.create(var1.toString()));
    }
 
-   private static Class7608<Class7744> method24768(CommandContext<Class6619> var0, ResourceLocation var1) throws CommandSyntaxException {
-      Class7608 var4 = ((Class6619)var0.getSource()).method20177().method1397().method22830(var1);
+   private static ITag<Class7744> method24768(CommandContext<Class6619> var0, ResourceLocation var1) throws CommandSyntaxException {
+      ITag var4 = ((Class6619)var0.getSource()).method20177().method1397().method22830(var1);
       if (var4 != null) {
          return var4;
       } else {
@@ -52,7 +52,7 @@ public class Class7566 implements ArgumentType<Class7352> {
       return ((Class7352)var0.getArgument(var1, Class7352.class)).method23305(var0);
    }
 
-   public static Pair<ResourceLocation, Either<Class7744, Class7608<Class7744>>> method24770(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Pair<ResourceLocation, Either<Class7744, ITag<Class7744>>> method24770(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       return ((Class7352)var0.getArgument(var1, Class7352.class)).method23306(var0);
    }
 
@@ -61,7 +61,7 @@ public class Class7566 implements ArgumentType<Class7352> {
    }
 
    // $VF: synthetic method
-   public static Class7608 method24774(CommandContext var0, ResourceLocation var1) throws CommandSyntaxException {
+   public static ITag method24774(CommandContext var0, ResourceLocation var1) throws CommandSyntaxException {
       return method24768(var0, var1);
    }
 

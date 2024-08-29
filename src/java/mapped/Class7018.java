@@ -92,7 +92,7 @@ public class Class7018 implements Class7016 {
                   var8.method4578();
                }
 
-               var8.method3215((double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
+               var8.setPosition((double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
                var8.method4276(var1, var1.method6807(var2), Class2202.field14406, (Class5093)null, (CompoundNBT)null);
                var1.method6995(var8);
                return true;

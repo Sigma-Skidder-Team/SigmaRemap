@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 
 public class Class1096 extends Class1018 implements Class1011 {
    private static String[] field6009;
-   private static final Class9289<Boolean> field6010 = Class9361.<Boolean>method35441(Class1096.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field6010 = EntityDataManager.<Boolean>method35441(Class1096.class, Class7784.field33398);
    private float field6011;
    private float field6012;
    private int field6013;
@@ -77,7 +77,7 @@ public class Class1096 extends Class1018 implements Class1011 {
 
    @Override
    public void method4346() {
-      this.method4347(field6014.method29319(this.field5054));
+      this.method4347(field6014.method29319(this.rand));
    }
 
    @Override
@@ -128,9 +128,9 @@ public class Class1096 extends Class1018 implements Class1011 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field6010, false);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field6010, false);
    }
 
    @Override
@@ -159,7 +159,7 @@ public class Class1096 extends Class1018 implements Class1011 {
    }
 
    @Override
-   public Class8847 method2981(Class2090 var1) {
+   public EntitySize method2981(Pose var1) {
       if (!(this.field6012 > 0.0F)) {
          return super.method2981(var1);
       } else {
@@ -180,11 +180,11 @@ public class Class1096 extends Class1018 implements Class1011 {
    }
 
    public boolean method5183() {
-      return this.field5063.<Boolean>method35445(field6010);
+      return this.dataManager.<Boolean>method35445(field6010);
    }
 
    public void method5184(boolean var1) {
-      this.field5063.method35446(field6010, var1);
+      this.dataManager.method35446(field6010, var1);
    }
 
    public float method5185(float var1) {

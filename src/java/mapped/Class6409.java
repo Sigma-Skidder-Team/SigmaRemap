@@ -4,7 +4,7 @@ import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import java.util.Arrays;
 
-public final class Class6409 extends Class6408 {
+public final class Class6409 extends VoxelShape {
    private final DoubleList field28035;
    private final DoubleList field28036;
    private final DoubleList field28037;

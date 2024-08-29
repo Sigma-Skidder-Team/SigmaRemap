@@ -32,7 +32,7 @@ public class Class8528 {
       return new Class8528(var0, var1);
    }
 
-   public Class8528 method30249(Character var1, Class7608<Item> var2) {
+   public Class8528 method30249(Character var1, ITag<Item> var2) {
       return this.method30251(var1, Class120.method342(var2));
    }
 

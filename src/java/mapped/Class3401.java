@@ -6,8 +6,8 @@ import net.minecraft.util.text.ITextComponent;
 public class Class3401 extends Block {
    private static String[] field19059;
    public static final Class8552<Class113> field19060 = Class8820.field39712;
-   public static final Class6408 field19061 = Block.method11539(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
-   public static final Class6408 field19062 = Block.method11539(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
+   public static final VoxelShape field19061 = Block.method11539(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
+   public static final VoxelShape field19062 = Block.method11539(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
 
    public Class3401(AbstractBlock var1) {
       super(var1);
@@ -15,7 +15,7 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       switch (Class9111.field41872[var1.<Class113>method23463(field19060).ordinal()]) {
          case 1:
             return field19062;
@@ -54,7 +54,7 @@ public class Class3401 extends Block {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (!var4.method3328() && !var4.method3329() && var4.method3367()) {
+      if (!var4.isPassenger() && !var4.isBeingRidden() && var4.method3367()) {
          var4.method3323(var3);
       }
    }

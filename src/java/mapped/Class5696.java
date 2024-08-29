@@ -69,10 +69,10 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
       float var16 = var1.method5220(var5);
       if (var16 > 0.0F) {
          var2.translate(0.0, (double)(0.8F * var16), 0.0);
-         var2.method35293(Class7680.field32898.method25286(MathHelper.method37821(var16, var1.field5032, var1.field5032 + 90.0F)));
+         var2.method35293(Class7680.field32898.method25286(MathHelper.method37821(var16, var1.rotationPitch, var1.rotationPitch + 90.0F)));
          var2.translate(0.0, (double)(-1.0F * var16), 0.0);
          if (var1.method5214()) {
-            float var17 = (float)(Math.cos((double)var1.field5055 * 1.25) * Math.PI * 0.05F);
+            float var17 = (float)(Math.cos((double)var1.ticksExisted * 1.25) * Math.PI * 0.05F);
             var2.method35293(Class7680.field32900.method25286(var17));
             if (var1.method3005()) {
                var2.translate(0.0, 0.8F, 0.55F);
@@ -84,7 +84,7 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
       if (var18 > 0.0F) {
          float var19 = !var1.method3005() ? 1.3F : 0.5F;
          var2.translate(0.0, (double)(var19 * var18), 0.0);
-         var2.method35293(Class7680.field32898.method25286(MathHelper.method37821(var18, var1.field5032, var1.field5032 + 180.0F)));
+         var2.method35293(Class7680.field32898.method25286(MathHelper.method37821(var18, var1.rotationPitch, var1.rotationPitch + 180.0F)));
       }
    }
 

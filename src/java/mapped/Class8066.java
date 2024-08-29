@@ -15,7 +15,7 @@ public class Class8066 {
    private Class2010 field34611;
    private final Set<TileEntity> field34612;
    private final Map<RenderType, Class1698> field34613;
-   public Class6488 field34614;
+   public AxisAlignedBB field34614;
    private int field34615;
    private boolean field34616;
    private final Mutable field34617;
@@ -109,7 +109,7 @@ public class Class8066 {
             this.field34628 = var3 - this.field34625;
          }
 
-         this.field34614 = new Class6488((double)var1, (double)var2, (double)var3, (double)(var1 + 16), (double)(var2 + 16), (double)(var3 + 16));
+         this.field34614 = new AxisAlignedBB((double)var1, (double)var2, (double)var3, (double)(var1 + 16), (double)(var2 + 16), (double)(var3 + 16));
 
          for (Direction var9 : Direction.field685) {
             this.field34618[var9.ordinal()].method8374(this.field34617).method8380(var9, 16);

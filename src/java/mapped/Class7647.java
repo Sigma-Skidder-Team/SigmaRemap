@@ -37,7 +37,7 @@ public class Class7647 {
       this.field32824[var5] = var8;
    }
 
-   public boolean method25122(Class6488 var1) {
+   public boolean method25122(AxisAlignedBB var1) {
       return this.method25123(var1.field28449, var1.field28450, var1.field28451, var1.field28452, var1.field28453, var1.field28454);
    }
 

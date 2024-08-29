@@ -79,13 +79,13 @@ public class Class966 extends TileEntity implements Class935 {
       BlockPos var3 = this.getPos();
       if (this.field5324.method6783() > this.field5415 + 60L || this.field5419 == null) {
          this.field5415 = this.field5324.method6783();
-         Class6488 var4 = new Class6488(var3).method19664(48.0);
+         AxisAlignedBB var4 = new AxisAlignedBB(var3).method19664(48.0);
          this.field5419 = this.field5324.<Class880>method7182(Class880.class, var4);
       }
 
       if (!this.field5324.field9020) {
          for (Class880 var5 : this.field5419) {
-            if (var5.method3066() && !var5.field5041 && var3.method8317(var5.getPositionVec(), 32.0)) {
+            if (var5.method3066() && !var5.removed && var3.method8317(var5.getPositionVec(), 32.0)) {
                var5.method2992().method21406(Class8830.field39840, this.field5324.method6783());
             }
          }
@@ -96,7 +96,7 @@ public class Class966 extends TileEntity implements Class935 {
       BlockPos var3 = this.getPos();
 
       for (Class880 var5 : this.field5419) {
-         if (var5.method3066() && !var5.field5041 && var3.method8317(var5.getPositionVec(), 32.0) && var5.getType().method33228(Class8613.field38735)) {
+         if (var5.method3066() && !var5.removed && var3.method8317(var5.getPositionVec(), 32.0) && var5.getType().method33228(Class8613.field38735)) {
             return true;
          }
       }
@@ -143,7 +143,7 @@ public class Class966 extends TileEntity implements Class935 {
 
    private boolean method3996(Class880 var1) {
       return var1.method3066()
-         && !var1.field5041
+         && !var1.removed
          && this.getPos().method8317(var1.getPositionVec(), 48.0)
          && var1.getType().method33228(Class8613.field38735);
    }

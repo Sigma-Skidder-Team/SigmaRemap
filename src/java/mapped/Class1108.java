@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.Random;
 
 public class Class1108 extends Class1006 implements Class1008 {
-   private static final Class9289<Integer> field6081 = Class9361.<Integer>method35441(Class1108.class, Class7784.field33391);
+   private static final DataParameter<Integer> field6081 = EntityDataManager.<Integer>method35441(Class1108.class, Class7784.field33391);
    public float field6082;
    public float field6083;
    public float field6084;
@@ -31,13 +31,13 @@ public class Class1108 extends Class1006 implements Class1008 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field6081, 1);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field6081, 1);
    }
 
    public void method5318(int var1, boolean var2) {
-      this.field5063.method35446(field6081, var1);
+      this.dataManager.method35446(field6081, var1);
       this.method3216();
       this.method3385();
       this.method3085(Class9173.field42105).method38661((double)(var1 * var1));
@@ -51,7 +51,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    }
 
    public int method5319() {
-      return this.field5063.<Integer>method35445(field6081);
+      return this.dataManager.<Integer>method35445(field6081);
    }
 
    @Override
@@ -91,24 +91,24 @@ public class Class1108 extends Class1006 implements Class1008 {
       this.field6083 = this.field6083 + (this.field6082 - this.field6083) * 0.5F;
       this.field6084 = this.field6083;
       super.tick();
-      if (this.field5036 && !this.field6085) {
+      if (this.onGround && !this.field6085) {
          int var3 = this.method5319();
 
          for (int var4 = 0; var4 < var3 * 8; var4++) {
-            float var5 = this.field5054.nextFloat() * (float) (Math.PI * 2);
-            float var6 = this.field5054.nextFloat() * 0.5F + 0.5F;
+            float var5 = this.rand.nextFloat() * (float) (Math.PI * 2);
+            float var6 = this.rand.nextFloat() * 0.5F + 0.5F;
             float var7 = MathHelper.sin(var5) * (float)var3 * 0.5F * var6;
             float var8 = MathHelper.cos(var5) * (float)var3 * 0.5F * var6;
             this.world.method6746(this.method5321(), this.getPosX() + (double)var7, this.getPosY(), this.getPosZ() + (double)var8, 0.0, 0.0, 0.0);
          }
 
-         this.method2863(this.method5327(), this.method3099(), ((this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F) / 0.8F);
+         this.method2863(this.method5327(), this.method3099(), ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F) / 0.8F);
          this.field6082 = -0.5F;
-      } else if (!this.field5036 && this.field6085) {
+      } else if (!this.onGround && this.field6085) {
          this.field6082 = 1.0F;
       }
 
-      this.field6085 = this.field5036;
+      this.field6085 = this.onGround;
       this.method5322();
    }
 
@@ -117,7 +117,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    }
 
    public int method5323() {
-      return this.field5054.nextInt(20) + 10;
+      return this.rand.nextInt(20) + 10;
    }
 
    @Override
@@ -126,16 +126,16 @@ public class Class1108 extends Class1006 implements Class1008 {
       double var5 = this.getPosY();
       double var7 = this.getPosZ();
       super.method3385();
-      this.method3215(var3, var5, var7);
+      this.setPosition(var3, var5, var7);
    }
 
    @Override
-   public void method3155(Class9289<?> var1) {
+   public void method3155(DataParameter<?> var1) {
       if (field6081.equals(var1)) {
          this.method3385();
-         this.field5031 = this.field4967;
+         this.rotationYaw = this.field4967;
          this.field4965 = this.field4967;
-         if (this.method3250() && this.field5054.nextInt(20) == 0) {
+         if (this.method3250() && this.rand.nextInt(20) == 0) {
             this.method2925();
          }
       }
@@ -156,7 +156,7 @@ public class Class1108 extends Class1006 implements Class1008 {
          boolean var5 = this.method4305();
          float var6 = (float)var3 / 4.0F;
          int var7 = var3 / 2;
-         int var8 = 2 + this.field5054.nextInt(3);
+         int var8 = 2 + this.rand.nextInt(3);
 
          for (int var9 = 0; var9 < var8; var9++) {
             float var10 = ((float)(var9 % 2) - 0.5F) * var6;
@@ -171,7 +171,7 @@ public class Class1108 extends Class1006 implements Class1008 {
             var12.method3363(this.method3362());
             var12.method5318(var7, true);
             var12.method3273(
-               this.getPosX() + (double)var10, this.getPosY() + 0.5, this.getPosZ() + (double)var11, this.field5054.nextFloat() * 360.0F, 0.0F
+               this.getPosX() + (double)var10, this.getPosY() + 0.5, this.getPosZ() + (double)var11, this.rand.nextFloat() * 360.0F, 0.0F
             );
             this.world.method6916(var12);
          }
@@ -201,14 +201,14 @@ public class Class1108 extends Class1006 implements Class1008 {
          if (this.getDistanceSq(var1) < 0.6 * (double)var4 * 0.6 * (double)var4
             && this.method3135(var1)
             && var1.method2741(Class8654.method31115(this), this.method5326())) {
-            this.method2863(Sounds.field27072, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+            this.method2863(Sounds.field27072, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
             this.method3399(this, var1);
          }
       }
    }
 
    @Override
-   public float method2957(Class2090 var1, Class8847 var2) {
+   public float method2957(Pose var1, EntitySize var2) {
       return 0.625F * var2.field39969;
    }
 
@@ -282,14 +282,14 @@ public class Class1108 extends Class1006 implements Class1008 {
    public void method2914() {
       Vector3d var3 = this.method3433();
       this.method3435(var3.field18048, (double)this.method3103(), var3.field18050);
-      this.field5078 = true;
+      this.isAirBorne = true;
    }
 
    @Nullable
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      int var8 = this.field5054.nextInt(3);
-      if (var8 < 2 && this.field5054.nextFloat() < 0.5F * var2.method38330()) {
+      int var8 = this.rand.nextInt(3);
+      if (var8 < 2 && this.rand.nextFloat() < 0.5F * var2.method38330()) {
          var8++;
       }
 
@@ -300,7 +300,7 @@ public class Class1108 extends Class1006 implements Class1008 {
 
    private float method5330() {
       float var3 = !this.method5320() ? 0.8F : 1.4F;
-      return ((this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F) * var3;
+      return ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F) * var3;
    }
 
    public Class9455 method5331() {
@@ -308,7 +308,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    }
 
    @Override
-   public Class8847 method2981(Class2090 var1) {
+   public EntitySize method2981(Pose var1) {
       return super.method2981(var1).method32099(0.255F * (float)this.method5319());
    }
 

@@ -22,8 +22,8 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
       var4.translate(-var10.method11320(), -var10.method11321(), -var10.method11322());
       double var11 = 0.46875;
       var4.translate((double)var9.method539() * 0.46875, (double)var9.method540() * 0.46875, (double)var9.method541() * 0.46875);
-      var4.method35293(Class7680.field32898.method25286(var1.field5032));
-      var4.method35293(Class7680.field32900.method25286(180.0F - var1.field5031));
+      var4.method35293(Class7680.field32898.method25286(var1.rotationPitch));
+      var4.method35293(Class7680.field32900.method25286(180.0F - var1.rotationYaw));
       boolean var13 = var1.method3342();
       if (!var13) {
          BlockRendererDispatcher var14 = this.field25155.getBlockRendererDispatcher();

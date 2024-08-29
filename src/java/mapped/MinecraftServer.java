@@ -47,7 +47,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.BooleanSupplier;
 import java.util.function.Function;
 
-public abstract class MinecraftServer extends RecursiveEventLoop<Class567> implements ISnooperInfo, Class909, AutoCloseable {
+public abstract class MinecraftServer extends RecursiveEventLoop<Class567> implements ISnooperInfo, ICommandSource, AutoCloseable {
    private static final Logger field1208 = LogManager.getLogger();
    public static final File USER_CACHE_FILE = new File("usercache.json");
    public static final WorldSettings field1210 = new WorldSettings(
@@ -1221,7 +1221,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       ServerWorld var3 = this.method1317();
       return new Class6619(
          this,
-         var3 != null ? Vector3d.method11329(var3.method6947()) : Vector3d.field18047,
+         var3 != null ? Vector3d.method11329(var3.method6947()) : Vector3d.ZERO,
          Class8513.field37212,
          var3,
          4,

@@ -100,7 +100,7 @@ public class Class8969 {
    }
 
    private void method32892(World var1, BlockPos var2, BlockPos var3) {
-      List<Entity> var6 = var1.<Entity>method6772(Entity.class, new Class6488(var2, var3), var0 -> !(var0 instanceof PlayerEntity));
+      List<Entity> var6 = var1.<Entity>method6772(Entity.class, new AxisAlignedBB(var2, var3), var0 -> !(var0 instanceof PlayerEntity));
       this.field40546.clear();
 
       for (Entity var8 : var6) {
@@ -357,8 +357,8 @@ public class Class8969 {
             var13.method133("UUID");
             method32903(var1, var13).ifPresent(var6x -> {
                float var9 = var6x.method3403(var3);
-               var9 += var6x.field5031 - var6x.method3402(var4);
-               var6x.method3273(var15.field18048, var15.field18049, var15.field18050, var9, var6x.field5032);
+               var9 += var6x.rotationYaw - var6x.method3402(var4);
+               var6x.method3273(var15.field18048, var15.field18049, var15.field18050, var9, var6x.rotationPitch);
                if (var7 && var6x instanceof Class1006) {
                   ((Class1006)var6x).method4276(var1, var1.method6807(new BlockPos(var15)), Class2202.field14394, (Class5093)null, var13);
                }

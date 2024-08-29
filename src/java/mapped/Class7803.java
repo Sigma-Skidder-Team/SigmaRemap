@@ -34,11 +34,11 @@ public class Class7803 {
       }
    }
 
-   public static Class6488 method26052(Class964 var0) {
+   public static AxisAlignedBB method26052(Class964 var0) {
       BlockPos var3 = var0.getPos();
       BlockPos var4 = var3.method8337(var0.method3942().method8336(-1, -1, -1));
       BlockPos var5 = Class8969.method32905(var4, Class2089.field13614, var0.method3946(), var3);
-      return new Class6488(var3, var5);
+      return new AxisAlignedBB(var3, var5);
    }
 
    public static Class9764 method26053(Class964 var0) {
@@ -118,7 +118,7 @@ public class Class7803 {
       BlockPos.method8361(var5).forEach(var2x -> method26066(var1, var2x, var2));
       var2.method6860().method20730(var5, true, false);
       var2.method6963(var5);
-      Class6488 var6 = new Class6488(
+      AxisAlignedBB var6 = new AxisAlignedBB(
          (double)var5.field45678, (double)var5.field45679, (double)var5.field45680, (double)var5.field45681, (double)var5.field45682, (double)var5.field45683
       );
       List<Entity> var7 = var2.<Entity>method6772(Entity.class, var6, var0x -> !(var0x instanceof PlayerEntity));
@@ -150,7 +150,7 @@ public class Class7803 {
 
    public static Collection<BlockPos> method26062(BlockPos var0, int var1, ServerWorld var2) {
       ArrayList var5 = Lists.newArrayList();
-      Class6488 var6 = new Class6488(var0);
+      AxisAlignedBB var6 = new AxisAlignedBB(var0);
       var6 = var6.method19664((double)var1);
 
       for (int var7 = (int)var6.field28449; var7 <= (int)var6.field28452; var7++) {
@@ -248,7 +248,7 @@ public class Class7803 {
 
    private static boolean method26067(BlockPos var0, BlockPos var1, ServerWorld var2) {
       Class964 var5 = (Class964)var2.getTileEntity(var0);
-      Class6488 var6 = method26052(var5).method19664(1.0);
+      AxisAlignedBB var6 = method26052(var5).method19664(1.0);
       return var6.method19673(Vector3d.method11328(var1));
    }
 }

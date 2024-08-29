@@ -5,8 +5,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 public abstract class Class1013 extends Class1018 {
-   public static final Class9289<Byte> field5668 = Class9361.<Byte>method35441(Class1013.class, Class7784.field33390);
-   public static final Class9289<Optional<UUID>> field5669 = Class9361.<Optional<UUID>>method35441(Class1013.class, Class7784.field33404);
+   public static final DataParameter<Byte> field5668 = EntityDataManager.<Byte>method35441(Class1013.class, Class7784.field33390);
+   public static final DataParameter<Optional<UUID>> field5669 = EntityDataManager.<Optional<UUID>>method35441(Class1013.class, Class7784.field33404);
    private boolean field5670;
 
    public Class1013(EntityType<? extends Class1013> var1, World var2) {
@@ -15,10 +15,10 @@ public abstract class Class1013 extends Class1018 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field5668, (byte)0);
-      this.field5063.method35442(field5669, Optional.<UUID>empty());
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field5668, (byte)0);
+      this.dataManager.register(field5669, Optional.<UUID>empty());
    }
 
    @Override
@@ -67,9 +67,9 @@ public abstract class Class1013 extends Class1018 {
       }
 
       for (int var5 = 0; var5 < 7; var5++) {
-         double var6 = this.field5054.nextGaussian() * 0.02;
-         double var8 = this.field5054.nextGaussian() * 0.02;
-         double var10 = this.field5054.nextGaussian() * 0.02;
+         double var6 = this.rand.nextGaussian() * 0.02;
+         double var8 = this.rand.nextGaussian() * 0.02;
+         double var10 = this.rand.nextGaussian() * 0.02;
          this.world.method6746(var4, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var6, var8, var10);
       }
    }
@@ -88,15 +88,15 @@ public abstract class Class1013 extends Class1018 {
    }
 
    public boolean method4393() {
-      return (this.field5063.<Byte>method35445(field5668) & 4) != 0;
+      return (this.dataManager.<Byte>method35445(field5668) & 4) != 0;
    }
 
    public void method4379(boolean var1) {
-      byte var4 = this.field5063.<Byte>method35445(field5668);
+      byte var4 = this.dataManager.<Byte>method35445(field5668);
       if (!var1) {
-         this.field5063.method35446(field5668, (byte)(var4 & -5));
+         this.dataManager.method35446(field5668, (byte)(var4 & -5));
       } else {
-         this.field5063.method35446(field5668, (byte)(var4 | 4));
+         this.dataManager.method35446(field5668, (byte)(var4 | 4));
       }
 
       this.method4394();
@@ -106,25 +106,25 @@ public abstract class Class1013 extends Class1018 {
    }
 
    public boolean method4395() {
-      return (this.field5063.<Byte>method35445(field5668) & 1) != 0;
+      return (this.dataManager.<Byte>method35445(field5668) & 1) != 0;
    }
 
    public void method4396(boolean var1) {
-      byte var4 = this.field5063.<Byte>method35445(field5668);
+      byte var4 = this.dataManager.<Byte>method35445(field5668);
       if (!var1) {
-         this.field5063.method35446(field5668, (byte)(var4 & -2));
+         this.dataManager.method35446(field5668, (byte)(var4 & -2));
       } else {
-         this.field5063.method35446(field5668, (byte)(var4 | 1));
+         this.dataManager.method35446(field5668, (byte)(var4 | 1));
       }
    }
 
    @Nullable
    public UUID method4397() {
-      return this.field5063.<Optional<UUID>>method35445(field5669).orElse((UUID)null);
+      return this.dataManager.<Optional<UUID>>method35445(field5669).orElse((UUID)null);
    }
 
    public void method4398(UUID var1) {
-      this.field5063.method35446(field5669, Optional.<UUID>ofNullable(var1));
+      this.dataManager.method35446(field5669, Optional.<UUID>ofNullable(var1));
    }
 
    public void method4399(PlayerEntity var1) {
@@ -159,15 +159,15 @@ public abstract class Class1013 extends Class1018 {
    }
 
    @Override
-   public Class8219 method3344() {
+   public Team getTeam() {
       if (this.method4393()) {
          Class880 var3 = this.method4400();
          if (var3 != null) {
-            return var3.method3344();
+            return var3.getTeam();
          }
       }
 
-      return super.method3344();
+      return super.getTeam();
    }
 
    @Override

@@ -49,7 +49,7 @@ public class Class2770<T extends Class880> extends Class2595 {
             this.field17349.getPosX(),
             this.field17349.getPosY(),
             this.field17349.getPosZ(),
-            this.field17349.method3389().method19663((double)this.field17353, 3.0, (double)this.field17353)
+            this.field17349.getBoundingBox().method19663((double)this.field17353, 3.0, (double)this.field17353)
          );
       if (this.field17352 != null) {
          Vector3d var3 = Class8037.method27590(this.field17349, 16, 7, this.field17352.getPositionVec());

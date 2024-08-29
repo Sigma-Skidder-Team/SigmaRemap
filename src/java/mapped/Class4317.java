@@ -132,8 +132,8 @@ public class Class4317 extends Class4307 {
    public void method13027(float var1) {
       this.method13401();
       super.method13027(var1);
-      Class3192.method11439(ResourceRegistry.field38868, 20.0F, 20.0F, Minecraft.getInstance().getSession().getUsername(), -2236963);
-      Class3192.method11440(
+      RenderUtil.method11439(ResourceRegistry.field38868, 20.0F, 20.0F, Minecraft.getInstance().getSession().getUsername(), -2236963);
+      RenderUtil.method11440(
          ResourceRegistry.field38868,
          (float)(this.method13267() / 2),
          20.0F,
@@ -142,7 +142,7 @@ public class Class4317 extends Class4307 {
          Class2218.field14492,
          Class2218.field14488
       );
-      Class3192.method11441(
+      RenderUtil.method11441(
          ResourceRegistry.field38868,
          (float)(this.method13267() / 2),
          40.0F,
@@ -169,8 +169,8 @@ public class Class4317 extends Class4307 {
    }
 
    private void method13401() {
-      Class3192.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClassicDecryption.mainmenubackground);
-      Class3192.method11424(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.23F));
+      RenderUtil.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClassicDecryption.mainmenubackground);
+      RenderUtil.method11424(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.23F));
    }
 
    @Override

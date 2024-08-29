@@ -189,7 +189,7 @@ public class Class5151 extends Module {
                }
 
                this.method15959((float)(0.5 + (double)field23380.calcPercent() * 0.5));
-               Class3192.method11424(12.0F, 30.0F, 90.0F, 1.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+               RenderUtil.method11424(12.0F, 30.0F, 90.0F, 1.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             }
          }
       }
@@ -240,7 +240,7 @@ public class Class5151 extends Module {
             var17 = Class8056.method27663(this.field23382.calcPercent(), 0.0F, 1.0F, 1.0F);
          }
 
-         Class3192.method11435(
+         RenderUtil.method11435(
             (float)var8.method24720() + (float)var8.method24719() + 14.0F * var17,
             (float)var8.method24721() + 16.0F + (float)(25 * var8.field32402),
             24.0F * var17,
@@ -251,12 +251,12 @@ public class Class5151 extends Module {
          int var14 = var8.method24721() + 25 * var8.field32402 + 4;
          int var15 = var8.field32394.method23942(var11) + 8;
          float var16 = Class8056.method27664(this.field23381.calcPercent(), 0.0F, 1.0F, 1.0F);
-         Class3192.method11424((float)var13, (float)var14, (float)var15 * var16, 25.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F));
-         Class3192.method11419((float)var13, (float)var14, (float)var15 * var16, 25.0F);
-         Class3192.method11439(
+         RenderUtil.method11424((float)var13, (float)var14, (float)var15 * var16, 25.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F));
+         RenderUtil.method11419((float)var13, (float)var14, (float)var15 * var16, 25.0F);
+         RenderUtil.method11439(
             var8.field32394, (float)(var13 + 4), (float)(var14 + 2), var11, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 1.7F))
          );
-         Class3192.method11422();
+         RenderUtil.method11422();
       }
    }
 
@@ -321,13 +321,13 @@ public class Class5151 extends Module {
    }
 
    @Override
-   public void method15965() {
+   public void onDisable() {
       field23380.changeDirection(Direction.BACKWARDS);
       this.field23384 = 0;
    }
 
    @Override
-   public void isInDevelopment() {
+   public void onEnable() {
       field23380.changeDirection(Direction.FORWARDS);
       this.field23384 = 40;
    }
@@ -344,8 +344,8 @@ public class Class5151 extends Module {
 
    public List<Setting> method15968(Module var1) {
       ArrayList var4 = new ArrayList<Setting>(var1.method15989().values());
-      if (var1 instanceof Class5325) {
-         Class5325 var5 = (Class5325)var1;
+      if (var1 instanceof ModuleWithModuleSettings) {
+         ModuleWithModuleSettings var5 = (ModuleWithModuleSettings)var1;
          var5.method16724();
          if (var5.method16726() != null) {
             var4.addAll(var5.method16726().method15989().values());

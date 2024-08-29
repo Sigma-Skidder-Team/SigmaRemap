@@ -8,25 +8,25 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5225 extends Module {
+public class SpartanFly extends Module {
     private double field23569;
     private boolean field23570;
     private boolean field23571;
 
-    public Class5225() {
+    public SpartanFly() {
         super(ModuleCategory.MOVEMENT, "Spartan", "A fly for Spartan anticheat");
         this.registerSetting(new BooleanSetting("Ground Spoof", "Send on ground packets", true));
         this.registerSetting(new BooleanSetting("Fake Block", "Send on fake blockplacing packet", true));
     }
 
     @Override
-    public void isInDevelopment() {
+    public void onEnable() {
         this.field23570 = false;
         this.field23569 = -10.0;
-        if (!mc.gameSettings.field44637.isKeyDown()) {
+        if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
             this.field23571 = false;
         } else {
-            mc.gameSettings.field44637.field13071 = false;
+            mc.gameSettings.keyBindSneak.field13071 = false;
             this.field23571 = true;
         }
     }
@@ -34,7 +34,7 @@ public class Class5225 extends Module {
     @EventTarget
     private void method16268(Class4430 var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
+            if (var1.method13977() == mc.gameSettings.keyBindSneak.field13070.field34875) {
                 var1.method13900(true);
                 this.field23571 = true;
             }
@@ -44,7 +44,7 @@ public class Class5225 extends Module {
     @EventTarget
     private void method16269(Class4426 var1) {
         if (this.isEnabled()) {
-            if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
+            if (var1.method13973() == mc.gameSettings.keyBindSneak.field13070.field34875) {
                 var1.method13900(true);
                 this.field23571 = false;
             }
@@ -64,7 +64,7 @@ public class Class5225 extends Module {
     @EventTarget
     public void method16271(Class4435 var1) {
         if (this.isEnabled()) {
-            boolean var4 = mc.player.field5036 || Class5628.method17730(mc.player, 0.001F);
+            boolean var4 = mc.player.onGround || Class5628.method17730(mc.player, 0.001F);
             if (!var4) {
                 if (var1.method13994() < 0.0) {
                     if (this.field23569 != mc.player.getPositionVec().field18049) {

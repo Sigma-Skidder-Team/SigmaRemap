@@ -21,7 +21,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
                Vector3d var12 = this.method17861(var11, (double)var11.method3430() * 0.5, 1.0F);
                Vector3d var13 = this.method17861(var1, (double)var1.method3393(), 1.0F);
                return var2.method25122(
-                  new Class6488(var13.field18048, var13.field18049, var13.field18050, var12.field18048, var12.field18049, var12.field18050)
+                  new AxisAlignedBB(var13.field18048, var13.field18049, var13.field18050, var12.field18048, var12.field18049, var12.field18050)
                );
             }
          }
@@ -33,9 +33,9 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
    }
 
    private Vector3d method17861(Class880 var1, double var2, float var4) {
-      double var7 = MathHelper.method37822((double)var4, var1.field5048, var1.getPosX());
-      double var9 = MathHelper.method37822((double)var4, var1.field5049, var1.getPosY()) + var2;
-      double var11 = MathHelper.method37822((double)var4, var1.field5050, var1.getPosZ());
+      double var7 = MathHelper.method37822((double)var4, var1.lastTickPosX, var1.getPosX());
+      double var9 = MathHelper.method37822((double)var4, var1.lastTickPosY, var1.getPosY()) + var2;
+      double var11 = MathHelper.method37822((double)var4, var1.lastTickPosZ, var1.getPosZ());
       return new Vector3d(var7, var9, var11);
    }
 
@@ -99,7 +99,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          method17862(var48, var50, var51, var42, 0.0F, var43, var23, var24, var25, 0.0F, var46);
          method17862(var48, var50, var51, var42, var17, var43, var23, var24, var25, 0.0F, var47);
          float var52 = 0.0F;
-         if (var1.field5055 % 2 == 0) {
+         if (var1.ticksExisted % 2 == 0) {
             var52 = 0.5F;
          }
 

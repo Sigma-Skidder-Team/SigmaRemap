@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.function.Function;
 
 public class Class7611<T> implements Class7610<T> {
-   private Class7608<T> field32656;
+   private ITag<T> field32656;
    public final ResourceLocation field32657;
 
    public Class7611(ResourceLocation var1) {
@@ -16,7 +16,7 @@ public class Class7611<T> implements Class7610<T> {
       return this.field32657;
    }
 
-   private Class7608<T> method24930() {
+   private ITag<T> method24930() {
       if (this.field32656 != null) {
          return this.field32656;
       } else {
@@ -24,8 +24,8 @@ public class Class7611<T> implements Class7610<T> {
       }
    }
 
-   public void method24931(Function<ResourceLocation, Class7608<T>> var1) {
-      this.field32656 = (Class7608<T>)var1.apply(this.field32657);
+   public void method24931(Function<ResourceLocation, ITag<T>> var1) {
+      this.field32656 = (ITag<T>)var1.apply(this.field32657);
    }
 
    @Override

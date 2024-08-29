@@ -2,7 +2,7 @@ package mapped;
 
 public class Class3379 extends Class3231 {
    private static String[] field18979;
-   public static final Class6408 field18980 = Block.method11539(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
+   public static final VoxelShape field18980 = Block.method11539(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
 
    public Class3379(AbstractBlock var1) {
       super(var1);
@@ -13,7 +13,7 @@ public class Class3379 extends Class3231 {
    }
 
    @Override
-   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return field18980;
    }
 
@@ -72,7 +72,7 @@ public class Class3379 extends Class3231 {
          var1.method3434(new Vector3d(var4.field18048 * var5, -0.05, var4.field18050 * var5));
       }
 
-      var1.field5045 = 0.0F;
+      var1.fallDistance = 0.0F;
    }
 
    private void method11975(World var1, Entity var2) {

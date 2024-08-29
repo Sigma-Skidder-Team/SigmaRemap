@@ -42,7 +42,7 @@ public class Class5132 implements Class5119 {
                BlockPos var27 = var26.getKey();
                Integer var28 = (Integer)var26.getValue();
                if (var16.add(var27)) {
-                  Class6488 var29 = new Class6488(BlockPos.ZERO)
+                  AxisAlignedBB var29 = new AxisAlignedBB(BlockPos.ZERO)
                      .method19664(0.002)
                      .method19679(0.0025 * (double)var23)
                      .method19667((double)var27.getX(), (double)var27.getY(), (double)var27.getZ())

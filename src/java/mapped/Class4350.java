@@ -27,8 +27,8 @@ public class Class4350 extends Class4278 {
    @Override
    public void method13027(float var1) {
       if (this.field20912 != null) {
-         Class3192.method11426((float)this.method13263(), (float)this.method13265(), (float)this.field20897, (float)this.field20898, -14144460);
-         Class3192.method11464(
+         RenderUtil.method11426((float)this.method13263(), (float)this.method13265(), (float)this.field20897, (float)this.field20898, -14144460);
+         RenderUtil.method11464(
             (float)this.method13263(), (float)this.method13265(), (float)this.field20897, (float)(this.field20898 - this.method13265()), 114.0F, var1
          );
          byte var4 = 30;
@@ -44,7 +44,7 @@ public class Class4350 extends Class4278 {
             int var13 = 0;
 
             for (String var15 : var12) {
-               Class3192.method11439(
+               RenderUtil.method11439(
                   var5,
                   (float)(this.method13263() + var13 + var4),
                   (float)(this.method13265() + var4 + var11 * var5.method23952()),
@@ -68,7 +68,7 @@ public class Class4350 extends Class4278 {
             }
          }
 
-         Class3192.method11426(
+         RenderUtil.method11426(
             (float)var4 + var10,
             (float)(this.method13265() + var4 + var9 * var5.method23952()),
             (float)var4 + var10 + 1.0F,

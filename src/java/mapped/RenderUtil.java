@@ -16,10 +16,10 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.Stack;
 
-public class Class3192 {
+public class RenderUtil {
    private static String[] field18458;
    private static final boolean field18459 = false;
-   private static final Minecraft field18460 = Minecraft.getInstance();
+   private static final Minecraft mc = Minecraft.getInstance();
    public static boolean field18461 = false;
    private static Stack<IntBuffer> field18462 = new Stack<IntBuffer>();
    private static float field18463 = 1.0F;
@@ -69,7 +69,7 @@ public class Class3192 {
    }
 
    public static float method11417() {
-      return (float)field18460.mainWindow.method8049();
+      return (float) mc.mainWindow.method8049();
    }
 
    public static void method11418(float var0, float var1, float var2, float var3) {
@@ -1255,13 +1255,13 @@ public class Class3192 {
 
    public static void method11479(ItemStack var0, int var1, int var2, int var3, int var4) {
       if (var0 != null) {
-         TextureManager var10000 = field18460.getTextureManager();
-         field18460.getTextureManager();
+         TextureManager var10000 = mc.getTextureManager();
+         mc.getTextureManager();
          var10000.bindTexture(TextureManager.field1094);
          GL11.glPushMatrix();
          GL11.glTranslatef((float)var1, (float)var2, 0.0F);
          GL11.glScalef((float)var3 / 16.0F, (float)var4 / 16.0F, 0.0F);
-         ItemRenderer var7 = field18460.getItemRenderer();
+         ItemRenderer var7 = mc.getItemRenderer();
          if (var0.field39976 == 0) {
             var0 = new ItemStack(var0.getItem());
          }
@@ -1283,8 +1283,8 @@ public class Class3192 {
          RenderSystem.method27905(33986, 240.0F, 240.0F);
          RenderSystem.disableDepthTest();
          TextureImpl.method36180();
-         var10000 = field18460.getTextureManager();
-         field18460.getTextureManager();
+         var10000 = mc.getTextureManager();
+         mc.getTextureManager();
          var10000.bindTexture(TextureManager.field1094);
          Class7516.method24503();
       }
@@ -1294,15 +1294,15 @@ public class Class3192 {
       GL11.glPushMatrix();
       RenderSystem.matrixMode(5888);
       RenderSystem.loadIdentity();
-      field18460.getItemRenderer().field847 -= 1101.0F;
-      RenderSystem.scaled(1.0 / field18460.mainWindow.method8049(), 1.0 / field18460.mainWindow.method8049(), 1.0);
+      mc.getItemRenderer().field847 -= 1101.0F;
+      RenderSystem.scaled(1.0 / mc.mainWindow.method8049(), 1.0 / mc.mainWindow.method8049(), 1.0);
       RenderSystem.translatef((float)var1, (float)var2, 0.0F);
       RenderSystem.scalef(var3 / 16.0F, var3 / 16.0F, 1.0F);
-      field18460.getItemRenderer().method791(var0, 0, 0);
-      field18460.getItemRenderer().field847 += 1101.0F;
+      mc.getItemRenderer().method791(var0, 0, 0);
+      mc.getItemRenderer().field847 += 1101.0F;
       TextureImpl.method36180();
-      TextureManager var6 = field18460.getTextureManager();
-      field18460.getTextureManager();
+      TextureManager var6 = mc.getTextureManager();
+      mc.getTextureManager();
       var6.bindTexture(TextureManager.field1094);
       GL11.glPopMatrix();
    }
@@ -1329,7 +1329,7 @@ public class Class3192 {
          ? null
          : new double[]{
             (double)(var8.get(0) / GuiManager.field41348),
-            (double)(((float)field18460.framebuffer.field35733 - var8.get(1)) / GuiManager.field41348),
+            (double)(((float) mc.framebuffer.field35733 - var8.get(1)) / GuiManager.field41348),
             (double)var8.get(2)
          };
    }

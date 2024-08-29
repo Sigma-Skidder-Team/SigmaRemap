@@ -4,7 +4,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class Class1100 extends Class1009 {
-   public static final Class9289<Byte> field6051 = Class9361.<Byte>method35441(Class1100.class, Class7784.field33390);
+   public static final DataParameter<Byte> field6051 = EntityDataManager.<Byte>method35441(Class1100.class, Class7784.field33390);
    private Class1006 field6052;
    private BlockPos field6053;
    private boolean field6054;
@@ -24,9 +24,9 @@ public class Class1100 extends Class1009 {
 
    @Override
    public void tick() {
-      this.field5052 = true;
+      this.noClip = true;
       super.tick();
-      this.field5052 = false;
+      this.noClip = false;
       this.method3248(true);
       if (this.field6054 && --this.field6055 <= 0) {
          this.field6055 = 20;
@@ -52,9 +52,9 @@ public class Class1100 extends Class1009 {
    }
 
    @Override
-   public void method2850() {
-      super.method2850();
-      this.field5063.method35442(field6051, (byte)0);
+   public void registerData() {
+      super.registerData();
+      this.dataManager.register(field6051, (byte)0);
    }
 
    @Override
@@ -97,19 +97,19 @@ public class Class1100 extends Class1009 {
    }
 
    private boolean method5273(int var1) {
-      int var4 = this.field5063.<Byte>method35445(field6051);
+      int var4 = this.dataManager.<Byte>method35445(field6051);
       return (var4 & var1) != 0;
    }
 
    private void method5274(int var1, boolean var2) {
-      int var5 = this.field5063.<Byte>method35445(field6051);
+      int var5 = this.dataManager.<Byte>method35445(field6051);
       if (!var2) {
          var5 &= ~var1;
       } else {
          var5 |= var1;
       }
 
-      this.field5063.method35446(field6051, (byte)(var5 & 0xFF));
+      this.dataManager.method35446(field6051, (byte)(var5 & 0xFF));
    }
 
    public boolean method5275() {
@@ -165,7 +165,7 @@ public class Class1100 extends Class1009 {
 
    // $VF: synthetic method
    public static Random method5279(Class1100 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
@@ -185,22 +185,22 @@ public class Class1100 extends Class1009 {
 
    // $VF: synthetic method
    public static Random method5283(Class1100 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5284(Class1100 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5285(Class1100 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method
    public static Random method5286(Class1100 var0) {
-      return var0.field5054;
+      return var0.rand;
    }
 
    // $VF: synthetic method

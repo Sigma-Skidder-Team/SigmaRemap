@@ -4,8 +4,8 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.util.UUID;
 
-public interface Class909 {
-   Class909 field5189 = new Class910();
+public interface ICommandSource {
+   ICommandSource field5189 = new Class910();
 
    void sendMessage(ITextComponent var1, UUID var2);
 

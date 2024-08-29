@@ -2,9 +2,9 @@ package mapped;
 
 public class Class3287 extends Item {
    private static String[] field18797;
-   private final Class7631 field18798;
+   private final Fluid field18798;
 
-   public Class3287(Class7631 var1, Class5643 var2) {
+   public Class3287(Fluid var1, Class5643 var2) {
       super(var2);
       this.field18798 = var1;
    }
@@ -26,7 +26,7 @@ public class Class3287 extends Item {
             } else if (this.field18798 == Class9479.field44064) {
                BlockState var15 = var1.getBlockState(var9);
                if (var15.getBlock() instanceof Class3405) {
-                  Class7631 var16 = ((Class3405)var15.getBlock()).method11533(var1, var9, var15);
+                  Fluid var16 = ((Class3405)var15.getBlock()).method11533(var1, var9, var15);
                   if (var16 != Class9479.field44064) {
                      var2.method2913(Class8876.field40098.method172(this));
                      var2.method2863(!var16.method25067(Class8953.field40470) ? Sounds.field26429 : Sounds.field26431, 1.0F, 1.0F);

@@ -6,46 +6,46 @@ public class Class3436 extends Class3433 {
    private static String[] field19210;
    public static final Class8552<Class180> field19211 = Class8820.field39769;
    public static final Class8551 field19212 = Class8820.field39705;
-   public static final Class6408 field19213 = Block.method11539(12.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19214 = Block.method11539(0.0, 0.0, 0.0, 4.0, 16.0, 16.0);
-   public static final Class6408 field19215 = Block.method11539(0.0, 0.0, 12.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19216 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 4.0);
-   public static final Class6408 field19217 = Block.method11539(0.0, 12.0, 0.0, 16.0, 16.0, 16.0);
-   public static final Class6408 field19218 = Block.method11539(0.0, 0.0, 0.0, 16.0, 4.0, 16.0);
-   public static final Class6408 field19219 = Block.method11539(6.0, -4.0, 6.0, 10.0, 12.0, 10.0);
-   public static final Class6408 field19220 = Block.method11539(6.0, 4.0, 6.0, 10.0, 20.0, 10.0);
-   public static final Class6408 field19221 = Block.method11539(6.0, 6.0, -4.0, 10.0, 10.0, 12.0);
-   public static final Class6408 field19222 = Block.method11539(6.0, 6.0, 4.0, 10.0, 10.0, 20.0);
-   public static final Class6408 field19223 = Block.method11539(-4.0, 6.0, 6.0, 12.0, 10.0, 10.0);
-   public static final Class6408 field19224 = Block.method11539(4.0, 6.0, 6.0, 20.0, 10.0, 10.0);
-   public static final Class6408 field19225 = Block.method11539(6.0, 0.0, 6.0, 10.0, 12.0, 10.0);
-   public static final Class6408 field19226 = Block.method11539(6.0, 4.0, 6.0, 10.0, 16.0, 10.0);
-   public static final Class6408 field19227 = Block.method11539(6.0, 6.0, 0.0, 10.0, 10.0, 12.0);
-   public static final Class6408 field19228 = Block.method11539(6.0, 6.0, 4.0, 10.0, 10.0, 16.0);
-   public static final Class6408 field19229 = Block.method11539(0.0, 6.0, 6.0, 12.0, 10.0, 10.0);
-   public static final Class6408 field19230 = Block.method11539(4.0, 6.0, 6.0, 16.0, 10.0, 10.0);
-   private static final Class6408[] field19231 = method12106(true);
-   private static final Class6408[] field19232 = method12106(false);
+   public static final VoxelShape field19213 = Block.method11539(12.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field19214 = Block.method11539(0.0, 0.0, 0.0, 4.0, 16.0, 16.0);
+   public static final VoxelShape field19215 = Block.method11539(0.0, 0.0, 12.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field19216 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 4.0);
+   public static final VoxelShape field19217 = Block.method11539(0.0, 12.0, 0.0, 16.0, 16.0, 16.0);
+   public static final VoxelShape field19218 = Block.method11539(0.0, 0.0, 0.0, 16.0, 4.0, 16.0);
+   public static final VoxelShape field19219 = Block.method11539(6.0, -4.0, 6.0, 10.0, 12.0, 10.0);
+   public static final VoxelShape field19220 = Block.method11539(6.0, 4.0, 6.0, 10.0, 20.0, 10.0);
+   public static final VoxelShape field19221 = Block.method11539(6.0, 6.0, -4.0, 10.0, 10.0, 12.0);
+   public static final VoxelShape field19222 = Block.method11539(6.0, 6.0, 4.0, 10.0, 10.0, 20.0);
+   public static final VoxelShape field19223 = Block.method11539(-4.0, 6.0, 6.0, 12.0, 10.0, 10.0);
+   public static final VoxelShape field19224 = Block.method11539(4.0, 6.0, 6.0, 20.0, 10.0, 10.0);
+   public static final VoxelShape field19225 = Block.method11539(6.0, 0.0, 6.0, 10.0, 12.0, 10.0);
+   public static final VoxelShape field19226 = Block.method11539(6.0, 4.0, 6.0, 10.0, 16.0, 10.0);
+   public static final VoxelShape field19227 = Block.method11539(6.0, 6.0, 0.0, 10.0, 10.0, 12.0);
+   public static final VoxelShape field19228 = Block.method11539(6.0, 6.0, 4.0, 10.0, 10.0, 16.0);
+   public static final VoxelShape field19229 = Block.method11539(0.0, 6.0, 6.0, 12.0, 10.0, 10.0);
+   public static final VoxelShape field19230 = Block.method11539(4.0, 6.0, 6.0, 16.0, 10.0, 10.0);
+   private static final VoxelShape[] field19231 = method12106(true);
+   private static final VoxelShape[] field19232 = method12106(false);
 
-   private static Class6408[] method12106(boolean var0) {
-      return Arrays.<Direction>stream(Direction.values()).<Class6408>map(var1 -> method12107(var1, var0)).<Class6408>toArray(Class6408[]::new);
+   private static VoxelShape[] method12106(boolean var0) {
+      return Arrays.<Direction>stream(Direction.values()).<VoxelShape>map(var1 -> method12107(var1, var0)).<VoxelShape>toArray(VoxelShape[]::new);
    }
 
-   private static Class6408 method12107(Direction var0, boolean var1) {
+   private static VoxelShape method12107(Direction var0, boolean var1) {
       switch (Class7528.field32314[var0.ordinal()]) {
          case 1:
          default:
-            return Class8022.method27431(field19218, var1 ? field19226 : field19220);
+            return VoxelShapes.method27431(field19218, var1 ? field19226 : field19220);
          case 2:
-            return Class8022.method27431(field19217, var1 ? field19225 : field19219);
+            return VoxelShapes.method27431(field19217, var1 ? field19225 : field19219);
          case 3:
-            return Class8022.method27431(field19216, var1 ? field19228 : field19222);
+            return VoxelShapes.method27431(field19216, var1 ? field19228 : field19222);
          case 4:
-            return Class8022.method27431(field19215, var1 ? field19227 : field19221);
+            return VoxelShapes.method27431(field19215, var1 ? field19227 : field19221);
          case 5:
-            return Class8022.method27431(field19214, var1 ? field19230 : field19224);
+            return VoxelShapes.method27431(field19214, var1 ? field19230 : field19224);
          case 6:
-            return Class8022.method27431(field19213, var1 ? field19229 : field19223);
+            return VoxelShapes.method27431(field19213, var1 ? field19229 : field19223);
       }
    }
 
@@ -66,7 +66,7 @@ public class Class3436 extends Class3433 {
    }
 
    @Override
-   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return (!var1.<Boolean>method23463(field19212) ? field19232 : field19231)[var1.<Direction>method23463(field19198).ordinal()];
    }
 

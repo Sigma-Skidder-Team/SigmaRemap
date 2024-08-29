@@ -15,14 +15,14 @@ public class Class2623 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if (this.field16916 <= this.field16917.field5055
+      if (this.field16916 <= this.field16917.ticksExisted
          && !this.field16917.method3005()
          && !this.field16917.method3250()
          && this.field16917.method5230()
          && this.field16917.method5186() <= 0) {
          List var3 = this.field16917
             .world
-            .<ItemEntity>method6772(ItemEntity.class, this.field16917.method3389().method19663(6.0, 6.0, 6.0), Class1097.method5243());
+            .<ItemEntity>method6772(ItemEntity.class, this.field16917.getBoundingBox().method19663(6.0, 6.0, 6.0), Class1097.method5243());
          return !var3.isEmpty() || !this.field16917.method2943(Class2106.field13731).isEmpty();
       } else {
          return false;
@@ -47,7 +47,7 @@ public class Class2623 extends Class2595 {
    public void method10804() {
       List var3 = this.field16917
          .world
-         .<ItemEntity>method6772(ItemEntity.class, this.field16917.method3389().method19663(8.0, 8.0, 8.0), Class1097.method5243());
+         .<ItemEntity>method6772(ItemEntity.class, this.field16917.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1097.method5243());
       if (!var3.isEmpty() && this.field16917.method2943(Class2106.field13731).isEmpty()) {
          this.field16917.method4230().method21655((Entity)var3.get(0), 1.2F);
       } else if (!this.field16917.method2943(Class2106.field13731).isEmpty()) {
@@ -66,7 +66,7 @@ public class Class2623 extends Class2595 {
          int var4 = !this.field16917.method5210()
             ? Class1097.method5248(this.field16917).nextInt(150) + 10
             : Class1097.method5247(this.field16917).nextInt(50) + 10;
-         this.field16916 = this.field16917.field5055 + var4 * 20;
+         this.field16916 = this.field16917.ticksExisted + var4 * 20;
       }
 
       this.field16917.method5190(false);
