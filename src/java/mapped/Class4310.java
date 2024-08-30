@@ -23,9 +23,9 @@ public class Class4310 extends Class4307 {
    private int field20966 = 0;
    private int field20967 = 0;
    private boolean field20968 = true;
-   public Class4327 field20969;
+   public MainmenuScreen2 field20969;
    public ChangelogScreen field20970;
-   public Class4329 field20971;
+   public RedeemKeyScreen field20971;
    public Animation field20972 = new Animation(200, 200, Direction.BACKWARDS);
    public Animation field20973 = new Animation(200, 200, Direction.BACKWARDS);
    private Animation field20974 = new Animation(325, 325);
@@ -92,9 +92,9 @@ public class Class4310 extends Class4307 {
          this.field20977.add(new Class4306(this, Integer.toString(var5), var6, var7, var8, var9, var10));
       }
 
-      this.method13230(this.field20969 = new Class4327(this, "main", 0, 0, this.field20897, this.field20898));
+      this.method13230(this.field20969 = new MainmenuScreen2(this, "main", 0, 0, this.field20897, this.field20898));
       this.method13230(this.field20970 = new ChangelogScreen(this, "changelog", 0, 0, this.field20897, this.field20898));
-      this.method13230(this.field20971 = new Class4329(this, "redeem", 0, 0, this.field20897, this.field20898));
+      this.method13230(this.field20971 = new RedeemKeyScreen(this, "redeem", 0, 0, this.field20897, this.field20898));
       this.field20970.method13296(false);
       this.field20970.method13294(true);
       this.field20971.method13296(false);

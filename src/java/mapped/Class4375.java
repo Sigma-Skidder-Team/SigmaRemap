@@ -35,9 +35,9 @@ public class Class4375 extends Class4247 {
       this.method13292(true);
       this.method13300(false);
       this.method13712();
-      Class4274 var9;
+      UIButton var9;
       this.method13230(
-         var9 = new Class4274(
+         var9 = new UIButton(
             this,
             "addButton",
             this.field20897 - 70,

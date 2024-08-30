@@ -52,12 +52,11 @@ public class ClientWebsocket extends Class344 {
 
     @Override
     public void method1760(int var1, String var2, boolean var3) {
-        this.field1543.method20284();
+
     }
 
     @Override
     public void method1761(Exception var1) {
         var1.printStackTrace();
-        this.field1543.method20284();
     }
 }

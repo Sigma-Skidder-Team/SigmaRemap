@@ -17,17 +17,17 @@ public class Class4272 extends Class4247 {
 
    public Class4272(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, 0, Class6387.field27961, false);
-      Class4274 var9;
+      UIButton var9;
       this.method13230(
-         var9 = new Class4274(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.method23942("Blank"), 30, Class6387.field27961, "Blank", ResourceRegistry.JelloLightFont20)
+         var9 = new UIButton(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.method23942("Blank"), 30, Class6387.field27961, "Blank", ResourceRegistry.JelloLightFont20)
       );
       var9.method13251((var1x, var2x) -> {
          Class4357 var5x = (Class4357)this.method13258();
          var5x.method13612();
       });
-      Class4274 var10;
+      UIButton var10;
       this.method13230(
-         var10 = new Class4274(
+         var10 = new UIButton(
             this,
             "dupeButton",
             var5 - 25 - ResourceRegistry.JelloLightFont20.method23942("Duplicate"),

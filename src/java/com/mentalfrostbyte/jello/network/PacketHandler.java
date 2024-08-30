@@ -17,43 +17,47 @@ import java.util.List;
 import java.util.Map;
 
 public class PacketHandler {
+
+    private boolean thing = false;
+
     @Handler
     private void method35031(boolean var1, Class7232 var2, boolean var3, boolean var4) {
-        WebsocketManager var7 = Client.getInstance().getWebsocketManager();
-        if (var7.field29206 == null) {
+        if (!thing) {
+
             while (!Class6715.field29434) {
                 try {
                     Thread.sleep(999L);
-                } catch (InterruptedException var21) {
-                    var21.printStackTrace();
+                } catch (InterruptedException interruptedException) {
+                    throw new RuntimeException(interruptedException);
                 }
             }
 
-            var7.field29206 = var2;
+            thing = true;
+
             if (var2 instanceof Class7234) {
-                for (Object var9 : Class6715.field29433) {
+                for (Object object : Class6715.field29433) {
                     boolean var10 = false;
 
-                    for (Class var11 = var9.getClass(); var11 != null; var11 = var11.getSuperclass()) {
-                        for (Method var15 : var11.getDeclaredMethods()) {
-                            if (Client.getInstance().getEventManager().isEventMethod(var15)) {
-                                var15.setAccessible(true);
-                                Priority var16 = Client.getInstance().getEventManager().getMethodPriority(var15);
-                                Class var17 = var15.getParameterTypes()[0];
-                                MethodWrapper var18 = new MethodWrapper(var9, var11, var15, var16);
+                    for (Class declaredMethods = object.getClass(); declaredMethods != null; declaredMethods = declaredMethods.getSuperclass()) {
+                        for (Method method : declaredMethods.getDeclaredMethods()) {
+                            if (Client.getInstance().getEventManager().isEventMethod(method)) {
+                                method.setAccessible(true);
+                                Priority methodPriority = Client.getInstance().getEventManager().getMethodPriority(method);
+                                Class parameterType = method.getParameterTypes()[0];
+                                MethodWrapper methodWrapper = new MethodWrapper(object, declaredMethods, method, methodPriority);
                                 Map<Class<? extends Event>, List<MethodWrapper>> var19 = Client.getInstance()
                                         .getEventManager()
                                         .field31402
-                                        .getOrDefault(var11, new HashMap<>());
+                                        .getOrDefault(declaredMethods, new HashMap<>());
 
-                                List<MethodWrapper> var20 = var19.get(var17);
+                                List<MethodWrapper> var20 = var19.get(parameterType);
                                 if (var20 == null) {
-                                    var19.put(var17, var20 = new ArrayList());
+                                    var19.put(parameterType, var20 = new ArrayList());
                                 }
 
-                                var20.add(var18);
-                                var19.put(var17, var20);
-                                Client.getInstance().getEventManager().field31402.put(var11, var19);
+                                var20.add(methodWrapper);
+                                var19.put(parameterType, var20);
+                                Client.getInstance().getEventManager().field31402.put(declaredMethods, var19);
                             }
                         }
                     }

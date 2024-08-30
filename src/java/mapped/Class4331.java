@@ -11,12 +11,12 @@ public class Class4331 extends Class4305 {
       this.method13300(false);
       Class6387 var9 = Class6387.field27961.method19415();
       var9.method19406(ClientColors.LIGHT_GREYISH_BLUE.getColor);
-      Class4274 var10;
-      this.method13230(var10 = new Class4274(this, "openKeybinds", var5 / 2 - 300, var6 - 80, 300, 38, var9, "Open Keybind Manager", ResourceRegistry.JelloLightFont24));
-      Class4274 var11;
-      this.method13230(var11 = new Class4274(this, "openGui", var5 / 2, var6 - 80, 300, 38, var9, "Open Jello's Click GUI", ResourceRegistry.JelloLightFont24));
-      Class4274 var12;
-      this.method13230(var12 = new Class4274(this, "credits", var5 / 2 - 100, var6 - 280, 200, 38, var9, "Credits", ResourceRegistry.JelloLightFont18));
+      UIButton var10;
+      this.method13230(var10 = new UIButton(this, "openKeybinds", var5 / 2 - 300, var6 - 80, 300, 38, var9, "Open Keybind Manager", ResourceRegistry.JelloLightFont24));
+      UIButton var11;
+      this.method13230(var11 = new UIButton(this, "openGui", var5 / 2, var6 - 80, 300, 38, var9, "Open Jello's Click GUI", ResourceRegistry.JelloLightFont24));
+      UIButton var12;
+      this.method13230(var12 = new UIButton(this, "credits", var5 / 2 - 100, var6 - 280, 200, 38, var9, "Credits", ResourceRegistry.JelloLightFont18));
       var10.method13251((var0, var1x) -> Class4325.method13438(new Class1144(new StringTextComponent("Keybind Manager"))));
       var11.method13251((var0, var1x) -> Class4325.method13438(new Class1145(new StringTextComponent("Click GUI"))));
       var12.method13251((var0, var1x) -> Class4325.method13438(new Class1133(new StringTextComponent("GuiCredits"))));

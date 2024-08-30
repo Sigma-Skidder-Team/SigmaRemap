@@ -8,15 +8,15 @@ import java.util.logging.Logger;
 public interface Class8006<T> {
    Logger method27366();
 
-   String method27350();
+   String getClientName();
 
-   String method27351();
+   String getType();
 
    default boolean method27374() {
       return false;
    }
 
-   String method27352();
+   String getVersion();
 
    Class8411 method27353(Runnable var1);
 

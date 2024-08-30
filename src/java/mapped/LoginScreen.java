@@ -12,9 +12,9 @@ public class LoginScreen extends Class4247 {
    private Class4281 field21353;
    private Class4281 field21354;
    private Class4281 field21355;
-   private Class4274 field21356;
-   private Class4274 field21357;
-   private Class4274 field21358;
+   private UIButton field21356;
+   private UIButton field21357;
+   private UIButton field21358;
    private Class4285 field21359;
    public static int field21360 = 334;
    public static int field21361 = 571;
@@ -35,17 +35,17 @@ public class LoginScreen extends Class4247 {
          )
       );
       this.method13230(
-         this.field21356 = new Class4274(
+         this.field21356 = new UIButton(
             this, "LoginButton", 468, 238, ResourceRegistry.JelloLightFont25.method23942("Login"), 70, Class6387.field27961, "Login", ResourceRegistry.JelloLightFont25
          )
       );
       this.method13230(
-         this.field21357 = new Class4274(
+         this.field21357 = new UIButton(
             this, "RegisterButton", 88, 250, ResourceRegistry.JelloLightFont14.method23942("Register"), 14, Class6387.field27961, "Register", ResourceRegistry.JelloLightFont14
          )
       );
       this.method13230(
-         this.field21358 = new Class4274(
+         this.field21358 = new UIButton(
             this,
             "ForgotButton",
             60,
@@ -77,7 +77,7 @@ public class LoginScreen extends Class4247 {
          Class4322 var5x = (Class4322)this.method13258();
          var5x.method13422();
       });
-      this.field21358.method13251((var0, var1x) -> Util.getOSType().method8181("https://sigmaclient.info/pwdreset.php"));
+      this.field21358.method13251((var0, var1x) -> Util.getOSType().method8181("https://sigma-web-alpha.vercel.app/"));
    }
 
    @Override

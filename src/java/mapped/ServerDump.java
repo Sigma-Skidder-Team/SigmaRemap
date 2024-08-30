@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Map;
 
-public class Class6258 extends Class6255 {
+public class ServerDump extends Class6255 {
    @Override
    public String method19220() {
       return "dump";
@@ -20,9 +20,9 @@ public class Class6258 extends Class6255 {
          System.getProperty("os.name"),
          Class9019.field41258,
          Class9019.method33359(),
-         Class8042.method27613().method27350(),
-         Class8042.method27613().method27351(),
-         Class8042.method27613().method27352(),
+         Class8042.method27613().getClientName(),
+         Class8042.method27613().getType(),
+         Class8042.method27613().getVersion(),
          Class9191.class.getPackage().getImplementationVersion(),
          Class8042.method27614().method34430()
       );
@@ -37,7 +37,7 @@ public class Class6258 extends Class6255 {
    }
 
    // $VF: synthetic method
-   public static String method19229(Class6258 var0, String var1) {
+   public static String method19229(ServerDump var0, String var1) {
       return var0.method19228(var1);
    }
 }

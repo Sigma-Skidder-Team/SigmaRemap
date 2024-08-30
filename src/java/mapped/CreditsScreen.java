@@ -7,13 +7,13 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class Class4319 extends Class4307 {
+public class CreditsScreen extends Class4307 {
    private float field21072 = 0.0F;
    private int field21073 = 0;
    private int field21074 = 0;
    private boolean field21075 = true;
 
-   public Class4319() {
+   public CreditsScreen() {
       super("Credits");
       this.method13300(false);
    }

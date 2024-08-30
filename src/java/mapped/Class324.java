@@ -16,9 +16,9 @@ public class Class324 implements Runnable {
    public final Class9150 field1396;
    public final Class7133 field1397;
    public final Class7801 field1398;
-   public final Class6258 field1399;
+   public final ServerDump field1399;
 
-   public Class324(Class6258 var1, Class9150 var2, Class7133 var3, Class7801 var4) {
+   public Class324(ServerDump var1, Class9150 var2, Class7133 var3, Class7801 var4) {
       this.field1399 = var1;
       this.field1396 = var2;
       this.field1397 = var3;
@@ -61,7 +61,7 @@ public class Class324 implements Runnable {
             .method34169(
                Class2307.field15777
                   + "We've made a dump with useful information, report your issue and provide this url: "
-                  + Class6258.method19229(this.field1399, var6.get("key").getAsString())
+                  + ServerDump.method19229(this.field1399, var6.get("key").getAsString())
             );
       } catch (Exception var9) {
          this.field1396.method34169(Class2307.field15779 + "Failed to dump, please check the console for more information");

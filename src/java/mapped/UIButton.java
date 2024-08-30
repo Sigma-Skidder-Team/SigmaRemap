@@ -7,11 +7,11 @@ import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
-public class Class4274 extends Class4247 {
+public class UIButton extends Class4247 {
    private static String[] field20602;
    public Animation field20711 = new Animation(190, 190);
 
-   public Class4274(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8, ClientResource var9) {
+   public UIButton(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8, ClientResource var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
       int var12 = (int)(210.0 * Math.sqrt((double)((float)var5 / 242.0F)));
       this.field20711 = new Animation(var12, var12);

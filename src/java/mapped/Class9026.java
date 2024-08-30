@@ -32,7 +32,7 @@ public class Class9026 implements Class9027<ClientPlayerEntity> {
 
    @Override
    public String method33417() {
-      return Class8042.method27613().method27352();
+      return Class8042.method27613().getVersion();
    }
 
    public void method33418(UUID var1, ByteBuf var2) throws IllegalArgumentException {

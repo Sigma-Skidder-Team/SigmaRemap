@@ -22,7 +22,7 @@ public abstract class Class6852<T> {
 
    @Deprecated
    public Class6852 method20869(T var1) {
-      throw new UnsupportedOperationException("This method is not implemented for the platform " + Class8042.method27613().method27350());
+      throw new UnsupportedOperationException("This method is not implemented for the platform " + Class8042.method27613().getClientName());
    }
 
    public abstract Class6852 method20870(UUID var1);
@@ -31,12 +31,12 @@ public abstract class Class6852<T> {
 
    @Deprecated
    public Class6852 method20872(T... var1) {
-      throw new UnsupportedOperationException("This method is not implemented for the platform " + Class8042.method27613().method27350());
+      throw new UnsupportedOperationException("This method is not implemented for the platform " + Class8042.method27613().getClientName());
    }
 
    @Deprecated
    public Class6852 method20873(T var1) {
-      throw new UnsupportedOperationException("This method is not implemented for the platform " + Class8042.method27613().method27350());
+      throw new UnsupportedOperationException("This method is not implemented for the platform " + Class8042.method27613().getClientName());
    }
 
    public abstract Class6852 method20874(UUID var1);

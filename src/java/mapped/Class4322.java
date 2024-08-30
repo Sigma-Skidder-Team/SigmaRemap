@@ -22,7 +22,7 @@ public class Class4322 extends Class4307 {
    private LoginScreen field21088;
    private Class4275 field21089;
    private Class4354 field21090;
-   private Class4274 field21091;
+   private UIButton field21091;
    private boolean field21092 = false;
    private Animation field21093 = new Animation(250, 250, Direction.BACKWARDS);
 
@@ -52,7 +52,7 @@ public class Class4322 extends Class4307 {
       );
       this.method13423();
       this.method13230(
-         this.field21091 = new Class4274(
+         this.field21091 = new UIButton(
             this,
             "continue",
             this.field20897 / 2 - 120,

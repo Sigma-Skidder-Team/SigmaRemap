@@ -28,11 +28,11 @@ public class NetworkManager {
     }
 
     public String method30448(String var1, String var2, String var3, Class9507 var4) {
-        return "Unexpected error";
+        return "register #1";
     }
 
     public String method30451(String var1, Class9507 var2) {
-        return "Unexpected error";
+        return "register #2";
     }
 
     public Class9507 method30452() {

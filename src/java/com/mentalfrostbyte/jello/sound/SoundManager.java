@@ -2,7 +2,11 @@ package com.mentalfrostbyte.jello.sound;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.advanced.AdvancedPlayer;
 
+import javax.sound.sampled.*;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 
@@ -17,18 +21,22 @@ public class SoundManager {
         if (!VALID_SOUNDS.contains(url)) {
             Client.getInstance().getLogger().warn("Invalid audio file attempted to be played: " + url);
         } else {
-            InputStream var4 = ResourcesDecrypter.readInputStream("com/mentalfrostbyte/gui/resources/audio/" + url + fileType);
-            if (SOUNDS.containsKey(url) && SOUNDS.get(url).method10520()) {
-                SOUNDS.get(url).method10518(var4);
-                SOUNDS.get(url).method10521();
-            } else {
-                if (SOUNDS.containsKey(url)) {
-                    SOUNDS.get(url).method10539();
-                }
+            try {
+                InputStream audioStream = ResourcesDecrypter.readInputStream("com/mentalfrostbyte/gui/resources/audio/" + url + fileType);
 
-                Sound var5 = new Sound(var4);
-                SOUNDS.put(url, var5);
-                var5.method10521();
+                AdvancedPlayer player = new AdvancedPlayer(audioStream);
+                new Thread(() -> {
+                    try {
+                        player.play();
+                    } catch (JavaLayerException e) {
+                        Client.getInstance().getLogger().error("Error playing audio file: " + url + " : " + e.getMessage());
+                    }
+                }).start();
+
+                Sound sound = new Sound(audioStream);
+                SOUNDS.put(url, sound);
+            } catch (JavaLayerException e) {
+                Client.getInstance().getLogger().error("Unsupported audio file: " + url + " : " + e.getMessage());
             }
         }
     }

@@ -60,7 +60,6 @@ public class Client {
     private Class8480 field28981;
     private Class8402 field28982;
     private NetworkManager networkManager;
-    private WebsocketManager websocketManager;
     private SoundManager soundManager;
     private NotificationManager notificationManager;
     private Class8996 field28987;
@@ -103,8 +102,6 @@ public class Client {
         ResourcesDecrypter.decrypt();
         this.networkManager = new NetworkManager();
         this.networkManager.init();
-        this.websocketManager = new WebsocketManager();
-        this.websocketManager.method20281();
         this.guiManager = new GuiManager();
         this.friendManager = new FriendManager();
         this.friendManager.method26995();
@@ -344,10 +341,6 @@ public class Client {
 
     public NetworkManager getNetworkManager() {
         return this.networkManager;
-    }
-
-    public WebsocketManager getWebsocketManager() {
-        return this.websocketManager;
     }
 
     public CommandManager getCommandManager() {

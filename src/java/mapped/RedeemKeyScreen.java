@@ -9,20 +9,20 @@ import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import totalcross.json.JSONArray;
 
-public class Class4329 extends Class4305 {
+public class RedeemKeyScreen extends Class4305 {
    public String field21135 = "";
    public Animation field21136 = new Animation(380, 200, Direction.BACKWARDS);
    private static JSONArray field21137;
    private Class4281 field21138;
 
-   public Class4329(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public RedeemKeyScreen(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.method13300(false);
       Class4281 var9;
       this.method13230(var9 = new Class4281(this, "redeemBox", 100, 200, 350, 50, Class4281.field20742, "", "Premium Code"));
-      Class4274 var10;
+      UIButton var10;
       this.method13230(
-         var10 = new Class4274(
+         var10 = new UIButton(
             this,
             "redeembtn",
             100,

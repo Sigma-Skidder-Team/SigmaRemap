@@ -38,7 +38,7 @@ public class Class5994 {
 
    @Nullable
    private static String method18598(boolean var0) {
-      if (Class8042.method27613().method27352().equals("${project.version}")) {
+      if (Class8042.method27613().getVersion().equals("${project.version}")) {
          return "You are using a debug/custom version, consider updating.";
       } else {
          String var3 = method18599();
@@ -47,7 +47,7 @@ public class Class5994 {
          } else {
             Class2025 var4;
             try {
-               var4 = new Class2025(Class8042.method27613().method27352());
+               var4 = new Class2025(Class8042.method27613().getVersion());
             } catch (IllegalArgumentException var6) {
                return "You are using a custom version, consider updating.";
             }
@@ -72,7 +72,7 @@ public class Class5994 {
          URL var2 = new URL("https://api.spiget.org/v2/resources/19254/versions/latest?" + System.currentTimeMillis());
          HttpURLConnection var3 = (HttpURLConnection)var2.openConnection();
          var3.setUseCaches(true);
-         var3.addRequestProperty("User-Agent", "ViaVersion " + Class8042.method27613().method27352() + " " + Class8042.method27613().method27350());
+         var3.addRequestProperty("User-Agent", "ViaVersion " + Class8042.method27613().getVersion() + " " + Class8042.method27613().getClientName());
          var3.setDoOutput(true);
          BufferedReader var4 = new BufferedReader(new InputStreamReader(var3.getInputStream()));
          StringBuilder var5 = new StringBuilder();

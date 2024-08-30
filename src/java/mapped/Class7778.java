@@ -105,7 +105,7 @@ public abstract class Class7778 implements Class7779 {
       if (var4.isEmpty()) {
          var1.method34169(method25775("&cYou are not allowed to use these commands!"));
       } else {
-         var1.method34169(method25775("&aViaVersion &c" + Class8042.method27613().method27352()));
+         var1.method34169(method25775("&aViaVersion &c" + Class8042.method27613().getVersion()));
          var1.method34169(method25775("&6Commands:"));
 
          for (Class6255 var6 : var4) {
@@ -136,7 +136,7 @@ public abstract class Class7778 implements Class7779 {
       this.method25766(new Class6259());
       this.method25766(new Class6260());
       this.method25766(new Class6262());
-      this.method25766(new Class6258());
+      this.method25766(new ServerDump());
       this.method25766(new Class6256());
       this.method25766(new Class6263());
       this.method25766(new Class6261());

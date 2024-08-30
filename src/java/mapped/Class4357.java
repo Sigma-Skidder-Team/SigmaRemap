@@ -23,9 +23,9 @@ public class Class4357 extends Class4247 {
       this.field21298 = new Animation(300, 100);
       this.method13292(true);
       this.method13300(false);
-      Class4274 var7;
+      UIButton var7;
       this.method13230(
-         var7 = new Class4274(
+         var7 = new UIButton(
             this, "addButton", this.field20897 - 55, 0, ResourceRegistry.JelloLightFont25.method23942("Add"), 69, Class6387.field27961, "+", ResourceRegistry.JelloLightFont25
          )
       );

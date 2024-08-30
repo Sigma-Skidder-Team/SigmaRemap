@@ -17,7 +17,7 @@ public class Class4317 extends Class4307 {
    private float field21051;
    private float field21052 = 0.75F;
    private boolean field21053 = true;
-   public Class4274 field21054;
+   public UIButton field21054;
    private Class4344 field21055;
    private Class4354 field21056;
    private Class4354 field21057;

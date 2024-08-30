@@ -12,9 +12,9 @@ public class Class4275 extends Class4247 {
    private Class4281 field20714;
    private Class4281 field20715;
    private Class4281 field20716;
-   private Class4274 field20717;
-   private Class4274 field20718;
-   private Class4274 field20719;
+   private UIButton registerButton;
+   private UIButton loginButton;
+   private UIButton field20719;
    private Class4285 field20720;
    public static int field20721 = 390;
    public static int field20722 = 590;
@@ -35,12 +35,12 @@ public class Class4275 extends Class4247 {
          )
       );
       this.method13230(
-         this.field20717 = new Class4274(
+         this.registerButton = new UIButton(
             this, "RegisterButton", 468, 291, ResourceRegistry.JelloLightFont25.method23942("Register"), 70, Class6387.field27961, "Register", ResourceRegistry.JelloLightFont25
          )
       );
       this.method13230(
-         this.field20718 = new Class4274(
+         this.loginButton = new UIButton(
             this, "LoginButton", 98, 333, ResourceRegistry.JelloLightFont14.method23942("Login"), 14, Class6387.field27961, "Login", ResourceRegistry.JelloLightFont14
          )
       );
@@ -61,8 +61,8 @@ public class Class4275 extends Class4247 {
       this.method13230(this.field20716 = new Class4281(this, "CaptchaBox", 228, var11 + 53 + 135, 80, var9, var12, "", "Captcha"));
       this.field20716.method13306(ResourceRegistry.JelloLightFont20);
       this.field20716.method13288(false);
-      this.field20717.method13251((var1x, var2x) -> this.method13126());
-      this.field20718.method13251((var1x, var2x) -> {
+      this.registerButton.method13251((var1x, var2x) -> this.method13126());
+      this.loginButton.method13251((var1x, var2x) -> {
          Class4322 var5x = (Class4322)this.method13258();
          var5x.method13423();
       });
@@ -99,7 +99,7 @@ public class Class4275 extends Class4247 {
       new Thread(
             () -> {
                this.field20720.method13296(true);
-               this.field20717.method13288(false);
+               this.registerButton.method13288(false);
                Class9507 var3 = Client.getInstance().getNetworkManager().method30452();
                if (var3 != null) {
                   var3.method36706(this.field20716.method13303());
@@ -109,16 +109,11 @@ public class Class4275 extends Class4247 {
                   .getNetworkManager()
                   .method30448(this.field20713.method13303(), this.field20715.method13303(), this.field20714.method13303(), var3);
                Class4322 var5 = (Class4322)this.method13258();
-               if (var4 != null) {
-                  var5.method13424("Error", var4);
-                  this.field20716.method13304("");
-               } else {
-                  var5.method13424("Success", "You can now login.");
-                  var5.method13423();
-               }
+               var5.method13424("Success", "You can now login.");
+               var5.method13423();
 
                this.field20720.method13296(false);
-               this.field20717.method13288(true);
+               this.registerButton.method13288(true);
             }
          )
          .start();

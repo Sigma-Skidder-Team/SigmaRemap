@@ -25,7 +25,7 @@ public class Class4313 extends Class4307 {
    private float field21006;
    private float field21007 = 0.75F;
    private boolean field21008 = true;
-   public Class4274 field21009;
+   public UIButton field21009;
    private Class4339 field21010;
    private Class4339 field21011;
    private Class4354 field21012;
@@ -38,7 +38,7 @@ public class Class4313 extends Class4307 {
    public AccountManager accountManager = Client.getInstance().getAccountManager();
    private Texture field21020;
    private float field21021;
-   private Class4274 field21022;
+   private UIButton field21022;
    private Class2209 field21023 = Class2209.field14448;
    private String field21024 = "";
    private boolean field21025 = false;
@@ -164,7 +164,7 @@ public class Class4313 extends Class4307 {
       );
       this.field21026.method13306(ResourceRegistry.JelloLightFont18);
       this.field21026.method13151(var1 -> this.method13372(false));
-      this.method13230(this.field21022 = new Class4274(this, "btnt", this.method13267() - 90, 43, 70, 30, Class6387.field27961, "Add +", ResourceRegistry.JelloLightFont25));
+      this.method13230(this.field21022 = new UIButton(this, "btnt", this.method13267() - 90, 43, 70, 30, Class6387.field27961, "Add +", ResourceRegistry.JelloLightFont25));
       this.field21010.method13242();
       this.field21022.method13251((var1, var2) -> {
          if (this.method13369()) {

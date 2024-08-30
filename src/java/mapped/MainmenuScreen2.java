@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.Minecraft;
 
-public class Class4327 extends Class4305 {
+public class MainmenuScreen2 extends Class4305 {
    private final Class4240 field21123;
    private final Class4240 field21124;
    private final Class4240 field21125;
@@ -20,11 +20,11 @@ public class Class4327 extends Class4305 {
    private final Class4287 field21129;
    private final Class4287 field21130;
    private final Class4365 field21131;
-   private final Class4274 field21132;
-   private final Class4274 field21133;
+   private final UIButton field21132;
+   private final UIButton field21133;
    public int field21134 = 0;
 
-   public Class4327(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public MainmenuScreen2(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.method13300(false);
       boolean var9 = false;
@@ -123,12 +123,12 @@ public class Class4327 extends Class4305 {
       this.field21130.field20779 = true;
       this.field21129.field20779 = true;
       this.method13230(
-         this.field21132 = new Class4274(
+         this.field21132 = new UIButton(
             this, "changelog", 432, 24, 110, 50, new Class6387(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)), "Changelog", ResourceRegistry.JelloLightFont20
          )
       );
       this.method13230(
-         this.field21133 = new Class4274(
+         this.field21133 = new UIButton(
             this, "quit", 30, 24, 50, 50, new Class6387(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F)), "Exit", ResourceRegistry.JelloLightFont20
          )
       );
@@ -167,7 +167,7 @@ public class Class4327 extends Class4305 {
       });
       this.field21130.method13251((var1x, var2x) -> {
          if (this.field21134++ > 8) {
-            Client.getInstance().getGuiManager().method33482(new Class4319());
+            Client.getInstance().getGuiManager().method33482(new CreditsScreen());
          }
       });
    }

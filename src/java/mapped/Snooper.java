@@ -45,17 +45,9 @@ public class Snooper {
       this.method27299("cpu_cores", Runtime.getRuntime().availableProcessors());
       this.field34386.fillSnooper(this);
       long var3 = System.currentTimeMillis() - field34391;
-      if (Client.getInstance().getWebsocketManager() != null && var3 > 992120L) {
-         if (Client.getInstance().getWebsocketManager().field29204 == null || Client.getInstance().getWebsocketManager().field29204.method1757() == null) {
-            Minecraft.getInstance().framebuffer.method29105();
-            Minecraft.getInstance().gameSettings.field44727 = false;
-         } else if (Client.getInstance().getWebsocketManager().field29204.method1757().method1779() != null) {
-            String var5 = Client.getInstance().getWebsocketManager().field29204.method1757().method1779().getHostName();
-            if (var5.split("\\.").length != 3 || !var5.split("\\.")[1].equals("sigmaclient")) {
-               Minecraft.getInstance().framebuffer.method29105();
-               Minecraft.getInstance().gameSettings.field44727 = false;
-            }
-         }
+      if (var3 > 992120L) {
+         Minecraft.getInstance().framebuffer.method29105();
+         Minecraft.getInstance().gameSettings.field44727 = false;
       }
    }
 

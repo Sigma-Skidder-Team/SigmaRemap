@@ -58,17 +58,17 @@ public class Class8005 implements Class8006<ClientPlayerEntity> {
    }
 
    @Override
-   public String method27350() {
+   public String getClientName() {
       return "Jello";
    }
 
    @Override
-   public String method27351() {
+   public String getType() {
       return "Unknown";
    }
 
    @Override
-   public String method27352() {
+   public String getVersion() {
       return "1.0";
    }
 

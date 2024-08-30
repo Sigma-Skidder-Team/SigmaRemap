@@ -49,7 +49,7 @@ public class Class9191 {
          return;
       }
 
-      System.setProperty("ViaVersion", this.field42213.method27352());
+      System.setProperty("ViaVersion", this.field42213.getVersion());
 
       for (Runnable var4 : this.field42219) {
          var4.run();
