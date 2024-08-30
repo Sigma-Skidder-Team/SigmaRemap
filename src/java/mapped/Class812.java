@@ -239,12 +239,6 @@ public class Class812 extends Class798 {
                      this.method2241();
                      return;
                   }
-
-                  try {
-                     Thread.sleep(500L);
-                  } catch (InterruptedException var10) {
-                     field4356.error("Failed to check Realms backup download status");
-                  }
                }
 
                this.field4370 = true;

@@ -109,16 +109,11 @@ public class Class4308 extends Class4307 {
                }
             });
             this.field20950.method13604(var1 -> new Thread(() -> {
-                  try {
-                     Thread.sleep(114L);
-                     this.method13222(() -> {
-                        this.method13236(this.field20950);
-                        this.field20950 = null;
-                     });
-                  } catch (InterruptedException var4) {
-                     var4.printStackTrace();
-                  }
-               }).start());
+                this.method13222(() -> {
+                   this.method13236(this.field20950);
+                   this.field20950 = null;
+                });
+            }).start());
             this.field20950.method13603(true);
          });
          return true;

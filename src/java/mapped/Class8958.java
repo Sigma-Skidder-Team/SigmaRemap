@@ -170,10 +170,7 @@ public class Class8958 {
          if (!var3.getAsBoolean()) {
             var7.method27059();
          } else {
-            try {
-               Thread.sleep(1000L);
-            } catch (InterruptedException var12) {
-            }
+
          }
       }
    }

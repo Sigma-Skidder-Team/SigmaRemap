@@ -477,10 +477,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    }
 
    private void method6506() {
-      try {
-         Thread.sleep(5000L);
-      } catch (InterruptedException var4) {
-      }
+
    }
 
    public long method6507() {

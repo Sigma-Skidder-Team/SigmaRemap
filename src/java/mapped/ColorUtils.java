@@ -272,44 +272,6 @@ public class ColorUtils {
       return var7.getString("id");
    }
 
-   public static String method17698(String var0) throws Exception {
-      String var3 = "";
-      String var4 = method17697(var0);
-      URL var5 = new URL("https://sessionserver.mojang.com/session/minecraft/profile/" + var4);
-      BufferedReader var6 = new BufferedReader(new InputStreamReader(var5.openStream()));
-      String var7 = "";
-
-      String var8;
-      while ((var8 = var6.readLine()) != null) {
-         var7 = var7 + var8;
-      }
-
-      String var9 = "";
-      JSONObject var10 = new JSONObject(var7);
-
-      for (Object var13 : var10.getJSONArray("properties")) {
-         JSONObject var14 = (JSONObject)var13;
-         if (var14.has("value") && var14.has("name")) {
-            var9 = var14.getString("value");
-         }
-      }
-
-      if (Base64.isBase64(var9)) {
-         String var15 = new String(Base64.decodeBase64(var9));
-         JSONObject var16 = new JSONObject(var15);
-         if (var16.has("textures")) {
-            JSONObject var17 = var16.method21769("textures");
-            if (var17.has("SKIN")) {
-               var3 = var17.method21769("SKIN").getString("url");
-            }
-         }
-
-         return var3;
-      } else {
-         return var3;
-      }
-   }
-
    public static String method17699(String var0) throws Exception {
       String var3 = "";
       URL var4 = new URL("https://sessionserver.mojang.com/session/minecraft/profile/" + var0);

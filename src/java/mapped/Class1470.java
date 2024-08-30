@@ -77,11 +77,6 @@ public class Class1470 implements Runnable {
 
             this.method6467();
          }
-
-         try {
-            Thread.sleep(var3 + this.field7909 - var5);
-         } catch (InterruptedException var17) {
-         }
       }
    }
 

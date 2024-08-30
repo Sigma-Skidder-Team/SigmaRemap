@@ -106,23 +106,6 @@ public class Class8819 {
    }
 
    public static synchronized String method31850() {
-      if (field39679 == null) {
-         try {
-            boolean var2 = Class7944.method26901(System.getProperty("player.models.local"), false);
-            if (var2) {
-               File var3 = Minecraft.getInstance().gameDir;
-               File var4 = new File(var3, "playermodels");
-               field39679 = var4.toURI().toURL().toExternalForm();
-            }
-         } catch (Exception var5) {
-            Class7944.method26811("" + var5.getClass().getName() + ": " + var5.getMessage());
-         }
-
-         if (field39679 == null) {
-            field39679 = "http://s.optifine.net";
-         }
-      }
-
-      return field39679;
+      return null;
    }
 }

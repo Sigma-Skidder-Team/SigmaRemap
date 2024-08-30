@@ -13,11 +13,7 @@ public class Class7796 {
    private static boolean field33489 = false;
 
    public static void method25890(long var0) {
-      try {
-         Thread.sleep(5000L);
-      } catch (InterruptedException var5) {
-         var5.printStackTrace();
-      }
+
    }
 
    public static long method25891() {

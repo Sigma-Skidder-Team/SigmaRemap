@@ -26,22 +26,7 @@ public class Class7749 {
          }
       }
 
-      String var8 = var0.method5379();
-      if (var8 != null) {
-         Class7773 var4 = (Class7773)method25670().get(var8);
-         if (var4 == null) {
-            var4 = new Class7773();
-            method25670().put(var8, var4);
-            Class8511 var5 = new Class8511(var8);
-            String var6 = Class8819.method31850() + "/users/" + var8 + ".cfg";
-            Class367 var7 = new Class367(var6, var5);
-            var7.start();
-         }
-
-         return var4;
-      } else {
-         return null;
-      }
+      return null;
    }
 
    public static synchronized void method25669(String var0, Class7773 var1) {

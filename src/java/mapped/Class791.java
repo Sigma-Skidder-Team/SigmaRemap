@@ -128,10 +128,6 @@ public class Class791 extends Class789 {
    }
 
    private void method1914(int var1) {
-      try {
-         Thread.sleep((long)(var1 * 1000));
-      } catch (InterruptedException var5) {
-         field4133.warn(var5.getLocalizedMessage());
-      }
+      
    }
 }

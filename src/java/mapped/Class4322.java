@@ -96,16 +96,11 @@ public class Class4322 extends Class4307 {
             var5.add(new Class9577(Class2189.field14313, "Ok", 55));
             this.method13233(this.field21090 = new Class4354(this, "modal", true, "", var5.toArray(new Class9577[0])));
             this.field21090.method13604(var1xx -> new Thread(() -> {
-                  try {
-                     Thread.sleep(114L);
-                     this.method13222(() -> {
-                        this.method13236(this.field21090);
-                        this.field21090 = null;
-                     });
-                  } catch (InterruptedException var4) {
-                     var4.printStackTrace();
-                  }
-               }).start());
+                this.method13222(() -> {
+                   this.method13236(this.field21090);
+                   this.field21090 = null;
+                });
+            }).start());
             this.field21090.method13603(true);
          });
       }

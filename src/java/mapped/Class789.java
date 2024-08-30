@@ -10,11 +10,7 @@ public abstract class Class789 implements Class796, Runnable {
    public Class797 field4134;
 
    public static void method1904(int var0) {
-      try {
-         Thread.sleep((long)(var0 * 1000));
-      } catch (InterruptedException var4) {
-         field4133.error("", var4);
-      }
+
    }
 
    public static void method1905(Screen var0) {

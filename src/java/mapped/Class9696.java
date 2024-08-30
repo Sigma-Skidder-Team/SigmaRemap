@@ -145,8 +145,7 @@ public class Class9696 {
       return var1 > 0L && var3 + 1 < 5;
    }
 
-   private Class8619 method37972(long var1, int var3) throws InterruptedException {
-      Thread.sleep(Duration.ofSeconds(var1).toMillis());
+   private Class8619 method37972(long var1, int var3) {
       return this.method37967(var3 + 1);
    }
 

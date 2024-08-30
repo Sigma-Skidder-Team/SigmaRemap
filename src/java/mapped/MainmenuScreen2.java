@@ -135,11 +135,6 @@ public class MainmenuScreen2 extends Class4305 {
       this.field21133.method13251((var1x, var2x) -> {
          ((Class4310)this.method13258()).method13341();
          new Thread(() -> {
-            try {
-               Thread.sleep(1900L);
-            } catch (InterruptedException var3x) {
-            }
-
             Minecraft.getInstance().shutdown();
          }).start();
       });

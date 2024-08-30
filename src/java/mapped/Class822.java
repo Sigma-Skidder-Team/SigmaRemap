@@ -239,8 +239,8 @@ public class Class822 extends Class798 {
                               if (var7 != null) {
                                  break;
                               }
-                           } catch (Class2436 var24) {
-                              Thread.sleep((long)(var24.field16476 * 1000));
+                           } catch (Class2436 ignored) {
+
                            }
                         }
 
@@ -279,12 +279,6 @@ public class Class822 extends Class798 {
                                     if (this.field4492) {
                                        var9.method37966();
                                        this.method2369();
-                                    }
-
-                                    try {
-                                       Thread.sleep(500L);
-                                    } catch (InterruptedException var23) {
-                                       field4479.error("Failed to check Realms file upload status");
                                     }
                                  }
                               } else {

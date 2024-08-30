@@ -45,14 +45,7 @@ public class HookedClientPlayerEntity extends ClientPlayerEntity {
    public void tick() {
       TickEvent var3 = new TickEvent();
       if (RandomModuleThread.field8342 && this.ticksExisted > 1000) {
-         try {
-            if (this.ticksExisted % 150 == 0) {
-               Thread.sleep((long)(1800.0 + 7000.0 * Math.random()));
-            } else if (this.ticksExisted % 42 == 0 && Math.random() > 0.2F) {
-               Thread.sleep((long)(200.0 + 300.0 * Math.random()));
-            }
-         } catch (InterruptedException ignored) {
-         }
+
       }
 
       Client.getInstance().getEventManager().call(var3);

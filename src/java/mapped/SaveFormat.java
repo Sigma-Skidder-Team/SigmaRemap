@@ -411,11 +411,6 @@ public class SaveFormat {
                }
 
                method38481().warn("Failed to delete {}", this.field9780, var8);
-
-               try {
-                  Thread.sleep(500L);
-               } catch (InterruptedException var7) {
-               }
             }
          }
       }

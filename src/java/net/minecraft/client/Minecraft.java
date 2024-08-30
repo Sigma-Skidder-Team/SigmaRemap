@@ -1603,11 +1603,6 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             var22.tick();
             this.runGameLoop(false);
 
-            try {
-               Thread.sleep(16L);
-            } catch (InterruptedException var18) {
-            }
-
             if (this.crashReporter != null) {
                displayCrashReport(this.crashReporter);
                return;

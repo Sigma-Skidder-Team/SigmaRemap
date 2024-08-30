@@ -89,11 +89,6 @@ public class Class4303 extends Class4278 {
                var13.method37195();
 
                for (int var6x = 0; var13.field44778.size() == 0 && var6x < 4; var6x++) {
-                  try {
-                     Thread.sleep(4000L);
-                  } catch (InterruptedException var8x) {
-                  }
-
                   var13.method37195();
                }
 

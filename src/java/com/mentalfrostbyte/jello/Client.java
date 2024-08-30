@@ -144,21 +144,9 @@ public class Client {
         var7.state = "Playing Minecraft";
         var7.details = "Jello for Sigma";
         var7.largeImageKey = "jello";
-
+        var7.smallImageKey = "premium";
+        var7.smallImageText = "Premium";
         var3.Discord_UpdatePresence(var7);
-        new Thread(() -> {
-            while (!Thread.currentThread().isInterrupted()) {
-                var3.Discord_RunCallbacks();
-
-                try {
-                    Thread.sleep(2000L);
-                    var7.smallImageKey = "premium";
-                    var7.smallImageText = "Premium";
-                    var3.Discord_UpdatePresence(var7);
-                } catch (InterruptedException ignored) {
-                }
-            }
-        }, "RPC-Callback-Handler").start();
     }
 
     public void method19922() {

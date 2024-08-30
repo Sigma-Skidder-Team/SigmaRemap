@@ -959,11 +959,7 @@ public class Class7944 {
    }
 
    public static void method26885(long var0) {
-      try {
-         Thread.sleep(var0);
-      } catch (InterruptedException var5) {
-         method26814("", var5);
-      }
+
    }
 
    public static boolean method26886() {

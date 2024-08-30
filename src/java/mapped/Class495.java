@@ -23,7 +23,7 @@ public final class Class495 implements Runnable {
                Class1782.method7757(this.field2342).write(var4, 0, var3);
                Class1782.method7759(this.field2342, Class1782.method7758(this.field2342) + var3);
             } else {
-               Thread.sleep(20L);
+
             }
          }
       } catch (Exception var6) {
