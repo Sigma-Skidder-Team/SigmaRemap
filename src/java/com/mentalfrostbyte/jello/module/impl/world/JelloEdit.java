@@ -71,6 +71,9 @@ public class JelloEdit extends Module {
 
     @Override
     public void onEnable() {
+        if (this.getSettingValueBySettingName("Shematics") == null) {
+            return;
+        }
         File var3 = new File(Client.getInstance().getFile() + "/shematics/" + (String) this.getSettingValueBySettingName("Shematics"));
         if (var3.exists()) {
             this.field23440 = new Class8817(var3);
