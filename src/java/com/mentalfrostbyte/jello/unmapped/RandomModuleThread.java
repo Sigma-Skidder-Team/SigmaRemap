@@ -10,8 +10,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class Class1537 implements Runnable {
-    public static Thread field8341 = new Thread(new Class1537());
+public class RandomModuleThread implements Runnable {
+    public static Thread field8341 = new Thread(new RandomModuleThread());
     public static boolean field8342 = false;
     public static HashMap<Object, Integer> field8343;
     private static String[] field8340;

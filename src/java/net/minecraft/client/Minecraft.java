@@ -2070,6 +2070,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             var1++;
 
             try {
+               System.out.println("Started sleeping for " + var2);
                Thread.sleep(var2);
             } catch (InterruptedException var5) {
                var5.printStackTrace();

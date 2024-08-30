@@ -10,7 +10,7 @@ import java.util.List;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
-import com.mentalfrostbyte.jello.unmapped.Class1537;
+import com.mentalfrostbyte.jello.unmapped.RandomModuleThread;
 import org.apache.commons.io.IOUtils;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
@@ -134,7 +134,7 @@ public class Class6814 {
 
    public void method20771(Class7286 var1) {
       Client.getInstance().method19924();
-      Class1537.field8343 = new HashMap<Object, Integer>();
+      RandomModuleThread.field8343 = new HashMap<Object, Integer>();
       if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
          this.field29668.field31262 = Client.getInstance().getModuleManager().method14657(new JSONObject());
          this.field29668 = var1;

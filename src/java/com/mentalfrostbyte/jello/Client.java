@@ -14,7 +14,6 @@ import com.mentalfrostbyte.jello.module.ModuleManager;
 import com.mentalfrostbyte.jello.music.MusicManager;
 import com.mentalfrostbyte.jello.unmapped.Class8402;
 import com.mentalfrostbyte.jello.network.NetworkManager;
-import com.mentalfrostbyte.jello.network.WebsocketManager;
 import com.mentalfrostbyte.jello.notification.NotificationManager;
 import com.mentalfrostbyte.jello.sound.SoundManager;
 import com.mentalfrostbyte.jello.target.CombatManager;
@@ -376,7 +375,7 @@ public class Client {
             GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Classic Sigma 5.0");
         }
 
-        if (this.moduleManager == null && Class1537.field8341 != null) {
+        if (this.moduleManager == null && RandomModuleThread.field8341 != null) {
             this.moduleManager = new ModuleManager();
             this.moduleManager.register(this.clientMode);
             this.moduleManager.method14659(this.config);

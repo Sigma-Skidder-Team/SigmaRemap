@@ -43,7 +43,7 @@ public class Class8402 {
         this.field36055 = HttpClients.createDefault();
         this.field36056 = var1;
         this.field36058 = new Class8930(this);
-        Class1537.field8342 = Class1537.field8342 | Client.getInstance().getNetworkManager().field38425 != null;
+        RandomModuleThread.field8342 = RandomModuleThread.field8342 | Client.getInstance().getNetworkManager().field38425 != null;
     }
 
     public static String method29518(String var0) {
@@ -142,28 +142,6 @@ public class Class8402 {
         if (this.field36057 != null) {
             this.field36057.emit("message", var5);
         }
-    }
-
-    @EventTarget
-    private void method29516(RecievePacketEvent var1) {
-      /*  if (var1.method13898() instanceof Class5598) {
-            Class5598 var4 = (Class5598) var1.method13898();
-            Client.method19919().info("Connecting...");
-
-            try {
-                this.field36057 = IO.socket("http://localhost:3000");
-            } catch (URISyntaxException var6) {
-                var6.printStackTrace();
-            }
-
-            this.field36057
-                    .on("connect", new Class5758(this))
-                    .on("login-successful", new Class5766(this))
-                    .on("jello-user", new Class5767(this))
-                    .on("chat-message", new Class5777(this))
-                    .on("disconnect", new Class5752(this));
-            this.field36057.connect();
-        }*/
     }
 
     private void method29520(GameProfile var1, String var2) throws AuthenticationException, IOException {

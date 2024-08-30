@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.*;
-import com.mentalfrostbyte.jello.unmapped.Class1537;
+import com.mentalfrostbyte.jello.unmapped.RandomModuleThread;
 import net.minecraft.client.Minecraft;
 
 import java.util.UUID;
@@ -44,14 +44,14 @@ public class HookedClientPlayerEntity extends ClientPlayerEntity {
    @Override
    public void tick() {
       TickEvent var3 = new TickEvent();
-      if (Class1537.field8342 && this.ticksExisted > 1000) {
+      if (RandomModuleThread.field8342 && this.ticksExisted > 1000) {
          try {
             if (this.ticksExisted % 150 == 0) {
                Thread.sleep((long)(1800.0 + 7000.0 * Math.random()));
             } else if (this.ticksExisted % 42 == 0 && Math.random() > 0.2F) {
                Thread.sleep((long)(200.0 + 300.0 * Math.random()));
             }
-         } catch (InterruptedException var5) {
+         } catch (InterruptedException ignored) {
          }
       }
 
