@@ -15,7 +15,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Speed;
 import mapped.BooleanSetting;
 import mapped.ColorUtils;
 import mapped.Class9567;
-import mapped.Jesus;
+import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 
 public class NCPSpeed extends Module {
     private int field23607;

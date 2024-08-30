@@ -1,11 +1,10 @@
-package mapped;
+package com.mentalfrostbyte.jello.module.impl.movement;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.SafeWalkEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 
 public class SafeWalk extends Module {
     public SafeWalk() {

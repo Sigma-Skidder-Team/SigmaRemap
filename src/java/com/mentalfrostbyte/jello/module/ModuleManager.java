@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.module.impl.combat.*;
 import com.mentalfrostbyte.jello.module.impl.exploit.BedRockFinder;
 import com.mentalfrostbyte.jello.module.impl.exploit.Dumper;
+import com.mentalfrostbyte.jello.module.impl.exploit.HypixelForceUnbanner;
 import com.mentalfrostbyte.jello.module.impl.gui.jello.InfoHUD;
 import com.mentalfrostbyte.jello.module.impl.gui.jello.TargetHUD;
 import com.mentalfrostbyte.jello.module.impl.gui.classic.ActiveMods;
@@ -206,6 +207,7 @@ public class ModuleManager {
         this.register(new NickNameDetector());
         this.register(new PacketDumper());
         this.register(new DebugSpeed());
+        this.register(new AutoMiner());
 
         new Class8329();
         this.method14654();

@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.module.impl.render.Projectiles;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 

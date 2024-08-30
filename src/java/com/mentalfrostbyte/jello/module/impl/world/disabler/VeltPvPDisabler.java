@@ -1,4 +1,4 @@
-package mapped;
+package com.mentalfrostbyte.jello.module.impl.world.disabler;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
@@ -6,10 +6,10 @@ import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5291 extends Module {
+public class VeltPvPDisabler extends Module {
     private int field23801;
 
-    public Class5291() {
+    public VeltPvPDisabler() {
         super(ModuleCategory.EXPLOIT, "VeltPvP", "Disabler for VeltPvP.");
     }
 

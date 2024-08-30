@@ -1,4 +1,4 @@
-package mapped;
+package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
@@ -18,7 +19,7 @@ import java.awt.Color;
 import java.util.List;
 import java.util.*;
 
-public class Class5169 extends Module {
+public class AutoMiner extends Module {
    public List<Class6203> field23451 = new ArrayList<Class6203>();
    public Set<Class7481> field23452 = new HashSet<Class7481>();
    public Class9823 field23453;
@@ -28,7 +29,7 @@ public class Class5169 extends Module {
    public List<Class9110> field23457 = new ArrayList<Class9110>();
    public List<Class9110> field23458 = new ArrayList<Class9110>();
 
-   public Class5169() {
+   public AutoMiner() {
       super(ModuleCategory.WORLD, "AutoMiner", "Automatically mines blocks");
    }
 

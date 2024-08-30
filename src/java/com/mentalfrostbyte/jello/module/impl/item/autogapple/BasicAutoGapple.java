@@ -1,4 +1,4 @@
-package mapped;
+package com.mentalfrostbyte.jello.module.impl.item.autogapple;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
+import mapped.*;
 
 public class BasicAutoGapple extends Module {
     private int field23549 = -1;

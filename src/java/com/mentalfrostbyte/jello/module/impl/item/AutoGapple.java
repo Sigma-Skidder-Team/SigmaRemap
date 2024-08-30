@@ -2,6 +2,8 @@ package com.mentalfrostbyte.jello.module.impl.item;
 
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
+import com.mentalfrostbyte.jello.module.impl.item.autogapple.HypixelAutoGapple;
+import com.mentalfrostbyte.jello.module.impl.item.autogapple.BasicAutoGapple;
 import mapped.*;
 
 import java.util.List;

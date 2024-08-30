@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import mapped.BooleanSetting;
 import mapped.Class5590;
 import mapped.Class9567;
-import mapped.Jesus;
+import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 
 public class TestSpeed extends Module {
     public int field23918 = 0;

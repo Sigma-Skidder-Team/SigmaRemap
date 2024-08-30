@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
+import com.mentalfrostbyte.jello.module.impl.render.NameProtect;
 import mapped.*;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
