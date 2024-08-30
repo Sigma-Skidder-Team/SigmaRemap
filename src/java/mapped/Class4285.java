@@ -16,8 +16,8 @@ public class Class4285 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
-      this.field20770 = this.field20770 + (this.method13295() ? 0.2F : -0.2F);
+   public void draw(float var1) {
+      this.field20770 = this.field20770 + (this.isHovered() ? 0.2F : -0.2F);
       this.field20770 = Math.min(1.0F, Math.max(0.0F, this.field20770));
       float var4 = (float)(this.field20769.method27121() / 75L % 12L);
       if (this.field20770 != 0.0F) {
@@ -31,7 +31,7 @@ public class Class4285 extends Class4278 {
             (float)this.field20897,
             (float)this.field20898,
             ResourcesDecrypter.loadingIndicatorPNG,
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, this.field20770 * var1)
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, this.field20770 * var1)
          );
          GL11.glPopMatrix();
       }

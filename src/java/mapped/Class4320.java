@@ -41,17 +41,17 @@ public class Class4320 extends Class4307 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       RenderUtil.method11424(
          0.0F,
          0.0F,
          (float)this.field20897,
          (float)this.field20898,
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, this.field21076.calcPercent() * 0.95F)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, this.field21076.calcPercent() * 0.95F)
       );
-      RenderUtil.method11439(ResourceRegistry.JelloMediumFont40, 40.0F, 40.0F, "Credits and third party licensing information", ClientColors.LIGHT_GREYISH_BLUE.getColor);
+      RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, 40.0F, 40.0F, "Credits and third party licensing information", ClientColors.LIGHT_GREYISH_BLUE.getColor);
       byte var4 = 40;
-      super.method13027(this.field21076.calcPercent());
+      super.draw(this.field21076.calcPercent());
    }
 
    @Override

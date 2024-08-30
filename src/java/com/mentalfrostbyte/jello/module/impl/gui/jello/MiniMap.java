@@ -193,7 +193,7 @@ public class MiniMap extends Module {
                             GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2 + 1), (float) (this.field23712 + this.field23709 / 2 + 3), 0.0F);
                             GL11.glRotatef((float) (270 + var15) - mc.player.rotationYaw, 0.0F, 0.0F, 1.0F);
                             GL11.glTranslatef((float) (-(this.field23711 + this.field23710 / 2 + 1)), (float) (-(this.field23712 + this.field23709 / 2)), 0.0F);
-                            RenderUtil.method11439(
+                            RenderUtil.drawString(
                                     var6, (float) (this.field23711 + this.field23710 / 2 - 4), (float) (this.field23712 + this.field23709 / 2 - 8), var5, 1879048192
                             );
                             GL11.glPopMatrix();
@@ -201,7 +201,7 @@ public class MiniMap extends Module {
                             GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2 + 1), (float) (this.field23712 + this.field23709 / 2), 0.0F);
                             GL11.glRotatef((float) (270 + var15) - mc.player.rotationYaw, 0.0F, 0.0F, 1.0F);
                             GL11.glTranslatef((float) (-(this.field23711 + this.field23710 / 2 + 1)), (float) (-(this.field23712 + this.field23709 / 2)), 0.0F);
-                            RenderUtil.method11439(
+                            RenderUtil.drawString(
                                     var6,
                                     (float) (this.field23711 + this.field23710 / 2 - 4),
                                     (float) (this.field23712 + this.field23709 / 2 - 8),

@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class8603;
+import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import totalcross.json.JSONObject;
@@ -81,13 +81,13 @@ public class Class4357 extends Class4247 {
 
    public void method13613() {
       this.field21300.field20703.changeDirection(Direction.BACKWARDS);
-      if (this.field21298.method25319() != Direction.BACKWARDS) {
+      if (this.field21298.getDirection() != Direction.BACKWARDS) {
          this.field21298.changeDirection(Direction.BACKWARDS);
       }
    }
 
    public boolean method13614() {
-      return this.field21298.method25319() == Direction.BACKWARDS && this.field21298.calcPercent() == 0.0F;
+      return this.field21298.getDirection() == Direction.BACKWARDS && this.field21298.calcPercent() == 0.0F;
    }
 
    @Override
@@ -133,21 +133,21 @@ public class Class4357 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       var1 = this.field21298.calcPercent();
       this.method13616();
-      float var4 = Class8603.method30791(var1, 0.37, 1.48, 0.17, 0.99);
-      if (this.field21298.method25319() == Direction.BACKWARDS) {
-         var4 = Class8603.method30791(var1, 0.38, 0.73, 0.0, 1.0);
+      float var4 = MathUtils.lerp(var1, 0.37, 1.48, 0.17, 0.99);
+      if (this.field21298.getDirection() == Direction.BACKWARDS) {
+         var4 = MathUtils.lerp(var1, 0.38, 0.73, 0.0, 1.0);
       }
 
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
-      this.method13285((int)((float)this.field20897 * 0.25F * (1.0F - var4)));
+      this.drawBackground((int)((float)this.field20897 * 0.25F * (1.0F - var4)));
       this.method13284((int)((float)this.field20897 * 0.14F * (1.0F - var4)));
       super.method13224();
       super.method13225();
       byte var5 = 10;
-      int var6 = Class5628.method17688(-723724, Class9782.method38557(var1, 0.0F, 1.0F, 1.0F));
+      int var6 = ColorUtils.applyAlpha(-723724, Class9782.method38557(var1, 0.0F, 1.0F, 1.0F));
       RenderUtil.method11463(
          (float)(this.field20895 + var5 / 2),
          (float)(this.field20896 + var5 / 2),
@@ -161,29 +161,29 @@ public class Class4357 extends Class4247 {
          (float)(this.field20896 + var5 / 2),
          (float)(this.field20895 - var5 / 2 + this.field20897),
          (float)(this.field20896 - var5 / 2 + this.field20898),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
       );
       RenderUtil.method11475((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, (float)var5, var6);
-      float var7 = 0.9F + (1.0F - Class8603.method30791(this.field21300.field20703.calcPercent(), 0.0, 0.96, 0.69, 0.99)) * 0.1F;
-      if (this.field21300.field20703.method25319() == Direction.BACKWARDS) {
-         var7 = 0.9F + (1.0F - Class8603.method30791(this.field21300.field20703.calcPercent(), 0.61, 0.01, 0.87, 0.16)) * 0.1F;
+      float var7 = 0.9F + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.0, 0.96, 0.69, 0.99)) * 0.1F;
+      if (this.field21300.field20703.getDirection() == Direction.BACKWARDS) {
+         var7 = 0.9F + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.61, 0.01, 0.87, 0.16)) * 0.1F;
       }
 
       this.field21299.method13279(var7, var7);
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ResourceRegistry.JelloLightFont25,
          (float)(this.field20895 + 25),
          (float)(this.field20896 + 20),
          "Profiles",
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
       );
       RenderUtil.method11426(
          (float)(this.field20895 + 25),
          (float)(this.field20896 + 69),
          (float)(this.field20895 + this.field20897 - 25),
          (float)(this.field20896 + 70),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

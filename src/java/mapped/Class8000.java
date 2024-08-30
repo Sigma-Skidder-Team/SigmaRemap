@@ -57,7 +57,7 @@ public class Class8000 {
 
    public static String method27330(JSONObject var0, String var1, String var2) {
       try {
-         return var0.method21773(var1);
+         return var0.getString(var1);
       } catch (JSONException2 var6) {
          return var2;
       }

@@ -29,7 +29,7 @@ public class Class4365 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.account = Client.getInstance().getNetworkManager().account;
       String var4 = "Log in";
       Texture var5 = ResourcesDecrypter.accountPNG;
@@ -49,7 +49,7 @@ public class Class4365 extends Class4247 {
          (float)this.field20896,
          (float)(this.field20895 + this.method13267()),
          (float)(this.field20896 + this.method13269()),
-         Class5628.method17688(ClientColors.DULL_GREEN.getColor, (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1)
+         ColorUtils.applyAlpha(ClientColors.DULL_GREEN.getColor, (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1)
       );
       float var7 = (float)(this.field20895 + this.field20897 - 60 - 10);
       float var8 = (float)(this.field20896 + 10);
@@ -59,15 +59,15 @@ public class Class4365 extends Class4247 {
          60.0F,
          60.0F,
          var5,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
       );
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          this.field20913,
          (float)(this.field20895 + this.field20897 - 90 - this.field20913.method23942(var4)),
          (float)(this.field20896 + 27),
          var4,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
       );
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

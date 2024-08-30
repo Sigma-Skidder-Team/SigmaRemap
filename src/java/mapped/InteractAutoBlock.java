@@ -39,7 +39,7 @@ public class InteractAutoBlock {
 
    public void method36815(Entity var1, float var2, float var3) {
       if (this.parent.getBooleanValueFromSetttingName("Interact autoblock")) {
-         EntityRayTraceResult var6 = Class5628.method17714(
+         EntityRayTraceResult var6 = ColorUtils.method17714(
             !this.parent.getBooleanValueFromSetttingName("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.parent.getNumberValueBySettingName("Range")
          );
          if (var6 != null) {
@@ -50,12 +50,12 @@ public class InteractAutoBlock {
          }
       }
 
-      Class5628.method17733();
+      ColorUtils.method17733();
       this.method36814(true);
    }
 
    public void method36816() {
-      Class5628.method17734();
+      ColorUtils.method17734();
       this.method36814(false);
    }
 
@@ -143,7 +143,7 @@ public class InteractAutoBlock {
    public List<Class8012> method36823(float var1) {
       ArrayList var4 = new ArrayList();
 
-      for (Entity var6 : Class5628.method17708()) {
+      for (Entity var6 : ColorUtils.method17708()) {
          var4.add(new Class8012(var6));
       }
 
@@ -186,7 +186,7 @@ public class InteractAutoBlock {
          } else if (!(var9 instanceof PlayerEntity)
             || !Class8781.method31662((PlayerEntity)var9)
             || !Client.getInstance().getModuleManager().getModuleByClass(Teams.class).isEnabled()) {
-            Vector3d var10 = Class5628.method17751(var9);
+            Vector3d var10 = ColorUtils.method17751(var9);
             if (!(this.field44347.player.method3275(var9) < 40.0F)) {
                if (this.field44349.containsKey(var9)) {
                   this.field44349.remove(var9);
@@ -211,7 +211,7 @@ public class InteractAutoBlock {
                }
             }
 
-            if (!(Class5628.method17754(var10) > 8.0)) {
+            if (!(ColorUtils.method17754(var10) > 8.0)) {
                boolean var26 = true;
                if (this.parent.getBooleanValueFromSetttingName("Smart Reach")) {
                   List<Class9629<Vector3d, Long>> var27 = this.field44349.get(var9);
@@ -227,7 +227,7 @@ public class InteractAutoBlock {
                            var31.field18049 + this.field44347.player.boundingBox.method19677(),
                            var31.field18050 + var19
                         );
-                        double var22 = Class5628.method17755(var21);
+                        double var22 = ColorUtils.method17755(var21);
                         if (var22 < (double)var1) {
                            var26 = false;
                         }
@@ -235,7 +235,7 @@ public class InteractAutoBlock {
                   }
                }
 
-               if (var26 && Class5628.method17754(var10) > (double)var1) {
+               if (var26 && ColorUtils.method17754(var10) > (double)var1) {
                   var24.remove();
                } else if (!this.parent.getBooleanValueFromSetttingName("Through walls")) {
                   Class7461 var28 = Class9142.method34150(var9, true);

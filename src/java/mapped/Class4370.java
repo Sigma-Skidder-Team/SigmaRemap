@@ -52,7 +52,7 @@ public class Class4370 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       RenderUtil.method11424((float)(this.field20895 + this.field20897), (float)(this.field20896 + 1), 1.0F, (float)(this.field20898 - 2), -8882056);
       RenderUtil.method11424((float)(this.field20895 + 1), (float)this.field20896, (float)(this.field20897 - 1), (float)this.field20898, -8882056);
       RenderUtil.method11424((float)this.field20895, (float)(this.field20896 + 1), 1.0F, (float)(this.field20898 - 2), -6250336);
@@ -60,7 +60,7 @@ public class Class4370 extends Class4247 {
          (float)(this.field20895 + 1), (float)this.field20896, (float)this.field20897 * this.field21363 - 1.0F, (float)this.field20898, -6250336
       );
       this.method13696(Math.round((float)this.field20895 + (float)this.field20897 * this.field21363) - 2, this.field20896 - 3);
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    public void method13696(int var1, int var2) {

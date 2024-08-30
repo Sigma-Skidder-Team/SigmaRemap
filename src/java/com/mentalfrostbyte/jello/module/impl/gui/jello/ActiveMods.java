@@ -137,7 +137,7 @@ public class ActiveMods extends Module {
                 }
 
                 byte var10 = 0;
-                int var11 = Class5628.method17688(-1, 0.95F);
+                int var11 = ColorUtils.applyAlpha(-1, 0.95F);
 
                 for (Module var13 : this.field23612) {
                     float var14 = 1.0F;
@@ -171,10 +171,10 @@ public class ActiveMods extends Module {
                             (float) var8.method23942(var22) * 3.0F,
                             (float) (var8.method23952() + var21 + 40),
                             ResourcesDecrypter.shadowPNG,
-                            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.36F * var15 * var19)
+                            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.36F * var15 * var19)
                     );
-                    RenderUtil.method11439(
-                            var8, (float) (var6 - var20 - var8.method23942(var22)), (float) var7, var22, var15 != 1.0F ? Class5628.method17688(-1, var15 * 0.95F) : var11
+                    RenderUtil.drawString(
+                            var8, (float) (var6 - var20 - var8.method23942(var22)), (float) var7, var22, var15 != 1.0F ? ColorUtils.applyAlpha(-1, var15 * 0.95F) : var11
                     );
                     GL11.glPopMatrix();
                     var10 -= 100;
@@ -196,7 +196,7 @@ public class ActiveMods extends Module {
         GL11.glReadPixels(var1, Minecraft.getInstance().mainWindow.getHeight() - var2, 1, 1, 6407, 5120, var6);
         Color var7 = new Color(var6.get(0) * 2, var6.get(1) * 2, var6.get(2) * 2, 1);
         if (var3 != null) {
-            var7 = Class5628.method17681(var7, var3, 0.08F);
+            var7 = ColorUtils.method17681(var7, var3, 0.08F);
         }
 
         return var7;

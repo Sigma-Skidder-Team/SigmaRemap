@@ -35,7 +35,7 @@ public class Class6637 {
 
             var5.append(Class6873.method20928(var6));
             var5.append("=");
-            var5.append(Class6873.method20928(var0.method21773(var6)));
+            var5.append(Class6873.method20928(var0.getString(var6)));
             var3 = true;
          }
       }

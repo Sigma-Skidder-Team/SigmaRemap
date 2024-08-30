@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.unmapped.Class8603;
+import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
@@ -492,7 +492,7 @@ public class KillAura extends Module {
             }
         }
 
-        boolean var9 = !Jesus.method16953() && (mc.player.onGround || Class5628.method17730(mc.player, 0.001F));
+        boolean var9 = !Jesus.method16953() && (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F));
         if (!var9) {
             this.field23941 = 0;
             this.field23940 = 0;
@@ -555,18 +555,18 @@ public class KillAura extends Module {
                 this.field23946 = -1;
             } else {
                 if (this.field23957 == -1.0F) {
-                    float var7 = Class9142.method34148(Class5628.method17751(((Class8012) var6.get(0)).method27397())).field32084;
-                    float var8 = Math.abs(Class5628.method17756(var7, field23951.field32084));
+                    float var7 = Class9142.method34148(ColorUtils.method17751(((Class8012) var6.get(0)).method27397())).field32084;
+                    float var8 = Math.abs(ColorUtils.method17756(var7, field23951.field32084));
                     this.field23956 = var8 * 1.95F / 50.0F;
                     this.field23957++;
                     this.field23955 = Math.random();
                 }
 
                 this.field23950 = var6;
-                float var12 = Class9142.method34148(Class5628.method17751(this.field23950.get(0).method27397())).field32084;
+                float var12 = Class9142.method34148(ColorUtils.method17751(this.field23950.get(0).method27397())).field32084;
                 if (!this.field23950.isEmpty() & !var5.equals("Switch")) {
                     if (field23949 != null && field23949.method27397() != this.field23950.get(0).method27397()) {
-                        float var13 = Math.abs(Class5628.method17756(var12, field23951.field32084));
+                        float var13 = Math.abs(ColorUtils.method17756(var12, field23951.field32084));
                         this.field23956 = var13 * 1.95F / 50.0F;
                         this.field23955 = Math.random();
                     }
@@ -604,8 +604,8 @@ public class KillAura extends Module {
                         this.field23942 = 0;
                     }
 
-                    Vector3d var14 = Class5628.method17751(this.field23950.get(this.field23942).method27397());
-                    float var9 = Math.abs(Class5628.method17756(Class9142.method34148(var14).field32084, field23951.field32084));
+                    Vector3d var14 = ColorUtils.method17751(this.field23950.get(this.field23942).method27397());
+                    float var9 = Math.abs(ColorUtils.method17756(Class9142.method34148(var14).field32084, field23951.field32084));
                     this.field23956 = var9 * 1.95F / 50.0F;
                     this.field23955 = Math.random();
                     field23949 = new Class8012(
@@ -663,7 +663,7 @@ public class KillAura extends Module {
                     this.field23952.field32084 += var31;
                     this.field23958 = var31;
                 } else if (Math.abs(var5) > 10.0F) {
-                    Entity var27 = Class5628.method17711(
+                    Entity var27 = ColorUtils.method17711(
                             this.field23952.field32085, this.field23952.field32084, this.getNumberValueBySettingName("Range"), this.getNumberValueBySettingName("Hit box expand")
                     );
                     double var11 = var27 == null ? 13.4 : 1.4;
@@ -691,12 +691,12 @@ public class KillAura extends Module {
                     this.field23952.field32085 = (float) ((double) this.field23952.field32085 + (double) var6 * 0.81 + this.method16832(-2.0, 2.0));
                 }
 
-                Entity var28 = Class5628.method17711(
+                Entity var28 = ColorUtils.method17711(
                         this.field23953.field32085, this.field23953.field32084, this.getNumberValueBySettingName("Range"), this.getNumberValueBySettingName("Hit box expand")
                 );
                 if (var28 != null && (double) this.field23947 > this.method16832(2.0, 5.0)) {
                     this.field23947 = 0;
-                    Class5628.method17735(var28, true);
+                    ColorUtils.method17735(var28, true);
                 }
                 break;
             case "NCP":
@@ -714,23 +714,23 @@ public class KillAura extends Module {
                 double var33 = var3.getPosX() - var3.lastTickPosX;
                 double var34 = var3.getPosZ() - var3.lastTickPosZ;
                 float var35 = (float) Math.sqrt(var33 * var33 + var34 * var34);
-                float var36 = Class8603.method30791(var29, 0.57, -0.135, 0.095, -0.3);
-                float var37 = Math.min(1.0F, Class8603.method30791(var29, 0.57, -0.135, 0.095, -0.3));
+                float var36 = MathUtils.lerp(var29, 0.57, -0.135, 0.095, -0.3);
+                float var37 = Math.min(1.0F, MathUtils.lerp(var29, 0.57, -0.135, 0.095, -0.3));
                 if (this.field23959) {
-                    var36 = Class8603.method30791(var29, 0.18, 0.13, 1.0, 1.046);
-                    var37 = Math.min(1.0F, Class8603.method30791(var29, 0.18, 0.13, 1.0, 1.04));
+                    var36 = MathUtils.lerp(var29, 0.18, 0.13, 1.0, 1.046);
+                    var37 = Math.min(1.0F, MathUtils.lerp(var29, 0.18, 0.13, 1.0, 1.04));
                 }
 
-                float var38 = Class5628.method17756(field23951.field32084, var4.field32084);
+                float var38 = ColorUtils.method17756(field23951.field32084, var4.field32084);
                 float var39 = var4.field32085 - field23951.field32085;
                 this.field23953.field32084 = this.field23952.field32084;
                 this.field23953.field32085 = this.field23952.field32085;
                 this.field23952.field32084 = field23951.field32084 + var36 * var38;
                 this.field23952.field32085 = (field23951.field32085 + var37 * var39) % 90.0F;
                 if (var29 == 0.0F || var29 >= 1.0F || (double) var35 > 0.1 && this.field23956 < 4.0F) {
-                    float var41 = Math.abs(Class5628.method17756(var4.field32084, field23951.field32084));
+                    float var41 = Math.abs(ColorUtils.method17756(var4.field32084, field23951.field32084));
                     this.field23956 = (float) Math.round(var41 * 1.8F / 50.0F);
-                    if (this.field23956 <= 1.0F && Math.abs(Class5628.method17756(var4.field32084, this.field23952.field32084)) > 10.0F) {
+                    if (this.field23956 <= 1.0F && Math.abs(ColorUtils.method17756(var4.field32084, this.field23952.field32084)) > 10.0F) {
                     }
 
                     this.field23957 = 0.0F;
@@ -757,7 +757,7 @@ public class KillAura extends Module {
             case "LockView":
                 this.field23953.field32084 = this.field23952.field32084;
                 this.field23953.field32085 = this.field23952.field32085;
-                EntityRayTraceResult var40 = Class5628.method17714(
+                EntityRayTraceResult var40 = ColorUtils.method17714(
                         var3, this.field23952.field32084, this.field23952.field32085, var0 -> true, this.getNumberValueBySettingName("Range")
                 );
                 if (var40 == null || var40.getEntity() != var3) {
@@ -765,7 +765,7 @@ public class KillAura extends Module {
                 }
                 break;
             case "Test2":
-                EntityRayTraceResult var24 = Class5628.method17714(
+                EntityRayTraceResult var24 = ColorUtils.method17714(
                         var3, this.field23952.field32084, this.field23952.field32085, var0 -> true, this.getNumberValueBySettingName("Range")
                 );
                 if (var24 != null && var24.getEntity() == var3) {
@@ -782,16 +782,16 @@ public class KillAura extends Module {
                 double var15 = var3.getPosX() - var3.lastTickPosX;
                 double var17 = var3.getPosZ() - var3.lastTickPosZ;
                 float var19 = (float) Math.sqrt(var15 * var15 + var17 * var17);
-                float var20 = Class8603.method30791(var10, 0.57, -0.135, 0.095, -0.3);
-                float var21 = Math.min(1.0F, Class8603.method30791(var10, 0.57, -0.135, 0.095, -0.3));
-                float var22 = Class5628.method17756(field23951.field32084, var4.field32084);
+                float var20 = MathUtils.lerp(var10, 0.57, -0.135, 0.095, -0.3);
+                float var21 = Math.min(1.0F, MathUtils.lerp(var10, 0.57, -0.135, 0.095, -0.3));
+                float var22 = ColorUtils.method17756(field23951.field32084, var4.field32084);
                 float var23 = var4.field32085 - field23951.field32085;
                 this.field23953.field32084 = this.field23952.field32084;
                 this.field23953.field32085 = this.field23952.field32085;
                 this.field23952.field32084 = field23951.field32084 + var20 * var22;
                 this.field23952.field32085 = (field23951.field32085 + var21 * var23) % 90.0F;
                 if (var10 == 0.0F || var10 >= 1.0F || (double) var19 > 0.1 && this.field23956 < 4.0F) {
-                    float var25 = Math.abs(Class5628.method17756(var4.field32084, field23951.field32084));
+                    float var25 = Math.abs(ColorUtils.method17756(var4.field32084, field23951.field32084));
                     this.field23956 = (float) Math.round(var25 * 1.8F / 50.0F);
                     if (this.field23956 < 3.0F) {
                         this.field23956 = 3.0F;

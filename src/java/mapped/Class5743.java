@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class8603;
+import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
@@ -26,7 +26,7 @@ public class Class5743<T extends Entity> extends Class5712<AbstractClientPlayerE
       var11.field17432.field31039 = true;
       float var12 = var1.field4967;
       float var13 = var1.rotationPitch;
-      float var14 = Class8603.method30791(var8, 0.15, 0.84, 0.34, 1.0);
+      float var14 = MathUtils.lerp(var8, 0.15, 0.84, 0.34, 1.0);
       float var15 = ((float) Minecraft.getInstance().player.ticksExisted + Minecraft.getInstance().getRenderPartialTicks()) * 3.0F + var14 * 160.0F;
       var1.field4967 = var15;
       var1.rotationPitch = -10.0F;

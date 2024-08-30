@@ -17,7 +17,7 @@ public class Class4321 extends Class4307 {
         super("ClassicScreen");
         field21079 = new Animation(250, 200, Direction.FORWARDS);
         this.method13419();
-        Class5628.method17739();
+        ColorUtils.method17739();
     }
 
     public void method13417() {
@@ -54,7 +54,7 @@ public class Class4321 extends Class4307 {
 
     @Override
     public JSONObject method13160(JSONObject var1) {
-        Class5628.method17742();
+        ColorUtils.method17742();
         return super.method13160(var1);
     }
 
@@ -72,15 +72,15 @@ public class Class4321 extends Class4307 {
     }
 
     @Override
-    public void method13027(float var1) {
+    public void draw(float var1) {
         float var4 = field21079.calcPercent();
         RenderUtil.method11426(
                 (float) this.field20895,
                 (float) this.field20896,
                 (float) (this.field20895 + this.field20897),
                 (float) (this.field20896 + this.field20898),
-                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var4 * 0.35F)
+                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.35F)
         );
-        super.method13027(var1);
+        super.draw(var1);
     }
 }

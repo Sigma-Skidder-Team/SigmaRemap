@@ -23,9 +23,9 @@ public class Class9047 {
          double var5 = 0.0;
          double var7 = var0.getPosZ() - var0.lastTickPosZ;
          return new double[]{
-            var0.getPosX() + var3 * (double)Class5628.method17705() / 50.0,
-            var0.getPosY() + 0.0 * (double)Class5628.method17705() / 50.0,
-            var0.getPosZ() + var7 * (double)Class5628.method17705() / 50.0
+            var0.getPosX() + var3 * (double) ColorUtils.method17705() / 50.0,
+            var0.getPosY() + 0.0 * (double) ColorUtils.method17705() / 50.0,
+            var0.getPosZ() + var7 * (double) ColorUtils.method17705() / 50.0
          };
       } else {
          return new double[]{0.0, 0.0, 0.0};

@@ -14,7 +14,7 @@ public class Class4282 extends Class4281 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13306(ResourceRegistry.field38868);
       RenderUtil.method11426(
          (float)this.field20895,
@@ -29,8 +29,8 @@ public class Class4282 extends Class4281 {
          (float)(this.field20895 + this.field20897 + 2),
          (float)(this.field20896 + this.field20898),
          2,
-         Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 625.0F)
+         ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 625.0F)
       );
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

@@ -25,7 +25,7 @@ public class Class4350 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       if (this.field20912 != null) {
          RenderUtil.method11426((float)this.method13263(), (float)this.method13265(), (float)this.field20897, (float)this.field20898, -14144460);
          RenderUtil.method11464(
@@ -44,12 +44,12 @@ public class Class4350 extends Class4278 {
             int var13 = 0;
 
             for (String var15 : var12) {
-               RenderUtil.method11439(
+               RenderUtil.drawString(
                   var5,
                   (float)(this.method13263() + var13 + var4),
                   (float)(this.method13265() + var4 + var11 * var5.method23952()),
                   var15,
-                  Class5628.method17688(this.method13588(var15), var1)
+                  ColorUtils.applyAlpha(this.method13588(var15), var1)
                );
                var13 += var5.method23942(var15);
                var8 -= var15.length();
@@ -73,9 +73,9 @@ public class Class4350 extends Class4278 {
             (float)(this.method13265() + var4 + var9 * var5.method23952()),
             (float)var4 + var10 + 1.0F,
             (float)(this.method13265() + var4 + var5.method23941(this.field20912) + var9 * var5.method23952()),
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
-         super.method13027(var1);
+         super.draw(var1);
       }
    }
 

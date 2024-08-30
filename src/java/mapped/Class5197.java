@@ -18,7 +18,7 @@ public class Class5197 extends Module {
     @EventTarget
     private void method16183(TickEvent var1) {
         if (this.isEnabled()) {
-            if (Class5628.method17716()) {
+            if (ColorUtils.method17716()) {
                 mc.gameSettings.method37149();
             }
         }
@@ -45,7 +45,7 @@ public class Class5197 extends Module {
                     for (Class8790 var5x : var5.method17307()) {
                         PlayerEntity var6 = mc.world.method7196(var5x.method31726().getId());
                         if (var6 == null && var5x.method31728() != null) {
-                            Class5628.method17678("Detected an anomaly " + var5x + var5x.method31726());
+                            ColorUtils.method17678("Detected an anomaly " + var5x + var5x.method31726());
                         } else {
                             System.out.println("all seems good " + var5x + var5x.method31726());
                         }

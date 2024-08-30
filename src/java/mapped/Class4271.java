@@ -76,25 +76,25 @@ public class Class4271 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       RenderUtil.method11426(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269() + this.method13108()),
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       RenderUtil.method11463(
          (float)this.method13263(), (float)this.method13265(), (float)this.method13267(), (float)(this.method13269() + this.method13108()), 6.0F, var1 * 0.21F
       );
       if (this.method13303() != null) {
          RenderUtil.method11415(this);
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             this.method13305(),
             (float)(this.method13263() + 10),
             (float)(this.method13265() + (this.method13269() - this.method13305().method23952()) / 2 + 1),
             this.field20912,
-            Class5628.method17688(this.field20914.method19405(), var1 * 0.7F)
+            ColorUtils.applyAlpha(this.field20914.method19405(), var1 * 0.7F)
          );
          RenderUtil.method11422();
       }
@@ -104,7 +104,7 @@ public class Class4271 extends Class4247 {
       );
       GL11.glPushMatrix();
       if (this.field20702 > 0.0F) {
-         super.method13027(var1);
+         super.draw(var1);
       }
 
       GL11.glPopMatrix();
@@ -114,7 +114,7 @@ public class Class4271 extends Class4247 {
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269() + this.method13108()),
-         Class5628.method17688(this.field20914.method19407(), var1 * 0.08F)
+         ColorUtils.applyAlpha(this.field20914.method19407(), var1 * 0.08F)
       );
       int var4 = this.method13267() - (int)((float)this.method13269() / 2.0F + 0.5F);
       int var5 = (int)((float)this.method13269() / 2.0F + 0.5F) + 1;
@@ -122,12 +122,12 @@ public class Class4271 extends Class4247 {
       GL11.glTranslatef((float)(this.method13263() + var4), (float)(this.method13265() + var5), 0.0F);
       GL11.glRotatef(90.0F * this.field20702, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-this.method13263() - var4), (float)(-this.method13265() - var5), 0.0F);
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          this.field20913,
          (float)(this.method13263() + var4 - 6),
          (float)(this.method13265() + var5 - 14),
          ">",
-         Class5628.method17688(this.field20914.method19405(), var1 * 0.7F * (!this.method13114(this.method13309(), this.method13310()) ? 0.5F : 1.0F))
+         ColorUtils.applyAlpha(this.field20914.method19405(), var1 * 0.7F * (!this.method13114(this.method13309(), this.method13310()) ? 0.5F : 1.0F))
       );
    }
 

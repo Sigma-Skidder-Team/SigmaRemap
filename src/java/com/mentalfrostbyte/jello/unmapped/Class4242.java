@@ -24,11 +24,11 @@ public class Class4242 extends Class4240 {
     }
 
     @Override
-    public void method13027(float var1) {
+    public void draw(float var1) {
         this.field20592.changeDirection(!this.field20591 ? Direction.BACKWARDS : Direction.FORWARDS);
-        float var4 = Class8603.method30791(this.field20592.calcPercent(), 0.07, 0.73, 0.63, 1.01);
-        if (this.field20592.method25319() == Direction.BACKWARDS) {
-            var4 = Class8603.method30791(this.field20592.calcPercent(), 0.71, 0.18, 0.95, 0.57);
+        float var4 = MathUtils.lerp(this.field20592.calcPercent(), 0.07, 0.73, 0.63, 1.01);
+        if (this.field20592.getDirection() == Direction.BACKWARDS) {
+            var4 = MathUtils.lerp(this.field20592.calcPercent(), 0.71, 0.18, 0.95, 0.57);
         }
 
         RenderUtil.method11419((float) this.method13263(), (float) this.method13265() - var4 * 3.0F, (float) this.method13267(), (float) this.method13269());
@@ -49,7 +49,7 @@ public class Class4242 extends Class4240 {
                     (float) this.method13265() - var4 * 3.0F,
                     (float) this.method13267(),
                     (float) this.method13269(),
-                    Class5628.method17688(-12319668, 0.5F)
+                    ColorUtils.applyAlpha(-12319668, 0.5F)
             );
         }
 

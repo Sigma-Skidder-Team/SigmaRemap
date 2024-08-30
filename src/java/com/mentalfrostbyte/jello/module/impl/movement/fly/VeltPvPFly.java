@@ -37,7 +37,7 @@ public class VeltPvPFly extends Module {
     public void onDisable() {
         Class9567.method37090(0.0);
         if (mc.player.method3433().field18049 > 0.0) {
-            Class5628.method17725(-0.0789);
+            ColorUtils.method17725(-0.0789);
         }
     }
 
@@ -73,7 +73,7 @@ public class VeltPvPFly extends Module {
                             var1.method13995(-Class9567.method37080());
                         }
 
-                        Class5628.method17725(var1.method13994());
+                        ColorUtils.method17725(var1.method13994());
                         Class9567.method37088(var1, var4 - 0.1);
                     }
                 } else {
@@ -85,7 +85,7 @@ public class VeltPvPFly extends Module {
                         this.field23421 = !this.field23423 ? mc.player.getPosY() + var1.method13994() : this.field23421;
                     }
 
-                    Class5628.method17725(var1.method13994());
+                    ColorUtils.method17725(var1.method13994());
                     Class9567.method37088(var1, var4);
                 }
             } else {

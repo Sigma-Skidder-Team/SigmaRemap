@@ -92,10 +92,10 @@ public class NotificationManager {
                         (float) (var7 + this.field39923 - 1), (float) (var8 + 1), (float) (var7 + this.field39923), (float) (var8 + this.field39924 - 1), var11
                 );
                 RenderUtil.method11420(var7, var8, var7 + this.field39923 - this.field39927, var8 + this.field39924);
-                RenderUtil.method11439(
+                RenderUtil.drawString(
                         this.field39929, (float) (var7 + this.field39924 + this.field39927 - 2), (float) (var8 + this.field39927), var5.field43603, var12
                 );
-                RenderUtil.method11439(
+                RenderUtil.drawString(
                         this.field39928,
                         (float) (var7 + this.field39924 + this.field39927 - 2),
                         (float) (var8 + this.field39927 + this.field39929.method23941(var5.field43603)),

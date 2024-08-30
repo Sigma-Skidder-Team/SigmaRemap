@@ -203,8 +203,8 @@ public class Class9567 {
       double var15 = ((double)var6 * var11 - (double)var7 * var9) * var1;
       var0.method13993(var13);
       var0.method13997(var15);
-      Class5628.method17724(var0.method13992());
-      Class5628.method17726(var0.method13996());
+      ColorUtils.method17724(var0.method13992());
+      ColorUtils.method17726(var0.method13996());
    }
 
    public static void method37089(Class4435 var0, double var1, float var3) {
@@ -222,8 +222,8 @@ public class Class9567 {
       double var15 = var11 * var1;
       var0.method13993(var13);
       var0.method13997(var15);
-      Class5628.method17724(var0.method13992());
-      Class5628.method17726(var0.method13996());
+      ColorUtils.method17724(var0.method13992());
+      ColorUtils.method17726(var0.method13996());
    }
 
    public static void method37090(double var0) {
@@ -232,16 +232,16 @@ public class Class9567 {
       float var6 = var4[2];
       float var7 = var4[0];
       if (var5 == 0.0F && var6 == 0.0F) {
-         Class5628.method17724(0.0);
-         Class5628.method17726(0.0);
+         ColorUtils.method17724(0.0);
+         ColorUtils.method17726(0.0);
       }
 
       double var8 = Math.cos(Math.toRadians((double)var7));
       double var10 = Math.sin(Math.toRadians((double)var7));
       double var12 = ((double)var5 * var8 + (double)var6 * var10) * var0;
       double var14 = ((double)var5 * var10 - (double)var6 * var8) * var0;
-      Class5628.method17724(var12);
-      Class5628.method17726(var14);
+      ColorUtils.method17724(var12);
+      ColorUtils.method17726(var14);
    }
 
    public static void method37091() {
@@ -268,8 +268,8 @@ public class Class9567 {
       float var9 = (var4 - 90.0F) * (float) (Math.PI / 180.0);
       var0.method13993((double)(-MathHelper.sin(var9)) * var1);
       var0.method13997((double) MathHelper.cos(var9) * var1);
-      Class5628.method17724(var0.method13992());
-      Class5628.method17726(var0.method13996());
+      ColorUtils.method17724(var0.method13992());
+      ColorUtils.method17726(var0.method13996());
       return var4;
    }
 
@@ -282,8 +282,8 @@ public class Class9567 {
       }
 
       float var8 = (var3 - 90.0F) * (float) (Math.PI / 180.0);
-      Class5628.method17724((double)(-MathHelper.sin(var8)) * var0);
-      Class5628.method17726((double) MathHelper.cos(var8) * var0);
+      ColorUtils.method17724((double)(-MathHelper.sin(var8)) * var0);
+      ColorUtils.method17726((double) MathHelper.cos(var8) * var0);
       return var3;
    }
 

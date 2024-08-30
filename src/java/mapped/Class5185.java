@@ -42,7 +42,7 @@ public class Class5185 extends Module {
     public void method16143(Render3DEvent var1) {
         if (this.isEnabled()) {
             if (this.field23490 != null) {
-                int var4 = Class5628.method17688(ClientColors.PALE_YELLOW.getColor, 0.14F);
+                int var4 = ColorUtils.applyAlpha(ClientColors.PALE_YELLOW.getColor, 0.14F);
                 GL11.glPushMatrix();
                 GL11.glDisable(2929);
                 BlockPos var5 = this.field23490.getPos();

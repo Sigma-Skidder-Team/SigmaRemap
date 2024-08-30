@@ -46,7 +46,7 @@ public class Class5221 extends Module {
                     var15 = var15 + "0";
                 }
 
-                Class5628.method17678(
+                ColorUtils.method17678(
                         Client.getInstance().getCommandManager().method30235() + "(" + var15 + "x faster " + (!var7 ? "jumping" : "walking") + ")  Speed: " + var5
                 );
             }

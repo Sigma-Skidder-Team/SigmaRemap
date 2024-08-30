@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.network.Class9507;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class8603;
+import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import totalcross.json.JSONArray;
@@ -55,16 +55,16 @@ public class Class4329 extends Class4305 {
    }
 
    @Override
-   public void method13027(float var1) {
-      this.field21136.changeDirection(!this.method13295() ? Direction.BACKWARDS : Direction.FORWARDS);
+   public void draw(float var1) {
+      this.field21136.changeDirection(!this.isHovered() ? Direction.BACKWARDS : Direction.FORWARDS);
       var1 = 1.0F;
       var1 *= this.field21136.calcPercent();
-      float var4 = Class8603.method30791(this.field21136.calcPercent(), 0.17, 1.0, 0.51, 1.0);
-      if (this.field21136.method25319() == Direction.BACKWARDS) {
+      float var4 = MathUtils.lerp(this.field21136.calcPercent(), 0.17, 1.0, 0.51, 1.0);
+      if (this.field21136.getDirection() == Direction.BACKWARDS) {
          var4 = 1.0F;
       }
 
-      this.method13285((int)(150.0F * (1.0F - var4)));
+      this.drawBackground((int)(150.0F * (1.0F - var4)));
       this.method13225();
       Class9507 var5 = Client.getInstance().getNetworkManager().method30452();
       if (var5 != null) {
@@ -77,21 +77,21 @@ public class Class4329 extends Class4305 {
                190.0F,
                190.0F,
                var5.method36701(),
-               Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+               ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
             );
             RenderUtil.method11422();
          }
       }
 
-      RenderUtil.method11439(ResourceRegistry.field38860, 100.0F, 100.0F, "Redeem Premium", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
-      RenderUtil.method11439(
+      RenderUtil.drawString(ResourceRegistry.JelloLightFont36, 100.0F, 100.0F, "Redeem Premium", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
+      RenderUtil.drawString(
          ResourceRegistry.JelloLightFont25,
          100.0F,
          150.0F,
          "Visit http://sigmaclient.info for more info",
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1)
       );
-      RenderUtil.method11439(ResourceRegistry.JelloLightFont18, 100.0F, 263.0F, this.field21135, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1));
-      super.method13027(var1);
+      RenderUtil.drawString(ResourceRegistry.JelloLightFont18, 100.0F, 263.0F, this.field21135, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1));
+      super.draw(var1);
    }
 }

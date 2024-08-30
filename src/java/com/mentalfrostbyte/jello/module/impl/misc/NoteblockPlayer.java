@@ -82,7 +82,7 @@ public class NoteblockPlayer extends PremiumModule {
         if (this.isEnabled()) {
             if (this.field23639 != null) {
                 if (mc.playerController.isInCreativeMode()) {
-                    Class5628.method17678("§cNoteBlockPlayer isn't available in creative mode!");
+                    ColorUtils.method17678("§cNoteBlockPlayer isn't available in creative mode!");
                     this.method15999(false);
                 } else {
                     if (!this.method16407(this.field23641) && mc.player.ticksExisted % 4 == 0) {
@@ -254,10 +254,10 @@ public class NoteblockPlayer extends PremiumModule {
                 0.0F,
                 (float) (var10.method23942(var7) / 2 + 10),
                 (float) (var10.method23952() + 2),
-                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.4F)
+                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F)
         );
         GL11.glTranslated(-var10.method23942(var7) / 2, 0.0, 0.0);
-        RenderUtil.method11439(var10, 0.0F, 0.0F, var7, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+        RenderUtil.drawString(var10, 0.0F, 0.0F, var7, ClientColors.LIGHT_GREYISH_BLUE.getColor);
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);
@@ -271,11 +271,11 @@ public class NoteblockPlayer extends PremiumModule {
     public void onEnable() {
         if (!mc.playerController.isInCreativeMode()) {
             if (this.field23640.isEmpty()) {
-                Class5628.method17678("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
-                Class5628.method17678("§cPlaying the only integrated demo song!");
+                ColorUtils.method17678("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
+                ColorUtils.method17678("§cPlaying the only integrated demo song!");
                 this.field23639 = Class8471.method29870(ResourcesDecrypter.readInputStream("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
                 if (this.field23639 == null) {
-                    Class5628.method17678("§cError loading included song, wtf!");
+                    ColorUtils.method17678("§cError loading included song, wtf!");
                     this.method15999(false);
                     return;
                 }
@@ -283,16 +283,16 @@ public class NoteblockPlayer extends PremiumModule {
                 File var3 = new File(Client.getInstance().getFile() + "/nbs/" + this.getStringSettingValueByName("Song"));
                 this.field23639 = Class8471.method29869(var3);
                 if (this.field23639 == null) {
-                    Class5628.method17678("§cError loading song! Make sure song is saved as <= V3 format");
+                    ColorUtils.method17678("§cError loading song! Make sure song is saved as <= V3 format");
                     this.method15999(false);
                     return;
                 }
             }
 
             System.out.println(this.field23639.method9953());
-            Class5628.method17678("Now Playing: " + this.field23639.method9953());
+            ColorUtils.method17678("Now Playing: " + this.field23639.method9953());
             if (Math.floor(20.0F / this.field23639.method9958()) != (double) (20.0F / this.field23639.method9958())) {
-                Class5628.method17678("§cNBS Error! Invalid tempo! (" + this.field23639.method9958() + ") Unpredictable results!");
+                ColorUtils.method17678("§cNBS Error! Invalid tempo! (" + this.field23639.method9958() + ") Unpredictable results!");
             }
 
             this.field23638 = 0;
@@ -311,7 +311,7 @@ public class NoteblockPlayer extends PremiumModule {
             this.method16407(this.field23641);
             this.method16408(this.field23641);
         } else {
-            Class5628.method17678("§cNoteBlockPlayer isn't available in creative mode!");
+            ColorUtils.method17678("§cNoteBlockPlayer isn't available in creative mode!");
             this.method15999(false);
         }
     }

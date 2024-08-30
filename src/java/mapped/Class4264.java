@@ -25,7 +25,7 @@ public class Class4264 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       for (int var4 = 0; var4 < this.field20897; var4++) {
          float var5 = (float)var4 / (float)this.field20897;
          RenderUtil.method11424(
@@ -33,7 +33,7 @@ public class Class4264 extends Class4247 {
             (float)this.field20896,
             1.0F,
             (float)this.field20898,
-            Class5628.method17688(Color.HSBtoRGB(var5, 1.0F, 1.0F), var1)
+            ColorUtils.applyAlpha(Color.HSBtoRGB(var5, 1.0F, 1.0F), var1)
          );
       }
 
@@ -42,12 +42,12 @@ public class Class4264 extends Class4247 {
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269()),
-         Class5628.method17688(ClientColors.MID_GREY.getColor, 0.5F * var1)
+         ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.5F * var1)
       );
       Class4252.method13052(
          this.field20895 + Math.round((float)this.field20897 * this.field20679) + 1, this.field20896 + 4, Color.HSBtoRGB(this.field20679, 1.0F, 1.0F), var1
       );
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    @Override

@@ -290,7 +290,7 @@ public class Class5169 extends Module {
          GL11.glRotatef((float)var7, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
          int var8 = var7 / 45;
-         Color var6 = new Color(Class5628.method17691(var3[var8].getRGB(), 0.2F), false);
+         Color var6 = new Color(ColorUtils.method17691(var3[var8].getRGB(), 0.2F), false);
          this.method16083((float)var6.getRed() / 255.0F, (float)var6.getGreen() / 255.0F, (float)var6.getBlue() / 255.0F);
          GL11.glPopMatrix();
       }

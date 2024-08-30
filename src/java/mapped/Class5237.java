@@ -27,14 +27,14 @@ public class Class5237 extends Module {
         this.field23591 = null;
         this.field23592.clear();
         this.field23593.clear();
-        Class5628.method17678("Dumping...");
+        ColorUtils.method17678("Dumping...");
         this.method16328("");
     }
 
     @Override
     public void onDisable() {
-        Class5628.method17678("Done.");
-        Class5628.method17678("§aPlugins:");
+        ColorUtils.method17678("Done.");
+        ColorUtils.method17678("§aPlugins:");
         StringBuilder var3 = new StringBuilder();
 
         for (String var5 : this.field23593) {
@@ -42,8 +42,8 @@ public class Class5237 extends Module {
         }
 
         String var10 = var3.substring(0, var3.length() - 2);
-        Class5628.method17678(var10);
-        Class5628.method17678("§aCommands:");
+        ColorUtils.method17678(var10);
+        ColorUtils.method17678("§aCommands:");
         var3 = new StringBuilder();
 
         for (String var6 : this.field23592) {
@@ -51,7 +51,7 @@ public class Class5237 extends Module {
         }
 
         String var12 = var3.substring(0, var3.length() - 2);
-        Class5628.method17678(var12);
+        ColorUtils.method17678(var12);
 
         try {
             File var13 = new File(Client.getInstance().getFile() + "/plugin_and_command_dump.txt");
@@ -63,10 +63,10 @@ public class Class5237 extends Module {
             var7.write("Plugins: " + var10 + "\n\n");
             var7.write("Commands: " + var12 + "\n");
             var7.close();
-            Class5628.method17678("§bDumped to: " + var13.getAbsolutePath());
+            ColorUtils.method17678("§bDumped to: " + var13.getAbsolutePath());
         } catch (IOException var8) {
             var8.printStackTrace();
-            Class5628.method17678("§cCould not save dump file.");
+            ColorUtils.method17678("§cCould not save dump file.");
         }
     }
 

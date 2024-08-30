@@ -15,8 +15,8 @@ public class Class654 implements Runnable {
 
    @Override
    public void run() {
-      AutoFarm.method16876().getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, this.field3281.up(), Direction.field673));
-      AutoFarm.method16877().getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13486, this.field3281.up(), Direction.field673));
-      AutoFarm.method16878().getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
+      AutoFarm.mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, this.field3281.up(), Direction.field673));
+      AutoFarm.mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13486, this.field3281.up(), Direction.field673));
+      AutoFarm.mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
    }
 }

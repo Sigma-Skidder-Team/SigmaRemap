@@ -86,7 +86,7 @@ public class Class4338 extends Class4304 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       super.method13224();
       super.method13225();
       int var4 = (int)(1.0F + 10.0F * (1.0F - this.field21195));
@@ -103,14 +103,14 @@ public class Class4338 extends Class4304 {
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + 60),
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 0.9F * this.field21195))
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 0.9F * this.field21195))
       );
       RenderUtil.method11424(
          (float)this.method13263(),
          (float)this.method13265() + 60.0F * this.field21195,
          (float)this.method13267(),
          (float)this.method13269() - 60.0F * this.field21195,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       if (!(this.field21195 > 0.8F)) {
          if (this.field21195 < 0.2F) {
@@ -126,12 +126,12 @@ public class Class4338 extends Class4304 {
          (float)(this.method13263() + 20),
          (float)(this.method13265() + 30),
          var5,
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.5F * this.field21195),
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.5F * this.field21195),
          Class2218.field14488,
          Class2218.field14492
       );
       GL11.glPushMatrix();
-      super.method13027(var1 * var1);
+      super.draw(var1 * var1);
       GL11.glPopMatrix();
       if (this.field21194.method13513() > 0) {
          RenderUtil.method11449(
@@ -140,7 +140,7 @@ public class Class4338 extends Class4304 {
             (float)this.method13267(),
             18.0F,
             ResourcesDecrypter.shadowBottomPNG,
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21195 * 0.5F)
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21195 * 0.5F)
          );
       }
    }

@@ -3,7 +3,6 @@ package com.mentalfrostbyte.jello.account;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.TextureUtil;
-import com.mojang.authlib.yggdrasil.YggdrasilUserAuthentication;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthResult;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticator;
@@ -24,7 +23,6 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.UUID;
 import java.util.regex.Pattern;
 
 public class Account {
@@ -70,11 +68,11 @@ public class Account {
 
     public Account(JSONObject var1) {
         if (var1.has("email")) {
-            this.email = var1.method21773("email");
+            this.email = var1.getString("email");
         }
 
         if (var1.has("password")) {
-            this.password = decodeBase64(var1.method21773("password"));
+            this.password = decodeBase64(var1.getString("password"));
         }
 
         if (var1.has("bans")) {
@@ -84,11 +82,11 @@ public class Account {
         }
 
         if (var1.has("knownName")) {
-            this.knownName = var1.method21773("knownName");
+            this.knownName = var1.getString("knownName");
         }
 
         if (var1.has("knownUUID")) {
-            this.knownUUID = var1.method21773("knownUUID");
+            this.knownUUID = var1.getString("knownUUID");
         }
 
         if (var1.has("dateAdded")) {
@@ -106,7 +104,7 @@ public class Account {
         }
 
         if (var1.has("skin")) {
-            byte[] var7 = DatatypeConverter.parseBase64Binary(var1.method21773("skin"));
+            byte[] var7 = DatatypeConverter.parseBase64Binary(var1.getString("skin"));
 
             try {
                 this.skin = ImageIO.read(new ByteArrayInputStream(var7));
@@ -256,7 +254,7 @@ public class Account {
         if (!this.getKnownUUID().contains("steve") && this.skinUpdateThread == null) {
             this.skinUpdateThread = new Thread(() -> {
                 try {
-                    this.skin = ImageIO.read(new URL(Class5628.method17699(this.getKnownUUID().replaceAll("-", ""))));
+                    this.skin = ImageIO.read(new URL(ColorUtils.method17699(this.getKnownUUID().replaceAll("-", ""))));
                 } catch (Exception var4) {
                     var4.printStackTrace();
                 }

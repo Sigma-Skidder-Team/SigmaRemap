@@ -184,7 +184,7 @@ public class Class4305 implements Class4328 {
         GL11.glTranslatef((float) this.method13280(), (float) this.method13282(), 0.0F);
     }
 
-    public void method13027(float var1) {
+    public void draw(float var1) {
         this.method13226(var1);
     }
 
@@ -196,7 +196,7 @@ public class Class4305 implements Class4328 {
         for (Class4305 var5 : this.field20893) {
             if (var5.method13287()) {
                 GL11.glPushMatrix();
-                var5.method13027(var1);
+                var5.draw(var1);
                 GL11.glPopMatrix();
             }
         }
@@ -218,7 +218,7 @@ public class Class4305 implements Class4328 {
 
     public void method13103(int var1) {
         for (Class4305 var5 : this.field20893) {
-            if (var5.method13295() && var5.method13287()) {
+            if (var5.isHovered() && var5.method13287()) {
                 var5.method13103(var1);
             }
         }
@@ -227,7 +227,7 @@ public class Class4305 implements Class4328 {
     @Override
     public void method13150(char var1) {
         for (Class4305 var5 : this.field20893) {
-            if (var5.method13295() && var5.method13287()) {
+            if (var5.isHovered() && var5.method13287()) {
                 var5.method13150(var1);
             }
         }
@@ -238,7 +238,7 @@ public class Class4305 implements Class4328 {
     @Override
     public void method13065(int var1) {
         for (Class4305 var5 : this.field20893) {
-            if (var5.method13295() && var5.method13287()) {
+            if (var5.isHovered() && var5.method13287()) {
                 var5.method13065(var1);
             }
         }
@@ -256,8 +256,8 @@ public class Class4305 implements Class4328 {
                     && var8.method13258() instanceof Class4339
                     && var8.method13258().method13114(var1, var2)
                     && var8.method13258().method13287()
-                    && var8.method13258().method13295();
-            if (var6 || !var8.method13295() || !var8.method13287() || !var8.method13114(var1, var2) && !var9) {
+                    && var8.method13258().isHovered();
+            if (var6 || !var8.isHovered() || !var8.method13287() || !var8.method13114(var1, var2) && !var9) {
                 var8.method13145(false);
                 if (var8 != null) {
                     for (Class4305 var12 : var8.method13241()) {
@@ -285,7 +285,7 @@ public class Class4305 implements Class4328 {
         this.field20908 = this.method13114(var1, var2);
 
         for (Class4305 var7 : this.field20893) {
-            if (var7.method13295() && var7.method13287()) {
+            if (var7.isHovered() && var7.method13287()) {
                 var7.method13095(var1, var2, var3);
             }
         }
@@ -306,7 +306,7 @@ public class Class4305 implements Class4328 {
     @Override
     public void method13079(float var1) {
         for (Class4305 var5 : this.field20893) {
-            if (var5.method13295() && var5.method13287()) {
+            if (var5.isHovered() && var5.method13287()) {
                 var5.method13079(var1);
             }
         }
@@ -739,7 +739,7 @@ public class Class4305 implements Class4328 {
         this.field20901 = var1;
     }
 
-    public void method13285(int var1) {
+    public void drawBackground(int var1) {
         this.field20902 = var1;
     }
 
@@ -783,7 +783,7 @@ public class Class4305 implements Class4328 {
         this.field20907 = var1;
     }
 
-    public boolean method13295() {
+    public boolean isHovered() {
         return this.field20904;
     }
 

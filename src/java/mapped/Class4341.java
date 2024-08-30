@@ -31,7 +31,7 @@ public class Class4341 extends Class4339 implements Class4342 {
       int var3 = 0;
 
       for (Module var5 : Client.getInstance().getModuleManager().getModulesByCategory(this.field21214)) {
-         int var9 = Class5628.method17688(-3487030, 0.0F);
+         int var9 = ColorUtils.applyAlpha(-3487030, 0.0F);
          Class6387 var12 = new Class6387(!var5.isEnabled() ? 1895167477 : -14047489, !var5.isEnabled() ? var9 : -14042881)
             .method19410(!var5.isEnabled() ? ClientColors.DEEP_TEAL.getColor : ClientColors.LIGHT_GREYISH_BLUE.getColor);
          var12.method19412(Class2218.field14488);
@@ -125,9 +125,9 @@ public class Class4341 extends Class4339 implements Class4342 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13225();
-      super.method13027(var1 * ((Class4338)this.field20892).field21195);
+      super.draw(var1 * ((Class4338)this.field20892).field21195);
    }
 
    @Override

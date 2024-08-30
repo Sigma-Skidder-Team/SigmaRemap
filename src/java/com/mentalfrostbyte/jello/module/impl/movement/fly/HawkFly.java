@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.Class5473;
-import mapped.Class5628;
+import mapped.ColorUtils;
 import mapped.Class9567;
 import mapped.Packet;
 
@@ -35,7 +35,7 @@ public class HawkFly extends Module {
     public void onDisable() {
         Class9567.method37090(0.0);
         if (mc.player.method3433().field18049 > 0.0) {
-            Class5628.method17725(-0.0789);
+            ColorUtils.method17725(-0.0789);
         }
     }
 
@@ -53,9 +53,9 @@ public class HawkFly extends Module {
                 Class9567.method37088(var1, var4);
             }
 
-            Class5628.method17725(var1.method13994());
-            Class5628.method17724(var1.method13992());
-            Class5628.method17726(var1.method13996());
+            ColorUtils.method17725(var1.method13994());
+            ColorUtils.method17724(var1.method13992());
+            ColorUtils.method17726(var1.method13996());
         }
     }
 

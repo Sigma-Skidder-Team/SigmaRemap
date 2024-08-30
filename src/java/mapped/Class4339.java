@@ -75,14 +75,14 @@ public class Class4339 extends Class4304 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13224();
       if (!this.field21203 || this.method13287()) {
          if (this.field21206) {
             RenderUtil.method11415(this);
          }
 
-         super.method13027(var1);
+         super.draw(var1);
          if (this.field21206) {
             RenderUtil.method11422();
          }

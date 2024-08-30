@@ -37,14 +37,14 @@ public class Class4376 extends Class4235 implements Class4238 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       float var4 = 1.0F + this.field21383.calcPercent() * 0.2F;
       float var5 = !this.method13212() ? 0.0F : 0.1F;
       int var6 = (int)((float)this.method13267() * var4);
       int var7 = (int)((float)this.method13269() * var4);
       int var8 = this.method13263() - (var6 - this.method13267()) / 2;
       int var9 = (int)((float)(this.method13265() - (var7 - this.method13269()) / 2) - (float)(this.method13269() / 2) * (var4 - 1.0F));
-      float[] var10 = Class5628.method17701(this.method13025().getWidth(), this.method13025().getHeight(), (float)var6, (float)var7);
+      float[] var10 = ColorUtils.method17701(this.method13025().getWidth(), this.method13025().getHeight(), (float)var6, (float)var7);
       RenderUtil.method11420(
          this.method13271() + var8 - this.field20895,
          this.method13272() + var9 - this.field20896,
@@ -57,7 +57,7 @@ public class Class4376 extends Class4235 implements Class4238 {
          var10[2],
          var10[3],
          this.method13025(),
-         Class5628.method17688(Class5628.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var5), var1)
+         ColorUtils.applyAlpha(ColorUtils.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var5), var1)
       );
       if (this.method13303() != null) {
          RenderUtil.method11440(
@@ -65,7 +65,7 @@ public class Class4376 extends Class4235 implements Class4238 {
             (float)(var8 + var6 / 2),
             (float)(var9 + var7 / 2),
             this.method13303(),
-            Class5628.method17688(this.field20914.method19409(), var1),
+            ColorUtils.applyAlpha(this.field20914.method19409(), var1),
             this.field20914.method19411(),
             this.field20914.method19413()
          );
@@ -90,12 +90,12 @@ public class Class4376 extends Class4235 implements Class4238 {
             ResourcesDecrypter.shadowPNG,
             var12 * 0.6F
          );
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             var11,
             (1.0F - var4 / this.method13032()) * (float)var11.method23942(var13) / 2.0F + 1.0F,
             40.0F,
             var13,
-            Class5628.method17688(this.method13307().method19405(), var12 * 0.6F)
+            ColorUtils.applyAlpha(this.method13307().method19405(), var12 * 0.6F)
          );
          GL11.glPopMatrix();
       }

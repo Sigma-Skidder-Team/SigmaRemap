@@ -359,7 +359,7 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
-      GL11.glColor4fv(Class5628.method17709(var3));
+      GL11.glColor4fv(ColorUtils.method17709(var3));
       GL11.glEnable(2881);
       GL11.glBegin(4);
       GL11.glVertex2f(var0 + var2 / 2.0F, var1 + var2 / 2.0F);
@@ -367,7 +367,7 @@ public class RenderUtil {
       GL11.glVertex2f(var0 - var2 / 2.0F, var1);
       GL11.glEnd();
       GL11.glLineWidth(2.0F);
-      GL11.glColor4fv(Class5628.method17709(var4));
+      GL11.glColor4fv(ColorUtils.method17709(var4));
       GL11.glBegin(3);
       GL11.glVertex2f(var0 + var2 / 2.0F, var1 + var2 / 2.0F);
       GL11.glVertex2f(var0 + var2 / 2.0F, var1 - var2 / 2.0F);
@@ -417,7 +417,7 @@ public class RenderUtil {
       RenderSystem.disableBlend();
    }
 
-   public static void method11439(ClientResource var0, float var1, float var2, String var3, int var4) {
+   public static void drawString(ClientResource var0, float var1, float var2, String var3, int var4) {
       method11441(var0, var1, var2, var3, var4, Class2218.field14488, Class2218.field14489, false);
    }
 
@@ -456,13 +456,13 @@ public class RenderUtil {
          if (var0 == ResourceRegistry.JelloLightFont20) {
             var0 = ResourceRegistry.JelloLightFont40;
          } else if (var0 == ResourceRegistry.JelloLightFont25) {
-            var0 = ResourceRegistry.field38857;
+            var0 = ResourceRegistry.JelloLightFont50;
          } else if (var0 == ResourceRegistry.JelloLightFont12) {
-            var0 = ResourceRegistry.field38859;
+            var0 = ResourceRegistry.JelloLightFont24;
          } else if (var0 == ResourceRegistry.JelloLightFont14) {
-            var0 = ResourceRegistry.field38858;
+            var0 = ResourceRegistry.JelloLightFont28;
          } else if (var0 == ResourceRegistry.JelloLightFont18) {
-            var0 = ResourceRegistry.field38860;
+            var0 = ResourceRegistry.JelloLightFont36;
          } else if (var0 == ResourceRegistry.RegularFont20) {
             var0 = ResourceRegistry.RegularFont40;
          } else if (var0 == ResourceRegistry.JelloMediumFont20) {
@@ -737,7 +737,7 @@ public class RenderUtil {
    }
 
    public static void method11454(float var0, float var1, float var2, float var3, Texture var4, float var5) {
-      method11449(var0, var1, var2, var3, var4, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5));
+      method11449(var0, var1, var2, var3, var4, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5));
    }
 
    public static void method11455(float var0, float var1, float var2, float var3, Texture var4) {
@@ -979,7 +979,7 @@ public class RenderUtil {
 
    public static void method11463(float var0, float var1, float var2, float var3, float var4, float var5) {
       GL11.glAlphaFunc(519, 0.0F);
-      int var8 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
+      int var8 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
       method11449(var0 - var4, var1 - var4, var4, var4, ResourcesDecrypter.shadowCorner1PNG, var8);
       method11449(var0 + var2, var1 - var4, var4, var4, ResourcesDecrypter.shadowCorner2PNG, var8);
       method11449(var0 - var4, var1 + var3, var4, var4, ResourcesDecrypter.shadowCorner3PNG, var8);
@@ -991,7 +991,7 @@ public class RenderUtil {
    }
 
    public static void method11464(float var0, float var1, float var2, float var3, float var4, float var5) {
-      int var8 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
+      int var8 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
       method11450(var0, var1, var4, var3, ResourcesDecrypter.shadowRightPNG, var8, false);
       method11450(var0 + var2 - var4, var1, var4, var3, ResourcesDecrypter.shadowLeftPNG, var8, false);
       method11450(var0, var1, var2, var4, ResourcesDecrypter.shadowBottomPNG, var8, false);
@@ -1325,7 +1325,7 @@ public class RenderUtil {
       GL11.glGetFloatv(2982, var10);
       GL11.glGetFloatv(2983, var11);
       GL11.glGetIntegerv(2978, var9);
-      boolean var12 = Class5628.method17737((float)var0, (float)var2, (float)var4, var10, var11, var9, var8);
+      boolean var12 = ColorUtils.method17737((float)var0, (float)var2, (float)var4, var10, var11, var9, var8);
       return !var12
          ? null
          : new double[]{

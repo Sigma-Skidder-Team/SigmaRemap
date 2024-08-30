@@ -11,7 +11,7 @@ public class Class4302 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       if (this.method13287()) {
          RenderUtil.method11449(
             (float)(this.field20895 + 30),
@@ -19,7 +19,7 @@ public class Class4302 extends Class4278 {
             187.0F,
             36.0F,
             ResourcesDecrypter.gemPNG,
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
       }
    }

@@ -35,7 +35,7 @@ public class Class4283 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       double var4 = Minecraft.getInstance().mouseHelper.method36738() - (double)(Minecraft.getInstance().mainWindow.getWidth() / 2);
       var4 /= (double)(Minecraft.getInstance().mainWindow.getWidth() / 2);
       var4 = Math.max(-1.0, Math.min(1.0, var4));
@@ -50,6 +50,6 @@ public class Class4283 extends Class4278 {
       GL11.glDisable(2929);
       RenderUtil.method11424((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, ClientColors.PALE_YELLOW.getColor);
       GL11.glPopMatrix();
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

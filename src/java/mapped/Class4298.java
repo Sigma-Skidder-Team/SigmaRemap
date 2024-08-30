@@ -38,7 +38,7 @@ public class Class4298 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       if (this.account != null) {
          GL11.glEnable(2929);
          Class7516.method24498();

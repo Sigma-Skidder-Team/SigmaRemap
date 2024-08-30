@@ -50,7 +50,7 @@ public class Class5388 extends Module {
             if (Math.abs(var1.method13994()) < var4 && Math.abs(this.field24025) < var4) {
                this.field24025 -= 0.04000000000001;
                var1.method13995(this.field24025);
-               Class5628.method17725(var1.method13994());
+               ColorUtils.method17725(var1.method13994());
             } else {
                this.field24025 = var1.method13994();
             }

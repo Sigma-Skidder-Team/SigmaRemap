@@ -24,7 +24,7 @@ public class YPortSpeed extends Module {
     @EventTarget
     public void method16235(Class4399 var1) {
         if (this.isEnabled() && mc.player != null && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-            if (mc.player.onGround && var1.method13921() && Class5628.method17716()) {
+            if (mc.player.onGround && var1.method13921() && ColorUtils.method17716()) {
                 var1.method13912(var1.method13911() + 1.0E-14);
             }
         }
@@ -42,7 +42,7 @@ public class YPortSpeed extends Module {
     public void onDisable() {
         this.field23541 = false;
         if (mc.player.method3433().field18049 > 0.33) {
-            Class5628.method17725(-0.43 + (double) Class9567.method37079() * 0.1);
+            ColorUtils.method17725(-0.43 + (double) Class9567.method37079() * 0.1);
             Class9567.method37090(Class9567.method37075());
         }
     }
@@ -61,11 +61,11 @@ public class YPortSpeed extends Module {
                             this.field23541 = true;
                             mc.player.stepHeight = 0.5F;
                         } else if (this.field23541
-                                && Class5628.method17730(mc.player, (float) (Class9567.method37080() + (double) Class9567.method37079() * 0.1 + 0.001F))) {
+                                && ColorUtils.method17730(mc.player, (float) (Class9567.method37080() + (double) Class9567.method37079() * 0.1 + 0.001F))) {
                             this.field23541 = !this.field23541;
                             Class9567.method37088(var1, 0.312);
                             var1.method13995(-0.43 + (double) Class9567.method37079() * 0.1);
-                            Class5628.method17725(var1.method13994());
+                            ColorUtils.method17725(var1.method13994());
                             mc.player.stepHeight = 0.0F;
                         } else if (this.field23541) {
                             var1.method13995(-0.1);
@@ -73,11 +73,11 @@ public class YPortSpeed extends Module {
                         }
                         break;
                     case "OldNCP":
-                        if (mc.player.onGround && Class5628.method17686()) {
+                        if (mc.player.onGround && ColorUtils.method17686()) {
                             this.field23545 = 2;
                         }
 
-                        if (this.field23545 == 1 && Class5628.method17686()) {
+                        if (this.field23545 == 1 && ColorUtils.method17686()) {
                             this.field23545 = 2;
                             this.field23543 = 1.38 * Class9567.method37075() - 0.01;
                         } else if (this.field23545 == 2) {
@@ -107,7 +107,7 @@ public class YPortSpeed extends Module {
                         this.field23543 = Math.max(this.field23543, Class9567.method37075());
                         Class9567.method37088(var1, this.field23543);
                         mc.player.stepHeight = 0.6F;
-                        Class5628.method17725(var1.method13994());
+                        ColorUtils.method17725(var1.method13994());
                 }
             }
         }
@@ -123,10 +123,10 @@ public class YPortSpeed extends Module {
                         && !mc.player.method3063()
                         && !Class9567.method37081()
                         && !mc.player.method3250()
-                        && Class5628.method17730(mc.player, 1.0F)
+                        && ColorUtils.method17730(mc.player, 1.0F)
                         && !mc.player.onGround
                         && this.field23545 == 3) {
-                    Class5628.method17725(-0.3994);
+                    ColorUtils.method17725(-0.3994);
                 }
 
                 double var4 = mc.player.getPosX() - mc.player.prevPosX;
@@ -139,12 +139,12 @@ public class YPortSpeed extends Module {
     @EventTarget
     public void method16238(Render2DEvent var1) {
         if (this.isEnabled()
-                && Class5628.method17730(mc.player, 0.43F)
+                && ColorUtils.method17730(mc.player, 0.43F)
                 && !((double) mc.player.fallDistance > 0.09)
                 && this.getBooleanValueFromSetttingName("OnGround")
                 && !mc.gameSettings.keyBindJump.pressed
                 && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-            if (mc.player.onGround && Class5628.method17730(mc.player, 0.001F)) {
+            if (mc.player.onGround && ColorUtils.method17730(mc.player, 0.001F)) {
                 this.field23542 = mc.player.getPosY();
             }
 

@@ -29,13 +29,13 @@ public class Class9819 {
       if (this.field45879 != null) {
          if (this.field45878 != 1) {
             if (this.field45878 == 2) {
-               boolean var4 = Class5628.method17716();
+               boolean var4 = ColorUtils.method17716();
                if (var4) {
                   Class6799 var5 = new Class6799();
                   var5.field29607 = true;
                   Entity var6 = null;
 
-                  for (Entity var8 : Class5628.method17708()) {
+                  for (Entity var8 : ColorUtils.method17708()) {
                      if (var8 instanceof PlayerEntity
                         && var8 != this.field45880.player
                         && (var6 == null || var6.method3275(this.field45880.player) > var8.method3275(this.field45880.player))) {
@@ -118,13 +118,13 @@ public class Class9819 {
          var1.method13993(0.0);
          var1.method13995(0.0);
          var1.method13997(0.0);
-         if (this.field45879 == null || !this.field45879.isAlive() || !Class5628.method17708().contains(this.field45879)) {
+         if (this.field45879 == null || !this.field45879.isAlive() || !ColorUtils.method17708().contains(this.field45879)) {
             Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Target lost"));
             this.field45878 = 0;
             this.field45879 = null;
          } else if (!this.field45880.player.method3331()) {
             double var4 = this.field45879.getPosY() - this.field45879.lastTickPosY;
-            if (var4 < -2.0 && Class5628.method17763(this.field45879) && this.field45879.getPosY() - this.field45880.player.getPosY() < -10.0) {
+            if (var4 < -2.0 && ColorUtils.method17763(this.field45879) && this.field45879.getPosY() - this.field45880.player.getPosY() < -10.0) {
                this.field45878 = 0;
                this.field45879 = null;
                Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Target seems to be falling in void"));

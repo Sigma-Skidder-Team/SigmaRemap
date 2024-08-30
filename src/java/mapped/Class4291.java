@@ -12,17 +12,17 @@ public class Class4291 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       RenderUtil.method11449(
          (float)this.field20895,
          (float)this.field20896,
          (float)this.field20897,
          (float)this.field20898,
          this.field20792,
-         Class5628.method17690(
+         ColorUtils.method17690(
             ClientColors.DEEP_TEAL.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, !this.method13298() ? 0.0F : (!this.method13212() ? 0.15F : 0.3F)
          )
       );
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

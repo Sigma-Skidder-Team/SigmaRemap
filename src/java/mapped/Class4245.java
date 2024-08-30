@@ -19,7 +19,7 @@ public class Class4245 extends Class4240 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       if (this.field20598 && var1 == 1.0F) {
          this.field20599.changeDirection(Direction.FORWARDS);
       }
@@ -29,25 +29,25 @@ public class Class4245 extends Class4240 {
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + this.field20898 / 2),
          25.0F,
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.025F * var1 * this.field20599.calcPercent())
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.025F * var1 * this.field20599.calcPercent())
       );
       RenderUtil.method11438(
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + this.field20898 / 2),
          23.0F,
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.05F * var1 * this.field20599.calcPercent())
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1 * this.field20599.calcPercent())
       );
       RenderUtil.method11438(
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + this.field20898 / 2),
          (float)(18 + var4),
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field20599.calcPercent())
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field20599.calcPercent())
       );
       RenderUtil.method11438(
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + this.field20898 / 2),
          (float)(18 - var4),
-         Class5628.method17688(this.field20597.field13428, var1)
+         ColorUtils.applyAlpha(this.field20597.field13428, var1)
       );
       GL11.glPushMatrix();
       super.method13226(var1);

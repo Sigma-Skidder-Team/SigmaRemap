@@ -64,7 +64,7 @@ public class Class4308 extends Class4307 {
       this.field20946.method13215(true);
       Class4235 var9;
       this.method13230(var9 = new Class4235(this, "more", this.method13267() - 69, this.method13269() - 55, 55, 41, ResourcesDecrypter.optionsPNG1));
-      var9.method13307().method19406(Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
+      var9.method13307().method19406(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
       var9.method13300(false);
       this.field20946.method13288(field20951);
       var9.method13251((var1, var2) -> this.method13222(() -> {
@@ -77,8 +77,8 @@ public class Class4308 extends Class4307 {
          }));
       field20942 = new Animation(450, 125);
       this.field20940 = new Class4353(this, this, "overlay");
-      Class5628.method17739();
-      Class5628.method17740(field20942.calcPercent());
+      ColorUtils.method17739();
+      ColorUtils.method17740(field20942.calcPercent());
    }
 
    public boolean method13314() {
@@ -137,7 +137,7 @@ public class Class4308 extends Class4307 {
    public void method13028(int var1, int var2) {
       this.field20946.method13288(this.field20946.method13267() < this.method13267() && this.field20946.method13269() < this.method13269());
       super.method13028(var1, var2);
-      Class5628.method17740(Math.min(1.0F, field20942.calcPercent() * 4.0F));
+      ColorUtils.method17740(Math.min(1.0F, field20942.calcPercent() * 4.0F));
       this.field20947.method13288(Client.getInstance().getModuleManager().getModuleByClass(BrainFreeze.class).isEnabled());
       if (this.field20948 != null) {
          int var5 = var1 - this.field20948.method13271();
@@ -153,7 +153,7 @@ public class Class4308 extends Class4307 {
          this.field20948 = null;
       }
 
-      if (field20942.method25319() == Direction.BACKWARDS && this.field20949 != null && !this.field20949.field20671) {
+      if (field20942.getDirection() == Direction.BACKWARDS && this.field20949 != null && !this.field20949.field20671) {
          this.field20949.field20671 = true;
       }
 
@@ -166,19 +166,19 @@ public class Class4308 extends Class4307 {
 
       if (field20944) {
          float var8 = (float)(0.03F * (60.0 / (double)this.method13313()));
-         Direction var9 = field20942.method25319();
+         Direction var9 = field20942.getDirection();
          field20942.changeDirection(!field20943 ? Direction.FORWARDS : Direction.BACKWARDS);
          if (field20942.calcPercent() <= 0.0F && field20943) {
             field20943 = false;
             this.method13316(field20943);
-         } else if (field20942.calcPercent() >= 1.0F && field20942.method25319() == var9) {
+         } else if (field20942.calcPercent() >= 1.0F && field20942.getDirection() == var9) {
             field20943 = true;
             this.method13316(field20943);
          }
       }
 
       if (field20944 && field20943) {
-         Class5628.method17742();
+         ColorUtils.method17742();
       }
    }
 
@@ -189,7 +189,7 @@ public class Class4308 extends Class4307 {
 
    @Override
    public JSONObject method13160(JSONObject var1) {
-      Class5628.method17742();
+      ColorUtils.method17742();
       this.method13234(this.field20940);
       return super.method13160(var1);
    }
@@ -230,13 +230,13 @@ public class Class4308 extends Class4307 {
    }
 
    public float method13317(float var1, float var2) {
-      return field20942.method25319() != Direction.BACKWARDS
+      return field20942.getDirection() != Direction.BACKWARDS
          ? (float)(Math.pow(2.0, (double)(-10.0F * var1)) * Math.sin((double)(var1 - var2 / 4.0F) * (Math.PI * 2) / (double)var2) + 1.0)
          : Class9782.method38557(var1, 0.0F, 1.0F, 1.0F);
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       float var4 = field20944 && !field20943
          ? this.method13317(field20942.calcPercent(), 0.8F) * 0.5F + 0.5F
          : (!field20944 ? 1.0F : this.method13317(field20942.calcPercent(), 1.0F));
@@ -246,13 +246,13 @@ public class Class4308 extends Class4307 {
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
          (float)(this.field20896 + this.field20898),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var5)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       Object var6 = null;
       float var7 = 1.0F;
       if (this.field20949 != null) {
          float var8 = Class9747.method38214(this.field20949.field20662.calcPercent(), 0.0F, 1.0F, 1.0F);
-         if (this.field20949.field20662.method25319() == Direction.BACKWARDS) {
+         if (this.field20949.field20662.getDirection() == Direction.BACKWARDS) {
             var8 = Class8056.method27663(this.field20949.field20662.calcPercent(), 0.0F, 1.0F, 1.0F);
          }
 
@@ -262,12 +262,12 @@ public class Class4308 extends Class4307 {
 
       if (Client.getInstance().getModuleManager().method14667().method20770() != null) {
          String var12 = Client.getInstance().getModuleManager().method14667().method20770().field31263;
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ResourceRegistry.JelloLightFont20,
             (float)(this.field20897 - ResourceRegistry.JelloLightFont20.method23942(var12) - 80),
             (float)(this.field20898 - 47),
             var12,
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * Math.max(0.0F, Math.min(1.0F, var4)))
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * Math.max(0.0F, Math.min(1.0F, var4)))
          );
       }
 
@@ -278,7 +278,7 @@ public class Class4308 extends Class4307 {
          var9.method13279(1.5F - var4 * 0.5F, 1.5F - var4 * 0.5F);
       }
 
-      super.method13027(var1 * Math.min(1.0F, var4) * var7);
+      super.draw(var1 * Math.min(1.0F, var4) * var7);
       if (this.field20952 != null) {
          this.field20952.method13292(false);
       }

@@ -31,7 +31,7 @@ public class Ban {
         }
 
         var4.setTimeInMillis(var5);
-        this.serverIP = var1.method21773("server");
+        this.serverIP = var1.getString("server");
         this.field39611 = var4.getTime();
     }
 

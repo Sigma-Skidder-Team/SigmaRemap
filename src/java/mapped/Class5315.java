@@ -24,7 +24,7 @@ public class Class5315 extends Module {
     @EventTarget
     public void method16697(Class4399 var1) {
         if (var1.method13921()) {
-            if (Class5628.method17730(mc.player, 1.0E-5F)) {
+            if (ColorUtils.method17730(mc.player, 1.0E-5F)) {
                 this.field23852 = true;
                 var1.method13912(var1.method13911() - 5.0E-7);
                 var1.method13920(false);
@@ -50,7 +50,7 @@ public class Class5315 extends Module {
             }
         }
 
-        Class5628.method17725(var1.method13994());
+        ColorUtils.method17725(var1.method13994());
     }
 
     @EventTarget

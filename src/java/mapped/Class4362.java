@@ -66,13 +66,13 @@ public class Class4362 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       RenderUtil.method11426(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269() + this.method13635()),
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       RenderUtil.method11463(
          (float)this.method13263(),
@@ -91,7 +91,7 @@ public class Class4362 extends Class4247 {
          var1 * 0.2F
       );
       GL11.glPushMatrix();
-      super.method13027(var1);
+      super.draw(var1);
       GL11.glPopMatrix();
    }
 

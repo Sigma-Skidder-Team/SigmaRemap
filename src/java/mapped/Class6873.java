@@ -54,22 +54,22 @@ public class Class6873 {
 
    public static String toString(JSONObject var0) throws JSONException {
       StringBuilder var3 = new StringBuilder();
-      var3.append(method20928(var0.method21773("name")));
+      var3.append(method20928(var0.getString("name")));
       var3.append("=");
-      var3.append(method20928(var0.method21773("value")));
+      var3.append(method20928(var0.getString("value")));
       if (var0.has("expires")) {
          var3.append(";expires=");
-         var3.append(var0.method21773("expires"));
+         var3.append(var0.getString("expires"));
       }
 
       if (var0.has("domain")) {
          var3.append(";domain=");
-         var3.append(method20928(var0.method21773("domain")));
+         var3.append(method20928(var0.getString("domain")));
       }
 
       if (var0.has("path")) {
          var3.append(";path=");
-         var3.append(method20928(var0.method21773("path")));
+         var3.append(method20928(var0.getString("path")));
       }
 
       if (var0.method21785("secure")) {

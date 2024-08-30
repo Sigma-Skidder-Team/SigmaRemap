@@ -35,7 +35,7 @@ public class NameTags extends Module {
         field24003.put("cxbot", ResourcesDecrypter.cxPNG);
     }
 
-    public int field24008 = Class5628.method17688(Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.5F);
+    public int field24008 = ColorUtils.applyAlpha(ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.5F);
     private final HashMap<BlockPos, Class7070> field24000 = new HashMap<BlockPos, Class7070>();
     private BlockPos field24001;
     private final List<Entity> field24005 = new ArrayList<Entity>();
@@ -97,7 +97,7 @@ public class NameTags extends Module {
 
             this.field24005.clear();
 
-            for (Entity var7 : Class9217.method34549(Class5628.method17680())) {
+            for (Entity var7 : Class9217.method34549(ColorUtils.method17680())) {
                 if (var7 != mc.player
                         && var7 != Freecam.field23814
                         && var7 != Blink.field23863
@@ -243,7 +243,7 @@ public class NameTags extends Module {
                                 this.field24007.put(var14, null);
                                 new Thread(() -> {
                                     try {
-                                        List var4x = Class5628.method17700(var14.toString());
+                                        List var4x = ColorUtils.method17700(var14.toString());
                                         if (var4x == null || var4x.isEmpty()) {
                                             return;
                                         }
@@ -340,23 +340,23 @@ public class NameTags extends Module {
         byte var19 = 40;
         RenderUtil.method11426(0.0F, 0.0F, (float) var17, (float) var18, this.field24008);
         RenderUtil.method11463(0.0F, 0.0F, (float) var17, (float) var18, 20.0F, 0.5F);
-        RenderUtil.method11439(var6, var13, (float) (var13 - 5), "Furnace", ClientColors.LIGHT_GREYISH_BLUE.getColor);
+        RenderUtil.drawString(var6, var13, (float) (var13 - 5), "Furnace", ClientColors.LIGHT_GREYISH_BLUE.getColor);
         if (var16 == null) {
-            RenderUtil.method11439(
-                    ResourceRegistry.JelloLightFont20, (float) (var13 + 15), (float) (var13 + 40), "Empty", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
+            RenderUtil.drawString(
+                    ResourceRegistry.JelloLightFont20, (float) (var13 + 15), (float) (var13 + 40), "Empty", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
             );
         }
 
         ItemStack var20 = var2.method21987();
         if (var20 != null) {
             RenderUtil.method11479(var20, var13, var13 + 27, 45, 45);
-            RenderUtil.method11439(ResourceRegistry.JelloLightFont20, (float) (var13 + 51), 40.0F, var20.method32149().getString(), ClientColors.LIGHT_GREYISH_BLUE.getColor);
-            RenderUtil.method11439(ResourceRegistry.JelloLightFont14, (float) (var13 + 51), 62.0F, "Count: " + var20.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+            RenderUtil.drawString(ResourceRegistry.JelloLightFont20, (float) (var13 + 51), 40.0F, var20.method32149().getString(), ClientColors.LIGHT_GREYISH_BLUE.getColor);
+            RenderUtil.drawString(ResourceRegistry.JelloLightFont14, (float) (var13 + 51), 62.0F, "Count: " + var20.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
         }
 
-        RenderUtil.method11426(0.0F, (float) var18 - 12.0F, Math.min((float) var17 * var12, (float) var17), (float) var18 - 6.0F, Class5628.method17688(-106750, 0.3F));
+        RenderUtil.method11426(0.0F, (float) var18 - 12.0F, Math.min((float) var17 * var12, (float) var17), (float) var18 - 6.0F, ColorUtils.applyAlpha(-106750, 0.3F));
         RenderUtil.method11426(
-                0.0F, (float) var18 - 6.0F, Math.min((float) var17 * var11, (float) var17), (float) var18, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.75F)
+                0.0F, (float) var18 - 6.0F, Math.min((float) var17 * var11, (float) var17), (float) var18, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.75F)
         );
         GL11.glPopMatrix();
         GL11.glPopMatrix();
@@ -396,13 +396,13 @@ public class NameTags extends Module {
             int var19 = this.field24008;
             if (!Client.getInstance().getFriendManager().method26997(var7)) {
                 if (Client.getInstance().getFriendManager().method26999(var7)) {
-                    var19 = Class5628.method17688(-6750208, 0.5F);
+                    var19 = ColorUtils.applyAlpha(-6750208, 0.5F);
                 }
             } else {
-                var19 = Class5628.method17688(-16171506, 0.5F);
+                var19 = ColorUtils.applyAlpha(-16171506, 0.5F);
             }
 
-            int var20 = Class5628.method17688(
+            int var20 = ColorUtils.applyAlpha(
                     !(var7 instanceof PlayerEntity) ? ClientColors.LIGHT_GREYISH_BLUE.getColor : new Color(Class8781.method31663((PlayerEntity) var7)).getRGB(), 0.5F
             );
             int var21 = var12.method23942(var13) / 2;
@@ -416,7 +416,7 @@ public class NameTags extends Module {
                         (float) (var12.method23952() + 27),
                         (float) (var12.method23952() + 27),
                         field24003.get(var13),
-                        Class5628.method17688(var22, 0.7F)
+                        ColorUtils.applyAlpha(var22, 0.7F)
                 );
                 RenderUtil.method11449(
                         (float) (-var21 - 10 - 31 + var12.method23952() + 27),
@@ -424,7 +424,7 @@ public class NameTags extends Module {
                         14.0F,
                         (float) (var12.method23952() + 27),
                         ResourcesDecrypter.shadowRightPNG,
-                        Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
+                        ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
                 );
                 RenderUtil.method11463((float) (-var21 - 10 - 31), -25.0F, (float) (var21 * 2 + 20 + 31 + 27), (float) (var12.method23952() + 27), 20.0F, 0.5F);
                 GL11.glTranslatef(27.0F, 0.0F, 0.0F);
@@ -447,11 +447,11 @@ public class NameTags extends Module {
                 var23 = "H: ";
             }
 
-            RenderUtil.method11439(var12, 0.0F, -20.0F, var13, ClientColors.LIGHT_GREYISH_BLUE.getColor);
-            RenderUtil.method11439(ResourceRegistry.JelloLightFont14, 0.0F, 10.0F, var23 + var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+            RenderUtil.drawString(var12, 0.0F, -20.0F, var13, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+            RenderUtil.drawString(ResourceRegistry.JelloLightFont14, 0.0F, 10.0F, var23 + var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             Class8433 var25 = Client.getInstance().getNetworkManager().field38429.method29512(var7);
             if (var25 != null) {
-                RenderUtil.method11439(ResourceRegistry.JelloLightFont14, 0.0F, -30.0F, var25.field36141, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                RenderUtil.drawString(ResourceRegistry.JelloLightFont14, 0.0F, -30.0F, var25.field36141, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             }
 
             GL11.glPopMatrix();

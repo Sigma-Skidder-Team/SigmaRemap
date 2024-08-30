@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class8603;
+import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.lwjgl.opengl.GL11;
@@ -46,7 +46,7 @@ public class Class4250 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.field20611.changeDirection(Direction.FORWARDS);
       if (this.field20611.calcPercent() == 1.0F) {
          this.field20611 = new Animation(1500, 0);
@@ -65,20 +65,20 @@ public class Class4250 extends Class4247 {
          (float)(this.field20897 - var5 * 2),
          (float)(this.field20898 - var5 * 2),
          3.0F,
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
       ArrayList var11 = new ArrayList();
       var11.add(new Class9778(0.0, 0.0));
       var11.add(new Class9778((double)var7, (double)var8));
       var11.add(new Class9778((double)var9, (double)var10));
       var11.add(new Class9778(1.0, 1.0));
-      Class8603 var12 = new Class8603((double)(1.0F / var6 * 2.0F));
+      MathUtils var12 = new MathUtils((double)(1.0F / var6 * 2.0F));
       double var13 = var12.method30789(var11, Math.min(0.8F, this.field20611.calcPercent()) * 1.25F);
       RenderUtil.method11438(
          (float)((double)this.field20895 + (double)var6 * var13 + (double)var5),
          (float)(this.field20896 - var5 / 2 + this.field20898),
          14.0F,
-         Class5628.method17688(ClientColors.DARK_BLUE_GREY.getColor, var1)
+         ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, var1)
       );
       List<Class9778> var15 = var12.method30790(var11);
       GL11.glPushMatrix();
@@ -112,6 +112,6 @@ public class Class4250 extends Class4247 {
       RenderSystem.disableBlend();
       RenderSystem.enableTexture();
       GL11.glPopMatrix();
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

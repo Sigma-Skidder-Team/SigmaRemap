@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class8603;
+import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -51,18 +51,18 @@ public class Class4236 extends Class4235 implements Class4238 {
    }
 
    public float method13030() {
-      return Class8603.method30791(this.field20578.calcPercent(), 0.24, 0.88, 0.3, 1.0);
+      return MathUtils.lerp(this.field20578.calcPercent(), 0.24, 0.88, 0.3, 1.0);
    }
 
    public float method13031() {
-      return Class8603.method30791(this.field20578.calcPercent(), 0.45, 0.02, 0.59, 0.28);
+      return MathUtils.lerp(this.field20578.calcPercent(), 0.45, 0.02, 0.59, 0.28);
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       float var4 = !this.method13212() ? 0.0F : 0.1F;
       float var5 = this.method13030();
-      if (this.field20578.method25319() == Direction.BACKWARDS) {
+      if (this.field20578.getDirection() == Direction.BACKWARDS) {
          var5 = this.method13031();
       }
 
@@ -70,7 +70,7 @@ public class Class4236 extends Class4235 implements Class4238 {
       int var7 = (int)((double)this.method13269() * (1.0 + (double)var5 * 0.2));
       int var8 = this.method13263() - (var6 - this.method13267()) / 2;
       int var9 = (int)((double)(this.method13265() - (var7 - this.method13269()) / 2) - (double)((float)(this.method13269() / 2) * var5) * 0.2);
-      float[] var10 = Class5628.method17701(this.method13025().getWidth(), this.method13025().getHeight(), (float)var6, (float)var7);
+      float[] var10 = ColorUtils.method17701(this.method13025().getWidth(), this.method13025().getHeight(), (float)var6, (float)var7);
       byte var11 = 85;
       RenderUtil.method11449(
          (float)var8 + var10[0] - (float)var11,
@@ -78,7 +78,7 @@ public class Class4236 extends Class4235 implements Class4238 {
          var10[2] + (float)(var11 * 2),
          var10[3] + (float)(var11 * 2),
          ResourcesDecrypter.shadowPNG,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20578.calcPercent() * 0.7F * var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20578.calcPercent() * 0.7F * var1)
       );
       RenderUtil.method11449(
          (float)var8 + var10[0],
@@ -86,7 +86,7 @@ public class Class4236 extends Class4235 implements Class4238 {
          var10[2],
          var10[3],
          this.method13025(),
-         Class5628.method17688(Class5628.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var4), var1)
+         ColorUtils.applyAlpha(ColorUtils.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var4), var1)
       );
       if (this.method13303() != null) {
          RenderUtil.method11440(
@@ -94,7 +94,7 @@ public class Class4236 extends Class4235 implements Class4238 {
             (float)(var8 + var6 / 2),
             (float)(var9 + var7 / 2),
             this.method13303(),
-            Class5628.method17688(this.field20914.method19409(), var1),
+            ColorUtils.applyAlpha(this.field20914.method19409(), var1),
             this.field20914.method19411(),
             this.field20914.method19413()
          );
@@ -118,12 +118,12 @@ public class Class4236 extends Class4235 implements Class4238 {
             ResourcesDecrypter.shadowPNG,
             var5 * 0.6F * var1
          );
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             var12,
             (1.0F - var13) * (float)var12.method23942(var14) / 2.0F + 1.0F,
             40.0F,
             var14,
-            Class5628.method17688(this.method13307().method19405(), var5 * 0.6F * var1)
+            ColorUtils.applyAlpha(this.method13307().method19405(), var5 * 0.6F * var1)
          );
          GL11.glPopMatrix();
       }

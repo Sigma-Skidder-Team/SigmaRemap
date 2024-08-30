@@ -26,7 +26,7 @@ public class Class5174 extends Module {
 
     @Override
     public void onDisable() {
-        Class5628.method17725(-0.08);
+        ColorUtils.method17725(-0.08);
         double var3 = Class9567.method37075();
         Class9567.method37090(var3);
         mc.timer.timerSpeed = 1.0F;
@@ -72,7 +72,7 @@ public class Class5174 extends Module {
                     if (!this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
                         this.field23464 = -1;
                         this.field23465 = null;
-                        Class5628.method17725(-0.08);
+                        ColorUtils.method17725(-0.08);
                         double var5 = Class9567.method37075();
                         Class9567.method37090(var5);
                         mc.timer.timerSpeed = 1.0F;

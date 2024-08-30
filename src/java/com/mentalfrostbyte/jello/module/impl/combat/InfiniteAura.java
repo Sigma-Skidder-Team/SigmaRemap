@@ -93,7 +93,7 @@ public class InfiniteAura extends Module {
                                 this.field23900.add(var11);
                                 Collections.reverse(var11);
                                 this.method16773(var11, Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled());
-                                Class5628.method17735(var8, !this.getBooleanValueFromSetttingName("No Swing"));
+                                ColorUtils.method17735(var8, !this.getBooleanValueFromSetttingName("No Swing"));
                                 Collections.reverse(var11);
                                 this.method16773(var11, false);
                             }
@@ -184,7 +184,7 @@ public class InfiniteAura extends Module {
     public List<Class8012> method16775(float var1) {
         ArrayList var4 = new ArrayList();
 
-        for (Entity var6 : Class5628.method17708()) {
+        for (Entity var6 : ColorUtils.method17708()) {
             var4.add(new Class8012(var6));
         }
 

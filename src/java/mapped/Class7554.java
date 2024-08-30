@@ -50,7 +50,7 @@ public class Class7554 {
 
    public void method24726(float var1) {
       float var4 = Class8056.method27664(this.field32398.calcPercent(), 0.0F, 1.0F, 1.0F);
-      if (this.field32398.method25319() == Direction.BACKWARDS) {
+      if (this.field32398.getDirection() == Direction.BACKWARDS) {
          var4 = Class8056.method27663(this.field32398.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 

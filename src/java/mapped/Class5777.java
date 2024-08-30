@@ -16,9 +16,9 @@ public class Class5777 implements Emitter.Listener {
       JSONObject var4 = (JSONObject)var1[0];
       if (var4.has("messageId")) {
          JSONObject var5 = new JSONObject();
-         var5.put("messageId", var4.method21773("messageId"));
+         var5.put("messageId", var4.getString("messageId"));
          this.field25249.field36057.emit("message-received", var5);
-         this.field25249.field36058.method32651(var4.method21773("senderId"), var4.method21773("message"), var4.method21770("timestamp"));
+         this.field25249.field36058.method32651(var4.getString("senderId"), var4.getString("message"), var4.method21770("timestamp"));
       }
    }
 }

@@ -59,7 +59,7 @@ public class Class4260 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       var1 = this.field20661.calcPercent();
       float var4 = Class9747.method38214(var1, 0.0F, 1.0F, 1.0F);
       if (this.field20671) {
@@ -72,7 +72,7 @@ public class Class4260 extends Class4247 {
          (float)this.field20896,
          (float)this.field20897,
          (float)this.field20898,
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.45F * var1)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.45F * var1)
       );
       super.method13224();
       RenderUtil.method11475(
@@ -81,25 +81,25 @@ public class Class4260 extends Class4247 {
          (float)this.field20665,
          (float)this.field20666,
          10.0F,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ResourceRegistry.JelloMediumFont40,
          (float)this.field20664,
          (float)(this.field20663 - 60),
          this.field20669.getName(),
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       byte var5 = 30;
       RenderUtil.method11419((float)this.field20664, (float)this.field20663, (float)(this.field20665 - 30), (float)this.field20666);
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
          (float)(var5 + this.field20664),
          (float)(var5 + this.field20663),
          this.field20669.getDescription(),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.7F)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.7F)
       );
       RenderUtil.method11422();
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

@@ -5,11 +5,11 @@ import mapped.Class9778;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class8603 {
+public class MathUtils {
     public static final double field38711 = 0.1F;
     private final double field38710;
 
-    public Class8603(double var1) {
+    public MathUtils(double var1) {
         if (!(var1 <= 0.0) && !(var1 >= 1.0)) {
             this.field38710 = var1;
         } else {
@@ -17,17 +17,17 @@ public class Class8603 {
         }
     }
 
-    public Class8603() {
+    public MathUtils() {
         this(0.1F);
     }
 
-    public static float method30791(float var0, double... var1) {
+    public static float lerp(float var0, double... var1) {
         ArrayList<Class9778> var4 = new ArrayList<>();
         var4.add(new Class9778(0.0, 0.0));
         var4.add(new Class9778(var1[0], var1[1]));
         var4.add(new Class9778(var1[2], var1[3]));
         var4.add(new Class9778(1.0, 1.0));
-        Class8603 var5 = new Class8603(0.0055555557F);
+        MathUtils var5 = new MathUtils(0.0055555557F);
         return (float) var5.method30789(var4, var0);
     }
 

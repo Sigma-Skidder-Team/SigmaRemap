@@ -37,7 +37,7 @@ public class HypixelFly extends Module {
         String var3 = this.getStringSettingValueByName("Mode");
         this.field23561 = 1.0F;
         this.field23563 = -1;
-        if (mc.player.onGround || Class5628.method17730(mc.player, 0.001F)) {
+        if (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F)) {
             this.field23561 = this.getNumberValueBySettingName("Timer Boost");
         }
 
@@ -48,7 +48,7 @@ public class HypixelFly extends Module {
                     this.field23562 = true;
                     break;
                 case "Fast":
-                    Class5628.method17749(false);
+                    ColorUtils.method17749(false);
                     this.field23562 = true;
                     break;
                 case "NoDmg":
@@ -86,7 +86,7 @@ public class HypixelFly extends Module {
     @LowestPriority
     @Class5631
     public void method16258(SendPacketEvent var1) {
-        if (Class5628.method17716()) {
+        if (ColorUtils.method17716()) {
             Packet var4 = var1.method13932();
             if (var4 instanceof Class5594) {
                 Class5594 var5 = (Class5594) var4;
@@ -99,7 +99,7 @@ public class HypixelFly extends Module {
     @Class5631
     @HigestPriority
     public void method16259(RecievePacketEvent var1) {
-        if (mc.getConnection() != null && Class5628.method17716()) {
+        if (mc.getConnection() != null && ColorUtils.method17716()) {
             Packet var4 = var1.getPacket();
             if (this.isEnabled()) {
                 if (var4 instanceof Class5473) {
@@ -117,7 +117,7 @@ public class HypixelFly extends Module {
     @EventTarget
     public void method16261(Class4399 var1) {
         if (var1.method13921()) {
-            for (double var7 : Class5628.method17747()) {
+            for (double var7 : ColorUtils.method17747()) {
                 if ((double) ((int) var1.method13911()) - var1.method13911() + var7 == 0.0) {
                     var1.method13920(true);
                     break;
@@ -183,15 +183,15 @@ public class HypixelFly extends Module {
             double var10 = var4.equals("Basic") ? Class9567.method37076() : Class9567.method37076() - 0.008;
             if (this.field23560 < var10) {
                 this.field23560 = var10;
-            } else if (!Class5628.method17686()) {
+            } else if (!ColorUtils.method17686()) {
                 this.field23560 = var10;
             }
 
             Class9567.method37088(var1, this.field23560);
-            if (!mc.player.onGround || !Class5628.method17730(mc.player, 0.001F)) {
+            if (!mc.player.onGround || !ColorUtils.method17730(mc.player, 0.001F)) {
                 this.field23563++;
                 var1.method13995(0.0);
-                Class5628.method17725(0.0);
+                ColorUtils.method17725(0.0);
                 if (this.field23563 % 5 < 4) {
                     double var12 = mc.player.getPosX();
                     double var14 = mc.player.getPosY();

@@ -56,7 +56,7 @@ public class Class4296 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13225();
       this.field20815 = (float)((double)this.field20815 + (this.method13287() ? 0.33 : -0.33));
       this.field20815 = Math.min(1.0F, Math.max(0.0F, this.field20815));
@@ -73,16 +73,16 @@ public class Class4296 extends Class4278 {
       }
 
       if (this.field20813 != null) {
-         int var6 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.2F);
-         int var7 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.7F);
-         RenderUtil.method11439(
-            ResourceRegistry.field38860,
-            (float)(this.field20895 + (this.field20897 - ResourceRegistry.field38860.method23942(this.field20813.getKnownName())) / 2),
+         int var6 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F);
+         int var7 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.7F);
+         RenderUtil.drawString(
+            ResourceRegistry.JelloLightFont36,
+            (float)(this.field20895 + (this.field20897 - ResourceRegistry.JelloLightFont36.method23942(this.field20813.getKnownName())) / 2),
             (float)this.field20896,
             this.field20813.getKnownName(),
             var7
          );
-         super.method13027(var1);
+         super.draw(var1);
       }
    }
 }

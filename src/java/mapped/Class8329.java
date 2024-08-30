@@ -40,7 +40,7 @@ public class Class8329 {
    @EventTarget
    @Class5631
    public void method29202(SendPacketEvent var1) {
-      if (!Class5628.method17720() && Class5628.method17718()) {
+      if (!ColorUtils.method17720() && ColorUtils.method17718()) {
          Packet var4 = var1.method13932();
          if (!(var4 instanceof Class5594)) {
             if (var4 instanceof Class5493) {
@@ -61,7 +61,7 @@ public class Class8329 {
    @EventTarget
    @Class5631
    public void method29203(RecievePacketEvent var1) {
-      if (!Class5628.method17720() && Class5628.method17718()) {
+      if (!ColorUtils.method17720() && ColorUtils.method17718()) {
          Packet var4 = var1.getPacket();
          if (!(var4 instanceof Class5554) && var4 instanceof Class5542) {
             Class5542 var5 = (Class5542)var4;

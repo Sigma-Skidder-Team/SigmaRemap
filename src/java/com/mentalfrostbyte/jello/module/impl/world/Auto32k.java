@@ -125,7 +125,7 @@ public class Auto32k extends Module {
                 double var7 = (double) var4.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
                 double var9 = (double) var4.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                 RenderUtil.method11459(
-                        new Class9388(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.3F)
+                        new Class9388(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.3F)
                 );
                 GL11.glColor3f(1.0F, 1.0F, 1.0F);
                 GL11.glBlendFunc(770, 771);
@@ -139,7 +139,7 @@ public class Auto32k extends Module {
                 boolean var12 = true;
                 if (var12) {
                     GL11.glPushMatrix();
-                    int var13 = Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.5F);
+                    int var13 = ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.5F);
                     float var14 = (float) (var13 >> 24 & 0xFF) / 255.0F;
                     float var15 = (float) (var13 >> 16 & 0xFF) / 255.0F;
                     float var16 = (float) (var13 >> 8 & 0xFF) / 255.0F;
@@ -152,7 +152,7 @@ public class Auto32k extends Module {
                     GL11.glPopMatrix();
                 }
 
-                int var22 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F);
+                int var22 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F);
                 float var23 = (float) (var22 >> 24 & 0xFF) / 255.0F;
                 float var24 = (float) (var22 >> 16 & 0xFF) / 255.0F;
                 float var25 = (float) (var22 >> 8 & 0xFF) / 255.0F;

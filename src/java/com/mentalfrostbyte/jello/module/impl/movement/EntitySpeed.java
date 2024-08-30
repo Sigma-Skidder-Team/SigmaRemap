@@ -32,7 +32,7 @@ public class EntitySpeed extends Module {
             float var6 = var4.field43907;
             if (!mc.player.getRidingEntity().collidedHorizontally
                     && !mc.player.getRidingEntity().onGround
-                    && Class5628.method17730(mc.player.getRidingEntity(), 5.0F)
+                    && ColorUtils.method17730(mc.player.getRidingEntity(), 5.0F)
                     && !mc.player.getRidingEntity().method3250()
                     && mc.world.getBlockState(mc.player.getRidingEntity().getPosition()).getBlock() != Blocks.WATER) {
                 var1.method13984(-2.0);

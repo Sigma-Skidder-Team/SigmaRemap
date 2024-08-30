@@ -74,17 +74,17 @@ public class Class4306 extends Class4305 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       float var4 = 0.07F;
       float var5 = 0.3F;
       RenderUtil.method11436(
          (float)this.field20895,
          (float)this.field20896,
          (float)this.method13267(),
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.07F + (!(this.field20934 > 0.0F) ? 0.0F : this.field20934 * 0.3F))
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.07F + (!(this.field20934 > 0.0F) ? 0.0F : this.field20934 * 0.3F))
       );
       float var6 = (float)(this.field20936 - this.method13271());
       float var7 = (float)(this.field20937 - this.method13272());
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

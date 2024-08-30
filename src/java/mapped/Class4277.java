@@ -61,7 +61,7 @@ public class Class4277 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       byte var4 = 3;
       byte var5 = 6;
       int var6 = this.method13269() / 4;
@@ -70,7 +70,7 @@ public class Class4277 extends Class4247 {
       int var9 = this.method13265() + this.method13269() / 2 - var6 / 2;
       int var10 = this.field20734.method13263() + this.field20734.method13267() / 2 - 6;
       RenderUtil.method11475(
-         (float)var8, (float)var9, (float)var10, (float)var6, (float)(var6 / 2), Class5628.method17688(this.field20914.method19405(), var1 * var1 * var1)
+         (float)var8, (float)var9, (float)var10, (float)var6, (float)(var6 / 2), ColorUtils.applyAlpha(this.field20914.method19405(), var1 * var1 * var1)
       );
       RenderUtil.method11475(
          (float)(var8 + var10),
@@ -78,20 +78,20 @@ public class Class4277 extends Class4247 {
          (float)(var7 - var10),
          (float)var6,
          (float)(var6 / 2),
-         Class5628.method17688(Class5628.method17692(this.field20914.method19405(), 0.8F), var1 * var1 * var1)
+         ColorUtils.applyAlpha(ColorUtils.method17692(this.field20914.method19405(), 0.8F), var1 * var1 * var1)
       );
       if (this.method13303() != null) {
          int var11 = Math.max(0, 9 - this.field20734.method13263());
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
             (float)(var8 - ResourceRegistry.JelloLightFont14.method23942(this.method13303()) - 10 - var11),
             (float)(var9 - 5),
             this.method13303(),
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F * this.field20735.calcPercent() * var1)
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * this.field20735.calcPercent() * var1)
          );
       }
 
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    @Override

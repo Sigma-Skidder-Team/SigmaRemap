@@ -26,7 +26,7 @@ public class HorizonFly extends Module {
     public void onDisable() {
         Class9567.method37090(0.0);
         if (mc.player.method3433().field18049 > 0.0) {
-            Class5628.method17725(-0.0789);
+            ColorUtils.method17725(-0.0789);
         }
 
         mc.timer.timerSpeed = 1.0F;
@@ -48,7 +48,7 @@ public class HorizonFly extends Module {
                     }
                 } else {
                     var1.method13995(Class9567.method37080());
-                    Class5628.method17725(var1.method13994());
+                    ColorUtils.method17725(var1.method13994());
                     Class9567.method37088(var1, 0.125);
                 }
             } else {

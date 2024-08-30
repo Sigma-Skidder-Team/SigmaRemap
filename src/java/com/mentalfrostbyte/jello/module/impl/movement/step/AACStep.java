@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.Class5605;
-import mapped.Class5628;
+import mapped.ColorUtils;
 import mapped.Class9567;
 
 public class AACStep extends Module {
@@ -20,7 +20,7 @@ public class AACStep extends Module {
     private void method16145(Class4434 var1) {
         if (this.isEnabled() && !var1.isCancelled()) {
             double var4 = var1.method13988();
-            if (!Class5628.method17730(mc.player, 1.0E-4F)) {
+            if (!ColorUtils.method17730(mc.player, 1.0E-4F)) {
                 var1.method13900(true);
             } else {
                 if (!Class9567.method37081() && var4 >= 0.625) {

@@ -65,7 +65,7 @@ public class Class5340 extends ModuleWithModuleSettings {
                     this.method16759(null);
                     Client.getInstance().getNotificationManager().post(new Notification("Auto Join", "Auto join was canceled.", 2500));
                 } else if (this.field23890.method22616()) {
-                    Class5628.method17679(this.field23890.method22618());
+                    ColorUtils.method17679(this.field23890.method22618());
                     this.method16759(null);
                 } else if ((int) (this.field23890.method22617() / 1000L) + 1 < this.field23892) {
                     this.field23892 = (int) (this.field23890.method22617() / 1000L) + 1;
@@ -109,7 +109,7 @@ public class Class5340 extends ModuleWithModuleSettings {
                     if (this.field23891.method27121() > var5 && !this.field23889.isEmpty()) {
                         this.field23891.method27120();
                         String var7 = this.field23889.get(0);
-                        Class5628.method17679(var7);
+                        ColorUtils.method17679(var7);
                         this.field23889.remove(0);
                     }
                 } catch (ConcurrentModificationException var9) {

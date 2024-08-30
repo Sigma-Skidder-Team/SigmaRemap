@@ -42,20 +42,20 @@ public class NCPPhase extends PremiumModule {
                 double var4 = mc.player.getPosX();
                 double var6 = mc.player.getPosY();
                 double var8 = mc.player.getPosZ();
-                if (!Class5628.method17686()) {
-                    if (Class5628.method17730(mc.player, 0.001F) && !Class5628.method17761()) {
+                if (!ColorUtils.method17686()) {
+                    if (ColorUtils.method17730(mc.player, 0.001F) && !ColorUtils.method17761()) {
                         mc.player.setPosition(var4, var6 - 1.0, var8);
                         var1.method13912(var6 - 1.0);
                         var1.method13908(true);
                         var1.method13918(var1.method13917() + 10.0F);
-                        Class5628.method17725(0.0);
+                        ColorUtils.method17725(0.0);
                     } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())) {
                         mc.player.setPosition(var4, var6 - 0.3, var8);
                     }
                 }
             }
 
-            if (this.field23652 > 0 && this.field23651 && Class5628.method17761()) {
+            if (this.field23652 > 0 && this.field23651 && ColorUtils.method17761()) {
                 this.field23653++;
                 float var10 = (float) Math.sin(this.field23653) * 5.0F;
                 float var11 = (float) Math.cos(this.field23653) * 5.0F;
@@ -84,7 +84,7 @@ public class NCPPhase extends PremiumModule {
 
             if (this.field23652 >= 0) {
                 if (this.field23652 != 0) {
-                    if (!Class5628.method17761()) {
+                    if (!ColorUtils.method17761()) {
                         this.field23651 = false;
                         Class9567.method37088(var1, 0.0);
                         return;

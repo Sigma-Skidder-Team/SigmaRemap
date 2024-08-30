@@ -81,7 +81,7 @@ public class LoginScreen extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       super.method13224();
       super.method13225();
       byte var4 = 28;
@@ -91,7 +91,7 @@ public class LoginScreen extends Class4247 {
          this.field21355.method13288(var5.method36702());
          if (var5.method36702()) {
             RenderUtil.method11424(
-               (float)(this.field20895 + 330), (float)(this.field20896 + 255), 114.0F, 40.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.04F)
+               (float)(this.field20895 + 330), (float)(this.field20896 + 255), 114.0F, 40.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
             );
          }
 
@@ -102,7 +102,7 @@ public class LoginScreen extends Class4247 {
          }
       }
 
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    public void method13688() {

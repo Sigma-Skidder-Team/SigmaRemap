@@ -38,7 +38,7 @@ public class Class8480 {
    @EventTarget
    public void method29972(RecievePacketEvent var1) {
       if (var1.getPacket() instanceof Class5586) {
-         Class5628.method17742();
+         ColorUtils.method17742();
       }
    }
 

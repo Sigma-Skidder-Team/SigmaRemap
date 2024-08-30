@@ -76,8 +76,8 @@ public class Class4346 extends Class4339 {
    }
 
    @Override
-   public void method13027(float var1) {
-      super.method13027(var1);
+   public void draw(float var1) {
+      super.draw(var1);
    }
 
    // $VF: synthetic method

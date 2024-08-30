@@ -43,7 +43,7 @@ public class HypixelSpeed extends Module {
     @Override
     public void onDisable() {
         if (this.field23418 == Class2094.field13641 && mc.player.method3433().field18049 > 0.0 && this.field23414 == 0) {
-            Class5628.method17725(-Class9567.method37080() - 1.0E-5 - 0.0625);
+            ColorUtils.method17725(-Class9567.method37080() - 1.0E-5 - 0.0625);
         }
 
         if (Math.abs((double) mc.timer.timerSpeed - 1.4123) < 0.001
@@ -76,7 +76,7 @@ public class HypixelSpeed extends Module {
     @HigherPriority
     public void method16038(Class4435 var1) {
         if (!this.isEnabled()) {
-            if (mc.player.onGround || Class5628.method17730(mc.player, 0.001F) || mc.player.getPosY() < this.field23416) {
+            if (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F) || mc.player.getPosY() < this.field23416) {
                 this.field23416 = -1.0;
             }
         } else {
@@ -88,7 +88,7 @@ public class HypixelSpeed extends Module {
                 }
 
                 if (this.field23414 >= 0 && Step.field23887 >= 2) {
-                    if ((var1.method13994() > 0.0 || this.getBooleanValueFromSetttingName("AutoJump") && Class5628.method17686()) && !Class5628.method17684(mc.player)) {
+                    if ((var1.method13994() > 0.0 || this.getBooleanValueFromSetttingName("AutoJump") && ColorUtils.method17686()) && !ColorUtils.method17684(mc.player)) {
                         mc.player.method2914();
                         var1.method13995(Class9567.method37080());
                         Class9567.method37088(var1, 0.644348756324588 + Math.random() * 1.0E-6 + (double) Class9567.method37078() * 0.13);
@@ -98,7 +98,7 @@ public class HypixelSpeed extends Module {
 
                         this.field23414 = 0;
                         this.field23418 = Class2094.field13640;
-                    } else if (Class5628.method17686() && this.getBooleanValueFromSetttingName("GroundSpeed") && !Class5628.method17684(mc.player)) {
+                    } else if (ColorUtils.method17686() && this.getBooleanValueFromSetttingName("GroundSpeed") && !ColorUtils.method17684(mc.player)) {
                         mc.player.stepHeight = 0.5F;
                         mc.player.method2914();
                         var1.method13995(0.399 + (double) Class9567.method37079() * 0.1 + 1.0E-14);
@@ -162,7 +162,7 @@ public class HypixelSpeed extends Module {
                         }
                 }
 
-                if (this.field23415 < var4 || mc.player.collidedHorizontally || !Class5628.method17686() || Class5628.method17684(mc.player)) {
+                if (this.field23415 < var4 || mc.player.collidedHorizontally || !ColorUtils.method17686() || ColorUtils.method17684(mc.player)) {
                     this.field23415 = var4;
                 }
 
@@ -202,8 +202,8 @@ public class HypixelSpeed extends Module {
     @Class5631
     public void method16042(Render2DEvent var1) {
         if (!mc.player.onGround
-                && !Class5628.method17730(mc.player, 1.0E-4F)
-                && Class5628.method17730(mc.player, (float) (Class9567.method37080() + 1.0E-5 + 0.0625))
+                && !ColorUtils.method17730(mc.player, 1.0E-4F)
+                && ColorUtils.method17730(mc.player, (float) (Class9567.method37080() + 1.0E-5 + 0.0625))
                 && Step.field23887 >= 2
                 && !(this.field23416 < 0.0)
                 && this.field23418 == Class2094.field13641

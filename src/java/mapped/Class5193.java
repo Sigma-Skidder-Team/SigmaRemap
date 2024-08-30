@@ -29,7 +29,7 @@ public class Class5193 extends Module {
     @EventTarget
     public void method16174(TickEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (!Class5628.method17730(mc.player, 0.001F)) {
+            if (!ColorUtils.method17730(mc.player, 0.001F)) {
                 this.field23501++;
                 this.field23502 -= 0.005;
                 if (this.field23502 < 0.26 || this.field23501 > 6) {
@@ -58,7 +58,7 @@ public class Class5193 extends Module {
                 }
 
                 mc.getConnection().sendPacket(new Class5605(var4, var6, var8, true));
-                Class5628.method17725(Class9567.method37080());
+                ColorUtils.method17725(Class9567.method37080());
                 this.field23501 = 0;
                 this.field23502 = this.getNumberValueBySettingName("Boost") / 2.0F;
                 Class9567.method37090(this.field23502);

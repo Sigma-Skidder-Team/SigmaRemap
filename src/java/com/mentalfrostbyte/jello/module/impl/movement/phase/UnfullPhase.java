@@ -20,7 +20,7 @@ public class UnfullPhase extends Module {
     private void method16680(Class4404 var1) {
         if (this.isEnabled()) {
             if ((int) mc.player.getPosY() == this.field23843 && !mc.player.field4981) {
-                Class5628.method17725(-2.0);
+                ColorUtils.method17725(-2.0);
             }
 
             if (mc.player.getPosY() > (double) this.field23843 && mc.player.field4981 && !mc.player.method3331()) {

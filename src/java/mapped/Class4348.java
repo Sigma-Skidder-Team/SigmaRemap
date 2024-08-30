@@ -52,7 +52,7 @@ public class Class4348 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13225();
       float var4 = Class9747.method38214(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       float var5 = Class9782.method38556(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
@@ -89,7 +89,7 @@ public class Class4348 extends Class4278 {
          GL11.glPushMatrix();
          int var9 = this.field20897 / 2;
          int var7 = this.field20898 / 2;
-         if (this.field21248.method25319() == Direction.BACKWARDS) {
+         if (this.field21248.getDirection() == Direction.BACKWARDS) {
             var4 = Class9782.method38556(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
          }
 
@@ -103,7 +103,7 @@ public class Class4348 extends Class4278 {
                (float)this.field20897,
                (float)this.field20897,
                this.field21246,
-               Class5628.method17688(Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 0.7F), 0.8F)
+               ColorUtils.applyAlpha(ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 0.7F), 0.8F)
             );
          }
 
@@ -114,7 +114,7 @@ public class Class4348 extends Class4278 {
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
             (float)(this.field20896 + this.field20898),
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F + 0.3F * this.field21248.calcPercent())
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + 0.3F * this.field21248.calcPercent())
          );
       }
 
@@ -124,7 +124,7 @@ public class Class4348 extends Class4278 {
             this.method13577();
             ResourcesDecrypter.shoutIconPNG.bind();
             ResourcesDecrypter.shoutIconPNG.bind();
-            super.method13027(var1);
+            super.draw(var1);
          }
       }
    }
@@ -134,7 +134,7 @@ public class Class4348 extends Class4278 {
       byte var3 = 44;
       byte var4 = 44;
       float var5 = Class9747.method38214(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
-      if (this.field21248.method25319() == Direction.BACKWARDS) {
+      if (this.field21248.getDirection() == Direction.BACKWARDS) {
          var5 = Class9782.method38556(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
@@ -173,57 +173,57 @@ public class Class4348 extends Class4278 {
       byte var9 = 76;
       byte var10 = 44;
       float var11 = Class9747.method38214(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
-      if (this.field21248.method25319() == Direction.BACKWARDS) {
+      if (this.field21248.getDirection() == Direction.BACKWARDS) {
          var11 = Class9782.method38556(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
       GL11.glTranslatef((float)(this.method13263() + 76), (float)(this.method13265() + 44), 0.0F);
       GL11.glScaled(1.0 - 0.1 * (double)var11, 1.0 - 0.1 * (double)var11, 0.0);
       GL11.glTranslatef((float)(-this.method13263() - 76), (float)(-this.method13265() - 44), 0.0F);
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ResourceRegistry.JelloMediumFont25,
          (float)(this.field20895 + 94),
          (float)(this.field20896 + 16),
          !this.field21244.field33188.equals("Minecraft Server")
             ? this.field21244.field33188
             : this.field21244.field33189.substring(0, 1).toUpperCase() + this.field21244.field33189.substring(1, this.field21244.field33189.length()),
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F)
       );
       byte var12 = 94;
       byte var13 = 46;
       if (this.field21243.method31735().getTime() != 9223372036854775806L) {
          if (var3 > 0L && this.field21243.method31735().getTime() != Long.MAX_VALUE) {
-            RenderUtil.method11439(
+            RenderUtil.drawString(
                ResourceRegistry.JelloLightFont18,
                (float)(this.field20895 + var12),
                (float)(this.field20896 + var13),
                "Unban: " + var8 + " days, " + var7 + "h " + var6 + "m " + var5 + "s",
-               Class5628.method17690(ClientColors.DEEP_TEAL.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
+               ColorUtils.method17690(ClientColors.DEEP_TEAL.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
             );
          } else if (this.field21243.method31735().getTime() != Long.MAX_VALUE) {
-            RenderUtil.method11439(
+            RenderUtil.drawString(
                ResourceRegistry.JelloLightFont18,
                (float)(this.field20895 + var12),
                (float)(this.field20896 + var13),
                "Unbanned!",
-               Class5628.method17690(ClientColors.DARK_SLATE_GREY.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
+               ColorUtils.method17690(ClientColors.DARK_SLATE_GREY.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
             );
          } else {
-            RenderUtil.method11439(
+            RenderUtil.drawString(
                ResourceRegistry.JelloLightFont18,
                (float)(this.field20895 + var12),
                (float)(this.field20896 + var13),
                "Permanently banned!",
-               Class5628.method17690(ClientColors.PALE_YELLOW.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
+               ColorUtils.method17690(ClientColors.PALE_YELLOW.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
             );
          }
       } else {
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ResourceRegistry.JelloLightFont18,
             (float)(this.field20895 + var12),
             (float)(this.field20896 + var13),
             "Compromised ban (unbannable)!",
-            Class5628.method17690(ClientColors.DARK_OLIVE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
+            ColorUtils.method17690(ClientColors.DARK_OLIVE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
          );
       }
 

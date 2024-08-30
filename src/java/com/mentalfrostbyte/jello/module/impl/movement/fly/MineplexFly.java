@@ -69,7 +69,7 @@ public class MineplexFly extends PremiumModule {
         return this.isEnabled()
                 && this.field23670 != -1
                 && this.field23671 < (double) this.getNumberValueBySettingName("Boost")
-                && (mc.player.onGround || Class5628.method17730(mc.player, 0.001F))
+                && (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F))
                 && !this.field23675;
     }
 
@@ -89,9 +89,9 @@ public class MineplexFly extends PremiumModule {
                 Class9567.method37088(var1, 0.01);
             } else {
                 float var4 = mc.player.rotationYaw + 90.0F;
-                if (!mc.player.onGround && !Class5628.method17730(mc.player, 0.001F)) {
+                if (!mc.player.onGround && !ColorUtils.method17730(mc.player, 0.001F)) {
                     if (this.field23668 != -1) {
-                        if (this.field23674 && !Class5628.method17686()) {
+                        if (this.field23674 && !ColorUtils.method17686()) {
                             this.field23674 = !this.field23674;
                             this.field23671 = 0.5;
                         }
@@ -107,12 +107,12 @@ public class MineplexFly extends PremiumModule {
                             this.field23672 -= 0.02;
                         }
 
-                        if (this.field23669 > 6 && !Class5628.method17686()) {
+                        if (this.field23669 > 6 && !ColorUtils.method17686()) {
                             this.field23672 -= 0.05;
                         }
 
                         var1.method13995(this.field23672);
-                        if (mc.player.collidedHorizontally || !Class5628.method17686()) {
+                        if (mc.player.collidedHorizontally || !ColorUtils.method17686()) {
                             this.field23671 = 0.35;
                         }
 
@@ -147,7 +147,7 @@ public class MineplexFly extends PremiumModule {
                         mc.player.method2914();
                         this.field23672 = 0.4299999;
                         this.field23669 = 0;
-                        this.field23674 = Class5628.method17686();
+                        this.field23674 = ColorUtils.method17686();
                         var1.method13995(this.field23672);
                         this.field23673 = mc.player.getPosY();
                         this.field23668++;
@@ -187,7 +187,7 @@ public class MineplexFly extends PremiumModule {
             if (var1.method13932() instanceof Class5539
                     && this.field23670 != -1
                     && this.field23671 < (double) this.getNumberValueBySettingName("Boost")
-                    && (mc.player.onGround || Class5628.method17730(mc.player, 0.001F))
+                    && (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F))
                     && !this.field23675) {
                 var1.method13900(true);
             }

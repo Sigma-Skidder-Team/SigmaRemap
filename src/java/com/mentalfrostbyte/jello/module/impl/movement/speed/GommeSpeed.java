@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.Class5473;
-import mapped.Class5628;
+import mapped.ColorUtils;
 import mapped.Class9567;
 
 public class GommeSpeed extends Module {
@@ -28,7 +28,7 @@ public class GommeSpeed extends Module {
 
     @Override
     public void onDisable() {
-        if (Class5628.method17686()) {
+        if (ColorUtils.method17686()) {
             Class9567.method37093(0.27, Class9567.method37083()[0], this.field23584, 45.0F);
         } else {
             Class9567.method37090(0.0);
@@ -77,14 +77,14 @@ public class GommeSpeed extends Module {
                         }
                     }
 
-                    if (Class5628.method17686()) {
+                    if (ColorUtils.method17686()) {
                         this.field23584 = Class9567.method37092(var1, Math.max(this.field23583, 0.23), Class9567.method37083()[0], this.field23584, 45.0F);
                     } else {
                         this.field23583 = 0.1;
                         Class9567.method37088(var1, 0.0);
                     }
                 }
-            } else if (Class5628.method17686()) {
+            } else if (ColorUtils.method17686()) {
                 this.field23581 = 0;
                 var1.method13995(Class9567.method37080());
                 double[] var9 = new double[]{0.549, 0.625};

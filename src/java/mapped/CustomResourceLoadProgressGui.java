@@ -95,7 +95,7 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
          0.0F, 0.0F, (float) Minecraft.getInstance().mainWindow.getWidth(), (float) Minecraft.getInstance().mainWindow.getHeight(), field6780, var0
       );
       RenderUtil.method11424(
-         0.0F, 0.0F, (float) Minecraft.getInstance().mainWindow.getWidth(), (float) Minecraft.getInstance().mainWindow.getHeight(), Class5628.method17688(0, 0.75F)
+         0.0F, 0.0F, (float) Minecraft.getInstance().mainWindow.getWidth(), (float) Minecraft.getInstance().mainWindow.getHeight(), ColorUtils.applyAlpha(0, 0.75F)
       );
       short var4 = 455;
       byte var5 = 78;
@@ -106,13 +106,13 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
       GL11.glTranslatef((float)(Minecraft.getInstance().mainWindow.getWidth() / 2), (float)(Minecraft.getInstance().mainWindow.getHeight() / 2), 0.0F);
       GL11.glScalef(var8, var8, 0.0F);
       GL11.glTranslatef((float)(-Minecraft.getInstance().mainWindow.getWidth() / 2), (float)(-Minecraft.getInstance().mainWindow.getHeight() / 2), 0.0F);
-      RenderUtil.method11449((float)var6, (float)var7, (float)var4, (float)var5, field6778, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var0));
+      RenderUtil.method11449((float)var6, (float)var7, (float)var4, (float)var5, field6778, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var0));
       float var9 = Math.min(1.0F, var1 * 1.02F);
       float var10 = 1.0F - var0;
       byte var11 = 80;
       if (var0 == 1.0F) {
          RenderUtil.method11475(
-            (float)var6, (float)(var7 + var5 + var11), (float)var4, 20.0F, 10.0F, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F * var0)
+            (float)var6, (float)(var7 + var5 + var11), (float)var4, 20.0F, 10.0F, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F * var0)
          );
          RenderUtil.method11475(
             (float)(var6 + 1),
@@ -120,7 +120,7 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
             (float)(var4 - 2),
             18.0F,
             9.0F,
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 1.0F * var0)
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 1.0F * var0)
          );
       }
 
@@ -130,7 +130,7 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
          (float)((int)((float)(var4 - 4) * var9)),
          16.0F,
          8.0F,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * var0)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * var0)
       );
       GL11.glPopMatrix();
    }

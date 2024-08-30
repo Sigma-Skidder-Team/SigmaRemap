@@ -75,9 +75,9 @@ public class Class4337 extends Class4305 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13225();
       RenderUtil.method11455((float)(this.field20895 + (this.method13267() - 300) / 2), (float)(this.field20896 + 30), 300.0F, 97.0F, ClassicDecryption.big);
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

@@ -71,7 +71,7 @@ public class Class4354 extends Class4247 {
                                  ClientColors.DEEP_TEAL.getColor
                               ),
                               var15.field44772,
-                              ResourceRegistry.field38860
+                              ResourceRegistry.JelloLightFont36
                            )
                         );
                   }
@@ -195,18 +195,18 @@ public class Class4354 extends Class4247 {
    }
 
    public float method13602(float var1, float var2) {
-      return this.field21282.method25319() != Direction.BACKWARDS
+      return this.field21282.getDirection() != Direction.BACKWARDS
          ? (float)(Math.pow(2.0, (double)(-10.0F * var1)) * Math.sin((double)(var1 - var2 / 4.0F) * (Math.PI * 2) / (double)var2) + 1.0)
          : 0.5F + Class9782.method38557(var1, 0.0F, 1.0F, 1.0F) * 0.5F;
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       if (this.field21282.calcPercent() != 0.0F) {
          int var4 = this.field21284 + 60;
          int var5 = this.field21285 + 60;
          byte var6 = 30;
-         float var7 = !this.method13295() ? this.field21282.calcPercent() : Math.min(this.field21282.calcPercent() / 0.25F, 1.0F);
+         float var7 = !this.isHovered() ? this.field21282.calcPercent() : Math.min(this.field21282.calcPercent() / 0.25F, 1.0F);
          float var8 = this.method13602(this.field21282.calcPercent(), 1.0F);
          var4 = (int)((float)var4 * var8);
          var5 = (int)((float)var5 * var8);
@@ -216,20 +216,20 @@ public class Class4354 extends Class4247 {
             (float)(this.method13267() + 10),
             (float)(this.method13269() + 10),
             this.field21281,
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
          );
          RenderUtil.method11426(
-            0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F * var7)
+            0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F * var7)
          );
          if (var4 > 0) {
             RenderUtil.method11465(
-               (this.field20897 - var4) / 2, (this.field20898 - var5) / 2, var4, var5, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
+               (this.field20897 - var4) / 2, (this.field20898 - var5) / 2, var4, var5, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
             );
          }
 
          super.method13279(var8, var8);
          super.method13224();
-         super.method13027(var7);
+         super.draw(var7);
       } else {
          if (this.method13297()) {
             this.method13145(false);
@@ -259,7 +259,7 @@ public class Class4354 extends Class4247 {
    }
 
    public void method13603(boolean var1) {
-      if (var1 && !this.method13295()) {
+      if (var1 && !this.isHovered()) {
          try {
             if (this.field21281 != null) {
                this.field21281.release();
@@ -273,7 +273,7 @@ public class Class4354 extends Class4247 {
          }
       }
 
-      if (this.method13295() != var1 && !var1) {
+      if (this.isHovered() != var1 && !var1) {
          this.method13605();
       }
 

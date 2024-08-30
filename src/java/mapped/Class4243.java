@@ -10,8 +10,8 @@ public class Class4243 extends Class4240 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13260().get(0).method20320(this, this.field20892);
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

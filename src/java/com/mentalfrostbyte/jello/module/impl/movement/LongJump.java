@@ -19,7 +19,7 @@ public class LongJump extends ModuleWithModuleSettings {
         if (var1 < 0 || var1 >= var4.length) {
             return mc.player.method3433().field18049;
         } else {
-            return Class5628.method17686() && !mc.player.collidedHorizontally ? var4[var1] : var5[var1];
+            return ColorUtils.method17686() && !mc.player.collidedHorizontally ? var4[var1] : var5[var1];
         }
     }
 

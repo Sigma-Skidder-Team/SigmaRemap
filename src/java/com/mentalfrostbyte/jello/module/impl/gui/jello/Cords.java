@@ -24,17 +24,17 @@ public class Cords extends Module {
     @EventTarget
     private void method16578(TickEvent var1) {
         if (this.isEnabled()) {
-            if (Class5628.method17705() > this.field23755 && mc.player.ticksExisted % 3 == 0) {
+            if (ColorUtils.method17705() > this.field23755 && mc.player.ticksExisted % 3 == 0) {
                 this.field23755++;
             }
 
-            if (Class5628.method17705() < this.field23755 && mc.player.ticksExisted % 3 == 0) {
+            if (ColorUtils.method17705() < this.field23755 && mc.player.ticksExisted % 3 == 0) {
                 this.field23755--;
             }
 
             boolean var4 = Class9567.method37087() || mc.player.field4981 || mc.player.method3331();
             if (!var4) {
-                if (this.field23756.calcPercent() == 1.0F && this.field23756.method25319() == Direction.FORWARDS) {
+                if (this.field23756.calcPercent() == 1.0F && this.field23756.getDirection() == Direction.FORWARDS) {
                     this.field23756.changeDirection(Direction.BACKWARDS);
                 }
             } else {
@@ -61,7 +61,7 @@ public class Cords extends Module {
                         short var8 = 150;
                         float var9 = (float) ResourceRegistry.JelloLightFont18.method23942(var5);
                         float var10 = Math.min(1.0F, (float) var8 / var9);
-                        if (this.field23756.method25319() != Direction.FORWARDS) {
+                        if (this.field23756.getDirection() != Direction.FORWARDS) {
                             var10 *= 0.9F + Class9782.method38556(Math.min(1.0F, this.field23756.calcPercent() * 8.0F), 0.0F, 1.0F, 1.0F) * 0.1F;
                         } else {
                             var10 *= 0.9F + Class9747.method38214(Math.min(1.0F, this.field23756.calcPercent() * 7.0F), 0.0F, 1.0F, 1.0F) * 0.1F;
@@ -76,7 +76,7 @@ public class Cords extends Module {
                                 var6,
                                 (float) var7,
                                 var5,
-                                Class5628.method17688(-16777216, 0.5F * var4),
+                                ColorUtils.applyAlpha(-16777216, 0.5F * var4),
                                 Class2218.field14492,
                                 Class2218.field14488
                         );
@@ -85,7 +85,7 @@ public class Cords extends Module {
                                 var6,
                                 (float) var7,
                                 var5,
-                                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F * var4),
+                                ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F * var4),
                                 Class2218.field14492,
                                 Class2218.field14488
                         );

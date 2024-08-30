@@ -124,12 +124,12 @@ public class Class4327 extends Class4305 {
       this.field21129.field20779 = true;
       this.method13230(
          this.field21132 = new Class4274(
-            this, "changelog", 432, 24, 110, 50, new Class6387(Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)), "Changelog", ResourceRegistry.JelloLightFont20
+            this, "changelog", 432, 24, 110, 50, new Class6387(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)), "Changelog", ResourceRegistry.JelloLightFont20
          )
       );
       this.method13230(
          this.field21133 = new Class4274(
-            this, "quit", 30, 24, 50, 50, new Class6387(Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F)), "Exit", ResourceRegistry.JelloLightFont20
+            this, "quit", 30, 24, 50, 50, new Class6387(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F)), "Exit", ResourceRegistry.JelloLightFont20
          )
       );
       this.field21133.method13251((var1x, var2x) -> {
@@ -180,7 +180,7 @@ public class Class4327 extends Class4305 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13224();
       Texture var4 = ResourcesDecrypter.logoLargePNG;
       int var5 = var4.getImageWidth();
@@ -195,9 +195,9 @@ public class Class4327 extends Class4305 {
          (float)var5,
          (float)var6,
          ResourcesDecrypter.logoLargePNG,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    @Override

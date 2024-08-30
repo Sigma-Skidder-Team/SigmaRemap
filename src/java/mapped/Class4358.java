@@ -54,8 +54,8 @@ public class Class4358 extends Class4247 {
 
       for (Entry var13 : GuiManager.field41338.entrySet()) {
          Class6984 var14 = new Class6984((Class<? extends Screen>)var13.getKey());
-         Class6387 var15 = new Class6387(Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.02F), -986896)
-            .method19410(Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F))
+         Class6387 var15 = new Class6387(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.02F), -986896)
+            .method19410(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F))
             .method19412(Class2218.field14492);
          Class4240 var16;
          this.field21308
@@ -176,7 +176,7 @@ public class Class4358 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       var1 = this.field21302.calcPercent();
       float var4 = Class9747.method38214(var1, 0.0F, 1.0F, 1.0F);
       if (this.field21311) {
@@ -193,7 +193,7 @@ public class Class4358 extends Class4247 {
          (float)this.field20896,
          (float)this.field20897,
          (float)this.field20898,
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F * var1)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F * var1)
       );
       super.method13224();
       RenderUtil.method11475(
@@ -202,17 +202,17 @@ public class Class4358 extends Class4247 {
          (float)this.field21305,
          (float)this.field21306,
          10.0F,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       byte var5 = 30;
-      RenderUtil.method11439(
-         ResourceRegistry.field38860,
+      RenderUtil.drawString(
+         ResourceRegistry.JelloLightFont36,
          (float)(var5 + this.field21304),
          (float)(var5 + this.field21303),
          "Select mod to bind",
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.7F)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.7F)
       );
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    public final void method13623(Class7875 var1) {

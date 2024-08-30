@@ -68,7 +68,7 @@ public class Class4340 extends Class4339 {
       }
 
       for (Class4355 var7 : this.field21209) {
-         if (!var7.method13216() && var7.field21290.method25319() == Direction.BACKWARDS) {
+         if (!var7.method13216() && var7.field21290.getDirection() == Direction.BACKWARDS) {
             var7.field21288 = var5 + 5;
          } else {
             var7.field21288 = var7.method13265();
@@ -93,7 +93,7 @@ public class Class4340 extends Class4339 {
             break;
          }
 
-         if (!var11.method13216() && this.field21211.method25319() == Direction.FORWARDS) {
+         if (!var11.method13216() && this.field21211.getDirection() == Direction.FORWARDS) {
             Client.getInstance().getWaypointsManager().method29989().clear();
 
             for (Class4355 var9 : this.field21209) {
@@ -112,7 +112,7 @@ public class Class4340 extends Class4339 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       float var4 = Math.min(1.0F, 0.21F * (60.0F / (float) Minecraft.getFps()));
 
       for (Class4355 var6 : this.field21209) {
@@ -128,7 +128,7 @@ public class Class4340 extends Class4339 {
          }
       }
 
-      super.method13027(var1);
+      super.draw(var1);
       int var8 = Math.round(Class9782.method38556(1.0F - this.field21211.calcPercent(), 0.0F, 1.0F, 1.0F) * 30.0F);
       RenderUtil.method11450(
          (float)(this.field20895 - var8 + 18),
@@ -136,7 +136,7 @@ public class Class4340 extends Class4339 {
          22.0F,
          26.0F,
          ResourcesDecrypter.trashcanPNG,
-         Class5628.method17688(!this.field21212 ? ClientColors.DEEP_TEAL.getColor : ClientColors.PALE_YELLOW.getColor, this.field21211.calcPercent() * 0.5F),
+         ColorUtils.applyAlpha(!this.field21212 ? ClientColors.DEEP_TEAL.getColor : ClientColors.PALE_YELLOW.getColor, this.field21211.calcPercent() * 0.5F),
          false
       );
    }

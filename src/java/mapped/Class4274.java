@@ -27,7 +27,7 @@ public class Class4274 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       if (this.method13303() != null) {
          int var4 = this.field20914.method19405();
          int var5 = this.method13263()
@@ -50,7 +50,7 @@ public class Class4274 extends Class4247 {
             (float)var5,
             (float)var6,
             this.method13303(),
-            Class5628.method17688(var4, var1 * Class5628.method17710(var4)),
+            ColorUtils.applyAlpha(var4, var1 * ColorUtils.method17710(var4)),
             this.field20914.method19411(),
             this.field20914.method19413()
          );
@@ -59,9 +59,9 @@ public class Class4274 extends Class4247 {
             (float)(var6 + var8),
             (float)var5 + (float)(var7 / 2) * var9,
             (float)(var6 + var8 + 2),
-            Class5628.method17688(var4, var1 * Class5628.method17710(var4))
+            ColorUtils.applyAlpha(var4, var1 * ColorUtils.method17710(var4))
          );
-         super.method13027(var1);
+         super.draw(var1);
       }
    }
 }

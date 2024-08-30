@@ -37,7 +37,7 @@ public class ACRFly extends Module {
     public void onDisable() {
         Class9567.method37090(0.0);
         if (mc.player.method3433().field18049 > 0.0) {
-            Class5628.method17725(-0.0789);
+            ColorUtils.method17725(-0.0789);
         }
     }
 
@@ -71,7 +71,7 @@ public class ACRFly extends Module {
                         var1.method13995(!this.getBooleanValueFromSetttingName("Offset") ? 0.0 : -0.01);
                     }
 
-                    Class5628.method17725(var1.method13994());
+                    ColorUtils.method17725(var1.method13994());
                     Class9567.method37088(var1, 0.35);
                 }
             } else {
@@ -85,7 +85,7 @@ public class ACRFly extends Module {
                 }
 
                 var1.method13995(var4);
-                Class5628.method17725(var1.method13994());
+                ColorUtils.method17725(var1.method13994());
                 Class9567.method37088(var1, this.getNumberValueBySettingName("Speed"));
             }
         }

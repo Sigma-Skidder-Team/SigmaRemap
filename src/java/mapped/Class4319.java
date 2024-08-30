@@ -19,15 +19,15 @@ public class Class4319 extends Class4307 {
    }
 
    @Override
-   public void method13027(float var1) {
-      super.method13027(var1);
+   public void draw(float var1) {
+      super.draw(var1);
       int var4 = ResourcesDecrypter.mentalfrostbytePNG.getImageWidth();
       int var5 = ResourcesDecrypter.mentalfrostbytePNG.getImageHeight();
       var4 = Math.min(var4, (int)((float) Minecraft.getInstance().mainWindow.getHeight() / 1.65F));
       var5 = Math.min(var5, (int)((float) Minecraft.getInstance().mainWindow.getHeight() / 1.65F));
       this.method13416();
       RenderUtil.method11426(
-         0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * this.field21072)
+         0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * this.field21072)
       );
       float var6 = Class9747.method38214(!((double)this.field21072 < 0.5) ? (float)((double)this.field21072 - 0.5) * 2.0F : 0.0F, 0.0F, 1.0F, 1.0F);
       GL11.glPushMatrix();
@@ -37,7 +37,7 @@ public class Class4319 extends Class4307 {
       String var7 = "##Jello \n";
       String var8 = "Jello by MF";
       ClientResource var9 = ResourceRegistry.JelloLightFont25;
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          var9, (float)((this.method13267() - var9.method23942(var8)) / 2), (float)(this.method13269() - 110), var8, ClientColors.DEEP_TEAL.getColor
       );
       GL11.glPopMatrix();
@@ -52,7 +52,7 @@ public class Class4319 extends Class4307 {
          (float)var4 - (float)var4 * (this.field21072 - 1.0F) * this.field21072,
          (float)var5 - (float)var5 * (this.field21072 - 1.0F) * this.field21072,
          ResourcesDecrypter.mentalfrostbytePNG,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, this.field21072))
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, this.field21072))
       );
       if (!((double)this.field21072 < 0.986)) {
          this.field21072 = 1.0F;

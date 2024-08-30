@@ -224,7 +224,7 @@ public class MultiplayerScreen extends Screen {
          Class8005.field34417 = Class5989.field26155;
       }*/
 
-      Class5628.method17746(var1);
+      ColorUtils.method17746(var1);
       this.mc.displayGuiScreen(new ConnectingScreen(this, this.mc, var1));
    }
 

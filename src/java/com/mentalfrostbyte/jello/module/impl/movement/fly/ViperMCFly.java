@@ -37,7 +37,7 @@ public class ViperMCFly extends Module {
     public void onDisable() {
         Class9567.method37090(0.0);
         if (mc.player.method3433().field18049 > 0.0) {
-            Class5628.method17725(-0.0789);
+            ColorUtils.method17725(-0.0789);
         }
     }
 
@@ -73,7 +73,7 @@ public class ViperMCFly extends Module {
                             var1.method13995(-Class9567.method37080());
                         }
 
-                        Class5628.method17725(var1.method13994());
+                        ColorUtils.method17725(var1.method13994());
                         Class9567.method37088(var1, Class9567.method37075());
                     }
                 } else {
@@ -82,14 +82,14 @@ public class ViperMCFly extends Module {
                         this.field23597 = this.field23596;
                         this.field23596 = !this.field23598 ? mc.player.getPosY() + var1.method13994() : this.field23596;
                     } else {
-                        var1.method13995(this.field23598 && !Class5628.method17730(mc.player, 0.01F) ? -var4 / 2.0 : Class9567.method37080());
+                        var1.method13995(this.field23598 && !ColorUtils.method17730(mc.player, 0.01F) ? -var4 / 2.0 : Class9567.method37080());
                         this.field23597 = this.field23596;
-                        this.field23596 = this.field23598 && !Class5628.method17730(mc.player, 0.01F)
+                        this.field23596 = this.field23598 && !ColorUtils.method17730(mc.player, 0.01F)
                                 ? mc.player.getPosY() + var1.method13994()
                                 : this.field23596;
                     }
 
-                    Class5628.method17725(var1.method13994());
+                    ColorUtils.method17725(var1.method13994());
                     Class9567.method37088(var1, var4);
                 }
             } else {

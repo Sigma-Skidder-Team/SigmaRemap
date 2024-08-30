@@ -46,7 +46,7 @@ public class Class8854 {
 
    public void method32235(float var1) {
       RenderUtil.method11438(
-         this.field40027 * 2.0F, this.field40028 * 2.0F, this.field40029 * 2.0F, Class5628.method17688(this.field40037.getRGB(), var1 * 0.7F)
+         this.field40027 * 2.0F, this.field40028 * 2.0F, this.field40029 * 2.0F, ColorUtils.applyAlpha(this.field40037.getRGB(), var1 * 0.7F)
       );
    }
 

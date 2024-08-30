@@ -99,7 +99,7 @@ public class Class4259 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       Minecraft var4 = Minecraft.getInstance();
       Class7481 var5 = new Class7481(this.field20648.field32174, this.field20648.field32175);
       var5.field32174 = (int)((double)var5.field32174 - Math.floor((double)this.field20651));
@@ -169,18 +169,18 @@ public class Class4259 extends Class4247 {
       int var22 = Math.round((float)(this.field20648.field32174 * 16) - this.field20651 * 16.0F);
       int var23 = Math.round((float)(this.field20648.field32175 * 16) - this.field20650 * 16.0F);
       String var24 = var22 + "  " + var23;
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
          (float)(this.field20895 - ResourceRegistry.JelloLightFont14.method23942(var24) - 23),
          (float)(this.field20896 + 35),
          var24,
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.4F)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F)
       );
       this.field20656 = this.field20650;
       this.field20657 = this.field20651;
       this.field20655 = this.field20649;
       this.field20658 = var5;
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    public final void method13080(Class8041 var1) {

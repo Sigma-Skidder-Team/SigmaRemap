@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class8603;
+import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -46,7 +46,7 @@ public class Class4351 extends Class4278 {
       Class6387 var15 = new Class6387(-892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488, Class2218.field14492);
       this.method13230(this.field21268 = new Class4281(this, "profileName", 16, 8, this.method13267() - 60, 50, var15, var7.field31263));
       this.field21268.method13156(false);
-      this.field21268.method13306(ResourceRegistry.field38859);
+      this.field21268.method13306(ResourceRegistry.JelloLightFont24);
       this.field21268.method13288(false);
       this.field21268.method13253((var2x, var3x) -> {
          if (this.field21268.method13297() && var3x == 257) {
@@ -125,7 +125,7 @@ public class Class4351 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       if (this.field21266.calcPercent() == 1.0F && !this.field21272) {
          this.field21272 = true;
          Class4357 var4 = (Class4357)this.method13258().method13258().method13258();
@@ -133,11 +133,11 @@ public class Class4351 extends Class4278 {
          var4.method13222(() -> var4.method13615());
       }
 
-      float var8 = Class8603.method30791(this.field21266.calcPercent(), 0.1, 0.81, 0.14, 1.0);
+      float var8 = MathUtils.lerp(this.field21266.calcPercent(), 0.1, 0.81, 0.14, 1.0);
       this.method13270(Math.round((1.0F - var8) * (float)this.field21271));
       var1 *= 1.0F - this.field21266.calcPercent();
-      float var5 = Class8603.method30791(this.field21265.calcPercent(), 0.28, 1.26, 0.33, 1.04);
-      if (this.field21265.method25319().equals(Direction.BACKWARDS)) {
+      float var5 = MathUtils.lerp(this.field21265.calcPercent(), 0.28, 1.26, 0.33, 1.04);
+      if (this.field21265.getDirection().equals(Direction.BACKWARDS)) {
          var5 = Class8056.method27663(this.field21265.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
@@ -145,21 +145,21 @@ public class Class4351 extends Class4278 {
       this.field21263.method13268(Math.max(0, (int)((float)this.field21270 * var5)));
       this.field21263.method13284((int)((float)this.field21270 * (1.0F - var5)));
       RenderUtil.method11415(this);
-      float var6 = this.method13212() && this.field21265.method25319().equals(Direction.BACKWARDS) ? 0.03F : 0.0F;
+      float var6 = this.method13212() && this.field21265.getDirection().equals(Direction.BACKWARDS) ? 0.03F : 0.0F;
       RenderUtil.method11424(
          (float)this.field20895,
          (float)this.field20896,
          (float)this.field20897,
          (float)this.field20898,
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.04F * this.field21264.calcPercent() + var6)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F * this.field21264.calcPercent() + var6)
       );
       if (!this.field21268.method13297()) {
-         RenderUtil.method11439(
-            ResourceRegistry.field38859,
+         RenderUtil.drawString(
+            ResourceRegistry.JelloLightFont24,
             (float)(this.field20895 + 20) - var5 * (float)this.field20897,
             (float)(this.field20896 + 18),
             this.field21267.field31263,
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.9F * var1)
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.9F * var1)
          );
       }
 
@@ -171,11 +171,11 @@ public class Class4351 extends Class4278 {
             17.0F,
             13.0F,
             ResourcesDecrypter.activePNG,
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - this.field21265.calcPercent()) * var1)
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - this.field21265.calcPercent()) * var1)
          );
       }
 
-      super.method13027(var1);
+      super.draw(var1);
       RenderUtil.method11422();
    }
 }

@@ -46,7 +46,7 @@ public class Class4309 extends Class4307 {
                   this.method13333();
                } else {
                   int[] var8 = this.field20957.method13105(this.field20957.field20696);
-                  String var9 = Class5628.method17736(this.field20957.field20696);
+                  String var9 = ColorUtils.method17736(this.field20957.field20696);
                   this.field20956 = new Class4375(
                      this, "popover", this.field20957.method13263() + var8[0], this.field20957.method13265() + var8[1], this.field20957.field20696, var9
                   );
@@ -59,7 +59,7 @@ public class Class4309 extends Class4307 {
                }
             }
          );
-      Class5628.method17739();
+      ColorUtils.method17739();
    }
 
    public static ArrayList<Class6984> method13328() {
@@ -125,13 +125,13 @@ public class Class4309 extends Class4307 {
    public void method13065(int var1) {
       super.method13065(var1);
       if (var1 == 256) {
-         Class5628.method17742();
+         ColorUtils.method17742();
          field20953.displayGuiScreen(null);
       }
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       var1 = (float)Math.min(200L, new Date().getTime() - this.field20955.getTime()) / 200.0F;
       float var4 = Class9747.method38214(var1, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
@@ -141,17 +141,17 @@ public class Class4309 extends Class4307 {
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
          (float)(this.field20896 + this.field20898),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var5)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       super.method13224();
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ResourceRegistry.JelloMediumFont40,
          (float)((this.field20897 - 1060) / 2),
          (float)((this.field20898 - 357) / 2 - 90),
          "Keybind Manager",
          ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    // $VF: synthetic method

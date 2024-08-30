@@ -36,9 +36,9 @@ public class OutlineChestESP extends Module {
    }
 
    private void method16964(boolean var1) {
-      int var4 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Regular Color"), 0.7F);
-      int var5 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Ender Color"), 0.7F);
-      int var6 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Trapped Color"), 0.7F);
+      int var4 = ColorUtils.applyAlpha(this.method16004().parseSettingValueToIntBySettingName("Regular Color"), 0.7F);
+      int var5 = ColorUtils.applyAlpha(this.method16004().parseSettingValueToIntBySettingName("Ender Color"), 0.7F);
+      int var6 = ColorUtils.applyAlpha(this.method16004().parseSettingValueToIntBySettingName("Trapped Color"), 0.7F);
 
       for (TileEntity var8 : mc.world.loadedTileEntityList) {
          boolean var9 = var8 instanceof Class941 && !(var8 instanceof Class970) && this.method16004().getBooleanValueFromSetttingName("Show Regular Chests");

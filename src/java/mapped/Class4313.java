@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.Class4307;
-import com.mentalfrostbyte.jello.unmapped.Class8603;
+import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
@@ -168,7 +168,7 @@ public class Class4313 extends Class4307 {
       this.field21010.method13242();
       this.field21022.method13251((var1, var2) -> {
          if (this.method13369()) {
-            this.field21012.method13603(!this.field21012.method13295());
+            this.field21012.method13603(!this.field21012.isHovered());
          }
       });
    }
@@ -294,7 +294,7 @@ public class Class4313 extends Class4307 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13371();
       RenderUtil.method11465(
          (int)((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014),
@@ -306,7 +306,7 @@ public class Class4313 extends Class4307 {
       this.method13365();
       this.method13367();
       this.method13366();
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    private void method13364() {
@@ -329,7 +329,7 @@ public class Class4313 extends Class4307 {
             (float)((int)((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014) - 15),
             114.0F,
             this.field21020,
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3)
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3)
          );
       }
 
@@ -342,9 +342,9 @@ public class Class4313 extends Class4307 {
    private void method13366() {
       int var3 = this.field20895 + this.field21016;
       int var4 = this.field20896 + this.field21016;
-      int var5 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.8F);
-      RenderUtil.method11439(ResourceRegistry.JelloLightFont40, (float)var3, (float)var4, "Jello", var5);
-      RenderUtil.method11439(ResourceRegistry.JelloLightFont25, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
+      int var5 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F);
+      RenderUtil.drawString(ResourceRegistry.JelloLightFont40, (float)var3, (float)var4, "Jello", var5);
+      RenderUtil.drawString(ResourceRegistry.JelloLightFont25, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
    }
 
    private void method13367() {
@@ -360,7 +360,7 @@ public class Class4313 extends Class4307 {
                         var8.field20805.changeDirection(Direction.FORWARDS);
                      }
 
-                     float var9 = Class8603.method30791(var8.field20805.calcPercent(), 0.51, 0.82, 0.0, 0.99);
+                     float var9 = MathUtils.lerp(var8.field20805.calcPercent(), 0.51, 0.82, 0.0, 0.99);
                      var8.method13284((int)(-((1.0F - var9) * (float)(var7.method13267() + 30))));
                      var3 = var8.field20805.calcPercent();
                   } else {
@@ -437,7 +437,7 @@ public class Class4313 extends Class4307 {
          this.field21005 = (int)((float)this.field21005 + var6 * var7);
       }
 
-      RenderUtil.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
+      RenderUtil.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
    }
 
    @Override

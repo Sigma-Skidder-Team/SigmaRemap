@@ -24,9 +24,9 @@ public class BoxChestESP extends Module {
     }
 
     private void method16298() {
-        int var3 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Regular Color"), 0.14F);
-        int var4 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Ender Color"), 0.14F);
-        int var5 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
+        int var3 = ColorUtils.applyAlpha(this.method16004().parseSettingValueToIntBySettingName("Regular Color"), 0.14F);
+        int var4 = ColorUtils.applyAlpha(this.method16004().parseSettingValueToIntBySettingName("Ender Color"), 0.14F);
+        int var5 = ColorUtils.applyAlpha(this.method16004().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
 
         for (TileEntity var7 : mc.world.loadedTileEntityList) {
             boolean var8 = var7 instanceof Class941 && !(var7 instanceof Class970) && this.method16004().getBooleanValueFromSetttingName("Show Regular Chests");

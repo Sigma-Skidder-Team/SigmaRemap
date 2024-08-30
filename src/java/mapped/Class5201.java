@@ -36,7 +36,7 @@ public class Class5201 extends Module {
 
         while (var4.hasNext()) {
             Entity var5 = (Entity) var4.next();
-            if (!(var5 instanceof PlayerEntity) || Client.getInstance().getCombatManager().method29346(var5) || !Class5628.method17730(var5, 2.0F)) {
+            if (!(var5 instanceof PlayerEntity) || Client.getInstance().getCombatManager().method29346(var5) || !ColorUtils.method17730(var5, 2.0F)) {
                 var4.remove();
             }
         }
@@ -57,7 +57,7 @@ public class Class5201 extends Module {
                 if (this.field23515 == null
                         && (this.field23512 == null || this.field23512.isEmpty() || (var4 != this.field23513 || this.method16194()) && var4 != null)) {
                     this.field23515 = new Thread(() -> {
-                        Class5628.method17678("calc");
+                        ColorUtils.method17678("calc");
                         this.field23516 = true;
 
                         try {
@@ -74,7 +74,7 @@ public class Class5201 extends Module {
                             this.field23512 = var4x.method38776(var7);
                             Client.getInstance().method19950().method31739(this.field23512);
                             this.field23515 = null;
-                            Class5628.method17678("calc" + this.field23512.size());
+                            ColorUtils.method17678("calc" + this.field23512.size());
                         } catch (Exception var8) {
                             var8.printStackTrace();
                             this.field23515 = null;

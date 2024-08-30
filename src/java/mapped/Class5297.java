@@ -43,7 +43,7 @@ public class Class5297 extends Module {
             Class9567.method37088(var1, 0.689 + (double) Class9567.method37078() * 0.06);
         }
 
-        if (Class5628.method17730(mc.player, 0.001F) && this.getBooleanValueFromSetttingName("SneakVClip")) {
+        if (ColorUtils.method17730(mc.player, 0.001F) && this.getBooleanValueFromSetttingName("SneakVClip")) {
             if (mc.gameSettings.keyBindSneak.isKeyDown()
                     && !this.field23813
                     && mc.world.method7055(mc.player, mc.player.boundingBox.method19667(0.0, -2.8, 0.0)).count() == 0L) {
@@ -85,13 +85,13 @@ public class Class5297 extends Module {
             }
         }
 
-        Class5628.method17725(var1.method13994());
+        ColorUtils.method17725(var1.method13994());
     }
 
     @EventTarget
     private void method16637(Class4399 var1) {
         if (this.isEnabled() && var1.method13921()) {
-            Class9629 var4 = Class5628.method17760(1.0E-4);
+            Class9629 var4 = ColorUtils.method17760(1.0E-4);
             if (this.getBooleanValueFromSetttingName("Ceiling")
                     && !mc.player.onGround
                     && mc.world.method7055(mc.player, mc.player.boundingBox.method19667(0.0, 1.0E-6, 0.0)).count() > 0L) {
@@ -104,7 +104,7 @@ public class Class5297 extends Module {
                     .method7055(mc.player, mc.player.boundingBox.method19662(var5, 0.0, var5).method19662(-var5, 0.0, -var5))
                     .count()
                     > 0L) {
-                if (!Class5628.method17730(mc.player, 1.0E-4F)) {
+                if (!ColorUtils.method17730(mc.player, 1.0E-4F)) {
                     var1.method13920(true);
                 }
 

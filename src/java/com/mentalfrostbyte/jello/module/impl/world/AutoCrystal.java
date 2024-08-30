@@ -225,7 +225,7 @@ public class AutoCrystal extends PremiumModule {
 
     @EventTarget
     public void method16375(Render3DEvent var1) {
-        int var4 = Class5628.method17688(100000000, 0.2F);
+        int var4 = ColorUtils.applyAlpha(100000000, 0.2F);
         GL11.glPushMatrix();
         GL11.glDisable(2929);
 
@@ -237,7 +237,7 @@ public class AutoCrystal extends PremiumModule {
             RenderUtil.method11459(var13, var4);
         }
 
-        var4 = Class5628.method17688(9000000, 1.0F);
+        var4 = ColorUtils.applyAlpha(9000000, 1.0F);
         if (this.field23633 != null) {
             double var14 = this.field23633.getPosX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
             double var19 = this.field23633.getPosY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321() + 0.5;
@@ -298,7 +298,7 @@ public class AutoCrystal extends PremiumModule {
     }
 
     public List<Entity> method16385(float var1) {
-        List var4 = Class5628.method17708();
+        List var4 = ColorUtils.method17708();
         Iterator var5 = var4.iterator();
 
         while (var5.hasNext()) {

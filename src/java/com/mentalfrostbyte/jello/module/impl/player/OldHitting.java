@@ -86,7 +86,7 @@ public class OldHitting extends Module {
                 if (field23408 && !this.field23409) {
                     this.field23409 = !this.field23409;
                     if (!var5) {
-                        Class5628.method17733();
+                        ColorUtils.method17733();
                     }
                 } else if (!field23408 && this.field23409) {
                     this.field23409 = !this.field23409;

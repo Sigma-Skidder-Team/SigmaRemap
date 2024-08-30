@@ -32,7 +32,7 @@ public class AntiVoid extends Module {
         this.field23837 = 0.0;
         this.field23839 = 0;
         this.field23838 = 0;
-        if (mc.player.onGround || Class5628.method17730(mc.player, 0.001F)) {
+        if (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F)) {
             this.field23840 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
         }
     }
@@ -40,7 +40,7 @@ public class AntiVoid extends Module {
     @EventTarget
     private void method16664(Class4435 var1) {
         if (this.isEnabled()) {
-            if (mc.player.onGround || Class5628.method17730(mc.player, 0.001F)) {
+            if (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F)) {
                 this.field23840 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
             }
 
@@ -116,7 +116,7 @@ public class AntiVoid extends Module {
         double var5 = mc.player.getPositionVec().method11320();
         double var7 = mc.player.getPositionVec().method11321();
         double var9 = mc.player.getPositionVec().method11322();
-        if (var1.equals("Cubecraft") && !Class5628.method17718()) {
+        if (var1.equals("Cubecraft") && !ColorUtils.method17718()) {
             var1 = "Motion";
         }
 
@@ -126,7 +126,7 @@ public class AntiVoid extends Module {
                 break;
             case "Motion":
                 var2.method13995(0.1);
-                Class5628.method17725(var2.method13994());
+                ColorUtils.method17725(var2.method13994());
                 break;
             case "Cubecraft":
                 double var13 = 3.2E7;

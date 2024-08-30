@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class8603;
+import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -87,7 +87,7 @@ public class Class4272 extends Class4247 {
    }
 
    public boolean method13120() {
-      return this.field20703.method25319() == Direction.FORWARDS;
+      return this.field20703.getDirection() == Direction.FORWARDS;
    }
 
    @Override
@@ -96,10 +96,10 @@ public class Class4272 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
-      float var4 = Class8603.method30791(this.field20703.calcPercent(), 0.1, 0.81, 0.14, 1.0);
-      if (this.field20703.method25319() == Direction.BACKWARDS) {
-         var4 = Class8603.method30791(this.field20703.calcPercent(), 0.61, 0.01, 0.87, 0.16);
+   public void draw(float var1) {
+      float var4 = MathUtils.lerp(this.field20703.calcPercent(), 0.1, 0.81, 0.14, 1.0);
+      if (this.field20703.getDirection() == Direction.BACKWARDS) {
+         var4 = MathUtils.lerp(this.field20703.calcPercent(), 0.61, 0.01, 0.87, 0.16);
       }
 
       this.method13270((int)((float)this.field20704 * var4));
@@ -110,14 +110,14 @@ public class Class4272 extends Class4247 {
             (float)this.field20897,
             50.0F,
             ResourcesDecrypter.shadowBottomPNG,
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20703.calcPercent() * var1 * 0.3F)
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20703.calcPercent() * var1 * 0.3F)
          );
          RenderUtil.method11415(this);
          RenderUtil.method11424(
-            (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, Class5628.method17688(-723724, var1)
+            (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, ColorUtils.applyAlpha(-723724, var1)
          );
          if (field20706 != null && Class8233.field35347 != null && Class8233.field35347.isEmpty()) {
-            RenderUtil.method11439(
+            RenderUtil.drawString(
                ResourceRegistry.JelloLightFont14,
                (float)(this.field20895 + 40),
                (float)(this.field20896 + 110),
@@ -126,7 +126,7 @@ public class Class4272 extends Class4247 {
             );
          }
 
-         super.method13027(var1);
+         super.draw(var1);
          RenderUtil.method11422();
       }
    }

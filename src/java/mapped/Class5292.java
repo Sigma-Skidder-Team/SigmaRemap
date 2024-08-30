@@ -46,7 +46,7 @@ public class Class5292 extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (!mc.player.onGround) {
                 if (this.field23804 >= 0) {
-                    if (this.field23807 && !Class5628.method17686()) {
+                    if (this.field23807 && !ColorUtils.method17686()) {
                         this.field23807 = !this.field23807;
                         this.field23802 = 0.5;
                         this.field23805 = 1;
@@ -62,7 +62,7 @@ public class Class5292 extends Module {
                         this.field23803 -= 0.02;
                     }
 
-                    if (this.field23804 > 6 && !Class5628.method17686()) {
+                    if (this.field23804 > 6 && !ColorUtils.method17686()) {
                         this.field23803 -= 0.05;
                     }
 
@@ -99,9 +99,9 @@ public class Class5292 extends Module {
                     }
                 }
 
-                this.field23807 = Class5628.method17686();
+                this.field23807 = ColorUtils.method17686();
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (Class5628.method17686()
+                if (ColorUtils.method17686()
                         && (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var4) || this.method16004().getBooleanValueFromSetttingName("Auto Jump"))) {
                     mc.player.method2914();
                     var1.method13995(mc.player.method3433().field18049);

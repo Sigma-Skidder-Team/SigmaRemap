@@ -25,11 +25,11 @@ public class Class5216 extends Module {
             if (mc.gameSettings.keyBindAttack.isKeyDown() && this.field23548 >= var7) {
                 mc.player.swingArm(Hand.MAIN_HAND);
                 this.field23548 = 0;
-                if (Class5628.method17711(mc.player.rotationYaw, mc.player.rotationPitch, 4.6F, 0.0) != null) {
+                if (ColorUtils.method17711(mc.player.rotationYaw, mc.player.rotationPitch, 4.6F, 0.0) != null) {
                     mc.getConnection()
                             .sendPacket(
                                     new CUseEntityPacket(
-                                            Class5628.method17711(mc.player.rotationYaw, mc.player.rotationPitch, 4.6F, 0.0), mc.player.method3331()
+                                            ColorUtils.method17711(mc.player.rotationYaw, mc.player.rotationPitch, 4.6F, 0.0), mc.player.method3331()
                                     )
                             );
                     mc.player.swingArm(Hand.MAIN_HAND);

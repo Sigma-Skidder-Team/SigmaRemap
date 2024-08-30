@@ -304,7 +304,7 @@ public class Class4343 extends Class4339 implements Class4342 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       boolean var4 = false;
 
       for (Entry var6 : this.field21223.entrySet()) {
@@ -319,29 +319,29 @@ public class Class4343 extends Class4339 implements Class4342 {
       }
 
       GL11.glPushMatrix();
-      super.method13027(var1);
+      super.draw(var1);
       GL11.glPopMatrix();
       this.field21225.changeDirection(!var4 ? Direction.BACKWARDS : Direction.FORWARDS);
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + 10),
          (float)(this.method13265() + this.method13269() + 24),
          this.field21227,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
       );
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + 11),
          (float)(this.method13265() + this.method13269() + 24),
          this.field21227,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
       );
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + 14 + ResourceRegistry.JelloLightFont14.method23942(this.field21227) + 2),
          (float)(this.method13265() + this.method13269() + 24),
          this.field21226,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
       );
    }
 

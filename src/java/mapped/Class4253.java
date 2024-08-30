@@ -36,7 +36,7 @@ public class Class4253 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       if (this.field20627 != null) {
          float var4 = Animation.method25322(this.field20627, 150.0F);
          var4 = Class9782.method38557(var4, 0.0F, 1.0F, 1.0F);
@@ -56,22 +56,22 @@ public class Class4253 extends Class4247 {
       }
 
       RenderUtil.method11421(this.field20895, this.field20896, this.field20895 + this.field20897, this.field20896 + this.field20898, true);
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ResourceRegistry.RegularFont20,
          (float)(this.field20895 + 25),
          (float)this.field20896 + (float)this.field20898 / 2.0F - 17.5F,
          this.field20624.method21596(),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.6F * var1)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var1)
       );
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ResourceRegistry.JelloLightFont12,
          (float)(this.field20895 + 25),
          (float)this.field20896 + (float)this.field20898 / 2.0F + 7.5F,
          this.field20624.method21597(),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.6F * var1)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var1)
       );
       this.field20628.method13266((int)((float)this.field20898 / 2.0F - 7.5F));
-      super.method13027(var1);
+      super.draw(var1);
       RenderUtil.method11422();
    }
 }

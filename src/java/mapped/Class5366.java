@@ -40,8 +40,8 @@ public class Class5366 extends Module {
                 }
             } else {
                 BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var6) && Class5628.method17686()
-                        || this.method16004().getBooleanValueFromSetttingName("Auto Jump") && Class5628.method17686()
+                if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var6) && ColorUtils.method17686()
+                        || this.method16004().getBooleanValueFromSetttingName("Auto Jump") && ColorUtils.method17686()
                         || var1.method13994() == Class9567.method37080()) {
                     this.field23981 = 1;
                     var1.method13995(Class9567.method37080());
@@ -86,7 +86,7 @@ public class Class5366 extends Module {
             }
         }
 
-        Class5628.method17725(var1.method13994());
+        ColorUtils.method17725(var1.method13994());
     }
 
     @EventTarget

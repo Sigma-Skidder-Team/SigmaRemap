@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
-import com.mentalfrostbyte.jello.unmapped.Class8603;
+import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
@@ -93,10 +93,10 @@ public class RearView extends PremiumModule {
                         if (this.field23662.calcPercent() == 0.0F) {
                             return;
                         }
-                    } else if (this.field23662.method25319() != Direction.FORWARDS) {
-                        var8 = (int) ((float) var8 * Class8603.method30791(this.field23662.calcPercent(), 0.49, 0.59, 0.16, 1.04));
+                    } else if (this.field23662.getDirection() != Direction.FORWARDS) {
+                        var8 = (int) ((float) var8 * MathUtils.lerp(this.field23662.calcPercent(), 0.49, 0.59, 0.16, 1.04));
                     } else {
-                        var8 = (int) ((float) var8 * Class8603.method30791(this.field23662.calcPercent(), 0.3, 0.88, 0.47, 1.0));
+                        var8 = (int) ((float) var8 * MathUtils.lerp(this.field23662.calcPercent(), 0.3, 0.88, 0.47, 1.0));
                     }
 
                     RenderUtil.method11463(

@@ -29,10 +29,10 @@ public class TabGUI extends Module {
     public HashMap<Module, Float> field23774 = new HashMap<Module, Float>();
     public boolean field23781 = false;
     public ArrayList<Class8224> field23789 = new ArrayList<Class8224>();
-    public int field23790 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.0625F);
-    public int field23791 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F);
+    public int field23790 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.0625F);
+    public int field23791 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F);
     public List<ModuleCategory> field23792 = this.method16597();
-    public int field23793 = Class5628.method17688(ClientColors.MID_GREY.getColor, 0.05F);
+    public int field23793 = ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.05F);
     private final Color[] field23763 = new Color[3];
     private final Color[] field23764 = new Color[3];
     private final Color[] field23765 = new Color[3];
@@ -148,7 +148,7 @@ public class TabGUI extends Module {
             }
 
             if (var9.isEnabled()) {
-                RenderUtil.method11439(
+                RenderUtil.drawString(
                         ResourceRegistry.JelloMediumFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
                         (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloMediumFont20.method23952() / 2 + 3 + var7 * this.field23778),
@@ -156,7 +156,7 @@ public class TabGUI extends Module {
                         ClientColors.LIGHT_GREYISH_BLUE.getColor
                 );
             } else {
-                RenderUtil.method11439(
+                RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
                         (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2 + var7 * this.field23778),
@@ -187,7 +187,7 @@ public class TabGUI extends Module {
                 this.field23773.put(var8, this.field23773.get(var8) - this.field23780);
             }
 
-            RenderUtil.method11439(
+            RenderUtil.drawString(
                     ResourceRegistry.JelloLightFont20,
                     (float) (var1 + 11) + this.field23773.get(var8),
                     (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2 + var6 * this.field23778),
@@ -278,9 +278,9 @@ public class TabGUI extends Module {
             Class8224 var12 = (Class8224) var16.next();
             if (var12.field35322 == var6) {
                 float var13 = var12.field35323.calcPercent();
-                int var14 = Class5628.method17688(-5658199, (1.0F - var13 * (0.5F + var13 * 0.5F)) * 0.8F);
+                int var14 = ColorUtils.applyAlpha(-5658199, (1.0F - var13 * (0.5F + var13 * 0.5F)) * 0.8F);
                 if (Client.getInstance().getGuiManager().method33472()) {
-                    var14 = Class5628.method17688(-1, (1.0F - var13) * 0.14F);
+                    var14 = ColorUtils.applyAlpha(-1, (1.0F - var13) * 0.14F);
                 }
 
                 RenderUtil.method11436(
@@ -379,12 +379,12 @@ public class TabGUI extends Module {
         boolean var11 = Client.getInstance().getGuiManager().method33472();
         Object var12 = null;
         byte var13 = 20;
-        int var14 = Class5628.method17682(var5).getRGB();
-        int var15 = Class5628.method17682(var7).getRGB();
+        int var14 = ColorUtils.method17682(var5).getRGB();
+        int var15 = ColorUtils.method17682(var7).getRGB();
         if (var6 != null) {
-            int var16 = Class5628.method17682(var6).getRGB();
-            var14 = Class5628.method17690(var14, var16, 0.75F);
-            var15 = Class5628.method17690(var15, var16, 0.75F);
+            int var16 = ColorUtils.method17682(var6).getRGB();
+            var14 = ColorUtils.method17690(var14, var16, 0.75F);
+            var15 = ColorUtils.method17690(var15, var16, 0.75F);
         }
 
         if (!var11) {
@@ -425,7 +425,7 @@ public class TabGUI extends Module {
     private Color method16602(int var1, int var2, Color var3) {
         Color var6 = RenderUtil.method11481(var1, var2, var3);
         if (var3 != null) {
-            var6 = Class5628.method17681(var6, var3, 0.08F * this.field23780);
+            var6 = ColorUtils.method17681(var6, var3, 0.08F * this.field23780);
         }
 
         return var6;

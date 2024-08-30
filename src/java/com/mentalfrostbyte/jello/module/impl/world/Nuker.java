@@ -100,7 +100,7 @@ public class Nuker extends Module {
     @EventTarget
     public void method16264(Render3DEvent var1) {
         if (this.field23566 != null && !mc.world.getBlockState(this.field23566).isAir()) {
-            int var4 = Class5628.method17688(this.parseSettingValueToIntBySettingName("Color"), 0.4F);
+            int var4 = ColorUtils.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), 0.4F);
             GL11.glPushMatrix();
             GL11.glDisable(2929);
             double var5 = (double) this.field23566.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();

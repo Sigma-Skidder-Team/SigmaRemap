@@ -203,7 +203,7 @@ public class MusicManager {
                                 (float) field32143.mainWindow.getHeight() - var8,
                                 var4,
                                 var8,
-                                Class5628.method17688(ClientColors.MID_GREY.getColor, 0.2F * var6)
+                                ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.2F * var6)
                         );
                     }
 
@@ -239,48 +239,48 @@ public class MusicManager {
                     String[] var11 = this.field32150.split(" - ");
                     int var12 = 30;
                     if (var11.length <= 1) {
-                        RenderUtil.method11439(
+                        RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18_1,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 70),
                                 var11[0],
-                                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F)
+                                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F)
                         );
-                        RenderUtil.method11439(
+                        RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 70),
                                 var11[0],
-                                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)
+                                ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)
                         );
                     } else {
-                        RenderUtil.method11439(
+                        RenderUtil.drawString(
                                 ResourceRegistry.JelloMediumFont20_1,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 81),
                                 var11[0],
-                                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.4F)
+                                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F)
                         );
-                        RenderUtil.method11439(
+                        RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18_1,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 56),
                                 var11[1],
-                                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F)
+                                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F)
                         );
-                        RenderUtil.method11439(
+                        RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 56),
                                 var11[1],
-                                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)
+                                ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)
                         );
-                        RenderUtil.method11439(
+                        RenderUtil.drawString(
                                 ResourceRegistry.JelloMediumFont20,
                                 130.0F,
                                 (float) (field32143.mainWindow.getHeight() - 81),
                                 var11[0],
-                                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
+                                ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
                         );
                     }
                 }
@@ -627,7 +627,7 @@ public class MusicManager {
                 this.method24332();
             }
         } catch (MalformedURLException var10) {
-            Class5628.method17678("URL E " + var10.toString());
+            ColorUtils.method17678("URL E " + var10.toString());
             var10.printStackTrace();
         }
 

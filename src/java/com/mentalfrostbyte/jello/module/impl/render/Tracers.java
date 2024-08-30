@@ -30,7 +30,7 @@ public class Tracers extends Module {
             GL11.glDepthMask(false);
             GL11.glShadeModel(7425);
 
-            for (Entity var5 : Class5628.method17680()) {
+            for (Entity var5 : ColorUtils.method17680()) {
                 if (var5 != mc.player
                         && var5.isAlive()
                         && var5.boundingBox.method19675() > 0.8
@@ -57,9 +57,9 @@ public class Tracers extends Module {
                 .method11351(-((float) Math.toRadians(Minecraft.getInstance().player.rotationYaw)));
         int var11 = this.parseSettingValueToIntBySettingName("Color");
         GL11.glBegin(1);
-        GL11.glColor4fv(Class5628.method17709(Class5628.method17688(var11, 0.45F)));
+        GL11.glColor4fv(ColorUtils.method17709(ColorUtils.applyAlpha(var11, 0.45F)));
         GL11.glVertex3d(var10.field18048, var10.field18049, var10.field18050);
-        GL11.glColor4fv(Class5628.method17709(Class5628.method17688(var11, 0.0F)));
+        GL11.glColor4fv(ColorUtils.method17709(ColorUtils.applyAlpha(var11, 0.0F)));
         GL11.glVertex3d(var4, var6, var8);
         GL11.glEnd();
     }

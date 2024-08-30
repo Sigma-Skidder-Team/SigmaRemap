@@ -146,7 +146,7 @@ public class Class4363 extends Class4247 {
 
    private int method13648() {
       float var3 = Class8056.method27664(this.field21330.calcPercent(), 0.0F, 1.0F, 1.0F);
-      if (this.field21330.method25319() != Direction.FORWARDS) {
+      if (this.field21330.getDirection() != Direction.FORWARDS) {
          var3 = Class9782.method38556(this.field21330.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
@@ -172,20 +172,20 @@ public class Class4363 extends Class4247 {
    @Override
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
-      if (!this.method13114(var1, var2) && this.field21330.method25319() == Direction.FORWARDS) {
+      if (!this.method13114(var1, var2) && this.field21330.getDirection() == Direction.FORWARDS) {
          this.method13658(false);
       }
 
       int var5 = (var2 - this.method13272()) / this.method13269() - 1;
       if (var5 >= 0
          && var5 < this.field21326.size()
-         && this.field21330.method25319() == Direction.FORWARDS
+         && this.field21330.getDirection() == Direction.FORWARDS
          && this.field21330.calcPercent() == 1.0F
          && var1 - this.method13271() < this.method13267()) {
          for (Entry var9 : this.field21331.entrySet()) {
             ((Class4362)var9.getValue()).method13288((Integer)var9.getKey() == var5);
          }
-      } else if (!this.method13114(var1, var2) || this.field21330.method25319() == Direction.BACKWARDS) {
+      } else if (!this.method13114(var1, var2) || this.field21330.getDirection() == Direction.BACKWARDS) {
          for (Entry var7 : this.field21331.entrySet()) {
             ((Class4362)var7.getValue()).method13288(false);
          }
@@ -193,13 +193,13 @@ public class Class4363 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       RenderUtil.method11426(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269()),
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21330.calcPercent())
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21330.calcPercent())
       );
       RenderUtil.method11463(
          (float)this.method13263(),
@@ -227,12 +227,12 @@ public class Class4363 extends Class4247 {
             }
          }
 
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             this.method13305(),
             (float)(this.method13263() + 10),
             (float)(this.method13265() + (this.method13269() - this.method13305().method23952()) / 2 + 1),
             this.method13303() + var4,
-            Class5628.method17688(this.field20914.method19405(), var1 * 0.7F)
+            ColorUtils.applyAlpha(this.field20914.method19405(), var1 * 0.7F)
          );
          RenderUtil.method11422();
       }
@@ -246,7 +246,7 @@ public class Class4363 extends Class4247 {
 
       GL11.glPushMatrix();
       if (this.field21330.calcPercent() > 0.0F) {
-         super.method13027(var1);
+         super.draw(var1);
       }
 
       GL11.glPopMatrix();
@@ -260,12 +260,12 @@ public class Class4363 extends Class4247 {
       GL11.glTranslatef((float)(this.method13263() + var9), (float)(this.method13265() + var10), 0.0F);
       GL11.glRotatef(90.0F * this.field21330.calcPercent(), 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-this.method13263() - var9), (float)(-this.method13265() - var10), 0.0F);
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          this.field20913,
          (float)(this.method13263() + var9 - 6),
          (float)(this.method13265() + var10 - 14),
          ">",
-         Class5628.method17688(this.field20914.method19405(), var1 * 0.7F * (!this.method13114(this.method13309(), this.method13310()) ? 0.5F : 1.0F))
+         ColorUtils.applyAlpha(this.field20914.method19405(), var1 * 0.7F * (!this.method13114(this.method13309(), this.method13310()) ? 0.5F : 1.0F))
       );
    }
 

@@ -33,8 +33,8 @@ public class Class4239 extends Class4240 implements Class4238 {
    }
 
    @Override
-   public void method13027(float var1) {
-      float var4 = !this.method13295() ? 0.3F : (!this.field20582 ? (!this.method13212() ? Math.max(var1 * this.field20584, 0.0F) : 1.5F) : 0.0F);
+   public void draw(float var1) {
+      float var4 = !this.isHovered() ? 0.3F : (!this.field20582 ? (!this.method13212() ? Math.max(var1 * this.field20584, 0.0F) : 1.5F) : 0.0F);
       int var5 = (int)((float)this.method13267() * this.field20581);
       int var6 = (int)((float)this.method13269() * this.field20581);
       int var7 = this.method13263() - (var5 - this.method13267()) / 2;
@@ -50,7 +50,7 @@ public class Class4239 extends Class4240 implements Class4238 {
          (float)var8,
          (float)(var7 + var5),
          (float)(var8 + var6),
-         Class5628.method17688(Class5628.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var4), var1)
+         ColorUtils.applyAlpha(ColorUtils.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var4), var1)
       );
       if (this.method13303() != null) {
          RenderUtil.method11440(
@@ -58,7 +58,7 @@ public class Class4239 extends Class4240 implements Class4238 {
             (float)(var7 + var5 / 2),
             (float)(var8 + var6 / 2),
             this.method13303(),
-            Class5628.method17688(this.field20914.method19409(), var1),
+            ColorUtils.applyAlpha(this.field20914.method19409(), var1),
             this.field20914.method19411(),
             this.field20914.method19413()
          );

@@ -40,7 +40,7 @@ public class NCPStep extends Module {
     private void method16913(Class4434 var1) {
         if (this.isEnabled() && !var1.isCancelled()) {
             double var4 = var1.method13988();
-            if (Class5628.method17730(mc.player, 1.0E-4F) && !Class9567.method37081()) {
+            if (ColorUtils.method17730(mc.player, 1.0E-4F) && !Class9567.method37081()) {
                 if (var4 >= 0.625) {
                     double var6 = mc.player.getPosX();
                     double var8 = mc.player.getPosY();

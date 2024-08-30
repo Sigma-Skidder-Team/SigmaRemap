@@ -30,7 +30,7 @@ public class Class5267 extends PremiumModule {
             this.field23699 = true;
         }
 
-        if (Class5628.method17718() && Class8005.method27349() == Class5989.field26129.method18582()) {
+        if (ColorUtils.method17718() && Class8005.method27349() == Class5989.field26129.method18582()) {
             Client.getInstance().getNotificationManager().post(new Notification("Cubecraft2 fly", "This fly was made for 1.9+ only"));
         }
 
@@ -41,17 +41,17 @@ public class Class5267 extends PremiumModule {
     @Override
     public void onDisable() {
         Class9567.method37090(0.2);
-        Class5628.method17725(-0.0789);
-        if (Class5628.method17730(mc.player, 0.001F)) {
+        ColorUtils.method17725(-0.0789);
+        if (ColorUtils.method17730(mc.player, 0.001F)) {
             Class9567.method37090(0.0);
-            Class5628.method17725(-0.0789);
+            ColorUtils.method17725(-0.0789);
         } else {
             double var3 = mc.player.getPosX();
             double var5 = mc.player.getPosY();
             double var7 = mc.player.getPosZ();
             mc.getConnection().sendPacket(new Class5605(var3, -150.0, var7, false));
             Class9567.method37090(0.0);
-            Class5628.method17725(0.0);
+            ColorUtils.method17725(0.0);
             this.field23696 = -3;
             this.field23697.method27120();
             this.field23697.start();
@@ -96,7 +96,7 @@ public class Class5267 extends PremiumModule {
                 Class9567.method37088(var1, !mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8) : (!this.field23699 ? 2.8 : 3.7));
             }
 
-            Class5628.method17725(var1.method13994());
+            ColorUtils.method17725(var1.method13994());
         } else {
             if (this.field23696 < 0) {
                 if (this.field23696 != -3) {

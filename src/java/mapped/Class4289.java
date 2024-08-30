@@ -15,27 +15,27 @@ public class Class4289 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       int var4 = this.field20895 + 20;
       int var5 = this.field20896 + 5;
       int var6 = this.field20783.method34193();
       int var7 = this.field20898 - 10 - Class4346.method13575();
-      int var8 = Class5628.method17688(this.field20784, var1);
-      int var9 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1);
+      int var8 = ColorUtils.applyAlpha(this.field20784, var1);
+      int var9 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1);
       if (this.field20783.field42046) {
-         var8 = Class5628.method17688(-15038729, var1);
+         var8 = ColorUtils.applyAlpha(-15038729, var1);
          var4 += 402 - var6;
-         var9 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1);
+         var9 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1);
       }
 
       RenderUtil.method11474((float)var4, (float)var5, (float)var6, (float)var7, 9.0F, var8);
       int var10 = 0;
 
       for (String var14 : this.field20783.field42047) {
-         RenderUtil.method11439(ResourceRegistry.JelloLightFont18, (float)(var4 + 10), (float)(var5 + 5 + var10 * ResourceRegistry.JelloLightFont18.method23952()), var14, var9);
+         RenderUtil.drawString(ResourceRegistry.JelloLightFont18, (float)(var4 + 10), (float)(var5 + 5 + var10 * ResourceRegistry.JelloLightFont18.method23952()), var14, var9);
          var10++;
       }
 
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

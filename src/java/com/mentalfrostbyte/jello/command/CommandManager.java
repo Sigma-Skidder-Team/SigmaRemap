@@ -70,8 +70,8 @@ public class CommandManager {
     }
 
     public void method30234(String var1) {
-        Class5628.method17678(this.method30235() + " Invalid command \"" + "." + var1 + "\"");
-        Class5628.method17678(this.method30235() + " Use \"" + "." + "help\" for a list of commands.");
+        ColorUtils.method17678(this.method30235() + " Invalid command \"" + "." + var1 + "\"");
+        ColorUtils.method17678(this.method30235() + " Use \"" + "." + "help\" for a list of commands.");
     }
 
     public String method30235() {
@@ -129,19 +129,19 @@ public class CommandManager {
                         var8.add(new Class8623(var6[var9]));
                     }
 
-                    Class5628.method17678(" ");
+                    ColorUtils.method17678(" ");
 
                     try {
-                        var7.run(var5, (Class8623[]) var8.<Class8623>toArray(new Class8623[0]), var1x -> Class5628.method17678(this.method30235() + " " + var1x));
+                        var7.run(var5, (Class8623[]) var8.<Class8623>toArray(new Class8623[0]), var1x -> ColorUtils.method17678(this.method30235() + " " + var1x));
                     } catch (CommandException var10) {
                         if (var10.field16621.length() > 0) {
-                            Class5628.method17678(this.method30235() + " Error: " + var10.field16621);
+                            ColorUtils.method17678(this.method30235() + " Error: " + var10.field16621);
                         }
 
-                        Class5628.method17678(this.method30235() + " Usage: " + "." + var7.method18324() + " " + var7.method18326());
+                        ColorUtils.method17678(this.method30235() + " Usage: " + "." + var7.method18324() + " " + var7.method18326());
                     }
 
-                    Class5628.method17678(" ");
+                    ColorUtils.method17678(" ");
                 }
             }
 

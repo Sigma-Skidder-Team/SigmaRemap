@@ -13,7 +13,7 @@ public class Class4248 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       RenderUtil.method11426(
          (float)this.method13263(),
          (float)this.method13265(),
@@ -21,6 +21,6 @@ public class Class4248 extends Class4247 {
          (float)(this.method13265() + this.method13269()),
          -3618616
       );
-      RenderUtil.method11439(ClassicDecryption.regular17, (float)(this.method13263() + 5), (float)(this.method13265() - 2), this.field20605.method18626(), -14540254);
+      RenderUtil.drawString(ClassicDecryption.regular17, (float)(this.method13263() + 5), (float)(this.method13265() - 2), this.field20605.method18626(), -14540254);
    }
 }

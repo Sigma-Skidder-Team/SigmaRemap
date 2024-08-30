@@ -80,7 +80,7 @@ public class Class9142 {
    }
 
    public static float[] method34141(Class880 var0, double var1, double var3, double var5, float var7) {
-      Entity var10 = Class5628.method17711(field42013, field42014, var7, 0.0);
+      Entity var10 = ColorUtils.method17711(field42013, field42014, var7, 0.0);
       if (var10 == null) {
          if (field42015 <= new Date().getTime() - 500L) {
             double var11 = Math.sin((double)(System.currentTimeMillis() - 500L) / 521.0) * 0.2;
@@ -186,7 +186,7 @@ public class Class9142 {
    }
 
    public static Class7461 method34150(Entity var0, boolean var1) {
-      Vector3d var4 = Class5628.method17751(var0);
+      Vector3d var4 = ColorUtils.method17751(var0);
       if (var1 && !method34149(var4)) {
          for (int var5 = -1; var5 < 2; var5++) {
             double var6 = (double)var5;

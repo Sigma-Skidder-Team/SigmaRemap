@@ -31,9 +31,9 @@ public class Class8452 {
                if (!var8.has("id")) {
                   return var5;
                } else {
-                  JSONObject var9 = Class9275.method34958(Class9275.method34959("http://coverartarchive.org/release-group/" + var8.method21773("id"), true));
+                  JSONObject var9 = Class9275.method34958(Class9275.method34959("http://coverartarchive.org/release-group/" + var8.getString("id"), true));
                   System.out.println(var9);
-                  return !var9.has("images") ? var5 : new URL(var9.getJSONArray("images").getJSONObject(0).method21769("thumbnails").method21773("small"));
+                  return !var9.has("images") ? var5 : new URL(var9.getJSONArray("images").getJSONObject(0).method21769("thumbnails").getString("small"));
                }
             }
          }

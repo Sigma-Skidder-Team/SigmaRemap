@@ -24,7 +24,7 @@ public class Aimbot extends ModuleWithModuleSettings {
     }
 
     public Entity method16750(float var1) {
-        List var4 = Class5628.method17708();
+        List var4 = ColorUtils.method17708();
         Entity var5 = null;
         Iterator var6 = var4.iterator();
 

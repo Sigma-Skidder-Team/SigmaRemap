@@ -75,7 +75,7 @@ public class Class5300 extends Module {
                                 (float) (var6 - var4.method23942(this.field23833) - 90), (float) (var7 - 130), (float) (var6 - 10), (float) (var7 - 10), 1342177280
                         );
                         RenderUtil.method11455((float) (var6 - var4.method23942(this.field23833) - 80), (float) (var7 - 120), 50.0F, 100.0F, this.field23834);
-                        RenderUtil.method11439(
+                        RenderUtil.drawString(
                                 var4, (float) (var6 - var4.method23942(this.field23833) - 20), (float) (var7 - var4.method23941(this.field23833) - 60), this.field23833, -1
                         );
                     }

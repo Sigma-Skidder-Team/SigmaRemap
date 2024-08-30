@@ -58,8 +58,8 @@ public class Class4377 extends Class4235 {
    }
 
    @Override
-   public void method13027(float var1) {
-      super.method13027(var1);
+   public void draw(float var1) {
+      super.draw(var1);
    }
 
    public int method13720() {

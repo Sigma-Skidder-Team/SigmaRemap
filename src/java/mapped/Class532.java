@@ -15,8 +15,8 @@ public class Class532 implements Runnable {
 
    @Override
    public void run() {
-      AutoFarm.method16868().getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, this.field2544, Direction.field673));
-      AutoFarm.method16869().getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13486, this.field2544, Direction.field673));
-      AutoFarm.method16870().getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
+      AutoFarm.mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, this.field2544, Direction.field673));
+      AutoFarm.mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13486, this.field2544, Direction.field673));
+      AutoFarm.mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
    }
 }

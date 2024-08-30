@@ -89,7 +89,7 @@ public class Class4286 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       if (!this.method13157()) {
          if (this.field20775 != null) {
             this.field20775.release();
@@ -135,9 +135,9 @@ public class Class4286 extends Class4278 {
             var1
          );
          if (this.field20775 == null && this.field20773 == null) {
-            RenderUtil.method11449(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
+            RenderUtil.method11449(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
             if (this.field20776 != null) {
-               RenderUtil.method11449(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
+               RenderUtil.method11449(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
             }
          } else {
             if (this.field20775 == null) {
@@ -166,9 +166,9 @@ public class Class4286 extends Class4278 {
                this.field20776 = null;
             }
 
-            RenderUtil.method11449(var5, var6, var7, var8, this.field20775, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
+            RenderUtil.method11449(var5, var6, var7, var8, this.field20775, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
             if (this.field20776 != null) {
-               RenderUtil.method11449(var5, var6, var7, var8, this.field20776, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
+               RenderUtil.method11449(var5, var6, var7, var8, this.field20776, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
             }
          }
 
@@ -184,34 +184,34 @@ public class Class4286 extends Class4278 {
             (float)var9 * var10,
             (float)var9 * var10,
             ResourcesDecrypter.playIconPNG,
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
          );
          ClientResource var11 = ResourceRegistry.JelloLightFont12;
          if (this.field20912 != null) {
             RenderUtil.method11415(this);
             String[] var12 = this.method13303().replaceAll("\\(.*\\)", "").replaceAll("\\[.*\\]", "").split(" - ");
             if (var12.length > 1) {
-               RenderUtil.method11439(
+               RenderUtil.drawString(
                   var11,
                   (float)(this.method13263() + (this.method13267() - var11.method23942(var12[1])) / 2),
                   (float)(this.method13265() + this.method13267() - 2),
                   var12[1],
-                  Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+                  ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
                );
-               RenderUtil.method11439(
+               RenderUtil.drawString(
                   var11,
                   (float)(this.method13263() + (this.method13267() - var11.method23942(var12[0])) / 2),
                   (float)(this.method13265() + this.method13267() - 2 + 13),
                   var12[0],
-                  Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+                  ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
                );
             } else {
-               RenderUtil.method11439(
+               RenderUtil.drawString(
                   var11,
                   (float)(this.method13263() + (this.method13267() - var11.method23942(var12[0])) / 2),
                   (float)(this.method13265() + this.method13267() - 2 + 6),
                   var12[0],
-                  Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+                  ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
                );
             }
 

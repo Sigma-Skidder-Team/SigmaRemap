@@ -64,6 +64,6 @@ public class Class4332 extends Class4305 {
    }
 
    public boolean method13469() {
-      return this.field21144.method13295();
+      return this.field21144.isHovered();
    }
 }

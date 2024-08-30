@@ -30,7 +30,7 @@ public class Class4325 extends Class4307 {
 
    @Override
    public void method13028(int var1, int var2) {
-      if (field21112.method25319() == Direction.BACKWARDS && field21112.calcPercent() == 0.0F && field21115 != null) {
+      if (field21112.getDirection() == Direction.BACKWARDS && field21112.calcPercent() == 0.0F && field21115 != null) {
          Minecraft.getInstance().displayGuiScreen(field21115);
       }
 
@@ -38,20 +38,20 @@ public class Class4325 extends Class4307 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       float var4 = 1.3F - Class9747.method38214(field21112.calcPercent(), 0.0F, 1.0F, 1.0F) * 0.3F;
       float var5 = 1.0F;
-      if (field21112.method25319() == Direction.BACKWARDS) {
+      if (field21112.getDirection() == Direction.BACKWARDS) {
          var4 = 0.7F + Class9782.method38557(field21112.calcPercent(), 0.0F, 1.0F, 1.0F) * 0.3F;
          var5 = field21112.calcPercent();
       }
 
-      int var6 = Class5628.method17690(-1072689136, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F), var5);
-      int var7 = Class5628.method17690(-804253680, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F), var5);
+      int var6 = ColorUtils.method17690(-1072689136, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F), var5);
+      int var7 = ColorUtils.method17690(-804253680, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F), var5);
       RenderUtil.method11431(0, 0, this.method13267(), this.method13269(), var6, var7);
       this.method13279(var4, var4);
       this.method13224();
-      super.method13027(field21112.calcPercent());
+      super.draw(field21112.calcPercent());
    }
 
    private void method13437(float var1) {
@@ -73,7 +73,7 @@ public class Class4325 extends Class4307 {
                  (float)(this.method13267() * 2),
                  (float)(this.method13269() + 114),
                  this.field21113,
-                 Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+                 ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
       }
 

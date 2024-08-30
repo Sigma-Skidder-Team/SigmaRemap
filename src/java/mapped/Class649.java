@@ -16,9 +16,9 @@ public class Class649 implements Runnable {
 
    @Override
    public void run() {
-      AutoFarm.method16871().getConnection().sendPacket(new Class5539(this.field3251));
-      AutoFarm.method16872().getConnection().sendPacket(new Class5570(Hand.MAIN_HAND, Class9217.method34567(this.field3252[0], this.field3252[1], 4.5F)));
-      AutoFarm.method16873().getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
-      AutoFarm.method16875().getConnection().sendPacket(new Class5539(AutoFarm.method16874().player.inventory.currentItem));
+      AutoFarm.mc.getConnection().sendPacket(new Class5539(this.field3251));
+      AutoFarm.mc.getConnection().sendPacket(new Class5570(Hand.MAIN_HAND, Class9217.method34567(this.field3252[0], this.field3252[1], 4.5F)));
+      AutoFarm.mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
+      AutoFarm.mc.getConnection().sendPacket(new Class5539(AutoFarm.mc.player.inventory.currentItem));
    }
 }

@@ -39,11 +39,11 @@ public class Nametags extends Module {
                     int var13 = Math.round(var9.field37221);
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float) (-var11 / 2), (float) (-var4), 0.0F);
-                    RenderUtil.method11424((float) var12, (float) var13, (float) var11, 20.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F));
-                    RenderUtil.method11439(
-                            ClassicDecryption.bold16, (float) (var12 + 3), (float) var13, var10, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F)
+                    RenderUtil.method11424((float) var12, (float) var13, (float) var11, 20.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                    RenderUtil.drawString(
+                            ClassicDecryption.bold16, (float) (var12 + 3), (float) var13, var10, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F)
                     );
-                    RenderUtil.method11439(ClassicDecryption.bold16, (float) (var12 + 3), (float) (var13 - 1), var10, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                    RenderUtil.drawString(ClassicDecryption.bold16, (float) (var12 + 3), (float) (var13 - 1), var10, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     GL11.glPopMatrix();
                     List var14 = Class7789.method25877(var8);
                     if (var14.size() != 0) {

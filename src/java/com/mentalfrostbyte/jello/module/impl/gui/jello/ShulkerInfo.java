@@ -44,7 +44,7 @@ public class ShulkerInfo extends Module {
         if (this.isEnabled()) {
             RenderSystem.method27905(33986, 240.0F, 240.0F);
 
-            for (Entity var5 : Class5628.method17708()) {
+            for (Entity var5 : ColorUtils.method17708()) {
                 if (var5 instanceof ItemEntity) {
                     ItemEntity var6 = (ItemEntity) var5;
                     if (!(var6.method4124().getItem() instanceof Class3292)
@@ -71,14 +71,14 @@ public class ShulkerInfo extends Module {
                                 new Class9388(
                                         var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
                                 ),
-                                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F)
+                                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F)
                         );
                         RenderUtil.method11462(
                                 new Class9388(
                                         var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
                                 ),
                                 3.0F,
-                                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F)
+                                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
                         );
                         GL11.glDisable(3042);
                         if (mc.gameSettings.keyBindUseItem.isKeyDown()) {
@@ -206,15 +206,15 @@ public class ShulkerInfo extends Module {
                     (float) var2,
                     (float) var13,
                     (float) var12,
-                    Class5628.method17688(Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.7F)
+                    ColorUtils.applyAlpha(ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.7F)
             );
             RenderUtil.method11463((float) var1, (float) var2, (float) var13, (float) var12, 10.0F, 0.5F);
         } else {
-            RenderUtil.method11467(var1, var2, var13, var12, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.94F));
+            RenderUtil.method11467(var1, var2, var13, var12, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.94F));
         }
 
-        RenderUtil.method11439(
-                ResourceRegistry.JelloLightFont25, (float) (var1 + var8), (float) (var2 + var8 - 3), var4, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
+        RenderUtil.drawString(
+                ResourceRegistry.JelloLightFont25, (float) (var1 + var8), (float) (var2 + var8 - 3), var4, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
         );
         RenderSystem.method27820();
 
@@ -224,7 +224,7 @@ public class ShulkerInfo extends Module {
             int var17 = var1 + var8 + var14 % 9 * (var10 + var11);
             RenderSystem.method27821();
             if (var14 == this.field23841 && var5) {
-                RenderUtil.method11424((float) var17, (float) var16, (float) var10, (float) var10, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.15F));
+                RenderUtil.method11424((float) var17, (float) var16, (float) var10, (float) var10, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.15F));
             }
 
             RenderUtil.method11479(var15, var17, var16, var10, var10);
@@ -239,10 +239,10 @@ public class ShulkerInfo extends Module {
                         (float) (40 + var19),
                         40.0F,
                         ResourcesDecrypter.shadowPNG,
-                        Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F),
+                        ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F),
                         false
                 );
-                RenderUtil.method11439(ResourceRegistry.JelloLightFont20, (float) (var17 + var18), (float) (var16 + 13), "" + var15.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                RenderUtil.drawString(ResourceRegistry.JelloLightFont20, (float) (var17 + var18), (float) (var16 + 13), "" + var15.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                 RenderSystem.method27820();
             }
 
@@ -269,7 +269,7 @@ public class ShulkerInfo extends Module {
                         (float) (var25 + var10),
                         (float) var29 + 9.0F * RenderUtil.method11417(),
                         10.0F * RenderUtil.method11417() * (float) var33 + 7.0F * RenderUtil.method11417(),
-                        Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.8F)
+                        ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F)
                 );
                 GL11.glPushMatrix();
                 GL11.glScalef(RenderUtil.method11417(), RenderUtil.method11417(), 0.0F);

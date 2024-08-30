@@ -32,7 +32,7 @@ public class Class4280 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       int var4 = Minecraft.getInstance().mainWindow.getScaledWidth();
       int var5 = Minecraft.getInstance().mainWindow.getScaledHeight();
       int var6 = var4 / 2;
@@ -77,6 +77,6 @@ public class Class4280 extends Class4278 {
          var9.method32235(var1);
       }
 
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

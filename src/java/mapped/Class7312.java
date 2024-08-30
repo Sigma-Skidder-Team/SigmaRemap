@@ -37,7 +37,7 @@ public class Class7312 {
    public void method23104() {
       this.field31350.start();
       this.field31346 = true;
-      if (this.field31353.method25319() != Direction.BACKWARDS) {
+      if (this.field31353.getDirection() != Direction.BACKWARDS) {
          this.field31353.changeDirection(Direction.BACKWARDS);
       } else {
          this.field31353.changeDirection(Direction.FORWARDS);
@@ -45,7 +45,7 @@ public class Class7312 {
    }
 
    public boolean method23105() {
-      return this.field31353.method25319() != Direction.BACKWARDS;
+      return this.field31353.getDirection() != Direction.BACKWARDS;
    }
 
    public void method23106() {
@@ -106,7 +106,7 @@ public class Class7312 {
          (float)var3,
          (float)var4,
          this.field31339,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5),
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5),
          (float)var8,
          (float)var9,
          (float)this.field31342,

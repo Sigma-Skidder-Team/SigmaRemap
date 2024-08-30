@@ -22,7 +22,7 @@ public class Class4297 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       if (this.field20819.method27121() > 70L) {
          this.field20819.method27120();
          this.field20818.method29728();
@@ -51,7 +51,7 @@ public class Class4297 extends Class4278 {
       }
 
       GL11.glPopMatrix();
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    public int method13179() {

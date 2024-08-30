@@ -39,8 +39,8 @@ public class NoFall extends Module {
                     && (double) mc.player.fallDistance > 2.0 + (double) Class9567.method37079() * 0.5
                     && !mc.player.onGround
                     && this.getStringSettingValueByName("Mode").equals("Hypixel")
-                    && Class5628.method17716()) {
-                double[] var4 = Class5628.method17747();
+                    && ColorUtils.method17716()) {
+                double[] var4 = ColorUtils.method17747();
                 int var5 = var4.length;
                 double var6 = Double.MAX_VALUE;
 
@@ -59,7 +59,7 @@ public class NoFall extends Module {
                         if (mc.world.method7055(mc.player, var19).count() != 0L) {
                             var13 -= 1.0E-5;
                             var1.method13995(var1.method13994() + var13);
-                            Class5628.method17725(var1.method13994());
+                            ColorUtils.method17725(var1.method13994());
                             var6 = Double.MAX_VALUE;
                             break;
                         }
@@ -72,7 +72,7 @@ public class NoFall extends Module {
 
                 if (Math.abs(var6) < 0.1) {
                     var1.method13995(var1.method13994() + var6);
-                    Class5628.method17725(var1.method13994());
+                    ColorUtils.method17725(var1.method13994());
                 }
             }
         }
@@ -83,14 +83,14 @@ public class NoFall extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (!(mc.player.getPosY() < 2.0)) {
                 String var4 = this.getStringSettingValueByName("Mode");
-                if (!Class5628.method17716() && var4.equals("Hypixel")) {
+                if (!ColorUtils.method17716() && var4.equals("Hypixel")) {
                     var4 = "OldHypixel";
                 }
 
                 switch (var4) {
                     case "OldHypixel":
                         if (var1.method13921()) {
-                            if (Class5628.method17730(mc.player, 1.0E-4F)) {
+                            if (ColorUtils.method17730(mc.player, 1.0E-4F)) {
                                 this.field23509 = 0.0;
                                 return;
                             }
@@ -109,8 +109,8 @@ public class NoFall extends Module {
                         }
                         break;
                     case "Hypixel":
-                        if (var1.method13921() && mc.player.method3433().field18049 < 0.0 && !mc.player.onGround && Class5628.method17716()) {
-                            for (double var10 : Class5628.method17747()) {
+                        if (var1.method13921() && mc.player.method3433().field18049 < 0.0 && !mc.player.onGround && ColorUtils.method17716()) {
+                            for (double var10 : ColorUtils.method17747()) {
                                 if ((double) ((int) var1.method13911()) - var1.method13911() + var10 == 0.0) {
                                     var1.method13920(true);
                                     break;
@@ -120,7 +120,7 @@ public class NoFall extends Module {
                         break;
                     case "Hypixel2":
                         if (var1.method13921()) {
-                            if (Class5628.method17730(mc.player, 1.0E-4F)) {
+                            if (ColorUtils.method17730(mc.player, 1.0E-4F)) {
                                 this.field23509 = 0.0;
                                 return;
                             }

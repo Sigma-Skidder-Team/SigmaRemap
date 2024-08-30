@@ -21,38 +21,38 @@ public class Class4368 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
-      RenderUtil.method11439(
+   public void draw(float var1) {
+      RenderUtil.drawString(
          ClassicDecryption.regular17,
          (float)(this.field20895 + 10),
          (float)(this.field20896 + 8),
          this.field21351.getSuffix(),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, !this.field21351.isEnabled() ? 0.5F : 0.9F)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, !this.field21351.isEnabled() ? 0.5F : 0.9F)
       );
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ClassicDecryption.regular15,
          (float)(this.field20895 + 15),
          (float)(this.field20896 + 33),
          "Bind",
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 1.0F)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 1.0F)
       );
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ClassicDecryption.regular15,
          (float)(this.field20895 + 15),
          (float)(this.field20896 + 52),
-         Class5628.method17736(this.field21351.parseSettingValueToIntBySettingName("Keybind")),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.7F)
+         ColorUtils.method17736(this.field21351.parseSettingValueToIntBySettingName("Keybind")),
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.7F)
       );
       if (this.field21351.getSettingMap().size() > 1) {
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ClassicDecryption.regular12,
             (float)(this.field20895 + 84),
             (float)(this.field20896 + 34),
             "Settings",
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 1.0F)
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 1.0F)
          );
       }
 
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

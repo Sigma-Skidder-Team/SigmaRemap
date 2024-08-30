@@ -47,13 +47,13 @@ public class JumpSpider extends Module {
             var1.method13995(mc.player.method3433().field18049);
         }
 
-        Class5628.method17725(var1.method13994());
+        ColorUtils.method17725(var1.method13994());
     }
 
     @EventTarget
     private void method16652(Class4399 var1) {
         if (this.isEnabled() && var1.method13921()) {
-            Class9629 var4 = Class5628.method17760(1.0E-4);
+            Class9629 var4 = ColorUtils.method17760(1.0E-4);
             String var5 = this.getStringSettingValueByName("Mode");
             if (this.getBooleanValueFromSetttingName("Ceiling")
                     && !mc.player.onGround

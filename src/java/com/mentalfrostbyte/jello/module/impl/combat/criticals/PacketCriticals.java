@@ -34,7 +34,7 @@ public class PacketCriticals extends Module {
                 double[] var5 = new double[]{0.2, 0.0};
                 if (this.getStringSettingValueByName("Mode").equals("Hypixel")) {
                     var5 = new double[]{
-                            0.0624 + Class5628.method17750(), 1.0E-14 + Class5628.method17750(), 0.0624 + Class5628.method17750(), 1.0E-14 + Class5628.method17750()
+                            0.0624 + ColorUtils.method17750(), 1.0E-14 + ColorUtils.method17750(), 0.0624 + ColorUtils.method17750(), 1.0E-14 + ColorUtils.method17750()
                     };
                 }
 

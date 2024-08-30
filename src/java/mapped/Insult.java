@@ -338,7 +338,7 @@ public class Insult extends Command {
    @Override
    public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
       if (var2.length <= 0) {
-         Class5628.method17679(method18332());
+         ColorUtils.method17679(method18332());
       } else {
          throw new CommandException("Too many arguments");
       }

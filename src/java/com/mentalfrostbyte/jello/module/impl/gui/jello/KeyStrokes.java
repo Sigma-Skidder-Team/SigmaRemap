@@ -141,7 +141,7 @@ public class KeyStrokes extends Module {
                             var10 = 0.5F;
                         }
 
-                        String var12 = Class5628.method17736(var19.field13919.keycode.keyCode);
+                        String var12 = ColorUtils.method17736(var19.field13919.keycode.keyCode);
                         if (var19.field13919 != mc.gameSettings.keyBindAttack) {
                             if (var19.field13919 == mc.gameSettings.keyBindUseItem) {
                                 var12 = "R";
@@ -155,7 +155,7 @@ public class KeyStrokes extends Module {
                                 (float) (this.field23586 + var21.field42636),
                                 (float) (this.field23585 + var21.field42635 + var23.field42635),
                                 (float) (this.field23586 + var21.field42636 + var23.field42636),
-                                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F * var10)
+                                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * var10)
                         );
                         RenderUtil.method11463(
                                 (float) (this.field23585 + var21.field42635),
@@ -165,7 +165,7 @@ public class KeyStrokes extends Module {
                                 10.0F,
                                 0.75F * var11
                         );
-                        RenderUtil.method11439(
+                        RenderUtil.drawString(
                                 ResourceRegistry.JelloLightFont18,
                                 (float) (this.field23585 + var21.field42635 + (var23.field42635 - ResourceRegistry.JelloLightFont18.method23942(var12)) / 2),
                                 (float) (this.field23586 + var21.field42636 + 12),
@@ -201,9 +201,9 @@ public class KeyStrokes extends Module {
                         }
 
                         float var27 = var16.field33988.calcPercent();
-                        int var29 = Class5628.method17688(-5658199, (1.0F - var27 * (0.5F + var27 * 0.5F)) * 0.8F);
+                        int var29 = ColorUtils.applyAlpha(-5658199, (1.0F - var27 * (0.5F + var27 * 0.5F)) * 0.8F);
                         if (Client.getInstance().getGuiManager().method33472()) {
-                            var29 = Class5628.method17688(-1, (1.0F - var27 * (0.5F + var27 * 0.5F)) * 0.8F);
+                            var29 = ColorUtils.applyAlpha(-1, (1.0F - var27 * (0.5F + var27 * 0.5F)) * 0.8F);
                         }
 
                         RenderUtil.method11436(

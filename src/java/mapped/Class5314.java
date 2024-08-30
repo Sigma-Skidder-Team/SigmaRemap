@@ -61,12 +61,12 @@ public class Class5314 extends Module {
     public int method16694(int var1, int var2) {
         String var5 = "Facing South";
         String var6 = this.method16693(this.getStringSettingValueByName("Cords").equals("Precise"));
-        RenderUtil.method11439(
+        RenderUtil.drawString(
                 ResourceRegistry.JelloMediumFont20,
                 (float) var1,
                 (float) (mc.mainWindow.getHeight() - var2),
                 var6,
-                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
+                ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
         );
         return Math.max(ResourceRegistry.JelloLightFont20.method23942(var5), ResourceRegistry.JelloMediumFont20.method23942(var6));
     }
@@ -83,13 +83,13 @@ public class Class5314 extends Module {
                 GL11.glDisable(2896);
                 float var9 = 1.0F - (float) var7.method32117() / (float) var7.method32119();
                 if (var9 != 1.0F) {
-                    RenderUtil.method11424((float) (var1 + 2), (float) (var8 + 28), 28.0F, 5.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                    RenderUtil.method11424((float) (var1 + 2), (float) (var8 + 28), 28.0F, 5.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
                     RenderUtil.method11424(
                             (float) (var1 + 2),
                             (float) (var8 + 28),
                             28.0F * var9,
                             3.0F,
-                            Class5628.method17688(!((double) var9 <= 0.2) ? ClientColors.DARK_SLATE_GREY.getColor : ClientColors.PALE_YELLOW.getColor, 0.9F)
+                            ColorUtils.applyAlpha(!((double) var9 <= 0.2) ? ClientColors.DARK_SLATE_GREY.getColor : ClientColors.PALE_YELLOW.getColor, 0.9F)
                     );
                 }
             }

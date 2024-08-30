@@ -184,7 +184,7 @@ public class Class4345 extends Class4339 {
    }
 
    public boolean method13557() {
-      return this.field21231.method25319() == Direction.BACKWARDS && this.field21231.calcPercent() == 0.0F;
+      return this.field21231.getDirection() == Direction.BACKWARDS && this.field21231.calcPercent() == 0.0F;
    }
 
    @Override
@@ -193,15 +193,15 @@ public class Class4345 extends Class4339 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       int var4 = Math.round((float)this.method13269() * Class8056.method27664(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
-      if (this.field21231.method25319() == Direction.BACKWARDS) {
+      if (this.field21231.getDirection() == Direction.BACKWARDS) {
          var4 = Math.round((float)this.method13269() * Class8056.method27663(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
       }
 
       RenderUtil.method11419((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4);
       RenderUtil.method11424((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4, -2631721);
-      super.method13027(var1);
+      super.draw(var1);
       RenderUtil.method11422();
    }
 }

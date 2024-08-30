@@ -20,7 +20,7 @@ public class BirdGameScreen extends Class4307 {
       this.method13300(false);
       this.field21045.start();
       this.field21047 = new Animation(200, 0);
-      Class5628.method17739();
+      ColorUtils.method17739();
       int var3 = 48;
       int var4 = 27;
       int var5 = 14;
@@ -30,7 +30,7 @@ public class BirdGameScreen extends Class4307 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       var1 = this.field21047.calcPercent();
       float var4 = Class9747.method38214(var1, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
@@ -40,7 +40,7 @@ public class BirdGameScreen extends Class4307 {
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
          (float)(this.field20896 + this.field20898),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var5)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       super.method13224();
       RenderUtil.method11463(
@@ -59,18 +59,18 @@ public class BirdGameScreen extends Class4307 {
          14.0F,
          ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
-      super.method13027(var1);
+      super.draw(var1);
       int var6 = (this.field20897 - this.field21046.method13267()) / 2;
       int var7 = (this.field20898 - this.field21046.method13269()) / 2;
-      RenderUtil.method11439(ResourceRegistry.JelloMediumFont40, (float)var6, (float)(var7 - 60), "Bird", ClientColors.LIGHT_GREYISH_BLUE.getColor);
+      RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, (float)var6, (float)(var7 - 60), "Bird", ClientColors.LIGHT_GREYISH_BLUE.getColor);
 //      this.field21048 = Math.max(this.field21046.method13179(), this.field21048);
       String var8 = "Max: " + this.field21048 + "   |   Score: 0";
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
          (float)(var6 + this.field21046.method13267() - ResourceRegistry.JelloLightFont20.method23942(var8)),
          (float)(var7 - 50),
          var8,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
       );
    }
 
@@ -78,7 +78,7 @@ public class BirdGameScreen extends Class4307 {
    public void method13065(int var1) {
       super.method13065(var1);
       if (var1 == 256) {
-         Class5628.method17742();
+         ColorUtils.method17742();
          Minecraft.getInstance().displayGuiScreen(null);
       }
    }

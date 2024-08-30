@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.lwjgl.opengl.GL11;
 
 public class Class4241 extends Class4240 {
-   public static final Class6387 field20587 = new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor, Class5628.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.1F));
+   public static final Class6387 field20587 = new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor, ColorUtils.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.1F));
    public boolean field20588 = false;
    public Animation field20589 = new Animation(300, 250);
 
@@ -21,11 +21,11 @@ public class Class4241 extends Class4240 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13277(1.0F + this.field20589.calcPercent());
       this.method13278(1.0F + this.field20589.calcPercent());
       this.method13224();
-      RenderUtil.method11439(
+      RenderUtil.drawString(
          this.method13305(), (float)this.method13263(), (float)this.method13265(), "" + this.field20589.calcPercent(), ClientColors.DEEP_TEAL.getColor
       );
       GL11.glPushMatrix();

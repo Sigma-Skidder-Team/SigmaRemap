@@ -53,12 +53,12 @@ public class Class5178 extends Module {
 
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (Step.field23887 > 1) {
-                    if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var4) && this.field23477 > 0 && Class5628.method17686()) {
+                    if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var4) && this.field23477 > 0 && ColorUtils.method17686()) {
                         mc.player.method2914();
                         var1.method13993(mc.player.method3433().field18048);
                         var1.method13995(mc.player.method3433().field18049);
                         var1.method13997(mc.player.method3433().field18050);
-                    } else if (this.method16004().getBooleanValueFromSetttingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && Class5628.method17686()) {
+                    } else if (this.method16004().getBooleanValueFromSetttingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && ColorUtils.method17686()) {
                         mc.player.method2914();
                         var1.method13993(mc.player.method3433().field18048);
                         var1.method13995(mc.player.method3433().field18049);
@@ -92,7 +92,7 @@ public class Class5178 extends Module {
                         }
                     }
 
-                    if (mc.player.collidedHorizontally || !Class5628.method17686()) {
+                    if (mc.player.collidedHorizontally || !ColorUtils.method17686()) {
                         this.field23480 = var5;
                     }
 
@@ -105,7 +105,7 @@ public class Class5178 extends Module {
                                 break;
                             case "High":
                                 var1.method13995(((LongJump) this.method16004()).method16731(this.field23478));
-                                if (Class5628.method17716()
+                                if (ColorUtils.method17716()
                                         && Client.getInstance().getModuleManager().getModuleByClass(NoFall.class).isEnabled()
                                         && (this.field23478 == 8 || this.field23478 == 21)) {
                                     double var9 = mc.player.getPosY() + var1.method13994();
@@ -128,7 +128,7 @@ public class Class5178 extends Module {
                 }
             }
 
-            Class5628.method17725(var1.method13994());
+            ColorUtils.method17725(var1.method13994());
         }
     }
 
@@ -147,7 +147,7 @@ public class Class5178 extends Module {
                 }
 
                 if (this.getStringSettingValueByName("Speed Mode").equals("Hypixel") && (double) this.getNumberValueBySettingName("Boost") > 1.75) {
-                    Class5628.method17749(true);
+                    ColorUtils.method17749(true);
                 }
 
                 mc.getConnection()

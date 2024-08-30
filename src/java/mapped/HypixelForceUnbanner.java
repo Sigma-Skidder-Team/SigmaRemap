@@ -86,18 +86,18 @@ public class HypixelForceUnbanner extends Module {
       if (!var1.has("punishment_type")) {
          return false;
       } else {
-         var6.add(new BasicNameValuePair("punishment_type", var1.method21773("punishment_type")));
+         var6.add(new BasicNameValuePair("punishment_type", var1.getString("punishment_type")));
          var6.add(new BasicNameValuePair("attachment_hash", "ecdfa37933135aa9c4cd995b98e25f83"));
          var6.add(new BasicNameValuePair("player[name]", var2));
-         var6.add(new BasicNameValuePair("player[uuid]", var1.method21773("uuid")));
-         var6.add(new BasicNameValuePair("punishment_id", var1.method21773("partialId")));
+         var6.add(new BasicNameValuePair("player[uuid]", var1.getString("uuid")));
+         var6.add(new BasicNameValuePair("punishment_id", var1.getString("partialId")));
          Iterator var7 = var1.method21777();
 
          while (var7.hasNext()) {
             String var8 = (String)var7.next();
             if (!var8.equals("tags")) {
                if (!var8.equals("date") && !var8.equals("type")) {
-                  var6.add(new BasicNameValuePair("punishment[" + var8 + "]", var1.method21773(var8)));
+                  var6.add(new BasicNameValuePair("punishment[" + var8 + "]", var1.getString(var8)));
                } else {
                   var6.add(new BasicNameValuePair("punishment[" + var8 + "]", String.valueOf(var1.method21770(var8))));
                }

@@ -64,15 +64,15 @@ public class Class4266 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       Iterator var4 = this.field20685.iterator();
       byte var5 = 8;
 
       try {
          if (this.field20687) {
             BufferedImage var6 = ImageUtil.method35039(this.method13271(), this.method13272(), this.field20897, this.field20898, 3, 10, true);
-            this.field20684 = Class5628.method17682(new Color(var6.getRGB(6, 7)), new Color(var6.getRGB(6, 22))).getRGB();
-            this.field20684 = Class5628.method17691(this.field20684, 0.25F);
+            this.field20684 = ColorUtils.method17682(new Color(var6.getRGB(6, 7)), new Color(var6.getRGB(6, 22))).getRGB();
+            this.field20684 = ColorUtils.method17691(this.field20684, 0.25F);
             if (this.field20688 != null) {
                this.field20688.release();
             }
@@ -123,7 +123,7 @@ public class Class4266 extends Class4247 {
                   (float)(this.field20895 + var9),
                   (float)(var8 + this.field20898 / 4),
                   (float)(var9 * 2 - 4) * var11.field30490 + 4.0F,
-                  Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - var11.field30490 * (0.5F + var11.field30490 * 0.5F)) * 0.4F)
+                  ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - var11.field30490 * (0.5F + var11.field30490 * 0.5F)) * 0.4F)
                );
                RenderUtil.method11422();
                var11.field30490 = Math.min(var11.field30490 + 3.0F / (float) Minecraft.getFps(), 1.0F);
@@ -139,23 +139,23 @@ public class Class4266 extends Class4247 {
                (float)this.field20897,
                (float)this.field20898,
                6.0F,
-               Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F)
+               ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
             );
             GL11.glPopMatrix();
-            RenderUtil.method11439(
+            RenderUtil.drawString(
                ResourceRegistry.JelloMediumFont20,
                (float)(this.field20895 + 14),
                (float)(this.field20896 + 8),
                "+",
-               Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
+               ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
             );
             RenderUtil.method11424(
-               (float)(this.field20895 + 16), (float)(this.field20896 + 65), 8.0F, 2.0F, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
+               (float)(this.field20895 + 16), (float)(this.field20896 + 65), 8.0F, 2.0F, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
             );
          }
       } catch (IOException var10) {
       }
 
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

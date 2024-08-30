@@ -47,7 +47,7 @@ public class ShadowESP extends Module {
     }
 
     private void method16606() {
-        int var3 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
+        int var3 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
         mc.world
                 .field9025
                 .forEach(

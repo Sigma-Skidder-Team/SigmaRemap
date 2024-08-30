@@ -11,7 +11,7 @@ public class Class6387 {
    public Class2218 field27967;
 
    public Class6387(int var1) {
-      this(var1, Class5628.method17691(var1, 0.05F));
+      this(var1, ColorUtils.method17691(var1, 0.05F));
    }
 
    public Class6387(int var1, int var2) {

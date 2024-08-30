@@ -35,14 +35,14 @@ public class Class4268 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       RenderUtil.method11474(
          (float)this.field20895,
          (float)(this.field20896 + 5),
          (float)this.field20897,
          (float)this.field20898,
          8.0F,
-         Class5628.method17690(-3092272, -2171170, this.field20691)
+         ColorUtils.method17690(-3092272, -2171170, this.field20691)
       );
       RenderUtil.method11474(
          (float)this.field20895, (float)this.field20896 + 3.0F * this.field20691, (float)this.field20897, (float)this.field20898, 8.0F, -986896
@@ -53,7 +53,7 @@ public class Class4268 extends Class4247 {
             (float)(this.field20895 + 14),
             (float)(this.field20896 + 11) + 3.0F * this.field20691,
             10.0F,
-            Class5628.method17688(ClientColors.DARK_SLATE_GREY.getColor, this.field20691)
+            ColorUtils.applyAlpha(ClientColors.DARK_SLATE_GREY.getColor, this.field20691)
          );
       }
 
@@ -66,12 +66,12 @@ public class Class4268 extends Class4247 {
                         var4 = ResourceRegistry.RegularFont20;
                      }
 
-                     RenderUtil.method11439(
+                     RenderUtil.drawString(
                         var4,
                         (float)(this.field20895 + (this.field20897 - var4.method23942(this.field20912)) / 2),
                         (float)(this.field20896 + 19) + 3.0F * this.field20691,
                         this.field20912,
-                        Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.4F + (!this.field20693 ? 0.0F : 0.2F))
+                        ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F + (!this.field20693 ? 0.0F : 0.2F))
                      );
                   }
                } else {
@@ -82,35 +82,35 @@ public class Class4268 extends Class4247 {
                      (float)var6,
                      (float)(var5 + 14),
                      (float)(var6 + 3),
-                     Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
+                     ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
                   );
                   RenderUtil.method11426(
                      (float)var5,
                      (float)(var6 + 4),
                      (float)(var5 + 14),
                      (float)(var6 + 7),
-                     Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
+                     ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
                   );
                   RenderUtil.method11428(
                      (float)var5,
                      (float)(var6 + 8),
                      (float)(var5 + 14),
                      (float)(var6 + 11),
-                     Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
+                     ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
                   );
                   RenderUtil.method11428(
                      (float)var5,
                      (float)(var6 + 12),
                      (float)(var5 + 14),
                      (float)(var6 + 15),
-                     Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
+                     ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
                   );
                }
             } else {
                int var7 = this.field20895 + 32;
                int var10 = this.field20896 + 32 + (int)(3.0F * this.field20691);
                RenderUtil.method11438(
-                  (float)var7, (float)var10, 14.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
+                  (float)var7, (float)var10, 14.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
                );
             }
          } else {
@@ -123,14 +123,14 @@ public class Class4268 extends Class4247 {
                (float)(var11 - 3),
                (float)(var8 + 6),
                (float)(var11 + 3),
-               Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
+               ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
             );
             RenderUtil.method11426(
                (float)(var8 + 6),
                (float)(var11 - 1),
                (float)(var8 + 27),
                (float)(var11 + 1),
-               Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
+               ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
             );
          }
       } else {
@@ -143,25 +143,25 @@ public class Class4268 extends Class4247 {
             (float)(var12 - 3),
             (float)(var9 + 6),
             (float)(var12 + 3),
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
          );
          RenderUtil.method11426(
             (float)(var9 + 6),
             (float)(var12 - 1),
             (float)(var9 + 27),
             (float)(var12 + 1),
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
          );
          RenderUtil.method11426(
             (float)(var9 + 25),
             (float)(var12 - 8),
             (float)(var9 + 27),
             (float)(var12 - 1),
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
          );
       }
 
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    @Override

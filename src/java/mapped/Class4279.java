@@ -35,13 +35,13 @@ public class Class4279 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       RenderUtil.method11438(
          (float)(this.field20895 + 5),
          (float)(this.field20896 + 5),
          10.0F,
-         Class5628.method17688(!this.method13216() ? ClientColors.DARK_GREEN.getColor : ClientColors.DARK_BLUE_GREY.getColor, var1)
+         ColorUtils.applyAlpha(!this.method13216() ? ClientColors.DARK_GREEN.getColor : ClientColors.DARK_BLUE_GREY.getColor, var1)
       );
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

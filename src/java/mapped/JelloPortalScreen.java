@@ -49,7 +49,7 @@ public class JelloPortalScreen extends MultiplayerScreen {
       RenderUtil.method11422();
       this.field6961.method1923(var1, var2, var3, var4);
       drawString(var1, this.fontRenderer, this.getTextComponent().getString(), this.field4564 / 2 - 146, 13, 16777215);
-      drawString(var1, this.fontRenderer, "Jello Portal:", this.field4564 / 2 - 30, 13, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
+      drawString(var1, this.fontRenderer, "Jello Portal:", this.field4564 / 2 - 30, 13, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
    }
 
    private int method6250() {

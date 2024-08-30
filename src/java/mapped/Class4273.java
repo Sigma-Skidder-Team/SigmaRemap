@@ -21,7 +21,7 @@ public class Class4273 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       if (this.method13303() != null) {
          this.method13225();
          int var4 = this.field20914.method19405();
@@ -51,7 +51,7 @@ public class Class4273 extends Class4247 {
                (float)this.field20896,
                (float)(this.field20895 + this.field20897),
                (float)(this.field20896 + this.field20898),
-               Class5628.method17688(-11890462, 1.0F)
+               ColorUtils.applyAlpha(-11890462, 1.0F)
             );
          }
 
@@ -62,21 +62,21 @@ public class Class4273 extends Class4247 {
             var13 = ClientColors.LIGHT_GREYISH_BLUE.getColor;
          }
 
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + var11 + 50),
             (float)(this.field20896 + var12 + 5),
             this.field20912,
-            Class5628.method17688(var13, var1)
+            ColorUtils.applyAlpha(var13, var1)
          );
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ResourceRegistry.JelloLightFont12,
             (float)(this.field20895 + var11 + 50),
             (float)(this.field20896 + var12 + 19),
             this.field20710,
-            Class5628.method17688(var13, var1 * 0.5F)
+            ColorUtils.applyAlpha(var13, var1 * 0.5F)
          );
-         super.method13027(var1);
+         super.draw(var1);
       }
    }
 }

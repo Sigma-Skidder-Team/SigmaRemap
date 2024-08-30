@@ -111,7 +111,7 @@ public class Class5251 extends Module {
                     for (ITextComponent var31 : var5.method17648().getSiblings()) {
                         ClickEvent var35 = var31.getStyle().getClickEvent();
                         if (var35 != null && var35.getAction() == ClickEvent$Action.RUN_COMMAND && var35.getValue().contains("/f accept")) {
-                            Class5628.method17679(var35.getValue());
+                            ColorUtils.method17679(var35.getValue());
                         }
                     }
                 }

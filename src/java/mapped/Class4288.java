@@ -65,7 +65,7 @@ public class Class4288 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       byte var4 = 5;
       var1 *= !this.field20877 ? (!this.field20908 ? 0.3F : 0.7F) : 0.75F;
       int var5 = this.field20895;
@@ -79,7 +79,7 @@ public class Class4288 extends Class4278 {
             (float)(this.field20896 + var4),
             (float)(var5 + var6),
             (float)(this.field20896 + this.method13269() - var4),
-            Class5628.method17688(ClientColors.MID_GREY.getColor, 1.0F * var1)
+            ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 1.0F * var1)
          );
       } else {
          RenderUtil.method11454((float)var5, (float)this.field20896, (float)var6, (float)var4, ResourcesDecrypter.verticalScrollBarTopPNG, var1);
@@ -89,10 +89,10 @@ public class Class4288 extends Class4278 {
             (float)(this.field20896 + var4),
             (float)(var5 + var6),
             (float)(this.field20896 + this.method13269() - var4),
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.45F * var1)
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.45F * var1)
          );
       }
 
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

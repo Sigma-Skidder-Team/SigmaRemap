@@ -39,9 +39,9 @@ public class Class4261 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13086().method23109(this.method13263(), this.method13265(), this.method13267(), this.method13269(), var1);
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    public Class7312 method13086() {

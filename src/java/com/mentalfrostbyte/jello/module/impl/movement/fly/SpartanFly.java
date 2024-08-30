@@ -65,7 +65,7 @@ public class SpartanFly extends Module {
     @EventTarget
     public void method16271(Class4435 var1) {
         if (this.isEnabled()) {
-            boolean var4 = mc.player.onGround || Class5628.method17730(mc.player, 0.001F);
+            boolean var4 = mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F);
             if (!var4) {
                 if (var1.method13994() < 0.0) {
                     if (this.field23569 != mc.player.getPositionVec().field18049) {
@@ -112,9 +112,9 @@ public class SpartanFly extends Module {
                         : (!this.field23571 ? mc.player.getPositionVec().field18049 + 1.0 : mc.player.getPositionVec().field18049);
             }
 
-            Class5628.method17724(var1.method13992());
-            Class5628.method17725(var1.method13994());
-            Class5628.method17726(var1.method13996());
+            ColorUtils.method17724(var1.method13992());
+            ColorUtils.method17725(var1.method13994());
+            ColorUtils.method17726(var1.method13996());
         }
     }
 

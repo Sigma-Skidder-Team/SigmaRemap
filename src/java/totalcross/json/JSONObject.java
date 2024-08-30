@@ -373,7 +373,7 @@ public class JSONObject {
       }
    }
 
-   public String method21773(String var1) throws JSONException2 {
+   public String getString(String var1) throws JSONException2 {
       Object var4 = this.method21761(var1);
       if (!(var4 instanceof String)) {
          throw new JSONException2("JSONObject[" + method21809(var1) + "] not a string.");

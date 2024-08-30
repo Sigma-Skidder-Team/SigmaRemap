@@ -73,7 +73,7 @@ public class Animation {
         }
     }
 
-    public Direction method25319() {
+    public Direction getDirection() {
         return this.direction;
     }
 

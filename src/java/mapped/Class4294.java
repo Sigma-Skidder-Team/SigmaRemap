@@ -20,7 +20,7 @@ public class Class4294 extends Class4278 {
    public Animation field20805 = new Animation(300, 300, Direction.BACKWARDS);
    private int field20806 = 0;
    private int field20807 = 0;
-   private int field20808 = Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 20.0F);
+   private int field20808 = ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 20.0F);
 
    public Class4294(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
       super(var1, var2, var3, var4, var5, var6, false);
@@ -41,13 +41,13 @@ public class Class4294 extends Class4278 {
    }
 
    public boolean method13168() {
-      return this.field20803.method25319() == Direction.FORWARDS;
+      return this.field20803.getDirection() == Direction.FORWARDS;
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13225();
-      this.field20808 = Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
+      this.field20808 = ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
       int var4 = ((Class4339)this.field20892.method13258()).method13513();
       int var5 = Math.max(0, this.field20896 - var4);
       int var6 = Math.max(0, this.field20898 + Math.min(100, this.field20896 - var4 - var5));
@@ -62,7 +62,7 @@ public class Class4294 extends Class4278 {
                var5,
                this.field20897,
                Math.max(20, var6),
-               Class5628.method17688(!this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808, var7)
+               ColorUtils.applyAlpha(!this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808, var7)
             );
             RenderUtil.method11421(this.field20895, var5, this.field20895 + this.field20897 + 20, var5 + var6, true);
             if (this.selectedAccount != null) {
@@ -80,7 +80,7 @@ public class Class4294 extends Class4278 {
                   );
                }
 
-               super.method13027(var1 * var7);
+               super.draw(var1 * var7);
                RenderUtil.method11422();
             }
          }
@@ -106,31 +106,31 @@ public class Class4294 extends Class4278 {
 
    public void method13170() {
       if (this.selectedAccount.isEmailAValidEmailFormat()) {
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.selectedAccount.getEmail(), ClientColors.DEEP_TEAL.getColor
          );
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 50),
             "Username: " + this.selectedAccount.getEmail(),
             ClientColors.MID_GREY.getColor
          );
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14, (float)(this.field20895 + 110), (float)(this.field20896 + 65), "Offline account", ClientColors.MID_GREY.getColor
          );
       } else {
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.selectedAccount.getKnownName(), ClientColors.DEEP_TEAL.getColor
          );
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 50),
             "Email: " + this.selectedAccount.getEmail(),
             ClientColors.MID_GREY.getColor
          );
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 65),
@@ -152,7 +152,7 @@ public class Class4294 extends Class4278 {
          17.0F,
          17.0F,
          ResourcesDecrypter.errorsPNG,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * var1)
       );
       RenderUtil.method11449(
          (float)(this.field20895 + this.field20897 - 45),
@@ -160,7 +160,7 @@ public class Class4294 extends Class4278 {
          17.0F,
          13.0F,
          ResourcesDecrypter.activePNG,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20804 * var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20804 * var1)
       );
    }
 

@@ -43,7 +43,7 @@ public class Class5311 extends Module {
 
     @Override
     public void onDisable() {
-        Class5628.method17725(-0.078);
+        ColorUtils.method17725(-0.078);
         Class9567.method37090(0.2);
         mc.timer.timerSpeed = 1.0F;
         if (this.field23846) {
@@ -78,7 +78,7 @@ public class Class5311 extends Module {
             if (mc.player.onGround) {
                 this.field23847 = this.field23848 = false;
             }
-        } else if (Class5628.method17718()) {
+        } else if (ColorUtils.method17718()) {
             if (this.field23845 > 0) {
                 var1.method13995(0.0);
                 Class9567.method37088(var1, 0.0);
@@ -103,7 +103,7 @@ public class Class5311 extends Module {
                                 }
                             } else {
                                 if (!this.field23848) {
-                                    Class5628.method17749(false);
+                                    ColorUtils.method17749(false);
                                     this.field23848 = true;
                                 }
 
@@ -114,7 +114,7 @@ public class Class5311 extends Module {
                         }
                     }
                 } else if (Class8005.method27349() != Class5989.field26129.method18582()) {
-                    if (!Class5628.method17730(mc.player, 0.001F)) {
+                    if (!ColorUtils.method17730(mc.player, 0.001F)) {
                         var1.method13995(0.0);
                         Class9567.method37088(var1, 0.0);
                         if (mc.player.fallDistance > 4.0F) {
@@ -127,14 +127,14 @@ public class Class5311 extends Module {
                     }
 
                     this.field23845 = 1;
-                } else if (!Class5628.method17730(mc.player, 0.001F)) {
+                } else if (!ColorUtils.method17730(mc.player, 0.001F)) {
                     var1.method13995(0.0);
                     this.field23845 = -2;
                     Client.getInstance().getNotificationManager().post(new Notification("Cubecraft Fly", "Please start on the ground."));
                 } else {
                     Class9567.method37088(var1, 0.0);
                     var1.method13995(0.0);
-                    long var14 = Class5628.method17762() % 90L;
+                    long var14 = ColorUtils.method17762() % 90L;
                     double var15 = 0.016 + (double) var14 / 10000.0;
                     double var16 = mc.player.getPosX();
                     double var10 = mc.player.getPosY() + 0.022;
@@ -145,7 +145,7 @@ public class Class5311 extends Module {
                     mc.getConnection().sendPacket(new Class5605(var16, var10 + 3.0, var12, false));
                 }
 
-                Class5628.method17725(var1.method13994());
+                ColorUtils.method17725(var1.method13994());
             }
         } else {
             Class9567.method37088(var1, Class9567.method37075());
@@ -161,9 +161,9 @@ public class Class5311 extends Module {
 
     @EventTarget
     public void method16689(Class4399 var1) {
-        if (var1.method13921() && Class5628.method17718()) {
+        if (var1.method13921() && ColorUtils.method17718()) {
             var1.method13908(true);
-            if (Class8005.method27349() == Class5989.field26129.method18582() && this.field23845 == 0 && Class5628.method17730(mc.player, 0.001F)) {
+            if (Class8005.method27349() == Class5989.field26129.method18582() && this.field23845 == 0 && ColorUtils.method17730(mc.player, 0.001F)) {
                 var1.method13900(true);
             }
 
@@ -175,7 +175,7 @@ public class Class5311 extends Module {
 
     @EventTarget
     public void method16690(RecievePacketEvent var1) {
-        if (mc.world != null && mc.getConnection() != null && Class5628.method17718()) {
+        if (mc.world != null && mc.getConnection() != null && ColorUtils.method17718()) {
             Packet var4 = var1.getPacket();
             if (!(var4 instanceof Class5473)) {
                 if (var4 instanceof Class5590) {

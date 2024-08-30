@@ -12,7 +12,7 @@ import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 
 public class BoxOutlineESP extends Module {
-    public int field23719 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
+    public int field23719 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
 
     public BoxOutlineESP() {
         super(ModuleCategory.RENDER, "Box Outline", "Draws a line arround players");
@@ -49,7 +49,7 @@ public class BoxOutlineESP extends Module {
                     .field9025
                     .forEach(
                             (var1, var2) -> {
-                                boolean var5 = Class5628.method17744(var2) == Class2258.field14690 && this.method16004().getBooleanValueFromSetttingName("Show Players");
+                                boolean var5 = ColorUtils.method17744(var2) == Class2258.field14690 && this.method16004().getBooleanValueFromSetttingName("Show Players");
                                 boolean var6 = !var2.method3342() || this.method16004().getBooleanValueFromSetttingName("Show Invisibles");
                                 if (!Client.getInstance().getCombatManager().method29346(var2) && var5 && var6 && var2 != mc.player) {
                                     double var7 = Class9647.method37623(var2).field43722;
@@ -82,9 +82,9 @@ public class BoxOutlineESP extends Module {
     private void method16508(boolean var1) {
         for (Entity var5 : mc.world.method6835()) {
             if (!Client.getInstance().getCombatManager().method29346(var5)) {
-                boolean var6 = Class5628.method17744(var5) == Class2258.field14690 && this.method16004().getBooleanValueFromSetttingName("Show Players");
-                boolean var7 = Class5628.method17744(var5) == Class2258.field14689 && this.method16004().getBooleanValueFromSetttingName("Show Mobs");
-                boolean var8 = Class5628.method17744(var5) == Class2258.field14691 && this.method16004().getBooleanValueFromSetttingName("Show Passives");
+                boolean var6 = ColorUtils.method17744(var5) == Class2258.field14690 && this.method16004().getBooleanValueFromSetttingName("Show Players");
+                boolean var7 = ColorUtils.method17744(var5) == Class2258.field14689 && this.method16004().getBooleanValueFromSetttingName("Show Mobs");
+                boolean var8 = ColorUtils.method17744(var5) == Class2258.field14691 && this.method16004().getBooleanValueFromSetttingName("Show Passives");
                 boolean var9 = !var5.method3342() || this.method16004().getBooleanValueFromSetttingName("Show Invisibles");
                 if ((var7 || var6 || var8) && var9 && var5 != mc.player) {
                     GL11.glPushMatrix();
@@ -101,7 +101,7 @@ public class BoxOutlineESP extends Module {
                     double var15 = (var5.getPosZ() - var5.lastTickPosZ) * (double) mc.timer.renderPartialTicks - (var5.getPosZ() - var5.lastTickPosZ);
                     Class9388 var17 = new Class9388(var5.getBoundingBox().method19667(var11, var13, var15)).method35648(0.1F);
                     if (var1) {
-                        RenderUtil.method11462(var17, 3.0F, Class5628.method17688(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
+                        RenderUtil.method11462(var17, 3.0F, ColorUtils.applyAlpha(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
                     } else {
                         RenderUtil.method11459(var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     }

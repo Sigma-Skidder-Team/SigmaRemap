@@ -15,10 +15,10 @@ public class ResourceRegistry {
     public static final ClientResource JelloLightFont20 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 20.0F);
     public static final ClientResource JelloLightFont25 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 25.0F);
     public static final ClientResource JelloLightFont40 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 40.0F);
-    public static final ClientResource field38857 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 50.0F);
-    public static final ClientResource field38858 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 28.0F);
-    public static final ClientResource field38859 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 24.0F);
-    public static final ClientResource field38860 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 36.0F);
+    public static final ClientResource JelloLightFont50 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 50.0F);
+    public static final ClientResource JelloLightFont28 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 28.0F);
+    public static final ClientResource JelloLightFont24 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 24.0F);
+    public static final ClientResource JelloLightFont36 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 36.0F);
     public static final ClientResource RegularFont20 = getFont("com/mentalfrostbyte/gui/resources/font/regular.ttf", 0, 20.0F);
     public static final ClientResource RegularFont40 = getFont("com/mentalfrostbyte/gui/resources/font/regular.ttf", 0, 40.0F);
     public static final ClientResource JelloMediumFont20 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 20.0F);

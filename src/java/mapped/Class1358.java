@@ -14,7 +14,7 @@ public class Class1358 implements Runnable {
 
    @Override
    public void run() {
-      AutoFarm.method16866().getConnection().sendPacket(new Class5570(Hand.MAIN_HAND, Class9217.method34567(this.field7245[0], this.field7245[1], 4.5F)));
-      AutoFarm.method16867().getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
+      AutoFarm.mc.getConnection().sendPacket(new Class5570(Hand.MAIN_HAND, Class9217.method34567(this.field7245[0], this.field7245[1], 4.5F)));
+      AutoFarm.mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
    }
 }

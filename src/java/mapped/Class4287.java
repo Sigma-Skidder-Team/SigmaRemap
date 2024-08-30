@@ -26,26 +26,26 @@ public class Class4287 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       if (this.field20779) {
          GL11.glAlphaFunc(518, 0.01F);
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             ResourceRegistry.JelloLightFont18_1,
             (float)this.method13263(),
             (float)this.method13265(),
             this.method13303(),
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1)
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1)
          );
          GL11.glAlphaFunc(519, 0.0F);
       }
 
       if (this.field20912 != null) {
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             this.method13305(),
             (float)this.method13263(),
             (float)this.method13265(),
             this.method13303(),
-            Class5628.method17688(this.field20914.method19409(), var1 * Class5628.method17710(this.field20914.method19409()))
+            ColorUtils.applyAlpha(this.field20914.method19409(), var1 * ColorUtils.method17710(this.field20914.method19409()))
          );
       }
    }

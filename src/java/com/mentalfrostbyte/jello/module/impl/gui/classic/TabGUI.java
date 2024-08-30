@@ -222,7 +222,7 @@ public class TabGUI extends Module {
             var8 = var7;
          }
 
-         if (var8.method24732() && field23380.method25319() == Direction.FORWARDS) {
+         if (var8.method24732() && field23380.getDirection() == Direction.FORWARDS) {
             if (this.method15969() == field23385.size()) {
                this.field23381.changeDirection(Direction.FORWARDS);
             } else if (field23385.get(field23385.size() - 1).method24724()) {
@@ -239,7 +239,7 @@ public class TabGUI extends Module {
          }
 
          float var17 = Class8056.method27664(this.field23382.calcPercent(), 0.0F, 1.0F, 1.0F) * field23380.calcPercent();
-         if (this.field23382.method25319() == Direction.BACKWARDS) {
+         if (this.field23382.getDirection() == Direction.BACKWARDS) {
             var17 = Class8056.method27663(this.field23382.calcPercent(), 0.0F, 1.0F, 1.0F);
          }
 
@@ -247,17 +247,17 @@ public class TabGUI extends Module {
             (float)var8.method24720() + (float)var8.method24719() + 14.0F * var17,
             (float)var8.method24721() + 16.0F + (float)(25 * var8.field32402),
             24.0F * var17,
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F),
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F)
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F),
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F)
          );
          int var13 = var8.method24720() + var8.method24719() + 4 + Math.round(var17 * 28.0F);
          int var14 = var8.method24721() + 25 * var8.field32402 + 4;
          int var15 = var8.field32394.method23942(var11) + 8;
          float var16 = Class8056.method27664(this.field23381.calcPercent(), 0.0F, 1.0F, 1.0F);
-         RenderUtil.method11424((float)var13, (float)var14, (float)var15 * var16, 25.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F));
+         RenderUtil.method11424((float)var13, (float)var14, (float)var15 * var16, 25.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F));
          RenderUtil.method11419((float)var13, (float)var14, (float)var15 * var16, 25.0F);
-         RenderUtil.method11439(
-            var8.field32394, (float)(var13 + 4), (float)(var14 + 2), var11, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 1.7F))
+         RenderUtil.drawString(
+            var8.field32394, (float)(var13 + 4), (float)(var14 + 2), var11, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 1.7F))
          );
          RenderUtil.method11422();
       }
@@ -382,6 +382,6 @@ public class TabGUI extends Module {
    }
 
    private boolean method15971() {
-      return this.field23382.method25319() == Direction.FORWARDS;
+      return this.field23382.getDirection() == Direction.FORWARDS;
    }
 }

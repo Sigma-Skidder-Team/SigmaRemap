@@ -18,7 +18,7 @@ public class Class338 implements Runnable {
       float var4 = Math.max(KillAura.method16837().player.method3275(KillAura.field23949.method27397()), this.field1478.getNumberValueBySettingName("Range"));
       EntityRayTraceResult var5;
       if (!this.field1478.getStringSettingValueByName("Attack Mode").equals("Pre")) {
-         var5 = Class5628.method17712(
+         var5 = ColorUtils.method17712(
             KillAura.method16843(this.field1478).field32084, KillAura.method16843(this.field1478).field32085, var4, (double)this.field1477
          );
       } else {
@@ -27,7 +27,7 @@ public class Class338 implements Runnable {
                + KillAura.method16840().player.method3433().field18050 * KillAura.method16841().player.method3433().field18050
          );
          double var10003 = (double)this.field1477;
-         var5 = Class5628.method17712(KillAura.method16842(this.field1478).field32084, KillAura.method16842(this.field1478).field32085, var4, var10003 + var6);
+         var5 = ColorUtils.method17712(KillAura.method16842(this.field1478).field32084, KillAura.method16842(this.field1478).field32085, var4, var10003 + var6);
       }
 
       if (KillAura.field23948 != null
@@ -44,7 +44,7 @@ public class Class338 implements Runnable {
                var11 = var5.getEntity();
             }
 
-            Class5628.method17735(var11, !this.field1478.getBooleanValueFromSetttingName("No swing"));
+            ColorUtils.method17735(var11, !this.field1478.getBooleanValueFromSetttingName("No swing"));
          }
 
          if (var8.equals("Multi2")) {

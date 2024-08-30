@@ -178,7 +178,7 @@ public class Search extends Module {
     }
 
     public void method16170() {
-        int var3 = Class5628.method17688(this.parseSettingValueToIntBySettingName("Color"), 0.14F);
+        int var3 = ColorUtils.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), 0.14F);
         GL11.glPushMatrix();
         GL11.glDisable(2929);
 

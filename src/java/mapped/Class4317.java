@@ -130,10 +130,10 @@ public class Class4317 extends Class4307 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13401();
-      super.method13027(var1);
-      RenderUtil.method11439(ResourceRegistry.field38868, 20.0F, 20.0F, Minecraft.getInstance().getSession().getUsername(), -2236963);
+      super.draw(var1);
+      RenderUtil.drawString(ResourceRegistry.field38868, 20.0F, 20.0F, Minecraft.getInstance().getSession().getUsername(), -2236963);
       RenderUtil.method11440(
          ResourceRegistry.field38868,
          (float)(this.method13267() / 2),
@@ -171,7 +171,7 @@ public class Class4317 extends Class4307 {
 
    private void method13401() {
       RenderUtil.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClassicDecryption.mainmenubackground);
-      RenderUtil.method11424(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.23F));
+      RenderUtil.method11424(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.23F));
    }
 
    @Override

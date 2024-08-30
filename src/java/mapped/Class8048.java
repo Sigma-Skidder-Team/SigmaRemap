@@ -31,7 +31,7 @@ public class Class8048 {
 
          while (var4.hasNext()) {
             String var5 = (String)var4.next();
-            var3.put(var5, var0.method21773(var5));
+            var3.put(var5, var0.getString(var5));
          }
       }
 

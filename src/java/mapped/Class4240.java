@@ -33,10 +33,10 @@ public class Class4240 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
-      float var4 = !this.method13295() ? 0.3F : (!this.method13216() ? (!this.method13212() ? Math.max(var1 * this.field20584, 0.0F) : 1.5F) : 0.0F);
-      int var5 = Class5628.method17688(
-         Class5628.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var4),
+   public void draw(float var1) {
+      float var4 = !this.isHovered() ? 0.3F : (!this.method13216() ? (!this.method13212() ? Math.max(var1 * this.field20584, 0.0F) : 1.5F) : 0.0F);
+      int var5 = ColorUtils.applyAlpha(
+         ColorUtils.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var4),
          (float)(this.field20914.method19405() >> 24 & 0xFF) / 255.0F * var1
       );
       int var6 = var5 >> 24 & 0xFF;
@@ -75,13 +75,13 @@ public class Class4240 extends Class4247 {
             (float)(this.field20585 + var10),
             (float)var11,
             this.method13303(),
-            Class5628.method17688(this.field20914.method19409(), var1),
+            ColorUtils.applyAlpha(this.field20914.method19409(), var1),
             this.field20914.method19411(),
             this.field20914.method19413()
          );
       }
 
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    public void method13034(int var1) {

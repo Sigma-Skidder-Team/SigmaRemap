@@ -20,7 +20,7 @@ public class Class4257 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.field20639.method13145(true);
       byte var4 = 10;
       RenderUtil.method11463(
@@ -45,7 +45,7 @@ public class Class4257 extends Class4247 {
          (float)this.field20897,
          (float)this.field20898,
          (float)var4,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.97F)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.97F)
       );
       RenderUtil.method11449(
          (float)(this.field20895 + 20),
@@ -53,7 +53,7 @@ public class Class4257 extends Class4247 {
          20.0F,
          20.0F,
          ResourcesDecrypter.searchPNG,
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
       );
       ArrayList var5 = this.method13064();
       if (var5.size() > 0 && this.method13067(this.field20640, ((Module)var5.get(0)).getName())) {
@@ -61,16 +61,16 @@ public class Class4257 extends Class4247 {
          String var7 = this.field20640
             + ((Module)var5.get(0)).getName().substring(this.field20640.length(), var6.length())
             + (!((Module)var5.get(0)).isEnabled() ? " - Disabled" : " - Enabled");
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             this.field20639.method13305(),
             (float)(this.field20895 + 54),
             (float)(this.field20896 + 14),
             var7,
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.25F)
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.25F)
          );
       }
 
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    public ArrayList<Module> method13064() {

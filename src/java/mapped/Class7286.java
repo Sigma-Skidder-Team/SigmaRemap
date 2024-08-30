@@ -28,7 +28,7 @@ public class Class7286 {
 
    public Class7286 method22984(JSONObject var1) throws JSONException {
       this.field31262 = var1.method21769("modConfig");
-      this.field31263 = var1.method21773("name");
+      this.field31263 = var1.getString("name");
       return this;
    }
 

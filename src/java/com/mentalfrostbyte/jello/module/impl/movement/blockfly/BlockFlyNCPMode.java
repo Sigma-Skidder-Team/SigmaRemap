@@ -107,7 +107,7 @@ public class BlockFlyNCPMode extends Module {
         Class9567.method37090(Class9567.method37075() * 0.9);
         mc.timer.timerSpeed = 1.0F;
         if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23926 == 0) {
-            Class5628.method17725(-0.0789);
+            ColorUtils.method17725(-0.0789);
         }
     }
 
@@ -253,7 +253,7 @@ public class BlockFlyNCPMode extends Module {
     @HigherPriority
     public void method16809(Class4435 var1) {
         if (this.isEnabled() && this.field23928.method16735() != 0) {
-            if (mc.player.onGround || Class5628.method17730(mc.player, 0.01F)) {
+            if (mc.player.onGround || ColorUtils.method17730(mc.player, 0.01F)) {
                 this.field23931 = mc.player.getPosY();
             }
 
@@ -274,7 +274,7 @@ public class BlockFlyNCPMode extends Module {
             String var4 = this.getStringSettingValueByName("Speed Mode");
             switch (var4) {
                 case "Jump":
-                    if (mc.player.onGround && Class5628.method17686() && !mc.player.method3331() && !this.field23929) {
+                    if (mc.player.onGround && ColorUtils.method17686() && !mc.player.method3331() && !this.field23929) {
                         this.field23930 = false;
                         mc.player.method2914();
                         ((Speed) Client.getInstance().getModuleManager().getModuleByClass(Speed.class)).method16764();
@@ -295,7 +295,7 @@ public class BlockFlyNCPMode extends Module {
                     if (mc.gameSettings.keyBindJump.isKeyDown()) {
                         mc.timer.timerSpeed = 1.0F;
                     } else if (mc.player.onGround) {
-                        if (Class5628.method17686() && !mc.player.method3331() && !this.field23929) {
+                        if (ColorUtils.method17686() && !mc.player.method3331() && !this.field23929) {
                             var1.method13995(1.01);
                         }
                     } else if (this.field23926 == 1) {
@@ -323,7 +323,7 @@ public class BlockFlyNCPMode extends Module {
                         var1.method13995(-1.023456987345906);
                     }
 
-                    if (!Class5628.method17686()) {
+                    if (!ColorUtils.method17686()) {
                         var6 = 0.0;
                     }
 
@@ -331,7 +331,7 @@ public class BlockFlyNCPMode extends Module {
                         Class9567.method37092(var1, var6, var8, var8, 360.0F);
                     }
 
-                    Class5628.method17725(var1.method13994());
+                    ColorUtils.method17725(var1.method13994());
                     break;
                 case "Slow":
                     if (mc.player.onGround) {
@@ -370,7 +370,7 @@ public class BlockFlyNCPMode extends Module {
     public void method16811(Class4436 var1) {
         if (this.isEnabled() && this.field23930) {
             if (this.method16004().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!Class5628.method17686() || this.method16004().getBooleanValueFromSetttingName("Tower while moving"))) {
+                    && (!ColorUtils.method17686() || this.method16004().getBooleanValueFromSetttingName("Tower while moving"))) {
                 var1.method13900(true);
             }
         }

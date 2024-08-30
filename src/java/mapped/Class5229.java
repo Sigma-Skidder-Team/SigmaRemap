@@ -97,7 +97,7 @@ public class Class5229 extends Module {
 
     private void method16294(int var1) {
         if (var1 == 0) {
-            Class5628.method17678("§cCouldn't VClip");
+            ColorUtils.method17678("§cCouldn't VClip");
         } else {
             mc.getConnection()
                     .sendPacket(

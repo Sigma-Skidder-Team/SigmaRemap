@@ -95,7 +95,7 @@ public class SpiderStep extends Module {
                 var1.method13997((double) MathHelper.cos(var6) * var10);
                 this.field23758++;
             } else if (this.field23758 == 3) {
-                if (Class5628.method17730(mc.player, 0.001F)) {
+                if (ColorUtils.method17730(mc.player, 0.001F)) {
                     var1.method13995(-0.078);
                     String var7 = this.getStringSettingValueByName("Mode");
                     switch (var7) {
@@ -112,7 +112,7 @@ public class SpiderStep extends Module {
                     Class9567.method37088(var1, 0.25);
                 }
 
-                if (!Class5628.method17686()) {
+                if (!ColorUtils.method17686()) {
                     Class9567.method37088(var1, 0.0);
                 }
 

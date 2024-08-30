@@ -16,14 +16,14 @@ public class Class4300 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13306(ResourceRegistry.field38868);
       RenderUtil.method11426(
          (float)this.field20895,
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
          (float)(this.field20896 + this.field20898),
-         Class5628.method17688(this.field20839, !this.method13295() ? 0.25F : (!this.method13298() ? 0.4F : (!this.method13212() ? 0.5F : 0.6F)))
+         ColorUtils.applyAlpha(this.field20839, !this.isHovered() ? 0.25F : (!this.method13298() ? 0.4F : (!this.method13212() ? 0.5F : 0.6F)))
       );
       RenderUtil.method11429(
          (float)this.field20895,
@@ -31,17 +31,17 @@ public class Class4300 extends Class4278 {
          (float)(this.field20895 + this.field20897),
          (float)(this.field20896 + this.field20898),
          2,
-         Class5628.method17688(this.field20839, 0.2F)
+         ColorUtils.applyAlpha(this.field20839, 0.2F)
       );
       RenderUtil.method11440(
          ResourceRegistry.field38868,
          (float)(this.method13263() + this.method13267() / 2),
          (float)(this.method13265() + this.method13269() / 2),
          this.field20912,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, !this.method13295() ? 0.5F : 1.0F),
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, !this.isHovered() ? 0.5F : 1.0F),
          Class2218.field14492,
          Class2218.field14492
       );
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

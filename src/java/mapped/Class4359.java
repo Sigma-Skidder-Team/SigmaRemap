@@ -26,7 +26,7 @@ public class Class4359 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       int var4 = (int)this.field21314.method24321();
       double var5 = this.field21314.method24322();
       int var7 = this.field21314.method24327();
@@ -44,7 +44,7 @@ public class Class4359 extends Class4247 {
             (float)this.method13265(),
             (float)this.method13267(),
             (float)this.method13269(),
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
       } else {
          RenderUtil.method11424(
@@ -52,21 +52,21 @@ public class Class4359 extends Class4247 {
             (float)this.method13265(),
             (float)this.method13267(),
             (float)this.method13269(),
-            Class5628.method17688(ClientColors.MID_GREY.getColor, 0.075F)
+            ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.075F)
          );
          RenderUtil.method11424(
             (float)this.method13263() + (float)this.method13267() * var9,
             (float)this.method13265(),
             (float)this.method13267() * (1.0F - var9),
             (float)this.method13269(),
-            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
+            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          RenderUtil.method11424(
             (float)this.method13263(),
             (float)this.method13265(),
             (float)this.method13267() * var8,
             (float)this.method13269(),
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
          if (var8 != 0.0F) {
             RenderUtil.method11455((float)this.method13263() + (float)this.method13267() * var8, (float)this.method13265(), 5.0F, 5.0F, ResourcesDecrypter.shadowRightPNG);

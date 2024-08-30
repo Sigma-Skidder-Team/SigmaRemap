@@ -40,7 +40,7 @@ public class VanillaFly extends Module {
 
     @Override
     public void onDisable() {
-        Class5628.method17725(-0.08);
+        ColorUtils.method17725(-0.08);
         double var3 = Class9567.method37075();
         Class9567.method37090(var3);
         if (this.field23995) {
@@ -72,7 +72,7 @@ public class VanillaFly extends Module {
     public void method16918(Class4399 var1) {
         if (this.isEnabled()) {
             if (!mc.player.onGround && this.getBooleanValueFromSetttingName("Kick bypass")) {
-                if (this.field23996 > 0 && this.field23996 % 30 == 0 && !Class5628.method17730(mc.player, 0.01F)) {
+                if (this.field23996 > 0 && this.field23996 % 30 == 0 && !ColorUtils.method17730(mc.player, 0.01F)) {
                     if (Class8005.method27349() != Class5989.field26129.method18582()) {
                         var1.method13912(var1.method13911() - 0.04);
                     } else {
@@ -116,7 +116,7 @@ public class VanillaFly extends Module {
     @EventTarget
     public void method16919(Class4435 var1) {
         if (this.isEnabled()) {
-            if (!Class5628.method17730(mc.player, 0.01F)) {
+            if (!ColorUtils.method17730(mc.player, 0.01F)) {
                 this.field23996++;
             } else {
                 this.field23996 = 0;
@@ -136,7 +136,7 @@ public class VanillaFly extends Module {
 
             Class9567.method37088(var1, var4);
             var1.method13995(var6);
-            Class5628.method17725(var1.method13994());
+            ColorUtils.method17725(var1.method13994());
         }
     }
 

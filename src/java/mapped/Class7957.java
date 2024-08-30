@@ -29,16 +29,16 @@ public class Class7957 {
          }
 
          if (var1.has("type")) {
-            String var4 = var1.method21773("type");
+            String var4 = var1.getString("type");
             switch (var4) {
                case "mod":
                   for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
-                     if (var1.method21773("target").equals(var7.getName())) {
+                     if (var1.getString("target").equals(var7.getName())) {
                         this.field34205 = var7;
                      }
                   }
                case "screen":
-                  Class var8 = Client.getInstance().getGuiManager().method33477(var1.method21773("target"));
+                  Class var8 = Client.getInstance().getGuiManager().method33477(var1.getString("target"));
                   if (var8 != null) {
                      this.field34205 = var8;
                   }

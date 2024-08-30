@@ -24,7 +24,7 @@ public class Class4310 extends Class4307 {
    private int field20967 = 0;
    private boolean field20968 = true;
    public Class4327 field20969;
-   public Class4336 field20970;
+   public ChangelogScreen field20970;
    public Class4329 field20971;
    public Animation field20972 = new Animation(200, 200, Direction.BACKWARDS);
    public Animation field20973 = new Animation(200, 200, Direction.BACKWARDS);
@@ -93,7 +93,7 @@ public class Class4310 extends Class4307 {
       }
 
       this.method13230(this.field20969 = new Class4327(this, "main", 0, 0, this.field20897, this.field20898));
-      this.method13230(this.field20970 = new Class4336(this, "changelog", 0, 0, this.field20897, this.field20898));
+      this.method13230(this.field20970 = new ChangelogScreen(this, "changelog", 0, 0, this.field20897, this.field20898));
       this.method13230(this.field20971 = new Class4329(this, "redeem", 0, 0, this.field20897, this.field20898));
       this.field20970.method13296(false);
       this.field20970.method13294(true);
@@ -136,9 +136,9 @@ public class Class4310 extends Class4307 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       float var4 = Class8056.method27664(this.field20972.calcPercent(), 0.0F, 1.0F, 1.0F);
-      if (this.field20972.method25319() == Direction.BACKWARDS) {
+      if (this.field20972.getDirection() == Direction.BACKWARDS) {
          var4 = Class8056.method27663(this.field20972.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
@@ -198,7 +198,7 @@ public class Class4310 extends Class4307 {
 
          for (Class4305 var21 : this.field20977) {
             GL11.glPushMatrix();
-            var21.method13027(var1);
+            var21.draw(var1);
             GL11.glPopMatrix();
          }
 
@@ -222,22 +222,22 @@ public class Class4310 extends Class4307 {
             (float)(this.method13267() * 2),
             (float)(this.method13269() + 200),
             field20976,
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4),
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4),
             false
          );
          RenderUtil.method11424(
-            0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var4 * 0.3F)
+            0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.3F)
          );
 
          for (Class4305 var24 : this.method13241()) {
             if (var24.method13287()) {
                GL11.glPushMatrix();
-               if (var24 instanceof Class4336) {
+               if (var24 instanceof ChangelogScreen) {
                   if (var4 > 0.0F) {
-                     var24.method13027(var1);
+                     var24.draw(var1);
                   }
                } else {
-                  var24.method13027(var1 * (1.0F - var4));
+                  var24.draw(var1 * (1.0F - var4));
                }
 
                GL11.glPopMatrix();
@@ -261,13 +261,13 @@ public class Class4310 extends Class4307 {
             }
          }
 
-         if (this.field20973.method25319() == Direction.FORWARDS) {
+         if (this.field20973.getDirection() == Direction.FORWARDS) {
             RenderUtil.method11440(
                ResourceRegistry.JelloMediumFont50,
                (float)(this.field20897 / 2),
                (float)(this.field20898 / 2 - 30),
                field20980,
-               Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent()),
+               ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent()),
                Class2218.field14492,
                Class2218.field14492
             );
@@ -276,7 +276,7 @@ public class Class4310 extends Class4307 {
                (float)(this.field20897 / 2),
                (float)(this.field20898 / 2 + 30),
                "\"" + field20981 + "\"",
-               Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent() * 0.5F),
+               ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent() * 0.5F),
                Class2218.field14492,
                Class2218.field14492
             );

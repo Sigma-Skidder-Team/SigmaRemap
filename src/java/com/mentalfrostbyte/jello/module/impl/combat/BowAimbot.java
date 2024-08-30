@@ -94,7 +94,7 @@ public class BowAimbot extends Module {
     }
 
     public List<Entity> method16571(float var1) {
-        List var4 = Class5628.method17708();
+        List var4 = ColorUtils.method17708();
         Iterator var5 = var4.iterator();
 
         while (var5.hasNext()) {

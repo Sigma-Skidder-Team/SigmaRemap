@@ -42,7 +42,7 @@ public class ElytraFly extends Module {
     public void method16221(Class4435 var1) {
         if (this.isEnabled()) {
             double var4 = Class9567.method37075();
-            boolean var6 = Class5628.method17686();
+            boolean var6 = ColorUtils.method17686();
             if (!this.getBooleanValueFromSetttingName("NCP") && mc.player.method3331()) {
                 var4 *= 2.5;
             }
@@ -56,7 +56,7 @@ public class ElytraFly extends Module {
                         Class9567.method37088(var1, var4 * 6.3F);
                     }
 
-                    Class5628.method17725(-0.071);
+                    ColorUtils.method17725(-0.071);
                     var1.method13995(-1.0001E-4F);
                 }
 
@@ -152,15 +152,15 @@ public class ElytraFly extends Module {
     @Override
     public void onEnable() {
         if (mc.player.onGround) {
-            Class5628.method17725(0.3994F);
+            ColorUtils.method17725(0.3994F);
         }
     }
 
     @Override
     public void onDisable() {
         if (!Class9567.method37087()) {
-            Class5628.method17724(0.0);
-            Class5628.method17726(0.0);
+            ColorUtils.method17724(0.0);
+            ColorUtils.method17726(0.0);
         }
     }
 }

@@ -68,7 +68,7 @@ public class Breadcrumbs extends Module {
             GL11.glDisable(3553);
             GL11.glDisable(2929);
             GL11.glDepthMask(false);
-            GL11.glColor4fv(Class5628.method17709(Class5628.method17688(this.parseSettingValueToIntBySettingName("Color"), 0.5F)));
+            GL11.glColor4fv(ColorUtils.method17709(ColorUtils.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), 0.5F)));
             GL11.glBegin(3);
 
             for (Vector3d var6 : this.field23896) {
@@ -76,7 +76,7 @@ public class Breadcrumbs extends Module {
                 double var8 = var6.method11341(var4);
                 double var10 = !this.getBooleanValueFromSetttingName("Fade Out") ? 0.6F : 1.0 - Math.min(1.0, var8 / 14.0);
                 if (!(var8 > 24.0)) {
-                    GL11.glColor4fv(Class5628.method17709(Class5628.method17688(this.parseSettingValueToIntBySettingName("Color"), (float) var10)));
+                    GL11.glColor4fv(ColorUtils.method17709(ColorUtils.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), (float) var10)));
                     GL11.glVertex3d(var7.field18048, var7.field18049, var7.field18050);
                 }
             }

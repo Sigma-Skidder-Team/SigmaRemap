@@ -73,7 +73,7 @@ public class Class8795 {
                this.field39612.player.method3433().field18048 * this.field39612.player.method3433().field18048
                   + this.field39612.player.method3433().field18050 * this.field39612.player.method3433().field18050
             );
-            boolean var6 = Class5628.method17730(this.field39612.player, 0.02F);
+            boolean var6 = ColorUtils.method17730(this.field39612.player, 0.02F);
             int var7 = this.field39613.size() - 1;
             Class9510 var8 = this.field39613.get(var7);
             Class2317 var9 = var8.field44279;
@@ -121,8 +121,8 @@ public class Class8795 {
                this.field39618 = this.field39613.get(var7);
                this.field39613.remove(var7);
                if (this.field39613.size() == 0) {
-                  Class5628.method17724(this.field39612.player.method3433().field18048 * 0.5);
-                  Class5628.method17726(this.field39612.player.method3433().field18050 * 0.5);
+                  ColorUtils.method17724(this.field39612.player.method3433().field18048 * 0.5);
+                  ColorUtils.method17726(this.field39612.player.method3433().field18050 * 0.5);
                   this.method31738();
                   return;
                }
@@ -132,19 +132,19 @@ public class Class8795 {
                var9 = var8.field44279;
                float var18 = Class9142.method34145(this.field39612.player.getPositionVec(), var8.field44271.method33972())[0];
                float var19 = Class9142.method34145(new Vector3d(0.0, 0.0, 0.0), this.field39612.player.method3433().method11333())[0];
-               float var20 = Math.abs(Class5628.method17756(var19, var18));
+               float var20 = Math.abs(ColorUtils.method17756(var19, var18));
                if (!this.field39612.player.onGround && var20 > 60.0F
                   || !this.field39612.player.onGround && var20 > 45.0F && this.field39612.player.method3433().method11348() > 0.24
                   || var20 > 110.0F) {
-                  Class5628.method17724(this.field39612.player.method3433().field18048 * 0.25);
-                  Class5628.method17726(this.field39612.player.method3433().field18050 * 0.25);
+                  ColorUtils.method17724(this.field39612.player.method3433().field18048 * 0.25);
+                  ColorUtils.method17726(this.field39612.player.method3433().field18050 * 0.25);
                }
             }
 
             if (var10 < var12
                && (var14 || var8.field44281.size() > 0 && (double)this.field39612.player.position.field13028 > var8.field44271.method33970())) {
-               Class5628.method17724(this.field39612.player.method3433().field18048 * 0.5);
-               Class5628.method17726(this.field39612.player.method3433().field18050 * 0.5);
+               ColorUtils.method17724(this.field39612.player.method3433().field18048 * 0.5);
+               ColorUtils.method17726(this.field39612.player.method3433().field18050 * 0.5);
             }
 
             float var43 = Class9142.method34145(this.field39612.player.getPositionVec(), var8.field44271.method33972())[0];
@@ -160,8 +160,8 @@ public class Class8795 {
                this.field39612.player.field4982 = (float)(var23 * var26);
             } else {
                if (this.field39612.player.method3337()) {
-                  Class5628.method17724(this.field39612.player.method3433().field18048 * 0.9);
-                  Class5628.method17726(this.field39612.player.method3433().field18050 * 0.9);
+                  ColorUtils.method17724(this.field39612.player.method3433().field18048 * 0.9);
+                  ColorUtils.method17726(this.field39612.player.method3433().field18050 * 0.9);
                }
 
                this.field39612.player.field4984 = 0.0F;
@@ -192,7 +192,7 @@ public class Class8795 {
 
                   if (var25 && var33 && var10 > 0.75 && var38) {
                      if (this.field39612.world.getBlockState(var8.field44271.method33979().down()).getBlock() instanceof Class3421 && var10 < 1.1) {
-                        Class5628.method17678("YA" + var10);
+                        ColorUtils.method17678("YA" + var10);
                      } else {
                         this.field39612.player.method2914();
                      }
@@ -217,10 +217,10 @@ public class Class8795 {
 
             this.field39612.player.rotationYaw = var37;
             if (var36 && !this.field39612.player.onGround && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-               Class5628.method17724(0.0);
-               Class5628.method17726(0.0);
+               ColorUtils.method17724(0.0);
+               ColorUtils.method17726(0.0);
             } else {
-               if (Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled() && !Class5628.method17730(this.field39612.player, 5.0F)) {
+               if (Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled() && !ColorUtils.method17730(this.field39612.player, 5.0F)) {
                   var36 = true;
                }
 
@@ -367,8 +367,8 @@ public class Class8795 {
          BlockPos var17 = Class9217.method34564(this.field39612.player.rotationYaw, this.field39612.player.rotationPitch, 100.0F);
          if (var17 != null) {
             if (this.field39613 != null && this.field39613.size() > 0) {
-               int var18 = Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.02F);
-               int var6 = Class5628.method17688(ClientColors.DARK_SLATE_GREY.getColor, 0.02F);
+               int var18 = ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.02F);
+               int var6 = ColorUtils.applyAlpha(ClientColors.DARK_SLATE_GREY.getColor, 0.02F);
                GL11.glPushMatrix();
                GL11.glDisable(2929);
 
@@ -427,10 +427,10 @@ public class Class8795 {
          0.0F,
          (float)(var10.method23942(var7) / 2 + 10),
          (float)(var10.method23952() + 2),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F)
       );
       GL11.glTranslated((double)(-var10.method23942(var7) / 2), 0.0, 0.0);
-      RenderUtil.method11439(var10, 0.0F, 0.0F, var7, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
+      RenderUtil.drawString(var10, 0.0F, 0.0F, var7, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
       GL11.glPopMatrix();
       GL11.glPopMatrix();
       GL11.glEnable(3553);

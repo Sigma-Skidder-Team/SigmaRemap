@@ -73,10 +73,10 @@ public class Class4292 extends Class4278 implements Class4293 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       var1 *= this.field20794;
       byte var4 = 5;
-      int var5 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.2F * var1);
+      int var5 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F * var1);
       int var6 = this.field20895;
       int var7 = this.field20897;
       if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
@@ -88,7 +88,7 @@ public class Class4292 extends Class4278 implements Class4293 {
             (float)(this.field20896 + var4),
             (float)(var6 + var7),
             (float)(this.field20896 + this.field20898 - var4),
-            Class5628.method17688(ClientColors.MID_GREY.getColor, 0.1F * var1)
+            ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.1F * var1)
          );
       } else {
          RenderUtil.method11454((float)var6, (float)this.field20896, (float)var7, 5.0F, ResourcesDecrypter.verticalScrollBarTopPNG, 0.45F * var1);
@@ -96,7 +96,7 @@ public class Class4292 extends Class4278 implements Class4293 {
          RenderUtil.method11426((float)var6, (float)(this.field20896 + var4), (float)(var6 + var7), (float)(this.field20896 + this.field20898 - var4), var5);
       }
 
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    @Override

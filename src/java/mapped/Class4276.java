@@ -85,14 +85,14 @@ public class Class4276 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       var1 = Animation.method25321(this.field20724, this.field20726, 250.0F, 120.0F);
       float var4 = Class9747.method38214(var1, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       this.method13284((int)((float)this.field20897 * 0.2F * (1.0F - var4)) * (!this.field20725 ? 1 : -1));
       super.method13224();
       byte var5 = 10;
-      int var6 = Class5628.method17688(-723724, Class9782.method38557(var1, 0.0F, 1.0F, 1.0F));
+      int var6 = ColorUtils.applyAlpha(-723724, Class9782.method38557(var1, 0.0F, 1.0F, 1.0F));
       RenderUtil.method11463(
          (float)(this.field20895 + var5 / 2),
          (float)(this.field20896 + var5 / 2),
@@ -106,7 +106,7 @@ public class Class4276 extends Class4247 {
          (float)(this.field20896 + var5 / 2),
          (float)(this.field20895 - var5 / 2 + this.field20897),
          (float)(this.field20896 - var5 / 2 + this.field20898),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
       );
       RenderUtil.method11475((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, (float)var5, var6);
       GL11.glPushMatrix();
@@ -127,9 +127,9 @@ public class Class4276 extends Class4247 {
          (float)(this.field20896 + 68),
          (float)(this.field20895 + this.field20897 - 25),
          (float)(this.field20896 + 69),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    public final void method13131(Class9073 var1) {

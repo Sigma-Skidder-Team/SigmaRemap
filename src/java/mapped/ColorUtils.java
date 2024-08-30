@@ -53,7 +53,7 @@ import org.apache.http.util.EntityUtils;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
-public class Class5628 {
+public class ColorUtils {
    private static final Minecraft field24949 = Minecraft.getInstance();
    public static final float field24950 = 0.3F;
    public static final float[] field24951 = new float[4];
@@ -163,7 +163,7 @@ public class Class5628 {
       };
    }
 
-   public static int method17688(int var0, float var1) {
+   public static int applyAlpha(int var0, float var1) {
       return (int)(var1 * 255.0F) << 24 | var0 & 16777215;
    }
 
@@ -269,7 +269,7 @@ public class Class5628 {
 
       var4.close();
       JSONObject var7 = new JSONObject(var5);
-      return var7.method21773("id");
+      return var7.getString("id");
    }
 
    public static String method17698(String var0) throws Exception {
@@ -290,7 +290,7 @@ public class Class5628 {
       for (Object var13 : var10.getJSONArray("properties")) {
          JSONObject var14 = (JSONObject)var13;
          if (var14.has("value") && var14.has("name")) {
-            var9 = var14.method21773("value");
+            var9 = var14.getString("value");
          }
       }
 
@@ -300,7 +300,7 @@ public class Class5628 {
          if (var16.has("textures")) {
             JSONObject var17 = var16.method21769("textures");
             if (var17.has("SKIN")) {
-               var3 = var17.method21769("SKIN").method21773("url");
+               var3 = var17.method21769("SKIN").getString("url");
             }
          }
 
@@ -327,7 +327,7 @@ public class Class5628 {
       for (Object var12 : var9.getJSONArray("properties")) {
          JSONObject var13 = (JSONObject)var12;
          if (var13.has("value") && var13.has("name")) {
-            var8 = var13.method21773("value");
+            var8 = var13.getString("value");
          }
       }
 
@@ -338,7 +338,7 @@ public class Class5628 {
             JSONObject var16 = var15.method21769("textures");
             System.out.println("tex");
             if (var16.has("SKIN")) {
-               var3 = var16.method21769("SKIN").method21773("url");
+               var3 = var16.method21769("SKIN").getString("url");
             }
          }
 
@@ -372,7 +372,7 @@ public class Class5628 {
 
          for (int var10 = 0; var10 < var9.length(); var10++) {
             JSONObject var11 = new JSONObject(var9.get(var10).toString());
-            var3.add(var11.method21773("name"));
+            var3.add(var11.getString("name"));
          }
 
          return var3;

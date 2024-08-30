@@ -38,23 +38,23 @@ public class Class6890 {
       Iterator var3 = var0.method21777();
       StringBuilder var4 = new StringBuilder();
       if (var0.has("Status-Code") && var0.has("Reason-Phrase")) {
-         var4.append(var0.method21773("HTTP-Version"));
+         var4.append(var0.getString("HTTP-Version"));
          var4.append(' ');
-         var4.append(var0.method21773("Status-Code"));
+         var4.append(var0.getString("Status-Code"));
          var4.append(' ');
-         var4.append(var0.method21773("Reason-Phrase"));
+         var4.append(var0.getString("Reason-Phrase"));
       } else {
          if (!var0.has("Method") || !var0.has("Request-URI")) {
             throw new JSONException2("Not enough material for an HTTP header.");
          }
 
-         var4.append(var0.method21773("Method"));
+         var4.append(var0.getString("Method"));
          var4.append(' ');
          var4.append('"');
-         var4.append(var0.method21773("Request-URI"));
+         var4.append(var0.getString("Request-URI"));
          var4.append('"');
          var4.append(' ');
-         var4.append(var0.method21773("HTTP-Version"));
+         var4.append(var0.getString("HTTP-Version"));
       }
 
       var4.append("\r\n");
@@ -69,7 +69,7 @@ public class Class6890 {
             && !var0.method21776(var5)) {
             var4.append(var5);
             var4.append(": ");
-            var4.append(var0.method21773(var5));
+            var4.append(var0.getString(var5));
             var4.append("\r\n");
          }
       }

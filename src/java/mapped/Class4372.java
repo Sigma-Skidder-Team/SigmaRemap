@@ -13,7 +13,7 @@ public class Class4372 extends Class4247 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       byte var4 = 5;
       if (this.method13700() || this.method13298()) {
          RenderUtil.method11464(
@@ -27,7 +27,7 @@ public class Class4372 extends Class4247 {
       }
 
       RenderUtil.method11479(this.field21366, this.field20895 + var4, this.field20896 + var4, this.field20897 - var4 * 2, this.field20898 - var4 * 2);
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    public boolean method13700() {

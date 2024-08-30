@@ -24,7 +24,7 @@ public class Class5766 implements Emitter.Listener {
       System.out.println(var4);
       if (Class8402.method29522(this.field25222).session != null && Class8402.method29522(this.field25222).session.getProfile() != null) {
          try {
-            Class8402.method29523(this.field25222, Class8402.method29522(this.field25222).session.getProfile(), var4.method21773("serverHash"));
+            Class8402.method29523(this.field25222, Class8402.method29522(this.field25222).session.getProfile(), var4.getString("serverHash"));
             System.out.println("s");
             JSONObject var5 = new JSONObject();
             var5.put("username", Class8402.method29522(this.field25222).session.getUsername());

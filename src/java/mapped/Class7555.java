@@ -50,7 +50,7 @@ public class Class7555 extends Class7554 {
          (float)this.method24721(),
          (float)this.method24719(),
          (float)this.method24725(),
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F)
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F)
       );
       this.field32403 = this.field32403 + this.method24733();
       int var4 = this.method24720() + 4;
@@ -69,12 +69,12 @@ public class Class7555 extends Class7554 {
             var13 = ClientColors.MID_GREY.getColor;
          }
 
-         RenderUtil.method11439(
+         RenderUtil.drawString(
             this.field32394,
             (float)(7 + this.method24720()),
             (float)(this.method24721() + var10),
             var12,
-            Class5628.method17688(var13, Math.min(1.0F, var1 * 1.7F))
+            ColorUtils.applyAlpha(var13, Math.min(1.0F, var1 * 1.7F))
          );
          var10 += 25;
       }

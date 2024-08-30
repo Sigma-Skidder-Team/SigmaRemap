@@ -23,7 +23,7 @@ public class Class9481 {
          var6[var7] = var4.getString(var7);
       }
 
-      this.field44071 = var1.method21773("sid");
+      this.field44071 = var1.getString("sid");
       this.field44072 = var6;
       this.field44073 = var1.method21770("pingInterval");
       this.field44074 = var1.method21770("pingTimeout");

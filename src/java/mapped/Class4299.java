@@ -61,7 +61,7 @@ public class Class4299 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13184();
       RenderUtil.method11415(this);
 
@@ -118,6 +118,6 @@ public class Class4299 extends Class4278 {
       );
       RenderUtil.method11422();
       this.field20837 = System.currentTimeMillis();
-      super.method13027(var1);
+      super.draw(var1);
    }
 }

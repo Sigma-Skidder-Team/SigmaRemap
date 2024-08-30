@@ -126,7 +126,7 @@ public class Test extends Module {
     public void method16547(Class4435 var1) {
         if (this.isEnabled()) {
             double var4 = Math.sqrt(var1.method13992() * var1.method13992() + var1.method13996() * var1.method13996());
-            Class5628.method17725(var1.method13994());
+            ColorUtils.method17725(var1.method13994());
         }
     }
 
@@ -329,7 +329,7 @@ public class Test extends Module {
     }
 
     public List<Entity> method16560(float var1) {
-        List var4 = Class5628.method17708();
+        List var4 = ColorUtils.method17708();
         Iterator var5 = var4.iterator();
 
         while (var5.hasNext()) {
@@ -380,7 +380,7 @@ public class Test extends Module {
     }
 
     public Entity method16561(float var1) {
-        List var4 = Class5628.method17708();
+        List var4 = ColorUtils.method17708();
         Entity var5 = null;
         Iterator var6 = var4.iterator();
 

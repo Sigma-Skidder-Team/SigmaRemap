@@ -59,7 +59,7 @@ public class Class4290 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       int var4 = 20;
       if (!((double)var1 < 0.6)) {
          RenderUtil.method11465(
@@ -67,9 +67,9 @@ public class Class4290 extends Class4278 {
             this.field20896 + var4,
             this.field20897 - var4 * 2,
             this.field20898 - var4 * 2,
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * var1)
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * var1)
          );
-         super.method13027(var1);
+         super.draw(var1);
       }
    }
 }

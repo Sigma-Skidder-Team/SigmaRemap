@@ -50,8 +50,8 @@ public class Class4323 extends Class4307 {
                         this, "Copyright", 10, 8, var9.method23942(var11), 140, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor), var11, ResourceRegistry.JelloLightFont18
                 )
         );
-        Class6387 var15 = new Class6387(Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
-        var15.method19410(Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
+        Class6387 var15 = new Class6387(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
+        var15.method19410(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
         ArrayList var16 = new ArrayList();
         var16.add("LeakedPvP");
         var16.add("Omikron");
@@ -123,9 +123,9 @@ public class Class4323 extends Class4307 {
     }
 
     @Override
-    public void method13027(float var1) {
+    public void draw(float var1) {
         int var4 = Math.round((1.0F - Class9782.method38557(this.field21100.calcPercent(), 0.0F, 1.0F, 1.0F)) * 5.0F);
-        this.method13285(var4);
+        this.drawBackground(var4);
         this.method13225();
         GL11.glPushMatrix();
         GL11.glTranslated(
@@ -141,6 +141,6 @@ public class Class4323 extends Class4307 {
                 );
         this.field21102
                 .method13286((int) ((float) (-this.method13267() / 12) + this.field21104 / 12.0F), (int) ((float) (-this.method13269() / 12) + this.field21105 / 12.0F));
-        super.method13027(var1);
+        super.draw(var1);
     }
 }

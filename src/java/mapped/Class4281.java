@@ -326,7 +326,7 @@ public class Class4281 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13225();
       float var4 = 1000.0F;
       boolean var5 = !this.field20905 ? false : (float)this.field20756.method27121() > var4 / 2.0F;
@@ -349,7 +349,7 @@ public class Class4281 extends Class4278 {
             (float)(this.field20896 + this.field20898 / 2 - this.field20913.method23941(var6) / 2 + 2),
             var9 + (float)(var6.isEmpty() ? 1 : 0),
             (float)(this.field20896 + this.field20898 / 2 + this.field20913.method23941(var6) / 2 - 1),
-            Class5628.method17688(this.field20914.method19409(), !var5 ? 0.1F * var1 : 0.8F)
+            ColorUtils.applyAlpha(this.field20914.method19409(), !var5 ? 0.1F * var1 : 0.8F)
          );
          float var10 = (float)(var7 + this.field20913.method23942(var6.substring(0, this.field20749))) + this.field20747;
          if (var10 < (float)var7) {
@@ -372,7 +372,7 @@ public class Class4281 extends Class4278 {
          (float)(this.field20896 + this.field20898 / 2 - this.field20913.method23941(var6) / 2),
          var11,
          (float)(this.field20896 + this.field20898 / 2 + this.field20913.method23941(var6) / 2),
-         Class5628.method17688(-5516546, var1)
+         ColorUtils.applyAlpha(-5516546, var1)
       );
       Class2218 var12 = this.field20914.method19411();
       Class2218 var13 = this.field20914.method19413();
@@ -381,7 +381,7 @@ public class Class4281 extends Class4278 {
          (float)var7 + this.field20746,
          (float)(this.field20896 + this.field20898 / 2),
          var6.length() == 0 && (!this.field20905 || var6.length() <= 0) ? this.field20743 : var6,
-         Class5628.method17688(this.field20914.method19409(), (this.field20744 / 2.0F + 0.4F) * var1 * (this.field20905 && var6.length() > 0 ? 1.0F : 0.5F)),
+         ColorUtils.applyAlpha(this.field20914.method19409(), (this.field20744 / 2.0F + 0.4F) * var1 * (this.field20905 && var6.length() > 0 ? 1.0F : 0.5F)),
          var12,
          var13
       );
@@ -392,11 +392,11 @@ public class Class4281 extends Class4278 {
             (float)(this.field20896 + this.field20898 - 2),
             (float)(this.field20895 + this.field20897),
             (float)(this.field20896 + this.field20898),
-            Class5628.method17688(this.field20914.method19405(), (this.field20744 / 2.0F + 0.5F) * var1)
+            ColorUtils.applyAlpha(this.field20914.method19405(), (this.field20744 / 2.0F + 0.5F) * var1)
          );
       }
 
-      super.method13027(var1);
+      super.draw(var1);
    }
 
    public final void method13151(Class7902 var1) {

@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
-import mapped.Class5628;
+import mapped.ColorUtils;
 import mapped.Class7249;
 import mapped.PlayerEntity;
 import net.minecraft.entity.Entity;
@@ -40,7 +40,7 @@ public class CombatManager {
     @HigestPriority
     private void method29349(TickEvent var1) {
         if (this.antiBot != null) {
-            for (PlayerEntity var5 : Class5628.method17680()) {
+            for (PlayerEntity var5 : ColorUtils.method17680()) {
                 if (!this.antiBot.method22751(var5)) {
                     if (this.antiBot.method22758(var5)) {
                         this.bots.remove(var5);

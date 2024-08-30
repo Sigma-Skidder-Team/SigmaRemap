@@ -32,8 +32,8 @@ public class Class4246 extends Class4240 {
    }
 
    @Override
-   public void method13027(float var1) {
-      if (!this.method13295()) {
+   public void draw(float var1) {
+      if (!this.isHovered()) {
          float var10000 = 0.3F;
       } else if (!this.method13216()) {
          if (!this.method13212()) {
@@ -59,7 +59,7 @@ public class Class4246 extends Class4240 {
          (float)(this.method13263() + this.method13267() / 2),
          (float)(this.method13265() + this.method13267() / 2),
          var6,
-         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       if (this.method13303() == null) {
       }

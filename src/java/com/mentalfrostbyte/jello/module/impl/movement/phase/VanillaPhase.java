@@ -18,7 +18,7 @@ public class VanillaPhase extends Module {
     private void method16711(Class4399 var1) {
         if (this.isEnabled()) {
             if (mc.player.collidedHorizontally) {
-                Class9629 var4 = Class5628.method17760(1.0E-4);
+                Class9629 var4 = ColorUtils.method17760(1.0E-4);
                 double var5 = Class8005.method27349() != Class5989.field26129.method18582() ? 1.0E-6 : 0.0625;
                 if (((Direction) var4.method37538()).method544() != Class113.field413) {
                     var1.method13914(
@@ -38,7 +38,7 @@ public class VanillaPhase extends Module {
     @EventTarget
     private void method16712(Class4435 var1) {
         if (this.isEnabled()) {
-            if (mc.player.collidedHorizontally || Class5628.method17761()) {
+            if (mc.player.collidedHorizontally || ColorUtils.method17761()) {
                 Class9567.method37088(var1, 0.0);
                 Class9567.method37095(1.7);
             }

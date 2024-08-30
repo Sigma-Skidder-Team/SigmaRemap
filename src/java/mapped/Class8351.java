@@ -29,7 +29,7 @@ public class Class8351 {
 
    public Class8351(JSONObject var1) {
       if (var1.has("name")) {
-         this.field35889 = var1.method21773("name");
+         this.field35889 = var1.getString("name");
       }
 
       if (var1.has("color")) {

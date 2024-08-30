@@ -34,10 +34,10 @@ public class MovementAntiBot extends Class7249 {
          this.field31116.clear();
       }
 
-      for (PlayerEntity var5 : Class5628.method17680()) {
+      for (PlayerEntity var5 : ColorUtils.method17680()) {
          if (var5 != field31119.player) {
             if (var5 == null
-               || !Class5628.method17730(var5, 0.01F)
+               || !ColorUtils.method17730(var5, 0.01F)
                || var5.method3342()
                || !(var5.method3275(field31119.player) > 5.0F)
                   && (var5.getPosX() != var5.lastTickPosX || var5.getPosZ() != var5.lastTickPosZ || var5.getPosY() != var5.lastTickPosY)) {
@@ -65,7 +65,7 @@ public class MovementAntiBot extends Class7249 {
             }
 
             Entity var5 = var4.method17233(field31119.world);
-            boolean var6 = Class5628.method17730(var5, 0.5F);
+            boolean var6 = ColorUtils.method17730(var5, 0.5F);
             short var7 = var4.field24324;
             if (!this.field31117.containsKey(var5)) {
                this.field31117.put(var5, new ArrayList<Integer>());

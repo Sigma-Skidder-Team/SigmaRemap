@@ -29,7 +29,7 @@ public class AACAntiKB extends Module {
             if (this.method16790()) {
                 if (field23907 == 0 && !mc.player.onGround && mc.player.field4952 > 0 && mc.player.fallDistance < 2.0F) {
                     mc.player.method3280(0.0, -1.0, 0.0);
-                    Class5628.method17725(mc.player.method3433().method11321());
+                    ColorUtils.method17725(mc.player.method3433().method11321());
                     mc.player.onGround = true;
                     field23907 = 20;
                 }
@@ -47,7 +47,7 @@ public class AACAntiKB extends Module {
                         double var15 = ((double) var4 * var9 - (double) var5 * var7) * var11;
                         float var17 = (float) (Math.atan2(var13, var15) * 180.0 / Math.PI) - 90.0F;
                         float var18 = Class9142.method34143(this.field23908, var17);
-                        if (var18 > 100.0F && Class5628.method17686()) {
+                        if (var18 > 100.0F && ColorUtils.method17686()) {
                             var1.method13993(var1.method13992() + var13);
                             var1.method13997(var1.method13996() + var15);
                         } else {
@@ -55,8 +55,8 @@ public class AACAntiKB extends Module {
                             var1.method13997(var1.method13996() * 0.8);
                         }
 
-                        Class5628.method17724(var1.method13992());
-                        Class5628.method17726(var1.method13996());
+                        ColorUtils.method17724(var1.method13992());
+                        ColorUtils.method17726(var1.method13996());
                     }
                 }
             }

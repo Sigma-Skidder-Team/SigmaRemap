@@ -17,7 +17,7 @@ public class Class4349 extends Class4278 {
    private float field21255 = 0.0F;
    private int field21256 = 0;
    private int field21257 = 0;
-   private int field21258 = Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 20.0F);
+   private int field21258 = ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 20.0F);
 
    public Class4349(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
       super(var1, var2, var3, var4, var5, var6, false);
@@ -42,18 +42,18 @@ public class Class4349 extends Class4278 {
    }
 
    @Override
-   public void method13027(float var1) {
+   public void draw(float var1) {
       this.method13225();
       this.field21252 = (float)((double)this.field21252 + (this.field21254 ? 0.2 : -0.2));
       this.field21252 = Math.min(1.0F, Math.max(0.0F, this.field21252));
-      this.field21258 = Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
+      this.field21258 = ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
       if (this.field21254 || this.method13212() || this.method13298()) {
          RenderUtil.method11426(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
             (float)(this.field20896 + this.field20898),
-            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.05F)
+            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.05F)
          );
       }
 
@@ -65,7 +65,7 @@ public class Class4349 extends Class4278 {
                (float)(this.field20895 + this.field20897),
                (float)(this.field20896 + this.field20898),
                2,
-               Class5628.method17688(ClientColors.MID_GREY.getColor, 0.5F)
+               ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.5F)
             );
          } else if (!this.method13298()) {
             if (this.field21254) {
@@ -75,7 +75,7 @@ public class Class4349 extends Class4278 {
                   (float)(this.field20895 + this.field20897),
                   (float)(this.field20896 + this.field20898),
                   2,
-                  Class5628.method17688(ClientColors.MID_GREY.getColor, 0.3F)
+                  ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.3F)
                );
             }
          } else {
@@ -85,7 +85,7 @@ public class Class4349 extends Class4278 {
                (float)(this.field20895 + this.field20897),
                (float)(this.field20896 + this.field20898),
                2,
-               Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F)
+               ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
             );
          }
       } else {
@@ -95,7 +95,7 @@ public class Class4349 extends Class4278 {
             (float)(this.field20895 + this.field20897),
             (float)(this.field20896 + this.field20898),
             2,
-            Class5628.method17688(ClientColors.MID_GREY.getColor, 0.65F)
+            ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.65F)
          );
       }
 
@@ -114,7 +114,7 @@ public class Class4349 extends Class4278 {
             );
          }
 
-         super.method13027(var1);
+         super.draw(var1);
       }
    }
 
@@ -144,7 +144,7 @@ public class Class4349 extends Class4278 {
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + 20),
          var3,
-         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.4F),
+         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F),
          Class2218.field14492,
          Class2218.field14492
       );

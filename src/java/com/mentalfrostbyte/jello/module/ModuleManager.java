@@ -291,7 +291,7 @@ public class ModuleManager {
         String var4 = null;
 
         try {
-            var4 = var1.method21773("profile");
+            var4 = var1.getString("profile");
         } catch (JSONException2 var7) {
         }
 
