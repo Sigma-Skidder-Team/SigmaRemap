@@ -671,9 +671,9 @@ public class MusicManager {
     }
 
     public boolean method24330() {
-        File var3 = new File(Client.getInstance().getFile() + "/music/youtube-dl");
+        File var3 = new File(Client.getInstance().getFile() + "/music/yt-dlp");
         if (Util.getOSType() == OS.WINDOWS) {
-            var3 = new File(Client.getInstance().getFile() + "/music/youtube-dl.exe");
+            var3 = new File(Client.getInstance().getFile() + "/music/yt-dlp.exe");
         }
 
         return var3.exists();
@@ -691,9 +691,9 @@ public class MusicManager {
             Client.getInstance().getLogger().dummyMethod("Updating dependencies");
             if (Util.getOSType() == OS.WINDOWS) {
                 try {
-                    File var4 = new File(Client.getInstance().getFile() + "/music/youtube-dl.exe");
+                    File var4 = new File(Client.getInstance().getFile() + "/music/yt-dlp.exe");
                     CloseableHttpClient var5 = HttpClients.createDefault();
-                    CloseableHttpResponse var6 = var5.execute(new HttpGet("https://github.com/ytdl-org/youtube-dl/releases/download/2021.12.17/youtube-dl.exe"));
+                    CloseableHttpResponse var6 = var5.execute(new HttpGet("https://github.com/yt-dlp/yt-dlp/releases/download/2024.08.06/yt-dlp.exe"));
                     Throwable var7 = null;
 
                     try {
@@ -724,9 +724,9 @@ public class MusicManager {
                 }
             } else {
                 try {
-                    File var100 = new File(Client.getInstance().getFile() + "/music/youtube-dl");
+                    File var100 = new File(Client.getInstance().getFile() + "/music/yt-dlp");
                     CloseableHttpClient var101 = HttpClients.createDefault();
-                    CloseableHttpResponse var102 = var101.execute(new HttpGet("https://github.com/ytdl-org/youtube-dl/releases/download/2021.12.17/youtube-dl"));
+                    CloseableHttpResponse var102 = var101.execute(new HttpGet("https://github.com/yt-dlp/yt-dlp/releases/download/2024.08.06/yt-dlp"));
                     Throwable var103 = null;
 
                     try {
@@ -763,7 +763,7 @@ public class MusicManager {
     }
 
     public String method24333() {
-        String var3 = Client.getInstance().getFile().getAbsolutePath() + "/music/youtube-dl";
+        String var3 = Client.getInstance().getFile().getAbsolutePath() + "/music/yt-dlp";
         if (Util.getOSType() != OS.WINDOWS) {
             File var4 = new File(var3);
             var4.setExecutable(true);
