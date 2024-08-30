@@ -4,6 +4,8 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
+import com.mentalfrostbyte.jello.module.impl.movement.clicktp.BasicClickTP;
+import com.mentalfrostbyte.jello.module.impl.movement.clicktp.SpartanClickTP;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
@@ -11,7 +13,7 @@ import org.lwjgl.opengl.GL11;
 
 public class ClickTP extends ModuleWithModuleSettings {
     public ClickTP() {
-        super(ModuleCategory.MOVEMENT, "ClickTP", "TP's you when you click", new Class5236(), new Class5174());
+        super(ModuleCategory.MOVEMENT, "ClickTP", "TP's you when you click", new BasicClickTP(), new SpartanClickTP());
         this.registerSetting(new BooleanSetting("Sneak", "Allows teleport only when sneaking", true));
         this.registerSetting(new BooleanSetting("Auto Disable", "Disable ClickTP after teleporting", true));
         this.registerSetting(new NumberSetting<Float>("Maximum range", "Maximum range of the teleport", 100.0F, Float.class, 10.0F, 300.0F, 1.0F));

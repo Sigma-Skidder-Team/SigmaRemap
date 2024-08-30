@@ -183,6 +183,8 @@ public class ModuleManager {
         this.register(new HypixelForceUnbanner());
         this.register(new PacketEssentials());
         this.register(new BedRockFinder());
+        this.register(new StaffRepealer());
+        this.register(new PathFinder());
 
         new Class8329();
         this.method14654();
