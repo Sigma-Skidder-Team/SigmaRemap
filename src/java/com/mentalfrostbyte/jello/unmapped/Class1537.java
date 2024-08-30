@@ -25,43 +25,37 @@ public class Class1537 implements Runnable {
         field8343 = new HashMap<Object, Integer>();
 
         while (!Thread.currentThread().isInterrupted()) {
-            try {
-                Thread.sleep(150000L);
-                if (Thread.currentThread().isInterrupted()) {
-                    break;
-                }
+            if (Thread.currentThread().isInterrupted()) {
+                break;
+            }
 
-                if (Minecraft.getInstance().world != null) {
-                    boolean var3 = false;
-                    boolean var4 = false;
-                    if (Client.getInstance().getModuleManager() != null) {
-                        List<Module> var5 = new ArrayList<>(Client.getInstance().getModuleManager().getModuleMap().values());
+            if (Minecraft.getInstance().world != null) {
+                boolean var3 = false;
+                boolean var4 = false;
+                if (Client.getInstance().getModuleManager() != null) {
+                    List<Module> var5 = new ArrayList<>(Client.getInstance().getModuleManager().getModuleMap().values());
 
-                        for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
-                            if (var7 instanceof ModuleWithModuleSettings) {
-                                var5.addAll(Arrays.asList(((ModuleWithModuleSettings) var7).moduleArray));
-                            }
-                        }
-
-                        for (Module var10 : var5) {
-                            if (var10.getClass().getSuperclass() != Module.class && var10.getClass().getSuperclass() != ModuleWithModuleSettings.class) {
-                                var3 = true;
-                                if (field8343.containsKey(var10) && field8343.get(var10) != var10.method15994()) {
-                                    var4 = true;
-                                }
-
-                                field8343.put(var10, var10.method15994());
-                            }
-                        }
-
-                        if (var4 || !var3) {
-                            field8342 = true;
+                    for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+                        if (var7 instanceof ModuleWithModuleSettings) {
+                            var5.addAll(Arrays.asList(((ModuleWithModuleSettings) var7).moduleArray));
                         }
                     }
+
+                    for (Module var10 : var5) {
+                        if (var10.getClass().getSuperclass() != Module.class && var10.getClass().getSuperclass() != ModuleWithModuleSettings.class) {
+                            var3 = true;
+                            if (field8343.containsKey(var10) && field8343.get(var10) != var10.method15994()) {
+                                var4 = true;
+                            }
+
+                            field8343.put(var10, var10.method15994());
+                        }
+                    }
+
+                    if (var4 || !var3) {
+                        field8342 = true;
+                    }
                 }
-            } catch (InterruptedException var8) {
-                Thread.currentThread().interrupt();
-                break;
             }
         }
     }
