@@ -2,11 +2,21 @@ package com.mentalfrostbyte.jello.module.impl.movement;
 
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
+import com.mentalfrostbyte.jello.module.impl.movement.longjump.NCPLongJump;
+import com.mentalfrostbyte.jello.module.impl.movement.longjump.MineplexLongJump;
+import com.mentalfrostbyte.jello.module.impl.movement.longjump.RedeskyLongJump;
+import com.mentalfrostbyte.jello.module.impl.movement.longjump.CubecraftLongJump;
 import mapped.*;
 
 public class LongJump extends ModuleWithModuleSettings {
     public LongJump() {
-        super(ModuleCategory.MOVEMENT, "LongJump", "Makes you jump far away", new Class5178(), new Class5193(), new Class5292(), new Class5366());
+        super(ModuleCategory.MOVEMENT,
+                "LongJump",
+                "Makes you jump far away",
+                new NCPLongJump(),
+                new CubecraftLongJump(),
+                new MineplexLongJump(),
+                new RedeskyLongJump());
         this.registerSetting(new BooleanSetting("Auto Disable", "Disable Longjump when landing", true));
         this.registerSetting(new BooleanSetting("BorderJump", "Jumps when you are close to a border", true));
         this.registerSetting(new BooleanSetting("Auto Jump", "Automatically jumps when you can", true));

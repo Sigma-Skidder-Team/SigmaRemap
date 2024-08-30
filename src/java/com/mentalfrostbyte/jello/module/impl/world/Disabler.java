@@ -13,6 +13,7 @@ public class Disabler extends ModuleWithModuleSettings {
                 new NullDisabler(),
                 new HypixelDisabler(),
                 new TPDisabler(),
+                new ViperDisabler(),
                 new GhostlyDisabler());
     }
 }

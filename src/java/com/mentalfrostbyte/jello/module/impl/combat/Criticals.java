@@ -14,6 +14,7 @@ public class Criticals extends ModuleWithModuleSettings {
                 new PacketCriticals(),
                 new NoGroundCriticals(),
                 new HoverCriticals(),
+                new MinemenCriticals(),
                 new AAC4Criticals()
         );
     }

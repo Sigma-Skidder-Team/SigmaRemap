@@ -4,6 +4,9 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.module.impl.combat.*;
 import com.mentalfrostbyte.jello.module.impl.exploit.BedRockFinder;
+import com.mentalfrostbyte.jello.module.impl.exploit.Dumper;
+import com.mentalfrostbyte.jello.module.impl.gui.jello.InfoHUD;
+import com.mentalfrostbyte.jello.module.impl.gui.jello.TargetHUD;
 import com.mentalfrostbyte.jello.module.impl.gui.classic.ActiveMods;
 import com.mentalfrostbyte.jello.module.impl.gui.jello.KeyStrokes;
 import com.mentalfrostbyte.jello.module.impl.gui.jello.TabGUI;
@@ -11,6 +14,7 @@ import com.mentalfrostbyte.jello.module.impl.misc.*;
 import com.mentalfrostbyte.jello.module.impl.gui.jello.*;
 import com.mentalfrostbyte.jello.module.impl.item.*;
 import com.mentalfrostbyte.jello.module.impl.movement.*;
+import com.mentalfrostbyte.jello.module.impl.movement.VClip;
 import com.mentalfrostbyte.jello.module.impl.player.*;
 import com.mentalfrostbyte.jello.module.impl.render.*;
 import com.mentalfrostbyte.jello.module.impl.render.classic.*;
@@ -142,7 +146,7 @@ public class ModuleManager {
         this.register(new ChatFilter());
         this.register(new ChatCleaner());
         this.register(new GameIdler());
-        this.register(new Class5340());
+        this.register(new GamePlay());
         this.register(new Auto32k());
         this.register(new CakeEater());
         this.register(new Unstuck());
@@ -152,11 +156,14 @@ public class ModuleManager {
             if (var1 == ClientMode.CLASSIC) {
                 this.register(new ActiveMods());
                 this.register(new com.mentalfrostbyte.jello.module.impl.gui.classic.TabGUI());
+
                 this.register(new Nametags());
                 this.register(new com.mentalfrostbyte.jello.module.impl.render.classic.ESP());
                 this.register(new com.mentalfrostbyte.jello.module.impl.gui.classic.KeyStrokes());
             }
         } else {
+            this.register(new InfoHUD());
+            this.register(new TargetHUD());
             this.register(new TabGUI());
             this.register(new Compass());
             this.register(new Cords());
@@ -185,6 +192,20 @@ public class ModuleManager {
         this.register(new BedRockFinder());
         this.register(new StaffRepealer());
         this.register(new PathFinder());
+        this.register(new JelloAIBot());
+        this.register(new VClip());
+        this.register(new HitSounds());
+        this.register(new NoServerInfo());
+        this.register(new Murderer());
+        this.register(new ItemPhysics());
+        this.register(new Streaming());
+        this.register(new JelloEdit());
+        this.register(new AutoClicker());
+        this.register(new Dumper());
+        this.register(new FightBot());
+        this.register(new NickNameDetector());
+        this.register(new PacketDumper());
+        this.register(new DebugSpeed());
 
         new Class8329();
         this.method14654();

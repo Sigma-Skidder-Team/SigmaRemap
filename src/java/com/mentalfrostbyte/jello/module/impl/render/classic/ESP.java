@@ -13,6 +13,7 @@ public class ESP extends ModuleWithModuleSettings {
                 new FillESP(),
                 new TwoDESP(),
                 new BoxOutlineESP(),
+                new SkeletonESP(),
                 new VanillaESP());
         this.registerSetting(new BooleanSetting("Show Players", "Draws a line arround players", true));
         this.registerSetting(new BooleanSetting("Show Mobs", "Draws a line arround hostile creatures", false));

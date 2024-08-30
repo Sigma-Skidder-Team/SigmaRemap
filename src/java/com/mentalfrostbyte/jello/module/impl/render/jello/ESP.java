@@ -14,6 +14,7 @@ public class ESP extends ModuleWithModuleSettings {
                 new ShadowESP(),
                 new SimsESP(),
                 new BoxOutlineESP(),
+                new SkeletonESP(),
                 new VanillaESP());
         this.registerSetting(new BooleanSetting("Show Players", "Draws a line arround players", true));
         this.registerSetting(new BooleanSetting("Show Mobs", "Draws a line arround hostile creatures", false));

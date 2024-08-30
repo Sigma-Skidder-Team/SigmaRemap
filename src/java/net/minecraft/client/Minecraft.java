@@ -2069,13 +2069,6 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
             var1++;
 
-            try {
-               System.out.println("Started sleeping for " + var2);
-               Thread.sleep(var2);
-            } catch (InterruptedException var5) {
-               var5.printStackTrace();
-            }
-
             GameProfile var4 = new GameProfile(UUID.fromString("53e07708-1fe7-4488-b2d2-8d1a82af37b7"), "steve");
             this.sessionService.fillProfileProperties(var4, false);
             if (var4.getProperties().containsKey("textures")) {
