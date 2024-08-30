@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.module;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.module.impl.combat.*;
-import com.mentalfrostbyte.jello.module.impl.gui.classic.*;
+import com.mentalfrostbyte.jello.module.impl.exploit.BedRockFinder;
 import com.mentalfrostbyte.jello.module.impl.gui.classic.ActiveMods;
 import com.mentalfrostbyte.jello.module.impl.gui.jello.KeyStrokes;
 import com.mentalfrostbyte.jello.module.impl.gui.jello.TabGUI;
@@ -181,8 +181,8 @@ public class ModuleManager {
         }
 
         this.register(new HypixelForceUnbanner());
-        this.register(new Class5318());
-        this.register(new Class5268());
+        this.register(new PacketEssentials());
+        this.register(new BedRockFinder());
 
         new Class8329();
         this.method14654();

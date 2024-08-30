@@ -1,15 +1,16 @@
-package mapped;
+package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
+import mapped.*;
 import net.minecraft.entity.EntityType;
 
 @InDevelopment
-public class Class5318 extends Module {
-    public Class5318() {
+public class PacketEssentials extends Module {
+    public PacketEssentials() {
         super(ModuleCategory.MISC, "PacketEssentials", "Ignores all types of junk cosmetic packets to improve fps");
     }
 
