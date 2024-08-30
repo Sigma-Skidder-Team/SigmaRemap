@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
@@ -9,7 +9,7 @@ public class Class4297 extends Class4278 {
    private static String[] field20816;
    public Minecraft field20817 = Minecraft.getInstance();
    public Class8455 field20818;
-   public Timer field20819 = new Timer();
+   public TimerUtil field20819 = new TimerUtil();
    public int field20820;
 
    public Class4297(Class4305 var1, String var2, int var3, int var4, int var5, int var6, int var7) {
@@ -18,7 +18,7 @@ public class Class4297 extends Class4278 {
       this.field20897 = var5 * var7;
       this.field20898 = var6 * var7;
       this.field20820 = var7;
-      this.field20819.method27118();
+      this.field20819.start();
    }
 
    @Override
@@ -61,10 +61,10 @@ public class Class4297 extends Class4278 {
    @Override
    public void method13065(int var1) {
       super.method13065(var1);
-      if (var1 != this.field20817.gameSettings.field44632.field13070.field34875) {
-         if (var1 != this.field20817.gameSettings.field44634.field13070.field34875) {
-            if (var1 != this.field20817.gameSettings.field44633.field13070.field34875) {
-               if (var1 == this.field20817.gameSettings.field44635.field13070.field34875) {
+      if (var1 != this.field20817.gameSettings.keyBindForward.keycode.keyCode) {
+         if (var1 != this.field20817.gameSettings.keyBindBack.keycode.keyCode) {
+            if (var1 != this.field20817.gameSettings.keyBindLeft.keycode.keyCode) {
+               if (var1 == this.field20817.gameSettings.keyBindRight.keycode.keyCode) {
                   this.field20818.method29737().method29653(Class2097.field13664);
                }
             } else {

@@ -20,7 +20,7 @@ public class Class7451 {
       RenderSystem.matrixMode(5889);
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
-      RenderSystem.method27888(Class9367.method35511(85.0, (float)var1.getMainWindow().getFramebufferWidth() / (float)var1.getMainWindow().getFramebufferHeight(), 0.05F, 10.0F));
+      RenderSystem.method27888(Matrix4f.method35511(85.0, (float)var1.getMainWindow().getFramebufferWidth() / (float)var1.getMainWindow().getFramebufferHeight(), 0.05F, 10.0F));
       RenderSystem.matrixMode(5888);
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
@@ -30,7 +30,7 @@ public class Class7451 {
       RenderSystem.method27817();
       RenderSystem.method27850();
       RenderSystem.depthMask(false);
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       byte var9 = 2;
 
       for (int var10 = 0; var10 < 4; var10++) {
@@ -47,45 +47,45 @@ public class Class7451 {
             var8.begin(7, DefaultVertexFormats.field43346);
             int var15 = Math.round(255.0F * var4) / (var10 + 1);
             if (var14 == 0) {
-               var8.pos(-1.0, -1.0, 1.0).method17027(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(-1.0, 1.0, 1.0).method17027(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(1.0, 1.0, 1.0).method17027(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(1.0, -1.0, 1.0).method17027(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, -1.0, 1.0).tex(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, 1.0, 1.0).tex(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, 1.0, 1.0).tex(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, -1.0, 1.0).tex(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
             }
 
             if (var14 == 1) {
-               var8.pos(1.0, -1.0, 1.0).method17027(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(1.0, 1.0, 1.0).method17027(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(1.0, 1.0, -1.0).method17027(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(1.0, -1.0, -1.0).method17027(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, -1.0, 1.0).tex(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, 1.0, 1.0).tex(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, 1.0, -1.0).tex(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, -1.0, -1.0).tex(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
             }
 
             if (var14 == 2) {
-               var8.pos(1.0, -1.0, -1.0).method17027(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(1.0, 1.0, -1.0).method17027(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(-1.0, 1.0, -1.0).method17027(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(-1.0, -1.0, -1.0).method17027(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, -1.0, -1.0).tex(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, 1.0, -1.0).tex(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, 1.0, -1.0).tex(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, -1.0, -1.0).tex(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
             }
 
             if (var14 == 3) {
-               var8.pos(-1.0, -1.0, -1.0).method17027(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(-1.0, 1.0, -1.0).method17027(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(-1.0, 1.0, 1.0).method17027(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(-1.0, -1.0, 1.0).method17027(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, -1.0, -1.0).tex(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, 1.0, -1.0).tex(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, 1.0, 1.0).tex(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, -1.0, 1.0).tex(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
             }
 
             if (var14 == 4) {
-               var8.pos(-1.0, -1.0, -1.0).method17027(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(-1.0, -1.0, 1.0).method17027(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(1.0, -1.0, 1.0).method17027(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(1.0, -1.0, -1.0).method17027(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, -1.0, -1.0).tex(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, -1.0, 1.0).tex(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, -1.0, 1.0).tex(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, -1.0, -1.0).tex(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
             }
 
             if (var14 == 5) {
-               var8.pos(-1.0, 1.0, 1.0).method17027(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(-1.0, 1.0, -1.0).method17027(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(1.0, 1.0, -1.0).method17027(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
-               var8.pos(1.0, 1.0, 1.0).method17027(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, 1.0, 1.0).tex(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, 1.0, -1.0).tex(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, 1.0, -1.0).tex(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, 1.0, 1.0).tex(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
             }
 
             var7.draw();

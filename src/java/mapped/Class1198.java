@@ -39,7 +39,7 @@ public class Class1198 extends Class1197 {
       var1.push();
       var1.translate((double)this.field6477, (double)this.field6478, 0.0);
       method5699(var1, 0, 0, 0.0F, 75.0F, 25, 25, 128, 128);
-      var1.method35295();
+      var1.pop();
    }
 
    private void method5750(MatrixStack var1, TextureManager var2) {
@@ -47,7 +47,7 @@ public class Class1198 extends Class1197 {
       var1.push();
       var1.translate((double)this.field6477, (double)this.field6478, 0.0);
       method5699(var1, 0, 0, 25.0F, 75.0F, 25, 25, 128, 128);
-      var1.method35295();
+      var1.pop();
    }
 
    // $VF: synthetic method

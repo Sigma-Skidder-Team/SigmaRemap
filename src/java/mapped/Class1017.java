@@ -116,7 +116,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    @Override
    public boolean method3114(Entity var1) {
-      boolean var4 = var1.method2741(Class8654.method31114(this), (float)((int)this.method3086(Class9173.field42110)));
+      boolean var4 = var1.method2741(Class8654.method31114(this), (float)((int)this.method3086(Attributes.field42110)));
       if (var4) {
          this.method3399(this, var1);
          if (var1 instanceof Class880) {
@@ -131,7 +131,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
             }
 
             if (var5 > 0) {
-               ((Class880)var1).method3035(new Class2023(Class8254.field35485, var5 * 20, 0));
+               ((Class880)var1).method3035(new Class2023(Effects.POISON, var5 * 20, 0));
             }
          }
 
@@ -262,7 +262,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       if (var3) {
          this.field5690++;
          if (this.field5690 % 5 == 0 && this.rand.nextInt(MathHelper.method37775(1200 - this.field5690, 1, 1200)) == 0) {
-            this.method2741(Class8654.field39005, this.method3042());
+            this.method2741(Class8654.field39005, this.getHealth());
          }
       }
 
@@ -424,11 +424,11 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    public static Class7037 method4447() {
       return Class1006.method4220()
-         .method21849(Class9173.field42105, 10.0)
-         .method21849(Class9173.field42109, 0.6F)
-         .method21849(Class9173.field42108, 0.3F)
-         .method21849(Class9173.field42110, 2.0)
-         .method21849(Class9173.field42106, 48.0);
+         .method21849(Attributes.field42105, 10.0)
+         .method21849(Attributes.field42109, 0.6F)
+         .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
+         .method21849(Attributes.field42110, 2.0)
+         .method21849(Attributes.field42106, 48.0);
    }
 
    @Override

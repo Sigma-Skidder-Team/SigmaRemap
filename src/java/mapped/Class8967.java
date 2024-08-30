@@ -55,7 +55,7 @@ public final class Class8967 {
       return var5;
    }
 
-   public Class8967(Class9367 var1) {
+   public Class8967(Matrix4f var1) {
       this.field40499 = var1.field43471;
       this.field40500 = var1.field43472;
       this.field40501 = var1.field43473;
@@ -186,7 +186,7 @@ public final class Class8967 {
       this.field40506 = var3;
    }
 
-   public Triple<Class8661, Class7680, Class8661> method32822() {
+   public Triple<Class8661, Vector3f, Class8661> method32822() {
       Class8661 var3 = Class8661.field39030.method31189();
       Class8661 var4 = Class8661.field39030.method31189();
       Class8967 var5 = this.method32831();
@@ -254,7 +254,7 @@ public final class Class8967 {
       var29.method32828(var22);
       var7 = 1.0F / var7;
       var3.method31183((float)Math.sqrt((double)var7));
-      Class7680 var30 = new Class7680(var29.field40499 * var7, var29.field40503 * var7, var29.field40507 * var7);
+      Vector3f var30 = new Vector3f(var29.field40499 * var7, var29.field40503 * var7, var29.field40507 * var7);
       return Triple.of(var3, var30, var4);
    }
 

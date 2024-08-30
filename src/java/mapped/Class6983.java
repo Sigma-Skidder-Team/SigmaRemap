@@ -28,7 +28,7 @@ public class Class6983 {
    }
 
    private static boolean method21572(Class6947<?> var0, Class8830<? extends Class880> var1, Predicate<Class880> var2) {
-      return var0.method21410(var1).filter(var2).filter(Class880::method3066).filter(var1x -> method21570(var0, var1x)).isPresent();
+      return var0.method21410(var1).filter(var2).filter(Class880::isAlive).filter(var1x -> method21570(var0, var1x)).isPresent();
    }
 
    private static void method21573(Class880 var0, Class880 var1) {
@@ -128,7 +128,7 @@ public class Class6983 {
             var2 -> var2.stream()
                   .filter(var1xx -> var1xx instanceof Class1042 && var1xx != var0)
                   .<Class1042>map(var0xx -> (Class1042)var0xx)
-                  .filter(Class880::method3066)
+                  .filter(Class880::isAlive)
                   .filter(var1)
          )
          .orElseGet(Stream::empty);

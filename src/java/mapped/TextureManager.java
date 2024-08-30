@@ -106,7 +106,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
    }
 
    @Nullable
-   public Class290 method1076(ResourceLocation var1) {
+   public Class290 getTexture(ResourceLocation var1) {
       return this.field1095.get(var1);
    }
 
@@ -146,10 +146,10 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
    }
 
    public void method1081(ResourceLocation var1) {
-      Class290 var4 = this.method1076(var1);
+      Class290 var4 = this.getTexture(var1);
       if (var4 != null) {
          this.field1095.remove(var1);
-         Class8535.method30367(var4.method1131());
+         Class8535.method30367(var4.getGlTextureId());
       }
    }
 

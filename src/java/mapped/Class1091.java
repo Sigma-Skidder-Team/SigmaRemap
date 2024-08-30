@@ -45,11 +45,11 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
 
    public static Class7037 method5080() {
       return Class1009.method4343()
-         .method21849(Class9173.field42105, 40.0)
-         .method21849(Class9173.field42108, 0.3F)
-         .method21849(Class9173.field42107, 0.6F)
-         .method21849(Class9173.field42111, 1.0)
-         .method21849(Class9173.field42110, 6.0);
+         .method21849(Attributes.field42105, 40.0)
+         .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
+         .method21849(Attributes.field42107, 0.6F)
+         .method21849(Attributes.field42111, 1.0)
+         .method21849(Attributes.field42110, 6.0);
    }
 
    @Override
@@ -131,10 +131,10 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    public void method4679() {
       if (!this.method3005()) {
          this.field5594 = 5;
-         this.method3085(Class9173.field42110).method38661(6.0);
+         this.method3085(Attributes.field42110).method38661(6.0);
       } else {
          this.field5594 = 3;
-         this.method3085(Class9173.field42110).method38661(0.5);
+         this.method3085(Attributes.field42110).method38661(0.5);
       }
    }
 
@@ -209,7 +209,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    private void method5083(ServerWorld var1) {
       Class1093 var4 = this.<Class1093>method4292(EntityType.field41106, true);
       if (var4 != null) {
-         var4.method3035(new Class2023(Class8254.field35475, 200, 0));
+         var4.method3035(new Class2023(Effects.NAUSEA, 200, 0));
       }
    }
 

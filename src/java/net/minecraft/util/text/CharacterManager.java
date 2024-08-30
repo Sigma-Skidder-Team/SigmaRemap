@@ -155,7 +155,7 @@ public class CharacterManager {
 
       while (j < style) {
          CharacterManager$MultilineProcessor flag = new CharacterManager$MultilineProcessor(this, (float)p_238353_2_);
-         boolean k = TextProcessing.func_238340_a_(p_238353_1_, j, charactermanager$multilineprocessor, p_238353_3_, flag);
+         boolean k = TextProcessing.drawString(p_238353_1_, j, charactermanager$multilineprocessor, p_238353_3_, flag);
          if (k) {
             p_238353_5_.accept(charactermanager$multilineprocessor, j, style);
             break;
@@ -207,7 +207,7 @@ public class CharacterManager {
          CharacterManager$MultilineProcessor var12 = new CharacterManager$MultilineProcessor(this, (float)p_243242_2_);
 
          for (CharacterManager$StyleOverridingTextComponent flag3 : CharacterManager$SubstyledText.access$000(flag)) {
-            boolean i = TextProcessing.func_238340_a_(
+            boolean i = TextProcessing.drawString(
                CharacterManager$StyleOverridingTextComponent.access$100(flag3),
                0,
                CharacterManager$StyleOverridingTextComponent.access$200(flag3),

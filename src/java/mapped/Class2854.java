@@ -84,19 +84,19 @@ public class Class2854<T extends Class1066> extends Class2827<T> {
          var1.method35292(0.71428573F, 0.64935064F, 0.7936508F);
          var1.translate(0.0, 1.3125, 0.22F);
          this.field17677.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
-         var1.method35295();
+         var1.pop();
          var1.push();
          float var13 = 1.1F;
          var1.method35292(0.625F, 0.45454544F, 0.45454544F);
          var1.translate(0.0, 2.0625, 0.0);
          this.field17678.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
-         var1.method35295();
+         var1.pop();
          var1.push();
          var1.method35292(0.45454544F, 0.41322312F, 0.45454544F);
          var1.translate(0.0, 2.0625, 0.0);
          ImmutableList.of(this.field17679, this.field17680, this.field17681, this.field17682, this.field17683, this.field17684)
             .forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));
-         var1.method35295();
+         var1.pop();
       }
    }
 }

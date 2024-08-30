@@ -47,8 +47,8 @@ public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
       }
 
       var4.translate(0.0, 0.375, 0.0);
-      var4.method35293(Class7680.field32900.method25286(180.0F - var2));
-      var4.method35293(Class7680.field32902.method25286(-var23));
+      var4.rotate(Vector3f.YP.rotationDegrees(180.0F - var2));
+      var4.rotate(Vector3f.field32902.rotationDegrees(-var23));
       float var30 = (float)var1.method3599() - var3;
       float var31 = var1.method3597() - var3;
       if (var31 < 0.0F) {
@@ -56,7 +56,7 @@ public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
       }
 
       if (var30 > 0.0F) {
-         var4.method35293(Class7680.field32898.method25286(MathHelper.sin(var30) * var30 * var31 / 10.0F * (float)var1.method3601()));
+         var4.rotate(Vector3f.field32898.rotationDegrees(MathHelper.sin(var30) * var30 * var31 / 10.0F * (float)var1.method3601()));
       }
 
       int var33 = var1.method3605();
@@ -66,16 +66,16 @@ public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
          float var28 = 0.75F;
          var4.method35292(0.75F, 0.75F, 0.75F);
          var4.translate(-0.5, (double)((float)(var33 - 8) / 16.0F), 0.5);
-         var4.method35293(Class7680.field32900.method25286(90.0F));
+         var4.rotate(Vector3f.YP.rotationDegrees(90.0F));
          this.method17915((T)var1, var3, var27, var4, var5, var6);
-         var4.method35295();
+         var4.pop();
       }
 
       var4.method35292(-1.0F, -1.0F, 1.0F);
       this.field25144.method10998((T)var1, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F);
       Class5422 var34 = var5.method25597(this.field25144.method11028(this.method17843((T)var1)));
       this.field25144.method11016(var4, var34, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
-      var4.method35295();
+      var4.pop();
    }
 
    public ResourceLocation method17843(T var1) {

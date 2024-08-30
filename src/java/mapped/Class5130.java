@@ -32,7 +32,7 @@ public class Class5130 implements Class5119 {
             for (Entry var19 : var17.method7068()) {
                Class101 var20 = (Class101)var19.getKey();
                Class7481 var21 = var17.method7072();
-               Class7680 var22 = this.method15867(var20);
+               Vector3f var22 = this.method15867(var20);
 
                for (int var23 = 0; var23 < 16; var23++) {
                   for (int var24 = 0; var24 < 16; var24++) {
@@ -63,22 +63,22 @@ public class Class5130 implements Class5119 {
       RenderSystem.popMatrix();
    }
 
-   private Class7680 method15867(Class101 var1) {
+   private Vector3f method15867(Class101 var1) {
       switch (Class7913.field33895[var1.ordinal()]) {
          case 1:
-            return new Class7680(1.0F, 1.0F, 0.0F);
+            return new Vector3f(1.0F, 1.0F, 0.0F);
          case 2:
-            return new Class7680(1.0F, 0.0F, 1.0F);
+            return new Vector3f(1.0F, 0.0F, 1.0F);
          case 3:
-            return new Class7680(0.0F, 0.7F, 0.0F);
+            return new Vector3f(0.0F, 0.7F, 0.0F);
          case 4:
-            return new Class7680(0.0F, 0.0F, 0.5F);
+            return new Vector3f(0.0F, 0.0F, 0.5F);
          case 5:
-            return new Class7680(0.0F, 0.3F, 0.3F);
+            return new Vector3f(0.0F, 0.3F, 0.3F);
          case 6:
-            return new Class7680(0.0F, 0.5F, 0.5F);
+            return new Vector3f(0.0F, 0.5F, 0.5F);
          default:
-            return new Class7680(0.0F, 0.0F, 0.0F);
+            return new Vector3f(0.0F, 0.0F, 0.0F);
       }
    }
 }

@@ -29,7 +29,7 @@ public class Class5174 extends Module {
         Class5628.method17725(-0.08);
         double var3 = Class9567.method37075();
         Class9567.method37090(var3);
-        mc.timer.field40360 = 1.0F;
+        mc.timer.timerSpeed = 1.0F;
     }
 
     @EventTarget
@@ -75,7 +75,7 @@ public class Class5174 extends Module {
                         Class5628.method17725(-0.08);
                         double var5 = Class9567.method37075();
                         Class9567.method37090(var5);
-                        mc.timer.field40360 = 1.0F;
+                        mc.timer.timerSpeed = 1.0F;
                     } else {
                         this.method16004().method16000();
                     }
@@ -91,9 +91,9 @@ public class Class5174 extends Module {
                 var1.method13995(0.01);
                 this.field23464++;
                 if (this.field23464 >= 20) {
-                    mc.timer.field40360 = 1.4F;
+                    mc.timer.timerSpeed = 1.4F;
                 } else {
-                    mc.timer.field40360 = 2.0F;
+                    mc.timer.timerSpeed = 2.0F;
                 }
 
                 mc.getConnection()

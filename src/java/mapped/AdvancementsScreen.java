@@ -63,7 +63,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
 
    @Override
    public boolean method1920(int var1, int var2, int var3) {
-      if (!this.mc.gameSettings.keyBindAdvancements.method8519(var1, var2)) {
+      if (!this.mc.gameSettings.keyBindAdvancements.matchesKey(var1, var2)) {
          return super.method1920(var1, var2, var3);
       } else {
          this.mc.displayGuiScreen((Screen)null);
@@ -130,7 +130,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
          }
 
          RenderSystem.method27867();
-         RenderSystem.method27938();
+         RenderSystem.defaultBlendFunc();
 
          for (Class1271 var9 : this.field6185.values()) {
             var9.method6004(var2, var3, this.field4563);

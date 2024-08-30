@@ -49,10 +49,10 @@ public class Class1105 extends Class1009 {
 
    public static Class7037 method5300() {
       return Class1009.method4343()
-         .method21849(Class9173.field42110, 6.0)
-         .method21849(Class9173.field42108, 0.5)
-         .method21849(Class9173.field42106, 16.0)
-         .method21849(Class9173.field42105, 30.0);
+         .method21849(Attributes.field42110, 6.0)
+         .method21849(Attributes.MOVEMENT_SPEED, 0.5)
+         .method21849(Attributes.field42106, 16.0)
+         .method21849(Attributes.field42105, 30.0);
    }
 
    @Override
@@ -164,7 +164,7 @@ public class Class1105 extends Class1009 {
 
    @Override
    public void method2871() {
-      if (this.method3066()) {
+      if (this.isAlive()) {
          if (this.world.isRemote) {
             this.field6069 = this.field6068;
             if (this.method3250()) {

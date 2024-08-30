@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.notification;
 
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.Texture;
 
 import java.awt.*;
@@ -13,7 +13,7 @@ public class Notification {
     public String field43604;
     public Texture field43605;
     public int field43606;
-    public Timer field43607 = new Timer();
+    public TimerUtil field43607 = new TimerUtil();
     public Color[] field43608 = new Color[field43601];
     public Color[] field43609 = new Color[field43601];
     public int field43610 = 0;
@@ -23,7 +23,7 @@ public class Notification {
         this.field43604 = var2;
         this.field43605 = var4;
         this.field43606 = var3;
-        this.field43607.method27118();
+        this.field43607.start();
     }
 
     public Notification(String var1, String var2, Texture var3) {

@@ -152,7 +152,7 @@ public class Class7219 {
 
          var1.push();
          this.method22682(var1);
-         this.method22683(var1.method35296(), var2, var3, var4, var5, var6, var7, var8);
+         this.method22683(var1.getLast(), var2, var3, var4, var5, var6, var7, var8);
          int var13 = this.field31041.size();
 
          for (int var14 = 0; var14 < var13; var14++) {
@@ -167,7 +167,7 @@ public class Class7219 {
             var16.method30159(var1, var2, var3, var4, var5, var6, var7, var8);
          }
 
-         var1.method35295();
+         var1.pop();
          if (var11 != null) {
             var12.method25597(var11);
          }
@@ -177,20 +177,20 @@ public class Class7219 {
    public void method22682(MatrixStack var1) {
       var1.translate((double)(this.field31032 / 16.0F), (double)(this.field31033 / 16.0F), (double)(this.field31034 / 16.0F));
       if (this.field31037 != 0.0F) {
-         var1.method35293(Class7680.field32902.method25285(this.field31037));
+         var1.rotate(Vector3f.field32902.method25285(this.field31037));
       }
 
       if (this.field31036 != 0.0F) {
-         var1.method35293(Class7680.field32900.method25285(this.field31036));
+         var1.rotate(Vector3f.YP.method25285(this.field31036));
       }
 
       if (this.field31035 != 0.0F) {
-         var1.method35293(Class7680.field32898.method25285(this.field31035));
+         var1.rotate(Vector3f.field32898.method25285(this.field31035));
       }
    }
 
    private void method22683(Class8892 var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
-      Class9367 var11 = var1.method32361();
+      Matrix4f var11 = var1.getMatrix();
       Class8967 var12 = var1.method32362();
       int var13 = this.field31040.size();
 
@@ -201,7 +201,7 @@ public class Class7219 {
          for (int var17 = 0; var17 < var16; var17++) {
             Class7394 var18 = Class9661.method37713(var15)[var17];
             if (var18 != null) {
-               Class7680 var19 = var2.method17045(var18.field31655);
+               Vector3f var19 = var2.method17045(var18.field31655);
                var19.method25282(var12);
                float var20 = var19.method25269();
                float var21 = var19.method25270();

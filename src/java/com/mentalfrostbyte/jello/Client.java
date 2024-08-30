@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.command.CommandManager;
 import com.mentalfrostbyte.jello.event.EventManager;
 import com.mentalfrostbyte.jello.event.impl.Class4413;
 import com.mentalfrostbyte.jello.event.impl.Class4419;
-import com.mentalfrostbyte.jello.event.impl.Class4420;
+import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.ModuleManager;
 import com.mentalfrostbyte.jello.music.MusicManager;
@@ -269,7 +269,7 @@ public class Client {
             RenderSystem.disableDepthTest();
             RenderSystem.depthMask(false);
             GL11.glDisable(2896);
-            this.eventManager.call(new Class4420());
+            this.eventManager.call(new Render3DEvent());
             RenderSystem.enableDepthTest();
             RenderSystem.depthMask(true);
             TextureManager var10000 = mc.getTextureManager();

@@ -11,7 +11,7 @@ import java.util.function.Predicate;
 public abstract class Class1026 extends Class1028 {
    public static final DataParameter<Boolean> field5712 = EntityDataManager.<Boolean>method35441(Class1026.class, Class7784.field33398);
    private static final Predicate<ItemEntity> field5713 = var0 -> !var0.method4135()
-         && var0.method3066()
+         && var0.isAlive()
          && ItemStack.method32128(var0.method4124(), Class7699.method25421());
    public Class7699 field5714;
    private int field5715;
@@ -49,7 +49,7 @@ public abstract class Class1026 extends Class1028 {
 
    @Override
    public void method2871() {
-      if (this.world instanceof ServerWorld && this.method3066()) {
+      if (this.world instanceof ServerWorld && this.isAlive()) {
          Class7699 var3 = this.method4551();
          if (this.method4547()) {
             if (var3 != null) {
@@ -107,17 +107,17 @@ public abstract class Class1026 extends Class1028 {
             }
 
             if (!var6.isEmpty() && ItemStack.method32128(var6, Class7699.method25421()) && var7 != null) {
-               Class2023 var11 = var7.method3034(Class8254.field35497);
+               Class2023 var11 = var7.method3034(Effects.BAD_OMEN);
                int var12 = 1;
                if (var11 == null) {
                   var12--;
                } else {
                   var12 += var11.method8629();
-                  var7.method3039(Class8254.field35497);
+                  var7.method3039(Effects.BAD_OMEN);
                }
 
                var12 = MathHelper.method37775(var12, 0, 4);
-               Class2023 var10 = new Class2023(Class8254.field35497, 120000, var12, false, false, true);
+               Class2023 var10 = new Class2023(Effects.BAD_OMEN, 120000, var12, false, false, true);
                if (!this.world.method6789().method17135(Class5462.field24246)) {
                   var7.method3035(var10);
                }

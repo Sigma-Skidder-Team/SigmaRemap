@@ -4,8 +4,9 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,7 +16,7 @@ public class Class5340 extends ModuleWithModuleSettings {
     private ArrayList<String> field23888 = new ArrayList<String>();
     private final ArrayList<String> field23889 = new ArrayList<String>();
     private Class7200 field23890;
-    private final Timer field23891;
+    private final TimerUtil field23891;
     private int field23892;
 
     public Class5340() {
@@ -31,17 +32,17 @@ public class Class5340 extends ModuleWithModuleSettings {
         );
         this.registerSetting(new BooleanSetting("AutoL", "Automatically says L when you kill a player", true));
         this.registerSetting(new ModeSetting("AutoL Mode", "AutoL Mode", 0, "Basic", "Sigmeme", "Penshen").method18616(var1 -> this.field23888.clear()));
-        this.registerSetting(new Class6011("First character", "The characters your sentences will start with.", ""));
+        this.registerSetting(new InputSetting("First character", "The characters your sentences will start with.", ""));
         this.registerSetting(new BooleanSetting("AutoGG", "Automatically say gg at the end of the game", true));
         this.registerSetting(new BooleanSetting("Auto Join", "Automatically joins another game", true));
         this.registerSetting(new NumberSetting<Float>("Auto Join delay", "Seconds before joining a new game", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
-        this.field23891 = new Timer();
+        this.field23891 = new TimerUtil();
     }
 
     @Override
     public void onEnable() {
-        if (!this.field23891.method27123()) {
-            this.field23891.method27118();
+        if (!this.field23891.isEnabled()) {
+            this.field23891.start();
         }
 
         this.field23890 = null;
@@ -52,7 +53,7 @@ public class Class5340 extends ModuleWithModuleSettings {
     @Override
     public void onDisable() {
         this.field23891.method27120();
-        this.field23891.method27119();
+        this.field23891.stop();
         this.field23890 = null;
     }
 
@@ -76,8 +77,8 @@ public class Class5340 extends ModuleWithModuleSettings {
                 }
             }
 
-            if (!this.field23891.method27123()) {
-                this.field23891.method27118();
+            if (!this.field23891.isEnabled()) {
+                this.field23891.start();
             }
 
             if (!this.field23889.isEmpty()) {

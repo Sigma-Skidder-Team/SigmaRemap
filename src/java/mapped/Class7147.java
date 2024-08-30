@@ -1,9 +1,9 @@
 package mapped;
 
-public final class Class7147 extends Class7144 {
+public final class Class7147 extends Effect {
    private static String[] field30713;
 
-   public Class7147(Class2146 var1, int var2) {
+   public Class7147(EffectType var1, int var2) {
       super(var1, var2);
    }
 

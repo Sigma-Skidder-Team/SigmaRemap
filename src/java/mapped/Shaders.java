@@ -1907,7 +1907,7 @@ public class Shaders {
             }
 
             MatrixStack var19 = new MatrixStack();
-            var19.method35293(Class7680.field32900.method25286(-90.0F));
+            var19.rotate(Vector3f.YP.rotationDegrees(-90.0F));
             method33054(var19);
             method33055(var19);
             field40594 = true;
@@ -2749,7 +2749,7 @@ public class Shaders {
                 method33023(field40765, field40655);
                 method33025(field40766, field40665);
                 method33025(field40767, field40666);
-                method33025(field40768, (float) field40591.gameSettings.field44672);
+                method33025(field40768, (float) field40591.gameSettings.gamma);
                 method33023(field40769, field40591.gameSettings.hideGUI ? 1 : 0);
                 method33025(field40770, field40661);
                 method33024(field40771, field40682, field40683);
@@ -3234,14 +3234,14 @@ public class Shaders {
                 if (var8 instanceof Class880) {
                     Class880 var12 = (Class880) var8;
                     field40665 = 0.0F;
-                    if (var12.method3033(Class8254.field35482)) {
+                    if (var12.method3033(Effects.NIGHT_VISION)) {
                         GameRenderer var13 = field40592;
                         field40665 = GameRenderer.method750(var12, var2);
                     }
 
                     field40666 = 0.0F;
-                    if (var12.method3033(Class8254.field35481)) {
-                        int var18 = var12.method3034(Class8254.field35481).method8628();
+                    if (var12.method3033(Effects.BLINDNESS)) {
+                        int var18 = var12.method3034(Effects.BLINDNESS).method8628();
                         field40666 = Class7944.method26832((float) var18 / 20.0F, 0.0F, 1.0F);
                     }
                 }
@@ -3492,8 +3492,8 @@ public class Shaders {
         Class7759.method25730((FloatBuffer) ((Buffer) field40961).position(0), (FloatBuffer) ((Buffer) field40960).position(0), field40953, field40952);
         ((Buffer) field40960).position(0);
         ((Buffer) field40961).position(0);
-        Class9367 var11 = var0.method35296().method32361();
-        Class9367 var12 = new Class9367(var11);
+        Matrix4f var11 = var0.getLast().getMatrix();
+        Matrix4f var12 = new Matrix4f(var11);
         var12.method35506();
         var12.method35524(field40628);
         ((Buffer) field40962).position(0);
@@ -3540,22 +3540,22 @@ public class Shaders {
         if (field40791) {
             GL32.glOrtho((double) (-field40790), (double) field40790, (double) (-field40790), (double) field40790, 0.05F, 256.0);
         } else {
-            Class7414.method23842(Class9367.method35511((double) field40789, (float) field40785 / (float) field40786, 0.05F, 256.0F));
+            Class7414.method23842(Matrix4f.method35511((double) field40789, (float) field40785 / (float) field40786, 0.05F, 256.0F));
         }
 
         var0.translate(0.0, 0.0, -100.0);
-        var0.method35293(Class7680.field32898.method25286(90.0F));
+        var0.rotate(Vector3f.field32898.rotationDegrees(90.0F));
         field40638 = field40591.world.method7001(var2);
         field40639 = field40638 < 0.75F ? field40638 + 0.25F : field40638 - 0.75F;
         float var11 = field40638 * -360.0F;
         float var12 = field40937 > 0.0F ? var11 % field40937 - field40937 * 0.5F : 0.0F;
         if ((double) field40639 <= 0.5) {
-            var0.method35293(Class7680.field32902.method25286(var11 - var12));
-            var0.method35293(Class7680.field32898.method25286(field40936));
+            var0.rotate(Vector3f.field32902.rotationDegrees(var11 - var12));
+            var0.rotate(Vector3f.field32898.rotationDegrees(field40936));
             field40640 = field40639;
         } else {
-            var0.method35293(Class7680.field32902.method25286(var11 + 180.0F - var12));
-            var0.method35293(Class7680.field32898.method25286(field40936));
+            var0.rotate(Vector3f.field32902.rotationDegrees(var11 + 180.0F - var12));
+            var0.rotate(Vector3f.field32898.rotationDegrees(field40936));
             field40640 = field40639 - 0.5F;
         }
 
@@ -3586,7 +3586,7 @@ public class Shaders {
         Class7759.method25730((FloatBuffer) ((Buffer) field40965).position(0), (FloatBuffer) ((Buffer) field40964).position(0), field40957, field40956);
         ((Buffer) field40964).position(0);
         ((Buffer) field40965).position(0);
-        Class9367 var20 = var0.method35296().method32361();
+        Matrix4f var20 = var0.getLast().getMatrix();
         var20.method35502((FloatBuffer) ((Buffer) field40966).position(0));
         Class7759.method25730((FloatBuffer) ((Buffer) field40967).position(0), (FloatBuffer) ((Buffer) field40966).position(0), field40959, field40958);
         ((Buffer) field40966).position(0);
@@ -3605,13 +3605,13 @@ public class Shaders {
     }
 
     public static void method33054(MatrixStack var0) {
-        var0.method35293(Class7680.field32902.method25286(field40936 * 1.0F));
+        var0.rotate(Vector3f.field32902.rotationDegrees(field40936 * 1.0F));
         method32984("preCelestialRotate");
     }
 
     public static void method33055(MatrixStack var0) {
-        Class9367 var1 = var0.method35296().method32361();
-        Class9367 var2 = new Class9367(var1);
+        Matrix4f var1 = var0.getLast().getMatrix();
+        Matrix4f var2 = new Matrix4f(var1);
         var2.method35506();
         var2.method35524(field40628);
         Class7759.method25728(field40620, field40628, field40626);
@@ -3628,8 +3628,8 @@ public class Shaders {
     }
 
     public static void method33056(MatrixStack var0) {
-        Class9367 var1 = var0.method35296().method32361();
-        Class9367 var2 = new Class9367(var1);
+        Matrix4f var1 = var0.getLast().getMatrix();
+        Matrix4f var2 = new Matrix4f(var1);
         var2.method35506();
         var2.method35524(field40628);
         Class7759.method25728(field40623, field40628, field40625);
@@ -3944,7 +3944,7 @@ public class Shaders {
         }
 
         Class7414.method23832();
-        Class7414.method23842(var0.method35296().method32361());
+        Class7414.method23842(var0.getLast().getMatrix());
         var1.begin(7, DefaultVertexFormats.field43341);
         var1.pos(var7, var13, var9).endVertex();
         var1.pos(var7, var11, var9).endVertex();
@@ -4271,7 +4271,7 @@ public class Shaders {
     public static void method33106(MatrixStack var0) {
         method32984("pre endHand");
         method32983("pre endHand");
-        var0.method35295();
+        var0.pop();
         GL32.glMatrixMode(5889);
         GL32.glPopMatrix();
         GL32.glMatrixMode(5888);

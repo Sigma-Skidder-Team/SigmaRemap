@@ -139,7 +139,7 @@ public abstract class AbstractOption {
       }
    );
    public static final Class5807 field25329 = new Class5807(
-      "options.gamma", 0.0, 1.0, 0.0F, var0 -> var0.field44672, (var0, var1) -> var0.field44672 = var1, (var0, var1) -> {
+      "options.gamma", 0.0, 1.0, 0.0F, var0 -> var0.gamma, (var0, var1) -> var0.gamma = var1, (var0, var1) -> {
          double var4 = var1.method18083(var1.method18090(var0));
          if (var4 != 0.0) {
             return var4 != 1.0 ? var1.method17954((int)(var4 * 100.0)) : var1.method17955(new TranslationTextComponent("options.gamma.max"));

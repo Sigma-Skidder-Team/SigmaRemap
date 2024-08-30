@@ -58,7 +58,7 @@ public class Class8039 {
       this.field34541.add(var6);
       this.field34543 = this.field34542.ticksExisted;
       this.field34547 = true;
-      if (var6.method37103() && !this.field34546 && this.field34542.method3066()) {
+      if (var6.method37103() && !this.field34546 && this.field34542.isAlive()) {
          this.field34546 = true;
          this.field34544 = this.field34542.ticksExisted;
          this.field34545 = this.field34544;
@@ -176,7 +176,7 @@ public class Class8039 {
 
    public void method27606() {
       int var3 = !this.field34546 ? 100 : 300;
-      if (this.field34547 && (!this.field34542.method3066() || this.field34542.ticksExisted - this.field34543 > var3)) {
+      if (this.field34547 && (!this.field34542.isAlive() || this.field34542.ticksExisted - this.field34543 > var3)) {
          boolean var4 = this.field34546;
          this.field34547 = false;
          this.field34546 = false;

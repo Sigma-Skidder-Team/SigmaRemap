@@ -165,7 +165,7 @@ public class Class2011 extends Class2009 {
                            }
                         }
 
-                        var13.method35295();
+                        var13.pop();
                      }
                   }
                }
@@ -186,7 +186,7 @@ public class Class2011 extends Class2009 {
             Class7457.method24119(var4, var29.method17060());
          }
 
-         Class7457.method24116(var4).stream().map(var5::method26203).forEach(BufferBuilder::method17065);
+         Class7457.method24116(var4).stream().map(var5::method26203).forEach(BufferBuilder::finishDrawing);
 
          for (RenderType var36 : Class9016.field41242) {
             var4.method24108(var36, (BitSet)null);

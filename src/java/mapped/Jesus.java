@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.module.impl.item.AutoMLG;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -28,7 +29,7 @@ public class Jesus extends Module {
 
    @EventTarget
    public void method16945(Class4398 var1) {
-      if (this.isEnabled() && mc.world != null && !Class5258.method16421()) {
+      if (this.isEnabled() && mc.world != null && !AutoMLG.method16421()) {
          if (mc.world.getBlockState(var1.method13902()).method23384() == Class8649.field38940
             || mc.world.getBlockState(var1.method13902()).method23384() == Class8649.field38941
             || mc.world.getBlockState(var1.method13902()).method23384() == Class8649.field38943) {
@@ -85,7 +86,7 @@ public class Jesus extends Module {
    @EventTarget
    @LowerPriority
    public void method16947(Class4435 var1) {
-      if (this.isEnabled() && mc.world != null && !Class5258.method16421()) {
+      if (this.isEnabled() && mc.world != null && !AutoMLG.method16421()) {
          if (this.method16951(mc.player.boundingBox) && !mc.player.method3331()) {
             BlockState var4 = mc.world.getBlockState(mc.player.getPosition());
             if (var4 != null && !var4.method23449().method23474()) {

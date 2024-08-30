@@ -5,7 +5,7 @@ public class Class9155 {
    private static final float field42035 = 1.0F / (float)Math.cos((float) (Math.PI / 4)) - 1.0F;
 
    public Class8557 method34175(
-           Class7680 var1, Class7680 var2, Class9163 var3, TextureAtlasSprite var4, Direction var5, Class1902 var6, Class7360 var7, boolean var8, ResourceLocation var9
+           Vector3f var1, Vector3f var2, Class9163 var3, TextureAtlasSprite var4, Direction var5, Class1902 var6, Class7360 var7, boolean var8, ResourceLocation var9
    ) {
       Class9840 var12 = var3.field42069;
       if (var6.method8170()) {
@@ -14,7 +14,7 @@ public class Class9155 {
 
       float[] var13 = new float[var12.field45939.length];
       System.arraycopy(var12.field45939, 0, var13, 0, var13.length);
-      float var14 = var4.method7471();
+      float var14 = var4.getUvShrinkRatio();
       float var15 = (var12.field45939[0] + var12.field45939[0] + var12.field45939[2] + var12.field45939[2]) / 4.0F;
       float var16 = (var12.field45939[1] + var12.field45939[1] + var12.field45939[3] + var12.field45939[3]) / 4.0F;
       var12.field45939[0] = MathHelper.lerp(var14, var12.field45939[0], var15);
@@ -38,7 +38,7 @@ public class Class9155 {
    }
 
    public static Class9840 method34176(Class9840 var0, Direction var1, Class6979 var2, ResourceLocation var3) {
-      Class9367 var6 = Class8539.method30384(var2, var1, () -> "Unable to resolve UVLock for model: " + var3).method21548();
+      Matrix4f var6 = Class8539.method30384(var2, var1, () -> "Unable to resolve UVLock for model: " + var3).method21548();
       float var7 = var0.method38890(var0.method38893(0));
       float var8 = var0.method38891(var0.method38893(0));
       Class7755 var9 = new Class7755(var7 / 16.0F, var8 / 16.0F, 0.0F, 1.0F);
@@ -72,7 +72,7 @@ public class Class9155 {
       }
 
       float var21 = (float)Math.toRadians((double)var0.field45940);
-      Class7680 var22 = new Class7680(MathHelper.cos(var21), MathHelper.sin(var21), 0.0F);
+      Vector3f var22 = new Vector3f(MathHelper.cos(var21), MathHelper.sin(var21), 0.0F);
       Class8967 var23 = new Class8967(var6);
       var22.method25282(var23);
       int var24 = Math.floorMod(-((int)Math.round(Math.toDegrees(Math.atan2((double)var22.method25270(), (double)var22.method25269())) / 90.0)) * 90, 360);
@@ -90,7 +90,7 @@ public class Class9155 {
       return var11;
    }
 
-   private float[] method34178(Class7680 var1, Class7680 var2) {
+   private float[] method34178(Vector3f var1, Vector3f var2) {
       float[] var5 = new float[Direction.values().length];
       var5[Class8993.field41132] = var1.method25269() / 16.0F;
       var5[Class8993.field41131] = var1.method25270() / 16.0F;
@@ -103,14 +103,14 @@ public class Class9155 {
 
    private void method34179(int[] var1, int var2, Direction var3, Class9840 var4, float[] var5, TextureAtlasSprite var6, Class6979 var7, Class7360 var8, boolean var9) {
       Class9827 var12 = Class2264.method8992(var3).method8993(var2);
-      Class7680 var13 = new Class7680(var5[var12.field45906], var5[var12.field45907], var5[var12.field45908]);
+      Vector3f var13 = new Vector3f(var5[var12.field45906], var5[var12.field45907], var5[var12.field45908]);
       this.method34181(var13, var8);
       this.method34182(var13, var7);
       Class7832.method26237(var13);
       this.method34180(var1, var2, var13, var6, var4);
    }
 
-   private void method34180(int[] var1, int var2, Class7680 var3, TextureAtlasSprite var4, Class9840 var5) {
+   private void method34180(int[] var1, int var2, Vector3f var3, TextureAtlasSprite var4, Class9840 var5) {
       int var8 = var1.length / 4;
       int var9 = var2 * var8;
       var1[var9] = Float.floatToRawIntBits(var3.method25269());
@@ -121,22 +121,22 @@ public class Class9155 {
       var1[var9 + 4 + 1] = Float.floatToRawIntBits(var4.method7464((double)var5.method38891(var2)));
    }
 
-   private void method34181(Class7680 var1, Class7360 var2) {
+   private void method34181(Vector3f var1, Class7360 var2) {
       if (var2 != null) {
-         Class7680 var5;
-         Class7680 var6;
+         Vector3f var5;
+         Vector3f var6;
          switch (Class9128.field41940[var2.field31516.ordinal()]) {
             case 1:
-               var5 = new Class7680(1.0F, 0.0F, 0.0F);
-               var6 = new Class7680(0.0F, 1.0F, 1.0F);
+               var5 = new Vector3f(1.0F, 0.0F, 0.0F);
+               var6 = new Vector3f(0.0F, 1.0F, 1.0F);
                break;
             case 2:
-               var5 = new Class7680(0.0F, 1.0F, 0.0F);
-               var6 = new Class7680(1.0F, 0.0F, 1.0F);
+               var5 = new Vector3f(0.0F, 1.0F, 0.0F);
+               var6 = new Vector3f(1.0F, 0.0F, 1.0F);
                break;
             case 3:
-               var5 = new Class7680(0.0F, 0.0F, 1.0F);
-               var6 = new Class7680(1.0F, 1.0F, 0.0F);
+               var5 = new Vector3f(0.0F, 0.0F, 1.0F);
+               var6 = new Vector3f(1.0F, 1.0F, 0.0F);
                break;
             default:
                throw new IllegalArgumentException("There are only 3 axes");
@@ -155,17 +155,17 @@ public class Class9155 {
             var6.method25275(1.0F, 1.0F, 1.0F);
          }
 
-         this.method34183(var1, var2.field31515.method25287(), new Class9367(var7), var6);
+         this.method34183(var1, var2.field31515.method25287(), new Matrix4f(var7), var6);
       }
    }
 
-   public void method34182(Class7680 var1, Class6979 var2) {
+   public void method34182(Vector3f var1, Class6979 var2) {
       if (var2 != Class6979.method21542()) {
-         this.method34183(var1, new Class7680(0.5F, 0.5F, 0.5F), var2.method21548(), new Class7680(1.0F, 1.0F, 1.0F));
+         this.method34183(var1, new Vector3f(0.5F, 0.5F, 0.5F), var2.method21548(), new Vector3f(1.0F, 1.0F, 1.0F));
       }
    }
 
-   private void method34183(Class7680 var1, Class7680 var2, Class9367 var3, Class7680 var4) {
+   private void method34183(Vector3f var1, Vector3f var2, Matrix4f var3, Vector3f var4) {
       Class7755 var7 = new Class7755(
          var1.method25269() - var2.method25269(), var1.method25270() - var2.method25270(), var1.method25271() - var2.method25271(), 1.0F
       );
@@ -177,14 +177,14 @@ public class Class9155 {
    public static Direction method34184(int[] var0) {
       int var3 = var0.length / 4;
       int var4 = var3 * 2;
-      Class7680 var5 = new Class7680(Float.intBitsToFloat(var0[0]), Float.intBitsToFloat(var0[1]), Float.intBitsToFloat(var0[2]));
-      Class7680 var6 = new Class7680(Float.intBitsToFloat(var0[var3]), Float.intBitsToFloat(var0[var3 + 1]), Float.intBitsToFloat(var0[var3 + 2]));
-      Class7680 var7 = new Class7680(Float.intBitsToFloat(var0[var4]), Float.intBitsToFloat(var0[var4 + 1]), Float.intBitsToFloat(var0[var4 + 2]));
-      Class7680 var8 = var5.method25287();
+      Vector3f var5 = new Vector3f(Float.intBitsToFloat(var0[0]), Float.intBitsToFloat(var0[1]), Float.intBitsToFloat(var0[2]));
+      Vector3f var6 = new Vector3f(Float.intBitsToFloat(var0[var3]), Float.intBitsToFloat(var0[var3 + 1]), Float.intBitsToFloat(var0[var3 + 2]));
+      Vector3f var7 = new Vector3f(Float.intBitsToFloat(var0[var4]), Float.intBitsToFloat(var0[var4 + 1]), Float.intBitsToFloat(var0[var4 + 2]));
+      Vector3f var8 = var5.method25287();
       var8.method25278(var6);
-      Class7680 var9 = var7.method25287();
+      Vector3f var9 = var7.method25287();
       var9.method25278(var6);
-      Class7680 var10 = var9.method25287();
+      Vector3f var10 = var9.method25287();
       var10.method25281(var8);
       var10.method25280();
       Direction var11 = null;
@@ -192,7 +192,7 @@ public class Class9155 {
 
       for (Direction var16 : Direction.values()) {
          Class1998 var17 = var16.method556();
-         Class7680 var18 = new Class7680((float)var17.getX(), (float)var17.getY(), (float)var17.getZ());
+         Vector3f var18 = new Vector3f((float)var17.getX(), (float)var17.getY(), (float)var17.getZ());
          float var19 = var10.method25279(var18);
          if (var19 >= 0.0F && var19 > var12) {
             var12 = var19;

@@ -21,11 +21,11 @@ public class Class6391 {
       this.field27975 = Collections.<IBakedModel>emptyList();
    }
 
-   public Class6391(Class8968 var1, Class7496 var2, Function<ResourceLocation, Class7495> var3, List<Class7781> var4) {
+   public Class6391(ModelBakery var1, Class7496 var2, Function<ResourceLocation, Class7495> var3, List<Class7781> var4) {
       this(var1, var2, var3, var1.method32857()::method7289, var4);
    }
 
-   public Class6391(Class8968 var1, Class7495 var2, Function<ResourceLocation, Class7495> var3, Function<Class7826, TextureAtlasSprite> var4, List<Class7781> var5) {
+   public Class6391(ModelBakery var1, Class7495 var2, Function<ResourceLocation, Class7495> var3, Function<Class7826, TextureAtlasSprite> var4, List<Class7781> var5) {
       this.field27975 = var5.stream().<IBakedModel>map(var4x -> {
          Class7495 var7 = (Class7495)var3.apply(var4x.method25780());
          return !Objects.equals(var7, var2) ? var1.method32848(var4x.method25780(), Class1901.field11159, var4) : null;

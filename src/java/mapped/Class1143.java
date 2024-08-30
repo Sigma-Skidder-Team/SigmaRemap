@@ -19,7 +19,7 @@ public class Class1143 extends Class1135 {
    @Override
    public void method1921() {
       this.field6209 = new Class1296(this.mc, this.field4564, this.field4565, 32, this.field4565 - 32, 25);
-      if (!Class9798.method38643()) {
+      if (!InputMappings.method38643()) {
          this.field6209.method6131(field6210);
       } else {
          this.field6209.method6131(Stream.<AbstractOption>concat(Arrays.stream(field6210), Stream.of(AbstractOption.field25332)).<AbstractOption>toArray(AbstractOption[]::new));

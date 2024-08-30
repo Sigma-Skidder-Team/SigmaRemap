@@ -30,7 +30,7 @@ public class Class1269 extends AbstractGui implements Class1270 {
       if (this.field6746 && !this.field6745.isEmpty()) {
          RenderSystem.pushMatrix();
          RenderSystem.enableBlend();
-         RenderSystem.method27938();
+         RenderSystem.defaultBlendFunc();
          Vector3d var4 = new Vector3d(this.field6744.player.getPosX(), this.field6744.player.method3442(), this.field6744.player.getPosZ());
          Vector3d var5 = new Vector3d(0.0, 0.0, -1.0)
             .method11350(-this.field6744.player.rotationPitch * (float) (Math.PI / 180.0))

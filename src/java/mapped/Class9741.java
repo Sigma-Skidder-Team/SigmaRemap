@@ -103,7 +103,7 @@ public class Class9741 {
             return 0;
          }
       } else {
-         return !Class7944.method26911() ? 3694022 : Class9680.method37891((Class7144)null, var3);
+         return !Class7944.method26911() ? 3694022 : Class9680.method37891((Effect)null, var3);
       }
    }
 
@@ -148,7 +148,7 @@ public class Class9741 {
       if (!var5.isEmpty()) {
          for (Class2023 var8 : var5) {
             TranslationTextComponent var9 = new TranslationTextComponent(var8.method8636());
-            Class7144 var10 = var8.method8627();
+            Effect var10 = var8.method8627();
             Map<Class4869, Class9689> var11 = var10.method22299();
             if (!var11.isEmpty()) {
                for (Entry var13 : var11.entrySet()) {
@@ -180,7 +180,7 @@ public class Class9741 {
             Class9689 var22 = (Class9689)var21.getSecond();
             double var16 = var22.method37933();
             double var18;
-            if (var22.method37932() != Class2045.field13353 && var22.method37932() != Class2045.field13354) {
+            if (var22.method37932() != AttributeModifierOperation.field13353 && var22.method37932() != AttributeModifierOperation.MULTIPLY_TOTAL) {
                var18 = var22.method37933();
             } else {
                var18 = var22.method37933() * 100.0;

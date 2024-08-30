@@ -3,6 +3,7 @@ package com.mentalfrostbyte.jello.gui;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.module.impl.gui.classic.TabGUI;
 import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.FileUtil;
 import mapped.*;
@@ -241,7 +242,7 @@ public class GuiManager {
             }
 
             if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
-                float var7 = 0.5F + Class5151.field23380.calcPercent() * 0.5F;
+                float var7 = 0.5F + TabGUI.field23380.calcPercent() * 0.5F;
                 GL11.glAlphaFunc(516, 0.1F);
                 RenderUtil.method11424(4.0F, 2.0F, 106.0F, 28.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.6F * var7));
                 RenderUtil.method11439(ClassicDecryption.bold22, 9.0F, 2.0F, "Sigma", Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F * var7));

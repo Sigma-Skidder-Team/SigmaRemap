@@ -77,7 +77,7 @@ public class Class7365 extends Class7362 {
             this.field31529.method4097(5.0F);
             this.field31529.method4109(200);
             this.field31529.method4105(Class7940.field34056);
-            this.field31529.method4101(new Class2023(Class8254.field35473));
+            this.field31529.method4101(new Class2023(Effects.INSTANT_DAMAGE));
             this.field31519.world.method6916(this.field31529);
          }
       } else if (this.field31528 < 4) {

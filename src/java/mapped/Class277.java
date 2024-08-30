@@ -9,7 +9,7 @@ public abstract class Class277 extends Class269<Class8226> implements AutoClosea
    public Class277(TextureManager var1, ResourceLocation var2, String var3) {
       this.field1060 = var3;
       this.field1059 = new AtlasTexture(var2);
-      var1.method1073(this.field1059.method1100(), this.field1059);
+      var1.method1073(this.field1059.getTextureLocation(), this.field1059);
    }
 
    public abstract Stream<ResourceLocation> method1017();

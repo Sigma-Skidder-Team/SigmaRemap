@@ -61,8 +61,8 @@ public class Bind extends Command {
             int var8 = Client.getInstance().getModuleManager().method14668().method13729((Module)var6);
             String var9 = null;
 
-            for (Entry var11 : Class8115.field34877.entrySet()) {
-               if (((String)var11.getKey()).startsWith(var7) && ((Class8115)var11.getValue()).field34875 == var8) {
+            for (Entry var11 : InputMappingsInput.REGISTRY.entrySet()) {
+               if (((String)var11.getKey()).startsWith(var7) && ((InputMappingsInput)var11.getValue()).keyCode == var8) {
                   var9 = ((String)var11.getKey()).substring(var7.length());
                }
             }
@@ -80,13 +80,13 @@ public class Bind extends Command {
       if (!var1.equals("none") && !var1.equals("none")) {
          String var4 = "key.keyboard.";
 
-         for (Entry var6 : Class8115.field34877.entrySet()) {
+         for (Entry var6 : InputMappingsInput.REGISTRY.entrySet()) {
             if (((String)var6.getKey()).startsWith(var4)) {
                String var7 = ((String)var6.getKey()).substring(var4.length());
                var7 = var7.replace("keypad.", "");
                var7 = var7.replace(".", "_");
                if (var1.equals(var7)) {
-                  return ((Class8115)var6.getValue()).field34875;
+                  return ((InputMappingsInput)var6.getValue()).keyCode;
                }
             }
          }

@@ -56,7 +56,7 @@ public class Class2676 extends Class2672 {
    @Override
    public void method10890() {
       Class1019 var3 = Class1032.method4603(this.field17070);
-      if (var3 != null && var3.method3066()) {
+      if (var3 != null && var3.isAlive()) {
          var3.method4518(Class112.field400);
       }
    }

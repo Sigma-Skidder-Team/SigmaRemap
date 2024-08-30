@@ -25,7 +25,7 @@ public class Class5348 extends Module {
         if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
             this.field23904 = false;
         } else {
-            mc.gameSettings.keyBindSneak.field13071 = false;
+            mc.gameSettings.keyBindSneak.pressed = false;
             this.field23904 = true;
         }
 
@@ -35,7 +35,7 @@ public class Class5348 extends Module {
     @EventTarget
     private void method16780(Class4430 var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.keyBindSneak.field13070.field34875) {
+            if (var1.method13977() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
                 var1.method13900(true);
                 this.field23904 = true;
             }
@@ -45,7 +45,7 @@ public class Class5348 extends Module {
     @EventTarget
     private void method16781(Class4426 var1) {
         if (this.isEnabled()) {
-            if (var1.method13973() == mc.gameSettings.keyBindSneak.field13070.field34875) {
+            if (var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
                 var1.method13900(true);
                 this.field23904 = false;
             }
@@ -101,8 +101,8 @@ public class Class5348 extends Module {
                 var1.method13920(true);
                 var1.method13908(true);
                 this.field23903 = !this.field23904
-                        ? (!mc.gameSettings.field44636.isKeyDown() ? 1 : 3)
-                        : (!mc.gameSettings.field44636.isKeyDown() ? 2 : 1);
+                        ? (!mc.gameSettings.keyBindJump.isKeyDown() ? 1 : 3)
+                        : (!mc.gameSettings.keyBindJump.isKeyDown() ? 2 : 1);
             }
         }
     }

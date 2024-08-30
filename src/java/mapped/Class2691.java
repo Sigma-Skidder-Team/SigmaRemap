@@ -35,7 +35,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
    }
 
    private boolean method10908() {
-      return this.field17125.method4232() != null && this.field17125.method4232().method3066();
+      return this.field17125.method4232() != null && this.field17125.method4232().isAlive();
    }
 
    @Override

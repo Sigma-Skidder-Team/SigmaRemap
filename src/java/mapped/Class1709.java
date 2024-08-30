@@ -24,6 +24,6 @@ public class Class1709 {
    public void method7443(float[] var1) {
    }
 
-   public void method7444(Class9367 var1) {
+   public void method7444(Matrix4f var1) {
    }
 }

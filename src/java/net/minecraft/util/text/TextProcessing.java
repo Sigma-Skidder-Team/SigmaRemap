@@ -1,7 +1,7 @@
 package net.minecraft.util.text;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.Class4411;
+import com.mentalfrostbyte.jello.event.impl.TextReplaceEvent;
 import mapped.Class2341;
 import mapped.Class2545;
 
@@ -81,11 +81,11 @@ public class TextProcessing {
    }
 
    public static boolean func_238339_a_(String p_238339_0_, int p_238339_1_, Style p_238339_2_, Class2545 p_238339_3_) {
-      return func_238340_a_(p_238339_0_, p_238339_1_, p_238339_2_, p_238339_2_, p_238339_3_);
+      return drawString(p_238339_0_, p_238339_1_, p_238339_2_, p_238339_2_, p_238339_3_);
    }
 
-   public static boolean func_238340_a_(String p_238340_0_, int p_238340_1_, Style p_238340_2_, Style p_238340_3_, Class2545 p_238340_4_) {
-      Class4411 i = new Class4411(p_238340_0_);
+   public static boolean drawString(String p_238340_0_, int p_238340_1_, Style p_238340_2_, Style p_238340_3_, Class2545 p_238340_4_) {
+      TextReplaceEvent i = new TextReplaceEvent(p_238340_0_);
       Client.getInstance().getEventManager().call(i);
       p_238340_0_ = i.method13958();
       int style = p_238340_0_.length();

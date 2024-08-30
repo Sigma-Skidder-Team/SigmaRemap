@@ -14,7 +14,7 @@ import java.util.UUID;
 
 public class Class1057 extends Class1056 implements Class1008 {
    private static final UUID field5839 = UUID.fromString("7E0292F2-9434-48D5-A29F-9583AF7DF27F");
-   private static final Class9689 field5840 = new Class9689(field5839, "Covered armor bonus", 20.0, Class2045.field13352);
+   private static final Class9689 field5840 = new Class9689(field5839, "Covered armor bonus", 20.0, AttributeModifierOperation.ADDITION);
    public static final DataParameter<Direction> field5841 = EntityDataManager.<Direction>method35441(Class1057.class, Class7784.field33403);
    public static final DataParameter<Optional<BlockPos>> field5842 = EntityDataManager.<Optional<BlockPos>>method35441(Class1057.class, Class7784.field33402);
    public static final DataParameter<Byte> field5843 = EntityDataManager.<Byte>method35441(Class1057.class, Class7784.field33390);
@@ -82,7 +82,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    public static Class7037 method4843() {
-      return Class1006.method4220().method21849(Class9173.field42105, 30.0);
+      return Class1006.method4220().method21849(Attributes.field42105, 30.0);
    }
 
    @Override
@@ -266,7 +266,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    public boolean method4846() {
-      if (!this.method4305() && this.method3066()) {
+      if (!this.method4305() && this.isAlive()) {
          BlockPos var3 = this.getPosition();
 
          for (int var4 = 0; var4 < 5; var4++) {
@@ -338,7 +338,7 @@ public class Class1057 extends Class1056 implements Class1008 {
       if (!super.method2741(var1, var2)) {
          return false;
       } else {
-         if ((double)this.method3042() < (double)this.method3075() * 0.5 && this.rand.nextInt(4) == 0) {
+         if ((double)this.getHealth() < (double)this.method3075() * 0.5 && this.rand.nextInt(4) == 0) {
             this.method4846();
          }
 
@@ -352,7 +352,7 @@ public class Class1057 extends Class1056 implements Class1008 {
 
    @Override
    public boolean method3306() {
-      return this.method3066();
+      return this.isAlive();
    }
 
    public Direction method4848() {
@@ -374,11 +374,11 @@ public class Class1057 extends Class1056 implements Class1008 {
 
    public void method4852(int var1) {
       if (!this.world.isRemote) {
-         this.method3085(Class9173.field42113).method38670(field5840);
+         this.method3085(Attributes.field42113).method38670(field5840);
          if (var1 != 0) {
             this.method2863(Sounds.field27052, 1.0F, 1.0F);
          } else {
-            this.method3085(Class9173.field42113).method38668(field5840);
+            this.method3085(Attributes.field42113).method38668(field5840);
             this.method2863(Sounds.field27048, 1.0F, 1.0F);
          }
       }

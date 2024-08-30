@@ -157,7 +157,7 @@ public class Class8684 {
    }
 
    public static Class290 method31265(ResourceLocation var0) {
-      Class290 var3 = Class7944.method26861().method1076(var0);
+      Class290 var3 = Class7944.method26861().getTexture(var0);
       if (var3 == null) {
          if (Class7944.method26866(var0)) {
             Class293 var4 = new Class293(var0);
@@ -222,13 +222,13 @@ public class Class8684 {
       Class7944.method26861().method1073(var3, var2);
    }
 
-   public static void method31270(Class8968 var0) {
+   public static void method31270(ModelBakery var0) {
       Class7992.method27245();
       Class7992.method27251(var0);
    }
 
    public static void method31271(AtlasTexture var0) {
-      if (var0.method1100().equals(AtlasTexture.LOCATION_BLOCKS_TEXTURE)) {
+      if (var0.getTextureLocation().equals(AtlasTexture.LOCATION_BLOCKS_TEXTURE)) {
          Class9619.method37482(var0);
          Class7992.method27249(var0);
          Class9422.method36142(var0);
@@ -236,7 +236,7 @@ public class Class8684 {
    }
 
    public static void method31272(AtlasTexture var0) {
-      if (var0.method1100().equals(AtlasTexture.LOCATION_BLOCKS_TEXTURE)) {
+      if (var0.getTextureLocation().equals(AtlasTexture.LOCATION_BLOCKS_TEXTURE)) {
          Class9619.method37484(var0);
          Class7992.method27250(var0);
          Class9422.method36145(var0);

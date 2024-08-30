@@ -426,7 +426,7 @@ public abstract class Class6395 {
       this.field27991.add(var12);
       this.field27992.put(var12.getUniqueID(), var12);
       var12.method2729();
-      var12.method3043(var12.method3042());
+      var12.method3043(var12.getHealth());
       if (var19) {
          var12.field4855
             .sendPacket(

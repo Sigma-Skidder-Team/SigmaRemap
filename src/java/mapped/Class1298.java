@@ -154,19 +154,19 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
          float var11 = 32.0F;
          var10.begin(7, DefaultVertexFormats.field43346);
          var10.pos((double)this.field6876, (double)this.field6874, 0.0)
-            .method17027((float)this.field6876 / 32.0F, (float)(this.field6874 + (int)this.field6880) / 32.0F)
+            .tex((float)this.field6876 / 32.0F, (float)(this.field6874 + (int)this.field6880) / 32.0F)
             .color(32, 32, 32, 255)
             .endVertex();
          var10.pos((double)this.field6875, (double)this.field6874, 0.0)
-            .method17027((float)this.field6875 / 32.0F, (float)(this.field6874 + (int)this.field6880) / 32.0F)
+            .tex((float)this.field6875 / 32.0F, (float)(this.field6874 + (int)this.field6880) / 32.0F)
             .color(32, 32, 32, 255)
             .endVertex();
          var10.pos((double)this.field6875, (double)this.field6873, 0.0)
-            .method17027((float)this.field6875 / 32.0F, (float)(this.field6873 + (int)this.field6880) / 32.0F)
+            .tex((float)this.field6875 / 32.0F, (float)(this.field6873 + (int)this.field6880) / 32.0F)
             .color(32, 32, 32, 255)
             .endVertex();
          var10.pos((double)this.field6876, (double)this.field6873, 0.0)
-            .method17027((float)this.field6876 / 32.0F, (float)(this.field6873 + (int)this.field6880) / 32.0F)
+            .tex((float)this.field6876 / 32.0F, (float)(this.field6873 + (int)this.field6880) / 32.0F)
             .color(32, 32, 32, 255)
             .endVertex();
          var9.draw();
@@ -187,16 +187,16 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
          RenderSystem.disableTexture();
          byte var14 = 4;
          var10.begin(7, DefaultVertexFormats.field43346);
-         var10.pos((double)this.field6876, (double)(this.field6873 + 4), 0.0).method17027(0.0F, 1.0F).color(0, 0, 0, 0).endVertex();
-         var10.pos((double)this.field6875, (double)(this.field6873 + 4), 0.0).method17027(1.0F, 1.0F).color(0, 0, 0, 0).endVertex();
-         var10.pos((double)this.field6875, (double)this.field6873, 0.0).method17027(1.0F, 0.0F).color(0, 0, 0, 255).endVertex();
-         var10.pos((double)this.field6876, (double)this.field6873, 0.0).method17027(0.0F, 0.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)this.field6876, (double)(this.field6873 + 4), 0.0).tex(0.0F, 1.0F).color(0, 0, 0, 0).endVertex();
+         var10.pos((double)this.field6875, (double)(this.field6873 + 4), 0.0).tex(1.0F, 1.0F).color(0, 0, 0, 0).endVertex();
+         var10.pos((double)this.field6875, (double)this.field6873, 0.0).tex(1.0F, 0.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)this.field6876, (double)this.field6873, 0.0).tex(0.0F, 0.0F).color(0, 0, 0, 255).endVertex();
          var9.draw();
          var10.begin(7, DefaultVertexFormats.field43346);
-         var10.pos((double)this.field6876, (double)this.field6874, 0.0).method17027(0.0F, 1.0F).color(0, 0, 0, 255).endVertex();
-         var10.pos((double)this.field6875, (double)this.field6874, 0.0).method17027(1.0F, 1.0F).color(0, 0, 0, 255).endVertex();
-         var10.pos((double)this.field6875, (double)(this.field6874 - 4), 0.0).method17027(1.0F, 0.0F).color(0, 0, 0, 0).endVertex();
-         var10.pos((double)this.field6876, (double)(this.field6874 - 4), 0.0).method17027(0.0F, 0.0F).color(0, 0, 0, 0).endVertex();
+         var10.pos((double)this.field6876, (double)this.field6874, 0.0).tex(0.0F, 1.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)this.field6875, (double)this.field6874, 0.0).tex(1.0F, 1.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)this.field6875, (double)(this.field6874 - 4), 0.0).tex(1.0F, 0.0F).color(0, 0, 0, 0).endVertex();
+         var10.pos((double)this.field6876, (double)(this.field6874 - 4), 0.0).tex(0.0F, 0.0F).color(0, 0, 0, 0).endVertex();
          var9.draw();
          int var15 = this.method6159();
          if (var15 > 0) {
@@ -208,22 +208,22 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
             }
 
             var10.begin(7, DefaultVertexFormats.field43346);
-            var10.pos((double)var7, (double)this.field6874, 0.0).method17027(0.0F, 1.0F).color(0, 0, 0, 255).endVertex();
-            var10.pos((double)var8, (double)this.field6874, 0.0).method17027(1.0F, 1.0F).color(0, 0, 0, 255).endVertex();
-            var10.pos((double)var8, (double)this.field6873, 0.0).method17027(1.0F, 0.0F).color(0, 0, 0, 255).endVertex();
-            var10.pos((double)var7, (double)this.field6873, 0.0).method17027(0.0F, 0.0F).color(0, 0, 0, 255).endVertex();
+            var10.pos((double)var7, (double)this.field6874, 0.0).tex(0.0F, 1.0F).color(0, 0, 0, 255).endVertex();
+            var10.pos((double)var8, (double)this.field6874, 0.0).tex(1.0F, 1.0F).color(0, 0, 0, 255).endVertex();
+            var10.pos((double)var8, (double)this.field6873, 0.0).tex(1.0F, 0.0F).color(0, 0, 0, 255).endVertex();
+            var10.pos((double)var7, (double)this.field6873, 0.0).tex(0.0F, 0.0F).color(0, 0, 0, 255).endVertex();
             var9.draw();
             var10.begin(7, DefaultVertexFormats.field43346);
-            var10.pos((double)var7, (double)(var17 + var16), 0.0).method17027(0.0F, 1.0F).color(128, 128, 128, 255).endVertex();
-            var10.pos((double)var8, (double)(var17 + var16), 0.0).method17027(1.0F, 1.0F).color(128, 128, 128, 255).endVertex();
-            var10.pos((double)var8, (double)var17, 0.0).method17027(1.0F, 0.0F).color(128, 128, 128, 255).endVertex();
-            var10.pos((double)var7, (double)var17, 0.0).method17027(0.0F, 0.0F).color(128, 128, 128, 255).endVertex();
+            var10.pos((double)var7, (double)(var17 + var16), 0.0).tex(0.0F, 1.0F).color(128, 128, 128, 255).endVertex();
+            var10.pos((double)var8, (double)(var17 + var16), 0.0).tex(1.0F, 1.0F).color(128, 128, 128, 255).endVertex();
+            var10.pos((double)var8, (double)var17, 0.0).tex(1.0F, 0.0F).color(128, 128, 128, 255).endVertex();
+            var10.pos((double)var7, (double)var17, 0.0).tex(0.0F, 0.0F).color(128, 128, 128, 255).endVertex();
             var9.draw();
             var10.begin(7, DefaultVertexFormats.field43346);
-            var10.pos((double)var7, (double)(var17 + var16 - 1), 0.0).method17027(0.0F, 1.0F).color(192, 192, 192, 255).endVertex();
-            var10.pos((double)(var8 - 1), (double)(var17 + var16 - 1), 0.0).method17027(1.0F, 1.0F).color(192, 192, 192, 255).endVertex();
-            var10.pos((double)(var8 - 1), (double)var17, 0.0).method17027(1.0F, 0.0F).color(192, 192, 192, 255).endVertex();
-            var10.pos((double)var7, (double)var17, 0.0).method17027(0.0F, 0.0F).color(192, 192, 192, 255).endVertex();
+            var10.pos((double)var7, (double)(var17 + var16 - 1), 0.0).tex(0.0F, 1.0F).color(192, 192, 192, 255).endVertex();
+            var10.pos((double)(var8 - 1), (double)(var17 + var16 - 1), 0.0).tex(1.0F, 1.0F).color(192, 192, 192, 255).endVertex();
+            var10.pos((double)(var8 - 1), (double)var17, 0.0).tex(1.0F, 0.0F).color(192, 192, 192, 255).endVertex();
+            var10.pos((double)var7, (double)var17, 0.0).tex(0.0F, 0.0F).color(192, 192, 192, 255).endVertex();
             var9.draw();
          }
 
@@ -415,16 +415,16 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = 32.0F;
       var8.begin(7, DefaultVertexFormats.field43346);
-      var8.pos((double)this.field6876, (double)var2, 0.0).method17027(0.0F, (float)var2 / 32.0F).color(64, 64, 64, var4).endVertex();
+      var8.pos((double)this.field6876, (double)var2, 0.0).tex(0.0F, (float)var2 / 32.0F).color(64, 64, 64, var4).endVertex();
       var8.pos((double)(this.field6876 + this.field6871), (double)var2, 0.0)
-         .method17027((float)this.field6871 / 32.0F, (float)var2 / 32.0F)
+         .tex((float)this.field6871 / 32.0F, (float)var2 / 32.0F)
          .color(64, 64, 64, var4)
          .endVertex();
       var8.pos((double)(this.field6876 + this.field6871), (double)var1, 0.0)
-         .method17027((float)this.field6871 / 32.0F, (float)var1 / 32.0F)
+         .tex((float)this.field6871 / 32.0F, (float)var1 / 32.0F)
          .color(64, 64, 64, var3)
          .endVertex();
-      var8.pos((double)this.field6876, (double)var1, 0.0).method17027(0.0F, (float)var1 / 32.0F).color(64, 64, 64, var3).endVertex();
+      var8.pos((double)this.field6876, (double)var1, 0.0).tex(0.0F, (float)var1 / 32.0F).color(64, 64, 64, var3).endVertex();
       var7.draw();
    }
 

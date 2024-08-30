@@ -53,7 +53,7 @@ public class Class7531 extends Class7530 {
 
    public static boolean method24612(Class1026 var0, Class7699 var1) {
       return var0 != null && var1 != null && var1.method25394() != null
-         ? var0.method3066() && var0.method4547() && var0.method3021() <= 2400 && var0.world.method6812() == var1.method25394().method6812()
+         ? var0.isAlive() && var0.method4547() && var0.method3021() <= 2400 && var0.world.method6812() == var1.method25394().method6812()
          : false;
    }
 
@@ -91,7 +91,7 @@ public class Class7531 extends Class7530 {
             boolean var15 = false;
             if (var14.method25395()) {
                if (var14.method25400() >= var14.method25399()) {
-                  var1.method3040(Class8254.field35497);
+                  var1.removeEffects(Effects.BAD_OMEN);
                   var1.field4855.sendPacket(new Class5464(var1, (byte)43));
                } else {
                   var15 = true;

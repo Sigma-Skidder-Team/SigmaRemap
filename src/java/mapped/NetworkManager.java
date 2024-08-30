@@ -44,13 +44,13 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
    public static final Marker field38640 = MarkerManager.getMarker("NETWORK");
    public static final Marker field38641 = MarkerManager.getMarker("NETWORK_PACKETS", field38640);
    public static final AttributeKey<ProtocolType> field38642 = AttributeKey.valueOf("protocol");
-   public static final Class8112<NioEventLoopGroup> field38643 = new Class8112<NioEventLoopGroup>(
+   public static final LazyValue<NioEventLoopGroup> field38643 = new LazyValue<NioEventLoopGroup>(
       () -> new NioEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Client IO #%d").setDaemon(true).build())
    );
-   public static final Class8112<EpollEventLoopGroup> field38644 = new Class8112<EpollEventLoopGroup>(
+   public static final LazyValue<EpollEventLoopGroup> field38644 = new LazyValue<EpollEventLoopGroup>(
       () -> new EpollEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Epoll Client IO #%d").setDaemon(true).build())
    );
-   public static final Class8112<DefaultEventLoopGroup> field38645 = new Class8112<DefaultEventLoopGroup>(
+   public static final LazyValue<DefaultEventLoopGroup> field38645 = new LazyValue<DefaultEventLoopGroup>(
       () -> new DefaultEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Local Client IO #%d").setDaemon(true).build())
    );
    private final Class1975 field38646;
@@ -271,7 +271,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
    public static NetworkManager method30703(InetAddress var0, int var1, boolean var2) {
       NetworkManager var5 = new NetworkManager(Class1975.CLIENTBOUND);
       Class<? extends SocketChannel> var6;
-      Class8112<? extends EventLoopGroup>  var7;
+      LazyValue<? extends EventLoopGroup> var7;
       if (Epoll.isAvailable() && var2) {
          var6 = EpollSocketChannel.class;
          var7 = field38644;
@@ -280,7 +280,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
          var7 = field38643;
       }
 
-      new Bootstrap().group(var7.method28097()).handler(new Class7669(var5)).channel(var6)
+      new Bootstrap().group(var7.getValue()).handler(new Class7669(var5)).channel(var6)
          .connect(var0, var1)
          .syncUninterruptibly();
 
@@ -289,7 +289,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
 
    public static NetworkManager provideLocalClient(SocketAddress var0) {
       NetworkManager var3 = new NetworkManager(Class1975.CLIENTBOUND);
-      ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup)field38645.method28097())).handler(new Class9317(var3)))
+      ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup)field38645.getValue())).handler(new Class9317(var3)))
             .channel(LocalChannel.class))
          .connect(var0)
          .syncUninterruptibly();

@@ -13,8 +13,8 @@ public class ItemSword extends Class3266 implements Class3260 {
       super(var1, var4);
       this.field18761 = (float)var2 + var1.method9012();
       Builder var7 = ImmutableMultimap.builder();
-      var7.put(Class9173.field42110, new Class9689(field18733, "Weapon modifier", (double)this.field18761, Class2045.field13352));
-      var7.put(Class9173.field42112, new Class9689(field18734, "Weapon modifier", (double)var3, Class2045.field13352));
+      var7.put(Attributes.field42110, new Class9689(field18733, "Weapon modifier", (double)this.field18761, AttributeModifierOperation.ADDITION));
+      var7.put(Attributes.ATTACK_SPEED, new Class9689(field18734, "Weapon modifier", (double)var3, AttributeModifierOperation.ADDITION));
       this.field18762 = var7.build();
    }
 

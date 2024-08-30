@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.module.impl.gui.classic.TabGUI;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -23,7 +24,7 @@ public class Class7554 {
    }
 
    public int method24720() {
-      return Class5151.method15961(this.field32395);
+      return TabGUI.method15961(this.field32395);
    }
 
    public int method24721() {

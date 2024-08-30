@@ -37,7 +37,7 @@ public class Class220<T extends Class880, M extends Class2827<T>> extends Class2
          this.field865.method10998((T)var4, var5, var6, var8, var9, var10);
          Class5422 var16 = ItemRenderer.method782(var2, RenderType.method14308(var14), false, var13.method32159());
          this.field865.method11016(var1, var16, var3, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
-         var1.method35295();
+         var1.pop();
       }
    }
 

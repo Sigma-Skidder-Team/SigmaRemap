@@ -1,11 +1,11 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4420;
+import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
@@ -15,7 +15,7 @@ import java.util.List;
 
 public class Class5236 extends Module {
     private final List<Class8472> field23589 = new ArrayList<Class8472>();
-    private final Timer field23590 = new Timer();
+    private final TimerUtil field23590 = new TimerUtil();
 
     public Class5236() {
         super(ModuleCategory.MOVEMENT, "Basic", "Basic click tp");
@@ -81,7 +81,7 @@ public class Class5236 extends Module {
                 this.field23589.add(new Class8472(var6, var8, var10));
                 mc.player.setPosition(var6, var8, var10);
                 this.field23590.method27120();
-                this.field23590.method27118();
+                this.field23590.start();
                 if (this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
                     this.method16004().method16000();
                 }
@@ -90,10 +90,10 @@ public class Class5236 extends Module {
     }
 
     @EventTarget
-    public void method16325(Class4420 var1) {
+    public void method16325(Render3DEvent var1) {
         if (this.isEnabled() && this.field23589 != null && this.field23589.size() != 0) {
             if (this.field23590.method27121() > 4000L) {
-                this.field23590.method27119();
+                this.field23590.stop();
                 this.field23590.method27120();
                 this.field23589.clear();
             }

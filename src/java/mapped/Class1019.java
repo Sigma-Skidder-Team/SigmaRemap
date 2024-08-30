@@ -88,7 +88,7 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    public static Class7037 method4512() {
-      return Class1006.method4220().method21849(Class9173.field42105, 8.0).method21849(Class9173.field42108, 0.23F);
+      return Class1006.method4220().method21849(Attributes.field42105, 8.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F);
    }
 
    @Override
@@ -207,7 +207,7 @@ public class Class1019 extends Class1018 implements Class1020 {
 
    @Override
    public boolean method4516() {
-      return this.method3066() && !this.method4519() && !this.method3005();
+      return this.isAlive() && !this.method4519() && !this.method3005();
    }
 
    @Override

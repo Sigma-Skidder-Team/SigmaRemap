@@ -85,7 +85,7 @@ public class Class7496 implements Class7495 {
       return this.field32206;
    }
 
-   private Class6391 method24432(Class8968 var1, Class7496 var2) {
+   private Class6391 method24432(ModelBakery var1, Class7496 var2) {
       return !this.field32206.isEmpty() ? new Class6391(var1, var2, var1::method32841, this.field32206) : Class6391.field27973;
    }
 
@@ -126,7 +126,7 @@ public class Class7496 implements Class7495 {
          }
 
          if (var7 == null) {
-            var6.field32210 = Class8968.field40521;
+            var6.field32210 = ModelBakery.field40521;
             var7 = (Class7495)var1.apply(var6.field32210);
          }
 
@@ -156,7 +156,7 @@ public class Class7496 implements Class7495 {
             var12.addAll(var7x.method24424(var1, var2));
          }
       });
-      if (this.method24439() == Class8968.field40527) {
+      if (this.method24439() == ModelBakery.field40527) {
          Class8451.field36258.forEach(var2x -> var12.add(this.method24436(var2x)));
       }
 
@@ -164,13 +164,13 @@ public class Class7496 implements Class7495 {
    }
 
    @Override
-   public IBakedModel method24425(Class8968 var1, Function<Class7826, TextureAtlasSprite> var2, Class1902 var3, ResourceLocation var4) {
+   public IBakedModel method24425(ModelBakery var1, Function<Class7826, TextureAtlasSprite> var2, Class1902 var3, ResourceLocation var4) {
       return this.method24433(var1, this, var2, var3, var4, true);
    }
 
-   public IBakedModel method24433(Class8968 var1, Class7496 var2, Function<Class7826, TextureAtlasSprite> var3, Class1902 var4, ResourceLocation var5, boolean var6) {
+   public IBakedModel method24433(ModelBakery var1, Class7496 var2, Function<Class7826, TextureAtlasSprite> var3, Class1902 var4, ResourceLocation var5, boolean var6) {
       TextureAtlasSprite var9 = (TextureAtlasSprite)var3.apply(this.method24436("particle"));
-      if (this.method24439() == Class8968.field40528) {
+      if (this.method24439() == ModelBakery.field40528) {
          return new Class7203(this.method24440(), this.method24432(var1, var2), var9, this.method24430().method8812());
       } else {
          Class9071 var10 = new Class9071(this, this.method24432(var1, var2), var6).method33812(var9);

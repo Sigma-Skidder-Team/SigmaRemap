@@ -511,7 +511,7 @@ public final class MainWindow implements AutoCloseable {
    }
 
    public void setRawMouseInput(boolean var1) {
-      Class9798.method38644(this.handle, var1);
+      InputMappings.method38644(this.handle, var1);
    }
 
    public void method8052(int var1, int var2) {

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.Module;
+import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class2314;
@@ -96,8 +97,8 @@ public class Class4345 extends Class4339 {
             var24.method13306(ResourceRegistry.JelloLightFont18);
             var24.method13151(var1x -> var2.method18620(var1x.method13303()));
             var2.method18616(var2x -> {
-               if (var24.method13303() != ((Class6011)var2).getCurrentValue()) {
-                  var24.method13304(((Class6011)var2).getCurrentValue());
+               if (var24.method13303() != ((InputSetting)var2).getCurrentValue()) {
+                  var24.method13304(((InputSetting)var2).getCurrentValue());
                }
             });
             var4 += var20 + var5;
@@ -149,7 +150,7 @@ public class Class4345 extends Class4339 {
       byte var5 = 30;
       int var6 = 35;
 
-      for (Setting var8 : this.field21229.method15989().values()) {
+      for (Setting var8 : this.field21229.getSettingMap().values()) {
          if (var8.method18618() != Class2314.field15860 && var8.method18618() != Class2314.field15859) {
             var6 = this.method13555(this, var8, 30, var6, 20);
          }
@@ -163,7 +164,7 @@ public class Class4345 extends Class4339 {
             Class4305 var13 = new Class4305(this, var11.getName() + "SubView", 0, var6, this.field20897, this.field20898 - var6);
             var13.method13261((var0, var1) -> var0.method13268(var1.method13267()));
 
-            for (Setting var15 : var11.method15989().values()) {
+            for (Setting var15 : var11.getSettingMap().values()) {
                var12 = this.method13555(var13, var15, 30, var12, 20);
             }
 

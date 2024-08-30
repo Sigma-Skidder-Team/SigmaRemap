@@ -37,13 +37,13 @@ public class Class5948 extends Class5942<Class958> {
             if (!(var14.getBlock() instanceof Class3360)) {
                var3.translate(0.5, -0.16666667F, 0.5);
                float var15 = -var14.<Direction>method23463(Class3361.field18910).method551();
-               var3.method35293(Class7680.field32900.method25286(var15));
+               var3.rotate(Vector3f.YP.rotationDegrees(var15));
                var3.translate(0.0, -0.3125, -0.4375);
                this.field25942.field31039 = false;
             } else {
                var3.translate(0.5, 0.5, 0.5);
                float var18 = (float)(-var14.<Integer>method23463(Class3360.field18906) * 360) / 16.0F;
-               var3.method35293(Class7680.field32900.method25286(var18));
+               var3.rotate(Vector3f.YP.rotationDegrees(var18));
                this.field25942.field31039 = true;
             }
          } else {
@@ -54,16 +54,16 @@ public class Class5948 extends Class5942<Class958> {
 
          var3.push();
          var3.method35292(0.6666667F, -0.6666667F, -0.6666667F);
-         Class5422 var17 = Class8968.field40513.method26200(var4, RenderType::getEntitySolid);
+         Class5422 var17 = ModelBakery.field40513.method26200(var4, RenderType::getEntitySolid);
          this.field25942.method22680(var3, var17, var5, var6);
          this.field25943.method22680(var3, var17, var5, var6);
          BlockPos var19 = var1.getPos();
          float var16 = ((float)Math.floorMod((long)(var19.getX() * 7 + var19.getY() * 9 + var19.getZ() * 13) + var12, 100L) + var2) / 100.0F;
          this.field25941.field31035 = (-0.0125F + 0.01F * MathHelper.cos((float) (Math.PI * 2) * var16)) * (float) Math.PI;
          this.field25941.field31033 = -32.0F;
-         method18478(var3, var4, var5, var6, this.field25941, Class8968.field40513, true, var9);
-         var3.method35295();
-         var3.method35295();
+         method18478(var3, var4, var5, var6, this.field25941, ModelBakery.field40513, true, var9);
+         var3.pop();
+         var3.pop();
       }
    }
 

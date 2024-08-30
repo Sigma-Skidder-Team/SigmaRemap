@@ -4,7 +4,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 
 import java.util.Map;
 
-public class ModelManager extends Class269<Class8968> implements AutoCloseable {
+public class ModelManager extends Class269<ModelBakery> implements AutoCloseable {
    private Map<ResourceLocation, IBakedModel> field1062;
    private Class1694 field1063;
    private final BlockModelShapes field1064;
@@ -33,14 +33,14 @@ public class ModelManager extends Class269<Class8968> implements AutoCloseable {
       return this.field1064;
    }
 
-   public Class8968 method970(IResourceManager var1, IProfiler var2) {
+   public ModelBakery method970(IResourceManager var1, IProfiler var2) {
       var2.startTick();
-      Class8968 var5 = new Class8968(var1, this.field1066, var2, this.field1067);
+      ModelBakery var5 = new ModelBakery(var1, this.field1066, var2, this.field1067);
       var2.endTick();
       return var5;
    }
 
-   public void method971(Class8968 var1, IResourceManager var2, IProfiler var3) {
+   public void method971(ModelBakery var1, IResourceManager var2, IProfiler var3) {
       var3.startTick();
       var3.startSection("upload");
       if (this.field1063 != null) {
@@ -50,7 +50,7 @@ public class ModelManager extends Class269<Class8968> implements AutoCloseable {
       this.field1063 = var1.method32838(this.field1065, var3);
       this.field1062 = var1.method32850();
       this.field1069 = var1.method32851();
-      this.field1068 = this.field1062.get(Class8968.field40521);
+      this.field1068 = this.field1062.get(ModelBakery.field40521);
       var3.endStartSection("cache");
       this.field1064.method38155();
       var3.endSection();

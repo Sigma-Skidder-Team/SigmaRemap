@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.util.animation.Animation;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
 public class Class7312 {
@@ -16,7 +16,7 @@ public class Class7312 {
    private boolean field31347 = true;
    private Class2311 field31348;
    private Class2188 field31349;
-   private Timer field31350 = new Timer();
+   private TimerUtil field31350 = new TimerUtil();
    private int field31351;
    private int field31352 = 1;
    private Animation field31353;
@@ -35,7 +35,7 @@ public class Class7312 {
    }
 
    public void method23104() {
-      this.field31350.method27118();
+      this.field31350.start();
       this.field31346 = true;
       if (this.field31353.method25319() != Direction.BACKWARDS) {
          this.field31353.changeDirection(Direction.BACKWARDS);
@@ -49,7 +49,7 @@ public class Class7312 {
    }
 
    public void method23106() {
-      this.field31350.method27119();
+      this.field31350.stop();
       this.field31346 = false;
    }
 

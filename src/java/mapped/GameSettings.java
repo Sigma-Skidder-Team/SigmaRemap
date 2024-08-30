@@ -95,28 +95,28 @@ public class GameSettings {
    public boolean field44629;
    public boolean field44630;
    public boolean field44631 = true;
-   public final KeyBinding field44632 = new KeyBinding("key.forward", 87, "key.categories.movement");
-   public final KeyBinding field44633 = new KeyBinding("key.left", 65, "key.categories.movement");
-   public final KeyBinding field44634 = new KeyBinding("key.back", 83, "key.categories.movement");
-   public final KeyBinding field44635 = new KeyBinding("key.right", 68, "key.categories.movement");
-   public final KeyBinding field44636 = new KeyBinding("key.jump", 32, "key.categories.movement");
+   public final KeyBinding keyBindForward = new KeyBinding("key.forward", 87, "key.categories.movement");
+   public final KeyBinding keyBindLeft = new KeyBinding("key.left", 65, "key.categories.movement");
+   public final KeyBinding keyBindBack = new KeyBinding("key.back", 83, "key.categories.movement");
+   public final KeyBinding keyBindRight = new KeyBinding("key.right", 68, "key.categories.movement");
+   public final KeyBinding keyBindJump = new KeyBinding("key.jump", 32, "key.categories.movement");
    public final KeyBinding keyBindSneak = new Class2008("key.sneak", 340, "key.categories.movement", () -> this.field44628);
-   public final KeyBinding field44638 = new Class2008("key.sprint", 341, "key.categories.movement", () -> this.field44629);
-   public final KeyBinding field44639 = new KeyBinding("key.inventory", 69, "key.categories.inventory");
+   public final KeyBinding keyBindSprint = new Class2008("key.sprint", 341, "key.categories.movement", () -> this.field44629);
+   public final KeyBinding keyBindInventory = new KeyBinding("key.inventory", 69, "key.categories.inventory");
    public final KeyBinding keyBindSwapHands = new KeyBinding("key.swapOffhand", 70, "key.categories.inventory");
    public final KeyBinding keyBindDrop = new KeyBinding("key.drop", 81, "key.categories.inventory");
-   public final KeyBinding keyBindUseItem = new KeyBinding("key.use", Class1938.field12594, 1, "key.categories.gameplay");
-   public final KeyBinding keyBindAttack = new KeyBinding("key.attack", Class1938.field12594, 0, "key.categories.gameplay");
-   public final KeyBinding keyBindPickBlock = new KeyBinding("key.pickItem", Class1938.field12594, 2, "key.categories.gameplay");
+   public final KeyBinding keyBindUseItem = new KeyBinding("key.use", InputMappingsType.MOUSE, 1, "key.categories.gameplay");
+   public final KeyBinding keyBindAttack = new KeyBinding("key.attack", InputMappingsType.MOUSE, 0, "key.categories.gameplay");
+   public final KeyBinding keyBindPickBlock = new KeyBinding("key.pickItem", InputMappingsType.MOUSE, 2, "key.categories.gameplay");
    public final KeyBinding keyBindChat = new KeyBinding("key.chat", 84, "key.categories.multiplayer");
-   public final KeyBinding field44646 = new KeyBinding("key.playerlist", 258, "key.categories.multiplayer");
+   public final KeyBinding keyBindTablist = new KeyBinding("key.playerlist", 258, "key.categories.multiplayer");
    public final KeyBinding keyBindCommand = new KeyBinding("key.command", 47, "key.categories.multiplayer");
-   public final KeyBinding field_244602_au = new KeyBinding("key.socialInteractions", 80, "key.categories.multiplayer");
-   public final KeyBinding field44649 = new KeyBinding("key.screenshot", 291, "key.categories.misc");
+   public final KeyBinding keyBindSocialInteractions = new KeyBinding("key.socialInteractions", 80, "key.categories.multiplayer");
+   public final KeyBinding keyBindScreenshot = new KeyBinding("key.screenshot", 291, "key.categories.misc");
    public final KeyBinding keyBindTogglePerspective = new KeyBinding("key.togglePerspective", 294, "key.categories.misc");
-   public final KeyBinding keyBindSmoothCamera = new KeyBinding("key.smoothCamera", Class9798.field45819.method28100(), "key.categories.misc");
-   public final KeyBinding field44652 = new KeyBinding("key.fullscreen", 300, "key.categories.misc");
-   public final KeyBinding keyBindSpectatorOutlines = new KeyBinding("key.spectatorOutlines", Class9798.field45819.method28100(), "key.categories.misc");
+   public final KeyBinding keyBindSmoothCamera = new KeyBinding("key.smoothCamera", InputMappings.INPUT_INVALID.getKeyCode(), "key.categories.misc");
+   public final KeyBinding keyBindFullscreen = new KeyBinding("key.fullscreen", 300, "key.categories.misc");
+   public final KeyBinding keyBindSpectatorOutlines = new KeyBinding("key.spectatorOutlines", InputMappings.INPUT_INVALID.getKeyCode(), "key.categories.misc");
    public final KeyBinding keyBindAdvancements = new KeyBinding("key.advancements", 76, "key.categories.misc");
    public final KeyBinding[] keyBindsHotbar = new KeyBinding[]{
       new KeyBinding("key.hotbar.1", 49, "key.categories.inventory"),
@@ -135,24 +135,24 @@ public class GameSettings {
       new KeyBinding[]{
          this.keyBindAttack,
          this.keyBindUseItem,
-         this.field44632,
-         this.field44633,
-         this.field44634,
-         this.field44635,
-         this.field44636,
+         this.keyBindForward,
+         this.keyBindLeft,
+         this.keyBindBack,
+         this.keyBindRight,
+         this.keyBindJump,
          this.keyBindSneak,
-         this.field44638,
+         this.keyBindSprint,
          this.keyBindDrop,
-         this.field44639,
+         this.keyBindInventory,
          this.keyBindChat,
-         this.field44646,
+         this.keyBindTablist,
          this.keyBindPickBlock,
          this.keyBindCommand,
-         this.field_244602_au,
-         this.field44649,
+         this.keyBindSocialInteractions,
+         this.keyBindScreenshot,
          this.keyBindTogglePerspective,
          this.keyBindSmoothCamera,
-         this.field44652,
+         this.keyBindFullscreen,
          this.keyBindSpectatorOutlines,
          this.keyBindSwapHands,
          this.keyBindSaveToolbar,
@@ -174,7 +174,7 @@ public class GameSettings {
    public double field44669 = 70.0;
    public float field44670 = 1.0F;
    public float field44671 = 1.0F;
-   public double field44672;
+   public double gamma;
    public int guiScale;
    public Class2294 field44674 = Class2294.field15246;
    public Class1911 field44675 = Class1911.field11267;
@@ -309,8 +309,8 @@ public class GameSettings {
       return this.field44624 ? var1 : (int)(this.field44585 * 255.0) << 24 & 0xFF000000;
    }
 
-   public void method37142(KeyBinding var1, Class8115 var2) {
-      var1.method8515(var2);
+   public void method37142(KeyBinding var1, InputMappingsInput var2) {
+      var1.bind(var2);
       this.saveOptions();
    }
 
@@ -445,7 +445,7 @@ public class GameSettings {
                }
 
                if ("gamma".equals(var4)) {
-                  this.field44672 = (double)method37145(var5);
+                  this.gamma = (double)method37145(var5);
                }
 
                if ("renderDistance".equals(var4)) {
@@ -655,18 +655,18 @@ public class GameSettings {
                }
 
                for (KeyBinding var9 : this.field44658) {
-                  if (var4.equals("key_" + var9.method8513())) {
+                  if (var4.equals("key_" + var9.getKeyDescription())) {
                      if (Class9299.field42956.method20214()) {
                         if (var5.indexOf(58) != -1) {
                            String[] var10 = var5.split(":");
                            Object var11 = Class9299.method35062(Class9299.field42956, var10[1]);
-                           Class9299.method35070(var9, Class9299.field42931, var11, Class9798.method38638(var10[0]));
+                           Class9299.method35070(var9, Class9299.field42931, var11, InputMappings.method38638(var10[0]));
                         } else {
                            Object var33 = Class9299.method35071(Class9299.field42957);
-                           Class9299.method35070(var9, Class9299.field42931, var33, Class9798.method38638(var5));
+                           Class9299.method35070(var9, Class9299.field42931, var33, InputMappings.method38638(var5));
                         }
                      } else {
-                        var9.method8515(Class9798.method38638(var5));
+                        var9.bind(InputMappings.method38638(var5));
                      }
                   }
                }
@@ -688,7 +688,7 @@ public class GameSettings {
             }
          }
 
-         KeyBinding.method8508();
+         KeyBinding.resetKeyBindingArrayAndHash();
       } catch (Exception var22) {
          field44569.error("Failed to load options", var22);
       }
@@ -742,7 +742,7 @@ public class GameSettings {
             var1.println("fov:" + (this.field44669 - 70.0) / 40.0);
             var1.println("screenEffectScale:" + this.field44670);
             var1.println("fovEffectScale:" + this.field44671);
-            var1.println("gamma:" + this.field44672);
+            var1.println("gamma:" + this.gamma);
             var1.println("renderDistance:" + this.field44574);
             var1.println("entityDistanceScaling:" + this.field44575);
             var1.println("guiScale:" + this.guiScale);
@@ -803,12 +803,12 @@ public class GameSettings {
 
             for (KeyBinding var6 : this.field44658) {
                if (Class9299.field42932.method20214()) {
-                  String var7 = "key_" + var6.method8513() + ":" + var6.method8523();
+                  String var7 = "key_" + var6.getKeyDescription() + ":" + var6.getTranslationKey();
                   Object var8 = Class9299.method35070(var6, Class9299.field42932);
                   Object var9 = Class9299.method35071(Class9299.field42957);
                   var1.println(var8 != var9 ? var7 + ":" + var8 : var7);
                } else {
-                  var1.println("key_" + var6.method8513() + ":" + var6.method8523());
+                  var1.println("key_" + var6.getKeyDescription() + ":" + var6.getTranslationKey());
                }
             }
 
@@ -1991,8 +1991,8 @@ public class GameSettings {
                   this.field44730 = Boolean.valueOf(var4[1]);
                }
 
-               if (var4[0].equals("key_" + this.field44762.method8513())) {
-                  this.field44762.method8515(Class9798.method38638(var4[1]));
+               if (var4[0].equals("key_" + this.field44762.getKeyDescription())) {
+                  this.field44762.bind(InputMappings.method38638(var4[1]));
                }
             } catch (Exception var5) {
                Class7944.method26810("Skipping bad option: " + var3);
@@ -2001,7 +2001,7 @@ public class GameSettings {
          }
 
          Class9831.method38795(this.field44658, new KeyBinding[]{this.field44762});
-         KeyBinding.method8508();
+         KeyBinding.resetKeyBindingArrayAndHash();
          var2.close();
       } catch (Exception var6) {
          Class7944.method26811("Failed to load options");
@@ -2082,7 +2082,7 @@ public class GameSettings {
          var1.println("ofTranslucentBlocks:" + this.field44721);
          var1.println("ofChatBackground:" + this.field44729);
          var1.println("ofChatShadow:" + this.field44730);
-         var1.println("key_" + this.field44762.method8513() + ":" + this.field44762.method8523());
+         var1.println("key_" + this.field44762.getKeyDescription() + ":" + this.field44762.getTranslationKey());
          var1.close();
       } catch (Exception var2) {
          Class7944.method26811("Failed to save options");
@@ -2132,7 +2132,7 @@ public class GameSettings {
       this.ambientOcclusionStatus = AmbientOcclusionStatus.field16005;
       this.cloudOption = CloudOption.field11186;
       this.field44669 = 70.0;
-      this.field44672 = 0.0;
+      this.gamma = 0.0;
       this.guiScale = 0;
       this.field44674 = Class2294.field15246;
       this.field44594 = true;
@@ -2288,16 +2288,16 @@ public class GameSettings {
    private void method37171() {
       if (Class9299.field42954.method20238() && Class9299.field42930.method20214()) {
          Object var1 = Class9299.method35071(Class9299.field42954);
-         Class9299.method35070(this.field44632, Class9299.field42930, var1);
-         Class9299.method35070(this.field44633, Class9299.field42930, var1);
-         Class9299.method35070(this.field44634, Class9299.field42930, var1);
-         Class9299.method35070(this.field44635, Class9299.field42930, var1);
-         Class9299.method35070(this.field44636, Class9299.field42930, var1);
+         Class9299.method35070(this.keyBindForward, Class9299.field42930, var1);
+         Class9299.method35070(this.keyBindLeft, Class9299.field42930, var1);
+         Class9299.method35070(this.keyBindBack, Class9299.field42930, var1);
+         Class9299.method35070(this.keyBindRight, Class9299.field42930, var1);
+         Class9299.method35070(this.keyBindJump, Class9299.field42930, var1);
          Class9299.method35070(this.keyBindSneak, Class9299.field42930, var1);
-         Class9299.method35070(this.field44638, Class9299.field42930, var1);
+         Class9299.method35070(this.keyBindSprint, Class9299.field42930, var1);
          Class9299.method35070(this.keyBindAttack, Class9299.field42930, var1);
          Class9299.method35070(this.keyBindChat, Class9299.field42930, var1);
-         Class9299.method35070(this.field44646, Class9299.field42930, var1);
+         Class9299.method35070(this.keyBindTablist, Class9299.field42930, var1);
          Class9299.method35070(this.keyBindCommand, Class9299.field42930, var1);
          Class9299.method35070(this.keyBindTogglePerspective, Class9299.field42930, var1);
          Class9299.method35070(this.keyBindSmoothCamera, Class9299.field42930, var1);

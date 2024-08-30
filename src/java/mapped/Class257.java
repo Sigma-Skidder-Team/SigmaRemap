@@ -25,9 +25,9 @@ public class Class257 extends Class219<Class1095, Class2864<Class1095>> {
          (double)(this.method825().field17750.field31034 / 16.0F)
       );
       float var17 = var4.method5146(var7);
-      var1.method35293(Class7680.field32902.method25285(var17));
-      var1.method35293(Class7680.field32900.method25286(var9));
-      var1.method35293(Class7680.field32898.method25286(var10));
+      var1.rotate(Vector3f.field32902.method25285(var17));
+      var1.rotate(Vector3f.YP.rotationDegrees(var9));
+      var1.rotate(Vector3f.field32898.rotationDegrees(var10));
       if (!var4.method3005()) {
          if (!var13) {
             var1.translate(0.06F, 0.27F, -0.5);
@@ -40,13 +40,13 @@ public class Class257 extends Class219<Class1095, Class2864<Class1095>> {
          var1.translate(0.4F, 0.26F, 0.15F);
       }
 
-      var1.method35293(Class7680.field32898.method25286(90.0F));
+      var1.rotate(Vector3f.field32898.rotationDegrees(90.0F));
       if (var13) {
-         var1.method35293(Class7680.field32902.method25286(90.0F));
+         var1.rotate(Vector3f.field32902.rotationDegrees(90.0F));
       }
 
       ItemStack var16 = var4.method2943(Class2106.field13731);
       Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var16, Class2327.field15931, false, var1, var2, var3);
-      var1.method35295();
+      var1.pop();
    }
 }

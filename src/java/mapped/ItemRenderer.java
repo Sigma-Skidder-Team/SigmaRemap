@@ -94,13 +94,13 @@ public class ItemRenderer implements Class215 {
                Class5422 var14;
                if (var1.getItem() == Items.field37905 && var1.method32159()) {
                   var4.push();
-                  Class8892 var15 = var4.method35296();
+                  Class8892 var15 = var4.getLast();
                   if (var2 != Class2327.field15930) {
                      if (var2.method9103()) {
-                        var15.method32361().method35510(0.75F);
+                        var15.getMatrix().method35510(0.75F);
                      }
                   } else {
-                     var15.method32361().method35510(0.5F);
+                     var15.getMatrix().method35510(0.5F);
                   }
 
                   if (!var16) {
@@ -109,7 +109,7 @@ public class ItemRenderer implements Class215 {
                      var14 = method784(var5, var17, var15);
                   }
 
-                  var4.method35295();
+                  var4.pop();
                } else if (!var16) {
                   var14 = method785(var5, var17, true, var1.method32159());
                } else {
@@ -144,7 +144,7 @@ public class ItemRenderer implements Class215 {
             var12.method38685(var1, var2, var4, var5, var6, var7);
          }
 
-         var4.method35295();
+         var4.pop();
       }
    }
 
@@ -163,11 +163,11 @@ public class ItemRenderer implements Class215 {
    }
 
    public static Class5422 method783(Class7733 var0, RenderType var1, Class8892 var2) {
-      return Class7802.method26050(new Class5427(var0.method25597(RenderType.method14334()), var2.method32361(), var2.method32362()), var0.method25597(var1));
+      return Class7802.method26050(new Class5427(var0.method25597(RenderType.method14334()), var2.getMatrix(), var2.method32362()), var0.method25597(var1));
    }
 
    public static Class5422 method784(Class7733 var0, RenderType var1, Class8892 var2) {
-      return Class7802.method26050(new Class5427(var0.method25597(RenderType.method14335()), var2.method32361(), var2.method32362()), var0.method25597(var1));
+      return Class7802.method26050(new Class5427(var0.method25597(RenderType.method14335()), var2.getMatrix(), var2.method32362()), var0.method25597(var1));
    }
 
    public static Class5422 method785(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
@@ -204,7 +204,7 @@ public class ItemRenderer implements Class215 {
 
    private void method787(MatrixStack var1, Class5422 var2, List<Class8557> var3, ItemStack var4, int var5, int var6) {
       boolean var9 = !var4.isEmpty();
-      Class8892 var10 = var1.method35296();
+      Class8892 var10 = var1.getLast();
       boolean var11 = Class8564.method30588();
       int var12 = var3.size();
 
@@ -271,7 +271,7 @@ public class ItemRenderer implements Class215 {
       field852 = true;
       RenderSystem.pushMatrix();
       this.field849.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
-      this.field849.method1076(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1130(false, false);
+      this.field849.getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1130(false, false);
       RenderSystem.method27867();
       RenderSystem.disableAlphaTest();
       RenderSystem.method27939();
@@ -352,7 +352,7 @@ public class ItemRenderer implements Class215 {
                (float)(var4 + 6 + 3),
                16777215,
                true,
-               var8.method35296().method32361(),
+               var8.getLast().getMatrix(),
                var10,
                false,
                0,
@@ -398,7 +398,7 @@ public class ItemRenderer implements Class215 {
             RenderSystem.disableDepthTest();
             RenderSystem.disableTexture();
             RenderSystem.enableBlend();
-            RenderSystem.method27938();
+            RenderSystem.defaultBlendFunc();
             Tessellator var23 = Tessellator.getInstance();
             BufferBuilder var24 = var23.getBuffer();
             this.method799(var24, var3, var4 + MathHelper.method37767(16.0F * (1.0F - var22)), 16, MathHelper.method37773(16.0F * var22), 255, 255, 255, 127);

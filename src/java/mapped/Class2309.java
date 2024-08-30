@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public enum Class2309 {
-   field15814(Items.field37796, 0.0F, 3.0F, 0.0F),
+   field15814(Items.BOW, 0.0F, 3.0F, 0.0F),
    field15815(Items.field37888, 0.0F, 1.875F, 0.0F),
    field15816(Items.field37966, 0.0F, 1.875F, 0.0F),
    field15817(Items.field37904, 0.0F, 1.875F, 0.0F),
@@ -37,12 +37,12 @@ public enum Class2309 {
    }
 
    public float method9081() {
-      if (!this.field15821.equals(Items.field37796)) {
+      if (!this.field15821.equals(Items.BOW)) {
          return this.field15823;
       } else {
-         return !(this.field15823 * Class3263.method11777(Class5280.method16524().player.method3159()) > 0.0F)
+         return !(this.field15823 * Class3263.method11777(Projectiles.method16524().player.method3159()) > 0.0F)
             ? Class3263.method11777(20)
-            : Class3263.method11777(Class5280.method16525().player.method3159());
+            : Class3263.method11777(Projectiles.method16525().player.method3159());
       }
    }
 
@@ -70,21 +70,21 @@ public enum Class2309 {
 
    public List<Class9110> method9086() {
       ArrayList var3 = new ArrayList();
-      float var4 = (float)Math.toRadians((double)Class5280.method16526().player.rotationYaw);
-      float var5 = (float)Math.toRadians((double)Class5280.method16527().player.rotationPitch);
-      double var6 = Class5280.method16528().player.lastTickPosX
-         + (Class5280.method16529().player.getPosX() - Class5280.method16530().player.lastTickPosX)
-            * (double)Class5280.method16531().timer.renderPartialTicks;
-      double var8 = Class5280.method16532().player.lastTickPosY
-         + (Class5280.method16533().player.getPosY() - Class5280.method16534().player.lastTickPosY)
-            * (double)Class5280.method16535().timer.renderPartialTicks;
-      double var10 = Class5280.method16536().player.lastTickPosZ
-         + (Class5280.method16537().player.getPosZ() - Class5280.method16538().player.lastTickPosZ)
-            * (double)Class5280.method16539().timer.renderPartialTicks;
+      float var4 = (float)Math.toRadians((double) Projectiles.method16526().player.rotationYaw);
+      float var5 = (float)Math.toRadians((double) Projectiles.method16527().player.rotationPitch);
+      double var6 = Projectiles.method16528().player.lastTickPosX
+         + (Projectiles.method16529().player.getPosX() - Projectiles.method16530().player.lastTickPosX)
+            * (double) Projectiles.method16531().timer.renderPartialTicks;
+      double var8 = Projectiles.method16532().player.lastTickPosY
+         + (Projectiles.method16533().player.getPosY() - Projectiles.method16534().player.lastTickPosY)
+            * (double) Projectiles.method16535().timer.renderPartialTicks;
+      double var10 = Projectiles.method16536().player.lastTickPosZ
+         + (Projectiles.method16537().player.getPosZ() - Projectiles.method16538().player.lastTickPosZ)
+            * (double) Projectiles.method16539().timer.renderPartialTicks;
       this.field15825 = var6;
-      this.field15826 = var8 + (double)Class5280.method16540().player.method3393() - 0.1F;
+      this.field15826 = var8 + (double) Projectiles.method16540().player.method3393() - 0.1F;
       this.field15827 = var10;
-      float var12 = Math.min(20.0F, (float)(72000 - Class5280.method16541().player.method3159()) + Class5280.method16542().getRenderPartialTicks()) / 20.0F;
+      float var12 = Math.min(20.0F, (float)(72000 - Projectiles.method16541().player.method3159()) + Projectiles.method16542().getRenderPartialTicks()) / 20.0F;
       this.field15828 = -MathHelper.sin(var4) * MathHelper.cos(var5) * this.field15823 * var12;
       this.field15829 = -MathHelper.sin(var5) * this.field15823 * var12;
       this.field15830 = MathHelper.cos(var4) * MathHelper.cos(var5) * this.field15823 * var12;
@@ -106,10 +106,10 @@ public enum Class2309 {
             this.field15826 + (double)var15,
             this.field15827 + (double)var15
          );
-         List<Entity> var17 = Class5280.method16544()
+         List<Entity> var17 = Projectiles.method16544()
             .world
             .method6770(
-               Class5280.method16543().player,
+               Projectiles.method16543().player,
                var16.method19667((double)this.field15828, (double)this.field15829, (double)this.field15830).method19663(1.0, 1.0, 1.0),
                Class8088.field34763.and(new Class167(this, var15, var13, var14))
             );
@@ -120,9 +120,9 @@ public enum Class2309 {
             break;
          }
 
-         BlockRayTraceResult var18 = Class5280.method16546()
+         BlockRayTraceResult var18 = Projectiles.method16546()
             .world
-            .method7036(new Class6809(var13, var14, Class2271.field14774, Class1985.field12962, Class5280.method16545().player));
+            .method7036(new Class6809(var13, var14, Class2271.field14774, Class1985.field12962, Projectiles.method16545().player));
          if (var18 != null && var18.getType() != RayTraceResult.Type.MISS) {
             this.field15831 = var18;
             this.field15825 = this.field15831.method31419().field18048;

@@ -81,7 +81,7 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
 
       super.method11016(var1, var2, var3, var4, var5, var6, var7, var8);
       if (var11) {
-         var1.method35295();
+         var1.pop();
       }
    }
 }

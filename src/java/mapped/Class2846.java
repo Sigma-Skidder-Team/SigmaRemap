@@ -36,6 +36,6 @@ public class Class2846 extends Class2844 {
       var1.translate(0.0, -0.374375F, 0.0);
       var1.method35292(0.75F, 0.75F, 0.75F);
       this.field17646.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
-      var1.method35295();
+      var1.pop();
    }
 }

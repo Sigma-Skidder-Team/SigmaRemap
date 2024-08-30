@@ -73,7 +73,7 @@ public class Class886 extends AbstractArrowEntity {
 
    private boolean method3495() {
       Entity var3 = this.method3460();
-      return var3 != null && var3.method3066() ? !(var3 instanceof ServerPlayerEntity) || !var3.isSpectator() : false;
+      return var3 != null && var3.isAlive() ? !(var3 instanceof ServerPlayerEntity) || !var3.isSpectator() : false;
    }
 
    @Override

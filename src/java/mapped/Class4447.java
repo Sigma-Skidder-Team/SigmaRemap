@@ -494,7 +494,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_book", method14075(Items.field37900))
          .method30255(var0);
-      Class8528.method30247(Items.field37796)
+      Class8528.method30247(Items.BOW)
          .method30250('#', Items.field37835)
          .method30250('X', Items.field37838)
          .method30252(" #X")
@@ -881,11 +881,11 @@ public class Class4447 implements Class4442 {
       Class8528.method30247(Blocks.DISPENSER)
          .method30250('R', Items.field37887)
          .method30250('#', Blocks.field36399)
-         .method30250('X', Items.field37796)
+         .method30250('X', Items.BOW)
          .method30252("###")
          .method30252("#X#")
          .method30252("#R#")
-         .method30253("has_bow", method14075(Items.field37796))
+         .method30253("has_bow", method14075(Items.BOW))
          .method30255(var0);
       Class8528.method30247(Blocks.DROPPER)
          .method30250('R', Items.field37887)
@@ -1014,7 +1014,7 @@ public class Class4447 implements Class4442 {
          .method30252("##")
          .method30253("has_glowstone_dust", method14075(Items.field37908))
          .method30255(var0);
-      Class8528.method30247(Items.field37872)
+      Class8528.method30247(Items.GOLDEN_APPLE)
          .method30250('#', Items.field37802)
          .method30250('X', Items.field37795)
          .method30252("###")
@@ -2544,8 +2544,8 @@ public class Class4447 implements Class4442 {
          .method32350(var0);
       Class8888.method32341(Items.field38154)
          .method32344(Items.field37899)
-         .method32344(Items.field37873)
-         .method32348("has_enchanted_golden_apple", method14075(Items.field37873))
+         .method32344(Items.ENCHANTED_GOLDEN_APPLE)
+         .method32348("has_enchanted_golden_apple", method14075(Items.ENCHANTED_GOLDEN_APPLE))
          .method32350(var0);
       Class8528.method30248(Blocks.field37053, 6)
          .method30250('~', Items.field37838)

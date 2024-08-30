@@ -13,7 +13,7 @@ public class Class165 implements Predicate<Entity> {
    }
 
    public boolean test(Entity var1) {
-      if (var1.method3066()) {
+      if (var1.isAlive()) {
          if (var1 instanceof Class880) {
             Class880 var4 = (Class880)var1;
             return var4.method2980(this.field533);

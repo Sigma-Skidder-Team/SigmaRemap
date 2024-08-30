@@ -69,7 +69,7 @@ public class Class1054 extends Class1049 {
 
    @Override
    public void tick() {
-      if (!this.world.isRemote && this.method3066() && this.method3138()) {
+      if (!this.world.isRemote && this.isAlive() && this.method3138()) {
          if (this.field5821 <= 0) {
             if (this.method4828() != 0) {
                if (this.field5822 > 60 && this.method4828() == 2) {
@@ -103,9 +103,9 @@ public class Class1054 extends Class1049 {
    @Override
    public void method2871() {
       super.method2871();
-      if (this.method3066() && this.method4828() > 0) {
+      if (this.isAlive() && this.method4828() > 0) {
          for (Class1006 var4 : this.world.method6772(Class1006.class, this.getBoundingBox().method19664(0.3), field5823)) {
-            if (var4.method3066()) {
+            if (var4.isAlive()) {
                this.method4830(var4);
             }
          }
@@ -115,7 +115,7 @@ public class Class1054 extends Class1049 {
    private void method4830(Class1006 var1) {
       int var4 = this.method4828();
       if (var1.method2741(Class8654.method31115(this), (float)(1 + var4))) {
-         var1.method3035(new Class2023(Class8254.field35485, 60 * var4, 0));
+         var1.method3035(new Class2023(Effects.POISON, 60 * var4, 0));
          this.method2863(Sounds.field26985, 1.0F, 1.0F);
       }
    }
@@ -128,7 +128,7 @@ public class Class1054 extends Class1049 {
             ((ServerPlayerEntity)var1).field4855.sendPacket(new Class5534(Class5534.field24569, 0.0F));
          }
 
-         var1.method3035(new Class2023(Class8254.field35485, 60 * var4, 0));
+         var1.method3035(new Class2023(Effects.POISON, 60 * var4, 0));
       }
    }
 

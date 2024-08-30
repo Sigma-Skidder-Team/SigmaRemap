@@ -88,7 +88,7 @@ public class Class1090 extends Class1018 {
    }
 
    public static Class7037 method5074() {
-      return Class1006.method4220().method21849(Class9173.field42105, 10.0).method21849(Class9173.field42108, 0.3F).method21849(Class9173.field42110, 3.0);
+      return Class1006.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42110, 3.0);
    }
 
    @Override
@@ -118,7 +118,7 @@ public class Class1090 extends Class1018 {
    }
 
    private float method5075() {
-      return (float)this.method3086(Class9173.field42110);
+      return (float)this.method3086(Attributes.field42110);
    }
 
    @Override

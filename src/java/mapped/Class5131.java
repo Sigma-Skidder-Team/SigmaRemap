@@ -27,7 +27,7 @@ public class Class5131 implements Class5119 {
    public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.disableTexture();
       BlockPos var11 = new BlockPos(var3, 0.0, var7);
       Tessellator var12 = Tessellator.getInstance();

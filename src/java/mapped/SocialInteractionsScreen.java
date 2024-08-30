@@ -217,7 +217,7 @@ public class SocialInteractionsScreen extends Screen {
 
    @Override
    public boolean method1920(int var1, int var2, int var3) {
-      if (!this.field6228.method5746() && this.mc.gameSettings.field_244602_au.method8519(var1, var2)) {
+      if (!this.field6228.method5746() && this.mc.gameSettings.keyBindSocialInteractions.matchesKey(var1, var2)) {
          this.mc.displayGuiScreen((Screen)null);
          return true;
       } else {

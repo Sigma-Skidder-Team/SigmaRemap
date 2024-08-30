@@ -28,9 +28,9 @@ public class Class5423 implements Class5422 {
    }
 
    @Override
-   public Class5422 method17027(float var1, float var2) {
-      this.field24106.method17027(var1, var2);
-      this.field24107.method17027(var1, var2);
+   public Class5422 tex(float var1, float var2) {
+      this.field24106.tex(var1, var2);
+      this.field24107.tex(var1, var2);
       return this;
    }
 
@@ -101,12 +101,12 @@ public class Class5423 implements Class5422 {
    }
 
    @Override
-   public Class7680 method17045(Class7680 var1) {
+   public Vector3f method17045(Vector3f var1) {
       return this.field24107.method17045(var1);
    }
 
    @Override
-   public Class7680 method17046(float var1, float var2, float var3) {
+   public Vector3f method17046(float var1, float var2, float var3) {
       return this.field24107.method17046(var1, var2, var3);
    }
 

@@ -54,10 +54,10 @@ public class Class1096 extends Class1018 implements Class1011 {
 
    public static Class7037 method5180() {
       return Class1006.method4220()
-         .method21849(Class9173.field42105, 30.0)
-         .method21849(Class9173.field42106, 20.0)
-         .method21849(Class9173.field42108, 0.25)
-         .method21849(Class9173.field42110, 6.0);
+         .method21849(Attributes.field42105, 30.0)
+         .method21849(Attributes.field42106, 20.0)
+         .method21849(Attributes.MOVEMENT_SPEED, 0.25)
+         .method21849(Attributes.field42110, 6.0);
    }
 
    public static boolean method5181(EntityType<Class1096> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
@@ -176,7 +176,7 @@ public class Class1096 extends Class1018 implements Class1011 {
 
    @Override
    public boolean method3114(Entity var1) {
-      boolean var4 = var1.method2741(Class8654.method31115(this), (float)((int)this.method3086(Class9173.field42110)));
+      boolean var4 = var1.method2741(Class8654.method31115(this), (float)((int)this.method3086(Attributes.field42110)));
       if (var4) {
          this.method3399(this, var1);
       }

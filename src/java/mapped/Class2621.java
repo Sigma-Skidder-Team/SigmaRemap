@@ -16,7 +16,7 @@ public class Class2621 extends Class2595 {
    @Override
    public boolean method10803() {
       return this.field16908.method4232() == null
-         && (this.field16908.onGround || this.field16908.method3250() || this.field16908.method3264() || this.field16908.method3033(Class8254.field35491))
+         && (this.field16908.onGround || this.field16908.method3250() || this.field16908.method3264() || this.field16908.method3033(Effects.LEVITATION))
          && this.field16908.method4228() instanceof Class6841;
    }
 

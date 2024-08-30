@@ -20,11 +20,11 @@ public class Tessellator {
 
    public void draw() {
       if (this.field43407.field24134 != null) {
-         Class4501.method14216(this.field43407.field24134);
+         SmartAnimations.method14216(this.field43407.field24134);
       }
 
-      this.field43407.method17065();
-      Class4395.method13895(this.field43407);
+      this.field43407.finishDrawing();
+      WorldVertexBufferUploader.draw(this.field43407);
    }
 
    public BufferBuilder getBuffer() {

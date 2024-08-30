@@ -24,7 +24,7 @@ public class Class5719 extends Class5715<Class906> {
       }
 
       Class5422 var32 = var5.method25597(RenderType.method14341());
-      Class9367 var15 = var4.method35296().method32361();
+      Matrix4f var15 = var4.getLast().getMatrix();
 
       for (int var16 = 0; var16 < 4; var16++) {
          Random var17 = new Random(var1.field5172);
@@ -78,7 +78,7 @@ public class Class5719 extends Class5715<Class906> {
    }
 
    private static void method17907(
-      Class9367 var0,
+      Matrix4f var0,
       Class5422 var1,
       float var2,
       float var3,
@@ -95,17 +95,17 @@ public class Class5719 extends Class5715<Class906> {
       boolean var14,
       boolean var15
    ) {
-      var1.method17040(var0, var2 + (!var12 ? -var11 : var11), (float)(var4 * 16), var3 + (!var13 ? -var11 : var11))
-         .method17033(var7, var8, var9, 0.3F)
+      var1.pos(var0, var2 + (!var12 ? -var11 : var11), (float)(var4 * 16), var3 + (!var13 ? -var11 : var11))
+         .color(var7, var8, var9, 0.3F)
          .endVertex();
-      var1.method17040(var0, var5 + (!var12 ? -var10 : var10), (float)((var4 + 1) * 16), var6 + (!var13 ? -var10 : var10))
-         .method17033(var7, var8, var9, 0.3F)
+      var1.pos(var0, var5 + (!var12 ? -var10 : var10), (float)((var4 + 1) * 16), var6 + (!var13 ? -var10 : var10))
+         .color(var7, var8, var9, 0.3F)
          .endVertex();
-      var1.method17040(var0, var5 + (!var14 ? -var10 : var10), (float)((var4 + 1) * 16), var6 + (!var15 ? -var10 : var10))
-         .method17033(var7, var8, var9, 0.3F)
+      var1.pos(var0, var5 + (!var14 ? -var10 : var10), (float)((var4 + 1) * 16), var6 + (!var15 ? -var10 : var10))
+         .color(var7, var8, var9, 0.3F)
          .endVertex();
-      var1.method17040(var0, var2 + (!var14 ? -var11 : var11), (float)(var4 * 16), var3 + (!var15 ? -var11 : var11))
-         .method17033(var7, var8, var9, 0.3F)
+      var1.pos(var0, var2 + (!var14 ? -var11 : var11), (float)(var4 * 16), var3 + (!var15 ? -var11 : var11))
+         .color(var7, var8, var9, 0.3F)
          .endVertex();
    }
 

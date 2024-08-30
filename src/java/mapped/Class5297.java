@@ -34,7 +34,7 @@ public class Class5297 extends Module {
                 if (!mc.player.onGround) {
                     var1.method13995(!mc.gameSettings.keyBindSneak.isKeyDown() ? 0.0 : var1.method13994());
                 }
-            } else if (!this.getBooleanValueFromSetttingName("AutoClimb") && !mc.gameSettings.field44636.isKeyDown()) {
+            } else if (!this.getBooleanValueFromSetttingName("AutoClimb") && !mc.gameSettings.keyBindJump.isKeyDown()) {
                 var1.method13995(!mc.gameSettings.keyBindSneak.isKeyDown() ? 0.0 : var1.method13994());
             } else {
                 var1.method13995(0.6);
@@ -62,9 +62,9 @@ public class Class5297 extends Module {
                                 mc.player.getPositionVec().field18049 - 2.8,
                                 mc.player.getPositionVec().field18050
                         );
-                mc.gameSettings.keyBindSneak.field13071 = false;
+                mc.gameSettings.keyBindSneak.pressed = false;
                 mc.player.onGround = false;
-                mc.timer.field40360 = 0.08F;
+                mc.timer.timerSpeed = 0.08F;
                 var1.method13900(true);
                 this.field23813 = true;
                 var1.method13995(1.0E-14);
@@ -78,7 +78,7 @@ public class Class5297 extends Module {
             }
 
             if (this.field23813) {
-                mc.timer.field40360 = 1.0F;
+                mc.timer.timerSpeed = 1.0F;
                 this.field23813 = false;
                 var1.method13995(1.0E-14);
                 Class9567.method37088(var1, 0.28);

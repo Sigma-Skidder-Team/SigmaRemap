@@ -6,12 +6,12 @@ import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 
 public class Class5242 extends Module {
     private Class5340 field23602;
     private boolean field23603;
-    private final Timer field23604 = new Timer();
+    private final TimerUtil field23604 = new TimerUtil();
 
     public Class5242() {
         super(ModuleCategory.MISC, "Mineplex", "Gameplay for Mineplex");

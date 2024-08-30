@@ -66,7 +66,7 @@ public class AtlasTexture extends Class290 implements Class288 {
       this.field1105.clear();
       this.field1105.addAll(var1.field35334);
       field1101.info("Created: {}x{}x{} {}-atlas", var1.field35335, var1.field35336, var1.field35337, this.field1107);
-      Class8535.method30370(this.method1131(), var1.field35337, var1.field35335, var1.field35336);
+      Class8535.method30370(this.getGlTextureId(), var1.field35337, var1.field35335, var1.field35336);
       this.field1118 = var1.field35335;
       this.field1119 = var1.field35336;
       if (this.field1123) {
@@ -112,7 +112,7 @@ public class AtlasTexture extends Class290 implements Class288 {
             }
          }
 
-         Class7414.method23814(this.method1131());
+         Class7414.method23814(this.getGlTextureId());
       }
 
       if (Class7944.method26921()) {
@@ -139,7 +139,7 @@ public class AtlasTexture extends Class290 implements Class288 {
             }
          }
 
-         Class7414.method23814(this.method1131());
+         Class7414.method23814(this.getGlTextureId());
       }
 
       Class9299.method35055(Class9299.field42892, this);
@@ -147,7 +147,7 @@ public class AtlasTexture extends Class290 implements Class288 {
       if (Class7944.equals(System.getProperty("saveTextureMap"), "true")) {
          Class7944.method26810("Exporting texture map: " + this.field1107);
          Class8684.method31287(
-            "debug/" + this.field1107.getPath().replaceAll("/", "_"), this.method1131(), var1.field35337, var1.field35335, var1.field35336
+            "debug/" + this.field1107.getPath().replaceAll("/", "_"), this.getGlTextureId(), var1.field35337, var1.field35335, var1.field35336
          );
          if (this.field1123) {
             if (Shaders.field40874) {
@@ -170,7 +170,7 @@ public class AtlasTexture extends Class290 implements Class288 {
                );
             }
 
-            Class7414.method23814(this.method1131());
+            Class7414.method23814(this.getGlTextureId());
          }
       }
    }
@@ -413,7 +413,7 @@ public class AtlasTexture extends Class290 implements Class288 {
             }
          }
 
-         Class7414.method23814(this.method1131());
+         Class7414.method23814(this.getGlTextureId());
       }
 
       if (Class7944.method26921()) {
@@ -444,7 +444,7 @@ public class AtlasTexture extends Class290 implements Class288 {
          }
 
          if (var3 || var4) {
-            Class7414.method23814(this.method1131());
+            Class7414.method23814(this.getGlTextureId());
          }
       }
 
@@ -455,8 +455,8 @@ public class AtlasTexture extends Class290 implements Class288 {
             this.field1121 = var12;
          }
 
-         if (Class4501.method14213()) {
-            Class4501.method14218(this);
+         if (SmartAnimations.isActive()) {
+            SmartAnimations.method14218(this);
          }
       }
    }
@@ -490,7 +490,7 @@ public class AtlasTexture extends Class290 implements Class288 {
       this.field1104.clear();
    }
 
-   public ResourceLocation method1100() {
+   public ResourceLocation getTextureLocation() {
       return this.field1107;
    }
 
@@ -649,7 +649,7 @@ public class AtlasTexture extends Class290 implements Class288 {
 
    public boolean method1114() {
       int var3 = Class7414.method23865();
-      int var4 = this.method1131();
+      int var4 = this.getGlTextureId();
       return var3 == var4;
    }
 
@@ -667,10 +667,10 @@ public class AtlasTexture extends Class290 implements Class288 {
          for (TextureAtlasSprite var6 : this.field1106.values()) {
             double var7 = 0.5 / (double)var1;
             double var9 = 0.5 / (double)var2;
-            double var11 = (double)Math.min(var6.method7459(), var6.method7460()) + var7;
-            double var13 = (double)Math.min(var6.method7462(), var6.method7463()) + var9;
-            double var15 = (double)Math.max(var6.method7459(), var6.method7460()) - var7;
-            double var17 = (double)Math.max(var6.method7462(), var6.method7463()) - var9;
+            double var11 = (double)Math.min(var6.getMinU(), var6.getMaxU()) + var7;
+            double var13 = (double)Math.min(var6.getMinV(), var6.getMaxV()) + var9;
+            double var15 = (double)Math.max(var6.getMinU(), var6.getMaxU()) - var7;
+            double var17 = (double)Math.max(var6.getMinV(), var6.getMaxV()) - var9;
             int var19 = (int)(var11 / this.field1115);
             int var20 = (int)(var13 / this.field1116);
             int var21 = (int)(var15 / this.field1115);

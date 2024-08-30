@@ -23,6 +23,6 @@ public class Class259 extends Class219<Class1048, Class2805<Class1048>> {
 
       ItemStack var17 = !var13 ? var4.method3091() : var4.method3090();
       Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var17, Class2327.field15931, false, var1, var2, var3);
-      var1.method35295();
+      var1.pop();
    }
 }

@@ -21,11 +21,11 @@ public class Class5750 extends Class5651<Class1053, Class2816<Class1053>> {
       }
 
       float var10 = var8 * 4.3F * MathHelper.sin(var9 * 0.6F * var3);
-      var2.method35293(Class7680.field32900.method25286(var10));
+      var2.rotate(Vector3f.YP.rotationDegrees(var10));
       var2.translate(0.0, 0.0, -0.4F);
       if (!var1.method3250()) {
          var2.translate(0.2F, 0.1F, 0.0);
-         var2.method35293(Class7680.field32902.method25286(90.0F));
+         var2.rotate(Vector3f.field32902.rotationDegrees(90.0F));
       }
    }
 }

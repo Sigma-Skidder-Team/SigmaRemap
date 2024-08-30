@@ -57,7 +57,7 @@ public class Class5952 extends Class5942<SkullTileEntity> {
       Class5422 var12 = var6.method25597(method18483(var2, var3));
       var10.method11174(var4, var1, 0.0F);
       var10.method11016(var5, var12, var7, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
-      var5.method35295();
+      var5.pop();
    }
 
    private static RenderType method18483(Class2137 var0, GameProfile var1) {

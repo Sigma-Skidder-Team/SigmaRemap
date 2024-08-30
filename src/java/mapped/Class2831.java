@@ -180,7 +180,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
       Class7952 var8 = Class7999.method27304()
          .method27305(var7)
          .method27308(
-            Items.field37796,
+            Items.BOW,
             new TranslationTextComponent("advancements.adventure.shoot_arrow.title"),
             new TranslationTextComponent("advancements.adventure.shoot_arrow.description"),
             (ResourceLocation)null,

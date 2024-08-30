@@ -179,7 +179,7 @@ public class Class905 extends Class882 {
             }
          }
 
-         if (this.field5163 == null || !this.field5163.method3066() || this.field5163 instanceof PlayerEntity && ((PlayerEntity)this.field5163).isSpectator()) {
+         if (this.field5163 == null || !this.field5163.isAlive() || this.field5163 instanceof PlayerEntity && ((PlayerEntity)this.field5163).isSpectator()) {
             if (!this.method3247()) {
                this.method3434(this.method3433().method11339(0.0, -0.04, 0.0));
             }
@@ -257,7 +257,7 @@ public class Class905 extends Class882 {
    }
 
    @Override
-   public float method3267() {
+   public float getBrightness() {
       return 1.0F;
    }
 
@@ -271,7 +271,7 @@ public class Class905 extends Class882 {
       if (var7) {
          this.method3399(var6, var4);
          if (var4 instanceof Class880) {
-            ((Class880)var4).method3035(new Class2023(Class8254.field35491, 200));
+            ((Class880)var4).method3035(new Class2023(Effects.LEVITATION, 200));
          }
       }
    }

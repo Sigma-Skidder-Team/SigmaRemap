@@ -15,12 +15,12 @@ public class Class1076 extends AbstractHorseEntity {
    }
 
    public static Class7037 method4999() {
-      return method4951().method21849(Class9173.field42105, 15.0).method21849(Class9173.field42108, 0.2F);
+      return method4951().method21849(Attributes.field42105, 15.0).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override
    public void method4925() {
-      this.method3085(Class9173.field42117).method38661(this.method4972());
+      this.method3085(Attributes.field42117).method38661(this.method4972());
    }
 
    @Override

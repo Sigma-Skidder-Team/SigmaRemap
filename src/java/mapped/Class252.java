@@ -14,16 +14,16 @@ public class Class252 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
             float var16 = MathHelper.lerp(var7, var4.prevRotationYaw, var4.rotationYaw) - MathHelper.lerp(var7, var4.field4966, var4.field4965);
             float var17 = MathHelper.lerp(var7, var4.prevRotationPitch, var4.rotationPitch);
             var1.push();
-            var1.method35293(Class7680.field32900.method25286(var16));
-            var1.method35293(Class7680.field32898.method25286(var17));
+            var1.rotate(Vector3f.YP.rotationDegrees(var16));
+            var1.rotate(Vector3f.field32898.rotationDegrees(var17));
             var1.translate((double)(0.375F * (float)(var15 * 2 - 1)), 0.0, 0.0);
             var1.translate(0.0, -0.375, 0.0);
-            var1.method35293(Class7680.field32898.method25286(-var17));
-            var1.method35293(Class7680.field32900.method25286(-var16));
+            var1.rotate(Vector3f.field32898.rotationDegrees(-var17));
+            var1.rotate(Vector3f.YP.rotationDegrees(-var16));
             float var18 = 1.3333334F;
             var1.method35292(1.3333334F, 1.3333334F, 1.3333334F);
             this.method825().method11208(var1, var13, var3, var14);
-            var1.method35295();
+            var1.pop();
          }
       }
    }

@@ -56,7 +56,7 @@ public class Class7497 implements Class7495 {
 
    @Nullable
    @Override
-   public IBakedModel method24425(Class8968 var1, Function<Class7826, TextureAtlasSprite> var2, Class1902 var3, ResourceLocation var4) {
+   public IBakedModel method24425(ModelBakery var1, Function<Class7826, TextureAtlasSprite> var2, Class1902 var3, ResourceLocation var4) {
       if (this.method24445().isEmpty()) {
          return null;
       } else {

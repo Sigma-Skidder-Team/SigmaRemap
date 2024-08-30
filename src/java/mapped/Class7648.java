@@ -30,7 +30,7 @@ public class Class7648 extends Class7647 {
    }
 
    public Class7648() {
-      super((Class9367)null, (Class9367)null);
+      super((Matrix4f)null, (Matrix4f)null);
    }
 
    private double method25127(float[] var1, double var2, double var4, double var6) {

@@ -13,7 +13,7 @@ public class Class4368 extends Class4247 {
       this.method13230(var10 = new Class4262(this, "enable", 114, 9, 40, 18));
       var10.method13093(var7.isEnabled());
       var10.method13036(var2x -> var7.method15999(var10.method13092()));
-      if (var7.method15989().size() > 0) {
+      if (var7.getSettingMap().size() > 0) {
          Class4364 var11;
          this.method13230(var11 = new Class4364(this, "gear", 132, 32));
          var11.method13251((var2x, var3x) -> ((Class4335)this.method13258()).method13486(var7));
@@ -43,7 +43,7 @@ public class Class4368 extends Class4247 {
          Class5628.method17736(this.field21351.parseSettingValueToIntBySettingName("Keybind")),
          Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.7F)
       );
-      if (this.field21351.method15989().size() > 1) {
+      if (this.field21351.getSettingMap().size() > 1) {
          RenderUtil.method11439(
             ClassicDecryption.regular12,
             (float)(this.field20895 + 84),

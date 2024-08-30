@@ -82,7 +82,7 @@ public abstract class Class1035 extends Class1009 {
    public void method4619(ServerWorld var1) {
       Class1063 var4 = this.<Class1063>method4292(EntityType.field41110, true);
       if (var4 != null) {
-         var4.method3035(new Class2023(Class8254.field35475, 200, 0));
+         var4.method3035(new Class2023(Effects.NAUSEA, 200, 0));
       }
    }
 

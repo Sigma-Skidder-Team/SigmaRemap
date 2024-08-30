@@ -47,7 +47,7 @@ public class Class1039 extends Class1038 {
       boolean var4 = super.method3114(var1);
       if (var4 && this.method3090().isEmpty() && var1 instanceof Class880) {
          float var5 = this.world.method6807(this.getPosition()).method38328();
-         ((Class880)var1).method3035(new Class2023(Class8254.field35483, 140 * (int)var5));
+         ((Class880)var1).method3035(new Class2023(Effects.HUNGER, 140 * (int)var5));
       }
 
       return var4;

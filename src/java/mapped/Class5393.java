@@ -7,12 +7,12 @@ import java.util.Random;
 
 public class Class5393 implements Class5391 {
    private static String[] field24037;
-   public final Class7144 field24038;
+   public final Effect field24038;
    public final int field24039;
    public final int field24040;
    private final float field24041;
 
-   public Class5393(Class7144 var1, int var2, int var3) {
+   public Class5393(Effect var1, int var2, int var3) {
       this.field24038 = var1;
       this.field24039 = var2;
       this.field24040 = var3;

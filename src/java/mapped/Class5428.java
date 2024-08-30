@@ -32,7 +32,7 @@ public class Class5428 extends Class5424 {
    }
 
    @Override
-   public Class5422 method17027(float var1, float var2) {
+   public Class5422 tex(float var1, float var2) {
       this.field24161 = var1;
       this.field24162 = var2;
       return this;
@@ -73,7 +73,7 @@ public class Class5428 extends Class5424 {
       this.field24157
          .pos((double)var1, (double)var2, (double)var3)
          .color(this.field24109, this.field24110, this.field24111, this.field24112)
-         .method17027(var8, var9)
+         .tex(var8, var9)
          .endVertex();
    }
 
@@ -82,7 +82,7 @@ public class Class5428 extends Class5424 {
       this.field24157
          .pos(this.field24158, this.field24159, this.field24160)
          .color(this.field24109, this.field24110, this.field24111, this.field24112)
-         .method17027(this.field24161, this.field24162)
+         .tex(this.field24161, this.field24162)
          .endVertex();
    }
 }

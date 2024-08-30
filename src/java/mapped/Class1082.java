@@ -32,7 +32,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    }
 
    public static Class7037 method5029() {
-      return Class1009.method4343().method21849(Class9173.field42108, 0.25);
+      return Class1009.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -84,7 +84,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    @Override
    public void method4270(Class9755 var1) {
       super.method4270(var1);
-      this.method2944(Class2106.field13731, new ItemStack(Items.field37796));
+      this.method2944(Class2106.field13731, new ItemStack(Items.BOW));
    }
 
    @Nullable
@@ -112,8 +112,8 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
       if (this.world != null && !this.world.isRemote) {
          this.field5600.method20003(this.field5947);
          this.field5600.method20003(this.field5946);
-         ItemStack var3 = this.getHeldItem(Class9456.method36389(this, Items.field37796));
-         if (var3.getItem() != Items.field37796) {
+         ItemStack var3 = this.getHeldItem(Class9456.method36389(this, Items.BOW));
+         if (var3.getItem() != Items.BOW) {
             this.field5600.method20002(4, this.field5947);
          } else {
             byte var4 = 20;
@@ -129,7 +129,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
 
    @Override
    public void method4530(Class880 var1, float var2) {
-      ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Items.field37796)));
+      ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Items.BOW)));
       AbstractArrowEntity var6 = this.method5032(var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.method3440(0.3333333333333333) - var6.getPosY();
@@ -146,7 +146,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
 
    @Override
    public boolean method4234(Class3262 var1) {
-      return var1 == Items.field37796;
+      return var1 == Items.BOW;
    }
 
    @Override

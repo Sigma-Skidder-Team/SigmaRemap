@@ -25,7 +25,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<? extends Registry<?>> field16035 = field16034;
    public static final RegistryKey<Registry<Class9455>> field16036 = createKey("sound_event");
    public static final RegistryKey<Registry<Fluid>> field16037 = createKey("fluid");
-   public static final RegistryKey<Registry<Class7144>> field16038 = createKey("mob_effect");
+   public static final RegistryKey<Registry<Effect>> field16038 = createKey("mob_effect");
    public static final RegistryKey<Registry<Block>> field16039 = createKey("block");
    public static final RegistryKey<Registry<Class6069>> field16040 = createKey("enchantment");
    public static final RegistryKey<Registry<EntityType<?>>> field16041 = createKey("entity_type");
@@ -58,7 +58,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Dimension>> DIMENSION_KEY = createKey("dimension");
    public static final Registry<Class9455> field16069 = method9175(field16036, () -> Sounds.field26714);
    public static final Class2351<Fluid> field16070 = method9176(field16037, "empty", () -> Class9479.field44064);
-   public static final Registry<Class7144> field16071 = method9175(field16038, () -> Class8254.field35492);
+   public static final Registry<Effect> EFFECTS = method9175(field16038, () -> Effects.LUCK);
    public static final Class2351<Block> BLOCK = method9176(field16039, "air", () -> Blocks.AIR);
    public static final Registry<Class6069> field16073 = method9175(field16040, () -> Class8122.field34918);
    public static final Class2351<EntityType<?>> ENTITY_TYPE = method9176(field16041, "pig", () -> EntityType.field41064);
@@ -74,7 +74,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class8298<?>> field16084 = method9175(field16051, () -> Class8298.field35655);
    public static final Registry<Class7207<?>> field16085 = method9175(field16052, () -> Class7207.field30935);
    public static final Registry<Class6504<?>> field16086 = method9175(field16053, () -> Class6504.field28471);
-   public static final Registry<Class4869> field16087 = method9175(field16054, () -> Class9173.field42115);
+   public static final Registry<Class4869> field16087 = method9175(field16054, () -> Attributes.LUCK);
    public static final Registry<Class49<?>> field16088 = method9175(field16055, () -> Class8876.field40098);
    public static final Class2351<Class9564> field16089 = method9176(field16056, "plains", () -> Class9564.field44542);
    public static final Class2351<Class8395> field16090 = method9176(field16057, "none", () -> Class8395.field36011);
@@ -272,7 +272,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
       return ((MutableRegistry<V>)var0).register(RegistryKey.getOrCreateKey(var0.field16139, var1), (T)var2, Lifecycle.stable());
    }
 
-   public static <V, T extends V> T method9196(Registry<V> var0, int var1, String var2, T var3) {
+   public static <V, T extends V> T register(Registry<V> var0, int var1, String var2, T var3) {
       return ((MutableRegistry<V>)var0).method9249(var1, RegistryKey.getOrCreateKey(var0.field16139, new ResourceLocation(var2)), (T)var3, Lifecycle.stable());
    }
 

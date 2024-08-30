@@ -42,7 +42,7 @@ public class Class5135 implements Class5119 {
    public static void method15903(Class8238 var0, float var1, boolean var2, boolean var3, double var4, double var6, double var8) {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.method27889(0.0F, 1.0F, 0.0F, 0.75F);
       RenderSystem.disableTexture();
       RenderSystem.lineWidth(6.0F);

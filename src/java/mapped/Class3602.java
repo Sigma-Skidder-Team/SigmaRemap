@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.Module;
+import com.mentalfrostbyte.jello.module.impl.gui.jello.ActiveMods;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 
 import java.util.Comparator;

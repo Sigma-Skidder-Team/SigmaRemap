@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4420;
+import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -309,7 +309,7 @@ public class Class5169 extends Module {
    }
 
    @EventTarget
-   public void method16084(Class4420 var1) {
+   public void method16084(Render3DEvent var1) {
       if (this.isEnabled()) {
          this.method16086();
       }

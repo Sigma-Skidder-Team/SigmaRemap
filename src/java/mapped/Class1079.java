@@ -221,7 +221,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
 
                   for (int var29 = 0; var29 < 10 && !var27.isEmpty(); var29++) {
                      Class880 var31 = (Class880)var27.get(this.rand.nextInt(var27.size()));
-                     if (var31 != this && var31.method3066() && this.method3135(var31)) {
+                     if (var31 != this && var31.isAlive() && this.method3135(var31)) {
                         if (!(var31 instanceof PlayerEntity)) {
                            this.method5015(var3, var31.method3205());
                         } else if (!((PlayerEntity)var31).abilities.field29606) {
@@ -234,7 +234,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
                   }
                } else {
                   Entity var26 = this.world.method6774(var23);
-                  if (var26 == null || !var26.method3066() || this.getDistanceSq(var26) > 900.0 || !this.method3135(var26)) {
+                  if (var26 == null || !var26.isAlive() || this.getDistanceSq(var26) > 900.0 || !this.method3135(var26)) {
                      this.method5015(var3, 0);
                   } else if (var26 instanceof PlayerEntity && ((PlayerEntity)var26).abilities.field29606) {
                      this.method5015(var3, 0);
@@ -286,7 +286,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
             this.method3041(1.0F);
          }
 
-         this.field5935.method12278(this.method3042() / this.method3075());
+         this.field5935.method12278(this.getHealth() / this.method3075());
       } else {
          int var22 = this.method5012() - 1;
          if (var22 <= 0) {
@@ -461,10 +461,10 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
 
    public static Class7037 method2997() {
       return Class1009.method4343()
-         .method21849(Class9173.field42105, 300.0)
-         .method21849(Class9173.field42108, 0.6F)
-         .method21849(Class9173.field42106, 40.0)
-         .method21849(Class9173.field42113, 4.0);
+         .method21849(Attributes.field42105, 300.0)
+         .method21849(Attributes.MOVEMENT_SPEED, 0.6F)
+         .method21849(Attributes.field42106, 40.0)
+         .method21849(Attributes.field42113, 4.0);
    }
 
    public float method5010(int var1) {
@@ -493,7 +493,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
 
    @Override
    public boolean method5016() {
-      return this.method3042() <= this.method3075() / 2.0F;
+      return this.getHealth() <= this.method3075() / 2.0F;
    }
 
    @Override
@@ -513,6 +513,6 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
 
    @Override
    public boolean method3036(Class2023 var1) {
-      return var1.method8627() != Class8254.field35486 ? super.method3036(var1) : false;
+      return var1.method8627() != Effects.WITHER ? super.method3036(var1) : false;
    }
 }

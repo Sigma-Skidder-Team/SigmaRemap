@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
 
 public class Class5218 extends Module {
     private int field23549 = -1;
@@ -39,9 +40,9 @@ public class Class5218 extends Module {
 
             for (int var5 = 0; var5 < var4; var5++) {
                 KeyBinding var6 = mc.gameSettings.keyBindsHotbar[var5];
-                String var7 = var6.method8513();
+                String var7 = var6.getKeyDescription();
                 int var8 = Integer.parseInt(String.valueOf(var7.charAt(var7.length() - 1)));
-                if (var1.method13977() == var6.field13070.field34875 && var8 - 1 != mc.player.inventory.currentItem) {
+                if (var1.method13977() == var6.keycode.keyCode && var8 - 1 != mc.player.inventory.currentItem) {
                     this.field23549 = -1;
                     this.field23551 = 0;
                 }
@@ -57,8 +58,8 @@ public class Class5218 extends Module {
             }
 
             int var4 = -1;
-            if (mc.player.method3042() <= this.method16004().getNumberValueBySettingName("Health") * 2.0F) {
-                var4 = ((Class5331) this.method16004()).method16749(false);
+            if (mc.player.getHealth() <= this.method16004().getNumberValueBySettingName("Health") * 2.0F) {
+                var4 = ((AutoGapple) this.method16004()).method16749(false);
                 if (this.field23549 == -1 && this.field23551 >= 20 && var4 != -1) {
                     this.field23549 = 0;
                     this.field23551 = 0;
@@ -70,8 +71,8 @@ public class Class5218 extends Module {
                     this.field23549++;
                     if (this.field23549 != 1) {
                         if (this.field23549 > 1
-                                && mc.player.getHeldItem(Hand.MAIN_HAND).getItem() != Items.field37872
-                                && mc.player.getHeldItem(Hand.MAIN_HAND).getItem() != Items.field37873) {
+                                && mc.player.getHeldItem(Hand.MAIN_HAND).getItem() != Items.GOLDEN_APPLE
+                                && mc.player.getHeldItem(Hand.MAIN_HAND).getItem() != Items.ENCHANTED_GOLDEN_APPLE) {
                             mc.player.inventory.currentItem = this.field23550;
                             this.field23550 = -1;
                             this.field23549 = -1;

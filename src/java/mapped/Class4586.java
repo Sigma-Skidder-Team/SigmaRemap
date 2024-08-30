@@ -21,20 +21,20 @@ public abstract class Class4586 extends Class4587 {
       if (this.field22062 != 0.0F) {
          var10 = new Class8661(var2.method37508());
          float var11 = MathHelper.lerp(var3, this.field22063, this.field22062);
-         var10.method31182(Class7680.field32902.method25285(var11));
+         var10.method31182(Vector3f.field32902.method25285(var11));
       } else {
          var10 = var2.method37508();
       }
 
-      Class7680 var19 = new Class7680(-1.0F, -1.0F, 0.0F);
+      Vector3f var19 = new Vector3f(-1.0F, -1.0F, 0.0F);
       var19.method25283(var10);
-      Class7680[] var12 = new Class7680[]{
-         new Class7680(-1.0F, -1.0F, 0.0F), new Class7680(-1.0F, 1.0F, 0.0F), new Class7680(1.0F, 1.0F, 0.0F), new Class7680(1.0F, -1.0F, 0.0F)
+      Vector3f[] var12 = new Vector3f[]{
+         new Vector3f(-1.0F, -1.0F, 0.0F), new Vector3f(-1.0F, 1.0F, 0.0F), new Vector3f(1.0F, 1.0F, 0.0F), new Vector3f(1.0F, -1.0F, 0.0F)
       };
       float var13 = this.method14509(var3);
 
       for (int var14 = 0; var14 < 4; var14++) {
-         Class7680 var15 = var12[var14];
+         Vector3f var15 = var12[var14];
          var15.method25283(var10);
          var15.method25272(var13);
          var15.method25276(var7, var8, var9);
@@ -46,23 +46,23 @@ public abstract class Class4586 extends Class4587 {
       float var17 = this.method14506();
       int var18 = this.method14499(var3);
       var1.pos((double)var12[0].method25269(), (double)var12[0].method25270(), (double)var12[0].method25271())
-         .method17027(var21, var17)
-         .method17033(this.field22058, this.field22059, this.field22060, this.field22061)
+         .tex(var21, var17)
+         .color(this.field22058, this.field22059, this.field22060, this.field22061)
          .method17034(var18)
          .endVertex();
       var1.pos((double)var12[1].method25269(), (double)var12[1].method25270(), (double)var12[1].method25271())
-         .method17027(var21, var16)
-         .method17033(this.field22058, this.field22059, this.field22060, this.field22061)
+         .tex(var21, var16)
+         .color(this.field22058, this.field22059, this.field22060, this.field22061)
          .method17034(var18)
          .endVertex();
       var1.pos((double)var12[2].method25269(), (double)var12[2].method25270(), (double)var12[2].method25271())
-         .method17027(var20, var16)
-         .method17033(this.field22058, this.field22059, this.field22060, this.field22061)
+         .tex(var20, var16)
+         .color(this.field22058, this.field22059, this.field22060, this.field22061)
          .method17034(var18)
          .endVertex();
       var1.pos((double)var12[3].method25269(), (double)var12[3].method25270(), (double)var12[3].method25271())
-         .method17027(var20, var17)
-         .method17033(this.field22058, this.field22059, this.field22060, this.field22061)
+         .tex(var20, var17)
+         .color(this.field22058, this.field22059, this.field22060, this.field22061)
          .method17034(var18)
          .endVertex();
    }

@@ -34,7 +34,7 @@ public abstract class Class1047 extends Class1046 {
    }
 
    public void method4775(int var1) {
-      if (this.method3066() && !this.method3255()) {
+      if (this.isAlive() && !this.method3255()) {
          this.method3352(var1 - 1);
          if (this.method3351() == -20) {
             this.method3352(0);

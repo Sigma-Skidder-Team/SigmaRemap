@@ -296,15 +296,15 @@ public class KeyboardListener {
          }
 
          if (this.field43918 <= 0L) {
-            if (Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 67)
-               && Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 292)) {
+            if (InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 67)
+               && InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 292)) {
                this.field43921 = true;
                this.field43918 = Util.milliTime();
                this.field43919 = Util.milliTime();
                this.field43920 = 0L;
             }
-         } else if (!Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 67)
-            || !Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 292)) {
+         } else if (!InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 67)
+            || !InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 292)) {
             this.field43918 = -1L;
          }
 
@@ -315,14 +315,14 @@ public class KeyboardListener {
                   ((Class1138)this.field43915.currentScreen).field6199 = null;
                }
             } else {
-               if (this.field43915.gameSettings.field44652.method8519(var3, var4)) {
+               if (this.field43915.gameSettings.keyBindFullscreen.matchesKey(var3, var4)) {
                   this.field43915.getMainWindow().toggleFullscreen();
                   this.field43915.gameSettings.fullscreen = this.field43915.getMainWindow().isFullscreen();
                   this.field43915.gameSettings.saveOptions();
                   return;
                }
 
-               if (this.field43915.gameSettings.field44649.method8519(var3, var4)) {
+               if (this.field43915.gameSettings.keyBindScreenshot.matchesKey(var3, var4)) {
                   if (!Screen.hasControlDown()) {
                   }
 
@@ -383,7 +383,7 @@ public class KeyboardListener {
          }
 
          if (this.field43915.currentScreen == null || this.field43915.currentScreen.field4567) {
-            Class8115 var16 = Class9798.method38637(var3, var4);
+            InputMappingsInput var16 = InputMappings.method38637(var3, var4);
             if (var5 != 0) {
                if (var3 == 293 && this.field43915.gameRenderer != null) {
                   this.field43915.gameRenderer.method734();
@@ -392,11 +392,11 @@ public class KeyboardListener {
                boolean var12 = false;
                if (this.field43915.currentScreen == null) {
                   if (var3 == 256) {
-                     boolean var13 = Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 292);
+                     boolean var13 = InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 292);
                      this.field43915.displayInGameMenu(var13);
                   }
 
-                  var12 = Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 292) && this.method36341(var3);
+                  var12 = InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 292) && this.method36341(var3);
                   this.field43921 |= var12;
                   if (var3 == 290) {
                      this.field43915.gameSettings.hideGUI = !this.field43915.gameSettings.hideGUI;
@@ -404,17 +404,17 @@ public class KeyboardListener {
                }
 
                if (!var12) {
-                  KeyBinding.method8505(var16, true);
-                  KeyBinding.method8504(var16);
+                  KeyBinding.setKeyBindState(var16, true);
+                  KeyBinding.onTick(var16);
                } else {
-                  KeyBinding.method8505(var16, false);
+                  KeyBinding.setKeyBindState(var16, false);
                }
 
                if (this.field43915.gameSettings.showDebugProfilerChart && var3 >= 48 && var3 <= 57) {
                   this.field43915.updateDebugProfilerName(var3 - 48);
                }
             } else {
-               KeyBinding.method8505(var16, false);
+               KeyBinding.setKeyBindState(var16, false);
                if (var3 == 292) {
                   if (!this.field43921) {
                      this.field43915.gameSettings.showDebugInfo = !this.field43915.gameSettings.showDebugInfo;
@@ -479,7 +479,7 @@ public class KeyboardListener {
    }
 
    public void setupCallbacks(long var1) {
-      Class9798.method38640(
+      InputMappings.method38640(
          var1,
          (var1x, var3, var4, var5, var6) -> this.field43915.execute(() -> this.method36345(var1x, var3, var4, var5, var6)),
          (var1x, var3, var4) -> this.field43915.execute(() -> this.method36346(var1x, var3, var4))

@@ -2,6 +2,7 @@ package mapped;
 
 import java.awt.Color;
 
+import com.mentalfrostbyte.jello.module.impl.gui.jello.MusicParticles;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import org.lwjgl.opengl.GL11;
 
@@ -9,8 +10,8 @@ public class Class5968 {
    private static String[] field26019;
    public final float field26020 = (float)(0.1F + Math.random() * 0.9F);
    public final float field26021 = (float)(0.5 + Math.random() * 0.5);
-   public final int field26022 = (int)((double)Class5263.method16466().mainWindow.getWidth() * Math.random());
-   public final int field26023 = (int)((double)Class5263.method16467().mainWindow.getHeight() * Math.random());
+   public final int field26022 = (int)((double) MusicParticles.method16466().mainWindow.getWidth() * Math.random());
+   public final int field26023 = (int)((double) MusicParticles.method16467().mainWindow.getHeight() * Math.random());
    public float field26024;
 
    public void method18497(float var1) {
@@ -29,9 +30,9 @@ public class Class5968 {
       }
 
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)(Class5263.method16468().mainWindow.getWidth() / 2), (float)(Class5263.method16469().mainWindow.getHeight() / 2), 0.0F);
+      GL11.glTranslatef((float)(MusicParticles.method16468().mainWindow.getWidth() / 2), (float)(MusicParticles.method16469().mainWindow.getHeight() / 2), 0.0F);
       GL11.glScalef(var3, var3, 1.0F);
-      GL11.glTranslatef((float)(-Class5263.method16470().mainWindow.getWidth() / 2), (float)(-Class5263.method16471().mainWindow.getHeight() / 2), 0.0F);
+      GL11.glTranslatef((float)(-MusicParticles.method16470().mainWindow.getWidth() / 2), (float)(-MusicParticles.method16471().mainWindow.getHeight() / 2), 0.0F);
       int var5 = Color.getHSBColor((float)(System.currentTimeMillis() % 4000L) / 4000.0F, 0.3F, 1.0F).getRGB();
       float var6 = 60.0F * this.field26021;
       RenderUtil.method11449(

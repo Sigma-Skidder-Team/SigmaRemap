@@ -187,7 +187,7 @@ public class Class9336 {
    public static Class9732 method35309(Class290 var0) {
       Class9732 var3 = var0.field1128;
       if (var3 == null) {
-         int var4 = var0.method1131();
+         int var4 = var0.getGlTextureId();
          var3 = field43325.get(var4);
          if (var3 == null) {
             var3 = new Class9732(var4, GL11.glGenTextures(), GL11.glGenTextures());
@@ -259,7 +259,7 @@ public class Class9336 {
    }
 
    public static void method35315(Class290 var0) {
-      int var3 = var0.method1131();
+      int var3 = var0.getGlTextureId();
       method35314(var0.method1135());
       if (Class7414.method23863() == 33984) {
          int var4 = Shaders.field40682;
@@ -721,7 +721,7 @@ public class Class9336 {
 
    public static void method35339() {
       TextureManager var2 = Minecraft.getInstance().getTextureManager();
-      Class290 var3 = var2.method1076(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
+      Class290 var3 = var2.getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
       if (var3 != null) {
          Class9732 var4 = var3.method1135();
          Class7414.method23814(var4.field45439);

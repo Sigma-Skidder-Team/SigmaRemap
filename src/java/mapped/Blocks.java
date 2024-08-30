@@ -337,55 +337,55 @@ public class Blocks {
    );
    public static final Block DANDELION = register(
       "dandelion",
-      new Class3490(Class8254.field35489, 7, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.SATURATION, 7, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block POPPY = register(
       "poppy",
-      new Class3490(Class8254.field35482, 5, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.NIGHT_VISION, 5, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block BLUE_ORCHID = register(
       "blue_orchid",
-      new Class3490(Class8254.field35489, 7, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.SATURATION, 7, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block ALLIUM = register(
       "allium",
-      new Class3490(Class8254.field35478, 4, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.FIRE_RESISTANCE, 4, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block AZURE_BLUET = register(
       "azure_bluet",
-      new Class3490(Class8254.field35481, 8, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.BLINDNESS, 8, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block RED_TULIP = register(
       "red_tulip",
-      new Class3490(Class8254.field35484, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.WEAKNESS, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block ORANGE_TULIP = register(
       "orange_tulip",
-      new Class3490(Class8254.field35484, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.WEAKNESS, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block WHITE_TULIP = register(
       "white_tulip",
-      new Class3490(Class8254.field35484, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.WEAKNESS, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block PINK_TULIP = register(
       "pink_tulip",
-      new Class3490(Class8254.field35484, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.WEAKNESS, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block OXEYE_DAISY = register(
       "oxeye_daisy",
-      new Class3490(Class8254.field35476, 8, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.REGENERATION, 8, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block CORNFLOWER = register(
       "cornflower",
-      new Class3490(Class8254.field35474, 6, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.JUMP_BOOST, 6, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block WITHER_ROSE = register(
       "wither_rose",
-      new Class3491(Class8254.field35486, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3491(Effects.WITHER, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block LILY_OF_THE_VALLEY = register(
       "lily_of_the_valley",
-      new Class3490(Class8254.field35485, 12, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.POISON, 12, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
    );
    public static final Block BROWN_MUSHROOM = register(
       "brown_mushroom",

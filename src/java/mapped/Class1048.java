@@ -17,7 +17,7 @@ public class Class1048 extends Class1047 {
    private static final DataParameter<Boolean> field5805 = EntityDataManager.<Boolean>method35441(Class1048.class, Class7784.field33398);
    private static final DataParameter<Integer> field5806 = EntityDataManager.<Integer>method35441(Class1048.class, Class7784.field33391);
    private static final Class8522 field5807 = new Class8522().method30203(10.0).method30205().method30204().method30206();
-   public static final Predicate<ItemEntity> field5808 = var0 -> !var0.method4135() && var0.method3066() && var0.method3250();
+   public static final Predicate<ItemEntity> field5808 = var0 -> !var0.method4135() && var0.isAlive() && var0.method3250();
 
    public Class1048(EntityType<? extends Class1048> var1, World var2) {
       super(var1, var2);
@@ -114,7 +114,7 @@ public class Class1048 extends Class1047 {
    }
 
    public static Class7037 method4782() {
-      return Class1006.method4220().method21849(Class9173.field42105, 10.0).method21849(Class9173.field42108, 1.2F).method21849(Class9173.field42110, 3.0);
+      return Class1006.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 1.2F).method21849(Attributes.field42110, 3.0);
    }
 
    @Override
@@ -124,7 +124,7 @@ public class Class1048 extends Class1047 {
 
    @Override
    public boolean method3114(Entity var1) {
-      boolean var4 = var1.method2741(Class8654.method31115(this), (float)((int)this.method3086(Class9173.field42110)));
+      boolean var4 = var1.method2741(Class8654.method31115(this), (float)((int)this.method3086(Attributes.field42110)));
       if (var4) {
          this.method3399(this, var1);
          this.method2863(Sounds.field26500, 1.0F, 1.0F);

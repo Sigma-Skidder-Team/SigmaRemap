@@ -24,7 +24,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    }
 
    public static Class7037 method4529() {
-      return Class1006.method4220().method21849(Class9173.field42105, 4.0).method21849(Class9173.field42108, 0.2F);
+      return Class1006.method4220().method21849(Attributes.field42105, 4.0).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override
@@ -127,7 +127,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
 
    @Override
    public boolean method4516() {
-      return this.method3066() && this.method4531();
+      return this.isAlive() && this.method4531();
    }
 
    public boolean method4531() {

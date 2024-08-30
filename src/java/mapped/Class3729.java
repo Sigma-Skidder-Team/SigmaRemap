@@ -24,7 +24,7 @@ public class Class3729 extends Class3676<Class1042> {
          return false;
       } else {
          Class880 var6 = var5.<Class880>method21410(Class8830.field39828).get();
-         return var6.getType() == EntityType.PLAYER && var2.method3066() && var6.method3066() && !var2.method3005() && var2.getDistanceSq(var6) <= 17.0;
+         return var6.getType() == EntityType.PLAYER && var2.isAlive() && var6.isAlive() && !var2.method3005() && var2.getDistanceSq(var6) <= 17.0;
       }
    }
 

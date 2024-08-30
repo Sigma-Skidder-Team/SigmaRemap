@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.jello.module.impl.render.CameraNoClip;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -11,9 +12,9 @@ public class Class9624 {
    private Entity field45007;
    private Vector3d field45008 = Vector3d.ZERO;
    private final Mutable field45009 = new Mutable();
-   private final Class7680 field45010 = new Class7680(0.0F, 0.0F, 1.0F);
-   private final Class7680 field45011 = new Class7680(0.0F, 1.0F, 0.0F);
-   private final Class7680 field45012 = new Class7680(1.0F, 0.0F, 0.0F);
+   private final Vector3f field45010 = new Vector3f(0.0F, 0.0F, 1.0F);
+   private final Vector3f field45011 = new Vector3f(0.0F, 1.0F, 0.0F);
+   private final Vector3f field45012 = new Vector3f(1.0F, 0.0F, 0.0F);
    private float field45013;
    private float field45014;
    private final Class8661 field45015 = new Class8661(0.0F, 0.0F, 0.0F, 1.0F);
@@ -73,7 +74,7 @@ public class Class9624 {
          BlockRayTraceResult var11 = this.field45006.method7036(new Class6809(var9, var10, Class2271.field14776, Class1985.field12962, this.field45007));
          if (var11.getType() != RayTraceResult.Type.MISS) {
             double var12 = var11.method31419().method11341(this.field45008);
-            if (var12 < var1 && !Client.getInstance().getModuleManager().getModuleByClass(Class5273.class).isEnabled()) {
+            if (var12 < var1 && !Client.getInstance().getModuleManager().getModuleByClass(CameraNoClip.class).isEnabled()) {
                var1 = var12;
             }
          }
@@ -93,8 +94,8 @@ public class Class9624 {
       this.field45013 = var2;
       this.field45014 = var1;
       this.field45015.method31185(0.0F, 0.0F, 0.0F, 1.0F);
-      this.field45015.method31182(Class7680.field32900.method25286(-var1));
-      this.field45015.method31182(Class7680.field32898.method25286(var2));
+      this.field45015.method31182(Vector3f.YP.rotationDegrees(-var1));
+      this.field45015.method31182(Vector3f.field32898.rotationDegrees(var2));
       this.field45010.method25275(0.0F, 0.0F, 1.0F);
       this.field45010.method25283(this.field45015);
       this.field45011.method25275(0.0F, 1.0F, 0.0F);
@@ -178,11 +179,11 @@ public class Class9624 {
       }
    }
 
-   public final Class7680 method37516() {
+   public final Vector3f method37516() {
       return this.field45010;
    }
 
-   public final Class7680 method37517() {
+   public final Vector3f method37517() {
       return this.field45011;
    }
 

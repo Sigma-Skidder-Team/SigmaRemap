@@ -58,7 +58,7 @@ public class Class9640 {
       } else {
          this.field45074++;
          if (this.field45074 >= 80) {
-            if (var1.method3042() > 10.0F || var4 == Class2197.field14354 || var1.method3042() > 1.0F && var4 == Class2197.field14353) {
+            if (var1.getHealth() > 10.0F || var4 == Class2197.field14354 || var1.getHealth() > 1.0F && var4 == Class2197.field14353) {
                var1.method2741(Class8654.field39000, 1.0F);
             }
 

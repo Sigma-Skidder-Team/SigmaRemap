@@ -391,7 +391,7 @@ public class ArmorStandEntity extends Class880 {
          this.method2904();
          return false;
       } else if (!Class8654.field38992.equals(var1)) {
-         if (Class8654.field38994.equals(var1) && this.method3042() > 0.5F) {
+         if (Class8654.field38994.equals(var1) && this.getHealth() > 0.5F) {
             this.method4192(var1, 4.0F);
             return false;
          } else {
@@ -471,7 +471,7 @@ public class ArmorStandEntity extends Class880 {
    }
 
    private void method4192(Class8654 var1, float var2) {
-      float var5 = this.method3042();
+      float var5 = this.getHealth();
       var5 -= var2;
       if (!(var5 <= 0.5F)) {
          this.method3043(var5);

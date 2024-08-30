@@ -16,9 +16,9 @@ public class SetStewEffectSerializer extends LootFunctionSerializer<Class133> {
       if (!Class133.method390(var2).isEmpty()) {
          JsonArray var6 = new JsonArray();
 
-         for (Class7144 var8 : Class133.method390(var2).keySet()) {
+         for (Effect var8 : Class133.method390(var2).keySet()) {
             JsonObject var9 = new JsonObject();
-            ResourceLocation var10 = Registry.field16071.getKey(var8);
+            ResourceLocation var10 = Registry.EFFECTS.getKey(var8);
             if (var10 == null) {
                throw new IllegalArgumentException("Don't know how to serialize mob effect " + var8);
             }
@@ -37,7 +37,7 @@ public class SetStewEffectSerializer extends LootFunctionSerializer<Class133> {
       if (var1.has("effects")) {
          for (JsonElement var8 : JSONUtils.method32785(var1, "effects")) {
             String var9 = JSONUtils.method32763(var8.getAsJsonObject(), "type");
-            Class7144 var10 = Registry.field16071
+            Effect var10 = Registry.EFFECTS
                .method9187(new ResourceLocation(var9))
                .orElseThrow(() -> new JsonSyntaxException("Unknown mob effect '" + var9 + "'"));
             Class6872 var11 = JSONUtils.<Class6872>method32788(var8.getAsJsonObject(), "duration", var2, Class6872.class);

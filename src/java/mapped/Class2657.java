@@ -14,7 +14,7 @@ public class Class2657 extends Class2647 {
 
    @Override
    public boolean method10806() {
-      float var3 = this.field16990.method3267();
+      float var3 = this.field16990.getBrightness();
       if (var3 >= 0.5F && this.field16990.method3013().nextInt(100) == 0) {
          this.field16990.method4233((Class880)null);
          return false;

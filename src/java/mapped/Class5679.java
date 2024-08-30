@@ -28,7 +28,7 @@ public class Class5679 extends Class5676<Class1033> {
                var9[var11].field18050 + (double) MathHelper.cos((float)var11 + var10 * 0.7F) * 0.025
             );
             super.method17853(var1, var2, var3, var4, var5, var6);
-            var4.method35295();
+            var4.pop();
          }
       }
    }

@@ -49,7 +49,7 @@ public class Class7078 {
          RenderType var12 = RenderType.getEntityCutoutNoCull(var9);
          Class5422 var13 = var4.method25597(var12);
          var11.method27044(var1, var3, var13, var5, var6);
-         var3.method35295();
+         var3.pop();
       }
    }
 

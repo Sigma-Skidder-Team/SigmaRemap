@@ -108,7 +108,7 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
                new Class7219[0]
             )
             .forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));
-         var1.method35295();
+         var1.pop();
       } else {
          float var11 = 1.5F;
          var1.push();
@@ -116,7 +116,7 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
          var1.translate(0.0, 1.375, 0.125);
          ImmutableList.of(this.field17827, this.field17829, this.field17828, this.field17831)
             .forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));
-         var1.method35295();
+         var1.pop();
          var1.push();
          var1.method35292(0.4F, 0.4F, 0.4F);
          var1.translate(0.0, 2.25, 0.0);
@@ -124,7 +124,7 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
                this.field17820, this.field17821, this.field17822, this.field17823, this.field17824, this.field17825, this.field17826, this.field17830
             )
             .forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));
-         var1.method35295();
+         var1.pop();
       }
    }
 

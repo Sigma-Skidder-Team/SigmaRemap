@@ -17,7 +17,7 @@ public class Class5129 implements Class5119 {
       BlockPos var11 = this.field23319.player.getPosition();
       World var12 = this.field23319.player.world;
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.method27889(0.0F, 1.0F, 0.0F, 0.75F);
       RenderSystem.disableTexture();
       RenderSystem.lineWidth(6.0F);

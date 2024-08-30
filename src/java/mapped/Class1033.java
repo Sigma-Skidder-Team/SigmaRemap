@@ -38,12 +38,12 @@ public class Class1033 extends Class1031 implements Class1022 {
    }
 
    public static Class7037 method4610() {
-      return Class1009.method4343().method21849(Class9173.field42108, 0.5).method21849(Class9173.field42106, 18.0).method21849(Class9173.field42105, 32.0);
+      return Class1009.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.field42106, 18.0).method21849(Attributes.field42105, 32.0);
    }
 
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      this.method2944(Class2106.field13731, new ItemStack(Items.field37796));
+      this.method2944(Class2106.field13731, new ItemStack(Items.BOW));
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
@@ -154,7 +154,7 @@ public class Class1033 extends Class1031 implements Class1022 {
 
    @Override
    public void method4530(Class880 var1, float var2) {
-      ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Items.field37796)));
+      ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Items.BOW)));
       AbstractArrowEntity var6 = Class9456.method36390(this, var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.method3440(0.3333333333333333) - var6.getPosY();

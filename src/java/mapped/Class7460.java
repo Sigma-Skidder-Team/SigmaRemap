@@ -35,7 +35,7 @@ public class Class7460 implements Class7458 {
    public int method24127() {
       if (this.field32082 instanceof Class880) {
          Class880 var3 = (Class880)this.field32082;
-         return (int)var3.method3042();
+         return (int)var3.getHealth();
       } else {
          return 0;
       }

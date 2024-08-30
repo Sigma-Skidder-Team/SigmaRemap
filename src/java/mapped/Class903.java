@@ -35,7 +35,7 @@ public class Class903 extends Class901 {
          var6.method4097(3.0F);
          var6.method4109(600);
          var6.method4111((7.0F - var6.method4098()) / (float)var6.method4108());
-         var6.method4101(new Class2023(Class8254.field35473, 1, 1));
+         var6.method4101(new Class2023(Effects.INSTANT_DAMAGE, 1, 1));
          if (!var5.isEmpty()) {
             for (Class880 var8 : var5) {
                double var9 = this.getDistanceSq(var8);

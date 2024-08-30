@@ -108,11 +108,11 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
 
    public static Class7037 method5098() {
       return Class1009.method4343()
-         .method21849(Class9173.field42105, 40.0)
-         .method21849(Class9173.field42108, 0.3F)
-         .method21849(Class9173.field42107, 0.6F)
-         .method21849(Class9173.field42111, 1.0)
-         .method21849(Class9173.field42110, 6.0);
+         .method21849(Attributes.field42105, 40.0)
+         .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
+         .method21849(Attributes.field42107, 0.6F)
+         .method21849(Attributes.field42111, 1.0)
+         .method21849(Attributes.field42110, 6.0);
    }
 
    public boolean method5099() {
@@ -200,7 +200,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    public void method4308(boolean var1) {
       this.method3210().method35446(field5982, var1);
       if (!this.world.isRemote && var1) {
-         this.method3085(Class9173.field42110).method38661(0.5);
+         this.method3085(Attributes.field42110).method38661(0.5);
       }
    }
 

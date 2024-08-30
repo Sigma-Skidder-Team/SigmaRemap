@@ -33,7 +33,7 @@ public class Class885 extends AbstractArrowEntity {
    @Override
    public void method3478(Class880 var1) {
       super.method3478(var1);
-      Class2023 var4 = new Class2023(Class8254.field35490, this.field5110, 0);
+      Class2023 var4 = new Class2023(Effects.GLOWING, this.field5110, 0);
       var1.method3035(var4);
    }
 

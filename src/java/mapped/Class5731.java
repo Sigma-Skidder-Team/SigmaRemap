@@ -36,13 +36,13 @@ public class Class5731 extends Class5715<ExperienceOrbEntity> {
       short var20 = 255;
       int var21 = (int)((MathHelper.sin(var18 + (float) (Math.PI * 4.0 / 3.0)) + 1.0F) * 0.1F * 255.0F);
       var4.translate(0.0, 0.1F, 0.0);
-      var4.method35293(this.field25097.method32230());
-      var4.method35293(Class7680.field32900.method25286(180.0F));
+      var4.rotate(this.field25097.method32230());
+      var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
       float var22 = 0.3F;
       var4.method35292(0.3F, 0.3F, 0.3F);
       Class5422 var23 = var5.method25597(field25142);
-      Class8892 var24 = var4.method35296();
-      Class9367 var25 = var24.method32361();
+      Class8892 var24 = var4.getLast();
+      Matrix4f var25 = var24.getMatrix();
       Class8967 var26 = var24.method32362();
       int var27 = var19;
       int var28 = 255;
@@ -60,16 +60,16 @@ public class Class5731 extends Class5715<ExperienceOrbEntity> {
       method17914(var23, var25, var26, 0.5F, -0.25F, var27, var28, var29, var11, var13, var6);
       method17914(var23, var25, var26, 0.5F, 0.75F, var27, var28, var29, var11, var12, var6);
       method17914(var23, var25, var26, -0.5F, 0.75F, var27, var28, var29, var10, var12, var6);
-      var4.method35295();
+      var4.pop();
       super.method17853(var1, var2, var3, var4, var5, var6);
    }
 
    private static void method17914(
-      Class5422 var0, Class9367 var1, Class8967 var2, float var3, float var4, int var5, int var6, int var7, float var8, float var9, int var10
+           Class5422 var0, Matrix4f var1, Class8967 var2, float var3, float var4, int var5, int var6, int var7, float var8, float var9, int var10
    ) {
-      var0.method17040(var1, var3, var4, 0.0F)
+      var0.pos(var1, var3, var4, 0.0F)
          .color(var5, var6, var7, 128)
-         .method17027(var8, var9)
+         .tex(var8, var9)
          .method17035(Class213.field798)
          .method17034(var10)
          .method17041(var2, 0.0F, 1.0F, 0.0F)

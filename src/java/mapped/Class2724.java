@@ -17,7 +17,7 @@ public class Class2724 extends Class2595 {
    @Override
    public boolean method10803() {
       Class880 var3 = this.field17217.method4232();
-      return var3 != null && var3.method3066();
+      return var3 != null && var3.isAlive();
    }
 
    @Override
@@ -59,7 +59,7 @@ public class Class2724 extends Class2595 {
                }
 
                var3.method2741(Class8654.method31124(this.field17217, this.field17217), var4);
-               var3.method2741(Class8654.method31115(this.field17217), (float)this.field17217.method3086(Class9173.field42110));
+               var3.method2741(Class8654.method31115(this.field17217), (float)this.field17217.method3086(Attributes.field42110));
                this.field17217.method4233((Class880)null);
             }
          } else {

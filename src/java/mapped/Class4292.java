@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import totalcross.json.JSONObject;
 
 public class Class4292 extends Class4278 implements Class4293 {
@@ -12,7 +12,7 @@ public class Class4292 extends Class4278 implements Class4293 {
    public float field20794;
    public boolean field20795;
    public final Class4288 field20796;
-   public Timer field20797 = new Timer();
+   public TimerUtil field20797 = new TimerUtil();
 
    public Class4292(Class4305 var1, int var2) {
       super(var1, "verticalScrollBar", var1.method13267() - var2 - 5, 5, var2, var1.method13269() - 10, false);
@@ -44,7 +44,7 @@ public class Class4292 extends Class4278 implements Class4293 {
          this.field20793 = this.field20793
             - Math.round(!(var1 < 0.0F) ? (float)((Class4339)this.field20892).field21207 * var1 : 1.0F * (float)((Class4339)this.field20892).field21207 * var1);
          this.field20797.method27120();
-         this.field20797.method27118();
+         this.field20797.start();
       }
    }
 
@@ -57,7 +57,7 @@ public class Class4292 extends Class4278 implements Class4293 {
             this.field20796.method13269() >= this.method13269()
                ? -1.0F
                : (
-                  !this.method13298() && !this.field20796.method13216() && (!this.field20797.method27123() || this.field20797.method27121() >= 500L)
+                  !this.method13298() && !this.field20796.method13216() && (!this.field20797.isEnabled() || this.field20797.method27121() >= 500L)
                      ? -0.05F
                      : 0.05F
                )

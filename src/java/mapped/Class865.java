@@ -70,8 +70,8 @@ public class Class865 extends Class851<Class5837> {
          var1.method35292(0.6666667F, -0.6666667F, -0.6666667F);
          this.field4803.field31035 = 0.0F;
          this.field4803.field31033 = -32.0F;
-         Class5948.method18478(var1, var14, 15728880, Class213.field798, this.field4803, Class8968.field40513, true, this.field4804);
-         var1.method35295();
+         Class5948.method18478(var1, var14, 15728880, Class213.field798, this.field4803, ModelBakery.field40513, true, this.field4804);
+         var1.pop();
          var14.method25602();
       } else if (this.field4810) {
          this.method5696(var1, var7 + var12.field25580 - 2, var8 + var12.field25581 - 2, this.field4721, 17, 17, 16);
@@ -133,8 +133,8 @@ public class Class865 extends Class851<Class5837> {
       this.field4803.field31035 = 0.0F;
       this.field4803.field31033 = -32.0F;
       List var12 = Class958.method3891(Class112.field393, Class958.method3886(var6));
-      Class5948.method18478(var9, var11, 15728880, Class213.field798, this.field4803, Class8968.field40513, true, var12);
-      var9.method35295();
+      Class5948.method18478(var9, var11, 15728880, Class213.field798, this.field4803, ModelBakery.field40513, true, var12);
+      var9.pop();
       var11.method25602();
    }
 

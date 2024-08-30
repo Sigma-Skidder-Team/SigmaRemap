@@ -374,7 +374,7 @@ public class Class4388 {
          return false;
       } else {
          Class1006 var4 = (Class1006)var1;
-         return !var4.method3005() || !var4.method3066() || method13877(var0) || method13877(var4) || var4 instanceof Class1034 && var4.getRidingEntity() == null;
+         return !var4.method3005() || !var4.isAlive() || method13877(var0) || method13877(var4) || var4 instanceof Class1034 && var4.getRidingEntity() == null;
       }
    }
 

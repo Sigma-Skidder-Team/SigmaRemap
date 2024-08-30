@@ -3,6 +3,9 @@ package com.mentalfrostbyte.jello.viaversion;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
+import com.mentalfrostbyte.jello.module.impl.player.Blink;
+import com.mentalfrostbyte.jello.module.impl.player.OldHitting;
+import com.mentalfrostbyte.jello.module.impl.render.Freecam;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mojang.datafixers.util.Pair;
 import com.mentalfrostbyte.jello.Client;
@@ -49,7 +52,7 @@ public class ViaVersionLoader {
 
    @EventTarget
    public void method23343(Class4430 var1) {
-      if (var1.method13977() == this.mc.gameSettings.field44639.field13070.method28100() && Class8005.method27349() <= Class5989.field26136.method18582()) {
+      if (var1.method13977() == this.mc.gameSettings.keyBindInventory.keycode.getKeyCode() && Class8005.method27349() <= Class5989.field26136.method18582()) {
          this.mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
       }
 
@@ -179,7 +182,7 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23349(RecievePacketEvent var1) {
-      if (!Client.getInstance().getModuleManager().getModuleByClass(Class5156.class).isEnabled() && Class8005.method27349() != Class5989.field26129.method18582()) {
+      if (!Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled() && Class8005.method27349() != Class5989.field26129.method18582()) {
          if (!field31493.isEmpty()) {
             field31493.clear();
          }
@@ -190,7 +193,7 @@ public class ViaVersionLoader {
             if (var6.getFirst() == Class2106.field13732
                && var6.getSecond() != null
                && (
-                  Client.getInstance().getModuleManager().getModuleByClass(Class5156.class).isEnabled()
+                  Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled()
                      || Class8005.method27349() == Class5989.field26129.method18582()
                )) {
                if (!(((ItemStack)var6.getSecond()).getItem() instanceof Class3334)) {
@@ -279,7 +282,7 @@ public class ViaVersionLoader {
                var7 += (this.mc.player.method2918() - var7) * var8 / 3.0F;
             }
 
-            if (!this.mc.gameSettings.field44638.isKeyDown()) {
+            if (!this.mc.gameSettings.keyBindSprint.isKeyDown()) {
                if (this.mc.player.field4982 == 0.0F && this.mc.player.field4984 == 0.0F) {
                   this.mc.player.setSprinting(false);
                }
@@ -349,7 +352,7 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23352(Class4410 var1) {
-      if (var1.method13953() == this.mc.player || var1.method13953() == Class5298.field23814 || var1.method13953() == Class5319.field23863) {
+      if (var1.method13953() == this.mc.player || var1.method13953() == Freecam.field23814 || var1.method13953() == Blink.field23863) {
          if (var1.method13948() != 1.0F) {
             if (Class4399.field21496 - this.mc.player.field4967 == 0.0F) {
                if (this.field31499) {

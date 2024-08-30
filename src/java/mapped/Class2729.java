@@ -18,7 +18,7 @@ public class Class2729 extends Class2595 {
       } else {
          Class880 var3 = this.field17239.method4232();
          return var3 != null
-            && var3.method3066()
+            && var3.isAlive()
             && Class1095.method5169().test(var3)
             && this.field17239.getDistanceSq(var3) > 36.0
             && !this.field17239.method3336()

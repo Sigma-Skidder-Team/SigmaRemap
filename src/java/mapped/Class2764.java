@@ -47,7 +47,7 @@ public class Class2764 extends Class2595 {
    @Override
    public boolean method10806() {
       if (this.field17333.method4767() < 0) {
-         if (!this.field17334.method3066()) {
+         if (!this.field17334.isAlive()) {
             return false;
          } else {
             double var3 = this.field17333.getDistanceSq(this.field17334);

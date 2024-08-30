@@ -23,7 +23,7 @@ public class Class7826 {
       return this.field33604;
    }
 
-   public TextureAtlasSprite method26198() {
+   public TextureAtlasSprite getSprite() {
       TextureAtlasSprite var3 = Minecraft.getInstance().getAtlasSpriteGetter(this.method26196()).apply(this.method26197());
       if (Class8564.method30588()) {
          var3 = Class8564.method30592(var3);
@@ -41,7 +41,7 @@ public class Class7826 {
    }
 
    public Class5422 method26200(Class7733 var1, Function<ResourceLocation, RenderType> var2) {
-      TextureAtlasSprite var5 = this.method26198();
+      TextureAtlasSprite var5 = this.getSprite();
       RenderType var6 = this.method26199(var2);
       if (var5.field9353 && var6.method14364()) {
          var6 = RenderType.getEntityCutout(this.field33603);
@@ -51,7 +51,7 @@ public class Class7826 {
    }
 
    public Class5422 method26201(Class7733 var1, Function<ResourceLocation, RenderType> var2, boolean var3) {
-      return this.method26198().method7474(ItemRenderer.method786(var1, this.method26199(var2), true, var3));
+      return this.getSprite().method7474(ItemRenderer.method786(var1, this.method26199(var2), true, var3));
    }
 
    @Override

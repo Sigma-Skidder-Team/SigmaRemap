@@ -21,8 +21,8 @@ public class Class5429 implements Class5422 {
    }
 
    @Override
-   public Class5422 method17027(float var1, float var2) {
-      return this.field24164.method17027(this.field24165.method7461((double)(var1 * 16.0F)), this.field24165.method7464((double)(var2 * 16.0F)));
+   public Class5422 tex(float var1, float var2) {
+      return this.field24164.tex(this.field24165.method7461((double)(var1 * 16.0F)), this.field24165.method7464((double)(var2 * 16.0F)));
    }
 
    @Override

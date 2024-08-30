@@ -106,12 +106,12 @@ public class Class8736 {
 
    private boolean method31527(Class8557 var1) {
       TextureAtlasSprite var4 = var1.method30516();
-      float var5 = var4.method7459();
-      float var6 = var4.method7460();
+      float var5 = var4.getMinU();
+      float var6 = var4.getMaxU();
       float var7 = var6 - var5;
       float var8 = var7 / 256.0F;
-      float var9 = var4.method7462();
-      float var10 = var4.method7463();
+      float var9 = var4.getMinV();
+      float var10 = var4.getMaxV();
       float var11 = var10 - var9;
       float var12 = var11 / 256.0F;
       int[] var13 = var1.method30511();

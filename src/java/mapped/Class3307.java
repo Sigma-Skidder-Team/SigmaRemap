@@ -17,7 +17,7 @@ public class Class3307 extends Item {
       }
 
       if (!var2.isRemote) {
-         var3.method3040(Class8254.field35485);
+         var3.removeEffects(Effects.POISON);
       }
 
       if (!var1.isEmpty()) {

@@ -60,7 +60,7 @@ public class Class294 extends Class293 {
    }
 
    private void method1151(Class1806 var1) {
-      Class8535.method30368(this.method1131(), var1.method7886(), var1.method7887());
+      Class8535.method30368(this.getGlTextureId(), var1.method7886(), var1.method7887());
       var1.method7893(0, 0, 0, true);
       this.field1147 = var1 != null;
    }

@@ -1,6 +1,9 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.impl.Class4403;
+import com.mentalfrostbyte.jello.module.impl.combat.Teams;
+import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
+import com.mentalfrostbyte.jello.module.impl.player.Blink;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mojang.authlib.Agent;
 import com.mojang.authlib.exceptions.AuthenticationException;
@@ -712,9 +715,9 @@ public class Class5628 {
             && !field24949.player.onGround
             && !field24949.player.method3063()
             && !field24949.player.method3250()
-            && !field24949.player.method3033(Class8254.field35481)
+            && !field24949.player.method3033(Effects.BLINDNESS)
             && !field24949.player.isPassenger();
-         if (var7 || field24949.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Class5332.class).isEnabled()) {
+         if (var7 || field24949.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
             field24949.particles.method1195(var5.method13935(), Class7940.field34054);
          }
 
@@ -735,8 +738,8 @@ public class Class5628 {
          }
       }
 
-      Class8115 var7 = Class9798.method38637(var0, 0);
-      String[] var8 = var7.method28101().split("\\.");
+      InputMappingsInput var7 = InputMappings.method38637(var0, 0);
+      String[] var8 = var7.getTranslationKey().split("\\.");
       if (var8.length != 0) {
          String var9 = var8[var8.length - 1];
          if (var9.length() != 0) {
@@ -1024,11 +1027,11 @@ public class Class5628 {
    }
 
    public static boolean method17748(Entity var0, boolean var1, boolean var2, boolean var3) {
-      if (var0 != field24949.player && var0 != Class5319.field23863) {
+      if (var0 != field24949.player && var0 != Blink.field23863) {
          if (Client.getInstance().getFriendManager().method26997(var0)) {
             return false;
          } else if (var0 instanceof Class880) {
-            if (((Class880)var0).method3042() == 0.0F) {
+            if (((Class880)var0).getHealth() == 0.0F) {
                return false;
             } else if (!field24949.player.method3026((Class880)var0)) {
                return false;
@@ -1048,7 +1051,7 @@ public class Class5628 {
                return !var0.method3362()
                   ? !(var0 instanceof PlayerEntity)
                      || !Class8781.method31662((PlayerEntity)var0)
-                     || !Client.getInstance().getModuleManager().getModuleByClass(Class5275.class).isEnabled()
+                     || !Client.getInstance().getModuleManager().getModuleByClass(Teams.class).isEnabled()
                   : false;
             }
          } else {

@@ -28,7 +28,7 @@ public class RenderTypeBuffers {
          method26534(var1, RenderType.method14336());
          method26534(var1, RenderType.method14337());
          method26534(var1, RenderType.method14328());
-         Class8968.field40518.forEach(var1x -> method26534(var1, var1x));
+         ModelBakery.field40518.forEach(var1x -> method26534(var1, var1x));
       }
    );
    private final Class7735 field33891 = Class7733.method25596(this.field33890, new BufferBuilder(256));

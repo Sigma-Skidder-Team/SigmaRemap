@@ -212,15 +212,15 @@ public class Class824 extends Class798 {
       float var10 = 32.0F;
       var9.begin(7, DefaultVertexFormats.field43346);
       var9.pos(0.0, (double)this.field4565, 0.0)
-         .method17027(0.0F, (float)(this.field4565 - var7) / 32.0F + 0.0F)
+         .tex(0.0F, (float)(this.field4565 - var7) / 32.0F + 0.0F)
          .color(64, 64, 64, 255)
          .endVertex();
       var9.pos((double)this.field4564, (double)this.field4565, 0.0)
-         .method17027((float)this.field4564 / 32.0F, (float)(this.field4565 - var7) / 32.0F + 0.0F)
+         .tex((float)this.field4564 / 32.0F, (float)(this.field4565 - var7) / 32.0F + 0.0F)
          .color(64, 64, 64, 255)
          .endVertex();
-      var9.pos((double)this.field4564, (double)var7, 0.0).method17027((float)this.field4564 / 32.0F, 0.0F).color(64, 64, 64, 255).endVertex();
-      var9.pos(0.0, (double)var7, 0.0).method17027(0.0F, 0.0F).color(64, 64, 64, 255).endVertex();
+      var9.pos((double)this.field4564, (double)var7, 0.0).tex((float)this.field4564 / 32.0F, 0.0F).color(64, 64, 64, 255).endVertex();
+      var9.pos(0.0, (double)var7, 0.0).tex(0.0F, 0.0F).color(64, 64, 64, 255).endVertex();
       var8.draw();
       this.field4539.method5542(this, var1);
       if (this.field4528 != null && this.field4528.field27450 != null) {

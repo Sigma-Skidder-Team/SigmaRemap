@@ -31,11 +31,11 @@ public class Class1308 extends Screen {
       this.field6914 = Class5991.method18586(
          this.fontRenderer,
          new TranslationTextComponent(
-            "demo.help.movementShort", var4.field44632.method8521(), var4.field44633.method8521(), var4.field44634.method8521(), var4.field44635.method8521()
+            "demo.help.movementShort", var4.keyBindForward.func_238171_j_(), var4.keyBindLeft.func_238171_j_(), var4.keyBindBack.func_238171_j_(), var4.keyBindRight.func_238171_j_()
          ),
          new TranslationTextComponent("demo.help.movementMouse"),
-         new TranslationTextComponent("demo.help.jump", var4.field44636.method8521()),
-         new TranslationTextComponent("demo.help.inventory", var4.field44639.method8521())
+         new TranslationTextComponent("demo.help.jump", var4.keyBindJump.func_238171_j_()),
+         new TranslationTextComponent("demo.help.inventory", var4.keyBindInventory.func_238171_j_())
       );
       this.field6915 = Class5991.method18584(this.fontRenderer, new TranslationTextComponent("demo.help.fullWrapped"), 218);
    }

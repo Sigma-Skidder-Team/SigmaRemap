@@ -24,7 +24,7 @@ public class Class5430 implements Class5422 {
    }
 
    @Override
-   public Class5422 method17027(float var1, float var2) {
+   public Class5422 tex(float var1, float var2) {
       return this;
    }
 

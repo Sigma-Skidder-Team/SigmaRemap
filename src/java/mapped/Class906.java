@@ -98,7 +98,7 @@ public class Class906 extends Entity {
                         this.getPosY() + 6.0 + 3.0,
                         this.getPosZ() + 3.0
                      ),
-                     Entity::method3066
+                     Entity::isAlive
                   );
 
                for (Entity var8 : var6) {

@@ -23,7 +23,7 @@ public class Class292 extends Class290 {
          try {
             Class1806 var5 = Class1806.method7879(var4);
             Class9620 var6 = method1144(this.field1134, new Class9620(false, false));
-            Class8535.method30368(this.method1131(), var5.method7886(), var5.method7887());
+            Class8535.method30368(this.getGlTextureId(), var5.method7886(), var5.method7887());
             var5.method7895(0, 0, 0, 0, 0, var5.method7886(), var5.method7887(), var6.method37495(), var6.method37496(), false, true);
          } finally {
             IOUtils.closeQuietly(var4);

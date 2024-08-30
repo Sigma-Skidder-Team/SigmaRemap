@@ -52,7 +52,7 @@ public class Class1101 extends Class1009 {
    }
 
    public static Class7037 method5288() {
-      return Class1009.method4343().method21849(Class9173.field42105, 16.0).method21849(Class9173.field42108, 0.3F);
+      return Class1009.method4343().method21849(Attributes.field42105, 16.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F);
    }
 
    @Override
@@ -94,7 +94,7 @@ public class Class1101 extends Class1009 {
 
    @Override
    public boolean method3036(Class2023 var1) {
-      return var1.method8627() != Class8254.field35485 ? super.method3036(var1) : false;
+      return var1.method8627() != Effects.POISON ? super.method3036(var1) : false;
    }
 
    public boolean method5289() {
@@ -131,7 +131,7 @@ public class Class1101 extends Class1009 {
       }
 
       if (var4 instanceof Class5092) {
-         Class7144 var10 = ((Class5092)var4).field23180;
+         Effect var10 = ((Class5092)var4).field23180;
          if (var10 != null) {
             this.method3035(new Class2023(var10, Integer.MAX_VALUE));
          }

@@ -45,10 +45,10 @@ public class Class1058 extends Class1056 implements Class1011 {
 
    public static Class7037 method4863() {
       return Class1006.method4220()
-         .method21849(Class9173.field42105, 100.0)
-         .method21849(Class9173.field42108, 0.25)
-         .method21849(Class9173.field42107, 1.0)
-         .method21849(Class9173.field42110, 15.0);
+         .method21849(Attributes.field42105, 100.0)
+         .method21849(Attributes.MOVEMENT_SPEED, 0.25)
+         .method21849(Attributes.field42107, 1.0)
+         .method21849(Attributes.field42110, 15.0);
    }
 
    @Override
@@ -149,7 +149,7 @@ public class Class1058 extends Class1056 implements Class1011 {
    }
 
    private float method4864() {
-      return (float)this.method3086(Class9173.field42110);
+      return (float)this.method3086(Attributes.field42110);
    }
 
    @Override
@@ -180,7 +180,7 @@ public class Class1058 extends Class1056 implements Class1011 {
    }
 
    public Class2286 method4865() {
-      return Class2286.method9024(this.method3042() / this.method3075());
+      return Class2286.method9024(this.getHealth() / this.method3075());
    }
 
    @Override
@@ -230,9 +230,9 @@ public class Class1058 extends Class1056 implements Class1011 {
       ItemStack var5 = var1.getHeldItem(var2);
       Item var6 = var5.getItem();
       if (var6 == Items.field37801) {
-         float var7 = this.method3042();
+         float var7 = this.getHealth();
          this.method3041(25.0F);
-         if (this.method3042() != var7) {
+         if (this.getHealth() != var7) {
             float var8 = 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F;
             this.method2863(Sounds.field26704, 1.0F, var8);
             if (!var1.abilities.isCreativeMode) {

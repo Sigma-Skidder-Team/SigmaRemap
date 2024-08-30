@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import net.minecraft.entity.Entity;
 
 public class Class338 implements Runnable {

@@ -49,14 +49,14 @@ public class Class9809 {
                var2.method35292(1.0F, -1.0F, -1.0F);
                Class5422 var9 = ItemRenderer.method786(var3, this.field45852.method11028(Class2842.field17638), false, var1.method32159());
                this.field45852.method11016(var2, var9, var4, var5, 1.0F, 1.0F, 1.0F, 1.0F);
-               var2.method35295();
+               var2.pop();
             }
          } else {
             boolean var13 = var1.method32145("BlockEntityTag") != null;
             var2.push();
             var2.method35292(1.0F, -1.0F, -1.0F);
-            Class7826 var11 = !var13 ? Class8968.field40515 : Class8968.field40514;
-            Class5422 var10 = var11.method26198()
+            Class7826 var11 = !var13 ? ModelBakery.field40515 : ModelBakery.field40514;
+            Class5422 var10 = var11.getSprite()
                .method7474(ItemRenderer.method786(var3, this.field45851.method11028(var11.method26196()), true, var1.method32159()));
             this.field45851.method11182().method22681(var2, var10, var4, var5, 1.0F, 1.0F, 1.0F, 1.0F);
             if (!var13) {
@@ -66,7 +66,7 @@ public class Class9809 {
                Class5948.method18479(var2, var3, var4, var5, this.field45851.method11181(), var11, false, var12, var1.method32159());
             }
 
-            var2.method35295();
+            var2.pop();
          }
       } else {
          Block var14 = ((Class3292)var8).method11845();

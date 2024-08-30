@@ -31,7 +31,7 @@ public class Class7865 implements Class7864 {
          return true;
       } else {
          Optional var4 = var1.method2992().<List<Class880>>method21410(Class8830.field39819);
-         return this.field33677.method3066() && var4.isPresent() && ((List)var4.get()).contains(this.field33677);
+         return this.field33677.isAlive() && var4.isPresent() && ((List)var4.get()).contains(this.field33677);
       }
    }
 

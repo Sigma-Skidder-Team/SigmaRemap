@@ -10,7 +10,7 @@ public class MatrixStack {
    private static String[] field43309;
    public Deque<Class8892> field43310 = new ArrayDeque<Class8892>();
    private final Deque<Class8892> field43311 = Util.<Deque<Class8892>>make(Queues.newArrayDeque(), var0 -> {
-      Class9367 var3 = new Class9367();
+      Matrix4f var3 = new Matrix4f();
       var3.method35503();
       Class8967 var4 = new Class8967();
       var4.method32824();
@@ -40,7 +40,7 @@ public class MatrixStack {
       Class8892.method32364(var6).method32828(Class8967.method32817(var10 * var7, var10 * var8, var10 * var9));
    }
 
-   public void method35293(Class8661 var1) {
+   public void rotate(Class8661 var1) {
       Class8892 var4 = this.field43311.getLast();
       Class8892.method32363(var4).method35509(var1);
       Class8892.method32364(var4).method32829(var1);
@@ -59,14 +59,14 @@ public class MatrixStack {
       this.field43311.addLast(var4);
    }
 
-   public void method35295() {
+   public void pop() {
       Class8892 var3 = this.field43311.removeLast();
       if (var3 != null) {
          this.field43310.add(var3);
       }
    }
 
-   public Class8892 method35296() {
+   public Class8892 getLast() {
       return this.field43311.getLast();
    }
 
@@ -76,6 +76,6 @@ public class MatrixStack {
 
    @Override
    public String toString() {
-      return this.method35296().toString();
+      return this.getLast().toString();
    }
 }

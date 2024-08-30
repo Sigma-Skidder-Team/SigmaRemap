@@ -16,7 +16,7 @@ public class Class5118 implements Class5119 {
    public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       World var11 = this.field23289.player.world;
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.lineWidth(2.0F);
       RenderSystem.disableTexture();
       RenderSystem.depthMask(false);
@@ -43,10 +43,10 @@ public class Class5118 implements Class5119 {
                   Tessellator var36 = Tessellator.getInstance();
                   BufferBuilder var37 = var36.getBuffer();
                   var37.begin(5, DefaultVertexFormats.POSITION_COLOR);
-                  var37.pos(var20, var22, var24).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var37.pos(var20, var22, var30).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var37.pos(var20, var28, var24).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var37.pos(var20, var28, var30).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var37.pos(var20, var22, var24).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var37.pos(var20, var22, var30).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var37.pos(var20, var28, var24).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var37.pos(var20, var28, var30).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
                   var36.draw();
                }
 
@@ -54,10 +54,10 @@ public class Class5118 implements Class5119 {
                   Tessellator var38 = Tessellator.getInstance();
                   BufferBuilder var43 = var38.getBuffer();
                   var43.begin(5, DefaultVertexFormats.POSITION_COLOR);
-                  var43.pos(var20, var28, var30).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var43.pos(var20, var22, var30).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var43.pos(var26, var28, var30).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var43.pos(var26, var22, var30).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var43.pos(var20, var28, var30).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var43.pos(var20, var22, var30).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var43.pos(var26, var28, var30).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var43.pos(var26, var22, var30).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
                   var38.draw();
                }
 
@@ -65,10 +65,10 @@ public class Class5118 implements Class5119 {
                   Tessellator var39 = Tessellator.getInstance();
                   BufferBuilder var44 = var39.getBuffer();
                   var44.begin(5, DefaultVertexFormats.POSITION_COLOR);
-                  var44.pos(var26, var22, var30).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var44.pos(var26, var22, var24).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var44.pos(var26, var28, var30).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var44.pos(var26, var28, var24).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var44.pos(var26, var22, var30).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var44.pos(var26, var22, var24).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var44.pos(var26, var28, var30).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var44.pos(var26, var28, var24).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
                   var39.draw();
                }
 
@@ -76,10 +76,10 @@ public class Class5118 implements Class5119 {
                   Tessellator var40 = Tessellator.getInstance();
                   BufferBuilder var45 = var40.getBuffer();
                   var45.begin(5, DefaultVertexFormats.POSITION_COLOR);
-                  var45.pos(var26, var28, var24).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var45.pos(var26, var22, var24).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var45.pos(var20, var28, var24).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var45.pos(var20, var22, var24).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var45.pos(var26, var28, var24).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var45.pos(var26, var22, var24).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var45.pos(var20, var28, var24).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var45.pos(var20, var22, var24).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
                   var40.draw();
                }
 
@@ -87,10 +87,10 @@ public class Class5118 implements Class5119 {
                   Tessellator var41 = Tessellator.getInstance();
                   BufferBuilder var46 = var41.getBuffer();
                   var46.begin(5, DefaultVertexFormats.POSITION_COLOR);
-                  var46.pos(var20, var22, var24).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var46.pos(var26, var22, var24).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var46.pos(var20, var22, var30).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var46.pos(var26, var22, var30).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var46.pos(var20, var22, var24).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var46.pos(var26, var22, var24).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var46.pos(var20, var22, var30).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var46.pos(var26, var22, var30).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
                   var41.draw();
                }
 
@@ -98,10 +98,10 @@ public class Class5118 implements Class5119 {
                   Tessellator var42 = Tessellator.getInstance();
                   BufferBuilder var47 = var42.getBuffer();
                   var47.begin(5, DefaultVertexFormats.POSITION_COLOR);
-                  var47.pos(var20, var28, var24).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var47.pos(var20, var28, var30).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var47.pos(var26, var28, var24).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
-                  var47.pos(var26, var28, var30).method17033(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var47.pos(var20, var28, var24).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var47.pos(var20, var28, var30).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var47.pos(var26, var28, var24).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
+                  var47.pos(var26, var28, var30).color(1.0F, 0.0F, 0.0F, 0.5F).endVertex();
                   var42.draw();
                }
             }

@@ -17,22 +17,22 @@ public abstract class Class4566 extends Class4586 {
 
    @Override
    public float method14503() {
-      return this.field22004.method7459();
+      return this.field22004.getMinU();
    }
 
    @Override
    public float method14504() {
-      return this.field22004.method7460();
+      return this.field22004.getMaxU();
    }
 
    @Override
    public float method14505() {
-      return this.field22004.method7462();
+      return this.field22004.getMinV();
    }
 
    @Override
    public float method14506() {
-      return this.field22004.method7463();
+      return this.field22004.getMaxV();
    }
 
    public void method14507(Class8975 var1) {

@@ -33,7 +33,7 @@ public class Class5827 extends Class5812 {
 
    @Override
    public boolean method18103(PlayerEntity var1) {
-      return this.field25532.method3623(var1) && this.field25533.method3066() && this.field25533.method3275(var1) < 8.0F;
+      return this.field25532.method3623(var1) && this.field25533.isAlive() && this.field25533.method3275(var1) < 8.0F;
    }
 
    @Override

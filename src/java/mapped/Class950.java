@@ -15,18 +15,18 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Class950 extends TileEntity implements Class949, Class935 {
-   public static final Class7144[][] field5338 = new Class7144[][]{
-      {Class8254.field35467, Class8254.field35469}, {Class8254.field35477, Class8254.field35474}, {Class8254.field35471}, {Class8254.field35476}
+   public static final Effect[][] field5338 = new Effect[][]{
+      {Effects.SPEED, Effects.HASTE}, {Effects.RESISTANCE, Effects.JUMP_BOOST}, {Effects.STRENGTH}, {Effects.REGENERATION}
    };
-   private static final Set<Class7144> field5339 = Arrays.<Class7144[]>stream(field5338)
-      .<Class7144>flatMap(Arrays::stream)
-      .collect(Collectors.<Class7144>toSet());
+   private static final Set<Effect> field5339 = Arrays.<Effect[]>stream(field5338)
+      .<Effect>flatMap(Arrays::stream)
+      .collect(Collectors.<Effect>toSet());
    private List<Class7934> field5340 = Lists.newArrayList();
    private List<Class7934> field5341 = Lists.newArrayList();
    private int field5342;
    private int field5343 = -1;
-   private Class7144 field5344;
-   private Class7144 field5345;
+   private Effect field5344;
+   private Effect field5345;
    private ITextComponent field5346;
    private Class7969 field5347 = Class7969.field34259;
    private final Class8202 field5348 = new Class8201(this);
@@ -210,8 +210,8 @@ public class Class950 extends TileEntity implements Class949, Class935 {
    }
 
    @Nullable
-   private static Class7144 method3825(int var0) {
-      Class7144 var3 = Class7144.method22287(var0);
+   private static Effect method3825(int var0) {
+      Effect var3 = Effect.method22287(var0);
       return !field5339.contains(var3) ? null : var3;
    }
 
@@ -230,8 +230,8 @@ public class Class950 extends TileEntity implements Class949, Class935 {
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
-      var1.method102("Primary", Class7144.method22288(this.field5344));
-      var1.method102("Secondary", Class7144.method22288(this.field5345));
+      var1.method102("Primary", Effect.method22288(this.field5344));
+      var1.method102("Secondary", Effect.method22288(this.field5345));
       var1.method102("Levels", this.field5342);
       if (this.field5346 != null) {
          var1.method109("CustomName", ITextComponent$Serializer.toJson(this.field5346));
@@ -264,12 +264,12 @@ public class Class950 extends TileEntity implements Class949, Class935 {
    }
 
    // $VF: synthetic method
-   public static Class7144 method3828(Class950 var0) {
+   public static Effect method3828(Class950 var0) {
       return var0.field5344;
    }
 
    // $VF: synthetic method
-   public static Class7144 method3829(Class950 var0) {
+   public static Effect method3829(Class950 var0) {
       return var0.field5345;
    }
 
@@ -284,17 +284,17 @@ public class Class950 extends TileEntity implements Class949, Class935 {
    }
 
    // $VF: synthetic method
-   public static Class7144 method3832(Class950 var0, Class7144 var1) {
+   public static Effect method3832(Class950 var0, Effect var1) {
       return var0.field5344 = var1;
    }
 
    // $VF: synthetic method
-   public static Class7144 method3833(int var0) {
+   public static Effect method3833(int var0) {
       return method3825(var0);
    }
 
    // $VF: synthetic method
-   public static Class7144 method3834(Class950 var0, Class7144 var1) {
+   public static Effect method3834(Class950 var0, Effect var1) {
       return var0.field5345 = var1;
    }
 }

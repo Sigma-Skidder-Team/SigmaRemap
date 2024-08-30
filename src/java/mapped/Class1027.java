@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 
 public class Class1027 extends Class1026 implements Class1022 {
    private static final UUID field5718 = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
-   private static final Class9689 field5719 = new Class9689(field5718, "Drinking speed penalty", -0.25, Class2045.field13352);
+   private static final Class9689 field5719 = new Class9689(field5718, "Drinking speed penalty", -0.25, AttributeModifierOperation.ADDITION);
    private static final DataParameter<Boolean> field5720 = EntityDataManager.<Boolean>method35441(Class1027.class, Class7784.field33398);
    private int field5721;
    private Class2712<Class1026> field5722;
@@ -66,12 +66,12 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    public static Class7037 method4569() {
-      return Class1009.method4343().method21849(Class9173.field42105, 26.0).method21849(Class9173.field42108, 0.25);
+      return Class1009.method4343().method21849(Attributes.field42105, 26.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
    public void method2871() {
-      if (!this.world.isRemote && this.method3066()) {
+      if (!this.world.isRemote && this.isAlive()) {
          this.field5722.method10927();
          if (this.field5722.method10926() > 0) {
             this.field5723.method10925(false);
@@ -81,17 +81,17 @@ public class Class1027 extends Class1026 implements Class1022 {
 
          if (!this.method4568()) {
             Class8812 var7 = null;
-            if (this.rand.nextFloat() < 0.15F && this.method3263(Class8953.field40469) && !this.method3033(Class8254.field35479)) {
+            if (this.rand.nextFloat() < 0.15F && this.method3263(Class8953.field40469) && !this.method3033(Effects.WATER_BREATHING)) {
                var7 = Class8137.field34999;
             } else if (this.rand.nextFloat() < 0.15F
                && (this.method3327() || this.method3047() != null && this.method3047().method31141())
-               && !this.method3033(Class8254.field35478)) {
+               && !this.method3033(Effects.FIRE_RESISTANCE)) {
                var7 = Class8137.field34988;
-            } else if (this.rand.nextFloat() < 0.05F && this.method3042() < this.method3075()) {
+            } else if (this.rand.nextFloat() < 0.05F && this.getHealth() < this.method3075()) {
                var7 = Class8137.field35001;
             } else if (this.rand.nextFloat() < 0.5F
                && this.method4232() != null
-               && !this.method3033(Class8254.field35467)
+               && !this.method3033(Effects.SPEED)
                && this.method4232().getDistanceSq(this) > 121.0) {
                var7 = Class8137.field34990;
             }
@@ -114,7 +114,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                      );
                }
 
-               Class9805 var8 = this.method3085(Class9173.field42108);
+               Class9805 var8 = this.method3085(Attributes.MOVEMENT_SPEED);
                var8.method38670(field5719);
                var8.method38667(field5719);
             }
@@ -131,7 +131,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                }
             }
 
-            this.method3085(Class9173.field42108).method38670(field5719);
+            this.method3085(Attributes.MOVEMENT_SPEED).method38670(field5719);
          }
 
          if (this.rand.nextFloat() < 7.5E-4F) {
@@ -191,15 +191,15 @@ public class Class1027 extends Class1026 implements Class1022 {
          float var12 = MathHelper.method37766(var6 * var6 + var10 * var10);
          Class8812 var13 = Class8137.field35003;
          if (!(var1 instanceof Class1026)) {
-            if (var12 >= 8.0F && !var1.method3033(Class8254.field35468)) {
+            if (var12 >= 8.0F && !var1.method3033(Effects.SLOWNESS)) {
                var13 = Class8137.field34993;
-            } else if (var1.method3042() >= 8.0F && !var1.method3033(Class8254.field35485)) {
+            } else if (var1.getHealth() >= 8.0F && !var1.method3033(Effects.POISON)) {
                var13 = Class8137.field35005;
-            } else if (var12 <= 3.0F && !var1.method3033(Class8254.field35484) && this.rand.nextFloat() < 0.25F) {
+            } else if (var12 <= 3.0F && !var1.method3033(Effects.WEAKNESS) && this.rand.nextFloat() < 0.25F) {
                var13 = Class8137.field35014;
             }
          } else {
-            if (!(var1.method3042() <= 4.0F)) {
+            if (!(var1.getHealth() <= 4.0F)) {
                var13 = Class8137.field35008;
             } else {
                var13 = Class8137.field35001;

@@ -16,7 +16,7 @@ public class Class9675 {
       return this.field45177;
    }
 
-   public void method37747(Class7680 var1, Class7680 var2) {
+   public void method37747(Vector3f var1, Vector3f var2) {
       AL10.alListenerfv(
          4111, new float[]{var1.method25269(), var1.method25270(), var1.method25271(), var2.method25269(), var2.method25270(), var2.method25271()}
       );
@@ -33,6 +33,6 @@ public class Class9675 {
 
    public void method37750() {
       this.method37745(Vector3d.ZERO);
-      this.method37747(Class7680.field32901, Class7680.field32900);
+      this.method37747(Vector3f.field32901, Vector3f.YP);
    }
 }

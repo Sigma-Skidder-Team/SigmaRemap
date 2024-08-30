@@ -126,7 +126,7 @@ public class Class9299 {
    public static Class6631 field42863 = new Class6631(field42854, "onLivingUpdate");
    public static Class6636 field42864 = new Class6636("net.minecraftforge.client.ForgeHooksClient");
    public static Class6631 field42865 = new Class6631(
-      field42864, "dispatchRenderLast", new Class[]{WorldRenderer.class, MatrixStack.class, float.class, Class9367.class, long.class}
+      field42864, "dispatchRenderLast", new Class[]{WorldRenderer.class, MatrixStack.class, float.class, Matrix4f.class, long.class}
    );
    public static Class6631 field42866 = new Class6631(field42864, "drawItemLayered");
    public static Class6631 field42867 = new Class6631(field42864, "drawScreen");

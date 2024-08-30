@@ -10,7 +10,7 @@ public class Class7647 {
    private double field32827;
    public boolean field32828 = false;
 
-   public Class7647(Class9367 var1, Class9367 var2) {
+   public Class7647(Matrix4f var1, Matrix4f var2) {
       this.method25120(var1, var2);
    }
 
@@ -20,8 +20,8 @@ public class Class7647 {
       this.field32827 = var5;
    }
 
-   private void method25120(Class9367 var1, Class9367 var2) {
-      Class9367 var5 = var2.method35514();
+   private void method25120(Matrix4f var1, Matrix4f var2) {
+      Matrix4f var5 = var2.method35514();
       var5.method35508(var1);
       var5.method35506();
       this.method25121(var5, -1, 0, 0, 0);
@@ -32,7 +32,7 @@ public class Class7647 {
       this.method25121(var5, 0, 0, 1, 5);
    }
 
-   private void method25121(Class9367 var1, int var2, int var3, int var4, int var5) {
+   private void method25121(Matrix4f var1, int var2, int var3, int var4, int var5) {
       Class7755 var8 = new Class7755((float)var2, (float)var3, (float)var4, 1.0F);
       var8.method25709(var1);
       var8.method25708();

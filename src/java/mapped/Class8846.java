@@ -22,13 +22,13 @@ public class Class8846 {
    }
 
    private static void method32090() {
-      Class9367 var2 = new Class9367();
+      Matrix4f var2 = new Matrix4f();
       var2.method35523(field39967);
-      Class9367 var3 = var2.method35514();
+      Matrix4f var3 = var2.method35514();
       float var4 = field39967.nextFloat();
       float var5 = field39967.nextFloat();
       float var6 = field39967.nextFloat();
-      var2.method35508(Class9367.method35516(var4, var5, var6));
+      var2.method35508(Matrix4f.method35516(var4, var5, var6));
       var3.method35521(var4, var5, var6);
       if (!var3.equals(var2)) {
          method32096("*** DIFFERENT ***");
@@ -38,13 +38,13 @@ public class Class8846 {
    }
 
    private static void method32091() {
-      Class9367 var2 = new Class9367();
+      Matrix4f var2 = new Matrix4f();
       var2.method35523(field39967);
-      Class9367 var3 = var2.method35514();
+      Matrix4f var3 = var2.method35514();
       float var4 = field39967.nextFloat();
       float var5 = field39967.nextFloat();
       float var6 = field39967.nextFloat();
-      var2.method35508(Class9367.method35515(var4, var5, var6));
+      var2.method35508(Matrix4f.method35515(var4, var5, var6));
       var3.method35522(var4, var5, var6);
       if (!var3.equals(var2)) {
          method32096("*** DIFFERENT ***");
@@ -54,11 +54,11 @@ public class Class8846 {
    }
 
    private static void method32092() {
-      Class9367 var2 = new Class9367();
+      Matrix4f var2 = new Matrix4f();
       var2.method35523(field39967);
-      Class9367 var3 = var2.method35514();
+      Matrix4f var3 = var2.method35514();
       Class8661 var4 = new Class8661(field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat());
-      var2.method35508(new Class9367(var4));
+      var2.method35508(new Matrix4f(var4));
       var3.method35509(var4);
       if (!var3.equals(var2)) {
          method32096("*** DIFFERENT ***");
@@ -82,15 +82,15 @@ public class Class8846 {
    }
 
    private static void method32094() {
-      Class7680 var2 = new Class7680(field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat());
-      Class7680 var3 = var2.method25287();
+      Vector3f var2 = new Vector3f(field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat());
+      Vector3f var3 = var2.method25287();
       Class8967 var4 = new Class8967();
       var4.method32835(field39967);
       var2.method25282(var4);
       float var5 = var4.method32832(var3.method25269(), var3.method25270(), var3.method25271());
       float var6 = var4.method32833(var3.method25269(), var3.method25270(), var3.method25271());
       float var7 = var4.method32834(var3.method25269(), var3.method25270(), var3.method25271());
-      var3 = new Class7680(var5, var6, var7);
+      var3 = new Vector3f(var5, var6, var7);
       if (!var3.equals(var2)) {
          method32096("*** DIFFERENT ***");
          method32096(var2.toString());
@@ -101,7 +101,7 @@ public class Class8846 {
    private static void method32095() {
       Class7755 var2 = new Class7755(field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat());
       Class7755 var3 = new Class7755(var2.method25701(), var2.method25702(), var2.method25703(), var2.method25704());
-      Class9367 var4 = new Class9367();
+      Matrix4f var4 = new Matrix4f();
       var4.method35523(field39967);
       var2.method25709(var4);
       float var5 = var4.method35517(var3.method25701(), var3.method25702(), var3.method25703(), var3.method25704());

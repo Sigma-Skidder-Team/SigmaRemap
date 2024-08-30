@@ -15,13 +15,13 @@ public class Class240<T extends Class880> extends Class239<T, Class2891<T>> {
          this.method825().method11012().method22682(var1);
          this.method825().method11206().method22682(var1);
          var1.translate(0.0625, 0.25, 0.0);
-         var1.method35293(Class7680.field32902.method25286(180.0F));
-         var1.method35293(Class7680.field32898.method25286(140.0F));
-         var1.method35293(Class7680.field32902.method25286(10.0F));
+         var1.rotate(Vector3f.field32902.rotationDegrees(180.0F));
+         var1.rotate(Vector3f.field32898.rotationDegrees(140.0F));
+         var1.rotate(Vector3f.field32902.rotationDegrees(10.0F));
          var1.translate(0.0, -0.4F, 0.4F);
       }
 
       super.method820(var1, var2, var3, (T)var4, var5, var6, var7, var8, var9, var10);
-      var1.method35295();
+      var1.pop();
    }
 }

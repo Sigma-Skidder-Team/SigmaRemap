@@ -36,7 +36,7 @@ public class Class7551 {
             var2,
             var3,
             var5,
-            var4.method35296(),
+            var4.getLast(),
             var14,
             Class9529.method36830(var9)[0],
             Class9529.method36830(var9)[1],
@@ -96,7 +96,7 @@ public class Class7551 {
          }
 
          float var16 = var1.method6877(var14.method30514(), var14.method30515());
-         this.method24677(var1, var2, var3, var8, var7.method35296(), var14, var16, var16, var16, var16, var4, var4, var4, var4, var5);
+         this.method24677(var1, var2, var3, var8, var7.getLast(), var14, var16, var16, var16, var16, var4, var4, var4, var4, var5);
       }
    }
 
@@ -271,7 +271,7 @@ public class Class7551 {
             var2,
             var3,
             var5,
-            var4.method35296(),
+            var4.getLast(),
             var16,
             Class9529.method36830(var13)[0],
             Class9529.method36830(var13)[1],
@@ -408,7 +408,7 @@ public class Class7551 {
          }
 
          float var18 = var1.method6877(var16.method30514(), var16.method30515());
-         this.method24686(var1, var2, var3, var8, var7.method35296(), var16, var18, var18, var18, var18, var4, var4, var4, var4, var5, var10);
+         this.method24686(var1, var2, var3, var8, var7.getLast(), var16, var18, var18, var18, var18, var4, var4, var4, var4, var5, var10);
       }
    }
 

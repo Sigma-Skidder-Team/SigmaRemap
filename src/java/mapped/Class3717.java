@@ -123,7 +123,7 @@ public class Class3717 extends Class3676<Class1042> {
    }
 
    private boolean method12608(PlayerEntity var1) {
-      return var1.method3033(Class8254.field35498);
+      return var1.method3033(Effects.HERO_OF_THE_VILLAGE);
    }
 
    private boolean method12609(Class1042 var1, PlayerEntity var2) {

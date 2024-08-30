@@ -82,7 +82,7 @@ public class Class895 extends Class890 {
    @Override
    public void tick() {
       Entity var3 = this.method3460();
-      if (var3 instanceof PlayerEntity && !var3.method3066()) {
+      if (var3 instanceof PlayerEntity && !var3.isAlive()) {
          this.method2904();
       } else {
          super.tick();

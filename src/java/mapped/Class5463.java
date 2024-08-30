@@ -98,7 +98,7 @@ public class Class5463 {
          var0.method37590(var1, var2, var3, var4, var5);
          Shaders.field40617 = false;
          Shaders.method33020(var9);
-         var2.method35295();
+         var2.pop();
       }
 
       Class7414.method23712(515);
@@ -195,10 +195,10 @@ public class Class5463 {
          Class7414.method23696();
          var9.method880(Class9025.field41289, var10, var14, var16, var18);
          Shaders.method32984("shadow terrain cutoutmipped");
-         var8.getTextureManager().method1076(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1130(false, false);
+         var8.getTextureManager().getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1130(false, false);
          var9.method880(Class9025.field41290, var10, var14, var16, var18);
          Shaders.method32984("shadow terrain cutout");
-         var8.getTextureManager().method1076(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1137();
+         var8.getTextureManager().getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1137();
          Class7414.method23818(7424);
          Class7414.method23697(516, 0.1F);
          Class7414.method23830(5888);
@@ -258,7 +258,7 @@ public class Class5463 {
                   var10.push();
                   var10.translate((double)var32.getX() - var14, (double)var32.getY() - var16, (double)var32.getZ() - var18);
                   TileEntityRendererDispatcher.instance.method27962(var30, var3, var10, var22);
-                  var10.method35295();
+                  var10.pop();
                }
             }
          }
@@ -499,8 +499,8 @@ public class Class5463 {
          return false;
       } else {
          Class7414.method23699();
-         Class8892 var9 = var3.method35296();
-         Class9367 var10 = var9.method32361();
+         Class8892 var9 = var3.getLast();
+         Matrix4f var10 = var9.getMatrix();
          Class8967 var11 = var9.method32362();
          Class5422 var12 = var4.method25597(RenderType.getEntitySolid(field24257));
          float var13 = 0.5F;
@@ -521,30 +521,30 @@ public class Class5463 {
             float var27 = var11.method32832(var24, var25, var26);
             float var28 = var11.method32833(var24, var25, var26);
             float var29 = var11.method32834(var24, var25, var26);
-            var12.method17040(var10, var20, var21, var22 + 1.0F)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var17 + var19, var17 + var19)
+            var12.pos(var10, var20, var21, var22 + 1.0F)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var17 + var19, var17 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var27, var28, var29)
                .endVertex();
-            var12.method17040(var10, var20 + 1.0F, var21, var22 + 1.0F)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var17 + var19, var18 + var19)
+            var12.pos(var10, var20 + 1.0F, var21, var22 + 1.0F)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var17 + var19, var18 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var27, var28, var29)
                .endVertex();
-            var12.method17040(var10, var20 + 1.0F, var21 + 1.0F, var22 + 1.0F)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var18 + var19, var18 + var19)
+            var12.pos(var10, var20 + 1.0F, var21 + 1.0F, var22 + 1.0F)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var18 + var19, var18 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var27, var28, var29)
                .endVertex();
-            var12.method17040(var10, var20, var21 + 1.0F, var22 + 1.0F)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var18 + var19, var17 + var19)
+            var12.pos(var10, var20, var21 + 1.0F, var22 + 1.0F)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var18 + var19, var17 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var27, var28, var29)
@@ -559,30 +559,30 @@ public class Class5463 {
             float var50 = var11.method32832(var35, var40, var45);
             float var55 = var11.method32833(var35, var40, var45);
             float var60 = var11.method32834(var35, var40, var45);
-            var12.method17040(var10, var20, var21 + 1.0F, var22)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var18 + var19, var18 + var19)
+            var12.pos(var10, var20, var21 + 1.0F, var22)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var18 + var19, var18 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var50, var55, var60)
                .endVertex();
-            var12.method17040(var10, var20 + 1.0F, var21 + 1.0F, var22)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var18 + var19, var17 + var19)
+            var12.pos(var10, var20 + 1.0F, var21 + 1.0F, var22)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var18 + var19, var17 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var50, var55, var60)
                .endVertex();
-            var12.method17040(var10, var20 + 1.0F, var21, var22)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var17 + var19, var17 + var19)
+            var12.pos(var10, var20 + 1.0F, var21, var22)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var17 + var19, var17 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var50, var55, var60)
                .endVertex();
-            var12.method17040(var10, var20, var21, var22)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var17 + var19, var18 + var19)
+            var12.pos(var10, var20, var21, var22)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var17 + var19, var18 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var50, var55, var60)
@@ -597,30 +597,30 @@ public class Class5463 {
             float var51 = var11.method32832(var36, var41, var46);
             float var56 = var11.method32833(var36, var41, var46);
             float var61 = var11.method32834(var36, var41, var46);
-            var12.method17040(var10, var20 + 1.0F, var21 + 1.0F, var22)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var18 + var19, var18 + var19)
+            var12.pos(var10, var20 + 1.0F, var21 + 1.0F, var22)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var18 + var19, var18 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var51, var56, var61)
                .endVertex();
-            var12.method17040(var10, var20 + 1.0F, var21 + 1.0F, var22 + 1.0F)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var18 + var19, var17 + var19)
+            var12.pos(var10, var20 + 1.0F, var21 + 1.0F, var22 + 1.0F)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var18 + var19, var17 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var51, var56, var61)
                .endVertex();
-            var12.method17040(var10, var20 + 1.0F, var21, var22 + 1.0F)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var17 + var19, var17 + var19)
+            var12.pos(var10, var20 + 1.0F, var21, var22 + 1.0F)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var17 + var19, var17 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var51, var56, var61)
                .endVertex();
-            var12.method17040(var10, var20 + 1.0F, var21, var22)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var17 + var19, var18 + var19)
+            var12.pos(var10, var20 + 1.0F, var21, var22)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var17 + var19, var18 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var51, var56, var61)
@@ -635,30 +635,30 @@ public class Class5463 {
             float var52 = var11.method32832(var37, var42, var47);
             float var57 = var11.method32833(var37, var42, var47);
             float var62 = var11.method32834(var37, var42, var47);
-            var12.method17040(var10, var20, var21, var22)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var17 + var19, var17 + var19)
+            var12.pos(var10, var20, var21, var22)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var17 + var19, var17 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var52, var57, var62)
                .endVertex();
-            var12.method17040(var10, var20, var21, var22 + 1.0F)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var17 + var19, var18 + var19)
+            var12.pos(var10, var20, var21, var22 + 1.0F)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var17 + var19, var18 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var52, var57, var62)
                .endVertex();
-            var12.method17040(var10, var20, var21 + 1.0F, var22 + 1.0F)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var18 + var19, var18 + var19)
+            var12.pos(var10, var20, var21 + 1.0F, var22 + 1.0F)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var18 + var19, var18 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var52, var57, var62)
                .endVertex();
-            var12.method17040(var10, var20, var21 + 1.0F, var22)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var18 + var19, var17 + var19)
+            var12.pos(var10, var20, var21 + 1.0F, var22)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var18 + var19, var17 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var52, var57, var62)
@@ -673,30 +673,30 @@ public class Class5463 {
             float var53 = var11.method32832(var38, var43, var48);
             float var58 = var11.method32833(var38, var43, var48);
             float var63 = var11.method32834(var38, var43, var48);
-            var12.method17040(var10, var20, var21, var22)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var17 + var19, var17 + var19)
+            var12.pos(var10, var20, var21, var22)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var17 + var19, var17 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var53, var58, var63)
                .endVertex();
-            var12.method17040(var10, var20 + 1.0F, var21, var22)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var17 + var19, var18 + var19)
+            var12.pos(var10, var20 + 1.0F, var21, var22)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var17 + var19, var18 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var53, var58, var63)
                .endVertex();
-            var12.method17040(var10, var20 + 1.0F, var21, var22 + 1.0F)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var18 + var19, var18 + var19)
+            var12.pos(var10, var20 + 1.0F, var21, var22 + 1.0F)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var18 + var19, var18 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var53, var58, var63)
                .endVertex();
-            var12.method17040(var10, var20, var21, var22 + 1.0F)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var18 + var19, var17 + var19)
+            var12.pos(var10, var20, var21, var22 + 1.0F)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var18 + var19, var17 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var53, var58, var63)
@@ -711,30 +711,30 @@ public class Class5463 {
             float var54 = var11.method32832(var39, var44, var49);
             float var59 = var11.method32833(var39, var44, var49);
             float var64 = var11.method32834(var39, var44, var49);
-            var12.method17040(var10, var20, var21 + var2, var22 + 1.0F)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var17 + var19, var17 + var19)
+            var12.pos(var10, var20, var21 + var2, var22 + 1.0F)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var17 + var19, var17 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var54, var59, var64)
                .endVertex();
-            var12.method17040(var10, var20 + 1.0F, var21 + var2, var22 + 1.0F)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var17 + var19, var18 + var19)
+            var12.pos(var10, var20 + 1.0F, var21 + var2, var22 + 1.0F)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var17 + var19, var18 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var54, var59, var64)
                .endVertex();
-            var12.method17040(var10, var20 + 1.0F, var21 + var2, var22)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var18 + var19, var18 + var19)
+            var12.pos(var10, var20 + 1.0F, var21 + var2, var22)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var18 + var19, var18 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var54, var59, var64)
                .endVertex();
-            var12.method17040(var10, var20, var21 + var2, var22)
-               .method17033(var14, var15, var16, 1.0F)
-               .method17027(var18 + var19, var17 + var19)
+            var12.pos(var10, var20, var21 + var2, var22)
+               .color(var14, var15, var16, 1.0F)
+               .tex(var18 + var19, var17 + var19)
                .method17035(var6)
                .method17034(var5)
                .method17030(var54, var59, var64)

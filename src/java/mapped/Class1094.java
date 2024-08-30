@@ -195,7 +195,7 @@ public class Class1094 extends Class1018 {
    }
 
    public static Class7037 method5111() {
-      return Class1006.method4220().method21849(Class9173.field42105, 3.0).method21849(Class9173.field42108, 0.3F);
+      return Class1006.method4220().method21849(Attributes.field42105, 3.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F);
    }
 
    @Override
@@ -281,7 +281,7 @@ public class Class1094 extends Class1018 {
 
    public void method5115(int var1) {
       if (var1 == 99) {
-         this.method3085(Class9173.field42113).method38661(8.0);
+         this.method3085(Attributes.field42113).method38661(8.0);
          this.field5600.method20002(4, new Class2648(this));
          this.field5601.method20002(1, new Class2704(this).method10918());
          this.field5601.method20002(2, new Class2709<PlayerEntity>(this, PlayerEntity.class, true));

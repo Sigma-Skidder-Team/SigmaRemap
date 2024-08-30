@@ -20,12 +20,12 @@ public class Class5955 extends Class5942<Class945> {
             var3.translate(0.5, 0.44921875, 0.5);
             Direction var13 = Direction.method547((var11 + var9.method534()) % 4);
             float var14 = -var13.method551();
-            var3.method35293(Class7680.field32900.method25286(var14));
-            var3.method35293(Class7680.field32898.method25286(90.0F));
+            var3.rotate(Vector3f.YP.rotationDegrees(var14));
+            var3.rotate(Vector3f.field32898.rotationDegrees(90.0F));
             var3.translate(-0.3125, -0.3125, 0.0);
             var3.method35292(0.375F, 0.375F, 0.375F);
             Minecraft.getInstance().getItemRenderer().method789(var12, Class2327.field15932, var5, var6, var3, var4);
-            var3.method35295();
+            var3.pop();
          }
       }
    }

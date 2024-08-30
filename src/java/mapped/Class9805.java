@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 
 public class Class9805 {
    private final Class4869 field45827;
-   private final Map<Class2045, Set<Class9689>> field45828 = Maps.newEnumMap(Class2045.class);
+   private final Map<AttributeModifierOperation, Set<Class9689>> field45828 = Maps.newEnumMap(AttributeModifierOperation.class);
    private final Map<UUID, Class9689> field45829 = new Object2ObjectArrayMap();
    private final Set<Class9689> field45830 = new ObjectArraySet();
    private double field45831;
@@ -44,7 +44,7 @@ public class Class9805 {
       }
    }
 
-   public Set<Class9689> method38662(Class2045 var1) {
+   public Set<Class9689> method38662(AttributeModifierOperation var1) {
       return this.field45828.computeIfAbsent(var1, var0 -> Sets.newHashSet());
    }
 
@@ -127,24 +127,24 @@ public class Class9805 {
    private double method38675() {
       double var3 = this.method38660();
 
-      for (Class9689 var9 : this.method38676(Class2045.field13352)) {
+      for (Class9689 var9 : this.method38676(AttributeModifierOperation.ADDITION)) {
          var3 += var9.method37933();
       }
 
       double var6 = var3;
 
-      for (Class9689 var10 : this.method38676(Class2045.field13353)) {
+      for (Class9689 var10 : this.method38676(AttributeModifierOperation.field13353)) {
          var6 += var3 * var10.method37933();
       }
 
-      for (Class9689 var12 : this.method38676(Class2045.field13354)) {
+      for (Class9689 var12 : this.method38676(AttributeModifierOperation.MULTIPLY_TOTAL)) {
          var6 *= 1.0 + var12.method37933();
       }
 
       return this.field45827.method15031(var6);
    }
 
-   private Collection<Class9689> method38676(Class2045 var1) {
+   private Collection<Class9689> method38676(AttributeModifierOperation var1) {
       return this.field45828.getOrDefault(var1, Collections.<Class9689>emptySet());
    }
 

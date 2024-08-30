@@ -102,7 +102,7 @@ public class Class9548 {
       );
    }
 
-   private static int method36985(Class6619 var0, Collection<? extends Entity> var1, Class7144 var2, Integer var3, int var4, boolean var5) throws CommandSyntaxException {
+   private static int method36985(Class6619 var0, Collection<? extends Entity> var1, Effect var2, Integer var3, int var4, boolean var5) throws CommandSyntaxException {
       int var8 = 0;
       int var9;
       if (var3 == null) {
@@ -168,11 +168,11 @@ public class Class9548 {
       }
    }
 
-   private static int method36987(Class6619 var0, Collection<? extends Entity> var1, Class7144 var2) throws CommandSyntaxException {
+   private static int method36987(Class6619 var0, Collection<? extends Entity> var1, Effect var2) throws CommandSyntaxException {
       int var5 = 0;
 
       for (Entity var7 : var1) {
-         if (var7 instanceof Class880 && ((Class880)var7).method3040(var2)) {
+         if (var7 instanceof Class880 && ((Class880)var7).removeEffects(var2)) {
             var5++;
          }
       }

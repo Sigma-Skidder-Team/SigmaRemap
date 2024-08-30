@@ -9,9 +9,9 @@ import java.util.Random;
 
 public class Class133 extends Class128 {
    private static String[] field452;
-   private final Map<Class7144, Class6872> field453;
+   private final Map<Effect, Class6872> field453;
 
-   public Class133(ILootCondition[] var1, Map<Class7144, Class6872> var2) {
+   public Class133(ILootCondition[] var1, Map<Effect, Class6872> var2) {
       super(var1);
       this.field453 = ImmutableMap.copyOf(var2);
    }
@@ -27,7 +27,7 @@ public class Class133 extends Class128 {
          Random var5 = var2.method26088();
          int var6 = var5.nextInt(this.field453.size());
          Entry var7 = (Entry)Iterables.get(this.field453.entrySet(), var6);
-         Class7144 var8 = (Class7144)var7.getKey();
+         Effect var8 = (Effect)var7.getKey();
          int var9 = ((Class6872)var7.getValue()).method20914(var5);
          if (!var8.method22292()) {
             var9 *= 20;
@@ -45,7 +45,7 @@ public class Class133 extends Class128 {
    }
 
    // $VF: synthetic method
-   public static Map<Class7144, Class6872> method390(Class133 var0) {
+   public static Map<Effect, Class6872> method390(Class133 var0) {
       return var0.field453;
    }
 }

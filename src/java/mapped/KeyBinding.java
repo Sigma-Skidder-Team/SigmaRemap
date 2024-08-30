@@ -12,151 +12,151 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 public class KeyBinding implements Comparable<KeyBinding> {
-   private static final Map<String, KeyBinding> field13063 = Maps.newHashMap();
-   private static final Map<Class8115, KeyBinding> field13064 = Maps.newHashMap();
-   private static final Set<String> field13065 = Sets.newHashSet();
-   private static final Map<String, Integer> field13066 = Util.<Map<String, Integer>>make(Maps.newHashMap(), var0 -> {
-      var0.put("key.categories.movement", 1);
-      var0.put("key.categories.gameplay", 2);
-      var0.put("key.categories.inventory", 3);
-      var0.put("key.categories.creative", 4);
-      var0.put("key.categories.multiplayer", 5);
-      var0.put("key.categories.ui", 6);
-      var0.put("key.categories.misc", 7);
+   private static final Map<String, KeyBinding> KEYBIND_ARRAY = Maps.newHashMap();
+   private static final Map<InputMappingsInput, KeyBinding> HASH = Maps.newHashMap();
+   private static final Set<String> KEYBIND_SET = Sets.newHashSet();
+   private static final Map<String, Integer> CATEGORY_ORDER = Util.<Map<String, Integer>>make(Maps.newHashMap(), p_205215_0_ -> {
+      p_205215_0_.put("key.categories.movement", 1);
+      p_205215_0_.put("key.categories.gameplay", 2);
+      p_205215_0_.put("key.categories.inventory", 3);
+      p_205215_0_.put("key.categories.creative", 4);
+      p_205215_0_.put("key.categories.multiplayer", 5);
+      p_205215_0_.put("key.categories.ui", 6);
+      p_205215_0_.put("key.categories.misc", 7);
    });
-   private final String field13067;
-   private final Class8115 field13068;
-   private final String field13069;
-   public Class8115 field13070;
-   public boolean field13071;
-   private int field13072;
+   private final String keyDescription;
+   private final InputMappingsInput keyCodeDefault;
+   private final String keyCategory;
+   public InputMappingsInput keycode;
+   public boolean pressed;
+   private int pressTime;
 
-   public static void method8504(Class8115 var0) {
-      KeyBinding var3 = field13064.get(var0);
-      if (var3 != null) {
-         var3.field13072++;
+   public static void onTick(InputMappingsInput key) {
+      KeyBinding keybinding = HASH.get(key);
+      if (keybinding != null) {
+         keybinding.pressTime++;
       }
    }
 
-   public static void method8505(Class8115 var0, boolean var1) {
-      KeyBinding var4 = field13064.get(var0);
+   public static void setKeyBindState(InputMappingsInput var0, boolean held) {
+      KeyBinding var4 = HASH.get(var0);
       if (var4 != null) {
-         var4.method8524(var1);
+         var4.setPressed(held);
       }
    }
 
-   public static void method8506() {
-      for (KeyBinding var3 : field13063.values()) {
-         if (var3.field13070.method28099() == Class1938.field12592 && var3.field13070.method28100() != Class9798.field45819.method28100()) {
-            var3.method8524(Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), var3.field13070.method28100()));
+   public static void updateKeyBindState() {
+      for (KeyBinding keybinding : KEYBIND_ARRAY.values()) {
+         if (keybinding.keycode.getType() == InputMappingsType.KEYSYM && keybinding.keycode.getKeyCode() != InputMappings.INPUT_INVALID.getKeyCode()) {
+            keybinding.setPressed(InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), keybinding.keycode.getKeyCode()));
          }
       }
    }
 
    public static void unPressAllKeys() {
-      for (KeyBinding var3 : field13063.values()) {
-         var3.method8512();
+      for (KeyBinding var3 : KEYBIND_ARRAY.values()) {
+         var3.unpressKey();
       }
    }
 
-   public static void method8508() {
-      field13064.clear();
+   public static void resetKeyBindingArrayAndHash() {
+      HASH.clear();
 
-      for (KeyBinding var3 : field13063.values()) {
-         field13064.put(var3.field13070, var3);
+      for (KeyBinding var3 : KEYBIND_ARRAY.values()) {
+         HASH.put(var3.keycode, var3);
       }
    }
 
    public KeyBinding(String var1, int var2, String var3) {
-      this(var1, Class1938.field12592, var2, var3);
+      this(var1, InputMappingsType.KEYSYM, var2, var3);
    }
 
-   public KeyBinding(String var1, Class1938 var2, int var3, String var4) {
-      this.field13067 = var1;
-      this.field13070 = var2.method8197(var3);
-      this.field13068 = this.field13070;
-      this.field13069 = var4;
-      field13063.put(var1, this);
-      field13064.put(this.field13070, this);
-      field13065.add(var4);
+   public KeyBinding(String var1, InputMappingsType var2, int var3, String var4) {
+      this.keyDescription = var1;
+      this.keycode = var2.method8197(var3);
+      this.keyCodeDefault = this.keycode;
+      this.keyCategory = var4;
+      KEYBIND_ARRAY.put(var1, this);
+      HASH.put(this.keycode, this);
+      KEYBIND_SET.add(var4);
    }
 
    public boolean isKeyDown() {
-      return this.field13071;
+      return this.pressed;
    }
 
-   public String method8510() {
-      return this.field13069;
+   public String getKeyCategory() {
+      return this.keyCategory;
    }
 
    public boolean isPressed() {
-      if (this.field13072 != 0) {
-         this.field13072--;
+      if (this.pressTime != 0) {
+         this.pressTime--;
          return true;
       } else {
          return false;
       }
    }
 
-   private void method8512() {
-      this.field13072 = 0;
-      this.method8524(false);
+   private void unpressKey() {
+      this.pressTime = 0;
+      this.setPressed(false);
    }
 
-   public String method8513() {
-      return this.field13067;
+   public String getKeyDescription() {
+      return this.keyDescription;
    }
 
-   public Class8115 method8514() {
-      return this.field13068;
+   public InputMappingsInput getDefault() {
+      return this.keyCodeDefault;
    }
 
-   public void method8515(Class8115 var1) {
-      this.field13070 = var1;
+   public void bind(InputMappingsInput var1) {
+      this.keycode = var1;
    }
 
    public int compareTo(KeyBinding var1) {
-      return !this.field13069.equals(var1.field13069)
-         ? field13066.get(this.field13069).compareTo(field13066.get(var1.field13069))
-         : I18n.format(this.field13067).compareTo(I18n.format(var1.field13067));
+      return !this.keyCategory.equals(var1.keyCategory)
+         ? CATEGORY_ORDER.get(this.keyCategory).compareTo(CATEGORY_ORDER.get(var1.keyCategory))
+         : I18n.format(this.keyDescription).compareTo(I18n.format(var1.keyDescription));
    }
 
    public static Supplier<ITextComponent> getDisplayString(String var0) {
-      KeyBinding var3 = field13063.get(var0);
-      return var3 != null ? var3::method8521 : () -> new TranslationTextComponent(var0);
+      KeyBinding var3 = KEYBIND_ARRAY.get(var0);
+      return var3 != null ? var3::func_238171_j_ : () -> new TranslationTextComponent(var0);
    }
 
-   public boolean method8517(KeyBinding var1) {
-      return this.field13070.equals(var1.field13070);
+   public boolean conflicts(KeyBinding var1) {
+      return this.keycode.equals(var1.keycode);
    }
 
-   public boolean method8518() {
-      return this.field13070.equals(Class9798.field45819);
+   public boolean isInvalid() {
+      return this.keycode.equals(InputMappings.INPUT_INVALID);
    }
 
-   public boolean method8519(int var1, int var2) {
-      return var1 != Class9798.field45819.method28100()
-         ? this.field13070.method28099() == Class1938.field12592 && this.field13070.method28100() == var1
-         : this.field13070.method28099() == Class1938.field12593 && this.field13070.method28100() == var2;
+   public boolean matchesKey(int keysym, int scancode) {
+      return keysym != InputMappings.INPUT_INVALID.getKeyCode()
+         ? this.keycode.getType() == InputMappingsType.KEYSYM && this.keycode.getKeyCode() == keysym
+         : this.keycode.getType() == InputMappingsType.SCANCODE && this.keycode.getKeyCode() == scancode;
    }
 
-   public boolean method8520(int var1) {
-      return this.field13070.method28099() == Class1938.field12594 && this.field13070.method28100() == var1;
+   public boolean matchesMouseKey(int var1) {
+      return this.keycode.getType() == InputMappingsType.MOUSE && this.keycode.getKeyCode() == var1;
    }
 
-   public ITextComponent method8521() {
-      return this.field13070.method28102();
+   public ITextComponent func_238171_j_() {
+      return this.keycode.func_237520_d_();
    }
 
-   public boolean method8522() {
-      return this.field13070.equals(this.field13068);
+   public boolean isDefault() {
+      return this.keycode.equals(this.keyCodeDefault);
    }
 
-   public String method8523() {
-      return this.field13070.method28101();
+   public String getTranslationKey() {
+      return this.keycode.getTranslationKey();
    }
 
-   public void method8524(boolean var1) {
-      this.field13071 = var1;
+   public void setPressed(boolean var1) {
+      this.pressed = var1;
    }
 }

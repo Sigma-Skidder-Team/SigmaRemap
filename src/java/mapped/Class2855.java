@@ -48,13 +48,13 @@ public abstract class Class2855<E extends Entity> extends Class2827<E> {
 
          var1.translate(0.0, (double)(this.field17686 / 16.0F), (double)(this.field17687 / 16.0F));
          this.method11001().forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));
-         var1.method35295();
+         var1.pop();
          var1.push();
          float var12 = 1.0F / this.field17689;
          var1.method35292(var12, var12, var12);
          var1.translate(0.0, (double)(this.field17690 / 16.0F), 0.0);
          this.method11002().forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));
-         var1.method35295();
+         var1.pop();
       }
    }
 

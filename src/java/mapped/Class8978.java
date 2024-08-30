@@ -12,7 +12,7 @@ public class Class8978 {
    private final float field40584;
    private final float field40585;
    private final float field40586;
-   public static final Class9367 field40587 = Class7317.method23178();
+   public static final Matrix4f field40587 = Class7317.method23178();
 
    public Class8978(RenderType var1, RenderType var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       this.field40577 = var1;
@@ -27,7 +27,7 @@ public class Class8978 {
       this.field40586 = var10;
    }
 
-   public void method32940(boolean var1, float var2, float var3, Class9367 var4, Class5422 var5, float var6, float var7, float var8, float var9, int var10) {
+   public void method32940(boolean var1, float var2, float var3, Matrix4f var4, Class5422 var5, float var6, float var7, float var8, float var9, int var10) {
       float var14 = var2 + this.field40583;
       float var15 = var2 + this.field40584;
       float var16 = this.field40585 - 3.0F;
@@ -49,48 +49,48 @@ public class Class8978 {
          var22.method17087(var15 + var21, var19, 0.0F, var23, var24, var25, var26, this.field40580, this.field40582, var27, var28);
          var22.method17087(var15 + var20, var18, 0.0F, var23, var24, var25, var26, this.field40580, this.field40581, var27, var28);
       } else {
-         var5.method17040(var4, var14 + var20, var18, 0.0F)
-            .method17033(var6, var7, var8, var9)
-            .method17027(this.field40579, this.field40581)
+         var5.pos(var4, var14 + var20, var18, 0.0F)
+            .color(var6, var7, var8, var9)
+            .tex(this.field40579, this.field40581)
             .method17034(var10)
             .endVertex();
-         var5.method17040(var4, var14 + var21, var19, 0.0F)
-            .method17033(var6, var7, var8, var9)
-            .method17027(this.field40579, this.field40582)
+         var5.pos(var4, var14 + var21, var19, 0.0F)
+            .color(var6, var7, var8, var9)
+            .tex(this.field40579, this.field40582)
             .method17034(var10)
             .endVertex();
-         var5.method17040(var4, var15 + var21, var19, 0.0F)
-            .method17033(var6, var7, var8, var9)
-            .method17027(this.field40580, this.field40582)
+         var5.pos(var4, var15 + var21, var19, 0.0F)
+            .color(var6, var7, var8, var9)
+            .tex(this.field40580, this.field40582)
             .method17034(var10)
             .endVertex();
-         var5.method17040(var4, var15 + var20, var18, 0.0F)
-            .method17033(var6, var7, var8, var9)
-            .method17027(this.field40580, this.field40581)
+         var5.pos(var4, var15 + var20, var18, 0.0F)
+            .color(var6, var7, var8, var9)
+            .tex(this.field40580, this.field40581)
             .method17034(var10)
             .endVertex();
       }
    }
 
-   public void method32941(Class8442 var1, Class9367 var2, Class5422 var3, int var4) {
-      var3.method17040(var2, var1.field36164, var1.field36165, var1.field36168)
-         .method17033(var1.field36169, var1.field36170, var1.field36171, var1.field36172)
-         .method17027(this.field40579, this.field40581)
+   public void method32941(Class8442 var1, Matrix4f var2, Class5422 var3, int var4) {
+      var3.pos(var2, var1.field36164, var1.field36165, var1.field36168)
+         .color(var1.field36169, var1.field36170, var1.field36171, var1.field36172)
+         .tex(this.field40579, this.field40581)
          .method17034(var4)
          .endVertex();
-      var3.method17040(var2, var1.field36166, var1.field36165, var1.field36168)
-         .method17033(var1.field36169, var1.field36170, var1.field36171, var1.field36172)
-         .method17027(this.field40579, this.field40582)
+      var3.pos(var2, var1.field36166, var1.field36165, var1.field36168)
+         .color(var1.field36169, var1.field36170, var1.field36171, var1.field36172)
+         .tex(this.field40579, this.field40582)
          .method17034(var4)
          .endVertex();
-      var3.method17040(var2, var1.field36166, var1.field36167, var1.field36168)
-         .method17033(var1.field36169, var1.field36170, var1.field36171, var1.field36172)
-         .method17027(this.field40580, this.field40582)
+      var3.pos(var2, var1.field36166, var1.field36167, var1.field36168)
+         .color(var1.field36169, var1.field36170, var1.field36171, var1.field36172)
+         .tex(this.field40580, this.field40582)
          .method17034(var4)
          .endVertex();
-      var3.method17040(var2, var1.field36164, var1.field36167, var1.field36168)
-         .method17033(var1.field36169, var1.field36170, var1.field36171, var1.field36172)
-         .method17027(this.field40580, this.field40581)
+      var3.pos(var2, var1.field36164, var1.field36167, var1.field36168)
+         .color(var1.field36169, var1.field36170, var1.field36171, var1.field36172)
+         .tex(this.field40580, this.field40581)
          .method17034(var4)
          .endVertex();
    }

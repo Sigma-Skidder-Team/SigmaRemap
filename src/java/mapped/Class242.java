@@ -23,7 +23,7 @@ public class Class242<T extends Class880, M extends Class2827<T> & Class2825> ex
 
          this.method838(var4, var15, Class2327.field15926, Class2205.field14418, var1, var2, var3);
          this.method838(var4, var14, Class2327.field15925, Class2205.field14417, var1, var2, var3);
-         var1.method35295();
+         var1.pop();
       }
    }
 
@@ -31,12 +31,12 @@ public class Class242<T extends Class880, M extends Class2827<T> & Class2825> ex
       if (!var2.isEmpty()) {
          var5.push();
          this.method825().method11010(var4, var5);
-         var5.method35293(Class7680.field32898.method25286(-90.0F));
-         var5.method35293(Class7680.field32900.method25286(180.0F));
+         var5.rotate(Vector3f.field32898.rotationDegrees(-90.0F));
+         var5.rotate(Vector3f.YP.rotationDegrees(180.0F));
          boolean var10 = var4 == Class2205.field14417;
          var5.translate((double)((float)(!var10 ? 1 : -1) / 16.0F), 0.125, -0.625);
          Minecraft.getInstance().getFirstPersonRenderer().method37580(var1, var2, var3, var10, var5, var6, var7);
-         var5.method35295();
+         var5.pop();
       }
    }
 }

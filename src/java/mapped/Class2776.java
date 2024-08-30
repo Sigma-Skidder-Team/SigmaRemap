@@ -27,7 +27,7 @@ public class Class2776 extends Class2595 {
 
    @Override
    public void method10804() {
-      this.field17369.method3035(new Class2023(Class8254.field35496, 100));
+      this.field17369.method3035(new Class2023(Effects.DOLPHINS_GRACE, 100));
    }
 
    @Override
@@ -46,7 +46,7 @@ public class Class2776 extends Class2595 {
       }
 
       if (this.field17369.method2951() && this.field17369.world.rand.nextInt(6) == 0) {
-         this.field17369.method3035(new Class2023(Class8254.field35496, 100));
+         this.field17369.method3035(new Class2023(Effects.DOLPHINS_GRACE, 100));
       }
    }
 }

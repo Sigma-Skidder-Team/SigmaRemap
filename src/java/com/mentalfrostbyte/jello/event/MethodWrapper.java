@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.event;
 
 import com.mentalfrostbyte.jello.event.priority.Priority;
-import com.mentalfrostbyte.jello.unmapped.NCPPhase;
+import com.mentalfrostbyte.jello.module.impl.movement.phase.NCPPhase;
 import com.mentalfrostbyte.jello.unmapped.Class8733;
 import mapped.Class8756;
 

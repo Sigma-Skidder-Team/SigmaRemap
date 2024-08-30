@@ -27,7 +27,7 @@ public class DefaultVertexFormats {
    public static final Class7831 POSITION_COLOR = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43328).build());
    public static final Class7831 field43343 = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43328).add(field43331).build());
    public static final Class7831 field43344 = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43329).build());
-   public static final Class7831 field43345 = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43328).add(field43329).build());
+   public static final Class7831 POSITION_COLOR_TEX = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43328).add(field43329).build());
    /** @deprecated */
    public static final Class7831 field43346 = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43329).add(field43328).build());
    public static final Class7831 field43347 = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43328).add(field43329).add(field43331).build());

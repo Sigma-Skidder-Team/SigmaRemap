@@ -740,7 +740,7 @@ public class Class7414 {
       method23806(8960, 34200, 770);
    }
 
-   public static void method23772(Class7680 var0, Class7680 var1, Class9367 var2) {
+   public static void method23772(Vector3f var0, Vector3f var1, Matrix4f var2) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       method23832();
       method23831();
@@ -765,25 +765,25 @@ public class Class7414 {
       method23833();
    }
 
-   public static void method23773(Class7680 var0, Class7680 var1) {
+   public static void method23773(Vector3f var0, Vector3f var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      Class9367 var4 = new Class9367();
+      Matrix4f var4 = new Matrix4f();
       var4.method35503();
-      var4.method35508(Class9367.method35515(1.0F, -1.0F, 1.0F));
-      var4.method35509(Class7680.field32900.method25286(-22.5F));
-      var4.method35509(Class7680.field32898.method25286(135.0F));
+      var4.method35508(Matrix4f.method35515(1.0F, -1.0F, 1.0F));
+      var4.method35509(Vector3f.YP.rotationDegrees(-22.5F));
+      var4.method35509(Vector3f.field32898.rotationDegrees(135.0F));
       method23772(var0, var1, var4);
    }
 
-   public static void method23774(Class7680 var0, Class7680 var1) {
+   public static void method23774(Vector3f var0, Vector3f var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      Class9367 var4 = new Class9367();
+      Matrix4f var4 = new Matrix4f();
       var4.method35503();
-      var4.method35509(Class7680.field32900.method25286(62.0F));
-      var4.method35509(Class7680.field32898.method25286(185.5F));
-      var4.method35508(Class9367.method35515(1.0F, -1.0F, 1.0F));
-      var4.method35509(Class7680.field32900.method25286(-22.5F));
-      var4.method35509(Class7680.field32898.method25286(135.0F));
+      var4.method35509(Vector3f.YP.rotationDegrees(62.0F));
+      var4.method35509(Vector3f.field32898.rotationDegrees(185.5F));
+      var4.method35508(Matrix4f.method35515(1.0F, -1.0F, 1.0F));
+      var4.method35509(Vector3f.YP.rotationDegrees(-22.5F));
+      var4.method35509(Vector3f.field32898.rotationDegrees(135.0F));
       method23772(var0, var1, var4);
    }
 
@@ -1087,8 +1087,8 @@ public class Class7414 {
       if (var0 != field31740[field31739].field40430) {
          field31740[field31739].field40430 = var0;
          GL11.glBindTexture(3553, var0);
-         if (Class4501.method14213()) {
-            Class4501.method14219(var0);
+         if (SmartAnimations.isActive()) {
+            SmartAnimations.textureRendered(var0);
          }
       }
    }
@@ -1273,7 +1273,7 @@ public class Class7414 {
    }
 
    @Deprecated
-   public static void method23842(Class9367 var0) {
+   public static void method23842(Matrix4f var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       var0.method35502(field31724);
       ((Buffer)field31724).rewind();

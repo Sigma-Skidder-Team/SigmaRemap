@@ -15,7 +15,7 @@ public class Class2746 extends Class2595 {
    @Override
    public boolean method10803() {
       Class880 var3 = this.field17279.method4232();
-      return var3 != null && var3.method3066() ? this.field17279.world.method6997() != Class2197.field14351 : false;
+      return var3 != null && var3.isAlive() ? this.field17279.world.method6997() != Class2197.field14351 : false;
    }
 
    @Override

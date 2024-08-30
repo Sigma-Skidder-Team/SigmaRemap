@@ -12,12 +12,12 @@ import java.util.UUID;
 public class Class6884 {
    private final String field29832;
    private final Class4869 field29833;
-   private final Class2045 field29834;
+   private final AttributeModifierOperation field29834;
    private final Class6872 field29835;
    private final UUID field29836;
    private final Class2106[] field29837;
 
-   private Class6884(String var1, Class4869 var2, Class2045 var3, Class6872 var4, Class2106[] var5, UUID var6) {
+   private Class6884(String var1, Class4869 var2, AttributeModifierOperation var3, Class6872 var4, Class2106[] var5, UUID var6) {
       this.field29832 = var1;
       this.field29833 = var2;
       this.field29834 = var3;
@@ -58,7 +58,7 @@ public class Class6884 {
       if (var6 == null) {
          throw new JsonSyntaxException("Unknown attribute: " + var5);
       } else {
-         Class2045 var7 = method20963(JSONUtils.method32763(var0, "operation"));
+         AttributeModifierOperation var7 = method20963(JSONUtils.method32763(var0, "operation"));
          Class6872 var8 = JSONUtils.<Class6872>method32788(var0, "amount", var1, Class6872.class);
          UUID var9 = null;
          Class2106[] var10;
@@ -96,7 +96,7 @@ public class Class6884 {
       }
    }
 
-   private static String method20962(Class2045 var0) {
+   private static String method20962(AttributeModifierOperation var0) {
       switch (Class8163.field35137[var0.ordinal()]) {
          case 1:
             return "addition";
@@ -109,14 +109,14 @@ public class Class6884 {
       }
    }
 
-   private static Class2045 method20963(String var0) {
+   private static AttributeModifierOperation method20963(String var0) {
       switch (var0) {
          case "addition":
-            return Class2045.field13352;
+            return AttributeModifierOperation.ADDITION;
          case "multiply_base":
-            return Class2045.field13353;
+            return AttributeModifierOperation.field13353;
          case "multiply_total":
-            return Class2045.field13354;
+            return AttributeModifierOperation.MULTIPLY_TOTAL;
          default:
             throw new JsonSyntaxException("Unknown attribute modifier operation " + var0);
       }
@@ -148,7 +148,7 @@ public class Class6884 {
    }
 
    // $VF: synthetic method
-   public static Class2045 method20969(Class6884 var0) {
+   public static AttributeModifierOperation method20969(Class6884 var0) {
       return var0.field29834;
    }
 }

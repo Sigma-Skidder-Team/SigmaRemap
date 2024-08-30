@@ -54,7 +54,7 @@ public class Class3685<E extends Class1006> extends Class3676<E> {
 
    private boolean method12529(E var1) {
       Optional var4 = var1.method2992().<Class880>method21410(Class8830.field39826);
-      return var4.isPresent() && !((Class880)var4.get()).method3066();
+      return var4.isPresent() && !((Class880)var4.get()).isAlive();
    }
 
    private void method12530(E var1) {

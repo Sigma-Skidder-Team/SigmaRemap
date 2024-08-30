@@ -189,8 +189,8 @@ public class Class8515 {
       float var14,
       float var15
    ) {
-      Class8892 var18 = var0.method35296();
-      Class9367 var19 = var18.method32361();
+      Class8892 var18 = var0.getLast();
+      Matrix4f var19 = var18.getMatrix();
       Class8967 var20 = var18.method32362();
       float var21 = var20.method32832(var13, var14, var15);
       float var22 = var20.method32833(var13, var14, var15);

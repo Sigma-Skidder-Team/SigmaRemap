@@ -16,7 +16,7 @@ public class Class7755 {
       this.field33320 = var4;
    }
 
-   public Class7755(Class7680 var1) {
+   public Class7755(Vector3f var1) {
       this(var1.method25269(), var1.method25270(), var1.method25271(), 1.0F);
    }
 
@@ -64,7 +64,7 @@ public class Class7755 {
       return this.field33320;
    }
 
-   public void method25705(Class7680 var1) {
+   public void method25705(Vector3f var1) {
       this.field33317 = this.field33317 * var1.method25269();
       this.field33318 = this.field33318 * var1.method25270();
       this.field33319 = this.field33319 * var1.method25271();
@@ -98,7 +98,7 @@ public class Class7755 {
       }
    }
 
-   public void method25709(Class9367 var1) {
+   public void method25709(Matrix4f var1) {
       float var4 = this.field33317;
       float var5 = this.field33318;
       float var6 = this.field33319;

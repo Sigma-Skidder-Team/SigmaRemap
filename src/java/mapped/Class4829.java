@@ -11,10 +11,10 @@ public class Class4829 {
 
    public void method14919() {
       this.field22602[0] = Minecraft.getInstance().getModelManager().method1025().method38153(Blocks.LAVA.method11579()).getParticleTexture();
-      this.field22602[1] = Class8968.field40510.method26198();
+      this.field22602[1] = ModelBakery.field40510.getSprite();
       this.field22603[0] = Minecraft.getInstance().getModelManager().method1025().method38153(Blocks.WATER.method11579()).getParticleTexture();
-      this.field22603[1] = Class8968.field40511.method26198();
-      this.field22604 = Class8968.field40512.method26198();
+      this.field22603[1] = ModelBakery.field40511.getSprite();
+      this.field22604 = ModelBakery.field40512.getSprite();
    }
 
    private static boolean method14920(Class1665 var0, BlockPos var1, Direction var2, FluidState var3) {
@@ -164,8 +164,8 @@ public class Class4829 {
 
                float var108 = (var101 + var104 + var48 + var49) / 4.0F;
                float var115 = (var90 + var47 + var94 + var98) / 4.0F;
-               float var116 = (float)var9[0].method7457() / (var9[0].method7460() - var9[0].method7459());
-               float var118 = (float)var9[0].method7458() / (var9[0].method7463() - var9[0].method7462());
+               float var116 = (float)var9[0].method7457() / (var9[0].getMaxU() - var9[0].getMinU());
+               float var118 = (float)var9[0].method7458() / (var9[0].getMaxV() - var9[0].getMinV());
                float var120 = 4.0F / Math.max(var118, var116);
                var101 = MathHelper.lerp(var120, var101, var108);
                var104 = MathHelper.lerp(var120, var104, var108);
@@ -193,10 +193,10 @@ public class Class4829 {
 
             if (var15) {
                var3.method17043(var9[0]);
-               float var87 = var9[0].method7459();
-               float var92 = var9[0].method7460();
-               float var96 = var9[0].method7462();
-               float var100 = var9[0].method7463();
+               float var87 = var9[0].getMinU();
+               float var92 = var9[0].getMaxU();
+               float var96 = var9[0].getMinV();
+               float var100 = var9[0].getMaxV();
                int var103 = this.method14928(var1, var2.down());
                float var106 = var1.method6877(Direction.DOWN, true);
                float var112 = var106 * var20;
@@ -347,8 +347,8 @@ public class Class4829 {
 
    private void method14926(Class5422 var1, double var2, double var4, double var6, float var8, float var9, float var10, float var11, float var12, int var13) {
       var1.pos(var2, var4, var6)
-         .method17033(var8, var9, var10, 1.0F)
-         .method17027(var11, var12)
+         .color(var8, var9, var10, 1.0F)
+         .tex(var11, var12)
          .method17034(var13)
          .method17030(0.0F, 1.0F, 0.0F)
          .endVertex();
@@ -358,8 +358,8 @@ public class Class4829 {
       Class5422 var1, double var2, double var4, double var6, float var8, float var9, float var10, float var11, float var12, float var13, int var14
    ) {
       var1.pos(var2, var4, var6)
-         .method17033(var8, var9, var10, var11)
-         .method17027(var12, var13)
+         .color(var8, var9, var10, var11)
+         .tex(var12, var13)
          .method17034(var14)
          .method17030(0.0F, 1.0F, 0.0F)
          .endVertex();

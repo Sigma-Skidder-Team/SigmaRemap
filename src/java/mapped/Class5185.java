@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4420;
+import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -39,7 +39,7 @@ public class Class5185 extends Module {
     }
 
     @EventTarget
-    public void method16143(Class4420 var1) {
+    public void method16143(Render3DEvent var1) {
         if (this.isEnabled()) {
             if (this.field23490 != null) {
                 int var4 = Class5628.method17688(ClientColors.PALE_YELLOW.getColor, 0.14F);

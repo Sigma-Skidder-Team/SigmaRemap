@@ -9,7 +9,7 @@ public class Class2718<T extends Class880> extends Class2709<T> {
 
    @Override
    public boolean method10803() {
-      float var3 = this.field17153.method3267();
+      float var3 = this.field17153.getBrightness();
       return !(var3 >= 0.5F) ? super.method10803() : false;
    }
 }

@@ -25,10 +25,10 @@ import org.apache.logging.log4j.Logger;
 
 public class Class9021 {
    private static final Logger field41274 = LogManager.getLogger();
-   public static final Class8112<NioEventLoopGroup> field41275 = new Class8112<NioEventLoopGroup>(
+   public static final LazyValue<NioEventLoopGroup> field41275 = new LazyValue<NioEventLoopGroup>(
       () -> new NioEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Server IO #%d").setDaemon(true).build())
    );
-   public static final Class8112<EpollEventLoopGroup> field41276 = new Class8112<EpollEventLoopGroup>(
+   public static final LazyValue<EpollEventLoopGroup> field41276 = new LazyValue<EpollEventLoopGroup>(
       () -> new EpollEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Epoll Server IO #%d").setDaemon(true).build())
    );
    private final MinecraftServer field41277;
@@ -44,7 +44,7 @@ public class Class9021 {
    public void method33398(InetAddress var1, int var2) throws IOException {
       synchronized (this.field41279) {
          Class<? extends ServerSocketChannel> var6;
-         Class8112 var7;
+         LazyValue var7;
          if (Epoll.isAvailable() && this.field41277.method1356()) {
             var6 = EpollServerSocketChannel.class;
             var7 = field41276;
@@ -59,7 +59,7 @@ public class Class9021 {
             .add(
                ((ServerBootstrap)((ServerBootstrap)new ServerBootstrap().channel(var6))
                      .childHandler(new Class7308(this))
-                     .group((EventLoopGroup)var7.method28097())
+                     .group((EventLoopGroup)var7.getValue())
                      .localAddress(var1, var2))
                   .bind()
                   .syncUninterruptibly()
@@ -72,7 +72,7 @@ public class Class9021 {
       synchronized (this.field41279) {
          var4 = ((ServerBootstrap)((ServerBootstrap)new ServerBootstrap().channel(LocalServerChannel.class))
                .childHandler(new Class7985(this))
-               .group((EventLoopGroup)field41275.method28097())
+               .group((EventLoopGroup)field41275.getValue())
                .localAddress(LocalAddress.ANY))
             .bind()
             .syncUninterruptibly();

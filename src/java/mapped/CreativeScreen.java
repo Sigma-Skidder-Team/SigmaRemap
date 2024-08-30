@@ -269,7 +269,7 @@ public class CreativeScreen extends Class860<Class5820> {
    public boolean method1920(int var1, int var2, int var3) {
       this.field4783 = false;
       if (field4776 != ItemGroup.SEARCH.method23641()) {
-         if (!this.mc.gameSettings.keyBindChat.method8519(var1, var2)) {
+         if (!this.mc.gameSettings.keyBindChat.matchesKey(var1, var2)) {
             return super.method1920(var1, var2, var3);
          } else {
             this.field4783 = true;
@@ -278,7 +278,7 @@ public class CreativeScreen extends Class860<Class5820> {
          }
       } else {
          boolean var6 = !this.method2643(this.field4729) || this.field4729.method18266();
-         boolean var7 = Class9798.method38637(var1, var2).method28103().isPresent();
+         boolean var7 = InputMappings.method38637(var1, var2).func_241552_e_().isPresent();
          if (var6 && var7 && this.method2627(var1, var2)) {
             this.field4783 = true;
             return true;
@@ -420,8 +420,8 @@ public class CreativeScreen extends Class860<Class5820> {
                   } else {
                      ItemStack var9 = new ItemStack(Items.field37899);
                      var9.method32144("CustomCreativeLock");
-                     ITextComponent var10 = this.mc.gameSettings.keyBindsHotbar[var6].method8521();
-                     ITextComponent var11 = this.mc.gameSettings.keyBindSaveToolbar.method8521();
+                     ITextComponent var10 = this.mc.gameSettings.keyBindsHotbar[var6].func_238171_j_();
+                     ITextComponent var11 = this.mc.gameSettings.keyBindSaveToolbar.func_238171_j_();
                      var9.method32150(new TranslationTextComponent("inventory.hotbarInfo", var11, var10));
                      this.field4727.field25498.add(var9);
                   }
@@ -739,8 +739,8 @@ public class CreativeScreen extends Class860<Class5820> {
                var8.set(var9, var6.inventory.method3618(var9).copy());
             }
 
-            ITextComponent var11 = var0.gameSettings.keyBindsHotbar[var1].method8521();
-            ITextComponent var10 = var0.gameSettings.keyBindLoadToolbar.method8521();
+            ITextComponent var11 = var0.gameSettings.keyBindsHotbar[var1].func_238171_j_();
+            ITextComponent var10 = var0.gameSettings.keyBindLoadToolbar.func_238171_j_();
             var0.ingameGUI.method5985(new TranslationTextComponent("inventory.hotbarSaved", var10, var11), false);
             var7.method27628();
          }

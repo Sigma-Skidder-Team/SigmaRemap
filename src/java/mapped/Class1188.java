@@ -21,8 +21,8 @@ public class Class1188 extends Class1186 {
       this.field6414 = var3;
       this.field6415 = new Class1216(this, 0, 0, 75, 20, var3, var2x -> Class1295.method6127(this.field6417).field6199 = var2, var1, var2, var3);
       this.field6416 = new Class1246(this, 0, 0, 50, 20, new TranslationTextComponent("controls.reset"), var2x -> {
-         this.field6417.field6782.gameSettings.method37142(var2, var2.method8514());
-         KeyBinding.method8508();
+         this.field6417.field6782.gameSettings.method37142(var2, var2.getDefault());
+         KeyBinding.resetKeyBindingArrayAndHash();
       }, var1, var3);
    }
 
@@ -35,15 +35,15 @@ public class Class1188 extends Class1186 {
          .method38805(var1, this.field6414, (float)(var4 + 90 - Class1295.method6128(this.field6417)), (float)(var3 + var6 / 2 - 4), 16777215);
       this.field6416.field6477 = var4 + 190;
       this.field6416.field6478 = var3;
-      this.field6416.field6482 = !this.field6413.method8522();
+      this.field6416.field6482 = !this.field6413.isDefault();
       this.field6416.method1923(var1, var7, var8, var10);
       this.field6415.field6477 = var4 + 105;
       this.field6415.field6478 = var3;
-      this.field6415.method5743(this.field6413.method8521());
+      this.field6415.method5743(this.field6413.func_238171_j_());
       boolean var14 = false;
-      if (!this.field6413.method8518()) {
+      if (!this.field6413.isInvalid()) {
          for (KeyBinding var18 : this.field6417.field6782.gameSettings.field44658) {
-            if (var18 != this.field6413 && this.field6413.method8517(var18)) {
+            if (var18 != this.field6413 && this.field6413.conflicts(var18)) {
                var14 = true;
                break;
             }

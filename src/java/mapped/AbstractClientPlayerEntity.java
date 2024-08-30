@@ -103,7 +103,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    public static Class294 method5375(ResourceLocation var0, String var1) {
       TextureManager var4 = Minecraft.getInstance().getTextureManager();
-      Object var5 = var4.method1076(var0);
+      Object var5 = var4.getTexture(var0);
       if (var5 == null) {
          var5 = new Class294(
             (File)null,
@@ -133,7 +133,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
          var3 *= 1.1F;
       }
 
-      var3 = (float)((double)var3 * ((this.method3086(Class9173.field42108) / (double)this.abilities.method20716() + 1.0) / 2.0));
+      var3 = (float)((double)var3 * ((this.method3086(Attributes.MOVEMENT_SPEED) / (double)this.abilities.method20716() + 1.0) / 2.0));
       if (this.abilities.method20716() == 0.0F || Float.isNaN(var3) || Float.isInfinite(var3)) {
          var3 = 1.0F;
       }

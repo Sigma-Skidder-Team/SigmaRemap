@@ -794,7 +794,7 @@ public class ClientPlayNetHandler implements Class5116 {
             if (var10 != null) {
                var10.method2758(var4, true);
                if (var10 == this.field23272.player && !var5) {
-                  this.field23272.ingameGUI.method5985(new TranslationTextComponent("mount.onboard", this.field23272.gameSettings.keyBindSneak.method8521()), false);
+                  this.field23272.ingameGUI.method5985(new TranslationTextComponent("mount.onboard", this.field23272.gameSettings.keyBindSneak.func_238171_j_()), false);
                }
             }
          }
@@ -1152,19 +1152,19 @@ public class ClientPlayNetHandler implements Class5116 {
                                        this.field23272
                                           .ingameGUI
                                           .getChatGUI()
-                                          .method5930(new TranslationTextComponent("demo.day.6", var8.field44649.method8521()));
+                                          .method5930(new TranslationTextComponent("demo.day.6", var8.keyBindScreenshot.func_238171_j_()));
                                     }
                                  } else {
                                     this.field23272
                                        .ingameGUI
                                        .getChatGUI()
-                                       .method5930(new TranslationTextComponent("demo.help.inventory", var8.field44639.method8521()));
+                                       .method5930(new TranslationTextComponent("demo.help.inventory", var8.keyBindInventory.func_238171_j_()));
                                  }
                               } else {
                                  this.field23272
                                     .ingameGUI
                                     .getChatGUI()
-                                    .method5930(new TranslationTextComponent("demo.help.jump", var8.field44636.method8521()));
+                                    .method5930(new TranslationTextComponent("demo.help.jump", var8.keyBindJump.func_238171_j_()));
                               }
                            } else {
                               this.field23272
@@ -1173,10 +1173,10 @@ public class ClientPlayNetHandler implements Class5116 {
                                  .method5930(
                                     new TranslationTextComponent(
                                        "demo.help.movement",
-                                       var8.field44632.method8521(),
-                                       var8.field44633.method8521(),
-                                       var8.field44634.method8521(),
-                                       var8.field44635.method8521()
+                                       var8.keyBindForward.func_238171_j_(),
+                                       var8.keyBindLeft.func_238171_j_(),
+                                       var8.keyBindBack.func_238171_j_(),
+                                       var8.keyBindRight.func_238171_j_()
                                     )
                                  );
                            }
@@ -1363,7 +1363,7 @@ public class ClientPlayNetHandler implements Class5116 {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17407());
       if (var4 instanceof Class880) {
-         Class7144 var5 = Class7144.method22287(var1.method17408());
+         Effect var5 = Effect.method22287(var1.method17408());
          if (var5 != null) {
             Class2023 var6 = new Class2023(var5, var1.method17410(), var1.method17409(), var1.method17412(), var1.method17411(), var1.method17413());
             var6.method8641(var1.method17406());

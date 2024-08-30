@@ -30,7 +30,7 @@ public class Class1097 extends Class1018 {
    private Class2616 field6034;
    private static final Predicate<ItemEntity> field6035 = var0 -> {
       Item var3 = var0.method4124().getItem();
-      return (var3 == Blocks.field37009.method11581() || var3 == Blocks.field36591.method11581()) && var0.method3066() && !var0.method4135();
+      return (var3 == Blocks.field37009.method11581() || var3 == Blocks.field36591.method11581()) && var0.isAlive() && !var0.method4135();
    };
 
    public Class1097(EntityType<? extends Class1097> var1, World var2) {
@@ -210,7 +210,7 @@ public class Class1097 extends Class1018 {
    }
 
    public static Class7037 method5208() {
-      return Class1006.method4220().method21849(Class9173.field42108, 0.15F).method21849(Class9173.field42110, 6.0);
+      return Class1006.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.15F).method21849(Attributes.field42110, 6.0);
    }
 
    public Class2293 method5209() {
@@ -526,11 +526,11 @@ public class Class1097 extends Class1018 {
 
    public void method5227() {
       if (this.method5213()) {
-         this.method3085(Class9173.field42105).method38661(10.0);
+         this.method3085(Attributes.field42105).method38661(10.0);
       }
 
       if (this.method5210()) {
-         this.method3085(Class9173.field42108).method38661(0.07F);
+         this.method3085(Attributes.MOVEMENT_SPEED).method38661(0.07F);
       }
    }
 

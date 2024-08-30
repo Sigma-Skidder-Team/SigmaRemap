@@ -17,7 +17,7 @@ public class Class1106 extends Class1105 {
    }
 
    public static Class7037 method5314() {
-      return Class1105.method5300().method21849(Class9173.field42108, 0.3F).method21849(Class9173.field42110, 8.0).method21849(Class9173.field42105, 80.0);
+      return Class1105.method5300().method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42110, 8.0).method21849(Attributes.field42105, 80.0);
    }
 
    @Override
@@ -50,7 +50,7 @@ public class Class1106 extends Class1105 {
       super.method4258();
       short var3 = 1200;
       if ((this.ticksExisted + this.method3205()) % 1200 == 0) {
-         Class7144 var4 = Class8254.field35470;
+         Effect var4 = Effects.MINING_FATIGUE;
          List<ServerPlayerEntity> var5 = ((ServerWorld)this.world).method6914(var1 -> this.getDistanceSq(var1) < 2500.0 && var1.field4857.method33865());
 
          for (ServerPlayerEntity var10 : var5) {

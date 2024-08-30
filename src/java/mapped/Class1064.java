@@ -75,7 +75,7 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    public static Class7037 method4888() {
-      return method4926().method21849(Class9173.field42106, 40.0);
+      return method4926().method21849(Attributes.field42106, 40.0);
    }
 
    @Override
@@ -149,7 +149,7 @@ public class Class1064 extends Class1066 implements Class1022 {
          var7 = 2.0F;
       }
 
-      if (this.method3042() < this.method3075() && var7 > 0.0F) {
+      if (this.getHealth() < this.method3075() && var7 > 0.0F) {
          this.method3041(var7);
          var8 = true;
       }

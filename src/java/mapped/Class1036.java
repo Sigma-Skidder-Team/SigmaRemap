@@ -41,7 +41,7 @@ public class Class1036 extends Class1035 {
    }
 
    public static Class7037 method4637() {
-      return Class1009.method4343().method21849(Class9173.field42105, 50.0).method21849(Class9173.field42108, 0.35F).method21849(Class9173.field42110, 7.0);
+      return Class1009.method4343().method21849(Attributes.field42105, 50.0).method21849(Attributes.MOVEMENT_SPEED, 0.35F).method21849(Attributes.field42110, 7.0);
    }
 
    @Nullable

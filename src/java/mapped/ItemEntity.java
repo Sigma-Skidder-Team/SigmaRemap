@@ -161,7 +161,7 @@ public class ItemEntity extends Entity {
 
    private boolean method4118() {
       ItemStack var3 = this.method4124();
-      return this.method3066() && this.field5516 != 32767 && this.field5515 != -32768 && this.field5515 < 6000 && var3.getCount() < var3.method32113();
+      return this.isAlive() && this.field5516 != 32767 && this.field5515 != -32768 && this.field5515 < 6000 && var3.getCount() < var3.method32113();
    }
 
    private void method4119(ItemEntity var1) {

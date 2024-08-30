@@ -20,7 +20,7 @@ public class Class2607 extends Class2605 {
    public boolean method10806() {
       Class880 var3 = this.field16858.method4232();
       if (var3 != null) {
-         if (!var3.method3066()) {
+         if (!var3.isAlive()) {
             return false;
          } else if (!(var3 instanceof PlayerEntity) || !((PlayerEntity)var3).isSpectator() && !((PlayerEntity)var3).isCreative()) {
             if (!this.method10803()) {

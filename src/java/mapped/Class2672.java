@@ -14,7 +14,7 @@ public abstract class Class2672 extends Class2595 {
    @Override
    public boolean method10803() {
       Class880 var3 = this.field17059.method4232();
-      if (var3 == null || !var3.method3066()) {
+      if (var3 == null || !var3.isAlive()) {
          return false;
       } else {
          return !this.field17059.method4594() ? this.field17059.ticksExisted >= this.field17058 : false;
@@ -24,7 +24,7 @@ public abstract class Class2672 extends Class2595 {
    @Override
    public boolean method10806() {
       Class880 var3 = this.field17059.method4232();
-      return var3 != null && var3.method3066() && this.field17057 > 0;
+      return var3 != null && var3.isAlive() && this.field17057 > 0;
    }
 
    @Override

@@ -17,7 +17,7 @@ public class Class2783 extends Class2595 {
    @Override
    public boolean method10803() {
       Class880 var3 = this.field17396.method4232();
-      return var3 != null && var3.method3066() && this.field17396.method3026(var3);
+      return var3 != null && var3.isAlive() && this.field17396.method3026(var3);
    }
 
    @Override
@@ -104,6 +104,6 @@ public class Class2783 extends Class2595 {
    }
 
    private double method10973() {
-      return this.field17396.method3086(Class9173.field42106);
+      return this.field17396.method3086(Attributes.field42106);
    }
 }

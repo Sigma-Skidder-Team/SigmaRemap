@@ -18,10 +18,10 @@ public class Class5742 extends Class5712<ArmorStandEntity, Class2892> {
    }
 
    public void method17842(ArmorStandEntity var1, MatrixStack var2, float var3, float var4, float var5) {
-      var2.method35293(Class7680.field32900.method25286(180.0F - var4));
+      var2.rotate(Vector3f.YP.rotationDegrees(180.0F - var4));
       float var8 = (float)(var1.world.method6783() - var1.field5584) + var5;
       if (var8 < 5.0F) {
-         var2.method35293(Class7680.field32900.method25286(MathHelper.sin(var8 / 1.5F * (float) Math.PI) * 3.0F));
+         var2.rotate(Vector3f.YP.rotationDegrees(MathHelper.sin(var8 / 1.5F * (float) Math.PI) * 3.0F));
       }
    }
 

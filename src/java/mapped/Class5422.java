@@ -27,7 +27,7 @@ public interface Class5422 extends Class5421 {
 
    Class5422 color(int var1, int var2, int var3, int var4);
 
-   Class5422 method17027(float var1, float var2);
+   Class5422 tex(float var1, float var2);
 
    Class5422 method17028(int var1, int var2);
 
@@ -54,15 +54,15 @@ public interface Class5422 extends Class5421 {
       float var14
    ) {
       this.pos((double)var1, (double)var2, (double)var3);
-      this.method17033(var4, var5, var6, var7);
-      this.method17027(var8, var9);
+      this.color(var4, var5, var6, var7);
+      this.tex(var8, var9);
       this.method17035(var10);
       this.method17034(var11);
       this.method17030(var12, var13, var14);
       this.endVertex();
    }
 
-   default Class5422 method17033(float var1, float var2, float var3, float var4) {
+   default Class5422 color(float var1, float var2, float var3, float var4) {
       return this.color((int)(var1 * 255.0F), (int)(var2 * 255.0F), (int)(var3 * 255.0F), (int)(var4 * 255.0F));
    }
 
@@ -94,7 +94,7 @@ public interface Class5422 extends Class5421 {
       float var16 = (float)var15.getX();
       float var17 = (float)var15.getY();
       float var18 = (float)var15.getZ();
-      Class9367 var19 = var1.method32361();
+      Matrix4f var19 = var1.getMatrix();
       Class8967 var20 = var1.method32362();
       float var21 = var20.method32832(var16, var17, var18);
       float var22 = var20.method32833(var16, var17, var18);
@@ -145,7 +145,7 @@ public interface Class5422 extends Class5421 {
          float var48 = var19.method35518(var29, var30, var31, 1.0F);
          float var42 = var19.method35519(var29, var30, var31, 1.0F);
          if (field24105) {
-            Class7680 var43 = this.method17052(var13, var28, var1.method32362());
+            Vector3f var43 = this.method17052(var13, var28, var1.method32362());
             if (var43 != null) {
                var21 = var43.method25269();
                var22 = var43.method25270();
@@ -161,7 +161,7 @@ public interface Class5422 extends Class5421 {
       }
    }
 
-   default Class5422 method17040(Class9367 var1, float var2, float var3, float var4) {
+   default Class5422 pos(Matrix4f var1, float var2, float var3, float var4) {
       float var7 = var1.method35517(var2, var3, var4, 1.0F);
       float var8 = var1.method35518(var2, var3, var4, 1.0F);
       float var9 = var1.method35519(var2, var3, var4, 1.0F);
@@ -184,12 +184,12 @@ public interface Class5422 extends Class5421 {
    default void method17044(RenderType var1) {
    }
 
-   default Class7680 method17045(Class7680 var1) {
+   default Vector3f method17045(Vector3f var1) {
       return var1.method25287();
    }
 
-   default Class7680 method17046(float var1, float var2, float var3) {
-      return new Class7680(var1, var2, var3);
+   default Vector3f method17046(float var1, float var2, float var3) {
+      return new Vector3f(var1, var2, var3);
    }
 
    default float[] method17047(float var1, float var2, float var3, float var4) {
@@ -223,7 +223,7 @@ public interface Class5422 extends Class5421 {
       return var0 * 8 + 6;
    }
 
-   default Class7680 method17052(int[] var1, int var2, Class8967 var3) {
+   default Vector3f method17052(int[] var1, int var2, Class8967 var3) {
       byte var6 = 7;
       int var7 = var1[var2 + var6];
       byte var8 = (byte)(var7 >> 0 & 0xFF);
@@ -232,7 +232,7 @@ public interface Class5422 extends Class5421 {
       if (var8 == 0 && var9 == 0 && var10 == 0) {
          return null;
       } else {
-         Class7680 var11 = this.method17046((float)var8 / 127.0F, (float)var9 / 127.0F, (float)var10 / 127.0F);
+         Vector3f var11 = this.method17046((float)var8 / 127.0F, (float)var9 / 127.0F, (float)var10 / 127.0F);
          var11.method25282(var3);
          return var11;
       }

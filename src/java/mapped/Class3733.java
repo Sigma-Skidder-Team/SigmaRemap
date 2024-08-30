@@ -26,7 +26,7 @@ public class Class3733<E extends Class1006> extends Class3676<E> {
          return false;
       } else {
          Optional var5 = this.field19847.apply((E)var2);
-         return var5.isPresent() && ((Class880)var5.get()).method3066();
+         return var5.isPresent() && ((Class880)var5.get()).isAlive();
       }
    }
 

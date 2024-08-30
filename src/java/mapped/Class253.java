@@ -14,14 +14,14 @@ public class Class253 extends Class219<Class1010, Class2799<Class1010>> {
       if (var13 != null) {
          var1.push();
          var1.translate(0.0, 0.6875, -0.75);
-         var1.method35293(Class7680.field32898.method25286(20.0F));
-         var1.method35293(Class7680.field32900.method25286(45.0F));
+         var1.rotate(Vector3f.field32898.rotationDegrees(20.0F));
+         var1.rotate(Vector3f.YP.rotationDegrees(45.0F));
          var1.translate(0.25, 0.1875, 0.25);
          float var14 = 0.5F;
          var1.method35292(-0.5F, -0.5F, 0.5F);
-         var1.method35293(Class7680.field32900.method25286(90.0F));
+         var1.rotate(Vector3f.YP.rotationDegrees(90.0F));
          Minecraft.getInstance().getBlockRendererDispatcher().method814(var13, var1, var2, var3, Class213.field798);
-         var1.method35295();
+         var1.pop();
       }
    }
 }

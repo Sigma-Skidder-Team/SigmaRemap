@@ -13,10 +13,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class Class9415 {
-   public static final Class9415 field43676 = new Class9415(Collections.<Class7144, Class8053>emptyMap());
-   private final Map<Class7144, Class8053> field43677;
+   public static final Class9415 field43676 = new Class9415(Collections.<Effect, Class8053>emptyMap());
+   private final Map<Effect, Class8053> field43677;
 
-   public Class9415(Map<Class7144, Class8053> var1) {
+   public Class9415(Map<Effect, Class8053> var1) {
       this.field43677 = var1;
    }
 
@@ -24,7 +24,7 @@ public class Class9415 {
       return new Class9415(Maps.newLinkedHashMap());
    }
 
-   public Class9415 method36120(Class7144 var1) {
+   public Class9415 method36120(Effect var1) {
       this.field43677.put(var1, new Class8053());
       return this;
    }
@@ -41,7 +41,7 @@ public class Class9415 {
       return this != field43676 ? this.method36123(var1.method3032()) : true;
    }
 
-   public boolean method36123(Map<Class7144, Class2023> var1) {
+   public boolean method36123(Map<Effect, Class2023> var1) {
       if (this == field43676) {
          return true;
       } else {
@@ -63,7 +63,7 @@ public class Class9415 {
 
          for (Entry var6 : var3.entrySet()) {
             ResourceLocation var7 = new ResourceLocation((String)var6.getKey());
-            Class7144 var8 = Registry.field16071.method9187(var7).orElseThrow(() -> new JsonSyntaxException("Unknown effect '" + var7 + "'"));
+            Effect var8 = Registry.EFFECTS.method9187(var7).orElseThrow(() -> new JsonSyntaxException("Unknown effect '" + var7 + "'"));
             Class8053 var9 = Class8053.method27659(JSONUtils.method32781((JsonElement)var6.getValue(), (String)var6.getKey()));
             var4.put(var8, var9);
          }
@@ -81,7 +81,7 @@ public class Class9415 {
          JsonObject var3 = new JsonObject();
 
          for (Entry var5 : this.field43677.entrySet()) {
-            var3.add(Registry.field16071.getKey((Class7144)var5.getKey()).toString(), ((Class8053)var5.getValue()).method27658());
+            var3.add(Registry.EFFECTS.getKey((Effect)var5.getKey()).toString(), ((Class8053)var5.getValue()).method27658());
          }
 
          return var3;

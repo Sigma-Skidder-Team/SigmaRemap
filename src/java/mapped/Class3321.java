@@ -20,7 +20,7 @@ public class Class3321 extends Item {
    public ActionResultType method11716(ItemStack var1, PlayerEntity var2, Class880 var3, Hand var4) {
       if (var3 instanceof Class1019) {
          Class1019 var7 = (Class1019)var3;
-         if (var7.method3066() && !var7.method4519() && var7.method4517() != this.field18831) {
+         if (var7.isAlive() && !var7.method4519() && var7.method4517() != this.field18831) {
             if (!var2.world.isRemote) {
                var7.method4518(this.field18831);
                var1.method32182(1);

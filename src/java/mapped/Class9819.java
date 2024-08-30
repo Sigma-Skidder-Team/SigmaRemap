@@ -6,20 +6,20 @@ import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 
 import java.util.List;
 
 public class Class9819 {
-   public Timer field45877;
+   public TimerUtil field45877;
    public int field45878;
    public Entity field45879;
    public Minecraft field45880 = Minecraft.getInstance();
 
    public Class9819() {
-      this.field45877 = new Timer();
+      this.field45877 = new TimerUtil();
       Client.getInstance().getEventManager().register(this);
    }
 
@@ -118,7 +118,7 @@ public class Class9819 {
          var1.method13993(0.0);
          var1.method13995(0.0);
          var1.method13997(0.0);
-         if (this.field45879 == null || !this.field45879.method3066() || !Class5628.method17708().contains(this.field45879)) {
+         if (this.field45879 == null || !this.field45879.isAlive() || !Class5628.method17708().contains(this.field45879)) {
             Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Target lost"));
             this.field45878 = 0;
             this.field45879 = null;

@@ -8,7 +8,7 @@ import java.util.Random;
 public class Class3491 extends Class3490 {
    private static String[] field19356;
 
-   public Class3491(Class7144 var1, AbstractBlock var2) {
+   public Class3491(Effect var1, AbstractBlock var2) {
       super(var1, 8, var2);
    }
 
@@ -47,7 +47,7 @@ public class Class3491 extends Class3490 {
       if (!var2.isRemote && var2.method6997() != Class2197.field14351 && var4 instanceof Class880) {
          Class880 var7 = (Class880)var4;
          if (!var7.method2760(Class8654.field39007)) {
-            var7.method3035(new Class2023(Class8254.field35486, 40));
+            var7.method3035(new Class2023(Effects.WITHER, 40));
          }
       }
    }

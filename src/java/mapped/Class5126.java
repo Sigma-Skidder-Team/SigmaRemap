@@ -31,7 +31,7 @@ public class Class5126 implements Class5119 {
 
       if (this.field23313 != null) {
          RenderSystem.enableBlend();
-         RenderSystem.method27938();
+         RenderSystem.defaultBlendFunc();
          RenderSystem.lineWidth(2.0F);
          RenderSystem.disableTexture();
          RenderSystem.depthMask(false);

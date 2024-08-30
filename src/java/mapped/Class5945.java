@@ -34,7 +34,7 @@ public class Class5945 extends Class5942<Class955> {
                var13 = var13.method23465(Class3436.field19212, Boolean.valueOf(var1.method3849(var2) >= 0.5F));
                this.method18467(var10, var13, var3, var4, var9, false, var6);
                BlockPos var14 = var10.method8349(var1.method3860());
-               var3.method35295();
+               var3.pop();
                var3.push();
                var11 = var11.method23465(Class3435.field19202, Boolean.valueOf(true));
                this.method18467(var14, var11, var3, var4, var9, true, var6);
@@ -42,7 +42,7 @@ public class Class5945 extends Class5942<Class955> {
                this.method18467(var10, var11, var3, var4, var9, false, var6);
             }
 
-            var3.method35295();
+            var3.pop();
             Class7551.method24693();
          }
       }

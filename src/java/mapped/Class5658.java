@@ -58,8 +58,8 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          var16 = var16.method11333();
          float var18 = (float)Math.acos(var16.field18049);
          float var19 = (float)Math.atan2(var16.field18050, var16.field18048);
-         var4.method35293(Class7680.field32900.method25286(((float) (Math.PI / 2) - var19) * (180.0F / (float)Math.PI)));
-         var4.method35293(Class7680.field32898.method25286(var18 * (180.0F / (float)Math.PI)));
+         var4.rotate(Vector3f.YP.rotationDegrees(((float) (Math.PI / 2) - var19) * (180.0F / (float)Math.PI)));
+         var4.rotate(Vector3f.field32898.rotationDegrees(var18 * (180.0F / (float)Math.PI)));
          boolean var20 = true;
          float var21 = var11 * 0.05F * -1.5F;
          float var22 = var10 * var10;
@@ -89,8 +89,8 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          float var46 = -1.0F + var12;
          float var47 = var17 * 2.5F + var46;
          Class5422 var48 = var5.method25597(field25022);
-         Class8892 var49 = var4.method35296();
-         Class9367 var50 = var49.method32361();
+         Class8892 var49 = var4.getLast();
+         Matrix4f var50 = var49.getMatrix();
          Class8967 var51 = var49.method32362();
          method17862(var48, var50, var51, var36, var17, var37, var23, var24, var25, 0.4999F, var47);
          method17862(var48, var50, var51, var36, 0.0F, var37, var23, var24, var25, 0.4999F, var46);
@@ -109,16 +109,16 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          method17862(var48, var50, var51, var30, var17, var31, var23, var24, var25, 1.0F, var52 + 0.5F);
          method17862(var48, var50, var51, var34, var17, var35, var23, var24, var25, 1.0F, var52);
          method17862(var48, var50, var51, var32, var17, var33, var23, var24, var25, 0.5F, var52);
-         var4.method35295();
+         var4.pop();
       }
    }
 
    private static void method17862(
-      Class5422 var0, Class9367 var1, Class8967 var2, float var3, float var4, float var5, int var6, int var7, int var8, float var9, float var10
+           Class5422 var0, Matrix4f var1, Class8967 var2, float var3, float var4, float var5, int var6, int var7, int var8, float var9, float var10
    ) {
-      var0.method17040(var1, var3, var4, var5)
+      var0.pos(var1, var3, var4, var5)
          .color(var6, var7, var8, 255)
-         .method17027(var9, var10)
+         .tex(var9, var10)
          .method17035(Class213.field798)
          .method17034(15728880)
          .method17041(var2, 0.0F, 1.0F, 0.0F)

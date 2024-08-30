@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4420;
+import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.util.math.BlockPos;
@@ -92,7 +92,7 @@ public class Class5168 extends Module {
     }
 
     @EventTarget
-    private void method16074(Class4420 var1) {
+    private void method16074(Render3DEvent var1) {
         if (this.isEnabled()) {
             GL11.glAlphaFunc(516, 0.0F);
 

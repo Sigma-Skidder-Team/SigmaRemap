@@ -30,7 +30,7 @@ public class Class2647 extends Class2595 {
          this.field17000 = var3;
          Class880 var5 = this.field16990.method4232();
          if (var5 != null) {
-            if (var5.method3066()) {
+            if (var5.isAlive()) {
                this.field16993 = this.field16990.method4230().method21652(var5, 0);
                return this.field16993 == null
                   ? this.method10859(var5) >= this.field16990.method3276(var5.getPosX(), var5.getPosY(), var5.getPosZ())
@@ -50,7 +50,7 @@ public class Class2647 extends Class2595 {
    public boolean method10806() {
       Class880 var3 = this.field16990.method4232();
       if (var3 != null) {
-         if (!var3.method3066()) {
+         if (!var3.isAlive()) {
             return false;
          } else if (this.field16992) {
             return !this.field16990.method4287(var3.getPosition()) ? false : !(var3 instanceof PlayerEntity) || !var3.isSpectator() && !((PlayerEntity)var3).isCreative();

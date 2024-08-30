@@ -181,7 +181,7 @@ public class Class1098 extends Class1013 {
    }
 
    public static Class7037 method5259() {
-      return Class1006.method4220().method21849(Class9173.field42105, 10.0).method21849(Class9173.field42108, 0.3F).method21849(Class9173.field42110, 3.0);
+      return Class1006.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42110, 3.0);
    }
 
    @Override
@@ -199,7 +199,7 @@ public class Class1098 extends Class1013 {
    }
 
    private float method5260() {
-      return (float)this.method3086(Class9173.field42110);
+      return (float)this.method3086(Attributes.field42110);
    }
 
    @Override
@@ -336,7 +336,7 @@ public class Class1098 extends Class1013 {
             }
          } else if (this.method4401(var1)) {
             if (!(var6 instanceof Class3321)) {
-               if (var6.method11744() && this.method4381(var5) && this.method3042() < this.method3075()) {
+               if (var6.method11744() && this.method4381(var5) && this.getHealth() < this.method3075()) {
                   this.method4501(var1, var5);
                   this.method3041((float)var6.method11745().method36157());
                   return ActionResultType.field14819;
@@ -371,7 +371,7 @@ public class Class1098 extends Class1013 {
       } else if (this.method4393() && this.method4401(var1)) {
          return ActionResultType.field14818;
       } else {
-         return this.method4381(var5) && (this.method3042() < this.method3075() || !this.method4393()) ? ActionResultType.field14818 : ActionResultType.field14820;
+         return this.method4381(var5) && (this.getHealth() < this.method3075() || !this.method4393()) ? ActionResultType.field14818 : ActionResultType.field14820;
       }
    }
 

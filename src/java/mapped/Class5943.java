@@ -23,13 +23,13 @@ public class Class5943 extends Class5942<Class960> {
          }
 
          var3.translate(0.0, 0.4F, 0.0);
-         var3.method35293(Class7680.field32900.method25286((float) MathHelper.method37822((double)var2, var9.method24799(), var9.method24798()) * 10.0F));
+         var3.rotate(Vector3f.YP.rotationDegrees((float) MathHelper.method37822((double)var2, var9.method24799(), var9.method24798()) * 10.0F));
          var3.translate(0.0, -0.2F, 0.0);
-         var3.method35293(Class7680.field32898.method25286(-30.0F));
+         var3.rotate(Vector3f.field32898.rotationDegrees(-30.0F));
          var3.method35292(var11, var11, var11);
          Minecraft.getInstance().getRenderManager().method32219(var10, 0.0, 0.0, 0.0, 0.0F, var2, var3, var4, var5);
       }
 
-      var3.method35295();
+      var3.pop();
    }
 }

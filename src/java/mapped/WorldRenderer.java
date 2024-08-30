@@ -183,7 +183,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          RenderSystem.method27850();
          RenderSystem.method27825(0.0F, 1.0F, 0.0F);
          RenderSystem.enableBlend();
-         RenderSystem.method27938();
+         RenderSystem.defaultBlendFunc();
          RenderSystem.method27939();
          RenderSystem.enableDepthTest();
          int var16 = 5;
@@ -245,23 +245,23 @@ public class WorldRenderer implements Class215, AutoCloseable {
                         var19.method8372(var21, var31, var20);
                         int var42 = method944(var10, var19);
                         var15.pos((double)var21 - var3 - var23 + 0.5, (double)var30 - var5, (double)var20 - var7 - var25 + 0.5)
-                           .method17027(0.0F, (float)var29 * 0.25F + var35)
-                           .method17033(1.0F, 1.0F, 1.0F, var41)
+                           .tex(0.0F, (float)var29 * 0.25F + var35)
+                           .color(1.0F, 1.0F, 1.0F, var41)
                            .method17034(var42)
                            .endVertex();
                         var15.pos((double)var21 - var3 + var23 + 0.5, (double)var30 - var5, (double)var20 - var7 + var25 + 0.5)
-                           .method17027(1.0F, (float)var29 * 0.25F + var35)
-                           .method17033(1.0F, 1.0F, 1.0F, var41)
+                           .tex(1.0F, (float)var29 * 0.25F + var35)
+                           .color(1.0F, 1.0F, 1.0F, var41)
                            .method17034(var42)
                            .endVertex();
                         var15.pos((double)var21 - var3 + var23 + 0.5, (double)var29 - var5, (double)var20 - var7 + var25 + 0.5)
-                           .method17027(1.0F, (float)var30 * 0.25F + var35)
-                           .method17033(1.0F, 1.0F, 1.0F, var41)
+                           .tex(1.0F, (float)var30 * 0.25F + var35)
+                           .color(1.0F, 1.0F, 1.0F, var41)
                            .method17034(var42)
                            .endVertex();
                         var15.pos((double)var21 - var3 - var23 + 0.5, (double)var29 - var5, (double)var20 - var7 - var25 + 0.5)
-                           .method17027(0.0F, (float)var30 * 0.25F + var35)
-                           .method17033(1.0F, 1.0F, 1.0F, var41)
+                           .tex(0.0F, (float)var30 * 0.25F + var35)
+                           .color(1.0F, 1.0F, 1.0F, var41)
                            .method17034(var42)
                            .endVertex();
                      } else {
@@ -289,23 +289,23 @@ public class WorldRenderer implements Class215, AutoCloseable {
                         int var46 = (var44 * 3 + 240) / 4;
                         int var47 = (var45 * 3 + 240) / 4;
                         var15.pos((double)var21 - var3 - var23 + 0.5, (double)var30 - var5, (double)var20 - var7 - var25 + 0.5)
-                           .method17027(0.0F + var50, (float)var29 * 0.25F + var49 + var51)
-                           .method17033(1.0F, 1.0F, 1.0F, var53)
+                           .tex(0.0F + var50, (float)var29 * 0.25F + var49 + var51)
+                           .color(1.0F, 1.0F, 1.0F, var53)
                            .method17029(var47, var46)
                            .endVertex();
                         var15.pos((double)var21 - var3 + var23 + 0.5, (double)var30 - var5, (double)var20 - var7 + var25 + 0.5)
-                           .method17027(1.0F + var50, (float)var29 * 0.25F + var49 + var51)
-                           .method17033(1.0F, 1.0F, 1.0F, var53)
+                           .tex(1.0F + var50, (float)var29 * 0.25F + var49 + var51)
+                           .color(1.0F, 1.0F, 1.0F, var53)
                            .method17029(var47, var46)
                            .endVertex();
                         var15.pos((double)var21 - var3 + var23 + 0.5, (double)var29 - var5, (double)var20 - var7 + var25 + 0.5)
-                           .method17027(1.0F + var50, (float)var30 * 0.25F + var49 + var51)
-                           .method17033(1.0F, 1.0F, 1.0F, var53)
+                           .tex(1.0F + var50, (float)var30 * 0.25F + var49 + var51)
+                           .color(1.0F, 1.0F, 1.0F, var53)
                            .method17029(var47, var46)
                            .endVertex();
                         var15.pos((double)var21 - var3 - var23 + 0.5, (double)var29 - var5, (double)var20 - var7 - var25 + 0.5)
-                           .method17027(0.0F + var50, (float)var30 * 0.25F + var49 + var51)
-                           .method17033(1.0F, 1.0F, 1.0F, var53)
+                           .tex(0.0F + var50, (float)var30 * 0.25F + var49 + var51)
+                           .color(1.0F, 1.0F, 1.0F, var53)
                            .method17029(var47, var46)
                            .endVertex();
                      }
@@ -510,7 +510,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
       this.field951 = new Class1698(this.field948);
       this.method864(var2, -16.0F, true);
-      var2.method17065();
+      var2.finishDrawing();
       this.field951.method7303(var2);
    }
 
@@ -523,7 +523,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
       this.field950 = new Class1698(this.field948);
       this.method864(var2, 16.0F, false);
-      var2.method17065();
+      var2.finishDrawing();
       this.field950.method7303(var2);
    }
 
@@ -559,7 +559,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
       this.field949 = new Class1698(this.field948);
       this.method866(var2);
-      var2.method17065();
+      var2.finishDrawing();
       this.field949.method7303(var2);
    }
 
@@ -668,7 +668,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             Class9446.method36321();
          }
 
-         Class4501.method14214();
+         SmartAnimations.method14214();
          field1025 = Minecraft.isAmbientOcclusionEnabled();
          this.field985 = this.field939.gameSettings.field44574;
          this.field1013 = this.field985 * 16;
@@ -867,10 +867,10 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
                Vector3d var28 = new Vector3d((double)var45.getX(), (double)var21, (double)var45.getZ());
                Vector3d var29 = new Vector3d(var28.method11320(), var28.method11321(), var28.method11322());
-               Class7680 var30 = var1.method37516();
-               Class7680 var31 = new Class7680(var30.method25269(), 0.0F, var30.method25271());
+               Vector3f var30 = var1.method37516();
+               Vector3f var31 = new Vector3f(var30.method25269(), 0.0F, var30.method25271());
                if (!var31.method25280()) {
-                  var31 = new Class7680(1.0F, 0.0F, 0.0F);
+                  var31 = new Vector3f(1.0F, 0.0F, 0.0F);
                }
 
                double var32 = (double)(var31.method25269() * 16.0F);
@@ -1028,9 +1028,9 @@ public class WorldRenderer implements Class215, AutoCloseable {
       }
    }
 
-   private void method876(Class9367 var1, Class9367 var2, double var3, double var5, double var7, Class7647 var9) {
+   private void method876(Matrix4f var1, Matrix4f var2, double var3, double var5, double var7, Class7647 var9) {
       this.field989 = var9;
-      Class9367 var10 = var2.method35514();
+      Matrix4f var10 = var2.method35514();
       var10.method35508(var1);
       var10.method35507();
       this.field991.field42185 = var3;
@@ -1051,7 +1051,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       }
    }
 
-   public void updateCameraAndRender(MatrixStack matrixStackIn, float var2, long var3, boolean var5, Class9624 var6, GameRenderer var7, Class1699 var8, Class9367 var9) {
+   public void updateCameraAndRender(MatrixStack matrixStackIn, float var2, long var3, boolean var5, Class9624 var6, GameRenderer var7, Class1699 var8, Matrix4f var9) {
       TileEntityRendererDispatcher.instance.method27961(this.field943, this.field939.getTextureManager(), this.field939.fontRenderer, var6, this.field939.objectMouseOver);
       this.field941.method32213(this.field943, var6, this.field939.pointedEntity);
       IProfiler var10 = this.field943.getProfiler();
@@ -1061,7 +1061,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       double var12 = var11.method11320();
       double var14 = var11.method11321();
       double var16 = var11.method11322();
-      Class9367 var18 = matrixStackIn.method35296().method32361();
+      Matrix4f var18 = matrixStackIn.getLast().getMatrix();
       var10.endStartSection("culling");
       boolean var19 = this.field989 != null;
       Class7647 var20;
@@ -1152,9 +1152,9 @@ public class WorldRenderer implements Class215, AutoCloseable {
       }
 
       this.method880(RenderType.method14300(), matrixStackIn, var12, var14, var16);
-      this.field939.getTextureManager().method1076(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1130(false, this.field939.gameSettings.field44600 > 0);
+      this.field939.getTextureManager().getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1130(false, this.field939.gameSettings.field44600 > 0);
       this.method880(RenderType.method14301(), matrixStackIn, var12, var14, var16);
-      this.field939.getTextureManager().method1076(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1137();
+      this.field939.getTextureManager().getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1137();
       this.method880(RenderType.method14302(), matrixStackIn, var12, var14, var16);
       if (var21) {
          Class5463.method17151();
@@ -1162,9 +1162,9 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
       Class8578.field38579.method31035();
       if (this.field943.method6830().method19307()) {
-         Class7516.method24500(matrixStackIn.method35296().method32361());
+         Class7516.method24500(matrixStackIn.getLast().getMatrix());
       } else {
-         Class7516.method24501(matrixStackIn.method35296().method32361());
+         Class7516.method24501(matrixStackIn.getLast().getMatrix());
       }
 
       if (var21) {
@@ -1295,9 +1295,9 @@ public class WorldRenderer implements Class215, AutoCloseable {
                if (var91 != null && !var91.isEmpty()) {
                   int var51 = ((Class1995)var91.last()).method8285();
                   if (var51 >= 0) {
-                     Class8892 var52 = matrixStackIn.method35296();
+                     Class8892 var52 = matrixStackIn.getLast();
                      Class5427 var53 = new Class5427(
-                        this.field942.method26537().method25597(Class8968.field40518.get(var51)), var52.method32361(), var52.method32362()
+                        this.field942.method26537().method25597(ModelBakery.field40518.get(var51)), var52.getMatrix(), var52.method32362()
                      );
                      var89 = (Class7733)var2x -> {
                         Class5422 var3x = irendertypebuffer$impl.method25597(var2x);
@@ -1307,7 +1307,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                }
 
                TileEntityRendererDispatcher.instance.method27962(var82, var2, matrixStackIn, (Class7733)var89);
-               matrixStackIn.method35295();
+               matrixStackIn.pop();
                this.field1016++;
             }
          }
@@ -1330,7 +1330,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             matrixStackIn.push();
             matrixStackIn.translate((double)var83.getX() - var12, (double)var83.getY() - var14, (double)var83.getZ() - var16);
             TileEntityRendererDispatcher.instance.method27962(var73, var2, matrixStackIn, irendertypebuffer$impl);
-            matrixStackIn.method35295();
+            matrixStackIn.pop();
             this.field1016++;
          }
       }
@@ -1374,12 +1374,12 @@ public class WorldRenderer implements Class215, AutoCloseable {
                int var93 = ((Class1995)var92.last()).method8285();
                matrixStackIn.push();
                matrixStackIn.translate((double)var74.getX() - var12, (double)var74.getY() - var14, (double)var74.getZ() - var16);
-               Class8892 var94 = matrixStackIn.method35296();
+               Class8892 var94 = matrixStackIn.getLast();
                Class5427 var54 = new Class5427(
-                  this.field942.method26537().method25597(Class8968.field40518.get(var93)), var94.method32361(), var94.method32362()
+                  this.field942.method26537().method25597(ModelBakery.field40518.get(var93)), var94.getMatrix(), var94.method32362()
                );
                this.field939.getBlockRendererDispatcher().method807(this.field943.getBlockState(var74), var74, this.field943, matrixStackIn, var54);
-               matrixStackIn.method35295();
+               matrixStackIn.pop();
             }
          }
       }
@@ -1414,7 +1414,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       }
 
       RenderSystem.pushMatrix();
-      RenderSystem.method27888(matrixStackIn.method35296().method32361());
+      RenderSystem.method27888(matrixStackIn.getLast().getMatrix());
       boolean var70 = Class7414.method23868();
       Class7414.method23780();
       this.field939.debugRenderer.method27453(matrixStackIn, irendertypebuffer$impl, var12, var14, var16);
@@ -1482,7 +1482,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
       Class7414.method23889(true);
       RenderSystem.pushMatrix();
-      RenderSystem.method27888(matrixStackIn.method35296().method32361());
+      RenderSystem.method27888(matrixStackIn.getLast().getMatrix());
       if (this.field939.gameSettings.method37153() != CloudOption.OFF) {
          if (this.field966 != null) {
             this.field965.method29119(Minecraft.IS_RUNNING_ON_MAC);
@@ -1579,10 +1579,10 @@ public class WorldRenderer implements Class215, AutoCloseable {
          Class5463.method17162(var1);
       }
 
-      boolean var29 = Class4501.method14213();
+      boolean var29 = SmartAnimations.isActive();
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
-      RenderSystem.method27888(var2.method35296().method32361());
+      RenderSystem.method27888(var2.getLast().getMatrix());
       this.field939.getProfiler().method22507(() -> "render_" + var1);
       boolean var11 = var1 != RenderType.method14304();
       ObjectListIterator<Class7002> var30 = this.field945.listIterator(var11 ? 0 : this.field945.size());
@@ -1614,10 +1614,10 @@ public class WorldRenderer implements Class215, AutoCloseable {
                }
 
                var39.add(var21);
-               if (Class4501.method14213()) {
+               if (SmartAnimations.isActive()) {
                   BitSet var44 = var20.method27715().method24112(var1);
                   if (var44 != null) {
-                     Class4501.method14216(var44);
+                     SmartAnimations.method14216(var44);
                   }
                }
             }
@@ -1660,7 +1660,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                if (var29) {
                   BitSet var37 = var32.method27715().method24112(var1);
                   if (var37 != null) {
-                     Class4501.method14216(var37);
+                     SmartAnimations.method14216(var37);
                   }
                }
             }
@@ -1698,7 +1698,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          RenderSystem.depthMask(true);
          RenderSystem.method27850();
          RenderSystem.enableBlend();
-         RenderSystem.method27938();
+         RenderSystem.defaultBlendFunc();
          RenderSystem.disableTexture();
 
          for (ObjectListIterator var10 = this.field945.iterator(); var10.hasNext(); RenderSystem.popMatrix()) {
@@ -1752,30 +1752,30 @@ public class WorldRenderer implements Class215, AutoCloseable {
                   var3.begin(7, DefaultVertexFormats.POSITION_COLOR);
                   float var26 = 0.5F;
                   float var28 = 0.2F;
-                  var3.pos(0.5, 15.5, 0.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(15.5, 15.5, 0.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(15.5, 15.5, 15.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(0.5, 15.5, 15.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(0.5, 0.5, 15.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(15.5, 0.5, 15.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(15.5, 0.5, 0.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(0.5, 0.5, 0.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(0.5, 15.5, 0.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(0.5, 15.5, 15.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(0.5, 0.5, 15.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(0.5, 0.5, 0.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(15.5, 0.5, 0.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(15.5, 0.5, 15.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(15.5, 15.5, 15.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(15.5, 15.5, 0.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(0.5, 0.5, 0.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(15.5, 0.5, 0.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(15.5, 15.5, 0.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(0.5, 15.5, 0.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(0.5, 15.5, 15.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(15.5, 15.5, 15.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(15.5, 0.5, 15.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
-                  var3.pos(0.5, 0.5, 15.5).method17033(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(0.5, 15.5, 0.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(15.5, 15.5, 0.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(15.5, 15.5, 15.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(0.5, 15.5, 15.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(0.5, 0.5, 15.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(15.5, 0.5, 15.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(15.5, 0.5, 0.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(0.5, 0.5, 0.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(0.5, 15.5, 0.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(0.5, 15.5, 15.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(0.5, 0.5, 15.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(0.5, 0.5, 0.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(15.5, 0.5, 0.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(15.5, 0.5, 15.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(15.5, 15.5, 15.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(15.5, 15.5, 0.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(0.5, 0.5, 0.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(15.5, 0.5, 0.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(15.5, 15.5, 0.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(0.5, 15.5, 0.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(0.5, 15.5, 15.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(15.5, 15.5, 15.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(15.5, 0.5, 15.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
+                  var3.pos(0.5, 0.5, 15.5).color(0.9F, 0.9F, 0.0F, 0.2F).endVertex();
                   var2.draw();
                }
             }
@@ -1791,7 +1791,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          RenderSystem.method27850();
          RenderSystem.disableTexture();
          RenderSystem.enableBlend();
-         RenderSystem.method27938();
+         RenderSystem.defaultBlendFunc();
          RenderSystem.lineWidth(10.0F);
          RenderSystem.pushMatrix();
          RenderSystem.translatef(
@@ -1853,16 +1853,16 @@ public class WorldRenderer implements Class215, AutoCloseable {
    private void method884(Class5422 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
       float var9 = 0.25F;
       var1.pos((double)this.field990[var2].method25701(), (double)this.field990[var2].method25702(), (double)this.field990[var2].method25703())
-         .method17033((float)var6, (float)var7, (float)var8, 0.25F)
+         .color((float)var6, (float)var7, (float)var8, 0.25F)
          .endVertex();
       var1.pos((double)this.field990[var3].method25701(), (double)this.field990[var3].method25702(), (double)this.field990[var3].method25703())
-         .method17033((float)var6, (float)var7, (float)var8, 0.25F)
+         .color((float)var6, (float)var7, (float)var8, 0.25F)
          .endVertex();
       var1.pos((double)this.field990[var4].method25701(), (double)this.field990[var4].method25702(), (double)this.field990[var4].method25703())
-         .method17033((float)var6, (float)var7, (float)var8, 0.25F)
+         .color((float)var6, (float)var7, (float)var8, 0.25F)
          .endVertex();
       var1.pos((double)this.field990[var5].method25701(), (double)this.field990[var5].method25702(), (double)this.field990[var5].method25703())
-         .method17033((float)var6, (float)var7, (float)var8, 0.25F)
+         .color((float)var6, (float)var7, (float)var8, 0.25F)
          .endVertex();
    }
 
@@ -1899,7 +1899,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       if (Class7944.method26879()) {
          RenderSystem.method27817();
          RenderSystem.enableBlend();
-         RenderSystem.method27938();
+         RenderSystem.defaultBlendFunc();
          RenderSystem.depthMask(false);
          this.field940.bindTexture(field934);
          Tessellator var2 = Tessellator.getInstance();
@@ -1908,26 +1908,26 @@ public class WorldRenderer implements Class215, AutoCloseable {
          for (int var4 = 0; var4 < 6; var4++) {
             var1.push();
             if (var4 == 1) {
-               var1.method35293(Class7680.field32898.method25286(90.0F));
+               var1.rotate(Vector3f.field32898.rotationDegrees(90.0F));
             }
 
             if (var4 == 2) {
-               var1.method35293(Class7680.field32898.method25286(-90.0F));
+               var1.rotate(Vector3f.field32898.rotationDegrees(-90.0F));
             }
 
             if (var4 == 3) {
-               var1.method35293(Class7680.field32898.method25286(180.0F));
+               var1.rotate(Vector3f.field32898.rotationDegrees(180.0F));
             }
 
             if (var4 == 4) {
-               var1.method35293(Class7680.field32902.method25286(90.0F));
+               var1.rotate(Vector3f.field32902.rotationDegrees(90.0F));
             }
 
             if (var4 == 5) {
-               var1.method35293(Class7680.field32902.method25286(-90.0F));
+               var1.rotate(Vector3f.field32902.rotationDegrees(-90.0F));
             }
 
-            Class9367 var5 = var1.method35296().method32361();
+            Matrix4f var5 = var1.getLast().getMatrix();
             var3.begin(7, DefaultVertexFormats.field43346);
             int var6 = 40;
             int var7 = 40;
@@ -1940,12 +1940,12 @@ public class WorldRenderer implements Class215, AutoCloseable {
                var8 = (int)(var9.field18050 * 255.0);
             }
 
-            var3.method17040(var5, -100.0F, -100.0F, -100.0F).method17027(0.0F, 0.0F).color(var6, var7, var8, 255).endVertex();
-            var3.method17040(var5, -100.0F, -100.0F, 100.0F).method17027(0.0F, 16.0F).color(var6, var7, var8, 255).endVertex();
-            var3.method17040(var5, 100.0F, -100.0F, 100.0F).method17027(16.0F, 16.0F).color(var6, var7, var8, 255).endVertex();
-            var3.method17040(var5, 100.0F, -100.0F, -100.0F).method17027(16.0F, 0.0F).color(var6, var7, var8, 255).endVertex();
+            var3.pos(var5, -100.0F, -100.0F, -100.0F).tex(0.0F, 0.0F).color(var6, var7, var8, 255).endVertex();
+            var3.pos(var5, -100.0F, -100.0F, 100.0F).tex(0.0F, 16.0F).color(var6, var7, var8, 255).endVertex();
+            var3.pos(var5, 100.0F, -100.0F, 100.0F).tex(16.0F, 16.0F).color(var6, var7, var8, 255).endVertex();
+            var3.pos(var5, 100.0F, -100.0F, -100.0F).tex(16.0F, 0.0F).color(var6, var7, var8, 255).endVertex();
             var2.draw();
-            var1.method35295();
+            var1.pop();
          }
 
          RenderSystem.depthMask(true);
@@ -2004,7 +2004,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          if (Class7944.method26879()) {
             this.field950.method7302();
             this.field948.method26218(0L);
-            this.field950.method7306(var1.method35296().method32361(), 7);
+            this.field950.method7306(var1.getLast().getMatrix(), 7);
             Class1698.method7308();
             this.field948.method26219();
          }
@@ -2016,7 +2016,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
          RenderSystem.method27817();
          RenderSystem.enableBlend();
-         RenderSystem.method27938();
+         RenderSystem.defaultBlendFunc();
          float[] var9 = this.field943.method6830().method19302(this.field943.method7001(var2), var2);
          if (var9 != null && Class7944.method26880()) {
             RenderSystem.disableTexture();
@@ -2026,28 +2026,28 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
             RenderSystem.method27866(7425);
             var1.push();
-            var1.method35293(Class7680.field32898.method25286(90.0F));
+            var1.rotate(Vector3f.field32898.rotationDegrees(90.0F));
             float var10 = MathHelper.sin(this.field943.method6750(var2)) < 0.0F ? 180.0F : 0.0F;
-            var1.method35293(Class7680.field32902.method25286(var10));
-            var1.method35293(Class7680.field32902.method25286(90.0F));
+            var1.rotate(Vector3f.field32902.rotationDegrees(var10));
+            var1.rotate(Vector3f.field32902.rotationDegrees(90.0F));
             float var11 = var9[0];
             float var12 = var9[1];
             float var13 = var9[2];
-            Class9367 var14 = var1.method35296().method32361();
+            Matrix4f var14 = var1.getLast().getMatrix();
             var8.begin(6, DefaultVertexFormats.POSITION_COLOR);
-            var8.method17040(var14, 0.0F, 100.0F, 0.0F).method17033(var11, var12, var13, var9[3]).endVertex();
+            var8.pos(var14, 0.0F, 100.0F, 0.0F).color(var11, var12, var13, var9[3]).endVertex();
             int var15 = 16;
 
             for (int var16 = 0; var16 <= 16; var16++) {
                float var17 = (float)var16 * (float) (Math.PI * 2) / 16.0F;
                float var18 = MathHelper.sin(var17);
                float var19 = MathHelper.cos(var17);
-               var8.method17040(var14, var18 * 120.0F, var19 * 120.0F, -var19 * 40.0F * var9[3]).method17033(var9[0], var9[1], var9[2], 0.0F).endVertex();
+               var8.pos(var14, var18 * 120.0F, var19 * 120.0F, -var19 * 40.0F * var9[3]).color(var9[0], var9[1], var9[2], 0.0F).endVertex();
             }
 
-            var8.method17065();
-            Class4395.method13895(var8);
-            var1.method35295();
+            var8.finishDrawing();
+            WorldVertexBufferUploader.draw(var8);
+            var1.pop();
             RenderSystem.method27866(7424);
          }
 
@@ -2060,28 +2060,28 @@ public class WorldRenderer implements Class215, AutoCloseable {
          var1.push();
          float var22 = 1.0F - this.field943.method6792(var2);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, var22);
-         var1.method35293(Class7680.field32900.method25286(-90.0F));
+         var1.rotate(Vector3f.YP.rotationDegrees(-90.0F));
          Class8862.method32263(this.field943, this.field940, var1, var2);
          if (var20) {
             Shaders.method33054(var1);
          }
 
-         var1.method35293(Class7680.field32898.method25286(this.field943.method7001(var2) * 360.0F));
+         var1.rotate(Vector3f.field32898.rotationDegrees(this.field943.method7001(var2) * 360.0F));
          if (var20) {
             Shaders.method33055(var1);
          }
 
-         Class9367 var23 = var1.method35296().method32361();
+         Matrix4f var23 = var1.getLast().getMatrix();
          float var24 = 30.0F;
          if (Class7944.method26881()) {
             this.field940.bindTexture(field932);
             var8.begin(7, DefaultVertexFormats.field43344);
-            var8.method17040(var23, -var24, 100.0F, -var24).method17027(0.0F, 0.0F).endVertex();
-            var8.method17040(var23, var24, 100.0F, -var24).method17027(1.0F, 0.0F).endVertex();
-            var8.method17040(var23, var24, 100.0F, var24).method17027(1.0F, 1.0F).endVertex();
-            var8.method17040(var23, -var24, 100.0F, var24).method17027(0.0F, 1.0F).endVertex();
-            var8.method17065();
-            Class4395.method13895(var8);
+            var8.pos(var23, -var24, 100.0F, -var24).tex(0.0F, 0.0F).endVertex();
+            var8.pos(var23, var24, 100.0F, -var24).tex(1.0F, 0.0F).endVertex();
+            var8.pos(var23, var24, 100.0F, var24).tex(1.0F, 1.0F).endVertex();
+            var8.pos(var23, -var24, 100.0F, var24).tex(0.0F, 1.0F).endVertex();
+            var8.finishDrawing();
+            WorldVertexBufferUploader.draw(var8);
          }
 
          var24 = 20.0F;
@@ -2095,12 +2095,12 @@ public class WorldRenderer implements Class215, AutoCloseable {
             float var35 = (float)(var28 + 1) / 4.0F;
             float var36 = (float)(var30 + 1) / 2.0F;
             var8.begin(7, DefaultVertexFormats.field43344);
-            var8.method17040(var23, -var24, -100.0F, var24).method17027(var35, var36).endVertex();
-            var8.method17040(var23, var24, -100.0F, var24).method17027(var31, var36).endVertex();
-            var8.method17040(var23, var24, -100.0F, -var24).method17027(var31, var34).endVertex();
-            var8.method17040(var23, -var24, -100.0F, -var24).method17027(var35, var34).endVertex();
-            var8.method17065();
-            Class4395.method13895(var8);
+            var8.pos(var23, -var24, -100.0F, var24).tex(var35, var36).endVertex();
+            var8.pos(var23, var24, -100.0F, var24).tex(var31, var36).endVertex();
+            var8.pos(var23, var24, -100.0F, -var24).tex(var31, var34).endVertex();
+            var8.pos(var23, -var24, -100.0F, -var24).tex(var35, var34).endVertex();
+            var8.finishDrawing();
+            WorldVertexBufferUploader.draw(var8);
          }
 
          RenderSystem.disableTexture();
@@ -2113,7 +2113,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             RenderSystem.method27889(var27, var27, var27, var27);
             this.field949.method7302();
             this.field948.method26218(0L);
-            this.field949.method7306(var1.method35296().method32361(), 7);
+            this.field949.method7306(var1.getLast().getMatrix(), 7);
             Class1698.method7308();
             this.field948.method26219();
          }
@@ -2126,7 +2126,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             Shaders.method33121();
          }
 
-         var1.method35295();
+         var1.pop();
          RenderSystem.disableTexture();
          if (var20) {
             Shaders.method33116();
@@ -2140,10 +2140,10 @@ public class WorldRenderer implements Class215, AutoCloseable {
             var1.translate(0.0, 12.0, 0.0);
             this.field951.method7302();
             this.field948.method26218(0L);
-            this.field951.method7306(var1.method35296().method32361(), 7);
+            this.field951.method7306(var1.getLast().getMatrix(), 7);
             Class1698.method7308();
             this.field948.method26219();
-            var1.method35295();
+            var1.pop();
             var32 = true;
          }
 
@@ -2222,7 +2222,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
                this.field953 = new Class1698(DefaultVertexFormats.field43349);
                this.method890(var29, var16, var18, var20, var25);
-               var29.method17065();
+               var29.finishDrawing();
                this.field953.method7303(var29);
             }
 
@@ -2242,14 +2242,14 @@ public class WorldRenderer implements Class215, AutoCloseable {
                      RenderSystem.method27870(true, true, true, true);
                   }
 
-                  this.field953.method7306(var1.method35296().method32361(), 7);
+                  this.field953.method7306(var1.getLast().getMatrix(), 7);
                }
 
                Class1698.method7308();
                DefaultVertexFormats.field43349.method26219();
             }
 
-            var1.method35295();
+            var1.pop();
             RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.method27817();
             RenderSystem.enableCull();
@@ -2291,46 +2291,46 @@ public class WorldRenderer implements Class215, AutoCloseable {
                float var32 = (float)(var30 * 8);
                if (var28 > -5.0F) {
                   var1.pos((double)(var31 + 0.0F), (double)(var28 + 0.0F), (double)(var32 + 8.0F))
-                     .method17027((var31 + 0.0F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
-                     .method17033(var22, var23, var24, 0.8F)
+                     .tex((var31 + 0.0F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
+                     .color(var22, var23, var24, 0.8F)
                      .method17030(0.0F, -1.0F, 0.0F)
                      .endVertex();
                   var1.pos((double)(var31 + 8.0F), (double)(var28 + 0.0F), (double)(var32 + 8.0F))
-                     .method17027((var31 + 8.0F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
-                     .method17033(var22, var23, var24, 0.8F)
+                     .tex((var31 + 8.0F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
+                     .color(var22, var23, var24, 0.8F)
                      .method17030(0.0F, -1.0F, 0.0F)
                      .endVertex();
                   var1.pos((double)(var31 + 8.0F), (double)(var28 + 0.0F), (double)(var32 + 0.0F))
-                     .method17027((var31 + 8.0F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
-                     .method17033(var22, var23, var24, 0.8F)
+                     .tex((var31 + 8.0F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
+                     .color(var22, var23, var24, 0.8F)
                      .method17030(0.0F, -1.0F, 0.0F)
                      .endVertex();
                   var1.pos((double)(var31 + 0.0F), (double)(var28 + 0.0F), (double)(var32 + 0.0F))
-                     .method17027((var31 + 0.0F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
-                     .method17033(var22, var23, var24, 0.8F)
+                     .tex((var31 + 0.0F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
+                     .color(var22, var23, var24, 0.8F)
                      .method17030(0.0F, -1.0F, 0.0F)
                      .endVertex();
                }
 
                if (var28 <= 5.0F) {
                   var1.pos((double)(var31 + 0.0F), (double)(var28 + 4.0F - 9.765625E-4F), (double)(var32 + 8.0F))
-                     .method17027((var31 + 0.0F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
-                     .method17033(var16, var17, var18, 0.8F)
+                     .tex((var31 + 0.0F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
+                     .color(var16, var17, var18, 0.8F)
                      .method17030(0.0F, 1.0F, 0.0F)
                      .endVertex();
                   var1.pos((double)(var31 + 8.0F), (double)(var28 + 4.0F - 9.765625E-4F), (double)(var32 + 8.0F))
-                     .method17027((var31 + 8.0F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
-                     .method17033(var16, var17, var18, 0.8F)
+                     .tex((var31 + 8.0F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
+                     .color(var16, var17, var18, 0.8F)
                      .method17030(0.0F, 1.0F, 0.0F)
                      .endVertex();
                   var1.pos((double)(var31 + 8.0F), (double)(var28 + 4.0F - 9.765625E-4F), (double)(var32 + 0.0F))
-                     .method17027((var31 + 8.0F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
-                     .method17033(var16, var17, var18, 0.8F)
+                     .tex((var31 + 8.0F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
+                     .color(var16, var17, var18, 0.8F)
                      .method17030(0.0F, 1.0F, 0.0F)
                      .endVertex();
                   var1.pos((double)(var31 + 0.0F), (double)(var28 + 4.0F - 9.765625E-4F), (double)(var32 + 0.0F))
-                     .method17027((var31 + 0.0F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
-                     .method17033(var16, var17, var18, 0.8F)
+                     .tex((var31 + 0.0F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
+                     .color(var16, var17, var18, 0.8F)
                      .method17030(0.0F, 1.0F, 0.0F)
                      .endVertex();
                }
@@ -2338,23 +2338,23 @@ public class WorldRenderer implements Class215, AutoCloseable {
                if (var29 > -1) {
                   for (int var33 = 0; var33 < 8; var33++) {
                      var1.pos((double)(var31 + (float)var33 + 0.0F), (double)(var28 + 0.0F), (double)(var32 + 8.0F))
-                        .method17027((var31 + (float)var33 + 0.5F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
-                        .method17033(var19, var20, var21, 0.8F)
+                        .tex((var31 + (float)var33 + 0.5F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
+                        .color(var19, var20, var21, 0.8F)
                         .method17030(-1.0F, 0.0F, 0.0F)
                         .endVertex();
                      var1.pos((double)(var31 + (float)var33 + 0.0F), (double)(var28 + 4.0F), (double)(var32 + 8.0F))
-                        .method17027((var31 + (float)var33 + 0.5F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
-                        .method17033(var19, var20, var21, 0.8F)
+                        .tex((var31 + (float)var33 + 0.5F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
+                        .color(var19, var20, var21, 0.8F)
                         .method17030(-1.0F, 0.0F, 0.0F)
                         .endVertex();
                      var1.pos((double)(var31 + (float)var33 + 0.0F), (double)(var28 + 4.0F), (double)(var32 + 0.0F))
-                        .method17027((var31 + (float)var33 + 0.5F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
-                        .method17033(var19, var20, var21, 0.8F)
+                        .tex((var31 + (float)var33 + 0.5F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
+                        .color(var19, var20, var21, 0.8F)
                         .method17030(-1.0F, 0.0F, 0.0F)
                         .endVertex();
                      var1.pos((double)(var31 + (float)var33 + 0.0F), (double)(var28 + 0.0F), (double)(var32 + 0.0F))
-                        .method17027((var31 + (float)var33 + 0.5F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
-                        .method17033(var19, var20, var21, 0.8F)
+                        .tex((var31 + (float)var33 + 0.5F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
+                        .color(var19, var20, var21, 0.8F)
                         .method17030(-1.0F, 0.0F, 0.0F)
                         .endVertex();
                   }
@@ -2363,23 +2363,23 @@ public class WorldRenderer implements Class215, AutoCloseable {
                if (var29 <= 1) {
                   for (int var38 = 0; var38 < 8; var38++) {
                      var1.pos((double)(var31 + (float)var38 + 1.0F - 9.765625E-4F), (double)(var28 + 0.0F), (double)(var32 + 8.0F))
-                        .method17027((var31 + (float)var38 + 0.5F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
-                        .method17033(var19, var20, var21, 0.8F)
+                        .tex((var31 + (float)var38 + 0.5F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
+                        .color(var19, var20, var21, 0.8F)
                         .method17030(1.0F, 0.0F, 0.0F)
                         .endVertex();
                      var1.pos((double)(var31 + (float)var38 + 1.0F - 9.765625E-4F), (double)(var28 + 4.0F), (double)(var32 + 8.0F))
-                        .method17027((var31 + (float)var38 + 0.5F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
-                        .method17033(var19, var20, var21, 0.8F)
+                        .tex((var31 + (float)var38 + 0.5F) * 0.00390625F + var14, (var32 + 8.0F) * 0.00390625F + var15)
+                        .color(var19, var20, var21, 0.8F)
                         .method17030(1.0F, 0.0F, 0.0F)
                         .endVertex();
                      var1.pos((double)(var31 + (float)var38 + 1.0F - 9.765625E-4F), (double)(var28 + 4.0F), (double)(var32 + 0.0F))
-                        .method17027((var31 + (float)var38 + 0.5F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
-                        .method17033(var19, var20, var21, 0.8F)
+                        .tex((var31 + (float)var38 + 0.5F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
+                        .color(var19, var20, var21, 0.8F)
                         .method17030(1.0F, 0.0F, 0.0F)
                         .endVertex();
                      var1.pos((double)(var31 + (float)var38 + 1.0F - 9.765625E-4F), (double)(var28 + 0.0F), (double)(var32 + 0.0F))
-                        .method17027((var31 + (float)var38 + 0.5F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
-                        .method17033(var19, var20, var21, 0.8F)
+                        .tex((var31 + (float)var38 + 0.5F) * 0.00390625F + var14, (var32 + 0.0F) * 0.00390625F + var15)
+                        .color(var19, var20, var21, 0.8F)
                         .method17030(1.0F, 0.0F, 0.0F)
                         .endVertex();
                   }
@@ -2388,23 +2388,23 @@ public class WorldRenderer implements Class215, AutoCloseable {
                if (var30 > -1) {
                   for (int var39 = 0; var39 < 8; var39++) {
                      var1.pos((double)(var31 + 0.0F), (double)(var28 + 4.0F), (double)(var32 + (float)var39 + 0.0F))
-                        .method17027((var31 + 0.0F) * 0.00390625F + var14, (var32 + (float)var39 + 0.5F) * 0.00390625F + var15)
-                        .method17033(var25, var26, var27, 0.8F)
+                        .tex((var31 + 0.0F) * 0.00390625F + var14, (var32 + (float)var39 + 0.5F) * 0.00390625F + var15)
+                        .color(var25, var26, var27, 0.8F)
                         .method17030(0.0F, 0.0F, -1.0F)
                         .endVertex();
                      var1.pos((double)(var31 + 8.0F), (double)(var28 + 4.0F), (double)(var32 + (float)var39 + 0.0F))
-                        .method17027((var31 + 8.0F) * 0.00390625F + var14, (var32 + (float)var39 + 0.5F) * 0.00390625F + var15)
-                        .method17033(var25, var26, var27, 0.8F)
+                        .tex((var31 + 8.0F) * 0.00390625F + var14, (var32 + (float)var39 + 0.5F) * 0.00390625F + var15)
+                        .color(var25, var26, var27, 0.8F)
                         .method17030(0.0F, 0.0F, -1.0F)
                         .endVertex();
                      var1.pos((double)(var31 + 8.0F), (double)(var28 + 0.0F), (double)(var32 + (float)var39 + 0.0F))
-                        .method17027((var31 + 8.0F) * 0.00390625F + var14, (var32 + (float)var39 + 0.5F) * 0.00390625F + var15)
-                        .method17033(var25, var26, var27, 0.8F)
+                        .tex((var31 + 8.0F) * 0.00390625F + var14, (var32 + (float)var39 + 0.5F) * 0.00390625F + var15)
+                        .color(var25, var26, var27, 0.8F)
                         .method17030(0.0F, 0.0F, -1.0F)
                         .endVertex();
                      var1.pos((double)(var31 + 0.0F), (double)(var28 + 0.0F), (double)(var32 + (float)var39 + 0.0F))
-                        .method17027((var31 + 0.0F) * 0.00390625F + var14, (var32 + (float)var39 + 0.5F) * 0.00390625F + var15)
-                        .method17033(var25, var26, var27, 0.8F)
+                        .tex((var31 + 0.0F) * 0.00390625F + var14, (var32 + (float)var39 + 0.5F) * 0.00390625F + var15)
+                        .color(var25, var26, var27, 0.8F)
                         .method17030(0.0F, 0.0F, -1.0F)
                         .endVertex();
                   }
@@ -2413,23 +2413,23 @@ public class WorldRenderer implements Class215, AutoCloseable {
                if (var30 <= 1) {
                   for (int var40 = 0; var40 < 8; var40++) {
                      var1.pos((double)(var31 + 0.0F), (double)(var28 + 4.0F), (double)(var32 + (float)var40 + 1.0F - 9.765625E-4F))
-                        .method17027((var31 + 0.0F) * 0.00390625F + var14, (var32 + (float)var40 + 0.5F) * 0.00390625F + var15)
-                        .method17033(var25, var26, var27, 0.8F)
+                        .tex((var31 + 0.0F) * 0.00390625F + var14, (var32 + (float)var40 + 0.5F) * 0.00390625F + var15)
+                        .color(var25, var26, var27, 0.8F)
                         .method17030(0.0F, 0.0F, 1.0F)
                         .endVertex();
                      var1.pos((double)(var31 + 8.0F), (double)(var28 + 4.0F), (double)(var32 + (float)var40 + 1.0F - 9.765625E-4F))
-                        .method17027((var31 + 8.0F) * 0.00390625F + var14, (var32 + (float)var40 + 0.5F) * 0.00390625F + var15)
-                        .method17033(var25, var26, var27, 0.8F)
+                        .tex((var31 + 8.0F) * 0.00390625F + var14, (var32 + (float)var40 + 0.5F) * 0.00390625F + var15)
+                        .color(var25, var26, var27, 0.8F)
                         .method17030(0.0F, 0.0F, 1.0F)
                         .endVertex();
                      var1.pos((double)(var31 + 8.0F), (double)(var28 + 0.0F), (double)(var32 + (float)var40 + 1.0F - 9.765625E-4F))
-                        .method17027((var31 + 8.0F) * 0.00390625F + var14, (var32 + (float)var40 + 0.5F) * 0.00390625F + var15)
-                        .method17033(var25, var26, var27, 0.8F)
+                        .tex((var31 + 8.0F) * 0.00390625F + var14, (var32 + (float)var40 + 0.5F) * 0.00390625F + var15)
+                        .color(var25, var26, var27, 0.8F)
                         .method17030(0.0F, 0.0F, 1.0F)
                         .endVertex();
                      var1.pos((double)(var31 + 0.0F), (double)(var28 + 0.0F), (double)(var32 + (float)var40 + 1.0F - 9.765625E-4F))
-                        .method17027((var31 + 0.0F) * 0.00390625F + var14, (var32 + (float)var40 + 0.5F) * 0.00390625F + var15)
-                        .method17033(var25, var26, var27, 0.8F)
+                        .tex((var31 + 0.0F) * 0.00390625F + var14, (var32 + (float)var40 + 0.5F) * 0.00390625F + var15)
+                        .color(var25, var26, var27, 0.8F)
                         .method17030(0.0F, 0.0F, 1.0F)
                         .endVertex();
                   }
@@ -2443,23 +2443,23 @@ public class WorldRenderer implements Class215, AutoCloseable {
          for (int var36 = -32; var36 < 32; var36 += 32) {
             for (int var37 = -32; var37 < 32; var37 += 32) {
                var1.pos((double)(var36 + 0), (double)var28, (double)(var37 + 32))
-                  .method17027((float)(var36 + 0) * 0.00390625F + var14, (float)(var37 + 32) * 0.00390625F + var15)
-                  .method17033(var16, var17, var18, 0.8F)
+                  .tex((float)(var36 + 0) * 0.00390625F + var14, (float)(var37 + 32) * 0.00390625F + var15)
+                  .color(var16, var17, var18, 0.8F)
                   .method17030(0.0F, -1.0F, 0.0F)
                   .endVertex();
                var1.pos((double)(var36 + 32), (double)var28, (double)(var37 + 32))
-                  .method17027((float)(var36 + 32) * 0.00390625F + var14, (float)(var37 + 32) * 0.00390625F + var15)
-                  .method17033(var16, var17, var18, 0.8F)
+                  .tex((float)(var36 + 32) * 0.00390625F + var14, (float)(var37 + 32) * 0.00390625F + var15)
+                  .color(var16, var17, var18, 0.8F)
                   .method17030(0.0F, -1.0F, 0.0F)
                   .endVertex();
                var1.pos((double)(var36 + 32), (double)var28, (double)(var37 + 0))
-                  .method17027((float)(var36 + 32) * 0.00390625F + var14, (float)(var37 + 0) * 0.00390625F + var15)
-                  .method17033(var16, var17, var18, 0.8F)
+                  .tex((float)(var36 + 32) * 0.00390625F + var14, (float)(var37 + 0) * 0.00390625F + var15)
+                  .color(var16, var17, var18, 0.8F)
                   .method17030(0.0F, -1.0F, 0.0F)
                   .endVertex();
                var1.pos((double)(var36 + 0), (double)var28, (double)(var37 + 0))
-                  .method17027((float)(var36 + 0) * 0.00390625F + var14, (float)(var37 + 0) * 0.00390625F + var15)
-                  .method17033(var16, var17, var18, 0.8F)
+                  .tex((float)(var36 + 0) * 0.00390625F + var14, (float)(var37 + 0) * 0.00390625F + var15)
+                  .color(var16, var17, var18, 0.8F)
                   .method17030(0.0F, -1.0F, 0.0F)
                   .endVertex();
             }
@@ -2629,8 +2629,8 @@ public class WorldRenderer implements Class215, AutoCloseable {
             }
          }
 
-         var2.method17065();
-         Class4395.method13895(var2);
+         var2.finishDrawing();
+         WorldVertexBufferUploader.draw(var2);
          RenderSystem.enableCull();
          RenderSystem.method27817();
          RenderSystem.method27856(0.0F, 0.0F);
@@ -2647,7 +2647,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
    }
 
    private void method893(BufferBuilder var1, double var2, double var4, double var6, double var8, int var10, double var11, float var13, float var14) {
-      var1.pos(var8 - var2, (double)var10 - var4, var11 - var6).method17027(var13, var14).endVertex();
+      var1.pos(var8 - var2, (double)var10 - var4, var11 - var6).tex(var13, var14).endVertex();
    }
 
    private void method894(MatrixStack var1, Class5422 var2, Entity var3, double var4, double var6, double var8, BlockPos var10, BlockState var11) {
@@ -2685,10 +2685,10 @@ public class WorldRenderer implements Class215, AutoCloseable {
    private static void method896(
            MatrixStack var0, Class5422 var1, VoxelShape var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
    ) {
-      Class9367 var13 = var0.method35296().method32361();
+      Matrix4f var13 = var0.getLast().getMatrix();
       var2.method19519((var12x, var14, var16, var18, var20, var22) -> {
-         var1.method17040(var13, (float)(var12x + var3), (float)(var14 + var5), (float)(var16 + var7)).method17033(var9, var10, var11, var12).endVertex();
-         var1.method17040(var13, (float)(var18 + var3), (float)(var20 + var5), (float)(var22 + var7)).method17033(var9, var10, var11, var12).endVertex();
+         var1.pos(var13, (float)(var12x + var3), (float)(var14 + var5), (float)(var16 + var7)).color(var9, var10, var11, var12).endVertex();
+         var1.pos(var13, (float)(var18 + var3), (float)(var20 + var5), (float)(var22 + var7)).color(var9, var10, var11, var12).endVertex();
       });
    }
 
@@ -2746,72 +2746,72 @@ public class WorldRenderer implements Class215, AutoCloseable {
       float var19,
       float var20
    ) {
-      Class9367 var21 = var0.method35296().method32361();
+      Matrix4f var21 = var0.getLast().getMatrix();
       float var22 = (float)var2;
       float var23 = (float)var4;
       float var24 = (float)var6;
       float var25 = (float)var8;
       float var26 = (float)var10;
       float var27 = (float)var12;
-      var1.method17040(var21, var22, var23, var24).method17033(var14, var19, var20, var17).endVertex();
-      var1.method17040(var21, var25, var23, var24).method17033(var14, var19, var20, var17).endVertex();
-      var1.method17040(var21, var22, var23, var24).method17033(var18, var15, var20, var17).endVertex();
-      var1.method17040(var21, var22, var26, var24).method17033(var18, var15, var20, var17).endVertex();
-      var1.method17040(var21, var22, var23, var24).method17033(var18, var19, var16, var17).endVertex();
-      var1.method17040(var21, var22, var23, var27).method17033(var18, var19, var16, var17).endVertex();
-      var1.method17040(var21, var25, var23, var24).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var25, var26, var24).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var25, var26, var24).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var22, var26, var24).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var22, var26, var24).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var22, var26, var27).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var22, var26, var27).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var22, var23, var27).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var22, var23, var27).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var25, var23, var27).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var25, var23, var27).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var25, var23, var24).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var22, var26, var27).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var25, var26, var27).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var25, var23, var27).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var25, var26, var27).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var25, var26, var24).method17033(var14, var15, var16, var17).endVertex();
-      var1.method17040(var21, var25, var26, var27).method17033(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var22, var23, var24).color(var14, var19, var20, var17).endVertex();
+      var1.pos(var21, var25, var23, var24).color(var14, var19, var20, var17).endVertex();
+      var1.pos(var21, var22, var23, var24).color(var18, var15, var20, var17).endVertex();
+      var1.pos(var21, var22, var26, var24).color(var18, var15, var20, var17).endVertex();
+      var1.pos(var21, var22, var23, var24).color(var18, var19, var16, var17).endVertex();
+      var1.pos(var21, var22, var23, var27).color(var18, var19, var16, var17).endVertex();
+      var1.pos(var21, var25, var23, var24).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var25, var26, var24).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var25, var26, var24).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var22, var26, var24).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var22, var26, var24).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var22, var26, var27).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var22, var26, var27).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var22, var23, var27).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var22, var23, var27).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var25, var23, var27).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var25, var23, var27).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var25, var23, var24).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var22, var26, var27).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var25, var26, var27).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var25, var23, var27).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var25, var26, var27).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var25, var26, var24).color(var14, var15, var16, var17).endVertex();
+      var1.pos(var21, var25, var26, var27).color(var14, var15, var16, var17).endVertex();
    }
 
    public static void method900(
            BufferBuilder var0, double var1, double var3, double var5, double var7, double var9, double var11, float var13, float var14, float var15, float var16
    ) {
-      var0.pos(var1, var3, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var3, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var3, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var3, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var9, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var9, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var9, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var3, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var9, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var3, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var3, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var3, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var9, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var9, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var9, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var3, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var9, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var3, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var3, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var3, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var3, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var3, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var3, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var9, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var9, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var1, var9, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var9, var5).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var9, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var9, var11).method17033(var13, var14, var15, var16).endVertex();
-      var0.pos(var7, var9, var11).method17033(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var3, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var3, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var3, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var3, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var9, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var9, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var9, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var3, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var9, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var3, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var3, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var3, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var9, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var9, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var9, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var3, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var9, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var3, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var3, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var3, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var3, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var3, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var3, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var9, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var9, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var1, var9, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var9, var5).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var9, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var9, var11).color(var13, var14, var15, var16).endVertex();
+      var0.pos(var7, var9, var11).color(var13, var14, var15, var16).endVertex();
    }
 
    public void method901(Class1665 var1, BlockPos var2, BlockState var3, BlockState var4, int var5) {

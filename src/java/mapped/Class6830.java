@@ -16,7 +16,7 @@ public class Class6830 extends Class6829 {
       }
 
       if (this.field29714 == Class2335.field15967 && !this.field29715.method4230().method21664()) {
-         float var3 = (float)(this.field29711 * this.field29715.method3086(Class9173.field42108));
+         float var3 = (float)(this.field29711 * this.field29715.method3086(Attributes.MOVEMENT_SPEED));
          this.field29715.method3113(MathHelper.lerp(0.125F, this.field29715.method2918(), var3));
          double var4 = this.field29708 - this.field29715.getPosX();
          double var6 = this.field29709 - this.field29715.getPosY();

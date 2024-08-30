@@ -79,7 +79,7 @@ public class Class1040 extends Class1038 implements Class1041 {
 
    @Override
    public void tick() {
-      if (!this.world.isRemote && this.method3066() && this.method4667()) {
+      if (!this.world.isRemote && this.isAlive() && this.method4667()) {
          int var3 = this.method4670();
          this.field5771 -= var3;
          if (this.field5771 <= 0) {
@@ -93,9 +93,9 @@ public class Class1040 extends Class1038 implements Class1041 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.getItem() != Items.field37872) {
+      if (var5.getItem() != Items.GOLDEN_APPLE) {
          return super.method4285(var1, var2);
-      } else if (!this.method3033(Class8254.field35484)) {
+      } else if (!this.method3033(Effects.WEAKNESS)) {
          return ActionResultType.field14819;
       } else {
          if (!var1.abilities.isCreativeMode) {
@@ -128,8 +128,8 @@ public class Class1040 extends Class1038 implements Class1041 {
       this.field5772 = var1;
       this.field5771 = var2;
       this.method3210().method35446(field5769, true);
-      this.method3040(Class8254.field35484);
-      this.method3035(new Class2023(Class8254.field35471, var2, Math.min(this.world.method6997().method8905() - 1, 0)));
+      this.removeEffects(Effects.WEAKNESS);
+      this.method3035(new Class2023(Effects.STRENGTH, var2, Math.min(this.world.method6997().method8905() - 1, 0)));
       this.world.method6786(this, (byte)16);
    }
 
@@ -188,7 +188,7 @@ public class Class1040 extends Class1038 implements Class1041 {
          }
       }
 
-      var4.method3035(new Class2023(Class8254.field35475, 200, 0));
+      var4.method3035(new Class2023(Effects.NAUSEA, 200, 0));
       if (!this.method3245()) {
          var1.method6869((PlayerEntity)null, 1027, this.getPosition(), 0);
       }

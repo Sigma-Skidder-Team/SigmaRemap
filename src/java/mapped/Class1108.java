@@ -44,9 +44,9 @@ public class Class1108 extends Class1006 implements Class1008 {
       this.dataManager.method35446(field6081, var1);
       this.method3216();
       this.method3385();
-      this.method3085(Class9173.field42105).method38661((double)(var1 * var1));
-      this.method3085(Class9173.field42108).method38661((double)(0.2F + 0.1F * (float)var1));
-      this.method3085(Class9173.field42110).method38661((double)var1);
+      this.method3085(Attributes.field42105).method38661((double)(var1 * var1));
+      this.method3085(Attributes.MOVEMENT_SPEED).method38661((double)(0.2F + 0.1F * (float)var1));
+      this.method3085(Attributes.field42110).method38661((double)var1);
       if (var2) {
          this.method3043(this.method3075());
       }
@@ -200,7 +200,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    }
 
    public void method5324(Class880 var1) {
-      if (this.method3066()) {
+      if (this.isAlive()) {
          int var4 = this.method5319();
          if (this.getDistanceSq(var1) < 0.6 * (double)var4 * 0.6 * (double)var4
             && this.method3135(var1)
@@ -221,7 +221,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    }
 
    public float method5326() {
-      return (float)this.method3086(Class9173.field42110);
+      return (float)this.method3086(Attributes.field42110);
    }
 
    @Override

@@ -10,7 +10,7 @@ public class Class1694 implements AutoCloseable {
    private final Map<ResourceLocation, AtlasTexture> field9230;
 
    public Class1694(Collection<AtlasTexture> var1) {
-      this.field9230 = var1.stream().collect(Collectors.toMap(AtlasTexture::method1100, Function.<AtlasTexture>identity()));
+      this.field9230 = var1.stream().collect(Collectors.toMap(AtlasTexture::getTextureLocation, Function.<AtlasTexture>identity()));
    }
 
    public AtlasTexture method7288(ResourceLocation var1) {

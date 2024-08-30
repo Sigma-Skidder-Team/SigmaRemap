@@ -8,12 +8,12 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 
 public class Class5267 extends PremiumModule {
     private int field23696;
-    private final Timer field23697 = new Timer();
-    private final Timer field23698 = new Timer();
+    private final TimerUtil field23697 = new TimerUtil();
+    private final TimerUtil field23698 = new TimerUtil();
     private boolean field23699;
 
     public Class5267() {
@@ -26,7 +26,7 @@ public class Class5267 extends PremiumModule {
         if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
             this.field23699 = false;
         } else {
-            mc.gameSettings.keyBindSneak.field13071 = false;
+            mc.gameSettings.keyBindSneak.pressed = false;
             this.field23699 = true;
         }
 
@@ -34,7 +34,7 @@ public class Class5267 extends PremiumModule {
             Client.getInstance().getNotificationManager().post(new Notification("Cubecraft2 fly", "This fly was made for 1.9+ only"));
         }
 
-        this.field23698.method27119();
+        this.field23698.stop();
         this.field23698.method27120();
     }
 
@@ -54,14 +54,14 @@ public class Class5267 extends PremiumModule {
             Class5628.method17725(0.0);
             this.field23696 = -3;
             this.field23697.method27120();
-            this.field23697.method27118();
+            this.field23697.start();
         }
     }
 
     @EventTarget
     private void method16483(Class4430 var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.keyBindSneak.field13070.field34875) {
+            if (var1.method13977() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
                 var1.method13900(true);
                 this.field23699 = true;
             }
@@ -71,7 +71,7 @@ public class Class5267 extends PremiumModule {
     @EventTarget
     private void method16484(Class4426 var1) {
         if (this.isEnabled()) {
-            if (var1.method13973() == mc.gameSettings.keyBindSneak.field13070.field34875) {
+            if (var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
                 var1.method13900(true);
                 this.field23699 = false;
             }
@@ -92,8 +92,8 @@ public class Class5267 extends PremiumModule {
                     Class9567.method37088(var1, 0.28);
                 }
             } else {
-                var1.method13995(!mc.gameSettings.field44636.isKeyDown() ? (!this.field23699 ? 1.0E-4 : -0.99) : (!this.field23699 ? 0.99 : 1.0E-4));
-                Class9567.method37088(var1, !mc.gameSettings.field44636.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8) : (!this.field23699 ? 2.8 : 3.7));
+                var1.method13995(!mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 1.0E-4 : -0.99) : (!this.field23699 ? 0.99 : 1.0E-4));
+                Class9567.method37088(var1, !mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8) : (!this.field23699 ? 2.8 : 3.7));
             }
 
             Class5628.method17725(var1.method13994());
@@ -115,7 +115,7 @@ public class Class5267 extends PremiumModule {
                     if (this.field23697.method27121() > 1000L) {
                         this.field23696++;
                         this.field23697.method27120();
-                        this.field23697.method27119();
+                        this.field23697.stop();
                     }
 
                     var1.method13995(0.0);
@@ -136,7 +136,7 @@ public class Class5267 extends PremiumModule {
             var1.method13920(true);
             if (this.field23696 != 3) {
                 if (this.field23696 > 3) {
-                    if (this.field23698.method27123() && this.field23698.method27121() > 2000L) {
+                    if (this.field23698.isEnabled() && this.field23698.method27121() > 2000L) {
                         var1.method13912(-150.0);
                         this.field23698.method27120();
                     } else {
@@ -145,7 +145,7 @@ public class Class5267 extends PremiumModule {
                 }
             } else {
                 var1.method13912(-150.0);
-                this.field23698.method27118();
+                this.field23698.start();
             }
         }
     }
@@ -159,7 +159,7 @@ public class Class5267 extends PremiumModule {
                 var5.field24300 = mc.player.rotationYaw;
                 var5.field24301 = mc.player.rotationPitch;
                 this.field23698.method27120();
-                this.field23698.method27119();
+                this.field23698.stop();
                 if (this.field23696 != -3) {
                     this.field23696 = 0;
                 } else {

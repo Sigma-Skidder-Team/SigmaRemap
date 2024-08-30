@@ -611,7 +611,7 @@ public class Items {
    public static final Item field37795 = method30157(
       "apple", new Item(new Class5643().method17779(ItemGroup.field31671).method17774(Class8672.field39058))
    );
-   public static final Item field37796 = method30157("bow", new Class3263(new Class5643().method17777(384).method17779(ItemGroup.field31673)));
+   public static final Item BOW = method30157("bow", new Class3263(new Class5643().method17777(384).method17779(ItemGroup.field31673)));
    public static final Item field37797 = method30157("arrow", new Class3308(new Class5643().method17779(ItemGroup.field31673)));
    public static final Item field37798 = method30157("coal", new Item(new Class5643().method17779(ItemGroup.field31675)));
    public static final Item field37799 = method30157("charcoal", new Item(new Class5643().method17779(ItemGroup.field31675)));
@@ -803,17 +803,17 @@ public class Items {
       "cooked_porkchop", new Item(new Class5643().method17779(ItemGroup.field31671).method17774(Class8672.field39072))
    );
    public static final Item PAINTING = method30157("painting", new Class3312(EntityType.field41060, new Class5643().method17779(ItemGroup.field31666)));
-   public static final Item field37872 = method30157(
+   public static final Item GOLDEN_APPLE = method30157(
       "golden_apple", new Item(new Class5643().method17779(ItemGroup.field31671).method17780(Class1978.field12887).method17774(Class8672.field39078))
    );
-   public static final Item field37873 = method30157(
+   public static final Item ENCHANTED_GOLDEN_APPLE = method30157(
       "enchanted_golden_apple",
       new Class3322(new Class5643().method17779(ItemGroup.field31671).method17780(Class1978.field12888).method17774(Class8672.field39077))
    );
-   public static final Item field37874 = method30157(
+   public static final Item OAK_SIGN = method30157(
       "oak_sign", new Class3300(new Class5643().method17775(16).method17779(ItemGroup.field31666), Blocks.OAK_SIGN, Blocks.OAK_WALL_SIGN)
    );
-   public static final Item field37875 = method30157(
+   public static final Item SPRUCE_SIGN = method30157(
       "spruce_sign", new Class3300(new Class5643().method17775(16).method17779(ItemGroup.field31666), Blocks.SPRUCE_SIGN, Blocks.SPRUCE_WALL_SIGN)
    );
    public static final Item field37876 = method30157(

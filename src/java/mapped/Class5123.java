@@ -30,7 +30,7 @@ public class Class5123 implements Class5119 {
       Class9624 var11 = this.field23302.gameRenderer.getActiveRenderInfo();
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.disableTexture();
       BlockPos var12 = new BlockPos(var11.method37504().field18048, 0.0, var11.method37504().field18050);
       this.field23303.forEach((var1x, var2x) -> {

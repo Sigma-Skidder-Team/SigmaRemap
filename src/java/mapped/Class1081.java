@@ -35,12 +35,12 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    public static Class7037 method5018() {
-      return Class1009.method4343().method21849(Class9173.field42108, 0.25);
+      return Class1009.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
    public int method3370() {
-      return this.method4232() != null ? 3 + (int)(this.method3042() - 1.0F) : 3;
+      return this.method4232() != null ? 3 + (int)(this.getHealth() - 1.0F) : 3;
    }
 
    @Override
@@ -93,7 +93,7 @@ public class Class1081 extends Class1009 implements Class1080 {
 
    @Override
    public void tick() {
-      if (this.method3066()) {
+      if (this.isAlive()) {
          this.field5941 = this.field5942;
          if (this.method5024()) {
             this.method5021(1);

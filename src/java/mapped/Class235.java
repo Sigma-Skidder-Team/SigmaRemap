@@ -66,7 +66,7 @@ public class Class235<T extends Class880, M extends Class2827<T> & Class2824> ex
          } else if (!(var14 instanceof Class3279) || ((Class3279)var14).method11805() != Class2106.field13736) {
             float var20 = 0.625F;
             var1.translate(0.0, -0.25, 0.0);
-            var1.method35293(Class7680.field32900.method25286(180.0F));
+            var1.rotate(Vector3f.YP.rotationDegrees(180.0F));
             var1.method35292(0.625F, -0.625F, -0.625F);
             if (var15) {
                var1.translate(0.0, 0.1875, 0.0);
@@ -75,7 +75,7 @@ public class Class235<T extends Class880, M extends Class2827<T> & Class2824> ex
             Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var13, Class2327.field15929, false, var1, var2, var3);
          }
 
-         var1.method35295();
+         var1.pop();
       }
    }
 }

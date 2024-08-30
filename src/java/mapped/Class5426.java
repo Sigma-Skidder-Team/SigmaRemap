@@ -44,7 +44,7 @@ public interface Class5426 extends Class5422 {
    }
 
    @Override
-   default Class5422 method17027(float var1, float var2) {
+   default Class5422 tex(float var1, float var2) {
       Class8209 var5 = this.method17073();
       if (var5.method28517() == Class2142.field14021 && var5.method28518() == 0) {
          if (var5.method28516() == Class2061.field13430) {

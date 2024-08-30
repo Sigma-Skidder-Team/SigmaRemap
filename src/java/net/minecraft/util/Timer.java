@@ -6,7 +6,7 @@ public class Timer {
    public float elapsedPartialTicks;
    private long field40358;
    private final float field40359;
-   public float field40360 = 1.0F;
+   public float timerSpeed = 1.0F;
 
    public Timer(float var1, long var2) {
       this.field40359 = 1000.0F / var1;
@@ -14,7 +14,7 @@ public class Timer {
    }
 
    public int getPartialTicks(long var1) {
-      this.elapsedPartialTicks = (float)(var1 - this.field40358) / this.field40359 * this.field40360;
+      this.elapsedPartialTicks = (float)(var1 - this.field40358) / this.field40359 * this.timerSpeed;
       this.field40358 = var1;
       this.renderPartialTicks = this.renderPartialTicks + this.elapsedPartialTicks;
       int var5 = (int)this.renderPartialTicks;

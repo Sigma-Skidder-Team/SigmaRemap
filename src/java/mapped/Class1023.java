@@ -27,7 +27,7 @@ public interface Class1023 extends Class1022 {
       double var10 = var2.getPosZ() - var1.getPosZ();
       double var12 = (double) MathHelper.method37766(var8 * var8 + var10 * var10);
       double var14 = var2.method3440(0.3333333333333333) - var3.getPosY() + var12 * 0.2F;
-      Class7680 var16 = this.method4540(var1, new Vector3d(var8, var14, var10), var4);
+      Vector3f var16 = this.method4540(var1, new Vector3d(var8, var14, var10), var4);
       var3.method3462(
          (double)var16.method25269(),
          (double)var16.method25270(),
@@ -38,18 +38,18 @@ public interface Class1023 extends Class1022 {
       var1.method2863(Sounds.field26494, 1.0F, 1.0F / (var1.method3013().nextFloat() * 0.4F + 0.8F));
    }
 
-   default Class7680 method4540(Class880 var1, Vector3d var2, float var3) {
+   default Vector3f method4540(Class880 var1, Vector3d var2, float var3) {
       Vector3d var6 = var2.method11333();
       Vector3d var7 = var6.method11335(new Vector3d(0.0, 1.0, 0.0));
       if (var7.method11349() <= 1.0E-7) {
          var7 = var6.method11335(var1.method3284(1.0F));
       }
 
-      Class8661 var8 = new Class8661(new Class7680(var7), 90.0F, true);
-      Class7680 var9 = new Class7680(var6);
+      Class8661 var8 = new Class8661(new Vector3f(var7), 90.0F, true);
+      Vector3f var9 = new Vector3f(var6);
       var9.method25283(var8);
       Class8661 var10 = new Class8661(var9, var3, true);
-      Class7680 var11 = new Class7680(var6);
+      Vector3f var11 = new Vector3f(var6);
       var11.method25283(var10);
       return var11;
    }

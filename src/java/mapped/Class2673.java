@@ -43,7 +43,7 @@ public class Class2673 extends Class2672 {
 
    @Override
    public void method10890() {
-      this.field17062.method4232().method3035(new Class2023(Class8254.field35481, 400));
+      this.field17062.method4232().method3035(new Class2023(Effects.BLINDNESS, 400));
    }
 
    @Override

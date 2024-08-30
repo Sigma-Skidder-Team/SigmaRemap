@@ -5,13 +5,13 @@ import java.util.Map.Entry;
 
 public class Class9726 {
    private static String[] field45422;
-   public final Class7680 field45423;
-   public final Class7680 field45424;
+   public final Vector3f field45423;
+   public final Vector3f field45424;
    public final Map<Direction, Class9163> field45425;
    public final Class7360 field45426;
    public final boolean field45427;
 
-   public Class9726(Class7680 var1, Class7680 var2, Map<Direction, Class9163> var3, Class7360 var4, boolean var5) {
+   public Class9726(Vector3f var1, Vector3f var2, Map<Direction, Class9163> var3, Class7360 var4, boolean var5) {
       this.field45423 = var1;
       this.field45424 = var2;
       this.field45425 = var3;

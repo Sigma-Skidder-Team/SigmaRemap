@@ -15,7 +15,7 @@ public class Class1095 extends Class1018 {
    private static final DataParameter<Byte> field5994 = EntityDataManager.<Byte>method35441(Class1095.class, Class7784.field33390);
    private static final DataParameter<Optional<UUID>> field5995 = EntityDataManager.<Optional<UUID>>method35441(Class1095.class, Class7784.field33404);
    private static final DataParameter<Optional<UUID>> field5996 = EntityDataManager.<Optional<UUID>>method35441(Class1095.class, Class7784.field33404);
-   private static final Predicate<ItemEntity> field5997 = var0 -> !var0.method4135() && var0.method3066();
+   private static final Predicate<ItemEntity> field5997 = var0 -> !var0.method4135() && var0.isAlive();
    private static final Predicate<Entity> field5998 = var0 -> {
       if (!(var0 instanceof Class880)) {
          return false;
@@ -96,7 +96,7 @@ public class Class1095 extends Class1018 {
 
    @Override
    public void method2871() {
-      if (!this.world.isRemote && this.method3066() && this.method3138()) {
+      if (!this.world.isRemote && this.isAlive() && this.method3138()) {
          this.field6008++;
          ItemStack var3 = this.method2943(Class2106.field13731);
          if (this.method5122(var3)) {
@@ -116,7 +116,7 @@ public class Class1095 extends Class1018 {
          }
 
          Class880 var5 = this.method4232();
-         if (var5 == null || !var5.method3066()) {
+         if (var5 == null || !var5.isAlive()) {
             this.method5143(false);
             this.method5144(false);
          }
@@ -202,10 +202,10 @@ public class Class1095 extends Class1018 {
 
    public static Class7037 method5123() {
       return Class1006.method4220()
-         .method21849(Class9173.field42108, 0.3F)
-         .method21849(Class9173.field42105, 10.0)
-         .method21849(Class9173.field42106, 32.0)
-         .method21849(Class9173.field42110, 2.0);
+         .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
+         .method21849(Attributes.field42105, 10.0)
+         .method21849(Attributes.field42106, 32.0)
+         .method21849(Attributes.field42110, 2.0);
    }
 
    public Class1095 method4389(ServerWorld var1, Class1045 var2) {

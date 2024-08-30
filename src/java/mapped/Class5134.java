@@ -27,7 +27,7 @@ public class Class5134 implements Class5119 {
    public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.disableTexture();
       Tessellator var11 = Tessellator.getInstance();
       BufferBuilder var12 = var11.getBuffer();

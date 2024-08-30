@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class Class1063 extends Class1038 implements Class1011 {
    private static final UUID field5860 = UUID.fromString("49455A49-7EC5-45BA-B886-3B90B23A1718");
-   private static final Class9689 field5861 = new Class9689(field5860, "Attacking speed boost", 0.05, Class2045.field13352);
+   private static final Class9689 field5861 = new Class9689(field5860, "Attacking speed boost", 0.05, AttributeModifierOperation.ADDITION);
    private static final Class8369 field5862 = Class8763.method31620(0, 1);
    private int field5863;
    private static final Class8369 field5864 = Class8763.method31620(20, 39);
@@ -43,7 +43,7 @@ public class Class1063 extends Class1038 implements Class1011 {
    }
 
    public static Class7037 method4874() {
-      return Class1038.method4653().method21849(Class9173.field42116, 0.0).method21849(Class9173.field42108, 0.23F).method21849(Class9173.field42110, 5.0);
+      return Class1038.method4653().method21849(Attributes.field42116, 0.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F).method21849(Attributes.field42110, 5.0);
    }
 
    @Override
@@ -53,7 +53,7 @@ public class Class1063 extends Class1038 implements Class1011 {
 
    @Override
    public void method4258() {
-      Class9805 var3 = this.method3085(Class9173.field42108);
+      Class9805 var3 = this.method3085(Attributes.MOVEMENT_SPEED);
       if (!this.method4369()) {
          if (var3.method38665(field5861)) {
             var3.method38670(field5861);
@@ -100,7 +100,7 @@ public class Class1063 extends Class1038 implements Class1011 {
    }
 
    private void method4877() {
-      double var3 = this.method3086(Class9173.field42106);
+      double var3 = this.method3086(Attributes.field42106);
       AxisAlignedBB var5 = AxisAlignedBB.method19657(this.getPositionVec()).method19663(var3, 10.0, var3);
       this.world
          .<Class1063>method7183(Class1063.class, var5)
@@ -197,7 +197,7 @@ public class Class1063 extends Class1038 implements Class1011 {
 
    @Override
    public void method4663() {
-      this.method3085(Class9173.field42116).method38661(0.0);
+      this.method3085(Attributes.field42116).method38661(0.0);
    }
 
    @Override

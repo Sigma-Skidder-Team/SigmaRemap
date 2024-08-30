@@ -66,7 +66,7 @@ public class Class1114 extends Class1113 {
    }
 
    public static Class7037 method5363() {
-      return Class1006.method4220().method21849(Class9173.field42105, 6.0);
+      return Class1006.method4220().method21849(Attributes.field42105, 6.0);
    }
 
    public boolean method5364() {

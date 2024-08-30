@@ -118,7 +118,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
       }
 
       super.method17893(var1, var2, var3, var4, var5);
-      var3.method35295();
+      var3.pop();
    }
 
    public void method17890(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4) {
@@ -151,7 +151,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
             super.method17842(var1, var2, var3, var4, var5);
             float var9 = !var1.method3250() ? -90.0F : -90.0F - var1.rotationPitch;
             float var10 = MathHelper.lerp(var8, 0.0F, var9);
-            var2.method35293(Class7680.field32898.method25286(var10));
+            var2.rotate(Vector3f.field32898.rotationDegrees(var10));
             if (var1.method3166()) {
                var2.translate(0.0, -1.0, 0.3F);
             }
@@ -161,7 +161,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
          float var21 = (float)var1.method3167() + var5;
          float var22 = MathHelper.method37777(var21 * var21 / 100.0F, 0.0F, 1.0F);
          if (!var1.method3130()) {
-            var2.method35293(Class7680.field32898.method25286(var22 * (-90.0F - var1.rotationPitch)));
+            var2.rotate(Vector3f.field32898.rotationDegrees(var22 * (-90.0F - var1.rotationPitch)));
          }
 
          Vector3d var11 = var1.method3281(var5);
@@ -171,7 +171,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
          if (var13 > 0.0 && var15 > 0.0) {
             double var17 = (var12.field18048 * var11.field18048 + var12.field18050 * var11.field18050) / Math.sqrt(var13 * var15);
             double var19 = var12.field18048 * var11.field18050 - var12.field18050 * var11.field18048;
-            var2.method35293(Class7680.field32900.method25285((float)(Math.signum(var19) * Math.acos(var17))));
+            var2.rotate(Vector3f.YP.method25285((float)(Math.signum(var19) * Math.acos(var17))));
          }
       }
    }

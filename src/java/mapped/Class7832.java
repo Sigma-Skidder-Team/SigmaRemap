@@ -57,8 +57,8 @@ public class Class7832 {
    }
 
    public static Class8557 method26233(Direction var0, TextureAtlasSprite var1, int var2) {
-      Class7680 var5 = new Class7680(0.0F, 0.0F, 0.0F);
-      Class7680 var6 = new Class7680(16.0F, 16.0F, 16.0F);
+      Vector3f var5 = new Vector3f(0.0F, 0.0F, 0.0F);
+      Vector3f var6 = new Vector3f(16.0F, 16.0F, 16.0F);
       Class9840 var7 = new Class9840(new float[]{0.0F, 0.0F, 16.0F, 16.0F}, 0);
       Class9163 var8 = new Class9163(var0, var2, "#" + var0.method257(), var7);
       Class1901 var9 = Class1901.field11159;
@@ -121,7 +121,7 @@ public class Class7832 {
       var0.addAll(var5);
    }
 
-   public static void method26237(Class7680 var0) {
+   public static void method26237(Vector3f var0) {
       var0.method25275(method26238(var0.method25269()), method26238(var0.method25270()), method26238(var0.method25271()));
    }
 

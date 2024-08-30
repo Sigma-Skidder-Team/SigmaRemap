@@ -240,10 +240,10 @@ public class Framebuffer {
       Tessellator var10 = RenderSystem.method27937();
       BufferBuilder var11 = var10.getBuffer();
       var11.begin(7, DefaultVertexFormats.field43346);
-      var11.pos(0.0, (double)var7, 0.0).method17027(0.0F, 0.0F).color(255, 255, 255, 255).endVertex();
-      var11.pos((double)var6, (double)var7, 0.0).method17027(var8, 0.0F).color(255, 255, 255, 255).endVertex();
-      var11.pos((double)var6, 0.0, 0.0).method17027(var8, var9).color(255, 255, 255, 255).endVertex();
-      var11.pos(0.0, 0.0, 0.0).method17027(0.0F, var9).color(255, 255, 255, 255).endVertex();
+      var11.pos(0.0, (double)var7, 0.0).tex(0.0F, 0.0F).color(255, 255, 255, 255).endVertex();
+      var11.pos((double)var6, (double)var7, 0.0).tex(var8, 0.0F).color(255, 255, 255, 255).endVertex();
+      var11.pos((double)var6, 0.0, 0.0).tex(var8, var9).color(255, 255, 255, 255).endVertex();
+      var11.pos(0.0, 0.0, 0.0).tex(0.0F, var9).color(255, 255, 255, 255).endVertex();
       var10.draw();
       this.method29111();
       Class7414.method23713(true);

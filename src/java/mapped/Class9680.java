@@ -1212,9 +1212,9 @@ public class Class9680 {
    private static int method37889() {
       int var2 = 0;
 
-      for (ResourceLocation var4 : Registry.field16071.method9190()) {
-         Class7144 var5 = Class9056.method33703(var4);
-         int var6 = Class7144.method22288(var5);
+      for (ResourceLocation var4 : Registry.EFFECTS.method9190()) {
+         Effect var5 = Class9056.method33703(var4);
+         int var6 = Effect.method22288(var5);
          if (var6 > var2) {
             var2 = var6;
          }
@@ -1229,10 +1229,10 @@ public class Class9680 {
       } else {
          var0 = Class9402.method35765(var0, "potion.", "effect.");
 
-         for (ResourceLocation var4 : Registry.field16071.method9190()) {
-            Class7144 var5 = Class9056.method33703(var4);
+         for (ResourceLocation var4 : Registry.EFFECTS.method9190()) {
+            Effect var5 = Class9056.method33703(var4);
             if (var5.method22294().equals(var0)) {
-               return Class7144.method22288(var5);
+               return Effect.method22288(var5);
             }
          }
 
@@ -1240,10 +1240,10 @@ public class Class9680 {
       }
    }
 
-   public static int method37891(Class7144 var0, int var1) {
+   public static int method37891(Effect var0, int var1) {
       int var4 = 0;
       if (var0 != null) {
-         var4 = Class7144.method22288(var0);
+         var4 = Effect.method22288(var0);
       }
 
       return method37892(var4, var1);

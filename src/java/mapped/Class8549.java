@@ -37,7 +37,7 @@ public class Class8549 {
       return var3;
    }
 
-   public static String method30466(Class9367 var0) {
+   public static String method30466(Matrix4f var0) {
       var0.method35524(field38435);
       return method30467(field38435);
    }

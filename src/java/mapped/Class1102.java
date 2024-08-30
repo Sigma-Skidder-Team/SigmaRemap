@@ -14,7 +14,7 @@ public class Class1102 extends Class1101 {
    }
 
    public static Class7037 method5291() {
-      return Class1101.method5288().method21849(Class9173.field42105, 12.0);
+      return Class1101.method5288().method21849(Attributes.field42105, 12.0);
    }
 
    @Override
@@ -33,7 +33,7 @@ public class Class1102 extends Class1101 {
             }
 
             if (var4 > 0) {
-               ((Class880)var1).method3035(new Class2023(Class8254.field35485, var4 * 20, 0));
+               ((Class880)var1).method3035(new Class2023(Effects.POISON, var4 * 20, 0));
             }
          }
 

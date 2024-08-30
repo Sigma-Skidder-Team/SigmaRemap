@@ -52,8 +52,8 @@ public enum Class1901 implements Class1902 {
 
    private Class1901(int var3, int var4) {
       this.field11178 = method8165(var3, var4);
-      Class8661 var7 = new Class8661(new Class7680(0.0F, 1.0F, 0.0F), (float)(-var4), true);
-      var7.method31182(new Class8661(new Class7680(1.0F, 0.0F, 0.0F), (float)(-var3), true));
+      Class8661 var7 = new Class8661(new Vector3f(0.0F, 1.0F, 0.0F), (float)(-var4), true);
+      var7.method31182(new Class8661(new Vector3f(1.0F, 0.0F, 0.0F), (float)(-var3), true));
       Class178 var8 = Class178.field565;
 
       for (int var9 = 0; var9 < var4; var9 += 90) {
@@ -64,7 +64,7 @@ public enum Class1901 implements Class1902 {
          var8 = var8.method507(Class178.field583);
       }
 
-      this.field11176 = new Class6979((Class7680)null, var7, (Class7680)null, (Class8661)null);
+      this.field11176 = new Class6979((Vector3f)null, var7, (Vector3f)null, (Class8661)null);
       this.field11177 = var8;
    }
 

@@ -36,12 +36,12 @@ public class Class9721 {
                   4,
                   new Class5391[]{
                      new Class5395(Blocks.field36591, 1, 1, 12, 15),
-                     new Class5393(Class8254.field35482, 100, 15),
-                     new Class5393(Class8254.field35474, 160, 15),
-                     new Class5393(Class8254.field35484, 140, 15),
-                     new Class5393(Class8254.field35481, 120, 15),
-                     new Class5393(Class8254.field35485, 280, 15),
-                     new Class5393(Class8254.field35489, 7, 15)
+                     new Class5393(Effects.NIGHT_VISION, 100, 15),
+                     new Class5393(Effects.JUMP_BOOST, 160, 15),
+                     new Class5393(Effects.WEAKNESS, 140, 15),
+                     new Class5393(Effects.BLINDNESS, 120, 15),
+                     new Class5393(Effects.POISON, 280, 15),
+                     new Class5393(Effects.SATURATION, 7, 15)
                   },
                   5,
                   new Class5391[]{new Class5395(Items.field38057, 3, 3, 30), new Class5395(Items.field37980, 4, 3, 30)}
@@ -207,11 +207,11 @@ public class Class9721 {
                      new Class5397(Blocks.GRAVEL, 10, Items.field37868, 10, 12, 1)
                   },
                   2,
-                  new Class5391[]{new Class5396(Items.field37868, 26, 12, 10), new Class5395(Items.field37796, 2, 1, 5)},
+                  new Class5391[]{new Class5396(Items.field37868, 26, 12, 10), new Class5395(Items.BOW, 2, 1, 5)},
                   3,
                   new Class5391[]{new Class5396(Items.field37838, 14, 16, 20), new Class5395(Items.field38148, 3, 1, 10)},
                   4,
-                  new Class5391[]{new Class5396(Items.field37839, 24, 16, 30), new Class5392(Items.field37796, 2, 3, 15)},
+                  new Class5391[]{new Class5396(Items.field37839, 24, 16, 30), new Class5392(Items.BOW, 2, 3, 15)},
                   5,
                   new Class5391[]{
                      new Class5396(Items.field37500, 8, 12, 30),

@@ -40,7 +40,7 @@ public class Class8601 {
                var10 = Class7944.method26834(var10);
                float var11 = var10 * (float)(var8 - 1);
                float var12 = Class7944.method26834(var2 + 0.5F) * (float)(var8 - 1);
-               float var13 = Class7944.method26834((float)Class7944.method26928().field44672);
+               float var13 = Class7944.method26834((float)Class7944.method26928().gamma);
                boolean var14 = var13 > 1.0E-4F;
                float[][] var15 = this.field38699.method24068();
                this.method30777(var15, var11, var9, var8, this.field38700);

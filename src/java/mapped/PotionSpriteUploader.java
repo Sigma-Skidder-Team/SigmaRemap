@@ -9,10 +9,10 @@ public class PotionSpriteUploader extends Class277 {
 
    @Override
    public Stream<ResourceLocation> method1017() {
-      return Registry.field16071.method9190().stream();
+      return Registry.EFFECTS.method9190().stream();
    }
 
-   public TextureAtlasSprite method1022(Class7144 var1) {
-      return this.method1018(Registry.field16071.getKey(var1));
+   public TextureAtlasSprite method1022(Effect var1) {
+      return this.method1018(Registry.EFFECTS.getKey(var1));
    }
 }

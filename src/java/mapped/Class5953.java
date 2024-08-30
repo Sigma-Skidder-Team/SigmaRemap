@@ -64,7 +64,7 @@ public class Class5953<T extends TileEntity & Class942> extends Class5942<T> {
          var3.push();
          float var16 = var11.<Direction>method23463(Class3348.field18865).method551();
          var3.translate(0.5, 0.5, 0.5);
-         var3.method35293(Class7680.field32900.method25286(-var16));
+         var3.rotate(Vector3f.YP.rotationDegrees(-var16));
          var3.translate(-0.5, -0.5, -0.5);
          Class7995<? extends Class941> var17;
          if (!var10) {
@@ -87,7 +87,7 @@ public class Class5953<T extends TileEntity & Class942> extends Class5942<T> {
             this.method18486(var3, var21, this.field25961, this.field25963, this.field25962, var18, var19, var6);
          }
 
-         var3.method35295();
+         var3.pop();
       }
    }
 

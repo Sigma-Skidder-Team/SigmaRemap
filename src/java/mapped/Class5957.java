@@ -23,7 +23,7 @@ public class Class5957<T extends Class956> extends Class5942<T> {
          double var9 = var1.getPos().method8319(this.field25928.field34748.method37504(), true);
          int var11 = this.method18489(var9);
          float var12 = this.method18490();
-         Class9367 var13 = var3.method35296().method32361();
+         Matrix4f var13 = var3.getLast().getMatrix();
          this.method18487((T)var1, var12, 0.15F, var13, var4.method25597(field25981.get(0)));
 
          for (int var14 = 1; var14 < var11; var14++) {
@@ -32,7 +32,7 @@ public class Class5957<T extends Class956> extends Class5942<T> {
       }
    }
 
-   private void method18487(T var1, float var2, float var3, Class9367 var4, Class5422 var5) {
+   private void method18487(T var1, float var2, float var3, Matrix4f var4, Class5422 var5) {
       float var8 = (field25980.nextFloat() * 0.5F + 0.1F) * var3;
       float var9 = (field25980.nextFloat() * 0.5F + 0.4F) * var3;
       float var10 = (field25980.nextFloat() * 0.5F + 0.5F) * var3;
@@ -46,7 +46,7 @@ public class Class5957<T extends Class956> extends Class5942<T> {
 
    private void method18488(
       T var1,
-      Class9367 var2,
+      Matrix4f var2,
       Class5422 var3,
       float var4,
       float var5,
@@ -62,10 +62,10 @@ public class Class5957<T extends Class956> extends Class5942<T> {
       Direction var15
    ) {
       if (var1.method3870(var15)) {
-         var3.method17040(var2, var4, var6, var8).method17033(var12, var13, var14, 1.0F).endVertex();
-         var3.method17040(var2, var5, var6, var9).method17033(var12, var13, var14, 1.0F).endVertex();
-         var3.method17040(var2, var5, var7, var10).method17033(var12, var13, var14, 1.0F).endVertex();
-         var3.method17040(var2, var4, var7, var11).method17033(var12, var13, var14, 1.0F).endVertex();
+         var3.pos(var2, var4, var6, var8).color(var12, var13, var14, 1.0F).endVertex();
+         var3.pos(var2, var5, var6, var9).color(var12, var13, var14, 1.0F).endVertex();
+         var3.pos(var2, var5, var7, var10).color(var12, var13, var14, 1.0F).endVertex();
+         var3.pos(var2, var4, var7, var11).color(var12, var13, var14, 1.0F).endVertex();
       }
    }
 

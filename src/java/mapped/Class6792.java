@@ -2,12 +2,12 @@ package mapped;
 
 public class Class6792 {
    private static String[] field29587;
-   public static final Class6792 field29588 = new Class6792(new Class7680(), new Class7680(), new Class7680(1.0F, 1.0F, 1.0F));
-   public final Class7680 field29589;
-   public final Class7680 field29590;
-   public final Class7680 field29591;
+   public static final Class6792 field29588 = new Class6792(new Vector3f(), new Vector3f(), new Vector3f(1.0F, 1.0F, 1.0F));
+   public final Vector3f field29589;
+   public final Vector3f field29590;
+   public final Vector3f field29591;
 
-   public Class6792(Class7680 var1, Class7680 var2, Class7680 var3) {
+   public Class6792(Vector3f var1, Vector3f var2, Vector3f var3) {
       this.field29589 = var1.method25287();
       this.field29590 = var2.method25287();
       this.field29591 = var3.method25287();
@@ -25,7 +25,7 @@ public class Class6792 {
 
          int var8 = !var1 ? 1 : -1;
          var2.translate((double)((float)var8 * this.field29590.method25269()), (double)this.field29590.method25270(), (double)this.field29590.method25271());
-         var2.method35293(new Class8661(var5, var6, var7, true));
+         var2.rotate(new Class8661(var5, var6, var7, true));
          var2.method35292(this.field29591.method25269(), this.field29591.method25270(), this.field29591.method25271());
       }
    }

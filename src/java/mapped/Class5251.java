@@ -42,7 +42,7 @@ public class Class5251 extends Module {
                 }
 
                 String var7 = mc.player.getName().getString().toLowerCase();
-                if (Client.getInstance().getModuleManager().getModuleByClass(Class5364.class).isEnabled()) {
+                if (Client.getInstance().getModuleManager().getModuleByClass(NameProtect.class).isEnabled()) {
                 }
 
                 if (this.field23626.getBooleanValueFromSetttingName("AutoL")) {

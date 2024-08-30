@@ -238,11 +238,11 @@ public class TextureAtlasSprite implements AutoCloseable {
       return Class9431.method36205(this.field9325);
    }
 
-   public float method7459() {
+   public float getMinU() {
       return this.field9333;
    }
 
-   public float method7460() {
+   public float getMaxU() {
       return this.field9334;
    }
 
@@ -251,11 +251,11 @@ public class TextureAtlasSprite implements AutoCloseable {
       return this.field9333 + var5 * (float)var1 / 16.0F;
    }
 
-   public float method7462() {
+   public float getMinV() {
       return this.field9335;
    }
 
-   public float method7463() {
+   public float getMaxV() {
       return this.field9336;
    }
 
@@ -268,7 +268,7 @@ public class TextureAtlasSprite implements AutoCloseable {
       return Class9431.method36207(this.field9325);
    }
 
-   public AtlasTexture method7466() {
+   public AtlasTexture getAtlasTexture() {
       return this.field9324;
    }
 
@@ -350,13 +350,13 @@ public class TextureAtlasSprite implements AutoCloseable {
       return Math.max(var4, var3);
    }
 
-   public float method7471() {
+   public float getUvShrinkRatio() {
       return 4.0F / this.method7470();
    }
 
    public void method7472() {
       if (this.field9326 != null) {
-         this.field9355 = !Class4501.method14213() ? true : Class4501.method14217(this);
+         this.field9355 = !SmartAnimations.isActive() ? true : SmartAnimations.method14217(this);
          if (this.field9326.method25812() <= 1) {
             this.field9355 = false;
          }

@@ -24,8 +24,8 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
       var4.translate(-var10.method11320(), -var10.method11321(), -var10.method11322());
       double var11 = 0.46875;
       var4.translate((double)var9.method539() * 0.46875, (double)var9.method540() * 0.46875, (double)var9.method541() * 0.46875);
-      var4.method35293(Class7680.field32898.method25286(var1.rotationPitch));
-      var4.method35293(Class7680.field32900.method25286(180.0F - var1.rotationYaw));
+      var4.rotate(Vector3f.field32898.rotationDegrees(var1.rotationPitch));
+      var4.rotate(Vector3f.YP.rotationDegrees(180.0F - var1.rotationYaw));
       boolean var13 = var1.method3342();
       if (!var13) {
          BlockRendererDispatcher var14 = this.field25155.getBlockRendererDispatcher();
@@ -35,7 +35,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
          var4.translate(-0.5, -0.5, -0.5);
          var14.method812()
             .method24689(
-               var4.method35296(),
+               var4.getLast(),
                var5.method25597(Class8624.method30906()),
                (BlockState)null,
                var15.method1023(var16),
@@ -45,7 +45,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
                var6,
                Class213.field798
             );
-         var4.method35295();
+         var4.pop();
       }
 
       ItemStack var19 = var1.method4090();
@@ -58,7 +58,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
          }
 
          int var21 = !var20 ? var1.method4093() : var1.method4093() % 4 * 2;
-         var4.method35293(Class7680.field32902.method25286((float)var21 * 360.0F / 8.0F));
+         var4.rotate(Vector3f.field32902.rotationDegrees((float)var21 * 360.0F / 8.0F));
          if (!Class9299.method35085(Class9299.field42988, var1, this, var4, var5, var6)) {
             if (!var20) {
                var4.method35292(0.5F, 0.5F, 0.5F);
@@ -66,7 +66,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
                   this.field25156.method789(var19, Class2327.field15932, var6, Class213.field798, var4, var5);
                }
             } else {
-               var4.method35293(Class7680.field32902.method25286(180.0F));
+               var4.rotate(Vector3f.field32902.rotationDegrees(180.0F));
                float var17 = 0.0078125F;
                var4.method35292(0.0078125F, 0.0078125F, 0.0078125F);
                var4.translate(-64.0, -64.0, 0.0);
@@ -79,7 +79,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
          }
       }
 
-      var4.method35295();
+      var4.pop();
    }
 
    public Vector3d method17867(ItemFrameEntity var1, float var2) {

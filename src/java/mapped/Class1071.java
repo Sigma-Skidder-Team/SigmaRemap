@@ -10,7 +10,7 @@ public interface Class1071 {
    float method4980();
 
    default boolean method4988(Class1006 var1, Class6500 var2, Vector3d var3) {
-      if (var1.method3066()) {
+      if (var1.isAlive()) {
          Entity var6 = !var1.method3408().isEmpty() ? var1.method3408().get(0) : null;
          if (var1.isBeingRidden() && var1.method4277() && var6 instanceof PlayerEntity) {
             var1.rotationYaw = var6.rotationYaw;

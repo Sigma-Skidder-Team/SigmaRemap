@@ -15,7 +15,7 @@ import java.util.function.Predicate;
 
 public class Class1038 extends Class1009 {
    private static final UUID field5758 = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
-   private static final Class9689 field5759 = new Class9689(field5758, "Baby speed boost", 0.5, Class2045.field13353);
+   private static final Class9689 field5759 = new Class9689(field5758, "Baby speed boost", 0.5, AttributeModifierOperation.field13353);
    private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>method35441(Class1038.class, Class7784.field33398);
    private static final DataParameter<Integer> field5761 = EntityDataManager.<Integer>method35441(Class1038.class, Class7784.field33391);
    private static final DataParameter<Boolean> field5762 = EntityDataManager.<Boolean>method35441(Class1038.class, Class7784.field33398);
@@ -54,11 +54,11 @@ public class Class1038 extends Class1009 {
 
    public static Class7037 method4653() {
       return Class1009.method4343()
-         .method21849(Class9173.field42106, 35.0)
-         .method21849(Class9173.field42108, 0.23F)
-         .method21849(Class9173.field42110, 3.0)
-         .method21849(Class9173.field42113, 2.0)
-         .method21848(Class9173.field42116);
+         .method21849(Attributes.field42106, 35.0)
+         .method21849(Attributes.MOVEMENT_SPEED, 0.23F)
+         .method21849(Attributes.field42110, 3.0)
+         .method21849(Attributes.field42113, 2.0)
+         .method21848(Attributes.field42116);
    }
 
    @Override
@@ -116,7 +116,7 @@ public class Class1038 extends Class1009 {
    public void method4308(boolean var1) {
       this.method3210().method35446(field5760, var1);
       if (this.world != null && !this.world.isRemote) {
-         Class9805 var4 = this.method3085(Class9173.field42108);
+         Class9805 var4 = this.method3085(Attributes.MOVEMENT_SPEED);
          var4.method38670(field5759);
          if (var1) {
             var4.method38667(field5759);
@@ -139,7 +139,7 @@ public class Class1038 extends Class1009 {
 
    @Override
    public void tick() {
-      if (!this.world.isRemote && this.method3066() && !this.method4305()) {
+      if (!this.world.isRemote && this.isAlive() && !this.method4305()) {
          if (!this.method4654()) {
             if (this.method4645()) {
                if (!this.method3263(Class8953.field40469)) {
@@ -164,7 +164,7 @@ public class Class1038 extends Class1009 {
 
    @Override
    public void method2871() {
-      if (this.method3066()) {
+      if (this.isAlive()) {
          boolean var3 = this.method4660() && this.method4310();
          if (var3) {
             ItemStack var4 = this.method2943(Class2106.field13736);
@@ -226,7 +226,7 @@ public class Class1038 extends Class1009 {
 
          if (var6 != null
             && this.world.method6997() == Class2197.field14354
-            && (double)this.rand.nextFloat() < this.method3086(Class9173.field42116)
+            && (double)this.rand.nextFloat() < this.method3086(Attributes.field42116)
             && this.world.method6789().method17135(Class5462.field24226)) {
             int var7 = MathHelper.floor(this.getPosX());
             int var8 = MathHelper.floor(this.getPosY());
@@ -250,8 +250,8 @@ public class Class1038 extends Class1009 {
                      var10.method4233(var6);
                      var10.method4276(var5, this.world.method6807(var10.getPosition()), Class2202.field14400, (Class5093)null, (CompoundNBT)null);
                      var5.method6995(var10);
-                     this.method3085(Class9173.field42116).method38668(new Class9689("Zombie reinforcement caller charge", -0.05F, Class2045.field13352));
-                     var10.method3085(Class9173.field42116).method38668(new Class9689("Zombie reinforcement callee charge", -0.05F, Class2045.field13352));
+                     this.method3085(Attributes.field42116).method38668(new Class9689("Zombie reinforcement caller charge", -0.05F, AttributeModifierOperation.ADDITION));
+                     var10.method3085(Attributes.field42116).method38668(new Class9689("Zombie reinforcement callee charge", -0.05F, AttributeModifierOperation.ADDITION));
                      break;
                   }
                }
@@ -430,22 +430,22 @@ public class Class1038 extends Class1009 {
 
    public void method4662(float var1) {
       this.method4663();
-      this.method3085(Class9173.field42107).method38668(new Class9689("Random spawn bonus", this.rand.nextDouble() * 0.05F, Class2045.field13352));
+      this.method3085(Attributes.field42107).method38668(new Class9689("Random spawn bonus", this.rand.nextDouble() * 0.05F, AttributeModifierOperation.ADDITION));
       double var4 = this.rand.nextDouble() * 1.5 * (double)var1;
       if (var4 > 1.0) {
-         this.method3085(Class9173.field42106).method38668(new Class9689("Random zombie-spawn bonus", var4, Class2045.field13354));
+         this.method3085(Attributes.field42106).method38668(new Class9689("Random zombie-spawn bonus", var4, AttributeModifierOperation.MULTIPLY_TOTAL));
       }
 
       if (this.rand.nextFloat() < var1 * 0.05F) {
-         this.method3085(Class9173.field42116)
-            .method38668(new Class9689("Leader zombie bonus", this.rand.nextDouble() * 0.25 + 0.5, Class2045.field13352));
-         this.method3085(Class9173.field42105).method38668(new Class9689("Leader zombie bonus", this.rand.nextDouble() * 3.0 + 1.0, Class2045.field13354));
+         this.method3085(Attributes.field42116)
+            .method38668(new Class9689("Leader zombie bonus", this.rand.nextDouble() * 0.25 + 0.5, AttributeModifierOperation.ADDITION));
+         this.method3085(Attributes.field42105).method38668(new Class9689("Leader zombie bonus", this.rand.nextDouble() * 3.0 + 1.0, AttributeModifierOperation.MULTIPLY_TOTAL));
          this.method4656(this.method4642());
       }
    }
 
    public void method4663() {
-      this.method3085(Class9173.field42116).method38661(this.rand.nextDouble() * 0.1F);
+      this.method3085(Attributes.field42116).method38661(this.rand.nextDouble() * 0.1F);
    }
 
    @Override

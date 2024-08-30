@@ -192,7 +192,7 @@ public class Class1708 extends Class1709 implements AutoCloseable {
    }
 
    @Override
-   public void method7444(Class9367 var1) {
+   public void method7444(Matrix4f var1) {
       ((Buffer)this.field9311).position(0);
       var1.method35502(this.field9311);
       this.method7433();

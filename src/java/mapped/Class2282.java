@@ -15,7 +15,7 @@ public enum Class2282 implements Class2283 {
    private final float field15112;
    private final float field15113;
    private final int field15114;
-   private final Class8112<Class120> field15115;
+   private final LazyValue<Class120> field15115;
    private static final Class2282[] field15116 = new Class2282[]{field15104, field15105, field15106, field15107, field15108, field15109};
 
    private Class2282(int var3, int var4, float var5, float var6, int var7, Supplier<Class120> var8) {
@@ -24,7 +24,7 @@ public enum Class2282 implements Class2283 {
       this.field15112 = var5;
       this.field15113 = var6;
       this.field15114 = var7;
-      this.field15115 = new Class8112<Class120>(var8);
+      this.field15115 = new LazyValue<Class120>(var8);
    }
 
    @Override
@@ -54,6 +54,6 @@ public enum Class2282 implements Class2283 {
 
    @Override
    public Class120 method9015() {
-      return this.field15115.method28097();
+      return this.field15115.getValue();
    }
 }

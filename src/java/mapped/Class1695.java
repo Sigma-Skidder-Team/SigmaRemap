@@ -38,19 +38,19 @@ public class Class1695 implements AutoCloseable {
       boolean var7 = false;
       boolean var8 = false;
       float var9 = 0.0F;
-      Class9367 var10 = var1.method35296().method32361();
+      Matrix4f var10 = var1.getLast().getMatrix();
       Class5422 var11 = var2.method25597(this.field9233);
-      var11.method17040(var10, 0.0F, 128.0F, -0.01F).color(255, 255, 255, 255).method17027(0.0F, 1.0F).method17034(var4).endVertex();
-      var11.method17040(var10, 128.0F, 128.0F, -0.01F).color(255, 255, 255, 255).method17027(1.0F, 1.0F).method17034(var4).endVertex();
-      var11.method17040(var10, 128.0F, 0.0F, -0.01F).color(255, 255, 255, 255).method17027(1.0F, 0.0F).method17034(var4).endVertex();
-      var11.method17040(var10, 0.0F, 0.0F, -0.01F).color(255, 255, 255, 255).method17027(0.0F, 0.0F).method17034(var4).endVertex();
+      var11.pos(var10, 0.0F, 128.0F, -0.01F).color(255, 255, 255, 255).tex(0.0F, 1.0F).method17034(var4).endVertex();
+      var11.pos(var10, 128.0F, 128.0F, -0.01F).color(255, 255, 255, 255).tex(1.0F, 1.0F).method17034(var4).endVertex();
+      var11.pos(var10, 128.0F, 0.0F, -0.01F).color(255, 255, 255, 255).tex(1.0F, 0.0F).method17034(var4).endVertex();
+      var11.pos(var10, 0.0F, 0.0F, -0.01F).color(255, 255, 255, 255).tex(0.0F, 0.0F).method17034(var4).endVertex();
       int var12 = 0;
 
       for (Class7982 var14 : this.field9231.field32327.values()) {
          if (!var3 || var14.method27130()) {
             var1.push();
             var1.translate((double)(0.0F + (float)var14.method27127() / 2.0F + 64.0F), (double)(0.0F + (float)var14.method27128() / 2.0F + 64.0F), -0.02F);
-            var1.method35293(Class7680.field32902.method25286((float)(var14.method27129() * 360) / 16.0F));
+            var1.rotate(Vector3f.field32902.rotationDegrees((float)(var14.method27129() * 360) / 16.0F));
             var1.method35292(4.0F, 4.0F, 3.0F);
             var1.translate(-0.125, 0.125, 0.0);
             byte var15 = var14.method27125();
@@ -58,30 +58,30 @@ public class Class1695 implements AutoCloseable {
             float var17 = (float)(var15 / 16 + 0) / 16.0F;
             float var18 = (float)(var15 % 16 + 1) / 16.0F;
             float var19 = (float)(var15 / 16 + 1) / 16.0F;
-            Class9367 var20 = var1.method35296().method32361();
+            Matrix4f var20 = var1.getLast().getMatrix();
             float var21 = -0.001F;
             Class5422 var22 = var2.method25597(Class194.method599());
-            var22.method17040(var20, -1.0F, 1.0F, (float)var12 * -0.001F)
+            var22.pos(var20, -1.0F, 1.0F, (float)var12 * -0.001F)
                .color(255, 255, 255, 255)
-               .method17027(var16, var17)
+               .tex(var16, var17)
                .method17034(var4)
                .endVertex();
-            var22.method17040(var20, 1.0F, 1.0F, (float)var12 * -0.001F)
+            var22.pos(var20, 1.0F, 1.0F, (float)var12 * -0.001F)
                .color(255, 255, 255, 255)
-               .method17027(var18, var17)
+               .tex(var18, var17)
                .method17034(var4)
                .endVertex();
-            var22.method17040(var20, 1.0F, -1.0F, (float)var12 * -0.001F)
+            var22.pos(var20, 1.0F, -1.0F, (float)var12 * -0.001F)
                .color(255, 255, 255, 255)
-               .method17027(var18, var19)
+               .tex(var18, var19)
                .method17034(var4)
                .endVertex();
-            var22.method17040(var20, -1.0F, -1.0F, (float)var12 * -0.001F)
+            var22.pos(var20, -1.0F, -1.0F, (float)var12 * -0.001F)
                .color(255, 255, 255, 255)
-               .method17027(var16, var19)
+               .tex(var16, var19)
                .method17034(var4)
                .endVertex();
-            var1.method35295();
+            var1.pop();
             if (var14.method27131() != null) {
                FontRenderer var23 = Minecraft.getInstance().fontRenderer;
                ITextComponent var24 = var14.method27131();
@@ -95,8 +95,8 @@ public class Class1695 implements AutoCloseable {
                );
                var1.method35292(var26, var26, 1.0F);
                var1.translate(0.0, 0.0, -0.1F);
-               var23.method38812(var24, 0.0F, 0.0F, -1, false, var1.method35296().method32361(), var2, false, Integer.MIN_VALUE, var4);
-               var1.method35295();
+               var23.method38812(var24, 0.0F, 0.0F, -1, false, var1.getLast().getMatrix(), var2, false, Integer.MIN_VALUE, var4);
+               var1.pop();
             }
 
             var12++;

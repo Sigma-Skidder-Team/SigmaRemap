@@ -16,35 +16,35 @@ public abstract class Class4510 {
       RenderSystem.method27834(Class2339.field15990, Class1981.field12927);
    }, () -> {
       RenderSystem.disableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21739 = new Class4525("lightning_transparency", () -> {
       RenderSystem.enableBlend();
       RenderSystem.method27834(Class2339.field15997, Class1981.field12927);
    }, () -> {
       RenderSystem.disableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21740 = new Class4525("glint_transparency", () -> {
       RenderSystem.enableBlend();
       RenderSystem.method27836(Class2339.field15999, Class1981.field12927, Class2339.field16000, Class1981.field12927);
    }, () -> {
       RenderSystem.disableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21741 = new Class4525("crumbling_transparency", () -> {
       RenderSystem.enableBlend();
       RenderSystem.method27836(Class2339.field15989, Class1981.field12935, Class2339.field15990, Class1981.field12936);
    }, () -> {
       RenderSystem.disableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21742 = new Class4525("translucent_transparency", () -> {
       RenderSystem.enableBlend();
       RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12932);
    }, () -> {
       RenderSystem.disableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
    });
    public static final Class4511 field21743 = new Class4511(0.0F);
    public static final Class4511 field21744 = new Class4511(0.003921569F);

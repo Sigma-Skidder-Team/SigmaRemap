@@ -601,7 +601,7 @@ public abstract class RenderType extends Class4510 {
          var1 == field21762,
          () -> method14346(
                "outline",
-               DefaultVertexFormats.field43345,
+               DefaultVertexFormats.POSITION_COLOR_TEX,
                7,
                256,
                Class9484.method36614()
@@ -789,10 +789,10 @@ public abstract class RenderType extends Class4510 {
          }
 
          if (var1.field24134 != null) {
-            Class4501.method14216(var1.field24134);
+            SmartAnimations.method14216(var1.field24134);
          }
 
-         var1.method17065();
+         var1.finishDrawing();
          this.method14231();
          if (Class7944.method26921()) {
             Class8496.method30082(false);
@@ -800,7 +800,7 @@ public abstract class RenderType extends Class4510 {
             Class5463.method17164(this, var1);
          }
 
-         Class4395.method13895(var1);
+         WorldVertexBufferUploader.draw(var1);
          if (Class7944.method26921()) {
             Class5463.method17165(this, var1);
             Shaders.method33118();

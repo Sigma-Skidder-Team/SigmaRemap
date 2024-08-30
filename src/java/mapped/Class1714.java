@@ -6,7 +6,7 @@ import net.minecraft.client.Minecraft;
 public final class Class1714 extends TextureAtlasSprite {
    private static final ResourceLocation field9360 = new ResourceLocation("missingno");
    private static Class291 field9361;
-   private static final Class8112<Class1806> field9362 = new Class8112<Class1806>(() -> {
+   private static final LazyValue<Class1806> field9362 = new LazyValue<Class1806>(() -> {
       Class1806 var2 = new Class1806(16, 16, false);
 
       for (int var5 = 0; var5 < 16; var5++) {
@@ -31,7 +31,7 @@ public final class Class1714 extends TextureAtlasSprite {
    }
 
    private Class1714(AtlasTexture var1, int var2, int var3, int var4, int var5, int var6) {
-      super(var1, field9325, var2, var3, var4, var5, var6, field9362.method28097());
+      super(var1, field9325, var2, var3, var4, var5, var6, field9362.getValue());
    }
 
    public static Class1714 method7512(AtlasTexture var0, int var1, int var2, int var3, int var4, int var5) {
@@ -53,7 +53,7 @@ public final class Class1714 extends TextureAtlasSprite {
 
    public static Class291 method7515() {
       if (field9361 == null) {
-         field9361 = new Class291(field9362.method28097());
+         field9361 = new Class291(field9362.getValue());
          Minecraft.getInstance().getTextureManager().method1073(field9360, field9361);
       }
 

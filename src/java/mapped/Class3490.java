@@ -5,10 +5,10 @@ import net.minecraft.util.math.BlockPos;
 public class Class3490 extends Class3194 {
    private static String[] field19356;
    public static final VoxelShape field19357 = Block.method11539(5.0, 0.0, 5.0, 11.0, 10.0, 11.0);
-   private final Class7144 field19358;
+   private final Effect field19358;
    private final int field19359;
 
-   public Class3490(Class7144 var1, int var2, AbstractBlock var3) {
+   public Class3490(Effect var1, int var2, AbstractBlock var3) {
       super(var3);
       this.field19358 = var1;
       if (!var1.method22292()) {
@@ -29,7 +29,7 @@ public class Class3490 extends Class3194 {
       return Class2260.field14703;
    }
 
-   public Class7144 method12186() {
+   public Effect method12186() {
       return this.field19358;
    }
 

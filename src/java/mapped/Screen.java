@@ -135,7 +135,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
          Tessellator var15 = Tessellator.getInstance();
          BufferBuilder var16 = var15.getBuffer();
          var16.begin(7, DefaultVertexFormats.POSITION_COLOR);
-         Class9367 var17 = var1.method35296().method32361();
+         Matrix4f var17 = var1.getLast().getMatrix();
          method5689(var17, var16, var21 - 3, var22 - 4, var21 + var7 + 3, var22 - 3, 400, -267386864, -267386864);
          method5689(var17, var16, var21 - 3, var22 + var23 + 3, var21 + var7 + 3, var22 + var23 + 4, 400, -267386864, -267386864);
          method5689(var17, var16, var21 - 3, var22 - 3, var21 + var7 + 3, var22 + var23 + 3, 400, -267386864, -267386864);
@@ -148,10 +148,10 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
          RenderSystem.enableDepthTest();
          RenderSystem.disableTexture();
          RenderSystem.enableBlend();
-         RenderSystem.method27938();
+         RenderSystem.defaultBlendFunc();
          RenderSystem.method27866(7425);
-         var16.method17065();
-         Class4395.method13895(var16);
+         var16.finishDrawing();
+         WorldVertexBufferUploader.draw(var16);
          RenderSystem.method27866(7424);
          RenderSystem.disableBlend();
          RenderSystem.enableTexture();
@@ -172,7 +172,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
          }
 
          var18.method25602();
-         var1.method35295();
+         var1.pop();
       }
    }
 
@@ -313,15 +313,15 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
       float var6 = 32.0F;
       var5.begin(7, DefaultVertexFormats.field43346);
       var5.pos(0.0, (double)this.field4565, 0.0)
-         .method17027(0.0F, (float)this.field4565 / 32.0F + (float)var1)
+         .tex(0.0F, (float)this.field4565 / 32.0F + (float)var1)
          .color(64, 64, 64, 255)
          .endVertex();
       var5.pos((double)this.field4564, (double)this.field4565, 0.0)
-         .method17027((float)this.field4564 / 32.0F, (float)this.field4565 / 32.0F + (float)var1)
+         .tex((float)this.field4564 / 32.0F, (float)this.field4565 / 32.0F + (float)var1)
          .color(64, 64, 64, 255)
          .endVertex();
-      var5.pos((double)this.field4564, 0.0, 0.0).method17027((float)this.field4564 / 32.0F, (float)var1).color(64, 64, 64, 255).endVertex();
-      var5.pos(0.0, 0.0, 0.0).method17027(0.0F, (float)var1).color(64, 64, 64, 255).endVertex();
+      var5.pos((double)this.field4564, 0.0, 0.0).tex((float)this.field4564 / 32.0F, (float)var1).color(64, 64, 64, 255).endVertex();
+      var5.pos(0.0, 0.0, 0.0).tex(0.0F, (float)var1).color(64, 64, 64, 255).endVertex();
       var4.draw();
    }
 
@@ -344,20 +344,20 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
 
    public static boolean hasControlDown() {
       return !Minecraft.IS_RUNNING_ON_MAC
-         ? Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 341)
-            || Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 345)
-         : Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 343)
-            || Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 347);
+         ? InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 341)
+            || InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 345)
+         : InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 343)
+            || InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 347);
    }
 
    public static boolean method2476() {
-      return Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 340)
-         || Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 344);
+      return InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 340)
+         || InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 344);
    }
 
    public static boolean method2477() {
-      return Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 342)
-         || Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 346);
+      return InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 342)
+         || InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 346);
    }
 
    public static boolean method2478(int var0) {

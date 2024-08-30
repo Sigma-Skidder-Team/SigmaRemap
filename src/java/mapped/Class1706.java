@@ -15,7 +15,7 @@ public class Class1706 implements AutoCloseable {
    private final List<String> field9297 = Lists.newArrayList();
    private final List<Integer> field9298 = Lists.newArrayList();
    private final List<Integer> field9299 = Lists.newArrayList();
-   private Class9367 field9300;
+   private Matrix4f field9300;
 
    public Class1706(IResourceManager var1, String var2, Framebuffer var3, Framebuffer var4) throws IOException {
       this.field9293 = new Class1808(var1, var2);
@@ -35,7 +35,7 @@ public class Class1706 implements AutoCloseable {
       this.field9299.add(this.field9299.size(), var4);
    }
 
-   public void method7408(Class9367 var1) {
+   public void method7408(Matrix4f var1) {
       this.field9300 = var1;
    }
 
@@ -67,8 +67,8 @@ public class Class1706 implements AutoCloseable {
       var7.pos((double)var4, 0.0, 500.0).color(255, 255, 255, 255).endVertex();
       var7.pos((double)var4, (double)var5, 500.0).color(255, 255, 255, 255).endVertex();
       var7.pos(0.0, (double)var5, 500.0).color(255, 255, 255, 255).endVertex();
-      var7.method17065();
-      Class4395.method13895(var7);
+      var7.finishDrawing();
+      WorldVertexBufferUploader.draw(var7);
       RenderSystem.depthFunc(515);
       this.field9293.method7933();
       this.field9295.unbindFramebuffer();

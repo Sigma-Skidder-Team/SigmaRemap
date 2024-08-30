@@ -39,7 +39,7 @@ public class Class2010 extends Class2009 {
                      (float)Class8066.method27763(this.field13078) + var7 - (float)Class8066.method27754(this.field13078).getZ()
                   );
                   Class7457.method24119(this.field13079, var9.method17060());
-                  var9.method17065();
+                  var9.finishDrawing();
                   if (!this.field13076.get()) {
                      CompletableFuture<Class2046> var10 = this.field13078
                         .field34637

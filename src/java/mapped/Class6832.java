@@ -37,9 +37,9 @@ public class Class6832 extends Class6829 {
          this.field29707.rotationYaw = this.method20816(this.field29707.rotationYaw, var11, 90.0F);
          float var12;
          if (!this.field29707.method3226()) {
-            var12 = (float)(this.field29711 * this.field29707.method3086(Class9173.field42109));
+            var12 = (float)(this.field29711 * this.field29707.method3086(Attributes.field42109));
          } else {
-            var12 = (float)(this.field29711 * this.field29707.method3086(Class9173.field42108));
+            var12 = (float)(this.field29711 * this.field29707.method3086(Attributes.MOVEMENT_SPEED));
          }
 
          this.field29707.method3113(var12);

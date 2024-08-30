@@ -198,7 +198,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          Pair var14 = var2.method18271();
          if (var14 != null) {
             TextureAtlasSprite var13 = this.mc.getAtlasSpriteGetter((ResourceLocation)var14.getFirst()).apply((ResourceLocation)var14.getSecond());
-            this.mc.getTextureManager().bindTexture(var13.method7466().method1100());
+            this.mc.getTextureManager().bindTexture(var13.getAtlasTexture().getTextureLocation());
             method5695(var1, var5, var6, this.method5702(), 16, 16, var13);
             var9 = true;
          }
@@ -259,7 +259,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       if (super.method1958(var1, var3, var5)) {
          return true;
       } else {
-         boolean var8 = this.mc.gameSettings.keyBindPickBlock.method8520(var5);
+         boolean var8 = this.mc.gameSettings.keyBindPickBlock.matchesMouseKey(var5);
          Class5839 var9 = this.method2621(var1, var3);
          long var10 = Util.milliTime();
          this.field4751 = this.field4733 == var9 && var10 - this.field4749 < 250L && this.field4750 == var5;
@@ -293,7 +293,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                         this.field4743.clear();
                         if (var5 != 0) {
                            if (var5 != 1) {
-                              if (this.mc.gameSettings.keyBindPickBlock.method8520(var5)) {
+                              if (this.mc.gameSettings.keyBindPickBlock.matchesMouseKey(var5)) {
                                  this.field4745 = 2;
                               }
                            } else {
@@ -303,13 +303,13 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                            this.field4745 = 0;
                         }
                      } else {
-                        if (this.mc.gameSettings.keyBindPickBlock.method8520(var5)) {
+                        if (this.mc.gameSettings.keyBindPickBlock.matchesMouseKey(var5)) {
                            this.method2626(var9, var15, var5, Class2259.field14697);
                         } else {
                            boolean var16 = var15 != -999
                               && (
-                                 Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 340)
-                                    || Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 344)
+                                 InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 340)
+                                    || InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 344)
                               );
                            Class2259 var17 = Class2259.field14694;
                            if (!var16) {
@@ -346,13 +346,13 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
    private void method2622(int var1) {
       if (this.field4729 != null && this.mc.player.inventory.method4057().isEmpty()) {
-         if (this.mc.gameSettings.keyBindSwapHands.method8520(var1)) {
+         if (this.mc.gameSettings.keyBindSwapHands.matchesMouseKey(var1)) {
             this.method2626(this.field4729, this.field4729.field25579, 40, Class2259.field14696);
             return;
          }
 
          for (int var4 = 0; var4 < 9; var4++) {
-            if (this.mc.gameSettings.keyBindsHotbar[var4].method8520(var1)) {
+            if (this.mc.gameSettings.keyBindsHotbar[var4].matchesMouseKey(var1)) {
                this.method2626(this.field4729, this.field4729.field25579, var4, Class2259.field14696);
             }
          }
@@ -486,11 +486,11 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
             this.method2626((Class5839)null, -999, Class5812.method18145(2, this.field4745), Class2259.field14699);
          } else if (!this.mc.player.inventory.method4057().isEmpty()) {
-            if (!this.mc.gameSettings.keyBindPickBlock.method8520(var5)) {
+            if (!this.mc.gameSettings.keyBindPickBlock.matchesMouseKey(var5)) {
                boolean var13 = var12 != -999
                   && (
-                     Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 340)
-                        || Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 344)
+                     InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 340)
+                        || InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 344)
                   );
                if (var13) {
                   this.field4752 = var8 != null && var8.method18266() ? var8.method18265().copy() : ItemStack.EMPTY;
@@ -534,11 +534,11 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    @Override
    public boolean method1920(int var1, int var2, int var3) {
       if (!super.method1920(var1, var2, var3)) {
-         if (!this.mc.gameSettings.field44639.method8519(var1, var2)) {
+         if (!this.mc.gameSettings.keyBindInventory.matchesKey(var1, var2)) {
             this.method2627(var1, var2);
             if (this.field4729 != null && this.field4729.method18266()) {
-               if (!this.mc.gameSettings.keyBindPickBlock.method8519(var1, var2)) {
-                  if (this.mc.gameSettings.keyBindDrop.method8519(var1, var2)) {
+               if (!this.mc.gameSettings.keyBindPickBlock.matchesKey(var1, var2)) {
+                  if (this.mc.gameSettings.keyBindDrop.matchesKey(var1, var2)) {
                      this.method2626(this.field4729, this.field4729.field25579, ! hasControlDown() ? 0 : 1, Class2259.field14698);
                   }
                } else {
@@ -558,13 +558,13 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
    public boolean method2627(int var1, int var2) {
       if (this.mc.player.inventory.method4057().isEmpty() && this.field4729 != null) {
-         if (this.mc.gameSettings.keyBindSwapHands.method8519(var1, var2)) {
+         if (this.mc.gameSettings.keyBindSwapHands.matchesKey(var1, var2)) {
             this.method2626(this.field4729, this.field4729.field25579, 40, Class2259.field14696);
             return true;
          }
 
          for (int var5 = 0; var5 < 9; var5++) {
-            if (this.mc.gameSettings.keyBindsHotbar[var5].method8519(var1, var2)) {
+            if (this.mc.gameSettings.keyBindsHotbar[var5].matchesKey(var1, var2)) {
                this.method2626(this.field4729, this.field4729.field25579, var5, Class2259.field14696);
                return true;
             }
@@ -589,7 +589,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    @Override
    public void tick() {
       super.tick();
-      if (!this.mc.player.method3066() || this.mc.player.removed) {
+      if (!this.mc.player.isAlive() || this.mc.player.removed) {
          this.mc.player.method2772();
       }
    }

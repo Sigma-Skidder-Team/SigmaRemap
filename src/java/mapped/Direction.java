@@ -86,7 +86,7 @@ public enum Direction implements Class83 {
       return new Direction[]{var0, var1, var2, var2.method536(), var1.method536(), var0.method536()};
    }
 
-   public static Direction method531(Class9367 var0, Direction var1) {
+   public static Direction method531(Matrix4f var0, Direction var1) {
       Class1998 var4 = var1.method556();
       Class7755 var5 = new Class7755((float)var4.getX(), (float)var4.getY(), (float)var4.getZ(), 0.0F);
       var5.method25709(var0);
@@ -94,23 +94,23 @@ public enum Direction implements Class83 {
    }
 
    public Class8661 method532() {
-      Class8661 var3 = Class7680.field32898.method25286(90.0F);
+      Class8661 var3 = Vector3f.field32898.rotationDegrees(90.0F);
       switch (Class7747.field33265[this.ordinal()]) {
          case 1:
-            return Class7680.field32898.method25286(180.0F);
+            return Vector3f.field32898.rotationDegrees(180.0F);
          case 2:
             return Class8661.field39030.method31189();
          case 3:
-            var3.method31182(Class7680.field32902.method25286(180.0F));
+            var3.method31182(Vector3f.field32902.rotationDegrees(180.0F));
             return var3;
          case 4:
             return var3;
          case 5:
-            var3.method31182(Class7680.field32902.method25286(90.0F));
+            var3.method31182(Vector3f.field32902.rotationDegrees(90.0F));
             return var3;
          case 6:
          default:
-            var3.method31182(Class7680.field32902.method25286(-90.0F));
+            var3.method31182(Vector3f.field32902.rotationDegrees(-90.0F));
             return var3;
       }
    }
@@ -173,8 +173,8 @@ public enum Direction implements Class83 {
       return this.field684.getZ();
    }
 
-   public Class7680 method542() {
-      return new Class7680((float)this.method539(), (float)this.method540(), (float)this.method541());
+   public Vector3f method542() {
+      return new Vector3f((float)this.method539(), (float)this.method540(), (float)this.method541());
    }
 
    public String method543() {

@@ -14,7 +14,7 @@ public class Class8156 {
          String var4 = "http://s.optifine.net/capes/" + var3 + ".png";
          ResourceLocation var5 = new ResourceLocation("capeof/" + var3);
          TextureManager var6 = Minecraft.getInstance().getTextureManager();
-         Class290 var7 = var6.method1076(var5);
+         Class290 var7 = var6.getTexture(var5);
          if (var7 != null && var7 instanceof Class294) {
             Class294 var8 = (Class294)var7;
             if (var8.field1147 != null) {
@@ -61,7 +61,7 @@ public class Class8156 {
       String var3 = var0.method5379();
       ResourceLocation var4 = new ResourceLocation("capeof/" + var3);
       TextureManager var5 = Class7944.method26861();
-      Class290 var6 = var5.method1076(var4);
+      Class290 var6 = var5.getTexture(var4);
       if (var6 instanceof Class293) {
          Class293 var7 = (Class293)var6;
          var7.method1132();

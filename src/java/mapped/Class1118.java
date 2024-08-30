@@ -66,7 +66,7 @@ public class Class1118 extends AbstractClientPlayerEntity {
 
    public static Class294 method5375(ResourceLocation var0, String var1) {
       TextureManager var4 = Minecraft.getInstance().getTextureManager();
-      Object var5 = var4.method1076(var0);
+      Object var5 = var4.getTexture(var0);
       if (var5 == null) {
          var5 = new Class294(
             (File)null,

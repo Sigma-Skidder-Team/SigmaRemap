@@ -48,10 +48,10 @@ public class Class1030 extends Class1025 {
 
    public static Class7037 method4589() {
       return Class1009.method4343()
-         .method21849(Class9173.field42108, 0.35F)
-         .method21849(Class9173.field42106, 12.0)
-         .method21849(Class9173.field42105, 24.0)
-         .method21849(Class9173.field42110, 5.0);
+         .method21849(Attributes.MOVEMENT_SPEED, 0.35F)
+         .method21849(Attributes.field42106, 12.0)
+         .method21849(Attributes.field42105, 24.0)
+         .method21849(Attributes.field42110, 5.0);
    }
 
    @Override

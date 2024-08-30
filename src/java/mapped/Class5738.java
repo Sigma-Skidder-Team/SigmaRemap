@@ -16,17 +16,17 @@ public class Class5738 extends Class5715<Class904> {
          var4.push();
          var4.push();
          var4.method35292(0.5F, 0.5F, 0.5F);
-         var4.method35293(this.field25097.method32230());
-         var4.method35293(Class7680.field32900.method25286(180.0F));
-         Class8892 var10 = var4.method35296();
-         Class9367 var11 = var10.method32361();
+         var4.rotate(this.field25097.method32230());
+         var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
+         Class8892 var10 = var4.getLast();
+         Matrix4f var11 = var10.getMatrix();
          Class8967 var12 = var10.method32362();
          Class5422 var13 = var5.method25597(field25160);
          method17922(var13, var11, var12, var6, 0.0F, 0, 0, 1);
          method17922(var13, var11, var12, var6, 1.0F, 0, 1, 1);
          method17922(var13, var11, var12, var6, 1.0F, 1, 1, 0);
          method17922(var13, var11, var12, var6, 0.0F, 1, 0, 0);
-         var4.method35295();
+         var4.pop();
          int var14 = var9.method2967() != Class2205.field14418 ? -1 : 1;
          ItemStack var15 = var9.method3090();
          if (var15.getItem() != Items.field37906) {
@@ -70,7 +70,7 @@ public class Class5738 extends Class5715<Class904> {
          float var42 = (float)(var29 - var37) + var36;
          float var43 = (float)(var31 - var39);
          Class5422 var44 = var5.method25597(RenderType.method14345());
-         Class9367 var45 = var4.method35296().method32361();
+         Matrix4f var45 = var4.getLast().getMatrix();
          byte var46 = 16;
 
          for (int var47 = 0; var47 < 16; var47++) {
@@ -78,7 +78,7 @@ public class Class5738 extends Class5715<Class904> {
             method17923(var41, var42, var43, var44, var45, method17921(var47 + 1, 16));
          }
 
-         var4.method35295();
+         var4.pop();
          super.method17853(var1, var2, var3, var4, var5, var6);
       }
    }
@@ -87,18 +87,18 @@ public class Class5738 extends Class5715<Class904> {
       return (float)var0 / (float)var1;
    }
 
-   private static void method17922(Class5422 var0, Class9367 var1, Class8967 var2, int var3, float var4, int var5, int var6, int var7) {
-      var0.method17040(var1, var4 - 0.5F, (float)var5 - 0.5F, 0.0F)
+   private static void method17922(Class5422 var0, Matrix4f var1, Class8967 var2, int var3, float var4, int var5, int var6, int var7) {
+      var0.pos(var1, var4 - 0.5F, (float)var5 - 0.5F, 0.0F)
          .color(255, 255, 255, 255)
-         .method17027((float)var6, (float)var7)
+         .tex((float)var6, (float)var7)
          .method17035(Class213.field798)
          .method17034(var3)
          .method17041(var2, 0.0F, 1.0F, 0.0F)
          .endVertex();
    }
 
-   private static void method17923(float var0, float var1, float var2, Class5422 var3, Class9367 var4, float var5) {
-      var3.method17040(var4, var0 * var5, var1 * (var5 * var5 + var5) * 0.5F + 0.25F, var2 * var5).color(0, 0, 0, 255).endVertex();
+   private static void method17923(float var0, float var1, float var2, Class5422 var3, Matrix4f var4, float var5) {
+      var3.pos(var4, var0 * var5, var1 * (var5 * var5 + var5) * 0.5F + 0.25F, var2 * var5).color(0, 0, 0, 255).endVertex();
    }
 
    public ResourceLocation method17843(Class904 var1) {

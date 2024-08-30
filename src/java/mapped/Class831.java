@@ -112,7 +112,7 @@ public class Class831 extends Screen {
          this.field4610.field17651.method22680(var1, var14, 15728880, Class213.field798);
       }
 
-      var1.method35295();
+      var1.pop();
       float var15 = 0.010416667F;
       var1.translate(0.0, 0.33333334F, 0.046666667F);
       var1.method35292(0.010416667F, -0.010416667F, 0.010416667F);
@@ -120,7 +120,7 @@ public class Class831 extends Screen {
       int var17 = this.field4614.method33849();
       int var18 = this.field4614.method33851();
       int var19 = this.field4613 * 10 - this.field4615.length * 5;
-      Class9367 var20 = var1.method35296().method32361();
+      Matrix4f var20 = var1.getLast().getMatrix();
 
       for (int var21 = 0; var21 < this.field4615.length; var21++) {
          String var22 = this.field4615[var21];
@@ -167,19 +167,19 @@ public class Class831 extends Screen {
                RenderSystem.method27857();
                RenderSystem.method27859(Class2270.field14769);
                var32.begin(7, DefaultVertexFormats.POSITION_COLOR);
-               var32.method17040(var20, (float)var29, (float)(var19 + 9), 0.0F).color(0, 0, 255, 255).endVertex();
-               var32.method17040(var20, (float)var30, (float)(var19 + 9), 0.0F).color(0, 0, 255, 255).endVertex();
-               var32.method17040(var20, (float)var30, (float)var19, 0.0F).color(0, 0, 255, 255).endVertex();
-               var32.method17040(var20, (float)var29, (float)var19, 0.0F).color(0, 0, 255, 255).endVertex();
-               var32.method17065();
-               Class4395.method13895(var32);
+               var32.pos(var20, (float)var29, (float)(var19 + 9), 0.0F).color(0, 0, 255, 255).endVertex();
+               var32.pos(var20, (float)var30, (float)(var19 + 9), 0.0F).color(0, 0, 255, 255).endVertex();
+               var32.pos(var20, (float)var30, (float)var19, 0.0F).color(0, 0, 255, 255).endVertex();
+               var32.pos(var20, (float)var29, (float)var19, 0.0F).color(0, 0, 255, 255).endVertex();
+               var32.finishDrawing();
+               WorldVertexBufferUploader.draw(var32);
                RenderSystem.method27858();
                RenderSystem.enableTexture();
             }
          }
       }
 
-      var1.method35295();
+      var1.pop();
       Class7516.method24503();
       super.method1923(var1, var2, var3, var4);
    }

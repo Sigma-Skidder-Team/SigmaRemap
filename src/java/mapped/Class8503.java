@@ -297,8 +297,8 @@ public class Class8503 {
             return;
       }
 
-      float var24 = (float)var2.method7457() / (var2.method7460() - var2.method7459());
-      float var25 = (float)var2.method7458() / (var2.method7463() - var2.method7462());
+      float var24 = (float)var2.method7457() / (var2.getMaxU() - var2.getMinU());
+      float var25 = (float)var2.method7458() / (var2.getMaxV() - var2.getMinV());
       float var26 = 4.0F / Math.max(var25, var24);
       float var27 = 16.0F * (1.0F - var26);
       float var28 = 16.0F * (1.0F - var26);

@@ -64,9 +64,9 @@ public class Class5950 extends Class5942<Class967> {
       this.field25949[3].field31039 = var3;
       var1.push();
       var1.translate(0.0, 0.5625, !var8 ? 0.0 : -1.0);
-      var1.method35293(Class7680.field32898.method25286(90.0F));
+      var1.rotate(Vector3f.field32898.rotationDegrees(90.0F));
       var1.translate(0.5, 0.5, 0.5);
-      var1.method35293(Class7680.field32902.method25286(180.0F + var4.method551()));
+      var1.rotate(Vector3f.field32902.rotationDegrees(180.0F + var4.method551()));
       var1.translate(-0.5, -0.5, -0.5);
       Class5422 var11 = var5.method26200(var2, RenderType::getEntitySolid);
       this.field25947.method22680(var1, var11, var6, var7);
@@ -75,6 +75,6 @@ public class Class5950 extends Class5942<Class967> {
       this.field25949[1].method22680(var1, var11, var6, var7);
       this.field25949[2].method22680(var1, var11, var6, var7);
       this.field25949[3].method22680(var1, var11, var6, var7);
-      var1.method35295();
+      var1.pop();
    }
 }

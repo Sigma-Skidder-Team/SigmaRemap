@@ -44,7 +44,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    public BitSet field24134 = null;
    public BitSet field24135 = new BitSet();
    private ByteBuffer field24136;
-   private Class7680 field24137 = new Class7680();
+   private Vector3f field24137 = new Vector3f();
    private float[] field24138 = new float[4];
    private int[] field24139 = new int[4];
    private IntBuffer field24140;
@@ -261,7 +261,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
             }
          }
 
-         if (!Class4501.method14213()) {
+         if (!SmartAnimations.isActive()) {
             if (this.field24134 != null) {
                this.field24134 = null;
             }
@@ -278,14 +278,14 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    }
 
    @Override
-   public Class5422 method17027(float var1, float var2) {
+   public Class5422 tex(float var1, float var2) {
       if (this.field24131 != null && this.field24129 != null) {
          var1 = this.field24131.method7486(var1);
          var2 = this.field24131.method7487(var2);
          this.field24129[this.field24119 / 4] = this.field24131;
       }
 
-      return Class5426.super.method17027(var1, var2);
+      return Class5426.super.tex(var1, var2);
    }
 
    private void method17064(Class7831 var1) {
@@ -298,7 +298,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       }
    }
 
-   public void method17065() {
+   public void finishDrawing() {
       if (this.field24126) {
          this.field24126 = false;
          this.field24114.add(new Class9105(this.field24123, this.field24119, this.field24122));
@@ -656,13 +656,13 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    }
 
    @Override
-   public Class7680 method17045(Class7680 var1) {
+   public Vector3f method17045(Vector3f var1) {
       this.field24137.method25275(var1.method25269(), var1.method25270(), var1.method25271());
       return this.field24137;
    }
 
    @Override
-   public Class7680 method17046(float var1, float var2, float var3) {
+   public Vector3f method17046(float var1, float var2, float var3) {
       this.field24137.method25275(var1, var2, var3);
       return this.field24137;
    }

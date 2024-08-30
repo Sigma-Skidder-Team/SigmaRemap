@@ -47,8 +47,8 @@ public class Class8389 {
             field35973 = var5;
          }
 
-         if (Class4501.method14213()) {
-            Class4501.method14221();
+         if (SmartAnimations.isActive()) {
+            SmartAnimations.method14221();
          }
       } else {
          field35972 = 0;

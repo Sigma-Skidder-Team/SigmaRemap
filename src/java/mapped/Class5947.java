@@ -23,13 +23,13 @@ public class Class5947 extends Class5942<Class954> {
       if (!(var9.getBlock() instanceof Class3374)) {
          var3.translate(0.5, 0.5, 0.5);
          float var11 = -var9.<Direction>method23463(Class3375.field18972).method551();
-         var3.method35293(Class7680.field32900.method25286(var11));
+         var3.rotate(Vector3f.YP.rotationDegrees(var11));
          var3.translate(0.0, -0.3125, -0.4375);
          this.field25938.field17651.field31039 = false;
       } else {
          var3.translate(0.5, 0.5, 0.5);
          float var26 = -((float)(var9.<Integer>method23463(Class3374.field18970) * 360) / 16.0F);
-         var3.method35293(Class7680.field32900.method25286(var26));
+         var3.rotate(Vector3f.YP.rotationDegrees(var26));
          this.field25938.field17651.field31039 = true;
       }
 
@@ -39,7 +39,7 @@ public class Class5947 extends Class5942<Class954> {
       Class5422 var12 = var27.method26200(var4, this.field25938::method11028);
       this.field25938.field17650.method22680(var3, var12, var5, var6);
       this.field25938.field17651.method22680(var3, var12, var5, var6);
-      var3.method35295();
+      var3.pop();
       if (method18474(var1)) {
          FontRenderer var13 = this.field25928.method27967();
          float var14 = 0.010416667F;
@@ -64,12 +64,12 @@ public class Class5947 extends Class5942<Class954> {
             });
             if (var24 != null) {
                float var25 = (float)(-var13.method38822(var24) / 2);
-               var13.method38813(var24, var25, (float)(var23 * 10 - 20), var21, false, var3.method35296().method32361(), var4, false, 0, var5);
+               var13.method38813(var24, var25, (float)(var23 * 10 - 20), var21, false, var3.getLast().getMatrix(), var4, false, 0, var5);
             }
          }
       }
 
-      var3.method35295();
+      var3.pop();
    }
 
    public static Class7826 method18473(Block var0) {

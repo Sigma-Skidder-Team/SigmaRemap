@@ -123,7 +123,7 @@ public class Class7699 {
    private Predicate<ServerPlayerEntity> method25397() {
       return var1 -> {
          BlockPos var4 = var1.getPosition();
-         return var1.method3066() && this.field32978.method6957(var4) == this;
+         return var1.isAlive() && this.field32978.method6957(var4) == this;
       };
    }
 
@@ -153,12 +153,12 @@ public class Class7699 {
    }
 
    public void method25401(PlayerEntity var1) {
-      if (var1.method3033(Class8254.field35497)) {
-         this.field32982 = this.field32982 + var1.method3034(Class8254.field35497).method8629() + 1;
+      if (var1.method3033(Effects.BAD_OMEN)) {
+         this.field32982 = this.field32982 + var1.method3034(Effects.BAD_OMEN).method8629() + 1;
          this.field32982 = MathHelper.method37775(this.field32982, 0, this.method25399());
       }
 
-      var1.method3040(Class8254.field35497);
+      var1.removeEffects(Effects.BAD_OMEN);
    }
 
    public void method25402() {
@@ -304,7 +304,7 @@ public class Class7699 {
                      Entity var9 = this.field32978.method6942(var8);
                      if (var9 instanceof Class880 && !var9.isSpectator()) {
                         Class880 var10 = (Class880)var9;
-                        var10.method3035(new Class2023(Class8254.field35498, 48000, this.field32982 - 1, false, false, true));
+                        var10.method3035(new Class2023(Effects.HERO_OF_THE_VILLAGE, 48000, this.field32982 - 1, false, false, true));
                         if (var10 instanceof ServerPlayerEntity) {
                            ServerPlayerEntity var11 = (ServerPlayerEntity)var10;
                            var11.method2911(Class8876.field40174);
@@ -489,7 +489,7 @@ public class Class7699 {
 
       for (Set<Class1026> var5 : this.field32974.values()) {
          for (Class1026 var7 : var5) {
-            var3 += var7.method3042();
+            var3 += var7.getHealth();
          }
       }
 
@@ -510,7 +510,7 @@ public class Class7699 {
          boolean var6 = var5.remove(var1);
          if (var6) {
             if (var2) {
-               this.field32981 = this.field32981 - var1.method3042();
+               this.field32981 = this.field32981 - var1.getHealth();
             }
 
             var1.method4550((Class7699)null);
@@ -608,7 +608,7 @@ public class Class7699 {
 
       var6.add(var2);
       if (var3) {
-         this.field32981 = this.field32981 + var2.method3042();
+         this.field32981 = this.field32981 + var2.getHealth();
       }
 
       this.method25415();

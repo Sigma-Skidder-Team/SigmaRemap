@@ -188,9 +188,9 @@ public class Class3261 extends Class3262 implements Class3260 {
 
          if (!(var1 instanceof Class1023)) {
             Vector3d var14 = var1.method3284(1.0F);
-            Class8661 var15 = new Class8661(new Class7680(var14), var9, true);
+            Class8661 var15 = new Class8661(new Vector3f(var14), var9, true);
             Vector3d var16 = var1.method3281(1.0F);
-            Class7680 var17 = new Class7680(var16);
+            Vector3f var17 = new Vector3f(var16);
             var17.method25283(var15);
             ((Class882)var13).method3462((double)var17.method25269(), (double)var17.method25270(), (double)var17.method25271(), var7, var8);
          } else {

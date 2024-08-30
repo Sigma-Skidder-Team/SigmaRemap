@@ -44,7 +44,7 @@ public class TP extends Command {
          if (this.field25710.field45879 != null) {
             this.field25710.field45877.method27120();
             if (!Class5628.method17716()) {
-               this.field25710.field45877.method27119();
+               this.field25710.field45877.stop();
                this.field25710.field45878 = 2;
             } else {
                double var9 = mc.player.getPosX();
@@ -56,7 +56,7 @@ public class TP extends Command {
                Client.getInstance()
                   .getNotificationManager()
                   .post(new Notification("Teleport", "Teleporting to \"" + this.field25710.field45879.getName().getString() + "\"...", 10000));
-               this.field25710.field45877.method27118();
+               this.field25710.field45877.start();
             }
          } else {
             throw new CommandException("Could not find entity with name \"" + var2[0].method30899() + "\"");

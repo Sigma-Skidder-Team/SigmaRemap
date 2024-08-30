@@ -17,9 +17,9 @@ public class Class1074 extends AbstractHorseEntity {
 
    @Override
    public void method4925() {
-      this.method3085(Class9173.field42105).method38661((double)this.method4971());
-      this.method3085(Class9173.field42108).method38661(this.method4973());
-      this.method3085(Class9173.field42117).method38661(this.method4972());
+      this.method3085(Attributes.field42105).method38661((double)this.method4971());
+      this.method3085(Attributes.MOVEMENT_SPEED).method38661(this.method4973());
+      this.method3085(Attributes.field42117).method38661(this.method4972());
    }
 
    @Override
@@ -92,11 +92,11 @@ public class Class1074 extends AbstractHorseEntity {
    private void method4997(ItemStack var1) {
       this.method4991(var1);
       if (!this.world.isRemote) {
-         this.method3085(Class9173.field42113).method38671(field5916);
+         this.method3085(Attributes.field42113).method38671(field5916);
          if (this.method4900(var1)) {
             int var4 = ((Class3275)var1.getItem()).method11798();
             if (var4 != 0) {
-               this.method3085(Class9173.field42113).method38667(new Class9689(field5916, "Horse armor bonus", (double)var4, Class2045.field13352));
+               this.method3085(Attributes.field42113).method38667(new Class9689(field5916, "Horse armor bonus", (double)var4, AttributeModifierOperation.ADDITION));
             }
          }
       }

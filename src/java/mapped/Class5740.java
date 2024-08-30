@@ -20,11 +20,11 @@ public class Class5740 extends Class5715<Class1004> {
          var4.method35292(var10, var10, var10);
       }
 
-      var4.method35293(Class7680.field32900.method25286(-90.0F));
+      var4.rotate(Vector3f.YP.rotationDegrees(-90.0F));
       var4.translate(-0.5, -0.5, 0.5);
-      var4.method35293(Class7680.field32900.method25286(90.0F));
+      var4.rotate(Vector3f.YP.rotationDegrees(90.0F));
       Class5733.method17916(Blocks.TNT.method11579(), var4, var5, var6, var1.method4184() / 5 % 2 == 0);
-      var4.method35295();
+      var4.pop();
       super.method17853(var1, var2, var3, var4, var5, var6);
    }
 

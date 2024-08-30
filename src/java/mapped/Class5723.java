@@ -34,21 +34,21 @@ public class Class5723 extends Class5715<EnderCrystalEntity> {
          this.field25127.method22680(var4, var11, var6, var12);
       }
 
-      var4.method35293(Class7680.field32900.method25286(var10));
+      var4.rotate(Vector3f.YP.rotationDegrees(var10));
       var4.translate(0.0, (double)(1.5F + var9 / 2.0F), 0.0);
-      var4.method35293(new Class8661(new Class7680(field25124, 0.0F, field25124), 60.0F, true));
+      var4.rotate(new Class8661(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
       this.field25126.method22680(var4, var11, var6, var12);
       float var13 = 0.875F;
       var4.method35292(0.875F, 0.875F, 0.875F);
-      var4.method35293(new Class8661(new Class7680(field25124, 0.0F, field25124), 60.0F, true));
-      var4.method35293(Class7680.field32900.method25286(var10));
+      var4.rotate(new Class8661(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
+      var4.rotate(Vector3f.YP.rotationDegrees(var10));
       this.field25126.method22680(var4, var11, var6, var12);
       var4.method35292(0.875F, 0.875F, 0.875F);
-      var4.method35293(new Class8661(new Class7680(field25124, 0.0F, field25124), 60.0F, true));
-      var4.method35293(Class7680.field32900.method25286(var10));
+      var4.rotate(new Class8661(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
+      var4.rotate(Vector3f.YP.rotationDegrees(var10));
       this.field25125.method22680(var4, var11, var6, var12);
-      var4.method35295();
-      var4.method35295();
+      var4.pop();
+      var4.pop();
       BlockPos var14 = var1.method4143();
       if (var14 != null) {
          float var15 = (float)var14.getX() + 0.5F;

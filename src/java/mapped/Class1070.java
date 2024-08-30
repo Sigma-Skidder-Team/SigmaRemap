@@ -78,7 +78,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
    @Override
    public boolean method4901() {
-      return this.method3066() && !this.method3005();
+      return this.isAlive() && !this.method3005();
    }
 
    @Override
@@ -198,12 +198,12 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    public float method4979() {
-      return (float)this.method3086(Class9173.field42108) * (!this.method4978() ? 1.0F : 0.66F);
+      return (float)this.method3086(Attributes.MOVEMENT_SPEED) * (!this.method4978() ? 1.0F : 0.66F);
    }
 
    @Override
    public float method4980() {
-      return (float)this.method3086(Class9173.field42108) * (!this.method4978() ? 0.55F : 0.23F);
+      return (float)this.method3086(Attributes.MOVEMENT_SPEED) * (!this.method4978() ? 0.55F : 0.23F);
    }
 
    @Override
@@ -279,7 +279,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    public static Class7037 method4986() {
-      return Class1006.method4220().method21849(Class9173.field42108, 0.175F).method21849(Class9173.field42106, 16.0);
+      return Class1006.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.175F).method21849(Attributes.field42106, 16.0);
    }
 
    @Override

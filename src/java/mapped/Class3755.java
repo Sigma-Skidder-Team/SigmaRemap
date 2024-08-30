@@ -29,7 +29,7 @@ public class Class3755<E extends Class880, T extends Entity> extends Class3676<E
    }
 
    private boolean method12724(E var1, Entity var2) {
-      return var2.method3066() && var2.method3213(var1, (double)this.field19912) && var2.world == var1.world;
+      return var2.isAlive() && var2.method3213(var1, (double)this.field19912) && var2.world == var1.world;
    }
 
    @Override

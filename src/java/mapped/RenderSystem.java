@@ -510,7 +510,7 @@ public class RenderSystem {
    }
 
    @Deprecated
-   public static void method27888(Class9367 var0) {
+   public static void method27888(Matrix4f var0) {
       assertThread(RenderSystem::method27806);
       Class7414.method23842(var0);
    }
@@ -738,17 +738,17 @@ public class RenderSystem {
       Class7414.method23768();
    }
 
-   public static void method27928(Class7680 var0, Class7680 var1, Class9367 var2) {
+   public static void method27928(Vector3f var0, Vector3f var1, Matrix4f var2) {
       assertThread(RenderSystem::method27806);
       Class7414.method23772(var0, var1, var2);
    }
 
-   public static void method27929(Class7680 var0, Class7680 var1) {
+   public static void method27929(Vector3f var0, Vector3f var1) {
       assertThread(RenderSystem::method27806);
       Class7414.method23773(var0, var1);
    }
 
-   public static void method27930(Class7680 var0, Class7680 var1) {
+   public static void method27930(Vector3f var0, Vector3f var1) {
       assertThread(RenderSystem::method27806);
       Class7414.method23774(var0, var1);
    }
@@ -796,7 +796,7 @@ public class RenderSystem {
       return field34656;
    }
 
-   public static void method27938() {
+   public static void defaultBlendFunc() {
       method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
    }
 

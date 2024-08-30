@@ -94,7 +94,7 @@ public class Class1266 extends AbstractGui {
 
                         RenderSystem.method27817();
                         RenderSystem.disableBlend();
-                        var1.method35295();
+                        var1.pop();
                      }
                   }
                }
@@ -111,7 +111,7 @@ public class Class1266 extends AbstractGui {
                this.field6699
                   .fontRenderer
                   .method38803(var1, new TranslationTextComponent("chat.queue", this.field6703.size()), 0.0F, 1.0F, 16777215 + (var33 << 24));
-               var1.method35295();
+               var1.pop();
                RenderSystem.method27817();
                RenderSystem.disableBlend();
             }

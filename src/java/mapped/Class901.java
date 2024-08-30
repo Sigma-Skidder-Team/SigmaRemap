@@ -160,7 +160,7 @@ public abstract class Class901 extends Class882 {
    }
 
    @Override
-   public float method3267() {
+   public float getBrightness() {
       return 1.0F;
    }
 

@@ -6,8 +6,11 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
+import com.mentalfrostbyte.jello.module.impl.item.AutoArmor;
+import com.mentalfrostbyte.jello.module.impl.item.AutoMLG;
+import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 
 import java.util.ArrayList;
 
@@ -17,7 +20,7 @@ public class InvManager extends PremiumModule {
     public static int field23656 = 38;
     public static int field23657 = 39;
     public ArrayList<Integer> field23661 = new ArrayList<Integer>();
-    private final Timer field23658 = new Timer();
+    private final TimerUtil field23658 = new TimerUtil();
     private boolean field23659;
     private boolean field23660;
 
@@ -188,11 +191,11 @@ public class InvManager extends PremiumModule {
 
     @EventTarget
     public void method16430(TickEvent var1) {
-        if (!this.field23658.method27123()) {
-            this.field23658.method27118();
+        if (!this.field23658.isEnabled()) {
+            this.field23658.start();
         }
 
-        if (this.isEnabled() && !Class5290.field23798) {
+        if (this.isEnabled() && !AutoArmor.field23798) {
             String mode = this.getStringSettingValueByName("Mode");
             if (!this.getStringSettingValueByName("Mode").equals("OpenInv") || mc.currentScreen instanceof InventoryScreen) {
                 long delayValue = (long) (this.getNumberValueBySettingName("Delay") * 20.0F);
@@ -319,13 +322,13 @@ public class InvManager extends PremiumModule {
             if (var5 instanceof Class3292
                     && (this.method16436() > (int) this.getNumberValueBySettingName("Block Cap") || BlockFly.blocksToNotPlace.contains(((Class3292) var5).method11845()))) {
                 return true;
-            } else if (var5 == Items.field37883 && Client.getInstance().getModuleManager().getModuleByClass(Class5258.class).isEnabled()) {
+            } else if (var5 == Items.field37883 && Client.getInstance().getModuleManager().getModuleByClass(AutoMLG.class).isEnabled()) {
                 return method16437(Items.field37883) > 1;
-            } else if (var5 == Items.field37882 && Client.getInstance().getModuleManager().getModuleByClass(Class5258.class).isEnabled()) {
+            } else if (var5 == Items.field37882 && Client.getInstance().getModuleManager().getModuleByClass(AutoMLG.class).isEnabled()) {
                 return method16437(Items.field37882) > 1;
             } else if (var5 instanceof Class3323 && Class7789.method25874(var1)) {
                 return true;
-            } else if (var5 == Items.field37873) {
+            } else if (var5 == Items.ENCHANTED_GOLDEN_APPLE) {
                 return false;
             } else if (var5.method11744() && this.getBooleanValueFromSetttingName("Food") && var5.method11745() != Class8672.field39078) {
                 return true;

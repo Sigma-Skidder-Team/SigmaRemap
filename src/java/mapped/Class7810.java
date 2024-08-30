@@ -114,7 +114,7 @@ public class Class7810 {
       this.method26074(Items.field37980, Class9756.field45623);
       this.method26074(Items.field38155, Class9756.field45623);
       this.method26074(Items.field37908, Class9756.field45623);
-      this.method26074(Items.field37872, Class9756.field45623);
+      this.method26074(Items.GOLDEN_APPLE, Class9756.field45623);
       this.method26074(Items.field37818, Class9756.field45624);
       this.method26074(Items.field37863, Class9756.field45623);
       this.method26074(Items.field38057, Class9756.field45623);
@@ -256,6 +256,6 @@ public class Class7810 {
       this.method26074(Items.field38048, Class9756.field45623);
       this.method26074(Items.field37922, Class9756.field45623);
       this.method26076(Items.field38130, Items.field37835, Class9756.field45624);
-      this.method26076(Items.field37873, Items.field37872, Class9756.field45623);
+      this.method26076(Items.ENCHANTED_GOLDEN_APPLE, Items.GOLDEN_APPLE, Class9756.field45623);
    }
 }

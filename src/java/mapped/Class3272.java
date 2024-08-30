@@ -11,8 +11,8 @@ public class Class3272 extends Item implements Class3260 {
    public Class3272(Class5643 var1) {
       super(var1);
       Builder var4 = ImmutableMultimap.builder();
-      var4.put(Class9173.field42110, new Class9689(field18733, "Tool modifier", 8.0, Class2045.field13352));
-      var4.put(Class9173.field42112, new Class9689(field18734, "Tool modifier", -2.9F, Class2045.field13352));
+      var4.put(Attributes.field42110, new Class9689(field18733, "Tool modifier", 8.0, AttributeModifierOperation.ADDITION));
+      var4.put(Attributes.ATTACK_SPEED, new Class9689(field18734, "Tool modifier", -2.9F, AttributeModifierOperation.ADDITION));
       this.field18772 = var4.build();
    }
 

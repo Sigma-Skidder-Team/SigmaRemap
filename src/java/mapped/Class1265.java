@@ -125,7 +125,7 @@ public class Class1265 extends AbstractGui {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.disableAlphaTest();
          RenderSystem.enableBlend();
-         RenderSystem.method27938();
+         RenderSystem.defaultBlendFunc();
          if (var47 < var8.size()) {
             Class6589 var28 = (Class6589)var8.get(var47);
             GameProfile var29 = var28.method19966();

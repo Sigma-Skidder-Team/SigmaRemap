@@ -761,7 +761,7 @@ public class Class8090 {
    private static IBakedModel method28028(AtlasTexture var0, Class7496 var1, boolean var2) {
       Class1901 var5 = Class1901.field11159;
       Class7826 var6 = var1.method24436("particle");
-      TextureAtlasSprite var7 = var6.method26198();
+      TextureAtlasSprite var7 = var6.getSprite();
       Class9071 var8 = new Class9071(var1, Class6391.field27973, false).method33812(var7);
 
       for (Class9726 var10 : var1.method24428()) {
@@ -772,7 +772,7 @@ public class Class8090 {
             }
 
             Class7826 var14 = var1.method24436(var13.field42068);
-            TextureAtlasSprite var15 = var14.method26198();
+            TextureAtlasSprite var15 = var14.getSprite();
             Class8557 var16 = method28029(var10, var13, var15, var12, var5);
             if (var13.field42066 != null) {
                var8.method33810(Direction.method531(var5.method8166().method21548(), var13.field42066), var16);
@@ -807,8 +807,8 @@ public class Class8090 {
    public float method28030(TextureManager var1) {
       if (this.field34798 <= 0) {
          if (this.field34790 != null) {
-            Class290 var4 = var1.method1076(this.field34790);
-            int var5 = var4.method1131();
+            Class290 var4 = var1.getTexture(this.field34790);
+            int var5 = var4.getGlTextureId();
             int var6 = Class7414.method23865();
             Class7414.method23814(var5);
             this.field34798 = GL11.glGetTexLevelParameteri(3553, 0, 4096);
@@ -826,8 +826,8 @@ public class Class8090 {
    public float method28031(TextureManager var1) {
       if (this.field34799 <= 0) {
          if (this.field34790 != null) {
-            Class290 var4 = var1.method1076(this.field34790);
-            int var5 = var4.method1131();
+            Class290 var4 = var1.getTexture(this.field34790);
+            int var5 = var4.getGlTextureId();
             int var6 = Class7414.method23865();
             Class7414.method23814(var5);
             this.field34799 = GL11.glGetTexLevelParameteri(3553, 0, 4097);
@@ -864,7 +864,7 @@ public class Class8090 {
       return var5;
    }
 
-   public void method28033(Class8968 var1) {
+   public void method28033(ModelBakery var1) {
       if (this.field34774 != null) {
          method28035(var1, this.field34774);
       }
@@ -916,7 +916,7 @@ public class Class8090 {
       }
    }
 
-   private static void method28035(Class8968 var0, String var1) {
+   private static void method28035(ModelBakery var0, String var1) {
       ResourceLocation var4 = method28036(var1);
       Class1997 var5 = new Class1997(var4, "inventory");
       var0.method32845(var5);

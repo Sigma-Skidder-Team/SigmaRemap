@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
 public class Class1029 extends Class1026 {
-   private static final Predicate<Entity> field5727 = var0 -> var0.method3066() && !(var0 instanceof Class1029);
+   private static final Predicate<Entity> field5727 = var0 -> var0.isAlive() && !(var0 instanceof Class1029);
    private int field5728;
    private int field5729;
    private int field5730;
@@ -46,12 +46,12 @@ public class Class1029 extends Class1026 {
 
    public static Class7037 method4581() {
       return Class1009.method4343()
-         .method21849(Class9173.field42105, 100.0)
-         .method21849(Class9173.field42108, 0.3)
-         .method21849(Class9173.field42107, 0.75)
-         .method21849(Class9173.field42110, 12.0)
-         .method21849(Class9173.field42111, 1.5)
-         .method21849(Class9173.field42106, 32.0);
+         .method21849(Attributes.field42105, 100.0)
+         .method21849(Attributes.MOVEMENT_SPEED, 0.3)
+         .method21849(Attributes.field42107, 0.75)
+         .method21849(Attributes.field42110, 12.0)
+         .method21849(Attributes.field42111, 1.5)
+         .method21849(Attributes.field42106, 32.0);
    }
 
    @Override
@@ -104,13 +104,13 @@ public class Class1029 extends Class1026 {
    @Override
    public void method2871() {
       super.method2871();
-      if (this.method3066()) {
+      if (this.isAlive()) {
          if (!this.method2896()) {
             double var3 = this.method4232() == null ? 0.3 : 0.35;
-            double var5 = this.method3085(Class9173.field42108).method38660();
-            this.method3085(Class9173.field42108).method38661(MathHelper.method37822(0.1, var5, var3));
+            double var5 = this.method3085(Attributes.MOVEMENT_SPEED).method38660();
+            this.method3085(Attributes.MOVEMENT_SPEED).method38661(MathHelper.method37822(0.1, var5, var3));
          } else {
-            this.method3085(Class9173.field42108).method38661(0.0);
+            this.method3085(Attributes.MOVEMENT_SPEED).method38661(0.0);
          }
 
          if (this.collidedHorizontally && this.world.method6789().method17135(Class5462.field24224)) {
@@ -199,7 +199,7 @@ public class Class1029 extends Class1026 {
    }
 
    private void method4583() {
-      if (this.method3066()) {
+      if (this.isAlive()) {
          for (Entity var4 : this.world.<Entity>method6772(Class880.class, this.getBoundingBox().method19664(4.0), field5727)) {
             if (!(var4 instanceof Class1025)) {
                var4.method2741(Class8654.method31115(this), 6.0F);

@@ -1390,7 +1390,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          }
       }
 
-      while (this.gameSettings.field_244602_au.isPressed()) {
+      while (this.gameSettings.keyBindSocialInteractions.isPressed()) {
          if (!this.func_244600_aM()) {
             this.player.sendStatusMessage(field_244596_I, true);
             NarratorChatListener.INSTANCE.say(field_244596_I.getString());
@@ -1404,7 +1404,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          }
       }
 
-      while (this.gameSettings.field44639.isPressed()) {
+      while (this.gameSettings.keyBindInventory.isPressed()) {
          if (this.playerController.isRidingHorse()) {
             this.player.sendHorseInventory();
          } else {

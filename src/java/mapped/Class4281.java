@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 
@@ -30,35 +30,35 @@ public class Class4281 extends Class4278 {
    private boolean field20753;
    private boolean field20754 = false;
    private String field20755 = Character.toString('·');
-   private Timer field20756 = new Timer();
+   private TimerUtil field20756 = new TimerUtil();
    private final List<Class7902> field20757 = new ArrayList<Class7902>();
    private boolean field20758 = true;
 
    public Class4281(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, field20741, "", false);
-      this.field20756.method27118();
+      this.field20756.start();
    }
 
    public Class4281(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7) {
       super(var1, var2, var3, var4, var5, var6, var7, "", false);
-      this.field20756.method27118();
+      this.field20756.start();
    }
 
    public Class4281(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
-      this.field20756.method27118();
+      this.field20756.start();
    }
 
    public Class4281(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8, String var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, ResourceRegistry.JelloLightFont25, false);
       this.field20743 = var9;
-      this.field20756.method27118();
+      this.field20756.start();
    }
 
    public Class4281(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8, String var9, ClientResource var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.field20743 = var9;
-      this.field20756.method27118();
+      this.field20756.start();
    }
 
    @Override
@@ -106,8 +106,8 @@ public class Class4281 extends Class4278 {
 
          this.field20752 = true;
          this.field20749 = Class8906.method32494(var6, this.field20913, (float)this.method13271(), var1, this.field20746);
-         if (!Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 340)
-            && !Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
+         if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
+            && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
             this.field20750 = this.field20749;
          }
 
@@ -254,8 +254,8 @@ public class Class4281 extends Class4278 {
                   }
                }
 
-               if (!Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 340)
-                  && !Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
+               if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
+                  && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
                   this.field20750 = this.field20749;
                }
                break;
@@ -281,22 +281,22 @@ public class Class4281 extends Class4278 {
                   }
                }
 
-               if (!Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 340)
-                  && !Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
+               if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
+                  && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
                   this.field20750 = this.field20749;
                }
                break;
             case 268:
                this.field20749 = 0;
-               if (!Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 340)
-                  && !Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
+               if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
+                  && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
                   this.field20750 = this.field20749;
                }
                break;
             case 269:
                this.field20749 = this.field20912.length();
-               if (!Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 340)
-                  && !Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
+               if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
+                  && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
                   this.field20750 = this.field20749;
                }
          }
@@ -304,9 +304,9 @@ public class Class4281 extends Class4278 {
    }
 
    public boolean method13149() {
-      return Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 341)
-         || Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 345)
-         || Class9798.method38639(Minecraft.getInstance().mainWindow.getHandle(), 343);
+      return InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 341)
+         || InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 345)
+         || InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 343);
    }
 
    @Override

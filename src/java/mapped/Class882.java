@@ -133,7 +133,7 @@ public abstract class Class882 extends Entity {
    }
 
    public boolean method3467(Entity var1) {
-      if (!var1.isSpectator() && var1.method3066() && var1.method3139()) {
+      if (!var1.isSpectator() && var1.isAlive() && var1.method3139()) {
          Entity var4 = this.method3460();
          return var4 == null || this.field5095 || !var4.method3416(var1);
       } else {

@@ -2,11 +2,14 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4417;
+import com.mentalfrostbyte.jello.event.impl.SafeWalkEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.event.impl.Class4436;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.module.impl.movement.Step;
+import com.mentalfrostbyte.jello.module.impl.movement.LongJump;
+import com.mentalfrostbyte.jello.module.impl.player.NoFall;
 import net.minecraft.util.math.BlockPos;
 
 public class Class5178 extends Module {
@@ -26,7 +29,7 @@ public class Class5178 extends Module {
     @Override
     public void onDisable() {
         this.field23479 = false;
-        mc.timer.field40360 = 1.0F;
+        mc.timer.timerSpeed = 1.0F;
         Class9567.method37090(Class9567.method37076() * 0.7);
     }
 
@@ -49,7 +52,7 @@ public class Class5178 extends Module {
                 }
 
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (Class5330.field23887 > 1) {
+                if (Step.field23887 > 1) {
                     if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var4) && this.field23477 > 0 && Class5628.method17686()) {
                         mc.player.method2914();
                         var1.method13993(mc.player.method3433().field18048);
@@ -98,12 +101,12 @@ public class Class5178 extends Module {
                         String var13 = this.getStringSettingValueByName("Glide Mode");
                         switch (var13) {
                             case "Basic":
-                                var1.method13995(((Class5327) this.method16004()).method16730(this.field23478));
+                                var1.method13995(((LongJump) this.method16004()).method16730(this.field23478));
                                 break;
                             case "High":
-                                var1.method13995(((Class5327) this.method16004()).method16731(this.field23478));
+                                var1.method13995(((LongJump) this.method16004()).method16731(this.field23478));
                                 if (Class5628.method17716()
-                                        && Client.getInstance().getModuleManager().getModuleByClass(Class5199.class).isEnabled()
+                                        && Client.getInstance().getModuleManager().getModuleByClass(NoFall.class).isEnabled()
                                         && (this.field23478 == 8 || this.field23478 == 21)) {
                                     double var9 = mc.player.getPosY() + var1.method13994();
                                     double var11 = var9 - (double) ((int) (var9 + 0.001));
@@ -166,7 +169,7 @@ public class Class5178 extends Module {
     }
 
     @EventTarget
-    public void method16124(Class4417 var1) {
+    public void method16124(SafeWalkEvent var1) {
         if (!this.isEnabled() || !this.getStringSettingValueByName("Glide Mode").equals("High")) {
         }
     }

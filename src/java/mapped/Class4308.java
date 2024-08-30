@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.module.impl.gui.jello.BrainFreeze;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.Class4307;
@@ -137,7 +138,7 @@ public class Class4308 extends Class4307 {
       this.field20946.method13288(this.field20946.method13267() < this.method13267() && this.field20946.method13269() < this.method13269());
       super.method13028(var1, var2);
       Class5628.method17740(Math.min(1.0F, field20942.calcPercent() * 4.0F));
-      this.field20947.method13288(Client.getInstance().getModuleManager().getModuleByClass(Class5179.class).isEnabled());
+      this.field20947.method13288(Client.getInstance().getModuleManager().getModuleByClass(BrainFreeze.class).isEnabled());
       if (this.field20948 != null) {
          int var5 = var1 - this.field20948.method13271();
          int var6 = var2 - this.field20948.method13272();

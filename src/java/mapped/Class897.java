@@ -174,7 +174,7 @@ public class Class897 extends Entity implements Class889 {
    }
 
    @Override
-   public float method3267() {
+   public float getBrightness() {
       return 1.0F;
    }
 

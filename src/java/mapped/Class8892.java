@@ -2,15 +2,15 @@ package mapped;
 
 public final class Class8892 {
    private static String[] field40236;
-   private final Class9367 field40237;
+   private final Matrix4f field40237;
    private final Class8967 field40238;
 
-   public Class8892(Class9367 var1, Class8967 var2) {
+   public Class8892(Matrix4f var1, Class8967 var2) {
       this.field40237 = var1;
       this.field40238 = var2;
    }
 
-   public Class9367 method32361() {
+   public Matrix4f getMatrix() {
       return this.field40237;
    }
 
@@ -24,7 +24,7 @@ public final class Class8892 {
    }
 
    // $VF: synthetic method
-   public static Class9367 method32363(Class8892 var0) {
+   public static Matrix4f method32363(Class8892 var0) {
       return var0.field40237;
    }
 

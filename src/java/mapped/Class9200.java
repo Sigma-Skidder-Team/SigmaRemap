@@ -114,7 +114,7 @@ public class Class9200 {
                return;
             }
 
-            this.field42250 = var3.method1131();
+            this.field42250 = var3.getGlTextureId();
          }
 
          if (this.field42261 == null) {
@@ -124,7 +124,7 @@ public class Class9200 {
             this.field42260 = null;
          }
 
-         this.field42262 = !Class4501.method14213() ? true : Class4501.method14220(this.field42250);
+         this.field42262 = !SmartAnimations.isActive() ? true : SmartAnimations.method14220(this.field42250);
          if (this.method34478() && this.field42262) {
             int var9 = this.field42253 * this.field42254 * 4;
             Class9642 var4 = this.method34479();

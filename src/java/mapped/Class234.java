@@ -51,12 +51,12 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
             var4.field6107 = MathHelper.lerp(var29, var4.field6107, 6.0F + var26 / 2.0F + var25);
             var4.field6109 = MathHelper.lerp(var29, var4.field6109, var27 / 2.0F);
             var4.field6108 = MathHelper.lerp(var29, var4.field6108, 180.0F - var27 / 2.0F);
-            var1.method35293(Class7680.field32898.method25286(var4.field6107));
-            var1.method35293(Class7680.field32902.method25286(var4.field6109));
-            var1.method35293(Class7680.field32900.method25286(var4.field6108));
+            var1.rotate(Vector3f.field32898.rotationDegrees(var4.field6107));
+            var1.rotate(Vector3f.field32902.rotationDegrees(var4.field6109));
+            var1.rotate(Vector3f.YP.rotationDegrees(var4.field6108));
             Class5422 var30 = var2.method25597(RenderType.getEntitySolid(var4.method5372()));
             this.method825().method11209(var1, var30, var3, Class213.field798);
-            var1.method35295();
+            var1.pop();
          }
       }
    }

@@ -165,7 +165,7 @@ public class Class7992 {
       }
    }
 
-   public static void method27251(Class8968 var0) {
+   public static void method27251(ModelBakery var0) {
       for (Class8090 var4 : method27253()) {
          var4.method28033(var0);
       }
@@ -337,12 +337,12 @@ public class Class7992 {
    private static int method27261(String var0) {
       String var3 = "effect." + var0;
 
-      for (ResourceLocation var5 : Registry.field16071.method9190()) {
-         if (Registry.field16071.method9193(var5)) {
-            Class7144 var6 = Registry.field16071.method9184(var5);
+      for (ResourceLocation var5 : Registry.EFFECTS.method9190()) {
+         if (Registry.EFFECTS.method9193(var5)) {
+            Effect var6 = Registry.EFFECTS.method9184(var5);
             String var7 = var6.method22294();
             if (var3.equals(var7)) {
-               return Class7144.method22288(var6);
+               return Effect.method22288(var6);
             }
          }
       }

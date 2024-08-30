@@ -10,11 +10,11 @@ public class Class5716 extends Class5715<Class886> {
 
    public void method17853(Class886 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
-      var4.method35293(Class7680.field32900.method25286(MathHelper.lerp(var3, var1.prevRotationYaw, var1.rotationYaw) - 90.0F));
-      var4.method35293(Class7680.field32902.method25286(MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch) + 90.0F));
+      var4.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationYaw, var1.rotationYaw) - 90.0F));
+      var4.rotate(Vector3f.field32902.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch) + 90.0F));
       Class5422 var9 = ItemRenderer.method786(var5, this.field25103.method11028(this.method17843(var1)), false, var1.method3496());
       this.field25103.method11016(var4, var9, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
-      var4.method35295();
+      var4.pop();
       super.method17853(var1, var2, var3, var4, var5, var6);
    }
 

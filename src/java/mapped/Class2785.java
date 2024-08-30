@@ -38,7 +38,7 @@ public class Class2785 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      return this.field17410.method3066() && this.field17410.method4507() && this.field17411 < 60;
+      return this.field17410.isAlive() && this.field17410.method4507() && this.field17411 < 60;
    }
 
    @Override

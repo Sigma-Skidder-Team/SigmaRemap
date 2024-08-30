@@ -12,7 +12,7 @@ public class Class1699 implements AutoCloseable {
    private final Minecraft field9254;
    private boolean field9255 = true;
    private boolean field9256 = false;
-   private Class7680 field9257 = new Class7680();
+   private Vector3f field9257 = new Vector3f();
    public static final int field9258 = method7321(15, 15);
 
    public Class1699(GameRenderer var1, Minecraft var2) {
@@ -82,7 +82,7 @@ public class Class1699 implements AutoCloseable {
          if (var4 != null) {
             this.field9256 = false;
             if (Class7944.method26911()) {
-               boolean var5 = this.field9254.player.method3033(Class8254.field35482) || this.field9254.player.method3033(Class8254.field35495);
+               boolean var5 = this.field9254.player.method3033(Effects.NIGHT_VISION) || this.field9254.player.method3033(Effects.CONDUIT_POWER);
                if (Class9680.method37875(var4, this.field9252, this.field9249, var5, var1)) {
                   this.field9248.method1140();
                   this.field9251 = false;
@@ -102,8 +102,8 @@ public class Class1699 implements AutoCloseable {
 
             float var7 = this.field9254.player.method5416();
             float var8;
-            if (!this.field9254.player.method3033(Class8254.field35482)) {
-               if (var7 > 0.0F && this.field9254.player.method3033(Class8254.field35495)) {
+            if (!this.field9254.player.method3033(Effects.NIGHT_VISION)) {
+               if (var7 > 0.0F && this.field9254.player.method3033(Effects.CONDUIT_POWER)) {
                   var8 = var7;
                } else {
                   var8 = 0.0F;
@@ -112,10 +112,10 @@ public class Class1699 implements AutoCloseable {
                var8 = GameRenderer.method750(this.field9254.player, var1);
             }
 
-            Class7680 var9 = new Class7680(var24, var24, 1.0F);
-            var9.method25284(new Class7680(1.0F, 1.0F, 1.0F), 0.35F);
+            Vector3f var9 = new Vector3f(var24, var24, 1.0F);
+            var9.method25284(new Vector3f(1.0F, 1.0F, 1.0F), 0.35F);
             float var10 = this.field9252 + 1.5F;
-            Class7680 var11 = new Class7680();
+            Vector3f var11 = new Vector3f();
 
             for (int var12 = 0; var12 < 16; var12++) {
                for (int var13 = 0; var13 < 16; var13++) {
@@ -125,13 +125,13 @@ public class Class1699 implements AutoCloseable {
                   float var17 = var15 * (var15 * var15 * 0.6F + 0.4F);
                   var11.method25275(var15, var16, var17);
                   if (!var4.method6830().method19306()) {
-                     Class7680 var18 = this.method7325(var9);
+                     Vector3f var18 = this.method7325(var9);
                      var18.method25272(var14);
                      var11.method25277(var18);
                      var11.method25284(this.method7324(0.75F, 0.75F, 0.75F), 0.04F);
                      if (this.field9253.method766(var1) > 0.0F) {
                         float var19 = this.field9253.method766(var1);
-                        Class7680 var20 = this.method7325(var11);
+                        Vector3f var20 = this.method7325(var11);
                         var20.method25273(0.7F, 0.6F, 0.6F);
                         var11.method25284(var20, var19);
                      }
@@ -144,14 +144,14 @@ public class Class1699 implements AutoCloseable {
                      float var25 = Math.max(var11.method25269(), Math.max(var11.method25270(), var11.method25271()));
                      if (var25 < 1.0F) {
                         float var27 = 1.0F / var25;
-                        Class7680 var29 = this.method7325(var11);
+                        Vector3f var29 = this.method7325(var11);
                         var29.method25272(var27);
                         var11.method25284(var29, var8);
                      }
                   }
 
-                  float var26 = (float)this.field9254.gameSettings.field44672;
-                  Class7680 var28 = this.method7325(var11);
+                  float var26 = (float)this.field9254.gameSettings.gamma;
+                  Vector3f var28 = this.method7325(var11);
                   var28.method25288(this::method7319);
                   var11.method25284(var28, var26);
                   var11.method25284(this.method7324(0.75F, 0.75F, 0.75F), 0.04F);
@@ -192,12 +192,12 @@ public class Class1699 implements AutoCloseable {
       return var0 >> 20 & 65535;
    }
 
-   private Class7680 method7324(float var1, float var2, float var3) {
+   private Vector3f method7324(float var1, float var2, float var3) {
       this.field9257.method25275(var1, var2, var3);
       return this.field9257;
    }
 
-   private Class7680 method7325(Class7680 var1) {
+   private Vector3f method7325(Vector3f var1) {
       this.field9257.method25275(var1.method25269(), var1.method25270(), var1.method25271());
       return this.field9257;
    }

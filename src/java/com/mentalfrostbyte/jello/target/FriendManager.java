@@ -25,7 +25,7 @@ public class FriendManager {
 
     @EventTarget
     private void method26996(Class4430 var1) {
-        if (var1.method13977() == this.field34179.gameSettings.keyBindPickBlock.field13070.field34875
+        if (var1.method13977() == this.field34179.gameSettings.keyBindPickBlock.keycode.keyCode
                 && this.field34179.pointedEntity != null
                 && this.field34179.pointedEntity.getName() != null) {
             CommandManager var4 = Client.getInstance().getCommandManager();

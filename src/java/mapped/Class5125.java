@@ -43,7 +43,7 @@ public class Class5125 implements Class5119 {
    public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.disableTexture();
       this.method15827();
       this.method15826();
@@ -143,7 +143,7 @@ public class Class5125 implements Class5119 {
 
    private static void method15834(BlockPos var0, float var1, float var2, float var3, float var4, float var5) {
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       DebugRenderer.method27456(var0, var1, var2, var3, var4, var5);
    }
 

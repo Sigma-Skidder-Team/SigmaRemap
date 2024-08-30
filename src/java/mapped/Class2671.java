@@ -24,7 +24,7 @@ public class Class2671<T extends Class1026> extends Class2595 {
          && this.field17055.method4570()
          && !ItemStack.method32128(this.field17055.method2943(Class2106.field13736), Class7699.method25421())) {
          Class1026 var4 = var3.method25422(this.field17055.method4554());
-         if (var4 == null || !var4.method3066()) {
+         if (var4 == null || !var4.isAlive()) {
             List var5 = this.field17055
                .world
                .<ItemEntity>method6772(ItemEntity.class, this.field17055.getBoundingBox().method19663(16.0, 8.0, 16.0), Class1026.method4566());

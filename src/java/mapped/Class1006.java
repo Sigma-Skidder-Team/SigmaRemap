@@ -58,7 +58,7 @@ public abstract class Class1006 extends Class880 {
    }
 
    public static Class7037 method4220() {
-      return Class880.method2997().method21849(Class9173.field42106, 16.0).method21848(Class9173.field42111);
+      return Class880.method2997().method21849(Attributes.field42106, 16.0).method21848(Attributes.field42111);
    }
 
    public Class6990 method4221(World var1) {
@@ -166,7 +166,7 @@ public abstract class Class1006 extends Class880 {
    public void method3000() {
       super.method3000();
       this.world.getProfiler().startSection("mobBaseTick");
-      if (this.method3066() && this.rand.nextInt(1000) < this.field5593++) {
+      if (this.isAlive() && this.rand.nextInt(1000) < this.field5593++) {
          this.method4238();
          this.method4237();
       }
@@ -450,7 +450,7 @@ public abstract class Class1006 extends Class880 {
          var3 = Class9299.method35056(Class9299.field42847, this.world, this);
       }
 
-      if (!this.world.isRemote && this.method4280() && this.method3066() && !this.field4972 && var3) {
+      if (!this.world.isRemote && this.method4280() && this.isAlive() && !this.field4972 && var3) {
          for (ItemEntity var5 : this.world.<ItemEntity>method7182(ItemEntity.class, this.getBoundingBox().method19663(1.0, 0.0, 1.0))) {
             if (!var5.removed && !var5.method4124().isEmpty() && !var5.method4135() && this.method4253(var5.method4124())) {
                this.method4246(var5);
@@ -731,7 +731,7 @@ public abstract class Class1006 extends Class880 {
    @Override
    public int method3370() {
       if (this.method4232() != null) {
-         int var3 = (int)(this.method3042() - this.method3075() * 0.33F);
+         int var3 = (int)(this.getHealth() - this.method3075() * 0.33F);
          var3 -= (3 - this.world.method6997().method8905()) * 4;
          if (var3 < 0) {
             var3 = 0;
@@ -957,7 +957,7 @@ public abstract class Class1006 extends Class880 {
 
    @Nullable
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      this.method3085(Class9173.field42106).method38668(new Class9689("Random spawn bonus", this.rand.nextGaussian() * 0.05, Class2045.field13353));
+      this.method3085(Attributes.field42106).method38668(new Class9689("Random spawn bonus", this.rand.nextGaussian() * 0.05, AttributeModifierOperation.field13353));
       if (!(this.rand.nextFloat() < 0.05F)) {
          this.method4303(false);
       } else {
@@ -1005,7 +1005,7 @@ public abstract class Class1006 extends Class880 {
 
    @Override
    public final ActionResultType method3304(PlayerEntity var1, Hand var2) {
-      if (this.method3066()) {
+      if (this.isAlive()) {
          if (this.method4297() != var1) {
             ActionResultType var5 = this.method4283(var1, var2);
             if (!var5.isSuccessOrConsume()) {
@@ -1131,7 +1131,7 @@ public abstract class Class1006 extends Class880 {
          this.method4300();
       }
 
-      if (this.field5613 != null && (!this.method3066() || !this.field5613.method3066())) {
+      if (this.field5613 != null && (!this.isAlive() || !this.field5613.isAlive())) {
          this.method4294(true, true);
       }
    }
@@ -1322,8 +1322,8 @@ public abstract class Class1006 extends Class880 {
 
    @Override
    public boolean method3114(Entity var1) {
-      float var4 = (float)this.method3086(Class9173.field42110);
-      float var5 = (float)this.method3086(Class9173.field42111);
+      float var4 = (float)this.method3086(Attributes.field42110);
+      float var5 = (float)this.method3086(Attributes.field42111);
       if (var1 instanceof Class880) {
          var4 += Class7858.method26318(this.method3090(), ((Class880)var1).method3089());
          var5 += (float)Class7858.method26323(this);
@@ -1370,7 +1370,7 @@ public abstract class Class1006 extends Class880 {
 
    public boolean method4310() {
       if (this.world.method6740() && !this.world.isRemote) {
-         float var3 = this.method3267();
+         float var3 = this.getBrightness();
          BlockPos var4 = !(this.getRidingEntity() instanceof BoatEntity)
             ? new BlockPos(this.getPosX(), (double)Math.round(this.getPosY()), this.getPosZ())
             : new BlockPos(this.getPosX(), (double)Math.round(this.getPosY()), this.getPosZ()).up();
@@ -1444,7 +1444,7 @@ public abstract class Class1006 extends Class880 {
    private void method4313() {
       this.field4973++;
       if (this instanceof Class1009) {
-         float var3 = this.method3267();
+         float var3 = this.getBrightness();
          if (var3 > 0.5F) {
             this.field4973 += 2;
          }

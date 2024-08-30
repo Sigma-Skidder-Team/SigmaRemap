@@ -36,7 +36,7 @@ public class Class1055 extends Class1047 {
    }
 
    public static Class7037 method4836() {
-      return Class1006.method4220().method21849(Class9173.field42105, 10.0);
+      return Class1006.method4220().method21849(Attributes.field42105, 10.0);
    }
 
    @Override
@@ -94,12 +94,12 @@ public class Class1055 extends Class1047 {
          this.field5831 = MathHelper.method37771(MathHelper.sin(this.field5829)) * (float) Math.PI * 0.25F;
          if (!this.world.isRemote) {
             double var5 = this.method3433().field18049;
-            if (!this.method3033(Class8254.field35491)) {
+            if (!this.method3033(Effects.LEVITATION)) {
                if (!this.method3247()) {
                   var5 -= 0.08;
                }
             } else {
-               var5 = 0.05 * (double)(this.method3034(Class8254.field35491).method8629() + 1);
+               var5 = 0.05 * (double)(this.method3034(Effects.LEVITATION).method8629() + 1);
             }
 
             this.method3435(0.0, var5 * 0.98F, 0.0);

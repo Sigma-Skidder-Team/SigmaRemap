@@ -30,14 +30,14 @@ public class Class5954 extends Class5942<Class940> {
       var3.translate(0.5, 0.5, 0.5);
       float var12 = 0.9995F;
       var3.method35292(0.9995F, 0.9995F, 0.9995F);
-      var3.method35293(var9.method532());
+      var3.rotate(var9.method532());
       var3.method35292(1.0F, -1.0F, -1.0F);
       var3.translate(0.0, -1.0, 0.0);
       Class5422 var13 = var11.method26200(var4, RenderType::getEntityCutoutNoCull);
       this.field25966.method11202().method22680(var3, var13, var5, var6);
       var3.translate(0.0, (double)(-var1.method3755(var2) * 0.5F), 0.0);
-      var3.method35293(Class7680.field32900.method25286(270.0F * var1.method3755(var2)));
+      var3.rotate(Vector3f.YP.rotationDegrees(270.0F * var1.method3755(var2)));
       this.field25966.method11203().method22680(var3, var13, var5, var6);
-      var3.method35295();
+      var3.pop();
    }
 }

@@ -111,7 +111,7 @@ public abstract class Class1045 extends Class1046 {
    public void method2871() {
       super.method2871();
       if (!this.world.isRemote) {
-         if (this.method3066()) {
+         if (this.isAlive()) {
             int var3 = this.method4767();
             if (var3 >= 0) {
                if (var3 > 0) {

@@ -109,13 +109,13 @@ public class Class5821 extends Class5812 {
    }
 
    @Nullable
-   public Class7144 method18179() {
-      return Class7144.method22287(this.field25503.method28505(1));
+   public Effect method18179() {
+      return Effect.method22287(this.field25503.method28505(1));
    }
 
    @Nullable
-   public Class7144 method18180() {
-      return Class7144.method22287(this.field25503.method28505(2));
+   public Effect method18180() {
+      return Effect.method22287(this.field25503.method28505(2));
    }
 
    public void method18181(int var1, int var2) {

@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.Class4417;
+import com.mentalfrostbyte.jello.event.impl.SafeWalkEvent;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mojang.authlib.GameProfile;
 import com.mojang.datafixers.util.Either;
@@ -100,10 +100,10 @@ public abstract class PlayerEntity extends Class880 {
 
    public static Class7037 method2849() {
       return Class880.method2997()
-         .method21849(Class9173.field42110, 1.0)
-         .method21849(Class9173.field42108, 0.1F)
-         .method21848(Class9173.field42112)
-         .method21848(Class9173.field42115);
+         .method21849(Attributes.field42110, 1.0)
+         .method21849(Attributes.MOVEMENT_SPEED, 0.1F)
+         .method21848(Attributes.ATTACK_SPEED)
+         .method21848(Attributes.LUCK);
    }
 
    @Override
@@ -157,7 +157,7 @@ public abstract class PlayerEntity extends Class880 {
       if (!this.world.isRemote) {
          this.field4906.method37571(this);
          this.method2911(Class8876.field40106);
-         if (this.method3066()) {
+         if (this.isAlive()) {
             this.method2911(Class8876.field40107);
          }
 
@@ -211,7 +211,7 @@ public abstract class PlayerEntity extends Class880 {
    private void method2855() {
       ItemStack var3 = this.method2943(Class2106.field13736);
       if (var3.getItem() == Items.field37792 && !this.method3263(Class8953.field40469)) {
-         this.method3035(new Class2023(Class8254.field35479, 200, 0, false, false, true));
+         this.method3035(new Class2023(Effects.WATER_BREATHING, 200, 0, false, false, true));
       }
    }
 
@@ -415,7 +415,7 @@ public abstract class PlayerEntity extends Class880 {
       }
 
       if (this.world.method6997() == Class2197.field14351 && this.world.method6789().method17135(Class5462.field24231)) {
-         if (this.method3042() < this.method3075() && this.ticksExisted % 20 == 0) {
+         if (this.getHealth() < this.method3075() && this.ticksExisted % 20 == 0) {
             this.method3041(1.0F);
          }
 
@@ -432,7 +432,7 @@ public abstract class PlayerEntity extends Class880 {
          this.field4969 = (float)((double)this.field4969 + 0.005999999865889549);
       }
 
-      this.method3113((float)this.method3086(Class9173.field42108));
+      this.method3113((float)this.method3086(Attributes.MOVEMENT_SPEED));
       float var3;
       if (this.onGround && !this.getShouldBeDead() && !this.method2951()) {
          var3 = Math.min(0.1F, MathHelper.method37766(method3234(this.method3433())));
@@ -441,7 +441,7 @@ public abstract class PlayerEntity extends Class880 {
       }
 
       this.field4909 = this.field4909 + (var3 - this.field4909) * 0.4F;
-      if (this.method3042() > 0.0F && !this.isSpectator()) {
+      if (this.getHealth() > 0.0F && !this.isSpectator()) {
          AxisAlignedBB var4;
          if (this.isPassenger() && !this.getRidingEntity().removed) {
             var4 = this.getBoundingBox().method19666(this.getRidingEntity().getBoundingBox()).method19663(1.0, 0.0, 1.0);
@@ -637,9 +637,9 @@ public abstract class PlayerEntity extends Class880 {
          var4 *= 1.0F + (float)(Class7182.method22537(this) + 1) * 0.2F;
       }
 
-      if (this.method3033(Class8254.field35470)) {
+      if (this.method3033(Effects.MINING_FATIGUE)) {
          float var7;
-         switch (this.method3034(Class8254.field35470).method8629()) {
+         switch (this.method3034(Effects.MINING_FATIGUE).method8629()) {
             case 0:
                var7 = 0.3F;
                break;
@@ -691,7 +691,7 @@ public abstract class PlayerEntity extends Class880 {
       this.method2875(var1.method122("Score"));
       this.field4906.method37572(var1);
       this.abilities.method20713(var1);
-      this.method3085(Class9173.field42108).method38661((double)this.abilities.method20716());
+      this.method3085(Attributes.MOVEMENT_SPEED).method38661((double)this.abilities.method20716());
       if (var1.method119("EnderItems", 9)) {
          this.field4903.method3682(var1.method131("EnderItems", 10));
       }
@@ -841,8 +841,8 @@ public abstract class PlayerEntity extends Class880 {
 
          if (var5 != 0.0F) {
             this.method2931(var1.method31134());
-            float var7 = this.method3042();
-            this.method3043(this.method3042() - var5);
+            float var7 = this.getHealth();
+            this.method3043(this.getHealth() - var5);
             this.method3073().method27599(var1, var7, var5);
             if (var5 < 3.4028235E37F) {
                this.method2912(Class8876.field40130, Math.round(var5 * 10.0F));
@@ -945,9 +945,9 @@ public abstract class PlayerEntity extends Class880 {
 
    @Override
    public Vector3d method2898(Vector3d var1, Class2107 var2) {
-      Class4417 var5 = new Class4417(true);
-      Client.getInstance().getEventManager().call(var5);
-      if (var5.method13965() == Class1893.field11098
+      SafeWalkEvent event = new SafeWalkEvent(true);
+      Client.getInstance().getEventManager().call(event);
+      if (event.method13965() == Class1893.field11098
          || !this.abilities.field29607 && (var2 == Class2107.field13742 || var2 == Class2107.field13743) && this.method2853() && this.method2899()) {
          double var6 = var1.field18048;
          double var8 = var1.field18050;
@@ -994,7 +994,7 @@ public abstract class PlayerEntity extends Class880 {
          var1 = new Vector3d(var6, var1.field18049, var8);
       }
 
-      Class4417 var12 = new Class4417(false);
+      SafeWalkEvent var12 = new SafeWalkEvent(false);
       Client.getInstance().getEventManager().call(var12);
       return var1;
    }
@@ -1007,7 +1007,7 @@ public abstract class PlayerEntity extends Class880 {
 
    public void method2817(Entity var1) {
       if (var1.method3360() && !var1.method3361(this)) {
-         float var4 = (float)this.method3086(Class9173.field42110);
+         float var4 = (float)this.method3086(Attributes.field42110);
          float var5;
          if (!(var1 instanceof Class880)) {
             var5 = Class7858.method26318(this.method3090(), Class7809.field33505);
@@ -1036,7 +1036,7 @@ public abstract class PlayerEntity extends Class880 {
                && !this.onGround
                && !this.method3063()
                && !this.method3250()
-               && !this.method3033(Class8254.field35481)
+               && !this.method3033(Effects.BLINDNESS)
                && !this.isPassenger()
                && var1 instanceof Class880;
             var10 = var10 && !this.method3337();
@@ -1058,7 +1058,7 @@ public abstract class PlayerEntity extends Class880 {
             boolean var15 = false;
             int var16 = Class7858.method26324(this);
             if (var1 instanceof Class880) {
-               var28 = ((Class880)var1).method3042();
+               var28 = ((Class880)var1).getHealth();
                if (var16 > 0 && !var1.method3327()) {
                   var15 = true;
                   var1.method3221(1);
@@ -1167,7 +1167,7 @@ public abstract class PlayerEntity extends Class880 {
                }
 
                if (var1 instanceof Class880) {
-                  float var31 = var28 - ((Class880)var1).method3042();
+                  float var31 = var28 - ((Class880)var1).getHealth();
                   this.method2912(Class8876.field40127, Math.round(var31 * 10.0F));
                   if (var16 > 0) {
                      var1.method3221(var16 * 4);
@@ -1381,7 +1381,7 @@ public abstract class PlayerEntity extends Class880 {
 
    @Override
    public float method2918() {
-      return (float)this.method3086(Class9173.field42108);
+      return (float)this.method3086(Attributes.MOVEMENT_SPEED);
    }
 
    public void method2919(double var1, double var3, double var5) {
@@ -1486,7 +1486,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    public boolean tryToStartFallFlying() {
-      if (!this.onGround && !this.method3165() && !this.method3250() && !this.method3033(Class8254.field35491)) {
+      if (!this.onGround && !this.method3165() && !this.method3250() && !this.method3033(Effects.LEVITATION)) {
          ItemStack var3 = this.method2943(Class2106.field13735);
          if (var3.getItem() == Items.field38120 && Class3256.method11698(var3)) {
             this.method2923();
@@ -1607,7 +1607,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    public boolean method2934() {
-      return this.method3042() > 0.0F && this.method3042() < this.method3075();
+      return this.getHealth() > 0.0F && this.getHealth() < this.method3075();
    }
 
    public boolean method2935() {
@@ -1929,7 +1929,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    public float method2973() {
-      return (float)(1.0 / this.method3086(Class9173.field42112) * 20.0);
+      return (float)(1.0 / this.method3086(Attributes.ATTACK_SPEED) * 20.0);
    }
 
    public float method2974(float var1) {
@@ -1950,7 +1950,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    public float method2978() {
-      return (float)this.method3086(Class9173.field42115);
+      return (float)this.method3086(Attributes.LUCK);
    }
 
    public boolean method2979() {

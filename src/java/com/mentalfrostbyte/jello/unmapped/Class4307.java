@@ -23,7 +23,7 @@ public abstract class Class4307 extends Class4305 {
 
     @Override
     public void method13065(int var1) {
-        if (var1 == Minecraft.getInstance().gameSettings.field44652.field13070.field34875) {
+        if (var1 == Minecraft.getInstance().gameSettings.keyBindFullscreen.keycode.keyCode) {
             Minecraft.getInstance().mainWindow.toggleFullscreen();
             Minecraft.getInstance().gameSettings.fullscreen = Minecraft.getInstance().mainWindow.isFullscreen();
         }

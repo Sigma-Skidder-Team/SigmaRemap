@@ -14,7 +14,7 @@ public class Class2755 extends Class2754 {
    public boolean method10803() {
       if (this.field17295.method5142()) {
          Class880 var3 = this.field17295.method4232();
-         if (var3 != null && var3.method3066()) {
+         if (var3 != null && var3.isAlive()) {
             if (var3.method3387() == var3.method3386()) {
                boolean var4 = Class1095.method5152(this.field17295, var3);
                if (!var4) {
@@ -38,7 +38,7 @@ public class Class2755 extends Class2754 {
    @Override
    public boolean method10806() {
       Class880 var3 = this.field17295.method4232();
-      if (var3 != null && var3.method3066()) {
+      if (var3 != null && var3.isAlive()) {
          double var4 = this.field17295.method3433().field18049;
          return (!(var4 * var4 < 0.05F) || !(Math.abs(this.field17295.rotationPitch) < 15.0F) || !this.field17295.onGround) && !this.field17295.method5131();
       } else {

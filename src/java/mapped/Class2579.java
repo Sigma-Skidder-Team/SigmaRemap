@@ -13,8 +13,8 @@ import java.util.Map.Entry;
 public class Class2579 implements JsonDeserializer<Class9726> {
    public Class9726 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
       JsonObject var6 = var1.getAsJsonObject();
-      Class7680 var7 = this.method10780(var6);
-      Class7680 var8 = this.method10779(var6);
+      Vector3f var7 = this.method10780(var6);
+      Vector3f var8 = this.method10779(var6);
       Class7360 var9 = this.method10773(var6);
       Map var10 = this.method10776(var3, var6);
       if (var6.has("shade") && !JSONUtils.method32758(var6, "shade")) {
@@ -30,7 +30,7 @@ public class Class2579 implements JsonDeserializer<Class9726> {
       Class7360 var4 = null;
       if (var1.has("rotation")) {
          JsonObject var5 = JSONUtils.method32782(var1, "rotation");
-         Class7680 var6 = this.method10781(var5, "origin");
+         Vector3f var6 = this.method10781(var5, "origin");
          var6.method25272(0.0625F);
          Class113 var7 = this.method10775(var5);
          float var8 = this.method10774(var5);
@@ -90,8 +90,8 @@ public class Class2579 implements JsonDeserializer<Class9726> {
       }
    }
 
-   private Class7680 method10779(JsonObject var1) {
-      Class7680 var4 = this.method10781(var1, "to");
+   private Vector3f method10779(JsonObject var1) {
+      Vector3f var4 = this.method10781(var1, "to");
       if (!(var4.method25269() < -16.0F)
          && !(var4.method25270() < -16.0F)
          && !(var4.method25271() < -16.0F)
@@ -104,8 +104,8 @@ public class Class2579 implements JsonDeserializer<Class9726> {
       }
    }
 
-   private Class7680 method10780(JsonObject var1) {
-      Class7680 var4 = this.method10781(var1, "from");
+   private Vector3f method10780(JsonObject var1) {
+      Vector3f var4 = this.method10781(var1, "from");
       if (!(var4.method25269() < -16.0F)
          && !(var4.method25270() < -16.0F)
          && !(var4.method25271() < -16.0F)
@@ -118,7 +118,7 @@ public class Class2579 implements JsonDeserializer<Class9726> {
       }
    }
 
-   private Class7680 method10781(JsonObject var1, String var2) {
+   private Vector3f method10781(JsonObject var1, String var2) {
       JsonArray var5 = JSONUtils.method32785(var1, var2);
       if (var5.size() != 3) {
          throw new JsonParseException("Expected 3 " + var2 + " values, found: " + var5.size());
@@ -129,7 +129,7 @@ public class Class2579 implements JsonDeserializer<Class9726> {
             var6[var7] = JSONUtils.method32770(var5.get(var7), var2 + "[" + var7 + "]");
          }
 
-         return new Class7680(var6[0], var6[1], var6[2]);
+         return new Vector3f(var6[0], var6[1], var6[2]);
       }
    }
 }

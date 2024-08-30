@@ -1010,7 +1010,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public boolean method3261() {
-      return this.method3337() && !this.method3250() && !this.isSpectator() && !this.method3336() && !this.method3264() && this.method3066();
+      return this.method3337() && !this.method3250() && !this.isSpectator() && !this.method3336() && !this.method3264() && this.isAlive();
    }
 
    public void method3262() {
@@ -1061,7 +1061,7 @@ public abstract class Entity implements INameable, ICommandSource {
       }
    }
 
-   public float method3267() {
+   public float getBrightness() {
       Mutable var3 = new Mutable(this.getPosX(), 0.0, this.getPosZ());
       if (!this.world.method7017(var3)) {
          return 0.0F;
@@ -1515,7 +1515,7 @@ public abstract class Entity implements INameable, ICommandSource {
       }
    }
 
-   public boolean method3066() {
+   public boolean isAlive() {
       return !this.removed;
    }
 

@@ -57,7 +57,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    public static Class7037 method4373() {
-      return Class1006.method4220().method21849(Class9173.field42108, 0.3F).method21849(Class9173.field42105, 8.0).method21849(Class9173.field42110, 2.0);
+      return Class1006.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42105, 8.0).method21849(Attributes.field42110, 2.0);
    }
 
    @Override
@@ -96,7 +96,7 @@ public class Class1012 extends Class1013 implements Class1011 {
          if (this.rand.nextInt(3) != 0) {
             return Sounds.field27249;
          } else {
-            return this.method4393() && this.method3042() < 10.0F ? Sounds.field27257 : Sounds.field27254;
+            return this.method4393() && this.getHealth() < 10.0F ? Sounds.field27257 : Sounds.field27254;
          }
       } else {
          return Sounds.field27251;
@@ -136,7 +136,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    @Override
    public void tick() {
       super.tick();
-      if (this.method3066()) {
+      if (this.isAlive()) {
          this.field5661 = this.field5660;
          if (!this.method4387()) {
             this.field5660 = this.field5660 + (0.0F - this.field5660) * 0.4F;
@@ -257,7 +257,7 @@ public class Class1012 extends Class1013 implements Class1011 {
 
    @Override
    public boolean method3114(Entity var1) {
-      boolean var4 = var1.method2741(Class8654.method31115(this), (float)((int)this.method3086(Class9173.field42110)));
+      boolean var4 = var1.method2741(Class8654.method31115(this), (float)((int)this.method3086(Attributes.field42110)));
       if (var4) {
          this.method3399(this, var1);
       }
@@ -269,13 +269,13 @@ public class Class1012 extends Class1013 implements Class1011 {
    public void method4379(boolean var1) {
       super.method4379(var1);
       if (!var1) {
-         this.method3085(Class9173.field42105).method38661(8.0);
+         this.method3085(Attributes.field42105).method38661(8.0);
       } else {
-         this.method3085(Class9173.field42105).method38661(20.0);
+         this.method3085(Attributes.field42105).method38661(20.0);
          this.method3043(20.0F);
       }
 
-      this.method3085(Class9173.field42110).method38661(4.0);
+      this.method3085(Attributes.field42110).method38661(4.0);
    }
 
    @Override
@@ -302,7 +302,7 @@ public class Class1012 extends Class1013 implements Class1011 {
                return ActionResultType.field14818;
             }
          } else {
-            if (this.method4381(var5) && this.method3042() < this.method3075()) {
+            if (this.method4381(var5) && this.getHealth() < this.method3075()) {
                if (!var1.abilities.isCreativeMode) {
                   var5.method32182(1);
                }
@@ -359,7 +359,7 @@ public class Class1012 extends Class1013 implements Class1011 {
 
    public float method4380() {
       if (!this.method4369()) {
-         return !this.method4393() ? (float) (Math.PI / 5) : (0.55F - (this.method3075() - this.method3042()) * 0.02F) * (float) Math.PI;
+         return !this.method4393() ? (float) (Math.PI / 5) : (0.55F - (this.method3075() - this.getHealth()) * 0.02F) * (float) Math.PI;
       } else {
          return 1.5393804F;
       }

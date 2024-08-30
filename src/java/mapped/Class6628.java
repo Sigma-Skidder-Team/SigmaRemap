@@ -20,11 +20,11 @@ public class Class6628 implements Class6627 {
    public Class290 method20210() {
       if (this.field29156 == null) {
          TextureManager var3 = Minecraft.getInstance().getTextureManager();
-         this.field29156 = var3.method1076(this.field29154);
+         this.field29156 = var3.getTexture(this.field29154);
          if (this.field29156 == null) {
             this.field29156 = new Class293(this.field29154);
             var3.method1073(this.field29154, this.field29156);
-            this.field29156 = var3.method1076(this.field29154);
+            this.field29156 = var3.getTexture(this.field29154);
          }
       }
 
@@ -47,7 +47,7 @@ public class Class6628 implements Class6627 {
          }
       }
 
-      return var3.method1131();
+      return var3.getGlTextureId();
    }
 
    @Override
@@ -66,6 +66,6 @@ public class Class6628 implements Class6627 {
          + ", location: "
          + this.field29154
          + ", glTextureId: "
-         + (this.field29156 == null ? "" : this.field29156.method1131());
+         + (this.field29156 == null ? "" : this.field29156.getGlTextureId());
    }
 }

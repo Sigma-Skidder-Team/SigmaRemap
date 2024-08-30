@@ -13,7 +13,7 @@ public class Class2781 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if (this.field17386.method3066()) {
+      if (this.field17386.isAlive()) {
          if (!this.field17386.method3250()) {
             if (this.field17386.method3226()) {
                if (!this.field17386.velocityChanged) {

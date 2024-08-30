@@ -97,9 +97,9 @@ public abstract class Class5715<T extends Entity> {
          int var13 = !"deadmau5".equals(var2.getString()) ? 0 : -10;
          var3.push();
          var3.translate(0.0, (double)var12, 0.0);
-         var3.method35293(this.field25097.method32230());
+         var3.rotate(this.field25097.method32230());
          var3.method35292(-0.025F, -0.025F, 0.025F);
-         Class9367 var14 = var3.method35296().method32361();
+         Matrix4f var14 = var3.getLast().getMatrix();
          float var15 = Minecraft.getInstance().gameSettings.method37139(0.25F);
          int var16 = (int)(var15 * 255.0F) << 24;
          FontRenderer var17 = this.method17896();
@@ -109,7 +109,7 @@ public abstract class Class5715<T extends Entity> {
             var17.method38812(var2, var18, (float)var13, -1, false, var14, var4, false, 0, var5);
          }
 
-         var3.method35295();
+         var3.pop();
       }
    }
 

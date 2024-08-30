@@ -17,13 +17,13 @@ public class Class5193 extends Module {
     @Override
     public void onDisable() {
         Class9567.method37090(Class9567.method37075() * 0.8);
-        mc.timer.field40360 = 1.0F;
+        mc.timer.timerSpeed = 1.0F;
     }
 
     @Override
     public void onEnable() {
         this.field23501 = -1;
-        mc.timer.field40360 = 0.3F;
+        mc.timer.timerSpeed = 0.3F;
     }
 
     @EventTarget

@@ -46,7 +46,7 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
          float var24 = (float)(var8.field18050 - var20);
          float var25 = 0.025F;
          Class5422 var26 = var4.method25597(RenderType.method14327());
-         Class9367 var27 = var3.method35296().method32361();
+         Matrix4f var27 = var3.getLast().getMatrix();
          float var28 = MathHelper.method37815(var22 * var22 + var24 * var24) * 0.025F / 2.0F;
          float var29 = var24 * var28;
          float var30 = var22 * var28;
@@ -66,13 +66,13 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
             Shaders.method33120();
          }
 
-         var3.method35295();
+         var3.pop();
       }
    }
 
    public static void method17848(
       Class5422 var0,
-      Class9367 var1,
+      Matrix4f var1,
       float var2,
       float var3,
       float var4,
@@ -99,7 +99,7 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
 
    public static void method17849(
       Class5422 var0,
-      Class9367 var1,
+      Matrix4f var1,
       int var2,
       float var3,
       float var4,
@@ -126,12 +126,12 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
       float var20 = !(var4 > 0.0F) ? var4 - var4 * (1.0F - var18) * (1.0F - var18) : var4 * var18 * var18;
       float var21 = var5 * var18;
       if (!var10) {
-         var0.method17040(var1, var19 + var11, var20 + var6 - var7, var21 - var12).method17033(var15, var16, var17, 1.0F).method17034(var2).endVertex();
+         var0.pos(var1, var19 + var11, var20 + var6 - var7, var21 - var12).color(var15, var16, var17, 1.0F).method17034(var2).endVertex();
       }
 
-      var0.method17040(var1, var19 - var11, var20 + var7, var21 + var12).method17033(var15, var16, var17, 1.0F).method17034(var2).endVertex();
+      var0.pos(var1, var19 - var11, var20 + var7, var21 + var12).color(var15, var16, var17, 1.0F).method17034(var2).endVertex();
       if (var10) {
-         var0.method17040(var1, var19 + var11, var20 + var6 - var7, var21 - var12).method17033(var15, var16, var17, 1.0F).method17034(var2).endVertex();
+         var0.pos(var1, var19 + var11, var20 + var6 - var7, var21 - var12).color(var15, var16, var17, 1.0F).method17034(var2).endVertex();
       }
    }
 }

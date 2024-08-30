@@ -52,7 +52,7 @@ public class Class5724 extends Class5715<ItemEntity> {
       float var16 = var11.method22625().method34866(Class2327.field15931).field29591.method25270();
       var4.translate(0.0, (double)(var15 + 0.25F * var16), 0.0);
       float var17 = var1.method4138(var3);
-      var4.method35293(Class7680.field32900.method25285(var17));
+      var4.rotate(Vector3f.YP.method25285(var17));
       float var18 = var11.method22625().field42610.field29591.method25269();
       float var19 = var11.method22625().field42610.field29591.method25270();
       float var20 = var11.method22625().field42610.field29591.method25271();
@@ -84,13 +84,13 @@ public class Class5724 extends Class5715<ItemEntity> {
          }
 
          this.field25129.method781(var9, Class2327.field15931, false, var4, var5, var6, Class213.field798, var11);
-         var4.method35295();
+         var4.pop();
          if (!var12) {
             var4.translate((double)(0.0F * var18), (double)(0.0F * var19), (double)(0.09375F * var20));
          }
       }
 
-      var4.method35295();
+      var4.pop();
       super.method17853(var1, var2, var3, var4, var5, var6);
    }
 

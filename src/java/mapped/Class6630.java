@@ -26,12 +26,12 @@ public class Class6630 implements Class6627 {
 
    @Override
    public int method20207() {
-      return this.field29166.method1131();
+      return this.field29166.getGlTextureId();
    }
 
    @Override
    public void method20203() {
-      Class8535.method30367(this.field29166.method1131());
+      Class8535.method30367(this.field29166.getGlTextureId());
    }
 
    @Override

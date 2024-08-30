@@ -64,7 +64,7 @@ public class Class1044 extends Class1043 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.getItem() != Items.field38034 && this.method3066() && !this.method4741() && !this.method3005()) {
+      if (var5.getItem() != Items.field38034 && this.isAlive() && !this.method4741() && !this.method3005()) {
          if (var2 == Hand.MAIN_HAND) {
             var1.method2911(Class8876.field40139);
          }

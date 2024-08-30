@@ -38,7 +38,7 @@ public class Class5946 extends Class5942<Class950> {
       float var19 = var9[1];
       float var20 = var9[2];
       var0.push();
-      var0.method35293(Class7680.field32900.method25286(var15 * 2.25F - 45.0F));
+      var0.rotate(Vector3f.YP.rotationDegrees(var15 * 2.25F - 45.0F));
       float var21 = 0.0F;
       float var22 = 0.0F;
       float var23 = -var10;
@@ -71,7 +71,7 @@ public class Class5946 extends Class5942<Class950> {
          var30,
          var29
       );
-      var0.method35295();
+      var0.pop();
       var21 = -var11;
       float var31 = -var11;
       var22 = -var11;
@@ -102,7 +102,7 @@ public class Class5946 extends Class5942<Class950> {
          var30,
          var29
       );
-      var0.method35295();
+      var0.pop();
    }
 
    private static void method18470(
@@ -127,8 +127,8 @@ public class Class5946 extends Class5942<Class950> {
       float var18,
       float var19
    ) {
-      Class8892 var22 = var0.method35296();
-      Class9367 var23 = var22.method32361();
+      Class8892 var22 = var0.getLast();
+      Matrix4f var23 = var22.getMatrix();
       Class8967 var24 = var22.method32362();
       method18471(var23, var24, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var16, var17, var18, var19);
       method18471(var23, var24, var1, var2, var3, var4, var5, var6, var7, var14, var15, var12, var13, var16, var17, var18, var19);
@@ -137,7 +137,7 @@ public class Class5946 extends Class5942<Class950> {
    }
 
    private static void method18471(
-      Class9367 var0,
+      Matrix4f var0,
       Class8967 var1,
       Class5422 var2,
       float var3,
@@ -162,7 +162,7 @@ public class Class5946 extends Class5942<Class950> {
    }
 
    private static void method18472(
-      Class9367 var0,
+      Matrix4f var0,
       Class8967 var1,
       Class5422 var2,
       float var3,
@@ -175,9 +175,9 @@ public class Class5946 extends Class5942<Class950> {
       float var10,
       float var11
    ) {
-      var2.method17040(var0, var8, (float)var7, var9)
-         .method17033(var3, var4, var5, var6)
-         .method17027(var10, var11)
+      var2.pos(var0, var8, (float)var7, var9)
+         .color(var3, var4, var5, var6)
+         .tex(var10, var11)
          .method17035(Class213.field798)
          .method17034(15728880)
          .method17041(var1, 0.0F, 1.0F, 0.0F)

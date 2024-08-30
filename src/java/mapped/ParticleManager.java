@@ -29,7 +29,7 @@ public class ParticleManager implements Class268 {
    private final AtlasTexture field1176 = new AtlasTexture(AtlasTexture.field1103);
 
    public ParticleManager(ClientWorld var1, TextureManager var2) {
-      var2.method1073(this.field1176.method1100(), this.field1176);
+      var2.method1073(this.field1176.getTextureLocation(), this.field1176);
       this.field1168 = var1;
       this.field1171 = var2;
       this.method1190();
@@ -317,7 +317,7 @@ public class ParticleManager implements Class268 {
       FluidState var10 = var4.method37512();
       boolean var11 = var10.method23486(Class8953.field40469);
       RenderSystem.pushMatrix();
-      RenderSystem.method27888(var1.method35296().method32361());
+      RenderSystem.method27888(var1.getLast().getMatrix());
       Collection<Class6843> var12 = field1167;
       if (Class9299.field42864.method20245()) {
          var12 = this.field1169.keySet();

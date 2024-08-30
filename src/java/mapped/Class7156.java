@@ -109,10 +109,10 @@ public class Class7156 {
       }
 
       var6.begin(7, DefaultVertexFormats.field43346);
-      var6.pos(0.0, (double)var2, 0.0).method17027(var10, var11 + var9).color(255, 255, 255, 255).endVertex();
-      var6.pos((double)var1, (double)var2, 0.0).method17027(var10 + var8, var11 + var9).color(255, 255, 255, 255).endVertex();
-      var6.pos((double)var1, 0.0, 0.0).method17027(var10 + var8, var11).color(255, 255, 255, 255).endVertex();
-      var6.pos(0.0, 0.0, 0.0).method17027(var10, var11).color(255, 255, 255, 255).endVertex();
+      var6.pos(0.0, (double)var2, 0.0).tex(var10, var11 + var9).color(255, 255, 255, 255).endVertex();
+      var6.pos((double)var1, (double)var2, 0.0).tex(var10 + var8, var11 + var9).color(255, 255, 255, 255).endVertex();
+      var6.pos((double)var1, 0.0, 0.0).tex(var10 + var8, var11).color(255, 255, 255, 255).endVertex();
+      var6.pos(0.0, 0.0, 0.0).tex(var10, var11).color(255, 255, 255, 255).endVertex();
       var5.draw();
    }
 }

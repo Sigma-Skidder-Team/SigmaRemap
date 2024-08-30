@@ -61,7 +61,7 @@ public class Class1318 extends Screen {
          int var7 = this.field4564 / 2 - 62;
          int var8 = this.field4565 / 2 - 30 - 27;
          method5699(var1, var7, var8, 0.0F, 0.0F, 125, 75, 128, 128);
-         var1.method35295();
+         var1.pop();
          super.method1923(var1, var2, var3, var4);
          this.field6966.ifPresent(var2x -> method5691(var1, this.fontRenderer, Class2150.method8863(var2x), this.field4564 / 2, this.field4565 / 2 - 30 - 20, -1));
          method5691(var1, this.fontRenderer, field6964, this.field4564 / 2, this.field4565 / 2 + 5, 16777215);
@@ -98,7 +98,7 @@ public class Class1318 extends Screen {
    }
 
    private boolean method6259() {
-      if (Class9798.method38639(this.mc.getMainWindow().getHandle(), 292)) {
+      if (InputMappings.isKeyDown(this.mc.getMainWindow().getHandle(), 292)) {
          return false;
       } else {
          this.method6257();

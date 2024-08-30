@@ -60,7 +60,7 @@ public class Class5133 implements Class5119 {
    public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.disableTexture();
       this.method15875();
       this.method15876(var3, var5, var7);
@@ -108,14 +108,14 @@ public class Class5133 implements Class5119 {
    private static void method15877(BlockPos var0) {
       float var3 = 0.05F;
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       DebugRenderer.method27456(var0, 0.05F, 0.2F, 0.2F, 1.0F, 0.3F);
    }
 
    private void method15878(BlockPos var1, List<String> var2) {
       float var5 = 0.05F;
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       DebugRenderer.method27456(var1, 0.05F, 0.2F, 0.2F, 1.0F, 0.3F);
       method15883("" + var2, var1, 0, -256);
       method15883("Ghost POI", var1, 1, -65536);

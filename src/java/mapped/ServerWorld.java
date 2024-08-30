@@ -414,7 +414,7 @@ public class ServerWorld extends World implements Class1658 {
    public BlockPos method6900(BlockPos var1) {
       BlockPos var4 = this.method7006(Class101.field299, var1);
       AxisAlignedBB var5 = new AxisAlignedBB(var4, new BlockPos(var4.getX(), this.method7034(), var4.getZ())).method19664(3.0);
-      List var6 = this.<Class880>method6772(Class880.class, var5, var1x -> var1x != null && var1x.method3066() && this.method7022(var1x.getPosition()));
+      List var6 = this.<Class880>method6772(Class880.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method7022(var1x.getPosition()));
       if (var6.isEmpty()) {
          if (var4.getY() == -1) {
             var4 = var4.method8339(2);
@@ -607,7 +607,7 @@ public class ServerWorld extends World implements Class1658 {
 
       while (var4.hasNext()) {
          Entity var5 = (Entity)var4.next();
-         if (var5 instanceof Class1007 && var5.method3066()) {
+         if (var5 instanceof Class1007 && var5.isAlive()) {
             var3.add((Class1007)var5);
          }
       }
@@ -629,7 +629,7 @@ public class ServerWorld extends World implements Class1658 {
 
    @Nullable
    public ServerPlayerEntity method6915() {
-      List var3 = this.method6914(Class880::method3066);
+      List var3 = this.method6914(Class880::isAlive);
       return !var3.isEmpty() ? (ServerPlayerEntity)var3.get(this.rand.nextInt(var3.size())) : null;
    }
 
@@ -1279,7 +1279,7 @@ public class ServerWorld extends World implements Class1658 {
             var6.getPosZ(),
             var6.getUniqueID(),
             Registry.ENTITY_TYPE.getKey(var6.getType()),
-            var6.method3066(),
+            var6.isAlive(),
             var8.getString(),
             var7 == null ? null : var7.getString()
          );

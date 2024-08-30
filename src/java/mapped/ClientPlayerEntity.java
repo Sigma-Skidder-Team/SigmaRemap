@@ -250,7 +250,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    @Override
    public void method2888(Class8654 var1, float var2) {
       if (!this.method2760(var1)) {
-         this.method3043(this.method3042() - var2);
+         this.method3043(this.getHealth() - var2);
       }
    }
 
@@ -271,10 +271,10 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          this.method3043(var1);
          this.field6129 = true;
       } else {
-         float var4 = this.method3042() - var1;
+         float var4 = this.getHealth() - var1;
          if (!(var4 <= 0.0F)) {
             this.field4980 = var4;
-            this.method3043(this.method3042());
+            this.method3043(this.getHealth());
             this.hurtResistantTime = 20;
             this.method2888(Class8654.field39005, var4);
             this.field4953 = 10;
@@ -635,8 +635,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          && !this.method3337()
          && var7
          && !this.isHandActive()
-         && !this.method3033(Class8254.field35481)) {
-         if (this.field6133 <= 0 && !this.field6132.gameSettings.field44638.isKeyDown()) {
+         && !this.method3033(Effects.BLINDNESS)) {
+         if (this.field6133 <= 0 && !this.field6132.gameSettings.keyBindSprint.isKeyDown()) {
             this.field6133 = 7;
          } else {
             this.setSprinting(true);
@@ -648,8 +648,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          && this.method5415()
          && var7
          && !this.isHandActive()
-         && !this.method3033(Class8254.field35481)
-         && this.field6132.gameSettings.field44638.isKeyDown()) {
+         && !this.method3033(Effects.BLINDNESS)
+         && this.field6132.gameSettings.keyBindSprint.isKeyDown()) {
          this.setSprinting(true);
       }
 
@@ -762,7 +762,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    private void method5409() {
       this.field6142 = this.field6141;
       if (!this.inPortal) {
-         if (this.method3033(Class8254.field35475) && this.method3034(Class8254.field35475).method8628() > 60) {
+         if (this.method3033(Effects.NAUSEA) && this.method3034(Effects.NAUSEA).method8628() > 60) {
             this.field6141 += 0.006666667F;
             if (this.field6141 > 1.0F) {
                this.field6141 = 1.0F;
@@ -817,8 +817,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Nullable
    @Override
-   public Class2023 method3039(Class7144 var1) {
-      if (var1 == Class8254.field35475) {
+   public Class2023 method3039(Effect var1) {
+      if (var1 == Effects.NAUSEA) {
          this.field6142 = 0.0F;
          this.field6141 = 0.0F;
       }
@@ -872,8 +872,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                if (var17.getCollisionShape(this.world, var15, var46).method19516()) {
                   float var18 = 7.0F;
                   float var19 = 1.2F;
-                  if (this.method3033(Class8254.field35474)) {
-                     var19 += (float)(this.method3034(Class8254.field35474).method8629() + 1) * 0.75F;
+                  if (this.method3033(Effects.JUMP_BOOST)) {
+                     var19 += (float)(this.method3034(Effects.JUMP_BOOST).method8629() + 1) * 0.75F;
                   }
 
                   float var20 = Math.max(var8 * 7.0F, 1.0F / var42);

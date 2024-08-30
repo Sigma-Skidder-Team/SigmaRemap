@@ -91,7 +91,7 @@ public class BlockRendererDispatcher implements Class215 {
                float var13 = (float)(var11 >> 8 & 0xFF) / 255.0F;
                float var14 = (float)(var11 & 0xFF) / 255.0F;
                this.field854
-                  .method24690(var2.method35296(), var3.method25597(Class8928.method32632(var1, false)), var1, var10, var12, var13, var14, var4, var5, var6);
+                  .method24690(var2.getLast(), var3.method25597(Class8928.method32632(var1, false)), var1, var10, var12, var13, var14, var4, var5, var6);
                break;
             case 2:
                if (Class9299.field42913.method20214()) {

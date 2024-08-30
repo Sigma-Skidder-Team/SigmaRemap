@@ -33,7 +33,7 @@ public abstract class Class231<T extends Class880, M extends Class2894<T>> exten
             var19 = -1.0F * (var19 * 2.0F - 1.0F);
             var20 = -1.0F * (var20 * 2.0F - 1.0F);
             this.method836(var1, var2, var3, var4, var18, var19, var20, var7);
-            var1.method35295();
+            var1.pop();
          }
       }
    }

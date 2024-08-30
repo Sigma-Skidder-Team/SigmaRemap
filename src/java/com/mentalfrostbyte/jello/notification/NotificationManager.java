@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.notification;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
-import com.mentalfrostbyte.jello.event.impl.Class4420;
+import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
@@ -127,7 +127,7 @@ public class NotificationManager {
     }
 
     @EventTarget
-    private void method31997(Class4420 var1) {
+    private void method31997(Render3DEvent var1) {
         if (this.field39918.player == null) {
             ;
         }

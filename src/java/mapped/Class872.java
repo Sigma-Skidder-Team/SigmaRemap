@@ -12,8 +12,8 @@ public class Class872 extends Class851<Class5821> {
    private static final ITextComponent field4843 = new TranslationTextComponent("block.minecraft.beacon.secondary");
    private Class1203 field4844;
    private boolean field4845;
-   private Class7144 field4846;
-   private Class7144 field4847;
+   private Effect field4846;
+   private Effect field4847;
 
    public Class872(Class5821 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
@@ -43,7 +43,7 @@ public class Class872 extends Class851<Class5821> {
             int var6 = var5 * 22 + (var5 - 1) * 2;
 
             for (int var7 = 0; var7 < var5; var7++) {
-               Class7144 var8 = Class950.field5338[var4][var7];
+               Effect var8 = Class950.field5338[var4][var7];
                Class1205 var9 = new Class1205(this, this.field4734 + 76 + var7 * 24 - var6 / 2, this.field4735 + 22 + var4 * 25, var8, true);
                this.<Class1205>method2455(var9);
                if (var4 < var3) {
@@ -61,7 +61,7 @@ public class Class872 extends Class851<Class5821> {
          int var12 = var11 * 22 + (var11 - 1) * 2;
 
          for (int var13 = 0; var13 < var11 - 1; var13++) {
-            Class7144 var15 = Class950.field5338[3][var13];
+            Effect var15 = Class950.field5338[3][var13];
             Class1205 var16 = new Class1205(this, this.field4734 + 167 + var13 * 24 - var12 / 2, this.field4735 + 47, var15, false);
             this.<Class1205>method2455(var16);
             if (3 < var3) {
@@ -126,12 +126,12 @@ public class Class872 extends Class851<Class5821> {
    }
 
    // $VF: synthetic method
-   public static Class7144 method2701(Class872 var0, Class7144 var1) {
+   public static Effect method2701(Class872 var0, Effect var1) {
       return var0.field4846 = var1;
    }
 
    // $VF: synthetic method
-   public static Class7144 method2702(Class872 var0, Class7144 var1) {
+   public static Effect method2702(Class872 var0, Effect var1) {
       return var0.field4847 = var1;
    }
 
@@ -161,12 +161,12 @@ public class Class872 extends Class851<Class5821> {
    }
 
    // $VF: synthetic method
-   public static Class7144 method2708(Class872 var0) {
+   public static Effect method2708(Class872 var0) {
       return var0.field4846;
    }
 
    // $VF: synthetic method
-   public static Class7144 method2709(Class872 var0) {
+   public static Effect method2709(Class872 var0) {
       return var0.field4847;
    }
 

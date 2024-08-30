@@ -54,7 +54,7 @@ public class Class8862 {
                   if (var18 == null) {
                      Class7944.method26815("CustomSky: Texture not found: " + var17);
                   } else {
-                     var15.field33147 = var18.method1131();
+                     var15.field33147 = var18.getGlTextureId();
                      var7.add(var15);
                      var12.close();
                   }

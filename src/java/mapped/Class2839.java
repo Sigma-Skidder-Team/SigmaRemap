@@ -199,7 +199,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var13)
          .method27308(
-            Items.field37872,
+            Items.GOLDEN_APPLE,
             new TranslationTextComponent("advancements.story.cure_zombie_villager.title"),
             new TranslationTextComponent("advancements.story.cure_zombie_villager.description"),
             (ResourceLocation)null,

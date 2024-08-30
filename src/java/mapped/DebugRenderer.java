@@ -159,7 +159,7 @@ public class DebugRenderer {
          RenderSystem.pushMatrix();
          RenderSystem.translatef((float)(var1 - var17), (float)(var3 - var19) + 0.07F, (float)(var5 - var21));
          RenderSystem.method27825(0.0F, 1.0F, 0.0F);
-         RenderSystem.method27888(new Class9367(var15.method37508()));
+         RenderSystem.method27888(new Matrix4f(var15.method37508()));
          RenderSystem.scalef(var8, -var8, var8);
          RenderSystem.enableTexture();
          if (!var11) {

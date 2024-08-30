@@ -65,7 +65,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3643(var2, Blocks.CRAFTING_TABLE, 300);
       method3643(var2, Blocks.field36720, 300);
       method3642(var2, Class5985.field26094, 300);
-      method3643(var2, Items.field37796, 300);
+      method3643(var2, Items.BOW, 300);
       method3643(var2, Items.field37906, 300);
       method3643(var2, Blocks.LADDER, 300);
       method3642(var2, Class5985.field26115, 200);

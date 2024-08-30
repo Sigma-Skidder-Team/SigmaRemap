@@ -19,13 +19,13 @@ public class Class1295 extends Class1293<Class1186> {
       String var6 = null;
 
       for (KeyBinding var10 : var5) {
-         String var11 = var10.method8510();
+         String var11 = var10.getKeyCategory();
          if (!var11.equals(var6)) {
             var6 = var11;
             this.method6030(new Class1187(this, new TranslationTextComponent(var11)));
          }
 
-         TranslationTextComponent var12 = new TranslationTextComponent(var10.method8513());
+         TranslationTextComponent var12 = new TranslationTextComponent(var10.getKeyDescription());
          int var13 = var2.fontRenderer.method38821(var12);
          if (var13 > this.field6861) {
             this.field6861 = var13;

@@ -17,7 +17,7 @@ public class Class5124 implements Class5119 {
       ClientWorld var11 = this.field23305.world;
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.disableTexture();
       BlockPos var12 = new BlockPos(var3, var5, var7);
       LongOpenHashSet var13 = new LongOpenHashSet();

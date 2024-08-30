@@ -15,7 +15,7 @@ public final class Class300 extends Class299 {
    }
 
    @Override
-   public int method1131() {
+   public int getGlTextureId() {
       return 0;
    }
 

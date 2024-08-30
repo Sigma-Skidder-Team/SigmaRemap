@@ -51,7 +51,7 @@ public class Class1100 extends Class1009 {
    }
 
    public static Class7037 method5269() {
-      return Class1009.method4343().method21849(Class9173.field42105, 14.0).method21849(Class9173.field42110, 4.0);
+      return Class1009.method4343().method21849(Attributes.field42105, 14.0).method21849(Attributes.field42110, 4.0);
    }
 
    @Override
@@ -148,7 +148,7 @@ public class Class1100 extends Class1009 {
    }
 
    @Override
-   public float method3267() {
+   public float getBrightness() {
       return 1.0F;
    }
 

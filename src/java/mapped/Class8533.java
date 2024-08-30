@@ -191,7 +191,7 @@ public class Class8533 {
                      this.field38341 = Integer.MAX_VALUE;
                      this.field38342 = true;
                      this.field38355 = field38334;
-                     this.field38354 = Entity::method3066;
+                     this.field38354 = Entity::isAlive;
                   } else {
                      this.field38341 = 1;
                      this.field38342 = true;

@@ -84,8 +84,8 @@ public class Class7317 {
       return var8 * var8 + var9 * var9 + var10 * var10;
    }
 
-   public static Class9367 method23178() {
-      Class9367 var2 = new Class9367();
+   public static Matrix4f method23178() {
+      Matrix4f var2 = new Matrix4f();
       var2.method35503();
       return var2;
    }

@@ -41,7 +41,7 @@ public class SkinManager {
    private ResourceLocation method38345(MinecraftProfileTexture var1, Type var2, Class7979 var3) {
       String var6 = Hashing.sha1().hashUnencodedChars(var1.getHash()).toString();
       ResourceLocation var7 = new ResourceLocation("skins/" + var6);
-      Class290 var8 = this.field45648.method1076(var7);
+      Class290 var8 = this.field45648.getTexture(var7);
       if (var8 == null) {
          File var9 = new File(this.field45649, var6.length() <= 2 ? "xx" : var6.substring(0, 2));
          File var10 = new File(var9, var6);

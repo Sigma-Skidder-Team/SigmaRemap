@@ -5,13 +5,13 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1205 extends Class1201 {
-   private final Class7144 field6506;
+   private final Effect field6506;
    private final TextureAtlasSprite field6507;
    private final boolean field6508;
    private final ITextComponent field6509;
    public final Class872 field6510;
 
-   public Class1205(Class872 var1, int var2, int var3, Class7144 var4, boolean var5) {
+   public Class1205(Class872 var1, int var2, int var3, Effect var4, boolean var5) {
       super(var2, var3);
       this.field6510 = var1;
       this.field6506 = var4;
@@ -20,9 +20,9 @@ public class Class1205 extends Class1201 {
       this.field6509 = this.method5763(var4, var5);
    }
 
-   private ITextComponent method5763(Class7144 var1, boolean var2) {
+   private ITextComponent method5763(Effect var1, boolean var2) {
       TranslationTextComponent var5 = new TranslationTextComponent(var1.method22294());
-      if (!var2 && var1 != Class8254.field35476) {
+      if (!var2 && var1 != Effects.REGENERATION) {
          var5.appendString(" II");
       }
 
@@ -52,7 +52,7 @@ public class Class1205 extends Class1201 {
 
    @Override
    public void method5760(MatrixStack var1) {
-      Minecraft.getInstance().getTextureManager().bindTexture(this.field6507.method7466().method1100());
+      Minecraft.getInstance().getTextureManager().bindTexture(this.field6507.getAtlasTexture().getTextureLocation());
       method5695(var1, this.field6477 + 2, this.field6478 + 2, this.method5702(), 18, 18, this.field6507);
    }
 }

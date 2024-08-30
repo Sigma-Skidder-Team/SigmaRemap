@@ -25,7 +25,7 @@ public class Class5221 extends Module {
             Vector3d var4 = new Vector3d(mc.player.getPosX(), 0.0, mc.player.getPosZ());
             if (mc.player.onGround && this.field23558 != null) {
                 double var5 = var4.method11341(this.field23558) / (double) this.field23557;
-                var5 *= mc.timer.field40360;
+                var5 *= mc.timer.timerSpeed;
                 boolean var7 = Client.getInstance().method19939().method31329() > 1 && mc.player.field4999 == 0;
                 double var8 = !var7 ? 0.312948 : 0.280616;
                 double var10 = var5 / var8;

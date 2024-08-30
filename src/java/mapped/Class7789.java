@@ -544,12 +544,12 @@ public class Class7789 {
          float var4 = 0.0F;
 
          for (Class2023 var6 : var3) {
-            if (var6.method8627() == Class8254.field35472) {
+            if (var6.method8627() == Effects.INSTANT_HEALTH) {
                var4 = (float)(var6.method8629() + 1);
             }
 
-            if (var6.method8627() != Class8254.field35476) {
-               if (var6.method8627() == Class8254.field35473) {
+            if (var6.method8627() != Effects.REGENERATION) {
+               if (var6.method8627() == Effects.INSTANT_DAMAGE) {
                   var4 = (float)(-var6.method8629() + 1);
                }
             } else {
@@ -569,8 +569,8 @@ public class Class7789 {
          float var4 = 0.0F;
 
          for (Class2023 var6 : var3) {
-            if (var6.method8627() != Class8254.field35467) {
-               if (var6.method8627() == Class8254.field35468) {
+            if (var6.method8627() != Effects.SPEED) {
+               if (var6.method8627() == Effects.SLOWNESS) {
                   var4 = (float)(-var6.method8629() + 1);
                }
             } else {
@@ -720,10 +720,10 @@ public class Class7789 {
    public static boolean method25874(ItemStack var0) {
       if (var0 != null && var0.getItem() instanceof Class3323) {
          for (Class2023 var4 : method25858(var0)) {
-            if (var4.method8627() == Class8254.field35485
-               || var4.method8627() == Class8254.field35473
-               || var4.method8627() == Class8254.field35468
-               || var4.method8627() == Class8254.field35484) {
+            if (var4.method8627() == Effects.POISON
+               || var4.method8627() == Effects.INSTANT_DAMAGE
+               || var4.method8627() == Effects.SLOWNESS
+               || var4.method8627() == Effects.WEAKNESS) {
                return true;
             }
          }

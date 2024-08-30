@@ -54,10 +54,10 @@ public class Class3279 extends Item implements Class3255 {
       Class3357.method11931(this, field18780);
       Builder var6 = ImmutableMultimap.builder();
       UUID var7 = field18779[var2.method8773()];
-      var6.put(Class9173.field42113, new Class9689(var7, "Armor modifier", (double)this.field18782, Class2045.field13352));
-      var6.put(Class9173.field42114, new Class9689(var7, "Armor toughness", (double)this.field18783, Class2045.field13352));
+      var6.put(Attributes.field42113, new Class9689(var7, "Armor modifier", (double)this.field18782, AttributeModifierOperation.ADDITION));
+      var6.put(Attributes.field42114, new Class9689(var7, "Armor toughness", (double)this.field18783, AttributeModifierOperation.ADDITION));
       if (var1 == Class2114.field13779) {
-         var6.put(Class9173.field42107, new Class9689(var7, "Armor knockback resistance", (double)this.field18784, Class2045.field13352));
+         var6.put(Attributes.field42107, new Class9689(var7, "Armor knockback resistance", (double)this.field18784, AttributeModifierOperation.ADDITION));
       }
 
       this.field18786 = var6.build();

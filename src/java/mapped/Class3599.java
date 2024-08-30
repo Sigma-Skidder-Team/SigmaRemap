@@ -1,14 +1,15 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import net.minecraft.entity.Entity;
 
 import java.util.Comparator;
 
 public class Class3599 implements Comparator<Class8012> {
    private static String[] field19551;
-   public final Class9528 field19552;
+   public final InteractAutoBlock field19552;
 
-   public Class3599(Class9528 var1) {
+   public Class3599(InteractAutoBlock var1) {
       this.field19552 = var1;
    }
 

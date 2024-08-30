@@ -23,7 +23,7 @@ public class Class2766 extends Class2595 {
       return this.field17340.method4228().method20811()
          && this.field17340.method5275()
          && this.field17340.method4232() != null
-         && this.field17340.method4232().method3066();
+         && this.field17340.method4232().isAlive();
    }
 
    @Override

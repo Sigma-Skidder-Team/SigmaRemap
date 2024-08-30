@@ -3,7 +3,7 @@ package mapped;
 public class Class7394 {
    private static String[] field31653;
    public final Class8161[] field31654;
-   public final Class7680 field31655;
+   public final Vector3f field31655;
 
    public Class7394(Class8161[] var1, float var2, float var3, float var4, float var5, float var6, float var7, boolean var8, Direction var9) {
       this.field31654 = var1;

@@ -4,7 +4,7 @@ public final class Class6847 implements Class6843 {
    @Override
    public void method20824(BufferBuilder var1, TextureManager var2) {
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.depthMask(true);
       var2.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
       var1.begin(7, DefaultVertexFormats.field43340);

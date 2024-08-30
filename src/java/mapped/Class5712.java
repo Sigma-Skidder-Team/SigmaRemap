@@ -83,7 +83,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          Class4410 var33 = new Class4410(var9, var10, var11, var31, var3, var1);
          Client.getInstance().getEventManager().call(var33);
          if (var33.isCancelled()) {
-            var4.method35295();
+            var4.pop();
             return;
          }
 
@@ -106,7 +106,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          var4.translate(0.0, -1.501F, 0.0);
          float var35 = 0.0F;
          float var16 = 0.0F;
-         if (!var1.isPassenger() && var1.method3066()) {
+         if (!var1.isPassenger() && var1.isAlive()) {
             var35 = MathHelper.lerp(var3, var1.field4959, var1.field4960);
             var16 = var1.field4961 - var1.field4960 * (1.0F - var3);
             if (var1.method3005()) {
@@ -171,7 +171,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
 
          var33.method13942(Class2035.field13214);
          Client.getInstance().getEventManager().call(var33);
-         var4.method35295();
+         var4.pop();
          super.method17853((T)var1, var2, var3, var4, var5, var6);
          if (Class9299.field42992.method20241()) {
             Class9299.method35085(Class9299.field42992, var1, this, var3, var4, var5, var6);
@@ -235,7 +235,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
 
       Pose var8 = var1.method3212();
       if (var8 != Pose.field13621) {
-         var2.method35293(Class7680.field32900.method25286(180.0F - var4));
+         var2.rotate(Vector3f.YP.rotationDegrees(180.0F - var4));
       }
 
       if (var1.field4955 <= 0) {
@@ -247,19 +247,19 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
                      )
                    {
                      var2.translate(0.0, (double)(var1.method3430() + 0.1F), 0.0);
-                     var2.method35293(Class7680.field32902.method25286(180.0F));
+                     var2.rotate(Vector3f.field32902.rotationDegrees(180.0F));
                   }
                }
             } else {
                Direction var11 = var1.method3179();
                float var10 = var11 == null ? var4 : method17884(var11);
-               var2.method35293(Class7680.field32900.method25286(var10));
-               var2.method35293(Class7680.field32902.method25286(this.method17865((T)var1)));
-               var2.method35293(Class7680.field32900.method25286(270.0F));
+               var2.rotate(Vector3f.YP.rotationDegrees(var10));
+               var2.rotate(Vector3f.field32902.rotationDegrees(this.method17865((T)var1)));
+               var2.rotate(Vector3f.YP.rotationDegrees(270.0F));
             }
          } else {
-            var2.method35293(Class7680.field32898.method25286(-90.0F - var1.rotationPitch));
-            var2.method35293(Class7680.field32900.method25286(((float)var1.ticksExisted + var5) * -75.0F));
+            var2.rotate(Vector3f.field32898.rotationDegrees(-90.0F - var1.rotationPitch));
+            var2.rotate(Vector3f.YP.rotationDegrees(((float)var1.ticksExisted + var5) * -75.0F));
          }
       } else {
          float var12 = ((float)var1.field4955 + var5 - 1.0F) / 20.0F * 1.6F;
@@ -268,7 +268,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
             var12 = 1.0F;
          }
 
-         var2.method35293(Class7680.field32902.method25286(var12 * this.method17865((T)var1)));
+         var2.rotate(Vector3f.field32902.rotationDegrees(var12 * this.method17865((T)var1)));
       }
    }
 

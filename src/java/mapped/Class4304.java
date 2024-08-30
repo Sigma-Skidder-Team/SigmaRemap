@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class Class4304 extends Class4305 implements Class4347 {
    public boolean field20884 = true;
    public boolean field20885 = true;
    public boolean field20886 = false;
-   public final Timer field20887 = new Timer();
+   public final TimerUtil field20887 = new TimerUtil();
    public int field20888 = 300;
    public int field20889 = 2;
    private final List<Class6751> field20890 = new ArrayList<Class6751>();
@@ -68,7 +68,7 @@ public class Class4304 extends Class4305 implements Class4347 {
    public boolean method13078(int var1, int var2, int var3) {
       if (!super.method13078(var1, var2, var3)) {
          if (this.method13214()) {
-            this.field20887.method27118();
+            this.field20887.start();
             this.field20878 = var1;
             this.field20879 = var2;
             this.field20880 = this.field20878 - this.method13271();
@@ -85,7 +85,7 @@ public class Class4304 extends Class4305 implements Class4347 {
    public void method13095(int var1, int var2, int var3) {
       super.method13095(var1, var2, var3);
       if (this.method13214()) {
-         this.field20887.method27119();
+         this.field20887.stop();
          this.field20887.method27120();
       }
 
@@ -145,7 +145,7 @@ public class Class4304 extends Class4305 implements Class4347 {
       }
 
       if (this.method13216() && !var5) {
-         this.field20887.method27119();
+         this.field20887.stop();
          this.field20887.method27120();
       }
    }

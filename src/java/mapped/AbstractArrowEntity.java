@@ -341,7 +341,7 @@ public abstract class AbstractArrowEntity extends Class882 {
                ((ServerPlayerEntity)var7).field4855.sendPacket(new Class5534(Class5534.field24566, 0.0F));
             }
 
-            if (!var4.method3066() && this.field5109 != null) {
+            if (!var4.isAlive() && this.field5109 != null) {
                this.field5109.add(var13);
             }
 
@@ -349,7 +349,7 @@ public abstract class AbstractArrowEntity extends Class882 {
                ServerPlayerEntity var15 = (ServerPlayerEntity)var7;
                if (this.field5109 != null && this.method3488()) {
                   CriteriaTriggers.field44497.method15149(var15, this.field5109);
-               } else if (!var4.method3066() && this.method3488()) {
+               } else if (!var4.isAlive() && this.method3488()) {
                   CriteriaTriggers.field44497.method15149(var15, Arrays.<Entity>asList(var4));
                }
             }

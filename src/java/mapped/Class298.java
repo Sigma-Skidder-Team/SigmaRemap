@@ -14,7 +14,7 @@ public class Class298 extends Class290 {
       this.field1153 = var1;
       this.field1156 = var2;
       this.field1157 = new Class8459(0, 0, 256, 256);
-      Class8535.method30369(!var2 ? Class2083.field13568 : Class2083.field13564, this.method1131(), 256, 256);
+      Class8535.method30369(!var2 ? Class2083.field13568 : Class2083.field13564, this.getGlTextureId(), 256, 256);
       this.field1154 = RenderType.method14339(var1);
       this.field1155 = RenderType.method14340(var1);
    }

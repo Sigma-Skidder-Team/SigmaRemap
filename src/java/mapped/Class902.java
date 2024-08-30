@@ -48,7 +48,7 @@ public class Class902 extends Class901 {
             Class880 var7 = (Class880)var5;
             var6 = var4.method2741(Class8654.method31122(this, var7), 8.0F);
             if (var6) {
-               if (!var4.method3066()) {
+               if (!var4.isAlive()) {
                   var7.method3041(5.0F);
                } else {
                   this.method3399(var7, var4);
@@ -67,7 +67,7 @@ public class Class902 extends Class901 {
             }
 
             if (var8 > 0) {
-               ((Class880)var4).method3035(new Class2023(Class8254.field35486, 20 * var8, 1));
+               ((Class880)var4).method3035(new Class2023(Effects.WITHER, 20 * var8, 1));
             }
          }
       }

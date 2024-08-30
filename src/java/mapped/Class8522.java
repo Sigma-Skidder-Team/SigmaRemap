@@ -51,7 +51,7 @@ public class Class8522 {
    public boolean method30210(Class880 var1, Class880 var2) {
       if (var1 != var2) {
          if (!var2.isSpectator()) {
-            if (var2.method3066()) {
+            if (var2.isAlive()) {
                if (!this.field38242 && var2.method3362()) {
                   return false;
                } else if (this.field38247 != null && !this.field38247.test(var2)) {

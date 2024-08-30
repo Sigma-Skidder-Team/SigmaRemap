@@ -108,7 +108,7 @@ public class Class896 extends Class890 implements Class889 {
                   }
 
                   for (Class2023 var14 : var1) {
-                     Class7144 var15 = var14.method8627();
+                     Effect var15 = var14.method8627();
                      if (!var15.method22292()) {
                         int var16 = (int)(var11 * (double)var14.method8628() + 0.5);
                         if (var16 > 20) {

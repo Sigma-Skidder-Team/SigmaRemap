@@ -130,12 +130,12 @@ public class MouseHelper {
                   this.field44286 = var16;
                }
 
-               KeyBinding.method8505(Class1938.field12594.method8197(var9), var16);
+               KeyBinding.setKeyBindState(InputMappingsType.MOUSE.method8197(var9), var16);
                if (var16) {
                   if (this.field44285.player.isSpectator() && var9 == 2) {
                      this.field44285.ingameGUI.getSpectatorGui().method5727();
                   } else {
-                     KeyBinding.method8504(Class1938.field12594.method8197(var9));
+                     KeyBinding.onTick(InputMappingsType.MOUSE.method8197(var9));
                   }
                }
             }
@@ -193,7 +193,7 @@ public class MouseHelper {
    }
 
    public void registerCallbacks(long var1) {
-      Class9798.method38641(
+      InputMappings.method38641(
          var1,
          (var1x, var3, var5) -> this.field44285.execute(() -> this.method36734(var1x, var3, var5)),
          (var1x, var3, var4, var5) -> this.field44285.execute(() -> this.method36730(var1x, var3, var4, var5)),
@@ -310,13 +310,13 @@ public class MouseHelper {
    public void grabMouse() {
       if (this.field44285.isGameFocused() && !this.field44302) {
          if (!Minecraft.IS_RUNNING_ON_MAC) {
-            KeyBinding.method8506();
+            KeyBinding.updateKeyBindState();
          }
 
          this.field44302 = true;
          this.field44289 = (double)(this.field44285.getMainWindow().getWidth() / 2);
          this.field44290 = (double)(this.field44285.getMainWindow().getHeight() / 2);
-         Class9798.method38642(this.field44285.getMainWindow().getHandle(), 212995, this.field44289, this.field44290);
+         InputMappings.method38642(this.field44285.getMainWindow().getHandle(), 212995, this.field44289, this.field44290);
          this.field44285.displayGuiScreen((Screen)null);
          this.field44285.leftClickCounter = 10000;
          this.field44293 = true;
@@ -328,7 +328,7 @@ public class MouseHelper {
          this.field44302 = false;
          this.field44289 = (double)(this.field44285.getMainWindow().getWidth() / 2);
          this.field44290 = (double)(this.field44285.getMainWindow().getHeight() / 2);
-         Class9798.method38642(this.field44285.getMainWindow().getHandle(), 212993, this.field44289, this.field44290);
+         InputMappings.method38642(this.field44285.getMainWindow().getHandle(), 212993, this.field44289, this.field44290);
       }
    }
 

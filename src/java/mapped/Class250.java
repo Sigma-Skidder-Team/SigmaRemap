@@ -34,7 +34,7 @@ public class Class250<T extends PlayerEntity> extends Class219<T, Class2894<T>> 
          var1.translate(!var9 ? -0.4F : 0.4F, !var4.method3336() ? -1.5 : -1.3F, 0.0);
          Class5422 var17 = var2.method25597(this.field907.method11028(Class5697.field25067[var12.method122("Variant")]));
          this.field907.method11019(var1, var17, var3, Class213.field798, var5, var6, var7, var8, var4.ticksExisted);
-         var1.method35295();
+         var1.pop();
          Class7944.method26874().field1000 = var14;
          if (Class7944.method26921()) {
             Shaders.method33079(var14);

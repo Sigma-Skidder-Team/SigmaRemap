@@ -28,7 +28,7 @@ public abstract class Class2699 extends Class2595 {
       }
 
       if (var3 != null) {
-         if (var3.method3066()) {
+         if (var3.isAlive()) {
             Team var4 = this.field17153.getTeam();
             Team var5 = var3.getTeam();
             if (var4 != null && var5 == var4) {
@@ -65,7 +65,7 @@ public abstract class Class2699 extends Class2595 {
    }
 
    public double method10914() {
-      return this.field17153.method3086(Class9173.field42106);
+      return this.field17153.method3086(Attributes.field42106);
    }
 
    @Override

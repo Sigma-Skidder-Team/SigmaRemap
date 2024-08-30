@@ -28,7 +28,7 @@ public class Class2695 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      if (this.field17144.method3066()) {
+      if (this.field17144.isAlive()) {
          return this.field17143.getDistanceSq(this.field17144) > 225.0 ? false : !this.field17143.method4230().method21664() || this.method10803();
       } else {
          return false;

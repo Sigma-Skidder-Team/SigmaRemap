@@ -28,7 +28,7 @@ public class Class1157 extends Class1156 {
       this.field6298 = var3;
       this.field6297 = Minecraft.getInstance();
       this.field6299 = new ResourceLocation("servers/" + Hashing.sha1().hashUnencodedChars(var3.field33189) + "/icon");
-      this.field6301 = (Class291)this.field6297.getTextureManager().method1076(this.field6299);
+      this.field6301 = (Class291)this.field6297.getTextureManager().getTexture(this.field6299);
    }
 
    @Override

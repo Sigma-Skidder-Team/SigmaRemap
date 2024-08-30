@@ -50,7 +50,7 @@ public class Class1195 extends AbstractGui implements Class1196 {
    public void method5721(MatrixStack var1, float var2, int var3, int var4, Class8548 var5) {
       RenderSystem.method27867();
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, var2);
       this.field6471.getTextureManager().bindTexture(field6469);
       this.method5696(var1, var3 - 91, var4, 0, 0, 182, 22);
@@ -77,7 +77,7 @@ public class Class1195 extends AbstractGui implements Class1196 {
          var6.method22699(var1, var10, var9);
          RenderSystem.popMatrix();
          if (var9 > 3 && var6.method22700()) {
-            ITextComponent var11 = this.field6471.gameSettings.keyBindsHotbar[var2].method8521();
+            ITextComponent var11 = this.field6471.gameSettings.keyBindsHotbar[var2].func_238171_j_();
             this.field6471
                .fontRenderer
                .method38803(var1, var11, (float)(var3 + 19 - 2 - this.field6471.fontRenderer.method38821(var11)), var4 + 6.0F + 3.0F, 16777215 + (var9 << 24));
@@ -95,7 +95,7 @@ public class Class1195 extends AbstractGui implements Class1196 {
             int var8 = this.field6471.getMainWindow().getScaledHeight() - 35;
             RenderSystem.pushMatrix();
             RenderSystem.enableBlend();
-            RenderSystem.method27938();
+            RenderSystem.defaultBlendFunc();
             this.field6471.fontRenderer.method38803(var1, var6, (float)var7, (float)var8, 16777215 + (var4 << 24));
             RenderSystem.disableBlend();
             RenderSystem.popMatrix();

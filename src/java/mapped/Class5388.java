@@ -25,9 +25,9 @@ public class Class5388 extends Module {
    }
 
    @EventTarget
-   public void method16970(Class4417 var1) {
+   public void method16970(SafeWalkEvent var1) {
       if (this.isEnabled() && mc.player.onGround) {
-         var1.method13966(true);
+         var1.setSafe(true);
       }
    }
 
@@ -114,7 +114,7 @@ public class Class5388 extends Module {
    }
 
    @EventTarget
-   public void method16974(Class4422 var1) {
+   public void method16974(Render2DEvent var1) {
       if (this.isEnabled() && this.field24023 && !(mc.player.getPosY() < this.field24026) && this.getBooleanValueFromSetttingName("Fake fly")) {
          mc.player.positionVec.field18049 = this.field24026;
          mc.player.lastTickPosY = this.field24026;

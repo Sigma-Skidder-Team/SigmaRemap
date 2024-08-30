@@ -41,7 +41,7 @@ public class Class9118 {
 
    private void method34004(ServerData var1) {
       Class9375 var4 = Class9375.method35574(var1.field33189);
-      ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup) NetworkManager.field38643.method28097())).handler(new Class7272(this, var4, var1)))
+      ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup) NetworkManager.field38643.getValue())).handler(new Class7272(this, var4, var1)))
             .channel(NioSocketChannel.class))
          .connect(var4.method35572(), var4.method35573());
    }

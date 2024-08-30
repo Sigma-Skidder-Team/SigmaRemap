@@ -22,15 +22,15 @@ import java.util.regex.Pattern;
 
 public class Class6972 {
     public static Class7869[] method21516(String var0) {
-        return method21520(method21523("https://www.google.com/search?client=safari&num=21&gbv=1&tbm=vid&oq=&aqs=&q=site%3Ayoutube.com+" + method21522(var0)));
+        return method21520(doSomethingWithAnURL("https://www.google.com/search?client=safari&num=21&gbv=1&tbm=vid&oq=&aqs=&q=site%3Ayoutube.com+" + method21522(var0)));
     }
 
     public static Class7869[] method21517(String var0) {
-        return method21519(method21523("https://www.youtube.com/channel/" + var0 + "/videos?disable_polymer=1"));
+        return method21519(doSomethingWithAnURL("https://www.youtube.com/channel/" + var0 + "/videos?disable_polymer=1"));
     }
 
     public static Class7869[] method21518(String var0) {
-        return method21519(method21523("https://www.youtube.com/playlist?list=" + var0 + "&disable_polymer=1"));
+        return method21519(doSomethingWithAnURL("https://www.youtube.com/playlist?list=" + var0 + "&disable_polymer=1"));
     }
 
     public static Class7869[] method21519(String var0) {
@@ -113,7 +113,7 @@ public class Class6972 {
         return var3;
     }
 
-    private static String method21523(String var0) {
+    private static String doSomethingWithAnURL(String var0) {
         System.out.println(":" + var0);
         CloseableHttpClient var3 = HttpClients.createDefault();
         HttpGet var4 = new HttpGet(var0);

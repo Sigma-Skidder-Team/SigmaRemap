@@ -70,9 +70,9 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
       int var8 = this.field4735;
 
       for (Class2023 var10 : var4) {
-         Class7144 var11 = var10.method8627();
+         Effect var11 = var10.method8627();
          TextureAtlasSprite var12 = var7.method1022(var11);
-         this.mc.getTextureManager().bindTexture(var12.method7466().method1100());
+         this.mc.getTextureManager().bindTexture(var12.getAtlasTexture().getTextureLocation());
          method5695(var1, var2 + 6, var8 + 7, this.method5702(), 18, 18, var12);
          var8 += var3;
       }

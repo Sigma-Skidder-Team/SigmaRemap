@@ -37,7 +37,7 @@ public class Vector3d implements Class2955 {
       this.field18050 = var5;
    }
 
-   public Vector3d(Class7680 var1) {
+   public Vector3d(Vector3f var1) {
       this((double)var1.method25269(), (double)var1.method25270(), (double)var1.method25271());
    }
 

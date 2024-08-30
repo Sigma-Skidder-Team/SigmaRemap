@@ -22,8 +22,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       Blocks.field36777.method11581(),
       Items.field37795,
       Items.field38057,
-      Items.field37872,
-      Items.field37873
+      Items.GOLDEN_APPLE,
+      Items.ENCHANTED_GOLDEN_APPLE
    );
    private static final DataParameter<Byte> field5882 = EntityDataManager.<Byte>method35441(AbstractHorseEntity.class, Class7784.field33390);
    private static final DataParameter<Optional<UUID>> field5883 = EntityDataManager.<Optional<UUID>>method35441(AbstractHorseEntity.class, Class7784.field33404);
@@ -138,7 +138,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Override
    public boolean method4901() {
-      return this.method3066() && !this.method3005() && this.method4932();
+      return this.isAlive() && !this.method3005() && this.method4932();
    }
 
    @Override
@@ -259,7 +259,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public double method4949() {
-      return this.method3086(Class9173.field42117);
+      return this.method3086(Attributes.field42117);
    }
 
    @Nullable
@@ -328,7 +328,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public static Class7037 method4951() {
-      return Class1006.method4220().method21848(Class9173.field42117).method21849(Class9173.field42105, 53.0).method21849(Class9173.field42108, 0.225F);
+      return Class1006.method4220().method21848(Attributes.field42117).method21849(Attributes.field42105, 53.0).method21849(Attributes.MOVEMENT_SPEED, 0.225F);
    }
 
    @Override
@@ -380,7 +380,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             if (var9 != Blocks.field36777.method11581()) {
                if (var9 != Items.field37795) {
                   if (var9 != Items.field38057) {
-                     if (var9 == Items.field37872 || var9 == Items.field37873) {
+                     if (var9 == Items.GOLDEN_APPLE || var9 == Items.ENCHANTED_GOLDEN_APPLE) {
                         var6 = 10.0F;
                         var7 = 240;
                         var8 = 10;
@@ -418,7 +418,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          var8 = 3;
       }
 
-      if (this.method3042() < this.method3075() && var6 > 0.0F) {
+      if (this.getHealth() < this.method3075() && var6 > 0.0F) {
          this.method3041(var6);
          var5 = true;
       }
@@ -490,7 +490,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       }
 
       super.method2871();
-      if (!this.world.isRemote && this.method3066()) {
+      if (!this.world.isRemote && this.isAlive()) {
          if (this.rand.nextInt(900) == 0 && this.field4955 == 0) {
             this.method3041(1.0F);
          }
@@ -645,7 +645,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Override
    public void method2915(Vector3d var1) {
-      if (this.method3066()) {
+      if (this.isAlive()) {
          if (this.isBeingRidden() && this.method4277() && this.method4943()) {
             Class880 var4 = (Class880)this.method3407();
             this.rotationYaw = var4.rotationYaw;
@@ -669,10 +669,10 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             if (this.field5892 > 0.0F && !this.method4935() && this.onGround) {
                double var7 = this.method4949() * (double)this.field5892 * (double)this.method3229();
                double var9;
-               if (!this.method3033(Class8254.field35474)) {
+               if (!this.method3033(Effects.JUMP_BOOST)) {
                   var9 = var7;
                } else {
-                  var9 = var7 + (double)((float)(this.method3034(Class8254.field35474).method8629() + 1) * 0.1F);
+                  var9 = var7 + (double)((float)(this.method3034(Effects.JUMP_BOOST).method8629() + 1) * 0.1F);
                }
 
                Vector3d var11 = this.method3433();
@@ -694,7 +694,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                   this.method3434(Vector3d.ZERO);
                }
             } else {
-               this.method3113((float)this.method3086(Class9173.field42108));
+               this.method3113((float)this.method3086(Attributes.MOVEMENT_SPEED));
                super.method2915(new Vector3d((double)var5, var1.field18049, (double)var6));
             }
 
@@ -766,7 +766,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public boolean method4961() {
-      return !this.isBeingRidden() && !this.isPassenger() && this.method4932() && !this.method3005() && this.method3042() >= this.method3075() && this.method4507();
+      return !this.isBeingRidden() && !this.isPassenger() && this.method4932() && !this.method3005() && this.getHealth() >= this.method3075() && this.method4507();
    }
 
    @Nullable
@@ -776,12 +776,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public void method4962(Class1045 var1, AbstractHorseEntity var2) {
-      double var5 = this.method3087(Class9173.field42105) + var1.method3087(Class9173.field42105) + (double)this.method4971();
-      var2.method3085(Class9173.field42105).method38661(var5 / 3.0);
-      double var7 = this.method3087(Class9173.field42117) + var1.method3087(Class9173.field42117) + this.method4972();
-      var2.method3085(Class9173.field42117).method38661(var7 / 3.0);
-      double var9 = this.method3087(Class9173.field42108) + var1.method3087(Class9173.field42108) + this.method4973();
-      var2.method3085(Class9173.field42108).method38661(var9 / 3.0);
+      double var5 = this.method3087(Attributes.field42105) + var1.method3087(Attributes.field42105) + (double)this.method4971();
+      var2.method3085(Attributes.field42105).method38661(var5 / 3.0);
+      double var7 = this.method3087(Attributes.field42117) + var1.method3087(Attributes.field42117) + this.method4972();
+      var2.method3085(Attributes.field42117).method38661(var7 / 3.0);
+      double var9 = this.method3087(Attributes.MOVEMENT_SPEED) + var1.method3087(Attributes.MOVEMENT_SPEED) + this.method4973();
+      var2.method3085(Attributes.MOVEMENT_SPEED).method38661(var9 / 3.0);
    }
 
    @Override

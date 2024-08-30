@@ -237,7 +237,7 @@ public class Class7720 {
          Class7414.method23814(this.field33147);
          Class6988.method21638(this.field33134, var12);
          Class7414.method23832();
-         Class7414.method23842(var2.method35296().method32361());
+         Class7414.method23842(var2.getLast().getMatrix());
          if (this.field33135) {
             float var13 = 0.0F;
             if (this.field33136 != (float)Math.round(this.field33136)) {
@@ -350,10 +350,10 @@ public class Class7720 {
       float var6 = (float)(var2 % 3) / 3.0F;
       float var7 = (float)(var2 / 3) / 2.0F;
       var5.begin(7, DefaultVertexFormats.field43344);
-      var5.pos(-100.0, -100.0, -100.0).method17027(var6, var7).endVertex();
-      var5.pos(-100.0, -100.0, 100.0).method17027(var6, var7 + 0.5F).endVertex();
-      var5.pos(100.0, -100.0, 100.0).method17027(var6 + 0.33333334F, var7 + 0.5F).endVertex();
-      var5.pos(100.0, -100.0, -100.0).method17027(var6 + 0.33333334F, var7).endVertex();
+      var5.pos(-100.0, -100.0, -100.0).tex(var6, var7).endVertex();
+      var5.pos(-100.0, -100.0, 100.0).tex(var6, var7 + 0.5F).endVertex();
+      var5.pos(100.0, -100.0, 100.0).tex(var6 + 0.33333334F, var7 + 0.5F).endVertex();
+      var5.pos(100.0, -100.0, -100.0).tex(var6 + 0.33333334F, var7).endVertex();
       var1.draw();
    }
 

@@ -165,19 +165,19 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
          float var11 = 32.0F;
          var10.begin(7, DefaultVertexFormats.field43346);
          var10.pos((double)this.field6790, (double)this.field6788, 0.0)
-            .method17027((float)this.field6790 / 32.0F, (float)(this.field6788 + (int)this.method6044()) / 32.0F)
+            .tex((float)this.field6790 / 32.0F, (float)(this.field6788 + (int)this.method6044()) / 32.0F)
             .color(32, 32, 32, 255)
             .endVertex();
          var10.pos((double)this.field6789, (double)this.field6788, 0.0)
-            .method17027((float)this.field6789 / 32.0F, (float)(this.field6788 + (int)this.method6044()) / 32.0F)
+            .tex((float)this.field6789 / 32.0F, (float)(this.field6788 + (int)this.method6044()) / 32.0F)
             .color(32, 32, 32, 255)
             .endVertex();
          var10.pos((double)this.field6789, (double)this.field6787, 0.0)
-            .method17027((float)this.field6789 / 32.0F, (float)(this.field6787 + (int)this.method6044()) / 32.0F)
+            .tex((float)this.field6789 / 32.0F, (float)(this.field6787 + (int)this.method6044()) / 32.0F)
             .color(32, 32, 32, 255)
             .endVertex();
          var10.pos((double)this.field6790, (double)this.field6787, 0.0)
-            .method17027((float)this.field6790 / 32.0F, (float)(this.field6787 + (int)this.method6044()) / 32.0F)
+            .tex((float)this.field6790 / 32.0F, (float)(this.field6787 + (int)this.method6044()) / 32.0F)
             .color(32, 32, 32, 255)
             .endVertex();
          var9.draw();
@@ -198,32 +198,32 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
          byte var14 = -100;
          var10.begin(7, DefaultVertexFormats.field43346);
          var10.pos((double)this.field6790, (double)this.field6787, -100.0)
-            .method17027(0.0F, (float)this.field6787 / 32.0F)
+            .tex(0.0F, (float)this.field6787 / 32.0F)
             .color(64, 64, 64, 255)
             .endVertex();
          var10.pos((double)(this.field6790 + this.field6785), (double)this.field6787, -100.0)
-            .method17027((float)this.field6785 / 32.0F, (float)this.field6787 / 32.0F)
+            .tex((float)this.field6785 / 32.0F, (float)this.field6787 / 32.0F)
             .color(64, 64, 64, 255)
             .endVertex();
          var10.pos((double)(this.field6790 + this.field6785), 0.0, -100.0)
-            .method17027((float)this.field6785 / 32.0F, 0.0F)
+            .tex((float)this.field6785 / 32.0F, 0.0F)
             .color(64, 64, 64, 255)
             .endVertex();
-         var10.pos((double)this.field6790, 0.0, -100.0).method17027(0.0F, 0.0F).color(64, 64, 64, 255).endVertex();
+         var10.pos((double)this.field6790, 0.0, -100.0).tex(0.0F, 0.0F).color(64, 64, 64, 255).endVertex();
          var10.pos((double)this.field6790, (double)this.field6786, -100.0)
-            .method17027(0.0F, (float)this.field6786 / 32.0F)
+            .tex(0.0F, (float)this.field6786 / 32.0F)
             .color(64, 64, 64, 255)
             .endVertex();
          var10.pos((double)(this.field6790 + this.field6785), (double)this.field6786, -100.0)
-            .method17027((float)this.field6785 / 32.0F, (float)this.field6786 / 32.0F)
+            .tex((float)this.field6785 / 32.0F, (float)this.field6786 / 32.0F)
             .color(64, 64, 64, 255)
             .endVertex();
          var10.pos((double)(this.field6790 + this.field6785), (double)this.field6788, -100.0)
-            .method17027((float)this.field6785 / 32.0F, (float)this.field6788 / 32.0F)
+            .tex((float)this.field6785 / 32.0F, (float)this.field6788 / 32.0F)
             .color(64, 64, 64, 255)
             .endVertex();
          var10.pos((double)this.field6790, (double)this.field6788, -100.0)
-            .method17027(0.0F, (float)this.field6788 / 32.0F)
+            .tex(0.0F, (float)this.field6788 / 32.0F)
             .color(64, 64, 64, 255)
             .endVertex();
          var9.draw();
@@ -236,14 +236,14 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
          RenderSystem.disableTexture();
          byte var15 = 4;
          var10.begin(7, DefaultVertexFormats.field43346);
-         var10.pos((double)this.field6790, (double)(this.field6787 + 4), 0.0).method17027(0.0F, 1.0F).color(0, 0, 0, 0).endVertex();
-         var10.pos((double)this.field6789, (double)(this.field6787 + 4), 0.0).method17027(1.0F, 1.0F).color(0, 0, 0, 0).endVertex();
-         var10.pos((double)this.field6789, (double)this.field6787, 0.0).method17027(1.0F, 0.0F).color(0, 0, 0, 255).endVertex();
-         var10.pos((double)this.field6790, (double)this.field6787, 0.0).method17027(0.0F, 0.0F).color(0, 0, 0, 255).endVertex();
-         var10.pos((double)this.field6790, (double)this.field6788, 0.0).method17027(0.0F, 1.0F).color(0, 0, 0, 255).endVertex();
-         var10.pos((double)this.field6789, (double)this.field6788, 0.0).method17027(1.0F, 1.0F).color(0, 0, 0, 255).endVertex();
-         var10.pos((double)this.field6789, (double)(this.field6788 - 4), 0.0).method17027(1.0F, 0.0F).color(0, 0, 0, 0).endVertex();
-         var10.pos((double)this.field6790, (double)(this.field6788 - 4), 0.0).method17027(0.0F, 0.0F).color(0, 0, 0, 0).endVertex();
+         var10.pos((double)this.field6790, (double)(this.field6787 + 4), 0.0).tex(0.0F, 1.0F).color(0, 0, 0, 0).endVertex();
+         var10.pos((double)this.field6789, (double)(this.field6787 + 4), 0.0).tex(1.0F, 1.0F).color(0, 0, 0, 0).endVertex();
+         var10.pos((double)this.field6789, (double)this.field6787, 0.0).tex(1.0F, 0.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)this.field6790, (double)this.field6787, 0.0).tex(0.0F, 0.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)this.field6790, (double)this.field6788, 0.0).tex(0.0F, 1.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)this.field6789, (double)this.field6788, 0.0).tex(1.0F, 1.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)this.field6789, (double)(this.field6788 - 4), 0.0).tex(1.0F, 0.0F).color(0, 0, 0, 0).endVertex();
+         var10.pos((double)this.field6790, (double)(this.field6788 - 4), 0.0).tex(0.0F, 0.0F).color(0, 0, 0, 0).endVertex();
          var9.draw();
       }
 
@@ -258,18 +258,18 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
          }
 
          var10.begin(7, DefaultVertexFormats.field43346);
-         var10.pos((double)var7, (double)this.field6788, 0.0).method17027(0.0F, 1.0F).color(0, 0, 0, 255).endVertex();
-         var10.pos((double)var8, (double)this.field6788, 0.0).method17027(1.0F, 1.0F).color(0, 0, 0, 255).endVertex();
-         var10.pos((double)var8, (double)this.field6787, 0.0).method17027(1.0F, 0.0F).color(0, 0, 0, 255).endVertex();
-         var10.pos((double)var7, (double)this.field6787, 0.0).method17027(0.0F, 0.0F).color(0, 0, 0, 255).endVertex();
-         var10.pos((double)var7, (double)(var20 + var18), 0.0).method17027(0.0F, 1.0F).color(128, 128, 128, 255).endVertex();
-         var10.pos((double)var8, (double)(var20 + var18), 0.0).method17027(1.0F, 1.0F).color(128, 128, 128, 255).endVertex();
-         var10.pos((double)var8, (double)var20, 0.0).method17027(1.0F, 0.0F).color(128, 128, 128, 255).endVertex();
-         var10.pos((double)var7, (double)var20, 0.0).method17027(0.0F, 0.0F).color(128, 128, 128, 255).endVertex();
-         var10.pos((double)var7, (double)(var20 + var18 - 1), 0.0).method17027(0.0F, 1.0F).color(192, 192, 192, 255).endVertex();
-         var10.pos((double)(var8 - 1), (double)(var20 + var18 - 1), 0.0).method17027(1.0F, 1.0F).color(192, 192, 192, 255).endVertex();
-         var10.pos((double)(var8 - 1), (double)var20, 0.0).method17027(1.0F, 0.0F).color(192, 192, 192, 255).endVertex();
-         var10.pos((double)var7, (double)var20, 0.0).method17027(0.0F, 0.0F).color(192, 192, 192, 255).endVertex();
+         var10.pos((double)var7, (double)this.field6788, 0.0).tex(0.0F, 1.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)var8, (double)this.field6788, 0.0).tex(1.0F, 1.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)var8, (double)this.field6787, 0.0).tex(1.0F, 0.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)var7, (double)this.field6787, 0.0).tex(0.0F, 0.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)var7, (double)(var20 + var18), 0.0).tex(0.0F, 1.0F).color(128, 128, 128, 255).endVertex();
+         var10.pos((double)var8, (double)(var20 + var18), 0.0).tex(1.0F, 1.0F).color(128, 128, 128, 255).endVertex();
+         var10.pos((double)var8, (double)var20, 0.0).tex(1.0F, 0.0F).color(128, 128, 128, 255).endVertex();
+         var10.pos((double)var7, (double)var20, 0.0).tex(0.0F, 0.0F).color(128, 128, 128, 255).endVertex();
+         var10.pos((double)var7, (double)(var20 + var18 - 1), 0.0).tex(0.0F, 1.0F).color(192, 192, 192, 255).endVertex();
+         var10.pos((double)(var8 - 1), (double)(var20 + var18 - 1), 0.0).tex(1.0F, 1.0F).color(192, 192, 192, 255).endVertex();
+         var10.pos((double)(var8 - 1), (double)var20, 0.0).tex(1.0F, 0.0F).color(192, 192, 192, 255).endVertex();
+         var10.pos((double)var7, (double)var20, 0.0).tex(0.0F, 0.0F).color(192, 192, 192, 255).endVertex();
          var9.draw();
       }
 

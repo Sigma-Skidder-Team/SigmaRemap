@@ -345,7 +345,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
          return true;
       } else if (this.field6643.method5746() && this.field6643.method5670() && var1 != 256) {
          return true;
-      } else if (this.field6642.gameSettings.keyBindChat.method8519(var1, var2) && !this.field6643.method5746()) {
+      } else if (this.field6642.gameSettings.keyBindChat.matchesKey(var1, var2) && !this.field6643.method5746()) {
          this.field6649 = true;
          this.field6643.method5654(true);
          return true;

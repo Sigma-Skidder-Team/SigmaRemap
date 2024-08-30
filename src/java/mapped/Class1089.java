@@ -38,7 +38,7 @@ public class Class1089 extends Class1018 {
    }
 
    public static Class7037 method5069() {
-      return Class1006.method4220().method21849(Class9173.field42105, 4.0).method21849(Class9173.field42108, 0.25);
+      return Class1006.method4220().method21849(Attributes.field42105, 4.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -59,7 +59,7 @@ public class Class1089 extends Class1018 {
       }
 
       this.field5965 = this.field5965 + this.field5969 * 2.0F;
-      if (!this.world.isRemote && this.method3066() && !this.method3005() && !this.method5070() && --this.field5970 <= 0) {
+      if (!this.world.isRemote && this.isAlive() && !this.method3005() && !this.method5070() && --this.field5970 <= 0) {
          this.method2863(Sounds.field26452, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
          this.method3300(Items.field37904);
          this.field5970 = this.rand.nextInt(6000) + 6000;

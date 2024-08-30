@@ -327,7 +327,7 @@ public class Class6886 {
    }
 
    public void method21011(Entity var1) {
-      if (var1 != null && !(var1 instanceof PlayerEntity) && !var1.method3066()) {
+      if (var1 != null && !(var1 instanceof PlayerEntity) && !var1.isAlive()) {
          String var4 = var1.method3376();
          this.method20985(var4, (Class8375)null);
          this.method20994(var4);

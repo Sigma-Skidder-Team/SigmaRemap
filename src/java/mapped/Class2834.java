@@ -85,7 +85,7 @@ public class Class2834 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.field38088))
                   .method18291(Class4695.method14724(Items.field37886))
                   .method18291(
-                     Class4695.method14724(Items.field37796)
+                     Class4695.method14724(Items.BOW)
                         .method18296(Class145.method443(Class6872.method20921(0.0F, 0.25F)))
                         .method18296(Class143.method439(Class6871.method20919(30)).method18311())
                   )

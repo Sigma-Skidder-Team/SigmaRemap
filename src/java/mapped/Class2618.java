@@ -27,7 +27,7 @@ public class Class2618 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      if (this.field16895.method3066()) {
+      if (this.field16895.isAlive()) {
          return this.field16894.getDistanceSq(this.field16895) > (double)(this.field16897 * this.field16897)
             ? false
             : this.field16898 > 0 && this.method10825(this.field16895);

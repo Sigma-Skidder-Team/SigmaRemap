@@ -63,7 +63,7 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    public static Class7037 method5360() {
-      return Class1006.method4220().method21849(Class9173.field42105, 10.0).method21849(Class9173.field42106, 100.0);
+      return Class1006.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.field42106, 100.0);
    }
 
    @Override

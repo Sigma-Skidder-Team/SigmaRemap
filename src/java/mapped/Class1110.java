@@ -44,7 +44,7 @@ public class Class1110 extends Class1111 implements Class1008 {
 
    private void method5337() {
       this.method3385();
-      this.method3085(Class9173.field42110).method38661((double)(6 + this.method5338()));
+      this.method3085(Attributes.field42110).method38661((double)(6 + this.method5338()));
    }
 
    public int method5338() {
@@ -107,7 +107,7 @@ public class Class1110 extends Class1111 implements Class1008 {
 
    @Override
    public void method2871() {
-      if (this.method3066() && this.method4310()) {
+      if (this.isAlive() && this.method4310()) {
          this.method3221(8);
       }
 

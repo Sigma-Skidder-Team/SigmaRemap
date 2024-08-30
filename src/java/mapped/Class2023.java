@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Class2023 implements Comparable<Class2023> {
    private static final Logger field13133 = LogManager.getLogger();
-   private final Class7144 field13134;
+   private final Effect field13134;
    private int field13135;
    private int field13136;
    private boolean field13137;
@@ -16,27 +16,27 @@ public class Class2023 implements Comparable<Class2023> {
    private boolean field13141;
    private Class2023 field13142;
 
-   public Class2023(Class7144 var1) {
+   public Class2023(Effect var1) {
       this(var1, 0, 0);
    }
 
-   public Class2023(Class7144 var1, int var2) {
+   public Class2023(Effect var1, int var2) {
       this(var1, var2, 0);
    }
 
-   public Class2023(Class7144 var1, int var2, int var3) {
+   public Class2023(Effect var1, int var2, int var3) {
       this(var1, var2, var3, false, true);
    }
 
-   public Class2023(Class7144 var1, int var2, int var3, boolean var4, boolean var5) {
+   public Class2023(Effect var1, int var2, int var3, boolean var4, boolean var5) {
       this(var1, var2, var3, var4, var5, var5);
    }
 
-   public Class2023(Class7144 var1, int var2, int var3, boolean var4, boolean var5, boolean var6) {
+   public Class2023(Effect var1, int var2, int var3, boolean var4, boolean var5, boolean var6) {
       this(var1, var2, var3, var4, var5, var6, (Class2023)null);
    }
 
-   public Class2023(Class7144 var1, int var2, int var3, boolean var4, boolean var5, boolean var6, Class2023 var7) {
+   public Class2023(Effect var1, int var2, int var3, boolean var4, boolean var5, boolean var6, Class2023 var7) {
       this.field13134 = var1;
       this.field13135 = var2;
       this.field13136 = var3;
@@ -108,7 +108,7 @@ public class Class2023 implements Comparable<Class2023> {
       return var4;
    }
 
-   public Class7144 method8627() {
+   public Effect method8627() {
       return this.field13134;
    }
 
@@ -219,7 +219,7 @@ public class Class2023 implements Comparable<Class2023> {
    }
 
    public CompoundNBT method8637(CompoundNBT var1) {
-      var1.method100("Id", (byte)Class7144.method22288(this.method8627()));
+      var1.method100("Id", (byte) Effect.method22288(this.method8627()));
       this.method8638(var1);
       return var1;
    }
@@ -239,11 +239,11 @@ public class Class2023 implements Comparable<Class2023> {
 
    public static Class2023 method8639(CompoundNBT var0) {
       byte var3 = var0.method120("Id");
-      Class7144 var4 = Class7144.method22287(var3);
+      Effect var4 = Effect.method22287(var3);
       return var4 != null ? method8640(var4, var0) : null;
    }
 
-   private static Class2023 method8640(Class7144 var0, CompoundNBT var1) {
+   private static Class2023 method8640(Effect var0, CompoundNBT var1) {
       byte var4 = var1.method120("Amplifier");
       int var5 = var1.method122("Duration");
       boolean var6 = var1.method132("Ambient");

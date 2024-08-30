@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4420;
+import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import mapped.*;
@@ -44,7 +44,7 @@ public class Class8480 {
 
    @EventTarget
    @LowestPriority
-   public void method29973(Class4420 var1) {
+   public void method29973(Render3DEvent var1) {
       if (Client.getInstance().getGuiManager().method33472() && field36354 < field36356 && field36355 < field36357) {
          if (field36352 == null) {
             try {

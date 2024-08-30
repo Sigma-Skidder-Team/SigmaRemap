@@ -11,7 +11,7 @@ import java.util.UUID;
 
 public class Class1086 extends Class1087 implements Class1020 {
    private static final DataParameter<String> field5951 = EntityDataManager.<String>method35441(Class1086.class, Class7784.field33393);
-   private Class7144 field5952;
+   private Effect field5952;
    private int field5953;
    private UUID field5954;
 
@@ -103,7 +103,7 @@ public class Class1086 extends Class1087 implements Class1020 {
                   );
             }
 
-            this.field5952 = (Class7144)var7.getLeft();
+            this.field5952 = (Effect)var7.getLeft();
             this.field5953 = (Integer)var7.getRight();
             this.method2863(Sounds.field26766, 2.0F, 1.0F);
          } else {
@@ -135,7 +135,7 @@ public class Class1086 extends Class1087 implements Class1020 {
          this.method2904();
          Class1087 var4 = EntityType.field41016.method33215(this.world);
          var4.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
-         var4.method3043(this.method3042());
+         var4.method3043(this.getHealth());
          var4.field4965 = this.field4965;
          if (this.method3381()) {
             var4.method3379(this.method3380());
@@ -166,7 +166,7 @@ public class Class1086 extends Class1087 implements Class1020 {
 
    @Override
    public boolean method4516() {
-      return this.method3066() && !this.method3005();
+      return this.isAlive() && !this.method3005();
    }
 
    @Override
@@ -174,7 +174,7 @@ public class Class1086 extends Class1087 implements Class1020 {
       super.method2724(var1);
       var1.method109("Type", Class2210.method8936(this.method5037()));
       if (this.field5952 != null) {
-         var1.method100("EffectId", (byte)Class7144.method22288(this.field5952));
+         var1.method100("EffectId", (byte) Effect.method22288(this.field5952));
          var1.method102("EffectDuration", this.field5953);
       }
    }
@@ -184,7 +184,7 @@ public class Class1086 extends Class1087 implements Class1020 {
       super.method2723(var1);
       this.method5036(Class2210.method8938(var1.method126("Type")));
       if (var1.method119("EffectId", 1)) {
-         this.field5952 = Class7144.method22287(var1.method120("EffectId"));
+         this.field5952 = Effect.method22287(var1.method120("EffectId"));
       }
 
       if (var1.method119("EffectDuration", 3)) {
@@ -192,17 +192,17 @@ public class Class1086 extends Class1087 implements Class1020 {
       }
    }
 
-   private Optional<Pair<Class7144, Integer>> method5035(ItemStack var1) {
+   private Optional<Pair<Effect, Integer>> method5035(ItemStack var1) {
       Item var4 = var1.getItem();
       if (var4 instanceof Class3292) {
          Block var5 = ((Class3292)var4).method11845();
          if (var5 instanceof Class3490) {
             Class3490 var6 = (Class3490)var5;
-            return Optional.<Pair<Class7144, Integer>>of(Pair.of(var6.method12186(), var6.method12187()));
+            return Optional.<Pair<Effect, Integer>>of(Pair.of(var6.method12186(), var6.method12187()));
          }
       }
 
-      return Optional.<Pair<Class7144, Integer>>empty();
+      return Optional.<Pair<Effect, Integer>>empty();
    }
 
    private void method5036(Class2210 var1) {

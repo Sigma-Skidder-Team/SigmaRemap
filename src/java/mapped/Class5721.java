@@ -35,7 +35,7 @@ public class Class5721 extends Class5715<Class907> {
                   var9.method23451(var1.method3553()),
                   Class213.field798
                );
-            var4.method35295();
+            var4.pop();
             super.method17853(var1, var2, var3, var4, var5, var6);
          }
       }

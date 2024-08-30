@@ -31,9 +31,9 @@ public class Class6841 extends Class6829 {
       if (this.field29714 == Class2335.field15967) {
          this.field29714 = Class2335.field15966;
          if (!this.field29707.method3226()) {
-            this.field29707.method3113((float)(this.field29711 * this.field29707.method3086(Class9173.field42108)));
+            this.field29707.method3113((float)(this.field29711 * this.field29707.method3086(Attributes.MOVEMENT_SPEED)));
          } else {
-            this.field29707.method3113((float)(this.field29711 * this.field29707.method3086(Class9173.field42108)));
+            this.field29707.method3113((float)(this.field29711 * this.field29707.method3086(Attributes.MOVEMENT_SPEED)));
             if (this.field29731-- > 0) {
                this.field29732.field4982 = 0.0F;
                this.field29732.field4984 = 0.0F;

@@ -111,8 +111,8 @@ public class Class1262 extends AbstractGui {
          }
       }
 
-      Class7540.method24652(var1.method35296().method32361(), var6, -1873784752);
-      this.field6666.method38808(var4, var13, 14737632, var1.method35296().method32361(), false, this.field6666.method38829());
+      Class7540.method24652(var1.getLast().getMatrix(), var6, -1873784752);
+      this.field6666.method38808(var4, var13, 14737632, var1.getLast().getMatrix(), false, this.field6666.method38829());
    }
 
    public void method5880(MatrixStack var1) {
@@ -138,8 +138,8 @@ public class Class1262 extends AbstractGui {
          }
       }
 
-      Class7540.method24652(var1.method35296().method32361(), var6, -1873784752);
-      this.field6666.method38808(var4, var5, 14737632, var1.method35296().method32361(), false, this.field6666.method38829());
+      Class7540.method24652(var1.getLast().getMatrix(), var6, -1873784752);
+      this.field6666.method38808(var4, var5, 14737632, var1.getLast().getMatrix(), false, this.field6666.method38829());
    }
 
    public List<String> method5881() {
@@ -189,7 +189,7 @@ public class Class1262 extends AbstractGui {
       StringBuilder var10 = new StringBuilder();
       AtlasTexture var11 = Class7944.method26969();
       var10.append(", A: ");
-      if (Class4501.method14213()) {
+      if (SmartAnimations.isActive()) {
          var10.append(var11.method1118() + Class8389.method29403());
          var10.append("/");
       }
@@ -627,10 +627,10 @@ public class Class1262 extends AbstractGui {
          BufferBuilder var33 = Tessellator.getInstance().getBuffer();
          RenderSystem.enableBlend();
          RenderSystem.disableTexture();
-         RenderSystem.method27938();
+         RenderSystem.defaultBlendFunc();
          var33.begin(7, DefaultVertexFormats.POSITION_COLOR);
 
-         for (Class9367 var22 = Class6979.method21542().method21548(); var15 != var10; var15 = var2.method38596(var15 + 1)) {
+         for (Matrix4f var22 = Class6979.method21542().method21548(); var15 != var10; var15 = var2.method38596(var15 + 1)) {
             int var23 = var2.method38593(var11[var15], !var5 ? 60 : 30, !var5 ? 20 : 60);
             int var24 = !var5 ? 60 : 100;
             int var25 = this.method5891(MathHelper.method37775(var23, 0, var24), 0, var24 / 2, var24);
@@ -638,15 +638,15 @@ public class Class1262 extends AbstractGui {
             int var27 = var25 >> 16 & 0xFF;
             int var28 = var25 >> 8 & 0xFF;
             int var29 = var25 & 0xFF;
-            var33.method17040(var22, (float)(var12 + 1), (float)var32, 0.0F).color(var27, var28, var29, var26).endVertex();
-            var33.method17040(var22, (float)(var12 + 1), (float)(var32 - var23 + 1), 0.0F).color(var27, var28, var29, var26).endVertex();
-            var33.method17040(var22, (float)var12, (float)(var32 - var23 + 1), 0.0F).color(var27, var28, var29, var26).endVertex();
-            var33.method17040(var22, (float)var12, (float)var32, 0.0F).color(var27, var28, var29, var26).endVertex();
+            var33.pos(var22, (float)(var12 + 1), (float)var32, 0.0F).color(var27, var28, var29, var26).endVertex();
+            var33.pos(var22, (float)(var12 + 1), (float)(var32 - var23 + 1), 0.0F).color(var27, var28, var29, var26).endVertex();
+            var33.pos(var22, (float)var12, (float)(var32 - var23 + 1), 0.0F).color(var27, var28, var29, var26).endVertex();
+            var33.pos(var22, (float)var12, (float)var32, 0.0F).color(var27, var28, var29, var26).endVertex();
             var12++;
          }
 
-         var33.method17065();
-         Class4395.method13895(var33);
+         var33.finishDrawing();
+         WorldVertexBufferUploader.draw(var33);
          RenderSystem.enableTexture();
          RenderSystem.disableBlend();
          if (!var5) {

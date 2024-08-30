@@ -3,8 +3,8 @@ package mapped;
 import com.google.gson.JsonSyntaxException;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4414;
-import com.mentalfrostbyte.jello.event.impl.Class4422;
-import com.mentalfrostbyte.jello.event.impl.Class4427;
+import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
+import com.mentalfrostbyte.jello.event.impl.RenderFireEvent;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
@@ -357,7 +357,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          float var6 = (float)var5.field4952 - var2;
          if (var5.getShouldBeDead()) {
             float var7 = Math.min((float)var5.field4955 + var2, 20.0F);
-            var1.method35293(Class7680.field32902.method25286(40.0F - 8000.0F / (var7 + 200.0F)));
+            var1.rotate(Vector3f.field32902.rotationDegrees(40.0F - 8000.0F / (var7 + 200.0F)));
          }
 
          if (var6 < 0.0F) {
@@ -367,9 +367,9 @@ public class GameRenderer implements Class215, AutoCloseable {
          var6 /= (float)var5.field4953;
          var6 = MathHelper.sin(var6 * var6 * var6 * var6 * (float) Math.PI);
          float var10 = var5.field4954;
-         var1.method35293(Class7680.field32900.method25286(-var10));
-         var1.method35293(Class7680.field32902.method25286(-var6 * 14.0F));
-         var1.method35293(Class7680.field32900.method25286(var10));
+         var1.rotate(Vector3f.YP.rotationDegrees(-var10));
+         var1.rotate(Vector3f.field32902.rotationDegrees(-var6 * 14.0F));
+         var1.rotate(Vector3f.YP.rotationDegrees(var10));
       }
    }
 
@@ -384,8 +384,8 @@ public class GameRenderer implements Class215, AutoCloseable {
             (double)(-Math.abs(MathHelper.cos(var7 * (float) Math.PI) * var8)),
             0.0
          );
-         var1.method35293(Class7680.field32902.method25286(MathHelper.sin(var7 * (float) Math.PI) * var8 * 3.0F));
-         var1.method35293(Class7680.field32898.method25286(Math.abs(MathHelper.cos(var7 * (float) Math.PI - 0.2F) * var8) * 5.0F));
+         var1.rotate(Vector3f.field32902.rotationDegrees(MathHelper.sin(var7 * (float) Math.PI) * var8 * 3.0F));
+         var1.rotate(Vector3f.field32898.rotationDegrees(Math.abs(MathHelper.cos(var7 * (float) Math.PI - 0.2F) * var8) * 5.0F));
       }
    }
 
@@ -397,8 +397,8 @@ public class GameRenderer implements Class215, AutoCloseable {
       if (!this.field820) {
          Shaders.method33160(true);
          this.method748(this.method749(var2, var3, false));
-         Class8892 var9 = var1.method35296();
-         var9.method32361().method35503();
+         Class8892 var9 = var1.getLast();
+         var9.getMatrix().method35503();
          var9.method32362().method32824();
          boolean var10 = false;
          if (var4) {
@@ -434,7 +434,7 @@ public class GameRenderer implements Class215, AutoCloseable {
                this.field818.method7316();
             }
 
-            var1.method35295();
+            var1.pop();
          }
 
          Shaders.method33160(false);
@@ -443,10 +443,10 @@ public class GameRenderer implements Class215, AutoCloseable {
          }
 
          this.field818.method7316();
-         Class4427 var11 = new Class4427();
+         RenderFireEvent var11 = new RenderFireEvent();
          Client.getInstance().getEventManager().call(var11);
          if (this.field802.gameSettings.getPointOfView().func_243192_a() && !var10 && !var11.isCancelled()) {
-            Class6061.method18789(this.field802, var1);
+            OverlayRenderer.method18789(this.field802, var1);
             this.method744(var1, var3);
          }
 
@@ -456,16 +456,16 @@ public class GameRenderer implements Class215, AutoCloseable {
       }
    }
 
-   public void method748(Class9367 var1) {
+   public void method748(Matrix4f var1) {
       RenderSystem.matrixMode(5889);
       RenderSystem.loadIdentity();
       RenderSystem.method27888(var1);
       RenderSystem.matrixMode(5888);
    }
 
-   public Class9367 method749(Class9624 var1, float var2, boolean var3) {
+   public Matrix4f method749(Class9624 var1, float var2, boolean var3) {
       MatrixStack var6 = new MatrixStack();
-      var6.method35296().method32361().method35503();
+      var6.getLast().getMatrix().method35503();
       if (Class7944.method26921() && Shaders.method33161()) {
          Shaders.method33104(var6);
       }
@@ -480,21 +480,21 @@ public class GameRenderer implements Class215, AutoCloseable {
          var6.method35292(this.field821, this.field821, 1.0F);
       }
 
-      var6.method35296()
-         .method32361()
+      var6.getLast()
+         .getMatrix()
          .method35508(
-            Class9367.method35511(
+            Matrix4f.method35511(
                this.method743(var1, var2, var3),
                (float)this.field802.getMainWindow().getFramebufferWidth() / (float)this.field802.getMainWindow().getFramebufferHeight(),
                0.05F,
                this.field836
             )
          );
-      return var6.method35296().method32361();
+      return var6.getLast().getMatrix();
    }
 
    public static float method750(Class880 var0, float var1) {
-      int var4 = var0.method3034(Class8254.field35482).method8628();
+      int var4 = var0.method3034(Effects.NIGHT_VISION).method8628();
       return var4 <= 200 ? 0.7F + MathHelper.sin(((float)var4 - var1) * (float) Math.PI * 0.2F) * 0.3F : 1.0F;
    }
 
@@ -517,7 +517,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          );
          if (var4 && this.field802.world != null && !Class7944.method26988()) {
             this.field802.getProfiler().startSection("level");
-            Client.getInstance().getEventManager().call(new Class4422(var1, var2));
+            Client.getInstance().getEventManager().call(new Render2DEvent(var1, var2));
             this.method754(var1, var2, new MatrixStack());
             if (this.field802.isSingleplayer() && this.field816 < Util.milliTime() - 1000L) {
                this.field816 = Util.milliTime();
@@ -563,7 +563,7 @@ public class GameRenderer implements Class215, AutoCloseable {
             this.field802.getProfiler().endStartSection("gui");
             if (this.field802.player != null) {
                float var11 = MathHelper.lerp(var1, this.field802.player.field6142, this.field802.player.field6141);
-               if (var11 > 0.0F && this.field802.player.method3033(Class8254.field35475) && this.field802.gameSettings.field44670 < 1.0F) {
+               if (var11 > 0.0F && this.field802.player.method3033(Effects.NAUSEA) && this.field802.gameSettings.field44670 < 1.0F) {
                   this.method765(var11 * (1.0F - this.field802.gameSettings.field44670));
                }
             }
@@ -746,7 +746,7 @@ public class GameRenderer implements Class215, AutoCloseable {
       }
 
       MatrixStack var10 = new MatrixStack();
-      var10.method35296().method32361().method35508(this.method749(var9, var1, true));
+      var10.getLast().getMatrix().method35508(this.method749(var9, var1, true));
       MatrixStack var11 = var10;
       if (Shaders.method33170()) {
          var10 = var4;
@@ -761,21 +761,21 @@ public class GameRenderer implements Class215, AutoCloseable {
          * this.field802.gameSettings.field44670
          * this.field802.gameSettings.field44670;
       if (var12 > 0.0F) {
-         int var13 = !this.field802.player.method3033(Class8254.field35475) ? 20 : 7;
+         int var13 = !this.field802.player.method3033(Effects.NAUSEA) ? 20 : 7;
          float var14 = 5.0F / (var12 * var12 + 5.0F) - var12 * 0.04F;
          var14 *= var14;
-         Class7680 var15 = new Class7680(0.0F, MathHelper.field45205 / 2.0F, MathHelper.field45205 / 2.0F);
-         var10.method35293(var15.method25286(((float)this.field809 + var1) * (float)var13));
+         Vector3f var15 = new Vector3f(0.0F, MathHelper.field45205 / 2.0F, MathHelper.field45205 / 2.0F);
+         var10.rotate(var15.rotationDegrees(((float)this.field809 + var1) * (float)var13));
          var10.method35292(1.0F / var14, 1.0F, 1.0F);
          float var16 = -((float)this.field809 + var1) * (float)var13;
-         var10.method35293(var15.method25286(var16));
+         var10.rotate(var15.rotationDegrees(var16));
       }
 
       if (Shaders.method33170()) {
          var10 = var11;
       }
 
-      Class9367 var18 = var10.method35296().method32361();
+      Matrix4f var18 = var10.getLast().getMatrix();
       this.method748(var18);
       var9.method37497(
          this.field802.world,
@@ -790,11 +790,11 @@ public class GameRenderer implements Class215, AutoCloseable {
          float var22 = Class9299.method35067(var20, Class9299.field42797);
          float var17 = Class9299.method35067(var20, Class9299.field42798);
          var9.method37514(var21, var22);
-         var4.method35293(Class7680.field32902.method25286(var17));
+         var4.rotate(Vector3f.field32902.rotationDegrees(var17));
       }
 
-      var4.method35293(Class7680.field32898.method25286(var9.method37506()));
-      var4.method35293(Class7680.field32900.method25286(var9.method37507() + 180.0F));
+      var4.rotate(Vector3f.field32898.rotationDegrees(var9.method37506()));
+      var4.rotate(Vector3f.YP.rotationDegrees(var9.method37507() + 180.0F));
       this.field802.worldRenderer.updateCameraAndRender(var4, var1, var2, var8, var9, this, this.field818, var18);
       if (Class9299.field42865.method20214()) {
          this.field802.getProfiler().endStartSection("forge_render_last");
@@ -803,7 +803,7 @@ public class GameRenderer implements Class215, AutoCloseable {
 
       this.field802.getProfiler().endStartSection("hand");
       RenderSystem.pushMatrix();
-      RenderSystem.method27888(var4.method35296().method32361());
+      RenderSystem.method27888(var4.getLast().getMatrix());
       Client.getInstance().method19929();
       RenderSystem.popMatrix();
       if (this.field814 && ! Shaders.field40609) {
@@ -1046,12 +1046,12 @@ public class GameRenderer implements Class215, AutoCloseable {
          );
          float var15 = 50.0F + 175.0F * MathHelper.sin(var11);
          var14.method35292(var15, -var15, var15);
-         var14.method35293(Class7680.field32900.method25286(900.0F * MathHelper.method37771(MathHelper.sin(var11))));
-         var14.method35293(Class7680.field32898.method25286(6.0F * MathHelper.cos(var7 * 8.0F)));
-         var14.method35293(Class7680.field32902.method25286(6.0F * MathHelper.cos(var7 * 8.0F)));
+         var14.rotate(Vector3f.YP.rotationDegrees(900.0F * MathHelper.method37771(MathHelper.sin(var11))));
+         var14.rotate(Vector3f.field32898.rotationDegrees(6.0F * MathHelper.cos(var7 * 8.0F)));
+         var14.rotate(Vector3f.field32902.rotationDegrees(6.0F * MathHelper.cos(var7 * 8.0F)));
          Class7735 var16 = this.field808.method26536();
          this.field802.getItemRenderer().method789(this.field824, Class2327.field15932, 15728880, Class213.field798, var14, var16);
-         var14.method35295();
+         var14.pop();
          var16.method25602();
          RenderSystem.method27816();
          RenderSystem.popMatrix();
@@ -1080,13 +1080,13 @@ public class GameRenderer implements Class215, AutoCloseable {
       Tessellator var19 = Tessellator.getInstance();
       BufferBuilder var20 = var19.getBuffer();
       var20.begin(7, DefaultVertexFormats.field43344);
-      var20.pos(var15, var17 + var13, -90.0).method17027(0.0F, 1.0F).endVertex();
-      var20.pos(var15 + var11, var17 + var13, -90.0).method17027(1.0F, 1.0F).endVertex();
-      var20.pos(var15 + var11, var17, -90.0).method17027(1.0F, 0.0F).endVertex();
-      var20.pos(var15, var17, -90.0).method17027(0.0F, 0.0F).endVertex();
+      var20.pos(var15, var17 + var13, -90.0).tex(0.0F, 1.0F).endVertex();
+      var20.pos(var15 + var11, var17 + var13, -90.0).tex(1.0F, 1.0F).endVertex();
+      var20.pos(var15 + var11, var17, -90.0).tex(1.0F, 0.0F).endVertex();
+      var20.pos(var15, var17, -90.0).tex(0.0F, 0.0F).endVertex();
       var19.draw();
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.disableBlend();
       RenderSystem.depthMask(true);
       RenderSystem.enableDepthTest();

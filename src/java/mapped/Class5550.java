@@ -37,7 +37,7 @@ public class Class5550 implements Packet<Class5116> {
 
          for (int var12 = 0; var12 < var11; var12++) {
             UUID var13 = var1.method35717();
-            var10.add(new Class9689(var13, "Unknown synced attribute modifier", var1.readDouble(), Class2045.method8686(var1.readByte())));
+            var10.add(new Class9689(var13, "Unknown synced attribute modifier", var1.readDouble(), AttributeModifierOperation.method8686(var1.readByte())));
          }
 
          this.field24647.add(new Class7919(var7, var8, var10));

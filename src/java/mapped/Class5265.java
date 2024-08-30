@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
-import com.mentalfrostbyte.jello.event.impl.Class4422;
+import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
@@ -52,7 +52,7 @@ public class Class5265 extends PremiumModule {
 
     @EventTarget
     @HigestPriority
-    private void method16473(Class4422 var1) {
+    private void method16473(Render2DEvent var1) {
         if (this.field23693 != null) {
             this.field23684 = (this.getBooleanValueFromSetttingName("Head") ? 100 : 0)
                     + Math.max(95, ResourceRegistry.JelloLightFont20.method23942(this.field23693.getName().getString()))
@@ -70,7 +70,7 @@ public class Class5265 extends PremiumModule {
             }
 
             this.field23682 -= 100;
-            float var6 = ((Class880) this.field23693).method3042();
+            float var6 = ((Class880) this.field23693).getHealth();
             if (var6 != this.field23688) {
                 this.field23687 = this.field23688;
                 this.field23688 = var6;
@@ -156,8 +156,8 @@ public class Class5265 extends PremiumModule {
             MatrixStack var10 = new MatrixStack();
             var10.translate(0.0, 0.0, 1500.0);
             var10.method35292(var6, var6, var6);
-            Class8661 var11 = Class7680.field32902.method25286(180.0F);
-            var10.method35293(var11);
+            Class8661 var11 = Vector3f.field32902.rotationDegrees(180.0F);
+            var10.rotate(var11);
             var4.method32215(false);
             Class7735 var12 = Minecraft.getInstance().getRenderTypeBuffers().method26536();
             RenderSystem.method27940(
@@ -185,7 +185,7 @@ public class Class5265 extends PremiumModule {
     private Color method16477(Entity var1) {
         if (var1 instanceof Class880) {
             Class880 var4 = (Class880) var1;
-            float var5 = var4.method3042() / var4.method3075() * 20.0F;
+            float var5 = var4.getHealth() / var4.method3075() * 20.0F;
             if (var5 > 20.0F) {
                 var5 = 20.0F;
             }

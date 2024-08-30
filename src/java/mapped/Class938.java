@@ -79,7 +79,7 @@ public class Class938 extends Class919 implements Class937 {
    @Override
    public void tick() {
       super.tick();
-      if (!this.world.isRemote && this.method3066() && this.method3735()) {
+      if (!this.world.isRemote && this.isAlive() && this.method3735()) {
          BlockPos var3 = this.getPosition();
          if (!var3.equals(this.field5301)) {
             this.method3738(0);

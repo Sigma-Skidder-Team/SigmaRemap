@@ -22,7 +22,7 @@ public class Class1216 extends Class1206 {
 
    @Override
    public IFormattableTextComponent method5634() {
-      return !this.field6531.method8518()
+      return !this.field6531.isInvalid()
          ? new TranslationTextComponent("narrator.controls.bound", this.field6532, super.method5634())
          : new TranslationTextComponent("narrator.controls.unbound", this.field6532);
    }

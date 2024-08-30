@@ -38,7 +38,7 @@ public class Class8451 {
       var6.put(Direction.SOUTH, new Class9163((Direction)null, var1, var2, new Class9840(new float[]{0.0F, 0.0F, 16.0F, 16.0F}, 0)));
       var6.put(Direction.NORTH, new Class9163((Direction)null, var1, var2, new Class9840(new float[]{16.0F, 0.0F, 0.0F, 16.0F}, 0)));
       ArrayList var7 = Lists.newArrayList();
-      var7.add(new Class9726(new Class7680(0.0F, 0.0F, 7.5F), new Class7680(16.0F, 16.0F, 8.5F), var6, (Class7360)null, true));
+      var7.add(new Class9726(new Vector3f(0.0F, 0.0F, 7.5F), new Vector3f(16.0F, 16.0F, 8.5F), var6, (Class7360)null, true));
       var7.addAll(this.method29719(var3, var2, var1));
       return var7;
    }
@@ -115,16 +115,16 @@ public class Class8451 {
          var25.put(var24.method8667(), new Class9163((Direction)null, var3, var2, new Class9840(new float[]{var15, var17, var16, var18}, 0)));
          switch (Class9649.field45116[var24.ordinal()]) {
             case 1:
-               var8.add(new Class9726(new Class7680(var11, var12, 7.5F), new Class7680(var13, var12, 8.5F), var25, (Class7360)null, true));
+               var8.add(new Class9726(new Vector3f(var11, var12, 7.5F), new Vector3f(var13, var12, 8.5F), var25, (Class7360)null, true));
                break;
             case 2:
-               var8.add(new Class9726(new Class7680(var11, var14, 7.5F), new Class7680(var13, var14, 8.5F), var25, (Class7360)null, true));
+               var8.add(new Class9726(new Vector3f(var11, var14, 7.5F), new Vector3f(var13, var14, 8.5F), var25, (Class7360)null, true));
                break;
             case 3:
-               var8.add(new Class9726(new Class7680(var11, var12, 7.5F), new Class7680(var11, var14, 8.5F), var25, (Class7360)null, true));
+               var8.add(new Class9726(new Vector3f(var11, var12, 7.5F), new Vector3f(var11, var14, 8.5F), var25, (Class7360)null, true));
                break;
             case 4:
-               var8.add(new Class9726(new Class7680(var13, var12, 7.5F), new Class7680(var13, var14, 8.5F), var25, (Class7360)null, true));
+               var8.add(new Class9726(new Vector3f(var13, var12, 7.5F), new Vector3f(var13, var14, 8.5F), var25, (Class7360)null, true));
          }
       }
 

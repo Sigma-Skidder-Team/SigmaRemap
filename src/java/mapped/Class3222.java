@@ -47,7 +47,7 @@ public class Class3222 extends Block {
       )
    );
    private final Map<BlockState, VoxelShape> field18656 = Maps.newHashMap();
-   private static final Class7680[] field18657 = new Class7680[16];
+   private static final Vector3f[] field18657 = new Vector3f[16];
    private final BlockState field18658;
    private boolean field18659 = true;
 
@@ -394,11 +394,11 @@ public class Class3222 extends Block {
    }
 
    public static int method11629(int var0) {
-      Class7680 var3 = field18657[var0];
+      Vector3f var3 = field18657[var0];
       return MathHelper.method37805(var3.method25269(), var3.method25270(), var3.method25271());
    }
 
-   private void method11630(World var1, Random var2, BlockPos var3, Class7680 var4, Direction var5, Direction var6, float var7, float var8) {
+   private void method11630(World var1, Random var2, BlockPos var3, Vector3f var4, Direction var5, Direction var6, float var7, float var8) {
       float var11 = var8 - var7;
       if (!(var2.nextFloat() >= 0.2F * var11)) {
          float var12 = 0.4375F;
@@ -514,7 +514,7 @@ public class Class3222 extends Block {
          float var4 = var3 * 0.6F + (!(var3 > 0.0F) ? 0.3F : 0.4F);
          float var5 = MathHelper.method37777(var3 * var3 * 0.7F - 0.5F, 0.0F, 1.0F);
          float var6 = MathHelper.method37777(var3 * var3 * 0.6F - 0.7F, 0.0F, 1.0F);
-         field18657[var2] = new Class7680(var4, var5, var6);
+         field18657[var2] = new Vector3f(var4, var5, var6);
       }
    }
 }

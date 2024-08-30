@@ -13,7 +13,7 @@ public class Class1109 extends Class1108 {
    }
 
    public static Class7037 method5334() {
-      return Class1009.method4343().method21849(Class9173.field42108, 0.2F);
+      return Class1009.method4343().method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    public static boolean method5335(EntityType<Class1109> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
@@ -28,11 +28,11 @@ public class Class1109 extends Class1108 {
    @Override
    public void method5318(int var1, boolean var2) {
       super.method5318(var1, var2);
-      this.method3085(Class9173.field42113).method38661((double)(var1 * 3));
+      this.method3085(Attributes.field42113).method38661((double)(var1 * 3));
    }
 
    @Override
-   public float method3267() {
+   public float getBrightness() {
       return 1.0F;
    }
 

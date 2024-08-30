@@ -32,7 +32,7 @@ public class Class1104 extends Class1009 {
    }
 
    public static Class7037 method5296() {
-      return Class1009.method4343().method21849(Class9173.field42105, 8.0).method21849(Class9173.field42108, 0.25).method21849(Class9173.field42110, 2.0);
+      return Class1009.method4343().method21849(Attributes.field42105, 8.0).method21849(Attributes.MOVEMENT_SPEED, 0.25).method21849(Attributes.field42110, 2.0);
    }
 
    @Override

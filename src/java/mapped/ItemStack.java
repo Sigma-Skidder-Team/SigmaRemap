@@ -541,19 +541,19 @@ public final class ItemStack {
                   boolean var18 = false;
                   if (var1 != null) {
                      if (var15.method37930() == Item.field18733) {
-                        var16 += var1.method3087(Class9173.field42110);
+                        var16 += var1.method3087(Attributes.field42110);
                         var16 += (double)Class7858.method26318(this, Class7809.field33505);
                         var18 = true;
                      } else if (var15.method37930() == Item.field18734) {
-                        var16 += var1.method3087(Class9173.field42112);
+                        var16 += var1.method3087(Attributes.ATTACK_SPEED);
                         var18 = true;
                      }
                   }
 
                   double var19;
-                  if (var15.method37932() == Class2045.field13353 || var15.method37932() == Class2045.field13354) {
+                  if (var15.method37932() == AttributeModifierOperation.field13353 || var15.method37932() == AttributeModifierOperation.MULTIPLY_TOTAL) {
                      var19 = var16 * 100.0;
-                  } else if (((Class4869)var14.getKey()).equals(Class9173.field42107)) {
+                  } else if (((Class4869)var14.getKey()).equals(Attributes.field42107)) {
                      var19 = var16 * 10.0;
                   } else {
                      var19 = var16;

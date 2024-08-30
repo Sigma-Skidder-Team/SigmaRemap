@@ -18,7 +18,7 @@ public class Class5367 extends Module {
             if (var1.getPacket() instanceof Class5464) {
                 Class5464 var4 = (Class5464) var1.getPacket();
                 if (var4.method17178(mc.world) == null
-                        || !var4.method17178(mc.world).method3066()
+                        || !var4.method17178(mc.world).isAlive()
                         || var4.method17178(mc.world).method3275(mc.player) > 5.0F
                         || var4.method17178(mc.world) == mc.player) {
                 }

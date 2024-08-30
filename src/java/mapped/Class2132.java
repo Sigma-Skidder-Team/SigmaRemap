@@ -1,12 +1,14 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.module.impl.gui.jello.KeyStrokes;
+
 public enum Class2132 {
-   field13908(0.0F, 1.0F, Class5234.method16307().gameSettings.field44633),
-   field13909(2.0F, 1.0F, Class5234.method16308().gameSettings.field44635),
-   field13910(1.0F, 0.0F, Class5234.method16309().gameSettings.field44632),
-   field13911(1.0F, 1.0F, Class5234.method16310().gameSettings.field44634),
-   field13912(0.0F, 2.0F, 74, Class5234.method16311().gameSettings.keyBindAttack),
-   field13913(1.02F, 2.0F, 73, Class5234.method16312().gameSettings.keyBindUseItem);
+   field13908(0.0F, 1.0F, KeyStrokes.method16307().gameSettings.keyBindLeft),
+   field13909(2.0F, 1.0F, KeyStrokes.method16308().gameSettings.keyBindRight),
+   field13910(1.0F, 0.0F, KeyStrokes.method16309().gameSettings.keyBindForward),
+   field13911(1.0F, 1.0F, KeyStrokes.method16310().gameSettings.keyBindBack),
+   field13912(0.0F, 2.0F, 74, KeyStrokes.method16311().gameSettings.keyBindAttack),
+   field13913(1.02F, 2.0F, 73, KeyStrokes.method16312().gameSettings.keyBindUseItem);
 
    public float field13914;
    public float field13915;
@@ -45,21 +47,21 @@ public enum Class2132 {
             if (this != field13910) {
                if (this != field13911) {
                   if (this != field13912) {
-                     return this != field13913 ? null : Class5234.method16318().gameSettings.keyBindUseItem;
+                     return this != field13913 ? null : KeyStrokes.method16318().gameSettings.keyBindUseItem;
                   } else {
-                     return Class5234.method16317().gameSettings.keyBindAttack;
+                     return KeyStrokes.method16317().gameSettings.keyBindAttack;
                   }
                } else {
-                  return Class5234.method16316().gameSettings.field44634;
+                  return KeyStrokes.method16316().gameSettings.keyBindBack;
                }
             } else {
-               return Class5234.method16315().gameSettings.field44632;
+               return KeyStrokes.method16315().gameSettings.keyBindForward;
             }
          } else {
-            return Class5234.method16314().gameSettings.field44635;
+            return KeyStrokes.method16314().gameSettings.keyBindRight;
          }
       } else {
-         return Class5234.method16313().gameSettings.field44633;
+         return KeyStrokes.method16313().gameSettings.keyBindLeft;
       }
    }
 }

@@ -25,7 +25,7 @@ public class Class1087 extends Class1018 {
    }
 
    public static Class7037 method5040() {
-      return Class1006.method4220().method21849(Class9173.field42105, 10.0).method21849(Class9173.field42108, 0.2F);
+      return Class1006.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override

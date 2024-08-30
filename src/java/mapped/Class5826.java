@@ -143,7 +143,7 @@ public class Class5826 extends Class5812 {
       super.method18113(var1);
       this.field25526.method4683((PlayerEntity)null);
       if (!this.field25526.method4753().isRemote) {
-         if (!var1.method3066() || var1 instanceof ServerPlayerEntity && ((ServerPlayerEntity)var1).method2783()) {
+         if (!var1.isAlive() || var1 instanceof ServerPlayerEntity && ((ServerPlayerEntity)var1).method2783()) {
             ItemStack var4 = this.field25527.method3620(0);
             if (!var4.isEmpty()) {
                var1.method2882(var4, false);

@@ -37,7 +37,7 @@ public class FogRenderer {
             field40350 = (float)var16.method11322();
             if (var3 >= 4) {
                float var17 = !(MathHelper.sin(var2.method6750(var1)) > 0.0F) ? 1.0F : -1.0F;
-               Class7680 var18 = new Class7680(var17, 0.0F, 0.0F);
+               Vector3f var18 = new Vector3f(var17, 0.0F, 0.0F);
                float var21 = var0.method37516().method25279(var18);
                if (var21 < 0.0F) {
                   var21 = 0.0F;
@@ -111,8 +111,8 @@ public class FogRenderer {
       }
 
       double var49 = var0.method37504().field18049 * var2.getWorldInfo().method20053();
-      if (var0.method37509() instanceof Class880 && ((Class880)var0.method37509()).method3033(Class8254.field35481)) {
-         int var26 = ((Class880)var0.method37509()).method3034(Class8254.field35481).method8628();
+      if (var0.method37509() instanceof Class880 && ((Class880)var0.method37509()).method3033(Effects.BLINDNESS)) {
+         int var26 = ((Class880)var0.method37509()).method3034(Effects.BLINDNESS).method8628();
          if (var26 >= 20) {
             var49 = 0.0;
          } else {
@@ -138,7 +138,7 @@ public class FogRenderer {
       }
 
       if (!var7.method23486(Class8953.field40469)) {
-         if (var0.method37509() instanceof Class880 && ((Class880)var0.method37509()).method3033(Class8254.field35482)) {
+         if (var0.method37509() instanceof Class880 && ((Class880)var0.method37509()).method3033(Effects.NIGHT_VISION)) {
             float var27 = GameRenderer.method750((Class880)var0.method37509(), var1);
             float var33 = Math.min(1.0F / field40348, Math.min(1.0F / field40349, 1.0F / field40350));
             if (Float.isInfinite(var33)) {
@@ -221,8 +221,8 @@ public class FogRenderer {
             float var10;
             float var11;
             if (!var7.method23486(Class8953.field40470)) {
-               if (var8 instanceof Class880 && ((Class880)var8).method3033(Class8254.field35481)) {
-                  int var12 = ((Class880)var8).method3034(Class8254.field35481).method8628();
+               if (var8 instanceof Class880 && ((Class880)var8).method3033(Effects.BLINDNESS)) {
+                  int var12 = ((Class880)var8).method3034(Effects.BLINDNESS).method8628();
                   float var13 = MathHelper.lerp(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
                   if (var1 != Class2040.field13337) {
                      var10 = var13 * 0.25F;
@@ -246,7 +246,7 @@ public class FogRenderer {
                   var10 = var2 * 0.05F;
                   var11 = Math.min(var2, 192.0F) * 0.5F;
                }
-            } else if (var8 instanceof Class880 && ((Class880)var8).method3033(Class8254.field35478)) {
+            } else if (var8 instanceof Class880 && ((Class880)var8).method3033(Effects.FIRE_RESISTANCE)) {
                var10 = 0.0F;
                var11 = 3.0F;
             } else {

@@ -136,7 +136,7 @@ public class Class1088 extends Class1018 {
    }
 
    public static Class7037 method5054() {
-      return Class1006.method4220().method21849(Class9173.field42105, 30.0).method21849(Class9173.field42108, 0.25);
+      return Class1006.method4220().method21849(Attributes.field42105, 30.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -236,7 +236,7 @@ public class Class1088 extends Class1018 {
    @Override
    public void method2871() {
       super.method2871();
-      if (this.method3066() && this.method5047() && this.field5962 >= 1 && this.field5962 % 5 == 0) {
+      if (this.isAlive() && this.method5047() && this.field5962 >= 1 && this.field5962 % 5 == 0) {
          BlockPos var3 = this.getPosition();
          if (Class3441.method12114(this.world, var3)) {
             this.world.playEvent(2001, var3, Block.getStateId(Blocks.SAND.method11579()));

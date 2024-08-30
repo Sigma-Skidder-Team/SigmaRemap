@@ -48,7 +48,7 @@ public class Class3736 extends Class3676<Class1018> {
          return false;
       } else {
          Class1018 var7 = this.method12664(var2);
-         return var7.method3066() && var2.method4386(var7) && Class6983.method21570(var2.method2992(), var7) && var3 <= this.field19857;
+         return var7.isAlive() && var2.method4386(var7) && Class6983.method21570(var2.method2992(), var7) && var3 <= this.field19857;
       }
    }
 

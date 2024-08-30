@@ -15,7 +15,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class CombatManager {
     private static String[] field35945;
-    public Class7249 field35946;
+    public Class7249 antiBot;
     public List<Entity> bots = new CopyOnWriteArrayList<Entity>();
 
     public void method29345() {
@@ -39,10 +39,10 @@ public class CombatManager {
     @EventTarget
     @HigestPriority
     private void method29349(TickEvent var1) {
-        if (this.field35946 != null) {
+        if (this.antiBot != null) {
             for (PlayerEntity var5 : Class5628.method17680()) {
-                if (!this.field35946.method22751(var5)) {
-                    if (this.field35946.method22758(var5)) {
+                if (!this.antiBot.method22751(var5)) {
+                    if (this.antiBot.method22758(var5)) {
                         this.bots.remove(var5);
                     }
                 } else if (!this.bots.contains(var5)) {

@@ -62,7 +62,7 @@ public enum Class1890 implements Class1876 {
 
             switch (Class9103.field41632[this.ordinal()]) {
                case 1:
-                  return var5.method3066();
+                  return var5.isAlive();
                case 2:
                   return var5.method3327();
                case 3:

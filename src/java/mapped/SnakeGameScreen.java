@@ -3,12 +3,12 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4307;
 import com.mentalfrostbyte.jello.util.animation.Animation;
-import com.mentalfrostbyte.jello.util.timer.Timer;
+import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 
 public class SnakeGameScreen extends Class4307 {
    public Minecraft field21044 = Minecraft.getInstance();
-   public Timer field21045 = new Timer();
+   public TimerUtil field21045 = new TimerUtil();
    public Class4297 field21046;
    public Animation field21047;
    public int field21048;
@@ -17,7 +17,7 @@ public class SnakeGameScreen extends Class4307 {
    public SnakeGameScreen() {
       super("SnakeGameScreen");
       this.method13300(false);
-      this.field21045.method27118();
+      this.field21045.start();
       this.field21047 = new Animation(200, 0);
       Class5628.method17739();
       byte var3 = 48;

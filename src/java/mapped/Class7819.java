@@ -364,7 +364,7 @@ public class Class7819 {
 
    public void method26124(Class1007 var1) {
       if (var1.getUniqueID().equals(this.field33547)) {
-         this.field33537.method12278(var1.method3042() / var1.method3075());
+         this.field33537.method12278(var1.getHealth() / var1.method3075());
          this.field33541 = 0;
          if (var1.method3381()) {
             this.field33537.method12284(var1.getDisplayName());

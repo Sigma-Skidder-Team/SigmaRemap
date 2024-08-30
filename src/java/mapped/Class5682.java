@@ -15,9 +15,9 @@ public class Class5682 extends Class5651<Class1055, Class2879<Class1055>> {
       float var8 = MathHelper.lerp(var5, var1.field5826, var1.field5825);
       float var9 = MathHelper.lerp(var5, var1.field5828, var1.field5827);
       var2.translate(0.0, 0.5, 0.0);
-      var2.method35293(Class7680.field32900.method25286(180.0F - var4));
-      var2.method35293(Class7680.field32898.method25286(var8));
-      var2.method35293(Class7680.field32900.method25286(var9));
+      var2.rotate(Vector3f.YP.rotationDegrees(180.0F - var4));
+      var2.rotate(Vector3f.field32898.rotationDegrees(var8));
+      var2.rotate(Vector3f.YP.rotationDegrees(var9));
       var2.translate(0.0, -1.2F, 0.0);
    }
 

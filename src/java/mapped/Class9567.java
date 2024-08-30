@@ -11,14 +11,14 @@ public class Class9567 {
    public static double method37075() {
       double var2 = 0.2873;
       float var4 = 1.0F;
-      Class9805 var5 = mc.player.method3085(Class9173.field42108);
+      Class9805 var5 = mc.player.method3085(Attributes.MOVEMENT_SPEED);
       var4 = (float)((double)var4 * ((var5.method38674() / (double) mc.player.abilities.method20716() + 1.0) / 2.0));
       if (mc.player.method3337()) {
          var4 = (float)((double)var4 - 0.15);
       }
 
-      if (mc.player.method3033(Class8254.field35467) && mc.player.method3337()) {
-         var4 = (float)((double)var4 - 0.03000002 * (double)(mc.player.method3034(Class8254.field35467).method8629() + 1));
+      if (mc.player.method3033(Effects.SPEED) && mc.player.method3337()) {
+         var4 = (float)((double)var4 - 0.03000002 * (double)(mc.player.method3034(Effects.SPEED).method8629() + 1));
       }
 
       if (mc.player.method3331()) {
@@ -55,11 +55,11 @@ public class Class9567 {
    }
 
    public static int method37078() {
-      return ! mc.player.method3033(Class8254.field35467) ? 0 : mc.player.method3034(Class8254.field35467).method8629() + 1;
+      return ! mc.player.method3033(Effects.SPEED) ? 0 : mc.player.method3034(Effects.SPEED).method8629() + 1;
    }
 
    public static int method37079() {
-      return ! mc.player.method3033(Class8254.field35474) ? 0 : mc.player.method3034(Class8254.field35474).method8629() + 1;
+      return ! mc.player.method3033(Effects.JUMP_BOOST) ? 0 : mc.player.method3034(Effects.JUMP_BOOST).method8629() + 1;
    }
 
    public static double method37080() {
@@ -154,7 +154,7 @@ public class Class9567 {
       float var2 = mc.player.field4984;
       float var3 = mc.player.field4982;
       float var4 = mc.player.rotationYaw + 90.0F;
-      if (var2 > 0.0F && mc.gameSettings.field44634.isKeyDown()) {
+      if (var2 > 0.0F && mc.gameSettings.keyBindBack.isKeyDown()) {
          var2 = -1.0F;
       }
 
@@ -180,10 +180,10 @@ public class Class9567 {
    }
 
    public static boolean method37087() {
-      boolean var2 = mc.gameSettings.field44632.isKeyDown();
-      boolean var3 = mc.gameSettings.field44633.isKeyDown();
-      boolean var4 = mc.gameSettings.field44635.isKeyDown();
-      boolean var5 = mc.gameSettings.field44634.isKeyDown();
+      boolean var2 = mc.gameSettings.keyBindForward.isKeyDown();
+      boolean var3 = mc.gameSettings.keyBindLeft.isKeyDown();
+      boolean var4 = mc.gameSettings.keyBindRight.isKeyDown();
+      boolean var5 = mc.gameSettings.keyBindBack.isKeyDown();
       return var2 || var3 || var4 || var5;
    }
 

@@ -156,18 +156,18 @@ public class WinGameScreen extends Screen {
       BufferBuilder var14 = var13.getBuffer();
       var14.begin(7, DefaultVertexFormats.field43346);
       var14.pos(0.0, (double)this.field4565, (double)this.method5702())
-         .method17027(0.0F, var7 * 0.015625F)
-         .method17033(var10, var10, var10, 1.0F)
+         .tex(0.0F, var7 * 0.015625F)
+         .color(var10, var10, var10, 1.0F)
          .endVertex();
       var14.pos((double)var6, (double)this.field4565, (double)this.method5702())
-         .method17027((float)var6 * 0.015625F, var7 * 0.015625F)
-         .method17033(var10, var10, var10, 1.0F)
+         .tex((float)var6 * 0.015625F, var7 * 0.015625F)
+         .color(var10, var10, var10, 1.0F)
          .endVertex();
       var14.pos((double)var6, 0.0, (double)this.method5702())
-         .method17027((float)var6 * 0.015625F, var8 * 0.015625F)
-         .method17033(var10, var10, var10, 1.0F)
+         .tex((float)var6 * 0.015625F, var8 * 0.015625F)
+         .color(var10, var10, var10, 1.0F)
          .endVertex();
-      var14.pos(0.0, 0.0, (double)this.method5702()).method17027(0.0F, var8 * 0.015625F).method17033(var10, var10, var10, 1.0F).endVertex();
+      var14.pos(0.0, 0.0, (double)this.method5702()).tex(0.0F, var8 * 0.015625F).color(var10, var10, var10, 1.0F).endVertex();
       var13.draw();
    }
 
@@ -225,10 +225,10 @@ public class WinGameScreen extends Screen {
       Tessellator var14 = Tessellator.getInstance();
       BufferBuilder var15 = var14.getBuffer();
       var15.begin(7, DefaultVertexFormats.field43346);
-      var15.pos(0.0, (double)var18, (double)this.method5702()).method17027(0.0F, 1.0F).method17033(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
-      var15.pos((double)var16, (double)var18, (double)this.method5702()).method17027(1.0F, 1.0F).method17033(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
-      var15.pos((double)var16, 0.0, (double)this.method5702()).method17027(1.0F, 0.0F).method17033(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
-      var15.pos(0.0, 0.0, (double)this.method5702()).method17027(0.0F, 0.0F).method17033(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+      var15.pos(0.0, (double)var18, (double)this.method5702()).tex(0.0F, 1.0F).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+      var15.pos((double)var16, (double)var18, (double)this.method5702()).tex(1.0F, 1.0F).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+      var15.pos((double)var16, 0.0, (double)this.method5702()).tex(1.0F, 0.0F).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+      var15.pos(0.0, 0.0, (double)this.method5702()).tex(0.0F, 0.0F).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
       var14.draw();
       RenderSystem.disableBlend();
       super.method1923(var1, var2, var3, var4);

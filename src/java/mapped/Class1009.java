@@ -25,7 +25,7 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    public void method4338() {
-      float var3 = this.method3267();
+      float var3 = this.getBrightness();
       if (var3 > 0.5F) {
          this.field4973 += 2;
       }
@@ -89,7 +89,7 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    public static Class7037 method4343() {
-      return Class1006.method4220().method21848(Class9173.field42110);
+      return Class1006.method4220().method21848(Attributes.field42110);
    }
 
    @Override

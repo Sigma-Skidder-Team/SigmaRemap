@@ -11,7 +11,7 @@ import java.util.function.Predicate;
 
 public class Class1010 extends Class1009 implements Class1011 {
    private static final UUID field5645 = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
-   private static final Class9689 field5646 = new Class9689(field5645, "Attacking speed boost", 0.15F, Class2045.field13352);
+   private static final Class9689 field5646 = new Class9689(field5645, "Attacking speed boost", 0.15F, AttributeModifierOperation.ADDITION);
    private static final DataParameter<Optional<BlockState>> field5647 = EntityDataManager.<Optional<BlockState>>method35441(Class1010.class, Class7784.field33397);
    private static final DataParameter<Boolean> field5648 = EntityDataManager.<Boolean>method35441(Class1010.class, Class7784.field33398);
    private static final DataParameter<Boolean> field5649 = EntityDataManager.<Boolean>method35441(Class1010.class, Class7784.field33398);
@@ -46,16 +46,16 @@ public class Class1010 extends Class1009 implements Class1011 {
 
    public static Class7037 method4345() {
       return Class1009.method4343()
-         .method21849(Class9173.field42105, 40.0)
-         .method21849(Class9173.field42108, 0.3F)
-         .method21849(Class9173.field42110, 7.0)
-         .method21849(Class9173.field42106, 64.0);
+         .method21849(Attributes.field42105, 40.0)
+         .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
+         .method21849(Attributes.field42110, 7.0)
+         .method21849(Attributes.field42106, 64.0);
    }
 
    @Override
    public void method4233(Class880 var1) {
       super.method4233(var1);
-      Class9805 var4 = this.method3085(Class9173.field42108);
+      Class9805 var4 = this.method3085(Attributes.MOVEMENT_SPEED);
       if (var1 != null) {
          this.field5652 = this.ticksExisted;
          this.dataManager.method35446(field5648, true);
@@ -199,7 +199,7 @@ public class Class1010 extends Class1009 implements Class1011 {
    @Override
    public void method4258() {
       if (this.world.method6740() && this.ticksExisted >= this.field5652 + 600) {
-         float var3 = this.method3267();
+         float var3 = this.getBrightness();
          if (var3 > 0.5F && this.world.method7022(this.getPosition()) && this.rand.nextFloat() * 30.0F < (var3 - 0.4F) * 2.0F) {
             this.method4233((Class880)null);
             this.method4353();
@@ -210,7 +210,7 @@ public class Class1010 extends Class1009 implements Class1011 {
    }
 
    public boolean method4353() {
-      if (!this.world.isRemote() && this.method3066()) {
+      if (!this.world.isRemote() && this.isAlive()) {
          double var3 = this.getPosX() + (this.rand.nextDouble() - 0.5) * 64.0;
          double var5 = this.getPosY() + (double)(this.rand.nextInt(64) - 32);
          double var7 = this.getPosZ() + (this.rand.nextDouble() - 0.5) * 64.0;

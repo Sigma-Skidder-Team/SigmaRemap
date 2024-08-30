@@ -173,7 +173,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    public static Class7037 method2997() {
-      return Class1006.method4220().method21849(Class9173.field42108, 0.5).method21849(Class9173.field42106, 48.0);
+      return Class1006.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.field42106, 48.0);
    }
 
    public boolean method4680() {
@@ -197,7 +197,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
                this.field5780 = false;
             }
 
-            this.method3035(new Class2023(Class8254.field35476, 200, 0));
+            this.method3035(new Class2023(Effects.REGENERATION, 200, 0));
          }
       }
 
@@ -234,7 +234,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.getItem() == Items.field38034 || !this.method3066() || this.method4741() || this.isSleeping()) {
+      if (var5.getItem() == Items.field38034 || !this.isAlive() || this.method4741() || this.isSleeping()) {
          return super.method4285(var1, var2);
       } else if (!this.method3005()) {
          boolean var6 = this.method4742().isEmpty();
@@ -372,8 +372,8 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          }
       }
 
-      if (var1.method3033(Class8254.field35498)) {
-         Class2023 var12 = var1.method3034(Class8254.field35498);
+      if (var1.method3033(Effects.HERO_OF_THE_VILLAGE)) {
+         Class2023 var12 = var1.method3034(Effects.HERO_OF_THE_VILLAGE);
          int var13 = var12.method8629();
 
          for (Class9346 var8 : this.method4742()) {
@@ -509,7 +509,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    public void method3017(Class880 var1) {
       if (var1 != null && this.world instanceof ServerWorld) {
          ((ServerWorld)this.world).method6959(Class8214.field35287, var1, this);
-         if (this.method3066() && var1 instanceof PlayerEntity) {
+         if (this.isAlive() && var1 instanceof PlayerEntity) {
             this.world.method6786(this, (byte)13);
          }
       }

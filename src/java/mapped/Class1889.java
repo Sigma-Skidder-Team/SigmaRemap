@@ -80,7 +80,7 @@ public enum Class1889 implements Class1884 {
 
                   switch (Class7313.field31355[this.ordinal()]) {
                      case 1:
-                        return var5.method3042();
+                        return var5.getHealth();
                      case 2:
                         return (float)var5.field4952;
                      case 3:

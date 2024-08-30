@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
+import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
 
 public class Class5264 extends PremiumModule {
     private int field23678;
@@ -33,16 +34,16 @@ public class Class5264 extends PremiumModule {
             }
 
             if (this.field23681 == -1 && this.field23680 >= 20 && this.field23678 == -1) {
-                if (mc.player.method3042() <= this.method16004().getNumberValueBySettingName("Health") * 2.0F && mc.player.method2959() == 0.0F) {
-                    this.field23681 = ((Class5331) this.method16004()).method16749(false);
+                if (mc.player.getHealth() <= this.method16004().getNumberValueBySettingName("Health") * 2.0F && mc.player.method2959() == 0.0F) {
+                    this.field23681 = ((AutoGapple) this.method16004()).method16749(false);
                     if (this.field23681 >= 0) {
                         this.field23678 = 0;
                         this.field23680 = 0;
                     }
                 }
 
-                if (this.field23678 == -1 && this.getBooleanValueFromSetttingName("Fire resistance potions") && !mc.player.method3033(Class7144.method22287(12))) {
-                    this.field23681 = ((Class5331) this.method16004()).method16749(true);
+                if (this.field23678 == -1 && this.getBooleanValueFromSetttingName("Fire resistance potions") && !mc.player.method3033(Effect.method22287(12))) {
+                    this.field23681 = ((AutoGapple) this.method16004()).method16749(true);
                     if (this.field23681 >= 0) {
                         this.field23678 = 0;
                         this.field23680 = 0;

@@ -101,7 +101,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    public static Class7037 method4406() {
-      return Class1006.method4220().method21849(Class9173.field42105, 6.0).method21849(Class9173.field42109, 0.4F).method21849(Class9173.field42108, 0.2F);
+      return Class1006.method4220().method21849(Attributes.field42105, 6.0).method21849(Attributes.field42109, 0.4F).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override
@@ -164,7 +164,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    public static boolean method4409(World var0, Entity var1) {
-      if (var1.method3066() && !var1.method3245() && var0.rand.nextInt(2) == 0) {
+      if (var1.isAlive() && !var1.method3245() && var0.rand.nextInt(2) == 0) {
          List var4 = var0.<Class1006>method6772(Class1006.class, var1.getBoundingBox().method19664(20.0), field5673);
          if (!var4.isEmpty()) {
             Class1006 var5 = (Class1006)var4.get(var0.rand.nextInt(var4.size()));
@@ -230,7 +230,7 @@ public class Class1015 extends Class1014 implements Class1016 {
             var5.method32182(1);
          }
 
-         this.method3035(new Class2023(Class8254.field35485, 900));
+         this.method3035(new Class2023(Effects.POISON, 900));
          if (var1.isCreative() || !this.method3362()) {
             this.method2741(Class8654.method31117(var1), Float.MAX_VALUE);
          }

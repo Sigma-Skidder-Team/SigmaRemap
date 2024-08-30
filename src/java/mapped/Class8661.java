@@ -14,7 +14,7 @@ public final class Class8661 {
       this.field39034 = var4;
    }
 
-   public Class8661(Class7680 var1, float var2, boolean var3) {
+   public Class8661(Vector3f var1, float var2, boolean var3) {
       if (var3) {
          var2 *= (float) (Math.PI / 180.0);
       }

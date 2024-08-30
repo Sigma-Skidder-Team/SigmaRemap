@@ -94,7 +94,7 @@ public abstract class Class1197 extends AbstractGui implements Class1190, Class1
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, this.field6484);
       int var9 = this.method5729(this.method5737());
       RenderSystem.enableBlend();
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.enableDepthTest();
       this.method5696(var1, this.field6477, this.field6478, 0, 46 + var9 * 20, this.field6475 / 2, this.field6476);
       this.method5696(var1, this.field6477 + this.field6475 / 2, this.field6478, 200 - this.field6475 / 2, 46 + var9 * 20, this.field6475 / 2, this.field6476);

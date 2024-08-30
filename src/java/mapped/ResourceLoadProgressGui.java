@@ -96,7 +96,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
          method5698(var1, var28, var15 - var18, var21, (int)var16, 0.0625F, 60.0F, 120, 60, 120, 120);
       }
 
-      RenderSystem.method27938();
+      RenderSystem.defaultBlendFunc();
       RenderSystem.method27939();
       RenderSystem.disableBlend();
       int var23 = (int)((double)this.field6438.getMainWindow().getScaledHeight() * 0.8325);

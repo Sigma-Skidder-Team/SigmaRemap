@@ -35,7 +35,7 @@ public abstract class Class1050 extends Class1049 {
    }
 
    public boolean method4800() {
-      return this.field5810 != null && this.field5810.method3066();
+      return this.field5810 != null && this.field5810.isAlive();
    }
 
    public Class1050 method4801(Class1050 var1) {

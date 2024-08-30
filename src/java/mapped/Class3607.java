@@ -6,9 +6,9 @@ import java.util.Comparator;
 
 public class Class3607 implements Comparator<Class8012> {
    private static String[] field19571;
-   public final Class9528 field19572;
+   public final InteractAutoBlock field19572;
 
-   public Class3607(Class9528 var1) {
+   public Class3607(InteractAutoBlock var1) {
       this.field19572 = var1;
    }
 

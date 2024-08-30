@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.MethodWrapper;
 import com.mentalfrostbyte.jello.event.priority.Priority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.unmapped.Setting;
-import mapped.ModuleWithModuleSettings;
+import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import mapped.Class6715;
 import mapped.Handler;
 
@@ -62,13 +62,13 @@ public class PacketHandler {
                 Client.getInstance().getEventManager().method23217();
 
                 for (Module var23 : Client.getInstance().getModuleManager().getModuleMap().values()) {
-                    for (Setting var28 : var23.method15989().values()) {
+                    for (Setting var28 : var23.getSettingMap().values()) {
                         var28.method18622();
                     }
 
                     if (var23 instanceof ModuleWithModuleSettings) {
                         for (Module var33 : ((ModuleWithModuleSettings) var23).moduleArray) {
-                            for (Setting var37 : var33.method15989().values()) {
+                            for (Setting var37 : var33.getSettingMap().values()) {
                                 var37.method18622();
                             }
                         }

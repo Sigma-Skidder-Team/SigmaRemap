@@ -16,7 +16,7 @@ public class Class2546 implements Class2545 {
    private final float field16775;
    private final float field16776;
    private final float field16777;
-   private final Class9367 field16778;
+   private final Matrix4f field16778;
    private final boolean field16779;
    private final int field16780;
    private float field16781;
@@ -34,7 +34,7 @@ public class Class2546 implements Class2545 {
       this.field16783.add(var1);
    }
 
-   public Class2546(FontRenderer var1, Class7733 var2, float var3, float var4, int var5, boolean var6, Class9367 var7, boolean var8, int var9) {
+   public Class2546(FontRenderer var1, Class7733 var2, float var3, float var4, int var5, boolean var6, Matrix4f var7, boolean var8, int var9) {
       this.field16786 = var1;
       this.field16771 = var2;
       this.field16781 = var3;

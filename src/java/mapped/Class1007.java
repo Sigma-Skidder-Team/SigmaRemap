@@ -67,7 +67,7 @@ public class Class1007 extends Class1006 implements Class1008 {
    }
 
    public static Class7037 method2997() {
-      return Class1006.method4220().method21849(Class9173.field42105, 200.0);
+      return Class1006.method4220().method21849(Attributes.field42105, 200.0);
    }
 
    @Override
@@ -98,7 +98,7 @@ public class Class1007 extends Class1006 implements Class1008 {
    @Override
    public void method2871() {
       if (this.world.isRemote) {
-         this.method3043(this.method3042());
+         this.method3043(this.getHealth());
          if (!this.method3245()) {
             float var3 = MathHelper.cos(this.field5633 * (float) (Math.PI * 2));
             float var4 = MathHelper.cos(this.field5632 * (float) (Math.PI * 2));
@@ -345,8 +345,8 @@ public class Class1007 extends Class1006 implements Class1008 {
    private void method4320() {
       if (this.field5637 != null) {
          if (!this.field5637.removed) {
-            if (this.ticksExisted % 10 == 0 && this.method3042() < this.method3075()) {
-               this.method3043(this.method3042() + 1.0F);
+            if (this.ticksExisted % 10 == 0 && this.getHealth() < this.method3075()) {
+               this.method3043(this.getHealth() + 1.0F);
             }
          } else {
             this.field5637 = null;
@@ -451,7 +451,7 @@ public class Class1007 extends Class1006 implements Class1008 {
             return false;
          } else {
             if (var2.method31109() instanceof PlayerEntity || var2.method31131()) {
-               float var6 = this.method3042();
+               float var6 = this.getHealth();
                this.method4326(var2, var3);
                if (this.getShouldBeDead() && !this.field5639.method32672().method23358()) {
                   this.method3043(1.0F);
@@ -459,7 +459,7 @@ public class Class1007 extends Class1006 implements Class1008 {
                }
 
                if (this.field5639.method32672().method23358()) {
-                  this.field5641 = (int)((float)this.field5641 + (var6 - this.method3042()));
+                  this.field5641 = (int)((float)this.field5641 + (var6 - this.getHealth()));
                   if ((float)this.field5641 > 0.25F * this.method3075()) {
                      this.field5641 = 0;
                      this.field5639.method32671(Class9598.field44900);

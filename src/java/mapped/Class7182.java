@@ -11,24 +11,24 @@ public final class Class7182 {
    }
 
    public static boolean method22536(Class880 var0) {
-      return var0.method3033(Class8254.field35469) || var0.method3033(Class8254.field35495);
+      return var0.method3033(Effects.HASTE) || var0.method3033(Effects.CONDUIT_POWER);
    }
 
    public static int method22537(Class880 var0) {
       int var3 = 0;
       int var4 = 0;
-      if (var0.method3033(Class8254.field35469)) {
-         var3 = var0.method3034(Class8254.field35469).method8629();
+      if (var0.method3033(Effects.HASTE)) {
+         var3 = var0.method3034(Effects.HASTE).method8629();
       }
 
-      if (var0.method3033(Class8254.field35495)) {
-         var4 = var0.method3034(Class8254.field35495).method8629();
+      if (var0.method3033(Effects.CONDUIT_POWER)) {
+         var4 = var0.method3034(Effects.CONDUIT_POWER).method8629();
       }
 
       return Math.max(var3, var4);
    }
 
    public static boolean method22538(Class880 var0) {
-      return var0.method3033(Class8254.field35479) || var0.method3033(Class8254.field35495);
+      return var0.method3033(Effects.WATER_BREATHING) || var0.method3033(Effects.CONDUIT_POWER);
    }
 }

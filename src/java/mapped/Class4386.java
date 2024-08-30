@@ -357,8 +357,8 @@ public class Class4386 {
    public void method13778(Class9624 var1) {
       if (this.field21405 && var1.method37510()) {
          Vector3d var4 = var1.method37504();
-         Class7680 var5 = var1.method37516();
-         Class7680 var6 = var1.method37517();
+         Vector3f var5 = var1.method37516();
+         Vector3f var6 = var1.method37517();
          this.field21409.execute(() -> {
             this.field21407.method37745(var4);
             this.field21407.method37747(var5, var6);

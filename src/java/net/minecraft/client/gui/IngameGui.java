@@ -89,7 +89,7 @@ public class IngameGui extends AbstractGui {
         RenderSystem.enableBlend();
         if (!Class7944.method26883()) {
             RenderSystem.enableDepthTest();
-            RenderSystem.method27938();
+            RenderSystem.defaultBlendFunc();
         } else {
             this.method5980(this.field6716.getRenderViewEntity());
         }
@@ -101,7 +101,7 @@ public class IngameGui extends AbstractGui {
         }
 
         float var7 = MathHelper.lerp(var2, this.field6716.player.field6142, this.field6716.player.field6141);
-        if (var7 > 0.0F && !this.field6716.player.method3033(Class8254.field35475)) {
+        if (var7 > 0.0F && !this.field6716.player.method3033(Effects.NAUSEA)) {
             this.method5981(var7);
         }
 
@@ -120,7 +120,7 @@ public class IngameGui extends AbstractGui {
             RenderSystem.disableAlphaTest();
             this.method5963(var1);
             Class7414.method23696();
-            RenderSystem.method27938();
+            RenderSystem.defaultBlendFunc();
             this.field6716.getProfiler().startSection("bossHealth");
             this.field6730.method5953(var1);
             this.field6716.getProfiler().endSection();
@@ -188,7 +188,7 @@ public class IngameGui extends AbstractGui {
                     RenderSystem.pushMatrix();
                     RenderSystem.translatef((float) (this.field6741 / 2), (float) (this.field6742 - 68), 0.0F);
                     RenderSystem.enableBlend();
-                    RenderSystem.method27938();
+                    RenderSystem.defaultBlendFunc();
                     int var22 = 16777215;
                     if (this.field6722) {
                         var22 = MathHelper.method37818(var15 / 50.0F, 0.7F, 0.6F) & 16777215;
@@ -223,7 +223,7 @@ public class IngameGui extends AbstractGui {
                     RenderSystem.pushMatrix();
                     RenderSystem.translatef((float) (this.field6741 / 2), (float) (this.field6742 / 2), 0.0F);
                     RenderSystem.enableBlend();
-                    RenderSystem.method27938();
+                    RenderSystem.defaultBlendFunc();
                     RenderSystem.pushMatrix();
                     RenderSystem.scalef(4.0F, 4.0F, 4.0F);
                     int var24 = var19 << 24 & 0xFF000000;
@@ -272,7 +272,7 @@ public class IngameGui extends AbstractGui {
             }
 
             RenderSystem.enableBlend();
-            RenderSystem.method27938();
+            RenderSystem.defaultBlendFunc();
             RenderSystem.method27817();
             RenderSystem.pushMatrix();
             RenderSystem.translatef(0.0F, (float) (this.field6742 - 48), 0.0F);
@@ -281,7 +281,7 @@ public class IngameGui extends AbstractGui {
             this.field6716.getProfiler().endSection();
             RenderSystem.popMatrix();
             var28 = var17.method20989(0);
-            if (this.field6716.gameSettings.field44646.isKeyDown()
+            if (this.field6716.gameSettings.keyBindTablist.isKeyDown()
                     && (!this.field6716.isIntegratedServerRunning() || this.field6716.player.connection.method15790().size() > 1 || var28 != null)) {
                 this.field6729.method5919(true);
                 this.field6729.method5920(var1, this.field6741, var17, var28);
@@ -323,7 +323,7 @@ public class IngameGui extends AbstractGui {
                     boolean var7 = false;
                     if (this.field6716.pointedEntity != null && this.field6716.pointedEntity instanceof Class880 && var6 >= 1.0F) {
                         var7 = this.field6716.player.method2973() > 5.0F;
-                        var7 &= this.field6716.pointedEntity.method3066();
+                        var7 &= this.field6716.pointedEntity.isAlive();
                     }
 
                     int var8 = this.field6742 / 2 - 7 + 16;
@@ -371,7 +371,7 @@ public class IngameGui extends AbstractGui {
             this.field6716.getTextureManager().bindTexture(Class851.field4720);
 
             for (Class2023 var10 : Ordering.natural().reverse().sortedCopy(var4)) {
-                Class7144 var11 = var10.method8627();
+                Effect var11 = var10.method8627();
                 if (Class9299.field42935.method20214()) {
                     if (!Class9299.method35064(var10, Class9299.field42935)) {
                         continue;
@@ -415,7 +415,7 @@ public class IngameGui extends AbstractGui {
                     byte var17 = var13;
                     float var18 = var14;
                     var8.add(() -> {
-                        this.field6716.getTextureManager().bindTexture(var20.method7466().method1100());
+                        this.field6716.getTextureManager().bindTexture(var20.getAtlasTexture().getTextureLocation());
                         RenderSystem.method27889(1.0F, 1.0F, 1.0F, var18);
                         method5695(var1, var16 + 3, var17 + 3, this.method5702(), 18, 18, var20);
                     });
@@ -454,7 +454,7 @@ public class IngameGui extends AbstractGui {
             this.method5703(var9);
             RenderSystem.method27867();
             RenderSystem.enableBlend();
-            RenderSystem.method27938();
+            RenderSystem.defaultBlendFunc();
             Class7992.method27282(false);
 
             for (int var12 = 0; var12 < 9; var12++) {
@@ -574,7 +574,7 @@ public class IngameGui extends AbstractGui {
             if (var9 > 0) {
                 RenderSystem.pushMatrix();
                 RenderSystem.enableBlend();
-                RenderSystem.method27938();
+                RenderSystem.defaultBlendFunc();
                 method5686(var1, var7 - 2, var8 - 2, var7 + var6 + 2, var8 + 9 + 2, this.field6716.gameSettings.method37141(0));
                 FontRenderer var10 = null;
                 if (Class9299.field42912.method20214()) {
@@ -700,7 +700,7 @@ public class IngameGui extends AbstractGui {
     private void method5976(MatrixStack var1) {
         PlayerEntity var4 = this.method5972();
         if (var4 != null) {
-            int var5 = MathHelper.method37773(var4.method3042());
+            int var5 = MathHelper.method37773(var4.getHealth());
             boolean var6 = this.field6740 > (long) this.field6719 && (this.field6740 - (long) this.field6719) / 3L % 2L == 1L;
             long var7 = Util.milliTime();
             if (var5 < this.field6737 && var4.hurtResistantTime > 0) {
@@ -725,7 +725,7 @@ public class IngameGui extends AbstractGui {
             int var12 = this.field6741 / 2 - 91;
             int var13 = this.field6741 / 2 + 91;
             int var14 = this.field6742 - 39;
-            float var15 = (float) var4.method3086(Class9173.field42105);
+            float var15 = (float) var4.method3086(Attributes.field42105);
             int var16 = MathHelper.method37773(var4.method2959());
             int var17 = MathHelper.method37773((var15 + (float) var16) / 2.0F / 10.0F);
             int var18 = Math.max(10 - (var17 - 2), 3);
@@ -734,7 +734,7 @@ public class IngameGui extends AbstractGui {
             int var21 = var16;
             int var22 = var4.method3070();
             int var23 = -1;
-            if (var4.method3033(Class8254.field35476)) {
+            if (var4.method3033(Effects.REGENERATION)) {
                 var23 = this.field6719 % MathHelper.method37773(var15 + 5.0F);
             }
 
@@ -761,8 +761,8 @@ public class IngameGui extends AbstractGui {
 
             for (int var33 = MathHelper.method37773((var15 + (float) var16) / 2.0F) - 1; var33 >= 0; var33--) {
                 byte var35 = 16;
-                if (!var4.method3033(Class8254.field35485)) {
-                    if (var4.method3033(Class8254.field35486)) {
+                if (!var4.method3033(Effects.POISON)) {
+                    if (var4.method3033(Effects.WITHER)) {
                         var35 += 72;
                     }
                 } else {
@@ -827,7 +827,7 @@ public class IngameGui extends AbstractGui {
                     int var39 = var14;
                     byte var41 = 16;
                     byte var43 = 0;
-                    if (var4.method3033(Class8254.field35483)) {
+                    if (var4.method3033(Effects.HUNGER)) {
                         var41 += 36;
                         var43 = 13;
                     }
@@ -877,7 +877,7 @@ public class IngameGui extends AbstractGui {
         if (var4 != null) {
             int var5 = this.method5974(var4);
             if (var5 != 0) {
-                int var6 = (int) Math.ceil((double) var4.method3042());
+                int var6 = (int) Math.ceil((double) var4.getHealth());
                 this.field6716.getProfiler().endStartSection("mountHealth");
                 int var7 = this.field6742 - 39;
                 int var8 = this.field6741 / 2 + 91;
@@ -911,17 +911,17 @@ public class IngameGui extends AbstractGui {
     private void method5978() {
         RenderSystem.disableDepthTest();
         RenderSystem.depthMask(false);
-        RenderSystem.method27938();
+        RenderSystem.defaultBlendFunc();
         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.method27817();
         this.field6716.getTextureManager().bindTexture(field6713);
         Tessellator var3 = Tessellator.getInstance();
         BufferBuilder var4 = var3.getBuffer();
         var4.begin(7, DefaultVertexFormats.field43344);
-        var4.pos(0.0, (double) this.field6742, -90.0).method17027(0.0F, 1.0F).endVertex();
-        var4.pos((double) this.field6741, (double) this.field6742, -90.0).method17027(1.0F, 1.0F).endVertex();
-        var4.pos((double) this.field6741, 0.0, -90.0).method17027(1.0F, 0.0F).endVertex();
-        var4.pos(0.0, 0.0, -90.0).method17027(0.0F, 0.0F).endVertex();
+        var4.pos(0.0, (double) this.field6742, -90.0).tex(0.0F, 1.0F).endVertex();
+        var4.pos((double) this.field6741, (double) this.field6742, -90.0).tex(1.0F, 1.0F).endVertex();
+        var4.pos((double) this.field6741, 0.0, -90.0).tex(1.0F, 0.0F).endVertex();
+        var4.pos(0.0, 0.0, -90.0).tex(0.0F, 0.0F).endVertex();
         var3.draw();
         RenderSystem.depthMask(true);
         RenderSystem.enableDepthTest();
@@ -931,7 +931,7 @@ public class IngameGui extends AbstractGui {
 
     private void method5979(Entity var1) {
         if (var1 != null) {
-            float var4 = MathHelper.method37777(1.0F - var1.method3267(), 0.0F, 1.0F);
+            float var4 = MathHelper.method37777(1.0F - var1.getBrightness(), 0.0F, 1.0F);
             this.field6723 = (float) ((double) this.field6723 + (double) (var4 - this.field6723) * 0.01);
         }
     }
@@ -961,15 +961,15 @@ public class IngameGui extends AbstractGui {
             Tessellator var10 = Tessellator.getInstance();
             BufferBuilder var11 = var10.getBuffer();
             var11.begin(7, DefaultVertexFormats.field43344);
-            var11.pos(0.0, (double) this.field6742, -90.0).method17027(0.0F, 1.0F).endVertex();
-            var11.pos((double) this.field6741, (double) this.field6742, -90.0).method17027(1.0F, 1.0F).endVertex();
-            var11.pos((double) this.field6741, 0.0, -90.0).method17027(1.0F, 0.0F).endVertex();
-            var11.pos(0.0, 0.0, -90.0).method17027(0.0F, 0.0F).endVertex();
+            var11.pos(0.0, (double) this.field6742, -90.0).tex(0.0F, 1.0F).endVertex();
+            var11.pos((double) this.field6741, (double) this.field6742, -90.0).tex(1.0F, 1.0F).endVertex();
+            var11.pos((double) this.field6741, 0.0, -90.0).tex(1.0F, 0.0F).endVertex();
+            var11.pos(0.0, 0.0, -90.0).tex(0.0F, 0.0F).endVertex();
             var10.draw();
             RenderSystem.depthMask(true);
             RenderSystem.enableDepthTest();
             RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-            RenderSystem.method27938();
+            RenderSystem.defaultBlendFunc();
         } else {
             RenderSystem.enableDepthTest();
             RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
@@ -986,21 +986,21 @@ public class IngameGui extends AbstractGui {
         RenderSystem.method27817();
         RenderSystem.disableDepthTest();
         RenderSystem.depthMask(false);
-        RenderSystem.method27938();
+        RenderSystem.defaultBlendFunc();
         RenderSystem.method27889(1.0F, 1.0F, 1.0F, var1);
         this.field6716.getTextureManager().bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
         TextureAtlasSprite var4 = this.field6716.getBlockRendererDispatcher().getBlockModelShapes().getTexture(Blocks.field36588.method11579());
-        float var5 = var4.method7459();
-        float var6 = var4.method7462();
-        float var7 = var4.method7460();
-        float var8 = var4.method7463();
+        float var5 = var4.getMinU();
+        float var6 = var4.getMinV();
+        float var7 = var4.getMaxU();
+        float var8 = var4.getMaxV();
         Tessellator var9 = Tessellator.getInstance();
         BufferBuilder var10 = var9.getBuffer();
         var10.begin(7, DefaultVertexFormats.field43344);
-        var10.pos(0.0, (double) this.field6742, -90.0).method17027(var5, var8).endVertex();
-        var10.pos((double) this.field6741, (double) this.field6742, -90.0).method17027(var7, var8).endVertex();
-        var10.pos((double) this.field6741, 0.0, -90.0).method17027(var7, var6).endVertex();
-        var10.pos(0.0, 0.0, -90.0).method17027(var5, var6).endVertex();
+        var10.pos(0.0, (double) this.field6742, -90.0).tex(var5, var8).endVertex();
+        var10.pos((double) this.field6741, (double) this.field6742, -90.0).tex(var7, var8).endVertex();
+        var10.pos((double) this.field6741, 0.0, -90.0).tex(var7, var6).endVertex();
+        var10.pos(0.0, 0.0, -90.0).tex(var5, var6).endVertex();
         var9.draw();
         RenderSystem.depthMask(true);
         RenderSystem.enableDepthTest();

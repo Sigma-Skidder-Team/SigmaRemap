@@ -13,7 +13,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
 
    @Override
    public void method4925() {
-      this.method3085(Class9173.field42105).method38661((double)this.method4971());
+      this.method3085(Attributes.field42105).method38661((double)this.method4971());
    }
 
    @Override
@@ -23,7 +23,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
    }
 
    public static Class7037 method4926() {
-      return method4951().method21849(Class9173.field42108, 0.175F).method21849(Class9173.field42117, 0.5);
+      return method4951().method21849(Attributes.MOVEMENT_SPEED, 0.175F).method21849(Attributes.field42117, 0.5);
    }
 
    public boolean method4927() {

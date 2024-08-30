@@ -15,7 +15,7 @@ public class Class5537 implements Packet<Class5116> {
 
    public Class5537(int var1, Class2023 var2) {
       this.field24584 = var1;
-      this.field24585 = (byte)(Class7144.method22288(var2.method8627()) & 0xFF);
+      this.field24585 = (byte)(Effect.method22288(var2.method8627()) & 0xFF);
       this.field24586 = (byte)(var2.method8629() & 0xFF);
       if (var2.method8628() <= 32767) {
          this.field24587 = var2.method8628();

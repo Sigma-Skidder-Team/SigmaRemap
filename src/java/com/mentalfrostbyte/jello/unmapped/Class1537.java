@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
-import mapped.ModuleWithModuleSettings;
+import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;

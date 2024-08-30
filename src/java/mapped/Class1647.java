@@ -24,7 +24,7 @@ public class Class1647 implements AutoCloseable {
    public final List<Class1706> field8939 = Lists.newArrayList();
    private final Map<String, Framebuffer> field8940 = Maps.newHashMap();
    private final List<Framebuffer> field8941 = Lists.newArrayList();
-   private Class9367 field8942;
+   private Matrix4f field8942;
    private int field8943;
    private int field8944;
    private float field8945;
@@ -163,7 +163,7 @@ public class Class1647 implements AutoCloseable {
                      }
 
                      var1.bindTexture(var22);
-                     Class290 var24 = var1.method1076(var22);
+                     Class290 var24 = var1.getTexture(var22);
                      int var25 = JSONUtils.method32777(var16, "width");
                      int var26 = JSONUtils.method32777(var16, "height");
                      boolean var27 = JSONUtils.method32768(var16, "bilinear");
@@ -175,7 +175,7 @@ public class Class1647 implements AutoCloseable {
                         RenderSystem.method27863(3553, 10240, 9728);
                      }
 
-                     var11.method7407(var40, var24::method1131, var25, var26);
+                     var11.method7407(var40, var24::getGlTextureId, var25, var26);
                   } else if (var19) {
                      var11.method7407(var40, var21::method29121, var21.field35730, var21.field35731);
                   } else {
@@ -284,7 +284,7 @@ public class Class1647 implements AutoCloseable {
    }
 
    private void method6524() {
-      this.field8942 = Class9367.method35512((float)this.field8936.field35730, (float)this.field8936.field35731, 0.1F, 1000.0F);
+      this.field8942 = Matrix4f.method35512((float)this.field8936.field35730, (float)this.field8936.field35731, 0.1F, 1000.0F);
    }
 
    public void method6525(int var1, int var2) {

@@ -23,7 +23,7 @@ public class Class5734 extends Class5715<Class902> {
       Class5422 var11 = var5.method25597(this.field25148.method11028(this.method17843(var1)));
       this.field25148.method11174(0.0F, var9, var10);
       this.field25148.method11016(var4, var11, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
-      var4.method35295();
+      var4.pop();
       super.method17853(var1, var2, var3, var4, var5, var6);
    }
 

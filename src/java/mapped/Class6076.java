@@ -58,7 +58,7 @@ public class Class6076 extends Class6069 {
          Class880 var6 = (Class880)var2;
          if (this.field27320 == 2 && var6.method3089() == Class7809.field33507) {
             int var7 = 20 + var1.method3013().nextInt(10 * var3);
-            var6.method3035(new Class2023(Class8254.field35468, var7, 3));
+            var6.method3035(new Class2023(Effects.SLOWNESS, var7, 3));
          }
       }
    }

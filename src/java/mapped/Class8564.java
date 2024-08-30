@@ -39,7 +39,7 @@ public class Class8564 {
 
    public static ResourceLocation method30591(ResourceLocation var0) {
       if (field38505) {
-         Class290 var3 = field38511.method1076(var0);
+         Class290 var3 = field38511.getTexture(var0);
          ResourceLocation var4 = null;
          if (var3 instanceof Class293) {
             var4 = ((Class293)var3).field1139;
@@ -68,7 +68,7 @@ public class Class8564 {
          TextureAtlasSprite var3 = var0.field9352;
          if (field38507) {
             if (var3 == null) {
-               var3 = var0.method7466().getSprite(field38510);
+               var3 = var0.getAtlasTexture().getSprite(field38510);
             }
 
             return var3;

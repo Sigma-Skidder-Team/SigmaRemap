@@ -30,7 +30,7 @@ public class Class6835 extends Class6829 {
          float var12 = (float)(MathHelper.method37814(var8, var4) * 180.0F / (float)Math.PI) - 90.0F;
          this.field29722.rotationYaw = this.method20816(this.field29722.rotationYaw, var12, 90.0F);
          this.field29722.field4965 = this.field29722.rotationYaw;
-         float var13 = (float)(this.field29711 * this.field29722.method3086(Class9173.field42108));
+         float var13 = (float)(this.field29711 * this.field29722.method3086(Attributes.MOVEMENT_SPEED));
          float var14 = MathHelper.lerp(0.125F, this.field29722.method2918(), var13);
          this.field29722.method3113(var14);
          this.field29722

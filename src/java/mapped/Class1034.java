@@ -18,7 +18,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    private static final DataParameter<Boolean> field5742 = EntityDataManager.<Boolean>method35441(Class1034.class, Class7784.field33398);
    private static final DataParameter<Boolean> field5743 = EntityDataManager.<Boolean>method35441(Class1034.class, Class7784.field33398);
    private static final UUID field5744 = UUID.fromString("766bfa64-11f3-11ea-8d71-362b9e155667");
-   private static final Class9689 field5745 = new Class9689(field5744, "Baby speed boost", 0.2F, Class2045.field13353);
+   private static final Class9689 field5745 = new Class9689(field5744, "Baby speed boost", 0.2F, AttributeModifierOperation.field13353);
    private final Class927 field5746 = new Class927(8);
    private boolean field5747 = false;
    public static final ImmutableList<Class7963<? extends Class7882<? super Class1034>>> field5748 = ImmutableList.of(
@@ -125,7 +125,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    public static Class7037 method4614() {
-      return Class1009.method4343().method21849(Class9173.field42105, 16.0).method21849(Class9173.field42108, 0.35F).method21849(Class9173.field42110, 5.0);
+      return Class1009.method4343().method21849(Attributes.field42105, 16.0).method21849(Attributes.MOVEMENT_SPEED, 0.35F).method21849(Attributes.field42110, 5.0);
    }
 
    public static boolean method4615(EntityType<Class1034> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
@@ -221,7 +221,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    public void method4308(boolean var1) {
       this.method3210().method35446(field5741, var1);
       if (!this.world.isRemote) {
-         Class9805 var4 = this.method3085(Class9173.field42108);
+         Class9805 var4 = this.method3085(Attributes.MOVEMENT_SPEED);
          var4.method38670(field5745);
          if (var1) {
             var4.method38667(field5745);

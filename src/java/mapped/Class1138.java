@@ -32,10 +32,10 @@ public class Class1138 extends Class1135 {
       this.field6202 = this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 155, this.field4565 - 29, 150, 20, new TranslationTextComponent("controls.resetAll"), var1 -> {
             for (KeyBinding var7 : this.field6193.field44658) {
-               var7.method8515(var7.method8514());
+               var7.bind(var7.getDefault());
             }
 
-            KeyBinding.method8508();
+            KeyBinding.resetKeyBindingArrayAndHash();
          })
       );
       this.<Class1206>method2455(
@@ -48,9 +48,9 @@ public class Class1138 extends Class1135 {
       if (this.field6199 == null) {
          return super.method1958(var1, var3, var5);
       } else {
-         this.field6193.method37142(this.field6199, Class1938.field12594.method8197(var5));
+         this.field6193.method37142(this.field6199, InputMappingsType.MOUSE.method8197(var5));
          this.field6199 = null;
-         KeyBinding.method8508();
+         KeyBinding.resetKeyBindingArrayAndHash();
          return true;
       }
    }
@@ -61,14 +61,14 @@ public class Class1138 extends Class1135 {
          return super.method1920(var1, var2, var3);
       } else {
          if (var1 != 256) {
-            this.field6193.method37142(this.field6199, Class9798.method38637(var1, var2));
+            this.field6193.method37142(this.field6199, InputMappings.method38637(var1, var2));
          } else {
-            this.field6193.method37142(this.field6199, Class9798.field45819);
+            this.field6193.method37142(this.field6199, InputMappings.INPUT_INVALID);
          }
 
          this.field6199 = null;
          this.field6200 = Util.milliTime();
-         KeyBinding.method8508();
+         KeyBinding.resetKeyBindingArrayAndHash();
          return true;
       }
    }
@@ -81,7 +81,7 @@ public class Class1138 extends Class1135 {
       boolean var7 = false;
 
       for (KeyBinding var11 : this.field6193.field44658) {
-         if (!var11.method8522()) {
+         if (!var11.isDefault()) {
             var7 = true;
             break;
          }

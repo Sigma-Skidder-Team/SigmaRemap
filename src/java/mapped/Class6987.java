@@ -121,7 +121,7 @@ public class Class6987 {
                                                                                  Class9728.method38109(var0x, "uuid"),
                                                                                  StringArgumentType.getString(var0x, "name"),
                                                                                  DoubleArgumentType.getDouble(var0x, "value"),
-                                                                                 Class2045.field13352
+                                                                                 AttributeModifierOperation.ADDITION
                                                                               )
                                                                         )
                                                                   ))
@@ -135,7 +135,7 @@ public class Class6987 {
                                                                               Class9728.method38109(var0x, "uuid"),
                                                                               StringArgumentType.getString(var0x, "name"),
                                                                               DoubleArgumentType.getDouble(var0x, "value"),
-                                                                              Class2045.field13354
+                                                                              AttributeModifierOperation.MULTIPLY_TOTAL
                                                                            )
                                                                      )
                                                                ))
@@ -149,7 +149,7 @@ public class Class6987 {
                                                                            Class9728.method38109(var0x, "uuid"),
                                                                            StringArgumentType.getString(var0x, "name"),
                                                                            DoubleArgumentType.getDouble(var0x, "value"),
-                                                                           Class2045.field13353
+                                                                           AttributeModifierOperation.field13353
                                                                         )
                                                                   )
                                                             )
@@ -278,7 +278,7 @@ public class Class6987 {
       return 1;
    }
 
-   private static int method21618(Class6619 var0, Entity var1, Class4869 var2, UUID var3, String var4, double var5, Class2045 var7) throws CommandSyntaxException {
+   private static int method21618(Class6619 var0, Entity var1, Class4869 var2, UUID var3, String var4, double var5, AttributeModifierOperation var7) throws CommandSyntaxException {
       Class9805 var10 = method21611(var1, var2);
       Class9689 var11 = new Class9689(var3, var4, var5, var7);
       if (!var10.method38665(var11)) {

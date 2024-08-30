@@ -759,7 +759,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                            && this.player.field4857.method33863() != Class1894.field11105
                            && !this.server.method1359()
                            && !this.player.abilities.allowFlying
-                           && !this.player.method3033(Class8254.field35491)
+                           && !this.player.method3033(Effects.LEVITATION)
                            && !this.player.method3165()
                            && this.method15664(this.player);
                         this.player.getServerWorld().getChunkProvider().method7376(this.player);
@@ -1177,7 +1177,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                this.player = this.server.getPlayerList().func_232644_a_(this.player, true);
                CriteriaTriggers.CHANGED_DIMENSION.testForAll(this.player, World.THE_END, World.OVERWORLD);
             } else {
-               if (this.player.method3042() > 0.0F) {
+               if (this.player.getHealth() > 0.0F) {
                   return;
                }
 

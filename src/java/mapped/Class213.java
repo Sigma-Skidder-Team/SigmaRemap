@@ -38,7 +38,7 @@ public class Class213 implements AutoCloseable {
 
    public void method727() {
       if (! Shaders.method33168()) {
-         RenderSystem.method27926(this.field799::method1131, 16);
+         RenderSystem.method27926(this.field799::getGlTextureId, 16);
       }
    }
 

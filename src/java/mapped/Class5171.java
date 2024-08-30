@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4420;
+import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import org.lwjgl.opengl.GL11;
@@ -21,13 +21,13 @@ public class Class5171 extends Module {
     }
 
     @EventTarget
-    public void method16088(Class4420 var1) {
+    public void method16088(Render3DEvent var1) {
         if (!this.isEnabled()) {
             ;
         }
     }
 
-    private void method16089(Class4420 var1, PlayerEntity var2) {
+    private void method16089(Render3DEvent var1, PlayerEntity var2) {
         Color var5 = new Color(
                 !Client.getInstance().getFriendManager().method26998(var2.getName().getString())
                         ? (!var2.getName().getString().equalsIgnoreCase(mc.player.getName().getString()) ? new Color(16775672).getRGB() : -6684775)
@@ -35,7 +35,7 @@ public class Class5171 extends Module {
         );
         if (!var2.method3342()) {
             float[][] var6 = field23459.get(var2);
-            if (var6 != null && var2.method3066() && var2 != mc.player && !var2.isSleeping()) {
+            if (var6 != null && var2.isAlive() && var2 != mc.player && !var2.isSleeping()) {
                 GL11.glPushMatrix();
                 GL11.glLineWidth(2.0F);
                 GL11.glColor4f((float) (var5.getRed() / 255), (float) (var5.getGreen() / 255), (float) (var5.getBlue() / 255), 1.0F);
@@ -175,7 +175,7 @@ public class Class5171 extends Module {
         }
     }
 
-    private Class8472 method16090(Class4420 var1, PlayerEntity var2) {
+    private Class8472 method16090(Render3DEvent var1, PlayerEntity var2) {
         float var5 = mc.getRenderPartialTicks();
         double var6 = var2.lastTickPosX + (var2.getPosX() - var2.lastTickPosX) * (double) var5;
         double var8 = var2.lastTickPosY + (var2.getPosY() - var2.lastTickPosY) * (double) var5;
@@ -221,7 +221,7 @@ public class Class5171 extends Module {
     }
 
     private int method16094(Class880 var1) {
-        float var4 = var1.method3042();
+        float var4 = var1.getHealth();
         float var5 = var1.method3075();
         float var6 = Math.max(0.0F, Math.min(var4, var5) / var5);
         return Color.HSBtoRGB(var6 / 3.0F, 1.0F, 1.0F) | 0xFF000000;

@@ -69,7 +69,7 @@ public class Class2780 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      if (this.field17382.method4914() && this.field17382.method4915().method3066() && this.method10971(this.field17382, 0)) {
+      if (this.field17382.method4914() && this.field17382.method4915().isAlive() && this.method10971(this.field17382, 0)) {
          double var3 = this.field17382.getDistanceSq(this.field17382.method4915());
          if (var3 > 676.0) {
             if (this.field17383 <= 3.0) {

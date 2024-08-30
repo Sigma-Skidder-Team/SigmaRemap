@@ -39,7 +39,7 @@ public class Class2779<T extends Class1006 & Class1011> extends Class2595 {
    }
 
    private List<Class1006> method10968() {
-      double var3 = this.field17378.method3086(Class9173.field42106);
+      double var3 = this.field17378.method3086(Attributes.field42106);
       AxisAlignedBB var5 = AxisAlignedBB.method19657(this.field17378.getPositionVec()).method19663(var3, 10.0, var3);
       return this.field17378.world.<Class1006>method7183((Class<? extends Class1006>)this.field17378.getClass(), var5);
    }

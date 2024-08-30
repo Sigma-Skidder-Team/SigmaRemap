@@ -66,7 +66,7 @@ public class Class1084 extends Class1082 {
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       Class5093 var8 = super.method4276(var1, var2, var3, var4, var5);
-      this.method3085(Class9173.field42110).method38661(4.0);
+      this.method3085(Attributes.field42110).method38661(4.0);
       this.method5031();
       return var8;
    }
@@ -80,7 +80,7 @@ public class Class1084 extends Class1082 {
    public boolean method3114(Entity var1) {
       if (super.method3114(var1)) {
          if (var1 instanceof Class880) {
-            ((Class880)var1).method3035(new Class2023(Class8254.field35486, 200));
+            ((Class880)var1).method3035(new Class2023(Effects.WITHER, 200));
          }
 
          return true;
@@ -98,6 +98,6 @@ public class Class1084 extends Class1082 {
 
    @Override
    public boolean method3036(Class2023 var1) {
-      return var1.method8627() != Class8254.field35486 ? super.method3036(var1) : false;
+      return var1.method8627() != Effects.WITHER ? super.method3036(var1) : false;
    }
 }

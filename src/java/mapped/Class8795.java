@@ -6,6 +6,8 @@ import java.util.List;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.*;
+import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
+import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import net.minecraft.client.Minecraft;
@@ -332,12 +334,12 @@ public class Class8795 {
    }
 
    @EventTarget
-   public void method31749(Class4417 var1) {
+   public void method31749(SafeWalkEvent var1) {
       if (this.method31743() && this.field39612.player.onGround) {
          int var4 = this.field39613.size() - 1;
          Class9510 var5 = this.field39613.get(var4);
          if (var5.field44279 == Class2317.field15876) {
-            var1.method13966(true);
+            var1.setSafe(true);
          }
       }
    }
@@ -352,7 +354,7 @@ public class Class8795 {
    }
 
    @EventTarget
-   public void method31752(Class4420 var1) {
+   public void method31752(Render3DEvent var1) {
       if (this.method31743()) {
          if (this.field39613 != null) {
             for (Class9510 var5 : this.field39613) {

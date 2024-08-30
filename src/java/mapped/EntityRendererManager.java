@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import com.mentalfrostbyte.jello.module.impl.render.FPSBooster;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.entity.Entity;
@@ -210,7 +211,7 @@ public class EntityRendererManager {
    public <E extends Entity> void method32219(
            E var1, double var2, double var4, double var6, float var8, float var9, MatrixStack var10, Class7733 var11, int var12
    ) {
-      if (!Class5224.field23568 || !(var1 instanceof ArmorStandEntity) && !(var1 instanceof Class1099) && !(var1 instanceof ItemFrameEntity)) {
+      if (!FPSBooster.field23568 || !(var1 instanceof ArmorStandEntity) && !(var1 instanceof Class1099) && !(var1 instanceof ItemFrameEntity)) {
          if (this.field40017 != null) {
             Class5715 var15 = this.<Entity>method32212(var1);
 
@@ -257,7 +258,7 @@ public class EntityRendererManager {
                   this.method32220(var10, var11.method25597(RenderType.method14345()), var1, var9);
                }
 
-               var10.method35295();
+               var10.pop();
             } catch (Throwable var29) {
                CrashReport var26 = CrashReport.makeCrashReport(var29, "Rendering entity in world");
                CrashReportCategory var27 = var26.makeCategory("Entity being rendered");
@@ -289,7 +290,7 @@ public class EntityRendererManager {
                double var24 = var14 + MathHelper.method37822((double)var4, var19.lastTickPosZ, var19.getPosZ());
                var1.translate(var20, var22, var24);
                this.method32221(var1, var2, var19, 0.25F, 1.0F, 0.0F);
-               var1.method35295();
+               var1.pop();
             }
          }
 
@@ -312,9 +313,9 @@ public class EntityRendererManager {
          }
 
          Vector3d var26 = var3.method3281(var4);
-         Class9367 var9 = var1.method35296().method32361();
-         var2.method17040(var9, 0.0F, var3.method3393(), 0.0F).color(0, 0, 255, 255).endVertex();
-         var2.method17040(var9, (float)(var26.field18048 * 2.0), (float)((double)var3.method3393() + var26.field18049 * 2.0), (float)(var26.field18050 * 2.0))
+         Matrix4f var9 = var1.getLast().getMatrix();
+         var2.pos(var9, 0.0F, var3.method3393(), 0.0F).color(0, 0, 255, 255).endVertex();
+         var2.pos(var9, (float)(var26.field18048 * 2.0), (float)((double)var3.method3393() + var26.field18049 * 2.0), (float)(var26.field18050 * 2.0))
             .color(0, 0, 255, 255)
             .endVertex();
       }
@@ -326,8 +327,8 @@ public class EntityRendererManager {
    }
 
    private void method32222(MatrixStack var1, Class7733 var2, Entity var3) {
-      TextureAtlasSprite var6 = Class8968.field40508.method26198();
-      TextureAtlasSprite var7 = Class8968.field40509.method26198();
+      TextureAtlasSprite var6 = ModelBakery.field40508.getSprite();
+      TextureAtlasSprite var7 = ModelBakery.LOCATION_FIRE_1.getSprite();
       var1.push();
       float var8 = var3.method3429() * 1.4F;
       var1.method35292(var8, var8, var8);
@@ -335,7 +336,7 @@ public class EntityRendererManager {
       float var10 = 0.0F;
       float var11 = var3.method3430() / var8;
       float var12 = 0.0F;
-      var1.method35293(Class7680.field32900.method25286(-this.field40017.method37507()));
+      var1.rotate(Vector3f.YP.rotationDegrees(-this.field40017.method37507()));
       var1.translate(0.0, 0.0, (double)(-0.3F + (float)((int)var11) * 0.02F));
       float var13 = 0.0F;
       int var14 = 0;
@@ -345,13 +346,13 @@ public class EntityRendererManager {
          var15.method17044(Class9025.field41288);
       }
 
-      for (Class8892 var17 = var1.method35296(); var11 > 0.0F; var14++) {
+      for (Class8892 var17 = var1.getLast(); var11 > 0.0F; var14++) {
          TextureAtlasSprite var18 = var14 % 2 != 0 ? var7 : var6;
          var15.method17043(var18);
-         float var19 = var18.method7459();
-         float var20 = var18.method7462();
-         float var21 = var18.method7460();
-         float var22 = var18.method7463();
+         float var19 = var18.getMinU();
+         float var20 = var18.getMinV();
+         float var21 = var18.getMaxU();
+         float var22 = var18.getMaxV();
          if (var14 / 2 % 2 == 0) {
             float var23 = var21;
             var21 = var19;
@@ -373,13 +374,13 @@ public class EntityRendererManager {
          Class7414.method23864();
       }
 
-      var1.method35295();
+      var1.pop();
    }
 
    private static void method32223(Class8892 var0, Class5422 var1, float var2, float var3, float var4, float var5, float var6) {
-      var1.method17040(var0.method32361(), var2, var3, var4)
+      var1.pos(var0.getMatrix(), var2, var3, var4)
          .color(255, 255, 255, 255)
-         .method17027(var5, var6)
+         .tex(var5, var6)
          .method17028(0, 10)
          .method17034(240)
          .method17041(var0.method32362(), 0.0F, 1.0F, 0.0F)
@@ -405,7 +406,7 @@ public class EntityRendererManager {
          int var19 = MathHelper.floor(var12);
          int var20 = MathHelper.floor(var14 - (double)var9);
          int var21 = MathHelper.floor(var14 + (double)var9);
-         Class8892 var22 = var0.method35296();
+         Class8892 var22 = var0.getLast();
          Class5422 var23 = var1.method25597(field40010);
 
          for (BlockPos var26 : BlockPos.method8359(new BlockPos(var16, var18, var20), new BlockPos(var17, var19, var21))) {
@@ -453,9 +454,9 @@ public class EntityRendererManager {
    }
 
    private static void method32226(Class8892 var0, Class5422 var1, float var2, float var3, float var4, float var5, float var6, float var7) {
-      var1.method17040(var0.method32361(), var3, var4, var5)
-         .method17033(1.0F, 1.0F, 1.0F, var2)
-         .method17027(var6, var7)
+      var1.pos(var0.getMatrix(), var3, var4, var5)
+         .color(1.0F, 1.0F, 1.0F, var2)
+         .tex(var6, var7)
          .method17035(Class213.field798)
          .method17034(15728880)
          .method17041(var0.method32362(), 0.0F, 1.0F, 0.0F)

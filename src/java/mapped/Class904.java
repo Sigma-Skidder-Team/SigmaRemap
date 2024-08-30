@@ -209,7 +209,7 @@ public class Class904 extends Class882 {
       ItemStack var5 = var1.method3091();
       boolean var6 = var4.getItem() == Items.field37906;
       boolean var7 = var5.getItem() == Items.field37906;
-      if (!var1.removed && var1.method3066() && (var6 || var7) && !(this.getDistanceSq(var1) > 1024.0)) {
+      if (!var1.removed && var1.isAlive() && (var6 || var7) && !(this.getDistanceSq(var1) > 1024.0)) {
          return false;
       } else {
          this.method2904();
@@ -224,7 +224,7 @@ public class Class904 extends Class882 {
 
    @Override
    public boolean method3467(Entity var1) {
-      return super.method3467(var1) || var1.method3066() && var1 instanceof ItemEntity;
+      return super.method3467(var1) || var1.isAlive() && var1 instanceof ItemEntity;
    }
 
    @Override
