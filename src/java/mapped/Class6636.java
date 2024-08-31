@@ -24,8 +24,8 @@ public class Class6636 implements Class6632 {
 
          try {
             this.field29183 = Class.forName(this.field29181);
-         } catch (ClassNotFoundException var4) {
-            Class9751.method38308("(Reflector) Class not present: " + this.field29181);
+         } catch (ClassNotFoundException ignored) {
+
          } catch (Throwable var5) {
             var5.printStackTrace();
          }

@@ -35,7 +35,6 @@ public class Class6631 implements Class6632 {
                if (this.field29169 == null) {
                   Method[] var4 = method20231(var3, this.field29168);
                   if (var4.length <= 0) {
-                     Class9751.method38308("(Reflector) Method not present: " + var3.getName() + "." + this.field29168);
                      return null;
                   }
 
@@ -56,7 +55,6 @@ public class Class6631 implements Class6632 {
                }
 
                if (this.field29171 == null) {
-                  Class9751.method38308("(Reflector) Method not present: " + var3.getName() + "." + this.field29168);
                   return null;
                } else {
                   this.field29171.setAccessible(true);

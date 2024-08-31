@@ -30,8 +30,6 @@ public class Class7109 implements Class7108 {
          } else {
             Class9751.method38308("(Reflector) More than one match found for field: " + var5);
          }
-      } else {
-         Class9751.method38308("(Reflector) Field not found: " + var5);
       }
    }
 
