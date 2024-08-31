@@ -32,11 +32,11 @@ public class Class4496 {
 
    public void method14178(int var1, Consumer<CompoundNBT> var2) {
       int var5 = this.method14177(var2);
-      this.field21705.sendPacket(new Class5559(var5, var1));
+      this.field21705.sendPacket(new CQueryEntityNBTPacket(var5, var1));
    }
 
    public void method14179(BlockPos var1, Consumer<CompoundNBT> var2) {
       int var5 = this.method14177(var2);
-      this.field21705.sendPacket(new Class5486(var5, var1));
+      this.field21705.sendPacket(new CQueryTileEntityNBTPacket(var5, var1));
    }
 }

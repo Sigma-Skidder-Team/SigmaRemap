@@ -1160,7 +1160,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       return var3.substring(0, var3.indexOf(":"));
    }
 
-   public void method2804(Class5561 var1) {
+   public void method2804(CClientSettingsPacket var1) {
       this.field4872 = var1.method17481();
       this.field4873 = var1.method17482();
       this.method3210().method35446(field4897, (byte)var1.method17483());

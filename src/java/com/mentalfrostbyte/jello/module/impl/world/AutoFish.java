@@ -30,8 +30,8 @@ public class AutoFish extends Module {
                             return;
                         }
 
-                        mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
-                        mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
+                        mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
+                        mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                         Client.getInstance().getNotificationManager().post(new Notification("AutoFish", "We catched something!", ResourcesDecrypter.doneIconPNG));
                     }
                 }

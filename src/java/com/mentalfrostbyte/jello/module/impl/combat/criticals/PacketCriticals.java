@@ -56,7 +56,7 @@ public class PacketCriticals extends Module {
     @HigherPriority
     private void method16924(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13932() instanceof Class5603) {
+            if (var1.method13932() instanceof CPlayerPacket) {
                 if (!this.timer.isEnabled()) {
                     this.timer.start();
                 }

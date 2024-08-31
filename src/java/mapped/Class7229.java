@@ -33,7 +33,7 @@ public class Class7229 implements Class7222 {
 
    @Override
    public void method22697(Class8036 var1) {
-      Minecraft.getInstance().getConnection().sendPacket(new Class5497(this.field31070.getId()));
+      Minecraft.getInstance().getConnection().sendPacket(new CSpectatePacket(this.field31070.getId()));
    }
 
    @Override

@@ -117,7 +117,7 @@ public class BowFly extends Module {
                     this.field23504++;
                     if (this.field23504 < 4) {
                         if (this.field23504 == 1) {
-                            mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
+                            mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                         }
                     } else {
                         mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13489, BlockPos.ZERO, Direction.DOWN));

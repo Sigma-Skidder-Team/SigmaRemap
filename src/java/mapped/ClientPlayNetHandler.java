@@ -135,7 +135,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23272.playerController.method23129(var1.method17290());
       this.field23272.playerController.method23128(var1.method17291());
       this.field23272.gameSettings.method37149();
-      this.field23269.sendPacket(new Class5527(Class5527.field24523, new PacketBuffer(Unpooled.buffer()).writeString(ClientBrandRetriever.getClientModName())));
+      this.field23269.sendPacket(new CCustomPayloadPacket(CCustomPayloadPacket.field24523, new PacketBuffer(Unpooled.buffer()).writeString(ClientBrandRetriever.getClientModName())));
       this.field23272.getMinecraftGame().method28908();
    }
 
@@ -562,7 +562,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       }
 
       var4.method3269(var11, var15, var19, var21, var22);
-      this.field23269.sendPacket(new Class5580(var1.method17219()));
+      this.field23269.sendPacket(new CConfirmTeleportPacket(var1.method17219()));
       this.field23269.sendPacket(new Class5604(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch, false));
       if (!this.field23275) {
          this.field23275 = true;
@@ -1007,7 +1007,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       }
 
       if (var4 != null && !var1.method17423()) {
-         this.sendPacket(new Class5493(var1.method17421(), var1.method17422(), true));
+         this.sendPacket(new CConfirmTransactionPacket(var1.method17421(), var1.method17422(), true));
       }
    }
 
@@ -1520,7 +1520,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleKeepAlive(SKeepAlivePacket var1) {
-      this.sendPacket(new Class5600(var1.method17471()));
+      this.sendPacket(new CKeepAlivePacket(var1.method17471()));
    }
 
    @Override
@@ -1663,7 +1663,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    }
 
    private void method15788(Class2066 var1) {
-      this.field23269.sendPacket(new Class5557(var1));
+      this.field23269.sendPacket(new CResourcePackStatusPacket(var1));
    }
 
    @Override
@@ -1688,7 +1688,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       Entity var4 = this.field23272.player.method3415();
       if (var4 != this.field23272.player && var4.method3418()) {
          var4.method3269(var1.method17401(), var1.method17402(), var1.method17403(), var1.method17404(), var1.method17405());
-         this.field23269.sendPacket(new Class5483(var4));
+         this.field23269.sendPacket(new CMoveVehiclePacket(var4));
       }
    }
 

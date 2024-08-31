@@ -126,13 +126,13 @@ public class InfiniteAura extends Module {
                 var5.positionVec.x = var8.method29876() + 0.5;
                 var5.positionVec.y = var8.method29877();
                 var5.positionVec.z = var8.method29878() + 0.5;
-                mc.getConnection().sendPacket(new Class5538(false, false));
+                mc.getConnection().sendPacket(new CSteerBoatPacket(false, false));
                 mc.getConnection().sendPacket(new Class5606(mc.player.rotationYaw, mc.player.rotationPitch, false));
-                mc.getConnection().sendPacket(new Class5471(0.0F, 1.0F, false, false));
+                mc.getConnection().sendPacket(new CInputPacket(0.0F, 1.0F, false, false));
                 BoatEntity var9 = new BoatEntity(mc.world, var8.method29876() + 0.5, var8.method29877(), var8.method29878() + 0.5);
                 var9.rotationYaw = var5.rotationYaw;
                 var9.rotationPitch = var5.rotationPitch;
-                mc.getConnection().sendPacket(new Class5483(var9));
+                mc.getConnection().sendPacket(new CMoveVehiclePacket(var9));
             }
         }
 

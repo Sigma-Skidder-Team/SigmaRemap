@@ -852,7 +852,7 @@ public class GameSettings {
          this.field44659
             .player
             .connection
-            .sendPacket(new Class5561(this.language, this.field44574, this.chatVisibility, this.field44612, var1, this.field44591));
+            .sendPacket(new CClientSettingsPacket(this.language, this.field44574, this.chatVisibility, this.field44612, var1, this.field44591));
       }
    }
 

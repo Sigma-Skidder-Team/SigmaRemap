@@ -115,12 +115,12 @@ public class ElytraFly extends Module {
                 int var5 = Class7789.method25843(Items.field38068);
                 if (var5 >= 0) {
                     if (var5 != mc.player.inventory.currentItem) {
-                        mc.getConnection().sendPacket(new Class5539(var5));
+                        mc.getConnection().sendPacket(new CHeldItemChangePacket(var5));
                     }
 
-                    mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
+                    mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                     if (var5 != mc.player.inventory.currentItem) {
-                        mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
+                        mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
                     }
                 }
             }

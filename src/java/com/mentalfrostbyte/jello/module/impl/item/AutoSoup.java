@@ -166,22 +166,22 @@ public class AutoSoup extends Module {
                 this.field23430 = mc.player.inventory.currentItem;
                 mc.player.inventory.currentItem = var3;
                 mc.playerController.method23138();
-                mc.getConnection().sendPacket(new Class5555(Hand.field183));
-                mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
+                mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.field183));
+                mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
             }
         } else {
             if (var3 < 0 || this.field23428 <= 3 || mc.player.getHealth() > this.getNumberValueBySettingName("Health")) {
                 return;
             }
 
-            mc.getConnection().sendPacket(new Class5539(var3));
-            mc.getConnection().sendPacket(new Class5555(Hand.field183));
-            mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
+            mc.getConnection().sendPacket(new CHeldItemChangePacket(var3));
+            mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.field183));
+            mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
             if (var5) {
                 mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13488, BlockPos.ZERO, Direction.DOWN));
             }
 
-            mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
+            mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
             this.field23428 = 0;
         }
     }

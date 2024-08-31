@@ -256,7 +256,7 @@ public class InvManager extends PremiumModule {
 
                     if (!this.field23659 && !(mc.currentScreen instanceof InventoryScreen) && this.field23658.method27121() > 0L && !this.field23660) {
                         this.field23659 = true;
-                        mc.getConnection().sendPacket(new Class5482(-1));
+                        mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                     }
                 }
             }

@@ -116,8 +116,8 @@ public class OmegaCraftTestFly extends Module {
     public void method16703(SendPacketEvent event) {
         if (this.isEnabled()) {
             Packet<?> packet = event.method13932();
-            if (packet instanceof Class5603) {
-                Class5603 var5 = (Class5603) packet;
+            if (packet instanceof CPlayerPacket) {
+                CPlayerPacket var5 = (CPlayerPacket) packet;
                 if (this.field23854 == -1) {
                     var5.field24883 = true;
                 }

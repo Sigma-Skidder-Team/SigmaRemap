@@ -25,7 +25,7 @@ public class Class862 extends Class851<Class5826> {
    private void method2661() {
       this.field4727.method18204(this.field4790);
       this.field4727.method18213(this.field4790);
-      this.mc.getConnection().sendPacket(new Class5541(this.field4790));
+      this.mc.getConnection().sendPacket(new CSelectTradePacket(this.field4790));
    }
 
    @Override

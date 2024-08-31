@@ -70,7 +70,7 @@ public class ColorUtils {
    }
 
    public static void method17679(String var0) {
-      field24949.getConnection().sendPacket(new Class5522(var0));
+      field24949.getConnection().sendPacket(new CChatMessagePacket(var0));
    }
 
    public static List<PlayerEntity> method17680() {
@@ -652,8 +652,8 @@ public class ColorUtils {
    }
 
    public static void method17733() {
-      field24949.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
-      field24949.getConnection().sendPacket(new Class5555(Hand.field183));
+      field24949.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
+      field24949.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.field183));
    }
 
    public static void method17734() {
@@ -1043,7 +1043,7 @@ public class ColorUtils {
          field24949.getConnection().sendPacket(new Class5605(var3 + var11, var5, var7 + var11, false));
       }
 
-      field24949.getConnection().sendPacket(new Class5603(true));
+      field24949.getConnection().sendPacket(new CPlayerPacket(true));
    }
 
    public static double method17750() {

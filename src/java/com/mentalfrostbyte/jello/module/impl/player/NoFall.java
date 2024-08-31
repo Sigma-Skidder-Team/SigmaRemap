@@ -128,7 +128,7 @@ public class NoFall extends Module {
                             if (mc.player.method3433().y < -0.1 && mc.player.fallDistance > 3.0F) {
                                 this.field23509++;
                                 if (this.field23509 == 1.0) {
-                                    mc.getConnection().sendPacket(new Class5603(true));
+                                    mc.getConnection().sendPacket(new CPlayerPacket(true));
                                 } else if (this.field23509 > 1.0) {
                                     this.field23509 = 0.0;
                                 }

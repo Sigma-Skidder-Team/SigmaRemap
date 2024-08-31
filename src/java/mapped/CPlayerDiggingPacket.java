@@ -36,7 +36,7 @@ public class CPlayerDiggingPacket implements Packet<IServerPlayNetHandler> {
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
-      var1.method15624(this);
+      var1.processPlayerDigging(this);
    }
 
    public BlockPos method17272() {

@@ -65,7 +65,7 @@ public class HypixelSpeed extends Module {
             } else if (var1.method13921()) {
                 if (this.field23417 > 3.0) {
                     this.field23417 = 0.0;
-                    mc.getConnection().sendPacket(new Class5603(true));
+                    mc.getConnection().sendPacket(new CPlayerPacket(true));
                 }
 
                 var1.method13920(false);
@@ -141,7 +141,7 @@ public class HypixelSpeed extends Module {
 
                         if (this.field23417 > 3.0) {
                             this.field23417 = 0.0;
-                            mc.getConnection().sendPacket(new Class5603(true));
+                            mc.getConnection().sendPacket(new CPlayerPacket(true));
                         }
                         break;
                     case 2:

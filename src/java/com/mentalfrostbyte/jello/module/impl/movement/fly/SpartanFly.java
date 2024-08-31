@@ -74,7 +74,7 @@ public class SpartanFly extends Module {
                             int var5 = this.method16272();
                             boolean var6 = this.getBooleanValueFromSetttingName("Fake Block");
                             if (var5 >= 0 && var6) {
-                                mc.getConnection().sendPacket(new Class5539(var5));
+                                mc.getConnection().sendPacket(new CHeldItemChangePacket(var5));
                             }
 
                             if (var6 && (var5 >= 0 || mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof Class3292)) {
@@ -84,12 +84,12 @@ public class SpartanFly extends Module {
                                         mc.player.getPosition().method8336(0, -2, 0),
                                         false
                                 );
-                                Class5570 var8 = new Class5570(Hand.MAIN_HAND, var7);
+                                CPlayerTryUseItemOnBlockPacket var8 = new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, var7);
                                 mc.getConnection().sendPacket(var8);
                             }
 
                             if (var5 >= 0 && var6) {
-                                mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
+                                mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
                             }
 
                             var1.method13995(this.field23569 - mc.player.getPositionVec().y);

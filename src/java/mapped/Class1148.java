@@ -378,7 +378,7 @@ public class Class1148 extends Screen {
       this.mc
          .getConnection()
          .sendPacket(
-            new Class5601(
+            new CUpdateStructureBlockPacket(
                this.field6248.getPos(),
                var1,
                this.field6248.method3950(),

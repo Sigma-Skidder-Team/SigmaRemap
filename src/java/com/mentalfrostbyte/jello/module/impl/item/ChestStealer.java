@@ -65,7 +65,7 @@ public class ChestStealer extends Module {
                             && var4.getPos().getY() == this.field23625.getPos().getY()
                             && var4.getPos().getZ() == this.field23625.getPos().getZ()) {
                         this.field23621 = true;
-                        mc.getConnection().sendPacket(new Class5570(Hand.MAIN_HAND, var4));
+                        mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, var4));
                         mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
                         this.field23624.method27120();
                     }

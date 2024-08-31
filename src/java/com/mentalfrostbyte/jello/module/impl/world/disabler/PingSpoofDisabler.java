@@ -74,8 +74,8 @@ public class PingSpoofDisabler extends Module {
     @EventTarget
     public void method16102(SendPacketEvent var1) {
         Packet var4 = var1.method13932();
-        if (var4 instanceof Class5594) {
-            Class5594 var5 = (Class5594) var4;
+        if (var4 instanceof CClickWindowPacket) {
+            CClickWindowPacket var5 = (CClickWindowPacket) var4;
             this.field23463 = var5.method17582();
         }
     }

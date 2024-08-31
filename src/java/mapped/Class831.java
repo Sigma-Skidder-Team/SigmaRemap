@@ -40,7 +40,7 @@ public class Class831 extends Screen {
       this.mc.keyboardListener.enableRepeatEvents(false);
       ClientPlayNetHandler var3 = this.mc.getConnection();
       if (var3 != null) {
-         var3.sendPacket(new Class5519(this.field4611.getPos(), this.field4615[0], this.field4615[1], this.field4615[2], this.field4615[3]));
+         var3.sendPacket(new CUpdateSignPacket(this.field4611.getPos(), this.field4615[0], this.field4615[1], this.field4615[2], this.field4615[3]));
       }
 
       this.field4611.method3839(true);

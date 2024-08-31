@@ -126,10 +126,10 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             this.onUpdateWalkingPlayer();
          } else {
             this.connection.sendPacket(new Class5606(this.rotationYaw, this.rotationPitch, this.onGround));
-            this.connection.sendPacket(new Class5471(this.field4982, this.field4984, this.field6131.field43913, this.field6131.field43914));
+            this.connection.sendPacket(new CInputPacket(this.field4982, this.field4984, this.field6131.field43913, this.field6131.field43914));
             Entity var3 = this.method3415();
             if (var3 != this && var3.method3418()) {
-               this.connection.sendPacket(new Class5483(var3));
+               this.connection.sendPacket(new CMoveVehiclePacket(var3));
             }
          }
 
@@ -189,7 +189,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                } else if (!var27) {
                   if (!var28) {
                      if (this.field6124 != this.onGround || Class8005.method27372() == Class5989.field26129) {
-                        this.connection.sendPacket(new Class5603(var16));
+                        this.connection.sendPacket(new CPlayerPacket(var16));
                      }
                   } else {
                      this.connection.sendPacket(new Class5606(var15, var14, var16));
@@ -238,7 +238,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public void method5389(String var1) {
-      this.connection.sendPacket(new Class5522(var1));
+      this.connection.sendPacket(new CChatMessagePacket(var1));
    }
 
    @Override
@@ -261,7 +261,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method2772() {
-      this.connection.sendPacket(new Class5482(this.field4905.field25471));
+      this.connection.sendPacket(new CCloseWindowPacket(this.field4905.field25471));
       this.method5390();
    }
 
@@ -295,7 +295,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method2797() {
-      this.connection.sendPacket(new Class5612(this.abilities));
+      this.connection.sendPacket(new CPlayerAbilitiesPacket(this.abilities));
    }
 
    @Override
@@ -345,7 +345,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public void method5398(Class4843<?> var1) {
       if (this.field6116.method21364(var1)) {
          this.field6116.method21365(var1);
-         this.connection.sendPacket(new Class5506(var1));
+         this.connection.sendPacket(new CMarkRecipeSeenPacket(var1));
       }
    }
 

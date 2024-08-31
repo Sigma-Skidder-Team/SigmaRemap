@@ -118,15 +118,15 @@ public class NameTags extends Module {
     @EventTarget
     private void method16927(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13932() instanceof Class5570) {
-                Class5570 var4 = (Class5570) var1.method13932();
+            if (var1.method13932() instanceof CPlayerTryUseItemOnBlockPacket) {
+                CPlayerTryUseItemOnBlockPacket var4 = (CPlayerTryUseItemOnBlockPacket) var1.method13932();
                 if (mc.world.getBlockState(var4.method17498().getPos()).getBlock() instanceof Class3353) {
                     this.field24001 = var4.method17498().getPos();
                 }
             }
 
-            if (var1.method13932() instanceof Class5594) {
-                Class5594 var7 = (Class5594) var1.method13932();
+            if (var1.method13932() instanceof CClickWindowPacket) {
+                CClickWindowPacket var7 = (CClickWindowPacket) var1.method13932();
                 Class7070 var5 = this.method16929(var7.method17579());
                 if (var5 == null) {
                     return;

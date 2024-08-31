@@ -214,12 +214,12 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15626(Class5471 var1) {
+   public void processInput(CInputPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.method2775(var1.method17199(), var1.method17200(), var1.method17201(), var1.method17202());
    }
 
-   private static boolean method15662(Class5603 var0) {
+   private static boolean method15662(CPlayerPacket var0) {
       return Doubles.isFinite(var0.method17625(0.0))
             && Doubles.isFinite(var0.method17626(0.0))
             && Doubles.isFinite(var0.method17627(0.0))
@@ -229,7 +229,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          : true;
    }
 
-   private static boolean method15663(Class5483 var0) {
+   private static boolean method15663(CMoveVehiclePacket var0) {
       return !Doubles.isFinite(var0.method17246())
          || !Doubles.isFinite(var0.method17247())
          || !Doubles.isFinite(var0.method17248())
@@ -238,7 +238,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15635(Class5483 var1) {
+   public void processVehicleMove(CMoveVehiclePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (!method15663(var1)) {
          Entity var4 = this.player.method3415();
@@ -316,7 +316,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15636(Class5580 var1) {
+   public void processConfirmTeleport(CConfirmTeleportPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (var1.method17524() == this.field23248) {
          this.player
@@ -335,19 +335,19 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15637(Class5506 var1) {
+   public void handleRecipeBookUpdate(CMarkRecipeSeenPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.server.method1407().method1035(var1.method17320()).ifPresent(this.player.method2810()::method21365);
    }
 
    @Override
-   public void method15638(Class5573 var1) {
+   public void func_241831_a(CUpdateRecipeBookStatusPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.method2810().method21375(var1.method17503(), var1.method17504(), var1.method17505());
    }
 
    @Override
-   public void method15639(Class5466 var1) {
+   public void handleSeenAdvancements(CSeenAdvancementsPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (var1.method17184() == Class2238.field14644) {
          ResourceLocation var4 = var1.method17185();
@@ -375,7 +375,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15641(Class5578 var1) {
+   public void processUpdateCommandBlock(CUpdateCommandBlockPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (!this.server.method1361()) {
          this.player.sendMessage(new TranslationTextComponent("advMode.notEnabled"), Util.DUMMY_UUID);
@@ -439,7 +439,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15642(Class5529 var1) {
+   public void processUpdateCommandMinecart(CUpdateMinecartCommandBlockPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.server.method1361()) {
          if (this.player.method2979()) {
@@ -463,7 +463,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15643(Class5568 var1) {
+   public void processPickItem(CPickItemPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.inventory.method4034(var1.method17494());
       this.player
@@ -474,7 +474,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15644(Class5558 var1) {
+   public void processRenameItem(CRenameItemPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.field4905 instanceof Class5824) {
          Class5824 var4 = (Class5824)this.player.field4905;
@@ -486,7 +486,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15645(Class5597 var1) {
+   public void processUpdateBeacon(CUpdateBeaconPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.field4905 instanceof Class5821) {
          ((Class5821)this.player.field4905).method18181(var1.method17599(), var1.method17600());
@@ -494,7 +494,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15646(Class5601 var1) {
+   public void processUpdateStructureBlock(CUpdateStructureBlockPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method2979()) {
          BlockPos var4 = var1.method17609();
@@ -550,7 +550,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15651(Class5544 var1) {
+   public void func_217262_a(CUpdateJigsawBlockPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method2979()) {
          BlockPos var4 = var1.method17426();
@@ -570,7 +570,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15652(Class5468 var1) {
+   public void func_230549_a_(CJigsawBlockGeneratePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method2979()) {
          BlockPos var4 = var1.method17189();
@@ -583,7 +583,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15647(Class5541 var1) {
+   public void processSelectTrade(CSelectTradePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       int var4 = var1.method17420();
       Class5812 var5 = this.player.field4905;
@@ -595,7 +595,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15648(Class5551 var1) {
+   public void processEditBook(CEditBookPacket var1) {
       ItemStack var4 = var1.method17465();
       if (var4.getItem() == Items.field38047) {
          CompoundNBT var5 = var4.method32142();
@@ -656,7 +656,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15649(Class5559 var1) {
+   public void processNBTQueryEntity(CQueryEntityNBTPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method3424(2)) {
          Entity var4 = this.player.getServerWorld().getEntityByID(var1.method17479());
@@ -668,7 +668,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15650(Class5486 var1) {
+   public void processNBTQueryBlockEntity(CQueryTileEntityNBTPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method3424(2)) {
          TileEntity var4 = this.player.getServerWorld().getTileEntity(var1.method17255());
@@ -678,7 +678,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15622(Class5603 var1) {
+   public void processPlayer(CPlayerPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (!method15662(var1)) {
          ServerWorld var4 = this.player.getServerWorld();
@@ -843,7 +843,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15624(CPlayerDiggingPacket var1) {
+   public void processPlayerDigging(CPlayerDiggingPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       BlockPos var4 = var1.method17272();
       this.player.markPlayerActive();
@@ -893,7 +893,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15630(Class5570 var1) {
+   public void processTryUseItemOnBlock(CPlayerTryUseItemOnBlockPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       ServerWorld var4 = this.player.getServerWorld();
       Hand var5 = var1.method17497();
@@ -922,7 +922,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15631(Class5555 var1) {
+   public void processTryUseItem(CPlayerTryUseItemPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       ServerWorld var4 = this.player.getServerWorld();
       Hand var5 = var1.method17472();
@@ -937,7 +937,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15632(Class5497 var1) {
+   public void handleSpectate(CSpectatePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.isSpectator()) {
          for (ServerWorld var5 : this.server.method1320()) {
@@ -951,11 +951,11 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15633(Class5557 var1) {
+   public void handleResourcePackStatus(CResourcePackStatusPacket var1) {
    }
 
    @Override
-   public void method15634(Class5538 var1) {
+   public void processSteerBoat(CSteerBoatPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       Entity var4 = this.player.getRidingEntity();
       if (var4 instanceof BoatEntity) {
@@ -1015,7 +1015,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15627(Class5539 var1) {
+   public void processHeldItemChange(CHeldItemChangePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (var1.method17416() >= 0 && var1.method17416() < PlayerInventory.method4029()) {
          if (this.player.inventory.currentItem != var1.method17416() && this.player.method3149() == Hand.MAIN_HAND) {
@@ -1030,7 +1030,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15611(Class5522 var1) {
+   public void processChatMessage(CChatMessagePacket var1) {
       String var4 = StringUtils.normalizeSpace(var1.method17359());
       if (!var4.startsWith("/")) {
          this.method15660(var4, this::func_244548_c);
@@ -1201,13 +1201,13 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15618(Class5482 var1) {
+   public void processCloseWindow(CCloseWindowPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.method2774();
    }
 
    @Override
-   public void method15616(Class5594 var1) {
+   public void processClickWindow(CClickWindowPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.markPlayerActive();
       if (this.player.field4905.field25471 == var1.method17579() && this.player.field4905.method18140(this.player)) {
@@ -1245,7 +1245,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15617(Class5613 var1) {
+   public void processPlaceRecipe(CPlaceRecipePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.markPlayerActive();
       if (!this.player.isSpectator()
@@ -1260,7 +1260,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15615(Class5533 var1) {
+   public void processEnchantItem(CEnchantItemPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.markPlayerActive();
       if (this.player.field4905.field25471 == var1.method17395() && this.player.field4905.method18140(this.player) && !this.player.isSpectator()
@@ -1272,7 +1272,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15628(Class5514 var1) {
+   public void processCreativeInventoryAction(CCreativeInventoryActionPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.field4857.method33866()) {
          boolean var4 = var1.method17336() < 0;
@@ -1309,7 +1309,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15614(Class5493 var1) {
+   public void processConfirmTransaction(CConfirmTransactionPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       int var4 = this.player.field4905.field25471;
       if (var4 == var1.method17275()
@@ -1321,12 +1321,12 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15629(Class5519 var1) {
+   public void processUpdateSign(CUpdateSignPacket var1) {
       List var4 = Stream.<String>of(var1.method17352()).<String>map(TextFormatting::getTextWithoutFormattingCodes).collect(Collectors.toList());
       this.method15661(var4, var2 -> this.method15675(var1, var2));
    }
 
-   private void method15675(Class5519 var1, List<String> var2) {
+   private void method15675(CUpdateSignPacket var1, List<String> var2) {
       this.player.markPlayerActive();
       ServerWorld var5 = this.player.getServerWorld();
       BlockPos var6 = var1.method17351();
@@ -1353,7 +1353,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15621(Class5600 var1) {
+   public void processKeepAlive(CKeepAlivePacket var1) {
       if (this.field23229 && var1.method17608() == this.field23230) {
          int var4 = (int)(Util.milliTime() - this.field23228);
          this.player.field4891 = (this.player.field4891 * 3 + var4) / 4;
@@ -1364,23 +1364,23 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15623(Class5612 var1) {
+   public void processPlayerAbilities(CPlayerAbilitiesPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.abilities.field29607 = var1.method17640() && this.player.abilities.allowFlying;
    }
 
    @Override
-   public void method15613(Class5561 var1) {
+   public void processClientSettings(CClientSettingsPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.method2804(var1);
    }
 
    @Override
-   public void method15619(Class5527 var1) {
+   public void processCustomPayload(CCustomPayloadPacket var1) {
    }
 
    @Override
-   public void method15653(Class5517 var1) {
+   public void func_217263_a(CSetDifficultyPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method3424(2) || this.method15657()) {
          this.server.method1336(var1.method17348(), false);
@@ -1388,7 +1388,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15654(CLockDifficultyPacket var1) {
+   public void func_217261_a(CLockDifficultyPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method3424(2) || this.method15657()) {
          this.server.method1339(var1.method17277());

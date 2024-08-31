@@ -90,7 +90,7 @@ public class AutoArmor extends Module {
 
                 if (!this.isInventoryOpen && !(mc.currentScreen instanceof InventoryScreen) && this.timer.method27121() > 0L) {
                     this.isInventoryOpen = true;
-                    mc.getConnection().sendPacket(new Class5482(-1));
+                    mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                 }
             }
         }

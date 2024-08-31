@@ -4,7 +4,7 @@ import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class Class5604 extends Class5603 {
+public class Class5604 extends CPlayerPacket {
    private static String[] field24877;
 
    public Class5604() {

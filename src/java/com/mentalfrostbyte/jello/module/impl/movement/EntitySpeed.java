@@ -83,7 +83,7 @@ public class EntitySpeed extends Module {
 
     @EventTarget
     public void method16242(SendPacketEvent var1) {
-        if (var1.method13932() instanceof Class5483
+        if (var1.method13932() instanceof CMoveVehiclePacket
                 && mc.player.getRidingEntity() != null
                 && this.field23547++ > 2
                 && mc.player.getRidingEntity().onGround) {

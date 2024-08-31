@@ -68,7 +68,7 @@ public class AutoTools extends Module {
 
                     mc.player.inventory.currentItem = Class7789.method25857(var5);
                     if (var6.equals("FakeInv")) {
-                        mc.getConnection().sendPacket(new Class5482(-1));
+                        mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                     }
                 }
             }

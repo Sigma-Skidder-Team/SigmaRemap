@@ -60,9 +60,9 @@ public class HypixelAutoGapple extends PremiumModule {
 
                 if (this.field23678 != 1) {
                     if (this.field23678 >= 3) {
-                        mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
-                        mc.getConnection().sendPacket(new Class5539(this.field23681 + (this.field23681 != 8 ? 1 : -1)));
-                        mc.getConnection().sendPacket(new Class5539(this.field23681));
+                        mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
+                        mc.getConnection().sendPacket(new CHeldItemChangePacket(this.field23681 + (this.field23681 != 8 ? 1 : -1)));
+                        mc.getConnection().sendPacket(new CHeldItemChangePacket(this.field23681));
                         mc.player.inventory.currentItem = this.field23679;
                         this.field23679 = -1;
                         this.field23678 = -1;

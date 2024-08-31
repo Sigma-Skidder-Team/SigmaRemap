@@ -45,13 +45,13 @@ public class Class9819 {
                      }
                   }
 
-                  this.field45880.getConnection().sendPacket(new Class5493(0, (short)-1, false));
-                  this.field45880.getConnection().sendPacket(new Class5612(var5));
+                  this.field45880.getConnection().sendPacket(new CConfirmTransactionPacket(0, (short)-1, false));
+                  this.field45880.getConnection().sendPacket(new CPlayerAbilitiesPacket(var5));
                   if (var6 != null) {
-                     this.field45880.getConnection().sendPacket(new Class5497(var6.getUniqueID()));
+                     this.field45880.getConnection().sendPacket(new CSpectatePacket(var6.getUniqueID()));
                   }
 
-                  this.field45880.getConnection().sendPacket(new Class5471(0.98F, 0.98F, false, false));
+                  this.field45880.getConnection().sendPacket(new CInputPacket(0.98F, 0.98F, false, false));
                }
 
                Thread var9 = new Thread(
@@ -70,17 +70,17 @@ public class Class9819 {
                               var7.positionVec.x = var9x.method29876() + 0.5;
                               var7.positionVec.y = var9x.method29877();
                               var7.positionVec.z = var9x.method29878() + 0.5;
-                              this.field45880.getConnection().sendPacket(new Class5538(false, false));
+                              this.field45880.getConnection().sendPacket(new CSteerBoatPacket(false, false));
                               this.field45880
                                  .getConnection()
                                  .sendPacket(new Class5606(this.field45880.player.rotationYaw, this.field45880.player.rotationPitch, false));
-                              this.field45880.getConnection().sendPacket(new Class5471(0.0F, 1.0F, false, false));
+                              this.field45880.getConnection().sendPacket(new CInputPacket(0.0F, 1.0F, false, false));
                               BoatEntity var10 = new BoatEntity(
                                  this.field45880.world, var9x.method29876() + 0.5, var9x.method29877(), var9x.method29878() + 0.5
                               );
                               var10.rotationYaw = var7.rotationYaw;
                               var10.rotationPitch = var7.rotationPitch;
-                              this.field45880.getConnection().sendPacket(new Class5483(var10));
+                              this.field45880.getConnection().sendPacket(new CMoveVehiclePacket(var10));
                            } else if (var4) {
                               this.field45880.getConnection().sendPacket(new Class5605(var9x.method29876(), var9x.method29877(), var9x.method29878(), false));
                            } else {
@@ -97,7 +97,7 @@ public class Class9819 {
                         if (var4) {
                            Class6799 var12 = new Class6799();
                            var12.field29607 = false;
-                           this.field45880.getConnection().sendPacket(new Class5612(var12));
+                           this.field45880.getConnection().sendPacket(new CPlayerAbilitiesPacket(var12));
                         }
                      } catch (Exception var11) {
                         var11.printStackTrace();

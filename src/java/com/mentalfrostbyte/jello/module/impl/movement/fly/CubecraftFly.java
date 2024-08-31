@@ -122,7 +122,7 @@ public class CubecraftFly extends Module {
                         var1.method13995(0.0);
                         Class9567.method37088(var1, 0.0);
                         if (mc.player.fallDistance > 4.0F) {
-                            mc.getConnection().sendPacket(new Class5603(true));
+                            mc.getConnection().sendPacket(new CPlayerPacket(true));
                             this.field23848 = true;
                         }
                     } else {

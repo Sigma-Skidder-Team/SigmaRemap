@@ -377,7 +377,7 @@ public class AutoCrystal extends PremiumModule {
                     }
 
                     Class7789.method25873(var5, 8);
-                    mc.getConnection().sendPacket(new Class5482(-1));
+                    mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                     return 5;
                 }
             }

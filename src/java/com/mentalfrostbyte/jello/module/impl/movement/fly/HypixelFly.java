@@ -90,8 +90,8 @@ public class HypixelFly extends Module {
     public void method16258(SendPacketEvent var1) {
         if (ColorUtils.method17716()) {
             Packet var4 = var1.method13932();
-            if (var4 instanceof Class5594) {
-                Class5594 var5 = (Class5594) var4;
+            if (var4 instanceof CClickWindowPacket) {
+                CClickWindowPacket var5 = (CClickWindowPacket) var4;
                 this.field23559 = var5.method17582();
             }
         }

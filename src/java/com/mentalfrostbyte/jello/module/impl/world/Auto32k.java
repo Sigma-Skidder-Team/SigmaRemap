@@ -271,7 +271,7 @@ public class Auto32k extends Module {
                 int var7 = var4.method17303();
                 if (this.field23874 == var7 && var5 == 0 && var6.getItem() != Items.field37222 && !this.field23877) {
                     var1.method13900(true);
-                    mc.getConnection().sendPacket(new Class5594(var7, var5, 1, Class2259.field14695, var6, this.field23875++));
+                    mc.getConnection().sendPacket(new CClickWindowPacket(var7, var5, 1, Class2259.field14695, var6, this.field23875++));
                     int var8 = -1;
 
                     for (int var9 = 44; var9 > 9; var9--) {
@@ -302,7 +302,7 @@ public class Auto32k extends Module {
     @EventTarget
     private void method16722(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13932() instanceof Class5482) {
+            if (var1.method13932() instanceof CCloseWindowPacket) {
                 var1.method13900(true);
             }
 
@@ -311,8 +311,8 @@ public class Auto32k extends Module {
                 float var5 = Class9217.method34543(this.field23870.up(), Direction.field673)[1];
             }
 
-            if (var1.method13932() instanceof Class5603) {
-                Class5603 var6 = (Class5603) var1.method13932();
+            if (var1.method13932() instanceof CPlayerPacket) {
+                CPlayerPacket var6 = (CPlayerPacket) var1.method13932();
                 var6.field24883 = false;
             }
         }

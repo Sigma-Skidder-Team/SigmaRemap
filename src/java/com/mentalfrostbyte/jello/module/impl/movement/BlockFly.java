@@ -117,7 +117,7 @@ public class BlockFly extends ModuleWithModuleSettings {
 
                     mc.player.inventory.currentItem = var4;
                     if (this.getStringSettingValueByName("ItemSpoof").equals("LiteSpoof") && (this.field23884 < 0 || this.field23884 != var4)) {
-                        mc.getConnection().getNetworkManager().sendPacket(new Class5539(var4));
+                        mc.getConnection().getNetworkManager().sendPacket(new CHeldItemChangePacket(var4));
                         this.field23884 = var4;
                     }
                     break;
@@ -175,7 +175,7 @@ public class BlockFly extends ModuleWithModuleSettings {
 
                         this.method16740(var5, var4 - 36);
                         if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv")) {
-                            mc.getConnection().sendPacket(new Class5482(-1));
+                            mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                         }
                     }
                 }
@@ -211,7 +211,7 @@ public class BlockFly extends ModuleWithModuleSettings {
 
                     this.method16740(var8, var4 - 36);
                     if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv")) {
-                        mc.getConnection().sendPacket(new Class5482(-1));
+                        mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                     }
                 }
             }

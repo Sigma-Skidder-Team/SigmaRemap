@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import mapped.Class5522;
+import mapped.CChatMessagePacket;
 import mapped.Class5605;
 import mapped.ColorUtils;
 import mapped.MathHelper;
@@ -42,8 +42,8 @@ public class VClip extends Module {
 
     @EventTarget
     private void method16290(SendPacketEvent var1) {
-        if (var1.method13932() instanceof Class5522) {
-            Class5522 var4 = (Class5522) var1.method13932();
+        if (var1.method13932() instanceof CChatMessagePacket) {
+            CChatMessagePacket var4 = (CChatMessagePacket) var1.method13932();
             String var5 = var4.method17359();
             String var6 = "hclip";
             if (!var5.startsWith("/" + var6)) {

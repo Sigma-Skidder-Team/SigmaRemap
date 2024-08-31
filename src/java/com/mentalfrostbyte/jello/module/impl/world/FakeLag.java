@@ -58,10 +58,10 @@ public class FakeLag extends Module {
                     this.field23990.method27120();
                 }
             } else if (!((float) this.field23990.method27121() > this.getNumberValueBySettingName("Lag duration") * 1000.0F)) {
-                if (!(var1.method13932() instanceof Class5603)) {
-                    if (!(var1.method13932() instanceof Class5600) && !(var1.method13932() instanceof Class5493)) {
+                if (!(var1.method13932() instanceof CPlayerPacket)) {
+                    if (!(var1.method13932() instanceof CKeepAlivePacket) && !(var1.method13932() instanceof CConfirmTransactionPacket)) {
                         if (!(var1.method13932() instanceof CUseEntityPacket) && !(var1.method13932() instanceof CAnimateHandPacket)) {
-                            if (!(var1.method13932() instanceof Class5555) && !(var1.method13932() instanceof CPlayerDiggingPacket) && !(var1.method13932() instanceof Class5570)
+                            if (!(var1.method13932() instanceof CPlayerTryUseItemPacket) && !(var1.method13932() instanceof CPlayerDiggingPacket) && !(var1.method13932() instanceof CPlayerTryUseItemOnBlockPacket)
                             ) {
                                 return;
                             }

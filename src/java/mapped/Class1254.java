@@ -447,7 +447,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
          Class1939 var3 = this.field6641.method18227();
          boolean var4 = this.field6645.method21374().method34686(var3);
          boolean var5 = this.field6645.method21374().method34688(var3);
-         this.field6642.getConnection().sendPacket(new Class5573(var3, var4, var5));
+         this.field6642.getConnection().sendPacket(new CUpdateRecipeBookStatusPacket(var3, var4, var5));
       }
    }
 }

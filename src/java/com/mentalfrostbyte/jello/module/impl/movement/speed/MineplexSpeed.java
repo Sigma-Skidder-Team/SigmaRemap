@@ -31,7 +31,7 @@ public class MineplexSpeed extends Module {
     public void onDisable() {
         Class9567.method37090(Class9567.method37075() * 0.7);
         if (mc.player.inventory.currentItem != this.field23554) {
-            mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
+            mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
             this.field23554 = mc.player.inventory.currentItem;
         }
     }
@@ -97,7 +97,7 @@ public class MineplexSpeed extends Module {
                 Vector3d var7 = new Vector3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
                 BlockPos var8 = new BlockPos(mc.player.getPosition()).method8336(0, -1, 0);
                 BlockRayTraceResult var9 = new BlockRayTraceResult(var7, Direction.field673, var8, false);
-                Class5570 var10 = new Class5570(Hand.MAIN_HAND, var9);
+                CPlayerTryUseItemOnBlockPacket var10 = new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, var9);
                 mc.getConnection().sendPacket(var10);
                 this.field23555 += var4 / 4.0;
                 if (mc.player.collidedHorizontally) {
@@ -134,7 +134,7 @@ public class MineplexSpeed extends Module {
             var1.method14003(0.0);
             var1.method14002(0.4199998);
             if (mc.player.inventory.currentItem != this.field23554) {
-                mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
+                mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
                 this.field23554 = mc.player.inventory.currentItem;
             }
         }
@@ -168,7 +168,7 @@ public class MineplexSpeed extends Module {
                 int var4 = var3 - 36;
                 if (mc.player.field4904.method18131(var3).method18265().isEmpty()) {
                     if (mc.player.inventory.currentItem != var4 && this.field23554 != var4) {
-                        mc.getConnection().sendPacket(new Class5539(var4));
+                        mc.getConnection().sendPacket(new CHeldItemChangePacket(var4));
                         this.field23554 = var4;
                     }
 
@@ -180,7 +180,7 @@ public class MineplexSpeed extends Module {
             if (mc.player.field4904.method18131(42).method18265().isEmpty()
                     && mc.player.inventory.currentItem != 6
                     && this.field23554 != 6) {
-                mc.getConnection().sendPacket(new Class5539(6));
+                mc.getConnection().sendPacket(new CHeldItemChangePacket(6));
                 this.field23554 = 6;
                 return 6;
             } else {

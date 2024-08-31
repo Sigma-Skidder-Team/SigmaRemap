@@ -96,8 +96,8 @@ public class HorizonFly extends Module {
     public void method16161(SendPacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.method13932();
-            if (var4 instanceof Class5603) {
-                Class5603 var5 = (Class5603) var4;
+            if (var4 instanceof CPlayerPacket) {
+                CPlayerPacket var5 = (CPlayerPacket) var4;
                 if (this.field23497 == -1) {
                     var5.field24883 = true;
                 }

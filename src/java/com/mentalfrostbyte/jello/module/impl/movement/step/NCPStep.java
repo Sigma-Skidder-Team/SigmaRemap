@@ -116,7 +116,7 @@ public class NCPStep extends Module {
 
     @EventTarget
     private void method16915(SendPacketEvent var1) {
-        if (var1.method13932() instanceof Class5603 && !this.field23993.isEmpty()) {
+        if (var1.method13932() instanceof CPlayerPacket && !this.field23993.isEmpty()) {
             this.field23993.add(var1.method13932());
             var1.method13900(true);
             if (this.field23994 == 0) {

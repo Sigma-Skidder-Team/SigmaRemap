@@ -27,14 +27,14 @@ public class FastEat extends Module {
                      int var7 = mc.player.method3159() + 2;
 
                      for (int var8 = 0; var8 < var7; var8++) {
-                        mc.getConnection().sendPacket(new Class5603(mc.player.onGround));
+                        mc.getConnection().sendPacket(new CPlayerPacket(mc.player.onGround));
                         mc.player.method3161();
                      }
                      break;
                   case "Hypixel":
                      mc.getConnection()
-                        .sendPacket(new Class5539(mc.player.inventory.currentItem + 1 >= 9 ? 0 : mc.player.inventory.currentItem + 1));
-                     mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
+                        .sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem + 1 >= 9 ? 0 : mc.player.inventory.currentItem + 1));
+                     mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
                }
             }
          }

@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.BooleanSetting;
-import mapped.Class5603;
+import mapped.CPlayerPacket;
 import mapped.NumberSetting;
 
 public class Regen extends Module {
@@ -24,7 +24,7 @@ public class Regen extends Module {
             && mc.player.getHealth() != 0.0F
             && (mc.player.onGround || !this.getBooleanValueFromSetttingName("Only OnGround"))) {
             for (int var4 = 0; (float)var4 < this.getNumberValueBySettingName("Packet amount"); var4++) {
-               mc.getConnection().sendPacket(new Class5603(mc.player.onGround));
+               mc.getConnection().sendPacket(new CPlayerPacket(mc.player.onGround));
             }
          }
       }

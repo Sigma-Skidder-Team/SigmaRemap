@@ -63,7 +63,7 @@ public class OptionsScreen extends Screen {
             new Button(
                this.width / 2 - 155 + var3 % 2 * 160, this.height / 6 - 12 + 24 * (var3 >> 1), 150, 20, this.method5431(this.worldDifficulty), var1 -> {
                   this.worldDifficulty = Difficulty.method8907(this.worldDifficulty.method8905() + 1);
-                  this.mc.getConnection().sendPacket(new Class5517(this.worldDifficulty));
+                  this.mc.getConnection().sendPacket(new CSetDifficultyPacket(this.worldDifficulty));
                   this.difficultyButton.setMessage(this.method5431(this.worldDifficulty));
                }
             )

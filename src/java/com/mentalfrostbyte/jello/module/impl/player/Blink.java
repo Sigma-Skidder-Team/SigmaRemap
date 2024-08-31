@@ -49,10 +49,10 @@ public class Blink extends Module {
     private void method16710(SendPacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null && var1.method13932() instanceof CEntityActionPacket
-                    || var1.method13932() instanceof Class5603
+                    || var1.method13932() instanceof CPlayerPacket
                     || var1.method13932() instanceof CUseEntityPacket
                     || var1.method13932() instanceof CAnimateHandPacket
-                    || var1.method13932() instanceof Class5555) {
+                    || var1.method13932() instanceof CPlayerTryUseItemPacket) {
                 this.field23864.add(var1.method13932());
                 var1.method13900(true);
             }

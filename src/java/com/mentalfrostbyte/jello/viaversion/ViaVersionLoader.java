@@ -165,8 +165,8 @@ public class ViaVersionLoader {
 
    @EventTarget
    public void method23348(SendPacketEvent var1) {
-      if (var1.method13932() instanceof Class5539) {
-         int var4 = ((Class5539)var1.method13932()).method17416();
+      if (var1.method13932() instanceof CHeldItemChangePacket) {
+         int var4 = ((CHeldItemChangePacket)var1.method13932()).method17416();
          if (PlayerInventory.isHotbar(var4)) {
             field31494 = var4;
          }

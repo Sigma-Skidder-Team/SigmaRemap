@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class5522;
+import mapped.CChatMessagePacket;
 
 public class ChatFilter extends Module {
     public ChatFilter() {
@@ -14,8 +14,8 @@ public class ChatFilter extends Module {
     @EventTarget
     private void method16679(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13932() instanceof Class5522) {
-                Class5522 var4 = (Class5522) var1.method13932();
+            if (var1.method13932() instanceof CChatMessagePacket) {
+                CChatMessagePacket var4 = (CChatMessagePacket) var1.method13932();
                 String[] var5 = var4.field24496.split(" ");
                 if (var4.field24496.length() + var5.length <= 100) {
                     StringBuilder var6 = new StringBuilder();

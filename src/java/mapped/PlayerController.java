@@ -213,7 +213,7 @@ public class PlayerController {
       int var3 = this.field31358.player.inventory.currentItem;
       if (var3 != this.field31369) {
          this.field31369 = var3;
-         this.field31359.sendPacket(new Class5539(this.field31369));
+         this.field31359.sendPacket(new CHeldItemChangePacket(this.field31369));
       }
    }
 
@@ -223,7 +223,7 @@ public class PlayerController {
       if (this.field31358.world.method6810().method24523(var7)) {
          ItemStack var8 = var1.getHeldItem(var3);
          if (this.field31366 == Class1894.field11105) {
-            this.field31359.sendPacket(new Class5570(var3, var4));
+            this.field31359.sendPacket(new CPlayerTryUseItemOnBlockPacket(var3, var4));
             return ActionResultType.field14818;
          } else {
             boolean var9 = !var1.method3090().isEmpty() || !var1.method3091().isEmpty();
@@ -231,12 +231,12 @@ public class PlayerController {
             if (!var10) {
                ActionResultType var11 = var2.getBlockState(var7).method23435(var2, var1, var3, var4);
                if (var11.isSuccessOrConsume()) {
-                  this.field31359.sendPacket(new Class5570(var3, var4));
+                  this.field31359.sendPacket(new CPlayerTryUseItemOnBlockPacket(var3, var4));
                   return var11;
                }
             }
 
-            this.field31359.sendPacket(new Class5570(var3, var4));
+            this.field31359.sendPacket(new CPlayerTryUseItemOnBlockPacket(var3, var4));
             if (!var8.isEmpty() && !var1.method2976().method19635(var8.getItem())) {
                Class5911 var14 = new Class5911(var1, var3, var4);
                ActionResultType var12;
@@ -261,7 +261,7 @@ public class PlayerController {
    public ActionResultType processRightClick(PlayerEntity var1, World var2, Hand var3) {
       if (this.field31366 != Class1894.field11105) {
          this.method23138();
-         this.field31359.sendPacket(new Class5555(var3));
+         this.field31359.sendPacket(new CPlayerTryUseItemPacket(var3));
          ItemStack var6 = var1.getHeldItem(var3);
          if (!var1.method2976().method19635(var6.getItem())) {
             int var7 = var6.getCount();
@@ -315,22 +315,22 @@ public class PlayerController {
    }
 
    public void method23145(int var1, Class4843<?> var2, boolean var3) {
-      this.field31359.sendPacket(new Class5613(var1, var2, var3));
+      this.field31359.sendPacket(new CPlaceRecipePacket(var1, var2, var3));
    }
 
    public void method23146(int var1, int var2) {
-      this.field31359.sendPacket(new Class5533(var1, var2));
+      this.field31359.sendPacket(new CEnchantItemPacket(var1, var2));
    }
 
    public void sendSlotPacket(ItemStack var1, int var2) {
       if (this.field31366.method8157()) {
-         this.field31359.sendPacket(new Class5514(var2, var1));
+         this.field31359.sendPacket(new CCreativeInventoryActionPacket(var2, var1));
       }
    }
 
    public void method23148(ItemStack var1) {
       if (this.field31366.method8157() && !var1.isEmpty()) {
-         this.field31359.sendPacket(new Class5514(-1, var1));
+         this.field31359.sendPacket(new CCreativeInventoryActionPacket(-1, var1));
       }
    }
 
@@ -377,7 +377,7 @@ public class PlayerController {
    }
 
    public void pickItem(int var1) {
-      this.field31359.sendPacket(new Class5568(var1));
+      this.field31359.sendPacket(new CPickItemPacket(var1));
    }
 
    private void method23160(CPlayerDiggingPacket.Action var1, BlockPos var2, Direction var3) {

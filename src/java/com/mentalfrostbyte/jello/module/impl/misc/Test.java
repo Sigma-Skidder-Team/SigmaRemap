@@ -197,24 +197,24 @@ public class Test extends Module {
         Packet var4 = var1.method13932();
         if (this.isEnabled() && mc.player != null) {
             if (!(var4 instanceof CUseEntityPacket)) {
-                if (!(var4 instanceof Class5603)) {
-                    if (!(var4 instanceof Class5539)) {
-                        if (!(var4 instanceof Class5555)) {
+                if (!(var4 instanceof CPlayerPacket)) {
+                    if (!(var4 instanceof CHeldItemChangePacket)) {
+                        if (!(var4 instanceof CPlayerTryUseItemPacket)) {
                             if (!(var4 instanceof CAnimateHandPacket)) {
-                                if (!(var4 instanceof Class5570)) {
+                                if (!(var4 instanceof CPlayerTryUseItemOnBlockPacket)) {
                                     if (!(var4 instanceof CPlayerDiggingPacket)) {
-                                        if (!(var4 instanceof Class5482)) {
+                                        if (!(var4 instanceof CCloseWindowPacket)) {
                                             if (!(var4 instanceof CClientStatusPacket)) {
-                                                if (!(var4 instanceof Class5522)) {
-                                                    if (!(var4 instanceof Class5561)) {
-                                                        if (!(var4 instanceof Class5600) && var4 instanceof Class5594) {
-                                                            Class5594 var5 = (Class5594) var4;
+                                                if (!(var4 instanceof CChatMessagePacket)) {
+                                                    if (!(var4 instanceof CClientSettingsPacket)) {
+                                                        if (!(var4 instanceof CKeepAlivePacket) && var4 instanceof CClickWindowPacket) {
+                                                            CClickWindowPacket var5 = (CClickWindowPacket) var4;
                                                         }
                                                     } else {
-                                                        Class5561 var11 = (Class5561) var4;
+                                                        CClientSettingsPacket var11 = (CClientSettingsPacket) var4;
                                                     }
                                                 } else {
-                                                    new Class5522();
+                                                    new CChatMessagePacket();
                                                 }
                                             } else {
                                                 CClientStatusPacket var12 = (CClientStatusPacket) var4;
@@ -228,19 +228,19 @@ public class Test extends Module {
                                         }
                                     }
                                 } else {
-                                    Class5570 var14 = (Class5570) var4;
+                                    CPlayerTryUseItemOnBlockPacket var14 = (CPlayerTryUseItemOnBlockPacket) var4;
                                 }
                             }
                         } else {
-                            Class5555 var15 = (Class5555) var4;
+                            CPlayerTryUseItemPacket var15 = (CPlayerTryUseItemPacket) var4;
                             if (var15.method17472() != Hand.field183) {
                             }
                         }
                     } else {
-                        Class5539 var16 = (Class5539) var4;
+                        CHeldItemChangePacket var16 = (CHeldItemChangePacket) var4;
                     }
                 } else {
-                    Class5603 var17 = (Class5603) var4;
+                    CPlayerPacket var17 = (CPlayerPacket) var4;
                     double var8 = var17.method17626(0.0);
                     String var10 = !var17.method17630() ? "§c" : "§a";
                     Class8906.method32487(var10 + var8);
@@ -258,7 +258,7 @@ public class Test extends Module {
                 }
             }
 
-            if (!(var4 instanceof Class5603) && !(var4 instanceof Class5600) && var4 instanceof Class5493) {
+            if (!(var4 instanceof CPlayerPacket) && !(var4 instanceof CKeepAlivePacket) && var4 instanceof CConfirmTransactionPacket) {
             }
         }
     }

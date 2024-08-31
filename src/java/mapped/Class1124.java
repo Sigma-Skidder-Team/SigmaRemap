@@ -70,7 +70,7 @@ public class Class1124 extends Class875<Class5824> {
          }
 
          this.field4727.method18197(var4);
-         this.mc.player.connection.sendPacket(new Class5558(var4));
+         this.mc.player.connection.sendPacket(new CRenameItemPacket(var4));
       }
    }
 

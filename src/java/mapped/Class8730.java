@@ -57,7 +57,7 @@ public class Class8730 {
    public void method31510(Class7952 var1, boolean var2) {
       ClientPlayNetHandler var5 = this.field39377.getConnection();
       if (var5 != null && var1 != null && var2) {
-         var5.sendPacket(Class5466.method17182(var1));
+         var5.sendPacket(CSeenAdvancementsPacket.method17182(var1));
       }
 
       if (this.field39381 != var1) {

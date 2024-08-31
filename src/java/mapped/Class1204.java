@@ -14,7 +14,7 @@ public class Class1204 extends Class1202 {
 
    @Override
    public void method5759() {
-      Class872.method2706(this.field6505).player.connection.sendPacket(new Class5482(Class872.method2705(this.field6505).player.field4905.field25471));
+      Class872.method2706(this.field6505).player.connection.sendPacket(new CCloseWindowPacket(Class872.method2705(this.field6505).player.field4905.field25471));
       Class872.method2707(this.field6505).displayGuiScreen((Screen)null);
    }
 

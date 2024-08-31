@@ -22,7 +22,7 @@ public class KillPotion extends Command {
             ListNBT var8 = new ListNBT();
             var8.add(var7);
             var6.setTagInfo("CustomPotionEffects", var8);
-            mc.getConnection().sendPacket(new Class5514(36 + Class7789.method25846(), var6));
+            mc.getConnection().sendPacket(new CCreativeInventoryActionPacket(36 + Class7789.method25846(), var6));
             var3.method20327("Requested server a killpotion!");
          } else {
             throw new CommandException("Creative mode only!");

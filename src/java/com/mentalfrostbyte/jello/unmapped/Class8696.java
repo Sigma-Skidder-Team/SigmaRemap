@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import net.minecraft.network.play.server.SKeepAlivePacket;
-import mapped.Class5594;
+import mapped.CClickWindowPacket;
 import mapped.Class9567;
 import net.minecraft.client.Minecraft;
 
@@ -51,7 +51,7 @@ public class Class8696 {
 
    @EventTarget
    private void method31325(SendPacketEvent var1) {
-      if (var1.method13932() instanceof Class5594) {
+      if (var1.method13932() instanceof CClickWindowPacket) {
          this.field39251 = 0;
       }
    }

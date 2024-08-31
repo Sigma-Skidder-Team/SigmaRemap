@@ -189,7 +189,7 @@ public class Class828 extends Screen {
          }
 
          int var5 = this.field4596 != Hand.MAIN_HAND ? 40 : this.field4578.inventory.currentItem;
-         this.mc.getConnection().sendPacket(new Class5551(this.field4579, var1, var5));
+         this.mc.getConnection().sendPacket(new CEditBookPacket(this.field4579, var1, var5));
       }
    }
 

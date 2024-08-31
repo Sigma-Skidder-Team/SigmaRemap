@@ -113,10 +113,10 @@ public class HypixelDisabler extends Module {
         if (mc.getConnection() != null) {
             if (this.field23984) {
                 if (var1.method13932() instanceof CEntityActionPacket
-                        || var1.method13932() instanceof Class5603
+                        || var1.method13932() instanceof CPlayerPacket
                         || var1.method13932() instanceof CUseEntityPacket
                         || var1.method13932() instanceof CAnimateHandPacket
-                        || var1.method13932() instanceof Class5555) {
+                        || var1.method13932() instanceof CPlayerTryUseItemPacket) {
                     if (this.getBooleanValueFromSetttingName("Instant")) {
                         this.field23983.add(var1.method13932());
                     }

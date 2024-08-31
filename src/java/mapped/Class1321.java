@@ -53,7 +53,7 @@ public class Class1321 extends Screen {
       this.mc
          .getConnection()
          .sendPacket(
-            new Class5544(
+            new CUpdateJigsawBlockPacket(
                this.field6983.getPos(),
                new ResourceLocation(this.field6984.getText()),
                new ResourceLocation(this.field6985.getText()),
@@ -65,7 +65,7 @@ public class Class1321 extends Screen {
    }
 
    private void method6271() {
-      this.mc.getConnection().sendPacket(new Class5468(this.field6983.getPos(), this.field6988, this.field6989));
+      this.mc.getConnection().sendPacket(new CJigsawBlockGeneratePacket(this.field6983.getPos(), this.field6988, this.field6989));
    }
 
    @Override

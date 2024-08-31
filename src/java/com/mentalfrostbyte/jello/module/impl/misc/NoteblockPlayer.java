@@ -164,7 +164,7 @@ public class NoteblockPlayer extends PremiumModule {
                     mc.player.swingArm(Hand.MAIN_HAND);
                     mc.getConnection().sendPacket(new Class5606(var6[0], var6[1], mc.player.onGround));
                     mc.getConnection()
-                            .sendPacket(new Class5570(Hand.MAIN_HAND, Class9217.method34567(var6[0], var6[1], mc.playerController.method23135() + 1.0F)));
+                            .sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, Class9217.method34567(var6[0], var6[1], mc.playerController.method23135() + 1.0F)));
                     this.field23642.clear();
                     this.field23642.add(var5.field28401);
                 }

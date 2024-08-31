@@ -17,7 +17,7 @@ public class CLockDifficultyPacket implements Packet<IServerPlayNetHandler> {
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
-      var1.method15654(this);
+      var1.func_217261_a(this);
    }
 
    @Override

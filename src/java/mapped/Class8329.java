@@ -45,9 +45,9 @@ public class Class8329 {
    public void method29202(SendPacketEvent var1) {
       if (!ColorUtils.method17720() && ColorUtils.method17718()) {
          Packet var4 = var1.method13932();
-         if (!(var4 instanceof Class5594)) {
-            if (var4 instanceof Class5493) {
-               Class5493 var5 = (Class5493)var4;
+         if (!(var4 instanceof CClickWindowPacket)) {
+            if (var4 instanceof CConfirmTransactionPacket) {
+               CConfirmTransactionPacket var5 = (CConfirmTransactionPacket)var4;
                if (var5.method17275() == 0) {
                   int var6 = var5.method17276() - this.field35792;
                   if (var6 <= 0 && var6 >= -20) {
@@ -55,7 +55,7 @@ public class Class8329 {
                }
             }
          } else {
-            Class5594 var7 = (Class5594)var4;
+            CClickWindowPacket var7 = (CClickWindowPacket)var4;
             this.field35792 = var7.method17582();
          }
       }

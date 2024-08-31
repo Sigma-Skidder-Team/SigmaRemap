@@ -42,7 +42,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
       this.field6184.method31511((Class1131)null);
       ClientPlayNetHandler var3 = this.mc.getConnection();
       if (var3 != null) {
-         var3.sendPacket(Class5466.method17183());
+         var3.sendPacket(CSeenAdvancementsPacket.method17183());
       }
    }
 

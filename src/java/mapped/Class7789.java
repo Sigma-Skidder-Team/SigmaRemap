@@ -684,7 +684,7 @@ public class Class7789 {
          var8 = var10;
       }
 
-      field33419.getConnection().sendPacket(new Class5594(var0, var1, var2, var3, var8, var9));
+      field33419.getConnection().sendPacket(new CClickWindowPacket(var0, var1, var2, var3, var8, var9));
       return var10;
    }
 

@@ -81,7 +81,7 @@ public class AutoPotion extends Module {
                     }
                 } else {
                     this.field23811++;
-                    mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
+                    mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                 }
             }
         }
@@ -184,8 +184,8 @@ public class AutoPotion extends Module {
                     var1.method13916(var9[1]);
                 } else {
                     mc.getConnection().sendPacket(new Class5606(var9[0], var9[1], !var8 && mc.player.onGround));
-                    mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
-                    mc.getConnection().sendPacket(new Class5555(Hand.field183));
+                    mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
+                    mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.field183));
                     mc.player.inventory.currentItem = var7;
                     mc.playerController.method23138();
                     KillAura.field23954 = 1;

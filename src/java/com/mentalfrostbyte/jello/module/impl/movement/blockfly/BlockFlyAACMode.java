@@ -50,7 +50,7 @@ public class BlockFlyAACMode extends Module {
 
         this.field23523 = -1;
         if (((BlockFly) this.method16004()).field23884 >= 0) {
-            mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
+            mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
             ((BlockFly) this.method16004()).field23884 = -1;
         }
 
@@ -61,7 +61,7 @@ public class BlockFlyAACMode extends Module {
     @LowerPriority
     public void method16202(SendPacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (var1.method13932() instanceof Class5539 && ((BlockFly) this.method16004()).field23884 >= 0) {
+            if (var1.method13932() instanceof CHeldItemChangePacket && ((BlockFly) this.method16004()).field23884 >= 0) {
                 var1.method13900(true);
             }
         }

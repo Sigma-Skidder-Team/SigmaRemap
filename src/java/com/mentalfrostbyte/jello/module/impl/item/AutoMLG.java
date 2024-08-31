@@ -72,7 +72,7 @@ public class AutoMLG extends PremiumModule {
                 }
 
                 mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
-                mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
+                mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                 field23649 = -1;
                 this.field23650 = null;
                 mc.player.inventory.currentItem = this.field23648;
@@ -103,7 +103,7 @@ public class AutoMLG extends PremiumModule {
 
                     if (this.field23650 != null) {
                         mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
-                        mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
+                        mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                     }
                 }
             }
@@ -130,7 +130,7 @@ public class AutoMLG extends PremiumModule {
                         }
 
                         Class7789.method25873(var5, 6);
-                        mc.getConnection().sendPacket(new Class5482(-1));
+                        mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                         return 6;
                     }
                 }
