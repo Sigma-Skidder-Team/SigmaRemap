@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -24,7 +26,7 @@ public class Class1305 extends Screen implements Class1306 {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       this.field6906 = true;
       this.mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14278));
    }
@@ -36,48 +38,48 @@ public class Class1305 extends Screen implements Class1306 {
    }
 
    public void method6180() {
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 120, this.field4565 - 52, 80, 20, new TranslationTextComponent("stat.generalButton"), var1 -> this.method6183(this.field6901)
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 120, this.height - 52, 80, 20, new TranslationTextComponent("stat.generalButton"), var1 -> this.method6183(this.field6901)
          )
       );
-      Class1206 var3 = this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 40, this.field4565 - 52, 80, 20, new TranslationTextComponent("stat.itemsButton"), var1 -> this.method6183(this.field6902)
+      Button var3 = this.<Button>addButton(
+         new Button(
+            this.width / 2 - 40, this.height - 52, 80, 20, new TranslationTextComponent("stat.itemsButton"), var1 -> this.method6183(this.field6902)
          )
       );
-      Class1206 var4 = this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 + 40, this.field4565 - 52, 80, 20, new TranslationTextComponent("stat.mobsButton"), var1 -> this.method6183(this.field6903)
+      Button var4 = this.<Button>addButton(
+         new Button(
+            this.width / 2 + 40, this.height - 52, 80, 20, new TranslationTextComponent("stat.mobsButton"), var1 -> this.method6183(this.field6903)
          )
       );
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 - 28, 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.field6900))
+      this.<Button>addButton(
+         new Button(this.width / 2 - 100, this.height - 28, 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.field6900))
       );
       if (this.field6902.method2468().isEmpty()) {
-         var3.field6482 = false;
+         var3.active = false;
       }
 
       if (this.field6903.method2468().isEmpty()) {
-         var4.field6482 = false;
+         var4.active = false;
       }
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       if (!this.field6906) {
-         this.method6182().method1923(var1, var2, var3, var4);
-         method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 20, 16777215);
-         super.method1923(var1, var2, var3, var4);
+         this.method6182().render(var1, var2, var3, var4);
+         drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 20, 16777215);
+         super.render(var1, var2, var3, var4);
       } else {
-         this.method2469(var1);
-         method5691(var1, this.fontRenderer, field6899, this.field4564 / 2, this.field4565 / 2, 16777215);
+         this.renderBackground(var1);
+         drawCenteredString(var1, this.fontRenderer, field6899, this.width / 2, this.height / 2, 16777215);
          method5690(
             var1,
             this.fontRenderer,
             field6907[(int)(Util.milliTime() / 150L % (long)field6907.length)],
-            this.field4564 / 2,
-            this.field4565 / 2 + 18,
+            this.width / 2,
+            this.height / 2 + 18,
             16777215
          );
       }

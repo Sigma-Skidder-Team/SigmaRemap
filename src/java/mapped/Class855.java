@@ -15,18 +15,18 @@ public abstract class Class855<T extends Class5831> extends Class851<T> implemen
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
-      this.field4760 = this.field4564 < 379;
-      this.field4759.method5833(this.field4564, this.field4565, this.mc, this.field4760, this.field4727);
-      this.field4734 = this.field4759.method5837(this.field4760, this.field4564, this.field4721);
-      this.<Class1243>method2455(new Class1243(this.field4734 + 20, this.field4565 / 2 - 49, 20, 18, 0, 0, 19, field4758, var1 -> {
+   public void init() {
+      super.init();
+      this.field4760 = this.width < 379;
+      this.field4759.method5833(this.width, this.height, this.mc, this.field4760, this.field4727);
+      this.field4734 = this.field4759.method5837(this.field4760, this.width, this.field4721);
+      this.<Class1243>addButton(new Class1243(this.field4734 + 20, this.height / 2 - 49, 20, 18, 0, 0, 19, field4758, var1 -> {
          this.field4759.method5834(this.field4760);
          this.field4759.method5838();
-         this.field4734 = this.field4759.method5837(this.field4760, this.field4564, this.field4721);
-         ((Class1243)var1).method5819(this.field4734 + 20, this.field4565 / 2 - 49);
+         this.field4734 = this.field4759.method5837(this.field4760, this.width, this.field4721);
+         ((Class1243)var1).method5819(this.field4734 + 20, this.height / 2 - 49);
       }));
-      this.field4723 = (this.field4721 - this.fontRenderer.method38821(this.field4560)) / 2;
+      this.field4723 = (this.field4721 - this.fontRenderer.method38821(this.title)) / 2;
    }
 
    @Override
@@ -36,14 +36,14 @@ public abstract class Class855<T extends Class5831> extends Class851<T> implemen
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
       if (this.field4759.method5839() && this.field4760) {
          this.method2618(var1, var4, var2, var3);
-         this.field4759.method1923(var1, var2, var3, var4);
+         this.field4759.render(var1, var2, var3, var4);
       } else {
-         this.field4759.method1923(var1, var2, var3, var4);
-         super.method1923(var1, var2, var3, var4);
+         this.field4759.render(var1, var2, var3, var4);
+         super.render(var1, var2, var3, var4);
          this.field4759.method5850(var1, this.field4734, this.field4735, true, var4);
       }
 
@@ -83,8 +83,8 @@ public abstract class Class855<T extends Class5831> extends Class851<T> implemen
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
-      return !this.field4759.method1920(var1, var2, var3) ? super.method1920(var1, var2, var3) : false;
+   public boolean keyPressed(int var1, int var2, int var3) {
+      return !this.field4759.keyPressed(var1, var2, var3) ? super.keyPressed(var1, var2, var3) : false;
    }
 
    @Override
@@ -94,8 +94,8 @@ public abstract class Class855<T extends Class5831> extends Class851<T> implemen
    }
 
    @Override
-   public boolean method1932(char var1, int var2) {
-      return !this.field4759.method1932(var1, var2) ? super.method1932(var1, var2) : true;
+   public boolean charTyped(char var1, int var2) {
+      return !this.field4759.charTyped(var1, var2) ? super.charTyped(var1, var2) : true;
    }
 
    @Override

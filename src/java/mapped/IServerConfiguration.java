@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.serialization.Lifecycle;
+import net.minecraft.world.Difficulty;
+
 import java.util.Set;
 import javax.annotation.Nullable;
 
@@ -58,9 +60,9 @@ public interface IServerConfiguration {
 
    boolean method20072();
 
-   Class2197 method20047();
+   Difficulty method20047();
 
-   void method20085(Class2197 var1);
+   void method20085(Difficulty var1);
 
    boolean method20048();
 

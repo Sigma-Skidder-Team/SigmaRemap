@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 import java.time.LocalDate;
@@ -19,7 +20,7 @@ public class Class1038 extends Class1009 {
    private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>method35441(Class1038.class, Class7784.field33398);
    private static final DataParameter<Integer> field5761 = EntityDataManager.<Integer>method35441(Class1038.class, Class7784.field33391);
    private static final DataParameter<Boolean> field5762 = EntityDataManager.<Boolean>method35441(Class1038.class, Class7784.field33398);
-   private static final Predicate<Class2197> field5763 = var0 -> var0 == Class2197.field14354;
+   private static final Predicate<Difficulty> field5763 = var0 -> var0 == Difficulty.field14354;
    private final Class2643 field5764 = new Class2643(this, field5763);
    private boolean field5765;
    private int field5766;
@@ -225,7 +226,7 @@ public class Class1038 extends Class1009 {
          }
 
          if (var6 != null
-            && this.world.method6997() == Class2197.field14354
+            && this.world.method6997() == Difficulty.field14354
             && (double)this.rand.nextFloat() < this.method3086(Attributes.field42116)
             && this.world.method6789().method17135(Class5462.field24226)) {
             int var7 = MathHelper.floor(this.getPosX());
@@ -309,7 +310,7 @@ public class Class1038 extends Class1009 {
    @Override
    public void method4270(Class9755 var1) {
       super.method4270(var1);
-      if (this.rand.nextFloat() < (this.world.method6997() != Class2197.field14354 ? 0.01F : 0.05F)) {
+      if (this.rand.nextFloat() < (this.world.method6997() != Difficulty.field14354 ? 0.01F : 0.05F)) {
          int var4 = this.rand.nextInt(3);
          if (var4 != 0) {
             this.method2944(Class2106.field13731, new ItemStack(Items.field37821));
@@ -342,8 +343,8 @@ public class Class1038 extends Class1009 {
    @Override
    public void method2927(ServerWorld var1, Class880 var2) {
       super.method2927(var1, var2);
-      if ((var1.method6997() == Class2197.field14353 || var1.method6997() == Class2197.field14354) && var2 instanceof Class1042) {
-         if (var1.method6997() != Class2197.field14354 && this.rand.nextBoolean()) {
+      if ((var1.method6997() == Difficulty.field14353 || var1.method6997() == Difficulty.field14354) && var2 instanceof Class1042) {
+         if (var1.method6997() != Difficulty.field14354 && this.rand.nextBoolean()) {
             return;
          }
 

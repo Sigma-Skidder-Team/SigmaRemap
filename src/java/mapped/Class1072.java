@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 
@@ -182,7 +183,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
 
    @Override
    public void method3353(ServerWorld var1, Class906 var2) {
-      if (var1.method6997() == Class2197.field14351) {
+      if (var1.method6997() == Difficulty.field14351) {
          super.method3353(var1, var2);
       } else {
          Class1063 var5 = EntityType.field41110.method33215(var1);

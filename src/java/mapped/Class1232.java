@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.client.AbstractOption;
+import net.minecraft.client.GameSettings;
+import net.minecraft.client.gui.widget.Widget;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +25,7 @@ public class Class1232 extends Class1234 implements Class1233 {
 
    @Override
    public void method5813() {
-      this.method5743(this.field6581.method18091(this.field6582));
+      this.setMessage(this.field6581.method18091(this.field6582));
    }
 
    @Override
@@ -29,11 +33,11 @@ public class Class1232 extends Class1234 implements Class1233 {
       return this.field6581.method17951();
    }
 
-   public static int method5814(Class1197 var0) {
+   public static int method5814(Widget var0) {
       return var0.field6475;
    }
 
-   public static int method5815(Class1197 var0) {
+   public static int method5815(Widget var0) {
       return var0.field6476;
    }
 

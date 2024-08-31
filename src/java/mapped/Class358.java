@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.realmsclient.dto.RealmsServer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -11,10 +12,10 @@ public class Class358 extends Thread {
    public final String field1586;
    public final int field1587;
    public final Minecraft field1588;
-   public final Class6128 field1589;
+   public final RealmsServer field1589;
    public final Class9267 field1590;
 
-   public Class358(Class9267 var1, String var2, String var3, int var4, Minecraft var5, Class6128 var6) {
+   public Class358(Class9267 var1, String var2, String var3, int var4, Minecraft var5, RealmsServer var6) {
       super(var2);
       this.field1590 = var1;
       this.field1586 = var3;

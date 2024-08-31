@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -122,8 +123,8 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
          if (var1 instanceof Class880) {
             ((Class880)var1).method3079(((Class880)var1).method3078() + 1);
             byte var5 = 0;
-            if (this.world.method6997() != Class2197.field14353) {
-               if (this.world.method6997() == Class2197.field14354) {
+            if (this.world.method6997() != Difficulty.field14353) {
+               if (this.world.method6997() == Difficulty.field14354) {
                   var5 = 18;
                }
             } else {

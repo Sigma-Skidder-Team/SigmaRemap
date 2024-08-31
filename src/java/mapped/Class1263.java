@@ -107,7 +107,7 @@ public class Class1263 extends AbstractGui implements Class1190, Class1152 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6679) {
          this.field6685 += var4;
          RenderSystem.enableBlend();
@@ -126,7 +126,7 @@ public class Class1263 extends AbstractGui implements Class1190, Class1152 {
          RenderSystem.disableBlend();
 
          for (Class1251 var15 : this.field6678) {
-            var15.method1923(var1, var2, var3, var4);
+            var15.render(var1, var2, var3, var4);
          }
 
          RenderSystem.popMatrix();

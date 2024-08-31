@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -163,7 +164,7 @@ public class Class905 extends Class882 {
 
    @Override
    public void method3447() {
-      if (this.world.method6997() == Class2197.field14351) {
+      if (this.world.method6997() == Difficulty.field14351) {
          this.method2904();
       }
    }

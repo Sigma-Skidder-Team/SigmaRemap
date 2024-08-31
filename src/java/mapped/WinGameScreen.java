@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import org.apache.commons.io.IOUtils;
@@ -44,7 +45,7 @@ public class WinGameScreen extends Screen {
    public void tick() {
       this.mc.getMusicTicker().tick();
       this.mc.getSoundHandler().tick(false);
-      float var3 = (float)(this.field7130 + this.field4565 + this.field4565 + 24) / this.field7131;
+      float var3 = (float)(this.field7130 + this.height + this.height + 24) / this.field7131;
       if (this.field7127 > var3) {
          this.method6432();
       }
@@ -61,7 +62,7 @@ public class WinGameScreen extends Screen {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       if (this.field7128 == null) {
          this.field7128 = Lists.newArrayList();
          this.field7129 = new IntOpenHashSet();
@@ -135,12 +136,12 @@ public class WinGameScreen extends Screen {
 
    private void method6433(int var1, int var2, float var3) {
       this.mc.getTextureManager().bindTexture(AbstractGui.field6451);
-      int var6 = this.field4564;
+      int var6 = this.width;
       float var7 = -this.field7127 * 0.5F * this.field7131;
-      float var8 = (float)this.field4565 - this.field7127 * 0.5F * this.field7131;
+      float var8 = (float)this.height - this.field7127 * 0.5F * this.field7131;
       float var9 = 0.015625F;
       float var10 = this.field7127 * 0.02F;
-      float var11 = (float)(this.field7130 + this.field4565 + this.field4565 + 24) / this.field7131;
+      float var11 = (float)(this.field7130 + this.height + this.height + 24) / this.field7131;
       float var12 = (var11 - 20.0F - this.field7127) * 0.005F;
       if (var12 < var10) {
          var10 = var12;
@@ -155,11 +156,11 @@ public class WinGameScreen extends Screen {
       Tessellator var13 = Tessellator.getInstance();
       BufferBuilder var14 = var13.getBuffer();
       var14.begin(7, DefaultVertexFormats.field43346);
-      var14.pos(0.0, (double)this.field4565, (double)this.method5702())
+      var14.pos(0.0, (double)this.height, (double)this.method5702())
          .tex(0.0F, var7 * 0.015625F)
          .color(var10, var10, var10, 1.0F)
          .endVertex();
-      var14.pos((double)var6, (double)this.field4565, (double)this.method5702())
+      var14.pos((double)var6, (double)this.height, (double)this.method5702())
          .tex((float)var6 * 0.015625F, var7 * 0.015625F)
          .color(var10, var10, var10, 1.0F)
          .endVertex();
@@ -172,11 +173,11 @@ public class WinGameScreen extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.method6433(var2, var3, var4);
       short var7 = 274;
-      int var8 = this.field4564 / 2 - 137;
-      int var9 = this.field4565 + 50;
+      int var8 = this.width / 2 - 137;
+      int var9 = this.height + 50;
       this.field7127 += var4;
       float var10 = -this.field7127 * this.field7131;
       RenderSystem.pushMatrix();
@@ -197,13 +198,13 @@ public class WinGameScreen extends Screen {
 
       for (int var12 = 0; var12 < this.field7128.size(); var12++) {
          if (var12 == this.field7128.size() - 1) {
-            float var13 = (float)var11 + var10 - (float)(this.field4565 / 2 - 6);
+            float var13 = (float)var11 + var10 - (float)(this.height / 2 - 6);
             if (var13 < 0.0F) {
                RenderSystem.translatef(0.0F, -var13, 0.0F);
             }
          }
 
-         if ((float)var11 + var10 + 12.0F + 8.0F > 0.0F && (float)var11 + var10 < (float)this.field4565) {
+         if ((float)var11 + var10 + 12.0F + 8.0F > 0.0F && (float)var11 + var10 < (float)this.height) {
             Class9125 var17 = this.field7128.get(var12);
             if (!this.field7129.contains(var12)) {
                this.fontRenderer.field45929.setSeed((long)((float)((long)var12 * 4238972211L) + this.field7127 / 4.0F));
@@ -220,8 +221,8 @@ public class WinGameScreen extends Screen {
       this.mc.getTextureManager().bindTexture(field7123);
       RenderSystem.enableBlend();
       RenderSystem.method27834(Class2339.field16000, Class1981.field12933);
-      int var16 = this.field4564;
-      int var18 = this.field4565;
+      int var16 = this.width;
+      int var18 = this.height;
       Tessellator var14 = Tessellator.getInstance();
       BufferBuilder var15 = var14.getBuffer();
       var15.begin(7, DefaultVertexFormats.field43346);
@@ -231,6 +232,6 @@ public class WinGameScreen extends Screen {
       var15.pos(0.0, 0.0, (double)this.method5702()).tex(0.0F, 0.0F).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
       var14.draw();
       RenderSystem.disableBlend();
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 }

@@ -64,7 +64,7 @@ public class FontRenderer {
       return this.method38809(var2, var3, var4, var5, var1.getLast().getMatrix(), false);
    }
 
-   public int method38805(MatrixStack var1, ITextComponent var2, float var3, float var4, int var5) {
+   public int func_243248_b(MatrixStack var1, ITextComponent var2, float var3, float var4, int var5) {
       RenderSystem.disableAlphaTest();
       return this.method38809(var2.func_241878_f(), var3, var4, var5, var1.getLast().getMatrix(), false);
    }

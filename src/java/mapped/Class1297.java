@@ -25,7 +25,7 @@ public class Class1297 extends Class1293<Class1185> {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       double var7 = this.field6865.getMainWindow().getGuiScaleFactor();
       RenderSystem.enableScissor(
          (int)((double)this.method6053() * var7),
@@ -33,7 +33,7 @@ public class Class1297 extends Class1293<Class1185> {
          (int)((double)(this.method6048() + 6) * var7),
          (int)((double)(this.field6786 - (this.field6786 - this.field6788) - this.field6787 - 4) * var7)
       );
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
       RenderSystem.disableScissor();
    }
 

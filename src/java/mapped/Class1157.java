@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.hash.Hashing;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.*;
 import org.apache.commons.lang3.Validate;
@@ -61,7 +62,7 @@ public class Class1157 extends Class1156 {
 
       Object var26 = !var13 ? this.field6298.field33190 : this.field6298.field33194.deepCopy().mergeStyle(TextFormatting.RED);
       int var16 = this.field6297.fontRenderer.method38821((ITextProperties)var26);
-      this.field6297.fontRenderer.method38805(var1, (ITextComponent)var26, (float)(var4 + var5 - var16 - 15 - 2), (float)(var3 + 1), 8421504);
+      this.field6297.fontRenderer.func_243248_b(var1, (ITextComponent)var26, (float)(var4 + var5 - var16 - 15 - 2), (float)(var3 + 1), 8421504);
       int var17 = 0;
       int var18;
       Object var19;
@@ -218,7 +219,7 @@ public class Class1157 extends Class1156 {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (Screen.method2476()) {
          Class1279 var6 = this.field6296.field6949;
          int var7 = var6.method2468().indexOf(this);
@@ -228,7 +229,7 @@ public class Class1157 extends Class1156 {
          }
       }
 
-      return super.method1920(var1, var2, var3);
+      return super.keyPressed(var1, var2, var3);
    }
 
    private void method5550(int var1, int var2) {

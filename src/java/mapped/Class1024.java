@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
@@ -227,8 +228,8 @@ public class Class1024 extends Class1025 implements Class1023 {
       if (var6) {
          ItemStack var7 = new ItemStack(Items.field38148);
          HashMap var8 = Maps.newHashMap();
-         if (var1 <= var5.method25435(Class2197.field14353)) {
-            if (var1 > var5.method25435(Class2197.field14352)) {
+         if (var1 <= var5.method25435(Difficulty.field14353)) {
+            if (var1 > var5.method25435(Difficulty.field14352)) {
                var8.put(Class8122.field34930, 1);
             }
          } else {

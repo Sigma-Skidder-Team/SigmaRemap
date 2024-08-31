@@ -2,6 +2,9 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import net.minecraft.resources.ResourcePackInfo;
+import net.minecraft.resources.ResourcePackList;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;

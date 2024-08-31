@@ -153,7 +153,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.method6039(var1);
       int var7 = this.method6048();
       int var8 = var7 + 6;
@@ -389,8 +389,8 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
-      if (!super.method1920(var1, var2, var3)) {
+   public boolean keyPressed(int var1, int var2, int var3) {
+      if (!super.keyPressed(var1, var2, var3)) {
          if (var1 != 264) {
             if (var1 != 265) {
                return false;

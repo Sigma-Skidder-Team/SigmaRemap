@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -14,9 +16,9 @@ public class MultiplayerScreen extends Screen {
    public final Screen field6948;
    public Class1279 field6949;
    private Class7970 field6950;
-   private Class1206 field6951;
-   private Class1206 field6952;
-   private Class1206 field6953;
+   private Button field6951;
+   private Button field6952;
+   private Button field6953;
    private List<ITextComponent> field6954;
    private ServerData field6955;
    private Class9635 field6956;
@@ -29,11 +31,11 @@ public class MultiplayerScreen extends Screen {
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
-      this.mc.keyboardListener.method36347(true);
+   public void init() {
+      super.init();
+      this.mc.keyboardListener.enableRepeatEvents(true);
       if (this.field6958) {
-         this.field6949.method6034(this.field4564, this.field4565, 32, this.field4565 - 64);
+         this.field6949.method6034(this.width, this.height, 32, this.height - 64);
       } else {
          this.field6958 = true;
          this.field6950 = new Class7970(this.mc);
@@ -47,28 +49,28 @@ public class MultiplayerScreen extends Screen {
             field4558.warn("Unable to start LAN server detection: {}", var4.getMessage());
          }
 
-         this.field6949 = new Class1279(this, this.mc, this.field4564, this.field4565, 32, this.field4565 - 64, 36);
+         this.field6949 = new Class1279(this, this.mc, this.width, this.height, 32, this.height - 64, 36);
          this.field6949.method6081(this.field6950);
       }
 
       this.field4561.add(this.field6949);
-      this.field6952 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 154, this.field4565 - 52, 100, 20, new TranslationTextComponent("selectServer.select"), var1 -> this.method6236())
+      this.field6952 = this.<Button>addButton(
+         new Button(this.width / 2 - 154, this.height - 52, 100, 20, new TranslationTextComponent("selectServer.select"), var1 -> this.method6236())
       );
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 50, this.field4565 - 52, 100, 20, new TranslationTextComponent("selectServer.direct"), var1 -> {
+      this.<Button>addButton(
+         new Button(this.width / 2 - 50, this.height - 52, 100, 20, new TranslationTextComponent("selectServer.direct"), var1 -> {
             this.field6955 = new ServerData(I18n.format("selectServer.defaultName"), "", false);
             this.mc.displayGuiScreen(new Class1320(this, this::method6235, this.field6955));
          })
       );
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 4 + 50, this.field4565 - 52, 100, 20, new TranslationTextComponent("selectServer.add"), var1 -> {
+      this.<Button>addButton(
+         new Button(this.width / 2 + 4 + 50, this.height - 52, 100, 20, new TranslationTextComponent("selectServer.add"), var1 -> {
             this.field6955 = new ServerData(I18n.format("selectServer.defaultName"), "", false);
             this.mc.displayGuiScreen(new Class1330(this, this::method6234, this.field6955));
          })
       );
-      this.field6951 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 154, this.field4565 - 28, 70, 20, new TranslationTextComponent("selectServer.edit"), var1 -> {
+      this.field6951 = this.<Button>addButton(
+         new Button(this.width / 2 - 154, this.height - 28, 70, 20, new TranslationTextComponent("selectServer.edit"), var1 -> {
             Class1156 var4x = this.field6949.method6023();
             if (var4x instanceof Class1157) {
                ServerData var5 = ((Class1157)var4x).method5551();
@@ -78,8 +80,8 @@ public class MultiplayerScreen extends Screen {
             }
          })
       );
-      this.field6953 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 74, this.field4565 - 28, 70, 20, new TranslationTextComponent("selectServer.delete"), var1 -> {
+      this.field6953 = this.<Button>addButton(
+         new Button(this.width / 2 - 74, this.height - 28, 70, 20, new TranslationTextComponent("selectServer.delete"), var1 -> {
             Class1156 var4x = this.field6949.method6023();
             if (var4x instanceof Class1157) {
                String var5 = ((Class1157)var4x).method5551().field33188;
@@ -93,11 +95,11 @@ public class MultiplayerScreen extends Screen {
             }
          })
       );
-      this.method2455(
-         new Class1206(this.field4564 / 2 + 4, this.field4565 - 28, 70, 20, new TranslationTextComponent("selectServer.refresh"), var1 -> this.method6231())
+      this.addButton(
+         new Button(this.width / 2 + 4, this.height - 28, 70, 20, new TranslationTextComponent("selectServer.refresh"), var1 -> this.method6231())
       );
-      this.method2455(
-         new Class1206(this.field4564 / 2 + 4 + 76, this.field4565 - 28, 75, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6948))
+      this.addButton(
+         new Button(this.width / 2 + 4 + 76, this.height - 28, 75, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6948))
       );
       this.method6239();
    }
@@ -116,7 +118,7 @@ public class MultiplayerScreen extends Screen {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
       if (this.field6957 != null) {
          this.field6957.interrupt();
          this.field6957 = null;
@@ -175,13 +177,13 @@ public class MultiplayerScreen extends Screen {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
-      if (!super.method1920(var1, var2, var3)) {
+   public boolean keyPressed(int var1, int var2, int var3) {
+      if (!super.keyPressed(var1, var2, var3)) {
          if (var1 != 294) {
             if (this.field6949.method6023() == null) {
                return false;
             } else if (var1 != 257 && var1 != 335) {
-               return this.field6949.method1920(var1, var2, var3);
+               return this.field6949.keyPressed(var1, var2, var3);
             } else {
                this.method6236();
                return true;
@@ -196,12 +198,12 @@ public class MultiplayerScreen extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.field6954 = null;
-      this.method2469(var1);
-      this.field6949.method1923(var1, var2, var3, var4);
-      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 20, 16777215);
-      super.method1923(var1, var2, var3, var4);
+      this.renderBackground(var1);
+      this.field6949.render(var1, var2, var3, var4);
+      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 20, 16777215);
+      super.render(var1, var2, var3, var4);
       if (this.field6954 != null) {
          this.method2460(var1, this.field6954, var2, var3);
       }
@@ -234,15 +236,15 @@ public class MultiplayerScreen extends Screen {
    }
 
    public void method6239() {
-      this.field6952.field6482 = false;
-      this.field6951.field6482 = false;
-      this.field6953.field6482 = false;
+      this.field6952.active = false;
+      this.field6951.active = false;
+      this.field6953.active = false;
       Class1156 var3 = this.field6949.method6023();
       if (var3 != null && !(var3 instanceof Class1159)) {
-         this.field6952.field6482 = true;
+         this.field6952.active = true;
          if (var3 instanceof Class1157) {
-            this.field6951.field6482 = true;
-            this.field6953.field6482 = true;
+            this.field6951.active = true;
+            this.field6953.active = true;
          }
       }
    }

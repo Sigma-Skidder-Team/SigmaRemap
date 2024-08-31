@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -104,9 +106,9 @@ public class Class9561 {
       return !Class9299.field42925.method20214() ? var0.getItem() == Items.field38119 : Class9299.method35064(var0, Class9299.field42925, var1);
    }
 
-   public static Class1206 method37053(MainMenuScreen var0, int var1, int var2) {
+   public static Button method37053(MainMenuScreen var0, int var1, int var2) {
       return Class9299.field42976.method20241()
-         ? new Class1206(var0.field4564 / 2 - 100, var1 + var2 * 2, 98, 20, new TranslationTextComponent("fml.menu.mods"), var1x -> {
+         ? new Button(var0.width / 2 - 100, var1 + var2 * 2, 98, 20, new TranslationTextComponent("fml.menu.mods"), var1x -> {
             Screen var4 = (Screen)Class9299.field42976.method20243(var0);
             Minecraft.getInstance().displayGuiScreen(var4);
          })

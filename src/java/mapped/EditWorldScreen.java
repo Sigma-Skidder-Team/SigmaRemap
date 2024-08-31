@@ -11,6 +11,9 @@ import com.mojang.serialization.JsonOps;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -30,9 +33,9 @@ public class EditWorldScreen extends Screen {
    private static final Logger field7029 = LogManager.getLogger();
    private static final Gson field7030 = new GsonBuilder().setPrettyPrinting().serializeNulls().disableHtmlEscaping().create();
    private static final ITextComponent field7031 = new TranslationTextComponent("selectWorld.enterName");
-   private Class1206 field7032;
+   private Button field7032;
    private final BooleanConsumer field7033;
-   private Class1189 field7034;
+   private TextFieldWidget field7034;
    private final SaveFormat.LevelSave field7035;
 
    public EditWorldScreen(BooleanConsumer var1, SaveFormat.LevelSave var2) {
@@ -47,32 +50,32 @@ public class EditWorldScreen extends Screen {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
-      Class1206 var3 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 0 + 5, 200, 20, new TranslationTextComponent("selectWorld.edit.resetIcon"), var1 -> {
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
+      Button var3 = this.<Button>addButton(
+         new Button(this.width / 2 - 100, this.height / 4 + 0 + 5, 200, 20, new TranslationTextComponent("selectWorld.edit.resetIcon"), var1 -> {
             FileUtils.deleteQuietly(this.field7035.method8002());
-            var1.field6482 = false;
+            var1.active = false;
          })
       );
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 100,
-            this.field4565 / 4 + 24 + 5,
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 100,
+            this.height / 4 + 24 + 5,
             200,
             20,
             new TranslationTextComponent("selectWorld.edit.openFolder"),
             var1 -> Util.getOSType().openFile(this.field7035.resolveFilePath(FolderName.field23354).toFile())
          )
       );
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 48 + 5, 200, 20, new TranslationTextComponent("selectWorld.edit.backup"), var1 -> {
+      this.<Button>addButton(
+         new Button(this.width / 2 - 100, this.height / 4 + 48 + 5, 200, 20, new TranslationTextComponent("selectWorld.edit.backup"), var1 -> {
             boolean var4x = method6323(this.field7035);
             this.field7033.accept(!var4x);
          })
       );
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 72 + 5, 200, 20, new TranslationTextComponent("selectWorld.edit.backupFolder"), var1 -> {
+      this.<Button>addButton(
+         new Button(this.width / 2 - 100, this.height / 4 + 72 + 5, 200, 20, new TranslationTextComponent("selectWorld.edit.backupFolder"), var1 -> {
             SaveFormat var4x = this.mc.getSaveLoader();
             Path var5x = var4x.method38467();
 
@@ -85,10 +88,10 @@ public class EditWorldScreen extends Screen {
             Util.getOSType().openFile(var5x.toFile());
          })
       );
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 100,
-            this.field4565 / 4 + 96 + 5,
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 100,
+            this.height / 4 + 96 + 5,
             200,
             20,
             new TranslationTextComponent("selectWorld.edit.optimize"),
@@ -101,10 +104,10 @@ public class EditWorldScreen extends Screen {
                }, new TranslationTextComponent("optimizeWorld.confirm.title"), new TranslationTextComponent("optimizeWorld.confirm.description"), true))
          )
       );
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 100,
-            this.field4565 / 4 + 120 + 5,
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 100,
+            this.height / 4 + 120 + 5,
             200,
             20,
             new TranslationTextComponent("selectWorld.edit.export_worldgen_settings"),
@@ -159,27 +162,27 @@ public class EditWorldScreen extends Screen {
             }
          )
       );
-      this.field7032 = this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 100, this.field4565 / 4 + 144 + 5, 98, 20, new TranslationTextComponent("selectWorld.edit.save"), var1 -> this.method6321()
+      this.field7032 = this.<Button>addButton(
+         new Button(
+            this.width / 2 - 100, this.height / 4 + 144 + 5, 98, 20, new TranslationTextComponent("selectWorld.edit.save"), var1 -> this.method6321()
          )
       );
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 2, this.field4565 / 4 + 144 + 5, 98, 20, DialogTexts.GUI_CANCEL, var1 -> this.field7033.accept(false))
+      this.<Button>addButton(
+         new Button(this.width / 2 + 2, this.height / 4 + 144 + 5, 98, 20, DialogTexts.GUI_CANCEL, var1 -> this.field7033.accept(false))
       );
-      var3.field6482 = this.field7035.method8002().isFile();
+      var3.active = this.field7035.method8002().isFile();
       Class2024 var4 = this.field7035.method7997();
       String var5 = var4 != null ? var4.method8644() : "";
-      this.field7034 = new Class1189(this.fontRenderer, this.field4564 / 2 - 100, 38, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
+      this.field7034 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 100, 38, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
       this.field7034.method5635(var5);
-      this.field7034.method5631(var1 -> this.field7032.field6482 = !var1.trim().isEmpty());
+      this.field7034.method5631(var1 -> this.field7032.active = !var1.trim().isEmpty());
       this.field4561.add(this.field7034);
       this.method5536(this.field7034);
    }
 
    @Override
    public void resize(Minecraft var1, int var2, int var3) {
-      String var6 = this.field7034.method5636();
+      String var6 = this.field7034.getText();
       this.init(var1, var2, var3);
       this.field7034.method5635(var6);
    }
@@ -191,12 +194,12 @@ public class EditWorldScreen extends Screen {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    private void method6321() {
       try {
-         this.field7035.method8004(this.field7034.method5636().trim());
+         this.field7035.method8004(this.field7034.getText().trim());
          this.field7033.accept(true);
       } catch (IOException var4) {
          field7029.error("Failed to access world '{}'", this.field7035.method7990(), var4);
@@ -244,11 +247,11 @@ public class EditWorldScreen extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 15, 16777215);
-      method5693(var1, this.fontRenderer, field7031, this.field4564 / 2 - 100, 24, 10526880);
-      this.field7034.method1923(var1, var2, var3, var4);
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 15, 16777215);
+      method5693(var1, this.fontRenderer, field7031, this.width / 2 - 100, 24, 10526880);
+      this.field7034.render(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 }

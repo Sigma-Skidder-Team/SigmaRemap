@@ -1,8 +1,9 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.widget.Widget;
 
-public class Class1198 extends Class1197 {
+public class Class1198 extends Widget {
    private static String[] field6487;
    private final Class2150 field6488;
    private boolean field6489;

@@ -21,7 +21,7 @@ public class Class1275 extends Class1274<Class1175> {
       IFormattableTextComponent var7 = new StringTextComponent("").append(this.field6804).mergeStyle(TextFormatting.UNDERLINE, TextFormatting.BOLD);
       this.field6782
          .fontRenderer
-         .method38805(
+         .func_243248_b(
             var1,
             var7,
             (float)(var2 + this.field6785 / 2 - this.field6782.fontRenderer.method38821(var7) / 2),

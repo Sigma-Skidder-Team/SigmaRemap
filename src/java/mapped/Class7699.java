@@ -21,6 +21,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.Difficulty;
 
 public class Class7699 {
    private static final ITextComponent field32968 = new TranslationTextComponent("event.minecraft.raid");
@@ -191,7 +192,7 @@ public class Class7699 {
          } else {
             boolean var3 = this.field32983;
             this.field32983 = this.field32978.method7017(this.field32977);
-            if (this.field32978.method6997() == Class2197.field14351) {
+            if (this.field32978.method6997() == Difficulty.field14351) {
                this.method25402();
                return;
             }
@@ -435,8 +436,8 @@ public class Class7699 {
             this.method25414(var5, var15, var1, false);
             if (Class2127.method8809(var11) == EntityType.field41072) {
                Class1026 var16 = null;
-               if (var5 != this.method25435(Class2197.field14353)) {
-                  if (var5 >= this.method25435(Class2197.field14354)) {
+               if (var5 != this.method25435(Difficulty.field14353)) {
+                  if (var5 >= this.method25435(Difficulty.field14354)) {
                      if (var13 != 0) {
                         var16 = EntityType.field41099.method33215(this.field32978);
                      } else {
@@ -643,9 +644,9 @@ public class Class7699 {
    }
 
    private int method25432(Class2127 var1, Random var2, int var3, Class9755 var4, boolean var5) {
-      Class2197 var8 = var4.method38327();
-      boolean var9 = var8 == Class2197.field14352;
-      boolean var10 = var8 == Class2197.field14353;
+      Difficulty var8 = var4.method38327();
+      boolean var9 = var8 == Difficulty.field14352;
+      boolean var10 = var8 == Difficulty.field14353;
       int var11;
       switch (Class8994.field41134[var1.ordinal()]) {
          case 1:
@@ -704,7 +705,7 @@ public class Class7699 {
       return var1;
    }
 
-   public int method25435(Class2197 var1) {
+   public int method25435(Difficulty var1) {
       switch (Class8994.field41135[var1.ordinal()]) {
          case 1:
             return 3;

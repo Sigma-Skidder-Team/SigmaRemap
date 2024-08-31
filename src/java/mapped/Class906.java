@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import java.util.List;
 
@@ -40,8 +41,8 @@ public class Class906 extends Entity {
    public void tick() {
       super.tick();
       if (this.field5171 == 2) {
-         Class2197 var3 = this.world.method6997();
-         if (var3 == Class2197.field14353 || var3 == Class2197.field14354) {
+         Difficulty var3 = this.world.method6997();
+         if (var3 == Difficulty.field14353 || var3 == Difficulty.field14354) {
             this.method3551(4);
          }
 

@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -29,7 +31,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    public Class1249 field6640;
    public Class5828<?> field6641;
    public Minecraft field6642;
-   private Class1189 field6643;
+   private TextFieldWidget field6643;
    private String field6644 = "";
    private Class6943 field6645;
    private final Class2954 field6646 = new Class2954();
@@ -49,7 +51,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
          this.method5834(var4);
       }
 
-      var3.keyboardListener.method36347(true);
+      var3.keyboardListener.enableRepeatEvents(true);
    }
 
    public void method5834(boolean var1) {
@@ -59,8 +61,8 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
       this.field6647.method19128();
       this.field6642.player.inventory.method4061(this.field6647);
       this.field6641.method18220(this.field6647);
-      String var6 = this.field6643 == null ? "" : this.field6643.method5636();
-      this.field6643 = new Class1189(this.field6642.fontRenderer, var4 + 25, var5 + 14, 80, 14, new TranslationTextComponent("itemGroup.search"));
+      String var6 = this.field6643 == null ? "" : this.field6643.getText();
+      this.field6643 = new TextFieldWidget(this.field6642.fontRenderer, var4 + 25, var5 + 14, 80, 14, new TranslationTextComponent("itemGroup.search"));
       this.field6643.method5657(50);
       this.field6643.method5661(false);
       this.field6643.method5671(true);
@@ -101,7 +103,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    public void method5836() {
       this.field6643 = null;
       this.field6639 = null;
-      this.field6642.keyboardListener.method36347(false);
+      this.field6642.keyboardListener.enableRepeatEvents(false);
    }
 
    public int method5837(boolean var1, int var2, int var3) {
@@ -147,7 +149,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
       ArrayList<RecipeList> var5 = Lists.newArrayList(var4);
       var5.removeIf(var0 -> !var0.method34886());
       var5.removeIf(var0 -> !var0.method34891());
-      String var6 = this.field6643.method5636();
+      String var6 = this.field6643.getText();
       if (!var6.isEmpty()) {
          ObjectLinkedOpenHashSet var7 = new ObjectLinkedOpenHashSet(
             this.field6642.<RecipeList>getSearchTree(SearchTreeManager.RECIPES).method21737(var6.toLowerCase(Locale.ROOT))
@@ -199,7 +201,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       if (this.method5839()) {
          RenderSystem.pushMatrix();
          RenderSystem.translatef(0.0F, 0.0F, 100.0F);
@@ -208,17 +210,17 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
          int var7 = (this.field6635 - 147) / 2 - this.field6634;
          int var8 = (this.field6636 - 166) / 2;
          this.method5696(var1, var7, var8, 1, 1, 147, 166);
-         if (!this.field6643.method5746() && this.field6643.method5636().isEmpty()) {
+         if (!this.field6643.method5746() && this.field6643.getText().isEmpty()) {
             method5693(var1, this.field6642.fontRenderer, field6631, var7 + 25, var8 + 14, -1);
          } else {
-            this.field6643.method1923(var1, var2, var3, var4);
+            this.field6643.render(var1, var2, var3, var4);
          }
 
          for (Class1250 var10 : this.field6638) {
-            var10.method1923(var1, var2, var3, var4);
+            var10.render(var1, var2, var3, var4);
          }
 
-         this.field6640.method1923(var1, var2, var3, var4);
+         this.field6640.render(var1, var2, var3, var4);
          this.field6646.method11311(var1, var7, var8, var2, var3, var4);
          RenderSystem.popMatrix();
       }
@@ -333,14 +335,14 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       this.field6649 = false;
       if (!this.method5839() || this.field6642.player.isSpectator()) {
          return false;
       } else if (var1 == 256 && !this.method5855()) {
          this.method5840(false);
          return true;
-      } else if (this.field6643.method1920(var1, var2, var3)) {
+      } else if (this.field6643.keyPressed(var1, var2, var3)) {
          this.method5853();
          return true;
       } else if (this.field6643.method5746() && this.field6643.method5670() && var1 != 256) {
@@ -361,12 +363,12 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    }
 
    @Override
-   public boolean method1932(char var1, int var2) {
+   public boolean charTyped(char var1, int var2) {
       if (!this.field6649) {
          if (!this.method5839() || this.field6642.player.isSpectator()) {
             return false;
-         } else if (!this.field6643.method1932(var1, var2)) {
-            return Class1152.super.method1932(var1, var2);
+         } else if (!this.field6643.charTyped(var1, var2)) {
+            return Class1152.super.charTyped(var1, var2);
          } else {
             this.method5853();
             return true;
@@ -382,7 +384,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    }
 
    private void method5853() {
-      String var3 = this.field6643.method5636().toLowerCase(Locale.ROOT);
+      String var3 = this.field6643.getText().toLowerCase(Locale.ROOT);
       this.method5854(var3);
       if (!var3.equals(this.field6644)) {
          this.method5842(false);

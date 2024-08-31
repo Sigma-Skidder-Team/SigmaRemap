@@ -1,6 +1,8 @@
 package mapped;
 
+import com.mojang.realmsclient.dto.RealmsServer;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,7 +17,7 @@ public class Class9267 {
       this.field42631 = var1;
    }
 
-   public void method34896(Class6128 var1, String var2, int var3) {
+   public void method34896(RealmsServer var1, String var2, int var3) {
       Minecraft var6 = Minecraft.getInstance();
       var6.setConnectedToRealms(true);
       Class9229.method34711(I18n.format("mco.connect.success"));

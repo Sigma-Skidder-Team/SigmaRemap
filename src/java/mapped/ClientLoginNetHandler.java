@@ -15,6 +15,8 @@ import javax.crypto.SecretKey;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -99,7 +101,7 @@ public class ClientLoginNetHandler implements Class5103 {
 
    @Override
    public void method15588(ITextComponent var1) {
-      if (this.field23201 != null && this.field23201 instanceof Class798) {
+      if (this.field23201 != null && this.field23201 instanceof RealmsScreen) {
          this.field23200.displayGuiScreen(new Class801(this.field23201, DialogTexts.field30664, var1));
       } else {
          this.field23200.displayGuiScreen(new Class832(this.field23201, DialogTexts.field30664, var1));

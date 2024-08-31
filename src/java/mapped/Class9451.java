@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.GameSettings;
+
 public class Class9451 extends MovementInput {
    private static String[] field43904;
    private final GameSettings field43905;

@@ -35,10 +35,10 @@ public class Class7604 implements Class7601 {
                }
             } else {
                int var16 = MathHelper.method37767(MathHelper.method37777((float)(1500L - var3) / 300.0F, 0.0F, 1.0F) * 255.0F) << 24 | 67108864;
-               var2.method5915().fontRenderer.method38805(var1, var7.method34938().method8245(), 30.0F, 11.0F, var9 | var16);
+               var2.method5915().fontRenderer.func_243248_b(var1, var7.method34938().method8245(), 30.0F, 11.0F, var9 | var16);
             }
          } else {
-            var2.method5915().fontRenderer.method38805(var1, var7.method34938().method8245(), 30.0F, 7.0F, var9 | 0xFF000000);
+            var2.method5915().fontRenderer.func_243248_b(var1, var7.method34938().method8245(), 30.0F, 7.0F, var9 | 0xFF000000);
             var2.method5915().fontRenderer.method38804(var1, (Class9125)var8.get(0), 30.0F, 18.0F, -1);
          }
 

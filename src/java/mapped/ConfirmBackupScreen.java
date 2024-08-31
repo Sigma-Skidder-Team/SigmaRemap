@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -21,13 +23,13 @@ public class ConfirmBackupScreen extends Screen {
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
-      this.field6945 = Class5991.method18584(this.fontRenderer, this.field6943, this.field4564 - 50);
+   public void init() {
+      super.init();
+      this.field6945 = Class5991.method18584(this.fontRenderer, this.field6943, this.width - 50);
       int var3 = (this.field6945.method18592() + 1) * 9;
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 155,
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 155,
             100 + var3,
             150,
             20,
@@ -35,9 +37,9 @@ public class ConfirmBackupScreen extends Screen {
             var1 -> this.field6942.method27112(true, this.field6946.method5820())
          )
       );
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 155 + 160,
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 155 + 160,
             100 + var3,
             150,
             20,
@@ -45,21 +47,21 @@ public class ConfirmBackupScreen extends Screen {
             var1 -> this.field6942.method27112(false, this.field6946.method5820())
          )
       );
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 155 + 80, 124 + var3, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6941))
+      this.<Button>addButton(
+         new Button(this.width / 2 - 155 + 80, 124 + var3, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6941))
       );
-      this.field6946 = new Class1248(this.field4564 / 2 - 155 + 80, 76 + var3, 150, 20, new TranslationTextComponent("selectWorld.backupEraseCache"), false);
+      this.field6946 = new Class1248(this.width / 2 - 155 + 80, 76 + var3, 150, 20, new TranslationTextComponent("selectWorld.backupEraseCache"), false);
       if (this.field6944) {
-         this.<Class1248>method2455(this.field6946);
+         this.<Class1248>addButton(this.field6946);
       }
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 50, 16777215);
-      this.field6945.method18588(var1, this.field4564 / 2, 70);
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 50, 16777215);
+      this.field6945.method18588(var1, this.width / 2, 70);
+      super.render(var1, var2, var3, var4);
    }
 
    @Override
@@ -68,9 +70,9 @@ public class ConfirmBackupScreen extends Screen {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          this.mc.displayGuiScreen(this.field6941);
          return true;

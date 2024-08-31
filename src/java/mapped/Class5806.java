@@ -3,8 +3,12 @@ package mapped;
 import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 
+import net.minecraft.client.AbstractOption;
+import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.client.gui.widget.button.OptionButton;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class5806 extends AbstractOption {
@@ -27,7 +31,7 @@ public class Class5806 extends AbstractOption {
       this.method18079(var1, "true".equals(var2));
    }
 
-   public void method18078(GameSettings var1) {
+   public void nextValue(GameSettings var1) {
       this.method18079(var1, !this.method18080(var1));
       var1.saveOptions();
    }
@@ -41,18 +45,18 @@ public class Class5806 extends AbstractOption {
    }
 
    @Override
-   public Class1197 method17946(GameSettings var1, int var2, int var3, int var4) {
+   public Widget createWidget(GameSettings var1, int var2, int var3, int var4) {
       if (this.field25448 != null) {
          this.method17950(Minecraft.getInstance().fontRenderer.method38828(this.field25448, 200));
       }
 
-      return new Class1228(var2, var3, var4, 20, this, this.method18081(var1), var2x -> {
-         this.method18078(var1);
-         var2x.method5743(this.method18081(var1));
+      return new OptionButton(var2, var3, var4, 20, this, this.func_238152_c_(var1), var2x -> {
+         this.nextValue(var1);
+         var2x.setMessage(this.func_238152_c_(var1));
       });
    }
 
-   public ITextComponent method18081(GameSettings var1) {
+   public ITextComponent func_238152_c_(GameSettings var1) {
       return DialogTexts.method22238(this.method17949(), this.method18080(var1));
    }
 }

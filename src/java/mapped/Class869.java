@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -17,8 +19,8 @@ public class Class869 extends Class870 implements Class867<Class5818> {
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
+   public void init() {
+      super.init();
       this.field4817.method18127(this.field4818);
    }
 
@@ -39,11 +41,11 @@ public class Class869 extends Class870 implements Class867<Class5818> {
       if (!this.mc.player.method2935()) {
          super.method2679();
       } else {
-         this.<Class1206>method2455(
-            new Class1206(this.field4564 / 2 - 100, 196, 98, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen((Screen)null))
+         this.<Button>addButton(
+            new Button(this.width / 2 - 100, 196, 98, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen((Screen)null))
          );
-         this.<Class1206>method2455(
-            new Class1206(this.field4564 / 2 + 2, 196, 98, 20, new TranslationTextComponent("lectern.take_book"), var1 -> this.method2683(3))
+         this.<Button>addButton(
+            new Button(this.width / 2 + 2, 196, 98, 20, new TranslationTextComponent("lectern.take_book"), var1 -> this.method2683(3))
          );
       }
    }

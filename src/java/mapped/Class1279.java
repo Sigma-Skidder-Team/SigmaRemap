@@ -54,9 +54,9 @@ public class Class1279 extends Class1274<Class1156> {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       Class1156 var6 = this.method6023();
-      return var6 != null && var6.method1920(var1, var2, var3) || super.method1920(var1, var2, var3);
+      return var6 != null && var6.keyPressed(var1, var2, var3) || super.keyPressed(var1, var2, var3);
    }
 
    @Override

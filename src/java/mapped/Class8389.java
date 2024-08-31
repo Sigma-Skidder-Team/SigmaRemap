@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.GameSettings;
+
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;

@@ -7,12 +7,14 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.util.Iterator;
 import java.util.List;
+
+import com.mojang.realmsclient.dto.RealmsServer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Class6118 extends Class6109 {
    private static final Logger field27397 = LogManager.getLogger();
-   public List<Class6128> field27398;
+   public List<RealmsServer> field27398;
 
    public static Class6118 method18885(String var0) {
       Class6118 var3 = new Class6118();
@@ -26,7 +28,7 @@ public class Class6118 extends Class6109 {
             Iterator var7 = var6.iterator();
 
             while (var7.hasNext()) {
-               var3.field27398.add(Class6128.method18912(((JsonElement)var7.next()).getAsJsonObject()));
+               var3.field27398.add(RealmsServer.method18912(((JsonElement)var7.next()).getAsJsonObject()));
             }
          }
       } catch (Exception var8) {

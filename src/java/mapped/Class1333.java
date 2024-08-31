@@ -1,11 +1,13 @@
 package mapped;
 
+import net.minecraft.client.gui.screen.VideoSettingsScreen;
+
 public class Class1333 extends ChatScreen {
    private static final String field7051 = "/reloadShaders";
    private static final String field7052 = "/reloadChunks";
 
    public Class1333(ChatScreen var1) {
-      super(Class843.method2584(var1));
+      super(VideoSettingsScreen.method2584(var1));
    }
 
    @Override

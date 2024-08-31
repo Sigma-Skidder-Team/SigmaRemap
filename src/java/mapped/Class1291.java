@@ -15,7 +15,7 @@ public class Class1291 extends Class1286<Class1177> {
    }
 
    public Class1291(Class804 var1, Iterable<Class6130> var2) {
-      super(var1.field4564, var1.field4565, !Class804.method1999(var1) ? 32 : Class804.method2000(1), var1.field4565 - 40, 46);
+      super(var1.width, var1.height, !Class804.method1999(var1) ? 32 : Class804.method2000(1), var1.height - 40, 46);
       this.field6855 = var1;
       var2.forEach(this::method6118);
    }
@@ -86,7 +86,7 @@ public class Class1291 extends Class1286<Class1177> {
 
    @Override
    public void method6039(MatrixStack var1) {
-      this.field6855.method2469(var1);
+      this.field6855.renderBackground(var1);
    }
 
    @Override

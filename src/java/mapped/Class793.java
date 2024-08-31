@@ -1,14 +1,16 @@
 package mapped;
 
+import com.mojang.realmsclient.dto.RealmsServer;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class793 extends Class789 {
    private final Class9267 field4146;
-   private final Class6128 field4147;
+   private final RealmsServer field4147;
    private final Class6127 field4148;
 
-   public Class793(Screen var1, Class6128 var2, Class6127 var3) {
+   public Class793(Screen var1, RealmsServer var2, Class6127 var3) {
       this.field4147 = var2;
       this.field4148 = var3;
       this.field4146 = new Class9267(var1);

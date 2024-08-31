@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.impl.render.jello.NameTags;
 import net.minecraft.client.util.Util;
+import net.minecraft.resources.ResourcePackInfo;
 
 import java.util.Optional;
 import java.util.stream.Collectors;

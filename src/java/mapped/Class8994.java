@@ -1,24 +1,26 @@
 package mapped;
 
+import net.minecraft.world.Difficulty;
+
 // $VF: synthetic class
 public class Class8994 {
    private static String[] field41133;
    public static final int[] field41134;
-   public static final int[] field41135 = new int[Class2197.values().length];
+   public static final int[] field41135 = new int[Difficulty.values().length];
 
    static {
       try {
-         field41135[Class2197.field14352.ordinal()] = 1;
+         field41135[Difficulty.field14352.ordinal()] = 1;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field41135[Class2197.field14353.ordinal()] = 2;
+         field41135[Difficulty.field14353.ordinal()] = 2;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field41135[Class2197.field14354.ordinal()] = 3;
+         field41135[Difficulty.field14354.ordinal()] = 3;
       } catch (NoSuchFieldError var7) {
       }
 

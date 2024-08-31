@@ -1,13 +1,15 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class ChatScreen extends Screen {
    private String field7046 = "";
    private int field7047 = -1;
-   public Class1189 field7048;
+   public TextFieldWidget field7048;
    private String field7049 = "";
    private Class6850 field7050;
 
@@ -17,10 +19,10 @@ public class ChatScreen extends Screen {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
       this.field7047 = this.mc.ingameGUI.getChatGUI().method5934().size();
-      this.field7048 = new Class1303(this, this.fontRenderer, 4, this.field4565 - 12, this.field4564 - 4, 12, new TranslationTextComponent("chat.editBox"));
+      this.field7048 = new Class1303(this, this.fontRenderer, 4, this.height - 12, this.width - 4, 12, new TranslationTextComponent("chat.editBox"));
       this.field7048.method5657(256);
       this.field7048.method5661(false);
       this.field7048.method5635(this.field7049);
@@ -33,7 +35,7 @@ public class ChatScreen extends Screen {
 
    @Override
    public void resize(Minecraft var1, int var2, int var3) {
-      String var6 = this.field7048.method5636();
+      String var6 = this.field7048.getText();
       this.init(var1, var2, var3);
       this.method6346(var6);
       this.field7050.method20835();
@@ -41,7 +43,7 @@ public class ChatScreen extends Screen {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
       this.mc.ingameGUI.getChatGUI().method5936();
    }
 
@@ -51,18 +53,18 @@ public class ChatScreen extends Screen {
    }
 
    private void method6344(String var1) {
-      String var4 = this.field7048.method5636();
+      String var4 = this.field7048.getText();
       this.field7050.method20829(!var4.equals(this.field7049));
       this.field7050.method20835();
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (!this.field7050.method20830(var1, var2, var3)) {
-         if (!super.method1920(var1, var2, var3)) {
+         if (!super.keyPressed(var1, var2, var3)) {
             if (var1 != 256) {
                if (var1 == 257 || var1 == 335) {
-                  String var6 = this.field7048.method5636().trim();
+                  String var6 = this.field7048.getText().trim();
                   if (!var6.isEmpty()) {
                      this.method2465(var6);
                   }
@@ -155,7 +157,7 @@ public class ChatScreen extends Screen {
       if (var4 != this.field7047) {
          if (var4 != var5) {
             if (this.field7047 == var5) {
-               this.field7046 = this.field7048.method5636();
+               this.field7046 = this.field7048.getText();
             }
 
             this.field7048.method5635(this.mc.ingameGUI.getChatGUI().method5934().get(var4));
@@ -169,18 +171,18 @@ public class ChatScreen extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.method5534(this.field7048);
       this.field7048.method5654(true);
-      method5686(var1, 2, this.field4565 - 14, this.field4564 - 2, this.field4565 - 2, this.mc.gameSettings.method37141(Integer.MIN_VALUE));
-      this.field7048.method1923(var1, var2, var3, var4);
+      method5686(var1, 2, this.height - 14, this.width - 2, this.height - 2, this.mc.gameSettings.method37141(Integer.MIN_VALUE));
+      this.field7048.render(var1, var2, var3, var4);
       this.field7050.method20843(var1, var2, var3);
       Style var7 = this.mc.ingameGUI.getChatGUI().method5939((double)var2, (double)var3);
       if (var7 != null && var7.getHoverEvent() != null) {
          this.method2462(var1, var7, var2, var3);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    @Override

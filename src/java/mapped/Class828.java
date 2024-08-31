@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.*;
 import org.apache.commons.lang3.StringUtils;
@@ -38,10 +40,10 @@ public class Class828 extends Screen {
    private int field4589 = -1;
    private Class1209 field4590;
    private Class1209 field4591;
-   private Class1206 field4592;
-   private Class1206 field4593;
-   private Class1206 field4594;
-   private Class1206 field4595;
+   private Button field4592;
+   private Button field4593;
+   private Button field4594;
+   private Button field4595;
    private final Hand field4596;
    private Class8398 field4597 = Class8398.method29485();
    private ITextComponent field4598 = StringTextComponent.EMPTY;
@@ -89,38 +91,38 @@ public class Class828 extends Screen {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       this.method2518();
-      this.mc.keyboardListener.method36347(true);
-      this.field4593 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, 196, 98, 20, new TranslationTextComponent("book.signButton"), var1 -> {
+      this.mc.keyboardListener.enableRepeatEvents(true);
+      this.field4593 = this.<Button>addButton(
+         new Button(this.width / 2 - 100, 196, 98, 20, new TranslationTextComponent("book.signButton"), var1 -> {
             this.field4581 = true;
             this.method2498();
          })
       );
-      this.field4592 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 2, 196, 98, 20, DialogTexts.field30658, var1 -> {
+      this.field4592 = this.<Button>addButton(new Button(this.width / 2 + 2, 196, 98, 20, DialogTexts.field30658, var1 -> {
          this.mc.displayGuiScreen((Screen)null);
          this.method2500(false);
       }));
-      this.field4594 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, 196, 98, 20, new TranslationTextComponent("book.finalizeButton"), var1 -> {
+      this.field4594 = this.<Button>addButton(
+         new Button(this.width / 2 - 100, 196, 98, 20, new TranslationTextComponent("book.finalizeButton"), var1 -> {
             if (this.field4581) {
                this.method2500(true);
                this.mc.displayGuiScreen((Screen)null);
             }
          })
       );
-      this.field4595 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 2, 196, 98, 20, DialogTexts.GUI_CANCEL, var1 -> {
+      this.field4595 = this.<Button>addButton(new Button(this.width / 2 + 2, 196, 98, 20, DialogTexts.GUI_CANCEL, var1 -> {
          if (this.field4581) {
             this.field4581 = false;
          }
 
          this.method2498();
       }));
-      int var3 = (this.field4564 - 192) / 2;
+      int var3 = (this.width - 192) / 2;
       byte var4 = 2;
-      this.field4590 = this.<Class1209>method2455(new Class1209(var3 + 116, 159, true, var1 -> this.method2497(), true));
-      this.field4591 = this.<Class1209>method2455(new Class1209(var3 + 43, 159, false, var1 -> this.method2496(), true));
+      this.field4590 = this.<Class1209>addButton(new Class1209(var3 + 116, 159, true, var1 -> this.method2497(), true));
+      this.field4591 = this.<Class1209>addButton(new Class1209(var3 + 43, 159, false, var1 -> this.method2496(), true));
       this.method2498();
    }
 
@@ -149,7 +151,7 @@ public class Class828 extends Screen {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    private void method2498() {
@@ -159,7 +161,7 @@ public class Class828 extends Screen {
       this.field4593.field6483 = !this.field4581;
       this.field4595.field6483 = this.field4581;
       this.field4594.field6483 = this.field4581;
-      this.field4594.field6482 = !this.field4585.trim().isEmpty();
+      this.field4594.active = !this.field4585.trim().isEmpty();
    }
 
    private void method2499() {
@@ -197,8 +199,8 @@ public class Class828 extends Screen {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
-      if (!super.method1920(var1, var2, var3)) {
+   public boolean keyPressed(int var1, int var2, int var3) {
+      if (!super.keyPressed(var1, var2, var3)) {
          if (!this.field4581) {
             boolean var6 = this.method2502(var1, var2, var3);
             if (!var6) {
@@ -216,8 +218,8 @@ public class Class828 extends Screen {
    }
 
    @Override
-   public boolean method1932(char var1, int var2) {
-      if (!super.method1932(var1, var2)) {
+   public boolean charTyped(char var1, int var2) {
+      if (!super.charTyped(var1, var2)) {
          if (!this.field4581) {
             if (!SharedConstants.isAllowedCharacter(var1)) {
                return false;
@@ -356,21 +358,21 @@ public class Class828 extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
       this.method5534((Class1152)null);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(Class870.field4820);
-      int var7 = (this.field4564 - 192) / 2;
+      int var7 = (this.width - 192) / 2;
       byte var8 = 2;
       this.method5696(var1, var7, 2, 0, 0, 192, 192);
       if (!this.field4581) {
          int var9 = this.fontRenderer.method38821(this.field4598);
-         this.fontRenderer.method38805(var1, this.field4598, (float)(var7 - var9 + 192 - 44), 18.0F, 0);
+         this.fontRenderer.func_243248_b(var1, this.field4598, (float)(var7 - var9 + 192 - 44), 18.0F, 0);
          Class8398 var10 = this.method2517();
 
          for (Class8067 var14 : Class8398.method29486(var10)) {
-            this.fontRenderer.method38805(var1, Class8067.method27765(var14), (float)Class8067.method27766(var14), (float)Class8067.method27767(var14), -16777216);
+            this.fontRenderer.func_243248_b(var1, Class8067.method27765(var14), (float)Class8067.method27766(var14), (float)Class8067.method27767(var14), -16777216);
          }
 
          this.method2512(Class8398.method29487(var10));
@@ -379,15 +381,15 @@ public class Class828 extends Screen {
          boolean var15 = this.field4582 / 6 % 2 == 0;
          Class9125 var16 = Class9125.method34041(Class9125.method34038(this.field4585, Style.EMPTY), !var15 ? field4577 : field4576);
          int var17 = this.fontRenderer.method38821(field4574);
-         this.fontRenderer.method38805(var1, field4574, (float)(var7 + 36 + (114 - var17) / 2), 34.0F, 0);
+         this.fontRenderer.func_243248_b(var1, field4574, (float)(var7 + 36 + (114 - var17) / 2), 34.0F, 0);
          int var18 = this.fontRenderer.method38822(var16);
          this.fontRenderer.method38804(var1, var16, (float)(var7 + 36 + (114 - var18) / 2), 50.0F, 0);
          int var19 = this.fontRenderer.method38821(this.field4599);
-         this.fontRenderer.method38805(var1, this.field4599, (float)(var7 + 36 + (114 - var19) / 2), 60.0F, 0);
+         this.fontRenderer.func_243248_b(var1, this.field4599, (float)(var7 + 36 + (114 - var19) / 2), 60.0F, 0);
          this.fontRenderer.method38826(field4575, var7 + 36, 82, 114, 0);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    private void method2511(MatrixStack var1, Class6178 var2, boolean var3) {
@@ -427,11 +429,11 @@ public class Class828 extends Screen {
    }
 
    private Class6178 method2513(Class6178 var1) {
-      return new Class6178(var1.field27614 - (this.field4564 - 192) / 2 - 36, var1.field27615 - 32);
+      return new Class6178(var1.field27614 - (this.width - 192) / 2 - 36, var1.field27615 - 32);
    }
 
    private Class6178 method2514(Class6178 var1) {
-      return new Class6178(var1.field27614 + (this.field4564 - 192) / 2 + 36, var1.field27615 + 32);
+      return new Class6178(var1.field27614 + (this.width - 192) / 2 + 36, var1.field27615 + 32);
    }
 
    @Override

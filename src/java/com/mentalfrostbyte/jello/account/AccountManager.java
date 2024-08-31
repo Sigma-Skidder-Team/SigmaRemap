@@ -2,6 +2,7 @@ package com.mentalfrostbyte.jello.account;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.util.FileUtil;
+import com.mojang.realmsclient.RealmsMainScreen;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -80,7 +81,7 @@ public class AccountManager {
      */
     public boolean login(Account account) {
         try {
-            Class806.field4268 = null; // ?????
+            RealmsMainScreen.field4268 = null; // ?????
             Session session = Minecraft.getInstance().session;
             Session newSession = account.login();
             session.username = newSession.getUsername();

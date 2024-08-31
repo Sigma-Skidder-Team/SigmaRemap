@@ -4,10 +4,17 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.PackScreen;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
+import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.Difficulty;
 import org.apache.commons.lang3.mutable.MutableObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -32,12 +39,12 @@ public class Class1335 extends Screen {
    private static final ITextComponent field7065 = new TranslationTextComponent("selectWorld.resultFolder");
    private static final ITextComponent field7066 = new TranslationTextComponent("selectWorld.allowCommands.info");
    private final Screen field7067;
-   private Class1189 field7068;
+   private TextFieldWidget field7068;
    private String field7069;
    private Class2079 field7070 = Class2079.field13539;
    private Class2079 field7071;
-   private Class2197 field7072 = Class2197.field14353;
-   private Class2197 field7073 = Class2197.field14353;
+   private Difficulty field7072 = Difficulty.field14353;
+   private Difficulty field7073 = Difficulty.field14353;
    private boolean field7074;
    private boolean field7075;
    public boolean field7076;
@@ -45,13 +52,13 @@ public class Class1335 extends Screen {
    private Path field7078;
    private ResourcePackList field7079;
    private boolean field7080;
-   private Class1206 field7081;
-   private Class1206 field7082;
-   private Class1206 field7083;
-   private Class1206 field7084;
-   private Class1206 field7085;
-   private Class1206 field7086;
-   private Class1206 field7087;
+   private Button field7081;
+   private Button field7082;
+   private Button field7083;
+   private Button field7084;
+   private Button field7085;
+   private Button field7086;
+   private Button field7087;
    private ITextComponent field7088;
    private ITextComponent field7089;
    private String field7090;
@@ -114,19 +121,19 @@ public class Class1335 extends Screen {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
-      this.field7068 = new Class1302(this, this.fontRenderer, this.field4564 / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
+      this.field7068 = new Class1302(this, this.fontRenderer, this.width / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
       this.field7068.method5635(this.field7090);
       this.field7068.method5631(var1 -> {
          this.field7090 = var1;
-         this.field7081.field6482 = !this.field7068.method5636().isEmpty();
+         this.field7081.active = !this.field7068.getText().isEmpty();
          this.method6355();
       });
       this.field4561.add(this.field7068);
-      int var3 = this.field4564 / 2 - 155;
-      int var4 = this.field4564 / 2 + 5;
-      this.field7082 = this.<Class1206>method2455(new Class1241(this, var3, 100, 150, 20, StringTextComponent.EMPTY, var1 -> {
+      int var3 = this.width / 2 - 155;
+      int var4 = this.width / 2 + 5;
+      this.field7082 = this.<Button>addButton(new Class1241(this, var3, 100, 150, 20, StringTextComponent.EMPTY, var1 -> {
          switch (Class9406.field43641[this.field7070.ordinal()]) {
             case 1:
                this.method6358(Class2079.field13540);
@@ -140,21 +147,21 @@ public class Class1335 extends Screen {
 
          var1.method5744(250);
       }));
-      this.field7083 = this.<Class1206>method2455(new Class1223(this, var4, 100, 150, 20, new TranslationTextComponent("options.difficulty"), var1 -> {
+      this.field7083 = this.<Button>addButton(new Class1223(this, var4, 100, 150, 20, new TranslationTextComponent("options.difficulty"), var1 -> {
          this.field7072 = this.field7072.method8910();
          this.field7073 = this.field7072;
          var1.method5744(250);
       }));
-      this.field7087 = this.<Class1206>method2455(new Class1217(this, var3, 151, 150, 20, new TranslationTextComponent("selectWorld.allowCommands"), var1 -> {
+      this.field7087 = this.<Button>addButton(new Class1217(this, var3, 151, 150, 20, new TranslationTextComponent("selectWorld.allowCommands"), var1 -> {
          this.field7075 = true;
          this.field7074 = !this.field7074;
          var1.method5744(250);
       }));
-      this.field7086 = this.<Class1206>method2455(
-         new Class1206(var4, 151, 150, 20, new TranslationTextComponent("selectWorld.dataPacks"), var1 -> this.method6364())
+      this.field7086 = this.<Button>addButton(
+         new Button(var4, 151, 150, 20, new TranslationTextComponent("selectWorld.dataPacks"), var1 -> this.method6364())
       );
-      this.field7085 = this.<Class1206>method2455(
-         new Class1206(
+      this.field7085 = this.<Button>addButton(
+         new Button(
             var3,
             185,
             150,
@@ -167,14 +174,14 @@ public class Class1335 extends Screen {
          )
       );
       this.field7092.method5780(this, this.mc, this.fontRenderer);
-      this.field7084 = this.<Class1206>method2455(
-         new Class1206(var4, 185, 150, 20, new TranslationTextComponent("selectWorld.moreWorldOptions"), var1 -> this.method6357())
+      this.field7084 = this.<Button>addButton(
+         new Button(var4, 185, 150, 20, new TranslationTextComponent("selectWorld.moreWorldOptions"), var1 -> this.method6357())
       );
-      this.field7081 = this.<Class1206>method2455(
-         new Class1206(var3, this.field4565 - 28, 150, 20, new TranslationTextComponent("selectWorld.create"), var1 -> this.method6356())
+      this.field7081 = this.<Button>addButton(
+         new Button(var3, this.height - 28, 150, 20, new TranslationTextComponent("selectWorld.create"), var1 -> this.method6356())
       );
-      this.field7081.field6482 = !this.field7090.isEmpty();
-      this.<Class1206>method2455(new Class1206(var4, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method6361()));
+      this.field7081.active = !this.field7090.isEmpty();
+      this.<Button>addButton(new Button(var4, this.height - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method6361()));
       this.method6359();
       this.method5536(this.field7068);
       this.method6358(this.field7070);
@@ -187,7 +194,7 @@ public class Class1335 extends Screen {
    }
 
    private void method6355() {
-      this.field7069 = this.field7068.method5636().trim();
+      this.field7069 = this.field7068.getText().trim();
       if (this.field7069.isEmpty()) {
          this.field7069 = "World";
       }
@@ -207,7 +214,7 @@ public class Class1335 extends Screen {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    private void method6356() {
@@ -219,10 +226,10 @@ public class Class1335 extends Screen {
          if (var3.method26267()) {
             Class5462 var4 = new Class5462();
             var4.<Class7466>method17128(Class5462.field24232).method24175(false, (MinecraftServer)null);
-            var5 = new WorldSettings(this.field7068.method5636().trim(), Class1894.field11105, false, Class2197.field14351, true, var4, DatapackCodec.field33531);
+            var5 = new WorldSettings(this.field7068.getText().trim(), Class1894.field11105, false, Difficulty.field14351, true, var4, DatapackCodec.field33531);
          } else {
             var5 = new WorldSettings(
-               this.field7068.method5636().trim(),
+               this.field7068.getText().trim(),
                Class2079.method8735(this.field7070),
                this.field7076,
                this.field7073,
@@ -247,16 +254,16 @@ public class Class1335 extends Screen {
 
       if (var1 != Class2079.field13540) {
          this.field7076 = false;
-         this.field7087.field6482 = true;
-         this.field7092.field6558.field6482 = true;
+         this.field7087.active = true;
+         this.field7092.field6558.active = true;
          this.field7073 = this.field7072;
-         this.field7083.field6482 = true;
+         this.field7083.active = true;
       } else {
          this.field7076 = true;
-         this.field7087.field6482 = false;
-         this.field7092.field6558.field6482 = false;
-         this.field7073 = Class2197.field14354;
-         this.field7083.field6482 = false;
+         this.field7087.active = false;
+         this.field7092.field6558.active = false;
+         this.field7073 = Difficulty.field14354;
+         this.field7083.active = false;
       }
 
       this.field7070 = var1;
@@ -272,7 +279,7 @@ public class Class1335 extends Screen {
       this.field7082.field6483 = !this.field7080;
       this.field7083.field6483 = !this.field7080;
       if (!this.field7092.method5787()) {
-         this.field7082.field6482 = true;
+         this.field7082.active = true;
          if (this.field7071 != null) {
             this.method6358(this.field7071);
          }
@@ -281,7 +288,7 @@ public class Class1335 extends Screen {
          this.field7086.field6483 = !this.field7080;
       } else {
          this.field7086.field6483 = false;
-         this.field7082.field6482 = false;
+         this.field7082.active = false;
          if (this.field7071 == null) {
             this.field7071 = this.field7070;
          }
@@ -293,17 +300,17 @@ public class Class1335 extends Screen {
       this.field7092.method5788(this.field7080);
       this.field7068.method5671(!this.field7080);
       if (!this.field7080) {
-         this.field7084.method5743(new TranslationTextComponent("selectWorld.moreWorldOptions"));
+         this.field7084.setMessage(new TranslationTextComponent("selectWorld.moreWorldOptions"));
       } else {
-         this.field7084.method5743(DialogTexts.field30658);
+         this.field7084.setMessage(DialogTexts.field30658);
       }
 
       this.field7085.field6483 = !this.field7080;
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
-      if (!super.method1920(var1, var2, var3)) {
+   public boolean keyPressed(int var1, int var2, int var3) {
+      if (!super.keyPressed(var1, var2, var3)) {
          if (var1 != 257 && var1 != 335) {
             return false;
          } else {
@@ -338,42 +345,42 @@ public class Class1335 extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 20, -1);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 20, -1);
       if (!this.field7080) {
-         method5693(var1, this.fontRenderer, field7064, this.field4564 / 2 - 100, 47, -6250336);
+         method5693(var1, this.fontRenderer, field7064, this.width / 2 - 100, 47, -6250336);
          method5693(
             var1,
             this.fontRenderer,
             new StringTextComponent("").append(field7065).appendString(" ").appendString(this.field7069),
-            this.field4564 / 2 - 100,
+            this.width / 2 - 100,
             85,
             -6250336
          );
-         this.field7068.method1923(var1, var2, var3, var4);
-         method5693(var1, this.fontRenderer, this.field7088, this.field4564 / 2 - 150, 122, -6250336);
-         method5693(var1, this.fontRenderer, this.field7089, this.field4564 / 2 - 150, 134, -6250336);
+         this.field7068.render(var1, var2, var3, var4);
+         method5693(var1, this.fontRenderer, this.field7088, this.width / 2 - 150, 122, -6250336);
+         method5693(var1, this.fontRenderer, this.field7089, this.width / 2 - 150, 134, -6250336);
          if (this.field7087.field6483) {
-            method5693(var1, this.fontRenderer, field7066, this.field4564 / 2 - 150, 172, -6250336);
+            method5693(var1, this.fontRenderer, field7066, this.width / 2 - 150, 172, -6250336);
          }
       } else {
-         method5693(var1, this.fontRenderer, field7062, this.field4564 / 2 - 100, 47, -6250336);
-         method5693(var1, this.fontRenderer, field7063, this.field4564 / 2 - 100, 85, -6250336);
-         this.field7092.method1923(var1, var2, var3, var4);
+         method5693(var1, this.fontRenderer, field7062, this.width / 2 - 100, 47, -6250336);
+         method5693(var1, this.fontRenderer, field7063, this.width / 2 - 100, 85, -6250336);
+         this.field7092.render(var1, var2, var3, var4);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    @Override
-   public <T extends Class1152> T method2456(T var1) {
-      return super.<T>method2456((T)var1);
+   public <T extends Class1152> T addListener(T var1) {
+      return super.<T>addListener((T)var1);
    }
 
    @Override
-   public <T extends Class1197> T method2455(T var1) {
-      return super.<T>method2455((T)var1);
+   public <T extends Widget> T addButton(T var1) {
+      return super.<T>addButton((T)var1);
    }
 
    @Nullable
@@ -396,7 +403,7 @@ public class Class1335 extends Screen {
       if (var3 != null) {
          this.mc
             .displayGuiScreen(
-               new Class1336(this, (ResourcePackList)var3.getSecond(), this::method6365, (File)var3.getFirst(), new TranslationTextComponent("dataPack.title"))
+               new PackScreen(this, (ResourcePackList)var3.getSecond(), this::method6365, (File)var3.getFirst(), new TranslationTextComponent("dataPack.title"))
             );
       }
    }
@@ -568,7 +575,7 @@ public class Class1335 extends Screen {
    }
 
    // $VF: synthetic method
-   public static Class2197 method6398(Class1335 var0) {
+   public static Difficulty method6398(Class1335 var0) {
       return var0.field7073;
    }
 

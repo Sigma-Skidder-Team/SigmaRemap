@@ -1,10 +1,11 @@
 package mapped;
 
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class1303 extends Class1189 {
+public class Class1303 extends TextFieldWidget {
    private static String[] field6895;
    public final ChatScreen field6896;
 

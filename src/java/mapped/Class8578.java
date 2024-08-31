@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.IngameGui;
 import org.lwjgl.opengl.GL11;

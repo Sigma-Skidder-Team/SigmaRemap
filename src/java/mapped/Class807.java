@@ -1,8 +1,13 @@
 package mapped;
 
+import com.mojang.realmsclient.dto.RealmsServer;
+import com.mojang.realmsclient.gui.screens.RealmsLongRunningMcoTaskScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.realms.RealmsLabel;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -13,7 +18,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-public class Class807 extends Class798 {
+public class Class807 extends RealmsScreen {
    private static final Logger field4306 = LogManager.getLogger();
    private static final ResourceLocation field4307 = new ResourceLocation("realms", "textures/gui/realms/plus_icon.png");
    private static final ResourceLocation field4308 = new ResourceLocation("realms", "textures/gui/realms/restore_icon.png");
@@ -28,50 +33,50 @@ public class Class807 extends Class798 {
    private Class1289 field4317;
    private int field4318 = -1;
    private final int field4319;
-   private Class1206 field4320;
-   private Class1206 field4321;
-   private Class1206 field4322;
+   private Button field4320;
+   private Button field4321;
+   private Button field4322;
    private Boolean field4323 = false;
-   private final Class6128 field4324;
-   private Class1153 field4325;
+   private final RealmsServer field4324;
+   private RealmsLabel field4325;
 
-   public Class807(Class815 var1, Class6128 var2, int var3) {
+   public Class807(Class815 var1, RealmsServer var2, int var3) {
       this.field4314 = var1;
       this.field4324 = var2;
       this.field4319 = var3;
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
       this.field4317 = new Class1289(this);
       if (field4313 != -1) {
          this.field4317.method6045((double)field4313);
       }
 
       new Class373(this, "Realms-fetch-backups").start();
-      this.field4320 = this.<Class1206>method2455(
-         new Class1206(this.field4564 - 135, method1929(1), 120, 20, new TranslationTextComponent("mco.backup.button.download"), var1 -> this.method2174())
+      this.field4320 = this.<Button>addButton(
+         new Button(this.width - 135, method1929(1), 120, 20, new TranslationTextComponent("mco.backup.button.download"), var1 -> this.method2174())
       );
-      this.field4321 = this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 - 135, method1929(3), 120, 20, new TranslationTextComponent("mco.backup.button.restore"), var1 -> this.method2173(this.field4318)
+      this.field4321 = this.<Button>addButton(
+         new Button(
+            this.width - 135, method1929(3), 120, 20, new TranslationTextComponent("mco.backup.button.restore"), var1 -> this.method2173(this.field4318)
          )
       );
-      this.field4322 = this.<Class1206>method2455(
-         new Class1206(this.field4564 - 135, method1929(5), 120, 20, new TranslationTextComponent("mco.backup.changes.tooltip"), var1 -> {
+      this.field4322 = this.<Button>addButton(
+         new Button(this.width - 135, method1929(5), 120, 20, new TranslationTextComponent("mco.backup.changes.tooltip"), var1 -> {
             this.mc.displayGuiScreen(new Class803(this, this.field4315.get(this.field4318)));
             this.field4318 = -1;
          })
       );
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 - 100, this.field4565 - 35, 85, 20, DialogTexts.field30663, var1 -> this.mc.displayGuiScreen(this.field4314))
+      this.<Button>addButton(
+         new Button(this.width - 100, this.height - 35, 85, 20, DialogTexts.field30663, var1 -> this.mc.displayGuiScreen(this.field4314))
       );
-      this.<Class1289>method2456(this.field4317);
-      this.field4325 = this.<Class1153>method2456(new Class1153(new TranslationTextComponent("mco.configure.world.backup"), this.field4564 / 2, 12, 16777215));
+      this.<Class1289>addListener(this.field4317);
+      this.field4325 = this.<RealmsLabel>addListener(new RealmsLabel(new TranslationTextComponent("mco.configure.world.backup"), this.width / 2, 12, 16777215));
       this.method5537(this.field4317);
       this.method2170();
-      this.method1930();
+      this.func_231411_u_();
    }
 
    private void method2168() {
@@ -118,9 +123,9 @@ public class Class807 extends Class798 {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          this.mc.displayGuiScreen(this.field4314);
          return true;
@@ -161,7 +166,7 @@ public class Class807 extends Class798 {
    private void method2175() {
       this.mc
          .displayGuiScreen(
-            new Class797(
+            new RealmsLongRunningMcoTaskScreen(
                this.field4314.method2298(),
                new Class1347(
                   this.field4324.field27443,
@@ -176,22 +181,22 @@ public class Class807 extends Class798 {
    private void method2176() {
       Class6122 var3 = this.field4315.get(this.field4318);
       this.field4318 = -1;
-      this.mc.displayGuiScreen(new Class797(this.field4314.method2298(), new Class1344(var3, this.field4324.field27443, this.field4314)));
+      this.mc.displayGuiScreen(new RealmsLongRunningMcoTaskScreen(this.field4314.method2298(), new Class1344(var3, this.field4324.field27443, this.field4314)));
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.field4316 = null;
-      this.method2469(var1);
-      this.field4317.method1923(var1, var2, var3, var4);
-      this.field4325.method5542(this, var1);
-      this.fontRenderer.method38805(var1, field4311, (float)((this.field4564 - 150) / 2 - 90), 20.0F, 10526880);
+      this.renderBackground(var1);
+      this.field4317.render(var1, var2, var3, var4);
+      this.field4325.func_239560_a_(this, var1);
+      this.fontRenderer.func_243248_b(var1, field4311, (float)((this.width - 150) / 2 - 90), 20.0F, 10526880);
       if (this.field4323) {
-         this.fontRenderer.method38805(var1, field4312, 20.0F, (float)(this.field4565 / 2 - 10), 16777215);
+         this.fontRenderer.func_243248_b(var1, field4312, 20.0F, (float)(this.height / 2 - 10), 16777215);
       }
 
-      this.field4320.field6482 = !this.field4323;
-      super.method1923(var1, var2, var3, var4);
+      this.field4320.active = !this.field4323;
+      super.render(var1, var2, var3, var4);
       if (this.field4316 != null) {
          this.method2177(var1, this.field4316, var2, var3);
       }
@@ -208,7 +213,7 @@ public class Class807 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class6128 method2184(Class807 var0) {
+   public static RealmsServer method2184(Class807 var0) {
       return var0.field4324;
    }
 

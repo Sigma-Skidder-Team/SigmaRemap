@@ -13,18 +13,18 @@ public class Class853 extends Class851<Class5829> implements Class854 {
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
-      this.field4757 = this.field4564 < 379;
-      this.field4756.method5833(this.field4564, this.field4565, this.mc, this.field4757, this.field4727);
-      this.field4734 = this.field4756.method5837(this.field4757, this.field4564, this.field4721);
+   public void init() {
+      super.init();
+      this.field4757 = this.width < 379;
+      this.field4756.method5833(this.width, this.height, this.mc, this.field4757, this.field4727);
+      this.field4734 = this.field4756.method5837(this.field4757, this.width, this.field4721);
       this.field4561.add(this.field4756);
       this.method5536(this.field4756);
-      this.<Class1243>method2455(new Class1243(this.field4734 + 5, this.field4565 / 2 - 49, 20, 18, 0, 0, 19, field4755, var1 -> {
+      this.<Class1243>addButton(new Class1243(this.field4734 + 5, this.height / 2 - 49, 20, 18, 0, 0, 19, field4755, var1 -> {
          this.field4756.method5834(this.field4757);
          this.field4756.method5838();
-         this.field4734 = this.field4756.method5837(this.field4757, this.field4564, this.field4721);
-         ((Class1243)var1).method5819(this.field4734 + 5, this.field4565 / 2 - 49);
+         this.field4734 = this.field4756.method5837(this.field4757, this.width, this.field4721);
+         ((Class1243)var1).method5819(this.field4734 + 5, this.height / 2 - 49);
       }));
       this.field4723 = 29;
    }
@@ -36,14 +36,14 @@ public class Class853 extends Class851<Class5829> implements Class854 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
       if (this.field4756.method5839() && this.field4757) {
          this.method2618(var1, var4, var2, var3);
-         this.field4756.method1923(var1, var2, var3, var4);
+         this.field4756.render(var1, var2, var3, var4);
       } else {
-         this.field4756.method1923(var1, var2, var3, var4);
-         super.method1923(var1, var2, var3, var4);
+         this.field4756.render(var1, var2, var3, var4);
+         super.render(var1, var2, var3, var4);
          this.field4756.method5850(var1, this.field4734, this.field4735, true, var4);
       }
 
@@ -56,7 +56,7 @@ public class Class853 extends Class851<Class5829> implements Class854 {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4754);
       int var7 = this.field4734;
-      int var8 = (this.field4565 - this.field4722) / 2;
+      int var8 = (this.height - this.field4722) / 2;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
    }
 

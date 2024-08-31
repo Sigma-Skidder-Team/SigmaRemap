@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.resources.ResourcePackInfo;
+
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 

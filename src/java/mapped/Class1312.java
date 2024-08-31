@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -17,15 +18,15 @@ public class Class1312 extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6924 == null) {
          this.method2471(0);
       } else {
-         this.field6924.method22328(this.field4564, this.field4565);
+         this.field6924.method22328(this.width, this.height);
       }
 
-      method5691(var1, this.fontRenderer, field6923, this.field4564 / 2, this.field4565 / 2 - 50, 16777215);
-      super.method1923(var1, var2, var3, var4);
+      drawCenteredString(var1, this.fontRenderer, field6923, this.width / 2, this.height / 2 - 50, 16777215);
+      super.render(var1, var2, var3, var4);
    }
 
    @Override

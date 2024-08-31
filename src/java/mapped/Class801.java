@@ -2,9 +2,12 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class801 extends Class798 {
+public class Class801 extends RealmsScreen {
    private final ITextComponent field4181;
    private final ITextComponent field4182;
    private Class5991 field4183 = Class5991.field26162;
@@ -18,16 +21,16 @@ public class Class801 extends Class798 {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       Minecraft var3 = Minecraft.getInstance();
       var3.setConnectedToRealms(false);
       var3.getPackFinder().clearResourcePack();
       Class9229.method34711(this.field4181.getString() + ": " + this.field4182.getString());
-      this.field4183 = Class5991.method18584(this.fontRenderer, this.field4182, this.field4564 - 50);
+      this.field4183 = Class5991.method18584(this.fontRenderer, this.field4182, this.width - 50);
       this.field4185 = this.field4183.method18592() * 9;
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 100, this.field4565 / 2 + this.field4185 / 2 + 9, 200, 20, DialogTexts.field30663, var2 -> var3.displayGuiScreen(this.field4184)
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 100, this.height / 2 + this.field4185 / 2 + 9, 200, 20, DialogTexts.field30663, var2 -> var3.displayGuiScreen(this.field4184)
          )
       );
    }
@@ -38,10 +41,10 @@ public class Class801 extends Class798 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      method5691(var1, this.fontRenderer, this.field4181, this.field4564 / 2, this.field4565 / 2 - this.field4185 / 2 - 18, 11184810);
-      this.field4183.method18588(var1, this.field4564 / 2, this.field4565 / 2 - this.field4185 / 2);
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      drawCenteredString(var1, this.fontRenderer, this.field4181, this.width / 2, this.height / 2 - this.field4185 / 2 - 18, 11184810);
+      this.field4183.method18588(var1, this.width / 2, this.height / 2 - this.field4185 / 2);
+      super.render(var1, var2, var3, var4);
    }
 }

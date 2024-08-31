@@ -6,7 +6,7 @@ public class Class1288 extends Class1286<Class1165> {
    public final Class811 field6852;
 
    public Class1288(Class811 var1) {
-      super(var1.field4564, var1.field4565, Class811.method2229(0), var1.field4565 - 40, 36);
+      super(var1.width, var1.height, Class811.method2229(0), var1.height - 40, 36);
       this.field6852 = var1;
    }
 
@@ -28,7 +28,7 @@ public class Class1288 extends Class1286<Class1165> {
 
    @Override
    public void method6039(MatrixStack var1) {
-      this.field6852.method2469(var1);
+      this.field6852.renderBackground(var1);
    }
 
    @Override
@@ -45,7 +45,7 @@ public class Class1288 extends Class1286<Class1165> {
    public void method6024(Class1165 var1) {
       super.method6024(var1);
       Class811.method2230(this.field6852, this.method2468().indexOf(var1));
-      Class811.method2231(this.field6852).field6482 = Class811.method2232(this.field6852) >= 0
+      Class811.method2231(this.field6852).active = Class811.method2232(this.field6852) >= 0
          && Class811.method2232(this.field6852) < this.method6031()
          && !((Class2024)Class811.method2223(this.field6852).get(Class811.method2232(this.field6852))).method8649();
    }

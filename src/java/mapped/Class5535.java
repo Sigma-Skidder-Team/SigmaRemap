@@ -1,16 +1,18 @@
 package mapped;
 
+import net.minecraft.world.Difficulty;
+
 import java.io.IOException;
 
 public class Class5535 implements Packet<Class5116> {
    private static String[] field24574;
-   private Class2197 field24575;
+   private Difficulty field24575;
    private boolean field24576;
 
    public Class5535() {
    }
 
-   public Class5535(Class2197 var1, boolean var2) {
+   public Class5535(Difficulty var1, boolean var2) {
       this.field24575 = var1;
       this.field24576 = var2;
    }
@@ -21,7 +23,7 @@ public class Class5535 implements Packet<Class5116> {
 
    @Override
    public void method17175(PacketBuffer var1) throws IOException {
-      this.field24575 = Class2197.method8907(var1.readUnsignedByte());
+      this.field24575 = Difficulty.method8907(var1.readUnsignedByte());
       this.field24576 = var1.readBoolean();
    }
 
@@ -35,7 +37,7 @@ public class Class5535 implements Packet<Class5116> {
       return this.field24576;
    }
 
-   public Class2197 method17400() {
+   public Difficulty method17400() {
       return this.field24575;
    }
 }

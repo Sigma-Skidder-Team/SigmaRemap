@@ -1,13 +1,15 @@
 package mapped;
 
+import com.mojang.realmsclient.gui.screens.RealmsResetWorldScreen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class1242 extends Class1206 {
+public class Class1242 extends Button {
    private static String[] field6592;
    private final ResourceLocation field6593;
-   public final Class814 field6594;
+   public final RealmsResetWorldScreen field6594;
 
-   public Class1242(Class814 var1, int var2, int var3, ITextComponent var4, ResourceLocation var5, Class7192 var6) {
+   public Class1242(RealmsResetWorldScreen var1, int var2, int var3, ITextComponent var4, ResourceLocation var5, Class7192 var6) {
       super(var2, var3, 60, 72, var4, var6);
       this.field6594 = var1;
       this.field6593 = var5;
@@ -15,7 +17,7 @@ public class Class1242 extends Class1206 {
 
    @Override
    public void method5655(MatrixStack var1, int var2, int var3, float var4) {
-      Class814.method2270(
+      RealmsResetWorldScreen.method2270(
          this.field6594,
          var1,
          this.field6477,

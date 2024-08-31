@@ -20,14 +20,14 @@ public class Class1237 extends Class1236 {
 
    @Override
    public void method5812() {
-      if (Class1343.method6456(this.field6587).field6482) {
+      if (Class1343.method6456(this.field6587).active) {
          Class1343.method6457(this.field6587, (int) MathHelper.method37822(MathHelper.method37778(this.field6584, 0.0, 1.0), this.field6585, this.field6586));
       }
    }
 
    @Override
    public void method5813() {
-      this.method5743(
+      this.setMessage(
          new TranslationTextComponent("mco.configure.world.spawnProtection")
             .appendString(": ")
             .append(

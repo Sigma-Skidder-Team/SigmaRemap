@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 
@@ -125,7 +126,7 @@ public class Class1101 extends Class1009 {
 
       if (var4 == null) {
          var4 = new Class5092();
-         if (var1.method6997() == Class2197.field14354 && var1.method6814().nextFloat() < 0.1F * var2.method38330()) {
+         if (var1.method6997() == Difficulty.field14354 && var1.method6814().nextFloat() < 0.1F * var2.method38330()) {
             ((Class5092)var4).method15575(var1.method6814());
          }
       }

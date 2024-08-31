@@ -1,14 +1,17 @@
 package mapped;
 
+import net.minecraft.client.AbstractOption;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
 public class Class838 extends Screen {
    private static String[] field4628;
-   public List<Class1197> field4629 = this.field4566;
+   public List<Widget> field4629 = this.field4566;
    public FontRenderer field4630 = Minecraft.getInstance().fontRenderer;
    public boolean field4631 = false;
 
@@ -16,18 +19,18 @@ public class Class838 extends Screen {
       super(var1);
    }
 
-   public void method2563(Class1197 var1) {
+   public void method2563(Widget var1) {
    }
 
-   public void method2564(Class1197 var1) {
+   public void method2564(Widget var1) {
    }
 
    @Override
    public boolean method1958(double var1, double var3, int var5) {
       boolean var8 = super.method1958(var1, var3, var5);
       this.field4631 = true;
-      Class1197 var9 = method2566((int)var1, (int)var3, this.field4629);
-      if (var9 != null && var9.field6482) {
+      Widget var9 = method2566((int)var1, (int)var3, this.field4629);
+      if (var9 != null && var9.active) {
          if (var5 == 1 && var9 instanceof Class1230) {
             Class1230 var10 = (Class1230)var9;
             if (var10.method5811() == AbstractOption.field25344) {
@@ -65,9 +68,9 @@ public class Class838 extends Screen {
       return this.field4631 ? super.method2516(var1, var3, var5, var6, var8) : false;
    }
 
-   public static Class1197 method2566(int var0, int var1, List<Class1197> var2) {
+   public static Widget method2566(int var0, int var1, List<Widget> var2) {
       for (int var5 = 0; var5 < var2.size(); var5++) {
-         Class1197 var6 = (Class1197)var2.get(var5);
+         Widget var6 = (Widget)var2.get(var5);
          if (var6.field6483) {
             int var7 = Class7540.method24650(var6);
             int var8 = Class7540.method24651(var6);

@@ -142,7 +142,7 @@ public class Class1194 extends AbstractGui {
    }
 
    public void method5711(MatrixStack var1, int var2, int var3, float var4, int var5, int var6) {
-      boolean var9 = var5 + var2 + this.field6467 + this.field6461 + 26 >= this.field6457.method6013().field4564;
+      boolean var9 = var5 + var2 + this.field6467 + this.field6461 + 26 >= this.field6457.method6013().width;
       String var10 = this.field6466 != null ? this.field6466.method8497() : null;
       int var11 = var10 != null ? this.field6463.fontRenderer.getStringWidth(var10) : 0;
       boolean var12 = 113 - var3 - this.field6468 - 26 <= 6 + this.field6462.size() * 9;

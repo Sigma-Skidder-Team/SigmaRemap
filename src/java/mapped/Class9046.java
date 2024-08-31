@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.Widget;
 
 import java.awt.Rectangle;
 import java.util.Arrays;
@@ -20,11 +22,11 @@ public class Class9046 {
       this.field41421 = var2;
    }
 
-   public void method33640(MatrixStack var1, int var2, int var3, List<Class1197> var4) {
+   public void method33640(MatrixStack var1, int var2, int var3, List<Widget> var4) {
       if (Math.abs(var2 - this.field41422) <= 5 && Math.abs(var3 - this.field41423) <= 5) {
          short var7 = 700;
          if (System.currentTimeMillis() >= this.field41424 + (long)var7) {
-            Class1197 var8 = Class838.method2566(var2, var3, var4);
+            Widget var8 = Class838.method2566(var2, var3, var4);
             if (var8 != null) {
                Rectangle var9 = this.field41421.method24668(this.field41420, var2, var3);
                String[] var10 = this.field41421.method24669(var8, var9.width);

@@ -1,7 +1,9 @@
 package mapped;
 
 import com.mojang.datafixers.util.Pair;
+import com.mojang.realmsclient.dto.RealmsServer;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -11,7 +13,7 @@ import javax.annotation.Nullable;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class Class1218 extends Class1206 implements Class1219 {
+public class Class1218 extends Button implements Class1219 {
    public static final ResourceLocation field6535 = new ResourceLocation("realms", "textures/gui/realms/slot_frame.png");
    public static final ResourceLocation field6536 = new ResourceLocation("realms", "textures/gui/realms/empty_frame.png");
    public static final ResourceLocation field6537 = new ResourceLocation("minecraft", "textures/gui/title/background/panorama_0.png");
@@ -20,13 +22,13 @@ public class Class1218 extends Class1206 implements Class1219 {
    private static final ITextComponent field6540 = new TranslationTextComponent("mco.configure.world.slot.tooltip.active");
    private static final ITextComponent field6541 = new TranslationTextComponent("mco.configure.world.slot.tooltip.minigame");
    private static final ITextComponent field6542 = new TranslationTextComponent("mco.configure.world.slot.tooltip");
-   private final Supplier<Class6128> field6543;
+   private final Supplier<RealmsServer> field6543;
    private final Consumer<ITextComponent> field6544;
    private final int field6545;
    private int field6546;
    private Class8638 field6547;
 
-   public Class1218(int var1, int var2, int var3, int var4, Supplier<Class6128> var5, Consumer<ITextComponent> var6, int var7, Class7192 var8) {
+   public Class1218(int var1, int var2, int var3, int var4, Supplier<RealmsServer> var5, Consumer<ITextComponent> var6, int var7, Class7192 var8) {
       super(var1, var2, var3, var4, StringTextComponent.EMPTY, var8);
       this.field6543 = var5;
       this.field6545 = var7;
@@ -41,7 +43,7 @@ public class Class1218 extends Class1206 implements Class1219 {
    @Override
    public void tick() {
       this.field6546++;
-      Class6128 var3 = this.field6543.get();
+      RealmsServer var3 = this.field6543.get();
       if (var3 != null) {
          Class6125 var4 = var3.field27451.get(this.field6545);
          boolean var5 = this.field6545 == 4;
@@ -67,11 +69,11 @@ public class Class1218 extends Class1206 implements Class1219 {
          Class2194 var12 = method5776(var3, var6, var5);
          Pair var13 = this.method5777(var3, var7, var11, var5, var12);
          this.field6547 = new Class8638(var6, var7, var8, var10, var11, var5, var12, (ITextComponent)var13.getFirst());
-         this.method5743((ITextComponent)var13.getSecond());
+         this.setMessage((ITextComponent)var13.getSecond());
       }
    }
 
-   private static Class2194 method5776(Class6128 var0, boolean var1, boolean var2) {
+   private static Class2194 method5776(RealmsServer var0, boolean var1, boolean var2) {
       if (!var1) {
          if (!var2) {
             return Class2194.field14339;
@@ -87,7 +89,7 @@ public class Class1218 extends Class1206 implements Class1219 {
       return Class2194.field14338;
    }
 
-   private Pair<ITextComponent, ITextComponent> method5777(Class6128 var1, String var2, boolean var3, boolean var4, Class2194 var5) {
+   private Pair<ITextComponent, ITextComponent> method5777(RealmsServer var1, String var2, boolean var3, boolean var4, Class2194 var5) {
       if (var5 != Class2194.field14338) {
          Object var8;
          if (!var4) {

@@ -1,11 +1,14 @@
 package mapped;
 
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.Widget;
+
 import java.awt.Rectangle;
 
 public class Class7550 implements Class7547 {
    @Override
    public Rectangle method24668(Screen var1, int var2, int var3) {
-      int var6 = var1.field4564 - 450;
+      int var6 = var1.width - 450;
       int var7 = 35;
       if (var6 < 10) {
          var6 = 10;
@@ -26,7 +29,7 @@ public class Class7550 implements Class7547 {
    }
 
    @Override
-   public String[] method24669(Class1197 var1, int var2) {
+   public String[] method24669(Widget var1, int var2) {
       if (!(var1 instanceof Class1212)) {
          if (var1 instanceof Class1215) {
             Class1215 var5 = (Class1215)var1;

@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4407;
 import com.mojang.datafixers.util.Pair;
 import mapped.*;
+import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
@@ -197,7 +198,7 @@ public class IngameGui extends AbstractGui {
                     int var11 = var18 << 24 & 0xFF000000;
                     int var12 = var5.method38821(this.field6720);
                     this.method5962(var1, var5, -4, var12, 16777215 | var11);
-                    var5.method38805(var1, this.field6720, (float) (-var12 / 2), -4.0F, var22 | var11);
+                    var5.func_243248_b(var1, this.field6720, (float) (-var12 / 2), -4.0F, var22 | var11);
                     RenderSystem.disableBlend();
                     RenderSystem.popMatrix();
                 }
@@ -649,12 +650,12 @@ public class IngameGui extends AbstractGui {
             int var25 = var29 - var17 * 9;
             int var26 = this.field6741 - 3 + 2;
             method5686(var1, var31 - 2, var25, var26, var25 + 9, var18);
-            this.method5991().method38805(var1, var23, (float) var31, (float) var25, -1);
+            this.method5991().func_243248_b(var1, var23, (float) var31, (float) var25, -1);
             this.method5991().method38801(var1, var24, (float) (var26 - this.method5991().getStringWidth(var24)), (float) var25, -1);
             if (var17 == var6.size()) {
                 method5686(var1, var31 - 2, var25 - 9 - 1, var26, var25 - 1, var19);
                 method5686(var1, var31 - 2, var25 - 1, var26, var25, var18);
-                this.method5991().method38805(var1, var9, (float) (var31 + var11 / 2 - var10 / 2), (float) (var25 - 9), -1);
+                this.method5991().func_243248_b(var1, var9, (float) (var31 + var11 / 2 - var10 / 2), (float) (var25 - 9), -1);
             }
         }
     }

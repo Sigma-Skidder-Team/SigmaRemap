@@ -1,15 +1,19 @@
 package mapped;
 
+import com.mojang.realmsclient.dto.RealmsServer;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.realms.RealmsLabel;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class824 extends Class798 {
+public class Class824 extends RealmsScreen {
    private static final Logger field4517 = LogManager.getLogger();
    private static final ResourceLocation field4518 = new ResourceLocation("realms", "textures/gui/realms/op_icon.png");
    private static final ResourceLocation field4519 = new ResourceLocation("realms", "textures/gui/realms/user_icon.png");
@@ -21,41 +25,41 @@ public class Class824 extends Class798 {
    private static final ITextComponent field4525 = new TranslationTextComponent("mco.configure.world.invited");
    private ITextComponent field4526;
    private final Class815 field4527;
-   private final Class6128 field4528;
+   private final RealmsServer field4528;
    private Class1290 field4529;
    private int field4530;
    private int field4531;
    private int field4532;
-   private Class1206 field4533;
-   private Class1206 field4534;
+   private Button field4533;
+   private Button field4534;
    private int field4535 = -1;
    private String field4536;
    private int field4537 = -1;
    private boolean field4538;
-   private Class1153 field4539;
+   private RealmsLabel field4539;
    private Class2162 field4540 = Class2162.field14182;
 
-   public Class824(Class815 var1, Class6128 var2) {
+   public Class824(Class815 var1, RealmsServer var2) {
       this.field4527 = var1;
       this.field4528 = var2;
    }
 
    @Override
-   public void method1921() {
-      this.field4530 = this.field4564 / 2 - 160;
+   public void init() {
+      this.field4530 = this.width / 2 - 160;
       this.field4531 = 150;
-      this.field4532 = this.field4564 / 2 + 12;
-      this.mc.keyboardListener.method36347(true);
+      this.field4532 = this.width / 2 + 12;
+      this.mc.keyboardListener.enableRepeatEvents(true);
       this.field4529 = new Class1290(this);
       this.field4529.method6035(this.field4530);
-      this.<Class1290>method2456(this.field4529);
+      this.<Class1290>addListener(this.field4529);
 
       for (Class6114 var4 : this.field4528.field27450) {
          this.field4529.method6116(var4);
       }
 
-      this.<Class1206>method2455(
-         new Class1206(
+      this.<Button>addButton(
+         new Button(
             this.field4532,
             method1929(1),
             this.field4531 + 10,
@@ -64,8 +68,8 @@ public class Class824 extends Class798 {
             var1 -> this.mc.displayGuiScreen(new Class805(this.field4527, this, this.field4528))
          )
       );
-      this.field4533 = this.<Class1206>method2455(
-         new Class1206(
+      this.field4533 = this.<Button>addButton(
+         new Button(
             this.field4532,
             method1929(7),
             this.field4531 + 10,
@@ -74,8 +78,8 @@ public class Class824 extends Class798 {
             var1 -> this.method2414(this.field4537)
          )
       );
-      this.field4534 = this.<Class1206>method2455(
-         new Class1206(
+      this.field4534 = this.<Button>addButton(
+         new Button(
             this.field4532, method1929(9), this.field4531 + 10, 20, new TranslationTextComponent("mco.configure.world.invites.ops.tooltip"), var1 -> {
                if (!this.field4528.field27450.get(this.field4537).method18879()) {
                   this.method2411(this.field4537);
@@ -85,15 +89,15 @@ public class Class824 extends Class798 {
             }
          )
       );
-      this.<Class1206>method2455(
-         new Class1206(
+      this.<Button>addButton(
+         new Button(
             this.field4532 + this.field4531 / 2 + 2, method1929(12), this.field4531 / 2 + 10 - 2, 20, DialogTexts.field30663, var1 -> this.method2410()
          )
       );
-      this.field4539 = this.<Class1153>method2456(
-         new Class1153(new TranslationTextComponent("mco.configure.world.players.title"), this.field4564 / 2, 17, 16777215)
+      this.field4539 = this.<RealmsLabel>addListener(
+         new RealmsLabel(new TranslationTextComponent("mco.configure.world.players.title"), this.width / 2, 17, 16777215)
       );
-      this.method1930();
+      this.func_231411_u_();
       this.method2408();
    }
 
@@ -108,13 +112,13 @@ public class Class824 extends Class798 {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          this.method2410();
          return true;
@@ -196,12 +200,12 @@ public class Class824 extends Class798 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.field4526 = null;
       this.field4540 = Class2162.field14182;
-      this.method2469(var1);
+      this.renderBackground(var1);
       if (this.field4529 != null) {
-         this.field4529.method1923(var1, var2, var3, var4);
+         this.field4529.render(var1, var2, var3, var4);
       }
 
       int var7 = method1929(12) + 20;
@@ -211,21 +215,21 @@ public class Class824 extends Class798 {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var10 = 32.0F;
       var9.begin(7, DefaultVertexFormats.field43346);
-      var9.pos(0.0, (double)this.field4565, 0.0)
-         .tex(0.0F, (float)(this.field4565 - var7) / 32.0F + 0.0F)
+      var9.pos(0.0, (double)this.height, 0.0)
+         .tex(0.0F, (float)(this.height - var7) / 32.0F + 0.0F)
          .color(64, 64, 64, 255)
          .endVertex();
-      var9.pos((double)this.field4564, (double)this.field4565, 0.0)
-         .tex((float)this.field4564 / 32.0F, (float)(this.field4565 - var7) / 32.0F + 0.0F)
+      var9.pos((double)this.width, (double)this.height, 0.0)
+         .tex((float)this.width / 32.0F, (float)(this.height - var7) / 32.0F + 0.0F)
          .color(64, 64, 64, 255)
          .endVertex();
-      var9.pos((double)this.field4564, (double)var7, 0.0).tex((float)this.field4564 / 32.0F, 0.0F).color(64, 64, 64, 255).endVertex();
+      var9.pos((double)this.width, (double)var7, 0.0).tex((float)this.width / 32.0F, 0.0F).color(64, 64, 64, 255).endVertex();
       var9.pos(0.0, (double)var7, 0.0).tex(0.0F, 0.0F).color(64, 64, 64, 255).endVertex();
       var8.draw();
-      this.field4539.method5542(this, var1);
+      this.field4539.func_239560_a_(this, var1);
       if (this.field4528 != null && this.field4528.field27450 != null) {
          this.fontRenderer
-            .method38805(
+            .func_243248_b(
                var1,
                new StringTextComponent("")
                   .append(field4525)
@@ -237,10 +241,10 @@ public class Class824 extends Class798 {
                10526880
             );
       } else {
-         this.fontRenderer.method38805(var1, field4525, (float)this.field4530, (float)method1929(0), 10526880);
+         this.fontRenderer.func_243248_b(var1, field4525, (float)this.field4530, (float)method1929(0), 10526880);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
       if (this.field4528 != null) {
          this.method2416(var1, this.field4526, var2, var3);
       }
@@ -338,7 +342,7 @@ public class Class824 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class6128 method2434(Class824 var0) {
+   public static RealmsServer method2434(Class824 var0) {
       return var0.field4528;
    }
 

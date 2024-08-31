@@ -15,11 +15,14 @@ import io.netty.buffer.Unpooled;
 import it.unimi.dsi.fastutil.longs.LongIterator;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.resources.ResourcePackInfo;
+import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.filter.IChatFilter;
+import net.minecraft.world.Difficulty;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -54,7 +57,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    private static final Logger LOGGER = LogManager.getLogger();
    public static final File USER_CACHE_FILE = new File("usercache.json");
    public static final WorldSettings field1210 = new WorldSettings(
-      "Demo World", Class1894.field11102, false, Class2197.field14353, false, new Class5462(), DatapackCodec.field33531
+      "Demo World", Class1894.field11102, false, Difficulty.field14353, false, new Class5462(), DatapackCodec.field33531
    );
    public final SaveFormat.LevelSave field1211;
    public final Class8716 field1212;
@@ -314,7 +317,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    private void method1283(IServerConfiguration var1) {
-      var1.method20085(Class2197.field14351);
+      var1.method20085(Difficulty.field14351);
       var1.method20086(true);
       Class6608 var4 = var1.method20098();
       var4.method20044(false);
@@ -798,7 +801,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
             }
 
             var3.append(var5.getName());
-            if (!var5.method7949().method8720()) {
+            if (!var5.getCompatibility().isCompatible()) {
                var3.append(" (incompatible)");
             }
          }
@@ -853,9 +856,9 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       }
    }
 
-   public void method1336(Class2197 var1, boolean var2) {
+   public void method1336(Difficulty var1, boolean var2) {
       if (var2 || !this.field1269.method20048()) {
-         this.field1269.method20085(!this.field1269.method20045() ? var1 : Class2197.field14354);
+         this.field1269.method20085(!this.field1269.method20045() ? var1 : Difficulty.field14354);
          this.method1338();
          this.getPlayerList().method19488().forEach(this::method1340);
       }
@@ -882,7 +885,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public boolean method1341() {
-      return this.field1269.method20047() != Class2197.field14351;
+      return this.field1269.method20047() != Difficulty.field14351;
    }
 
    public boolean method1342() {

@@ -19,6 +19,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 import java.nio.charset.StandardCharsets;
@@ -414,7 +415,7 @@ public abstract class PlayerEntity extends Class880 {
          this.field4907--;
       }
 
-      if (this.world.method6997() == Class2197.field14351 && this.world.method6789().method17135(Class5462.field24231)) {
+      if (this.world.method6997() == Difficulty.field14351 && this.world.method6789().method17135(Class5462.field24231)) {
          if (this.getHealth() < this.method3075() && this.ticksExisted % 20 == 0) {
             this.method3041(1.0F);
          }
@@ -756,15 +757,15 @@ public abstract class PlayerEntity extends Class880 {
             if (!this.getShouldBeDead()) {
                this.method2949();
                if (var1.method31111()) {
-                  if (this.world.method6997() == Class2197.field14351) {
+                  if (this.world.method6997() == Difficulty.field14351) {
                      var2 = 0.0F;
                   }
 
-                  if (this.world.method6997() == Class2197.field14352) {
+                  if (this.world.method6997() == Difficulty.field14352) {
                      var2 = Math.min(var2 / 2.0F + 1.0F, var2);
                   }
 
-                  if (this.world.method6997() == Class2197.field14354) {
+                  if (this.world.method6997() == Difficulty.field14354) {
                      var2 = var2 * 3.0F / 2.0F;
                   }
                }

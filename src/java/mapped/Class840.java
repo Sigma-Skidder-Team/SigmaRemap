@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.client.AbstractOption;
+import net.minecraft.client.GameSettings;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class840 extends Class838 {
@@ -33,30 +37,30 @@ public class Class840 extends Class838 {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       this.field4629.clear();
 
       for (int var3 = 0; var3 < field4638.length; var3++) {
          AbstractOption var4 = field4638[var3];
-         int var5 = this.field4564 / 2 - 155 + var3 % 2 * 160;
-         int var6 = this.field4565 / 6 + 21 * (var3 / 2) - 12;
-         this.<Class1197>method2455(var4.method17946(this.mc.gameSettings, var5, var6, 150));
+         int var5 = this.width / 2 - 155 + var3 % 2 * 160;
+         int var6 = this.height / 6 + 21 * (var3 / 2) - 12;
+         this.<Widget>addButton(var4.createWidget(this.mc.gameSettings, var5, var6, 150));
       }
 
-      this.<Class1210>method2455(
-         new Class1210(210, this.field4564 / 2 - 155, this.field4565 / 6 + 168 + 11, 70, 20, Class8043.method27619("of.options.animation.allOn"))
+      this.<Class1210>addButton(
+         new Class1210(210, this.width / 2 - 155, this.height / 6 + 168 + 11, 70, 20, Class8043.method27619("of.options.animation.allOn"))
       );
-      this.<Class1210>method2455(
-         new Class1210(211, this.field4564 / 2 - 155 + 80, this.field4565 / 6 + 168 + 11, 70, 20, Class8043.method27619("of.options.animation.allOff"))
+      this.<Class1210>addButton(
+         new Class1210(211, this.width / 2 - 155 + 80, this.height / 6 + 168 + 11, 70, 20, Class8043.method27619("of.options.animation.allOff"))
       );
-      this.<Class1211>method2455(new Class1211(200, this.field4564 / 2 + 5, this.field4565 / 6 + 168 + 11, I18n.format("gui.done")));
+      this.<Class1211>addButton(new Class1211(200, this.width / 2 + 5, this.height / 6 + 168 + 11, I18n.format("gui.done")));
    }
 
    @Override
-   public void method2563(Class1197 var1) {
+   public void method2563(Widget var1) {
       if (var1 instanceof Class1210) {
          Class1210 var4 = (Class1210)var1;
-         if (var4.field6482) {
+         if (var4.active) {
             if (var4.field6523 == 200) {
                this.mc.gameSettings.saveOptions();
                this.mc.displayGuiScreen(this.field4636);
@@ -82,9 +86,9 @@ public class Class840 extends Class838 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      method5691(var1, this.mc.fontRenderer, this.field4560, this.field4564 / 2, 15, 16777215);
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      drawCenteredString(var1, this.mc.fontRenderer, this.title, this.width / 2, 15, 16777215);
+      super.render(var1, var2, var3, var4);
    }
 }

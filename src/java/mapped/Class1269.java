@@ -93,7 +93,7 @@ public class Class1269 extends AbstractGui implements Class1270 {
                }
             }
 
-            this.field6744.fontRenderer.method38805(var1, var14, (float)(-var25 / 2), (float)(-var23), var27 + -16777216);
+            this.field6744.fontRenderer.func_243248_b(var1, var14, (float)(-var25 / 2), (float)(-var23), var27 + -16777216);
             RenderSystem.popMatrix();
             var8++;
          }

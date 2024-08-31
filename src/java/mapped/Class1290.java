@@ -80,7 +80,7 @@ public class Class1290 extends Class1286<Class1166> {
 
    @Override
    public void method6039(MatrixStack var1) {
-      this.field6854.method2469(var1);
+      this.field6854.renderBackground(var1);
    }
 
    @Override

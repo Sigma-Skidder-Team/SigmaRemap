@@ -5,6 +5,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.CharacterManager;
 import net.minecraft.util.text.TextFormatting;

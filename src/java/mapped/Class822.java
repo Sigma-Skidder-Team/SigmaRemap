@@ -2,8 +2,11 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.RateLimiter;
+import com.mojang.realmsclient.gui.screens.RealmsResetWorldScreen;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
@@ -23,12 +26,12 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.Stream;
 import java.util.zip.GZIPOutputStream;
 
-public class Class822 extends Class798 {
+public class Class822 extends RealmsScreen {
    private static final Logger field4479 = LogManager.getLogger();
    private static final ReentrantLock field4480 = new ReentrantLock();
    private static final String[] field4481 = new String[]{"", ".", ". .", ". . ."};
    private static final ITextComponent field4482 = new TranslationTextComponent("mco.upload.verifying");
-   private final Class814 field4483;
+   private final RealmsResetWorldScreen field4483;
    private final Class2024 field4484;
    private final long field4485;
    private final int field4486;
@@ -41,15 +44,15 @@ public class Class822 extends Class798 {
    private volatile boolean field4493;
    private volatile boolean field4494 = true;
    private volatile boolean field4495;
-   private Class1206 field4496;
-   private Class1206 field4497;
+   private Button field4496;
+   private Button field4497;
    private int field4498;
    private Long field4499;
    private Long field4500;
    private long field4501;
    private final Runnable field4502;
 
-   public Class822(long var1, int var3, Class814 var4, Class2024 var5, Runnable var6) {
+   public Class822(long var1, int var3, RealmsResetWorldScreen var4, Class2024 var5, Runnable var6) {
       this.field4485 = var1;
       this.field4486 = var3;
       this.field4483 = var4;
@@ -60,14 +63,14 @@ public class Class822 extends Class798 {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
-      this.field4496 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 - 42, 200, 20, DialogTexts.field30663, var1 -> this.method2361())
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
+      this.field4496 = this.<Button>addButton(
+         new Button(this.width / 2 - 100, this.height - 42, 200, 20, DialogTexts.field30663, var1 -> this.method2361())
       );
       this.field4496.field6483 = false;
-      this.field4497 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 - 42, 200, 20, DialogTexts.GUI_CANCEL, var1 -> this.method2362())
+      this.field4497 = this.<Button>addButton(
+         new Button(this.width / 2 - 100, this.height - 42, 200, 20, DialogTexts.GUI_CANCEL, var1 -> this.method2362())
       );
       if (!this.field4495) {
          if (this.field4483.field4400 != -1) {
@@ -86,7 +89,7 @@ public class Class822 extends Class798 {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    private void method2361() {
@@ -99,9 +102,9 @@ public class Class822 extends Class798 {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          if (!this.field4494) {
             this.method2361();
@@ -114,14 +117,14 @@ public class Class822 extends Class798 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
       if (!this.field4493 && this.field4487.field31909 != 0L && this.field4487.field31909 == this.field4487.field31910) {
          this.field4490 = field4482;
-         this.field4497.field6482 = false;
+         this.field4497.active = false;
       }
 
-      method5691(var1, this.fontRenderer, this.field4490, this.field4564 / 2, 50, 16777215);
+      drawCenteredString(var1, this.fontRenderer, this.field4490, this.width / 2, 50, 16777215);
       if (this.field4494) {
          this.method2363(var1);
       }
@@ -133,16 +136,16 @@ public class Class822 extends Class798 {
 
       if (this.field4489 != null) {
          for (int var7 = 0; var7 < this.field4489.length; var7++) {
-            method5691(var1, this.fontRenderer, this.field4489[var7], this.field4564 / 2, 110 + 12 * var7, 16711680);
+            drawCenteredString(var1, this.fontRenderer, this.field4489[var7], this.width / 2, 110 + 12 * var7, 16711680);
          }
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    private void method2363(MatrixStack var1) {
       int var4 = this.fontRenderer.method38821(this.field4490);
-      this.fontRenderer.method38801(var1, field4481[this.field4498 / 10 % field4481.length], (float)(this.field4564 / 2 + var4 / 2 + 5), 50.0F, 16777215);
+      this.fontRenderer.method38801(var1, field4481[this.field4498 / 10 % field4481.length], (float)(this.width / 2 + var4 / 2 + 5), 50.0F, 16777215);
    }
 
    private void method2364(MatrixStack var1) {
@@ -150,7 +153,7 @@ public class Class822 extends Class798 {
       this.field4491 = String.format(Locale.ROOT, "%.1f", var4 * 100.0);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.disableTexture();
-      double var6 = (double)(this.field4564 / 2 - 100);
+      double var6 = (double)(this.width / 2 - 100);
       double var8 = 0.5;
       Tessellator var10 = Tessellator.getInstance();
       BufferBuilder var11 = var10.getBuffer();
@@ -165,7 +168,7 @@ public class Class822 extends Class798 {
       var11.pos(var6, 80.0, 0.0).color(128, 128, 128, 255).endVertex();
       var10.draw();
       RenderSystem.enableTexture();
-      method5690(var1, this.fontRenderer, this.field4491 + " %", this.field4564 / 2, 84, 16777215);
+      method5690(var1, this.fontRenderer, this.field4491 + " %", this.width / 2, 84, 16777215);
    }
 
    private void method2365(MatrixStack var1) {
@@ -191,7 +194,7 @@ public class Class822 extends Class798 {
       if (var2 > 0L) {
          int var6 = this.fontRenderer.getStringWidth(this.field4491);
          String var7 = "(" + Class2072.method8729(var2) + "/s)";
-         this.fontRenderer.method38801(var1, var7, (float)(this.field4564 / 2 + var6 / 2 + 15), 84.0F, 16777215);
+         this.fontRenderer.method38801(var1, var7, (float)(this.width / 2 + var6 / 2 + 15), 84.0F, 16777215);
       }
    }
 
@@ -266,7 +269,7 @@ public class Class822 extends Class798 {
                                     if (var3x.field38749 >= 200 && var3x.field38749 < 300) {
                                        this.field4493 = true;
                                        this.field4490 = new TranslationTextComponent("mco.upload.done");
-                                       this.field4496.method5743(DialogTexts.field30658);
+                                       this.field4496.setMessage(DialogTexts.field30658);
                                        Class8510.method30150(var5);
                                     } else if (var3x.field38749 == 400 && var3x.field38750 != null) {
                                        this.method2368(new TranslationTextComponent("mco.upload.failed", var3x.field38750));

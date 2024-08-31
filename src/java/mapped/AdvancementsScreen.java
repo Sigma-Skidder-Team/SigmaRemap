@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -24,7 +25,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       this.field6185.clear();
       this.field6186 = null;
       this.field6184.method31511(this);
@@ -47,8 +48,8 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    @Override
    public boolean method1958(double var1, double var3, int var5) {
       if (var5 == 0) {
-         int var8 = (this.field4564 - 252) / 2;
-         int var9 = (this.field4565 - 140) / 2;
+         int var8 = (this.width - 252) / 2;
+         int var9 = (this.height - 140) / 2;
 
          for (Class1271 var11 : this.field6185.values()) {
             if (var11.method6007(var8, var9, var1, var3)) {
@@ -62,9 +63,9 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (!this.mc.gameSettings.keyBindAdvancements.matchesKey(var1, var2)) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          this.mc.displayGuiScreen((Screen)null);
          this.mc.mouseHelper.grabMouse();
@@ -73,10 +74,10 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      int var7 = (this.field4564 - 252) / 2;
-      int var8 = (this.field4565 - 140) / 2;
-      this.method2469(var1);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      int var7 = (this.width - 252) / 2;
+      int var8 = (this.height - 140) / 2;
+      this.renderBackground(var1);
       this.method5445(var1, var2, var3, var7, var8);
       this.method5446(var1, var7, var8);
       this.method5447(var1, var2, var3, var7, var8);
@@ -112,8 +113,8 @@ public class AdvancementsScreen extends Screen implements Class1131 {
       } else {
          method5686(var1, var4 + 9, var5 + 18, var4 + 9 + 234, var5 + 18 + 113, -16777216);
          int var9 = var4 + 9 + 117;
-         method5691(var1, this.fontRenderer, field6182, var9, var5 + 18 + 56 - 4, -1);
-         method5691(var1, this.fontRenderer, field6181, var9, var5 + 18 + 113 - 9, -1);
+         drawCenteredString(var1, this.fontRenderer, field6182, var9, var5 + 18 + 56 - 4, -1);
+         drawCenteredString(var1, this.fontRenderer, field6181, var9, var5 + 18 + 113 - 9, -1);
       }
    }
 
@@ -139,7 +140,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
          RenderSystem.disableBlend();
       }
 
-      this.fontRenderer.method38805(var1, field6183, (float)(var2 + 8), (float)(var3 + 6), 4210752);
+      this.fontRenderer.func_243248_b(var1, field6183, (float)(var2 + 8), (float)(var3 + 6), 4210752);
    }
 
    private void method5447(MatrixStack var1, int var2, int var3, int var4, int var5) {

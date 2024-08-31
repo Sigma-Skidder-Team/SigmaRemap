@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -23,19 +24,19 @@ public class Class830 extends ConfirmScreen {
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
+   public void init() {
+      super.init();
       this.field4566.clear();
       this.field4561.clear();
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 50 - 105, this.field4565 / 6 + 96, 100, 20, this.field4602, var1 -> this.field4605.accept(true))
+      this.<Button>addButton(
+         new Button(this.width / 2 - 50 - 105, this.height / 6 + 96, 100, 20, this.field4602, var1 -> this.field4605.accept(true))
       );
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 50, this.field4565 / 6 + 96, 100, 20, this.field4607, var1 -> {
+      this.<Button>addButton(new Button(this.width / 2 - 50, this.height / 6 + 96, 100, 20, this.field4607, var1 -> {
          this.method2539();
          this.field4605.accept(false);
       }));
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 50 + 105, this.field4565 / 6 + 96, 100, 20, this.field4603, var1 -> this.field4605.accept(false))
+      this.<Button>addButton(
+         new Button(this.width / 2 - 50 + 105, this.height / 6 + 96, 100, 20, this.field4603, var1 -> this.field4605.accept(false))
       );
    }
 
@@ -44,10 +45,10 @@ public class Class830 extends ConfirmScreen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      super.render(var1, var2, var3, var4);
       if (this.field4609) {
-         method5691(var1, this.fontRenderer, this.field4606, this.field4564 / 2, 110, 16764108);
+         drawCenteredString(var1, this.fontRenderer, this.field4606, this.width / 2, 110, 16764108);
       }
    }
 }

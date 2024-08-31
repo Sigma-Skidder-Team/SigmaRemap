@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -11,8 +12,8 @@ import java.util.List;
 public class Class1188 extends Class1186 {
    private final KeyBinding field6413;
    private final ITextComponent field6414;
-   private final Class1206 field6415;
-   private final Class1206 field6416;
+   private final Button field6415;
+   private final Button field6416;
    public final Class1295 field6417;
 
    public Class1188(Class1295 var1, KeyBinding var2, ITextComponent var3) {
@@ -32,14 +33,14 @@ public class Class1188 extends Class1186 {
       this.field6417
          .field6782
          .fontRenderer
-         .method38805(var1, this.field6414, (float)(var4 + 90 - Class1295.method6128(this.field6417)), (float)(var3 + var6 / 2 - 4), 16777215);
+         .func_243248_b(var1, this.field6414, (float)(var4 + 90 - Class1295.method6128(this.field6417)), (float)(var3 + var6 / 2 - 4), 16777215);
       this.field6416.field6477 = var4 + 190;
       this.field6416.field6478 = var3;
-      this.field6416.field6482 = !this.field6413.isDefault();
-      this.field6416.method1923(var1, var7, var8, var10);
+      this.field6416.active = !this.field6413.isDefault();
+      this.field6416.render(var1, var7, var8, var10);
       this.field6415.field6477 = var4 + 105;
       this.field6415.field6478 = var3;
-      this.field6415.method5743(this.field6413.func_238171_j_());
+      this.field6415.setMessage(this.field6413.func_238171_j_());
       boolean var14 = false;
       if (!this.field6413.isInvalid()) {
          for (KeyBinding var18 : this.field6417.field6782.gameSettings.field44658) {
@@ -52,11 +53,11 @@ public class Class1188 extends Class1186 {
 
       if (!var13) {
          if (var14) {
-            this.field6415.method5743(this.field6415.method5745().deepCopy().mergeStyle(TextFormatting.RED));
+            this.field6415.setMessage(this.field6415.method5745().deepCopy().mergeStyle(TextFormatting.RED));
          }
       } else {
          this.field6415
-            .method5743(
+            .setMessage(
                new StringTextComponent("> ")
                   .append(this.field6415.method5745().deepCopy().mergeStyle(TextFormatting.YELLOW))
                   .appendString(" <")
@@ -64,7 +65,7 @@ public class Class1188 extends Class1186 {
             );
       }
 
-      this.field6415.method1923(var1, var7, var8, var10);
+      this.field6415.render(var1, var7, var8, var10);
    }
 
    @Override

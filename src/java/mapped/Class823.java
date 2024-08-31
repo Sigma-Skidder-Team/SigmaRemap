@@ -1,14 +1,19 @@
 package mapped;
 
+import com.mojang.realmsclient.RealmsMainScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.realms.RealmsLabel;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class823 extends Class798 {
+public class Class823 extends RealmsScreen {
    private static final Logger field4503 = LogManager.getLogger();
    private static final ResourceLocation field4504 = new ResourceLocation("realms", "textures/gui/realms/accept_icon.png");
    private static final ResourceLocation field4505 = new ResourceLocation("realms", "textures/gui/realms/reject_icon.png");
@@ -19,52 +24,52 @@ public class Class823 extends Class798 {
    private ITextComponent field4510;
    private boolean field4511;
    private Class1292 field4512;
-   private Class1153 field4513;
+   private RealmsLabel field4513;
    private int field4514 = -1;
-   private Class1206 field4515;
-   private Class1206 field4516;
+   private Button field4515;
+   private Button field4516;
 
    public Class823(Screen var1) {
       this.field4509 = var1;
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
       this.field4512 = new Class1292(this);
       new Class376(this, "Realms-pending-invitations-fetcher").start();
-      this.<Class1292>method2456(this.field4512);
-      this.field4515 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 174, this.field4565 - 32, 100, 20, new TranslationTextComponent("mco.invites.button.accept"), var1 -> {
+      this.<Class1292>addListener(this.field4512);
+      this.field4515 = this.<Button>addButton(
+         new Button(this.width / 2 - 174, this.height - 32, 100, 20, new TranslationTextComponent("mco.invites.button.accept"), var1 -> {
             this.method2380(this.field4514);
             this.field4514 = -1;
             this.method2382();
          })
       );
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 50, this.field4565 - 32, 100, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(new Class806(this.field4509))
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 50, this.height - 32, 100, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(new RealmsMainScreen(this.field4509))
          )
       );
-      this.field4516 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 74, this.field4565 - 32, 100, 20, new TranslationTextComponent("mco.invites.button.reject"), var1 -> {
+      this.field4516 = this.<Button>addButton(
+         new Button(this.width / 2 + 74, this.height - 32, 100, 20, new TranslationTextComponent("mco.invites.button.reject"), var1 -> {
             this.method2379(this.field4514);
             this.field4514 = -1;
             this.method2382();
          })
       );
-      this.field4513 = new Class1153(new TranslationTextComponent("mco.invites.title"), this.field4564 / 2, 12, 16777215);
-      this.<Class1153>method2456(this.field4513);
-      this.method1930();
+      this.field4513 = new RealmsLabel(new TranslationTextComponent("mco.invites.title"), this.width / 2, 12, 16777215);
+      this.<RealmsLabel>addListener(this.field4513);
+      this.func_231411_u_();
       this.method2382();
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
-         this.mc.displayGuiScreen(new Class806(this.field4509));
+         this.mc.displayGuiScreen(new RealmsMainScreen(this.field4509));
          return true;
       }
    }
@@ -86,20 +91,20 @@ public class Class823 extends Class798 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.field4510 = null;
-      this.method2469(var1);
-      this.field4512.method1923(var1, var2, var3, var4);
-      this.field4513.method5542(this, var1);
+      this.renderBackground(var1);
+      this.field4512.render(var1, var2, var3, var4);
+      this.field4513.func_239560_a_(this, var1);
       if (this.field4510 != null) {
          this.method2381(var1, this.field4510, var2, var3);
       }
 
       if (this.field4512.method6031() == 0 && this.field4511) {
-         method5691(var1, this.fontRenderer, field4506, this.field4564 / 2, this.field4565 / 2 - 20, 16777215);
+         drawCenteredString(var1, this.fontRenderer, field4506, this.width / 2, this.height / 2 - 20, 16777215);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    public void method2381(MatrixStack var1, ITextComponent var2, int var3, int var4) {

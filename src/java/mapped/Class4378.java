@@ -14,6 +14,7 @@ import com.thizzer.jtouchbar.item.view.TouchBarButton;
 import com.thizzer.jtouchbar.item.view.TouchBarButton$ButtonType;
 import com.thizzer.jtouchbar.item.view.TouchBarTextField;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
 import totalcross.json.JSONArray;
 import org.lwjgl.glfw.GLFWNativeCocoa;
 import totalcross.json.JSONObject;

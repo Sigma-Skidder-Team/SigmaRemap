@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
 
 public class Class1214 extends Class1213 {
    private static String[] field6525;

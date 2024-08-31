@@ -29,14 +29,14 @@ public class Class865 extends Class851<Class5837> {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      super.render(var1, var2, var3, var4);
       this.method2615(var1, var2, var3);
    }
 
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
-      this.method2469(var1);
+      this.renderBackground(var1);
       this.mc.getTextureManager().bindTexture(field4801);
       int var7 = this.field4734;
       int var8 = this.field4735;

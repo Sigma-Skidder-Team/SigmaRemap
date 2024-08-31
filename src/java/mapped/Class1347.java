@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1347 extends Class789 {

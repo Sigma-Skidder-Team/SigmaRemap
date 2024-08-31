@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.Difficulty;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -200,7 +201,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
          for (int var3 = 1; var3 < 3; var3++) {
             if (this.ticksExisted >= this.field5932[var3 - 1]) {
                this.field5932[var3 - 1] = this.ticksExisted + 10 + this.rand.nextInt(10);
-               if (this.world.method6997() == Class2197.field14353 || this.world.method6997() == Class2197.field14354) {
+               if (this.world.method6997() == Difficulty.field14353 || this.world.method6997() == Difficulty.field14354) {
                   int var4 = var3 - 1;
                   int var5 = this.field5933[var3 - 1];
                   this.field5933[var4] = this.field5933[var3 - 1] + 1;
@@ -442,7 +443,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
 
    @Override
    public void method3447() {
-      if (this.world.method6997() == Class2197.field14351 && this.method4256()) {
+      if (this.world.method6997() == Difficulty.field14351 && this.method4256()) {
          this.method2904();
       } else {
          this.field4973 = 0;

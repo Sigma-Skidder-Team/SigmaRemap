@@ -16,7 +16,7 @@ public abstract class Class1201 extends Class1200 {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       short var7 = 219;
       int var8 = 0;
-      if (this.field6482) {
+      if (this.active) {
          if (!this.field6499) {
             if (this.method5737()) {
                var8 += this.field6475 * 3;

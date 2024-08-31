@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class SleepInMultiplayerScreen extends ChatScreen {
@@ -8,11 +9,11 @@ public class SleepInMultiplayerScreen extends ChatScreen {
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 100, this.field4565 - 40, 200, 20, new TranslationTextComponent("multiplayer.stopSleeping"), var1 -> this.method6348()
+   public void init() {
+      super.init();
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 100, this.height - 40, 200, 20, new TranslationTextComponent("multiplayer.stopSleeping"), var1 -> this.method6348()
          )
       );
    }
@@ -23,10 +24,10 @@ public class SleepInMultiplayerScreen extends ChatScreen {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
          if (var1 == 257 || var1 == 335) {
-            String var6 = this.field7048.method5636().trim();
+            String var6 = this.field7048.getText().trim();
             if (!var6.isEmpty()) {
                this.method2465(var6);
             }
@@ -39,7 +40,7 @@ public class SleepInMultiplayerScreen extends ChatScreen {
          this.method6348();
       }
 
-      return super.method1920(var1, var2, var3);
+      return super.keyPressed(var1, var2, var3);
    }
 
    private void method6348() {

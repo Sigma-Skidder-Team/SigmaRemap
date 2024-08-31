@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -19,7 +20,7 @@ public class CreativeScreen extends Class860<Class5820> {
    private static int field4776 = ItemGroup.field31665.method23641();
    private float field4777;
    private boolean field4778;
-   private Class1189 field4779;
+   private TextFieldWidget field4779;
    private List<Class5839> field4780;
    private Class5839 field4781;
    private Class877 field4782;
@@ -202,13 +203,13 @@ public class CreativeScreen extends Class860<Class5820> {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       if (!this.mc.playerController.isInCreativeMode()) {
          this.mc.displayGuiScreen(new InventoryScreen(this.mc.player));
       } else {
-         super.method1921();
-         this.mc.keyboardListener.method36347(true);
-         this.field4779 = new Class1189(this.fontRenderer, this.field4734 + 82, this.field4735 + 6, 80, 9, new TranslationTextComponent("itemGroup.search"));
+         super.init();
+         this.mc.keyboardListener.enableRepeatEvents(true);
+         this.field4779 = new TextFieldWidget(this.fontRenderer, this.field4734 + 82, this.field4735 + 6, 80, 9, new TranslationTextComponent("itemGroup.search"));
          this.field4779.method5657(50);
          this.field4779.method5661(false);
          this.field4779.method5671(false);
@@ -225,10 +226,10 @@ public class CreativeScreen extends Class860<Class5820> {
 
    @Override
    public void resize(Minecraft var1, int var2, int var3) {
-      String var6 = this.field4779.method5636();
+      String var6 = this.field4779.getText();
       this.init(var1, var2, var3);
       this.field4779.method5635(var6);
-      if (!this.field4779.method5636().isEmpty()) {
+      if (!this.field4779.getText().isEmpty()) {
          this.method2645();
       }
    }
@@ -240,18 +241,18 @@ public class CreativeScreen extends Class860<Class5820> {
          this.mc.player.field4904.method18128(this.field4782);
       }
 
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    @Override
-   public boolean method1932(char var1, int var2) {
+   public boolean charTyped(char var1, int var2) {
       if (!this.field4783) {
          if (field4776 == ItemGroup.SEARCH.method23641()) {
-            String var5 = this.field4779.method5636();
-            if (!this.field4779.method1932(var1, var2)) {
+            String var5 = this.field4779.getText();
+            if (!this.field4779.charTyped(var1, var2)) {
                return false;
             } else {
-               if (!Objects.equals(var5, this.field4779.method5636())) {
+               if (!Objects.equals(var5, this.field4779.getText())) {
                   this.method2645();
                }
 
@@ -266,11 +267,11 @@ public class CreativeScreen extends Class860<Class5820> {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       this.field4783 = false;
       if (field4776 != ItemGroup.SEARCH.method23641()) {
          if (!this.mc.gameSettings.keyBindChat.matchesKey(var1, var2)) {
-            return super.method1920(var1, var2, var3);
+            return super.keyPressed(var1, var2, var3);
          } else {
             this.field4783 = true;
             this.method2648(ItemGroup.SEARCH);
@@ -283,15 +284,15 @@ public class CreativeScreen extends Class860<Class5820> {
             this.field4783 = true;
             return true;
          } else {
-            String var8 = this.field4779.method5636();
-            if (this.field4779.method1920(var1, var2, var3)) {
-               if (!Objects.equals(var8, this.field4779.method5636())) {
+            String var8 = this.field4779.getText();
+            if (this.field4779.keyPressed(var1, var2, var3)) {
+               if (!Objects.equals(var8, this.field4779.getText())) {
                   this.method2645();
                }
 
                return true;
             } else {
-               return this.field4779.method5746() && this.field4779.method5670() && var1 != 256 ? true : super.method1920(var1, var2, var3);
+               return this.field4779.method5746() && this.field4779.method5670() && var1 != 256 ? true : super.keyPressed(var1, var2, var3);
             }
          }
       }
@@ -306,7 +307,7 @@ public class CreativeScreen extends Class860<Class5820> {
    private void method2645() {
       this.field4727.field25498.clear();
       this.field4785.clear();
-      String var3 = this.field4779.method5636();
+      String var3 = this.field4779.getText();
       if (!var3.isEmpty()) {
          IMutableSearchTree var4;
          if (!var3.startsWith("#")) {
@@ -350,7 +351,7 @@ public class CreativeScreen extends Class860<Class5820> {
       ItemGroup var6 = ItemGroup.field31664[field4776];
       if (var6.method23648()) {
          RenderSystem.disableBlend();
-         this.fontRenderer.method38805(var1, var6.method23643(), 8.0F, 6.0F, 4210752);
+         this.fontRenderer.func_243248_b(var1, var6.method23643(), 8.0F, 6.0F, 4210752);
       }
    }
 
@@ -546,9 +547,9 @@ public class CreativeScreen extends Class860<Class5820> {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      super.render(var1, var2, var3, var4);
 
       for (ItemGroup var10 : ItemGroup.field31664) {
          if (this.method2652(var1, var10, var2, var3)) {
@@ -616,7 +617,7 @@ public class CreativeScreen extends Class860<Class5820> {
 
       this.mc.getTextureManager().bindTexture(new ResourceLocation("textures/gui/container/creative_inventory/tab_" + var7.method23645()));
       this.method5696(var1, this.field4734, this.field4735, 0, 0, this.field4721, this.field4722);
-      this.field4779.method1923(var1, var3, var4, var2);
+      this.field4779.render(var1, var3, var4, var2);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       int var12 = this.field4734 + 175;
       int var13 = this.field4735 + 18;

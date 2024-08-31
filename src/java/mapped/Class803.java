@@ -2,12 +2,15 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
 import java.util.Locale;
 
-public class Class803 extends Class798 {
+public class Class803 extends RealmsScreen {
    private final Screen field4191;
    private final Class6122 field4192;
    private Class1278 field4193;
@@ -22,27 +25,27 @@ public class Class803 extends Class798 {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 100, this.field4565 / 4 + 120 + 24, 200, 20, DialogTexts.field30663, var1 -> this.mc.displayGuiScreen(this.field4191)
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 100, this.height / 4 + 120 + 24, 200, 20, DialogTexts.field30663, var1 -> this.mc.displayGuiScreen(this.field4191)
          )
       );
       this.field4193 = new Class1278(this, this.mc);
-      this.<Class1278>method2456(this.field4193);
+      this.<Class1278>addListener(this.field4193);
       this.method5537(this.field4193);
    }
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          this.mc.displayGuiScreen(this.field4191);
          return true;
@@ -50,11 +53,11 @@ public class Class803 extends Class798 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      method5690(var1, this.fontRenderer, "Changes from last backup", this.field4564 / 2, 10, 16777215);
-      this.field4193.method1923(var1, var2, var3, var4);
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      method5690(var1, this.fontRenderer, "Changes from last backup", this.width / 2, 10, 16777215);
+      this.field4193.render(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    private ITextComponent method1949(String var1, String var2) {

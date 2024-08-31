@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.resources.ResourcePackInfo;
+
 import java.util.List;
 
 public interface Class8750 {

@@ -2,6 +2,8 @@ package mapped;
 
 import java.util.List;
 import java.util.function.Function;
+
+import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.util.text.ITextComponent;
 
 public abstract class Class4680 implements Class4681 {
@@ -24,7 +26,7 @@ public abstract class Class4680 implements Class4681 {
 
    @Override
    public Class2064 method14678() {
-      return this.field22255.method7949();
+      return this.field22255.getCompatibility();
    }
 
    @Override

@@ -5,6 +5,7 @@ import com.google.common.hash.Hashing;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -56,7 +57,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
       ITextComponent var15 = this.field6353.method8657();
       this.field6351.fontRenderer.method38801(var1, var13, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
       this.field6351.fontRenderer.method38801(var1, var14, (float)(var4 + 32 + 3), (float)(var3 + 9 + 3), 8421504);
-      this.field6351.fontRenderer.method38805(var1, var15, (float)(var4 + 32 + 3), (float)(var3 + 9 + 9 + 3), 8421504);
+      this.field6351.fontRenderer.func_243248_b(var1, var15, (float)(var4 + 32 + 3), (float)(var3 + 9 + 9 + 3), 8421504);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field6351.getTextureManager().bindTexture(this.field6356 == null ? Class1276.method6071() : this.field6354);
       RenderSystem.enableBlend();
@@ -197,7 +198,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
                         Class1276.method6078().error("Failed to delete world {}", var5, var19);
                      }
 
-                     this.field6358.method6066(() -> this.field6352.field7119.method5636(), true);
+                     this.field6358.method6066(() -> this.field6352.field7119.getText(), true);
                   }
 
                   this.field6351.displayGuiScreen(this.field6352);
@@ -223,7 +224,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
             }
 
             if (var3x) {
-               this.field6358.method6066(() -> this.field6352.field7119.method5636(), true);
+               this.field6358.method6066(() -> this.field6352.field7119.getText(), true);
             }
 
             this.field6351.displayGuiScreen(this.field6352);
@@ -231,7 +232,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
       } catch (IOException var5) {
          SystemToast.func_238535_a_(this.field6351, var3);
          Class1276.method6078().error("Failed to access level {}", var3, var5);
-         this.field6358.method6066(() -> this.field6352.field7119.method5636(), true);
+         this.field6358.method6066(() -> this.field6352.field7119.getText(), true);
       }
    }
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.GameSettings;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;

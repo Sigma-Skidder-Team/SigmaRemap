@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 import java.time.LocalDate;
@@ -117,7 +118,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
             this.field5600.method20002(4, this.field5947);
          } else {
             byte var4 = 20;
-            if (this.world.method6997() != Class2197.field14354) {
+            if (this.world.method6997() != Difficulty.field14354) {
                var4 = 40;
             }
 

@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 import java.util.UUID;
 import javax.annotation.Nullable;
 
+import com.mojang.realmsclient.dto.RealmsServer;
 import net.minecraft.client.Minecraft;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -68,10 +69,10 @@ public class Class4624 {
       return Class6118.method18885(var4);
    }
 
-   public Class6128 method14548(long var1) throws Class2435 {
+   public RealmsServer method14548(long var1) throws Class2435 {
       String var5 = this.method14584("worlds" + "/$ID".replace("$ID", String.valueOf(var1)));
       String var6 = this.method14586(Class6754.method20599(var5));
-      return Class6128.method18917(var6);
+      return RealmsServer.method18917(var6);
    }
 
    public Class6119 method14549() throws Class2435 {
@@ -126,12 +127,12 @@ public class Class4624 {
       this.method14586(Class6754.method20603(var5));
    }
 
-   public Class6128 method14557(long var1, String var3) throws Class2435 {
+   public RealmsServer method14557(long var1, String var3) throws Class2435 {
       Class6114 var6 = new Class6114();
       var6.method18876(var3);
       String var7 = this.method14584("invites" + "/$WORLD_ID".replace("$WORLD_ID", String.valueOf(var1)));
       String var8 = this.method14586(Class6754.method20601(var7, field22148.method31093(var6)));
-      return Class6128.method18917(var8);
+      return RealmsServer.method18917(var8);
    }
 
    public Class6126 method14558(long var1) throws Class2435 {

@@ -10,6 +10,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+
+import com.mojang.realmsclient.dto.RealmsServer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,8 +24,8 @@ public class Class9408 {
    private final Runnable field43650 = new Class350(this);
    private final Runnable field43651 = new Class1593(this);
    private final Runnable field43652 = new Class756(this);
-   private final Set<Class6128> field43653 = Sets.newHashSet();
-   private List<Class6128> field43654 = Lists.newArrayList();
+   private final Set<RealmsServer> field43653 = Sets.newHashSet();
+   private List<RealmsServer> field43654 = Lists.newArrayList();
    private Class6119 field43655;
    private int field43656;
    private boolean field43657;
@@ -77,7 +79,7 @@ public class Class9408 {
       this.method36015();
    }
 
-   public synchronized List<Class6128> method36020() {
+   public synchronized List<RealmsServer> method36020() {
       return Lists.newArrayList(this.field43654);
    }
 
@@ -144,10 +146,10 @@ public class Class9408 {
       }
    }
 
-   private synchronized void method36029(List<Class6128> var1) {
+   private synchronized void method36029(List<RealmsServer> var1) {
       int var4 = 0;
 
-      for (Class6128 var6 : this.field43653) {
+      for (RealmsServer var6 : this.field43653) {
          if (var1.remove(var6)) {
             var4++;
          }
@@ -160,7 +162,7 @@ public class Class9408 {
       this.field43654 = var1;
    }
 
-   public synchronized void method36030(Class6128 var1) {
+   public synchronized void method36030(RealmsServer var1) {
       this.field43654.remove(var1);
       this.field43653.add(var1);
    }

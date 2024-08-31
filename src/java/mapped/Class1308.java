@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.GameSettings;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -13,16 +16,16 @@ public class Class1308 extends Screen {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       byte var3 = -16;
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 116, this.field4565 / 2 + 62 + -16, 114, 20, new TranslationTextComponent("demo.help.buy"), var0 -> {
-            var0.field6482 = false;
+      this.<Button>addButton(
+         new Button(this.width / 2 - 116, this.height / 2 + 62 + -16, 114, 20, new TranslationTextComponent("demo.help.buy"), var0 -> {
+            var0.active = false;
             Util.getOSType().method8181("http://www.minecraft.net/store?source=demo");
          })
       );
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 2, this.field4565 / 2 + 62 + -16, 114, 20, new TranslationTextComponent("demo.help.later"), var1 -> {
+      this.<Button>addButton(
+         new Button(this.width / 2 + 2, this.height / 2 + 62 + -16, 114, 20, new TranslationTextComponent("demo.help.later"), var1 -> {
             this.mc.displayGuiScreen((Screen)null);
             this.mc.mouseHelper.grabMouse();
          })
@@ -41,23 +44,23 @@ public class Class1308 extends Screen {
    }
 
    @Override
-   public void method2469(MatrixStack var1) {
-      super.method2469(var1);
+   public void renderBackground(MatrixStack var1) {
+      super.renderBackground(var1);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field6913);
-      int var4 = (this.field4564 - 248) / 2;
-      int var5 = (this.field4565 - 166) / 2;
+      int var4 = (this.width - 248) / 2;
+      int var5 = (this.height - 166) / 2;
       this.method5696(var1, var4, var5, 0, 0, 248, 166);
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      int var7 = (this.field4564 - 248) / 2 + 10;
-      int var8 = (this.field4565 - 166) / 2 + 8;
-      this.fontRenderer.method38805(var1, this.field4560, (float)var7, (float)var8, 2039583);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      int var7 = (this.width - 248) / 2 + 10;
+      int var8 = (this.height - 166) / 2 + 8;
+      this.fontRenderer.func_243248_b(var1, this.title, (float)var7, (float)var8, 2039583);
       var8 = this.field6914.method18591(var1, var7, var8 + 12, 12, 5197647);
       this.field6915.method18591(var1, var7, var8 + 20, 9, 2039583);
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 }

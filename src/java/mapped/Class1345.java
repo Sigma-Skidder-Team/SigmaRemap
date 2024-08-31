@@ -1,12 +1,13 @@
 package mapped;
 
+import com.mojang.realmsclient.dto.RealmsServer;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1345 extends Class789 {
-   private final Class6128 field7167;
+   private final RealmsServer field7167;
    private final Class815 field7168;
 
-   public Class1345(Class6128 var1, Class815 var2) {
+   public Class1345(RealmsServer var1, Class815 var2) {
       this.field7167 = var1;
       this.field7168 = var2;
    }

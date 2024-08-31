@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextProperties;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -8,7 +9,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class1124 extends Class875<Class5824> {
    private static final ResourceLocation field6158 = new ResourceLocation("textures/gui/container/anvil.png");
    private static final ITextComponent field6159 = new TranslationTextComponent("container.repair.expensive");
-   private Class1189 field6160;
+   private TextFieldWidget field6160;
 
    public Class1124(Class5824 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3, field6158);
@@ -23,10 +24,10 @@ public class Class1124 extends Class875<Class5824> {
 
    @Override
    public void method2716() {
-      this.mc.keyboardListener.method36347(true);
-      int var3 = (this.field4564 - this.field4721) / 2;
-      int var4 = (this.field4565 - this.field4722) / 2;
-      this.field6160 = new Class1189(this.fontRenderer, var3 + 62, var4 + 24, 103, 12, new TranslationTextComponent("container.repair"));
+      this.mc.keyboardListener.enableRepeatEvents(true);
+      int var3 = (this.width - this.field4721) / 2;
+      int var4 = (this.height - this.field4722) / 2;
+      this.field6160 = new TextFieldWidget(this.fontRenderer, var3 + 62, var4 + 24, 103, 12, new TranslationTextComponent("container.repair"));
       this.field6160.method5669(false);
       this.field6160.method5662(-1);
       this.field6160.method5663(-1);
@@ -39,7 +40,7 @@ public class Class1124 extends Class875<Class5824> {
 
    @Override
    public void resize(Minecraft var1, int var2, int var3) {
-      String var6 = this.field6160.method5636();
+      String var6 = this.field6160.getText();
       this.init(var1, var2, var3);
       this.field6160.method5635(var6);
    }
@@ -47,16 +48,16 @@ public class Class1124 extends Class875<Class5824> {
    @Override
    public void onClose() {
       super.onClose();
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 == 256) {
          this.mc.player.method2772();
       }
 
-      return !this.field6160.method1920(var1, var2, var3) && !this.field6160.method5653() ? super.method1920(var1, var2, var3) : true;
+      return !this.field6160.keyPressed(var1, var2, var3) && !this.field6160.method5653() ? super.keyPressed(var1, var2, var3) : true;
    }
 
    private void method5420(String var1) {
@@ -103,7 +104,7 @@ public class Class1124 extends Class875<Class5824> {
 
    @Override
    public void method2717(MatrixStack var1, int var2, int var3, float var4) {
-      this.field6160.method1923(var1, var2, var3, var4);
+      this.field6160.render(var1, var2, var3, var4);
    }
 
    @Override

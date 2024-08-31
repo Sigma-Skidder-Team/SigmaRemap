@@ -25,13 +25,17 @@ import java.util.Map.Entry;
 import java.util.concurrent.CompletableFuture;
 import javax.annotation.Nullable;
 
+import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.Difficulty;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -96,7 +100,7 @@ public class ClientPlayNetHandler implements Class5116 {
       this.field23281 = var1.method17296();
       boolean var7 = var1.method17299();
       boolean var8 = var1.method17300();
-      Class6606 var9 = new Class6606(Class2197.field14353, var1.method17289(), var8);
+      Class6606 var9 = new Class6606(Difficulty.field14353, var1.method17289(), var8);
       this.field23274 = var9;
       this.field23273 = new ClientWorld(this, var9, var5, var6, this.field23281, this.field23272::getProfiler, this.field23272.worldRenderer, var7, var1.method17288());
       this.field23272.loadWorld(this.field23273);
@@ -623,7 +627,7 @@ public class ClientPlayNetHandler implements Class5116 {
       this.field23272.unloadWorld();
       if (this.field23271 == null) {
          this.field23272.displayGuiScreen(new Class832(new MultiplayerScreen(new MainMenuScreen()), field23268, var1));
-      } else if (!(this.field23271 instanceof Class798)) {
+      } else if (!(this.field23271 instanceof RealmsScreen)) {
          this.field23272.displayGuiScreen(new Class832(this.field23271, field23268, var1));
       } else {
          this.field23272.displayGuiScreen(new Class801(this.field23271, field23268, var1));

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.*;
 
 import java.util.List;
@@ -16,8 +17,8 @@ public class Class1185 extends Class1178<Class1185> {
    private final String field6391;
    private final Supplier<ResourceLocation> field6392;
    private boolean field6393;
-   private Class1206 field6394;
-   private Class1206 field6395;
+   private Button field6394;
+   private Button field6395;
    private final List<Class9125> field6396;
    private final List<Class9125> field6397;
    private float field6398;
@@ -79,7 +80,7 @@ public class Class1185 extends Class1178<Class1185> {
       if (var16 != StringTextComponent.EMPTY) {
          AbstractGui.method5686(var1, var4, var3, var4 + var5, var3 + var6, field6406);
          var17 = var3 + (var6 - 18) / 2;
-         this.field6388.fontRenderer.method38805(var1, var16, (float)var15, (float)(var17 + 12), field6408);
+         this.field6388.fontRenderer.func_243248_b(var1, var16, (float)var15, (float)(var17 + 12), field6408);
       } else {
          AbstractGui.method5686(var1, var4, var3, var4 + var5, var3 + var6, field6405);
          var17 = var3 + (var6 - 9) / 2;
@@ -99,10 +100,10 @@ public class Class1185 extends Class1178<Class1185> {
          float var18 = this.field6398;
          this.field6394.field6477 = var4 + (var5 - this.field6394.method5740() - 4);
          this.field6394.field6478 = var3 + (var6 - this.field6394.method5728()) / 2;
-         this.field6394.method1923(var1, var7, var8, var10);
+         this.field6394.render(var1, var7, var8, var10);
          this.field6395.field6477 = var4 + (var5 - this.field6395.method5740() - 4);
          this.field6395.field6478 = var3 + (var6 - this.field6395.method5728()) / 2;
-         this.field6395.method1923(var1, var7, var8, var10);
+         this.field6395.render(var1, var7, var8, var10);
          if (var18 == this.field6398) {
             this.field6398 = 0.0F;
          }

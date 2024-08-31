@@ -604,7 +604,7 @@ public class GameRenderer implements Class215, AutoCloseable {
 
          if (this.field802.loadingGui != null) {
             try {
-               this.field802.loadingGui.method1923(var10, var7, var8, this.field802.getTickLength());
+               this.field802.loadingGui.render(var10, var7, var8, this.field802.getTickLength());
             } catch (Throwable var15) {
                CrashReport var12 = CrashReport.makeCrashReport(var15, "Rendering overlay");
                CrashReportCategory var13 = var12.makeCategory("Overlay render details");
@@ -616,7 +616,7 @@ public class GameRenderer implements Class215, AutoCloseable {
                if (Class9299.field42867.method20214()) {
                   Class9299.method35055(Class9299.field42867, this.field802.currentScreen, var10, var7, var8, this.field802.getTickLength());
                } else {
-                  this.field802.currentScreen.method1923(var10, var7, var8, this.field802.getTickLength());
+                  this.field802.currentScreen.render(var10, var7, var8, this.field802.getTickLength());
                   Client.getInstance().getEventManager().call(new Class4414());
                }
             } catch (Throwable var14) {

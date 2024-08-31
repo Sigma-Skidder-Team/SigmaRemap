@@ -8,7 +8,7 @@ public class Class1283 extends Class1274<Class1176> {
    public final Class1323 field6847;
 
    public Class1283(Class1323 var1) {
-      super(var1.mc, var1.field4564, var1.field4565, 40, var1.field4565 - 37, 16);
+      super(var1.mc, var1.width, var1.height, 40, var1.height - 37, 16);
       this.field6847 = var1;
       Class1323.method6291(var1)
          .method9191()

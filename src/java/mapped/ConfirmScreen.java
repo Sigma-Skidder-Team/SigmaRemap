@@ -2,6 +2,9 @@ package mapped;
 
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 
 public class ConfirmScreen extends Screen {
@@ -30,28 +33,28 @@ public class ConfirmScreen extends Screen {
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, this.field4565 / 6 + 96, 150, 20, this.field4602, var1 -> this.field4605.accept(true)));
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 155 + 160, this.field4565 / 6 + 96, 150, 20, this.field4603, var1 -> this.field4605.accept(false))
+   public void init() {
+      super.init();
+      this.<Button>addButton(new Button(this.width / 2 - 155, this.height / 6 + 96, 150, 20, this.field4602, var1 -> this.field4605.accept(true)));
+      this.<Button>addButton(
+         new Button(this.width / 2 - 155 + 160, this.height / 6 + 96, 150, 20, this.field4603, var1 -> this.field4605.accept(false))
       );
-      this.field4601 = Class5991.method18584(this.fontRenderer, this.field4600, this.field4564 - 50);
+      this.field4601 = Class5991.method18584(this.fontRenderer, this.field4600, this.width - 50);
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 70, 16777215);
-      this.field4601.method18588(var1, this.field4564 / 2, 90);
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 70, 16777215);
+      this.field4601.method18588(var1, this.width / 2, 90);
+      super.render(var1, var2, var3, var4);
    }
 
    public void method2536(int var1) {
       this.field4604 = var1;
 
-      for (Class1197 var5 : this.field4566) {
-         var5.field6482 = false;
+      for (Widget var5 : this.field4566) {
+         var5.active = false;
       }
    }
 
@@ -59,8 +62,8 @@ public class ConfirmScreen extends Screen {
    public void tick() {
       super.tick();
       if (--this.field4604 == 0) {
-         for (Class1197 var4 : this.field4566) {
-            var4.field6482 = true;
+         for (Widget var4 : this.field4566) {
+            var4.active = true;
          }
       }
    }
@@ -71,9 +74,9 @@ public class ConfirmScreen extends Screen {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          this.field4605.accept(false);
          return true;

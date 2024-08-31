@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.client.gui.screen.OptionsScreen;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -12,7 +15,7 @@ public class IngameMenuScreen extends Screen {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       if (this.field4621) {
          this.method2548();
       }
@@ -21,26 +24,26 @@ public class IngameMenuScreen extends Screen {
    private void method2548() {
       byte var3 = -16;
       byte var4 = 98;
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 102, this.field4565 / 4 + 24 + -16, 204, 20, new TranslationTextComponent("menu.returnToGame"), var1 -> {
+      this.<Button>addButton(
+         new Button(this.width / 2 - 102, this.height / 4 + 24 + -16, 204, 20, new TranslationTextComponent("menu.returnToGame"), var1 -> {
             this.mc.displayGuiScreen((Screen)null);
             this.mc.mouseHelper.grabMouse();
          })
       );
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 102,
-            this.field4565 / 4 + 48 + -16,
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 102,
+            this.height / 4 + 48 + -16,
             98,
             20,
             new TranslationTextComponent("gui.advancements"),
             var1 -> this.mc.displayGuiScreen(new AdvancementsScreen(this.mc.player.connection.getAdvancementManager()))
          )
       );
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 + 4,
-            this.field4565 / 4 + 48 + -16,
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 + 4,
+            this.height / 4 + 48 + -16,
             98,
             20,
             new TranslationTextComponent("gui.stats"),
@@ -48,10 +51,10 @@ public class IngameMenuScreen extends Screen {
          )
       );
       String var5 = !SharedConstants.getVersion().isStable() ? "https://aka.ms/snapshotfeedback?ref=game" : "https://aka.ms/javafeedback?ref=game";
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 102,
-            this.field4565 / 4 + 72 + -16,
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 102,
+            this.height / 4 + 72 + -16,
             98,
             20,
             new TranslationTextComponent("menu.sendFeedback"),
@@ -64,10 +67,10 @@ public class IngameMenuScreen extends Screen {
                }, var5, true))
          )
       );
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 + 4,
-            this.field4565 / 4 + 72 + -16,
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 + 4,
+            this.height / 4 + 72 + -16,
             98,
             20,
             new TranslationTextComponent("menu.reportBugs"),
@@ -80,32 +83,32 @@ public class IngameMenuScreen extends Screen {
                }, "https://aka.ms/snapshotbugs?ref=game", true))
          )
       );
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 102,
-            this.field4565 / 4 + 96 + -16,
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 102,
+            this.height / 4 + 96 + -16,
             98,
             20,
             new TranslationTextComponent("menu.options"),
-            var1 -> this.mc.displayGuiScreen(new Class1129(this, this.mc.gameSettings))
+            var1 -> this.mc.displayGuiScreen(new OptionsScreen(this, this.mc.gameSettings))
          )
       );
-      Class1206 var6 = this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 + 4,
-            this.field4565 / 4 + 96 + -16,
+      Button var6 = this.<Button>addButton(
+         new Button(
+            this.width / 2 + 4,
+            this.height / 4 + 96 + -16,
             98,
             20,
             new TranslationTextComponent("menu.shareToLan"),
             var1 -> this.mc.displayGuiScreen(new Class1149(this))
          )
       );
-      var6.field6482 = this.mc.isSingleplayer() && !this.mc.getIntegratedServer().getPublic();
-      Class1206 var7 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 102, this.field4565 / 4 + 120 + -16, 204, 20, new TranslationTextComponent("menu.returnToMenu"), var1 -> {
+      var6.active = this.mc.isSingleplayer() && !this.mc.getIntegratedServer().getPublic();
+      Button var7 = this.<Button>addButton(
+         new Button(this.width / 2 - 102, this.height / 4 + 120 + -16, 204, 20, new TranslationTextComponent("menu.returnToMenu"), var1 -> {
             boolean var4x = this.mc.isIntegratedServerRunning();
             boolean var5x = this.mc.isConnectedToRealms();
-            var1.field6482 = false;
+            var1.active = false;
             this.mc.world.sendQuittingDisconnectingPacket();
             if (!var4x) {
                this.mc.unloadWorld();
@@ -126,7 +129,7 @@ public class IngameMenuScreen extends Screen {
          })
       );
       if (!this.mc.isIntegratedServerRunning()) {
-         var7.method5743(new TranslationTextComponent("menu.disconnect"));
+         var7.setMessage(new TranslationTextComponent("menu.disconnect"));
       }
    }
 
@@ -136,14 +139,14 @@ public class IngameMenuScreen extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       if (!this.field4621) {
-         method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 10, 16777215);
+         drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 10, 16777215);
       } else {
-         this.method2469(var1);
-         method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 40, 16777215);
+         this.renderBackground(var1);
+         drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 40, 16777215);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 }

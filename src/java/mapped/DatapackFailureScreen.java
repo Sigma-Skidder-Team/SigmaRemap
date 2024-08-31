@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class DatapackFailureScreen extends Screen {
@@ -12,18 +14,18 @@ public class DatapackFailureScreen extends Screen {
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
-      this.field6213 = Class5991.method18584(this.fontRenderer, this.getTextComponent(), this.field4564 - 50);
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 155, this.field4565 / 6 + 96, 150, 20, new TranslationTextComponent("datapackFailure.safeMode"), var1 -> this.field6214.run()
+   public void init() {
+      super.init();
+      this.field6213 = Class5991.method18584(this.fontRenderer, this.getTextComponent(), this.width - 50);
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 155, this.height / 6 + 96, 150, 20, new TranslationTextComponent("datapackFailure.safeMode"), var1 -> this.field6214.run()
          )
       );
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 155 + 160,
-            this.field4565 / 6 + 96,
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 155 + 160,
+            this.height / 6 + 96,
             150,
             20,
             new TranslationTextComponent("gui.toTitle"),
@@ -33,10 +35,10 @@ public class DatapackFailureScreen extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      this.field6213.method18588(var1, this.field4564 / 2, 70);
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      this.field6213.method18588(var1, this.width / 2, 70);
+      super.render(var1, var2, var3, var4);
    }
 
    @Override

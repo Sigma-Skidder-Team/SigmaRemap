@@ -71,13 +71,13 @@ public class SystemToast implements Class7601 {
       }
 
       if (this.field32639 != null) {
-         var2.method5915().fontRenderer.method38805(var1, this.field32638, 18.0F, 7.0F, -256);
+         var2.method5915().fontRenderer.func_243248_b(var1, this.field32638, 18.0F, 7.0F, -256);
 
          for (int var13 = 0; var13 < this.field32639.size(); var13++) {
             var2.method5915().fontRenderer.method38804(var1, this.field32639.get(var13), 18.0F, (float)(18 + var13 * 12), -1);
          }
       } else {
-         var2.method5915().fontRenderer.method38805(var1, this.field32638, 18.0F, 12.0F, -256);
+         var2.method5915().fontRenderer.func_243248_b(var1, this.field32638, 18.0F, 12.0F, -256);
       }
 
       return var3 - this.field32640 >= 5000L ? Class2139.field14004 : Class2139.field14003;

@@ -38,7 +38,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       int var7 = this.field6438.getMainWindow().getScaledWidth();
       int var8 = this.field6438.getMainWindow().getScaledHeight();
       long var9 = Util.milliTime();
@@ -52,7 +52,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
       if (var11 >= 1.0F) {
          this.field6450 = true;
          if (this.field6438.currentScreen != null) {
-            this.field6438.currentScreen.method1923(var1, 0, 0, var4);
+            this.field6438.currentScreen.render(var1, 0, 0, var4);
          }
 
          int var13 = MathHelper.method37773((1.0F - MathHelper.method37777(var11 - 1.0F, 0.0F, 1.0F)) * 255.0F);
@@ -60,7 +60,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
          var14 = 1.0F - MathHelper.method37777(var11 - 1.0F, 0.0F, 1.0F);
       } else if (this.field6441) {
          if (this.field6438.currentScreen != null && var12 < 1.0F) {
-            this.field6438.currentScreen.method1923(var1, var2, var3, var4);
+            this.field6438.currentScreen.render(var1, var2, var3, var4);
          }
 
          int var27 = MathHelper.method37774(MathHelper.method37778((double)var12, 0.15, 1.0) * 255.0);

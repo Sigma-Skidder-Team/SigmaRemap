@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.GameSettings;
 import net.minecraft.util.text.StringTextComponent;
 
 public abstract class Class1234 extends Class1236 {

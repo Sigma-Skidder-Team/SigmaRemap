@@ -20,7 +20,7 @@ public class Class1235 extends Class1234 {
       Object var3 = (float)this.field6584 != (float)this.method5729(false)
          ? new StringTextComponent((int)(this.field6584 * 100.0) + "%")
          : DialogTexts.field30657;
-      this.method5743(new TranslationTextComponent("soundCategory." + this.field6583.method8995()).appendString(": ").append((ITextComponent)var3));
+      this.setMessage(new TranslationTextComponent("soundCategory." + this.field6583.method8995()).appendString(": ").append((ITextComponent)var3));
    }
 
    @Override

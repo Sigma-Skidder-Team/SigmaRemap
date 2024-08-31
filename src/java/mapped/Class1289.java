@@ -4,7 +4,7 @@ public class Class1289 extends Class1286<Class1168> {
    public final Class807 field6853;
 
    public Class1289(Class807 var1) {
-      super(var1.field4564 - 150, var1.field4565, 32, var1.field4565 - 15, 36);
+      super(var1.width - 150, var1.height, 32, var1.height - 15, 36);
       this.field6853 = var1;
    }
 
@@ -31,7 +31,7 @@ public class Class1289 extends Class1286<Class1168> {
 
    @Override
    public void method6039(MatrixStack var1) {
-      this.field6853.method2469(var1);
+      this.field6853.renderBackground(var1);
    }
 
    @Override

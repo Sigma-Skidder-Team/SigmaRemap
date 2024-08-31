@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import java.util.Random;
 import java.util.function.Predicate;
@@ -81,11 +82,11 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    public static boolean method4341(EntityType<? extends Class1009> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method6997() != Class2197.field14351 && method4340(var1, var3, var4) && method4264(var0, var1, var2, var3, var4);
+      return var1.method6997() != Difficulty.field14351 && method4340(var1, var3, var4) && method4264(var0, var1, var2, var3, var4);
    }
 
    public static boolean method4342(EntityType<? extends Class1009> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method6997() != Class2197.field14351 && method4264(var0, var1, var2, var3, var4);
+      return var1.method6997() != Difficulty.field14351 && method4264(var0, var1, var2, var3, var4);
    }
 
    public static Class7037 method4343() {

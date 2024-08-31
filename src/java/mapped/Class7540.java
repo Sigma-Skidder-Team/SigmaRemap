@@ -1,13 +1,15 @@
 package mapped;
 
+import net.minecraft.client.gui.widget.Widget;
+
 public class Class7540 {
    private static String[] field32352;
 
-   public static int method24650(Class1197 var0) {
+   public static int method24650(Widget var0) {
       return Class1232.method5814(var0);
    }
 
-   public static int method24651(Class1197 var0) {
+   public static int method24651(Widget var0) {
       return Class1232.method5815(var0);
    }
 

@@ -4,7 +4,10 @@ import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.RateLimiter;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -17,14 +20,14 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.Collectors;
 
-public class Class812 extends Class798 {
+public class Class812 extends RealmsScreen {
    private static final Logger field4356 = LogManager.getLogger();
    private static final ReentrantLock field4357 = new ReentrantLock();
    private final Screen field4358;
    private final Class6120 field4359;
    private final ITextComponent field4360;
    private final RateLimiter field4361;
-   private Class1206 field4362;
+   private Button field4362;
    private final String field4363;
    private final Class7155 field4364;
    private volatile ITextComponent field4365;
@@ -54,9 +57,9 @@ public class Class812 extends Class798 {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
-      this.field4362 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, this.field4565 - 42, 200, 20, DialogTexts.GUI_CANCEL, var1 -> {
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
+      this.field4362 = this.<Button>addButton(new Button(this.width / 2 - 100, this.height - 42, 200, 20, DialogTexts.GUI_CANCEL, var1 -> {
          this.field4368 = true;
          this.method2235();
       }));
@@ -107,9 +110,9 @@ public class Class812 extends Class798 {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          this.field4368 = true;
          this.method2235();
@@ -126,10 +129,10 @@ public class Class812 extends Class798 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      method5691(var1, this.fontRenderer, this.field4360, this.field4564 / 2, 20, 16777215);
-      method5691(var1, this.fontRenderer, this.field4366, this.field4564 / 2, 50, 16777215);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      drawCenteredString(var1, this.fontRenderer, this.field4360, this.width / 2, 20, 16777215);
+      drawCenteredString(var1, this.fontRenderer, this.field4366, this.width / 2, 50, 16777215);
       if (this.field4369) {
          this.method2236(var1);
       }
@@ -140,10 +143,10 @@ public class Class812 extends Class798 {
       }
 
       if (this.field4365 != null) {
-         method5691(var1, this.fontRenderer, this.field4365, this.field4564 / 2, 110, 16711680);
+         drawCenteredString(var1, this.fontRenderer, this.field4365, this.width / 2, 110, 16711680);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    private void method2236(MatrixStack var1) {
@@ -152,7 +155,7 @@ public class Class812 extends Class798 {
          this.field4377++;
       }
 
-      this.fontRenderer.method38801(var1, field4376[this.field4377 % field4376.length], (float)(this.field4564 / 2 + var4 / 2 + 5), 50.0F, 16777215);
+      this.fontRenderer.method38801(var1, field4376[this.field4377 % field4376.length], (float)(this.width / 2 + var4 / 2 + 5), 50.0F, 16777215);
    }
 
    private void method2237(MatrixStack var1) {
@@ -163,7 +166,7 @@ public class Class812 extends Class798 {
       Tessellator var6 = Tessellator.getInstance();
       BufferBuilder var7 = var6.getBuffer();
       var7.begin(7, DefaultVertexFormats.POSITION_COLOR);
-      double var8 = (double)(this.field4564 / 2 - 100);
+      double var8 = (double)(this.width / 2 - 100);
       double var10 = 0.5;
       var7.pos(var8 - 0.5, 95.5, 0.0).color(217, 210, 210, 255).endVertex();
       var7.pos(var8 + 200.0 * var4 + 0.5, 95.5, 0.0).color(217, 210, 210, 255).endVertex();
@@ -175,7 +178,7 @@ public class Class812 extends Class798 {
       var7.pos(var8, 80.0, 0.0).color(128, 128, 128, 255).endVertex();
       var6.draw();
       RenderSystem.enableTexture();
-      method5690(var1, this.fontRenderer, this.field4367 + " %", this.field4564 / 2, 84, 16777215);
+      method5690(var1, this.fontRenderer, this.field4367 + " %", this.width / 2, 84, 16777215);
    }
 
    private void method2238(MatrixStack var1) {
@@ -201,7 +204,7 @@ public class Class812 extends Class798 {
       if (var2 > 0L) {
          int var6 = this.fontRenderer.getStringWidth(this.field4367);
          String var7 = "(" + Class2072.method8729(var2) + "/s)";
-         this.fontRenderer.method38801(var1, var7, (float)(this.field4564 / 2 + var6 / 2 + 15), 84.0F, 16777215);
+         this.fontRenderer.method38801(var1, var7, (float)(this.width / 2 + var6 / 2 + 15), 84.0F, 16777215);
       }
    }
 
@@ -222,7 +225,7 @@ public class Class812 extends Class798 {
                   if (var3.method36590()) {
                      var3.method36588();
                      this.field4365 = new TranslationTextComponent("mco.download.failed");
-                     this.field4362.method5743(DialogTexts.field30658);
+                     this.field4362.setMessage(DialogTexts.field30658);
                      return;
                   }
 
@@ -243,7 +246,7 @@ public class Class812 extends Class798 {
 
                this.field4370 = true;
                this.field4366 = new TranslationTextComponent("mco.download.done");
-               this.field4362.method5743(DialogTexts.field30658);
+               this.field4362.setMessage(DialogTexts.field30658);
             }
          } catch (InterruptedException var11) {
             field4356.error("Could not acquire upload lock");

@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.UnmodifiableIterator;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextProperties;
 
@@ -46,16 +48,16 @@ public class Class1307 extends Screen {
 
       for (UnmodifiableIterator var11 = this.field6909.iterator(); var11.hasNext(); var10 += var13) {
          Class8001 var12 = (Class8001)var11.next();
-         this.<Class1206>method2455(new Class1206(var10, var9, this.field6912, 20, Class8001.method27333(var12), Class8001.method27334(var12)));
+         this.<Button>addButton(new Button(var10, var9, this.field6912, 20, Class8001.method27333(var12), Class8001.method27334(var12)));
       }
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.method2471(0);
-      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, this.field6911 - 18, -1);
-      this.field6910.method18588(var1, this.field4564 / 2, this.field6911);
-      super.method1923(var1, var2, var3, var4);
+      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, this.field6911 - 18, -1);
+      this.field6910.method18588(var1, this.width / 2, this.field6911);
+      super.render(var1, var2, var3, var4);
    }
 
    @Override

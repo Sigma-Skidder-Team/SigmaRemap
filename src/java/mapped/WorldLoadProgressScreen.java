@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -41,8 +42,8 @@ public class WorldLoadProgressScreen extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
       String var7 = MathHelper.method37775(this.field7026.method22745(), 0, 100) + "%";
       long var8 = Util.milliTime();
       if (var8 - this.field7027 > 2000L) {
@@ -50,8 +51,8 @@ public class WorldLoadProgressScreen extends Screen {
          NarratorChatListener.INSTANCE.say(new TranslationTextComponent("narrator.loading", var7).getString());
       }
 
-      int var10 = this.field4564 / 2;
-      int var11 = this.field4565 / 2;
+      int var10 = this.width / 2;
+      int var11 = this.height / 2;
       byte var12 = 30;
       method6319(var1, this.field7026, var10, var11 + 30, 2, 0);
       method5690(var1, this.fontRenderer, var7, var10, var11 - 4 - 30, 16777215);

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.widget.button.Button;
+
 public interface Class8103 {
-   void method28070(Class1206 var1, MatrixStack var2, int var3, int var4);
+   void method28070(Button var1, MatrixStack var2, int var3, int var4);
 }

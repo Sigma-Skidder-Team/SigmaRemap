@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 public class Class3344 extends Class3343 {
    private static Class9803 field18857;
@@ -24,7 +25,7 @@ public class Class3344 extends Class3343 {
       if (!var0.isRemote) {
          BlockState var5 = var2.method3775();
          boolean var6 = var5.method23448(Blocks.field36703) || var5.method23448(Blocks.field36704);
-         if (var6 && var1.getY() >= 0 && var0.method6997() != Class2197.field14351) {
+         if (var6 && var1.getY() >= 0 && var0.method6997() != Difficulty.field14351) {
             Class9803 var7 = method11900();
             Class9086 var8 = var7.method38656(var0, var1);
             if (var8 != null) {
@@ -65,7 +66,7 @@ public class Class3344 extends Class3343 {
    }
 
    public static boolean method11899(World var0, BlockPos var1, ItemStack var2) {
-      return var2.getItem() == Items.field38059 && var1.getY() >= 2 && var0.method6997() != Class2197.field14351 && !var0.isRemote
+      return var2.getItem() == Items.field38059 && var1.getY() >= 2 && var0.method6997() != Difficulty.field14351 && !var0.isRemote
          ? method11901().method38656(var0, var1) != null
          : false;
    }

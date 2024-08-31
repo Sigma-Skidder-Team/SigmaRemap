@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
@@ -295,7 +296,7 @@ public class Class1105 extends Class1009 {
 
    public static boolean method5311(EntityType<? extends Class1105> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       return (var4.nextInt(20) == 0 || !var1.method7008(var3))
-         && var1.method6997() != Class2197.field14351
+         && var1.method6997() != Difficulty.field14351
          && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(Class8953.field40469));
    }
 

@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -65,8 +67,8 @@ public class ConnectingScreen extends Screen {
    }
 
    @Override
-   public void method1921() {
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 120 + 12, 200, 20, DialogTexts.GUI_CANCEL, var1 -> {
+   public void init() {
+      this.<Button>addButton(new Button(this.width / 2 - 100, this.height / 4 + 120 + 12, 200, 20, DialogTexts.GUI_CANCEL, var1 -> {
          this.field6937 = true;
          if (this.field6936 != null) {
             this.field6936.method30701(new TranslationTextComponent("connect.aborted"));
@@ -77,16 +79,16 @@ public class ConnectingScreen extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
       long var7 = Util.milliTime();
       if (var7 - this.field6940 > 2000L) {
          this.field6940 = var7;
          NarratorChatListener.INSTANCE.say(new TranslationTextComponent("narrator.joining").getString());
       }
 
-      method5691(var1, this.fontRenderer, this.field6939, this.field4564 / 2, this.field4565 / 2 - 50, 16777215);
-      super.method1923(var1, var2, var3, var4);
+      drawCenteredString(var1, this.fontRenderer, this.field6939, this.width / 2, this.height / 2 - 50, 16777215);
+      super.render(var1, var2, var3, var4);
    }
 
    // $VF: synthetic method

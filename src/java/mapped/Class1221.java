@@ -10,7 +10,11 @@ import com.mojang.serialization.Lifecycle;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
+import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -37,12 +41,12 @@ public class Class1221 implements Class1219, Class1190 {
    private Class5991 field6553 = Class5991.field26162;
    private FontRenderer field6554;
    private int field6555;
-   private Class1189 field6556;
-   private Class1206 field6557;
-   public Class1206 field6558;
-   private Class1206 field6559;
-   private Class1206 field6560;
-   private Class1206 field6561;
+   private TextFieldWidget field6556;
+   private Button field6557;
+   public Button field6558;
+   private Button field6559;
+   private Button field6560;
+   private Button field6561;
    private DynamicRegistriesImpl field6562;
    private DimensionGeneratorSettings field6563;
    private Optional<Class5970> field6564;
@@ -57,19 +61,19 @@ public class Class1221 implements Class1219, Class1190 {
 
    public void method5780(Class1335 var1, Minecraft var2, FontRenderer var3) {
       this.field6554 = var3;
-      this.field6555 = var1.field4564;
-      this.field6556 = new Class1189(this.field6554, this.field6555 / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterSeed"));
+      this.field6555 = var1.width;
+      this.field6556 = new TextFieldWidget(this.field6554, this.field6555 / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterSeed"));
       this.field6556.method5635(method5783(this.field6565));
       this.field6556.method5631(var1x -> this.field6565 = this.method5786());
-      var1.<Class1189>method2456(this.field6556);
+      var1.<TextFieldWidget>addListener(this.field6556);
       int var6 = this.field6555 / 2 - 155;
       int var7 = this.field6555 / 2 + 5;
-      this.field6557 = var1.<Class1206>method2455(new Class1239(this, var6, 100, 150, 20, new TranslationTextComponent("selectWorld.mapFeatures"), var1x -> {
+      this.field6557 = var1.<Button>addButton(new Class1239(this, var6, 100, 150, 20, new TranslationTextComponent("selectWorld.mapFeatures"), var1x -> {
          this.field6563 = this.field6563.method26271();
          var1x.method5744(250);
       }));
       this.field6557.field6483 = false;
-      this.field6559 = var1.<Class1206>method2455(new Class1227(this, var7, 100, 150, 20, new TranslationTextComponent("selectWorld.mapType"), var2x -> {
+      this.field6559 = var1.<Button>addButton(new Class1227(this, var7, 100, 150, 20, new TranslationTextComponent("selectWorld.mapType"), var2x -> {
          while (this.field6564.isPresent()) {
             int var5 = Class5970.field26033.indexOf(this.field6564.get()) + 1;
             if (var5 >= Class5970.field26033.size()) {
@@ -88,21 +92,21 @@ public class Class1221 implements Class1219, Class1190 {
          var2x.method5744(250);
       }));
       this.field6559.field6483 = false;
-      this.field6559.field6482 = this.field6564.isPresent();
-      this.field6560 = var1.<Class1206>method2455(new Class1206(var7, 120, 150, 20, new TranslationTextComponent("selectWorld.customizeType"), var3x -> {
+      this.field6559.active = this.field6564.isPresent();
+      this.field6560 = var1.<Button>addButton(new Button(var7, 120, 150, 20, new TranslationTextComponent("selectWorld.customizeType"), var3x -> {
          Class7837 var6x = Class5970.field26034.get(this.field6564);
          if (var6x != null) {
             var2.displayGuiScreen(var6x.method26250(var1, this.field6563));
          }
       }));
       this.field6560.field6483 = false;
-      this.field6558 = var1.<Class1206>method2455(new Class1208(this, var6, 151, 150, 20, new TranslationTextComponent("selectWorld.bonusItems"), var1x -> {
+      this.field6558 = var1.<Button>addButton(new Class1208(this, var6, 151, 150, 20, new TranslationTextComponent("selectWorld.bonusItems"), var1x -> {
          this.field6563 = this.field6563.method26272();
          var1x.method5744(250);
       }, var1));
       this.field6558.field6483 = false;
-      this.field6561 = var1.<Class1206>method2455(
-         new Class1206(
+      this.field6561 = var1.<Button>addButton(
+         new Button(
             var6,
             185,
             150,
@@ -197,7 +201,7 @@ public class Class1221 implements Class1219, Class1190 {
       this.field6564 = Class5970.method18504(var2);
       this.field6565 = OptionalLong.of(var2.method26259());
       this.field6556.method5635(method5783(this.field6565));
-      this.field6559.field6482 = this.field6564.isPresent();
+      this.field6559.active = this.field6564.isPresent();
    }
 
    @Override
@@ -206,12 +210,12 @@ public class Class1221 implements Class1219, Class1190 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6557.field6483) {
          this.field6554.method38803(var1, field6552, (float)(this.field6555 / 2 - 150), 122.0F, -6250336);
       }
 
-      this.field6556.method1923(var1, var2, var3, var4);
+      this.field6556.render(var1, var2, var3, var4);
       if (this.field6564.equals(Optional.<Class5970>of(Class5970.field26028))) {
          this.field6553.method18590(var1, this.field6559.field6477 + 2, this.field6559.field6478 + 22, 9, 10526880);
       }
@@ -239,7 +243,7 @@ public class Class1221 implements Class1219, Class1190 {
    }
 
    private OptionalLong method5786() {
-      String var3 = this.field6556.method5636();
+      String var3 = this.field6556.getText();
       OptionalLong var5;
       if (!StringUtils.isEmpty(var3)) {
          OptionalLong var4 = method5784(var3);

@@ -2,8 +2,9 @@ package mapped;
 
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.util.Util;
+import net.minecraft.realms.RealmsScreen;
 
-public class Class816 extends Class798 {
+public class Class816 extends RealmsScreen {
    private static final ResourceLocation field4436 = new ResourceLocation("realms", "textures/gui/realms/invite_icon.png");
    private static final ResourceLocation field4437 = new ResourceLocation("realms", "textures/gui/realms/trial_icon.png");
    private static final ResourceLocation field4438 = new ResourceLocation("realms", "textures/gui/realms/news_notification_mainscreen.png");
@@ -15,9 +16,9 @@ public class Class816 extends Class798 {
    private static boolean field4444;
 
    @Override
-   public void method1921() {
+   public void init() {
       this.method2321();
-      this.mc.keyboardListener.method36347(true);
+      this.mc.keyboardListener.enableRepeatEvents(true);
    }
 
    @Override
@@ -58,19 +59,19 @@ public class Class816 extends Class798 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       if (field4443) {
          this.method2322(var1, var2, var3);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    private void method2322(MatrixStack var1, int var2, int var3) {
       int var6 = this.field4440;
       byte var7 = 24;
-      int var8 = this.field4565 / 4 + 48;
-      int var9 = this.field4564 / 2 + 80;
+      int var8 = this.height / 4 + 48;
+      int var9 = this.width / 2 + 80;
       int var10 = var8 + 48 + 2;
       byte var11 = 0;
       if (field4444) {

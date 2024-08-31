@@ -1,7 +1,13 @@
 package mapped;
 
+import com.mojang.realmsclient.RealmsMainScreen;
+import com.mojang.realmsclient.dto.RealmsServer;
+import com.mojang.realmsclient.gui.screens.RealmsLongRunningMcoTaskScreen;
+import com.mojang.realmsclient.gui.screens.RealmsResetWorldScreen;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -22,38 +28,38 @@ public class Class815 extends Class813 {
    private static final ITextComponent field4418 = new TranslationTextComponent("mco.selectServer.open");
    private static final ITextComponent field4419 = new TranslationTextComponent("mco.selectServer.closed");
    private ITextComponent field4420;
-   private final Class806 field4421;
-   private Class6128 field4422;
+   private final RealmsMainScreen field4421;
+   private RealmsServer field4422;
    private final long field4423;
    private int field4424;
    private int field4425;
-   private Class1206 field4426;
-   private Class1206 field4427;
-   private Class1206 field4428;
-   private Class1206 field4429;
-   private Class1206 field4430;
-   private Class1206 field4431;
-   private Class1206 field4432;
+   private Button field4426;
+   private Button field4427;
+   private Button field4428;
+   private Button field4429;
+   private Button field4430;
+   private Button field4431;
+   private Button field4432;
    private boolean field4433;
    private int field4434;
    private int field4435;
 
-   public Class815(Class806 var1, long var2) {
+   public Class815(RealmsMainScreen var1, long var2) {
       this.field4421 = var1;
       this.field4423 = var2;
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       if (this.field4422 == null) {
          this.method2276(this.field4423);
       }
 
-      this.field4424 = this.field4564 / 2 - 187;
-      this.field4425 = this.field4564 / 2 + 190;
-      this.mc.keyboardListener.method36347(true);
-      this.field4426 = this.<Class1206>method2455(
-         new Class1206(
+      this.field4424 = this.width / 2 - 187;
+      this.field4425 = this.width / 2 + 190;
+      this.mc.keyboardListener.enableRepeatEvents(true);
+      this.field4426 = this.<Button>addButton(
+         new Button(
             this.method2273(0, 3),
             method1929(0),
             100,
@@ -62,8 +68,8 @@ public class Class815 extends Class813 {
             var1 -> this.mc.displayGuiScreen(new Class824(this, this.field4422))
          )
       );
-      this.field4427 = this.<Class1206>method2455(
-         new Class1206(
+      this.field4427 = this.<Button>addButton(
+         new Button(
             this.method2273(1, 3),
             method1929(0),
             100,
@@ -72,8 +78,8 @@ public class Class815 extends Class813 {
             var1 -> this.mc.displayGuiScreen(new Class818(this, this.field4422.clone()))
          )
       );
-      this.field4428 = this.<Class1206>method2455(
-         new Class1206(
+      this.field4428 = this.<Button>addButton(
+         new Button(
             this.method2273(2, 3),
             method1929(0),
             100,
@@ -87,15 +93,15 @@ public class Class815 extends Class813 {
          this.method2271(var3);
       }
 
-      this.field4432 = this.<Class1206>method2455(
-         new Class1206(this.method2272(0), method1929(13) - 5, 100, 20, new TranslationTextComponent("mco.configure.world.buttons.switchminigame"), var1 -> {
+      this.field4432 = this.<Button>addButton(
+         new Button(this.method2272(0), method1929(13) - 5, 100, 20, new TranslationTextComponent("mco.configure.world.buttons.switchminigame"), var1 -> {
             Class804 var4 = new Class804(this, Class2049.field13370);
             var4.method1956(new TranslationTextComponent("mco.template.title.minigame"));
             this.mc.displayGuiScreen(var4);
          })
       );
-      this.field4429 = this.<Class1206>method2455(
-         new Class1206(
+      this.field4429 = this.<Button>addButton(
+         new Button(
             this.method2272(0),
             method1929(13) - 5,
             90,
@@ -107,8 +113,8 @@ public class Class815 extends Class813 {
                   )
          )
       );
-      this.field4430 = this.<Class1206>method2455(
-         new Class1206(
+      this.field4430 = this.<Button>addButton(
+         new Button(
             this.method2272(1),
             method1929(13) - 5,
             90,
@@ -117,8 +123,8 @@ public class Class815 extends Class813 {
             var1 -> this.mc.displayGuiScreen(new Class807(this, this.field4422.clone(), this.field4422.field27456))
          )
       );
-      this.field4431 = this.<Class1206>method2455(
-         new Class1206(
+      this.field4431 = this.<Button>addButton(
+         new Button(
             this.method2272(2),
             method1929(13) - 5,
             90,
@@ -126,14 +132,14 @@ public class Class815 extends Class813 {
             new TranslationTextComponent("mco.configure.world.buttons.resetworld"),
             var1 -> this.mc
                   .displayGuiScreen(
-                     new Class814(
+                     new RealmsResetWorldScreen(
                         this, this.field4422.clone(), () -> this.mc.displayGuiScreen(this.method2298()), () -> this.mc.displayGuiScreen(this.method2298())
                      )
                   )
          )
       );
-      this.<Class1206>method2455(new Class1206(this.field4425 - 80 + 8, method1929(13) - 5, 70, 20, DialogTexts.field30663, var1 -> this.method2275()));
-      this.field4430.field6482 = true;
+      this.<Button>addButton(new Button(this.field4425 - 80 + 8, method1929(13) - 5, 70, 20, DialogTexts.field30663, var1 -> this.method2275()));
+      this.field4430.active = true;
       if (this.field4422 != null) {
          this.method2277();
          if (!this.method2288()) {
@@ -144,9 +150,9 @@ public class Class815 extends Class813 {
       } else {
          this.method2292();
          this.method2289();
-         this.field4426.field6482 = false;
-         this.field4427.field6482 = false;
-         this.field4428.field6482 = false;
+         this.field4426.active = false;
+         this.field4427.active = false;
+         this.field4428.active = false;
       }
    }
 
@@ -176,7 +182,7 @@ public class Class815 extends Class813 {
             }
          }
       });
-      this.<Class1218>method2455(var6);
+      this.<Class1218>addButton(var6);
    }
 
    private int method2272(int var1) {
@@ -184,7 +190,7 @@ public class Class815 extends Class813 {
    }
 
    private int method2273(int var1, int var2) {
-      return this.field4564 / 2 - (var2 * 105 - 5) / 2 + var1 * 105;
+      return this.width / 2 - (var2 * 105 - 5) / 2 + var1 * 105;
    }
 
    @Override
@@ -198,23 +204,23 @@ public class Class815 extends Class813 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.field4420 = null;
-      this.method2469(var1);
-      method5691(var1, this.fontRenderer, field4412, this.field4564 / 2, method1929(4), 16777215);
-      super.method1923(var1, var2, var3, var4);
+      this.renderBackground(var1);
+      drawCenteredString(var1, this.fontRenderer, field4412, this.width / 2, method1929(4), 16777215);
+      super.render(var1, var2, var3, var4);
       if (this.field4422 != null) {
          String var7 = this.field4422.method18907();
          int var8 = this.fontRenderer.getStringWidth(var7);
          int var9 = this.field4422.field27447 != Class2261.field14706 ? 8388479 : 10526880;
          int var10 = this.fontRenderer.method38821(field4413);
-         method5691(var1, this.fontRenderer, field4413, this.field4564 / 2, 12, 16777215);
-         method5690(var1, this.fontRenderer, var7, this.field4564 / 2, 24, var9);
-         int var11 = Math.min(this.method2273(2, 3) + 80 - 11, this.field4564 / 2 + var8 / 2 + var10 / 2 + 10);
+         drawCenteredString(var1, this.fontRenderer, field4413, this.width / 2, 12, 16777215);
+         method5690(var1, this.fontRenderer, var7, this.width / 2, 24, var9);
+         int var11 = Math.min(this.method2273(2, 3) + 80 - 11, this.width / 2 + var8 / 2 + var10 / 2 + 10);
          this.method2283(var1, var11, 7, var2, var3);
          if (this.method2288()) {
             this.fontRenderer
-               .method38805(
+               .func_243248_b(
                   var1,
                   field4414.deepCopy().appendString(this.field4422.method18908()),
                   (float)(this.field4424 + 80 + 20 + 10),
@@ -227,7 +233,7 @@ public class Class815 extends Class813 {
             this.method2282(var1, this.field4420, var2, var3);
          }
       } else {
-         method5691(var1, this.fontRenderer, field4413, this.field4564 / 2, 17, 16777215);
+         drawCenteredString(var1, this.fontRenderer, field4413, this.width / 2, 17, 16777215);
       }
    }
 
@@ -237,13 +243,13 @@ public class Class815 extends Class813 {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          this.method2275();
          return true;
@@ -280,19 +286,19 @@ public class Class815 extends Class813 {
    }
 
    private void method2277() {
-      this.field4426.field6482 = !this.field4422.field27452;
-      this.field4427.field6482 = !this.field4422.field27452;
-      this.field4428.field6482 = true;
-      this.field4432.field6482 = !this.field4422.field27452;
-      this.field4429.field6482 = !this.field4422.field27452;
-      this.field4431.field6482 = !this.field4422.field27452;
+      this.field4426.active = !this.field4422.field27452;
+      this.field4427.active = !this.field4422.field27452;
+      this.field4428.active = true;
+      this.field4432.active = !this.field4422.field27452;
+      this.field4429.active = !this.field4422.field27452;
+      this.field4431.active = !this.field4422.field27452;
    }
 
-   private void method2278(Class6128 var1) {
+   private void method2278(RealmsServer var1) {
       if (this.field4422.field27447 != Class2261.field14707) {
-         this.method2295(true, new Class815(this.field4421.method2060(), this.field4423));
+         this.method2295(true, new Class815(this.field4421.func_223942_f(), this.field4423));
       } else {
-         this.field4421.method2046(var1, new Class815(this.field4421.method2060(), this.field4423));
+         this.field4421.method2046(var1, new Class815(this.field4421.func_223942_f(), this.field4423));
       }
    }
 
@@ -303,19 +309,19 @@ public class Class815 extends Class813 {
       this.mc.displayGuiScreen(var3);
    }
 
-   private void method2280(int var1, Class6128 var2) {
+   private void method2280(int var1, RealmsServer var2) {
       TranslationTextComponent var5 = new TranslationTextComponent("mco.configure.world.slot.switch.question.line1");
       TranslationTextComponent var6 = new TranslationTextComponent("mco.configure.world.slot.switch.question.line2");
       this.mc.displayGuiScreen(new Class808(var3 -> {
          if (!var3) {
             this.mc.displayGuiScreen(this);
          } else {
-            this.mc.displayGuiScreen(new Class797(this.field4421, new Class790(var2.field27443, var1, () -> this.mc.displayGuiScreen(this.method2298()))));
+            this.mc.displayGuiScreen(new RealmsLongRunningMcoTaskScreen(this.field4421, new Class790(var2.field27443, var1, () -> this.mc.displayGuiScreen(this.method2298()))));
          }
       }, Class2134.field13980, var5, var6, true));
    }
 
-   private void method2281(int var1, Class6128 var2) {
+   private void method2281(int var1, RealmsServer var2) {
       TranslationTextComponent var5 = new TranslationTextComponent("mco.configure.world.slot.switch.question.line1");
       TranslationTextComponent var6 = new TranslationTextComponent("mco.configure.world.slot.switch.question.line2");
       this.mc
@@ -325,7 +331,7 @@ public class Class815 extends Class813 {
                   if (!var3) {
                      this.mc.displayGuiScreen(this);
                   } else {
-                     Class814 var6x = new Class814(
+                     RealmsResetWorldScreen var6x = new RealmsResetWorldScreen(
                         this,
                         var2,
                         new TranslationTextComponent("mco.configure.world.switch.slot"),
@@ -336,7 +342,7 @@ public class Class815 extends Class813 {
                         () -> this.mc.displayGuiScreen(this.method2298())
                      );
                      var6x.method2246(var1);
-                     var6x.method2247(new TranslationTextComponent("mco.create.world.reset.title"));
+                     var6x.func_224432_a(new TranslationTextComponent("mco.create.world.reset.title"));
                      this.mc.displayGuiScreen(var6x);
                   }
                },
@@ -437,15 +443,15 @@ public class Class815 extends Class813 {
       this.method2290(this.field4431);
    }
 
-   private void method2290(Class1206 var1) {
+   private void method2290(Button var1) {
       var1.field6483 = false;
       this.field4561.remove(var1);
       this.field4566.remove(var1);
    }
 
-   private void method2291(Class1206 var1) {
+   private void method2291(Button var1) {
       var1.field6483 = true;
-      this.<Class1206>method2455(var1);
+      this.<Button>addButton(var1);
    }
 
    private void method2292() {
@@ -488,11 +494,11 @@ public class Class815 extends Class813 {
    }
 
    public void method2295(boolean var1, Screen var2) {
-      this.mc.displayGuiScreen(new Class797(var2, new Class794(this.field4422, this, this.field4421, var1)));
+      this.mc.displayGuiScreen(new RealmsLongRunningMcoTaskScreen(var2, new Class794(this.field4422, this, this.field4421, var1)));
    }
 
    public void method2296(Screen var1) {
-      this.mc.displayGuiScreen(new Class797(var1, new Class1345(this.field4422, this)));
+      this.mc.displayGuiScreen(new RealmsLongRunningMcoTaskScreen(var1, new Class1345(this.field4422, this)));
    }
 
    public void method2297() {
@@ -502,7 +508,7 @@ public class Class815 extends Class813 {
    @Override
    public void method2245(Class6130 var1) {
       if (var1 != null && Class2320.field15899 == var1.field27472) {
-         this.mc.displayGuiScreen(new Class797(this.field4421, new Class795(this.field4422.field27443, var1, this.method2298())));
+         this.mc.displayGuiScreen(new RealmsLongRunningMcoTaskScreen(this.field4421, new Class795(this.field4422.field27443, var1, this.method2298())));
       }
    }
 

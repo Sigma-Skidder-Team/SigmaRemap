@@ -5,6 +5,9 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -20,8 +23,8 @@ public class Class1313 extends Screen {
    private ITextComponent field6928;
    private ITextComponent field6929;
    private Class1281 field6930;
-   private Class1206 field6931;
-   private Class1189 field6932;
+   private Button field6931;
+   private TextFieldWidget field6932;
    private Class9733 field6933;
 
    public Class1313(Class1324 var1) {
@@ -129,11 +132,11 @@ public class Class1313 extends Screen {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
       this.field6928 = new TranslationTextComponent("createWorld.customize.presets.share");
       this.field6929 = new TranslationTextComponent("createWorld.customize.presets.list");
-      this.field6932 = new Class1189(this.fontRenderer, 50, 40, this.field4564 - 100, 20, this.field6928);
+      this.field6932 = new TextFieldWidget(this.fontRenderer, 50, 40, this.width - 100, 20, this.field6928);
       this.field6932.method5657(1230);
       MutableRegistry var3 = this.field6927.field7000.field7092.method5789().<Biome>getRegistry(Registry.BIOME_KEY);
       this.field6932.method5635(method6204(var3, this.field6927.method6294()));
@@ -141,15 +144,15 @@ public class Class1313 extends Screen {
       this.field4561.add(this.field6932);
       this.field6930 = new Class1281(this);
       this.field4561.add(this.field6930);
-      this.field6931 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 155, this.field4565 - 28, 150, 20, new TranslationTextComponent("createWorld.customize.presets.select"), var2 -> {
-            Class9733 var5 = method6203(var3, this.field6932.method5636(), this.field6933);
+      this.field6931 = this.<Button>addButton(
+         new Button(this.width / 2 - 155, this.height - 28, 150, 20, new TranslationTextComponent("createWorld.customize.presets.select"), var2 -> {
+            Class9733 var5 = method6203(var3, this.field6932.getText(), this.field6933);
             this.field6927.method6295(var5);
             this.mc.displayGuiScreen(this.field6927);
          })
       );
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6927))
+      this.<Button>addButton(
+         new Button(this.width / 2 + 5, this.height - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6927))
       );
       this.method6205(this.field6930.method6023() != null);
    }
@@ -161,7 +164,7 @@ public class Class1313 extends Screen {
 
    @Override
    public void resize(Minecraft var1, int var2, int var3) {
-      String var6 = this.field6932.method5636();
+      String var6 = this.field6932.getText();
       this.init(var1, var2, var3);
       this.field6932.method5635(var6);
    }
@@ -173,21 +176,21 @@ public class Class1313 extends Screen {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      this.field6930.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      this.field6930.render(var1, var2, var3, var4);
       RenderSystem.pushMatrix();
       RenderSystem.translatef(0.0F, 0.0F, 400.0F);
-      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 8, 16777215);
+      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 8, 16777215);
       method5693(var1, this.fontRenderer, this.field6928, 50, 30, 10526880);
       method5693(var1, this.fontRenderer, this.field6929, 50, 70, 10526880);
       RenderSystem.popMatrix();
-      this.field6932.method1923(var1, var2, var3, var4);
-      super.method1923(var1, var2, var3, var4);
+      this.field6932.render(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    @Override
@@ -197,7 +200,7 @@ public class Class1313 extends Screen {
    }
 
    public void method6205(boolean var1) {
-      this.field6931.field6482 = var1 || this.field6932.method5636().length() > 1;
+      this.field6931.active = var1 || this.field6932.getText().length() > 1;
    }
 
    private static void method6206(
@@ -256,7 +259,7 @@ public class Class1313 extends Screen {
    }
 
    // $VF: synthetic method
-   public static Class1189 method6218(Class1313 var0) {
+   public static TextFieldWidget method6218(Class1313 var0) {
       return var0.field6932;
    }
 

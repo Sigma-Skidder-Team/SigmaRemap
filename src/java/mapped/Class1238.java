@@ -14,7 +14,7 @@ public class Class1238 extends Class1236 {
 
    @Override
    public void method5813() {
-      this.method5743(new TranslationTextComponent("jigsaw_block.levels", Class1321.method6282(this.field6588)));
+      this.setMessage(new TranslationTextComponent("jigsaw_block.levels", Class1321.method6282(this.field6588)));
    }
 
    @Override

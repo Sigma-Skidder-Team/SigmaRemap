@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -42,29 +43,29 @@ public class Class1318 extends Screen {
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
+   public void init() {
+      super.init();
       this.field6966 = !this.field6965.isPresent() ? Class2150.method8860(this.mc.playerController.method23157()) : this.field6965;
 
       for (int var3 = 0; var3 < Class2150.field14059.length; var3++) {
          Class2150 var4 = Class2150.field14059[var3];
-         this.field6970.add(new Class1198(this, var4, this.field4564 / 2 - field6963 / 2 + var3 * 30, this.field4565 / 2 - 30));
+         this.field6970.add(new Class1198(this, var4, this.width / 2 - field6963 / 2 + var3 * 30, this.height / 2 - 30));
       }
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       if (!this.method6259()) {
          var1.push();
          RenderSystem.enableBlend();
          this.mc.getTextureManager().bindTexture(field6962);
-         int var7 = this.field4564 / 2 - 62;
-         int var8 = this.field4565 / 2 - 30 - 27;
+         int var7 = this.width / 2 - 62;
+         int var8 = this.height / 2 - 30 - 27;
          method5699(var1, var7, var8, 0.0F, 0.0F, 125, 75, 128, 128);
          var1.pop();
-         super.method1923(var1, var2, var3, var4);
-         this.field6966.ifPresent(var2x -> method5691(var1, this.fontRenderer, Class2150.method8863(var2x), this.field4564 / 2, this.field4565 / 2 - 30 - 20, -1));
-         method5691(var1, this.fontRenderer, field6964, this.field4564 / 2, this.field4565 / 2 + 5, 16777215);
+         super.render(var1, var2, var3, var4);
+         this.field6966.ifPresent(var2x -> drawCenteredString(var1, this.fontRenderer, Class2150.method8863(var2x), this.width / 2, this.height / 2 - 30 - 20, -1));
+         drawCenteredString(var1, this.fontRenderer, field6964, this.width / 2, this.height / 2 + 5, 16777215);
          if (!this.field6969) {
             this.field6967 = var2;
             this.field6968 = var3;
@@ -74,7 +75,7 @@ public class Class1318 extends Screen {
          boolean var9 = this.field6967 == var2 && this.field6968 == var3;
 
          for (Class1198 var11 : this.field6970) {
-            var11.method1923(var1, var2, var3, var4);
+            var11.render(var1, var2, var3, var4);
             this.field6966.ifPresent(var1x -> var11.method5748(var1x == Class1198.method5751(var11)));
             if (!var9 && var11.method5737()) {
                this.field6966 = Optional.<Class2150>of(Class1198.method5751(var11));
@@ -108,13 +109,13 @@ public class Class1318 extends Screen {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 == 293 && this.field6966.isPresent()) {
          this.field6969 = false;
          this.field6966 = Class2150.method8862(this.field6966.get());
          return true;
       } else {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       }
    }
 

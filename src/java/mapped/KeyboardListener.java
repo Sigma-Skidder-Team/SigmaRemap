@@ -4,7 +4,11 @@ import java.util.Locale;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
+import net.minecraft.client.AbstractOption;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.ControlsScreen;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
@@ -309,10 +313,10 @@ public class KeyboardListener {
          }
 
          Screen var15 = this.field43915.currentScreen;
-         if (!(this.field43915.currentScreen instanceof Class1138) || ((Class1138)var15).field6200 <= Util.milliTime() - 20L) {
+         if (!(this.field43915.currentScreen instanceof ControlsScreen) || ((ControlsScreen)var15).field6200 <= Util.milliTime() - 20L) {
             if (var5 != 1) {
-               if (var5 == 0 && this.field43915.currentScreen instanceof Class1138) {
-                  ((Class1138)this.field43915.currentScreen).field6199 = null;
+               if (var5 == 0 && this.field43915.currentScreen instanceof ControlsScreen) {
+                  ((ControlsScreen)this.field43915.currentScreen).field6199 = null;
                }
             } else {
                if (this.field43915.gameSettings.keyBindFullscreen.matchesKey(var3, var4)) {
@@ -338,7 +342,7 @@ public class KeyboardListener {
             }
          }
 
-         boolean var10 = var15 == null || !(var15.method5533() instanceof Class1189) || !((Class1189)var15.method5533()).method5653();
+         boolean var10 = var15 == null || !(var15.method5533() instanceof TextFieldWidget) || !((TextFieldWidget)var15.method5533()).method5653();
          if (var5 != 0 && var3 == 66 && Screen.hasControlDown() && var10) {
             AbstractOption.field25346.method17945(this.field43915.gameSettings, 1);
             if (var15 instanceof Class1140) {
@@ -371,7 +375,7 @@ public class KeyboardListener {
                      }
                   }
 
-                  var11[0] = var15.method1920(var3, var4, var6);
+                  var11[0] = var15.keyPressed(var3, var4, var6);
                   if (Class9299.field42887.method20214() && !var11[0]) {
                      var11[0] = Class9299.method35056(Class9299.field42887, this.field43915.currentScreen, var3, var4, var6);
                   }
@@ -453,7 +457,7 @@ public class KeyboardListener {
                for (char var11 : Character.toChars(var3)) {
                   Screen.wrapScreenError(() -> {
                      if (!Class9299.field42884.method20214() || !Class9299.method35056(Class9299.field42884, this.field43915.currentScreen, var11, var4)) {
-                        boolean var6 = var7.method1932(var11, var4);
+                        boolean var6 = var7.charTyped(var11, var4);
                         if (Class9299.field42885.method20214() && !var6) {
                            Class9299.method35056(Class9299.field42885, this.field43915.currentScreen, var11, var4);
                         }
@@ -463,7 +467,7 @@ public class KeyboardListener {
             } else {
                Screen.wrapScreenError(() -> {
                   if (!Class9299.field42884.method20214() || !Class9299.method35056(Class9299.field42884, this.field43915.currentScreen, (char)var3, var4)) {
-                     boolean var6 = var7.method1932((char)var3, var4);
+                     boolean var6 = var7.charTyped((char)var3, var4);
                      if (Class9299.field42885.method20214() && !var6) {
                         Class9299.method35056(Class9299.field42885, this.field43915.currentScreen, (char)var3, var4);
                      }
@@ -474,7 +478,7 @@ public class KeyboardListener {
       }
    }
 
-   public void method36347(boolean var1) {
+   public void enableRepeatEvents(boolean var1) {
       this.field43916 = var1;
    }
 

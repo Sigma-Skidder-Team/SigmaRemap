@@ -28,14 +28,14 @@ public class Class862 extends Class851<Class5826> {
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
-      int var3 = (this.field4564 - this.field4721) / 2;
-      int var4 = (this.field4565 - this.field4722) / 2;
+   public void init() {
+      super.init();
+      int var3 = (this.width - this.field4721) / 2;
+      int var4 = (this.height - this.field4722) / 2;
       int var5 = var4 + 16 + 2;
 
       for (int var6 = 0; var6 < 7; var6++) {
-         this.field4791[var6] = this.<Class1207>method2455(new Class1207(this, var3 + 5, var5, var6, var1 -> {
+         this.field4791[var6] = this.<Class1207>addButton(new Class1207(this, var3 + 5, var5, var6, var1 -> {
             if (var1 instanceof Class1207) {
                this.field4790 = ((Class1207)var1).method5765() + this.field4792;
                this.method2661();
@@ -49,25 +49,25 @@ public class Class862 extends Class851<Class5826> {
    public void method2617(MatrixStack var1, int var2, int var3) {
       int var6 = this.field4727.method18208();
       if (var6 > 0 && var6 <= 5 && this.field4727.method18218()) {
-         IFormattableTextComponent var7 = this.field4560.deepCopy().append(field4788).append(new TranslationTextComponent("merchant.level." + var6));
+         IFormattableTextComponent var7 = this.title.deepCopy().append(field4788).append(new TranslationTextComponent("merchant.level." + var6));
          int var8 = this.fontRenderer.method38821(var7);
          int var9 = 49 + this.field4721 / 2 - var8 / 2;
-         this.fontRenderer.method38805(var1, var7, (float)var9, 6.0F, 4210752);
+         this.fontRenderer.func_243248_b(var1, var7, (float)var9, 6.0F, 4210752);
       } else {
-         this.fontRenderer.method38805(var1, this.field4560, (float)(49 + this.field4721 / 2 - this.fontRenderer.method38821(this.field4560) / 2), 6.0F, 4210752);
+         this.fontRenderer.func_243248_b(var1, this.title, (float)(49 + this.field4721 / 2 - this.fontRenderer.method38821(this.title) / 2), 6.0F, 4210752);
       }
 
-      this.fontRenderer.method38805(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.field4726, 4210752);
+      this.fontRenderer.func_243248_b(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.field4726, 4210752);
       int var10 = this.fontRenderer.method38821(field4787);
-      this.fontRenderer.method38805(var1, field4787, (float)(5 - var10 / 2 + 48), 6.0F, 4210752);
+      this.fontRenderer.func_243248_b(var1, field4787, (float)(5 - var10 / 2 + 48), 6.0F, 4210752);
    }
 
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4786);
-      int var7 = (this.field4564 - this.field4721) / 2;
-      int var8 = (this.field4565 - this.field4722) / 2;
+      int var7 = (this.width - this.field4721) / 2;
+      int var8 = (this.height - this.field4722) / 2;
       method5697(var1, var7, var8, this.method5702(), 0.0F, 0.0F, this.field4721, this.field4722, 256, 512);
       Class46 var9 = this.field4727.method18217();
       if (!var9.isEmpty()) {
@@ -124,13 +124,13 @@ public class Class862 extends Class851<Class5826> {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      super.render(var1, var2, var3, var4);
       Class46 var7 = this.field4727.method18217();
       if (!var7.isEmpty()) {
-         int var8 = (this.field4564 - this.field4721) / 2;
-         int var9 = (this.field4565 - this.field4722) / 2;
+         int var8 = (this.width - this.field4721) / 2;
+         int var9 = (this.height - this.field4722) / 2;
          int var10 = var9 + 16 + 1;
          int var11 = var8 + 5 + 5;
          RenderSystem.pushMatrix();
@@ -248,8 +248,8 @@ public class Class862 extends Class851<Class5826> {
    @Override
    public boolean method1958(double var1, double var3, int var5) {
       this.field4793 = false;
-      int var8 = (this.field4564 - this.field4721) / 2;
-      int var9 = (this.field4565 - this.field4722) / 2;
+      int var8 = (this.width - this.field4721) / 2;
+      int var9 = (this.height - this.field4722) / 2;
       if (this.method2666(this.field4727.method18217().size())
          && var1 > (double)(var8 + 94)
          && var1 < (double)(var8 + 94 + 6)

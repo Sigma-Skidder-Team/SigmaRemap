@@ -1,13 +1,14 @@
 package mapped;
 
+import com.mojang.realmsclient.RealmsMainScreen;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class1163 extends Class1161 {
    private static String[] field6318;
-   public final Class806 field6319;
+   public final RealmsMainScreen field6319;
 
-   private Class1163(Class806 var1) {
+   private Class1163(RealmsMainScreen var1) {
       super(var1, null);
       this.field6319 = var1;
    }
@@ -19,7 +20,7 @@ public class Class1163 extends Class1161 {
 
    @Override
    public boolean method1958(double var1, double var3, int var5) {
-      Class806.method2111(this.field6319, true);
+      RealmsMainScreen.method2111(this.field6319, true);
       return true;
    }
 
@@ -27,7 +28,7 @@ public class Class1163 extends Class1161 {
       int var9 = var4 + 8;
       byte var10 = 0;
       boolean var11 = false;
-      if (var3 <= var5 && var5 <= (int)Class806.method2156(this.field6319).method6044() && var4 <= var6 && var6 <= var4 + 32) {
+      if (var3 <= var5 && var5 <= (int) RealmsMainScreen.method2156(this.field6319).method6044() && var4 <= var6 && var6 <= var4 + 32) {
          var11 = true;
       }
 
@@ -36,14 +37,14 @@ public class Class1163 extends Class1161 {
          var12 = 6077788;
       }
 
-      for (ITextComponent var14 : Class806.method2166()) {
-         AbstractGui.method5691(var1, Class806.method2167(this.field6319), var14, this.field6319.field4564 / 2, var9 + var10, var12);
+      for (ITextComponent var14 : RealmsMainScreen.method2166()) {
+         AbstractGui.drawCenteredString(var1, RealmsMainScreen.method2167(this.field6319), var14, this.field6319.width / 2, var9 + var10, var12);
          var10 += 10;
       }
    }
 
    // $VF: synthetic method
-   public Class1163(Class806 var1, Class375 var2) {
+   public Class1163(RealmsMainScreen var1, Class375 var2) {
       this(var1);
    }
 }

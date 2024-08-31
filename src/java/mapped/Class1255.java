@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.screen.Screen;
 
 import java.util.Iterator;
 import java.util.List;

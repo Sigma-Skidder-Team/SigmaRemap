@@ -2,6 +2,9 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -28,13 +31,13 @@ public class SocialInteractionsScreen extends Screen {
    private static final ITextComponent field6225 = new TranslationTextComponent("gui.socialInteractions.empty_blocked").mergeStyle(TextFormatting.GRAY);
    private static final ITextComponent field6226 = new TranslationTextComponent("gui.socialInteractions.blocking_hint");
    private Class1297 field6227;
-   private Class1189 field6228;
+   private TextFieldWidget field6228;
    private String field6229 = "";
    private Class2332 field6230 = Class2332.field15951;
-   private Class1206 field6231;
-   private Class1206 field6232;
-   private Class1206 field6233;
-   private Class1206 field6234;
+   private Button field6231;
+   private Button field6232;
+   private Button field6233;
+   private Button field6234;
    private ITextComponent field6235;
    private int field6236;
    private boolean field6237;
@@ -46,7 +49,7 @@ public class SocialInteractionsScreen extends Screen {
    }
 
    private int method5482() {
-      return Math.max(52, this.field4565 - 128 - 16);
+      return Math.max(52, this.height - 128 - 16);
    }
 
    private int method5483() {
@@ -58,7 +61,7 @@ public class SocialInteractionsScreen extends Screen {
    }
 
    private int method5485() {
-      return (this.field4564 - 238) / 2;
+      return (this.width - 238) / 2;
    }
 
    @Override
@@ -73,12 +76,12 @@ public class SocialInteractionsScreen extends Screen {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
       if (!this.field6237) {
-         this.field6227 = new Class1297(this, this.mc, this.field4564, this.field4565, 88, this.method5484(), 36);
+         this.field6227 = new Class1297(this, this.mc, this.width, this.height, 88, this.method5484(), 36);
       } else {
-         this.field6227.method6034(this.field4564, this.field4565, 88, this.method5484());
+         this.field6227.method6034(this.width, this.height, 88, this.method5484());
       }
 
       int var3 = this.field6227.method6022() / 3;
@@ -86,20 +89,20 @@ public class SocialInteractionsScreen extends Screen {
       int var5 = this.field6227.method6054();
       int var6 = this.fontRenderer.method38821(field6226) + 40;
       int var7 = 64 + 16 * this.method5483();
-      int var8 = (this.field4564 - var6) / 2;
-      this.field6231 = this.<Class1206>method2455(new Class1206(var4, 45, var3, 20, field6216, var1 -> this.method5486(Class2332.field15951)));
-      this.field6232 = this.<Class1206>method2455(
-         new Class1206((var4 + var5 - var3) / 2 + 1, 45, var3, 20, field6217, var1 -> this.method5486(Class2332.field15952))
+      int var8 = (this.width - var6) / 2;
+      this.field6231 = this.<Button>addButton(new Button(var4, 45, var3, 20, field6216, var1 -> this.method5486(Class2332.field15951)));
+      this.field6232 = this.<Button>addButton(
+         new Button((var4 + var5 - var3) / 2 + 1, 45, var3, 20, field6217, var1 -> this.method5486(Class2332.field15952))
       );
-      this.field6233 = this.<Class1206>method2455(new Class1206(var5 - var3 + 1, 45, var3, 20, field6218, var1 -> this.method5486(Class2332.field15953)));
-      this.field6234 = this.<Class1206>method2455(new Class1206(var8, var7, var6, 20, field6226, var1 -> this.mc.displayGuiScreen(new Class830(var1x -> {
+      this.field6233 = this.<Button>addButton(new Button(var5 - var3 + 1, 45, var3, 20, field6218, var1 -> this.method5486(Class2332.field15953)));
+      this.field6234 = this.<Button>addButton(new Button(var8, var7, var6, 20, field6226, var1 -> this.mc.displayGuiScreen(new Class830(var1x -> {
             if (var1x) {
                Util.getOSType().method8181("https://aka.ms/javablocking");
             }
 
             this.mc.displayGuiScreen(this);
          }, "https://aka.ms/javablocking", true))));
-      String var9 = this.field6228 == null ? "" : this.field6228.method5636();
+      String var9 = this.field6228 == null ? "" : this.field6228.getText();
       this.field6228 = new Class1301(this, this.fontRenderer, this.method5485() + 28, 78, 196, 16, field6222);
       this.field6228.method5657(16);
       this.field6228.method5661(false);
@@ -115,21 +118,21 @@ public class SocialInteractionsScreen extends Screen {
 
    private void method5486(Class2332 var1) {
       this.field6230 = var1;
-      this.field6231.method5743(field6216);
-      this.field6232.method5743(field6217);
-      this.field6233.method5743(field6218);
+      this.field6231.setMessage(field6216);
+      this.field6232.setMessage(field6217);
+      this.field6233.setMessage(field6218);
       Collection<UUID> var4;
       switch (Class3627.field19645[var1.ordinal()]) {
          case 1:
-            this.field6231.method5743(field6219);
+            this.field6231.setMessage(field6219);
             var4 = this.mc.player.connection.method15791();
             break;
          case 2:
-            this.field6232.method5743(field6220);
+            this.field6232.setMessage(field6220);
             var4 = this.mc.func_244599_aA().method37609();
             break;
          case 3:
-            this.field6233.method5743(field6221);
+            this.field6233.setMessage(field6221);
             FilterManager var5 = this.mc.func_244599_aA();
             var4 = this.mc.player.connection.method15791().stream().filter(var5::method37608).collect(Collectors.toSet());
             break;
@@ -139,7 +142,7 @@ public class SocialInteractionsScreen extends Screen {
 
       this.field6230 = var1;
       this.field6227.method6134(var4, this.field6227.method6044());
-      if (!this.field6228.method5636().isEmpty() && this.field6227.method6137() && !this.field6228.method5746()) {
+      if (!this.field6228.getText().isEmpty() && this.field6227.method6137() && !this.field6228.method5746()) {
          NarratorChatListener.INSTANCE.say(field6223.getString());
       } else if (var4.isEmpty()) {
          if (var1 == Class2332.field15952) {
@@ -152,13 +155,13 @@ public class SocialInteractionsScreen extends Screen {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    @Override
-   public void method2469(MatrixStack var1) {
+   public void renderBackground(MatrixStack var1) {
       int var4 = this.method5485() + 3;
-      super.method2469(var1);
+      super.renderBackground(var1);
       this.mc.getTextureManager().bindTexture(field6215);
       this.method5696(var1, var4, 64, 1, 1, 236, 8);
       int var5 = this.method5483();
@@ -172,35 +175,35 @@ public class SocialInteractionsScreen extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.method5488(this.mc);
-      this.method2469(var1);
+      this.renderBackground(var1);
       if (this.field6235 != null) {
          method5693(var1, this.mc.fontRenderer, this.field6235, this.method5485() + 8, 35, -1);
       }
 
       if (!this.field6227.method6137()) {
-         this.field6227.method1923(var1, var2, var3, var4);
-      } else if (!this.field6228.method5636().isEmpty()) {
-         method5691(var1, this.mc.fontRenderer, field6223, this.field4564 / 2, (78 + this.method5484()) / 2, -1);
+         this.field6227.render(var1, var2, var3, var4);
+      } else if (!this.field6228.getText().isEmpty()) {
+         drawCenteredString(var1, this.mc.fontRenderer, field6223, this.width / 2, (78 + this.method5484()) / 2, -1);
       } else {
          switch (Class3627.field19645[this.field6230.ordinal()]) {
             case 2:
-               method5691(var1, this.mc.fontRenderer, field6224, this.field4564 / 2, (78 + this.method5484()) / 2, -1);
+               drawCenteredString(var1, this.mc.fontRenderer, field6224, this.width / 2, (78 + this.method5484()) / 2, -1);
                break;
             case 3:
-               method5691(var1, this.mc.fontRenderer, field6225, this.field4564 / 2, (78 + this.method5484()) / 2, -1);
+               drawCenteredString(var1, this.mc.fontRenderer, field6225, this.width / 2, (78 + this.method5484()) / 2, -1);
          }
       }
 
-      if (!this.field6228.method5746() && this.field6228.method5636().isEmpty()) {
+      if (!this.field6228.method5746() && this.field6228.getText().isEmpty()) {
          method5693(var1, this.mc.fontRenderer, field6222, this.field6228.field6477, this.field6228.field6478, -1);
       } else {
-         this.field6228.method1923(var1, var2, var3, var4);
+         this.field6228.render(var1, var2, var3, var4);
       }
 
       this.field6234.field6483 = this.field6230 == Class2332.field15953;
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
       if (this.field6238 != null) {
          this.field6238.run();
       }
@@ -216,12 +219,12 @@ public class SocialInteractionsScreen extends Screen {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (!this.field6228.method5746() && this.mc.gameSettings.keyBindSocialInteractions.matchesKey(var1, var2)) {
          this.mc.displayGuiScreen((Screen)null);
          return true;
       } else {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       }
    }
 
@@ -275,7 +278,7 @@ public class SocialInteractionsScreen extends Screen {
    }
 
    // $VF: synthetic method
-   public static Class1189 method5497(SocialInteractionsScreen var0) {
+   public static TextFieldWidget method5497(SocialInteractionsScreen var0) {
       return var0.field6228;
    }
 

@@ -5,7 +5,9 @@ import com.mojang.datafixers.util.Either;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -18,7 +20,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Class804 extends Class798 {
+public class Class804 extends RealmsScreen {
    private static final Logger field4194 = LogManager.getLogger();
    private static final ResourceLocation field4195 = new ResourceLocation("realms", "textures/gui/realms/link_icons.png");
    private static final ResourceLocation field4196 = new ResourceLocation("realms", "textures/gui/realms/trailer_icons.png");
@@ -29,9 +31,9 @@ public class Class804 extends Class798 {
    private Class1291 field4201;
    private int field4202 = -1;
    private ITextComponent field4203;
-   private Class1206 field4204;
-   private Class1206 field4205;
-   private Class1206 field4206;
+   private Button field4204;
+   private Button field4205;
+   private Button field4206;
    private ITextComponent field4207;
    private String field4208;
    private final Class2049 field4209;
@@ -80,31 +82,31 @@ public class Class804 extends Class798 {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
       this.field4201 = new Class1291(this, this.field4201.method6121());
-      this.field4205 = this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 206, this.field4565 - 32, 100, 20, new TranslationTextComponent("mco.template.button.trailer"), var1 -> this.method1967()
+      this.field4205 = this.<Button>addButton(
+         new Button(
+            this.width / 2 - 206, this.height - 32, 100, 20, new TranslationTextComponent("mco.template.button.trailer"), var1 -> this.method1967()
          )
       );
-      this.field4204 = this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 100, this.field4565 - 32, 100, 20, new TranslationTextComponent("mco.template.button.select"), var1 -> this.method1965()
+      this.field4204 = this.<Button>addButton(
+         new Button(
+            this.width / 2 - 100, this.height - 32, 100, 20, new TranslationTextComponent("mco.template.button.select"), var1 -> this.method1965()
          )
       );
       ITextComponent var3 = this.field4209 != Class2049.field13370 ? DialogTexts.field30663 : DialogTexts.GUI_CANCEL;
-      Class1206 var4 = new Class1206(this.field4564 / 2 + 6, this.field4565 - 32, 100, 20, var3, var1 -> this.method1964());
-      this.<Class1206>method2455(var4);
-      this.field4206 = this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 + 112, this.field4565 - 32, 100, 20, new TranslationTextComponent("mco.template.button.publisher"), var1 -> this.method1968()
+      Button var4 = new Button(this.width / 2 + 6, this.height - 32, 100, 20, var3, var1 -> this.method1964());
+      this.<Button>addButton(var4);
+      this.field4206 = this.<Button>addButton(
+         new Button(
+            this.width / 2 + 112, this.height - 32, 100, 20, new TranslationTextComponent("mco.template.button.publisher"), var1 -> this.method1968()
          )
       );
-      this.field4204.field6482 = false;
+      this.field4204.active = false;
       this.field4205.field6483 = false;
       this.field4206.field6483 = false;
-      this.<Class1291>method2456(this.field4201);
+      this.<Class1291>addListener(this.field4201);
       this.method5537(this.field4201);
       Stream<ITextComponent> var5 = Stream.<ITextComponent>of(this.field4203);
       if (this.field4211 != null) {
@@ -117,7 +119,7 @@ public class Class804 extends Class798 {
    private void method1959() {
       this.field4206.field6483 = this.method1961();
       this.field4205.field6483 = this.method1963();
-      this.field4204.field6482 = this.method1960();
+      this.field4204.active = this.method1960();
    }
 
    private boolean method1960() {
@@ -146,9 +148,9 @@ public class Class804 extends Class798 {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          this.method1964();
          return true;
@@ -201,23 +203,23 @@ public class Class804 extends Class798 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.field4207 = null;
       this.field4208 = null;
       this.field4214 = false;
-      this.method2469(var1);
-      this.field4201.method1923(var1, var2, var3, var4);
+      this.renderBackground(var1);
+      this.field4201.render(var1, var2, var3, var4);
       if (this.field4215 != null) {
          this.method1971(var1, var2, var3, this.field4215);
       }
 
-      method5691(var1, this.fontRenderer, this.field4203, this.field4564 / 2, 13, 16777215);
+      drawCenteredString(var1, this.fontRenderer, this.field4203, this.width / 2, 13, 16777215);
       if (this.field4213) {
          ITextComponent[] var7 = this.field4211;
 
          for (int var8 = 0; var8 < var7.length; var8++) {
             int var9 = this.fontRenderer.method38821(var7[var8]);
-            int var10 = this.field4564 / 2 - var9 / 2;
+            int var10 = this.width / 2 - var9 / 2;
             int var11 = method1929(-1 + var8);
             if (var2 >= var10 && var2 <= var10 + var9 && var3 >= var11 && var3 <= var11 + 9) {
                this.field4214 = true;
@@ -236,11 +238,11 @@ public class Class804 extends Class798 {
                }
             }
 
-            method5691(var1, this.fontRenderer, (ITextComponent)var13, this.field4564 / 2, method1929(-1 + var12), var14);
+            drawCenteredString(var1, this.fontRenderer, (ITextComponent)var13, this.width / 2, method1929(-1 + var12), var14);
          }
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
       this.method1972(var1, this.field4207, var2, var3);
    }
 
@@ -249,7 +251,7 @@ public class Class804 extends Class798 {
          Class8081 var8 = (Class8081)var4.get(var7);
          int var9 = method1929(4 + var7);
          int var10 = var8.field34733.stream().mapToInt(var1x -> this.fontRenderer.getStringWidth(var1x.method18864())).sum();
-         int var11 = this.field4564 / 2 - var10 / 2;
+         int var11 = this.width / 2 - var10 / 2;
 
          for (Class6102 var13 : var8.field34733) {
             int var14 = !var13.method18865() ? 16777215 : 3368635;

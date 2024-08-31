@@ -18,7 +18,7 @@ public enum Class2064 {
       this.field13458 = new TranslationTextComponent("pack.incompatible.confirm." + var3);
    }
 
-   public boolean method8720() {
+   public boolean isCompatible() {
       return this == field13456;
    }
 

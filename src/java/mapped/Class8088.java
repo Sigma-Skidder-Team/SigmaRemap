@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.base.Predicates;
 import net.minecraft.entity.Entity;
+import net.minecraft.world.Difficulty;
 
 import java.util.function.Predicate;
 
@@ -13,7 +14,7 @@ public final class Class8088 {
    public static final Predicate<Entity> field34760 = var0 -> var0 instanceof Class920 && var0.isAlive();
    public static final Predicate<Entity> field34761 = var0 -> !(var0 instanceof PlayerEntity) || !var0.isSpectator() && !((PlayerEntity)var0).isCreative();
    public static final Predicate<Entity> field34762 = var0 -> !(var0 instanceof PlayerEntity)
-         || !var0.isSpectator() && !((PlayerEntity)var0).isCreative() && var0.world.method6997() != Class2197.field14351;
+         || !var0.isSpectator() && !((PlayerEntity)var0).isCreative() && var0.world.method6997() != Difficulty.field14351;
    public static final Predicate<Entity> field34763 = var0 -> !var0.isSpectator();
 
    public static Predicate<Entity> method27980(double var0, double var2, double var4, double var6) {

@@ -53,6 +53,6 @@ public class Class1165 extends Class1155<Class1165> {
 
       Class811.method2226(this.field6327).method38801(var1, var8, (float)(var4 + 2), (float)(var5 + 1), 16777215);
       Class811.method2227(this.field6327).method38801(var1, this.field6325, (float)(var4 + 2), (float)(var5 + 12), 8421504);
-      Class811.method2228(this.field6327).method38805(var1, this.field6326, (float)(var4 + 2), (float)(var5 + 12 + 10), 8421504);
+      Class811.method2228(this.field6327).func_243248_b(var1, this.field6326, (float)(var4 + 2), (float)(var5 + 12 + 10), 8421504);
    }
 }

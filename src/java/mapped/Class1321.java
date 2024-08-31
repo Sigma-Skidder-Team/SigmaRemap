@@ -2,6 +2,9 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -13,14 +16,14 @@ public class Class1321 extends Screen {
    private static final ITextComponent field6981 = new TranslationTextComponent("jigsaw_block.target");
    private static final ITextComponent field6982 = new TranslationTextComponent("jigsaw_block.final_state");
    private final Class965 field6983;
-   private Class1189 field6984;
-   private Class1189 field6985;
-   private Class1189 field6986;
-   private Class1189 field6987;
+   private TextFieldWidget field6984;
+   private TextFieldWidget field6985;
+   private TextFieldWidget field6986;
+   private TextFieldWidget field6987;
    private int field6988;
    private boolean field6989 = true;
-   private Class1206 field6990;
-   private Class1206 field6991;
+   private Button field6990;
+   private Button field6991;
    private Class92 field6992;
 
    public Class1321(Class965 var1) {
@@ -51,10 +54,10 @@ public class Class1321 extends Screen {
          .sendPacket(
             new Class5544(
                this.field6983.getPos(),
-               new ResourceLocation(this.field6984.method5636()),
-               new ResourceLocation(this.field6985.method5636()),
-               new ResourceLocation(this.field6986.method5636()),
-               this.field6987.method5636(),
+               new ResourceLocation(this.field6984.getText()),
+               new ResourceLocation(this.field6985.getText()),
+               new ResourceLocation(this.field6986.getText()),
+               this.field6987.getText(),
                this.field6992
             )
          );
@@ -70,67 +73,67 @@ public class Class1321 extends Screen {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
-      this.field6986 = new Class1189(this.fontRenderer, this.field4564 / 2 - 152, 20, 300, 20, new TranslationTextComponent("jigsaw_block.pool"));
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
+      this.field6986 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 20, 300, 20, new TranslationTextComponent("jigsaw_block.pool"));
       this.field6986.method5657(128);
       this.field6986.method5635(this.field6983.method3980().toString());
       this.field6986.method5631(var1 -> this.method6272());
       this.field4561.add(this.field6986);
-      this.field6984 = new Class1189(this.fontRenderer, this.field4564 / 2 - 152, 55, 300, 20, new TranslationTextComponent("jigsaw_block.name"));
+      this.field6984 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 55, 300, 20, new TranslationTextComponent("jigsaw_block.name"));
       this.field6984.method5657(128);
       this.field6984.method5635(this.field6983.method3978().toString());
       this.field6984.method5631(var1 -> this.method6272());
       this.field4561.add(this.field6984);
-      this.field6985 = new Class1189(this.fontRenderer, this.field4564 / 2 - 152, 90, 300, 20, new TranslationTextComponent("jigsaw_block.target"));
+      this.field6985 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 90, 300, 20, new TranslationTextComponent("jigsaw_block.target"));
       this.field6985.method5657(128);
       this.field6985.method5635(this.field6983.method3979().toString());
       this.field6985.method5631(var1 -> this.method6272());
       this.field4561.add(this.field6985);
-      this.field6987 = new Class1189(this.fontRenderer, this.field4564 / 2 - 152, 125, 300, 20, new TranslationTextComponent("jigsaw_block.final_state"));
+      this.field6987 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 125, 300, 20, new TranslationTextComponent("jigsaw_block.final_state"));
       this.field6987.method5657(256);
       this.field6987.method5635(this.field6983.method3981());
       this.field4561.add(this.field6987);
       this.field6992 = this.field6983.method3982();
       int var3 = this.fontRenderer.method38821(field6978) + 10;
-      this.field6990 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 152 + var3, 150, 300 - var3, 20, this.method6273(), var1 -> {
+      this.field6990 = this.<Button>addButton(new Button(this.width / 2 - 152 + var3, 150, 300 - var3, 20, this.method6273(), var1 -> {
          Class92[] var4x = Class92.values();
          int var5 = (this.field6992.ordinal() + 1) % var4x.length;
          this.field6992 = var4x[var5];
-         var1.method5743(this.method6273());
+         var1.setMessage(this.method6273());
       }));
       boolean var4 = Class3249.method11675(this.field6983.method3775()).method544().method323();
-      this.field6990.field6482 = var4;
+      this.field6990.active = var4;
       this.field6990.field6483 = var4;
-      this.<Class1238>method2455(new Class1238(this, this.field4564 / 2 - 154, 180, 100, 20, StringTextComponent.EMPTY, 0.0));
-      this.<Class1247>method2455(
-         new Class1247(this, this.field4564 / 2 - 50, 180, 100, 20, new TranslationTextComponent("jigsaw_block.keep_jigsaws"), var1 -> {
+      this.<Class1238>addButton(new Class1238(this, this.width / 2 - 154, 180, 100, 20, StringTextComponent.EMPTY, 0.0));
+      this.<Class1247>addButton(
+         new Class1247(this, this.width / 2 - 50, 180, 100, 20, new TranslationTextComponent("jigsaw_block.keep_jigsaws"), var1 -> {
             this.field6989 = !this.field6989;
             var1.method5744(250);
          })
       );
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 54, 180, 100, 20, new TranslationTextComponent("jigsaw_block.generate"), var1 -> {
+      this.<Button>addButton(new Button(this.width / 2 + 54, 180, 100, 20, new TranslationTextComponent("jigsaw_block.generate"), var1 -> {
          this.method6268();
          this.method6271();
       }));
-      this.field6991 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 4 - 150, 210, 150, 20, DialogTexts.field30658, var1 -> this.method6268()));
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 4, 210, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method6269()));
+      this.field6991 = this.<Button>addButton(new Button(this.width / 2 - 4 - 150, 210, 150, 20, DialogTexts.field30658, var1 -> this.method6268()));
+      this.<Button>addButton(new Button(this.width / 2 + 4, 210, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method6269()));
       this.method5536(this.field6986);
       this.method6272();
    }
 
    private void method6272() {
-      this.field6991.field6482 = ResourceLocation.method8300(this.field6984.method5636())
-         && ResourceLocation.method8300(this.field6985.method5636())
-         && ResourceLocation.method8300(this.field6986.method5636());
+      this.field6991.active = ResourceLocation.method8300(this.field6984.getText())
+         && ResourceLocation.method8300(this.field6985.getText())
+         && ResourceLocation.method8300(this.field6986.getText());
    }
 
    @Override
    public void resize(Minecraft var1, int var2, int var3) {
-      String var6 = this.field6984.method5636();
-      String var7 = this.field6985.method5636();
-      String var8 = this.field6986.method5636();
-      String var9 = this.field6987.method5636();
+      String var6 = this.field6984.getText();
+      String var7 = this.field6985.getText();
+      String var8 = this.field6986.getText();
+      String var9 = this.field6987.getText();
       int var10 = this.field6988;
       Class92 var11 = this.field6992;
       this.init(var1, var2, var3);
@@ -140,7 +143,7 @@ public class Class1321 extends Screen {
       this.field6987.method5635(var9);
       this.field6988 = var10;
       this.field6992 = var11;
-      this.field6990.method5743(this.method6273());
+      this.field6990.setMessage(this.method6273());
    }
 
    private ITextComponent method6273() {
@@ -149,14 +152,14 @@ public class Class1321 extends Screen {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
-      if (super.method1920(var1, var2, var3)) {
+   public boolean keyPressed(int var1, int var2, int var3) {
+      if (super.keyPressed(var1, var2, var3)) {
          return true;
-      } else if (this.field6991.field6482 && (var1 == 257 || var1 == 335)) {
+      } else if (this.field6991.active && (var1 == 257 || var1 == 335)) {
          this.method6268();
          return true;
       } else {
@@ -165,21 +168,21 @@ public class Class1321 extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      method5693(var1, this.fontRenderer, field6979, this.field4564 / 2 - 153, 10, 10526880);
-      this.field6986.method1923(var1, var2, var3, var4);
-      method5693(var1, this.fontRenderer, field6980, this.field4564 / 2 - 153, 45, 10526880);
-      this.field6984.method1923(var1, var2, var3, var4);
-      method5693(var1, this.fontRenderer, field6981, this.field4564 / 2 - 153, 80, 10526880);
-      this.field6985.method1923(var1, var2, var3, var4);
-      method5693(var1, this.fontRenderer, field6982, this.field4564 / 2 - 153, 115, 10526880);
-      this.field6987.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      method5693(var1, this.fontRenderer, field6979, this.width / 2 - 153, 10, 10526880);
+      this.field6986.render(var1, var2, var3, var4);
+      method5693(var1, this.fontRenderer, field6980, this.width / 2 - 153, 45, 10526880);
+      this.field6984.render(var1, var2, var3, var4);
+      method5693(var1, this.fontRenderer, field6981, this.width / 2 - 153, 80, 10526880);
+      this.field6985.render(var1, var2, var3, var4);
+      method5693(var1, this.fontRenderer, field6982, this.width / 2 - 153, 115, 10526880);
+      this.field6987.render(var1, var2, var3, var4);
       if (Class3249.method11675(this.field6983.method3775()).method544().method323()) {
-         method5693(var1, this.fontRenderer, field6978, this.field4564 / 2 - 153, 156, 16777215);
+         method5693(var1, this.fontRenderer, field6978, this.width / 2 - 153, 156, 16777215);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    // $VF: synthetic method

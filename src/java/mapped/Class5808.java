@@ -3,6 +3,8 @@ package mapped;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+
+import net.minecraft.client.GameSettings;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class5808 extends Class5807 {

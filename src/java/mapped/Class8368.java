@@ -5,6 +5,7 @@ import com.mojang.brigadier.suggestion.Suggestion;
 import java.util.List;
 
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.TextComponentUtils;
 
 public class Class8368 {
@@ -24,7 +25,7 @@ public class Class8368 {
       int var9 = var1 - 1;
       int var10 = !Class6850.method20846(var0) ? var2 : var2 - 3 - Math.min(var4.size(), Class6850.method20847(var0)) * 12;
       this.field35920 = new Class9518(var9, var10, var3 + 1, Math.min(var4.size(), Class6850.method20847(var0)) * 12);
-      this.field35921 = Class6850.method20848(var0).method5636();
+      this.field35921 = Class6850.method20848(var0).getText();
       this.field35927 = !var5 ? 0 : -1;
       this.field35922 = var4;
       this.method29313(0);
@@ -223,7 +224,7 @@ public class Class8368 {
 
       Suggestion var4 = this.field35922.get(this.field35924);
       Class6850.method20848(this.field35928)
-         .method5672(Class6850.method20854(Class6850.method20848(this.field35928).method5636(), var4.apply(this.field35921)));
+         .method5672(Class6850.method20854(Class6850.method20848(this.field35928).getText(), var4.apply(this.field35921)));
       if (NarratorChatListener.INSTANCE.method20405() && this.field35927 != this.field35924) {
          NarratorChatListener.INSTANCE.say(this.method29315());
       }

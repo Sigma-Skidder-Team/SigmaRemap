@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 public class Class6606 implements ISpawnWorldInfo {
    private static String[] field29048;
@@ -14,10 +15,10 @@ public class Class6606 implements ISpawnWorldInfo {
    private long field29056;
    private long field29057;
    private boolean field29058;
-   private Class2197 field29059;
+   private Difficulty field29059;
    private boolean field29060;
 
-   public Class6606(Class2197 var1, boolean var2, boolean var3) {
+   public Class6606(Difficulty var1, boolean var2, boolean var3) {
       this.field29059 = var1;
       this.field29049 = var2;
       this.field29051 = var3;
@@ -116,7 +117,7 @@ public class Class6606 implements ISpawnWorldInfo {
    }
 
    @Override
-   public Class2197 method20047() {
+   public Difficulty method20047() {
       return this.field29059;
    }
 
@@ -130,7 +131,7 @@ public class Class6606 implements ISpawnWorldInfo {
       ISpawnWorldInfo.super.method20049(var1);
    }
 
-   public void method20050(Class2197 var1) {
+   public void method20050(Difficulty var1) {
       Class9299.field42855.method20229(var1, this.field29059);
       this.field29059 = var1;
    }

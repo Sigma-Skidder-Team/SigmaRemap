@@ -1,9 +1,11 @@
 package mapped;
 
 import com.google.common.collect.ComparisonChain;
+import com.mojang.realmsclient.dto.RealmsServer;
+
 import java.util.Comparator;
 
-public class Class3575 implements Comparator<Class6128> {
+public class Class3575 implements Comparator<RealmsServer> {
    private static String[] field19514;
    private final String field19515;
 
@@ -11,7 +13,7 @@ public class Class3575 implements Comparator<Class6128> {
       this.field19515 = var1;
    }
 
-   public int compare(Class6128 var1, Class6128 var2) {
+   public int compare(RealmsServer var1, RealmsServer var2) {
       return ComparisonChain.start()
          .compareTrueFirst(var1.field27447 == Class2261.field14708, var2.field27447 == Class2261.field14708)
          .compareTrueFirst(var1.field27453, var2.field27453)

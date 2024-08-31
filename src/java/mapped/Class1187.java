@@ -22,8 +22,8 @@ public class Class1187 extends Class1186 {
       this.field6412
          .field6782
          .fontRenderer
-         .method38805(
-            var1, this.field6410, (float)(this.field6412.field6782.currentScreen.field4564 / 2 - this.field6411 / 2), (float)(var3 + var6 - 9 - 1), 16777215
+         .func_243248_b(
+            var1, this.field6410, (float)(this.field6412.field6782.currentScreen.width / 2 - this.field6411 / 2), (float)(var3 + var6 - 9 - 1), 16777215
          );
    }
 

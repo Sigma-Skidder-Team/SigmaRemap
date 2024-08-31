@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.Difficulty;
+
 public class Class9640 {
    private int field45071 = 20;
    private float field45072;
@@ -24,12 +26,12 @@ public class Class9640 {
    }
 
    public void method37571(PlayerEntity var1) {
-      Class2197 var4 = var1.world.method6997();
+      Difficulty var4 = var1.world.method6997();
       this.field45075 = this.field45071;
       if (this.field45073 > 4.0F) {
          this.field45073 -= 4.0F;
          if (!(this.field45072 > 0.0F)) {
-            if (var4 != Class2197.field14351) {
+            if (var4 != Difficulty.field14351) {
                this.field45071 = Math.max(this.field45071 - 1, 0);
             }
          } else {
@@ -58,7 +60,7 @@ public class Class9640 {
       } else {
          this.field45074++;
          if (this.field45074 >= 80) {
-            if (var1.getHealth() > 10.0F || var4 == Class2197.field14354 || var1.getHealth() > 1.0F && var4 == Class2197.field14353) {
+            if (var1.getHealth() > 10.0F || var4 == Difficulty.field14354 || var1.getHealth() > 1.0F && var4 == Difficulty.field14353) {
                var1.method2741(Class8654.field39000, 1.0F);
             }
 

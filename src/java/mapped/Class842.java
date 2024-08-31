@@ -1,6 +1,9 @@
 package mapped;
 
+import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -32,34 +35,34 @@ public class Class842 extends Class838 {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       if (Shaders.field40855 == null) {
          Shaders.method32948();
       }
 
       byte var3 = 120;
       byte var4 = 20;
-      int var5 = this.field4564 - var3 - 10;
+      int var5 = this.width - var3 - 10;
       byte var6 = 30;
       byte var7 = 20;
-      int var8 = this.field4564 - var3 - 20;
-      this.field4645 = new Class1299(this, var8, this.field4565, var6, this.field4565 - 50, 16);
+      int var8 = this.width - var3 - 20;
+      this.field4645 = new Class1299(this, var8, this.height, var6, this.height - 50, 16);
       this.field4561.add(this.field4645);
-      this.<Class1215>method2455(new Class1215(Class2160.field14148, var5, 0 * var7 + var6, var3, var4));
-      this.<Class1215>method2455(new Class1215(Class2160.field14149, var5, 1 * var7 + var6, var3, var4));
-      this.<Class1215>method2455(new Class1215(Class2160.field14150, var5, 2 * var7 + var6, var3, var4));
-      this.<Class1215>method2455(new Class1215(Class2160.field14151, var5, 3 * var7 + var6, var3, var4));
-      this.<Class1215>method2455(new Class1215(Class2160.field14152, var5, 4 * var7 + var6, var3, var4));
-      this.<Class1215>method2455(new Class1215(Class2160.field14153, var5, 5 * var7 + var6, var3, var4));
-      this.<Class1215>method2455(new Class1215(Class2160.field14155, var5, 6 * var7 + var6, var3, var4));
-      this.<Class1215>method2455(new Class1215(Class2160.field14156, var5, 7 * var7 + var6, var3, var4));
+      this.<Class1215>addButton(new Class1215(Class2160.field14148, var5, 0 * var7 + var6, var3, var4));
+      this.<Class1215>addButton(new Class1215(Class2160.field14149, var5, 1 * var7 + var6, var3, var4));
+      this.<Class1215>addButton(new Class1215(Class2160.field14150, var5, 2 * var7 + var6, var3, var4));
+      this.<Class1215>addButton(new Class1215(Class2160.field14151, var5, 3 * var7 + var6, var3, var4));
+      this.<Class1215>addButton(new Class1215(Class2160.field14152, var5, 4 * var7 + var6, var3, var4));
+      this.<Class1215>addButton(new Class1215(Class2160.field14153, var5, 5 * var7 + var6, var3, var4));
+      this.<Class1215>addButton(new Class1215(Class2160.field14155, var5, 6 * var7 + var6, var3, var4));
+      this.<Class1215>addButton(new Class1215(Class2160.field14156, var5, 7 * var7 + var6, var3, var4));
       int var9 = Math.min(150, var8 / 2 - 10);
       int var10 = var8 / 4 - var9 / 2;
-      int var11 = this.field4565 - 25;
-      this.<Class1210>method2455(new Class1210(201, var10, var11, var9 - 22 + 1, var4, Class8043.method27619("of.options.shaders.shadersFolder")));
-      this.<Class1212>method2455(new Class1212(210, var10 + var9 - 22 - 1, var11));
-      this.<Class1210>method2455(new Class1210(202, var8 / 4 * 3 - var9 / 2, this.field4565 - 25, var9, var4, I18n.format("gui.done")));
-      this.<Class1210>method2455(new Class1210(203, var5, this.field4565 - 25, var3, var4, Class8043.method27619("of.options.shaders.shaderOptions")));
+      int var11 = this.height - 25;
+      this.<Class1210>addButton(new Class1210(201, var10, var11, var9 - 22 + 1, var4, Class8043.method27619("of.options.shaders.shadersFolder")));
+      this.<Class1212>addButton(new Class1212(210, var10 + var9 - 22 - 1, var11));
+      this.<Class1210>addButton(new Class1210(202, var8 / 4 * 3 - var9 / 2, this.height - 25, var9, var4, I18n.format("gui.done")));
+      this.<Class1210>addButton(new Class1210(203, var5, this.height - 25, var3, var4, Class8043.method27619("of.options.shaders.shaderOptions")));
       this.method5534(this.field4645);
       this.method2569();
    }
@@ -67,28 +70,28 @@ public class Class842 extends Class838 {
    public void method2569() {
       boolean var3 = Class7944.method26921();
 
-      for (Class1197 var5 : this.field4629) {
+      for (Widget var5 : this.field4629) {
          if (var5 instanceof Class1210) {
             Class1210 var6 = (Class1210)var5;
             if (var6.field6523 != 201 && var6.field6523 != 202 && var6.field6523 != 210 && var6.field6523 != Class2160.field14148.ordinal()) {
-               var6.field6482 = var3;
+               var6.active = var3;
             }
          }
       }
    }
 
    @Override
-   public void method2563(Class1197 var1) {
+   public void method2563(Widget var1) {
       this.method2570(var1, false);
    }
 
    @Override
-   public void method2564(Class1197 var1) {
+   public void method2564(Widget var1) {
       this.method2570(var1, true);
    }
 
-   private void method2570(Class1197 var1, boolean var2) {
-      if (var1.field6482) {
+   private void method2570(Widget var1, boolean var2) {
+      if (var1.active) {
          if (!(var1 instanceof Class1215)) {
             if (!var2 && var1 instanceof Class1210) {
                Class1210 var5 = (Class1210)var1;
@@ -259,24 +262,24 @@ public class Class842 extends Class838 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      this.field4645.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      this.field4645.render(var1, var2, var3, var4);
       if (this.field4644 <= 0) {
          this.field4645.method6174();
          this.field4644 += 20;
       }
 
-      method5691(var1, this.field4630, this.field4560, this.field4564 / 2, 15, 16777215);
+      drawCenteredString(var1, this.field4630, this.title, this.width / 2, 15, 16777215);
       String var7 = "OpenGL: " + Shaders.field40596 + ", " + Shaders.field40597 + ", " + Shaders.field40598;
       int var8 = this.field4630.getStringWidth(var7);
-      if (var8 >= this.field4564 - 5) {
-         drawString(var1, this.field4630, var7, 5, this.field4565 - 40, 8421504);
+      if (var8 >= this.width - 5) {
+         drawString(var1, this.field4630, var7, 5, this.height - 40, 8421504);
       } else {
-         method5690(var1, this.field4630, var7, this.field4564 / 2, this.field4565 - 40, 8421504);
+         method5690(var1, this.field4630, var7, this.width / 2, this.height - 40, 8421504);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
       this.field4643.method33640(var1, var2, var3, this.field4629);
    }
 

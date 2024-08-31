@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.resources.ResourcePackInfo;
+
 import java.io.File;
 import java.io.FileFilter;
 import java.util.function.Consumer;

@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4426;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.event.impl.Class4431;
 import mapped.*;
+import net.minecraft.client.gui.screen.Screen;
 import org.lwjgl.glfw.GLFWDropCallback;
 
 public class MouseHelper {

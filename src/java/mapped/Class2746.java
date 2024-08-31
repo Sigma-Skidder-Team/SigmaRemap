@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.Difficulty;
+
 import java.util.EnumSet;
 
 public class Class2746 extends Class2595 {
@@ -15,7 +17,7 @@ public class Class2746 extends Class2595 {
    @Override
    public boolean method10803() {
       Class880 var3 = this.field17279.method4232();
-      return var3 != null && var3.isAlive() ? this.field17279.world.method6997() != Class2197.field14351 : false;
+      return var3 != null && var3.isAlive() ? this.field17279.world.method6997() != Difficulty.field14351 : false;
    }
 
    @Override
@@ -31,7 +33,7 @@ public class Class2746 extends Class2595 {
 
    @Override
    public void method10805() {
-      if (this.field17279.world.method6997() != Class2197.field14351) {
+      if (this.field17279.world.method6997() != Difficulty.field14351) {
          this.field17278--;
          Class880 var3 = this.field17279.method4232();
          this.field17279.method4227().method28040(var3, 180.0F, 180.0F);

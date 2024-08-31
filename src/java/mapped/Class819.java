@@ -1,8 +1,15 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import com.mojang.realmsclient.RealmsMainScreen;
+import com.mojang.realmsclient.dto.RealmsServer;
+import com.mojang.realmsclient.gui.screens.RealmsLongRunningMcoTaskScreen;
+import com.mojang.realmsclient.gui.screens.RealmsResetWorldScreen;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -13,11 +20,11 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Class819 extends Class798 {
+public class Class819 extends RealmsScreen {
    private static final Logger field4462 = LogManager.getLogger();
    private final Screen field4463;
-   private final Class806 field4464;
-   private Class6128 field4465;
+   private final RealmsMainScreen field4464;
+   private RealmsServer field4465;
    private final long field4466;
    private final ITextComponent field4467;
    private final ITextComponent[] field4468 = new ITextComponent[]{
@@ -28,7 +35,7 @@ public class Class819 extends Class798 {
    private final List<Integer> field4471 = Lists.newArrayList();
    private int field4472;
 
-   public Class819(Screen var1, Class806 var2, long var3, boolean var5) {
+   public Class819(Screen var1, RealmsMainScreen var2, long var3, boolean var5) {
       this.field4463 = var1;
       this.field4464 = var2;
       this.field4466 = var3;
@@ -36,17 +43,17 @@ public class Class819 extends Class798 {
    }
 
    @Override
-   public void method1921() {
-      this.field4469 = this.field4564 / 2 - 150;
-      this.field4470 = this.field4564 / 2 + 190;
-      this.<Class1206>method2455(new Class1206(this.field4470 - 80 + 8, method1929(13) - 5, 70, 20, DialogTexts.field30663, var1 -> this.method2336()));
+   public void init() {
+      this.field4469 = this.width / 2 - 150;
+      this.field4470 = this.width / 2 + 190;
+      this.<Button>addButton(new Button(this.field4470 - 80 + 8, method1929(13) - 5, 70, 20, DialogTexts.field30663, var1 -> this.method2336()));
       if (this.field4465 != null) {
          this.method2334();
       } else {
          this.method2337(this.field4466);
       }
 
-      this.mc.keyboardListener.method36347(true);
+      this.mc.keyboardListener.enableRepeatEvents(true);
       Class9229.method34711(
          Stream.<ITextComponent>concat(Stream.of(this.field4467), Stream.of(this.field4468))
             .<CharSequence>map(ITextComponent::getString)
@@ -58,9 +65,9 @@ public class Class819 extends Class798 {
       for (Entry var4 : this.field4465.field27451.entrySet()) {
          int var5 = (Integer)var4.getKey();
          boolean var6 = var5 != this.field4465.field27456 || this.field4465.field27455 == Class2049.field13370;
-         Class1206 var7;
+         Button var7;
          if (!var6) {
-            var7 = new Class1206(this.method2335(var5), method1929(8), 80, 20, new TranslationTextComponent("mco.brokenworld.download"), var2 -> {
+            var7 = new Button(this.method2335(var5), method1929(8), 80, 20, new TranslationTextComponent("mco.brokenworld.download"), var2 -> {
                TranslationTextComponent var5x = new TranslationTextComponent("mco.configure.world.restore.download.question.line1");
                TranslationTextComponent var6x = new TranslationTextComponent("mco.configure.world.restore.download.question.line2");
                this.mc.displayGuiScreen(new Class808(var2x -> {
@@ -72,7 +79,7 @@ public class Class819 extends Class798 {
                }, Class2134.field13980, var5x, var6x, true));
             });
          } else {
-            var7 = new Class1206(
+            var7 = new Button(
                this.method2335(var5),
                method1929(8),
                80,
@@ -80,9 +87,9 @@ public class Class819 extends Class798 {
                new TranslationTextComponent("mco.brokenworld.play"),
                var2 -> {
                   if (!this.field4465.field27451.get(var5).field27434) {
-                     this.mc.displayGuiScreen(new Class797(this.field4463, new Class790(this.field4465.field27443, var5, this::method2338)));
+                     this.mc.displayGuiScreen(new RealmsLongRunningMcoTaskScreen(this.field4463, new Class790(this.field4465.field27443, var5, this::method2338)));
                   } else {
-                     Class814 var5x = new Class814(
+                     RealmsResetWorldScreen var5x = new RealmsResetWorldScreen(
                         this,
                         this.field4465,
                         new TranslationTextComponent("mco.configure.world.switch.slot"),
@@ -96,7 +103,7 @@ public class Class819 extends Class798 {
                         }
                      );
                      var5x.method2246(var5);
-                     var5x.method2247(new TranslationTextComponent("mco.create.world.reset.title"));
+                     var5x.func_224432_a(new TranslationTextComponent("mco.create.world.reset.title"));
                      this.mc.displayGuiScreen(var5x);
                   }
                }
@@ -104,14 +111,14 @@ public class Class819 extends Class798 {
          }
 
          if (this.field4471.contains(var5)) {
-            var7.field6482 = false;
-            var7.method5743(new TranslationTextComponent("mco.brokenworld.downloaded"));
+            var7.active = false;
+            var7.setMessage(new TranslationTextComponent("mco.brokenworld.downloaded"));
          }
 
-         this.<Class1206>method2455(var7);
-         this.<Class1206>method2455(
-            new Class1206(this.method2335(var5), method1929(10), 80, 20, new TranslationTextComponent("mco.brokenworld.reset"), var2 -> {
-               Class814 var5x = new Class814(this, this.field4465, this::method2338, () -> {
+         this.<Button>addButton(var7);
+         this.<Button>addButton(
+            new Button(this.method2335(var5), method1929(10), 80, 20, new TranslationTextComponent("mco.brokenworld.reset"), var2 -> {
+               RealmsResetWorldScreen var5x = new RealmsResetWorldScreen(this, this.field4465, this::method2338, () -> {
                   this.mc.displayGuiScreen(this);
                   this.method2338();
                });
@@ -131,13 +138,13 @@ public class Class819 extends Class798 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      super.method1923(var1, var2, var3, var4);
-      method5691(var1, this.fontRenderer, this.field4467, this.field4564 / 2, 17, 16777215);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      super.render(var1, var2, var3, var4);
+      drawCenteredString(var1, this.fontRenderer, this.field4467, this.width / 2, 17, 16777215);
 
       for (int var7 = 0; var7 < this.field4468.length; var7++) {
-         method5691(var1, this.fontRenderer, this.field4468[var7], this.field4564 / 2, method1929(-1) + 3 + var7 * 12, 10526880);
+         drawCenteredString(var1, this.fontRenderer, this.field4468[var7], this.width / 2, method1929(-1) + 3 + var7 * 12, 10526880);
       }
 
       if (this.field4465 != null) {
@@ -181,13 +188,13 @@ public class Class819 extends Class798 {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          this.method2336();
          return true;
@@ -216,10 +223,10 @@ public class Class819 extends Class798 {
       new Thread(() -> {
          Class4624 var3 = Class4624.method14543();
          if (this.field4465.field27447 == Class2261.field14706) {
-            this.mc.execute(() -> this.mc.displayGuiScreen(new Class797(this, new Class794(this.field4465, this, this.field4464, true))));
+            this.mc.execute(() -> this.mc.displayGuiScreen(new RealmsLongRunningMcoTaskScreen(this, new Class794(this.field4465, this, this.field4464, true))));
          } else {
             try {
-               this.field4464.method2060().method2046(var3.method14548(this.field4466), this);
+               this.field4464.func_223942_f().method2046(var3.method14548(this.field4466), this);
             } catch (Class2435 var5) {
                field4462.error("Couldn't get own world");
                this.mc.execute(() -> this.mc.displayGuiScreen(this.field4463));

@@ -89,5 +89,5 @@ public interface IServerPlayNetHandler extends Class5104 {
 
    void method15653(Class5517 var1);
 
-   void method15654(Class5494 var1);
+   void method15654(CLockDifficultyPacket var1);
 }

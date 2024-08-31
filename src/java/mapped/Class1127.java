@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.List;
@@ -13,7 +15,7 @@ public class Class1127 extends Screen {
    private final Consumer<Optional<Class5462>> field6166;
    private Class1294 field6167;
    private final Set<Class1180> field6168 = Sets.newHashSet();
-   private Class1206 field6169;
+   private Button field6169;
    private List<Class9125> field6170;
    private final Class5462 field6171;
 
@@ -24,26 +26,26 @@ public class Class1127 extends Screen {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
-      super.method1921();
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
+      super.init();
       this.field6167 = new Class1294(this, this.field6171);
       this.field4561.add(this.field6167);
-      this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 155 + 160, this.field4565 - 29, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field6166.accept(Optional.<Class5462>empty())
+      this.<Button>addButton(
+         new Button(
+            this.width / 2 - 155 + 160, this.height - 29, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field6166.accept(Optional.<Class5462>empty())
          )
       );
-      this.field6169 = this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 155, this.field4565 - 29, 150, 20, DialogTexts.field30658, var1 -> this.field6166.accept(Optional.<Class5462>of(this.field6171))
+      this.field6169 = this.<Button>addButton(
+         new Button(
+            this.width / 2 - 155, this.height - 29, 150, 20, DialogTexts.field30658, var1 -> this.field6166.accept(Optional.<Class5462>of(this.field6171))
          )
       );
    }
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
    @Override
@@ -52,11 +54,11 @@ public class Class1127 extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.field6170 = null;
-      this.field6167.method1923(var1, var2, var3, var4);
-      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 20, 16777215);
-      super.method1923(var1, var2, var3, var4);
+      this.field6167.render(var1, var2, var3, var4);
+      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 20, 16777215);
+      super.render(var1, var2, var3, var4);
       if (this.field6170 != null) {
          this.method2461(var1, this.field6170, var2, var3);
       }
@@ -67,7 +69,7 @@ public class Class1127 extends Screen {
    }
 
    private void method5422() {
-      this.field6169.field6482 = this.field6168.isEmpty();
+      this.field6169.active = this.field6168.isEmpty();
    }
 
    private void method5423(Class1180 var1) {

@@ -2,10 +2,12 @@ package mapped;
 
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class808 extends Class798 {
+public class Class808 extends RealmsScreen {
    private final Class2134 field4326;
    private final ITextComponent field4327;
    private final ITextComponent field4328;
@@ -21,22 +23,22 @@ public class Class808 extends Class798 {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       Class9229.method34713(this.field4326.field13982, this.field4327.getString(), this.field4328.getString());
       if (!this.field4330) {
-         this.<Class1206>method2455(
-            new Class1206(this.field4564 / 2 - 50, method1929(8), 100, 20, new TranslationTextComponent("mco.gui.ok"), var1 -> this.field4329.accept(true))
+         this.<Button>addButton(
+            new Button(this.width / 2 - 50, method1929(8), 100, 20, new TranslationTextComponent("mco.gui.ok"), var1 -> this.field4329.accept(true))
          );
       } else {
-         this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 105, method1929(8), 100, 20, DialogTexts.field30660, var1 -> this.field4329.accept(true)));
-         this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 5, method1929(8), 100, 20, DialogTexts.field30661, var1 -> this.field4329.accept(false)));
+         this.<Button>addButton(new Button(this.width / 2 - 105, method1929(8), 100, 20, DialogTexts.field30660, var1 -> this.field4329.accept(true)));
+         this.<Button>addButton(new Button(this.width / 2 + 5, method1929(8), 100, 20, DialogTexts.field30661, var1 -> this.field4329.accept(false)));
       }
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          this.field4329.accept(false);
          return true;
@@ -44,11 +46,11 @@ public class Class808 extends Class798 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      method5690(var1, this.fontRenderer, this.field4326.field13982, this.field4564 / 2, method1929(2), this.field4326.field13981);
-      method5691(var1, this.fontRenderer, this.field4327, this.field4564 / 2, method1929(4), 16777215);
-      method5691(var1, this.fontRenderer, this.field4328, this.field4564 / 2, method1929(6), 16777215);
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      method5690(var1, this.fontRenderer, this.field4326.field13982, this.width / 2, method1929(2), this.field4326.field13981);
+      drawCenteredString(var1, this.fontRenderer, this.field4327, this.width / 2, method1929(4), 16777215);
+      drawCenteredString(var1, this.fontRenderer, this.field4328, this.width / 2, method1929(6), 16777215);
+      super.render(var1, var2, var3, var4);
    }
 }

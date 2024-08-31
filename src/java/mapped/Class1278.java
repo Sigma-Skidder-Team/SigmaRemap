@@ -7,7 +7,7 @@ public class Class1278 extends Class1274<Class1172> {
    public final Class803 field6819;
 
    public Class1278(Class803 var1, Minecraft var2) {
-      super(var2, var1.field4564, var1.field4565, 32, var1.field4565 - 64, 36);
+      super(var2, var1.width, var1.height, 32, var1.height - 64, 36);
       this.field6819 = var1;
       this.method6020(false);
       if (Class803.method1955(var1).field27415 != null) {

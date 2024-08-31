@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.Difficulty;
+
 import java.nio.file.Path;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -16,8 +18,8 @@ public class Class9437 extends Class9436<Class9437> {
    public final String field43793 = this.method36257("motd", "A Minecraft Server");
    public final boolean field43794 = this.method36263("force-gamemode", false);
    public final boolean field43795 = this.method36263("enforce-whitelist", false);
-   public final Class2197 field43796 = this.<Class2197>method36252(
-      "difficulty", method36249(Class2197::method8907, Class2197::method8908), Class2197::method8909, Class2197.field14352
+   public final Difficulty field43796 = this.<Difficulty>method36252(
+      "difficulty", method36249(Difficulty::method8907, Difficulty::method8908), Difficulty::method8909, Difficulty.field14352
    );
    public final Class1894 field43797 = this.<Class1894>method36252(
       "gamemode", method36249(Class1894::method8159, Class1894::method8161), Class1894::method8153, Class1894.field11102

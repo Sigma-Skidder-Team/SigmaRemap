@@ -3,6 +3,10 @@ package mapped;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+
+import net.minecraft.client.AbstractOption;
+import net.minecraft.client.GameSettings;
+import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class5807 extends AbstractOption {
@@ -32,7 +36,7 @@ public class Class5807 extends AbstractOption {
    }
 
    @Override
-   public Class1197 method17946(GameSettings var1, int var2, int var3, int var4) {
+   public Widget createWidget(GameSettings var1, int var2, int var3, int var4) {
       return new Class1232(var1, var2, var3, var4, 20, this);
    }
 

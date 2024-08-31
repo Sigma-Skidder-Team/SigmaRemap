@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
@@ -11,7 +12,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public class Class1030 extends Class1025 {
-   private static final Predicate<Class2197> field5731 = var0 -> var0 == Class2197.field14353 || var0 == Class2197.field14354;
+   private static final Predicate<Difficulty> field5731 = var0 -> var0 == Difficulty.field14353 || var0 == Difficulty.field14354;
    private boolean field5732;
 
    public Class1030(EntityType<? extends Class1030> var1, World var2) {
@@ -140,7 +141,7 @@ public class Class1030 extends Class1025 {
       ItemStack var5 = new ItemStack(Items.field37823);
       Class7699 var6 = this.method4551();
       byte var7 = 1;
-      if (var1 > var6.method25435(Class2197.field14353)) {
+      if (var1 > var6.method25435(Difficulty.field14353)) {
          var7 = 2;
       }
 

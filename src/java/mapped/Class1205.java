@@ -40,7 +40,7 @@ public class Class1205 extends Class1201 {
 
          Class872.method2714(this.field6510).clear();
          Class872.method2715(this.field6510).clear();
-         this.field6510.method1921();
+         this.field6510.init();
          this.field6510.tick();
       }
    }

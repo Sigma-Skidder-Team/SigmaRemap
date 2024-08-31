@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -14,7 +16,7 @@ public class Class1323 extends Screen {
    private final MutableRegistry<Biome> field6996;
    private Class1283 field6997;
    private Biome field6998;
-   private Class1206 field6999;
+   private Button field6999;
 
    public Class1323(Screen var1, DynamicRegistries var2, Consumer<Biome> var3, Biome var4) {
       super(new TranslationTextComponent("createWorld.customize.buffet.title"));
@@ -30,16 +32,16 @@ public class Class1323 extends Screen {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
       this.field6997 = new Class1283(this);
       this.field4561.add(this.field6997);
-      this.field6999 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, this.field4565 - 28, 150, 20, DialogTexts.field30658, var1 -> {
+      this.field6999 = this.<Button>addButton(new Button(this.width / 2 - 155, this.height - 28, 150, 20, DialogTexts.field30658, var1 -> {
          this.field6995.accept(this.field6998);
          this.mc.displayGuiScreen(this.field6994);
       }));
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6994))
+      this.<Button>addButton(
+         new Button(this.width / 2 + 5, this.height - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6994))
       );
       this.field6997
          .method6024(
@@ -48,16 +50,16 @@ public class Class1323 extends Screen {
    }
 
    private void method6287() {
-      this.field6999.field6482 = this.field6997.method6023() != null;
+      this.field6999.active = this.field6997.method6023() != null;
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.method2471(0);
-      this.field6997.method1923(var1, var2, var3, var4);
-      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 8, 16777215);
-      method5691(var1, this.fontRenderer, field6993, this.field4564 / 2, 28, 10526880);
-      super.method1923(var1, var2, var3, var4);
+      this.field6997.render(var1, var2, var3, var4);
+      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 8, 16777215);
+      drawCenteredString(var1, this.fontRenderer, field6993, this.width / 2, 28, 10526880);
+      super.render(var1, var2, var3, var4);
    }
 
    // $VF: synthetic method

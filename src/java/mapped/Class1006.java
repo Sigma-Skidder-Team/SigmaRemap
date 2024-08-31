@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -589,7 +590,7 @@ public abstract class Class1006 extends Class880 {
 
    @Override
    public void method3447() {
-      if (this.world.method6997() == Class2197.field14351 && this.method4256()) {
+      if (this.world.method6997() == Difficulty.field14351 && this.method4256()) {
          this.method2904();
       } else if (!this.method4282() && !this.method4255()) {
          PlayerEntity var3 = this.world.method7185(this, -1.0);
@@ -817,7 +818,7 @@ public abstract class Class1006 extends Class880 {
    public void method4270(Class9755 var1) {
       if (this.rand.nextFloat() < 0.15F * var1.method38330()) {
          int var4 = this.rand.nextInt(2);
-         float var5 = this.world.method6997() != Class2197.field14354 ? 0.25F : 0.1F;
+         float var5 = this.world.method6997() != Difficulty.field14354 ? 0.25F : 0.1F;
          if (this.rand.nextFloat() < 0.095F) {
             var4++;
          }

@@ -1,10 +1,11 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
-public class Class1243 extends Class1206 {
+public class Class1243 extends Button {
    private static String[] field6595;
    private final ResourceLocation field6596;
    private final int field6597;

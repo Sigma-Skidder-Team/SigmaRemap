@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -9,7 +11,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class1199 extends Class1197 {
+public class Class1199 extends Widget {
    private static final ResourceLocation field6491 = new ResourceLocation("textures/gui/recipe_book.png");
    private static final ITextComponent field6492 = new TranslationTextComponent("gui.recipebook.moreRecipes");
    private Class5828<?> field6493;

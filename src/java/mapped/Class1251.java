@@ -1,12 +1,13 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.StringTextComponent;
 
 import java.util.Iterator;
 import java.util.List;
 
-public class Class1251 extends Class1197 implements Class1253<Class120> {
+public class Class1251 extends Widget implements Class1253<Class120> {
    private static String[] field6623;
    private final Class4843<?> field6624;
    private final boolean field6625;

@@ -12,7 +12,9 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import javax.annotation.Nullable;
 
+import com.mojang.realmsclient.RealmsMainScreen;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.widget.Widget;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -181,11 +183,11 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
       }
 
       Class8564.method30599();
-      return CompletableFuture.allOf(MainMenuScreen.method2595(this, var5), this.method1078(Class1197.field6474, var5))
+      return CompletableFuture.allOf(MainMenuScreen.method2595(this, var5), this.method1078(Widget.field6474, var5))
          .<Void>thenCompose(var1::method22225)
          .thenAcceptAsync(var3x -> {
             Class1714.method7515();
-            Class806.method2061(this.field1098);
+            RealmsMainScreen.method2061(this.field1098);
             HashSet var6x = new HashSet<Entry<ResourceLocation, Class290>>(this.field1095.entrySet());
             Iterator var7 = var6x.iterator();
 

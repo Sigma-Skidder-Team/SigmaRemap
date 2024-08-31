@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.resources.ResourcePackInfo;
+
 import java.util.function.Consumer;
 
 public interface Class7651 {

@@ -7,7 +7,7 @@ public class Class1281 extends Class1274<Class1167> {
    public final Class1313 field6836;
 
    public Class1281(Class1313 var1) {
-      super(var1.mc, var1.field4564, var1.field4565, 80, var1.field4565 - 37, 24);
+      super(var1.mc, var1.width, var1.height, 80, var1.height - 37, 24);
       this.field6836 = var1;
 
       for (int var4 = 0; var4 < Class1313.method6213().size(); var4++) {
@@ -34,8 +34,8 @@ public class Class1281 extends Class1274<Class1167> {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
-      if (super.method1920(var1, var2, var3)) {
+   public boolean keyPressed(int var1, int var2, int var3) {
+      if (super.keyPressed(var1, var2, var3)) {
          return true;
       } else {
          if ((var1 == 257 || var1 == 335) && this.method6023() != null) {

@@ -47,7 +47,7 @@ public class Class1177 extends Class1155<Class1177> {
       boolean var12 = false;
       boolean var13 = false;
       boolean var14 = "".equals(var6);
-      if (var4 >= var2 + var11 && var4 <= var2 + var11 + 32 && var5 >= var3 && var5 <= var3 + 15 && var5 < this.field6372.field4565 - 15 && var5 > 32) {
+      if (var4 >= var2 + var11 && var4 <= var2 + var11 + 32 && var5 >= var3 && var5 <= var3 + 15 && var5 < this.field6372.height - 15 && var5 > 32) {
          if (var4 <= var2 + 15 + var11 && var4 > var11) {
             if (!var14) {
                var12 = true;

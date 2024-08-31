@@ -1,20 +1,22 @@
 package mapped;
 
+import net.minecraft.world.Difficulty;
+
 import java.util.function.Predicate;
 
 public class Class2643 extends Class2642 {
    private static String[] field16980;
-   private final Predicate<Class2197> field16981;
+   private final Predicate<Difficulty> field16981;
    public int field16982;
    public int field16983 = -1;
    public int field16984 = -1;
 
-   public Class2643(Class1006 var1, Predicate<Class2197> var2) {
+   public Class2643(Class1006 var1, Predicate<Difficulty> var2) {
       super(var1);
       this.field16981 = var2;
    }
 
-   public Class2643(Class1006 var1, int var2, Predicate<Class2197> var3) {
+   public Class2643(Class1006 var1, int var2, Predicate<Difficulty> var3) {
       this(var1, var3);
       this.field16984 = var2;
    }
@@ -78,7 +80,7 @@ public class Class2643 extends Class2642 {
       }
    }
 
-   private boolean method10853(Class2197 var1) {
+   private boolean method10853(Difficulty var1) {
       return this.field16981.test(var1);
    }
 }

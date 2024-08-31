@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextProperties;
 import net.minecraft.util.text.LanguageMap;
@@ -46,7 +47,7 @@ public class Class1175 extends Class1155<Class1175> {
    @Override
    public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       Class2064 var13 = this.field6363.method14678();
-      if (!var13.method8720()) {
+      if (!var13.isCompatible()) {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          AbstractGui.method5686(var1, var4 - 1, var3 - 1, var4 + var5 - 9, var3 + var6 + 1, -8978432);
       }
@@ -62,7 +63,7 @@ public class Class1175 extends Class1155<Class1175> {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          int var16 = var7 - var4;
          int var17 = var8 - var3;
-         if (!this.field6363.method14678().method8720()) {
+         if (!this.field6363.method14678().isCompatible()) {
             var14 = this.field6366;
             var15 = this.field6367;
          }
@@ -113,7 +114,7 @@ public class Class1175 extends Class1155<Class1175> {
       if (this.method5600() && var8 <= 32.0) {
          if (this.field6363.method14691()) {
             Class2064 var12 = this.field6363.method14678();
-            if (!var12.method8720()) {
+            if (!var12.isCompatible()) {
                ITextComponent var13 = var12.method8723();
                this.field6361.displayGuiScreen(new ConfirmScreen(var1x -> {
                   this.field6361.displayGuiScreen(this.field6362);

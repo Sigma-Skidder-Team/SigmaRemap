@@ -1,9 +1,10 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.ITextComponent;
 
-public abstract class Class1200 extends Class1197 {
+public abstract class Class1200 extends Widget {
    public Class1200(int var1, int var2, int var3, int var4, ITextComponent var5) {
       super(var1, var2, var3, var4, var5);
    }
@@ -16,8 +17,8 @@ public abstract class Class1200 extends Class1197 {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
-      if (!this.field6482 || !this.field6483) {
+   public boolean keyPressed(int var1, int var2, int var3) {
+      if (!this.active || !this.field6483) {
          return false;
       } else if (var1 != 257 && var1 != 32 && var1 != 335) {
          return false;

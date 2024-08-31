@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.Difficulty;
+
 public interface Class6612 {
    int method20029();
 
@@ -23,7 +25,7 @@ public interface Class6612 {
 
    Class5462 method20046();
 
-   Class2197 method20047();
+   Difficulty method20047();
 
    boolean method20048();
 

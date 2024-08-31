@@ -1,9 +1,10 @@
 package mapped;
 
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class1247 extends Class1206 {
+public class Class1247 extends Button {
    private static String[] field6609;
    public final Class1321 field6610;
 

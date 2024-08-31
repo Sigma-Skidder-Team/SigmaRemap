@@ -9,6 +9,7 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -287,7 +288,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    public static Class9455 method4411(World var0, Random var1) {
-      if (var0.method6997() != Class2197.field14351 && var1.nextInt(1000) == 0) {
+      if (var0.method6997() != Difficulty.field14351 && var1.nextInt(1000) == 0) {
          ArrayList var4 = Lists.newArrayList(field5676.keySet());
          return method4412((EntityType<?>)var4.get(var1.nextInt(var4.size())));
       } else {

@@ -14,24 +14,24 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
+   public void init() {
+      super.init();
       this.method2638();
    }
 
    public void method2638() {
       if (!this.mc.player.method3031().isEmpty()) {
-         this.field4734 = 160 + (this.field4564 - this.field4721 - 200) / 2;
+         this.field4734 = 160 + (this.width - this.field4721 - 200) / 2;
          this.field4772 = true;
       } else {
-         this.field4734 = (this.field4564 - this.field4721) / 2;
+         this.field4734 = (this.width - this.field4721) / 2;
          this.field4772 = false;
       }
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      super.render(var1, var2, var3, var4);
       if (this.field4772) {
          this.method2639(var1);
       }

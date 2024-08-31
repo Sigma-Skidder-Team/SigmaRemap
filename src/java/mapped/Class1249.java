@@ -1,9 +1,10 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.StringTextComponent;
 
-public class Class1249 extends Class1197 {
+public class Class1249 extends Widget {
    private static String[] field6614;
    public ResourceLocation field6615;
    public boolean field6616;

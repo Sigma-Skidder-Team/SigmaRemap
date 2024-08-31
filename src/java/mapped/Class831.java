@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -22,9 +24,9 @@ public class Class831 extends Screen {
    }
 
    @Override
-   public void method1921() {
-      this.mc.keyboardListener.method36347(true);
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 120, 200, 20, DialogTexts.field30658, var1 -> this.method2541()));
+   public void init() {
+      this.mc.keyboardListener.enableRepeatEvents(true);
+      this.<Button>addButton(new Button(this.width / 2 - 100, this.height / 4 + 120, 200, 20, DialogTexts.field30658, var1 -> this.method2541()));
       this.field4611.method3839(false);
       this.field4614 = new Class9079(() -> this.field4615[this.field4613], var1 -> {
          this.field4615[this.field4613] = var1;
@@ -34,7 +36,7 @@ public class Class831 extends Screen {
 
    @Override
    public void onClose() {
-      this.mc.keyboardListener.method36347(false);
+      this.mc.keyboardListener.enableRepeatEvents(false);
       ClientPlayNetHandler var3 = this.mc.getConnection();
       if (var3 != null) {
          var3.sendPacket(new Class5519(this.field4611.getPos(), this.field4615[0], this.field4615[1], this.field4615[2], this.field4615[3]));
@@ -57,7 +59,7 @@ public class Class831 extends Screen {
    }
 
    @Override
-   public boolean method1932(char var1, int var2) {
+   public boolean charTyped(char var1, int var2) {
       this.field4614.method33831(var1);
       return true;
    }
@@ -68,10 +70,10 @@ public class Class831 extends Screen {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 265) {
          if (var1 != 264 && var1 != 257 && var1 != 335) {
-            return !this.field4614.method33832(var1) ? super.method1920(var1, var2, var3) : true;
+            return !this.field4614.method33832(var1) ? super.keyPressed(var1, var2, var3) : true;
          } else {
             this.field4613 = this.field4613 + 1 & 3;
             this.field4614.method33847();
@@ -85,12 +87,12 @@ public class Class831 extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       Class7516.method24502();
-      this.method2469(var1);
-      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 40, 16777215);
+      this.renderBackground(var1);
+      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 40, 16777215);
       var1.push();
-      var1.translate((double)(this.field4564 / 2), 0.0, 50.0);
+      var1.translate((double)(this.width / 2), 0.0, 50.0);
       float var7 = 93.75F;
       var1.method35292(93.75F, -93.75F, 93.75F);
       var1.translate(0.0, -1.3125, 0.0);
@@ -181,6 +183,6 @@ public class Class831 extends Screen {
 
       var1.pop();
       Class7516.method24503();
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 }

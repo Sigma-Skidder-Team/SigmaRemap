@@ -1,6 +1,10 @@
 package mapped;
 
+import com.mojang.realmsclient.RealmsMainScreen;
+import com.mojang.realmsclient.dto.RealmsServer;
+import com.mojang.realmsclient.gui.screens.RealmsLongRunningMcoTaskScreen;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -8,12 +12,12 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Function;
 
 public class Class791 extends Class789 {
-   private final Class6128 field4138;
+   private final RealmsServer field4138;
    private final Screen field4139;
-   private final Class806 field4140;
+   private final RealmsMainScreen field4140;
    private final ReentrantLock field4141;
 
-   public Class791(Class806 var1, Screen var2, Class6128 var3, ReentrantLock var4) {
+   public Class791(RealmsMainScreen var1, Screen var2, RealmsServer var3, ReentrantLock var4) {
       this.field4139 = var2;
       this.field4140 = var1;
       this.field4138 = var3;
@@ -98,7 +102,7 @@ public class Class791 extends Class789 {
                                  Minecraft.getInstance()
                                     .getPackFinder()
                                     .method25148(var16.field27440, var16.field27441)
-                                    .thenRun(() -> this.method1906(new Class797(this.field4139, new Class793(this.field4139, this.field4138, var16))))
+                                    .thenRun(() -> this.method1906(new RealmsLongRunningMcoTaskScreen(this.field4139, new Class793(this.field4139, this.field4138, var16))))
                                     .exceptionally(var5x);
                               } catch (Exception var10x) {
                                  var5x.apply(var10x);
@@ -119,7 +123,7 @@ public class Class791 extends Class789 {
                   )
                );
             } else {
-               this.method1906(new Class797(this.field4139, new Class793(this.field4139, this.field4138, var16)));
+               this.method1906(new RealmsLongRunningMcoTaskScreen(this.field4139, new Class793(this.field4139, this.field4138, var16)));
             }
          } else {
             this.method1907(new TranslationTextComponent("mco.errorMessage.connectionFailure"));

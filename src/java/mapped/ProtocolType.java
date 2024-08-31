@@ -125,7 +125,7 @@ public enum ProtocolType {
                .method23905(CUseEntityPacket.class, CUseEntityPacket::new)
                .method23905(Class5468.class, Class5468::new)
                .method23905(Class5600.class, Class5600::new)
-               .method23905(Class5494.class, Class5494::new)
+               .method23905(CLockDifficultyPacket.class, CLockDifficultyPacket::new)
                .method23905(Class5605.class, Class5605::new)
                .method23905(Class5604.class, Class5604::new)
                .method23905(Class5606.class, Class5606::new)

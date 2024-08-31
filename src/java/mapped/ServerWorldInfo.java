@@ -13,6 +13,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -458,12 +459,12 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
    }
 
    @Override
-   public Class2197 method20047() {
+   public Difficulty method20047() {
       return this.field29064.method32429();
    }
 
    @Override
-   public void method20085(Class2197 var1) {
+   public void method20085(Difficulty var1) {
       this.field29064 = this.field29064.method32434(var1);
    }
 

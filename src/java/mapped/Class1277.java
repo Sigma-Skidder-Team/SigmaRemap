@@ -8,7 +8,7 @@ public class Class1277 extends Class1274<Class1169> {
    public final Class1305 field6817;
 
    public Class1277(Class1305 var1, Minecraft var2) {
-      super(var2, var1.field4564, var1.field4565, 32, var1.field4565 - 64, 36);
+      super(var2, var1.width, var1.height, 32, var1.height - 64, 36);
       this.field6817 = var1;
 
       for (EntityType var6 : Registry.ENTITY_TYPE) {
@@ -21,6 +21,6 @@ public class Class1277 extends Class1274<Class1169> {
 
    @Override
    public void method6039(MatrixStack var1) {
-      this.field6817.method2469(var1);
+      this.field6817.renderBackground(var1);
    }
 }

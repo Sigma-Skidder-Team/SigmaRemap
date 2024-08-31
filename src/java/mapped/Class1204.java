@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
 
 public class Class1204 extends Class1202 {
    private static String[] field6504;

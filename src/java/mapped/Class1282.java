@@ -22,7 +22,7 @@ public class Class1282 extends Class1274<Class1171> {
    public final Class1305 field6846;
 
    public Class1282(Class1305 var1, Minecraft var2) {
-      super(var2, var1.field4564, var1.field4565, 32, var1.field4565 - 64, 20);
+      super(var2, var1.width, var1.height, 32, var1.height - 64, 20);
       this.field6846 = var1;
       this.field6840 = new int[]{3, 4, 1, 2, 5, 6};
       this.field6841 = -1;
@@ -107,7 +107,7 @@ public class Class1282 extends Class1274<Class1171> {
 
    @Override
    public void method6039(MatrixStack var1) {
-      this.field6846.method2469(var1);
+      this.field6846.renderBackground(var1);
    }
 
    @Override

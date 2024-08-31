@@ -1,8 +1,9 @@
 package mapped;
 
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.StringTextComponent;
 
-public class Class1210 extends Class1206 {
+public class Class1210 extends Button {
    private static String[] field6511;
    public final int field6523;
 
@@ -22,6 +23,6 @@ public class Class1210 extends Class1206 {
    }
 
    public void method5766(String var1) {
-      super.method5743(new StringTextComponent(var1));
+      super.setMessage(new StringTextComponent(var1));
    }
 }

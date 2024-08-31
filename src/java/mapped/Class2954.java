@@ -88,15 +88,15 @@ public class Class2954 {
       this.field18032 = null;
 
       for (Class1199 var12 : this.field18031) {
-         var12.method1923(var1, var4, var5, var6);
+         var12.render(var1, var4, var5, var6);
          if (var12.field6483 && var12.method5737()) {
             this.field18032 = var12;
          }
       }
 
-      this.field18038.method1923(var1, var4, var5, var6);
-      this.field18037.method1923(var1, var4, var5, var6);
-      this.field18033.method1923(var1, var4, var5, var6);
+      this.field18038.render(var1, var4, var5, var6);
+      this.field18037.render(var1, var4, var5, var6);
+      this.field18033.render(var1, var4, var5, var6);
    }
 
    public void method11312(MatrixStack var1, int var2, int var3) {

@@ -4,6 +4,9 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.Class4307;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.LanguageScreen;
+import net.minecraft.client.gui.screen.OptionsScreen;
+import net.minecraft.client.gui.screen.Screen;
 
 public class Class4337 extends Class4305 {
    public final Class4254 field21186;
@@ -28,12 +31,12 @@ public class Class4337 extends Class4305 {
       this.method13230(this.field21187 = new Class4254(this, "Exit", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.exit));
       this.field21186.method13251((var1x, var2x) -> this.method13493(new Class1341(Minecraft.getInstance().currentScreen)));
       this.field21191.method13251((var1x, var2x) -> this.method13493(new JelloPortalScreen(Minecraft.getInstance().currentScreen)));
-      this.field21189.method13251((var1x, var2x) -> this.method13493(new Class1129(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
+      this.field21189.method13251((var1x, var2x) -> this.method13493(new OptionsScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
       this.field21190.method13251((var1x, var2x) -> this.method13494(new Class4317()));
       this.field21188
          .method13251(
             (var1x, var2x) -> this.method13493(
-                  new Class1136(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings, Minecraft.getInstance().getLanguageManager())
+                  new LanguageScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings, Minecraft.getInstance().getLanguageManager())
                )
          );
       this.field21187.method13251((var0, var1x) -> Minecraft.getInstance().shutdown());

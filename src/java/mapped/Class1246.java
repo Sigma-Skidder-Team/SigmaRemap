@@ -1,10 +1,11 @@
 package mapped;
 
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class1246 extends Class1206 {
+public class Class1246 extends Button {
    public final Class1295 field6606;
    public final ITextComponent field6607;
    public final Class1188 field6608;

@@ -9,6 +9,8 @@ import com.mentalfrostbyte.jello.unmapped.Class4307;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.OptionsScreen;
+import net.minecraft.client.gui.screen.Screen;
 
 public class MainmenuScreen2 extends Class4305 {
    private final Class4240 field21123;
@@ -150,7 +152,7 @@ public class MainmenuScreen2 extends Class4305 {
       this.field21132.method13251((var1x, var2x) -> ((Class4310)this.method13258()).method13342());
       this.field21123.method13251((var1x, var2x) -> this.method13445(new Class1341(Minecraft.getInstance().currentScreen)));
       this.field21124.method13251((var1x, var2x) -> this.method13445(new JelloPortalScreen(Minecraft.getInstance().currentScreen)));
-      this.field21126.method13251((var1x, var2x) -> this.method13445(new Class1129(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
+      this.field21126.method13251((var1x, var2x) -> this.method13445(new OptionsScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
       this.field21127.method13251((var1x, var2x) -> this.method13446(new Class4313()));
       this.field21125.method13251((var1x, var2x) -> this.method13443());
       this.field21131.method13251((var1x, var2x) -> {

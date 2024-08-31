@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 
@@ -24,8 +25,8 @@ public class Class1102 extends Class1101 {
       } else {
          if (var1 instanceof Class880) {
             byte var4 = 0;
-            if (this.world.method6997() != Class2197.field14353) {
-               if (this.world.method6997() == Class2197.field14354) {
+            if (this.world.method6997() != Difficulty.field14353) {
+               if (this.world.method6997() == Difficulty.field14354) {
                   var4 = 15;
                }
             } else {

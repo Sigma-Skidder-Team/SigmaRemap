@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.*;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
@@ -61,19 +63,19 @@ public class Class870 extends Screen {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       this.method2679();
       this.method2692();
    }
 
    public void method2679() {
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, 196, 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen((Screen)null)));
+      this.<Button>addButton(new Button(this.width / 2 - 100, 196, 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen((Screen)null)));
    }
 
    public void method2692() {
-      int var3 = (this.field4564 - 192) / 2;
-      this.field4826 = this.<Class1209>method2455(new Class1209(var3 + 116, 159, true, var1 -> this.method2681(), this.field4828));
-      this.field4827 = this.<Class1209>method2455(new Class1209(var3 + 43, 159, false, var1 -> this.method2680(), this.field4828));
+      int var3 = (this.width - 192) / 2;
+      this.field4826 = this.<Class1209>addButton(new Class1209(var3 + 116, 159, true, var1 -> this.method2681(), this.field4828));
+      this.field4827 = this.<Class1209>addButton(new Class1209(var3 + 43, 159, false, var1 -> this.method2680(), this.field4828));
       this.method2694();
    }
 
@@ -103,8 +105,8 @@ public class Class870 extends Screen {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
-      if (super.method1920(var1, var2, var3)) {
+   public boolean keyPressed(int var1, int var2, int var3) {
+      if (super.keyPressed(var1, var2, var3)) {
          return true;
       } else {
          switch (var1) {
@@ -121,11 +123,11 @@ public class Class870 extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4820);
-      int var7 = (this.field4564 - 192) / 2;
+      int var7 = (this.width - 192) / 2;
       this.method5696(var1, var7, 2, 0, 0, 192, 192);
       if (this.field4824 != this.field4822) {
          ITextProperties var9 = this.field4821.method24461(this.field4822);
@@ -135,7 +137,7 @@ public class Class870 extends Screen {
 
       this.field4824 = this.field4822;
       int var13 = this.fontRenderer.method38821(this.field4825);
-      this.fontRenderer.method38805(var1, this.field4825, (float)(var7 - var13 + 192 - 44), 18.0F, 0);
+      this.fontRenderer.func_243248_b(var1, this.field4825, (float)(var7 - var13 + 192 - 44), 18.0F, 0);
       int var10 = Math.min(14, this.field4823.size());
 
       for (int var11 = 0; var11 < var10; var11++) {
@@ -148,7 +150,7 @@ public class Class870 extends Screen {
          this.method2462(var1, var14, var2, var3);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    @Override
@@ -190,7 +192,7 @@ public class Class870 extends Screen {
    @Nullable
    public Style method2695(double var1, double var3) {
       if (!this.field4823.isEmpty()) {
-         int var7 = MathHelper.floor(var1 - (double)((this.field4564 - 192) / 2) - 36.0);
+         int var7 = MathHelper.floor(var1 - (double)((this.width - 192) / 2) - 36.0);
          int var8 = MathHelper.floor(var3 - 2.0 - 30.0);
          if (var7 >= 0 && var8 >= 0) {
             int var9 = Math.min(14, this.field4823.size());

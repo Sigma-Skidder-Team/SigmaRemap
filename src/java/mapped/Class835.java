@@ -2,6 +2,8 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
+import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.StringTextComponent;
 
 import java.io.IOException;
@@ -28,12 +30,12 @@ public class Class835 extends IngameMenuScreen {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
-         this.method2455(
-            new Class1206(
-               this.field4564 / 2 - 102,
-               this.field4565 - 45,
+         this.addButton(
+            new Button(
+               this.width / 2 - 102,
+               this.height - 45,
                204,
                20,
                new StringTextComponent("Jello for Sigma Options"),
@@ -42,20 +44,20 @@ public class Class835 extends IngameMenuScreen {
          );
       }
 
-      super.method1921();
+      super.init();
       Iterator var3 = this.field4566.iterator();
 
       while (var3.hasNext()) {
-         Class1197 var4 = (Class1197)var3.next();
-         if (var4.field6478 == this.field4565 / 4 + 72 + -16) {
+         Widget var4 = (Widget)var3.next();
+         if (var4.field6478 == this.height / 4 + 72 + -16) {
             var3.remove();
          }
       }
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      super.render(var1, var2, var3, var4);
    }
 
    @Override

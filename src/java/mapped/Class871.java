@@ -32,8 +32,8 @@ public class Class871 extends Class851<Class5822> {
 
    @Override
    public boolean method1958(double var1, double var3, int var5) {
-      int var8 = (this.field4564 - this.field4721) / 2;
-      int var9 = (this.field4565 - this.field4722) / 2;
+      int var8 = (this.width - this.field4721) / 2;
+      int var9 = (this.height - this.field4722) / 2;
 
       for (int var10 = 0; var10 < 3; var10++) {
          double var11 = var1 - (double)(var8 + 60);
@@ -52,14 +52,14 @@ public class Class871 extends Class851<Class5822> {
       Class7516.method24502();
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4829);
-      int var7 = (this.field4564 - this.field4721) / 2;
-      int var8 = (this.field4565 - this.field4722) / 2;
+      int var7 = (this.width - this.field4721) / 2;
+      int var8 = (this.height - this.field4722) / 2;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
       RenderSystem.matrixMode(5889);
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
       int var9 = (int)this.mc.getMainWindow().getGuiScaleFactor();
-      RenderSystem.method27869((this.field4564 - 320) / 2 * var9, (this.field4565 - 240) / 2 * var9, 320 * var9, 240 * var9);
+      RenderSystem.method27869((this.width - 320) / 2 * var9, (this.height - 240) / 2 * var9, 320 * var9, 240 * var9);
       RenderSystem.translatef(-0.34F, 0.23F, 0.0F);
       RenderSystem.method27888(Matrix4f.method35511(90.0, 1.3333334F, 9.0F, 80.0F));
       RenderSystem.matrixMode(5888);
@@ -153,10 +153,10 @@ public class Class871 extends Class851<Class5822> {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       var4 = this.mc.getRenderPartialTicks();
-      this.method2469(var1);
-      super.method1923(var1, var2, var3, var4);
+      this.renderBackground(var1);
+      super.render(var1, var2, var3, var4);
       this.method2615(var1, var2, var3);
       boolean var7 = this.mc.player.abilities.isCreativeMode;
       int var8 = this.field4727.method18184();

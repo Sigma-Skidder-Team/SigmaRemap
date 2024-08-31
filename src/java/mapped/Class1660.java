@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import java.util.Random;
 
@@ -18,7 +19,7 @@ public interface Class1660 extends Class1678, Class1661 {
 
    Class9755 method6807(BlockPos var1);
 
-   default Class2197 method6997() {
+   default Difficulty method6997() {
       return this.getWorldInfo().method20047();
    }
 

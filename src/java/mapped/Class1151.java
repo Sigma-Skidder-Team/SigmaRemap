@@ -57,8 +57,8 @@ public interface Class1151 extends Class1152 {
    }
 
    @Override
-   default boolean method1920(int var1, int var2, int var3) {
-      return this.method5533() != null && this.method5533().method1920(var1, var2, var3);
+   default boolean keyPressed(int var1, int var2, int var3) {
+      return this.method5533() != null && this.method5533().keyPressed(var1, var2, var3);
    }
 
    @Override
@@ -67,8 +67,8 @@ public interface Class1151 extends Class1152 {
    }
 
    @Override
-   default boolean method1932(char var1, int var2) {
-      return this.method5533() != null && this.method5533().method1932(var1, var2);
+   default boolean charTyped(char var1, int var2) {
+      return this.method5533() != null && this.method5533().charTyped(var1, var2);
    }
 
    @Nullable

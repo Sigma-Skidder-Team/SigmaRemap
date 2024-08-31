@@ -14,6 +14,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -686,7 +687,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Override
    public void method3353(ServerWorld var1, Class906 var2) {
-      if (var1.method6997() == Class2197.field14351) {
+      if (var1.method6997() == Difficulty.field14351) {
          super.method3353(var1, var2);
       } else {
          LOGGER.info("Villager {} was struck by lightning {}.", this, var2);

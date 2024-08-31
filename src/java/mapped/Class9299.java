@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Set;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
@@ -242,7 +244,7 @@ public class Class9299 {
    public static Class6636 field42975 = new Class6636("net.minecraftforge.fml.client.gui.screen.ModListScreen");
    public static Class6634 field42976 = new Class6634(field42975, new Class[]{Screen.class});
    public static Class6636 field42977 = new Class6636("net.minecraftforge.client.gui.NotificationModUpdateScreen");
-   public static Class6631 field42978 = new Class6631(field42977, "init", new Class[]{MainMenuScreen.class, Class1206.class});
+   public static Class6631 field42978 = new Class6631(field42977, "init", new Class[]{MainMenuScreen.class, Button.class});
    public static Class6636 field42979 = new Class6636("net.minecraftforge.event.entity.PlaySoundAtEntityEvent");
    public static Class6631 field42980 = new Class6631(field42979, "getSound");
    public static Class6631 field42981 = new Class6631(field42979, "getCategory");

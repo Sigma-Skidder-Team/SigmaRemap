@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -14,7 +16,7 @@ public class Class1324 extends Screen {
    private ITextComponent field7003;
    private ITextComponent field7004;
    private Class1285 field7005;
-   private Class1206 field7006;
+   private Button field7006;
 
    public Class1324(Class1335 var1, Consumer<Class9733> var2, Class9733 var3) {
       super(new TranslationTextComponent("createWorld.customize.flat.title"));
@@ -32,14 +34,14 @@ public class Class1324 extends Screen {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       this.field7003 = new TranslationTextComponent("createWorld.customize.flat.tile");
       this.field7004 = new TranslationTextComponent("createWorld.customize.flat.height");
       this.field7005 = new Class1285(this);
       this.field4561.add(this.field7005);
-      this.field7006 = this.<Class1206>method2455(
-         new Class1206(
-            this.field4564 / 2 - 155, this.field4565 - 52, 150, 20, new TranslationTextComponent("createWorld.customize.flat.removeLayer"), var1 -> {
+      this.field7006 = this.<Button>addButton(
+         new Button(
+            this.width / 2 - 155, this.height - 52, 150, 20, new TranslationTextComponent("createWorld.customize.flat.removeLayer"), var1 -> {
                if (this.method6297()) {
                   List var4 = this.field7002.method38129();
                   int var5 = this.field7005.method2468().indexOf(this.field7005.method6023());
@@ -53,19 +55,19 @@ public class Class1324 extends Screen {
             }
          )
       );
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 5, this.field4565 - 52, 150, 20, new TranslationTextComponent("createWorld.customize.presets"), var1 -> {
+      this.<Button>addButton(
+         new Button(this.width / 2 + 5, this.height - 52, 150, 20, new TranslationTextComponent("createWorld.customize.presets"), var1 -> {
             this.mc.displayGuiScreen(new Class1313(this));
             this.field7002.method38131();
             this.method6296();
          })
       );
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, this.field4565 - 28, 150, 20, DialogTexts.field30658, var1 -> {
+      this.<Button>addButton(new Button(this.width / 2 - 155, this.height - 28, 150, 20, DialogTexts.field30658, var1 -> {
          this.field7001.accept(this.field7002);
          this.mc.displayGuiScreen(this.field7000);
          this.field7002.method38131();
       }));
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> {
+      this.<Button>addButton(new Button(this.width / 2 + 5, this.height - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> {
          this.mc.displayGuiScreen(this.field7000);
          this.field7002.method38131();
       }));
@@ -74,7 +76,7 @@ public class Class1324 extends Screen {
    }
 
    private void method6296() {
-      this.field7006.field6482 = this.method6297();
+      this.field7006.active = this.method6297();
    }
 
    private boolean method6297() {
@@ -87,14 +89,14 @@ public class Class1324 extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      this.field7005.method1923(var1, var2, var3, var4);
-      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 8, 16777215);
-      int var7 = this.field4564 / 2 - 92 - 16;
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      this.field7005.render(var1, var2, var3, var4);
+      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 8, 16777215);
+      int var7 = this.width / 2 - 92 - 16;
       method5693(var1, this.fontRenderer, this.field7003, var7, 32, 16777215);
       method5693(var1, this.fontRenderer, this.field7004, var7 + 2 + 213 - this.fontRenderer.method38821(this.field7004), 32, 16777215);
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    // $VF: synthetic method

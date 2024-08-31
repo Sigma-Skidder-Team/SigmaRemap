@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.resources.ResourcePackInfo;
+
 import java.util.List;
 
 public class Class4679 extends Class4680 {

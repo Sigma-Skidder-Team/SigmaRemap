@@ -1,6 +1,9 @@
 package mapped;
 
+import net.minecraft.client.GameSettings;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class848 extends Class838 {
@@ -29,7 +32,7 @@ public class Class848 extends Class838 {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       byte var3 = 100;
       int var4 = 0;
       byte var5 = 30;
@@ -49,8 +52,8 @@ public class Class848 extends Class838 {
             if (var13 != null && var13.method20382()) {
                int var14 = var12 % var9;
                int var15 = var12 / var9;
-               int var16 = Math.min(this.field4564 / var9, 200);
-               var4 = (this.field4564 - var16 * var9) / 2;
+               int var16 = Math.min(this.width / var9, 200);
+               var4 = (this.width - var16 * var9) / 2;
                int var17 = var14 * var16 + 5 + var4;
                int var18 = var5 + var15 * var6;
                int var19 = var16 - 10;
@@ -62,16 +65,16 @@ public class Class848 extends Class838 {
                   var21 = new Class1214(var3 + var12, var17, var18, var19, var8, var13, var20);
                }
 
-               ((Class1213)var21).field6482 = var13.method20379();
-               this.method2455((Class1197)var21);
+               ((Class1213)var21).active = var13.method20379();
+               this.addButton((Widget)var21);
             }
          }
       }
 
-      this.<Class1210>method2455(
-         new Class1210(201, this.field4564 / 2 - var7 - 20, this.field4565 / 6 + 168 + 11, var7, var8, I18n.format("controls.reset"))
+      this.<Class1210>addButton(
+         new Class1210(201, this.width / 2 - var7 - 20, this.height / 6 + 168 + 11, var7, var8, I18n.format("controls.reset"))
       );
-      this.<Class1210>method2455(new Class1210(200, this.field4564 / 2 + 20, this.field4565 / 6 + 168 + 11, var7, var8, I18n.format("gui.done")));
+      this.<Class1210>addButton(new Class1210(200, this.width / 2 + 20, this.height / 6 + 168 + 11, var7, var8, I18n.format("gui.done")));
    }
 
    public static String method2592(Class6679 var0, int var1) {
@@ -94,10 +97,10 @@ public class Class848 extends Class838 {
    }
 
    @Override
-   public void method2563(Class1197 var1) {
+   public void method2563(Widget var1) {
       if (var1 instanceof Class1210) {
          Class1210 var4 = (Class1210)var1;
-         if (var4.field6482) {
+         if (var4.active) {
             if (var4.field6523 < 200 && var4 instanceof Class1213) {
                Class1213 var5 = (Class1213)var4;
                Class6679 var6 = var5.method5769();
@@ -157,7 +160,7 @@ public class Class848 extends Class838 {
    }
 
    @Override
-   public void method2564(Class1197 var1) {
+   public void method2564(Widget var1) {
       if (var1 instanceof Class1213) {
          Class1213 var4 = (Class1213)var1;
          Class6679 var5 = var4.method5769();
@@ -175,7 +178,7 @@ public class Class848 extends Class838 {
    }
 
    private void method2593() {
-      for (Class1197 var4 : this.field4629) {
+      for (Widget var4 : this.field4629) {
          if (var4 instanceof Class1213) {
             Class1213 var5 = (Class1213)var4;
             Class6679 var6 = var5.method5769();
@@ -191,15 +194,15 @@ public class Class848 extends Class838 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
       if (this.field4698 == null) {
-         method5691(var1, this.field4630, this.field4560, this.field4564 / 2, 15, 16777215);
+         drawCenteredString(var1, this.field4630, this.title, this.width / 2, 15, 16777215);
       } else {
-         method5690(var1, this.field4630, this.field4698, this.field4564 / 2, 15, 16777215);
+         method5690(var1, this.field4630, this.field4698, this.width / 2, 15, 16777215);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
       this.field4696.method33640(var1, var2, var3, this.field4629);
    }
 }

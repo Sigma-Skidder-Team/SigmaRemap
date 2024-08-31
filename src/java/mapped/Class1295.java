@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.ControlsScreen;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -8,11 +9,11 @@ import java.util.Arrays;
 
 public class Class1295 extends Class1293<Class1186> {
    private static String[] field6859;
-   private final Class1138 field6860;
+   private final ControlsScreen field6860;
    private int field6861;
 
-   public Class1295(Class1138 var1, Minecraft var2) {
-      super(var2, var1.field4564 + 45, var1.field4565, 43, var1.field4565 - 32, 20);
+   public Class1295(ControlsScreen var1, Minecraft var2) {
+      super(var2, var1.width + 45, var1.height, 43, var1.height - 32, 20);
       this.field6860 = var1;
       KeyBinding[] var5 = (KeyBinding[])ArrayUtils.clone(var2.gameSettings.field44658);
       Arrays.sort(var5);
@@ -46,7 +47,7 @@ public class Class1295 extends Class1293<Class1186> {
    }
 
    // $VF: synthetic method
-   public static Class1138 method6127(Class1295 var0) {
+   public static ControlsScreen method6127(Class1295 var0) {
       return var0.field6860;
    }
 

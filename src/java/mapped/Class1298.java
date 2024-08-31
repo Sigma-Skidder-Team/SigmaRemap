@@ -141,7 +141,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       if (this.field6881) {
          this.method6151();
          int var7 = this.method6170();
@@ -321,9 +321,9 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (this.method6146()) {
-         if (!super.method1920(var1, var2, var3)) {
+         if (!super.keyPressed(var1, var2, var3)) {
             if (var1 != 264) {
                if (var1 != 265) {
                   return false;
@@ -347,8 +347,8 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    }
 
    @Override
-   public boolean method1932(char var1, int var2) {
-      return this.method6146() ? super.method1932(var1, var2) : false;
+   public boolean charTyped(char var1, int var2) {
+      return this.method6146() ? super.charTyped(var1, var2) : false;
    }
 
    @Override

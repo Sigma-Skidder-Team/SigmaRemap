@@ -1,11 +1,12 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public abstract class Class1236 extends Class1197 {
+public abstract class Class1236 extends Widget {
    public double field6584;
 
    public Class1236(int var1, int var2, int var3, int var4, ITextComponent var5, double var6) {
@@ -38,7 +39,7 @@ public abstract class Class1236 extends Class1197 {
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       boolean var6 = var1 == 263;
       if (var6 || var1 == 262) {
          float var7 = !var6 ? 1.0F : -1.0F;

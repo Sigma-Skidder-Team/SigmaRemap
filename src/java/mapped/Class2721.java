@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.Difficulty;
 
 public class Class2721 extends Class2709<PlayerEntity> {
    private static String[] field17187;
@@ -13,7 +14,7 @@ public class Class2721 extends Class2709<PlayerEntity> {
 
    @Override
    public boolean method10803() {
-      return this.field17207.world.method6997() != Class2197.field14351 ? super.method10803() : false;
+      return this.field17207.world.method6997() != Difficulty.field14351 ? super.method10803() : false;
    }
 
    @Override

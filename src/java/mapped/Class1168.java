@@ -24,7 +24,7 @@ public class Class1168 extends Class1155<Class1168> {
       Class807.method2196(this.field6334)
          .method38801(var1, "Backup (" + Class9740.method38174(var2.field27411) + ")", (float)(var3 + 40), (float)(var4 + 1), var9);
       Class807.method2197(this.field6334).method38801(var1, this.method5574(var2.field27411), (float)(var3 + 40), (float)(var4 + 12), 5000268);
-      int var10 = this.field6334.field4564 - 175;
+      int var10 = this.field6334.width - 175;
 
       int var12 = var10 - 10;
       boolean var13 = false;
@@ -42,7 +42,7 @@ public class Class1168 extends Class1155<Class1168> {
    }
 
    private void method5575(MatrixStack var1, int var2, int var3, int var4, int var5) {
-      boolean var8 = var4 >= var2 && var4 <= var2 + 12 && var5 >= var3 && var5 <= var3 + 14 && var5 < this.field6334.field4565 - 15 && var5 > 32;
+      boolean var8 = var4 >= var2 && var4 <= var2 + 12 && var5 >= var3 && var5 <= var3 + 14 && var5 < this.field6334.height - 15 && var5 > 32;
       Class807.method2199(this.field6334).getTextureManager().bindTexture(Class807.method2198());
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.pushMatrix();
@@ -56,7 +56,7 @@ public class Class1168 extends Class1155<Class1168> {
    }
 
    private void method5576(MatrixStack var1, int var2, int var3, int var4, int var5) {
-      boolean var8 = var4 >= var2 && var4 <= var2 + 8 && var5 >= var3 && var5 <= var3 + 8 && var5 < this.field6334.field4565 - 15 && var5 > 32;
+      boolean var8 = var4 >= var2 && var4 <= var2 + 8 && var5 >= var3 && var5 <= var3 + 8 && var5 < this.field6334.height - 15 && var5 > 32;
       Class807.method2203(this.field6334).getTextureManager().bindTexture(Class807.method2202());
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.pushMatrix();

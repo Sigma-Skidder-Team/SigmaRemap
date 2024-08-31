@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 public class Class902 extends Class901 {
    private static String[] field5144;
@@ -58,8 +59,8 @@ public class Class902 extends Class901 {
 
          if (var6 && var4 instanceof Class880) {
             byte var8 = 0;
-            if (this.world.method6997() != Class2197.field14353) {
-               if (this.world.method6997() == Class2197.field14354) {
+            if (this.world.method6997() != Difficulty.field14353) {
+               if (this.world.method6997() == Difficulty.field14354) {
                   var8 = 40;
                }
             } else {

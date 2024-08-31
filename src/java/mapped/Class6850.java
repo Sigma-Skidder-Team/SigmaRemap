@@ -30,6 +30,8 @@ import javax.annotation.Nullable;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentUtils;
@@ -47,7 +49,7 @@ public class Class6850 {
       .collect(ImmutableList.toImmutableList());
    private final Minecraft field29747;
    private final Screen field29748;
-   private final Class1189 field29749;
+   private final TextFieldWidget field29749;
    private final FontRenderer field29750;
    private final boolean field29751;
    private final boolean field29752;
@@ -64,7 +66,7 @@ public class Class6850 {
    private boolean field29763;
    private boolean field29764;
 
-   public Class6850(Minecraft var1, Screen var2, Class1189 var3, FontRenderer var4, boolean var5, boolean var6, int var7, int var8, boolean var9, int var10) {
+   public Class6850(Minecraft var1, Screen var2, TextFieldWidget var3, FontRenderer var4, boolean var5, boolean var6, int var7, int var8, boolean var9, int var10) {
       this.field29747 = var1;
       this.field29748 = var2;
       this.field29749 = var3;
@@ -117,14 +119,14 @@ public class Class6850 {
             int var8 = MathHelper.method37775(
                this.field29749.method5673(var4.getRange().getStart()), 0, this.field29749.method5673(0) + this.field29749.method5667() - var5
             );
-            int var9 = !this.field29755 ? 72 : this.field29748.field4565 - 12;
+            int var9 = !this.field29755 ? 72 : this.field29748.height - 12;
             this.field29762 = new Class8368(this, var8, var9, var5, this.method20834(var4), var1);
          }
       }
    }
 
    private List<Suggestion> method20834(Suggestions var1) {
-      String var4 = this.field29749.method5636().substring(0, this.field29749.method5659());
+      String var4 = this.field29749.getText().substring(0, this.field29749.method5659());
       int var5 = method20836(var4);
       String var6 = var4.substring(var5).toLowerCase(Locale.ROOT);
       ArrayList var7 = Lists.newArrayList();
@@ -143,7 +145,7 @@ public class Class6850 {
    }
 
    public void method20835() {
-      String var3 = this.field29749.method5636();
+      String var3 = this.field29749.getText();
       if (this.field29760 != null && !this.field29760.getReader().getString().equals(var3)) {
          this.field29760 = null;
       }
@@ -207,7 +209,7 @@ public class Class6850 {
    }
 
    private void method20838() {
-      if (this.field29749.method5659() == this.field29749.method5636().length()) {
+      if (this.field29749.method5659() == this.field29749.getText().length()) {
          if (this.field29761.join().isEmpty() && !this.field29760.getExceptions().isEmpty()) {
             int var3 = 0;
 
@@ -229,7 +231,7 @@ public class Class6850 {
       }
 
       this.field29758 = 0;
-      this.field29759 = this.field29748.field4564;
+      this.field29759 = this.field29748.width;
       if (this.field29757.isEmpty()) {
          this.method20839(TextFormatting.GRAY);
       }
@@ -316,7 +318,7 @@ public class Class6850 {
          int var6 = 0;
 
          for (Class9125 var8 : this.field29757) {
-            int var9 = !this.field29755 ? 72 + 12 * var6 : this.field29748.field4565 - 14 - 13 - 12 * var6;
+            int var9 = !this.field29755 ? 72 + 12 * var6 : this.field29748.height - 14 - 13 - 12 * var6;
             AbstractGui.method5686(var1, this.field29758 - 1, var9, this.field29758 + this.field29759 + 1, var9 + 12, this.field29756);
             this.field29750.method38802(var1, var8, (float)this.field29758, (float)(var9 + 2), -1);
             var6++;
@@ -341,7 +343,7 @@ public class Class6850 {
    }
 
    // $VF: synthetic method
-   public static Class1189 method20848(Class6850 var0) {
+   public static TextFieldWidget method20848(Class6850 var0) {
       return var0.field29749;
    }
 

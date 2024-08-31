@@ -8,6 +8,8 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenCustomHashMap;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -50,9 +52,9 @@ public class Class837 extends Screen {
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 150, 200, 20, DialogTexts.GUI_CANCEL, var1 -> {
+   public void init() {
+      super.init();
+      this.<Button>addButton(new Button(this.width / 2 - 100, this.height / 4 + 150, 200, 20, DialogTexts.GUI_CANCEL, var1 -> {
          this.field4627.method27059();
          this.field4626.accept(false);
       }));
@@ -76,14 +78,14 @@ public class Class837 extends Screen {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 20, 16777215);
-      int var7 = this.field4564 / 2 - 150;
-      int var8 = this.field4564 / 2 + 150;
-      int var9 = this.field4565 / 4 + 100;
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      drawCenteredString(var1, this.fontRenderer, this.title, this.width / 2, 20, 16777215);
+      int var7 = this.width / 2 - 150;
+      int var8 = this.width / 2 + 150;
+      int var9 = this.height / 4 + 100;
       int var10 = var9 + 10;
-      method5691(var1, this.fontRenderer, this.field4627.method27069(), this.field4564 / 2, var9 - 9 - 2, 10526880);
+      drawCenteredString(var1, this.fontRenderer, this.field4627.method27069(), this.width / 2, var9 - 9 - 2, 10526880);
       if (this.field4627.method27066() > 0) {
          method5686(var1, var7 - 1, var9 - 1, var8 + 1, var10 + 1, -16777216);
          method5693(var1, this.fontRenderer, new TranslationTextComponent("optimizeWorld.info.converted", this.field4627.method27067()), var7, 40, 10526880);
@@ -100,17 +102,17 @@ public class Class837 extends Screen {
          }
 
          int var15 = this.field4627.method27067() + this.field4627.method27068();
-         method5690(var1, this.fontRenderer, var15 + " / " + this.field4627.method27066(), this.field4564 / 2, var9 + 18 + 2, 10526880);
+         method5690(var1, this.fontRenderer, var15 + " / " + this.field4627.method27066(), this.width / 2, var9 + 18 + 2, 10526880);
          method5690(
             var1,
             this.fontRenderer,
             MathHelper.method37767(this.field4627.method27065() * 100.0F) + "%",
-            this.field4564 / 2,
+            this.width / 2,
             var9 + (var10 - var9) / 2 - 4,
             10526880
          );
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 }

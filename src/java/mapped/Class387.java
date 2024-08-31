@@ -1,9 +1,11 @@
 package mapped;
 
-public class Class387 extends Thread {
-   public final Class806 field1652;
+import com.mojang.realmsclient.RealmsMainScreen;
 
-   public Class387(Class806 var1, String var2) {
+public class Class387 extends Thread {
+   public final RealmsMainScreen field1652;
+
+   public Class387(RealmsMainScreen var1, String var2) {
       super(var2);
       this.field1652 = var1;
    }
@@ -16,11 +18,11 @@ public class Class387 extends Thread {
          Boolean var4 = var3.method14553();
          if (var4) {
             Class4624.method14544();
-            Class806.method2084().info("Switched to stage");
-            Class806.method2097().method36019();
+            RealmsMainScreen.method2084().info("Switched to stage");
+            RealmsMainScreen.method2097().method36019();
          }
       } catch (Class2435 var5) {
-         Class806.method2084().error("Couldn't connect to Realms: " + var5);
+         RealmsMainScreen.method2084().error("Couldn't connect to Realms: " + var5);
       }
    }
 }

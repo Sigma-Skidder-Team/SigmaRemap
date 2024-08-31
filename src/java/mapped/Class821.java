@@ -1,10 +1,13 @@
 package mapped;
 
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class821 extends Class798 {
+public class Class821 extends RealmsScreen {
    private final Screen field4476;
    private ITextComponent field4477;
    private ITextComponent field4478;
@@ -46,18 +49,18 @@ public class Class821 extends Class798 {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       Class9229.method34711(this.field4477.getString() + ": " + this.field4478.getString());
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 - 52, 200, 20, new StringTextComponent("Ok"), var1 -> this.mc.displayGuiScreen(this.field4476))
+      this.<Button>addButton(
+         new Button(this.width / 2 - 100, this.height - 52, 200, 20, new StringTextComponent("Ok"), var1 -> this.mc.displayGuiScreen(this.field4476))
       );
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
-      method5691(var1, this.fontRenderer, this.field4477, this.field4564 / 2, 80, 16777215);
-      method5691(var1, this.fontRenderer, this.field4478, this.field4564 / 2, 100, 16711680);
-      super.method1923(var1, var2, var3, var4);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
+      drawCenteredString(var1, this.fontRenderer, this.field4477, this.width / 2, 80, 16777215);
+      drawCenteredString(var1, this.fontRenderer, this.field4478, this.width / 2, 100, 16711680);
+      super.render(var1, var2, var3, var4);
    }
 }

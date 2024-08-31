@@ -1381,7 +1381,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15654(Class5494 var1) {
+   public void method15654(CLockDifficultyPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method3424(2) || this.method15657()) {
          this.server.method1339(var1.method17277());

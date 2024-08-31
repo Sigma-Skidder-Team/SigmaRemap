@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import java.util.Random;
 
@@ -17,7 +18,7 @@ public class Class1109 extends Class1108 {
    }
 
    public static boolean method5335(EntityType<Class1109> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method6997() != Class2197.field14351;
+      return var1.method6997() != Difficulty.field14351;
    }
 
    @Override

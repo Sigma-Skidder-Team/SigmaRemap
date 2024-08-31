@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.client.GameSettings;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.ITextProperties;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.Style;
 
 public class Class7549 extends Class7548 {
    @Override
-   public String[] method24669(Class1197 var1, int var2) {
+   public String[] method24669(Widget var1, int var2) {
       if (var1 instanceof Class1213) {
          Class1213 var5 = (Class1213)var1;
          Class6679 var6 = var5.method5769();

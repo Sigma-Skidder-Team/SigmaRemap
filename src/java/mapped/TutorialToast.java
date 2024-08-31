@@ -28,10 +28,10 @@ public class TutorialToast implements Class7601 {
       var2.method5696(var1, 0, 0, 0, 96, this.method24898(), this.method24899());
       this.field32622.method8813(var1, var2, 6, 6);
       if (this.field32624 != null) {
-         var2.method5915().fontRenderer.method38805(var1, this.field32623, 30.0F, 7.0F, -11534256);
-         var2.method5915().fontRenderer.method38805(var1, this.field32624, 30.0F, 18.0F, -16777216);
+         var2.method5915().fontRenderer.func_243248_b(var1, this.field32623, 30.0F, 7.0F, -11534256);
+         var2.method5915().fontRenderer.func_243248_b(var1, this.field32624, 30.0F, 18.0F, -16777216);
       } else {
-         var2.method5915().fontRenderer.method38805(var1, this.field32623, 30.0F, 12.0F, -11534256);
+         var2.method5915().fontRenderer.func_243248_b(var1, this.field32623, 30.0F, 12.0F, -11534256);
       }
 
       if (this.field32629) {

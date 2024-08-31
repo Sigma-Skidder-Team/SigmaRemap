@@ -1,10 +1,13 @@
 package mapped;
 
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class809 extends Class798 {
+public class Class809 extends RealmsScreen {
    private static final ITextComponent field4331 = new TranslationTextComponent("mco.client.outdated.title");
    private static final ITextComponent[] field4332 = new ITextComponent[]{
       new TranslationTextComponent("mco.client.outdated.msg.line1"), new TranslationTextComponent("mco.client.outdated.msg.line2")
@@ -24,15 +27,15 @@ public class Class809 extends Class798 {
    }
 
    @Override
-   public void method1921() {
-      this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, DialogTexts.field30663, var1 -> this.mc.displayGuiScreen(this.field4335))
+   public void init() {
+      this.<Button>addButton(
+         new Button(this.width / 2 - 100, method1929(12), 200, 20, DialogTexts.field30663, var1 -> this.mc.displayGuiScreen(this.field4335))
       );
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
       ITextComponent var7;
       ITextComponent[] var8;
       if (!this.field4336) {
@@ -43,19 +46,19 @@ public class Class809 extends Class798 {
          var8 = field4334;
       }
 
-      method5691(var1, this.fontRenderer, var7, this.field4564 / 2, method1929(3), 16711680);
+      drawCenteredString(var1, this.fontRenderer, var7, this.width / 2, method1929(3), 16711680);
 
       for (int var9 = 0; var9 < var8.length; var9++) {
-         method5691(var1, this.fontRenderer, var8[var9], this.field4564 / 2, method1929(5) + var9 * 12, 16777215);
+         drawCenteredString(var1, this.fontRenderer, var8[var9], this.width / 2, method1929(5) + var9 * 12, 16777215);
       }
 
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
+   public boolean keyPressed(int var1, int var2, int var3) {
       if (var1 != 257 && var1 != 335 && var1 != 256) {
-         return super.method1920(var1, var2, var3);
+         return super.keyPressed(var1, var2, var3);
       } else {
          this.mc.displayGuiScreen(this.field4335);
          return true;

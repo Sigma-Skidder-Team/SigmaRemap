@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import java.util.Random;
 import java.util.UUID;
@@ -135,7 +136,7 @@ public class Class1063 extends Class1038 implements Class1011 {
    }
 
    public static boolean method4879(EntityType<Class1063> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method6997() != Class2197.field14351 && var1.getBlockState(var3.down()).getBlock() != Blocks.field36891;
+      return var1.method6997() != Difficulty.field14351 && var1.getBlockState(var3.down()).getBlock() != Blocks.field36891;
    }
 
    @Override

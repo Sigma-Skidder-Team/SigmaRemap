@@ -11,10 +11,10 @@ public class Class1159 extends Class1156 {
       int var13 = var3 + var6 / 2 - 4;
       this.field6310
          .fontRenderer
-         .method38805(
+         .func_243248_b(
             var1,
             Class1279.method6084(),
-            (float)(this.field6310.currentScreen.field4564 / 2 - this.field6310.fontRenderer.method38821(Class1279.method6084()) / 2),
+            (float)(this.field6310.currentScreen.width / 2 - this.field6310.fontRenderer.method38821(Class1279.method6084()) / 2),
             (float)var13,
             16777215
          );
@@ -35,7 +35,7 @@ public class Class1159 extends Class1156 {
       this.field6310
          .fontRenderer
          .method38801(
-            var1, var14, (float)(this.field6310.currentScreen.field4564 / 2 - this.field6310.fontRenderer.getStringWidth(var14) / 2), (float)(var13 + 9), 8421504
+            var1, var14, (float)(this.field6310.currentScreen.width / 2 - this.field6310.fontRenderer.getStringWidth(var14) / 2), (float)(var13 + 9), 8421504
          );
    }
 }

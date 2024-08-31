@@ -2,6 +2,8 @@ package mapped;
 
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
+
+import net.minecraft.client.GameSettings;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class5803 extends Class5804 {

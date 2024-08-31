@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Sets;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -57,20 +58,20 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    @Override
-   public void method1921() {
-      super.method1921();
-      this.field4734 = (this.field4564 - this.field4721) / 2;
-      this.field4735 = (this.field4565 - this.field4722) / 2;
+   public void init() {
+      super.init();
+      this.field4734 = (this.width - this.field4721) / 2;
+      this.field4735 = (this.height - this.field4722) / 2;
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.method2618(var1, var4, var2, var3);
       RenderSystem.method27868();
       RenderSystem.disableDepthTest();
-      super.method1923(var1, var2, var3, var4);
+      super.render(var1, var2, var3, var4);
       RenderSystem.pushMatrix();
       RenderSystem.translatef((float)var7, (float)var8, 0.0F);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -155,8 +156,8 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    public void method2617(MatrixStack var1, int var2, int var3) {
-      this.fontRenderer.method38805(var1, this.field4560, (float)this.field4723, (float)this.field4724, 4210752);
-      this.fontRenderer.method38805(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.field4726, 4210752);
+      this.fontRenderer.func_243248_b(var1, this.title, (float)this.field4723, (float)this.field4724, 4210752);
+      this.fontRenderer.func_243248_b(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.field4726, 4210752);
    }
 
    public abstract void method2618(MatrixStack var1, float var2, int var3, int var4);
@@ -532,8 +533,8 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    @Override
-   public boolean method1920(int var1, int var2, int var3) {
-      if (!super.method1920(var1, var2, var3)) {
+   public boolean keyPressed(int var1, int var2, int var3) {
+      if (!super.keyPressed(var1, var2, var3)) {
          if (!this.mc.gameSettings.keyBindInventory.matchesKey(var1, var2)) {
             this.method2627(var1, var2);
             if (this.field4729 != null && this.field4729.method18266()) {

@@ -40,7 +40,7 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
       int var7 = this.field6767.mainWindow.getScaledWidth();
       int var8 = this.field6767.mainWindow.getScaledHeight();
       long var9 = Util.milliTime();

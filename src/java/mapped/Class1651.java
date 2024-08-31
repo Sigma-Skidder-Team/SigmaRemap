@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.gui.screen.PackScreen;
+
 import javax.annotation.Nullable;
 import java.io.File;
 import java.io.IOException;
@@ -34,7 +36,7 @@ public class Class1651 implements AutoCloseable {
       try {
          return new Class1651(var0);
       } catch (IOException var4) {
-         Class1336.method6415().warn("Failed to initialize pack directory {} monitoring", var0, var4);
+         PackScreen.method6415().warn("Failed to initialize pack directory {} monitoring", var0, var4);
          return null;
       }
    }

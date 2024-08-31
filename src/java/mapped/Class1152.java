@@ -20,7 +20,7 @@ public interface Class1152 {
       return false;
    }
 
-   default boolean method1920(int var1, int var2, int var3) {
+   default boolean keyPressed(int var1, int var2, int var3) {
       return false;
    }
 
@@ -28,7 +28,7 @@ public interface Class1152 {
       return false;
    }
 
-   default boolean method1932(char var1, int var2) {
+   default boolean charTyped(char var1, int var2) {
       return false;
    }
 

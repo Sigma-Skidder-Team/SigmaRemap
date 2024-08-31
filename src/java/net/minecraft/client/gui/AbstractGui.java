@@ -103,7 +103,7 @@ public abstract class AbstractGui {
       var1.drawStringWithShadow(var0, var2, (float)(var3 - var1.getStringWidth(var2) / 2), (float)var4, var5);
    }
 
-   public static void method5691(MatrixStack var0, FontRenderer var1, ITextComponent var2, int var3, int var4, int var5) {
+   public static void drawCenteredString(MatrixStack var0, FontRenderer var1, ITextComponent var2, int var3, int var4, int var5) {
       Class9125 var8 = var2.func_241878_f();
       var1.method38802(var0, var8, (float)(var3 - var1.method38822(var8) / 2), (float)var4, var5);
    }

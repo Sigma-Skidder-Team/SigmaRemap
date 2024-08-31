@@ -28,20 +28,20 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
    }
 
    @Override
-   public void method1921() {
+   public void init() {
       if (!this.mc.playerController.isInCreativeMode()) {
-         super.method1921();
-         this.field4770 = this.field4564 < 379;
-         this.field4768.method5833(this.field4564, this.field4565, this.mc, this.field4770, this.field4727);
+         super.init();
+         this.field4770 = this.width < 379;
+         this.field4768.method5833(this.width, this.height, this.mc, this.field4770, this.field4727);
          this.field4769 = true;
-         this.field4734 = this.field4768.method5837(this.field4770, this.field4564, this.field4721);
+         this.field4734 = this.field4768.method5837(this.field4770, this.width, this.field4721);
          this.field4561.add(this.field4768);
          this.method5536(this.field4768);
-         this.<Class1243>method2455(new Class1243(this.field4734 + 104, this.field4565 / 2 - 22, 20, 18, 0, 0, 19, field4765, var1 -> {
+         this.<Class1243>addButton(new Class1243(this.field4734 + 104, this.height / 2 - 22, 20, 18, 0, 0, 19, field4765, var1 -> {
             this.field4768.method5834(this.field4770);
             this.field4768.method5838();
-            this.field4734 = this.field4768.method5837(this.field4770, this.field4564, this.field4721);
-            ((Class1243)var1).method5819(this.field4734 + 104, this.field4565 / 2 - 22);
+            this.field4734 = this.field4768.method5837(this.field4770, this.width, this.field4721);
+            ((Class1243)var1).method5819(this.field4734 + 104, this.height / 2 - 22);
             this.field4771 = true;
          }));
       } else {
@@ -51,19 +51,19 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
 
    @Override
    public void method2617(MatrixStack var1, int var2, int var3) {
-      this.fontRenderer.method38805(var1, this.field4560, (float)this.field4723, (float)this.field4724, 4210752);
+      this.fontRenderer.func_243248_b(var1, this.title, (float)this.field4723, (float)this.field4724, 4210752);
    }
 
    @Override
-   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method2469(var1);
+   public void render(MatrixStack var1, int var2, int var3, float var4) {
+      this.renderBackground(var1);
       this.field4772 = !this.field4768.method5839();
       if (this.field4768.method5839() && this.field4770) {
          this.method2618(var1, var4, var2, var3);
-         this.field4768.method1923(var1, var2, var3, var4);
+         this.field4768.render(var1, var2, var3, var4);
       } else {
-         this.field4768.method1923(var1, var2, var3, var4);
-         super.method1923(var1, var2, var3, var4);
+         this.field4768.render(var1, var2, var3, var4);
+         super.render(var1, var2, var3, var4);
          this.field4768.method5850(var1, this.field4734, this.field4735, false, var4);
       }
 

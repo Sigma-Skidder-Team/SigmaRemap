@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Difficulty;
 
 import java.util.UUID;
 
@@ -164,7 +165,7 @@ public class Class6609 implements Class6608 {
    }
 
    @Override
-   public Class2197 method20047() {
+   public Difficulty method20047() {
       return this.field29061.method20047();
    }
 
