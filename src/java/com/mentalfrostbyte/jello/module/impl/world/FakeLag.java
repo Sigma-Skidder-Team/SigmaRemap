@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.*;
 
 import java.util.ArrayList;
 

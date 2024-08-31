@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.unmapped.Class8005;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.client.CClickWindowPacket;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -8,6 +8,8 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.network.play.client.CHeldItemChangePacket;
+import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 
 public class SpartanFly extends Module {
     private double field23569;

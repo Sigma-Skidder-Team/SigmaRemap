@@ -16,6 +16,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.world.Timer;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import mapped.*;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class HypixelSpeed extends Module {

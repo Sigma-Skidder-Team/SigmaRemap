@@ -12,6 +12,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.client.CInputPacket;
+import net.minecraft.network.play.client.CMoveVehiclePacket;
+import net.minecraft.network.play.client.CSteerBoatPacket;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;

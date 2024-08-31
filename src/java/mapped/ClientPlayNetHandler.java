@@ -37,6 +37,7 @@ import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
 import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.ResourceLocation;

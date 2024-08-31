@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.world.Disabler;
 import mapped.*;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.CClickWindowPacket;
 import net.minecraft.network.play.server.*;
 
 import java.util.ArrayList;

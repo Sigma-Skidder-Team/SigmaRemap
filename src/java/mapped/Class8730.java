@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.client.CSeenAdvancementsPacket;
 import net.minecraft.network.play.server.SAdvancementInfoPacket;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;

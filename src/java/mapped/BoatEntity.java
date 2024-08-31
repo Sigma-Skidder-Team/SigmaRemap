@@ -9,6 +9,7 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.network.play.client.CSteerBoatPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundEvent;

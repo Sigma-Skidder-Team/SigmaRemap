@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4403;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.CEntityActionPacket;
+import net.minecraft.network.play.client.CEntityActionPacket;
 import mapped.Class1865;
 
 public class NormalWTap extends Module {

@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import net.minecraft.network.play.server.SKeepAlivePacket;
-import mapped.CClickWindowPacket;
+import net.minecraft.network.play.client.CClickWindowPacket;
 import mapped.Class9567;
 import net.minecraft.client.Minecraft;
 

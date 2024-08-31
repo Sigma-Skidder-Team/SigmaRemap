@@ -15,6 +15,9 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
+import net.minecraft.network.play.client.CClientStatusPacket;
+import net.minecraft.network.play.client.CCloseWindowPacket;
+import net.minecraft.network.play.client.CHeldItemChangePacket;
 import org.lwjgl.opengl.GL11;
 
 import java.util.Arrays;

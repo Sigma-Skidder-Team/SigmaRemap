@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.impl.world.Timer;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.CClickWindowPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 import java.util.ArrayList;

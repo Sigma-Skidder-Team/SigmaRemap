@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.client.*;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;

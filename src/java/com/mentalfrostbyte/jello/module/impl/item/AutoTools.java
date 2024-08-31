@@ -9,6 +9,8 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import mapped.*;
+import net.minecraft.network.play.client.CClientStatusPacket;
+import net.minecraft.network.play.client.CCloseWindowPacket;
 import net.minecraft.util.math.BlockPos;
 
 public class AutoTools extends Module {

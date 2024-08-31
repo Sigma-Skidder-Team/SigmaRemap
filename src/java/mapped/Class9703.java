@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.play.client.CPlayerDiggingPacket;
+
 // $VF: synthetic class
 public class Class9703 {
    private static String[] field45355;

@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.network.play.server.SCloseWindowPacket;
 import net.minecraft.network.play.server.SOpenWindowPacket;

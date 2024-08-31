@@ -17,6 +17,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.client.CClickWindowPacket;
+import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.network.play.server.SWindowPropertyPacket;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.network.play.server.SOpenWindowPacket;

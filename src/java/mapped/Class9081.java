@@ -3,6 +3,7 @@ package mapped;
 import java.util.Objects;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.network.play.server.SPlayerListItemPacket;
 import net.minecraft.network.play.server.SPlayerDiggingPacket;
 import net.minecraft.util.ActionResultType;

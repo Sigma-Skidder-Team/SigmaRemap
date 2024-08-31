@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.CChatMessagePacket;
+import net.minecraft.network.play.client.CChatMessagePacket;
 
 public class ChatFilter extends Module {
     public ChatFilter() {

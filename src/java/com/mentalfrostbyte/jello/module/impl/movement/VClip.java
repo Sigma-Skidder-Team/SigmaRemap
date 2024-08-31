@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import mapped.CChatMessagePacket;
+import net.minecraft.network.play.client.CChatMessagePacket;
 import mapped.Class5605;
 import mapped.ColorUtils;
 import mapped.MathHelper;

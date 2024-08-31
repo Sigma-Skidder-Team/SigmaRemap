@@ -1,6 +1,9 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.impl.world.AutoFarm;
+import net.minecraft.network.play.client.CAnimateHandPacket;
+import net.minecraft.network.play.client.CHeldItemChangePacket;
+import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 
 public class Class649 implements Runnable {
    private static String[] field3250;

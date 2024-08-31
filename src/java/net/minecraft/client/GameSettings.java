@@ -26,6 +26,7 @@ import java.util.Set;
 import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.play.client.CClientSettingsPacket;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.text.ITextComponent;

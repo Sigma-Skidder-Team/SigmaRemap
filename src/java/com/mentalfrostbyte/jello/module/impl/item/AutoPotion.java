@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import mapped.*;
+import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
 
 import java.util.ArrayList;
 import java.util.List;

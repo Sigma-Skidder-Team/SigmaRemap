@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.client.CEntityActionPacket;
 import org.lwjgl.glfw.GLFW;
 
 public class InvMove extends Module {

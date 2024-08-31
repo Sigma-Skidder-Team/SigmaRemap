@@ -7,6 +7,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mojang.authlib.GameProfile;
 import mapped.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.client.CAnimateHandPacket;
+import net.minecraft.network.play.client.CUseEntityPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.AxisAlignedBB;
 

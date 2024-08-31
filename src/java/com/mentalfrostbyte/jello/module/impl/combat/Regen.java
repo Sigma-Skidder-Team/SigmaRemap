@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.BooleanSetting;
-import mapped.CPlayerPacket;
+import net.minecraft.network.play.client.CPlayerPacket;
 import mapped.NumberSetting;
 
 public class Regen extends Module {

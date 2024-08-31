@@ -13,6 +13,8 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
+import net.minecraft.network.play.client.CClientStatusPacket;
+import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CTabCompletePacket;
 import net.minecraft.network.play.server.*;
 import net.minecraft.util.math.BlockPos;

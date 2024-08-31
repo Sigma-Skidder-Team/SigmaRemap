@@ -26,7 +26,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
-import net.minecraft.network.play.client.CTabCompletePacket;
+import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.ResourceLocation;

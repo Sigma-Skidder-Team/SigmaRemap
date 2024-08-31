@@ -5,7 +5,7 @@ import net.minecraft.client.network.login.IClientLoginNetHandler;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.login.server.*;
-import net.minecraft.network.play.client.CTabCompletePacket;
+import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
 
 import java.util.Map;

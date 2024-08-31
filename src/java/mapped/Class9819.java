@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 import java.util.List;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.network.play.client.CPlayerPacket;
 
 import java.io.IOException;
 

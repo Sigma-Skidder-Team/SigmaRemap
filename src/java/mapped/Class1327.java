@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.play.client.CUpdateMinecartCommandBlockPacket;
+
 public class Class1327 extends Class1325 {
    private static String[] field7024;
    private final Class911 field7025;

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.CEntityActionPacket;
+import net.minecraft.network.play.client.CEntityActionPacket;
 import mapped.Class1865;
 
 public class Sneak extends Module {

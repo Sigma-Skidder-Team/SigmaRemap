@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.network.play.client.CPlayerPacket;
 
 public class PacketCriticals extends Module {
     private final TimerUtil timer = new TimerUtil();

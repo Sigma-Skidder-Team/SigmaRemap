@@ -8,6 +8,8 @@ import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.CClickWindowPacket;
+import net.minecraft.network.play.client.CConfirmTransactionPacket;
 import net.minecraft.network.play.server.SConfirmTransactionPacket;
 import net.minecraft.network.play.server.SKeepAlivePacket;
 

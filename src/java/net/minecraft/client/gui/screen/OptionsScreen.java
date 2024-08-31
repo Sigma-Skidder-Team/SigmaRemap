@@ -10,6 +10,8 @@ import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.gui.widget.button.LockIconButton;
 import net.minecraft.client.gui.widget.button.OptionButton;
+import net.minecraft.network.play.client.CLockDifficultyPacket;
+import net.minecraft.network.play.client.CSetDifficultyPacket;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.text.ITextComponent;

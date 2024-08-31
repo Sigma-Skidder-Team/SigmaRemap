@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import mapped.*;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.play.client.CAnimateHandPacket;
+import net.minecraft.network.play.client.CCreativeInventoryActionPacket;
 
 public class ServerCrasher extends PremiumModule {
     private int field23695;

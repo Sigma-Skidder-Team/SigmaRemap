@@ -4,9 +4,9 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.CPlayerDiggingPacket;
+import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import mapped.Class3263;
-import mapped.CPlayerPacket;
+import net.minecraft.network.play.client.CPlayerPacket;
 import mapped.Direction;
 import net.minecraft.util.math.BlockPos;
 

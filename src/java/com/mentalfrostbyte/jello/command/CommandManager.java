@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import mapped.*;
+import net.minecraft.network.play.client.CChatMessagePacket;
 import net.minecraft.network.play.client.CTabCompletePacket;
 
 import java.util.ArrayList;

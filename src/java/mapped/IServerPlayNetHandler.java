@@ -1,7 +1,7 @@
 package mapped;
 
 import net.minecraft.network.INetHandler;
-import net.minecraft.network.play.client.CTabCompletePacket;
+import net.minecraft.network.play.client.*;
 
 public interface IServerPlayNetHandler extends INetHandler {
    void handleAnimation(CAnimateHandPacket var1);

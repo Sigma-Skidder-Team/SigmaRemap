@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.network.play.client.CSelectTradePacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;

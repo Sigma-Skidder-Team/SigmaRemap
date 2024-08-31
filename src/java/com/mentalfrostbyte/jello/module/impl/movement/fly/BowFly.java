@@ -10,6 +10,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
+import net.minecraft.network.play.client.CPlayerDiggingPacket;
+import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
 import net.minecraft.util.math.BlockPos;
 
 public class BowFly extends Module {

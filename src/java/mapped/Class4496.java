@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.play.client.CQueryEntityNBTPacket;
+import net.minecraft.network.play.client.CQueryTileEntityNBTPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.function.Consumer;

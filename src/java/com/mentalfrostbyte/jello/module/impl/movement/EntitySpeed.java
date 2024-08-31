@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4432;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.network.play.client.CMoveVehiclePacket;
 import net.minecraft.network.play.server.SMoveVehiclePacket;
 
 public class EntitySpeed extends Module {

@@ -12,6 +12,8 @@ import com.mentalfrostbyte.jello.module.impl.movement.SafeWalk;
 import com.mentalfrostbyte.jello.module.impl.movement.speed.AACSpeed;
 import mapped.*;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.CAnimateHandPacket;
+import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.CInputPacket;
+import net.minecraft.network.play.client.CInputPacket;
 
 public class GhostlyDisabler extends Module {
     public GhostlyDisabler() {

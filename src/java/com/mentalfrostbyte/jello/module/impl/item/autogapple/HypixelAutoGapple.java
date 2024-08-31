@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
 import mapped.*;
+import net.minecraft.network.play.client.CHeldItemChangePacket;
+import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
 
 public class HypixelAutoGapple extends PremiumModule {
     private int field23678;
