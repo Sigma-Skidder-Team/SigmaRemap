@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.network.play.server.SDisconnectPacket;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -21,7 +22,7 @@ public class Class8587 extends NetworkManager {
       float var3 = this.method30714();
       if (var3 > (float)this.field38663) {
          field38661.warn("Player exceeded rate-limit (sent {} packets per second)", var3);
-         this.method30694(new Class5530(field38662), var1 -> this.method30701(field38662));
+         this.method30694(new SDisconnectPacket(field38662), var1 -> this.method30701(field38662));
          this.method30711();
       }
    }

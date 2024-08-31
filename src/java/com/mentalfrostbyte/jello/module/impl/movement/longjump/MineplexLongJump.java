@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.event.impl.Class4436;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class5473;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import mapped.Class9217;
 import mapped.Class9567;
 import mapped.ColorUtils;
@@ -139,7 +139,7 @@ public class MineplexLongJump extends Module {
     @EventTarget
     public void method16624(RecievePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (var1.getPacket() instanceof Class5473) {
+            if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23804 = -1;
                 this.field23805 = 0;
             }

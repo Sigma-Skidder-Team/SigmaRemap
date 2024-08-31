@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.DynamicLike;
+import net.minecraft.nbt.CompoundNBT;
 
 public class Class7235 {
    private final double field31079;

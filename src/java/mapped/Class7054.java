@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.nbt.CompoundNBT;
+
 import java.io.DataInput;
 import java.io.IOException;
 import java.util.HashMap;

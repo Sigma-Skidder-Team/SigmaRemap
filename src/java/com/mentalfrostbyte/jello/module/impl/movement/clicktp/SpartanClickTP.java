@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import mapped.*;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.BlockPos;
 
 public class SpartanClickTP extends Module {
@@ -64,8 +65,8 @@ public class SpartanClickTP extends Module {
     @EventTarget
     public void method16105(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof Class5473) {
-                Class5473 var4 = (Class5473) var1.getPacket();
+            if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
+                SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();
                 if (var4.field24297 == (double) this.field23465.getX() + 0.5
                         && var4.field24298 == (double) (this.field23465.getY() + 1)
                         && var4.field24299 == (double) this.field23465.getZ() + 0.5) {

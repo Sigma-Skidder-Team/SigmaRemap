@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class5473;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import mapped.ColorUtils;
 import mapped.Class9567;
 
@@ -38,7 +38,7 @@ public class GommeSpeed extends Module {
     @EventTarget
     public void method16301(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof Class5473) {
+            if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23582 = 0;
             }
         }

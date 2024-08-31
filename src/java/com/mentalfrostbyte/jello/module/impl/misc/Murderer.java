@@ -12,6 +12,8 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.server.SRespawnPacket;
+import net.minecraft.network.play.server.SEntityEquipmentPacket;
 
 import java.io.IOException;
 
@@ -30,8 +32,8 @@ public class Murderer extends Module {
     @EventTarget
     private void method16654(RecievePacketEvent var1) throws IOException {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof Class5588) {
-                Class5588 var4 = (Class5588) var1.getPacket();
+            if (var1.getPacket() instanceof SEntityEquipmentPacket) {
+                SEntityEquipmentPacket var4 = (SEntityEquipmentPacket) var1.getPacket();
 
                 for (Pair var6 : var4.method17562()) {
                     if (var6.getSecond() != null
@@ -53,7 +55,7 @@ public class Murderer extends Module {
                 }
             }
 
-            if (var1.getPacket() instanceof Class5545) {
+            if (var1.getPacket() instanceof SRespawnPacket) {
                 this.field23836 = false;
             }
         }

@@ -15,6 +15,8 @@ import mapped.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.*;
 
 import java.util.*;
 
@@ -265,26 +267,26 @@ public class Test extends Module {
     public void method16559(RecievePacketEvent var1) {
         Packet var4 = var1.getPacket();
         if (this.isEnabled()) {
-            if (!(var4 instanceof Class5476)) {
+            if (!(var4 instanceof SEntityPacket)) {
             }
 
-            if (!(var4 instanceof Class5554)) {
-                if (!(var4 instanceof Class5542)) {
-                    if (!(var4 instanceof Class5473)) {
-                        if (!(var4 instanceof Class5556)) {
-                            if (!(var4 instanceof Class5615)) {
-                                if (!(var4 instanceof Class5581)) {
-                                    if (!(var4 instanceof Class5590)) {
-                                        if (var4 instanceof Class5515 && this.getBooleanValueFromSetttingName("Explosions")) {
-                                            Class5515 var5 = (Class5515) var1.getPacket();
+            if (!(var4 instanceof SKeepAlivePacket)) {
+                if (!(var4 instanceof SConfirmTransactionPacket)) {
+                    if (!(var4 instanceof SPlayerPositionLookPacket)) {
+                        if (!(var4 instanceof SUpdateScorePacket)) {
+                            if (!(var4 instanceof SDisplayObjectivePacket)) {
+                                if (!(var4 instanceof STeamsPacket)) {
+                                    if (!(var4 instanceof SEntityVelocityPacket)) {
+                                        if (var4 instanceof SExplosionPacket && this.getBooleanValueFromSetttingName("Explosions")) {
+                                            SExplosionPacket var5 = (SExplosionPacket) var1.getPacket();
                                         }
                                     } else {
-                                        Class5590 var8 = (Class5590) var1.getPacket();
+                                        SEntityVelocityPacket var8 = (SEntityVelocityPacket) var1.getPacket();
                                         if (var8.method17565() != mc.player.method3205()) {
                                         }
                                     }
                                 } else {
-                                    Class5581 var9 = (Class5581) var4;
+                                    STeamsPacket var9 = (STeamsPacket) var4;
                                     if (var9.method17525().startsWith("team_")) {
                                     }
 
@@ -294,38 +296,38 @@ public class Test extends Module {
                                     }
                                 }
                             } else {
-                                Class5615 var10 = (Class5615) var4;
+                                SDisplayObjectivePacket var10 = (SDisplayObjectivePacket) var4;
                             }
                         } else {
-                            Class5556 var11 = (Class5556) var4;
+                            SUpdateScorePacket var11 = (SUpdateScorePacket) var4;
                         }
                     } else {
-                        Class5473 var12 = (Class5473) var4;
+                        SPlayerPositionLookPacket var12 = (SPlayerPositionLookPacket) var4;
                     }
                 } else {
-                    Class5542 var13 = (Class5542) var4;
+                    SConfirmTransactionPacket var13 = (SConfirmTransactionPacket) var4;
                 }
             } else {
-                Class5554 var14 = (Class5554) var4;
+                SKeepAlivePacket var14 = (SKeepAlivePacket) var4;
             }
 
             ArrayList var15 = new ArrayList<Class>(
                     Arrays.asList(
-                            Class5554.class,
-                            Class5542.class,
-                            Class5473.class,
-                            Class5588.class,
-                            Class5547.class,
-                            Class5549.class,
+                            SKeepAlivePacket.class,
+                            SConfirmTransactionPacket.class,
+                            SPlayerPositionLookPacket.class,
+                            SEntityEquipmentPacket.class,
+                            SSpawnParticlePacket.class,
+                            SMultiBlockChangePacket.class,
                             SChatPacket.class,
-                            Class5516.class,
-                            Class5590.class
+                            SEntityHeadLookPacket.class,
+                            SEntityVelocityPacket.class
                     )
             );
             if (var15.contains(var4.getClass())) {
             }
 
-            if (!(var4 instanceof Class5472)) {
+            if (!(var4 instanceof SUpdateBossInfoPacket)) {
             }
         }
     }

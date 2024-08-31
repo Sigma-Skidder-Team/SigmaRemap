@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 import java.util.Locale;
 
 public interface Class7792 {

@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import mapped.Class5554;
+import net.minecraft.network.play.server.SKeepAlivePacket;
 import mapped.Class5594;
 import mapped.Class9567;
 import net.minecraft.client.Minecraft;
@@ -58,7 +58,7 @@ public class Class8696 {
 
    @EventTarget
    private void method31326(RecievePacketEvent var1) {
-      if (var1.getPacket() instanceof Class5554) {
+      if (var1.getPacket() instanceof SKeepAlivePacket) {
          long var4 = System.currentTimeMillis() - this.field39253;
          this.field39254 = Math.min(1.05F, Math.max(0.0F, 15000.0F / (float)var4));
          this.field39253 = System.currentTimeMillis();

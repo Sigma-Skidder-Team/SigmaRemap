@@ -4,6 +4,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.util.text.*;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
@@ -80,8 +82,8 @@ public class Class954 extends TileEntity {
 
    @Nullable
    @Override
-   public Class5610 method3776() {
-      return new Class5610(this.field5325, 9, this.method3777());
+   public SUpdateTileEntityPacket method3776() {
+      return new SUpdateTileEntityPacket(this.field5325, 9, this.method3777());
    }
 
    @Override

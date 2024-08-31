@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.event.impl.TextReplaceEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.*;
 import net.minecraft.util.text.StringTextComponent;
 
 import java.util.List;
@@ -27,13 +29,13 @@ public class NameProtect extends Module {
     public void method16884(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
-            if (var4 instanceof Class5556) {
-                Class5556 var5 = (Class5556) var4;
+            if (var4 instanceof SUpdateScorePacket) {
+                SUpdateScorePacket var5 = (SUpdateScorePacket) var4;
                 if (var5.method17476() == Class2073.field13503) {
                     String var6 = var5.method17473();
                     if (var6.contains(mc.getSession().getUsername())) {
                         var6 = var6.replaceAll(mc.getSession().getUsername(), this.getStringSettingValueByName("Username"));
-                        var1.method13899(new Class5556(var5.method17476(), var5.method17474(), var6, var5.method17475()));
+                        var1.method13899(new SUpdateScorePacket(var5.method17476(), var5.method17474(), var6, var5.method17475()));
                     }
                 }
             }
@@ -42,8 +44,8 @@ public class NameProtect extends Module {
                 SChatPacket var10 = (SChatPacket) var4;
             }
 
-            if (var4 instanceof Class5503) {
-                Class5503 var11 = (Class5503) var4;
+            if (var4 instanceof SPlayerListItemPacket) {
+                SPlayerListItemPacket var11 = (SPlayerListItemPacket) var4;
                 List var15 = var11.method17307();
 
                 for (int var7 = 0; var7 < var15.size(); var7++) {
@@ -60,8 +62,8 @@ public class NameProtect extends Module {
                 var11.field24430 = var15;
             }
 
-            if (var4 instanceof Class5472) {
-                Class5472 var12 = (Class5472) var4;
+            if (var4 instanceof SUpdateBossInfoPacket) {
+                SUpdateBossInfoPacket var12 = (SUpdateBossInfoPacket) var4;
                 if (var12.method17207() == null) {
                     return;
                 }
@@ -74,8 +76,8 @@ public class NameProtect extends Module {
                 }
             }
 
-            if (var4 instanceof Class5591) {
-                Class5591 var13 = (Class5591) var4;
+            if (var4 instanceof STitlePacket) {
+                STitlePacket var13 = (STitlePacket) var4;
                 if (var13.method17570() == null) {
                     return;
                 }
@@ -84,7 +86,7 @@ public class NameProtect extends Module {
                 if (var18.contains(mc.getSession().getUsername())) {
                     var18 = var18.replaceAll(mc.getSession().getUsername(), this.getStringSettingValueByName("Username"));
                     StringTextComponent var21 = new StringTextComponent(var18);
-                    var1.method13899(new Class5591(var13.method17569(), var21, var13.method17571(), var13.method17572(), var13.method17573()));
+                    var1.method13899(new STitlePacket(var13.method17569(), var21, var13.method17571(), var13.method17572(), var13.method17573()));
                 }
             }
         }

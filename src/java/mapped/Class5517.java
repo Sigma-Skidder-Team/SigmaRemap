@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.network.Packet;
 import net.minecraft.world.Difficulty;
 
 import java.io.IOException;

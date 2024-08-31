@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 import java.util.concurrent.CompletableFuture;
 
 public class Class9713 {

@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.unmapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import mapped.Class5501;
+import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.client.Minecraft;
 
 import java.util.Date;
@@ -20,8 +20,8 @@ public class Class8996 {
 
    @EventTarget
    private void method33237(RecievePacketEvent var1) {
-      if (var1.getPacket() instanceof Class5501) {
-         Class5501 var4 = (Class5501)var1.getPacket();
+      if (var1.getPacket() instanceof SSetSlotPacket) {
+         SSetSlotPacket var4 = (SSetSlotPacket)var1.getPacket();
          if (var4.method17303() != 0) {
             return;
          }

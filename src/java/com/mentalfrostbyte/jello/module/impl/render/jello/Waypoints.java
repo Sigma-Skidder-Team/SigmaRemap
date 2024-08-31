@@ -13,6 +13,10 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.server.SDestroyEntitiesPacket;
+import net.minecraft.network.play.server.SSpawnMobPacket;
+import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.network.play.server.SSpawnPlayerPacket;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 
@@ -39,23 +43,23 @@ public class Waypoints extends Module {
     @EventTarget
     public void method16275(RecievePacketEvent var1) {
         if (mc.world != null) {
-            if (!(var1.getPacket() instanceof Class5484)) {
-                if (!(var1.getPacket() instanceof Class5487)) {
-                    if (!(var1.getPacket() instanceof Class5582)) {
-                        if (var1.getPacket() instanceof Class5596) {
-                            Class5596 var4 = (Class5596) var1.getPacket();
+            if (!(var1.getPacket() instanceof SDestroyEntitiesPacket)) {
+                if (!(var1.getPacket() instanceof SSpawnObjectPacket)) {
+                    if (!(var1.getPacket() instanceof SSpawnMobPacket)) {
+                        if (var1.getPacket() instanceof SSpawnPlayerPacket) {
+                            SSpawnPlayerPacket var4 = (SSpawnPlayerPacket) var1.getPacket();
                             this.field23572.remove(var4.method17593());
                         }
                     } else {
-                        Class5582 var10 = (Class5582) var1.getPacket();
+                        SSpawnMobPacket var10 = (SSpawnMobPacket) var1.getPacket();
                         this.field23572.remove(var10.method17536());
                     }
                 } else {
-                    Class5487 var11 = (Class5487) var1.getPacket();
+                    SSpawnObjectPacket var11 = (SSpawnObjectPacket) var1.getPacket();
                     this.field23572.remove(var11.method17257());
                 }
             } else {
-                Class5484 var12 = (Class5484) var1.getPacket();
+                SDestroyEntitiesPacket var12 = (SDestroyEntitiesPacket) var1.getPacket();
 
                 for (int var8 : var12.method17251()) {
                     Entity var9 = mc.world.method6774(var8);

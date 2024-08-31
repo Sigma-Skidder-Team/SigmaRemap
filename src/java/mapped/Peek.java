@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 
 import com.mentalfrostbyte.jello.command.CommandManager;
+import net.minecraft.nbt.CompoundNBT;
 
 public class Peek extends Command {
    public Peek() {

@@ -6,8 +6,8 @@ import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class5473;
-import mapped.Class5590;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
+import net.minecraft.network.play.server.SEntityVelocityPacket;
 import mapped.Class9567;
 import mapped.ColorUtils;
 
@@ -59,13 +59,13 @@ public class MinemenAntiKB extends Module {
 
     @EventTarget
     private void method16699(RecievePacketEvent var1) {
-        if (mc.player != null && var1.getPacket() instanceof Class5590) {
-            Class5590 var5 = (Class5590) var1.getPacket();
+        if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
+            SEntityVelocityPacket var5 = (SEntityVelocityPacket) var1.getPacket();
             if (var5.method17565() == mc.player.method3205() && var5.field24802 < 0 && mc.player.onGround) {
                 var1.method13900(true);
             }
-        } else if (var1.getPacket() instanceof Class5473) {
-            Class5473 var4 = (Class5473) var1.getPacket();
+        } else if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
+            SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();
             this.field23853 = true;
         }
     }

@@ -1,6 +1,8 @@
 package mapped;
 
 import java.io.IOException;
+
+import net.minecraft.network.Packet;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 

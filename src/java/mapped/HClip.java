@@ -2,6 +2,8 @@ package mapped;
 
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
+
 import java.util.Collections;
 
 public class HClip extends Command {
@@ -21,8 +23,8 @@ public class HClip extends Command {
                double var7 = (double) MathHelper.cos(var6) * var2[0].method30896();
                double var9 = (double) MathHelper.sin(var6) * var2[0].method30896();
                mc.getConnection()
-                  .method15728(
-                     new Class5473(
+                  .handlePlayerPosLook(
+                     new SPlayerPositionLookPacket(
                         mc.player.getPosX() + var7,
                         mc.player.getPosY(),
                         mc.player.getPosZ() + var9,

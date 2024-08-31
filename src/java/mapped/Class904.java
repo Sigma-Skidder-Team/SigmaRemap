@@ -5,9 +5,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -521,6 +524,6 @@ public class Class904 extends ProjectileEntity {
    @Override
    public Packet<?> method2835() {
       Entity var3 = this.method3460();
-      return new Class5487(this, var3 != null ? var3.method3205() : this.method3205());
+      return new SSpawnObjectPacket(this, var3 != null ? var3.method3205() : this.method3205());
    }
 }

@@ -8,10 +8,10 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class5473;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import mapped.ColorUtils;
 import mapped.Class9567;
-import mapped.Packet;
+import net.minecraft.network.Packet;
 
 public class HawkFly extends Module {
     private int field23424;
@@ -76,8 +76,8 @@ public class HawkFly extends Module {
     public void method16054(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
-            if (var4 instanceof Class5473) {
-                Class5473 var5 = (Class5473) var4;
+            if (var4 instanceof SPlayerPositionLookPacket) {
+                SPlayerPositionLookPacket var5 = (SPlayerPositionLookPacket) var4;
                 if (this.field23424 >= 1) {
                     this.field23424 = -1;
                 }

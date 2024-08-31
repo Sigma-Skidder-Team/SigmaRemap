@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.server.SCloseWindowPacket;
 import org.lwjgl.opengl.GL11;
 
 public class Class8480 {
@@ -37,7 +38,7 @@ public class Class8480 {
 
    @EventTarget
    public void method29972(RecievePacketEvent var1) {
-      if (var1.getPacket() instanceof Class5586) {
+      if (var1.getPacket() instanceof SCloseWindowPacket) {
          ColorUtils.method17742();
       }
    }

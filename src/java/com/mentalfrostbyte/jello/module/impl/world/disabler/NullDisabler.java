@@ -5,8 +5,8 @@ import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.BooleanSetting;
-import mapped.Class5542;
-import mapped.Class5554;
+import net.minecraft.network.play.server.SConfirmTransactionPacket;
+import net.minecraft.network.play.server.SKeepAlivePacket;
 
 public class NullDisabler extends Module {
     public NullDisabler() {
@@ -17,9 +17,9 @@ public class NullDisabler extends Module {
     @EventTarget
     public void method16255(RecievePacketEvent var1) {
         if (this.isEnabled() && mc.getCurrentServerData() != null) {
-            if (!(var1.getPacket() instanceof Class5554)) {
-                if (var1.getPacket() instanceof Class5542) {
-                    Class5542 var4 = (Class5542) var1.getPacket();
+            if (!(var1.getPacket() instanceof SKeepAlivePacket)) {
+                if (var1.getPacket() instanceof SConfirmTransactionPacket) {
+                    SConfirmTransactionPacket var4 = (SConfirmTransactionPacket) var1.getPacket();
                     if (var4.method17422() < 0 || !this.getBooleanValueFromSetttingName("Inv Bypass")) {
                         var1.method13900(true);
                     }

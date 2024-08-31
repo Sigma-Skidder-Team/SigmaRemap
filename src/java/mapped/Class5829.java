@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.server.SSetSlotPacket;
 
 import java.util.Optional;
 
@@ -51,7 +52,7 @@ public class Class5829 extends Class5828<Class926> {
          }
 
          var4.method3621(0, var8);
-         var7.field4855.sendPacket(new Class5501(var0, 0, var8));
+         var7.field4855.sendPacket(new SSetSlotPacket(var0, 0, var8));
       }
    }
 

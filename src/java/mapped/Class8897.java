@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.impl.world.disabler.ViperDisabler;
+import net.minecraft.network.Packet;
 
 public class Class8897 {
    private static String[] field40264;

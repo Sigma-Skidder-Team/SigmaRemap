@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mojang.authlib.GameProfile;
 import mapped.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.AxisAlignedBB;
 
 public class Freecam extends Module {
@@ -257,8 +258,8 @@ public class Freecam extends Module {
     private void method16647(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
-                if (var1.getPacket() instanceof Class5473) {
-                    Class5473 var4 = (Class5473) var1.getPacket();
+                if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
+                    SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();
                     this.field23821 = var4.field24300;
                     this.field23822 = var4.field24301;
                     var4.field24300 = mc.player.rotationYaw;

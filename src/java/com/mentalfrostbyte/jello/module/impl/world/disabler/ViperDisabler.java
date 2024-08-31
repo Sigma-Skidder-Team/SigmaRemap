@@ -6,6 +6,9 @@ import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SConfirmTransactionPacket;
+import net.minecraft.network.play.server.SKeepAlivePacket;
 
 import java.util.ArrayList;
 
@@ -67,13 +70,13 @@ public class ViperDisabler extends Module {
     public void method16716(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
-            if (var4 instanceof Class5554) {
-                Class5554 var5 = (Class5554) var4;
+            if (var4 instanceof SKeepAlivePacket) {
+                SKeepAlivePacket var5 = (SKeepAlivePacket) var4;
                 var1.method13900(true);
             }
 
-            if (var4 instanceof Class5542) {
-                Class5542 var6 = (Class5542) var4;
+            if (var4 instanceof SConfirmTransactionPacket) {
+                SConfirmTransactionPacket var6 = (SConfirmTransactionPacket) var4;
                 var1.method13900(true);
             }
         }

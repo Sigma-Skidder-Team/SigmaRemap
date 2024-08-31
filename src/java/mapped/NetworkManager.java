@@ -31,6 +31,10 @@ import java.net.SocketAddress;
 import java.util.Queue;
 import javax.annotation.Nullable;
 import javax.crypto.Cipher;
+
+import net.minecraft.network.INetHandler;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SDisconnectPacket;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.lang3.Validate;
@@ -57,7 +61,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
    private final Queue<Class9742> field38647 = Queues.newConcurrentLinkedQueue();
    private Channel field38648;
    private SocketAddress field38649;
-   public Class5104 field38650;
+   public INetHandler field38650;
    private ITextComponent field38651;
    private boolean field38652;
    private boolean field38653;
@@ -108,7 +112,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
                   this.method30701(var6);
                } else {
                   field38639.debug("Failed to sent packet", var2);
-                  this.method30694(new Class5530(var6), var2x -> this.method30701(var6));
+                  this.method30694(new SDisconnectPacket(var6), var2x -> this.method30701(var6));
                   this.method30711();
                }
             } else {
@@ -139,11 +143,11 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
       }
    }
 
-   public static <T extends Class5104> void method30691(Packet<T> var0, Class5104 var1) {
+   public static <T extends INetHandler> void method30691(Packet<T> var0, INetHandler var1) {
       var0.method17180((T) var1);
    }
 
-   public void setNetHandler(Class5104 var1) {
+   public void setNetHandler(INetHandler var1) {
       Validate.notNull(var1, "packetListener", new Object[0]);
       this.field38650 = var1;
    }
@@ -314,7 +318,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
       return this.field38648 == null;
    }
 
-   public Class5104 method30709() {
+   public INetHandler method30709() {
       return this.field38650;
    }
 

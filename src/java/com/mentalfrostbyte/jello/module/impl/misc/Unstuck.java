@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
-import mapped.Class5473;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import mapped.ColorUtils;
 import mapped.Class9567;
 import mapped.NumberSetting;
@@ -73,7 +73,7 @@ public class Unstuck extends Module {
     public void method16288(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
-                if (var1.getPacket() instanceof Class5473 && !ColorUtils.method17730(mc.player, 0.3F) && mc.player.ticksExisted > 10) {
+                if (var1.getPacket() instanceof SPlayerPositionLookPacket && !ColorUtils.method17730(mc.player, 0.3F) && mc.player.ticksExisted > 10) {
                     this.field23574++;
                     if ((float) this.field23574 > this.getNumberValueBySettingName("Flags")) {
                         var1.method13900(true);

@@ -5,9 +5,11 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.network.play.server.SChangeGameStatePacket;
 import net.minecraft.util.SoundEvent;
 
 import java.util.function.Predicate;
@@ -132,7 +134,7 @@ public class Class1054 extends Class1049 {
       int var4 = this.method4828();
       if (var1 instanceof ServerPlayerEntity && var4 > 0 && var1.method2741(Class8654.method31115(this), (float)(1 + var4))) {
          if (!this.method3245()) {
-            ((ServerPlayerEntity)var1).field4855.sendPacket(new Class5534(Class5534.field24569, 0.0F));
+            ((ServerPlayerEntity)var1).field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24569, 0.0F));
          }
 
          var1.method3035(new Class2023(Effects.POISON, 60 * var4, 0));

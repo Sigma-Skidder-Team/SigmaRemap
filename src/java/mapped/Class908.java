@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.Pose;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
 
 public class Class908 extends Entity {
    private static String[] field5185;

@@ -9,9 +9,11 @@ import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.network.INetHandler;
+import net.minecraft.network.Packet;
 import org.apache.logging.log4j.LogManager;
 
-public class Class7417<T extends Class5104> {
+public class Class7417<T extends INetHandler> {
    private final Object2IntMap<Class<? extends Packet<T>>> field31779 = Util.<Object2IntMap<Class<? extends Packet<T>>>>make(
       new Object2IntOpenHashMap(), var0 -> var0.defaultReturnValue(-1)
    );

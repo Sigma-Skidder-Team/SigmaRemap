@@ -3,6 +3,9 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SSpawnObjectPacket;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
@@ -147,6 +150,6 @@ public class Class915 extends Entity {
 
    @Override
    public Packet<?> method2835() {
-      return new Class5487(this);
+      return new SSpawnObjectPacket(this);
    }
 }

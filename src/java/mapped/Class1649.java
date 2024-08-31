@@ -15,6 +15,9 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.*;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -786,7 +789,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    private Class2002 method6574(ServerPlayerEntity var1) {
       Class2002 var4 = Class2002.method8392(var1);
       var1.method2833(var4);
-      var1.field4855.sendPacket(new Class5579(var4.method8410(), var4.method8412()));
+      var1.field4855.sendPacket(new SUpdateChunkPositionPacket(var4.method8410(), var4.method8412()));
       return var4;
    }
 
@@ -972,8 +975,8 @@ public class Class1649 extends Class1648 implements Class1650 {
 
    private void method6582(ServerPlayerEntity var1, Packet<?>[] var2, Chunk var3) {
       if (var2[0] == null) {
-         var2[0] = new Class5526(var3, 65535);
-         var2[1] = new Class5523(var3.method7072(), this.field8957, true);
+         var2[0] = new SChunkDataPacket(var3, 65535);
+         var2[1] = new SUpdateLightPacket(var3.method7072(), this.field8957, true);
       }
 
       var1.method2830(var3.method7072(), var2[0], var2[1]);
@@ -997,13 +1000,13 @@ public class Class1649 extends Class1648 implements Class1650 {
 
       if (!var6.isEmpty()) {
          for (Entity var13 : var6) {
-            var1.field4855.sendPacket(new Class5593(var13, ((Class1006)var13).method4297()));
+            var1.field4855.sendPacket(new SMountEntityPacket(var13, ((Class1006)var13).method4297()));
          }
       }
 
       if (!var7.isEmpty()) {
          for (Entity var14 : var7) {
-            var1.field4855.sendPacket(new Class5485(var14));
+            var1.field4855.sendPacket(new SSetPassengersPacket(var14));
          }
       }
    }

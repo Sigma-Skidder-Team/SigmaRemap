@@ -8,6 +8,9 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
+import net.minecraft.network.play.server.SEntityVelocityPacket;
 
 public class CubecraftFly extends Module {
     private int field23845;
@@ -178,15 +181,15 @@ public class CubecraftFly extends Module {
     public void method16690(RecievePacketEvent var1) {
         if (mc.world != null && mc.getConnection() != null && ColorUtils.method17718()) {
             Packet var4 = var1.getPacket();
-            if (!(var4 instanceof Class5473)) {
-                if (var4 instanceof Class5590) {
-                    Class5590 var5 = (Class5590) var4;
+            if (!(var4 instanceof SPlayerPositionLookPacket)) {
+                if (var4 instanceof SEntityVelocityPacket) {
+                    SEntityVelocityPacket var5 = (SEntityVelocityPacket) var4;
                     if (var5.method17565() == mc.player.method3205()) {
                         this.field23845 = -4;
                     }
                 }
             } else {
-                Class5473 var20 = (Class5473) var4;
+                SPlayerPositionLookPacket var20 = (SPlayerPositionLookPacket) var4;
                 if (Class8005.method27349() != Class5989.field26129.method18582()) {
                     float[] var6 = Class9567.method37082();
                     float var7 = var6[1];

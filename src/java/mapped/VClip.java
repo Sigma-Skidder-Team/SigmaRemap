@@ -2,6 +2,8 @@ package mapped;
 
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
+
 import java.util.Collections;
 
 public class VClip extends Command {
@@ -18,8 +20,8 @@ public class VClip extends Command {
                throw new CommandException("Invalid vertical distance \"" + var2[0].method30899() + "\"");
             } else {
                mc.getConnection()
-                  .method15728(
-                     new Class5473(
+                  .handlePlayerPosLook(
+                     new SPlayerPositionLookPacket(
                         mc.player.getPosX(),
                         mc.player.getPosY() + var2[0].method30896(),
                         mc.player.getPosZ(),

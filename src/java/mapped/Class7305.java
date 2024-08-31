@@ -3,6 +3,8 @@ package mapped;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import net.minecraft.nbt.CompoundNBT;
 import org.apache.commons.lang3.StringEscapeUtils;
 
 public class Class7305 {

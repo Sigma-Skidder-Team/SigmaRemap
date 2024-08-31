@@ -6,6 +6,9 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SExplosionPacket;
+import net.minecraft.network.play.server.SEntityVelocityPacket;
 
 public class AACAntiKB extends Module {
     public static int field23907;
@@ -67,13 +70,13 @@ public class AACAntiKB extends Module {
     private void method16789(RecievePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
             Packet var4 = var1.getPacket();
-            if (var4 instanceof Class5590) {
+            if (var4 instanceof SEntityVelocityPacket) {
                 if (this.method16790()) {
                     field23907 = 0;
                     return;
                 }
 
-                Class5590 var5 = (Class5590) var4;
+                SEntityVelocityPacket var5 = (SEntityVelocityPacket) var4;
                 if (var5.method17565() == mc.player.method3205() && (var5.field24801 != 0 || var5.field24803 != 0)) {
                     this.field23909 = (float) (Math.sqrt(var5.field24801 * var5.field24801 + var5.field24803 * var5.field24803) / 1000.0);
                     this.field23908 = (float) (Math.atan2(var5.field24801 / 1000, var5.field24803 / 1000) * 180.0 / Math.PI) - 90.0F;
@@ -81,8 +84,8 @@ public class AACAntiKB extends Module {
                 }
             }
 
-            if (var1.getPacket() instanceof Class5515) {
-                Class5515 var6 = (Class5515) var4;
+            if (var1.getPacket() instanceof SExplosionPacket) {
+                SExplosionPacket var6 = (SExplosionPacket) var4;
             }
         }
     }

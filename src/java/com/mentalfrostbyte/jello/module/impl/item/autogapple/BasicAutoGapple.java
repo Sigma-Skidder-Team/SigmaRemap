@@ -9,7 +9,9 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
 import mapped.*;
+import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.play.server.SEntityMetadataPacket;
 
 public class BasicAutoGapple extends Module {
     private int field23549 = -1;
@@ -94,8 +96,8 @@ public class BasicAutoGapple extends Module {
     public void method16249(RecievePacketEvent var1) {
         if (this.isEnabled() && this.field23549 > 1) {
             Packet var4 = var1.getPacket();
-            if (var4 instanceof Class5553) {
-                Class5553 var5 = (Class5553) var4;
+            if (var4 instanceof SEntityMetadataPacket) {
+                SEntityMetadataPacket var5 = (SEntityMetadataPacket) var4;
                 if (var5.method17470() == mc.player.method3205()) {
                     for (Class9773 var7 : var5.method17469()) {
                         DataParameter var8 = var7.method38447();

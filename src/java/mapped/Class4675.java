@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.RecordBuilder.AbstractStringBuilder;
+import net.minecraft.nbt.CompoundNBT;
+
 import java.util.Map.Entry;
 
 public class Class4675 extends AbstractStringBuilder<Class30, CompoundNBT> {

@@ -8,6 +8,9 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
 import com.mentalfrostbyte.jello.module.impl.render.NameProtect;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.STeamsPacket;
+import net.minecraft.network.play.server.SChatPacket;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -134,8 +137,8 @@ public class HypixelGamePlay extends Module {
                         this.field23626.method16760();
                     }
                 }
-            } else if (var4 instanceof Class5581 && this.getBooleanValueFromSetttingName("Hide infos")) {
-                Class5581 var26 = (Class5581) var4;
+            } else if (var4 instanceof STeamsPacket && this.getBooleanValueFromSetttingName("Hide infos")) {
+                STeamsPacket var26 = (STeamsPacket) var4;
                 if (var26.method17528() == 2 && var26.method17525().startsWith("team_")) {
                     String var27 = var26.method17533().getString() + var26.method17534().getString();
                     String[] var28 = var27.split(" ");

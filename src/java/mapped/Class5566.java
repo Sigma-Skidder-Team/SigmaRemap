@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.Packet;
+
 import java.io.IOException;
 
 public class Class5566 implements Packet<Class5114> {

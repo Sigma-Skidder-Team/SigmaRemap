@@ -2,6 +2,7 @@ package mapped;
 
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
+import net.minecraft.network.Packet;
 
 public class Class9742 {
    private static String[] field45486;

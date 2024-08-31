@@ -6,9 +6,13 @@ import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.network.play.server.SChangeGameStatePacket;
+import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -343,7 +347,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
 
             this.method3478(var13);
             if (var7 != null && var13 != var7 && var13 instanceof PlayerEntity && var7 instanceof ServerPlayerEntity && !this.method3245()) {
-               ((ServerPlayerEntity)var7).field4855.sendPacket(new Class5534(Class5534.field24566, 0.0F));
+               ((ServerPlayerEntity)var7).field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24566, 0.0F));
             }
 
             if (!var4.isAlive() && this.field5109 != null) {
@@ -577,6 +581,6 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    @Override
    public Packet<?> method2835() {
       Entity var3 = this.method3460();
-      return new Class5487(this, var3 != null ? var3.method3205() : 0);
+      return new SSpawnObjectPacket(this, var3 != null ? var3.method3205() : 0);
    }
 }

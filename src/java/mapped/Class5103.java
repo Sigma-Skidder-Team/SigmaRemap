@@ -1,6 +1,8 @@
 package mapped;
 
-public interface Class5103 extends Class5104 {
+import net.minecraft.network.INetHandler;
+
+public interface Class5103 extends INetHandler {
    void method15584(Class5540 var1);
 
    void method15587(Class5598 var1);

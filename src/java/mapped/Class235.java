@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.nbt.CompoundNBT;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.UUID;

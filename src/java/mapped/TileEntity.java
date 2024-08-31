@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -107,7 +109,7 @@ public abstract class TileEntity {
    }
 
    @Nullable
-   public Class5610 method3776() {
+   public SUpdateTileEntityPacket method3776() {
       return null;
    }
 

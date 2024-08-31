@@ -6,6 +6,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
@@ -311,6 +314,6 @@ public class Class905 extends ProjectileEntity {
 
    @Override
    public Packet<?> method2835() {
-      return new Class5487(this);
+      return new SSpawnObjectPacket(this);
    }
 }

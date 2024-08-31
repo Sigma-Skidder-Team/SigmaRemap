@@ -10,6 +10,8 @@ import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class Cubecraft2Fly extends PremiumModule {
     private int field23696;
@@ -155,8 +157,8 @@ public class Cubecraft2Fly extends PremiumModule {
     public void method16487(RecievePacketEvent var1) {
         if (this.isEnabled() || this.field23696 < 0) {
             Packet var4 = var1.getPacket();
-            if (var4 instanceof Class5473) {
-                Class5473 var5 = (Class5473) var4;
+            if (var4 instanceof SPlayerPositionLookPacket) {
+                SPlayerPositionLookPacket var5 = (SPlayerPositionLookPacket) var4;
                 var5.field24300 = mc.player.rotationYaw;
                 var5.field24301 = mc.player.rotationPitch;
                 this.field23698.method27120();

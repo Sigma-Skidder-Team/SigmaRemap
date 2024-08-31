@@ -7,6 +7,8 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.server.SEntityPacket;
+import net.minecraft.network.play.server.SPlayerListItemPacket;
 
 import java.util.HashMap;
 
@@ -29,12 +31,12 @@ public class StaffRepealer extends Module {
     @EventTarget
     private void method16184(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof Class5476) {
-                Class5476 var4 = (Class5476) var1.getPacket();
+            if (var1.getPacket() instanceof SEntityPacket) {
+                SEntityPacket var4 = (SEntityPacket) var1.getPacket();
             }
 
-            if (var1.getPacket() instanceof Class5503) {
-                Class5503 var5 = (Class5503) var1.getPacket();
+            if (var1.getPacket() instanceof SPlayerListItemPacket) {
+                SPlayerListItemPacket var5 = (SPlayerListItemPacket) var1.getPacket();
                 new Thread(() -> {
                     try {
                         Thread.sleep(2000L);

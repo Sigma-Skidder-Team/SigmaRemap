@@ -6,6 +6,10 @@ import com.mojang.serialization.DynamicLike;
 import java.util.Comparator;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.play.server.SEntityStatusPacket;
+import net.minecraft.network.play.server.SChangeGameStatePacket;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -32,7 +36,7 @@ public class Class5462 {
       byte var4 = (byte)(!var1.method24174() ? 23 : 22);
 
       for (ServerPlayerEntity var6 : var0.getPlayerList().method19488()) {
-         var6.field4855.sendPacket(new Class5464(var6, var4));
+         var6.field4855.sendPacket(new SEntityStatusPacket(var6, var4));
       }
    }));
    public static final Class9221<Class7466> field24238 = method17127("spectatorsGenerateChunks", Class2155.field14131, Class7466.method24178(true));
@@ -47,7 +51,7 @@ public class Class5462 {
    public static final Class9221<Class7466> field24247 = method17127("doInsomnia", Class2155.field14133, Class7466.method24178(true));
    public static final Class9221<Class7466> field24248 = method17127("doImmediateRespawn", Class2155.field14131, Class7466.method24179(false, (var0, var1) -> {
       for (ServerPlayerEntity var5 : var0.getPlayerList().method19488()) {
-         var5.field4855.sendPacket(new Class5534(Class5534.field24571, !var1.method24174() ? 0.0F : 1.0F));
+         var5.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24571, !var1.method24174() ? 0.0F : 1.0F));
       }
    }));
    public static final Class9221<Class7466> field24249 = method17127("drowningDamage", Class2155.field14131, Class7466.method24178(true));

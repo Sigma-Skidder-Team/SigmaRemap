@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.nbt.CompoundNBT;
+
 import java.util.List;
 
 public class Class9735 {

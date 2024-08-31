@@ -5,8 +5,8 @@ import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.BooleanSetting;
-import mapped.Class5515;
-import mapped.Class5590;
+import net.minecraft.network.play.server.SExplosionPacket;
+import net.minecraft.network.play.server.SEntityVelocityPacket;
 import mapped.NumberSetting;
 
 public class BasicAntiKB extends Module {
@@ -20,8 +20,8 @@ public class BasicAntiKB extends Module {
    @EventTarget
    private void method16068(RecievePacketEvent var1) {
       if (this.isEnabled()) {
-         if (mc.player != null && var1.getPacket() instanceof Class5590) {
-            Class5590 var4 = (Class5590)var1.getPacket();
+         if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
+            SEntityVelocityPacket var4 = (SEntityVelocityPacket)var1.getPacket();
             if (var4.method17565() == mc.player.method3205()) {
                if (this.getNumberValueBySettingName("H-Multiplier") == 0.0F && this.getNumberValueBySettingName("V-Multiplier") == 0.0F) {
                   var1.method13900(true);
@@ -33,8 +33,8 @@ public class BasicAntiKB extends Module {
             }
          }
 
-         if (var1.getPacket() instanceof Class5515 && this.getBooleanValueFromSetttingName("Explosions")) {
-            Class5515 var5 = (Class5515)var1.getPacket();
+         if (var1.getPacket() instanceof SExplosionPacket && this.getBooleanValueFromSetttingName("Explosions")) {
+            SExplosionPacket var5 = (SExplosionPacket)var1.getPacket();
             var5.field24473 = var5.field24473 * this.getNumberValueBySettingName("H-Multiplier");
             var5.field24475 = var5.field24475 * this.getNumberValueBySettingName("H-Multiplier");
             var5.field24474 = var5.field24474 * this.getNumberValueBySettingName("V-Multiplier");

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;

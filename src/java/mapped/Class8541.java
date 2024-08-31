@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SMapDataPacket;
 
 import javax.annotation.Nullable;
 
@@ -29,7 +31,7 @@ public class Class8541 {
       if (!this.field38391) {
          return this.field38396++ % 5 != 0
             ? null
-            : new Class5609(
+            : new SMapDataPacket(
                Class3316.method11862(var1),
                this.field38398.field32321,
                this.field38398.field32319,
@@ -43,7 +45,7 @@ public class Class8541 {
             );
       } else {
          this.field38391 = false;
-         return new Class5609(
+         return new SMapDataPacket(
             Class3316.method11862(var1),
             this.field38398.field32321,
             this.field38398.field32319,

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.network.Packet;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;

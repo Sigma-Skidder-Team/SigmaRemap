@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -37,13 +39,13 @@ public class Class969 extends TileEntity {
 
    @Nullable
    @Override
-   public Class5610 method3776() {
+   public SUpdateTileEntityPacket method3776() {
       if (!this.method4018()) {
          return null;
       } else {
          this.method4019(false);
          CompoundNBT var3 = this.write(new CompoundNBT());
-         return new Class5610(this.field5325, 2, var3);
+         return new SUpdateTileEntityPacket(this.field5325, 2, var3);
       }
    }
 

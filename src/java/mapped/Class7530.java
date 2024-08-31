@@ -2,6 +2,8 @@ package mapped;
 
 import java.io.File;
 import java.io.IOException;
+
+import net.minecraft.nbt.CompoundNBT;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

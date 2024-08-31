@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableSet;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.entity.Entity;
+import net.minecraft.nbt.CompoundNBT;
 
 import java.util.List;
 import java.util.Set;

@@ -8,8 +8,8 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import mapped.Packet;
-import mapped.SChatPacket;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SChatPacket;
 
 public class MineplexGamePlay extends Module {
     private GamePlay field23602;

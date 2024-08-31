@@ -6,6 +6,8 @@ import com.google.common.collect.Sets;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
+
+import net.minecraft.network.play.server.SUpdateBossInfoPacket;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class3624 extends Class3625 {
@@ -82,7 +84,7 @@ public class Class3624 extends Class3625 {
 
    private void method12285(Class2151 var1) {
       if (this.field19632) {
-         Class5472 var4 = new Class5472(var1, this);
+         SUpdateBossInfoPacket var4 = new SUpdateBossInfoPacket(var1, this);
 
          for (ServerPlayerEntity var6 : this.field19630) {
             var6.field4855.sendPacket(var4);
@@ -92,13 +94,13 @@ public class Class3624 extends Class3625 {
 
    public void method12263(ServerPlayerEntity var1) {
       if (this.field19630.add(var1) && this.field19632) {
-         var1.field4855.sendPacket(new Class5472(Class2151.field14064, this));
+         var1.field4855.sendPacket(new SUpdateBossInfoPacket(Class2151.field14064, this));
       }
    }
 
    public void method12265(ServerPlayerEntity var1) {
       if (this.field19630.remove(var1) && this.field19632) {
-         var1.field4855.sendPacket(new Class5472(Class2151.field14065, this));
+         var1.field4855.sendPacket(new SUpdateBossInfoPacket(Class2151.field14065, this));
       }
    }
 
@@ -119,7 +121,7 @@ public class Class3624 extends Class3625 {
          this.field19632 = var1;
 
          for (ServerPlayerEntity var5 : this.field19630) {
-            var5.field4855.sendPacket(new Class5472(!var1 ? Class2151.field14065 : Class2151.field14064, this));
+            var5.field4855.sendPacket(new SUpdateBossInfoPacket(!var1 ? Class2151.field14065 : Class2151.field14064, this));
          }
       }
    }

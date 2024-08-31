@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.server.SCustomPayloadPlayPacket;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,12 +20,12 @@ public class Class7393 {
       var7.writeInt(var3);
       var7.method35729(var2);
       var7.writeInt(var4);
-      method23625(var0, var7, Class5532.field24551);
+      method23625(var0, var7, SCustomPayloadPlayPacket.field24551);
    }
 
    public static void method23611(ServerWorld var0) {
       PacketBuffer var3 = new PacketBuffer(Unpooled.buffer());
-      method23625(var0, var3, Class5532.field24552);
+      method23625(var0, var3, SCustomPayloadPlayPacket.field24552);
    }
 
    public static void method23612(ServerWorld var0, Class7481 var1) {
@@ -72,7 +73,7 @@ public class Class7393 {
    }
 
    private static void method23625(ServerWorld var0, PacketBuffer var1, ResourceLocation var2) {
-      Class5532 var5 = new Class5532(var2, var1);
+      SCustomPayloadPlayPacket var5 = new SCustomPayloadPlayPacket(var2, var1);
 
       for (PlayerEntity var7 : var0.method6970().method6870()) {
          ((ServerPlayerEntity)var7).field4855.sendPacket(var5);

@@ -6,8 +6,8 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.BooleanSetting;
-import mapped.Class5534;
-import mapped.Class5577;
+import net.minecraft.network.play.server.SChangeGameStatePacket;
+import net.minecraft.network.play.server.SUpdateTimePacket;
 import mapped.NumberSetting;
 
 public class Weather extends Module {
@@ -68,9 +68,9 @@ public class Weather extends Module {
     @EventTarget
     private void method16231(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (!(var1.getPacket() instanceof Class5577)) {
-                if (var1.getPacket() instanceof Class5534) {
-                    Class5534 var4 = (Class5534) var1.getPacket();
+            if (!(var1.getPacket() instanceof SUpdateTimePacket)) {
+                if (var1.getPacket() instanceof SChangeGameStatePacket) {
+                    SChangeGameStatePacket var4 = (SChangeGameStatePacket) var1.getPacket();
                     if (var4.method17397().field43543 == 7) {
                         if (var4.method17398() != 1.0F) {
                             if (var4.method17398() == 0.0F) {
@@ -83,13 +83,13 @@ public class Weather extends Module {
                         if (!this.getBooleanValueFromSetttingName("Disable rain")) {
                             this.field23538 = var4.method17398();
                         } else {
-                            var1.method13899(new Class5534(var4.method17397(), 0.0F));
+                            var1.method13899(new SChangeGameStatePacket(var4.method17397(), 0.0F));
                             this.field23538 = 0.0F;
                         }
                     }
                 }
             } else if (this.getBooleanValueFromSetttingName("Custom time")) {
-                var1.method13899(new Class5577(-((long) this.getNumberValueBySettingName("Time")), -((long) this.getNumberValueBySettingName("Time")), true));
+                var1.method13899(new SUpdateTimePacket(-((long) this.getNumberValueBySettingName("Time")), -((long) this.getNumberValueBySettingName("Time")), true));
             }
         }
     }

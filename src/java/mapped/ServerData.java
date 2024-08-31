@@ -3,6 +3,8 @@ package mapped;
 import java.util.Collections;
 import java.util.List;
 import javax.annotation.Nullable;
+
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 

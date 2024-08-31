@@ -12,6 +12,9 @@ import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.server.SChangeBlockPacket;
+import net.minecraft.network.play.server.SChunkDataPacket;
+import net.minecraft.network.play.server.SMultiBlockChangePacket;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 
@@ -36,18 +39,18 @@ public class AutoMiner extends Module {
    @EventTarget
    public void method16075(RecievePacketEvent var1) {
       if (this.isEnabled()) {
-         if (var1.getPacket() instanceof Class5607) {
-            Class5607 var4 = (Class5607)var1.getPacket();
+         if (var1.getPacket() instanceof SChangeBlockPacket) {
+            SChangeBlockPacket var4 = (SChangeBlockPacket)var1.getPacket();
             this.method16076(mc.world.getChunkAt(var4.method17632()).method7072());
          }
 
-         if (var1.getPacket() instanceof Class5549) {
-            Class5549 var5 = (Class5549)var1.getPacket();
+         if (var1.getPacket() instanceof SMultiBlockChangePacket) {
+            SMultiBlockChangePacket var5 = (SMultiBlockChangePacket)var1.getPacket();
             this.method16076(new Class7481(var5.field24642.field13027, var5.field24642.field13029));
          }
 
-         if (var1.getPacket() instanceof Class5526 && Minecraft.getInstance().world != null) {
-            Class5526 var6 = (Class5526)var1.getPacket();
+         if (var1.getPacket() instanceof SChunkDataPacket && Minecraft.getInstance().world != null) {
+            SChunkDataPacket var6 = (SChunkDataPacket)var1.getPacket();
             this.method16076(new Class7481(var6.method17378(), var6.method17379()));
          }
       }

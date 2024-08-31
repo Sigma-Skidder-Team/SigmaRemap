@@ -13,6 +13,8 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.server.SPlaySoundPacket;
+import net.minecraft.network.play.server.SPlaySoundEffectPacket;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 
@@ -204,8 +206,8 @@ public class NoteblockPlayer extends PremiumModule {
     private void method16412(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             if (this.field23641 != null) {
-                if (var1.getPacket() instanceof Class5584) {
-                    Class5584 var4 = (Class5584) var1.getPacket();
+                if (var1.getPacket() instanceof SPlaySoundEffectPacket) {
+                    SPlaySoundEffectPacket var4 = (SPlaySoundEffectPacket) var1.getPacket();
 
                     for (int var5 = 0; var5 < this.field23641.size(); var5++) {
                         Class6463 var6 = this.field23641.get(var5);
@@ -216,8 +218,8 @@ public class NoteblockPlayer extends PremiumModule {
                     }
                 }
 
-                if (var1.getPacket() instanceof Class5475) {
-                    Class5475 var7 = (Class5475) var1.getPacket();
+                if (var1.getPacket() instanceof SPlaySoundPacket) {
+                    SPlaySoundPacket var7 = (SPlaySoundPacket) var1.getPacket();
 
                     for (int var8 = 0; var8 < this.field23641.size(); var8++) {
                         Class6463 var9 = this.field23641.get(var8);

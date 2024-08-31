@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import mapped.Class2176;
-import mapped.Class5503;
+import net.minecraft.network.play.server.SPlayerListItemPacket;
 import mapped.Class6589;
 import mapped.Class8790;
 import net.minecraft.util.text.ITextComponent;
@@ -71,8 +71,8 @@ public class AntiVanish extends Module {
     @EventTarget
     private void method16863(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (mc.getConnection() != null && var1.getPacket() instanceof Class5503) {
-                Class5503 var4 = (Class5503) var1.getPacket();
+            if (mc.getConnection() != null && var1.getPacket() instanceof SPlayerListItemPacket) {
+                SPlayerListItemPacket var4 = (SPlayerListItemPacket) var1.getPacket();
                 if (var4.method17308() == Class2176.field14283) {
                     for (Class8790 var6 : var4.method17307()) {
                         Class6589 var7 = mc.getConnection().method15792(var6.method31726().getId());

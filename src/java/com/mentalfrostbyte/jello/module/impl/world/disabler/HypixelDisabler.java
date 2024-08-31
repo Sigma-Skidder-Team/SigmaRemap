@@ -11,6 +11,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -129,12 +131,12 @@ public class HypixelDisabler extends Module {
     public void method16901(RecievePacketEvent var1) {
         if (mc.player != null && this.field23984) {
             if (this.isEnabled() || this.getBooleanValueFromSetttingName("Instant")) {
-                if (var1.getPacket() instanceof Class5473) {
+                if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                     this.method16004().method16000();
                     if (!this.getBooleanValueFromSetttingName("Instant")) {
                         Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "You can do what you want for 5s"));
                     } else {
-                        Class5473 var4 = (Class5473) var1.getPacket();
+                        SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();
                         var1.method13900(true);
                         mc.getConnection()
                                 .sendPacket(new Class5604(var4.field24297, var4.field24298, var4.field24299, var4.field24300, var4.field24301, false));

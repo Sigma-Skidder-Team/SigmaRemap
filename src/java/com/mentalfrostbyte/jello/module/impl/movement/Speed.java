@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.speed.*;
 import com.mentalfrostbyte.jello.notification.Notification;
 import mapped.*;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class Speed extends ModuleWithModuleSettings {
     public static int field23893;
@@ -45,7 +46,7 @@ public class Speed extends ModuleWithModuleSettings {
 
     @EventTarget
     public void method16763(RecievePacketEvent var1) {
-        if (var1.getPacket() instanceof Class5473 && mc.player != null) {
+        if (var1.getPacket() instanceof SPlayerPositionLookPacket && mc.player != null) {
             field23893 = 0;
             if (this.getBooleanValueFromSetttingName("Lag back checker") && this.isEnabled() && mc.player.ticksExisted > 2) {
                 Client.getInstance().getNotificationManager().post(new Notification("Speed", "Disabled speed due to lagback."));

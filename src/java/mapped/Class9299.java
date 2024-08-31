@@ -15,9 +15,11 @@ import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.optifine.reflect.FieldLocatorTypes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -212,7 +214,7 @@ public class Class9299 {
    public static Class6636 field42942 = new Class6636("net.minecraftforge.common.extensions.IForgeTileEntity");
    public static Class6631 field42943 = new Class6631(field42942, "getRenderBoundingBox");
    public static Class6633 field42944 = new Class6633(
-      new Class7109(World.class, new Class[]{List.class}, Set.class, new Class[]{Thread.class}, "World.tileEntitiesToBeRemoved")
+      new FieldLocatorTypes(World.class, new Class[]{List.class}, Set.class, new Class[]{Thread.class}, "World.tileEntitiesToBeRemoved")
    );
    public static Class6636 field42945 = new Class6636(Class6349.class);
    public static Class6631 field42946 = field42945.method20249("getCloudRenderHandler");
@@ -295,7 +297,7 @@ public class Class9299 {
    public static Class6633 field43017 = new Class6633(field43016, IResourcePack.class);
    public static Class6636 field43018 = new Class6636(Minecraft.class);
    public static Class6633 field43019 = new Class6633(
-      new Class7109(Minecraft.class, new Class[]{CrashReport.class}, int.class, new Class[]{String.class}, "debugFPS")
+      new FieldLocatorTypes(Minecraft.class, new Class[]{CrashReport.class}, int.class, new Class[]{String.class}, "debugFPS")
    );
    public static Class6633 field43020 = new Class6633(field43018, FontResourceManager.class);
    public static Class6636 field43021 = new Class6636(Class2845.class);

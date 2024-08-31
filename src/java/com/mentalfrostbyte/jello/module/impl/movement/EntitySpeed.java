@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4432;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.network.play.server.SMoveVehiclePacket;
 
 public class EntitySpeed extends Module {
     public float field23546 = 3.0F;
@@ -75,7 +76,7 @@ public class EntitySpeed extends Module {
     @EventTarget
     public void method16241(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (!(var1.getPacket() instanceof Class5536)) {
+            if (!(var1.getPacket() instanceof SMoveVehiclePacket)) {
             }
         }
     }

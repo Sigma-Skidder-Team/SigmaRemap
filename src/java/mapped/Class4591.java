@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.SoundEvent;
 
 public class Class4591 extends Class4588 {

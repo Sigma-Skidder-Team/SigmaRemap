@@ -14,9 +14,12 @@ import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.network.play.server.*;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -1491,7 +1494,7 @@ public abstract class LivingEntity extends Entity {
          this.field4947 = true;
          this.field4948 = var1;
          if (this.world instanceof ServerWorld) {
-            Class5469 var5 = new Class5469(this, var1 != Hand.MAIN_HAND ? 3 : 0);
+            SAnimateHandPacket var5 = new SAnimateHandPacket(this, var1 != Hand.MAIN_HAND ? 3 : 0);
             Class1703 var6 = ((ServerWorld)this.world).getChunkProvider();
             if (!var2) {
                var6.method7380(this, var5);
@@ -2241,7 +2244,7 @@ public abstract class LivingEntity extends Entity {
          && var5 != null
          && ItemStack.method32128(var4, this.method3121(Class2106.field13732))
          && ItemStack.method32128(var5, this.method3121(Class2106.field13731))) {
-         ((ServerWorld)this.world).getChunkProvider().method7380(this, new Class5464(this, (byte)55));
+         ((ServerWorld)this.world).getChunkProvider().method7380(this, new SEntityStatusPacket(this, (byte)55));
          var1.remove(Class2106.field13731);
          var1.remove(Class2106.field13732);
          this.method3122(Class2106.field13731, var4.copy());
@@ -2262,7 +2265,7 @@ public abstract class LivingEntity extends Entity {
                this.method3120(var2, var6);
          }
       });
-      ((ServerWorld)this.world).getChunkProvider().method7380(this, new Class5588(this.method3205(), var4));
+      ((ServerWorld)this.world).getChunkProvider().method7380(this, new SEntityEquipmentPacket(this.method3205(), var4));
    }
 
    private ItemStack method3119(Class2106 var1) {
@@ -2557,7 +2560,7 @@ public abstract class LivingEntity extends Entity {
 
    public void method2751(Entity var1, int var2) {
       if (!var1.removed && !this.world.isRemote && (var1 instanceof ItemEntity || var1 instanceof AbstractArrowEntity || var1 instanceof ExperienceOrbEntity)) {
-         ((ServerWorld)this.world).getChunkProvider().method7380(var1, new Class5467(var1.method3205(), this.method3205(), var2));
+         ((ServerWorld)this.world).getChunkProvider().method7380(var1, new SCollectItemPacket(var1.method3205(), this.method3205(), var2));
       }
    }
 
@@ -2918,7 +2921,7 @@ public abstract class LivingEntity extends Entity {
 
    @Override
    public Packet<?> method2835() {
-      return new Class5582(this);
+      return new SSpawnMobPacket(this);
    }
 
    @Override

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.nbt.CompoundNBT;
 
 public class Class2669 extends Class2595 {
    private final Class1076 field17046;

@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class OmegaCraftTestFly extends Module {
     private int field23854;
@@ -93,8 +95,8 @@ public class OmegaCraftTestFly extends Module {
     public void method16702(RecievePacketEvent event) {
         if (this.isEnabled()) {
             Packet<?> packet = event.getPacket();
-            if (packet instanceof Class5473) {
-                Class5473 var5 = (Class5473) packet;
+            if (packet instanceof SPlayerPositionLookPacket) {
+                SPlayerPositionLookPacket var5 = (SPlayerPositionLookPacket) packet;
                 if (this.field23854 >= 1) {
                     this.field23854 = -1;
                 }

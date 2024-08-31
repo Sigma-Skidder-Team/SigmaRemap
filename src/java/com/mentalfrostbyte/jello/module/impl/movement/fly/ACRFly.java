@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class ACRFly extends Module {
     private int field23986;
@@ -115,8 +117,8 @@ public class ACRFly extends Module {
     public void method16906(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
-            if (var4 instanceof Class5473) {
-                Class5473 var5 = (Class5473) var4;
+            if (var4 instanceof SPlayerPositionLookPacket) {
+                SPlayerPositionLookPacket var5 = (SPlayerPositionLookPacket) var4;
                 if (this.field23986 >= 1) {
                     this.field23986 = -1;
                 }

@@ -7,6 +7,9 @@ import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SConfirmTransactionPacket;
+import net.minecraft.network.play.server.SKeepAlivePacket;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,8 +66,8 @@ public class Class8329 {
    public void method29203(RecievePacketEvent var1) {
       if (!ColorUtils.method17720() && ColorUtils.method17718()) {
          Packet var4 = var1.getPacket();
-         if (!(var4 instanceof Class5554) && var4 instanceof Class5542) {
-            Class5542 var5 = (Class5542)var4;
+         if (!(var4 instanceof SKeepAlivePacket) && var4 instanceof SConfirmTransactionPacket) {
+            SConfirmTransactionPacket var5 = (SConfirmTransactionPacket)var4;
          }
       }
    }

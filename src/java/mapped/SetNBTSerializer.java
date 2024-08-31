@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.nbt.CompoundNBT;
 
 public class SetNBTSerializer extends LootFunctionSerializer<Class136> {
    public void serialize(JsonObject var1, Class136 var2, JsonSerializationContext var3) {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.Packet;
+
 import java.io.IOException;
 
 public class Class5533 implements Packet<IServerPlayNetHandler> {

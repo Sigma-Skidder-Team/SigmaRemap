@@ -7,6 +7,8 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.Collection;
 import java.util.Locale;
+
+import net.minecraft.network.play.server.STitlePacket;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentUtils;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -95,7 +97,7 @@ public class Class9752 {
    }
 
    private static int method38310(Class6619 var0, Collection<ServerPlayerEntity> var1) {
-      Class5591 var4 = new Class5591(Class2301.field15714, (ITextComponent)null);
+      STitlePacket var4 = new STitlePacket(Class2301.field15714, (ITextComponent)null);
 
       for (ServerPlayerEntity var6 : var1) {
          var6.field4855.sendPacket(var4);
@@ -111,7 +113,7 @@ public class Class9752 {
    }
 
    private static int method38311(Class6619 var0, Collection<ServerPlayerEntity> var1) {
-      Class5591 var4 = new Class5591(Class2301.field15715, (ITextComponent)null);
+      STitlePacket var4 = new STitlePacket(Class2301.field15715, (ITextComponent)null);
 
       for (ServerPlayerEntity var6 : var1) {
          var6.field4855.sendPacket(var4);
@@ -128,7 +130,7 @@ public class Class9752 {
 
    private static int method38312(Class6619 var0, Collection<ServerPlayerEntity> var1, ITextComponent var2, Class2301 var3) throws CommandSyntaxException {
       for (ServerPlayerEntity var7 : var1) {
-         var7.field4855.sendPacket(new Class5591(var3, TextComponentUtils.func_240645_a_(var0, var2, var7, 0)));
+         var7.field4855.sendPacket(new STitlePacket(var3, TextComponentUtils.func_240645_a_(var0, var2, var7, 0)));
       }
 
       if (var1.size() != 1) {
@@ -146,7 +148,7 @@ public class Class9752 {
    }
 
    private static int method38313(Class6619 var0, Collection<ServerPlayerEntity> var1, int var2, int var3, int var4) {
-      Class5591 var7 = new Class5591(var2, var3, var4);
+      STitlePacket var7 = new STitlePacket(var2, var3, var4);
 
       for (ServerPlayerEntity var9 : var1) {
          var9.field4855.sendPacket(var7);

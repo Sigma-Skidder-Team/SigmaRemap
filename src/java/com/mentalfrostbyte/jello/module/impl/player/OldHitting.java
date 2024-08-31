@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import mapped.*;
+import net.minecraft.network.play.server.SEntityEquipmentPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -101,8 +102,8 @@ public class OldHitting extends Module {
     private void method16021(RecievePacketEvent var1) {
         if (this.isEnabled() || Class8005.method27372() == Class5989.field26129) {
             if (mc.player != null) {
-                if (var1.getPacket() instanceof Class5588) {
-                    Class5588 var4 = (Class5588) var1.getPacket();
+                if (var1.getPacket() instanceof SEntityEquipmentPacket) {
+                    SEntityEquipmentPacket var4 = (SEntityEquipmentPacket) var1.getPacket();
 
                     var4.method17562().removeIf(var6 -> var4.method17561() == mc.player.method3205()
                             && var6.getFirst() == Class2106.field13732

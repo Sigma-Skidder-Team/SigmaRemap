@@ -4,6 +4,9 @@ import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SSpawnPaintingPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -113,6 +116,6 @@ public class PaintingEntity extends Class995 {
 
    @Override
    public Packet<?> method2835() {
-      return new Class5470(this);
+      return new SSpawnPaintingPacket(this);
    }
 }

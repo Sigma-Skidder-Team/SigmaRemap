@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import mapped.*;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class YPortSpeed extends Module {
     private boolean field23541;
@@ -161,7 +162,7 @@ public class YPortSpeed extends Module {
     @EventTarget
     private void method16239(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof Class5473) {
+            if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23544 = 0.0;
             }
         }

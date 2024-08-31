@@ -22,6 +22,9 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
@@ -104,7 +107,7 @@ public abstract class Class6395 {
       boolean var17 = var16.method17135(Class5462.field24248);
       boolean var18 = var16.method17135(Class5462.field24237);
       var15.sendPacket(
-         new Class5499(
+         new SJoinGamePacket(
             var2.method3205(),
             var2.field4857.method33863(),
             var2.field4857.method33864(),
@@ -122,12 +125,12 @@ public abstract class Class6395 {
             var12.method6966()
          )
       );
-      var15.sendPacket(new Class5532(Class5532.field24537, new PacketBuffer(Unpooled.buffer()).method35729(this.method19444().method1325())));
-      var15.sendPacket(new Class5535(var14.method20047(), var14.method20048()));
-      var15.sendPacket(new Class5599(var2.abilities));
-      var15.sendPacket(new Class5608(var2.inventory.currentItem));
-      var15.sendPacket(new Class5512(this.field27990.method1407().method1036()));
-      var15.sendPacket(new Class5611(this.field27990.method1408()));
+      var15.sendPacket(new SCustomPayloadPlayPacket(SCustomPayloadPlayPacket.field24537, new PacketBuffer(Unpooled.buffer()).method35729(this.method19444().method1325())));
+      var15.sendPacket(new SServerDifficultyPacket(var14.method20047(), var14.method20048()));
+      var15.sendPacket(new SPlayerAbilitiesPacket(var2.abilities));
+      var15.sendPacket(new SHeldItemChangePacket(var2.inventory.currentItem));
+      var15.sendPacket(new SUpdateRecipesPacket(this.field27990.method1407().method1036()));
+      var15.sendPacket(new STagsListPacket(this.field27990.method1408()));
       this.method19454(var2);
       var2.method2809().method28969();
       var2.method2810().method21382(var2);
@@ -144,10 +147,10 @@ public abstract class Class6395 {
       var15.method15668(var2.getPosX(), var2.getPosY(), var2.getPosZ(), var2.rotationYaw, var2.rotationPitch);
       this.field27991.add(var2);
       this.field27992.put(var2.getUniqueID(), var2);
-      this.method19456(new Class5503(Class2176.field14281, var2));
+      this.method19456(new SPlayerListItemPacket(Class2176.field14281, var2));
 
       for (int var20 = 0; var20 < this.field27991.size(); var20++) {
-         var2.field4855.sendPacket(new Class5503(Class2176.field14281, this.field27991.get(var20)));
+         var2.field4855.sendPacket(new SPlayerListItemPacket(Class2176.field14281, this.field27991.get(var20)));
       }
 
       var12.method6921(var2);
@@ -158,7 +161,7 @@ public abstract class Class6395 {
       }
 
       for (Class2023 var21 : var2.method3031()) {
-         var15.sendPacket(new Class5537(var2.method3205(), var21));
+         var15.sendPacket(new SPlayEntityEffectPacket(var2.method3205(), var21));
       }
 
       if (var9 != null && var9.method119("RootVehicle", 10)) {
@@ -201,7 +204,7 @@ public abstract class Class6395 {
       HashSet var5 = Sets.newHashSet();
 
       for (Class8218 var7 : var1.method20997()) {
-         var2.field4855.sendPacket(new Class5581(var7, 0));
+         var2.field4855.sendPacket(new STeamsPacket(var7, 0));
       }
 
       for (int var10 = 0; var10 < 19; var10++) {
@@ -282,7 +285,7 @@ public abstract class Class6395 {
          this.field27998.remove(var8);
       }
 
-      this.method19456(new Class5503(Class2176.field14285, var1));
+      this.method19456(new SPlayerListItemPacket(Class2176.field14285, var1));
    }
 
    @Nullable
@@ -381,7 +384,7 @@ public abstract class Class6395 {
       boolean var19 = false;
       if (!var9.isPresent()) {
          if (var5 != null) {
-            var12.field4855.sendPacket(new Class5534(Class5534.field24560, 0.0F));
+            var12.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24560, 0.0F));
          }
       } else {
          BlockState var20 = var10.getBlockState(var5);
@@ -407,7 +410,7 @@ public abstract class Class6395 {
       Class6612 var21 = var12.world.getWorldInfo();
       var12.field4855
          .sendPacket(
-            new Class5545(
+            new SRespawnPacket(
                var12.world.method6812(),
                var12.world.getDimensionKey(),
                BiomeManager.method20321(var12.getServerWorld().method6967()),
@@ -419,9 +422,9 @@ public abstract class Class6395 {
             )
          );
       var12.field4855.method15668(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var12.rotationYaw, var12.rotationPitch);
-      var12.field4855.sendPacket(new Class5525(var10.method6947(), var10.method6948()));
-      var12.field4855.sendPacket(new Class5535(var21.method20047(), var21.method20048()));
-      var12.field4855.sendPacket(new Class5507(var12.field4922, var12.field4921, var12.field4920));
+      var12.field4855.sendPacket(new SWorldSpawnChangedPacket(var10.method6947(), var10.method6948()));
+      var12.field4855.sendPacket(new SServerDifficultyPacket(var21.method20047(), var21.method20048()));
+      var12.field4855.sendPacket(new SSetExperiencePacket(var12.field4922, var12.field4921, var12.field4920));
       this.method19472(var12, var10);
       this.method19454(var12);
       var10.method6922(var12);
@@ -432,7 +435,7 @@ public abstract class Class6395 {
       if (var19) {
          var12.field4855
             .sendPacket(
-               new Class5584(
+               new SPlaySoundEffectPacket(
                   Sounds.field27014, Class2266.field14732, (double)var5.getX(), (double)var5.getY(), (double)var5.getZ(), 1.0F, 1.0F
                )
             );
@@ -449,7 +452,7 @@ public abstract class Class6395 {
 
    public void method19455() {
       if (++this.field28006 > 600) {
-         this.method19456(new Class5503(Class2176.field14283, this.field27991));
+         this.method19456(new SPlayerListItemPacket(Class2176.field14283, this.field27991));
          this.field28006 = 0;
       }
    }
@@ -542,7 +545,7 @@ public abstract class Class6395 {
             var5 = 24;
          }
 
-         var1.field4855.sendPacket(new Class5464(var1, var5));
+         var1.field4855.sendPacket(new SEntityStatusPacket(var1, var5));
       }
 
       this.field27990.getCommandManager().method18837(var1);
@@ -608,20 +611,20 @@ public abstract class Class6395 {
 
    public void method19472(ServerPlayerEntity var1, ServerWorld var2) {
       WorldBorder var5 = this.field27990.method1317().method6810();
-      var1.field4855.sendPacket(new Class5474(var5, Class1864.field10036));
-      var1.field4855.sendPacket(new Class5577(var2.method6783(), var2.method6784(), var2.method6789().method17135(Class5462.field24232)));
-      var1.field4855.sendPacket(new Class5525(var2.method6947(), var2.method6948()));
+      var1.field4855.sendPacket(new SWorldBorderPacket(var5, Class1864.field10036));
+      var1.field4855.sendPacket(new SUpdateTimePacket(var2.method6783(), var2.method6784(), var2.method6789().method17135(Class5462.field24232)));
+      var1.field4855.sendPacket(new SWorldSpawnChangedPacket(var2.method6947(), var2.method6948()));
       if (var2.method6795()) {
-         var1.field4855.sendPacket(new Class5534(Class5534.field24561, 0.0F));
-         var1.field4855.sendPacket(new Class5534(Class5534.field24567, var2.method6792(1.0F)));
-         var1.field4855.sendPacket(new Class5534(Class5534.field24568, var2.method6790(1.0F)));
+         var1.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24561, 0.0F));
+         var1.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24567, var2.method6792(1.0F)));
+         var1.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24568, var2.method6790(1.0F)));
       }
    }
 
    public void method19473(ServerPlayerEntity var1) {
       var1.method2771(var1.field4904);
       var1.method2784();
-      var1.field4855.sendPacket(new Class5608(var1.inventory.currentItem));
+      var1.field4855.sendPacket(new SHeldItemChangePacket(var1.inventory.currentItem));
    }
 
    public int method19474() {
@@ -731,7 +734,7 @@ public abstract class Class6395 {
 
    public void method19487(int var1) {
       this.field28003 = var1;
-      this.method19456(new Class5502(var1));
+      this.method19456(new SUpdateViewDistancePacket(var1));
 
       for (ServerWorld var5 : this.field27990.method1320()) {
          if (var5 != null) {
@@ -758,8 +761,8 @@ public abstract class Class6395 {
          var4.method27404(this.field27990.method1396());
       }
 
-      this.method19456(new Class5611(this.field27990.method1408()));
-      Class5512 var6 = new Class5512(this.field27990.method1407().method1036());
+      this.method19456(new STagsListPacket(this.field27990.method1408()));
+      SUpdateRecipesPacket var6 = new SUpdateRecipesPacket(this.field27990.method1407().method1036());
 
       for (ServerPlayerEntity var5 : this.field27991) {
          var5.field4855.sendPacket(var6);

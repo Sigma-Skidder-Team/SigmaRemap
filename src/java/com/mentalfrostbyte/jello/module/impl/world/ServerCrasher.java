@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import mapped.*;
+import net.minecraft.nbt.CompoundNBT;
 
 public class ServerCrasher extends PremiumModule {
     private int field23695;

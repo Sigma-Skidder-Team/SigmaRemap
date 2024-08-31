@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.nbt.CompoundNBT;
+
 import java.util.List;
 
 public interface Class7823 {

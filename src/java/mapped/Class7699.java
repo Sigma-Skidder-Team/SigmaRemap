@@ -19,6 +19,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.play.server.SPlaySoundEffectPacket;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -411,7 +413,7 @@ public class Class7699 {
          double var12 = var9.x + (double)(13.0F / var11) * (var10.x - var9.x);
          double var14 = var9.z + (double)(13.0F / var11) * (var10.z - var9.z);
          if (var11 <= 64.0F || var6.contains(var8)) {
-            var8.field4855.sendPacket(new Class5584(Sounds.field26992, Class2266.field14734, var12, var8.getPosY(), var14, 64.0F, 1.0F));
+            var8.field4855.sendPacket(new SPlaySoundEffectPacket(Sounds.field26992, Class2266.field14734, var12, var8.getPosY(), var14, 64.0F, 1.0F));
          }
       }
    }

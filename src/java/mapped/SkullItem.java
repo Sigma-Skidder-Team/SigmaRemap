@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.authlib.GameProfile;
 import java.util.UUID;
+
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.lang3.StringUtils;

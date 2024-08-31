@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.authlib.GameProfile;
+import net.minecraft.network.Packet;
+
 import java.io.IOException;
 import java.util.UUID;
 

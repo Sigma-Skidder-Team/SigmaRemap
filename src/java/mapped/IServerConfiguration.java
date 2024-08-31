@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Lifecycle;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.world.Difficulty;
 
 import java.util.Set;

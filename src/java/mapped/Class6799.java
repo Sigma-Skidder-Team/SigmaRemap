@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 public class Class6799 {
    public boolean field29606;
    public boolean field29607;

@@ -11,6 +11,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.world.Disabler;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.*;
 
 import java.util.ArrayList;
 
@@ -89,18 +91,18 @@ public class PingSpoofDisabler extends Module {
 
         if (mc.getCurrentServerData() != null) {
             Packet var7 = var1.getPacket();
-            if (!(var7 instanceof Class5554)) {
-                if (!(var7 instanceof Class5542)) {
-                    if (var7 instanceof Class5473 && this.field23462 > 0) {
-                        Class5473 var5 = (Class5473) var7;
-                    } else if (!(var7 instanceof Class5525)) {
-                        if (!(var7 instanceof Class5599) && !(var7 instanceof Class5501) && !(var7 instanceof Class5498) && !(var7 instanceof Class5614)) {
+            if (!(var7 instanceof SKeepAlivePacket)) {
+                if (!(var7 instanceof SConfirmTransactionPacket)) {
+                    if (var7 instanceof SPlayerPositionLookPacket && this.field23462 > 0) {
+                        SPlayerPositionLookPacket var5 = (SPlayerPositionLookPacket) var7;
+                    } else if (!(var7 instanceof SWorldSpawnChangedPacket)) {
+                        if (!(var7 instanceof SPlayerAbilitiesPacket) && !(var7 instanceof SSetSlotPacket) && !(var7 instanceof SOpenWindowPacket) && !(var7 instanceof SWindowItemsPacket)) {
                         }
                     } else {
                         this.field23462 = 0;
                     }
                 } else {
-                    Class5542 var8 = (Class5542) var7;
+                    SConfirmTransactionPacket var8 = (SConfirmTransactionPacket) var7;
                     int var6 = var8.method17422() - this.field23463;
                     if (var6 > 0 || var6 < -20 || !this.getBooleanValueFromSetttingName("Inv Bypass")) {
                         this.field23461.add(new Class8772(var8, this, (long) this.getNumberValueBySettingName("Lag")));
@@ -108,7 +110,7 @@ public class PingSpoofDisabler extends Module {
                     }
                 }
             } else {
-                Class5554 var9 = (Class5554) var7;
+                SKeepAlivePacket var9 = (SKeepAlivePacket) var7;
                 this.field23461.add(new Class8772(var9, this, (long) this.getNumberValueBySettingName("Lag")));
                 var1.method13900(true);
             }

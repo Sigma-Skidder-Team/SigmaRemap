@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
+import net.minecraft.nbt.CompoundNBT;
 
 
 public class KillPotion extends Command {

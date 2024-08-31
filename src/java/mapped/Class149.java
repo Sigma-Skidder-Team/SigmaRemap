@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 public class Class149 extends Class128 {
    private final ResourceLocation field493;
    private final long field494;

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.network.play.server.SUpdateBossInfoPacket;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Map;
@@ -55,7 +56,7 @@ public class Class1267 extends AbstractGui {
       }
    }
 
-   public void method5955(Class5472 var1) {
+   public void method5955(SUpdateBossInfoPacket var1) {
       if (var1.method17206() != Class2151.field14064) {
          if (var1.method17206() != Class2151.field14065) {
             if (this.field6710.get(var1.method17205()) != null) {

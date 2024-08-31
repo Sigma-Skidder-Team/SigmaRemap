@@ -3,6 +3,9 @@ package mapped;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SChangeBlockPacket;
+import net.minecraft.network.play.server.SMultiBlockChangePacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -104,9 +107,9 @@ public class Class8982 {
    public Packet method33180(Packet var1) {
       HashMap var4 = new HashMap();
       HashMap var5 = new HashMap();
-      if (!(var1 instanceof Class5549)) {
-         if (var1 instanceof Class5607) {
-            Class5607 var6 = (Class5607)var1;
+      if (!(var1 instanceof SMultiBlockChangePacket)) {
+         if (var1 instanceof SChangeBlockPacket) {
+            SChangeBlockPacket var6 = (SChangeBlockPacket)var1;
             if (!this.method33182(var6.method17631())) {
                var5.put(var6.method17632(), var6.method17631());
             } else {
@@ -114,7 +117,7 @@ public class Class8982 {
             }
          }
       } else {
-         Class5549 var9 = (Class5549)var1;
+         SMultiBlockChangePacket var9 = (SMultiBlockChangePacket)var1;
 
          for (int var7 = 0; var7 < var9.field24643.length; var7++) {
             BlockPos var8 = var9.field24642.method8405(var9.field24643[var7]);

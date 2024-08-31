@@ -4,6 +4,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SSpawnObjectPacket;
 
 public abstract class Class901 extends ProjectileEntity {
    public double field5141;
@@ -170,7 +173,7 @@ public abstract class Class901 extends ProjectileEntity {
    public Packet<?> method2835() {
       Entity var3 = this.method3460();
       int var4 = var3 != null ? var3.method3205() : 0;
-      return new Class5487(
+      return new SSpawnObjectPacket(
          this.method3205(),
          this.getUniqueID(),
          this.getPosX(),

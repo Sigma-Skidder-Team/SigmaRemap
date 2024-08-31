@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class5473;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class NoViewReset extends Module {
     public NoViewReset() {
@@ -16,8 +16,8 @@ public class NoViewReset extends Module {
         if (this.isEnabled()) {
             if (mc.player != null) {
                 if (mc.player.ticksExisted >= 10) {
-                    if (mc.player != null && var1.getPacket() instanceof Class5473) {
-                        Class5473 var4 = (Class5473) var1.getPacket();
+                    if (mc.player != null && var1.getPacket() instanceof SPlayerPositionLookPacket) {
+                        SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();
                         mc.player.prevRotationYaw = var4.field24300;
                         mc.player.prevRotationPitch = var4.field24301;
                         var4.field24300 = mc.player.rotationYaw;

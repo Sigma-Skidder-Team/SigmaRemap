@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 public class Class3571 {
    private static String[] field19509;
    private static final Class7052<?>[] field19510 = new Class7052[]{

@@ -5,6 +5,9 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -157,7 +160,7 @@ public class LeashKnotEntity extends Class995 {
 
    @Override
    public Packet<?> method2835() {
-      return new Class5487(this, this.getType(), 0, this.method4085());
+      return new SSpawnObjectPacket(this, this.getType(), 0, this.method4085());
    }
 
    @Override

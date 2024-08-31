@@ -8,6 +8,8 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class NCPPhase extends PremiumModule {
     private boolean field23651;
@@ -116,8 +118,8 @@ public class NCPPhase extends PremiumModule {
     private void method16429(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
-            if (var4 instanceof Class5473) {
-                Class5473 var5 = (Class5473) var4;
+            if (var4 instanceof SPlayerPositionLookPacket) {
+                SPlayerPositionLookPacket var5 = (SPlayerPositionLookPacket) var4;
                 var5.field24300 = mc.player.rotationYaw;
                 var5.field24301 = mc.player.rotationPitch;
                 this.field23651 = true;

@@ -5,9 +5,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.network.play.server.SMountEntityPacket;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -1157,7 +1159,7 @@ public abstract class Class1006 extends LivingEntity {
          }
 
          if (!this.world.isRemote && var1 && this.world instanceof ServerWorld) {
-            ((ServerWorld)this.world).getChunkProvider().method7380(this, new Class5593(this, (Entity)null));
+            ((ServerWorld)this.world).getChunkProvider().method7380(this, new SMountEntityPacket(this, (Entity)null));
          }
       }
    }
@@ -1188,7 +1190,7 @@ public abstract class Class1006 extends LivingEntity {
       }
 
       if (!this.world.isRemote && var2 && this.world instanceof ServerWorld) {
-         ((ServerWorld)this.world).getChunkProvider().method7380(this, new Class5593(this, this.field5613));
+         ((ServerWorld)this.world).getChunkProvider().method7380(this, new SMountEntityPacket(this, this.field5613));
       }
 
       if (this.isPassenger()) {

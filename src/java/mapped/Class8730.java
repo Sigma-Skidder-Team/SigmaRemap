@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.server.SAdvancementInfoPacket;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,7 +21,7 @@ public class Class8730 {
       this.field39377 = var1;
    }
 
-   public void method31508(Class5563 var1) {
+   public void method31508(SAdvancementInfoPacket var1) {
       if (var1.method17490()) {
          this.field39378.method28596();
          this.field39379.clear();

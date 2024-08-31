@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 public class Class4846 implements Class4843<Class920> {
    private static String[] field22625;
    private final Class120 field22626;

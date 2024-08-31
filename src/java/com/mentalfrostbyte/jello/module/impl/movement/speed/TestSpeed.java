@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import mapped.BooleanSetting;
-import mapped.Class5590;
+import net.minecraft.network.play.server.SEntityVelocityPacket;
 import mapped.Class9567;
 import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 
@@ -90,8 +90,8 @@ public class TestSpeed extends Module {
     @EventTarget
     private void method16799(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (mc.player != null && var1.getPacket() instanceof Class5590) {
-                Class5590 var4 = (Class5590) var1.getPacket();
+            if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
+                SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();
                 if (var4.method17565() != mc.player.method3205()) {
                 }
             }

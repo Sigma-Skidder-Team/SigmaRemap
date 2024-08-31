@@ -4,6 +4,8 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import java.util.Collection;
+
+import net.minecraft.network.play.server.SStopSoundPacket;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7049 {
@@ -41,7 +43,7 @@ public class Class7049 {
    }
 
    private static int method21957(Class6619 var0, Collection<ServerPlayerEntity> var1, Class2266 var2, ResourceLocation var3) {
-      Class5488 var6 = new Class5488(var3, var2);
+      SStopSoundPacket var6 = new SStopSoundPacket(var3, var2);
 
       for (ServerPlayerEntity var8 : var1) {
          var8.field4855.sendPacket(var6);

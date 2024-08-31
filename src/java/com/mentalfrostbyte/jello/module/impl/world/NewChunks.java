@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.network.play.server.SChunkDataPacket;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
@@ -22,8 +23,8 @@ public class NewChunks extends Module {
     @EventTarget
     private void method16786(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof Class5526) {
-                Class5526 var4 = (Class5526) var1.getPacket();
+            if (var1.getPacket() instanceof SChunkDataPacket) {
+                SChunkDataPacket var4 = (SChunkDataPacket) var1.getPacket();
                 Class7481 var5 = new Class7481(var4.method17378(), var4.method17379());
                 if (!var4.method17381()) {
                     this.field23906.add(var5);

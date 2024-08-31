@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.network.play.server.SCommandListPacket;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextComponentUtils;
@@ -198,7 +199,7 @@ public class Class6099 {
       RootCommandNode var5 = new RootCommandNode();
       var4.put(this.field27345.getRoot(), var5);
       this.method18838(this.field27345.getRoot(), var5, var1.getCommandSource(), var4);
-      var1.field4855.sendPacket(new Class5617(var5));
+      var1.field4855.sendPacket(new SCommandListPacket(var5));
    }
 
    private void method18838(CommandNode<Class6619> var1, CommandNode<Class6618> var2, Class6619 var3, Map<CommandNode<Class6619>, CommandNode<Class6618>> var4) {

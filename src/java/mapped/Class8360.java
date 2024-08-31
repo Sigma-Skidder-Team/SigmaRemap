@@ -3,6 +3,8 @@ package mapped;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+
+import net.minecraft.nbt.CompoundNBT;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
 public class Class8360 implements Class8356 {

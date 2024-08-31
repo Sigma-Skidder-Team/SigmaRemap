@@ -5,6 +5,8 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.ObjectArraySet;
+import net.minecraft.nbt.CompoundNBT;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;

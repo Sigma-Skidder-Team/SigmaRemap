@@ -17,6 +17,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.server.SWindowPropertyPacket;
+import net.minecraft.network.play.server.SSetSlotPacket;
+import net.minecraft.network.play.server.SOpenWindowPacket;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 
@@ -143,8 +146,8 @@ public class NameTags extends Module {
     @EventTarget
     private void method16928(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof Class5498) {
-                Class5498 var4 = (Class5498) var1.getPacket();
+            if (var1.getPacket() instanceof SOpenWindowPacket) {
+                SOpenWindowPacket var4 = (SOpenWindowPacket) var1.getPacket();
                 if (var4.method17285() != Class8298.field35661) {
                     return;
                 }
@@ -152,8 +155,8 @@ public class NameTags extends Module {
                 this.field24000.put(this.field24001, new Class7070(var4.method17284()));
             }
 
-            if (var1.getPacket() instanceof Class5501) {
-                Class5501 var6 = (Class5501) var1.getPacket();
+            if (var1.getPacket() instanceof SSetSlotPacket) {
+                SSetSlotPacket var6 = (SSetSlotPacket) var1.getPacket();
                 Class7070 var5 = this.method16929(var6.method17303());
                 if (var5 == null) {
                     return;
@@ -171,8 +174,8 @@ public class NameTags extends Module {
                 }
             }
 
-            if (var1.getPacket() instanceof Class5480) {
-                Class5480 var7 = (Class5480) var1.getPacket();
+            if (var1.getPacket() instanceof SWindowPropertyPacket) {
+                SWindowPropertyPacket var7 = (SWindowPropertyPacket) var1.getPacket();
                 Class7070 var8 = this.method16929(var7.method17239());
                 if (var8 == null) {
                     return;

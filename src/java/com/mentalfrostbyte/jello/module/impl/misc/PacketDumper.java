@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4419;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Packet;
+import net.minecraft.network.Packet;
 import org.apache.commons.lang3.reflect.FieldUtils;
 
 import java.io.File;

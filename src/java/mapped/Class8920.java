@@ -3,14 +3,17 @@ package mapped;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.server.SChangeBlockPacket;
+import net.minecraft.network.play.server.SChunkDataPacket;
+import net.minecraft.network.play.server.SMultiBlockChangePacket;
 import net.minecraft.util.math.BlockPos;
 
 public class Class8920 {
    private static String[] field40380;
 
    public static void method32597(RecievePacketEvent var0, Class8982 var1) {
-      if (var0.getPacket() instanceof Class5607) {
-         Class5607 var4 = (Class5607)var0.getPacket();
+      if (var0.getPacket() instanceof SChangeBlockPacket) {
+         SChangeBlockPacket var4 = (SChangeBlockPacket)var0.getPacket();
          var1.method33183(var4.method17632(), var4.method17631());
          if (var1 != null) {
             var1.method33174();
@@ -20,8 +23,8 @@ public class Class8920 {
          var0.method13900(true);
       }
 
-      if (var0.getPacket() instanceof Class5549) {
-         Class5549 var17 = (Class5549)var0.getPacket();
+      if (var0.getPacket() instanceof SMultiBlockChangePacket) {
+         SMultiBlockChangePacket var17 = (SMultiBlockChangePacket)var0.getPacket();
 
          for (int var5 = 0; var5 < var17.field24643.length; var5++) {
             BlockPos var6 = var17.field24642.method8405(var17.field24643[var5]);
@@ -35,8 +38,8 @@ public class Class8920 {
          var0.method13900(true);
       }
 
-      if (var0.getPacket() instanceof Class5526 && Minecraft.getInstance().world != null) {
-         Class5526 var18 = (Class5526)var0.getPacket();
+      if (var0.getPacket() instanceof SChunkDataPacket && Minecraft.getInstance().world != null) {
+         SChunkDataPacket var18 = (SChunkDataPacket)var0.getPacket();
 
          try {
             while (Minecraft.getInstance().getConnection() == null) {
@@ -83,7 +86,7 @@ public class Class8920 {
                return;
             }
 
-            Class5526 var21 = new Class5526(var20, var20.method7077() == null ? '\ufffe' : '\uffff');
+            SChunkDataPacket var21 = new SChunkDataPacket(var20, var20.method7077() == null ? '\ufffe' : '\uffff');
             var21.field24521 = var18.method17381();
             var21.field24520 = var18.method17383();
             var0.method13899(var21);

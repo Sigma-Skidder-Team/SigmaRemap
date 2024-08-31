@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Pose;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 

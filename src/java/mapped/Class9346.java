@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 public class Class9346 {
    private final ItemStack field43384;
    private final ItemStack field43385;

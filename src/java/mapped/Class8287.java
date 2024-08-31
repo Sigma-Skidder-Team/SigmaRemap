@@ -20,6 +20,8 @@ import java.util.Map.Entry;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.play.server.SStatisticsPacket;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -198,6 +200,6 @@ public class Class8287 extends Class8286 {
          }
       }
 
-      var1.field4855.sendPacket(new Class5548(var5));
+      var1.field4855.sendPacket(new SStatisticsPacket(var5));
    }
 }

@@ -1,10 +1,12 @@
 package mapped;
 
+import net.optifine.reflect.IFieldLocator;
+
 import java.lang.reflect.Field;
 
 public class Class6633 implements Class6632 {
    private static String[] field29172;
-   private Class7108 field29173 = null;
+   private IFieldLocator field29173 = null;
    private boolean field29174 = false;
    private Field field29175 = null;
 
@@ -24,7 +26,7 @@ public class Class6633 implements Class6632 {
       this(new Class7107(var1));
    }
 
-   public Class6633(Class7108 var1) {
+   public Class6633(IFieldLocator var1) {
       this.field29173 = var1;
       Class9787.method38574(this);
    }

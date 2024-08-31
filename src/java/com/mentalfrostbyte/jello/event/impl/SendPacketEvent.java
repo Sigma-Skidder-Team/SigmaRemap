@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 import com.mentalfrostbyte.jello.event.CancellableEvent;
-import mapped.Packet;
+import net.minecraft.network.Packet;
 
 import java.util.ArrayList;
 import java.util.List;

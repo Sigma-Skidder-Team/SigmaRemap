@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.MapLike;
+import net.minecraft.nbt.CompoundNBT;
+
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 

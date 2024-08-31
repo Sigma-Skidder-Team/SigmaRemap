@@ -2,6 +2,12 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SUpdateScorePacket;
+import net.minecraft.network.play.server.STeamsPacket;
+import net.minecraft.network.play.server.SDisplayObjectivePacket;
+import net.minecraft.network.play.server.SScoreboardObjectivePacket;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -23,7 +29,7 @@ public class Class6887 extends Class6886 {
       if (this.field29849.contains(var1.method36053())) {
          this.field29848
             .getPlayerList()
-            .method19456(new Class5556(Class2073.field13503, var1.method36053().method29336(), var1.method36054(), var1.method36050()));
+            .method19456(new SUpdateScorePacket(Class2073.field13503, var1.method36053().method29336(), var1.method36054(), var1.method36050()));
       }
 
       this.method21022();
@@ -32,7 +38,7 @@ public class Class6887 extends Class6886 {
    @Override
    public void method21003(String var1) {
       super.method21003(var1);
-      this.field29848.getPlayerList().method19456(new Class5556(Class2073.field13504, (String)null, var1, 0));
+      this.field29848.getPlayerList().method19456(new SUpdateScorePacket(Class2073.field13504, (String)null, var1, 0));
       this.method21022();
    }
 
@@ -40,7 +46,7 @@ public class Class6887 extends Class6886 {
    public void method21004(String var1, Class8375 var2) {
       super.method21004(var1, var2);
       if (this.field29849.contains(var2)) {
-         this.field29848.getPlayerList().method19456(new Class5556(Class2073.field13504, var2.method29336(), var1, 0));
+         this.field29848.getPlayerList().method19456(new SUpdateScorePacket(Class2073.field13504, var2.method29336(), var1, 0));
       }
 
       this.method21022();
@@ -54,7 +60,7 @@ public class Class6887 extends Class6886 {
          if (this.method21027(var5) <= 0) {
             this.method21026(var5);
          } else {
-            this.field29848.getPlayerList().method19456(new Class5615(var1, var2));
+            this.field29848.getPlayerList().method19456(new SDisplayObjectivePacket(var1, var2));
          }
       }
 
@@ -62,7 +68,7 @@ public class Class6887 extends Class6886 {
          if (!this.field29849.contains(var2)) {
             this.method21024(var2);
          } else {
-            this.field29848.getPlayerList().method19456(new Class5615(var1, var2));
+            this.field29848.getPlayerList().method19456(new SDisplayObjectivePacket(var1, var2));
          }
       }
 
@@ -74,7 +80,7 @@ public class Class6887 extends Class6886 {
       if (!super.method20993(var1, var2)) {
          return false;
       } else {
-         this.field29848.getPlayerList().method19456(new Class5581(var2, Arrays.<String>asList(var1), 3));
+         this.field29848.getPlayerList().method19456(new STeamsPacket(var2, Arrays.<String>asList(var1), 3));
          this.method21022();
          return true;
       }
@@ -83,7 +89,7 @@ public class Class6887 extends Class6886 {
    @Override
    public void method20995(String var1, Class8218 var2) {
       super.method20995(var1, var2);
-      this.field29848.getPlayerList().method19456(new Class5581(var2, Arrays.<String>asList(var1), 4));
+      this.field29848.getPlayerList().method19456(new STeamsPacket(var2, Arrays.<String>asList(var1), 4));
       this.method21022();
    }
 
@@ -97,7 +103,7 @@ public class Class6887 extends Class6886 {
    public void method21000(Class8375 var1) {
       super.method21000(var1);
       if (this.field29849.contains(var1)) {
-         this.field29848.getPlayerList().method19456(new Class5576(var1, 2));
+         this.field29848.getPlayerList().method19456(new SScoreboardObjectivePacket(var1, 2));
       }
 
       this.method21022();
@@ -116,21 +122,21 @@ public class Class6887 extends Class6886 {
    @Override
    public void method21005(Class8218 var1) {
       super.method21005(var1);
-      this.field29848.getPlayerList().method19456(new Class5581(var1, 0));
+      this.field29848.getPlayerList().method19456(new STeamsPacket(var1, 0));
       this.method21022();
    }
 
    @Override
    public void method21006(Class8218 var1) {
       super.method21006(var1);
-      this.field29848.getPlayerList().method19456(new Class5581(var1, 2));
+      this.field29848.getPlayerList().method19456(new STeamsPacket(var1, 2));
       this.method21022();
    }
 
    @Override
    public void method21007(Class8218 var1) {
       super.method21007(var1);
-      this.field29848.getPlayerList().method19456(new Class5581(var1, 1));
+      this.field29848.getPlayerList().method19456(new STeamsPacket(var1, 1));
       this.method21022();
    }
 
@@ -147,16 +153,16 @@ public class Class6887 extends Class6886 {
 
    public List<Packet<?>> method21023(Class8375 var1) {
       ArrayList var4 = Lists.newArrayList();
-      var4.add(new Class5576(var1, 0));
+      var4.add(new SScoreboardObjectivePacket(var1, 0));
 
       for (int var5 = 0; var5 < 19; var5++) {
          if (this.method20989(var5) == var1) {
-            var4.add(new Class5615(var5, var1));
+            var4.add(new SDisplayObjectivePacket(var5, var1));
          }
       }
 
       for (Class9411 var6 : this.method20981(var1)) {
-         var4.add(new Class5556(Class2073.field13503, var6.method36053().method29336(), var6.method36054(), var6.method36050()));
+         var4.add(new SUpdateScorePacket(Class2073.field13503, var6.method36053().method29336(), var6.method36054(), var6.method36050()));
       }
 
       return var4;
@@ -176,11 +182,11 @@ public class Class6887 extends Class6886 {
 
    public List<Packet<?>> method21025(Class8375 var1) {
       ArrayList var4 = Lists.newArrayList();
-      var4.add(new Class5576(var1, 1));
+      var4.add(new SScoreboardObjectivePacket(var1, 1));
 
       for (int var5 = 0; var5 < 19; var5++) {
          if (this.method20989(var5) == var1) {
-            var4.add(new Class5615(var5, var1));
+            var4.add(new SDisplayObjectivePacket(var5, var1));
          }
       }
 

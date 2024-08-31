@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.SChatPacket;
+import net.minecraft.network.play.server.SChatPacket;
 
 public class ChatCleaner extends Module {
     public ChatCleaner() {

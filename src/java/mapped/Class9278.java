@@ -12,7 +12,9 @@ import java.util.function.Consumer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.network.play.server.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -53,7 +55,7 @@ public class Class9278 {
       List var3 = this.field42668.method3408();
       if (!var3.equals(this.field42681)) {
          this.field42681 = var3;
-         this.field42671.accept(new Class5485(this.field42668));
+         this.field42671.accept(new SSetPassengersPacket(this.field42668));
       }
 
       if (this.field42668 instanceof ItemFrameEntity && this.field42679 % 10 == 0) {
@@ -79,20 +81,20 @@ public class Class9278 {
             this.field42680++;
             int var22 = MathHelper.method37767(this.field42668.rotationYaw * 256.0F / 360.0F);
             int var25 = MathHelper.method37767(this.field42668.rotationPitch * 256.0F / 360.0F);
-            Vector3d var27 = this.field42668.getPositionVec().method11336(Class5476.method17232(this.field42672, this.field42673, this.field42674));
+            Vector3d var27 = this.field42668.getPositionVec().method11336(SEntityPacket.method17232(this.field42672, this.field42673, this.field42674));
             boolean var28 = var27.method11349() >= 7.6293945E-6F;
             Object var29 = null;
             boolean var30 = var28 || this.field42679 % 60 == 0;
             boolean var10 = Math.abs(var22 - this.field42675) >= 1 || Math.abs(var25 - this.field42676) >= 1;
             if (this.field42679 > 0 || this.field42668 instanceof AbstractArrowEntity) {
-               long var11 = Class5476.method17229(var27.x);
-               long var13 = Class5476.method17229(var27.y);
-               long var15 = Class5476.method17229(var27.z);
+               long var11 = SEntityPacket.method17229(var27.x);
+               long var13 = SEntityPacket.method17229(var27.y);
+               long var15 = SEntityPacket.method17229(var27.z);
                boolean var17 = var11 < -32768L || var11 > 32767L || var13 < -32768L || var13 > 32767L || var15 < -32768L || var15 > 32767L;
                if (var17 || this.field42680 > 400 || this.field42682 || this.field42683 != this.field42668.method3226()) {
                   this.field42683 = this.field42668.method3226();
                   this.field42680 = 0;
-                  var29 = new Class5595(this.field42668);
+                  var29 = new SEntityTeleportPacket(this.field42668);
                } else if ((!var30 || !var10) && !(this.field42668 instanceof AbstractArrowEntity)) {
                   if (!var30) {
                      if (var10) {
@@ -122,7 +124,7 @@ public class Class9278 {
                double var19 = var18.method11342(this.field42678);
                if (var19 > 1.0E-7 || var19 > 0.0 && var18.method11349() == 0.0) {
                   this.field42678 = var18;
-                  this.field42671.accept(new Class5590(this.field42668.method3205(), this.field42678));
+                  this.field42671.accept(new SEntityVelocityPacket(this.field42668.method3205(), this.field42678));
                }
             }
 
@@ -158,7 +160,7 @@ public class Class9278 {
 
          int var23 = MathHelper.method37767(this.field42668.method3142() * 256.0F / 360.0F);
          if (Math.abs(var23 - this.field42677) >= 1) {
-            this.field42671.accept(new Class5516(this.field42668, (byte)var23));
+            this.field42671.accept(new SEntityHeadLookPacket(this.field42668, (byte)var23));
             this.field42677 = var23;
          }
 
@@ -167,7 +169,7 @@ public class Class9278 {
 
       this.field42679++;
       if (this.field42668.velocityChanged) {
-         this.method34976(new Class5590(this.field42668));
+         this.method34976(new SEntityVelocityPacket(this.field42668));
          this.field42668.velocityChanged = false;
       }
    }
@@ -192,14 +194,14 @@ public class Class9278 {
       this.field42677 = MathHelper.method37767(this.field42668.method3142() * 256.0F / 360.0F);
       var1.accept(var4);
       if (!this.field42668.method3210().method35456()) {
-         var1.accept(new Class5553(this.field42668.method3205(), this.field42668.method3210(), true));
+         var1.accept(new SEntityMetadataPacket(this.field42668.method3205(), this.field42668.method3210(), true));
       }
 
       boolean var5 = this.field42670;
       if (this.field42668 instanceof LivingEntity) {
          Collection var6 = ((LivingEntity)this.field42668).method3088().method33379();
          if (!var6.isEmpty()) {
-            var1.accept(new Class5550(this.field42668.method3205(), var6));
+            var1.accept(new SEntityPropertiesPacket(this.field42668.method3205(), var6));
          }
 
          if (((LivingEntity)this.field42668).method3165()) {
@@ -208,8 +210,8 @@ public class Class9278 {
       }
 
       this.field42678 = this.field42668.method3433();
-      if (var5 && !(var4 instanceof Class5582)) {
-         var1.accept(new Class5590(this.field42668.method3205(), this.field42678));
+      if (var5 && !(var4 instanceof SSpawnMobPacket)) {
+         var1.accept(new SEntityVelocityPacket(this.field42668.method3205(), this.field42678));
       }
 
       if (this.field42668 instanceof LivingEntity) {
@@ -223,7 +225,7 @@ public class Class9278 {
          }
 
          if (!var12.isEmpty()) {
-            var1.accept(new Class5588(this.field42668.method3205(), var12));
+            var1.accept(new SEntityEquipmentPacket(this.field42668.method3205(), var12));
          }
       }
 
@@ -231,22 +233,22 @@ public class Class9278 {
          LivingEntity var13 = (LivingEntity)this.field42668;
 
          for (Class2023 var16 : var13.method3031()) {
-            var1.accept(new Class5537(this.field42668.method3205(), var16));
+            var1.accept(new SPlayEntityEffectPacket(this.field42668.method3205(), var16));
          }
       }
 
       if (!this.field42668.method3408().isEmpty()) {
-         var1.accept(new Class5485(this.field42668));
+         var1.accept(new SSetPassengersPacket(this.field42668));
       }
 
       if (this.field42668.isPassenger()) {
-         var1.accept(new Class5485(this.field42668.getRidingEntity()));
+         var1.accept(new SSetPassengersPacket(this.field42668.getRidingEntity()));
       }
 
       if (this.field42668 instanceof Class1006) {
          Class1006 var14 = (Class1006)this.field42668;
          if (var14.method4296()) {
-            var1.accept(new Class5593(var14, var14.method4297()));
+            var1.accept(new SMountEntityPacket(var14, var14.method4297()));
          }
       }
    }
@@ -254,13 +256,13 @@ public class Class9278 {
    private void method34973() {
       EntityDataManager var3 = this.field42668.method3210();
       if (var3.method35447()) {
-         this.method34976(new Class5553(this.field42668.method3205(), var3, false));
+         this.method34976(new SEntityMetadataPacket(this.field42668.method3205(), var3, false));
       }
 
       if (this.field42668 instanceof LivingEntity) {
          Set var4 = ((LivingEntity)this.field42668).method3088().method33378();
          if (!var4.isEmpty()) {
-            this.method34976(new Class5550(this.field42668.method3205(), var4));
+            this.method34976(new SEntityPropertiesPacket(this.field42668.method3205(), var4));
          }
 
          var4.clear();
@@ -268,13 +270,13 @@ public class Class9278 {
    }
 
    private void method34974() {
-      this.field42672 = Class5476.method17229(this.field42668.getPosX());
-      this.field42673 = Class5476.method17229(this.field42668.getPosY());
-      this.field42674 = Class5476.method17229(this.field42668.getPosZ());
+      this.field42672 = SEntityPacket.method17229(this.field42668.getPosX());
+      this.field42673 = SEntityPacket.method17229(this.field42668.getPosY());
+      this.field42674 = SEntityPacket.method17229(this.field42668.getPosZ());
    }
 
    public Vector3d method34975() {
-      return Class5476.method17232(this.field42672, this.field42673, this.field42674);
+      return SEntityPacket.method17232(this.field42672, this.field42673, this.field42674);
    }
 
    private void method34976(Packet<?> var1) {

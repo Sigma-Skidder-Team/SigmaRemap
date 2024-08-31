@@ -3,6 +3,9 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SSpawnExperienceOrbPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Map.Entry;
@@ -274,6 +277,6 @@ public class ExperienceOrbEntity extends Entity {
 
    @Override
    public Packet<?> method2835() {
-      return new Class5520(this);
+      return new SSpawnExperienceOrbPacket(this);
    }
 }

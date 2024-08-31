@@ -5,8 +5,8 @@ import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
-import mapped.Packet;
-import mapped.SChatPacket;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SChatPacket;
 
 public class FuncraftGameplay extends Module {
     private GamePlay field23579;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.network.play.server.SChangeGameStatePacket;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -23,7 +24,7 @@ public class Class9080 extends Class9081 {
       long var5 = var3 / 24000L + 1L;
       if (!this.field41565 && this.field41568 > 20) {
          this.field41565 = true;
-         this.field41571.field4855.sendPacket(new Class5534(Class5534.field24565, 0.0F));
+         this.field41571.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24565, 0.0F));
       }
 
       this.field41566 = var3 > 120500L;
@@ -39,19 +40,19 @@ public class Class9080 extends Class9081 {
          } else if (var3 != 100L) {
             if (var3 != 175L) {
                if (var3 == 250L) {
-                  this.field41571.field4855.sendPacket(new Class5534(Class5534.field24565, 103.0F));
+                  this.field41571.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24565, 103.0F));
                }
             } else {
-               this.field41571.field4855.sendPacket(new Class5534(Class5534.field24565, 102.0F));
+               this.field41571.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24565, 102.0F));
             }
          } else {
-            this.field41571.field4855.sendPacket(new Class5534(Class5534.field24565, 101.0F));
+            this.field41571.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24565, 101.0F));
          }
       } else if (var5 <= 6L) {
          if (var5 != 6L) {
             this.field41571.sendMessage(new TranslationTextComponent("demo.day." + var5), Util.DUMMY_UUID);
          } else {
-            this.field41571.field4855.sendPacket(new Class5534(Class5534.field24565, 104.0F));
+            this.field41571.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24565, 104.0F));
          }
       }
    }

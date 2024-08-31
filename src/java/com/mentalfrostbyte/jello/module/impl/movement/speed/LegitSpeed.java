@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.BooleanSetting;
-import mapped.Class5590;
+import net.minecraft.network.play.server.SEntityVelocityPacket;
 import mapped.Class9567;
 
 public class LegitSpeed extends Module {
@@ -72,8 +72,8 @@ public class LegitSpeed extends Module {
     @EventTarget
     private void method16944(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (mc.player != null && var1.getPacket() instanceof Class5590) {
-                Class5590 var4 = (Class5590) var1.getPacket();
+            if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
+                SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();
                 if (var4.method17565() == mc.player.method3205()) {
                     this.field24011 = this.field24011 + (float) var4.field24801 / 8000.0F;
                     this.field24012 = this.field24012 + (float) var4.field24803 / 8000.0F;

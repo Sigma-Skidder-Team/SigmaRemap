@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.nbt.CompoundNBT;
+
 import java.util.Map;
 import java.util.stream.Stream;
 

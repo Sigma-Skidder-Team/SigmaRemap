@@ -8,6 +8,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import mapped.*;
+import net.minecraft.network.play.server.SPlaySoundPacket;
+import net.minecraft.network.play.server.SPlaySoundEffectPacket;
 
 public class AutoFish extends Module {
     public AutoFish() {
@@ -17,14 +19,14 @@ public class AutoFish extends Module {
     @EventTarget
     public void method16364(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof Class5584 || var1.getPacket() instanceof Class5475) {
+            if (var1.getPacket() instanceof SPlaySoundEffectPacket || var1.getPacket() instanceof SPlaySoundPacket) {
                 if (mc.player.method3090() != null) {
                     if (mc.player.method3090().getItem() instanceof Class3259) {
-                        if (!(var1.getPacket() instanceof Class5584)) {
-                            if (var1.getPacket() instanceof Class5475 && !((Class5475) var1.getPacket()).field24315.equals("entity.bobber.splash")) {
+                        if (!(var1.getPacket() instanceof SPlaySoundEffectPacket)) {
+                            if (var1.getPacket() instanceof SPlaySoundPacket && !((SPlaySoundPacket) var1.getPacket()).field24315.equals("entity.bobber.splash")) {
                                 return;
                             }
-                        } else if (!((Class5584) var1.getPacket()).method17549().equals(Sounds.field26585)) {
+                        } else if (!((SPlaySoundEffectPacket) var1.getPacket()).method17549().equals(Sounds.field26585)) {
                             return;
                         }
 

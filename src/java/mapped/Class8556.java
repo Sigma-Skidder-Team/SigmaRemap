@@ -1,6 +1,8 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
+import net.minecraft.nbt.CompoundNBT;
+
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.concurrent.locks.ReentrantLock;

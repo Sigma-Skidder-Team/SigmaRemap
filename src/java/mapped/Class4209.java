@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 import java.util.Random;
 
 public abstract class Class4209 extends Class4178 {

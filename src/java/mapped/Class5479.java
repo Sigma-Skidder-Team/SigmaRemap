@@ -1,8 +1,10 @@
 package mapped;
 
+import net.minecraft.network.play.server.SEntityPacket;
+
 import java.io.IOException;
 
-public class Class5479 extends Class5476 {
+public class Class5479 extends SEntityPacket {
    private static String[] field24333;
 
    public Class5479() {

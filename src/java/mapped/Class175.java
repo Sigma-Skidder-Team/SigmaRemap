@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 import java.util.function.Predicate;
 
 public class Class175 implements Predicate<ItemStack> {

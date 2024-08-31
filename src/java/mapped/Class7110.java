@@ -1,8 +1,10 @@
 package mapped;
 
+import net.optifine.reflect.IFieldLocator;
+
 import java.lang.reflect.Field;
 
-public class Class7110 implements Class7108 {
+public class Class7110 implements IFieldLocator {
    private Class6636 field30626 = null;
    private String field30627 = null;
 

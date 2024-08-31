@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 

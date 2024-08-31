@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.HighJump;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import mapped.*;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.AxisAlignedBB;
 
 @InDevelopment
@@ -91,7 +92,7 @@ public class AntiVoid extends Module {
     @EventTarget
     private void method16666(RecievePacketEvent var1) {
         if (this.isEnabled() && this.field23839 != 0) {
-            if (var1.getPacket() instanceof Class5473) {
+            if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23839 = 0;
                 this.field23838 = 4;
             }

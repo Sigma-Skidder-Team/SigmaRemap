@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.datafixers.DataFixer;
 import java.io.File;
+
+import net.minecraft.nbt.CompoundNBT;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

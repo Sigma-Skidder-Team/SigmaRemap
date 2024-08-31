@@ -1,9 +1,12 @@
 package mapped;
 
 import net.minecraft.entity.*;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.network.play.server.SSpawnObjectPacket;
 
 import javax.annotation.Nullable;
 
@@ -117,6 +120,6 @@ public class Class1004 extends Entity {
 
    @Override
    public Packet<?> method2835() {
-      return new Class5487(this);
+      return new SSpawnObjectPacket(this);
    }
 }

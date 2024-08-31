@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class5473;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import mapped.ColorUtils;
 import mapped.Class9567;
 
@@ -116,8 +116,8 @@ public class OmegaCraftFly extends Module {
 
     @EventTarget
     public void method16497(RecievePacketEvent var1) {
-        if (var1.getPacket() instanceof Class5473) {
-            Class5473 var4 = (Class5473) var1.getPacket();
+        if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
+            SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();
             double var5 = this.field23703[0];
             int var7 = this.field23703.length;
             double var8 = var4.field24298 - (double) ((int) var4.field24298);

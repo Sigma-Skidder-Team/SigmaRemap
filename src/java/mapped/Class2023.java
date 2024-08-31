@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ComparisonChain;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.nbt.CompoundNBT;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

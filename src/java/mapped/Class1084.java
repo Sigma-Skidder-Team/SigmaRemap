@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.*;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;

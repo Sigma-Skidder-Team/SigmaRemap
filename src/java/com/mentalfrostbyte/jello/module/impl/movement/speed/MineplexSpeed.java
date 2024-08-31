@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import mapped.*;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.BlockPos;
 
 public class MineplexSpeed extends Module {
@@ -142,7 +143,7 @@ public class MineplexSpeed extends Module {
     @EventTarget
     public void method16252(RecievePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (var1.getPacket() instanceof Class5473) {
+            if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23553 = 0;
                 this.field23555 = 0.0;
             }

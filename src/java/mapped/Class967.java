@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.play.server.SUpdateTileEntityPacket;
+
 public class Class967 extends TileEntity {
    private static String[] field5422;
    private Class112 field5423;
@@ -14,8 +16,8 @@ public class Class967 extends TileEntity {
    }
 
    @Override
-   public Class5610 method3776() {
-      return new Class5610(this.field5325, 11, this.method3777());
+   public SUpdateTileEntityPacket method3776() {
+      return new SUpdateTileEntityPacket(this.field5325, 11, this.method3777());
    }
 
    public Class112 method4000() {

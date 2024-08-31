@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
+import net.minecraft.nbt.CompoundNBT;
 
 public class Class7533 extends Class7530 {
    private LongSet field32337 = new LongOpenHashSet();

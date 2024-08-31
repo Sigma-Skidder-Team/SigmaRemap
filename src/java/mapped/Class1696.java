@@ -2,6 +2,8 @@ package mapped;
 
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
+import net.minecraft.nbt.CompoundNBT;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;

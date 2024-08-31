@@ -16,6 +16,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.world.Timer;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import mapped.*;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class HypixelSpeed extends Module {
     private int field23414;
@@ -188,7 +189,7 @@ public class HypixelSpeed extends Module {
     @EventTarget
     public void method16040(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof Class5473) {
+            if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23414 = -2;
             }
         }

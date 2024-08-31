@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class5590;
+import net.minecraft.network.play.server.SEntityVelocityPacket;
 import mapped.Class9567;
 import mapped.NumberSetting;
 
@@ -43,8 +43,8 @@ public class GommeAntiKB extends Module {
 
     @EventTarget
     private void method16352(RecievePacketEvent var1) {
-        if (var1.getPacket() instanceof Class5590) {
-            Class5590 var4 = (Class5590) var1.getPacket();
+        if (var1.getPacket() instanceof SEntityVelocityPacket) {
+            SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();
             if (var4.method17565() == mc.player.method3205()) {
                 this.field23610 = 1;
                 this.field23611 = (double) var4.method17567() / 8000.0;

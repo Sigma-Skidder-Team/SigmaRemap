@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.notification.Notification;
 import mapped.*;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.BlockPos;
 
 public class MineplexFly extends PremiumModule {
@@ -174,7 +175,7 @@ public class MineplexFly extends PremiumModule {
     @EventTarget
     public void method16459(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof Class5473) {
+            if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23675 = true;
                 Client.getInstance().getNotificationManager().post(new Notification("Mineplex fly", "Please try again"));
             }

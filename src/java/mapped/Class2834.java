@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.nbt.CompoundNBT;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;

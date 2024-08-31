@@ -19,6 +19,8 @@ import java.net.SocketAddress;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+
+import net.minecraft.network.play.server.SDisconnectPacket;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -111,7 +113,7 @@ public class Class9021 {
 
                      field41274.warn("Failed to handle packet for {}", var5.method30700(), var9);
                      StringTextComponent var7 = new StringTextComponent("Internal server error");
-                     var5.method30694(new Class5530(var7), var2 -> var5.method30701(var7));
+                     var5.method30694(new SDisconnectPacket(var7), var2 -> var5.method30701(var7));
                      var5.method30711();
                   }
                } else {

@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4436;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class AACSpeed extends Module {
    private int field23398;
@@ -42,7 +43,7 @@ public class AACSpeed extends Module {
    @EventTarget
    public void method16008(RecievePacketEvent var1) {
       if (this.isEnabled()) {
-         if (var1.getPacket() instanceof Class5473) {
+         if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
             this.field23399 = 0;
          }
       }

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 
 public class Class6674 {

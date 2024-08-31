@@ -7,6 +7,8 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
+
+import net.minecraft.network.play.server.SPlaySoundPacket;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8621 {
@@ -122,7 +124,7 @@ public class Class8621 {
             var24 = var7;
          }
 
-         var14.field4855.sendPacket(new Class5475(var2, var3, var23, var24, var6));
+         var14.field4855.sendPacket(new SPlaySoundPacket(var2, var3, var23, var24, var6));
          var12++;
       }
 

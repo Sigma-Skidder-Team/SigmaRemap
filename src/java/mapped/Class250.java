@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
 
 public class Class250<T extends PlayerEntity> extends Class219<T, Class2894<T>> {
    private final Class2814 field907 = new Class2814();

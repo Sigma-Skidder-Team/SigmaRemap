@@ -5,6 +5,8 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.authlib.properties.Property;
 import net.minecraft.block.BlockState;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
@@ -79,8 +81,8 @@ public class SkullTileEntity extends TileEntity implements Class935 {
 
    @Nullable
    @Override
-   public Class5610 method3776() {
-      return new Class5610(this.field5325, 4, this.method3777());
+   public SUpdateTileEntityPacket method3776() {
+      return new SUpdateTileEntityPacket(this.field5325, 4, this.method3777());
    }
 
    @Override

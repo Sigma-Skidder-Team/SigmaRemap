@@ -7,6 +7,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
+
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.play.server.SRecipeBookPacket;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -50,7 +53,7 @@ public class Class6942 extends Class6941 {
    }
 
    private void method21378(Class2338 var1, ServerPlayerEntity var2, List<ResourceLocation> var3) {
-      var2.field4855.sendPacket(new Class5572(var1, var3, Collections.<ResourceLocation>emptyList(), this.method21374()));
+      var2.field4855.sendPacket(new SRecipeBookPacket(var1, var3, Collections.<ResourceLocation>emptyList(), this.method21374()));
    }
 
    public CompoundNBT method21379() {
@@ -100,6 +103,6 @@ public class Class6942 extends Class6941 {
    }
 
    public void method21382(ServerPlayerEntity var1) {
-      var1.field4855.sendPacket(new Class5572(Class2338.field15982, this.field30089, this.field30090, this.method21374()));
+      var1.field4855.sendPacket(new SRecipeBookPacket(Class2338.field15982, this.field30089, this.field30090, this.method21374()));
    }
 }

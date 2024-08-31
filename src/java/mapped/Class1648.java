@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.datafixers.DataFixer;
+import net.minecraft.nbt.CompoundNBT;
 
 import javax.annotation.Nullable;
 import java.io.File;

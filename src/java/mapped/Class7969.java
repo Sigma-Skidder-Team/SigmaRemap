@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 import javax.annotation.concurrent.Immutable;
 
 @Immutable

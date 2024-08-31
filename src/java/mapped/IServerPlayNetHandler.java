@@ -1,6 +1,8 @@
 package mapped;
 
-public interface IServerPlayNetHandler extends Class5104 {
+import net.minecraft.network.INetHandler;
+
+public interface IServerPlayNetHandler extends INetHandler {
    void handleAnimation(CAnimateHandPacket var1);
 
    void method15611(Class5522 var1);

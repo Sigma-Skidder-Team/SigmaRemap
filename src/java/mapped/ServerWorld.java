@@ -16,6 +16,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.*;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -202,22 +204,22 @@ public class ServerWorld extends World implements Class1658 {
       }
 
       if (this.prevRainingStrength != this.rainingStrength) {
-         this.field9045.getPlayerList().method19457(new Class5534(Class5534.field24567, this.rainingStrength), this.getDimensionKey());
+         this.field9045.getPlayerList().method19457(new SChangeGameStatePacket(SChangeGameStatePacket.field24567, this.rainingStrength), this.getDimensionKey());
       }
 
       if (this.prevThunderingStrength != this.thunderingStrength) {
-         this.field9045.getPlayerList().method19457(new Class5534(Class5534.field24568, this.thunderingStrength), this.getDimensionKey());
+         this.field9045.getPlayerList().method19457(new SChangeGameStatePacket(SChangeGameStatePacket.field24568, this.thunderingStrength), this.getDimensionKey());
       }
 
       if (var5 != this.method6795()) {
          if (!var5) {
-            this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24561, 0.0F));
+            this.field9045.getPlayerList().method19456(new SChangeGameStatePacket(SChangeGameStatePacket.field24561, 0.0F));
          } else {
-            this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24562, 0.0F));
+            this.field9045.getPlayerList().method19456(new SChangeGameStatePacket(SChangeGameStatePacket.field24562, 0.0F));
          }
 
-         this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24567, this.rainingStrength));
-         this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24568, this.thunderingStrength));
+         this.field9045.getPlayerList().method19456(new SChangeGameStatePacket(SChangeGameStatePacket.field24567, this.rainingStrength));
+         this.field9045.getPlayerList().method19456(new SChangeGameStatePacket(SChangeGameStatePacket.field24568, this.thunderingStrength));
       }
 
       if (this.field9048 && this.field9042.stream().noneMatch(var0 -> !var0.isSpectator() && !var0.method2909())) {
@@ -857,7 +859,7 @@ public class ServerWorld extends World implements Class1658 {
             double var10 = (double)var2.getY() - var7.getPosY();
             double var12 = (double)var2.getZ() - var7.getPosZ();
             if (var8 * var8 + var10 * var10 + var12 * var12 < 1024.0) {
-               var7.field4855.sendPacket(new Class5524(var1, var2, var3));
+               var7.field4855.sendPacket(new SAnimateBlockBreakPacket(var1, var2, var3));
             }
          }
       }
@@ -874,7 +876,7 @@ public class ServerWorld extends World implements Class1658 {
             var6,
             !(var10 > 1.0F) ? 16.0 : (double)(16.0F * var10),
             this.getDimensionKey(),
-            new Class5584(var8, var9, var2, var4, var6, var10, var11)
+            new SPlaySoundEffectPacket(var8, var9, var2, var4, var6, var10, var11)
          );
    }
 
@@ -889,13 +891,13 @@ public class ServerWorld extends World implements Class1658 {
             var2.getPosZ(),
             !(var5 > 1.0F) ? 16.0 : (double)(16.0F * var5),
             this.getDimensionKey(),
-            new Class5546(var3, var4, var2, var5, var6)
+            new SSpawnMovingSoundEffectPacket(var3, var4, var2, var5, var6)
          );
    }
 
    @Override
    public void method6801(int var1, BlockPos var2, int var3) {
-      this.field9045.getPlayerList().method19456(new Class5481(var1, var2, var3, true));
+      this.field9045.getPlayerList().method19456(new SPlaySoundEventPacket(var1, var2, var3, true));
    }
 
    @Override
@@ -909,7 +911,7 @@ public class ServerWorld extends World implements Class1658 {
             (double)var3.getZ(),
             64.0,
             this.getDimensionKey(),
-            new Class5481(var2, var3, var4, false)
+            new SPlaySoundEventPacket(var2, var3, var4, false)
          );
    }
 
@@ -929,7 +931,7 @@ public class ServerWorld extends World implements Class1658 {
 
    @Override
    public void method6786(Entity var1, byte var2) {
-      this.getChunkProvider().method7379(var1, new Class5464(var1, var2));
+      this.getChunkProvider().method7379(var1, new SEntityStatusPacket(var1, var2));
    }
 
    public Class1703 getChunkProvider() {
@@ -949,7 +951,7 @@ public class ServerWorld extends World implements Class1658 {
 
       for (ServerPlayerEntity var17 : this.field9042) {
          if (var17.method3276(var4, var6, var8) < 4096.0) {
-            var17.field4855.sendPacket(new Class5515(var4, var6, var8, var10, var15.method25791(), var15.method25788().get(var17)));
+            var17.field4855.sendPacket(new SExplosionPacket(var4, var6, var8, var10, var15.method25791(), var15.method25788().get(var17)));
          }
       }
 
@@ -974,7 +976,7 @@ public class ServerWorld extends World implements Class1658 {
                   (double)var3.method20740().getZ(),
                   64.0,
                   this.getDimensionKey(),
-                  new Class5495(var3.method20740(), var3.method20741(), var3.method20742(), var3.method20743())
+                  new SBlockActionPacket(var3.method20740(), var3.method20741(), var3.method20742(), var3.method20743())
                );
          }
       }
@@ -1008,7 +1010,7 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    public <T extends Class7436> int method6939(T var1, double var2, double var4, double var6, int var8, double var9, double var11, double var13, double var15) {
-      Class5547 var19 = new Class5547(var1, false, var2, var4, var6, (float)var9, (float)var11, (float)var13, (float)var15, var8);
+      SSpawnParticlePacket var19 = new SSpawnParticlePacket(var1, false, var2, var4, var6, (float)var9, (float)var11, (float)var13, (float)var15, var8);
       int var20 = 0;
 
       for (int var21 = 0; var21 < this.field9042.size(); var21++) {
@@ -1024,7 +1026,7 @@ public class ServerWorld extends World implements Class1658 {
    public <T extends Class7436> boolean method6940(
            ServerPlayerEntity var1, T var2, boolean var3, double var4, double var6, double var8, int var10, double var11, double var13, double var15, double var17
    ) {
-      Class5547 var21 = new Class5547(var2, var3, var4, var6, var8, (float)var11, (float)var13, (float)var15, (float)var17, var10);
+      SSpawnParticlePacket var21 = new SSpawnParticlePacket(var2, var3, var4, var6, var8, (float)var11, (float)var13, (float)var15, (float)var17, var10);
       return this.method6941(var1, var3, var4, var6, var8, var21);
    }
 
@@ -1111,7 +1113,7 @@ public class ServerWorld extends World implements Class1658 {
       this.worldInfo.method20041(var1, var2);
       this.getChunkProvider().method7375(Class8561.field38480, var5, 11, Class2341.field16010);
       this.getChunkProvider().method7374(Class8561.field38480, new Class7481(var1), 11, Class2341.field16010);
-      this.getServer().getPlayerList().method19456(new Class5525(var1, var2));
+      this.getServer().getPlayerList().method19456(new SWorldSpawnChangedPacket(var1, var2));
    }
 
    public BlockPos method6947() {

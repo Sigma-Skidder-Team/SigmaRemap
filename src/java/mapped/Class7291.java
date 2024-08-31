@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import java.util.List;
+
+import net.minecraft.nbt.CompoundNBT;
 import org.apache.commons.lang3.tuple.Pair;
 
 public class Class7291 {

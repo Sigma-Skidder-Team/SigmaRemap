@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -297,7 +299,7 @@ public class PlayerInventory implements Class920, INameable {
 
             int var6 = var2.method32113() - this.method3618(var5).getCount();
             if (this.method4046(var5, var2.method32106(var6))) {
-               ((ServerPlayerEntity)this.field5444).field4855.sendPacket(new Class5501(-2, var5, this.method3618(var5)));
+               ((ServerPlayerEntity)this.field5444).field4855.sendPacket(new SSetSlotPacket(-2, var5, this.method3618(var5)));
             }
          }
       }

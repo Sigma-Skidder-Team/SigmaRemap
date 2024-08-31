@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.BlockState;
+import net.minecraft.nbt.CompoundNBT;
 
 import java.util.Set;
 

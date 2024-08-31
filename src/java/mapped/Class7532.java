@@ -4,6 +4,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import it.unimi.dsi.fastutil.objects.Object2IntMap.Entry;
+import net.minecraft.nbt.CompoundNBT;
 
 public class Class7532 extends Class7530 {
    private final Object2IntMap<String> field32336 = new Object2IntOpenHashMap();

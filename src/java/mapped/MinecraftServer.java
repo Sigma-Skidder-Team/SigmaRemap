@@ -16,6 +16,8 @@ import it.unimi.dsi.fastutil.longs.LongIterator;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.server.SServerDifficultyPacket;
+import net.minecraft.network.play.server.SUpdateTimePacket;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.math.BlockPos;
@@ -695,7 +697,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          if (this.field1229 % 20 == 0) {
             this.field1216.startSection("timeSync");
             this.field1226
-               .method19457(new Class5577(var5.method6783(), var5.method6784(), var5.method6789().method17135(Class5462.field24232)), var5.getDimensionKey());
+               .method19457(new SUpdateTimePacket(var5.method6783(), var5.method6784(), var5.method6789().method17135(Class5462.field24232)), var5.getDimensionKey());
             this.field1216.endSection();
          }
 
@@ -882,7 +884,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
    private void method1340(ServerPlayerEntity var1) {
       Class6612 var4 = var1.getServerWorld().getWorldInfo();
-      var1.field4855.sendPacket(new Class5535(var4.method20047(), var4.method20048()));
+      var1.field4855.sendPacket(new SServerDifficultyPacket(var4.method20047(), var4.method20048()));
    }
 
    public boolean method1341() {

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.nbt.CompoundNBT;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

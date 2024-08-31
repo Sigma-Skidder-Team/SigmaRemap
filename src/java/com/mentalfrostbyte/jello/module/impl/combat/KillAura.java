@@ -17,6 +17,9 @@ import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SEntityStatusPacket;
+import net.minecraft.network.play.server.SEntityPacket;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;
@@ -348,15 +351,15 @@ public class KillAura extends Module {
     @EventTarget
     public void method16824(RecievePacketEvent var1) {
         Packet var4 = var1.getPacket();
-        if (!(var4 instanceof Class5476)) {
-            if (var4 instanceof Class5464) {
-                Class5464 var5 = (Class5464) var4;
+        if (!(var4 instanceof SEntityPacket)) {
+            if (var4 instanceof SEntityStatusPacket) {
+                SEntityStatusPacket var5 = (SEntityStatusPacket) var4;
                 if (var5.method17179() == 3) {
                     this.field23938.field44349.remove(var5.method17178(mc.world));
                 }
             }
         } else {
-            Class5476 var11 = (Class5476) var4;
+            SEntityPacket var11 = (SEntityPacket) var4;
             if (var11.method17237() && (var11.field24323 != 0 || var11.field24324 != 0 || var11.field24325 != 0)) {
                 for (Entry var7 : this.field23938.field44349.entrySet()) {
                     Entity var8 = (Entity) var7.getKey();

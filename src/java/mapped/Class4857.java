@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 public class Class4857 extends Class4837 {
    public Class4857(ResourceLocation var1) {
       super(var1);

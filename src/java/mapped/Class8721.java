@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.Packet;
+
 public class Class8721 {
    private static String[] field39347;
    private long field39348;

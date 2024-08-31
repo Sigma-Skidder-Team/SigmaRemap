@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Iterables;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.nbt.CompoundNBT;
+
 import java.util.List;
 
 public enum Class1819 {

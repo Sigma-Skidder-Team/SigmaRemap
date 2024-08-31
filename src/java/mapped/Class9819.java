@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 import java.util.List;
 
@@ -148,7 +149,7 @@ public class Class9819 {
    @Class5631
    public void method38765(RecievePacketEvent var1) {
       if (this.field45878 == 1) {
-         if (var1.getPacket() instanceof Class5473) {
+         if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
             this.field45878 = 2;
          }
       }

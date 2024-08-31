@@ -3,6 +3,7 @@ package mapped;
 import java.util.Objects;
 import javax.annotation.Nullable;
 
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;

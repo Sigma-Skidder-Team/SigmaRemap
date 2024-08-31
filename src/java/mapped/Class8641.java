@@ -5,6 +5,11 @@ import it.unimi.dsi.fastutil.shorts.ShortArraySet;
 import it.unimi.dsi.fastutil.shorts.ShortSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SChangeBlockPacket;
+import net.minecraft.network.play.server.SMultiBlockChangePacket;
+import net.minecraft.network.play.server.SUpdateLightPacket;
+import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
@@ -150,7 +155,7 @@ public class Class8641 {
 
          this.field38916 |= var5 >= 64;
          if (this.field38911 != 0 || this.field38910 != 0) {
-            this.method31052(new Class5523(var1.method7072(), this.field38912, this.field38911, this.field38910, true), !this.field38916);
+            this.method31052(new SUpdateLightPacket(var1.method7072(), this.field38912, this.field38911, this.field38910, true), !this.field38916);
             this.field38911 = 0;
             this.field38910 = 0;
          }
@@ -161,13 +166,13 @@ public class Class8641 {
                Class2002 var8 = Class2002.method8391(var1.method7072(), var11);
                if (var7.size() != 1) {
                   Class7038 var9 = var1.method7067()[var8.getY()];
-                  Class5549 var10 = new Class5549(var8, var7, var9, this.field38916);
+                  SMultiBlockChangePacket var10 = new SMultiBlockChangePacket(var8, var7, var9, this.field38916);
                   this.method31052(var10, false);
                   var10.method17461((var2, var3) -> this.method31050(var4, var2, var3));
                } else {
                   BlockPos var12 = var8.method8405(var7.iterator().nextShort());
                   BlockState var13 = var4.getBlockState(var12);
-                  this.method31052(new Class5607(var12, var13), false);
+                  this.method31052(new SChangeBlockPacket(var12, var13), false);
                   this.method31050(var4, var12, var13);
                }
 
@@ -188,7 +193,7 @@ public class Class8641 {
    private void method31051(World var1, BlockPos var2) {
       TileEntity var5 = var1.getTileEntity(var2);
       if (var5 != null) {
-         Class5610 var6 = var5.method3776();
+         SUpdateTileEntityPacket var6 = var5.method3776();
          if (var6 != null) {
             this.method31052(var6, false);
          }

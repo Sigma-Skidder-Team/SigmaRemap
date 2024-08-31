@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
 
 public interface Class7151 {

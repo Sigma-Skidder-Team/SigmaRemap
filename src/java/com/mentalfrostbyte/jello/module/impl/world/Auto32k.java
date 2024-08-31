@@ -9,6 +9,9 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.network.play.server.SSetSlotPacket;
+import net.minecraft.network.play.server.SCloseWindowPacket;
+import net.minecraft.network.play.server.SOpenWindowPacket;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
@@ -20,7 +23,7 @@ public class Auto32k extends Module {
     public int field23873 = 0;
     public int field23874 = -1;
     public short field23875 = 0;
-    public Class5498 field23876;
+    public SOpenWindowPacket field23876;
     public boolean field23877 = false;
 
     public Auto32k() {
@@ -251,8 +254,8 @@ public class Auto32k extends Module {
     @EventTarget
     private void method16721(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof Class5498) {
-                this.field23876 = (Class5498) var1.getPacket();
+            if (var1.getPacket() instanceof SOpenWindowPacket) {
+                this.field23876 = (SOpenWindowPacket) var1.getPacket();
                 if (this.isEnabled() && this.field23876.method17285() == Class8298.field35663) {
                     var1.method13900(true);
                 }
@@ -261,8 +264,8 @@ public class Auto32k extends Module {
                 this.field23877 = false;
             }
 
-            if (var1.getPacket() instanceof Class5501) {
-                Class5501 var4 = (Class5501) var1.getPacket();
+            if (var1.getPacket() instanceof SSetSlotPacket) {
+                SSetSlotPacket var4 = (SSetSlotPacket) var1.getPacket();
                 int var5 = var4.method17304();
                 ItemStack var6 = var4.method17305();
                 int var7 = var4.method17303();
@@ -290,7 +293,7 @@ public class Auto32k extends Module {
                 }
             }
 
-            if (var1.getPacket() instanceof Class5586) {
+            if (var1.getPacket() instanceof SCloseWindowPacket) {
                 this.method15999(false);
             }
         }

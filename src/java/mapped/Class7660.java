@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.CompoundNBT;
+
 public class Class7660 {
    public static Class9028 method25180(CompoundNBT var0) {
       int var3 = var0.method122("xPos");

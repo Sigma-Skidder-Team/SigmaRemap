@@ -24,6 +24,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.*;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -137,7 +140,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             this.field23229 = true;
             this.field23228 = var3;
             this.field23230 = var3;
-            this.sendPacket(new Class5554(this.field23230));
+            this.sendPacket(new SKeepAlivePacket(this.field23230));
          } else {
             this.disconnect(new TranslationTextComponent("disconnect.timeout"));
          }
@@ -178,7 +181,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    public void disconnect(ITextComponent var1) {
-      this.netManager.method30694(new Class5530(var1), var2 -> this.netManager.method30701(var1));
+      this.netManager.method30694(new SDisconnectPacket(var1), var2 -> this.netManager.method30701(var1));
       this.netManager.method30711();
       this.server.method1635(this.netManager::method30713);
    }
@@ -261,7 +264,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                   var22,
                   var24
                );
-               this.netManager.sendPacket(new Class5536(var4));
+               this.netManager.sendPacket(new SMoveVehiclePacket(var4));
                return;
             }
 
@@ -290,7 +293,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             boolean var32 = var5.method7053(var4, var4.getBoundingBox().method19679(0.0625));
             if (var30 && (var31 || !var32)) {
                var4.method3269(var6, var8, var10, var18, var19);
-               this.netManager.sendPacket(new Class5536(var4));
+               this.netManager.sendPacket(new SMoveVehiclePacket(var4));
                return;
             }
 
@@ -366,7 +369,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          .getCommandManager()
          .method18842()
          .getCompletionSuggestions(var5)
-         .thenAccept(var2 -> this.netManager.sendPacket(new Class5543(var1.method17485(), var2)));
+         .thenAccept(var2 -> this.netManager.sendPacket(new STabCompletePacket(var1.method17485(), var2)));
    }
 
    @Override
@@ -463,9 +466,9 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       this.player.inventory.method4034(var1.method17494());
       this.player
          .field4855
-         .sendPacket(new Class5501(-2, this.player.inventory.currentItem, this.player.inventory.method3618(this.player.inventory.currentItem)));
-      this.player.field4855.sendPacket(new Class5501(-2, var1.method17494(), this.player.inventory.method3618(var1.method17494())));
-      this.player.field4855.sendPacket(new Class5608(this.player.inventory.currentItem));
+         .sendPacket(new SSetSlotPacket(-2, this.player.inventory.currentItem, this.player.inventory.method3618(this.player.inventory.currentItem)));
+      this.player.field4855.sendPacket(new SSetSlotPacket(-2, var1.method17494(), this.player.inventory.method3618(var1.method17494())));
+      this.player.field4855.sendPacket(new SHeldItemChangePacket(this.player.inventory.currentItem));
    }
 
    @Override
@@ -657,7 +660,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          Entity var4 = this.player.getServerWorld().method6774(var1.method17479());
          if (var4 != null) {
             CompoundNBT var5 = var4.method3294(new CompoundNBT());
-            this.player.field4855.sendPacket(new Class5510(var1.method17478(), var5));
+            this.player.field4855.sendPacket(new SQueryNBTResponsePacket(var1.method17478(), var5));
          }
       }
    }
@@ -668,7 +671,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       if (this.player.method3424(2)) {
          TileEntity var4 = this.player.getServerWorld().getTileEntity(var1.method17255());
          CompoundNBT var5 = var4 == null ? null : var4.write(new CompoundNBT());
-         this.player.field4855.sendPacket(new Class5510(var1.method17254(), var5));
+         this.player.field4855.sendPacket(new SQueryNBTResponsePacket(var1.method17254(), var5));
       }
    }
 
@@ -834,7 +837,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
 
       this.field23249 = this.field23227;
       this.player.method3269(var1, var3, var5, var7, var8);
-      this.player.field4855.sendPacket(new Class5473(var1 - var12, var3 - var14, var5 - var16, var7 - var18, var8 - var19, var9, this.field23248));
+      this.player.field4855.sendPacket(new SPlayerPositionLookPacket(var1 - var12, var3 - var14, var5 - var16, var7 - var18, var8 - var19, var9, this.field23248));
    }
 
    @Override
@@ -912,8 +915,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          }
       }
 
-      this.player.field4855.sendPacket(new Class5607(var4, var8));
-      this.player.field4855.sendPacket(new Class5607(var4, var8.method8349(var9)));
+      this.player.field4855.sendPacket(new SChangeBlockPacket(var4, var8));
+      this.player.field4855.sendPacket(new SChangeBlockPacket(var4, var8.method8349(var9)));
    }
 
    @Override
@@ -1210,7 +1213,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             ItemStack var4 = this.player.field4905.method18132(var1.method17580(), var1.method17581(), var1.method17584(), this.player);
             if (!ItemStack.method32128(var1.method17583(), var4)) {
                this.field23233.put(this.player.field4905.field25471, var1.method17582());
-               this.player.field4855.sendPacket(new Class5542(var1.method17579(), var1.method17582(), false));
+               this.player.field4855.sendPacket(new SConfirmTransactionPacket(var1.method17579(), var1.method17582(), false));
                this.player.field4905.method18141(this.player, false);
                NonNullList var5 = NonNullList.create();
 
@@ -1221,7 +1224,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
 
                this.player.method2718(this.player.field4905, var5);
             } else {
-               this.player.field4855.sendPacket(new Class5542(var1.method17579(), var1.method17582(), true));
+               this.player.field4855.sendPacket(new SConfirmTransactionPacket(var1.method17579(), var1.method17582(), true));
                this.player.field4890 = true;
                this.player.field4905.method18130();
                this.player.method2773();

@@ -11,9 +11,11 @@ import com.mojang.datafixers.util.Either;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.network.play.server.SEntityVelocityPacket;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -1123,7 +1125,7 @@ public abstract class PlayerEntity extends LivingEntity {
                }
 
                if (var1 instanceof ServerPlayerEntity && var1.velocityChanged) {
-                  ((ServerPlayerEntity)var1).field4855.sendPacket(new Class5590(var1));
+                  ((ServerPlayerEntity)var1).field4855.sendPacket(new SEntityVelocityPacket(var1));
                   var1.velocityChanged = false;
                   var1.method3434(var17);
                }

@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.antikb.AACAntiKB;
 import mapped.*;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class OldAACSpeed extends Module {
     private double field23534;
@@ -93,7 +94,7 @@ public class OldAACSpeed extends Module {
     @EventTarget
     public void method16228(RecievePacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getPacket() instanceof Class5473) {
+            if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23537 = 0;
                 this.field23534 = Class9567.method37075();
             }

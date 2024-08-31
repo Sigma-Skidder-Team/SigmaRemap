@@ -6,6 +6,9 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
+import net.minecraft.network.play.server.SChatPacket;
 
 public class VeltPvPFly extends Module {
     private int field23419;
@@ -125,7 +128,7 @@ public class VeltPvPFly extends Module {
     public void method16049(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
-            if (!(var4 instanceof Class5473)) {
+            if (!(var4 instanceof SPlayerPositionLookPacket)) {
                 if (var4 instanceof SChatPacket) {
                     SChatPacket var5 = (SChatPacket) var4;
                     String var6 = var5.method17648().getString();
@@ -135,7 +138,7 @@ public class VeltPvPFly extends Module {
                     }
                 }
             } else {
-                Class5473 var7 = (Class5473) var4;
+                SPlayerPositionLookPacket var7 = (SPlayerPositionLookPacket) var4;
                 if (this.field23419 >= 1) {
                     this.field23419 = -1;
                 }

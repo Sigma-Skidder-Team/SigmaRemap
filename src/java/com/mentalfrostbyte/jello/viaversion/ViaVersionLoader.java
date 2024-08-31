@@ -13,6 +13,7 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
+import net.minecraft.network.play.server.*;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -187,8 +188,8 @@ public class ViaVersionLoader {
          if (!field31493.isEmpty()) {
             field31493.clear();
          }
-      } else if (var1.getPacket() instanceof Class5588) {
-         Class5588 var4 = (Class5588)var1.getPacket();
+      } else if (var1.getPacket() instanceof SEntityEquipmentPacket) {
+         SEntityEquipmentPacket var4 = (SEntityEquipmentPacket)var1.getPacket();
 
          for (Pair var6 : var4.method17562()) {
             if (var6.getFirst() == Class2106.field13732
@@ -216,15 +217,15 @@ public class ViaVersionLoader {
 
       if (this.method23351()) {
          Class8920.method32597(var1, this.field31495);
-         if (!(var1.getPacket() instanceof Class5608)) {
-            if (var1.getPacket() instanceof Class5567 && ColorUtils.method17717()) {
+         if (!(var1.getPacket() instanceof SHeldItemChangePacket)) {
+            if (var1.getPacket() instanceof SUnloadChunkPacket && ColorUtils.method17717()) {
                var1.method13900(true);
-            } else if (!(var1.getPacket() instanceof Class5469)) {
-               if (var1.getPacket() instanceof Class5579 && this.mc.player != null) {
-                  Class5579 var10 = (Class5579)var1.getPacket();
-               } else if (!(var1.getPacket() instanceof Class5502)) {
-                  if (var1.getPacket() instanceof Class5472) {
-                     Class5472 var8 = (Class5472)var1.getPacket();
+            } else if (!(var1.getPacket() instanceof SAnimateHandPacket)) {
+               if (var1.getPacket() instanceof SUpdateChunkPositionPacket && this.mc.player != null) {
+                  SUpdateChunkPositionPacket var10 = (SUpdateChunkPositionPacket)var1.getPacket();
+               } else if (!(var1.getPacket() instanceof SUpdateViewDistancePacket)) {
+                  if (var1.getPacket() instanceof SUpdateBossInfoPacket) {
+                     SUpdateBossInfoPacket var8 = (SUpdateBossInfoPacket)var1.getPacket();
                      if (var8.method17206() != Class2151.field14064) {
                         if (this.field31497 != null && var8.method17206() == Class2151.field14065) {
                            if (this.field31497.compareTo(var8.method17205()) != 0) {
@@ -242,17 +243,17 @@ public class ViaVersionLoader {
                      }
                   }
                } else {
-                  Class5502 var9 = (Class5502)var1.getPacket();
+                  SUpdateViewDistancePacket var9 = (SUpdateViewDistancePacket)var1.getPacket();
                }
             } else {
-               Class5469 var11 = (Class5469)var1.getPacket();
+               SAnimateHandPacket var11 = (SAnimateHandPacket)var1.getPacket();
                Entity var13 = this.mc.world.method6774(var11.method17192());
                if (var13 != null && var11.method17193() == 3 && Class8005.method27349() == Class5989.field26129.method18582()) {
                   var1.method13900(true);
                }
             }
          } else {
-            int var12 = ((Class5608)var1.getPacket()).method17633();
+            int var12 = ((SHeldItemChangePacket)var1.getPacket()).method17633();
             if (PlayerInventory.isHotbar(var12)) {
                field31494 = var12;
             }

@@ -10,6 +10,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.world.Timer;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,7 +104,7 @@ public class HypixelFly extends Module {
         if (mc.getConnection() != null && ColorUtils.method17716()) {
             Packet var4 = var1.getPacket();
             if (this.isEnabled()) {
-                if (var4 instanceof Class5473) {
+                if (var4 instanceof SPlayerPositionLookPacket) {
                     this.method16004().method16000();
                 }
             }

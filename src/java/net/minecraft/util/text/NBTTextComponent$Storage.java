@@ -1,7 +1,7 @@
 package net.minecraft.util.text;
 
 import mapped.ResourceLocation;
-import mapped.CompoundNBT;
+import net.minecraft.nbt.CompoundNBT;
 import mapped.Class6619;
 import mapped.Class9670;
 

@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextProperties;
 
 public class Class7504 implements Class7502 {

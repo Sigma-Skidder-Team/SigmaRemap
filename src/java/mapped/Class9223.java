@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.util.Util;
+import net.minecraft.nbt.CompoundNBT;
 
 import java.util.EnumMap;
 import java.util.Map;

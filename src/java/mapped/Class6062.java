@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import java.util.Map;
 import javax.annotation.Nullable;
+
+import net.minecraft.nbt.CompoundNBT;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import it.unimi.dsi.fastutil.ints.IntListIterator;
+import net.minecraft.network.play.server.SPlaceGhostRecipePacket;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,7 +30,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
             this.field6661.method18220(this.field6659);
             if (!this.field6659.method19123(var2, (IntList)null)) {
                this.method5869();
-               var1.field4855.sendPacket(new Class5589(var1.field4905.field25471, var2));
+               var1.field4855.sendPacket(new SPlaceGhostRecipePacket(var1.field4905.field25471, var2));
             } else {
                this.method5871(var2, var3);
             }

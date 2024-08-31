@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.nbt.CompoundNBT;
 
 public class Class947 extends TileEntity implements Class946 {
    private ItemStack field5332 = ItemStack.EMPTY;

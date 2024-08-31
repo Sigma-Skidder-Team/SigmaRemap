@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.network.INetHandler;
+
 import java.util.Map;
 
 public class Class8779 {
@@ -10,7 +12,7 @@ public class Class8779 {
    public Class8779() {
    }
 
-   public <T extends Class5104> Class8779 method31658(Class1975 var1, Class7417<T> var2) {
+   public <T extends INetHandler> Class8779 method31658(Class1975 var1, Class7417<T> var2) {
       this.field39488.put(var1, var2);
       return this;
    }

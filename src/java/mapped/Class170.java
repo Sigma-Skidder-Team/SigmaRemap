@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.nbt.CompoundNBT;
 
 import java.util.Map;
 import java.util.Map.Entry;
