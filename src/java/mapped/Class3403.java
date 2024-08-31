@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
@@ -88,7 +89,7 @@ public class Class3403 extends Block {
             double var15 = var12 != Class113.field414 ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method540();
             double var17 = var12 != Class113.field415 ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method541();
             var0.method6746(
-               Class7437.field32000, (double)var1.getX() + var13, (double)var1.getY() + var15, (double)var1.getZ() + var17, 0.0, 0.0, 0.0
+               RedstoneParticleData.REDSTONE_DUST, (double)var1.getX() + var13, (double)var1.getY() + var15, (double)var1.getZ() + var17, 0.0, 0.0, 0.0
             );
          }
       }

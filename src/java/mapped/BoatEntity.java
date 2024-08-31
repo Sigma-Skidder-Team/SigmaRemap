@@ -357,7 +357,7 @@ public class BoatEntity extends Entity {
             this.field5552 += 0.05F;
          }
 
-         this.field5552 = MathHelper.method37777(this.field5552, 0.0F, 1.0F);
+         this.field5552 = MathHelper.clamp(this.field5552, 0.0F, 1.0F);
          this.field5554 = this.field5553;
          this.field5553 = 10.0F * (float)Math.sin((double)(0.5F * (float)this.world.method6783())) * this.field5552;
       }
@@ -712,7 +712,7 @@ public class BoatEntity extends Entity {
    public void method4160(Entity var1) {
       var1.method3144(this.rotationYaw);
       float var4 = MathHelper.method37792(var1.rotationYaw - this.rotationYaw);
-      float var5 = MathHelper.method37777(var4, -105.0F, 105.0F);
+      float var5 = MathHelper.clamp(var4, -105.0F, 105.0F);
       var1.prevRotationYaw += var5 - var4;
       var1.rotationYaw += var5 - var4;
       var1.method3143(var1.rotationYaw);

@@ -185,10 +185,10 @@ public class Class1057 extends Class1056 implements Class1008 {
       this.field5845 = this.field5846;
       if (!(this.field5846 > var18)) {
          if (this.field5846 < var18) {
-            this.field5846 = MathHelper.method37777(this.field5846 + 0.05F, 0.0F, var18);
+            this.field5846 = MathHelper.clamp(this.field5846 + 0.05F, 0.0F, var18);
          }
       } else {
-         this.field5846 = MathHelper.method37777(this.field5846 - 0.05F, var18, 1.0F);
+         this.field5846 = MathHelper.clamp(this.field5846 - 0.05F, var18, 1.0F);
       }
 
       if (var3 != null) {

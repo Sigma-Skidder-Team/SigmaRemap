@@ -6,7 +6,7 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
 
 public class Class7439 implements IParticleData {
-   public static final Class6865<Class7439> field32010 = new Class6867();
+   public static final IDeserializer<Class7439> field32010 = new Class6867();
    private final ParticleType<Class7439> field32011;
    private final BlockState field32012;
 
@@ -25,7 +25,7 @@ public class Class7439 implements IParticleData {
    }
 
    @Override
-   public String method24010() {
+   public String getParameters() {
       return Registry.PARTICLE_TYPE.getKey(this.getType()) + " " + Class8268.toString(this.field32012);
    }
 

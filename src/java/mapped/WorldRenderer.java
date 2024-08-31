@@ -2915,7 +2915,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          CrashReport var17 = CrashReport.makeCrashReport(var19, "Exception while adding particle");
          CrashReportCategory var18 = var17.makeCategory("Particle being added");
          var18.addDetail("ID", Registry.PARTICLE_TYPE.getKey(var1.getType()));
-         var18.addDetail("Parameters", var1.method24010());
+         var18.addDetail("Parameters", var1.getParameters());
          var18.addDetail("Position", () -> CrashReportCategory.method32803(var4, var6, var8));
          throw new ReportedException(var17);
       }

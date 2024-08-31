@@ -28,7 +28,7 @@ public class Class1195 extends AbstractGui implements Class1196 {
 
    private float method5719() {
       long var3 = this.field6472 - Util.milliTime() + 5000L;
-      return MathHelper.method37777((float)var3 / 2000.0F, 0.0F, 1.0F);
+      return MathHelper.clamp((float)var3 / 2000.0F, 0.0F, 1.0F);
    }
 
    public void method5720(MatrixStack var1, float var2) {

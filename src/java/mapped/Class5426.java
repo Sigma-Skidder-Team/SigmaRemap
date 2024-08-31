@@ -103,6 +103,6 @@ public interface Class5426 extends Class5422 {
    }
 
    static byte method17094(float var0) {
-      return (byte)((int)(MathHelper.method37777(var0, -1.0F, 1.0F) * 127.0F) & 0xFF);
+      return (byte)((int)(MathHelper.clamp(var0, -1.0F, 1.0F) * 127.0F) & 0xFF);
    }
 }

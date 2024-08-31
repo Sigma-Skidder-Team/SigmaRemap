@@ -27,7 +27,7 @@ public class Class1214 extends Class1213 {
       if (this.field6483) {
          if (this.field6528 && !Screen.method2476()) {
             this.field6527 = (float)(var3 - (this.field6477 + 4)) / (float)(this.field6475 - 8);
-            this.field6527 = MathHelper.method37777(this.field6527, 0.0F, 1.0F);
+            this.field6527 = MathHelper.clamp(this.field6527, 0.0F, 1.0F);
             this.field6526.method20390(this.field6527);
             this.field6527 = this.field6526.method20389();
             this.method5766(Class848.method2592(this.field6526, this.field6475));
@@ -47,7 +47,7 @@ public class Class1214 extends Class1213 {
          return false;
       } else {
          this.field6527 = (float)(var1 - (double)(this.field6477 + 4)) / (float)(this.field6475 - 8);
-         this.field6527 = MathHelper.method37777(this.field6527, 0.0F, 1.0F);
+         this.field6527 = MathHelper.clamp(this.field6527, 0.0F, 1.0F);
          this.field6526.method20390(this.field6527);
          this.method5766(Class848.method2592(this.field6526, this.field6475));
          this.field6528 = true;

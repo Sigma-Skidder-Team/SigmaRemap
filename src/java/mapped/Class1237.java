@@ -14,7 +14,7 @@ public class Class1237 extends Class1236 {
       this.field6587 = var1;
       this.field6585 = (double)var6;
       this.field6586 = (double)var7;
-      this.field6584 = (double)((MathHelper.method37777((float)var5, var6, var7) - var6) / (var7 - var6));
+      this.field6584 = (double)((MathHelper.clamp((float)var5, var6, var7) - var6) / (var7 - var6));
       this.method5813();
    }
 

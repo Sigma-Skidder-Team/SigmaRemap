@@ -225,7 +225,7 @@ public class Class9651 {
          if (!(var1 instanceof ServerPlayerEntity)) {
             float var16 = MathHelper.method37792(var10);
             float var17 = MathHelper.method37792(var11);
-            var17 = MathHelper.method37777(var17, -90.0F, 90.0F);
+            var17 = MathHelper.clamp(var17, -90.0F, 90.0F);
             if (var2 != var1.world) {
                var1.detach();
                Entity var18 = var1;

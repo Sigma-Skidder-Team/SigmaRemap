@@ -101,12 +101,12 @@ public class Class934 extends TileEntity implements INameable, Class935 {
       }
 
       this.field5288 += var9 * 0.4F;
-      this.field5286 = MathHelper.method37777(this.field5286, 0.0F, 1.0F);
+      this.field5286 = MathHelper.clamp(this.field5286, 0.0F, 1.0F);
       this.field5281++;
       this.field5283 = this.field5282;
       float var10 = (this.field5284 - this.field5282) * 0.4F;
       float var11 = 0.2F;
-      var10 = MathHelper.method37777(var10, -0.2F, 0.2F);
+      var10 = MathHelper.clamp(var10, -0.2F, 0.2F);
       this.field5285 = this.field5285 + (var10 - this.field5285) * 0.9F;
       this.field5282 = this.field5282 + this.field5285;
    }

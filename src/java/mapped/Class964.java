@@ -433,7 +433,7 @@ public class Class964 extends TileEntity {
       } else {
          Class9463 var11 = new Class9463().method36425(this.field5400).method36426(this.field5401).method36428(this.field5403).method36429((Class7481)null);
          if (this.field5407 < 1.0F) {
-            var11.method36433().method36434(new Class7094(MathHelper.method37777(this.field5407, 0.0F, 1.0F))).method36431(method3966(this.field5408));
+            var11.method36433().method36434(new Class7094(MathHelper.clamp(this.field5407, 0.0F, 1.0F))).method36431(method3966(this.field5408));
          }
 
          BlockPos var10 = var6.method8337(this.field5398);

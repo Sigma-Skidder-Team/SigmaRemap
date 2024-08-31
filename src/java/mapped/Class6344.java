@@ -35,7 +35,7 @@ public class Class6344 extends Class6333 {
          if (!((double)var3 >= 0.01)) {
             this.field27856 = 0.0F;
          } else {
-            this.field27856 = 0.0F + MathHelper.method37777(var3, 0.0F, 1.0F) * 0.75F;
+            this.field27856 = 0.0F + MathHelper.clamp(var3, 0.0F, 1.0F) * 0.75F;
          }
       } else {
          this.method19271();

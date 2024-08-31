@@ -39,7 +39,7 @@ public class FirstPersonRenderer {
 
    private float method37581(float var1) {
       float var4 = 1.0F - var1 / 45.0F + 0.1F;
-      var4 = MathHelper.method37777(var4, 0.0F, 1.0F);
+      var4 = MathHelper.clamp(var4, 0.0F, 1.0F);
       return -MathHelper.cos(var4 * (float) Math.PI) * 0.5F + 0.5F;
    }
 
@@ -424,11 +424,11 @@ public class FirstPersonRenderer {
             }
          }
 
-         this.field45081 = this.field45081 + MathHelper.method37777((this.field45079 != var4 ? 0.0F : var6 * var6 * var6) - this.field45081, -0.4F, 0.4F);
-         this.field45083 = this.field45083 + MathHelper.method37777((float)(this.field45080 != var5 ? 0 : 1) - this.field45083, -0.4F, 0.4F);
+         this.field45081 = this.field45081 + MathHelper.clamp((this.field45079 != var4 ? 0.0F : var6 * var6 * var6) - this.field45081, -0.4F, 0.4F);
+         this.field45083 = this.field45083 + MathHelper.clamp((float)(this.field45080 != var5 ? 0 : 1) - this.field45083, -0.4F, 0.4F);
       } else {
-         this.field45081 = MathHelper.method37777(this.field45081 - 0.4F, 0.0F, 1.0F);
-         this.field45083 = MathHelper.method37777(this.field45083 - 0.4F, 0.0F, 1.0F);
+         this.field45081 = MathHelper.clamp(this.field45081 - 0.4F, 0.0F, 1.0F);
+         this.field45083 = MathHelper.clamp(this.field45083 - 0.4F, 0.0F, 1.0F);
       }
 
       if (this.field45081 < 0.1F) {

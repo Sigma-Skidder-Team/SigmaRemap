@@ -175,7 +175,7 @@ public class Class865 extends Class851<Class5837> {
          int var12 = this.field4735 + 13;
          int var13 = var12 + 56;
          this.field4811 = ((float)var3 - (float)var12 - 7.5F) / ((float)(var13 - var12) - 15.0F);
-         this.field4811 = MathHelper.method37777(this.field4811, 0.0F, 1.0F);
+         this.field4811 = MathHelper.clamp(this.field4811, 0.0F, 1.0F);
          int var14 = field4802 - 4;
          int var15 = (int)((double)(this.field4811 * (float)var14) + 0.5);
          if (var15 < 0) {
@@ -194,7 +194,7 @@ public class Class865 extends Class851<Class5837> {
       if (this.field4808) {
          int var9 = field4802 - 4;
          this.field4811 = (float)((double)this.field4811 - var5 / (double)var9);
-         this.field4811 = MathHelper.method37777(this.field4811, 0.0F, 1.0F);
+         this.field4811 = MathHelper.clamp(this.field4811, 0.0F, 1.0F);
          this.field4813 = 1 + (int)((double)(this.field4811 * (float)var9) + 0.5) * 4;
       }
 

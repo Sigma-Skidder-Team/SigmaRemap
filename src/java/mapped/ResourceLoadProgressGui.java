@@ -56,9 +56,9 @@ public class ResourceLoadProgressGui extends LoadingGui {
             this.field6438.currentScreen.render(var1, 0, 0, var4);
          }
 
-         int var13 = MathHelper.method37773((1.0F - MathHelper.method37777(var11 - 1.0F, 0.0F, 1.0F)) * 255.0F);
+         int var13 = MathHelper.method37773((1.0F - MathHelper.clamp(var11 - 1.0F, 0.0F, 1.0F)) * 255.0F);
          method5686(var1, 0, 0, var7, var8, this.field6445 | var13 << 24);
-         var14 = 1.0F - MathHelper.method37777(var11 - 1.0F, 0.0F, 1.0F);
+         var14 = 1.0F - MathHelper.clamp(var11 - 1.0F, 0.0F, 1.0F);
       } else if (this.field6441) {
          if (this.field6438.currentScreen != null && var12 < 1.0F) {
             this.field6438.currentScreen.render(var1, var2, var3, var4);
@@ -66,7 +66,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
 
          int var27 = MathHelper.method37774(MathHelper.method37778((double)var12, 0.15, 1.0) * 255.0);
          method5686(var1, 0, 0, var7, var8, this.field6445 | var27 << 24);
-         var14 = MathHelper.method37777(var12, 0.0F, 1.0F);
+         var14 = MathHelper.clamp(var12, 0.0F, 1.0F);
       } else {
          method5686(var1, 0, 0, var7, var8, this.field6445 | 0xFF000000);
          var14 = 1.0F;
@@ -102,10 +102,10 @@ public class ResourceLoadProgressGui extends LoadingGui {
       RenderSystem.disableBlend();
       int var23 = (int)((double)this.field6438.getMainWindow().getScaledHeight() * 0.8325);
       float var24 = this.field6439.method29224();
-      this.field6442 = MathHelper.method37777(this.field6442 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);
+      this.field6442 = MathHelper.clamp(this.field6442 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);
       Class9299.field42771.method20217();
       if (var11 < 1.0F) {
-         this.method5678(var1, var7 / 2 - var21, var23 - 5, var7 / 2 + var21, var23 + 5, 1.0F - MathHelper.method37777(var11, 0.0F, 1.0F));
+         this.method5678(var1, var7 / 2 - var21, var23 - 5, var7 / 2 + var21, var23 + 5, 1.0F - MathHelper.clamp(var11, 0.0F, 1.0F));
       }
 
       if (var11 >= 2.0F) {

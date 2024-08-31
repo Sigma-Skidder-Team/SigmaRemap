@@ -161,7 +161,7 @@ public class PlayerController {
                }
 
                this.field31363++;
-               this.field31358.getTutorial().method37026(this.field31358.world, var1, var5, MathHelper.method37777(this.field31362, 0.0F, 1.0F));
+               this.field31358.getTutorial().method37026(this.field31358.world, var1, var5, MathHelper.clamp(this.field31362, 0.0F, 1.0F));
                if (this.field31362 >= 1.0F) {
                   this.field31365 = false;
                   this.method23160(CPlayerDiggingPacket.Action.field13486, var1, var2);

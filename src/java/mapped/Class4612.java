@@ -27,7 +27,7 @@ public class Class4612 extends Class4566 {
 
    @Override
    public float method14509(float var1) {
-      return this.field22035 * MathHelper.method37777(((float)this.field22055 + var1) / (float)this.field22056 * 32.0F, 0.0F, 1.0F);
+      return this.field22035 * MathHelper.clamp(((float)this.field22055 + var1) / (float)this.field22056 * 32.0F, 0.0F, 1.0F);
    }
 
    @Override

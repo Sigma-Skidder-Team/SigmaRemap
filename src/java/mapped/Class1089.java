@@ -49,7 +49,7 @@ public class Class1089 extends Class1018 {
       this.field5968 = this.field5965;
       this.field5967 = this.field5966;
       this.field5966 = (float)((double)this.field5966 + (double)(!this.onGround ? 4 : -1) * 0.3);
-      this.field5966 = MathHelper.method37777(this.field5966, 0.0F, 1.0F);
+      this.field5966 = MathHelper.clamp(this.field5966, 0.0F, 1.0F);
       if (!this.onGround && this.field5969 < 1.0F) {
          this.field5969 = 1.0F;
       }

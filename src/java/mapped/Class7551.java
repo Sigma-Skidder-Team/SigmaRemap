@@ -459,9 +459,9 @@ public class Class7551 {
             var14 = 1.0F;
             var15 = 1.0F;
          } else {
-            var13 = MathHelper.method37777(var2, 0.0F, 1.0F);
-            var14 = MathHelper.method37777(var3, 0.0F, 1.0F);
-            var15 = MathHelper.method37777(var4, 0.0F, 1.0F);
+            var13 = MathHelper.clamp(var2, 0.0F, 1.0F);
+            var14 = MathHelper.clamp(var3, 0.0F, 1.0F);
+            var15 = MathHelper.clamp(var4, 0.0F, 1.0F);
          }
 
          var1.method17036(var0, var12, var13, var14, var15, var6, var7);

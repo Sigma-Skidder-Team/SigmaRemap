@@ -260,7 +260,7 @@ public class Class7699 {
                   }
 
                   this.field32987--;
-                  this.field32985.method12278(MathHelper.method37777((float)(300 - this.field32987) / 300.0F, 0.0F, 1.0F));
+                  this.field32985.method12278(MathHelper.clamp((float)(300 - this.field32987) / 300.0F, 0.0F, 1.0F));
                }
             }
 
@@ -486,7 +486,7 @@ public class Class7699 {
    }
 
    public void method25415() {
-      this.field32985.method12278(MathHelper.method37777(this.method25416() / this.field32981, 0.0F, 1.0F));
+      this.field32985.method12278(MathHelper.clamp(this.method25416() / this.field32981, 0.0F, 1.0F));
    }
 
    public float method25416() {

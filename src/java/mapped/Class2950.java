@@ -178,7 +178,7 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    private double method11298(int var1, int var2, BlockPos var3, int var4, Random var5) {
-      float var8 = 10.0F * MathHelper.method37777(var5.nextFloat(), 0.2F, 0.8F) / (float)var4;
+      float var8 = 10.0F * MathHelper.clamp(var5.nextFloat(), 0.2F, 0.8F) / (float)var4;
       return (double)var8 + Math.pow((double)(var1 - var3.getX()), 2.0) + Math.pow((double)(var2 - var3.getZ()), 2.0) - Math.pow((double)var4, 2.0);
    }
 

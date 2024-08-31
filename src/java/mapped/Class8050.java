@@ -42,7 +42,7 @@ public class Class8050 implements ArgumentType<IParticleData> {
    }
 
    private static <T extends IParticleData> T method27651(StringReader var0, ParticleType<T> var1) throws CommandSyntaxException {
-      return (T)var1.getDeserializer().method20913(var1, var0);
+      return (T)var1.getDeserializer().deserialize(var1, var0);
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {

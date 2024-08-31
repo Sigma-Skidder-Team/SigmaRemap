@@ -241,7 +241,7 @@ public class Class1265 extends AbstractGui {
          if (var14 > 0) {
             int var17 = MathHelper.method37767(Math.min((float)(var5 - var4 - 4) / (float)var15, 9.0F));
             if (var17 <= 3) {
-               float var18 = MathHelper.method37777((float)var10 / 20.0F, 0.0F, 1.0F);
+               float var18 = MathHelper.clamp((float)var10 / 20.0F, 0.0F, 1.0F);
                int var19 = (int)((1.0F - var18) * 255.0F) << 16 | (int)(var18 * 255.0F) << 8;
                String var20 = "" + (float)var10 / 2.0F;
                if (var5 - this.field6692.fontRenderer.getStringWidth(var20 + "hp") >= var4) {

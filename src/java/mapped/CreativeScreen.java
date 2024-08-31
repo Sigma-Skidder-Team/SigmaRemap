@@ -509,7 +509,7 @@ public class CreativeScreen extends Class860<Class5820> {
       if (this.method2647()) {
          int var9 = (this.field4727.field25498.size() + 9 - 1) / 9 - 5;
          this.field4777 = (float)((double)this.field4777 - var5 / (double)var9);
-         this.field4777 = MathHelper.method37777(this.field4777, 0.0F, 1.0F);
+         this.field4777 = MathHelper.clamp(this.field4777, 0.0F, 1.0F);
          this.field4727.method18176(this.field4777);
          return true;
       } else {
@@ -542,7 +542,7 @@ public class CreativeScreen extends Class860<Class5820> {
          int var12 = this.field4735 + 18;
          int var13 = var12 + 112;
          this.field4777 = ((float)var3 - (float)var12 - 7.5F) / ((float)(var13 - var12) - 15.0F);
-         this.field4777 = MathHelper.method37777(this.field4777, 0.0F, 1.0F);
+         this.field4777 = MathHelper.clamp(this.field4777, 0.0F, 1.0F);
          this.field4727.method18176(this.field4777);
          return true;
       }

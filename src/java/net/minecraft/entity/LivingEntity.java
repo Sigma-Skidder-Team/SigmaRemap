@@ -850,7 +850,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void method3043(float var1) {
-      this.dataManager.method35446(field4935, MathHelper.method37777(var1, 0.0F, this.method3075()));
+      this.dataManager.method35446(field4935, MathHelper.clamp(var1, 0.0F, this.method3075()));
    }
 
    public boolean getShouldBeDead() {

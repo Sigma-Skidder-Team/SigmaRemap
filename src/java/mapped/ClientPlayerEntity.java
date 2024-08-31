@@ -964,8 +964,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          float var3 = 600.0F;
          float var4 = 100.0F;
          if (!((float)this.field6149 >= 600.0F)) {
-            float var5 = MathHelper.method37777((float)this.field6149 / 100.0F, 0.0F, 1.0F);
-            float var6 = !((float)this.field6149 < 100.0F) ? MathHelper.method37777(((float)this.field6149 - 100.0F) / 500.0F, 0.0F, 1.0F) : 0.0F;
+            float var5 = MathHelper.clamp((float)this.field6149 / 100.0F, 0.0F, 1.0F);
+            float var6 = !((float)this.field6149 < 100.0F) ? MathHelper.clamp(((float)this.field6149 - 100.0F) / 500.0F, 0.0F, 1.0F) : 0.0F;
             return var5 * 0.6F + var6 * 0.39999998F;
          } else {
             return 1.0F;

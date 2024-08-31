@@ -79,7 +79,7 @@ public class AutoCrystal extends PremiumModule {
             Class8654 var6 = Class8654.method31126(var2);
             var1 = Class8913.method32581(var1, (float) var5.method3070(), (float) var5.method3086(Attributes.field42114));
             int var7 = Class7858.method26317(var5.method2947(), var6);
-            float var8 = MathHelper.method37777((float) var7, 0.0F, 20.0F);
+            float var8 = MathHelper.clamp((float) var7, 0.0F, 20.0F);
             var1 *= 1.0F - var8 / 25.0F;
             if (var0.method3033(Effect.method22287(11))) {
                 var1 -= var1 / 4.0F;

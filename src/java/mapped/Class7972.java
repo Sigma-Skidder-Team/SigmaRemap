@@ -21,7 +21,7 @@ public class Class7972 {
       var6.field31035 = -0.97079635F;
       var7.field31035 = var6.field31035;
       float var8 = (float)Class3261.method11767(var2.method3158());
-      float var9 = MathHelper.method37777((float)var2.method3160(), 0.0F, var8);
+      float var9 = MathHelper.clamp((float)var2.method3160(), 0.0F, var8);
       float var10 = var9 / var8;
       var7.field31036 = MathHelper.lerp(var10, 0.4F, 0.85F) * (float)(!var3 ? -1 : 1);
       var7.field31035 = MathHelper.lerp(var10, var7.field31035, (float) (-Math.PI / 2));

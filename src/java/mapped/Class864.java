@@ -128,7 +128,7 @@ public class Class864 extends Class851<Class5811> {
          int var12 = this.field4735 + 14;
          int var13 = var12 + 54;
          this.field4797 = ((float)var3 - (float)var12 - 7.5F) / ((float)(var13 - var12) - 15.0F);
-         this.field4797 = MathHelper.method37777(this.field4797, 0.0F, 1.0F);
+         this.field4797 = MathHelper.clamp(this.field4797, 0.0F, 1.0F);
          this.field4799 = (int)((double)(this.field4797 * (float)this.method2675()) + 0.5) * 4;
          return true;
       } else {
@@ -141,7 +141,7 @@ public class Class864 extends Class851<Class5811> {
       if (this.method2674()) {
          int var9 = this.method2675();
          this.field4797 = (float)((double)this.field4797 - var5 / (double)var9);
-         this.field4797 = MathHelper.method37777(this.field4797, 0.0F, 1.0F);
+         this.field4797 = MathHelper.clamp(this.field4797, 0.0F, 1.0F);
          this.field4799 = (int)((double)(this.field4797 * (float)var9) + 0.5) * 4;
       }
 

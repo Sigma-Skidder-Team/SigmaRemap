@@ -70,7 +70,7 @@ public class Class5601 implements Packet<IServerPlayNetHandler> {
       this.mirror = buf.method35712(Class2089.class);
       this.rotation = buf.method35712(Class80.class);
       this.field_210399_i = buf.readString(12);
-      this.integrity = MathHelper.method37777(buf.readFloat(), 0.0F, 1.0F);
+      this.integrity = MathHelper.clamp(buf.readFloat(), 0.0F, 1.0F);
       this.seed = buf.method35715();
       int k = buf.readByte();
       this.field_210400_j = (k & 1) != 0;

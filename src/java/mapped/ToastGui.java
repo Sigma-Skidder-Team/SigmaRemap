@@ -86,7 +86,7 @@ public class ToastGui extends AbstractGui {
       }
 
       private float method38404(long var1) {
-         float var5 = MathHelper.method37777((float)(var1 - this.field45686) / 600.0F, 0.0F, 1.0F);
+         float var5 = MathHelper.clamp((float)(var1 - this.field45686) / 600.0F, 0.0F, 1.0F);
          var5 *= var5;
          return this.field45688 != Class2139.field14004 ? var5 : 1.0F - var5;
       }

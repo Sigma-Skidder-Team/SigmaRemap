@@ -92,7 +92,7 @@ public class Class8092 {
 
    public float method28049(float var1, float var2, float var3) {
       float var6 = MathHelper.method37794(var1, var2);
-      float var7 = MathHelper.method37777(var6, -var3, var3);
+      float var7 = MathHelper.clamp(var6, -var3, var3);
       return var1 + var7;
    }
 

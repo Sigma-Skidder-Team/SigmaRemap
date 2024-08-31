@@ -86,7 +86,7 @@ public class Class2598 extends Class2595 {
          }
 
          float var8 = MathHelper.method37766(var3) / this.field16834;
-         float var7 = MathHelper.method37777(var8, 0.1F, 1.0F);
+         float var7 = MathHelper.clamp(var8, 0.1F, 1.0F);
          this.field16827.method4530(this.field16828, var7);
          this.field16829 = MathHelper.method37767(var8 * (float)(this.field16833 - this.field16832) + (float)this.field16832);
       }

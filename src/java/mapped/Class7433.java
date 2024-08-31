@@ -9,7 +9,7 @@ public final class Class7433<T extends IParticleData> extends ParticleType<T> {
    private static String[] field31993;
    public final Function field31994;
 
-   public Class7433(boolean var1, Class6865 var2, Function var3) {
+   public Class7433(boolean var1, IParticleData.IDeserializer var2, Function var3) {
       super(var1, var2);
       this.field31994 = var3;
    }

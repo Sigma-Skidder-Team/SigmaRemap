@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.particles.RedstoneParticleData;
 
 import java.util.function.Function;
 
@@ -20,7 +21,7 @@ public class ParticleTypes {
    public static final Class7435 field34059 = method26742("landing_lava", false);
    public static final Class7435 field34060 = method26742("dripping_water", false);
    public static final Class7435 field34061 = method26742("falling_water", false);
-   public static final ParticleType<Class7437> field34062 = method26743("dust", Class7437.field32002, var0 -> Class7437.field32001);
+   public static final ParticleType<RedstoneParticleData> field34062 = method26743("dust", RedstoneParticleData.DESERIALIZER, var0 -> RedstoneParticleData.field_239802_b_);
    public static final Class7435 field34063 = method26742("effect", false);
    public static final Class7435 field34064 = method26742("elder_guardian", true);
    public static final Class7435 field34065 = method26742("enchanted_hit", false);
@@ -84,7 +85,7 @@ public class ParticleTypes {
       return Registry.<Class7435>method9194(Registry.PARTICLE_TYPE, var0, new Class7435(var1));
    }
 
-   private static <T extends IParticleData> ParticleType<T> method26743(String var0, Class6865<T> var1, Function<ParticleType<T>, Codec<T>> var2) {
+   private static <T extends IParticleData> ParticleType<T> method26743(String var0, IParticleData.IDeserializer<T> var1, Function<ParticleType<T>, Codec<T>> var2) {
       return Registry.<ParticleType<T>>method9194(Registry.PARTICLE_TYPE, var0, new Class7433(false, var1, var2));
    }
 }

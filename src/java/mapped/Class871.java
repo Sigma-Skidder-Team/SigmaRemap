@@ -227,10 +227,10 @@ public class Class871 extends Class851<Class5822> {
          this.field4838 += 0.2F;
       }
 
-      this.field4838 = MathHelper.method37777(this.field4838, 0.0F, 1.0F);
+      this.field4838 = MathHelper.clamp(this.field4838, 0.0F, 1.0F);
       float var7 = (this.field4836 - this.field4834) * 0.4F;
       float var6 = 0.2F;
-      var7 = MathHelper.method37777(var7, -0.2F, 0.2F);
+      var7 = MathHelper.clamp(var7, -0.2F, 0.2F);
       this.field4837 = this.field4837 + (var7 - this.field4837) * 0.9F;
       this.field4834 = this.field4834 + this.field4837;
    }

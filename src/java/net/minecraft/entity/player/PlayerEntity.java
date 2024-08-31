@@ -1942,7 +1942,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public float method2974(float var1) {
-      return MathHelper.method37777(((float)this.field4958 + var1) / this.method2973(), 0.0F, 1.0F);
+      return MathHelper.clamp(((float)this.field4958 + var1) / this.method2973(), 0.0F, 1.0F);
    }
 
    public void resetCooldown() {

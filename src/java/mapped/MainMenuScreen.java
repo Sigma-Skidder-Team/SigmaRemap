@@ -260,16 +260,16 @@ public class MainMenuScreen extends Screen {
       float var7 = !this.field4717 ? 1.0F : (float)(Util.milliTime() - this.field4718) / 1000.0F;
       Class7414.method23710();
       method5686(var1, 0, 0, this.width, this.height, -1);
-      this.field4716.method13754(var4, MathHelper.method37777(var7, 0.0F, 1.0F));
+      this.field4716.method13754(var4, MathHelper.clamp(var7, 0.0F, 1.0F));
       short var8 = 274;
       int var9 = this.width / 2 - 137;
       byte var10 = 30;
       this.mc.getTextureManager().bindTexture(field4705);
       RenderSystem.enableBlend();
       RenderSystem.method27834(Class2339.field15997, Class1981.field12932);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, !this.field4717 ? 1.0F : (float) MathHelper.method37773(MathHelper.method37777(var7, 0.0F, 1.0F)));
+      RenderSystem.method27889(1.0F, 1.0F, 1.0F, !this.field4717 ? 1.0F : (float) MathHelper.method37773(MathHelper.clamp(var7, 0.0F, 1.0F)));
       method5698(var1, 0, 0, this.width, this.height, 0.0F, 0.0F, 16, 128, 16, 128);
-      float var11 = !this.field4717 ? 1.0F : MathHelper.method37777(var7 - 1.0F, 0.0F, 1.0F);
+      float var11 = !this.field4717 ? 1.0F : MathHelper.clamp(var7 - 1.0F, 0.0F, 1.0F);
       int var12 = MathHelper.method37773(var11 * 255.0F) << 24;
       if ((var12 & -67108864) != 0) {
          this.mc.getTextureManager().bindTexture(field4710);

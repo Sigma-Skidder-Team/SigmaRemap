@@ -153,9 +153,9 @@ public class Class1096 extends Class1018 implements Class1011 {
 
          this.field6011 = this.field6012;
          if (!this.method5183()) {
-            this.field6012 = MathHelper.method37777(this.field6012 - 1.0F, 0.0F, 6.0F);
+            this.field6012 = MathHelper.clamp(this.field6012 - 1.0F, 0.0F, 6.0F);
          } else {
-            this.field6012 = MathHelper.method37777(this.field6012 + 1.0F, 0.0F, 6.0F);
+            this.field6012 = MathHelper.clamp(this.field6012 + 1.0F, 0.0F, 6.0F);
          }
       }
 

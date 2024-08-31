@@ -62,12 +62,12 @@ public class Class3623 extends Class3624 {
 
    public void method12269(int var1) {
       this.field19627 = var1;
-      this.method12278(MathHelper.method37777((float)var1 / (float)this.field19628, 0.0F, 1.0F));
+      this.method12278(MathHelper.clamp((float)var1 / (float)this.field19628, 0.0F, 1.0F));
    }
 
    public void method12270(int var1) {
       this.field19628 = var1;
-      this.method12278(MathHelper.method37777((float)this.field19627 / (float)var1, 0.0F, 1.0F));
+      this.method12278(MathHelper.clamp((float)this.field19627 / (float)var1, 0.0F, 1.0F));
    }
 
    public final ITextComponent method12271() {

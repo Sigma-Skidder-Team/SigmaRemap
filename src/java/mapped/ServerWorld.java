@@ -194,7 +194,7 @@ public class ServerWorld extends World implements Class1658 {
             this.thunderingStrength = (float)((double)this.thunderingStrength + 0.01);
          }
 
-         this.thunderingStrength = MathHelper.method37777(this.thunderingStrength, 0.0F, 1.0F);
+         this.thunderingStrength = MathHelper.clamp(this.thunderingStrength, 0.0F, 1.0F);
          this.prevRainingStrength = this.rainingStrength;
          if (!this.worldInfo.method20043()) {
             this.rainingStrength = (float)((double)this.rainingStrength - 0.01);
@@ -202,7 +202,7 @@ public class ServerWorld extends World implements Class1658 {
             this.rainingStrength = (float)((double)this.rainingStrength + 0.01);
          }
 
-         this.rainingStrength = MathHelper.method37777(this.rainingStrength, 0.0F, 1.0F);
+         this.rainingStrength = MathHelper.clamp(this.rainingStrength, 0.0F, 1.0F);
       }
 
       if (this.prevRainingStrength != this.rainingStrength) {

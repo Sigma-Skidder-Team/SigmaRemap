@@ -208,7 +208,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    public void method2725(int var1) {
       float var4 = (float)this.method2930();
       float var5 = (var4 - 1.0F) / var4;
-      this.field4922 = MathHelper.method37777((float)var1 / var4, 0.0F, var5);
+      this.field4922 = MathHelper.clamp((float)var1 / var4, 0.0F, var5);
       this.field4870 = -1;
    }
 

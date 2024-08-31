@@ -273,10 +273,10 @@ public abstract class Entity implements INameable, ICommandSource {
       double var9 = var1 * 0.15;
       this.rotationPitch = (float)((double)this.rotationPitch + var7);
       this.rotationYaw = (float)((double)this.rotationYaw + var9);
-      this.rotationPitch = MathHelper.method37777(this.rotationPitch, -90.0F, 90.0F);
+      this.rotationPitch = MathHelper.clamp(this.rotationPitch, -90.0F, 90.0F);
       this.prevRotationPitch = (float)((double)this.prevRotationPitch + var7);
       this.prevRotationYaw = (float)((double)this.prevRotationYaw + var9);
-      this.prevRotationPitch = MathHelper.method37777(this.prevRotationPitch, -90.0F, 90.0F);
+      this.prevRotationPitch = MathHelper.clamp(this.prevRotationPitch, -90.0F, 90.0F);
       if (this.ridingEntity != null) {
          this.ridingEntity.method3309(this);
       }
@@ -1087,7 +1087,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public void method3269(double var1, double var3, double var5, float var7, float var8) {
       this.method3270(var1, var3, var5);
       this.rotationYaw = var7 % 360.0F;
-      this.rotationPitch = MathHelper.method37777(var8, -90.0F, 90.0F) % 360.0F;
+      this.rotationPitch = MathHelper.clamp(var8, -90.0F, 90.0F) % 360.0F;
       this.prevRotationYaw = this.rotationYaw;
       this.prevRotationPitch = this.rotationPitch;
    }

@@ -126,9 +126,9 @@ public class Class1271 extends AbstractGui {
 
       RenderSystem.popMatrix();
       if (!var8) {
-         this.field6764 = MathHelper.method37777(this.field6764 - 0.04F, 0.0F, 1.0F);
+         this.field6764 = MathHelper.clamp(this.field6764 - 0.04F, 0.0F, 1.0F);
       } else {
-         this.field6764 = MathHelper.method37777(this.field6764 + 0.02F, 0.0F, 0.3F);
+         this.field6764 = MathHelper.clamp(this.field6764 + 0.02F, 0.0F, 0.3F);
       }
    }
 

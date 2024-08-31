@@ -158,7 +158,7 @@ public class Class1015 extends Class1014 implements Class1016 {
       this.field5680 = this.field5677;
       this.field5679 = this.field5678;
       this.field5678 = (float)((double)this.field5678 + (double)(!this.onGround && !this.isPassenger() ? 4 : -1) * 0.3);
-      this.field5678 = MathHelper.method37777(this.field5678, 0.0F, 1.0F);
+      this.field5678 = MathHelper.clamp(this.field5678, 0.0F, 1.0F);
       if (!this.onGround && this.field5681 < 1.0F) {
          this.field5681 = 1.0F;
       }

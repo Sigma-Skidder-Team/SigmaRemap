@@ -26,7 +26,7 @@ public class FogRenderer {
             float var10 = (float)var9.x;
             float var11 = (float)var9.y;
             float var12 = (float)var9.z;
-            float var13 = MathHelper.method37777(MathHelper.cos(var2.method7001(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
+            float var13 = MathHelper.clamp(MathHelper.cos(var2.method7001(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
             BiomeManager var14 = var2.getBiomeManager();
             Vector3d var15 = var0.method37504().method11337(2.0, 2.0, 2.0).method11344(0.25);
             Vector3d var16 = Class8430.method29626(
@@ -97,7 +97,7 @@ public class FogRenderer {
          int var40 = field40352 >> 16 & 0xFF;
          int var41 = field40352 >> 8 & 0xFF;
          int var43 = field40352 & 0xFF;
-         float var45 = MathHelper.method37777((float)(var19 - field40353) / 5000.0F, 0.0F, 1.0F);
+         float var45 = MathHelper.clamp((float)(var19 - field40353) / 5000.0F, 0.0F, 1.0F);
          float var48 = MathHelper.lerp(var45, (float)var40, (float)var32);
          float var54 = MathHelper.lerp(var45, (float)var41, (float)var38);
          float var55 = MathHelper.lerp(var45, (float)var43, (float)var39);

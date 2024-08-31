@@ -93,11 +93,11 @@ public class Class957 extends Class956 implements Class935 {
    }
 
    public float method3874(float var1) {
-      return MathHelper.method37777(((float)this.field5372 + var1) / 200.0F, 0.0F, 1.0F);
+      return MathHelper.clamp(((float)this.field5372 + var1) / 200.0F, 0.0F, 1.0F);
    }
 
    public float method3875(float var1) {
-      return 1.0F - MathHelper.method37777(((float)this.field5373 - var1) / 40.0F, 0.0F, 1.0F);
+      return 1.0F - MathHelper.clamp(((float)this.field5373 - var1) / 40.0F, 0.0F, 1.0F);
    }
 
    @Nullable

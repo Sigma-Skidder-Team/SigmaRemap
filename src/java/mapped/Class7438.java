@@ -5,7 +5,7 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
 
 public class Class7438 implements IParticleData {
-   public static final Class6865<Class7438> field32007 = new Class6866();
+   public static final IDeserializer<Class7438> field32007 = new Class6866();
    private final ParticleType<Class7438> field32008;
    private final ItemStack field32009;
 
@@ -24,7 +24,7 @@ public class Class7438 implements IParticleData {
    }
 
    @Override
-   public String method24010() {
+   public String getParameters() {
       return Registry.PARTICLE_TYPE.getKey(this.getType()) + " " + new Class176(this.field32009.getItem(), this.field32009.method32142()).method504();
    }
 

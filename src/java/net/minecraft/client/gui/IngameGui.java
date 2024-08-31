@@ -406,9 +406,9 @@ public class IngameGui extends AbstractGui {
                         this.method5696(var1, var12, var13, 141, 166, 24, 24);
                         if (var10.method8628() <= 200) {
                             int var15 = 10 - var10.method8628() / 20;
-                            var14 = MathHelper.method37777((float) var10.method8628() / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F)
+                            var14 = MathHelper.clamp((float) var10.method8628() / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F)
                                     + MathHelper.cos((float) var10.method8628() * (float) Math.PI / 5.0F)
-                                    * MathHelper.method37777((float) var15 / 10.0F * 0.25F, 0.0F, 0.25F);
+                                    * MathHelper.clamp((float) var15 / 10.0F * 0.25F, 0.0F, 0.25F);
                         }
                     } else {
                         this.method5696(var1, var12, var13, 165, 166, 24, 24);
@@ -935,7 +935,7 @@ public class IngameGui extends AbstractGui {
 
     private void method5979(Entity var1) {
         if (var1 != null) {
-            float var4 = MathHelper.method37777(1.0F - var1.getBrightness(), 0.0F, 1.0F);
+            float var4 = MathHelper.clamp(1.0F - var1.getBrightness(), 0.0F, 1.0F);
             this.field6723 = (float) ((double) this.field6723 + (double) (var4 - this.field6723) * 0.01);
         }
     }

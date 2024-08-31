@@ -76,9 +76,9 @@ public final class Vector3f {
    }
 
    public void method25274(float var1, float var2) {
-      this.field32903 = MathHelper.method37777(this.field32903, var1, var2);
-      this.field32904 = MathHelper.method37777(this.field32904, var1, var2);
-      this.field32905 = MathHelper.method37777(this.field32905, var1, var2);
+      this.field32903 = MathHelper.clamp(this.field32903, var1, var2);
+      this.field32904 = MathHelper.clamp(this.field32904, var1, var2);
+      this.field32905 = MathHelper.clamp(this.field32905, var1, var2);
    }
 
    public void method25275(float var1, float var2, float var3) {

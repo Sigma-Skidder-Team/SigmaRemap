@@ -23,11 +23,11 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
             double var21 = (double) MathHelper.sin(var20 * (float) (Math.PI / 180.0));
             double var23 = (double)(-MathHelper.cos(var20 * (float) (Math.PI / 180.0)));
             float var25 = (float)var16 * 10.0F;
-            var25 = MathHelper.method37777(var25, -6.0F, 32.0F);
+            var25 = MathHelper.clamp(var25, -6.0F, 32.0F);
             float var26 = (float)(var14 * var21 + var18 * var23) * 100.0F;
-            var26 = MathHelper.method37777(var26, 0.0F, 150.0F);
+            var26 = MathHelper.clamp(var26, 0.0F, 150.0F);
             float var27 = (float)(var14 * var23 - var18 * var21) * 100.0F;
-            var27 = MathHelper.method37777(var27, -20.0F, 20.0F);
+            var27 = MathHelper.clamp(var27, -20.0F, 20.0F);
             if (var26 < 0.0F) {
                var26 = 0.0F;
             }

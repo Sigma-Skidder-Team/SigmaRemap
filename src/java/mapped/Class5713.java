@@ -160,7 +160,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
       } else {
          super.method17842(var1, var2, var3, var4, var5);
          float var21 = (float)var1.method3167() + var5;
-         float var22 = MathHelper.method37777(var21 * var21 / 100.0F, 0.0F, 1.0F);
+         float var22 = MathHelper.clamp(var21 * var21 / 100.0F, 0.0F, 1.0F);
          if (!var1.method3130()) {
             var2.rotate(Vector3f.field32898.rotationDegrees(var22 * (-90.0F - var1.rotationPitch)));
          }

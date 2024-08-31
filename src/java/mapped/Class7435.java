@@ -6,7 +6,7 @@ import net.minecraft.particles.IParticleData;
 
 public class Class7435 extends ParticleType<Class7435> implements IParticleData {
    private static String[] field31997;
-   private static final Class6865<Class7435> field31998 = new Class6868();
+   private static final IDeserializer<Class7435> field31998 = new Class6868();
    private final Codec<Class7435> field31999 = Codec.unit(this::getType);
 
    public Class7435(boolean var1) {
@@ -27,7 +27,7 @@ public class Class7435 extends ParticleType<Class7435> implements IParticleData 
    }
 
    @Override
-   public String method24010() {
+   public String getParameters() {
       return Registry.PARTICLE_TYPE.getKey(this).toString();
    }
 }

@@ -6,6 +6,7 @@ import com.google.common.collect.Sets;
 import com.google.common.collect.UnmodifiableIterator;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
@@ -409,7 +410,7 @@ public class Class3222 extends Block {
          double var16 = 0.5 + (double)(0.4375F * (float)var5.method540()) + (double)(var13 * (float)var6.method540());
          double var18 = 0.5 + (double)(0.4375F * (float)var5.method541()) + (double)(var13 * (float)var6.method541());
          var1.method6746(
-            new Class7437(var4.method25269(), var4.method25270(), var4.method25271(), 1.0F),
+            new RedstoneParticleData(var4.method25269(), var4.method25270(), var4.method25271(), 1.0F),
             (double)var3.getX() + var14,
             (double)var3.getY() + var16,
             (double)var3.getZ() + var18,
@@ -514,8 +515,8 @@ public class Class3222 extends Block {
       for (int var2 = 0; var2 <= 15; var2++) {
          float var3 = (float)var2 / 15.0F;
          float var4 = var3 * 0.6F + (!(var3 > 0.0F) ? 0.3F : 0.4F);
-         float var5 = MathHelper.method37777(var3 * var3 * 0.7F - 0.5F, 0.0F, 1.0F);
-         float var6 = MathHelper.method37777(var3 * var3 * 0.6F - 0.7F, 0.0F, 1.0F);
+         float var5 = MathHelper.clamp(var3 * var3 * 0.7F - 0.5F, 0.0F, 1.0F);
+         float var6 = MathHelper.clamp(var3 * var3 * 0.6F - 0.7F, 0.0F, 1.0F);
          field18657[var2] = new Vector3f(var4, var5, var6);
       }
    }

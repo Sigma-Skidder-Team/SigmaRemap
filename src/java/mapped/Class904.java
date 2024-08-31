@@ -65,7 +65,7 @@ public class Class904 extends ProjectileEntity {
       double var15 = var1.method3442();
       double var17 = var1.getPosZ() - (double)var9 * 0.3;
       this.method3273(var13, var15, var17, var8, var7);
-      Vector3d var19 = new Vector3d((double)(-var10), (double) MathHelper.method37777(-(var12 / var11), -5.0F, 5.0F), (double)(-var9));
+      Vector3d var19 = new Vector3d((double)(-var10), (double) MathHelper.clamp(-(var12 / var11), -5.0F, 5.0F), (double)(-var9));
       double var20 = var19.method11348();
       var19 = var19.method11347(
          0.6 / var20 + 0.5 + this.rand.nextGaussian() * 0.0045,

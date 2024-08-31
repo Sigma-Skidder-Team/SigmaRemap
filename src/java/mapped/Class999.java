@@ -371,7 +371,7 @@ public class Class999 extends Entity {
       var1.method107("RadiusOnUse", this.field5510);
       var1.method107("RadiusPerTick", this.field5511);
       var1.method107("Radius", this.method4098());
-      var1.method109("Particle", this.method4104().method24010());
+      var1.method109("Particle", this.method4104().getParameters());
       if (this.field5513 != null) {
          var1.method104("Owner", this.field5513);
       }

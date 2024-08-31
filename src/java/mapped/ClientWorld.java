@@ -684,7 +684,7 @@ public class ClientWorld extends World {
    public float method6872(float var1) {
       float var4 = this.method7001(var1);
       float var5 = 1.0F - (MathHelper.cos(var4 * (float) (Math.PI * 2)) * 2.0F + 0.2F);
-      var5 = MathHelper.method37777(var5, 0.0F, 1.0F);
+      var5 = MathHelper.clamp(var5, 0.0F, 1.0F);
       var5 = 1.0F - var5;
       var5 = (float)((double)var5 * (1.0 - (double)(this.method6792(var1) * 5.0F) / 16.0));
       var5 = (float)((double)var5 * (1.0 - (double)(this.method6790(var1) * 5.0F) / 16.0));
@@ -694,7 +694,7 @@ public class ClientWorld extends World {
    public Vector3d method6873(BlockPos var1, float var2) {
       float var5 = this.method7001(var2);
       float var6 = MathHelper.cos(var5 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
-      var6 = MathHelper.method37777(var6, 0.0F, 1.0F);
+      var6 = MathHelper.clamp(var6, 0.0F, 1.0F);
       Biome var7 = this.getBiome(var1);
       int var8 = var7.method32498();
       float var9 = (float)(var8 >> 16 & 0xFF) / 255.0F;
@@ -739,7 +739,7 @@ public class ClientWorld extends World {
    public Vector3d method6874(float var1) {
       float var4 = this.method7001(var1);
       float var5 = MathHelper.cos(var4 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
-      var5 = MathHelper.method37777(var5, 0.0F, 1.0F);
+      var5 = MathHelper.clamp(var5, 0.0F, 1.0F);
       float var6 = 1.0F;
       float var7 = 1.0F;
       float var8 = 1.0F;
@@ -770,7 +770,7 @@ public class ClientWorld extends World {
    public float method6875(float var1) {
       float var4 = this.method7001(var1);
       float var5 = 1.0F - (MathHelper.cos(var4 * (float) (Math.PI * 2)) * 2.0F + 0.25F);
-      var5 = MathHelper.method37777(var5, 0.0F, 1.0F);
+      var5 = MathHelper.clamp(var5, 0.0F, 1.0F);
       return var5 * var5 * 0.5F;
    }
 

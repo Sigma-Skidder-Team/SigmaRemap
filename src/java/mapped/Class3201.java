@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
@@ -95,7 +96,7 @@ public class Class3201 extends Class3200 {
       double var8 = (double)var2.getX() + 0.5 + 0.1 * (double)var6.method539() + 0.2 * (double)var7.method539();
       double var10 = (double)var2.getY() + 0.5 + 0.1 * (double)var6.method540() + 0.2 * (double)var7.method540();
       double var12 = (double)var2.getZ() + 0.5 + 0.1 * (double)var6.method541() + 0.2 * (double)var7.method541();
-      var1.method6746(new Class7437(1.0F, 0.0F, 0.0F, var3), var8, var10, var12, 0.0, 0.0, 0.0);
+      var1.method6746(new RedstoneParticleData(1.0F, 0.0F, 0.0F, var3), var8, var10, var12, 0.0, 0.0, 0.0);
    }
 
    @Override

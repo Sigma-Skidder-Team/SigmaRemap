@@ -209,7 +209,7 @@ public enum Class2133 {
          case 18:
             return this.method8825(var1);
          case 19:
-            return MathHelper.method37777(method8826(var1, 0), method8826(var1, 1), method8826(var1, 2));
+            return MathHelper.clamp(method8826(var1, 0), method8826(var1, 1), method8826(var1, 2));
          case 20:
             return MathHelper.method37771(method8826(var1, 0));
          case 21:

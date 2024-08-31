@@ -102,7 +102,7 @@ public class MathHelper {
       }
    }
 
-   public static float method37777(float var0, float var1, float var2) {
+   public static float clamp(float var0, float var1, float var2) {
       if (!(var0 < var1)) {
          return !(var0 > var2) ? var0 : var2;
       } else {
@@ -233,13 +233,13 @@ public class MathHelper {
 
    public static float method37796(float var0, float var1, float var2) {
       float var5 = method37794(var0, var1);
-      float var6 = method37777(var5, -var2, var2);
+      float var6 = clamp(var5, -var2, var2);
       return var1 - var6;
    }
 
    public static float method37797(float var0, float var1, float var2) {
       var2 = method37771(var2);
-      return !(var0 < var1) ? method37777(var0 - var2, var1, var0) : method37777(var0 + var2, var0, var1);
+      return !(var0 < var1) ? clamp(var0 - var2, var1, var0) : clamp(var0 + var2, var0, var1);
    }
 
    public static float method37798(float var0, float var1, float var2) {
