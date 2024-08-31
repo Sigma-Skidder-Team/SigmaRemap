@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
-import mapped.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 
@@ -41,7 +41,7 @@ public class SCustomPayloadPlayPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24554 = var1.method35731();
+      this.field24554 = var1.readResourceLocation();
       int var4 = var1.readableBytes();
       if (var4 >= 0 && var4 <= 1048576) {
          this.field24555 = new PacketBuffer(var1.readBytes(var4));
@@ -52,11 +52,11 @@ public class SCustomPayloadPlayPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35732(this.field24554);
+      var1.writeResourceLocation(this.field24554);
       var1.writeBytes(this.field24555.copy());
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleCustomPayload(this);
    }
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public interface Class4477 {
    ResourceLocation method14093();

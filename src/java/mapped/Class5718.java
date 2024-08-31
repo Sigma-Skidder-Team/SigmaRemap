@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Random;
 
 public class Class5718 extends Class5715<Class1007> {

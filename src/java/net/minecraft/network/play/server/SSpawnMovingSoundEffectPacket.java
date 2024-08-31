@@ -32,16 +32,16 @@ public class SSpawnMovingSoundEffectPacket implements Packet<IClientPlayNetHandl
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24623 = Registry.field16069.method9172(var1.method35714());
+      this.field24623 = Registry.field16069.method9172(var1.readVarInt());
       this.field24624 = var1.<Class2266>method35712(Class2266.class);
-      this.field24625 = var1.method35714();
+      this.field24625 = var1.readVarInt();
       this.field24626 = var1.readFloat();
       this.field24627 = var1.readFloat();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeVarInt(Registry.field16069.method9171(this.field24623));
+      var1.writeVarInt(Registry.field16069.getId(this.field24623));
       var1.method35713(this.field24624);
       var1.writeVarInt(this.field24625);
       var1.writeFloat(this.field24626);
@@ -68,7 +68,7 @@ public class SSpawnMovingSoundEffectPacket implements Packet<IClientPlayNetHandl
       return this.field24627;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleSpawnMovingSoundEffect(this);
    }
 }

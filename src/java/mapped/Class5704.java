@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5704 extends Class5651<Class1107, Class2815<Class1107>> {
    private static final ResourceLocation field25074 = new ResourceLocation("textures/entity/silverfish.png");
 

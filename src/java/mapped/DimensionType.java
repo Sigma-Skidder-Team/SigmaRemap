@@ -5,6 +5,8 @@ import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.Lifecycle;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.ResourceLocation;
+
 import java.io.File;
 import java.util.Optional;
 import java.util.OptionalLong;

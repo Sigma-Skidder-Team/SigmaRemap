@@ -7,6 +7,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;

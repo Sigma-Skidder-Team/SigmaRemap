@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ResourceLocation;
 
 public class Class6693 extends Class6691 {
    private final CompoundNBT field29314;

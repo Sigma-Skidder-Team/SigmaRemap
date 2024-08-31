@@ -86,7 +86,7 @@ public class Class1103 extends Class1009 {
          }
 
          for (int var3 = 0; var3 < 2; var3++) {
-            this.world.method6746(Class7940.field34085, this.method3438(0.5), this.method3441(), this.method3445(0.5), 0.0, 0.0, 0.0);
+            this.world.method6746(ParticleTypes.field34085, this.method3438(0.5), this.method3441(), this.method3445(0.5), 0.0, 0.0, 0.0);
          }
       }
 

@@ -11,6 +11,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -167,7 +168,7 @@ public class Class7999 {
    public void method27319(PacketBuffer var1) {
       if (this.field34392 != null) {
          var1.writeBoolean(true);
-         var1.method35732(this.field34392);
+         var1.writeResourceLocation(this.field34392);
       } else {
          var1.writeBoolean(false);
       }
@@ -186,7 +187,7 @@ public class Class7999 {
          var1.writeVarInt(var7.length);
 
          for (String var11 : var7) {
-            var1.method35729(var11);
+            var1.writeString(var11);
          }
       }
    }
@@ -269,16 +270,16 @@ public class Class7999 {
    }
 
    public static Class7999 method27321(PacketBuffer var0) {
-      ResourceLocation var3 = !var0.readBoolean() ? null : var0.method35731();
+      ResourceLocation var3 = !var0.readBoolean() ? null : var0.readResourceLocation();
       Class9272 var4 = !var0.readBoolean() ? null : Class9272.method34947(var0);
       Map var5 = Class9181.method34339(var0);
-      String[][] var6 = new String[var0.method35714()][];
+      String[][] var6 = new String[var0.readVarInt()][];
 
       for (int var7 = 0; var7 < var6.length; var7++) {
-         var6[var7] = new String[var0.method35714()];
+         var6[var7] = new String[var0.readVarInt()];
 
          for (int var8 = 0; var8 < var6[var7].length; var8++) {
-            var6[var7][var8] = var0.method35728(32767);
+            var6[var7][var8] = var0.readString(32767);
          }
       }
 

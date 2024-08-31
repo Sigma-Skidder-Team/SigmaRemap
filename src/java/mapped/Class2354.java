@@ -15,7 +15,7 @@ public class Class2354 implements Iterable<BlockState> {
    }
 
    public int method9281(BlockState var1) {
-      int var4 = this.field16165.method9171(var1);
+      int var4 = this.field16165.getId(var1);
       if (var4 == -1) {
          var4 = this.field16166++;
          this.field16165.method9268(var1, var4);

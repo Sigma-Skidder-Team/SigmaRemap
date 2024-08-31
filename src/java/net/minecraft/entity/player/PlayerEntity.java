@@ -16,7 +16,9 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -358,7 +360,7 @@ public abstract class PlayerEntity extends LivingEntity {
                if (var1 != 43) {
                   super.method2866(var1);
                } else {
-                  this.method2867(Class7940.field34053);
+                  this.method2867(ParticleTypes.field34053);
                }
             } else {
                this.field4927 = true;
@@ -371,7 +373,7 @@ public abstract class PlayerEntity extends LivingEntity {
       }
    }
 
-   private void method2867(Class7436 var1) {
+   private void method2867(IParticleData var1) {
       for (int var4 = 0; var4 < 5; var4++) {
          double var5 = this.rand.nextGaussian() * 0.02;
          double var7 = this.rand.nextGaussian() * 0.02;
@@ -1183,7 +1185,7 @@ public abstract class PlayerEntity extends LivingEntity {
                   if (this.world instanceof ServerWorld && var31 > 2.0F) {
                      int var22 = (int)((double)var31 * 0.5);
                      ((ServerWorld)this.world)
-                        .method6939(Class7940.field34055, var1.getPosX(), var1.method3440(0.5), var1.getPosZ(), var22, 0.1, 0.0, 0.1, 0.2);
+                        .method6939(ParticleTypes.field34055, var1.getPosX(), var1.method3440(0.5), var1.getPosZ(), var22, 0.1, 0.0, 0.1, 0.2);
                   }
                }
 
@@ -1222,7 +1224,7 @@ public abstract class PlayerEntity extends LivingEntity {
       double var5 = (double) MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0));
       if (this.world instanceof ServerWorld) {
          ((ServerWorld)this.world)
-            .method6939(Class7940.field34096, this.getPosX() + var3, this.method3440(0.5), this.getPosZ() + var5, 0, var3, 0.0, var5, 0.0);
+            .method6939(ParticleTypes.field34096, this.getPosX() + var3, this.method3440(0.5), this.getPosZ() + var5, 0, var3, 0.0, var5, 0.0);
       }
    }
 

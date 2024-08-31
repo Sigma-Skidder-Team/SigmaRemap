@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Random;
 
 public final class Class6869 implements Class6870 {

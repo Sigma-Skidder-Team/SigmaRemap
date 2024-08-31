@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -98,7 +99,7 @@ public class Class8896 {
 
                for (int var11 = 0; var11 < var9.length; var11++) {
                   Block var12 = var9[var11];
-                  int var13 = Registry.BLOCK.method9171(var12);
+                  int var13 = Registry.BLOCK.getId(var12);
                   int[] var14 = null;
                   if (var8.length > 0) {
                      var14 = this.method32390(var12, var8);
@@ -775,7 +776,7 @@ public class Class8896 {
          ResourceLocation var8 = new ResourceLocation(var7);
          EntityType var9 = Class7926.method26598(var8);
          if (var9 != null) {
-            int var10 = Registry.ENTITY_TYPE.method9171(var9);
+            int var10 = Registry.ENTITY_TYPE.getId(var9);
             if (var10 >= 0) {
                var4.add(new Integer(var10));
             } else {

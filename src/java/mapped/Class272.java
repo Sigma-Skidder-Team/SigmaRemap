@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
+import net.minecraft.util.ResourceLocation;
 
 import java.io.BufferedReader;
 import java.io.IOException;

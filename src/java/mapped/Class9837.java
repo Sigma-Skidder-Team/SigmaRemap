@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.ResourceLocation;
 
 public class Class9837 {
    public static final RegistryKey<Class9369> field45937 = RegistryKey.<Class9369>getOrCreateKey(Registry.field16105, new ResourceLocation("empty"));

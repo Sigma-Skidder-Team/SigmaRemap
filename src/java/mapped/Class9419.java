@@ -5,6 +5,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.concurrent.CompletableFuture;
 
 public class Class9419 implements SuggestionProvider<Class6618> {

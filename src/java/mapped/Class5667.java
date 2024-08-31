@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5667 extends Class5666 {
    private static final ResourceLocation field25031 = new ResourceLocation("textures/entity/skeleton/wither_skeleton.png");
 

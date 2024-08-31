@@ -28,7 +28,7 @@ public class STagsListPacket implements Packet<IClientPlayNetHandler> {
       this.field24906.method32662(var1);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleTags(this);
    }
 

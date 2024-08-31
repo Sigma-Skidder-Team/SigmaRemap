@@ -21,14 +21,14 @@ public class SOpenHorseWindowPacket implements Packet<IClientPlayNetHandler> {
       this.field24453 = var3;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleOpenHorseWindow(this);
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24451 = var1.readUnsignedByte();
-      this.field24452 = var1.method35714();
+      this.field24452 = var1.readVarInt();
       this.field24453 = var1.readInt();
    }
 

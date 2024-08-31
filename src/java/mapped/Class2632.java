@@ -74,7 +74,7 @@ public class Class2632 extends Class2628 {
                double var8 = 0.08;
                ((ServerWorld)var3)
                   .method6939(
-                     new Class7438(Class7940.field34082, new ItemStack(Items.field37904)),
+                     new Class7438(ParticleTypes.field34082, new ItemStack(Items.field37904)),
                      (double)var5.getX() + 0.5,
                      (double)var5.getY() + 0.7,
                      (double)var5.getZ() + 0.5,
@@ -104,7 +104,7 @@ public class Class2632 extends Class2628 {
                   double var12 = var6.nextGaussian() * 0.02;
                   ((ServerWorld)var3)
                      .method6939(
-                        Class7940.field34089,
+                        ParticleTypes.field34089,
                         (double)var5.getX() + 0.5,
                         (double)var5.getY(),
                         (double)var5.getZ() + 0.5,

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.ResourceLocation;
 
 import java.io.InputStream;
 import java.util.Optional;

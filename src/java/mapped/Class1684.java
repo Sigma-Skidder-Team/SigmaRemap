@@ -78,7 +78,7 @@ public class Class1684 implements Class1683 {
       int[] var3 = new int[this.field9158.length];
 
       for (int var4 = 0; var4 < this.field9158.length; var4++) {
-         var3[var4] = this.field9157.method9171(this.field9158[var4]);
+         var3[var4] = this.field9157.getId(this.field9158[var4]);
       }
 
       return var3;

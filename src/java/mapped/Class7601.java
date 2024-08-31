@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public interface Class7601 {
    ResourceLocation field32630 = new ResourceLocation("textures/gui/toasts.png");
    Object field32631 = new Object();

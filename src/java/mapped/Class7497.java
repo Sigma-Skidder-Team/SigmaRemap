@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;

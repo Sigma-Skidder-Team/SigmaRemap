@@ -18,6 +18,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -987,7 +988,7 @@ public abstract class Entity implements INameable, ICommandSource {
          double var11 = (this.rand.nextDouble() * 2.0 - 1.0) * (double)this.size.field39968;
          this.world
             .method6746(
-               Class7940.field34052,
+               ParticleTypes.field34052,
                this.getPosX() + var9,
                (double)(var7 + 1.0F),
                this.getPosZ() + var11,
@@ -1002,7 +1003,7 @@ public abstract class Entity implements INameable, ICommandSource {
          double var15 = (this.rand.nextDouble() * 2.0 - 1.0) * (double)this.size.field39968;
          this.world
             .method6746(
-               Class7940.field34099,
+               ParticleTypes.field34099,
                this.getPosX() + var14,
                (double)(var7 + 1.0F),
                this.getPosZ() + var15,
@@ -1031,7 +1032,7 @@ public abstract class Entity implements INameable, ICommandSource {
          Vector3d var8 = this.method3433();
          this.world
             .method6746(
-               new Class7439(Class7940.field34051, var7),
+               new Class7439(ParticleTypes.field34051, var7),
                this.getPosX() + (this.rand.nextDouble() - 0.5) * (double)this.size.field39968,
                this.getPosY() + 0.1,
                this.getPosZ() + (this.rand.nextDouble() - 0.5) * (double)this.size.field39968,

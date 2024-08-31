@@ -93,7 +93,7 @@ public class Class3287 extends Item {
 
                for (int var15 = 0; var15 < 8; var15++) {
                   var2.method6746(
-                     Class7940.field34085, (double)var12 + Math.random(), (double)var13 + Math.random(), (double)var14 + Math.random(), 0.0, 0.0, 0.0
+                     ParticleTypes.field34085, (double)var12 + Math.random(), (double)var13 + Math.random(), (double)var14 + Math.random(), 0.0, 0.0, 0.0
                   );
                }
 

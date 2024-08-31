@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5678 extends Class5676<Class1030> {
    private static final ResourceLocation field25043 = new ResourceLocation("textures/entity/illager/vindicator.png");
 

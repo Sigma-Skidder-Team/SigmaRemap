@@ -6,6 +6,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import java.util.Collection;
 
 import net.minecraft.network.play.server.SStopSoundPacket;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7049 {

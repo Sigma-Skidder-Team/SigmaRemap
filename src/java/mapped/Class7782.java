@@ -210,9 +210,9 @@ public class Class7782 {
       boolean var4 = this.field33371 != Class2141.field14014;
       if (var1) {
          if (!(this.field33378 < 2.0F) && var4) {
-            this.field33373.method6746(Class7940.field34069, this.field33374, this.field33375, this.field33376, 1.0, 0.0, 0.0);
+            this.field33373.method6746(ParticleTypes.field34069, this.field33374, this.field33375, this.field33376, 1.0, 0.0, 0.0);
          } else {
-            this.field33373.method6746(Class7940.field34070, this.field33374, this.field33375, this.field33376, 1.0, 0.0, 0.0);
+            this.field33373.method6746(ParticleTypes.field34070, this.field33374, this.field33375, this.field33376, 1.0, 0.0, 0.0);
          }
       }
 

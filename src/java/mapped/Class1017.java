@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -160,7 +161,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
                this.getPosZ() - 0.3F,
                this.getPosZ() + 0.3F,
                this.method3440(0.5),
-               Class7940.field34111
+               ParticleTypes.field34111
             );
          }
       }
@@ -168,7 +169,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       this.method4428();
    }
 
-   private void method4419(World var1, double var2, double var4, double var6, double var8, double var10, Class7436 var12) {
+   private void method4419(World var1, double var2, double var4, double var6, double var8, double var10, IParticleData var12) {
       var1.method6746(
          var12,
          MathHelper.method37822(var1.rand.nextDouble(), var2, var4),

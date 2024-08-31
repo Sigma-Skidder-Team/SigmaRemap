@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4478 implements Class4477 {
    private static String[] field21668;

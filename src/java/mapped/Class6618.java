@@ -6,6 +6,8 @@ import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;

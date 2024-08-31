@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.ResourceLocation;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;

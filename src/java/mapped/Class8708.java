@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -38,12 +39,12 @@ public class Class8708 {
    }
 
    public static int method31407(Biome var0) {
-      return method31405().method9171(var0);
+      return method31405().getId(var0);
    }
 
    public static int method31408(ResourceLocation var0) {
       Biome var3 = method31410(var0);
-      return method31405().method9171(var3);
+      return method31405().getId(var3);
    }
 
    public static Class8507 method31409(ResourceLocation var0) {

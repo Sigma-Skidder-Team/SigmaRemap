@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
 
 public abstract class Class223<T extends Entity & Class1080, M extends Class2827<T>> extends Class219<T, M> {
    public Class223(Class5714<T, M> var1) {

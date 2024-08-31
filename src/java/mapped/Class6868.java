@@ -7,11 +7,11 @@ import net.minecraft.network.PacketBuffer;
 public final class Class6868 implements Class6865<Class7435> {
    private static String[] field29793;
 
-   public Class7435 method20913(Class7434<Class7435> var1, StringReader var2) throws CommandSyntaxException {
+   public Class7435 method20913(ParticleType<Class7435> var1, StringReader var2) throws CommandSyntaxException {
       return (Class7435)var1;
    }
 
-   public Class7435 method20912(Class7434<Class7435> var1, PacketBuffer var2) {
+   public Class7435 read(ParticleType<Class7435> var1, PacketBuffer var2) {
       return (Class7435)var1;
    }
 }

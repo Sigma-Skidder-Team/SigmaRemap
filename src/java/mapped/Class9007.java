@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Objects;
 
 public class Class9007<T> extends Class9008 {

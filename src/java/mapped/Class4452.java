@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -31,13 +32,13 @@ public class Class4452 implements Class4442 {
          var3.addProperty("default", var4.toString());
       }
 
-      int var11 = ((Registry) Registry.field16035).method9171(var0);
+      int var11 = ((Registry) Registry.field16035).getId(var0);
       var3.addProperty("protocol_id", var11);
       JsonObject var5 = new JsonObject();
 
       for (ResourceLocation var7 : var0.method9190()) {
          T var8 = var0.method9184(var7);
-         int var9 = var0.method9171(var8);
+         int var9 = var0.getId(var8);
          JsonObject var10 = new JsonObject();
          var10.addProperty("protocol_id", var9);
          var5.add(var7.toString(), var10);

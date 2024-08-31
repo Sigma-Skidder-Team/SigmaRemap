@@ -45,10 +45,10 @@ public class SPlayEntityEffectPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24584 = var1.method35714();
+      this.field24584 = var1.readVarInt();
       this.field24585 = var1.readByte();
       this.field24586 = var1.readByte();
-      this.field24587 = var1.method35714();
+      this.field24587 = var1.readVarInt();
       this.field24588 = var1.readByte();
    }
 
@@ -65,7 +65,7 @@ public class SPlayEntityEffectPacket implements Packet<IClientPlayNetHandler> {
       return this.field24587 == 32767;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleEntityEffect(this);
    }
 

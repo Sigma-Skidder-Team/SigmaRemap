@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.util.ResourceLocation;
 
 public class Class8678<T extends ArgumentType<?>> {
    private static String[] field39145;

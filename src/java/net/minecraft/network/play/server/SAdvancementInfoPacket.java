@@ -6,6 +6,7 @@ import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -35,7 +36,7 @@ public class SAdvancementInfoPacket implements Packet<IClientPlayNetHandler> {
       this.field24689 = Maps.newHashMap(var4);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleAdvancementInfo(this);
    }
 
@@ -45,25 +46,25 @@ public class SAdvancementInfoPacket implements Packet<IClientPlayNetHandler> {
       this.field24687 = Maps.newHashMap();
       this.field24688 = Sets.newLinkedHashSet();
       this.field24689 = Maps.newHashMap();
-      int var4 = var1.method35714();
+      int var4 = var1.readVarInt();
 
       for (int var5 = 0; var5 < var4; var5++) {
-         ResourceLocation var6 = var1.method35731();
+         ResourceLocation var6 = var1.readResourceLocation();
          Class7999 var7 = Class7999.method27321(var1);
          this.field24687.put(var6, var7);
       }
 
-      var4 = var1.method35714();
+      var4 = var1.readVarInt();
 
       for (int var10 = 0; var10 < var4; var10++) {
-         ResourceLocation var12 = var1.method35731();
+         ResourceLocation var12 = var1.readResourceLocation();
          this.field24688.add(var12);
       }
 
-      var4 = var1.method35714();
+      var4 = var1.readVarInt();
 
       for (int var11 = 0; var11 < var4; var11++) {
-         ResourceLocation var13 = var1.method35731();
+         ResourceLocation var13 = var1.readResourceLocation();
          this.field24689.put(var13, Class2006.method8494(var1));
       }
    }
@@ -76,20 +77,20 @@ public class SAdvancementInfoPacket implements Packet<IClientPlayNetHandler> {
       for (Entry var5 : this.field24687.entrySet()) {
          ResourceLocation var6 = (ResourceLocation)var5.getKey();
          Class7999 var7 = (Class7999)var5.getValue();
-         var1.method35732(var6);
+         var1.writeResourceLocation(var6);
          var7.method27319(var1);
       }
 
       var1.writeVarInt(this.field24688.size());
 
       for (ResourceLocation var10 : this.field24688) {
-         var1.method35732(var10);
+         var1.writeResourceLocation(var10);
       }
 
       var1.writeVarInt(this.field24689.size());
 
       for (Entry var11 : this.field24689.entrySet()) {
-         var1.method35732((ResourceLocation)var11.getKey());
+         var1.writeResourceLocation((ResourceLocation)var11.getKey());
          ((Class2006)var11.getValue()).method8493(var1);
       }
    }

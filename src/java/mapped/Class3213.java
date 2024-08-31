@@ -58,7 +58,7 @@ public class Class3213 extends Block {
             double var8 = (double)var3.getX() + var4.nextDouble();
             double var10 = (double)var3.getY() - 0.05;
             double var12 = (double)var3.getZ() + var4.nextDouble();
-            var2.method6746(new Class7439(Class7940.field34071, var1), var8, var10, var12, 0.0, 0.0, 0.0);
+            var2.method6746(new Class7439(ParticleTypes.field34071, var1), var8, var10, var12, 0.0, 0.0, 0.0);
          }
       }
    }

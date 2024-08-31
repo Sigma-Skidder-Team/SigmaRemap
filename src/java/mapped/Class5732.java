@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.ResourceLocation;
 
 public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
    private static final ResourceLocation field25143 = new ResourceLocation("textures/entity/minecart.png");

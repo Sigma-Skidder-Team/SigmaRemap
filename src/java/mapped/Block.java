@@ -40,7 +40,7 @@ public class Block extends Class3390 implements Class3303 {
 
    public static int getStateId(BlockState var0) {
       if (var0 != null) {
-         int var3 = field18610.method9171(var0);
+         int var3 = field18610.getId(var0);
          return var3 != -1 ? var3 : 0;
       } else {
          return 0;

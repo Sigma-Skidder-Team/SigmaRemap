@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
+import net.minecraft.util.ResourceLocation;
 
 
 public class Enchant extends Command {

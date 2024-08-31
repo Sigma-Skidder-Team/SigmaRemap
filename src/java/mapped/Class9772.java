@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;

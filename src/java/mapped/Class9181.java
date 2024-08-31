@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,10 +53,10 @@ public class Class9181 {
 
    public static Map<String, Class9181> method34339(PacketBuffer var0) {
       HashMap var3 = Maps.newHashMap();
-      int var4 = var0.method35714();
+      int var4 = var0.readVarInt();
 
       for (int var5 = 0; var5 < var4; var5++) {
-         var3.put(var0.method35728(32767), method34337(var0));
+         var3.put(var0.readString(32767), method34337(var0));
       }
 
       return var3;
@@ -65,7 +66,7 @@ public class Class9181 {
       var1.writeVarInt(var0.size());
 
       for (Entry var5 : var0.entrySet()) {
-         var1.method35729((String)var5.getKey());
+         var1.writeString((String)var5.getKey());
          ((Class9181)var5.getValue()).method34335(var1);
       }
    }

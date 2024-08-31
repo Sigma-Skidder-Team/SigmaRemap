@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5708 extends Class5651<Class1027, Class2891<Class1027>> {
    private static final ResourceLocation field25081 = new ResourceLocation("textures/entity/witch.png");
 

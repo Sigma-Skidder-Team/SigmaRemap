@@ -521,7 +521,7 @@ public class Class9217 {
    }
 
    public static int method34574(Block var0) {
-      return Registry.BLOCK.method9171(var0);
+      return Registry.BLOCK.getId(var0);
    }
 
    public static Class7843 method34575(BlockPos var0, boolean var1) {

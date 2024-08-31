@@ -7,6 +7,7 @@ import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.particles.IParticleData;
 
 public abstract class Class901 extends ProjectileEntity {
    public double field5141;
@@ -76,7 +77,7 @@ public abstract class Class901 extends ProjectileEntity {
                float var14 = 0.25F;
                this.world
                   .method6746(
-                     Class7940.field34052,
+                     ParticleTypes.field34052,
                      var6 - var5.x * 0.25,
                      var8 - var5.y * 0.25,
                      var10 - var5.z * 0.25,
@@ -106,8 +107,8 @@ public abstract class Class901 extends ProjectileEntity {
       return true;
    }
 
-   public Class7436 method3530() {
-      return Class7940.field34092;
+   public IParticleData method3530() {
+      return ParticleTypes.field34092;
    }
 
    public float method3531() {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.nio.file.Path;
 
 public class Class4440 extends Class4441<Fluid> {

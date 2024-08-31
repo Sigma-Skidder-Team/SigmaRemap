@@ -3,6 +3,7 @@ package mapped;
 import java.util.List;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class3290 extends Item {

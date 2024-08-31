@@ -30,7 +30,7 @@ public class Class7366 extends Class7361 {
          this.field31519
             .world
             .method6746(
-               Class7940.field34056,
+               ParticleTypes.field34056,
                var12,
                var14,
                var16,

@@ -429,7 +429,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       }
 
       if (this.method3005() && var7 > 0) {
-         this.world.method6746(Class7940.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
+         this.world.method6746(ParticleTypes.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
          if (!this.world.isRemote) {
             this.method4769(var7);
          }
@@ -841,7 +841,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public void method4970(boolean var1) {
-      Class7435 var4 = !var1 ? Class7940.field34092 : Class7940.field34080;
+      Class7435 var4 = !var1 ? ParticleTypes.field34092 : ParticleTypes.field34080;
 
       for (int var5 = 0; var5 < 7; var5++) {
          double var6 = this.rand.nextGaussian() * 0.02;

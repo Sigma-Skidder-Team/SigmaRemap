@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class9060 {
    @Deprecated
    public static ResourceLocation method33720(String var0) {

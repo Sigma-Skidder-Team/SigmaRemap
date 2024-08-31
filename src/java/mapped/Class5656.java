@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 
 public class Class5656 extends Class5651<Class1094, Class2876<Class1094>> {

@@ -29,7 +29,7 @@ public class Class7365 extends Class7362 {
                this.field31519
                   .world
                   .method6746(
-                     Class7940.field34056,
+                     ParticleTypes.field34056,
                      var11,
                      var13,
                      var15,
@@ -76,7 +76,7 @@ public class Class7365 extends Class7362 {
             this.field31529.method4113(this.field31519);
             this.field31529.method4097(5.0F);
             this.field31529.method4109(200);
-            this.field31529.method4105(Class7940.field34056);
+            this.field31529.method4105(ParticleTypes.field34056);
             this.field31529.method4101(new Class2023(Effects.INSTANT_DAMAGE));
             this.field31519.world.method6916(this.field31529);
          }

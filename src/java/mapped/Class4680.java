@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.function.Function;
 
 import net.minecraft.resources.ResourcePackInfo;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 public abstract class Class4680 implements Class4681 {

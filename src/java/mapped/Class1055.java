@@ -162,7 +162,7 @@ public class Class1055 extends Class1047 {
          Vector3d var6 = var5.method11344(0.3 + (double)(this.rand.nextFloat() * 2.0F));
          ((ServerWorld)this.world)
             .method6939(
-               Class7940.field34095, var3.x, var3.y + 0.5, var3.z, 0, var6.x, var6.y, var6.z, 0.1F
+               ParticleTypes.field34095, var3.x, var3.y + 0.5, var3.z, 0, var6.x, var6.y, var6.z, 0.1F
             );
       }
    }

@@ -32,7 +32,7 @@ public class SMountEntityPacket implements Packet<IClientPlayNetHandler> {
       var1.writeInt(this.field24816);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleEntityAttach(this);
    }
 

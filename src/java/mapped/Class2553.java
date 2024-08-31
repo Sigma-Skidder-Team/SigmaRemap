@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.gson.*;
 import com.mojang.datafixers.util.Either;
+import net.minecraft.util.ResourceLocation;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

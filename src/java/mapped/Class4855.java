@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.ArrayList;
 
 public class Class4855 extends Class4837 {

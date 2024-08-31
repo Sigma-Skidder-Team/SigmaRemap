@@ -135,7 +135,7 @@ public class Class3244 extends Class3241 implements Class3207 {
          if (this.field18703 && var4.nextInt(5) == 0) {
             for (int var7 = 0; var7 < var4.nextInt(1) + 1; var7++) {
                var2.method6746(
-                  Class7940.field34086,
+                  ParticleTypes.field34086,
                   (double)var3.getX() + 0.5,
                   (double)var3.getY() + 0.5,
                   (double)var3.getZ() + 0.5,
@@ -195,7 +195,7 @@ public class Class3244 extends Class3241 implements Class3207 {
 
    public static void method11653(World var0, BlockPos var1, boolean var2, boolean var3) {
       Random var6 = var0.method6814();
-      Class7435 var7 = !var2 ? Class7940.field34106 : Class7940.field34107;
+      Class7435 var7 = !var2 ? ParticleTypes.field34106 : ParticleTypes.field34107;
       var0.method6749(
          var7,
          true,
@@ -208,7 +208,7 @@ public class Class3244 extends Class3241 implements Class3207 {
       );
       if (var3) {
          var0.method6746(
-            Class7940.field34092,
+            ParticleTypes.field34092,
             (double)var1.getX() + 0.25 + var6.nextDouble() / 2.0 * (double)(!var6.nextBoolean() ? -1 : 1),
             (double)var1.getY() + 0.4,
             (double)var1.getZ() + 0.25 + var6.nextDouble() / 2.0 * (double)(!var6.nextBoolean() ? -1 : 1),

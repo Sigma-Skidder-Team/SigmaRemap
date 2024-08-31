@@ -25,7 +25,7 @@ public class Effect {
    }
 
    public static int method22288(Effect var0) {
-      return Registry.EFFECTS.method9171(var0);
+      return Registry.EFFECTS.getId(var0);
    }
 
    public Effect(EffectType var1, int var2) {

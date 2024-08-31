@@ -63,7 +63,7 @@ public class Class1004 extends Entity {
       if (this.field5564 > 0) {
          this.method3257();
          if (this.world.isRemote) {
-            this.world.method6746(Class7940.field34092, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
+            this.world.method6746(ParticleTypes.field34092, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
          }
       } else {
          this.method2904();

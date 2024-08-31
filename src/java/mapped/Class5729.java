@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5729 extends Class5727<Class885> {
    public static final ResourceLocation field25137 = new ResourceLocation("textures/entity/projectiles/spectral_arrow.png");
 

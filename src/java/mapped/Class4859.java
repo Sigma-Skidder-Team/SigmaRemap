@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4859 extends Class4837 {
    private static final Class120 field22655 = Class120.method339(Items.field37899);

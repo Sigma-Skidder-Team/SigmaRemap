@@ -7,6 +7,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.SCustomPayloadPlayPacket;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,7 +20,7 @@ public class Class7393 {
       PacketBuffer var7 = new PacketBuffer(Unpooled.buffer());
       var7.method35708(var1);
       var7.writeInt(var3);
-      var7.method35729(var2);
+      var7.writeString(var2);
       var7.writeInt(var4);
       method23625(var0, var7, SCustomPayloadPlayPacket.field24551);
    }

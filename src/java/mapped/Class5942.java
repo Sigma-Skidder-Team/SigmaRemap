@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 
 public abstract class Class5942<T extends TileEntity> {
    public final TileEntityRendererDispatcher field25928;

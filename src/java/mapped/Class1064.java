@@ -163,7 +163,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       }
 
       if (this.method3005() && var5 > 0) {
-         this.world.method6746(Class7940.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
+         this.world.method6746(ParticleTypes.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
          if (!this.world.isRemote) {
             this.method4769(var5);
          }

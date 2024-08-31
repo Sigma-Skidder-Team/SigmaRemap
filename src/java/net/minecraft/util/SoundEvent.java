@@ -1,7 +1,6 @@
 package net.minecraft.util;
 
 import com.mojang.serialization.Codec;
-import mapped.ResourceLocation;
 
 public class SoundEvent {
    private static String[] field43935;

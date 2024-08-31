@@ -13,6 +13,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import org.apache.logging.log4j.LogManager;
@@ -177,7 +178,7 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
          Class7235.method22719(var0, WorldBorder.field32267),
          var0.get("WanderingTraderSpawnDelay").asInt(0),
          var0.get("WanderingTraderSpawnChance").asInt(0),
-         (UUID)var0.get("WanderingTraderId").read(Class8749.field39430).result().orElse((UUID)null),
+         (UUID)var0.get("WanderingTraderId").read(UUIDCodec.field39430).result().orElse((UUID)null),
          var0.get("ServerBrands")
             .asStream()
             .<String>flatMap(var0x -> Util.method38511(var0x.asString().result()))

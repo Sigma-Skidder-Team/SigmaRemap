@@ -27,6 +27,7 @@ import javax.annotation.Nullable;
 
 import mapped.*;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
@@ -73,18 +74,18 @@ public class PacketBuffer extends ByteBuf {
       }
    }
 
-   public PacketBuffer method35698(byte[] var1) {
+   public PacketBuffer writeByteArray(byte[] var1) {
       this.writeVarInt(var1.length);
       this.writeBytes(var1);
       return this;
    }
 
-   public byte[] method35699() {
+   public byte[] readByteArray() {
       return this.method35700(this.readableBytes());
    }
 
    public byte[] method35700(int var1) {
-      int var4 = this.method35714();
+      int var4 = this.readVarInt();
       if (var4 <= var1) {
          byte[] var5 = new byte[var4];
          this.readBytes(var5);
@@ -109,14 +110,14 @@ public class PacketBuffer extends ByteBuf {
    }
 
    public int[] method35703(int var1) {
-      int var4 = this.method35714();
+      int var4 = this.readVarInt();
       if (var4 > var1) {
          throw new DecoderException("VarIntArray with size " + var4 + " is bigger than allowed " + var1);
       } else {
          int[] var5 = new int[var4];
 
          for (int var6 = 0; var6 < var5.length; var6++) {
-            var5[var6] = this.method35714();
+            var5[var6] = this.readVarInt();
          }
 
          return var5;
@@ -138,7 +139,7 @@ public class PacketBuffer extends ByteBuf {
    }
 
    public long[] method35706(long[] var1, int var2) {
-      int var5 = this.method35714();
+      int var5 = this.readVarInt();
       if (var1 == null || var1.length != var5) {
          if (var5 > var2) {
             throw new DecoderException("LongArray with size " + var5 + " is bigger than allowed " + var2);
@@ -168,22 +169,22 @@ public class PacketBuffer extends ByteBuf {
    }
 
    public ITextComponent method35710() {
-      return ITextComponent$Serializer.func_240643_a_(this.method35728(262144));
+      return ITextComponent$Serializer.func_240643_a_(this.readString(262144));
    }
 
-   public PacketBuffer method35711(ITextComponent var1) {
+   public PacketBuffer writeTextComponent(ITextComponent var1) {
       return this.method35730(ITextComponent$Serializer.toJson(var1), 262144);
    }
 
    public <T extends Enum<T>> T method35712(Class<T> var1) {
-      return (T)var1.getEnumConstants()[this.method35714()];
+      return (T)var1.getEnumConstants()[this.readVarInt()];
    }
 
    public PacketBuffer method35713(Enum<?> var1) {
       return this.writeVarInt(var1.ordinal());
    }
 
-   public int method35714() {
+   public int readVarInt() {
       int var3 = 0;
       int var4 = 0;
 
@@ -315,7 +316,7 @@ public class PacketBuffer extends ByteBuf {
 
    public ItemStack method35726() {
       if (this.readBoolean()) {
-         int var3 = this.method35714();
+         int var3 = this.readVarInt();
          byte var4 = this.readByte();
          ItemStack var5 = new ItemStack(Item.method11702(var3), var4);
          if (!Class9299.field42926.method20214()) {
@@ -331,11 +332,11 @@ public class PacketBuffer extends ByteBuf {
    }
 
    public String method35727() {
-      return this.method35728(32767);
+      return this.readString(32767);
    }
 
-   public String method35728(int var1) {
-      int var4 = this.method35714();
+   public String readString(int var1) {
+      int var4 = this.readVarInt();
       if (var4 <= var1 * 4) {
          if (var4 >= 0) {
             String var5 = this.toString(this.readerIndex(), var4, StandardCharsets.UTF_8);
@@ -353,7 +354,7 @@ public class PacketBuffer extends ByteBuf {
       }
    }
 
-   public PacketBuffer method35729(String var1) {
+   public PacketBuffer writeString(String var1) {
       return this.method35730(var1, 32767);
    }
 
@@ -368,12 +369,12 @@ public class PacketBuffer extends ByteBuf {
       }
    }
 
-   public ResourceLocation method35731() {
-      return new ResourceLocation(this.method35728(32767));
+   public ResourceLocation readResourceLocation() {
+      return new ResourceLocation(this.readString(32767));
    }
 
-   public PacketBuffer method35732(ResourceLocation var1) {
-      this.method35729(var1.toString());
+   public PacketBuffer writeResourceLocation(ResourceLocation var1) {
+      this.writeString(var1.toString());
       return this;
    }
 

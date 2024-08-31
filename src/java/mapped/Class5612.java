@@ -32,7 +32,7 @@ public class Class5612 implements Packet<IServerPlayNetHandler> {
       var1.writeByte(var4);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15623(this);
    }
 

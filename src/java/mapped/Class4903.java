@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4903 extends Class4874<Class4490> {
    private static final ResourceLocation field22737 = new ResourceLocation("filled_bucket");

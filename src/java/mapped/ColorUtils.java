@@ -41,6 +41,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
@@ -670,7 +671,7 @@ public class ColorUtils {
 
          field24949.getConnection().sendPacket(new CUseEntityPacket(var5.method13935(), field24949.player.method3331()));
          if (Class7858.method26311(Class6069.method18810(12), field24949.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
-            field24949.particles.method1195(var5.method13935(), Class7940.field34065);
+            field24949.particles.method1195(var5.method13935(), ParticleTypes.field34065);
          }
 
          boolean var6 = (double)field24949.player.method2974(0.5F) > 0.9 || var4;
@@ -682,7 +683,7 @@ public class ColorUtils {
             && !field24949.player.method3033(Effects.BLINDNESS)
             && !field24949.player.isPassenger();
          if (var7 || field24949.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
-            field24949.particles.method1195(var5.method13935(), Class7940.field34054);
+            field24949.particles.method1195(var5.method13935(), ParticleTypes.field34054);
          }
 
          field24949.player.resetCooldown();

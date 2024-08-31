@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -80,7 +81,7 @@ public final class FluidState extends Class7378<Fluid, FluidState> {
    }
 
    @Nullable
-   public Class7436 method23485() {
+   public IParticleData method23485() {
       return this.method23472().method25054();
    }
 

@@ -207,7 +207,7 @@ public class Class1105 extends Class1009 {
                for (int var4 = 0; var4 < 2; var4++) {
                   this.world
                      .method6746(
-                        Class7940.field34052,
+                        ParticleTypes.field34052,
                         this.method3438(0.5) - var17.x * 1.5,
                         this.method3441() - var17.y * 1.5,
                         this.method3445(0.5) - var17.z * 1.5,
@@ -241,7 +241,7 @@ public class Class1105 extends Class1009 {
                      var15 += 1.8 - var5 + this.rand.nextDouble() * (1.7 - var5);
                      this.world
                         .method6746(
-                           Class7940.field34052,
+                           ParticleTypes.field34052,
                            this.getPosX() + var7 * var15,
                            this.method3442() + var9 * var15,
                            this.getPosZ() + var11 * var15,

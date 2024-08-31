@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 
 public class Class7926 {
    private static String[] field33955;

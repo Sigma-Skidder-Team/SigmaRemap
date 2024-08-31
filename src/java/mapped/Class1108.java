@@ -6,6 +6,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.particles.IParticleData;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -86,8 +88,8 @@ public class Class1108 extends Class1006 implements Class1008 {
       return this.method5319() <= 1;
    }
 
-   public Class7436 method5321() {
-      return Class7940.field34083;
+   public IParticleData method5321() {
+      return ParticleTypes.field34083;
    }
 
    @Override

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4894 extends Class4874<Class4495> {
    private static final ResourceLocation field22728 = new ResourceLocation("cured_zombie_villager");

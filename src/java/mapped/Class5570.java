@@ -30,7 +30,7 @@ public class Class5570 implements Packet<IServerPlayNetHandler> {
       var1.method35736(this.field24708);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15630(this);
    }
 

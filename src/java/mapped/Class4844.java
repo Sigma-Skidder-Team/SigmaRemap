@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public abstract class Class4844 implements Class4843<Class920> {
    public final Class120 field22618;
    public final ItemStack field22619;

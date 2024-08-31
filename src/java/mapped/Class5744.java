@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5744 extends Class5651<Class1099, Class2797<Class1099>> {
    private static final ResourceLocation field25167 = new ResourceLocation("textures/entity/zombie/zombie.png");
    private final float field25168;

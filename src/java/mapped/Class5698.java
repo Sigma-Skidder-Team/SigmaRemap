@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5698 extends Class5651<Class1081, Class2890<Class1081>> {
    private static final ResourceLocation field25068 = new ResourceLocation("textures/entity/creeper/creeper.png");
 

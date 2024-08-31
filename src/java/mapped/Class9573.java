@@ -25,7 +25,7 @@ public class Class9573 extends ByteToMessageDecoder {
             PacketBuffer var8 = new PacketBuffer(Unpooled.wrappedBuffer(var6));
 
             try {
-               int var9 = var8.method35714();
+               int var9 = var8.readVarInt();
                if (var2.readableBytes() < var9) {
                   var2.resetReaderIndex();
                   return;

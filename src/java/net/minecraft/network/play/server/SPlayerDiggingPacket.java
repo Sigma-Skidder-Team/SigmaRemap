@@ -33,7 +33,7 @@ public class SPlayerDiggingPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24785 = var1.method35707();
-      this.field24786 = Block.field18610.method9172(var1.method35714());
+      this.field24786 = Block.field18610.method9172(var1.readVarInt());
       this.field24787 = var1.<CPlayerDiggingPacket.Action>method35712(CPlayerDiggingPacket.Action.class);
       this.field24788 = var1.readBoolean();
    }
@@ -46,7 +46,7 @@ public class SPlayerDiggingPacket implements Packet<IClientPlayNetHandler> {
       var1.writeBoolean(this.field24788);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleAcknowledgePlayerDigging(this);
    }
 

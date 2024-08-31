@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class236 extends Class219<Class1064, Class2854<Class1064>> {
    private static final ResourceLocation[] field884 = new ResourceLocation[]{
       new ResourceLocation("textures/entity/llama/decor/white.png"),

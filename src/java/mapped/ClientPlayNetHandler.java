@@ -39,6 +39,7 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.*;
 import net.minecraft.realms.RealmsScreen;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -134,7 +135,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23272.playerController.method23129(var1.method17290());
       this.field23272.playerController.method23128(var1.method17291());
       this.field23272.gameSettings.method37149();
-      this.field23269.sendPacket(new Class5527(Class5527.field24523, new PacketBuffer(Unpooled.buffer()).method35729(ClientBrandRetriever.getClientModName())));
+      this.field23269.sendPacket(new Class5527(Class5527.field24523, new PacketBuffer(Unpooled.buffer()).writeString(ClientBrandRetriever.getClientModName())));
       this.field23272.getMinecraftGame().method28908();
    }
 
@@ -713,10 +714,10 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                   if (var1.method17193() != 2) {
                      if (var1.method17193() != 4) {
                         if (var1.method17193() == 5) {
-                           this.field23272.particles.method1195(var4, Class7940.field34065);
+                           this.field23272.particles.method1195(var4, ParticleTypes.field34065);
                         }
                      } else {
-                        this.field23272.particles.method1195(var4, Class7940.field34054);
+                        this.field23272.particles.method1195(var4, ParticleTypes.field34054);
                      }
                   } else {
                      PlayerEntity var5 = (PlayerEntity)var4;
@@ -845,7 +846,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var4.method2866(var1.method17179());
             } else {
                byte var5 = 40;
-               this.field23272.particles.method1196(var4, Class7940.field34097, 30);
+               this.field23272.particles.method1196(var4, ParticleTypes.field34097, 30);
                this.field23273.method6745(var4.getPosX(), var4.getPosY(), var4.getPosZ(), Sounds.field27147, var4.method2864(), 1.0F, 1.0F, false);
                if (var4 == this.field23272.player) {
                   this.field23272.gameRenderer.method763(method15785(this.field23272.player));
@@ -1121,7 +1122,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                           this.field23272.player.method5403(var6 == 0.0F);
                                        }
                                     } else {
-                                       this.field23273.method6746(Class7940.field34064, var4.getPosX(), var4.getPosY(), var4.getPosZ(), 0.0, 0.0, 0.0);
+                                       this.field23273.method6746(ParticleTypes.field34064, var4.getPosX(), var4.getPosY(), var4.getPosZ(), 0.0, 0.0, 0.0);
                                        if (var7 == 1) {
                                           this.field23273
                                              .method6743(
@@ -1709,7 +1710,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       try {
          var5 = var1.method17394();
          if (SCustomPayloadPlayPacket.field24537.equals(var4)) {
-            this.field23272.player.method5394(var5.method35728(32767));
+            this.field23272.player.method5394(var5.readString(32767));
          } else if (SCustomPayloadPlayPacket.field24538.equals(var4)) {
             int var6 = var5.readInt();
             float var7 = var5.readFloat();
@@ -1732,7 +1733,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
             this.field23272.debugRenderer.field34472.method15868(var42, var63, var11);
          } else if (SCustomPayloadPlayPacket.field24541.equals(var4)) {
-            DimensionType var43 = this.field23287.method32454().method9184(var5.method35731());
+            DimensionType var43 = this.field23287.method32454().method9184(var5.readResourceLocation());
             Class9764 var53 = new Class9764(var5.readInt(), var5.readInt(), var5.readInt(), var5.readInt(), var5.readInt(), var5.readInt());
             int var64 = var5.readInt();
             ArrayList var73 = Lists.newArrayList();
@@ -1781,7 +1782,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             for (int var79 = 0; var79 < var67; var79++) {
                int var81 = var5.readInt();
                boolean var14 = var5.readBoolean();
-               String var15 = var5.method35728(255);
+               String var15 = var5.readString(255);
                var75.add(new Class4231(var48, var81, var15, var14));
             }
 
@@ -2025,39 +2026,39 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleParticles(SSpawnParticlePacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      if (var1.method17455() == 0) {
-         double var4 = (double)(var1.method17454() * var1.method17451());
-         double var6 = (double)(var1.method17454() * var1.method17452());
-         double var8 = (double)(var1.method17454() * var1.method17453());
+      if (var1.getParticleCount() == 0) {
+         double var4 = (double)(var1.getParticleSpeed() * var1.getXOffset());
+         double var6 = (double)(var1.getParticleSpeed() * var1.getYOffset());
+         double var8 = (double)(var1.getParticleSpeed() * var1.getZOffset());
 
          try {
-            this.field23273.method6747(var1.method17456(), var1.method17447(), var1.method17448(), var1.method17449(), var1.method17450(), var4, var6, var8);
+            this.field23273.method6747(var1.getParticle(), var1.getLongDistanceGirlfriend(), var1.getX(), var1.getY(), var1.getZ(), var4, var6, var8);
          } catch (Throwable var26) {
-            field23267.warn("Could not spawn particle effect {}", var1.method17456());
+            field23267.warn("Could not spawn particle effect {}", var1.getParticle());
          }
       } else {
-         for (int var11 = 0; var11 < var1.method17455(); var11++) {
-            double var12 = this.field23282.nextGaussian() * (double)var1.method17451();
-            double var14 = this.field23282.nextGaussian() * (double)var1.method17452();
-            double var16 = this.field23282.nextGaussian() * (double)var1.method17453();
-            double var18 = this.field23282.nextGaussian() * (double)var1.method17454();
-            double var20 = this.field23282.nextGaussian() * (double)var1.method17454();
-            double var22 = this.field23282.nextGaussian() * (double)var1.method17454();
+         for (int var11 = 0; var11 < var1.getParticleCount(); var11++) {
+            double var12 = this.field23282.nextGaussian() * (double)var1.getXOffset();
+            double var14 = this.field23282.nextGaussian() * (double)var1.getYOffset();
+            double var16 = this.field23282.nextGaussian() * (double)var1.getZOffset();
+            double var18 = this.field23282.nextGaussian() * (double)var1.getParticleSpeed();
+            double var20 = this.field23282.nextGaussian() * (double)var1.getParticleSpeed();
+            double var22 = this.field23282.nextGaussian() * (double)var1.getParticleSpeed();
 
             try {
                this.field23273
                   .method6747(
-                     var1.method17456(),
-                     var1.method17447(),
-                     var1.method17448() + var12,
-                     var1.method17449() + var14,
-                     var1.method17450() + var16,
+                     var1.getParticle(),
+                     var1.getLongDistanceGirlfriend(),
+                     var1.getX() + var12,
+                     var1.getY() + var14,
+                     var1.getZ() + var16,
                      var18,
                      var20,
                      var22
                   );
             } catch (Throwable var25) {
-               field23267.warn("Could not spawn particle effect {}", var1.method17456());
+               field23267.warn("Could not spawn particle effect {}", var1.getParticle());
                return;
             }
          }

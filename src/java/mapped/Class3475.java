@@ -147,7 +147,7 @@ public class Class3475 extends Block implements Class3476 {
          double var16 = var12.nextGaussian() * 0.02;
          double var18 = var12.nextGaussian() * 0.02;
          var0.method6746(
-            Class7940.field34079,
+            ParticleTypes.field34079,
             (double)var1.getX() + 0.13125F + 0.7375F * (double)var12.nextFloat(),
             (double)var1.getY() + var6 + (double)var12.nextFloat() * (1.0 - var6),
             (double)var1.getZ() + 0.13125F + 0.7375F * (double)var12.nextFloat(),

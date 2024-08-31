@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public abstract class Class4457 implements Class4477 {
    private final ResourceLocation field21634;

@@ -20,6 +20,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.*;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -184,7 +185,7 @@ public abstract class LivingEntity extends Entity {
             double var9 = Math.min((double)(0.2F + var8 / 15.0F), 2.5);
             int var11 = (int)(150.0 * var9);
             ((ServerWorld)this.world)
-               .method6939(new Class7439(Class7940.field34051, var4), this.getPosX(), this.getPosY(), this.getPosZ(), var11, 0.0, 0.0, 0.0, 0.15F);
+               .method6939(new Class7439(ParticleTypes.field34051, var4), this.getPosX(), this.getPosY(), this.getPosZ(), var11, 0.0, 0.0, 0.0, 0.15F);
          }
       }
 
@@ -249,7 +250,7 @@ public abstract class LivingEntity extends Entity {
                      double var15 = this.rand.nextDouble() - this.rand.nextDouble();
                      this.world
                         .method6746(
-                           Class7940.field34052,
+                           ParticleTypes.field34052,
                            this.getPosX() + var11,
                            this.getPosY() + var13,
                            this.getPosZ() + var15,
@@ -337,7 +338,7 @@ public abstract class LivingEntity extends Entity {
       Vector3d var3 = this.method3433();
       this.world
          .method6746(
-            Class7940.field34076,
+            ParticleTypes.field34076,
             this.getPosX() + (this.rand.nextDouble() - 0.5) * (double)this.method3429(),
             this.getPosY() + 0.1,
             this.getPosZ() + (this.rand.nextDouble() - 0.5) * (double)this.method3429(),
@@ -426,7 +427,7 @@ public abstract class LivingEntity extends Entity {
             double var4 = this.rand.nextGaussian() * 0.02;
             double var6 = this.rand.nextGaussian() * 0.02;
             double var8 = this.rand.nextGaussian() * 0.02;
-            this.world.method6746(Class7940.field34089, this.method3438(1.0), this.method3441(), this.method3445(1.0), var4, var6, var8);
+            this.world.method6746(ParticleTypes.field34089, this.method3438(1.0), this.method3441(), this.method3445(1.0), var4, var6, var8);
          }
       }
    }
@@ -650,7 +651,7 @@ public abstract class LivingEntity extends Entity {
             double var11 = (double)(var14 >> 0 & 0xFF) / 255.0;
             this.world
                .method6746(
-                  var15 ? Class7940.field34048 : Class7940.field34068, this.method3438(0.5), this.method3441(), this.method3445(0.5), var7, var9, var11
+                  var15 ? ParticleTypes.field34048 : ParticleTypes.field34068, this.method3438(0.5), this.method3441(), this.method3445(0.5), var7, var9, var11
                );
          }
       }
@@ -1614,7 +1615,7 @@ public abstract class LivingEntity extends Entity {
                double var20 = MathHelper.method37822(var13, this.prevPosY, this.getPosY()) + this.rand.nextDouble() * (double)this.method3430();
                double var22 = MathHelper.method37822(var13, this.prevPosZ, this.getPosZ())
                   + (this.rand.nextDouble() - 0.5) * (double)this.method3429() * 2.0;
-               this.world.method6746(Class7940.field34090, var18, var20, var22, (double)var15, (double)var16, (double)var17);
+               this.world.method6746(ParticleTypes.field34090, var18, var20, var22, (double)var15, (double)var16, (double)var17);
             }
             break;
          case 47:
@@ -2772,7 +2773,7 @@ public abstract class LivingEntity extends Entity {
          var9 = var9.method11339(this.getPosX(), this.method3442(), this.getPosZ());
          this.world
             .method6746(
-               new Class7438(Class7940.field34082, var1),
+               new Class7438(ParticleTypes.field34082, var1),
                var9.x,
                var9.y,
                var9.z,

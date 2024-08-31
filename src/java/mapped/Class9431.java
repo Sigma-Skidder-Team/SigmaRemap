@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public final class Class9431 {
    private final ResourceLocation field43750;
    private int field43751;

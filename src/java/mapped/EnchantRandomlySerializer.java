@@ -8,6 +8,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSyntaxException;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.ArrayList;
 
 public class EnchantRandomlySerializer extends LootFunctionSerializer<Class134> {

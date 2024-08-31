@@ -32,7 +32,7 @@ public class SSpawnMobPacket implements Packet<IClientPlayNetHandler> {
    public SSpawnMobPacket(LivingEntity var1) {
       this.field24760 = var1.method3205();
       this.field24761 = var1.getUniqueID();
-      this.field24762 = Registry.ENTITY_TYPE.method9171(var1.getType());
+      this.field24762 = Registry.ENTITY_TYPE.getId(var1.getType());
       this.field24763 = var1.getPosX();
       this.field24764 = var1.getPosY();
       this.field24765 = var1.getPosZ();
@@ -51,9 +51,9 @@ public class SSpawnMobPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24760 = var1.method35714();
+      this.field24760 = var1.readVarInt();
       this.field24761 = var1.method35717();
-      this.field24762 = var1.method35714();
+      this.field24762 = var1.readVarInt();
       this.field24763 = var1.readDouble();
       this.field24764 = var1.readDouble();
       this.field24765 = var1.readDouble();
@@ -81,7 +81,7 @@ public class SSpawnMobPacket implements Packet<IClientPlayNetHandler> {
       var1.writeShort(this.field24768);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleSpawnMob(this);
    }
 

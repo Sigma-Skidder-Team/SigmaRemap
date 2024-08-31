@@ -14,6 +14,8 @@ import javax.annotation.Nullable;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -147,14 +149,14 @@ public final class Class8354 {
    }
 
    public static Class28 method29281(UUID var0) {
-      return new Class28(Class8749.method31564(var0));
+      return new Class28(UUIDCodec.encodeUUID(var0));
    }
 
    public static UUID method29282(Class30 var0) {
       if (var0.method75() == Class28.field52) {
          int[] var3 = ((Class28)var0).method77();
          if (var3.length == 4) {
-            return Class8749.method31563(var3);
+            return UUIDCodec.decodeUUID(var3);
          } else {
             throw new IllegalArgumentException("Expected UUID-Array to be of length 4, but found " + var3.length + ".");
          }

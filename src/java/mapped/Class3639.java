@@ -5,6 +5,7 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.types.templates.Const.PrimitiveType;
 import com.mojang.serialization.codecs.PrimitiveCodec;
+import net.minecraft.util.ResourceLocation;
 
 public class Class3639 extends Schema {
    private static String[] field19679;

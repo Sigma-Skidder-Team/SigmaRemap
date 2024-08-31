@@ -138,7 +138,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
       if (this.world.isRemote && this.field5123 % 2 < 2) {
          this.world
             .method6746(
-               Class7940.field34072,
+               ParticleTypes.field34072,
                this.getPosX(),
                this.getPosY() - 0.3,
                this.getPosZ(),
@@ -244,7 +244,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
             for (int var7 = 0; var7 < this.rand.nextInt(3) + 2; var7++) {
                this.world
                   .method6746(
-                     Class7940.field34089,
+                     ParticleTypes.field34089,
                      this.getPosX(),
                      this.getPosY(),
                      this.getPosZ(),

@@ -77,7 +77,7 @@ public class ItemColors {
    }
 
    public int method33258(ItemStack var1, int var2) {
-      Class7216 var5 = this.field41160.method9172(Registry.ITEM.method9171(var1.getItem()));
+      Class7216 var5 = this.field41160.method9172(Registry.ITEM.getId(var1.getItem()));
       return var5 != null ? var5.method22661(var1, var2) : -1;
    }
 

@@ -35,7 +35,7 @@ public class CPlayerDiggingPacket implements Packet<IServerPlayNetHandler> {
       var1.writeByte(this.field24383.method533());
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15624(this);
    }
 

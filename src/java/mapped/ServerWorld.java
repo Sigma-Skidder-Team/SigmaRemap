@@ -18,6 +18,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.*;
+import net.minecraft.particles.IParticleData;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -1009,7 +1011,7 @@ public class ServerWorld extends World implements Class1658 {
       return this.field9045.method1435();
    }
 
-   public <T extends Class7436> int method6939(T var1, double var2, double var4, double var6, int var8, double var9, double var11, double var13, double var15) {
+   public <T extends IParticleData> int method6939(T var1, double var2, double var4, double var6, int var8, double var9, double var11, double var13, double var15) {
       SSpawnParticlePacket var19 = new SSpawnParticlePacket(var1, false, var2, var4, var6, (float)var9, (float)var11, (float)var13, (float)var15, var8);
       int var20 = 0;
 
@@ -1023,7 +1025,7 @@ public class ServerWorld extends World implements Class1658 {
       return var20;
    }
 
-   public <T extends Class7436> boolean method6940(
+   public <T extends IParticleData> boolean method6940(
            ServerPlayerEntity var1, T var2, boolean var3, double var4, double var6, double var8, int var10, double var11, double var13, double var15, double var17
    ) {
       SSpawnParticlePacket var21 = new SSpawnParticlePacket(var2, var3, var4, var6, var8, (float)var11, (float)var13, (float)var15, (float)var17, var10);

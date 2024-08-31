@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Optional;
 import javax.annotation.Nullable;
 

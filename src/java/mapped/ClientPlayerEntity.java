@@ -547,12 +547,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method2795(Entity var1) {
-      this.field6132.particles.method1195(var1, Class7940.field34054);
+      this.field6132.particles.method1195(var1, ParticleTypes.field34054);
    }
 
    @Override
    public void method2796(Entity var1) {
-      this.field6132.particles.method1195(var1, Class7940.field34065);
+      this.field6132.particles.method1195(var1, ParticleTypes.field34065);
    }
 
    @Override

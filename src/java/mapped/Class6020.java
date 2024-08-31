@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class6020 implements Class6021<Item> {
    private static String[] field26218;
 

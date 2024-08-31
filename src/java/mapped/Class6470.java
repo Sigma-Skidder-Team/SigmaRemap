@@ -17,7 +17,7 @@ public final class Class6470 implements Class6466<Optional<BlockState>> {
    }
 
    public Optional<BlockState> method19645(PacketBuffer var1) {
-      int var4 = var1.method35714();
+      int var4 = var1.readVarInt();
       return var4 != 0 ? Optional.<BlockState>of(Block.method11536(var4)) : Optional.<BlockState>empty();
    }
 

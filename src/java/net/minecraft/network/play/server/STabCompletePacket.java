@@ -28,15 +28,15 @@ public class STabCompletePacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24605 = var1.method35714();
-      int var4 = var1.method35714();
-      int var5 = var1.method35714();
+      this.field24605 = var1.readVarInt();
+      int var4 = var1.readVarInt();
+      int var5 = var1.readVarInt();
       StringRange var6 = StringRange.between(var4, var4 + var5);
-      int var7 = var1.method35714();
+      int var7 = var1.readVarInt();
       ArrayList var8 = Lists.newArrayListWithCapacity(var7);
 
       for (int var9 = 0; var9 < var7; var9++) {
-         String var10 = var1.method35728(32767);
+         String var10 = var1.readString(32767);
          ITextComponent var11 = !var1.readBoolean() ? null : var1.method35710();
          var8.add(new Suggestion(var6, var10, var11));
       }
@@ -52,15 +52,15 @@ public class STabCompletePacket implements Packet<IClientPlayNetHandler> {
       var1.writeVarInt(this.field24606.getList().size());
 
       for (Suggestion var5 : this.field24606.getList()) {
-         var1.method35729(var5.getText());
+         var1.writeString(var5.getText());
          var1.writeBoolean(var5.getTooltip() != null);
          if (var5.getTooltip() != null) {
-            var1.method35711(TextComponentUtils.toTextComponent(var5.getTooltip()));
+            var1.writeTextComponent(TextComponentUtils.toTextComponent(var5.getTooltip()));
          }
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleTabComplete(this);
    }
 

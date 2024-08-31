@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4424;
 import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Collection;
@@ -68,7 +69,7 @@ public class Class9716 {
    }
 
    public static int method38065(Block var0) {
-      return Registry.BLOCK.method9171(var0);
+      return Registry.BLOCK.getId(var0);
    }
 
    public static Block method38066(ResourceLocation var0) {

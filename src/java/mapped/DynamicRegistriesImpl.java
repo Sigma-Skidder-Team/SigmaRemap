@@ -5,6 +5,8 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Lifecycle;
 import com.mojang.serialization.codecs.UnboundedMapCodec;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Map;
 import java.util.Optional;
 import java.util.Map.Entry;

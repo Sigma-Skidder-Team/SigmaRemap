@@ -86,7 +86,7 @@ public class Class945 extends TileEntity implements Class946, Class935 {
                   + (double)((float)var8.method537().method541() * 0.3125F);
 
                for (int var16 = 0; var16 < 4; var16++) {
-                  var3.method6746(Class7940.field34092, var10, var12, var14, 0.0, 5.0E-4, 0.0);
+                  var3.method6746(ParticleTypes.field34092, var10, var12, var14, 0.0, 5.0E-4, 0.0);
                }
             }
          }

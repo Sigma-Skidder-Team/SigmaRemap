@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Map;
 
 public class Class9017 {

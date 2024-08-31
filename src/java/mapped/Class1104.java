@@ -119,7 +119,7 @@ public class Class1104 extends Class1009 {
          for (int var3 = 0; var3 < 2; var3++) {
             this.world
                .method6746(
-                  Class7940.field34090,
+                  ParticleTypes.field34090,
                   this.method3438(0.5),
                   this.method3441(),
                   this.method3445(0.5),

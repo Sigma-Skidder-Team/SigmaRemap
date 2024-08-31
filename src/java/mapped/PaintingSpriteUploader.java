@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.stream.Stream;
 
 public class PaintingSpriteUploader extends Class277 {

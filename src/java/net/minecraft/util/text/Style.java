@@ -1,6 +1,6 @@
 package net.minecraft.util.text;
 
-import mapped.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.HoverEvent;
 

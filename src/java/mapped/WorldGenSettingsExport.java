@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.DynamicOps;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Optional;
 
 public class WorldGenSettingsExport<T> extends Class6712<T> {

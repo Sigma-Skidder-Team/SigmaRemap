@@ -4,6 +4,8 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Multimap;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Supplier;

@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.util.Util;
 import net.minecraft.realms.RealmsScreen;
+import net.minecraft.util.ResourceLocation;
 
 public class Class816 extends RealmsScreen {
    private static final ResourceLocation field4436 = new ResourceLocation("realms", "textures/gui/realms/invite_icon.png");

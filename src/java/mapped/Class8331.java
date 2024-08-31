@@ -5,6 +5,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
+import net.minecraft.util.ResourceLocation;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;

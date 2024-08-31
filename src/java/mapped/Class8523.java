@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.ResourceLocation;
 
 public class Class8523 {
    private static final Class7872 field38248 = new Class7872(

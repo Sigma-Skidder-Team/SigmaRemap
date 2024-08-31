@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.*;
 
 import javax.annotation.Nullable;

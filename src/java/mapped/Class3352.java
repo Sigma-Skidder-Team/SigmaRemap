@@ -37,7 +37,7 @@ public class Class3352 extends Class3350 {
             var2.method6745(var7, var9, var11, Sounds.field27107, Class2266.field14732, 1.0F, 1.0F, false);
          }
 
-         var2.method6746(Class7940.field34092, var7, var9 + 1.1, var11, 0.0, 0.0, 0.0);
+         var2.method6746(ParticleTypes.field34092, var7, var9 + 1.1, var11, 0.0, 0.0, 0.0);
       }
    }
 }

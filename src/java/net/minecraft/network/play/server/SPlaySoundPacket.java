@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import mapped.Class2266;
 import net.minecraft.network.PacketBuffer;
-import mapped.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import mapped.Vector3d;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -34,7 +34,7 @@ public class SPlaySoundPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24315 = var1.method35731();
+      this.field24315 = var1.readResourceLocation();
       this.field24316 = var1.<Class2266>method35712(Class2266.class);
       this.field24317 = var1.readInt();
       this.field24318 = var1.readInt();
@@ -45,7 +45,7 @@ public class SPlaySoundPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35732(this.field24315);
+      var1.writeResourceLocation(this.field24315);
       var1.method35713(this.field24316);
       var1.writeInt(this.field24317);
       var1.writeInt(this.field24318);
@@ -82,7 +82,7 @@ public class SPlaySoundPacket implements Packet<IClientPlayNetHandler> {
       return this.field24321;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleCustomSound(this);
    }
 }

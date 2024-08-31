@@ -6,6 +6,8 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Map;
 
 public class Class8634 {

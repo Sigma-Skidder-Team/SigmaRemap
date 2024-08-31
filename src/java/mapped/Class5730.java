@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 
 public class Class5730 extends Class5715<Class905> {

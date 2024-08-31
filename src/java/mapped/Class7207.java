@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Optional;
 
 public interface Class7207<T extends Class4843<?>> {

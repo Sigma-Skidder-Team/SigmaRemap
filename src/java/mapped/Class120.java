@@ -5,6 +5,7 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntComparators;
 import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.Arrays;
 import java.util.function.Predicate;
@@ -118,7 +119,7 @@ public final class Class120 implements Predicate<ItemStack> {
    }
 
    public static Class120 method343(PacketBuffer var0) {
-      int var3 = var0.method35714();
+      int var3 = var0.readVarInt();
       return method338(Stream.<Class4826>generate(() -> new Class4827(var0.method35726())).limit(var3));
    }
 

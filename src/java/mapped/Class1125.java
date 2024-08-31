@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class1125 extends Class851<Class5827> {
    private static final ResourceLocation field6161 = new ResourceLocation("textures/gui/container/horse.png");
    private final AbstractHorseEntity field6162;

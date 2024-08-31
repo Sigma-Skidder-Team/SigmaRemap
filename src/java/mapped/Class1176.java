@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.LanguageMap;
 import net.minecraft.util.text.StringTextComponent;

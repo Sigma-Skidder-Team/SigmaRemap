@@ -17,7 +17,7 @@ public class Class540 implements Runnable {
       ColorUtils.method17735(this.field2586, true);
 
       for (int var3 = 0; var3 < 10; var3++) {
-         AutoCrystal.method16394().particles.method1195(this.field2586, Class7940.field34054);
+         AutoCrystal.method16394().particles.method1195(this.field2586, ParticleTypes.field34054);
       }
    }
 }

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.ResourceLocation;
 
 public class Class5830 extends Class5828<Class926> {
    public static final ResourceLocation field25539 = new ResourceLocation("textures/atlas/blocks.png");

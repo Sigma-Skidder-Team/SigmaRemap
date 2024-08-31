@@ -3,6 +3,8 @@ package mapped;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.util.Properties;
+
+import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 public class Class9200 {

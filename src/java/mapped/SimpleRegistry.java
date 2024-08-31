@@ -11,6 +11,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenCustomHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.ResourceLocation;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -119,7 +120,7 @@ public class SimpleRegistry<T> extends MutableRegistry<T> {
    }
 
    @Override
-   public int method9171(T var1) {
+   public int getId(T var1) {
       return this.field16143.getInt(var1);
    }
 
@@ -198,7 +199,7 @@ public class SimpleRegistry<T> extends MutableRegistry<T> {
          Builder<Class9581<T>> var3 = ImmutableList.builder();
 
          for (T var5 : var0x) {
-            var3.add(new Class9581<>(var0x.method9182(var5).get(), var0x.method9171(var5), var5));
+            var3.add(new Class9581<>(var0x.method9182(var5).get(), var0x.getId(var5), var5));
          }
 
          return var3.build();

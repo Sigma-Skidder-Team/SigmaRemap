@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
-import mapped.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 
@@ -19,14 +19,14 @@ public class SSelectAdvancementsTabPacket implements Packet<IClientPlayNetHandle
       this.field24463 = var1;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleSelectAdvancementsTab(this);
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       if (var1.readBoolean()) {
-         this.field24463 = var1.method35731();
+         this.field24463 = var1.readResourceLocation();
       }
    }
 
@@ -34,7 +34,7 @@ public class SSelectAdvancementsTabPacket implements Packet<IClientPlayNetHandle
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeBoolean(this.field24463 != null);
       if (this.field24463 != null) {
-         var1.method35732(this.field24463);
+         var1.writeResourceLocation(this.field24463);
       }
    }
 

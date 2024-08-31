@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Collection;
 import java.util.Map;
 import java.util.function.Function;

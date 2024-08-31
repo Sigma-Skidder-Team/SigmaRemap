@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
 import javax.annotation.Nullable;

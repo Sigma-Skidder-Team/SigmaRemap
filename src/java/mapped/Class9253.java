@@ -5,6 +5,8 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Streams;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;

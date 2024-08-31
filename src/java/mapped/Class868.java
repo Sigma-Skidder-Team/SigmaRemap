@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class868 extends Class851<Class5813> implements Class867<Class5813> {

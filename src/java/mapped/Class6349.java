@@ -3,6 +3,7 @@ package mapped;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
 

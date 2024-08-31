@@ -30,7 +30,7 @@ public class SChangeBlockPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24887 = var1.method35707();
-      this.field24888 = Block.field18610.method9172(var1.method35714());
+      this.field24888 = Block.field18610.method9172(var1.readVarInt());
    }
 
    @Override
@@ -39,7 +39,7 @@ public class SChangeBlockPacket implements Packet<IClientPlayNetHandler> {
       var1.writeVarInt(Block.getStateId(this.field24888));
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleBlockChange(this);
    }
 

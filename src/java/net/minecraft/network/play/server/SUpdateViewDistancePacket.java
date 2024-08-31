@@ -19,7 +19,7 @@ public class SUpdateViewDistancePacket implements Packet<IClientPlayNetHandler> 
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24428 = var1.method35714();
+      this.field24428 = var1.readVarInt();
    }
 
    @Override
@@ -27,7 +27,7 @@ public class SUpdateViewDistancePacket implements Packet<IClientPlayNetHandler> 
       var1.writeVarInt(this.field24428);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleUpdateViewDistancePacket(this);
    }
 

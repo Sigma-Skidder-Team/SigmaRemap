@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import net.minecraft.util.ResourceLocation;
+
 import javax.annotation.Nullable;
 
 public class Class4880 extends Class4874<Class4479> {

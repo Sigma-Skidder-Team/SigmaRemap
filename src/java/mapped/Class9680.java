@@ -11,6 +11,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
@@ -1020,7 +1021,7 @@ public class Class9680 {
       } else {
          EntityType var6 = var0.method11855(var1.method32142());
          if (var6 != null) {
-            int var7 = Registry.ENTITY_TYPE.method9171(var6);
+            int var7 = Registry.ENTITY_TYPE.getId(var6);
             if (var7 >= 0) {
                int[] var8 = var2 != 0 ? field45260 : field45259;
                if (var8 != null) {

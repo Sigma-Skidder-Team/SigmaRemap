@@ -77,7 +77,7 @@ public abstract class Class1031 extends Class1025 {
          float var12 = MathHelper.sin(var10);
          this.world
             .method6746(
-               Class7940.field34068,
+               ParticleTypes.field34068,
                this.getPosX() + (double)var11 * 0.6,
                this.getPosY() + 1.8,
                this.getPosZ() + (double)var12 * 0.6,
@@ -87,7 +87,7 @@ public abstract class Class1031 extends Class1025 {
             );
          this.world
             .method6746(
-               Class7940.field34068,
+               ParticleTypes.field34068,
                this.getPosX() - (double)var11 * 0.6,
                this.getPosY() + 1.8,
                this.getPosZ() - (double)var12 * 0.6,

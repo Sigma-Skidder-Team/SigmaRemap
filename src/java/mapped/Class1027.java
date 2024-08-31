@@ -162,7 +162,7 @@ public class Class1027 extends Class1026 implements Class1022 {
          for (int var4 = 0; var4 < this.rand.nextInt(35) + 10; var4++) {
             this.world
                .method6746(
-                  Class7940.field34100,
+                  ParticleTypes.field34100,
                   this.getPosX() + this.rand.nextGaussian() * 0.13F,
                   this.getBoundingBox().field28453 + 0.5 + this.rand.nextGaussian() * 0.13F,
                   this.getPosZ() + this.rand.nextGaussian() * 0.13F,

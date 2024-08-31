@@ -21,7 +21,7 @@ public class SWindowPropertyPacket implements Packet<IClientPlayNetHandler> {
       this.field24337 = var3;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleWindowProperty(this);
    }
 

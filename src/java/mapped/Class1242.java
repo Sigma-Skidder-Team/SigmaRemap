@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.realmsclient.gui.screens.RealmsResetWorldScreen;
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class1242 extends Button {

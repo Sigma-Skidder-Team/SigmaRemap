@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4886 extends Class4874<Class4471> {
    private static final ResourceLocation field22720 = new ResourceLocation("construct_beacon");

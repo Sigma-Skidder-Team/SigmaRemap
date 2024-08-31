@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
 
@@ -30,7 +31,7 @@ public class Class5466 implements Packet<IServerPlayNetHandler> {
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24262 = var1.<Class2238>method35712(Class2238.class);
       if (this.field24262 == Class2238.field14644) {
-         this.field24263 = var1.method35731();
+         this.field24263 = var1.readResourceLocation();
       }
    }
 
@@ -38,11 +39,11 @@ public class Class5466 implements Packet<IServerPlayNetHandler> {
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.method35713(this.field24262);
       if (this.field24262 == Class2238.field14644) {
-         var1.method35732(this.field24263);
+         var1.writeResourceLocation(this.field24263);
       }
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15639(this);
    }
 

@@ -4,6 +4,8 @@ import com.mojang.serialization.Codec;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
@@ -49,7 +51,7 @@ public class Class8830<U> {
    public static final Class8830<Class1045> field39846 = method31928("nearest_visible_adult");
    public static final Class8830<ItemEntity> field39847 = method31928("nearest_visible_wanted_item");
    public static final Class8830<Class1006> field39848 = method31928("nearest_visible_nemesis");
-   public static final Class8830<UUID> field39849 = method31927("angry_at", Class8749.field39430);
+   public static final Class8830<UUID> field39849 = method31927("angry_at", UUIDCodec.field39430);
    public static final Class8830<Boolean> field39850 = method31927("universal_anger", Codec.BOOL);
    public static final Class8830<Boolean> field39851 = method31927("admiring_item", Codec.BOOL);
    public static final Class8830<Integer> field39852 = method31928("time_trying_to_reach_admire_item");

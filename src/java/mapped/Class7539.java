@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.DynamicOps;
+import net.minecraft.util.UUIDCodec;
+
 import java.util.UUID;
 
 public class Class7539 {
@@ -32,7 +34,7 @@ public class Class7539 {
          var1.createMap(
             ImmutableMap.of(
                var1.createString("Target"),
-               Class8749.field39430.encodeStart(var1, this.field32349).result().orElseThrow(RuntimeException::new),
+               UUIDCodec.field39430.encodeStart(var1, this.field32349).result().orElseThrow(RuntimeException::new),
                var1.createString("Type"),
                var1.createString(this.field32350.field13511),
                var1.createString("Value"),
@@ -46,7 +48,7 @@ public class Class7539 {
       return DataResult.unbox(
          DataResult.instance()
             .group(
-               var0.get("Target").read(Class8749.field39430),
+               var0.get("Target").read(UUIDCodec.field39430),
                var0.get("Type").asString().map(Class2074::method8731),
                var0.get("Value").asNumber().map(Number::intValue)
             )

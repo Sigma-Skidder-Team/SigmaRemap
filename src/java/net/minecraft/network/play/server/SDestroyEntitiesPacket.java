@@ -19,10 +19,10 @@ public class SDestroyEntitiesPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24352 = new int[var1.method35714()];
+      this.field24352 = new int[var1.readVarInt()];
 
       for (int var4 = 0; var4 < this.field24352.length; var4++) {
-         this.field24352[var4] = var1.method35714();
+         this.field24352[var4] = var1.readVarInt();
       }
    }
 
@@ -35,7 +35,7 @@ public class SDestroyEntitiesPacket implements Packet<IClientPlayNetHandler> {
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleDestroyEntities(this);
    }
 

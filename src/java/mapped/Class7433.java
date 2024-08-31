@@ -1,9 +1,11 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.particles.IParticleData;
+
 import java.util.function.Function;
 
-public final class Class7433<T extends Class7436> extends Class7434<T> {
+public final class Class7433<T extends IParticleData> extends ParticleType<T> {
    private static String[] field31993;
    public final Function field31994;
 

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

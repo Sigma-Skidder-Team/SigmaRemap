@@ -62,14 +62,14 @@ public class Class5601 implements Packet<IServerPlayNetHandler> {
       this.pos = buf.method35707();
       this.field_210392_b = buf.method35712(Class1897.class);
       this.mode = buf.method35712(Class104.class);
-      this.name = buf.method35728(32767);
+      this.name = buf.readString(32767);
       int i = 48;
       this.field_210395_e = new BlockPos(MathHelper.method37775(buf.readByte(), -48, 48), MathHelper.method37775(buf.readByte(), -48, 48), MathHelper.method37775(buf.readByte(), -48, 48));
       int j = 48;
       this.size = new BlockPos(MathHelper.method37775(buf.readByte(), 0, 48), MathHelper.method37775(buf.readByte(), 0, 48), MathHelper.method37775(buf.readByte(), 0, 48));
       this.mirror = buf.method35712(Class2089.class);
       this.rotation = buf.method35712(Class80.class);
-      this.field_210399_i = buf.method35728(12);
+      this.field_210399_i = buf.readString(12);
       this.integrity = MathHelper.method37777(buf.readFloat(), 0.0F, 1.0F);
       this.seed = buf.method35715();
       int k = buf.readByte();
@@ -83,7 +83,7 @@ public class Class5601 implements Packet<IServerPlayNetHandler> {
       var1.method35708(this.pos);
       var1.method35713(this.field_210392_b);
       var1.method35713(this.mode);
-      var1.method35729(this.name);
+      var1.writeString(this.name);
       var1.writeByte(this.field_210395_e.getX());
       var1.writeByte(this.field_210395_e.getY());
       var1.writeByte(this.field_210395_e.getZ());
@@ -92,7 +92,7 @@ public class Class5601 implements Packet<IServerPlayNetHandler> {
       var1.writeByte(this.size.getZ());
       var1.method35713(this.mirror);
       var1.method35713(this.rotation);
-      var1.method35729(this.field_210399_i);
+      var1.writeString(this.field_210399_i);
       var1.writeFloat(this.integrity);
       var1.method35719(this.seed);
       byte var4 = 0;
@@ -111,7 +111,7 @@ public class Class5601 implements Packet<IServerPlayNetHandler> {
       var1.writeByte(var4);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15646(this);
    }
 

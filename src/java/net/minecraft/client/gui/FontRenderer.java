@@ -8,6 +8,7 @@ import java.util.Random;
 import java.util.function.Function;
 
 import mapped.*;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.CharacterManager;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextProperties;

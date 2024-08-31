@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5706 extends Class5651<Class1091, Class2865<Class1091>> {
    private static final ResourceLocation field25079 = new ResourceLocation("textures/entity/hoglin/hoglin.png");
 

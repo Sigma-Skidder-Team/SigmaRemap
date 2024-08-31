@@ -83,9 +83,9 @@ public abstract class DynamicRegistries {
       for (Entry<RegistryKey<E>, E> var10 : var7.method9191()) {
          E var11 = var10.getValue();
          if (!var6) {
-            var8.method9249(var7.method9171(var11), var10.getKey(), var11, var7.method9185(var11));
+            var8.method9249(var7.getId(var11), var10.getKey(), var11, var7.method9185(var11));
          } else {
-            var1.method13745(field40300, var10.getKey(), var2.method35117(), var7.method9171(var11), var11, var7.method9185(var11));
+            var1.method13745(field40300, var10.getKey(), var2.method35117(), var7.getId(var11), var11, var7.method9185(var11));
          }
       }
    }
@@ -105,7 +105,7 @@ public abstract class DynamicRegistries {
 
       for (Entry<RegistryKey<E>, E> var6 : var1.method9191()) {
          E var7 = var6.getValue();
-         var4.method9249(var1.method9171(var7), var6.getKey(), var7, var1.method9185(var7));
+         var4.method9249(var1.getId(var7), var6.getKey(), var7, var1.method9185(var7));
       }
    }
 

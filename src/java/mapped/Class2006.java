@@ -88,17 +88,17 @@ public class Class2006 implements Comparable<Class2006> {
       var1.writeVarInt(this.field13061.size());
 
       for (Entry var5 : this.field13061.entrySet()) {
-         var1.method35729((String)var5.getKey());
+         var1.writeString((String)var5.getKey());
          ((Class9599)var5.getValue()).method37267(var1);
       }
    }
 
    public static Class2006 method8494(PacketBuffer var0) {
       Class2006 var3 = new Class2006();
-      int var4 = var0.method35714();
+      int var4 = var0.readVarInt();
 
       for (int var5 = 0; var5 < var4; var5++) {
-         var3.field13061.put(var0.method35728(32767), Class9599.method37269(var0));
+         var3.field13061.put(var0.readString(32767), Class9599.method37269(var0));
       }
 
       return var3;

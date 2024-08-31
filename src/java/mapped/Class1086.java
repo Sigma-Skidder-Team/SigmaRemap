@@ -99,7 +99,7 @@ public class Class1086 extends Class1087 implements Class1020 {
             for (int var8 = 0; var8 < 4; var8++) {
                this.world
                   .method6746(
-                     Class7940.field34063,
+                     ParticleTypes.field34063,
                      this.getPosX() + this.rand.nextDouble() / 2.0,
                      this.method3440(0.5),
                      this.getPosZ() + this.rand.nextDouble() / 2.0,
@@ -116,7 +116,7 @@ public class Class1086 extends Class1087 implements Class1020 {
             for (int var10 = 0; var10 < 2; var10++) {
                this.world
                   .method6746(
-                     Class7940.field34092,
+                     ParticleTypes.field34092,
                      this.getPosX() + this.rand.nextDouble() / 2.0,
                      this.method3440(0.5),
                      this.getPosZ() + this.rand.nextDouble() / 2.0,
@@ -137,7 +137,7 @@ public class Class1086 extends Class1087 implements Class1020 {
    public void method4515(Class2266 var1) {
       this.world.method6744((PlayerEntity)null, this, Sounds.field26769, var1, 1.0F, 1.0F);
       if (!this.world.isRemote()) {
-         ((ServerWorld)this.world).method6939(Class7940.field34070, this.getPosX(), this.method3440(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
+         ((ServerWorld)this.world).method6939(ParticleTypes.field34070, this.getPosX(), this.method3440(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
          this.method2904();
          Class1087 var4 = EntityType.field41016.method33215(this.world);
          var4.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);

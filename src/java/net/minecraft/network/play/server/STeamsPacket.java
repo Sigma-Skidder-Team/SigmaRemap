@@ -61,51 +61,51 @@ public class STeamsPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24749 = var1.method35728(16);
+      this.field24749 = var1.readString(16);
       this.field24757 = var1.readByte();
       if (this.field24757 == 0 || this.field24757 == 2) {
          this.field24750 = var1.method35710();
          this.field24758 = var1.readByte();
-         this.field24753 = var1.method35728(40);
-         this.field24754 = var1.method35728(40);
+         this.field24753 = var1.readString(40);
+         this.field24754 = var1.readString(40);
          this.field24755 = var1.<TextFormatting>method35712(TextFormatting.class);
          this.field24751 = var1.method35710();
          this.field24752 = var1.method35710();
       }
 
       if (this.field24757 == 0 || this.field24757 == 3 || this.field24757 == 4) {
-         int var4 = var1.method35714();
+         int var4 = var1.readVarInt();
 
          for (int var5 = 0; var5 < var4; var5++) {
-            this.field24756.add(var1.method35728(40));
+            this.field24756.add(var1.readString(40));
          }
       }
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35729(this.field24749);
+      var1.writeString(this.field24749);
       var1.writeByte(this.field24757);
       if (this.field24757 == 0 || this.field24757 == 2) {
-         var1.method35711(this.field24750);
+         var1.writeTextComponent(this.field24750);
          var1.writeByte(this.field24758);
-         var1.method35729(this.field24753);
-         var1.method35729(this.field24754);
+         var1.writeString(this.field24753);
+         var1.writeString(this.field24754);
          var1.method35713(this.field24755);
-         var1.method35711(this.field24751);
-         var1.method35711(this.field24752);
+         var1.writeTextComponent(this.field24751);
+         var1.writeTextComponent(this.field24752);
       }
 
       if (this.field24757 == 0 || this.field24757 == 3 || this.field24757 == 4) {
          var1.writeVarInt(this.field24756.size());
 
          for (String var5 : this.field24756) {
-            var1.method35729(var5);
+            var1.writeString(var5);
          }
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleTeams(this);
    }
 

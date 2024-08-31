@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;

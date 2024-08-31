@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class4853 extends Class4852 {
    public Class4853(ResourceLocation var1) {
       super(

@@ -20,15 +20,15 @@ public class CLoginStartPacket implements Packet<Class5108> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24422 = new GameProfile((UUID)null, var1.method35728(16));
+      this.field24422 = new GameProfile((UUID)null, var1.readString(16));
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35729(this.field24422.getName());
+      var1.writeString(this.field24422.getName());
    }
 
-   public void method17180(Class5108 var1) {
+   public void processPacket(Class5108 var1) {
       var1.method15596(this);
    }
 

@@ -24,19 +24,19 @@ public class Class5529 implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24529 = var1.method35714();
-      this.field24530 = var1.method35728(32767);
+      this.field24529 = var1.readVarInt();
+      this.field24530 = var1.readString(32767);
       this.field24531 = var1.readBoolean();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeVarInt(this.field24529);
-      var1.method35729(this.field24530);
+      var1.writeString(this.field24530);
       var1.writeBoolean(this.field24531);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15642(this);
    }
 

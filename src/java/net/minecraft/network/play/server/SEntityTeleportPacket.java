@@ -32,7 +32,7 @@ public class SEntityTeleportPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24825 = var1.method35714();
+      this.field24825 = var1.readVarInt();
       this.field24826 = var1.readDouble();
       this.field24827 = var1.readDouble();
       this.field24828 = var1.readDouble();
@@ -52,7 +52,7 @@ public class SEntityTeleportPacket implements Packet<IClientPlayNetHandler> {
       var1.writeBoolean(this.field24831);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleEntityTeleport(this);
    }
 

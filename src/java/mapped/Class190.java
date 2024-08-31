@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.ResourceLocation;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

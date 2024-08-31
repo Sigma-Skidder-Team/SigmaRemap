@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5680 extends Class5676<Class1024> {
    private static final ResourceLocation field25045 = new ResourceLocation("textures/entity/illager/pillager.png");
 

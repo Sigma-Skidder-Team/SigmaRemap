@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5692 extends Class5651<Class1042, Class2802<Class1042>> {
    private static final ResourceLocation field25061 = new ResourceLocation("textures/entity/villager/villager.png");
 

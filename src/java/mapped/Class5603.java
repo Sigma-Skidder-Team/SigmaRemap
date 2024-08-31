@@ -23,7 +23,7 @@ public class Class5603 implements Packet<IServerPlayNetHandler> {
       this.field24883 = var1;
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15622(this);
    }
 

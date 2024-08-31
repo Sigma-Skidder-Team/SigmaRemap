@@ -6,6 +6,7 @@ import com.google.common.collect.Sets;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.HashSet;
 import java.util.Map;

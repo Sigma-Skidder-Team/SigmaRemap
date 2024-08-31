@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5703 extends Class5702<Class1102> {
    private static final ResourceLocation field25073 = new ResourceLocation("textures/entity/spider/cave_spider.png");
 

@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.function.Consumer;
 import javax.annotation.Nullable;
 

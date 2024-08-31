@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4941 extends Class4936<Class4687> {
    public void method15249(JsonObject var1, Class4687 var2, JsonSerializationContext var3) {

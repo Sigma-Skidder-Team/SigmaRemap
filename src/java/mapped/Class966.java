@@ -138,7 +138,7 @@ public class Class966 extends TileEntity implements Class935 {
                      double var16 = (double)Class9470.method36517(var15) / 255.0;
                      double var18 = (double)Class9470.method36518(var15) / 255.0;
                      double var20 = (double)Class9470.method36519(var15) / 255.0;
-                     var1.method6746(Class7940.field34068, var9, (double)((float)var4.getY() + 0.5F), var11, var16, var18, var20);
+                     var1.method6746(ParticleTypes.field34068, var9, (double)((float)var4.getY() + 0.5F), var11, var16, var18, var20);
                   }
                }
             );

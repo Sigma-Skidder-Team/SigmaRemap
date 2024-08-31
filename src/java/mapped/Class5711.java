@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5711 extends Class5651<Class1090, Class2860<Class1090>> {
    private static final ResourceLocation field25084 = new ResourceLocation("textures/entity/cat/ocelot.png");
 

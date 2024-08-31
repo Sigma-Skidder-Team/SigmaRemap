@@ -16,7 +16,7 @@ public class Class7836<T> implements Class7833<T> {
 
    @Override
    public int method26240(T var1) {
-      int var4 = this.field33640.method9171((T)var1);
+      int var4 = this.field33640.getId((T)var1);
       return var4 != -1 ? var4 : 0;
    }
 

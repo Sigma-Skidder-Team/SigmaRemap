@@ -76,7 +76,7 @@ public class Class2726 extends Class2595 {
          if (this.field17231 % 10 == 5) {
             this.field17232
                .world
-               .method6746(Class7940.field34052, this.field17232.getPosX(), this.field17232.getPosY(), this.field17232.getPosZ(), 0.0, 0.0, 0.0);
+               .method6746(ParticleTypes.field34052, this.field17232.getPosX(), this.field17232.getPosY(), this.field17232.getPosZ(), 0.0, 0.0, 0.0);
          }
       }
    }

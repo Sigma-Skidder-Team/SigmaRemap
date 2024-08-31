@@ -135,7 +135,7 @@ public class Class3336 extends Item {
             var6 = 3.0;
          }
 
-         var0.method6746(Class7940.field34078, (double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5, 0.0, 0.0, 0.0);
+         var0.method6746(ParticleTypes.field34078, (double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5, 0.0, 0.0, 0.0);
 
          for (int var10 = 0; var10 < var2; var10++) {
             double var11 = field18735.nextGaussian() * 0.02;
@@ -146,7 +146,7 @@ public class Class3336 extends Item {
             double var21 = (double)var1.getY() + field18735.nextDouble() * var8;
             double var23 = (double)var1.getZ() + var17 + field18735.nextDouble() * var6 * 2.0;
             if (!var0.getBlockState(new BlockPos(var19, var21, var23).down()).isAir()) {
-               var0.method6746(Class7940.field34078, var19, var21, var23, var11, var13, var15);
+               var0.method6746(ParticleTypes.field34078, var19, var21, var23, var11, var13, var15);
             }
          }
       }

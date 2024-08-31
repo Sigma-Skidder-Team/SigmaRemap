@@ -28,7 +28,7 @@ public class SSpawnExperienceOrbPacket implements Packet<IClientPlayNetHandler> 
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24488 = var1.method35714();
+      this.field24488 = var1.readVarInt();
       this.field24489 = var1.readDouble();
       this.field24490 = var1.readDouble();
       this.field24491 = var1.readDouble();
@@ -44,7 +44,7 @@ public class SSpawnExperienceOrbPacket implements Packet<IClientPlayNetHandler> 
       var1.writeShort(this.field24492);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleSpawnExperienceOrb(this);
    }
 

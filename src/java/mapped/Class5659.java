@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5659 extends Class5658 {
    public static final ResourceLocation field25023 = new ResourceLocation("textures/entity/guardian_elder.png");
 

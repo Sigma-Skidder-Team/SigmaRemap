@@ -50,7 +50,7 @@ public class Class3365 extends Class3241 {
       double var7 = (double)var3.getX() + var4.nextDouble();
       double var9 = (double)var3.getY() + 0.8;
       double var11 = (double)var3.getZ() + var4.nextDouble();
-      var2.method6746(Class7940.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
+      var2.method6746(ParticleTypes.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
    }
 
    @Override

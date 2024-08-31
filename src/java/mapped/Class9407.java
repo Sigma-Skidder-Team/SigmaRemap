@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.gson.JsonElement;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiConsumer;

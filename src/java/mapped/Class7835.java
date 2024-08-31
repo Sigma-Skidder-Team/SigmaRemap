@@ -61,10 +61,10 @@ public class Class7835<T> implements Class7833<T> {
 
    @Override
    public void method26243(PacketBuffer var1) {
-      this.field33638 = var1.method35714();
+      this.field33638 = var1.readVarInt();
 
       for (int var4 = 0; var4 < this.field33638; var4++) {
-         this.field33634[var4] = this.field33633.method9172(var1.method35714());
+         this.field33634[var4] = this.field33633.method9172(var1.readVarInt());
       }
    }
 
@@ -73,7 +73,7 @@ public class Class7835<T> implements Class7833<T> {
       var1.writeVarInt(this.field33638);
 
       for (int var4 = 0; var4 < this.field33638; var4++) {
-         var1.writeVarInt(this.field33633.method9171(this.field33634[var4]));
+         var1.writeVarInt(this.field33633.getId(this.field33634[var4]));
       }
    }
 
@@ -82,7 +82,7 @@ public class Class7835<T> implements Class7833<T> {
       int var3 = PacketBuffer.method35695(this.method26249());
 
       for (int var4 = 0; var4 < this.method26249(); var4++) {
-         var3 += PacketBuffer.method35695(this.field33633.method9171(this.field33634[var4]));
+         var3 += PacketBuffer.method35695(this.field33633.getId(this.field33634[var4]));
       }
 
       return var3;

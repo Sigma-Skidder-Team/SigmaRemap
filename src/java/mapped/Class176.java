@@ -41,7 +41,7 @@ public class Class176 implements Predicate<ItemStack> {
    }
 
    public String method504() {
-      StringBuilder var3 = new StringBuilder(Registry.ITEM.method9171(this.field563));
+      StringBuilder var3 = new StringBuilder(Registry.ITEM.getId(this.field563));
       if (this.field564 != null) {
          var3.append(this.field564);
       }

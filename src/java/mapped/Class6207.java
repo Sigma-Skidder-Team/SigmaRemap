@@ -28,7 +28,7 @@ public class Class6207 {
    }
 
    public static int method19119(ItemStack var0) {
-      return Registry.ITEM.method9171(var0.getItem());
+      return Registry.ITEM.getId(var0.getItem());
    }
 
    private boolean method19120(int var1) {

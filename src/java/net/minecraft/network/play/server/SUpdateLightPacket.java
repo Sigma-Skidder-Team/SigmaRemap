@@ -92,13 +92,13 @@ public class SUpdateLightPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24498 = var1.method35714();
-      this.field24499 = var1.method35714();
+      this.field24498 = var1.readVarInt();
+      this.field24499 = var1.readVarInt();
       this.field24506 = var1.readBoolean();
-      this.field24500 = var1.method35714();
-      this.field24501 = var1.method35714();
-      this.field24502 = var1.method35714();
-      this.field24503 = var1.method35714();
+      this.field24500 = var1.readVarInt();
+      this.field24501 = var1.readVarInt();
+      this.field24502 = var1.readVarInt();
+      this.field24503 = var1.readVarInt();
       this.field24504 = Lists.newArrayList();
 
       for (int var4 = 0; var4 < 18; var4++) {
@@ -127,15 +127,15 @@ public class SUpdateLightPacket implements Packet<IClientPlayNetHandler> {
       var1.writeVarInt(this.field24503);
 
       for (byte[] var5 : this.field24504) {
-         var1.method35698(var5);
+         var1.writeByteArray(var5);
       }
 
       for (byte[] var7 : this.field24505) {
-         var1.method35698(var7);
+         var1.writeByteArray(var7);
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleUpdateLight(this);
    }
 

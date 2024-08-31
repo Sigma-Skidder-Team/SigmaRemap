@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5673 extends Class5651<Class1104, Class2807<Class1104>> {
    private static final ResourceLocation field25038 = new ResourceLocation("textures/entity/endermite.png");
 

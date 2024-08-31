@@ -29,7 +29,7 @@ public class SEntityMetadataPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24656 = var1.method35714();
+      this.field24656 = var1.readVarInt();
       this.field24657 = EntityDataManager.method35452(var1);
    }
 
@@ -39,7 +39,7 @@ public class SEntityMetadataPacket implements Packet<IClientPlayNetHandler> {
       EntityDataManager.method35448(this.field24657, var1);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleEntityMetadata(this);
    }
 

@@ -1,6 +1,8 @@
 package mapped;
 
 import java.util.function.Consumer;
+
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class2839 implements Consumer<Consumer<Class7952>> {

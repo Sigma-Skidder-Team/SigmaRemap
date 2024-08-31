@@ -10,6 +10,7 @@ import java.util.function.Consumer;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SRecipeBookPacket;
+import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class8365 {
    private static String[] field35919;
 
@@ -8,6 +10,6 @@ public class Class8365 {
    }
 
    public static int method29305(Item var0) {
-      return Registry.ITEM.method9171(var0);
+      return Registry.ITEM.getId(var0);
    }
 }

@@ -29,7 +29,7 @@ public class Class5497 implements Packet<IServerPlayNetHandler> {
       var1.method35716(this.field24400);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15632(this);
    }
 

@@ -39,7 +39,7 @@ public class SPlayerListItemPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24429 = var1.<Class2176>method35712(Class2176.class);
-      int var4 = var1.method35714();
+      int var4 = var1.readVarInt();
 
       for (int var5 = 0; var5 < var4; var5++) {
          GameProfile var6 = null;
@@ -48,33 +48,33 @@ public class SPlayerListItemPacket implements Packet<IClientPlayNetHandler> {
          ITextComponent var9 = null;
          switch (Class9002.field41159[this.field24429.ordinal()]) {
             case 1:
-               var6 = new GameProfile(var1.method35717(), var1.method35728(16));
-               int var10 = var1.method35714();
+               var6 = new GameProfile(var1.method35717(), var1.readString(16));
+               int var10 = var1.readVarInt();
                int var11 = 0;
 
                for (; var11 < var10; var11++) {
-                  String var12 = var1.method35728(32767);
-                  String var13 = var1.method35728(32767);
+                  String var12 = var1.readString(32767);
+                  String var13 = var1.readString(32767);
                   if (var1.readBoolean()) {
-                     var6.getProperties().put(var12, new Property(var12, var13, var1.method35728(32767)));
+                     var6.getProperties().put(var12, new Property(var12, var13, var1.readString(32767)));
                   } else {
                      var6.getProperties().put(var12, new Property(var12, var13));
                   }
                }
 
-               var8 = Class1894.method8159(var1.method35714());
-               var7 = var1.method35714();
+               var8 = Class1894.method8159(var1.readVarInt());
+               var7 = var1.readVarInt();
                if (var1.readBoolean()) {
                   var9 = var1.method35710();
                }
                break;
             case 2:
                var6 = new GameProfile(var1.method35717(), (String)null);
-               var8 = Class1894.method8159(var1.method35714());
+               var8 = Class1894.method8159(var1.readVarInt());
                break;
             case 3:
                var6 = new GameProfile(var1.method35717(), (String)null);
-               var7 = var1.method35714();
+               var7 = var1.readVarInt();
                break;
             case 4:
                var6 = new GameProfile(var1.method35717(), (String)null);
@@ -99,15 +99,15 @@ public class SPlayerListItemPacket implements Packet<IClientPlayNetHandler> {
          switch (Class9002.field41159[this.field24429.ordinal()]) {
             case 1:
                var1.method35716(var5.method31726().getId());
-               var1.method35729(var5.method31726().getName());
+               var1.writeString(var5.method31726().getName());
                var1.writeVarInt(var5.method31726().getProperties().size());
 
                for (Property var7 : var5.method31726().getProperties().values()) {
-                  var1.method35729(var7.getName());
-                  var1.method35729(var7.getValue());
+                  var1.writeString(var7.getName());
+                  var1.writeString(var7.getValue());
                   if (var7.hasSignature()) {
                      var1.writeBoolean(true);
-                     var1.method35729(var7.getSignature());
+                     var1.writeString(var7.getSignature());
                   } else {
                      var1.writeBoolean(false);
                   }
@@ -119,7 +119,7 @@ public class SPlayerListItemPacket implements Packet<IClientPlayNetHandler> {
                   var1.writeBoolean(false);
                } else {
                   var1.writeBoolean(true);
-                  var1.method35711(var5.method31729());
+                  var1.writeTextComponent(var5.method31729());
                }
                break;
             case 2:
@@ -136,7 +136,7 @@ public class SPlayerListItemPacket implements Packet<IClientPlayNetHandler> {
                   var1.writeBoolean(false);
                } else {
                   var1.writeBoolean(true);
-                  var1.method35711(var5.method31729());
+                  var1.writeTextComponent(var5.method31729());
                }
                break;
             case 5:
@@ -145,7 +145,7 @@ public class SPlayerListItemPacket implements Packet<IClientPlayNetHandler> {
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handlePlayerListItem(this);
    }
 

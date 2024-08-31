@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Multimap;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;

@@ -20,7 +20,7 @@ public class SServerDifficultyPacket implements Packet<IClientPlayNetHandler> {
       this.field24576 = var2;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleServerDifficulty(this);
    }
 

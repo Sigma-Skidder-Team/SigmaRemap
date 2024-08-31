@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
+
 import javax.annotation.Nullable;
 
 public interface Class4664 {

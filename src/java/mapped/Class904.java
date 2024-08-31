@@ -295,7 +295,7 @@ public class Class904 extends ProjectileEntity {
                   double var16 = this.getPosZ() + (double)(MathHelper.cos(var10) * var11 * 0.1F);
                   BlockState var18 = var4.getBlockState(new BlockPos(var12, var14 - 1.0, var16));
                   if (var18.method23448(Blocks.WATER)) {
-                     var4.method6939(Class7940.field34099, var12, var14, var16, 2 + this.rand.nextInt(2), 0.1F, 0.0, 0.1F, 0.0);
+                     var4.method6939(ParticleTypes.field34099, var12, var14, var16, 2 + this.rand.nextInt(2), 0.1F, 0.0, 0.1F, 0.0);
                   }
                }
 
@@ -310,7 +310,7 @@ public class Class904 extends ProjectileEntity {
                this.method2863(Sounds.field26585, 0.25F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
                double var7 = this.getPosY() + 0.5;
                var4.method6939(
-                  Class7940.field34052,
+                  ParticleTypes.field34052,
                   this.getPosX(),
                   var7,
                   this.getPosZ(),
@@ -321,7 +321,7 @@ public class Class904 extends ProjectileEntity {
                   0.2F
                );
                var4.method6939(
-                  Class7940.field34073,
+                  ParticleTypes.field34073,
                   this.getPosX(),
                   var7,
                   this.getPosZ(),
@@ -344,13 +344,13 @@ public class Class904 extends ProjectileEntity {
                BlockState var27 = var4.getBlockState(new BlockPos(var24, var25 - 1.0, var26));
                if (var27.method23448(Blocks.WATER)) {
                   if (this.rand.nextFloat() < 0.15F) {
-                     var4.method6939(Class7940.field34052, var24, var25 - 0.1F, var26, 1, (double)var22, 0.1, (double)var23, 0.0);
+                     var4.method6939(ParticleTypes.field34052, var24, var25 - 0.1F, var26, 1, (double)var22, 0.1, (double)var23, 0.0);
                   }
 
                   float var19 = var22 * 0.04F;
                   float var20 = var23 * 0.04F;
-                  var4.method6939(Class7940.field34073, var24, var25, var26, 0, (double)var20, 0.01, (double)(-var19), 1.0);
-                  var4.method6939(Class7940.field34073, var24, var25, var26, 0, (double)(-var20), 0.01, (double)var19, 1.0);
+                  var4.method6939(ParticleTypes.field34073, var24, var25, var26, 0, (double)var20, 0.01, (double)(-var19), 1.0);
+                  var4.method6939(ParticleTypes.field34073, var24, var25, var26, 0, (double)(-var20), 0.01, (double)var19, 1.0);
                }
             }
          }

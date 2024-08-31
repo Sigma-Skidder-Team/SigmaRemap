@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
 import java.io.ByteArrayInputStream;

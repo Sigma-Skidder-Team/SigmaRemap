@@ -38,7 +38,7 @@ public class Class993 extends AbstractMinecartEntity {
          }
       } else {
          this.field5480--;
-         this.world.method6746(Class7940.field34092, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
+         this.world.method6746(ParticleTypes.field34092, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
       }
 
       if (this.collidedHorizontally) {

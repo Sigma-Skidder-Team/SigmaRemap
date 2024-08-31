@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -34,7 +35,7 @@ public class Class9115 {
 
    static {
       for (EntityType var7 : Registry.ENTITY_TYPE) {
-         int var8 = Registry.ENTITY_TYPE.method9171(var7);
+         int var8 = Registry.ENTITY_TYPE.getId(var7);
          ResourceLocation var9 = Registry.ENTITY_TYPE.getKey(var7);
          String var10 = var9.toString();
          String var11 = var9.getPath();

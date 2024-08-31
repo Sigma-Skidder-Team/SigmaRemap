@@ -23,7 +23,7 @@ public class Class2353<K> implements Class2347<K> {
    }
 
    @Override
-   public int method9171(K var1) {
+   public int getId(K var1) {
       return this.method9271(this.method9277((K)var1, this.method9276((K)var1)));
    }
 

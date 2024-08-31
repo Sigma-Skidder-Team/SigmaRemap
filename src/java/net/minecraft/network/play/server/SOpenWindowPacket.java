@@ -21,14 +21,14 @@ public class SOpenWindowPacket implements Packet<IClientPlayNetHandler> {
 
    public SOpenWindowPacket(int var1, Class8298<?> var2, ITextComponent var3) {
       this.field24402 = var1;
-      this.field24403 = Registry.field16084.method9171(var2);
+      this.field24403 = Registry.field16084.getId(var2);
       this.field24404 = var3;
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24402 = var1.method35714();
-      this.field24403 = var1.method35714();
+      this.field24402 = var1.readVarInt();
+      this.field24403 = var1.readVarInt();
       this.field24404 = var1.method35710();
    }
 
@@ -36,10 +36,10 @@ public class SOpenWindowPacket implements Packet<IClientPlayNetHandler> {
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeVarInt(this.field24402);
       var1.writeVarInt(this.field24403);
-      var1.method35711(this.field24404);
+      var1.writeTextComponent(this.field24404);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleOpenWindowPacket(this);
    }
 

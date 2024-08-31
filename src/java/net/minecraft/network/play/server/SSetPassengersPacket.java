@@ -28,7 +28,7 @@ public class SSetPassengersPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24354 = var1.method35714();
+      this.field24354 = var1.readVarInt();
       this.field24355 = var1.method35702();
    }
 
@@ -38,7 +38,7 @@ public class SSetPassengersPacket implements Packet<IClientPlayNetHandler> {
       var1.method35701(this.field24355);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleSetPassengers(this);
    }
 

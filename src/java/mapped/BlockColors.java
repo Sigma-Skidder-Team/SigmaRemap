@@ -63,7 +63,7 @@ public class BlockColors {
    }
 
    public int method29464(BlockState var1, World var2, BlockPos var3) {
-      Class8040 var6 = this.field36032.method9172(Registry.BLOCK.method9171(var1.getBlock()));
+      Class8040 var6 = this.field36032.method9172(Registry.BLOCK.getId(var1.getBlock()));
       if (var6 == null) {
          Class7210 var7 = var1.method23394(var2, var3);
          return var7 == null ? -1 : var7.field31006;
@@ -73,13 +73,13 @@ public class BlockColors {
    }
 
    public int method29465(BlockState var1, Class1663 var2, BlockPos var3, int var4) {
-      Class8040 var7 = this.field36032.method9172(Registry.BLOCK.method9171(var1.getBlock()));
+      Class8040 var7 = this.field36032.method9172(Registry.BLOCK.getId(var1.getBlock()));
       return var7 != null ? var7.method27608(var1, var2, var3, var4) : -1;
    }
 
    public void method29466(Class8040 var1, Block... var2) {
       for (Block var8 : var2) {
-         this.field36032.method9268(var1, Registry.BLOCK.method9171(var8));
+         this.field36032.method9268(var1, Registry.BLOCK.getId(var8));
       }
    }
 

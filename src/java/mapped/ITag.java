@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;

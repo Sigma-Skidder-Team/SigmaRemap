@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4897 extends Class4874<Class4485> {
    private static final ResourceLocation field22731 = new ResourceLocation("recipe_unlocked");

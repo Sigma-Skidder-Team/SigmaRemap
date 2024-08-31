@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class225 extends Class223<Class1081, Class2890<Class1081>> {
    private static final ResourceLocation field870 = new ResourceLocation("textures/entity/creeper/creeper_armor.png");
    private final Class2890<Class1081> field871 = new Class2890<Class1081>(2.0F);

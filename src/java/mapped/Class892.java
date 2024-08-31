@@ -26,7 +26,7 @@ public class Class892 extends Class890 {
          for (int var6 = 0; var6 < 8; var6++) {
             this.world
                .method6746(
-                  new Class7438(Class7940.field34082, this.method3509()),
+                  new Class7438(ParticleTypes.field34082, this.method3509()),
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),

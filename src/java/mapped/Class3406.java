@@ -27,7 +27,7 @@ public class Class3406 extends Block implements Class3405 {
 
             for (int var9 = 0; var9 < 2; var9++) {
                var8.method6939(
-                  Class7940.field34099,
+                  ParticleTypes.field34099,
                   (double)var3.getX() + var2.rand.nextDouble(),
                   (double)(var3.getY() + 1),
                   (double)var3.getZ() + var2.rand.nextDouble(),
@@ -38,7 +38,7 @@ public class Class3406 extends Block implements Class3405 {
                   1.0
                );
                var8.method6939(
-                  Class7940.field34052,
+                  ParticleTypes.field34052,
                   (double)var3.getX() + var2.rand.nextDouble(),
                   (double)(var3.getY() + 1),
                   (double)var3.getZ() + var2.rand.nextDouble(),
@@ -90,9 +90,9 @@ public class Class3406 extends Block implements Class3405 {
       double var9 = (double)var3.getY();
       double var11 = (double)var3.getZ();
       if (!var1.<Boolean>method23463(field19084)) {
-         var2.method6748(Class7940.field34103, var7 + 0.5, var9, var11 + 0.5, 0.0, 0.04, 0.0);
+         var2.method6748(ParticleTypes.field34103, var7 + 0.5, var9, var11 + 0.5, 0.0, 0.04, 0.0);
          var2.method6748(
-            Class7940.field34103, var7 + (double)var4.nextFloat(), var9 + (double)var4.nextFloat(), var11 + (double)var4.nextFloat(), 0.0, 0.04, 0.0
+            ParticleTypes.field34103, var7 + (double)var4.nextFloat(), var9 + (double)var4.nextFloat(), var11 + (double)var4.nextFloat(), 0.0, 0.04, 0.0
          );
          if (var4.nextInt(200) == 0) {
             var2.method6745(
@@ -100,7 +100,7 @@ public class Class3406 extends Block implements Class3405 {
             );
          }
       } else {
-         var2.method6748(Class7940.field34102, var7 + 0.5, var9 + 0.8, var11, 0.0, 0.0, 0.0);
+         var2.method6748(ParticleTypes.field34102, var7 + 0.5, var9 + 0.8, var11, 0.0, 0.0, 0.0);
          if (var4.nextInt(200) == 0) {
             var2.method6745(
                var7, var9, var11, Sounds.field26424, Class2266.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false

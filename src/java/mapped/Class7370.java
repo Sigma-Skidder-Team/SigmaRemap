@@ -22,7 +22,7 @@ public class Class7370 extends Class7361 {
          this.field31519
             .world
             .method6746(
-               Class7940.field34069,
+               ParticleTypes.field34069,
                this.field31519.getPosX() + (double)var3,
                this.field31519.getPosY() + 2.0 + (double)var4,
                this.field31519.getPosZ() + (double)var5,

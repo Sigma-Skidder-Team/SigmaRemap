@@ -9,6 +9,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
@@ -122,8 +123,8 @@ public class Class9272 {
    }
 
    public void method34946(PacketBuffer var1) {
-      var1.method35711(this.field42646);
-      var1.method35711(this.field42647);
+      var1.writeTextComponent(this.field42646);
+      var1.writeTextComponent(this.field42647);
       var1.method35724(this.field42648);
       var1.method35713(this.field42650);
       int var4 = 0;
@@ -141,7 +142,7 @@ public class Class9272 {
 
       var1.writeInt(var4);
       if (this.field42649 != null) {
-         var1.method35732(this.field42649);
+         var1.writeResourceLocation(this.field42649);
       }
 
       var1.writeFloat(this.field42654);

@@ -47,7 +47,7 @@ public class Class3363 extends Class3241 {
                      }
 
                      var2.method6746(
-                        Class7940.field34066,
+                        ParticleTypes.field34066,
                         (double)var3.getX() + 0.5,
                         (double)var3.getY() + 2.0,
                         (double)var3.getZ() + 0.5,

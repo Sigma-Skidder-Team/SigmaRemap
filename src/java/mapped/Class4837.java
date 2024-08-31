@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public abstract class Class4837 implements Class4842 {
    private final ResourceLocation field22614;
 

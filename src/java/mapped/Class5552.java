@@ -32,15 +32,15 @@ public class Class5552 implements Packet<Class5112> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24654 = JSONUtils.<Class8783>method32797(field24653, var1.method35728(32767), Class8783.class);
+      this.field24654 = JSONUtils.<Class8783>method32797(field24653, var1.readString(32767), Class8783.class);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35729(field24653.toJson(this.field24654));
+      var1.writeString(field24653.toJson(this.field24654));
    }
 
-   public void method17180(Class5112 var1) {
+   public void processPacket(Class5112 var1) {
       var1.method15688(this);
    }
 

@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.gson.JsonArray;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.function.Consumer;
 import java.util.function.Function;
 

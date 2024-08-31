@@ -369,7 +369,7 @@ public class Class1097 extends Class1018 {
             var7 = var7.method11339(this.getPosX(), this.method3442() + 1.0, this.getPosZ());
             this.world
                .method6746(
-                  new Class7438(Class7940.field34082, this.method2943(Class2106.field13731)),
+                  new Class7438(ParticleTypes.field34082, this.method2943(Class2106.field13731)),
                   var7.x,
                   var7.y,
                   var7.z,
@@ -449,7 +449,7 @@ public class Class1097 extends Class1018 {
       Vector3d var3 = this.method3433();
       this.world
          .method6746(
-            Class7940.field34093,
+            ParticleTypes.field34093,
             this.getPosX() - (double)(this.method3429() + 1.0F) * 0.5 * (double) MathHelper.sin(this.field4965 * (float) (Math.PI / 180.0)),
             this.method3442() - 0.1F,
             this.getPosZ() + (double)(this.method3429() + 1.0F) * 0.5 * (double) MathHelper.cos(this.field4965 * (float) (Math.PI / 180.0)),

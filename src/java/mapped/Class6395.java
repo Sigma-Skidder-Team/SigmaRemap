@@ -126,7 +126,7 @@ public abstract class Class6395 {
             var12.method6966()
          )
       );
-      var15.sendPacket(new SCustomPayloadPlayPacket(SCustomPayloadPlayPacket.field24537, new PacketBuffer(Unpooled.buffer()).method35729(this.method19444().method1325())));
+      var15.sendPacket(new SCustomPayloadPlayPacket(SCustomPayloadPlayPacket.field24537, new PacketBuffer(Unpooled.buffer()).writeString(this.method19444().method1325())));
       var15.sendPacket(new SServerDifficultyPacket(var14.method20047(), var14.method20048()));
       var15.sendPacket(new SPlayerAbilitiesPacket(var2.abilities));
       var15.sendPacket(new SHeldItemChangePacket(var2.inventory.currentItem));

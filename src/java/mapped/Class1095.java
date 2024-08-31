@@ -192,7 +192,7 @@ public class Class1095 extends Class1018 {
                   .method11351(-this.rotationYaw * (float) (Math.PI / 180.0));
                this.world
                   .method6746(
-                     new Class7438(Class7940.field34082, var4),
+                     new Class7438(ParticleTypes.field34082, var4),
                      this.getPosX() + this.method3320().x / 2.0,
                      this.getPosY(),
                      this.getPosZ() + this.method3320().z / 2.0,

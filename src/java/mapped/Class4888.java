@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4888 extends Class4874<Class4482> {
    private static final ResourceLocation field22722 = new ResourceLocation("shot_crossbow");

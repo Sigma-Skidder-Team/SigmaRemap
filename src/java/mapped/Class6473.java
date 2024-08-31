@@ -12,7 +12,7 @@ public final class Class6473 implements Class6466<OptionalInt> {
    }
 
    public OptionalInt method19645(PacketBuffer var1) {
-      int var4 = var1.method35714();
+      int var4 = var1.readVarInt();
       return var4 != 0 ? OptionalInt.of(var4 - 1) : OptionalInt.empty();
    }
 

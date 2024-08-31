@@ -55,7 +55,7 @@ public class Class3417 extends Block {
                var14 += var4.nextDouble();
             }
 
-            var2.method6746(Class7940.field34060, var10, var12, var14, 0.0, 0.0, 0.0);
+            var2.method6746(ParticleTypes.field34060, var10, var12, var14, 0.0, 0.0, 0.0);
          }
       }
    }

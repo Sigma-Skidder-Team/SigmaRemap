@@ -42,7 +42,7 @@ public class Class2352<T> implements Class2347<T> {
    }
 
    @Override
-   public int method9171(T var1) {
+   public int getId(T var1) {
       Integer var4 = this.field16155.get(var1);
       return var4 != null ? var4 : -1;
    }

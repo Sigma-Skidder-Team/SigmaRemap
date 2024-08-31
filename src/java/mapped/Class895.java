@@ -41,7 +41,7 @@ public class Class895 extends Class890 {
       for (int var5 = 0; var5 < 32; var5++) {
          this.world
             .method6746(
-               Class7940.field34090,
+               ParticleTypes.field34090,
                this.getPosX(),
                this.getPosY() + this.rand.nextDouble() * 2.0,
                this.getPosZ(),

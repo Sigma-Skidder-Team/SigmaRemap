@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.List;
 import java.util.Set;
 import java.util.function.Function;

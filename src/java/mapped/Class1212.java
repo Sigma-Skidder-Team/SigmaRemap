@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class1212 extends Class1210 {
    public Class1212(int var1, int var2, int var3) {
       super(var1, var2, var3, 22, 20, "");

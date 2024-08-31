@@ -10,7 +10,7 @@ public final class Class6468 implements Class6466<Integer> {
    }
 
    public Integer method19645(PacketBuffer var1) {
-      return var1.method35714();
+      return var1.readVarInt();
    }
 
    public Integer method19644(Integer var1) {

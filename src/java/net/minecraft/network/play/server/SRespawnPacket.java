@@ -33,14 +33,14 @@ public class SRespawnPacket implements Packet<IClientPlayNetHandler> {
       this.field24622 = var9;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleRespawn(this);
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24615 = var1.<Supplier<DimensionType>>method35696(DimensionType.DIMENSION_TYPE_CODEC).get();
-      this.field24616 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.method35731());
+      this.field24616 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.readResourceLocation());
       this.field24617 = var1.readLong();
       this.field24618 = Class1894.method8159(var1.readUnsignedByte());
       this.field24619 = Class1894.method8159(var1.readUnsignedByte());
@@ -52,7 +52,7 @@ public class SRespawnPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.method35697(DimensionType.DIMENSION_TYPE_CODEC, () -> this.field24615);
-      var1.method35732(this.field24616.getLocation());
+      var1.writeResourceLocation(this.field24616.getLocation());
       var1.writeLong(this.field24617);
       var1.writeByte(this.field24618.method8152());
       var1.writeByte(this.field24619.method8152());

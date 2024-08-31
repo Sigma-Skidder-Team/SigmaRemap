@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
 
 public class Class227<T extends Entity, M extends Class2813<T>> extends Class226<T, M> {
    private static final RenderType field872 = RenderType.method14325(new ResourceLocation("textures/entity/spider_eyes.png"));

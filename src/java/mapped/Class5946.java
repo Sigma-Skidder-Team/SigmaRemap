@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.List;
 
 public class Class5946 extends Class5942<Class950> {

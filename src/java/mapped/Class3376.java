@@ -71,7 +71,7 @@ public class Class3376 extends Class3241 {
       double var7 = (double)var3.getX() + 0.4 + (double)var4.nextFloat() * 0.2;
       double var9 = (double)var3.getY() + 0.7 + (double)var4.nextFloat() * 0.3;
       double var11 = (double)var3.getZ() + 0.4 + (double)var4.nextFloat() * 0.2;
-      var2.method6746(Class7940.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
+      var2.method6746(ParticleTypes.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
    }
 
    @Override

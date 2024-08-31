@@ -11,6 +11,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.particles.IParticleData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +24,7 @@ public class Class999 extends Entity {
    private static final DataParameter<Float> field5498 = EntityDataManager.<Float>createKey(Class999.class, DataSerializers.field33392);
    private static final DataParameter<Integer> field5499 = EntityDataManager.<Integer>createKey(Class999.class, DataSerializers.field33391);
    private static final DataParameter<Boolean> field5500 = EntityDataManager.<Boolean>createKey(Class999.class, DataSerializers.field33398);
-   private static final DataParameter<Class7436> field5501 = EntityDataManager.<Class7436>createKey(Class999.class, DataSerializers.field33399);
+   private static final DataParameter<IParticleData> field5501 = EntityDataManager.<IParticleData>createKey(Class999.class, DataSerializers.field33399);
    private Class8812 field5502 = Class8137.field34976;
    private final List<Class2023> field5503 = Lists.newArrayList();
    private final Map<Entity, Integer> field5504 = Maps.newHashMap();
@@ -53,7 +54,7 @@ public class Class999 extends Entity {
       this.method3210().register(field5499, 0);
       this.method3210().register(field5498, 0.5F);
       this.method3210().register(field5500, false);
-      this.method3210().register(field5501, Class7940.field34068);
+      this.method3210().register(field5501, ParticleTypes.field34068);
    }
 
    public void method4097(float var1) {
@@ -106,11 +107,11 @@ public class Class999 extends Entity {
       this.method3210().method35446(field5499, var1);
    }
 
-   public Class7436 method4104() {
-      return this.method3210().<Class7436>method35445(field5501);
+   public IParticleData method4104() {
+      return this.method3210().<IParticleData>method35445(field5501);
    }
 
-   public void method4105(Class7436 var1) {
+   public void method4105(IParticleData var1) {
       this.method3210().method35446(field5501, var1);
    }
 
@@ -222,7 +223,7 @@ public class Class999 extends Entity {
             }
          }
       } else {
-         Class7436 var24 = this.method4104();
+         IParticleData var24 = this.method4104();
          if (!var3) {
             float var25 = (float) Math.PI * var4 * var4;
 
@@ -231,7 +232,7 @@ public class Class999 extends Entity {
                float var34 = MathHelper.method37765(this.rand.nextFloat()) * var4;
                float var36 = MathHelper.cos(var31) * var34;
                float var11 = MathHelper.sin(var31) * var34;
-               if (var24.method24011() != Class7940.field34068) {
+               if (var24.getType() != ParticleTypes.field34068) {
                   this.world
                      .method6748(
                         var24,
@@ -265,7 +266,7 @@ public class Class999 extends Entity {
                float var32 = MathHelper.method37765(this.rand.nextFloat()) * 0.2F;
                float var35 = MathHelper.cos(var29) * var32;
                float var37 = MathHelper.sin(var29) * var32;
-               if (var24.method24011() != Class7940.field34068) {
+               if (var24.getType() != ParticleTypes.field34068) {
                   this.world.method6748(var24, this.getPosX() + (double)var35, this.getPosY(), this.getPosZ() + (double)var37, 0.0, 0.0, 0.0);
                } else {
                   int var38 = !this.rand.nextBoolean() ? this.method4102() : 16777215;

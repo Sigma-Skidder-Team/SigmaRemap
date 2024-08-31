@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;

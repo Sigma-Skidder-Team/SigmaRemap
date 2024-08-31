@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
 import java.io.IOException;

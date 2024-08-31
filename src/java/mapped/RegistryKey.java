@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Collections;
 import java.util.Map;
 import java.util.function.Function;

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.ResourceLocation;
 
 public class Class9503 {
    public static void method36697() {

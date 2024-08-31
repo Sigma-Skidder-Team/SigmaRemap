@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.List;

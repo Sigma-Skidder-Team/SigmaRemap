@@ -17,7 +17,7 @@ public class Class3474 extends Class3472 {
       super.method11512(var1, var2, var3, var4);
       if (var4.nextInt(10) == 0) {
          var2.method6746(
-            Class7940.field34087,
+            ParticleTypes.field34087,
             (double)var3.getX() + var4.nextDouble(),
             (double)var3.getY() + 1.1,
             (double)var3.getZ() + var4.nextDouble(),

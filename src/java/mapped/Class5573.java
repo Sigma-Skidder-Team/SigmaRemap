@@ -34,7 +34,7 @@ public class Class5573 implements Packet<IServerPlayNetHandler> {
       var1.writeBoolean(this.field24720);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15638(this);
    }
 

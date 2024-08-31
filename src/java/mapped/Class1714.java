@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.ResourceLocation;
 
 public final class Class1714 extends TextureAtlasSprite {
    private static final ResourceLocation field9360 = new ResourceLocation("missingno");

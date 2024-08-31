@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5739 extends Class5715<LeashKnotEntity> {
    private static final ResourceLocation field25161 = new ResourceLocation("textures/entity/lead_knot.png");
    private final Class2889<LeashKnotEntity> field25162 = new Class2889<LeashKnotEntity>();

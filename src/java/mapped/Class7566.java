@@ -9,6 +9,8 @@ import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
 import java.util.Arrays;
 import java.util.Collection;
+
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7566 implements ArgumentType<Class7352> {

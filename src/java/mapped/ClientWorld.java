@@ -14,6 +14,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -351,7 +352,7 @@ public class ClientWorld extends World {
       FluidState var14 = this.getFluidState(var7);
       if (!var14.method23474()) {
          var14.method23480(this, var7, var5);
-         Class7436 var15 = var14.method23485();
+         IParticleData var15 = var14.method23485();
          if (var15 != null && this.rand.nextInt(10) == 0) {
             boolean var16 = var13.method23454(this, var7, Direction.DOWN);
             BlockPos var17 = var7.down();
@@ -360,7 +361,7 @@ public class ClientWorld extends World {
       }
 
       if (var6 && var13.method23448(Blocks.field36765)) {
-         this.method6746(Class7940.field34050, (double)var10 + 0.5, (double)var11 + 0.5, (double)var12 + 0.5, 0.0, 0.0, 0.0);
+         this.method6746(ParticleTypes.BARRIER, (double)var10 + 0.5, (double)var11 + 0.5, (double)var12 + 0.5, 0.0, 0.0, 0.0);
       }
 
       if (!var13.method23456(this, var7)) {
@@ -384,7 +385,7 @@ public class ClientWorld extends World {
       }
    }
 
-   private void method6854(BlockPos var1, BlockState var2, Class7436 var3, boolean var4) {
+   private void method6854(BlockPos var1, BlockState var2, IParticleData var3, boolean var4) {
       if (var2.method23449().method23474()) {
          VoxelShape var7 = var2.method23414(this, var1);
          double var8 = var7.method19513(Class113.field414);
@@ -416,7 +417,7 @@ public class ClientWorld extends World {
       }
    }
 
-   private void method6855(BlockPos var1, Class7436 var2, VoxelShape var3, double var4) {
+   private void method6855(BlockPos var1, IParticleData var2, VoxelShape var3, double var4) {
       this.method6856(
          (double)var1.getX() + var3.method19512(Class113.field413),
          (double)var1.getX() + var3.method19513(Class113.field413),
@@ -427,7 +428,7 @@ public class ClientWorld extends World {
       );
    }
 
-   private void method6856(double var1, double var3, double var5, double var7, double var9, Class7436 var11) {
+   private void method6856(double var1, double var3, double var5, double var7, double var9, IParticleData var11) {
       this.method6746(
          var11,
          MathHelper.method37822(this.rand.nextDouble(), var1, var3),
@@ -651,23 +652,23 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method6746(Class7436 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      this.field9027.method911(var1, var1.method24011().method24006(), var2, var4, var6, var8, var10, var12);
+   public void method6746(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+      this.field9027.method911(var1, var1.getType().method24006(), var2, var4, var6, var8, var10, var12);
    }
 
    @Override
-   public void method6747(Class7436 var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
-      this.field9027.method911(var1, var1.method24011().method24006() || var2, var3, var5, var7, var9, var11, var13);
+   public void method6747(IParticleData var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+      this.field9027.method911(var1, var1.getType().method24006() || var2, var3, var5, var7, var9, var11, var13);
    }
 
    @Override
-   public void method6748(Class7436 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public void method6748(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       this.field9027.method912(var1, false, true, var2, var4, var6, var8, var10, var12);
    }
 
    @Override
-   public void method6749(Class7436 var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
-      this.field9027.method912(var1, var1.method24011().method24006() || var2, true, var3, var5, var7, var9, var11, var13);
+   public void method6749(IParticleData var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+      this.field9027.method912(var1, var1.getType().method24006() || var2, true, var3, var5, var7, var9, var11, var13);
    }
 
    @Override

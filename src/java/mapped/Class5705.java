@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5705 extends Class5651<Class1017, Class2862<Class1017>> {
    private static final ResourceLocation field25075 = new ResourceLocation("textures/entity/bee/bee_angry.png");
    private static final ResourceLocation field25076 = new ResourceLocation("textures/entity/bee/bee_angry_nectar.png");

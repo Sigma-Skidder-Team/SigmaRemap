@@ -4,6 +4,8 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Collection;
 
 public class Class7351 implements Class7352 {

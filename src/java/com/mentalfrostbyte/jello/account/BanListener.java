@@ -3,8 +3,9 @@ package com.mentalfrostbyte.jello.account;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.login.server.SDisconnectLoginPacket;
+import net.minecraft.network.login.server.SLoginSuccessPacket;
 import net.minecraft.network.play.server.SDisconnectPacket;
 import net.minecraft.network.play.server.SChatPacket;
 
@@ -43,9 +44,9 @@ public class BanListener {
                 }
             }
 
-            if (!(var1.getPacket() instanceof Class5490)) {
+            if (!(var1.getPacket() instanceof SDisconnectLoginPacket)) {
                 if (!(var1.getPacket() instanceof SDisconnectPacket)) {
-                    if (var1.getPacket() instanceof Class5598) {
+                    if (var1.getPacket() instanceof SLoginSuccessPacket) {
                         long var11 = System.currentTimeMillis();
                         if (this.field38719.getCurrentServerData() == null) {
                             return;
@@ -75,8 +76,8 @@ public class BanListener {
                     }
                 }
             } else {
-                Class5490 var14 = (Class5490) var1.getPacket();
-                long var19 = this.method30841(var14.method17270().getString());
+                SDisconnectLoginPacket var14 = (SDisconnectLoginPacket) var1.getPacket();
+                long var19 = this.method30841(var14.getReason().getString());
                 if (var19 == 0L) {
                     return;
                 }

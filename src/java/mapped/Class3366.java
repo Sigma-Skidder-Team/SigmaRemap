@@ -178,7 +178,7 @@ public class Class3366 extends Class3241 {
 
    private void method11950(World var1, double var2, double var4, double var6, double var8, double var10) {
       var1.method6746(
-         Class7940.field34108,
+         ParticleTypes.field34108,
          MathHelper.method37822(var1.rand.nextDouble(), var2, var4),
          var10,
          MathHelper.method37822(var1.rand.nextDouble(), var6, var8),

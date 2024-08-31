@@ -41,7 +41,7 @@ public class CUseEntityPacket implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24439 = var1.method35714();
+      this.field24439 = var1.readVarInt();
       this.field24440 = var1.<Action>method35712(Action.class);
       if (this.field24440 == Action.INTERACT_AT) {
          this.field24441 = new Vector3d((double)var1.readFloat(), (double)var1.readFloat(), (double)var1.readFloat());
@@ -71,7 +71,7 @@ public class CUseEntityPacket implements Packet<IServerPlayNetHandler> {
       var1.writeBoolean(this.field24443);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.processUseEntity(this);
    }
 

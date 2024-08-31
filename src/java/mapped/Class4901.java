@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4901 extends Class4874<Class4488> {
    private static final ResourceLocation field22735 = new ResourceLocation("changed_dimension");

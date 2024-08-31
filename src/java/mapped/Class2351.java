@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Lifecycle;
+import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
@@ -26,9 +27,9 @@ public class Class2351<T> extends SimpleRegistry<T> {
    }
 
    @Override
-   public int method9171(T var1) {
-      int var4 = super.method9171((T)var1);
-      return var4 != -1 ? var4 : super.method9171(this.field16152);
+   public int getId(T var1) {
+      int var4 = super.getId((T)var1);
+      return var4 != -1 ? var4 : super.getId(this.field16152);
    }
 
    @Nonnull

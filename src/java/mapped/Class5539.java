@@ -26,7 +26,7 @@ public class Class5539 implements Packet<IServerPlayNetHandler> {
       var1.writeShort(this.field24593);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15627(this);
    }
 

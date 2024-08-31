@@ -47,12 +47,12 @@ public class SCombatPacket implements Packet<IClientPlayNetHandler> {
       this.field24693 = var1.<Class1900>method35712(Class1900.class);
       if (this.field24693 != Class1900.field11156) {
          if (this.field24693 == Class1900.field11157) {
-            this.field24694 = var1.method35714();
+            this.field24694 = var1.readVarInt();
             this.field24695 = var1.readInt();
             this.field24697 = var1.method35710();
          }
       } else {
-         this.field24696 = var1.method35714();
+         this.field24696 = var1.readVarInt();
          this.field24695 = var1.readInt();
       }
    }
@@ -64,7 +64,7 @@ public class SCombatPacket implements Packet<IClientPlayNetHandler> {
          if (this.field24693 == Class1900.field11157) {
             var1.writeVarInt(this.field24694);
             var1.writeInt(this.field24695);
-            var1.method35711(this.field24697);
+            var1.writeTextComponent(this.field24697);
          }
       } else {
          var1.writeVarInt(this.field24696);
@@ -72,7 +72,7 @@ public class SCombatPacket implements Packet<IClientPlayNetHandler> {
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleCombatEvent(this);
    }
 

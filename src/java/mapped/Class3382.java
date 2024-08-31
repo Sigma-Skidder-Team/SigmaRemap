@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.block.BlockState;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Map;
@@ -25,7 +26,7 @@ public class Class3382 extends Class3381 {
       )
    );
 
-   public Class3382(AbstractBlock var1, Class7436 var2) {
+   public Class3382(AbstractBlock var1, IParticleData var2) {
       super(var1, var2);
       this.method11578(this.field18612.method35393().method23465(field18985, Direction.NORTH));
    }
@@ -87,7 +88,7 @@ public class Class3382 extends Class3381 {
       double var14 = 0.22;
       double var16 = 0.27;
       Direction var18 = var7.method536();
-      var2.method6746(Class7940.field34092, var8 + 0.27 * (double)var18.method539(), var10 + 0.22, var12 + 0.27 * (double)var18.method541(), 0.0, 0.0, 0.0);
+      var2.method6746(ParticleTypes.field34092, var8 + 0.27 * (double)var18.method539(), var10 + 0.22, var12 + 0.27 * (double)var18.method541(), 0.0, 0.0, 0.0);
       var2.method6746(this.field18984, var8 + 0.27 * (double)var18.method539(), var10 + 0.22, var12 + 0.27 * (double)var18.method541(), 0.0, 0.0, 0.0);
    }
 

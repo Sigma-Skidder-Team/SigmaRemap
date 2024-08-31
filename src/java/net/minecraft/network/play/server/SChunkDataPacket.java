@@ -72,19 +72,19 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
       this.field24514 = var1.readInt();
       this.field24515 = var1.readInt();
       this.field24521 = var1.readBoolean();
-      this.field24516 = var1.method35714();
+      this.field24516 = var1.readVarInt();
       this.field24517 = var1.method35721();
       if (this.field24521) {
          this.field24518 = var1.method35703(Class1684.field9154);
       }
 
-      int var4 = var1.method35714();
+      int var4 = var1.readVarInt();
       if (var4 > 2097152) {
          throw new RuntimeException("Chunk Packet trying to allocate too much memory on read.");
       } else {
          this.field24519 = new byte[var4];
          var1.readBytes(this.field24519);
-         int var5 = var1.method35714();
+         int var5 = var1.readVarInt();
          this.field24520 = Lists.newArrayList();
 
          for (int var6 = 0; var6 < var5; var6++) {
@@ -113,7 +113,7 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleChunkData(this);
    }
 

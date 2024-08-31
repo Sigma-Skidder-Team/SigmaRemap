@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;

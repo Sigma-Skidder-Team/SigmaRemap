@@ -175,7 +175,7 @@ public class Class1012 extends Class1013 implements Class1011 {
                      float var8 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.method3429() * 0.5F;
                      this.world
                         .method6746(
-                           Class7940.field34099,
+                           ParticleTypes.field34099,
                            this.getPosX() + (double)var7,
                            (double)(var3 + 0.8F),
                            this.getPosZ() + (double)var8,

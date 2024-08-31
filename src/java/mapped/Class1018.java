@@ -42,7 +42,7 @@ public abstract class Class1018 extends Class1045 {
             double var3 = this.rand.nextGaussian() * 0.02;
             double var5 = this.rand.nextGaussian() * 0.02;
             double var7 = this.rand.nextGaussian() * 0.02;
-            this.world.method6746(Class7940.field34080, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var3, var5, var7);
+            this.world.method6746(ParticleTypes.field34080, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var3, var5, var7);
          }
       }
    }
@@ -220,7 +220,7 @@ public abstract class Class1018 extends Class1045 {
             double var5 = this.rand.nextGaussian() * 0.02;
             double var7 = this.rand.nextGaussian() * 0.02;
             double var9 = this.rand.nextGaussian() * 0.02;
-            this.world.method6746(Class7940.field34080, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var5, var7, var9);
+            this.world.method6746(ParticleTypes.field34080, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var5, var7, var9);
          }
       }
    }

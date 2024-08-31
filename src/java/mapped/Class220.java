@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.ResourceLocation;
 
 public class Class220<T extends LivingEntity, M extends Class2827<T>> extends Class219<T, M> {
    private static final ResourceLocation field864 = new ResourceLocation("textures/entity/elytra.png");

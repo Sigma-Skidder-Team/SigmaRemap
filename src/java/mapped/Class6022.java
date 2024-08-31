@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 
 public class Class6022 implements Class6021<String> {
    private static String[] field26219;

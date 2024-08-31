@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.particles.IParticleData;
 
 public class Class894 extends Class890 {
    private static String[] field5129;
@@ -24,15 +25,15 @@ public class Class894 extends Class890 {
       return Items.field37888;
    }
 
-   private Class7436 method3516() {
+   private IParticleData method3516() {
       ItemStack var3 = this.method3513();
-      return (Class7436)(!var3.isEmpty() ? new Class7438(Class7940.field34082, var3) : Class7940.field34084);
+      return (IParticleData)(!var3.isEmpty() ? new Class7438(ParticleTypes.field34082, var3) : ParticleTypes.field34084);
    }
 
    @Override
    public void method2866(byte var1) {
       if (var1 == 3) {
-         Class7436 var4 = this.method3516();
+         IParticleData var4 = this.method3516();
 
          for (int var5 = 0; var5 < 8; var5++) {
             this.world.method6746(var4, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
 
 public class Class238<T extends Entity & Class1069, M extends Class2827<T>> extends Class219<T, M> {
    private static String[] field889;

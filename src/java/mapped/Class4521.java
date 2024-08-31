@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.HashMap;
 import java.util.Map;

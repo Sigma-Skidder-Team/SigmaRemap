@@ -39,7 +39,7 @@ public class SPlayerPositionLookPacket implements Packet<IClientPlayNetHandler> 
       this.field24300 = var1.readFloat();
       this.field24301 = var1.readFloat();
       this.field24302 = Class2033.method8674(var1.readUnsignedByte());
-      this.field24303 = var1.method35714();
+      this.field24303 = var1.readVarInt();
    }
 
    @Override
@@ -53,7 +53,7 @@ public class SPlayerPositionLookPacket implements Packet<IClientPlayNetHandler> 
       var1.writeVarInt(this.field24303);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handlePlayerPosLook(this);
    }
 

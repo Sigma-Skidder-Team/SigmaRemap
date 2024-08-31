@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class9135 {
    private static String[] field41979;
    private String field41980 = null;

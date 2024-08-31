@@ -3,10 +3,11 @@ package mapped;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.particles.IParticleData;
 
 import java.util.Locale;
 
-public class Class7437 implements Class7436 {
+public class Class7437 implements IParticleData {
    public static final Class7437 field32000 = new Class7437(1.0F, 0.0F, 0.0F, 1.0F);
    public static final Codec<Class7437> field32001 = RecordCodecBuilder.create(
       var0 -> var0.group(
@@ -31,7 +32,7 @@ public class Class7437 implements Class7436 {
    }
 
    @Override
-   public void method24009(PacketBuffer var1) {
+   public void write(PacketBuffer var1) {
       var1.writeFloat(this.field32003);
       var1.writeFloat(this.field32004);
       var1.writeFloat(this.field32005);
@@ -43,7 +44,7 @@ public class Class7437 implements Class7436 {
       return String.format(
          Locale.ROOT,
          "%s %.2f %.2f %.2f %.2f",
-         Registry.field16077.getKey(this.method24011()),
+         Registry.PARTICLE_TYPE.getKey(this.getType()),
          this.field32003,
          this.field32004,
          this.field32005,
@@ -52,8 +53,8 @@ public class Class7437 implements Class7436 {
    }
 
    @Override
-   public Class7434<Class7437> method24011() {
-      return Class7940.field34062;
+   public ParticleType<Class7437> getType() {
+      return ParticleTypes.field34062;
    }
 
    public float method24012() {

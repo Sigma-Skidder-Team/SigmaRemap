@@ -462,7 +462,7 @@ public class ArmorStandEntity extends LivingEntity {
       if (this.world instanceof ServerWorld) {
          ((ServerWorld)this.world)
             .method6939(
-               new Class7439(Class7940.field34051, Blocks.field36400.method11579()),
+               new Class7439(ParticleTypes.field34051, Blocks.field36400.method11579()),
                this.getPosX(),
                this.method3440(0.6666666666666666),
                this.getPosZ(),

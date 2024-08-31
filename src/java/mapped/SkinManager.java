@@ -15,6 +15,7 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import com.mojang.authlib.properties.Property;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.ResourceLocation;
 
 import java.io.File;
 import java.util.HashMap;

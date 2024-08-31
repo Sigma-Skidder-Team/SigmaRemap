@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.server.SCloseWindowPacket;
+import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 public class Class8480 {

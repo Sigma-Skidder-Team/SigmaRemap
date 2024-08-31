@@ -53,10 +53,10 @@ public class SWorldBorderPacket implements Packet<IClientPlayNetHandler> {
             this.field24308 = var1.readDouble();
             break;
          case 4:
-            this.field24313 = var1.method35714();
+            this.field24313 = var1.readVarInt();
             break;
          case 5:
-            this.field24312 = var1.method35714();
+            this.field24312 = var1.readVarInt();
             break;
          case 6:
             this.field24307 = var1.readDouble();
@@ -64,9 +64,9 @@ public class SWorldBorderPacket implements Packet<IClientPlayNetHandler> {
             this.field24310 = var1.readDouble();
             this.field24309 = var1.readDouble();
             this.field24311 = var1.method35715();
-            this.field24306 = var1.method35714();
-            this.field24313 = var1.method35714();
-            this.field24312 = var1.method35714();
+            this.field24306 = var1.readVarInt();
+            this.field24313 = var1.readVarInt();
+            this.field24312 = var1.readVarInt();
       }
    }
 
@@ -104,7 +104,7 @@ public class SWorldBorderPacket implements Packet<IClientPlayNetHandler> {
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleWorldBorder(this);
    }
 

@@ -2,7 +2,7 @@ package net.minecraft.util.text;
 
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
-import mapped.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import mapped.JSONUtils;
 import mapped.Class9681;
 import net.minecraft.client.util.Util;
@@ -240,7 +240,7 @@ public class ITextComponent$Serializer implements JsonDeserializer<IFormattableT
    }
 
    @Nullable
-   public static IFormattableTextComponent func_240644_b_(String p_240644_0_) {
+   public static IFormattableTextComponent getComponentFromJsonLenient(String p_240644_0_) {
       return JSONUtils.<IFormattableTextComponent>method32793(GSON, p_240644_0_, IFormattableTextComponent.class, true);
    }
 

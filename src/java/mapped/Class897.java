@@ -126,7 +126,7 @@ public class Class897 extends Entity implements Class889 {
       if (!this.method3250()) {
          this.world
             .method6746(
-               Class7940.field34090,
+               ParticleTypes.field34090,
                var4 - var3.x * 0.25 + this.rand.nextDouble() * 0.6 - 0.3,
                var6 - var3.y * 0.25 - 0.5,
                var8 - var3.z * 0.25 + this.rand.nextDouble() * 0.6 - 0.3,
@@ -138,7 +138,7 @@ public class Class897 extends Entity implements Class889 {
          for (int var23 = 0; var23 < 4; var23++) {
             this.world
                .method6746(
-                  Class7940.field34052,
+                  ParticleTypes.field34052,
                   var4 - var3.x * 0.25,
                   var6 - var3.y * 0.25,
                   var8 - var3.z * 0.25,

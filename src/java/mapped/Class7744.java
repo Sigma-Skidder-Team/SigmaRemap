@@ -5,7 +5,8 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.ParseResults;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import java.util.ArrayList;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.List;
 
 public class Class7744 {

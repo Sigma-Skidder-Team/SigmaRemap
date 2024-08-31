@@ -38,14 +38,14 @@ public class SCommandListPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      Class8125[] var4 = new Class8125[var1.method35714()];
+      Class8125[] var4 = new Class8125[var1.readVarInt()];
 
       for (int var5 = 0; var5 < var4.length; var5++) {
          var4[var5] = method17655(var1);
       }
 
       method17652(var4);
-      this.field24922 = (RootCommandNode<Class6618>)Class8125.method28147(var4[var1.method35714()]);
+      this.field24922 = (RootCommandNode<Class6618>)Class8125.method28147(var4[var1.readVarInt()]);
    }
 
    @Override
@@ -116,14 +116,14 @@ public class SCommandListPacket implements Packet<IClientPlayNetHandler> {
    private static ArgumentBuilder<Class6618, ?> method17656(PacketBuffer var0, byte var1) {
       int var4 = var1 & 3;
       if (var4 != 2) {
-         return var4 != 1 ? null : LiteralArgumentBuilder.literal(var0.method35728(32767));
+         return var4 != 1 ? null : LiteralArgumentBuilder.literal(var0.readString(32767));
       } else {
-         String var5 = var0.method35728(32767);
+         String var5 = var0.readString(32767);
          ArgumentType var6 = Class8651.method31100(var0);
          if (var6 != null) {
             RequiredArgumentBuilder var7 = RequiredArgumentBuilder.argument(var5, var6);
             if ((var1 & 16) != 0) {
-               var7.suggests(Class9222.method34677(var0.method35731()));
+               var7.suggests(Class9222.method34677(var0.readResourceLocation()));
             }
 
             return var7;
@@ -173,19 +173,19 @@ public class SCommandListPacket implements Packet<IClientPlayNetHandler> {
 
       if (!(var1 instanceof ArgumentCommandNode)) {
          if (var1 instanceof LiteralCommandNode) {
-            var0.method35729(((LiteralCommandNode)var1).getLiteral());
+            var0.writeString(((LiteralCommandNode)var1).getLiteral());
          }
       } else {
          ArgumentCommandNode var9 = (ArgumentCommandNode)var1;
-         var0.method35729(var9.getName());
+         var0.writeString(var9.getName());
          Class8651.method31099(var0, var9.getType());
          if (var9.getCustomSuggestions() != null) {
-            var0.method35732(Class9222.method34678(var9.getCustomSuggestions()));
+            var0.writeResourceLocation(Class9222.method34678(var9.getCustomSuggestions()));
          }
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleCommandList(this);
    }
 

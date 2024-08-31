@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.particles.IParticleData;
 
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class Class903 extends Class901 {
             var6.method4113((LivingEntity)var4);
          }
 
-         var6.method4105(Class7940.field34056);
+         var6.method4105(ParticleTypes.field34056);
          var6.method4097(3.0F);
          var6.method4109(600);
          var6.method4111((7.0F - var6.method4098()) / (float)var6.method4108());
@@ -64,8 +65,8 @@ public class Class903 extends Class901 {
    }
 
    @Override
-   public Class7436 method3530() {
-      return Class7940.field34056;
+   public IParticleData method3530() {
+      return ParticleTypes.field34056;
    }
 
    @Override

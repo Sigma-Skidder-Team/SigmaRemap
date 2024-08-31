@@ -17,7 +17,7 @@ public class SKeepAlivePacket implements Packet<IClientPlayNetHandler> {
       this.field24659 = var1;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleKeepAlive(this);
    }
 

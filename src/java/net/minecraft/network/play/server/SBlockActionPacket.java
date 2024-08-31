@@ -31,7 +31,7 @@ public class SBlockActionPacket implements Packet<IClientPlayNetHandler> {
       this.field24392 = var1.method35707();
       this.field24393 = var1.readUnsignedByte();
       this.field24394 = var1.readUnsignedByte();
-      this.field24395 = Registry.BLOCK.method9172(var1.method35714());
+      this.field24395 = Registry.BLOCK.method9172(var1.readVarInt());
    }
 
    @Override
@@ -39,10 +39,10 @@ public class SBlockActionPacket implements Packet<IClientPlayNetHandler> {
       var1.method35708(this.field24392);
       var1.writeByte(this.field24393);
       var1.writeByte(this.field24394);
-      var1.writeVarInt(Registry.BLOCK.method9171(this.field24395));
+      var1.writeVarInt(Registry.BLOCK.getId(this.field24395));
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleBlockAction(this);
    }
 

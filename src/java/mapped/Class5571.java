@@ -19,7 +19,7 @@ public class Class5571 implements Packet<Class5108> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24710 = var1.method35714();
+      this.field24710 = var1.readVarInt();
       if (!var1.readBoolean()) {
          this.field24711 = null;
       } else {
@@ -43,7 +43,7 @@ public class Class5571 implements Packet<Class5108> {
       }
    }
 
-   public void method17180(Class5108 var1) {
+   public void processPacket(Class5108 var1) {
       var1.method15598(this);
    }
 }

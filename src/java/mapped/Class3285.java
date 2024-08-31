@@ -96,7 +96,7 @@ public class Class3285 extends Item {
 
                Object var9;
                try {
-                  var9 = ITextComponent$Serializer.func_240644_b_(var8);
+                  var9 = ITextComponent$Serializer.getComponentFromJsonLenient(var8);
                   var9 = TextComponentUtils.func_240645_a_(var1, (ITextComponent)var9, var2, 0);
                } catch (Exception var11) {
                   var9 = new StringTextComponent(var8);

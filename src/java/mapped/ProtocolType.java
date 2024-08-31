@@ -1,8 +1,10 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.network.login.IClientLoginNetHandler;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
+import net.minecraft.network.login.server.*;
 import net.minecraft.network.play.server.*;
 
 import java.util.Map;
@@ -177,12 +179,12 @@ public enum ProtocolType {
       method8101()
          .method31658(
             Class1975.CLIENTBOUND,
-            new Class7417<Class5103>()
-               .method23905(Class5490.class, Class5490::new)
-               .method23905(Class5540.class, Class5540::new)
-               .method23905(Class5598.class, Class5598::new)
-               .method23905(Class5521.class, Class5521::new)
-               .method23905(Class5496.class, Class5496::new)
+            new Class7417<IClientLoginNetHandler>()
+               .method23905(SDisconnectLoginPacket.class, SDisconnectLoginPacket::new)
+               .method23905(SEncryptionRequestPacket.class, SEncryptionRequestPacket::new)
+               .method23905(SLoginSuccessPacket.class, SLoginSuccessPacket::new)
+               .method23905(SEnableCompressionPacket.class, SEnableCompressionPacket::new)
+               .method23905(SCustomPayloadLoginPacket.class, SCustomPayloadLoginPacket::new)
          )
          .method31658(
             Class1975.SERVERBOUND,

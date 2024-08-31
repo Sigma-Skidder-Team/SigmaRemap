@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import javax.annotation.Nullable;
+
+import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 
 public class Class1785 implements Class1783 {

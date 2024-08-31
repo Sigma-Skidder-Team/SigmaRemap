@@ -23,7 +23,7 @@ public class SEntityHeadLookPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24477 = var1.method35714();
+      this.field24477 = var1.readVarInt();
       this.field24478 = var1.readByte();
    }
 
@@ -33,7 +33,7 @@ public class SEntityHeadLookPacket implements Packet<IClientPlayNetHandler> {
       var1.writeByte(this.field24478);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleEntityHeadLook(this);
    }
 

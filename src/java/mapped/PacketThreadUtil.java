@@ -26,7 +26,7 @@ public class PacketThreadUtil {
             if (!var1.getNetworkManager().isChannelOpen()) {
                field39629.debug("Ignoring packet due to disconnection: " + var0);
             } else {
-               var0.method17180(var1);
+               var0.processPacket(var1);
             }
          });
          throw Class2466.field16549;

@@ -4,119 +4,119 @@ import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.particles.IParticleData;
 
 import java.io.IOException;
 
 public class SSpawnParticlePacket implements Packet<IClientPlayNetHandler> {
-   private static String[] field24628;
-   private double field24629;
-   private double field24630;
-   private double field24631;
-   private float field24632;
-   private float field24633;
-   private float field24634;
-   private float field24635;
-   private int field24636;
-   private boolean field24637;
-   private Class7436 field24638;
+   private double xCoord;
+   private double yCoord;
+   private double zCoord;
+   private float xOffset;
+   private float yOffset;
+   private float zOffset;
+   private float particleSpeed;
+   private int particleCount;
+   private boolean longDistance;
+   private IParticleData particle;
 
    public SSpawnParticlePacket() {
    }
 
-   public <T extends Class7436> SSpawnParticlePacket(
+   public <T extends IParticleData> SSpawnParticlePacket(
       T var1, boolean var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12, int var13
    ) {
-      this.field24638 = var1;
-      this.field24637 = var2;
-      this.field24629 = var3;
-      this.field24630 = var5;
-      this.field24631 = var7;
-      this.field24632 = var9;
-      this.field24633 = var10;
-      this.field24634 = var11;
-      this.field24635 = var12;
-      this.field24636 = var13;
+      this.particle = var1;
+      this.longDistance = var2;
+      this.xCoord = var3;
+      this.yCoord = var5;
+      this.zCoord = var7;
+      this.xOffset = var9;
+      this.yOffset = var10;
+      this.zOffset = var11;
+      this.particleSpeed = var12;
+      this.particleCount = var13;
    }
 
    @Override
-   public void readPacketData(PacketBuffer var1) throws IOException {
-      Object var4 = Registry.field16077.method9172(var1.readInt());
-      if (var4 == null) {
-         var4 = Class7940.field34050;
+   public void readPacketData(PacketBuffer buf) throws IOException {
+      ParticleType<?> particletype = Registry.PARTICLE_TYPE.method9172(buf.readInt());
+      if (particletype == null) {
+         particletype = ParticleTypes.BARRIER;
       }
 
-      this.field24637 = var1.readBoolean();
-      this.field24629 = var1.readDouble();
-      this.field24630 = var1.readDouble();
-      this.field24631 = var1.readDouble();
-      this.field24632 = var1.readFloat();
-      this.field24633 = var1.readFloat();
-      this.field24634 = var1.readFloat();
-      this.field24635 = var1.readFloat();
-      this.field24636 = var1.readInt();
-      this.field24638 = this.<Class7436>method17446(var1, (Class7434<Class7436>)var4);
+      this.longDistance = buf.readBoolean();
+      this.xCoord = buf.readDouble();
+      this.yCoord = buf.readDouble();
+      this.zCoord = buf.readDouble();
+      this.xOffset = buf.readFloat();
+      this.yOffset = buf.readFloat();
+      this.zOffset = buf.readFloat();
+      this.particleSpeed = buf.readFloat();
+      this.particleCount = buf.readInt();
+      this.particle = this.readParticle(buf, particletype);
    }
 
-   private <T extends Class7436> T method17446(PacketBuffer var1, Class7434<T> var2) {
-      return (T)var2.method24007().method20912(var2, var1);
+   private <T extends IParticleData> T readParticle(PacketBuffer var1, ParticleType<T> var2) {
+      return (T)var2.getDeserializer().read(var2, var1);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeInt(Registry.field16077.method9171(this.field24638.method24011()));
-      var1.writeBoolean(this.field24637);
-      var1.writeDouble(this.field24629);
-      var1.writeDouble(this.field24630);
-      var1.writeDouble(this.field24631);
-      var1.writeFloat(this.field24632);
-      var1.writeFloat(this.field24633);
-      var1.writeFloat(this.field24634);
-      var1.writeFloat(this.field24635);
-      var1.writeInt(this.field24636);
-      this.field24638.method24009(var1);
+      var1.writeInt(Registry.PARTICLE_TYPE.getId(this.particle.getType()));
+      var1.writeBoolean(this.longDistance);
+      var1.writeDouble(this.xCoord);
+      var1.writeDouble(this.yCoord);
+      var1.writeDouble(this.zCoord);
+      var1.writeFloat(this.xOffset);
+      var1.writeFloat(this.yOffset);
+      var1.writeFloat(this.zOffset);
+      var1.writeFloat(this.particleSpeed);
+      var1.writeInt(this.particleCount);
+      this.particle.write(var1);
    }
 
-   public boolean method17447() {
-      return this.field24637;
+   public boolean getLongDistanceGirlfriend() {
+      return this.longDistance;
    }
 
-   public double method17448() {
-      return this.field24629;
+   public double getX() {
+      return this.xCoord;
    }
 
-   public double method17449() {
-      return this.field24630;
+   public double getY() {
+      return this.yCoord;
    }
 
-   public double method17450() {
-      return this.field24631;
+   public double getZ() {
+      return this.zCoord;
    }
 
-   public float method17451() {
-      return this.field24632;
+   public float getXOffset() {
+      return this.xOffset;
    }
 
-   public float method17452() {
-      return this.field24633;
+   public float getYOffset() {
+      return this.yOffset;
    }
 
-   public float method17453() {
-      return this.field24634;
+   public float getZOffset() {
+      return this.zOffset;
    }
 
-   public float method17454() {
-      return this.field24635;
+   public float getParticleSpeed() {
+      return this.particleSpeed;
    }
 
-   public int method17455() {
-      return this.field24636;
+   public int getParticleCount() {
+      return this.particleCount;
    }
 
-   public Class7436 method17456() {
-      return this.field24638;
+   public IParticleData getParticle() {
+      return this.particle;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleParticles(this);
    }
 }

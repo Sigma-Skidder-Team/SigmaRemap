@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ResourceLocation;
 
 public abstract class Class6945<T, C extends Class6861<T>> {
    private final ResourceLocation field30096;

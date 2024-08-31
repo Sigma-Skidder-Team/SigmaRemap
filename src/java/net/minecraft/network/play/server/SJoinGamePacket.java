@@ -71,19 +71,19 @@ public class SJoinGamePacket implements Packet<IClientPlayNetHandler> {
       this.field24408 = var1.readBoolean();
       this.field24409 = Class1894.method8159(var1.readByte());
       this.field24410 = Class1894.method8159(var1.readByte());
-      int var4 = var1.method35714();
+      int var4 = var1.readVarInt();
       this.field24411 = Sets.newHashSet();
 
       for (int var5 = 0; var5 < var4; var5++) {
-         this.field24411.add(RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.method35731()));
+         this.field24411.add(RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.readResourceLocation()));
       }
 
       this.field24412 = var1.<DynamicRegistriesImpl>method35696(DynamicRegistriesImpl.field40301);
       this.field24413 = var1.<Supplier<DimensionType>>method35696(DimensionType.DIMENSION_TYPE_CODEC).get();
-      this.field24414 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.method35731());
+      this.field24414 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.readResourceLocation());
       this.field24407 = var1.readLong();
-      this.field24415 = var1.method35714();
-      this.field24416 = var1.method35714();
+      this.field24415 = var1.readVarInt();
+      this.field24416 = var1.readVarInt();
       this.field24417 = var1.readBoolean();
       this.field24418 = var1.readBoolean();
       this.field24419 = var1.readBoolean();
@@ -99,12 +99,12 @@ public class SJoinGamePacket implements Packet<IClientPlayNetHandler> {
       var1.writeVarInt(this.field24411.size());
 
       for (RegistryKey var5 : this.field24411) {
-         var1.method35732(var5.getLocation());
+         var1.writeResourceLocation(var5.getLocation());
       }
 
       var1.method35697(DynamicRegistriesImpl.field40301, this.field24412);
       var1.method35697(DimensionType.DIMENSION_TYPE_CODEC, () -> this.field24413);
-      var1.method35732(this.field24414.getLocation());
+      var1.writeResourceLocation(this.field24414.getLocation());
       var1.writeLong(this.field24407);
       var1.writeVarInt(this.field24415);
       var1.writeVarInt(this.field24416);
@@ -114,7 +114,7 @@ public class SJoinGamePacket implements Packet<IClientPlayNetHandler> {
       var1.writeBoolean(this.field24420);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleJoinGame(this);
    }
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4891 extends Class4874<Class4462> {
    private static final ResourceLocation field22725 = new ResourceLocation("bred_animals");

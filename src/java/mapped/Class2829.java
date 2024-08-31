@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.function.Function;
 
 public class Class2829 extends Class2828 {

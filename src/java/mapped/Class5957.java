@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;

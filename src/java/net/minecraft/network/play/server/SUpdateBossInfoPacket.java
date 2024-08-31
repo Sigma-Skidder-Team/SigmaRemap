@@ -76,7 +76,7 @@ public class SUpdateBossInfoPacket implements Packet<IClientPlayNetHandler> {
       var1.method35713(this.field24288);
       switch (Class9255.field42562[this.field24288.ordinal()]) {
          case 1:
-            var1.method35711(this.field24289);
+            var1.writeTextComponent(this.field24289);
             var1.writeFloat(this.field24290);
             var1.method35713(this.field24291);
             var1.method35713(this.field24292);
@@ -88,7 +88,7 @@ public class SUpdateBossInfoPacket implements Packet<IClientPlayNetHandler> {
             var1.writeFloat(this.field24290);
             break;
          case 4:
-            var1.method35711(this.field24289);
+            var1.writeTextComponent(this.field24289);
             break;
          case 5:
             var1.method35713(this.field24291);
@@ -116,7 +116,7 @@ public class SUpdateBossInfoPacket implements Packet<IClientPlayNetHandler> {
       return var3;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleUpdateBossInfo(this);
    }
 

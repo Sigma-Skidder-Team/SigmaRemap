@@ -26,7 +26,7 @@ public class Class5489 implements Packet<Class5112> {
       var1.writeLong(this.field24376);
    }
 
-   public void method17180(Class5112 var1) {
+   public void processPacket(Class5112 var1) {
       var1.method15689(this);
    }
 }

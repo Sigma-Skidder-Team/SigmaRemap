@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4912 extends Class4874<Class4465> {
    private static final ResourceLocation field22745 = new ResourceLocation("enchanted_item");

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class8977 extends Class8978 {
    public Class8977() {
       super(RenderType.method14339(new ResourceLocation("")), RenderType.method14340(new ResourceLocation("")), 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -30,7 +31,7 @@ public abstract class Class7637 extends Class7633 {
             double var8 = (double)var2.getX() + var4.nextDouble();
             double var10 = (double)var2.getY() + 1.0;
             double var12 = (double)var2.getZ() + var4.nextDouble();
-            var1.method6746(Class7940.field34086, var8, var10, var12, 0.0, 0.0, 0.0);
+            var1.method6746(ParticleTypes.field34086, var8, var10, var12, 0.0, 0.0, 0.0);
             var1.method6745(
                var8, var10, var12, Sounds.field26727, Class2266.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
             );
@@ -105,8 +106,8 @@ public abstract class Class7637 extends Class7633 {
 
    @Nullable
    @Override
-   public Class7436 method25054() {
-      return Class7940.field34057;
+   public IParticleData method25054() {
+      return ParticleTypes.field34057;
    }
 
    @Override

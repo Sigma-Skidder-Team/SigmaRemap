@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import javax.annotation.Nullable;
 
 public class Class5742 extends Class5712<ArmorStandEntity, Class2892> {

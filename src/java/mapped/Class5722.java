@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5722 extends Class5715<Class915> {
    private static final ResourceLocation field25120 = new ResourceLocation("textures/entity/illager/evoker_fangs.png");
    private final Class2804<Class915> field25121 = new Class2804<Class915>();

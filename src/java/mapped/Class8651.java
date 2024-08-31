@@ -17,6 +17,7 @@ import java.util.Set;
 import javax.annotation.Nullable;
 
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -99,17 +100,17 @@ public class Class8651 {
    public static <T extends ArgumentType<?>> void method31099(PacketBuffer var0, T var1) {
       Class8678 var4 = method31098(var1);
       if (var4 != null) {
-         var0.method35732(var4.field39148);
+         var0.writeResourceLocation(var4.field39148);
          var4.field39147.method10796((T)var1, var0);
       } else {
          field38986.error("Could not serialize {} ({}) - will not be sent to client!", var1, var1.getClass());
-         var0.method35732(new ResourceLocation(""));
+         var0.writeResourceLocation(new ResourceLocation(""));
       }
    }
 
    @Nullable
    public static ArgumentType<?> method31100(PacketBuffer var0) {
-      ResourceLocation var3 = var0.method35731();
+      ResourceLocation var3 = var0.readResourceLocation();
       Class8678 var4 = method31097(var3);
       if (var4 != null) {
          return var4.field39147.method10795(var0);

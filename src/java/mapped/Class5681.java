@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5681 extends Class5651<Class1110, Class2806<Class1110>> {
    private static final ResourceLocation field25046 = new ResourceLocation("textures/entity/phantom.png");
 

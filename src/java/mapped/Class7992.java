@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ResourceLocation;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -709,7 +710,7 @@ public class Class7992 {
             int var10 = var8.method122("lvl");
             Class6069 var11 = Class7849.method26306(var9);
             if (var11 != null) {
-               int var12 = Registry.field16073.method9171(var11);
+               int var12 = Registry.field16073.getId(var11);
                var6[var7][0] = var12;
                var6[var7][1] = var10;
             }

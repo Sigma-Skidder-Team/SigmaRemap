@@ -392,7 +392,7 @@ public class Class8782 extends DataFix {
    }
 
    public static int method31670(Class2353<Dynamic<?>> var0, Dynamic<?> var1) {
-      int var4 = var0.method9171(var1);
+      int var4 = var0.getId(var1);
       if (var4 == -1) {
          var4 = var0.method9272(var1);
       }

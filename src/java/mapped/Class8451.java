@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Either;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

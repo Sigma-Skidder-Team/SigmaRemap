@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5709 extends Class5651<Class1064, Class2854<Class1064>> {
    private static final ResourceLocation[] field25082 = new ResourceLocation[]{
       new ResourceLocation("textures/entity/llama/creamy.png"),

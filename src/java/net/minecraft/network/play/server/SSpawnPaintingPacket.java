@@ -25,14 +25,14 @@ public class SSpawnPaintingPacket implements Packet<IClientPlayNetHandler> {
       this.field24277 = var1.getUniqueID();
       this.field24278 = var1.method4085();
       this.field24279 = var1.method3386();
-      this.field24280 = Registry.field16079.method9171(var1.field5496);
+      this.field24280 = Registry.field16079.getId(var1.field5496);
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24276 = var1.method35714();
+      this.field24276 = var1.readVarInt();
       this.field24277 = var1.method35717();
-      this.field24280 = var1.method35714();
+      this.field24280 = var1.readVarInt();
       this.field24278 = var1.method35707();
       this.field24279 = Direction.method547(var1.readUnsignedByte());
    }
@@ -46,7 +46,7 @@ public class SSpawnPaintingPacket implements Packet<IClientPlayNetHandler> {
       var1.writeByte(this.field24279.method534());
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleSpawnPainting(this);
    }
 

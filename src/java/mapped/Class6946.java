@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ResourceLocation;
 
 public class Class6946 extends Class6945<MinecraftServer, Class6862> {
    public Class6946() {

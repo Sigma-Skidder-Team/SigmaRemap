@@ -209,7 +209,7 @@ public class EntityDataManager {
             var3 = Lists.newArrayList();
          }
 
-         int var5 = var0.method35714();
+         int var5 = var0.readVarInt();
          Class6466 var6 = DataSerializers.method25805(var5);
          if (var6 == null) {
             throw new DecoderException("Unknown serializer type " + var5);

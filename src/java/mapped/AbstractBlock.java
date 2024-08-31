@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.function.Function;
 import java.util.function.ToIntFunction;

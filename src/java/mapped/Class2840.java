@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 

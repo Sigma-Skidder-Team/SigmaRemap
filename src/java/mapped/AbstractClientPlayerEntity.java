@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4423;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
 import java.io.File;

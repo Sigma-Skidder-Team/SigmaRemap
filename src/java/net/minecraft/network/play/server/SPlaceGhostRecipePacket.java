@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import mapped.Class4843;
 import net.minecraft.network.PacketBuffer;
-import mapped.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 
@@ -32,16 +32,16 @@ public class SPlaceGhostRecipePacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24797 = var1.readByte();
-      this.field24798 = var1.method35731();
+      this.field24798 = var1.readResourceLocation();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeByte(this.field24797);
-      var1.method35732(this.field24798);
+      var1.writeResourceLocation(this.field24798);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handlePlaceGhostRecipe(this);
    }
 }

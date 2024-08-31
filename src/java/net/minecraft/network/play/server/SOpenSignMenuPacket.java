@@ -18,7 +18,7 @@ public class SOpenSignMenuPacket implements Packet<IClientPlayNetHandler> {
       this.field24380 = var1;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleSignEditorOpen(this);
    }
 

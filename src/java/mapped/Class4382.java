@@ -8,6 +8,7 @@ import com.mojang.serialization.DataResult.PartialResult;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenCustomHashMap;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.Collection;
 import java.util.Map;

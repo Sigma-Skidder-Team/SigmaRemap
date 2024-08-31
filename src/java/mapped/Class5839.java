@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
 

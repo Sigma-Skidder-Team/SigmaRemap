@@ -22,7 +22,7 @@ public class Class7877 extends ByteToMessageDecoder {
    public void decode(ChannelHandlerContext var1, ByteBuf var2, List<Object> var3) throws Exception {
       if (var2.readableBytes() != 0) {
          PacketBuffer var6 = new PacketBuffer(var2);
-         int var7 = var6.method35714();
+         int var7 = var6.readVarInt();
          if (var7 != 0) {
             if (var7 < this.field33818) {
                throw new DecoderException("Badly compressed packet - size of " + var7 + " is below server threshold of " + this.field33818);

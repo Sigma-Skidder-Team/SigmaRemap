@@ -53,7 +53,7 @@ public class Class994 extends AbstractMinecartEntity {
       }
 
       if (this.method4075() && this.rand.nextInt(4) == 0) {
-         this.world.method6746(Class7940.field34085, this.getPosX(), this.getPosY() + 0.8, this.getPosZ(), 0.0, 0.0, 0.0);
+         this.world.method6746(ParticleTypes.field34085, this.getPosX(), this.getPosY() + 0.8, this.getPosZ(), 0.0, 0.0, 0.0);
       }
    }
 

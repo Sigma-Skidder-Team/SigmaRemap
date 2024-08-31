@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
@@ -30,24 +31,24 @@ public class Class5544 implements Packet<IServerPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24608 = var1.method35707();
-      this.field24609 = var1.method35731();
-      this.field24610 = var1.method35731();
-      this.field24611 = var1.method35731();
-      this.field24612 = var1.method35728(32767);
-      this.field24613 = Class92.method269(var1.method35728(32767)).orElse(Class92.field238);
+      this.field24609 = var1.readResourceLocation();
+      this.field24610 = var1.readResourceLocation();
+      this.field24611 = var1.readResourceLocation();
+      this.field24612 = var1.readString(32767);
+      this.field24613 = Class92.method269(var1.readString(32767)).orElse(Class92.field238);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.method35708(this.field24608);
-      var1.method35732(this.field24609);
-      var1.method35732(this.field24610);
-      var1.method35732(this.field24611);
-      var1.method35729(this.field24612);
-      var1.method35729(this.field24613.method257());
+      var1.writeResourceLocation(this.field24609);
+      var1.writeResourceLocation(this.field24610);
+      var1.writeResourceLocation(this.field24611);
+      var1.writeString(this.field24612);
+      var1.writeString(this.field24613.method257());
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15651(this);
    }
 

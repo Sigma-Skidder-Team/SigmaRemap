@@ -23,17 +23,17 @@ public class SSendResourcePackPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24526 = var1.method35728(32767);
-      this.field24527 = var1.method35728(40);
+      this.field24526 = var1.readString(32767);
+      this.field24527 = var1.readString(40);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35729(this.field24526);
-      var1.method35729(this.field24527);
+      var1.writeString(this.field24526);
+      var1.writeString(this.field24527);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleResourcePack(this);
    }
 

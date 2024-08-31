@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.stream.Stream;
 
 public abstract class Class277 extends Class269<Class8226> implements AutoCloseable {

@@ -33,7 +33,7 @@ public class Class3491 extends Class3490 {
       for (int var13 = 0; var13 < 3; var13++) {
          if (var4.nextBoolean()) {
             var2.method6746(
-               Class7940.field34092,
+               ParticleTypes.field34092,
                var9 + var4.nextDouble() / 5.0,
                (double)var3.getY() + (0.5 - var4.nextDouble()),
                var11 + var4.nextDouble() / 5.0,

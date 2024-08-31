@@ -6,6 +6,8 @@ import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.Lifecycle;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Map.Entry;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5657 extends Class5651<Class1070, Class2888<Class1070>> {
    private static final ResourceLocation field25018 = new ResourceLocation("textures/entity/strider/strider.png");
    private static final ResourceLocation field25019 = new ResourceLocation("textures/entity/strider/strider_cold.png");

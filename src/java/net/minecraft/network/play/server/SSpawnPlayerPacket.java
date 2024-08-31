@@ -33,7 +33,7 @@ public class SSpawnPlayerPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24833 = var1.method35714();
+      this.field24833 = var1.readVarInt();
       this.field24834 = var1.method35717();
       this.field24835 = var1.readDouble();
       this.field24836 = var1.readDouble();
@@ -53,7 +53,7 @@ public class SSpawnPlayerPacket implements Packet<IClientPlayNetHandler> {
       var1.writeByte(this.field24839);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleSpawnPlayer(this);
    }
 

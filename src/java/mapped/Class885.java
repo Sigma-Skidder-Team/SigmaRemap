@@ -24,7 +24,7 @@ public class Class885 extends AbstractArrowEntity {
    public void tick() {
       super.tick();
       if (this.world.isRemote && !this.field5100) {
-         this.world.method6746(Class7940.field34081, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
+         this.world.method6746(ParticleTypes.field34081, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
       }
    }
 

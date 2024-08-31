@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5675 extends Class5651<Class1108, Class2826<Class1108>> {
    private static final ResourceLocation field25041 = new ResourceLocation("textures/entity/slime/slime.png");
 

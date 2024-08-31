@@ -11,6 +11,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SMountEntityPacket;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -227,7 +228,7 @@ public abstract class Class1006 extends LivingEntity {
             double var10 = 10.0;
             this.world
                .method6746(
-                  Class7940.field34089,
+                  ParticleTypes.field34089,
                   this.method3437(1.0) - var4 * 10.0,
                   this.method3441() - var6 * 10.0,
                   this.method3445(1.0) - var8 * 10.0,

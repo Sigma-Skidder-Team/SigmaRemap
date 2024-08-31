@@ -27,7 +27,7 @@ public class SEntityEquipmentPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24794 = var1.method35714();
+      this.field24794 = var1.readVarInt();
       Class2106[] var4 = Class2106.values();
       byte var5 = var1.readByte();
       Class2106 var6 = var4[var5 & 127];
@@ -50,7 +50,7 @@ public class SEntityEquipmentPacket implements Packet<IClientPlayNetHandler> {
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleEntityEquipment(this);
    }
 

@@ -175,9 +175,9 @@ public class Class1090 extends Class1018 {
    }
 
    private void method5076(boolean var1) {
-      Class7435 var4 = Class7940.field34080;
+      Class7435 var4 = ParticleTypes.field34080;
       if (!var1) {
-         var4 = Class7940.field34092;
+         var4 = ParticleTypes.field34092;
       }
 
       for (int var5 = 0; var5 < 7; var5++) {

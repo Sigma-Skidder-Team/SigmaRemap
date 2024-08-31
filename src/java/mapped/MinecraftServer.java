@@ -20,6 +20,9 @@ import net.minecraft.network.play.server.SServerDifficultyPacket;
 import net.minecraft.network.play.server.SUpdateTimePacket;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
+import net.minecraft.util.CryptException;
+import net.minecraft.util.CryptManager;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -853,8 +856,8 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       LOGGER.info("Generating keypair");
 
       try {
-         this.field1239 = Class8961.method32737();
-      } catch (Class2464 var4) {
+         this.field1239 = CryptManager.method32737();
+      } catch (CryptException var4) {
          throw new IllegalStateException("Failed to generate key pair", var4);
       }
    }

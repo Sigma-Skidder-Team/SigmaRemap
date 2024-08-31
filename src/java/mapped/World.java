@@ -8,6 +8,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
+import net.minecraft.particles.IParticleData;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -353,16 +355,16 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public void method6746(Class7436 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public void method6746(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
    }
 
-   public void method6747(Class7436 var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+   public void method6747(IParticleData var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
    }
 
-   public void method6748(Class7436 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public void method6748(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
    }
 
-   public void method6749(Class7436 var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+   public void method6749(IParticleData var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
    }
 
    public float method6750(float var1) {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5741 extends Class5715<Class999> {
    private static String[] field25164;
 

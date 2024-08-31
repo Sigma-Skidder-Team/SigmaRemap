@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5958 extends Class5957<Class957> {
    private static final ResourceLocation field25982 = new ResourceLocation("textures/entity/end_gateway_beam.png");
 

@@ -22,7 +22,7 @@ public class SAnimateHandPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24273 = var1.method35714();
+      this.field24273 = var1.readVarInt();
       this.field24274 = var1.readUnsignedByte();
    }
 
@@ -32,7 +32,7 @@ public class SAnimateHandPacket implements Packet<IClientPlayNetHandler> {
       var1.writeByte(this.field24274);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleAnimation(this);
    }
 

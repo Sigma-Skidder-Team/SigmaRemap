@@ -24,7 +24,7 @@ public class SUpdateHealthPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24811 = var1.readFloat();
-      this.field24812 = var1.method35714();
+      this.field24812 = var1.readVarInt();
       this.field24813 = var1.readFloat();
    }
 
@@ -35,7 +35,7 @@ public class SUpdateHealthPacket implements Packet<IClientPlayNetHandler> {
       var1.writeFloat(this.field24813);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleUpdateHealth(this);
    }
 

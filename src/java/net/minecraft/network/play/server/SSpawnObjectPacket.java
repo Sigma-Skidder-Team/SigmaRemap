@@ -82,9 +82,9 @@ public class SSpawnObjectPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24360 = var1.method35714();
+      this.field24360 = var1.readVarInt();
       this.field24361 = var1.method35717();
-      this.field24370 = Registry.ENTITY_TYPE.method9172(var1.method35714());
+      this.field24370 = Registry.ENTITY_TYPE.method9172(var1.readVarInt());
       this.field24362 = var1.readDouble();
       this.field24363 = var1.readDouble();
       this.field24364 = var1.readDouble();
@@ -100,7 +100,7 @@ public class SSpawnObjectPacket implements Packet<IClientPlayNetHandler> {
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeVarInt(this.field24360);
       var1.method35716(this.field24361);
-      var1.writeVarInt(Registry.ENTITY_TYPE.method9171(this.field24370));
+      var1.writeVarInt(Registry.ENTITY_TYPE.getId(this.field24370));
       var1.writeDouble(this.field24362);
       var1.writeDouble(this.field24363);
       var1.writeDouble(this.field24364);
@@ -112,7 +112,7 @@ public class SSpawnObjectPacket implements Packet<IClientPlayNetHandler> {
       var1.writeShort(this.field24367);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleSpawnObject(this);
    }
 

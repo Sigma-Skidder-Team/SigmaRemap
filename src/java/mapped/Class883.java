@@ -30,7 +30,7 @@ public class Class883 extends ProjectileEntity {
 
       for (int var16 = 0; var16 < 7; var16++) {
          double var17 = 0.4 + 0.1 * (double)var16;
-         var1.method6746(Class7940.field34094, var2, var4, var6, var8 * var17, var10, var12 * var17);
+         var1.method6746(ParticleTypes.field34094, var2, var4, var6, var8 * var17, var10, var12 * var17);
       }
 
       this.method3435(var8, var10, var12);

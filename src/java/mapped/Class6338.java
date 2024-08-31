@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 
 public abstract class Class6338 implements Class6340 {

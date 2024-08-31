@@ -28,7 +28,7 @@ public class SScoreboardObjectivePacket implements Packet<IClientPlayNetHandler>
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24730 = var1.method35728(16);
+      this.field24730 = var1.readString(16);
       this.field24733 = var1.readByte();
       if (this.field24733 == 0 || this.field24733 == 2) {
          this.field24731 = var1.method35710();
@@ -38,15 +38,15 @@ public class SScoreboardObjectivePacket implements Packet<IClientPlayNetHandler>
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35729(this.field24730);
+      var1.writeString(this.field24730);
       var1.writeByte(this.field24733);
       if (this.field24733 == 0 || this.field24733 == 2) {
-         var1.method35711(this.field24731);
+         var1.writeTextComponent(this.field24731);
          var1.method35713(this.field24732);
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleScoreboardObjective(this);
    }
 

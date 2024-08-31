@@ -24,7 +24,7 @@ public class Class5468 implements Packet<IServerPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24269 = var1.method35707();
-      this.field24270 = var1.method35714();
+      this.field24270 = var1.readVarInt();
       this.field24271 = var1.readBoolean();
    }
 
@@ -35,7 +35,7 @@ public class Class5468 implements Packet<IServerPlayNetHandler> {
       var1.writeBoolean(this.field24271);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15652(this);
    }
 

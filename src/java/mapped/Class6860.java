@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class6860 implements Class6861<MinecraftServer> {
    private static String[] field29786;
    private final ResourceLocation field29787;

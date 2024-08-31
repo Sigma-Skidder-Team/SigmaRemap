@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5944 extends Class5942<Class966> {
    public static final Class7826 field25932 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("entity/bell/bell_body"));
    private final Class7219 field25933 = new Class7219(32, 32, 0, 0);

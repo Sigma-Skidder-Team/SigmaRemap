@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class2842 extends Class2828 {
    public static final ResourceLocation field17638 = new ResourceLocation("textures/entity/trident.png");
    private final Class7219 field17639 = new Class7219(32, 32, 0, 6);

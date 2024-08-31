@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextProperties;
 import net.minecraft.util.text.LanguageMap;
 import org.apache.logging.log4j.LogManager;

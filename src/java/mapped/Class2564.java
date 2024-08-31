@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.*;
+import net.minecraft.util.ResourceLocation;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.lang.reflect.Type;

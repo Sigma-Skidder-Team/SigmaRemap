@@ -28,16 +28,16 @@ public class SDisplayObjectivePacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24916 = var1.readByte();
-      this.field24917 = var1.method35728(16);
+      this.field24917 = var1.readString(16);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeByte(this.field24916);
-      var1.method35729(this.field24917);
+      var1.writeString(this.field24917);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleDisplayObjective(this);
    }
 

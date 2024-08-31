@@ -5,6 +5,7 @@ import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.commons.io.IOUtils;
@@ -2673,7 +2674,7 @@ public class Shaders {
                 int var5 = -1;
                 Block var6 = null;
                 if (var4 != null) {
-                    var5 = Registry.ITEM.method9171(var4);
+                    var5 = Registry.ITEM.getId(var4);
                     if (var4 instanceof Class3292) {
                         var6 = ((Class3292) var4).method11845();
                     }
@@ -2687,7 +2688,7 @@ public class Shaders {
                 int var10 = -1;
                 Block var11 = null;
                 if (var9 != null) {
-                    var10 = Registry.ITEM.method9171(var9);
+                    var10 = Registry.ITEM.getId(var9);
                     if (var9 instanceof Class3292) {
                         var11 = ((Class3292) var9).method11845();
                     }
@@ -2854,7 +2855,7 @@ public class Shaders {
         if (field40981.isEmpty()) {
             for (ResourceLocation var1 : Registry.BLOCK.method9190()) {
                 Block var2 = Registry.BLOCK.method9184(var1);
-                int var3 = Registry.BLOCK.method9171(var2);
+                int var3 = Registry.BLOCK.getId(var2);
                 field40981.put(var2, var3);
             }
         }
@@ -4442,7 +4443,7 @@ public class Shaders {
     public static void method33134(Block var0) {
         field40986++;
         int var1 = var0.method11526(var0.method11579()).ordinal();
-        field40985[field40986 * 2] = Registry.BLOCK.method9171(var0) & 65535 | var1 << 16;
+        field40985[field40986 * 2] = Registry.BLOCK.getId(var0) & 65535 | var1 << 16;
         field40985[field40986 * 2 + 1] = 0;
     }
 

@@ -92,7 +92,7 @@ public class Class1058 extends Class1056 implements Class1011 {
          if (!var6.isAir()) {
             this.world
                .method6746(
-                  new Class7439(Class7940.field34051, var6),
+                  new Class7439(ParticleTypes.field34051, var6),
                   this.getPosX() + ((double)this.rand.nextFloat() - 0.5) * (double)this.method3429(),
                   this.getPosY() + 0.1,
                   this.getPosZ() + ((double)this.rand.nextFloat() - 0.5) * (double)this.method3429(),

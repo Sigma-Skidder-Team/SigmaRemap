@@ -97,7 +97,7 @@ public class Class3401 extends Block {
             var18 = (double)(var4.nextFloat() * 2.0F * (float)var20);
          }
 
-         var2.method6746(Class7940.field34090, var8, var10, var12, var14, var16, var18);
+         var2.method6746(ParticleTypes.field34090, var8, var10, var12, var14, var16, var18);
       }
    }
 

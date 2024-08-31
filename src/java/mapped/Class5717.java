@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5717 extends Class5715<Class883> {
    private static final ResourceLocation field25104 = new ResourceLocation("textures/entity/llama/spit.png");
    private final Class2884<Class883> field25105 = new Class2884<Class883>();

@@ -30,10 +30,10 @@ public class SMerchantOffersPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24432 = var1.method35714();
+      this.field24432 = var1.readVarInt();
       this.field24433 = Class46.method165(var1);
-      this.field24434 = var1.method35714();
-      this.field24435 = var1.method35714();
+      this.field24434 = var1.readVarInt();
+      this.field24435 = var1.readVarInt();
       this.field24436 = var1.readBoolean();
       this.field24437 = var1.readBoolean();
    }
@@ -48,7 +48,7 @@ public class SMerchantOffersPacket implements Packet<IClientPlayNetHandler> {
       var1.writeBoolean(this.field24437);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleMerchantOffers(this);
    }
 

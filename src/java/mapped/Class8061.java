@@ -8,6 +8,8 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
+
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8061 {
@@ -130,7 +132,7 @@ public class Class8061 {
       );
    }
 
-   private static int method27672(Class6619 var0, Class7436 var1, Vector3d var2, Vector3d var3, float var4, int var5, boolean var6, Collection<ServerPlayerEntity> var7) throws CommandSyntaxException {
+   private static int method27672(Class6619 var0, IParticleData var1, Vector3d var2, Vector3d var3, float var4, int var5, boolean var6, Collection<ServerPlayerEntity> var7) throws CommandSyntaxException {
       int var10 = 0;
 
       for (ServerPlayerEntity var12 : var7) {
@@ -143,7 +145,7 @@ public class Class8061 {
       }
 
       if (var10 != 0) {
-         var0.method20179(new TranslationTextComponent("commands.particle.success", Registry.field16077.getKey(var1.method24011()).toString()), true);
+         var0.method20179(new TranslationTextComponent("commands.particle.success", Registry.PARTICLE_TYPE.getKey(var1.getType()).toString()), true);
          return var10;
       } else {
          throw field34601.create();

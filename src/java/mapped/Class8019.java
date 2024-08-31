@@ -34,6 +34,7 @@ import java.util.stream.Stream;
 import net.minecraft.client.util.Util;
 import net.minecraft.network.play.server.SSelectAdvancementsTabPacket;
 import net.minecraft.network.play.server.SAdvancementInfoPacket;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public interface Class4843<C extends Class920> {
    boolean method14963(C var1, World var2);
 

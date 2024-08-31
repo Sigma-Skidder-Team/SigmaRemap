@@ -31,26 +31,26 @@ public class SUpdateScorePacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24662 = var1.method35728(40);
+      this.field24662 = var1.readString(40);
       this.field24665 = var1.<Class2073>method35712(Class2073.class);
-      String var4 = var1.method35728(16);
+      String var4 = var1.readString(16);
       this.field24663 = !Objects.equals(var4, "") ? var4 : null;
       if (this.field24665 != Class2073.field13504) {
-         this.field24664 = var1.method35714();
+         this.field24664 = var1.readVarInt();
       }
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35729(this.field24662);
+      var1.writeString(this.field24662);
       var1.method35713(this.field24665);
-      var1.method35729(this.field24663 != null ? this.field24663 : "");
+      var1.writeString(this.field24663 != null ? this.field24663 : "");
       if (this.field24665 != Class2073.field13504) {
          var1.writeVarInt(this.field24664);
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleUpdateScore(this);
    }
 

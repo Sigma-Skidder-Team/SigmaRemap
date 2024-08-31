@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;

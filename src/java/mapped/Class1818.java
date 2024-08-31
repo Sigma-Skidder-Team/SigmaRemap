@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class8480;
+import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
 import java.util.Collection;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.ResourceLocation;
 
 public class Class261<T extends LivingEntity> extends Class219<T, Class2894<T>> {
    public static final ResourceLocation field921 = new ResourceLocation("textures/entity/trident_riptide.png");

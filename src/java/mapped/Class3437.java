@@ -57,7 +57,7 @@ public class Class3437 extends Class3433 {
       double var14 = (double)(0.4F - (var4.nextFloat() + var4.nextFloat()) * 0.4F);
       if (var4.nextInt(5) == 0) {
          var2.method6746(
-            Class7940.field34067,
+            ParticleTypes.field34067,
             var8 + (double)var7.method539() * var14,
             var10 + (double)var7.method540() * var14,
             var12 + (double)var7.method541() * var14,

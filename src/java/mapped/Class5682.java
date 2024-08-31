@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5682 extends Class5651<Class1055, Class2879<Class1055>> {
    private static final ResourceLocation field25047 = new ResourceLocation("textures/entity/squid.png");
 

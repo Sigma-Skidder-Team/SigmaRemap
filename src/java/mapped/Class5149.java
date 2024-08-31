@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.function.Supplier;
 

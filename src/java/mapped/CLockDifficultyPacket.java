@@ -16,7 +16,7 @@ public class CLockDifficultyPacket implements Packet<IServerPlayNetHandler> {
       this.field24390 = var1;
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15654(this);
    }
 

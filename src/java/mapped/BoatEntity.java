@@ -151,7 +151,7 @@ public class BoatEntity extends Entity {
 
       this.world
          .method6746(
-            Class7940.field34099,
+            ParticleTypes.field34099,
             this.getPosX() + (double)this.rand.nextFloat(),
             this.getPosY() + 0.7,
             this.getPosZ() + (double)this.rand.nextFloat(),

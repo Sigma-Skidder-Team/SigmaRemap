@@ -53,7 +53,7 @@ public class STitlePacket implements Packet<IClientPlayNetHandler> {
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.method35713(this.field24805);
       if (this.field24805 == Class2301.field15710 || this.field24805 == Class2301.field15711 || this.field24805 == Class2301.field15712) {
-         var1.method35711(this.field24806);
+         var1.writeTextComponent(this.field24806);
       }
 
       if (this.field24805 == Class2301.field15713) {
@@ -63,7 +63,7 @@ public class STitlePacket implements Packet<IClientPlayNetHandler> {
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleTitle(this);
    }
 

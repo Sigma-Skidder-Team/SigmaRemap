@@ -173,7 +173,7 @@ public class Class1029 extends Class1026 {
          double var7 = this.getPosZ()
             + (double)this.method3429() * Math.cos((double)(this.field4965 * (float) (Math.PI / 180.0)))
             + (this.rand.nextDouble() * 0.6 - 0.3);
-         this.world.method6746(Class7940.field34068, var3, var5, var7, 0.4980392156862745, 0.5137254901960784, 0.5725490196078431);
+         this.world.method6746(ParticleTypes.field34068, var3, var5, var7, 0.4980392156862745, 0.5137254901960784, 0.5725490196078431);
       }
    }
 
@@ -219,7 +219,7 @@ public class Class1029 extends Class1026 {
             double var5 = this.rand.nextGaussian() * 0.2;
             double var7 = this.rand.nextGaussian() * 0.2;
             double var9 = this.rand.nextGaussian() * 0.2;
-            this.world.method6746(Class7940.field34089, var11.x, var11.y, var11.z, var5, var7, var9);
+            this.world.method6746(ParticleTypes.field34089, var11.x, var11.y, var11.z, var5, var7, var9);
          }
       }
    }

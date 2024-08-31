@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5725 extends Class5715<BoatEntity> {
    private static final ResourceLocation[] field25131 = new ResourceLocation[]{
       new ResourceLocation("textures/entity/boat/oak.png"),

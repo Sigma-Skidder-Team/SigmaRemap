@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class263 extends Class219<Class1098, Class2861<Class1098>> {
    private static final ResourceLocation field928 = new ResourceLocation("textures/entity/cat/cat_collar.png");
    private final Class2861<Class1098> field929 = new Class2861<Class1098>(0.01F);

@@ -36,7 +36,7 @@ public class SEntityVelocityPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24800 = var1.method35714();
+      this.field24800 = var1.readVarInt();
       this.field24801 = var1.readShort();
       this.field24802 = var1.readShort();
       this.field24803 = var1.readShort();
@@ -50,7 +50,7 @@ public class SEntityVelocityPacket implements Packet<IClientPlayNetHandler> {
       var1.writeShort(this.field24803);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleEntityVelocity(this);
    }
 

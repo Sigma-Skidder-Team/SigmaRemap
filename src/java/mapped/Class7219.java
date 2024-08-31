@@ -2,6 +2,8 @@ package mapped;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

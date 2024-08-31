@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.ResourceLocation;
 
 public class Class8673 {
    public static final Class9369 field39097 = Class9837.method38884(

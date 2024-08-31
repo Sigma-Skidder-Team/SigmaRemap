@@ -4,6 +4,7 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSerializationContext;
+import net.minecraft.util.ResourceLocation;
 
 public class ApplyBonusSerializer extends LootFunctionSerializer<Class138> {
    public void serialize(JsonObject var1, Class138 var2, JsonSerializationContext var3) {

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
 
 public class Class233<T extends LivingEntity, M extends Class2894<T>> extends Class231<T, M> {
    private static final ResourceLocation field879 = new ResourceLocation("textures/entity/bee/bee_stinger.png");

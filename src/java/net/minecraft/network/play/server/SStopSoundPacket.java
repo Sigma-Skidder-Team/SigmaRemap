@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import mapped.Class2266;
 import net.minecraft.network.PacketBuffer;
-import mapped.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 
@@ -34,7 +34,7 @@ public class SStopSoundPacket implements Packet<IClientPlayNetHandler> {
             var1.writeByte(0);
          } else {
             var1.writeByte(2);
-            var1.method35732(this.field24373);
+            var1.writeResourceLocation(this.field24373);
          }
       } else if (this.field24373 == null) {
          var1.writeByte(1);
@@ -42,7 +42,7 @@ public class SStopSoundPacket implements Packet<IClientPlayNetHandler> {
       } else {
          var1.writeByte(3);
          var1.method35713(this.field24374);
-         var1.method35732(this.field24373);
+         var1.writeResourceLocation(this.field24373);
       }
    }
 
@@ -56,7 +56,7 @@ public class SStopSoundPacket implements Packet<IClientPlayNetHandler> {
       return this.field24374;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleStopSound(this);
    }
 }

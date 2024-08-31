@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5726 extends Class5715<Class888> {
    private static String[] field25133;
    private final ItemRenderer field25134;

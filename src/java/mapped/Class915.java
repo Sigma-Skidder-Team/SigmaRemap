@@ -97,7 +97,7 @@ public class Class915 extends Entity {
                double var10 = (this.rand.nextDouble() * 2.0 - 1.0) * 0.3;
                double var12 = 0.3 + this.rand.nextDouble() * 0.3;
                double var14 = (this.rand.nextDouble() * 2.0 - 1.0) * 0.3;
-               this.world.method6746(Class7940.field34054, var4, var6 + 1.0, var8, var10, var12, var14);
+               this.world.method6746(ParticleTypes.field34054, var4, var6 + 1.0, var8, var10, var12, var14);
             }
          }
       }

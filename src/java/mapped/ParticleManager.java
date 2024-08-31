@@ -4,6 +4,8 @@ import com.google.common.base.Charsets;
 import com.google.common.collect.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.particles.IParticleData;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -37,94 +39,94 @@ public class ParticleManager implements Class268 {
    }
 
    private void method1190() {
-      this.method1192(Class7940.field34048, Class3531::new);
-      this.method1192(Class7940.field34049, Class3506::new);
-      this.method1191(Class7940.field34050, new Class3516());
-      this.method1191(Class7940.field34051, new Class3554());
-      this.method1192(Class7940.field34052, Class3542::new);
-      this.method1192(Class7940.field34103, Class3547::new);
-      this.method1192(Class7940.field34101, Class3568::new);
-      this.method1192(Class7940.field34106, Class3544::new);
-      this.method1192(Class7940.field34107, Class3529::new);
-      this.method1192(Class7940.field34053, Class3550::new);
-      this.method1192(Class7940.field34079, Class3500::new);
-      this.method1192(Class7940.field34054, Class3563::new);
-      this.method1192(Class7940.field34102, Class3507::new);
-      this.method1192(Class7940.field34055, Class3543::new);
-      this.method1192(Class7940.field34056, Class3545::new);
-      this.method1192(Class7940.field34105, Class3503::new);
-      this.method1192(Class7940.field34057, Class3538::new);
-      this.method1192(Class7940.field34058, Class3513::new);
-      this.method1192(Class7940.field34059, Class3564::new);
-      this.method1192(Class7940.field34060, Class3504::new);
-      this.method1192(Class7940.field34061, Class3509::new);
-      this.method1192(Class7940.field34062, Class3508::new);
-      this.method1192(Class7940.field34063, Class3535::new);
-      this.method1191(Class7940.field34064, new Class3551());
-      this.method1192(Class7940.field34065, Class3519::new);
-      this.method1192(Class7940.field34066, Class3511::new);
-      this.method1192(Class7940.field34067, Class3539::new);
-      this.method1192(Class7940.field34068, Class3540::new);
-      this.method1191(Class7940.field34069, new Class3520());
-      this.method1192(Class7940.field34070, Class3555::new);
-      this.method1192(Class7940.field34071, Class3521::new);
-      this.method1192(Class7940.field34072, Class3546::new);
-      this.method1192(Class7940.field34073, Class3523::new);
-      this.method1192(Class7940.field34074, Class3553::new);
-      this.method1192(Class7940.field34076, Class3552::new);
-      this.method1192(Class7940.field34075, Class3553::new);
-      this.method1192(Class7940.field34077, Class3537::new);
-      this.method1192(Class7940.field34078, Class3501::new);
-      this.method1192(Class7940.field34080, Class3566::new);
-      this.method1192(Class7940.field34081, Class3518::new);
-      this.method1191(Class7940.field34082, new Class3512());
-      this.method1191(Class7940.field34083, new Class3525());
-      this.method1191(Class7940.field34084, new Class3534());
-      this.method1192(Class7940.field34085, Class3557::new);
-      this.method1192(Class7940.field34086, Class3517::new);
-      this.method1192(Class7940.field34087, Class3560::new);
-      this.method1192(Class7940.field34104, Class3559::new);
-      this.method1192(Class7940.field34088, Class3515::new);
-      this.method1192(Class7940.field34089, Class3502::new);
-      this.method1192(Class7940.field34090, Class3536::new);
-      this.method1192(Class7940.field34091, Class3526::new);
-      this.method1192(Class7940.field34092, Class3532::new);
-      this.method1192(Class7940.field34093, Class3510::new);
-      this.method1192(Class7940.field34094, Class3549::new);
-      this.method1192(Class7940.field34096, Class3505::new);
-      this.method1192(Class7940.field34097, Class3498::new);
-      this.method1192(Class7940.field34095, Class3530::new);
-      this.method1192(Class7940.field34098, Class3562::new);
-      this.method1192(Class7940.field34099, Class3565::new);
-      this.method1192(Class7940.field34100, Class3524::new);
-      this.method1192(Class7940.field34108, Class3528::new);
-      this.method1192(Class7940.field34109, Class3561::new);
-      this.method1192(Class7940.field34110, Class3533::new);
-      this.method1192(Class7940.field34111, Class3548::new);
-      this.method1192(Class7940.field34112, Class3556::new);
-      this.method1192(Class7940.field34113, Class3522::new);
-      this.method1192(Class7940.field34114, Class3541::new);
-      this.method1192(Class7940.field34115, Class3514::new);
-      this.method1192(Class7940.field34116, Class3558::new);
-      this.method1192(Class7940.field34117, Class3527::new);
-      this.method1192(Class7940.field34118, Class3569::new);
-      this.method1192(Class7940.field34119, Class3567::new);
+      this.method1192(ParticleTypes.field34048, Class3531::new);
+      this.method1192(ParticleTypes.field34049, Class3506::new);
+      this.method1191(ParticleTypes.BARRIER, new Class3516());
+      this.method1191(ParticleTypes.field34051, new Class3554());
+      this.method1192(ParticleTypes.field34052, Class3542::new);
+      this.method1192(ParticleTypes.field34103, Class3547::new);
+      this.method1192(ParticleTypes.field34101, Class3568::new);
+      this.method1192(ParticleTypes.field34106, Class3544::new);
+      this.method1192(ParticleTypes.field34107, Class3529::new);
+      this.method1192(ParticleTypes.field34053, Class3550::new);
+      this.method1192(ParticleTypes.field34079, Class3500::new);
+      this.method1192(ParticleTypes.field34054, Class3563::new);
+      this.method1192(ParticleTypes.field34102, Class3507::new);
+      this.method1192(ParticleTypes.field34055, Class3543::new);
+      this.method1192(ParticleTypes.field34056, Class3545::new);
+      this.method1192(ParticleTypes.field34105, Class3503::new);
+      this.method1192(ParticleTypes.field34057, Class3538::new);
+      this.method1192(ParticleTypes.field34058, Class3513::new);
+      this.method1192(ParticleTypes.field34059, Class3564::new);
+      this.method1192(ParticleTypes.field34060, Class3504::new);
+      this.method1192(ParticleTypes.field34061, Class3509::new);
+      this.method1192(ParticleTypes.field34062, Class3508::new);
+      this.method1192(ParticleTypes.field34063, Class3535::new);
+      this.method1191(ParticleTypes.field34064, new Class3551());
+      this.method1192(ParticleTypes.field34065, Class3519::new);
+      this.method1192(ParticleTypes.field34066, Class3511::new);
+      this.method1192(ParticleTypes.field34067, Class3539::new);
+      this.method1192(ParticleTypes.field34068, Class3540::new);
+      this.method1191(ParticleTypes.field34069, new Class3520());
+      this.method1192(ParticleTypes.field34070, Class3555::new);
+      this.method1192(ParticleTypes.field34071, Class3521::new);
+      this.method1192(ParticleTypes.field34072, Class3546::new);
+      this.method1192(ParticleTypes.field34073, Class3523::new);
+      this.method1192(ParticleTypes.field34074, Class3553::new);
+      this.method1192(ParticleTypes.field34076, Class3552::new);
+      this.method1192(ParticleTypes.field34075, Class3553::new);
+      this.method1192(ParticleTypes.field34077, Class3537::new);
+      this.method1192(ParticleTypes.field34078, Class3501::new);
+      this.method1192(ParticleTypes.field34080, Class3566::new);
+      this.method1192(ParticleTypes.field34081, Class3518::new);
+      this.method1191(ParticleTypes.field34082, new Class3512());
+      this.method1191(ParticleTypes.field34083, new Class3525());
+      this.method1191(ParticleTypes.field34084, new Class3534());
+      this.method1192(ParticleTypes.field34085, Class3557::new);
+      this.method1192(ParticleTypes.field34086, Class3517::new);
+      this.method1192(ParticleTypes.field34087, Class3560::new);
+      this.method1192(ParticleTypes.field34104, Class3559::new);
+      this.method1192(ParticleTypes.field34088, Class3515::new);
+      this.method1192(ParticleTypes.field34089, Class3502::new);
+      this.method1192(ParticleTypes.field34090, Class3536::new);
+      this.method1192(ParticleTypes.field34091, Class3526::new);
+      this.method1192(ParticleTypes.field34092, Class3532::new);
+      this.method1192(ParticleTypes.field34093, Class3510::new);
+      this.method1192(ParticleTypes.field34094, Class3549::new);
+      this.method1192(ParticleTypes.field34096, Class3505::new);
+      this.method1192(ParticleTypes.field34097, Class3498::new);
+      this.method1192(ParticleTypes.field34095, Class3530::new);
+      this.method1192(ParticleTypes.field34098, Class3562::new);
+      this.method1192(ParticleTypes.field34099, Class3565::new);
+      this.method1192(ParticleTypes.field34100, Class3524::new);
+      this.method1192(ParticleTypes.field34108, Class3528::new);
+      this.method1192(ParticleTypes.field34109, Class3561::new);
+      this.method1192(ParticleTypes.field34110, Class3533::new);
+      this.method1192(ParticleTypes.field34111, Class3548::new);
+      this.method1192(ParticleTypes.field34112, Class3556::new);
+      this.method1192(ParticleTypes.field34113, Class3522::new);
+      this.method1192(ParticleTypes.field34114, Class3541::new);
+      this.method1192(ParticleTypes.field34115, Class3514::new);
+      this.method1192(ParticleTypes.field34116, Class3558::new);
+      this.method1192(ParticleTypes.field34117, Class3527::new);
+      this.method1192(ParticleTypes.field34118, Class3569::new);
+      this.method1192(ParticleTypes.field34119, Class3567::new);
    }
 
-   private <T extends Class7436> void method1191(Class7434<T> var1, Class3499<T> var2) {
-      this.field1173.put(Registry.field16077.getKey(var1), var2);
+   private <T extends IParticleData> void method1191(ParticleType<T> var1, Class3499<T> var2) {
+      this.field1173.put(Registry.PARTICLE_TYPE.getKey(var1), var2);
    }
 
-   private <T extends Class7436> void method1192(Class7434<T> var1, Class9116<T> var2) {
+   private <T extends IParticleData> void method1192(ParticleType<T> var1, Class9116<T> var2) {
       Class8976 var5 = new Class8976(this);
-      this.field1175.put(Registry.field16077.getKey(var1), var5);
-      this.field1173.put(Registry.field16077.getKey(var1), var2.method34002(var5));
+      this.field1175.put(Registry.PARTICLE_TYPE.getKey(var1), var5);
+      this.field1173.put(Registry.PARTICLE_TYPE.getKey(var1), var2.method34002(var5));
    }
 
    @Override
    public CompletableFuture<Void> method777(Class7121 var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
       Map<ResourceLocation, List<ResourceLocation>> var9 = Maps.newConcurrentMap();
-      CompletableFuture[] var10 = Registry.field16077
+      CompletableFuture[] var10 = Registry.PARTICLE_TYPE
          .method9190()
          .stream()
          .map(var4x -> CompletableFuture.runAsync(() -> this.method1194(var2, var4x, var9), var5))
@@ -194,16 +196,16 @@ public class ParticleManager implements Class268 {
       }
    }
 
-   public void method1195(Entity var1, Class7436 var2) {
+   public void method1195(Entity var1, IParticleData var2) {
       this.field1170.add(new Class4589(this.field1168, var1, var2));
    }
 
-   public void method1196(Entity var1, Class7436 var2, int var3) {
+   public void method1196(Entity var1, IParticleData var2, int var3) {
       this.field1170.add(new Class4589(this.field1168, var1, var2, var3));
    }
 
    @Nullable
-   public Class4587 method1197(Class7436 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public Class4587 method1197(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       Class4587 var16 = this.method1198(var1, var2, var4, var6, var8, var10, var12);
       if (var16 == null) {
          return null;
@@ -214,8 +216,8 @@ public class ParticleManager implements Class268 {
    }
 
    @Nullable
-   private <T extends Class7436> Class4587 method1198(T var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      Class3499 var16 = this.field1173.get(Registry.field16077.getKey(var1.method24011()));
+   private <T extends IParticleData> Class4587 method1198(T var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+      Class3499 var16 = this.field1173.get(Registry.PARTICLE_TYPE.getKey(var1.getType()));
       return var16 != null ? var16.method12199(var1, this.field1168, var2, var4, var6, var8, var10, var12) : null;
    }
 

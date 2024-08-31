@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 import javax.annotation.Nullable;
+
+import net.minecraft.util.ResourceLocation;
 import org.apache.commons.lang3.StringUtils;
 
 public class JSONUtils {

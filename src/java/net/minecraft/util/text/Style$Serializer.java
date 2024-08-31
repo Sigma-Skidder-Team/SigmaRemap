@@ -1,7 +1,7 @@
 package net.minecraft.util.text;
 
 import com.google.gson.*;
-import mapped.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import mapped.Class2496;
 import mapped.JSONUtils;
 import net.minecraft.util.text.event.ClickEvent;

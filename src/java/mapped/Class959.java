@@ -238,7 +238,7 @@ public class Class959 extends TileEntity implements Class935 {
             Vector3d var13 = new Vector3d((double)var9, (double)var10, (double)var11)
                .method11339((double)var12.getX(), (double)var12.getY(), (double)var12.getZ());
             this.field5324
-               .method6746(Class7940.field34104, var6.x, var6.y, var6.z, var13.x, var13.y, var13.z);
+               .method6746(ParticleTypes.field34104, var6.x, var6.y, var6.z, var13.x, var13.y, var13.z);
          }
       }
 
@@ -249,7 +249,7 @@ public class Class959 extends TileEntity implements Class935 {
          float var18 = (-0.5F + var3.nextFloat()) * (3.0F + this.field5387.method3429());
          Vector3d var19 = new Vector3d((double)var16, (double)var17, (double)var18);
          this.field5324
-            .method6746(Class7940.field34104, var15.x, var15.y, var15.z, var19.x, var19.y, var19.z);
+            .method6746(ParticleTypes.field34104, var15.x, var15.y, var15.z, var19.x, var19.y, var19.z);
       }
    }
 

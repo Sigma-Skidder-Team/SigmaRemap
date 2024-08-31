@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.GameSettings;
+import net.minecraft.util.ResourceLocation;
 
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;

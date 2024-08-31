@@ -144,7 +144,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
    }
 
    public static <T extends INetHandler> void method30691(Packet<T> var0, INetHandler var1) {
-      var0.method17180((T) var1);
+      var0.processPacket((T) var1);
    }
 
    public void setNetHandler(INetHandler var1) {

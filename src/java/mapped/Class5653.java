@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5653 extends Class5651<Class1114, Class2811> {
    private static final ResourceLocation field25005 = new ResourceLocation("textures/entity/bat.png");
 

@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.*;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
@@ -32,7 +33,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<EntityType<?>>> field16041 = createKey("entity_type");
    public static final RegistryKey<Registry<Item>> field16042 = createKey("item");
    public static final RegistryKey<Registry<Class8812>> field16043 = createKey("potion");
-   public static final RegistryKey<Registry<Class7434<?>>> field16044 = createKey("particle_type");
+   public static final RegistryKey<Registry<ParticleType<?>>> field16044 = createKey("particle_type");
    public static final RegistryKey<Registry<Class4387<?>>> field16045 = createKey("block_entity_type");
    public static final RegistryKey<Registry<Class9078>> field16046 = createKey("motive");
    public static final RegistryKey<Registry<ResourceLocation>> field16047 = createKey("custom_stat");
@@ -65,7 +66,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Class2351<EntityType<?>> ENTITY_TYPE = method9176(field16041, "pig", () -> EntityType.field41064);
    public static final Class2351<Item> ITEM = method9176(field16042, "air", () -> Items.field37222);
    public static final Class2351<Class8812> field16076 = method9176(field16043, "empty", () -> Class8137.field34976);
-   public static final Registry<Class7434<?>> field16077 = method9175(field16044, () -> Class7940.field34051);
+   public static final Registry<ParticleType<?>> PARTICLE_TYPE = method9175(field16044, () -> ParticleTypes.field34051);
    public static final Registry<Class4387<?>> field16078 = method9175(field16045, () -> Class4387.field21421);
    public static final Class2351<Class9078> field16079 = method9176(field16046, "kebab", () -> Class9078.field41530);
    public static final Registry<ResourceLocation> field16080 = method9175(field16047, () -> Class8876.field40125);
@@ -210,7 +211,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
       if (var6 != null) {
          return !var2.compressMaps()
             ? var2.mergeToPrimitive(var3, var2.createString(var6.toString())).setLifecycle(this.field16140)
-            : var2.mergeToPrimitive(var3, var2.createInt(this.method9171((T)var1))).setLifecycle(this.field16140);
+            : var2.mergeToPrimitive(var3, var2.createInt(this.getId((T)var1))).setLifecycle(this.field16140);
       } else {
          return DataResult.error("Unknown registry element " + var1);
       }
@@ -226,7 +227,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public abstract Optional<RegistryKey<T>> method9182(T var1);
 
    @Override
-   public abstract int method9171(T var1);
+   public abstract int getId(T var1);
 
    @Nullable
    public abstract T method9183(RegistryKey<T> var1);

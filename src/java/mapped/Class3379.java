@@ -105,7 +105,7 @@ public class Class3379 extends Class3231 {
          BlockState var4 = Blocks.field37119.method11579();
 
          for (int var5 = 0; var5 < var1; var5++) {
-            var0.world.method6746(new Class7439(Class7940.field34051, var4), var0.getPosX(), var0.getPosY(), var0.getPosZ(), 0.0, 0.0, 0.0);
+            var0.world.method6746(new Class7439(ParticleTypes.field34051, var4), var0.getPosX(), var0.getPosY(), var0.getPosZ(), 0.0, 0.0, 0.0);
          }
       }
    }

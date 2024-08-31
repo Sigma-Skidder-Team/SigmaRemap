@@ -16,7 +16,7 @@ public class Class5566 implements Packet<Class5114> {
    public void writePacketData(PacketBuffer var1) throws IOException {
    }
 
-   public void method17180(Class5114 var1) {
+   public void processPacket(Class5114 var1) {
       var1.method15691(this);
    }
 }

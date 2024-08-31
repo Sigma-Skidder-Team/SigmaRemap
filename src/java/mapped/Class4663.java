@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;

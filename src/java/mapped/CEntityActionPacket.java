@@ -27,9 +27,9 @@ public class CEntityActionPacket implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24773 = var1.method35714();
+      this.field24773 = var1.readVarInt();
       this.field24774 = var1.<Class1865>method35712(Class1865.class);
-      this.field24775 = var1.method35714();
+      this.field24775 = var1.readVarInt();
    }
 
    @Override
@@ -39,7 +39,7 @@ public class CEntityActionPacket implements Packet<IServerPlayNetHandler> {
       var1.writeVarInt(this.field24775);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.processEntityAction(this);
    }
 

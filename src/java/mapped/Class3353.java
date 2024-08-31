@@ -44,8 +44,8 @@ public class Class3353 extends Class3350 {
          double var19 = var14 != Class113.field413 ? var17 : (double)var13.method539() * 0.52;
          double var21 = var4.nextDouble() * 6.0 / 16.0;
          double var23 = var14 != Class113.field415 ? var17 : (double)var13.method541() * 0.52;
-         var2.method6746(Class7940.field34092, var7 + var19, var9 + var21, var11 + var23, 0.0, 0.0, 0.0);
-         var2.method6746(Class7940.field34074, var7 + var19, var9 + var21, var11 + var23, 0.0, 0.0, 0.0);
+         var2.method6746(ParticleTypes.field34092, var7 + var19, var9 + var21, var11 + var23, 0.0, 0.0, 0.0);
+         var2.method6746(ParticleTypes.field34074, var7 + var19, var9 + var21, var11 + var23, 0.0, 0.0, 0.0);
       }
    }
 }

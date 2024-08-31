@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.particles.IParticleData;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -39,8 +41,8 @@ public class Class1109 extends Class1108 {
    }
 
    @Override
-   public Class7436 method5321() {
-      return Class7940.field34074;
+   public IParticleData method5321() {
+      return ParticleTypes.field34074;
    }
 
    @Override

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
 
 public abstract class Class219<T extends Entity, M extends Class2827<T>> {
    private final Class5714<T, M> field863;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import javax.annotation.Nullable;
 
 public class Class298 extends Class290 {

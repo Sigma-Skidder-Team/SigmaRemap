@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class8695 {
    public static final Class7131 field39239 = method31321("empty", new Class4938());
    public static final Class7131 field39240 = method31321("item", new Class4937());

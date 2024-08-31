@@ -1,13 +1,15 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.particles.IParticleData;
+
 import java.util.function.Function;
 
-public class Class7940 {
+public class ParticleTypes {
    public static final Class7435 field34048 = method26742("ambient_entity_effect", false);
    public static final Class7435 field34049 = method26742("angry_villager", false);
-   public static final Class7435 field34050 = method26742("barrier", false);
-   public static final Class7434<Class7439> field34051 = method26743("block", Class7439.field32010, Class7439::method24025);
+   public static final Class7435 BARRIER = method26742("barrier", false);
+   public static final ParticleType<Class7439> field34051 = method26743("block", Class7439.field32010, Class7439::method24025);
    public static final Class7435 field34052 = method26742("bubble", false);
    public static final Class7435 field34053 = method26742("cloud", false);
    public static final Class7435 field34054 = method26742("crit", false);
@@ -18,7 +20,7 @@ public class Class7940 {
    public static final Class7435 field34059 = method26742("landing_lava", false);
    public static final Class7435 field34060 = method26742("dripping_water", false);
    public static final Class7435 field34061 = method26742("falling_water", false);
-   public static final Class7434<Class7437> field34062 = method26743("dust", Class7437.field32002, var0 -> Class7437.field32001);
+   public static final ParticleType<Class7437> field34062 = method26743("dust", Class7437.field32002, var0 -> Class7437.field32001);
    public static final Class7435 field34063 = method26742("effect", false);
    public static final Class7435 field34064 = method26742("elder_guardian", true);
    public static final Class7435 field34065 = method26742("enchanted_hit", false);
@@ -27,7 +29,7 @@ public class Class7940 {
    public static final Class7435 field34068 = method26742("entity_effect", false);
    public static final Class7435 field34069 = method26742("explosion_emitter", true);
    public static final Class7435 field34070 = method26742("explosion", true);
-   public static final Class7434<Class7439> field34071 = method26743("falling_dust", Class7439.field32010, Class7439::method24025);
+   public static final ParticleType<Class7439> field34071 = method26743("falling_dust", Class7439.field32010, Class7439::method24025);
    public static final Class7435 field34072 = method26742("firework", false);
    public static final Class7435 field34073 = method26742("fishing", false);
    public static final Class7435 field34074 = method26742("flame", false);
@@ -38,7 +40,7 @@ public class Class7940 {
    public static final Class7435 field34079 = method26742("composter", false);
    public static final Class7435 field34080 = method26742("heart", false);
    public static final Class7435 field34081 = method26742("instant_effect", false);
-   public static final Class7434<Class7438> field34082 = method26743("item", Class7438.field32007, Class7438::method24021);
+   public static final ParticleType<Class7438> field34082 = method26743("item", Class7438.field32007, Class7438::method24021);
    public static final Class7435 field34083 = method26742("item_slime", false);
    public static final Class7435 field34084 = method26742("item_snowball", false);
    public static final Class7435 field34085 = method26742("large_smoke", false);
@@ -76,13 +78,13 @@ public class Class7940 {
    public static final Class7435 field34117 = method26742("landing_obsidian_tear", false);
    public static final Class7435 field34118 = method26742("reverse_portal", false);
    public static final Class7435 field34119 = method26742("white_ash", false);
-   public static final Codec<Class7436> field34120 = Registry.field16077.dispatch("type", Class7436::method24011, Class7434::method24005);
+   public static final Codec<IParticleData> field34120 = Registry.PARTICLE_TYPE.dispatch("type", IParticleData::getType, ParticleType::method24005);
 
    private static Class7435 method26742(String var0, boolean var1) {
-      return Registry.<Class7435>method9194(Registry.field16077, var0, new Class7435(var1));
+      return Registry.<Class7435>method9194(Registry.PARTICLE_TYPE, var0, new Class7435(var1));
    }
 
-   private static <T extends Class7436> Class7434<T> method26743(String var0, Class6865<T> var1, Function<Class7434<T>, Codec<T>> var2) {
-      return Registry.<Class7434<T>>method9194(Registry.field16077, var0, new Class7433(false, var1, var2));
+   private static <T extends IParticleData> ParticleType<T> method26743(String var0, Class6865<T> var1, Function<ParticleType<T>, Codec<T>> var2) {
+      return Registry.<ParticleType<T>>method9194(Registry.PARTICLE_TYPE, var0, new Class7433(false, var1, var2));
    }
 }

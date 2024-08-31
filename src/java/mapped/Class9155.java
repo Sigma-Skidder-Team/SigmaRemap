@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class9155 {
    private static final float field42034 = 1.0F / (float)Math.cos((float) (Math.PI / 8)) - 1.0F;
    private static final float field42035 = 1.0F / (float)Math.cos((float) (Math.PI / 4)) - 1.0F;

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.*;
 import java.util.function.Supplier;

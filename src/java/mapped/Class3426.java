@@ -77,7 +77,7 @@ public class Class3426 extends Block {
       float var9 = (float)Math.pow(2.0, (double)(var8 - 12) / 12.0);
       var2.method6742((PlayerEntity)null, var3, var1.<Class108>method23463(field19175).method299(), Class2266.field14730, 3.0F, var9);
       var2.method6746(
-         Class7940.field34088, (double)var3.getX() + 0.5, (double)var3.getY() + 1.2, (double)var3.getZ() + 0.5, (double)var8 / 24.0, 0.0, 0.0
+         ParticleTypes.field34088, (double)var3.getX() + 0.5, (double)var3.getY() + 1.2, (double)var3.getZ() + 0.5, (double)var8 / 24.0, 0.0, 0.0
       );
       return true;
    }

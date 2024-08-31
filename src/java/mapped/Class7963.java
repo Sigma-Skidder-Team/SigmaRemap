@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.function.Supplier;
 
 public class Class7963<U extends Class7882<?>> {

@@ -50,7 +50,7 @@ public class SPlayerLookPacket implements Packet<IClientPlayNetHandler> {
       this.field24872 = var1.readDouble();
       if (var1.readBoolean()) {
          this.field24876 = true;
-         this.field24873 = var1.method35714();
+         this.field24873 = var1.readVarInt();
          this.field24875 = var1.<Class2062>method35712(Class2062.class);
       }
    }
@@ -68,7 +68,7 @@ public class SPlayerLookPacket implements Packet<IClientPlayNetHandler> {
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handlePlayerLook(this);
    }
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4908 implements Class4907<Class4478> {
    private static final ResourceLocation field22741 = new ResourceLocation("impossible");

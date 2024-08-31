@@ -13,7 +13,7 @@ public final class Class6484 implements Class6466<Optional<ITextComponent>> {
          var1.writeBoolean(false);
       } else {
          var1.writeBoolean(true);
-         var1.method35711((ITextComponent)var2.get());
+         var1.writeTextComponent((ITextComponent)var2.get());
       }
    }
 

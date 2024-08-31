@@ -105,7 +105,7 @@ public class Class887 extends AbstractArrowEntity {
          double var9 = (double)(var4 >> 0 & 0xFF) / 255.0;
 
          for (int var11 = 0; var11 < var1; var11++) {
-            this.world.method6746(Class7940.field34068, this.method3438(0.5), this.method3441(), this.method3445(0.5), var5, var7, var9);
+            this.world.method6746(ParticleTypes.field34068, this.method3438(0.5), this.method3441(), this.method3445(0.5), var5, var7, var9);
          }
       }
    }
@@ -202,7 +202,7 @@ public class Class887 extends AbstractArrowEntity {
             double var9 = (double)(var4 >> 0 & 0xFF) / 255.0;
 
             for (int var11 = 0; var11 < 20; var11++) {
-               this.world.method6746(Class7940.field34068, this.method3438(0.5), this.method3441(), this.method3445(0.5), var5, var7, var9);
+               this.world.method6746(ParticleTypes.field34068, this.method3438(0.5), this.method3441(), this.method3445(0.5), var5, var7, var9);
             }
          }
       }

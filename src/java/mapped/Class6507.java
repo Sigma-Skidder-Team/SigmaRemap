@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
 
@@ -18,9 +19,9 @@ public class Class6507 implements Class6504<Class4852> {
    }
 
    public Class4852 method19699(ResourceLocation var1, PacketBuffer var2) {
-      int var5 = var2.method35714();
-      int var6 = var2.method35714();
-      String var7 = var2.method35728(32767);
+      int var5 = var2.readVarInt();
+      int var6 = var2.readVarInt();
+      String var7 = var2.readString(32767);
       NonNullList var8 = NonNullList.<Class120>method68(var5 * var6, Class120.field427);
 
       for (int var9 = 0; var9 < var8.size(); var9++) {
@@ -34,7 +35,7 @@ public class Class6507 implements Class6504<Class4852> {
    public void method19698(PacketBuffer var1, Class4852 var2) {
       var1.writeVarInt(Class4852.method14992(var2));
       var1.writeVarInt(Class4852.method14993(var2));
-      var1.method35729(Class4852.method14994(var2));
+      var1.writeString(Class4852.method14994(var2));
 
       for (Class120 var6 : Class4852.method14995(var2)) {
          var6.method335(var1);

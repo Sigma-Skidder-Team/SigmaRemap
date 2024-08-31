@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4911 extends Class4874<Class4489> {
    private static final ResourceLocation field22744 = new ResourceLocation("consume_item");

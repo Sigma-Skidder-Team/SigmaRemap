@@ -644,16 +644,16 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
                if (var1 != 42) {
                   super.method2866(var1);
                } else {
-                  this.method4751(Class7940.field34099);
+                  this.method4751(ParticleTypes.field34099);
                }
             } else {
-               this.method4751(Class7940.field34078);
+               this.method4751(ParticleTypes.field34078);
             }
          } else {
-            this.method4751(Class7940.field34049);
+            this.method4751(ParticleTypes.field34049);
          }
       } else {
-         this.method4751(Class7940.field34080);
+         this.method4751(ParticleTypes.field34080);
       }
    }
 

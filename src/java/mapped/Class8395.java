@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;

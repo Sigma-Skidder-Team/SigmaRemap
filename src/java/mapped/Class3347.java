@@ -82,7 +82,7 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
          double var16 = (double)(var4.nextFloat() * (float)var8);
          double var18 = ((double)var4.nextFloat() - 0.5) * 0.125;
          double var20 = (double)(var4.nextFloat() * (float)var9);
-         var2.method6746(Class7940.field34090, var10, var12, var14, var16, var18, var20);
+         var2.method6746(ParticleTypes.field34090, var10, var12, var14, var16, var18, var20);
       }
    }
 

@@ -28,7 +28,7 @@ public class SOpenBookWindowPacket implements Packet<IClientPlayNetHandler> {
       var1.method35713(this.field24455);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleOpenBookPacket(this);
    }
 

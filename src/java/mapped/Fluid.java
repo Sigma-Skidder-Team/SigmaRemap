@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -45,7 +46,7 @@ public abstract class Fluid {
    }
 
    @Nullable
-   public Class7436 method25054() {
+   public IParticleData method25054() {
       return null;
    }
 

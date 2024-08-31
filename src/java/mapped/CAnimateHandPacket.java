@@ -26,7 +26,7 @@ public class CAnimateHandPacket implements Packet<IServerPlayNetHandler> {
       var1.method35713(this.field24460);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.handleAnimation(this);
    }
 

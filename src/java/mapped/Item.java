@@ -36,7 +36,7 @@ public class Item implements Class3303 {
    private final Class9427 field18743;
 
    public static int method11701(Item var0) {
-      return var0 != null ? Registry.ITEM.method9171(var0) : 0;
+      return var0 != null ? Registry.ITEM.getId(var0) : 0;
    }
 
    public static Item method11702(int var0) {

@@ -44,7 +44,7 @@ public class SChangeGameStatePacket implements Packet<IClientPlayNetHandler> {
       var1.writeFloat(this.field24573);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleChangeGameState(this);
    }
 

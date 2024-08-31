@@ -56,7 +56,7 @@ public abstract class AbstractFireBlock extends Block {
                double var21 = (double)var3.getX() + var4.nextDouble() * 0.1F;
                double var26 = (double)var3.getY() + var4.nextDouble();
                double var31 = (double)var3.getZ() + var4.nextDouble();
-               var2.method6746(Class7940.field34085, var21, var26, var31, 0.0, 0.0, 0.0);
+               var2.method6746(ParticleTypes.field34085, var21, var26, var31, 0.0, 0.0, 0.0);
             }
          }
 
@@ -65,7 +65,7 @@ public abstract class AbstractFireBlock extends Block {
                double var22 = (double)(var3.getX() + 1) - var4.nextDouble() * 0.1F;
                double var27 = (double)var3.getY() + var4.nextDouble();
                double var32 = (double)var3.getZ() + var4.nextDouble();
-               var2.method6746(Class7940.field34085, var22, var27, var32, 0.0, 0.0, 0.0);
+               var2.method6746(ParticleTypes.field34085, var22, var27, var32, 0.0, 0.0, 0.0);
             }
          }
 
@@ -74,7 +74,7 @@ public abstract class AbstractFireBlock extends Block {
                double var23 = (double)var3.getX() + var4.nextDouble();
                double var28 = (double)var3.getY() + var4.nextDouble();
                double var33 = (double)var3.getZ() + var4.nextDouble() * 0.1F;
-               var2.method6746(Class7940.field34085, var23, var28, var33, 0.0, 0.0, 0.0);
+               var2.method6746(ParticleTypes.field34085, var23, var28, var33, 0.0, 0.0, 0.0);
             }
          }
 
@@ -83,7 +83,7 @@ public abstract class AbstractFireBlock extends Block {
                double var24 = (double)var3.getX() + var4.nextDouble();
                double var29 = (double)var3.getY() + var4.nextDouble();
                double var34 = (double)(var3.getZ() + 1) - var4.nextDouble() * 0.1F;
-               var2.method6746(Class7940.field34085, var24, var29, var34, 0.0, 0.0, 0.0);
+               var2.method6746(ParticleTypes.field34085, var24, var29, var34, 0.0, 0.0, 0.0);
             }
          }
 
@@ -92,7 +92,7 @@ public abstract class AbstractFireBlock extends Block {
                double var25 = (double)var3.getX() + var4.nextDouble();
                double var30 = (double)(var3.getY() + 1) - var4.nextDouble() * 0.1F;
                double var35 = (double)var3.getZ() + var4.nextDouble();
-               var2.method6746(Class7940.field34085, var25, var30, var35, 0.0, 0.0, 0.0);
+               var2.method6746(ParticleTypes.field34085, var25, var30, var35, 0.0, 0.0, 0.0);
             }
          }
       } else {
@@ -100,7 +100,7 @@ public abstract class AbstractFireBlock extends Block {
             double var10 = (double)var3.getX() + var4.nextDouble();
             double var12 = (double)var3.getY() + var4.nextDouble() * 0.5 + 0.5;
             double var14 = (double)var3.getZ() + var4.nextDouble();
-            var2.method6746(Class7940.field34085, var10, var12, var14, 0.0, 0.0, 0.0);
+            var2.method6746(ParticleTypes.field34085, var10, var12, var14, 0.0, 0.0, 0.0);
          }
       }
    }

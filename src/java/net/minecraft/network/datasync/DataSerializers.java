@@ -9,6 +9,7 @@ import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Pose;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 
@@ -24,7 +25,7 @@ public class DataSerializers {
    public static final Class6466<ItemStack> field33396 = new Class6471();
    public static final Class6466<Optional<BlockState>> field33397 = new Class6470();
    public static final Class6466<Boolean> field33398 = new Class6478();
-   public static final Class6466<Class7436> field33399 = new Class6482();
+   public static final Class6466<IParticleData> field33399 = new Class6482();
    public static final Class6466<Class7087> field33400 = new Class6476();
    public static final Class6466<BlockPos> field33401 = new Class6483();
    public static final Class6466<Optional<BlockPos>> field33402 = new Class6474();
@@ -45,7 +46,7 @@ public class DataSerializers {
    }
 
    public static int method25806(Class6466<?> var0) {
-      return field33389.method9171(var0);
+      return field33389.getId(var0);
    }
 
    static {

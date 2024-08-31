@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class6647 implements Class6646<Class6647> {
    private final ResourceLocation field29211;
    private final float field29212;

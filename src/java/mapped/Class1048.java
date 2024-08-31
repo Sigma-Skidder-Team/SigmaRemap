@@ -9,6 +9,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -222,7 +223,7 @@ public class Class1048 extends Class1047 {
             for (int var7 = 0; var7 < 2; var7++) {
                this.world
                   .method6746(
-                     Class7940.field34105,
+                     ParticleTypes.field34105,
                      this.getPosX() - var3.x * (double)var6 + (double)var4,
                      this.getPosY() - var3.y,
                      this.getPosZ() - var3.z * (double)var6 + (double)var5,
@@ -232,7 +233,7 @@ public class Class1048 extends Class1047 {
                   );
                this.world
                   .method6746(
-                     Class7940.field34105,
+                     ParticleTypes.field34105,
                      this.getPosX() - var3.x * (double)var6 - (double)var4,
                      this.getPosY() - var3.y,
                      this.getPosZ() - var3.z * (double)var6 - (double)var5,
@@ -252,11 +253,11 @@ public class Class1048 extends Class1047 {
       if (var1 != 38) {
          super.method2866(var1);
       } else {
-         this.method4783(Class7940.field34078);
+         this.method4783(ParticleTypes.field34078);
       }
    }
 
-   private void method4783(Class7436 var1) {
+   private void method4783(IParticleData var1) {
       for (int var4 = 0; var4 < 7; var4++) {
          double var5 = this.rand.nextGaussian() * 0.01;
          double var7 = this.rand.nextGaussian() * 0.01;

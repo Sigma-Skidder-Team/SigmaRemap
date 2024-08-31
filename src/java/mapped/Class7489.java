@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.function.Supplier;
 
 public class Class7489 extends Class7488 {

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonPrimitive;
+import net.minecraft.util.ResourceLocation;
 
 public class Class6891 {
    public static final Class8866<Class2120> field29862 = new Class8866<Class2120>("x", var0 -> new JsonPrimitive(Class2120.method8805(var0)));

@@ -16,14 +16,18 @@ import javax.crypto.SecretKey;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.network.login.IClientLoginNetHandler;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.network.login.server.*;
 import net.minecraft.realms.RealmsScreen;
+import net.minecraft.util.CryptException;
+import net.minecraft.util.CryptManager;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ClientLoginNetHandler implements Class5103 {
+public class ClientLoginNetHandler implements IClientLoginNetHandler {
    private static final Logger field23199 = LogManager.getLogger();
    private final Minecraft field23200;
    private final Screen field23201;
@@ -39,19 +43,19 @@ public class ClientLoginNetHandler implements Class5103 {
    }
 
    @Override
-   public void method15584(Class5540 var1) {
+   public void handleEncryptionRequest(SEncryptionRequestPacket var1) {
       String var6;
       Cipher var7;
       Cipher var8;
       Class5569 var9;
       try {
-         SecretKey var4 = Class8961.method32736();
-         PublicKey var5 = var1.method17418();
-         var6 = new BigInteger(Class8961.method32738(var1.method17417(), var5, var4)).toString(16);
-         var7 = Class8961.method32746(2, var4);
-         var8 = Class8961.method32746(1, var4);
-         var9 = new Class5569(var4, var5, var1.method17419());
-      } catch (Class2464 var10) {
+         SecretKey var4 = CryptManager.method32736();
+         PublicKey var5 = var1.getPublicKey();
+         var6 = new BigInteger(CryptManager.method32738(var1.getServerId(), var5, var4)).toString(16);
+         var7 = CryptManager.method32746(2, var4);
+         var8 = CryptManager.method32746(1, var4);
+         var9 = new Class5569(var4, var5, var1.getVerifyToken());
+      } catch (CryptException var10) {
          throw new IllegalStateException("Protocol error", var10);
       }
 
@@ -93,9 +97,9 @@ public class ClientLoginNetHandler implements Class5103 {
    }
 
    @Override
-   public void method15587(Class5598 var1) {
+   public void handleLoginSuccess(SLoginSuccessPacket var1) {
       this.field23202.accept(new TranslationTextComponent("connect.joining"));
-      this.field23204 = var1.method17601();
+      this.field23204 = var1.getProfile();
       this.field23203.method30690(ProtocolType.field9902);
       this.field23203.setNetHandler(new ClientPlayNetHandler(this.field23200, this.field23201, this.field23203, this.field23204));
    }
@@ -115,20 +119,20 @@ public class ClientLoginNetHandler implements Class5103 {
    }
 
    @Override
-   public void method15590(Class5490 var1) {
-      this.field23203.method30701(var1.method17270());
+   public void handleDisconnect(SDisconnectLoginPacket var1) {
+      this.field23203.method30701(var1.getReason());
    }
 
    @Override
-   public void method15591(Class5521 var1) {
+   public void handleEnableCompression(SEnableCompressionPacket var1) {
       if (!this.field23203.method30702()) {
-         this.field23203.method30712(var1.method17358());
+         this.field23203.method30712(var1.getCompressionThreshold());
       }
    }
 
    @Override
-   public void method15592(Class5496 var1) {
+   public void handleCustomPayloadLogin(SCustomPayloadLoginPacket var1) {
       this.field23202.accept(new TranslationTextComponent("connect.negotiating"));
-      this.field23203.sendPacket(new Class5571(var1.method17282(), (PacketBuffer)null));
+      this.field23203.sendPacket(new Class5571(var1.getTransaction(), (PacketBuffer)null));
    }
 }

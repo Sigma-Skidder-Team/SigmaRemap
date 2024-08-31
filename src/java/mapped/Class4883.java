@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4883 extends Class4874<Class4491> {
    private static final ResourceLocation field22717 = new ResourceLocation("inventory_changed");

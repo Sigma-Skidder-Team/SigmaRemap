@@ -86,7 +86,7 @@ public class Class1033 extends Class1031 implements Class1022 {
             }
 
             for (int var7 = 0; var7 < 16; var7++) {
-               this.world.method6746(Class7940.field34053, this.method3438(0.5), this.method3441(), this.method3444(0.5), 0.0, 0.0, 0.0);
+               this.world.method6746(ParticleTypes.field34053, this.method3438(0.5), this.method3441(), this.method3444(0.5), 0.0, 0.0, 0.0);
             }
 
             this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26695, this.method2864(), 1.0F, 1.0F, false);

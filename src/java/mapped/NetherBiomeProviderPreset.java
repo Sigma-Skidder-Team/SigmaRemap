@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Function3;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Map;
 import java.util.Optional;
 

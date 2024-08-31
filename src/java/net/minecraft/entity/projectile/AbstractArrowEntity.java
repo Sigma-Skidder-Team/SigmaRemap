@@ -13,6 +13,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SChangeGameStatePacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -181,7 +182,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
             for (int var26 = 0; var26 < 4; var26++) {
                this.world
                   .method6746(
-                     Class7940.field34054,
+                     ParticleTypes.field34054,
                      this.getPosX() + var10 * (double)var26 / 4.0,
                      this.getPosY() + var12 * (double)var26 / 4.0,
                      this.getPosZ() + var14 * (double)var26 / 4.0,
@@ -210,7 +211,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
          if (this.method3250()) {
             for (int var29 = 0; var29 < 4; var29++) {
                float var30 = 0.25F;
-               this.world.method6746(Class7940.field34052, var16 - var10 * 0.25, var18 - var12 * 0.25, var20 - var14 * 0.25, var10, var12, var14);
+               this.world.method6746(ParticleTypes.field34052, var16 - var10 * 0.25, var18 - var12 * 0.25, var20 - var14 * 0.25, var10, var12, var14);
             }
 
             var27 = this.method3491();

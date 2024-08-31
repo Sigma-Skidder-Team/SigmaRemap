@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import mapped.*;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -18,7 +19,7 @@ public class BlockState extends Class7377 {
 
    public int method23490() {
       if (this.field31586 < 0) {
-         this.field31586 = Registry.BLOCK.method9171(this.getBlock());
+         this.field31586 = Registry.BLOCK.getId(this.getBlock());
       }
 
       return this.field31586;

@@ -6,6 +6,8 @@ import com.mojang.datafixers.DataFixUtils;
 import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;

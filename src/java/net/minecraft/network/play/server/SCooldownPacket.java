@@ -22,8 +22,8 @@ public class SCooldownPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24722 = Item.method11702(var1.method35714());
-      this.field24723 = var1.method35714();
+      this.field24722 = Item.method11702(var1.readVarInt());
+      this.field24723 = var1.readVarInt();
    }
 
    @Override
@@ -32,7 +32,7 @@ public class SCooldownPacket implements Packet<IClientPlayNetHandler> {
       var1.writeVarInt(this.field24723);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleCooldown(this);
    }
 

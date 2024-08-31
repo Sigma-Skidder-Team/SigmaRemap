@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.network.login.server.SDisconnectLoginPacket;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -27,7 +28,7 @@ public class Class5106 implements Class5105 {
                   var4 = new TranslationTextComponent("multiplayer.disconnect.incompatible", SharedConstants.getVersion().getName());
                }
 
-               this.field23207.sendPacket(new Class5490(var4));
+               this.field23207.sendPacket(new SDisconnectLoginPacket(var4));
                this.field23207.method30701(var4);
             } else {
                this.field23207.setNetHandler(new Class5109(this.field23206, this.field23207));

@@ -29,7 +29,7 @@ public class Class5578 implements Packet<IServerPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24738 = var1.method35707();
-      this.field24739 = var1.method35728(32767);
+      this.field24739 = var1.readString(32767);
       this.field24743 = var1.method35712(Class2037.class);
       int i = var1.readByte();
       this.field24740  =  (i & 1) != 0;
@@ -40,7 +40,7 @@ public class Class5578 implements Packet<IServerPlayNetHandler> {
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.method35708(this.field24738);
-      var1.method35729(this.field24739);
+      var1.writeString(this.field24739);
       var1.method35713(this.field24743);
       byte var4 = 0;
       if (this.field24740) {
@@ -58,7 +58,7 @@ public class Class5578 implements Packet<IServerPlayNetHandler> {
       var1.writeByte(var4);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15641(this);
    }
 

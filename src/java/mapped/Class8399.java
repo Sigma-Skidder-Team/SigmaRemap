@@ -25,7 +25,7 @@ public class Class8399 extends ByteToMessageDecoder {
    public void decode(ChannelHandlerContext var1, ByteBuf var2, List<Object> var3) throws Exception {
       if (var2.readableBytes() != 0) {
          PacketBuffer var6 = new PacketBuffer(var2);
-         int var7 = var6.method35714();
+         int var7 = var6.readVarInt();
          Packet var8 = ((ProtocolType)var1.channel().attr(NetworkManager.field38642).get()).method8103(this.field36045, var7);
          if (var8 == null) {
             throw new IOException("Bad packet id " + var7);

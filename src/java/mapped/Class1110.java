@@ -102,11 +102,11 @@ public class Class1110 extends Class1111 implements Class1008 {
          float var8 = (0.3F + var3 * 0.45F) * ((float)var5 * 0.2F + 1.0F);
          this.world
             .method6746(
-               Class7940.field34087, this.getPosX() + (double)var6, this.getPosY() + (double)var8, this.getPosZ() + (double)var7, 0.0, 0.0, 0.0
+               ParticleTypes.field34087, this.getPosX() + (double)var6, this.getPosY() + (double)var8, this.getPosZ() + (double)var7, 0.0, 0.0, 0.0
             );
          this.world
             .method6746(
-               Class7940.field34087, this.getPosX() - (double)var6, this.getPosY() + (double)var8, this.getPosZ() - (double)var7, 0.0, 0.0, 0.0
+               ParticleTypes.field34087, this.getPosX() - (double)var6, this.getPosY() + (double)var8, this.getPosZ() - (double)var7, 0.0, 0.0, 0.0
             );
       }
    }

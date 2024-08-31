@@ -10,6 +10,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
@@ -169,7 +170,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
       this.method4684();
    }
 
-   public void method4751(Class7436 var1) {
+   public void method4751(IParticleData var1) {
       for (int var4 = 0; var4 < 5; var4++) {
          double var5 = this.rand.nextGaussian() * 0.02;
          double var7 = this.rand.nextGaussian() * 0.02;

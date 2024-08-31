@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Set;
 
 public class Class6941 {

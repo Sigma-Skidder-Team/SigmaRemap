@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.*;
 
 import java.util.ArrayList;

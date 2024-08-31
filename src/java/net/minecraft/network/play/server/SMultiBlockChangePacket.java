@@ -44,7 +44,7 @@ public class SMultiBlockChangePacket implements Packet<IClientPlayNetHandler> {
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24642 = Class2002.method8393(var1.readLong());
       this.field24645 = var1.readBoolean();
-      int var4 = var1.method35714();
+      int var4 = var1.readVarInt();
       this.method17460(var4);
 
       for (int var5 = 0; var5 < this.field24643.length; var5++) {
@@ -65,7 +65,7 @@ public class SMultiBlockChangePacket implements Packet<IClientPlayNetHandler> {
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleMultiBlockChange(this);
    }
 

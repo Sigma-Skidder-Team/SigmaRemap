@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5679 extends Class5676<Class1033> {
    private static final ResourceLocation field25044 = new ResourceLocation("textures/entity/illager/illusioner.png");
 

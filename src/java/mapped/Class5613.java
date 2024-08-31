@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
 
@@ -23,18 +24,18 @@ public class Class5613 implements Packet<IServerPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24910 = var1.readByte();
-      this.field24911 = var1.method35731();
+      this.field24911 = var1.readResourceLocation();
       this.field24912 = var1.readBoolean();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeByte(this.field24910);
-      var1.method35732(this.field24911);
+      var1.writeResourceLocation(this.field24911);
       var1.writeBoolean(this.field24912);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15617(this);
    }
 

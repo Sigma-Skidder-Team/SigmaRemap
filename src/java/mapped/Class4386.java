@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.*;
 import net.minecraft.client.GameSettings;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

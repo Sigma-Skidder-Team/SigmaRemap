@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
+import net.minecraft.util.ResourceLocation;
 
 public class SetLootTableSerializer extends LootFunctionSerializer<Class149> {
    public void serialize(JsonObject var1, Class149 var2, JsonSerializationContext var3) {

@@ -12,6 +12,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -325,7 +326,7 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public void method6746(Class7436 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public void method6746(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
    }
 
    @Override

@@ -50,7 +50,7 @@ public class SEntityPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.entityId = var1.method35714();
+      this.entityId = var1.readVarInt();
    }
 
    @Override
@@ -58,7 +58,7 @@ public class SEntityPacket implements Packet<IClientPlayNetHandler> {
       var1.writeVarInt(this.entityId);
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleEntityMovement(this);
    }
 

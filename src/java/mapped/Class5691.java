@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5691 extends Class5651<Class1072, Class2872<Class1072>> {
    private static final ResourceLocation field25060 = new ResourceLocation("textures/entity/pig/pig.png");
 

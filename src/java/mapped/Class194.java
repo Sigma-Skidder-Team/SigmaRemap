@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
 import java.util.Map;

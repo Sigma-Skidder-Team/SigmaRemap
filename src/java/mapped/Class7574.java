@@ -9,6 +9,7 @@ import javax.annotation.Nullable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
@@ -156,8 +157,8 @@ public abstract class Class7574 {
             double var7 = (double)var4.getX() + var3.rand.nextDouble();
             double var9 = (double)var4.getY() + var3.rand.nextDouble();
             double var11 = (double)var4.getZ() + var3.rand.nextDouble();
-            var3.method6746(Class7940.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
-            var3.method6746(Class7940.field34074, var7, var9, var11, 0.0, 0.0, 0.0);
+            var3.method6746(ParticleTypes.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
+            var3.method6746(ParticleTypes.field34074, var7, var9, var11, 0.0, 0.0, 0.0);
             if (this.field32516 > 0) {
                this.field32516--;
             }

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class3275 extends Item {
    private final int field18775;
    private final String field18776;

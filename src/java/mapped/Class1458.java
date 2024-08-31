@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class1458 implements Runnable {
    private static String[] field7840;
    private AbstractClientPlayerEntity field7841;

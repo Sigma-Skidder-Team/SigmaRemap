@@ -17,6 +17,8 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.particles.IParticleData;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -368,8 +370,8 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var22 = (double)var18.method23475(var4, var11);
                double var24 = Math.max(var20, var22);
                Class7435 var26 = !var18.method23486(Class8953.field40470) && !var17.method23448(Blocks.field36890) && !Class3244.method11655(var17)
-                  ? Class7940.field34091
-                  : Class7940.field34092;
+                  ? ParticleTypes.field34091
+                  : ParticleTypes.field34092;
                this.field939
                   .world
                   .method6746(var26, (double)var11.getX() + var13, (double)var11.getY() + var24, (double)var11.getZ() + var15, 0.0, 0.0, 0.0);
@@ -2902,77 +2904,77 @@ public class WorldRenderer implements Class215, AutoCloseable {
       }
    }
 
-   public void method911(Class7436 var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+   public void method911(IParticleData var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
       this.method912(var1, var2, false, var3, var5, var7, var9, var11, var13);
    }
 
-   public void method912(Class7436 var1, boolean var2, boolean var3, double var4, double var6, double var8, double var10, double var12, double var14) {
+   public void method912(IParticleData var1, boolean var2, boolean var3, double var4, double var6, double var8, double var10, double var12, double var14) {
       try {
          this.method915(var1, var2, var3, var4, var6, var8, var10, var12, var14);
       } catch (Throwable var19) {
          CrashReport var17 = CrashReport.makeCrashReport(var19, "Exception while adding particle");
          CrashReportCategory var18 = var17.makeCategory("Particle being added");
-         var18.addDetail("ID", Registry.field16077.getKey(var1.method24011()));
+         var18.addDetail("ID", Registry.PARTICLE_TYPE.getKey(var1.getType()));
          var18.addDetail("Parameters", var1.method24010());
          var18.addDetail("Position", () -> CrashReportCategory.method32803(var4, var6, var8));
          throw new ReportedException(var17);
       }
    }
 
-   private <T extends Class7436> void method913(T var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      this.method911(var1, var1.method24011().method24006(), var2, var4, var6, var8, var10, var12);
+   private <T extends IParticleData> void method913(T var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+      this.method911(var1, var1.getType().method24006(), var2, var4, var6, var8, var10, var12);
    }
 
    @Nullable
-   private Class4587 method914(Class7436 var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+   private Class4587 method914(IParticleData var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
       return this.method915(var1, var2, false, var3, var5, var7, var9, var11, var13);
    }
 
    @Nullable
-   private Class4587 method915(Class7436 var1, boolean var2, boolean var3, double var4, double var6, double var8, double var10, double var12, double var14) {
+   private Class4587 method915(IParticleData var1, boolean var2, boolean var3, double var4, double var6, double var8, double var10, double var12, double var14) {
       Class9624 var16 = this.field939.gameRenderer.getActiveRenderInfo();
       if (this.field939 != null && var16.method37510() && this.field939.particles != null) {
          Class2294 var17 = this.method916(var3);
-         if (var1 == Class7940.field34069 && !Class7944.method26842()) {
+         if (var1 == ParticleTypes.field34069 && !Class7944.method26842()) {
             return null;
-         } else if (var1 == Class7940.field34070 && !Class7944.method26842()) {
+         } else if (var1 == ParticleTypes.field34070 && !Class7944.method26842()) {
             return null;
-         } else if (var1 == Class7940.field34089 && !Class7944.method26842()) {
+         } else if (var1 == ParticleTypes.field34089 && !Class7944.method26842()) {
             return null;
-         } else if (var1 == Class7940.field34098 && !Class7944.method26846()) {
+         } else if (var1 == ParticleTypes.field34098 && !Class7944.method26846()) {
             return null;
-         } else if (var1 == Class7940.field34092 && !Class7944.method26844()) {
+         } else if (var1 == ParticleTypes.field34092 && !Class7944.method26844()) {
             return null;
-         } else if (var1 == Class7940.field34085 && !Class7944.method26844()) {
+         } else if (var1 == ParticleTypes.field34085 && !Class7944.method26844()) {
             return null;
-         } else if (var1 == Class7940.field34068 && !Class7944.method26849()) {
+         } else if (var1 == ParticleTypes.field34068 && !Class7944.method26849()) {
             return null;
-         } else if (var1 == Class7940.field34048 && !Class7944.method26849()) {
+         } else if (var1 == ParticleTypes.field34048 && !Class7944.method26849()) {
             return null;
-         } else if (var1 == Class7940.field34063 && !Class7944.method26849()) {
+         } else if (var1 == ParticleTypes.field34063 && !Class7944.method26849()) {
             return null;
-         } else if (var1 == Class7940.field34081 && !Class7944.method26849()) {
+         } else if (var1 == ParticleTypes.field34081 && !Class7944.method26849()) {
             return null;
-         } else if (var1 == Class7940.field34100 && !Class7944.method26849()) {
+         } else if (var1 == ParticleTypes.field34100 && !Class7944.method26849()) {
             return null;
-         } else if (var1 == Class7940.field34090 && !Class7944.method26848()) {
+         } else if (var1 == ParticleTypes.field34090 && !Class7944.method26848()) {
             return null;
-         } else if (var1 == Class7940.field34074 && !Class7944.method26843()) {
+         } else if (var1 == ParticleTypes.field34074 && !Class7944.method26843()) {
             return null;
-         } else if (var1 == Class7940.field34075 && !Class7944.method26843()) {
+         } else if (var1 == ParticleTypes.field34075 && !Class7944.method26843()) {
             return null;
-         } else if (var1 == Class7940.field34062 && !Class7944.method26841()) {
+         } else if (var1 == ParticleTypes.field34062 && !Class7944.method26841()) {
             return null;
-         } else if (var1 == Class7940.field34060 && !Class7944.method26897()) {
+         } else if (var1 == ParticleTypes.field34060 && !Class7944.method26897()) {
             return null;
-         } else if (var1 == Class7940.field34057 && !Class7944.method26897()) {
+         } else if (var1 == ParticleTypes.field34057 && !Class7944.method26897()) {
             return null;
-         } else if (var1 == Class7940.field34072 && !Class7944.method26850()) {
+         } else if (var1 == ParticleTypes.field34072 && !Class7944.method26850()) {
             return null;
          } else {
             if (!var2) {
                double var18 = 1024.0;
-               if (var1 == Class7940.field34054) {
+               if (var1 == ParticleTypes.field34054) {
                   var18 = 38416.0;
                }
 
@@ -2986,27 +2988,27 @@ public class WorldRenderer implements Class215, AutoCloseable {
             }
 
             Class4587 var20 = this.field939.particles.method1197(var1, var4, var6, var8, var10, var12, var14);
-            if (var1 == Class7940.field34052) {
+            if (var1 == ParticleTypes.field34052) {
                Class9680.method37864(var20, this.field943, var4, var6, var8, this.field1018);
             }
 
-            if (var1 == Class7940.field34099) {
+            if (var1 == ParticleTypes.field34099) {
                Class9680.method37864(var20, this.field943, var4, var6, var8, this.field1018);
             }
 
-            if (var1 == Class7940.field34091) {
+            if (var1 == ParticleTypes.field34091) {
                Class9680.method37864(var20, this.field943, var4, var6, var8, this.field1018);
             }
 
-            if (var1 == Class7940.field34087) {
+            if (var1 == ParticleTypes.field34087) {
                Class9680.method37857(var20);
             }
 
-            if (var1 == Class7940.field34090) {
+            if (var1 == ParticleTypes.field34090) {
                Class9680.method37856(var20);
             }
 
-            if (var1 == Class7940.field34062) {
+            if (var1 == ParticleTypes.field34062) {
                Class9680.method37859(var20, this.field943, var4, var6, var8);
             }
 
@@ -3210,7 +3212,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             for (int var40 = 0; var40 < 8; var40++) {
                this.field943
                   .method6746(
-                     Class7940.field34085,
+                     ParticleTypes.field34085,
                      (double)var3.getX() + var5.nextDouble(),
                      (double)var3.getY() + 1.2,
                      (double)var3.getZ() + var5.nextDouble(),
@@ -3227,7 +3229,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var42 = (double)var3.getX() + var5.nextDouble() * 0.6 + 0.2;
                double var44 = (double)var3.getY() + var5.nextDouble() * 0.6 + 0.2;
                double var45 = (double)var3.getZ() + var5.nextDouble() * 0.6 + 0.2;
-               this.field943.method6746(Class7940.field34092, var42, var44, var45, 0.0, 0.0, 0.0);
+               this.field943.method6746(ParticleTypes.field34092, var42, var44, var45, 0.0, 0.0, 0.0);
             }
             break;
          case 1503:
@@ -3237,7 +3239,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var41 = (double)var3.getX() + (5.0 + var5.nextDouble() * 6.0) / 16.0;
                double var43 = (double)var3.getY() + 0.8125;
                double var11 = (double)var3.getZ() + (5.0 + var5.nextDouble() * 6.0) / 16.0;
-               this.field943.method6746(Class7940.field34092, var41, var43, var11, 0.0, 0.0, 0.0);
+               this.field943.method6746(ParticleTypes.field34092, var41, var43, var11, 0.0, 0.0, 0.0);
             }
             break;
          case 2000:
@@ -3257,7 +3259,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var54 = (double)var7 * var48 + var5.nextGaussian() * 0.01;
                double var55 = (double)var8 * var48 + var5.nextGaussian() * 0.01;
                double var62 = (double)var9 * var48 + var5.nextGaussian() * 0.01;
-               this.method913(Class7940.field34092, var50, var51, var53, var54, var55, var62);
+               this.method913(ParticleTypes.field34092, var50, var51, var53, var54, var55, var62);
             }
             break;
          case 2001:
@@ -3280,7 +3282,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
             for (int var18 = 0; var18 < 8; var18++) {
                this.method913(
-                  new Class7438(Class7940.field34082, new ItemStack(Items.field38115)),
+                  new Class7438(ParticleTypes.field34082, new ItemStack(Items.field38115)),
                   var17.x,
                   var17.y,
                   var17.z,
@@ -3293,7 +3295,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             float var49 = (float)(var4 >> 16 & 0xFF) / 255.0F;
             float var19 = (float)(var4 >> 8 & 0xFF) / 255.0F;
             float var20 = (float)(var4 >> 0 & 0xFF) / 255.0F;
-            Class7435 var21 = var2 == 2007 ? Class7940.field34081 : Class7940.field34063;
+            Class7435 var21 = var2 == 2007 ? ParticleTypes.field34081 : ParticleTypes.field34063;
 
             for (int var52 = 0; var52 < 100; var52++) {
                double var23 = var5.nextDouble() * 4.0;
@@ -3303,7 +3305,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var64 = Math.sin(var25) * var23;
                Class4587 var66 = this.method914(
                   var21,
-                  var21.method24011().method24006(),
+                  var21.getType().method24006(),
                   var17.x + var27 * 0.1,
                   var17.y + 0.3,
                   var17.z + var64 * 0.1,
@@ -3327,7 +3329,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
             for (int var58 = 0; var58 < 8; var58++) {
                this.method913(
-                  new Class7438(Class7940.field34082, new ItemStack(Items.field37979)),
+                  new Class7438(ParticleTypes.field34082, new ItemStack(Items.field37979)),
                   var22,
                   var24,
                   var26,
@@ -3339,7 +3341,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
             for (double var59 = 0.0; var59 < Math.PI * 2; var59 += Math.PI / 20) {
                this.method913(
-                  Class7940.field34090,
+                  ParticleTypes.field34090,
                   var22 + Math.cos(var59) * 5.0,
                   var24 - 0.4,
                   var26 + Math.sin(var59) * 5.0,
@@ -3348,7 +3350,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                   Math.sin(var59) * -5.0
                );
                this.method913(
-                  Class7940.field34090,
+                  ParticleTypes.field34090,
                   var22 + Math.cos(var59) * 5.0,
                   var24 - 0.4,
                   var26 + Math.sin(var59) * 5.0,
@@ -3363,8 +3365,8 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var60 = (double)var3.getX() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
                double var63 = (double)var3.getY() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
                double var65 = (double)var3.getZ() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
-               this.field943.method6746(Class7940.field34092, var60, var63, var65, 0.0, 0.0, 0.0);
-               this.field943.method6746(Class7940.field34074, var60, var63, var65, 0.0, 0.0, 0.0);
+               this.field943.method6746(ParticleTypes.field34092, var60, var63, var65, 0.0, 0.0, 0.0);
+               this.field943.method6746(ParticleTypes.field34074, var60, var63, var65, 0.0, 0.0, 0.0);
             }
             break;
          case 2005:
@@ -3378,7 +3380,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var33 = 0.01 + var5.nextDouble() * 0.5;
                double var35 = (double)(MathHelper.sin(var30) * var29);
                Class4587 var37 = this.method914(
-                  Class7940.field34056,
+                  ParticleTypes.field34056,
                   false,
                   (double)var3.getX() + var31 * 0.1,
                   (double)var3.getY() + 0.3,
@@ -3399,14 +3401,14 @@ public class WorldRenderer implements Class215, AutoCloseable {
          case 2008:
             this.field943
                .method6746(
-                  Class7940.field34070, (double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5, 0.0, 0.0, 0.0
+                  ParticleTypes.field34070, (double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5, 0.0, 0.0, 0.0
                );
             break;
          case 2009:
             for (int var28 = 0; var28 < 8; var28++) {
                this.field943
                   .method6746(
-                     Class7940.field34053,
+                     ParticleTypes.field34053,
                      (double)var3.getX() + var5.nextDouble(),
                      (double)var3.getY() + 1.2,
                      (double)var3.getZ() + var5.nextDouble(),
@@ -3419,7 +3421,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          case 3000:
             this.field943
                .method6747(
-                  Class7940.field34069, true, (double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5, 0.0, 0.0, 0.0
+                  ParticleTypes.field34069, true, (double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5, 0.0, 0.0, 0.0
                );
             this.field943
                .method6858(

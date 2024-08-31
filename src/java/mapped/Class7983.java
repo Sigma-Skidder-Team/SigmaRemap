@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.BiMap;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Map;
 import javax.annotation.Nullable;
 

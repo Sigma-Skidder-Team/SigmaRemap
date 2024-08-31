@@ -325,7 +325,7 @@ public class Class1007 extends Class1006 implements Class1008 {
          float var49 = (this.rand.nextFloat() - 0.5F) * 8.0F;
          this.world
             .method6746(
-               Class7940.field34070,
+               ParticleTypes.field34070,
                this.getPosX() + (double)var43,
                this.getPosY() + 2.0 + (double)var46,
                this.getPosZ() + (double)var49,
@@ -515,7 +515,7 @@ public class Class1007 extends Class1006 implements Class1008 {
          float var5 = (this.rand.nextFloat() - 0.5F) * 8.0F;
          this.world
             .method6746(
-               Class7940.field34069, this.getPosX() + (double)var3, this.getPosY() + 2.0 + (double)var4, this.getPosZ() + (double)var5, 0.0, 0.0, 0.0
+               ParticleTypes.field34069, this.getPosX() + (double)var3, this.getPosY() + 2.0 + (double)var4, this.getPosZ() + (double)var5, 0.0, 0.0, 0.0
             );
       }
 

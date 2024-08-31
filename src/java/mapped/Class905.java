@@ -237,7 +237,7 @@ public class Class905 extends ProjectileEntity {
       } else {
          this.world
             .method6746(
-               Class7940.field34067,
+               ParticleTypes.field34067,
                this.getPosX() - var8.x,
                this.getPosY() - var8.y + 0.15,
                this.getPosZ() - var8.z,
@@ -286,7 +286,7 @@ public class Class905 extends ProjectileEntity {
    @Override
    public void method3466(BlockRayTraceResult var1) {
       super.method3466(var1);
-      ((ServerWorld)this.world).method6939(Class7940.field34070, this.getPosX(), this.getPosY(), this.getPosZ(), 2, 0.2, 0.2, 0.2, 0.0);
+      ((ServerWorld)this.world).method6939(ParticleTypes.field34070, this.getPosX(), this.getPosY(), this.getPosZ(), 2, 0.2, 0.2, 0.2, 0.0);
       this.method2863(Sounds.field27046, 1.0F, 1.0F);
    }
 
@@ -305,7 +305,7 @@ public class Class905 extends ProjectileEntity {
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.world.isRemote) {
          this.method2863(Sounds.field27047, 1.0F, 1.0F);
-         ((ServerWorld)this.world).method6939(Class7940.field34054, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
+         ((ServerWorld)this.world).method6939(ParticleTypes.field34054, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
          this.method2904();
       }
 

@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Collections;
 import java.util.Set;
 

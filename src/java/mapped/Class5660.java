@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Class5660 extends Class5651<Class1021, Class2878<Class1021>> {
    private static final ResourceLocation field25024 = new ResourceLocation("textures/entity/snow_golem.png");
 

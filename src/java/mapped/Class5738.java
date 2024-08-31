@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.ResourceLocation;
 
 public class Class5738 extends Class5715<Class904> {
    private static final ResourceLocation field25159 = new ResourceLocation("textures/entity/fishing_hook.png");

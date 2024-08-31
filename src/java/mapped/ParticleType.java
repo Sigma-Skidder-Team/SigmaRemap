@@ -1,12 +1,13 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.particles.IParticleData;
 
-public abstract class Class7434<T extends Class7436> {
+public abstract class ParticleType<T extends IParticleData> {
    private final boolean field31995;
    private final Class6865<T> field31996;
 
-   public Class7434(boolean var1, Class6865<T> var2) {
+   public ParticleType(boolean var1, Class6865<T> var2) {
       this.field31995 = var1;
       this.field31996 = var2;
    }
@@ -15,7 +16,7 @@ public abstract class Class7434<T extends Class7436> {
       return this.field31995;
    }
 
-   public Class6865<T> method24007() {
+   public Class6865<T> getDeserializer() {
       return this.field31996;
    }
 

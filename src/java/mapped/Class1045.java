@@ -127,7 +127,7 @@ public abstract class Class1045 extends Class1046 {
          }
       } else if (this.field5803 > 0) {
          if (this.field5803 % 4 == 0) {
-            this.world.method6746(Class7940.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
+            this.world.method6746(ParticleTypes.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
          }
 
          this.field5803--;

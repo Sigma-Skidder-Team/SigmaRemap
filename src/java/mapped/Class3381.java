@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -8,9 +9,9 @@ import java.util.Random;
 public class Class3381 extends Block {
    private static String[] field18982;
    public static final VoxelShape field18983 = Block.method11539(6.0, 0.0, 6.0, 10.0, 10.0, 10.0);
-   public final Class7436 field18984;
+   public final IParticleData field18984;
 
-   public Class3381(AbstractBlock var1, Class7436 var2) {
+   public Class3381(AbstractBlock var1, IParticleData var2) {
       super(var1);
       this.field18984 = var2;
    }
@@ -37,7 +38,7 @@ public class Class3381 extends Block {
       double var7 = (double)var3.getX() + 0.5;
       double var9 = (double)var3.getY() + 0.7;
       double var11 = (double)var3.getZ() + 0.5;
-      var2.method6746(Class7940.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
+      var2.method6746(ParticleTypes.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
       var2.method6746(this.field18984, var7, var9, var11, 0.0, 0.0, 0.0);
    }
 }

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;

@@ -164,7 +164,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
          double var31 = this.method5006(var37);
          this.world
             .method6746(
-               Class7940.field34092,
+               ParticleTypes.field34092,
                var27 + this.rand.nextGaussian() * 0.3F,
                var29 + this.rand.nextGaussian() * 0.3F,
                var31 + this.rand.nextGaussian() * 0.3F,
@@ -175,7 +175,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
          if (var35 && this.world.rand.nextInt(4) == 0) {
             this.world
                .method6746(
-                  Class7940.field34068,
+                  ParticleTypes.field34068,
                   var27 + this.rand.nextGaussian() * 0.3F,
                   var29 + this.rand.nextGaussian() * 0.3F,
                   var31 + this.rand.nextGaussian() * 0.3F,
@@ -190,7 +190,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
          for (int var38 = 0; var38 < 3; var38++) {
             this.world
                .method6746(
-                  Class7940.field34068,
+                  ParticleTypes.field34068,
                   this.getPosX() + this.rand.nextGaussian(),
                   this.getPosY() + (double)(this.rand.nextFloat() * 3.3F),
                   this.getPosZ() + this.rand.nextGaussian(),

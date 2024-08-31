@@ -46,11 +46,11 @@ public class SMapDataPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24891 = var1.method35714();
+      this.field24891 = var1.readVarInt();
       this.field24892 = var1.readByte();
       this.field24893 = var1.readBoolean();
       this.field24894 = var1.readBoolean();
-      this.field24895 = new Class7982[var1.method35714()];
+      this.field24895 = new Class7982[var1.readVarInt()];
 
       for (int var4 = 0; var4 < this.field24895.length; var4++) {
          MapDecorationType var5 = var1.<MapDecorationType>method35712(MapDecorationType.class);
@@ -64,7 +64,7 @@ public class SMapDataPacket implements Packet<IClientPlayNetHandler> {
          this.field24899 = var1.readUnsignedByte();
          this.field24896 = var1.readUnsignedByte();
          this.field24897 = var1.readUnsignedByte();
-         this.field24900 = var1.method35699();
+         this.field24900 = var1.readByteArray();
       }
    }
 
@@ -85,7 +85,7 @@ public class SMapDataPacket implements Packet<IClientPlayNetHandler> {
             var1.writeBoolean(false);
          } else {
             var1.writeBoolean(true);
-            var1.method35711(var7.method27131());
+            var1.writeTextComponent(var7.method27131());
          }
       }
 
@@ -94,11 +94,11 @@ public class SMapDataPacket implements Packet<IClientPlayNetHandler> {
          var1.writeByte(this.field24899);
          var1.writeByte(this.field24896);
          var1.writeByte(this.field24897);
-         var1.method35698(this.field24900);
+         var1.writeByteArray(this.field24900);
       }
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleMaps(this);
    }
 

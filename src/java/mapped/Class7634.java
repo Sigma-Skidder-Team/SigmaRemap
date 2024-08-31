@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.particles.IParticleData;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -39,7 +40,7 @@ public abstract class Class7634 extends Class7633 {
          }
       } else if (var4.nextInt(10) == 0) {
          var1.method6746(
-            Class7940.field34098,
+            ParticleTypes.field34098,
             (double)var2.getX() + var4.nextDouble(),
             (double)var2.getY() + var4.nextDouble(),
             (double)var2.getZ() + var4.nextDouble(),
@@ -52,8 +53,8 @@ public abstract class Class7634 extends Class7633 {
 
    @Nullable
    @Override
-   public Class7436 method25054() {
-      return Class7940.field34060;
+   public IParticleData method25054() {
+      return ParticleTypes.field34060;
    }
 
    @Override

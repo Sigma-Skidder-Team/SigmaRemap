@@ -1,6 +1,7 @@
 package net.minecraft.client.gui;
 
 import mapped.*;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.function.BiConsumer;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 
 public class Items {
    public static final Item field37222 = method30156(Blocks.AIR, new Class3280(Blocks.AIR, new Class5643()));

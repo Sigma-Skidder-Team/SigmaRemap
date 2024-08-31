@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.List;
 
 public class Class9182 {

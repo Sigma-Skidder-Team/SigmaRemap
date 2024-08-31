@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.HashMap;
 import java.util.UUID;

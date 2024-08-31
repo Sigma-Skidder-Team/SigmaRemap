@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4854 implements Class4842 {
    private static String[] field22647;

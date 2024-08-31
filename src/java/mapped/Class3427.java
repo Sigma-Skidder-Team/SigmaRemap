@@ -24,7 +24,7 @@ public class Class3427 extends Block {
                double var12 = var7.method540() != 0 ? 0.5 + (double)var7.method540() * 0.6 : var4.nextDouble();
                double var14 = var7.method541() != 0 ? 0.5 + (double)var7.method541() * 0.6 : var4.nextDouble();
                var2.method6746(
-                  Class7940.field34115, (double)var3.getX() + var10, (double)var3.getY() + var12, (double)var3.getZ() + var14, 0.0, 0.0, 0.0
+                  ParticleTypes.field34115, (double)var3.getX() + var10, (double)var3.getY() + var12, (double)var3.getZ() + var14, 0.0, 0.0, 0.0
                );
             }
          }

@@ -135,7 +135,7 @@ public class Class4591 extends Class4588 {
          float var11 = (float)((var10 & 0xFF0000) >> 16) / 255.0F;
          float var12 = (float)((var10 & 0xFF00) >> 8) / 255.0F;
          float var13 = (float)((var10 & 0xFF) >> 0) / 255.0F;
-         Class4587 var14 = this.field22074.method1197(Class7940.field34077, this.field22041, this.field22042, this.field22043, 0.0, 0.0, 0.0);
+         Class4587 var14 = this.field22074.method1197(ParticleTypes.field34077, this.field22041, this.field22042, this.field22043, 0.0, 0.0, 0.0);
          var14.method14514(var11, var12, var13);
       }
 
@@ -162,7 +162,7 @@ public class Class4591 extends Class4588 {
    private void method14528(
       double var1, double var3, double var5, double var7, double var9, double var11, int[] var13, int[] var14, boolean var15, boolean var16
    ) {
-      Class4603 var19 = (Class4603)this.field22074.method1197(Class7940.field34072, var1, var3, var5, var7, var9, var11);
+      Class4603 var19 = (Class4603)this.field22074.method1197(ParticleTypes.field34072, var1, var3, var5, var7, var9, var11);
       var19.method14538(var15);
       var19.method14539(var16);
       var19.method14515(0.99F);

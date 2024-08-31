@@ -17,7 +17,7 @@ public class SCloseWindowPacket implements Packet<IClientPlayNetHandler> {
       this.field24790 = var1;
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleCloseWindow(this);
    }
 

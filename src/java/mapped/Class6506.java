@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.ResourceLocation;
 
 public class Class6506 implements Class6504<Class4854> {
    public Class4854 method19700(ResourceLocation var1, JsonObject var2) {
@@ -35,8 +36,8 @@ public class Class6506 implements Class6504<Class4854> {
    }
 
    public Class4854  method19699(ResourceLocation var1, PacketBuffer var2) {
-      String var5 = var2.method35728(32767);
-      int var6 = var2.method35714();
+      String var5 = var2.readString(32767);
+      int var6 = var2.readVarInt();
       NonNullList var7 = NonNullList.<Class120>method68(var6, Class120.field427);
 
       for (int var8 = 0; var8 < var7.size(); var8++) {
@@ -48,7 +49,7 @@ public class Class6506 implements Class6504<Class4854> {
    }
 
    public void method19698(PacketBuffer var1, Class4854 var2) {
-      var1.method35729(Class4854.method14998(var2));
+      var1.writeString(Class4854.method14998(var2));
       var1.writeVarInt(Class4854.method14999(var2).size());
 
       for (Class120 var6 : Class4854.method14999(var2)) {

@@ -25,7 +25,7 @@ public class SRemoveEntityEffectPacket implements Packet<IClientPlayNetHandler> 
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24482 = var1.method35714();
+      this.field24482 = var1.readVarInt();
       this.field24483 = Effect.method22287(var1.readUnsignedByte());
    }
 
@@ -35,7 +35,7 @@ public class SRemoveEntityEffectPacket implements Packet<IClientPlayNetHandler> 
       var1.writeByte(Effect.method22288(this.field24483));
    }
 
-   public void method17180(IClientPlayNetHandler var1) {
+   public void processPacket(IClientPlayNetHandler var1) {
       var1.handleRemoveEntityEffect(this);
    }
 

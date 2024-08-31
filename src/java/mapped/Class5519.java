@@ -25,7 +25,7 @@ public class Class5519 implements Packet<IServerPlayNetHandler> {
       this.field24486 = new String[4];
 
       for (int var4 = 0; var4 < 4; var4++) {
-         this.field24486[var4] = var1.method35728(384);
+         this.field24486[var4] = var1.readString(384);
       }
    }
 
@@ -34,11 +34,11 @@ public class Class5519 implements Packet<IServerPlayNetHandler> {
       var1.method35708(this.field24485);
 
       for (int var4 = 0; var4 < 4; var4++) {
-         var1.method35729(this.field24486[var4]);
+         var1.writeString(this.field24486[var4]);
       }
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15629(this);
    }
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.ResourceLocation;
 
 public class Class4893 extends Class4874<Class4463> {
    private static final ResourceLocation field22727 = new ResourceLocation("levitation");

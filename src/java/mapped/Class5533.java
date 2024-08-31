@@ -18,7 +18,7 @@ public class Class5533 implements Packet<IServerPlayNetHandler> {
       this.field24558 = var2;
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15615(this);
    }
 

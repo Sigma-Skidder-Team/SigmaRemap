@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Locale;
 
 public class Class1997 extends ResourceLocation {

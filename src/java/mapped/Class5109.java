@@ -11,6 +11,12 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.login.server.SDisconnectLoginPacket;
+import net.minecraft.network.login.server.SEnableCompressionPacket;
+import net.minecraft.network.login.server.SEncryptionRequestPacket;
+import net.minecraft.network.login.server.SLoginSuccessPacket;
+import net.minecraft.util.CryptException;
+import net.minecraft.util.CryptManager;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.lang3.Validate;
@@ -64,7 +70,7 @@ public class Class5109 implements Class5108 {
    public void method15600(ITextComponent var1) {
       try {
          field23212.info("Disconnecting {}: {}", this.method15602(), var1.getString());
-         this.field23216.sendPacket(new Class5490(var1));
+         this.field23216.sendPacket(new SDisconnectLoginPacket(var1));
          this.field23216.method30701(var1);
       } catch (Exception var5) {
          field23212.error("Error whilst disconnecting player", var5);
@@ -80,10 +86,10 @@ public class Class5109 implements Class5108 {
       if (var3 == null) {
          this.field23217 = Class2241.field14668;
          if (this.field23215.method1392() >= 0 && !this.field23216.method30702()) {
-            this.field23216.method30694(new Class5521(this.field23215.method1392()), var1 -> this.field23216.method30712(this.field23215.method1392()));
+            this.field23216.method30694(new SEnableCompressionPacket(this.field23215.method1392()), var1 -> this.field23216.method30712(this.field23215.method1392()));
          }
 
-         this.field23216.sendPacket(new Class5598(this.field23219));
+         this.field23216.sendPacket(new SLoginSuccessPacket(this.field23219));
          ServerPlayerEntity var4 = this.field23215.getPlayerList().method19489(this.field23219.getId());
          if (var4 == null) {
             this.field23215.getPlayerList().method19445(this.field23216, this.field23215.getPlayerList().method19452(this.field23219));
@@ -111,7 +117,7 @@ public class Class5109 implements Class5108 {
       this.field23219 = var1.method17302();
       if (this.field23215.method1350() && !this.field23216.method30702()) {
          this.field23217 = Class2241.field14663;
-         this.field23216.sendPacket(new Class5540("", this.field23215.method1329().getPublic().getEncoded(), this.field23214));
+         this.field23216.sendPacket(new SEncryptionRequestPacket("", this.field23215.method1329().getPublic().getEncoded(), this.field23214));
       } else {
          this.field23217 = Class2241.field14666;
       }
@@ -129,12 +135,12 @@ public class Class5109 implements Class5108 {
          }
 
          this.field23221 = var1.method17495(var4);
-         Cipher var5 = Class8961.method32746(2, this.field23221);
-         Cipher var6 = Class8961.method32746(1, this.field23221);
-         var7 = new BigInteger(Class8961.method32738("", this.field23215.method1329().getPublic(), this.field23221)).toString(16);
+         Cipher var5 = CryptManager.method32746(2, this.field23221);
+         Cipher var6 = CryptManager.method32746(1, this.field23221);
+         var7 = new BigInteger(CryptManager.method32738("", this.field23215.method1329().getPublic(), this.field23221)).toString(16);
          this.field23217 = Class2241.field14664;
          this.field23216.method30705(var5, var6);
-      } catch (Class2464 var8) {
+      } catch (CryptException var8) {
          throw new IllegalStateException("Protocol error", var8);
       }
 

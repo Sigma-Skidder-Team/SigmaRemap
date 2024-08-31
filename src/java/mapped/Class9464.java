@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Sets.SetView;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Map;
 import java.util.Random;
 import javax.annotation.Nullable;

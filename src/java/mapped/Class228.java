@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.ResourceLocation;
 
 public class Class228<T extends LivingEntity> extends Class226<T, Class2799<T>> {
    private static final RenderType field873 = RenderType.method14325(new ResourceLocation("textures/entity/enderman/enderman_eyes.png"));

@@ -22,15 +22,15 @@ public class Class5522 implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24496 = var1.method35728(256);
+      this.field24496 = var1.readString(256);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35729(this.field24496);
+      var1.writeString(this.field24496);
    }
 
-   public void method17180(IServerPlayNetHandler var1) {
+   public void processPacket(IServerPlayNetHandler var1) {
       var1.method15611(this);
    }
 

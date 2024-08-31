@@ -438,7 +438,7 @@ public class Blocks {
       "torch",
       new Class3381(
          AbstractBlock.method26609(Class8649.field38946).method26614().method26622().method26620(var0 -> 14).method26619(Class8447.field36200),
-         Class7940.field34074
+         ParticleTypes.field34074
       )
    );
    public static final Block WALL_TORCH = register(
@@ -450,7 +450,7 @@ public class Blocks {
             .method26620(var0 -> 14)
             .method26619(Class8447.field36200)
             .method26627(TORCH),
-         Class7940.field34074
+         ParticleTypes.field34074
       )
    );
    public static final Block FIRE = register(
@@ -767,7 +767,7 @@ public class Blocks {
       "soul_torch",
       new Class3381(
          AbstractBlock.method26609(Class8649.field38946).method26614().method26622().method26620(var0 -> 10).method26619(Class8447.field36200),
-         Class7940.field34075
+         ParticleTypes.field34075
       )
    );
    public static final Block field36586 = register(
@@ -779,7 +779,7 @@ public class Blocks {
             .method26620(var0 -> 10)
             .method26619(Class8447.field36200)
             .method26627(field36585),
-         Class7940.field34075
+         ParticleTypes.field34075
       )
    );
    public static final Block field36587 = register(
