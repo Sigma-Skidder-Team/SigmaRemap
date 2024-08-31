@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Pose;
+
 public final class Class6475 implements Class6466<Pose> {
    private static String[] field28422;
 

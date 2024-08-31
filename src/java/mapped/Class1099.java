@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
 import net.minecraft.util.math.BlockPos;
 
 public class Class1099 extends Class1009 {
