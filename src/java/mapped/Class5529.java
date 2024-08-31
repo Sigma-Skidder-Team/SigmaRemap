@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import javax.annotation.Nullable;
@@ -22,7 +23,7 @@ public class Class5529 implements Packet<IServerPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24529 = var1.method35714();
       this.field24530 = var1.method35728(32767);
       this.field24531 = var1.readBoolean();
@@ -41,7 +42,7 @@ public class Class5529 implements Packet<IServerPlayNetHandler> {
 
    @Nullable
    public Class911 method17387(World var1) {
-      Entity var4 = var1.method6774(this.field24529);
+      Entity var4 = var1.getEntityByID(this.field24529);
       return !(var4 instanceof Class918) ? null : ((Class918)var4).method3614();
    }
 

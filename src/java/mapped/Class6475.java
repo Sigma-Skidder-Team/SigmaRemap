@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Pose;
+import net.minecraft.network.PacketBuffer;
 
 public final class Class6475 implements Class6466<Pose> {
    private static String[] field28422;

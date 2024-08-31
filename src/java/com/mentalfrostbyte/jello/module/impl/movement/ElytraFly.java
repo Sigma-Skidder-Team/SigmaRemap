@@ -89,7 +89,7 @@ public class ElytraFly extends Module {
         if (this.isEnabled()) {
             if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
                 SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();
-                Entity var5 = mc.world.method6774(var4.method17565());
+                Entity var5 = mc.world.getEntityByID(var4.method17565());
                 if (var5 instanceof Class888) {
                     Class888 var6 = (Class888) var5;
                     if (var6.field5125 != null && var6.field5125.method3205() == mc.player.method3205()) {

@@ -5,7 +5,7 @@ import java.io.IOException;
 import mapped.Class1900;
 import mapped.Class6746;
 import mapped.Class8039;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.network.Packet;
@@ -43,7 +43,7 @@ public class SCombatPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24693 = var1.<Class1900>method35712(Class1900.class);
       if (this.field24693 != Class1900.field11156) {
          if (this.field24693 == Class1900.field11157) {

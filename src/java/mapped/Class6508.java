@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.network.PacketBuffer;
 
 public class Class6508<T extends Class4844> implements Class6504<T> {
    public final Class5644<T> field28493;

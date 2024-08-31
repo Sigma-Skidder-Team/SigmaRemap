@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
@@ -25,7 +26,7 @@ public class CEntityActionPacket implements Packet<IServerPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24773 = var1.method35714();
       this.field24774 = var1.<Class1865>method35712(Class1865.class);
       this.field24775 = var1.method35714();

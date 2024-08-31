@@ -18,6 +18,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap.Entry;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import java.util.ArrayDeque;
@@ -36,7 +37,7 @@ public class SCommandListPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       Class8125[] var4 = new Class8125[var1.method35714()];
 
       for (int var5 = 0; var5 < var4.length; var5++) {

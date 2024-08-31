@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.network.PacketBuffer;
 
 public interface Class8933 {
    Class8933 field40418 = method32664(

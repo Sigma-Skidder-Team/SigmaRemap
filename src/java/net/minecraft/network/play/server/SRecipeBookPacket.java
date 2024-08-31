@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import mapped.Class2338;
 import mapped.Class9223;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import mapped.ResourceLocation;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -35,7 +35,7 @@ public class SRecipeBookPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24713 = var1.<Class2338>method35712(Class2338.class);
       this.field24716 = Class9223.method34690(var1);
       int var4 = var1.method35714();

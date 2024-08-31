@@ -5,6 +5,8 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableSet.Builder;
+import net.minecraft.network.PacketBuffer;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;

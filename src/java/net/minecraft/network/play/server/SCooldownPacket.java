@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import mapped.Item;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 
@@ -21,7 +21,7 @@ public class SCooldownPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24722 = Item.method11702(var1.method35714());
       this.field24723 = var1.method35714();
    }

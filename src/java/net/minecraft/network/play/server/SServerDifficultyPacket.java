@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.world.Difficulty;
@@ -25,7 +25,7 @@ public class SServerDifficultyPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24575 = Difficulty.method8907(var1.readUnsignedByte());
       this.field24576 = var1.readBoolean();
    }

@@ -6,6 +6,7 @@ import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
@@ -40,7 +41,7 @@ public class SMultiBlockChangePacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24642 = Class2002.method8393(var1.readLong());
       this.field24645 = var1.readBoolean();
       int var4 = var1.method35714();

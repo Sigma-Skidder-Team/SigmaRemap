@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.network.PacketBuffer;
 
 import java.util.function.Predicate;
 

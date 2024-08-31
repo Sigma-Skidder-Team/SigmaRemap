@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
@@ -22,7 +23,7 @@ public class Class5533 implements Packet<IServerPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24557 = var1.readByte();
       this.field24558 = var1.readByte();
    }

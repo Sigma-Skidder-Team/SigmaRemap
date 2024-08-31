@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 
@@ -20,7 +20,7 @@ public class SUnloadChunkPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24700 = var1.readInt();
       this.field24701 = var1.readInt();
    }

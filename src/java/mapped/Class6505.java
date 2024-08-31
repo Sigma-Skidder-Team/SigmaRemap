@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.network.PacketBuffer;
+
 import java.util.function.Function;
 
 public class Class6505<T extends Class4843<?>> implements Class6504<T> {

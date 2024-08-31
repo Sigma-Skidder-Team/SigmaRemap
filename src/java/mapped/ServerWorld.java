@@ -1046,7 +1046,7 @@ public class ServerWorld extends World implements Class1658 {
 
    @Nullable
    @Override
-   public Entity method6774(int var1) {
+   public Entity getEntityByID(int var1) {
       return (Entity)this.field9039.get(var1);
    }
 

@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.Packet;
@@ -32,7 +32,7 @@ public class SSpawnPlayerPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24833 = var1.method35714();
       this.field24834 = var1.method35717();
       this.field24835 = var1.readDouble();

@@ -307,7 +307,7 @@ public class ClientWorld extends World {
 
    @Nullable
    @Override
-   public Entity method6774(int var1) {
+   public Entity getEntityByID(int var1) {
       return (Entity)this.field9025.get(var1);
    }
 

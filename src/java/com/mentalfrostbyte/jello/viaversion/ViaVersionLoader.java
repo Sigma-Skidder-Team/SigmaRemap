@@ -199,12 +199,12 @@ public class ViaVersionLoader {
                      || Class8005.method27349() == Class5989.field26129.method18582()
                )) {
                if (!(((ItemStack)var6.getSecond()).getItem() instanceof Class3334)) {
-                  Entity var7 = this.mc.world.method6774(var4.method17561());
+                  Entity var7 = this.mc.world.getEntityByID(var4.method17561());
                   if (field31493.contains(var7)) {
                      field31493.remove(var7);
                   }
                } else {
-                  Entity var14 = this.mc.world.method6774(var4.method17561());
+                  Entity var14 = this.mc.world.getEntityByID(var4.method17561());
                   if (!field31493.contains(var14) && !ColorUtils.method17719()) {
                      field31493.add(var14);
                   }
@@ -247,7 +247,7 @@ public class ViaVersionLoader {
                }
             } else {
                SAnimateHandPacket var11 = (SAnimateHandPacket)var1.getPacket();
-               Entity var13 = this.mc.world.method6774(var11.method17192());
+               Entity var13 = this.mc.world.getEntityByID(var11.method17192());
                if (var13 != null && var11.method17193() == 3 && Class8005.method27349() == Class5989.field26129.method18582()) {
                   var1.method13900(true);
                }

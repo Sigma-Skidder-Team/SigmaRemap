@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
+
 public final class Class6478 implements Class6466<Boolean> {
    private static String[] field28425;
 

@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType.StringType;
+import net.minecraft.network.PacketBuffer;
 
 public class Class2587 implements Class2586<StringArgumentType> {
    public void method10796(StringArgumentType var1, PacketBuffer var2) {

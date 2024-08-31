@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import mapped.MathHelper;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import mapped.Vector3d;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
@@ -35,7 +35,7 @@ public class SEntityVelocityPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24800 = var1.method35714();
       this.field24801 = var1.readShort();
       this.field24802 = var1.readShort();

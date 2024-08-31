@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.network.PacketBuffer;
 
 public class Class6509 implements Class6504<Class4846> {
    public Class4846 method19700(ResourceLocation var1, JsonObject var2) {

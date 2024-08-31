@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
+
 public class Class7175 extends Class7176 {
    private static String[] field30843;
    private float field30844 = Float.MAX_VALUE;

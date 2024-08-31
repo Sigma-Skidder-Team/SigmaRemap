@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.List;
 
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Marker;
@@ -30,7 +31,7 @@ public class Class8399 extends ByteToMessageDecoder {
             throw new IOException("Bad packet id " + var7);
          }
 
-         var8.method17175(var6);
+         var8.readPacketData(var6);
          if (var6.readableBytes() > 0) {
             throw new IOException(
                "Packet "

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
+import net.minecraft.network.PacketBuffer;
 
 public class Class2592 implements Class2586<DoubleArgumentType> {
    public void method10796(DoubleArgumentType var1, PacketBuffer var2) {

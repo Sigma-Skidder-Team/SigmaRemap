@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.network.PacketBuffer;
 
 public class Class2585 implements Class2586<Class8700> {
    public void method10796(Class8700 var1, PacketBuffer var2) {

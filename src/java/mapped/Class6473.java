@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
+
 import java.util.OptionalInt;
 
 public final class Class6473 implements Class6466<OptionalInt> {

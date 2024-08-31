@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
@@ -21,7 +22,7 @@ public class Class5468 implements Packet<IServerPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24269 = var1.method35707();
       this.field24270 = var1.method35714();
       this.field24271 = var1.readBoolean();

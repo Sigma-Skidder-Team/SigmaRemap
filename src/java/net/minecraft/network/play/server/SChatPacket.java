@@ -3,7 +3,7 @@ package net.minecraft.network.play.server;
 import java.io.IOException;
 import java.util.UUID;
 
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.util.text.ChatType;
@@ -25,7 +25,7 @@ public class SChatPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24919 = var1.method35710();
       this.field24920 = ChatType.byId(var1.readByte());
       this.field24921 = var1.method35717();

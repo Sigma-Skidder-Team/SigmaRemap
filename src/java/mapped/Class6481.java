@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.text.ITextComponent;
 
 public final class Class6481 implements Class6466<ITextComponent> {

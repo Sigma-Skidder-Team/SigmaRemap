@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import mapped.Class2062;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import mapped.Vector3d;
 import mapped.World;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
@@ -43,7 +43,7 @@ public class SPlayerLookPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24874 = var1.<Class2062>method35712(Class2062.class);
       this.field24870 = var1.readDouble();
       this.field24871 = var1.readDouble();
@@ -81,7 +81,7 @@ public class SPlayerLookPacket implements Packet<IClientPlayNetHandler> {
       if (!this.field24876) {
          return new Vector3d(this.field24870, this.field24871, this.field24872);
       } else {
-         Entity var4 = var1.method6774(this.field24873);
+         Entity var4 = var1.getEntityByID(this.field24873);
          return var4 != null ? this.field24875.method8711(var4) : new Vector3d(this.field24870, this.field24871, this.field24872);
       }
    }

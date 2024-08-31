@@ -657,7 +657,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void method15649(Class5559 var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method3424(2)) {
-         Entity var4 = this.player.getServerWorld().method6774(var1.method17479());
+         Entity var4 = this.player.getServerWorld().getEntityByID(var1.method17479());
          if (var4 != null) {
             CompoundNBT var5 = var4.method3294(new CompoundNBT());
             this.player.field4855.sendPacket(new SQueryNBTResponsePacket(var1.method17478(), var5));

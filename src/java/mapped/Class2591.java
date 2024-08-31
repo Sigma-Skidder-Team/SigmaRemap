@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.network.PacketBuffer;
 
 import java.util.function.Supplier;
 

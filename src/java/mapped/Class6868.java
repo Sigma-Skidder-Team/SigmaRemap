@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.network.PacketBuffer;
 
 public final class Class6868 implements Class6865<Class7435> {
    private static String[] field29793;

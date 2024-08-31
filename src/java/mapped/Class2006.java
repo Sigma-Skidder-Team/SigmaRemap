@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import net.minecraft.network.PacketBuffer;
 
 import javax.annotation.Nullable;
 import java.util.*;

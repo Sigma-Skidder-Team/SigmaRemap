@@ -715,7 +715,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Nullable
-   public abstract Entity method6774(int var1);
+   public abstract Entity getEntityByID(int var1);
 
    public void method6775(BlockPos var1, TileEntity var2) {
       if (this.method7017(var1)) {

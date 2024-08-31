@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.network.PacketBuffer;
 
 @Deprecated
 public interface Class6865<T extends Class7436> {

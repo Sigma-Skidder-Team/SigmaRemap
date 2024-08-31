@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import java.io.IOException;
 
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.util.text.ITextComponent;
@@ -13,7 +13,7 @@ public class SPlayerListHeaderFooterPacket implements Packet<IClientPlayNetHandl
    private ITextComponent field24536;
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24535 = var1.method35710();
       this.field24536 = var1.method35710();
    }

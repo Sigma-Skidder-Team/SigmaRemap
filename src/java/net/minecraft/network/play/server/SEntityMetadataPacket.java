@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import mapped.Class9773;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -28,7 +28,7 @@ public class SEntityMetadataPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24656 = var1.method35714();
       this.field24657 = EntityDataManager.method35452(var1);
    }

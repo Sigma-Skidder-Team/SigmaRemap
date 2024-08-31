@@ -3,6 +3,7 @@ package net.minecraft.network.play.server;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import java.util.function.Supplier;
@@ -37,7 +38,7 @@ public class SRespawnPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24615 = var1.<Supplier<DimensionType>>method35696(DimensionType.DIMENSION_TYPE_CODEC).get();
       this.field24616 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.method35731());
       this.field24617 = var1.readLong();

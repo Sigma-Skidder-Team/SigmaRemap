@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
+
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 

@@ -103,7 +103,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    public void method2871() {
       Vector3d var3 = this.method3433().method11347(1.0, 0.6, 1.0);
       if (!this.world.isRemote && this.method5014(0) > 0) {
-         Entity var4 = this.world.method6774(this.method5014(0));
+         Entity var4 = this.world.getEntityByID(this.method5014(0));
          if (var4 != null) {
             double var5 = var3.y;
             if (this.getPosY() < var4.getPosY() || !this.method5016() && this.getPosY() < var4.getPosY() + 5.0) {
@@ -136,7 +136,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
          int var9 = this.method5014(var34 + 1);
          Entity var10 = null;
          if (var9 > 0) {
-            var10 = this.world.method6774(var9);
+            var10 = this.world.getEntityByID(var9);
          }
 
          if (var10 == null) {
@@ -243,7 +243,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
                      var27.remove(var31);
                   }
                } else {
-                  Entity var26 = this.world.method6774(var23);
+                  Entity var26 = this.world.getEntityByID(var23);
                   if (var26 == null || !var26.isAlive() || this.getDistanceSq(var26) > 900.0 || !this.method3135(var26)) {
                      this.method5015(var3, 0);
                   } else if (var26 instanceof PlayerEntity && ((PlayerEntity)var26).abilities.field29606) {

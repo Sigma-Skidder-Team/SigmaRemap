@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import net.minecraft.network.PacketBuffer;
 
 public class Class2593 implements Class2586<IntegerArgumentType> {
    public void method10796(IntegerArgumentType var1, PacketBuffer var2) {

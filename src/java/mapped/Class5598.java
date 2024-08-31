@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -18,7 +19,7 @@ public class Class5598 implements Packet<Class5103> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       int[] var4 = new int[4];
 
       for (int var5 = 0; var5 < var4.length; var5++) {

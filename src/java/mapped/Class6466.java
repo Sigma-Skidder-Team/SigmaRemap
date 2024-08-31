@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.datasync.DataParameter;
 
 public interface Class6466<T> {

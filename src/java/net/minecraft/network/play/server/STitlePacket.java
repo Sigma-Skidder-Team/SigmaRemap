@@ -3,7 +3,7 @@ package net.minecraft.network.play.server;
 import java.io.IOException;
 
 import mapped.Class2301;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.util.text.ITextComponent;
@@ -36,7 +36,7 @@ public class STitlePacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24805 = var1.<Class2301>method35712(Class2301.class);
       if (this.field24805 == Class2301.field15710 || this.field24805 == Class2301.field15711 || this.field24805 == Class2301.field15712) {
          this.field24806 = var1.method35710();

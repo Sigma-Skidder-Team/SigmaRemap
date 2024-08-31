@@ -3,6 +3,8 @@ package mapped;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
+import net.minecraft.network.PacketBuffer;
+
 import java.util.zip.Deflater;
 
 public class Class8546 extends MessageToByteEncoder<ByteBuf> {

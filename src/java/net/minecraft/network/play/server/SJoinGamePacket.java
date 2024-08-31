@@ -4,6 +4,7 @@ import com.google.common.collect.Sets;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import java.util.Set;
@@ -65,7 +66,7 @@ public class SJoinGamePacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24406 = var1.readInt();
       this.field24408 = var1.readBoolean();
       this.field24409 = Class1894.method8159(var1.readByte());

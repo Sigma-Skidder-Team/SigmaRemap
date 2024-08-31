@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.server.SEntityPacket;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -59,15 +60,15 @@ public class MovementAntiBot extends Class7249 {
             this.field31116.clear();
          }
 
-         if (var1.getPacket() instanceof Class5477) {
-            Class5477 var4 = (Class5477)var1.getPacket();
-            if (!(var4.method17233(field31119.world) instanceof PlayerEntity)) {
+         if (var1.getPacket() instanceof SEntityPacket.RelativeMovePacket) {
+            SEntityPacket.RelativeMovePacket var4 = (SEntityPacket.RelativeMovePacket)var1.getPacket();
+            if (!(var4.getEntity(field31119.world) instanceof PlayerEntity)) {
                return;
             }
 
-            Entity var5 = var4.method17233(field31119.world);
+            Entity var5 = var4.getEntity(field31119.world);
             boolean var6 = ColorUtils.method17730(var5, 0.5F);
-            short var7 = var4.field24324;
+            short var7 = var4.posY;
             if (!this.field31117.containsKey(var5)) {
                this.field31117.put(var5, new ArrayList<Integer>());
             }

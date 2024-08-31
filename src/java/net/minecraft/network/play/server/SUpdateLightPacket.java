@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import java.util.List;
@@ -90,7 +91,7 @@ public class SUpdateLightPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24498 = var1.method35714();
       this.field24499 = var1.method35714();
       this.field24506 = var1.readBoolean();

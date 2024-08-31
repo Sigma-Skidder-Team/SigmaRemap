@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.network.PacketBuffer;
 
 public interface Class6504<T extends Class4843<?>> {
    Class6504<Class4852> field28470 = method19702("crafting_shaped", new Class6507());

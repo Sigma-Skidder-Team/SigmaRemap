@@ -6,7 +6,7 @@ import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import it.unimi.dsi.fastutil.objects.Object2IntMap.Entry;
 import mapped.Class49;
 import mapped.Class9007;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import mapped.Registry;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -30,7 +30,7 @@ public class SStatisticsPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       int var4 = var1.method35714();
       this.field24640 = new Object2IntOpenHashMap(var4);
 

@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import mapped.Class2073;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 
@@ -30,7 +30,7 @@ public class SUpdateScorePacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24662 = var1.method35728(40);
       this.field24665 = var1.<Class2073>method35712(Class2073.class);
       String var4 = var1.method35728(16);

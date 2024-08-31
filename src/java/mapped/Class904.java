@@ -89,7 +89,7 @@ public class Class904 extends ProjectileEntity {
    public void method3155(DataParameter<?> var1) {
       if (field5151.equals(var1)) {
          int var4 = this.method3210().<Integer>method35445(field5151);
-         this.field5159 = var4 <= 0 ? null : this.world.method6774(var4 - 1);
+         this.field5159 = var4 <= 0 ? null : this.world.getEntityByID(var4 - 1);
       }
 
       if (field5152.equals(var1)) {

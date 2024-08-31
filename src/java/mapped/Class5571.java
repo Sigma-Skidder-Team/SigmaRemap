@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
@@ -17,7 +18,7 @@ public class Class5571 implements Packet<Class5108> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24710 = var1.method35714();
       if (!var1.readBoolean()) {
          this.field24711 = null;

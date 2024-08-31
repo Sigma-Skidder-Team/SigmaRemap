@@ -360,11 +360,11 @@ public class KillAura extends Module {
             }
         } else {
             SEntityPacket var11 = (SEntityPacket) var4;
-            if (var11.method17237() && (var11.field24323 != 0 || var11.field24324 != 0 || var11.field24325 != 0)) {
+            if (var11.func_229745_h_() && (var11.posX != 0 || var11.posY != 0 || var11.posZ != 0)) {
                 for (Entry var7 : this.field23938.field44349.entrySet()) {
                     Entity var8 = (Entity) var7.getKey();
                     List var9 = (List) var7.getValue();
-                    if (var11.method17233(mc.world) == var8) {
+                    if (var11.getEntity(mc.world) == var8) {
                         Vector3d var10 = var8.field_242272_av.method11344(2.4414062E-4F);
                         var9.add(new Class9629<Vector3d, Long>(var10, System.currentTimeMillis()));
                     }

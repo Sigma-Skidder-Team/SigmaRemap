@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
+
 import java.util.Optional;
 import java.util.UUID;
 

@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import com.google.common.collect.Lists;
 import mapped.MathHelper;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import mapped.Vector3d;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -39,7 +39,7 @@ public class SExplosionPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24468 = (double)var1.readFloat();
       this.field24469 = (double)var1.readFloat();
       this.field24470 = (double)var1.readFloat();

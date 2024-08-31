@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
+
 public final class Class6469 implements Class6466<Direction> {
    private static String[] field28416;
 

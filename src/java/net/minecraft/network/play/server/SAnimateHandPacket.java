@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
@@ -21,7 +21,7 @@ public class SAnimateHandPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24273 = var1.method35714();
       this.field24274 = var1.readUnsignedByte();
    }

@@ -57,7 +57,7 @@ public class Class5125 implements Class5119 {
    }
 
    private void method15826() {
-      this.field23308.entrySet().removeIf(var1 -> this.field23306.world.method6774(var1.getValue().field30220) == null);
+      this.field23308.entrySet().removeIf(var1 -> this.field23306.world.getEntityByID(var1.getValue().field30220) == null);
    }
 
    private void method15827() {

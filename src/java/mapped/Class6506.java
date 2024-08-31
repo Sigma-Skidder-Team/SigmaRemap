@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+import net.minecraft.network.PacketBuffer;
 
 public class Class6506 implements Class6504<Class4854> {
    public Class4854 method19700(ResourceLocation var1, JsonObject var2) {

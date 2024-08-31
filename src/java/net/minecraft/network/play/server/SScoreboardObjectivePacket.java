@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import mapped.Class2316;
 import mapped.Class8375;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.util.text.ITextComponent;
@@ -27,7 +27,7 @@ public class SScoreboardObjectivePacket implements Packet<IClientPlayNetHandler>
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24730 = var1.method35728(16);
       this.field24733 = var1.readByte();
       if (this.field24733 == 0 || this.field24733 == 2) {

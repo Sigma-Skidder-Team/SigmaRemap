@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
+
 public final class Class6479 implements Class6466<String> {
    private static String[] field28426;
 

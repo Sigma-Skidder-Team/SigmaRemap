@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.arguments.FloatArgumentType;
+import net.minecraft.network.PacketBuffer;
 
 public class Class2590 implements Class2586<FloatArgumentType> {
    public void method10796(FloatArgumentType var1, PacketBuffer var2) {

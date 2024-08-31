@@ -107,7 +107,7 @@ public class Class1105 extends Class1009 {
          if (!this.world.isRemote) {
             return this.method4232();
          } else if (this.field6073 == null) {
-            Entity var3 = this.world.method6774(this.dataManager.<Integer>method35445(field6067));
+            Entity var3 = this.world.getEntityByID(this.dataManager.<Integer>method35445(field6067));
             if (!(var3 instanceof LivingEntity)) {
                return null;
             } else {

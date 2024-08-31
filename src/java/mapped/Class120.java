@@ -4,6 +4,7 @@ import com.google.gson.*;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntComparators;
 import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.network.PacketBuffer;
 
 import java.util.Arrays;
 import java.util.function.Predicate;

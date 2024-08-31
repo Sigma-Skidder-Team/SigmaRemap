@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import mapped.Block;
 import mapped.Class1665;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -28,7 +28,7 @@ public class SChangeBlockPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24887 = var1.method35707();
       this.field24888 = Block.field18610.method9172(var1.method35714());
    }

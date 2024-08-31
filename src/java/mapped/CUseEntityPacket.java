@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import javax.annotation.Nullable;
@@ -39,7 +40,7 @@ public class CUseEntityPacket implements Packet<IServerPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24439 = var1.method35714();
       this.field24440 = var1.<Action>method35712(Action.class);
       if (this.field24440 == Action.INTERACT_AT) {
@@ -76,7 +77,7 @@ public class CUseEntityPacket implements Packet<IServerPlayNetHandler> {
 
    @Nullable
    public Entity getEntityFromWorld(World var1) {
-      return var1.method6774(this.field24439);
+      return var1.getEntityByID(this.field24439);
    }
 
    public Action getAction() {

@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import mapped.Class2023;
 import mapped.Effect;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 
@@ -44,7 +44,7 @@ public class SPlayEntityEffectPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24584 = var1.method35714();
       this.field24585 = var1.readByte();
       this.field24586 = var1.readByte();

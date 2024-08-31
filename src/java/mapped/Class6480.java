@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.PacketBuffer;
 
 public final class Class6480 implements Class6466<CompoundNBT> {
    private static String[] field28427;

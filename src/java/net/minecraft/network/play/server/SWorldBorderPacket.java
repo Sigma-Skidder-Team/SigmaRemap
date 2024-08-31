@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import mapped.Class1864;
 import mapped.Class6602;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import mapped.WorldBorder;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -37,7 +37,7 @@ public class SWorldBorderPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24305 = var1.<Class1864>method35712(Class1864.class);
       switch (Class6602.field29038[this.field24305.ordinal()]) {
          case 1:

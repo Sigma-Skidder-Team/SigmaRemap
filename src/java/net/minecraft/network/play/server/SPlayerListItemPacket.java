@@ -10,6 +10,7 @@ import java.util.List;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.text.ITextComponent;
 
 public class SPlayerListItemPacket implements Packet<IClientPlayNetHandler> {
@@ -36,7 +37,7 @@ public class SPlayerListItemPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24429 = var1.<Class2176>method35712(Class2176.class);
       int var4 = var1.method35714();
 

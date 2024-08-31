@@ -1175,7 +1175,7 @@ public abstract class Class1006 extends LivingEntity {
    @Nullable
    public Entity method4297() {
       if (this.field5613 == null && this.field5614 != 0 && this.world.isRemote) {
-         this.field5613 = this.world.method6774(this.field5614);
+         this.field5613 = this.world.getEntityByID(this.field5614);
       }
 
       return this.field5613;

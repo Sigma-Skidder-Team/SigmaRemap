@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import java.io.IOException;
 
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.Style;
@@ -30,7 +31,7 @@ public class Class5552 implements Packet<Class5112> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24654 = JSONUtils.<Class8783>method32797(field24653, var1.method35728(32767), Class8783.class);
    }
 

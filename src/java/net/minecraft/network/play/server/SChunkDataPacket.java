@@ -7,6 +7,7 @@ import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
@@ -67,7 +68,7 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24514 = var1.readInt();
       this.field24515 = var1.readInt();
       this.field24521 = var1.readBoolean();

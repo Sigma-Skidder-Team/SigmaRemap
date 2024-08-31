@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.network.PacketBuffer;
+
 import java.util.Locale;
 
 public class Class7437 implements Class7436 {

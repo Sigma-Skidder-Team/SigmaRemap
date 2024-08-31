@@ -7,7 +7,7 @@ import java.util.Collection;
 import mapped.Class2212;
 import mapped.Class2225;
 import mapped.Class8218;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.util.text.ITextComponent;
@@ -60,7 +60,7 @@ public class STeamsPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24749 = var1.method35728(16);
       this.field24757 = var1.readByte();
       if (this.field24757 == 0 || this.field24757 == 2) {

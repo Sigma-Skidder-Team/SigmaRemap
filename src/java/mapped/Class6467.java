@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
+
 public final class Class6467 implements Class6466<Float> {
    private static String[] field28414;
 

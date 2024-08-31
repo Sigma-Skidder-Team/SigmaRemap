@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import mapped.ItemStack;
 import mapped.NonNullList;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 
@@ -27,7 +27,7 @@ public class SWindowItemsPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24914 = var1.readUnsignedByte();
       short var4 = var1.readShort();
       this.field24915 = NonNullList.<ItemStack>method68(var4, ItemStack.EMPTY);

@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
@@ -24,7 +24,7 @@ public class SUpdateTileEntityPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24902 = var1.method35707();
       this.field24903 = var1.readUnsignedByte();
       this.field24904 = var1.method35721();

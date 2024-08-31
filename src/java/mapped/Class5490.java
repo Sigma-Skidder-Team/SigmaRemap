@@ -3,6 +3,7 @@ package mapped;
 import java.io.IOException;
 
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 
@@ -18,7 +19,7 @@ public class Class5490 implements Packet<Class5103> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24378 = ITextComponent$Serializer.func_240644_b_(var1.method35728(262144));
    }
 

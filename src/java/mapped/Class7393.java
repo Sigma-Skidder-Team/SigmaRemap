@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.SCustomPayloadPlayPacket;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;

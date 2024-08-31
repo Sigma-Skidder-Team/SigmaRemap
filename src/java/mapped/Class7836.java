@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
+
 import java.util.function.Predicate;
 
 public class Class7836<T> implements Class7833<T> {

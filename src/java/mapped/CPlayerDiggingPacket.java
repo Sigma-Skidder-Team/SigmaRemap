@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
@@ -21,7 +22,7 @@ public class CPlayerDiggingPacket implements Packet<IServerPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24384 = var1.<Action>method35712(Action.class);
       this.field24382 = var1.method35707();
       this.field24383 = Direction.method546(var1.readUnsignedByte());

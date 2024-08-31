@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
+
 public interface Class7436 {
    Class7434<?> method24011();
 

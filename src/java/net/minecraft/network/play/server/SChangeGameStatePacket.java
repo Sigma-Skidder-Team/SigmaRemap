@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import mapped.Class9385;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 
@@ -33,7 +33,7 @@ public class SChangeGameStatePacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24572 = (Class9385)Class9385.method35621().get(var1.readUnsignedByte());
       this.field24573 = var1.readFloat();
    }

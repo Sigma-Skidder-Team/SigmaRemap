@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import mapped.Block;
 import mapped.CPlayerDiggingPacket;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -31,7 +31,7 @@ public class SPlayerDiggingPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24785 = var1.method35707();
       this.field24786 = Block.field18610.method9172(var1.method35714());
       this.field24787 = var1.<CPlayerDiggingPacket.Action>method35712(CPlayerDiggingPacket.Action.class);

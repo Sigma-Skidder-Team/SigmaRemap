@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -24,7 +25,7 @@ public class SUpdateRecipesPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24461 = Lists.newArrayList();
       int var4 = var1.method35714();
 

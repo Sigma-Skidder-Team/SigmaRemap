@@ -3,7 +3,7 @@ package net.minecraft.network.play.server;
 import java.io.IOException;
 
 import mapped.Class2266;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import mapped.Registry;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -34,7 +34,7 @@ public class SPlaySoundEffectPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24776 = Registry.field16069.method9172(var1.method35714());
       this.field24777 = var1.<Class2266>method35712(Class2266.class);
       this.field24778 = var1.readInt();

@@ -36,6 +36,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.*;
 import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.math.BlockPos;
@@ -303,27 +304,27 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                        }
                                     } else {
                                        var11 = new Class886(this.field23273, var4, var6, var8);
-                                       Entity var12 = this.field23273.method6774(var1.method17267());
+                                       Entity var12 = this.field23273.getEntityByID(var1.method17267());
                                        if (var12 != null) {
                                           ((AbstractArrowEntity)var11).setShooter(var12);
                                        }
                                     }
                                  } else {
                                     var11 = new Class885(this.field23273, var4, var6, var8);
-                                    Entity var13 = this.field23273.method6774(var1.method17267());
+                                    Entity var13 = this.field23273.getEntityByID(var1.method17267());
                                     if (var13 != null) {
                                        ((AbstractArrowEntity)var11).setShooter(var13);
                                     }
                                  }
                               } else {
                                  var11 = new Class887(this.field23273, var4, var6, var8);
-                                 Entity var14 = this.field23273.method6774(var1.method17267());
+                                 Entity var14 = this.field23273.getEntityByID(var1.method17267());
                                  if (var14 != null) {
                                     ((AbstractArrowEntity)var11).setShooter(var14);
                                  }
                               }
                            } else {
-                              Entity var15 = this.field23273.method6774(var1.method17267());
+                              Entity var15 = this.field23273.getEntityByID(var1.method17267());
                               if (!(var15 instanceof PlayerEntity)) {
                                  var11 = null;
                               } else {
@@ -393,7 +394,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityVelocity(SEntityVelocityPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.method6774(var1.method17565());
+      Entity var4 = this.field23273.getEntityByID(var1.method17565());
       if (var4 != null) {
          var4.method3325((double)var1.method17566() / 8000.0, (double)var1.method17567() / 8000.0, (double)var1.method17568() / 8000.0);
       }
@@ -402,7 +403,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityMetadata(SEntityMetadataPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.method6774(var1.method17470());
+      Entity var4 = this.field23273.getEntityByID(var1.method17470());
       if (var4 != null && var1.method17469() != null) {
          var4.method3210().method35454(var1.method17469());
       }
@@ -430,7 +431,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityTeleport(SEntityTeleportPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.method6774(var1.method17585());
+      Entity var4 = this.field23273.getEntityByID(var1.method17585());
       if (var4 != null) {
          double var5 = var1.method17586();
          double var7 = var1.method17587();
@@ -456,23 +457,23 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityMovement(SEntityPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = var1.method17233(this.field23273);
+      Entity var4 = var1.getEntity(this.field23273);
       if (var4 != null && !var4.method3418()) {
-         if (!var1.method17237()) {
-            if (var1.method17236()) {
-               float var5 = (float)(var1.method17234() * 360) / 256.0F;
-               float var6 = (float)(var1.method17235() * 360) / 256.0F;
+         if (!var1.func_229745_h_()) {
+            if (var1.isRotating()) {
+               float var5 = (float)(var1.getYaw() * 360) / 256.0F;
+               float var6 = (float)(var1.getPitch() * 360) / 256.0F;
                var4.setPositionAndRotationDirect(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var5, var6, 3, false);
             }
          } else {
             Vector3d var8 = var1.method17231(var4.func_242274_V());
             var4.func_242277_a(var8);
-            float var9 = !var1.method17236() ? var4.rotationYaw : (float)(var1.method17234() * 360) / 256.0F;
-            float var7 = !var1.method17236() ? var4.rotationPitch : (float)(var1.method17235() * 360) / 256.0F;
+            float var9 = !var1.isRotating() ? var4.rotationYaw : (float)(var1.getYaw() * 360) / 256.0F;
+            float var7 = !var1.isRotating() ? var4.rotationPitch : (float)(var1.getPitch() * 360) / 256.0F;
             var4.setPositionAndRotationDirect(var8.method11320(), var8.method11321(), var8.method11322(), var9, var7, 3, false);
          }
 
-         var4.method3061(var1.method17238());
+         var4.method3061(var1.getOnGround());
       }
    }
 
@@ -648,8 +649,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleCollectItem(SCollectItemPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.method6774(var1.method17186());
-      Object var5 = (LivingEntity)this.field23273.method6774(var1.method17187());
+      Entity var4 = this.field23273.getEntityByID(var1.method17186());
+      Object var5 = (LivingEntity)this.field23273.getEntityByID(var1.method17187());
       if (var5 == null) {
          var5 = this.field23272.player;
       }
@@ -704,7 +705,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleAnimation(SAnimateHandPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.method6774(var1.method17192());
+      Entity var4 = this.field23273.getEntityByID(var1.method17192());
       if (var4 != null) {
          if (var1.method17193() != 0) {
             if (var1.method17193() != 3) {
@@ -795,13 +796,13 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleSetPassengers(SSetPassengersPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.method6774(var1.method17253());
+      Entity var4 = this.field23273.getEntityByID(var1.method17253());
       if (var4 != null) {
          boolean var5 = var4.method3417(this.field23272.player);
          var4.removePassengers();
 
          for (int var9 : var1.method17252()) {
-            Entity var10 = this.field23273.method6774(var9);
+            Entity var10 = this.field23273.getEntityByID(var9);
             if (var10 != null) {
                var10.method2758(var4, true);
                if (var10 == this.field23272.player && !var5) {
@@ -817,7 +818,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityAttach(SMountEntityPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.method6774(var1.method17577());
+      Entity var4 = this.field23273.getEntityByID(var1.method17577());
       if (var4 instanceof Class1006) {
          ((Class1006)var4).method4299(var1.method17578());
       }
@@ -939,7 +940,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleOpenHorseWindow(SOpenHorseWindowPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.method6774(var1.method17326());
+      Entity var4 = this.field23273.getEntityByID(var1.method17326());
       if (var4 instanceof AbstractHorseEntity) {
          ClientPlayerEntity var5 = this.field23272.player;
          AbstractHorseEntity var6 = (AbstractHorseEntity)var4;
@@ -1074,7 +1075,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityEquipment(SEntityEquipmentPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.method6774(var1.method17561());
+      Entity var4 = this.field23273.getEntityByID(var1.method17561());
       if (var4 != null) {
          var1.method17562().forEach(var1x -> var4.method2944((Class2106)var1x.getFirst(), (ItemStack)var1x.getSecond()));
       }
@@ -1372,7 +1373,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityEffect(SPlayEntityEffectPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.method6774(var1.method17407());
+      Entity var4 = this.field23273.getEntityByID(var1.method17407());
       if (var4 instanceof LivingEntity) {
          Effect var5 = Effect.method22287(var1.method17408());
          if (var5 != null) {
@@ -1405,7 +1406,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handleCombatEvent(SCombatPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       if (var1.field24693 == Class1900.field11157) {
-         Entity var4 = this.field23273.method6774(var1.field24694);
+         Entity var4 = this.field23273.getEntityByID(var1.field24694);
          if (var4 == this.field23272.player) {
             if (!this.field23272.player.isShowDeathScreen()) {
                this.field23272.player.respawnPlayer();
@@ -1553,7 +1554,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleSpawnMovingSoundEffect(SSpawnMovingSoundEffectPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.method6774(var1.method17443());
+      Entity var4 = this.field23273.getEntityByID(var1.method17443());
       if (var4 != null) {
          this.field23272.world.method6744(this.field23272.player, var4, var1.method17441(), var1.method17442(), var1.method17444(), var1.method17445());
       }
@@ -2066,7 +2067,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityProperties(SEntityPropertiesPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.method6774(var1.method17463());
+      Entity var4 = this.field23273.getEntityByID(var1.method17463());
       if (var4 != null) {
          if (!(var4 instanceof LivingEntity)) {
             throw new IllegalStateException("Server tried to update attributes of a non-living entity (actually: " + var4 + ")");

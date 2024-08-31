@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.arguments.LongArgumentType;
+import net.minecraft.network.PacketBuffer;
 
 public class Class2588 implements Class2586<LongArgumentType> {
    public void method10796(LongArgumentType var1, PacketBuffer var2) {

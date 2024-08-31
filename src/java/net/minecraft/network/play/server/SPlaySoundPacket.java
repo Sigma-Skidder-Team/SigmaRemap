@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import mapped.Class2266;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import mapped.ResourceLocation;
 import mapped.Vector3d;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
@@ -33,7 +33,7 @@ public class SPlaySoundPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24315 = var1.method35731();
       this.field24316 = var1.<Class2266>method35712(Class2266.class);
       this.field24317 = var1.readInt();

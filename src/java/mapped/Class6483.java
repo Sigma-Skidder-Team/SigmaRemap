@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 
 public final class Class6483 implements Class6466<BlockPos> {

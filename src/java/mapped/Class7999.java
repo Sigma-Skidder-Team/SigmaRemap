@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.Consumer;
 import java.util.function.Function;
+
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.text.ITextComponent;
 import org.apache.commons.lang3.ArrayUtils;
 

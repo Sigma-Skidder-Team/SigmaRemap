@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.PacketBuffer;
+
 import java.io.IOException;
 
 public class Class5605 extends Class5603 {
@@ -18,11 +20,11 @@ public class Class5605 extends Class5603 {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24878 = var1.readDouble();
       this.field24879 = var1.readDouble();
       this.field24880 = var1.readDouble();
-      super.method17175(var1);
+      super.readPacketData(var1);
    }
 
    @Override

@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import mapped.Class6799;
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 
@@ -28,7 +28,7 @@ public class SPlayerAbilitiesPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer buf) throws IOException {
+   public void readPacketData(PacketBuffer buf) throws IOException {
         byte b0 = buf.readByte();
         this.field24846  = (b0 & 1) != 0;
         this.field24847  = (b0 & 2) != 0;

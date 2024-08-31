@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.network.PacketBuffer;
 
 public class Class7435 extends Class7434<Class7435> implements Class7436 {
    private static String[] field31997;

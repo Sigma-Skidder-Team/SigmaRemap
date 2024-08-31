@@ -38,8 +38,8 @@ public class Murderer extends Module {
                 for (Pair var6 : var4.method17562()) {
                     if (var6.getSecond() != null
                             && ((ItemStack) var6.getSecond()).getItem() instanceof ItemSword
-                            && mc.world.method6774(var4.method17561()) instanceof PlayerEntity) {
-                        Entity var7 = mc.world.method6774(var4.method17561());
+                            && mc.world.getEntityByID(var4.method17561()) instanceof PlayerEntity) {
+                        Entity var7 = mc.world.getEntityByID(var4.method17561());
                         if (!this.field23833.equalsIgnoreCase(var7.getName().getString())) {
                             if (this.getBooleanValueFromSetttingName("Chat Message")) {
                                 mc.player.method5389("Murderer is " + var7.getName() + ", detected by Jello client");

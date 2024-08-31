@@ -3,6 +3,7 @@ package net.minecraft.network.play.server;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
@@ -38,7 +39,7 @@ public class SSpawnParticlePacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       Object var4 = Registry.field16077.method9172(var1.readInt());
       if (var4 == null) {
          var4 = Class7940.field34050;

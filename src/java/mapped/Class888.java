@@ -94,7 +94,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
       } else {
          if (this.field5125 == null) {
             this.dataManager.<OptionalInt>method35445(field5121).ifPresent(var1 -> {
-               Entity var4x = this.world.method6774(var1);
+               Entity var4x = this.world.getEntityByID(var1);
                if (var4x instanceof LivingEntity) {
                   this.field5125 = (LivingEntity)var4x;
                }

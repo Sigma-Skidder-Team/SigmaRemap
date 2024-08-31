@@ -98,15 +98,15 @@ public class Class9278 {
                } else if ((!var30 || !var10) && !(this.field42668 instanceof AbstractArrowEntity)) {
                   if (!var30) {
                      if (var10) {
-                        var29 = new Class5479(this.field42668.method3205(), (byte)var22, (byte)var25, this.field42668.method3226());
+                        var29 = new SEntityPacket.LookPacket(this.field42668.method3205(), (byte)var22, (byte)var25, this.field42668.method3226());
                      }
                   } else {
-                     var29 = new Class5477(
+                     var29 = new SEntityPacket.RelativeMovePacket(
                         this.field42668.method3205(), (short)((int)var11), (short)((int)var13), (short)((int)var15), this.field42668.method3226()
                      );
                   }
                } else {
-                  var29 = new Class5478(
+                  var29 = new SEntityPacket.MovePacket(
                      this.field42668.method3205(),
                      (short)((int)var11),
                      (short)((int)var13),
@@ -148,7 +148,7 @@ public class Class9278 {
             int var24 = MathHelper.method37767(this.field42668.rotationPitch * 256.0F / 360.0F);
             boolean var26 = Math.abs(var21 - this.field42675) >= 1 || Math.abs(var24 - this.field42676) >= 1;
             if (var26) {
-               this.field42671.accept(new Class5479(this.field42668.method3205(), (byte)var21, (byte)var24, this.field42668.method3226()));
+               this.field42671.accept(new SEntityPacket.LookPacket(this.field42668.method3205(), (byte)var21, (byte)var24, this.field42668.method3226()));
                this.field42675 = var21;
                this.field42676 = var24;
             }

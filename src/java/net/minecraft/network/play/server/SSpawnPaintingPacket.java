@@ -3,6 +3,7 @@ package net.minecraft.network.play.server;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
@@ -28,7 +29,7 @@ public class SSpawnPaintingPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24276 = var1.method35714();
       this.field24277 = var1.method35717();
       this.field24280 = var1.method35714();

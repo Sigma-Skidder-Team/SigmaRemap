@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -18,7 +19,7 @@ public class CLoginStartPacket implements Packet<Class5108> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24422 = new GameProfile((UUID)null, var1.method35728(16));
    }
 

@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.PacketBuffer;
+import net.minecraft.network.PacketBuffer;
 import mapped.World;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
@@ -22,7 +22,7 @@ public class SEntityHeadLookPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24477 = var1.method35714();
       this.field24478 = var1.readByte();
    }
@@ -38,7 +38,7 @@ public class SEntityHeadLookPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public Entity method17346(World var1) {
-      return var1.method6774(this.field24477);
+      return var1.getEntityByID(this.field24477);
    }
 
    public byte method17347() {

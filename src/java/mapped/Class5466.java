@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
@@ -26,7 +27,7 @@ public class Class5466 implements Packet<IServerPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24262 = var1.<Class2238>method35712(Class2238.class);
       if (this.field24262 == Class2238.field14644) {
          this.field24263 = var1.method35731();

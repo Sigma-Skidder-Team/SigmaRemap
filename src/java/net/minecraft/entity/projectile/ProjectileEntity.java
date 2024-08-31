@@ -30,7 +30,7 @@ public abstract class ProjectileEntity extends Entity {
       if (this.field5093 != null && this.world instanceof ServerWorld) {
          return ((ServerWorld)this.world).method6942(this.field5093);
       } else {
-         return this.field5094 == 0 ? null : this.world.method6774(this.field5094);
+         return this.field5094 == 0 ? null : this.world.getEntityByID(this.field5094);
       }
    }
 

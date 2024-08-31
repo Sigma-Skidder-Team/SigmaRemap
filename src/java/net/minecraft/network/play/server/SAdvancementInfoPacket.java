@@ -5,6 +5,7 @@ import com.google.common.collect.Sets;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -39,7 +40,7 @@ public class SAdvancementInfoPacket implements Packet<IClientPlayNetHandler> {
    }
 
    @Override
-   public void method17175(PacketBuffer var1) throws IOException {
+   public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24686 = var1.readBoolean();
       this.field24687 = Maps.newHashMap();
       this.field24688 = Sets.newLinkedHashSet();
