@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.network.INetHandler;
+import net.minecraft.network.play.client.CTabCompletePacket;
 
 public interface IServerPlayNetHandler extends INetHandler {
    void handleAnimation(CAnimateHandPacket var1);
@@ -63,7 +64,7 @@ public interface IServerPlayNetHandler extends INetHandler {
 
    void method15639(Class5466 var1);
 
-   void method15640(Class5562 var1);
+   void processTabComplete(CTabCompletePacket var1);
 
    void method15641(Class5578 var1);
 

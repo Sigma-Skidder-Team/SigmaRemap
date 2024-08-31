@@ -13,6 +13,7 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
+import net.minecraft.network.play.client.CTabCompletePacket;
 import net.minecraft.network.play.server.*;
 import net.minecraft.util.math.BlockPos;
 
@@ -29,7 +30,7 @@ public class ViaVersionLoader {
    public static List<Entity> field31493 = new ArrayList<Entity>();
    public static int field31494 = 0;
    public final Class8982 field31495;
-   public Class5562 field31496;
+   public CTabCompletePacket field31496;
    private UUID field31497;
    public boolean field31498 = false;
    public boolean field31499;
@@ -171,12 +172,12 @@ public class ViaVersionLoader {
          }
       }
 
-      if (var1.method13932() instanceof Class5562) {
-         if (((Class5562)var1.method13932()).method17486().length() == 1) {
+      if (var1.method13932() instanceof CTabCompletePacket) {
+         if (((CTabCompletePacket)var1.method13932()).method17486().length() == 1) {
             return;
          }
 
-         this.field31496 = (Class5562)var1.method13932();
+         this.field31496 = (CTabCompletePacket)var1.method13932();
          var1.method13900(true);
       }
    }

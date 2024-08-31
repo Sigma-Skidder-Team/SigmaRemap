@@ -1,19 +1,20 @@
-package mapped;
+package net.minecraft.network.play.client;
 
+import mapped.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class Class5562 implements Packet<IServerPlayNetHandler> {
+public class CTabCompletePacket implements Packet<IServerPlayNetHandler> {
    private static String[] field24682;
    private int field24683;
    private String field24684;
 
-   public Class5562() {
+   public CTabCompletePacket() {
    }
 
-   public Class5562(int var1, String var2) {
+   public CTabCompletePacket(int var1, String var2) {
       this.field24683 = var1;
       this.field24684 = var2;
    }
@@ -31,7 +32,7 @@ public class Class5562 implements Packet<IServerPlayNetHandler> {
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
-      var1.method15640(this);
+      var1.processTabComplete(this);
    }
 
    public int method17485() {

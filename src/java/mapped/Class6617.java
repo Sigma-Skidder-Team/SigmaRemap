@@ -5,6 +5,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.client.CTabCompletePacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 
@@ -74,7 +75,7 @@ public class Class6617 implements Class6618 {
 
       this.field29121 = new CompletableFuture<Suggestions>();
       int var5 = ++this.field29120;
-      this.field29118.sendPacket(new Class5562(var5, var1.getInput()));
+      this.field29118.sendPacket(new CTabCompletePacket(var5, var1.getInput()));
       return this.field29121;
    }
 

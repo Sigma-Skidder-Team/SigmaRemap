@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import mapped.*;
+import net.minecraft.network.play.client.CTabCompletePacket;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -145,8 +146,8 @@ public class CommandManager {
                 }
             }
 
-            if (var1.method13932() instanceof Class5562) {
-                Class5562 var11 = (Class5562) var1.method13932();
+            if (var1.method13932() instanceof CTabCompletePacket) {
+                CTabCompletePacket var11 = (CTabCompletePacket) var1.method13932();
                 if (var11.method17486().startsWith(".")) {
                     var1.method13900(true);
                 }

@@ -5,6 +5,7 @@ import net.minecraft.client.network.login.IClientLoginNetHandler;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.login.server.*;
+import net.minecraft.network.play.client.CTabCompletePacket;
 import net.minecraft.network.play.server.*;
 
 import java.util.Map;
@@ -120,7 +121,7 @@ public enum ProtocolType {
                .method23905(Class5522.class, Class5522::new)
                .method23905(CClientStatusPacket.class, CClientStatusPacket::new)
                .method23905(Class5561.class, Class5561::new)
-               .method23905(Class5562.class, Class5562::new)
+               .method23905(CTabCompletePacket.class, CTabCompletePacket::new)
                .method23905(Class5493.class, Class5493::new)
                .method23905(Class5533.class, Class5533::new)
                .method23905(Class5594.class, Class5594::new)

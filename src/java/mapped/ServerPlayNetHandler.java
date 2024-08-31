@@ -26,6 +26,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.CTabCompletePacket;
 import net.minecraft.network.play.server.*;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.ResourceLocation;
@@ -358,7 +359,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15640(Class5562 var1) {
+   public void processTabComplete(CTabCompletePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       StringReader var4 = new StringReader(var1.method17486());
       if (var4.canRead() && var4.peek() == '/') {
