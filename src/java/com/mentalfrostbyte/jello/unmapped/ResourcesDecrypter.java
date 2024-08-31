@@ -240,9 +240,10 @@ public class ResourcesDecrypter {
                         decryptedOutputStream.write(buffer, 0, bytesRead);
                     }
 
-                    decryptedOutputStream.writeTo(fileOutputStream);
-
-                    System.out.println("Decrypted file saved to: " + outputFile.getAbsolutePath());
+                    if (!Files.exists(outputFile.toPath())) {
+                        decryptedOutputStream.writeTo(fileOutputStream);
+                        System.out.println("Decrypted file saved to: " + outputFile.getAbsolutePath());
+                    }
                     return new ByteArrayInputStream(decryptedOutputStream.toByteArray());
                 }
             } else {
