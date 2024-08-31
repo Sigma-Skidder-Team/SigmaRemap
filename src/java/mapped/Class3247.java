@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -135,7 +137,7 @@ public abstract class Class3247 extends Class3198 {
    }
 
    @Override
-   public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
       if (this.method11661(var1, var2, var3)) {
          var1.method6860().method20726(var2, this, 1);
       }

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+
 public class Class5820 extends Class5812 {
    private static String[] field25497;
    public final NonNullList<ItemStack> field25498 = NonNullList.<ItemStack>create();

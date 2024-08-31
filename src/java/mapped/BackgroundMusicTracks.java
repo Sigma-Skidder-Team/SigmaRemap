@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.SoundEvent;
+
 public class BackgroundMusicTracks {
    private static String[] field33270;
    public static final BackgroundMusicSelector MAIN_MENU_MUSIC = new BackgroundMusicSelector(Sounds.field26794, 20, 600, true);
@@ -10,7 +12,7 @@ public class BackgroundMusicTracks {
    public static final BackgroundMusicSelector UNDER_WATER_MUSIC = method25672(Sounds.field26800);
    public static final BackgroundMusicSelector WORLD_MUSIC = method25672(Sounds.field26793);
 
-   public static BackgroundMusicSelector method25672(Class9455 var0) {
+   public static BackgroundMusicSelector method25672(SoundEvent var0) {
       return new BackgroundMusicSelector(var0, 12000, 24000, false);
    }
 }

@@ -13,7 +13,9 @@ import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import org.apache.commons.lang3.mutable.MutableFloat;
 import org.apache.commons.lang3.mutable.MutableInt;
 
@@ -111,12 +113,12 @@ public class Class7858 {
       return var4.floatValue();
    }
 
-   public static float method26319(Class880 var0) {
+   public static float method26319(LivingEntity var0) {
       int var3 = method26322(Class8122.field34914, var0);
       return var3 <= 0 ? 0.0F : Class6079.method18828(var3);
    }
 
-   public static void method26320(Class880 var0, Entity var1) {
+   public static void method26320(LivingEntity var0, Entity var1) {
       Class8493 var4 = (var2, var3) -> var2.method18823(var0, var1, var3);
       if (var0 != null) {
          method26316(var4, var0.method3326());
@@ -127,7 +129,7 @@ public class Class7858 {
       }
    }
 
-   public static void method26321(Class880 var0, Entity var1) {
+   public static void method26321(LivingEntity var0, Entity var1) {
       Class8493 var4 = (var2, var3) -> var2.method18822(var0, var1, var3);
       if (var0 != null) {
          method26316(var4, var0.method3326());
@@ -138,7 +140,7 @@ public class Class7858 {
       }
    }
 
-   public static int method26322(Class6069 var0, Class880 var1) {
+   public static int method26322(Class6069 var0, LivingEntity var1) {
       Collection<ItemStack> var4 = var0.method18811(var1).values();
       if (var4 != null) {
          int var5 = 0;
@@ -156,23 +158,23 @@ public class Class7858 {
       }
    }
 
-   public static int method26323(Class880 var0) {
+   public static int method26323(LivingEntity var0) {
       return method26322(Class8122.field34911, var0);
    }
 
-   public static int method26324(Class880 var0) {
+   public static int method26324(LivingEntity var0) {
       return method26322(Class8122.field34912, var0);
    }
 
-   public static int method26325(Class880 var0) {
+   public static int method26325(LivingEntity var0) {
       return method26322(Class8122.field34901, var0);
    }
 
-   public static int method26326(Class880 var0) {
+   public static int method26326(LivingEntity var0) {
       return method26322(Class8122.field34904, var0);
    }
 
-   public static int method26327(Class880 var0) {
+   public static int method26327(LivingEntity var0) {
       return method26322(Class8122.field34915, var0);
    }
 
@@ -184,19 +186,19 @@ public class Class7858 {
       return method26311(Class8122.field34924, var0);
    }
 
-   public static int method26330(Class880 var0) {
+   public static int method26330(LivingEntity var0) {
       return method26322(Class8122.field34913, var0);
    }
 
-   public static boolean method26331(Class880 var0) {
+   public static boolean method26331(LivingEntity var0) {
       return method26322(Class8122.field34902, var0) > 0;
    }
 
-   public static boolean method26332(Class880 var0) {
+   public static boolean method26332(LivingEntity var0) {
       return method26322(Class8122.field34905, var0) > 0;
    }
 
-   public static boolean method26333(Class880 var0) {
+   public static boolean method26333(LivingEntity var0) {
       return method26322(Class8122.field34907, var0) > 0;
    }
 
@@ -221,12 +223,12 @@ public class Class7858 {
    }
 
    @Nullable
-   public static Entry<Class2106, ItemStack> method26339(Class6069 var0, Class880 var1) {
+   public static Entry<Class2106, ItemStack> method26339(Class6069 var0, LivingEntity var1) {
       return method26340(var0, var1, var0x -> true);
    }
 
    @Nullable
-   public static Entry<Class2106, ItemStack> method26340(Class6069 var0, Class880 var1, Predicate<ItemStack> var2) {
+   public static Entry<Class2106, ItemStack> method26340(Class6069 var0, LivingEntity var1, Predicate<ItemStack> var2) {
       Map<Class2106, ItemStack> var5 = var0.method18811(var1);
       if (!var5.isEmpty()) {
          ArrayList var6 = Lists.newArrayList();

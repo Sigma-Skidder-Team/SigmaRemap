@@ -1,12 +1,13 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 
 public class Class9047 {
    private static String[] field41425;
    private static final Minecraft field41426 = Minecraft.getInstance();
 
-   public static double[] method33642(Class880 var0) {
+   public static double[] method33642(LivingEntity var0) {
       if (var0 != null) {
          double var3 = var0.getPosX() - var0.lastTickPosX;
          double var5 = 0.0;
@@ -17,7 +18,7 @@ public class Class9047 {
       }
    }
 
-   public static double[] method33643(Class880 var0) {
+   public static double[] method33643(LivingEntity var0) {
       if (var0 != null) {
          double var3 = var0.getPosX() - var0.lastTickPosX;
          double var5 = 0.0;

@@ -1,7 +1,10 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
@@ -47,7 +50,7 @@ public class Class3484 extends Class3194 implements Class3196 {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (var4 instanceof Class880 && var4.getType() != EntityType.field41033 && var4.getType() != EntityType.field41009) {
+      if (var4 instanceof LivingEntity && var4.getType() != EntityType.field41033 && var4.getType() != EntityType.field41009) {
          var4.method2928(var1, new Vector3d(0.8F, 0.75, 0.8F));
          if (!var2.isRemote && var1.<Integer>method23463(field19342) > 0 && (var4.lastTickPosX != var4.getPosX() || var4.lastTickPosZ != var4.getPosZ())) {
             double var7 = Math.abs(var4.getPosX() - var4.lastTickPosX);

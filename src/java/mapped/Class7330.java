@@ -29,10 +29,10 @@ public class Class7330 implements Class7329 {
       Vector3d var12 = new Vector3d((double)(var6 * var8), (double)var9, (double)(var7 * var8));
       Vector3d var13 = new Vector3d((double)(var6 * var10), (double)var11, (double)(var7 * var10));
       Vector3d var14 = var12.method11335(var13).method11344(-1.0);
-      double var15 = var12.field18048 * this.field31414 + var13.field18048 * this.field31413 + var14.field18048 * this.field31412;
-      double var17 = var12.field18049 * this.field31414 + var13.field18049 * this.field31413 + var14.field18049 * this.field31412;
-      double var19 = var12.field18050 * this.field31414 + var13.field18050 * this.field31413 + var14.field18050 * this.field31412;
-      return new Vector3d(var5.field18048 + var15, var5.field18049 + var17, var5.field18050 + var19);
+      double var15 = var12.x * this.field31414 + var13.x * this.field31413 + var14.x * this.field31412;
+      double var17 = var12.y * this.field31414 + var13.y * this.field31413 + var14.y * this.field31412;
+      double var19 = var12.z * this.field31414 + var13.z * this.field31413 + var14.z * this.field31412;
+      return new Vector3d(var5.x + var15, var5.y + var17, var5.z + var19);
    }
 
    @Override

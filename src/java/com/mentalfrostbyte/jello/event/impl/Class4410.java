@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 import mapped.Class2035;
-import mapped.Class880;
+import net.minecraft.entity.LivingEntity;
 
 public class Class4410 extends Class4406 {
     private static String[] field21526;
@@ -10,12 +10,12 @@ public class Class4410 extends Class4406 {
     private float field21529;
     private float field21530;
     private final float field21531;
-    private final Class880 field21532;
+    private final LivingEntity field21532;
     private boolean field21533 = true;
     private boolean field21534 = true;
     private Class2035 field21535;
 
-    public Class4410(float var1, float var2, float var3, float var4, float var5, Class880 var6) {
+    public Class4410(float var1, float var2, float var3, float var4, float var5, LivingEntity var6) {
         this.field21527 = var1;
         this.field21528 = var2;
         this.field21529 = var3;
@@ -69,7 +69,7 @@ public class Class4410 extends Class4406 {
         this.field21530 = var1;
     }
 
-    public Class880 method13953() {
+    public LivingEntity method13953() {
         return this.field21532;
     }
 

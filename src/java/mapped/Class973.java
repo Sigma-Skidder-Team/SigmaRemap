@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -115,7 +118,7 @@ public class Class973 extends Class939 {
       this.field5324.setBlockState(this.getPos(), var1.method23465(Class3242.field18694, Boolean.valueOf(var2)), 3);
    }
 
-   private void method4027(BlockState var1, Class9455 var2) {
+   private void method4027(BlockState var1, SoundEvent var2) {
       Class1998 var5 = var1.<Direction>method23463(Class3242.field18693).method556();
       double var6 = (double)this.field5325.getX() + 0.5 + (double)var5.getX() / 2.0;
       double var8 = (double)this.field5325.getY() + 0.5 + (double)var5.getY() / 2.0;

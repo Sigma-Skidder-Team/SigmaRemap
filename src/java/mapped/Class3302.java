@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 
 public class Class3302 extends Class3292 {

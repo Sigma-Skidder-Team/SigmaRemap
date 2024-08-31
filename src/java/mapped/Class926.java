@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+
 public class Class926 implements Class920, Class925 {
    private static String[] field5255;
    private final NonNullList<ItemStack> field5256;

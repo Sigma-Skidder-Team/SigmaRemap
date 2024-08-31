@@ -1,8 +1,11 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
@@ -12,14 +15,14 @@ import java.util.Random;
 
 public class Class1105 extends Class1009 {
    private static String[] field6065;
-   private static final DataParameter<Boolean> field6066 = EntityDataManager.<Boolean>method35441(Class1105.class, Class7784.field33398);
-   private static final DataParameter<Integer> field6067 = EntityDataManager.<Integer>method35441(Class1105.class, Class7784.field33391);
+   private static final DataParameter<Boolean> field6066 = EntityDataManager.<Boolean>createKey(Class1105.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> field6067 = EntityDataManager.<Integer>createKey(Class1105.class, DataSerializers.field33391);
    private float field6068;
    private float field6069;
    private float field6070;
    private float field6071;
    private float field6072;
-   private Class880 field6073;
+   private LivingEntity field6073;
    private int field6074;
    private boolean field6075;
    public Class2736 field6076;
@@ -45,7 +48,7 @@ public class Class1105 extends Class1009 {
       this.field5600.method20002(9, new Class2668(this));
       this.field6076.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
       var3.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
-      this.field5601.method20002(1, new Class2709<Class880>(this, Class880.class, 10, true, false, new Class121(this)));
+      this.field5601.method20002(1, new Class2709<LivingEntity>(this, LivingEntity.class, 10, true, false, new Class121(this)));
    }
 
    public static Class7037 method5300() {
@@ -99,16 +102,16 @@ public class Class1105 extends Class1009 {
    }
 
    @Nullable
-   public Class880 method5306() {
+   public LivingEntity method5306() {
       if (this.method5305()) {
          if (!this.world.isRemote) {
             return this.method4232();
          } else if (this.field6073 == null) {
             Entity var3 = this.world.method6774(this.dataManager.<Integer>method35445(field6067));
-            if (!(var3 instanceof Class880)) {
+            if (!(var3 instanceof LivingEntity)) {
                return null;
             } else {
-               this.field6073 = (Class880)var3;
+               this.field6073 = (LivingEntity)var3;
                return this.field6073;
             }
          } else {
@@ -134,17 +137,17 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return !this.method3255() ? Sounds.field26644 : Sounds.field26643;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return !this.method3255() ? Sounds.field26650 : Sounds.field26649;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return !this.method3255() ? Sounds.field26647 : Sounds.field26646;
    }
 
@@ -179,11 +182,11 @@ public class Class1105 extends Class1009 {
             } else {
                this.field6070 = 2.0F;
                Vector3d var3 = this.method3433();
-               if (var3.field18049 > 0.0 && this.field6075 && !this.method3245()) {
+               if (var3.y > 0.0 && this.field6075 && !this.method3245()) {
                   this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), this.method5307(), this.method2864(), 1.0F, 1.0F, false);
                }
 
-               this.field6075 = var3.field18049 < 0.0 && this.world.method6765(this.getPosition().down(), this);
+               this.field6075 = var3.y < 0.0 && this.world.method6765(this.getPosition().down(), this);
             }
 
             this.field6068 = this.field6068 + this.field6070;
@@ -205,9 +208,9 @@ public class Class1105 extends Class1009 {
                   this.world
                      .method6746(
                         Class7940.field34052,
-                        this.method3438(0.5) - var17.field18048 * 1.5,
-                        this.method3441() - var17.field18049 * 1.5,
-                        this.method3445(0.5) - var17.field18050 * 1.5,
+                        this.method3438(0.5) - var17.x * 1.5,
+                        this.method3441() - var17.y * 1.5,
+                        this.method3445(0.5) - var17.z * 1.5,
                         0.0,
                         0.0,
                         0.0
@@ -220,7 +223,7 @@ public class Class1105 extends Class1009 {
                   this.field6074++;
                }
 
-               Class880 var18 = this.method5306();
+               LivingEntity var18 = this.method5306();
                if (var18 != null) {
                   this.method4227().method28040(var18, 90.0F, 90.0F);
                   this.method4227().method28037();
@@ -273,7 +276,7 @@ public class Class1105 extends Class1009 {
       super.method2871();
    }
 
-   public Class9455 method5307() {
+   public SoundEvent method5307() {
       return Sounds.field26648;
    }
 
@@ -302,8 +305,8 @@ public class Class1105 extends Class1009 {
 
    @Override
    public boolean method2741(Class8654 var1, float var2) {
-      if (!this.method5301() && !var1.method31144() && var1.method31113() instanceof Class880) {
-         Class880 var5 = (Class880)var1.method31113();
+      if (!this.method5301() && !var1.method31144() && var1.method31113() instanceof LivingEntity) {
+         LivingEntity var5 = (LivingEntity)var1.method31113();
          if (!var1.method31131()) {
             var5.method2741(Class8654.method31125(this), 2.0F);
          }

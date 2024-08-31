@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.function.Predicate;
+
+import net.minecraft.block.BlockState;
 import org.apache.commons.lang3.tuple.Pair;
 
 public class Class8931 {

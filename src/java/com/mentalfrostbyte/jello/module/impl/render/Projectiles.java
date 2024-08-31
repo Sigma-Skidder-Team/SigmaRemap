@@ -147,7 +147,7 @@ public class Projectiles extends Module {
                     float var5 = (float) Math.toRadians(mc.player.rotationYaw - 25.0F);
                     float var6 = (float) Math.toRadians(mc.player.rotationPitch);
                     double var7 = 0.2F;
-                    double var9 = mc.player.boundingBox.method19675() / 2.0;
+                    double var9 = mc.player.boundingBox.getAverageEdgeLength() / 2.0;
                     double var11 = (double) MathHelper.cos(var5) * var9;
                     double var13 = (double) MathHelper.sin(var5) * var9;
                     double var15 = mc.player.lastTickPosX

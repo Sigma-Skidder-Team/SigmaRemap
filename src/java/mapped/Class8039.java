@@ -5,14 +5,17 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8039 {
    private final List<Class9569> field34541 = Lists.newArrayList();
-   private final Class880 field34542;
+   private final LivingEntity field34542;
    private int field34543;
    private int field34544;
    private int field34545;
@@ -20,7 +23,7 @@ public class Class8039 {
    private boolean field34547;
    private String field34548;
 
-   public Class8039(Class880 var1) {
+   public Class8039(LivingEntity var1) {
       this.field34542 = var1;
    }
 
@@ -81,7 +84,7 @@ public class Class8039 {
                var7 = new TranslationTextComponent("death.fell.accident." + this.method27603(var3), this.field34542.getDisplayName());
             } else if (var8 != null && (var5 == null || !var8.equals(var5))) {
                Entity var11 = var3.method37101().method31109();
-               ItemStack var10 = !(var11 instanceof Class880) ? ItemStack.EMPTY : ((Class880)var11).method3090();
+               ItemStack var10 = !(var11 instanceof LivingEntity) ? ItemStack.EMPTY : ((LivingEntity)var11).method3090();
                if (!var10.isEmpty() && var10.method32152()) {
                   var7 = new TranslationTextComponent("death.fell.assist.item", this.field34542.getDisplayName(), var8, var10.method32173());
                } else {
@@ -90,7 +93,7 @@ public class Class8039 {
             } else if (var5 == null) {
                var7 = new TranslationTextComponent("death.fell.killer", this.field34542.getDisplayName());
             } else {
-               ItemStack var9 = !(var6 instanceof Class880) ? ItemStack.EMPTY : ((Class880)var6).method3090();
+               ItemStack var9 = !(var6 instanceof LivingEntity) ? ItemStack.EMPTY : ((LivingEntity)var6).method3090();
                if (!var9.isEmpty() && var9.method32152()) {
                   var7 = new TranslationTextComponent("death.fell.finish.item", this.field34542.getDisplayName(), var5, var9.method32173());
                } else {
@@ -106,8 +109,8 @@ public class Class8039 {
    }
 
    @Nullable
-   public Class880 method27601() {
-      Class880 var3 = null;
+   public LivingEntity method27601() {
+      LivingEntity var3 = null;
       PlayerEntity var4 = null;
       float var5 = 0.0F;
       float var6 = 0.0F;
@@ -118,13 +121,13 @@ public class Class8039 {
             var4 = (PlayerEntity)var8.method37101().method31109();
          }
 
-         if (var8.method37101().method31109() instanceof Class880 && (var3 == null || var8.method37102() > var5)) {
+         if (var8.method37101().method31109() instanceof LivingEntity && (var3 == null || var8.method37102() > var5)) {
             var5 = var8.method37102();
-            var3 = (Class880)var8.method37101().method31109();
+            var3 = (LivingEntity)var8.method37101().method31109();
          }
       }
 
-      return (Class880)(var4 != null && var6 >= var5 / 3.0F ? var4 : var3);
+      return (LivingEntity)(var4 != null && var6 >= var5 / 3.0F ? var4 : var3);
    }
 
    @Nullable
@@ -189,7 +192,7 @@ public class Class8039 {
       }
    }
 
-   public Class880 method27607() {
+   public LivingEntity method27607() {
       return this.field34542;
    }
 }

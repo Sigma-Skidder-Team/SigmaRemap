@@ -1,15 +1,22 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 
 import java.util.function.Predicate;
 
 public class Class1054 extends Class1049 {
-   private static final DataParameter<Integer> field5820 = EntityDataManager.<Integer>method35441(Class1054.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5820 = EntityDataManager.<Integer>createKey(Class1054.class, DataSerializers.field33391);
    private int field5821;
    private int field5822;
-   private static final Predicate<Class880> field5823 = var0 -> {
+   private static final Predicate<LivingEntity> field5823 = var0 -> {
       if (var0 == null) {
          return false;
       } else {
@@ -133,22 +140,22 @@ public class Class1054 extends Class1049 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26979;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26982;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26984;
    }
 
    @Override
-   public Class9455 method4798() {
+   public SoundEvent method4798() {
       return Sounds.field26983;
    }
 

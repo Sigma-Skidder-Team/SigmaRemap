@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -44,7 +46,7 @@ public class Class3418 extends Block implements Class3196 {
    public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       VoxelShape var7 = var1.method23463(field19126) != Class181.field644 ? field19122 : field19123;
       Vector3d var8 = var1.method23421(var2, var3);
-      return var7.withOffset(var8.field18048, var8.field18049, var8.field18050);
+      return var7.withOffset(var8.x, var8.y, var8.z);
    }
 
    @Override
@@ -55,7 +57,7 @@ public class Class3418 extends Block implements Class3196 {
    @Override
    public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       Vector3d var7 = var1.method23421(var2, var3);
-      return field19124.withOffset(var7.field18048, var7.field18049, var7.field18050);
+      return field19124.withOffset(var7.x, var7.y, var7.z);
    }
 
    @Nullable

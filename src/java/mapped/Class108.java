@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.util.SoundEvent;
+
 public enum Class108 implements Class83 {
    field347("harp", Sounds.field26854),
    field348("basedrum", Sounds.field26848),
@@ -19,7 +22,7 @@ public enum Class108 implements Class83 {
    field362("pling", Sounds.field26856);
 
    private final String field363;
-   private final Class9455 field364;
+   private final SoundEvent field364;
    private static final Class108[] field365 = new Class108[]{
       field347,
       field348,
@@ -39,7 +42,7 @@ public enum Class108 implements Class83 {
       field362
    };
 
-   private Class108(String var3, Class9455 var4) {
+   private Class108(String var3, SoundEvent var4) {
       this.field363 = var3;
       this.field364 = var4;
    }
@@ -49,7 +52,7 @@ public enum Class108 implements Class83 {
       return this.field363;
    }
 
-   public Class9455 method299() {
+   public SoundEvent method299() {
       return this.field364;
    }
 

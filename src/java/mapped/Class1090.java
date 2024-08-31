@@ -1,8 +1,15 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -10,7 +17,7 @@ import java.util.Random;
 
 public class Class1090 extends Class1018 {
    private static final Class120 field5972 = Class120.method339(Items.field37909, Items.field37910);
-   private static final DataParameter<Boolean> field5973 = EntityDataManager.<Boolean>method35441(Class1090.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5973 = EntityDataManager.<Boolean>createKey(Class1090.class, DataSerializers.field33398);
    private Class2775<PlayerEntity> field5974;
    private Class2681 field5975;
 
@@ -98,7 +105,7 @@ public class Class1090 extends Class1018 {
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26865;
    }
 
@@ -108,12 +115,12 @@ public class Class1090 extends Class1018 {
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26864;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26866;
    }
 

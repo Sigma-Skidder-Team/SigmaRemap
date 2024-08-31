@@ -5,7 +5,9 @@ import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.objects.Object2IntMap.Entry;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.player.PlayerEntity;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -424,7 +426,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       while (var6 > 0) {
          int var8 = ExperienceOrbEntity.method4179(var6);
          var6 -= var8;
-         var0.method6916(new ExperienceOrbEntity(var0, var1.field18048, var1.field18049, var1.field18050, var8));
+         var0.method6916(new ExperienceOrbEntity(var0, var1.x, var1.y, var1.z, var8));
       }
    }
 

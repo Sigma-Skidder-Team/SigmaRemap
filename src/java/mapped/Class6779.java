@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
+import net.minecraft.block.BlockState;
 
 public class Class6779 extends Class6777 {
    private static final BlockState field29568 = Blocks.BASALT.method11579();

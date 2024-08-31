@@ -34,9 +34,9 @@ public class Class7366 extends Class7361 {
                var12,
                var14,
                var16,
-               -var3.field18048 * 0.08F + var18.field18048,
-               -var3.field18049 * 0.3F + var18.field18049,
-               -var3.field18050 * 0.08F + var18.field18050
+               -var3.x * 0.08F + var18.x,
+               -var3.y * 0.3F + var18.y,
+               -var3.z * 0.08F + var18.z
             );
          var3.method11351((float) (Math.PI / 16));
       }

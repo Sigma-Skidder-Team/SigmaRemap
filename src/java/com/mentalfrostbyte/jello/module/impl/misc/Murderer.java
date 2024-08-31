@@ -11,6 +11,7 @@ import com.mojang.datafixers.util.Pair;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 
 import java.io.IOException;
 

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -52,7 +53,7 @@ public interface Class1665 {
          var0 -> {
             Vector3d var3 = var0.method20745().method11336(var0.method20744());
             return BlockRayTraceResult.method31420(
-               var0.method20744(), Direction.method553(var3.field18048, var3.field18049, var3.field18050), new BlockPos(var0.method20744())
+               var0.method20744(), Direction.method553(var3.x, var3.y, var3.z), new BlockPos(var0.method20744())
             );
          }
       );
@@ -91,12 +92,12 @@ public interface Class1665 {
       Vector3d var5 = var0.method20745();
       Vector3d var6 = var0.method20744();
       if (!var5.equals(var6)) {
-         double var7 = MathHelper.method37822(-1.0E-7, var6.field18048, var5.field18048);
-         double var9 = MathHelper.method37822(-1.0E-7, var6.field18049, var5.field18049);
-         double var11 = MathHelper.method37822(-1.0E-7, var6.field18050, var5.field18050);
-         double var13 = MathHelper.method37822(-1.0E-7, var5.field18048, var6.field18048);
-         double var15 = MathHelper.method37822(-1.0E-7, var5.field18049, var6.field18049);
-         double var17 = MathHelper.method37822(-1.0E-7, var5.field18050, var6.field18050);
+         double var7 = MathHelper.method37822(-1.0E-7, var6.x, var5.x);
+         double var9 = MathHelper.method37822(-1.0E-7, var6.y, var5.y);
+         double var11 = MathHelper.method37822(-1.0E-7, var6.z, var5.z);
+         double var13 = MathHelper.method37822(-1.0E-7, var5.x, var6.x);
+         double var15 = MathHelper.method37822(-1.0E-7, var5.y, var6.y);
+         double var17 = MathHelper.method37822(-1.0E-7, var5.z, var6.z);
          int var19 = MathHelper.floor(var13);
          int var20 = MathHelper.floor(var15);
          int var21 = MathHelper.floor(var17);

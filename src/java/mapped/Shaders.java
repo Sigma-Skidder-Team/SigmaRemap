@@ -1,7 +1,9 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
@@ -3216,7 +3218,7 @@ public class Shaders {
             field40650 = field40650 * var7 + field40649 * (1.0F - var7);
             Entity var8 = var1.method37509();
             if (var8 != null) {
-                field40611 = var8 instanceof Class880 && ((Class880) var8).isSleeping();
+                field40611 = var8 instanceof LivingEntity && ((LivingEntity) var8).isSleeping();
                 field40659 = (float) var1.method37504().method11321();
                 field40656 = field40591.getRenderManager().method32208(var8, var2);
                 float var9 = (float) field40644 * 0.01F;
@@ -3232,8 +3234,8 @@ public class Shaders {
                     field40655 = 0;
                 }
 
-                if (var8 instanceof Class880) {
-                    Class880 var12 = (Class880) var8;
+                if (var8 instanceof LivingEntity) {
+                    LivingEntity var12 = (LivingEntity) var8;
                     field40665 = 0.0F;
                     if (var12.method3033(Effects.NIGHT_VISION)) {
                         GameRenderer var13 = field40592;
@@ -3249,9 +3251,9 @@ public class Shaders {
 
                 Vector3d var16 = var5.method6873(var8.getPosition(), var2);
                 var16 = Class9680.method37877(var16, var5, var8, var2);
-                field40632 = (float) var16.field18048;
-                field40633 = (float) var16.field18049;
-                field40634 = (float) var16.field18050;
+                field40632 = (float) var16.x;
+                field40633 = (float) var16.y;
+                field40634 = (float) var16.z;
             }
         }
 
@@ -3482,9 +3484,9 @@ public class Shaders {
     public static void method33050(MatrixStack var0, Class9624 var1, float var2) {
         Entity var3 = var1.method37509();
         Vector3d var4 = var1.method37504();
-        double var5 = var4.field18048;
-        double var7 = var4.field18049;
-        double var9 = var4.field18050;
+        double var5 = var4.x;
+        double var7 = var4.y;
+        double var9 = var4.z;
         method33051(var3);
         field40778 = var5 - (double) field40781;
         field40779 = var7;
@@ -3528,9 +3530,9 @@ public class Shaders {
     public static void method33053(MatrixStack var0, Class9624 var1, float var2) {
         Entity var3 = var1.method37509();
         Vector3d var4 = var1.method37504();
-        double var5 = var4.field18048;
-        double var7 = var4.field18049;
-        double var9 = var4.field18050;
+        double var5 = var4.x;
+        double var7 = var4.y;
+        double var9 = var4.z;
         method33051(var3);
         field40778 = var5 - (double) field40781;
         field40779 = var7;
@@ -3925,9 +3927,9 @@ public class Shaders {
     }
 
     public static void method33069(Vector3d var0) {
-        field40632 = (float) var0.field18048;
-        field40633 = (float) var0.field18049;
-        field40634 = (float) var0.field18050;
+        field40632 = (float) var0.x;
+        field40633 = (float) var0.y;
+        field40634 = (float) var0.z;
         method33026(field40728, field40632, field40633, field40634);
     }
 

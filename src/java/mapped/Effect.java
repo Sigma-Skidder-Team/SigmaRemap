@@ -7,7 +7,9 @@ import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -31,7 +33,7 @@ public class Effect {
       this.field30709 = var2;
    }
 
-   public void method22289(Class880 var1, int var2) {
+   public void method22289(LivingEntity var1, int var2) {
       if (this != Effects.REGENERATION) {
          if (this != Effects.POISON) {
             if (this != Effects.WITHER) {
@@ -59,7 +61,7 @@ public class Effect {
       }
    }
 
-   public void method22290(Entity var1, Entity var2, Class880 var3, int var4, double var5) {
+   public void method22290(Entity var1, Entity var2, LivingEntity var3, int var4, double var5) {
       if ((this != Effects.INSTANT_HEALTH || var3.method3038()) && (this != Effects.INSTANT_DAMAGE || !var3.method3038())) {
          if (this == Effects.INSTANT_DAMAGE && !var3.method3038() || this == Effects.INSTANT_HEALTH && var3.method3038()) {
             int var10 = (int)(var5 * (double)(6 << var4) + 0.5);
@@ -134,7 +136,7 @@ public class Effect {
       return this.field30707;
    }
 
-   public void method22300(Class880 var1, Class9020 var2, int var3) {
+   public void method22300(LivingEntity var1, Class9020 var2, int var3) {
       for (Entry var7 : this.field30707.entrySet()) {
          Class9805 var8 = var2.method33380((Class4869)var7.getKey());
          if (var8 != null) {
@@ -143,7 +145,7 @@ public class Effect {
       }
    }
 
-   public void method22301(Class880 var1, Class9020 var2, int var3) {
+   public void method22301(LivingEntity var1, Class9020 var2, int var3) {
       for (Entry var7 : this.field30707.entrySet()) {
          Class9805 var8 = var2.method33380((Class4869)var7.getKey());
          if (var8 != null) {

@@ -1,7 +1,13 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
@@ -41,7 +47,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
       this.method2863(this.method5030(), 0.15F, 1.0F);
    }
 
-   public abstract Class9455 method5030();
+   public abstract SoundEvent method5030();
 
    @Override
    public Class7809 method3089() {
@@ -129,14 +135,14 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    }
 
    @Override
-   public void method4530(Class880 var1, float var2) {
+   public void method4530(LivingEntity var1, float var2) {
       ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Items.BOW)));
       AbstractArrowEntity var6 = this.method5032(var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.method3440(0.3333333333333333) - var6.getPosY();
       double var11 = var1.getPosZ() - this.getPosZ();
       double var13 = (double) MathHelper.method37766(var7 * var7 + var11 * var11);
-      var6.method3462(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method6997().method8905() * 4));
+      var6.shoot(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method6997().method8905() * 4));
       this.method2863(Sounds.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.world.method6916(var6);
    }

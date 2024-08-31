@@ -2,12 +2,13 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
 
-public class Class3740<E extends Class880> extends Class3676<E> {
+public class Class3740<E extends LivingEntity> extends Class3676<E> {
    private final Predicate<E> field19864;
    private final Class3676<? super E> field19865;
    private final boolean field19866;

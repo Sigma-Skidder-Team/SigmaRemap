@@ -2,6 +2,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -27,9 +28,9 @@ public class Class8653 extends Class8652 {
    }
 
    @Override
-   public ITextComponent method31110(Class880 var1) {
+   public ITextComponent method31110(LivingEntity var1) {
       ITextComponent var4 = this.field38991 != null ? this.field38991.getDisplayName() : this.field38989.getDisplayName();
-      ItemStack var5 = !(this.field38991 instanceof Class880) ? ItemStack.EMPTY : ((Class880)this.field38991).method3090();
+      ItemStack var5 = !(this.field38991 instanceof LivingEntity) ? ItemStack.EMPTY : ((LivingEntity)this.field38991).method3090();
       String var6 = "death.attack." + this.field39022;
       String var7 = var6 + ".item";
       return !var5.isEmpty() && var5.method32152()

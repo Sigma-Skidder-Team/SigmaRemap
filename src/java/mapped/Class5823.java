@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
+
 public abstract class Class5823 extends Class5812 {
    public final Class921 field25512 = new Class921();
    public final Class920 field25513 = new Class928(this, 2);

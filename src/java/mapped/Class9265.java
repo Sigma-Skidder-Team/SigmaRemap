@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.SoundEvent;
+
 import java.util.Optional;
 import java.util.OptionalInt;
 
@@ -12,7 +14,7 @@ public class Class9265 {
    private Optional<Integer> field42617 = Optional.<Integer>empty();
    private Class88 field42618 = Class88.field230;
    private Optional<Class7737> field42619 = Optional.<Class7737>empty();
-   private Optional<Class9455> field42620 = Optional.<Class9455>empty();
+   private Optional<SoundEvent> field42620 = Optional.<SoundEvent>empty();
    private Optional<Class7959> field42621 = Optional.<Class7959>empty();
    private Optional<Class8217> field42622 = Optional.<Class8217>empty();
    private Optional<BackgroundMusicSelector> field42623 = Optional.<BackgroundMusicSelector>empty();
@@ -57,8 +59,8 @@ public class Class9265 {
       return this;
    }
 
-   public Class9265 method34876(Class9455 var1) {
-      this.field42620 = Optional.<Class9455>of(var1);
+   public Class9265 method34876(SoundEvent var1) {
+      this.field42620 = Optional.<SoundEvent>of(var1);
       return this;
    }
 

@@ -1,7 +1,9 @@
 package mapped;
 
 import com.google.common.base.Predicates;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.Difficulty;
 
 import java.util.function.Predicate;
@@ -9,7 +11,7 @@ import java.util.function.Predicate;
 public final class Class8088 {
    private static String[] field34756;
    public static final Predicate<Entity> field34757 = Entity::isAlive;
-   public static final Predicate<Class880> field34758 = Class880::isAlive;
+   public static final Predicate<LivingEntity> field34758 = LivingEntity::isAlive;
    public static final Predicate<Entity> field34759 = var0 -> var0.isAlive() && !var0.isBeingRidden() && !var0.isPassenger();
    public static final Predicate<Entity> field34760 = var0 -> var0 instanceof Class920 && var0.isAlive();
    public static final Predicate<Entity> field34761 = var0 -> !(var0 instanceof PlayerEntity) || !var0.isSpectator() && !((PlayerEntity)var0).isCreative();

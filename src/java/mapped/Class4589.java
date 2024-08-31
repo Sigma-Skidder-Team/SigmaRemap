@@ -18,7 +18,7 @@ public class Class4589 extends Class4588 {
    }
 
    private Class4589(ClientWorld var1, Entity var2, Class7436 var3, int var4, Vector3d var5) {
-      super(var1, var2.getPosX(), var2.method3440(0.5), var2.getPosZ(), var5.field18048, var5.field18049, var5.field18050);
+      super(var1, var2.getPosX(), var2.method3440(0.5), var2.getPosZ(), var5.x, var5.y, var5.z);
       this.field22066 = var2;
       this.field22068 = var4;
       this.field22069 = var3;

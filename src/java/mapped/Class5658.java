@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 
 public class Class5658 extends Class5651<Class1105, Class2820> {
@@ -18,12 +19,12 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
    public boolean method17854(Class1105 var1, Class7647 var2, double var3, double var5, double var7) {
       if (!super.method17854(var1, var2, var3, var5, var7)) {
          if (var1.method5305()) {
-            Class880 var11 = var1.method5306();
+            LivingEntity var11 = var1.method5306();
             if (var11 != null) {
                Vector3d var12 = this.method17861(var11, (double)var11.method3430() * 0.5, 1.0F);
                Vector3d var13 = this.method17861(var1, (double)var1.method3393(), 1.0F);
                return var2.method25122(
-                  new AxisAlignedBB(var13.field18048, var13.field18049, var13.field18050, var12.field18048, var12.field18049, var12.field18050)
+                  new AxisAlignedBB(var13.x, var13.y, var13.z, var12.x, var12.y, var12.z)
                );
             }
          }
@@ -34,7 +35,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
       }
    }
 
-   private Vector3d method17861(Class880 var1, double var2, float var4) {
+   private Vector3d method17861(LivingEntity var1, double var2, float var4) {
       double var7 = MathHelper.method37822((double)var4, var1.lastTickPosX, var1.getPosX());
       double var9 = MathHelper.method37822((double)var4, var1.lastTickPosY, var1.getPosY()) + var2;
       double var11 = MathHelper.method37822((double)var4, var1.lastTickPosZ, var1.getPosZ());
@@ -43,7 +44,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
 
    public void method17853(Class1105 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       super.method17853(var1, var2, var3, var4, var5, var6);
-      Class880 var9 = var1.method5306();
+      LivingEntity var9 = var1.method5306();
       if (var9 != null) {
          float var10 = var1.method5310(var3);
          float var11 = (float)var1.world.method6783() + var3;
@@ -56,8 +57,8 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          Vector3d var16 = var14.method11336(var15);
          float var17 = (float)(var16.method11348() + 1.0);
          var16 = var16.method11333();
-         float var18 = (float)Math.acos(var16.field18049);
-         float var19 = (float)Math.atan2(var16.field18050, var16.field18048);
+         float var18 = (float)Math.acos(var16.y);
+         float var19 = (float)Math.atan2(var16.z, var16.x);
          var4.rotate(Vector3f.YP.rotationDegrees(((float) (Math.PI / 2) - var19) * (180.0F / (float)Math.PI)));
          var4.rotate(Vector3f.field32898.rotationDegrees(var18 * (180.0F / (float)Math.PI)));
          boolean var20 = true;

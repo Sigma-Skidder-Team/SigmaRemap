@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.base.Charsets;
 import com.google.common.collect.*;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;

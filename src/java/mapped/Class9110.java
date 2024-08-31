@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -73,8 +74,8 @@ public class Class9110 {
    }
 
    public double method33973(Vector3d var1) {
-      double var4 = var1.field18048 - this.method33969() - 0.5;
-      double var6 = var1.field18050 - this.method33971() - 0.5;
+      double var4 = var1.x - this.method33969() - 0.5;
+      double var6 = var1.z - this.method33971() - 0.5;
       return (double) MathHelper.method37766(var4 * var4 + var6 * var6);
    }
 

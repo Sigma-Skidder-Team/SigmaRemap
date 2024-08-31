@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.function.Predicate;
 
 public class Class8522 {
@@ -11,7 +13,7 @@ public class Class8522 {
    private boolean field38244;
    private boolean field38245;
    private boolean field38246 = true;
-   private Predicate<Class880> field38247;
+   private Predicate<LivingEntity> field38247;
 
    public Class8522 method30203(double var1) {
       this.field38241 = var1;
@@ -43,12 +45,12 @@ public class Class8522 {
       return this;
    }
 
-   public Class8522 method30209(Predicate<Class880> var1) {
+   public Class8522 method30209(Predicate<LivingEntity> var1) {
       this.field38247 = var1;
       return this;
    }
 
-   public boolean method30210(Class880 var1, Class880 var2) {
+   public boolean method30210(LivingEntity var1, LivingEntity var2) {
       if (var1 != var2) {
          if (!var2.isSpectator()) {
             if (var2.isAlive()) {

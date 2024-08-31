@@ -4,12 +4,18 @@ import com.google.common.collect.Sets;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
 import java.util.Set;
 
 public abstract class Class1043 extends Class1045 implements Class1059, Class1060 {
-   private static final DataParameter<Integer> field5794 = EntityDataManager.<Integer>method35441(Class1043.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5794 = EntityDataManager.<Integer>createKey(Class1043.class, DataSerializers.field33391);
    private PlayerEntity field5795;
    public Class46 field5796;
    private final Class927 field5797 = new Class927(8);
@@ -112,11 +118,11 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    @Override
-   public Class9455 method4748() {
+   public SoundEvent method4748() {
       return Sounds.field27195;
    }
 
-   public Class9455 method4749(boolean var1) {
+   public SoundEvent method4749(boolean var1) {
       return !var1 ? Sounds.field27193 : Sounds.field27195;
    }
 

@@ -1,9 +1,12 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.math.BlockPos;
 
-public abstract class Class893 extends Class882 {
+public abstract class Class893 extends ProjectileEntity {
    public Class893(EntityType<? extends Class893> var1, World var2) {
       super(var1, var2);
    }
@@ -13,14 +16,14 @@ public abstract class Class893 extends Class882 {
       this.setPosition(var2, var4, var6);
    }
 
-   public Class893(EntityType<? extends Class893> var1, Class880 var2, World var3) {
+   public Class893(EntityType<? extends Class893> var1, LivingEntity var2, World var3) {
       this(var1, var2.getPosX(), var2.method3442() - 0.1F, var2.getPosZ(), var3);
-      this.method3459(var2);
+      this.setShooter(var2);
    }
 
    @Override
-   public boolean method3291(double var1) {
-      double var5 = this.getBoundingBox().method19675() * 4.0;
+   public boolean isInRangeToRenderDist(double var1) {
+      double var5 = this.getBoundingBox().getAverageEdgeLength() * 4.0;
       if (Double.isNaN(var5)) {
          var5 = 4.0;
       }
@@ -58,9 +61,9 @@ public abstract class Class893 extends Class882 {
 
       this.method3240();
       Vector3d var17 = this.method3433();
-      double var6 = this.getPosX() + var17.field18048;
-      double var8 = this.getPosY() + var17.field18049;
-      double var10 = this.getPosZ() + var17.field18050;
+      double var6 = this.getPosX() + var17.x;
+      double var8 = this.getPosY() + var17.y;
+      double var10 = this.getPosZ() + var17.z;
       this.method3468();
       float var12;
       if (!this.method3250()) {
@@ -71,12 +74,12 @@ public abstract class Class893 extends Class882 {
             this.world
                .method6746(
                   Class7940.field34052,
-                  var6 - var17.field18048 * 0.25,
-                  var8 - var17.field18049 * 0.25,
-                  var10 - var17.field18050 * 0.25,
-                  var17.field18048,
-                  var17.field18049,
-                  var17.field18050
+                  var6 - var17.x * 0.25,
+                  var8 - var17.y * 0.25,
+                  var10 - var17.z * 0.25,
+                  var17.x,
+                  var17.y,
+                  var17.z
                );
          }
 
@@ -86,7 +89,7 @@ public abstract class Class893 extends Class882 {
       this.method3434(var17.method11344((double)var12));
       if (!this.method3247()) {
          Vector3d var18 = this.method3433();
-         this.method3435(var18.field18048, var18.field18049 - (double)this.method3515(), var18.field18050);
+         this.method3435(var18.x, var18.y - (double)this.method3515(), var18.z);
       }
 
       this.setPosition(var6, var8, var10);

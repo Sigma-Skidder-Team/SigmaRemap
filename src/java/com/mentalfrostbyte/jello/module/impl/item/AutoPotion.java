@@ -88,9 +88,9 @@ public class AutoPotion extends Module {
     }
 
     public float[] method16630() {
-        double var3 = mc.player.getPosX() + mc.player.method3433().field18048 * 26.0;
+        double var3 = mc.player.getPosX() + mc.player.method3433().x * 26.0;
         double var5 = mc.player.boundingBox.field28450 - 3.6;
-        double var7 = mc.player.getPosZ() + mc.player.method3433().field18050 * 26.0;
+        double var7 = mc.player.getPosZ() + mc.player.method3433().z * 26.0;
         return !this.getBooleanValueFromSetttingName("Predict") ? new float[]{mc.player.rotationYaw, 90.0F} : Class9142.method34144(var3, var7, var5);
     }
 

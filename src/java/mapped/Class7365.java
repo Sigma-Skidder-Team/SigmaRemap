@@ -33,9 +33,9 @@ public class Class7365 extends Class7362 {
                      var11,
                      var13,
                      var15,
-                     -var3.field18048 * 0.08F * (double)var17,
-                     -var3.field18049 * 0.6F,
-                     -var3.field18050 * 0.08F * (double)var17
+                     -var3.x * 0.08F * (double)var17,
+                     -var3.y * 0.6F,
+                     -var3.z * 0.08F * (double)var17
                   );
             }
 
@@ -56,8 +56,8 @@ public class Class7365 extends Class7362 {
                )
                .method11333();
             float var4 = 5.0F;
-            double var5 = this.field31519.field5624.getPosX() + var3.field18048 * 5.0 / 2.0;
-            double var7 = this.field31519.field5624.getPosZ() + var3.field18050 * 5.0 / 2.0;
+            double var5 = this.field31519.field5624.getPosX() + var3.x * 5.0 / 2.0;
+            double var7 = this.field31519.field5624.getPosZ() + var3.z * 5.0 / 2.0;
             double var9 = this.field31519.field5624.method3440(0.5);
             double var11 = var9;
             Mutable var13 = new Mutable(var5, var9, var7);

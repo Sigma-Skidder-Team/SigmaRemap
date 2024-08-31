@@ -20,7 +20,7 @@ public class Class7892 extends Class7882<Class1006> {
       var6.sort(Comparator.comparingDouble(var2::getDistanceSq));
       Optional var7 = var6.stream()
          .filter(var1x -> var2.method4253(var1x.method4124()))
-         .filter(var1x -> var1x.method3213(var2, 9.0))
+         .filter(var1x -> var1x.isEntityInRange(var2, 9.0))
          .filter(var2::method3135)
          .findFirst();
       var5.method21408(Class8830.field39847, var7);

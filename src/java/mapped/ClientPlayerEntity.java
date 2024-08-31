@@ -5,9 +5,13 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4408;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.Pose;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -195,7 +199,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                }
             } else {
                Vector3d var29 = this.method3433();
-               this.connection.sendPacket(new Class5604(var29.field18048, -999.0, var29.field18050, var15, var14, var16));
+               this.connection.sendPacket(new Class5604(var29.x, -999.0, var29.z, var15, var14, var16));
                var27 = false;
             }
 
@@ -384,9 +388,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          if (var12 != null) {
             Vector3d var24 = this.method3433();
             if (var12.method544() != Class113.field413) {
-               this.method3435(var24.field18048, var24.field18049, 0.1 * (double)var12.method541());
+               this.method3435(var24.x, var24.y, 0.1 * (double)var12.method541());
             } else {
-               this.method3435(0.1 * (double)var12.method539(), var24.field18049, var24.field18050);
+               this.method3435(0.1 * (double)var12.method539(), var24.y, var24.z);
             }
          }
       }
@@ -441,12 +445,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method2863(Class9455 var1, float var2, float var3) {
+   public void method2863(SoundEvent var1, float var2, float var3) {
       this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.method2864(), var2, var3, false);
    }
 
    @Override
-   public void method2834(Class9455 var1, Class2266 var2, float var3, float var4) {
+   public void method2834(SoundEvent var1, Class2266 var2, float var3, float var4) {
       this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), var1, var2, var3, var4, false);
    }
 
@@ -852,7 +856,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             float var12 = var8 * var10.field37221;
             float var13 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0));
             float var14 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0));
-            var7 = new Vector3d((double)(var11 * var14 - var12 * var13), var7.field18049, (double)(var12 * var14 + var11 * var13));
+            var7 = new Vector3d((double)(var11 * var14 - var12 * var13), var7.y, (double)(var12 * var14 + var11 * var13));
             var9 = (float)var7.method11349();
             if (var9 <= 0.001F) {
                return;
@@ -862,7 +866,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          float var42 = MathHelper.method37815(var9);
          Vector3d var43 = var7.method11344((double)var42);
          Vector3d var44 = this.method3322();
-         float var45 = (float)(var44.field18048 * var43.field18048 + var44.field18050 * var43.field18050);
+         float var45 = (float)(var44.x * var43.x + var44.z * var43.z);
          if (!(var45 < -0.15F)) {
             ISelectionContext var46 = ISelectionContext.forEntity(this);
             BlockPos var15 = new BlockPos(this.getPosX(), this.getBoundingBox().field28453, this.getPosZ());

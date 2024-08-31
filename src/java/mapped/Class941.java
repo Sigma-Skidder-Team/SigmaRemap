@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -119,7 +122,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
       return var7;
    }
 
-   private void method3760(Class9455 var1) {
+   private void method3760(SoundEvent var1) {
       Class111 var4 = this.method3775().<Class111>method23463(Class3348.field18866);
       if (var4 != Class111.field380) {
          double var5 = (double)this.field5325.getX() + 0.5;

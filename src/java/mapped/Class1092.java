@@ -1,9 +1,11 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public interface Class1092 {
    int method5082();
 
-   static boolean method5091(Class880 var0, Class880 var1) {
+   static boolean method5091(LivingEntity var0, LivingEntity var1) {
       float var4 = (float)var0.method3086(Attributes.field42110);
       float var5;
       if (!var0.method3005() && (int)var4 > 0) {
@@ -23,7 +25,7 @@ public interface Class1092 {
       return var6;
    }
 
-   static void method5092(Class880 var0, Class880 var1) {
+   static void method5092(LivingEntity var0, LivingEntity var1) {
       double var4 = var0.method3086(Attributes.field42111);
       double var6 = var1.method3086(Attributes.field42107);
       double var8 = var4 - var6;
@@ -34,7 +36,7 @@ public interface Class1092 {
          double var15 = var8 * (double)(var0.world.rand.nextFloat() * 0.5F + 0.2F);
          Vector3d var17 = new Vector3d(var10, 0.0, var12).method11333().method11344(var15).method11351(var14);
          double var18 = var8 * (double)var0.world.rand.nextFloat() * 0.5;
-         var1.method3280(var17.field18048, var18, var17.field18050);
+         var1.method3280(var17.x, var18, var17.z);
          var1.velocityChanged = true;
       }
    }

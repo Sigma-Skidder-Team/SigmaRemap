@@ -19,11 +19,11 @@ public class Class4434 extends CancellableEvent {
 
     public void method13989(double var1) {
         this.method13900(true);
-        this.field21583.field18049 = var1;
+        this.field21583.y = var1;
     }
 
     public double method13990() {
-        return this.field21583.field18049;
+        return this.field21583.y;
     }
 
     public Vector3d method13991() {

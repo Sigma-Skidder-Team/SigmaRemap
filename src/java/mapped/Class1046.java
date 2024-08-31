@@ -52,7 +52,7 @@ public abstract class Class1046 extends Class1006 {
                   .method11333()
                   .method11344((double)Math.max(var4 - 2.0F, 0.0F));
                this.method4230()
-                  .method21654(this.getPosX() + var6.field18048, this.getPosY() + var6.field18049, this.getPosZ() + var6.field18050, this.method4773());
+                  .method21654(this.getPosX() + var6.x, this.getPosY() + var6.y, this.getPosZ() + var6.z, this.method4773());
             } else {
                double var7 = (var3.getPosX() - this.getPosX()) / (double)var4;
                double var9 = (var3.getPosY() - this.getPosY()) / (double)var4;

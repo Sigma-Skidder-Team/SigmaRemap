@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+
 public abstract class Class5727<T extends AbstractArrowEntity> extends Class5715<T> {
    public Class5727(EntityRendererManager var1) {
       super(var1);

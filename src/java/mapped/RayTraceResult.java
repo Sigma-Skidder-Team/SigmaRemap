@@ -10,9 +10,9 @@ public abstract class RayTraceResult {
    }
 
    public double method31418(Entity var1) {
-      double var4 = this.field39316.field18048 - var1.getPosX();
-      double var6 = this.field39316.field18049 - var1.getPosY();
-      double var8 = this.field39316.field18050 - var1.getPosZ();
+      double var4 = this.field39316.x - var1.getPosX();
+      double var6 = this.field39316.y - var1.getPosY();
+      double var8 = this.field39316.z - var1.getPosZ();
       return var4 * var4 + var6 * var6 + var8 * var8;
    }
 

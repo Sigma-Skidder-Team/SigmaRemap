@@ -18,7 +18,7 @@ public class Class3682<E extends Class1045> extends Class3676<E> {
          return false;
       } else {
          Class1045 var5 = this.method12518((E)var2);
-         return var2.method3213(var5, (double)(this.field19695.method29321() + 1)) && !var2.method3213(var5, (double)this.field19695.method29320());
+         return var2.isEntityInRange(var5, (double)(this.field19695.method29321() + 1)) && !var2.isEntityInRange(var5, (double)this.field19695.method29320());
       }
    }
 

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.world.Difficulty;
 
 import java.util.EnumSet;
@@ -16,7 +17,7 @@ public class Class2746 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      Class880 var3 = this.field17279.method4232();
+      LivingEntity var3 = this.field17279.method4232();
       return var3 != null && var3.isAlive() ? this.field17279.world.method6997() != Difficulty.field14351 : false;
    }
 
@@ -35,11 +36,11 @@ public class Class2746 extends Class2595 {
    public void method10805() {
       if (this.field17279.world.method6997() != Difficulty.field14351) {
          this.field17278--;
-         Class880 var3 = this.field17279.method4232();
+         LivingEntity var3 = this.field17279.method4232();
          this.field17279.method4227().method28040(var3, 180.0F, 180.0F);
          double var4 = this.field17279.getDistanceSq(var3);
          if (!(var4 < 400.0)) {
-            this.field17279.method4233((Class880)null);
+            this.field17279.method4233((LivingEntity)null);
          } else if (this.field17278 <= 0) {
             this.field17278 = 20 + Class1057.method4858(this.field17279).nextInt(10) * 20 / 2;
             this.field17279.world.method6916(new Class905(this.field17279.world, this.field17279, var3, this.field17279.method4848().method544()));

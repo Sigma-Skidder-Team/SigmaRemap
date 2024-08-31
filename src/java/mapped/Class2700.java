@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.EnumSet;
@@ -8,7 +10,7 @@ import java.util.List;
 public class Class2700 extends Class2699 {
    private static String[] field17161;
    private final Class1058 field17162;
-   private Class880 field17163;
+   private LivingEntity field17163;
    private final Class8522 field17164 = new Class8522().method30203(64.0);
 
    public Class2700(Class1058 var1) {
@@ -23,7 +25,7 @@ public class Class2700 extends Class2699 {
       List<Class1042> var4 = this.field17162.world.<Class1042>method7195(Class1042.class, this.field17164, this.field17162, var3);
       List<PlayerEntity> var5 = this.field17162.world.method7194(this.field17164, this.field17162, var3);
 
-      for (Class880 var7 : var4) {
+      for (LivingEntity var7 : var4) {
          Class1042 var8 = (Class1042)var7;
 
          for (PlayerEntity var10 : var5) {

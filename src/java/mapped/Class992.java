@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 
 public class Class992 extends AbstractMinecartEntity {

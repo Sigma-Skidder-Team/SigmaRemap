@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 public class Class8092 {
@@ -17,7 +18,7 @@ public class Class8092 {
    }
 
    public void method28039(Vector3d var1) {
-      this.method28041(var1.field18048, var1.field18049, var1.field18050);
+      this.method28041(var1.x, var1.y, var1.z);
    }
 
    public void method28040(Entity var1, float var2, float var3) {
@@ -96,6 +97,6 @@ public class Class8092 {
    }
 
    private static double method28050(Entity var0) {
-      return !(var0 instanceof Class880) ? (var0.getBoundingBox().field28450 + var0.getBoundingBox().field28453) / 2.0 : var0.method3442();
+      return !(var0 instanceof LivingEntity) ? (var0.getBoundingBox().field28450 + var0.getBoundingBox().field28453) / 2.0 : var0.method3442();
    }
 }

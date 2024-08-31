@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import com.mentalfrostbyte.jello.Client;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -136,9 +137,9 @@ public class Class8066 {
 
    public double method27713() {
       Class9624 var3 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
-      double var4 = this.field34614.field28449 + 8.0 - var3.method37504().field18048;
-      double var6 = this.field34614.field28450 + 8.0 - var3.method37504().field18049;
-      double var8 = this.field34614.field28451 + 8.0 - var3.method37504().field18050;
+      double var4 = this.field34614.field28449 + 8.0 - var3.method37504().x;
+      double var6 = this.field34614.field28450 + 8.0 - var3.method37504().y;
+      double var8 = this.field34614.field28451 + 8.0 - var3.method37504().z;
       return var4 * var4 + var6 * var6 + var8 * var8;
    }
 

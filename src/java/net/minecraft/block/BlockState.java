@@ -1,8 +1,9 @@
-package mapped;
+package net.minecraft.block;
 
 import com.google.common.collect.ImmutableMap;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
+import mapped.*;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.concurrent.atomic.AtomicInteger;

@@ -1,13 +1,18 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 
 import java.util.List;
 import java.util.Set;
 
 public class Class887 extends AbstractArrowEntity {
-   private static final DataParameter<Integer> field5116 = EntityDataManager.<Integer>method35441(Class887.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5116 = EntityDataManager.<Integer>createKey(Class887.class, DataSerializers.field33391);
    private Class8812 field5117 = Class8137.field34976;
    private final Set<Class2023> field5118 = Sets.newHashSet();
    private boolean field5119;
@@ -20,7 +25,7 @@ public class Class887 extends AbstractArrowEntity {
       super(EntityType.field41007, var2, var4, var6, var1);
    }
 
-   public Class887(World var1, Class880 var2) {
+   public Class887(World var1, LivingEntity var2) {
       super(EntityType.field41007, var2, var1);
    }
 
@@ -154,7 +159,7 @@ public class Class887 extends AbstractArrowEntity {
    }
 
    @Override
-   public void method3478(Class880 var1) {
+   public void method3478(LivingEntity var1) {
       super.method3478(var1);
 
       for (Class2023 var5 : this.field5117.method31816()) {

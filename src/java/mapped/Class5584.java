@@ -1,10 +1,12 @@
 package mapped;
 
 import java.io.IOException;
+
+import net.minecraft.util.SoundEvent;
 import org.apache.commons.lang3.Validate;
 
 public class Class5584 implements Packet<Class5116> {
-   private Class9455 field24776;
+   private SoundEvent field24776;
    private Class2266 field24777;
    private int field24778;
    private int field24779;
@@ -15,7 +17,7 @@ public class Class5584 implements Packet<Class5116> {
    public Class5584() {
    }
 
-   public Class5584(Class9455 var1, Class2266 var2, double var3, double var5, double var7, float var9, float var10) {
+   public Class5584(SoundEvent var1, Class2266 var2, double var3, double var5, double var7, float var9, float var10) {
       Validate.notNull(var1, "sound", new Object[0]);
       this.field24776 = var1;
       this.field24777 = var2;
@@ -48,7 +50,7 @@ public class Class5584 implements Packet<Class5116> {
       var1.writeFloat(this.field24782);
    }
 
-   public Class9455 method17549() {
+   public SoundEvent method17549() {
       return this.field24776;
    }
 

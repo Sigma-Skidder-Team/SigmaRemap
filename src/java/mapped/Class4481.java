@@ -19,9 +19,9 @@ public class Class4481 extends Class4457 {
    }
 
    public boolean method14144(ServerWorld var1, Vector3d var2, double var3, double var5, double var7) {
-      if (this.field21673.method30650(var1, var2.field18048, var2.field18049, var2.field18050)) {
+      if (this.field21673.method30650(var1, var2.x, var2.y, var2.z)) {
          return this.field21674.method30650(var1, var3, var5, var7)
-            ? this.field21675.method32328(var2.field18048, var2.field18049, var2.field18050, var3, var5, var7)
+            ? this.field21675.method32328(var2.x, var2.y, var2.z, var3, var5, var7)
             : false;
       } else {
          return false;

@@ -12,27 +12,27 @@ public class Class4435 extends CancellableEvent {
     }
 
     public double method13992() {
-        return this.field21585.field18048;
+        return this.field21585.x;
     }
 
     public void method13993(double var1) {
-        this.field21585.field18048 = var1;
+        this.field21585.x = var1;
     }
 
     public double method13994() {
-        return this.field21585.field18049;
+        return this.field21585.y;
     }
 
     public void method13995(double var1) {
-        this.field21585.field18049 = var1;
+        this.field21585.y = var1;
     }
 
     public double method13996() {
-        return this.field21585.field18050;
+        return this.field21585.z;
     }
 
     public void method13997(double var1) {
-        this.field21585.field18050 = var1;
+        this.field21585.z = var1;
     }
 
     public Vector3d method13998() {

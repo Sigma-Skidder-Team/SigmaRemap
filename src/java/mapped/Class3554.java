@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 public class Class3554 implements Class3499<Class7439> {
    private static String[] field19478;
 

@@ -1,14 +1,21 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
 
 public abstract class Class1049 extends Class1047 {
-   private static final DataParameter<Boolean> field5809 = EntityDataManager.<Boolean>method35441(Class1049.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5809 = EntityDataManager.<Boolean>createKey(Class1049.class, DataSerializers.field33398);
 
    public Class1049(EntityType<? extends Class1049> var1, World var2) {
       super(var1, var2);
@@ -150,10 +157,10 @@ public abstract class Class1049 extends Class1047 {
       return true;
    }
 
-   public abstract Class9455 method4798();
+   public abstract SoundEvent method4798();
 
    @Override
-   public Class9455 method2859() {
+   public SoundEvent method2859() {
       return Sounds.field26583;
    }
 

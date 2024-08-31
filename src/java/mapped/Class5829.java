@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.Optional;
 
 public class Class5829 extends Class5828<Class926> {

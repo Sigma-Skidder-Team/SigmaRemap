@@ -22,7 +22,7 @@ public class Class4436 extends CancellableEvent {
     }
 
     public void method14002(double var1) {
-        this.field21587.field18049 = var1;
+        this.field21587.y = var1;
     }
 
     public void method14003(double var1) {
@@ -31,16 +31,16 @@ public class Class4436 extends CancellableEvent {
         float var7 = var5[2];
         float var8 = var5[0];
         if (var6 == 0.0F && var7 == 0.0F) {
-            this.field21587.field18048 = 0.0;
-            this.field21587.field18050 = 0.0;
+            this.field21587.x = 0.0;
+            this.field21587.z = 0.0;
         }
 
         double var9 = Math.cos(Math.toRadians(var8));
         double var11 = Math.sin(Math.toRadians(var8));
         double var13 = ((double) var6 * var9 + (double) var7 * var11) * var1;
         double var15 = ((double) var6 * var11 - (double) var7 * var9) * var1;
-        this.field21587.field18048 = var13;
-        this.field21587.field18050 = var15;
+        this.field21587.x = var13;
+        this.field21587.z = var15;
         this.field21588 = true;
     }
 

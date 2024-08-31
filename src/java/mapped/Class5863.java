@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.Map;
 import java.util.Map.Entry;
 

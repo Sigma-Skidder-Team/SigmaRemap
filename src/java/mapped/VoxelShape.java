@@ -140,10 +140,10 @@ public abstract class VoxelShape {
          if (!(var6.method11349() < 1.0E-7)) {
             Vector3d var7 = var1.method11338(var6.method11344(0.001));
             return !this.method19524(
-                  var7.field18048 - (double)var3.getX(), var7.field18049 - (double)var3.getY(), var7.field18050 - (double)var3.getZ()
+                  var7.x - (double)var3.getX(), var7.y - (double)var3.getY(), var7.z - (double)var3.getZ()
                )
                ? AxisAlignedBB.method19681(this.method19521(), var1, var2, var3)
-               : new BlockRayTraceResult(var7, Direction.method553(var6.field18048, var6.field18049, var6.field18050).method536(), var3, true);
+               : new BlockRayTraceResult(var7, Direction.method553(var6.x, var6.y, var6.z).method536(), var3, true);
          } else {
             return null;
          }

@@ -1,10 +1,14 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 
 public abstract class Class890 extends Class893 implements Class889 {
-   private static final DataParameter<ItemStack> field5126 = EntityDataManager.<ItemStack>method35441(Class890.class, Class7784.field33396);
+   private static final DataParameter<ItemStack> field5126 = EntityDataManager.<ItemStack>createKey(Class890.class, DataSerializers.field33396);
 
    public Class890(EntityType<? extends Class890> var1, World var2) {
       super(var1, var2);
@@ -14,7 +18,7 @@ public abstract class Class890 extends Class893 implements Class889 {
       super(var1, var2, var4, var6, var8);
    }
 
-   public Class890(EntityType<? extends Class890> var1, Class880 var2, World var3) {
+   public Class890(EntityType<? extends Class890> var1, LivingEntity var2, World var3) {
       super(var1, var2, var3);
    }
 

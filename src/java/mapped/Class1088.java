@@ -1,6 +1,13 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -8,14 +15,14 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public class Class1088 extends Class1018 {
-   private static final DataParameter<BlockPos> field5956 = EntityDataManager.<BlockPos>method35441(Class1088.class, Class7784.field33401);
-   private static final DataParameter<Boolean> field5957 = EntityDataManager.<Boolean>method35441(Class1088.class, Class7784.field33398);
-   private static final DataParameter<Boolean> field5958 = EntityDataManager.<Boolean>method35441(Class1088.class, Class7784.field33398);
-   private static final DataParameter<BlockPos> field5959 = EntityDataManager.<BlockPos>method35441(Class1088.class, Class7784.field33401);
-   private static final DataParameter<Boolean> field5960 = EntityDataManager.<Boolean>method35441(Class1088.class, Class7784.field33398);
-   private static final DataParameter<Boolean> field5961 = EntityDataManager.<Boolean>method35441(Class1088.class, Class7784.field33398);
+   private static final DataParameter<BlockPos> field5956 = EntityDataManager.<BlockPos>createKey(Class1088.class, DataSerializers.field33401);
+   private static final DataParameter<Boolean> field5957 = EntityDataManager.<Boolean>createKey(Class1088.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5958 = EntityDataManager.<Boolean>createKey(Class1088.class, DataSerializers.field33398);
+   private static final DataParameter<BlockPos> field5959 = EntityDataManager.<BlockPos>createKey(Class1088.class, DataSerializers.field33401);
+   private static final DataParameter<Boolean> field5960 = EntityDataManager.<Boolean>createKey(Class1088.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5961 = EntityDataManager.<Boolean>createKey(Class1088.class, DataSerializers.field33398);
    private int field5962;
-   public static final Predicate<Class880> field5963 = var0 -> var0.method3005() && !var0.method3250();
+   public static final Predicate<LivingEntity> field5963 = var0 -> var0.method3005() && !var0.method3250();
 
    public Class1088(EntityType<? extends Class1088> var1, World var2) {
       super(var1, var2);
@@ -161,7 +168,7 @@ public class Class1088 extends Class1018 {
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return !this.method3250() && this.onGround && !this.method3005() ? Sounds.field27164 : super.method4241();
    }
 
@@ -171,25 +178,25 @@ public class Class1088 extends Class1018 {
    }
 
    @Override
-   public Class9455 method2859() {
+   public SoundEvent method2859() {
       return Sounds.field27175;
    }
 
    @Nullable
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return !this.method3005() ? Sounds.field27170 : Sounds.field27171;
    }
 
    @Nullable
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return !this.method3005() ? Sounds.field27165 : Sounds.field27166;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      Class9455 var5 = !this.method3005() ? Sounds.field27173 : Sounds.field27174;
+      SoundEvent var5 = !this.method3005() ? Sounds.field27173 : Sounds.field27174;
       this.method2863(var5, 0.15F, 1.0F);
    }
 

@@ -1,7 +1,9 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -135,8 +137,8 @@ public class Class906 extends Entity {
    }
 
    @Override
-   public boolean method3291(double var1) {
-      double var5 = 64.0 * method3377();
+   public boolean isInRangeToRenderDist(double var1) {
+      double var5 = 64.0 * getRenderDistanceWeight();
       return var1 < var5 * var5;
    }
 

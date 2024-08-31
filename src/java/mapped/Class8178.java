@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Optional;
@@ -11,7 +13,7 @@ public final class Class8178 implements Class8176 {
    private final Class8788 field35173 = new Class8788(null);
 
    @Override
-   public float method28467(ItemStack var1, ClientWorld var2, Class880 var3) {
+   public float method28467(ItemStack var1, ClientWorld var2, LivingEntity var3) {
       Object var6 = var3 == null ? var1.method32168() : var3;
       if (var6 == null) {
          return 0.0F;

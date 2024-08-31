@@ -25,9 +25,9 @@ public class Class5476 implements Packet<Class5116> {
    }
 
    public Vector3d method17231(Vector3d var1) {
-      double var4 = this.field24323 != 0 ? method17230(method17229(var1.field18048) + (long)this.field24323) : var1.field18048;
-      double var6 = this.field24324 != 0 ? method17230(method17229(var1.field18049) + (long)this.field24324) : var1.field18049;
-      double var8 = this.field24325 != 0 ? method17230(method17229(var1.field18050) + (long)this.field24325) : var1.field18050;
+      double var4 = this.field24323 != 0 ? method17230(method17229(var1.x) + (long)this.field24323) : var1.x;
+      double var6 = this.field24324 != 0 ? method17230(method17229(var1.y) + (long)this.field24324) : var1.y;
+      double var8 = this.field24325 != 0 ? method17230(method17229(var1.z) + (long)this.field24325) : var1.z;
       return new Vector3d(var4, var6, var8);
    }
 

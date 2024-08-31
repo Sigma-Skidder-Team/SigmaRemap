@@ -1,8 +1,6 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.entity.*;
 import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
@@ -23,7 +21,7 @@ public class Class1102 extends Class1101 {
       if (!super.method3114(var1)) {
          return false;
       } else {
-         if (var1 instanceof Class880) {
+         if (var1 instanceof LivingEntity) {
             byte var4 = 0;
             if (this.world.method6997() != Difficulty.field14353) {
                if (this.world.method6997() == Difficulty.field14354) {
@@ -34,7 +32,7 @@ public class Class1102 extends Class1101 {
             }
 
             if (var4 > 0) {
-               ((Class880)var1).method3035(new Class2023(Effects.POISON, var4 * 20, 0));
+               ((LivingEntity)var1).method3035(new Class2023(Effects.POISON, var4 * 20, 0));
             }
          }
 

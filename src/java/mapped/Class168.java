@@ -1,8 +1,11 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.function.Predicate;
 
-public class Class168 implements Predicate<Class880> {
+public class Class168 implements Predicate<LivingEntity> {
    private static String[] field542;
    public final Class1095 field543;
 
@@ -10,7 +13,7 @@ public class Class168 implements Predicate<Class880> {
       this.field543 = var1;
    }
 
-   public boolean test(Class880 var1) {
+   public boolean test(LivingEntity var1) {
       if (var1 instanceof Class1095) {
          return false;
       } else if (var1 instanceof Class1089 || var1 instanceof Class1094 || var1 instanceof Class1009) {

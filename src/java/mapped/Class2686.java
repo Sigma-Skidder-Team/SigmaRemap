@@ -73,7 +73,7 @@ public class Class2686 extends Class2595 {
                         }
 
                         var7.method21682(this.field17110.getAsBoolean());
-                        this.field17105 = this.field17103.method4230().method21648(var9.field18048, var9.field18049, var9.field18050, 0);
+                        this.field17105 = this.field17103.method4230().method21648(var9.x, var9.y, var9.z, 0);
                         var7.method21682(var8);
                         if (this.field17105 == null) {
                            return false;

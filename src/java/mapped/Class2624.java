@@ -1,11 +1,14 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.EnumSet;
 
 public class Class2624 extends Class2595 {
    private static String[] field16918;
    private final Class1010 field16919;
-   private Class880 field16920;
+   private LivingEntity field16920;
 
    public Class2624(Class1010 var1) {
       this.field16919 = var1;

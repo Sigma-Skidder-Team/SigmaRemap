@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 
 public interface Class2272 {

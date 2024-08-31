@@ -169,8 +169,8 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
          double var13 = Entity.method3234(var12);
          double var15 = Entity.method3234(var11);
          if (var13 > 0.0 && var15 > 0.0) {
-            double var17 = (var12.field18048 * var11.field18048 + var12.field18050 * var11.field18050) / Math.sqrt(var13 * var15);
-            double var19 = var12.field18048 * var11.field18050 - var12.field18050 * var11.field18048;
+            double var17 = (var12.x * var11.x + var12.z * var11.z) / Math.sqrt(var13 * var15);
+            double var19 = var12.x * var11.z - var12.z * var11.x;
             var2.rotate(Vector3f.YP.method25285((float)(Math.signum(var19) * Math.acos(var17))));
          }
       }

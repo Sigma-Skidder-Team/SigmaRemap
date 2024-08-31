@@ -1,8 +1,16 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.Difficulty;
@@ -11,11 +19,11 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class Class1079 extends Class1009 implements Class1080, Class1022 {
-   private static final DataParameter<Integer> field5923 = EntityDataManager.<Integer>method35441(Class1079.class, Class7784.field33391);
-   private static final DataParameter<Integer> field5924 = EntityDataManager.<Integer>method35441(Class1079.class, Class7784.field33391);
-   private static final DataParameter<Integer> field5925 = EntityDataManager.<Integer>method35441(Class1079.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5923 = EntityDataManager.<Integer>createKey(Class1079.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5924 = EntityDataManager.<Integer>createKey(Class1079.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5925 = EntityDataManager.<Integer>createKey(Class1079.class, DataSerializers.field33391);
    private static final List<DataParameter<Integer>> field5926 = ImmutableList.of(field5923, field5924, field5925);
-   private static final DataParameter<Integer> field5927 = EntityDataManager.<Integer>method35441(Class1079.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5927 = EntityDataManager.<Integer>createKey(Class1079.class, DataSerializers.field33391);
    private final float[] field5928 = new float[2];
    private final float[] field5929 = new float[2];
    private final float[] field5930 = new float[2];
@@ -24,7 +32,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    private final int[] field5933 = new int[2];
    private int field5934;
    private final Class3624 field5935 = (Class3624)new Class3624(this.getDisplayName(), Class2303.field15725, Class2300.field15703).method12281(true);
-   private static final Predicate<Class880> field5936 = var0 -> var0.method3089() != Class7809.field33506 && var0.method3170();
+   private static final Predicate<LivingEntity> field5936 = var0 -> var0.method3089() != Class7809.field33506 && var0.method3170();
    private static final Class8522 field5937 = new Class8522().method30203(20.0).method30209(field5936);
 
    public Class1079(EntityType<? extends Class1079> var1, World var2) {
@@ -76,17 +84,17 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27239;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27242;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27241;
    }
 
@@ -96,24 +104,24 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
       if (!this.world.isRemote && this.method5014(0) > 0) {
          Entity var4 = this.world.method6774(this.method5014(0));
          if (var4 != null) {
-            double var5 = var3.field18049;
+            double var5 = var3.y;
             if (this.getPosY() < var4.getPosY() || !this.method5016() && this.getPosY() < var4.getPosY() + 5.0) {
                var5 = Math.max(0.0, var5);
                var5 += 0.3 - var5 * 0.6F;
             }
 
-            var3 = new Vector3d(var3.field18048, var5, var3.field18050);
+            var3 = new Vector3d(var3.x, var5, var3.z);
             Vector3d var7 = new Vector3d(var4.getPosX() - this.getPosX(), 0.0, var4.getPosZ() - this.getPosZ());
             if (method3234(var7) > 9.0) {
                Vector3d var8 = var7.method11333();
-               var3 = var3.method11339(var8.field18048 * 0.3 - var3.field18048 * 0.6, 0.0, var8.field18050 * 0.3 - var3.field18050 * 0.6);
+               var3 = var3.method11339(var8.x * 0.3 - var3.x * 0.6, 0.0, var8.z * 0.3 - var3.z * 0.6);
             }
          }
       }
 
       this.method3434(var3);
       if (method3234(var3) > 0.05) {
-         this.rotationYaw = (float) MathHelper.method37814(var3.field18050, var3.field18048) * (180.0F / (float)Math.PI) - 90.0F;
+         this.rotationYaw = (float) MathHelper.method37814(var3.z, var3.x) * (180.0F / (float)Math.PI) - 90.0F;
       }
 
       super.method2871();
@@ -218,10 +226,10 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
 
                int var23 = this.method5014(var3);
                if (var23 <= 0) {
-                  List var27 = this.world.<Class880>method7195(Class880.class, field5937, this, this.getBoundingBox().method19663(20.0, 8.0, 20.0));
+                  List var27 = this.world.<LivingEntity>method7195(LivingEntity.class, field5937, this, this.getBoundingBox().method19663(20.0, 8.0, 20.0));
 
                   for (int var29 = 0; var29 < 10 && !var27.isEmpty(); var29++) {
-                     Class880 var31 = (Class880)var27.get(this.rand.nextInt(var27.size()));
+                     LivingEntity var31 = (LivingEntity)var27.get(this.rand.nextInt(var27.size()));
                      if (var31 != this && var31.isAlive() && this.method3135(var31)) {
                         if (!(var31 instanceof PlayerEntity)) {
                            this.method5015(var3, var31.method3205());
@@ -240,7 +248,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
                   } else if (var26 instanceof PlayerEntity && ((PlayerEntity)var26).abilities.field29606) {
                      this.method5015(var3, 0);
                   } else {
-                     this.method5008(var3 + 1, (Class880)var26);
+                     this.method5008(var3 + 1, (LivingEntity)var26);
                      this.field5932[var3 - 1] = this.ticksExisted + 40 + this.rand.nextInt(20);
                      this.field5933[var3 - 1] = 0;
                   }
@@ -367,7 +375,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
       return var1 + var6;
    }
 
-   private void method5008(int var1, Class880 var2) {
+   private void method5008(int var1, LivingEntity var2) {
       this.method5009(
          var1, var2.getPosX(), var2.getPosY() + (double)var2.method3393() * 0.5, var2.getPosZ(), var1 == 0 && this.rand.nextFloat() < 0.001F
       );
@@ -385,7 +393,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
       double var19 = var4 - var13;
       double var21 = var6 - var15;
       Class902 var23 = new Class902(this.world, this, var17, var19, var21);
-      var23.method3459(this);
+      var23.setShooter(this);
       if (var8) {
          var23.method3533(true);
       }
@@ -395,7 +403,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    }
 
    @Override
-   public void method4530(Class880 var1, float var2) {
+   public void method4530(LivingEntity var1, float var2) {
       this.method5008(0, var1);
    }
 
@@ -416,7 +424,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
          }
 
          Entity var7 = var1.method31109();
-         if (var7 != null && !(var7 instanceof PlayerEntity) && var7 instanceof Class880 && ((Class880)var7).method3089() == this.method3089()) {
+         if (var7 != null && !(var7 instanceof PlayerEntity) && var7 instanceof LivingEntity && ((LivingEntity)var7).method3089() == this.method3089()) {
             return false;
          } else {
             if (this.field5934 <= 0) {

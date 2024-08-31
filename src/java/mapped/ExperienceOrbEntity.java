@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Map.Entry;
@@ -115,7 +116,7 @@ public class ExperienceOrbEntity extends Entity {
 
    private void method4174() {
       Vector3d var3 = this.method3433();
-      this.method3435(var3.field18048 * 0.99F, Math.min(var3.field18049 + 5.0E-4F, 0.06F), var3.field18050 * 0.99F);
+      this.method3435(var3.x * 0.99F, Math.min(var3.y + 5.0E-4F, 0.06F), var3.z * 0.99F);
    }
 
    @Override

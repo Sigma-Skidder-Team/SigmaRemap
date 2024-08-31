@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.function.Predicate;
 
 public class Class2720 extends Class2709<PlayerEntity> {
@@ -7,7 +10,7 @@ public class Class2720 extends Class2709<PlayerEntity> {
    public final Class1096 field17206;
 
    public Class2720(Class1096 var1) {
-      super(var1, PlayerEntity.class, 20, true, true, (Predicate<Class880>)null);
+      super(var1, PlayerEntity.class, 20, true, true, (Predicate<LivingEntity>)null);
       this.field17206 = var1;
    }
 

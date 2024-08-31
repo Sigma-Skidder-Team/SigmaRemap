@@ -70,7 +70,7 @@ public class Class2760 extends Class2595 {
             return;
          }
 
-         this.field17319.method4230().method21654(var6.field18048, var6.field18049, var6.field18050, this.field17320);
+         this.field17319.method4230().method21654(var6.x, var6.y, var6.z, this.field17320);
       }
    }
 }

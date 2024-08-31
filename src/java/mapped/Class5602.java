@@ -30,9 +30,9 @@ public class Class5602 implements Packet<Class5116> {
       this.field24873 = var2.method3205();
       this.field24875 = var3;
       Vector3d var6 = var3.method8711(var2);
-      this.field24870 = var6.field18048;
-      this.field24871 = var6.field18049;
-      this.field24872 = var6.field18050;
+      this.field24870 = var6.x;
+      this.field24871 = var6.y;
+      this.field24872 = var6.z;
       this.field24876 = true;
    }
 

@@ -1,9 +1,11 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 import java.util.function.Predicate;
 
-public class Class2770<T extends Class880> extends Class2595 {
+public class Class2770<T extends LivingEntity> extends Class2595 {
    private static String[] field17348;
    public final Class1046 field17349;
    private final double field17350;
@@ -13,15 +15,15 @@ public class Class2770<T extends Class880> extends Class2595 {
    public Class8238 field17354;
    public final Class6990 field17355;
    public final Class<T> field17356;
-   public final Predicate<Class880> field17357;
-   public final Predicate<Class880> field17358;
+   public final Predicate<LivingEntity> field17357;
+   public final Predicate<LivingEntity> field17358;
    private final Class8522 field17359;
 
    public Class2770(Class1046 var1, Class<T> var2, float var3, double var4, double var6) {
       this(var1, var2, var0 -> true, var3, var4, var6, Class8088.field34761::test);
    }
 
-   public Class2770(Class1046 var1, Class<T> var2, Predicate<Class880> var3, float var4, double var5, double var7, Predicate<Class880> var9) {
+   public Class2770(Class1046 var1, Class<T> var2, Predicate<LivingEntity> var3, float var4, double var5, double var7, Predicate<LivingEntity> var9) {
       this.field17349 = var1;
       this.field17356 = var2;
       this.field17357 = var3;
@@ -34,7 +36,7 @@ public class Class2770<T extends Class880> extends Class2595 {
       this.field17359 = new Class8522().method30203((double)var4).method30209(var9.and(var3));
    }
 
-   public Class2770(Class1046 var1, Class<T> var2, float var3, double var4, double var6, Predicate<Class880> var8) {
+   public Class2770(Class1046 var1, Class<T> var2, float var3, double var4, double var6, Predicate<LivingEntity> var8) {
       this(var1, var2, var0 -> true, var3, var4, var6, var8);
    }
 
@@ -54,8 +56,8 @@ public class Class2770<T extends Class880> extends Class2595 {
       if (this.field17352 != null) {
          Vector3d var3 = Class8037.method27590(this.field17349, 16, 7, this.field17352.getPositionVec());
          if (var3 != null) {
-            if (!(this.field17352.method3276(var3.field18048, var3.field18049, var3.field18050) < this.field17352.getDistanceSq(this.field17349))) {
-               this.field17354 = this.field17355.method21648(var3.field18048, var3.field18049, var3.field18050, 0);
+            if (!(this.field17352.method3276(var3.x, var3.y, var3.z) < this.field17352.getDistanceSq(this.field17349))) {
+               this.field17354 = this.field17355.method21648(var3.x, var3.y, var3.z, 0);
                return this.field17354 != null;
             } else {
                return false;

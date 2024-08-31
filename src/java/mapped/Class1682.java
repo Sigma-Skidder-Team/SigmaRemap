@@ -1,7 +1,9 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 
 import javax.annotation.Nullable;
@@ -52,7 +54,7 @@ public interface Class1682 {
    }
 
    default Stream<VoxelShape> method7046(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
-      if (!(var2.method19675() < 1.0E-7)) {
+      if (!(var2.getAverageEdgeLength() < 1.0E-7)) {
          AxisAlignedBB var6 = var2.method19664(1.0E-7);
          return this.method6770(var1, var6, var3.and(var2x -> {
             if (var2x.getBoundingBox().method19670(var6)) {
@@ -115,36 +117,36 @@ public interface Class1682 {
    }
 
    @Nullable
-   default PlayerEntity method7188(Class8522 var1, Class880 var2) {
+   default PlayerEntity method7188(Class8522 var1, LivingEntity var2) {
       return this.<PlayerEntity>method7193(this.method6870(), var1, var2, var2.getPosX(), var2.getPosY(), var2.getPosZ());
    }
 
    @Nullable
-   default PlayerEntity method7189(Class8522 var1, Class880 var2, double var3, double var5, double var7) {
+   default PlayerEntity method7189(Class8522 var1, LivingEntity var2, double var3, double var5, double var7) {
       return this.<PlayerEntity>method7193(this.method6870(), var1, var2, var3, var5, var7);
    }
 
    @Nullable
    default PlayerEntity method7190(Class8522 var1, double var2, double var4, double var6) {
-      return this.<PlayerEntity>method7193(this.method6870(), var1, (Class880)null, var2, var4, var6);
+      return this.<PlayerEntity>method7193(this.method6870(), var1, (LivingEntity)null, var2, var4, var6);
    }
 
    @Nullable
-   default <T extends Class880> T method7191(Class<? extends T> var1, Class8522 var2, Class880 var3, double var4, double var6, double var8, AxisAlignedBB var10) {
+   default <T extends LivingEntity> T method7191(Class<? extends T> var1, Class8522 var2, LivingEntity var3, double var4, double var6, double var8, AxisAlignedBB var10) {
       return this.<T>method7193(this.method6772(var1, var10, (Predicate<? super T>)null), var2, var3, var4, var6, var8);
    }
 
    @Nullable
-   default <T extends Class880> T method7192(Class<? extends T> var1, Class8522 var2, Class880 var3, double var4, double var6, double var8, AxisAlignedBB var10) {
+   default <T extends LivingEntity> T method7192(Class<? extends T> var1, Class8522 var2, LivingEntity var3, double var4, double var6, double var8, AxisAlignedBB var10) {
       return this.<T>method7193(this.method6773(var1, var10, (Predicate<? super T>)null), var2, var3, var4, var6, var8);
    }
 
    @Nullable
-   default <T extends Class880> T method7193(List<? extends T> var1, Class8522 var2, Class880 var3, double var4, double var6, double var8) {
+   default <T extends LivingEntity> T method7193(List<? extends T> var1, Class8522 var2, LivingEntity var3, double var4, double var6, double var8) {
       double var12 = -1.0;
-      Class880 var14 = null;
+      LivingEntity var14 = null;
 
-      for (Class880 var16 : var1) {
+      for (LivingEntity var16 : var1) {
          if (var2.method30210(var3, var16)) {
             double var17 = var16.method3276(var4, var6, var8);
             if (var12 == -1.0 || var17 < var12) {
@@ -157,7 +159,7 @@ public interface Class1682 {
       return (T)var14;
    }
 
-   default List<PlayerEntity> method7194(Class8522 var1, Class880 var2, AxisAlignedBB var3) {
+   default List<PlayerEntity> method7194(Class8522 var1, LivingEntity var2, AxisAlignedBB var3) {
       ArrayList var6 = Lists.newArrayList();
 
       for (PlayerEntity var8 : this.method6870()) {
@@ -169,11 +171,11 @@ public interface Class1682 {
       return var6;
    }
 
-   default <T extends Class880> List<T> method7195(Class<? extends T> var1, Class8522 var2, Class880 var3, AxisAlignedBB var4) {
-      List<Class880> var7 = this.method6772(var1, var4, null);
+   default <T extends LivingEntity> List<T> method7195(Class<? extends T> var1, Class8522 var2, LivingEntity var3, AxisAlignedBB var4) {
+      List<LivingEntity> var7 = this.method6772(var1, var4, null);
       ArrayList var8 = Lists.newArrayList();
 
-      for (Class880 var10 : var7) {
+      for (LivingEntity var10 : var7) {
          if (var2.method30210(var3, var10)) {
             var8.add(var10);
          }

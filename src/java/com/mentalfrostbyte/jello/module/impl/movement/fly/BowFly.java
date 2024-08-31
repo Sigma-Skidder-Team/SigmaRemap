@@ -43,21 +43,21 @@ public class BowFly extends Module {
     @EventTarget
     public void method16179(Class4435 var1) {
         if (this.isEnabled()) {
-            double var4 = var1.method13998().field18049;
-            var1.method13998().field18049 = 0.0;
+            double var4 = var1.method13998().y;
+            var1.method13998().y = 0.0;
             double var6 = var1.method13998().method11348();
-            var1.method13998().field18049 = var4;
+            var1.method13998().y = var4;
             float var8 = Class9567.method37082()[1];
             float var9 = Class9567.method37082()[2];
             float var10 = Class9567.method37082()[0];
             System.out.println(var6);
-            if ((var8 != 0.0F || var9 != 0.0F) && !(var1.method13998().field18049 < -0.5)) {
+            if ((var8 != 0.0F || var9 != 0.0F) && !(var1.method13998().y < -0.5)) {
                 double var11 = Math.cos(Math.toRadians(var10));
                 double var13 = Math.sin(Math.toRadians(var10));
                 var1.method13993((double) var8 * var6 * var11 + (double) var9 * var6 * var13);
                 var1.method13997((double) var8 * var6 * var13 - (double) var9 * var6 * var11);
-                mc.player.method3433().field18048 = var1.method13992();
-                mc.player.method3433().field18049 = var1.method13994();
+                mc.player.method3433().x = var1.method13992();
+                mc.player.method3433().y = var1.method13994();
             } else {
                 var1.method13993(0.0);
                 var1.method13997(0.0);
@@ -98,7 +98,7 @@ public class BowFly extends Module {
                         var5 -= 180.0F;
                     }
 
-                    if (mc.player.method3433().field18049 < -0.1) {
+                    if (mc.player.method3433().y < -0.1) {
                         var6 = 90.0F;
                     }
 
@@ -106,7 +106,7 @@ public class BowFly extends Module {
                     var1.method13918(var5);
                     if (mc.player.onGround && mc.player.collidedVertically) {
                         mc.player.method2914();
-                    } else if (!(mc.player.method3433().field18049 < 0.0)) {
+                    } else if (!(mc.player.method3433().y < 0.0)) {
                         if (mc.timer.timerSpeed == 0.1F) {
                             mc.timer.timerSpeed = 1.0F;
                         }

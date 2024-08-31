@@ -23,7 +23,7 @@ public final class Vector3f {
    }
 
    public Vector3f(Vector3d var1) {
-      this((float)var1.field18048, (float)var1.field18049, (float)var1.field18050);
+      this((float)var1.x, (float)var1.y, (float)var1.z);
    }
 
    @Override

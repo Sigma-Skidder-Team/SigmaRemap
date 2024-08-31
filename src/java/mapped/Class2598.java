@@ -1,11 +1,13 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class2598 extends Class2595 {
    private final Class1006 field16826;
    private final Class1022 field16827;
-   private Class880 field16828;
+   private LivingEntity field16828;
    private int field16829 = -1;
    private final double field16830;
    private int field16831;
@@ -19,7 +21,7 @@ public class Class2598 extends Class2595 {
    }
 
    public Class2598(Class1022 var1, double var2, int var4, int var5, float var6) {
-      if (var1 instanceof Class880) {
+      if (var1 instanceof LivingEntity) {
          this.field16827 = var1;
          this.field16826 = (Class1006)var1;
          this.field16830 = var2;
@@ -35,7 +37,7 @@ public class Class2598 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      Class880 var3 = this.field16826.method4232();
+      LivingEntity var3 = this.field16826.method4232();
       if (var3 != null && var3.isAlive()) {
          this.field16828 = var3;
          return true;

@@ -1,4 +1,6 @@
-package mapped;
+package net.minecraft.network.datasync;
+
+import mapped.Class6466;
 
 public class DataParameter<T> {
    private final int field42712;

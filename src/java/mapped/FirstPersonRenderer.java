@@ -4,6 +4,7 @@ import com.google.common.base.MoreObjects;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4400;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.Objects;
 
@@ -26,7 +27,7 @@ public class FirstPersonRenderer {
       this.field45086 = var1.getItemRenderer();
    }
 
-   public void method37580(Class880 var1, ItemStack var2, Class2327 var3, boolean var4, MatrixStack var5, Class7733 var6, int var7) {
+   public void method37580(LivingEntity var1, ItemStack var2, Class2327 var3, boolean var4, MatrixStack var5, Class7733 var6, int var7) {
       Class7992.method27282(var4);
       if (!var2.isEmpty()) {
          this.field45086.method790(var1, var2, var3, var4, var5, var6, var1.world, var7, Class213.field798);

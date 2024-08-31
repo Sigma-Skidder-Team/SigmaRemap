@@ -2,16 +2,23 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 import java.util.Random;
 
 public class Class1091 extends Class1018 implements Class1008, Class1092 {
-   private static final DataParameter<Boolean> field5976 = EntityDataManager.<Boolean>method35441(Class1091.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5976 = EntityDataManager.<Boolean>createKey(Class1091.class, DataSerializers.field33398);
    private int field5977;
    private int field5978 = 0;
    private boolean field5979 = false;
@@ -54,19 +61,19 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
 
    @Override
    public boolean method3114(Entity var1) {
-      if (var1 instanceof Class880) {
+      if (var1 instanceof LivingEntity) {
          this.field5977 = 10;
          this.world.method6786(this, (byte)4);
          this.method2863(Sounds.field26654, 1.0F, this.method3100());
-         Class9069.method33785(this, (Class880)var1);
-         return Class1092.method5091(this, (Class880)var1);
+         Class9069.method33785(this, (LivingEntity)var1);
+         return Class1092.method5091(this, (LivingEntity)var1);
       } else {
          return false;
       }
    }
 
    @Override
-   public void method3045(Class880 var1) {
+   public void method3045(LivingEntity var1) {
       if (this.method5084()) {
          Class1092.method5092(this, var1);
       }
@@ -76,8 +83,8 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    public boolean method2741(Class8654 var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
       if (!this.world.isRemote) {
-         if (var5 && var1.method31109() instanceof Class880) {
-            Class9069.method33793(this, (Class880)var1.method31109());
+         if (var5 && var1.method31109() instanceof LivingEntity) {
+            Class9069.method33793(this, (LivingEntity)var1.method31109());
          }
 
          return var5;
@@ -291,27 +298,27 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public Class9455 method4241() {
-      return !this.world.isRemote ? Class9069.method33798(this).orElse((Class9455)null) : null;
+   public SoundEvent method4241() {
+      return !this.world.isRemote ? Class9069.method33798(this).orElse((SoundEvent)null) : null;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26657;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26656;
    }
 
    @Override
-   public Class9455 method2859() {
+   public SoundEvent method2859() {
       return Sounds.field26685;
    }
 
    @Override
-   public Class9455 method2860() {
+   public SoundEvent method2860() {
       return Sounds.field26684;
    }
 
@@ -320,7 +327,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
       this.method2863(Sounds.field26659, 0.15F, 1.0F);
    }
 
-   public void method5090(Class9455 var1) {
+   public void method5090(SoundEvent var1) {
       this.method2863(var1, this.method3099(), this.method3100());
    }
 

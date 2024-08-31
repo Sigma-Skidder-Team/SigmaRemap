@@ -3,10 +3,12 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.List;
 import java.util.Random;
 
-public class Class2894<T extends Class880> extends Class2797<T> {
+public class Class2894<T extends LivingEntity> extends Class2797<T> {
    private static String[] field17431;
    private List<Class7219> field17918 = Lists.newArrayList();
    public final Class7219 field17919;

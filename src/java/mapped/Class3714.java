@@ -1,9 +1,11 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.function.Predicate;
 
-public class Class3714<E extends Class880> extends Class3676<E> {
+public class Class3714<E extends LivingEntity> extends Class3676<E> {
    private static String[] field19782;
    private final Predicate<E> field19783;
    private final Class8830<?> field19784;

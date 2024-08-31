@@ -1,11 +1,12 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Optional;
 
-public class Class3751 extends Class3676<Class880> {
+public class Class3751 extends Class3676<LivingEntity> {
    private static String[] field19902;
    private final float field19903;
    private final int field19904;
@@ -20,7 +21,7 @@ public class Class3751 extends Class3676<Class880> {
    }
 
    @Override
-   public boolean method12508(ServerWorld var1, Class880 var2) {
+   public boolean method12508(ServerWorld var1, LivingEntity var2) {
       Optional var5 = var1.method6951()
          .method6670(var0 -> var0 == Class4913.field22766, var0 -> true, var2.getPosition(), this.field19905 + 1, Class2093.field13637);
       if (var5.isPresent() && ((BlockPos)var5.get()).method8317(var2.getPositionVec(), (double)this.field19905)) {
@@ -33,7 +34,7 @@ public class Class3751 extends Class3676<Class880> {
    }
 
    @Override
-   public void method12502(ServerWorld var1, Class880 var2, long var3) {
+   public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       Class6947 var7 = var2.method2992();
       Optional var8 = this.field19906;
       if (!var8.isPresent()) {

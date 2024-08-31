@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -26,11 +27,11 @@ public class Class7865 implements Class7864 {
    }
 
    @Override
-   public boolean method26358(Class880 var1) {
-      if (!(this.field33677 instanceof Class880)) {
+   public boolean method26358(LivingEntity var1) {
+      if (!(this.field33677 instanceof LivingEntity)) {
          return true;
       } else {
-         Optional var4 = var1.method2992().<List<Class880>>method21410(Class8830.field39819);
+         Optional var4 = var1.method2992().<List<LivingEntity>>method21410(Class8830.field39819);
          return this.field33677.isAlive() && var4.isPresent() && ((List)var4.get()).contains(this.field33677);
       }
    }

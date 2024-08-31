@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
 
@@ -129,7 +130,7 @@ public class Class7551 {
       }
 
       Vector3d var16 = var3.method23421(var1, var4);
-      var5.translate(var16.field18048, var16.field18049, var16.field18050);
+      var5.translate(var16.x, var16.y, var16.z);
 
       try {
          if (Class7944.method26921()) {
@@ -541,7 +542,7 @@ public class Class7551 {
       if (Class7944.method26898() && !var12.method29419() && Class7880.method26421(var1, var3, var4)) {
          IBakedModel var27 = Class7880.method26419();
          BlockState var28 = Class7880.method26420();
-         var5.translate(-var14.field18048, -var14.field18049, -var14.field18050);
+         var5.translate(-var14.x, -var14.y, -var14.z);
          this.method24679(var1, var27, var28, var4, var5, var6, var8, var9, var10, var7);
       }
    }

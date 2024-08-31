@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.List;
 
 public class Class2607 extends Class2605 {
@@ -18,7 +21,7 @@ public class Class2607 extends Class2605 {
 
    @Override
    public boolean method10806() {
-      Class880 var3 = this.field16858.method4232();
+      LivingEntity var3 = this.field16858.method4232();
       if (var3 != null) {
          if (!var3.isAlive()) {
             return false;
@@ -55,13 +58,13 @@ public class Class2607 extends Class2605 {
 
    @Override
    public void method10807() {
-      this.field16858.method4233((Class880)null);
+      this.field16858.method4233((LivingEntity)null);
       Class1110.method5352(this.field16858, Class2143.field14028);
    }
 
    @Override
    public void method10805() {
-      Class880 var3 = this.field16858.method4232();
+      LivingEntity var3 = this.field16858.method4232();
       Class1110.method5351(this.field16858, new Vector3d(var3.getPosX(), var3.method3440(0.5), var3.getPosZ()));
       if (!this.field16858.getBoundingBox().method19664(0.2F).method19670(var3.getBoundingBox())) {
          if (this.field16858.collidedHorizontally || this.field16858.field4952 > 0) {

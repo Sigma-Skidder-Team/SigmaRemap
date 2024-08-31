@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 
 public enum Class2271 implements Class2272 {

@@ -1,9 +1,11 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.function.Predicate;
 
-public class Class3724<E extends Class880> extends Class3676<E> {
+public class Class3724<E extends LivingEntity> extends Class3676<E> {
    private static String[] field19810;
    private final Predicate<E> field19811;
    private final int field19812;
@@ -31,7 +33,7 @@ public class Class3724<E extends Class880> extends Class3676<E> {
 
    @Override
    public boolean method12508(ServerWorld var1, E var2) {
-      return this.field19811.test((E)var2) && this.method12623((E)var2).method3213(var2, (double)this.field19812);
+      return this.field19811.test((E)var2) && this.method12623((E)var2).isEntityInRange(var2, (double)this.field19812);
    }
 
    @Override

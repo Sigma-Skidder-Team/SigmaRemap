@@ -114,9 +114,9 @@ public class Class8533 {
          var5 = var0 -> var0;
       } else {
          var5 = var1 -> new Vector3d(
-               this.field38346 != null ? this.field38346 : var1.field18048,
-               this.field38347 != null ? this.field38347 : var1.field18049,
-               this.field38348 != null ? this.field38348 : var1.field18050
+               this.field38346 != null ? this.field38346 : var1.x,
+               this.field38347 != null ? this.field38347 : var1.y,
+               this.field38348 != null ? this.field38348 : var1.z
             );
       }
 

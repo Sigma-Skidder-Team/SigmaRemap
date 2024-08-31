@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.block.BlockState;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;

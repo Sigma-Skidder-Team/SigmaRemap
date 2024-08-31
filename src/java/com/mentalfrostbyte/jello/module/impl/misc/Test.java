@@ -12,7 +12,9 @@ import com.mentalfrostbyte.jello.unmapped.Class6002;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.*;
 
@@ -336,10 +338,10 @@ public class Test extends Module {
             Entity var6 = (Entity) var5.next();
             if (var6 != mc.player) {
                 if (!Client.getInstance().getFriendManager().method26997(var6)) {
-                    if (var6 instanceof Class880) {
-                        if (((Class880) var6).getHealth() != 0.0F) {
+                    if (var6 instanceof LivingEntity) {
+                        if (((LivingEntity) var6).getHealth() != 0.0F) {
                             if (!(mc.player.method3275(var6) > var1)) {
-                                if (mc.player.method3026((Class880) var6)) {
+                                if (mc.player.method3026((LivingEntity) var6)) {
                                     if (!(var6 instanceof ArmorStandEntity) && !(var6 instanceof PlayerEntity)) {
                                         if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
                                             var5.remove();
@@ -388,10 +390,10 @@ public class Test extends Module {
             Entity var7 = (Entity) var6.next();
             if (var7 != mc.player) {
                 if (!Client.getInstance().getFriendManager().method26997(var7)) {
-                    if (var7 instanceof Class880) {
-                        if (((Class880) var7).getHealth() != 0.0F) {
+                    if (var7 instanceof LivingEntity) {
+                        if (((LivingEntity) var7).getHealth() != 0.0F) {
                             if (!(mc.player.method3275(var7) > var1)) {
-                                if (mc.player.method3026((Class880) var7)) {
+                                if (mc.player.method3026((LivingEntity) var7)) {
                                     if (!(var7 instanceof ArmorStandEntity)) {
                                         if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var7)) {
                                             var6.remove();

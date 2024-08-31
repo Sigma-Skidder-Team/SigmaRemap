@@ -6,6 +6,7 @@ import java.util.BitSet;
 import java.util.Random;
 import java.util.function.Function;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 

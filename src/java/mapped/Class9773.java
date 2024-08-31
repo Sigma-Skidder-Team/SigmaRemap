@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.datasync.DataParameter;
+
 public class Class9773<T> {
    private static String[] field45709;
    private final DataParameter<T> field45710;

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 
@@ -11,14 +12,14 @@ public class Class915 extends Entity {
    private boolean field5208;
    private int field5209 = 22;
    private boolean field5210;
-   private Class880 field5211;
+   private LivingEntity field5211;
    private UUID field5212;
 
    public Class915(EntityType<? extends Class915> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class915(World var1, double var2, double var4, double var6, float var8, int var9, Class880 var10) {
+   public Class915(World var1, double var2, double var4, double var6, float var8, int var9, LivingEntity var10) {
       this(EntityType.field41028, var1);
       this.field5207 = var9;
       this.method3581(var10);
@@ -30,17 +31,17 @@ public class Class915 extends Entity {
    public void registerData() {
    }
 
-   public void method3581(Class880 var1) {
+   public void method3581(LivingEntity var1) {
       this.field5211 = var1;
       this.field5212 = var1 != null ? var1.getUniqueID() : null;
    }
 
    @Nullable
-   public Class880 method3582() {
+   public LivingEntity method3582() {
       if (this.field5211 == null && this.field5212 != null && this.world instanceof ServerWorld) {
          Entity var3 = ((ServerWorld)this.world).method6942(this.field5212);
-         if (var3 instanceof Class880) {
-            this.field5211 = (Class880)var3;
+         if (var3 instanceof LivingEntity) {
+            this.field5211 = (LivingEntity)var3;
          }
       }
 
@@ -69,7 +70,7 @@ public class Class915 extends Entity {
       if (!this.world.isRemote) {
          if (--this.field5207 < 0) {
             if (this.field5207 == -8) {
-               for (Class880 var16 : this.world.<Class880>method7182(Class880.class, this.getBoundingBox().method19663(0.2, 0.0, 0.2))) {
+               for (LivingEntity var16 : this.world.<LivingEntity>method7182(LivingEntity.class, this.getBoundingBox().method19663(0.2, 0.0, 0.2))) {
                   this.method3583(var16);
                }
             }
@@ -99,8 +100,8 @@ public class Class915 extends Entity {
       }
    }
 
-   private void method3583(Class880 var1) {
-      Class880 var4 = this.method3582();
+   private void method3583(LivingEntity var1) {
+      LivingEntity var4 = this.method3582();
       if (var1.isAlive() && !var1.method3362() && var1 != var4) {
          if (var4 != null) {
             if (var4.method3345(var1)) {

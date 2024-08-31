@@ -1,6 +1,9 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -14,7 +17,7 @@ public class Class3210 extends Block {
 
    @Override
    public void method11561(World var1, BlockPos var2, Entity var3) {
-      if (!var3.method3249() && var3 instanceof Class880 && !Class7858.method26332((Class880)var3)) {
+      if (!var3.method3249() && var3 instanceof LivingEntity && !Class7858.method26332((LivingEntity)var3)) {
          var3.method2741(Class8654.field38996, 1.0F);
       }
 

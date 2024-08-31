@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
+
 public class Class3338 extends Item {
    private static String[] field18845;
 
@@ -8,7 +12,7 @@ public class Class3338 extends Item {
    }
 
    @Override
-   public ItemStack method11709(ItemStack var1, World var2, Class880 var3) {
+   public ItemStack method11709(ItemStack var1, World var2, LivingEntity var3) {
       ItemStack var6 = super.method11709(var1, var2, var3);
       if (!var2.isRemote) {
          double var7 = var3.getPosX();
@@ -24,7 +28,7 @@ public class Class3338 extends Item {
             }
 
             if (var3.method3168(var14, var16, var18, true)) {
-               Class9455 var20 = !(var3 instanceof Class1095) ? Sounds.field26457 : Sounds.field26598;
+               SoundEvent var20 = !(var3 instanceof Class1095) ? Sounds.field26457 : Sounds.field26598;
                var2.method6743((PlayerEntity)null, var7, var9, var11, var20, Class2266.field14735, 1.0F, 1.0F);
                var3.method2863(var20, 1.0F, 1.0F);
                break;

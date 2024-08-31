@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 
 public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
@@ -37,12 +38,12 @@ public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
             var25 = var22;
          }
 
-         var4.translate(var22.field18048 - var14, (var24.field18049 + var25.field18049) / 2.0 - var16, var22.field18050 - var18);
-         Vector3d var26 = var25.method11339(-var24.field18048, -var24.field18049, -var24.field18050);
+         var4.translate(var22.x - var14, (var24.y + var25.y) / 2.0 - var16, var22.z - var18);
+         Vector3d var26 = var25.method11339(-var24.x, -var24.y, -var24.z);
          if (var26.method11348() != 0.0) {
             var26 = var26.method11333();
-            var2 = (float)(Math.atan2(var26.field18050, var26.field18048) * 180.0 / Math.PI);
-            var23 = (float)(Math.atan(var26.field18049) * 73.0);
+            var2 = (float)(Math.atan2(var26.z, var26.x) * 180.0 / Math.PI);
+            var23 = (float)(Math.atan(var26.y) * 73.0);
          }
       }
 

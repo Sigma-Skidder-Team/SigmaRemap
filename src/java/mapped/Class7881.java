@@ -3,6 +3,9 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -10,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public class Class7881 extends Class7882<Class880> {
+public class Class7881 extends Class7882<LivingEntity> {
    private static String[] field33824;
 
    @Override
@@ -27,7 +30,7 @@ public class Class7881 extends Class7882<Class880> {
    }
 
    @Override
-   public void method26425(ServerWorld var1, Class880 var2) {
+   public void method26425(ServerWorld var1, LivingEntity var2) {
       Class6947<?> var5 = var2.method2992();
       var5.method21408(Class8830.field39870, method26426(var1, var2));
       Optional var6 = Optional.empty();
@@ -41,17 +44,17 @@ public class Class7881 extends Class7882<Class880> {
       ArrayList var14 = Lists.newArrayList();
       ArrayList var15 = Lists.newArrayList();
 
-      for (Class880 var17 : var5.<List<Class880>>method21410(Class8830.field39819).orElse(ImmutableList.of())) {
+      for (LivingEntity var17 : var5.<List<LivingEntity>>method21410(Class8830.field39819).orElse(ImmutableList.of())) {
          if (!(var17 instanceof Class1091)) {
             if (!(var17 instanceof Class1036)) {
                if (!(var17 instanceof Class1034)) {
                   if (!(var17 instanceof PlayerEntity)) {
                      if (var6.isPresent() || !(var17 instanceof Class1084) && !(var17 instanceof Class1079)) {
                         if (!var10.isPresent() && Class4388.method13880(var17.getType())) {
-                           var10 = Optional.<Class880>of(var17);
+                           var10 = Optional.<LivingEntity>of(var17);
                         }
                      } else {
-                        var6 = Optional.<Class880>of((Class1006)var17);
+                        var6 = Optional.<LivingEntity>of((Class1006)var17);
                      }
                   } else {
                      PlayerEntity var22 = (PlayerEntity)var17;
@@ -87,7 +90,7 @@ public class Class7881 extends Class7882<Class880> {
          }
       }
 
-      for (Class880 var20 : var5.<List<Class880>>method21410(Class8830.field39818).orElse(ImmutableList.of())) {
+      for (LivingEntity var20 : var5.<List<LivingEntity>>method21410(Class8830.field39818).orElse(ImmutableList.of())) {
          if (var20 instanceof Class1035 && ((Class1035)var20).method4635()) {
             var15.add((Class1035)var20);
          }
@@ -105,7 +108,7 @@ public class Class7881 extends Class7882<Class880> {
       var5.method21406(Class8830.field39867, var13);
    }
 
-   private static Optional<BlockPos> method26426(ServerWorld var0, Class880 var1) {
+   private static Optional<BlockPos> method26426(ServerWorld var0, LivingEntity var1) {
       return BlockPos.method8357(var1.getPosition(), 8, 4, var1x -> method26427(var0, var1x));
    }
 

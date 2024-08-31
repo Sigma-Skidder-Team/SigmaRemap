@@ -2,7 +2,9 @@ package mapped;
 
 import java.util.Collection;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ChatType;

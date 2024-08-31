@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.io.IOException;
 import java.util.UUID;
 

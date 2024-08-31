@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.List;
 
@@ -65,9 +66,9 @@ public class Class9819 {
 
                         for (Class8472 var9x : var6x) {
                            if (var7 != null) {
-                              var7.positionVec.field18048 = var9x.method29876() + 0.5;
-                              var7.positionVec.field18049 = var9x.method29877();
-                              var7.positionVec.field18050 = var9x.method29878() + 0.5;
+                              var7.positionVec.x = var9x.method29876() + 0.5;
+                              var7.positionVec.y = var9x.method29877();
+                              var7.positionVec.z = var9x.method29878() + 0.5;
                               this.field45880.getConnection().sendPacket(new Class5538(false, false));
                               this.field45880
                                  .getConnection()

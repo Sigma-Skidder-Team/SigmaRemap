@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -51,7 +52,7 @@ public class Class7372 extends Class7361 {
             var6 = this.field31519.method4329(40.0, (double)var4.getY(), 0.0);
          } else {
             Vector3d var7 = new Vector3d(var5.getPosX(), 0.0, var5.getPosZ()).method11333();
-            var6 = this.field31519.method4329(-var7.field18048 * 40.0, 105.0, -var7.field18050 * 40.0);
+            var6 = this.field31519.method4329(-var7.x * 40.0, 105.0, -var7.z * 40.0);
          }
 
          Class7176 var8 = new Class7176(var4.getX(), var4.getY(), var4.getZ());

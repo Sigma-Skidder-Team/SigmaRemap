@@ -5,6 +5,9 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4410;
 import com.mentalfrostbyte.jello.event.impl.Class4433;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.text.TextFormatting;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,11 +15,11 @@ import org.apache.logging.log4j.Logger;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public abstract class Class5712<T extends Class880, M extends Class2827<T>> extends Class5715<T> implements Class5714<T, M> {
+public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> extends Class5715<T> implements Class5714<T, M> {
    private static final Logger field25085 = LogManager.getLogger();
    public M field25086;
    public final List<Class219<T, M>> field25087 = Lists.newArrayList();
-   public Class880 field25088;
+   public LivingEntity field25088;
    public float field25089;
    public float field25090;
    public float field25091;
@@ -58,8 +61,8 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          float var9 = MathHelper.method37827(var3, var1.field4966, var1.field4965);
          float var10 = MathHelper.method37827(var3, var1.field4968, var1.field4967);
          float var11 = var10 - var9;
-         if (this.field25086.field17601 && var1.getRidingEntity() instanceof Class880) {
-            Class880 var12 = (Class880)var1.getRidingEntity();
+         if (this.field25086.field17601 && var1.getRidingEntity() instanceof LivingEntity) {
+            LivingEntity var12 = (LivingEntity)var1.getRidingEntity();
             var9 = MathHelper.method37827(var3, var12.field4966, var12.field4965);
             var11 = var10 - var9;
             float var13 = MathHelper.method37792(var11);
@@ -201,7 +204,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
       }
    }
 
-   public static int method17883(Class880 var0, float var1) {
+   public static int method17883(LivingEntity var0, float var1) {
       return Class213.method730(Class213.method728(var1), Class213.method729(var0.field4952 > 0 || var0.field4955 > 0));
    }
 

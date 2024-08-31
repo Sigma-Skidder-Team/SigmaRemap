@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 import java.util.Random;
 
 public class Class3453 extends Class3452 {

@@ -7,9 +7,16 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -25,7 +32,7 @@ import java.util.function.BiPredicate;
 import java.util.stream.Collectors;
 
 public class Class1042 extends Class1043 implements Class1062, Class1041 {
-   private static final DataParameter<Class7921> field5776 = EntityDataManager.<Class7921>method35441(Class1042.class, Class7784.field33406);
+   private static final DataParameter<Class7921> field5776 = EntityDataManager.<Class7921>createKey(Class1042.class, DataSerializers.field33406);
    public static final Map<Item, Integer> field5777 = ImmutableMap.of(
       Items.field37843, 4, Items.field38053, 1, Items.field38052, 1, Items.field38111, 1
    );
@@ -451,7 +458,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       if (!this.isSleeping()) {
          return !this.method4741() ? Sounds.field27189 : Sounds.field27194;
       } else {
@@ -460,17 +467,17 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27192;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27191;
    }
 
    public void method4694() {
-      Class9455 var3 = this.method4674().method26571().method29460();
+      SoundEvent var3 = this.method4674().method26571().method29460();
       if (var3 != null) {
          this.method2863(var3, this.method3099(), this.method3100());
       }
@@ -507,7 +514,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    @Override
-   public void method3017(Class880 var1) {
+   public void method3017(LivingEntity var1) {
       if (var1 != null && this.world instanceof ServerWorld) {
          ((ServerWorld)this.world).method6959(Class8214.field35287, var1, this);
          if (this.isAlive() && var1 instanceof PlayerEntity) {
@@ -539,7 +546,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    private void method4698(Entity var1) {
       if (this.world instanceof ServerWorld) {
-         Optional var4 = this.field5011.<List<Class880>>method21410(Class8830.field39819);
+         Optional var4 = this.field5011.<List<LivingEntity>>method21410(Class8830.field39819);
          if (var4.isPresent()) {
             ServerWorld var5 = (ServerWorld)this.world;
             ((List)var4.get()).stream().filter(var0 -> var0 instanceof Class1062).forEach(var2 -> var5.method6959(Class8214.field35288, var1, (Class1062)var2));

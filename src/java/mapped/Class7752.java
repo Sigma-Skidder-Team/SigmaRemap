@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.SoundEvent;
+
 import java.util.Optional;
 
 public class Class7752 {
@@ -15,7 +17,7 @@ public class Class7752 {
                Codec.INT.optionalFieldOf("grass_color").forGetter(var0x -> var0x.field33284),
                Class88.field234.optionalFieldOf("grass_color_modifier", Class88.field230).forGetter(var0x -> var0x.field33285),
                Class7737.field33229.optionalFieldOf("particle").forGetter(var0x -> var0x.field33286),
-               Class9455.field43936.optionalFieldOf("ambient_sound").forGetter(var0x -> var0x.field33287),
+               SoundEvent.field43936.optionalFieldOf("ambient_sound").forGetter(var0x -> var0x.field33287),
                Class7959.field34223.optionalFieldOf("mood_sound").forGetter(var0x -> var0x.field33288),
                Class8217.field35292.optionalFieldOf("additions_sound").forGetter(var0x -> var0x.field33289),
                BackgroundMusicSelector.field19366.optionalFieldOf("music").forGetter(var0x -> var0x.field33290)
@@ -30,7 +32,7 @@ public class Class7752 {
    private final Optional<Integer> field33284;
    private final Class88 field33285;
    private final Optional<Class7737> field33286;
-   private final Optional<Class9455> field33287;
+   private final Optional<SoundEvent> field33287;
    private final Optional<Class7959> field33288;
    private final Optional<Class8217> field33289;
    private final Optional<BackgroundMusicSelector> field33290;
@@ -44,7 +46,7 @@ public class Class7752 {
            Optional<Integer> var6,
            Class88 var7,
            Optional<Class7737> var8,
-           Optional<Class9455> var9,
+           Optional<SoundEvent> var9,
            Optional<Class7959> var10,
            Optional<Class8217> var11,
            Optional<BackgroundMusicSelector> var12
@@ -95,7 +97,7 @@ public class Class7752 {
       return this.field33286;
    }
 
-   public Optional<Class9455> method25681() {
+   public Optional<SoundEvent> method25681() {
       return this.field33287;
    }
 

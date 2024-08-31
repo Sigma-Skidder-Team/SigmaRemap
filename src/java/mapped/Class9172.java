@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 
 import java.io.IOException;

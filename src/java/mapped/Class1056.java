@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
 
@@ -16,19 +17,19 @@ public abstract class Class1056 extends Class1046 {
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return null;
    }
 
    @Nullable
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return null;
    }
 
    @Nullable
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return null;
    }
 

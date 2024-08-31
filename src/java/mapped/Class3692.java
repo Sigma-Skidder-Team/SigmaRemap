@@ -1,12 +1,14 @@
 package mapped;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Class3692<E extends Class880> extends Class3676<E> {
+public class Class3692<E extends LivingEntity> extends Class3676<E> {
    private final Set<Class8830<?>> field19720;
    private final Class1956 field19721;
    private final Class2111 field19722;

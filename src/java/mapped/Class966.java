@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.mutable.MutableInt;
@@ -12,7 +14,7 @@ public class Class966 extends TileEntity implements Class935 {
    public int field5416;
    public boolean field5417;
    public Direction field5418;
-   private List<Class880> field5419;
+   private List<LivingEntity> field5419;
    private boolean field5420;
    private int field5421;
 
@@ -82,11 +84,11 @@ public class Class966 extends TileEntity implements Class935 {
       if (this.field5324.method6783() > this.field5415 + 60L || this.field5419 == null) {
          this.field5415 = this.field5324.method6783();
          AxisAlignedBB var4 = new AxisAlignedBB(var3).method19664(48.0);
-         this.field5419 = this.field5324.<Class880>method7182(Class880.class, var4);
+         this.field5419 = this.field5324.<LivingEntity>method7182(LivingEntity.class, var4);
       }
 
       if (!this.field5324.isRemote) {
-         for (Class880 var5 : this.field5419) {
+         for (LivingEntity var5 : this.field5419) {
             if (var5.isAlive() && !var5.removed && var3.method8317(var5.getPositionVec(), 32.0)) {
                var5.method2992().method21406(Class8830.field39840, this.field5324.method6783());
             }
@@ -97,7 +99,7 @@ public class Class966 extends TileEntity implements Class935 {
    private boolean method3993() {
       BlockPos var3 = this.getPos();
 
-      for (Class880 var5 : this.field5419) {
+      for (LivingEntity var5 : this.field5419) {
          if (var5.isAlive() && !var5.removed && var3.method8317(var5.getPositionVec(), 32.0) && var5.getType().method33228(Class8613.field38735)) {
             return true;
          }
@@ -143,14 +145,14 @@ public class Class966 extends TileEntity implements Class935 {
       }
    }
 
-   private boolean method3996(Class880 var1) {
+   private boolean method3996(LivingEntity var1) {
       return var1.isAlive()
          && !var1.removed
          && this.getPos().method8317(var1.getPositionVec(), 48.0)
          && var1.getType().method33228(Class8613.field38735);
    }
 
-   private void method3997(Class880 var1) {
+   private void method3997(LivingEntity var1) {
       var1.method3035(new Class2023(Effects.GLOWING, 60));
    }
 }

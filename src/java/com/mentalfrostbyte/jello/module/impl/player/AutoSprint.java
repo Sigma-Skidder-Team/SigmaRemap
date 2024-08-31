@@ -52,10 +52,10 @@ public class AutoSprint extends Module {
         if (this.isEnabled() && this.getBooleanValueFromSetttingName("Keep Sprint")) {
             if (!var1.method13937()) {
                 if (this.field23605.length == 2) {
-                    double var4 = this.field23605[0] - mc.player.method3433().field18048;
-                    double var6 = this.field23605[1] - mc.player.method3433().field18050;
+                    double var4 = this.field23605[0] - mc.player.method3433().x;
+                    double var6 = this.field23605[1] - mc.player.method3433().z;
                     if (var4 != 0.0 || var6 != 0.0) {
-                        mc.player.method3435(this.field23605[0], mc.player.method3433().field18049, this.field23605[1]);
+                        mc.player.method3435(this.field23605[0], mc.player.method3433().y, this.field23605[1]);
                     }
 
                     if (this.field23606 && !mc.player.method3337()) {
@@ -63,8 +63,8 @@ public class AutoSprint extends Module {
                     }
                 }
             } else {
-                this.field23605[0] = mc.player.method3433().field18048;
-                this.field23605[1] = mc.player.method3433().field18050;
+                this.field23605[0] = mc.player.method3433().x;
+                this.field23605[1] = mc.player.method3433().z;
                 this.field23606 = mc.player.method3337();
             }
         }

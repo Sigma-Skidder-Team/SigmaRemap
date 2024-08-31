@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 import java.util.function.Predicate;
 
 public class Class118 implements Predicate<BlockState> {

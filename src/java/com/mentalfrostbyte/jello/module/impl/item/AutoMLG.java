@@ -143,9 +143,9 @@ public class AutoMLG extends PremiumModule {
     }
 
     private BlockPos method16425() {
-        double var3 = mc.player.method3433().field18048;
-        double var5 = mc.player.method3433().field18049;
-        double var7 = mc.player.method3433().field18050;
+        double var3 = mc.player.method3433().x;
+        double var5 = mc.player.method3433().y;
+        double var7 = mc.player.method3433().z;
         AxisAlignedBB var9 = mc.player.boundingBox.method19662(var3, 0.0, var7).method19667(0.0, var5, 0.0);
         Stream var10 = mc.world.method7055(mc.player, var9);
         Iterator var11 = var10.iterator();
@@ -171,7 +171,7 @@ public class AutoMLG extends PremiumModule {
         if (var12 != null) {
             return var12;
         } else {
-            var5 = mc.player.method3433().field18049 - 1.0;
+            var5 = mc.player.method3433().y - 1.0;
             var9 = mc.player.boundingBox.method19662(var3, 0.0, var7).method19667(0.0, var5, 0.0);
             var10 = mc.world.method7055(mc.player, var9);
             var11 = var10.iterator();

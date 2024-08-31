@@ -37,7 +37,7 @@ public class Class7368 extends Class7361 {
    private void method23371() {
       int var3 = this.field31519.method4328();
       Vector3d var4 = this.field31519.method4334(1.0F);
-      int var5 = this.field31519.method4329(-var4.field18048 * 40.0, 105.0, -var4.field18050 * 40.0);
+      int var5 = this.field31519.method4329(-var4.x * 40.0, 105.0, -var4.z * 40.0);
       if (this.field31519.method4337() != null && this.field31519.method4337().method26125() > 0) {
          var5 %= 12;
          if (var5 < 0) {

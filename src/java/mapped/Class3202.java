@@ -1,7 +1,11 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
@@ -97,7 +101,7 @@ public abstract class Class3202 extends Class3200 {
       var2.method6742(!var4 ? null : var1, var3, this.method11521(var4), Class2266.field14732, 0.3F, !var4 ? 0.5F : 0.6F);
    }
 
-   public abstract Class9455 method11521(boolean var1);
+   public abstract SoundEvent method11521(boolean var1);
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {

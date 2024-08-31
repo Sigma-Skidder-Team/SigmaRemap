@@ -9,7 +9,9 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
@@ -121,9 +123,9 @@ public class InfiniteAura extends Module {
             if (var5 == null) {
                 mc.getConnection().sendPacket(new Class5605(var8.method29876(), var8.method29877(), var8.method29878(), true));
             } else {
-                var5.positionVec.field18048 = var8.method29876() + 0.5;
-                var5.positionVec.field18049 = var8.method29877();
-                var5.positionVec.field18050 = var8.method29878() + 0.5;
+                var5.positionVec.x = var8.method29876() + 0.5;
+                var5.positionVec.y = var8.method29877();
+                var5.positionVec.z = var8.method29878() + 0.5;
                 mc.getConnection().sendPacket(new Class5538(false, false));
                 mc.getConnection().sendPacket(new Class5606(mc.player.rotationYaw, mc.player.rotationPitch, false));
                 mc.getConnection().sendPacket(new Class5471(0.0F, 1.0F, false, false));
@@ -194,10 +196,10 @@ public class InfiniteAura extends Module {
             Entity var8 = ((Class8012) var7.next()).method27397();
             if (var8 != mc.player) {
                 if (!Client.getInstance().getFriendManager().method26997(var8)) {
-                    if (var8 instanceof Class880) {
-                        if (((Class880) var8).getHealth() != 0.0F) {
+                    if (var8 instanceof LivingEntity) {
+                        if (((LivingEntity) var8).getHealth() != 0.0F) {
                             if (!(mc.player.method3275(var8) > var1)) {
-                                if (mc.player.method3026((Class880) var8)) {
+                                if (mc.player.method3026((LivingEntity) var8)) {
                                     if (!(var8 instanceof ArmorStandEntity)) {
                                         if (!this.getBooleanValueFromSetttingName("Players") && var8 instanceof PlayerEntity) {
                                             var7.remove();

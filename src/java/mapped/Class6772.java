@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
+import net.minecraft.block.BlockState;
+
 import java.util.Random;
 
 public class Class6772 extends Class6768<Class8278> {

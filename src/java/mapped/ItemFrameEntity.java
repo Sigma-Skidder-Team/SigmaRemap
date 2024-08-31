@@ -1,8 +1,14 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -12,8 +18,8 @@ import org.apache.logging.log4j.Logger;
 
 public class ItemFrameEntity extends Class995 {
    private static final Logger field5491 = LogManager.getLogger();
-   private static final DataParameter<ItemStack> field5492 = EntityDataManager.<ItemStack>method35441(ItemFrameEntity.class, Class7784.field33396);
-   private static final DataParameter<Integer> field5493 = EntityDataManager.<Integer>method35441(ItemFrameEntity.class, Class7784.field33391);
+   private static final DataParameter<ItemStack> field5492 = EntityDataManager.<ItemStack>createKey(ItemFrameEntity.class, DataSerializers.field33396);
+   private static final DataParameter<Integer> field5493 = EntityDataManager.<Integer>createKey(ItemFrameEntity.class, DataSerializers.field33391);
    private float field5494 = 1.0F;
    private boolean field5495;
 
@@ -158,9 +164,9 @@ public class ItemFrameEntity extends Class995 {
    }
 
    @Override
-   public boolean method3291(double var1) {
+   public boolean isInRangeToRenderDist(double var1) {
       double var5 = 16.0;
-      var5 = var5 * 64.0 * method3377();
+      var5 = var5 * 64.0 * getRenderDistanceWeight();
       return var1 < var5 * var5;
    }
 

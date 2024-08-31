@@ -1,7 +1,10 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -161,7 +164,7 @@ public class Class964 extends TileEntity {
       this.field5395 = var1;
    }
 
-   public void method3939(Class880 var1) {
+   public void method3939(LivingEntity var1) {
       this.field5396 = var1.getName().getString();
    }
 

@@ -1,14 +1,22 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntityPickupStatus;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 
 public class Class886 extends AbstractArrowEntity {
-   private static final DataParameter<Byte> field5111 = EntityDataManager.<Byte>method35441(Class886.class, Class7784.field33390);
-   private static final DataParameter<Boolean> field5112 = EntityDataManager.<Boolean>method35441(Class886.class, Class7784.field33398);
+   private static final DataParameter<Byte> field5111 = EntityDataManager.<Byte>createKey(Class886.class, DataSerializers.field33390);
+   private static final DataParameter<Boolean> field5112 = EntityDataManager.<Boolean>createKey(Class886.class, DataSerializers.field33398);
    private ItemStack field5113 = new ItemStack(Items.field38144);
    private boolean field5114;
    public int field5115;
@@ -17,7 +25,7 @@ public class Class886 extends AbstractArrowEntity {
       super(var1, var2);
    }
 
-   public Class886(World var1, Class880 var2, ItemStack var3) {
+   public Class886(World var1, LivingEntity var2, ItemStack var3) {
       super(EntityType.field41093, var2, var1);
       this.field5113 = var3.copy();
       this.dataManager.method35446(field5111, (byte)Class7858.method26336(var3));
@@ -45,7 +53,7 @@ public class Class886 extends AbstractArrowEntity {
       if ((this.field5114 || this.method3493()) && var3 != null) {
          byte var4 = this.dataManager.<Byte>method35445(field5111);
          if (var4 > 0 && !this.method3495()) {
-            if (!this.world.isRemote && this.field5102 == Class2192.field14332) {
+            if (!this.world.isRemote && this.pickupStatus == AbstractArrowEntityPickupStatus.ALLOWED) {
                this.method3303(this.method3480(), 0.1F);
             }
 
@@ -53,7 +61,7 @@ public class Class886 extends AbstractArrowEntity {
          } else if (var4 > 0) {
             this.method3492(true);
             Vector3d var5 = new Vector3d(var3.getPosX() - this.getPosX(), var3.method3442() - this.getPosY(), var3.getPosZ() - this.getPosZ());
-            this.method3446(this.getPosX(), this.getPosY() + var5.field18049 * 0.015 * (double)var4, this.getPosZ());
+            this.method3446(this.getPosX(), this.getPosY() + var5.y * 0.015 * (double)var4, this.getPosZ());
             if (this.world.isRemote) {
                this.lastTickPosY = this.getPosY();
             }
@@ -95,25 +103,25 @@ public class Class886 extends AbstractArrowEntity {
    public void method3465(EntityRayTraceResult var1) {
       Entity var4 = var1.getEntity();
       float var5 = 8.0F;
-      if (var4 instanceof Class880) {
-         Class880 var6 = (Class880)var4;
+      if (var4 instanceof LivingEntity) {
+         LivingEntity var6 = (LivingEntity)var4;
          var5 += Class7858.method26318(this.field5113, var6.method3089());
       }
 
       Entity var12 = this.method3460();
       Class8654 var7 = Class8654.method31119(this, (Entity)(var12 != null ? var12 : this));
       this.field5114 = true;
-      Class9455 var8 = Sounds.field27148;
+      SoundEvent var8 = Sounds.field27148;
       if (var4.method2741(var7, var5)) {
          if (var4.getType() == EntityType.field41025) {
             return;
          }
 
-         if (var4 instanceof Class880) {
-            Class880 var9 = (Class880)var4;
-            if (var12 instanceof Class880) {
+         if (var4 instanceof LivingEntity) {
+            LivingEntity var9 = (LivingEntity)var4;
+            if (var12 instanceof LivingEntity) {
                Class7858.method26320(var9, var12);
-               Class7858.method26321((Class880)var12, var9);
+               Class7858.method26321((LivingEntity)var12, var9);
             }
 
             this.method3478(var9);
@@ -138,7 +146,7 @@ public class Class886 extends AbstractArrowEntity {
    }
 
    @Override
-   public Class9455 method3476() {
+   public SoundEvent getHitEntitySound() {
       return Sounds.field27149;
    }
 
@@ -171,7 +179,7 @@ public class Class886 extends AbstractArrowEntity {
    @Override
    public void method3474() {
       byte var3 = this.dataManager.<Byte>method35445(field5111);
-      if (this.field5102 != Class2192.field14332 || var3 <= 0) {
+      if (this.pickupStatus != AbstractArrowEntityPickupStatus.ALLOWED || var3 <= 0) {
          super.method3474();
       }
    }

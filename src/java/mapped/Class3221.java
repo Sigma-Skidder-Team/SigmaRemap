@@ -1,6 +1,9 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -72,7 +75,7 @@ public class Class3221 extends Block {
    public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
       if (!var1.isRemote
          && var1.rand.nextFloat() < var4 - 0.5F
-         && var3 instanceof Class880
+         && var3 instanceof LivingEntity
          && (var3 instanceof PlayerEntity || var1.method6789().method17135(Class5462.field24224))
          && var3.method3429() * var3.method3429() * var3.method3430() > 0.512F) {
          method11610(var1.getBlockState(var2), var1, var2);

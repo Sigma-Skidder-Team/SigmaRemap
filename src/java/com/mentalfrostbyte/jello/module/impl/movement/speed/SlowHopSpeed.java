@@ -47,7 +47,7 @@ public class SlowHopSpeed extends Module {
             } else {
                 this.field23599 = 0;
                 mc.player.method2914();
-                var1.method13995(mc.player.method3433().field18049);
+                var1.method13995(mc.player.method3433().y);
             }
         }
     }

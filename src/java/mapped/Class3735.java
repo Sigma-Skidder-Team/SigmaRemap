@@ -112,7 +112,7 @@ public class Class3735 extends Class3676<Class1006> {
 
          Vector3d var10 = Class8037.method27587((Class1046)var1, 10, 7, Vector3d.method11330(var7));
          if (var10 != null) {
-            this.field19851 = var1.method4230().method21648(var10.field18048, var10.field18049, var10.field18050, 0);
+            this.field19851 = var1.method4230().method21648(var10.x, var10.y, var10.z, 0);
             return this.field19851 != null;
          }
       } else {

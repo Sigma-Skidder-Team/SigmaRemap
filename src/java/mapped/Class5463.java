@@ -4,6 +4,7 @@ import java.nio.IntBuffer;
 import java.util.List;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -169,7 +170,7 @@ public class Class5463 {
          Class7649 var11 = new Class7649();
          var8.getProfiler().endStartSection("shadow culling");
          Vector3d var12 = var1.method37504();
-         var11.method25119(var12.field18048, var12.field18049, var12.field18050);
+         var11.method25119(var12.x, var12.y, var12.z);
          Class7414.method23818(7425);
          Class7414.method23711();
          Class7414.method23712(515);
@@ -220,7 +221,7 @@ public class Class5463 {
                      var29 != var1.method37509()
                         || var23
                         || var1.method37511()
-                        || var1.method37509() instanceof Class880 && ((Class880)var1.method37509()).isSleeping()
+                        || var1.method37509() instanceof LivingEntity && ((LivingEntity)var1.method37509()).isSleeping()
                   )
                   && (!(var29 instanceof ClientPlayerEntity) || var1.method37509() == var29)) {
                   var20.field1000 = var29;

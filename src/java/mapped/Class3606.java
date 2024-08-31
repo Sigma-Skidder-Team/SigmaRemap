@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Comparator;
@@ -15,8 +16,8 @@ public class Class3606 implements Comparator<Class8012> {
    public int compare(Class8012 var1, Class8012 var2) {
       Entity var5 = var1.method27397();
       Entity var6 = var2.method27397();
-      float var7 = ((Class880)var5).getHealth();
-      float var8 = ((Class880)var6).getHealth();
+      float var7 = ((LivingEntity)var5).getHealth();
+      float var8 = ((LivingEntity)var6).getHealth();
       if (!(var7 - var8 < 0.0F)) {
          if (var7 - var8 != 0.0F) {
             return 1;

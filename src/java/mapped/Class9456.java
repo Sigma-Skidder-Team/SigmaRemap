@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.Optional;
@@ -87,8 +89,8 @@ public final class Class9456 {
       Vector3d var4 = var0.method3433();
       if (var4.method11349() != 0.0) {
          float var5 = MathHelper.method37766(Entity.method3234(var4));
-         var0.rotationYaw = (float)(MathHelper.method37814(var4.field18050, var4.field18048) * 180.0F / (float)Math.PI) + 90.0F;
-         var0.rotationPitch = (float)(MathHelper.method37814((double)var5, var4.field18049) * 180.0F / (float)Math.PI) - 90.0F;
+         var0.rotationYaw = (float)(MathHelper.method37814(var4.z, var4.x) * 180.0F / (float)Math.PI) + 90.0F;
+         var0.rotationPitch = (float)(MathHelper.method37814((double)var5, var4.y) * 180.0F / (float)Math.PI) - 90.0F;
 
          while (var0.rotationPitch - var0.prevRotationPitch < -180.0F) {
             var0.prevRotationPitch -= 360.0F;
@@ -111,11 +113,11 @@ public final class Class9456 {
       }
    }
 
-   public static Hand method36389(Class880 var0, Item var1) {
+   public static Hand method36389(LivingEntity var0, Item var1) {
       return var0.method3090().getItem() != var1 ? Hand.field183 : Hand.MAIN_HAND;
    }
 
-   public static AbstractArrowEntity method36390(Class880 var0, ItemStack var1, float var2) {
+   public static AbstractArrowEntity method36390(LivingEntity var0, ItemStack var1, float var2) {
       Class3308 var5 = (Class3308)(!(var1.getItem() instanceof Class3308) ? Items.field37797 : var1.getItem());
       AbstractArrowEntity var6 = var5.method11850(var0.world, var1, var0);
       var6.method3490(var0, var2);

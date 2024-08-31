@@ -15,7 +15,7 @@ public class EntitySize {
    }
 
    public AxisAlignedBB method32097(Vector3d var1) {
-      return this.method32098(var1.field18048, var1.field18049, var1.field18050);
+      return this.method32098(var1.x, var1.y, var1.z);
    }
 
    public AxisAlignedBB method32098(double var1, double var3, double var5) {

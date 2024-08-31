@@ -2,6 +2,8 @@ package mapped;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,7 +13,7 @@ public class Class7374 extends Class7361 {
    private int field31554;
    private Class8238 field31555;
    private Vector3d field31556;
-   private Class880 field31557;
+   private LivingEntity field31557;
    private boolean field31558;
 
    public Class7374(Class1007 var1) {
@@ -65,9 +67,9 @@ public class Class7374 extends Class7361 {
             if (this.field31554 >= 5 && var18 >= 0.0F && var18 < 10.0F) {
                double var35 = 1.0;
                Vector3d var19 = this.field31519.method3281(1.0F);
-               double var20 = this.field31519.field5624.getPosX() - var19.field18048 * 1.0;
+               double var20 = this.field31519.field5624.getPosX() - var19.x * 1.0;
                double var22 = this.field31519.field5624.method3440(0.5) + 0.5;
-               double var24 = this.field31519.field5624.getPosZ() - var19.field18050 * 1.0;
+               double var24 = this.field31519.field5624.getPosZ() - var19.z * 1.0;
                double var26 = this.field31557.getPosX() - var20;
                double var28 = this.field31557.method3440(0.5) - var22;
                double var30 = this.field31557.getPosZ() - var24;
@@ -153,7 +155,7 @@ public class Class7374 extends Class7361 {
       this.field31557 = null;
    }
 
-   public void method23381(Class880 var1) {
+   public void method23381(LivingEntity var1) {
       this.field31557 = var1;
       int var4 = this.field31519.method4328();
       int var5 = this.field31519.method4329(this.field31557.getPosX(), this.field31557.getPosY(), this.field31557.getPosZ());

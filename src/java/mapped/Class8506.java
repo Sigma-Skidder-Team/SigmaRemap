@@ -79,7 +79,7 @@ public class Class8506 {
    }
 
    public void method30120(Vector3d var1) {
-      AL10.alSourcefv(this.field37198, 4100, new float[]{(float)var1.field18048, (float)var1.field18049, (float)var1.field18050});
+      AL10.alSourcefv(this.field37198, 4100, new float[]{(float)var1.x, (float)var1.y, (float)var1.z});
    }
 
    public void method30121(float var1) {

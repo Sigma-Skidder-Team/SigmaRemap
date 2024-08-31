@@ -56,14 +56,14 @@ public class NCPLongJump extends Module {
                 if (Step.field23887 > 1) {
                     if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var4) && this.field23477 > 0 && ColorUtils.method17686()) {
                         mc.player.method2914();
-                        var1.method13993(mc.player.method3433().field18048);
-                        var1.method13995(mc.player.method3433().field18049);
-                        var1.method13997(mc.player.method3433().field18050);
+                        var1.method13993(mc.player.method3433().x);
+                        var1.method13995(mc.player.method3433().y);
+                        var1.method13997(mc.player.method3433().z);
                     } else if (this.method16004().getBooleanValueFromSetttingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && ColorUtils.method17686()) {
                         mc.player.method2914();
-                        var1.method13993(mc.player.method3433().field18048);
-                        var1.method13995(mc.player.method3433().field18049);
-                        var1.method13997(mc.player.method3433().field18050);
+                        var1.method13993(mc.player.method3433().x);
+                        var1.method13995(mc.player.method3433().y);
+                        var1.method13997(mc.player.method3433().z);
                     }
                 }
             } else {
@@ -124,7 +124,7 @@ public class NCPLongJump extends Module {
                     }
                 }
 
-                if (this.field23477 == 1 && mc.player.method3433().field18049 < 0.0 && this.method16004().getBooleanValueFromSetttingName("Auto Jump")) {
+                if (this.field23477 == 1 && mc.player.method3433().y < 0.0 && this.method16004().getBooleanValueFromSetttingName("Auto Jump")) {
                     Class9567.method37088(var1, Class9567.method37076() * 0.2);
                 }
             }

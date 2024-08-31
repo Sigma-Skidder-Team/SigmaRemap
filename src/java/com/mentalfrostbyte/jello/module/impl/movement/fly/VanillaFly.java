@@ -141,9 +141,9 @@ public class VanillaFly extends Module {
     }
 
     private double method16920() {
-        if (!(mc.player.getPositionVec().field18049 < 1.0)) {
+        if (!(mc.player.getPositionVec().y < 1.0)) {
             if (!mc.player.onGround) {
-                AxisAlignedBB var3 = mc.player.boundingBox.method19662(0.0, -mc.player.getPositionVec().field18049, 0.0);
+                AxisAlignedBB var3 = mc.player.boundingBox.method19662(0.0, -mc.player.getPositionVec().y, 0.0);
                 Iterator var4 = mc.world.method7055(mc.player, var3).iterator();
                 double var5 = -1.0;
 

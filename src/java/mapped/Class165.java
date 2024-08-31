@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.function.Predicate;
@@ -14,8 +15,8 @@ public class Class165 implements Predicate<Entity> {
 
    public boolean test(Entity var1) {
       if (var1.isAlive()) {
-         if (var1 instanceof Class880) {
-            Class880 var4 = (Class880)var1;
+         if (var1 instanceof LivingEntity) {
+            LivingEntity var4 = (LivingEntity)var1;
             return var4.method2980(this.field533);
          } else {
             return false;

@@ -2,8 +2,10 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -355,15 +357,15 @@ public class Class8969 {
             Vector3d var14 = method32906(var11.field44527, var3, var4, var5);
             Vector3d var15 = var14.method11339((double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
             ListNBT var16 = new ListNBT();
-            var16.add(Class34.method93(var15.field18048));
-            var16.add(Class34.method93(var15.field18049));
-            var16.add(Class34.method93(var15.field18050));
+            var16.add(Class34.method93(var15.x));
+            var16.add(Class34.method93(var15.y));
+            var16.add(Class34.method93(var15.z));
             var13.put("Pos", var16);
             var13.method133("UUID");
             method32903(var1, var13).ifPresent(var6x -> {
                float var9 = var6x.method3403(var3);
                var9 += var6x.rotationYaw - var6x.method3402(var4);
-               var6x.method3273(var15.field18048, var15.field18049, var15.field18050, var9, var6x.rotationPitch);
+               var6x.method3273(var15.x, var15.y, var15.z, var9, var6x.rotationPitch);
                if (var7 && var6x instanceof Class1006) {
                   ((Class1006)var6x).method4276(var1, var1.method6807(new BlockPos(var15)), Class2202.field14394, (Class5093)null, var13);
                }
@@ -423,9 +425,9 @@ public class Class8969 {
    }
 
    public static Vector3d method32906(Vector3d var0, Class2089 var1, Class80 var2, BlockPos var3) {
-      double var6 = var0.field18048;
-      double var8 = var0.field18049;
-      double var10 = var0.field18050;
+      double var6 = var0.x;
+      double var8 = var0.y;
+      double var10 = var0.z;
       boolean var12 = true;
       switch (Class9051.field41437[var1.ordinal()]) {
          case 1:
@@ -595,7 +597,7 @@ public class Class8969 {
 
       for (Class9559 var17 : this.field40546) {
          CompoundNBT var18 = new CompoundNBT();
-         var18.put("pos", this.method32916(var17.field44527.field18048, var17.field44527.field18049, var17.field44527.field18050));
+         var18.put("pos", this.method32916(var17.field44527.x, var17.field44527.y, var17.field44527.z));
          var18.put("blockPos", this.method32915(var17.field44528.getX(), var17.field44528.getY(), var17.field44528.getZ()));
          if (var17.field44529 != null) {
             var18.put("nbt", var17.field44529);

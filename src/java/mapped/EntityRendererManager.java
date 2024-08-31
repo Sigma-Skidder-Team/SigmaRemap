@@ -2,9 +2,11 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.mentalfrostbyte.jello.module.impl.render.FPSBooster;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -295,7 +297,7 @@ public class EntityRendererManager {
             }
          }
 
-         if (var3 instanceof Class880) {
+         if (var3 instanceof LivingEntity) {
             float var8 = 0.01F;
             WorldRenderer.method898(
                var1,
@@ -316,7 +318,7 @@ public class EntityRendererManager {
          Vector3d var26 = var3.method3281(var4);
          Matrix4f var9 = var1.getLast().getMatrix();
          var2.pos(var9, 0.0F, var3.method3393(), 0.0F).color(0, 0, 255, 255).endVertex();
-         var2.pos(var9, (float)(var26.field18048 * 2.0), (float)((double)var3.method3393() + var26.field18049 * 2.0), (float)(var26.field18050 * 2.0))
+         var2.pos(var9, (float)(var26.x * 2.0), (float)((double)var3.method3393() + var26.y * 2.0), (float)(var26.z * 2.0))
             .color(0, 0, 255, 255)
             .endVertex();
       }

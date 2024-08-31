@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.Pose;
+
 // $VF: synthetic class
 public class Class9138 {
    private static String[] field41991;

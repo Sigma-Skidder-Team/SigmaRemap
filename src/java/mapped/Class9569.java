@@ -1,6 +1,8 @@
 package mapped;
 
 import javax.annotation.Nullable;
+
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class9569 {
@@ -30,7 +32,7 @@ public class Class9569 {
    }
 
    public boolean method37103() {
-      return this.field44557.method31109() instanceof Class880;
+      return this.field44557.method31109() instanceof LivingEntity;
    }
 
    @Nullable

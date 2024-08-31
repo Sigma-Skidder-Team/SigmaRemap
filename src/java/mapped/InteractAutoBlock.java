@@ -7,7 +7,9 @@ import com.mentalfrostbyte.jello.module.impl.combat.Teams;
 import com.mentalfrostbyte.jello.module.impl.player.Blink;
 import com.mentalfrostbyte.jello.module.impl.world.Disabler;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.ArrayList;
@@ -161,11 +163,11 @@ public class InteractAutoBlock {
             var24.remove();
          } else if (Client.getInstance().getFriendManager().method26997(var9)) {
             var24.remove();
-         } else if (!(var9 instanceof Class880)) {
+         } else if (!(var9 instanceof LivingEntity)) {
             var24.remove();
-         } else if (((Class880)var9).getHealth() == 0.0F) {
+         } else if (((LivingEntity)var9).getHealth() == 0.0F) {
             var24.remove();
-         } else if (!this.field44347.player.method3026((Class880)var9)) {
+         } else if (!this.field44347.player.method3026((LivingEntity)var9)) {
             var24.remove();
          } else if (var9 instanceof ArmorStandEntity) {
             var24.remove();
@@ -220,12 +222,12 @@ public class InteractAutoBlock {
                         Vector3d var31 = var30.method37538();
                         double var19 = 0.15;
                         AxisAlignedBB var21 = new AxisAlignedBB(
-                           var31.field18048 - var19,
-                           var31.field18049,
-                           var31.field18050 - var19,
-                           var31.field18048 + var19,
-                           var31.field18049 + this.field44347.player.boundingBox.method19677(),
-                           var31.field18050 + var19
+                           var31.x - var19,
+                           var31.y,
+                           var31.z - var19,
+                           var31.x + var19,
+                           var31.y + this.field44347.player.boundingBox.method19677(),
+                           var31.z + var19
                         );
                         double var22 = ColorUtils.method17755(var21);
                         if (var22 < (double)var1) {

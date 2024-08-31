@@ -1,7 +1,11 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -71,7 +75,7 @@ public class Class1029 extends Class1026 {
    }
 
    @Override
-   public Class9455 method4546() {
+   public SoundEvent method4546() {
       return Sounds.field26995;
    }
 
@@ -92,7 +96,7 @@ public class Class1029 extends Class1026 {
 
    @Override
    public boolean method4277() {
-      return !this.method4305() && this.method3407() instanceof Class880;
+      return !this.method4305() && this.method3407() instanceof LivingEntity;
    }
 
    @Nullable
@@ -183,7 +187,7 @@ public class Class1029 extends Class1026 {
    }
 
    @Override
-   public void method3045(Class880 var1) {
+   public void method3045(LivingEntity var1) {
       if (this.field5730 == 0) {
          if (!(this.rand.nextDouble() < 0.5)) {
             this.method4584(var1);
@@ -200,7 +204,7 @@ public class Class1029 extends Class1026 {
 
    private void method4583() {
       if (this.isAlive()) {
-         for (Entity var4 : this.world.<Entity>method6772(Class880.class, this.getBoundingBox().method19664(4.0), field5727)) {
+         for (Entity var4 : this.world.<Entity>method6772(LivingEntity.class, this.getBoundingBox().method19664(4.0), field5727)) {
             if (!(var4 instanceof Class1025)) {
                var4.method2741(Class8654.method31115(this), 6.0F);
             }
@@ -214,7 +218,7 @@ public class Class1029 extends Class1026 {
             double var5 = this.rand.nextGaussian() * 0.2;
             double var7 = this.rand.nextGaussian() * 0.2;
             double var9 = this.rand.nextGaussian() * 0.2;
-            this.world.method6746(Class7940.field34089, var11.field18048, var11.field18049, var11.field18050, var5, var7, var9);
+            this.world.method6746(Class7940.field34089, var11.x, var11.y, var11.z, var5, var7, var9);
          }
       }
    }
@@ -262,17 +266,17 @@ public class Class1029 extends Class1026 {
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26993;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26997;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26996;
    }
 

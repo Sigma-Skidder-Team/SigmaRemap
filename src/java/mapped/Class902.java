@@ -1,19 +1,24 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
 public class Class902 extends Class901 {
    private static String[] field5144;
-   private static final DataParameter<Boolean> field5145 = EntityDataManager.<Boolean>method35441(Class902.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5145 = EntityDataManager.<Boolean>createKey(Class902.class, DataSerializers.field33398);
 
    public Class902(EntityType<? extends Class902> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class902(World var1, Class880 var2, double var3, double var5, double var7) {
+   public Class902(World var1, LivingEntity var2, double var3, double var5, double var7) {
       super(EntityType.field41104, var2, var3, var5, var7, var1);
    }
 
@@ -43,10 +48,10 @@ public class Class902 extends Class901 {
          Entity var4 = var1.getEntity();
          Entity var5 = this.method3460();
          boolean var6;
-         if (!(var5 instanceof Class880)) {
+         if (!(var5 instanceof LivingEntity)) {
             var6 = var4.method2741(Class8654.field39006, 5.0F);
          } else {
-            Class880 var7 = (Class880)var5;
+            LivingEntity var7 = (LivingEntity)var5;
             var6 = var4.method2741(Class8654.method31122(this, var7), 8.0F);
             if (var6) {
                if (!var4.isAlive()) {
@@ -57,7 +62,7 @@ public class Class902 extends Class901 {
             }
          }
 
-         if (var6 && var4 instanceof Class880) {
+         if (var6 && var4 instanceof LivingEntity) {
             byte var8 = 0;
             if (this.world.method6997() != Difficulty.field14353) {
                if (this.world.method6997() == Difficulty.field14354) {
@@ -68,7 +73,7 @@ public class Class902 extends Class901 {
             }
 
             if (var8 > 0) {
-               ((Class880)var4).method3035(new Class2023(Effects.WITHER, 20 * var8, 1));
+               ((LivingEntity)var4).method3035(new Class2023(Effects.WITHER, 20 * var8, 1));
             }
          }
       }

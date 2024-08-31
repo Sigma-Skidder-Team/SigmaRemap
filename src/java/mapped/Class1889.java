@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 
 public enum Class1889 implements Class1884 {
    field11051("limb_swing"),
@@ -73,7 +74,7 @@ public enum Class1889 implements Class1884 {
                case 16:
                   return var4.field25093;
                default:
-                  Class880 var5 = var4.field25088;
+                  LivingEntity var5 = var4.field25088;
                   if (var5 == null) {
                      return 0.0F;
                   }

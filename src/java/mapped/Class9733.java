@@ -12,6 +12,7 @@ import java.util.Optional;
 import java.util.Map.Entry;
 import java.util.function.Supplier;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

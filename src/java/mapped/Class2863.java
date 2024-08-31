@@ -1,8 +1,9 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.LivingEntity;
 
-public class Class2863<T extends Class880> extends Class2855<T> {
+public class Class2863<T extends LivingEntity> extends Class2855<T> {
    private static String[] field17746;
    private final Class7219 field17747;
    private final Class7219 field17748 = new Class7219(this, 22, 0);
@@ -39,9 +40,9 @@ public class Class2863<T extends Class880> extends Class2855<T> {
       } else {
          float var13 = 1.0F;
          Vector3d var14 = var1.method3433();
-         if (var14.field18049 < 0.0) {
+         if (var14.y < 0.0) {
             Vector3d var15 = var14.method11333();
-            var13 = 1.0F - (float)Math.pow(-var15.field18049, 1.5);
+            var13 = 1.0F - (float)Math.pow(-var15.y, 1.5);
          }
 
          var9 = var13 * (float) (Math.PI / 9) + (1.0F - var13) * var9;

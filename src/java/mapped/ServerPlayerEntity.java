@@ -3,8 +3,13 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.authlib.GameProfile;
 import com.mojang.datafixers.util.Either;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.*;
@@ -164,9 +169,9 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       var1.method115("seenCredits", this.field4877);
       if (this.field4882 != null) {
          CompoundNBT var4 = new CompoundNBT();
-         var4.method108("x", this.field4882.field18048);
-         var4.method108("y", this.field4882.field18049);
-         var4.method108("z", this.field4882.field18050);
+         var4.method108("x", this.field4882.x);
+         var4.method108("y", this.field4882.y);
+         var4.method108("z", this.field4882.z);
          var1.put("enteredNetherPosition", var4);
       }
 
@@ -413,7 +418,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       }
 
       this.method2953().method20978(Class9008.field41191, this.method2956(), Class9411::method36049);
-      Class880 var7 = this.method3074();
+      LivingEntity var7 = this.method3074();
       if (var7 != null) {
          this.method2913(Class8876.field40103.method172(var7.getType()));
          var7.method2739(this, this.field4979, var1);
@@ -568,8 +573,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
             var4.getProfiler().startSection("placing");
             this.method3268(var1);
             var1.method6920(this);
-            this.method3214(var8.field45667, var8.field45668);
-            this.method2794(var8.field45665.field18048, var8.field45665.field18049, var8.field45665.field18050);
+            this.setRotation(var8.field45667, var8.field45668);
+            this.method2794(var8.field45665.x, var8.field45665.y, var8.field45665.z);
             var4.getProfiler().endSection();
             this.method2748(var4);
             this.field4857.method33871(var1);
@@ -989,7 +994,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    @Override
    public void method2787(Class2062 var1, Vector3d var2) {
       super.method2787(var1, var2);
-      this.field4855.sendPacket(new Class5602(var1, var2.field18048, var2.field18049, var2.field18050));
+      this.field4855.sendPacket(new Class5602(var1, var2.x, var2.y, var2.z));
    }
 
    public void method2788(Class2062 var1, Entity var2, Class2062 var3) {
@@ -1353,7 +1358,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2834(Class9455 var1, Class2266 var2, float var3, float var4) {
+   public void method2834(SoundEvent var1, Class2266 var2, float var3, float var4) {
       this.field4855.sendPacket(new Class5584(var1, var2, this.getPosX(), this.getPosY(), this.getPosZ(), var3, var4));
    }
 

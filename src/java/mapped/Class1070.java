@@ -2,9 +2,17 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import com.google.common.collect.UnmodifiableIterator;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -16,9 +24,9 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    private static String[] field5902;
    private static final Class120 field5903 = Class120.method339(Items.field37349);
    private static final Class120 field5904 = Class120.method339(Items.field37349, Items.field38065);
-   private static final DataParameter<Integer> field5905 = EntityDataManager.<Integer>method35441(Class1070.class, Class7784.field33391);
-   private static final DataParameter<Boolean> field5906 = EntityDataManager.<Boolean>method35441(Class1070.class, Class7784.field33398);
-   private static final DataParameter<Boolean> field5907 = EntityDataManager.<Boolean>method35441(Class1070.class, Class7784.field33398);
+   private static final DataParameter<Integer> field5905 = EntityDataManager.<Integer>createKey(Class1070.class, DataSerializers.field33391);
+   private static final DataParameter<Boolean> field5906 = EntityDataManager.<Boolean>createKey(Class1070.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5907 = EntityDataManager.<Boolean>createKey(Class1070.class, DataSerializers.field33398);
    private final Class6500 field5908 = new Class6500(this.dataManager, field5905, field5907);
    private Class2680 field5909;
    private Class2747 field5910;
@@ -147,7 +155,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public Vector3d method3420(Class880 var1) {
+   public Vector3d method3420(LivingEntity var1) {
       Vector3d[] var4 = new Vector3d[]{
          method3419((double)this.method3429(), (double)var1.method3429(), var1.rotationYaw),
          method3419((double)this.method3429(), (double)var1.method3429(), var1.rotationYaw - 22.5F),
@@ -161,7 +169,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       Mutable var10 = new Mutable();
 
       for (Vector3d var14 : var4) {
-         var10.method8373(this.getPosX() + var14.field18048, var6, this.getPosZ() + var14.field18050);
+         var10.method8373(this.getPosX() + var14.x, var6, this.getPosZ() + var14.z);
 
          for (double var15 = var6; var15 > var8; var15--) {
             var5.add(var10.method8353());
@@ -283,17 +291,17 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return !this.method4983() && !this.method4984() ? Sounds.field27093 : null;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27097;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27096;
    }
 

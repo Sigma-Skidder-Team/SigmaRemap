@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 
 public class Class262<T extends Class1086> extends Class219<T, Class2870<T>> {

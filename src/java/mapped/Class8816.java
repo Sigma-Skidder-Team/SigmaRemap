@@ -11,19 +11,19 @@ public class Class8816 {
          long var11 = var9 - this.field39663;
          if (var11 != 0L) {
             this.field39663 = var9;
-            if (Math.abs(var1 - this.field39662.field18048) < 0.004
-               && Math.abs(var3 - this.field39662.field18049) < 0.004
-               && Math.abs(var5 - this.field39662.field18050) < 0.004) {
+            if (Math.abs(var1 - this.field39662.x) < 0.004
+               && Math.abs(var3 - this.field39662.y) < 0.004
+               && Math.abs(var5 - this.field39662.z) < 0.004) {
                return this.field39662;
             } else {
                double var13 = (double)var11 * 0.001;
                var13 = Class7944.method26833(var13, 0.0, 1.0);
-               double var15 = var1 - this.field39662.field18048;
-               double var17 = var3 - this.field39662.field18049;
-               double var19 = var5 - this.field39662.field18050;
-               double var21 = this.field39662.field18048 + var15 * var13;
-               double var23 = this.field39662.field18049 + var17 * var13;
-               double var25 = this.field39662.field18050 + var19 * var13;
+               double var15 = var1 - this.field39662.x;
+               double var17 = var3 - this.field39662.y;
+               double var19 = var5 - this.field39662.z;
+               double var21 = this.field39662.x + var15 * var13;
+               double var23 = this.field39662.y + var17 * var13;
+               double var25 = this.field39662.z + var19 * var13;
                this.field39662 = new Vector3d(var21, var23, var25);
                return this.field39662;
             }

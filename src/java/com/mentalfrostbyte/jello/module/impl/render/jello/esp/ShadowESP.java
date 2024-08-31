@@ -9,7 +9,9 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import mapped.*;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import org.lwjgl.opengl.GL11;
 
 public class ShadowESP extends Module {
@@ -165,7 +167,7 @@ public class ShadowESP extends Module {
     }
 
     private boolean method16611(Entity var1) {
-        if (var1 instanceof Class880) {
+        if (var1 instanceof LivingEntity) {
             if (var1 instanceof PlayerEntity) {
                 if (!(var1 instanceof ClientPlayerEntity)) {
                     return !var1.method3342() && !Client.getInstance().getCombatManager().method29346(var1);

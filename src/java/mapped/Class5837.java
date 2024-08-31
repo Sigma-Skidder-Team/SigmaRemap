@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+
 public class Class5837 extends Class5812 {
    private final Class8786 field25564;
    private final Class4923 field25565 = Class4923.method15238();

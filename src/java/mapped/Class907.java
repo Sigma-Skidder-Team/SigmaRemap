@@ -1,8 +1,12 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
@@ -16,7 +20,7 @@ public class Class907 extends Entity {
    private int field5181 = 40;
    private float field5182 = 2.0F;
    public CompoundNBT field5183;
-   public static final DataParameter<BlockPos> field5184 = EntityDataManager.<BlockPos>method35441(Class907.class, Class7784.field33401);
+   public static final DataParameter<BlockPos> field5184 = EntityDataManager.<BlockPos>createKey(Class907.class, DataSerializers.field33401);
 
    public Class907(EntityType<? extends Class907> var1, World var2) {
       super(var1, var2);

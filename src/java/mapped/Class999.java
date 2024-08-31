@@ -4,9 +4,10 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.entity.*;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,10 +17,10 @@ import java.util.Map.Entry;
 
 public class Class999 extends Entity {
    private static final Logger field5497 = LogManager.getLogger();
-   private static final DataParameter<Float> field5498 = EntityDataManager.<Float>method35441(Class999.class, Class7784.field33392);
-   private static final DataParameter<Integer> field5499 = EntityDataManager.<Integer>method35441(Class999.class, Class7784.field33391);
-   private static final DataParameter<Boolean> field5500 = EntityDataManager.<Boolean>method35441(Class999.class, Class7784.field33398);
-   private static final DataParameter<Class7436> field5501 = EntityDataManager.<Class7436>method35441(Class999.class, Class7784.field33399);
+   private static final DataParameter<Float> field5498 = EntityDataManager.<Float>createKey(Class999.class, DataSerializers.field33392);
+   private static final DataParameter<Integer> field5499 = EntityDataManager.<Integer>createKey(Class999.class, DataSerializers.field33391);
+   private static final DataParameter<Boolean> field5500 = EntityDataManager.<Boolean>createKey(Class999.class, DataSerializers.field33398);
+   private static final DataParameter<Class7436> field5501 = EntityDataManager.<Class7436>createKey(Class999.class, DataSerializers.field33399);
    private Class8812 field5502 = Class8137.field34976;
    private final List<Class2023> field5503 = Lists.newArrayList();
    private final Map<Entity, Integer> field5504 = Maps.newHashMap();
@@ -30,7 +31,7 @@ public class Class999 extends Entity {
    private int field5509;
    private float field5510;
    private float field5511;
-   private Class880 field5512;
+   private LivingEntity field5512;
    private UUID field5513;
 
    public Class999(EntityType<? extends Class999> var1, World var2) {
@@ -174,9 +175,9 @@ public class Class999 extends Entity {
 
             var27.addAll(this.field5503);
             if (!var27.isEmpty()) {
-               List<Class880> var30 = this.world.<Class880>method7182(Class880.class, this.getBoundingBox());
+               List<LivingEntity> var30 = this.world.<LivingEntity>method7182(LivingEntity.class, this.getBoundingBox());
                if (!var30.isEmpty()) {
-                  for (Class880 var10 : var30) {
+                  for (LivingEntity var10 : var30) {
                      if (!this.field5504.containsKey(var10) && var10.method3169()) {
                         double var16 = var10.getPosX() - this.getPosX();
                         double var18 = var10.getPosZ() - this.getPosZ();
@@ -296,17 +297,17 @@ public class Class999 extends Entity {
       this.field5506 = var1;
    }
 
-   public void method4113(Class880 var1) {
+   public void method4113(LivingEntity var1) {
       this.field5512 = var1;
       this.field5513 = var1 != null ? var1.getUniqueID() : null;
    }
 
    @Nullable
-   public Class880 method4114() {
+   public LivingEntity method4114() {
       if (this.field5512 == null && this.field5513 != null && this.world instanceof ServerWorld) {
          Entity var3 = ((ServerWorld)this.world).method6942(this.field5513);
-         if (var3 instanceof Class880) {
-            this.field5512 = (Class880)var3;
+         if (var3 instanceof LivingEntity) {
+            this.field5512 = (LivingEntity)var3;
          }
       }
 

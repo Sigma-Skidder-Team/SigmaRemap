@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ComparisonChain;
+import net.minecraft.entity.LivingEntity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -132,7 +133,7 @@ public class Class2023 implements Comparable<Class2023> {
       return this.field13141;
    }
 
-   public boolean method8633(Class880 var1, Runnable var2) {
+   public boolean method8633(LivingEntity var1, Runnable var2) {
       if (this.field13135 > 0) {
          if (this.field13134.method22291(this.field13135, this.field13136)) {
             this.method8635(var1);
@@ -157,7 +158,7 @@ public class Class2023 implements Comparable<Class2023> {
       return --this.field13135;
    }
 
-   public void method8635(Class880 var1) {
+   public void method8635(LivingEntity var1) {
       if (this.field13135 > 0) {
          this.field13134.method22289(var1, this.field13136);
       }

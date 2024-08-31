@@ -153,9 +153,9 @@ public class DebugRenderer {
       Class9624 var15 = var14.gameRenderer.getActiveRenderInfo();
       if (var15.method37510() && var14.getRenderManager().field40020 != null) {
          FontRenderer var16 = var14.fontRenderer;
-         double var17 = var15.method37504().field18048;
-         double var19 = var15.method37504().field18049;
-         double var21 = var15.method37504().field18050;
+         double var17 = var15.method37504().x;
+         double var19 = var15.method37504().y;
+         double var21 = var15.method37504().z;
          RenderSystem.pushMatrix();
          RenderSystem.translatef((float)(var1 - var17), (float)(var3 - var19) + 0.07F, (float)(var5 - var21));
          RenderSystem.method27825(0.0F, 1.0F, 0.0F);

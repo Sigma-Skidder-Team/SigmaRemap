@@ -136,7 +136,7 @@ public class Class8061 {
       for (ServerPlayerEntity var12 : var7) {
          if (var0.method20172()
             .method6940(
-               var12, var1, var6, var2.field18048, var2.field18049, var2.field18050, var5, var3.field18048, var3.field18049, var3.field18050, (double)var4
+               var12, var1, var6, var2.x, var2.y, var2.z, var5, var3.x, var3.y, var3.z, (double)var4
             )) {
             var10++;
          }

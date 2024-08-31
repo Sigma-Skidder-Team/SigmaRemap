@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class2729 extends Class2595 {
@@ -16,7 +18,7 @@ public class Class2729 extends Class2595 {
       if (this.field17239.isSleeping()) {
          return false;
       } else {
-         Class880 var3 = this.field17239.method4232();
+         LivingEntity var3 = this.field17239.method4232();
          return var3 != null
             && var3.isAlive()
             && Class1095.method5169().test(var3)
@@ -35,7 +37,7 @@ public class Class2729 extends Class2595 {
 
    @Override
    public void method10807() {
-      Class880 var3 = this.field17239.method4232();
+      LivingEntity var3 = this.field17239.method4232();
       if (var3 != null && Class1095.method5152(this.field17239, var3)) {
          this.field17239.method5144(true);
          this.field17239.method5143(true);
@@ -49,7 +51,7 @@ public class Class2729 extends Class2595 {
 
    @Override
    public void method10805() {
-      Class880 var3 = this.field17239.method4232();
+      LivingEntity var3 = this.field17239.method4232();
       this.field17239.method4227().method28040(var3, (float)this.field17239.method4260(), (float)this.field17239.method4259());
       if (!(this.field17239.getDistanceSq(var3) <= 36.0)) {
          this.field17239.method4230().method21655(var3, 1.5);

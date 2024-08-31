@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -20,7 +23,7 @@ public class Class2784 extends Class2595 {
    public boolean method10803() {
       if (this.field17401.method4393()) {
          if (!this.field17401.method4402()) {
-            Class880 var3 = this.field17401.method4400();
+            LivingEntity var3 = this.field17401.method4400();
             if (var3 instanceof PlayerEntity) {
                this.field17402 = (PlayerEntity)var3;
                if (!var3.isSleeping()) {

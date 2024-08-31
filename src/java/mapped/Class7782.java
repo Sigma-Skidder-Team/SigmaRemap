@@ -6,7 +6,11 @@ import com.google.common.collect.Sets;
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -171,8 +175,8 @@ public class Class7782 {
                   double var48 = (1.0 - var36) * var46;
                   var35.method2741(this.method25787(), (float)((int)((var48 * var48 + var48) / 2.0 * 7.0 * (double)var53 + 1.0)));
                   double var50 = var48;
-                  if (var35 instanceof Class880) {
-                     var50 = Class6096.method18835((Class880)var35, var48);
+                  if (var35 instanceof LivingEntity) {
+                     var50 = Class6096.method18835((LivingEntity)var35, var48);
                   }
 
                   var35.method3434(var35.method3433().method11339(var38 * var50, var40 * var50, var42 * var50));
@@ -289,20 +293,20 @@ public class Class7782 {
    }
 
    @Nullable
-   public Class880 method25789() {
+   public LivingEntity method25789() {
       if (this.field33377 != null) {
          if (!(this.field33377 instanceof Class1004)) {
-            if (!(this.field33377 instanceof Class880)) {
-               if (this.field33377 instanceof Class882) {
-                  Entity var3 = ((Class882)this.field33377).method3460();
-                  if (var3 instanceof Class880) {
-                     return (Class880)var3;
+            if (!(this.field33377 instanceof LivingEntity)) {
+               if (this.field33377 instanceof ProjectileEntity) {
+                  Entity var3 = ((ProjectileEntity)this.field33377).method3460();
+                  if (var3 instanceof LivingEntity) {
+                     return (LivingEntity)var3;
                   }
                }
 
                return null;
             } else {
-               return (Class880)this.field33377;
+               return (LivingEntity)this.field33377;
             }
          } else {
             return ((Class1004)this.field33377).method4181();

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 
@@ -16,7 +17,7 @@ public class Class903 extends Class901 {
       super(EntityType.field41020, var2, var4, var6, var8, var10, var12, var1);
    }
 
-   public Class903(World var1, Class880 var2, double var3, double var5, double var7) {
+   public Class903(World var1, LivingEntity var2, double var3, double var5, double var7) {
       super(EntityType.field41020, var2, var3, var5, var7, var1);
    }
 
@@ -25,10 +26,10 @@ public class Class903 extends Class901 {
       super.method3464(var1);
       Entity var4 = this.method3460();
       if ((var1.getType() != RayTraceResult.Type.ENTITY || !((EntityRayTraceResult)var1).getEntity().method3359(var4)) && !this.world.isRemote) {
-         List<Class880> var5 = this.world.method7182(Class880.class, this.getBoundingBox().method19663(4.0, 2.0, 4.0));
+         List<LivingEntity> var5 = this.world.method7182(LivingEntity.class, this.getBoundingBox().method19663(4.0, 2.0, 4.0));
          Class999 var6 = new Class999(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
-         if (var4 instanceof Class880) {
-            var6.method4113((Class880)var4);
+         if (var4 instanceof LivingEntity) {
+            var6.method4113((LivingEntity)var4);
          }
 
          var6.method4105(Class7940.field34056);
@@ -37,7 +38,7 @@ public class Class903 extends Class901 {
          var6.method4111((7.0F - var6.method4098()) / (float)var6.method4108());
          var6.method4101(new Class2023(Effects.INSTANT_DAMAGE, 1, 1));
          if (!var5.isEmpty()) {
-            for (Class880 var8 : var5) {
+            for (LivingEntity var8 : var5) {
                double var9 = this.getDistanceSq(var8);
                if (var9 < 16.0) {
                   var6.setPosition(var8.getPosX(), var8.getPosY(), var8.getPosZ());

@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.block.BlockState;
+
 import java.util.Set;
 
 public class Class8326 {

@@ -1,8 +1,11 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.Difficulty;
@@ -13,7 +16,7 @@ import java.util.Optional;
 import java.util.Random;
 
 public class Class1108 extends Class1006 implements Class1008 {
-   private static final DataParameter<Integer> field6081 = EntityDataManager.<Integer>method35441(Class1108.class, Class7784.field33391);
+   private static final DataParameter<Integer> field6081 = EntityDataManager.<Integer>createKey(Class1108.class, DataSerializers.field33391);
    public float field6082;
    public float field6083;
    public float field6084;
@@ -189,7 +192,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    public void method3101(Entity var1) {
       super.method3101(var1);
       if (var1 instanceof Class1058 && this.method5325()) {
-         this.method5324((Class880)var1);
+         this.method5324((LivingEntity)var1);
       }
    }
 
@@ -200,7 +203,7 @@ public class Class1108 extends Class1006 implements Class1008 {
       }
    }
 
-   public void method5324(Class880 var1) {
+   public void method5324(LivingEntity var1) {
       if (this.isAlive()) {
          int var4 = this.method5319();
          if (this.getDistanceSq(var1) < 0.6 * (double)var4 * 0.6 * (double)var4
@@ -226,16 +229,16 @@ public class Class1108 extends Class1006 implements Class1008 {
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return !this.method5320() ? Sounds.field27074 : Sounds.field27103;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return !this.method5320() ? Sounds.field27073 : Sounds.field27102;
    }
 
-   public Class9455 method5327() {
+   public SoundEvent method5327() {
       return !this.method5320() ? Sounds.field27076 : Sounds.field27105;
    }
 
@@ -286,7 +289,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    @Override
    public void method2914() {
       Vector3d var3 = this.method3433();
-      this.method3435(var3.field18048, (double)this.method3103(), var3.field18050);
+      this.method3435(var3.x, (double)this.method3103(), var3.z);
       this.isAirBorne = true;
    }
 
@@ -308,7 +311,7 @@ public class Class1108 extends Class1006 implements Class1008 {
       return ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F) * var3;
    }
 
-   public Class9455 method5331() {
+   public SoundEvent method5331() {
       return !this.method5320() ? Sounds.field27075 : Sounds.field27104;
    }
 

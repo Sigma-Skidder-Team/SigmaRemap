@@ -1,12 +1,14 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.EnumSet;
 
 public class Class2725 extends Class2595 {
    private final Class1013 field17220;
-   private Class880 field17221;
+   private LivingEntity field17221;
    private final Class1662 field17222;
    private final double field17223;
    private final Class6990 field17224;
@@ -32,7 +34,7 @@ public class Class2725 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      Class880 var3 = this.field17220.method4400();
+      LivingEntity var3 = this.field17220.method4400();
       if (var3 != null) {
          if (!var3.isSpectator()) {
             if (!this.field17220.method4402()) {

@@ -4,6 +4,7 @@ import java.util.Locale;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.AbstractOption;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.ControlsScreen;
@@ -261,13 +262,13 @@ public class KeyboardListener {
    private void method36344(ResourceLocation var1, Vector3d var2, CompoundNBT var3) {
       String var6;
       if (var3 == null) {
-         var6 = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f", var1.toString(), var2.field18048, var2.field18049, var2.field18050);
+         var6 = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f", var1.toString(), var2.x, var2.y, var2.z);
       } else {
          var3.method133("UUID");
          var3.method133("Pos");
          var3.method133("Dimension");
          String var7 = var3.method82().getString();
-         var6 = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f %s", var1.toString(), var2.field18048, var2.field18049, var2.field18050, var7);
+         var6 = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f %s", var1.toString(), var2.x, var2.y, var2.z, var7);
       }
 
       this.method36350(var6);

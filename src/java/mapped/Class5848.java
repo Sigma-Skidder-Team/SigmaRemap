@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.entity.player.PlayerEntity;
+
 import javax.annotation.Nullable;
 
 public class Class5848 extends Class5839 {

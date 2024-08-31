@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 public abstract class Class2699 extends Class2595 {
    public final Class1006 field17153;
    public final boolean field17154;
@@ -7,7 +10,7 @@ public abstract class Class2699 extends Class2595 {
    private int field17156;
    private int field17157;
    private int field17158;
-   public Class880 field17159;
+   public LivingEntity field17159;
    public int field17160 = 60;
 
    public Class2699(Class1006 var1, boolean var2) {
@@ -22,7 +25,7 @@ public abstract class Class2699 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      Class880 var3 = this.field17153.method4232();
+      LivingEntity var3 = this.field17153.method4232();
       if (var3 == null) {
          var3 = this.field17159;
       }
@@ -77,11 +80,11 @@ public abstract class Class2699 extends Class2595 {
 
    @Override
    public void method10807() {
-      this.field17153.method4233((Class880)null);
+      this.field17153.method4233((LivingEntity)null);
       this.field17159 = null;
    }
 
-   public boolean method10915(Class880 var1, Class8522 var2) {
+   public boolean method10915(LivingEntity var1, Class8522 var2) {
       if (var1 != null) {
          if (var2.method30210(this.field17153, var1)) {
             if (this.field17153.method4287(var1.getPosition())) {
@@ -111,7 +114,7 @@ public abstract class Class2699 extends Class2595 {
       }
    }
 
-   private boolean method10916(Class880 var1) {
+   private boolean method10916(LivingEntity var1) {
       this.field17157 = 10 + this.field17153.method3013().nextInt(5);
       Class8238 var4 = this.field17153.method4230().method21652(var1, 0);
       if (var4 != null) {

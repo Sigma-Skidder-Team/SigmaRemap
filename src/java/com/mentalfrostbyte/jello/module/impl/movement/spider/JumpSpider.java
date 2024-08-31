@@ -27,15 +27,15 @@ public class JumpSpider extends Module {
         if (!mc.player.collidedHorizontally) {
             this.field23832 = false;
         } else if (!mc.player.onGround) {
-            if (mc.player.getPositionVec().field18049 != (double) ((int) mc.player.getPositionVec().field18049)) {
+            if (mc.player.getPositionVec().y != (double) ((int) mc.player.getPositionVec().y)) {
                 if (var1.method13994() < 0.0
-                        && mc.player.getPositionVec().field18049 + var1.method13994() < (double) ((int) mc.player.getPositionVec().field18049)) {
-                    var1.method13995((double) ((int) mc.player.getPositionVec().field18049) - mc.player.getPositionVec().field18049);
+                        && mc.player.getPositionVec().y + var1.method13994() < (double) ((int) mc.player.getPositionVec().y)) {
+                    var1.method13995((double) ((int) mc.player.getPositionVec().y) - mc.player.getPositionVec().y);
                     this.field23832 = true;
                 }
             } else if (this.getBooleanValueFromSetttingName("AutoJump") || mc.gameSettings.keyBindJump.isKeyDown()) {
                 mc.player.method2914();
-                var1.method13995(mc.player.method3433().field18049);
+                var1.method13995(mc.player.method3433().y);
             } else if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
                 Class9567.method37088(var1, 0.28 + (double) Class9567.method37078() * 0.05);
                 var1.method13995(0.0);
@@ -44,7 +44,7 @@ public class JumpSpider extends Module {
             }
         } else if (this.getBooleanValueFromSetttingName("AutoJump")) {
             mc.player.method2914();
-            var1.method13995(mc.player.method3433().field18049);
+            var1.method13995(mc.player.method3433().y);
         }
 
         ColorUtils.method17725(var1.method13994());
@@ -89,12 +89,12 @@ public class JumpSpider extends Module {
 
                 if (((Direction) var4.method37538()).method544() == Class113.field413) {
                     var1.method13910(
-                            (double) Math.round((((Vector3d) var4.method37539()).field18048 + 1.1921022E-8) * 10000.0) / 10000.0
+                            (double) Math.round((((Vector3d) var4.method37539()).x + 1.1921022E-8) * 10000.0) / 10000.0
                                     + (double) ((Direction) var4.method37538()).method539() * var6
                     );
                 } else {
                     var1.method13914(
-                            (double) Math.round((((Vector3d) var4.method37539()).field18050 + 1.1921022E-8) * 10000.0) / 10000.0
+                            (double) Math.round((((Vector3d) var4.method37539()).z + 1.1921022E-8) * 10000.0) / 10000.0
                                     + (double) ((Direction) var4.method37538()).method541() * var6
                     );
                 }

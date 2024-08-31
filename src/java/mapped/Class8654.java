@@ -2,7 +2,10 @@ package mapped;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -39,15 +42,15 @@ public class Class8654 {
    private boolean field39021;
    public final String field39022;
 
-   public static Class8654 method31114(Class880 var0) {
+   public static Class8654 method31114(LivingEntity var0) {
       return new Class8652("sting", var0);
    }
 
-   public static Class8654 method31115(Class880 var0) {
+   public static Class8654 method31115(LivingEntity var0) {
       return new Class8652("mob", var0);
    }
 
-   public static Class8654 method31116(Entity var0, Class880 var1) {
+   public static Class8654 method31116(Entity var0, LivingEntity var1) {
       return new Class8653("mob", var0, var1);
    }
 
@@ -91,7 +94,7 @@ public class Class8654 {
       return method31127(var0 == null ? null : var0.method25789());
    }
 
-   public static Class8654 method31127(Class880 var0) {
+   public static Class8654 method31127(LivingEntity var0) {
       return var0 == null ? new Class8654("explosion").method31143().method31132() : new Class8652("explosion.player", var0).method31143().method31132();
    }
 
@@ -174,8 +177,8 @@ public class Class8654 {
       return this;
    }
 
-   public ITextComponent method31110(Class880 var1) {
-      Class880 var4 = var1.method3074();
+   public ITextComponent method31110(LivingEntity var1) {
+      LivingEntity var4 = var1.method3074();
       String var5 = "death.attack." + this.field39022;
       String var6 = var5 + ".player";
       return var4 == null ? new TranslationTextComponent(var5, var1.getDisplayName()) : new TranslationTextComponent(var6, var1.getDisplayName(), var4.getDisplayName());

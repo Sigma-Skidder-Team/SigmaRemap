@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -194,20 +195,20 @@ public class Class9651 {
 
       for (Entity var12 : var1) {
          if (var4 != null) {
-            method37647(var0, var12, var2, var8.field18048, var8.field18049, var8.field18050, var10, var9.field37221, var9.field37220, var5);
+            method37647(var0, var12, var2, var8.x, var8.y, var8.z, var10, var9.field37221, var9.field37220, var5);
          } else {
-            method37647(var0, var12, var2, var8.field18048, var8.field18049, var8.field18050, var10, var12.rotationYaw, var12.rotationPitch, var5);
+            method37647(var0, var12, var2, var8.x, var8.y, var8.z, var10, var12.rotationYaw, var12.rotationPitch, var5);
          }
       }
 
       if (var1.size() != 1) {
          var0.method20179(
-            new TranslationTextComponent("commands.teleport.success.location.multiple", var1.size(), var8.field18048, var8.field18049, var8.field18050), true
+            new TranslationTextComponent("commands.teleport.success.location.multiple", var1.size(), var8.x, var8.y, var8.z), true
          );
       } else {
          var0.method20179(
             new TranslationTextComponent(
-               "commands.teleport.success.location.single", ((Entity)var1.iterator().next()).getDisplayName(), var8.field18048, var8.field18049, var8.field18050
+               "commands.teleport.success.location.single", ((Entity)var1.iterator().next()).getDisplayName(), var8.x, var8.y, var8.z
             ),
             true
          );
@@ -263,7 +264,7 @@ public class Class9651 {
             var12.method30092(var0, var1);
          }
 
-         if (!(var1 instanceof Class880) || !((Class880)var1).method3165()) {
+         if (!(var1 instanceof LivingEntity) || !((LivingEntity)var1).method3165()) {
             var1.method3434(var1.method3433().method11347(1.0, 0.0, 1.0));
             var1.method3061(true);
          }

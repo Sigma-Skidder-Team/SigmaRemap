@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mojang.authlib.GameProfile;
 import mapped.*;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 
 public class Freecam extends Module {
@@ -55,15 +56,15 @@ public class Freecam extends Module {
             double var5 = this.field23818 + (this.field23815 - this.field23818) * (double) var1.field21554;
             double var7 = this.field23819 + (this.field23816 - this.field23819) * (double) var1.field21554;
             double var9 = this.field23820 + (this.field23817 - this.field23820) * (double) var1.field21554;
-            mc.player.positionVec.field18048 = var5;
+            mc.player.positionVec.x = var5;
             mc.player.lastTickPosX = var5;
             mc.player.field4914 = var5;
             mc.player.prevPosX = var5;
-            mc.player.positionVec.field18049 = var7;
+            mc.player.positionVec.y = var7;
             mc.player.lastTickPosY = var7;
             mc.player.field4915 = var7;
             mc.player.prevPosY = var7;
-            mc.player.positionVec.field18050 = var9;
+            mc.player.positionVec.z = var9;
             mc.player.lastTickPosZ = var9;
             mc.player.field4916 = var9;
             mc.player.prevPosZ = var9;

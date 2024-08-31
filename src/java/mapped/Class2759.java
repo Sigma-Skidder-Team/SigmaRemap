@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 
 import java.util.EnumSet;
@@ -21,7 +22,7 @@ public class Class2759 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      Class880 var3 = this.field17314.method3014();
+      LivingEntity var3 = this.field17314.method3014();
       return this.field17314.method4551() == null
          && this.field17314.method4579()
          && this.field17314.method4232() != null
@@ -44,7 +45,7 @@ public class Class2759 extends Class2595 {
    @Override
    public void method10807() {
       super.method10807();
-      Class880 var3 = this.field17314.method4232();
+      LivingEntity var3 = this.field17314.method4232();
       if (var3 != null) {
          for (Class1026 var5 : this.field17314
             .world
@@ -59,7 +60,7 @@ public class Class2759 extends Class2595 {
 
    @Override
    public void method10805() {
-      Class880 var3 = this.field17314.method4232();
+      LivingEntity var3 = this.field17314.method4232();
       if (var3 != null) {
          if (!(this.field17314.getDistanceSq(var3) > (double)this.field17315)) {
             this.field17314.method4304(true);

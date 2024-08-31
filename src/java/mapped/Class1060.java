@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
@@ -27,7 +29,7 @@ public interface Class1060 {
 
    boolean method4746();
 
-   Class9455 method4748();
+   SoundEvent method4748();
 
    default boolean method4686() {
       return false;

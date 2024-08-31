@@ -1,8 +1,11 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
@@ -11,8 +14,8 @@ import java.util.Random;
 import java.util.UUID;
 
 public class Class1017 extends Class1018 implements Class1011, Class1016 {
-   private static final DataParameter<Byte> field5684 = EntityDataManager.<Byte>method35441(Class1017.class, Class7784.field33390);
-   private static final DataParameter<Integer> field5685 = EntityDataManager.<Integer>method35441(Class1017.class, Class7784.field33391);
+   private static final DataParameter<Byte> field5684 = EntityDataManager.<Byte>createKey(Class1017.class, DataSerializers.field33390);
+   private static final DataParameter<Integer> field5685 = EntityDataManager.<Integer>createKey(Class1017.class, DataSerializers.field33391);
    private static final Class8369 field5686 = Class8763.method31620(20, 39);
    private UUID field5687;
    private float field5688;
@@ -120,8 +123,8 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       boolean var4 = var1.method2741(Class8654.method31114(this), (float)((int)this.method3086(Attributes.field42110)));
       if (var4) {
          this.method3399(this, var1);
-         if (var1 instanceof Class880) {
-            ((Class880)var1).method3079(((Class880)var1).method3078() + 1);
+         if (var1 instanceof LivingEntity) {
+            ((LivingEntity)var1).method3079(((LivingEntity)var1).method3078() + 1);
             byte var5 = 0;
             if (this.world.method6997() != Difficulty.field14353) {
                if (this.world.method6997() == Difficulty.field14354) {
@@ -132,7 +135,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
             }
 
             if (var5 > 0) {
-               ((Class880)var1).method3035(new Class2023(Effects.POISON, var5 * 20, 0));
+               ((LivingEntity)var1).method3035(new Class2023(Effects.POISON, var5 * 20, 0));
             }
          }
 
@@ -180,7 +183,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       Vector3d var4 = Vector3d.method11330(var1);
       byte var5 = 0;
       BlockPos var6 = this.getPosition();
-      int var7 = (int)var4.field18049 - var6.getY();
+      int var7 = (int)var4.y - var6.getY();
       if (var7 <= 2) {
          if (var7 < -2) {
             var5 = -4;
@@ -200,7 +203,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       Vector3d var11 = Class8037.method27589(this, var8, var9, var5, var4, (float) (Math.PI / 10));
       if (var11 != null) {
          this.field5599.method21642(0.5F);
-         this.field5599.method21654(var11.field18048, var11.field18049, var11.field18050, 1.0);
+         this.field5599.method21654(var11.x, var11.y, var11.z, 1.0);
       }
    }
 
@@ -455,17 +458,17 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return null;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26390;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26389;
    }
 

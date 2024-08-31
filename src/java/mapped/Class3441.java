@@ -1,7 +1,10 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -131,7 +134,7 @@ public class Class3441 extends Block {
       if (var2 instanceof Class1088 || var2 instanceof Class1114) {
          return false;
       } else {
-         return !(var2 instanceof Class880) ? false : var2 instanceof PlayerEntity || var1.method6789().method17135(Class5462.field24224);
+         return !(var2 instanceof LivingEntity) ? false : var2 instanceof PlayerEntity || var1.method6789().method17135(Class5462.field24224);
       }
    }
 }

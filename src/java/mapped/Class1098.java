@@ -2,10 +2,13 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.client.util.Util;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
 import java.util.Map;
@@ -13,10 +16,10 @@ import java.util.function.Predicate;
 
 public class Class1098 extends Class1013 {
    private static final Class120 field6036 = Class120.method339(Items.field37909, Items.field37910);
-   private static final DataParameter<Integer> field6037 = EntityDataManager.<Integer>method35441(Class1098.class, Class7784.field33391);
-   private static final DataParameter<Boolean> field6038 = EntityDataManager.<Boolean>method35441(Class1098.class, Class7784.field33398);
-   private static final DataParameter<Boolean> field6039 = EntityDataManager.<Boolean>method35441(Class1098.class, Class7784.field33398);
-   private static final DataParameter<Integer> field6040 = EntityDataManager.<Integer>method35441(Class1098.class, Class7784.field33391);
+   private static final DataParameter<Integer> field6037 = EntityDataManager.<Integer>createKey(Class1098.class, DataSerializers.field33391);
+   private static final DataParameter<Boolean> field6038 = EntityDataManager.<Boolean>createKey(Class1098.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field6039 = EntityDataManager.<Boolean>createKey(Class1098.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> field6040 = EntityDataManager.<Integer>createKey(Class1098.class, DataSerializers.field33391);
    public static final Map<Integer, ResourceLocation> field6041 = Util.<Map<Integer, ResourceLocation>>make(Maps.newHashMap(), var0 -> {
       var0.put(0, new ResourceLocation("textures/entity/cat/tabby.png"));
       var0.put(1, new ResourceLocation("textures/entity/cat/black.png"));
@@ -62,7 +65,7 @@ public class Class1098 extends Class1013 {
       this.field5600.method20002(10, new Class2785(this, 0.8));
       this.field5600.method20002(11, new Class2737(this, 0.8, 1.0000001E-5F));
       this.field5600.method20002(12, new Class2612(this, PlayerEntity.class, 10.0F));
-      this.field5601.method20002(1, new Class2716<Class1094>(this, Class1094.class, false, (Predicate<Class880>)null));
+      this.field5601.method20002(1, new Class2716<Class1094>(this, Class1094.class, false, (Predicate<LivingEntity>)null));
       this.field5601.method20002(1, new Class2716<Class1088>(this, Class1088.class, false, Class1088.field5963));
    }
 
@@ -151,7 +154,7 @@ public class Class1098 extends Class1013 {
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       if (!this.method4393()) {
          return Sounds.field26434;
       } else if (!this.method4507()) {
@@ -171,12 +174,12 @@ public class Class1098 extends Class1013 {
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26439;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26435;
    }
 

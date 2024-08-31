@@ -1,8 +1,8 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.entity.*;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
 
@@ -21,22 +21,22 @@ public class Class1084 extends Class1082 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27244;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27246;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27245;
    }
 
    @Override
-   public Class9455 method5030() {
+   public SoundEvent method5030() {
       return Sounds.field27247;
    }
 
@@ -79,8 +79,8 @@ public class Class1084 extends Class1082 {
    @Override
    public boolean method3114(Entity var1) {
       if (super.method3114(var1)) {
-         if (var1 instanceof Class880) {
-            ((Class880)var1).method3035(new Class2023(Effects.WITHER, 200));
+         if (var1 instanceof LivingEntity) {
+            ((LivingEntity)var1).method3035(new Class2023(Effects.WITHER, 200));
          }
 
          return true;

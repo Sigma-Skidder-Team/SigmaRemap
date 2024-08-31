@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 
 public class Class885 extends AbstractArrowEntity {
    private int field5110 = 200;
@@ -9,7 +11,7 @@ public class Class885 extends AbstractArrowEntity {
       super(var1, var2);
    }
 
-   public Class885(World var1, Class880 var2) {
+   public Class885(World var1, LivingEntity var2) {
       super(EntityType.field41084, var2, var1);
    }
 
@@ -31,7 +33,7 @@ public class Class885 extends AbstractArrowEntity {
    }
 
    @Override
-   public void method3478(Class880 var1) {
+   public void method3478(LivingEntity var1) {
       super.method3478(var1);
       Class2023 var4 = new Class2023(Effects.GLOWING, this.field5110, 0);
       var1.method3035(var4);

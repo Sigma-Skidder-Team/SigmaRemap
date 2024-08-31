@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.*;
 import javax.imageio.ImageIO;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -842,9 +843,9 @@ public class Class9680 {
          float var14 = (float)var11 / 255.0F;
          float var15 = (float)var12 / 255.0F;
          float var16 = (float)var13 / 255.0F;
-         float var17 = (float)var0.field18048 / 0.5F;
-         float var18 = (float)var0.field18049 / 0.66275F;
-         float var19 = (float)var0.field18050;
+         float var17 = (float)var0.x / 0.5F;
+         float var18 = (float)var0.y / 0.66275F;
+         float var19 = (float)var0.z;
          var14 *= var17;
          var15 *= var18;
          var16 *= var19;
@@ -863,9 +864,9 @@ public class Class9680 {
          float var14 = (float)var11 / 255.0F;
          float var15 = (float)var12 / 255.0F;
          float var16 = (float)var13 / 255.0F;
-         float var17 = (float)var0.field18048 / 0.753F;
-         float var18 = (float)var0.field18049 / 0.8471F;
-         float var19 = (float)var0.field18050;
+         float var17 = (float)var0.x / 0.753F;
+         float var18 = (float)var0.y / 0.8471F;
+         float var19 = (float)var0.z;
          var14 *= var17;
          var15 *= var18;
          var16 *= var19;

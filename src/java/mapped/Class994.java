@@ -1,11 +1,16 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
 public class Class994 extends AbstractMinecartEntity {
-   private static final DataParameter<Boolean> field5481 = EntityDataManager.<Boolean>method35441(Class994.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5481 = EntityDataManager.<Boolean>createKey(Class994.class, DataSerializers.field33398);
    private int field5482;
    public double field5483;
    public double field5484;
@@ -75,8 +80,8 @@ public class Class994 extends AbstractMinecartEntity {
       if (var12 > 1.0E-4 && var10 > 0.001) {
          double var14 = (double) MathHelper.method37766(var10);
          double var16 = (double) MathHelper.method37766(var12);
-         this.field5483 = var9.field18048 / var14 * var16;
-         this.field5484 = var9.field18050 / var14 * var16;
+         this.field5483 = var9.x / var14 * var16;
+         this.field5484 = var9.z / var14 * var16;
       }
    }
 

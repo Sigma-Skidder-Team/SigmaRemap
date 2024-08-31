@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.Comparator;
 import java.util.List;
@@ -42,7 +44,7 @@ public class Class2690 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      Class880 var3 = this.field17122.method4232();
+      LivingEntity var3 = this.field17122.method4232();
       return var3 == null ? false : this.field17122.method3027(var3, Class8522.field38240);
    }
 }

@@ -1,8 +1,9 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 
-public class Class242<T extends Class880, M extends Class2827<T> & Class2825> extends Class219<T, M> {
+public class Class242<T extends LivingEntity, M extends Class2827<T> & Class2825> extends Class219<T, M> {
    private static String[] field897;
 
    public Class242(Class5714<T, M> var1) {
@@ -27,7 +28,7 @@ public class Class242<T extends Class880, M extends Class2827<T> & Class2825> ex
       }
    }
 
-   private void method838(Class880 var1, ItemStack var2, Class2327 var3, Class2205 var4, MatrixStack var5, Class7733 var6, int var7) {
+   private void method838(LivingEntity var1, ItemStack var2, Class2327 var3, Class2205 var4, MatrixStack var5, Class7733 var6, int var7) {
       if (!var2.isEmpty()) {
          var5.push();
          this.method825().method11010(var4, var5);

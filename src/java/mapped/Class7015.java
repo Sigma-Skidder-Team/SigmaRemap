@@ -3,6 +3,7 @@ package mapped;
 import javax.annotation.Nullable;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -95,7 +96,7 @@ public class Class7015 implements Class7016 {
             return;
          }
 
-         var5.method3273(var4.field18048, var4.field18049, var4.field18050, var1.rand.nextFloat() * 360.0F, 0.0F);
+         var5.method3273(var4.x, var4.y, var4.z, var1.rand.nextFloat() * 360.0F, 0.0F);
          var1.method6995(var5);
       }
    }

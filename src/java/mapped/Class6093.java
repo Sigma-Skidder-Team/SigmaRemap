@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Random;
@@ -33,7 +34,7 @@ public class Class6093 extends Class6069 {
    }
 
    @Override
-   public void method18823(Class880 var1, Entity var2, int var3) {
+   public void method18823(LivingEntity var1, Entity var2, int var3) {
       Random var6 = var1.method3013();
       Entry var7 = Class7858.method26339(Class8122.field34903, var1);
       if (method18830(var3, var6)) {

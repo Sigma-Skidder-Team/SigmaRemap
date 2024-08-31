@@ -14,6 +14,8 @@ import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import org.lwjgl.opengl.GL11;
 
 import java.util.List;
@@ -63,7 +65,7 @@ public class RearView extends PremiumModule {
         }
     }
 
-    public boolean method16448(Class880 var1) {
+    public boolean method16448(LivingEntity var1) {
         float var4 = Class9142.method34138(var1, mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ())[0];
         return this.method16449(mc.player.rotationYaw, var4) <= 90.0F;
     }

@@ -3,9 +3,11 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.Collection;
 
-public final class Class6971<E extends Class880> {
+public final class Class6971<E extends LivingEntity> {
    private static String[] field30180;
    private final Collection<? extends Class8830<?>> field30181;
    private final Collection<? extends Class7963<? extends Class7882<? super E>>> field30182;

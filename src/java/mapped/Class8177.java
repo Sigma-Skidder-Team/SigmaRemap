@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 public final class Class8177 implements Class8176 {
@@ -9,7 +10,7 @@ public final class Class8177 implements Class8176 {
    private long field35171;
 
    @Override
-   public float method28467(ItemStack var1, ClientWorld var2, Class880 var3) {
+   public float method28467(ItemStack var1, ClientWorld var2, LivingEntity var3) {
       Object var6 = var3 == null ? var1.method32168() : var3;
       if (var6 != null) {
          if (var2 == null && ((Entity)var6).world instanceof ClientWorld) {

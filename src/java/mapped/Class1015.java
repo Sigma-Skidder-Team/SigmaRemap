@@ -3,11 +3,18 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
@@ -16,13 +23,13 @@ import java.util.*;
 import java.util.function.Predicate;
 
 public class Class1015 extends Class1014 implements Class1016 {
-   private static final DataParameter<Integer> field5672 = EntityDataManager.<Integer>method35441(Class1015.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5672 = EntityDataManager.<Integer>createKey(Class1015.class, DataSerializers.field33391);
    private static final Predicate<Class1006> field5673 = new Class119();
    private static final Item field5674 = Items.field37954;
    private static final Set<Item> field5675 = Sets.newHashSet(
       new Item[]{Items.field37841, Items.field37960, Items.field37959, Items.field38112}
    );
-   private static final Map<EntityType<?>, Class9455> field5676 = Util.<Map<EntityType<?>, Class9455>>make(Maps.newHashMap(), var0 -> {
+   private static final Map<EntityType<?>, SoundEvent> field5676 = Util.<Map<EntityType<?>, SoundEvent>>make(Maps.newHashMap(), var0 -> {
       var0.put(EntityType.field41010, Sounds.field26885);
       var0.put(EntityType.field41013, Sounds.field26907);
       var0.put(EntityType.field41017, Sounds.field26886);
@@ -157,7 +164,7 @@ public class Class1015 extends Class1014 implements Class1016 {
 
       this.field5681 = (float)((double)this.field5681 * 0.9);
       Vector3d var3 = this.method3433();
-      if (!this.onGround && var3.field18049 < 0.0) {
+      if (!this.onGround && var3.y < 0.0) {
          this.method3434(var3.method11347(1.0, 0.6, 1.0));
       }
 
@@ -170,7 +177,7 @@ public class Class1015 extends Class1014 implements Class1016 {
          if (!var4.isEmpty()) {
             Class1006 var5 = (Class1006)var4.get(var0.rand.nextInt(var4.size()));
             if (!var5.method3245()) {
-               Class9455 var6 = method4412(var5.getType());
+               SoundEvent var6 = method4412(var5.getType());
                var0.method6743(
                   (PlayerEntity)null, var1.getPosX(), var1.getPosY(), var1.getPosZ(), var6, var1.method2864(), 0.7F, method4413(var0.rand)
                );
@@ -283,11 +290,11 @@ public class Class1015 extends Class1014 implements Class1016 {
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return method4411(this.world, this.world.rand);
    }
 
-   public static Class9455 method4411(World var0, Random var1) {
+   public static SoundEvent method4411(World var0, Random var1) {
       if (var0.method6997() != Difficulty.field14351 && var1.nextInt(1000) == 0) {
          ArrayList var4 = Lists.newArrayList(field5676.keySet());
          return method4412((EntityType<?>)var4.get(var1.nextInt(var4.size())));
@@ -296,17 +303,17 @@ public class Class1015 extends Class1014 implements Class1016 {
       }
    }
 
-   private static Class9455 method4412(EntityType<?> var0) {
+   private static SoundEvent method4412(EntityType<?> var0) {
       return field5676.getOrDefault(var0, Sounds.field26880);
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26884;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26881;
    }
 

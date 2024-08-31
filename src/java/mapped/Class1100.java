@@ -1,13 +1,18 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 import java.util.Random;
 
 public class Class1100 extends Class1009 {
-   public static final DataParameter<Byte> field6051 = EntityDataManager.<Byte>method35441(Class1100.class, Class7784.field33390);
+   public static final DataParameter<Byte> field6051 = EntityDataManager.<Byte>createKey(Class1100.class, DataSerializers.field33390);
    private Class1006 field6052;
    private BlockPos field6053;
    private boolean field6054;
@@ -133,17 +138,17 @@ public class Class1100 extends Class1009 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27185;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27187;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27188;
    }
 

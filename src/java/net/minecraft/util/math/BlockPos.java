@@ -43,7 +43,7 @@ public class BlockPos extends Class1998 {
    }
 
    public BlockPos(Vector3d var1) {
-      this(var1.field18048, var1.field18049, var1.field18050);
+      this(var1.x, var1.y, var1.z);
    }
 
    public BlockPos(Class2955 var1) {

@@ -3,6 +3,11 @@ package mapped;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntityPickupStatus;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 public class Class3272 extends Item implements Class3260 {
@@ -32,7 +37,7 @@ public class Class3272 extends Item implements Class3260 {
    }
 
    @Override
-   public void method11729(ItemStack var1, World var2, Class880 var3, int var4) {
+   public void method11729(ItemStack var1, World var2, LivingEntity var3, int var4) {
       if (var3 instanceof PlayerEntity) {
          PlayerEntity var7 = (PlayerEntity)var3;
          int var8 = this.method11728(var1) - var4;
@@ -45,7 +50,7 @@ public class Class3272 extends Item implements Class3260 {
                      Class886 var10 = new Class886(var2, var7, var1);
                      var10.method3463(var7, var7.rotationPitch, var7.rotationYaw, 0.0F, 2.5F + (float)var9 * 0.5F, 1.0F);
                      if (var7.abilities.isCreativeMode) {
-                        var10.field5102 = Class2192.field14333;
+                        var10.pickupStatus = AbstractArrowEntityPickupStatus.field14333;
                      }
 
                      var2.method6916(var10);
@@ -75,7 +80,7 @@ public class Class3272 extends Item implements Class3260 {
                      var7.move(Class2107.field13742, new Vector3d(0.0, 1.1999999F, 0.0));
                   }
 
-                  Class9455 var22;
+                  SoundEvent var22;
                   if (var9 < 3) {
                      if (var9 != 2) {
                         var22 = Sounds.field27151;
@@ -109,13 +114,13 @@ public class Class3272 extends Item implements Class3260 {
    }
 
    @Override
-   public boolean method11713(ItemStack var1, Class880 var2, Class880 var3) {
+   public boolean method11713(ItemStack var1, LivingEntity var2, LivingEntity var3) {
       var1.method32121(1, var3, var0 -> var0.method3184(Class2106.field13731));
       return true;
    }
 
    @Override
-   public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, Class880 var5) {
+   public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, LivingEntity var5) {
       if ((double)var3.method23405(var2, var4) != 0.0) {
          var1.method32121(2, var5, var0 -> var0.method3184(Class2106.field13731));
       }

@@ -34,7 +34,7 @@ public class HawkFly extends Module {
     @Override
     public void onDisable() {
         Class9567.method37090(0.0);
-        if (mc.player.method3433().field18049 > 0.0) {
+        if (mc.player.method3433().y > 0.0) {
             ColorUtils.method17725(-0.0789);
         }
     }
@@ -97,15 +97,15 @@ public class HawkFly extends Module {
             double var4 = this.field23426;
             double var6 = this.field23425;
             double var8 = this.field23427;
-            mc.player.positionVec.field18049 = var4;
+            mc.player.positionVec.y = var4;
             mc.player.lastTickPosY = var4;
             mc.player.field4915 = var4;
             mc.player.prevPosY = var4;
-            mc.player.positionVec.field18048 = var6;
+            mc.player.positionVec.x = var6;
             mc.player.lastTickPosX = var6;
             mc.player.field4914 = var6;
             mc.player.prevPosX = var6;
-            mc.player.positionVec.field18050 = var8;
+            mc.player.positionVec.z = var8;
             mc.player.lastTickPosZ = var8;
             mc.player.field4916 = var8;
             mc.player.prevPosZ = var8;

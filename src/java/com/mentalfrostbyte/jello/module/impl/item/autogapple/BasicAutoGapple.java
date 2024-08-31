@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
 import mapped.*;
+import net.minecraft.network.datasync.DataParameter;
 
 public class BasicAutoGapple extends Module {
     private int field23549 = -1;

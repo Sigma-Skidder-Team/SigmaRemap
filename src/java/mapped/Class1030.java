@@ -1,8 +1,11 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.Difficulty;
 
@@ -81,7 +84,7 @@ public class Class1030 extends Class1025 {
    }
 
    @Override
-   public Class9455 method4546() {
+   public SoundEvent method4546() {
       return Sounds.field27210;
    }
 
@@ -107,7 +110,7 @@ public class Class1030 extends Class1025 {
       if (super.method3345(var1)) {
          return true;
       } else {
-         return var1 instanceof Class880 && ((Class880)var1).method3089() == Class7809.field33508
+         return var1 instanceof LivingEntity && ((LivingEntity)var1).method3089() == Class7809.field33508
             ? this.getTeam() == null && var1.getTeam() == null
             : false;
       }
@@ -122,17 +125,17 @@ public class Class1030 extends Class1025 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27209;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27211;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27212;
    }
 

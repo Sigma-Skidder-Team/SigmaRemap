@@ -324,9 +324,9 @@ public class Class9037 {
       ServerWorld var4 = var0.method20172();
       Class7440.method24038(var4);
       BlockPos var5 = new BlockPos(
-         var0.method20171().field18048,
+         var0.method20171().x,
          (double)var0.method20172().method7006(Class101.field296, new BlockPos(var0.method20171())).getY(),
-         var0.method20171().field18050
+         var0.method20171().z
       );
       Class7440.method24040(var4, var5, Class7879.field33820, MathHelper.method37775(var1, 0, 1024));
       return 1;

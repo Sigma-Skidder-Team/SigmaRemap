@@ -6,9 +6,12 @@ import com.mentalfrostbyte.jello.event.impl.Class4414;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.impl.RenderFireEvent;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
@@ -259,7 +262,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          }
 
          Vector3d var12 = var4.method3281(1.0F);
-         Vector3d var13 = var7.method11339(var12.field18048 * var5, var12.field18049 * var5, var12.field18050 * var5);
+         Vector3d var13 = var7.method11339(var12.x * var5, var12.y * var5, var12.z * var5);
          float var14 = 1.0F;
          AxisAlignedBB var15 = var4.getBoundingBox().method19661(var12.method11344(var5)).method19663(1.0, 1.0, 1.0);
          EntityRayTraceResult var16 = Class9456.method36386(var4, var7, var13, var15, var0 -> !var0.isSpectator() && var0.method3139(), var10);
@@ -269,11 +272,11 @@ public class GameRenderer implements Class215, AutoCloseable {
             double var19 = var7.method11342(var18);
             if (var8 && var19 > 9.0) {
                this.field802.objectMouseOver = BlockRayTraceResult.method31420(
-                  var18, Direction.method553(var12.field18048, var12.field18049, var12.field18050), new BlockPos(var18)
+                  var18, Direction.method553(var12.x, var12.y, var12.z), new BlockPos(var18)
                );
             } else if (var19 < var10 || this.field802.objectMouseOver == null) {
                this.field802.objectMouseOver = var16;
-               if (var17 instanceof Class880 || var17 instanceof ItemFrameEntity) {
+               if (var17 instanceof LivingEntity || var17 instanceof ItemFrameEntity) {
                   this.field802.pointedEntity = var17;
                }
             }
@@ -335,8 +338,8 @@ public class GameRenderer implements Class215, AutoCloseable {
             }
          }
 
-         if (var1.method37509() instanceof Class880 && ((Class880)var1.method37509()).getShouldBeDead()) {
-            float var9 = Math.min((float)((Class880)var1.method37509()).field4955 + var2, 20.0F);
+         if (var1.method37509() instanceof LivingEntity && ((LivingEntity)var1.method37509()).getShouldBeDead()) {
+            float var9 = Math.min((float)((LivingEntity)var1.method37509()).field4955 + var2, 20.0F);
             var6 /= (double)((1.0F - 500.0F / (var9 + 500.0F)) * 2.0F + 1.0F);
          }
 
@@ -352,8 +355,8 @@ public class GameRenderer implements Class215, AutoCloseable {
    }
 
    private void method744(MatrixStack var1, float var2) {
-      if (this.field802.getRenderViewEntity() instanceof Class880) {
-         Class880 var5 = (Class880)this.field802.getRenderViewEntity();
+      if (this.field802.getRenderViewEntity() instanceof LivingEntity) {
+         LivingEntity var5 = (LivingEntity)this.field802.getRenderViewEntity();
          float var6 = (float)var5.field4952 - var2;
          if (var5.getShouldBeDead()) {
             float var7 = Math.min((float)var5.field4955 + var2, 20.0F);
@@ -408,7 +411,7 @@ public class GameRenderer implements Class215, AutoCloseable {
                this.method745(var1, var3);
             }
 
-            var10 = this.field802.getRenderViewEntity() instanceof Class880 && ((Class880)this.field802.getRenderViewEntity()).isSleeping();
+            var10 = this.field802.getRenderViewEntity() instanceof LivingEntity && ((LivingEntity)this.field802.getRenderViewEntity()).isSleeping();
             if (this.field802.gameSettings.getPointOfView().func_243192_a()
                && !var10
                && !this.field802.gameSettings.hideGUI
@@ -493,7 +496,7 @@ public class GameRenderer implements Class215, AutoCloseable {
       return var6.getLast().getMatrix();
    }
 
-   public static float method750(Class880 var0, float var1) {
+   public static float method750(LivingEntity var0, float var1) {
       int var4 = var0.method3034(Effects.NIGHT_VISION).method8628();
       return var4 <= 200 ? 0.7F + MathHelper.sin(((float)var4 - var1) * (float) Math.PI * 0.2F) * 0.3F : 1.0F;
    }
@@ -697,7 +700,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          Entity var3 = this.field802.getRenderViewEntity();
          boolean var4 = var3 instanceof PlayerEntity && !this.field802.gameSettings.hideGUI;
          if (var4 && !((PlayerEntity)var3).abilities.field29610) {
-            ItemStack var5 = ((Class880)var3).method3090();
+            ItemStack var5 = ((LivingEntity)var3).method3090();
             RayTraceResult var6 = this.field802.objectMouseOver;
             if (var6 != null && var6.getType() == RayTraceResult.Type.BLOCK) {
                BlockPos var7 = ((BlockRayTraceResult)var6).getPos();

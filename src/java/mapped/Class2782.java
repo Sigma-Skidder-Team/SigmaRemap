@@ -1,11 +1,13 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class2782 extends Class2595 {
    private static String[] field17387;
    private final Class1046 field17388;
-   private Class880 field17389;
+   private LivingEntity field17389;
    private double field17390;
    private double field17391;
    private double field17392;
@@ -26,9 +28,9 @@ public class Class2782 extends Class2595 {
          if (!(this.field17389.getDistanceSq(this.field17388) > (double)(this.field17394 * this.field17394))) {
             Vector3d var3 = Class8037.method27587(this.field17388, 16, 7, this.field17389.getPositionVec());
             if (var3 != null) {
-               this.field17390 = var3.field18048;
-               this.field17391 = var3.field18049;
-               this.field17392 = var3.field18050;
+               this.field17390 = var3.x;
+               this.field17391 = var3.y;
+               this.field17392 = var3.z;
                return true;
             } else {
                return false;

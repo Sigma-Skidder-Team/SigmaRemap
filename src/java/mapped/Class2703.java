@@ -1,11 +1,13 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class2703 extends Class2699 {
    private static String[] field17174;
    private final Class1013 field17175;
-   private Class880 field17176;
+   private LivingEntity field17176;
    private int field17177;
 
    public Class2703(Class1013 var1) {
@@ -17,7 +19,7 @@ public class Class2703 extends Class2699 {
    @Override
    public boolean method10803() {
       if (this.field17175.method4393() && !this.field17175.method4402()) {
-         Class880 var3 = this.field17175.method4400();
+         LivingEntity var3 = this.field17175.method4400();
          if (var3 == null) {
             return false;
          } else {
@@ -33,7 +35,7 @@ public class Class2703 extends Class2699 {
    @Override
    public void method10804() {
       this.field17153.method4233(this.field17176);
-      Class880 var3 = this.field17175.method4400();
+      LivingEntity var3 = this.field17175.method4400();
       if (var3 != null) {
          this.field17177 = var3.method3019();
       }

@@ -1,15 +1,18 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class Class905 extends Class882 {
+public class Class905 extends ProjectileEntity {
    private Entity field5163;
    private Direction field5164;
    private int field5165;
@@ -29,9 +32,9 @@ public class Class905 extends Class882 {
       this.method3435(var8, var10, var12);
    }
 
-   public Class905(World var1, Class880 var2, Entity var3, Class113 var4) {
+   public Class905(World var1, LivingEntity var2, Entity var3, Class113 var4) {
       this(EntityType.field41076, var1);
-      this.method3459(var2);
+      this.setShooter(var2);
       BlockPos var7 = var2.getPosition();
       double var8 = (double)var7.getX() + 0.5;
       double var10 = (double)var7.getY() + 0.5;
@@ -190,7 +193,7 @@ public class Class905 extends Class882 {
             this.field5168 = MathHelper.method37778(this.field5168 * 1.025, -1.0, 1.0);
             Vector3d var3 = this.method3433();
             this.method3434(
-               var3.method11339((this.field5166 - var3.field18048) * 0.2, (this.field5167 - var3.field18049) * 0.2, (this.field5168 - var3.field18050) * 0.2)
+               var3.method11339((this.field5166 - var3.x) * 0.2, (this.field5167 - var3.y) * 0.2, (this.field5168 - var3.z) * 0.2)
             );
          }
 
@@ -202,7 +205,7 @@ public class Class905 extends Class882 {
 
       this.method3240();
       Vector3d var8 = this.method3433();
-      this.setPosition(this.getPosX() + var8.field18048, this.getPosY() + var8.field18049, this.getPosZ() + var8.field18050);
+      this.setPosition(this.getPosX() + var8.x, this.getPosY() + var8.y, this.getPosZ() + var8.z);
       Class9456.method36388(this, 0.5F);
       if (!this.world.isRemote) {
          if (this.field5163 != null && !this.field5163.removed) {
@@ -232,9 +235,9 @@ public class Class905 extends Class882 {
          this.world
             .method6746(
                Class7940.field34067,
-               this.getPosX() - var8.field18048,
-               this.getPosY() - var8.field18049 + 0.15,
-               this.getPosZ() - var8.field18050,
+               this.getPosX() - var8.x,
+               this.getPosY() - var8.y + 0.15,
+               this.getPosZ() - var8.z,
                0.0,
                0.0,
                0.0
@@ -253,7 +256,7 @@ public class Class905 extends Class882 {
    }
 
    @Override
-   public boolean method3291(double var1) {
+   public boolean isInRangeToRenderDist(double var1) {
       return var1 < 16384.0;
    }
 
@@ -267,12 +270,12 @@ public class Class905 extends Class882 {
       super.method3465(var1);
       Entity var4 = var1.getEntity();
       Entity var5 = this.method3460();
-      Class880 var6 = !(var5 instanceof Class880) ? null : (Class880)var5;
+      LivingEntity var6 = !(var5 instanceof LivingEntity) ? null : (LivingEntity)var5;
       boolean var7 = var4.method2741(Class8654.method31116(this, var6).method31130(), 4.0F);
       if (var7) {
          this.method3399(var6, var4);
-         if (var4 instanceof Class880) {
-            ((Class880)var4).method3035(new Class2023(Effects.LEVITATION, 200));
+         if (var4 instanceof LivingEntity) {
+            ((LivingEntity)var4).method3035(new Class2023(Effects.LEVITATION, 200));
          }
       }
    }

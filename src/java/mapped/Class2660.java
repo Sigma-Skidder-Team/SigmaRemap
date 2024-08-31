@@ -21,9 +21,9 @@ public class Class2660 extends Class2595 {
       if (!this.field17017.method4286()) {
          Vector3d var3 = Class8037.method27587(this.field17017, 16, 7, Vector3d.method11330(this.field17017.method4289()));
          if (var3 != null) {
-            this.field17018 = var3.field18048;
-            this.field17019 = var3.field18049;
-            this.field17020 = var3.field18050;
+            this.field17018 = var3.x;
+            this.field17019 = var3.y;
+            this.field17020 = var3.z;
             return true;
          } else {
             return false;

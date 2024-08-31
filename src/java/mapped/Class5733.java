@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 
 public class Class5733 extends Class5732<Class993> {

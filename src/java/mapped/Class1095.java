@@ -1,9 +1,13 @@
 package mapped;
 
 import com.google.common.collect.Lists;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -11,16 +15,16 @@ import java.util.*;
 import java.util.function.Predicate;
 
 public class Class1095 extends Class1018 {
-   private static final DataParameter<Integer> field5993 = EntityDataManager.<Integer>method35441(Class1095.class, Class7784.field33391);
-   private static final DataParameter<Byte> field5994 = EntityDataManager.<Byte>method35441(Class1095.class, Class7784.field33390);
-   private static final DataParameter<Optional<UUID>> field5995 = EntityDataManager.<Optional<UUID>>method35441(Class1095.class, Class7784.field33404);
-   private static final DataParameter<Optional<UUID>> field5996 = EntityDataManager.<Optional<UUID>>method35441(Class1095.class, Class7784.field33404);
+   private static final DataParameter<Integer> field5993 = EntityDataManager.<Integer>createKey(Class1095.class, DataSerializers.field33391);
+   private static final DataParameter<Byte> field5994 = EntityDataManager.<Byte>createKey(Class1095.class, DataSerializers.field33390);
+   private static final DataParameter<Optional<UUID>> field5995 = EntityDataManager.<Optional<UUID>>createKey(Class1095.class, DataSerializers.field33404);
+   private static final DataParameter<Optional<UUID>> field5996 = EntityDataManager.<Optional<UUID>>createKey(Class1095.class, DataSerializers.field33404);
    private static final Predicate<ItemEntity> field5997 = var0 -> !var0.method4135() && var0.isAlive();
    private static final Predicate<Entity> field5998 = var0 -> {
-      if (!(var0 instanceof Class880)) {
+      if (!(var0 instanceof LivingEntity)) {
          return false;
       } else {
-         Class880 var3 = (Class880)var0;
+         LivingEntity var3 = (LivingEntity)var0;
          return var3.method3018() != null && var3.method3019() < var3.ticksExisted + 600;
       }
    };
@@ -86,11 +90,11 @@ public class Class1095 extends Class1018 {
       this.field5600.method20002(12, new Class2614(this, PlayerEntity.class, 24.0F));
       this.field5600.method20002(13, new Class2694(this));
       this.field5601
-         .method20002(3, new Class2714(Class880.class, false, false, var1 -> field5998.test(var1) && !this.method5151(var1.getUniqueID())));
+         .method20002(3, new Class2714(LivingEntity.class, false, false, var1 -> field5998.test(var1) && !this.method5151(var1.getUniqueID())));
    }
 
    @Override
-   public Class9455 method3060(ItemStack var1) {
+   public SoundEvent method3060(ItemStack var1) {
       return Sounds.field26592;
    }
 
@@ -115,7 +119,7 @@ public class Class1095 extends Class1018 {
             }
          }
 
-         Class880 var5 = this.method4232();
+         LivingEntity var5 = this.method4232();
          if (var5 == null || !var5.isAlive()) {
             this.method5143(false);
             this.method5144(false);
@@ -188,12 +192,12 @@ public class Class1095 extends Class1018 {
                this.world
                   .method6746(
                      new Class7438(Class7940.field34082, var4),
-                     this.getPosX() + this.method3320().field18048 / 2.0,
+                     this.getPosX() + this.method3320().x / 2.0,
                      this.getPosY(),
-                     this.getPosZ() + this.method3320().field18050 / 2.0,
-                     var6.field18048,
-                     var6.field18049 + 0.05,
-                     var6.field18050
+                     this.getPosZ() + this.method3320().z / 2.0,
+                     var6.x,
+                     var6.y + 0.05,
+                     var6.z
                   );
             }
          }
@@ -389,7 +393,7 @@ public class Class1095 extends Class1018 {
    private void method5138(ItemStack var1) {
       if (!var1.isEmpty() && !this.world.isRemote) {
          ItemEntity var4 = new ItemEntity(
-            this.world, this.getPosX() + this.method3320().field18048, this.getPosY() + 1.0, this.getPosZ() + this.method3320().field18050, var1
+            this.world, this.getPosX() + this.method3320().x, this.getPosY() + 1.0, this.getPosZ() + this.method3320().z, var1
          );
          var4.method4134(40);
          var4.method4129(this.getUniqueID());
@@ -508,7 +512,7 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public void method4233(Class880 var1) {
+   public void method4233(LivingEntity var1) {
       if (this.method5133() && var1 == null) {
          this.method5134(false);
       }
@@ -540,7 +544,7 @@ public class Class1095 extends Class1018 {
 
    @Override
    public void method4237() {
-      Class9455 var3 = this.method4241();
+      SoundEvent var3 = this.method4241();
       if (var3 != Sounds.field26594) {
          super.method4237();
       } else {
@@ -550,7 +554,7 @@ public class Class1095 extends Class1018 {
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       if (!this.isSleeping()) {
          if (!this.world.method6740() && this.rand.nextFloat() < 0.1F) {
             List var3 = this.world.<Entity>method6772(PlayerEntity.class, this.getBoundingBox().method19663(16.0, 16.0, 16.0), Class8088.field34763);
@@ -567,13 +571,13 @@ public class Class1095 extends Class1018 {
 
    @Nullable
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26593;
    }
 
    @Nullable
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26591;
    }
 
@@ -592,7 +596,7 @@ public class Class1095 extends Class1018 {
       super.method3052(var1);
    }
 
-   public static boolean method5152(Class1095 var0, Class880 var1) {
+   public static boolean method5152(Class1095 var0, LivingEntity var1) {
       double var4 = var1.getPosZ() - var0.getPosZ();
       double var6 = var1.getPosX() - var0.getPosX();
       double var8 = var4 / var6;
@@ -706,7 +710,7 @@ public class Class1095 extends Class1018 {
 
    public class Class2614 extends Class2612 {
 
-      public Class2614(Class1006 var1, Class<? extends Class880> var2, float var3) {
+      public Class2614(Class1006 var1, Class<? extends LivingEntity> var2, float var3) {
          super(var1, var2, var3);
       }
 
@@ -721,12 +725,12 @@ public class Class1095 extends Class1018 {
       }
    }
 
-   public class Class2714 extends Class2709<Class880> {
-      private Class880 field17201;
-      private Class880 field17202;
+   public class Class2714 extends Class2709<LivingEntity> {
+      private LivingEntity field17201;
+      private LivingEntity field17202;
       private int field17203;
 
-      public Class2714(Class<Class880> var1, boolean var2, boolean var3, Predicate<Class880> var4) {
+      public Class2714(Class<LivingEntity> var1, boolean var2, boolean var3, Predicate<LivingEntity> var4) {
          super(Class1095.this, var1, 10, var2, var3, var4);
       }
 
@@ -738,8 +742,8 @@ public class Class1095 extends Class1018 {
             for (UUID var4 : method5174(Class1095.this)) {
                if (var4 != null && Class1095.this.world instanceof ServerWorld) {
                   Entity var5 = ((ServerWorld)Class1095.this.world).method6942(var4);
-                  if (var5 instanceof Class880) {
-                     Class880 var6 = (Class880)var5;
+                  if (var5 instanceof LivingEntity) {
+                     LivingEntity var6 = (LivingEntity)var5;
                      this.field17202 = var6;
                      this.field17201 = var6.method3014();
                      int var7 = var6.method3015();

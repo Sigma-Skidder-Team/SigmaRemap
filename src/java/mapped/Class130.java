@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Set;
@@ -33,8 +34,8 @@ public class Class130 extends Class128 {
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
       Entity var5 = var2.<Entity>method26081(Class9525.field44333);
-      if (var5 instanceof Class880) {
-         int var6 = Class7858.method26330((Class880)var5);
+      if (var5 instanceof LivingEntity) {
+         int var6 = Class7858.method26330((LivingEntity)var5);
          if (var6 == 0) {
             return var1;
          }

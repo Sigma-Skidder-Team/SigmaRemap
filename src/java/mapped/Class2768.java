@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 
 public class Class2768 extends Class2595 {
@@ -13,7 +14,7 @@ public class Class2768 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      Class880 var3 = this.field17345.method4232();
+      LivingEntity var3 = this.field17345.method4232();
       return var3 == null ? false : this.field17345.method3027(this.field17345.method4232(), Class8522.field38240);
    }
 

@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
@@ -38,12 +40,12 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    @Override
-   public Class9455 method2859() {
+   public SoundEvent method2859() {
       return Sounds.field26685;
    }
 
    @Override
-   public Class9455 method2860() {
+   public SoundEvent method2860() {
       return Sounds.field26684;
    }
 
@@ -53,17 +55,17 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26682;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26681;
    }
 
    @Override
-   public Class9455 method2926(int var1) {
+   public SoundEvent method2926(int var1) {
       return var1 <= 4 ? Sounds.field26683 : Sounds.field26680;
    }
 

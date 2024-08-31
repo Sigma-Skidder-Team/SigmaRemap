@@ -1,11 +1,13 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class2627 extends Class2595 {
    private static String[] field16925;
    private final Class1081 field16926;
-   private Class880 field16927;
+   private LivingEntity field16927;
 
    public Class2627(Class1081 var1) {
       this.field16926 = var1;
@@ -14,7 +16,7 @@ public class Class2627 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      Class880 var3 = this.field16926.method4232();
+      LivingEntity var3 = this.field16926.method4232();
       return this.field16926.method5020() > 0 || var3 != null && this.field16926.getDistanceSq(var3) < 9.0;
    }
 

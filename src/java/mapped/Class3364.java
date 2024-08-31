@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
@@ -12,7 +15,7 @@ public class Class3364 extends Class3241 {
    }
 
    @Override
-   public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
       CompoundNBT var8 = var5.getOrCreateTag();
       if (var8.contains("BlockEntityTag")) {

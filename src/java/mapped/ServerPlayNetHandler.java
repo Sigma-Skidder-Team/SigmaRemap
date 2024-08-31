@@ -20,8 +20,10 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -314,11 +316,11 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       if (var1.method17524() == this.field23248) {
          this.player
             .method3269(
-               this.targetPos.field18048, this.targetPos.field18049, this.targetPos.field18050, this.player.rotationYaw, this.player.rotationPitch
+               this.targetPos.x, this.targetPos.y, this.targetPos.z, this.player.rotationYaw, this.player.rotationPitch
             );
-         this.field23237 = this.targetPos.field18048;
-         this.field23238 = this.targetPos.field18049;
-         this.field23239 = this.targetPos.field18050;
+         this.field23237 = this.targetPos.x;
+         this.field23238 = this.targetPos.y;
+         this.field23239 = this.targetPos.z;
          if (this.player.method2821()) {
             this.player.method2822();
          }
@@ -800,7 +802,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             } else if (this.field23227 - this.field23249 > 20) {
                this.field23249 = this.field23227;
                this.method15668(
-                  this.targetPos.field18048, this.targetPos.field18049, this.targetPos.field18050, this.player.rotationYaw, this.player.rotationPitch
+                  this.targetPos.x, this.targetPos.y, this.targetPos.z, this.player.rotationYaw, this.player.rotationPitch
                );
             }
          }

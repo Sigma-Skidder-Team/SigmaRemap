@@ -6,6 +6,7 @@ import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 
 public class Class8811 {
    public static final Class8811 field39645 = new Class8811((CompoundNBT)null);

@@ -1,14 +1,22 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 
 public class Class1021 extends Class1056 implements Class1020, Class1022 {
-   private static final DataParameter<Byte> field5709 = EntityDataManager.<Byte>method35441(Class1021.class, Class7784.field33390);
+   private static final DataParameter<Byte> field5709 = EntityDataManager.<Byte>createKey(Class1021.class, DataSerializers.field33390);
 
    public Class1021(EntityType<? extends Class1021> var1, World var2) {
       super(var1, var2);
@@ -84,14 +92,14 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    }
 
    @Override
-   public void method4530(Class880 var1, float var2) {
+   public void method4530(LivingEntity var1, float var2) {
       Class894 var5 = new Class894(this.world, this);
       double var6 = var1.method3442() - 1.1F;
       double var8 = var1.getPosX() - this.getPosX();
       double var10 = var6 - var5.getPosY();
       double var12 = var1.getPosZ() - this.getPosZ();
       float var14 = MathHelper.method37766(var8 * var8 + var12 * var12) * 0.2F;
-      var5.method3462(var8, var10 + (double)var14, var12, 1.6F, 12.0F);
+      var5.shoot(var8, var10 + (double)var14, var12, 1.6F, 12.0F);
       this.method2863(Sounds.field27114, 1.0F, 0.4F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.world.method6916(var5);
    }
@@ -145,19 +153,19 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27111;
    }
 
    @Nullable
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27113;
    }
 
    @Nullable
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27112;
    }
 

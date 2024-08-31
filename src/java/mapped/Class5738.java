@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.PlayerEntity;
 
 public class Class5738 extends Class5715<Class904> {
    private static final ResourceLocation field25159 = new ResourceLocation("textures/entity/fishing_hook.png");
@@ -52,9 +53,9 @@ public class Class5738 extends Class5715<Class904> {
             var35 = var35.method11351(-MathHelper.lerp(var3, var9.prevRotationYaw, var9.rotationYaw) * (float) (Math.PI / 180.0));
             var35 = var35.method11351(var17 * 0.5F);
             var35 = var35.method11350(-var17 * 0.7F);
-            var27 = MathHelper.method37822((double)var3, var9.prevPosX, var9.getPosX()) + var35.field18048;
-            var29 = MathHelper.method37822((double)var3, var9.prevPosY, var9.getPosY()) + var35.field18049;
-            var31 = MathHelper.method37822((double)var3, var9.prevPosZ, var9.getPosZ()) + var35.field18050;
+            var27 = MathHelper.method37822((double)var3, var9.prevPosX, var9.getPosX()) + var35.x;
+            var29 = MathHelper.method37822((double)var3, var9.prevPosY, var9.getPosY()) + var35.y;
+            var31 = MathHelper.method37822((double)var3, var9.prevPosZ, var9.getPosZ()) + var35.z;
             var36 = var9.method3393();
          } else {
             var27 = MathHelper.method37822((double)var3, var9.prevPosX, var9.getPosX()) - var21 * var23 - var19 * 0.8;

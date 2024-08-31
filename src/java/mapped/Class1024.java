@@ -1,8 +1,16 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
@@ -11,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Class1024 extends Class1025 implements Class1023 {
-   private static final DataParameter<Boolean> field5710 = EntityDataManager.<Boolean>method35441(Class1024.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5710 = EntityDataManager.<Boolean>createKey(Class1024.class, DataSerializers.field33398);
    private final Class927 field5711 = new Class927(5);
 
    public Class1024(EntityType<? extends Class1024> var1, World var2) {
@@ -152,34 +160,34 @@ public class Class1024 extends Class1025 implements Class1023 {
       if (super.method3345(var1)) {
          return true;
       } else {
-         return var1 instanceof Class880 && ((Class880)var1).method3089() == Class7809.field33508
+         return var1 instanceof LivingEntity && ((LivingEntity)var1).method3089() == Class7809.field33508
             ? this.getTeam() == null && var1.getTeam() == null
             : false;
       }
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26945;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26947;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26948;
    }
 
    @Override
-   public void method4530(Class880 var1, float var2) {
+   public void method4530(LivingEntity var1, float var2) {
       this.method4538(this, 1.6F);
    }
 
    @Override
-   public void method4536(Class880 var1, ItemStack var2, Class882 var3, float var4) {
+   public void method4536(LivingEntity var1, ItemStack var2, ProjectileEntity var3, float var4) {
       this.method4539(this, var1, var3, var4, 1.6F);
    }
 
@@ -243,7 +251,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public Class9455 method4546() {
+   public SoundEvent method4546() {
       return Sounds.field26946;
    }
 }

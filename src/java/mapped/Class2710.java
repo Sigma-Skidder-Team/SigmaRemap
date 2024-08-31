@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.function.Predicate;
 
 public class Class2710 extends Class2709<PlayerEntity> {
@@ -11,7 +14,7 @@ public class Class2710 extends Class2709<PlayerEntity> {
    private final Class8522 field17196;
    private final Class8522 field17197 = new Class8522().method30206();
 
-   public Class2710(Class1010 var1, Predicate<Class880> var2) {
+   public Class2710(Class1010 var1, Predicate<LivingEntity> var2) {
       super(var1, PlayerEntity.class, 10, false, false, var2);
       this.field17192 = var1;
       this.field17196 = new Class8522().method30203(this.method10914()).method30209(var1x -> Class1010.method4362(var1, (PlayerEntity)var1x));
@@ -53,7 +56,7 @@ public class Class2710 extends Class2709<PlayerEntity> {
    @Override
    public void method10805() {
       if (this.field17192.method4232() == null) {
-         super.method10923((Class880)null);
+         super.method10923((LivingEntity)null);
       }
 
       if (this.field17193 == null) {

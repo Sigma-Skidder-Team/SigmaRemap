@@ -35,9 +35,9 @@ public class Class5487 implements Packet<Class5116> {
       this.field24369 = MathHelper.method37767(var10 * 256.0F / 360.0F);
       this.field24370 = var11;
       this.field24371 = var12;
-      this.field24365 = (int)(MathHelper.method37778(var13.field18048, -3.9, 3.9) * 8000.0);
-      this.field24366 = (int)(MathHelper.method37778(var13.field18049, -3.9, 3.9) * 8000.0);
-      this.field24367 = (int)(MathHelper.method37778(var13.field18050, -3.9, 3.9) * 8000.0);
+      this.field24365 = (int)(MathHelper.method37778(var13.x, -3.9, 3.9) * 8000.0);
+      this.field24366 = (int)(MathHelper.method37778(var13.y, -3.9, 3.9) * 8000.0);
+      this.field24367 = (int)(MathHelper.method37778(var13.z, -3.9, 3.9) * 8000.0);
    }
 
    public Class5487(Entity var1) {

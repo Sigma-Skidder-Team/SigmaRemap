@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.entity;
 
 public enum Pose {
    STANDING,

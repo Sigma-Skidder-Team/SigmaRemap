@@ -2,14 +2,19 @@ package mapped;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class Class1074 extends AbstractHorseEntity {
    private static final UUID field5916 = UUID.fromString("556E1665-8B10-40C8-8F9D-CF9B1667F295");
-   private static final DataParameter<Integer> field5917 = EntityDataManager.<Integer>method35441(Class1074.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5917 = EntityDataManager.<Integer>createKey(Class1074.class, DataSerializers.field33391);
 
    public Class1074(EntityType<? extends Class1074> var1, World var2) {
       super(var1, var2);
@@ -121,31 +126,31 @@ public class Class1074 extends AbstractHorseEntity {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       super.method4241();
       return Sounds.field26667;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       super.method2880();
       return Sounds.field26671;
    }
 
    @Nullable
    @Override
-   public Class9455 method4894() {
+   public SoundEvent method4894() {
       return Sounds.field26672;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       super.method2879(var1);
       return Sounds.field26674;
    }
 
    @Override
-   public Class9455 method4893() {
+   public SoundEvent method4893() {
       super.method4893();
       return Sounds.field26668;
    }

@@ -1,8 +1,15 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -11,7 +18,7 @@ import java.time.temporal.ChronoField;
 import java.util.Random;
 
 public class Class1114 extends Class1113 {
-   private static final DataParameter<Byte> field6093 = EntityDataManager.<Byte>method35441(Class1114.class, Class7784.field33390);
+   private static final DataParameter<Byte> field6093 = EntityDataManager.<Byte>createKey(Class1114.class, DataSerializers.field33390);
    private static final Class8522 field6094 = new Class8522().method30203(4.0).method30205();
    private BlockPos field6095;
 
@@ -38,17 +45,17 @@ public class Class1114 extends Class1113 {
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return this.method5364() && this.rand.nextInt(4) != 0 ? null : Sounds.field26380;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26382;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26381;
    }
 
@@ -116,12 +123,12 @@ public class Class1114 extends Class1113 {
          double var10 = (double)this.field6095.getZ() + 0.5 - this.getPosZ();
          Vector3d var12 = this.method3433();
          Vector3d var13 = var12.method11339(
-            (Math.signum(var6) * 0.5 - var12.field18048) * 0.1F,
-            (Math.signum(var8) * 0.7F - var12.field18049) * 0.1F,
-            (Math.signum(var10) * 0.5 - var12.field18050) * 0.1F
+            (Math.signum(var6) * 0.5 - var12.x) * 0.1F,
+            (Math.signum(var8) * 0.7F - var12.y) * 0.1F,
+            (Math.signum(var10) * 0.5 - var12.z) * 0.1F
          );
          this.method3434(var13);
-         float var14 = (float)(MathHelper.method37814(var13.field18050, var13.field18048) * 180.0F / (float)Math.PI) - 90.0F;
+         float var14 = (float)(MathHelper.method37814(var13.z, var13.x) * 180.0F / (float)Math.PI) - 90.0F;
          float var15 = MathHelper.method37792(var14 - this.rotationYaw);
          this.field4984 = 0.5F;
          this.rotationYaw += var15;

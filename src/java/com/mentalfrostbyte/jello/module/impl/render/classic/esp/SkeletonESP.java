@@ -5,6 +5,8 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;
@@ -33,9 +35,9 @@ public class SkeletonESP extends Module {
                 GL11.glLineWidth(2.0F);
                 GL11.glColor4f((float) (var5.getRed() / 255), (float) (var5.getGreen() / 255), (float) (var5.getBlue() / 255), 1.0F);
                 Class8472 var7 = this.method16090(var1, var2);
-                double var8 = var7.method29876() - mc.getRenderManager().field40017.method37504().field18048;
-                double var10 = var7.method29877() - mc.getRenderManager().field40017.method37504().field18049;
-                double var12 = var7.method29878() - mc.getRenderManager().field40017.method37504().field18050;
+                double var8 = var7.method29876() - mc.getRenderManager().field40017.method37504().x;
+                double var10 = var7.method29877() - mc.getRenderManager().field40017.method37504().y;
+                double var12 = var7.method29878() - mc.getRenderManager().field40017.method37504().z;
                 GL11.glTranslated(var8, var10, var12);
                 float var14 = var2.field4966 + (var2.field4965 - var2.field4966) * mc.getRenderPartialTicks();
                 GL11.glRotatef(-var14, 0.0F, 1.0F, 0.0F);
@@ -213,7 +215,7 @@ public class SkeletonESP extends Module {
         GL11.glDepthMask(var1);
     }
 
-    private int method16094(Class880 var1) {
+    private int method16094(LivingEntity var1) {
         float var4 = var1.getHealth();
         float var5 = var1.method3075();
         float var6 = Math.max(0.0F, Math.min(var4, var5) / var5);

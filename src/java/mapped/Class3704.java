@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.List;
 
 public class Class3704<E extends Class1006> extends Class3676<E> {
@@ -36,14 +38,14 @@ public class Class3704<E extends Class1006> extends Class3676<E> {
    }
 
    private boolean method12581(E var1) {
-      return var1.method2992().<List<Class880>>method21410(Class8830.field39819).get().contains(this.method12583((E)var1));
+      return var1.method2992().<List<LivingEntity>>method21410(Class8830.field39819).get().contains(this.method12583((E)var1));
    }
 
    private boolean method12582(E var1) {
-      return this.method12583((E)var1).method3213(var1, (double)this.field19764);
+      return this.method12583((E)var1).isEntityInRange(var1, (double)this.field19764);
    }
 
-   private Class880 method12583(E var1) {
-      return var1.method2992().<Class880>method21410(Class8830.field39826).get();
+   private LivingEntity method12583(E var1) {
+      return var1.method2992().<LivingEntity>method21410(Class8830.field39826).get();
    }
 }

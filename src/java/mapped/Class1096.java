@@ -1,8 +1,12 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Objects;
@@ -13,7 +17,7 @@ import java.util.function.Predicate;
 
 public class Class1096 extends Class1018 implements Class1011 {
    private static String[] field6009;
-   private static final DataParameter<Boolean> field6010 = EntityDataManager.<Boolean>method35441(Class1096.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field6010 = EntityDataManager.<Boolean>createKey(Class1096.class, DataSerializers.field33398);
    private float field6011;
    private float field6012;
    private int field6013;
@@ -48,7 +52,7 @@ public class Class1096 extends Class1018 implements Class1011 {
       this.field5601.method20002(1, new Class2707(this));
       this.field5601.method20002(2, new Class2720(this));
       this.field5601.method20002(3, new Class2709<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
-      this.field5601.method20002(4, new Class2709<Class1095>(this, Class1095.class, 10, true, true, (Predicate<Class880>)null));
+      this.field5601.method20002(4, new Class2709<Class1095>(this, Class1095.class, 10, true, true, (Predicate<LivingEntity>)null));
       this.field5601.method20002(5, new Class2779<Class1096>(this, false));
    }
 
@@ -106,17 +110,17 @@ public class Class1096 extends Class1018 implements Class1011 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return !this.method3005() ? Sounds.field26970 : Sounds.field26971;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26973;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26972;
    }
 

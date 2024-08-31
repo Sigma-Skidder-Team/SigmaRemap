@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 public class Class2639 extends Class2595 {
    private static String[] field16962;
    private final Class1112 field16963;
@@ -26,7 +29,7 @@ public class Class2639 extends Class2595 {
 
    @Override
    public void method10805() {
-      Class880 var3 = this.field16963.method4232();
+      LivingEntity var3 = this.field16963.method4232();
       double var4 = 64.0;
       if (var3.getDistanceSq(this.field16963) < 4096.0 && this.field16963.method3135(var3)) {
          World var6 = this.field16963.world;
@@ -38,9 +41,9 @@ public class Class2639 extends Class2595 {
          if (this.field16964 == 20) {
             double var7 = 4.0;
             Vector3d var9 = this.field16963.method3281(1.0F);
-            double var10 = var3.getPosX() - (this.field16963.getPosX() + var9.field18048 * 4.0);
+            double var10 = var3.getPosX() - (this.field16963.getPosX() + var9.x * 4.0);
             double var12 = var3.method3440(0.5) - (0.5 + this.field16963.method3440(0.5));
-            double var14 = var3.getPosZ() - (this.field16963.getPosZ() + var9.field18050 * 4.0);
+            double var14 = var3.getPosZ() - (this.field16963.getPosZ() + var9.z * 4.0);
             if (!this.field16963.method3245()) {
                var6.method6869((PlayerEntity)null, 1016, this.field16963.getPosition(), 0);
             }
@@ -48,7 +51,7 @@ public class Class2639 extends Class2595 {
             Class899 var16 = new Class899(var6, this.field16963, var10, var12, var14);
             var16.field5139 = this.field16963.method5359();
             var16.setPosition(
-               this.field16963.getPosX() + var9.field18048 * 4.0, this.field16963.method3440(0.5) + 0.5, var16.getPosZ() + var9.field18050 * 4.0
+               this.field16963.getPosX() + var9.x * 4.0, this.field16963.method3440(0.5) + 0.5, var16.getPosZ() + var9.z * 4.0
             );
             var6.method6916(var16);
             this.field16964 = -40;

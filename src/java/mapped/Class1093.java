@@ -4,15 +4,22 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
 import java.util.Optional;
 
 public class Class1093 extends Class1009 implements Class1008, Class1092 {
-   private static final DataParameter<Boolean> field5982 = EntityDataManager.<Boolean>method35441(Class1093.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5982 = EntityDataManager.<Boolean>createKey(Class1093.class, DataSerializers.field33398);
    private int field5983;
    public static final ImmutableList<? extends Class7963<? extends Class7882<? super Class1093>>> field5984 = ImmutableList.of(
       Class7963.field34239, Class7963.field34240
@@ -83,11 +90,11 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
       );
    }
 
-   private Optional<? extends Class880> method5096() {
-      return this.method2992().<List<Class880>>method21410(Class8830.field39819).orElse(ImmutableList.of()).stream().filter(Class1093::method5097).findFirst();
+   private Optional<? extends LivingEntity> method5096() {
+      return this.method2992().<List<LivingEntity>>method21410(Class8830.field39819).orElse(ImmutableList.of()).stream().filter(Class1093::method5097).findFirst();
    }
 
-   private static boolean method5097(Class880 var0) {
+   private static boolean method5097(LivingEntity var0) {
       EntityType var3 = var0.getType();
       return var3 != EntityType.field41106 && var3 != EntityType.field41017 && Class8088.field34762.test(var0);
    }
@@ -121,11 +128,11 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
 
    @Override
    public boolean method3114(Entity var1) {
-      if (var1 instanceof Class880) {
+      if (var1 instanceof LivingEntity) {
          this.field5983 = 10;
          this.world.method6786(this, (byte)4);
          this.method2863(Sounds.field27278, 1.0F, this.method3100());
-         return Class1092.method5091(this, (Class880)var1);
+         return Class1092.method5091(this, (LivingEntity)var1);
       } else {
          return false;
       }
@@ -137,7 +144,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method3045(Class880 var1) {
+   public void method3045(LivingEntity var1) {
       if (!this.method3005()) {
          Class1092.method5092(this, var1);
       }
@@ -152,8 +159,8 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    public boolean method2741(Class8654 var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
       if (!this.world.isRemote) {
-         if (var5 && var1.method31109() instanceof Class880) {
-            Class880 var6 = (Class880)var1.method31109();
+         if (var5 && var1.method31109() instanceof LivingEntity) {
+            LivingEntity var6 = (LivingEntity)var1.method31109();
             if (Class8088.field34762.test(var6) && !Class6983.method21582(this, var6, 4.0)) {
                this.method5100(var6);
             }
@@ -167,7 +174,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
       }
    }
 
-   private void method5100(Class880 var1) {
+   private void method5100(LivingEntity var1) {
       this.field5011.method21405(Class8830.field39841);
       this.field5011.method21407(Class8830.field39826, var1, 200L);
    }
@@ -234,7 +241,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       if (!this.world.isRemote) {
          return !this.field5011.method21404(Class8830.field39826) ? Sounds.field27276 : Sounds.field27277;
       } else {
@@ -243,12 +250,12 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27280;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27279;
    }
 

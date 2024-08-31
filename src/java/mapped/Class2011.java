@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
@@ -30,9 +31,9 @@ public class Class2011 extends Class2009 {
          if (this.field13078.method27709()) {
             if (!this.field13076.get()) {
                Vector3d var4 = this.field13078.field34637.method33322();
-               float var5 = (float)var4.field18048;
-               float var6 = (float)var4.field18049;
-               float var7 = (float)var4.field18050;
+               float var5 = (float)var4.x;
+               float var6 = (float)var4.y;
+               float var7 = (float)var4.z;
                Class7457 var8 = new Class7457();
                Set<TileEntity> var9 = this.method8532(var5, var6, var7, var8, var1);
                Class8066.method27753(this.field13078, var9);

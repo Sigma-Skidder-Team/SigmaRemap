@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -42,7 +44,7 @@ public class Class6391 {
    }
 
    @Nullable
-   public IBakedModel method19424(IBakedModel var1, ItemStack var2, ClientWorld var3, Class880 var4) {
+   public IBakedModel method19424(IBakedModel var1, ItemStack var2, ClientWorld var3, LivingEntity var4) {
       boolean var7 = Class7944.method26953();
       if (var7) {
          field27977 = null;

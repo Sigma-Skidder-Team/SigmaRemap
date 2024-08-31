@@ -3,14 +3,16 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Class9614 {
    private static final Logger field44942 = LogManager.getLogger();
-   private static final Map<EntityType<? extends Class880>, Class9767> field44943 = ImmutableMap.<EntityType<? extends Class880>, Class9767>builder()
-      .put(EntityType.field41006, Class880.method2997().method21850())
+   private static final Map<EntityType<? extends LivingEntity>, Class9767> field44943 = ImmutableMap.<EntityType<? extends LivingEntity>, Class9767>builder()
+      .put(EntityType.field41006, LivingEntity.method2997().method21850())
       .put(EntityType.field41008, Class1114.method5363().method21850())
       .put(EntityType.field41009, Class1017.method4447().method21850())
       .put(EntityType.field41010, Class1103.method5292().method21850())
@@ -84,7 +86,7 @@ public class Class9614 {
       .put(EntityType.field41110, Class1063.method4874().method21850())
       .build();
 
-   public static Class9767 method37375(EntityType<? extends Class880> var0) {
+   public static Class9767 method37375(EntityType<? extends LivingEntity> var0) {
       return field44943.get(var0);
    }
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.datasync.EntityDataManager;
+
 import java.io.IOException;
 import java.util.List;
 

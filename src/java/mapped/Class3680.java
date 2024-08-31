@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 
 public class Class3680<E extends Class1034> extends Class3676<E> {
@@ -17,7 +18,7 @@ public class Class3680<E extends Class1034> extends Class3676<E> {
    }
 
    private boolean method12515(E var1) {
-      Class880 var4 = var1.method2992().<Class880>method21410(Class8830.field39826).get();
+      LivingEntity var4 = var1.method2992().<LivingEntity>method21410(Class8830.field39826).get();
       return var4.getType() == EntityType.field41037 && var4.getShouldBeDead();
    }
 }

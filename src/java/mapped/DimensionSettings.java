@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.block.BlockState;
+
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Optional;

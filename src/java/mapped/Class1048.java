@@ -3,7 +3,13 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -13,9 +19,9 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public class Class1048 extends Class1047 {
-   private static final DataParameter<BlockPos> field5804 = EntityDataManager.<BlockPos>method35441(Class1048.class, Class7784.field33401);
-   private static final DataParameter<Boolean> field5805 = EntityDataManager.<Boolean>method35441(Class1048.class, Class7784.field33398);
-   private static final DataParameter<Integer> field5806 = EntityDataManager.<Integer>method35441(Class1048.class, Class7784.field33391);
+   private static final DataParameter<BlockPos> field5804 = EntityDataManager.<BlockPos>createKey(Class1048.class, DataSerializers.field33401);
+   private static final DataParameter<Boolean> field5805 = EntityDataManager.<Boolean>createKey(Class1048.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> field5806 = EntityDataManager.<Integer>createKey(Class1048.class, DataSerializers.field33391);
    private static final Class8522 field5807 = new Class8522().method30203(10.0).method30205().method30204().method30206();
    public static final Predicate<ItemEntity> field5808 = var0 -> !var0.method4135() && var0.isAlive() && var0.method3250();
 
@@ -216,9 +222,9 @@ public class Class1048 extends Class1047 {
                this.world
                   .method6746(
                      Class7940.field34105,
-                     this.getPosX() - var3.field18048 * (double)var6 + (double)var4,
-                     this.getPosY() - var3.field18049,
-                     this.getPosZ() - var3.field18050 * (double)var6 + (double)var5,
+                     this.getPosX() - var3.x * (double)var6 + (double)var4,
+                     this.getPosY() - var3.y,
+                     this.getPosZ() - var3.z * (double)var6 + (double)var5,
                      0.0,
                      0.0,
                      0.0
@@ -226,9 +232,9 @@ public class Class1048 extends Class1047 {
                this.world
                   .method6746(
                      Class7940.field34105,
-                     this.getPosX() - var3.field18048 * (double)var6 - (double)var4,
-                     this.getPosY() - var3.field18049,
-                     this.getPosZ() - var3.field18050 * (double)var6 - (double)var5,
+                     this.getPosX() - var3.x * (double)var6 - (double)var4,
+                     this.getPosY() - var3.y,
+                     this.getPosZ() - var3.z * (double)var6 - (double)var5,
                      0.0,
                      0.0,
                      0.0
@@ -291,29 +297,29 @@ public class Class1048 extends Class1047 {
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26503;
    }
 
    @Nullable
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26501;
    }
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return !this.method3250() ? Sounds.field26498 : Sounds.field26499;
    }
 
    @Override
-   public Class9455 method2860() {
+   public SoundEvent method2860() {
       return Sounds.field26506;
    }
 
    @Override
-   public Class9455 method2859() {
+   public SoundEvent method2859() {
       return Sounds.field26507;
    }
 

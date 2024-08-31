@@ -1,10 +1,14 @@
 package mapped;
 
 import com.google.common.collect.UnmodifiableIterator;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -14,7 +18,7 @@ import java.util.UUID;
 import java.util.function.Predicate;
 
 public abstract class AbstractHorseEntity extends Class1018 implements Class1073, IJumpingMount, Class1069 {
-   private static final Predicate<Class880> field5879 = var0 -> var0 instanceof AbstractHorseEntity && ((AbstractHorseEntity)var0).method4940();
+   private static final Predicate<LivingEntity> field5879 = var0 -> var0 instanceof AbstractHorseEntity && ((AbstractHorseEntity)var0).method4940();
    private static final Class8522 field5880 = new Class8522().method30203(16.0).method30204().method30205().method30206().method30209(field5879);
    private static final Class120 field5881 = Class120.method339(
       Items.field37842,
@@ -25,8 +29,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       Items.GOLDEN_APPLE,
       Items.ENCHANTED_GOLDEN_APPLE
    );
-   private static final DataParameter<Byte> field5882 = EntityDataManager.<Byte>method35441(AbstractHorseEntity.class, Class7784.field33390);
-   private static final DataParameter<Optional<UUID>> field5883 = EntityDataManager.<Optional<UUID>>method35441(AbstractHorseEntity.class, Class7784.field33404);
+   private static final DataParameter<Byte> field5882 = EntityDataManager.<Byte>createKey(AbstractHorseEntity.class, DataSerializers.field33390);
+   private static final DataParameter<Optional<UUID>> field5883 = EntityDataManager.<Optional<UUID>>createKey(AbstractHorseEntity.class, DataSerializers.field33404);
    private int field5884;
    private int field5885;
    private int field5886;
@@ -176,7 +180,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    private void method4947() {
       this.method4955();
       if (!this.method3245()) {
-         Class9455 var3 = this.method4894();
+         SoundEvent var3 = this.method4894();
          if (var3 != null) {
             this.world
                .method6743(
@@ -263,19 +267,19 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Nullable
-   public Class9455 method4894() {
+   public SoundEvent method4894() {
       return null;
    }
 
    @Nullable
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return null;
    }
 
    @Nullable
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       if (this.rand.nextInt(3) == 0) {
          this.method4958();
       }
@@ -285,7 +289,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       if (this.rand.nextInt(10) == 0 && !this.method2896()) {
          this.method4958();
       }
@@ -294,7 +298,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Nullable
-   public Class9455 method4893() {
+   public SoundEvent method4893() {
       this.method4958();
       return null;
    }
@@ -515,7 +519,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    public void method4916() {
       if (this.method4940() && this.method3005() && !this.method4938()) {
-         Class880 var3 = this.world
+         LivingEntity var3 = this.world
             .<AbstractHorseEntity>method7191(
                AbstractHorseEntity.class, field5880, this, this.getPosX(), this.getPosY(), this.getPosZ(), this.getBoundingBox().method19664(16.0)
             );
@@ -625,7 +629,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public void method4896() {
       if (!this.method4939()) {
          this.method4958();
-         Class9455 var3 = this.method4893();
+         SoundEvent var3 = this.method4893();
          if (var3 != null) {
             this.method2863(var3, this.method3099(), this.method3100());
          }
@@ -647,11 +651,11 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public void method2915(Vector3d var1) {
       if (this.isAlive()) {
          if (this.isBeingRidden() && this.method4277() && this.method4943()) {
-            Class880 var4 = (Class880)this.method3407();
+            LivingEntity var4 = (LivingEntity)this.method3407();
             this.rotationYaw = var4.rotationYaw;
             this.prevRotationYaw = this.rotationYaw;
             this.rotationPitch = var4.rotationPitch * 0.5F;
-            this.method3214(this.rotationYaw, this.rotationPitch);
+            this.setRotation(this.rotationYaw, this.rotationPitch);
             this.field4965 = this.rotationYaw;
             this.field4967 = this.field4965;
             float var5 = var4.field4982 * 0.5F;
@@ -676,7 +680,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                }
 
                Vector3d var11 = this.method3433();
-               this.method3435(var11.field18048, var9, var11.field18050);
+               this.method3435(var11.x, var9, var11.z);
                this.method4937(true);
                this.isAirBorne = true;
                if (var6 > 0.0F) {
@@ -695,7 +699,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                }
             } else {
                this.method3113((float)this.method3086(Attributes.MOVEMENT_SPEED));
-               super.method2915(new Vector3d((double)var5, var1.field18049, (double)var6));
+               super.method2915(new Vector3d((double)var5, var1.y, (double)var6));
             }
 
             if (this.onGround) {
@@ -786,7 +790,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Override
    public boolean method4277() {
-      return this.method3407() instanceof Class880;
+      return this.method3407() instanceof LivingEntity;
    }
 
    public float method4963(float var1) {
@@ -877,8 +881,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             this.getPosY() + this.method3310() + var1.method2894() + (double)var7,
             this.getPosZ() - (double)(var6 * var5)
          );
-         if (var1 instanceof Class880) {
-            ((Class880)var1).field4965 = this.field4965;
+         if (var1 instanceof LivingEntity) {
+            ((LivingEntity)var1).field4965 = this.field4965;
          }
       }
    }
@@ -948,10 +952,10 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Nullable
-   private Vector3d method4974(Vector3d var1, Class880 var2) {
-      double var5 = this.getPosX() + var1.field18048;
+   private Vector3d method4974(Vector3d var1, LivingEntity var2) {
+      double var5 = this.getPosX() + var1.x;
       double var7 = this.getBoundingBox().field28450;
-      double var9 = this.getPosZ() + var1.field18050;
+      double var9 = this.getPosZ() + var1.z;
       Mutable var11 = new Mutable();
       UnmodifiableIterator var12 = var2.method2982().iterator();
 
@@ -983,7 +987,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public Vector3d method3420(Class880 var1) {
+   public Vector3d method3420(LivingEntity var1) {
       Vector3d var4 = method3419(
          (double)this.method3429(), (double)var1.method3429(), this.rotationYaw + (var1.method2967() != Class2205.field14418 ? -90.0F : 90.0F)
       );

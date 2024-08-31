@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mojang.authlib.GameProfile;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 
@@ -71,7 +72,7 @@ public class TargetHUD extends PremiumModule {
             }
 
             this.field23682 -= 100;
-            float var6 = ((Class880) this.field23693).getHealth();
+            float var6 = ((LivingEntity) this.field23693).getHealth();
             if (var6 != this.field23688) {
                 this.field23687 = this.field23688;
                 this.field23688 = var6;
@@ -184,8 +185,8 @@ public class TargetHUD extends PremiumModule {
     }
 
     private Color method16477(Entity var1) {
-        if (var1 instanceof Class880) {
-            Class880 var4 = (Class880) var1;
+        if (var1 instanceof LivingEntity) {
+            LivingEntity var4 = (LivingEntity) var1;
             float var5 = var4.getHealth() / var4.method3075() * 20.0F;
             if (var5 > 20.0F) {
                 var5 = 20.0F;

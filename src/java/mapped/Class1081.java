@@ -2,14 +2,19 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 
 import java.util.Collection;
 
 public class Class1081 extends Class1009 implements Class1080 {
-   private static final DataParameter<Integer> field5938 = EntityDataManager.<Integer>method35441(Class1081.class, Class7784.field33391);
-   private static final DataParameter<Boolean> field5939 = EntityDataManager.<Boolean>method35441(Class1081.class, Class7784.field33398);
-   private static final DataParameter<Boolean> field5940 = EntityDataManager.<Boolean>method35441(Class1081.class, Class7784.field33398);
+   private static final DataParameter<Integer> field5938 = EntityDataManager.<Integer>createKey(Class1081.class, DataSerializers.field33391);
+   private static final DataParameter<Boolean> field5939 = EntityDataManager.<Boolean>createKey(Class1081.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5940 = EntityDataManager.<Boolean>createKey(Class1081.class, DataSerializers.field33398);
    private int field5941;
    private int field5942;
    private int field5943 = 30;
@@ -119,12 +124,12 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26483;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26482;
    }
 

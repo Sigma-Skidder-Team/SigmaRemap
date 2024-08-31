@@ -5,8 +5,11 @@ import com.google.common.cache.LoadingCache;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4424;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -275,7 +278,7 @@ public class Block extends Class3390 implements Class3303 {
       spawnDrops(var4, var1, var3, var5, var2, var6);
    }
 
-   public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
    }
 
    public boolean method11564() {

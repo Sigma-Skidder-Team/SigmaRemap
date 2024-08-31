@@ -106,7 +106,7 @@ public class NoGroundCriticals extends Module {
                 var1.method13920(var6);
             } else {
                 this.field23410 = this.getBooleanValueFromSetttingName("Avoid Fall Damage") && !this.field23411 ? 3 : 0;
-                if (this.getBooleanValueFromSetttingName("Avoid Fall Damage") && this.field23411 && !this.field23413 && mc.player.method3433().field18049 < -0.1) {
+                if (this.getBooleanValueFromSetttingName("Avoid Fall Damage") && this.field23411 && !this.field23413 && mc.player.method3433().y < -0.1) {
                     this.field23413 = !this.field23413;
                     var1.method13920(true);
                 }

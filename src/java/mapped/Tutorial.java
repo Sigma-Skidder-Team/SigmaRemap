@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import java.util.List;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;

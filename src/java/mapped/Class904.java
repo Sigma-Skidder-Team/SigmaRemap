@@ -1,7 +1,13 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -9,13 +15,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class Class904 extends Class882 {
+public class Class904 extends ProjectileEntity {
    private static String[] field5147;
    private final Random field5148 = new Random();
    private boolean field5149;
    private int field5150;
-   private static final DataParameter<Integer> field5151 = EntityDataManager.<Integer>method35441(Class904.class, Class7784.field33391);
-   private static final DataParameter<Boolean> field5152 = EntityDataManager.<Boolean>method35441(Class904.class, Class7784.field33398);
+   private static final DataParameter<Integer> field5151 = EntityDataManager.<Integer>createKey(Class904.class, DataSerializers.field33391);
+   private static final DataParameter<Boolean> field5152 = EntityDataManager.<Boolean>createKey(Class904.class, DataSerializers.field33398);
    private int field5153;
    private int field5154;
    private int field5155;
@@ -30,7 +36,7 @@ public class Class904 extends Class882 {
    private Class904(World var1, PlayerEntity var2, int var3, int var4) {
       super(EntityType.field41112, var1);
       this.ignoreFrustumCheck = true;
-      this.method3459(var2);
+      this.setShooter(var2);
       var2.field4930 = this;
       this.field5161 = Math.max(0, var3);
       this.field5162 = Math.max(0, var4);
@@ -64,8 +70,8 @@ public class Class904 extends Class882 {
          0.6 / var20 + 0.5 + this.rand.nextGaussian() * 0.0045
       );
       this.method3434(var19);
-      this.rotationYaw = (float)(MathHelper.method37814(var19.field18048, var19.field18050) * 180.0F / (float)Math.PI);
-      this.rotationPitch = (float)(MathHelper.method37814(var19.field18049, (double) MathHelper.method37766(method3234(var19))) * 180.0F / (float)Math.PI);
+      this.rotationYaw = (float)(MathHelper.method37814(var19.x, var19.z) * 180.0F / (float)Math.PI);
+      this.rotationPitch = (float)(MathHelper.method37814(var19.y, (double) MathHelper.method37766(method3234(var19))) * 180.0F / (float)Math.PI);
       this.prevRotationYaw = this.rotationYaw;
       this.prevRotationPitch = this.rotationPitch;
    }
@@ -86,7 +92,7 @@ public class Class904 extends Class882 {
       if (field5152.equals(var1)) {
          this.field5149 = this.method3210().<Boolean>method35445(field5152);
          if (this.field5149) {
-            this.method3435(this.method3433().field18048, (double)(-0.4F * MathHelper.method37783(this.field5148, 0.6F, 1.0F)), this.method3433().field18050);
+            this.method3435(this.method3433().x, (double)(-0.4F * MathHelper.method37783(this.field5148, 0.6F, 1.0F)), this.method3433().z);
          }
       }
 
@@ -94,13 +100,13 @@ public class Class904 extends Class882 {
    }
 
    @Override
-   public boolean method3291(double var1) {
+   public boolean isInRangeToRenderDist(double var1) {
       double var5 = 64.0;
       return var1 < 4096.0;
    }
 
    @Override
-   public void method3131(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
+   public void setPositionAndRotationDirect(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
    }
 
    @Override
@@ -144,12 +150,12 @@ public class Class904 extends Class882 {
 
                if (this.field5160 == Class2152.field14073) {
                   Vector3d var10 = this.method3433();
-                  double var11 = this.getPosY() + var10.field18049 - (double)var5.getY() - (double)var4;
+                  double var11 = this.getPosY() + var10.y - (double)var5.getY() - (double)var4;
                   if (Math.abs(var11) < 0.01) {
                      var11 += Math.signum(var11) * 0.1;
                   }
 
-                  this.method3435(var10.field18048 * 0.9, var10.field18049 - var11 * (double)this.rand.nextFloat() * 0.2, var10.field18050 * 0.9);
+                  this.method3435(var10.x * 0.9, var10.y - var11 * (double)this.rand.nextFloat() * 0.2, var10.z * 0.9);
                   if (this.field5154 <= 0 && this.field5156 <= 0) {
                      this.field5158 = true;
                   } else {

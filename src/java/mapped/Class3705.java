@@ -1,16 +1,17 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 
 import java.util.function.BiPredicate;
 
-public class Class3705 extends Class3676<Class880> {
+public class Class3705 extends Class3676<LivingEntity> {
    private static String[] field19766;
    private final int field19767;
-   private final BiPredicate<Class880, Class880> field19768;
+   private final BiPredicate<LivingEntity, LivingEntity> field19768;
 
-   public Class3705(int var1, BiPredicate<Class880, Class880> var2) {
+   public Class3705(int var1, BiPredicate<LivingEntity, LivingEntity> var2) {
       super(
          ImmutableMap.of(
             Class8830.field39826,
@@ -28,13 +29,13 @@ public class Class3705 extends Class3676<Class880> {
    }
 
    @Override
-   public boolean method12508(ServerWorld var1, Class880 var2) {
+   public boolean method12508(ServerWorld var1, LivingEntity var2) {
       return this.method12584(var2).getShouldBeDead();
    }
 
    @Override
-   public void method12502(ServerWorld var1, Class880 var2, long var3) {
-      Class880 var7 = this.method12584(var2);
+   public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
+      LivingEntity var7 = this.method12584(var2);
       if (this.field19768.test(var2, var7)) {
          var2.method2992().method21407(Class8830.field39857, true, (long)this.field19767);
       }
@@ -46,7 +47,7 @@ public class Class3705 extends Class3676<Class880> {
       }
    }
 
-   private Class880 method12584(Class880 var1) {
-      return var1.method2992().<Class880>method21410(Class8830.field39826).get();
+   private LivingEntity method12584(LivingEntity var1) {
+      return var1.method2992().<LivingEntity>method21410(Class8830.field39826).get();
    }
 }

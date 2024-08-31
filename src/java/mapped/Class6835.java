@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public class Class6835 extends Class6829 {
    private static String[] field29706;
    private final Class1037 field29722;
@@ -11,7 +13,7 @@ public class Class6835 extends Class6829 {
 
    @Override
    public void method20810() {
-      Class880 var3 = this.field29722.method4232();
+      LivingEntity var3 = this.field29722.method4232();
       if (Class1037.method4651(this.field29722) && this.field29722.method3250()) {
          if (var3 != null && var3.getPosY() > this.field29722.getPosY() || Class1037.method4652(this.field29722)) {
             this.field29722.method3434(this.field29722.method3433().method11339(0.0, 0.002, 0.0));

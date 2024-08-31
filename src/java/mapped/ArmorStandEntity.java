@@ -1,9 +1,13 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -11,7 +15,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class ArmorStandEntity extends Class880 {
+public class ArmorStandEntity extends LivingEntity {
    private static final Class7087 field5565 = new Class7087(0.0F, 0.0F, 0.0F);
    private static final Class7087 field5566 = new Class7087(0.0F, 0.0F, 0.0F);
    private static final Class7087 field5567 = new Class7087(-10.0F, 0.0F, -10.0F);
@@ -20,13 +24,13 @@ public class ArmorStandEntity extends Class880 {
    private static final Class7087 field5570 = new Class7087(1.0F, 0.0F, 1.0F);
    private static final EntitySize field5571 = new EntitySize(0.0F, 0.0F, true);
    private static final EntitySize field5572 = EntityType.field41006.getSize().method32099(0.5F);
-   public static final DataParameter<Byte> field5573 = EntityDataManager.<Byte>method35441(ArmorStandEntity.class, Class7784.field33390);
-   public static final DataParameter<Class7087> field5574 = EntityDataManager.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
-   public static final DataParameter<Class7087> field5575 = EntityDataManager.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
-   public static final DataParameter<Class7087> field5576 = EntityDataManager.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
-   public static final DataParameter<Class7087> field5577 = EntityDataManager.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
-   public static final DataParameter<Class7087> field5578 = EntityDataManager.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
-   public static final DataParameter<Class7087> field5579 = EntityDataManager.<Class7087>method35441(ArmorStandEntity.class, Class7784.field33400);
+   public static final DataParameter<Byte> field5573 = EntityDataManager.<Byte>createKey(ArmorStandEntity.class, DataSerializers.field33390);
+   public static final DataParameter<Class7087> field5574 = EntityDataManager.<Class7087>createKey(ArmorStandEntity.class, DataSerializers.field33400);
+   public static final DataParameter<Class7087> field5575 = EntityDataManager.<Class7087>createKey(ArmorStandEntity.class, DataSerializers.field33400);
+   public static final DataParameter<Class7087> field5576 = EntityDataManager.<Class7087>createKey(ArmorStandEntity.class, DataSerializers.field33400);
+   public static final DataParameter<Class7087> field5577 = EntityDataManager.<Class7087>createKey(ArmorStandEntity.class, DataSerializers.field33400);
+   public static final DataParameter<Class7087> field5578 = EntityDataManager.<Class7087>createKey(ArmorStandEntity.class, DataSerializers.field33400);
+   public static final DataParameter<Class7087> field5579 = EntityDataManager.<Class7087>createKey(ArmorStandEntity.class, DataSerializers.field33400);
    private static final Predicate<Entity> field5580 = var0 -> var0 instanceof AbstractMinecartEntity && ((AbstractMinecartEntity)var0).getMinecartType() == MinecartType.MINECART;
    private final NonNullList<ItemStack> field5581 = NonNullList.<ItemStack>method68(2, ItemStack.EMPTY);
    private final NonNullList<ItemStack> field5582 = NonNullList.<ItemStack>method68(4, ItemStack.EMPTY);
@@ -330,7 +334,7 @@ public class ArmorStandEntity extends Class880 {
    private Class2106 method4188(Vector3d var1) {
       Class2106 var4 = Class2106.field13731;
       boolean var5 = this.method4197();
-      double var6 = !var5 ? var1.field18049 : var1.field18049 * 2.0;
+      double var6 = !var5 ? var1.y : var1.y * 2.0;
       Class2106 var8 = Class2106.field13733;
       if (var6 >= 0.1 && var6 < 0.1 + (!var5 ? 0.45 : 0.8) && this.method3096(var8)) {
          var4 = Class2106.field13733;
@@ -443,8 +447,8 @@ public class ArmorStandEntity extends Class880 {
    }
 
    @Override
-   public boolean method3291(double var1) {
-      double var5 = this.getBoundingBox().method19675() * 4.0;
+   public boolean isInRangeToRenderDist(double var1) {
+      double var5 = this.getBoundingBox().getAverageEdgeLength() * 4.0;
       if (Double.isNaN(var5) || var5 == 0.0) {
          var5 = 4.0;
       }
@@ -724,19 +728,19 @@ public class ArmorStandEntity extends Class880 {
    }
 
    @Override
-   public Class9455 method2926(int var1) {
+   public SoundEvent method2926(int var1) {
       return Sounds.field26358;
    }
 
    @Nullable
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26359;
    }
 
    @Nullable
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26357;
    }
 

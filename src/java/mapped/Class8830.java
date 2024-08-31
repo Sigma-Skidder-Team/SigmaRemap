@@ -1,7 +1,9 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
@@ -16,17 +18,17 @@ public class Class8830<U> {
    public static final Class8830<Class9378> field39815 = method31927("potential_job_site", Class9378.field43522);
    public static final Class8830<Class9378> field39816 = method31927("meeting_point", Class9378.field43522);
    public static final Class8830<List<Class9378>> field39817 = method31928("secondary_job_site");
-   public static final Class8830<List<Class880>> field39818 = method31928("mobs");
-   public static final Class8830<List<Class880>> field39819 = method31928("visible_mobs");
-   public static final Class8830<List<Class880>> field39820 = method31928("visible_villager_babies");
+   public static final Class8830<List<LivingEntity>> field39818 = method31928("mobs");
+   public static final Class8830<List<LivingEntity>> field39819 = method31928("visible_mobs");
+   public static final Class8830<List<LivingEntity>> field39820 = method31928("visible_villager_babies");
    public static final Class8830<List<PlayerEntity>> field39821 = method31928("nearest_players");
    public static final Class8830<PlayerEntity> field39822 = method31928("nearest_visible_player");
    public static final Class8830<PlayerEntity> field39823 = method31928("nearest_visible_targetable_player");
    public static final Class8830<Class8999> field39824 = method31928("walk_target");
    public static final Class8830<Class7864> field39825 = method31928("look_target");
-   public static final Class8830<Class880> field39826 = method31928("attack_target");
+   public static final Class8830<LivingEntity> field39826 = method31928("attack_target");
    public static final Class8830<Boolean> field39827 = method31928("attack_cooling_down");
-   public static final Class8830<Class880> field39828 = method31928("interaction_target");
+   public static final Class8830<LivingEntity> field39828 = method31928("interaction_target");
    public static final Class8830<Class1045> field39829 = method31928("breed_target");
    public static final Class8830<Entity> field39830 = method31928("ride_target");
    public static final Class8830<Class8238> field39831 = method31928("path");
@@ -34,9 +36,9 @@ public class Class8830<U> {
    public static final Class8830<Set<Class9378>> field39833 = method31928("doors_to_close");
    public static final Class8830<BlockPos> field39834 = method31928("nearest_bed");
    public static final Class8830<Class8654> field39835 = method31928("hurt_by");
-   public static final Class8830<Class880> field39836 = method31928("hurt_by_entity");
-   public static final Class8830<Class880> field39837 = method31928("avoid_target");
-   public static final Class8830<Class880> field39838 = method31928("nearest_hostile");
+   public static final Class8830<LivingEntity> field39836 = method31928("hurt_by_entity");
+   public static final Class8830<LivingEntity> field39837 = method31928("avoid_target");
+   public static final Class8830<LivingEntity> field39838 = method31928("nearest_hostile");
    public static final Class8830<Class9378> field39839 = method31928("hiding_place");
    public static final Class8830<Long> field39840 = method31928("heard_bell_time");
    public static final Class8830<Long> field39841 = method31928("cant_reach_walk_target_since");
@@ -63,7 +65,7 @@ public class Class8830<U> {
    public static final Class8830<List<Class1035>> field39862 = method31928("nearest_visible_adult_piglins");
    public static final Class8830<List<Class1091>> field39863 = method31928("nearest_visible_adult_hoglins");
    public static final Class8830<Class1035> field39864 = method31928("nearest_visible_adult_piglin");
-   public static final Class8830<Class880> field39865 = method31928("nearest_visible_zombified");
+   public static final Class8830<LivingEntity> field39865 = method31928("nearest_visible_zombified");
    public static final Class8830<Integer> field39866 = method31928("visible_adult_piglin_count");
    public static final Class8830<Integer> field39867 = method31928("visible_adult_hoglin_count");
    public static final Class8830<PlayerEntity> field39868 = method31928("nearest_player_holding_wanted_item");

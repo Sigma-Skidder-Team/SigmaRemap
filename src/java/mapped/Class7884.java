@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -26,11 +27,11 @@ public class Class7884 extends Class7882<Class1091> {
       int var7 = 0;
       ArrayList var8 = Lists.newArrayList();
 
-      for (Class880 var10 : var5.<List<Class880>>method21410(Class8830.field39819).orElse(Lists.newArrayList())) {
+      for (LivingEntity var10 : var5.<List<LivingEntity>>method21410(Class8830.field39819).orElse(Lists.newArrayList())) {
          if (var10 instanceof Class1034 && !var10.method3005()) {
             var7++;
             if (!var6.isPresent()) {
-               var6 = Optional.<Class880>of((Class1034)var10);
+               var6 = Optional.<LivingEntity>of((Class1034)var10);
             }
          }
 

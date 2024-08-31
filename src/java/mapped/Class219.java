@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 public abstract class Class219<T extends Entity, M extends Class2827<T>> {
@@ -9,7 +10,7 @@ public abstract class Class219<T extends Entity, M extends Class2827<T>> {
       this.field863 = var1;
    }
 
-   public static <T extends Class880> void method823(
+   public static <T extends LivingEntity> void method823(
       Class2827<T> var0,
       Class2827<T> var1,
       ResourceLocation var2,
@@ -35,7 +36,7 @@ public abstract class Class219<T extends Entity, M extends Class2827<T>> {
       }
    }
 
-   public static <T extends Class880> void method824(
+   public static <T extends LivingEntity> void method824(
            Class2827<T> var0, ResourceLocation var1, MatrixStack var2, Class7733 var3, int var4, T var5, float var6, float var7, float var8
    ) {
       Class5422 var11 = var3.method25597(RenderType.getEntityCutoutNoCull(var1));

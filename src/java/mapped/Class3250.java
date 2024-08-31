@@ -1,7 +1,10 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -94,7 +97,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    private boolean method11680(World var1, BlockPos var2) {
-      List var5 = var1.<Class1042>method6772(Class1042.class, new AxisAlignedBB(var2), Class880::isSleeping);
+      List var5 = var1.<Class1042>method6772(Class1042.class, new AxisAlignedBB(var2), LivingEntity::isSleeping);
       if (!var5.isEmpty()) {
          ((Class1042)var5.get(0)).method2907();
          return true;
@@ -119,9 +122,9 @@ public class Class3250 extends Class3198 implements Class3245 {
 
    private void method11681(Entity var1) {
       Vector3d var4 = var1.method3433();
-      if (var4.field18049 < 0.0) {
-         double var5 = !(var1 instanceof Class880) ? 0.8 : 1.0;
-         var1.method3435(var4.field18048, -var4.field18049 * 0.66F * var5, var4.field18050);
+      if (var4.y < 0.0) {
+         double var5 = !(var1 instanceof LivingEntity) ? 0.8 : 1.0;
+         var1.method3435(var4.x, -var4.y * 0.66F * var5, var4.z);
       }
    }
 
@@ -271,7 +274,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
       if (!var1.isRemote) {
          BlockPos var8 = var2.method8349(var3.<Direction>method23463(field18484));

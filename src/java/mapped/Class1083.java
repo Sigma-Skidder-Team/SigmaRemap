@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -17,22 +19,22 @@ public class Class1083 extends Class1082 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27138;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27140;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27139;
    }
 
    @Override
-   public Class9455 method5030() {
+   public SoundEvent method5030() {
       return Sounds.field27141;
    }
 

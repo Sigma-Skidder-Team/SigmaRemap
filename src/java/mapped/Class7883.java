@@ -2,13 +2,14 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public class Class7883 extends Class7882<Class880> {
+public class Class7883 extends Class7882<LivingEntity> {
    private static String[] field33830;
    private static final ImmutableMap<EntityType<?>, Float> field33831 = ImmutableMap.<EntityType<?>, Float> builder()
       .put(EntityType.field41021, 8.0F)
@@ -30,13 +31,13 @@ public class Class7883 extends Class7882<Class880> {
    }
 
    @Override
-   public void method26425(ServerWorld var1, Class880 var2) {
+   public void method26425(ServerWorld var1, LivingEntity var2) {
       var2.method2992().method21408(Class8830.field39838, this.method26431(var2));
    }
 
-   private Optional<Class880> method26431(Class880 var1) {
+   private Optional<LivingEntity> method26431(LivingEntity var1) {
       return this.method26432(var1)
-         .<Class880>flatMap(
+         .<LivingEntity>flatMap(
             var2 -> var2.stream()
                   .filter(this::method26435)
                   .filter(var2x -> this.method26434(var1, var2x))
@@ -44,20 +45,20 @@ public class Class7883 extends Class7882<Class880> {
          );
    }
 
-   private Optional<List<Class880>> method26432(Class880 var1) {
-      return var1.method2992().<List<Class880>>method21410(Class8830.field39819);
+   private Optional<List<LivingEntity>> method26432(LivingEntity var1) {
+      return var1.method2992().<List<LivingEntity>>method21410(Class8830.field39819);
    }
 
-   private int method26433(Class880 var1, Class880 var2, Class880 var3) {
+   private int method26433(LivingEntity var1, LivingEntity var2, LivingEntity var3) {
       return MathHelper.floor(var2.getDistanceSq(var1) - var3.getDistanceSq(var1));
    }
 
-   private boolean method26434(Class880 var1, Class880 var2) {
+   private boolean method26434(LivingEntity var1, LivingEntity var2) {
       float var5 = (Float)field33831.get(var2.getType());
       return var2.getDistanceSq(var1) <= (double)(var5 * var5);
    }
 
-   private boolean method26435(Class880 var1) {
+   private boolean method26435(LivingEntity var1) {
       return field33831.containsKey(var1.getType());
    }
 }

@@ -2,8 +2,10 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.RandomUtils;
 
@@ -366,9 +368,9 @@ public class Class9217 {
    public static float[] method34565() {
       BlockRayTraceResult var2 = method34566(Class9567.method37086() - 270.0F);
       if (var2.getType() != RayTraceResult.Type.MISS) {
-         double var3 = var2.method31419().field18048 - (double)var2.getPos().getX();
-         double var5 = var2.method31419().field18050 - (double)var2.getPos().getZ();
-         double var7 = var2.method31419().field18049 - (double)var2.getPos().getY();
+         double var3 = var2.method31419().x - (double)var2.getPos().getX();
+         double var5 = var2.method31419().z - (double)var2.getPos().getZ();
+         double var7 = var2.method31419().y - (double)var2.getPos().getY();
          double var9 = (double)var2.getPos().getX() - Minecraft.getInstance().player.getPosX() + var3;
          double var11 = (double)var2.getPos().getY()
             - (Minecraft.getInstance().player.getPosY() + (double) Minecraft.getInstance().player.method3393())
@@ -609,7 +611,7 @@ public class Class9217 {
          double var9 = (double)(-MathHelper.sin(var8)) / 2.1;
          double var11 = (double) MathHelper.cos(var8) / 2.1;
          var7 = var7.method11339(var9, 0.0, var11);
-         float[] var13 = Class9142.method34144(var7.field18048, var7.field18050, var7.field18049);
+         float[] var13 = Class9142.method34144(var7.x, var7.z, var7.y);
          float var14 = var13[0];
          float var15 = var13[1];
          var8 = (var6 - 90.0F) * (float) (Math.PI / 180.0);
@@ -619,7 +621,7 @@ public class Class9217 {
             (double)var2.field33646.getX() + 0.5, (double)var2.field33646.getY() + 0.5, (double)var2.field33646.getZ() + 0.5
          );
          var7 = var7.method11339(var9, 0.0, var11);
-         float[] var16 = Class9142.method34144(var7.field18048, var7.field18050, var7.field18049);
+         float[] var16 = Class9142.method34144(var7.x, var7.z, var7.y);
          float var17 = var16[0];
          float var18 = var16[1];
          float var19 = Math.abs(Class9142.method34142(MathHelper.method37792(var0), MathHelper.method37792(var14)));

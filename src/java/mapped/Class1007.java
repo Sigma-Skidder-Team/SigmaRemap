@@ -1,8 +1,15 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
@@ -14,7 +21,7 @@ import java.util.List;
 
 public class Class1007 extends Class1006 implements Class1008 {
    private static final Logger field5618 = LogManager.getLogger();
-   public static final DataParameter<Integer> field5619 = EntityDataManager.<Integer>method35441(Class1007.class, Class7784.field33391);
+   public static final DataParameter<Integer> field5619 = EntityDataManager.<Integer>createKey(Class1007.class, DataSerializers.field33391);
    private static final Class8522 field5620 = new Class8522().method30203(64.0);
    public final double[][] field5621 = new double[64][3];
    public int field5622 = -1;
@@ -138,7 +145,7 @@ public class Class1007 extends Class1006 implements Class1008 {
          this.method4320();
          Vector3d var42 = this.method3433();
          float var44 = 0.2F / (MathHelper.method37766(method3234(var42)) * 10.0F + 1.0F);
-         var44 *= (float)Math.pow(2.0, var42.field18049);
+         var44 *= (float)Math.pow(2.0, var42.y);
          if (!this.field5639.method32672().method23358()) {
             if (!this.field5634) {
                this.field5633 += var44;
@@ -174,9 +181,9 @@ public class Class1007 extends Class1006 implements Class1008 {
 
                Vector3d var6 = var47.method23365();
                if (var6 != null) {
-                  double var9 = var6.field18048 - this.getPosX();
-                  double var11 = var6.field18049 - this.getPosY();
-                  double var13 = var6.field18050 - this.getPosZ();
+                  double var9 = var6.x - this.getPosX();
+                  double var11 = var6.y - this.getPosY();
+                  double var13 = var6.z - this.getPosZ();
                   double var15 = var9 * var9 + var11 * var11 + var13 * var13;
                   float var17 = var47.method23364();
                   double var18 = (double) MathHelper.method37766(var9 * var9 + var13 * var13);
@@ -192,7 +199,7 @@ public class Class1007 extends Class1006 implements Class1008 {
                   Vector3d var22 = var6.method11337(this.getPosX(), this.getPosY(), this.getPosZ()).method11333();
                   Vector3d var23 = new Vector3d(
                         (double) MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)),
-                        this.method3433().field18049,
+                        this.method3433().y,
                         (double)(-MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)))
                      )
                      .method11333();
@@ -223,7 +230,7 @@ public class Class1007 extends Class1006 implements Class1008 {
                   this.rotationPitch = (float)((double)this.rotationPitch + (this.field4990 - (double)this.rotationPitch) / (double)this.field4985);
                   this.field4985--;
                   this.setPosition(var7, var52, var53);
-                  this.method3214(this.rotationYaw, this.rotationPitch);
+                  this.setRotation(this.rotationYaw, this.rotationPitch);
                }
 
                this.field5639.method32672().method23359();
@@ -301,12 +308,12 @@ public class Class1007 extends Class1006 implements Class1008 {
             }
 
             for (int var60 = 0; var60 < this.field5623.length; var60++) {
-               this.field5623[var60].prevPosX = var48[var60].field18048;
-               this.field5623[var60].prevPosY = var48[var60].field18049;
-               this.field5623[var60].prevPosZ = var48[var60].field18050;
-               this.field5623[var60].lastTickPosX = var48[var60].field18048;
-               this.field5623[var60].lastTickPosY = var48[var60].field18049;
-               this.field5623[var60].lastTickPosZ = var48[var60].field18050;
+               this.field5623[var60].prevPosX = var48[var60].x;
+               this.field5623[var60].prevPosY = var48[var60].y;
+               this.field5623[var60].prevPosZ = var48[var60].z;
+               this.field5623[var60].lastTickPosX = var48[var60].x;
+               this.field5623[var60].lastTickPosY = var48[var60].y;
+               this.field5623[var60].lastTickPosZ = var48[var60].z;
             }
          } else {
             this.field5633 = 0.5F;
@@ -375,12 +382,12 @@ public class Class1007 extends Class1006 implements Class1008 {
       double var6 = (this.field5626.getBoundingBox().field28451 + this.field5626.getBoundingBox().field28454) / 2.0;
 
       for (Entity var9 : var1) {
-         if (var9 instanceof Class880) {
+         if (var9 instanceof LivingEntity) {
             double var10 = var9.getPosX() - var4;
             double var12 = var9.getPosZ() - var6;
             double var14 = Math.max(var10 * var10 + var12 * var12, 0.1);
             var9.method3280(var10 / var14 * 4.0, 0.2F, var12 / var14 * 4.0);
-            if (!this.field5639.method32672().method23358() && ((Class880)var9).method3015() < var9.ticksExisted - 2) {
+            if (!this.field5639.method32672().method23358() && ((LivingEntity)var9).method3015() < var9.ticksExisted - 2) {
                var9.method2741(Class8654.method31115(this), 5.0F);
                this.method3399(this, var9);
             }
@@ -390,7 +397,7 @@ public class Class1007 extends Class1006 implements Class1008 {
 
    private void method4322(List<Entity> var1) {
       for (Entity var5 : var1) {
-         if (var5 instanceof Class880) {
+         if (var5 instanceof LivingEntity) {
             var5.method2741(Class8654.method31115(this), 10.0F);
             this.method3399(this, var5);
          }
@@ -760,12 +767,12 @@ public class Class1007 extends Class1006 implements Class1008 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26536;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26541;
    }
 

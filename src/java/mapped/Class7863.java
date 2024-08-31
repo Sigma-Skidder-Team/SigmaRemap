@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 
 public class Class7863 implements Class7864 {
@@ -22,7 +23,7 @@ public class Class7863 implements Class7864 {
    }
 
    @Override
-   public boolean method26358(Class880 var1) {
+   public boolean method26358(LivingEntity var1) {
       return true;
    }
 

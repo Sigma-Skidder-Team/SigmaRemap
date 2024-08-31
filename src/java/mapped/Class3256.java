@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+
 public class Class3256 extends Item implements Class3255 {
    private static String[] field18731;
 

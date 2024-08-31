@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.List;
@@ -40,7 +41,7 @@ public class Class3305 extends Item {
          if (var7.getType() != RayTraceResult.Type.BLOCK) {
             return Class6794.<ItemStack>method20698(var6);
          } else {
-            BoatEntity var16 = new BoatEntity(var1, var7.method31419().field18048, var7.method31419().field18049, var7.method31419().field18050);
+            BoatEntity var16 = new BoatEntity(var1, var7.method31419().x, var7.method31419().y, var7.method31419().z);
             var16.method4171(this.field18812);
             var16.rotationYaw = var2.rotationYaw;
             if (var1.method7053(var16, var16.getBoundingBox().method19664(-0.1))) {

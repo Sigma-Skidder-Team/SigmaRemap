@@ -2,10 +2,15 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Dynamic;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -14,9 +19,9 @@ import java.util.Random;
 import java.util.UUID;
 
 public class Class1034 extends Class1035 implements Class1023 {
-   private static final DataParameter<Boolean> field5741 = EntityDataManager.<Boolean>method35441(Class1034.class, Class7784.field33398);
-   private static final DataParameter<Boolean> field5742 = EntityDataManager.<Boolean>method35441(Class1034.class, Class7784.field33398);
-   private static final DataParameter<Boolean> field5743 = EntityDataManager.<Boolean>method35441(Class1034.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5741 = EntityDataManager.<Boolean>createKey(Class1034.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5742 = EntityDataManager.<Boolean>createKey(Class1034.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5743 = EntityDataManager.<Boolean>createKey(Class1034.class, DataSerializers.field33398);
    private static final UUID field5744 = UUID.fromString("766bfa64-11f3-11ea-8d71-362b9e155667");
    private static final Class9689 field5745 = new Class9689(field5744, "Baby speed boost", 0.2F, AttributeModifierOperation.field13353);
    private final Class927 field5746 = new Class927(8);
@@ -311,8 +316,8 @@ public class Class1034 extends Class1035 implements Class1023 {
    public boolean method2741(Class8654 var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
       if (!this.world.isRemote) {
-         if (var5 && var1.method31109() instanceof Class880) {
-            Class4388.method13835(this, (Class880)var1.method31109());
+         if (var5 && var1.method31109() instanceof LivingEntity) {
+            Class4388.method13835(this, (LivingEntity)var1.method31109());
          }
 
          return var5;
@@ -322,12 +327,12 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public void method4530(Class880 var1, float var2) {
+   public void method4530(LivingEntity var1, float var2) {
       this.method4538(this, 1.6F);
    }
 
    @Override
-   public void method4536(Class880 var1, ItemStack var2, Class882 var3, float var4) {
+   public void method4536(LivingEntity var1, ItemStack var2, ProjectileEntity var3, float var4) {
       this.method4539(this, var1, var3, var4, 1.6F);
    }
 
@@ -400,17 +405,17 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public Class9455 method4241() {
-      return !this.world.isRemote ? Class4388.method13837(this).orElse((Class9455)null) : null;
+   public SoundEvent method4241() {
+      return !this.world.isRemote ? Class4388.method13837(this).orElse((SoundEvent)null) : null;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26935;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26933;
    }
 
@@ -419,7 +424,7 @@ public class Class1034 extends Class1035 implements Class1023 {
       this.method2863(Sounds.field26937, 0.15F, 1.0F);
    }
 
-   public void method4629(Class9455 var1) {
+   public void method4629(SoundEvent var1) {
       this.method2863(var1, this.method3099(), this.method3100());
    }
 

@@ -1,7 +1,10 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -53,7 +56,7 @@ public class Class3366 extends Class3241 {
 
          for (Class1017 var9 : var5) {
             if (var9.method4232() == null) {
-               var9.method4233((Class880)var6.get(var1.rand.nextInt(var7)));
+               var9.method4233((LivingEntity)var6.get(var1.rand.nextInt(var7)));
             }
          }
       }

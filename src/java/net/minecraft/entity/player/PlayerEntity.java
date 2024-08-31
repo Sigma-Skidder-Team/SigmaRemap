@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.entity.player;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -8,10 +8,14 @@ import com.mentalfrostbyte.jello.event.impl.SafeWalkEvent;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mojang.authlib.GameProfile;
 import com.mojang.datafixers.util.Either;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import mapped.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -26,7 +30,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.function.Predicate;
 
-public abstract class PlayerEntity extends Class880 {
+public abstract class PlayerEntity extends LivingEntity {
    public static final EntitySize field4893 = EntitySize.method32101(0.6F, 1.8F);
    private static final Map<Pose, EntitySize> field4894 = ImmutableMap.<Pose, EntitySize>builder()
       .put(Pose.STANDING, field4893)
@@ -37,12 +41,12 @@ public abstract class PlayerEntity extends Class880 {
       .put(Pose.field13624, EntitySize.method32101(0.6F, 1.5F))
       .put(Pose.field13625, EntitySize.method32102(0.2F, 0.2F))
       .build();
-   private static final DataParameter<Float> field4895 = EntityDataManager.<Float>method35441(PlayerEntity.class, Class7784.field33392);
-   private static final DataParameter<Integer> field4896 = EntityDataManager.<Integer>method35441(PlayerEntity.class, Class7784.field33391);
-   public static final DataParameter<Byte> field4897 = EntityDataManager.<Byte>method35441(PlayerEntity.class, Class7784.field33390);
-   public static final DataParameter<Byte> field4898 = EntityDataManager.<Byte>method35441(PlayerEntity.class, Class7784.field33390);
-   public static final DataParameter<CompoundNBT> field4899 = EntityDataManager.<CompoundNBT>method35441(PlayerEntity.class, Class7784.field33405);
-   public static final DataParameter<CompoundNBT> field4900 = EntityDataManager.<CompoundNBT>method35441(PlayerEntity.class, Class7784.field33405);
+   private static final DataParameter<Float> field4895 = EntityDataManager.<Float>createKey(PlayerEntity.class, DataSerializers.field33392);
+   private static final DataParameter<Integer> field4896 = EntityDataManager.<Integer>createKey(PlayerEntity.class, DataSerializers.field33391);
+   public static final DataParameter<Byte> field4897 = EntityDataManager.<Byte>createKey(PlayerEntity.class, DataSerializers.field33390);
+   public static final DataParameter<Byte> field4898 = EntityDataManager.<Byte>createKey(PlayerEntity.class, DataSerializers.field33390);
+   public static final DataParameter<CompoundNBT> field4899 = EntityDataManager.<CompoundNBT>createKey(PlayerEntity.class, DataSerializers.field33405);
+   public static final DataParameter<CompoundNBT> field4900 = EntityDataManager.<CompoundNBT>createKey(PlayerEntity.class, DataSerializers.field33405);
    private long field4901;
    public PlayerInventory inventory = new PlayerInventory(this);
    public Class980 field4903 = new Class980();
@@ -100,7 +104,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    public static Class7037 method2849() {
-      return Class880.method2997()
+      return LivingEntity.method2997()
          .method21849(Attributes.field42110, 1.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.1F)
          .method21848(Attributes.ATTACK_SPEED)
@@ -307,17 +311,17 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public Class9455 method2859() {
+   public SoundEvent method2859() {
       return Sounds.field26969;
    }
 
    @Override
-   public Class9455 method2860() {
+   public SoundEvent method2860() {
       return Sounds.field26967;
    }
 
    @Override
-   public Class9455 method2861() {
+   public SoundEvent method2861() {
       return Sounds.field26968;
    }
 
@@ -327,11 +331,11 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public void method2863(Class9455 var1, float var2, float var3) {
+   public void method2863(SoundEvent var1, float var2, float var3) {
       this.world.method6743(this, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.method2864(), var2, var3);
    }
 
-   public void method2834(Class9455 var1, Class2266 var2, float var3, float var4) {
+   public void method2834(SoundEvent var1, Class2266 var2, float var3, float var4) {
    }
 
    @Override
@@ -553,7 +557,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       if (var1 != Class8654.field38994) {
          if (var1 != Class8654.field38999) {
             return var1 != Class8654.field39012 ? Sounds.field26961 : Sounds.field26964;
@@ -566,7 +570,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26960;
    }
 
@@ -781,7 +785,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public void method2885(Class880 var1) {
+   public void method2885(LivingEntity var1) {
       super.method2885(var1);
       if (var1.method3090().getItem() instanceof Class3265) {
          this.method2901(true);
@@ -891,12 +895,12 @@ public abstract class PlayerEntity extends Class880 {
          ItemStack var6 = var5.copy();
          ActionResultType var7 = var1.method3304(this, var2);
          if (!var7.isSuccessOrConsume()) {
-            if (!var5.isEmpty() && var1 instanceof Class880) {
+            if (!var5.isEmpty() && var1 instanceof LivingEntity) {
                if (this.abilities.isCreativeMode) {
                   var5 = var6;
                }
 
-               ActionResultType var8 = var5.method32125(this, (Class880)var1, var2);
+               ActionResultType var8 = var5.method32125(this, (LivingEntity)var1, var2);
                if (var8.isSuccessOrConsume()) {
                   if (var5.isEmpty() && !this.abilities.isCreativeMode) {
                      this.method3095(var2, ItemStack.EMPTY);
@@ -950,8 +954,8 @@ public abstract class PlayerEntity extends Class880 {
       Client.getInstance().getEventManager().call(event);
       if (event.method13965() == Class1893.field11098
          || !this.abilities.field29607 && (var2 == Class2107.field13742 || var2 == Class2107.field13743) && this.method2853() && this.method2899()) {
-         double var6 = var1.field18048;
-         double var8 = var1.field18050;
+         double var6 = var1.x;
+         double var8 = var1.z;
          double var10 = 0.05;
 
          while (var6 != 0.0 && this.world.method7053(this, this.getBoundingBox().method19667(var6, (double)(-this.stepHeight), 0.0))) {
@@ -992,7 +996,7 @@ public abstract class PlayerEntity extends Class880 {
             }
          }
 
-         var1 = new Vector3d(var6, var1.field18049, var8);
+         var1 = new Vector3d(var6, var1.y, var8);
       }
 
       SafeWalkEvent var12 = new SafeWalkEvent(false);
@@ -1010,10 +1014,10 @@ public abstract class PlayerEntity extends Class880 {
       if (var1.method3360() && !var1.method3361(this)) {
          float var4 = (float)this.method3086(Attributes.field42110);
          float var5;
-         if (!(var1 instanceof Class880)) {
+         if (!(var1 instanceof LivingEntity)) {
             var5 = Class7858.method26318(this.method3090(), Class7809.field33505);
          } else {
-            var5 = Class7858.method26318(this.method3090(), ((Class880)var1).method3089());
+            var5 = Class7858.method26318(this.method3090(), ((LivingEntity)var1).method3089());
          }
 
          float var6 = this.method2974(0.5F);
@@ -1039,7 +1043,7 @@ public abstract class PlayerEntity extends Class880 {
                && !this.method3250()
                && !this.method3033(Effects.BLINDNESS)
                && !this.isPassenger()
-               && var1 instanceof Class880;
+               && var1 instanceof LivingEntity;
             var10 = var10 && !this.method3337();
             if (var10) {
                var4 *= 1.5F;
@@ -1058,8 +1062,8 @@ public abstract class PlayerEntity extends Class880 {
             float var28 = 0.0F;
             boolean var15 = false;
             int var16 = Class7858.method26324(this);
-            if (var1 instanceof Class880) {
-               var28 = ((Class880)var1).getHealth();
+            if (var1 instanceof LivingEntity) {
+               var28 = ((LivingEntity)var1).getHealth();
                if (var16 > 0 && !var1.method3327()) {
                   var15 = true;
                   var1.method3221(1);
@@ -1076,14 +1080,14 @@ public abstract class PlayerEntity extends Class880 {
                }
             } else {
                if (var9 > 0) {
-                  if (!(var1 instanceof Class880)) {
+                  if (!(var1 instanceof LivingEntity)) {
                      var1.method3280(
                         (double)(-MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)) * (float)var9 * 0.5F),
                         0.1,
                         (double)(MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)) * (float)var9 * 0.5F)
                      );
                   } else {
-                     ((Class880)var1)
+                     ((LivingEntity)var1)
                         .method3058(
                            (float)var9 * 0.5F,
                            (double) MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)),
@@ -1098,7 +1102,7 @@ public abstract class PlayerEntity extends Class880 {
                if (var11) {
                   float var19 = 1.0F + Class7858.method26319(this) * var4;
 
-                  for (Class880 var21 : this.world.<Class880>method7182(Class880.class, var1.getBoundingBox().method19663(1.0, 0.25, 1.0))) {
+                  for (LivingEntity var21 : this.world.<LivingEntity>method7182(LivingEntity.class, var1.getBoundingBox().method19663(1.0, 0.25, 1.0))) {
                      if (var21 != this
                         && var21 != var1
                         && !this.method3345(var21)
@@ -1149,8 +1153,8 @@ public abstract class PlayerEntity extends Class880 {
                }
 
                this.method3020(var1);
-               if (var1 instanceof Class880) {
-                  Class7858.method26320((Class880)var1, this);
+               if (var1 instanceof LivingEntity) {
+                  Class7858.method26320((LivingEntity)var1, this);
                }
 
                Class7858.method26321(this, var1);
@@ -1160,15 +1164,15 @@ public abstract class PlayerEntity extends Class880 {
                   var30 = ((Class908)var1).field5186;
                }
 
-               if (!this.world.isRemote && !var29.isEmpty() && var30 instanceof Class880) {
-                  var29.method32122((Class880)var30, this);
+               if (!this.world.isRemote && !var29.isEmpty() && var30 instanceof LivingEntity) {
+                  var29.method32122((LivingEntity)var30, this);
                   if (var29.isEmpty()) {
                      this.method3095(Hand.MAIN_HAND, ItemStack.EMPTY);
                   }
                }
 
-               if (var1 instanceof Class880) {
-                  float var31 = var28 - ((Class880)var1).getHealth();
+               if (var1 instanceof LivingEntity) {
+                  float var31 = var28 - ((LivingEntity)var1).getHealth();
                   this.method2912(Class8876.field40127, Math.round(var31 * 10.0F));
                   if (var16 > 0) {
                      var1.method3221(var16 * 4);
@@ -1188,7 +1192,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public void method2900(Class880 var1) {
+   public void method2900(LivingEntity var1) {
       this.method2817(var1);
    }
 
@@ -1340,23 +1344,23 @@ public abstract class PlayerEntity extends Class880 {
       double var6 = this.getPosY();
       double var8 = this.getPosZ();
       if (this.method2951() && !this.isPassenger()) {
-         double var10 = this.method3320().field18049;
+         double var10 = this.method3320().y;
          double var12 = !(var10 < -0.2) ? 0.06 : 0.085;
          if (var10 <= 0.0
             || this.field4981
             || !this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() + 1.0 - 0.1, this.getPosZ())).method23449().method23474()) {
             Vector3d var14 = this.method3433();
-            this.method3434(var14.method11339(0.0, (var10 - var14.field18049) * var12, 0.0));
+            this.method3434(var14.method11339(0.0, (var10 - var14.y) * var12, 0.0));
          }
       }
 
       if (this.abilities.field29607 && !this.isPassenger()) {
-         double var17 = this.method3433().field18049;
+         double var17 = this.method3433().y;
          float var15 = this.field4969;
          this.field4969 = this.abilities.method20714() * (float)(!this.method3337() ? 1 : 2);
          super.method2915(var1);
          Vector3d var16 = this.method3433();
-         this.method3435(var16.field18048, var17 * 0.6, var16.field18050);
+         this.method3435(var16.x, var17 * 0.6, var16.z);
          this.field4969 = var15;
          this.fallDistance = 0.0F;
          this.method3349(7, false);
@@ -1515,12 +1519,12 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public Class9455 method2926(int var1) {
+   public SoundEvent method2926(int var1) {
       return var1 <= 4 ? Sounds.field26966 : Sounds.field26957;
    }
 
    @Override
-   public void method2927(ServerWorld var1, Class880 var2) {
+   public void method2927(ServerWorld var1, LivingEntity var2) {
       this.method2913(Class8876.field40102.method172(var2.getType()));
    }
 
@@ -2036,8 +2040,8 @@ public abstract class PlayerEntity extends Class880 {
          double var12 = Entity.method3234(var8);
          float var14;
          if (var21 > 0.0 && var12 > 0.0) {
-            double var17 = (var9.field18048 * var8.field18048 + var9.field18050 * var8.field18050) / Math.sqrt(var21 * var12);
-            double var19 = var9.field18048 * var8.field18050 - var9.field18050 * var8.field18048;
+            double var17 = (var9.x * var8.x + var9.z * var8.z) / Math.sqrt(var21 * var12);
+            double var19 = var9.x * var8.z - var9.z * var8.x;
             var14 = (float)(Math.signum(var19) * Math.acos(var17));
          } else {
             var14 = 0.0F;

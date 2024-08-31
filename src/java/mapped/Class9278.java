@@ -9,7 +9,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.network.datasync.EntityDataManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -82,9 +85,9 @@ public class Class9278 {
             boolean var30 = var28 || this.field42679 % 60 == 0;
             boolean var10 = Math.abs(var22 - this.field42675) >= 1 || Math.abs(var25 - this.field42676) >= 1;
             if (this.field42679 > 0 || this.field42668 instanceof AbstractArrowEntity) {
-               long var11 = Class5476.method17229(var27.field18048);
-               long var13 = Class5476.method17229(var27.field18049);
-               long var15 = Class5476.method17229(var27.field18050);
+               long var11 = Class5476.method17229(var27.x);
+               long var13 = Class5476.method17229(var27.y);
+               long var15 = Class5476.method17229(var27.z);
                boolean var17 = var11 < -32768L || var11 > 32767L || var13 < -32768L || var13 > 32767L || var15 < -32768L || var15 > 32767L;
                if (var17 || this.field42680 > 400 || this.field42682 || this.field42683 != this.field42668.method3226()) {
                   this.field42683 = this.field42668.method3226();
@@ -113,7 +116,7 @@ public class Class9278 {
                }
             }
 
-            if ((this.field42670 || this.field42668.isAirBorne || this.field42668 instanceof Class880 && ((Class880)this.field42668).method3165())
+            if ((this.field42670 || this.field42668.isAirBorne || this.field42668 instanceof LivingEntity && ((LivingEntity)this.field42668).method3165())
                && this.field42679 > 0) {
                Vector3d var18 = this.field42668.method3433();
                double var19 = var18.method11342(this.field42678);
@@ -193,13 +196,13 @@ public class Class9278 {
       }
 
       boolean var5 = this.field42670;
-      if (this.field42668 instanceof Class880) {
-         Collection var6 = ((Class880)this.field42668).method3088().method33379();
+      if (this.field42668 instanceof LivingEntity) {
+         Collection var6 = ((LivingEntity)this.field42668).method3088().method33379();
          if (!var6.isEmpty()) {
             var1.accept(new Class5550(this.field42668.method3205(), var6));
          }
 
-         if (((Class880)this.field42668).method3165()) {
+         if (((LivingEntity)this.field42668).method3165()) {
             var5 = true;
          }
       }
@@ -209,11 +212,11 @@ public class Class9278 {
          var1.accept(new Class5590(this.field42668.method3205(), this.field42678));
       }
 
-      if (this.field42668 instanceof Class880) {
+      if (this.field42668 instanceof LivingEntity) {
          ArrayList var12 = Lists.newArrayList();
 
          for (Class2106 var10 : Class2106.values()) {
-            ItemStack var11 = ((Class880)this.field42668).method2943(var10);
+            ItemStack var11 = ((LivingEntity)this.field42668).method2943(var10);
             if (!var11.isEmpty()) {
                var12.add(Pair.of(var10, var11.copy()));
             }
@@ -224,8 +227,8 @@ public class Class9278 {
          }
       }
 
-      if (this.field42668 instanceof Class880) {
-         Class880 var13 = (Class880)this.field42668;
+      if (this.field42668 instanceof LivingEntity) {
+         LivingEntity var13 = (LivingEntity)this.field42668;
 
          for (Class2023 var16 : var13.method3031()) {
             var1.accept(new Class5537(this.field42668.method3205(), var16));
@@ -254,8 +257,8 @@ public class Class9278 {
          this.method34976(new Class5553(this.field42668.method3205(), var3, false));
       }
 
-      if (this.field42668 instanceof Class880) {
-         Set var4 = ((Class880)this.field42668).method3088().method33378();
+      if (this.field42668 instanceof LivingEntity) {
+         Set var4 = ((LivingEntity)this.field42668).method3088().method33378();
          if (!var4.isEmpty()) {
             this.method34976(new Class5550(this.field42668.method3205(), var4));
          }

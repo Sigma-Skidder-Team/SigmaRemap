@@ -8,7 +8,9 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -75,7 +77,7 @@ public class BowAimbot extends Module {
             }
 
             if (!this.field23754.isEmpty() && this.getBooleanValueFromSetttingName("Silent")) {
-                float[] var4 = Class9142.method34146((Class880) this.field23754.get(0));
+                float[] var4 = Class9142.method34146((LivingEntity) this.field23754.get(0));
                 var1.method13918(var4[0]);
                 var1.method13916(var4[1]);
             }
@@ -86,7 +88,7 @@ public class BowAimbot extends Module {
     private void method16570(Class4415 var1) {
         if (this.isEnabled() && !this.getBooleanValueFromSetttingName("Silent")) {
             if (!this.field23754.isEmpty()) {
-                float[] var4 = Class9142.method34146((Class880) this.field23754.get(0));
+                float[] var4 = Class9142.method34146((LivingEntity) this.field23754.get(0));
                 mc.player.rotationYaw = var4[0];
                 mc.player.rotationPitch = var4[1];
             }
@@ -103,13 +105,13 @@ public class BowAimbot extends Module {
                 var5.remove();
             } else if (Client.getInstance().getFriendManager().method26997(var6)) {
                 var5.remove();
-            } else if (!(var6 instanceof Class880)) {
+            } else if (!(var6 instanceof LivingEntity)) {
                 var5.remove();
-            } else if (((Class880) var6).getHealth() == 0.0F) {
+            } else if (((LivingEntity) var6).getHealth() == 0.0F) {
                 var5.remove();
             } else if (mc.player.method3275(var6) > var1) {
                 var5.remove();
-            } else if (!mc.player.method3026((Class880) var6)) {
+            } else if (!mc.player.method3026((LivingEntity) var6)) {
                 var5.remove();
             } else if (var6 instanceof ArmorStandEntity) {
                 var5.remove();

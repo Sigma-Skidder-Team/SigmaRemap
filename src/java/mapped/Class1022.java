@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public interface Class1022 {
-   void method4530(Class880 var1, float var2);
+   void method4530(LivingEntity var1, float var2);
 }

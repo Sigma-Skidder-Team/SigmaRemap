@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 
 import java.util.List;
@@ -23,13 +24,13 @@ public class Class3729 extends Class3676<Class1042> {
       if (!var5.method21410(Class8830.field39828).isPresent()) {
          return false;
       } else {
-         Class880 var6 = var5.<Class880>method21410(Class8830.field39828).get();
+         LivingEntity var6 = var5.<LivingEntity>method21410(Class8830.field39828).get();
          return var6.getType() == EntityType.PLAYER && var2.isAlive() && var6.isAlive() && !var2.method3005() && var2.getDistanceSq(var6) <= 17.0;
       }
    }
 
    public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {
-      return this.method12508(var1, var2) && this.field19832 > 0 && var2.method2992().<Class880>method21410(Class8830.field39828).isPresent();
+      return this.method12508(var1, var2) && this.field19832 > 0 && var2.method2992().<LivingEntity>method21410(Class8830.field39828).isPresent();
    }
 
    public void method12502(ServerWorld var1, Class1042 var2, long var3) {
@@ -41,7 +42,7 @@ public class Class3729 extends Class3676<Class1042> {
    }
 
    public void method12504(ServerWorld var1, Class1042 var2, long var3) {
-      Class880 var7 = this.method12645(var2);
+      LivingEntity var7 = this.method12645(var2);
       this.method12641(var7, var2);
       if (this.field19829.isEmpty()) {
          var2.method2944(Class2106.field13731, ItemStack.EMPTY);
@@ -60,7 +61,7 @@ public class Class3729 extends Class3676<Class1042> {
       this.field19828 = null;
    }
 
-   private void method12641(Class880 var1, Class1042 var2) {
+   private void method12641(LivingEntity var1, Class1042 var2) {
       boolean var5 = false;
       ItemStack var6 = var1.method3090();
       if (this.field19828 == null || !ItemStack.method32130(this.field19828, var6)) {
@@ -94,9 +95,9 @@ public class Class3729 extends Class3676<Class1042> {
       return ItemStack.method32130(this.field19828, var1.method35366()) || ItemStack.method32130(this.field19828, var1.method35367());
    }
 
-   private Class880 method12645(Class1042 var1) {
+   private LivingEntity method12645(Class1042 var1) {
       Class6947<Class1042> var4 = var1.method2992();
-      Class880 var5 = var4.method21410(Class8830.field39828).get();
+      LivingEntity var5 = var4.method21410(Class8830.field39828).get();
       var4.method21406(Class8830.field39825, new Class7865(var5, true));
       return var5;
    }

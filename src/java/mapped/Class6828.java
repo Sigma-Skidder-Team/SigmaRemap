@@ -16,10 +16,10 @@ public class Class6828 extends Class6829 {
             this.field29708 - this.field29705.getPosX(), this.field29709 - this.field29705.getPosY(), this.field29710 - this.field29705.getPosZ()
          );
          double var4 = var3.method11348();
-         double var6 = var3.field18048 / var4;
-         double var8 = var3.field18049 / var4;
-         double var10 = var3.field18050 / var4;
-         float var12 = (float)(MathHelper.method37814(var3.field18050, var3.field18048) * 180.0F / (float)Math.PI) - 90.0F;
+         double var6 = var3.x / var4;
+         double var8 = var3.y / var4;
+         double var10 = var3.z / var4;
+         float var12 = (float)(MathHelper.method37814(var3.z, var3.x) * 180.0F / (float)Math.PI) - 90.0F;
          this.field29705.rotationYaw = this.method20816(this.field29705.rotationYaw, var12, 90.0F);
          this.field29705.field4965 = this.field29705.rotationYaw;
          float var13 = (float)(this.field29711 * this.field29705.method3086(Attributes.MOVEMENT_SPEED));

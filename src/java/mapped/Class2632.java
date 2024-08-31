@@ -69,7 +69,7 @@ public class Class2632 extends Class2628 {
       if (this.method10838() && var5 != null) {
          if (this.field16947 > 0) {
             Vector3d var7 = this.field16946.method3433();
-            this.field16946.method3435(var7.field18048, 0.3, var7.field18050);
+            this.field16946.method3435(var7.x, 0.3, var7.z);
             if (!var3.isRemote) {
                double var8 = 0.08;
                ((ServerWorld)var3)
@@ -89,7 +89,7 @@ public class Class2632 extends Class2628 {
 
          if (this.field16947 % 2 == 0) {
             Vector3d var14 = this.field16946.method3433();
-            this.field16946.method3435(var14.field18048, -0.3, var14.field18050);
+            this.field16946.method3435(var14.x, -0.3, var14.z);
             if (this.field16947 % 6 == 0) {
                this.method10842(var3, this.field16933);
             }

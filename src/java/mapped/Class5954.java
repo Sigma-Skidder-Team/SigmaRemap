@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 public class Class5954 extends Class5942<Class940> {
    private static String[] field25965;
    private final Class2887<?> field25966;

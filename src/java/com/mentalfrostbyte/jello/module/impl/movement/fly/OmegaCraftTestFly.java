@@ -34,7 +34,7 @@ public class OmegaCraftTestFly extends Module {
     @Override
     public void onDisable() {
         Class9567.method37090(0.0);
-        if (mc.player.method3433().field18049 > 0.0) {
+        if (mc.player.method3433().y > 0.0) {
             ColorUtils.method17725(-0.0789);
         }
 

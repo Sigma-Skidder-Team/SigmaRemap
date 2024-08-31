@@ -41,7 +41,7 @@ public class YPortSpeed extends Module {
     @Override
     public void onDisable() {
         this.field23541 = false;
-        if (mc.player.method3433().field18049 > 0.33) {
+        if (mc.player.method3433().y > 0.33) {
             ColorUtils.method17725(-0.43 + (double) Class9567.method37079() * 0.1);
             Class9567.method37090(Class9567.method37075());
         }
@@ -56,7 +56,7 @@ public class YPortSpeed extends Module {
                     case "NCP":
                         if (Class9567.method37087() && mc.player.onGround) {
                             mc.player.method2914();
-                            var1.method13995(mc.player.method3433().field18049);
+                            var1.method13995(mc.player.method3433().y);
                             Class9567.method37088(var1, 0.461);
                             this.field23541 = true;
                             mc.player.stepHeight = 0.5F;
@@ -93,7 +93,7 @@ public class YPortSpeed extends Module {
                         } else {
                             if (mc.world
                                     .method7055(
-                                            mc.player, mc.player.boundingBox.method19667(0.0, mc.player.method3433().field18049, 0.0)
+                                            mc.player, mc.player.boundingBox.method19667(0.0, mc.player.method3433().y, 0.0)
                                     )
                                     .count()
                                     > 0L
@@ -148,7 +148,7 @@ public class YPortSpeed extends Module {
                 this.field23542 = mc.player.getPosY();
             }
 
-            mc.player.positionVec.field18049 = this.field23542;
+            mc.player.positionVec.y = this.field23542;
             mc.player.lastTickPosY = this.field23542;
             mc.player.field4915 = this.field23542;
             mc.player.prevPosY = this.field23542;

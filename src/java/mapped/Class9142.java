@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Date;
@@ -25,7 +26,7 @@ public class Class9142 {
       return var0 + var5;
    }
 
-   public static float[] method34136(Class880 var0, double var1, double var3, double var5) {
+   public static float[] method34136(LivingEntity var0, double var1, double var3, double var5) {
       double[] var9 = Class9047.method33642(var0);
       double var10 = var9[0] - var1;
       double var12 = var0.getPosY() - (double)field42012.player.method3393() - 0.02F + (double)var0.method3393() - var3;
@@ -56,7 +57,7 @@ public class Class9142 {
       return new float[]{var23, var24};
    }
 
-   public static float[] method34139(Class880 var0, double var1, double var3, double var5) {
+   public static float[] method34139(LivingEntity var0, double var1, double var3, double var5) {
       double var9 = var0.getPosX() - var1 + 0.25 - Math.random() * 0.5;
       double var11 = var0.getPosY() - (double)field42012.player.method3393() - 0.02F + (double)var0.method3393() - var3 - Math.random();
       double var13 = var0.getPosZ() - var5 + 0.25 - Math.random() * 0.5;
@@ -66,7 +67,7 @@ public class Class9142 {
       return new float[]{var17, var18};
    }
 
-   public static float[] method34140(Class880 var0, double var1, double var3, double var5) {
+   public static float[] method34140(LivingEntity var0, double var1, double var3, double var5) {
       double var9 = Math.sin((double)(System.currentTimeMillis() - 500L) / 521.0) * 0.2;
       double var11 = Math.sin((double)System.currentTimeMillis() / 300.0) * 0.65;
       double var13 = Math.cos(((double)System.currentTimeMillis() - 150.0) / 705.0) * 0.2;
@@ -79,7 +80,7 @@ public class Class9142 {
       return new float[]{var23, var24};
    }
 
-   public static float[] method34141(Class880 var0, double var1, double var3, double var5, float var7) {
+   public static float[] method34141(LivingEntity var0, double var1, double var3, double var5, float var7) {
       Entity var10 = ColorUtils.method17711(field42013, field42014, var7, 0.0);
       if (var10 == null) {
          if (field42015 <= new Date().getTime() - 500L) {
@@ -129,16 +130,16 @@ public class Class9142 {
    }
 
    public static float[] method34145(Vector3d var0, Vector3d var1) {
-      double var4 = var1.field18048 - var0.field18048;
-      double var6 = var1.field18050 - var0.field18050;
-      double var8 = var1.field18049 - var0.field18049;
+      double var4 = var1.x - var0.x;
+      double var6 = var1.z - var0.z;
+      double var8 = var1.y - var0.y;
       double var10 = (double) MathHelper.method37766(var4 * var4 + var6 * var6);
       float var12 = method34135(0.0F, (float)(Math.atan2(var6, var4) * 180.0 / Math.PI) - 90.0F, 360.0F);
       float var13 = method34135(field42012.player.rotationPitch, (float)(-(Math.atan2(var8, var10) * 180.0 / Math.PI)), 360.0F);
       return new float[]{var12, var13};
    }
 
-   public static float[] method34146(Class880 var0) {
+   public static float[] method34146(LivingEntity var0) {
       double var3 = field42012.player.getPosX() + (field42012.player.getPosX() - field42012.player.lastTickPosX) * (double)field42012.getRenderPartialTicks();
       double var5 = field42012.player.getPosZ() + (field42012.player.getPosZ() - field42012.player.lastTickPosZ) * (double)field42012.getRenderPartialTicks();
       double var7 = field42012.player.getPosY() + (field42012.player.getPosY() - field42012.player.lastTickPosY) * (double)field42012.getRenderPartialTicks();

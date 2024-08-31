@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.block.BlockState;
+
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;

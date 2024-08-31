@@ -8,7 +8,9 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;
@@ -17,8 +19,8 @@ import java.util.Map;
 
 public class TwoDESP extends Module {
     public static final boolean field23730 = !TwoDESP.class.desiredAssertionStatus();
-    public static Map<Class880, double[]> field23728 = new HashMap<Class880, double[]>();
-    public static Map<Class880, double[]> field23729 = new HashMap<Class880, double[]>();
+    public static Map<LivingEntity, double[]> field23728 = new HashMap<LivingEntity, double[]>();
+    public static Map<LivingEntity, double[]> field23729 = new HashMap<LivingEntity, double[]>();
     private double field23727;
 
     public TwoDESP() {

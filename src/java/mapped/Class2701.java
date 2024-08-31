@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.EnumSet;
@@ -7,7 +8,7 @@ import java.util.EnumSet;
 public class Class2701 extends Class2699 {
    private static String[] field17165;
    private final Class1064 field17166;
-   private Class880 field17167;
+   private LivingEntity field17167;
    private int field17168;
    public final Class1065 field17169;
 

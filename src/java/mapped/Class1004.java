@@ -1,14 +1,15 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.entity.*;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 
 import javax.annotation.Nullable;
 
 public class Class1004 extends Entity {
-   private static final DataParameter<Integer> field5562 = EntityDataManager.<Integer>method35441(Class1004.class, Class7784.field33391);
-   private Class880 field5563;
+   private static final DataParameter<Integer> field5562 = EntityDataManager.<Integer>createKey(Class1004.class, DataSerializers.field33391);
+   private LivingEntity field5563;
    private int field5564 = 80;
 
    public Class1004(EntityType<? extends Class1004> var1, World var2) {
@@ -16,7 +17,7 @@ public class Class1004 extends Entity {
       this.preventEntitySpawning = true;
    }
 
-   public Class1004(World var1, double var2, double var4, double var6, Class880 var8) {
+   public Class1004(World var1, double var2, double var4, double var6, LivingEntity var8) {
       this(EntityType.field41069, var1);
       this.setPosition(var2, var4, var6);
       double var11 = var1.rand.nextDouble() * (float) (Math.PI * 2);
@@ -85,7 +86,7 @@ public class Class1004 extends Entity {
    }
 
    @Nullable
-   public Class880 method4181() {
+   public LivingEntity method4181() {
       return this.field5563;
    }
 

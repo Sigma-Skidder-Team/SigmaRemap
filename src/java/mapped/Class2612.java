@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.EnumSet;
 
@@ -11,14 +13,14 @@ public class Class2612 extends Class2595 {
    public final float field16883;
    private int field16884;
    public final float field16885;
-   public final Class<? extends Class880> field16886;
+   public final Class<? extends LivingEntity> field16886;
    public final Class8522 field16887;
 
-   public Class2612(Class1006 var1, Class<? extends Class880> var2, float var3) {
+   public Class2612(Class1006 var1, Class<? extends LivingEntity> var2, float var3) {
       this(var1, var2, var3, 0.02F);
    }
 
-   public Class2612(Class1006 var1, Class<? extends Class880> var2, float var3, float var4) {
+   public Class2612(Class1006 var1, Class<? extends LivingEntity> var2, float var3, float var4) {
       this.field16881 = var1;
       this.field16886 = var2;
       this.field16883 = var3;
@@ -46,7 +48,7 @@ public class Class2612 extends Class2595 {
          if (this.field16886 != PlayerEntity.class) {
             this.field16882 = this.field16881
                .world
-               .<Class880>method7192(
+               .<LivingEntity>method7192(
                   this.field16886,
                   this.field16887,
                   this.field16881,

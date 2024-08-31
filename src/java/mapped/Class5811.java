@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.List;
 
 public class Class5811 extends Class5812 {

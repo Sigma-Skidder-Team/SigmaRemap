@@ -30,13 +30,13 @@ public class LegitSpeed extends Module {
                     && (mc.player.field4984 != 0.0F || mc.player.field4982 != 0.0F)
                     && this.getBooleanValueFromSetttingName("AutoJump")) {
                 mc.player.method2914();
-                var1.method13995(mc.player.method3433().field18049);
+                var1.method13995(mc.player.method3433().y);
             }
 
-            double var4 = var1.method13998().field18049;
-            var1.method13998().field18049 = 0.0;
+            double var4 = var1.method13998().y;
+            var1.method13998().y = 0.0;
             double var6 = var1.method13998().method11348();
-            var1.method13998().field18049 = var4;
+            var1.method13998().y = var4;
             this.field24010 = var6;
             float var8 = Class9567.method37082()[1];
             float var9 = Class9567.method37082()[2];
@@ -51,8 +51,8 @@ public class LegitSpeed extends Module {
             this.field24010 = this.field24010 * (double) this.field24014;
             var1.method13993((double) var8 * this.field24010 * var11 + (double) var9 * this.field24010 * var13 + (double) this.field24011);
             var1.method13997((double) var8 * this.field24010 * var13 - (double) var9 * this.field24010 * var11 + (double) this.field24012);
-            mc.player.method3433().field18048 = var1.method13992();
-            mc.player.method3433().field18049 = var1.method13994();
+            mc.player.method3433().x = var1.method13992();
+            mc.player.method3433().y = var1.method13994();
             if (this.field24011 != 0.0F || this.field24012 != 0.0F) {
                 this.field24011 = (float) ((double) this.field24011 * 0.85);
                 this.field24012 = (float) ((double) this.field24012 * 0.85);

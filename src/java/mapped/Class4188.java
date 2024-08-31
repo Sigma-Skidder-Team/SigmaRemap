@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 public abstract class Class4188 extends Class4178 {
    public Class102 field20479;
 

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.List;
 
 public class Class5825 extends Class5823 {

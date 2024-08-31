@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -25,9 +26,9 @@ public class Class3318 extends Item {
          Class888 var8 = new Class888(
             var4,
             var1.method18358(),
-            var6.field18048 + (double)var7.method539() * 0.15,
-            var6.field18049 + (double)var7.method540() * 0.15,
-            var6.field18050 + (double)var7.method541() * 0.15,
+            var6.x + (double)var7.method539() * 0.15,
+            var6.y + (double)var7.method540() * 0.15,
+            var6.z + (double)var7.method541() * 0.15,
             var5
          );
          var4.method6916(var8);

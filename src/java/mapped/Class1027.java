@@ -1,7 +1,14 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 
 import java.util.List;
 import java.util.UUID;
@@ -10,7 +17,7 @@ import java.util.function.Predicate;
 public class Class1027 extends Class1026 implements Class1022 {
    private static final UUID field5718 = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
    private static final Class9689 field5719 = new Class9689(field5718, "Drinking speed penalty", -0.25, AttributeModifierOperation.ADDITION);
-   private static final DataParameter<Boolean> field5720 = EntityDataManager.<Boolean>method35441(Class1027.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5720 = EntityDataManager.<Boolean>createKey(Class1027.class, DataSerializers.field33398);
    private int field5721;
    private Class2712<Class1026> field5722;
    private Class2711<PlayerEntity> field5723;
@@ -25,7 +32,7 @@ public class Class1027 extends Class1026 implements Class1022 {
       this.field5722 = new Class2712<Class1026>(
          this, Class1026.class, true, var1 -> var1 != null && this.method4552() && var1.getType() != EntityType.field41101
       );
-      this.field5723 = new Class2711<PlayerEntity>(this, PlayerEntity.class, 10, true, false, (Predicate<Class880>)null);
+      this.field5723 = new Class2711<PlayerEntity>(this, PlayerEntity.class, 10, true, false, (Predicate<LivingEntity>)null);
       this.field5600.method20002(1, new Class2603(this));
       this.field5600.method20002(2, new Class2598(this, 1.0, 60, 10.0F));
       this.field5600.method20002(2, new Class2737(this, 1.0));
@@ -43,17 +50,17 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27233;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27237;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27235;
    }
 
@@ -143,7 +150,7 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    @Override
-   public Class9455 method4546() {
+   public SoundEvent method4546() {
       return Sounds.field27234;
    }
 
@@ -182,12 +189,12 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    @Override
-   public void method4530(Class880 var1, float var2) {
+   public void method4530(LivingEntity var1, float var2) {
       if (!this.method4568()) {
          Vector3d var5 = var1.method3433();
-         double var6 = var1.getPosX() + var5.field18048 - this.getPosX();
+         double var6 = var1.getPosX() + var5.x - this.getPosX();
          double var8 = var1.method3442() - 1.1F - this.getPosY();
-         double var10 = var1.getPosZ() + var5.field18050 - this.getPosZ();
+         double var10 = var1.getPosZ() + var5.z - this.getPosZ();
          float var12 = MathHelper.method37766(var6 * var6 + var10 * var10);
          Class8812 var13 = Class8137.field35003;
          if (!(var1 instanceof Class1026)) {
@@ -205,13 +212,13 @@ public class Class1027 extends Class1026 implements Class1022 {
                var13 = Class8137.field35001;
             }
 
-            this.method4233((Class880)null);
+            this.method4233((LivingEntity)null);
          }
 
          Class896 var14 = new Class896(this.world, this);
          var14.method3511(Class9741.method38187(new ItemStack(Items.field38115), var13));
          var14.rotationPitch -= -20.0F;
-         var14.method3462(var6, var8 + (double)(var12 * 0.2F), var10, 0.75F, 8.0F);
+         var14.shoot(var6, var8 + (double)(var12 * 0.2F), var10, 0.75F, 8.0F);
          if (!this.method3245()) {
             this.world
                .method6743(

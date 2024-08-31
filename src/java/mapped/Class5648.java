@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.block.BlockState;
+
 import java.util.Arrays;
 
 public class Class5648 extends ChunkGenerator {

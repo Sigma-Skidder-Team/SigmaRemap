@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 public class Class2788 extends Class2785 {

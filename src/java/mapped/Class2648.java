@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public class Class2648 extends Class2647 {
    private static String[] field16989;
 
@@ -8,7 +10,7 @@ public class Class2648 extends Class2647 {
    }
 
    @Override
-   public double method10859(Class880 var1) {
+   public double method10859(LivingEntity var1) {
       return (double)(4.0F + var1.method3429());
    }
 }

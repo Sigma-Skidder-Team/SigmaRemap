@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 import javax.annotation.Nullable;
 
 public class Class960 extends TileEntity implements Class935 {

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.world.Difficulty;
 
 import java.util.EnumSet;
@@ -18,7 +19,7 @@ public class Class2724 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      Class880 var3 = this.field17217.method4232();
+      LivingEntity var3 = this.field17217.method4232();
       return var3 != null && var3.isAlive();
    }
 
@@ -38,13 +39,13 @@ public class Class2724 extends Class2595 {
    @Override
    public void method10807() {
       Class1105.method5312(this.field17217, 0);
-      this.field17217.method4233((Class880)null);
+      this.field17217.method4233((LivingEntity)null);
       this.field17217.field6076.method10944();
    }
 
    @Override
    public void method10805() {
-      Class880 var3 = this.field17217.method4232();
+      LivingEntity var3 = this.field17217.method4232();
       this.field17217.method4230().method21666();
       this.field17217.method4227().method28040(var3, 90.0F, 90.0F);
       if (this.field17217.method3135(var3)) {
@@ -62,7 +63,7 @@ public class Class2724 extends Class2595 {
 
                var3.method2741(Class8654.method31124(this.field17217, this.field17217), var4);
                var3.method2741(Class8654.method31115(this.field17217), (float)this.field17217.method3086(Attributes.field42110));
-               this.field17217.method4233((Class880)null);
+               this.field17217.method4233((LivingEntity)null);
             }
          } else {
             Class1105.method5312(this.field17217, this.field17217.method4232().method3205());
@@ -73,7 +74,7 @@ public class Class2724 extends Class2595 {
 
          super.method10805();
       } else {
-         this.field17217.method4233((Class880)null);
+         this.field17217.method4233((LivingEntity)null);
       }
    }
 }

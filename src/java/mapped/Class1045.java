@@ -1,11 +1,14 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 
 import javax.annotation.Nullable;
 
 public abstract class Class1045 extends Class1046 {
-   private static final DataParameter<Boolean> field5800 = EntityDataManager.<Boolean>method35441(Class1045.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5800 = EntityDataManager.<Boolean>createKey(Class1045.class, DataSerializers.field33398);
    public int field5801;
    public int field5802;
    public int field5803;

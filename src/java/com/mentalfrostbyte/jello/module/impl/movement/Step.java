@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.step.NCPStep;
 import com.mentalfrostbyte.jello.module.impl.movement.step.SpiderStep;
 import com.mentalfrostbyte.jello.module.impl.movement.step.VanillaStep;
 import mapped.*;
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -49,8 +50,8 @@ public class Step extends ModuleWithModuleSettings {
     }
 
     public Class2131 method16748(Class4434 var1) {
-        double var4 = mc.player.getPosX() + var1.method13991().field18048;
-        double var6 = mc.player.getPosZ() + var1.method13991().field18050;
+        double var4 = mc.player.getPosX() + var1.method13991().x;
+        double var6 = mc.player.getPosZ() + var1.method13991().z;
         double var8 = 0.41;
         double var10 = var1.method13988() - var1.method13990();
         AxisAlignedBB var12 = new AxisAlignedBB(

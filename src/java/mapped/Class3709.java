@@ -1,8 +1,9 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 
-public class Class3709 extends Class3676<Class880> {
+public class Class3709 extends Class3676<LivingEntity> {
    private static String[] field19773;
    private final int field19774;
 
@@ -12,7 +13,7 @@ public class Class3709 extends Class3676<Class880> {
    }
 
    @Override
-   public void method12502(ServerWorld var1, Class880 var2, long var3) {
+   public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       var2.method2992().method21407(Class8830.field39871, true, (long)this.field19774);
       var2.method2992().method21405(Class8830.field39826);
    }

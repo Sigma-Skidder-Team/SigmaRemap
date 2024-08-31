@@ -5,6 +5,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.UnmodifiableIterator;
 import com.google.common.collect.ImmutableMap.Builder;
 import com.mojang.serialization.Codec;
+import net.minecraft.block.BlockState;
+
 import java.util.Comparator;
 import java.util.Random;
 

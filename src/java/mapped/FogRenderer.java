@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -22,9 +23,9 @@ public class FogRenderer {
             var8 = 1.0F - (float)Math.pow((double)var8, 0.25);
             Vector3d var9 = var2.method6873(var0.method37505(), var1);
             var9 = Class9680.method37877(var9, var2, var0.method37509(), var1);
-            float var10 = (float)var9.field18048;
-            float var11 = (float)var9.field18049;
-            float var12 = (float)var9.field18050;
+            float var10 = (float)var9.x;
+            float var11 = (float)var9.y;
+            float var12 = (float)var9.z;
             float var13 = MathHelper.method37777(MathHelper.cos(var2.method7001(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
             BiomeManager var14 = var2.getBiomeManager();
             Vector3d var15 = var0.method37504().method11337(2.0, 2.0, 2.0).method11344(0.25);
@@ -110,9 +111,9 @@ public class FogRenderer {
          }
       }
 
-      double var49 = var0.method37504().field18049 * var2.getWorldInfo().method20053();
-      if (var0.method37509() instanceof Class880 && ((Class880)var0.method37509()).method3033(Effects.BLINDNESS)) {
-         int var26 = ((Class880)var0.method37509()).method3034(Effects.BLINDNESS).method8628();
+      double var49 = var0.method37504().y * var2.getWorldInfo().method20053();
+      if (var0.method37509() instanceof LivingEntity && ((LivingEntity)var0.method37509()).method3033(Effects.BLINDNESS)) {
+         int var26 = ((LivingEntity)var0.method37509()).method3034(Effects.BLINDNESS).method8628();
          if (var26 >= 20) {
             var49 = 0.0;
          } else {
@@ -138,8 +139,8 @@ public class FogRenderer {
       }
 
       if (!var7.method23486(Class8953.field40469)) {
-         if (var0.method37509() instanceof Class880 && ((Class880)var0.method37509()).method3033(Effects.NIGHT_VISION)) {
-            float var27 = GameRenderer.method750((Class880)var0.method37509(), var1);
+         if (var0.method37509() instanceof LivingEntity && ((LivingEntity)var0.method37509()).method3033(Effects.NIGHT_VISION)) {
+            float var27 = GameRenderer.method750((LivingEntity)var0.method37509(), var1);
             float var33 = Math.min(1.0F / field40348, Math.min(1.0F / field40349, 1.0F / field40350));
             if (Float.isInfinite(var33)) {
                var33 = Math.nextAfter(var33, 0.0);
@@ -171,18 +172,18 @@ public class FogRenderer {
             Entity var29 = var0.method37509();
             Vector3d var36 = Class9680.method37872(var2, var29.getPosX(), var29.getPosY() + 1.0, var29.getPosZ());
             if (var36 != null) {
-               field40348 = (float)var36.field18048;
-               field40349 = (float)var36.field18049;
-               field40350 = (float)var36.field18050;
+               field40348 = (float)var36.x;
+               field40349 = (float)var36.y;
+               field40350 = (float)var36.z;
             }
          }
       } else {
          Entity var30 = var0.method37509();
          Vector3d var37 = Class9680.method37871(var2, var30.getPosX(), var30.getPosY() + 1.0, var30.getPosZ());
          if (var37 != null) {
-            field40348 = (float)var37.field18048;
-            field40349 = (float)var37.field18049;
-            field40350 = (float)var37.field18050;
+            field40348 = (float)var37.x;
+            field40349 = (float)var37.y;
+            field40350 = (float)var37.z;
          }
       }
 
@@ -221,8 +222,8 @@ public class FogRenderer {
             float var10;
             float var11;
             if (!var7.method23486(Class8953.field40470)) {
-               if (var8 instanceof Class880 && ((Class880)var8).method3033(Effects.BLINDNESS)) {
-                  int var12 = ((Class880)var8).method3034(Effects.BLINDNESS).method8628();
+               if (var8 instanceof LivingEntity && ((LivingEntity)var8).method3033(Effects.BLINDNESS)) {
+                  int var12 = ((LivingEntity)var8).method3034(Effects.BLINDNESS).method8628();
                   float var13 = MathHelper.lerp(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
                   if (var1 != Class2040.field13337) {
                      var10 = var13 * 0.25F;
@@ -246,7 +247,7 @@ public class FogRenderer {
                   var10 = var2 * 0.05F;
                   var11 = Math.min(var2, 192.0F) * 0.5F;
                }
-            } else if (var8 instanceof Class880 && ((Class880)var8).method3033(Effects.FIRE_RESISTANCE)) {
+            } else if (var8 instanceof LivingEntity && ((LivingEntity)var8).method3033(Effects.FIRE_RESISTANCE)) {
                var10 = 0.0F;
                var11 = 3.0F;
             } else {

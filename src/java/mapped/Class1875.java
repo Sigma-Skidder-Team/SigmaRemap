@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 public enum Class1875 implements Class1876 {
@@ -51,8 +52,8 @@ public enum Class1875 implements Class1876 {
    @Override
    public boolean method8137() {
       Entity var3 = Minecraft.getInstance().getRenderViewEntity();
-      if (var3 instanceof Class880) {
-         Class880 var4 = (Class880)var3;
+      if (var3 instanceof LivingEntity) {
+         LivingEntity var4 = (LivingEntity)var3;
          switch (Class9308.field43219[this.ordinal()]) {
             case 1:
                return var4.isAlive();

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
+
 import java.util.Random;
 
 public class Class6500 {

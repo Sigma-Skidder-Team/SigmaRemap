@@ -1,6 +1,8 @@
 package mapped;
 
 import java.util.List;
+
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class3334 extends Item {

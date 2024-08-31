@@ -36,7 +36,7 @@ public class ACRFly extends Module {
     @Override
     public void onDisable() {
         Class9567.method37090(0.0);
-        if (mc.player.method3433().field18049 > 0.0) {
+        if (mc.player.method3433().y > 0.0) {
             ColorUtils.method17725(-0.0789);
         }
     }
@@ -145,7 +145,7 @@ public class ACRFly extends Module {
     public void method16908(Render2DEvent var1) {
         if (this.isEnabled()) {
             double var4 = this.field23987;
-            mc.player.positionVec.field18049 = var4;
+            mc.player.positionVec.y = var4;
             mc.player.lastTickPosY = var4;
             mc.player.field4915 = var4;
             mc.player.prevPosY = var4;

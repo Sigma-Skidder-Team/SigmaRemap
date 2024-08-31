@@ -1,6 +1,8 @@
 package mapped;
 
-public class Class3702<E extends Class880> extends Class3676<E> {
+import net.minecraft.entity.LivingEntity;
+
+public class Class3702<E extends LivingEntity> extends Class3676<E> {
    private boolean field19757;
    private boolean field19758;
    private final Class8369 field19759;

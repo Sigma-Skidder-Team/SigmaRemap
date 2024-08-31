@@ -5,7 +5,9 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.combat.aimbot.*;
 import mapped.*;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.Iterator;
 import java.util.List;
@@ -32,10 +34,10 @@ public class Aimbot extends ModuleWithModuleSettings {
             Entity var7 = (Entity) var6.next();
             if (var7 != mc.player) {
                 if (!Client.getInstance().getFriendManager().method26997(var7)) {
-                    if (var7 instanceof Class880) {
-                        if (((Class880) var7).getHealth() != 0.0F) {
+                    if (var7 instanceof LivingEntity) {
+                        if (((LivingEntity) var7).getHealth() != 0.0F) {
                             if (!(mc.player.method3275(var7) > var1)) {
-                                if (mc.player.method3026((Class880) var7)) {
+                                if (mc.player.method3026((LivingEntity) var7)) {
                                     if (!(var7 instanceof ArmorStandEntity)) {
                                         if (!this.getBooleanValueFromSetttingName("Players") && var7 instanceof PlayerEntity) {
                                             var6.remove();

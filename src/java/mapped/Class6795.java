@@ -10,6 +10,7 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -63,12 +64,12 @@ public class Class6795 {
          int var6 = 0;
 
          for (Entity var8 : var1) {
-            if (!(var8 instanceof Class880)) {
+            if (!(var8 instanceof LivingEntity)) {
                if (var1.size() == 1) {
                   throw field29598.create(var8.getName().getString());
                }
             } else {
-               Class880 var9 = (Class880)var8;
+               LivingEntity var9 = (LivingEntity)var8;
                ItemStack var10 = var9.method3090();
                if (var10.isEmpty()) {
                   if (var1.size() == 1) {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.io.IOException;
 import java.util.UUID;
 
@@ -21,7 +23,7 @@ public class Class5582 implements Packet<Class5116> {
    public Class5582() {
    }
 
-   public Class5582(Class880 var1) {
+   public Class5582(LivingEntity var1) {
       this.field24760 = var1.method3205();
       this.field24761 = var1.getUniqueID();
       this.field24762 = Registry.ENTITY_TYPE.method9171(var1.getType());
@@ -33,9 +35,9 @@ public class Class5582 implements Packet<Class5116> {
       this.field24771 = (byte)((int)(var1.field4967 * 256.0F / 360.0F));
       double var4 = 3.9;
       Vector3d var6 = var1.method3433();
-      double var7 = MathHelper.method37778(var6.field18048, -3.9, 3.9);
-      double var9 = MathHelper.method37778(var6.field18049, -3.9, 3.9);
-      double var11 = MathHelper.method37778(var6.field18050, -3.9, 3.9);
+      double var7 = MathHelper.method37778(var6.x, -3.9, 3.9);
+      double var9 = MathHelper.method37778(var6.y, -3.9, 3.9);
+      double var11 = MathHelper.method37778(var6.z, -3.9, 3.9);
       this.field24766 = (int)(var7 * 8000.0);
       this.field24767 = (int)(var9 * 8000.0);
       this.field24768 = (int)(var11 * 8000.0);

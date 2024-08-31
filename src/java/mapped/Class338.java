@@ -23,8 +23,8 @@ public class Class338 implements Runnable {
          );
       } else {
          double var6 = Math.sqrt(
-            KillAura.method16838().player.method3433().field18048 * KillAura.method16839().player.method3433().field18048
-               + KillAura.method16840().player.method3433().field18050 * KillAura.method16841().player.method3433().field18050
+            KillAura.method16838().player.method3433().x * KillAura.method16839().player.method3433().x
+               + KillAura.method16840().player.method3433().z * KillAura.method16841().player.method3433().z
          );
          double var10003 = (double)this.field1477;
          var5 = ColorUtils.method17712(KillAura.method16842(this.field1478).field32084, KillAura.method16842(this.field1478).field32085, var4, var10003 + var6);

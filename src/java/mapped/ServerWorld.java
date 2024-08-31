@@ -10,9 +10,13 @@ import it.unimi.dsi.fastutil.longs.LongSets;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -335,7 +339,7 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    private void method6898() {
-      this.field9042.stream().filter(Class880::isSleeping).collect(Collectors.toList()).forEach(var0 -> var0.stopSleepInBed(false, false));
+      this.field9042.stream().filter(LivingEntity::isSleeping).collect(Collectors.toList()).forEach(var0 -> var0.stopSleepInBed(false, false));
    }
 
    public void method6899(Chunk var1, int var2) {
@@ -414,7 +418,7 @@ public class ServerWorld extends World implements Class1658 {
    public BlockPos method6900(BlockPos var1) {
       BlockPos var4 = this.method7006(Class101.field299, var1);
       AxisAlignedBB var5 = new AxisAlignedBB(var4, new BlockPos(var4.getX(), this.method7034(), var4.getZ())).method19664(3.0);
-      List var6 = this.<Class880>method6772(Class880.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method7022(var1x.getPosition()));
+      List var6 = this.<LivingEntity>method6772(LivingEntity.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method7022(var1x.getPosition()));
       if (var6.isEmpty()) {
          if (var4.getY() == -1) {
             var4 = var4.method8339(2);
@@ -422,7 +426,7 @@ public class ServerWorld extends World implements Class1658 {
 
          return var4;
       } else {
-         return ((Class880)var6.get(this.rand.nextInt(var6.size()))).getPosition();
+         return ((LivingEntity)var6.get(this.rand.nextInt(var6.size()))).getPosition();
       }
    }
 
@@ -629,7 +633,7 @@ public class ServerWorld extends World implements Class1658 {
 
    @Nullable
    public ServerPlayerEntity method6915() {
-      List var3 = this.method6914(Class880::isAlive);
+      List var3 = this.method6914(LivingEntity::isAlive);
       return !var3.isEmpty() ? (ServerPlayerEntity)var3.get(this.rand.nextInt(var3.size())) : null;
    }
 
@@ -860,7 +864,7 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    @Override
-   public void method6743(PlayerEntity var1, double var2, double var4, double var6, Class9455 var8, Class2266 var9, float var10, float var11) {
+   public void method6743(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11) {
       this.field9045
          .getPlayerList()
          .method19466(
@@ -875,7 +879,7 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    @Override
-   public void method6744(PlayerEntity var1, Entity var2, Class9455 var3, Class2266 var4, float var5, float var6) {
+   public void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
       this.field9045
          .getPlayerList()
          .method19466(

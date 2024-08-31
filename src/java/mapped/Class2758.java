@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class2758<T extends Class1009 & Class1022> extends Class2595 {
@@ -57,7 +59,7 @@ public class Class2758<T extends Class1009 & Class1022> extends Class2595 {
 
    @Override
    public void method10805() {
-      Class880 var3 = this.field17304.method4232();
+      LivingEntity var3 = this.field17304.method4232();
       if (var3 != null) {
          double var4 = this.field17304.method3276(var3.getPosX(), var3.getPosY(), var3.getPosZ());
          boolean var6 = this.field17304.method4231().method35460(var3);

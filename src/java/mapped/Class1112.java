@@ -2,13 +2,19 @@ package mapped;
 
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
 import java.util.Random;
 
 public class Class1112 extends Class1111 implements Class1008 {
-   private static final DataParameter<Boolean> field6091 = EntityDataManager.<Boolean>method35441(Class1112.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field6091 = EntityDataManager.<Boolean>createKey(Class1112.class, DataSerializers.field33398);
    private int field6092 = 1;
 
    public Class1112(EntityType<? extends Class1112> var1, World var2) {
@@ -73,17 +79,17 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26616;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26618;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26617;
    }
 

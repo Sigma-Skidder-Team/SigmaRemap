@@ -296,9 +296,9 @@ public class Class9567 {
       float var14 = MathHelper.sin(mc.player.rotationYaw * (float) (Math.PI / 180.0));
       float var15 = MathHelper.cos(mc.player.rotationYaw * (float) (Math.PI / 180.0));
       return new Vector3d(
-         var13.field18048 * (double)var15 - var13.field18050 * (double)var14,
-         var13.field18049,
-         var13.field18050 * (double)var15 + var13.field18048 * (double)var14
+         var13.x * (double)var15 - var13.z * (double)var14,
+         var13.y,
+         var13.z * (double)var15 + var13.x * (double)var14
       );
    }
 

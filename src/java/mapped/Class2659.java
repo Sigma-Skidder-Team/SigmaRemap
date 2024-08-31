@@ -34,7 +34,7 @@ public class Class2659 extends Class2595 {
             return;
          }
 
-         this.field17012.method4230().method21654(var3.field18048, var3.field18049, var3.field18050, this.field17013);
+         this.field17012.method4230().method21654(var3.x, var3.y, var3.z, this.field17013);
       }
    }
 

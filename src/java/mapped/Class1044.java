@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -137,33 +139,33 @@ public class Class1044 extends Class1043 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return !this.method4741() ? Sounds.field27215 : Sounds.field27223;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27220;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27216;
    }
 
    @Override
-   public Class9455 method3059(ItemStack var1) {
+   public SoundEvent method3059(ItemStack var1) {
       Item var4 = var1.getItem();
       return var4 != Items.field37891 ? Sounds.field27219 : Sounds.field27218;
    }
 
    @Override
-   public Class9455 method4749(boolean var1) {
+   public SoundEvent method4749(boolean var1) {
       return !var1 ? Sounds.field27221 : Sounds.field27224;
    }
 
    @Override
-   public Class9455 method4748() {
+   public SoundEvent method4748() {
       return Sounds.field27224;
    }
 

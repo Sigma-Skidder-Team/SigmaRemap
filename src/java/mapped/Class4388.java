@@ -3,9 +3,12 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.*;
@@ -162,8 +165,8 @@ public class Class4388 {
       return new Class3693<Class1034>(
          ImmutableList.of(
             Pair.of(new Class3718(0.6F), 2),
-            Pair.of(Class3696.<Class880>method12551(EntityType.field41065, 8, Class8830.field39828, 0.6F, 2), 2),
-            Pair.of(new Class3740<Class880>(Class4388::method13874, new Class3694(0.6F, 3)), 2),
+            Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41065, 8, Class8830.field39828, 0.6F, 2), 2),
+            Pair.of(new Class3740<LivingEntity>(Class4388::method13874, new Class3694(0.6F, 3)), 2),
             Pair.of(new Class3675(30, 60), 1)
          )
       );
@@ -173,12 +176,12 @@ public class Class4388 {
       return Class3690.method12538(Class8830.field39870, 1.0F, 8, false);
    }
 
-   private static Class3744<Class1034, Class880> method13810() {
-      return new Class3744<Class1034, Class880>(Class1034::method3005, Class8830.field39848, Class8830.field39837, field21464);
+   private static Class3744<Class1034, LivingEntity> method13810() {
+      return new Class3744<Class1034, LivingEntity>(Class1034::method3005, Class8830.field39848, Class8830.field39837, field21464);
    }
 
-   private static Class3744<Class1034, Class880> method13811() {
-      return new Class3744<Class1034, Class880>(Class4388::method13830, Class8830.field39865, Class8830.field39837, field21463);
+   private static Class3744<Class1034, LivingEntity> method13811() {
+      return new Class3744<Class1034, LivingEntity>(Class4388::method13830, Class8830.field39865, Class8830.field39837, field21463);
    }
 
    public static void method13812(Class1034 var0) {
@@ -339,7 +342,7 @@ public class Class4388 {
       );
    }
 
-   private static boolean method13825(Class880 var0, Class880 var1) {
+   private static boolean method13825(LivingEntity var0, LivingEntity var1) {
       return var1.getType() == EntityType.field41037 ? new Random(var0.world.method6783()).nextFloat() < 0.1F : false;
    }
 
@@ -378,7 +381,7 @@ public class Class4388 {
       }
    }
 
-   private static boolean method13829(Class1034 var0, Class880 var1) {
+   private static boolean method13829(Class1034 var0, LivingEntity var1) {
       return method13831(var0).filter(var1x -> var1x == var1).isPresent();
    }
 
@@ -387,16 +390,16 @@ public class Class4388 {
       if (!var3.method21404(Class8830.field39865)) {
          return false;
       } else {
-         Class880 var4 = var3.method21410(Class8830.field39865).get();
-         return var0.method3213(var4, 6.0);
+         LivingEntity var4 = var3.method21410(Class8830.field39865).get();
+         return var0.isEntityInRange(var4, 6.0);
       }
    }
 
-   private static Optional<? extends Class880> method13831(Class1034 var0) {
+   private static Optional<? extends LivingEntity> method13831(Class1034 var0) {
       Class6947 var3 = var0.method2992();
       if (!method13830(var0)) {
          Optional var4 = Class6983.method21586(var0, Class8830.field39849);
-         if (var4.isPresent() && method13871((Class880)var4.get())) {
+         if (var4.isPresent() && method13871((LivingEntity)var4.get())) {
             return var4;
          } else {
             if (var3.method21404(Class8830.field39850)) {
@@ -411,7 +414,7 @@ public class Class4388 {
                return var7;
             } else {
                Optional var6 = var3.<PlayerEntity>method21410(Class8830.field39860);
-               return var6.isPresent() && method13871((Class880)var6.get()) ? var6 : Optional.empty();
+               return var6.isPresent() && method13871((LivingEntity)var6.get()) ? var6 : Optional.empty();
             }
          }
       } else {
@@ -447,7 +450,7 @@ public class Class4388 {
       return !method13876(var0) && !method13868(var0) && var0.method4635() && method13869(var1.getItem());
    }
 
-   public static void method13835(Class1034 var0, Class880 var1) {
+   public static void method13835(Class1034 var0, LivingEntity var1) {
       if (!(var1 instanceof Class1034)) {
          if (method13878(var0)) {
             method13817(var0, false);
@@ -482,7 +485,7 @@ public class Class4388 {
       }
    }
 
-   public static void method13836(Class1035 var0, Class880 var1) {
+   public static void method13836(Class1035 var0, LivingEntity var1) {
       if (!var0.method2992().method21430(Class8890.field40232) && method13871(var1) && !Class6983.method21582(var0, var1, 4.0)) {
          if (var1.getType() == EntityType.PLAYER && var0.world.method6789().method17135(Class5462.field24255)) {
             method13850(var0, var1);
@@ -494,11 +497,11 @@ public class Class4388 {
       }
    }
 
-   public static Optional<Class9455> method13837(Class1034 var0) {
-      return var0.method2992().method21418().<Class9455>map(var1 -> method13838(var0, var1));
+   public static Optional<SoundEvent> method13837(Class1034 var0) {
+      return var0.method2992().method21418().<SoundEvent>map(var1 -> method13838(var0, var1));
    }
 
-   private static Class9455 method13838(Class1034 var0, Class8890 var1) {
+   private static SoundEvent method13838(Class1034 var0, Class8890 var1) {
       if (var1 != Class8890.field40229) {
          if (!var0.method4634()) {
             if (var1 == Class8890.field40232 && method13839(var0)) {
@@ -526,7 +529,7 @@ public class Class4388 {
 
    private static boolean method13839(Class1034 var0) {
       Class6947<Class1034> var3 = var0.method2992();
-      return var3.method21404(Class8830.field39837) ? var3.method21410(Class8830.field39837).get().method3213(var0, 12.0) : false;
+      return var3.method21404(Class8830.field39837) ? var3.method21410(Class8830.field39837).get().isEntityInRange(var0, 12.0) : false;
    }
 
    public static boolean method13840(Class1034 var0) {
@@ -542,7 +545,7 @@ public class Class4388 {
       return var0.method2992().<List<Class1035>>method21410(Class8830.field39861).orElse(ImmutableList.of());
    }
 
-   public static boolean method13843(Class880 var0) {
+   public static boolean method13843(LivingEntity var0) {
       for (ItemStack var4 : var0.method2947()) {
          Item var5 = var4.getItem();
          if (var5 instanceof Class3279 && ((Class3279)var5).method11806() == Class2114.field13776) {
@@ -562,7 +565,7 @@ public class Class4388 {
       return new Class3702<Class1034>(new Class3744<>(Class1034::method3005, Class8830.field39859, Class8830.field39830, field21461), field21460);
    }
 
-   public static void method13846(Class1035 var0, Class880 var1) {
+   public static void method13846(Class1035 var0, LivingEntity var1) {
       method13842(var0).forEach(var1x -> {
          if (var1.getType() != EntityType.field41037 || var1x.method4618() && ((Class1091)var1).method5089()) {
             method13851(var1x, var1);
@@ -578,7 +581,7 @@ public class Class4388 {
       method13841(var0).forEach(Class4388::method13861);
    }
 
-   public static void method13849(Class1035 var0, Class880 var1) {
+   public static void method13849(Class1035 var0, LivingEntity var1) {
       if (method13871(var1)) {
          var0.method2992().method21405(Class8830.field39841);
          var0.method2992().method21407(Class8830.field39849, var1.getUniqueID(), 600L);
@@ -592,50 +595,50 @@ public class Class4388 {
       }
    }
 
-   private static void method13850(Class1035 var0, Class880 var1) {
+   private static void method13850(Class1035 var0, LivingEntity var1) {
       Optional var4 = method13854(var0);
       if (!var4.isPresent()) {
          method13849(var0, var1);
       } else {
-         method13849(var0, (Class880)var4.get());
+         method13849(var0, (LivingEntity)var4.get());
       }
    }
 
-   private static void method13851(Class1035 var0, Class880 var1) {
+   private static void method13851(Class1035 var0, LivingEntity var1) {
       Optional var4 = method13852(var0);
-      Class880 var5 = Class6983.method21584(var0, var4, var1);
+      LivingEntity var5 = Class6983.method21584(var0, var4, var1);
       if (!var4.isPresent() || var4.get() != var5) {
          method13849(var0, var5);
       }
    }
 
-   private static Optional<Class880> method13852(Class1035 var0) {
+   private static Optional<LivingEntity> method13852(Class1035 var0) {
       return Class6983.method21586(var0, Class8830.field39849);
    }
 
-   public static Optional<Class880> method13853(Class1034 var0) {
-      return !var0.method2992().method21404(Class8830.field39837) ? Optional.<Class880>empty() : var0.method2992().<Class880>method21410(Class8830.field39837);
+   public static Optional<LivingEntity> method13853(Class1034 var0) {
+      return !var0.method2992().method21404(Class8830.field39837) ? Optional.<LivingEntity>empty() : var0.method2992().<LivingEntity>method21410(Class8830.field39837);
    }
 
    public static Optional<PlayerEntity> method13854(Class1035 var0) {
       return !var0.method2992().method21404(Class8830.field39823) ? Optional.<PlayerEntity>empty() : var0.method2992().<PlayerEntity>method21410(Class8830.field39823);
    }
 
-   private static void method13855(Class1034 var0, Class880 var1) {
+   private static void method13855(Class1034 var0, LivingEntity var1) {
       method13841(var0).stream().filter(var0x -> var0x instanceof Class1034).forEach(var1x -> method13856((Class1034)var1x, var1));
    }
 
-   private static void method13856(Class1034 var0, Class880 var1) {
+   private static void method13856(Class1034 var0, LivingEntity var1) {
       Class6947 var4 = var0.method2992();
-      Class880 var5 = Class6983.method21584(var0, var4.<Class880>method21410(Class8830.field39837), var1);
-      var5 = Class6983.method21584(var0, var4.<Class880>method21410(Class8830.field39826), var5);
+      LivingEntity var5 = Class6983.method21584(var0, var4.<LivingEntity>method21410(Class8830.field39837), var1);
+      var5 = Class6983.method21584(var0, var4.<LivingEntity>method21410(Class8830.field39826), var5);
       method13860(var0, var5);
    }
 
    private static boolean method13857(Class1034 var0) {
       Class6947<Class1034> var3 = var0.method2992();
       if (var3.method21404(Class8830.field39837)) {
-         Class880 var4 = var3.method21410(Class8830.field39837).get();
+         LivingEntity var4 = var3.method21410(Class8830.field39837).get();
          EntityType<?> var5 = var4.getType();
          if (var5 != EntityType.field41037) {
             return !method13880(var5) ? false : !var3.method21411(Class8830.field39865, var4);
@@ -657,7 +660,7 @@ public class Class4388 {
       return var4 > var3;
    }
 
-   private static void method13860(Class1034 var0, Class880 var1) {
+   private static void method13860(Class1034 var0, LivingEntity var1) {
       var0.method2992().method21405(Class8830.field39849);
       var0.method2992().method21405(Class8830.field39826);
       var0.method2992().method21405(Class8830.field39824);
@@ -686,11 +689,11 @@ public class Class4388 {
       return var0.method2992().method21430(Class8890.field40220);
    }
 
-   private static boolean method13866(Class880 var0) {
+   private static boolean method13866(LivingEntity var0) {
       return var0.method3092(Items.field38148);
    }
 
-   private static void method13867(Class880 var0) {
+   private static void method13867(LivingEntity var0) {
       var0.method2992().method21407(Class8830.field39851, true, 120L);
    }
 
@@ -706,7 +709,7 @@ public class Class4388 {
       return field21465.contains(var0);
    }
 
-   private static boolean method13871(Class880 var0) {
+   private static boolean method13871(LivingEntity var0) {
       return Class8088.field34762.test(var0);
    }
 
@@ -714,15 +717,15 @@ public class Class4388 {
       return var0.method2992().method21404(Class8830.field39870);
    }
 
-   private static boolean method13873(Class880 var0) {
+   private static boolean method13873(LivingEntity var0) {
       return var0.method2992().method21404(Class8830.field39868);
    }
 
-   private static boolean method13874(Class880 var0) {
+   private static boolean method13874(LivingEntity var0) {
       return !method13873(var0);
    }
 
-   public static boolean method13875(Class880 var0) {
+   public static boolean method13875(LivingEntity var0) {
       return var0.getType() == EntityType.PLAYER && var0.method3093(Class4388::method13827);
    }
 
@@ -730,7 +733,7 @@ public class Class4388 {
       return var0.method2992().method21404(Class8830.field39854);
    }
 
-   private static boolean method13877(Class880 var0) {
+   private static boolean method13877(LivingEntity var0) {
       return var0.method2992().method21404(Class8830.field39835);
    }
 

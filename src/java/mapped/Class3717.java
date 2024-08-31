@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
@@ -90,7 +92,7 @@ public class Class3717 extends Class3676<Class1042> {
       var2.method2992().method21405(Class8830.field39825);
    }
 
-   private void method12604(Class1042 var1, Class880 var2) {
+   private void method12604(Class1042 var1, LivingEntity var2) {
       for (ItemStack var6 : this.method12605(var1)) {
          Class6983.method21578(var1, var6, var2.getPositionVec());
       }

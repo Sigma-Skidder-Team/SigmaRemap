@@ -1,21 +1,23 @@
-package mapped;
+package net.minecraft.entity.projectile;
 
+import mapped.*;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-public abstract class Class882 extends Entity {
+public abstract class ProjectileEntity extends Entity {
    private UUID field5093;
    private int field5094;
    private boolean field5095;
 
-   public Class882(EntityType<? extends Class882> var1, World var2) {
+   public ProjectileEntity(EntityType<? extends ProjectileEntity> var1, World var2) {
       super(var1, var2);
    }
 
-   public void method3459(Entity var1) {
+   public void setShooter(Entity var1) {
       if (var1 != null) {
          this.field5093 = var1.getUniqueID();
          this.field5094 = var1.method3205();
@@ -74,7 +76,7 @@ public abstract class Class882 extends Entity {
       return true;
    }
 
-   public void method3462(double var1, double var3, double var5, float var7, float var8) {
+   public void shoot(double var1, double var3, double var5, float var7, float var8) {
       Vector3d var11 = new Vector3d(var1, var3, var5)
          .method11333()
          .method11339(
@@ -85,8 +87,8 @@ public abstract class Class882 extends Entity {
          .method11344((double)var7);
       this.method3434(var11);
       float var12 = MathHelper.method37766(method3234(var11));
-      this.rotationYaw = (float)(MathHelper.method37814(var11.field18048, var11.field18050) * 180.0F / (float)Math.PI);
-      this.rotationPitch = (float)(MathHelper.method37814(var11.field18049, (double)var12) * 180.0F / (float)Math.PI);
+      this.rotationYaw = (float)(MathHelper.method37814(var11.x, var11.z) * 180.0F / (float)Math.PI);
+      this.rotationPitch = (float)(MathHelper.method37814(var11.y, (double)var12) * 180.0F / (float)Math.PI);
       this.prevRotationYaw = this.rotationYaw;
       this.prevRotationPitch = this.rotationPitch;
    }
@@ -95,9 +97,9 @@ public abstract class Class882 extends Entity {
       float var9 = -MathHelper.sin(var3 * (float) (Math.PI / 180.0)) * MathHelper.cos(var2 * (float) (Math.PI / 180.0));
       float var10 = -MathHelper.sin((var2 + var4) * (float) (Math.PI / 180.0));
       float var11 = MathHelper.cos(var3 * (float) (Math.PI / 180.0)) * MathHelper.cos(var2 * (float) (Math.PI / 180.0));
-      this.method3462((double)var9, (double)var10, (double)var11, var5, var6);
+      this.shoot((double)var9, (double)var10, (double)var11, var5, var6);
       Vector3d var12 = var1.method3433();
-      this.method3434(this.method3433().method11339(var12.field18048, !var1.method3226() ? var12.field18049 : 0.0, var12.field18050));
+      this.method3434(this.method3433().method11339(var12.x, !var1.method3226() ? var12.y : 0.0, var12.z));
    }
 
    public void method3464(RayTraceResult var1) {
@@ -144,8 +146,8 @@ public abstract class Class882 extends Entity {
    public void method3468() {
       Vector3d var3 = this.method3433();
       float var4 = MathHelper.method37766(method3234(var3));
-      this.rotationPitch = method3469(this.prevRotationPitch, (float)(MathHelper.method37814(var3.field18049, (double)var4) * 180.0F / (float)Math.PI));
-      this.rotationYaw = method3469(this.prevRotationYaw, (float)(MathHelper.method37814(var3.field18048, var3.field18050) * 180.0F / (float)Math.PI));
+      this.rotationPitch = method3469(this.prevRotationPitch, (float)(MathHelper.method37814(var3.y, (double)var4) * 180.0F / (float)Math.PI));
+      this.rotationYaw = method3469(this.prevRotationYaw, (float)(MathHelper.method37814(var3.x, var3.z) * 180.0F / (float)Math.PI));
    }
 
    public static float method3469(float var0, float var1) {

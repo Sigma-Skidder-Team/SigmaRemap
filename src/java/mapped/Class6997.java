@@ -39,9 +39,9 @@ public class Class6997 extends Class6990 {
          if (!this.method21668()) {
             if (this.field30245 != null && !this.field30245.method28693()) {
                Vector3d var3 = this.field30245.method28703(this.field30243);
-               if (MathHelper.floor(this.field30243.getPosX()) == MathHelper.floor(var3.field18048)
-                  && MathHelper.floor(this.field30243.getPosY()) == MathHelper.floor(var3.field18049)
-                  && MathHelper.floor(this.field30243.getPosZ()) == MathHelper.floor(var3.field18050)) {
+               if (MathHelper.floor(this.field30243.getPosX()) == MathHelper.floor(var3.x)
+                  && MathHelper.floor(this.field30243.getPosY()) == MathHelper.floor(var3.y)
+                  && MathHelper.floor(this.field30243.getPosZ()) == MathHelper.floor(var3.z)) {
                   this.field30245.method28691();
                }
             }
@@ -52,7 +52,7 @@ public class Class6997 extends Class6990 {
          Class7393.method23617(this.field30244, this.field30243, this.field30245, this.field30254);
          if (!this.method21664()) {
             Vector3d var4 = this.field30245.method28703(this.field30243);
-            this.field30243.method4228().method20813(var4.field18048, var4.field18049, var4.field18050, this.field30246);
+            this.field30243.method4228().method20813(var4.x, var4.y, var4.z, this.field30246);
          }
       }
    }
@@ -64,15 +64,15 @@ public class Class6997 extends Class6990 {
          float var4 = this.field30243.method3429();
          float var5 = !(var4 > 0.75F) ? 0.75F - var4 / 2.0F : var4 / 2.0F;
          Vector3d var6 = this.field30243.method3433();
-         if (Math.abs(var6.field18048) > 0.2 || Math.abs(var6.field18050) > 0.2) {
+         if (Math.abs(var6.x) > 0.2 || Math.abs(var6.z) > 0.2) {
             var5 = (float)((double)var5 * var6.method11348() * 6.0);
          }
 
          byte var7 = 6;
          Vector3d var8 = Vector3d.method11330(this.field30245.method28704());
-         if (Math.abs(this.field30243.getPosX() - var8.field18048) < (double)var5
-            && Math.abs(this.field30243.getPosZ() - var8.field18050) < (double)var5
-            && Math.abs(this.field30243.getPosY() - var8.field18049) < (double)(var5 * 2.0F)) {
+         if (Math.abs(this.field30243.getPosX() - var8.x) < (double)var5
+            && Math.abs(this.field30243.getPosZ() - var8.z) < (double)var5
+            && Math.abs(this.field30243.getPosY() - var8.y) < (double)(var5 * 2.0F)) {
             this.field30245.method28691();
          }
 
@@ -122,7 +122,7 @@ public class Class6997 extends Class6990 {
 
    @Override
    public boolean method21671(Vector3d var1, Vector3d var2, int var3, int var4, int var5) {
-      Vector3d var8 = new Vector3d(var2.field18048, var2.field18049 + (double)this.field30243.method3430() * 0.5, var2.field18050);
+      Vector3d var8 = new Vector3d(var2.x, var2.y + (double)this.field30243.method3430() * 0.5, var2.z);
       return this.field30244.method7036(new Class6809(var1, var8, Class2271.field14774, Class1985.field12962, this.field30243)).getType()
          == RayTraceResult.Type.MISS;
    }

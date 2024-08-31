@@ -231,7 +231,7 @@ public class Class6619 implements Class6618 {
    public Class6619 method20166(ServerWorld var1) {
       if (var1 != this.field29126) {
          double var4 = DimensionType.getCoordinateDifference(this.field29126.method6812(), var1.method6812());
-         Vector3d var6 = new Vector3d(this.field29125.field18048 * var4, this.field29125.field18049, this.field29125.field18050 * var4);
+         Vector3d var6 = new Vector3d(this.field29125.x * var4, this.field29125.y, this.field29125.z * var4);
          return new Class6619(
             this.field29124,
             var6,
@@ -257,9 +257,9 @@ public class Class6619 implements Class6618 {
 
    public Class6619 method20168(Vector3d var1) throws CommandSyntaxException {
       Vector3d var4 = this.field29134.method8712(this);
-      double var5 = var1.field18048 - var4.field18048;
-      double var7 = var1.field18049 - var4.field18049;
-      double var9 = var1.field18050 - var4.field18050;
+      double var5 = var1.x - var4.x;
+      double var7 = var1.y - var4.y;
+      double var9 = var1.z - var4.z;
       double var11 = (double) MathHelper.method37766(var5 * var5 + var9 * var9);
       float var13 = MathHelper.method37792((float)(-(MathHelper.method37814(var7, var11) * 180.0F / (float)Math.PI)));
       float var14 = MathHelper.method37792((float)(MathHelper.method37814(var9, var5) * 180.0F / (float)Math.PI) - 90.0F);

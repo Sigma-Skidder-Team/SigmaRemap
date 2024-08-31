@@ -1,12 +1,13 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Class3696<E extends Class880, T extends Class880> extends Class3676<E> {
+public class Class3696<E extends LivingEntity, T extends LivingEntity> extends Class3676<E> {
    private final int field19730;
    private final float field19731;
    private final EntityType<? extends T> field19732;
@@ -26,8 +27,8 @@ public class Class3696<E extends Class880, T extends Class880> extends Class3676
       this.field19736 = var5;
    }
 
-   public static <T extends Class880> Class3696<Class880, T> method12551(EntityType<? extends T> var0, int var1, Class8830<T> var2, float var3, int var4) {
-      return new Class3696<Class880, T>(var0, var1, var0x -> true, var0x -> true, var2, var3, var4);
+   public static <T extends LivingEntity> Class3696<LivingEntity, T> method12551(EntityType<? extends T> var0, int var1, Class8830<T> var2, float var3, int var4) {
+      return new Class3696<LivingEntity, T>(var0, var1, var0x -> true, var0x -> true, var2, var3, var4);
    }
 
    @Override
@@ -36,11 +37,11 @@ public class Class3696<E extends Class880, T extends Class880> extends Class3676
    }
 
    private boolean method12552(E var1) {
-      List<Class880> var4 = var1.method2992().<List<Class880>>method21410(Class8830.field39819).get();
+      List<LivingEntity> var4 = var1.method2992().<List<LivingEntity>>method21410(Class8830.field39819).get();
       return var4.stream().anyMatch(this::method12553);
    }
 
-   private boolean method12553(Class880 var1) {
+   private boolean method12553(LivingEntity var1) {
       return this.field19732.equals(var1.getType()) && this.field19734.test((T)var1);
    }
 

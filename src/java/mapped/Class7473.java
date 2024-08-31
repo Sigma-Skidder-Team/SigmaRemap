@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.util.math.BlockPos;
 
@@ -184,7 +185,7 @@ public class Class7473 {
       double var13 = (double)var1.field44254;
       double var15 = (double)var1.field44255;
       int var17 = var2 != var12 ? 90 : 0;
-      Vector3d var18 = var2 != var12 ? new Vector3d(var5.field18050, var5.field18049, -var5.field18048) : var5;
+      Vector3d var18 = var2 != var12 ? new Vector3d(var5.z, var5.y, -var5.x) : var5;
       double var19 = (double)var4.field39968 / 2.0 + (var13 - (double)var4.field39968) * var3.method11320();
       double var21 = (var15 - (double)var4.field39969) * var3.method11321();
       double var23 = 0.5 + var3.method11322();

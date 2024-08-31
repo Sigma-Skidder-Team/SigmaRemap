@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.Client;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.Pose;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -315,14 +316,14 @@ public class ViaVersionLoader {
             var1.method13995(Class9140.field42006);
             var1.method13997(Class9140.field42007);
          } else {
-            Class9140.field42006 = this.mc.player.method3433().field18049;
+            Class9140.field42006 = this.mc.player.method3433().y;
             if (this.field31498 && Class9140.method34129()) {
                Class9140.field42006 = 0.2F;
                ColorUtils.method17725(Class9140.field42006);
             }
 
-            Class9140.field42005 = this.mc.player.method3433().field18048;
-            Class9140.field42007 = this.mc.player.method3433().field18050;
+            Class9140.field42005 = this.mc.player.method3433().x;
+            Class9140.field42007 = this.mc.player.method3433().z;
             this.field31498 = false;
          }
       }

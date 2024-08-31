@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
 
@@ -28,25 +30,25 @@ public class Class1076 extends AbstractHorseEntity {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       super.method4241();
       return !this.method3263(Class8953.field40469) ? Sounds.field27061 : Sounds.field27065;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       super.method2880();
       return Sounds.field27062;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       super.method2879(var1);
       return Sounds.field27063;
    }
 
    @Override
-   public Class9455 method2859() {
+   public SoundEvent method2859() {
       if (this.onGround) {
          if (!this.isBeingRidden()) {
             return Sounds.field27068;

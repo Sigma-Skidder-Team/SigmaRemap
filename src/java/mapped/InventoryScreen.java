@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class InventoryScreen extends Class860<Class5830> implements Class854 {
@@ -83,7 +85,7 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
       method2635(var7 + 51, var8 + 75, 30, (float)(var7 + 51) - this.field4766, (float)(var8 + 75 - 50) - this.field4767, this.mc.player);
    }
 
-   public static void method2635(int var0, int var1, int var2, float var3, float var4, Class880 var5) {
+   public static void method2635(int var0, int var1, int var2, float var3, float var4, LivingEntity var5) {
       float var8 = (float)Math.atan((double)(var3 / 40.0F));
       float var9 = (float)Math.atan((double)(var4 / 40.0F));
       RenderSystem.pushMatrix();

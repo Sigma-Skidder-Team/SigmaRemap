@@ -183,10 +183,10 @@ public class BlockFlySmoothMode extends Module {
                     var6 = var10[1];
                 }
 
-                if (mc.player.method3433().field18049 < 0.0
+                if (mc.player.method3433().y < 0.0
                         && mc.player.fallDistance > 1.0F
                         && Class9217.method34567(0.0F, 90.0F, 3.0F).getType() == RayTraceResult.Type.MISS) {
-                    var8 += Math.min(mc.player.method3433().field18049 * 2.0, 4.0);
+                    var8 += Math.min(mc.player.method3433().y * 2.0, 4.0);
                 } else if ((this.getStringSettingValueByName("Speed Mode").equals("Jump") || this.getStringSettingValueByName("Speed Mode").equals("Cubecraft"))
                         && !mc.gameSettings.keyBindJump.isKeyDown()) {
                     var8 = this.field23979;
@@ -258,9 +258,9 @@ public class BlockFlySmoothMode extends Module {
                         mc.player.method2914();
                         ((Speed) Client.getInstance().getModuleManager().getModuleByClass(Speed.class)).method16764();
                         this.field23978 = true;
-                        var1.method13995(mc.player.method3433().field18049);
-                        var1.method13993(mc.player.method3433().field18048);
-                        var1.method13997(mc.player.method3433().field18050);
+                        var1.method13995(mc.player.method3433().y);
+                        var1.method13993(mc.player.method3433().x);
+                        var1.method13997(mc.player.method3433().z);
                     }
                     break;
                 case "AAC":
@@ -361,7 +361,7 @@ public class BlockFlySmoothMode extends Module {
             if (!(mc.player.fallDistance > 1.2F)) {
                 if (!(mc.player.field4915 < this.field23979)) {
                     if (!mc.player.field4981) {
-                        mc.player.positionVec.field18049 = this.field23979;
+                        mc.player.positionVec.y = this.field23979;
                         mc.player.lastTickPosY = this.field23979;
                         mc.player.field4915 = this.field23979;
                         mc.player.prevPosY = this.field23979;

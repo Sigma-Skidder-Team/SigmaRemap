@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class2778 extends Class2595 {
@@ -22,7 +24,7 @@ public class Class2778 extends Class2595 {
          if (this.field17376.method3255()) {
             return false;
          } else if (this.field17376.method3226()) {
-            Class880 var3 = this.field17376.method4400();
+            LivingEntity var3 = this.field17376.method4400();
             if (var3 == null) {
                return true;
             } else {

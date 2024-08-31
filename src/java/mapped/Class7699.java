@@ -15,8 +15,10 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -303,8 +305,8 @@ public class Class7699 {
 
                   for (UUID var8 : this.field32975) {
                      Entity var9 = this.field32978.method6942(var8);
-                     if (var9 instanceof Class880 && !var9.isSpectator()) {
-                        Class880 var10 = (Class880)var9;
+                     if (var9 instanceof LivingEntity && !var9.isSpectator()) {
+                        LivingEntity var10 = (LivingEntity)var9;
                         var10.method3035(new Class2023(Effects.HERO_OF_THE_VILLAGE, 48000, this.field32982 - 1, false, false, true));
                         if (var10 instanceof ServerPlayerEntity) {
                            ServerPlayerEntity var11 = (ServerPlayerEntity)var10;
@@ -403,11 +405,11 @@ public class Class7699 {
          Vector3d var9 = var8.getPositionVec();
          Vector3d var10 = Vector3d.method11328(var1);
          float var11 = MathHelper.method37766(
-            (var10.field18048 - var9.field18048) * (var10.field18048 - var9.field18048)
-               + (var10.field18050 - var9.field18050) * (var10.field18050 - var9.field18050)
+            (var10.x - var9.x) * (var10.x - var9.x)
+               + (var10.z - var9.z) * (var10.z - var9.z)
          );
-         double var12 = var9.field18048 + (double)(13.0F / var11) * (var10.field18048 - var9.field18048);
-         double var14 = var9.field18050 + (double)(13.0F / var11) * (var10.field18050 - var9.field18050);
+         double var12 = var9.x + (double)(13.0F / var11) * (var10.x - var9.x);
+         double var14 = var9.z + (double)(13.0F / var11) * (var10.z - var9.z);
          if (var11 <= 64.0F || var6.contains(var8)) {
             var8.field4855.sendPacket(new Class5584(Sounds.field26992, Class2266.field14734, var12, var8.getPosY(), var14, 64.0F, 1.0F));
          }

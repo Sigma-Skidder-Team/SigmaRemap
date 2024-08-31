@@ -1,15 +1,17 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.EnumSet;
 import java.util.function.Predicate;
 
-public class Class2709<T extends Class880> extends Class2699 {
+public class Class2709<T extends LivingEntity> extends Class2699 {
    private static String[] field17187;
    public final Class<T> field17188;
    public final int field17189;
-   public Class880 field17190;
+   public LivingEntity field17190;
    public Class8522 field17191;
 
    public Class2709(Class1006 var1, Class<T> var2, boolean var3) {
@@ -17,10 +19,10 @@ public class Class2709<T extends Class880> extends Class2699 {
    }
 
    public Class2709(Class1006 var1, Class<T> var2, boolean var3, boolean var4) {
-      this(var1, var2, 10, var3, var4, (Predicate<Class880>)null);
+      this(var1, var2, 10, var3, var4, (Predicate<LivingEntity>)null);
    }
 
-   public Class2709(Class1006 var1, Class<T> var2, int var3, boolean var4, boolean var5, Predicate<Class880> var6) {
+   public Class2709(Class1006 var1, Class<T> var2, int var3, boolean var4, boolean var5, Predicate<LivingEntity> var6) {
       super(var1, var4, var5);
       this.field17188 = var2;
       this.field17189 = var3;
@@ -46,7 +48,7 @@ public class Class2709<T extends Class880> extends Class2699 {
       if (this.field17188 != PlayerEntity.class && this.field17188 != ServerPlayerEntity.class) {
          this.field17190 = this.field17153
             .world
-            .<Class880>method7192(
+            .<LivingEntity>method7192(
                this.field17188,
                this.field17191,
                this.field17153,
@@ -68,7 +70,7 @@ public class Class2709<T extends Class880> extends Class2699 {
       super.method10804();
    }
 
-   public void method10923(Class880 var1) {
+   public void method10923(LivingEntity var1) {
       this.field17190 = var1;
    }
 }

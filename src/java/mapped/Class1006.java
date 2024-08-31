@@ -1,17 +1,23 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 import java.util.*;
 
-public abstract class Class1006 extends Class880 {
-   private static final DataParameter<Byte> field5592 = EntityDataManager.<Byte>method35441(Class1006.class, Class7784.field33390);
+public abstract class Class1006 extends LivingEntity {
+   private static final DataParameter<Byte> field5592 = EntityDataManager.<Byte>createKey(Class1006.class, DataSerializers.field33390);
    public int field5593;
    public int field5594;
    public Class8092 field5595;
@@ -21,7 +27,7 @@ public abstract class Class1006 extends Class880 {
    public Class6990 field5599;
    public final Class6603 field5600;
    public final Class6603 field5601;
-   private Class880 field5602;
+   private LivingEntity field5602;
    private final Class9363 field5603;
    private final NonNullList<ItemStack> field5604 = NonNullList.<ItemStack>method68(2, ItemStack.EMPTY);
    public final float[] field5605 = new float[2];
@@ -59,7 +65,7 @@ public abstract class Class1006 extends Class880 {
    }
 
    public static Class7037 method4220() {
-      return Class880.method2997().method21849(Attributes.field42106, 16.0).method21848(Attributes.field42111);
+      return LivingEntity.method2997().method21849(Attributes.field42106, 16.0).method21848(Attributes.field42111);
    }
 
    public Class6990 method4221(World var1) {
@@ -125,11 +131,11 @@ public abstract class Class1006 extends Class880 {
    }
 
    @Nullable
-   public Class880 method4232() {
+   public LivingEntity method4232() {
       return this.field5602;
    }
 
-   public void method4233(Class880 var1) {
+   public void method4233(LivingEntity var1) {
       this.field5602 = var1;
       Class9299.method35055(Class9299.field42862, this, var1);
    }
@@ -157,7 +163,7 @@ public abstract class Class1006 extends Class880 {
    }
 
    public void method4237() {
-      Class9455 var3 = this.method4241();
+      SoundEvent var3 = this.method4241();
       if (var3 != null) {
          this.method2863(var3, this.method3099(), this.method3100());
       }
@@ -270,7 +276,7 @@ public abstract class Class1006 extends Class880 {
    }
 
    @Nullable
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return null;
    }
 
@@ -323,7 +329,7 @@ public abstract class Class1006 extends Class880 {
          }
       } else {
          CompoundNBT var20 = new CompoundNBT();
-         if (!(this.field5613 instanceof Class880)) {
+         if (!(this.field5613 instanceof LivingEntity)) {
             if (this.field5613 instanceof Class995) {
                BlockPos var22 = ((Class995)this.field5613).method4085();
                var20.method102("X", var22.getX());
@@ -681,10 +687,10 @@ public abstract class Class1006 extends Class880 {
       double var6 = var1.getPosX() - this.getPosX();
       double var8 = var1.getPosZ() - this.getPosZ();
       double var10;
-      if (!(var1 instanceof Class880)) {
+      if (!(var1 instanceof LivingEntity)) {
          var10 = (var1.getBoundingBox().field28450 + var1.getBoundingBox().field28453) / 2.0 - this.method3442();
       } else {
-         Class880 var12 = (Class880)var1;
+         LivingEntity var12 = (LivingEntity)var1;
          var10 = var12.method3442() - this.method3442();
       }
 
@@ -1317,7 +1323,7 @@ public abstract class Class1006 extends Class880 {
    }
 
    @Override
-   public boolean method3026(Class880 var1) {
+   public boolean method3026(LivingEntity var1) {
       return var1.getType() == EntityType.PLAYER && ((PlayerEntity)var1).abilities.field29606 ? false : super.method3026(var1);
    }
 
@@ -1325,8 +1331,8 @@ public abstract class Class1006 extends Class880 {
    public boolean method3114(Entity var1) {
       float var4 = (float)this.method3086(Attributes.field42110);
       float var5 = (float)this.method3086(Attributes.field42111);
-      if (var1 instanceof Class880) {
-         var4 += Class7858.method26318(this.method3090(), ((Class880)var1).method3089());
+      if (var1 instanceof LivingEntity) {
+         var4 += Class7858.method26318(this.method3090(), ((LivingEntity)var1).method3089());
          var5 += (float)Class7858.method26323(this);
       }
 
@@ -1337,8 +1343,8 @@ public abstract class Class1006 extends Class880 {
 
       boolean var7 = var1.method2741(Class8654.method31115(this), var4);
       if (var7) {
-         if (var5 > 0.0F && var1 instanceof Class880) {
-            ((Class880)var1)
+         if (var5 > 0.0F && var1 instanceof LivingEntity) {
+            ((LivingEntity)var1)
                .method3058(
                   var5 * 0.5F,
                   (double) MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)),
@@ -1409,7 +1415,7 @@ public abstract class Class1006 extends Class880 {
                      double var5 = Math.max(Math.abs(this.getPosX() - var4.getPosX()) - 16.0, 0.0);
                      double var7 = Math.max(Math.abs(this.getPosZ() - var4.getPosZ()) - 16.0, 0.0);
                      double var9 = var5 * var5 + var7 * var7;
-                     return !this.method3291(var9);
+                     return !this.isInRangeToRenderDist(var9);
                   } else {
                      return false;
                   }

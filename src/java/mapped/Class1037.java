@@ -1,6 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
@@ -70,27 +73,27 @@ public class Class1037 extends Class1038 implements Class1022 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return !this.method3250() ? Sounds.field26514 : Sounds.field26515;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return !this.method3250() ? Sounds.field26518 : Sounds.field26519;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return !this.method3250() ? Sounds.field26516 : Sounds.field26517;
    }
 
    @Override
-   public Class9455 method4643() {
+   public SoundEvent method4643() {
       return Sounds.field26521;
    }
 
    @Override
-   public Class9455 method2859() {
+   public SoundEvent method2859() {
       return Sounds.field26522;
    }
 
@@ -134,7 +137,7 @@ public class Class1037 extends Class1038 implements Class1022 {
       return var1.method7050(this);
    }
 
-   public boolean method4646(Class880 var1) {
+   public boolean method4646(LivingEntity var1) {
       return var1 == null ? false : !this.world.method6740() || var1.method3250();
    }
 
@@ -147,7 +150,7 @@ public class Class1037 extends Class1038 implements Class1022 {
       if (this.field5755) {
          return true;
       } else {
-         Class880 var3 = this.method4232();
+         LivingEntity var3 = this.method4232();
          return var3 != null && var3.method3250();
       }
    }
@@ -192,13 +195,13 @@ public class Class1037 extends Class1038 implements Class1022 {
    }
 
    @Override
-   public void method4530(Class880 var1, float var2) {
+   public void method4530(LivingEntity var1, float var2) {
       Class886 var5 = new Class886(this.world, this, new ItemStack(Items.field38144));
       double var6 = var1.getPosX() - this.getPosX();
       double var8 = var1.method3440(0.3333333333333333) - var5.getPosY();
       double var10 = var1.getPosZ() - this.getPosZ();
       double var12 = (double) MathHelper.method37766(var6 * var6 + var10 * var10);
-      var5.method3462(var6, var8 + var12 * 0.2F, var10, 1.6F, (float)(14 - this.world.method6997().method8905() * 4));
+      var5.shoot(var6, var8 + var12 * 0.2F, var10, 1.6F, (float)(14 - this.world.method6997().method8905() * 4));
       this.method2863(Sounds.field26520, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.world.method6916(var5);
    }

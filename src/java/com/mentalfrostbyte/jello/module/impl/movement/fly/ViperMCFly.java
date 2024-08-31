@@ -36,7 +36,7 @@ public class ViperMCFly extends Module {
     @Override
     public void onDisable() {
         Class9567.method37090(0.0);
-        if (mc.player.method3433().field18049 > 0.0) {
+        if (mc.player.method3433().y > 0.0) {
             ColorUtils.method17725(-0.0789);
         }
     }
@@ -167,7 +167,7 @@ public class ViperMCFly extends Module {
         if (this.isEnabled()) {
             double var4 = this.field23596 - this.field23597;
             double var6 = this.field23596;
-            mc.player.positionVec.field18049 = var6;
+            mc.player.positionVec.y = var6;
             mc.player.lastTickPosY = var6;
             mc.player.field4915 = var6;
             mc.player.prevPosY = var6;

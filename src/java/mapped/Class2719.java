@@ -1,12 +1,13 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 
-public class Class2719 extends Class2709<Class880> {
+public class Class2719 extends Class2709<LivingEntity> {
    private static String[] field17187;
 
    public Class2719(Class1057 var1) {
-      super(var1, Class880.class, 10, true, false, var0 -> var0 instanceof Class1008);
+      super(var1, LivingEntity.class, 10, true, false, var0 -> var0 instanceof Class1008);
    }
 
    @Override

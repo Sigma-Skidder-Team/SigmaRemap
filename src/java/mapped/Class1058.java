@@ -1,14 +1,21 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.UUID;
 
 public class Class1058 extends Class1056 implements Class1011 {
-   public static final DataParameter<Byte> field5849 = EntityDataManager.<Byte>method35441(Class1058.class, Class7784.field33390);
+   public static final DataParameter<Byte> field5849 = EntityDataManager.<Byte>createKey(Class1058.class, DataSerializers.field33390);
    private int field5850;
    private int field5851;
    private static final Class8369 field5852 = Class8763.method31620(20, 39);
@@ -59,7 +66,7 @@ public class Class1058 extends Class1056 implements Class1011 {
    @Override
    public void method3128(Entity var1) {
       if (var1 instanceof Class1008 && !(var1 instanceof Class1081) && this.method3013().nextInt(20) == 0) {
-         this.method4233((Class880)var1);
+         this.method4233((LivingEntity)var1);
       }
 
       super.method3128(var1);
@@ -216,12 +223,12 @@ public class Class1058 extends Class1056 implements Class1011 {
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26703;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26702;
    }
 

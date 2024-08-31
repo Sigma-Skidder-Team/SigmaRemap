@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 
 public class Class2726 extends Class2595 {
@@ -13,7 +15,7 @@ public class Class2726 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      Class880 var3 = this.field17232.method3014();
+      LivingEntity var3 = this.field17232.method3014();
       return this.field17232.method3250() && var3 != null ? this.field17232.getDistanceSq(var3) < 100.0 : false;
    }
 
@@ -25,7 +27,7 @@ public class Class2726 extends Class2595 {
    @Override
    public void method10805() {
       this.field17231++;
-      Class880 var3 = this.field17232.method3014();
+      LivingEntity var3 = this.field17232.method3014();
       if (var3 != null) {
          Vector3d var4 = new Vector3d(
             this.field17232.getPosX() - var3.getPosX(),
@@ -36,18 +38,18 @@ public class Class2726 extends Class2595 {
             .world
             .getBlockState(
                new BlockPos(
-                  this.field17232.getPosX() + var4.field18048,
-                  this.field17232.getPosY() + var4.field18049,
-                  this.field17232.getPosZ() + var4.field18050
+                  this.field17232.getPosX() + var4.x,
+                  this.field17232.getPosY() + var4.y,
+                  this.field17232.getPosZ() + var4.z
                )
             );
          FluidState var6 = this.field17232
             .world
             .getFluidState(
                new BlockPos(
-                  this.field17232.getPosX() + var4.field18048,
-                  this.field17232.getPosY() + var4.field18049,
-                  this.field17232.getPosZ() + var4.field18050
+                  this.field17232.getPosX() + var4.x,
+                  this.field17232.getPosY() + var4.y,
+                  this.field17232.getPosZ() + var4.z
                )
             );
          if (var6.method23486(Class8953.field40469) || var5.isAir()) {
@@ -65,10 +67,10 @@ public class Class2726 extends Class2595 {
             }
 
             if (var5.isAir()) {
-               var4 = var4.method11337(0.0, var4.field18049, 0.0);
+               var4 = var4.method11337(0.0, var4.y, 0.0);
             }
 
-            this.field17232.method4840((float)var4.field18048 / 20.0F, (float)var4.field18049 / 20.0F, (float)var4.field18050 / 20.0F);
+            this.field17232.method4840((float)var4.x / 20.0F, (float)var4.y / 20.0F, (float)var4.z / 20.0F);
          }
 
          if (this.field17231 % 10 == 5) {

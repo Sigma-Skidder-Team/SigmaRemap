@@ -70,8 +70,8 @@ public class Class8795 {
       if (this.method31743()) {
          if (this.field39616 == null) {
             double var4 = Math.sqrt(
-               this.field39612.player.method3433().field18048 * this.field39612.player.method3433().field18048
-                  + this.field39612.player.method3433().field18050 * this.field39612.player.method3433().field18050
+               this.field39612.player.method3433().x * this.field39612.player.method3433().x
+                  + this.field39612.player.method3433().z * this.field39612.player.method3433().z
             );
             boolean var6 = ColorUtils.method17730(this.field39612.player, 0.02F);
             int var7 = this.field39613.size() - 1;
@@ -86,7 +86,7 @@ public class Class8795 {
             }
 
             BlockPos var15 = this.field39612.player.getPosition();
-            if (this.field39612.player.positionVec.field18049 % 1.0 >= 0.93) {
+            if (this.field39612.player.positionVec.y % 1.0 >= 0.93) {
                var15 = var15.up();
             }
 
@@ -121,8 +121,8 @@ public class Class8795 {
                this.field39618 = this.field39613.get(var7);
                this.field39613.remove(var7);
                if (this.field39613.size() == 0) {
-                  ColorUtils.method17724(this.field39612.player.method3433().field18048 * 0.5);
-                  ColorUtils.method17726(this.field39612.player.method3433().field18050 * 0.5);
+                  ColorUtils.method17724(this.field39612.player.method3433().x * 0.5);
+                  ColorUtils.method17726(this.field39612.player.method3433().z * 0.5);
                   this.method31738();
                   return;
                }
@@ -136,15 +136,15 @@ public class Class8795 {
                if (!this.field39612.player.onGround && var20 > 60.0F
                   || !this.field39612.player.onGround && var20 > 45.0F && this.field39612.player.method3433().method11348() > 0.24
                   || var20 > 110.0F) {
-                  ColorUtils.method17724(this.field39612.player.method3433().field18048 * 0.25);
-                  ColorUtils.method17726(this.field39612.player.method3433().field18050 * 0.25);
+                  ColorUtils.method17724(this.field39612.player.method3433().x * 0.25);
+                  ColorUtils.method17726(this.field39612.player.method3433().z * 0.25);
                }
             }
 
             if (var10 < var12
                && (var14 || var8.field44281.size() > 0 && (double)this.field39612.player.position.field13028 > var8.field44271.method33970())) {
-               ColorUtils.method17724(this.field39612.player.method3433().field18048 * 0.5);
-               ColorUtils.method17726(this.field39612.player.method3433().field18050 * 0.5);
+               ColorUtils.method17724(this.field39612.player.method3433().x * 0.5);
+               ColorUtils.method17726(this.field39612.player.method3433().z * 0.5);
             }
 
             float var43 = Class9142.method34145(this.field39612.player.getPositionVec(), var8.field44271.method33972())[0];
@@ -160,8 +160,8 @@ public class Class8795 {
                this.field39612.player.field4982 = (float)(var23 * var26);
             } else {
                if (this.field39612.player.method3337()) {
-                  ColorUtils.method17724(this.field39612.player.method3433().field18048 * 0.9);
-                  ColorUtils.method17726(this.field39612.player.method3433().field18050 * 0.9);
+                  ColorUtils.method17724(this.field39612.player.method3433().x * 0.9);
+                  ColorUtils.method17726(this.field39612.player.method3433().z * 0.9);
                }
 
                this.field39612.player.field4984 = 0.0F;
@@ -239,8 +239,8 @@ public class Class8795 {
    public boolean method31746(BlockPos var1) {
       float var4 = (float)var1.getX() + 0.5F;
       float var5 = (float)var1.getZ() + 0.5F;
-      double var6 = this.field39612.player.method3433().field18048;
-      double var8 = this.field39612.player.method3433().field18050;
+      double var6 = this.field39612.player.method3433().x;
+      double var8 = this.field39612.player.method3433().z;
       double var10 = this.field39612.player.getPosX();
       double var12 = this.field39612.player.getPosZ();
 

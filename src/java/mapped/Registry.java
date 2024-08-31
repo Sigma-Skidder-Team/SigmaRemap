@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.*;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.SoundEvent;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +24,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final ResourceLocation ROOT = new ResourceLocation("root");
    public static final MutableRegistry<MutableRegistry<?>> field16034 = new SimpleRegistry<MutableRegistry<?>>(createKey("root"), Lifecycle.experimental());
    public static final Registry<? extends Registry<?>> field16035 = field16034;
-   public static final RegistryKey<Registry<Class9455>> field16036 = createKey("sound_event");
+   public static final RegistryKey<Registry<SoundEvent>> field16036 = createKey("sound_event");
    public static final RegistryKey<Registry<Fluid>> field16037 = createKey("fluid");
    public static final RegistryKey<Registry<Effect>> field16038 = createKey("mob_effect");
    public static final RegistryKey<Registry<Block>> field16039 = createKey("block");
@@ -56,7 +57,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<DimensionType>> DIMENSION_TYPE_KEY = createKey("dimension_type");
    public static final RegistryKey<Registry<World>> WORLD_KEY = createKey("dimension");
    public static final RegistryKey<Registry<Dimension>> DIMENSION_KEY = createKey("dimension");
-   public static final Registry<Class9455> field16069 = method9175(field16036, () -> Sounds.field26714);
+   public static final Registry<SoundEvent> field16069 = method9175(field16036, () -> Sounds.field26714);
    public static final Class2351<Fluid> field16070 = method9176(field16037, "empty", () -> Class9479.field44064);
    public static final Registry<Effect> EFFECTS = method9175(field16038, () -> Effects.LUCK);
    public static final Class2351<Block> BLOCK = method9176(field16039, "air", () -> Blocks.AIR);

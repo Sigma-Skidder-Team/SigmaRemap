@@ -11,9 +11,10 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import org.apache.commons.lang3.mutable.MutableObject;
 
-public final class Class9490<E extends Class880> extends MapCodec<Class6947<E>> {
+public final class Class9490<E extends LivingEntity> extends MapCodec<Class6947<E>> {
    public final Collection<Class8830> field44113;
    public final Collection field44114;
    public final MutableObject field44115;

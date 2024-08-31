@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
@@ -115,7 +118,7 @@ public class Class3461 extends Block {
    }
 
    @Override
-   public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
       var1.setBlockState(var2.up(), var3.method23465(field19297, Class84.field209), 3);
    }
 
@@ -145,8 +148,8 @@ public class Class3461 extends Block {
             int var21 = var6.method539();
             int var22 = var6.method541();
             Vector3d var23 = var1.method18355();
-            double var24 = var23.field18048 - (double)var5.getX();
-            double var26 = var23.field18050 - (double)var5.getZ();
+            double var24 = var23.x - (double)var5.getX();
+            double var26 = var23.z - (double)var5.getZ();
             return var21 < 0 && var26 < 0.5 || var21 > 0 && var26 > 0.5 || var22 < 0 && var24 > 0.5 || var22 > 0 && var24 < 0.5
                ? Class183.field665
                : Class183.field664;

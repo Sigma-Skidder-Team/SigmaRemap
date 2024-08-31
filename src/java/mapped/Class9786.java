@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import net.minecraft.block.BlockState;
 
 public final class Class9786 {
    private static String[] field45754;

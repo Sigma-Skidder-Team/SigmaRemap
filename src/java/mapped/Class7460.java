@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -33,8 +34,8 @@ public class Class7460 implements Class7458 {
 
    @Override
    public int method24127() {
-      if (this.field32082 instanceof Class880) {
-         Class880 var3 = (Class880)this.field32082;
+      if (this.field32082 instanceof LivingEntity) {
+         LivingEntity var3 = (LivingEntity)this.field32082;
          return (int)var3.getHealth();
       } else {
          return 0;
@@ -43,8 +44,8 @@ public class Class7460 implements Class7458 {
 
    @Override
    public int method24128() {
-      if (this.field32082 instanceof Class880) {
-         Class880 var3 = (Class880)this.field32082;
+      if (this.field32082 instanceof LivingEntity) {
+         LivingEntity var3 = (LivingEntity)this.field32082;
          return (int)var3.method3075();
       } else {
          return 0;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 
 public interface Class1071 {
    boolean method4982();
@@ -16,7 +17,7 @@ public interface Class1071 {
             var1.rotationYaw = var6.rotationYaw;
             var1.prevRotationYaw = var1.rotationYaw;
             var1.rotationPitch = var6.rotationPitch * 0.5F;
-            var1.method3214(var1.rotationYaw, var1.rotationPitch);
+            var1.setRotation(var1.rotationYaw, var1.rotationPitch);
             var1.field4965 = var1.rotationYaw;
             var1.field4967 = var1.rotationYaw;
             var1.stepHeight = 1.0F;

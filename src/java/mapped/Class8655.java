@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -18,7 +19,7 @@ public class Class8655 extends Class8654 {
    }
 
    @Override
-   public ITextComponent method31110(Class880 var1) {
+   public ITextComponent method31110(LivingEntity var1) {
       IFormattableTextComponent var4 = TextComponentUtils.wrapWithSquareBrackets(new TranslationTextComponent("death.attack.badRespawnPoint.link"))
          .modifyStyle(
             var0 -> var0.setClickEvent(new ClickEvent(ClickEvent$Action.OPEN_URL, "https://bugs.mojang.com/browse/MCPE-28723"))

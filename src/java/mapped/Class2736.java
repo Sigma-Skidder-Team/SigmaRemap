@@ -45,9 +45,9 @@ public class Class2736 extends Class2595 {
 
          Vector3d var3 = this.method10943();
          if (var3 != null) {
-            this.field17259 = var3.field18048;
-            this.field17260 = var3.field18049;
-            this.field17261 = var3.field18050;
+            this.field17259 = var3.x;
+            this.field17260 = var3.y;
+            this.field17261 = var3.z;
             this.field17264 = false;
             return true;
          } else {

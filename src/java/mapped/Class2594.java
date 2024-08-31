@@ -50,8 +50,8 @@ public class Class2594 extends Class2595 {
          }
 
          if (var4 != null) {
-            int var5 = MathHelper.floor(var4.field18048);
-            int var6 = MathHelper.floor(var4.field18050);
+            int var5 = MathHelper.floor(var4.x);
+            int var6 = MathHelper.floor(var4.z);
             byte var7 = 34;
             if (!this.field16812.world.method7019(var5 - 34, 0, var6 - 34, var5 + 34, 0, var6 + 34)) {
                var4 = null;
@@ -63,7 +63,7 @@ public class Class2594 extends Class2595 {
             return;
          }
 
-         this.field16812.method4230().method21654(var4.field18048, var4.field18049, var4.field18050, this.field16813);
+         this.field16812.method4230().method21654(var4.x, var4.y, var4.z, this.field16813);
       }
    }
 

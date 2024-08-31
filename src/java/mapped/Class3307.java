@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
+
 public class Class3307 extends Item {
    private static String[] field18814;
 
@@ -8,7 +12,7 @@ public class Class3307 extends Item {
    }
 
    @Override
-   public ItemStack method11709(ItemStack var1, World var2, Class880 var3) {
+   public ItemStack method11709(ItemStack var1, World var2, LivingEntity var3) {
       super.method11709(var1, var2, var3);
       if (var3 instanceof ServerPlayerEntity) {
          ServerPlayerEntity var6 = (ServerPlayerEntity)var3;
@@ -46,12 +50,12 @@ public class Class3307 extends Item {
    }
 
    @Override
-   public Class9455 method11746() {
+   public SoundEvent method11746() {
       return Sounds.field26666;
    }
 
    @Override
-   public Class9455 method11747() {
+   public SoundEvent method11747() {
       return Sounds.field26666;
    }
 

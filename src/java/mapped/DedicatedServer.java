@@ -7,6 +7,7 @@ import com.mojang.authlib.GameProfileRepository;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.datafixers.DataFixer;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.filter.ChatFilterClient;

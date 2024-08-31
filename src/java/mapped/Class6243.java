@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 
 public final class Class6243 extends Class6218 {

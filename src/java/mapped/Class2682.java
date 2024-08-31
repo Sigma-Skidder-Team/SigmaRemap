@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+
 public class Class2682 extends Class2680 {
    private static String[] field17093;
    private PlayerEntity field17094;

@@ -1,6 +1,9 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
@@ -281,7 +284,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, Class882 var4) {
+   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, ProjectileEntity var4) {
    }
 
    public abstract Item method11581();

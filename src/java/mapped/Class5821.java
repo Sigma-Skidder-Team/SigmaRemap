@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+
 import javax.annotation.Nullable;
 
 public class Class5821 extends Class5812 {

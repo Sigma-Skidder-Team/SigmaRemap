@@ -106,9 +106,9 @@ public class Class8621 {
       int var12 = 0;
 
       for (ServerPlayerEntity var14 : var1) {
-         double var15 = var4.field18048 - var14.getPosX();
-         double var17 = var4.field18049 - var14.getPosY();
-         double var19 = var4.field18050 - var14.getPosZ();
+         double var15 = var4.x - var14.getPosX();
+         double var17 = var4.y - var14.getPosY();
+         double var19 = var4.z - var14.getPosZ();
          double var21 = var15 * var15 + var17 * var17 + var19 * var19;
          Vector3d var23 = var4;
          float var24 = var5;

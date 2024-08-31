@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -105,7 +106,7 @@ public class PaintingEntity extends Class995 {
    }
 
    @Override
-   public void method3131(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
+   public void setPositionAndRotationDirect(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
       BlockPos var13 = this.field5488.method8335(var1 - this.getPosX(), var3 - this.getPosY(), var5 - this.getPosZ());
       this.setPosition((double)var13.getX(), (double)var13.getY(), (double)var13.getZ());
    }

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 public final class Class117 extends Class116 {
    public Class117(Class8649 var1) {
       super(var1, null);

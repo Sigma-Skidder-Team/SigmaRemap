@@ -1,8 +1,15 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -10,7 +17,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class Class1094 extends Class1018 {
-   private static final DataParameter<Integer> field5986 = EntityDataManager.<Integer>method35441(Class1094.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5986 = EntityDataManager.<Integer>createKey(Class1094.class, DataSerializers.field33391);
    private static final ResourceLocation field5987 = new ResourceLocation("killer_bunny");
    private int field5988;
    private int field5989;
@@ -45,7 +52,7 @@ public class Class1094 extends Class1018 {
          Class8238 var3 = this.field5599.method21657();
          if (var3 != null && !var3.method28693()) {
             Vector3d var4 = var3.method28703(this);
-            if (var4.field18049 > this.getPosY() + 0.5) {
+            if (var4.y > this.getPosY() + 0.5) {
                return 0.5F;
             }
          }
@@ -121,7 +128,7 @@ public class Class1094 extends Class1018 {
          }
 
          if (this.method5114() == 99 && this.field5991 == 0) {
-            Class880 var3 = this.method4232();
+            LivingEntity var3 = this.method4232();
             if (var3 != null && this.getDistanceSq(var3) < 16.0) {
                this.method5106(var3.getPosX(), var3.getPosZ());
                this.field5596.method20813(var3.getPosX(), var3.getPosY(), var3.getPosZ(), this.field5596.method20812());
@@ -142,7 +149,7 @@ public class Class1094 extends Class1018 {
                var5 = var4.method28703(this);
             }
 
-            this.method5106(var5.field18048, var5.field18050);
+            this.method5106(var5.x, var5.z);
             this.method5105();
          }
       }
@@ -212,22 +219,22 @@ public class Class1094 extends Class1018 {
       this.field5992 = var1.method122("MoreCarrotTicks");
    }
 
-   public Class9455 method5112() {
+   public SoundEvent method5112() {
       return Sounds.field26991;
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26987;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26990;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26989;
    }
 

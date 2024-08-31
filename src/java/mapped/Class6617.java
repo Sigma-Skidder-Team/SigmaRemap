@@ -101,7 +101,7 @@ public class Class6617 implements Class6618 {
       RayTraceResult var3 = this.field29119.objectMouseOver;
       if (var3 != null && var3.getType() == RayTraceResult.Type.BLOCK) {
          Vector3d var4 = var3.method31419();
-         return Collections.<Class9203>singleton(new Class9203(method20131(var4.field18048), method20131(var4.field18049), method20131(var4.field18050)));
+         return Collections.<Class9203>singleton(new Class9203(method20131(var4.x), method20131(var4.y), method20131(var4.z)));
       } else {
          return Class6618.super.method20134();
       }

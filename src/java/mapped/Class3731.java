@@ -1,8 +1,9 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 
-public class Class3731<E extends Class1006 & Class1023, T extends Class880> extends Class3676<E> {
+public class Class3731<E extends Class1006 & Class1023, T extends LivingEntity> extends Class3676<E> {
    private static String[] field19839;
    private int field19840;
    private Class2276 field19841 = Class2276.field14826;
@@ -12,7 +13,7 @@ public class Class3731<E extends Class1006 & Class1023, T extends Class880> exte
    }
 
    public boolean method12508(ServerWorld var1, E var2) {
-      Class880 var5 = method12658(var2);
+      LivingEntity var5 = method12658(var2);
       return var2.method3092(Items.field38148) && Class6983.method21583(var2, var5) && Class6983.method21580(var2, var5, 0);
    }
 
@@ -21,7 +22,7 @@ public class Class3731<E extends Class1006 & Class1023, T extends Class880> exte
    }
 
    public void method12504(ServerWorld var1, E var2, long var3) {
-      Class880 var7 = method12658(var2);
+      LivingEntity var7 = method12658(var2);
       this.method12657(var2, var7);
       this.method12656((E)var2, var7);
    }
@@ -37,7 +38,7 @@ public class Class3731<E extends Class1006 & Class1023, T extends Class880> exte
       }
    }
 
-   private void method12656(E var1, Class880 var2) {
+   private void method12656(E var1, LivingEntity var2) {
       if (this.field19841 != Class2276.field14826) {
          if (this.field19841 != Class2276.field14827) {
             if (this.field19841 != Class2276.field14828) {
@@ -74,11 +75,11 @@ public class Class3731<E extends Class1006 & Class1023, T extends Class880> exte
       }
    }
 
-   private void method12657(Class1006 var1, Class880 var2) {
+   private void method12657(Class1006 var1, LivingEntity var2) {
       var1.method2992().method21406(Class8830.field39825, new Class7865(var2, true));
    }
 
-   private static Class880 method12658(Class880 var0) {
-      return var0.method2992().<Class880>method21410(Class8830.field39826).get();
+   private static LivingEntity method12658(LivingEntity var0) {
+      return var0.method2992().<LivingEntity>method21410(Class8830.field39826).get();
    }
 }

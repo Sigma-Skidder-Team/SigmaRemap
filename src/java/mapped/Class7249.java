@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.List;
 import java.util.UUID;

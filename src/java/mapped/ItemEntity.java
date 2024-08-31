@@ -2,6 +2,10 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -11,7 +15,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class ItemEntity extends Entity {
-   private static final DataParameter<ItemStack> field5514 = EntityDataManager.<ItemStack>method35441(ItemEntity.class, Class7784.field33396);
+   private static final DataParameter<ItemStack> field5514 = EntityDataManager.<ItemStack>createKey(ItemEntity.class, DataSerializers.field33396);
    private int field5515;
    private int field5516;
    private int field5517 = 5;
@@ -95,7 +99,7 @@ public class ItemEntity extends Entity {
             this.method3434(this.method3433().method11347((double)var5, 0.98, (double)var5));
             if (this.onGround) {
                Vector3d var6 = this.method3433();
-               if (var6.field18049 < 0.0) {
+               if (var6.y < 0.0) {
                   this.method3434(var6.method11347(1.0, -0.5, 1.0));
                }
             }
@@ -137,12 +141,12 @@ public class ItemEntity extends Entity {
 
    private void method4115() {
       Vector3d var3 = this.method3433();
-      this.method3435(var3.field18048 * 0.99F, var3.field18049 + (double)(!(var3.field18049 < 0.06F) ? 0.0F : 5.0E-4F), var3.field18050 * 0.99F);
+      this.method3435(var3.x * 0.99F, var3.y + (double)(!(var3.y < 0.06F) ? 0.0F : 5.0E-4F), var3.z * 0.99F);
    }
 
    private void method4116() {
       Vector3d var3 = this.method3433();
-      this.method3435(var3.field18048 * 0.95F, var3.field18049 + (double)(!(var3.field18049 < 0.06F) ? 0.0F : 5.0E-4F), var3.field18050 * 0.95F);
+      this.method3435(var3.x * 0.95F, var3.y + (double)(!(var3.y < 0.06F) ? 0.0F : 5.0E-4F), var3.z * 0.95F);
    }
 
    private void method4117() {

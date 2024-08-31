@@ -57,9 +57,9 @@ public class CUseEntityPacket implements Packet<IServerPlayNetHandler> {
       var1.writeVarInt(this.field24439);
       var1.method35713(this.field24440);
       if (this.field24440 == Action.INTERACT_AT) {
-         var1.writeFloat((float)this.field24441.field18048);
-         var1.writeFloat((float)this.field24441.field18049);
-         var1.writeFloat((float)this.field24441.field18050);
+         var1.writeFloat((float)this.field24441.x);
+         var1.writeFloat((float)this.field24441.y);
+         var1.writeFloat((float)this.field24441.z);
       }
 
       if (this.field24440 == Action.INTERACT || this.field24440 == Action.INTERACT_AT) {

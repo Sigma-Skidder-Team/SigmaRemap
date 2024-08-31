@@ -1,6 +1,9 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
@@ -48,7 +51,7 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, Class882 var4) {
+   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, ProjectileEntity var4) {
       Entity var7 = var4.method3460();
       PlayerEntity var8 = !(var7 instanceof PlayerEntity) ? null : (PlayerEntity)var7;
       this.method11960(var1, var2, var3, var8, true);
@@ -62,7 +65,7 @@ public class Class3369 extends Class3241 {
    public boolean method11960(World var1, BlockState var2, BlockRayTraceResult var3, PlayerEntity var4, boolean var5) {
       Direction var8 = var3.getFace();
       BlockPos var9 = var3.getPos();
-      boolean var10 = !var5 || this.method11961(var2, var8, var3.method31419().field18049 - (double)var9.getY());
+      boolean var10 = !var5 || this.method11961(var2, var8, var3.method31419().y - (double)var9.getY());
       if (!var10) {
          return false;
       } else {

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Set;
@@ -28,8 +29,8 @@ public class Class124 implements ILootCondition {
    public boolean test(LootContext var1) {
       Entity var4 = var1.<Entity>method26081(Class9525.field44333);
       int var5 = 0;
-      if (var4 instanceof Class880) {
-         var5 = Class7858.method26330((Class880)var4);
+      if (var4 instanceof LivingEntity) {
+         var5 = Class7858.method26330((LivingEntity)var4);
       }
 
       return var1.method26088().nextFloat() < this.field437 + (float)var5 * this.field438;

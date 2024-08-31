@@ -1,6 +1,8 @@
 package mapped;
 
 import java.io.IOException;
+
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -21,7 +23,7 @@ public class Class5565 implements Packet<Class5116> {
 
    public Class5565(Class8039 var1, Class1900 var2, ITextComponent var3) {
       this.field24693 = var2;
-      Class880 var6 = var1.method27601();
+      LivingEntity var6 = var1.method27601();
       switch (Class6746.field29450[var2.ordinal()]) {
          case 1:
             this.field24696 = var1.method27604();

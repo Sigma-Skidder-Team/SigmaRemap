@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 import java.util.Calendar;
 
 public class Class5953<T extends TileEntity & Class942> extends Class5942<T> {

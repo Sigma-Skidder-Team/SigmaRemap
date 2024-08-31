@@ -1,6 +1,8 @@
 package mapped;
 
-public class Class261<T extends Class880> extends Class219<T, Class2894<T>> {
+import net.minecraft.entity.LivingEntity;
+
+public class Class261<T extends LivingEntity> extends Class219<T, Class2894<T>> {
    public static final ResourceLocation field921 = new ResourceLocation("textures/entity/trident_riptide.png");
    private final Class7219 field922 = new Class7219(64, 64, 0, 0);
 

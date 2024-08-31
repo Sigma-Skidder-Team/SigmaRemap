@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.SoundEvent;
 
 public class Class1053 extends Class1050 {
    private static String[] field5819;
@@ -20,22 +21,22 @@ public class Class1053 extends Class1050 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27016;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27017;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27019;
    }
 
    @Override
-   public Class9455 method4798() {
+   public SoundEvent method4798() {
       return Sounds.field27018;
    }
 }

@@ -1,8 +1,9 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 public class Class1089 extends Class1018 {
@@ -54,7 +55,7 @@ public class Class1089 extends Class1018 {
 
       this.field5969 = (float)((double)this.field5969 * 0.9);
       Vector3d var3 = this.method3433();
-      if (!this.onGround && var3.field18049 < 0.0) {
+      if (!this.onGround && var3.y < 0.0) {
          this.method3434(var3.method11347(1.0, 0.6, 1.0));
       }
 
@@ -72,17 +73,17 @@ public class Class1089 extends Class1018 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26450;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26453;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26451;
    }
 
@@ -134,8 +135,8 @@ public class Class1089 extends Class1018 {
       float var6 = 0.1F;
       float var7 = 0.0F;
       var1.setPosition(this.getPosX() + (double)(0.1F * var4), this.method3440(0.5) + var1.method2894() + 0.0, this.getPosZ() - (double)(0.1F * var5));
-      if (var1 instanceof Class880) {
-         ((Class880)var1).field4965 = this.field4965;
+      if (var1 instanceof LivingEntity) {
+         ((LivingEntity)var1).field4965 = this.field4965;
       }
    }
 

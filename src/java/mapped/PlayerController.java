@@ -2,8 +2,10 @@ package mapped;
 
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
@@ -391,7 +393,7 @@ public class PlayerController {
          var1.method6851(var2, var3);
          ClientPlayerEntity var10 = this.field31358.player;
          if (var8 != null && var1 == var10.world && var10.func_242278_a(var2, var3)) {
-            var10.method3270(var8.field18048, var8.field18049, var8.field18050);
+            var10.method3270(var8.x, var8.y, var8.z);
          }
       }
 

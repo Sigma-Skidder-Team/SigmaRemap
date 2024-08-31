@@ -1,5 +1,10 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntityPickupStatus;
+
 import java.util.function.Predicate;
 
 public class Class3263 extends Class3262 implements Class3260 {
@@ -10,7 +15,7 @@ public class Class3263 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public void method11729(ItemStack var1, World var2, Class880 var3, int var4) {
+   public void method11729(ItemStack var1, World var2, LivingEntity var3, int var4) {
       if (var3 instanceof PlayerEntity) {
          PlayerEntity var7 = (PlayerEntity)var3;
          boolean var8 = var7.abilities.isCreativeMode || Class7858.method26311(Class8122.field34922, var1) > 0;
@@ -48,7 +53,7 @@ public class Class3263 extends Class3262 implements Class3260 {
 
                   var1.method32121(1, var7, var1x -> var1x.method3185(var7.method3149()));
                   if (var12 || var7.abilities.isCreativeMode && (var9.getItem() == Items.field38116 || var9.getItem() == Items.field38117)) {
-                     var14.field5102 = Class2192.field14333;
+                     var14.pickupStatus = AbstractArrowEntityPickupStatus.field14333;
                   }
 
                   var2.method6916(var14);

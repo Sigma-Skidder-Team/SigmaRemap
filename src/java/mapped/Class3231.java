@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 public class Class3231 extends Block {
    private static String[] field18672;
 

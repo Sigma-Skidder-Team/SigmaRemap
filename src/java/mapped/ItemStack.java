@@ -17,9 +17,13 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -155,7 +159,7 @@ public final class ItemStack {
       return this.getItem().method11700(var1, var2, var3);
    }
 
-   public ItemStack method32111(World var1, Class880 var2) {
+   public ItemStack method32111(World var1, LivingEntity var2) {
       return this.getItem().method11709(this, var1, var2);
    }
 
@@ -233,7 +237,7 @@ public final class ItemStack {
       }
    }
 
-   public <T extends Class880> void method32121(int var1, T var2, Consumer<T> var3) {
+   public <T extends LivingEntity> void method32121(int var1, T var2, Consumer<T> var3) {
       if (!var2.world.isRemote
          && (!(var2 instanceof PlayerEntity) || !((PlayerEntity)var2).abilities.isCreativeMode)
          && this.method32115()
@@ -249,7 +253,7 @@ public final class ItemStack {
       }
    }
 
-   public void method32122(Class880 var1, PlayerEntity var2) {
+   public void method32122(LivingEntity var1, PlayerEntity var2) {
       Item var5 = this.getItem();
       if (var5.method11713(this, var1, var2)) {
          var2.method2913(Class8876.field40098.method172(var5));
@@ -267,7 +271,7 @@ public final class ItemStack {
       return this.getItem().method11715(var1);
    }
 
-   public ActionResultType method32125(PlayerEntity var1, Class880 var2, Hand var3) {
+   public ActionResultType method32125(PlayerEntity var1, LivingEntity var2, Hand var3) {
       return this.getItem().method11716(this, var1, var2, var3);
    }
 
@@ -369,7 +373,7 @@ public final class ItemStack {
       return this.getItem().method11727(this);
    }
 
-   public void method32139(World var1, Class880 var2, int var3) {
+   public void method32139(World var1, LivingEntity var2, int var3) {
       this.getItem().method11729(this, var1, var2, var3);
    }
 
@@ -895,7 +899,7 @@ public final class ItemStack {
       this.method32181(-var1);
    }
 
-   public void method32183(World var1, Class880 var2, int var3) {
+   public void method32183(World var1, LivingEntity var2, int var3) {
       this.getItem().method11704(var1, var2, this, var3);
    }
 
@@ -903,11 +907,11 @@ public final class ItemStack {
       return this.getItem().method11744();
    }
 
-   public Class9455 method32185() {
+   public SoundEvent method32185() {
       return this.getItem().method11746();
    }
 
-   public Class9455 method32186() {
+   public SoundEvent method32186() {
       return this.getItem().method11747();
    }
 }

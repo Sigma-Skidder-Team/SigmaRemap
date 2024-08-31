@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
 
@@ -134,7 +135,7 @@ public class Class4829 {
                float var98;
                float var101;
                float var104;
-               if (var86.field18048 == 0.0 && var86.field18050 == 0.0) {
+               if (var86.x == 0.0 && var86.z == 0.0) {
                   TextureAtlasSprite var107 = var9[0];
                   var3.method17043(var107);
                   var101 = var107.method7461(0.0);
@@ -148,7 +149,7 @@ public class Class4829 {
                } else {
                   TextureAtlasSprite var46 = var9[1];
                   var3.method17043(var46);
-                  float var50 = (float) MathHelper.method37814(var86.field18050, var86.field18048) - (float) (Math.PI / 2);
+                  float var50 = (float) MathHelper.method37814(var86.z, var86.x) - (float) (Math.PI / 2);
                   float var51 = MathHelper.sin(var50) * 0.25F;
                   float var52 = MathHelper.cos(var50) * 0.25F;
                   float var53 = 8.0F;

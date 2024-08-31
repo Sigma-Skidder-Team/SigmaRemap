@@ -28,8 +28,11 @@ import javax.annotation.Nullable;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -204,7 +207,7 @@ public class ClientPlayNetHandler implements Class5116 {
                                                                                              }
                                                                                           } else {
                                                                                              var11 = new Class1004(
-                                                                                                this.field23273, var4, var6, var8, (Class880)null
+                                                                                                this.field23273, var4, var6, var8, (LivingEntity)null
                                                                                              );
                                                                                           }
                                                                                        } else {
@@ -218,7 +221,7 @@ public class ClientPlayNetHandler implements Class5116 {
                                                                                  }
                                                                               } else {
                                                                                  var11 = new Class915(
-                                                                                    this.field23273, var4, var6, var8, 0.0F, 0, (Class880)null
+                                                                                    this.field23273, var4, var6, var8, 0.0F, 0, (LivingEntity)null
                                                                                  );
                                                                               }
                                                                            } else {
@@ -298,21 +301,21 @@ public class ClientPlayNetHandler implements Class5116 {
                                        var11 = new Class886(this.field23273, var4, var6, var8);
                                        Entity var12 = this.field23273.method6774(var1.method17267());
                                        if (var12 != null) {
-                                          ((AbstractArrowEntity)var11).method3459(var12);
+                                          ((AbstractArrowEntity)var11).setShooter(var12);
                                        }
                                     }
                                  } else {
                                     var11 = new Class885(this.field23273, var4, var6, var8);
                                     Entity var13 = this.field23273.method6774(var1.method17267());
                                     if (var13 != null) {
-                                       ((AbstractArrowEntity)var11).method3459(var13);
+                                       ((AbstractArrowEntity)var11).setShooter(var13);
                                     }
                                  }
                               } else {
                                  var11 = new Class887(this.field23273, var4, var6, var8);
                                  Entity var14 = this.field23273.method6774(var1.method17267());
                                  if (var14 != null) {
-                                    ((AbstractArrowEntity)var11).method3459(var14);
+                                    ((AbstractArrowEntity)var11).setShooter(var14);
                                  }
                               }
                            } else {
@@ -432,7 +435,7 @@ public class ClientPlayNetHandler implements Class5116 {
          if (!var4.method3418()) {
             float var11 = (float)(var1.method17589() * 360) / 256.0F;
             float var12 = (float)(var1.method17590() * 360) / 256.0F;
-            var4.method3131(var5, var7, var9, var11, var12, 3, true);
+            var4.setPositionAndRotationDirect(var5, var7, var9, var11, var12, 3, true);
             var4.method3061(var1.method17591());
          }
       }
@@ -455,14 +458,14 @@ public class ClientPlayNetHandler implements Class5116 {
             if (var1.method17236()) {
                float var5 = (float)(var1.method17234() * 360) / 256.0F;
                float var6 = (float)(var1.method17235() * 360) / 256.0F;
-               var4.method3131(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var5, var6, 3, false);
+               var4.setPositionAndRotationDirect(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var5, var6, 3, false);
             }
          } else {
             Vector3d var8 = var1.method17231(var4.func_242274_V());
             var4.func_242277_a(var8);
             float var9 = !var1.method17236() ? var4.rotationYaw : (float)(var1.method17234() * 360) / 256.0F;
             float var7 = !var1.method17236() ? var4.rotationPitch : (float)(var1.method17235() * 360) / 256.0F;
-            var4.method3131(var8.method11320(), var8.method11321(), var8.method11322(), var9, var7, 3, false);
+            var4.setPositionAndRotationDirect(var8.method11320(), var8.method11321(), var8.method11322(), var9, var7, 3, false);
          }
 
          var4.method3061(var1.method17238());
@@ -642,7 +645,7 @@ public class ClientPlayNetHandler implements Class5116 {
    public void method15750(Class5467 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17186());
-      Object var5 = (Class880)this.field23273.method6774(var1.method17187());
+      Object var5 = (LivingEntity)this.field23273.method6774(var1.method17187());
       if (var5 == null) {
          var5 = this.field23272.player;
       }
@@ -718,11 +721,11 @@ public class ClientPlayNetHandler implements Class5116 {
                   var4.method3069();
                }
             } else {
-               Class880 var6 = (Class880)var4;
+               LivingEntity var6 = (LivingEntity)var4;
                var6.swingArm(Hand.field183);
             }
          } else {
-            Class880 var7 = (Class880)var4;
+            LivingEntity var7 = (LivingEntity)var4;
             var7.swingArm(Hand.MAIN_HAND);
          }
       }
@@ -736,7 +739,7 @@ public class ClientPlayNetHandler implements Class5116 {
       double var8 = var1.method17540();
       float var10 = (float)(var1.method17544() * 360) / 256.0F;
       float var11 = (float)(var1.method17545() * 360) / 256.0F;
-      Class880 var12 = (Class880) EntityType.method33216(var1.method17537(), this.field23272.world);
+      LivingEntity var12 = (LivingEntity) EntityType.method33216(var1.method17537(), this.field23272.world);
       if (var12 == null) {
          field23267.warn("Skipping Entity with id {}", var1.method17537());
       } else {
@@ -1366,12 +1369,12 @@ public class ClientPlayNetHandler implements Class5116 {
    public void method15753(Class5537 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17407());
-      if (var4 instanceof Class880) {
+      if (var4 instanceof LivingEntity) {
          Effect var5 = Effect.method22287(var1.method17408());
          if (var5 != null) {
             Class2023 var6 = new Class2023(var5, var1.method17410(), var1.method17409(), var1.method17412(), var1.method17411(), var1.method17413());
             var6.method8641(var1.method17406());
-            ((Class880)var4).method3037(var6);
+            ((LivingEntity)var4).method3037(var6);
          }
       }
    }
@@ -1467,8 +1470,8 @@ public class ClientPlayNetHandler implements Class5116 {
    public void method15733(Class5518 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = var1.method17349(this.field23273);
-      if (var4 instanceof Class880) {
-         ((Class880)var4).method3039(var1.method17350());
+      if (var4 instanceof LivingEntity) {
+         ((LivingEntity)var4).method3039(var1.method17350());
       }
    }
 
@@ -2061,11 +2064,11 @@ public class ClientPlayNetHandler implements Class5116 {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17463());
       if (var4 != null) {
-         if (!(var4 instanceof Class880)) {
+         if (!(var4 instanceof LivingEntity)) {
             throw new IllegalStateException("Server tried to update attributes of a non-living entity (actually: " + var4 + ")");
          }
 
-         Class9020 var5 = ((Class880)var4).method3088();
+         Class9020 var5 = ((LivingEntity)var4).method3088();
 
          for (Class7919 var7 : var1.method17464()) {
             Class9805 var8 = var5.method33380(var7.method26560());

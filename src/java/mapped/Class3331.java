@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 
 public class Class3331 extends Item {
@@ -10,7 +12,7 @@ public class Class3331 extends Item {
    }
 
    @Override
-   public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, Class880 var5) {
+   public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, LivingEntity var5) {
       if (!var2.isRemote && !var3.getBlock().method11540(BlockTags.field32798)) {
          var1.method32121(1, var5, var0 -> var0.method3184(Class2106.field13731));
       }

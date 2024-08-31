@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.block.BlockState;
 
 import java.util.Map;
 import java.util.Map.Entry;

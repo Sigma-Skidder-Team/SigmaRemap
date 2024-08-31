@@ -1,8 +1,14 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -10,12 +16,12 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public class Class1097 extends Class1018 {
-   private static final DataParameter<Integer> field6017 = EntityDataManager.<Integer>method35441(Class1097.class, Class7784.field33391);
-   private static final DataParameter<Integer> field6018 = EntityDataManager.<Integer>method35441(Class1097.class, Class7784.field33391);
-   private static final DataParameter<Integer> field6019 = EntityDataManager.<Integer>method35441(Class1097.class, Class7784.field33391);
-   private static final DataParameter<Byte> field6020 = EntityDataManager.<Byte>method35441(Class1097.class, Class7784.field33390);
-   private static final DataParameter<Byte> field6021 = EntityDataManager.<Byte>method35441(Class1097.class, Class7784.field33390);
-   private static final DataParameter<Byte> field6022 = EntityDataManager.<Byte>method35441(Class1097.class, Class7784.field33390);
+   private static final DataParameter<Integer> field6017 = EntityDataManager.<Integer>createKey(Class1097.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field6018 = EntityDataManager.<Integer>createKey(Class1097.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field6019 = EntityDataManager.<Integer>createKey(Class1097.class, DataSerializers.field33391);
+   private static final DataParameter<Byte> field6020 = EntityDataManager.<Byte>createKey(Class1097.class, DataSerializers.field33390);
+   private static final DataParameter<Byte> field6021 = EntityDataManager.<Byte>createKey(Class1097.class, DataSerializers.field33390);
+   private static final DataParameter<Byte> field6022 = EntityDataManager.<Byte>createKey(Class1097.class, DataSerializers.field33390);
    private static final Class8522 field6023 = new Class8522().method30203(8.0).method30205().method30204();
    private boolean field6024;
    private boolean field6025;
@@ -363,12 +369,12 @@ public class Class1097 extends Class1018 {
             this.world
                .method6746(
                   new Class7438(Class7940.field34082, this.method2943(Class2106.field13731)),
-                  var7.field18048,
-                  var7.field18049,
-                  var7.field18050,
-                  var4.field18048,
-                  var4.field18049 + 0.05,
-                  var4.field18050
+                  var7.x,
+                  var7.y,
+                  var7.z,
+                  var4.x,
+                  var4.y + 0.05,
+                  var4.z
                );
          }
       }
@@ -420,15 +426,15 @@ public class Class1097 extends Class1018 {
             Vector3d var3 = this.method3433();
             if (this.field6026 != 1) {
                if ((float)this.field6026 != 7.0F && (float)this.field6026 != 15.0F && (float)this.field6026 != 23.0F) {
-                  this.method3435(this.field6027.field18048, var3.field18049, this.field6027.field18050);
+                  this.method3435(this.field6027.x, var3.y, this.field6027.z);
                } else {
-                  this.method3435(0.0, !this.onGround ? var3.field18049 : 0.27, 0.0);
+                  this.method3435(0.0, !this.onGround ? var3.y : 0.27, 0.0);
                }
             } else {
                float var4 = this.rotationYaw * (float) (Math.PI / 180.0);
                float var5 = !this.method3005() ? 0.2F : 0.1F;
                this.field6027 = new Vector3d(
-                  var3.field18048 + (double)(-MathHelper.sin(var4) * var5), 0.0, var3.field18050 + (double)(MathHelper.cos(var4) * var5)
+                  var3.x + (double)(-MathHelper.sin(var4) * var5), 0.0, var3.z + (double)(MathHelper.cos(var4) * var5)
                );
                this.method3434(this.field6027.method11339(0.0, 0.27, 0.0));
             }
@@ -446,9 +452,9 @@ public class Class1097 extends Class1018 {
             this.getPosX() - (double)(this.method3429() + 1.0F) * 0.5 * (double) MathHelper.sin(this.field4965 * (float) (Math.PI / 180.0)),
             this.method3442() - 0.1F,
             this.getPosZ() + (double)(this.method3429() + 1.0F) * 0.5 * (double) MathHelper.cos(this.field4965 * (float) (Math.PI / 180.0)),
-            var3.field18048,
+            var3.x,
             0.0,
-            var3.field18050
+            var3.z
          );
       this.method2863(Sounds.field26870, 1.0F, 1.0F);
 
@@ -589,7 +595,7 @@ public class Class1097 extends Class1018 {
 
    @Nullable
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       if (!this.method4307()) {
          return !this.method5211() ? Sounds.field26871 : Sounds.field26877;
       } else {
@@ -613,13 +619,13 @@ public class Class1097 extends Class1018 {
 
    @Nullable
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26872;
    }
 
    @Nullable
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26878;
    }
 

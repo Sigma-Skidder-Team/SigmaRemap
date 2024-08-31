@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.function.Predicate;
 
 public abstract class Class3262 extends Item {
@@ -16,7 +18,7 @@ public abstract class Class3262 extends Item {
 
    public abstract Predicate<ItemStack> method11752();
 
-   public static ItemStack method11774(Class880 var0, Predicate<ItemStack> var1) {
+   public static ItemStack method11774(LivingEntity var0, Predicate<ItemStack> var1) {
       if (!var1.test(var0.getHeldItem(Hand.field183))) {
          return !var1.test(var0.getHeldItem(Hand.MAIN_HAND)) ? ItemStack.EMPTY : var0.getHeldItem(Hand.MAIN_HAND);
       } else {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

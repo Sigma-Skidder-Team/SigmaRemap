@@ -1,7 +1,12 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -10,7 +15,7 @@ import java.util.Random;
 import java.util.UUID;
 
 public class Class1086 extends Class1087 implements Class1020 {
-   private static final DataParameter<String> field5951 = EntityDataManager.<String>method35441(Class1086.class, Class7784.field33393);
+   private static final DataParameter<String> field5951 = EntityDataManager.<String>createKey(Class1086.class, DataSerializers.field33393);
    private Effect field5952;
    private int field5953;
    private UUID field5954;
@@ -62,7 +67,7 @@ public class Class1086 extends Class1087 implements Class1020 {
 
          ItemStack var13 = Class8482.method29978(var5, var1, var12, false);
          var1.method3095(var2, var13);
-         Class9455 var9;
+         SoundEvent var9;
          if (!var11) {
             var9 = Sounds.field26767;
          } else {

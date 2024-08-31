@@ -19,11 +19,13 @@ import java.util.Set;
 import java.util.Map.Entry;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
+
+import net.minecraft.entity.LivingEntity;
 import org.apache.commons.lang3.mutable.MutableObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class6947<E extends Class880> {
+public class Class6947<E extends LivingEntity> {
    private static final Logger field30098 = LogManager.getLogger();
    private final Supplier<Codec<Class6947<E>>> field30099;
    private final Map<Class8830<?>, Optional<? extends Class8222<?>>> field30100 = Maps.newHashMap();
@@ -37,13 +39,13 @@ public class Class6947<E extends Class880> {
    private Class8890 field30108 = Class8890.field40220;
    private long field30109 = -9999L;
 
-   public static <E extends Class880> Class6971<E> method21400(
+   public static <E extends LivingEntity> Class6971<E> method21400(
       Collection<? extends Class8830<?>> var0, Collection<? extends Class7963<? extends Class7882<? super E>>> var1
    ) {
       return new Class6971<E>(var0, var1, null);
    }
 
-   public static <E extends Class880> Codec<Class6947<E>> method21401(
+   public static <E extends LivingEntity> Codec<Class6947<E>> method21401(
       Collection<? extends Class8830<?>> var0, Collection<? extends Class7963<? extends Class7882<? super E>>> var1
    ) {
       MutableObject var4 = new MutableObject();

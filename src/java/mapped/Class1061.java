@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
+
 import javax.annotation.Nullable;
 
 public class Class1061 implements Class1060 {
@@ -64,7 +67,7 @@ public class Class1061 implements Class1060 {
    }
 
    @Override
-   public Class9455 method4748() {
+   public SoundEvent method4748() {
       return Sounds.field27195;
    }
 }

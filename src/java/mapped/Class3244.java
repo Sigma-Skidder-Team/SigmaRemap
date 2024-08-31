@@ -1,6 +1,10 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
@@ -55,7 +59,7 @@ public class Class3244 extends Class3241 implements Class3207 {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (!var4.method3249() && var1.<Boolean>method23463(field18698) && var4 instanceof Class880 && !Class7858.method26332((Class880)var4)) {
+      if (!var4.method3249() && var1.<Boolean>method23463(field18698) && var4 instanceof LivingEntity && !Class7858.method26332((LivingEntity)var4)) {
          var4.method2741(Class8654.field38992, (float)this.field18704);
       }
 
@@ -178,7 +182,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, Class882 var4) {
+   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, ProjectileEntity var4) {
       if (!var1.isRemote && var4.method3327()) {
          Entity var7 = var4.method3460();
          boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.method6789().method17135(Class5462.field24224);

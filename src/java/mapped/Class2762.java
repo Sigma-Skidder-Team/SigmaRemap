@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.EnumSet;
 
@@ -23,9 +24,9 @@ public class Class2762 extends Class2595 {
       if (!this.field17325.method4932() && this.field17325.isBeingRidden()) {
          Vector3d var3 = Class8037.method27581(this.field17325, 5, 4);
          if (var3 != null) {
-            this.field17327 = var3.field18048;
-            this.field17328 = var3.field18049;
-            this.field17329 = var3.field18050;
+            this.field17327 = var3.x;
+            this.field17328 = var3.y;
+            this.field17329 = var3.z;
             return true;
          } else {
             return false;

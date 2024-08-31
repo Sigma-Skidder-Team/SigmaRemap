@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -65,7 +67,7 @@ public class LeashKnotEntity extends Class995 {
    }
 
    @Override
-   public boolean method3291(double var1) {
+   public boolean isInRangeToRenderDist(double var1) {
       return var1 < 1024.0;
    }
 

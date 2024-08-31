@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.network.datasync;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -13,6 +13,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import javax.annotation.Nullable;
 
+import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.ObjectUtils;
@@ -34,7 +35,7 @@ public class EntityDataManager {
       this.field43432 = var1;
    }
 
-   public static <T> DataParameter<T> method35441(Class<? extends Entity> var0, Class6466<T> var1) {
+   public static <T> DataParameter<T> createKey(Class<? extends Entity> var0, Class6466<T> var1) {
       if (field43430.isDebugEnabled()) {
          try {
             Class var4 = Class.forName(Thread.currentThread().getStackTrace()[2].getClassName());
@@ -75,7 +76,7 @@ public class EntityDataManager {
       int var5 = var1.method35015();
       if (var5 <= 254) {
          if (!this.field43433.containsKey(var5)) {
-            if (Class7784.method25806(var1.method35016()) >= 0) {
+            if (DataSerializers.method25806(var1.method35016()) >= 0) {
                this.method35443(var1, var2);
             } else {
                throw new IllegalArgumentException("Unregistered serializer " + var1.method35016() + " for " + var5 + "!");
@@ -187,7 +188,7 @@ public class EntityDataManager {
 
    private static <T> void method35451(PacketBuffer var0, Class9773<T> var1) throws IOException {
       DataParameter var4 = var1.method38447();
-      int var5 = Class7784.method25806(var4.method35016());
+      int var5 = DataSerializers.method25806(var4.method35016());
       if (var5 >= 0) {
          var0.writeByte(var4.method35015());
          var0.writeVarInt(var5);
@@ -208,7 +209,7 @@ public class EntityDataManager {
          }
 
          int var5 = var0.method35714();
-         Class6466 var6 = Class7784.method25805(var5);
+         Class6466 var6 = DataSerializers.method25805(var5);
          if (var6 == null) {
             throw new DecoderException("Unknown serializer type " + var5);
          }

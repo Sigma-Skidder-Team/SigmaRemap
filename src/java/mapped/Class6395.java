@@ -17,9 +17,11 @@ import java.util.Optional;
 import java.util.UUID;
 import javax.annotation.Nullable;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
@@ -390,10 +392,10 @@ public abstract class Class6395 {
             var18 = var6;
          } else {
             Vector3d var17 = Vector3d.method11330(var5).method11336(var16).method11333();
-            var18 = (float) MathHelper.method37793(MathHelper.method37814(var17.field18050, var17.field18048) * 180.0F / (float)Math.PI - 90.0);
+            var18 = (float) MathHelper.method37793(MathHelper.method37814(var17.z, var17.x) * 180.0F / (float)Math.PI - 90.0);
          }
 
-         var12.method3273(var16.field18048, var16.field18049, var16.field18050, var18, 0.0F);
+         var12.method3273(var16.x, var16.y, var16.z, var18, 0.0F);
          var12.method2829(var10.getDimensionKey(), var5, var6, var7, false);
          var19 = !var2 && var15;
       }

@@ -1,10 +1,12 @@
 package mapped;
 
-public class Class2713 extends Class2709<Class880> {
+import net.minecraft.entity.LivingEntity;
+
+public class Class2713 extends Class2709<LivingEntity> {
    private static String[] field17187;
 
    public Class2713(Class1030 var1) {
-      super(var1, Class880.class, 0, true, true, Class880::method3170);
+      super(var1, LivingEntity.class, 0, true, true, LivingEntity::method3170);
    }
 
    @Override

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
@@ -11,7 +12,7 @@ public class Class900 extends Class898 {
       super(var1, var2);
    }
 
-   public Class900(World var1, Class880 var2, double var3, double var5, double var7) {
+   public Class900(World var1, LivingEntity var2, double var3, double var5, double var7) {
       super(EntityType.field41081, var2, var3, var5, var7, var1);
    }
 
@@ -30,8 +31,8 @@ public class Class900 extends Class898 {
             var4.method3221(5);
             boolean var7 = var4.method2741(Class8654.method31121(this, var5), 5.0F);
             if (var7) {
-               if (var5 instanceof Class880) {
-                  this.method3399((Class880)var5, var4);
+               if (var5 instanceof LivingEntity) {
+                  this.method3399((LivingEntity)var5, var4);
                }
             } else {
                var4.method2966(var6);

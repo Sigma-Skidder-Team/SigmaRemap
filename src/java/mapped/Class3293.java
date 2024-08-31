@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
+
 import javax.annotation.Nullable;
 
 public class Class3293 extends Class3292 {

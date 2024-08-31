@@ -1,6 +1,9 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -15,7 +18,7 @@ public class Class3395 extends Block {
    }
 
    @Override
-   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, Class882 var4) {
+   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, ProjectileEntity var4) {
       int var7 = method12006(var1, var2, var3, var4);
       Entity var8 = var4.method3460();
       if (var8 instanceof ServerPlayerEntity) {
@@ -37,9 +40,9 @@ public class Class3395 extends Block {
 
    private static int method12007(BlockRayTraceResult var0, Vector3d var1) {
       Direction var4 = var0.getFace();
-      double var5 = Math.abs(MathHelper.frac(var1.field18048) - 0.5);
-      double var7 = Math.abs(MathHelper.frac(var1.field18049) - 0.5);
-      double var9 = Math.abs(MathHelper.frac(var1.field18050) - 0.5);
+      double var5 = Math.abs(MathHelper.frac(var1.x) - 0.5);
+      double var7 = Math.abs(MathHelper.frac(var1.y) - 0.5);
+      double var9 = Math.abs(MathHelper.frac(var1.z) - 0.5);
       Class113 var11 = var4.method544();
       double var12;
       if (var11 != Class113.field414) {

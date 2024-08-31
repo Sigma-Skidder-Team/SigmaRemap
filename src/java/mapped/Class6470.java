@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 import java.util.Optional;
 
 public final class Class6470 implements Class6466<Optional<BlockState>> {

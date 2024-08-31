@@ -1,11 +1,12 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Set;
 
-public class Class7894 extends Class7882<Class880> {
+public class Class7894 extends Class7882<LivingEntity> {
    private static String[] field33845;
 
    @Override
@@ -14,7 +15,7 @@ public class Class7894 extends Class7882<Class880> {
    }
 
    @Override
-   public void method26425(ServerWorld var1, Class880 var2) {
+   public void method26425(ServerWorld var1, LivingEntity var2) {
       Class6947<?> var5 = var2.method2992();
       Class8654 var6 = var2.method3047();
       if (var6 == null) {
@@ -22,8 +23,8 @@ public class Class7894 extends Class7882<Class880> {
       } else {
          var5.method21406(Class8830.field39835, var2.method3047());
          Entity var7 = var6.method31109();
-         if (var7 instanceof Class880) {
-            var5.method21406(Class8830.field39836, (Class880)var7);
+         if (var7 instanceof LivingEntity) {
+            var5.method21406(Class8830.field39836, (LivingEntity)var7);
          }
       }
 

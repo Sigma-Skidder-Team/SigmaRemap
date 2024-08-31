@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -12,7 +14,7 @@ public class Class3379 extends Class3231 {
    }
 
    private static boolean method11971(Entity var0) {
-      return var0 instanceof Class880 || var0 instanceof AbstractMinecartEntity || var0 instanceof Class1004 || var0 instanceof BoatEntity;
+      return var0 instanceof LivingEntity || var0 instanceof AbstractMinecartEntity || var0 instanceof Class1004 || var0 instanceof BoatEntity;
    }
 
    @Override
@@ -47,7 +49,7 @@ public class Class3379 extends Class3231 {
       if (var2.method3226()) {
          return false;
       } else if (!(var2.getPosY() > (double)var1.getY() + 0.9375 - 1.0E-7)) {
-         if (var2.method3433().field18049 >= -0.08) {
+         if (var2.method3433().y >= -0.08) {
             return false;
          } else {
             double var5 = Math.abs((double)var1.getX() + 0.5 - var2.getPosX());
@@ -68,11 +70,11 @@ public class Class3379 extends Class3231 {
 
    private void method11974(Entity var1) {
       Vector3d var4 = var1.method3433();
-      if (!(var4.field18049 < -0.13)) {
-         var1.method3434(new Vector3d(var4.field18048, -0.05, var4.field18050));
+      if (!(var4.y < -0.13)) {
+         var1.method3434(new Vector3d(var4.x, -0.05, var4.z));
       } else {
-         double var5 = -0.05 / var4.field18049;
-         var1.method3434(new Vector3d(var4.field18048 * var5, -0.05, var4.field18050 * var5));
+         double var5 = -0.05 / var4.y;
+         var1.method3434(new Vector3d(var4.x * var5, -0.05, var4.z * var5));
       }
 
       var1.fallDistance = 0.0F;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
 
@@ -12,31 +13,31 @@ public class Class1067 extends Class1066 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       super.method4241();
       return Sounds.field26508;
    }
 
    @Override
-   public Class9455 method4893() {
+   public SoundEvent method4893() {
       super.method4893();
       return Sounds.field26509;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       super.method2880();
       return Sounds.field26511;
    }
 
    @Nullable
    @Override
-   public Class9455 method4894() {
+   public SoundEvent method4894() {
       return Sounds.field26512;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       super.method2879(var1);
       return Sounds.field26513;
    }

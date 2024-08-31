@@ -1,9 +1,11 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.Random;
 import java.util.Set;
 
-public abstract class Class7882<E extends Class880> {
+public abstract class Class7882<E extends LivingEntity> {
    private static final Random field33825 = new Random();
    private static final Class8522 field33826 = new Class8522().method30203(16.0).method30205().method30207();
    private static final Class8522 field33827 = new Class8522().method30203(16.0).method30205().method30207().method30208();
@@ -30,7 +32,7 @@ public abstract class Class7882<E extends Class880> {
 
    public abstract Set<Class8830<?>> method26424();
 
-   public static boolean method26430(Class880 var0, Class880 var1) {
+   public static boolean method26430(LivingEntity var0, LivingEntity var1) {
       return !var0.method2992().method21411(Class8830.field39826, var1) ? field33826.method30210(var0, var1) : field33827.method30210(var0, var1);
    }
 }

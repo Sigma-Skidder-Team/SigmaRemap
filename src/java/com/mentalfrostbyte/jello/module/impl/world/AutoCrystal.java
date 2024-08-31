@@ -11,7 +11,9 @@ import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
@@ -55,9 +57,9 @@ public class AutoCrystal extends PremiumModule {
         double var15 = (1.0 - var10) * var13;
         float var17 = (float) ((int) ((var15 * var15 + var15) / 2.0 * 7.0 * (double) var9 + 1.0));
         double var18 = 1.0;
-        if (var6 instanceof Class880) {
+        if (var6 instanceof LivingEntity) {
             var18 = method16382(
-                    (Class880) var6, method16381(var17), new Class7782(mc.world, null, null, null, var0, var2, var4, 6.0F, false, Class2141.field14015)
+                    (LivingEntity) var6, method16381(var17), new Class7782(mc.world, null, null, null, var0, var2, var4, 6.0F, false, Class2141.field14015)
             );
         }
 
@@ -69,7 +71,7 @@ public class AutoCrystal extends PremiumModule {
         return var0 * (var3 != 0 ? (var3 != 2 ? (var3 != 1 ? 1.5F : 0.5F) : 1.0F) : 0.0F);
     }
 
-    public static float method16382(Class880 var0, float var1, Class7782 var2) {
+    public static float method16382(LivingEntity var0, float var1, Class7782 var2) {
         if (!(var0 instanceof PlayerEntity)) {
             return Class8913.method32581(var1, (float) var0.method3070(), (float) var0.method3086(Attributes.field42114));
         } else {
@@ -305,10 +307,10 @@ public class AutoCrystal extends PremiumModule {
             Entity var6 = (Entity) var5.next();
             if (var6 != mc.player) {
                 if (!Client.getInstance().getFriendManager().method26997(var6)) {
-                    if (var6 instanceof Class880) {
-                        if (((Class880) var6).getHealth() != 0.0F) {
+                    if (var6 instanceof LivingEntity) {
+                        if (((LivingEntity) var6).getHealth() != 0.0F) {
                             if (!(mc.player.method3275(var6) > var1)) {
-                                if (mc.player.method3026((Class880) var6)) {
+                                if (mc.player.method3026((LivingEntity) var6)) {
                                     if (!(var6 instanceof ArmorStandEntity)) {
                                         if (!this.getBooleanValueFromSetttingName("Players") && var6 instanceof PlayerEntity) {
                                             var5.remove();

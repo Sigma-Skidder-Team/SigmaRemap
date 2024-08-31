@@ -18,9 +18,9 @@ public class Class5475 implements Packet<Class5116> {
    public Class5475(ResourceLocation var1, Class2266 var2, Vector3d var3, float var4, float var5) {
       this.field24315 = var1;
       this.field24316 = var2;
-      this.field24317 = (int)(var3.field18048 * 8.0);
-      this.field24318 = (int)(var3.field18049 * 8.0);
-      this.field24319 = (int)(var3.field18050 * 8.0);
+      this.field24317 = (int)(var3.x * 8.0);
+      this.field24318 = (int)(var3.y * 8.0);
+      this.field24319 = (int)(var3.z * 8.0);
       this.field24320 = var4;
       this.field24321 = var5;
    }

@@ -45,7 +45,7 @@ public class AxisAlignedBB {
    }
 
    public AxisAlignedBB(Vector3d var1, Vector3d var2) {
-      this(var1.field18048, var1.field18049, var1.field18050, var2.field18048, var2.field18049, var2.field18050);
+      this(var1.x, var1.y, var1.z, var2.x, var2.y, var2.z);
    }
 
    public static AxisAlignedBB method19656(Class9764 var0) {
@@ -60,7 +60,7 @@ public class AxisAlignedBB {
    }
 
    public static AxisAlignedBB method19657(Vector3d var0) {
-      return new AxisAlignedBB(var0.field18048, var0.field18049, var0.field18050, var0.field18048 + 1.0, var0.field18049 + 1.0, var0.field18050 + 1.0);
+      return new AxisAlignedBB(var0.x, var0.y, var0.z, var0.x + 1.0, var0.y + 1.0, var0.z + 1.0);
    }
 
    public double method19658(Class113 var1) {
@@ -152,7 +152,7 @@ public class AxisAlignedBB {
    }
 
    public AxisAlignedBB method19661(Vector3d var1) {
-      return this.method19662(var1.field18048, var1.field18049, var1.field18050);
+      return this.method19662(var1.x, var1.y, var1.z);
    }
 
    public AxisAlignedBB method19662(double var1, double var3, double var5) {
@@ -241,7 +241,7 @@ public class AxisAlignedBB {
    }
 
    public AxisAlignedBB method19669(Vector3d var1) {
-      return this.method19667(var1.field18048, var1.field18049, var1.field18050);
+      return this.method19667(var1.x, var1.y, var1.z);
    }
 
    public boolean method19670(AxisAlignedBB var1) {
@@ -259,17 +259,17 @@ public class AxisAlignedBB {
 
    public boolean method19672(Vector3d var1, Vector3d var2) {
       return this.method19671(
-         Math.min(var1.field18048, var2.field18048),
-         Math.min(var1.field18049, var2.field18049),
-         Math.min(var1.field18050, var2.field18050),
-         Math.max(var1.field18048, var2.field18048),
-         Math.max(var1.field18049, var2.field18049),
-         Math.max(var1.field18050, var2.field18050)
+         Math.min(var1.x, var2.x),
+         Math.min(var1.y, var2.y),
+         Math.min(var1.z, var2.z),
+         Math.max(var1.x, var2.x),
+         Math.max(var1.y, var2.y),
+         Math.max(var1.z, var2.z)
       );
    }
 
    public boolean method19673(Vector3d var1) {
-      return this.method19674(var1.field18048, var1.field18049, var1.field18050);
+      return this.method19674(var1.x, var1.y, var1.z);
    }
 
    public boolean method19674(double var1, double var3, double var5) {
@@ -281,7 +281,7 @@ public class AxisAlignedBB {
          && var5 < this.field28454;
    }
 
-   public double method19675() {
+   public double getAverageEdgeLength() {
       double var3 = this.method19676();
       double var5 = this.method19677();
       double var7 = this.method19678();
@@ -306,9 +306,9 @@ public class AxisAlignedBB {
 
    public Optional<Vector3d> method19680(Vector3d var1, Vector3d var2) {
       double[] var5 = new double[]{1.0};
-      double var6 = var2.field18048 - var1.field18048;
-      double var8 = var2.field18049 - var1.field18049;
-      double var10 = var2.field18050 - var1.field18050;
+      double var6 = var2.x - var1.x;
+      double var8 = var2.y - var1.y;
+      double var10 = var2.z - var1.z;
       Direction var12 = method19682(this, var1, var5, (Direction)null, var6, var8, var10);
       if (var12 != null) {
          double var13 = var5[0];
@@ -322,9 +322,9 @@ public class AxisAlignedBB {
    public static BlockRayTraceResult method19681(Iterable<AxisAlignedBB> var0, Vector3d var1, Vector3d var2, BlockPos var3) {
       double[] var6 = new double[]{1.0};
       Direction var7 = null;
-      double var8 = var2.field18048 - var1.field18048;
-      double var10 = var2.field18049 - var1.field18049;
-      double var12 = var2.field18050 - var1.field18050;
+      double var8 = var2.x - var1.x;
+      double var10 = var2.y - var1.y;
+      double var12 = var2.z - var1.z;
 
       for (AxisAlignedBB var17 : var0) {
          var7 = method19682(var17.method19668(var3), var1, var6, var7, var8, var10, var12);
@@ -354,9 +354,9 @@ public class AxisAlignedBB {
                var0.field28451,
                var0.field28454,
                Direction.EAST,
-               var1.field18048,
-               var1.field18049,
-               var1.field18050
+               var1.x,
+               var1.y,
+               var1.z
             );
          }
       } else {
@@ -372,9 +372,9 @@ public class AxisAlignedBB {
             var0.field28451,
             var0.field28454,
             Direction.WEST,
-            var1.field18048,
-            var1.field18049,
-            var1.field18050
+            var1.x,
+            var1.y,
+            var1.z
          );
       }
 
@@ -392,9 +392,9 @@ public class AxisAlignedBB {
                var0.field28449,
                var0.field28452,
                Direction.field673,
-               var1.field18049,
-               var1.field18050,
-               var1.field18048
+               var1.y,
+               var1.z,
+               var1.x
             );
          }
       } else {
@@ -410,9 +410,9 @@ public class AxisAlignedBB {
             var0.field28449,
             var0.field28452,
             Direction.DOWN,
-            var1.field18049,
-            var1.field18050,
-            var1.field18048
+            var1.y,
+            var1.z,
+            var1.x
          );
       }
 
@@ -430,9 +430,9 @@ public class AxisAlignedBB {
                var0.field28450,
                var0.field28453,
                Direction.SOUTH,
-               var1.field18050,
-               var1.field18048,
-               var1.field18049
+               var1.z,
+               var1.x,
+               var1.y
             );
          }
       } else {
@@ -448,9 +448,9 @@ public class AxisAlignedBB {
             var0.field28450,
             var0.field28453,
             Direction.NORTH,
-            var1.field18050,
-            var1.field18048,
-            var1.field18049
+            var1.z,
+            var1.x,
+            var1.y
          );
       }
 

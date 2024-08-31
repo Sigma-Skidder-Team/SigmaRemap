@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.EnumSet;
 
 public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Class2595 {
@@ -42,7 +44,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
    public void method10807() {
       super.method10807();
       this.field17125.method4304(false);
-      this.field17125.method4233((Class880)null);
+      this.field17125.method4233((LivingEntity)null);
       this.field17129 = 0;
       if (this.field17125.isHandActive()) {
          this.field17125.method3162();
@@ -53,7 +55,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
 
    @Override
    public void method10805() {
-      Class880 var3 = this.field17125.method4232();
+      LivingEntity var3 = this.field17125.method4232();
       if (var3 != null) {
          boolean var4 = this.field17125.method4231().method35460(var3);
          boolean var5 = this.field17129 > 0;

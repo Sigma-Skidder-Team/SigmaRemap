@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.Random;
 
 public class Class5724 extends Class5715<ItemEntity> {
@@ -40,7 +42,7 @@ public class Class5724 extends Class5715<ItemEntity> {
       ItemStack var9 = var1.method4124();
       int var10 = !var9.isEmpty() ? Item.method11701(var9.getItem()) + var9.method32117() : 187;
       this.field25130.setSeed((long)var10);
-      IBakedModel var11 = this.field25129.method788(var9, var1.world, (Class880)null);
+      IBakedModel var11 = this.field25129.method788(var9, var1.world, (LivingEntity)null);
       boolean var12 = var11.method22621();
       int var13 = this.method17910(var9);
       float var14 = 0.25F;

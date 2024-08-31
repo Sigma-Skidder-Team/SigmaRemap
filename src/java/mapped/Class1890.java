@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 
 public enum Class1890 implements Class1876 {
    field11072("is_alive"),
@@ -55,7 +56,7 @@ public enum Class1890 implements Class1876 {
       } else {
          if (var3 instanceof Class5712) {
             Class5712 var4 = (Class5712)var3;
-            Class880 var5 = var4.field25088;
+            LivingEntity var5 = var4.field25088;
             if (var5 == null) {
                return false;
             }

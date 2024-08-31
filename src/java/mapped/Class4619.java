@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+
 public class Class4619 extends Class4566 {
    private static String[] field22132;
    private final Class8975 field22133;
@@ -51,7 +53,7 @@ public class Class4619 extends Class4566 {
             double var4 = var3.getPosY();
             if (this.field22042 > var4) {
                this.field22042 = this.field22042 + (var4 - this.field22042) * 0.2;
-               this.field22045 = this.field22045 + (var3.method3433().field18049 - this.field22045) * 0.2;
+               this.field22045 = this.field22045 + (var3.method3433().y - this.field22045) * 0.2;
                this.method14520(this.field22041, this.field22042, this.field22043);
             }
          }

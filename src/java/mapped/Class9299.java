@@ -8,11 +8,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -257,11 +260,11 @@ public class Class9299 {
    public static Class6634 field42988 = new Class6634(field42987, new Class[]{ItemFrameEntity.class, Class5736.class, MatrixStack.class, Class7733.class, int.class});
    public static Class6636 field42989 = new Class6636("net.minecraftforge.client.event.RenderLivingEvent$Pre");
    public static Class6634 field42990 = new Class6634(
-      field42989, new Class[]{Class880.class, Class5712.class, float.class, MatrixStack.class, Class7733.class, int.class}
+      field42989, new Class[]{LivingEntity.class, Class5712.class, float.class, MatrixStack.class, Class7733.class, int.class}
    );
    public static Class6636 field42991 = new Class6636("net.minecraftforge.client.event.RenderLivingEvent$Post");
    public static Class6634 field42992 = new Class6634(
-      field42991, new Class[]{Class880.class, Class5712.class, float.class, MatrixStack.class, Class7733.class, int.class}
+      field42991, new Class[]{LivingEntity.class, Class5712.class, float.class, MatrixStack.class, Class7733.class, int.class}
    );
    public static Class6636 field42993 = new Class6636("net.minecraftforge.client.event.RenderNameplateEvent");
    public static Class6634 field42994 = new Class6634(

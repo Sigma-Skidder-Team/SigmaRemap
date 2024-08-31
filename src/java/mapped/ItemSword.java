@@ -3,6 +3,9 @@ package mapped;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 public class ItemSword extends Class3266 implements Class3260 {
@@ -44,13 +47,13 @@ public class ItemSword extends Class3266 implements Class3260 {
    }
 
    @Override
-   public boolean method11713(ItemStack var1, Class880 var2, Class880 var3) {
+   public boolean method11713(ItemStack var1, LivingEntity var2, LivingEntity var3) {
       var1.method32121(1, var3, var0 -> var0.method3184(Class2106.field13731));
       return true;
    }
 
    @Override
-   public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, Class880 var5) {
+   public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, LivingEntity var5) {
       if (var3.method23405(var2, var4) != 0.0F) {
          var1.method32121(2, var5, var0 -> var0.method3184(Class2106.field13731));
       }

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -25,8 +27,8 @@ public class Class3491 extends Class3490 {
    public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
       VoxelShape var7 = this.method11483(var1, var2, var3, ISelectionContext.method14947());
       Vector3d var8 = var7.method19514().method19685();
-      double var9 = (double)var3.getX() + var8.field18048;
-      double var11 = (double)var3.getZ() + var8.field18050;
+      double var9 = (double)var3.getX() + var8.x;
+      double var11 = (double)var3.getZ() + var8.z;
 
       for (int var13 = 0; var13 < 3; var13++) {
          if (var4.nextBoolean()) {
@@ -45,8 +47,8 @@ public class Class3491 extends Class3490 {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (!var2.isRemote && var2.method6997() != Difficulty.field14351 && var4 instanceof Class880) {
-         Class880 var7 = (Class880)var4;
+      if (!var2.isRemote && var2.method6997() != Difficulty.field14351 && var4 instanceof LivingEntity) {
+         LivingEntity var7 = (LivingEntity)var4;
          if (!var7.method2760(Class8654.field39007)) {
             var7.method3035(new Class2023(Effects.WITHER, 40));
          }

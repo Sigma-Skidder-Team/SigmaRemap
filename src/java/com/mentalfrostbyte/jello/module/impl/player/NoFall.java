@@ -95,11 +95,11 @@ public class NoFall extends Module {
                                 return;
                             }
 
-                            if (mc.player.method3433().field18049 < -0.1) {
+                            if (mc.player.method3433().y < -0.1) {
                                 if (this.field23509 == 0.0) {
                                 }
 
-                                this.field23509 = this.field23509 - mc.player.method3433().field18049;
+                                this.field23509 = this.field23509 - mc.player.method3433().y;
                             }
 
                             if (this.field23509 > 3.0) {
@@ -109,7 +109,7 @@ public class NoFall extends Module {
                         }
                         break;
                     case "Hypixel":
-                        if (var1.method13921() && mc.player.method3433().field18049 < 0.0 && !mc.player.onGround && ColorUtils.method17716()) {
+                        if (var1.method13921() && mc.player.method3433().y < 0.0 && !mc.player.onGround && ColorUtils.method17716()) {
                             for (double var10 : ColorUtils.method17747()) {
                                 if ((double) ((int) var1.method13911()) - var1.method13911() + var10 == 0.0) {
                                     var1.method13920(true);
@@ -125,7 +125,7 @@ public class NoFall extends Module {
                                 return;
                             }
 
-                            if (mc.player.method3433().field18049 < -0.1 && mc.player.fallDistance > 3.0F) {
+                            if (mc.player.method3433().y < -0.1 && mc.player.fallDistance > 3.0F) {
                                 this.field23509++;
                                 if (this.field23509 == 1.0) {
                                     mc.getConnection().sendPacket(new Class5603(true));
@@ -149,12 +149,12 @@ public class NoFall extends Module {
                         }
                         break;
                     case "Vanilla":
-                        if (var1.method13921() && mc.player.method3433().field18049 < -0.1) {
+                        if (var1.method13921() && mc.player.method3433().y < -0.1) {
                             var1.method13920(true);
                         }
                         break;
                     case "Vanilla Legit":
-                        if (mc.player.method3433().field18049 < -0.1) {
+                        if (mc.player.method3433().y < -0.1) {
                             var1.method13920(true);
                         }
 

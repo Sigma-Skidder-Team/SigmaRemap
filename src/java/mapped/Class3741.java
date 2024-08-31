@@ -1,9 +1,10 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-public class Class3741<E extends Class880> extends Class3676<E> {
+public class Class3741<E extends LivingEntity> extends Class3676<E> {
    private static String[] field19867;
    private final float field19868;
 
@@ -27,7 +28,7 @@ public class Class3741<E extends Class880> extends Class3676<E> {
    }
 
    private boolean method12699(E var1) {
-      return this.method12700((E)var1).method3213(var1, 1.0);
+      return this.method12700((E)var1).isEntityInRange(var1, 1.0);
    }
 
    private Entity method12700(E var1) {

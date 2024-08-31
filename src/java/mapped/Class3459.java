@@ -1,6 +1,9 @@
 package mapped;
 
 import com.google.common.base.MoreObjects;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -79,7 +82,7 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
       this.method12134(var1, var2, var3, false, false, -1, (BlockState)null);
    }
 

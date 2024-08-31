@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 

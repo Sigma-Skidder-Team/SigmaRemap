@@ -28,9 +28,9 @@ public class Class2670 extends Class2595 {
          if (!this.field17048.method3250()) {
             Vector3d var3 = this.method10889();
             if (var3 != null) {
-               this.field17049 = var3.field18048;
-               this.field17050 = var3.field18049;
-               this.field17051 = var3.field18050;
+               this.field17049 = var3.x;
+               this.field17050 = var3.y;
+               this.field17051 = var3.z;
                return true;
             } else {
                return false;

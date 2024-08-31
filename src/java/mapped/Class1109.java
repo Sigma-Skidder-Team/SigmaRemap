@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
@@ -65,7 +66,7 @@ public class Class1109 extends Class1108 {
    @Override
    public void method2914() {
       Vector3d var3 = this.method3433();
-      this.method3435(var3.field18048, (double)(this.method3103() + (float)this.method5319() * 0.1F), var3.field18050);
+      this.method3435(var3.x, (double)(this.method3103() + (float)this.method5319() * 0.1F), var3.z);
       this.isAirBorne = true;
    }
 
@@ -75,7 +76,7 @@ public class Class1109 extends Class1108 {
          super.method3105(var1);
       } else {
          Vector3d var4 = this.method3433();
-         this.method3435(var4.field18048, (double)(0.22F + (float)this.method5319() * 0.05F), var4.field18050);
+         this.method3435(var4.x, (double)(0.22F + (float)this.method5319() * 0.05F), var4.z);
          this.isAirBorne = true;
       }
    }
@@ -96,22 +97,22 @@ public class Class1109 extends Class1108 {
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return !this.method5320() ? Sounds.field26751 : Sounds.field26752;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return !this.method5320() ? Sounds.field26750 : Sounds.field26743;
    }
 
    @Override
-   public Class9455 method5327() {
+   public SoundEvent method5327() {
       return !this.method5320() ? Sounds.field26754 : Sounds.field26755;
    }
 
    @Override
-   public Class9455 method5331() {
+   public SoundEvent method5331() {
       return Sounds.field26753;
    }
 }

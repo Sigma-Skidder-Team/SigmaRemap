@@ -1,11 +1,12 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Map;
 
-public class Class255<T extends Class880, M extends Class2797<T>, A extends Class2797<T>> extends Class219<T, M> {
+public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends Class2797<T>> extends Class219<T, M> {
    private static final Map<String, ResourceLocation> field912 = Maps.newHashMap();
    private final A field913;
    private final A field914;

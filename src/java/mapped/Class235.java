@@ -2,11 +2,12 @@ package mapped;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.UUID;
 
-public class Class235<T extends Class880, M extends Class2827<T> & Class2824> extends Class219<T, M> {
+public class Class235<T extends LivingEntity, M extends Class2827<T> & Class2824> extends Class219<T, M> {
    private final float field881;
    private final float field882;
    private final float field883;

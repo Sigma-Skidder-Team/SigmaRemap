@@ -27,9 +27,9 @@ public class Class5515 implements Packet<Class5116> {
       this.field24471 = var7;
       this.field24472 = Lists.newArrayList(var8);
       if (var9 != null) {
-         this.field24473 = (float)var9.field18048;
-         this.field24474 = (float)var9.field18049;
-         this.field24475 = (float)var9.field18050;
+         this.field24473 = (float)var9.x;
+         this.field24474 = (float)var9.y;
+         this.field24475 = (float)var9.z;
       }
    }
 

@@ -68,8 +68,8 @@ public class SpartanFly extends Module {
             boolean var4 = mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F);
             if (!var4) {
                 if (var1.method13994() < 0.0) {
-                    if (this.field23569 != mc.player.getPositionVec().field18049) {
-                        if (mc.player.getPositionVec().field18049 + var1.method13994() < this.field23569) {
+                    if (this.field23569 != mc.player.getPositionVec().y) {
+                        if (mc.player.getPositionVec().y + var1.method13994() < this.field23569) {
                             this.field23570 = true;
                             int var5 = this.method16272();
                             boolean var6 = this.getBooleanValueFromSetttingName("Fake Block");
@@ -92,24 +92,24 @@ public class SpartanFly extends Module {
                                 mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
                             }
 
-                            var1.method13995(this.field23569 - mc.player.getPositionVec().field18049);
+                            var1.method13995(this.field23569 - mc.player.getPositionVec().y);
                         }
                     } else {
                         mc.player.method2914();
-                        var1.method13995(mc.player.method3433().field18049);
+                        var1.method13995(mc.player.method3433().y);
                         this.field23569 = !mc.gameSettings.keyBindJump.isKeyDown()
-                                ? (!this.field23571 ? mc.player.getPositionVec().field18049 : mc.player.getPositionVec().field18049 - 1.0)
-                                : (!this.field23571 ? mc.player.getPositionVec().field18049 + 1.0 : mc.player.getPositionVec().field18049);
+                                ? (!this.field23571 ? mc.player.getPositionVec().y : mc.player.getPositionVec().y - 1.0)
+                                : (!this.field23571 ? mc.player.getPositionVec().y + 1.0 : mc.player.getPositionVec().y);
                         Class9567.method37088(var1, 0.35);
                     }
                 }
             } else {
                 mc.player.method2914();
-                var1.method13995(mc.player.method3433().field18049);
+                var1.method13995(mc.player.method3433().y);
                 Class9567.method37088(var1, 0.35);
                 this.field23569 = !mc.gameSettings.keyBindJump.isKeyDown()
-                        ? (!this.field23571 ? mc.player.getPositionVec().field18049 : mc.player.getPositionVec().field18049 - 1.0)
-                        : (!this.field23571 ? mc.player.getPositionVec().field18049 + 1.0 : mc.player.getPositionVec().field18049);
+                        ? (!this.field23571 ? mc.player.getPositionVec().y : mc.player.getPositionVec().y - 1.0)
+                        : (!this.field23571 ? mc.player.getPositionVec().y + 1.0 : mc.player.getPositionVec().y);
             }
 
             ColorUtils.method17724(var1.method13992());

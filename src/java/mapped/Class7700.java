@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 public final class Class7700 {
    private static String[] field32993;
    public static final BlockState field32994 = Blocks.GRASS.method11579();

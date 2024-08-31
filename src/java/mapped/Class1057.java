@@ -1,8 +1,13 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -15,10 +20,10 @@ import java.util.UUID;
 public class Class1057 extends Class1056 implements Class1008 {
    private static final UUID field5839 = UUID.fromString("7E0292F2-9434-48D5-A29F-9583AF7DF27F");
    private static final Class9689 field5840 = new Class9689(field5839, "Covered armor bonus", 20.0, AttributeModifierOperation.ADDITION);
-   public static final DataParameter<Direction> field5841 = EntityDataManager.<Direction>method35441(Class1057.class, Class7784.field33403);
-   public static final DataParameter<Optional<BlockPos>> field5842 = EntityDataManager.<Optional<BlockPos>>method35441(Class1057.class, Class7784.field33402);
-   public static final DataParameter<Byte> field5843 = EntityDataManager.<Byte>method35441(Class1057.class, Class7784.field33390);
-   public static final DataParameter<Byte> field5844 = EntityDataManager.<Byte>method35441(Class1057.class, Class7784.field33390);
+   public static final DataParameter<Direction> field5841 = EntityDataManager.<Direction>createKey(Class1057.class, DataSerializers.field33403);
+   public static final DataParameter<Optional<BlockPos>> field5842 = EntityDataManager.<Optional<BlockPos>>createKey(Class1057.class, DataSerializers.field33402);
+   public static final DataParameter<Byte> field5843 = EntityDataManager.<Byte>createKey(Class1057.class, DataSerializers.field33390);
+   public static final DataParameter<Byte> field5844 = EntityDataManager.<Byte>createKey(Class1057.class, DataSerializers.field33390);
    private float field5845;
    private float field5846;
    private BlockPos field5847 = null;
@@ -51,7 +56,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27043;
    }
 
@@ -63,12 +68,12 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27049;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return !this.method4847() ? Sounds.field27050 : Sounds.field27051;
    }
 
@@ -281,7 +286,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                   this.method2863(Sounds.field27054, 1.0F, 1.0F);
                   this.dataManager.method35446(field5842, Optional.<BlockPos>of(var5));
                   this.dataManager.method35446(field5843, (byte)0);
-                  this.method4233((Class880)null);
+                  this.method4233((LivingEntity)null);
                   return true;
                }
             }
@@ -322,7 +327,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public void method3131(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
+   public void setPositionAndRotationDirect(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
       this.field4985 = 0;
    }
 

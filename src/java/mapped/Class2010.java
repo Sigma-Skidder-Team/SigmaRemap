@@ -25,9 +25,9 @@ public class Class2010 extends Class2009 {
          if (this.field13078.method27709()) {
             if (!this.field13076.get()) {
                Vector3d var4 = this.field13078.field34637.method33322();
-               float var5 = (float)var4.field18048;
-               float var6 = (float)var4.field18049;
-               float var7 = (float)var4.field18050;
+               float var5 = (float)var4.x;
+               float var6 = (float)var4.y;
+               float var7 = (float)var4.z;
                Class9244 var8 = Class7457.method24122(this.field13079);
                if (var8 != null && Class7457.method24118(this.field13079).contains(RenderType.method14304())) {
                   BufferBuilder var9 = var1.method26203(RenderType.method14304());

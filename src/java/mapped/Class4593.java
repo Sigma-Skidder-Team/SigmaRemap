@@ -15,7 +15,7 @@ public class Class4593 extends Class4587 {
    }
 
    private Class4593(EntityRendererManager var1, RenderTypeBuffers var2, ClientWorld var3, Entity var4, Entity var5, Vector3d var6) {
-      super(var3, var4.getPosX(), var4.getPosY(), var4.getPosZ(), var6.field18048, var6.field18049, var6.field18050);
+      super(var3, var4.getPosX(), var4.getPosY(), var4.getPosZ(), var6.x, var6.y, var6.z);
       this.field22081 = var2;
       this.field22082 = this.method14532(var4);
       this.field22083 = var5;

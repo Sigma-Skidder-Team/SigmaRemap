@@ -1,8 +1,10 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.List;
 import java.util.Random;
@@ -233,7 +235,7 @@ public class ItemRenderer implements Class215 {
       }
    }
 
-   public IBakedModel method788(ItemStack var1, World var2, Class880 var3) {
+   public IBakedModel method788(ItemStack var1, World var2, LivingEntity var3) {
       Item var6 = var1.getItem();
       IBakedModel var7;
       if (var6 != Items.field38144) {
@@ -253,10 +255,10 @@ public class ItemRenderer implements Class215 {
    }
 
    public void method789(ItemStack var1, Class2327 var2, int var3, int var4, MatrixStack var5, Class7733 var6) {
-      this.method790((Class880)null, var1, var2, false, var5, var6, (World)null, var3, var4);
+      this.method790((LivingEntity)null, var1, var2, false, var5, var6, (World)null, var3, var4);
    }
 
-   public void method790(Class880 var1, ItemStack var2, Class2327 var3, boolean var4, MatrixStack var5, Class7733 var6, World var7, int var8, int var9) {
+   public void method790(LivingEntity var1, ItemStack var2, Class2327 var3, boolean var4, MatrixStack var5, Class7733 var6, World var7, int var8, int var9) {
       if (!var2.isEmpty()) {
          IBakedModel var12 = this.method788(var2, var7, var1);
          this.method781(var2, var3, var4, var5, var6, var8, var9, var12);
@@ -264,7 +266,7 @@ public class ItemRenderer implements Class215 {
    }
 
    public void method791(ItemStack var1, int var2, int var3) {
-      this.method792(var1, var2, var3, this.method788(var1, (World)null, (Class880)null));
+      this.method792(var1, var2, var3, this.method788(var1, (World)null, (LivingEntity)null));
    }
 
    public void method792(ItemStack var1, int var2, int var3, IBakedModel var4) {
@@ -307,14 +309,14 @@ public class ItemRenderer implements Class215 {
    }
 
    public void method794(ItemStack var1, int var2, int var3) {
-      this.method796((Class880)null, var1, var2, var3);
+      this.method796((LivingEntity)null, var1, var2, var3);
    }
 
-   public void method795(Class880 var1, ItemStack var2, int var3, int var4) {
+   public void method795(LivingEntity var1, ItemStack var2, int var3, int var4) {
       this.method796(var1, var2, var3, var4);
    }
 
-   private void method796(Class880 var1, ItemStack var2, int var3, int var4) {
+   private void method796(LivingEntity var1, ItemStack var2, int var3, int var4) {
       if (!var2.isEmpty()) {
          this.field847 += 50.0F;
 

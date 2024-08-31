@@ -2,12 +2,13 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.SoundEvent;
 
 public abstract class Class6334 extends Class6333 {
    public final Class1017 field27846;
    private boolean field27847;
 
-   public Class6334(Class1017 var1, Class9455 var2, Class2266 var3) {
+   public Class6334(Class1017 var1, SoundEvent var2, Class2266 var3) {
       super(var2, var3);
       this.field27846 = var1;
       this.field27858 = (double)((float)var1.getPosX());

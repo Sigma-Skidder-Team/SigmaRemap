@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 public class Class3284 extends Item {
    public Class3284(Class5643 var1) {
       super(var1);
@@ -16,7 +19,7 @@ public class Class3284 extends Item {
    }
 
    @Override
-   public ItemStack method11709(ItemStack var1, World var2, Class880 var3) {
+   public ItemStack method11709(ItemStack var1, World var2, LivingEntity var3) {
       ItemStack var6 = super.method11709(var1, var2, var3);
       CompoundNBT var7 = var1.method32142();
       if (var7 != null && var7.method119("Effects", 9)) {

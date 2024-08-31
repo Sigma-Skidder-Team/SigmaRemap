@@ -1,7 +1,10 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -31,12 +34,12 @@ public class Class4527 {
       return !Double.isInfinite(var0) && var0 < 1.0;
    }
 
-   public static boolean method14424(Class1668 var0, Class880 var1, AxisAlignedBB var2) {
+   public static boolean method14424(Class1668 var0, LivingEntity var1, AxisAlignedBB var2) {
       return var0.method7055(var1, var2).allMatch(VoxelShape::method19516);
    }
 
    @Nullable
-   public static Vector3d method14425(Class1668 var0, double var1, double var3, double var5, Class880 var7, Pose var8) {
+   public static Vector3d method14425(Class1668 var0, double var1, double var3, double var5, LivingEntity var7, Pose var8) {
       if (method14423(var3)) {
          Vector3d var11 = new Vector3d(var1, var3, var5);
          if (method14424(var0, var7, var7.method3172(var8).method19669(var11))) {

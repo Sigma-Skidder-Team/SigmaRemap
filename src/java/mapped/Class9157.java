@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import javax.annotation.Nullable;
@@ -33,7 +34,7 @@ public class Class9157 {
       } else {
          return this.field42040 != null && var1.method2951() != this.field42040
             ? false
-            : this.field42041 == null || !(var1 instanceof Class880) || ((Class880)var1).method3005() == this.field42041;
+            : this.field42041 == null || !(var1 instanceof LivingEntity) || ((LivingEntity)var1).method3005() == this.field42041;
       }
    }
 

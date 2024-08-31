@@ -1,10 +1,17 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -14,7 +21,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Class1019 extends Class1018 implements Class1020 {
-   private static final DataParameter<Byte> field5704 = EntityDataManager.<Byte>method35441(Class1019.class, Class7784.field33390);
+   private static final DataParameter<Byte> field5704 = EntityDataManager.<Byte>createKey(Class1019.class, DataSerializers.field33390);
    private static final Map<Class112, Class3303> field5705 = Util.<Map<Class112, Class3303>>make(Maps.newEnumMap(Class112.class), var0 -> {
       var0.put(Class112.field386, Blocks.WHITE_WOOL);
       var0.put(Class112.field387, Blocks.ORANGE_WOOL);
@@ -225,17 +232,17 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27030;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27032;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27031;
    }
 

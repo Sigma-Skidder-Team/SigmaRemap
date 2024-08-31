@@ -1,7 +1,13 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntityPickupStatus;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -53,7 +59,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public void method11729(ItemStack var1, World var2, Class880 var3, int var4) {
+   public void method11729(ItemStack var1, World var2, LivingEntity var3, int var4) {
       int var7 = this.method11728(var1) - var4;
       float var8 = method11769(var7, var1);
       if (var8 >= 1.0F && !method11755(var1) && method11753(var3, var1)) {
@@ -72,7 +78,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       }
    }
 
-   private static boolean method11753(Class880 var0, ItemStack var1) {
+   private static boolean method11753(LivingEntity var0, ItemStack var1) {
       int var4 = Class7858.method26311(Class8122.field34929, var1);
       int var5 = var4 != 0 ? 3 : 1;
       boolean var6 = var0 instanceof PlayerEntity && ((PlayerEntity)var0).abilities.isCreativeMode;
@@ -97,7 +103,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       return true;
    }
 
-   private static boolean method11754(Class880 var0, ItemStack var1, ItemStack var2, boolean var3, boolean var4) {
+   private static boolean method11754(LivingEntity var0, ItemStack var1, ItemStack var2, boolean var3, boolean var4) {
       if (var2.isEmpty()) {
          return false;
       } else {
@@ -172,7 +178,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    private static void method11761(
-           World var0, Class880 var1, Hand var2, ItemStack var3, ItemStack var4, float var5, boolean var6, float var7, float var8, float var9
+           World var0, LivingEntity var1, Hand var2, ItemStack var3, ItemStack var4, float var5, boolean var6, float var7, float var8, float var9
    ) {
       if (!var0.isRemote) {
          boolean var12 = var4.getItem() == Items.field38068;
@@ -180,7 +186,7 @@ public class Class3261 extends Class3262 implements Class3260 {
          if (!var12) {
             var13 = method11762(var0, var1, var3, var4);
             if (var6 || var9 != 0.0F) {
-               ((AbstractArrowEntity)var13).field5102 = Class2192.field14333;
+               ((AbstractArrowEntity)var13).pickupStatus = AbstractArrowEntityPickupStatus.field14333;
             }
          } else {
             var13 = new Class888(var0, var4, var1, var1.getPosX(), var1.method3442() - 0.15F, var1.getPosZ(), true);
@@ -192,10 +198,10 @@ public class Class3261 extends Class3262 implements Class3260 {
             Vector3d var16 = var1.method3281(1.0F);
             Vector3f var17 = new Vector3f(var16);
             var17.method25283(var15);
-            ((Class882)var13).method3462((double)var17.method25269(), (double)var17.method25270(), (double)var17.method25271(), var7, var8);
+            ((ProjectileEntity)var13).shoot((double)var17.method25269(), (double)var17.method25270(), (double)var17.method25271(), var7, var8);
          } else {
             Class1023 var18 = (Class1023)var1;
-            var18.method4536(var18.method4232(), var3, (Class882)var13, var9);
+            var18.method4536(var18.method4232(), var3, (ProjectileEntity)var13, var9);
          }
 
          var3.method32121(!var12 ? 1 : 3, var1, var1x -> var1x.method3185(var2));
@@ -204,14 +210,14 @@ public class Class3261 extends Class3262 implements Class3260 {
       }
    }
 
-   private static AbstractArrowEntity method11762(World var0, Class880 var1, ItemStack var2, ItemStack var3) {
+   private static AbstractArrowEntity method11762(World var0, LivingEntity var1, ItemStack var2, ItemStack var3) {
       Class3308 var6 = (Class3308)(!(var3.getItem() instanceof Class3308) ? Items.field37797 : var3.getItem());
       AbstractArrowEntity var7 = var6.method11850(var0, var3, var1);
       if (var1 instanceof PlayerEntity) {
          var7.method3484(true);
       }
 
-      var7.method3471(Sounds.field26487);
+      var7.setHitSound(Sounds.field26487);
       var7.method3494(true);
       int var8 = Class7858.method26311(Class8122.field34931, var2);
       if (var8 > 0) {
@@ -221,7 +227,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       return var7;
    }
 
-   public static void method11763(World var0, Class880 var1, Hand var2, ItemStack var3, float var4, float var5) {
+   public static void method11763(World var0, LivingEntity var1, Hand var2, ItemStack var3, float var4, float var5) {
       List var8 = method11758(var3);
       float[] var9 = method11764(var1.method3013());
 
@@ -256,7 +262,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       return 1.0F / (field18735.nextFloat() * 0.5F + 1.8F) + var3;
    }
 
-   private static void method11766(World var0, Class880 var1, ItemStack var2) {
+   private static void method11766(World var0, LivingEntity var1, ItemStack var2) {
       if (var1 instanceof ServerPlayerEntity) {
          ServerPlayerEntity var5 = (ServerPlayerEntity)var1;
          if (!var0.isRemote) {
@@ -270,11 +276,11 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public void method11704(World var1, Class880 var2, ItemStack var3, int var4) {
+   public void method11704(World var1, LivingEntity var2, ItemStack var3, int var4) {
       if (!var1.isRemote) {
          int var7 = Class7858.method26311(Class8122.field34930, var3);
-         Class9455 var8 = this.method11768(var7);
-         Class9455 var9 = var7 != 0 ? null : Sounds.field26489;
+         SoundEvent var8 = this.method11768(var7);
+         SoundEvent var9 = var7 != 0 ? null : Sounds.field26489;
          float var10 = (float)(var3.method32137() - var4) / (float)method11767(var3);
          if (var10 < 0.2F) {
             this.field18746 = false;
@@ -308,7 +314,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       return Class2103.field13712;
    }
 
-   private Class9455 method11768(int var1) {
+   private SoundEvent method11768(int var1) {
       switch (var1) {
          case 1:
             return Sounds.field26491;

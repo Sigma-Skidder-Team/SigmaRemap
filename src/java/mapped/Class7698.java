@@ -4,6 +4,8 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
+
+import net.minecraft.block.BlockState;
 import org.lwjgl.opengl.GL20;
 
 public class Class7698 {

@@ -30,8 +30,8 @@ public class NCPSpeed extends Module {
     @Override
     public void onEnable() {
         this.field23608 = 1;
-        double var3 = mc.player.method3433().field18048;
-        double var5 = mc.player.method3433().field18050;
+        double var3 = mc.player.method3433().x;
+        double var5 = mc.player.method3433().z;
         this.field23609 = Math.sqrt(var3 * var3 + var5 * var5);
     }
 
@@ -79,9 +79,9 @@ public class NCPSpeed extends Module {
                 } else if (this.field23608 > 1 && (this.getBooleanValueFromSetttingName("Auto Jump") && ColorUtils.method17686() || mc.gameSettings.keyBindJump.isKeyDown())) {
                     this.field23607 = 0;
                     mc.player.method2914();
-                    var1.method13993(mc.player.method3433().field18048);
-                    var1.method13995(mc.player.method3433().field18049);
-                    var1.method13997(mc.player.method3433().field18050);
+                    var1.method13993(mc.player.method3433().x);
+                    var1.method13995(mc.player.method3433().y);
+                    var1.method13997(mc.player.method3433().z);
                 }
             } else {
                 this.field23607 = -1;

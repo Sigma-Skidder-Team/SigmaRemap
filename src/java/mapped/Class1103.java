@@ -1,12 +1,18 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 
 public class Class1103 extends Class1009 {
    private static String[] field6059;
    private float field6060 = 0.5F;
    private int field6061;
-   private static final DataParameter<Byte> field6062 = EntityDataManager.<Byte>method35441(Class1103.class, Class7784.field33390);
+   private static final DataParameter<Byte> field6062 = EntityDataManager.<Byte>createKey(Class1103.class, DataSerializers.field33390);
 
    public Class1103(EntityType<? extends Class1103> var1, World var2) {
       super(var1, var2);
@@ -39,17 +45,17 @@ public class Class1103 extends Class1009 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26402;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26405;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26404;
    }
 
@@ -60,7 +66,7 @@ public class Class1103 extends Class1009 {
 
    @Override
    public void method2871() {
-      if (!this.onGround && this.method3433().field18049 < 0.0) {
+      if (!this.onGround && this.method3433().y < 0.0) {
          this.method3434(this.method3433().method11347(1.0, 0.6, 1.0));
       }
 
@@ -100,10 +106,10 @@ public class Class1103 extends Class1009 {
          this.field6060 = 0.5F + (float)this.rand.nextGaussian() * 3.0F;
       }
 
-      Class880 var3 = this.method4232();
+      LivingEntity var3 = this.method4232();
       if (var3 != null && var3.method3442() > this.method3442() + (double)this.field6060 && this.method3026(var3)) {
          Vector3d var4 = this.method3433();
-         this.method3434(this.method3433().method11339(0.0, (0.3F - var4.field18049) * 0.3F, 0.0));
+         this.method3434(this.method3433().method11339(0.0, (0.3F - var4.y) * 0.3F, 0.0));
          this.isAirBorne = true;
       }
 

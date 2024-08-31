@@ -2,6 +2,8 @@ package mapped;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
+import net.minecraft.block.BlockState;
+
 import java.util.Set;
 import java.util.function.Predicate;
 

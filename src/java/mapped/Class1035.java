@@ -1,11 +1,15 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 
 import javax.annotation.Nullable;
 
 public abstract class Class1035 extends Class1009 {
-   public static final DataParameter<Boolean> field5750 = EntityDataManager.<Boolean>method35441(Class1035.class, Class7784.field33398);
+   public static final DataParameter<Boolean> field5750 = EntityDataManager.<Boolean>createKey(Class1035.class, DataSerializers.field33398);
    public int field5751 = 0;
 
    public Class1035(EntityType<? extends Class1035> var1, World var2) {
@@ -94,8 +98,8 @@ public abstract class Class1035 extends Class1009 {
 
    @Nullable
    @Override
-   public Class880 method4232() {
-      return this.field5011.<Class880>method21410(Class8830.field39826).orElse((Class880)null);
+   public LivingEntity method4232() {
+      return this.field5011.<LivingEntity>method21410(Class8830.field39826).orElse((LivingEntity)null);
    }
 
    public boolean method4636() {

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.SoundEvent;
+
 import javax.annotation.Nullable;
 
 public abstract class Class2672 extends Class2595 {
@@ -13,7 +16,7 @@ public abstract class Class2672 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      Class880 var3 = this.field17059.method4232();
+      LivingEntity var3 = this.field17059.method4232();
       if (var3 == null || !var3.isAlive()) {
          return false;
       } else {
@@ -23,7 +26,7 @@ public abstract class Class2672 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      Class880 var3 = this.field17059.method4232();
+      LivingEntity var3 = this.field17059.method4232();
       return var3 != null && var3.isAlive() && this.field17057 > 0;
    }
 
@@ -32,7 +35,7 @@ public abstract class Class2672 extends Class2595 {
       this.field17057 = this.method10891();
       this.field17059.field5734 = this.method10892();
       this.field17058 = this.field17059.ticksExisted + this.method10893();
-      Class9455 var3 = this.method10894();
+      SoundEvent var3 = this.method10894();
       if (var3 != null) {
          this.field17059.method2863(var3, 1.0F, 1.0F);
       }
@@ -60,7 +63,7 @@ public abstract class Class2672 extends Class2595 {
    public abstract int method10893();
 
    @Nullable
-   public abstract Class9455 method10894();
+   public abstract SoundEvent method10894();
 
    public abstract Class2031 method10895();
 }

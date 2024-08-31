@@ -1,9 +1,11 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.projectile.ProjectileEntity;
 
-public class Class883 extends Class882 {
+public class Class883 extends ProjectileEntity {
    private static String[] field5096;
 
    public Class883(EntityType<? extends Class883> var1, World var2) {
@@ -12,7 +14,7 @@ public class Class883 extends Class882 {
 
    public Class883(World var1, Class1064 var2) {
       this(EntityType.field41048, var1);
-      super.method3459(var2);
+      super.setShooter(var2);
       this.setPosition(
          var2.getPosX() - (double)(var2.method3429() + 1.0F) * 0.5 * (double) MathHelper.sin(var2.field4965 * (float) (Math.PI / 180.0)),
          var2.method3442() - 0.1F,
@@ -41,9 +43,9 @@ public class Class883 extends Class882 {
          this.method3464(var4);
       }
 
-      double var5 = this.getPosX() + var3.field18048;
-      double var7 = this.getPosY() + var3.field18049;
-      double var9 = this.getPosZ() + var3.field18050;
+      double var5 = this.getPosX() + var3.x;
+      double var7 = this.getPosY() + var3.y;
+      double var9 = this.getPosZ() + var3.z;
       this.method3468();
       float var11 = 0.99F;
       float var12 = 0.06F;
@@ -67,8 +69,8 @@ public class Class883 extends Class882 {
    public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
       Entity var4 = this.method3460();
-      if (var4 instanceof Class880) {
-         var1.getEntity().method2741(Class8654.method31116(this, (Class880)var4).method31130(), 1.0F);
+      if (var4 instanceof LivingEntity) {
+         var1.getEntity().method2741(Class8654.method31116(this, (LivingEntity)var4).method31130(), 1.0F);
       }
    }
 

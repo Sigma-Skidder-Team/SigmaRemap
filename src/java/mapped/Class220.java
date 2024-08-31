@@ -1,6 +1,8 @@
 package mapped;
 
-public class Class220<T extends Class880, M extends Class2827<T>> extends Class219<T, M> {
+import net.minecraft.entity.LivingEntity;
+
+public class Class220<T extends LivingEntity, M extends Class2827<T>> extends Class219<T, M> {
    private static final ResourceLocation field864 = new ResourceLocation("textures/entity/elytra.png");
    private final Class2863<T> field865 = new Class2863<T>();
 

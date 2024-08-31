@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 
 import java.util.Optional;
@@ -79,8 +80,8 @@ public class Class9379 {
             new Class3693(
                ImmutableMap.of(Class8830.field39820, Class2217.field14485),
                ImmutableList.of(
-                  Pair.of(Class3696.<Class880>method12551(EntityType.field41098, 8, Class8830.field39828, var0, 2), 2),
-                  Pair.of(Class3696.<Class880>method12551(EntityType.field41012, 8, Class8830.field39828, var0, 2), 1),
+                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41098, 8, Class8830.field39828, var0, 2), 2),
+                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41012, 8, Class8830.field39828, var0, 2), 1),
                   Pair.of(new Class3712(var0), 1),
                   Pair.of(new Class3694(var0, 2), 1),
                   Pair.of(new Class3730(var0), 2),
@@ -140,12 +141,12 @@ public class Class9379 {
             2,
             new Class3693(
                ImmutableList.of(
-                  Pair.of(Class3696.<Class880>method12551(EntityType.field41098, 8, Class8830.field39828, var1, 2), 2),
+                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41098, 8, Class8830.field39828, var1, 2), 2),
                   Pair.of(
                      new Class3696<Class1042, Class1045>(EntityType.field41098, 8, Class1045::method4700, Class1045::method4700, Class8830.field39829, var1, 2),
                      1
                   ),
-                  Pair.of(Class3696.<Class880>method12551(EntityType.field41012, 8, Class8830.field39828, var1, 2), 1),
+                  Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41012, 8, Class8830.field39828, var1, 2), 1),
                   Pair.of(new Class3712(var1), 1),
                   Pair.of(new Class3694(var1, 2), 1),
                   Pair.of(new Class3730(var1), 1),
@@ -219,7 +220,7 @@ public class Class9379 {
       return ImmutableList.of(Pair.of(0, new Class3716(15, 3)), Pair.of(1, new Class3751(32, var1 * 1.25F, 2)), method35592());
    }
 
-   private static Pair<Integer, Class3676<Class880>> method35591() {
+   private static Pair<Integer, Class3676<LivingEntity>> method35591() {
       return Pair.of(
          5,
          new Class3693(
@@ -237,7 +238,7 @@ public class Class9379 {
       );
    }
 
-   private static Pair<Integer, Class3676<Class880>> method35592() {
+   private static Pair<Integer, Class3676<LivingEntity>> method35592() {
       return Pair.of(
          5,
          new Class3693(

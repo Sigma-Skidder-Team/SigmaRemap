@@ -71,7 +71,7 @@ public class Class2820 extends Class2803<Class1105> {
       if (var11 != null) {
          Vector3d var12 = ((Entity)var11).method3286(0.0F);
          Vector3d var13 = var1.method3286(0.0F);
-         double var14 = var12.field18049 - var13.field18049;
+         double var14 = var12.y - var13.y;
          if (!(var14 > 0.0)) {
             this.field17573.field31033 = 1.0F;
          } else {
@@ -79,8 +79,8 @@ public class Class2820 extends Class2803<Class1105> {
          }
 
          Vector3d var16 = var1.method3281(0.0F);
-         var16 = new Vector3d(var16.field18048, 0.0, var16.field18050);
-         Vector3d var17 = new Vector3d(var13.field18048 - var12.field18048, 0.0, var13.field18050 - var12.field18050)
+         var16 = new Vector3d(var16.x, 0.0, var16.z);
+         Vector3d var17 = new Vector3d(var13.x - var12.x, 0.0, var13.z - var12.z)
             .method11333()
             .method11351((float) (Math.PI / 2));
          double var18 = var16.method11334(var17);

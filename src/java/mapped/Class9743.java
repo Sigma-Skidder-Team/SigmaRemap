@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 
 import java.util.Optional;
@@ -63,8 +64,8 @@ public class Class9743 {
       return new Class3693<Class1036>(
          ImmutableList.of(
             Pair.of(new Class3718(0.6F), 2),
-            Pair.of(Class3696.<Class880>method12551(EntityType.field41065, 8, Class8830.field39828, 0.6F, 2), 2),
-            Pair.of(Class3696.<Class880>method12551(EntityType.field41066, 8, Class8830.field39828, 0.6F, 2), 2),
+            Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41065, 8, Class8830.field39828, 0.6F, 2), 2),
+            Pair.of(Class3696.<LivingEntity>method12551(EntityType.field41066, 8, Class8830.field39828, 0.6F, 2), 2),
             Pair.of(new Class3700(Class8830.field39813, 0.6F, 2, 100), 2),
             Pair.of(new Class3726(Class8830.field39813, 0.6F, 5), 2),
             Pair.of(new Class3675(30, 60), 1)
@@ -84,13 +85,13 @@ public class Class9743 {
       var0.method4304(var3.method21404(Class8830.field39826));
    }
 
-   private static boolean method38200(Class1035 var0, Class880 var1) {
+   private static boolean method38200(Class1035 var0, LivingEntity var1) {
       return method38201(var0).filter(var1x -> var1x == var1).isPresent();
    }
 
-   private static Optional<? extends Class880> method38201(Class1035 var0) {
+   private static Optional<? extends LivingEntity> method38201(Class1035 var0) {
       Optional var3 = Class6983.method21586(var0, Class8830.field39849);
-      if (var3.isPresent() && method38202((Class880)var3.get())) {
+      if (var3.isPresent() && method38202((LivingEntity)var3.get())) {
          return var3;
       } else {
          Optional var4 = method38203(var0, Class8830.field39823);
@@ -98,15 +99,15 @@ public class Class9743 {
       }
    }
 
-   private static boolean method38202(Class880 var0) {
+   private static boolean method38202(LivingEntity var0) {
       return Class8088.field34762.test(var0);
    }
 
-   private static Optional<? extends Class880> method38203(Class1035 var0, Class8830<? extends Class880> var1) {
-      return var0.method2992().method21410(var1).filter(var1x -> var1x.method3213(var0, 12.0));
+   private static Optional<? extends LivingEntity> method38203(Class1035 var0, Class8830<? extends LivingEntity> var1) {
+      return var0.method2992().method21410(var1).filter(var1x -> var1x.isEntityInRange(var0, 12.0));
    }
 
-   public static void method38204(Class1036 var0, Class880 var1) {
+   public static void method38204(Class1036 var0, LivingEntity var1) {
       if (!(var1 instanceof Class1035)) {
          Class4388.method13836(var0, var1);
       }

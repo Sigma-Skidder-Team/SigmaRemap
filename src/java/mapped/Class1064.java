@@ -1,16 +1,23 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 
 public class Class1064 extends Class1066 implements Class1022 {
    private static final Class120 field5869 = Class120.method339(Items.field37842, Blocks.field36777.method11581());
-   private static final DataParameter<Integer> field5870 = EntityDataManager.<Integer>method35441(Class1064.class, Class7784.field33391);
-   private static final DataParameter<Integer> field5871 = EntityDataManager.<Integer>method35441(Class1064.class, Class7784.field33391);
-   private static final DataParameter<Integer> field5872 = EntityDataManager.<Integer>method35441(Class1064.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5870 = EntityDataManager.<Integer>createKey(Class1064.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5871 = EntityDataManager.<Integer>createKey(Class1064.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5872 = EntityDataManager.<Integer>createKey(Class1064.class, DataSerializers.field33391);
    private boolean field5873;
    private Class1064 field5874;
    private Class1064 field5875;
@@ -171,7 +178,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       }
 
       if (var8 && !this.method3245()) {
-         Class9455 var10 = this.method4894();
+         SoundEvent var10 = this.method4894();
          if (var10 != null) {
             this.world
                .method6743(
@@ -212,28 +219,28 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    @Override
-   public Class9455 method4893() {
+   public SoundEvent method4893() {
       return Sounds.field26735;
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26734;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26739;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26737;
    }
 
    @Nullable
    @Override
-   public Class9455 method4894() {
+   public SoundEvent method4894() {
       return Sounds.field26738;
    }
 
@@ -249,7 +256,7 @@ public class Class1064 extends Class1066 implements Class1022 {
 
    @Override
    public void method4896() {
-      Class9455 var3 = this.method4893();
+      SoundEvent var3 = this.method4893();
       if (var3 != null) {
          this.method2863(var3, this.method3099(), this.method3100());
       }
@@ -343,13 +350,13 @@ public class Class1064 extends Class1066 implements Class1022 {
       return EntityType.field41047.method33215(this.world);
    }
 
-   private void method4909(Class880 var1) {
+   private void method4909(LivingEntity var1) {
       Class883 var4 = new Class883(this.world, this);
       double var5 = var1.getPosX() - this.getPosX();
       double var7 = var1.method3440(0.3333333333333333) - var4.getPosY();
       double var9 = var1.getPosZ() - this.getPosZ();
       float var11 = MathHelper.method37766(var5 * var5 + var9 * var9) * 0.2F;
-      var4.method3462(var5, var7 + (double)var11, var9, 1.5F, 10.0F);
+      var4.shoot(var5, var7 + (double)var11, var9, 1.5F, 10.0F);
       if (!this.method3245()) {
          this.world
             .method6743(
@@ -436,7 +443,7 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    @Override
-   public void method4530(Class880 var1, float var2) {
+   public void method4530(LivingEntity var1, float var2) {
       this.method4909(var1);
    }
 

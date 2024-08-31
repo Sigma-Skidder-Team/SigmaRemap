@@ -10,6 +10,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -118,9 +119,9 @@ public class Class9548 {
       }
 
       for (Entity var11 : var1) {
-         if (var11 instanceof Class880) {
+         if (var11 instanceof LivingEntity) {
             Class2023 var12 = new Class2023(var2, var9, var4, false, var5);
-            if (((Class880)var11).method3035(var12)) {
+            if (((LivingEntity)var11).method3035(var12)) {
                var8++;
             }
          }
@@ -148,7 +149,7 @@ public class Class9548 {
       int var4 = 0;
 
       for (Entity var6 : var1) {
-         if (var6 instanceof Class880 && ((Class880)var6).method3030()) {
+         if (var6 instanceof LivingEntity && ((LivingEntity)var6).method3030()) {
             var4++;
          }
       }
@@ -172,7 +173,7 @@ public class Class9548 {
       int var5 = 0;
 
       for (Entity var7 : var1) {
-         if (var7 instanceof Class880 && ((Class880)var7).removeEffects(var2)) {
+         if (var7 instanceof LivingEntity && ((LivingEntity)var7).removeEffects(var2)) {
             var5++;
          }
       }

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -30,15 +31,15 @@ public class Class3380 extends Class3231 {
 
    private void method11979(Entity var1) {
       Vector3d var4 = var1.method3433();
-      if (var4.field18049 < 0.0) {
-         double var5 = !(var1 instanceof Class880) ? 0.8 : 1.0;
-         var1.method3435(var4.field18048, -var4.field18049 * var5, var4.field18050);
+      if (var4.y < 0.0) {
+         double var5 = !(var1 instanceof LivingEntity) ? 0.8 : 1.0;
+         var1.method3435(var4.x, -var4.y * var5, var4.z);
       }
    }
 
    @Override
    public void method11561(World var1, BlockPos var2, Entity var3) {
-      double var6 = Math.abs(var3.method3433().field18049);
+      double var6 = Math.abs(var3.method3433().y);
       if (var6 < 0.1 && !var3.method3332()) {
          double var8 = 0.4 + var6 * 0.2;
          var3.method3434(var3.method3433().method11347(var8, 1.0, var8));

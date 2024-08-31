@@ -2,6 +2,9 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -181,7 +184,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
       }
    }
 
-   public void method3822(Class9455 var1) {
+   public void method3822(SoundEvent var1) {
       this.field5324.method6742((PlayerEntity)null, this.field5325, var1, Class2266.field14732, 1.0F, 1.0F);
    }
 

@@ -2,7 +2,10 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -101,8 +104,8 @@ public class Class1036 extends Class1035 {
    public boolean method2741(Class8654 var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
       if (!this.world.isRemote) {
-         if (var5 && var1.method31109() instanceof Class880) {
-            Class9743.method38204(this, (Class880)var1.method31109());
+         if (var5 && var1.method31109() instanceof LivingEntity) {
+            Class9743.method38204(this, (LivingEntity)var1.method31109());
          }
 
          return var5;
@@ -112,17 +115,17 @@ public class Class1036 extends Class1035 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26939;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26942;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26941;
    }
 

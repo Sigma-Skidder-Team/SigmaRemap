@@ -1,13 +1,15 @@
 package mapped;
 
+import net.minecraft.util.SoundEvent;
+
 public enum Class2139 {
    field14003(Sounds.field27183),
    field14004(Sounds.field27184);
 
-   private final Class9455 field14005;
+   private final SoundEvent field14005;
    private static final Class2139[] field14006 = new Class2139[]{field14003, field14004};
 
-   private Class2139(Class9455 var3) {
+   private Class2139(SoundEvent var3) {
       this.field14005 = var3;
    }
 

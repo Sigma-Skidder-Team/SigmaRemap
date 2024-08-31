@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.base.Predicates;
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 
 public class Class3400 extends Block {

@@ -1,6 +1,10 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
@@ -48,10 +52,10 @@ public class Class3458 extends Block {
    }
 
    public static void method12131(World var0, BlockPos var1) {
-      method12132(var0, var1, (Class880)null);
+      method12132(var0, var1, (LivingEntity)null);
    }
 
-   private static void method12132(World var0, BlockPos var1, Class880 var2) {
+   private static void method12132(World var0, BlockPos var1, LivingEntity var2) {
       if (!var0.isRemote) {
          Class1004 var5 = new Class1004(var0, (double)var1.getX() + 0.5, (double)var1.getY(), (double)var1.getZ() + 0.5, var2);
          var0.method6916(var5);
@@ -81,12 +85,12 @@ public class Class3458 extends Block {
    }
 
    @Override
-   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, Class882 var4) {
+   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, ProjectileEntity var4) {
       if (!var1.isRemote) {
          Entity var7 = var4.method3460();
          if (var4.method3327()) {
             BlockPos var8 = var3.getPos();
-            method12132(var1, var8, !(var7 instanceof Class880) ? null : (Class880)var7);
+            method12132(var1, var8, !(var7 instanceof LivingEntity) ? null : (LivingEntity)var7);
             var1.removeBlock(var8, false);
          }
       }

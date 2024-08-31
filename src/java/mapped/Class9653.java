@@ -15,7 +15,10 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -359,7 +362,7 @@ public class Class9653 {
    private static int method37668(Class6619 var0, Vector3d var1, List<ItemStack> var2, Class7946 var3) throws CommandSyntaxException {
       ServerWorld var6 = var0.method20172();
       var2.forEach(var2x -> {
-         ItemEntity var5 = new ItemEntity(var6, var1.field18048, var1.field18049, var1.field18050, var2x.copy());
+         ItemEntity var5 = new ItemEntity(var6, var1.x, var1.y, var1.z, var2x.copy());
          var5.method4131();
          var6.method6916(var5);
       });
@@ -387,10 +390,10 @@ public class Class9653 {
 
    private static ItemStack method37671(Class6619 var0, Class2106 var1) throws CommandSyntaxException {
       Entity var4 = var0.method20174();
-      if (!(var4 instanceof Class880)) {
+      if (!(var4 instanceof LivingEntity)) {
          throw field45129.create(var4.getDisplayName());
       } else {
-         return ((Class880)var4).method2943(var1);
+         return ((LivingEntity)var4).method2943(var1);
       }
    }
 
@@ -410,8 +413,8 @@ public class Class9653 {
    }
 
    private static int method37673(CommandContext<Class6619> var0, Entity var1, Class8914 var2) throws CommandSyntaxException {
-      if (var1 instanceof Class880) {
-         ResourceLocation var5 = ((Class880)var1).method3055();
+      if (var1 instanceof LivingEntity) {
+         ResourceLocation var5 = ((LivingEntity)var1).method3055();
          Class6619 var6 = (Class6619)var0.getSource();
          Class9464 var7 = new Class9464(var6.method20172());
          Entity var8 = var6.method20173();

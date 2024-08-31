@@ -12,7 +12,9 @@ import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -278,7 +280,7 @@ public final class Biome {
       return this.field40321.method25680();
    }
 
-   public Optional<Class9455> method32523() {
+   public Optional<SoundEvent> method32523() {
       return this.field40321.method25681();
    }
 

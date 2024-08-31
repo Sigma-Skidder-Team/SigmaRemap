@@ -4,8 +4,11 @@ import com.google.common.collect.ImmutableMap;
 import com.mentalfrostbyte.jello.event.impl.Class4424;
 import com.mojang.serialization.MapCodec;
 import com.mentalfrostbyte.jello.Client;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
@@ -362,7 +365,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11580(this.method23457());
    }
 
-   public void method23453(World var1, BlockState var2, BlockRayTraceResult var3, Class882 var4) {
+   public void method23453(World var1, BlockState var2, BlockRayTraceResult var3, ProjectileEntity var4) {
       this.getBlock().method11595(var1, var2, var3, var4);
    }
 

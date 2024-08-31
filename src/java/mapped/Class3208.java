@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -50,7 +51,7 @@ public class Class3208 extends Block implements Class3207 {
             .method23465(field18605, Class86.field219)
             .method23465(field18606, Boolean.valueOf(var6.method23472() == Class9479.field44066));
          Direction var8 = var1.method18354();
-         return var8 != Direction.DOWN && (var8 == Direction.field673 || !(var1.method18355().field18049 - (double)var4.getY() > 0.5))
+         return var8 != Direction.DOWN && (var8 == Direction.field673 || !(var1.method18355().y - (double)var4.getY() > 0.5))
             ? var7
             : var7.method23465(field18605, Class86.field218);
       } else {
@@ -67,7 +68,7 @@ public class Class3208 extends Block implements Class3207 {
       } else if (!var2.method18347()) {
          return true;
       } else {
-         boolean var7 = var2.method18355().field18049 - (double)var2.method18345().getY() > 0.5;
+         boolean var7 = var2.method18355().y - (double)var2.method18345().getY() > 0.5;
          Direction var8 = var2.method18354();
          return var6 != Class86.field219
             ? var8 == Direction.DOWN || !var7 && var8.method544().method324()

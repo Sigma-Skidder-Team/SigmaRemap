@@ -12,6 +12,7 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import java.util.UUID;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -216,16 +217,16 @@ public class Class6987 {
       }
    }
 
-   private static Class880 method21612(Entity var0) throws CommandSyntaxException {
-      if (var0 instanceof Class880) {
-         return (Class880)var0;
+   private static LivingEntity method21612(Entity var0) throws CommandSyntaxException {
+      if (var0 instanceof LivingEntity) {
+         return (LivingEntity)var0;
       } else {
          throw field30229.create(var0.getName());
       }
    }
 
-   private static Class880 method21613(Entity var0, Class4869 var1) throws CommandSyntaxException {
-      Class880 var4 = method21612(var0);
+   private static LivingEntity method21613(Entity var0, Class4869 var1) throws CommandSyntaxException {
+      LivingEntity var4 = method21612(var0);
       if (var4.method3088().method33381(var1)) {
          return var4;
       } else {
@@ -234,7 +235,7 @@ public class Class6987 {
    }
 
    private static int method21614(Class6619 var0, Entity var1, Class4869 var2, double var3) throws CommandSyntaxException {
-      Class880 var7 = method21613(var1, var2);
+      LivingEntity var7 = method21613(var1, var2);
       double var8 = var7.method3086(var2);
       var0.method20179(
          new TranslationTextComponent("commands.attribute.value.get.success", new TranslationTextComponent(var2.method15032()), var1.getName(), var8), false
@@ -243,7 +244,7 @@ public class Class6987 {
    }
 
    private static int method21615(Class6619 var0, Entity var1, Class4869 var2, double var3) throws CommandSyntaxException {
-      Class880 var7 = method21613(var1, var2);
+      LivingEntity var7 = method21613(var1, var2);
       double var8 = var7.method3087(var2);
       var0.method20179(
          new TranslationTextComponent("commands.attribute.base_value.get.success", new TranslationTextComponent(var2.method15032()), var1.getName(), var8),
@@ -253,7 +254,7 @@ public class Class6987 {
    }
 
    private static int method21616(Class6619 var0, Entity var1, Class4869 var2, UUID var3, double var4) throws CommandSyntaxException {
-      Class880 var8 = method21613(var1, var2);
+      LivingEntity var8 = method21613(var1, var2);
       Class9020 var9 = var8.method3088();
       if (var9.method33382(var2, var3)) {
          double var10 = var9.method33385(var2, var3);

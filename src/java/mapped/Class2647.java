@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.EnumSet;
 
 public class Class2647 extends Class2595 {
@@ -28,7 +31,7 @@ public class Class2647 extends Class2595 {
       long var3 = this.field16990.world.method6783();
       if (var3 - this.field17000 >= 20L) {
          this.field17000 = var3;
-         Class880 var5 = this.field16990.method4232();
+         LivingEntity var5 = this.field16990.method4232();
          if (var5 != null) {
             if (var5.isAlive()) {
                this.field16993 = this.field16990.method4230().method21652(var5, 0);
@@ -48,7 +51,7 @@ public class Class2647 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      Class880 var3 = this.field16990.method4232();
+      LivingEntity var3 = this.field16990.method4232();
       if (var3 != null) {
          if (!var3.isAlive()) {
             return false;
@@ -72,9 +75,9 @@ public class Class2647 extends Class2595 {
 
    @Override
    public void method10807() {
-      Class880 var3 = this.field16990.method4232();
+      LivingEntity var3 = this.field16990.method4232();
       if (!Class8088.field34761.test(var3)) {
-         this.field16990.method4233((Class880)null);
+         this.field16990.method4233((LivingEntity)null);
       }
 
       this.field16990.method4304(false);
@@ -83,7 +86,7 @@ public class Class2647 extends Class2595 {
 
    @Override
    public void method10805() {
-      Class880 var3 = this.field16990.method4232();
+      LivingEntity var3 = this.field16990.method4232();
       this.field16990.method4227().method28040(var3, 30.0F, 30.0F);
       double var4 = this.field16990.method3276(var3.getPosX(), var3.getPosY(), var3.getPosZ());
       this.field16997 = Math.max(this.field16997 - 1, 0);
@@ -115,7 +118,7 @@ public class Class2647 extends Class2595 {
       this.method10854(var3, var4);
    }
 
-   public void method10854(Class880 var1, double var2) {
+   public void method10854(LivingEntity var1, double var2) {
       double var6 = this.method10859(var1);
       if (var2 <= var6 && this.field16998 <= 0) {
          this.method10855();
@@ -140,7 +143,7 @@ public class Class2647 extends Class2595 {
       return 20;
    }
 
-   public double method10859(Class880 var1) {
+   public double method10859(LivingEntity var1) {
       return (double)(this.field16990.method3429() * 2.0F * this.field16990.method3429() * 2.0F + var1.method3429());
    }
 }

@@ -87,7 +87,7 @@ public class Class2610 extends Class2595 {
             return;
          }
 
-         this.field16865.method4230().method21654(var4.field18048, var4.field18049, var4.field18050, this.field16866);
+         this.field16865.method4230().method21654(var4.x, var4.y, var4.z, this.field16866);
       }
    }
 

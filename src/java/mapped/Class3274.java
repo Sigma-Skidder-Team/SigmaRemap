@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 public class Class3274 extends Item {
    private static String[] field18774;
 
@@ -8,7 +11,7 @@ public class Class3274 extends Item {
    }
 
    @Override
-   public ItemStack method11709(ItemStack var1, World var2, Class880 var3) {
+   public ItemStack method11709(ItemStack var1, World var2, LivingEntity var3) {
       if (var3 instanceof ServerPlayerEntity) {
          ServerPlayerEntity var6 = (ServerPlayerEntity)var3;
          CriteriaTriggers.field44490.method15174(var6, var1);

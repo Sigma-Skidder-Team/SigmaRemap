@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.SoundEvent;
+
 public class Class3203 extends Class3202 {
    private static String[] field18499;
 
@@ -8,7 +10,7 @@ public class Class3203 extends Class3202 {
    }
 
    @Override
-   public Class9455 method11521(boolean var1) {
+   public SoundEvent method11521(boolean var1) {
       return !var1 ? Sounds.STONE_BUTTON_CLICK_OFF : Sounds.STONE_BUTTON_CLICK_ON;
    }
 }

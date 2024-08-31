@@ -27,7 +27,7 @@ public class Blink extends Module {
         this.field23867 = mc.player.rotationPitch;
         field23863 = new Class1116(mc.world, mc.player.getGameProfile());
         field23863.inventory = mc.player.inventory;
-        field23863.method3269(this.field23865.field18048, this.field23865.field18049, this.field23865.field18050, this.field23866, this.field23867);
+        field23863.method3269(this.field23865.x, this.field23865.y, this.field23865.z, this.field23866, this.field23867);
         field23863.field4967 = mc.player.field4967;
         mc.world.method6846(-1, field23863);
     }

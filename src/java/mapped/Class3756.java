@@ -1,11 +1,13 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Optional;
 
-public class Class3756 extends Class3676<Class880> {
+public class Class3756 extends Class3676<LivingEntity> {
    private static String[] field19914;
    private long field19915;
 
@@ -14,7 +16,7 @@ public class Class3756 extends Class3676<Class880> {
    }
 
    @Override
-   public boolean method12508(ServerWorld var1, Class880 var2) {
+   public boolean method12508(ServerWorld var1, LivingEntity var2) {
       if (var2.isPassenger()) {
          return false;
       } else {
@@ -40,7 +42,7 @@ public class Class3756 extends Class3676<Class880> {
    }
 
    @Override
-   public boolean method12499(ServerWorld var1, Class880 var2, long var3) {
+   public boolean method12499(ServerWorld var1, LivingEntity var2, long var3) {
       Optional var7 = var2.method2992().<Class9378>method21410(Class8830.field39813);
       if (!var7.isPresent()) {
          return false;
@@ -53,7 +55,7 @@ public class Class3756 extends Class3676<Class880> {
    }
 
    @Override
-   public void method12502(ServerWorld var1, Class880 var2, long var3) {
+   public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       if (var3 > this.field19915) {
          Class3697.method12561(var1, var2, (Class7176)null, (Class7176)null);
          var2.method2753(var2.method2992().<Class9378>method21410(Class8830.field39813).get().method35579());
@@ -66,7 +68,7 @@ public class Class3756 extends Class3676<Class880> {
    }
 
    @Override
-   public void method12506(ServerWorld var1, Class880 var2, long var3) {
+   public void method12506(ServerWorld var1, LivingEntity var2, long var3) {
       if (var2.isSleeping()) {
          var2.method2907();
          this.field19915 = var3 + 40L;

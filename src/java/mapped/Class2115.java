@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.SoundEvent;
+
 public interface Class2115 {
    int method8785(Class2106 var1);
 
@@ -7,7 +9,7 @@ public interface Class2115 {
 
    int method8787();
 
-   Class9455 method8788();
+   SoundEvent method8788();
 
    Class120 method8789();
 

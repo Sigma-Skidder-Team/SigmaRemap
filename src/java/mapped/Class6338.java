@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.SoundEvent;
+
 public abstract class Class6338 implements Class6340 {
    public Class6647 field27853;
    public final Class2266 field27854;
@@ -15,7 +17,7 @@ public abstract class Class6338 implements Class6340 {
    public boolean field27864;
    public boolean field27865;
 
-   public Class6338(Class9455 var1, Class2266 var2) {
+   public Class6338(SoundEvent var1, Class2266 var2) {
       this(var1.method36383(), var2);
    }
 

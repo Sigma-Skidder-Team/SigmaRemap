@@ -91,8 +91,8 @@ public class Class2683 extends Class2595 {
 
          this.field17097
             .method4227()
-            .method28042(var5.field18048, var5.field18049, var5.field18050, (float)(this.field17097.method4260() + 20), (float)this.field17097.method4259());
-         this.field17097.method4230().method21654(var5.field18048, var5.field18049, var5.field18050, 1.3);
+            .method28042(var5.x, var5.y, var5.z, (float)(this.field17097.method4260() + 20), (float)this.field17097.method4259());
+         this.field17097.method4230().method21654(var5.x, var5.y, var5.z, 1.3);
          if (var3.rand.nextInt(80) == 0) {
             var3.method6786(this.field17097, (byte)38);
          }

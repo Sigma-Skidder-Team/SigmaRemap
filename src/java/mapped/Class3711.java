@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 
 public class Class3711 extends Class3676<Class1042> {
    private static String[] field19777;
@@ -34,11 +35,11 @@ public class Class3711 extends Class3676<Class1042> {
       }
    }
 
-   public static boolean method12591(Class880 var0) {
+   public static boolean method12591(LivingEntity var0) {
       return var0.method2992().method21404(Class8830.field39838);
    }
 
-   public static boolean method12592(Class880 var0) {
+   public static boolean method12592(LivingEntity var0) {
       return var0.method2992().method21404(Class8830.field39835);
    }
 }

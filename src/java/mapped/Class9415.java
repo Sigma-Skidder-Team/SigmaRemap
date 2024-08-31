@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Collections;
@@ -31,13 +32,13 @@ public class Class9415 {
 
    public boolean method36121(Entity var1) {
       if (this != field43676) {
-         return !(var1 instanceof Class880) ? false : this.method36123(((Class880)var1).method3032());
+         return !(var1 instanceof LivingEntity) ? false : this.method36123(((LivingEntity)var1).method3032());
       } else {
          return true;
       }
    }
 
-   public boolean method36122(Class880 var1) {
+   public boolean method36122(LivingEntity var1) {
       return this != field43676 ? this.method36123(var1.method3032()) : true;
    }
 

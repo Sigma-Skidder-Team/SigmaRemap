@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.AbstractGui;
 
 public class Class1174 extends Class1155<Class1174> {

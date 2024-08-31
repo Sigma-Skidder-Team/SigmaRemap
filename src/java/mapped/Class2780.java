@@ -115,9 +115,9 @@ public class Class2780 extends Class2595 {
          this.field17382
             .method4230()
             .method21654(
-               this.field17382.getPosX() + var7.field18048,
-               this.field17382.getPosY() + var7.field18049,
-               this.field17382.getPosZ() + var7.field18050,
+               this.field17382.getPosX() + var7.x,
+               this.field17382.getPosY() + var7.y,
+               this.field17382.getPosZ() + var7.z,
                this.field17383
             );
       }

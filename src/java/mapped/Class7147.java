@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.world.Difficulty;
 
 public final class Class7147 extends Effect {
@@ -15,7 +16,7 @@ public final class Class7147 extends Effect {
    }
 
    @Override
-   public void method22289(Class880 var1, int var2) {
+   public void method22289(LivingEntity var1, int var2) {
       if (var1 instanceof ServerPlayerEntity && !var1.isSpectator()) {
          ServerPlayerEntity var5 = (ServerPlayerEntity)var1;
          ServerWorld var6 = var5.getServerWorld();

@@ -4,6 +4,7 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -180,7 +181,7 @@ public class Class6762 extends Class6764 {
          (double)var1.field30849 - this.field29476.getPosZ()
       );
       AxisAlignedBB var5 = this.field29476.getBoundingBox();
-      int var6 = MathHelper.method37774(var4.method11348() / var5.method19675());
+      int var6 = MathHelper.method37774(var4.method11348() / var5.getAverageEdgeLength());
       var4 = var4.method11344((double)(1.0F / (float)var6));
 
       for (int var7 = 1; var7 <= var6; var7++) {

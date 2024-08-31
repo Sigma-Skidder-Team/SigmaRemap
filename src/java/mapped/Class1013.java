@@ -1,16 +1,21 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.UUID;
 
 public abstract class Class1013 extends Class1018 {
-   public static final DataParameter<Byte> field5668 = EntityDataManager.<Byte>method35441(Class1013.class, Class7784.field33390);
-   public static final DataParameter<Optional<UUID>> field5669 = EntityDataManager.<Optional<UUID>>method35441(Class1013.class, Class7784.field33404);
+   public static final DataParameter<Byte> field5668 = EntityDataManager.<Byte>createKey(Class1013.class, DataSerializers.field33390);
+   public static final DataParameter<Optional<UUID>> field5669 = EntityDataManager.<Optional<UUID>>createKey(Class1013.class, DataSerializers.field33404);
    private boolean field5670;
 
    public Class1013(EntityType<? extends Class1013> var1, World var2) {
@@ -140,7 +145,7 @@ public abstract class Class1013 extends Class1018 {
    }
 
    @Nullable
-   public Class880 method4400() {
+   public LivingEntity method4400() {
       try {
          UUID var3 = this.method4397();
          return var3 == null ? null : this.world.method7196(var3);
@@ -150,22 +155,22 @@ public abstract class Class1013 extends Class1018 {
    }
 
    @Override
-   public boolean method3026(Class880 var1) {
+   public boolean method3026(LivingEntity var1) {
       return !this.method4401(var1) ? super.method3026(var1) : false;
    }
 
-   public boolean method4401(Class880 var1) {
+   public boolean method4401(LivingEntity var1) {
       return var1 == this.method4400();
    }
 
-   public boolean method4388(Class880 var1, Class880 var2) {
+   public boolean method4388(LivingEntity var1, LivingEntity var2) {
       return true;
    }
 
    @Override
    public Team getTeam() {
       if (this.method4393()) {
-         Class880 var3 = this.method4400();
+         LivingEntity var3 = this.method4400();
          if (var3 != null) {
             return var3.getTeam();
          }
@@ -177,7 +182,7 @@ public abstract class Class1013 extends Class1018 {
    @Override
    public boolean method3345(Entity var1) {
       if (this.method4393()) {
-         Class880 var4 = this.method4400();
+         LivingEntity var4 = this.method4400();
          if (var1 == var4) {
             return true;
          }

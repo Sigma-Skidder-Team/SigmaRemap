@@ -1,7 +1,10 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -13,11 +16,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Class3283 extends Item {
-   private static final Map<Class9455, Class3283> field18793 = Maps.newHashMap();
+   private static final Map<SoundEvent, Class3283> field18793 = Maps.newHashMap();
    private final int field18794;
-   private final Class9455 field18795;
+   private final SoundEvent field18795;
 
-   public Class3283(int var1, Class9455 var2, Class5643 var3) {
+   public Class3283(int var1, SoundEvent var2, Class5643 var3) {
       super(var3);
       this.field18794 = var1;
       this.field18795 = var2;
@@ -61,11 +64,11 @@ public class Class3283 extends Item {
    }
 
    @Nullable
-   public static Class3283 method11814(Class9455 var0) {
+   public static Class3283 method11814(SoundEvent var0) {
       return field18793.get(var0);
    }
 
-   public Class9455 method11815() {
+   public SoundEvent method11815() {
       return this.field18795;
    }
 }

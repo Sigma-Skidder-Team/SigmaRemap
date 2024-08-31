@@ -1,6 +1,10 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -16,7 +20,7 @@ public class Class959 extends TileEntity implements Class935 {
    private boolean field5384;
    private boolean field5385;
    private final List<BlockPos> field5386 = Lists.newArrayList();
-   private Class880 field5387;
+   private LivingEntity field5387;
    private UUID field5388;
    private long field5389;
 
@@ -148,7 +152,7 @@ public class Class959 extends TileEntity implements Class935 {
    }
 
    private void method3898() {
-      Class880 var3 = this.field5387;
+      LivingEntity var3 = this.field5387;
       int var4 = this.field5386.size();
       if (var4 >= 42) {
          if (this.field5387 == null && this.field5388 != null) {
@@ -159,9 +163,9 @@ public class Class959 extends TileEntity implements Class935 {
                this.field5387 = null;
             }
          } else {
-            List var5 = this.field5324.<Class880>method6772(Class880.class, this.method3900(), var0 -> var0 instanceof Class1008 && var0.method3253());
+            List var5 = this.field5324.<LivingEntity>method6772(LivingEntity.class, this.method3900(), var0 -> var0 instanceof Class1008 && var0.method3253());
             if (!var5.isEmpty()) {
-               this.field5387 = (Class880)var5.get(this.field5324.rand.nextInt(var5.size()));
+               this.field5387 = (LivingEntity)var5.get(this.field5324.rand.nextInt(var5.size()));
             }
          }
       } else {
@@ -210,9 +214,9 @@ public class Class959 extends TileEntity implements Class935 {
    }
 
    @Nullable
-   private Class880 method3901() {
-      List var3 = this.field5324.<Class880>method6772(Class880.class, this.method3900(), var1 -> var1.getUniqueID().equals(this.field5388));
-      return var3.size() != 1 ? null : (Class880)var3.get(0);
+   private LivingEntity method3901() {
+      List var3 = this.field5324.<LivingEntity>method6772(LivingEntity.class, this.method3900(), var1 -> var1.getUniqueID().equals(this.field5388));
+      return var3.size() != 1 ? null : (LivingEntity)var3.get(0);
    }
 
    private void method3902() {
@@ -232,7 +236,7 @@ public class Class959 extends TileEntity implements Class935 {
             Vector3d var13 = new Vector3d((double)var9, (double)var10, (double)var11)
                .method11339((double)var12.getX(), (double)var12.getY(), (double)var12.getZ());
             this.field5324
-               .method6746(Class7940.field34104, var6.field18048, var6.field18049, var6.field18050, var13.field18048, var13.field18049, var13.field18050);
+               .method6746(Class7940.field34104, var6.x, var6.y, var6.z, var13.x, var13.y, var13.z);
          }
       }
 
@@ -243,7 +247,7 @@ public class Class959 extends TileEntity implements Class935 {
          float var18 = (-0.5F + var3.nextFloat()) * (3.0F + this.field5387.method3429());
          Vector3d var19 = new Vector3d((double)var16, (double)var17, (double)var18);
          this.field5324
-            .method6746(Class7940.field34104, var15.field18048, var15.field18049, var15.field18050, var19.field18048, var19.field18049, var19.field18050);
+            .method6746(Class7940.field34104, var15.x, var15.y, var15.z, var19.x, var19.y, var19.z);
       }
    }
 
@@ -271,7 +275,7 @@ public class Class959 extends TileEntity implements Class935 {
       return (this.field5383 + var1) * -0.0375F;
    }
 
-   public void method3908(Class9455 var1) {
+   public void method3908(SoundEvent var1) {
       this.field5324.method6742((PlayerEntity)null, this.field5325, var1, Class2266.field14732, 1.0F, 1.0F);
    }
 }

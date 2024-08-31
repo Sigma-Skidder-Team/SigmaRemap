@@ -3,10 +3,12 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.List;
 import java.util.Map;
 
-public class Class3693<E extends Class880> extends Class3692<E> {
+public class Class3693<E extends LivingEntity> extends Class3692<E> {
    private static String[] field19724;
 
    public Class3693(List<Pair<Class3676<? super E>, Integer>> var1) {

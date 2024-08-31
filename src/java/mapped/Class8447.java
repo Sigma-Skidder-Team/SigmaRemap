@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.SoundEvent;
+
 public class Class8447 {
    private static String[] field36199;
    public static final Class8447 field36200 = new Class8447(
@@ -145,13 +147,13 @@ public class Class8447 {
    );
    public final float field36247;
    public final float field36248;
-   private final Class9455 field36249;
-   private final Class9455 field36250;
-   private final Class9455 field36251;
-   private final Class9455 field36252;
-   private final Class9455 field36253;
+   private final SoundEvent field36249;
+   private final SoundEvent field36250;
+   private final SoundEvent field36251;
+   private final SoundEvent field36252;
+   private final SoundEvent field36253;
 
-   public Class8447(float var1, float var2, Class9455 var3, Class9455 var4, Class9455 var5, Class9455 var6, Class9455 var7) {
+   public Class8447(float var1, float var2, SoundEvent var3, SoundEvent var4, SoundEvent var5, SoundEvent var6, SoundEvent var7) {
       this.field36247 = var1;
       this.field36248 = var2;
       this.field36249 = var3;
@@ -169,23 +171,23 @@ public class Class8447 {
       return this.field36248;
    }
 
-   public Class9455 method29712() {
+   public SoundEvent method29712() {
       return this.field36249;
    }
 
-   public Class9455 method29713() {
+   public SoundEvent method29713() {
       return this.field36250;
    }
 
-   public Class9455 method29714() {
+   public SoundEvent method29714() {
       return this.field36251;
    }
 
-   public Class9455 method29715() {
+   public SoundEvent method29715() {
       return this.field36252;
    }
 
-   public Class9455 method29716() {
+   public SoundEvent method29716() {
       return this.field36253;
    }
 }

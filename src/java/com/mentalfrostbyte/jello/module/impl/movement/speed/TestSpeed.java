@@ -48,15 +48,15 @@ public class TestSpeed extends Module {
                     && (mc.player.field4984 != 0.0F || mc.player.field4982 != 0.0F)
                     && this.getBooleanValueFromSetttingName("AutoJump")) {
                 mc.player.method2914();
-                var1.method13993(mc.player.method3433().field18048);
-                var1.method13995(mc.player.method3433().field18049);
-                var1.method13997(mc.player.method3433().field18050);
+                var1.method13993(mc.player.method3433().x);
+                var1.method13995(mc.player.method3433().y);
+                var1.method13997(mc.player.method3433().z);
             }
 
-            double var4 = var1.method13998().field18049;
-            var1.method13998().field18049 = 0.0;
+            double var4 = var1.method13998().y;
+            var1.method13998().y = 0.0;
             double var6 = var1.method13998().method11348();
-            var1.method13998().field18049 = var4;
+            var1.method13998().y = var4;
             this.field23916 = Class9567.method37092(var1, var6, Class9567.method37083()[0], this.field23916, 45.0F);
             if (this.field23913 != 0.0F || this.field23914 != 0.0F) {
                 this.field23913 = (float) ((double) this.field23913 * 0.85);

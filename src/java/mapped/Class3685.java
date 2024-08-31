@@ -1,14 +1,16 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.Optional;
 import java.util.function.Predicate;
 
 public class Class3685<E extends Class1006> extends Class3676<E> {
    private static String[] field19701;
-   private final Predicate<Class880> field19702;
+   private final Predicate<LivingEntity> field19702;
 
-   public Class3685(Predicate<Class880> var1) {
+   public Class3685(Predicate<LivingEntity> var1) {
       super(ImmutableMap.of(Class8830.field39826, Class2217.field14484, Class8830.field39841, Class2217.field14486));
       this.field19702 = var1;
    }
@@ -43,18 +45,18 @@ public class Class3685<E extends Class1006> extends Class3676<E> {
       return this.method12527((E)var1).world != var1.world;
    }
 
-   private Class880 method12527(E var1) {
-      return var1.method2992().<Class880>method21410(Class8830.field39826).get();
+   private LivingEntity method12527(E var1) {
+      return var1.method2992().<LivingEntity>method21410(Class8830.field39826).get();
    }
 
-   private static <E extends Class880> boolean method12528(E var0) {
+   private static <E extends LivingEntity> boolean method12528(E var0) {
       Optional var3 = var0.method2992().<Long>method21410(Class8830.field39841);
       return var3.isPresent() && var0.world.method6783() - (Long)var3.get() > 200L;
    }
 
    private boolean method12529(E var1) {
-      Optional var4 = var1.method2992().<Class880>method21410(Class8830.field39826);
-      return var4.isPresent() && !((Class880)var4.get()).isAlive();
+      Optional var4 = var1.method2992().<LivingEntity>method21410(Class8830.field39826);
+      return var4.isPresent() && !((LivingEntity)var4.get()).isAlive();
    }
 
    private void method12530(E var1) {

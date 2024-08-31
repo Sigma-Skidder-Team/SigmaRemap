@@ -33,7 +33,7 @@ public class MinemenAntiKB extends Module {
                 var1.method13912(var1.method13911() - 5.0E-7);
                 var1.method13920(false);
             } else {
-                if (this.field23852 && mc.player.method3433().field18049 < 0.0) {
+                if (this.field23852 && mc.player.method3433().y < 0.0) {
                     this.field23852 = false;
                     var1.method13920(true);
                 }

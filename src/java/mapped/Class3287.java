@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 public class Class3287 extends Item {
@@ -118,7 +121,7 @@ public class Class3287 extends Item {
    }
 
    public void method11826(PlayerEntity var1, Class1660 var2, BlockPos var3) {
-      Class9455 var6 = !this.field18798.method25067(Class8953.field40470) ? Sounds.field26426 : Sounds.field26428;
+      SoundEvent var6 = !this.field18798.method25067(Class8953.field40470) ? Sounds.field26426 : Sounds.field26428;
       var2.method6742(var1, var3, var6, Class2266.field14732, 1.0F, 1.0F);
    }
 }

@@ -1,9 +1,11 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.projectile.ProjectileEntity;
 
-public abstract class Class901 extends Class882 {
+public abstract class Class901 extends ProjectileEntity {
    public double field5141;
    public double field5142;
    public double field5143;
@@ -24,10 +26,10 @@ public abstract class Class901 extends Class882 {
       }
    }
 
-   public Class901(EntityType<? extends Class901> var1, Class880 var2, double var3, double var5, double var7, World var9) {
+   public Class901(EntityType<? extends Class901> var1, LivingEntity var2, double var3, double var5, double var7, World var9) {
       this(var1, var2.getPosX(), var2.getPosY(), var2.getPosZ(), var3, var5, var7, var9);
-      this.method3459(var2);
-      this.method3214(var2.rotationYaw, var2.rotationPitch);
+      this.setShooter(var2);
+      this.setRotation(var2.rotationYaw, var2.rotationPitch);
    }
 
    @Override
@@ -35,8 +37,8 @@ public abstract class Class901 extends Class882 {
    }
 
    @Override
-   public boolean method3291(double var1) {
-      double var5 = this.getBoundingBox().method19675() * 4.0;
+   public boolean isInRangeToRenderDist(double var1) {
+      double var5 = this.getBoundingBox().getAverageEdgeLength() * 4.0;
       if (Double.isNaN(var5)) {
          var5 = 4.0;
       }
@@ -61,9 +63,9 @@ public abstract class Class901 extends Class882 {
 
          this.method3240();
          Vector3d var5 = this.method3433();
-         double var6 = this.getPosX() + var5.field18048;
-         double var8 = this.getPosY() + var5.field18049;
-         double var10 = this.getPosZ() + var5.field18050;
+         double var6 = this.getPosX() + var5.x;
+         double var8 = this.getPosY() + var5.y;
+         double var10 = this.getPosZ() + var5.z;
          Class9456.method36388(this, 0.2F);
          float var12 = this.method3531();
          if (this.method3250()) {
@@ -72,12 +74,12 @@ public abstract class Class901 extends Class882 {
                this.world
                   .method6746(
                      Class7940.field34052,
-                     var6 - var5.field18048 * 0.25,
-                     var8 - var5.field18049 * 0.25,
-                     var10 - var5.field18050 * 0.25,
-                     var5.field18048,
-                     var5.field18049,
-                     var5.field18050
+                     var6 - var5.x * 0.25,
+                     var8 - var5.y * 0.25,
+                     var10 - var5.z * 0.25,
+                     var5.x,
+                     var5.y,
+                     var5.z
                   );
             }
 
@@ -148,10 +150,10 @@ public abstract class Class901 extends Class882 {
          } else {
             Vector3d var6 = var5.method3320();
             this.method3434(var6);
-            this.field5141 = var6.field18048 * 0.1;
-            this.field5142 = var6.field18049 * 0.1;
-            this.field5143 = var6.field18050 * 0.1;
-            this.method3459(var5);
+            this.field5141 = var6.x * 0.1;
+            this.field5142 = var6.y * 0.1;
+            this.field5143 = var6.z * 0.1;
+            this.setShooter(var5);
             return true;
          }
       } else {

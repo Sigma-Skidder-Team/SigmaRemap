@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 public class Class8080 implements IAmbientSoundHandler {
    private static String[] field34729;
    private final ClientPlayerEntity field34730;

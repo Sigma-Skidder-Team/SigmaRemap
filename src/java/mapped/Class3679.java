@@ -1,9 +1,11 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 
-public class Class3679 extends Class3676<Class880> {
+public class Class3679 extends Class3676<LivingEntity> {
    private static String[] field19691;
 
    public Class3679() {
@@ -11,12 +13,12 @@ public class Class3679 extends Class3676<Class880> {
    }
 
    @Override
-   public boolean method12508(ServerWorld var1, Class880 var2) {
+   public boolean method12508(ServerWorld var1, LivingEntity var2) {
       return var1.rand.nextFloat() > 0.95F;
    }
 
    @Override
-   public void method12502(ServerWorld var1, Class880 var2, long var3) {
+   public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       Class6947<?> var7 = var2.method2992();
       BlockPos var8 = var7.method21410(Class8830.field39816).get().method35579();
       if (var8.method8316(var2.getPosition(), 3.0)) {

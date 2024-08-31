@@ -231,8 +231,8 @@ public class HypixelFly extends Module {
                 var1.method13999(var18);
                 if (!var21 && mc.player.getPosY() % 1.0 > 0.1F && Class9567.method37087()) {
                     for (Vector3d var25 : var22) {
-                        var25.field18048 = var25.field18048 * this.field23560;
-                        var25.field18050 = var25.field18050 * this.field23560;
+                        var25.x = var25.x * this.field23560;
+                        var25.z = var25.z * this.field23560;
                         double var26 = Math.abs(Math.sqrt(mc.player.method3233(var25).method11349()) - this.field23560);
                         var21 = var26 < 1.0E-4;
                         if (var21) {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public class Class2657 extends Class2647 {
    private static String[] field16989;
 
@@ -16,7 +18,7 @@ public class Class2657 extends Class2647 {
    public boolean method10806() {
       float var3 = this.field16990.getBrightness();
       if (var3 >= 0.5F && this.field16990.method3013().nextInt(100) == 0) {
-         this.field16990.method4233((Class880)null);
+         this.field16990.method4233((LivingEntity)null);
          return false;
       } else {
          return super.method10806();
@@ -24,7 +26,7 @@ public class Class2657 extends Class2647 {
    }
 
    @Override
-   public double method10859(Class880 var1) {
+   public double method10859(LivingEntity var1) {
       return (double)(4.0F + var1.method3429());
    }
 }

@@ -14,7 +14,9 @@ import com.mentalfrostbyte.jello.unmapped.Class8433;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 
@@ -386,8 +388,8 @@ public class NameTags extends Module {
             GL11.glDisable(2929);
             GL11.glDisable(2896);
             GL11.glDepthMask(false);
-            String var17 = (float) Math.round(((Class880) var7).getHealth() * 10.0F) / 10.0F + "";
-            float var18 = Math.min(((Class880) var7).getHealth() / ((Class880) var7).method3075(), 1.0F);
+            String var17 = (float) Math.round(((LivingEntity) var7).getHealth() * 10.0F) / 10.0F + "";
+            float var18 = Math.min(((LivingEntity) var7).getHealth() / ((LivingEntity) var7).method3075(), 1.0F);
             GL11.glPushMatrix();
             GL11.glAlphaFunc(519, 0.0F);
             GL11.glTranslated(var14, var15 + 0.6F - 0.33333334F * (1.0F - var8), var16);
@@ -434,7 +436,7 @@ public class NameTags extends Module {
             RenderUtil.method11426((float) (-var21 - 10), -25.0F, (float) (var21 + 10), (float) (var12.method23952() + 2), var19);
             RenderUtil.method11426(
                     (float) (-var21 - 10),
-                    (float) (var12.method23952() - 1) - (float) ((Class880) var7).field4952 / 3.0F,
+                    (float) (var12.method23952() - 1) - (float) ((LivingEntity) var7).field4952 / 3.0F,
                     Math.min((float) (var21 * 2 + 20) * (var18 - 0.5F), (float) (var21 + 10)),
                     (float) (var12.method23952() + 2),
                     var20

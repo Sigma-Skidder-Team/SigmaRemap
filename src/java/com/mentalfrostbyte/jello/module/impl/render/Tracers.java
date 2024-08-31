@@ -33,7 +33,7 @@ public class Tracers extends Module {
             for (Entity var5 : ColorUtils.method17680()) {
                 if (var5 != mc.player
                         && var5.isAlive()
-                        && var5.boundingBox.method19675() > 0.8
+                        && var5.boundingBox.getAverageEdgeLength() > 0.8
                         && var5.ticksExisted > 30
                         && !Client.getInstance().getCombatManager().method29346(var5)) {
                     this.method16522(var5);
@@ -58,7 +58,7 @@ public class Tracers extends Module {
         int var11 = this.parseSettingValueToIntBySettingName("Color");
         GL11.glBegin(1);
         GL11.glColor4fv(ColorUtils.method17709(ColorUtils.applyAlpha(var11, 0.45F)));
-        GL11.glVertex3d(var10.field18048, var10.field18049, var10.field18050);
+        GL11.glVertex3d(var10.x, var10.y, var10.z);
         GL11.glColor4fv(ColorUtils.method17709(ColorUtils.applyAlpha(var11, 0.0F)));
         GL11.glVertex3d(var4, var6, var8);
         GL11.glEnd();

@@ -9,8 +9,14 @@ import com.mentalfrostbyte.jello.event.impl.Class4434;
 import it.unimi.dsi.fastutil.objects.Object2DoubleArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2DoubleMap;
 import mapped.*;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -81,13 +87,13 @@ public abstract class Entity implements INameable, ICommandSource {
    public int hurtResistantTime;
    public boolean firstUpdate = true;
    public final EntityDataManager dataManager;
-   public static final DataParameter<Byte> FLAGS = EntityDataManager.<Byte>method35441(Entity.class, Class7784.field33390);
-   private static final DataParameter<Integer> AIR = EntityDataManager.<Integer>method35441(Entity.class, Class7784.field33391);
-   private static final DataParameter<Optional<ITextComponent>> CUSTOM_NAME = EntityDataManager.<Optional<ITextComponent>>method35441(Entity.class, Class7784.field33395);
-   public static final DataParameter<Boolean> CUSTOM_NAME_VISIBLE = EntityDataManager.<Boolean>method35441(Entity.class, Class7784.field33398);
-   private static final DataParameter<Boolean> SILENT = EntityDataManager.<Boolean>method35441(Entity.class, Class7784.field33398);
-   private static final DataParameter<Boolean> NO_GRAVITY = EntityDataManager.<Boolean>method35441(Entity.class, Class7784.field33398);
-   public static final DataParameter<Pose> POSE = EntityDataManager.<Pose>method35441(Entity.class, Class7784.field33408);
+   public static final DataParameter<Byte> FLAGS = EntityDataManager.<Byte>createKey(Entity.class, DataSerializers.field33390);
+   private static final DataParameter<Integer> AIR = EntityDataManager.<Integer>createKey(Entity.class, DataSerializers.field33391);
+   private static final DataParameter<Optional<ITextComponent>> CUSTOM_NAME = EntityDataManager.<Optional<ITextComponent>>createKey(Entity.class, DataSerializers.field33395);
+   public static final DataParameter<Boolean> CUSTOM_NAME_VISIBLE = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> SILENT = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> NO_GRAVITY = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.field33398);
+   public static final DataParameter<Pose> POSE = EntityDataManager.<Pose>createKey(Entity.class, DataSerializers.field33408);
    public boolean addedToChunk;
    public int chunkCoordX;
    public int chunkCoordY;
@@ -238,14 +244,14 @@ public abstract class Entity implements INameable, ICommandSource {
       return this.dataManager.<Pose>method35445(POSE);
    }
 
-   public boolean method3213(Entity var1, double var2) {
-      double var6 = var1.positionVec.field18048 - this.positionVec.field18048;
-      double var8 = var1.positionVec.field18049 - this.positionVec.field18049;
-      double var10 = var1.positionVec.field18050 - this.positionVec.field18050;
+   public boolean isEntityInRange(Entity var1, double var2) {
+      double var6 = var1.positionVec.x - this.positionVec.x;
+      double var8 = var1.positionVec.y - this.positionVec.y;
+      double var10 = var1.positionVec.z - this.positionVec.z;
       return var6 * var6 + var8 * var8 + var10 * var10 < var2 * var2;
    }
 
-   public void method3214(float var1, float var2) {
+   public void setRotation(float var1, float var2) {
       this.rotationYaw = var1 % 360.0F;
       this.rotationPitch = var2 % 360.0F;
    }
@@ -256,7 +262,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public void method3216() {
-      this.setPosition(this.positionVec.field18048, this.positionVec.field18049, this.positionVec.field18050);
+      this.setPosition(this.positionVec.x, this.positionVec.y, this.positionVec.z);
    }
 
    public void method3217(double var1, double var3) {
@@ -365,8 +371,8 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void method3221(int var1) {
       int var4 = var1 * 20;
-      if (this instanceof Class880) {
-         var4 = Class6096.method18834((Class880)this, var4);
+      if (this instanceof LivingEntity) {
+         var4 = Class6096.method18834((LivingEntity)this, var4);
       }
 
       if (this.fire < var4) {
@@ -410,7 +416,7 @@ public abstract class Entity implements INameable, ICommandSource {
       if (Minecraft.getInstance().player != null
          && Minecraft.getInstance().player.getRidingEntity() != null
          && Minecraft.getInstance().player.getRidingEntity().method3205() == this.method3205()) {
-         Class4432 var5 = new Class4432(var2.field18048, var2.field18049, var2.field18050);
+         Class4432 var5 = new Class4432(var2.x, var2.y, var2.z);
          Client.getInstance().getEventManager().call(var5);
          if (var5.isCancelled()) {
             return;
@@ -446,23 +452,23 @@ public abstract class Entity implements INameable, ICommandSource {
 
          this.world.getProfiler().endSection();
          this.world.getProfiler().startSection("rest");
-         this.collidedHorizontally = !MathHelper.method37787(var2.field18048, var25.field18048) || !MathHelper.method37787(var2.field18050, var25.field18050);
-         this.collidedVertically = var2.field18049 != var25.field18049;
-         this.onGround = this.collidedVertically && var2.field18049 < 0.0;
+         this.collidedHorizontally = !MathHelper.method37787(var2.x, var25.x) || !MathHelper.method37787(var2.z, var25.z);
+         this.collidedVertically = var2.y != var25.y;
+         this.onGround = this.collidedVertically && var2.y < 0.0;
          BlockPos var6 = this.method3228();
          BlockState var7 = this.world.getBlockState(var6);
-         this.method2761(var25.field18049, this.onGround, var7, var6);
+         this.method2761(var25.y, this.onGround, var7, var6);
          Vector3d var8 = this.method3433();
-         if (var2.field18048 != var25.field18048) {
-            this.method3435(0.0, var8.field18049, var8.field18050);
+         if (var2.x != var25.x) {
+            this.method3435(0.0, var8.y, var8.z);
          }
 
-         if (var2.field18050 != var25.field18050) {
-            this.method3435(var8.field18048, var8.field18049, 0.0);
+         if (var2.z != var25.z) {
+            this.method3435(var8.x, var8.y, 0.0);
          }
 
          Block var9 = var7.getBlock();
-         if (var2.field18049 != var25.field18049) {
+         if (var2.y != var25.y) {
             var9.method11568(this.world, this);
          }
 
@@ -471,9 +477,9 @@ public abstract class Entity implements INameable, ICommandSource {
          }
 
          if (this.method2940() && !this.isPassenger()) {
-            double var10 = var25.field18048;
-            double var12 = var25.field18049;
-            double var14 = var25.field18050;
+            double var10 = var25.x;
+            double var12 = var25.y;
+            double var14 = var25.z;
             if (!var9.method11540(BlockTags.field32804)) {
                var12 = 0.0;
             }
@@ -489,7 +495,7 @@ public abstract class Entity implements INameable, ICommandSource {
                   float var17 = var16 == this ? 0.35F : 0.4F;
                   Vector3d var18 = var16.method3433();
                   float var19 = MathHelper.method37766(
-                        var18.field18048 * var18.field18048 * 0.2F + var18.field18049 * var18.field18049 + var18.field18050 * var18.field18050 * 0.2F
+                        var18.x * var18.x * 0.2F + var18.y * var18.y + var18.z * var18.z * 0.2F
                      )
                      * var17;
                   if (var19 > 1.0F) {
@@ -531,9 +537,9 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public BlockPos method3228() {
-      int var3 = MathHelper.floor(this.positionVec.field18048);
-      int var4 = MathHelper.floor(this.positionVec.field18049 - 0.2F);
-      int var5 = MathHelper.floor(this.positionVec.field18050);
+      int var3 = MathHelper.floor(this.positionVec.x);
+      int var4 = MathHelper.floor(this.positionVec.y - 0.2F);
+      int var5 = MathHelper.floor(this.positionVec.z);
       BlockPos var6 = new BlockPos(var3, var4, var5);
       if (this.world.getBlockState(var6).isAir()) {
          BlockPos var7 = var6.down();
@@ -564,7 +570,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public BlockPos method3230() {
-      return new BlockPos(this.positionVec.field18048, this.getBoundingBox().field28450 - 0.5000001, this.positionVec.field18050);
+      return new BlockPos(this.positionVec.x, this.getBoundingBox().field28450 - 0.5000001, this.positionVec.z);
    }
 
    public Vector3d method2898(Vector3d var1, Class2107 var2) {
@@ -579,20 +585,20 @@ public abstract class Entity implements INameable, ICommandSource {
             this.pistonDeltasGameTime = var4;
          }
 
-         if (var1.field18048 == 0.0) {
-            if (var1.field18049 == 0.0) {
-               if (var1.field18050 == 0.0) {
+         if (var1.x == 0.0) {
+            if (var1.y == 0.0) {
+               if (var1.z == 0.0) {
                   return Vector3d.ZERO;
                } else {
-                  double var9 = this.method3232(Class113.field415, var1.field18050);
+                  double var9 = this.method3232(Class113.field415, var1.z);
                   return !(Math.abs(var9) <= 1.0E-5F) ? new Vector3d(0.0, 0.0, var9) : Vector3d.ZERO;
                }
             } else {
-               double var8 = this.method3232(Class113.field414, var1.field18049);
+               double var8 = this.method3232(Class113.field414, var1.y);
                return !(Math.abs(var8) <= 1.0E-5F) ? new Vector3d(0.0, var8, 0.0) : Vector3d.ZERO;
             }
          } else {
-            double var6 = this.method3232(Class113.field413, var1.field18048);
+            double var6 = this.method3232(Class113.field413, var1.x);
             return !(Math.abs(var6) <= 1.0E-5F) ? new Vector3d(var6, 0.0, 0.0) : Vector3d.ZERO;
          }
       } else {
@@ -618,17 +624,17 @@ public abstract class Entity implements INameable, ICommandSource {
       Stream var8 = this.world.method7046(this, var4.method19661(var1), var0 -> true);
       Class8544 var9 = new Class8544(Stream.concat(var8, var7));
       Vector3d var10 = var1.method11349() != 0.0 ? method3235(this, var1, var4, this.world, var5, var9) : var1;
-      boolean var11 = var1.field18048 != var10.field18048;
-      boolean var12 = var1.field18049 != var10.field18049;
-      boolean var13 = var1.field18050 != var10.field18050;
-      boolean var14 = this.onGround || var12 && var1.field18049 < 0.0;
+      boolean var11 = var1.x != var10.x;
+      boolean var12 = var1.y != var10.y;
+      boolean var13 = var1.z != var10.z;
+      boolean var14 = this.onGround || var12 && var1.y < 0.0;
       if (this.stepHeight > 0.0F && var14 && (var11 || var13)) {
-         Vector3d var15 = method3235(this, new Vector3d(var1.field18048, (double)this.stepHeight, var1.field18050), var4, this.world, var5, var9);
+         Vector3d var15 = method3235(this, new Vector3d(var1.x, (double)this.stepHeight, var1.z), var4, this.world, var5, var9);
          Vector3d var16 = method3235(
-            this, new Vector3d(0.0, (double)this.stepHeight, 0.0), var4.method19662(var1.field18048, 0.0, var1.field18050), this.world, var5, var9
+            this, new Vector3d(0.0, (double)this.stepHeight, 0.0), var4.method19662(var1.x, 0.0, var1.z), this.world, var5, var9
          );
-         if (var16.field18049 < (double)this.stepHeight) {
-            Vector3d var17 = method3235(this, new Vector3d(var1.field18048, 0.0, var1.field18050), var4.method19669(var16), this.world, var5, var9)
+         if (var16.y < (double)this.stepHeight) {
+            Vector3d var17 = method3235(this, new Vector3d(var1.x, 0.0, var1.z), var4.method19669(var16), this.world, var5, var9)
                .method11338(var16);
             if (method3234(var17) > method3234(var15)) {
                var15 = var17;
@@ -637,7 +643,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
          double var18 = !(this instanceof ClientPlayerEntity)
             ? 0.0
-            : method3235(this, new Vector3d(0.0, -var15.field18049, 0.0), var4.method19669(var15), this.world, var5, var9).field18049 + var15.field18049;
+            : method3235(this, new Vector3d(0.0, -var15.y, 0.0), var4.method19669(var15), this.world, var5, var9).y + var15.y;
          boolean var20 = false;
          if (var18 != 0.0) {
             Class4434 var21 = new Class4434(var18, var10);
@@ -647,7 +653,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
          if (method3234(var15) > method3234(var10) && !var20) {
             return var15.method11338(
-               method3235(this, new Vector3d(0.0, -var15.field18049 + var1.field18049, 0.0), var4.method19669(var15), this.world, var5, var9)
+               method3235(this, new Vector3d(0.0, -var15.y + var1.y, 0.0), var4.method19669(var15), this.world, var5, var9)
             );
          }
       }
@@ -656,13 +662,13 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public static double method3234(Vector3d var0) {
-      return var0.field18048 * var0.field18048 + var0.field18050 * var0.field18050;
+      return var0.x * var0.x + var0.z * var0.z;
    }
 
    public static Vector3d method3235(Entity var0, Vector3d var1, AxisAlignedBB var2, World var3, ISelectionContext var4, Class8544<VoxelShape> var5) {
-      boolean var8 = var1.field18048 == 0.0;
-      boolean var9 = var1.field18049 == 0.0;
-      boolean var10 = var1.field18050 == 0.0;
+      boolean var8 = var1.x == 0.0;
+      boolean var9 = var1.y == 0.0;
+      boolean var10 = var1.z == 0.0;
       if (var8 && var9 || var8 && var10 || var9 && var10) {
          boolean var12 = var0 != null && var0 instanceof ClientPlayerEntity;
          return method3237(var1, var2, var3, var4, var5, var12);
@@ -673,9 +679,9 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public static Vector3d method3236(Vector3d var0, AxisAlignedBB var1, Class8544<VoxelShape> var2) {
-      double var5 = var0.field18048;
-      double var7 = var0.field18049;
-      double var9 = var0.field18050;
+      double var5 = var0.x;
+      double var7 = var0.y;
+      double var9 = var0.z;
       if (var7 != 0.0) {
          var7 = VoxelShapes.method27437(Class113.field414, var1, var2.method30440(), var7);
          if (var7 != 0.0) {
@@ -706,9 +712,9 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public static Vector3d method3237(Vector3d var0, AxisAlignedBB var1, Class1662 var2, ISelectionContext var3, Class8544<VoxelShape> var4, boolean var5) {
-      double var8 = var0.field18048;
-      double var10 = var0.field18049;
-      double var12 = var0.field18050;
+      double var8 = var0.x;
+      double var10 = var0.y;
+      double var12 = var0.z;
       if (var10 != 0.0) {
          var10 = VoxelShapes.method27438(Class113.field414, var1, var2, var10, var3, var4.method30440(), var5);
          if (var10 != 0.0) {
@@ -747,15 +753,15 @@ public abstract class Entity implements INameable, ICommandSource {
       this.method3446((var3.field28449 + var3.field28452) / 2.0, var3.field28450, (var3.field28451 + var3.field28454) / 2.0);
    }
 
-   public Class9455 method2859() {
+   public SoundEvent method2859() {
       return Sounds.field26615;
    }
 
-   public Class9455 method2860() {
+   public SoundEvent method2860() {
       return Sounds.field26614;
    }
 
-   public Class9455 method2861() {
+   public SoundEvent method2861() {
       return Sounds.field26614;
    }
 
@@ -809,7 +815,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return false;
    }
 
-   public void method2863(Class9455 var1, float var2, float var3) {
+   public void method2863(SoundEvent var1, float var2, float var3) {
       if (!this.method3245()) {
          this.world.method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), var1, this.method2864(), var2, var3);
       }
@@ -959,7 +965,7 @@ public abstract class Entity implements INameable, ICommandSource {
       float var4 = var3 != this ? 0.9F : 0.2F;
       Vector3d var5 = var3.method3433();
       float var6 = MathHelper.method37766(
-            var5.field18048 * var5.field18048 * 0.2F + var5.field18049 * var5.field18049 + var5.field18050 * var5.field18050 * 0.2F
+            var5.x * var5.x * 0.2F + var5.y * var5.y + var5.z * var5.z * 0.2F
          )
          * var4;
       if (var6 > 1.0F) {
@@ -983,9 +989,9 @@ public abstract class Entity implements INameable, ICommandSource {
                this.getPosX() + var9,
                (double)(var7 + 1.0F),
                this.getPosZ() + var11,
-               var5.field18048,
-               var5.field18049 - this.rand.nextDouble() * 0.2F,
-               var5.field18050
+               var5.x,
+               var5.y - this.rand.nextDouble() * 0.2F,
+               var5.z
             );
       }
 
@@ -998,9 +1004,9 @@ public abstract class Entity implements INameable, ICommandSource {
                this.getPosX() + var14,
                (double)(var7 + 1.0F),
                this.getPosZ() + var15,
-               var5.field18048,
-               var5.field18049,
-               var5.field18050
+               var5.x,
+               var5.y,
+               var5.z
             );
       }
    }
@@ -1027,9 +1033,9 @@ public abstract class Entity implements INameable, ICommandSource {
                this.getPosX() + (this.rand.nextDouble() - 0.5) * (double)this.size.field39968,
                this.getPosY() + 0.1,
                this.getPosZ() + (this.rand.nextDouble() - 0.5) * (double)this.size.field39968,
-               var8.field18048 * -4.0,
+               var8.x * -4.0,
                1.5,
-               var8.field18050 * -4.0
+               var8.z * -4.0
             );
       }
    }
@@ -1054,7 +1060,7 @@ public abstract class Entity implements INameable, ICommandSource {
          float var8 = MathHelper.sin(var2 * (float) (Math.PI / 180.0));
          float var9 = MathHelper.cos(var2 * (float) (Math.PI / 180.0));
          return new Vector3d(
-            var7.field18048 * (double)var9 - var7.field18050 * (double)var8, var7.field18049, var7.field18050 * (double)var9 + var7.field18048 * (double)var8
+            var7.x * (double)var9 - var7.z * (double)var8, var7.y, var7.z * (double)var9 + var7.x * (double)var8
          );
       } else {
          return Vector3d.ZERO;
@@ -1093,7 +1099,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public void method3271(Vector3d var1) {
-      this.method2794(var1.field18048, var1.field18049, var1.field18050);
+      this.method2794(var1.x, var1.y, var1.z);
    }
 
    public void method2794(double var1, double var3, double var5) {
@@ -1140,9 +1146,9 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public double method3278(Vector3d var1) {
-      double var4 = this.getPosX() - var1.field18048;
-      double var6 = this.getPosY() - var1.field18049;
-      double var8 = this.getPosZ() - var1.field18050;
+      double var4 = this.getPosX() - var1.x;
+      double var6 = this.getPosY() - var1.y;
+      double var8 = this.getPosZ() - var1.z;
       return var4 * var4 + var6 * var6 + var8 * var8;
    }
 
@@ -1253,7 +1259,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public RayTraceResult method3289(double var1, float var3, boolean var4) {
       Vector3d var7 = this.method3286(var3);
       Vector3d var8 = this.method3281(var3);
-      Vector3d var9 = var7.method11339(var8.field18048 * var1, var8.field18049 * var1, var8.field18050 * var1);
+      Vector3d var9 = var7.method11339(var8.x * var1, var8.y * var1, var8.z * var1);
       return this.world.method7036(new Class6809(var7, var9, Class2271.field14775, !var4 ? Class1985.field12962 : Class1985.field12964, this));
    }
 
@@ -1276,11 +1282,11 @@ public abstract class Entity implements INameable, ICommandSource {
       double var11 = this.getPosY() - var3;
       double var13 = this.getPosZ() - var5;
       double var15 = var9 * var9 + var11 * var11 + var13 * var13;
-      return this.method3291(var15);
+      return this.isInRangeToRenderDist(var15);
    }
 
-   public boolean method3291(double var1) {
-      double var5 = this.getBoundingBox().method19675();
+   public boolean isInRangeToRenderDist(double var1) {
+      double var5 = this.getBoundingBox().getAverageEdgeLength();
       if (Double.isNaN(var5)) {
          var5 = 1.0;
       }
@@ -1313,7 +1319,7 @@ public abstract class Entity implements INameable, ICommandSource {
          }
 
          Vector3d var4 = this.method3433();
-         var1.put("Motion", this.method3298(var4.field18048, var4.field18049, var4.field18050));
+         var1.put("Motion", this.method3298(var4.x, var4.y, var4.z));
          var1.put("Rotation", this.method3299(this.rotationYaw, this.rotationPitch));
          var1.method107("FallDistance", this.fallDistance);
          var1.method101("Fire", (short)this.fire);
@@ -1409,7 +1415,7 @@ public abstract class Entity implements INameable, ICommandSource {
             throw new IllegalStateException("Entity has invalid position");
          } else if (Double.isFinite((double)this.rotationYaw) && Double.isFinite((double)this.rotationPitch)) {
             this.method3216();
-            this.method3214(this.rotationYaw, this.rotationPitch);
+            this.setRotation(this.rotationYaw, this.rotationPitch);
             if (var1.method119("CustomName", 8)) {
                String var13 = var1.method126("CustomName");
 
@@ -1577,7 +1583,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public boolean method3312() {
-      return this instanceof Class880;
+      return this instanceof LivingEntity;
    }
 
    public boolean method2758(Entity var1, boolean var2) {
@@ -1652,9 +1658,9 @@ public abstract class Entity implements INameable, ICommandSource {
       return this.method3408().size() < 1;
    }
 
-   public void method3131(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
+   public void setPositionAndRotationDirect(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
       this.setPosition(var1, var3, var5);
-      this.method3214(var7, var8);
+      this.setRotation(var7, var8);
    }
 
    public void method3132(float var1, int var2) {
@@ -1901,28 +1907,28 @@ public abstract class Entity implements INameable, ICommandSource {
       Vector3d var4 = this.method3433();
       double var5;
       if (!var1) {
-         var5 = Math.min(1.8, var4.field18049 + 0.1);
+         var5 = Math.min(1.8, var4.y + 0.1);
       } else {
-         var5 = Math.max(-0.9, var4.field18049 - 0.03);
+         var5 = Math.max(-0.9, var4.y - 0.03);
       }
 
-      this.method3435(var4.field18048, var5, var4.field18050);
+      this.method3435(var4.x, var5, var4.z);
    }
 
    public void method3355(boolean var1) {
       Vector3d var4 = this.method3433();
       double var5;
       if (!var1) {
-         var5 = Math.min(0.7, var4.field18049 + 0.06);
+         var5 = Math.min(0.7, var4.y + 0.06);
       } else {
-         var5 = Math.max(-0.3, var4.field18049 - 0.03);
+         var5 = Math.max(-0.3, var4.y - 0.03);
       }
 
-      this.method3435(var4.field18048, var5, var4.field18050);
+      this.method3435(var4.x, var5, var4.z);
       this.fallDistance = 0.0F;
    }
 
-   public void method2927(ServerWorld var1, Class880 var2) {
+   public void method2927(ServerWorld var1, LivingEntity var2) {
    }
 
    public void pushOutOfBlocks(double var1, double var3, double var5) {
@@ -1950,13 +1956,13 @@ public abstract class Entity implements INameable, ICommandSource {
       if (var12.method544() != Class113.field413) {
          if (var12.method544() != Class113.field414) {
             if (var12.method544() == Class113.field415) {
-               this.method3435(var25.field18048, var25.field18049, (double)(var24 * var23));
+               this.method3435(var25.x, var25.y, (double)(var24 * var23));
             }
          } else {
-            this.method3435(var25.field18048, (double)(var24 * var23), var25.field18050);
+            this.method3435(var25.x, (double)(var24 * var23), var25.z);
          }
       } else {
-         this.method3435((double)(var24 * var23), var25.field18049, var25.field18050);
+         this.method3435((double)(var24 * var23), var25.y, var25.z);
       }
    }
 
@@ -2058,7 +2064,7 @@ public abstract class Entity implements INameable, ICommandSource {
             Entity var5 = this.getType().method33215(var1);
             if (var5 != null) {
                var5.method3365(this);
-               var5.method3273(var4.field45665.field18048, var4.field45665.field18049, var4.field45665.field18050, var4.field45667, var5.rotationPitch);
+               var5.method3273(var4.field45665.x, var4.field45665.y, var4.field45665.z, var4.field45667, var5.rotationPitch);
                var5.method3434(var4.field45666);
                var1.method6918(var5);
                if (var1.getDimensionKey() == World.THE_END) {
@@ -2173,7 +2179,7 @@ public abstract class Entity implements INameable, ICommandSource {
          CrashReportCategory.method32805(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY()), MathHelper.floor(this.getPosZ()))
       );
       Vector3d var4 = this.method3433();
-      var1.addDetail("Entity's Momentum", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", var4.field18048, var4.field18049, var4.field18050));
+      var1.addDetail("Entity's Momentum", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", var4.x, var4.y, var4.z));
       var1.addDetail("Entity's Passengers", () -> this.method3408().toString());
       var1.addDetail("Entity's Vehicle", () -> this.getRidingEntity().toString());
    }
@@ -2203,7 +2209,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return true;
    }
 
-   public static double method3377() {
+   public static double getRenderDistanceWeight() {
       return renderDistanceWeight;
    }
 
@@ -2388,9 +2394,9 @@ public abstract class Entity implements INameable, ICommandSource {
       return false;
    }
 
-   public void method3399(Class880 var1, Entity var2) {
-      if (var2 instanceof Class880) {
-         Class7858.method26320((Class880)var2, var1);
+   public void method3399(LivingEntity var1, Entity var2) {
+      if (var2 instanceof LivingEntity) {
+         Class7858.method26320((LivingEntity)var2, var1);
       }
 
       Class7858.method26321(var1, var2);
@@ -2545,7 +2551,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return new Vector3d((double)var9 * var7 / (double)var11, 0.0, (double)var10 * var7 / (double)var11);
    }
 
-   public Vector3d method3420(Class880 var1) {
+   public Vector3d method3420(LivingEntity var1) {
       return new Vector3d(this.getPosX(), this.getBoundingBox().field28453, this.getPosZ());
    }
 
@@ -2605,9 +2611,9 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void method2787(Class2062 var1, Vector3d var2) {
       Vector3d var5 = var1.method8711(this);
-      double var6 = var2.field18048 - var5.field18048;
-      double var8 = var2.field18049 - var5.field18049;
-      double var10 = var2.field18050 - var5.field18050;
+      double var6 = var2.x - var5.x;
+      double var8 = var2.y - var5.y;
+      double var10 = var2.z - var5.z;
       double var12 = (double) MathHelper.method37766(var6 * var6 + var10 * var10);
       this.rotationPitch = MathHelper.method37792((float)(-(MathHelper.method37814(var8, var12) * 180.0F / (float)Math.PI)));
       this.rotationYaw = MathHelper.method37792((float)(MathHelper.method37814(var10, var6) * 180.0F / (float)Math.PI) - 90.0F);
@@ -2671,7 +2677,7 @@ public abstract class Entity implements INameable, ICommandSource {
             Vector3d var30 = this.method3433();
             var17 = var17.method11344(var2 * 1.0);
             double var27 = 0.003;
-            if (Math.abs(var30.field18048) < 0.003 && Math.abs(var30.field18050) < 0.003 && var17.method11348() < 0.0045000000000000005) {
+            if (Math.abs(var30.x) < 0.003 && Math.abs(var30.z) < 0.003 && var17.method11348() < 0.0045000000000000005) {
                var17 = var17.method11333().method11344(0.0045000000000000005);
             }
 
@@ -2726,11 +2732,11 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public final double getPosX() {
-      return this.positionVec.field18048;
+      return this.positionVec.x;
    }
 
    public double method3437(double var1) {
-      return this.positionVec.field18048 + (double)this.method3429() * var1;
+      return this.positionVec.x + (double)this.method3429() * var1;
    }
 
    public double method3438(double var1) {
@@ -2738,11 +2744,11 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public final double getPosY() {
-      return this.positionVec.field18049;
+      return this.positionVec.y;
    }
 
    public double method3440(double var1) {
-      return this.positionVec.field18049 + (double)this.method3430() * var1;
+      return this.positionVec.y + (double)this.method3430() * var1;
    }
 
    public double method3441() {
@@ -2750,15 +2756,15 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public double method3442() {
-      return this.positionVec.field18049 + (double)this.eyeHeight;
+      return this.positionVec.y + (double)this.eyeHeight;
    }
 
    public final double getPosZ() {
-      return this.positionVec.field18050;
+      return this.positionVec.z;
    }
 
    public double method3444(double var1) {
-      return this.positionVec.field18050 + (double)this.method3429() * var1;
+      return this.positionVec.z + (double)this.method3429() * var1;
    }
 
    public double method3445(double var1) {
@@ -2766,7 +2772,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public void method3446(double var1, double var3, double var5) {
-      if (this.positionVec.field18048 != var1 || this.positionVec.field18049 != var3 || this.positionVec.field18050 != var5) {
+      if (this.positionVec.x != var1 || this.positionVec.y != var3 || this.positionVec.z != var5) {
          this.positionVec = new Vector3d(var1, var3, var5);
          int var9 = MathHelper.floor(var1);
          int var10 = MathHelper.floor(var3);

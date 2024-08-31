@@ -1,13 +1,18 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class918 extends AbstractMinecartEntity {
-   private static final DataParameter<String> field5232 = EntityDataManager.<String>method35441(Class918.class, Class7784.field33393);
-   private static final DataParameter<ITextComponent> field5233 = EntityDataManager.<ITextComponent>method35441(Class918.class, Class7784.field33394);
+   private static final DataParameter<String> field5232 = EntityDataManager.<String>createKey(Class918.class, DataSerializers.field33393);
+   private static final DataParameter<ITextComponent> field5233 = EntityDataManager.<ITextComponent>createKey(Class918.class, DataSerializers.field33394);
    private final Class911 field5234 = new Class912(this);
    private int field5235;
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public class Class7972 {
    private static String[] field34265;
 
@@ -12,7 +14,7 @@ public class Class7972 {
       var7.field31035 = -1.5F + var2.field31035;
    }
 
-   public static void method27106(Class7219 var0, Class7219 var1, Class880 var2, boolean var3) {
+   public static void method27106(Class7219 var0, Class7219 var1, LivingEntity var2, boolean var3) {
       Class7219 var6 = !var3 ? var1 : var0;
       Class7219 var7 = !var3 ? var0 : var1;
       var6.field31036 = !var3 ? 0.8F : -0.8F;

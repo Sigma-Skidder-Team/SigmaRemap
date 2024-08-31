@@ -1,6 +1,8 @@
 package mapped;
 
-public class Class2799<T extends Class880> extends Class2797<T> {
+import net.minecraft.entity.LivingEntity;
+
+public class Class2799<T extends LivingEntity> extends Class2797<T> {
    private static String[] field17431;
    public boolean field17443;
    public boolean field17444;

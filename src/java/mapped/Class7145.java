@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public class Class7145 extends Effect {
    private static String[] field30711;
 
@@ -8,13 +10,13 @@ public class Class7145 extends Effect {
    }
 
    @Override
-   public void method22300(Class880 var1, Class9020 var2, int var3) {
+   public void method22300(LivingEntity var1, Class9020 var2, int var3) {
       var1.method2958(var1.method2959() - (float)(4 * (var3 + 1)));
       super.method22300(var1, var2, var3);
    }
 
    @Override
-   public void method22301(Class880 var1, Class9020 var2, int var3) {
+   public void method22301(LivingEntity var1, Class9020 var2, int var3) {
       var1.method2958(var1.method2959() + (float)(4 * (var3 + 1)));
       super.method22301(var1, var2, var3);
    }

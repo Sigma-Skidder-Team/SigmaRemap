@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;

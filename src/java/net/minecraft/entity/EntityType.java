@@ -8,7 +8,9 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 import mapped.*;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -449,7 +451,7 @@ public class EntityType<T extends Entity> {
             var14.method4237();
          }
 
-         if (var3 != null && var11 instanceof Class880) {
+         if (var3 != null && var11 instanceof LivingEntity) {
             var11.method3379(var3);
          }
 

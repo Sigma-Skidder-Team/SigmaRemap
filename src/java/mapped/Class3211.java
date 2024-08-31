@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -211,7 +213,7 @@ public class Class3211 extends Block {
    }
 
    @Override
-   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, Class882 var4) {
+   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, ProjectileEntity var4) {
       if (var4.getType().method33228(Class8613.field38738)) {
          BlockPos var7 = var3.getPos();
          var1.method7180(var7, true, var4);

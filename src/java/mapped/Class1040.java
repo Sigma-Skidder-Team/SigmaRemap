@@ -3,14 +3,19 @@ package mapped;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class Class1040 extends Class1038 implements Class1041 {
-   private static final DataParameter<Boolean> field5769 = EntityDataManager.<Boolean>method35441(Class1040.class, Class7784.field33398);
-   private static final DataParameter<Class7921> field5770 = EntityDataManager.<Class7921>method35441(Class1040.class, Class7784.field33406);
+   private static final DataParameter<Boolean> field5769 = EntityDataManager.<Boolean>createKey(Class1040.class, DataSerializers.field33398);
+   private static final DataParameter<Class7921> field5770 = EntityDataManager.<Class7921>createKey(Class1040.class, DataSerializers.field33406);
    private int field5771;
    private UUID field5772;
    private Class30 field5773;
@@ -227,22 +232,22 @@ public class Class1040 extends Class1038 implements Class1041 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27299;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27303;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27302;
    }
 
    @Override
-   public Class9455 method4643() {
+   public SoundEvent method4643() {
       return Sounds.field27304;
    }
 

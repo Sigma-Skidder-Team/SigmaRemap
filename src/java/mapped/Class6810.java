@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -254,8 +255,8 @@ public class Class6810 {
          if (this.field29656 != null && var1 instanceof Class7460) {
             Class7460 var14 = (Class7460)var1;
             Entity var20 = var14.method24131();
-            if (var20 instanceof Class880) {
-               Class880 var26 = (Class880)var20;
+            if (var20 instanceof LivingEntity) {
+               LivingEntity var26 = (LivingEntity)var20;
                if (var26.method3005() != this.field29656) {
                   return false;
                }

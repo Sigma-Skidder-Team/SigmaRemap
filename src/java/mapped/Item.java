@@ -3,9 +3,13 @@ package mapped;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -53,7 +57,7 @@ public class Item implements Class3303 {
       this.field18740 = Class5643.method17788(var1);
    }
 
-   public void method11704(World var1, Class880 var2, ItemStack var3, int var4) {
+   public void method11704(World var1, LivingEntity var2, ItemStack var3, int var4) {
    }
 
    public boolean method11705(CompoundNBT var1) {
@@ -91,7 +95,7 @@ public class Item implements Class3303 {
       }
    }
 
-   public ItemStack method11709(ItemStack var1, World var2, Class880 var3) {
+   public ItemStack method11709(ItemStack var1, World var2, LivingEntity var3) {
       return !this.method11744() ? var1 : var3.method2984(var2, var1);
    }
 
@@ -107,11 +111,11 @@ public class Item implements Class3303 {
       return this.field18739 > 0;
    }
 
-   public boolean method11713(ItemStack var1, Class880 var2, Class880 var3) {
+   public boolean method11713(ItemStack var1, LivingEntity var2, LivingEntity var3) {
       return false;
    }
 
-   public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, Class880 var5) {
+   public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, LivingEntity var5) {
       return false;
    }
 
@@ -119,7 +123,7 @@ public class Item implements Class3303 {
       return false;
    }
 
-   public ActionResultType method11716(ItemStack var1, PlayerEntity var2, Class880 var3, Hand var4) {
+   public ActionResultType method11716(ItemStack var1, PlayerEntity var2, LivingEntity var3, Hand var4) {
       return ActionResultType.field14820;
    }
 
@@ -183,7 +187,7 @@ public class Item implements Class3303 {
       }
    }
 
-   public void method11729(ItemStack var1, World var2, Class880 var3, int var4) {
+   public void method11729(ItemStack var1, World var2, LivingEntity var3, int var4) {
    }
 
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
@@ -282,11 +286,11 @@ public class Item implements Class3303 {
       return this.field18743;
    }
 
-   public Class9455 method11746() {
+   public SoundEvent method11746() {
       return Sounds.field26608;
    }
 
-   public Class9455 method11747() {
+   public SoundEvent method11747() {
       return Sounds.field26609;
    }
 

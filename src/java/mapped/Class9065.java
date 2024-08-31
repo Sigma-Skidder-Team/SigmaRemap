@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.Map;
 import javax.annotation.Nullable;
 

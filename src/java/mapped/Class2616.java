@@ -1,15 +1,18 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 public class Class2616 extends Class2612 {
    private static String[] field16880;
    private final Class1097 field16890;
 
-   public Class2616(Class1097 var1, Class<? extends Class880> var2, float var3) {
+   public Class2616(Class1097 var1, Class<? extends LivingEntity> var2, float var3) {
       super(var1, var2, var3);
       this.field16890 = var1;
    }
 
-   public void method10824(Class880 var1) {
+   public void method10824(LivingEntity var1) {
       this.field16882 = var1;
    }
 
@@ -25,7 +28,7 @@ public class Class2616 extends Class2612 {
             if (this.field16886 != PlayerEntity.class) {
                this.field16882 = this.field16881
                   .world
-                  .<Class880>method7192(
+                  .<LivingEntity>method7192(
                      this.field16886,
                      this.field16887,
                      this.field16881,

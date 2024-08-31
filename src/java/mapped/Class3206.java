@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 
@@ -113,7 +115,7 @@ public class Class3206 extends Class3198 implements Class3207 {
       Direction var6 = var1.method18354();
       if (!var1.method18347() && var6.method544().method324()) {
          var4 = var4.method23465(field18484, var6)
-            .method23465(field18595, !(var1.method18355().field18049 - (double)var1.method18345().getY() > 0.5) ? Class99.field271 : Class99.field270);
+            .method23465(field18595, !(var1.method18355().y - (double)var1.method18345().getY() > 0.5) ? Class99.field271 : Class99.field270);
       } else {
          var4 = var4.method23465(field18484, var1.method18350().method536())
             .method23465(field18595, var6 != Direction.field673 ? Class99.field270 : Class99.field271);

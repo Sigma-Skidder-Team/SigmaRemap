@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 public class Class9727 {
    private int field45428 = -1;
    private int[] field45429 = null;

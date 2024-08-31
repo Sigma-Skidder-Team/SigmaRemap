@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 
 public interface Class7864 {
@@ -7,5 +8,5 @@ public interface Class7864 {
 
    BlockPos method26357();
 
-   boolean method26358(Class880 var1);
+   boolean method26358(LivingEntity var1);
 }

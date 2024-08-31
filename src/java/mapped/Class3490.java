@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 
 public class Class3490 extends Class3194 {
@@ -21,7 +22,7 @@ public class Class3490 extends Class3194 {
    @Override
    public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       Vector3d var7 = var1.method23421(var2, var3);
-      return field19357.withOffset(var7.field18048, var7.field18049, var7.field18050);
+      return field19357.withOffset(var7.x, var7.y, var7.z);
    }
 
    @Override

@@ -14,13 +14,13 @@ public class Class1116 extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public boolean method3291(double var1) {
-      double var5 = this.getBoundingBox().method19675() * 10.0;
+   public boolean isInRangeToRenderDist(double var1) {
+      double var5 = this.getBoundingBox().getAverageEdgeLength() * 10.0;
       if (Double.isNaN(var5)) {
          var5 = 1.0;
       }
 
-      var5 = var5 * 64.0 * method3377();
+      var5 = var5 * 64.0 * getRenderDistanceWeight();
       return var1 < var5 * var5;
    }
 
@@ -45,7 +45,7 @@ public class Class1116 extends AbstractClientPlayerEntity {
          this.rotationPitch = (float)((double)this.rotationPitch + (this.field4990 - (double)this.rotationPitch) / (double)this.field4985);
          this.field4985--;
          this.setPosition(var4, var6, var8);
-         this.method3214(this.rotationYaw, this.rotationPitch);
+         this.setRotation(this.rotationYaw, this.rotationPitch);
       }
 
       if (this.field4992 > 0) {
@@ -63,7 +63,7 @@ public class Class1116 extends AbstractClientPlayerEntity {
       }
 
       if (!this.onGround && !this.getShouldBeDead()) {
-         float var11 = (float)Math.atan(-this.method3433().field18049 * 0.2F) * 15.0F;
+         float var11 = (float)Math.atan(-this.method3433().y * 0.2F) * 15.0F;
       } else {
          float var10 = 0.0F;
       }

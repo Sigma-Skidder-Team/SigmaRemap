@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
@@ -35,7 +37,7 @@ public interface Class1660 extends Class1678, Class1661 {
    default void func_230547_a_(BlockPos var1, Block var2) {
    }
 
-   void method6742(PlayerEntity var1, BlockPos var2, Class9455 var3, Class2266 var4, float var5, float var6);
+   void method6742(PlayerEntity var1, BlockPos var2, SoundEvent var3, Class2266 var4, float var5, float var6);
 
    void method6746(Class7436 var1, double var2, double var4, double var6, double var8, double var10, double var12);
 

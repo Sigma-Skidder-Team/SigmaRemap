@@ -1,8 +1,12 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -12,10 +16,10 @@ import java.util.function.Predicate;
 public class Class1010 extends Class1009 implements Class1011 {
    private static final UUID field5645 = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
    private static final Class9689 field5646 = new Class9689(field5645, "Attacking speed boost", 0.15F, AttributeModifierOperation.ADDITION);
-   private static final DataParameter<Optional<BlockState>> field5647 = EntityDataManager.<Optional<BlockState>>method35441(Class1010.class, Class7784.field33397);
-   private static final DataParameter<Boolean> field5648 = EntityDataManager.<Boolean>method35441(Class1010.class, Class7784.field33398);
-   private static final DataParameter<Boolean> field5649 = EntityDataManager.<Boolean>method35441(Class1010.class, Class7784.field33398);
-   private static final Predicate<Class880> field5650 = var0 -> var0 instanceof Class1104 && ((Class1104)var0).method5297();
+   private static final DataParameter<Optional<BlockState>> field5647 = EntityDataManager.<Optional<BlockState>>createKey(Class1010.class, DataSerializers.field33397);
+   private static final DataParameter<Boolean> field5648 = EntityDataManager.<Boolean>createKey(Class1010.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5649 = EntityDataManager.<Boolean>createKey(Class1010.class, DataSerializers.field33398);
+   private static final Predicate<LivingEntity> field5650 = var0 -> var0 instanceof Class1104 && ((Class1104)var0).method5297();
    private int field5651 = Integer.MIN_VALUE;
    private int field5652;
    private static final Class8369 field5653 = Class8763.method31620(20, 39);
@@ -53,7 +57,7 @@ public class Class1010 extends Class1009 implements Class1011 {
    }
 
    @Override
-   public void method4233(Class880 var1) {
+   public void method4233(LivingEntity var1) {
       super.method4233(var1);
       Class9805 var4 = this.method3085(Attributes.MOVEMENT_SPEED);
       if (var1 != null) {
@@ -201,7 +205,7 @@ public class Class1010 extends Class1009 implements Class1011 {
       if (this.world.method6740() && this.ticksExisted >= this.field5652 + 600) {
          float var3 = this.getBrightness();
          if (var3 > 0.5F && this.world.method7022(this.getPosition()) && this.rand.nextFloat() * 30.0F < (var3 - 0.4F) * 2.0F) {
-            this.method4233((Class880)null);
+            this.method4233((LivingEntity)null);
             this.method4353();
          }
       }
@@ -224,9 +228,9 @@ public class Class1010 extends Class1009 implements Class1011 {
       Vector3d var4 = new Vector3d(this.getPosX() - var1.getPosX(), this.method3440(0.5) - var1.method3442(), this.getPosZ() - var1.getPosZ());
       var4 = var4.method11333();
       double var5 = 16.0;
-      double var7 = this.getPosX() + (this.rand.nextDouble() - 0.5) * 8.0 - var4.field18048 * 16.0;
-      double var9 = this.getPosY() + (double)(this.rand.nextInt(16) - 8) - var4.field18049 * 16.0;
-      double var11 = this.getPosZ() + (this.rand.nextDouble() - 0.5) * 8.0 - var4.field18050 * 16.0;
+      double var7 = this.getPosX() + (this.rand.nextDouble() - 0.5) * 8.0 - var4.x * 16.0;
+      double var9 = this.getPosY() + (double)(this.rand.nextInt(16) - 8) - var4.y * 16.0;
+      double var11 = this.getPosZ() + (this.rand.nextDouble() - 0.5) * 8.0 - var4.z * 16.0;
       return this.method4355(var7, var9, var11);
    }
 
@@ -254,17 +258,17 @@ public class Class1010 extends Class1009 implements Class1011 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return !this.method4358() ? Sounds.field26545 : Sounds.field26548;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26547;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26546;
    }
 
@@ -292,7 +296,7 @@ public class Class1010 extends Class1009 implements Class1011 {
          return false;
       } else if (!(var1 instanceof Class8653)) {
          boolean var6 = super.method2741(var1, var2);
-         if (!this.world.isRemote() && !(var1.method31109() instanceof Class880) && this.rand.nextInt(10) != 0) {
+         if (!this.world.isRemote() && !(var1.method31109() instanceof LivingEntity) && this.rand.nextInt(10) != 0) {
             this.method4353();
          }
 

@@ -3,6 +3,7 @@ package mapped;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMaps;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import net.minecraft.entity.player.PlayerEntity;
 
 public class Class8286 {
    private static String[] field35589;

@@ -16,7 +16,7 @@ public class Class6839 extends Class6829 {
             this.field29708 - this.field29727.getPosX(), this.field29709 - this.field29727.getPosY(), this.field29710 - this.field29727.getPosZ()
          );
          double var4 = var3.method11348();
-         if (!(var4 < this.field29727.getBoundingBox().method19675())) {
+         if (!(var4 < this.field29727.getBoundingBox().getAverageEdgeLength())) {
             this.field29727.method3434(this.field29727.method3433().method11338(var3.method11344(this.field29711 * 0.05 / var4)));
             if (this.field29727.method4232() != null) {
                double var6 = this.field29727.method4232().getPosX() - this.field29727.getPosX();
@@ -25,7 +25,7 @@ public class Class6839 extends Class6829 {
                this.field29727.field4965 = this.field29727.rotationYaw;
             } else {
                Vector3d var10 = this.field29727.method3433();
-               this.field29727.rotationYaw = -((float) MathHelper.method37814(var10.field18048, var10.field18050)) * (180.0F / (float)Math.PI);
+               this.field29727.rotationYaw = -((float) MathHelper.method37814(var10.x, var10.z)) * (180.0F / (float)Math.PI);
                this.field29727.field4965 = this.field29727.rotationYaw;
             }
          } else {

@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.block.BlockState;
+
 import java.util.Random;
 
 public abstract class Class6768<C extends Class8277> {

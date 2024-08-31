@@ -1,7 +1,14 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
@@ -9,7 +16,7 @@ import javax.annotation.Nullable;
 
 public class Class1101 extends Class1009 {
    private static String[] field6056;
-   private static final DataParameter<Byte> field6057 = EntityDataManager.<Byte>method35441(Class1101.class, Class7784.field33390);
+   private static final DataParameter<Byte> field6057 = EntityDataManager.<Byte>createKey(Class1101.class, DataSerializers.field33390);
 
    public Class1101(EntityType<? extends Class1101> var1, World var2) {
       super(var1, var2);
@@ -57,17 +64,17 @@ public class Class1101 extends Class1009 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27119;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27121;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27120;
    }
 

@@ -1,13 +1,16 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Class7893 extends Class7882<Class880> {
+public class Class7893 extends Class7882<LivingEntity> {
    private static String[] field33844;
 
    @Override
@@ -16,11 +19,11 @@ public class Class7893 extends Class7882<Class880> {
    }
 
    @Override
-   public void method26425(ServerWorld var1, Class880 var2) {
+   public void method26425(ServerWorld var1, LivingEntity var2) {
       List<ServerPlayerEntity> var5 = var1.method6870()
          .stream()
          .filter(Class8088.field34763)
-         .filter(var1x -> var2.method3213(var1x, 16.0))
+         .filter(var1x -> var2.isEntityInRange(var1x, 16.0))
          .sorted(Comparator.comparingDouble(var2::getDistanceSq))
          .collect(Collectors.toList());
       Class6947 var6 = var2.method2992();

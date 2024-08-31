@@ -101,7 +101,7 @@ public class Class6671 {
             return false;
          } else if (this.field29243.method32624(var3.getType())) {
             if (var2 != null) {
-               if (!this.field29244.method32328(var2.field18048, var2.field18049, var2.field18050, var3.getPosX(), var3.getPosY(), var3.getPosZ())) {
+               if (!this.field29244.method32328(var2.x, var2.y, var2.z, var3.getPosX(), var3.getPosY(), var3.getPosZ())) {
                   return false;
                }
             } else if (this.field29244 != Class8884.field40200) {

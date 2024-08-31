@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.SoundEvent;
+
 import java.util.function.Predicate;
 
 public class Class2596<T extends Class1006> extends Class2595 {
@@ -7,9 +9,9 @@ public class Class2596<T extends Class1006> extends Class2595 {
    private final T field16817;
    private final ItemStack field16818;
    private final Predicate<? super T> field16819;
-   private final Class9455 field16820;
+   private final SoundEvent field16820;
 
-   public Class2596(T var1, ItemStack var2, Class9455 var3, Predicate<? super T> var4) {
+   public Class2596(T var1, ItemStack var2, SoundEvent var3, Predicate<? super T> var4) {
       this.field16817 = (T)var1;
       this.field16818 = var2;
       this.field16820 = var3;

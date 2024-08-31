@@ -2,6 +2,7 @@ package mapped;
 
 import java.util.Objects;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;

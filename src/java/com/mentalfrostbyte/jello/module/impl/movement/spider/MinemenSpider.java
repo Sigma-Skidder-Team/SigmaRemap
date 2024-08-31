@@ -51,17 +51,17 @@ public class MinemenSpider extends Module {
                 mc.getConnection()
                         .sendPacket(
                                 new Class5605(
-                                        mc.player.getPositionVec().field18048,
-                                        mc.player.getPositionVec().field18049 - 1.0E-14,
-                                        mc.player.getPositionVec().field18050,
+                                        mc.player.getPositionVec().x,
+                                        mc.player.getPositionVec().y - 1.0E-14,
+                                        mc.player.getPositionVec().z,
                                         false
                                 )
                         );
                 mc.player
                         .setPosition(
-                                mc.player.getPositionVec().field18048,
-                                mc.player.getPositionVec().field18049 - 2.8,
-                                mc.player.getPositionVec().field18050
+                                mc.player.getPositionVec().x,
+                                mc.player.getPositionVec().y - 2.8,
+                                mc.player.getPositionVec().z
                         );
                 mc.gameSettings.keyBindSneak.pressed = false;
                 mc.player.onGround = false;
@@ -112,12 +112,12 @@ public class MinemenSpider extends Module {
                 double var7 = 4.88E-7;
                 if (((Direction) var4.method37538()).method544() != Class113.field413) {
                     var1.method13914(
-                            (double) Math.round((((Vector3d) var4.method37539()).field18050 + 1.1921022E-8) * 10000.0) / 10000.0
+                            (double) Math.round((((Vector3d) var4.method37539()).z + 1.1921022E-8) * 10000.0) / 10000.0
                                     + (double) ((Direction) var4.method37538()).method541() * var7
                     );
                 } else {
                     var1.method13910(
-                            (double) Math.round((((Vector3d) var4.method37539()).field18048 + 1.1921022E-8) * 10000.0) / 10000.0
+                            (double) Math.round((((Vector3d) var4.method37539()).x + 1.1921022E-8) * 10000.0) / 10000.0
                                     + (double) ((Direction) var4.method37538()).method539() * var7
                     );
                 }

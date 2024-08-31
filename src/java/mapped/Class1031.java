@@ -1,9 +1,13 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 
 public abstract class Class1031 extends Class1025 {
-   private static final DataParameter<Byte> field5733 = EntityDataManager.<Byte>method35441(Class1031.class, Class7784.field33390);
+   private static final DataParameter<Byte> field5733 = EntityDataManager.<Byte>createKey(Class1031.class, DataSerializers.field33390);
    public int field5734;
    private Class2031 field5735 = Class2031.field13181;
 
@@ -97,7 +101,7 @@ public abstract class Class1031 extends Class1025 {
       return this.field5734;
    }
 
-   public abstract Class9455 method4598();
+   public abstract SoundEvent method4598();
 
    // $VF: synthetic method
    public static Class6990 method4599(Class1031 var0) {

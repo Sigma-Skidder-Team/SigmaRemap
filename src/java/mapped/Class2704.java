@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.AxisAlignedBB;
 
@@ -24,7 +25,7 @@ public class Class2704 extends Class2699 {
    @Override
    public boolean method10803() {
       int var3 = this.field17153.method3015();
-      Class880 var4 = this.field17153.method3014();
+      LivingEntity var4 = this.field17153.method3014();
       if (var3 != this.field17181 && var4 != null) {
          if (var4.getType() == EntityType.PLAYER && this.field17153.world.method6789().method17135(Class5462.field24255)) {
             return false;
@@ -102,7 +103,7 @@ public class Class2704 extends Class2699 {
       }
    }
 
-   public void method10920(Class1006 var1, Class880 var2) {
+   public void method10920(Class1006 var1, LivingEntity var2) {
       var1.method4233(var2);
    }
 }

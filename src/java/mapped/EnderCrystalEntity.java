@@ -2,14 +2,17 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 
 public class EnderCrystalEntity extends Entity {
-   private static final DataParameter<Optional<BlockPos>> field5521 = EntityDataManager.<Optional<BlockPos>>method35441(EnderCrystalEntity.class, Class7784.field33402);
-   private static final DataParameter<Boolean> field5522 = EntityDataManager.<Boolean>method35441(EnderCrystalEntity.class, Class7784.field33398);
+   private static final DataParameter<Optional<BlockPos>> field5521 = EntityDataManager.<Optional<BlockPos>>createKey(EnderCrystalEntity.class, DataSerializers.field33402);
+   private static final DataParameter<Boolean> field5522 = EntityDataManager.<Boolean>createKey(EnderCrystalEntity.class, DataSerializers.field33398);
    public int field5523;
 
    public EnderCrystalEntity(EntityType<? extends EnderCrystalEntity> var1, World var2) {
@@ -125,8 +128,8 @@ public class EnderCrystalEntity extends Entity {
    }
 
    @Override
-   public boolean method3291(double var1) {
-      return super.method3291(var1) || this.method4143() != null;
+   public boolean isInRangeToRenderDist(double var1) {
+      return super.isInRangeToRenderDist(var1) || this.method4143() != null;
    }
 
    @Override

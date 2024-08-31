@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import mapped.Class9217;
-import mapped.PlayerEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import mapped.Vector3d;
 import net.minecraft.entity.Entity;
 

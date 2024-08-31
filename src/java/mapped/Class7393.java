@@ -3,6 +3,8 @@ package mapped;
 import io.netty.buffer.Unpooled;
 import java.util.Collection;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -60,7 +62,7 @@ public class Class7393 {
    public static void method23621(ServerWorld var0, Collection<Class7699> var1) {
    }
 
-   public static void method23622(Class880 var0) {
+   public static void method23622(LivingEntity var0) {
    }
 
    public static void method23623(Class1017 var0) {

@@ -38,7 +38,9 @@ import java.util.stream.Stream;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
@@ -447,11 +449,11 @@ public class ColorUtils {
          }
 
          Vector3d var11 = method17721(var1, var0);
-         Vector3d var12 = var7.method11339(var11.field18048 * var9, var11.field18049 * var9, var11.field18050 * var9);
+         Vector3d var12 = var7.method11339(var11.x * var9, var11.y * var9, var11.z * var9);
          float var13 = 1.0F;
          AxisAlignedBB var14 = var8.getBoundingBox().method19661(var11.method11344(var9)).method19663(1.0, 1.0, 1.0);
          return method17713(
-            field24949.world, var8, var7, var12, var14, var0x -> var0x instanceof Class880 || var0x instanceof Class907, (double)(var2 * var2), var3
+            field24949.world, var8, var7, var12, var14, var0x -> var0x instanceof LivingEntity || var0x instanceof Class907, (double)(var2 * var2), var3
          );
       } else {
          return null;
@@ -492,7 +494,7 @@ public class ColorUtils {
          field24949.player.getPosX(), field24949.player.getPosY() + (double)field24949.player.method3393(), field24949.player.getPosZ()
       );
       Vector3d var13 = method17721(var2, var1);
-      Vector3d var14 = var12.method11339(var13.field18048 * var8, var13.field18049 * var8, var13.field18050 * var8);
+      Vector3d var14 = var12.method11339(var13.x * var8, var13.y * var8, var13.z * var8);
 
       for (Entity var16 : field24949.world
          .method6770(field24949.player, field24949.player.getBoundingBox().method19661(var13.method11344(var8)).method19663(1.0, 1.0, 1.0), var3)) {
@@ -512,12 +514,12 @@ public class ColorUtils {
    }
 
    public static boolean method17715(Vector3d var0, AxisAlignedBB var1) {
-      return var0.field18048 >= var1.field28449
-         && var0.field18048 <= var1.field28452
-         && var0.field18049 >= var1.field28450
-         && var0.field18049 <= var1.field28453
-         && var0.field18050 >= var1.field28451
-         && var0.field18050 <= var1.field28454;
+      return var0.x >= var1.field28449
+         && var0.x <= var1.field28452
+         && var0.y >= var1.field28450
+         && var0.y <= var1.field28453
+         && var0.z >= var1.field28451
+         && var0.z <= var1.field28454;
    }
 
    public static boolean method17716() {
@@ -563,17 +565,17 @@ public class ColorUtils {
    }
 
    public static double method17724(double var0) {
-      field24949.player.method3435(var0, field24949.player.method3433().field18049, field24949.player.method3433().field18050);
+      field24949.player.method3435(var0, field24949.player.method3433().y, field24949.player.method3433().z);
       return var0;
    }
 
    public static double method17725(double var0) {
-      field24949.player.method3435(field24949.player.method3433().field18048, var0, field24949.player.method3433().field18050);
+      field24949.player.method3435(field24949.player.method3433().x, var0, field24949.player.method3433().z);
       return var0;
    }
 
    public static double method17726(double var0) {
-      field24949.player.method3435(field24949.player.method3433().field18048, field24949.player.method3433().field18049, var0);
+      field24949.player.method3435(field24949.player.method3433().x, field24949.player.method3433().y, var0);
       return var0;
    }
 
@@ -864,7 +866,7 @@ public class ColorUtils {
    }
 
    public static Class2258 method17744(Entity var0) {
-      if (var0 instanceof Class880) {
+      if (var0 instanceof LivingEntity) {
          if (!(var0 instanceof PlayerEntity)) {
             return !(var0 instanceof Class1006) && !(var0 instanceof Class1009) && !(var0 instanceof Class1108) && !(var0 instanceof Class1111)
                ? Class2258.field14691
@@ -992,10 +994,10 @@ public class ColorUtils {
       if (var0 != field24949.player && var0 != Blink.field23863) {
          if (Client.getInstance().getFriendManager().method26997(var0)) {
             return false;
-         } else if (var0 instanceof Class880) {
-            if (((Class880)var0).getHealth() == 0.0F) {
+         } else if (var0 instanceof LivingEntity) {
+            if (((LivingEntity)var0).getHealth() == 0.0F) {
                return false;
-            } else if (!field24949.player.method3026((Class880)var0)) {
+            } else if (!field24949.player.method3026((LivingEntity)var0)) {
                return false;
             } else if (var0 instanceof ArmorStandEntity) {
                return false;
@@ -1052,9 +1054,9 @@ public class ColorUtils {
    }
 
    public static Vector3d method17752(AxisAlignedBB var0) {
-      double var3 = var0.method19685().field18048;
+      double var3 = var0.method19685().x;
       double var5 = var0.field28450;
-      double var7 = var0.method19685().field18050;
+      double var7 = var0.method19685().z;
       double var9 = (var0.field28453 - var5) * 0.95;
       double var11 = (var0.field28452 - var0.field28449) * 0.95;
       double var13 = (var0.field28454 - var0.field28451) * 0.95;
@@ -1109,9 +1111,9 @@ public class ColorUtils {
    }
 
    public static double method17754(Vector3d var0) {
-      double var3 = field24949.player.getPosX() - var0.field18048;
-      double var5 = field24949.player.getPosY() + (double)field24949.player.method3393() - var0.field18049;
-      double var7 = field24949.player.getPosZ() - var0.field18050;
+      double var3 = field24949.player.getPosX() - var0.x;
+      double var5 = field24949.player.getPosY() + (double)field24949.player.method3393() - var0.y;
+      double var7 = field24949.player.getPosZ() - var0.z;
       return Math.sqrt(var3 * var3 + var5 * var5 + var7 * var7);
    }
 
@@ -1151,9 +1153,9 @@ public class ColorUtils {
       return var5;
    }
    public static float[] method17758(Vector3d var0, Vector3d var1) {
-      double var4 = var1.field18048 - var0.field18048;
-      double var6 = (var1.field18049 - var0.field18049) * -1.0;
-      double var8 = var1.field18050 - var0.field18050;
+      double var4 = var1.x - var0.x;
+      double var6 = (var1.y - var0.y) * -1.0;
+      double var8 = var1.z - var0.z;
       double var10 = (double) MathHelper.method37766(var4 * var4 + var8 * var8);
       return new float[]{
          (float) MathHelper.method37793(Math.toDegrees(Math.atan2(var8, var4)) - 90.0), (float) MathHelper.method37793(Math.toDegrees(Math.atan2(var6, var10)))

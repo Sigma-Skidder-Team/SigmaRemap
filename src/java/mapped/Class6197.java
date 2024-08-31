@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import java.util.Set;
+
+import net.minecraft.block.BlockState;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 

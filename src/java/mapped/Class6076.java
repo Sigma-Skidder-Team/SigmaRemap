@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 public class Class6076 extends Class6069 {
@@ -53,9 +54,9 @@ public class Class6076 extends Class6069 {
    }
 
    @Override
-   public void method18822(Class880 var1, Entity var2, int var3) {
-      if (var2 instanceof Class880) {
-         Class880 var6 = (Class880)var2;
+   public void method18822(LivingEntity var1, Entity var2, int var3) {
+      if (var2 instanceof LivingEntity) {
+         LivingEntity var6 = (LivingEntity)var2;
          if (this.field27320 == 2 && var6.method3089() == Class7809.field33507) {
             int var7 = 20 + var1.method3013().nextInt(10 * var3);
             var6.method3035(new Class2023(Effects.SLOWNESS, var7, 3));

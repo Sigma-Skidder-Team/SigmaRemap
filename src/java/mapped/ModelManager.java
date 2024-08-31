@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import net.minecraft.block.BlockState;
 
 import java.util.Map;
 

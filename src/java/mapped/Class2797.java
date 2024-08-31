@@ -2,11 +2,12 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.function.Function;
 
-public class Class2797<T extends Class880> extends Class2855<T> implements Class2825, Class2824 {
+public class Class2797<T extends LivingEntity> extends Class2855<T> implements Class2825, Class2824 {
    private static String[] field17431;
    public Class7219 field17432;
    public Class7219 field17433;

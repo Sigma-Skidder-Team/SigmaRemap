@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 
 import java.util.List;
@@ -55,7 +56,7 @@ public class Class3736 extends Class3676<Class1018> {
    public void method12504(ServerWorld var1, Class1018 var2, long var3) {
       Class1018 var7 = this.method12664(var2);
       Class6983.method21569(var2, var7, this.field19856);
-      if (var2.method3213(var7, 3.0) && var3 >= this.field19857) {
+      if (var2.isEntityInRange(var7, 3.0) && var3 >= this.field19857) {
          var2.method4509(var1, var7);
          var2.method2992().method21405(Class8830.field39829);
          var7.method2992().method21405(Class8830.field39829);
@@ -80,7 +81,7 @@ public class Class3736 extends Class3676<Class1018> {
 
    private Optional<? extends Class1018> method12666(Class1018 var1) {
       return var1.method2992()
-         .<List<Class880>>method21410(Class8830.field39819)
+         .<List<LivingEntity>>method21410(Class8830.field39819)
          .get()
          .stream()
          .filter(var1x -> var1x.getType() == this.field19855)

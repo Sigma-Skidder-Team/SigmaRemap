@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -176,9 +177,9 @@ public abstract class Class4587 {
                ISelectionContext.method14947(),
                new Class8544<VoxelShape>(Stream.<VoxelShape>empty())
             );
-            var1 = var15.field18048;
-            var3 = var15.field18049;
-            var5 = var15.field18050;
+            var1 = var15.x;
+            var3 = var15.y;
+            var5 = var15.z;
          }
 
          if (var1 != 0.0 || var3 != 0.0 || var5 != 0.0) {

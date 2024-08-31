@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 
 import java.util.Map;
@@ -17,7 +19,7 @@ public class Class3321 extends Item {
    }
 
    @Override
-   public ActionResultType method11716(ItemStack var1, PlayerEntity var2, Class880 var3, Hand var4) {
+   public ActionResultType method11716(ItemStack var1, PlayerEntity var2, LivingEntity var3, Hand var4) {
       if (var3 instanceof Class1019) {
          Class1019 var7 = (Class1019)var3;
          if (var7.isAlive() && !var7.method4519() && var7.method4517() != this.field18831) {

@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.primitives.Floats;
+import net.minecraft.entity.LivingEntity;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -18,19 +20,19 @@ public class Class7704 {
       this.field33085 = var1;
    }
 
-   public Integer method25457(ItemStack var1, ClientWorld var2, Class880 var3) {
+   public Integer method25457(ItemStack var1, ClientWorld var2, LivingEntity var3) {
       Class9098 var6 = this.method25459(var1, var2, var3);
       return var6 != null ? this.field33086.get(var6) : null;
    }
 
-   public void method25458(ItemStack var1, ClientWorld var2, Class880 var3, Integer var4) {
+   public void method25458(ItemStack var1, ClientWorld var2, LivingEntity var3, Integer var4) {
       Class9098 var7 = this.method25459(var1, var2, var3);
       if (var7 != null) {
          this.field33086.put(var7, var4);
       }
    }
 
-   private Class9098 method25459(ItemStack var1, ClientWorld var2, Class880 var3) {
+   private Class9098 method25459(ItemStack var1, ClientWorld var2, LivingEntity var3) {
       Integer[] var6 = new Integer[this.field33085.length];
 
       for (int var7 = 0; var7 < var6.length; var7++) {

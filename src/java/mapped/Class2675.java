@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 public class Class2675 extends Class2672 {
@@ -56,7 +57,7 @@ public class Class2675 extends Class2672 {
    }
 
    @Override
-   public Class9455 method10894() {
+   public SoundEvent method10894() {
       return Sounds.field26566;
    }
 

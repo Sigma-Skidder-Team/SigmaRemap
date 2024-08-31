@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 public class Class961 extends TileEntity implements Class935 {
    private static String[] field5391;
 

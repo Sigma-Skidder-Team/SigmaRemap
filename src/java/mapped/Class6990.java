@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
@@ -182,10 +183,10 @@ public abstract class Class6990 {
             if (this.field30245 != null && !this.field30245.method28693()) {
                Vector3d var3 = this.method21667();
                Vector3d var4 = this.field30245.method28703(this.field30243);
-               if (var3.field18049 > var4.field18049
+               if (var3.y > var4.y
                   && !this.field30243.method3226()
-                  && MathHelper.floor(var3.field18048) == MathHelper.floor(var4.field18048)
-                  && MathHelper.floor(var3.field18050) == MathHelper.floor(var4.field18050)) {
+                  && MathHelper.floor(var3.x) == MathHelper.floor(var4.x)
+                  && MathHelper.floor(var3.z) == MathHelper.floor(var4.z)) {
                   this.field30245.method28691();
                }
             }
@@ -200,9 +201,9 @@ public abstract class Class6990 {
             this.field30243
                .method4228()
                .method20813(
-                  var5.field18048,
-                  !this.field30244.getBlockState(var6.down()).isAir() ? Class6762.method20626(this.field30244, var6) : var5.field18049,
-                  var5.field18050,
+                  var5.x,
+                  !this.field30244.getBlockState(var6.down()).isAir() ? Class6762.method20626(this.field30244, var6) : var5.y,
+                  var5.z,
                   this.field30246
                );
          }

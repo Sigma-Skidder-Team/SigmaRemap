@@ -48,7 +48,7 @@ public class Class2756 extends Class2754 {
 
    @Override
    public boolean method10806() {
-      double var3 = this.field17298.method3433().field18049;
+      double var3 = this.field17298.method3433().y;
       return (!(var3 * var3 < 0.03F) || this.field17298.rotationPitch == 0.0F || !(Math.abs(this.field17298.rotationPitch) < 10.0F) || !this.field17298.method3250())
          && !this.field17298.method3226();
    }
@@ -83,11 +83,11 @@ public class Class2756 extends Class2754 {
       }
 
       Vector3d var9 = this.field17298.method3433();
-      if (var9.field18049 * var9.field18049 < 0.03F && this.field17298.rotationPitch != 0.0F) {
+      if (var9.y * var9.y < 0.03F && this.field17298.rotationPitch != 0.0F) {
          this.field17298.rotationPitch = MathHelper.method37828(this.field17298.rotationPitch, 0.0F, 0.2F);
       } else {
          double var5 = Math.sqrt(Entity.method3234(var9));
-         double var7 = Math.signum(-var9.field18049) * Math.acos(var5 / var9.method11348()) * 180.0F / (float)Math.PI;
+         double var7 = Math.signum(-var9.y) * Math.acos(var5 / var9.method11348()) * 180.0F / (float)Math.PI;
          this.field17298.rotationPitch = (float)var7;
       }
    }

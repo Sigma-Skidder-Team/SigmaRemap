@@ -1,9 +1,14 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -12,10 +17,10 @@ import java.util.UUID;
 import java.util.function.Predicate;
 
 public class Class1012 extends Class1013 implements Class1011 {
-   private static final DataParameter<Boolean> field5656 = EntityDataManager.<Boolean>method35441(Class1012.class, Class7784.field33398);
-   private static final DataParameter<Integer> field5657 = EntityDataManager.<Integer>method35441(Class1012.class, Class7784.field33391);
-   private static final DataParameter<Integer> field5658 = EntityDataManager.<Integer>method35441(Class1012.class, Class7784.field33391);
-   public static final Predicate<Class880> field5659 = var0 -> {
+   private static final DataParameter<Boolean> field5656 = EntityDataManager.<Boolean>createKey(Class1012.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> field5657 = EntityDataManager.<Integer>createKey(Class1012.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5658 = EntityDataManager.<Integer>createKey(Class1012.class, DataSerializers.field33391);
+   public static final Predicate<LivingEntity> field5659 = var0 -> {
       EntityType var3 = var0.getType();
       return var3 == EntityType.field41074 || var3 == EntityType.field41071 || var3 == EntityType.field41033;
    };
@@ -91,7 +96,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       if (!this.method4369()) {
          if (this.rand.nextInt(3) != 0) {
             return Sounds.field27249;
@@ -104,12 +109,12 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27253;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27250;
    }
 
@@ -173,9 +178,9 @@ public class Class1012 extends Class1013 implements Class1011 {
                            this.getPosX() + (double)var7,
                            (double)(var3 + 0.8F),
                            this.getPosZ() + (double)var8,
-                           var5.field18048,
-                           var5.field18049,
-                           var5.field18050
+                           var5.x,
+                           var5.y,
+                           var5.z
                         );
                   }
                }
@@ -294,7 +299,7 @@ public class Class1012 extends Class1013 implements Class1011 {
                } else {
                   this.method4399(var1);
                   this.field5599.method21666();
-                  this.method4233((Class880)null);
+                  this.method4233((LivingEntity)null);
                   this.method4403(true);
                   this.world.method6786(this, (byte)7);
                }
@@ -317,7 +322,7 @@ public class Class1012 extends Class1013 implements Class1011 {
                   this.method4403(!this.method4402());
                   this.field4981 = false;
                   this.field5599.method21666();
-                  this.method4233((Class880)null);
+                  this.method4233((LivingEntity)null);
                   return ActionResultType.field14818;
                }
 
@@ -450,7 +455,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    @Override
-   public boolean method4388(Class880 var1, Class880 var2) {
+   public boolean method4388(LivingEntity var1, LivingEntity var2) {
       if (var1 instanceof Class1081 || var1 instanceof Class1112) {
          return false;
       } else if (!(var1 instanceof Class1012)) {
@@ -480,7 +485,7 @@ public class Class1012 extends Class1013 implements Class1011 {
       return var0.rand;
    }
 
-   public class Class2773<T extends Class880> extends Class2770<T> {
+   public class Class2773<T extends LivingEntity> extends Class2770<T> {
       private final Class1012 field17362;
 
       public Class2773(Class1012 var1, Class<T> var2, float var3, double var4, double var5) {

@@ -1,6 +1,9 @@
 package mapped;
 
 import java.util.List;
+
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class3323 extends Item {
@@ -14,7 +17,7 @@ public class Class3323 extends Item {
    }
 
    @Override
-   public ItemStack method11709(ItemStack var1, World var2, Class880 var3) {
+   public ItemStack method11709(ItemStack var1, World var2, LivingEntity var3) {
       PlayerEntity var6 = !(var3 instanceof PlayerEntity) ? null : (PlayerEntity)var3;
       if (var6 instanceof ServerPlayerEntity) {
          CriteriaTriggers.field44490.method15174((ServerPlayerEntity)var6, var1);

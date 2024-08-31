@@ -44,7 +44,7 @@ public class Class2730<T extends Class1026> extends Class2595 {
          if (!this.field17241.method4772()) {
             Vector3d var4 = Class8037.method27587(this.field17241, 15, 4, Vector3d.method11330(var3.method25428()));
             if (var4 != null) {
-               this.field17241.method4230().method21654(var4.field18048, var4.field18049, var4.field18050, 1.0);
+               this.field17241.method4230().method21654(var4.x, var4.y, var4.z, 1.0);
             }
          }
       }

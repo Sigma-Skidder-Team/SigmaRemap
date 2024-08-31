@@ -1,6 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -117,7 +120,7 @@ public class Class1063 extends Class1038 implements Class1011 {
    }
 
    @Override
-   public void method4233(Class880 var1) {
+   public void method4233(LivingEntity var1) {
       if (this.method4232() == null && var1 != null) {
          this.field5863 = field5862.method29319(this.rand);
          this.field5868 = field5867.method29319(this.rand);
@@ -172,17 +175,17 @@ public class Class1063 extends Class1038 implements Class1011 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return !this.method4369() ? Sounds.field27294 : Sounds.field27295;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27297;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27296;
    }
 

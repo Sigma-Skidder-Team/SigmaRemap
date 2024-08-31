@@ -1,11 +1,13 @@
 package mapped;
 
+import net.minecraft.util.SoundEvent;
+
 public class Class6337 extends Class6333 {
    private static String[] field27850;
    private int field27851;
    private int field27852;
 
-   public Class6337(Class9455 var1) {
+   public Class6337(SoundEvent var1) {
       super(var1, Class2266.field14736);
       this.field27861 = true;
       this.field27862 = 0;

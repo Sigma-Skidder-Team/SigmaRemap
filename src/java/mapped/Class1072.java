@@ -1,9 +1,17 @@
 package mapped;
 
 import com.google.common.collect.UnmodifiableIterator;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -12,8 +20,8 @@ import javax.annotation.Nullable;
 
 public class Class1072 extends Class1018 implements Class1071, Class1069 {
    private static String[] field5911;
-   private static final DataParameter<Boolean> field5912 = EntityDataManager.<Boolean>method35441(Class1072.class, Class7784.field33398);
-   private static final DataParameter<Integer> field5913 = EntityDataManager.<Integer>method35441(Class1072.class, Class7784.field33391);
+   private static final DataParameter<Boolean> field5912 = EntityDataManager.<Boolean>createKey(Class1072.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> field5913 = EntityDataManager.<Integer>createKey(Class1072.class, DataSerializers.field33391);
    private static final Class120 field5914 = Class120.method339(Items.field38052, Items.field38053, Items.field38111);
    private final Class6500 field5915 = new Class6500(this.dataManager, field5913, field5912);
 
@@ -84,17 +92,17 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26924;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26926;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26925;
    }
 
@@ -150,7 +158,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public Vector3d method3420(Class880 var1) {
+   public Vector3d method3420(LivingEntity var1) {
       Direction var4 = this.method3387();
       if (var4.method544() == Class113.field414) {
          return super.method3420(var1);

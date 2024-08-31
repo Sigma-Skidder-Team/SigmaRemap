@@ -1,14 +1,15 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Class3738 extends Class3676<Class880> {
+public class Class3738 extends Class3676<LivingEntity> {
    private static String[] field19860;
-   private final Predicate<Class880> field19861;
+   private final Predicate<LivingEntity> field19861;
    private final float field19862;
 
    public Class3738(Class179 var1, float var2) {
@@ -23,21 +24,21 @@ public class Class3738 extends Class3676<Class880> {
       this(var0 -> true, var1);
    }
 
-   public Class3738(Predicate<Class880> var1, float var2) {
+   public Class3738(Predicate<LivingEntity> var1, float var2) {
       super(ImmutableMap.of(Class8830.field39825, Class2217.field14485, Class8830.field39819, Class2217.field14484));
       this.field19861 = var1;
       this.field19862 = var2 * var2;
    }
 
    @Override
-   public boolean method12508(ServerWorld var1, Class880 var2) {
-      return var2.method2992().<List<Class880>>method21410(Class8830.field39819).get().stream().anyMatch(this.field19861);
+   public boolean method12508(ServerWorld var1, LivingEntity var2) {
+      return var2.method2992().<List<LivingEntity>>method21410(Class8830.field39819).get().stream().anyMatch(this.field19861);
    }
 
    @Override
-   public void method12502(ServerWorld var1, Class880 var2, long var3) {
+   public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       Class6947<?> var7 = var2.method2992();
-      var7.<List<Class880>>method21410(Class8830.field39819)
+      var7.<List<LivingEntity>>method21410(Class8830.field39819)
          .ifPresent(
             var3x -> var3x.stream()
                   .filter(this.field19861)

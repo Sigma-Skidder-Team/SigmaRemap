@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -17,7 +19,7 @@ public class Class7781 {
       return this.field33367;
    }
 
-   public boolean method25781(ItemStack var1, ClientWorld var2, Class880 var3) {
+   public boolean method25781(ItemStack var1, ClientWorld var2, LivingEntity var3) {
       Item var6 = var1.getItem();
 
       for (Entry var8 : this.field33368.entrySet()) {

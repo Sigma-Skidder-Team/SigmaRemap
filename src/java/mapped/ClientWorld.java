@@ -7,9 +7,12 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap.Entry;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -456,14 +459,14 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method6743(PlayerEntity var1, double var2, double var4, double var6, Class9455 var8, Class2266 var9, float var10, float var11) {
+   public void method6743(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11) {
       if (Class9299.field42848.method20214()) {
          Object var14 = Class9299.field42848.method20217(var1, var8, var9, var10, var11);
          if (Class9299.method35064(var14, Class9299.field42809) || Class9299.method35070(var14, Class9299.field42980) == null) {
             return;
          }
 
-         var8 = (Class9455)Class9299.method35070(var14, Class9299.field42980);
+         var8 = (SoundEvent)Class9299.method35070(var14, Class9299.field42980);
          var9 = (Class2266)Class9299.method35070(var14, Class9299.field42981);
          var10 = Class9299.method35067(var14, Class9299.field42982);
       }
@@ -474,14 +477,14 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method6744(PlayerEntity var1, Entity var2, Class9455 var3, Class2266 var4, float var5, float var6) {
+   public void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
       if (Class9299.field42848.method20214()) {
          Object var9 = Class9299.field42848.method20217(var1, var3, var4, var5, var6);
          if (Class9299.method35064(var9, Class9299.field42809) || Class9299.method35070(var9, Class9299.field42980) == null) {
             return;
          }
 
-         var3 = (Class9455)Class9299.method35070(var9, Class9299.field42980);
+         var3 = (SoundEvent)Class9299.method35070(var9, Class9299.field42980);
          var4 = (Class2266)Class9299.method35070(var9, Class9299.field42981);
          var5 = Class9299.method35067(var9, Class9299.field42982);
       }
@@ -491,12 +494,12 @@ public class ClientWorld extends World {
       }
    }
 
-   public void method6858(BlockPos var1, Class9455 var2, Class2266 var3, float var4, float var5, boolean var6) {
+   public void method6858(BlockPos var1, SoundEvent var2, Class2266 var3, float var4, float var5, boolean var6) {
       this.method6745((double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public void method6745(double var1, double var3, double var5, Class9455 var7, Class2266 var8, float var9, float var10, boolean var11) {
+   public void method6745(double var1, double var3, double var5, SoundEvent var7, Class2266 var8, float var9, float var10, boolean var11) {
       double var14 = this.field9030.gameRenderer.getActiveRenderInfo().method37504().method11343(var1, var3, var5);
       MinecraftSoundManager var16 = new MinecraftSoundManager(var7, var8, var9, var10, var1, var3, var5);
       if (var11 && var14 > 100.0) {

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 
 public class Class3750 extends Class3676<Class1042> {
    private static String[] field19901;
@@ -19,6 +20,6 @@ public class Class3750 extends Class3676<Class1042> {
    }
 
    private static boolean method12712(Class1042 var0) {
-      return var0.method2992().<Class880>method21410(Class8830.field39836).filter(var1 -> var1.getDistanceSq(var0) <= 36.0).isPresent();
+      return var0.method2992().<LivingEntity>method21410(Class8830.field39836).filter(var1 -> var1.getDistanceSq(var0) <= 36.0).isPresent();
    }
 }

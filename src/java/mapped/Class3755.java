@@ -1,11 +1,12 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.function.BiPredicate;
 
-public class Class3755<E extends Class880, T extends Entity> extends Class3676<E> {
+public class Class3755<E extends LivingEntity, T extends Entity> extends Class3676<E> {
    private static String[] field19911;
    private final int field19912;
    private final BiPredicate<E, Entity> field19913;
@@ -29,7 +30,7 @@ public class Class3755<E extends Class880, T extends Entity> extends Class3676<E
    }
 
    private boolean method12724(E var1, Entity var2) {
-      return var2.isAlive() && var2.method3213(var1, (double)this.field19912) && var2.world == var1.world;
+      return var2.isAlive() && var2.isEntityInRange(var1, (double)this.field19912) && var2.world == var1.world;
    }
 
    @Override

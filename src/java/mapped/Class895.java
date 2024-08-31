@@ -1,7 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 
 import javax.annotation.Nullable;
 
@@ -12,7 +14,7 @@ public class Class895 extends Class890 {
       super(var1, var2);
    }
 
-   public Class895(World var1, Class880 var2) {
+   public Class895(World var1, LivingEntity var2) {
       super(EntityType.field41090, var2, var1);
    }
 
@@ -94,7 +96,7 @@ public class Class895 extends Class890 {
    public Entity method2745(ServerWorld var1) {
       Entity var4 = this.method3460();
       if (var4 != null && var4.world.getDimensionKey() != var1.getDimensionKey()) {
-         this.method3459((Entity)null);
+         this.setShooter((Entity)null);
       }
 
       return super.method2745(var1);

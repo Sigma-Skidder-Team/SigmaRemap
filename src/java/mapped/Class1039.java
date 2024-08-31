@@ -1,7 +1,10 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -23,31 +26,31 @@ public class Class1039 extends Class1038 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26686;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26689;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26688;
    }
 
    @Override
-   public Class9455 method4643() {
+   public SoundEvent method4643() {
       return Sounds.field26690;
    }
 
    @Override
    public boolean method3114(Entity var1) {
       boolean var4 = super.method3114(var1);
-      if (var4 && this.method3090().isEmpty() && var1 instanceof Class880) {
+      if (var4 && this.method3090().isEmpty() && var1 instanceof LivingEntity) {
          float var5 = this.world.method6807(this.getPosition()).method38328();
-         ((Class880)var1).method3035(new Class2023(Effects.HUNGER, 140 * (int)var5));
+         ((LivingEntity)var1).method3035(new Class2023(Effects.HUNGER, 140 * (int)var5));
       }
 
       return var4;

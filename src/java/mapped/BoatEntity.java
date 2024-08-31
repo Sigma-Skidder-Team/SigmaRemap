@@ -1,10 +1,14 @@
 package mapped;
 
 import com.google.common.collect.UnmodifiableIterator;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -12,13 +16,13 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class BoatEntity extends Entity {
-   private static final DataParameter<Integer> field5524 = EntityDataManager.<Integer>method35441(BoatEntity.class, Class7784.field33391);
-   private static final DataParameter<Integer> field5525 = EntityDataManager.<Integer>method35441(BoatEntity.class, Class7784.field33391);
-   private static final DataParameter<Float> field5526 = EntityDataManager.<Float>method35441(BoatEntity.class, Class7784.field33392);
-   private static final DataParameter<Integer> field5527 = EntityDataManager.<Integer>method35441(BoatEntity.class, Class7784.field33391);
-   private static final DataParameter<Boolean> field5528 = EntityDataManager.<Boolean>method35441(BoatEntity.class, Class7784.field33398);
-   private static final DataParameter<Boolean> field5529 = EntityDataManager.<Boolean>method35441(BoatEntity.class, Class7784.field33398);
-   private static final DataParameter<Integer> field5530 = EntityDataManager.<Integer>method35441(BoatEntity.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5524 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5525 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.field33391);
+   private static final DataParameter<Float> field5526 = EntityDataManager.<Float>createKey(BoatEntity.class, DataSerializers.field33392);
+   private static final DataParameter<Integer> field5527 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.field33391);
+   private static final DataParameter<Boolean> field5528 = EntityDataManager.<Boolean>createKey(BoatEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5529 = EntityDataManager.<Boolean>createKey(BoatEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> field5530 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.field33391);
    private final float[] field5531 = new float[2];
    private float field5532;
    private float field5533;
@@ -100,7 +104,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public Vector3d method3145(Class113 var1, Class9502 var2) {
-      return Class880.method3146(super.method3145(var1, var2));
+      return LivingEntity.method3146(super.method3145(var1, var2));
    }
 
    @Override
@@ -209,7 +213,7 @@ public class BoatEntity extends Entity {
    }
 
    @Override
-   public void method3131(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
+   public void setPositionAndRotationDirect(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
       this.field5536 = var1;
       this.field5537 = var3;
       this.field5538 = var5;
@@ -272,11 +276,11 @@ public class BoatEntity extends Entity {
             if (!this.method3245()
                && (double)(this.field5531[var3] % (float) (Math.PI * 2)) <= (float) (Math.PI / 4)
                && ((double)this.field5531[var3] + (float) (Math.PI / 8)) % (float) (Math.PI * 2) >= (float) (Math.PI / 4)) {
-               Class9455 var4 = this.method4149();
+               SoundEvent var4 = this.method4149();
                if (var4 != null) {
                   Vector3d var5 = this.method3281(1.0F);
-                  double var6 = var3 != 1 ? var5.field18050 : -var5.field18050;
-                  double var8 = var3 != 1 ? -var5.field18048 : var5.field18048;
+                  double var6 = var3 != 1 ? var5.z : -var5.z;
+                  double var8 = var3 != 1 ? -var5.x : var5.x;
                   this.world
                      .method6743(
                         (PlayerEntity)null,
@@ -307,7 +311,7 @@ public class BoatEntity extends Entity {
                   && this.method3408().size() < 2
                   && !var10.isPassenger()
                   && var10.method3429() < this.method3429()
-                  && var10 instanceof Class880
+                  && var10 instanceof LivingEntity
                   && !(var10 instanceof Class1047)
                   && !(var10 instanceof PlayerEntity)) {
                   var10.method3311(this);
@@ -333,7 +337,7 @@ public class BoatEntity extends Entity {
                this.method4166(0);
                Vector3d var5 = this.method3433();
                if (!this.field5551) {
-                  this.method3435(var5.field18048, !this.method3410(PlayerEntity.class) ? 0.6 : 2.7, var5.field18050);
+                  this.method3435(var5.x, !this.method3410(PlayerEntity.class) ? 0.6 : 2.7, var5.z);
                } else {
                   this.method3434(var5.method11339(0.0, -0.7, 0.0));
                   this.removePassengers();
@@ -357,7 +361,7 @@ public class BoatEntity extends Entity {
    }
 
    @Nullable
-   public Class9455 method4149() {
+   public SoundEvent method4149() {
       switch (Class7986.field34314[this.method4153().ordinal()]) {
          case 1:
          case 2:
@@ -386,7 +390,7 @@ public class BoatEntity extends Entity {
          this.rotationPitch = (float)((double)this.rotationPitch + (this.field5540 - (double)this.rotationPitch) / (double)this.field5535);
          this.field5535--;
          this.setPosition(var3, var5, var7);
-         this.method3214(this.rotationYaw, this.rotationPitch);
+         this.setRotation(this.rotationYaw, this.rotationPitch);
       }
    }
 
@@ -595,11 +599,11 @@ public class BoatEntity extends Entity {
          }
 
          Vector3d var9 = this.method3433();
-         this.method3435(var9.field18048 * (double)this.field5532, var9.field18049 + var5, var9.field18050 * (double)this.field5532);
+         this.method3435(var9.x * (double)this.field5532, var9.y + var5, var9.z * (double)this.field5532);
          this.field5534 = this.field5534 * this.field5532;
          if (var7 > 0.0) {
             Vector3d var10 = this.method3433();
-            this.method3435(var10.field18048, (var10.field18049 + var7 * 0.06153846016296973) * 0.75, var10.field18050);
+            this.method3435(var10.x, (var10.y + var7 * 0.06153846016296973) * 0.75, var10.z);
          }
       }
    }
@@ -659,7 +663,7 @@ public class BoatEntity extends Entity {
          }
 
          Vector3d var8 = new Vector3d((double)var4, 0.0, 0.0).method11351(-this.rotationYaw * (float) (Math.PI / 180.0) - (float) (Math.PI / 2));
-         var1.setPosition(this.getPosX() + var8.field18048, this.getPosY() + (double)var5, this.getPosZ() + var8.field18050);
+         var1.setPosition(this.getPosX() + var8.x, this.getPosY() + (double)var5, this.getPosZ() + var8.z);
          var1.rotationYaw = var1.rotationYaw + this.field5534;
          var1.method3143(var1.method3142() + this.field5534);
          this.method4160(var1);
@@ -672,10 +676,10 @@ public class BoatEntity extends Entity {
    }
 
    @Override
-   public Vector3d method3420(Class880 var1) {
+   public Vector3d method3420(LivingEntity var1) {
       Vector3d var4 = method3419((double)(this.method3429() * MathHelper.field45205), (double)var1.method3429(), this.rotationYaw);
-      double var5 = this.getPosX() + var4.field18048;
-      double var7 = this.getPosZ() + var4.field18050;
+      double var5 = this.getPosX() + var4.x;
+      double var7 = this.getPosZ() + var4.z;
       BlockPos var9 = new BlockPos(var5, this.getBoundingBox().field28453, var7);
       BlockPos var10 = var9.down();
       if (!this.world.method7013(var10)) {
@@ -745,7 +749,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public void method2761(double var1, boolean var3, BlockState var4, BlockPos var5) {
-      this.field5549 = this.method3433().field18049;
+      this.field5549 = this.method3433().y;
       if (!this.isPassenger()) {
          if (!var3) {
             if (!this.world.getFluidState(this.getPosition().down()).method23486(Class8953.field40469) && var1 < 0.0) {

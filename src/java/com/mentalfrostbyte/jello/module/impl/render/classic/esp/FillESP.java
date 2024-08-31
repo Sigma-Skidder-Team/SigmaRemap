@@ -8,7 +8,9 @@ import com.mentalfrostbyte.jello.event.impl.Class4433;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import org.lwjgl.opengl.GL11;
 
 public class FillESP extends Module {
@@ -109,7 +111,7 @@ public class FillESP extends Module {
     }
 
     private boolean method16138(Entity var1) {
-        if (var1 instanceof Class880) {
+        if (var1 instanceof LivingEntity) {
             if (var1 instanceof PlayerEntity) {
                 return !(var1 instanceof ClientPlayerEntity) && !Client.getInstance().getCombatManager().method29346(var1);
             } else {

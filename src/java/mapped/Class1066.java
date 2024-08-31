@@ -1,10 +1,14 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
 
 public abstract class Class1066 extends AbstractHorseEntity {
-   private static final DataParameter<Boolean> field5877 = EntityDataManager.<Boolean>method35441(Class1066.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5877 = EntityDataManager.<Boolean>createKey(Class1066.class, DataSerializers.field33398);
 
    public Class1066(EntityType<? extends Class1066> var1, World var2) {
       super(var1, var2);

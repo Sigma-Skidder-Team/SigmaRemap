@@ -2,6 +2,8 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.impl.render.CameraNoClip;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -36,8 +38,8 @@ public class Class9624 {
          MathHelper.method37822((double)var5, var2.prevPosZ, var2.getPosZ())
       );
       if (!var3) {
-         if (var2 instanceof Class880 && ((Class880)var2).isSleeping()) {
-            Direction var8 = ((Class880)var2).method3179();
+         if (var2 instanceof LivingEntity && ((LivingEntity)var2).isSleeping()) {
+            Direction var8 = ((LivingEntity)var2).method3179();
             this.method37501(var8 == null ? 0.0F : var8.method551() - 180.0F, 0.0F);
             this.method37500(0.0, 0.3, 0.0);
          }
@@ -67,9 +69,9 @@ public class Class9624 {
          var8 *= 0.1F;
          Vector3d var9 = this.field45008.method11339((double)var6, (double)var7, (double)var8);
          Vector3d var10 = new Vector3d(
-            this.field45008.field18048 - (double)this.field45010.method25269() * var1 + (double)var6 + (double)var8,
-            this.field45008.field18049 - (double)this.field45010.method25270() * var1 + (double)var7,
-            this.field45008.field18050 - (double)this.field45010.method25271() * var1 + (double)var8
+            this.field45008.x - (double)this.field45010.method25269() * var1 + (double)var6 + (double)var8,
+            this.field45008.y - (double)this.field45010.method25270() * var1 + (double)var7,
+            this.field45008.z - (double)this.field45010.method25271() * var1 + (double)var8
          );
          BlockRayTraceResult var11 = this.field45006.method7036(new Class6809(var9, var10, Class2271.field14776, Class1985.field12962, this.field45007));
          if (var11.getType() != RayTraceResult.Type.MISS) {
@@ -87,7 +89,7 @@ public class Class9624 {
       double var9 = (double)this.field45010.method25269() * var1 + (double)this.field45011.method25269() * var3 + (double)this.field45012.method25269() * var5;
       double var11 = (double)this.field45010.method25270() * var1 + (double)this.field45011.method25270() * var3 + (double)this.field45012.method25270() * var5;
       double var13 = (double)this.field45010.method25271() * var1 + (double)this.field45011.method25271() * var3 + (double)this.field45012.method25271() * var5;
-      this.method37503(new Vector3d(this.field45008.field18048 + var9, this.field45008.field18049 + var11, this.field45008.field18050 + var13));
+      this.method37503(new Vector3d(this.field45008.x + var9, this.field45008.y + var11, this.field45008.z + var13));
    }
 
    public void method37501(float var1, float var2) {
@@ -110,7 +112,7 @@ public class Class9624 {
 
    public void method37503(Vector3d var1) {
       this.field45008 = var1;
-      this.field45009.method8373(var1.field18048, var1.field18049, var1.field18050);
+      this.field45009.method8373(var1.x, var1.y, var1.z);
    }
 
    public Vector3d method37504() {
@@ -151,7 +153,7 @@ public class Class9624 {
       } else {
          FluidState var3 = this.field45006.getFluidState(this.field45009);
          return !var3.method23474()
-               && this.field45008.field18049 >= (double)((float)this.field45009.getY() + var3.method23475(this.field45006, this.field45009))
+               && this.field45008.y >= (double)((float)this.field45009.getY() + var3.method23475(this.field45006, this.field45009))
             ? Class9479.field44064.method25049()
             : var3;
       }

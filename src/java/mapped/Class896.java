@@ -1,7 +1,10 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 
@@ -9,13 +12,13 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class Class896 extends Class890 implements Class889 {
-   public static final Predicate<Class880> field5131 = Class880::method3124;
+   public static final Predicate<LivingEntity> field5131 = LivingEntity::method3124;
 
    public Class896(EntityType<? extends Class896> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class896(World var1, Class880 var2) {
+   public Class896(World var1, LivingEntity var2) {
       super(EntityType.field41092, var2, var1);
    }
 
@@ -83,9 +86,9 @@ public class Class896 extends Class890 implements Class889 {
 
    private void method3517() {
       AxisAlignedBB var3 = this.getBoundingBox().method19663(4.0, 2.0, 4.0);
-      List<Class880> var4 = this.world.method6772(Class880.class, var3, field5131);
+      List<LivingEntity> var4 = this.world.method6772(LivingEntity.class, var3, field5131);
       if (!var4.isEmpty()) {
-         for (Class880 var6 : var4) {
+         for (LivingEntity var6 : var4) {
             double var7 = this.getDistanceSq(var6);
             if (var7 < 16.0 && var6.method3124()) {
                var6.method2741(Class8654.method31124(var6, this.method3460()), 1.0F);
@@ -96,9 +99,9 @@ public class Class896 extends Class890 implements Class889 {
 
    private void method3518(List<Class2023> var1, Entity var2) {
       AxisAlignedBB var5 = this.getBoundingBox().method19663(4.0, 2.0, 4.0);
-      List<Class880> var6 = this.world.method7182(Class880.class, var5);
+      List<LivingEntity> var6 = this.world.method7182(LivingEntity.class, var5);
       if (!var6.isEmpty()) {
-         for (Class880 var8 : var6) {
+         for (LivingEntity var8 : var6) {
             if (var8.method3169()) {
                double var9 = this.getDistanceSq(var8);
                if (var9 < 16.0) {
@@ -127,8 +130,8 @@ public class Class896 extends Class890 implements Class889 {
    private void method3519(ItemStack var1, Class8812 var2) {
       Class999 var5 = new Class999(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
       Entity var6 = this.method3460();
-      if (var6 instanceof Class880) {
-         var5.method4113((Class880)var6);
+      if (var6 instanceof LivingEntity) {
+         var5.method4113((LivingEntity)var6);
       }
 
       var5.method4097(3.0F);

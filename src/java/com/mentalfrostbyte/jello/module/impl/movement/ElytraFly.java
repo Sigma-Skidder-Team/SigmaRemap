@@ -26,7 +26,7 @@ public class ElytraFly extends Module {
     public void method16220(TickEvent var1) {
         if (this.isEnabled()) {
             mc.gameSettings.keyBindSneak.pressed = false;
-            if (!(mc.player.method3433().field18049 < 0.08) || mc.player.onGround) {
+            if (!(mc.player.method3433().y < 0.08) || mc.player.onGround) {
                 mc.player.method3349(7, false);
                 if (mc.player.method3331()) {
                     this.method15999(false);

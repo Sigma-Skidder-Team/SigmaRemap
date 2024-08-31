@@ -64,10 +64,10 @@ public class Class8998 {
       if (var1 != this.field41148) {
          Vector3d var4 = var1.getPositionVec().method11336(this.field41147.method34975());
          int var5 = Math.min(this.method33245(), (Class1649.method6634(this.field41152) - 1) * 16);
-         boolean var6 = var4.field18048 >= (double)(-var5)
-            && var4.field18048 <= (double)var5
-            && var4.field18050 >= (double)(-var5)
-            && var4.field18050 <= (double)var5
+         boolean var6 = var4.x >= (double)(-var5)
+            && var4.x <= (double)var5
+            && var4.z >= (double)(-var5)
+            && var4.z <= (double)var5
             && this.field41148.method2749(var1);
          if (!var6) {
             if (this.field41151.remove(var1)) {

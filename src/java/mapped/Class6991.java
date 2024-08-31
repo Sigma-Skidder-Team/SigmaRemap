@@ -105,10 +105,10 @@ public class Class6991 extends Class6990 {
 
    @Override
    public boolean method21671(Vector3d var1, Vector3d var2, int var3, int var4, int var5) {
-      int var8 = MathHelper.floor(var1.field18048);
-      int var9 = MathHelper.floor(var1.field18050);
-      double var10 = var2.field18048 - var1.field18048;
-      double var12 = var2.field18050 - var1.field18050;
+      int var8 = MathHelper.floor(var1.x);
+      int var9 = MathHelper.floor(var1.z);
+      double var10 = var2.x - var1.x;
+      double var12 = var2.z - var1.z;
       double var14 = var10 * var10 + var12 * var12;
       if (var14 < 1.0E-8) {
          return false;
@@ -118,15 +118,15 @@ public class Class6991 extends Class6990 {
          var12 *= var16;
          var3 += 2;
          var5 += 2;
-         if (!this.method21679(var8, MathHelper.floor(var1.field18049), var9, var3, var4, var5, var1, var10, var12)) {
+         if (!this.method21679(var8, MathHelper.floor(var1.y), var9, var3, var4, var5, var1, var10, var12)) {
             return false;
          } else {
             var3 -= 2;
             var5 -= 2;
             double var18 = 1.0 / Math.abs(var10);
             double var20 = 1.0 / Math.abs(var12);
-            double var22 = (double)var8 - var1.field18048;
-            double var24 = (double)var9 - var1.field18050;
+            double var22 = (double)var8 - var1.x;
+            double var24 = (double)var9 - var1.z;
             if (var10 >= 0.0) {
                var22++;
             }
@@ -139,8 +139,8 @@ public class Class6991 extends Class6990 {
             var24 /= var12;
             int var26 = !(var10 < 0.0) ? 1 : -1;
             int var27 = !(var12 < 0.0) ? 1 : -1;
-            int var28 = MathHelper.floor(var2.field18048);
-            int var29 = MathHelper.floor(var2.field18050);
+            int var28 = MathHelper.floor(var2.x);
+            int var29 = MathHelper.floor(var2.z);
             int var30 = var28 - var8;
             int var31 = var29 - var9;
 
@@ -155,7 +155,7 @@ public class Class6991 extends Class6990 {
                   var30 = var28 - var8;
                }
 
-               if (!this.method21679(var8, MathHelper.floor(var1.field18049), var9, var3, var4, var5, var1, var10, var12)) {
+               if (!this.method21679(var8, MathHelper.floor(var1.y), var9, var3, var4, var5, var1, var10, var12)) {
                   return false;
                }
             }
@@ -173,8 +173,8 @@ public class Class6991 extends Class6990 {
       } else {
          for (int var16 = var14; var16 < var14 + var4; var16++) {
             for (int var17 = var15; var17 < var15 + var6; var17++) {
-               double var18 = (double)var16 + 0.5 - var7.field18048;
-               double var20 = (double)var17 + 0.5 - var7.field18050;
+               double var18 = (double)var16 + 0.5 - var7.x;
+               double var20 = (double)var17 + 0.5 - var7.z;
                if (!(var18 * var8 + var20 * var10 < 0.0)) {
                   Class2163 var22 = this.field30257.method20629(this.field30244, var16, var2 - 1, var17, this.field30243, var4, var5, var6, true, true);
                   if (!this.method21680(var22)) {
@@ -210,8 +210,8 @@ public class Class6991 extends Class6990 {
 
    private boolean method21681(int var1, int var2, int var3, int var4, int var5, int var6, Vector3d var7, double var8, double var10) {
       for (BlockPos var15 : BlockPos.method8359(new BlockPos(var1, var2, var3), new BlockPos(var1 + var4 - 1, var2 + var5 - 1, var3 + var6 - 1))) {
-         double var16 = (double)var15.getX() + 0.5 - var7.field18048;
-         double var18 = (double)var15.getZ() + 0.5 - var7.field18050;
+         double var16 = (double)var15.getX() + 0.5 - var7.x;
+         double var18 = (double)var15.getZ() + 0.5 - var7.z;
          if (!(var16 * var8 + var18 * var10 < 0.0) && !this.field30244.getBlockState(var15).method23440(this.field30244, var15, Class1947.field12614)) {
             return false;
          }

@@ -404,9 +404,9 @@ public class PacketBuffer extends ByteBuf {
       this.method35708(var4);
       this.method35713(var1.getFace());
       Vector3d var5 = var1.method31419();
-      this.writeFloat((float)(var5.field18048 - (double)var4.getX()));
-      this.writeFloat((float)(var5.field18049 - (double)var4.getY()));
-      this.writeFloat((float)(var5.field18050 - (double)var4.getZ()));
+      this.writeFloat((float)(var5.x - (double)var4.getX()));
+      this.writeFloat((float)(var5.y - (double)var4.getY()));
+      this.writeFloat((float)(var5.z - (double)var4.getZ()));
       this.writeBoolean(var1.method31425());
    }
 

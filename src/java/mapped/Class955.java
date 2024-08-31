@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -108,9 +109,9 @@ public class Class955 extends TileEntity implements Class935 {
 
                      if (!(var13 instanceof ServerPlayerEntity)) {
                         Vector3d var14 = var13.method3433();
-                        double var15 = var14.field18048;
-                        double var17 = var14.field18049;
-                        double var19 = var14.field18050;
+                        double var15 = var14.x;
+                        double var17 = var14.y;
+                        double var19 = var14.z;
                         switch (Class8024.field34486[var4.method544().ordinal()]) {
                            case 1:
                               var15 = (double)var4.method539();

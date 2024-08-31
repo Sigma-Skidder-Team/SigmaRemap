@@ -487,7 +487,7 @@ public class KillAura extends Module {
         } else if (this.field23940 == 1) {
             this.field23940 = 0;
             var8 = false;
-            if (var2.equals("Hypixel") && this.field23960 != null && mc.player.method3433().field18049 < 0.0) {
+            if (var2.equals("Hypixel") && this.field23960 != null && mc.player.method3433().y < 0.0) {
                 mc.getConnection().sendPacket(new Class5605(this.field23960[0], this.field23960[1], this.field23960[2], false));
                 this.field23960 = null;
             }

@@ -58,8 +58,8 @@ public class AntiVoid extends Module {
                     var8 = true;
                 }
 
-                if (mc.player.method3433().field18049 < -0.08 && !var8) {
-                    this.field23837 = this.field23837 - mc.player.method3433().field18049;
+                if (mc.player.method3433().y < -0.08 && !var8) {
+                    this.field23837 = this.field23837 - mc.player.method3433().y;
                 } else if (mc.player.onGround) {
                     this.field23837 = 0.0;
                 }
@@ -99,10 +99,10 @@ public class AntiVoid extends Module {
     }
 
     private boolean method16667() {
-        if (!(mc.player.getPositionVec().field18049 < 1.0)) {
+        if (!(mc.player.getPositionVec().y < 1.0)) {
             if (!mc.player.onGround) {
                 AxisAlignedBB var3 = mc.player.boundingBox;
-                var3 = var3.method19662(0.0, -mc.player.getPositionVec().field18049, 0.0);
+                var3 = var3.method19662(0.0, -mc.player.getPositionVec().y, 0.0);
                 return mc.world.method7055(mc.player, var3).count() == 0L;
             } else {
                 return false;

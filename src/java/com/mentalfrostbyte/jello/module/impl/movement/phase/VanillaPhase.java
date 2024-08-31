@@ -22,12 +22,12 @@ public class VanillaPhase extends Module {
                 double var5 = Class8005.method27349() != Class5989.field26129.method18582() ? 1.0E-6 : 0.0625;
                 if (((Direction) var4.method37538()).method544() != Class113.field413) {
                     var1.method13914(
-                            (double) Math.round((((Vector3d) var4.method37539()).field18050 + 1.1921022E-8) * 10000.0) / 10000.0
+                            (double) Math.round((((Vector3d) var4.method37539()).z + 1.1921022E-8) * 10000.0) / 10000.0
                                     + (double) ((Direction) var4.method37538()).method541() * var5
                     );
                 } else {
                     var1.method13910(
-                            (double) Math.round((((Vector3d) var4.method37539()).field18048 + 1.1921022E-8) * 10000.0) / 10000.0
+                            (double) Math.round((((Vector3d) var4.method37539()).x + 1.1921022E-8) * 10000.0) / 10000.0
                                     + (double) ((Direction) var4.method37538()).method539() * var5
                     );
                 }

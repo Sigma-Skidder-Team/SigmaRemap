@@ -1,18 +1,24 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.OptionalInt;
 
-public class Class888 extends Class882 implements Class889 {
-   private static final DataParameter<ItemStack> field5120 = EntityDataManager.<ItemStack>method35441(Class888.class, Class7784.field33396);
-   private static final DataParameter<OptionalInt> field5121 = EntityDataManager.<OptionalInt>method35441(Class888.class, Class7784.field33407);
-   private static final DataParameter<Boolean> field5122 = EntityDataManager.<Boolean>method35441(Class888.class, Class7784.field33398);
+public class Class888 extends ProjectileEntity implements Class889 {
+   private static final DataParameter<ItemStack> field5120 = EntityDataManager.<ItemStack>createKey(Class888.class, DataSerializers.field33396);
+   private static final DataParameter<OptionalInt> field5121 = EntityDataManager.<OptionalInt>createKey(Class888.class, DataSerializers.field33407);
+   private static final DataParameter<Boolean> field5122 = EntityDataManager.<Boolean>createKey(Class888.class, DataSerializers.field33398);
    private int field5123;
    private int field5124;
-   public Class880 field5125;
+   public LivingEntity field5125;
 
    public Class888(EntityType<? extends Class888> var1, World var2) {
       super(var1, var2);
@@ -34,10 +40,10 @@ public class Class888 extends Class882 implements Class889 {
 
    public Class888(World var1, Entity var2, double var3, double var5, double var7, ItemStack var9) {
       this(var1, var3, var5, var7, var9);
-      this.method3459(var2);
+      this.setShooter(var2);
    }
 
-   public Class888(World var1, ItemStack var2, Class880 var3) {
+   public Class888(World var1, ItemStack var2, LivingEntity var3) {
       this(var1, var3, var3.getPosX(), var3.getPosY(), var3.getPosZ(), var2);
       this.dataManager.method35446(field5121, OptionalInt.of(var3.method3205()));
       this.field5125 = var3;
@@ -50,7 +56,7 @@ public class Class888 extends Class882 implements Class889 {
 
    public Class888(World var1, ItemStack var2, Entity var3, double var4, double var6, double var8, boolean var10) {
       this(var1, var2, var4, var6, var8, var10);
-      this.method3459(var3);
+      this.setShooter(var3);
    }
 
    @Override
@@ -61,7 +67,7 @@ public class Class888 extends Class882 implements Class889 {
    }
 
    @Override
-   public boolean method3291(double var1) {
+   public boolean isInRangeToRenderDist(double var1) {
       return var1 < 4096.0 && !this.method3507();
    }
 
@@ -86,8 +92,8 @@ public class Class888 extends Class882 implements Class889 {
          if (this.field5125 == null) {
             this.dataManager.<OptionalInt>method35445(field5121).ifPresent(var1 -> {
                Entity var4x = this.world.method6774(var1);
-               if (var4x instanceof Class880) {
-                  this.field5125 = (Class880)var4x;
+               if (var4x instanceof LivingEntity) {
+                  this.field5125 = (LivingEntity)var4x;
                }
             });
          }
@@ -101,9 +107,9 @@ public class Class888 extends Class882 implements Class889 {
                this.field5125
                   .method3434(
                      var8.method11339(
-                        var11.field18048 * 0.1 + (var11.field18048 * 1.5 - var8.field18048) * 0.5,
-                        var11.field18049 * 0.1 + (var11.field18049 * 1.5 - var8.field18049) * 0.5,
-                        var11.field18050 * 0.1 + (var11.field18050 * 1.5 - var8.field18050) * 0.5
+                        var11.x * 0.1 + (var11.x * 1.5 - var8.x) * 0.5,
+                        var11.y * 0.1 + (var11.y * 1.5 - var8.y) * 0.5,
+                        var11.z * 0.1 + (var11.z * 1.5 - var8.z) * 0.5
                      )
                   );
             }
@@ -134,7 +140,7 @@ public class Class888 extends Class882 implements Class889 {
                this.getPosY() - 0.3,
                this.getPosZ(),
                this.rand.nextGaussian() * 0.05,
-               -this.method3433().field18049 * 0.5,
+               -this.method3433().y * 0.5,
                this.rand.nextGaussian() * 0.05
             );
       }
@@ -193,7 +199,7 @@ public class Class888 extends Class882 implements Class889 {
          double var7 = 5.0;
          Vector3d var9 = this.getPositionVec();
 
-         for (Class880 var11 : this.world.<Class880>method7182(Class880.class, this.getBoundingBox().method19664(5.0))) {
+         for (LivingEntity var11 : this.world.<LivingEntity>method7182(LivingEntity.class, this.getBoundingBox().method19664(5.0))) {
             if (var11 != this.field5125 && !(this.getDistanceSq(var11) > 25.0)) {
                boolean var12 = false;
 
@@ -230,7 +236,7 @@ public class Class888 extends Class882 implements Class889 {
             ItemStack var4 = this.dataManager.<ItemStack>method35445(field5120);
             CompoundNBT var5 = !var4.isEmpty() ? var4.method32145("Fireworks") : null;
             Vector3d var6 = this.method3433();
-            this.world.method6804(this.getPosX(), this.getPosY(), this.getPosZ(), var6.field18048, var6.field18049, var6.field18050, var5);
+            this.world.method6804(this.getPosX(), this.getPosY(), this.getPosZ(), var6.x, var6.y, var6.z, var5);
          } else {
             for (int var7 = 0; var7 < this.rand.nextInt(3) + 2; var7++) {
                this.world

@@ -11,7 +11,9 @@ import mapped.*;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.*;
 import org.apache.commons.lang3.StringUtils;
@@ -322,7 +324,7 @@ public class IngameGui extends AbstractGui {
                 if (this.field6716.gameSettings.field44603 == Class2207.field14426) {
                     float var6 = this.field6716.player.method2974(0.0F);
                     boolean var7 = false;
-                    if (this.field6716.pointedEntity != null && this.field6716.pointedEntity instanceof Class880 && var6 >= 1.0F) {
+                    if (this.field6716.pointedEntity != null && this.field6716.pointedEntity instanceof LivingEntity && var6 >= 1.0F) {
                         var7 = this.field6716.player.method2973() > 5.0F;
                         var7 &= this.field6716.pointedEntity.isAlive();
                     }
@@ -664,7 +666,7 @@ public class IngameGui extends AbstractGui {
         return this.field6716.getRenderViewEntity() instanceof PlayerEntity ? (PlayerEntity) this.field6716.getRenderViewEntity() : null;
     }
 
-    private Class880 method5973() {
+    private LivingEntity method5973() {
         PlayerEntity var3 = this.method5972();
         if (var3 != null) {
             Entity var4 = var3.getRidingEntity();
@@ -672,15 +674,15 @@ public class IngameGui extends AbstractGui {
                 return null;
             }
 
-            if (var4 instanceof Class880) {
-                return (Class880) var4;
+            if (var4 instanceof LivingEntity) {
+                return (LivingEntity) var4;
             }
         }
 
         return null;
     }
 
-    private int method5974(Class880 var1) {
+    private int method5974(LivingEntity var1) {
         if (var1 != null && var1.method3312()) {
             float var4 = var1.method3075();
             int var5 = (int) (var4 + 0.5F) / 2;
@@ -819,7 +821,7 @@ public class IngameGui extends AbstractGui {
                 }
             }
 
-            Class880 var34 = this.method5973();
+            LivingEntity var34 = this.method5973();
             int var36 = this.method5974(var34);
             if (var36 == 0) {
                 this.field6716.getProfiler().endStartSection("food");
@@ -874,7 +876,7 @@ public class IngameGui extends AbstractGui {
     }
 
     private void method5977(MatrixStack var1) {
-        Class880 var4 = this.method5973();
+        LivingEntity var4 = this.method5973();
         if (var4 != null) {
             int var5 = this.method5974(var4);
             if (var5 != 0) {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+
 import javax.annotation.Nullable;
 import java.util.Iterator;
 

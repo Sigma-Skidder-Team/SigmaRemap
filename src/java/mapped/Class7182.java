@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+
 public final class Class7182 {
    public static String method22535(Class2023 var0, float var1) {
       if (!var0.method8642()) {
@@ -10,11 +12,11 @@ public final class Class7182 {
       }
    }
 
-   public static boolean method22536(Class880 var0) {
+   public static boolean method22536(LivingEntity var0) {
       return var0.method3033(Effects.HASTE) || var0.method3033(Effects.CONDUIT_POWER);
    }
 
-   public static int method22537(Class880 var0) {
+   public static int method22537(LivingEntity var0) {
       int var3 = 0;
       int var4 = 0;
       if (var0.method3033(Effects.HASTE)) {
@@ -28,7 +30,7 @@ public final class Class7182 {
       return Math.max(var3, var4);
    }
 
-   public static boolean method22538(Class880 var0) {
+   public static boolean method22538(LivingEntity var0) {
       return var0.method3033(Effects.WATER_BREATHING) || var0.method3033(Effects.CONDUIT_POWER);
    }
 }

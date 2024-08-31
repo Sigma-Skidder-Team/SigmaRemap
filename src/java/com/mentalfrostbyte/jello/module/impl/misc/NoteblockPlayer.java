@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import mapped.*;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
@@ -62,7 +63,7 @@ public class NoteblockPlayer extends PremiumModule {
                 .method11350(-((float) Math.toRadians(Minecraft.getInstance().player.rotationPitch)))
                 .method11351(-((float) Math.toRadians(Minecraft.getInstance().player.rotationYaw)));
         GL11.glBegin(1);
-        GL11.glVertex3d(var9.field18048, var9.field18049, var9.field18050);
+        GL11.glVertex3d(var9.x, var9.y, var9.z);
         GL11.glVertex3d(var3, var5, var7);
         GL11.glEnd();
         GL11.glEnable(3553);

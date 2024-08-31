@@ -1,8 +1,12 @@
 package mapped;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 
@@ -17,9 +21,9 @@ import java.util.function.Predicate;
 public class Class1038 extends Class1009 {
    private static final UUID field5758 = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
    private static final Class9689 field5759 = new Class9689(field5758, "Baby speed boost", 0.5, AttributeModifierOperation.field13353);
-   private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>method35441(Class1038.class, Class7784.field33398);
-   private static final DataParameter<Integer> field5761 = EntityDataManager.<Integer>method35441(Class1038.class, Class7784.field33391);
-   private static final DataParameter<Boolean> field5762 = EntityDataManager.<Boolean>method35441(Class1038.class, Class7784.field33398);
+   private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>createKey(Class1038.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> field5761 = EntityDataManager.<Integer>createKey(Class1038.class, DataSerializers.field33391);
+   private static final DataParameter<Boolean> field5762 = EntityDataManager.<Boolean>createKey(Class1038.class, DataSerializers.field33398);
    private static final Predicate<Difficulty> field5763 = var0 -> var0 == Difficulty.field14354;
    private final Class2643 field5764 = new Class2643(this, field5763);
    private boolean field5765;
@@ -220,9 +224,9 @@ public class Class1038 extends Class1009 {
          return false;
       } else if (this.world instanceof ServerWorld) {
          ServerWorld var5 = (ServerWorld)this.world;
-         Class880 var6 = this.method4232();
-         if (var6 == null && var1.method31109() instanceof Class880) {
-            var6 = (Class880)var1.method31109();
+         LivingEntity var6 = this.method4232();
+         if (var6 == null && var1.method31109() instanceof LivingEntity) {
+            var6 = (LivingEntity)var1.method31109();
          }
 
          if (var6 != null
@@ -279,21 +283,21 @@ public class Class1038 extends Class1009 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27282;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27292;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27287;
    }
 
-   public Class9455 method4643() {
+   public SoundEvent method4643() {
       return Sounds.field27298;
    }
 
@@ -341,7 +345,7 @@ public class Class1038 extends Class1009 {
    }
 
    @Override
-   public void method2927(ServerWorld var1, Class880 var2) {
+   public void method2927(ServerWorld var1, LivingEntity var2) {
       super.method2927(var1, var2);
       if ((var1.method6997() == Difficulty.field14353 || var1.method6997() == Difficulty.field14354) && var2 instanceof Class1042) {
          if (var1.method6997() != Difficulty.field14354 && this.rand.nextBoolean()) {

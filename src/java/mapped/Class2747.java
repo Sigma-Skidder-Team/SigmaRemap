@@ -43,9 +43,9 @@ public class Class2747 extends Class2595 {
    public boolean method10955() {
       Vector3d var3 = Class8037.method27581(this.field17281, 5, 4);
       if (var3 != null) {
-         this.field17283 = var3.field18048;
-         this.field17284 = var3.field18049;
-         this.field17285 = var3.field18050;
+         this.field17283 = var3.x;
+         this.field17284 = var3.y;
+         this.field17285 = var3.z;
          return true;
       } else {
          return false;

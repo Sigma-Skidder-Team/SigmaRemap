@@ -1,14 +1,17 @@
-package mapped;
+package net.minecraft.network.datasync;
 
 import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.UUID;
 import javax.annotation.Nullable;
 
+import mapped.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.Pose;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class7784 {
+public class DataSerializers {
    private static String[] field33388;
    private static final Class2353<Class6466<?>> field33389 = new Class2353<Class6466<?>>(16);
    public static final Class6466<Byte> field33390 = new Class6465();

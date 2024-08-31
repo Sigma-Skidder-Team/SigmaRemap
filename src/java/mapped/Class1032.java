@@ -1,7 +1,10 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -48,7 +51,7 @@ public class Class1032 extends Class1031 {
    }
 
    @Override
-   public Class9455 method4546() {
+   public SoundEvent method4546() {
       return Sounds.field26561;
    }
 
@@ -71,7 +74,7 @@ public class Class1032 extends Class1031 {
             if (var1 instanceof Class1100) {
                return this.method3345(((Class1100)var1).method5270());
             } else {
-               return var1 instanceof Class880 && ((Class880)var1).method3089() == Class7809.field33508
+               return var1 instanceof LivingEntity && ((LivingEntity)var1).method3089() == Class7809.field33508
                   ? this.getTeam() == null && var1.getTeam() == null
                   : false;
             }
@@ -84,17 +87,17 @@ public class Class1032 extends Class1031 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field26559;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field26562;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field26564;
    }
 
@@ -108,7 +111,7 @@ public class Class1032 extends Class1031 {
    }
 
    @Override
-   public Class9455 method4598() {
+   public SoundEvent method4598() {
       return Sounds.field26560;
    }
 

@@ -1,6 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
@@ -286,7 +289,7 @@ public class Class9446 {
                            }
                         }
 
-                        if (!(var0 instanceof Class880)) {
+                        if (!(var0 instanceof LivingEntity)) {
                            if (!(var0 instanceof ItemEntity)) {
                               return 0;
                            } else {
@@ -295,7 +298,7 @@ public class Class9446 {
                               return method36318(var18);
                            }
                         } else {
-                           Class880 var15 = (Class880)var0;
+                           LivingEntity var15 = (LivingEntity)var0;
                            ItemStack var17 = var15.method3090();
                            int var5 = method36318(var17);
                            ItemStack var6 = var15.method3091();

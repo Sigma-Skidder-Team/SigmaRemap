@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 
@@ -64,7 +67,7 @@ public class Class3292 extends Item {
       }
    }
 
-   public Class9455 method11835(BlockState var1) {
+   public SoundEvent method11835(BlockState var1) {
       return var1.method23452().method29714();
    }
 

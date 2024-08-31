@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.SoundEvent;
 
 import java.util.List;
 
@@ -26,22 +27,22 @@ public class Class1106 extends Class1105 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return !this.method3255() ? Sounds.field26525 : Sounds.field26524;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return !this.method3255() ? Sounds.field26531 : Sounds.field26530;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return !this.method3255() ? Sounds.field26528 : Sounds.field26527;
    }
 
    @Override
-   public Class9455 method5307() {
+   public SoundEvent method5307() {
       return Sounds.field26529;
    }
 

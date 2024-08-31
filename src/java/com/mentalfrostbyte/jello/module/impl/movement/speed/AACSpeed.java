@@ -62,7 +62,7 @@ public class AACSpeed extends Module {
 
             if (ColorUtils.method17686() && this.getBooleanValueFromSetttingName("Auto Jump")) {
                mc.player.method2914();
-               var1.method13995(mc.player.method3433().field18049);
+               var1.method13995(mc.player.method3433().y);
             }
          } else if (this.field23398 >= 0) {
             this.field23398++;
@@ -82,13 +82,13 @@ public class AACSpeed extends Module {
                this.field23401 = this.method16013(this.field23398, this.field23399);
                this.field23402 = this.method16012(this.field23398);
                var1.method13995(this.field23402);
-               mc.player.method3433().field18049 = this.field23402;
+               mc.player.method3433().y = this.field23402;
                break;
             case "Fast2":
                this.field23401 = this.method16015(this.field23398, this.field23399);
                this.field23402 = this.method16014(this.field23398);
                var1.method13995(this.field23402);
-               mc.player.method3433().field18049 = this.field23402;
+               mc.player.method3433().y = this.field23402;
          }
 
          if (!ColorUtils.method17686()) {
@@ -124,11 +124,11 @@ public class AACSpeed extends Module {
 
                if (!((float)this.field23398 > var5) && this.field23398 >= 0) {
                   double var6 = Math.cos(Math.toRadians((double)((float)this.field23398 / var5 * 180.0F - 90.0F)));
-                  mc.player.positionVec.field18049 = this.field23403 + var6;
+                  mc.player.positionVec.y = this.field23403 + var6;
                   mc.player.field4909 = 0.0F;
                }
             } else {
-               mc.player.positionVec.field18049 = mc.player.getBoundingBox().field28450;
+               mc.player.positionVec.y = mc.player.getBoundingBox().field28450;
                this.field23403 = mc.player.getPosY();
                this.field23398 = -1;
             }
@@ -165,7 +165,7 @@ public class AACSpeed extends Module {
    }
 
    private double method16012(int var1) {
-      double var4 = mc.player.method3433().field18049;
+      double var4 = mc.player.method3433().y;
       boolean var6 = ColorUtils.method17730(mc.player, 0.37F);
       double[] var7 = new double[]{0.41, 0.309, 0.21, 0.113, 0.03, -0.05, -0.12, -0.192, -0.26, -0.33, !var6 ? -0.4 : -0.0, !var6 ? -0.47 : -0.13};
       if (var1 >= 0 && var1 < var7.length) {
@@ -212,7 +212,7 @@ public class AACSpeed extends Module {
    }
 
    private double method16014(int var1) {
-      double var4 = mc.player.method3433().field18049;
+      double var4 = mc.player.method3433().y;
       boolean var6 = ColorUtils.method17730(mc.player, 0.37F);
       double[] var7 = new double[]{0.41, 0.309, 0.21, 0.113, 0.03, -0.06, -0.14, -0.22, -0.29, 0.0, -0.082, -0.11, 0.0, -0.18};
       if (var1 >= 0 && var1 < var7.length) {

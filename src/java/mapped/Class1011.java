@@ -1,7 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -47,7 +49,7 @@ public interface Class1011 {
    }
 
    default void method4366(ServerWorld var1, boolean var2) {
-      Class880 var5 = this.method4232();
+      LivingEntity var5 = this.method4232();
       UUID var6 = this.method4350();
       if ((var5 == null || var5.getShouldBeDead()) && var6 != null && var1.method6942(var6) instanceof Class1006) {
          this.method4372();
@@ -66,7 +68,7 @@ public interface Class1011 {
       }
    }
 
-   default boolean method4367(Class880 var1) {
+   default boolean method4367(LivingEntity var1) {
       if (!Class8088.field34762.test(var1)) {
          return false;
       } else {
@@ -94,18 +96,18 @@ public interface Class1011 {
    }
 
    default void method4372() {
-      this.method3017((Class880)null);
+      this.method3017((LivingEntity)null);
       this.method4349((UUID)null);
-      this.method4233((Class880)null);
+      this.method4233((LivingEntity)null);
       this.method4347(0);
    }
 
-   void method3017(Class880 var1);
+   void method3017(LivingEntity var1);
 
    void method3016(PlayerEntity var1);
 
-   void method4233(Class880 var1);
+   void method4233(LivingEntity var1);
 
    @Nullable
-   Class880 method4232();
+   LivingEntity method4232();
 }

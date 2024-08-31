@@ -1,7 +1,13 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -9,7 +15,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public abstract class Class1026 extends Class1028 {
-   public static final DataParameter<Boolean> field5712 = EntityDataManager.<Boolean>method35441(Class1026.class, Class7784.field33398);
+   public static final DataParameter<Boolean> field5712 = EntityDataManager.<Boolean>createKey(Class1026.class, DataSerializers.field33398);
    private static final Predicate<ItemEntity> field5713 = var0 -> !var0.method4135()
          && var0.isAlive()
          && ItemStack.method32128(var0.method4124(), Class7699.method25421());
@@ -53,7 +59,7 @@ public abstract class Class1026 extends Class1028 {
          Class7699 var3 = this.method4551();
          if (this.method4547()) {
             if (var3 != null) {
-               Class880 var4 = this.method4232();
+               LivingEntity var4 = this.method4232();
                if (var4 != null && (var4.getType() == EntityType.PLAYER || var4.getType() == EntityType.field41041)) {
                   this.field4973 = 0;
                }
@@ -97,7 +103,7 @@ public abstract class Class1026 extends Class1028 {
             if (!(var4 instanceof PlayerEntity)) {
                if (var4 instanceof Class1012) {
                   Class1012 var8 = (Class1012)var4;
-                  Class880 var9 = var8.method4400();
+                  LivingEntity var9 = var8.method4400();
                   if (var8.method4393() && var9 instanceof PlayerEntity) {
                      var7 = (PlayerEntity)var9;
                   }
@@ -248,7 +254,7 @@ public abstract class Class1026 extends Class1028 {
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
-   public abstract Class9455 method4546();
+   public abstract SoundEvent method4546();
 
    // $VF: synthetic method
    public static Random method4560(Class1026 var0) {

@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
@@ -45,17 +47,17 @@ public class Class1055 extends Class1047 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27125;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27127;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27126;
    }
 
@@ -93,7 +95,7 @@ public class Class1055 extends Class1047 {
       if (!this.method3255()) {
          this.field5831 = MathHelper.method37771(MathHelper.sin(this.field5829)) * (float) Math.PI * 0.25F;
          if (!this.world.isRemote) {
-            double var5 = this.method3433().field18049;
+            double var5 = this.method3433().y;
             if (!this.method3033(Effects.LEVITATION)) {
                if (!this.method3247()) {
                   var5 -= 0.08;
@@ -129,10 +131,10 @@ public class Class1055 extends Class1047 {
          Vector3d var7 = this.method3433();
          float var4 = MathHelper.method37766(method3234(var7));
          this.field4965 = this.field4965
-            + (-((float) MathHelper.method37814(var7.field18048, var7.field18050)) * (180.0F / (float)Math.PI) - this.field4965) * 0.1F;
+            + (-((float) MathHelper.method37814(var7.x, var7.z)) * (180.0F / (float)Math.PI) - this.field4965) * 0.1F;
          this.rotationYaw = this.field4965;
          this.field5827 = (float)((double)this.field5827 + Math.PI * (double)this.field5835 * 1.5);
-         this.field5825 = this.field5825 + (-((float) MathHelper.method37814((double)var4, var7.field18049)) * (180.0F / (float)Math.PI) - this.field5825) * 0.1F;
+         this.field5825 = this.field5825 + (-((float) MathHelper.method37814((double)var4, var7.y)) * (180.0F / (float)Math.PI) - this.field5825) * 0.1F;
       }
    }
 
@@ -160,7 +162,7 @@ public class Class1055 extends Class1047 {
          Vector3d var6 = var5.method11344(0.3 + (double)(this.rand.nextFloat() * 2.0F));
          ((ServerWorld)this.world)
             .method6939(
-               Class7940.field34095, var3.field18048, var3.field18049 + 0.5, var3.field18050, 0, var6.field18048, var6.field18049, var6.field18050, 0.1F
+               Class7940.field34095, var3.x, var3.y + 0.5, var3.z, 0, var6.x, var6.y, var6.z, 0.1F
             );
       }
    }

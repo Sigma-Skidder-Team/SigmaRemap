@@ -1,8 +1,9 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.LivingEntity;
 
-public class Class239<T extends Class880, M extends Class2827<T>> extends Class219<T, M> {
+public class Class239<T extends LivingEntity, M extends Class2827<T>> extends Class219<T, M> {
    private static String[] field892;
 
    public Class239(Class5714<T, M> var1) {

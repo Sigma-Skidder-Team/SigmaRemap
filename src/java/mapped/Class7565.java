@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Splitter;
+import net.minecraft.block.BlockState;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;

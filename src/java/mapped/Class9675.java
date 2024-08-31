@@ -9,7 +9,7 @@ public class Class9675 {
 
    public void method37745(Vector3d var1) {
       this.field45177 = var1;
-      AL10.alListener3f(4100, (float)var1.field18048, (float)var1.field18049, (float)var1.field18050);
+      AL10.alListener3f(4100, (float)var1.x, (float)var1.y, (float)var1.z);
    }
 
    public Vector3d method37746() {

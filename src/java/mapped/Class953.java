@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.text.ITextComponent;
 
 public final class Class953 implements Class949 {

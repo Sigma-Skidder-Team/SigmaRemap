@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+
 import java.util.EnumSet;
 
 public class Class2620 extends Class2595 {
@@ -14,7 +17,7 @@ public class Class2620 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      Class880 var3 = this.field16905.method4232();
+      LivingEntity var3 = this.field16905.method4232();
       if (var3 != null) {
          if (!var3.isAlive()) {
             return false;
@@ -34,7 +37,7 @@ public class Class2620 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      Class880 var3 = this.field16905.method4232();
+      LivingEntity var3 = this.field16905.method4232();
       if (var3 != null) {
          if (var3.isAlive()) {
             return var3 instanceof PlayerEntity && ((PlayerEntity)var3).abilities.field29606 ? false : --this.field16906 > 0;

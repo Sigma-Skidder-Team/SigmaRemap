@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -28,7 +29,7 @@ public abstract class Class6069 {
       this.field27306 = var3;
    }
 
-   public Map<Class2106, ItemStack> method18811(Class880 var1) {
+   public Map<Class2106, ItemStack> method18811(LivingEntity var1) {
       EnumMap var4 = Maps.newEnumMap(Class2106.class);
 
       for (Class2106 var8 : this.field27306) {
@@ -108,10 +109,10 @@ public abstract class Class6069 {
       return this.field27308.method8990(var1.getItem());
    }
 
-   public void method18822(Class880 var1, Entity var2, int var3) {
+   public void method18822(LivingEntity var1, Entity var2, int var3) {
    }
 
-   public void method18823(Class880 var1, Entity var2, int var3) {
+   public void method18823(LivingEntity var1, Entity var2, int var3) {
    }
 
    public boolean method18824() {

@@ -2,11 +2,15 @@ package mapped;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
 
 public class Class1052 extends Class1050 {
-   private static final DataParameter<Integer> field5813 = EntityDataManager.<Integer>method35441(Class1052.class, Class7784.field33391);
+   private static final DataParameter<Integer> field5813 = EntityDataManager.<Integer>createKey(Class1052.class, DataSerializers.field33391);
    private static final ResourceLocation[] field5814 = new ResourceLocation[]{
       new ResourceLocation("textures/entity/fish/tropical_a.png"), new ResourceLocation("textures/entity/fish/tropical_b.png")
    };
@@ -122,22 +126,22 @@ public class Class1052 extends Class1050 {
    }
 
    @Override
-   public Class9455 method4241() {
+   public SoundEvent method4241() {
       return Sounds.field27160;
    }
 
    @Override
-   public Class9455 method2880() {
+   public SoundEvent method2880() {
       return Sounds.field27161;
    }
 
    @Override
-   public Class9455 method2879(Class8654 var1) {
+   public SoundEvent method2879(Class8654 var1) {
       return Sounds.field27163;
    }
 
    @Override
-   public Class9455 method4798() {
+   public SoundEvent method4798() {
       return Sounds.field27162;
    }
 

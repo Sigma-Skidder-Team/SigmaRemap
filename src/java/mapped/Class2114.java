@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.SoundEvent;
+
 import java.util.function.Supplier;
 
 public enum Class2114 implements Class2115 {
@@ -16,13 +18,13 @@ public enum Class2114 implements Class2115 {
    private final int field13782;
    private final int[] field13783;
    private final int field13784;
-   private final Class9455 field13785;
+   private final SoundEvent field13785;
    private final float field13786;
    private final float field13787;
    private final LazyValue<Class120> field13788;
    private static final Class2114[] field13789 = new Class2114[]{field13773, field13774, field13775, field13776, field13777, field13778, field13779};
 
-   private Class2114(String var3, int var4, int[] var5, int var6, Class9455 var7, float var8, float var9, Supplier<Class120> var10) {
+   private Class2114(String var3, int var4, int[] var5, int var6, SoundEvent var7, float var8, float var9, Supplier<Class120> var10) {
       this.field13781 = var3;
       this.field13782 = var4;
       this.field13783 = var5;
@@ -49,7 +51,7 @@ public enum Class2114 implements Class2115 {
    }
 
    @Override
-   public Class9455 method8788() {
+   public SoundEvent method8788() {
       return this.field13785;
    }
 

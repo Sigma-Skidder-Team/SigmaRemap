@@ -23,9 +23,9 @@ public class Class5679 extends Class5676<Class1033> {
          for (int var11 = 0; var11 < var9.length; var11++) {
             var4.push();
             var4.translate(
-               var9[var11].field18048 + (double) MathHelper.cos((float)var11 + var10 * 0.5F) * 0.025,
-               var9[var11].field18049 + (double) MathHelper.cos((float)var11 + var10 * 0.75F) * 0.0125,
-               var9[var11].field18050 + (double) MathHelper.cos((float)var11 + var10 * 0.7F) * 0.025
+               var9[var11].x + (double) MathHelper.cos((float)var11 + var10 * 0.5F) * 0.025,
+               var9[var11].y + (double) MathHelper.cos((float)var11 + var10 * 0.75F) * 0.0125,
+               var9[var11].z + (double) MathHelper.cos((float)var11 + var10 * 0.7F) * 0.025
             );
             super.method17853(var1, var2, var3, var4, var5, var6);
             var4.pop();

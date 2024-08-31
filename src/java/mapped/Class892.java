@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 
 public class Class892 extends Class890 {
@@ -9,7 +10,7 @@ public class Class892 extends Class890 {
       super(var1, var2);
    }
 
-   public Class892(World var1, Class880 var2) {
+   public Class892(World var1, LivingEntity var2) {
       super(EntityType.field41089, var2, var1);
    }
 

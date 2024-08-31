@@ -27,7 +27,7 @@ public class OmegaCraftFly extends Module {
         this.field23700 = -1;
         double var3 = this.field23703[0];
         int var5 = this.field23703.length;
-        double var6 = mc.player.getPositionVec().field18049 - (double) ((int) mc.player.getPositionVec().field18049);
+        double var6 = mc.player.getPositionVec().y - (double) ((int) mc.player.getPositionVec().y);
 
         for (int var8 = 1; var8 < var5; var8++) {
             double var9 = this.field23703[var8] - var6;
@@ -36,14 +36,14 @@ public class OmegaCraftFly extends Module {
             }
         }
 
-        this.field23702 = (double) ((int) mc.player.getPositionVec().field18049) + var3;
-        mc.player.setPosition(mc.player.getPositionVec().field18048, this.field23702, mc.player.getPositionVec().field18050);
+        this.field23702 = (double) ((int) mc.player.getPositionVec().y) + var3;
+        mc.player.setPosition(mc.player.getPositionVec().x, this.field23702, mc.player.getPositionVec().z);
     }
 
     @Override
     public void onDisable() {
         Class9567.method37090(0.2);
-        if (mc.player.method3433().field18049 > 0.03) {
+        if (mc.player.method3433().y > 0.03) {
             ColorUtils.method17725(-0.0784);
         }
     }
@@ -54,7 +54,7 @@ public class OmegaCraftFly extends Module {
         this.field23700 = -1;
         double var4 = this.field23703[0];
         int var6 = this.field23703.length;
-        double var7 = mc.player.getPositionVec().field18049 - (double) ((int) mc.player.getPositionVec().field18049);
+        double var7 = mc.player.getPositionVec().y - (double) ((int) mc.player.getPositionVec().y);
 
         for (int var9 = 1; var9 < var6; var9++) {
             double var10 = this.field23703[var9] - var7;
@@ -63,8 +63,8 @@ public class OmegaCraftFly extends Module {
             }
         }
 
-        this.field23702 = (double) ((int) mc.player.getPositionVec().field18049) + var4;
-        mc.player.setPosition(mc.player.getPositionVec().field18048, this.field23702, mc.player.getPositionVec().field18050);
+        this.field23702 = (double) ((int) mc.player.getPositionVec().y) + var4;
+        mc.player.setPosition(mc.player.getPositionVec().x, this.field23702, mc.player.getPositionVec().z);
     }
 
     @EventTarget
@@ -92,7 +92,7 @@ public class OmegaCraftFly extends Module {
         var1.method13995(0.0);
         if (this.field23700 != 1) {
             if (this.field23700 > 1) {
-                mc.player.setPosition(mc.player.getPositionVec().field18048, this.field23702, mc.player.getPositionVec().field18050);
+                mc.player.setPosition(mc.player.getPositionVec().x, this.field23702, mc.player.getPositionVec().z);
                 double var4 = !mc.gameSettings.keyBindSneak.isKeyDown() ? 0.405 + (double) Class9567.method37078() * 0.02 : 0.25;
                 Class9567.method37088(var1, var4);
                 this.field23700 = 0;

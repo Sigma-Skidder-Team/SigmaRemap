@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -184,7 +185,7 @@ public class Class957 extends Class956 implements Class935 {
       if (this.field5374 != null) {
          field5371.debug("Found block at {}", this.field5374);
       } else {
-         this.field5374 = new BlockPos(var5.field18048 + 0.5, 75.0, var5.field18050 + 0.5);
+         this.field5374 = new BlockPos(var5.x + 0.5, 75.0, var5.z + 0.5);
          field5371.debug("Failed to find suitable block, settling on {}", this.field5374);
          Class9104.field41637.method26521(var1, var1.getChunkProvider().method7370(), new Random(this.field5374.method8332()), this.field5374);
       }
@@ -218,7 +219,7 @@ public class Class957 extends Class956 implements Class935 {
    }
 
    private static Chunk method3881(World var0, Vector3d var1) {
-      return var0.getChunk(MathHelper.floor(var1.field18048 / 16.0), MathHelper.floor(var1.field18050 / 16.0));
+      return var0.getChunk(MathHelper.floor(var1.x / 16.0), MathHelper.floor(var1.z / 16.0));
    }
 
    @Nullable

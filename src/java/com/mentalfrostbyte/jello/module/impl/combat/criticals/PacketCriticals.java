@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 public class PacketCriticals extends Module {
@@ -25,7 +26,7 @@ public class PacketCriticals extends Module {
     private void method16923(Class4403 var1) {
         if (this.isEnabled() && var1.method13935() != null && var1.method13937()) {
             Entity var4 = var1.method13935();
-            if (var4 instanceof Class880
+            if (var4 instanceof LivingEntity
                     && var4.hurtResistantTime <= (int) this.getNumberValueBySettingName("HurtTime")
                     && Step.field23887 > 1
                     && (this.timer.method27121() > 200L || var4.hurtResistantTime > 0)

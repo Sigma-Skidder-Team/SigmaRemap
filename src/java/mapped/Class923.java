@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerEntity;
+
 import javax.annotation.Nullable;
 import java.util.Collections;
 

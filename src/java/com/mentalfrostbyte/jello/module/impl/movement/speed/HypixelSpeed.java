@@ -43,7 +43,7 @@ public class HypixelSpeed extends Module {
 
     @Override
     public void onDisable() {
-        if (this.field23418 == Class2094.field13641 && mc.player.method3433().field18049 > 0.0 && this.field23414 == 0) {
+        if (this.field23418 == Class2094.field13641 && mc.player.method3433().y > 0.0 && this.field23414 == 0) {
             ColorUtils.method17725(-Class9567.method37080() - 1.0E-5 - 0.0625);
         }
 
@@ -209,7 +209,7 @@ public class HypixelSpeed extends Module {
                 && !(this.field23416 < 0.0)
                 && this.field23418 == Class2094.field13641
                 && !(mc.player.getPosY() < this.field23416)) {
-            mc.player.positionVec.field18049 = this.field23416;
+            mc.player.positionVec.y = this.field23416;
             mc.player.lastTickPosY = this.field23416;
             mc.player.field4915 = this.field23416;
             mc.player.prevPosY = this.field23416;

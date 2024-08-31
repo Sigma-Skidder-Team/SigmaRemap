@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -49,7 +51,7 @@ public class Class3371 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
       if (var5.method32152()) {
          TileEntity var8 = var1.getTileEntity(var2);
          if (var8 instanceof Class950) {

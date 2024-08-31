@@ -19,7 +19,7 @@ public class Class7331 implements Class7329 {
    public Vector3d method23228(Class6619 var1) {
       Vector3d var4 = var1.method20171();
       return new Vector3d(
-         this.field31416.method31754(var4.field18048), this.field31417.method31754(var4.field18049), this.field31418.method31754(var4.field18050)
+         this.field31416.method31754(var4.x), this.field31417.method31754(var4.y), this.field31418.method31754(var4.z)
       );
    }
 

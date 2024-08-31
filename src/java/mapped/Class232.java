@@ -1,8 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-public class Class232<T extends Class880, M extends Class2894<T>> extends Class231<T, M> {
+public class Class232<T extends LivingEntity, M extends Class2894<T>> extends Class231<T, M> {
    private static String[] field876;
    private final EntityRendererManager field877;
    private Class887 field878;

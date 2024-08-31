@@ -3,10 +3,14 @@ package mapped;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.math.BlockPos;
 
 public class Class897 extends Entity implements Class889 {
-   private static final DataParameter<ItemStack> field5132 = EntityDataManager.<ItemStack>method35441(Class897.class, Class7784.field33396);
+   private static final DataParameter<ItemStack> field5132 = EntityDataManager.<ItemStack>createKey(Class897.class, DataSerializers.field33396);
    private double field5133;
    private double field5134;
    private double field5135;
@@ -45,8 +49,8 @@ public class Class897 extends Entity implements Class889 {
    }
 
    @Override
-   public boolean method3291(double var1) {
-      double var5 = this.getBoundingBox().method19675() * 4.0;
+   public boolean isInRangeToRenderDist(double var1) {
+      double var5 = this.getBoundingBox().getAverageEdgeLength() * 4.0;
       if (Double.isNaN(var5)) {
          var5 = 4.0;
       }
@@ -92,19 +96,19 @@ public class Class897 extends Entity implements Class889 {
    public void tick() {
       super.tick();
       Vector3d var3 = this.method3433();
-      double var4 = this.getPosX() + var3.field18048;
-      double var6 = this.getPosY() + var3.field18049;
-      double var8 = this.getPosZ() + var3.field18050;
+      double var4 = this.getPosX() + var3.x;
+      double var6 = this.getPosY() + var3.y;
+      double var8 = this.getPosZ() + var3.z;
       float var10 = MathHelper.method37766(method3234(var3));
-      this.rotationPitch = Class882.method3469(this.prevRotationPitch, (float)(MathHelper.method37814(var3.field18049, (double)var10) * 180.0F / (float)Math.PI));
-      this.rotationYaw = Class882.method3469(this.prevRotationYaw, (float)(MathHelper.method37814(var3.field18048, var3.field18050) * 180.0F / (float)Math.PI));
+      this.rotationPitch = ProjectileEntity.method3469(this.prevRotationPitch, (float)(MathHelper.method37814(var3.y, (double)var10) * 180.0F / (float)Math.PI));
+      this.rotationYaw = ProjectileEntity.method3469(this.prevRotationYaw, (float)(MathHelper.method37814(var3.x, var3.z) * 180.0F / (float)Math.PI));
       if (!this.world.isRemote) {
          double var12 = this.field5133 - var4;
          double var14 = this.field5135 - var8;
          float var16 = (float)Math.sqrt(var12 * var12 + var14 * var14);
          float var17 = (float) MathHelper.method37814(var14, var12);
          double var18 = MathHelper.method37822(0.0025, (double)var10, (double)var16);
-         double var20 = var3.field18049;
+         double var20 = var3.y;
          if (var16 < 1.0F) {
             var18 *= 0.8;
             var20 *= 0.8;
@@ -120,24 +124,24 @@ public class Class897 extends Entity implements Class889 {
          this.world
             .method6746(
                Class7940.field34090,
-               var4 - var3.field18048 * 0.25 + this.rand.nextDouble() * 0.6 - 0.3,
-               var6 - var3.field18049 * 0.25 - 0.5,
-               var8 - var3.field18050 * 0.25 + this.rand.nextDouble() * 0.6 - 0.3,
-               var3.field18048,
-               var3.field18049,
-               var3.field18050
+               var4 - var3.x * 0.25 + this.rand.nextDouble() * 0.6 - 0.3,
+               var6 - var3.y * 0.25 - 0.5,
+               var8 - var3.z * 0.25 + this.rand.nextDouble() * 0.6 - 0.3,
+               var3.x,
+               var3.y,
+               var3.z
             );
       } else {
          for (int var23 = 0; var23 < 4; var23++) {
             this.world
                .method6746(
                   Class7940.field34052,
-                  var4 - var3.field18048 * 0.25,
-                  var6 - var3.field18049 * 0.25,
-                  var8 - var3.field18050 * 0.25,
-                  var3.field18048,
-                  var3.field18049,
-                  var3.field18050
+                  var4 - var3.x * 0.25,
+                  var6 - var3.y * 0.25,
+                  var8 - var3.z * 0.25,
+                  var3.x,
+                  var3.y,
+                  var3.z
                );
          }
       }
