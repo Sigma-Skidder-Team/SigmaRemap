@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.UnmodifiableIterator;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.function.ToIntFunction;

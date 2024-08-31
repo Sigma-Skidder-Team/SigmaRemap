@@ -25,14 +25,14 @@ public class SUpdateTileEntityPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24902 = var1.method35707();
+      this.field24902 = var1.readBlockPos();
       this.field24903 = var1.readUnsignedByte();
       this.field24904 = var1.method35721();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35708(this.field24902);
+      var1.writeBlockPos(this.field24902);
       var1.writeByte((byte)this.field24903);
       var1.method35720(this.field24904);
    }

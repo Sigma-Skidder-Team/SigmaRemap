@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Hand;
+
 public class Class2599 extends Class2598 {
    private static String[] field16836;
    private final Class1037 field16837;

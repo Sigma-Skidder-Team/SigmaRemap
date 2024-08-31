@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.datafixers.types.Type;
 import net.minecraft.client.util.Util;
+import net.minecraft.tileentity.JigsawTileEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
@@ -163,7 +165,7 @@ public class Class4387<T extends TileEntity> {
    public static final Class4387<Class987> field21448 = method13794("blast_furnace", Class9785.<Class987>method38569(Class987::new, Blocks.field37057));
    public static final Class4387<Class948> field21449 = method13794("lectern", Class9785.<Class948>method38569(Class948::new, Blocks.field37061));
    public static final Class4387<Class966> field21450 = method13794("bell", Class9785.<Class966>method38569(Class966::new, Blocks.field37064));
-   public static final Class4387<Class965> field21451 = method13794("jigsaw", Class9785.<Class965>method38569(Class965::new, Blocks.field37114));
+   public static final Class4387<JigsawTileEntity> field21451 = method13794("jigsaw", Class9785.<JigsawTileEntity>method38569(JigsawTileEntity::new, Blocks.field37114));
    public static final Class4387<Class945> field21452 = method13794(
       "campfire", Class9785.<Class945>method38569(Class945::new, Blocks.field37067, Blocks.field37068)
    );

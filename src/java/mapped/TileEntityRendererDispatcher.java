@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.tileentity.TileEntity;
 
 import java.util.Map;
 import javax.annotation.Nullable;

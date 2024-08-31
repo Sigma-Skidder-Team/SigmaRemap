@@ -1,6 +1,6 @@
 package net.minecraft.network.play.client;
 
-import mapped.Hand;
+import net.minecraft.util.Hand;
 import mapped.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;

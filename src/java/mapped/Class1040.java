@@ -9,6 +9,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 
 import javax.annotation.Nullable;
@@ -135,7 +136,7 @@ public class Class1040 extends Class1038 implements Class1041 {
       this.field5771 = var2;
       this.method3210().method35446(field5769, true);
       this.removeEffects(Effects.WEAKNESS);
-      this.method3035(new Class2023(Effects.STRENGTH, var2, Math.min(this.world.method6997().method8905() - 1, 0)));
+      this.method3035(new Class2023(Effects.STRENGTH, var2, Math.min(this.world.method6997().getId() - 1, 0)));
       this.world.method6786(this, (byte)16);
    }
 

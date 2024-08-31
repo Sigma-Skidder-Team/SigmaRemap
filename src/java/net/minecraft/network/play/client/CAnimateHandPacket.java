@@ -1,6 +1,6 @@
 package net.minecraft.network.play.client;
 
-import mapped.Hand;
+import net.minecraft.util.Hand;
 import mapped.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
@@ -8,24 +8,23 @@ import net.minecraft.network.PacketBuffer;
 import java.io.IOException;
 
 public class CAnimateHandPacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24459;
-   private Hand field24460;
+    private Hand hand;
 
    public CAnimateHandPacket() {
    }
 
    public CAnimateHandPacket(Hand var1) {
-      this.field24460 = var1;
+      this.hand = var1;
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24460 = var1.<Hand>method35712(Hand.class);
+      this.hand = var1.<Hand>method35712(Hand.class);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.field24460);
+      var1.method35713(this.hand);
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
@@ -33,6 +32,6 @@ public class CAnimateHandPacket implements Packet<IServerPlayNetHandler> {
    }
 
    public Hand getHand() {
-      return this.field24460;
+      return this.hand;
    }
 }

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.Hand;
 
 public class Class3326 extends Class3324 {
    private static String[] field18834;

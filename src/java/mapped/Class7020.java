@@ -45,7 +45,7 @@ public class Class7020 implements Class7016 {
                               FluidState var17 = var1.getFluidState(var15);
                               if (Class8170.method28428(var1, var15, var16, var17, EntityType.field41063)) {
                                  Class5093 var18 = null;
-                                 int var19 = 1 + var6.nextInt(var11.method38327().method8905() + 1);
+                                 int var19 = 1 + var6.nextInt(var11.method38327().getId() + 1);
 
                                  for (int var20 = 0; var20 < var19; var20++) {
                                     Class1110 var21 = EntityType.field41063.method33215(var1);

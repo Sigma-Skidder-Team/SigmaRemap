@@ -1,13 +1,14 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public enum Class93 implements Class83 {
+public enum Class93 implements IStringSerializable {
    field241("none") {
       @Override
       public float method271(BlockPos var1, float var2) {
@@ -31,7 +32,7 @@ public enum Class93 implements Class83 {
    };
 
    private final String field243;
-   public static final Codec<Class93> field244 = Class83.<Class93>method258(Class93::values, Class93::method273);
+   public static final Codec<Class93> field244 = IStringSerializable.<Class93>method258(Class93::values, Class93::method273);
    private static final Map<String, Class93> field245 = Arrays.<Class93>stream(values()).collect(Collectors.toMap(Class93::method272, var0 -> (Class93)var0));
    private static final Class93[] field246 = new Class93[]{field241, field242};
 
@@ -46,7 +47,7 @@ public enum Class93 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field243;
    }
 

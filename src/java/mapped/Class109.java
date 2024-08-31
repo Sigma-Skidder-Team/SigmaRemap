@@ -2,16 +2,17 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
+import net.minecraft.util.IStringSerializable;
 
 import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public enum Class109 implements Class83 {
+public enum Class109 implements IStringSerializable {
    field366("terrain_matching", ImmutableList.of(new Class7098(Class101.field295, -1))),
    field367("rigid", ImmutableList.of());
 
-   public static final Codec<Class109> field368 = Class83.<Class109>method258(Class109::values, Class109::method302);
+   public static final Codec<Class109> field368 = IStringSerializable.<Class109>method258(Class109::values, Class109::method302);
    private static final Map<String, Class109> field369 = Arrays.<Class109>stream(values())
       .collect(Collectors.toMap(Class109::method301, var0 -> (Class109)var0));
    private final String field370;
@@ -36,7 +37,7 @@ public enum Class109 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field370;
    }
 }

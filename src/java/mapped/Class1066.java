@@ -7,6 +7,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 
 public abstract class Class1066 extends AbstractHorseEntity {
    private static final DataParameter<Boolean> field5877 = EntityDataManager.<Boolean>createKey(Class1066.class, DataSerializers.field33398);

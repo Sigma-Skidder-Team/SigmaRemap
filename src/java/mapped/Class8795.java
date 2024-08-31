@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 

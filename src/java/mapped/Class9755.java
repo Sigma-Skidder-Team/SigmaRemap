@@ -49,7 +49,7 @@ public class Class9755 {
          }
 
          var10 += var12;
-         return (float)var1.method8905() * var10;
+         return (float)var1.getId() * var10;
       } else {
          return 0.0F;
       }

@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.client.CUseEntityPacket;
 import mapped.ColorUtils;
-import mapped.Hand;
+import net.minecraft.util.Hand;
 
 import java.util.Random;
 

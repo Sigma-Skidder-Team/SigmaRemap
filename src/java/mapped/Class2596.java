@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 
 import java.util.function.Predicate;

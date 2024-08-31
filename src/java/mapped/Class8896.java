@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
 
 import java.lang.reflect.Array;
@@ -255,11 +256,11 @@ public class Class8896 {
    }
 
    private static Object method32393(Comparable var0) {
-      if (!(var0 instanceof Class83)) {
+      if (!(var0 instanceof IStringSerializable)) {
          return var0.toString();
       } else {
-         Class83 var3 = (Class83)var0;
-         return var3.method257();
+         IStringSerializable var3 = (IStringSerializable)var0;
+         return var3.getString();
       }
    }
 

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.tileentity.TileEntity;
 
 import java.util.List;
 import java.util.Set;

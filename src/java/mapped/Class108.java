@@ -1,9 +1,10 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.SoundEvent;
 
-public enum Class108 implements Class83 {
+public enum Class108 implements IStringSerializable {
    field347("harp", Sounds.field26854),
    field348("basedrum", Sounds.field26848),
    field349("snare", Sounds.field26857),
@@ -48,7 +49,7 @@ public enum Class108 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field363;
    }
 

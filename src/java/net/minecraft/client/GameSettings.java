@@ -753,7 +753,7 @@ public class GameSettings {
             var1.println("guiScale:" + this.guiScale);
             var1.println("particles:" + this.field44674.method9052());
             var1.println("maxFps:" + this.framerateLimit);
-            var1.println("difficulty:" + this.field44661.method8905());
+            var1.println("difficulty:" + this.field44661.getId());
             var1.println("graphicsMode:" + this.graphicFanciness.func_238162_a_());
             var1.println("ao:" + this.ambientOcclusionStatus.method9115());
             var1.println("biomeBlendRadius:" + this.biomeBlendRadius);

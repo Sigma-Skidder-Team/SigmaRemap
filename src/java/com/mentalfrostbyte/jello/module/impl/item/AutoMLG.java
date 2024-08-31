@@ -14,6 +14,7 @@ import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 

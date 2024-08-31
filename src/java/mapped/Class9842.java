@@ -29,7 +29,7 @@ public class Class9842 {
          for (int var4 = 0; var4 < var3.length; var4++) {
             Direction var5 = var3[var4];
             List var6 = var0.method22619((BlockState)null, var5, field45941);
-            method38897(var5.method257(), var6, "  ");
+            method38897(var5.getString(), var6, "  ");
          }
 
          List var7 = var0.method22619((BlockState)null, (Direction)null, field45941);

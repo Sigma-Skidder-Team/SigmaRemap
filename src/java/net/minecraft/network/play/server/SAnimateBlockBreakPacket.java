@@ -25,14 +25,14 @@ public class SAnimateBlockBreakPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24508 = var1.readVarInt();
-      this.field24509 = var1.method35707();
+      this.field24509 = var1.readBlockPos();
       this.field24510 = var1.readUnsignedByte();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeVarInt(this.field24508);
-      var1.method35708(this.field24509);
+      var1.writeBlockPos(this.field24509);
       var1.writeByte(this.field24510);
    }
 

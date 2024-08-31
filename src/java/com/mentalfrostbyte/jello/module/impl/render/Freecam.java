@@ -10,6 +10,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CUseEntityPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 
 public class Freecam extends Module {

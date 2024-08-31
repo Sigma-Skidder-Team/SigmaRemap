@@ -5,12 +5,13 @@ import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.booleans.BooleanArrayList;
 import it.unimi.dsi.fastutil.booleans.BooleanList;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.IStringSerializable;
 
 import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public enum Class178 implements Class83 {
+public enum Class178 implements IStringSerializable {
    field565("identity", Class2239.field14647, false, false, false),
    field566("rot_180_face_xy", Class2239.field14647, true, true, false),
    field567("rot_180_face_xz", Class2239.field14647, true, false, true),
@@ -113,7 +114,7 @@ public enum Class178 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field614;
    }
 

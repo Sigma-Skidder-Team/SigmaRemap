@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.Hand;
 
 public class Class3684 extends Class3676<Class1006> {
    private static String[] field19699;

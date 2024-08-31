@@ -22,7 +22,7 @@ public class CUpdateSignPacket implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24485 = var1.method35707();
+      this.field24485 = var1.readBlockPos();
       this.field24486 = new String[4];
 
       for (int var4 = 0; var4 < 4; var4++) {
@@ -32,7 +32,7 @@ public class CUpdateSignPacket implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35708(this.field24485);
+      var1.writeBlockPos(this.field24485);
 
       for (int var4 = 0; var4 < 4; var4++) {
          var1.writeString(this.field24486[var4]);

@@ -11,6 +11,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SMountEntityPacket;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -742,7 +743,7 @@ public abstract class Class1006 extends LivingEntity {
    public int method3370() {
       if (this.method4232() != null) {
          int var3 = (int)(this.getHealth() - this.method3075() * 0.33F);
-         var3 -= (3 - this.world.method6997().method8905()) * 4;
+         var3 -= (3 - this.world.method6997().getId()) * 4;
          if (var3 < 0) {
             var3 = 0;
          }

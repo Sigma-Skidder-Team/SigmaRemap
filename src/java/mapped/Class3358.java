@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 
 public class Class3358 extends Class3357 {

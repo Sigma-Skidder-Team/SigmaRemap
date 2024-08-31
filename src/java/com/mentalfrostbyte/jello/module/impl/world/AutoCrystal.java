@@ -69,7 +69,7 @@ public class AutoCrystal extends PremiumModule {
     }
 
     private static float method16381(float var0) {
-        int var3 = mc.world.method6997().method8905();
+        int var3 = mc.world.method6997().getId();
         return var0 * (var3 != 0 ? (var3 != 2 ? (var3 != 1 ? 1.5F : 0.5F) : 1.0F) : 0.0F);
     }
 

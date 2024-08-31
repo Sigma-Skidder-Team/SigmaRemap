@@ -40,6 +40,9 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
 import net.minecraft.realms.RealmsScreen;
+import net.minecraft.tileentity.JigsawTileEntity;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -1054,7 +1057,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          || var6 == 9 && var5 instanceof Class954
          || var6 == 11 && var5 instanceof Class967
          || var6 == 5 && var5 instanceof Class959
-         || var6 == 12 && var5 instanceof Class965
+         || var6 == 12 && var5 instanceof JigsawTileEntity
          || var6 == 13 && var5 instanceof Class945
          || var6 == 14 && var5 instanceof Class962) {
          var5.method3645(this.field23272.world.getBlockState(var4), var1.method17638());
@@ -1719,16 +1722,16 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             this.field23272.debugRenderer.field34466.method15902(var6, var8, var7);
          } else if (SCustomPayloadPlayPacket.field24539.equals(var4)) {
             long var9 = var5.method35715();
-            BlockPos var62 = var5.method35707();
+            BlockPos var62 = var5.readBlockPos();
             ((Class5132)this.field23272.debugRenderer.field34471).method15869(var9, var62);
          } else if (SCustomPayloadPlayPacket.field24540.equals(var4)) {
-            BlockPos var42 = var5.method35707();
+            BlockPos var42 = var5.readBlockPos();
             int var52 = var5.readInt();
             ArrayList var63 = Lists.newArrayList();
             ArrayList var11 = Lists.newArrayList();
 
             for (int var12 = 0; var12 < var52; var12++) {
-               var63.add(var5.method35707());
+               var63.add(var5.readBlockPos());
                var11.add(var5.readFloat());
             }
 
@@ -1748,7 +1751,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             this.field23272.debugRenderer.field34473.method15815(var53, var73, var78, var43);
          } else if (SCustomPayloadPlayPacket.field24542.equals(var4)) {
             ((Class5134)this.field23272.debugRenderer.field34475)
-               .method15901(var5.method35707(), var5.readFloat(), var5.readFloat(), var5.readFloat(), var5.readFloat(), var5.readFloat());
+               .method15901(var5.readBlockPos(), var5.readFloat(), var5.readFloat(), var5.readFloat(), var5.readFloat(), var5.readFloat());
          } else if (SCustomPayloadPlayPacket.field24546.equals(var4)) {
             int var44 = var5.readInt();
 
@@ -1762,20 +1765,20 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                this.field23272.debugRenderer.field34479.method15818(var5.method35709());
             }
          } else if (SCustomPayloadPlayPacket.field24544.equals(var4)) {
-            BlockPos var45 = var5.method35707();
+            BlockPos var45 = var5.readBlockPos();
             String var56 = var5.method35727();
             int var66 = var5.readInt();
             Class9321 var74 = new Class9321(var45, var56, var66);
             this.field23272.debugRenderer.field34478.method15871(var74);
          } else if (SCustomPayloadPlayPacket.field24545.equals(var4)) {
-            BlockPos var46 = var5.method35707();
+            BlockPos var46 = var5.readBlockPos();
             this.field23272.debugRenderer.field34478.method15872(var46);
          } else if (SCustomPayloadPlayPacket.field24543.equals(var4)) {
-            BlockPos var47 = var5.method35707();
+            BlockPos var47 = var5.readBlockPos();
             int var57 = var5.readInt();
             this.field23272.debugRenderer.field34478.method15873(var47, var57);
          } else if (SCustomPayloadPlayPacket.field24547.equals(var4)) {
-            BlockPos var48 = var5.method35707();
+            BlockPos var48 = var5.readBlockPos();
             int var58 = var5.readInt();
             int var67 = var5.readInt();
             ArrayList var75 = Lists.newArrayList();
@@ -1793,7 +1796,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             ArrayList var59 = Lists.newArrayList();
 
             for (int var68 = 0; var68 < var49; var68++) {
-               var59.add(var5.method35707());
+               var59.add(var5.readBlockPos());
             }
 
             this.field23272.debugRenderer.field34481.method15863(var59);
@@ -1844,14 +1847,14 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             int var108 = var5.readInt();
 
             for (int var109 = 0; var109 < var108; var109++) {
-               BlockPos var36 = var5.method35707();
+               BlockPos var36 = var5.readBlockPos();
                var30.field40377.add(var36);
             }
 
             int var110 = var5.readInt();
 
             for (int var111 = 0; var111 < var110; var111++) {
-               BlockPos var37 = var5.method35707();
+               BlockPos var37 = var5.readBlockPos();
                var30.field40378.add(var37);
             }
 
@@ -1873,13 +1876,13 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             boolean var90 = var5.readBoolean();
             BlockPos var91 = null;
             if (var90) {
-               var91 = var5.method35707();
+               var91 = var5.readBlockPos();
             }
 
             boolean var92 = var5.readBoolean();
             BlockPos var93 = null;
             if (var92) {
-               var93 = var5.method35707();
+               var93 = var5.readBlockPos();
             }
 
             int var94 = var5.readInt();
@@ -1900,13 +1903,13 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             int var100 = var5.readInt();
 
             for (int var102 = 0; var102 < var100; var102++) {
-               BlockPos var104 = var5.method35707();
+               BlockPos var104 = var5.readBlockPos();
                var97.field30227.add(var104);
             }
 
             this.field23272.debugRenderer.field34480.method15825(var97);
          } else if (SCustomPayloadPlayPacket.field24550.equals(var4)) {
-            BlockPos var50 = var5.method35707();
+            BlockPos var50 = var5.readBlockPos();
             String var60 = var5.method35727();
             int var69 = var5.readInt();
             int var76 = var5.readInt();
@@ -1916,7 +1919,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          } else if (SCustomPayloadPlayPacket.field24552.equals(var4)) {
             this.field23272.debugRenderer.field34483.method15814();
          } else if (SCustomPayloadPlayPacket.field24551.equals(var4)) {
-            BlockPos var51 = var5.method35707();
+            BlockPos var51 = var5.readBlockPos();
             int var61 = var5.readInt();
             String var70 = var5.method35727();
             int var77 = var5.readInt();

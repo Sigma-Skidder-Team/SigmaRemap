@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.TileEntity;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class9809 {

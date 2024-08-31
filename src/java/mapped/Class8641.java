@@ -10,6 +10,7 @@ import net.minecraft.network.play.server.SChangeBlockPacket;
 import net.minecraft.network.play.server.SMultiBlockChangePacket;
 import net.minecraft.network.play.server.SUpdateLightPacket;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;

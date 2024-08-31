@@ -12,6 +12,7 @@ import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
 public class AutoSoup extends Module {

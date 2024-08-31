@@ -22,7 +22,7 @@ public class Class8773 {
       var0.register((LiteralArgumentBuilder)(var3.requires(var0x -> var0x.method20129(2))).executes(var0x -> {
          Difficulty var3x = ((Class6619)var0x.getSource()).method20172().method6997();
          ((Class6619)var0x.getSource()).method20179(new TranslationTextComponent("commands.difficulty.query", var3x.getDisplayName()), false);
-         return var3x.method8905();
+         return var3x.getId();
       }));
    }
 

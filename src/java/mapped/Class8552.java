@@ -4,6 +4,8 @@ import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import net.minecraft.util.IStringSerializable;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Map;
@@ -11,7 +13,7 @@ import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class Class8552<T extends Enum<T> & Class83> extends Class8550<T> {
+public class Class8552<T extends Enum<T> & IStringSerializable> extends Class8550<T> {
    private final ImmutableSet<T> field38442;
    private final Map<String, T> field38443 = Maps.newHashMap();
 
@@ -20,7 +22,7 @@ public class Class8552<T extends Enum<T> & Class83> extends Class8550<T> {
       this.field38442 = ImmutableSet.copyOf(var3);
 
       for (Enum var7 : var3) {
-         String var8 = ((Class83)var7).method257();
+         String var8 = ((IStringSerializable)var7).getString();
          if (this.field38443.containsKey(var8)) {
             throw new IllegalArgumentException("Multiple values have the same name '" + var8 + "'");
          }
@@ -40,7 +42,7 @@ public class Class8552<T extends Enum<T> & Class83> extends Class8550<T> {
    }
 
    public String method30475(T var1) {
-      return ((Class83)var1).method257();
+      return ((IStringSerializable)var1).getString();
    }
 
    @Override
@@ -62,19 +64,19 @@ public class Class8552<T extends Enum<T> & Class83> extends Class8550<T> {
       return 31 * var3 + this.field38443.hashCode();
    }
 
-   public static <T extends Enum<T> & Class83> Class8552<T> method30481(String var0, Class<T> var1) {
+   public static <T extends Enum<T> & IStringSerializable> Class8552<T> method30481(String var0, Class<T> var1) {
       return method30482(var0, var1, Predicates.alwaysTrue());
    }
 
-   public static <T extends Enum<T> & Class83> Class8552<T> method30482(String var0, Class<T> var1, Predicate<T> var2) {
+   public static <T extends Enum<T> & IStringSerializable> Class8552<T> method30482(String var0, Class<T> var1, Predicate<T> var2) {
       return method30484(var0, var1, Arrays.stream(var1.getEnumConstants()).filter(var2).collect(Collectors.<T>toList()));
    }
 
-   public static <T extends Enum<T> & Class83> Class8552<T> method30483(String var0, Class<T> var1, T... var2) {
+   public static <T extends Enum<T> & IStringSerializable> Class8552<T> method30483(String var0, Class<T> var1, T... var2) {
       return method30484(var0, var1, Lists.newArrayList(var2));
    }
 
-   public static <T extends Enum<T> & Class83> Class8552<T> method30484(String var0, Class<T> var1, Collection<T> var2) {
+   public static <T extends Enum<T> & IStringSerializable> Class8552<T> method30484(String var0, Class<T> var1, Collection<T> var2) {
       return new Class8552<T>(var0, var1, var2);
    }
 }

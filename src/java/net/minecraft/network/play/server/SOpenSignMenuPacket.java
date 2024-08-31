@@ -24,12 +24,12 @@ public class SOpenSignMenuPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24380 = var1.method35707();
+      this.field24380 = var1.readBlockPos();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35708(this.field24380);
+      var1.writeBlockPos(this.field24380);
    }
 
    public BlockPos method17271() {

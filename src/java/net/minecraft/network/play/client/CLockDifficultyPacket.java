@@ -7,14 +7,13 @@ import net.minecraft.network.PacketBuffer;
 import java.io.IOException;
 
 public class CLockDifficultyPacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24389;
-   private boolean field24390;
+    private boolean field_218777_a;
 
    public CLockDifficultyPacket() {
    }
 
    public CLockDifficultyPacket(boolean var1) {
-      this.field24390 = var1;
+      this.field_218777_a = var1;
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
@@ -23,15 +22,15 @@ public class CLockDifficultyPacket implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24390 = var1.readBoolean();
+      this.field_218777_a = var1.readBoolean();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeBoolean(this.field24390);
+      var1.writeBoolean(this.field_218777_a);
    }
 
-   public boolean method17277() {
-      return this.field24390;
+   public boolean func_218776_b() {
+      return this.field_218777_a;
    }
 }

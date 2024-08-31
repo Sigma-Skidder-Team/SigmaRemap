@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.tileentity.TileEntity;
+
 public class Class956 extends TileEntity {
    private static String[] field5370;
 

@@ -26,14 +26,14 @@ public class CPlayerDiggingPacket implements Packet<IServerPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24384 = var1.<Action>method35712(Action.class);
-      this.field24382 = var1.method35707();
+      this.field24382 = var1.readBlockPos();
       this.field24383 = Direction.method546(var1.readUnsignedByte());
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.method35713(this.field24384);
-      var1.method35708(this.field24382);
+      var1.writeBlockPos(this.field24382);
       var1.writeByte(this.field24383.method533());
    }
 

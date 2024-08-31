@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.Hand;
 
 public class Class338 implements Runnable {
    public final float field1477;

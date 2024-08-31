@@ -44,7 +44,7 @@ public class Class6268 implements Class6267 {
 
       for (int var16 = 0; var16 < var14.length; var16++) {
          Class100 var19 = var14[var16];
-         String var21 = "CAT_" + var19.method257().toUpperCase();
+         String var21 = "CAT_" + var19.getString().toUpperCase();
          Class1888 var23 = new Class1888((float)var16);
          this.method19237(var21, var23);
       }
@@ -53,7 +53,7 @@ public class Class6268 implements Class6267 {
 
       for (int var20 = 0; var20 < var17.length; var20++) {
          Class87 var22 = var17[var20];
-         String var24 = "PPT_" + var22.method257().toUpperCase();
+         String var24 = "PPT_" + var22.getString().toUpperCase();
          Class1888 var10 = new Class1888((float)var20);
          this.method19237(var24, var10);
       }

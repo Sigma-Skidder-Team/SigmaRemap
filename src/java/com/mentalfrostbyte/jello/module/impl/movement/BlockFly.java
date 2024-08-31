@@ -18,6 +18,7 @@ import mapped.*;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
+import net.minecraft.util.Hand;
 import org.lwjgl.opengl.GL11;
 
 import java.util.Arrays;

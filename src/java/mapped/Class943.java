@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.tileentity.TileEntity;
 
 public class Class943 extends TileEntity implements Class942, Class935 {
    private static String[] field5317;

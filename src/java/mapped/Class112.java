@@ -1,13 +1,14 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.util.IStringSerializable;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 
-public enum Class112 implements Class83 {
+public enum Class112 implements IStringSerializable {
    field386(0, "white", 16383998, Class7210.field30955, 15790320, 16777215),
    field387(1, "orange", 16351261, Class7210.field30962, 15435844, 16738335),
    field388(2, "magenta", 13061821, Class7210.field30963, 12801229, 16711935),
@@ -125,7 +126,7 @@ public enum Class112 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field405;
    }
 }

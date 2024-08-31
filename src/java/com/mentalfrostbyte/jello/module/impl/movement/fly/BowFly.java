@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
 public class BowFly extends Module {

@@ -60,7 +60,7 @@ public class CUpdateStructureBlockPacket implements Packet<IServerPlayNetHandler
 
    @Override
    public void readPacketData(PacketBuffer buf) throws IOException {
-      this.pos = buf.method35707();
+      this.pos = buf.readBlockPos();
       this.field_210392_b = buf.method35712(Class1897.class);
       this.mode = buf.method35712(Class104.class);
       this.name = buf.readString(32767);
@@ -81,7 +81,7 @@ public class CUpdateStructureBlockPacket implements Packet<IServerPlayNetHandler
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35708(this.pos);
+      var1.writeBlockPos(this.pos);
       var1.method35713(this.field_210392_b);
       var1.method35713(this.mode);
       var1.writeString(this.name);

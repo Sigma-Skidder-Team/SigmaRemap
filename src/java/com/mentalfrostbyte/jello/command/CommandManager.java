@@ -149,7 +149,7 @@ public class CommandManager {
 
             if (var1.method13932() instanceof CTabCompletePacket) {
                 CTabCompletePacket var11 = (CTabCompletePacket) var1.method13932();
-                if (var11.method17486().startsWith(".")) {
+                if (var11.getCommand().startsWith(".")) {
                     var1.method13900(true);
                 }
             }

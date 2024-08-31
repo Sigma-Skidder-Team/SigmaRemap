@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 
 public class Class7459 implements Class7458 {

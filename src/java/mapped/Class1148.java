@@ -364,7 +364,7 @@ public class Class1148 extends Screen {
             this.field6264.method5671(true);
       }
 
-      this.field6273.setMessage(new TranslationTextComponent("structure_block.mode." + this.field6248.method3950().method257()));
+      this.field6273.setMessage(new TranslationTextComponent("structure_block.mode." + this.field6248.method3950().getString()));
    }
 
    private boolean method5508(Class1897 var1) {

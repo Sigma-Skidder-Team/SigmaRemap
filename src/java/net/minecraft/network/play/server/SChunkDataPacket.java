@@ -8,6 +8,7 @@ import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;

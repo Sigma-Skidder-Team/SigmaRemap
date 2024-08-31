@@ -8,14 +8,13 @@ import net.minecraft.world.Difficulty;
 import java.io.IOException;
 
 public class CSetDifficultyPacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24479;
-   private Difficulty field24480;
+    private Difficulty field_218774_a;
 
    public CSetDifficultyPacket() {
    }
 
    public CSetDifficultyPacket(Difficulty var1) {
-      this.field24480 = var1;
+      this.field_218774_a = var1;
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
@@ -24,15 +23,15 @@ public class CSetDifficultyPacket implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24480 = Difficulty.method8907(var1.readUnsignedByte());
+      this.field_218774_a = Difficulty.method8907(var1.readUnsignedByte());
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeByte(this.field24480.method8905());
+      var1.writeByte(this.field_218774_a.getId());
    }
 
-   public Difficulty method17348() {
-      return this.field24480;
+   public Difficulty func_218773_b() {
+      return this.field_218774_a;
    }
 }

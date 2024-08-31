@@ -62,7 +62,7 @@ public class Class7832 {
       Vector3f var5 = new Vector3f(0.0F, 0.0F, 0.0F);
       Vector3f var6 = new Vector3f(16.0F, 16.0F, 16.0F);
       Class9840 var7 = new Class9840(new float[]{0.0F, 0.0F, 16.0F, 16.0F}, 0);
-      Class9163 var8 = new Class9163(var0, var2, "#" + var0.method257(), var7);
+      Class9163 var8 = new Class9163(var0, var2, "#" + var0.getString(), var7);
       Class1901 var9 = Class1901.field11159;
       Object var10 = null;
       boolean var11 = true;

@@ -18,6 +18,7 @@ import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.network.play.server.SPlaySoundPacket;
 import net.minecraft.network.play.server.SPlaySoundEffectPacket;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 

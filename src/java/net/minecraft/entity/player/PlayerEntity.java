@@ -17,7 +17,9 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -877,7 +879,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public void method2891(Class964 var1) {
    }
 
-   public void method2892(Class965 var1) {
+   public void method2892(JigsawTileEntity var1) {
    }
 
    public void method2768(AbstractHorseEntity var1, Class920 var2) {

@@ -4,12 +4,14 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.DynamicOps;
+import net.minecraft.util.IStringSerializable;
+
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.function.ToIntFunction;
 
-public final class Class9099<E extends Class83> implements Codec<E> {
+public final class Class9099<E extends IStringSerializable> implements Codec<E> {
    public final ToIntFunction<E> field41626;
    public final IntFunction<E> field41627;
    public final Function<? super String, ? extends E> field41628;
@@ -22,7 +24,7 @@ public final class Class9099<E extends Class83> implements Codec<E> {
 
    public <T> DataResult<T> encode(E var1, DynamicOps<T> var2, T var3) {
       return !var2.compressMaps()
-         ? var2.mergeToPrimitive(var3, var2.createString(var1.method257()))
+         ? var2.mergeToPrimitive(var3, var2.createString(var1.getString()))
          : var2.mergeToPrimitive(var3, var2.createInt(this.field41626.applyAsInt(var1)));
    }
 

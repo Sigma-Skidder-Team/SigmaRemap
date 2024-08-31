@@ -30,7 +30,7 @@ public class CUpdateCommandBlockPacket implements Packet<IServerPlayNetHandler> 
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24738 = var1.method35707();
+      this.field24738 = var1.readBlockPos();
       this.field24739 = var1.readString(32767);
       this.field24743 = var1.method35712(Class2037.class);
       int i = var1.readByte();
@@ -41,7 +41,7 @@ public class CUpdateCommandBlockPacket implements Packet<IServerPlayNetHandler> 
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35708(this.field24738);
+      var1.writeBlockPos(this.field24738);
       var1.writeString(this.field24739);
       var1.method35713(this.field24743);
       byte var4 = 0;

@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.types.Type;
+import net.minecraft.tileentity.TileEntity;
+
 import java.util.Set;
 import java.util.function.Supplier;
 

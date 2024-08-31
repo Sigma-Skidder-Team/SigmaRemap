@@ -1,6 +1,8 @@
 package mapped;
 
-public enum Class103 implements Class83 {
+import net.minecraft.util.IStringSerializable;
+
+public enum Class103 implements IStringSerializable {
    field313("floor"),
    field314("wall"),
    field315("ceiling");
@@ -13,7 +15,7 @@ public enum Class103 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field316;
    }
 }

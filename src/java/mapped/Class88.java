@@ -1,12 +1,13 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.IStringSerializable;
 
 import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public enum Class88 implements Class83 {
+public enum Class88 implements IStringSerializable {
    field230("none") {
       @Override
       public int method265(double d, double d2, int n) {
@@ -28,7 +29,7 @@ public enum Class88 implements Class83 {
    };
 
    private final String field233;
-   public static final Codec<Class88> field234 = Class83.<Class88>method258(Class88::values, Class88::method267);
+   public static final Codec<Class88> field234 = IStringSerializable.<Class88>method258(Class88::values, Class88::method267);
    private static final Map<String, Class88> field235 = Arrays.<Class88>stream(values()).collect(Collectors.toMap(Class88::method266, var0 -> (Class88)var0));
    private static final Class88[] field236 = new Class88[]{field230, field231, field232};
 
@@ -43,7 +44,7 @@ public enum Class88 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field233;
    }
 

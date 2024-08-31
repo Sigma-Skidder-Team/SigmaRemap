@@ -244,7 +244,7 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
       var2.method115("allowCommands", this.field29064.method32430());
       var2.method115("initialized", this.field29083);
       this.field29085.method22720(var2);
-      var2.method100("Difficulty", (byte)this.field29064.method32429().method8905());
+      var2.method100("Difficulty", (byte)this.field29064.method32429().getId());
       var2.method115("DifficultyLocked", this.field29084);
       var2.put("GameRules", this.field29064.method32431().method17129());
       var2.put("DragonFight", this.field29086);

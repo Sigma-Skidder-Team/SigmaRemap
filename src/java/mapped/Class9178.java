@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.IStringSerializable;
+
 import java.util.List;
 
 public class Class9178 {
@@ -27,8 +29,8 @@ public class Class9178 {
       return this.method34326(var1, Boolean.toString(var2));
    }
 
-   public <T extends Comparable<T> & Class83> Class9178 method34329(Class8550<T> var1, T var2) {
-      return this.method34326(var1, ((Class83)var2).method257());
+   public <T extends Comparable<T> & IStringSerializable> Class9178 method34329(Class8550<T> var1, T var2) {
+      return this.method34326(var1, ((IStringSerializable)var2).getString());
    }
 
    public Class7340 method34330() {

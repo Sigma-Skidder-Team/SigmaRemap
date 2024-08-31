@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
+import net.minecraft.util.Hand;
 
 public class SpartanFly extends Module {
     private double field23569;

@@ -32,7 +32,7 @@ public class SServerDifficultyPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeByte(this.field24575.method8905());
+      var1.writeByte(this.field24575.getId());
       var1.writeBoolean(this.field24576);
    }
 

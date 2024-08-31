@@ -548,7 +548,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    public void method3490(LivingEntity var1, float var2) {
       int var5 = Class7858.method26322(Class8122.field34919, var1);
       int var6 = Class7858.method26322(Class8122.field34920, var1);
-      this.method3481((double)(var2 * 2.0F) + this.rand.nextGaussian() * 0.25 + (double)((float)this.world.method6997().method8905() * 0.11F));
+      this.method3481((double)(var2 * 2.0F) + this.rand.nextGaussian() * 0.25 + (double)((float)this.world.method6997().getId() * 0.11F));
       if (var5 > 0) {
          this.method3481(this.method3482() + (double)var5 * 0.5 + 0.5);
       }

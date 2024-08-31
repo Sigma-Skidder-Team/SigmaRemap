@@ -12,6 +12,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.play.client.*;
+import net.minecraft.tileentity.JigsawTileEntity;
+import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -534,7 +536,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method2892(Class965 var1) {
+   public void method2892(JigsawTileEntity var1) {
       this.field6132.displayGuiScreen(new Class1321(var1));
    }
 

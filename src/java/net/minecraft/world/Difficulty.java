@@ -14,7 +14,7 @@ public enum Difficulty {
    field14354(3, "hard");
 
    private static final Difficulty[] field14355 = Arrays.<Difficulty>stream(values())
-      .sorted(Comparator.comparingInt(Difficulty::method8905))
+      .sorted(Comparator.comparingInt(Difficulty::getId))
       .<Difficulty>toArray(Difficulty[]::new);
    private final int field14356;
    private final String field14357;
@@ -25,7 +25,7 @@ public enum Difficulty {
       this.field14357 = var4;
    }
 
-   public int method8905() {
+   public int getId() {
       return this.field14356;
    }
 

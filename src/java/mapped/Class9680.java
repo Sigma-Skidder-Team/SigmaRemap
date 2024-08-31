@@ -1062,7 +1062,7 @@ public class Class9680 {
 
       for (int var8 = 0; var8 < var6.length; var8++) {
          Class112 var9 = var6[var8];
-         var7.put(var9.method257(), var9);
+         var7.put(var9.getString(), var9);
       }
 
       var7.put("lightBlue", Class112.field389);

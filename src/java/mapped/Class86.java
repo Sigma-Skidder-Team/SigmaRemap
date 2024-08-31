@@ -1,6 +1,8 @@
 package mapped;
 
-public enum Class86 implements Class83 {
+import net.minecraft.util.IStringSerializable;
+
+public enum Class86 implements IStringSerializable {
    field218("top"),
    field219("bottom"),
    field220("double");
@@ -18,7 +20,7 @@ public enum Class86 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field221;
    }
 }

@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.util.IStringSerializable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,7 +25,7 @@ public class Class7478 {
                Codec.simpleMap(
                      Class97.field261,
                      Class6815.field29676.promotePartial(Util.func_240982_a_("Carver: ", field32135::error)),
-                     Class83.method260(Class97.values())
+                     IStringSerializable.method260(Class97.values())
                   )
                   .fieldOf("carvers")
                   .forGetter(var0x -> var0x.field32139),

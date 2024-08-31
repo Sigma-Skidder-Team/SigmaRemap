@@ -1,6 +1,8 @@
 package mapped;
 
-public enum Class183 implements Class83 {
+import net.minecraft.util.IStringSerializable;
+
+public enum Class183 implements IStringSerializable {
    field664,
    field665;
 
@@ -8,11 +10,11 @@ public enum Class183 implements Class83 {
 
    @Override
    public String toString() {
-      return this.method257();
+      return this.getString();
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this != field664 ? "right" : "left";
    }
 }

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 
 public class Class3302 extends Class3292 {
    private static String[] field18808;

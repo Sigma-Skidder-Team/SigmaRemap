@@ -7,6 +7,7 @@ import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.network.play.client.CJigsawBlockGeneratePacket;
 import net.minecraft.network.play.client.CUpdateJigsawBlockPacket;
+import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -18,7 +19,7 @@ public class Class1321 extends Screen {
    private static final ITextComponent field6980 = new TranslationTextComponent("jigsaw_block.name");
    private static final ITextComponent field6981 = new TranslationTextComponent("jigsaw_block.target");
    private static final ITextComponent field6982 = new TranslationTextComponent("jigsaw_block.final_state");
-   private final Class965 field6983;
+   private final JigsawTileEntity field6983;
    private TextFieldWidget field6984;
    private TextFieldWidget field6985;
    private TextFieldWidget field6986;
@@ -27,9 +28,9 @@ public class Class1321 extends Screen {
    private boolean field6989 = true;
    private Button field6990;
    private Button field6991;
-   private Class92 field6992;
+   private JigsawTileEntity.OrientationType field6992;
 
-   public Class1321(Class965 var1) {
+   public Class1321(JigsawTileEntity var1) {
       super(NarratorChatListener.field29300);
       this.field6983 = var1;
    }
@@ -100,7 +101,7 @@ public class Class1321 extends Screen {
       this.field6992 = this.field6983.method3982();
       int var3 = this.fontRenderer.method38821(field6978) + 10;
       this.field6990 = this.<Button>addButton(new Button(this.width / 2 - 152 + var3, 150, 300 - var3, 20, this.method6273(), var1 -> {
-         Class92[] var4x = Class92.values();
+         JigsawTileEntity.OrientationType[] var4x = JigsawTileEntity.OrientationType.values();
          int var5 = (this.field6992.ordinal() + 1) % var4x.length;
          this.field6992 = var4x[var5];
          var1.setMessage(this.method6273());
@@ -138,7 +139,7 @@ public class Class1321 extends Screen {
       String var8 = this.field6986.getText();
       String var9 = this.field6987.getText();
       int var10 = this.field6988;
-      Class92 var11 = this.field6992;
+      JigsawTileEntity.OrientationType var11 = this.field6992;
       this.init(var1, var2, var3);
       this.field6984.method5635(var6);
       this.field6985.method5635(var7);
@@ -150,7 +151,7 @@ public class Class1321 extends Screen {
    }
 
    private ITextComponent method6273() {
-      return new TranslationTextComponent("jigsaw_block.joint." + this.field6992.method257());
+      return new TranslationTextComponent("jigsaw_block.joint." + this.field6992.getString());
    }
 
    @Override

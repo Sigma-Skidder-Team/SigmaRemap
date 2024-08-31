@@ -2,8 +2,9 @@ package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.util.IStringSerializable;
 
-public enum Class182 implements Class83 {
+public enum Class182 implements IStringSerializable {
    field647("down_east", Direction.DOWN, Direction.EAST),
    field648("down_north", Direction.DOWN, Direction.NORTH),
    field649("down_south", Direction.DOWN, Direction.SOUTH),
@@ -36,7 +37,7 @@ public enum Class182 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field660;
    }
 

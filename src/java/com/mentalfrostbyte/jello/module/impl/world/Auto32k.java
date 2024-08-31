@@ -14,6 +14,7 @@ import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.network.play.server.SCloseWindowPacket;
 import net.minecraft.network.play.server.SOpenWindowPacket;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 

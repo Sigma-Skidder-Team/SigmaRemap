@@ -1,9 +1,10 @@
 package mapped;
 
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public enum Class104 implements Class83 {
+public enum Class104 implements IStringSerializable {
    field318("save"),
    field319("load"),
    field320("corner"),
@@ -19,7 +20,7 @@ public enum Class104 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field322;
    }
 

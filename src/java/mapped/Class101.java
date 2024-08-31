@@ -4,12 +4,13 @@ import com.google.common.collect.Maps;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.IStringSerializable;
 
 import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.function.Predicate;
 
-public enum Class101 implements Class83 {
+public enum Class101 implements IStringSerializable {
    field295("WORLD_SURFACE_WG", Class2029.field13170, Class7527.method24587()),
    field296("WORLD_SURFACE", Class2029.field13172, Class7527.method24587()),
    field297("OCEAN_FLOOR_WG", Class2029.field13170, Class7527.method24588()),
@@ -21,7 +22,7 @@ public enum Class101 implements Class83 {
       var0 -> (var0.method23384().method31087() || !var0.method23449().method23474()) && !(var0.getBlock() instanceof Class3465)
    );
 
-   public static final Codec<Class101> field301 = Class83.<Class101>method258(Class101::values, Class101::method286);
+   public static final Codec<Class101> field301 = IStringSerializable.<Class101>method258(Class101::values, Class101::method286);
    private final String field302;
    private final Class2029 field303;
    private final Predicate<BlockState> field304;
@@ -60,7 +61,7 @@ public enum Class101 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field302;
    }
 }

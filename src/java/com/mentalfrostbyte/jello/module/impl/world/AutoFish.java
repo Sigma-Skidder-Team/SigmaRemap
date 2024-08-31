@@ -11,6 +11,7 @@ import mapped.*;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
 import net.minecraft.network.play.server.SPlaySoundPacket;
 import net.minecraft.network.play.server.SPlaySoundEffectPacket;
+import net.minecraft.util.Hand;
 
 public class AutoFish extends Module {
     public AutoFish() {

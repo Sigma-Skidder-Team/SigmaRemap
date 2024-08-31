@@ -1,12 +1,13 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.IStringSerializable;
 
 import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public enum Class179 implements Class83 {
+public enum Class179 implements IStringSerializable {
    field623("monster", 70, false, false, 128),
    field624("creature", 10, true, true, 128),
    field625("ambient", 15, true, false, 128),
@@ -14,7 +15,7 @@ public enum Class179 implements Class83 {
    field627("water_ambient", 20, true, false, 64),
    field628("misc", -1, true, true, 128);
 
-   public static final Codec<Class179> field629 = Class83.<Class179>method258(Class179::values, Class179::method518);
+   public static final Codec<Class179> field629 = IStringSerializable.<Class179>method258(Class179::values, Class179::method518);
    private static final Map<String, Class179> field630 = Arrays.<Class179>stream(values())
       .collect(Collectors.toMap(Class179::method517, var0 -> (Class179)var0));
    private final int field631;
@@ -38,7 +39,7 @@ public enum Class179 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field634;
    }
 

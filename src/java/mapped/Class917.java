@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 
 public class Class917 extends AbstractMinecartEntity {
    private static String[] field5231;

@@ -175,7 +175,7 @@ public class ViaVersionLoader {
       }
 
       if (var1.method13932() instanceof CTabCompletePacket) {
-         if (((CTabCompletePacket)var1.method13932()).method17486().length() == 1) {
+         if (((CTabCompletePacket)var1.method13932()).getCommand().length() == 1) {
             return;
          }
 

@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class Class7490 extends Class7487 {
       var3.method109("final_state", "minecraft:air");
       var3.method109("pool", "minecraft:empty");
       var3.method109("target", "minecraft:empty");
-      var3.method109("joint", Class92.field237.method257());
+      var3.method109("joint", JigsawTileEntity.OrientationType.ROLLABLE.getString());
       return var3;
    }
 

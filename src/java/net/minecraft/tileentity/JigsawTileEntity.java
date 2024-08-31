@@ -1,28 +1,32 @@
-package mapped;
+package net.minecraft.tileentity;
 
 import com.google.common.collect.Lists;
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
-public class Class965 extends TileEntity {
+public class JigsawTileEntity extends TileEntity {
    private ResourceLocation field5409 = new ResourceLocation("empty");
    private ResourceLocation field5410 = new ResourceLocation("empty");
    private ResourceLocation field5411 = new ResourceLocation("empty");
-   private Class92 field5412 = Class92.field237;
+   private OrientationType field5412 = OrientationType.ROLLABLE;
    private String field5413 = "minecraft:air";
 
-   public Class965(Class4387<?> var1) {
+   public JigsawTileEntity(Class4387<?> var1) {
       super(var1);
    }
 
-   public Class965() {
+   public JigsawTileEntity() {
       this(Class4387.field21451);
    }
 
@@ -42,7 +46,7 @@ public class Class965 extends TileEntity {
       return this.field5413;
    }
 
-   public Class92 method3982() {
+   public OrientationType method3982() {
       return this.field5412;
    }
 
@@ -62,7 +66,7 @@ public class Class965 extends TileEntity {
       this.field5413 = var1;
    }
 
-   public void method3987(Class92 var1) {
+   public void method3987(OrientationType var1) {
       this.field5412 = var1;
    }
 
@@ -73,7 +77,7 @@ public class Class965 extends TileEntity {
       var1.method109("target", this.field5410.toString());
       var1.method109("pool", this.field5411.toString());
       var1.method109("final_state", this.field5413);
-      var1.method109("joint", this.field5412.method257());
+      var1.method109("joint", this.field5412.getString());
       return var1;
    }
 
@@ -84,8 +88,8 @@ public class Class965 extends TileEntity {
       this.field5410 = new ResourceLocation(var2.method126("target"));
       this.field5411 = new ResourceLocation(var2.method126("pool"));
       this.field5413 = var2.method126("final_state");
-      this.field5412 = Class92.method269(var2.method126("joint"))
-         .orElseGet(() -> !Class3249.method11675(var1).method544().method324() ? Class92.field237 : Class92.field238);
+      this.field5412 = OrientationType.method269(var2.method126("joint"))
+         .orElseGet(() -> !Class3249.method11675(var1).method544().method324() ? OrientationType.ROLLABLE : OrientationType.ALIGNED);
    }
 
    @Nullable
@@ -114,6 +118,27 @@ public class Class965 extends TileEntity {
 
       for (Class4193 var16 : var11) {
          var16.method12976(var1, var8, var6, var9, Class9764.method38387(), var10, var3);
+      }
+   }
+
+   public enum OrientationType implements IStringSerializable {
+      ROLLABLE("rollable"),
+      ALIGNED("aligned");
+
+      private final String field239;
+      private static final OrientationType[] field240 = new OrientationType[]{ROLLABLE, ALIGNED};
+
+      private OrientationType(String var3) {
+         this.field239 = var3;
+      }
+
+      @Override
+      public String getString() {
+         return this.field239;
+      }
+
+      public static Optional<OrientationType> method269(String var0) {
+         return Arrays.<OrientationType>stream(values()).filter(var1 -> var1.getString().equals(var0)).findFirst();
       }
    }
 }

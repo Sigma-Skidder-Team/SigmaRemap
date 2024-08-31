@@ -29,13 +29,13 @@ public class SChangeBlockPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24887 = var1.method35707();
+      this.field24887 = var1.readBlockPos();
       this.field24888 = Block.field18610.method9172(var1.readVarInt());
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35708(this.field24887);
+      var1.writeBlockPos(this.field24887);
       var1.writeVarInt(Block.getStateId(this.field24888));
    }
 

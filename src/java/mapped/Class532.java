@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.module.impl.world.AutoFarm;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
 public class Class532 implements Runnable {

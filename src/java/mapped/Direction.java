@@ -4,13 +4,14 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public enum Direction implements Class83 {
+public enum Direction implements IStringSerializable {
    DOWN(0, 1, -1, "down", Class1892.field11093, Class113.field414, new Class1998(0, -1, 0)),
    field673(1, 0, -1, "up", Class1892.field11092, Class113.field414, new Class1998(0, 1, 0)),
    NORTH(2, 3, 2, "north", Class1892.field11093, Class113.field415, new Class1998(0, 0, -1)),
@@ -252,7 +253,7 @@ public enum Direction implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field681;
    }
 

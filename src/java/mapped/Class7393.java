@@ -18,7 +18,7 @@ public class Class7393 {
 
    public static void method23610(ServerWorld var0, BlockPos var1, String var2, int var3, int var4) {
       PacketBuffer var7 = new PacketBuffer(Unpooled.buffer());
-      var7.method35708(var1);
+      var7.writeBlockPos(var1);
       var7.writeInt(var3);
       var7.writeString(var2);
       var7.writeInt(var4);

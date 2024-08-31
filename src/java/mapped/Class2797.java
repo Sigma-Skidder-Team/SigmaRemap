@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.function.Function;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
+import net.minecraft.tileentity.TileEntity;
 
 public class Class967 extends TileEntity {
    private static String[] field5422;

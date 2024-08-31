@@ -178,7 +178,7 @@ public class Class3399 extends AbstractFireBlock {
                         var13.method8378(var3, var14, var16, var15);
                         int var18 = this.method12023(var2, var13);
                         if (var18 > 0) {
-                           int var19 = (var18 + 40 + var2.method6997().method8905() * 7) / (var9 + 30);
+                           int var19 = (var18 + 40 + var2.method6997().getId() * 7) / (var9 + 30);
                            if (var11) {
                               var19 /= 2;
                            }

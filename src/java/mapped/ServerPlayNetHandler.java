@@ -28,7 +28,10 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
+import net.minecraft.tileentity.JigsawTileEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -361,7 +364,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    @Override
    public void processTabComplete(CTabCompletePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
-      StringReader var4 = new StringReader(var1.method17486());
+      StringReader var4 = new StringReader(var1.getCommand());
       if (var4.canRead() && var4.peek() == '/') {
          var4.skip();
       }
@@ -371,7 +374,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          .getCommandManager()
          .method18842()
          .getCompletionSuggestions(var5)
-         .thenAccept(var2 -> this.netManager.sendPacket(new STabCompletePacket(var1.method17485(), var2)));
+         .thenAccept(var2 -> this.netManager.sendPacket(new STabCompletePacket(var1.getTransactionId(), var2)));
    }
 
    @Override
@@ -553,16 +556,16 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void func_217262_a(CUpdateJigsawBlockPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method2979()) {
-         BlockPos var4 = var1.method17426();
+         BlockPos var4 = var1.func_218789_b();
          BlockState var5 = this.player.world.getBlockState(var4);
          TileEntity var6 = this.player.world.getTileEntity(var4);
-         if (var6 instanceof Class965) {
-            Class965 var7 = (Class965)var6;
-            var7.method3983(var1.method17427());
-            var7.method3984(var1.method17428());
-            var7.method3985(var1.method17429());
-            var7.method3986(var1.method17430());
-            var7.method3987(var1.method17431());
+         if (var6 instanceof JigsawTileEntity) {
+            JigsawTileEntity var7 = (JigsawTileEntity)var6;
+            var7.method3983(var1.func_240851_c_());
+            var7.method3984(var1.func_240852_d_());
+            var7.method3985(var1.func_240853_e_());
+            var7.method3986(var1.func_218788_e());
+            var7.method3987(var1.func_240854_g_());
             var7.method3622();
             this.player.world.notifyBlockUpdate(var4, var5, var5, 3);
          }
@@ -573,11 +576,11 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void func_230549_a_(CJigsawBlockGeneratePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method2979()) {
-         BlockPos var4 = var1.method17189();
+         BlockPos var4 = var1.func_240844_b_();
          TileEntity var5 = this.player.world.getTileEntity(var4);
-         if (var5 instanceof Class965) {
-            Class965 var6 = (Class965)var5;
-            var6.method3988(this.player.getServerWorld(), var1.method17190(), var1.method17191());
+         if (var5 instanceof JigsawTileEntity) {
+            JigsawTileEntity var6 = (JigsawTileEntity)var5;
+            var6.method3988(this.player.getServerWorld(), var1.func_240845_c_(), var1.func_240846_d_());
          }
       }
    }
@@ -671,9 +674,9 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void processNBTQueryBlockEntity(CQueryTileEntityNBTPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method3424(2)) {
-         TileEntity var4 = this.player.getServerWorld().getTileEntity(var1.method17255());
+         TileEntity var4 = this.player.getServerWorld().getTileEntity(var1.getPosition());
          CompoundNBT var5 = var4 == null ? null : var4.write(new CompoundNBT());
-         this.player.field4855.sendPacket(new SQueryNBTResponsePacket(var1.method17254(), var5));
+         this.player.field4855.sendPacket(new SQueryNBTResponsePacket(var1.getTransactionID(), var5));
       }
    }
 
@@ -1383,7 +1386,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void func_217263_a(CSetDifficultyPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method3424(2) || this.method15657()) {
-         this.server.method1336(var1.method17348(), false);
+         this.server.method1336(var1.func_218773_b(), false);
       }
    }
 
@@ -1391,7 +1394,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void func_217261_a(CLockDifficultyPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method3424(2) || this.method15657()) {
-         this.server.method1339(var1.method17277());
+         this.server.method1339(var1.func_218776_b());
       }
    }
 }

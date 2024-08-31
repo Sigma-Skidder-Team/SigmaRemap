@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Hand;
+
 public class Class2798<T extends Class1006 & Class1022> extends Class2797<T> {
    private static String[] field17431;
 

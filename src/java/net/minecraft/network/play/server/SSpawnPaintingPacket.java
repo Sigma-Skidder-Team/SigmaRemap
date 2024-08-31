@@ -33,7 +33,7 @@ public class SSpawnPaintingPacket implements Packet<IClientPlayNetHandler> {
       this.field24276 = var1.readVarInt();
       this.field24277 = var1.method35717();
       this.field24280 = var1.readVarInt();
-      this.field24278 = var1.method35707();
+      this.field24278 = var1.readBlockPos();
       this.field24279 = Direction.method547(var1.readUnsignedByte());
    }
 
@@ -42,7 +42,7 @@ public class SSpawnPaintingPacket implements Packet<IClientPlayNetHandler> {
       var1.writeVarInt(this.field24276);
       var1.method35716(this.field24277);
       var1.writeVarInt(this.field24280);
-      var1.method35708(this.field24278);
+      var1.writeBlockPos(this.field24278);
       var1.writeByte(this.field24279.method534());
    }
 

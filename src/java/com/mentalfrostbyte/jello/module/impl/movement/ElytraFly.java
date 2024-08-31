@@ -11,6 +11,7 @@ import net.minecraft.network.play.client.CEntityActionPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
+import net.minecraft.util.Hand;
 import org.lwjgl.glfw.GLFW;
 
 public class ElytraFly extends Module {

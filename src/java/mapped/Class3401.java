@@ -34,7 +34,7 @@ public class Class3401 extends Block {
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (var2.method6812().isNatural() && var2.method6789().method17135(Class5462.field24226) && var4.nextInt(2000) < var2.method6997().method8905()) {
+      if (var2.method6812().isNatural() && var2.method6789().method17135(Class5462.field24226) && var4.nextInt(2000) < var2.method6997().getId()) {
          while (var2.getBlockState(var3).method23448(this)) {
             var3 = var3.down();
          }

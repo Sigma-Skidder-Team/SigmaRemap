@@ -15,6 +15,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Speed;
 import mapped.*;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
 public class BlockFlyHypixelMode extends Module {

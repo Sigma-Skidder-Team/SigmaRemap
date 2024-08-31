@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 
@@ -138,7 +139,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
          );
    }
 
-   private static <T extends Comparable<T> & Class83> Class5888 method11072(Block var0, Class8550<T> var1, T var2) {
+   private static <T extends Comparable<T> & IStringSerializable> Class5888 method11072(Block var0, Class8550<T> var1, T var2) {
       return Class7318.method23188()
          .method18320(
             method11060(

@@ -20,6 +20,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SEntityStatusPacket;
 import net.minecraft.network.play.server.SEntityPacket;
+import net.minecraft.util.Hand;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;

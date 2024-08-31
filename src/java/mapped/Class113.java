@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.IStringSerializable;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -11,7 +12,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public enum Class113 implements Class83, Predicate<Direction> {
+public enum Class113 implements IStringSerializable, Predicate<Direction> {
    field413("x") {
       @Override
       public int method327(int var1, int var2, int var3) {
@@ -47,7 +48,7 @@ public enum Class113 implements Class83, Predicate<Direction> {
    };
 
    private static final Class113[] field416 = values();
-   public static final Codec<Class113> field417 = Class83.<Class113>method258(Class113::values, Class113::method321);
+   public static final Codec<Class113> field417 = IStringSerializable.<Class113>method258(Class113::values, Class113::method321);
    private static final Map<String, Class113> field418 = Arrays.<Class113>stream(field416)
       .collect(Collectors.toMap(Class113::method322, var0 -> (Class113)var0));
    private final String field419;
@@ -100,7 +101,7 @@ public enum Class113 implements Class83, Predicate<Direction> {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field419;
    }
 

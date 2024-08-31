@@ -28,7 +28,7 @@ public class SBlockActionPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24392 = var1.method35707();
+      this.field24392 = var1.readBlockPos();
       this.field24393 = var1.readUnsignedByte();
       this.field24394 = var1.readUnsignedByte();
       this.field24395 = Registry.BLOCK.method9172(var1.readVarInt());
@@ -36,7 +36,7 @@ public class SBlockActionPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35708(this.field24392);
+      var1.writeBlockPos(this.field24392);
       var1.writeByte(this.field24393);
       var1.writeByte(this.field24394);
       var1.writeVarInt(Registry.BLOCK.getId(this.field24395));

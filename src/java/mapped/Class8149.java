@@ -8,6 +8,7 @@ import java.util.Set;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.Entity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -105,7 +106,7 @@ public class Class8149 {
 
          for (int var4 = 0; var4 < var3.length; var4++) {
             Class112 var5 = var3[var4];
-            if (var5.method257().equals(var0)) {
+            if (var5.getString().equals(var0)) {
                return var5;
             }
 

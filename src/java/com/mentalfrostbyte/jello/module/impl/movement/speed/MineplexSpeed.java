@@ -14,6 +14,7 @@ import mapped.*;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
 public class MineplexSpeed extends Module {

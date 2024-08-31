@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.util.Hand;
 
 import javax.annotation.Nullable;
 
@@ -19,7 +20,7 @@ public interface Class1023 extends Class1022 {
       Hand var5 = Class9456.method36389(var1, Items.field38148);
       ItemStack var6 = var1.getHeldItem(var5);
       if (var1.method3092(Items.field38148)) {
-         Class3261.method11763(var1.world, var1, var5, var6, var2, (float)(14 - var1.world.method6997().method8905() * 4));
+         Class3261.method11763(var1.world, var1, var5, var6, var2, (float)(14 - var1.world.method6997().getId() * 4));
       }
 
       this.method4537();
@@ -36,7 +37,7 @@ public interface Class1023 extends Class1022 {
          (double)var16.method25270(),
          (double)var16.method25271(),
          var5,
-         (float)(14 - var1.world.method6997().method8905() * 4)
+         (float)(14 - var1.world.method6997().getId() * 4)
       );
       var1.method2863(Sounds.field26494, 1.0F, 1.0F / (var1.method3013().nextFloat() * 0.4F + 0.8F));
    }

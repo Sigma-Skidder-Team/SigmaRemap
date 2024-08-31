@@ -1,12 +1,13 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.IStringSerializable;
 
 import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public enum Class107 implements Class83 {
+public enum Class107 implements IStringSerializable {
    STANDARD("standard"),
    DESERT("desert"),
    JUNGLE("jungle"),
@@ -15,7 +16,7 @@ public enum Class107 implements Class83 {
    OCEAN("ocean"),
    NETHER("nether");
 
-   public static final Codec<Class107> field343 = Class83.<Class107>method258(Class107::values, Class107::method297);
+   public static final Codec<Class107> field343 = IStringSerializable.<Class107>method258(Class107::values, Class107::method297);
    private static final Map<String, Class107> field344 = Arrays.<Class107>stream(values())
       .collect(Collectors.toMap(Class107::method296, var0 -> (Class107)var0));
    private final String field345;
@@ -33,7 +34,7 @@ public enum Class107 implements Class83 {
    }
 
    @Override
-   public String method257() {
+   public String getString() {
       return this.field345;
    }
 }

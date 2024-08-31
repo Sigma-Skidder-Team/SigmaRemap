@@ -202,7 +202,7 @@ public class Class1037 extends Class1038 implements Class1022 {
       double var8 = var1.method3440(0.3333333333333333) - var5.getPosY();
       double var10 = var1.getPosZ() - this.getPosZ();
       double var12 = (double) MathHelper.method37766(var6 * var6 + var10 * var10);
-      var5.shoot(var6, var8 + var12 * 0.2F, var10, 1.6F, (float)(14 - this.world.method6997().method8905() * 4));
+      var5.shoot(var6, var8 + var12 * 0.2F, var10, 1.6F, (float)(14 - this.world.method6997().getId() * 4));
       this.method2863(Sounds.field26520, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.world.method6916(var5);
    }

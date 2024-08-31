@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.tileentity.TileEntity;
+
 import javax.annotation.Nullable;
 
 public interface Class3245 {

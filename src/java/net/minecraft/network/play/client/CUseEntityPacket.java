@@ -1,6 +1,6 @@
 package net.minecraft.network.play.client;
 
-import mapped.Hand;
+import net.minecraft.util.Hand;
 import mapped.IServerPlayNetHandler;
 import mapped.Vector3d;
 import mapped.World;

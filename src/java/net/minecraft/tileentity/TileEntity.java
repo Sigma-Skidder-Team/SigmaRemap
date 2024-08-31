@@ -1,5 +1,6 @@
-package mapped;
+package net.minecraft.tileentity;
 
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;

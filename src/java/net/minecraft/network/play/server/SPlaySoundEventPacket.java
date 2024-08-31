@@ -27,7 +27,7 @@ public class SPlaySoundEventPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24339 = var1.readInt();
-      this.field24340 = var1.method35707();
+      this.field24340 = var1.readBlockPos();
       this.field24341 = var1.readInt();
       this.field24342 = var1.readBoolean();
    }
@@ -35,7 +35,7 @@ public class SPlaySoundEventPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeInt(this.field24339);
-      var1.method35708(this.field24340);
+      var1.writeBlockPos(this.field24340);
       var1.writeInt(this.field24341);
       var1.writeBoolean(this.field24342);
    }

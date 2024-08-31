@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.tileentity.TileEntity;
+
 public class Class2666 extends Class2661 {
    private static String[] field17039;
    public final Class1017 field17022;

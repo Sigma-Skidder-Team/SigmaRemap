@@ -12,6 +12,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.IStringSerializable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,7 +27,7 @@ public class Class8835 {
                Codec.simpleMap(
                      Class179.field629,
                      Class6692.field29310.listOf().promotePartial(Util.func_240982_a_("Spawn data: ", field39898::error)),
-                     Class83.method260(Class179.values())
+                     IStringSerializable.method260(Class179.values())
                   )
                   .fieldOf("spawners")
                   .forGetter(var0x -> var0x.field39902),

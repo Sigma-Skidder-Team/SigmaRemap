@@ -155,11 +155,11 @@ public class PacketBuffer extends ByteBuf {
       return var1;
    }
 
-   public BlockPos method35707() {
+   public BlockPos readBlockPos() {
       return BlockPos.method8331(this.readLong());
    }
 
-   public PacketBuffer method35708(BlockPos var1) {
+   public PacketBuffer writeBlockPos(BlockPos var1) {
       this.writeLong(var1.method8332());
       return this;
    }
@@ -173,7 +173,7 @@ public class PacketBuffer extends ByteBuf {
    }
 
    public PacketBuffer writeTextComponent(ITextComponent var1) {
-      return this.method35730(ITextComponent$Serializer.toJson(var1), 262144);
+      return this.writeString(ITextComponent$Serializer.toJson(var1), 262144);
    }
 
    public <T extends Enum<T>> T method35712(Class<T> var1) {
@@ -355,10 +355,10 @@ public class PacketBuffer extends ByteBuf {
    }
 
    public PacketBuffer writeString(String var1) {
-      return this.method35730(var1, 32767);
+      return this.writeString(var1, 32767);
    }
 
-   public PacketBuffer method35730(String var1, int var2) {
+   public PacketBuffer writeString(String var1, int var2) {
       byte[] var5 = var1.getBytes(StandardCharsets.UTF_8);
       if (var5.length <= var2) {
          this.writeVarInt(var5.length);
@@ -388,7 +388,7 @@ public class PacketBuffer extends ByteBuf {
    }
 
    public BlockRayTraceResult method35735() {
-      BlockPos var3 = this.method35707();
+      BlockPos var3 = this.readBlockPos();
       Direction var4 = this.<Direction>method35712(Direction.class);
       float var5 = this.readFloat();
       float var6 = this.readFloat();
@@ -404,7 +404,7 @@ public class PacketBuffer extends ByteBuf {
 
    public void method35736(BlockRayTraceResult var1) {
       BlockPos var4 = var1.getPos();
-      this.method35708(var4);
+      this.writeBlockPos(var4);
       this.method35713(var1.getFace());
       Vector3d var5 = var1.method31419();
       this.writeFloat((float)(var5.x - (double)var4.getX()));

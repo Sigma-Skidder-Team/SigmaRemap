@@ -2761,7 +2761,7 @@ public class Class9407 {
                         var1 -> Class5138.method15912()
                               .method15911(
                                  Class6891.field29864,
-                                 this.method35837(Blocks.field37113, "_" + var1.method257(), Class9756.field45537, Class7287::method22999)
+                                 this.method35837(Blocks.field37113, "_" + var1.getString(), Class9756.field45537, Class7287::method22999)
                               )
                      )
                )

@@ -2,7 +2,10 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.tileentity.JigsawTileEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -46,14 +49,14 @@ public class Class3249 extends Block implements Class3245 {
    @Nullable
    @Override
    public TileEntity method11646(Class1665 var1) {
-      return new Class965();
+      return new JigsawTileEntity();
    }
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       TileEntity var9 = var2.getTileEntity(var3);
-      if (var9 instanceof Class965 && var4.method2979()) {
-         var4.method2892((Class965)var9);
+      if (var9 instanceof JigsawTileEntity && var4.method2979()) {
+         var4.method2892((JigsawTileEntity)var9);
          return ActionResultType.method9002(var2.isRemote);
       } else {
          return ActionResultType.field14820;
@@ -65,8 +68,8 @@ public class Class3249 extends Block implements Class3245 {
       Direction var5 = method11675(var1.field35531);
       Direction var6 = method11676(var0.field35531);
       Direction var7 = method11676(var1.field35531);
-      Class92 var8 = Class92.method269(var0.field35532.method126("joint")).orElseGet(() -> !var4.method544().method324() ? Class92.field237 : Class92.field238);
-      boolean var9 = var8 == Class92.field237;
+      JigsawTileEntity.OrientationType var8 = JigsawTileEntity.OrientationType.method269(var0.field35532.method126("joint")).orElseGet(() -> !var4.method544().method324() ? JigsawTileEntity.OrientationType.ROLLABLE : JigsawTileEntity.OrientationType.ALIGNED);
+      boolean var9 = var8 == JigsawTileEntity.OrientationType.ROLLABLE;
       return var4 == var5.method536() && (var9 || var6 == var7) && var0.field35532.method126("target").equals(var1.field35532.method126("name"));
    }
 

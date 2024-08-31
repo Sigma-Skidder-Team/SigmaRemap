@@ -12,6 +12,7 @@ import mapped.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.play.server.SEntityMetadataPacket;
+import net.minecraft.util.Hand;
 
 public class BasicAutoGapple extends Module {
     private int field23549 = -1;
