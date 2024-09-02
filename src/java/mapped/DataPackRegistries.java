@@ -7,7 +7,7 @@ import java.util.concurrent.Executor;
 public class DataPackRegistries implements AutoCloseable {
    private static String[] field9262;
    private static final CompletableFuture<Class2341> field9263 = CompletableFuture.<Class2341>completedFuture(Class2341.field16010);
-   private final IReloadableResourceManager field9264 = new SimpleReloadableResourceManager(ResourcePackType.field12611);
+   private final IReloadableResourceManager field9264 = new SimpleReloadableResourceManager(ResourcePackType.SERVER_DATA);
    private final Class6099 field9265;
    private final Class282 field9266 = new Class282();
    private final Class286 field9267 = new Class286();

@@ -2,16 +2,15 @@ package mapped;
 
 public enum ResourcePackType {
    CLIENT_RESOURCES("assets"),
-   field12611("data");
+   SERVER_DATA("data");
 
-   private final String field12612;
-   private static final ResourcePackType[] field12613 = new ResourcePackType[]{CLIENT_RESOURCES, field12611};
+   private final String directoryName;
 
-   private ResourcePackType(String var3) {
-      this.field12612 = var3;
+    private ResourcePackType(String var3) {
+      this.directoryName = var3;
    }
 
-   public String method8205() {
-      return this.field12612;
+   public String getDirectoryName() {
+      return this.directoryName;
    }
 }

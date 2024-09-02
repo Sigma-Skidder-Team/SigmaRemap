@@ -65,7 +65,7 @@ public class Class311 extends Class308 {
       while (var5.hasMoreElements()) {
          ZipEntry var7 = (ZipEntry)var5.nextElement();
          String var8 = var7.getName();
-         if (var8.startsWith(var1.method8205() + "/")) {
+         if (var8.startsWith(var1.getDirectoryName() + "/")) {
             ArrayList var9 = Lists.newArrayList(field1201.split(var8));
             if (var9.size() > 1) {
                String var10 = (String)var9.get(1);
@@ -106,7 +106,7 @@ public class Class311 extends Class308 {
 
       Enumeration var9 = var8.entries();
       ArrayList var10 = Lists.newArrayList();
-      String var11 = var1.method8205() + "/" + var2 + "/";
+      String var11 = var1.getDirectoryName() + "/" + var2 + "/";
       String var12 = var11 + var3 + "/";
 
       while (var9.hasMoreElements()) {

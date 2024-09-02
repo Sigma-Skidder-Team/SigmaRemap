@@ -13,18 +13,18 @@ import java.util.Collection;
 import java.util.function.Predicate;
 
 public class VirtualAssetsPack extends VanillaPack {
-   private final ResourceIndex field1195;
+   private final ResourceIndex field_195785_b;
 
    public VirtualAssetsPack(ResourceIndex var1) {
       super("minecraft", "realms");
-      this.field1195 = var1;
+      this.field_195785_b = var1;
    }
 
    @Nullable
    @Override
    public InputStream method1243(ResourcePackType var1, ResourceLocation var2) {
       if (var1 == ResourcePackType.CLIENT_RESOURCES) {
-         File var5 = this.field1195.method27015(var2);
+         File var5 = this.field_195785_b.method27015(var2);
          if (var5 != null && var5.exists()) {
             try {
                return new FileInputStream(var5);
@@ -39,7 +39,7 @@ public class VirtualAssetsPack extends VanillaPack {
    @Override
    public boolean method1225(ResourcePackType var1, ResourceLocation var2) {
       if (var1 == ResourcePackType.CLIENT_RESOURCES) {
-         File var5 = this.field1195.method27015(var2);
+         File var5 = this.field_195785_b.method27015(var2);
          if (var5 != null && var5.exists()) {
             return true;
          }
@@ -51,7 +51,7 @@ public class VirtualAssetsPack extends VanillaPack {
    @Nullable
    @Override
    public InputStream method1246(String var1) {
-      File var4 = this.field1195.method27016(var1);
+      File var4 = this.field_195785_b.method27016(var1);
       if (var4 != null && var4.exists()) {
          try {
             return new FileInputStream(var4);
@@ -65,7 +65,7 @@ public class VirtualAssetsPack extends VanillaPack {
    @Override
    public Collection<ResourceLocation> method1224(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
       Collection var8 = super.method1224(var1, var2, var3, var4, var5);
-      var8.addAll(this.field1195.method27017(var3, var2, var4, var5));
+      var8.addAll(this.field_195785_b.method27017(var3, var2, var4, var5));
       return var8;
    }
 }

@@ -73,7 +73,7 @@ public class Class7070 {
          if (!NameTags.method16937()
             .<Class920, Class4849>method1030(Class7207.field30936, new Class927(new ItemStack(Items.field37236)), NameTags.method16936().world)
             .isPresent()) {
-            SimpleReloadableResourceManager var3 = new SimpleReloadableResourceManager(ResourcePackType.field12611);
+            SimpleReloadableResourceManager var3 = new SimpleReloadableResourceManager(ResourcePackType.SERVER_DATA);
 
             for (IResourcePack var6 : NameTags.method16938().resourcePackRepository.getEnabledPacks().stream().<IResourcePack>map(ResourcePackInfo::method7950).collect(Collectors.toList())) {
                var3.method588(var6);

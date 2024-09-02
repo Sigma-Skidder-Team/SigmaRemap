@@ -28,8 +28,8 @@ public class VanillaPack implements IResourcePack {
    public static Class<?> field1190;
    private static final Map<ResourcePackType, FileSystem> field1191 = Util.<Map<ResourcePackType, FileSystem>>make(Maps.newHashMap(), var0 -> {
       synchronized (VanillaPack.class) {
-         for (ResourcePackType var7 : ResourcePackType.values()) {
-            URL var8 = VanillaPack.class.getResource("/" + var7.method8205() + "/.mcassetsroot");
+         for (ResourcePackType packType : ResourcePackType.values()) {
+            URL var8 = VanillaPack.class.getResource("/" + packType.getDirectoryName() + "/.mcassetsroot");
 
             try {
                URI var9 = var8.toURI();
@@ -41,7 +41,7 @@ public class VanillaPack implements IResourcePack {
                      var10 = FileSystems.newFileSystem(var9, Collections.emptyMap());
                   }
 
-                  var0.put(var7, var10);
+                  var0.put(packType, var10);
                }
             } catch (IOException | URISyntaxException var14) {
                field1189.error("Couldn't get a list of all vanilla resources", var14);
@@ -88,7 +88,7 @@ public class VanillaPack implements IResourcePack {
       HashSet var8 = Sets.newHashSet();
       if (field1188 != null) {
          try {
-            method1242(var8, var4, var2, field1188.resolve(var1.method8205()), var3, var5);
+            method1242(var8, var4, var2, field1188.resolve(var1.getDirectoryName()), var3, var5);
          } catch (IOException var17) {
          }
 
@@ -96,7 +96,7 @@ public class VanillaPack implements IResourcePack {
             Enumeration var9 = null;
 
             try {
-               var9 = field1190.getClassLoader().getResources(var1.method8205() + "/");
+               var9 = field1190.getClassLoader().getResources(var1.getDirectoryName() + "/");
             } catch (IOException var16) {
             }
 
@@ -113,7 +113,7 @@ public class VanillaPack implements IResourcePack {
       }
 
       try {
-         URL var18 = VanillaPack.class.getResource("/" + var1.method8205() + "/.mcassetsroot");
+         URL var18 = VanillaPack.class.getResource("/" + var1.getDirectoryName() + "/.mcassetsroot");
          if (var18 == null) {
             field1189.error("Couldn't find .mcassetsroot, cannot load vanilla resources");
             return var8;
@@ -125,7 +125,7 @@ public class VanillaPack implements IResourcePack {
             Path var12 = Paths.get(var11.toURI());
             method1242(var8, var4, var2, var12, var3, var5);
          } else if ("jar".equals(var19.getScheme())) {
-            Path var20 = field1191.get(var1).getPath("/" + var1.method8205());
+            Path var20 = field1191.get(var1).getPath("/" + var1.getDirectoryName());
             method1242(var8, var4, "minecraft", var20, var3, var5);
          } else {
             field1189.error("Unsupported scheme {} trying to list vanilla resources (NYI?)", var19);
@@ -156,7 +156,7 @@ public class VanillaPack implements IResourcePack {
          return var6;
       } else {
          if (field1188 != null) {
-            Path var7 = field1188.resolve(var1.method8205() + "/" + var2.getNamespace() + "/" + var2.getPath());
+            Path var7 = field1188.resolve(var1.getDirectoryName() + "/" + var2.getNamespace() + "/" + var2.getPath());
             if (Files.exists(var7)) {
                try {
                   return Files.newInputStream(var7);
@@ -175,7 +175,7 @@ public class VanillaPack implements IResourcePack {
    }
 
    private static String method1244(ResourcePackType var0, ResourceLocation var1) {
-      return "/" + var0.method8205() + "/" + var1.getNamespace() + "/" + var1.getPath();
+      return "/" + var0.getDirectoryName() + "/" + var1.getNamespace() + "/" + var1.getPath();
    }
 
    private static boolean method1245(String var0, URL var1) throws IOException {
@@ -184,7 +184,7 @@ public class VanillaPack implements IResourcePack {
 
    @Nullable
    public InputStream method1246(String var1) {
-      return !field1194 ? VanillaPack.class.getResourceAsStream("/" + var1) : this.method1248(ResourcePackType.field12611, "/" + var1);
+      return !field1194 ? VanillaPack.class.getResourceAsStream("/" + var1) : this.method1248(ResourcePackType.SERVER_DATA, "/" + var1);
    }
 
    @Override
@@ -195,7 +195,7 @@ public class VanillaPack implements IResourcePack {
          return true;
       } else {
          if (field1188 != null) {
-            Path var7 = field1188.resolve(var1.method8205() + "/" + var2.getNamespace() + "/" + var2.getPath());
+            Path var7 = field1188.resolve(var1.getDirectoryName() + "/" + var2.getNamespace() + "/" + var2.getPath());
             if (Files.exists(var7)) {
                return true;
             }
