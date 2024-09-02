@@ -35,7 +35,7 @@ public class ResourcePackInfo implements AutoCloseable {
    private final IPackNameDecorator field9770;
 
    @Nullable
-   public static ResourcePackInfo method7945(String var0, boolean var1, Supplier<IResourcePack> var2, Class9325 var3, Priority var4, IPackNameDecorator var5) {
+   public static ResourcePackInfo createResourcePack(String var0, boolean var1, Supplier<IResourcePack> var2, Class9325 var3, Priority var4, IPackNameDecorator var5) {
       try (IResourcePack var8 = (IResourcePack)var2.get()) {
          PackMetadataSection var10 = var8.<PackMetadataSection>method1227(PackMetadataSection.field29661);
          if (var1 && var10 == null) {

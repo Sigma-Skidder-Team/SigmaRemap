@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.resources.ResourceIndex;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.File;
@@ -13,7 +14,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Class7948 extends Class7949 {
+public class Class7948 extends ResourceIndex {
    private final File field34180;
 
    public Class7948(File var1) {

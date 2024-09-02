@@ -1,5 +1,7 @@
-package mapped;
+package net.minecraft.client.resources;
 
+import mapped.ResourcePackType;
+import net.minecraft.resources.VanillaPack;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
@@ -10,10 +12,10 @@ import java.io.InputStream;
 import java.util.Collection;
 import java.util.function.Predicate;
 
-public class Class307 extends Class306 {
-   private final Class7949 field1195;
+public class VirtualAssetsPack extends VanillaPack {
+   private final ResourceIndex field1195;
 
-   public Class307(Class7949 var1) {
+   public VirtualAssetsPack(ResourceIndex var1) {
       super("minecraft", "realms");
       this.field1195 = var1;
    }

@@ -28,6 +28,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
+import net.minecraft.resources.VanillaPack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
@@ -890,7 +891,7 @@ public class Class7944 {
       }
    }
 
-   public static Class306 method26871() {
+   public static VanillaPack method26871() {
       return field34157.getPackFinder().getVanillaPack();
    }
 

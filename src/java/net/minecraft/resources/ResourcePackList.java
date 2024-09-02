@@ -5,7 +5,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
-import mapped.Class7651;
 import mapped.Class9325;
 import mapped.IResourcePack;
 
@@ -16,17 +15,17 @@ import java.util.stream.Stream;
 
 public class ResourcePackList implements AutoCloseable {
    private static String[] field1203;
-   private final Set<Class7651> field1204;
+   private final Set<IPackFinder> field1204;
    private Map<String, ResourcePackInfo> field1205 = ImmutableMap.of();
    private List<ResourcePackInfo> field1206 = ImmutableList.of();
    private final Class9325 field1207;
 
-   public ResourcePackList(Class9325 var1, Class7651... var2) {
+   public ResourcePackList(Class9325 var1, IPackFinder... var2) {
       this.field1207 = var1;
       this.field1204 = ImmutableSet.copyOf(var2);
    }
 
-   public ResourcePackList(Class7651... var1) {
+   public ResourcePackList(IPackFinder... var1) {
       this(ResourcePackInfo::new, var1);
    }
 
@@ -40,7 +39,7 @@ public class ResourcePackList implements AutoCloseable {
    private Map<String, ResourcePackInfo> method1263() {
       Map<String, ResourcePackInfo> var3 = Maps.newTreeMap();
 
-      for (Class7651 var5 : this.field1204) {
+      for (IPackFinder var5 : this.field1204) {
          var5.method25140(var1 -> {
             ResourcePackInfo var4 = var3.put(var1.getName(), var1);
          }, this.field1207);

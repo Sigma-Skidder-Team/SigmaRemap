@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.resources.VanillaPack;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.File;
@@ -42,7 +43,7 @@ public class Class9772 {
    }
 
    public static String[] method38440(IResourcePack var0, String[] var1, String[] var2, String[] var3) {
-      if (!(var0 instanceof Class306)) {
+      if (!(var0 instanceof VanillaPack)) {
          if (var0 instanceof LegacyResourcePackWrapper) {
             IResourcePack var6 = (IResourcePack)Class9299.method35072(var0, Class9299.field43015);
             if (var6 == null) {

@@ -1,8 +1,9 @@
-package mapped;
+package net.minecraft.resources;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
@@ -21,14 +22,14 @@ import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class Class306 implements IResourcePack {
+public class VanillaPack implements IResourcePack {
    public static Path field1188;
    private static final Logger field1189 = LogManager.getLogger();
    public static Class<?> field1190;
    private static final Map<ResourcePackType, FileSystem> field1191 = Util.<Map<ResourcePackType, FileSystem>>make(Maps.newHashMap(), var0 -> {
-      synchronized (Class306.class) {
+      synchronized (VanillaPack.class) {
          for (ResourcePackType var7 : ResourcePackType.values()) {
-            URL var8 = Class306.class.getResource("/" + var7.method8205() + "/.mcassetsroot");
+            URL var8 = VanillaPack.class.getResource("/" + var7.method8205() + "/.mcassetsroot");
 
             try {
                URI var9 = var8.toURI();
@@ -52,7 +53,7 @@ public class Class306 implements IResourcePack {
    private static final boolean field1193 = Util.getOSType() == OS.WINDOWS;
    private static final boolean field1194 = Class9299.field42864.method20245();
 
-   public Class306(String... var1) {
+   public VanillaPack(String... var1) {
       this.field1192 = ImmutableSet.copyOf(var1);
    }
 
@@ -112,7 +113,7 @@ public class Class306 implements IResourcePack {
       }
 
       try {
-         URL var18 = Class306.class.getResource("/" + var1.method8205() + "/.mcassetsroot");
+         URL var18 = VanillaPack.class.getResource("/" + var1.method8205() + "/.mcassetsroot");
          if (var18 == null) {
             field1189.error("Couldn't find .mcassetsroot, cannot load vanilla resources");
             return var8;
@@ -165,10 +166,10 @@ public class Class306 implements IResourcePack {
          }
 
          try {
-            URL var11 = Class306.class.getResource(var5);
+            URL var11 = VanillaPack.class.getResource(var5);
             return method1245(var5, var11) ? (field1194 ? this.method1248(var1, var5) : var11.openStream()) : null;
          } catch (IOException var9) {
-            return Class306.class.getResourceAsStream(var5);
+            return VanillaPack.class.getResourceAsStream(var5);
          }
       }
    }
@@ -183,7 +184,7 @@ public class Class306 implements IResourcePack {
 
    @Nullable
    public InputStream method1246(String var1) {
-      return !field1194 ? Class306.class.getResourceAsStream("/" + var1) : this.method1248(ResourcePackType.field12611, "/" + var1);
+      return !field1194 ? VanillaPack.class.getResourceAsStream("/" + var1) : this.method1248(ResourcePackType.field12611, "/" + var1);
    }
 
    @Override
@@ -201,7 +202,7 @@ public class Class306 implements IResourcePack {
          }
 
          try {
-            URL var9 = Class306.class.getResource(var5);
+            URL var9 = VanillaPack.class.getResource(var5);
             return method1245(var5, var9);
          } catch (IOException var8) {
             return false;
@@ -249,9 +250,9 @@ public class Class306 implements IResourcePack {
    private InputStream method1248(ResourcePackType var1, String var2) {
       try {
          FileSystem var5 = field1191.get(var1);
-         return var5 != null ? Files.newInputStream(var5.getPath(var2)) : Class306.class.getResourceAsStream(var2);
+         return var5 != null ? Files.newInputStream(var5.getPath(var2)) : VanillaPack.class.getResourceAsStream(var2);
       } catch (IOException var6) {
-         return Class306.class.getResourceAsStream(var2);
+         return VanillaPack.class.getResourceAsStream(var2);
       }
    }
 }

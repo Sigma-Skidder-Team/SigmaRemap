@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.resources.ResourceIndex;
+
 import java.io.File;
 
 public class Class8281 {
@@ -16,7 +18,7 @@ public class Class8281 {
       this.field35582 = var4;
    }
 
-   public Class7949 getAssetsIndex() {
-      return (Class7949)(this.field35582 != null ? new Class7949(this.assetsDir, this.field35582) : new Class7948(this.assetsDir));
+   public ResourceIndex getAssetsIndex() {
+      return (ResourceIndex)(this.field35582 != null ? new ResourceIndex(this.assetsDir, this.field35582) : new Class7948(this.assetsDir));
    }
 }

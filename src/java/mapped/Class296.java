@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.resources.VanillaPack;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,7 +15,7 @@ public class Class296 extends Class293 {
 
    public Class1805 method1173(IResourceManager var1) {
       Minecraft var4 = Minecraft.getInstance();
-      Class306 var5 = var4.getPackFinder().getVanillaPack();
+      VanillaPack var5 = var4.getPackFinder().getVanillaPack();
 
       try (InputStream var6 = var5.getResourceStream(ResourcePackType.CLIENT_RESOURCES, CustomResourceLoadProgressGui.method6019())) {
          return new Class1805((Class9620)null, Class1806.method7879(var6));

@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client.resources;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -14,9 +14,12 @@ import java.util.function.Supplier;
 import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
+import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
+import net.minecraft.resources.IPackFinder;
 import net.minecraft.resources.ResourcePackInfo;
+import net.minecraft.resources.VanillaPack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -26,25 +29,25 @@ import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class DownloadingPackFinder implements Class7651 {
+public class DownloadingPackFinder implements IPackFinder {
    private static final Logger field32840 = LogManager.getLogger();
    private static final Pattern field32841 = Pattern.compile("^[a-fA-F0-9]{40}$");
-   private final Class306 field32842;
-   private final File field32843;
+   private final VanillaPack vanillaPack;
+   private final File serverPackDir;
    private final ReentrantLock field32844 = new ReentrantLock();
-   private final Class7949 field32845;
+   private final ResourceIndex resourceIndex;
    private CompletableFuture<?> field32846;
    private ResourcePackInfo field32847;
 
-   public DownloadingPackFinder(File var1, Class7949 var2) {
-      this.field32843 = var1;
-      this.field32845 = var2;
-      this.field32842 = new Class307(var2);
+   public DownloadingPackFinder(File var1, ResourceIndex var2) {
+      this.serverPackDir = var1;
+      this.resourceIndex = var2;
+      this.vanillaPack = new VirtualAssetsPack(var2);
    }
 
    @Override
    public void method25140(Consumer<ResourcePackInfo> var1, Class9325 var2) {
-      ResourcePackInfo var5 = ResourcePackInfo.method7945("vanilla", true, () -> this.field32842, var2, ResourcePackInfo.Priority.field12830, IPackNameDecorator.field33171);
+      ResourcePackInfo var5 = ResourcePackInfo.createResourcePack("vanilla", true, () -> this.vanillaPack, var2, ResourcePackInfo.Priority.field12830, IPackNameDecorator.field33171);
       if (var5 != null) {
          var1.accept(var5);
       }
@@ -59,8 +62,8 @@ public class DownloadingPackFinder implements Class7651 {
       }
    }
 
-   public Class306 getVanillaPack() {
-      return this.field32842;
+   public VanillaPack getVanillaPack() {
+      return this.vanillaPack;
    }
 
    private static Map<String, String> method25147() {
@@ -83,7 +86,7 @@ public class DownloadingPackFinder implements Class7651 {
       try {
          this.clearResourcePack();
          this.method25152();
-         File var7 = new File(this.field32843, var5);
+         File var7 = new File(this.serverPackDir, var5);
          CompletableFuture<?> var8;
          if (var7.exists()) {
             var8 = CompletableFuture.completedFuture("");
@@ -158,7 +161,7 @@ public class DownloadingPackFinder implements Class7651 {
 
    private void method25152() {
       try {
-         List<File> var3 = Lists.newArrayList(FileUtils.listFiles(this.field32843, TrueFileFilter.TRUE, null));
+         List<File> var3 = Lists.newArrayList(FileUtils.listFiles(this.serverPackDir, TrueFileFilter.TRUE, null));
          var3.sort(LastModifiedFileComparator.LASTMODIFIED_REVERSE);
          int var4 = 0;
 
@@ -199,13 +202,13 @@ public class DownloadingPackFinder implements Class7651 {
    @Nullable
    private ResourcePackInfo method25154(Class9325 var1) {
       ResourcePackInfo var4 = null;
-      File var5 = this.field32845.method27015(new ResourceLocation("resourcepacks/programmer_art.zip"));
+      File var5 = this.resourceIndex.method27015(new ResourceLocation("resourcepacks/programmer_art.zip"));
       if (var5 != null && var5.isFile()) {
          var4 = method25155(var1, () -> method25157(var5));
       }
 
       if (var4 == null && SharedConstants.developmentMode) {
-         File var6 = this.field32845.method27016("../resourcepacks/programmer_art");
+         File var6 = this.resourceIndex.method27016("../resourcepacks/programmer_art");
          if (var6 != null && var6.isDirectory()) {
             var4 = method25155(var1, () -> method25156(var6));
          }
@@ -216,7 +219,7 @@ public class DownloadingPackFinder implements Class7651 {
 
    @Nullable
    private static ResourcePackInfo method25155(Class9325 var0, Supplier<IResourcePack> var1) {
-      return ResourcePackInfo.method7945("programer_art", false, var1, var0, ResourcePackInfo.Priority.field12829, IPackNameDecorator.field33171);
+      return ResourcePackInfo.createResourcePack("programer_art", false, var1, var0, ResourcePackInfo.Priority.field12829, IPackNameDecorator.field33171);
    }
 
    private static Class309 method25156(File var0) {

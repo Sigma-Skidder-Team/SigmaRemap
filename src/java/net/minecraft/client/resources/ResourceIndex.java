@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client.resources;
 
 import com.google.common.collect.Maps;
 import com.google.common.io.Files;
@@ -15,20 +15,21 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
+import mapped.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class7949 {
+public class ResourceIndex {
    public static final Logger field34181 = LogManager.getLogger();
    private final Map<String, File> field34182 = Maps.newHashMap();
    private final Map<ResourceLocation, File> field34183 = Maps.newHashMap();
 
-   public Class7949() {
+   public ResourceIndex() {
    }
 
-   public Class7949(File var1, String var2) {
+   public ResourceIndex(File var1, String var2) {
       File var5 = new File(var1, "objects");
       File var6 = new File(var1, "indexes/" + var2 + ".json");
       BufferedReader var7 = null;

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.resources.IPackFinder;
 import net.minecraft.resources.ResourcePackInfo;
 
 import java.io.File;
@@ -7,7 +8,7 @@ import java.io.FileFilter;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class FolderPackFinder implements Class7651 {
+public class FolderPackFinder implements IPackFinder {
    private static final FileFilter field32837 = var0 -> {
       boolean var3 = var0.isFile() && var0.getName().endsWith(".zip");
       boolean var4 = var0.isDirectory() && new File(var0, "pack.mcmeta").isFile();
@@ -31,7 +32,7 @@ public class FolderPackFinder implements Class7651 {
       if (var5 != null) {
          for (File var9 : var5) {
             String var10 = "file/" + var9.getName();
-            ResourcePackInfo var11 = ResourcePackInfo.method7945(var10, false, this.method25142(var9), var2, ResourcePackInfo.Priority.field12829, this.field32839);
+            ResourcePackInfo var11 = ResourcePackInfo.createResourcePack(var10, false, this.method25142(var9), var2, ResourcePackInfo.Priority.field12829, this.field32839);
             if (var11 != null) {
                var1.accept(var11);
             }
