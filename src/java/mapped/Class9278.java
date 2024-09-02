@@ -12,9 +12,12 @@ import java.util.function.Consumer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.*;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -98,16 +101,16 @@ public class Class9278 {
                } else if ((!var30 || !var10) && !(this.field42668 instanceof AbstractArrowEntity)) {
                   if (!var30) {
                      if (var10) {
-                        var29 = new SEntityPacket.LookPacket(this.field42668.method3205(), (byte)var22, (byte)var25, this.field42668.method3226());
+                        var29 = new SEntityPacket.LookPacket(this.field42668.getEntityId(), (byte)var22, (byte)var25, this.field42668.method3226());
                      }
                   } else {
                      var29 = new SEntityPacket.RelativeMovePacket(
-                        this.field42668.method3205(), (short)((int)var11), (short)((int)var13), (short)((int)var15), this.field42668.method3226()
+                        this.field42668.getEntityId(), (short)((int)var11), (short)((int)var13), (short)((int)var15), this.field42668.method3226()
                      );
                   }
                } else {
                   var29 = new SEntityPacket.MovePacket(
-                     this.field42668.method3205(),
+                     this.field42668.getEntityId(),
                      (short)((int)var11),
                      (short)((int)var13),
                      (short)((int)var15),
@@ -124,7 +127,7 @@ public class Class9278 {
                double var19 = var18.method11342(this.field42678);
                if (var19 > 1.0E-7 || var19 > 0.0 && var18.method11349() == 0.0) {
                   this.field42678 = var18;
-                  this.field42671.accept(new SEntityVelocityPacket(this.field42668.method3205(), this.field42678));
+                  this.field42671.accept(new SEntityVelocityPacket(this.field42668.getEntityId(), this.field42678));
                }
             }
 
@@ -148,7 +151,7 @@ public class Class9278 {
             int var24 = MathHelper.method37767(this.field42668.rotationPitch * 256.0F / 360.0F);
             boolean var26 = Math.abs(var21 - this.field42675) >= 1 || Math.abs(var24 - this.field42676) >= 1;
             if (var26) {
-               this.field42671.accept(new SEntityPacket.LookPacket(this.field42668.method3205(), (byte)var21, (byte)var24, this.field42668.method3226()));
+               this.field42671.accept(new SEntityPacket.LookPacket(this.field42668.getEntityId(), (byte)var21, (byte)var24, this.field42668.method3226()));
                this.field42675 = var21;
                this.field42676 = var24;
             }
@@ -194,14 +197,14 @@ public class Class9278 {
       this.field42677 = MathHelper.method37767(this.field42668.method3142() * 256.0F / 360.0F);
       var1.accept(var4);
       if (!this.field42668.method3210().method35456()) {
-         var1.accept(new SEntityMetadataPacket(this.field42668.method3205(), this.field42668.method3210(), true));
+         var1.accept(new SEntityMetadataPacket(this.field42668.getEntityId(), this.field42668.method3210(), true));
       }
 
       boolean var5 = this.field42670;
       if (this.field42668 instanceof LivingEntity) {
          Collection var6 = ((LivingEntity)this.field42668).method3088().method33379();
          if (!var6.isEmpty()) {
-            var1.accept(new SEntityPropertiesPacket(this.field42668.method3205(), var6));
+            var1.accept(new SEntityPropertiesPacket(this.field42668.getEntityId(), var6));
          }
 
          if (((LivingEntity)this.field42668).method3165()) {
@@ -211,7 +214,7 @@ public class Class9278 {
 
       this.field42678 = this.field42668.method3433();
       if (var5 && !(var4 instanceof SSpawnMobPacket)) {
-         var1.accept(new SEntityVelocityPacket(this.field42668.method3205(), this.field42678));
+         var1.accept(new SEntityVelocityPacket(this.field42668.getEntityId(), this.field42678));
       }
 
       if (this.field42668 instanceof LivingEntity) {
@@ -225,7 +228,7 @@ public class Class9278 {
          }
 
          if (!var12.isEmpty()) {
-            var1.accept(new SEntityEquipmentPacket(this.field42668.method3205(), var12));
+            var1.accept(new SEntityEquipmentPacket(this.field42668.getEntityId(), var12));
          }
       }
 
@@ -233,7 +236,7 @@ public class Class9278 {
          LivingEntity var13 = (LivingEntity)this.field42668;
 
          for (Class2023 var16 : var13.method3031()) {
-            var1.accept(new SPlayEntityEffectPacket(this.field42668.method3205(), var16));
+            var1.accept(new SPlayEntityEffectPacket(this.field42668.getEntityId(), var16));
          }
       }
 
@@ -256,13 +259,13 @@ public class Class9278 {
    private void method34973() {
       EntityDataManager var3 = this.field42668.method3210();
       if (var3.method35447()) {
-         this.method34976(new SEntityMetadataPacket(this.field42668.method3205(), var3, false));
+         this.method34976(new SEntityMetadataPacket(this.field42668.getEntityId(), var3, false));
       }
 
       if (this.field42668 instanceof LivingEntity) {
          Set var4 = ((LivingEntity)this.field42668).method3088().method33378();
          if (!var4.isEmpty()) {
-            this.method34976(new SEntityPropertiesPacket(this.field42668.method3205(), var4));
+            this.method34976(new SEntityPropertiesPacket(this.field42668.getEntityId(), var4));
          }
 
          var4.clear();

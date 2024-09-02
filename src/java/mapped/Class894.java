@@ -3,7 +3,9 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.world.World;
 
 public class Class894 extends Class890 {
    private static String[] field5129;

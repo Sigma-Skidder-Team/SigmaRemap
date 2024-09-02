@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 

@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 public final class Class8177 implements Class8176 {
    private static String[] field35168;

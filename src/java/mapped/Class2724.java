@@ -66,7 +66,7 @@ public class Class2724 extends Class2595 {
                this.field17217.method4233((LivingEntity)null);
             }
          } else {
-            Class1105.method5312(this.field17217, this.field17217.method4232().method3205());
+            Class1105.method5312(this.field17217, this.field17217.method4232().getEntityId());
             if (!this.field17217.method3245()) {
                this.field17217.world.method6786(this.field17217, (byte)21);
             }

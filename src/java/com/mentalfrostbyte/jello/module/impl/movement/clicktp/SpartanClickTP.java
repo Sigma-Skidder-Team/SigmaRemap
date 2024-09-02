@@ -9,8 +9,10 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import mapped.*;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 
 public class SpartanClickTP extends Module {
     private int field23464;
@@ -53,7 +55,7 @@ public class SpartanClickTP extends Module {
                 this.field23465 = var5;
                 mc.getConnection()
                         .sendPacket(
-                                new Class5605(
+                                new CPlayerPacket.PositionPacket(
                                         (double) this.field23465.getX() + 0.5, this.field23465.getY() + 1, (double) this.field23465.getZ() + 0.5, true
                                 )
                         );
@@ -99,10 +101,10 @@ public class SpartanClickTP extends Module {
                 }
 
                 mc.getConnection()
-                        .sendPacket(new Class5605(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ(), true));
+                        .sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ(), true));
                 mc.getConnection()
                         .sendPacket(
-                                new Class5605(
+                                new CPlayerPacket.PositionPacket(
                                         (double) this.field23465.getX() + 0.5, this.field23465.getY() + 1, (double) this.field23465.getZ() + 0.5, true
                                 )
                         );

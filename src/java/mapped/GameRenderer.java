@@ -12,13 +12,18 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -700,7 +705,7 @@ public class GameRenderer implements Class215, AutoCloseable {
       } else {
          Entity var3 = this.field802.getRenderViewEntity();
          boolean var4 = var3 instanceof PlayerEntity && !this.field802.gameSettings.hideGUI;
-         if (var4 && !((PlayerEntity)var3).abilities.field29610) {
+         if (var4 && !((PlayerEntity)var3).abilities.allowEdit) {
             ItemStack var5 = ((LivingEntity)var3).method3090();
             RayTraceResult var6 = this.field802.objectMouseOver;
             if (var6 != null && var6.getType() == RayTraceResult.Type.BLOCK) {

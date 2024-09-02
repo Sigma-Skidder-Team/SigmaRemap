@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public interface Class876 {
    void method2718(Class5812 var1, NonNullList<ItemStack> var2);
 

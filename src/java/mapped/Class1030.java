@@ -5,10 +5,13 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
@@ -63,7 +66,7 @@ public class Class1030 extends Class1025 {
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.field5732) {
-         var1.method115("Johnny", true);
+         var1.putBoolean("Johnny", true);
       }
    }
 
@@ -79,8 +82,8 @@ public class Class1030 extends Class1025 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("Johnny", 99)) {
-         this.field5732 = var1.method132("Johnny");
+      if (var1.contains("Johnny", 99)) {
+         this.field5732 = var1.getBoolean("Johnny");
       }
    }
 

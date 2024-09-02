@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.item.autogapple.HypixelAutoGapple;
 import com.mentalfrostbyte.jello.module.impl.item.autogapple.BasicAutoGapple;
 import mapped.*;
+import net.minecraft.item.ItemStack;
 
 import java.util.List;
 

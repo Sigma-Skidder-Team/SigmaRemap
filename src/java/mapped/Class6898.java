@@ -97,7 +97,7 @@ public class Class6898 extends Class6896 {
                }
             } else {
                method21067(var1, var17, var8.field22411.method20424(var2, var17).method23465(Class3386.field18994, this.method21079(var3, var17)), var7);
-               var6.add(var17.method8353());
+               var6.add(var17.toImmutable());
             }
          }
 

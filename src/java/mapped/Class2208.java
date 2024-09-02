@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
 
 public enum Class2208 {
    field14432(
@@ -113,12 +114,12 @@ public enum Class2208 {
    private final Class81[] field14442;
    private final Class81[] field14443;
    private static final Class2208[] field14444 = Util.<Class2208[]>make(new Class2208[6], var0 -> {
-      var0[Direction.DOWN.method533()] = field14432;
-      var0[Direction.field673.method533()] = field14433;
-      var0[Direction.NORTH.method533()] = field14434;
-      var0[Direction.SOUTH.method533()] = field14435;
-      var0[Direction.WEST.method533()] = field14436;
-      var0[Direction.EAST.method533()] = field14437;
+      var0[Direction.DOWN.getIndex()] = field14432;
+      var0[Direction.field673.getIndex()] = field14433;
+      var0[Direction.NORTH.getIndex()] = field14434;
+      var0[Direction.SOUTH.getIndex()] = field14435;
+      var0[Direction.WEST.getIndex()] = field14436;
+      var0[Direction.EAST.getIndex()] = field14437;
    });
    private static final Class2208[] field14445 = new Class2208[]{field14432, field14433, field14434, field14435, field14436, field14437};
 
@@ -132,7 +133,7 @@ public enum Class2208 {
    }
 
    public static Class2208 method8926(Direction var0) {
-      return field14444[var0.method533()];
+      return field14444[var0.getIndex()];
    }
 
    // $VF: synthetic method

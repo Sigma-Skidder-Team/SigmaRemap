@@ -2,7 +2,9 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
 
@@ -56,7 +58,7 @@ public abstract class Class2930 extends Class2898<Class4727> {
       }
    }
 
-   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4727 var5) {
+   public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4727 var5) {
       int var8 = this.method11266(var3);
       Mutable var9 = new Mutable();
       if (this.method11267(var1, var4, var8, var9, var5)) {

@@ -8,15 +8,20 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.LinkedHashSet;
@@ -174,7 +179,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
          var10.method8373(this.getPosX() + var14.x, var6, this.getPosZ() + var14.z);
 
          for (double var15 = var6; var15 > var8; var15--) {
-            var5.add(var10.method8353());
+            var5.add(var10.toImmutable());
             var10.method8379(Direction.DOWN);
          }
       }

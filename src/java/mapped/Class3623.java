@@ -134,14 +134,14 @@ public class Class3623 extends Class3624 {
    public CompoundNBT method12273() {
       CompoundNBT var3 = new CompoundNBT();
       var3.method109("Name", ITextComponent$Serializer.toJson(this.field19634));
-      var3.method115("Visible", this.method12286());
+      var3.putBoolean("Visible", this.method12286());
       var3.method102("Value", this.field19627);
       var3.method102("Max", this.field19628);
       var3.method109("Color", this.method12292().method9070());
       var3.method109("Overlay", this.method12293().method9067());
-      var3.method115("DarkenScreen", this.method12294());
-      var3.method115("PlayBossMusic", this.method12295());
-      var3.method115("CreateWorldFog", this.method12296());
+      var3.putBoolean("DarkenScreen", this.method12294());
+      var3.putBoolean("PlayBossMusic", this.method12295());
+      var3.putBoolean("CreateWorldFog", this.method12296());
       ListNBT var4 = new ListNBT();
 
       for (UUID var6 : this.field19626) {
@@ -154,14 +154,14 @@ public class Class3623 extends Class3624 {
 
    public static Class3623 method12274(CompoundNBT var0, ResourceLocation var1) {
       Class3623 var4 = new Class3623(var1, ITextComponent$Serializer.func_240643_a_(var0.method126("Name")));
-      var4.method12287(var0.method132("Visible"));
+      var4.method12287(var0.getBoolean("Visible"));
       var4.method12269(var0.method122("Value"));
       var4.method12270(var0.method122("Max"));
       var4.method12279(Class2303.method9071(var0.method126("Color")));
       var4.method12280(Class2300.method9068(var0.method126("Overlay")));
-      var4.method12281(var0.method132("DarkenScreen"));
-      var4.method12282(var0.method132("PlayBossMusic"));
-      var4.method12283(var0.method132("CreateWorldFog"));
+      var4.method12281(var0.getBoolean("DarkenScreen"));
+      var4.method12282(var0.getBoolean("PlayBossMusic"));
+      var4.method12283(var0.getBoolean("CreateWorldFog"));
       ListNBT var5 = var0.method131("Players", 11);
 
       for (int var6 = 0; var6 < var5.size(); var6++) {

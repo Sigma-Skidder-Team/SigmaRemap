@@ -3,7 +3,9 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.World;
 
 public class Class885 extends AbstractArrowEntity {
    private int field5110 = 200;

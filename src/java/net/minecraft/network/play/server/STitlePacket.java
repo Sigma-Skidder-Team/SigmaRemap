@@ -37,7 +37,7 @@ public class STitlePacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24805 = var1.<Class2301>method35712(Class2301.class);
+      this.field24805 = var1.<Class2301>readEnumValue(Class2301.class);
       if (this.field24805 == Class2301.field15710 || this.field24805 == Class2301.field15711 || this.field24805 == Class2301.field15712) {
          this.field24806 = var1.method35710();
       }
@@ -51,7 +51,7 @@ public class STitlePacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.field24805);
+      var1.writeEnumValue(this.field24805);
       if (this.field24805 == Class2301.field15710 || this.field24805 == Class2301.field15711 || this.field24805 == Class2301.field15712) {
          var1.writeTextComponent(this.field24806);
       }

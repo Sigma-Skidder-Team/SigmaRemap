@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.server.ServerWorld;
+
 public class Class156 implements ILootCondition {
    private static String[] field509;
    private final Long field510;

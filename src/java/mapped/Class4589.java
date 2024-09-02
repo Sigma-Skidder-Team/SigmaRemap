@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class4589 extends Class4588 {
    private static String[] field22065;

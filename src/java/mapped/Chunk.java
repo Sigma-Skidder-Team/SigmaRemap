@@ -14,6 +14,8 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -402,7 +404,7 @@ public class Chunk implements IChunk {
       if (this.getBlockState(var1).getBlock() instanceof Class3245) {
          var2.method3769(this.field9116, var1);
          var2.method3779();
-         TileEntity var5 = this.field9119.put(var1.method8353(), var2);
+         TileEntity var5 = this.field9119.put(var1.toImmutable(), var2);
          if (var5 != null && var5 != var2) {
             var5.method3765();
          }
@@ -420,13 +422,13 @@ public class Chunk implements IChunk {
       TileEntity var4 = this.getTileEntity(var1);
       if (var4 != null && !var4.method3778()) {
          CompoundNBT var6 = var4.write(new CompoundNBT());
-         var6.method115("keepPacked", false);
+         var6.putBoolean("keepPacked", false);
          return var6;
       } else {
          CompoundNBT var5 = this.field9114.get(var1);
          if (var5 != null) {
             var5 = var5.method79();
-            var5.method115("keepPacked", true);
+            var5.putBoolean("keepPacked", true);
          }
 
          return var5;
@@ -548,7 +550,7 @@ public class Chunk implements IChunk {
 
       for (Class101 var12 : Class101.values()) {
          String var13 = var12.method283();
-         if (var3.method119(var13, 12)) {
+         if (var3.contains(var13, 12)) {
             this.method7069(var12, var3.method129(var13));
          }
       }

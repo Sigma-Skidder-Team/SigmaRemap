@@ -10,6 +10,7 @@ import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -59,11 +60,11 @@ public class Class964 extends TileEntity {
       var1.method109("rotation", this.field5401.toString());
       var1.method109("mirror", this.field5400.toString());
       var1.method109("mode", this.field5402.toString());
-      var1.method115("ignoreEntities", this.field5403);
-      var1.method115("powered", this.field5404);
-      var1.method115("showair", this.field5405);
-      var1.method115("showboundingbox", this.field5406);
-      var1.method107("integrity", this.field5407);
+      var1.putBoolean("ignoreEntities", this.field5403);
+      var1.putBoolean("powered", this.field5404);
+      var1.putBoolean("showair", this.field5405);
+      var1.putBoolean("showboundingbox", this.field5406);
+      var1.putFloat("integrity", this.field5407);
       var1.method103("seed", this.field5408);
       return var1;
    }
@@ -101,12 +102,12 @@ public class Class964 extends TileEntity {
          this.field5402 = Class104.field321;
       }
 
-      this.field5403 = var2.method132("ignoreEntities");
-      this.field5404 = var2.method132("powered");
-      this.field5405 = var2.method132("showair");
-      this.field5406 = var2.method132("showboundingbox");
+      this.field5403 = var2.getBoolean("ignoreEntities");
+      this.field5404 = var2.getBoolean("powered");
+      this.field5405 = var2.getBoolean("showair");
+      this.field5406 = var2.getBoolean("showboundingbox");
       if (var2.contains("integrity")) {
-         this.field5407 = var2.method124("integrity");
+         this.field5407 = var2.getFloat("integrity");
       } else {
          this.field5407 = 1.0F;
       }

@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.AxisAlignedBB;
 
@@ -92,8 +93,8 @@ public class MineplexHighJump extends Module {
                if (var22 != 11.0) {
                   double var24 = mc.player.getPosY();
                   var19 = 312.7;
-                  Class5605 var26 = new Class5605(var17, var24 - var22, var19, true);
-                  Class5605 var27 = new Class5605(var17, var24, var19, true);
+                  CPlayerPacket.PositionPacket var26 = new CPlayerPacket.PositionPacket(var17, var24 - var22, var19, true);
+                  CPlayerPacket.PositionPacket var27 = new CPlayerPacket.PositionPacket(var17, var24, var19, true);
                   mc.getConnection().sendPacket(var27);
                   mc.getConnection().sendPacket(var26);
                   this.field24026 = var24 + 0.42;

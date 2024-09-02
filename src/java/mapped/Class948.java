@@ -2,11 +2,14 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class948 extends TileEntity implements Class946, Class949 {
    private final Class920 field5333 = new Class989(this);
@@ -96,7 +99,7 @@ public class Class948 extends TileEntity implements Class946, Class949 {
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      if (!var2.method119("Book", 10)) {
+      if (!var2.contains("Book", 10)) {
          this.field5335 = ItemStack.EMPTY;
       } else {
          this.field5335 = this.method3813(ItemStack.method32104(var2.getCompound("Book")), (PlayerEntity)null);

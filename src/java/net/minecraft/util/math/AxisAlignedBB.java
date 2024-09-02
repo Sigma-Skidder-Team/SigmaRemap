@@ -1,6 +1,8 @@
 package net.minecraft.util.math;
 
 import mapped.*;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.Optional;
 import javax.annotation.Nullable;

@@ -1,8 +1,11 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 
 public class Class4485 extends Class4457 {
@@ -18,7 +19,7 @@ public class Class4485 extends Class4457 {
       return var4;
    }
 
-   public boolean method14151(Class4843<?> var1) {
-      return this.field21681.equals(var1.method14964());
+   public boolean method14151(IRecipe<?> var1) {
+      return this.field21681.equals(var1.getId());
    }
 }

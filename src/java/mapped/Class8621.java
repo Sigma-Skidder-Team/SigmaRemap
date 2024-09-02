@@ -10,6 +10,7 @@ import java.util.Collection;
 
 import net.minecraft.network.play.server.SPlaySoundPacket;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8621 {

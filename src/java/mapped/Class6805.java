@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Collection;
 import java.util.Collections;

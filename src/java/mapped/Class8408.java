@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.server.ServerWorld;
+
 public class Class8408 implements Class8405 {
    private static String[] field36067;
    private final ServerWorld field36068;

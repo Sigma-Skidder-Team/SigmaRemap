@@ -2,7 +2,9 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Optional;
 
@@ -45,7 +47,7 @@ public class Class3725 extends Class3676<Class1042> {
                var5.method8378(var2.getPosition(), var8, var9, var10);
                if (this.method12626(var5, var1)) {
                   if (var1.rand.nextInt(++var7) == 0) {
-                     var6 = Optional.<BlockPos>of(var5.method8353());
+                     var6 = Optional.<BlockPos>of(var5.toImmutable());
                   }
                }
             }

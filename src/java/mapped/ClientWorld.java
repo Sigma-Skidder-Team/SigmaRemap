@@ -12,13 +12,17 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;

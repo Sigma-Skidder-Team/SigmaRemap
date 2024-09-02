@@ -4,8 +4,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -18,18 +20,18 @@ public class Class4191 extends Class4188 {
 
    public Class4191(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33425, var2);
-      this.field20483 = var2.method132("hr");
-      this.field20484 = var2.method132("sc");
-      this.field20485 = var2.method132("hps");
+      this.field20483 = var2.getBoolean("hr");
+      this.field20484 = var2.getBoolean("sc");
+      this.field20485 = var2.getBoolean("hps");
       this.field20486 = var2.method122("Num");
    }
 
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method115("hr", this.field20483);
-      var1.method115("sc", this.field20484);
-      var1.method115("hps", this.field20485);
+      var1.putBoolean("hr", this.field20483);
+      var1.putBoolean("sc", this.field20484);
+      var1.putBoolean("hps", this.field20485);
       var1.method102("Num", this.field20486);
    }
 
@@ -229,7 +231,7 @@ public class Class4191 extends Class4188 {
    }
 
    @Override
-   public boolean method12933(Class1658 var1, Class9764 var2, Random var3, int var4, int var5, int var6, ResourceLocation var7) {
+   public boolean method12933(ISeedReader var1, Class9764 var2, Random var3, int var4, int var5, int var6, ResourceLocation var7) {
       BlockPos var10 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
       if (var2.method38396(var10) && var1.getBlockState(var10).isAir() && !var1.getBlockState(var10.down()).isAir()) {
          BlockState var11 = Blocks.RAIL.method11579().method23465(Class3430.field19191, !var3.nextBoolean() ? Class96.field248 : Class96.field247);
@@ -244,7 +246,7 @@ public class Class4191 extends Class4188 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       if (this.method12919(var1, var5)) {
          return false;
       } else {
@@ -321,7 +323,7 @@ public class Class4191 extends Class4188 {
       }
    }
 
-   private void method12973(Class1658 var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, Random var8) {
+   private void method12973(ISeedReader var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, Random var8) {
       if (this.method12969(var1, var2, var3, var7, var6, var5)) {
          BlockState var11 = this.method12967();
          BlockState var12 = this.method12968();
@@ -342,7 +344,7 @@ public class Class4191 extends Class4188 {
       }
    }
 
-   private void method12974(Class1658 var1, Class9764 var2, Random var3, float var4, int var5, int var6, int var7) {
+   private void method12974(ISeedReader var1, Class9764 var2, Random var3, float var4, int var5, int var6, int var7) {
       if (this.method12925(var1, var5, var6, var7, var2)) {
          this.method12930(var1, var2, var3, var4, var5, var6, var7, Blocks.COBWEB.method11579());
       }

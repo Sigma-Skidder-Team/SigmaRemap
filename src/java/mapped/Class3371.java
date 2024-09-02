@@ -2,8 +2,11 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 

@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -124,14 +125,14 @@ public class Class938 extends Class919 implements Class937 {
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("TransferCooldown", this.field5300);
-      var1.method115("Enabled", this.field5299);
+      var1.putBoolean("Enabled", this.field5299);
    }
 
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field5300 = var1.method122("TransferCooldown");
-      this.field5299 = !var1.contains("Enabled") ? true : var1.method132("Enabled");
+      this.field5299 = !var1.contains("Enabled") ? true : var1.getBoolean("Enabled");
    }
 
    public void method3738(int var1) {

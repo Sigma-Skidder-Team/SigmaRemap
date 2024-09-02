@@ -17,11 +17,14 @@ import javax.annotation.Nullable;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class6619 implements Class6618 {
    public static final SimpleCommandExceptionType field29122 = new SimpleCommandExceptionType(new TranslationTextComponent("permissions.requires.player"));

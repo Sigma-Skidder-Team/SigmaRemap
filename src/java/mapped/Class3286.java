@@ -1,9 +1,11 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 import java.util.List;
 

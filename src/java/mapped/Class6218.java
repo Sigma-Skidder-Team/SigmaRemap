@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
+import net.minecraft.world.World;
+
 public class Class6218 implements Class6226 {
    private static String[] field27718;
 
@@ -44,6 +48,6 @@ public class Class6218 implements Class6226 {
    }
 
    public void method19198(Class2956 var1, Direction var2) {
-      var1.method11326().playEvent(2000, var1.method11323(), var2.method533());
+      var1.method11326().playEvent(2000, var1.method11323(), var2.getIndex());
    }
 }

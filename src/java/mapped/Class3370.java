@@ -1,8 +1,10 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class3370 extends Class3241 {
    private static String[] field18958;

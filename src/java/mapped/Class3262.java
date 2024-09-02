@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 
 import java.util.function.Predicate;

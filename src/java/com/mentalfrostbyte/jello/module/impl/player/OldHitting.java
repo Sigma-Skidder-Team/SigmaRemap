@@ -14,7 +14,9 @@ import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import mapped.*;
 import net.minecraft.network.play.server.SEntityEquipmentPacket;
+import net.minecraft.util.HandSide;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -105,7 +107,7 @@ public class OldHitting extends Module {
                 if (var1.getPacket() instanceof SEntityEquipmentPacket) {
                     SEntityEquipmentPacket var4 = (SEntityEquipmentPacket) var1.getPacket();
 
-                    var4.method17562().removeIf(var6 -> var4.method17561() == mc.player.method3205()
+                    var4.method17562().removeIf(var6 -> var4.method17561() == mc.player.getEntityId()
                             && var6.getFirst() == Class2106.field13732
                             && var6.getSecond() != null
                             && var6.getSecond().getItem() == Items.field38119);
@@ -120,9 +122,9 @@ public class OldHitting extends Module {
     private void method16022(Class4400 var1) {
         if (this.isEnabled() || Class8005.method27372() == Class5989.field26129) {
             float var4 = var1.method13924();
-            if (var1.method13926() && var1.method13927() == Class2205.field14417 && var1.method13928().getItem() instanceof Class3334) {
+            if (var1.method13926() && var1.method13927() == HandSide.field14417 && var1.method13928().getItem() instanceof Class3334) {
                 var1.method13931(false);
-            } else if (var1.method13927() != Class2205.field14417 || !field23408) {
+            } else if (var1.method13927() != HandSide.field14417 || !field23408) {
                 if (field23408 && var1.method13926()) {
                     var1.method13900(true);
                     String var5 = this.getStringSettingValueByName("Animation");

@@ -4,13 +4,15 @@ import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 
 import java.util.List;
 import javax.annotation.Nullable;
 
 public class Class9235 {
    private static String[] field42509;
-   private Class4843<?> field42510;
+   private IRecipe<?> field42510;
    private final List<Class8055> field42511 = Lists.newArrayList();
    private float field42512;
 
@@ -33,11 +35,11 @@ public class Class9235 {
    }
 
    @Nullable
-   public Class4843<?> method34737() {
+   public IRecipe<?> method34737() {
       return this.field42510;
    }
 
-   public void method34738(Class4843<?> var1) {
+   public void method34738(IRecipe<?> var1) {
       this.field42510 = var1;
    }
 

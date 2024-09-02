@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 
@@ -30,7 +31,7 @@ public class Class6503<T extends Class4847> implements Class6504<T> {
    public T method19699(ResourceLocation var1, PacketBuffer var2) {
       String var5 = var2.readString(32767);
       Class120 var6 = Class120.method343(var2);
-      ItemStack var7 = var2.method35726();
+      ItemStack var7 = var2.readItemStack();
       float var8 = var2.readFloat();
       int var9 = var2.readVarInt();
       return this.field28469.method31802(var1, var5, var6, var7, var8, var9);
@@ -39,7 +40,7 @@ public class Class6503<T extends Class4847> implements Class6504<T> {
    public void method19698(PacketBuffer var1, T var2) {
       var1.writeString(var2.field22632);
       var2.field22633.method335(var1);
-      var1.method35724(var2.field22634);
+      var1.writeItemStack(var2.field22634);
       var1.writeFloat(var2.field22635);
       var1.writeVarInt(var2.field22636);
    }

@@ -5,17 +5,17 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SMountEntityPacket;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -287,8 +287,8 @@ public abstract class Class1006 extends LivingEntity {
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method115("CanPickUpLoot", this.method4280());
-      var1.method115("PersistenceRequired", this.field5609);
+      var1.putBoolean("CanPickUpLoot", this.method4280());
+      var1.putBoolean("PersistenceRequired", this.field5609);
       ListNBT var4 = new ListNBT();
 
       for (ItemStack var6 : this.field5606) {
@@ -348,7 +348,7 @@ public abstract class Class1006 extends LivingEntity {
          var1.put("Leash", var20);
       }
 
-      var1.method115("LeftHanded", this.method4306());
+      var1.putBoolean("LeftHanded", this.method4306());
       if (this.field5611 != null) {
          var1.method109("DeathLootTable", this.field5611.toString());
          if (this.field5612 != 0L) {
@@ -357,19 +357,19 @@ public abstract class Class1006 extends LivingEntity {
       }
 
       if (this.method4305()) {
-         var1.method115("NoAI", this.method4305());
+         var1.putBoolean("NoAI", this.method4305());
       }
    }
 
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("CanPickUpLoot", 1)) {
-         this.method4281(var1.method132("CanPickUpLoot"));
+      if (var1.contains("CanPickUpLoot", 1)) {
+         this.method4281(var1.getBoolean("CanPickUpLoot"));
       }
 
-      this.field5609 = var1.method132("PersistenceRequired");
-      if (var1.method119("ArmorItems", 9)) {
+      this.field5609 = var1.getBoolean("PersistenceRequired");
+      if (var1.contains("ArmorItems", 9)) {
          ListNBT var4 = var1.method131("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field5606.size(); var5++) {
@@ -377,7 +377,7 @@ public abstract class Class1006 extends LivingEntity {
          }
       }
 
-      if (var1.method119("HandItems", 9)) {
+      if (var1.contains("HandItems", 9)) {
          ListNBT var6 = var1.method131("HandItems", 10);
 
          for (int var9 = 0; var9 < this.field5604.size(); var9++) {
@@ -385,7 +385,7 @@ public abstract class Class1006 extends LivingEntity {
          }
       }
 
-      if (var1.method119("ArmorDropChances", 9)) {
+      if (var1.contains("ArmorDropChances", 9)) {
          ListNBT var7 = var1.method131("ArmorDropChances", 5);
 
          for (int var10 = 0; var10 < var7.size(); var10++) {
@@ -393,7 +393,7 @@ public abstract class Class1006 extends LivingEntity {
          }
       }
 
-      if (var1.method119("HandDropChances", 9)) {
+      if (var1.contains("HandDropChances", 9)) {
          ListNBT var8 = var1.method131("HandDropChances", 5);
 
          for (int var11 = 0; var11 < var8.size(); var11++) {
@@ -401,17 +401,17 @@ public abstract class Class1006 extends LivingEntity {
          }
       }
 
-      if (var1.method119("Leash", 10)) {
+      if (var1.contains("Leash", 10)) {
          this.field5615 = var1.getCompound("Leash");
       }
 
-      this.method4303(var1.method132("LeftHanded"));
-      if (var1.method119("DeathLootTable", 8)) {
+      this.method4303(var1.getBoolean("LeftHanded"));
+      if (var1.contains("DeathLootTable", 8)) {
          this.field5611 = new ResourceLocation(var1.method126("DeathLootTable"));
          this.field5612 = var1.method123("DeathLootTableSeed");
       }
 
-      this.method4302(var1.method132("NoAI"));
+      this.method4302(var1.getBoolean("NoAI"));
    }
 
    @Override
@@ -1218,14 +1218,14 @@ public abstract class Class1006 extends LivingEntity {
    private void method4300() {
       if (this.field5615 != null && this.world instanceof ServerWorld) {
          if (!this.field5615.method106("UUID")) {
-            if (this.field5615.method119("X", 99) && this.field5615.method119("Y", 99) && this.field5615.method119("Z", 99)) {
+            if (this.field5615.contains("X", 99) && this.field5615.contains("Y", 99) && this.field5615.contains("Z", 99)) {
                BlockPos var3 = new BlockPos(this.field5615.method122("X"), this.field5615.method122("Y"), this.field5615.method122("Z"));
                this.method4298(LeashKnotEntity.method4087(this.world, var3), true);
                return;
             }
          } else {
             UUID var5 = this.field5615.method105("UUID");
-            Entity var4 = ((ServerWorld)this.world).method6942(var5);
+            Entity var4 = ((ServerWorld)this.world).getEntityByUuid(var5);
             if (var4 != null) {
                this.method4298(var4, true);
                return;
@@ -1322,13 +1322,13 @@ public abstract class Class1006 extends LivingEntity {
    }
 
    @Override
-   public Class2205 method2967() {
-      return !this.method4306() ? Class2205.field14418 : Class2205.field14417;
+   public HandSide method2967() {
+      return !this.method4306() ? HandSide.field14418 : HandSide.field14417;
    }
 
    @Override
    public boolean method3026(LivingEntity var1) {
-      return var1.getType() == EntityType.PLAYER && ((PlayerEntity)var1).abilities.field29606 ? false : super.method3026(var1);
+      return var1.getType() == EntityType.PLAYER && ((PlayerEntity)var1).abilities.disableDamage ? false : super.method3026(var1);
    }
 
    @Override

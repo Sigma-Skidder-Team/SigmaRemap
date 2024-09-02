@@ -4,7 +4,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -20,13 +22,13 @@ public class Class4204 extends Class4194 {
 
    public Class4204(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33449, var2);
-      this.field20511 = var2.method132("Mob");
+      this.field20511 = var2.getBoolean("Mob");
    }
 
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method115("Mob", this.field20511);
+      var1.putBoolean("Mob", this.field20511);
    }
 
    @Override
@@ -42,7 +44,7 @@ public class Class4204 extends Class4194 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       this.method12928(var1, var5, 0, 0, 0, 10, 7, 15, false, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, Class2213.field14472, 4, 1, 0);
       int var10 = 6;

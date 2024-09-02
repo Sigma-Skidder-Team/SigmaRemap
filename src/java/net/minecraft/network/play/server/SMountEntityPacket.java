@@ -16,8 +16,8 @@ public class SMountEntityPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SMountEntityPacket(Entity var1, Entity var2) {
-      this.field24815 = var1.method3205();
-      this.field24816 = var2 == null ? 0 : var2.method3205();
+      this.field24815 = var1.getEntityId();
+      this.field24816 = var2 == null ? 0 : var2.getEntityId();
    }
 
    @Override

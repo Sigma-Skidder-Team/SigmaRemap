@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.GL11;
 
 public class InfoHUD extends Module {

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class4474 extends Class4457 {
    private final Class8576 field21664;

@@ -5,6 +5,7 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.HashMap;
 import java.util.UUID;

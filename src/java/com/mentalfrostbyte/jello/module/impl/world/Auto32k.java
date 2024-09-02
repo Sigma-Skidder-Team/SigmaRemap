@@ -9,13 +9,18 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.network.play.server.SCloseWindowPacket;
 import net.minecraft.network.play.server.SOpenWindowPacket;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
 import org.lwjgl.opengl.GL11;
 
 public class Auto32k extends Module {
@@ -228,7 +233,7 @@ public class Auto32k extends Module {
                                 mc.player.swingArm(Hand.MAIN_HAND);
                                 if (var9 == ActionResultType.field14818) {
                                     this.field23873++;
-                                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10040));
+                                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.PRESS_SHIFT_KEY));
                                     mc.player.field6131.field43914 = true;
                                     mc.player.inventory.currentItem = this.field23872;
                                     Vector3d var10 = Class9217.method34572(Direction.field673, this.field23870.up());
@@ -236,7 +241,7 @@ public class Auto32k extends Module {
                                     mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var11);
                                     mc.player.swingArm(Hand.MAIN_HAND);
                                     mc.player.field6131.field43914 = false;
-                                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10041));
+                                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.RELEASE_SHIFT_KEY));
                                     mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var11);
                                 }
                             }
@@ -273,7 +278,7 @@ public class Auto32k extends Module {
                 int var7 = var4.method17303();
                 if (this.field23874 == var7 && var5 == 0 && var6.getItem() != Items.field37222 && !this.field23877) {
                     var1.method13900(true);
-                    mc.getConnection().sendPacket(new CClickWindowPacket(var7, var5, 1, Class2259.field14695, var6, this.field23875++));
+                    mc.getConnection().sendPacket(new CClickWindowPacket(var7, var5, 1, ClickType.field14695, var6, this.field23875++));
                     int var8 = -1;
 
                     for (int var9 = 44; var9 > 9; var9--) {
@@ -315,7 +320,7 @@ public class Auto32k extends Module {
 
             if (var1.method13932() instanceof CPlayerPacket) {
                 CPlayerPacket var6 = (CPlayerPacket) var1.method13932();
-                var6.field24883 = false;
+                var6.onGround = false;
             }
         }
     }

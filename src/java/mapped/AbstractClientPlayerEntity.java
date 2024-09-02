@@ -131,12 +131,12 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    public float method5378() {
       float var3 = 1.0F;
-      if (this.abilities.field29607) {
+      if (this.abilities.isFlying) {
          var3 *= 1.1F;
       }
 
-      var3 = (float)((double)var3 * ((this.method3086(Attributes.MOVEMENT_SPEED) / (double)this.abilities.method20716() + 1.0) / 2.0));
-      if (this.abilities.method20716() == 0.0F || Float.isNaN(var3) || Float.isInfinite(var3)) {
+      var3 = (float)((double)var3 * ((this.method3086(Attributes.MOVEMENT_SPEED) / (double)this.abilities.getWalkSpeed() + 1.0) / 2.0));
+      if (this.abilities.getWalkSpeed() == 0.0F || Float.isNaN(var3) || Float.isInfinite(var3)) {
          var3 = 1.0F;
       }
 

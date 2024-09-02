@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 import java.util.Set;

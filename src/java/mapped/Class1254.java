@@ -6,6 +6,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.play.client.CUpdateRecipeBookStatusPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
@@ -275,7 +277,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    public boolean method1958(double var1, double var3, int var5) {
       if (this.method5839() && !this.field6642.player.isSpectator()) {
          if (this.field6646.method11316(var1, var3, var5, (this.field6635 - 147) / 2 - this.field6634, (this.field6636 - 166) / 2, 147, 166)) {
-            Class4843 var11 = this.field6646.method11313();
+            IRecipe var11 = this.field6646.method11313();
             RecipeList var12 = this.field6646.method11314();
             if (var11 != null && var12 != null) {
                if (!var12.method34889(var11) && this.field6637.method34737() == var11) {
@@ -421,13 +423,13 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    }
 
    @Override
-   public void method5857(List<Class4843<?>> var1) {
-      for (Class4843 var5 : var1) {
+   public void method5857(List<IRecipe<?>> var1) {
+      for (IRecipe var5 : var1) {
          this.field6642.player.method5398(var5);
       }
    }
 
-   public void method5858(Class4843<?> var1, List<Class5839> var2) {
+   public void method5858(IRecipe<?> var1, List<Class5839> var2) {
       ItemStack var5 = var1.getRecipeOutput();
       this.field6637.method34738(var1);
       this.field6637.method34734(Class120.method340(var5), ((Class5839)var2.get(0)).field25580, ((Class5839)var2.get(0)).field25581);

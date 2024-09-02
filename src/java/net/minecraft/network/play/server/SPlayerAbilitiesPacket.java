@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.Class6799;
+import net.minecraft.network.play.client.PlayerAbilities;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -18,13 +18,13 @@ public class SPlayerAbilitiesPacket implements Packet<IClientPlayNetHandler> {
    public SPlayerAbilitiesPacket() {
    }
 
-   public SPlayerAbilitiesPacket(Class6799 var1) {
-      this.field24846 = var1.field29606;
-      this.field24847 = var1.field29607;
+   public SPlayerAbilitiesPacket(PlayerAbilities var1) {
+      this.field24846 = var1.disableDamage;
+      this.field24847 = var1.isFlying;
       this.field24848 = var1.allowFlying;
       this.field24849 = var1.isCreativeMode;
-      this.field24850 = var1.method20714();
-      this.field24851 = var1.method20716();
+      this.field24850 = var1.getFlySpeed();
+      this.field24851 = var1.getWalkSpeed();
    }
 
    @Override

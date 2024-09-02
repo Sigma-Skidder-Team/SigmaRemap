@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
@@ -33,7 +34,7 @@ public class Class1065 extends Class1064 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("DespawnDelay", 99)) {
+      if (var1.contains("DespawnDelay", 99)) {
          this.field5876 = var1.method122("DespawnDelay");
       }
    }

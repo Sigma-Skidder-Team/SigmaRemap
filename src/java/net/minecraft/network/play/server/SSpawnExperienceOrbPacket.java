@@ -19,7 +19,7 @@ public class SSpawnExperienceOrbPacket implements Packet<IClientPlayNetHandler> 
    }
 
    public SSpawnExperienceOrbPacket(ExperienceOrbEntity var1) {
-      this.field24488 = var1.method3205();
+      this.field24488 = var1.getEntityId();
       this.field24489 = var1.getPosX();
       this.field24490 = var1.getPosY();
       this.field24491 = var1.getPosZ();

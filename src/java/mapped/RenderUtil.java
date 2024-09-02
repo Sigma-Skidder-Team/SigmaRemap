@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.ItemStack;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import org.lwjgl.opengl.GL11;

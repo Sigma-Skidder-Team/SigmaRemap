@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public class Class4851 extends Class4847 {

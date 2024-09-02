@@ -22,7 +22,7 @@ public class SSpawnPlayerPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SSpawnPlayerPacket(PlayerEntity var1) {
-      this.field24833 = var1.method3205();
+      this.field24833 = var1.getEntityId();
       this.field24834 = var1.getGameProfile().getId();
       this.field24835 = var1.getPosX();
       this.field24836 = var1.getPosY();
@@ -34,7 +34,7 @@ public class SSpawnPlayerPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24833 = var1.readVarInt();
-      this.field24834 = var1.method35717();
+      this.field24834 = var1.readUniqueId();
       this.field24835 = var1.readDouble();
       this.field24836 = var1.readDouble();
       this.field24837 = var1.readDouble();
@@ -45,7 +45,7 @@ public class SSpawnPlayerPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeVarInt(this.field24833);
-      var1.method35716(this.field24834);
+      var1.writeUniqueId(this.field24834);
       var1.writeDouble(this.field24835);
       var1.writeDouble(this.field24836);
       var1.writeDouble(this.field24837);

@@ -5,12 +5,14 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SChangeGameStatePacket;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
 
 import java.util.function.Predicate;
 

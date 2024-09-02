@@ -33,6 +33,7 @@ import javax.annotation.Nullable;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -175,7 +176,7 @@ public class SaveFormat {
          CompoundNBT var4 = Class8799.method31765(var0);
          CompoundNBT var5 = var4.getCompound("Data");
          var5.method133("Player");
-         int var6 = var5.method119("DataVersion", 99) ? var5.method122("DataVersion") : -1;
+         int var6 = var5.contains("DataVersion", 99) ? var5.method122("DataVersion") : -1;
          Dynamic<Class30> var7 = var1.update(Class2108.field13748.method8778(), new Dynamic(NBTDynamicOps.INSTANCE, var5), var6, SharedConstants.getVersion().getWorldVersion());
          return var7.get("DataPacks").result().map(SaveFormat::method38457).orElse(DatapackCodec.field33531);
       } catch (Exception var8) {
@@ -189,9 +190,9 @@ public class SaveFormat {
          try {
             CompoundNBT var6 = Class8799.method31765(var2);
             CompoundNBT var7 = var6.getCompound("Data");
-            CompoundNBT var8 = var7.method119("Player", 10) ? var7.getCompound("Player") : null;
+            CompoundNBT var8 = var7.contains("Player", 10) ? var7.getCompound("Player") : null;
             var7.method133("Player");
-            int var9 = var7.method119("DataVersion", 99) ? var7.method122("DataVersion") : -1;
+            int var9 = var7.contains("DataVersion", 99) ? var7.method122("DataVersion") : -1;
             Dynamic var10 = var3.update(Class2108.field13748.method8778(), new Dynamic(var0, var7), var9, SharedConstants.getVersion().getWorldVersion());
             Pair var11 = method38456(var10, var3, var9);
             Class8519 var12 = Class8519.method30181(var10);
@@ -210,7 +211,7 @@ public class SaveFormat {
             CompoundNBT var7 = Class8799.method31765(var3);
             CompoundNBT var8 = var7.getCompound("Data");
             var8.method133("Player");
-            int var9 = var8.method119("DataVersion", 99) ? var8.method122("DataVersion") : -1;
+            int var9 = var8.contains("DataVersion", 99) ? var8.method122("DataVersion") : -1;
             Dynamic<Class30> var10 = var4.update(
                Class2108.field13748.method8778(), new Dynamic(NBTDynamicOps.INSTANCE, var8), var9, SharedConstants.getVersion().getWorldVersion()
             );

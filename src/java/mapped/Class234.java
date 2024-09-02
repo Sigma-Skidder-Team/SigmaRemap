@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>> {
    private static String[] field880;
 

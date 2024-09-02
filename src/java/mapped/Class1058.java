@@ -5,6 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -13,6 +14,9 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.UUID;
 
@@ -121,14 +125,14 @@ public class Class1058 extends Class1056 implements Class1011 {
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method115("PlayerCreated", this.method4869());
+      var1.putBoolean("PlayerCreated", this.method4869());
       this.method4364(var1);
    }
 
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4870(var1.method132("PlayerCreated"));
+      this.method4870(var1.getBoolean("PlayerCreated"));
       this.method4365((ServerWorld)this.world, var1);
    }
 

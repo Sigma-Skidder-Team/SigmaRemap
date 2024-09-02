@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector3d;
+
 import java.util.EnumSet;
 
 public class Class2660 extends Class2595 {

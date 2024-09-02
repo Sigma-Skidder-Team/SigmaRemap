@@ -4,6 +4,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 import java.util.Random;

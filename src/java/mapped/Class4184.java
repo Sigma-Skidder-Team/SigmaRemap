@@ -4,8 +4,10 @@ import com.google.common.collect.Lists;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -92,7 +94,7 @@ public class Class4184 extends Class4180 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       if (!var5.method38396(this.field20455)) {
          return true;
       } else {

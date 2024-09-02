@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 
 public class Class926 implements Class920, Class925 {
    private static String[] field5255;

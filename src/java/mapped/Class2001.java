@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 public class Class2001 extends BlockPos {
@@ -67,7 +68,7 @@ public class Class2001 extends BlockPos {
             this.method8388();
          }
 
-         int var4 = var1.method533();
+         int var4 = var1.getIndex();
          Class2001 var5 = this.field13046[var4];
          if (var5 == null) {
             int var6 = this.field13042 + var1.method539();
@@ -79,13 +80,13 @@ public class Class2001 extends BlockPos {
 
          return var5;
       } else {
-         return super.method8350(var1, 1).method8353();
+         return super.method8350(var1, 1).toImmutable();
       }
    }
 
    @Override
    public BlockPos method8350(Direction var1, int var2) {
-      return var2 != 1 ? super.method8350(var1, var2).method8353() : this.method8349(var1);
+      return var2 != 1 ? super.method8350(var1, var2).toImmutable() : this.method8349(var1);
    }
 
    public void method8386(BlockPos var1, Direction var2) {
@@ -116,7 +117,7 @@ public class Class2001 extends BlockPos {
    }
 
    @Override
-   public BlockPos method8353() {
+   public BlockPos toImmutable() {
       return new BlockPos(this.field13042, this.field13043, this.field13044);
    }
 

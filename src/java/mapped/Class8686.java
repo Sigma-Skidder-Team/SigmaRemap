@@ -10,6 +10,7 @@ import java.util.function.Predicate;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class8686 {
    private static final SimpleCommandExceptionType field39214 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.setblock.failed"));

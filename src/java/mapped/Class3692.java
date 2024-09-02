@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 import java.util.Map;

@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
+
 public interface Class930 extends Class920 {
    int[] method3653(Direction var1);
 

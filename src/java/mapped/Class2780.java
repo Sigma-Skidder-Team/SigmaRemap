@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.EnumSet;
 import java.util.List;

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentUtils;
 import org.apache.logging.log4j.LogManager;

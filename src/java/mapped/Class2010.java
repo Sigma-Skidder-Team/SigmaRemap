@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletableFuture;

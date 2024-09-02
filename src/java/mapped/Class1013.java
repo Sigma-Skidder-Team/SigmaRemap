@@ -9,6 +9,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -38,7 +39,7 @@ public abstract class Class1013 extends Class1018 {
          var1.method104("Owner", this.method4397());
       }
 
-      var1.method115("Sitting", this.field5670);
+      var1.putBoolean("Sitting", this.field5670);
    }
 
    @Override
@@ -61,7 +62,7 @@ public abstract class Class1013 extends Class1018 {
          }
       }
 
-      this.field5670 = var1.method132("Sitting");
+      this.field5670 = var1.getBoolean("Sitting");
       this.method4396(this.field5670);
    }
 

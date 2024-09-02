@@ -8,8 +8,11 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -620,7 +623,7 @@ public class Class8969 {
       ListNBT var4 = var1.method131("size", 3);
       this.field40547 = new BlockPos(var4.method156(0), var4.method156(1), var4.method156(2));
       ListNBT var5 = var1.method131("blocks", 10);
-      if (!var1.method119("palettes", 9)) {
+      if (!var1.contains("palettes", 9)) {
          this.method32914(var1.method131("palette", 10), var5);
       } else {
          ListNBT var6 = var1.method131("palettes", 9);

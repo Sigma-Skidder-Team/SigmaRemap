@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.server.ServerWorld;
+
 import java.util.Collection;
 import java.util.function.Consumer;
 

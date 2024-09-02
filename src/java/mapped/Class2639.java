@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 public class Class2639 extends Class2595 {
    private static String[] field16962;

@@ -5,7 +5,10 @@ import com.mentalfrostbyte.jello.module.impl.render.CameraNoClip;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class9624 {
    private static String[] field45004;

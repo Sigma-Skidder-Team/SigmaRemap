@@ -6,17 +6,21 @@ import javax.annotation.Nullable;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 public class Class3368 extends Class3241 {
    public static final Class8552<Direction> field18939 = Class3433.field19198;
@@ -151,11 +155,11 @@ public class Class3368 extends Class3241 {
       super.method11583(var1, var2, var3, var4);
       CompoundNBT var7 = var1.method32145("BlockEntityTag");
       if (var7 != null) {
-         if (var7.method119("LootTable", 8)) {
+         if (var7.contains("LootTable", 8)) {
             var3.add(new StringTextComponent("???????"));
          }
 
-         if (var7.method119("Items", 9)) {
+         if (var7.contains("Items", 9)) {
             NonNullList<ItemStack> var8 = NonNullList.method68(27, ItemStack.EMPTY);
             Class7920.method26567(var7, var8);
             int var9 = 0;

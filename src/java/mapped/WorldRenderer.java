@@ -17,13 +17,18 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.opengl.GL11;
@@ -3244,7 +3249,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             }
             break;
          case 2000:
-            Direction var6 = Direction.method546(var4);
+            Direction var6 = Direction.byIndex(var4);
             int var7 = var6.method539();
             int var8 = var6.method540();
             int var9 = var6.method541();

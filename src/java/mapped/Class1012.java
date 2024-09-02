@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -12,6 +13,9 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -90,7 +94,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("CollarColor", 99)) {
+      if (var1.contains("CollarColor", 99)) {
          this.method4383(Class112.method315(var1.method122("CollarColor")));
       }
 

@@ -1,6 +1,9 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.world.World;
 
 public abstract class Class5831 extends Class5828<Class920> {
    private final Class920 field25551;
@@ -52,12 +55,12 @@ public abstract class Class5831 extends Class5828<Class920> {
    }
 
    @Override
-   public void method18219(boolean var1, Class4843<?> var2, ServerPlayerEntity var3) {
+   public void method18219(boolean var1, IRecipe<?> var2, ServerPlayerEntity var3) {
       new Class1261(this).method5868(var3, var2, var1);
    }
 
    @Override
-   public boolean method18222(Class4843<? super Class920> var1) {
+   public boolean method18222(IRecipe<? super Class920> var1) {
       return var1.method14963(this.field25551, this.field25553);
    }
 

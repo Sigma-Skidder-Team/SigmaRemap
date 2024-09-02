@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class Class6089 extends Class6069 {
    private static String[] field27333;

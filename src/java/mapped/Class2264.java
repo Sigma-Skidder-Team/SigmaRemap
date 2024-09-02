@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
 
 public enum Class2264 {
    field14716(
@@ -52,7 +53,7 @@ public enum Class2264 {
    private static final Class2264[] field14724 = new Class2264[]{field14716, field14717, field14718, field14719, field14720, field14721};
 
    public static Class2264 method8992(Direction var0) {
-      return field14722[var0.method533()];
+      return field14722[var0.getIndex()];
    }
 
    private Class2264(Class9827... var3) {

@@ -20,12 +20,12 @@ public class SOpenBookWindowPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24455 = var1.<Hand>method35712(Hand.class);
+      this.field24455 = var1.<Hand>readEnumValue(Hand.class);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.field24455);
+      var1.writeEnumValue(this.field24455);
    }
 
    public void processPacket(IClientPlayNetHandler var1) {

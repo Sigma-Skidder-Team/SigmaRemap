@@ -5,7 +5,10 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Map;
 import java.util.Random;

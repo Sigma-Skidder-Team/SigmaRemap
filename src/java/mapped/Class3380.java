@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 public class Class3380 extends Class3231 {
    private static String[] field18981;

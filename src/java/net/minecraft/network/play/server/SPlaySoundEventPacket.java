@@ -19,7 +19,7 @@ public class SPlaySoundEventPacket implements Packet<IClientPlayNetHandler> {
 
    public SPlaySoundEventPacket(int var1, BlockPos var2, int var3, boolean var4) {
       this.field24339 = var1;
-      this.field24340 = var2.method8353();
+      this.field24340 = var2.toImmutable();
       this.field24341 = var3;
       this.field24342 = var4;
    }

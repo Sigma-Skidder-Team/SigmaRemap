@@ -24,6 +24,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

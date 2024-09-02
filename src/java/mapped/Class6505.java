@@ -1,12 +1,13 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.function.Function;
 
-public class Class6505<T extends Class4843<?>> implements Class6504<T> {
+public class Class6505<T extends IRecipe<?>> implements Class6504<T> {
    private static String[] field28491;
    private final Function<ResourceLocation, T> field28492;
 

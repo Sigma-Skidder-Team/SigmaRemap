@@ -226,7 +226,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
       super.method3645(var1, var2);
       this.field5344 = method3825(var2.method122("Primary"));
       this.field5345 = method3825(var2.method122("Secondary"));
-      if (var2.method119("CustomName", 8)) {
+      if (var2.contains("CustomName", 8)) {
          this.field5346 = ITextComponent$Serializer.func_240643_a_(var2.method126("CustomName"));
       }
 

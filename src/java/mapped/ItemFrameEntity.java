@@ -6,6 +6,7 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
@@ -13,9 +14,12 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -218,7 +222,7 @@ public class ItemFrameEntity extends Class995 {
    private void method4089(ItemStack var1) {
       if (var1.getItem() == Items.field37955) {
          Class7529 var4 = Class3316.method11861(var1, this.world);
-         var4.method24602(this.field5488, this.method3205());
+         var4.method24602(this.field5488, this.getEntityId());
          var4.method24606(true);
       }
 
@@ -291,12 +295,12 @@ public class ItemFrameEntity extends Class995 {
       if (!this.method4090().isEmpty()) {
          var1.put("Item", this.method4090().method32112(new CompoundNBT()));
          var1.method100("ItemRotation", (byte)this.method4093());
-         var1.method107("ItemDropChance", this.field5494);
+         var1.putFloat("ItemDropChance", this.field5494);
       }
 
-      var1.method100("Facing", (byte)this.field5489.method533());
-      var1.method115("Invisible", this.method3342());
-      var1.method115("Fixed", this.field5495);
+      var1.method100("Facing", (byte)this.field5489.getIndex());
+      var1.putBoolean("Invisible", this.method3342());
+      var1.putBoolean("Fixed", this.field5495);
    }
 
    @Override
@@ -316,14 +320,14 @@ public class ItemFrameEntity extends Class995 {
 
          this.method4092(var5, false);
          this.method4095(var1.method120("ItemRotation"), false);
-         if (var1.method119("ItemDropChance", 99)) {
-            this.field5494 = var1.method124("ItemDropChance");
+         if (var1.contains("ItemDropChance", 99)) {
+            this.field5494 = var1.getFloat("ItemDropChance");
          }
       }
 
-      this.method4077(Direction.method546(var1.method120("Facing")));
-      this.method3347(var1.method132("Invisible"));
-      this.field5495 = var1.method132("Fixed");
+      this.method4077(Direction.byIndex(var1.method120("Facing")));
+      this.method3347(var1.getBoolean("Invisible"));
+      this.field5495 = var1.getBoolean("Fixed");
    }
 
    @Override
@@ -358,6 +362,6 @@ public class ItemFrameEntity extends Class995 {
 
    @Override
    public Packet<?> method2835() {
-      return new SSpawnObjectPacket(this, this.getType(), this.field5489.method533(), this.method4085());
+      return new SSpawnObjectPacket(this, this.getType(), this.field5489.getIndex(), this.method4085());
    }
 }

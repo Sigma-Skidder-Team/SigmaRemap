@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 
 import java.util.BitSet;
 import java.util.List;
@@ -49,19 +51,19 @@ public class Class6207 {
       this.field27690.put(var1, this.field27690.get(var1) + var2);
    }
 
-   public boolean method19123(Class4843<?> var1, IntList var2) {
+   public boolean method19123(IRecipe<?> var1, IntList var2) {
       return this.method19124(var1, var2, 1);
    }
 
-   public boolean method19124(Class4843<?> var1, IntList var2, int var3) {
+   public boolean method19124(IRecipe<?> var1, IntList var2, int var3) {
       return new Class8520(var1).method30187(var3, var2);
    }
 
-   public int method19125(Class4843<?> var1, IntList var2) {
+   public int method19125(IRecipe<?> var1, IntList var2) {
       return this.method19126(var1, Integer.MAX_VALUE, var2);
    }
 
-   public int method19126(Class4843<?> var1, int var2, IntList var3) {
+   public int method19126(IRecipe<?> var1, int var2, IntList var3) {
       return new Class8520(var1).method30200(var2, var3);
    }
 
@@ -89,7 +91,7 @@ public class Class6207 {
    }
 
    public class Class8520 {
-      private final Class4843<?> field38231;
+      private final IRecipe<?> field38231;
       private final List<Class120> field38232;
       private final int field38233;
       private final int[] field38234;
@@ -97,7 +99,7 @@ public class Class6207 {
       private final BitSet field38236;
       private final IntList field38237;
    
-      public Class8520(Class4843<?> var1) {
+      public Class8520(IRecipe<?> var1) {
          this.field38231 = var1;
          this.field38232 = Lists.newArrayList();
          this.field38237 = new IntArrayList();

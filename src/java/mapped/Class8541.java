@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SMapDataPacket;
 

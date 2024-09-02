@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.World;
 
 public class Class899 extends Class898 {
    public int field5139 = 1;
@@ -61,7 +62,7 @@ public class Class899 extends Class898 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("ExplosionPower", 99)) {
+      if (var1.contains("ExplosionPower", 99)) {
          this.field5139 = var1.method122("ExplosionPower");
       }
    }

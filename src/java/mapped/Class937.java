@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.World;
+
 import javax.annotation.Nullable;
 
 public interface Class937 extends Class920 {

@@ -9,6 +9,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class9449 {
    public static final Class9449 field43899 = new Class9449((ITag<Block>)null, (Block)null, Class7340.field31445, Class8811.field39645);

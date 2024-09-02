@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
+import net.minecraft.util.HandSide;
 
 public class Class2798<T extends Class1006 & Class1022> extends Class2797<T> {
    private static String[] field17431;
@@ -34,7 +36,7 @@ public class Class2798<T extends Class1006 & Class1022> extends Class2797<T> {
       this.field17439 = Class2278.field14836;
       ItemStack var7 = var1.getHeldItem(Hand.MAIN_HAND);
       if (var7.getItem() == Items.BOW && var1.method4307()) {
-         if (var1.method2967() != Class2205.field14418) {
+         if (var1.method2967() != HandSide.field14418) {
             this.field17439 = Class2278.field14839;
          } else {
             this.field17440 = Class2278.field14839;
@@ -63,8 +65,8 @@ public class Class2798<T extends Class1006 & Class1022> extends Class2797<T> {
    }
 
    @Override
-   public void method11010(Class2205 var1, MatrixStack var2) {
-      float var5 = var1 != Class2205.field14418 ? -1.0F : 1.0F;
+   public void method11010(HandSide var1, MatrixStack var2) {
+      float var5 = var1 != HandSide.field14418 ? -1.0F : 1.0F;
       Class7219 var6 = this.method11011(var1);
       var6.field31032 += var5;
       var6.method22682(var2);

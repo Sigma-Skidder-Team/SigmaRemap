@@ -45,7 +45,7 @@ public class GommeAntiKB extends Module {
     private void method16352(RecievePacketEvent var1) {
         if (var1.getPacket() instanceof SEntityVelocityPacket) {
             SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();
-            if (var4.method17565() == mc.player.method3205()) {
+            if (var4.method17565() == mc.player.getEntityId()) {
                 this.field23610 = 1;
                 this.field23611 = (double) var4.method17567() / 8000.0;
             }

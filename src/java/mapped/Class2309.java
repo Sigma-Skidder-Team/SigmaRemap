@@ -3,6 +3,8 @@ package mapped;
 import com.mentalfrostbyte.jello.module.impl.render.Projectiles;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.ArrayList;
 import java.util.List;

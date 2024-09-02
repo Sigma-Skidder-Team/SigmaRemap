@@ -25,7 +25,7 @@ public class InvMove extends Module {
     private void method16583(Class4430 var1) {
         if (this.isEnabled()) {
             if (var1.method13977() == mc.gameSettings.keyBindInventory.keycode.keyCode && mc.player.method3337()) {
-                mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10044));
+                mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.STOP_SPRINTING));
             }
         }
     }
@@ -35,7 +35,7 @@ public class InvMove extends Module {
         if (this.isEnabled()) {
             if (this.field23757 && var1.method13932() instanceof CEntityActionPacket && this.getBooleanValueFromSetttingName("AACP")) {
                 CEntityActionPacket var4 = (CEntityActionPacket) var1.method13932();
-                if (var4.getAction() == Class1865.field10043) {
+                if (var4.getAction() == CEntityActionPacket.Action.START_SPRINTING) {
                     var1.method13900(true);
                 }
             }
@@ -50,12 +50,12 @@ public class InvMove extends Module {
                 if (this.field23757 && !var4) {
                     this.field23757 = !this.field23757;
                     if (mc.player.method3337()) {
-                        mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10043));
+                        mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.START_SPRINTING));
                     }
                 } else if (!this.field23757 && var4) {
                     this.field23757 = !this.field23757;
                     if (mc.player.method3337()) {
-                        mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10044));
+                        mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.STOP_SPRINTING));
                     }
                 }
             }

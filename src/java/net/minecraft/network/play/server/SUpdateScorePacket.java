@@ -32,7 +32,7 @@ public class SUpdateScorePacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24662 = var1.readString(40);
-      this.field24665 = var1.<Class2073>method35712(Class2073.class);
+      this.field24665 = var1.<Class2073>readEnumValue(Class2073.class);
       String var4 = var1.readString(16);
       this.field24663 = !Objects.equals(var4, "") ? var4 : null;
       if (this.field24665 != Class2073.field13504) {
@@ -43,7 +43,7 @@ public class SUpdateScorePacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeString(this.field24662);
-      var1.method35713(this.field24665);
+      var1.writeEnumValue(this.field24665);
       var1.writeString(this.field24663 != null ? this.field24663 : "");
       if (this.field24665 != Class2073.field13504) {
          var1.writeVarInt(this.field24664);

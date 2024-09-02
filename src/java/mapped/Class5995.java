@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.UUID;
 
@@ -38,7 +39,7 @@ public class Class5995 {
 
    public static Entity method18605(UUID var0) {
       ServerWorld var3 = method18604();
-      return var3 != null ? var3.method6942(var0) : null;
+      return var3 != null ? var3.getEntityByUuid(var0) : null;
    }
 
    public static TileEntity method18606(BlockPos var0) {

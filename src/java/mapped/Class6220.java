@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 
 public final class Class6220 extends Class6218 {
    private static String[] field27718;

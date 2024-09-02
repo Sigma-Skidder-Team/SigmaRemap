@@ -2,9 +2,12 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 

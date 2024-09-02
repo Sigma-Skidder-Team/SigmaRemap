@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -13,6 +14,9 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -40,13 +44,13 @@ public class Class1090 extends Class1018 {
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method115("Trusting", this.method5072());
+      var1.putBoolean("Trusting", this.method5072());
    }
 
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method5073(var1.method132("Trusting"));
+      this.method5073(var1.getBoolean("Trusting"));
    }
 
    @Override

@@ -10,6 +10,8 @@ import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 

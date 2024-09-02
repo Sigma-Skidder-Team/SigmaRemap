@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.world.World;
 
 public class Class892 extends Class890 {
    private static String[] field5128;

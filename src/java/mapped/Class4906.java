@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonObject;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class4906 extends Class4874<Class4473> {
    private static final ResourceLocation field22740 = new ResourceLocation("target_hit");

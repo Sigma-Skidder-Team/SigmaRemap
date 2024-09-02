@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 public class Class5457 extends Class5455<Class4712> {

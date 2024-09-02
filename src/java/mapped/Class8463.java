@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class8463 {
    public static final Class8463 field36278 = new Class8463((ITag<Fluid>)null, (Fluid)null, Class7340.field31445);

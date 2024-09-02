@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import mapped.*;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;

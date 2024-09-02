@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
 import java.util.function.Supplier;
@@ -27,7 +28,7 @@ public class Class7758 {
       this.field33330 = var2;
    }
 
-   public boolean method25722(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4) {
+   public boolean method25722(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4) {
       return this.field33329.get().method26521(var1, var2, var3, var4);
    }
 }

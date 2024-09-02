@@ -39,11 +39,11 @@ public class Class6500 {
    }
 
    public void method19691(CompoundNBT var1) {
-      var1.method115("Saddle", this.method19694());
+      var1.putBoolean("Saddle", this.method19694());
    }
 
    public void method19692(CompoundNBT var1) {
-      this.method19693(var1.method132("Saddle"));
+      this.method19693(var1.getBoolean("Saddle"));
    }
 
    public void method19693(boolean var1) {

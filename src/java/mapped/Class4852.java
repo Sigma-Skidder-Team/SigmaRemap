@@ -8,7 +8,9 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -33,7 +35,7 @@ public class Class4852 implements Class4842 {
    }
 
    @Override
-   public ResourceLocation method14964() {
+   public ResourceLocation getId() {
       return this.field22645;
    }
 

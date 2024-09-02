@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class4305;
+import net.minecraft.item.ItemStack;
 
 public class Class4372 extends Class4247 {
    private static String[] field20602;

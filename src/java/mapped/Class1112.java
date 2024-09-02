@@ -11,6 +11,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -117,7 +118,7 @@ public class Class1112 extends Class1111 implements Class1008 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("ExplosionPower", 99)) {
+      if (var1.contains("ExplosionPower", 99)) {
          this.field6092 = var1.method122("ExplosionPower");
       }
    }

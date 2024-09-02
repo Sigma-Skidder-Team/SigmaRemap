@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 
@@ -14,7 +15,7 @@ public class Class947 extends TileEntity implements Class946 {
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      if (var2.method119("RecordItem", 10)) {
+      if (var2.contains("RecordItem", 10)) {
          this.method3804(ItemStack.method32104(var2.getCompound("RecordItem")));
       }
    }

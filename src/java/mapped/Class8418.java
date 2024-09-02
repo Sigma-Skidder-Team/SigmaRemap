@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongArrayList;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.World;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -75,7 +76,7 @@ public class Class8418 {
 
       for (String var9 : this.field36094) {
          Structure var10 = (Structure) Structure.field_236365_a_.get(var9.toLowerCase(Locale.ROOT));
-         if (!var7.method119(var9, 12) && var10 != null) {
+         if (!var7.contains(var9, 12) && var10 != null) {
             byte var11 = 8;
             LongArrayList var12 = new LongArrayList();
 

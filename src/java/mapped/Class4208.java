@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -48,7 +50,7 @@ public class Class4208 extends Class4194 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       for (int var10 = 0; var10 < this.field20515; var10++) {
          this.method12923(var1, Blocks.field36615.method11579(), 0, 0, var10, var5);
          this.method12923(var1, Blocks.field36615.method11579(), 1, 0, var10, var5);

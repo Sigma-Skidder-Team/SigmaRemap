@@ -34,8 +34,8 @@ public class Class9819 {
             if (this.field45878 == 2) {
                boolean var4 = ColorUtils.method17716();
                if (var4) {
-                  Class6799 var5 = new Class6799();
-                  var5.field29607 = true;
+                  PlayerAbilities var5 = new PlayerAbilities();
+                  var5.isFlying = true;
                   Entity var6 = null;
 
                   for (Entity var8 : ColorUtils.method17708()) {
@@ -74,7 +74,7 @@ public class Class9819 {
                               this.field45880.getConnection().sendPacket(new CSteerBoatPacket(false, false));
                               this.field45880
                                  .getConnection()
-                                 .sendPacket(new Class5606(this.field45880.player.rotationYaw, this.field45880.player.rotationPitch, false));
+                                 .sendPacket(new CPlayerPacket.RotationPacket(this.field45880.player.rotationYaw, this.field45880.player.rotationPitch, false));
                               this.field45880.getConnection().sendPacket(new CInputPacket(0.0F, 1.0F, false, false));
                               BoatEntity var10 = new BoatEntity(
                                  this.field45880.world, var9x.method29876() + 0.5, var9x.method29877(), var9x.method29878() + 0.5
@@ -83,21 +83,21 @@ public class Class9819 {
                               var10.rotationPitch = var7.rotationPitch;
                               this.field45880.getConnection().sendPacket(new CMoveVehiclePacket(var10));
                            } else if (var4) {
-                              this.field45880.getConnection().sendPacket(new Class5605(var9x.method29876(), var9x.method29877(), var9x.method29878(), false));
+                              this.field45880.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var9x.method29876(), var9x.method29877(), var9x.method29878(), false));
                            } else {
-                              this.field45880.getConnection().sendPacket(new Class5605(var9x.method29876(), var9x.method29877(), var9x.method29878(), true));
+                              this.field45880.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var9x.method29876(), var9x.method29877(), var9x.method29878(), true));
                            }
                         }
 
                         if (var4) {
-                           this.field45880.getConnection().sendPacket(new Class5605(var4x.field36296, var4x.field36297, var4x.field36298, false));
+                           this.field45880.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var4x.field36296, var4x.field36297, var4x.field36298, false));
                         }
 
                         this.field45880.player.setPosition(var4x.field36296, var4x.field36297, var4x.field36298);
                         this.field45879 = null;
                         if (var4) {
-                           Class6799 var12 = new Class6799();
-                           var12.field29607 = false;
+                           PlayerAbilities var12 = new PlayerAbilities();
+                           var12.isFlying = false;
                            this.field45880.getConnection().sendPacket(new CPlayerAbilitiesPacket(var12));
                         }
                      } catch (Exception var11) {

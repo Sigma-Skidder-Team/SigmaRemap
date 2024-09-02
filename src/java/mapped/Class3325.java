@@ -3,8 +3,10 @@ package mapped;
 import java.util.List;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 public class Class3325 extends Class3324 {
    private static String[] field18833;

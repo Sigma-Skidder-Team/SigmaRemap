@@ -21,7 +21,7 @@ public class SEntityTeleportPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SEntityTeleportPacket(Entity var1) {
-      this.field24825 = var1.method3205();
+      this.field24825 = var1.getEntityId();
       this.field24826 = var1.getPosX();
       this.field24827 = var1.getPosY();
       this.field24828 = var1.getPosZ();

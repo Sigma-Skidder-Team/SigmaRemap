@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.function.Function;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 

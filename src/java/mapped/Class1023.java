@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.vector.Vector3d;
 
 import javax.annotation.Nullable;
 

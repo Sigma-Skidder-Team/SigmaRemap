@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.function.Consumer;
 
 public interface Class6549 {

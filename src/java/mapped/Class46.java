@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 
@@ -40,12 +41,12 @@ public class Class46 extends ArrayList<Class9346> {
 
       for (int var4 = 0; var4 < this.size(); var4++) {
          Class9346 var5 = this.get(var4);
-         var1.method35724(var5.method35365());
-         var1.method35724(var5.method35368());
+         var1.writeItemStack(var5.method35365());
+         var1.writeItemStack(var5.method35368());
          ItemStack var6 = var5.method35367();
          var1.writeBoolean(!var6.isEmpty());
          if (!var6.isEmpty()) {
-            var1.method35724(var6);
+            var1.writeItemStack(var6);
          }
 
          var1.writeBoolean(var5.method35382());
@@ -63,11 +64,11 @@ public class Class46 extends ArrayList<Class9346> {
       int var4 = var0.readByte() & 255;
 
       for (int var5 = 0; var5 < var4; var5++) {
-         ItemStack var6 = var0.method35726();
-         ItemStack var7 = var0.method35726();
+         ItemStack var6 = var0.readItemStack();
+         ItemStack var7 = var0.readItemStack();
          ItemStack var8 = ItemStack.EMPTY;
          if (var0.readBoolean()) {
-            var8 = var0.method35726();
+            var8 = var0.readItemStack();
          }
 
          boolean var9 = var0.readBoolean();

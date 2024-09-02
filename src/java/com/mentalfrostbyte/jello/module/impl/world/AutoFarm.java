@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 

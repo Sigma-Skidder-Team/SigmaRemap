@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.ArrayList;
 import java.util.Collections;

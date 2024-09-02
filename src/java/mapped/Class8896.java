@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
 

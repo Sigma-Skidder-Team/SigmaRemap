@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 
 public interface Class7329 {
    Vector3d method23228(Class6619 var1);

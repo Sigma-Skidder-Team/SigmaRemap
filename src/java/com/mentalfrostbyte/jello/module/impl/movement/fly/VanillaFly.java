@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import mapped.*;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.ArrayList;
@@ -84,26 +85,26 @@ public class VanillaFly extends Module {
                         double var6 = var1.method13911();
                        List<Double> var8 = new ArrayList();
                         if (!(var6 - var4 > 9.0)) {
-                            mc.getConnection().sendPacket(new Class5605(var1.method13909(), var4, var1.method13913(), true));
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.method13909(), var4, var1.method13913(), true));
                         } else {
                             while (var6 > var4 + 9.0) {
                                 var6 -= 9.0;
                                 var8.add(var6);
-                                mc.getConnection().sendPacket(new Class5605(var1.method13909(), var6, var1.method13913(), true));
+                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.method13909(), var6, var1.method13913(), true));
                             }
 
                             for (Double var10 : var8) {
-                                mc.getConnection().sendPacket(new Class5605(var1.method13909(), var10, var1.method13913(), true));
+                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.method13909(), var10, var1.method13913(), true));
                             }
 
-                            mc.getConnection().sendPacket(new Class5605(var1.method13909(), var4, var1.method13913(), true));
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.method13909(), var4, var1.method13913(), true));
                             Collections.reverse(var8);
 
                             for (Double var12 : var8) {
-                                mc.getConnection().sendPacket(new Class5605(var1.method13909(), var12, var1.method13913(), true));
+                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.method13909(), var12, var1.method13913(), true));
                             }
 
-                            mc.getConnection().sendPacket(new Class5605(var1.method13909(), var1.method13911(), var1.method13913(), true));
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.method13909(), var1.method13911(), var1.method13913(), true));
                         }
 
                         this.field23996 = 0;

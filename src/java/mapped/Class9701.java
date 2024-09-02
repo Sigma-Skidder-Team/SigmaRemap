@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.HashSet;
@@ -92,7 +93,7 @@ public class Class9701 {
             var1.method27719(false);
          }
 
-         BlockPos var7 = var1.method27718().method8353();
+         BlockPos var7 = var1.method27718().toImmutable();
          if (var2 != null) {
             var2.remove(var7);
          }

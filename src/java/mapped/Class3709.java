@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class3709 extends Class3676<LivingEntity> {
    private static String[] field19773;

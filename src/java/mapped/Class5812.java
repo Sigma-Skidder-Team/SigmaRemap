@@ -3,7 +3,10 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.Set;
@@ -134,7 +137,7 @@ public abstract class Class5812 {
       return var5 == null ? ItemStack.EMPTY : var5.method18265();
    }
 
-   public ItemStack method18132(int var1, int var2, Class2259 var3, PlayerEntity var4) {
+   public ItemStack method18132(int var1, int var2, ClickType var3, PlayerEntity var4) {
       try {
          return this.method18133(var1, var2, var3, var4);
       } catch (Exception var10) {
@@ -150,15 +153,15 @@ public abstract class Class5812 {
       }
    }
 
-   private ItemStack method18133(int var1, int var2, Class2259 var3, PlayerEntity var4) {
+   private ItemStack method18133(int var1, int var2, ClickType var3, PlayerEntity var4) {
       ItemStack var7 = ItemStack.EMPTY;
       PlayerInventory var8 = var4.inventory;
-      if (var3 != Class2259.field14699) {
+      if (var3 != ClickType.field14699) {
          if (this.field25474 != 0) {
             this.method18147();
-         } else if ((var3 == Class2259.field14694 || var3 == Class2259.field14695) && (var2 == 0 || var2 == 1)) {
+         } else if ((var3 == ClickType.field14694 || var3 == ClickType.field14695) && (var2 == 0 || var2 == 1)) {
             if (var1 != -999) {
-               if (var3 != Class2259.field14695) {
+               if (var3 != ClickType.field14695) {
                   if (var1 < 0) {
                      return ItemStack.EMPTY;
                   }
@@ -256,22 +259,22 @@ public abstract class Class5812 {
                   var4.method2882(var8.method4057().method32106(1), true);
                }
             }
-         } else if (var3 != Class2259.field14696) {
-            if (var3 == Class2259.field14697 && var4.abilities.isCreativeMode && var8.method4057().isEmpty() && var1 >= 0) {
+         } else if (var3 != ClickType.field14696) {
+            if (var3 == ClickType.field14697 && var4.abilities.isCreativeMode && var8.method4057().isEmpty() && var1 >= 0) {
                Class5839 var21 = this.field25468.get(var1);
                if (var21 != null && var21.method18266()) {
                   ItemStack var28 = var21.method18265().copy();
                   var28.method32180(var28.method32113());
                   var8.method4056(var28);
                }
-            } else if (var3 == Class2259.field14698 && var8.method4057().isEmpty() && var1 >= 0) {
+            } else if (var3 == ClickType.field14698 && var8.method4057().isEmpty() && var1 >= 0) {
                Class5839 var20 = this.field25468.get(var1);
                if (var20 != null && var20.method18266() && var20.method18273(var4)) {
                   ItemStack var27 = var20.method18272(var2 != 0 ? var20.method18265().getCount() : 1);
                   var20.method18264(var4, var27);
                   var4.method2882(var27, true);
                }
-            } else if (var3 == Class2259.field14700 && var1 >= 0) {
+            } else if (var3 == ClickType.field14700 && var1 >= 0) {
                Class5839 var19 = this.field25468.get(var1);
                ItemStack var26 = var8.method4057();
                if (!var26.isEmpty() && (var19 == null || !var19.method18266() || !var19.method18273(var4))) {

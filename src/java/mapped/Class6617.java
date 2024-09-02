@@ -8,6 +8,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.client.CTabCompletePacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.Collection;

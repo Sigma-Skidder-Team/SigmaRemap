@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CRenameItemPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;

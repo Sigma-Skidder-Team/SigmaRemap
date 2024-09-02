@@ -1,44 +1,44 @@
 package net.minecraft.network.play.client;
 
-import mapped.Class6799;
-import mapped.IServerPlayNetHandler;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
 public class CPlayerAbilitiesPacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24907;
-   private boolean field24908;
+    private boolean flying;
 
    public CPlayerAbilitiesPacket() {
    }
 
-   public CPlayerAbilitiesPacket(Class6799 var1) {
-      this.field24908 = var1.field29607;
+   public CPlayerAbilitiesPacket(PlayerAbilities capabilities) {
+      this.flying = capabilities.isFlying;
    }
 
    @Override
-   public void readPacketData(PacketBuffer var1) throws IOException {
-      byte var4 = var1.readByte();
-      this.field24908 = false;
+   public void readPacketData(PacketBuffer buf) throws IOException {
+      byte b0 = buf.readByte();
+      this.flying = (b0 & 2) != 0;
    }
 
    @Override
-   public void writePacketData(PacketBuffer var1) throws IOException {
-      byte var4 = 0;
-      if (this.field24908) {
-         var4 = (byte)(var4 | 2);
+   public void writePacketData(PacketBuffer buf) throws IOException {
+      byte b0 = 0;
+
+      if (this.flying)
+      {
+         b0 = (byte)(b0 | 2);
       }
 
-      var1.writeByte(var4);
+      buf.writeByte(b0);
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
       var1.processPlayerAbilities(this);
    }
 
-   public boolean method17640() {
-      return this.field24908;
+   public boolean isFlying() {
+      return this.flying;
    }
 }

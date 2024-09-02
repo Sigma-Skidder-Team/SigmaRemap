@@ -3,7 +3,9 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
 
@@ -17,19 +19,19 @@ public class Class4210 extends Class4209 {
 
    public Class4210(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33461, var2);
-      this.field20520 = var2.method132("Witch");
-      this.field20521 = var2.method132("Cat");
+      this.field20520 = var2.getBoolean("Witch");
+      this.field20521 = var2.getBoolean("Cat");
    }
 
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method115("Witch", this.field20520);
-      var1.method115("Cat", this.field20521);
+      var1.putBoolean("Witch", this.field20520);
+      var1.putBoolean("Cat", this.field20521);
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       if (!this.method13002(var1, var5, 0)) {
          return false;
       } else {

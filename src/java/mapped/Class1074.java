@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -10,6 +11,8 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
@@ -57,7 +60,7 @@ public class Class1074 extends AbstractHorseEntity {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method4992(var1.method122("Variant"));
-      if (var1.method119("ArmorItem", 10)) {
+      if (var1.contains("ArmorItem", 10)) {
          ItemStack var4 = ItemStack.method32104(var1.getCompound("ArmorItem"));
          if (!var4.isEmpty() && this.method4900(var4)) {
             this.field5890.method3621(1, var4);

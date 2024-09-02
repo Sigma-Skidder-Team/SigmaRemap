@@ -37,7 +37,7 @@ public class ElytraFly extends Module {
                     this.method15999(false);
                 }
             } else if (!mc.player.method3165()) {
-                mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10048));
+                mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.START_FALL_FLYING));
                 mc.player.method3349(7, true);
             }
         }
@@ -96,7 +96,7 @@ public class ElytraFly extends Module {
                 Entity var5 = mc.world.getEntityByID(var4.method17565());
                 if (var5 instanceof Class888) {
                     Class888 var6 = (Class888) var5;
-                    if (var6.field5125 != null && var6.field5125.method3205() == mc.player.method3205()) {
+                    if (var6.field5125 != null && var6.field5125.getEntityId() == mc.player.getEntityId()) {
                         this.field23529 = this.field23529 + (float) var4.field24801 / 8000.0F;
                         this.field23531 = this.field23531 + (float) var4.field24803 / 8000.0F;
                         this.field23530 = this.field23530 + (float) var4.field24802 / 8000.0F;

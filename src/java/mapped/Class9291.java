@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;

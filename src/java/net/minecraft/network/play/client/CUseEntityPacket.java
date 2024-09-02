@@ -1,9 +1,9 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.util.Hand;
-import mapped.IServerPlayNetHandler;
-import mapped.Vector3d;
-import mapped.World;
+import net.minecraft.network.play.IServerPlayNetHandler;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
@@ -12,67 +12,75 @@ import java.io.IOException;
 import javax.annotation.Nullable;
 
 public class CUseEntityPacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24438;
-   private int field24439;
-   private Action field24440;
-   private Vector3d field24441;
-   private Hand field24442;
-   private boolean field24443;
+   private int entityId;
+   private CUseEntityPacket.Action action;
+   private Vector3d hitVec;
+   private Hand hand;
+   private boolean field_241791_e_;
 
    public CUseEntityPacket() {
    }
 
-   public CUseEntityPacket(Entity var1, boolean var2) {
-      this.field24439 = var1.method3205();
-      this.field24440 = Action.ATTACK;
-      this.field24443 = var2;
+   public CUseEntityPacket(Entity entityIn, boolean p_i46877_2_)
+   {
+      this.entityId = entityIn.getEntityId();
+      this.action = CUseEntityPacket.Action.ATTACK;
+      this.field_241791_e_ = p_i46877_2_;
    }
 
-   public CUseEntityPacket(Entity var1, Hand var2, boolean var3) {
-      this.field24439 = var1.method3205();
-      this.field24440 = Action.INTERACT;
-      this.field24442 = var2;
-      this.field24443 = var3;
+   public CUseEntityPacket(Entity entityIn, Hand handIn, boolean p_i46878_3_)
+   {
+      this.entityId = entityIn.getEntityId();
+      this.action = CUseEntityPacket.Action.INTERACT;
+      this.hand = handIn;
+      this.field_241791_e_ = p_i46878_3_;
    }
 
-   public CUseEntityPacket(Entity var1, Hand var2, Vector3d var3, boolean var4) {
-      this.field24439 = var1.method3205();
-      this.field24440 = Action.INTERACT_AT;
-      this.field24442 = var2;
-      this.field24441 = var3;
-      this.field24443 = var4;
-   }
-
-   @Override
-   public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24439 = var1.readVarInt();
-      this.field24440 = var1.<Action>method35712(Action.class);
-      if (this.field24440 == Action.INTERACT_AT) {
-         this.field24441 = new Vector3d((double)var1.readFloat(), (double)var1.readFloat(), (double)var1.readFloat());
-      }
-
-      if (this.field24440 == Action.INTERACT || this.field24440 == Action.INTERACT_AT) {
-         this.field24442 = var1.<Hand>method35712(Hand.class);
-      }
-
-      this.field24443 = var1.readBoolean();
+   public CUseEntityPacket(Entity entityIn, Hand handIn, Vector3d hitVecIn, boolean p_i47098_4_)
+   {
+      this.entityId = entityIn.getEntityId();
+      this.action = CUseEntityPacket.Action.INTERACT_AT;
+      this.hand = handIn;
+      this.hitVec = hitVecIn;
+      this.field_241791_e_ = p_i47098_4_;
    }
 
    @Override
-   public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeVarInt(this.field24439);
-      var1.method35713(this.field24440);
-      if (this.field24440 == Action.INTERACT_AT) {
-         var1.writeFloat((float)this.field24441.x);
-         var1.writeFloat((float)this.field24441.y);
-         var1.writeFloat((float)this.field24441.z);
+   public void readPacketData(PacketBuffer buf) throws IOException {
+      this.entityId = buf.readVarInt();
+      this.action = buf.readEnumValue(CUseEntityPacket.Action.class);
+
+      if (this.action == CUseEntityPacket.Action.INTERACT_AT)
+      {
+         this.hitVec = new Vector3d((double)buf.readFloat(), (double)buf.readFloat(), (double)buf.readFloat());
       }
 
-      if (this.field24440 == Action.INTERACT || this.field24440 == Action.INTERACT_AT) {
-         var1.method35713(this.field24442);
+      if (this.action == CUseEntityPacket.Action.INTERACT || this.action == CUseEntityPacket.Action.INTERACT_AT)
+      {
+         this.hand = buf.readEnumValue(Hand.class);
       }
 
-      var1.writeBoolean(this.field24443);
+      this.field_241791_e_ = buf.readBoolean();
+   }
+
+   @Override
+   public void writePacketData(PacketBuffer buf) throws IOException {
+      buf.writeVarInt(this.entityId);
+      buf.writeEnumValue(this.action);
+
+      if (this.action == CUseEntityPacket.Action.INTERACT_AT)
+      {
+         buf.writeFloat((float)this.hitVec.x);
+         buf.writeFloat((float)this.hitVec.y);
+         buf.writeFloat((float)this.hitVec.z);
+      }
+
+      if (this.action == CUseEntityPacket.Action.INTERACT || this.action == CUseEntityPacket.Action.INTERACT_AT)
+      {
+         buf.writeEnumValue(this.hand);
+      }
+
+      buf.writeBoolean(this.field_241791_e_);
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
@@ -81,24 +89,24 @@ public class CUseEntityPacket implements Packet<IServerPlayNetHandler> {
 
    @Nullable
    public Entity getEntityFromWorld(World var1) {
-      return var1.getEntityByID(this.field24439);
+      return var1.getEntityByID(this.entityId);
    }
 
    public Action getAction() {
-      return this.field24440;
+      return this.action;
    }
 
    @Nullable
    public Hand getHand() {
-      return this.field24442;
+      return this.hand;
    }
 
    public Vector3d getHitVec() {
-      return this.field24441;
+      return this.hitVec;
    }
 
    public boolean func_241792_e_() {
-      return this.field24443;
+      return this.field_241791_e_;
    }
 
     public enum Action {

@@ -28,14 +28,14 @@ public class SChatPacket implements Packet<IClientPlayNetHandler> {
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24919 = var1.method35710();
       this.field24920 = ChatType.byId(var1.readByte());
-      this.field24921 = var1.method35717();
+      this.field24921 = var1.readUniqueId();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeTextComponent(this.field24919);
       var1.writeByte(this.field24920.getId());
-      var1.method35716(this.field24921);
+      var1.writeUniqueId(this.field24921);
    }
 
    public void processPacket(IClientPlayNetHandler var1) {

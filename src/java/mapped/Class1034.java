@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -14,6 +15,8 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -83,11 +86,11 @@ public class Class1034 extends Class1035 implements Class1023 {
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.method3005()) {
-         var1.method115("IsBaby", true);
+         var1.putBoolean("IsBaby", true);
       }
 
       if (this.field5747) {
-         var1.method115("CannotHunt", true);
+         var1.putBoolean("CannotHunt", true);
       }
 
       var1.put("Inventory", this.field5746.method3683());
@@ -96,8 +99,8 @@ public class Class1034 extends Class1035 implements Class1023 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4308(var1.method132("IsBaby"));
-      this.method4617(var1.method132("CannotHunt"));
+      this.method4308(var1.getBoolean("IsBaby"));
+      this.method4617(var1.getBoolean("CannotHunt"));
       this.field5746.method3682(var1.method131("Inventory", 10));
    }
 

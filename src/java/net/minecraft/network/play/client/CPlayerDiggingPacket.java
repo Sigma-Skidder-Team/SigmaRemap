@@ -1,7 +1,7 @@
 package net.minecraft.network.play.client;
 
-import mapped.Direction;
-import mapped.IServerPlayNetHandler;
+import net.minecraft.util.Direction;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
@@ -9,59 +9,56 @@ import net.minecraft.util.math.BlockPos;
 import java.io.IOException;
 
 public class CPlayerDiggingPacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24381;
-   private BlockPos field24382;
-   private Direction field24383;
-   private Action field24384;
+    private BlockPos position;
+   private Direction facing;
+   private Action action;
 
    public CPlayerDiggingPacket() {
    }
 
    public CPlayerDiggingPacket(Action var1, BlockPos var2, Direction var3) {
-      this.field24384 = var1;
-      this.field24382 = var2.method8353();
-      this.field24383 = var3;
+      this.action = var1;
+      this.position = var2.toImmutable();
+      this.facing = var3;
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24384 = var1.<Action>method35712(Action.class);
-      this.field24382 = var1.readBlockPos();
-      this.field24383 = Direction.method546(var1.readUnsignedByte());
+      this.action = var1.readEnumValue(Action.class);
+      this.position = var1.readBlockPos();
+      this.facing = Direction.byIndex(var1.readUnsignedByte());
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.field24384);
-      var1.writeBlockPos(this.field24382);
-      var1.writeByte(this.field24383.method533());
+      var1.writeEnumValue(this.action);
+      var1.writeBlockPos(this.position);
+      var1.writeByte(this.facing.getIndex());
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
       var1.processPlayerDigging(this);
    }
 
-   public BlockPos method17272() {
-      return this.field24382;
+   public BlockPos getPosition() {
+      return this.position;
    }
 
-   public Direction method17273() {
-      return this.field24383;
+   public Direction getFacing() {
+      return this.facing;
    }
 
-   public Action method17274() {
-      return this.field24384;
+   public Action getAction() {
+      return this.action;
    }
 
    public enum Action {
-      field13484,
-      field13485,
-      field13486,
-      field13487,
-      field13488,
-      field13489,
+      START_DESTROY_BLOCK,
+      ABORT_DESTROY_BLOCK,
+      STOP_DESTROY_BLOCK,
+      DROP_ALL_ITEMS,
+      DROP_ITEM,
+      RELEASE_USE_ITEM,
       SWAP_ITEM_WITH_OFFHAND;
-
-      private static final Action[] field13491 = new Action[]{field13484, field13485, field13486, field13487, field13488, field13489, SWAP_ITEM_WITH_OFFHAND};
    }
 }

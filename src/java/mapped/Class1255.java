@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 
 import java.util.Iterator;
 import java.util.List;
@@ -28,7 +30,7 @@ public abstract class Class1255 extends Class1254 {
    }
 
    @Override
-   public void method5858(Class4843<?> var1, List<Class5839> var2) {
+   public void method5858(IRecipe<?> var1, List<Class5839> var2) {
       ItemStack var5 = var1.getRecipeOutput();
       this.field6637.method34738(var1);
       this.field6637.method34734(Class120.method340(var5), ((Class5839)var2.get(2)).field25580, ((Class5839)var2.get(2)).field25581);

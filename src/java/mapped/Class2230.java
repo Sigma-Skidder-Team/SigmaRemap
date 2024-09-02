@@ -5,6 +5,7 @@ import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import it.unimi.dsi.fastutil.objects.ObjectSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
@@ -102,7 +103,7 @@ public enum Class2230 implements Class2234 {
                }
             }
 
-            var11.get(var10).add(var5.method8353());
+            var11.get(var10).add(var5.toImmutable());
          }
 
          return var1;
@@ -127,7 +128,7 @@ public enum Class2230 implements Class2234 {
                              var4.method8377(var11, var16);
                              BlockState var17 = var1.getBlockState(var4);
                              if (var17.method23462(Class8820.field39747) && var12.method23463(Class8820.field39747) > var6) {
-                                 var9.add(var4.method8353());
+                                 var9.add(var4.toImmutable());
                              }
                          }
                      }

@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import mapped.Effect;
 import net.minecraft.network.PacketBuffer;
-import mapped.World;
+import net.minecraft.world.World;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;

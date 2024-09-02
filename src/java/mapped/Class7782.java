@@ -11,9 +11,13 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -183,7 +187,7 @@ public class Class7782 {
                   var35.method3434(var35.method3433().method11339(var38 * var50, var40 * var50, var42 * var50));
                   if (var35 instanceof PlayerEntity) {
                      PlayerEntity var52 = (PlayerEntity)var35;
-                     if (!var52.isSpectator() && (!var52.isCreative() || !var52.abilities.field29607)) {
+                     if (!var52.isSpectator() && (!var52.isCreative() || !var52.abilities.isFlying)) {
                         this.field33382.put(var52, new Vector3d(var38 * var48, var40 * var48, var42 * var48));
                      }
                   }
@@ -225,7 +229,7 @@ public class Class7782 {
             BlockState var8 = this.field33373.getBlockState(var7);
             Block var9 = var8.getBlock();
             if (!var8.isAir()) {
-               BlockPos var10 = var7.method8353();
+               BlockPos var10 = var7.toImmutable();
                this.field33373.getProfiler().startSection("explosion_blocks");
                if (var9.method11576(this) && this.field33373 instanceof ServerWorld) {
                   TileEntity var11 = !var9.isTileEntityProvider() ? null : this.field33373.getTileEntity(var7);

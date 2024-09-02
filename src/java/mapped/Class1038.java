@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -10,6 +11,8 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.time.LocalDate;
@@ -328,8 +331,8 @@ public class Class1038 extends Class1009 {
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method115("IsBaby", this.method3005());
-      var1.method115("CanBreakDoors", this.method4655());
+      var1.putBoolean("IsBaby", this.method3005());
+      var1.putBoolean("CanBreakDoors", this.method4655());
       var1.method102("InWaterTime", !this.method3250() ? -1 : this.field5766);
       var1.method102("DrownedConversionTime", !this.method4654() ? -1 : this.field5767);
    }
@@ -337,10 +340,10 @@ public class Class1038 extends Class1009 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4308(var1.method132("IsBaby"));
-      this.method4656(var1.method132("CanBreakDoors"));
+      this.method4308(var1.getBoolean("IsBaby"));
+      this.method4656(var1.getBoolean("CanBreakDoors"));
       this.field5766 = var1.method122("InWaterTime");
-      if (var1.method119("DrownedConversionTime", 99) && var1.method122("DrownedConversionTime") > -1) {
+      if (var1.contains("DrownedConversionTime", 99) && var1.method122("DrownedConversionTime") > -1) {
          this.method4657(var1.method122("DrownedConversionTime"));
       }
    }

@@ -3,6 +3,8 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.client.CPlayerPacket;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class9567 {
    private static String[] field44553;
@@ -12,7 +14,7 @@ public class Class9567 {
       double var2 = 0.2873;
       float var4 = 1.0F;
       Class9805 var5 = mc.player.method3085(Attributes.MOVEMENT_SPEED);
-      var4 = (float)((double)var4 * ((var5.method38674() / (double) mc.player.abilities.method20716() + 1.0) / 2.0));
+      var4 = (float)((double)var4 * ((var5.method38674() / (double) mc.player.abilities.getWalkSpeed() + 1.0) / 2.0));
       if (mc.player.method3337()) {
          var4 = (float)((double)var4 - 0.15);
       }
@@ -250,11 +252,11 @@ public class Class9567 {
       double var6 = mc.player.getPosZ();
 
       for (int var8 = 0; var8 < 49 + method37079() * 17; var8++) {
-         mc.getConnection().sendPacket(new Class5605(var2, var4 + 0.06248, var6, false));
-         mc.getConnection().sendPacket(new Class5605(var2, var4, var6, false));
+         mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var2, var4 + 0.06248, var6, false));
+         mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var2, var4, var6, false));
       }
 
-      mc.getConnection().sendPacket(new Class5605(var2, var4, var6, true));
+      mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var2, var4, var6, true));
    }
 
    public static float method37092(Class4435 var0, double var1, float var3, float var4, float var5) {

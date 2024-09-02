@@ -74,7 +74,7 @@ public class LegitSpeed extends Module {
         if (this.isEnabled()) {
             if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
                 SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();
-                if (var4.method17565() == mc.player.method3205()) {
+                if (var4.method17565() == mc.player.getEntityId()) {
                     this.field24011 = this.field24011 + (float) var4.field24801 / 8000.0F;
                     this.field24012 = this.field24012 + (float) var4.field24803 / 8000.0F;
                     this.field24013 = true;

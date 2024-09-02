@@ -3,15 +3,20 @@ package mapped;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.HandSide;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -191,13 +196,13 @@ public class ArmorStandEntity extends LivingEntity {
       }
 
       var1.put("HandItems", var9);
-      var1.method115("Invisible", this.method3342());
-      var1.method115("Small", this.method4197());
-      var1.method115("ShowArms", this.method4199());
+      var1.putBoolean("Invisible", this.method3342());
+      var1.putBoolean("Small", this.method4197());
+      var1.putBoolean("ShowArms", this.method4199());
       var1.method102("DisabledSlots", this.field5585);
-      var1.method115("NoBasePlate", this.method4201());
+      var1.putBoolean("NoBasePlate", this.method4201());
       if (this.method4203()) {
-         var1.method115("Marker", this.method4203());
+         var1.putBoolean("Marker", this.method4203());
       }
 
       var1.put("Pose", this.method4187());
@@ -206,7 +211,7 @@ public class ArmorStandEntity extends LivingEntity {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("ArmorItems", 9)) {
+      if (var1.contains("ArmorItems", 9)) {
          ListNBT var4 = var1.method131("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field5582.size(); var5++) {
@@ -214,7 +219,7 @@ public class ArmorStandEntity extends LivingEntity {
          }
       }
 
-      if (var1.method119("HandItems", 9)) {
+      if (var1.contains("HandItems", 9)) {
          ListNBT var6 = var1.method131("HandItems", 10);
 
          for (int var8 = 0; var8 < this.field5581.size(); var8++) {
@@ -222,12 +227,12 @@ public class ArmorStandEntity extends LivingEntity {
          }
       }
 
-      this.method3347(var1.method132("Invisible"));
-      this.method4196(var1.method132("Small"));
-      this.method4198(var1.method132("ShowArms"));
+      this.method3347(var1.getBoolean("Invisible"));
+      this.method4196(var1.getBoolean("Small"));
+      this.method4198(var1.getBoolean("ShowArms"));
       this.field5585 = var1.method122("DisabledSlots");
-      this.method4200(var1.method132("NoBasePlate"));
-      this.method4202(var1.method132("Marker"));
+      this.method4200(var1.getBoolean("NoBasePlate"));
+      this.method4202(var1.getBoolean("Marker"));
       this.noClip = !this.method4185();
       CompoundNBT var7 = var1.getCompound("Pose");
       this.method4186(var7);
@@ -406,7 +411,7 @@ public class ArmorStandEntity extends LivingEntity {
             boolean var7 = "player".equals(var1.method31142());
             if (!var7 && !var5) {
                return false;
-            } else if (var1.method31109() instanceof PlayerEntity && !((PlayerEntity)var1.method31109()).abilities.field29610) {
+            } else if (var1.method31109() instanceof PlayerEntity && !((PlayerEntity)var1.method31109()).abilities.allowEdit) {
                return false;
             } else if (var1.method31146()) {
                this.method4195();
@@ -725,8 +730,8 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    @Override
-   public Class2205 method2967() {
-      return Class2205.field14418;
+   public HandSide method2967() {
+      return HandSide.field14418;
    }
 
    @Override
@@ -802,7 +807,7 @@ public class ArmorStandEntity extends LivingEntity {
 
             if (var9 > var6) {
                var6 = var9;
-               var5 = var8.method8353();
+               var5 = var8.toImmutable();
             }
          }
 

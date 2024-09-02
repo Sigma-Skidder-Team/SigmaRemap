@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
 public class Class4845 extends Class4844 {
    private static String[] field22624;

@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import org.lwjgl.opengl.GL11;
 
 import java.util.List;

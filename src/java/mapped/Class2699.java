@@ -49,7 +49,7 @@ public abstract class Class2699 extends Class2595 {
                      }
                   }
 
-                  if (var3 instanceof PlayerEntity && ((PlayerEntity)var3).abilities.field29606) {
+                  if (var3 instanceof PlayerEntity && ((PlayerEntity)var3).abilities.disableDamage) {
                      return false;
                   } else {
                      this.field17153.method4233(var3);

@@ -44,7 +44,7 @@ public class Class2891<T extends Entity> extends Class2802<T> {
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
       super.method10998((T)var1, var2, var3, var4, var5, var6);
       this.field17455.method22679(0.0F, -2.0F, 0.0F);
-      float var9 = 0.01F * (float)(var1.method3205() % 10);
+      float var9 = 0.01F * (float)(var1.getEntityId() % 10);
       this.field17455.field31035 = MathHelper.sin((float)var1.ticksExisted * var9) * 4.5F * (float) (Math.PI / 180.0);
       this.field17455.field31036 = 0.0F;
       this.field17455.field31037 = MathHelper.cos((float)var1.ticksExisted * var9) * 2.5F * (float) (Math.PI / 180.0);

@@ -27,7 +27,7 @@ public final class Class8354 {
    public static GameProfile method29278(CompoundNBT var0) {
       String var3 = null;
       UUID var4 = null;
-      if (var0.method119("Name", 8)) {
+      if (var0.contains("Name", 8)) {
          var3 = var0.method126("Name");
       }
 
@@ -37,7 +37,7 @@ public final class Class8354 {
 
       try {
          GameProfile var5 = new GameProfile(var4, var3);
-         if (var0.method119("Properties", 10)) {
+         if (var0.contains("Properties", 10)) {
             CompoundNBT var6 = var0.getCompound("Properties");
 
             for (String var8 : var6.method97()) {
@@ -46,7 +46,7 @@ public final class Class8354 {
                for (int var10 = 0; var10 < var9.size(); var10++) {
                   CompoundNBT var11 = var9.method153(var10);
                   String var12 = var11.method126("Value");
-                  if (var11.method119("Signature", 8)) {
+                  if (var11.contains("Signature", 8)) {
                      var5.getProperties().put(var8, new Property(var8, var12, var11.method126("Signature")));
                   } else {
                      var5.getProperties().put(var8, new Property(var8, var12));
@@ -180,12 +180,12 @@ public final class Class8354 {
    }
 
    public static BlockState method29285(CompoundNBT var0) {
-      if (!var0.method119("Name", 8)) {
+      if (!var0.contains("Name", 8)) {
          return Blocks.AIR.method11579();
       } else {
          Block var3 = Registry.BLOCK.method9184(new ResourceLocation(var0.method126("Name")));
          BlockState var4 = var3.method11579();
-         if (var0.method119("Properties", 10)) {
+         if (var0.contains("Properties", 10)) {
             CompoundNBT var5 = var0.getCompound("Properties");
             Class9348 var6 = var3.getStateContainer();
 

@@ -10,11 +10,14 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
+import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -163,9 +166,9 @@ public class ChestStealer extends Module {
                                         }
 
                                         if (!this.getBooleanValueFromSetttingName("Fix ViaVersion")) {
-                                            Class7789.method25869(var4.field4727.field25471, var7.field25579, 0, Class2259.field14695, mc.player);
+                                            Class7789.method25869(var4.field4727.field25471, var7.field25579, 0, ClickType.field14695, mc.player);
                                         } else {
-                                            Class7789.method25870(var4.field4727.field25471, var7.field25579, 0, Class2259.field14695, mc.player, true);
+                                            Class7789.method25870(var4.field4727.field25471, var7.field25579, 0, ClickType.field14695, mc.player, true);
                                         }
 
                                         this.field23623.method27120();

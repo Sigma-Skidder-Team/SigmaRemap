@@ -2,10 +2,14 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.World;
 
 public abstract class Class3373 extends Class3241 implements Class3207 {
    public static final Class8551 field18966 = Class8820.field39710;
@@ -44,7 +48,7 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
-      boolean var10 = var9.getItem() instanceof Class3321 && var4.abilities.field29610;
+      boolean var10 = var9.getItem() instanceof Class3321 && var4.abilities.allowEdit;
       if (!var2.isRemote) {
          TileEntity var11 = var2.getTileEntity(var3);
          if (!(var11 instanceof Class954)) {

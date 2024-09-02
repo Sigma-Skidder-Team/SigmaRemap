@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public abstract class Class7938 {
    private static final Class113[] field34036 = Class113.values();
    public final int field34037;

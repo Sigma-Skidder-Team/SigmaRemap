@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public interface Class8806<T extends Class4847> {

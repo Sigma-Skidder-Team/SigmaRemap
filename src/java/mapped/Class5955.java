@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 
 public class Class5955 extends Class5942<Class945> {
    private static String[] field25967;

@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class913 extends Class911 {
    private static String[] field5202;

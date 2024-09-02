@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 
@@ -25,7 +27,7 @@ public class Class4186 extends Class4180 {
       super(Class7792.field33475, var2);
       this.field20473 = var2.method126("Template");
       this.field20474 = Class80.valueOf(var2.method126("Rot"));
-      this.field20475 = var2.method132("OW");
+      this.field20475 = var2.getBoolean("OW");
       this.method12965(var1);
    }
 
@@ -40,7 +42,7 @@ public class Class4186 extends Class4180 {
       super.method12897(var1);
       var1.method109("Template", this.field20473);
       var1.method109("Rot", this.field20474.name());
-      var1.method115("OW", this.field20475);
+      var1.putBoolean("OW", this.field20475);
    }
 
    @Override

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.HandSide;
 
 public class Class7972 {
    private static String[] field34265;
@@ -34,7 +35,7 @@ public class Class7972 {
       var1.field31037 = 0.0F;
       var0.field31036 = (float) (Math.PI / 20);
       var1.field31036 = (float) (-Math.PI / 20);
-      if (var2.method2967() != Class2205.field14418) {
+      if (var2.method2967() != HandSide.field14418) {
          var0.field31035 = -0.0F + MathHelper.cos(var4 * 0.19F) * 0.5F;
          var1.field31035 = -1.8849558F + MathHelper.cos(var4 * 0.09F) * 0.15F;
          var0.field31035 += var7 * 1.2F - var8 * 0.4F;

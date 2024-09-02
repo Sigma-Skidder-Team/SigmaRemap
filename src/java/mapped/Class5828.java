@@ -1,19 +1,21 @@
 package mapped;
 
+import net.minecraft.item.crafting.IRecipe;
+
 public abstract class Class5828<C extends Class920> extends Class5812 {
    public Class5828(Class8298<?> var1, int var2) {
       super(var1, var2);
    }
 
-   public void method18219(boolean var1, Class4843<?> var2, ServerPlayerEntity var3) {
-      new Class1260<C>(this).method5868(var3, (Class4843<C>) var2, var1);
+   public void method18219(boolean var1, IRecipe<?> var2, ServerPlayerEntity var3) {
+      new Class1260<C>(this).method5868(var3, (IRecipe<C>) var2, var1);
    }
 
    public abstract void method18220(Class6207 var1);
 
    public abstract void method18221();
 
-   public abstract boolean method18222(Class4843<? super C> var1);
+   public abstract boolean method18222(IRecipe<? super C> var1);
 
    public abstract int method18223();
 

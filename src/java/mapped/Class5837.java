@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 
 public class Class5837 extends Class5812 {
@@ -74,7 +75,7 @@ public class Class5837 extends Class5812 {
             && (this.field25565.method15234() < Class2154.field14124 - Class2154.field14125 || !var6.isEmpty())) {
          if (!var6.isEmpty() && var6.getItem() instanceof Class3286) {
             CompoundNBT var8 = var4.method32144("BlockEntityTag");
-            boolean var9 = var8.method119("Patterns", 9) && !var4.isEmpty() && var8.method131("Patterns", 10).size() >= 6;
+            boolean var9 = var8.contains("Patterns", 9) && !var4.isEmpty() && var8.method131("Patterns", 10).size() >= 6;
             if (!var9) {
                this.field25565.method15235(((Class3286)var6.getItem()).method11821().ordinal());
             } else {
@@ -167,7 +168,7 @@ public class Class5837 extends Class5812 {
             Class112 var7 = ((Class3321)var4.getItem()).method11876();
             CompoundNBT var8 = var5.method32144("BlockEntityTag");
             ListNBT var9;
-            if (!var8.method119("Patterns", 9)) {
+            if (!var8.contains("Patterns", 9)) {
                var9 = new ListNBT();
                var8.put("Patterns", var9);
             } else {

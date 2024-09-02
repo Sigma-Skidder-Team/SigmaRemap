@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class3702<E extends LivingEntity> extends Class3676<E> {
    private boolean field19757;

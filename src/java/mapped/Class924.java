@@ -8,8 +8,13 @@ import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -171,7 +176,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       if (!this.field5324.isRemote) {
          ItemStack var5 = this.field5247.get(1);
          if (this.method3644() || !var5.isEmpty() && !this.field5247.get(0).isEmpty()) {
-            Class4843 var6 = this.field5324.method6816().method1030(this.field5254, this, this.field5324).orElse(null);
+            IRecipe var6 = this.field5324.method6816().method1030(this.field5254, this, this.field5324).orElse(null);
             if (!this.method3644() && this.method3648(var6)) {
                this.field5248 = this.method3650(var5);
                this.field5249 = this.field5248;
@@ -215,7 +220,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       }
    }
 
-   public boolean method3648(Class4843<?> var1) {
+   public boolean method3648(IRecipe<?> var1) {
       if (!this.field5247.get(0).isEmpty() && var1 != null) {
          ItemStack var4 = var1.getRecipeOutput();
          if (!var4.isEmpty()) {
@@ -235,7 +240,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       }
    }
 
-   private void method3649(Class4843<?> var1) {
+   private void method3649(IRecipe<?> var1) {
       if (var1 != null && this.method3648(var1)) {
          ItemStack var4 = this.field5247.get(0);
          ItemStack var5 = var1.getRecipeOutput();
@@ -380,16 +385,16 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    @Override
-   public void method3636(Class4843<?> var1) {
+   public void method3636(IRecipe<?> var1) {
       if (var1 != null) {
-         ResourceLocation var4 = var1.method14964();
+         ResourceLocation var4 = var1.getId();
          this.field5253.addTo(var4, 1);
       }
    }
 
    @Nullable
    @Override
-   public Class4843<?> method3637() {
+   public IRecipe<?> method3637() {
       return null;
    }
 
@@ -403,7 +408,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       this.field5253.clear();
    }
 
-   public List<Class4843<?>> method3657(World var1, Vector3d var2) {
+   public List<IRecipe<?>> method3657(World var1, Vector3d var2) {
       ArrayList var5 = Lists.newArrayList();
       ObjectIterator var6 = this.field5253.object2IntEntrySet().iterator();
 

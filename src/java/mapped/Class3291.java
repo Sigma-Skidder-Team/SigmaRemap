@@ -2,10 +2,12 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class Class3291 extends Item {
    public Class3291(Class5643 var1) {
@@ -35,7 +37,7 @@ public class Class3291 extends Item {
    public static boolean method11833(CompoundNBT var0) {
       if (var0 == null) {
          return false;
-      } else if (!var0.method119("pages", 9)) {
+      } else if (!var0.contains("pages", 9)) {
          return false;
       } else {
          ListNBT var3 = var0.method131("pages", 8);

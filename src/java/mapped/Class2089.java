@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public enum Class2089 {
    field13614(Class178.field565),
    field13615(Class178.field592),

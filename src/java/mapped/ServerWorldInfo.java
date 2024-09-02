@@ -213,11 +213,11 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
       ListNBT var6 = new ListNBT();
       this.field29091.stream().<StringNBT>map(StringNBT::valueOf).forEach(var6::add);
       var2.put("ServerBrands", var6);
-      var2.method115("WasModded", this.field29092);
+      var2.putBoolean("WasModded", this.field29092);
       CompoundNBT var7 = new CompoundNBT();
       var7.method109("Name", SharedConstants.getVersion().getName());
       var7.method102("Id", SharedConstants.getVersion().getWorldVersion());
-      var7.method115("Snapshot", !SharedConstants.getVersion().isStable());
+      var7.putBoolean("Snapshot", !SharedConstants.getVersion().isStable());
       var2.put("Version", var7);
       var2.method102("DataVersion", SharedConstants.getVersion().getWorldVersion());
       WorldGenSettingsExport<Class30> var8 = WorldGenSettingsExport.create(NBTDynamicOps.INSTANCE, var1);
@@ -229,7 +229,7 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
       var2.method102("SpawnX", this.field29067);
       var2.method102("SpawnY", this.field29068);
       var2.method102("SpawnZ", this.field29069);
-      var2.method107("SpawnAngle", this.field29070);
+      var2.putFloat("SpawnAngle", this.field29070);
       var2.method103("Time", this.field29071);
       var2.method103("DayTime", this.field29072);
       var2.method103("LastPlayed", Util.method38489());
@@ -237,15 +237,15 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
       var2.method102("version", 19133);
       var2.method102("clearWeatherTime", this.field29078);
       var2.method102("rainTime", this.field29080);
-      var2.method115("raining", this.field29079);
+      var2.putBoolean("raining", this.field29079);
       var2.method102("thunderTime", this.field29082);
-      var2.method115("thundering", this.field29081);
-      var2.method115("hardcore", this.field29064.method32428());
-      var2.method115("allowCommands", this.field29064.method32430());
-      var2.method115("initialized", this.field29083);
+      var2.putBoolean("thundering", this.field29081);
+      var2.putBoolean("hardcore", this.field29064.method32428());
+      var2.putBoolean("allowCommands", this.field29064.method32430());
+      var2.putBoolean("initialized", this.field29083);
       this.field29085.method22720(var2);
       var2.method100("Difficulty", (byte)this.field29064.method32429().getId());
-      var2.method115("DifficultyLocked", this.field29084);
+      var2.putBoolean("DifficultyLocked", this.field29084);
       var2.put("GameRules", this.field29064.method32431().method17129());
       var2.put("DragonFight", this.field29086);
       if (var3 != null) {

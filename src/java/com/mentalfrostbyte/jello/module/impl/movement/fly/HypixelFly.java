@@ -13,6 +13,7 @@ import mapped.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CClickWindowPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,7 +94,7 @@ public class HypixelFly extends Module {
             Packet var4 = var1.method13932();
             if (var4 instanceof CClickWindowPacket) {
                 CClickWindowPacket var5 = (CClickWindowPacket) var4;
-                this.field23559 = var5.method17582();
+                this.field23559 = var5.getActionNumber();
             }
         }
     }

@@ -6,11 +6,17 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Map;
 import java.util.Objects;
@@ -126,9 +132,9 @@ public class SpawnEggItem extends Item {
    }
 
    public EntityType<?> method11855(CompoundNBT var1) {
-      if (var1 != null && var1.method119("EntityTag", 10)) {
+      if (var1 != null && var1.contains("EntityTag", 10)) {
          CompoundNBT var4 = var1.getCompound("EntityTag");
-         if (var4.method119("id", 8)) {
+         if (var4.contains("id", 8)) {
             return EntityType.method33199(var4.method126("id")).orElse(this.field18820);
          }
       }

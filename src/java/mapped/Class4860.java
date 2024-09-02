@@ -3,8 +3,10 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.minecraft.client.util.Util;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -109,10 +111,10 @@ public class Class4860 extends Class4837 {
                         var7.add(((Class3321)var9.getItem()).method11876().method313());
                      }
                   } else {
-                     var5.method115("Trail", true);
+                     var5.putBoolean("Trail", true);
                   }
                } else {
-                  var5.method115("Flicker", true);
+                  var5.putBoolean("Flicker", true);
                }
             } else {
                var6 = field22661.get(var9.getItem());

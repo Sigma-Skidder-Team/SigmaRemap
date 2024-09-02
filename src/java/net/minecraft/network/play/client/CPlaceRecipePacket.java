@@ -1,7 +1,7 @@
 package net.minecraft.network.play.client;
 
-import mapped.Class4843;
-import mapped.IServerPlayNetHandler;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
@@ -9,47 +9,46 @@ import net.minecraft.util.ResourceLocation;
 import java.io.IOException;
 
 public class CPlaceRecipePacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24909;
-   private int field24910;
-   private ResourceLocation field24911;
-   private boolean field24912;
+   private int windowId;
+   private ResourceLocation recipeId;
+   private boolean placeAll;
 
    public CPlaceRecipePacket() {
    }
 
-   public CPlaceRecipePacket(int var1, Class4843<?> var2, boolean var3) {
-      this.field24910 = var1;
-      this.field24911 = var2.method14964();
-      this.field24912 = var3;
+   public CPlaceRecipePacket(int var1, IRecipe<?> var2, boolean var3) {
+      this.windowId = var1;
+      this.recipeId = var2.getId();
+      this.placeAll = var3;
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24910 = var1.readByte();
-      this.field24911 = var1.readResourceLocation();
-      this.field24912 = var1.readBoolean();
+      this.windowId = var1.readByte();
+      this.recipeId = var1.readResourceLocation();
+      this.placeAll = var1.readBoolean();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeByte(this.field24910);
-      var1.writeResourceLocation(this.field24911);
-      var1.writeBoolean(this.field24912);
+      var1.writeByte(this.windowId);
+      var1.writeResourceLocation(this.recipeId);
+      var1.writeBoolean(this.placeAll);
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
       var1.processPlaceRecipe(this);
    }
 
-   public int method17641() {
-      return this.field24910;
+   public int getWindowId() {
+      return this.windowId;
    }
 
-   public ResourceLocation method17642() {
-      return this.field24911;
+   public ResourceLocation getRecipeId() {
+      return this.recipeId;
    }
 
-   public boolean method17643() {
-      return this.field24912;
+   public boolean shouldPlaceAll() {
+      return this.placeAll;
    }
 }

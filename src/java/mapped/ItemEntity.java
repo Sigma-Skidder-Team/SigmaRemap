@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
@@ -10,8 +11,11 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -91,7 +95,7 @@ public class ItemEntity extends Entity {
             this.noClip = false;
          }
 
-         if (!this.onGround || method3234(this.method3433()) > 1.0E-5F || (this.ticksExisted + this.method3205()) % 4 == 0) {
+         if (!this.onGround || method3234(this.method3433()) > 1.0E-5F || (this.ticksExisted + this.getEntityId()) % 4 == 0) {
             this.move(Class2107.field13742, this.method3433());
             float var5 = 0.98F;
             if (this.onGround) {

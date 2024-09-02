@@ -4,6 +4,8 @@ import com.google.common.collect.Maps;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SEntityStatusPacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Iterator;
 import java.util.List;

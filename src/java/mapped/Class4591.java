@@ -25,7 +25,7 @@ public class Class4591 extends Class4588 {
 
             for (int var18 = 0; var18 < this.field22075.size(); var18++) {
                CompoundNBT var19 = this.field22075.method153(var18);
-               if (var19.method132("Flicker")) {
+               if (var19.getBoolean("Flicker")) {
                   this.field22076 = true;
                   this.field22056 += 15;
                   break;
@@ -69,8 +69,8 @@ public class Class4591 extends Class4588 {
          int var15 = this.field22073 / 2;
          CompoundNBT var17 = this.field22075.method153(var15);
          Class2119 var20 = Class2119.method8802(var17.method120("Type"));
-         boolean var21 = var17.method132("Trail");
-         boolean var7 = var17.method132("Flicker");
+         boolean var21 = var17.getBoolean("Trail");
+         boolean var7 = var17.getBoolean("Flicker");
          int[] var8 = var17.method128("Colors");
          int[] var9 = var17.method128("FadeColors");
          if (var8.length == 0) {

@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
+import net.minecraft.util.HandSide;
 
 public class Class2793<T extends Class1038> extends Class2794<T> {
    private static String[] field17428;
@@ -24,7 +26,7 @@ public class Class2793<T extends Class1038> extends Class2794<T> {
       this.field17439 = Class2278.field14836;
       ItemStack var7 = var1.getHeldItem(Hand.MAIN_HAND);
       if (var7.getItem() == Items.field38144 && var1.method4307()) {
-         if (var1.method2967() != Class2205.field14418) {
+         if (var1.method2967() != HandSide.field14418) {
             this.field17439 = Class2278.field14840;
          } else {
             this.field17440 = Class2278.field14840;

@@ -6,10 +6,12 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.play.server.SChatPacket;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 public class Class3294 extends Class3292 {
    public Class3294(Block var1, Class5643 var2) {

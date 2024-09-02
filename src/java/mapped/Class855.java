@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.inventory.container.ClickType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
@@ -78,7 +79,7 @@ public abstract class Class855<T extends Class5831> extends Class851<T> implemen
    }
 
    @Override
-   public void method2626(Class5839 var1, int var2, int var3, Class2259 var4) {
+   public void method2626(Class5839 var1, int var2, int var3, ClickType var4) {
       super.method2626(var1, var2, var3, var4);
       this.field4759.method5841(var1);
    }

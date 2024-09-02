@@ -8,9 +8,12 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -99,7 +102,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.dataManager.method35446(field5841, Direction.method546(var1.method120("AttachFace")));
+      this.dataManager.method35446(field5841, Direction.byIndex(var1.method120("AttachFace")));
       this.dataManager.method35446(field5843, var1.method120("Peek"));
       this.dataManager.method35446(field5844, var1.method120("Color"));
       if (!var1.contains("APX")) {
@@ -115,7 +118,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method100("AttachFace", (byte)this.dataManager.<Direction>method35445(field5841).method533());
+      var1.method100("AttachFace", (byte)this.dataManager.<Direction>method35445(field5841).getIndex());
       var1.method100("Peek", this.dataManager.<Byte>method35445(field5843));
       var1.method100("Color", this.dataManager.<Byte>method35445(field5844));
       BlockPos var4 = this.method4849();

@@ -4,12 +4,16 @@ import com.google.common.collect.Lists;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -309,10 +313,10 @@ public class Class1095 extends Class1018 {
       }
 
       var1.put("Trusted", var5);
-      var1.method115("Sleeping", this.isSleeping());
+      var1.putBoolean("Sleeping", this.isSleeping());
       var1.method109("Type", this.method5125().method567());
-      var1.method115("Sitting", this.method5129());
-      var1.method115("Crouching", this.method3336());
+      var1.putBoolean("Sitting", this.method5129());
+      var1.putBoolean("Crouching", this.method3336());
    }
 
    @Override
@@ -324,10 +328,10 @@ public class Class1095 extends Class1018 {
          this.method5128(Class8354.method29282(var4.get(var5)));
       }
 
-      this.method5135(var1.method132("Sleeping"));
+      this.method5135(var1.getBoolean("Sleeping"));
       this.method5126(Class186.method569(var1.method126("Type")));
-      this.method5130(var1.method132("Sitting"));
-      this.method5143(var1.method132("Crouching"));
+      this.method5130(var1.getBoolean("Sitting"));
+      this.method5143(var1.getBoolean("Crouching"));
       if (this.world instanceof ServerWorld) {
          this.method5124();
       }
@@ -742,7 +746,7 @@ public class Class1095 extends Class1018 {
          } else {
             for (UUID var4 : method5174(Class1095.this)) {
                if (var4 != null && Class1095.this.world instanceof ServerWorld) {
-                  Entity var5 = ((ServerWorld)Class1095.this.world).method6942(var4);
+                  Entity var5 = ((ServerWorld)Class1095.this.world).getEntityByUuid(var4);
                   if (var5 instanceof LivingEntity) {
                      LivingEntity var6 = (LivingEntity)var5;
                      this.field17202 = var6;

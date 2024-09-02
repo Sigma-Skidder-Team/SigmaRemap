@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 // $VF: synthetic class
 public class Class7009 {
    private static String[] field30295;

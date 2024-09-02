@@ -46,6 +46,6 @@ public class SleepInMultiplayerScreen extends ChatScreen {
 
    private void method6348() {
       ClientPlayNetHandler var3 = this.mc.player.connection;
-      var3.sendPacket(new CEntityActionPacket(this.mc.player, Class1865.field10042));
+      var3.sendPacket(new CEntityActionPacket(this.mc.player, CEntityActionPacket.Action.STOP_SLEEPING));
    }
 }

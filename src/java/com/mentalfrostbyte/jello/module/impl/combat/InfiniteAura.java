@@ -14,6 +14,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.play.client.CInputPacket;
 import net.minecraft.network.play.client.CMoveVehiclePacket;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.client.CSteerBoatPacket;
 import org.lwjgl.opengl.GL11;
 
@@ -124,13 +125,13 @@ public class InfiniteAura extends Module {
         for (Class8472 var8 : var1) {
             var6 = var8;
             if (var5 == null) {
-                mc.getConnection().sendPacket(new Class5605(var8.method29876(), var8.method29877(), var8.method29878(), true));
+                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var8.method29876(), var8.method29877(), var8.method29878(), true));
             } else {
                 var5.positionVec.x = var8.method29876() + 0.5;
                 var5.positionVec.y = var8.method29877();
                 var5.positionVec.z = var8.method29878() + 0.5;
                 mc.getConnection().sendPacket(new CSteerBoatPacket(false, false));
-                mc.getConnection().sendPacket(new Class5606(mc.player.rotationYaw, mc.player.rotationPitch, false));
+                mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(mc.player.rotationYaw, mc.player.rotationPitch, false));
                 mc.getConnection().sendPacket(new CInputPacket(0.0F, 1.0F, false, false));
                 BoatEntity var9 = new BoatEntity(mc.world, var8.method29876() + 0.5, var8.method29877(), var8.method29878() + 0.5);
                 var9.rotationYaw = var5.rotationYaw;
@@ -140,8 +141,8 @@ public class InfiniteAura extends Module {
         }
 
         if (var2 && var6 != null) {
-            mc.getConnection().sendPacket(new Class5605(var6.method29876(), var6.method29877() + 1.0E-14, var6.method29878(), false));
-            mc.getConnection().sendPacket(new Class5605(var6.method29876(), var6.method29877(), var6.method29878(), false));
+            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var6.method29876(), var6.method29877() + 1.0E-14, var6.method29878(), false));
+            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var6.method29876(), var6.method29877(), var6.method29878(), false));
         }
     }
 

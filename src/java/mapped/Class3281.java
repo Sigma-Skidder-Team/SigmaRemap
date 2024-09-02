@@ -2,8 +2,10 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class Class3281 extends Item {
    private static String[] field18789;

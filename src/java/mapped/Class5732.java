@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
    private static final ResourceLocation field25143 = new ResourceLocation("textures/entity/minecart.png");
@@ -16,7 +17,7 @@ public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
    public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       super.method17853((T)var1, var2, var3, var4, var5, var6);
       var4.push();
-      long var9 = (long)var1.method3205() * 493286711L;
+      long var9 = (long)var1.getEntityId() * 493286711L;
       var9 = var9 * var9 * 4392167121L + var9 * 98761L;
       float var11 = (((float)(var9 >> 16 & 7L) + 0.5F) / 8.0F - 0.5F) * 0.004F;
       float var12 = (((float)(var9 >> 20 & 7L) + 0.5F) / 8.0F - 0.5F) * 0.004F;

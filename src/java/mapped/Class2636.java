@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 
 public class Class2636 extends Class2628 {

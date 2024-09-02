@@ -15,6 +15,8 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 import java.util.Optional;
@@ -284,14 +286,14 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.method3005()) {
-         var1.method115("IsBaby", true);
+         var1.putBoolean("IsBaby", true);
       }
    }
 
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method132("IsBaby")) {
+      if (var1.getBoolean("IsBaby")) {
          this.method4308(true);
       }
    }

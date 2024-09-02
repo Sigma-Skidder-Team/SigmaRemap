@@ -6,6 +6,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
@@ -47,7 +49,7 @@ public abstract class Class1035 extends Class1009 {
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.method4633()) {
-         var1.method115("IsImmuneToZombification", true);
+         var1.putBoolean("IsImmuneToZombification", true);
       }
 
       var1.method102("TimeInOverworld", this.field5751);
@@ -61,7 +63,7 @@ public abstract class Class1035 extends Class1009 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4632(var1.method132("IsImmuneToZombification"));
+      this.method4632(var1.getBoolean("IsImmuneToZombification"));
       this.field5751 = var1.method122("TimeInOverworld");
    }
 

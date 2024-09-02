@@ -3,10 +3,13 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnExperienceOrbPacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import java.util.Map.Entry;
 
@@ -74,7 +77,7 @@ public class ExperienceOrbEntity extends Entity {
       }
 
       double var3 = 8.0;
-      if (this.field5561 < this.field5555 - 20 + this.method3205() % 100) {
+      if (this.field5561 < this.field5555 - 20 + this.getEntityId() % 100) {
          if (this.field5560 == null || this.field5560.getDistanceSq(this) > 64.0) {
             this.field5560 = this.world.method7185(this, 8.0);
          }

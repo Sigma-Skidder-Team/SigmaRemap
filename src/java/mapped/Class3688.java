@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class3688 extends Class3676<Class1042> {
    private static String[] field19705;

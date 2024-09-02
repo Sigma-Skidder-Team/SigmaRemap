@@ -1,13 +1,15 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 
 import javax.annotation.Nullable;
 
 public class Class921 implements Class920, Class923 {
    private static String[] field5240;
    private final NonNullList<ItemStack> field5241 = NonNullList.<ItemStack>method68(1, ItemStack.EMPTY);
-   private Class4843<?> field5242;
+   private IRecipe<?> field5242;
 
    @Override
    public int method3629() {
@@ -60,13 +62,13 @@ public class Class921 implements Class920, Class923 {
    }
 
    @Override
-   public void method3636(Class4843<?> var1) {
+   public void method3636(IRecipe<?> var1) {
       this.field5242 = var1;
    }
 
    @Nullable
    @Override
-   public Class4843<?> method3637() {
+   public IRecipe<?> method3637() {
       return this.field5242;
    }
 }

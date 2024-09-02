@@ -2,7 +2,9 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Collections;
 import java.util.List;
@@ -15,7 +17,7 @@ public class Class2952 extends Class2898<Class4712> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
+   public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
       Class7481 var8 = new Class7481(var4);
       List<Integer> var9 = IntStream.rangeClosed(var8.method24356(), var8.method24358()).boxed().collect(Collectors.toList());
       Collections.shuffle(var9, var3);

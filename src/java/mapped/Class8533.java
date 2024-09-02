@@ -22,6 +22,7 @@ import javax.annotation.Nullable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8533 {

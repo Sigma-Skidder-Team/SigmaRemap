@@ -3,13 +3,18 @@ package mapped;
 import java.util.Objects;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.network.play.server.SPlayerListItemPacket;
 import net.minecraft.network.play.server.SPlayerDiggingPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -77,7 +82,7 @@ public class Class9081 {
             if (!var3.isAir()) {
                this.method33868(var3, this.field41576, this.field41575);
             } else {
-               this.field41570.method6803(this.field41571.method3205(), this.field41576, -1);
+               this.field41570.method6803(this.field41571.getEntityId(), this.field41576, -1);
                this.field41581 = -1;
                this.field41574 = false;
             }
@@ -101,7 +106,7 @@ public class Class9081 {
       float var7 = var1.method23406(this.field41571, this.field41571.world, var2) * (float)(var6 + 1);
       int var8 = (int)(var7 * 10.0F);
       if (var8 != this.field41581) {
-         this.field41570.method6803(this.field41571.method3205(), var2, var8);
+         this.field41570.method6803(this.field41571.getEntityId(), var2, var8);
          this.field41581 = var8;
       }
 
@@ -115,13 +120,13 @@ public class Class9081 {
       double var13 = var7 * var7 + var9 * var9 + var11 * var11;
       if (!(var13 > 36.0)) {
          if (var1.getY() < var4) {
-            if (var2 != CPlayerDiggingPacket.Action.field13484) {
-               if (var2 != CPlayerDiggingPacket.Action.field13486) {
-                  if (var2 == CPlayerDiggingPacket.Action.field13485) {
+            if (var2 != CPlayerDiggingPacket.Action.START_DESTROY_BLOCK) {
+               if (var2 != CPlayerDiggingPacket.Action.STOP_DESTROY_BLOCK) {
+                  if (var2 == CPlayerDiggingPacket.Action.ABORT_DESTROY_BLOCK) {
                      this.field41574 = false;
                      if (!Objects.equals(this.field41576, var1)) {
                         field41569.warn("Mismatch in destroy block pos: " + this.field41576 + " " + var1);
-                        this.field41570.method6803(this.field41571.method3205(), this.field41576, -1);
+                        this.field41570.method6803(this.field41571.getEntityId(), this.field41576, -1);
                         this.field41571
                            .field4855
                            .sendPacket(
@@ -129,7 +134,7 @@ public class Class9081 {
                            );
                      }
 
-                     this.field41570.method6803(this.field41571.method3205(), var1, -1);
+                     this.field41570.method6803(this.field41571.getEntityId(), var1, -1);
                      this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, true, "aborted destroying"));
                   }
                } else {
@@ -140,7 +145,7 @@ public class Class9081 {
                         float var17 = var16.method23406(this.field41571, this.field41571.world, var1) * (float)(var15 + 1);
                         if (var17 >= 0.7F) {
                            this.field41574 = false;
-                           this.field41570.method6803(this.field41571.method3205(), var1, -1);
+                           this.field41570.method6803(this.field41571.getEntityId(), var1, -1);
                            this.method33869(var1, var2, "destroyed");
                            return;
                         }
@@ -190,7 +195,7 @@ public class Class9081 {
                            new SPlayerDiggingPacket(
                               this.field41576,
                               this.field41570.getBlockState(this.field41576),
-                              CPlayerDiggingPacket.Action.field13484,
+                              CPlayerDiggingPacket.Action.START_DESTROY_BLOCK,
                               false,
                               "abort destroying since another started (client insta mine, server disagreed)"
                            )
@@ -198,9 +203,9 @@ public class Class9081 {
                   }
 
                   this.field41574 = true;
-                  this.field41576 = var1.method8353();
+                  this.field41576 = var1.toImmutable();
                   int var20 = (int)(var18 * 10.0F);
-                  this.field41570.method6803(this.field41571.method3205(), var1, var20);
+                  this.field41570.method6803(this.field41571.getEntityId(), var1, var20);
                   this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, true, "actual start of destroying"));
                   this.field41581 = var20;
                }

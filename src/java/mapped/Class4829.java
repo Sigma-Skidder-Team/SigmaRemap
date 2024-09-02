@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class4829 {
    private static String[] field22601;

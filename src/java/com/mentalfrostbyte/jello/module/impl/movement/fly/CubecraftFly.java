@@ -144,10 +144,10 @@ public class CubecraftFly extends Module {
                     double var16 = mc.player.getPosX();
                     double var10 = mc.player.getPosY() + 0.022;
                     double var12 = mc.player.getPosZ();
-                    mc.getConnection().sendPacket(new Class5605(var16, var10, var12, false));
-                    mc.getConnection().sendPacket(new Class5605(var16, var10, var12 + 0.07, false));
-                    mc.getConnection().sendPacket(new Class5605(var16, var10, var12, false));
-                    mc.getConnection().sendPacket(new Class5605(var16, var10 + 3.0, var12, false));
+                    mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var16, var10, var12, false));
+                    mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var16, var10, var12 + 0.07, false));
+                    mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var16, var10, var12, false));
+                    mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var16, var10 + 3.0, var12, false));
                 }
 
                 ColorUtils.method17725(var1.method13994());
@@ -185,7 +185,7 @@ public class CubecraftFly extends Module {
             if (!(var4 instanceof SPlayerPositionLookPacket)) {
                 if (var4 instanceof SEntityVelocityPacket) {
                     SEntityVelocityPacket var5 = (SEntityVelocityPacket) var4;
-                    if (var5.method17565() == mc.player.method3205()) {
+                    if (var5.method17565() == mc.player.getEntityId()) {
                         this.field23845 = -4;
                     }
                 }

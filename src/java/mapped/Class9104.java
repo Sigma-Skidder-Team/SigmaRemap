@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.OptionalInt;
 import java.util.function.Supplier;

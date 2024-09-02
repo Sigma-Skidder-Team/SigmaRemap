@@ -7,11 +7,15 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.notification.Notification;
 import mapped.*;
+import net.minecraft.inventory.container.ClickType;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class MineplexFly extends PremiumModule {
     private int field23668;
@@ -215,7 +219,7 @@ public class MineplexFly extends PremiumModule {
                 }
             }
 
-            Class7789.method25870(mc.player.field4904.field25471, 42, 0, Class2259.field14695, mc.player, true);
+            Class7789.method25870(mc.player.field4904.field25471, 42, 0, ClickType.field14695, mc.player, true);
             if (!mc.player.field4904.method18131(42).method18265().isEmpty()) {
                 Client.getInstance().getNotificationManager().post(new Notification("Mineplex Fly", "Please empty a slot in your inventory"));
             } else if (mc.player.inventory.currentItem != 6 && this.field23670 != 6) {

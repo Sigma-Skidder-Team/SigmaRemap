@@ -6,7 +6,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.play.client.CPlayerPacket;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
 import org.apache.commons.lang3.RandomUtils;
 
 import java.util.ArrayList;
@@ -59,7 +63,7 @@ public class Class9217 {
       Minecraft.getInstance()
          .getConnection()
          .sendPacket(
-            new Class5606(
+            new CPlayerPacket.RotationPacket(
                Minecraft.getInstance().player.rotationYaw + MathHelper.method37792(var11 - Minecraft.getInstance().player.rotationYaw),
                Minecraft.getInstance().player.rotationPitch + MathHelper.method37792(var12 - Minecraft.getInstance().player.rotationPitch),
                Minecraft.getInstance().player.onGround

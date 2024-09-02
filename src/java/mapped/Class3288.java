@@ -3,11 +3,14 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 
@@ -42,7 +45,7 @@ public class Class3288 extends Class3287 {
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       if (this.field18799 == EntityType.field41095) {
          CompoundNBT var7 = var1.method32142();
-         if (var7 != null && var7.method119("BucketVariantTag", 3)) {
+         if (var7 != null && var7.contains("BucketVariantTag", 3)) {
             int var8 = var7.method122("BucketVariantTag");
             TextFormatting[] var9 = new TextFormatting[]{TextFormatting.ITALIC, TextFormatting.GRAY};
             String var10 = "color.minecraft." + Class1052.method4814(var8);

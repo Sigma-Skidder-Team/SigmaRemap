@@ -4,7 +4,9 @@ import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Set;
 
@@ -78,7 +80,7 @@ public abstract class Class4213 extends Class4178 {
    public void method12897(CompoundNBT var1) {
    }
 
-   public void method13005(Class1658 var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+   public void method13005(ISeedReader var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8) {
       for (int var11 = var4; var11 <= var7; var11++) {
          for (int var12 = var3; var12 <= var6; var12++) {
             for (int var13 = var5; var13 <= var8; var13++) {
@@ -95,7 +97,7 @@ public abstract class Class4213 extends Class4178 {
       }
    }
 
-   public void method13006(Class1658 var1, Class9764 var2, int var3, int var4, boolean var5) {
+   public void method13006(ISeedReader var1, Class9764 var2, int var3, int var4, boolean var5) {
       if (!var5) {
          this.method12927(var1, var2, var3 + 0, 0, var4 + 0, var3 + 8 - 1, 0, var4 + 8 - 1, field20528, field20528, false);
       } else {
@@ -110,7 +112,7 @@ public abstract class Class4213 extends Class4178 {
       }
    }
 
-   public void method13007(Class1658 var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8, BlockState var9) {
+   public void method13007(ISeedReader var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8, BlockState var9) {
       for (int var12 = var4; var12 <= var7; var12++) {
          for (int var13 = var3; var13 <= var6; var13++) {
             for (int var14 = var5; var14 <= var8; var14++) {
@@ -130,7 +132,7 @@ public abstract class Class4213 extends Class4178 {
       return var1.method38391(Math.min(var8, var10), Math.min(var9, var11), Math.max(var8, var10), Math.max(var9, var11));
    }
 
-   public boolean method13009(Class1658 var1, Class9764 var2, int var3, int var4, int var5) {
+   public boolean method13009(ISeedReader var1, Class9764 var2, int var3, int var4, int var5) {
       int var8 = this.method12920(var3, var5);
       int var9 = this.method12921(var4);
       int var10 = this.method12922(var3, var5);

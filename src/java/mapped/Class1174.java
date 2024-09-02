@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.item.ItemStack;
 
 public class Class1174 extends Class1155<Class1174> {
    public final Class1285 field6359;

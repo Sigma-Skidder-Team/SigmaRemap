@@ -4,6 +4,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
@@ -11,6 +12,8 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 public class Class897 extends Entity implements Class889 {
    private static final DataParameter<ItemStack> field5132 = EntityDataManager.<ItemStack>createKey(Class897.class, DataSerializers.field33396);

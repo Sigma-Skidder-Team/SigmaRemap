@@ -4,8 +4,12 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -33,7 +37,7 @@ public class Class957 extends Class956 implements Class935 {
       }
 
       if (this.field5375) {
-         var1.method115("ExactTeleport", this.field5375);
+         var1.putBoolean("ExactTeleport", this.field5375);
       }
 
       return var1;
@@ -43,11 +47,11 @@ public class Class957 extends Class956 implements Class935 {
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.field5372 = var2.method123("Age");
-      if (var2.method119("ExitPortal", 10)) {
+      if (var2.contains("ExitPortal", 10)) {
          this.field5374 = Class8354.method29283(var2.getCompound("ExitPortal"));
       }
 
-      this.field5375 = var2.method132("ExactTeleport");
+      this.field5375 = var2.getBoolean("ExactTeleport");
    }
 
    @Override

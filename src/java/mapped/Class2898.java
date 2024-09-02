@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
 
@@ -81,7 +82,7 @@ public abstract class Class2898<FC extends Class4698> {
       var1.setBlockState(var2, var3, 3);
    }
 
-   public abstract boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, FC var5);
+   public abstract boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, FC var5);
 
    public static boolean method11218(Block var0) {
       return var0 == Blocks.STONE || var0 == Blocks.GRANITE || var0 == Blocks.DIORITE || var0 == Blocks.ANDESITE;

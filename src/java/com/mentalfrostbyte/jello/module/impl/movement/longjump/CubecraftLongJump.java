@@ -4,10 +4,10 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class5605;
 import mapped.Class9567;
 import mapped.ColorUtils;
 import mapped.NumberSetting;
+import net.minecraft.network.play.client.CPlayerPacket;
 
 public class CubecraftLongJump extends Module {
     private int field23501;
@@ -57,11 +57,11 @@ public class CubecraftLongJump extends Module {
                 int var10 = 49 + Class9567.method37079() * 17;
 
                 for (int var11 = 0; var11 < var10; var11++) {
-                    mc.getConnection().sendPacket(new Class5605(var4, var6 + 0.06248, var8, false));
-                    mc.getConnection().sendPacket(new Class5605(var4, var6, var8, false));
+                    mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var4, var6 + 0.06248, var8, false));
+                    mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var4, var6, var8, false));
                 }
 
-                mc.getConnection().sendPacket(new Class5605(var4, var6, var8, true));
+                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var4, var6, var8, true));
                 ColorUtils.method17725(Class9567.method37080());
                 this.field23501 = 0;
                 this.field23502 = this.getNumberValueBySettingName("Boost") / 2.0F;

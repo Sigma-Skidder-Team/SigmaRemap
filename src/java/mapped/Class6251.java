@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 public class Class6251 extends Class6217 {
    private static String[] field27739;

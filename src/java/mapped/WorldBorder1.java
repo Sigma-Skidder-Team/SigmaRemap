@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.World;
+
 public class WorldBorder1 extends WorldBorder {
    public final DimensionType dimensionType;
    public final World parentClass;

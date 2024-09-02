@@ -17,6 +17,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClickWindowPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.network.play.server.SWindowPropertyPacket;
@@ -122,14 +123,14 @@ public class NameTags extends Module {
         if (this.isEnabled()) {
             if (var1.method13932() instanceof CPlayerTryUseItemOnBlockPacket) {
                 CPlayerTryUseItemOnBlockPacket var4 = (CPlayerTryUseItemOnBlockPacket) var1.method13932();
-                if (mc.world.getBlockState(var4.method17498().getPos()).getBlock() instanceof Class3353) {
-                    this.field24001 = var4.method17498().getPos();
+                if (mc.world.getBlockState(var4.func_218794_c().getPos()).getBlock() instanceof Class3353) {
+                    this.field24001 = var4.func_218794_c().getPos();
                 }
             }
 
             if (var1.method13932() instanceof CClickWindowPacket) {
                 CClickWindowPacket var7 = (CClickWindowPacket) var1.method13932();
-                Class7070 var5 = this.method16929(var7.method17579());
+                Class7070 var5 = this.method16929(var7.getWindowId());
                 if (var5 == null) {
                     return;
                 }

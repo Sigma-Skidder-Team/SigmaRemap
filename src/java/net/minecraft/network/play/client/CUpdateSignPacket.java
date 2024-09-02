@@ -1,6 +1,6 @@
 package net.minecraft.network.play.client;
 
-import mapped.IServerPlayNetHandler;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
@@ -8,34 +8,35 @@ import net.minecraft.util.math.BlockPos;
 import java.io.IOException;
 
 public class CUpdateSignPacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24484;
-   private BlockPos field24485;
-   private String[] field24486;
+    private BlockPos pos;
+   private String[] lines;
 
    public CUpdateSignPacket() {
    }
 
    public CUpdateSignPacket(BlockPos var1, String var2, String var3, String var4, String var5) {
-      this.field24485 = var1;
-      this.field24486 = new String[]{var2, var3, var4, var5};
+      this.pos = var1;
+      this.lines = new String[]{var2, var3, var4, var5};
    }
 
    @Override
-   public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24485 = var1.readBlockPos();
-      this.field24486 = new String[4];
+   public void readPacketData(PacketBuffer buf) throws IOException {
+      this.pos = buf.readBlockPos();
+      this.lines = new String[4];
 
-      for (int var4 = 0; var4 < 4; var4++) {
-         this.field24486[var4] = var1.readString(384);
+      for (int i = 0; i < 4; ++i)
+      {
+         this.lines[i] = buf.readString(384);
       }
    }
 
    @Override
-   public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeBlockPos(this.field24485);
+   public void writePacketData(PacketBuffer buf) throws IOException {
+      buf.writeBlockPos(this.pos);
 
-      for (int var4 = 0; var4 < 4; var4++) {
-         var1.writeString(this.field24486[var4]);
+      for (int i = 0; i < 4; ++i)
+      {
+         buf.writeString(this.lines[i]);
       }
    }
 
@@ -43,11 +44,11 @@ public class CUpdateSignPacket implements Packet<IServerPlayNetHandler> {
       var1.processUpdateSign(this);
    }
 
-   public BlockPos method17351() {
-      return this.field24485;
+   public BlockPos getPosition() {
+      return this.pos;
    }
 
-   public String[] method17352() {
-      return this.field24486;
+   public String[] getLines() {
+      return this.lines;
    }
 }

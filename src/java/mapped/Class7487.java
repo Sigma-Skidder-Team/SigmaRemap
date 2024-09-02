@@ -5,6 +5,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -28,7 +29,7 @@ public abstract class Class7487 {
    public abstract Class9764 method24375(Class8761 var1, BlockPos var2, Class80 var3);
 
    public abstract boolean method24376(
-           Class8761 var1, Class1658 var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
+           Class8761 var1, ISeedReader var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
    );
 
    public abstract Class8325<?> method24377();

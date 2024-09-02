@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
@@ -218,7 +219,7 @@ public class Class865 extends Class851<Class5837> {
       ItemStack var5 = this.field4727.method18248().method18265();
       ItemStack var6 = this.field4727.method18249().method18265();
       CompoundNBT var7 = var4.method32144("BlockEntityTag");
-      this.field4810 = var7.method119("Patterns", 9) && !var4.isEmpty() && var7.method131("Patterns", 10).size() >= 6;
+      this.field4810 = var7.contains("Patterns", 9) && !var4.isEmpty() && var7.method131("Patterns", 10).size() >= 6;
       if (this.field4810) {
          this.field4804 = null;
       }

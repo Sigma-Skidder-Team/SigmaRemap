@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.util.Util;
+import net.minecraft.item.ItemStack;
 
 import java.util.List;
 import java.util.Random;

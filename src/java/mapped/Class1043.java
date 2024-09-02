@@ -6,12 +6,16 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Set;
@@ -146,7 +150,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("Offers", 10)) {
+      if (var1.contains("Offers", 10)) {
          this.field5796 = new Class46(var1.getCompound("Offers"));
       }
 

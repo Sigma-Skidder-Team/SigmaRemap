@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class5427 extends Class5424 {
    private static String[] field24143;
    private final Class5422 field24144;

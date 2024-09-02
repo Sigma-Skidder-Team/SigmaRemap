@@ -6,6 +6,8 @@ import com.google.common.collect.Maps;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -50,15 +52,15 @@ public class CreativeScreen extends Class860<Class5820> {
    }
 
    @Override
-   public void method2626(Class5839 var1, int var2, int var3, Class2259 var4) {
+   public void method2626(Class5839 var1, int var2, int var3, ClickType var4) {
       if (this.method2643(var1)) {
          this.field4779.method5652();
          this.field4779.method5668(0);
       }
 
-      boolean var7 = var4 == Class2259.field14695;
-      var4 = var2 == -999 && var4 == Class2259.field14694 ? Class2259.field14698 : var4;
-      if (var1 == null && field4776 != ItemGroup.field31677.method23641() && var4 != Class2259.field14699) {
+      boolean var7 = var4 == ClickType.field14695;
+      var4 = var2 == -999 && var4 == ClickType.field14694 ? ClickType.field14698 : var4;
+      if (var1 == null && field4776 != ItemGroup.field31677.method23641() && var4 != ClickType.field14699) {
          PlayerInventory var16 = this.mc.player.inventory;
          if (!var16.method4057().isEmpty() && this.field4784) {
             if (var3 == 0) {
@@ -83,11 +85,11 @@ public class CreativeScreen extends Class860<Class5820> {
                this.mc.playerController.sendSlotPacket(ItemStack.EMPTY, var15);
             }
          } else if (field4776 != ItemGroup.field31677.method23641()) {
-            if (var4 != Class2259.field14699 && var1.field25578 == field4774) {
+            if (var4 != ClickType.field14699 && var1.field25578 == field4774) {
                PlayerInventory var13 = this.mc.player.inventory;
                ItemStack var18 = var13.method4057();
                ItemStack var22 = var1.method18265();
-               if (var4 == Class2259.field14696) {
+               if (var4 == ClickType.field14696) {
                   if (!var22.isEmpty()) {
                      ItemStack var25 = var22.copy();
                      var25.method32180(var25.method32113());
@@ -98,7 +100,7 @@ public class CreativeScreen extends Class860<Class5820> {
                   return;
                }
 
-               if (var4 == Class2259.field14697) {
+               if (var4 == ClickType.field14697) {
                   if (var13.method4057().isEmpty() && var1.method18266()) {
                      ItemStack var24 = var1.method18265().copy();
                      var24.method32180(var24.method32113());
@@ -108,7 +110,7 @@ public class CreativeScreen extends Class860<Class5820> {
                   return;
                }
 
-               if (var4 == Class2259.field14698) {
+               if (var4 == ClickType.field14698) {
                   if (!var22.isEmpty()) {
                      ItemStack var23 = var22.copy();
                      var23.method32180(var3 != 0 ? var23.method32113() : 1);
@@ -148,8 +150,8 @@ public class CreativeScreen extends Class860<Class5820> {
                      ItemStack var9 = this.field4727.method18131(var1.field25579).method18265();
                      this.mc.playerController.sendSlotPacket(var9, var1.field25579 - this.field4727.field25468.size() + 9 + 36);
                      int var10 = 45 + var3;
-                     if (var4 != Class2259.field14696) {
-                        if (var4 == Class2259.field14698 && !var8.isEmpty()) {
+                     if (var4 != ClickType.field14696) {
+                        if (var4 == ClickType.field14698 && !var8.isEmpty()) {
                            ItemStack var11 = var8.copy();
                            var11.method32180(var3 != 0 ? var11.method32113() : 1);
                            this.mc.player.method2882(var11, true);
@@ -168,13 +170,13 @@ public class CreativeScreen extends Class860<Class5820> {
                }
             }
          } else if (var1 != this.field4781) {
-            if (var4 == Class2259.field14698 && var1 != null && var1.method18266()) {
+            if (var4 == ClickType.field14698 && var1 != null && var1.method18266()) {
                ItemStack var14 = var1.method18272(var3 != 0 ? var1.method18265().method32113() : 1);
                ItemStack var20 = var1.method18265();
                this.mc.player.method2882(var14, true);
                this.mc.playerController.method23148(var14);
                this.mc.playerController.sendSlotPacket(var20, Class5848.method18276((Class5848)var1).field25579);
-            } else if (var4 == Class2259.field14698 && !this.mc.player.inventory.method4057().isEmpty()) {
+            } else if (var4 == ClickType.field14698 && !this.mc.player.inventory.method4057().isEmpty()) {
                this.mc.player.method2882(this.mc.player.inventory.method4057(), true);
                this.mc.playerController.method23148(this.mc.player.inventory.method4057());
                this.mc.player.inventory.method4056(ItemStack.EMPTY);

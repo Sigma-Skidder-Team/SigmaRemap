@@ -3,8 +3,10 @@ package mapped;
 import java.util.List;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 public class Class3334 extends Item {
    public Class3334(Class5643 var1) {

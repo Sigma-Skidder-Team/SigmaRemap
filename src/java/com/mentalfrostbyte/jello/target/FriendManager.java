@@ -33,11 +33,11 @@ public class FriendManager {
             if (this.method26997(this.field34179.pointedEntity)) {
                 this.method27005(this.field34179.pointedEntity.getName().getUnformattedComponentText());
                 Class8906.method32487(
-                        var4.method30235() + " " + this.field34179.pointedEntity.getName().getUnformattedComponentText() + " is no longer your friend."
+                        var4.getPrefix() + " " + this.field34179.pointedEntity.getName().getUnformattedComponentText() + " is no longer your friend."
                 );
             } else {
                 this.method27001(this.field34179.pointedEntity.getName().getUnformattedComponentText());
-                Class8906.method32487(var4.method30235() + " " + this.field34179.pointedEntity.getName().getUnformattedComponentText() + " is now your friend.");
+                Class8906.method32487(var4.getPrefix() + " " + this.field34179.pointedEntity.getName().getUnformattedComponentText() + " is now your friend.");
             }
 
             this.method27009();

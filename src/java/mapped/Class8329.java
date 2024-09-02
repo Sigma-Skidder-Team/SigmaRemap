@@ -50,15 +50,15 @@ public class Class8329 {
          if (!(var4 instanceof CClickWindowPacket)) {
             if (var4 instanceof CConfirmTransactionPacket) {
                CConfirmTransactionPacket var5 = (CConfirmTransactionPacket)var4;
-               if (var5.method17275() == 0) {
-                  int var6 = var5.method17276() - this.field35792;
+               if (var5.getWindowId() == 0) {
+                  int var6 = var5.getUid() - this.field35792;
                   if (var6 <= 0 && var6 >= -20) {
                   }
                }
             }
          } else {
             CClickWindowPacket var7 = (CClickWindowPacket)var4;
-            this.field35792 = var7.method17582();
+            this.field35792 = var7.getActionNumber();
          }
       }
    }

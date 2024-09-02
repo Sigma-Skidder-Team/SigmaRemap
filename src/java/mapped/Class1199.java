@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -30,9 +32,9 @@ public class Class1199 extends Widget {
       this.field6495 = var1;
       this.field6493 = (Class5828<?>)var2.method11318().player.field4905;
       this.field6494 = var2.method11319();
-      List<Class4843<?>> var5 = var1.method34893(this.field6494.method21370(this.field6493));
+      List<IRecipe<?>> var5 = var1.method34893(this.field6494.method21370(this.field6493));
 
-      for (Class4843 var7 : var5) {
+      for (IRecipe var7 : var5) {
          if (this.field6494.method21364(var7)) {
             var2.method11317(var5);
             this.field6497 = 15.0F;
@@ -81,7 +83,7 @@ public class Class1199 extends Widget {
       this.method5696(var1, this.field6477, this.field6478, var8, var9, this.field6475, this.field6476);
       List var14 = this.method5755();
       this.field6498 = MathHelper.method37767(this.field6496 / 30.0F) % var14.size();
-      ItemStack var12 = ((Class4843)var14.get(this.field6498)).getRecipeOutput();
+      ItemStack var12 = ((IRecipe)var14.get(this.field6498)).getRecipeOutput();
       int var13 = 4;
       if (this.field6495.method34895() && this.method5755().size() > 1) {
          var7.getItemRenderer().method793(var12, this.field6477 + var13 + 1, this.field6478 + var13 + 1);
@@ -94,7 +96,7 @@ public class Class1199 extends Widget {
       }
    }
 
-   private List<Class4843<?>> method5755() {
+   private List<IRecipe<?>> method5755() {
       List var3 = this.field6495.method34894(true);
       if (!this.field6494.method21370(this.field6493)) {
          var3.addAll(this.field6495.method34894(false));
@@ -107,9 +109,9 @@ public class Class1199 extends Widget {
       return this.method5755().size() == 1;
    }
 
-   public Class4843<?> method5757() {
+   public IRecipe<?> method5757() {
       List var3 = this.method5755();
-      return (Class4843<?>)var3.get(this.field6498);
+      return (IRecipe<?>)var3.get(this.field6498);
    }
 
    public List<ITextComponent> method5758(Screen var1) {

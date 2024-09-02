@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 
 public class Class9346 {
@@ -19,22 +20,22 @@ public class Class9346 {
       this.field43385 = ItemStack.method32104(var1.getCompound("buyB"));
       this.field43386 = ItemStack.method32104(var1.getCompound("sell"));
       this.field43387 = var1.method122("uses");
-      if (!var1.method119("maxUses", 99)) {
+      if (!var1.contains("maxUses", 99)) {
          this.field43388 = 4;
       } else {
          this.field43388 = var1.method122("maxUses");
       }
 
-      if (var1.method119("rewardExp", 1)) {
-         this.field43389 = var1.method132("rewardExp");
+      if (var1.contains("rewardExp", 1)) {
+         this.field43389 = var1.getBoolean("rewardExp");
       }
 
-      if (var1.method119("xp", 3)) {
+      if (var1.contains("xp", 3)) {
          this.field43393 = var1.method122("xp");
       }
 
-      if (var1.method119("priceMultiplier", 5)) {
-         this.field43392 = var1.method124("priceMultiplier");
+      if (var1.contains("priceMultiplier", 5)) {
+         this.field43392 = var1.getFloat("priceMultiplier");
       }
 
       this.field43390 = var1.method122("specialPrice");
@@ -159,9 +160,9 @@ public class Class9346 {
       var3.put("buyB", this.field43385.method32112(new CompoundNBT()));
       var3.method102("uses", this.field43387);
       var3.method102("maxUses", this.field43388);
-      var3.method115("rewardExp", this.field43389);
+      var3.putBoolean("rewardExp", this.field43389);
       var3.method102("xp", this.field43393);
-      var3.method107("priceMultiplier", this.field43392);
+      var3.putFloat("priceMultiplier", this.field43392);
       var3.method102("specialPrice", this.field43390);
       var3.method102("demand", this.field43391);
       return var3;

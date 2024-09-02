@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.crafting.IRecipe;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -18,7 +19,7 @@ public class Class2954 {
    private int field18039;
    private int field18040;
    private Class6941 field18041;
-   private Class4843<?> field18042;
+   private IRecipe<?> field18042;
    private RecipeList field18043;
 
    public Class2954() {
@@ -106,7 +107,7 @@ public class Class2954 {
    }
 
    @Nullable
-   public Class4843<?> method11313() {
+   public IRecipe<?> method11313() {
       return this.field18042;
    }
 
@@ -168,7 +169,7 @@ public class Class2954 {
       }
    }
 
-   public void method11317(List<Class4843<?>> var1) {
+   public void method11317(List<IRecipe<?>> var1) {
       for (Class1259 var5 : this.field18035) {
          var5.method5857(var1);
       }

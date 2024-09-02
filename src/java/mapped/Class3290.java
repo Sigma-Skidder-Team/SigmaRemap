@@ -2,9 +2,11 @@ package mapped;
 
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 public class Class3290 extends Item {
    public Class3290(Class5643 var1) {

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.server.ServerWorld;
 
 public final class Class7147 extends Effect {
    private static String[] field30713;

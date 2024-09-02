@@ -138,7 +138,7 @@ public class ACRFly extends Module {
             if (var4 instanceof CPlayerPacket) {
                 CPlayerPacket var5 = (CPlayerPacket) var4;
                 if (this.field23986 == -1 && this.getBooleanValueFromSetttingName("NoFall")) {
-                    var5.field24883 = true;
+                    var5.onGround = true;
                 }
             }
         }

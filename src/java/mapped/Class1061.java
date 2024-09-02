@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 

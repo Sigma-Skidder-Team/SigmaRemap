@@ -9,6 +9,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import mapped.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
 import net.minecraft.util.Hand;
 
@@ -185,7 +187,7 @@ public class AutoPotion extends Module {
                     var1.method13918(var9[0]);
                     var1.method13916(var9[1]);
                 } else {
-                    mc.getConnection().sendPacket(new Class5606(var9[0], var9[1], !var8 && mc.player.onGround));
+                    mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var9[0], var9[1], !var8 && mc.player.onGround));
                     mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                     mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.field183));
                     mc.player.inventory.currentItem = var7;

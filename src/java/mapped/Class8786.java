@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 import java.util.Optional;
 import java.util.function.BiConsumer;

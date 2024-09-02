@@ -90,7 +90,7 @@ public class Class8250 {
             }
          }
 
-         int var63 = var10.method119("DataVersion", 99) ? var10.method122("DataVersion") : 1343;
+         int var63 = var10.contains("DataVersion", 99) ? var10.method122("DataVersion") : 1343;
          var16 = Class8354.method29290(this.field35447, Class2108.field13755, var10, var63, var2);
       }
 

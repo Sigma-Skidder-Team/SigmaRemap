@@ -2,8 +2,10 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class Class5118 implements Class5119 {
    private static String[] field23288;

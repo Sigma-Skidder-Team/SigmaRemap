@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
 
@@ -18,12 +20,12 @@ public class Class4214 extends Class4213 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       if (Class9312.method35192(this.field20539) / 25 > 0) {
-         this.method13006(var1, var5, 0, 0, Class9312.method35193(this.field20539)[Direction.DOWN.method533()]);
+         this.method13006(var1, var5, 0, 0, Class9312.method35193(this.field20539)[Direction.DOWN.getIndex()]);
       }
 
-      if (Class9312.method35191(this.field20539)[Direction.field673.method533()] == null) {
+      if (Class9312.method35191(this.field20539)[Direction.field673.getIndex()] == null) {
          this.method13007(var1, var5, 1, 4, 1, 6, 4, 6, field20528);
       }
 
@@ -53,7 +55,7 @@ public class Class4214 extends Class4213 {
       this.method12927(var1, var5, 7, 1, 3, 7, 2, 4, field20530, field20530, false);
       this.method12927(var1, var5, 3, 1, 0, 4, 2, 0, field20530, field20530, false);
       this.method12927(var1, var5, 3, 1, 7, 4, 2, 7, field20530, field20530, false);
-      if (Class9312.method35193(this.field20539)[Direction.SOUTH.method533()]) {
+      if (Class9312.method35193(this.field20539)[Direction.SOUTH.getIndex()]) {
          this.method13005(var1, var5, 3, 1, 0, 4, 2, 0);
       }
 

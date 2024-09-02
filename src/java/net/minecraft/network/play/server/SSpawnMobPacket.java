@@ -3,7 +3,7 @@ package net.minecraft.network.play.server;
 import mapped.MathHelper;
 import net.minecraft.network.PacketBuffer;
 import mapped.Registry;
-import mapped.Vector3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.network.Packet;
@@ -30,7 +30,7 @@ public class SSpawnMobPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SSpawnMobPacket(LivingEntity var1) {
-      this.field24760 = var1.method3205();
+      this.field24760 = var1.getEntityId();
       this.field24761 = var1.getUniqueID();
       this.field24762 = Registry.ENTITY_TYPE.getId(var1.getType());
       this.field24763 = var1.getPosX();
@@ -52,7 +52,7 @@ public class SSpawnMobPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24760 = var1.readVarInt();
-      this.field24761 = var1.method35717();
+      this.field24761 = var1.readUniqueId();
       this.field24762 = var1.readVarInt();
       this.field24763 = var1.readDouble();
       this.field24764 = var1.readDouble();
@@ -68,7 +68,7 @@ public class SSpawnMobPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeVarInt(this.field24760);
-      var1.method35716(this.field24761);
+      var1.writeUniqueId(this.field24761);
       var1.writeVarInt(this.field24762);
       var1.writeDouble(this.field24763);
       var1.writeDouble(this.field24764);

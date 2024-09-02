@@ -3,8 +3,10 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import net.minecraft.client.util.Util;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.ArrayList;
 import java.util.Random;

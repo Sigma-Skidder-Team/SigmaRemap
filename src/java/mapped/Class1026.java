@@ -4,12 +4,15 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -173,7 +176,7 @@ public abstract class Class1026 extends Class1028 {
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("Wave", this.field5715);
-      var1.method115("CanJoinRaid", this.field5716);
+      var1.putBoolean("CanJoinRaid", this.field5716);
       if (this.field5714 != null) {
          var1.method102("RaidId", this.field5714.method25430());
       }
@@ -183,8 +186,8 @@ public abstract class Class1026 extends Class1028 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field5715 = var1.method122("Wave");
-      this.field5716 = var1.method132("CanJoinRaid");
-      if (var1.method119("RaidId", 3)) {
+      this.field5716 = var1.getBoolean("CanJoinRaid");
+      if (var1.contains("RaidId", 3)) {
          if (this.world instanceof ServerWorld) {
             this.field5714 = ((ServerWorld)this.world).method6956().method24610(var1.method122("RaidId"));
          }

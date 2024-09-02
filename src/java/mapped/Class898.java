@@ -3,10 +3,12 @@ package mapped;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.World;
 
 public abstract class Class898 extends Class901 implements Class889 {
    private static final DataParameter<ItemStack> field5138 = EntityDataManager.<ItemStack>createKey(Class898.class, DataSerializers.field33396);

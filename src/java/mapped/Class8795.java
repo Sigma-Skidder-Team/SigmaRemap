@@ -11,8 +11,10 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import org.lwjgl.opengl.GL11;
 
 public class Class8795 {

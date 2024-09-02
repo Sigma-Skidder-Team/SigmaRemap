@@ -4,6 +4,7 @@ import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -11,6 +12,8 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
@@ -62,24 +65,24 @@ public class Class1040 extends Class1038 implements Class1041 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("VillagerData", 10)) {
+      if (var1.contains("VillagerData", 10)) {
          DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, var1.method116("VillagerData")));
          var4.resultOrPartial(LOGGER::error).ifPresent(this::method4673);
       }
 
-      if (var1.method119("Offers", 10)) {
+      if (var1.contains("Offers", 10)) {
          this.field5774 = var1.getCompound("Offers");
       }
 
-      if (var1.method119("Gossips", 10)) {
+      if (var1.contains("Gossips", 10)) {
          this.field5773 = var1.method131("Gossips", 10);
       }
 
-      if (var1.method119("ConversionTime", 99) && var1.method122("ConversionTime") > -1) {
+      if (var1.contains("ConversionTime", 99) && var1.method122("ConversionTime") > -1) {
          this.method4668(!var1.method106("ConversionPlayer") ? null : var1.method105("ConversionPlayer"), var1.method122("ConversionTime"));
       }
 
-      if (var1.method119("Xp", 3)) {
+      if (var1.contains("Xp", 3)) {
          this.field5775 = var1.method122("Xp");
       }
    }

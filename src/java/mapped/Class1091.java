@@ -7,6 +7,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -15,6 +16,8 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -241,21 +244,21 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.method5086()) {
-         var1.method115("IsImmuneToZombification", true);
+         var1.putBoolean("IsImmuneToZombification", true);
       }
 
       var1.method102("TimeInOverworld", this.field5978);
       if (this.field5979) {
-         var1.method115("CannotBeHunted", true);
+         var1.putBoolean("CannotBeHunted", true);
       }
    }
 
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method5085(var1.method132("IsImmuneToZombification"));
+      this.method5085(var1.getBoolean("IsImmuneToZombification"));
       this.field5978 = var1.method122("TimeInOverworld");
-      this.method5088(var1.method132("CannotBeHunted"));
+      this.method5088(var1.getBoolean("CannotBeHunted"));
    }
 
    public void method5085(boolean var1) {

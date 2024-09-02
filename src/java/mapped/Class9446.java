@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -35,7 +36,7 @@ public class Class9446 {
 
    public static void method36308(Entity var0, WorldRenderer var1) {
       synchronized (field43880) {
-         Class9701 var5 = field43880.method28216(var0.method3205());
+         Class9701 var5 = field43880.method28216(var0.getEntityId());
          if (var5 != null) {
             var5.method38011(var1);
          }
@@ -142,13 +143,13 @@ public class Class9446 {
          for (Entity var5 : var3.method6835()) {
             int var6 = method36319(var5);
             if (var6 <= 0) {
-               int var7 = var5.method3205();
+               int var7 = var5.getEntityId();
                Class9701 var8 = field43880.method28216(var7);
                if (var8 != null) {
                   var8.method38011(var0);
                }
             } else {
-               int var9 = var5.method3205();
+               int var9 = var5.getEntityId();
                Class9701 var10 = field43880.method28214(var9);
                if (var10 == null) {
                   var10 = new Class9701(var5);

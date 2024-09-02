@@ -2,12 +2,14 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.world.World;
 
 public abstract class Class1066 extends AbstractHorseEntity {
    private static final DataParameter<Boolean> field5877 = EntityDataManager.<Boolean>createKey(Class1066.class, DataSerializers.field33398);
@@ -65,7 +67,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method115("ChestedHorse", this.method4927());
+      var1.putBoolean("ChestedHorse", this.method4927());
       if (this.method4927()) {
          ListNBT var4 = new ListNBT();
 
@@ -86,7 +88,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4928(var1.method132("ChestedHorse"));
+      this.method4928(var1.getBoolean("ChestedHorse"));
       if (this.method4927()) {
          ListNBT var4 = var1.method131("Items", 10);
          this.method4948();

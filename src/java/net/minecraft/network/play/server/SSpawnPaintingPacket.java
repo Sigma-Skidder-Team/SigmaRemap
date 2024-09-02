@@ -4,6 +4,7 @@ import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
@@ -21,7 +22,7 @@ public class SSpawnPaintingPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SSpawnPaintingPacket(PaintingEntity var1) {
-      this.field24276 = var1.method3205();
+      this.field24276 = var1.getEntityId();
       this.field24277 = var1.getUniqueID();
       this.field24278 = var1.method4085();
       this.field24279 = var1.method3386();
@@ -31,7 +32,7 @@ public class SSpawnPaintingPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24276 = var1.readVarInt();
-      this.field24277 = var1.method35717();
+      this.field24277 = var1.readUniqueId();
       this.field24280 = var1.readVarInt();
       this.field24278 = var1.readBlockPos();
       this.field24279 = Direction.method547(var1.readUnsignedByte());
@@ -40,7 +41,7 @@ public class SSpawnPaintingPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeVarInt(this.field24276);
-      var1.method35716(this.field24277);
+      var1.writeUniqueId(this.field24277);
       var1.writeVarInt(this.field24280);
       var1.writeBlockPos(this.field24278);
       var1.writeByte(this.field24279.method534());

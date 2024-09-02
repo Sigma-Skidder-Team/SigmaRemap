@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Comparator;
 import java.util.Optional;
@@ -67,12 +69,12 @@ public class Class3634 {
                            double var22 = var1.method8318(var16);
                            if (this.method12333(var16, var14, var5, -1) && this.method12333(var16, var14, var5, 1) && (var6 == -1.0 || var6 > var22)) {
                               var6 = var22;
-                              var8 = var16.method8353();
+                              var8 = var16.toImmutable();
                            }
 
                            if (var6 == -1.0 && (var9 == -1.0 || var9 > var22)) {
                               var9 = var22;
-                              var11 = var16.method8353();
+                              var11 = var16.toImmutable();
                            }
                         }
                      }
@@ -89,7 +91,7 @@ public class Class3634 {
 
       if (var6 == -1.0) {
          var8 = new BlockPos(var1.getX(), MathHelper.method37775(var1.getY(), 70, this.field19668.method6998() - 10), var1.getZ())
-            .method8353();
+            .toImmutable();
          Direction var24 = var5.method537();
          if (!var12.method24523(var8)) {
             return Optional.<Class9502>empty();
@@ -124,7 +126,7 @@ public class Class3634 {
          }
       }
 
-      return Optional.<Class9502>of(new Class9502(var8.method8353(), 2, 3));
+      return Optional.<Class9502>of(new Class9502(var8.toImmutable(), 2, 3));
    }
 
    private boolean method12333(BlockPos var1, Mutable var2, Direction var3, int var4) {

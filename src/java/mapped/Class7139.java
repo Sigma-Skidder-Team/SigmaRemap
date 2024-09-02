@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -13,7 +14,7 @@ public abstract class Class7139 {
 
    public abstract Class9542<?> method22268();
 
-   public abstract void method22269(Class1658 var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6);
+   public abstract void method22269(ISeedReader var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6);
 
    public void method22273(Class1681 var1, BlockPos var2, Class8551 var3, Set<BlockPos> var4, Class9764 var5) {
       this.method22274(var1, var2, Blocks.VINE.method11579().method23465(var3, Boolean.valueOf(true)), var4, var5);

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class8820 {
    public static final Class8551 field39682 = Class8551.method30480("attached");
    public static final Class8551 field39683 = Class8551.method30480("bottom");

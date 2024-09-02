@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
-import mapped.World;
+import net.minecraft.world.World;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
@@ -17,7 +17,7 @@ public class SEntityHeadLookPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SEntityHeadLookPacket(Entity var1, byte var2) {
-      this.field24477 = var1.method3205();
+      this.field24477 = var1.getEntityId();
       this.field24478 = var2;
    }
 

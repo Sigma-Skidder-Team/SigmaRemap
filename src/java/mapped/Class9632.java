@@ -18,7 +18,7 @@ public class Class9632 {
 
    public Class9632(Class1662 var1, BlockPos var2, boolean var3) {
       this.field45050 = var1;
-      this.field45051 = var2.method8353();
+      this.field45051 = var2.toImmutable();
       this.field45052 = var3;
    }
 

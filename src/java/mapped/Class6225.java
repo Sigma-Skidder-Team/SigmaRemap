@@ -1,6 +1,9 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class6225 extends Class6218 {
    private static String[] field27718;

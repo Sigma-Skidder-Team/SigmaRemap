@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.BitSet;
 import java.util.List;
@@ -346,19 +348,19 @@ public class Class7551 {
       }
 
       if (var6 != null) {
-         var6[Direction.WEST.method533()] = var10;
-         var6[Direction.EAST.method533()] = var13;
-         var6[Direction.DOWN.method533()] = var11;
-         var6[Direction.field673.method533()] = var14;
-         var6[Direction.NORTH.method533()] = var12;
-         var6[Direction.SOUTH.method533()] = var15;
+         var6[Direction.WEST.getIndex()] = var10;
+         var6[Direction.EAST.getIndex()] = var13;
+         var6[Direction.DOWN.getIndex()] = var11;
+         var6[Direction.field673.getIndex()] = var14;
+         var6[Direction.NORTH.getIndex()] = var12;
+         var6[Direction.SOUTH.getIndex()] = var15;
          int var21 = Direction.field685.length;
-         var6[Direction.WEST.method533() + var21] = 1.0F - var10;
-         var6[Direction.EAST.method533() + var21] = 1.0F - var13;
-         var6[Direction.DOWN.method533() + var21] = 1.0F - var11;
-         var6[Direction.field673.method533() + var21] = 1.0F - var14;
-         var6[Direction.NORTH.method533() + var21] = 1.0F - var12;
-         var6[Direction.SOUTH.method533() + var21] = 1.0F - var15;
+         var6[Direction.WEST.getIndex() + var21] = 1.0F - var10;
+         var6[Direction.EAST.getIndex() + var21] = 1.0F - var13;
+         var6[Direction.DOWN.getIndex() + var21] = 1.0F - var11;
+         var6[Direction.field673.getIndex() + var21] = 1.0F - var14;
+         var6[Direction.NORTH.getIndex() + var21] = 1.0F - var12;
+         var6[Direction.SOUTH.getIndex() + var21] = 1.0F - var15;
       }
 
       float var22 = 1.0E-4F;

@@ -8,6 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 import org.apache.logging.log4j.LogManager;

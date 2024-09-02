@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.HandSide;
 
 public class Class2823<T extends Class1025> extends Class2803<T> implements Class2825, Class2824 {
    private static String[] field17586;
@@ -147,8 +148,8 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
       this.field17593.field31039 = !var10;
    }
 
-   private Class7219 method11025(Class2205 var1) {
-      return var1 != Class2205.field14417 ? this.field17593 : this.field17594;
+   private Class7219 method11025(HandSide var1) {
+      return var1 != HandSide.field14417 ? this.field17593 : this.field17594;
    }
 
    public Class7219 method11026() {
@@ -161,7 +162,7 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
    }
 
    @Override
-   public void method11010(Class2205 var1, MatrixStack var2) {
+   public void method11010(HandSide var1, MatrixStack var2) {
       this.method11025(var1).method22682(var2);
    }
 }

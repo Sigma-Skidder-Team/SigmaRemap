@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.authlib.GameProfile;
 import java.util.UUID;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -18,10 +19,10 @@ public class SkullItem extends Class3298 {
       if (var1.getItem() == Items.field38060 && var1.method32141()) {
          String var4 = null;
          CompoundNBT var5 = var1.method32142();
-         if (!var5.method119("SkullOwner", 8)) {
-            if (var5.method119("SkullOwner", 10)) {
+         if (!var5.contains("SkullOwner", 8)) {
+            if (var5.contains("SkullOwner", 10)) {
                CompoundNBT var6 = var5.getCompound("SkullOwner");
-               if (var6.method119("Name", 8)) {
+               if (var6.contains("Name", 8)) {
                   var4 = var6.method126("Name");
                }
             }
@@ -40,7 +41,7 @@ public class SkullItem extends Class3298 {
    @Override
    public boolean method11705(CompoundNBT var1) {
       super.method11705(var1);
-      if (var1.method119("SkullOwner", 8) && !StringUtils.isBlank(var1.method126("SkullOwner"))) {
+      if (var1.contains("SkullOwner", 8) && !StringUtils.isBlank(var1.method126("SkullOwner"))) {
          GameProfile var4 = new GameProfile((UUID)null, var1.method126("SkullOwner"));
          var4 = SkullTileEntity.method4008(var4);
          var1.put("SkullOwner", Class8354.method29279(new CompoundNBT(), var4));

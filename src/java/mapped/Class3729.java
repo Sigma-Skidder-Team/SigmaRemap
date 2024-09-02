@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 

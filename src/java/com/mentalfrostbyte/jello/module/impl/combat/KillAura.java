@@ -18,9 +18,11 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SEntityStatusPacket;
 import net.minecraft.network.play.server.SEntityPacket;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.vector.Vector3d;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;
@@ -492,7 +494,7 @@ public class KillAura extends Module {
             this.field23940 = 0;
             var8 = false;
             if (var2.equals("Hypixel") && this.field23960 != null && mc.player.method3433().y < 0.0) {
-                mc.getConnection().sendPacket(new Class5605(this.field23960[0], this.field23960[1], this.field23960[2], false));
+                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(this.field23960[0], this.field23960[1], this.field23960[2], false));
                 this.field23960 = null;
             }
         }

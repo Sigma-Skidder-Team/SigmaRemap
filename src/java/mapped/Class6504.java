@@ -1,10 +1,11 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 
-public interface Class6504<T extends Class4843<?>> {
+public interface Class6504<T extends IRecipe<?>> {
    Class6504<Class4852> field28470 = method19702("crafting_shaped", new Class6507());
    Class6504<Class4854> field28471 = method19702("crafting_shapeless", new Class6506());
    Class6505<Class4839> field28472 = method19702("crafting_special_armordye", new Class6505<Class4839>(Class4839::new));
@@ -33,7 +34,7 @@ public interface Class6504<T extends Class4843<?>> {
 
    void method19698(PacketBuffer var1, T var2);
 
-   static <S extends Class6504<T>, T extends Class4843<?>> S method19702(String var0, S var1) {
+   static <S extends Class6504<T>, T extends IRecipe<?>> S method19702(String var0, S var1) {
       return Registry.<S>method9194(Registry.field16086, var0, (S)var1);
    }
 }

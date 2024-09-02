@@ -229,9 +229,9 @@ public class Class2023 implements Comparable<Class2023> {
    private void method8638(CompoundNBT var1) {
       var1.method100("Amplifier", (byte)this.method8629());
       var1.method102("Duration", this.method8628());
-      var1.method115("Ambient", this.method8630());
-      var1.method115("ShowParticles", this.method8631());
-      var1.method115("ShowIcon", this.method8632());
+      var1.putBoolean("Ambient", this.method8630());
+      var1.putBoolean("ShowParticles", this.method8631());
+      var1.putBoolean("ShowIcon", this.method8632());
       if (this.field13142 != null) {
          CompoundNBT var4 = new CompoundNBT();
          this.field13142.method8637(var4);
@@ -248,19 +248,19 @@ public class Class2023 implements Comparable<Class2023> {
    private static Class2023 method8640(Effect var0, CompoundNBT var1) {
       byte var4 = var1.method120("Amplifier");
       int var5 = var1.method122("Duration");
-      boolean var6 = var1.method132("Ambient");
+      boolean var6 = var1.getBoolean("Ambient");
       boolean var7 = true;
-      if (var1.method119("ShowParticles", 1)) {
-         var7 = var1.method132("ShowParticles");
+      if (var1.contains("ShowParticles", 1)) {
+         var7 = var1.getBoolean("ShowParticles");
       }
 
       boolean var8 = var7;
-      if (var1.method119("ShowIcon", 1)) {
-         var8 = var1.method132("ShowIcon");
+      if (var1.contains("ShowIcon", 1)) {
+         var8 = var1.getBoolean("ShowIcon");
       }
 
       Class2023 var9 = null;
-      if (var1.method119("HiddenEffect", 10)) {
+      if (var1.contains("HiddenEffect", 10)) {
          var9 = method8640(var0, var1.getCompound("HiddenEffect"));
       }
 

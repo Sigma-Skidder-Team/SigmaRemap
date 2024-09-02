@@ -1,10 +1,13 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -25,7 +28,7 @@ public abstract class Class939 extends Class932 {
    }
 
    public boolean method3741(CompoundNBT var1) {
-      if (!var1.method119("LootTable", 8)) {
+      if (!var1.contains("LootTable", 8)) {
          return false;
       } else {
          this.field5302 = new ResourceLocation(var1.method126("LootTable"));

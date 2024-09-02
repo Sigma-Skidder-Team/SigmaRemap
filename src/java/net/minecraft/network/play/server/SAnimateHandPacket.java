@@ -16,7 +16,7 @@ public class SAnimateHandPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SAnimateHandPacket(Entity var1, int var2) {
-      this.field24273 = var1.method3205();
+      this.field24273 = var1.getEntityId();
       this.field24274 = var2;
    }
 

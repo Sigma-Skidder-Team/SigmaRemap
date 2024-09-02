@@ -3,6 +3,8 @@ package mapped;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import it.unimi.dsi.fastutil.ints.IntListIterator;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 
 public class Class1261<C extends Class920> extends Class1260<C> {
    private static String[] field6662;
@@ -13,7 +15,7 @@ public class Class1261<C extends Class920> extends Class1260<C> {
    }
 
    @Override
-   public void method5871(Class4843<C> var1, boolean var2) {
+   public void method5871(IRecipe<C> var1, boolean var2) {
       this.field6663 = this.field6661.method18222(var1);
       int var5 = this.field6659.method19125(var1, (IntList)null);
       if (this.field6663) {

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class9559 {
    private static String[] field44526;

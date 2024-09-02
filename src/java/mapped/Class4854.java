@@ -1,7 +1,9 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
 public class Class4854 implements Class4842 {
    private static String[] field22647;
@@ -18,7 +20,7 @@ public class Class4854 implements Class4842 {
    }
 
    @Override
-   public ResourceLocation method14964() {
+   public ResourceLocation getId() {
       return this.field22648;
    }
 

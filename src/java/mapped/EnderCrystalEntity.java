@@ -9,6 +9,8 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -57,17 +59,17 @@ public class EnderCrystalEntity extends Entity {
          var1.put("BeamTarget", Class8354.method29284(this.method4143()));
       }
 
-      var1.method115("ShowBottom", this.method4145());
+      var1.putBoolean("ShowBottom", this.method4145());
    }
 
    @Override
    public void method2723(CompoundNBT var1) {
-      if (var1.method119("BeamTarget", 10)) {
+      if (var1.contains("BeamTarget", 10)) {
          this.method4142(Class8354.method29283(var1.getCompound("BeamTarget")));
       }
 
-      if (var1.method119("ShowBottom", 1)) {
-         this.method4144(var1.method132("ShowBottom"));
+      if (var1.contains("ShowBottom", 1)) {
+         this.method4144(var1.getBoolean("ShowBottom"));
       }
    }
 

@@ -33,18 +33,18 @@ public class SCombatPacket implements Packet<IClientPlayNetHandler> {
       switch (Class6746.field29450[var2.ordinal()]) {
          case 1:
             this.field24696 = var1.method27604();
-            this.field24695 = var6 == null ? -1 : var6.method3205();
+            this.field24695 = var6 == null ? -1 : var6.getEntityId();
             break;
          case 2:
-            this.field24694 = var1.method27607().method3205();
-            this.field24695 = var6 == null ? -1 : var6.method3205();
+            this.field24694 = var1.method27607().getEntityId();
+            this.field24695 = var6 == null ? -1 : var6.getEntityId();
             this.field24697 = var3;
       }
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24693 = var1.<Class1900>method35712(Class1900.class);
+      this.field24693 = var1.<Class1900>readEnumValue(Class1900.class);
       if (this.field24693 != Class1900.field11156) {
          if (this.field24693 == Class1900.field11157) {
             this.field24694 = var1.readVarInt();
@@ -59,7 +59,7 @@ public class SCombatPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.field24693);
+      var1.writeEnumValue(this.field24693);
       if (this.field24693 != Class1900.field11156) {
          if (this.field24693 == Class1900.field11157) {
             var1.writeVarInt(this.field24694);

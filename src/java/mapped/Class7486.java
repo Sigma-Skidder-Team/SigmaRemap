@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Collections;
 import java.util.List;
@@ -27,7 +28,7 @@ public class Class7486 extends Class7487 {
 
    @Override
    public boolean method24376(
-           Class8761 var1, Class1658 var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
+           Class8761 var1, ISeedReader var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
    ) {
       return true;
    }

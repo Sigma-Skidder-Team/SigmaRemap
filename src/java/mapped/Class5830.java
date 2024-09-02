@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 
 public class Class5830 extends Class5828<Class926> {
@@ -59,7 +61,7 @@ public class Class5830 extends Class5828<Class926> {
    }
 
    @Override
-   public boolean method18222(Class4843<? super Class926> var1) {
+   public boolean method18222(IRecipe<? super Class926> var1) {
       return var1.method14963(this.field25547, this.field25550.world);
    }
 

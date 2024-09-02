@@ -66,7 +66,7 @@ public class OverlayRenderer {
          var3.method8373(var5, var7, var9);
          BlockState var11 = var0.world.getBlockState(var3);
          if (var11.getRenderType() != BlockRenderType.field9885 && var11.method23438(var0.world, var3)) {
-            return Pair.of(var11, var3.method8353());
+            return Pair.of(var11, var3.toImmutable());
          }
       }
 

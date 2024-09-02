@@ -28,11 +28,11 @@ public class Class7535 extends Class7530 {
       if (this.field32341 != null) {
          this.method24633(var1.method131("Objectives", 10));
          this.field32341.method21013(var1.method131("PlayerScores", 10));
-         if (var1.method119("DisplaySlots", 10)) {
+         if (var1.contains("DisplaySlots", 10)) {
             this.method24632(var1.getCompound("DisplaySlots"));
          }
 
-         if (var1.method119("Teams", 9)) {
+         if (var1.contains("Teams", 9)) {
             this.method24630(var1.method131("Teams", 10));
          }
       } else {
@@ -54,47 +54,47 @@ public class Class7535 extends Class7530 {
             var7.method28570(var8);
          }
 
-         if (var5.method119("TeamColor", 8)) {
+         if (var5.contains("TeamColor", 8)) {
             var7.method28590(TextFormatting.getValueByName(var5.method126("TeamColor")));
          }
 
-         if (var5.method119("AllowFriendlyFire", 99)) {
-            var7.method28579(var5.method132("AllowFriendlyFire"));
+         if (var5.contains("AllowFriendlyFire", 99)) {
+            var7.method28579(var5.getBoolean("AllowFriendlyFire"));
          }
 
-         if (var5.method119("SeeFriendlyInvisibles", 99)) {
-            var7.method28581(var5.method132("SeeFriendlyInvisibles"));
+         if (var5.contains("SeeFriendlyInvisibles", 99)) {
+            var7.method28581(var5.getBoolean("SeeFriendlyInvisibles"));
          }
 
-         if (var5.method119("MemberNamePrefix", 8)) {
+         if (var5.contains("MemberNamePrefix", 8)) {
             IFormattableTextComponent var9 = ITextComponent$Serializer.func_240643_a_(var5.method126("MemberNamePrefix"));
             if (var9 != null) {
                var7.method28571(var9);
             }
          }
 
-         if (var5.method119("MemberNameSuffix", 8)) {
+         if (var5.contains("MemberNameSuffix", 8)) {
             IFormattableTextComponent var10 = ITextComponent$Serializer.func_240643_a_(var5.method126("MemberNameSuffix"));
             if (var10 != null) {
                var7.method28573(var10);
             }
          }
 
-         if (var5.method119("NameTagVisibility", 8)) {
+         if (var5.contains("NameTagVisibility", 8)) {
             Class2225 var11 = Class2225.method8958(var5.method126("NameTagVisibility"));
             if (var11 != null) {
                var7.method28584(var11);
             }
          }
 
-         if (var5.method119("DeathMessageVisibility", 8)) {
+         if (var5.contains("DeathMessageVisibility", 8)) {
             Class2225 var12 = Class2225.method8958(var5.method126("DeathMessageVisibility"));
             if (var12 != null) {
                var7.method28585(var12);
             }
          }
 
-         if (var5.method119("CollisionRule", 8)) {
+         if (var5.contains("CollisionRule", 8)) {
             Class2212 var13 = Class2212.method8939(var5.method126("CollisionRule"));
             if (var13 != null) {
                var7.method28587(var13);
@@ -113,7 +113,7 @@ public class Class7535 extends Class7530 {
 
    public void method24632(CompoundNBT var1) {
       for (int var4 = 0; var4 < 19; var4++) {
-         if (var1.method119("slot_" + var4, 8)) {
+         if (var1.contains("slot_" + var4, 8)) {
             String var5 = var1.method126("slot_" + var4);
             Class8375 var6 = this.field32341.method20976(var5);
             this.field32341.method20988(var4, var6);
@@ -162,8 +162,8 @@ public class Class7535 extends Class7530 {
             var6.method109("TeamColor", var5.getColor().getFriendlyName());
          }
 
-         var6.method115("AllowFriendlyFire", var5.method28578());
-         var6.method115("SeeFriendlyInvisibles", var5.method28580());
+         var6.putBoolean("AllowFriendlyFire", var5.method28578());
+         var6.putBoolean("SeeFriendlyInvisibles", var5.method28580());
          var6.method109("MemberNamePrefix", ITextComponent$Serializer.toJson(var5.method28572()));
          var6.method109("MemberNameSuffix", ITextComponent$Serializer.toJson(var5.method28574()));
          var6.method109("NameTagVisibility", var5.method28582().field14559);

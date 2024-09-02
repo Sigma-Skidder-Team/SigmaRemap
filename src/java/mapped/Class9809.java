@@ -6,8 +6,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class9809 {
@@ -117,8 +119,8 @@ public class Class9809 {
             GameProfile var18 = null;
             if (var1.method32141()) {
                CompoundNBT var16 = var1.method32142();
-               if (!var16.method119("SkullOwner", 10)) {
-                  if (var16.method119("SkullOwner", 8) && !StringUtils.isBlank(var16.method126("SkullOwner"))) {
+               if (!var16.contains("SkullOwner", 10)) {
+                  if (var16.contains("SkullOwner", 8) && !StringUtils.isBlank(var16.method126("SkullOwner"))) {
                      GameProfile var19 = new GameProfile((UUID)null, var16.method126("SkullOwner"));
                      var18 = SkullTileEntity.method4008(var19);
                      var16.method133("SkullOwner");

@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.HandSide;
 
 import java.util.List;
 import java.util.Random;
@@ -121,12 +122,12 @@ public class Class2894<T extends LivingEntity> extends Class2797<T> {
    }
 
    @Override
-   public void method11010(Class2205 var1, MatrixStack var2) {
+   public void method11010(HandSide var1, MatrixStack var2) {
       Class7219 var5 = this.method11011(var1);
       if (!this.field17926) {
          var5.method22682(var2);
       } else {
-         float var6 = 0.5F * (float)(var1 != Class2205.field14418 ? -1 : 1);
+         float var6 = 0.5F * (float)(var1 != HandSide.field14418 ? -1 : 1);
          var5.field31032 += var6;
          var5.method22682(var2);
          var5.field31032 -= var6;

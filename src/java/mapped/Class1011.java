@@ -5,6 +5,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -34,7 +36,7 @@ public interface Class1011 {
       if (var2.method106("AngryAt")) {
          UUID var5 = var2.method105("AngryAt");
          this.method4349(var5);
-         Entity var6 = var1.method6942(var5);
+         Entity var6 = var1.getEntityByUuid(var5);
          if (var6 != null) {
             if (var6 instanceof Class1006) {
                this.method3017((Class1006)var6);
@@ -52,7 +54,7 @@ public interface Class1011 {
    default void method4366(ServerWorld var1, boolean var2) {
       LivingEntity var5 = this.method4232();
       UUID var6 = this.method4350();
-      if ((var5 == null || var5.getShouldBeDead()) && var6 != null && var1.method6942(var6) instanceof Class1006) {
+      if ((var5 == null || var5.getShouldBeDead()) && var6 != null && var1.getEntityByUuid(var6) instanceof Class1006) {
          this.method4372();
       } else {
          if (var5 != null && !Objects.equals(var6, var5.getUniqueID())) {

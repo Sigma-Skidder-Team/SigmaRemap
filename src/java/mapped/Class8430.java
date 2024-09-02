@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector3d;
+
 import javax.annotation.Nonnull;
 
 public class Class8430 {

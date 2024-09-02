@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class2756 extends Class2754 {
    private static String[] field17296;

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 

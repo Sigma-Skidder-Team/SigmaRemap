@@ -3,11 +3,16 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -141,7 +146,7 @@ public class Class1010 extends Class1009 implements Class1011 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       BlockState var4 = null;
-      if (var1.method119("carriedBlockState", 10)) {
+      if (var1.contains("carriedBlockState", 10)) {
          var4 = Class8354.method29285(var1.getCompound("carriedBlockState"));
          if (var4.isAir()) {
             var4 = null;

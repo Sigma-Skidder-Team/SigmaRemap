@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.module.impl.world.AutoFarm;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
@@ -18,8 +19,8 @@ public class Class654 implements Runnable {
 
    @Override
    public void run() {
-      AutoFarm.mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, this.field3281.up(), Direction.field673));
-      AutoFarm.mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13486, this.field3281.up(), Direction.field673));
+      AutoFarm.mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, this.field3281.up(), Direction.field673));
+      AutoFarm.mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.STOP_DESTROY_BLOCK, this.field3281.up(), Direction.field673));
       AutoFarm.mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
    }
 }

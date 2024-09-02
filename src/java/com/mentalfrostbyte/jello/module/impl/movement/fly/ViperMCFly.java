@@ -160,7 +160,7 @@ public class ViperMCFly extends Module {
             if (var4 instanceof CPlayerPacket) {
                 CPlayerPacket var5 = (CPlayerPacket) var4;
                 if (this.field23594 == -1) {
-                    var5.field24883 = true;
+                    var5.onGround = true;
                 }
             }
         }

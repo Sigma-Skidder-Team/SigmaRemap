@@ -6,8 +6,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -228,7 +230,7 @@ public class Class8066 {
 
    public Class2009 method27726() {
       this.method27725();
-      BlockPos var3 = this.field34617.method8353();
+      BlockPos var3 = this.field34617.toImmutable();
       boolean var4 = true;
       Object var5 = null;
       if (!Class9016.method33345()) {

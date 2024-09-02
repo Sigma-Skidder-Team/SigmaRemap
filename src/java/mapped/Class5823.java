@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 
 public abstract class Class5823 extends Class5812 {
    public final Class921 field25512 = new Class921();

@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

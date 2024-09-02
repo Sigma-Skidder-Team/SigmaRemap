@@ -5,6 +5,7 @@ import java.util.EnumMap;
 import java.util.function.Supplier;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

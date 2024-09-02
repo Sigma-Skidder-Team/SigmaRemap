@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -31,7 +33,7 @@ public class Class4228 extends Class4167 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       this.method12927(var1, var5, 0, 0, 0, 6, 1, 6, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
       this.method12927(var1, var5, 0, 2, 0, 6, 10, 6, Blocks.AIR.method11579(), Blocks.AIR.method11579(), false);
       this.method12927(var1, var5, 0, 2, 0, 1, 8, 0, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);

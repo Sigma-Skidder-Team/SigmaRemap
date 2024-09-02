@@ -40,7 +40,7 @@ public class AutoSprint extends Module {
                 && !((BlockFly) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class)).method16732()) {
             Class9805 var4 = mc.player.method3085(Attributes.MOVEMENT_SPEED);
             float var5 = (float) (
-                    (var4.method38660() + 0.03F + (double) (0.015F * (float) Class9567.method37078())) / (double) mc.player.abilities.method20716() + 1.0
+                    (var4.method38660() + 0.03F + (double) (0.015F * (float) Class9567.method37078())) / (double) mc.player.abilities.getWalkSpeed() + 1.0
             )
                     / 2.0F;
             var1.field21557 = var5;

@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.world.server.ServerWorld;
+
 import java.util.Optional;
 
 public class Class3706 extends Class3676<Class1042> {

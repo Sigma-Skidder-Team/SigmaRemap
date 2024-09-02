@@ -30,7 +30,7 @@ public class CreativeSettings {
             return;
          }
 
-         if (!var3.method119("DataVersion", 99)) {
+         if (!var3.contains("DataVersion", 99)) {
             var3.method102("DataVersion", 1343);
          }
 

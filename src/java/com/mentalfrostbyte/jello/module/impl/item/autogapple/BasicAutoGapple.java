@@ -99,7 +99,7 @@ public class BasicAutoGapple extends Module {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SEntityMetadataPacket) {
                 SEntityMetadataPacket var5 = (SEntityMetadataPacket) var4;
-                if (var5.method17470() == mc.player.method3205()) {
+                if (var5.method17470() == mc.player.getEntityId()) {
                     for (Class9773 var7 : var5.method17469()) {
                         DataParameter var8 = var7.method38447();
                         if (var8.method35015() == 14) {

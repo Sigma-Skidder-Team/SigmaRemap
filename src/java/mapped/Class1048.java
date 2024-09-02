@@ -5,6 +5,7 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -14,6 +15,8 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -90,7 +93,7 @@ public class Class1048 extends Class1047 {
       var1.method102("TreasurePosX", this.method4777().getX());
       var1.method102("TreasurePosY", this.method4777().getY());
       var1.method102("TreasurePosZ", this.method4777().getZ());
-      var1.method115("GotFish", this.method4778());
+      var1.putBoolean("GotFish", this.method4778());
       var1.method102("Moistness", this.method4780());
    }
 
@@ -101,7 +104,7 @@ public class Class1048 extends Class1047 {
       int var6 = var1.method122("TreasurePosZ");
       this.method4776(new BlockPos(var4, var5, var6));
       super.method2723(var1);
-      this.method4779(var1.method132("GotFish"));
+      this.method4779(var1.getBoolean("GotFish"));
       this.method4781(var1.method122("Moistness"));
    }
 

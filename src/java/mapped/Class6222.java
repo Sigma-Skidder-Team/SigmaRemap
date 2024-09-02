@@ -1,6 +1,9 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 

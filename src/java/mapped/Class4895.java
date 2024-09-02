@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Collection;

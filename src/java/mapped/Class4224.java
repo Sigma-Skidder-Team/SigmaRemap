@@ -2,7 +2,9 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -141,15 +143,15 @@ public class Class4224 extends Class4213 {
       Class9312.method35196(this.field20553, true);
       this.field20554 = var4[method13004(var1.nextInt(4), 0, 2)];
       Class9312.method35194(this.field20554, true);
-      Class9312.method35194(Class9312.method35191(this.field20554)[Direction.EAST.method533()], true);
-      Class9312.method35194(Class9312.method35191(this.field20554)[Direction.NORTH.method533()], true);
-      Class9312.method35194(Class9312.method35191(Class9312.method35191(this.field20554)[Direction.EAST.method533()])[Direction.NORTH.method533()], true);
-      Class9312.method35194(Class9312.method35191(this.field20554)[Direction.field673.method533()], true);
-      Class9312.method35194(Class9312.method35191(Class9312.method35191(this.field20554)[Direction.EAST.method533()])[Direction.field673.method533()], true);
-      Class9312.method35194(Class9312.method35191(Class9312.method35191(this.field20554)[Direction.NORTH.method533()])[Direction.field673.method533()], true);
+      Class9312.method35194(Class9312.method35191(this.field20554)[Direction.EAST.getIndex()], true);
+      Class9312.method35194(Class9312.method35191(this.field20554)[Direction.NORTH.getIndex()], true);
+      Class9312.method35194(Class9312.method35191(Class9312.method35191(this.field20554)[Direction.EAST.getIndex()])[Direction.NORTH.getIndex()], true);
+      Class9312.method35194(Class9312.method35191(this.field20554)[Direction.field673.getIndex()], true);
+      Class9312.method35194(Class9312.method35191(Class9312.method35191(this.field20554)[Direction.EAST.getIndex()])[Direction.field673.getIndex()], true);
+      Class9312.method35194(Class9312.method35191(Class9312.method35191(this.field20554)[Direction.NORTH.getIndex()])[Direction.field673.getIndex()], true);
       Class9312.method35194(
-         Class9312.method35191(Class9312.method35191(Class9312.method35191(this.field20554)[Direction.EAST.method533()])[Direction.NORTH.method533()])[Direction.field673
-            .method533()],
+         Class9312.method35191(Class9312.method35191(Class9312.method35191(this.field20554)[Direction.EAST.getIndex()])[Direction.NORTH.getIndex()])[Direction.field673
+            .getIndex()],
          true
       );
       ArrayList<Class9312> var32 = Lists.newArrayList();
@@ -173,7 +175,7 @@ public class Class4224 extends Class4213 {
             var41++;
             int var42 = var1.nextInt(6);
             if (Class9312.method35193(var38)[var42]) {
-               int var43 = Direction.method546(var42).method536().method533();
+               int var43 = Direction.byIndex(var42).method536().getIndex();
                Class9312.method35193(var38)[var42] = false;
                Class9312.method35193(Class9312.method35191(var38)[var42])[var43] = false;
                if (var38.method35188(var34++) && Class9312.method35191(var38)[var42].method35188(var34++)) {
@@ -193,7 +195,7 @@ public class Class4224 extends Class4213 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       int var10 = Math.max(var1.method6776(), 64) - this.field20444.field45679;
       this.method13005(var1, var5, 0, 0, 0, 58, var10, 58);
       this.method13011(false, 0, var1, var4, var5);
@@ -247,7 +249,7 @@ public class Class4224 extends Class4213 {
       return true;
    }
 
-   private void method13011(boolean var1, int var2, Class1658 var3, Random var4, Class9764 var5) {
+   private void method13011(boolean var1, int var2, ISeedReader var3, Random var4, Class9764 var5) {
       if (this.method13008(var5, var2, 0, var2 + 23, 20)) {
          this.method12927(var3, var5, var2 + 0, 0, 0, var2 + 24, 0, 20, field20528, field20528, false);
          this.method13005(var3, var5, var2 + 0, 1, 0, var2 + 24, 10, 20);
@@ -290,7 +292,7 @@ public class Class4224 extends Class4213 {
       }
    }
 
-   private void method13012(Class1658 var1, Random var2, Class9764 var3) {
+   private void method13012(ISeedReader var1, Random var2, Class9764 var3) {
       if (this.method13008(var3, 22, 5, 35, 17)) {
          this.method13005(var1, var3, 25, 0, 0, 32, 8, 20);
 
@@ -310,7 +312,7 @@ public class Class4224 extends Class4213 {
       }
    }
 
-   private void method13013(Class1658 var1, Random var2, Class9764 var3) {
+   private void method13013(ISeedReader var1, Random var2, Class9764 var3) {
       if (this.method13008(var3, 15, 20, 42, 21)) {
          this.method12927(var1, var3, 15, 0, 21, 42, 0, 21, field20528, field20528, false);
          this.method13005(var1, var3, 26, 1, 21, 31, 3, 21);
@@ -369,7 +371,7 @@ public class Class4224 extends Class4213 {
       }
    }
 
-   private void method13014(Class1658 var1, Random var2, Class9764 var3) {
+   private void method13014(ISeedReader var1, Random var2, Class9764 var3) {
       if (this.method13008(var3, 21, 21, 36, 36)) {
          this.method12927(var1, var3, 21, 0, 22, 36, 0, 36, field20528, field20528, false);
          this.method13005(var1, var3, 21, 1, 22, 36, 23, 36);
@@ -405,7 +407,7 @@ public class Class4224 extends Class4213 {
       }
    }
 
-   private void method13015(Class1658 var1, Random var2, Class9764 var3) {
+   private void method13015(ISeedReader var1, Random var2, Class9764 var3) {
       if (this.method13008(var3, 0, 21, 6, 58)) {
          this.method12927(var1, var3, 0, 0, 21, 6, 0, 57, field20528, field20528, false);
          this.method13005(var1, var3, 0, 1, 21, 6, 7, 57);
@@ -457,7 +459,7 @@ public class Class4224 extends Class4213 {
       }
    }
 
-   private void method13016(Class1658 var1, Random var2, Class9764 var3) {
+   private void method13016(ISeedReader var1, Random var2, Class9764 var3) {
       if (this.method13008(var3, 7, 21, 13, 50)) {
          this.method12927(var1, var3, 7, 0, 21, 13, 0, 50, field20528, field20528, false);
          this.method13005(var1, var3, 7, 1, 21, 13, 10, 50);
@@ -516,7 +518,7 @@ public class Class4224 extends Class4213 {
       }
    }
 
-   private void method13017(Class1658 var1, Random var2, Class9764 var3) {
+   private void method13017(ISeedReader var1, Random var2, Class9764 var3) {
       if (this.method13008(var3, 14, 21, 20, 43)) {
          this.method12927(var1, var3, 14, 0, 21, 20, 0, 43, field20528, field20528, false);
          this.method13005(var1, var3, 14, 1, 22, 20, 14, 43);

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public abstract class Class4837 implements Class4842 {
@@ -10,7 +11,7 @@ public abstract class Class4837 implements Class4842 {
    }
 
    @Override
-   public ResourceLocation method14964() {
+   public ResourceLocation getId() {
       return this.field22614;
    }
 

@@ -1,7 +1,7 @@
 package net.minecraft.network.play.client;
 
 import mapped.Class2037;
-import mapped.IServerPlayNetHandler;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
@@ -32,7 +32,7 @@ public class CUpdateCommandBlockPacket implements Packet<IServerPlayNetHandler> 
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24738 = var1.readBlockPos();
       this.field24739 = var1.readString(32767);
-      this.field24743 = var1.method35712(Class2037.class);
+      this.field24743 = var1.readEnumValue(Class2037.class);
       int i = var1.readByte();
       this.field24740  =  (i & 1) != 0;
       this.field24741  = (i & 2) != 0;
@@ -43,7 +43,7 @@ public class CUpdateCommandBlockPacket implements Packet<IServerPlayNetHandler> 
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeBlockPos(this.field24738);
       var1.writeString(this.field24739);
-      var1.method35713(this.field24743);
+      var1.writeEnumValue(this.field24743);
       byte var4 = 0;
       if (this.field24740) {
          var4 |= 1;

@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 import com.mentalfrostbyte.jello.event.CancellableEvent;
-import mapped.Vector3d;
+import net.minecraft.util.math.vector.Vector3d;
 import mapped.Class9567;
 
 public class Class4436 extends CancellableEvent {

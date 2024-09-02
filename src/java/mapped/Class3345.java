@@ -5,9 +5,11 @@ import java.util.UUID;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class3345 extends Class3343 {
@@ -24,8 +26,8 @@ public class Class3345 extends Class3343 {
          GameProfile var10 = null;
          if (var5.method32141()) {
             CompoundNBT var11 = var5.method32142();
-            if (!var11.method119("SkullOwner", 10)) {
-               if (var11.method119("SkullOwner", 8) && !StringUtils.isBlank(var11.method126("SkullOwner"))) {
+            if (!var11.contains("SkullOwner", 10)) {
+               if (var11.contains("SkullOwner", 8) && !StringUtils.isBlank(var11.method126("SkullOwner"))) {
                   var10 = new GameProfile((UUID)null, var11.method126("SkullOwner"));
                }
             } else {

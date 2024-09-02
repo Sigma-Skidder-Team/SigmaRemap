@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -25,19 +27,19 @@ public class Class4200 extends Class4194 {
 
    public Class4200(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33446, var2);
-      this.field20503 = var2.method132("leftLow");
-      this.field20504 = var2.method132("leftHigh");
-      this.field20505 = var2.method132("rightLow");
-      this.field20506 = var2.method132("rightHigh");
+      this.field20503 = var2.getBoolean("leftLow");
+      this.field20504 = var2.getBoolean("leftHigh");
+      this.field20505 = var2.getBoolean("rightLow");
+      this.field20506 = var2.getBoolean("rightHigh");
    }
 
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method115("leftLow", this.field20503);
-      var1.method115("leftHigh", this.field20504);
-      var1.method115("rightLow", this.field20505);
-      var1.method115("rightHigh", this.field20506);
+      var1.putBoolean("leftLow", this.field20503);
+      var1.putBoolean("leftHigh", this.field20504);
+      var1.putBoolean("rightLow", this.field20505);
+      var1.putBoolean("rightHigh", this.field20506);
    }
 
    @Override
@@ -74,7 +76,7 @@ public class Class4200 extends Class4194 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       this.method12928(var1, var5, 0, 0, 0, 9, 8, 10, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 4, 3, 0);
       if (this.field20503) {

@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Sets.SetView;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Map;
 import java.util.Random;

@@ -38,10 +38,10 @@ public class SStopSoundPacket implements Packet<IClientPlayNetHandler> {
          }
       } else if (this.field24373 == null) {
          var1.writeByte(1);
-         var1.method35713(this.field24374);
+         var1.writeEnumValue(this.field24374);
       } else {
          var1.writeByte(3);
-         var1.method35713(this.field24374);
+         var1.writeEnumValue(this.field24374);
          var1.writeResourceLocation(this.field24373);
       }
    }

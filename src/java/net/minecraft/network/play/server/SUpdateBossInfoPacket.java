@@ -37,14 +37,14 @@ public class SUpdateBossInfoPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24287 = var1.method35717();
-      this.field24288 = var1.<Class2151>method35712(Class2151.class);
+      this.field24287 = var1.readUniqueId();
+      this.field24288 = var1.<Class2151>readEnumValue(Class2151.class);
       switch (Class9255.field42562[this.field24288.ordinal()]) {
          case 1:
             this.field24289 = var1.method35710();
             this.field24290 = var1.readFloat();
-            this.field24291 = var1.<Class2303>method35712(Class2303.class);
-            this.field24292 = var1.<Class2300>method35712(Class2300.class);
+            this.field24291 = var1.<Class2303>readEnumValue(Class2303.class);
+            this.field24292 = var1.<Class2300>readEnumValue(Class2300.class);
             this.method17203(var1.readUnsignedByte());
          case 2:
          default:
@@ -56,8 +56,8 @@ public class SUpdateBossInfoPacket implements Packet<IClientPlayNetHandler> {
             this.field24289 = var1.method35710();
             break;
          case 5:
-            this.field24291 = var1.<Class2303>method35712(Class2303.class);
-            this.field24292 = var1.<Class2300>method35712(Class2300.class);
+            this.field24291 = var1.<Class2303>readEnumValue(Class2303.class);
+            this.field24292 = var1.<Class2300>readEnumValue(Class2300.class);
             break;
          case 6:
             this.method17203(var1.readUnsignedByte());
@@ -72,14 +72,14 @@ public class SUpdateBossInfoPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35716(this.field24287);
-      var1.method35713(this.field24288);
+      var1.writeUniqueId(this.field24287);
+      var1.writeEnumValue(this.field24288);
       switch (Class9255.field42562[this.field24288.ordinal()]) {
          case 1:
             var1.writeTextComponent(this.field24289);
             var1.writeFloat(this.field24290);
-            var1.method35713(this.field24291);
-            var1.method35713(this.field24292);
+            var1.writeEnumValue(this.field24291);
+            var1.writeEnumValue(this.field24292);
             var1.writeByte(this.method17204());
          case 2:
          default:
@@ -91,8 +91,8 @@ public class SUpdateBossInfoPacket implements Packet<IClientPlayNetHandler> {
             var1.writeTextComponent(this.field24289);
             break;
          case 5:
-            var1.method35713(this.field24291);
-            var1.method35713(this.field24292);
+            var1.writeEnumValue(this.field24291);
+            var1.writeEnumValue(this.field24292);
             break;
          case 6:
             var1.writeByte(this.method17204());

@@ -11,6 +11,7 @@ import mapped.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.vector.Vector3d;
 import org.lwjgl.opengl.GL11;
 
 public class FillESP extends Module {

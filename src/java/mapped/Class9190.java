@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class9190 {
    private static String[] field42206;
    private float field42207 = Float.MAX_VALUE;

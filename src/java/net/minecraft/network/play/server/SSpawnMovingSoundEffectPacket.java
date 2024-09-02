@@ -25,7 +25,7 @@ public class SSpawnMovingSoundEffectPacket implements Packet<IClientPlayNetHandl
       Validate.notNull(var1, "sound", new Object[0]);
       this.field24623 = var1;
       this.field24624 = var2;
-      this.field24625 = var3.method3205();
+      this.field24625 = var3.getEntityId();
       this.field24626 = var4;
       this.field24627 = var5;
    }
@@ -33,7 +33,7 @@ public class SSpawnMovingSoundEffectPacket implements Packet<IClientPlayNetHandl
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24623 = Registry.field16069.method9172(var1.readVarInt());
-      this.field24624 = var1.<Class2266>method35712(Class2266.class);
+      this.field24624 = var1.<Class2266>readEnumValue(Class2266.class);
       this.field24625 = var1.readVarInt();
       this.field24626 = var1.readFloat();
       this.field24627 = var1.readFloat();
@@ -42,7 +42,7 @@ public class SSpawnMovingSoundEffectPacket implements Packet<IClientPlayNetHandl
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeVarInt(Registry.field16069.getId(this.field24623));
-      var1.method35713(this.field24624);
+      var1.writeEnumValue(this.field24624);
       var1.writeVarInt(this.field24625);
       var1.writeFloat(this.field24626);
       var1.writeFloat(this.field24627);

@@ -6,6 +6,7 @@ import com.google.common.collect.Maps;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;

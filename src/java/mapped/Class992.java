@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.World;
 
 public class Class992 extends AbstractMinecartEntity {
    private static String[] field5478;

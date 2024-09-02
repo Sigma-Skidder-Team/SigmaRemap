@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.item.ItemStack;
 
 public enum Class2166 {
    field14220(0, 0, 28, 32, 8),

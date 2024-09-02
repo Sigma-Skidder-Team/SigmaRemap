@@ -8,6 +8,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.client.CEditBookPacket;
 import net.minecraft.util.Hand;

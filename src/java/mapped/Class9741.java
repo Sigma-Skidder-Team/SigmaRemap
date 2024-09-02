@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -48,7 +49,7 @@ public class Class9741 {
    }
 
    public static void method38181(CompoundNBT var0, List<Class2023> var1) {
-      if (var0 != null && var0.method119("CustomPotionEffects", 9)) {
+      if (var0 != null && var0.contains("CustomPotionEffects", 9)) {
          ListNBT var4 = var0.method131("CustomPotionEffects", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
@@ -63,7 +64,7 @@ public class Class9741 {
 
    public static int method38182(ItemStack var0) {
       CompoundNBT var3 = var0.method32142();
-      if (var3 != null && var3.method119("CustomPotionColor", 99)) {
+      if (var3 != null && var3.contains("CustomPotionColor", 99)) {
          return var3.method122("CustomPotionColor");
       } else {
          return method38185(var0) != Class8137.field34976 ? method38184(method38176(var0)) : 16253176;

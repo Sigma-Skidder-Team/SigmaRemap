@@ -4,10 +4,12 @@ import com.google.common.collect.Sets;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.Set;
@@ -57,7 +59,7 @@ public class Class887 extends AbstractArrowEntity {
 
    public static int method3498(ItemStack var0) {
       CompoundNBT var3 = var0.method32142();
-      return var3 != null && var3.method119("CustomPotionColor", 99) ? var3.method122("CustomPotionColor") : -1;
+      return var3 != null && var3.contains("CustomPotionColor", 99) ? var3.method122("CustomPotionColor") : -1;
    }
 
    private void method3499() {
@@ -144,7 +146,7 @@ public class Class887 extends AbstractArrowEntity {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("Potion", 8)) {
+      if (var1.contains("Potion", 8)) {
          this.field5117 = Class9741.method38186(var1);
       }
 
@@ -152,7 +154,7 @@ public class Class887 extends AbstractArrowEntity {
          this.method3500(var5);
       }
 
-      if (!var1.method119("Color", 99)) {
+      if (!var1.contains("Color", 99)) {
          this.method3499();
       } else {
          this.method3503(var1.method122("Color"));

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 
 public class Class5836 extends Class5812 {
    private final Class8786 field25560;
@@ -63,7 +64,7 @@ public class Class5836 extends Class5812 {
             } else if (var8 == Items.field37471 && !var9.field32323) {
                var10 = var1.copy();
                var10.method32180(1);
-               var10.getOrCreateTag().method115("map_to_lock", true);
+               var10.getOrCreateTag().putBoolean("map_to_lock", true);
                this.method18130();
             } else {
                if (var8 != Items.field38056) {

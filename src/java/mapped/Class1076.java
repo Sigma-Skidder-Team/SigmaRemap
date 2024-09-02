@@ -2,10 +2,13 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
@@ -108,14 +111,14 @@ public class Class1076 extends AbstractHorseEntity {
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method115("SkeletonTrap", this.method5000());
+      var1.putBoolean("SkeletonTrap", this.method5000());
       var1.method102("SkeletonTrapTime", this.field5921);
    }
 
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method5001(var1.method132("SkeletonTrap"));
+      this.method5001(var1.getBoolean("SkeletonTrap"));
       this.field5921 = var1.method122("SkeletonTrapTime");
    }
 

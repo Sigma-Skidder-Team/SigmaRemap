@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
 import net.minecraft.util.IStringSerializable;
 
 import javax.annotation.Nullable;

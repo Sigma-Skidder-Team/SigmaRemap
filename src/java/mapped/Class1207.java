@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class1207 extends Button {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector3d;
+
 import javax.annotation.Nullable;
 
 public class Class6351 extends Class6349 {

@@ -2,7 +2,9 @@ package mapped;
 
 import com.google.common.base.Predicates;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class Class3400 extends Block {
    public static final Class8553 field19053 = Class3198.field18484;

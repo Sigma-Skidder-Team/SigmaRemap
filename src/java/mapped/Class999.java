@@ -12,6 +12,8 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -309,7 +311,7 @@ public class Class999 extends Entity {
    @Nullable
    public LivingEntity method4114() {
       if (this.field5512 == null && this.field5513 != null && this.world instanceof ServerWorld) {
-         Entity var3 = ((ServerWorld)this.world).method6942(this.field5513);
+         Entity var3 = ((ServerWorld)this.world).getEntityByUuid(this.field5513);
          if (var3 instanceof LivingEntity) {
             this.field5512 = (LivingEntity)var3;
          }
@@ -325,14 +327,14 @@ public class Class999 extends Entity {
       this.field5506 = var1.method122("WaitTime");
       this.field5507 = var1.method122("ReapplicationDelay");
       this.field5509 = var1.method122("DurationOnUse");
-      this.field5510 = var1.method124("RadiusOnUse");
-      this.field5511 = var1.method124("RadiusPerTick");
-      this.method4097(var1.method124("Radius"));
+      this.field5510 = var1.getFloat("RadiusOnUse");
+      this.field5511 = var1.getFloat("RadiusPerTick");
+      this.method4097(var1.getFloat("Radius"));
       if (var1.method106("Owner")) {
          this.field5513 = var1.method105("Owner");
       }
 
-      if (var1.method119("Particle", 8)) {
+      if (var1.contains("Particle", 8)) {
          try {
             this.method4105(Class8050.method27650(new StringReader(var1.method126("Particle"))));
          } catch (CommandSyntaxException var7) {
@@ -340,15 +342,15 @@ public class Class999 extends Entity {
          }
       }
 
-      if (var1.method119("Color", 99)) {
+      if (var1.contains("Color", 99)) {
          this.method4103(var1.method122("Color"));
       }
 
-      if (var1.method119("Potion", 8)) {
+      if (var1.contains("Potion", 8)) {
          this.method4099(Class9741.method38186(var1));
       }
 
-      if (var1.method119("Effects", 9)) {
+      if (var1.contains("Effects", 9)) {
          ListNBT var4 = var1.method131("Effects", 10);
          this.field5503.clear();
 
@@ -368,9 +370,9 @@ public class Class999 extends Entity {
       var1.method102("WaitTime", this.field5506);
       var1.method102("ReapplicationDelay", this.field5507);
       var1.method102("DurationOnUse", this.field5509);
-      var1.method107("RadiusOnUse", this.field5510);
-      var1.method107("RadiusPerTick", this.field5511);
-      var1.method107("Radius", this.method4098());
+      var1.putFloat("RadiusOnUse", this.field5510);
+      var1.putFloat("RadiusPerTick", this.field5511);
+      var1.putFloat("Radius", this.method4098());
       var1.method109("Particle", this.method4104().getParameters());
       if (this.field5513 != null) {
          var1.method104("Owner", this.field5513);

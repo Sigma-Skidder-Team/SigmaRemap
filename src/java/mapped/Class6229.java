@@ -1,7 +1,11 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.server.ServerWorld;
 
 public final class Class6229 extends Class6218 {
    private static String[] field27718;

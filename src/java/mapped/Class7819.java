@@ -14,9 +14,11 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -46,7 +48,7 @@ public class Class7819 {
 
    public Class7819(ServerWorld var1, long var2, CompoundNBT var4) {
       this.field33538 = var1;
-      if (!var4.method119("DragonKilled", 99)) {
+      if (!var4.contains("DragonKilled", 99)) {
          this.field33545 = true;
          this.field33546 = true;
       } else {
@@ -54,18 +56,18 @@ public class Class7819 {
             this.field33547 = var4.method105("Dragon");
          }
 
-         this.field33545 = var4.method132("DragonKilled");
-         this.field33546 = var4.method132("PreviouslyKilled");
-         if (var4.method132("IsRespawning")) {
+         this.field33545 = var4.getBoolean("DragonKilled");
+         this.field33546 = var4.getBoolean("PreviouslyKilled");
+         if (var4.getBoolean("IsRespawning")) {
             this.field33550 = Class1940.field12604;
          }
 
-         if (var4.method119("ExitPortalLocation", 10)) {
+         if (var4.contains("ExitPortalLocation", 10)) {
             this.field33549 = Class8354.method29283(var4.getCompound("ExitPortalLocation"));
          }
       }
 
-      if (!var4.method119("Gateways", 9)) {
+      if (!var4.contains("Gateways", 9)) {
          this.field33539.addAll(ContiguousSet.create(Range.closedOpen(0, 20), DiscreteDomain.integers()));
          Collections.shuffle(this.field33539, new Random(var2));
       } else {
@@ -92,8 +94,8 @@ public class Class7819 {
          var3.method104("Dragon", this.field33547);
       }
 
-      var3.method115("DragonKilled", this.field33545);
-      var3.method115("PreviouslyKilled", this.field33546);
+      var3.putBoolean("DragonKilled", this.field33545);
+      var3.putBoolean("PreviouslyKilled", this.field33546);
       if (this.field33549 != null) {
          var3.put("ExitPortalLocation", Class8354.method29284(this.field33549));
       }
@@ -387,7 +389,7 @@ public class Class7819 {
          this.method26122(true);
       } else {
          this.method26118();
-         Entity var5 = this.field33538.method6942(this.field33547);
+         Entity var5 = this.field33538.getEntityByUuid(this.field33547);
          if (var5 instanceof Class1007) {
             ((Class1007)var5).method4335(var1, var1.getPosition(), var2);
          }

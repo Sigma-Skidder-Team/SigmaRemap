@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -66,11 +67,11 @@ public class Class4193 extends Class4178 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       return this.method12976(var1, var2, var3, var4, var5, var7, false);
    }
 
-   public boolean method12976(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, BlockPos var6, boolean var7) {
+   public boolean method12976(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, BlockPos var6, boolean var7) {
       return this.field20489.method24376(this.field20494, var1, var2, var3, this.field20490, var6, this.field20492, var5, var4, var7);
    }
 

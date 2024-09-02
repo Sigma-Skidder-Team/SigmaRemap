@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class4481 extends Class4457 {
    private final Class8576 field21673;

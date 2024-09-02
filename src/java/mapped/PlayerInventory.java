@@ -3,10 +3,12 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.function.Predicate;

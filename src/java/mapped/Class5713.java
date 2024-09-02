@@ -1,8 +1,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
+import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -51,7 +54,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
             var6 = !var1.method3091().isEmpty() ? Class2278.field14837 : Class2278.field14836;
          }
 
-         if (var1.method2967() != Class2205.field14418) {
+         if (var1.method2967() != HandSide.field14418) {
             var4.field17440 = var6;
             var4.field17439 = var5;
          } else {

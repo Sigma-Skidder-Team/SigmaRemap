@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
@@ -11,7 +12,11 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -206,9 +211,9 @@ public class Class907 extends Entity {
    public void method2724(CompoundNBT var1) {
       var1.put("BlockState", Class8354.method29287(this.field5176));
       var1.method102("Time", this.field5177);
-      var1.method115("DropItem", this.field5178);
-      var1.method115("HurtEntities", this.field5180);
-      var1.method107("FallHurtAmount", this.field5182);
+      var1.putBoolean("DropItem", this.field5178);
+      var1.putBoolean("HurtEntities", this.field5180);
+      var1.putFloat("FallHurtAmount", this.field5182);
       var1.method102("FallHurtMax", this.field5181);
       if (this.field5183 != null) {
          var1.put("TileEntityData", this.field5183);
@@ -219,21 +224,21 @@ public class Class907 extends Entity {
    public void method2723(CompoundNBT var1) {
       this.field5176 = Class8354.method29285(var1.getCompound("BlockState"));
       this.field5177 = var1.method122("Time");
-      if (!var1.method119("HurtEntities", 99)) {
+      if (!var1.contains("HurtEntities", 99)) {
          if (this.field5176.method23446(BlockTags.field32765)) {
             this.field5180 = true;
          }
       } else {
-         this.field5180 = var1.method132("HurtEntities");
-         this.field5182 = var1.method124("FallHurtAmount");
+         this.field5180 = var1.getBoolean("HurtEntities");
+         this.field5182 = var1.getFloat("FallHurtAmount");
          this.field5181 = var1.method122("FallHurtMax");
       }
 
-      if (var1.method119("DropItem", 99)) {
-         this.field5178 = var1.method132("DropItem");
+      if (var1.contains("DropItem", 99)) {
+         this.field5178 = var1.getBoolean("DropItem");
       }
 
-      if (var1.method119("TileEntityData", 10)) {
+      if (var1.contains("TileEntityData", 10)) {
          this.field5183 = var1.getCompound("TileEntityData");
       }
 

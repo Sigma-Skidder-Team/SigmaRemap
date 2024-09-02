@@ -12,6 +12,7 @@ import java.util.function.Predicate;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
 import org.apache.commons.lang3.tuple.Pair;
 
 public class Class7201 implements IBakedModel {

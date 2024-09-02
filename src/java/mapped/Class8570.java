@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 
 public final class Class8570 {
    private static String[] field38528;

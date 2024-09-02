@@ -180,7 +180,7 @@ public class Class9805 {
 
    public void method38679(CompoundNBT var1) {
       this.field45831 = var1.method125("Base");
-      if (var1.method119("Modifiers", 9)) {
+      if (var1.contains("Modifiers", 9)) {
          ListNBT var4 = var1.method131("Modifiers", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {

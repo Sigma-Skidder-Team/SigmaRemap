@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 
 import java.util.List;
@@ -7,12 +8,12 @@ import java.util.List;
 public interface Class3277 {
    default boolean method11799(ItemStack var1) {
       CompoundNBT var4 = var1.method32145("display");
-      return var4 != null && var4.method119("color", 99);
+      return var4 != null && var4.contains("color", 99);
    }
 
    default int method11800(ItemStack var1) {
       CompoundNBT var4 = var1.method32145("display");
-      return var4 != null && var4.method119("color", 99) ? var4.method122("color") : 10511680;
+      return var4 != null && var4.contains("color", 99) ? var4.method122("color") : 10511680;
    }
 
    default void method11801(ItemStack var1) {

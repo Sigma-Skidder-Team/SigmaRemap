@@ -16,8 +16,8 @@ public class ChatFilter extends Module {
         if (this.isEnabled()) {
             if (var1.method13932() instanceof CChatMessagePacket) {
                 CChatMessagePacket var4 = (CChatMessagePacket) var1.method13932();
-                String[] var5 = var4.field24496.split(" ");
-                if (var4.field24496.length() + var5.length <= 100) {
+                String[] var5 = var4.message.split(" ");
+                if (var4.message.length() + var5.length <= 100) {
                     StringBuilder var6 = new StringBuilder();
                     boolean var7 = false;
 
@@ -37,7 +37,7 @@ public class ChatFilter extends Module {
                     }
 
                     if (!var7) {
-                        var4.field24496 = var6.toString();
+                        var4.message = var6.toString();
                     }
                 }
             }

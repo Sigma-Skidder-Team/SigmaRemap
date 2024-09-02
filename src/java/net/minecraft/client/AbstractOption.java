@@ -6,6 +6,7 @@ import java.util.Optional;
 import mapped.*;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;

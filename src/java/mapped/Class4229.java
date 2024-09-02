@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -19,13 +21,13 @@ public class Class4229 extends Class4167 {
 
    public Class4229(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33438, var2);
-      this.field20560 = var2.method132("Chest");
+      this.field20560 = var2.getBoolean("Chest");
    }
 
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method115("Chest", this.field20560);
+      var1.putBoolean("Chest", this.field20560);
    }
 
    @Override
@@ -39,7 +41,7 @@ public class Class4229 extends Class4167 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       this.method12927(var1, var5, 0, 0, 0, 4, 1, 4, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
       this.method12927(var1, var5, 0, 2, 0, 4, 5, 4, Blocks.AIR.method11579(), Blocks.AIR.method11579(), false);
       BlockState var10 = Blocks.NETHER_BRICK_FENCE

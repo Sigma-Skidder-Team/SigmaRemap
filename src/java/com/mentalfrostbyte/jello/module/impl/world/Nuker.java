@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -32,8 +33,8 @@ public class Nuker extends Module {
     }
 
     public static void method16265(BlockPos var0) {
-        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, var0, Direction.field673));
-        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13486, var0, Direction.field673));
+        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var0, Direction.field673));
+        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.STOP_DESTROY_BLOCK, var0, Direction.field673));
         mc.world.setBlockState(var0, Blocks.AIR.method11579());
     }
 
@@ -89,7 +90,7 @@ public class Nuker extends Module {
                 }
             } else {
                 for (BlockPos var9 : this.field23567) {
-                    mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, var9, Class9217.method34580(var9)));
+                    mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var9, Class9217.method34580(var9)));
                     if (!this.getBooleanValueFromSetttingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {

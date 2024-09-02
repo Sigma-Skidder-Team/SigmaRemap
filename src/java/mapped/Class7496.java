@@ -21,6 +21,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

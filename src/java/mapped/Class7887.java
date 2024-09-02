@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import it.unimi.dsi.fastutil.longs.Long2LongMap;
 import it.unimi.dsi.fastutil.longs.Long2LongOpenHashMap;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Optional;
 import java.util.Set;

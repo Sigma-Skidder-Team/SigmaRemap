@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 public class Class3308 extends Item {
    private static String[] field18815;

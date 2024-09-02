@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.world.World;
 
 public class Class4488 extends Class4457 {
    private final RegistryKey<World> field21689;

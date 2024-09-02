@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Iterator;
 import java.util.List;
@@ -38,7 +39,7 @@ public abstract class Class5444<C extends Class4698> {
       return this.field24196;
    }
 
-   public void method17112(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6) {
+   public void method17112(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6) {
       synchronized (this.field24196) {
          if (!this.field24196.isEmpty()) {
             Class9764 var10 = this.field24196.get(0).field20444;

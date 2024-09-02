@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 
 public class Class5826 extends Class5812 {
    private static String[] field25525;

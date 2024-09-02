@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 
 import javax.annotation.Nullable;
 import java.util.List;

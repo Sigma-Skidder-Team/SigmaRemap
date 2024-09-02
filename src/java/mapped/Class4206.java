@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -18,13 +20,13 @@ public class Class4206 extends Class4194 {
 
    public Class4206(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33444, var2);
-      this.field20513 = var2.method132("Chest");
+      this.field20513 = var2.getBoolean("Chest");
    }
 
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method115("Chest", this.field20513);
+      var1.putBoolean("Chest", this.field20513);
    }
 
    @Override
@@ -38,7 +40,7 @@ public class Class4206 extends Class4194 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       this.method12928(var1, var5, 0, 0, 0, 4, 4, 6, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 1, 1, 0);
       this.method12984(var1, var4, var5, Class2213.field14470, 1, 1, 6);

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -10,7 +11,10 @@ import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -92,8 +96,8 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
          var1.put("FlowerPos", Class8354.method29284(this.method4421()));
       }
 
-      var1.method115("HasNectar", this.method4438());
-      var1.method115("HasStung", this.method4440());
+      var1.putBoolean("HasNectar", this.method4438());
+      var1.putBoolean("HasStung", this.method4440());
       var1.method102("TicksSincePollination", this.field5691);
       var1.method102("CannotEnterHiveTicks", this.field5692);
       var1.method102("CropsGrownSincePollination", this.field5693);
@@ -113,8 +117,8 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       }
 
       super.method2723(var1);
-      this.method4439(var1.method132("HasNectar"));
-      this.method4441(var1.method132("HasStung"));
+      this.method4439(var1.getBoolean("HasNectar"));
+      this.method4441(var1.getBoolean("HasStung"));
       this.field5691 = var1.method122("TicksSincePollination");
       this.field5692 = var1.method122("CannotEnterHiveTicks");
       this.field5693 = var1.method122("CropsGrownSincePollination");

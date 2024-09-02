@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.World;
+
 public class Class8509 {
    private static String[] field37207;
 

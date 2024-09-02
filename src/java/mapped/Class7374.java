@@ -5,6 +5,7 @@ import javax.annotation.Nullable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

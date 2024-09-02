@@ -25,10 +25,12 @@ import java.util.Set;
 
 import mapped.*;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.client.CClientSettingsPacket;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
+import net.minecraft.util.HandSide;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.Difficulty;
@@ -59,7 +61,7 @@ public class GameSettings {
    public boolean field44588;
    public boolean field44589 = true;
    private final Set<Class2318> field44590 = Sets.newHashSet(Class2318.values());
-   public Class2205 field44591 = Class2205.field14418;
+   public HandSide field44591 = HandSide.field14418;
    public int overrideWidth;
    public int overrideHeight;
    public boolean field44594 = true;
@@ -620,7 +622,7 @@ public class GameSettings {
                }
 
                if ("mainHand".equals(var4)) {
-                  this.field44591 = "left".equals(var5) ? Class2205.field14417 : Class2205.field14418;
+                  this.field44591 = "left".equals(var5) ? HandSide.field14417 : HandSide.field14418;
                }
 
                if ("narrator".equals(var4)) {
@@ -794,7 +796,7 @@ public class GameSettings {
             var1.println("chatWidth:" + (float)this.field44596);
             var1.println("mipmapLevels:" + this.field44600);
             var1.println("useNativeTransport:" + this.field44602);
-            var1.println("mainHand:" + (this.field44591 == Class2205.field14417 ? "left" : "right"));
+            var1.println("mainHand:" + (this.field44591 == HandSide.field14417 ? "left" : "right"));
             var1.println("attackIndicator:" + this.field44603.method8922());
             var1.println("narrator:" + this.field44675.method8189());
             var1.println("tutorialStep:" + this.field44604.method8916());

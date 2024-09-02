@@ -4,6 +4,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class FogRenderer {
    private static String[] field40347;

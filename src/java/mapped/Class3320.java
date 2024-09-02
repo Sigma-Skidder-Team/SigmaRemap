@@ -2,12 +2,14 @@ package mapped;
 
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 public class Class3320 extends Item {
    public Class3320(Class5643 var1) {
@@ -35,11 +37,11 @@ public class Class3320 extends Item {
          var1.add(method11874(new TranslationTextComponent("item.minecraft.firework_star.fade_to").appendString(" ").mergeStyle(TextFormatting.GRAY), var6));
       }
 
-      if (var0.method132("Trail")) {
+      if (var0.getBoolean("Trail")) {
          var1.add(new TranslationTextComponent("item.minecraft.firework_star.trail").mergeStyle(TextFormatting.GRAY));
       }
 
-      if (var0.method132("Flicker")) {
+      if (var0.getBoolean("Flicker")) {
          var1.add(new TranslationTextComponent("item.minecraft.firework_star.flicker").mergeStyle(TextFormatting.GRAY));
       }
    }

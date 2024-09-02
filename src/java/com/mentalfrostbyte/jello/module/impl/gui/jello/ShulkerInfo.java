@@ -1,6 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
 import com.google.common.collect.Lists;
+import com.mentalfrostbyte.jello.command.impl.Peek;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4414;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
@@ -13,6 +14,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import mapped.*;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
 import org.lwjgl.opengl.GL11;
@@ -313,10 +315,10 @@ public class ShulkerInfo extends Module {
     private List<ItemStack> method16678(ItemStack var1) {
         List<ItemStack> var4 = new ArrayList();
         CompoundNBT var5 = var1.method32142();
-        if (var5 != null && var5.method119("BlockEntityTag", 10)) {
+        if (var5 != null && var5.contains("BlockEntityTag", 10)) {
             CompoundNBT var6 = var5.getCompound("BlockEntityTag");
             Peek.method18338(var6);
-            if (var6.method119("Items", 9)) {
+            if (var6.contains("Items", 9)) {
                 NonNullList<ItemStack> var7 = NonNullList.method68(27, ItemStack.EMPTY);
                 Class7920.method26567(var6, var7);
 

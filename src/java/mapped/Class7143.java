@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -18,7 +19,7 @@ public class Class7143 extends Class7139 {
    }
 
    @Override
-   public void method22269(Class1658 var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6) {
+   public void method22269(ISeedReader var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6) {
       var3.forEach(var5x -> {
          if (var2.nextInt(3) > 0) {
             BlockPos var8 = var5x.west();

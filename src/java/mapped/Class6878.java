@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
@@ -34,7 +35,7 @@ public class Class6878 {
                   }
 
                   if (var14.equals(var9)) {
-                     return var6.up().method8353();
+                     return var6.up().toImmutable();
                   }
                }
 

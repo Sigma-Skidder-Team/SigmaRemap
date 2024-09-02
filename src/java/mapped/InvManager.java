@@ -11,6 +11,8 @@ import com.mentalfrostbyte.jello.module.impl.item.AutoMLG;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
+import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;
 
@@ -208,7 +210,7 @@ public class InvManager extends PremiumModule {
                 if (this.field23660 && (long) Client.getInstance().method19939().method31333() >= delayValue) {
                     this.field23660 = !this.field23660;
                     this.method16446(this.field23659);
-                    Class7789.method25870(mc.player.field4904.field25471, 45, 0, Class2259.field14694, mc.player, true);
+                    Class7789.method25870(mc.player.field4904.field25471, 45, 0, ClickType.field14694, mc.player, true);
                     this.field23658.method27120();
                 } else {
                     if (mc.currentScreen == null || mc.currentScreen instanceof InventoryScreen || mc.currentScreen instanceof ChatScreen) {
@@ -480,7 +482,7 @@ public class InvManager extends PremiumModule {
                 if (var5.getItem() instanceof Class3334) {
                     this.method16446(var1);
                     this.field23658.method27120();
-                    Class7789.method25870(mc.player.field4904.field25471, var4, 0, Class2259.field14694, mc.player, true);
+                    Class7789.method25870(mc.player.field4904.field25471, var4, 0, ClickType.field14694, mc.player, true);
                     this.field23660 = true;
                     return;
                 }

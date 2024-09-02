@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableMap.Builder;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Optional;
 import java.util.Set;

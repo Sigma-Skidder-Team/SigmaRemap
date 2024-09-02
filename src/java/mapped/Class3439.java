@@ -5,6 +5,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.World;
 
 public class Class3439 extends Class3438 {
    private static String[] field19238;

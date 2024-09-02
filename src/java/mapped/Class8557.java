@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class8557 {
    public int[] field38456;
    public final int field38457;

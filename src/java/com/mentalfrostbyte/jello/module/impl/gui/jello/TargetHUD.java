@@ -14,6 +14,7 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;

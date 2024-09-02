@@ -3,7 +3,9 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Map;
 import java.util.Random;

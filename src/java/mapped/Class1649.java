@@ -18,6 +18,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.*;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -407,7 +409,7 @@ public class Class1649 extends Class1648 implements Class1650 {
             this.field8956.getProfiler().func_230035_c_("chunkLoad");
             CompoundNBT var4 = this.method6570(var1);
             if (var4 != null) {
-               boolean var9 = var4.method119("Level", 10) && var4.getCompound("Level").method119("Status", 8);
+               boolean var9 = var4.contains("Level", 10) && var4.getCompound("Level").contains("Status", 8);
                if (var9) {
                   Class1672 var6 = Class9725.method38087(this.field8956, this.field8970, this.field8961, var1, var4);
                   var6.method7073(this.field8956.method6783());
@@ -887,12 +889,12 @@ public class Class1649 extends Class1648 implements Class1650 {
          EntityType var4 = var1.getType();
          int var5 = var4.method33225() * 16;
          int var6 = var4.method33226();
-         if (this.field8973.containsKey(var1.method3205())) {
+         if (this.field8973.containsKey(var1.getEntityId())) {
             throw (IllegalStateException) Util.method38516(new IllegalStateException("Entity is already tracked!"));
          }
 
          Class8998 var7 = new Class8998(this, var1, var5, var6, var4.method33227());
-         this.field8973.put(var1.method3205(), var7);
+         this.field8973.put(var1.getEntityId(), var7);
          var7.method33246(this.field8956.method6870());
          if (var1 instanceof ServerPlayerEntity) {
             ServerPlayerEntity var8 = (ServerPlayerEntity)var1;
@@ -921,7 +923,7 @@ public class Class1649 extends Class1648 implements Class1650 {
          }
       }
 
-      Class8998 var7 = (Class8998)this.field8973.remove(var1.method3205());
+      Class8998 var7 = (Class8998)this.field8973.remove(var1.getEntityId());
       if (var7 != null) {
          var7.method33241();
       }
@@ -960,14 +962,14 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    public void method6580(Entity var1, Packet<?> var2) {
-      Class8998 var5 = (Class8998)this.field8973.get(var1.method3205());
+      Class8998 var5 = (Class8998)this.field8973.get(var1.getEntityId());
       if (var5 != null) {
          var5.method33239(var2);
       }
    }
 
    public void method6581(Entity var1, Packet<?> var2) {
-      Class8998 var5 = (Class8998)this.field8973.get(var1.method3205());
+      Class8998 var5 = (Class8998)this.field8973.get(var1.getEntityId());
       if (var5 != null) {
          var5.method33240(var2);
       }

@@ -5,8 +5,12 @@ import com.google.common.collect.Maps;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,7 +88,7 @@ public class Class3435 extends Class3433 {
       boolean var7 = this.method12103(var1, var2, var6);
       if (var7 && !var3.<Boolean>method23463(field19202)) {
          if (new Class9196(var1, var2, var6, true).method34464()) {
-            var1.method6787(var2, this, 0, var6.method533());
+            var1.method6787(var2, this, 0, var6.getIndex());
          }
       } else if (!var7 && var3.<Boolean>method23463(field19202)) {
          BlockPos var8 = var2.method8350(var6, 2);
@@ -100,7 +104,7 @@ public class Class3435 extends Class3433 {
             }
          }
 
-         var1.method6787(var2, this, var10, var6.method533());
+         var1.method6787(var2, this, var10, var6.getIndex());
       }
    }
 
@@ -153,7 +157,7 @@ public class Class3435 extends Class3433 {
                .method23465(Class3356.field18896, var8)
                .method23465(Class3356.field18897, !this.field19209 ? Class180.field638 : Class180.field639);
             var2.setBlockState(var3, var10, 20);
-            var2.method6761(var3, Class3356.method11929(this.method11579().method23465(field19198, Direction.method546(var5 & 7)), var8, false, true));
+            var2.method6761(var3, Class3356.method11929(this.method11579().method23465(field19198, Direction.byIndex(var5 & 7)), var8, false, true));
             var2.func_230547_a_(var3, var10.getBlock());
             var10.method23424(var2, var3, 2);
             if (!this.field19209) {

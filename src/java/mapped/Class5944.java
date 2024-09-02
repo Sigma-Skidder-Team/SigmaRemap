@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 
 public class Class5944 extends Class5942<Class966> {

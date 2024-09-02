@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.ArrayList;
 import java.util.BitSet;
@@ -210,7 +212,7 @@ public abstract class ChunkGenerator {
       }
    }
 
-   public void method17827(Class1658 var1, Class7480 var2, IChunk var3) {
+   public void method17827(ISeedReader var1, Class7480 var2, IChunk var3) {
       byte var6 = 8;
       int var7 = var3.method7072().field32174;
       int var8 = var3.method7072().field32175;

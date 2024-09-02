@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.BitSet;
 import java.util.Set;
 

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.network.play.client.CEntityActionPacket;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 
 // $VF: synthetic class
@@ -21,50 +22,50 @@ public class Class9703 {
       } catch (NoSuchFieldError var22) {
       }
 
-      field45358 = new int[Class1865.values().length];
+      field45358 = new int[CEntityActionPacket.Action.values().length];
 
       try {
-         field45358[Class1865.field10040.ordinal()] = 1;
+         field45358[CEntityActionPacket.Action.PRESS_SHIFT_KEY.ordinal()] = 1;
       } catch (NoSuchFieldError var21) {
       }
 
       try {
-         field45358[Class1865.field10041.ordinal()] = 2;
+         field45358[CEntityActionPacket.Action.RELEASE_SHIFT_KEY.ordinal()] = 2;
       } catch (NoSuchFieldError var20) {
       }
 
       try {
-         field45358[Class1865.field10043.ordinal()] = 3;
+         field45358[CEntityActionPacket.Action.START_SPRINTING.ordinal()] = 3;
       } catch (NoSuchFieldError var19) {
       }
 
       try {
-         field45358[Class1865.field10044.ordinal()] = 4;
+         field45358[CEntityActionPacket.Action.STOP_SPRINTING.ordinal()] = 4;
       } catch (NoSuchFieldError var18) {
       }
 
       try {
-         field45358[Class1865.field10042.ordinal()] = 5;
+         field45358[CEntityActionPacket.Action.STOP_SLEEPING.ordinal()] = 5;
       } catch (NoSuchFieldError var17) {
       }
 
       try {
-         field45358[Class1865.field10045.ordinal()] = 6;
+         field45358[CEntityActionPacket.Action.START_RIDING_JUMP.ordinal()] = 6;
       } catch (NoSuchFieldError var16) {
       }
 
       try {
-         field45358[Class1865.field10046.ordinal()] = 7;
+         field45358[CEntityActionPacket.Action.STOP_RIDING_JUMP.ordinal()] = 7;
       } catch (NoSuchFieldError var15) {
       }
 
       try {
-         field45358[Class1865.field10047.ordinal()] = 8;
+         field45358[CEntityActionPacket.Action.OPEN_INVENTORY.ordinal()] = 8;
       } catch (NoSuchFieldError var14) {
       }
 
       try {
-         field45358[Class1865.field10048.ordinal()] = 9;
+         field45358[CEntityActionPacket.Action.START_FALL_FLYING.ordinal()] = 9;
       } catch (NoSuchFieldError var13) {
       }
 
@@ -76,32 +77,32 @@ public class Class9703 {
       }
 
       try {
-         field45357[CPlayerDiggingPacket.Action.field13488.ordinal()] = 2;
+         field45357[CPlayerDiggingPacket.Action.DROP_ITEM.ordinal()] = 2;
       } catch (NoSuchFieldError var11) {
       }
 
       try {
-         field45357[CPlayerDiggingPacket.Action.field13487.ordinal()] = 3;
+         field45357[CPlayerDiggingPacket.Action.DROP_ALL_ITEMS.ordinal()] = 3;
       } catch (NoSuchFieldError var10) {
       }
 
       try {
-         field45357[CPlayerDiggingPacket.Action.field13489.ordinal()] = 4;
+         field45357[CPlayerDiggingPacket.Action.RELEASE_USE_ITEM.ordinal()] = 4;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field45357[CPlayerDiggingPacket.Action.field13484.ordinal()] = 5;
+         field45357[CPlayerDiggingPacket.Action.START_DESTROY_BLOCK.ordinal()] = 5;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field45357[CPlayerDiggingPacket.Action.field13485.ordinal()] = 6;
+         field45357[CPlayerDiggingPacket.Action.ABORT_DESTROY_BLOCK.ordinal()] = 6;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field45357[CPlayerDiggingPacket.Action.field13486.ordinal()] = 7;
+         field45357[CPlayerDiggingPacket.Action.STOP_DESTROY_BLOCK.ordinal()] = 7;
       } catch (NoSuchFieldError var6) {
       }
 

@@ -9,11 +9,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -62,9 +64,9 @@ public class Class7529 extends Class7530 {
       this.field32316 = var1.method122("xCenter");
       this.field32317 = var1.method122("zCenter");
       this.field32321 = (byte) MathHelper.method37775(var1.method120("scale"), 0, 4);
-      this.field32319 = !var1.method119("trackingPosition", 1) || var1.method132("trackingPosition");
-      this.field32320 = var1.method132("unlimitedTracking");
-      this.field32323 = var1.method132("locked");
+      this.field32319 = !var1.contains("trackingPosition", 1) || var1.getBoolean("trackingPosition");
+      this.field32320 = var1.getBoolean("unlimitedTracking");
+      this.field32323 = var1.getBoolean("locked");
       this.field32322 = var1.method127("colors");
       if (this.field32322.length != 16384) {
          this.field32322 = new byte[16384];
@@ -113,9 +115,9 @@ public class Class7529 extends Class7530 {
       var1.method102("zCenter", this.field32317);
       var1.method100("scale", this.field32321);
       var1.method110("colors", this.field32322);
-      var1.method115("trackingPosition", this.field32319);
-      var1.method115("unlimitedTracking", this.field32320);
-      var1.method115("locked", this.field32323);
+      var1.putBoolean("trackingPosition", this.field32319);
+      var1.putBoolean("unlimitedTracking", this.field32320);
+      var1.putBoolean("locked", this.field32323);
       ListNBT var4 = new ListNBT();
 
       for (Class7468 var6 : this.field32326.values()) {
@@ -180,15 +182,15 @@ public class Class7529 extends Class7530 {
          ItemFrameEntity var10 = var2.method32167();
          BlockPos var12 = var10.method4085();
          Class6674 var14 = this.field32328.get(Class6674.method20355(var12));
-         if (var14 != null && var10.method3205() != var14.method20353() && this.field32328.containsKey(var14.method20354())) {
+         if (var14 != null && var10.getEntityId() != var14.method20353() && this.field32328.containsKey(var14.method20354())) {
             this.field32327.remove("frame-" + var14.method20353());
          }
 
-         Class6674 var8 = new Class6674(var12, var10.method3386().method534() * 90, var10.method3205());
+         Class6674 var8 = new Class6674(var12, var10.method3386().method534() * 90, var10.getEntityId());
          this.method24596(
             MapDecorationType.field14517,
             var1.world,
-            "frame-" + var10.method3205(),
+            "frame-" + var10.getEntityId(),
             (double)var12.getX(),
             (double)var12.getZ(),
             (double)(var10.method3386().method534() * 90),
@@ -198,7 +200,7 @@ public class Class7529 extends Class7530 {
       }
 
       CompoundNBT var11 = var2.method32142();
-      if (var11 != null && var11.method119("Decorations", 9)) {
+      if (var11 != null && var11.contains("Decorations", 9)) {
          ListNBT var13 = var11.method131("Decorations", 10);
 
          for (int var15 = 0; var15 < var13.size(); var15++) {
@@ -220,7 +222,7 @@ public class Class7529 extends Class7530 {
 
    public static void method24595(ItemStack var0, BlockPos var1, String var2, MapDecorationType var3) {
       ListNBT var6;
-      if (var0.method32141() && var0.method32142().method119("Decorations", 9)) {
+      if (var0.method32141() && var0.method32142().contains("Decorations", 9)) {
          var6 = var0.method32142().method131("Decorations", 10);
       } else {
          var6 = new ListNBT();

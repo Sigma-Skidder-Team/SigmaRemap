@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SRecipeBookPacket;
 import net.minecraft.util.ResourceLocation;
@@ -17,12 +18,12 @@ import org.apache.logging.log4j.Logger;
 public class Class6942 extends Class6941 {
    private static final Logger field30092 = LogManager.getLogger();
 
-   public int method21376(Collection<Class4843<?>> var1, ServerPlayerEntity var2) {
+   public int method21376(Collection<IRecipe<?>> var1, ServerPlayerEntity var2) {
       ArrayList var5 = Lists.newArrayList();
       int var6 = 0;
 
-      for (Class4843 var8 : var1) {
-         ResourceLocation var9 = var8.method14964();
+      for (IRecipe var8 : var1) {
+         ResourceLocation var9 = var8.getId();
          if (!this.field30089.contains(var9) && !var8.method14965()) {
             this.method21359(var9);
             this.method21367(var9);
@@ -36,12 +37,12 @@ public class Class6942 extends Class6941 {
       return var6;
    }
 
-   public int method21377(Collection<Class4843<?>> var1, ServerPlayerEntity var2) {
+   public int method21377(Collection<IRecipe<?>> var1, ServerPlayerEntity var2) {
       ArrayList var5 = Lists.newArrayList();
       int var6 = 0;
 
-      for (Class4843 var8 : var1) {
-         ResourceLocation var9 = var8.method14964();
+      for (IRecipe var8 : var1) {
+         ResourceLocation var9 = var8.getId();
          if (this.field30089.contains(var9)) {
             this.method21363(var9);
             var5.add(var9);
@@ -85,13 +86,13 @@ public class Class6942 extends Class6941 {
       this.method21381(var6, this::method21366, var2);
    }
 
-   private void method21381(ListNBT var1, Consumer<Class4843<?>> var2, Class282 var3) {
+   private void method21381(ListNBT var1, Consumer<IRecipe<?>> var2, Class282 var3) {
       for (int var6 = 0; var6 < var1.size(); var6++) {
          String var7 = var1.method160(var6);
 
          try {
             ResourceLocation var8 = new ResourceLocation(var7);
-            Optional<? extends Class4843<?>> var9 = var3.method1035(var8);
+            Optional<? extends IRecipe<?>> var9 = var3.method1035(var8);
             if (!var9.isPresent()) {
                field30092.error("Tried to load unrecognized recipe: {} removed now.", var8);
             } else {

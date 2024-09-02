@@ -14,6 +14,8 @@ import java.util.stream.Stream;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class9082 implements ArgumentType<ResourceLocation> {
    private static final Collection<String> field41582 = Stream.<RegistryKey>of(World.OVERWORLD, World.THE_NETHER)

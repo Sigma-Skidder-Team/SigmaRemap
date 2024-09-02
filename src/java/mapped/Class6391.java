@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Collections;

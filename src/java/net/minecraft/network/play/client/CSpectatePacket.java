@@ -1,7 +1,7 @@
 package net.minecraft.network.play.client;
 
-import mapped.IServerPlayNetHandler;
-import mapped.ServerWorld;
+import net.minecraft.network.play.IServerPlayNetHandler;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
@@ -11,24 +11,23 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 public class CSpectatePacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24399;
-   private UUID field24400;
+    private UUID id;
 
    public CSpectatePacket() {
    }
 
    public CSpectatePacket(UUID var1) {
-      this.field24400 = var1;
+      this.id = var1;
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24400 = var1.method35717();
+      this.id = var1.readUniqueId();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35716(this.field24400);
+      var1.writeUniqueId(this.id);
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
@@ -36,7 +35,7 @@ public class CSpectatePacket implements Packet<IServerPlayNetHandler> {
    }
 
    @Nullable
-   public Entity method17283(ServerWorld var1) {
-      return var1.method6942(this.field24400);
+   public Entity getEntity(ServerWorld var1) {
+      return var1.getEntityByUuid(this.id);
    }
 }

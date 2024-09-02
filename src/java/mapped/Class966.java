@@ -3,8 +3,10 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import java.util.List;
@@ -30,7 +32,7 @@ public class Class966 extends TileEntity implements Class935 {
       } else {
          this.method3992();
          this.field5421 = 0;
-         this.field5418 = Direction.method546(var2);
+         this.field5418 = Direction.byIndex(var2);
          this.field5416 = 0;
          this.field5417 = true;
          return true;
@@ -77,7 +79,7 @@ public class Class966 extends TileEntity implements Class935 {
          this.field5416 = 0;
       }
 
-      this.field5324.method6787(var4, this.method3775().getBlock(), 1, var1.method533());
+      this.field5324.method6787(var4, this.method3775().getBlock(), 1, var1.getIndex());
    }
 
    private void method3992() {

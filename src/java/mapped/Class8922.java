@@ -8,7 +8,9 @@ import java.util.Set;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,12 +28,12 @@ public class Class8922 {
 
    public Class8922(CompoundNBT var1) {
       this();
-      if (var1.method119("Indices", 10)) {
+      if (var1.contains("Indices", 10)) {
          CompoundNBT var4 = var1.getCompound("Indices");
 
          for (int var5 = 0; var5 < this.field40391.length; var5++) {
             String var6 = String.valueOf(var5);
-            if (var4.method119(var6, 11)) {
+            if (var4.contains(var6, 11)) {
                this.field40391[var5] = var4.method128(var6);
             }
          }

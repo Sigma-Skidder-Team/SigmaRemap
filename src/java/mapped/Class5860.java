@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class5860 extends Class5839 {
    private static String[] field25623;
    public final AbstractHorseEntity field25624;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public interface Class8462 {
    Class7831 method29757();
 

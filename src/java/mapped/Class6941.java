@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Set;
@@ -19,9 +20,9 @@ public class Class6941 {
       this.field30090.addAll(var1.field30090);
    }
 
-   public void method21358(Class4843<?> var1) {
+   public void method21358(IRecipe<?> var1) {
       if (!var1.method14965()) {
-         this.method21359(var1.method14964());
+         this.method21359(var1.getId());
       }
    }
 
@@ -29,16 +30,16 @@ public class Class6941 {
       this.field30089.add(var1);
    }
 
-   public boolean method21360(Class4843<?> var1) {
-      return var1 != null ? this.field30089.contains(var1.method14964()) : false;
+   public boolean method21360(IRecipe<?> var1) {
+      return var1 != null ? this.field30089.contains(var1.getId()) : false;
    }
 
    public boolean method21361(ResourceLocation var1) {
       return this.field30089.contains(var1);
    }
 
-   public void method21362(Class4843<?> var1) {
-      this.method21363(var1.method14964());
+   public void method21362(IRecipe<?> var1) {
+      this.method21363(var1.getId());
    }
 
    public void method21363(ResourceLocation var1) {
@@ -46,16 +47,16 @@ public class Class6941 {
       this.field30090.remove(var1);
    }
 
-   public boolean method21364(Class4843<?> var1) {
-      return this.field30090.contains(var1.method14964());
+   public boolean method21364(IRecipe<?> var1) {
+      return this.field30090.contains(var1.getId());
    }
 
-   public void method21365(Class4843<?> var1) {
-      this.field30090.remove(var1.method14964());
+   public void method21365(IRecipe<?> var1) {
+      this.field30090.remove(var1.getId());
    }
 
-   public void method21366(Class4843<?> var1) {
-      this.method21367(var1.method14964());
+   public void method21366(IRecipe<?> var1) {
+      this.method21367(var1.getId());
    }
 
    public void method21367(ResourceLocation var1) {

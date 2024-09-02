@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
 
@@ -17,13 +19,13 @@ public class Class4221 extends Class4213 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       if (Class9312.method35192(this.field20539) / 25 > 0) {
-         this.method13006(var1, var5, 0, 0, Class9312.method35193(this.field20539)[Direction.DOWN.method533()]);
+         this.method13006(var1, var5, 0, 0, Class9312.method35193(this.field20539)[Direction.DOWN.getIndex()]);
       }
 
-      Class9312 var10 = Class9312.method35191(this.field20539)[Direction.field673.method533()];
-      if (Class9312.method35191(var10)[Direction.field673.method533()] == null) {
+      Class9312 var10 = Class9312.method35191(this.field20539)[Direction.field673.getIndex()];
+      if (Class9312.method35191(var10)[Direction.field673.getIndex()] == null) {
          this.method13007(var1, var5, 1, 8, 1, 6, 8, 6, field20528);
       }
 
@@ -43,7 +45,7 @@ public class Class4221 extends Class4213 {
 
       for (int var12 = 1; var12 <= 5; var12 += 4) {
          int var13 = 0;
-         if (!Class9312.method35193(var11)[Direction.SOUTH.method533()]) {
+         if (!Class9312.method35193(var11)[Direction.SOUTH.getIndex()]) {
             this.method12927(var1, var5, 0, var12, var13, 7, var12 + 2, var13, field20529, field20529, false);
             this.method12927(var1, var5, 0, var12 + 1, var13, 7, var12 + 1, var13, field20528, field20528, false);
          } else {
@@ -53,7 +55,7 @@ public class Class4221 extends Class4213 {
          }
 
          var13 = 7;
-         if (!Class9312.method35193(var11)[Direction.NORTH.method533()]) {
+         if (!Class9312.method35193(var11)[Direction.NORTH.getIndex()]) {
             this.method12927(var1, var5, 0, var12, var13, 7, var12 + 2, var13, field20529, field20529, false);
             this.method12927(var1, var5, 0, var12 + 1, var13, 7, var12 + 1, var13, field20528, field20528, false);
          } else {
@@ -63,7 +65,7 @@ public class Class4221 extends Class4213 {
          }
 
          int var14 = 0;
-         if (!Class9312.method35193(var11)[Direction.WEST.method533()]) {
+         if (!Class9312.method35193(var11)[Direction.WEST.getIndex()]) {
             this.method12927(var1, var5, var14, var12, 0, var14, var12 + 2, 7, field20529, field20529, false);
             this.method12927(var1, var5, var14, var12 + 1, 0, var14, var12 + 1, 7, field20528, field20528, false);
          } else {
@@ -73,7 +75,7 @@ public class Class4221 extends Class4213 {
          }
 
          var14 = 7;
-         if (!Class9312.method35193(var11)[Direction.EAST.method533()]) {
+         if (!Class9312.method35193(var11)[Direction.EAST.getIndex()]) {
             this.method12927(var1, var5, var14, var12, 0, var14, var12 + 2, 7, field20529, field20529, false);
             this.method12927(var1, var5, var14, var12 + 1, 0, var14, var12 + 1, 7, field20528, field20528, false);
          } else {

@@ -19,6 +19,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -35,12 +37,12 @@ public class Class9725 {
       }
 
       Class1684 var11 = new Class1684(
-         var0.method6867().<Biome>getRegistry(Registry.BIOME_KEY), var3, var8, !var9.method119("Biomes", 11) ? null : var9.method128("Biomes")
+         var0.method6867().<Biome>getRegistry(Registry.BIOME_KEY), var3, var8, !var9.contains("Biomes", 11) ? null : var9.method128("Biomes")
       );
-      Class8922 var12 = !var9.method119("UpgradeData", 10) ? Class8922.field40388 : new Class8922(var9.getCompound("UpgradeData"));
+      Class8922 var12 = !var9.contains("UpgradeData", 10) ? Class8922.field40388 : new Class8922(var9.getCompound("UpgradeData"));
       Class6806 var13 = new Class6806<Block>(var0x -> var0x == null || var0x.method11579().isAir(), var3, var9.method131("ToBeTicked", 9));
       Class6806 var14 = new Class6806<Fluid>(var0x -> var0x == null || var0x == Class9479.field44064, var3, var9.method131("LiquidsToBeTicked", 9));
-      boolean var15 = var9.method132("isLightOn");
+      boolean var15 = var9.getBoolean("isLightOn");
       ListNBT var16 = var9.method131("Sections", 10);
       byte var17 = 16;
       Class7038[] var18 = new Class7038[16];
@@ -54,7 +56,7 @@ public class Class9725 {
       for (int var22 = 0; var22 < var16.size(); var22++) {
          CompoundNBT var30 = var16.method153(var22);
          byte var25 = var30.method120("Y");
-         if (var30.method119("Palette", 9) && var30.method119("BlockStates", 12)) {
+         if (var30.contains("Palette", 9) && var30.contains("BlockStates", 12)) {
             Class7038 var27 = new Class7038(var25 << 4);
             var27.method21865().method30502(var30.method131("Palette", 10), var30.method129("BlockStates"));
             var27.method21864();
@@ -66,11 +68,11 @@ public class Class9725 {
          }
 
          if (var15) {
-            if (var30.method119("BlockLight", 7)) {
+            if (var30.contains("BlockLight", 7)) {
                var21.method606(Class1977.field12882, Class2002.method8391(var3, var25), new Class6785(var30.method127("BlockLight")), true);
             }
 
-            if (var19 && var30.method119("SkyLight", 7)) {
+            if (var19 && var30.contains("SkyLight", 7)) {
                var21.method606(Class1977.field12881, Class2002.method8391(var3, var25), new Class6785(var30.method127("SkyLight")), true);
             }
          }
@@ -98,14 +100,14 @@ public class Class9725 {
          }
       } else {
          Object var41;
-         if (!var9.method119("TileTicks", 9)) {
+         if (!var9.contains("TileTicks", 9)) {
             var41 = var13;
          } else {
             var41 = Class6801.<Block>method20722(var9.method131("TileTicks", 10), Registry.BLOCK::getKey, Registry.BLOCK::method9184);
          }
 
          Object var44;
-         if (!var9.method119("LiquidTicks", 9)) {
+         if (!var9.contains("LiquidTicks", 9)) {
             var44 = var14;
          } else {
             var44 = Class6801.<Fluid>method20722(var9.method131("LiquidTicks", 10), Registry.field16070::getKey, Registry.field16070::method9184);
@@ -122,7 +124,7 @@ public class Class9725 {
 
       for (Class101 var31 : ((IChunk)var43).method7080().method34305()) {
          String var32 = var31.method283();
-         if (!var42.method119(var32, 12)) {
+         if (!var42.contains(var32, 12)) {
             var45.add(var31);
          } else {
             ((IChunk)var43).method7069(var31, var42.method129(var32));
@@ -133,7 +135,7 @@ public class Class9725 {
       CompoundNBT var47 = var9.getCompound("Structures");
       ((IChunk)var43).method7075(method38092(var1, var47, var0.method6967()));
       ((IChunk)var43).method7102(method38093(var3, var47));
-      if (var9.method132("shouldSave")) {
+      if (var9.getBoolean("shouldSave")) {
          ((IChunk)var43).method7078(true);
       }
 
@@ -235,7 +237,7 @@ public class Class9725 {
 
       var6.put("Sections", var9);
       if (var11) {
-         var6.method115("isLightOn", true);
+         var6.putBoolean("isLightOn", true);
       }
 
       Class1684 var22 = var1.method7077();
@@ -348,7 +350,7 @@ public class Class9725 {
 
       for (int var13 = 0; var13 < var12.size(); var13++) {
          CompoundNBT var8 = var12.method153(var13);
-         boolean var9 = var8.method132("keepPacked");
+         boolean var9 = var8.getBoolean("keepPacked");
          if (!var9) {
             BlockPos var10 = new BlockPos(var8.method122("x"), var8.method122("y"), var8.method122("z"));
             TileEntity var11 = TileEntity.method3772(var1.getBlockState(var10), var8);

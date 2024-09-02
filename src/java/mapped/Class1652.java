@@ -9,6 +9,7 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongLinkedOpenHashSet;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

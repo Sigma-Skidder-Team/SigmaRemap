@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import java.util.Map;
 import javax.annotation.Nullable;

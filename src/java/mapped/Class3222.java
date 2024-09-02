@@ -8,8 +8,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.World;
 
 import java.util.Map;
 import java.util.Random;
@@ -484,7 +487,7 @@ public class Class3222 extends Block {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var4.abilities.field29610) {
+      if (!var4.abilities.allowEdit) {
          return ActionResultType.field14820;
       } else {
          if (method11616(var1) || method11617(var1)) {

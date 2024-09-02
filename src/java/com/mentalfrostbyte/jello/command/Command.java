@@ -13,20 +13,20 @@ public abstract class Command {
     public static final Minecraft mc = Minecraft.getInstance();
     private final String name;
     private final String descriptor;
-    private final String[] field25701;
+    private final String[] alias;
     private final List<String> field25702 = new ArrayList<String>();
 
-    public Command(String var1, String var2, String... var3) {
-        this.name = var1;
-        this.descriptor = var2;
-        this.field25701 = var3;
+    public Command(String name, String desc, String... alias) {
+        this.name = name;
+        this.descriptor = desc;
+        this.alias = alias;
     }
 
-    public String method18324() {
+    public String getName() {
         return this.name;
     }
 
-    public String method18325() {
+    public String getDescription() {
         return this.descriptor;
     }
 
@@ -40,8 +40,8 @@ public abstract class Command {
         return var3;
     }
 
-    public String[] method18327() {
-        return this.field25701;
+    public String[] getAlias() {
+        return this.alias;
     }
 
     public void registerSubCommands(String... var1) {

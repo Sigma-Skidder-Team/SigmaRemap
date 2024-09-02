@@ -36,7 +36,7 @@ public class SRecipeBookPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24713 = var1.<Class2338>method35712(Class2338.class);
+      this.field24713 = var1.<Class2338>readEnumValue(Class2338.class);
       this.field24716 = Class9223.method34690(var1);
       int var4 = var1.readVarInt();
       this.field24714 = Lists.newArrayList();
@@ -57,7 +57,7 @@ public class SRecipeBookPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.field24713);
+      var1.writeEnumValue(this.field24713);
       this.field24716.method34691(var1);
       var1.writeVarInt(this.field24714.size());
 

@@ -5,6 +5,8 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class6671 {
    public static final Class6671 field29242 = new Class6671(

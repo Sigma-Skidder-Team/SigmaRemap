@@ -32,7 +32,7 @@ public class SScoreboardObjectivePacket implements Packet<IClientPlayNetHandler>
       this.field24733 = var1.readByte();
       if (this.field24733 == 0 || this.field24733 == 2) {
          this.field24731 = var1.method35710();
-         this.field24732 = var1.<Class2316>method35712(Class2316.class);
+         this.field24732 = var1.<Class2316>readEnumValue(Class2316.class);
       }
    }
 
@@ -42,7 +42,7 @@ public class SScoreboardObjectivePacket implements Packet<IClientPlayNetHandler>
       var1.writeByte(this.field24733);
       if (this.field24733 == 0 || this.field24733 == 2) {
          var1.writeTextComponent(this.field24731);
-         var1.method35713(this.field24732);
+         var1.writeEnumValue(this.field24732);
       }
    }
 

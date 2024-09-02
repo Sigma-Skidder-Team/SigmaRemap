@@ -11,8 +11,10 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.HighJump;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import mapped.*;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.vector.Vector3d;
 
 @InDevelopment
 public class AntiVoid extends Module {
@@ -123,7 +125,7 @@ public class AntiVoid extends Module {
 
         switch (var1) {
             case "Hypixel":
-                mc.getConnection().sendPacket(new Class5605(0.0, -999.0, 0.0, true));
+                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(0.0, -999.0, 0.0, true));
                 break;
             case "Motion":
                 var2.method13995(0.1);
@@ -131,7 +133,7 @@ public class AntiVoid extends Module {
                 break;
             case "Cubecraft":
                 double var13 = 3.2E7;
-                mc.getConnection().sendPacket(new Class5605(var5, var13, var9, false));
+                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var5, var13, var9, false));
                 Client.getInstance().getModuleManager().getModuleByClass(Fly.class).method15999(false);
                 break;
             case "Legit":

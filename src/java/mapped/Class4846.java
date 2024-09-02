@@ -1,9 +1,12 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
-public class Class4846 implements Class4843<Class920> {
+public class Class4846 implements IRecipe<Class920> {
    private static String[] field22625;
    private final Class120 field22626;
    private final Class120 field22627;
@@ -53,7 +56,7 @@ public class Class4846 implements Class4843<Class920> {
    }
 
    @Override
-   public ResourceLocation method14964() {
+   public ResourceLocation getId() {
       return this.field22629;
    }
 

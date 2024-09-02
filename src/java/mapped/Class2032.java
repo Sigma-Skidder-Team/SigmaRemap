@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public enum Class2032 {
    field13190(Direction.field673, 0, -1),
    field13191(Direction.DOWN, 0, 1),

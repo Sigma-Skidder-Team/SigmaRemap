@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;

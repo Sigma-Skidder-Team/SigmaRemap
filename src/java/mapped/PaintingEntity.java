@@ -7,8 +7,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnPaintingPacket;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.Iterator;

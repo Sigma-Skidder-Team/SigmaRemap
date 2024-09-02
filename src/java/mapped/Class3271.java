@@ -2,9 +2,12 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -35,7 +38,7 @@ public class Class3271 extends Item implements Class3260 {
    public void method11724(ItemStack var1, World var2, Entity var3, int var4, boolean var5) {
       if (!var2.isRemote && method11789(var1)) {
          CompoundNBT var8 = var1.getOrCreateTag();
-         if (var8.contains("LodestoneTracked") && !var8.method132("LodestoneTracked")) {
+         if (var8.contains("LodestoneTracked") && !var8.getBoolean("LodestoneTracked")) {
             return;
          }
 
@@ -86,7 +89,7 @@ public class Class3271 extends Item implements Class3260 {
          .encodeStart(NBTDynamicOps.INSTANCE, var1)
          .resultOrPartial(field18771::error)
          .ifPresent(var1x -> var3.put("LodestoneDimension", var1x));
-      var3.method115("LodestoneTracked", true);
+      var3.putBoolean("LodestoneTracked", true);
    }
 
    @Override

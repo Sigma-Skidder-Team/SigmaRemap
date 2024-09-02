@@ -10,8 +10,10 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
@@ -123,7 +125,7 @@ public class BowFly extends Module {
                             mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                         }
                     } else {
-                        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13489, BlockPos.ZERO, Direction.DOWN));
+                        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.RELEASE_USE_ITEM, BlockPos.ZERO, Direction.DOWN));
                         this.field23504 = 0;
                     }
                 }

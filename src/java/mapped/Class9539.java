@@ -3,6 +3,9 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ServerWorld;
+
 import javax.annotation.Nullable;
 
 public class Class9539 {

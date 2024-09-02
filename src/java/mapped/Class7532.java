@@ -19,7 +19,7 @@ public class Class7532 extends Class7530 {
       this.field32336.clear();
 
       for (String var5 : var1.method97()) {
-         if (var1.method119(var5, 99)) {
+         if (var1.contains(var5, 99)) {
             this.field32336.put(var5, var1.method122(var5));
          }
       }

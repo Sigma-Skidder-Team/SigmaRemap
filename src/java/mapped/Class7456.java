@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.BitSet;
 
 public final class Class7456 extends Class7457 {

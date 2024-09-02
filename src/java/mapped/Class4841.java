@@ -1,7 +1,9 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
 public class Class4841 extends Class4837 {
    public Class4841(ResourceLocation var1) {

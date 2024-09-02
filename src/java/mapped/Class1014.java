@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.World;
 
 public abstract class Class1014 extends Class1013 {
    private int field5671;

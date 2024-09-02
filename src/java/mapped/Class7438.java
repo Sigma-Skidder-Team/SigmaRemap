@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
 
@@ -20,7 +21,7 @@ public class Class7438 implements IParticleData {
 
    @Override
    public void write(PacketBuffer var1) {
-      var1.method35724(this.field32009);
+      var1.writeItemStack(this.field32009);
    }
 
    @Override

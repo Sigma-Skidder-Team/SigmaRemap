@@ -12,17 +12,16 @@ import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
@@ -30,6 +29,8 @@ import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$Action;
 import net.minecraft.util.text.event.HoverEvent$EntityHover;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -182,7 +183,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return this.type;
    }
 
-   public int method3205() {
+   public int getEntityId() {
       return this.entityId;
    }
 
@@ -419,7 +420,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public void move(Class2107 var1, Vector3d var2) {
       if (Minecraft.getInstance().player != null
          && Minecraft.getInstance().player.getRidingEntity() != null
-         && Minecraft.getInstance().player.getRidingEntity().method3205() == this.method3205()) {
+         && Minecraft.getInstance().player.getRidingEntity().getEntityId() == this.getEntityId()) {
          Class4432 var5 = new Class4432(var2.x, var2.y, var2.z);
          Client.getInstance().getEventManager().call(var5);
          if (var5.isCancelled()) {
@@ -1325,11 +1326,11 @@ public abstract class Entity implements INameable, ICommandSource {
          Vector3d var4 = this.method3433();
          var1.put("Motion", this.method3298(var4.x, var4.y, var4.z));
          var1.put("Rotation", this.method3299(this.rotationYaw, this.rotationPitch));
-         var1.method107("FallDistance", this.fallDistance);
+         var1.putFloat("FallDistance", this.fallDistance);
          var1.method101("Fire", (short)this.fire);
          var1.method101("Air", (short)this.method3351());
-         var1.method115("OnGround", this.onGround);
-         var1.method115("Invulnerable", this.invulnerable);
+         var1.putBoolean("OnGround", this.onGround);
+         var1.putBoolean("Invulnerable", this.invulnerable);
          var1.method102("PortalCooldown", this.field_242273_aw);
          var1.method104("UUID", this.getUniqueID());
          ITextComponent var11 = this.method3380();
@@ -1338,19 +1339,19 @@ public abstract class Entity implements INameable, ICommandSource {
          }
 
          if (this.method3383()) {
-            var1.method115("CustomNameVisible", this.method3383());
+            var1.putBoolean("CustomNameVisible", this.method3383());
          }
 
          if (this.method3245()) {
-            var1.method115("Silent", this.method3245());
+            var1.putBoolean("Silent", this.method3245());
          }
 
          if (this.method3247()) {
-            var1.method115("NoGravity", this.method3247());
+            var1.putBoolean("NoGravity", this.method3247());
          }
 
          if (this.glowing) {
-            var1.method115("Glowing", this.glowing);
+            var1.putBoolean("Glowing", this.glowing);
          }
 
          if (!this.tags.isEmpty()) {
@@ -1404,11 +1405,11 @@ public abstract class Entity implements INameable, ICommandSource {
          this.prevRotationPitch = this.rotationPitch;
          this.method3143(this.rotationYaw);
          this.method3144(this.rotationYaw);
-         this.fallDistance = var1.method124("FallDistance");
+         this.fallDistance = var1.getFloat("FallDistance");
          this.fire = var1.method121("Fire");
          this.method3352(var1.method121("Air"));
-         this.onGround = var1.method132("OnGround");
-         this.invulnerable = var1.method132("Invulnerable");
+         this.onGround = var1.getBoolean("OnGround");
+         this.invulnerable = var1.getBoolean("Invulnerable");
          this.field_242273_aw = var1.method122("PortalCooldown");
          if (var1.method106("UUID")) {
             this.entityUniqueID = var1.method105("UUID");
@@ -1420,7 +1421,7 @@ public abstract class Entity implements INameable, ICommandSource {
          } else if (Double.isFinite((double)this.rotationYaw) && Double.isFinite((double)this.rotationPitch)) {
             this.method3216();
             this.setRotation(this.rotationYaw, this.rotationPitch);
-            if (var1.method119("CustomName", 8)) {
+            if (var1.contains("CustomName", 8)) {
                String var13 = var1.method126("CustomName");
 
                try {
@@ -1430,11 +1431,11 @@ public abstract class Entity implements INameable, ICommandSource {
                }
             }
 
-            this.method3382(var1.method132("CustomNameVisible"));
-            this.method3246(var1.method132("Silent"));
-            this.method3248(var1.method132("NoGravity"));
-            this.method3341(var1.method132("Glowing"));
-            if (var1.method119("Tags", 9)) {
+            this.method3382(var1.getBoolean("CustomNameVisible"));
+            this.method3246(var1.getBoolean("Silent"));
+            this.method3248(var1.getBoolean("NoGravity"));
+            this.method3341(var1.getBoolean("Glowing"));
+            if (var1.contains("Tags", 9)) {
                this.tags.clear();
                ListNBT var20 = var1.method131("Tags", 8);
                int var14 = Math.min(var20.size(), 1024);
@@ -1690,7 +1691,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public void method3323(BlockPos var1) {
       if (!this.method3219()) {
          if (!this.world.isRemote && !var1.equals(this.field_242271_ac)) {
-            this.field_242271_ac = var1.method8353();
+            this.field_242271_ac = var1.toImmutable();
          }
 
          this.inPortal = true;
@@ -2253,7 +2254,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public final void method3384(double var1, double var3, double var5) {
       if (this.world instanceof ServerWorld) {
          Class7481 var9 = new Class7481(new BlockPos(var1, var3, var5));
-         ((ServerWorld)this.world).getChunkProvider().method7374(Class8561.field38486, var9, 0, this.method3205());
+         ((ServerWorld)this.world).getChunkProvider().method7374(Class8561.field38486, var9, 0, this.getEntityId());
          this.world.getChunk(var9.field32174, var9.field32175);
          this.method2793(var1, var3, var5);
       }

@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import mapped.*;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class NCPPhase extends PremiumModule {
@@ -32,7 +33,7 @@ public class NCPPhase extends PremiumModule {
                 double var3 = mc.player.getPosX();
                 double var5 = mc.player.getPosY();
                 double var7 = mc.player.getPosZ();
-                mc.getConnection().sendPacket(new Class5605(var3, var5 + 0.0626, var7, false));
+                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3, var5 + 0.0626, var7, false));
             }
         }
     }
@@ -80,7 +81,7 @@ public class NCPPhase extends PremiumModule {
                     double var4 = mc.player.getPosX();
                     double var6 = mc.player.getPosY();
                     double var8 = mc.player.getPosZ();
-                    mc.getConnection().sendPacket(new Class5605(var4, var6 + 0.0626, var8, false));
+                    mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var4, var6 + 0.0626, var8, false));
                 }
             }
 

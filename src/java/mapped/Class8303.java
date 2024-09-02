@@ -8,6 +8,7 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import java.util.Arrays;
 import java.util.Collection;
 
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -38,10 +39,10 @@ public class Class8303 implements ArgumentType<ResourceLocation> {
       }
    }
 
-   public static Class4843<?> method29033(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static IRecipe<?> method29033(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       Class282 var4 = ((Class6619)var0.getSource()).method20177().method1407();
       ResourceLocation var5 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
-      return (Class4843<?>)var4.method1035(var5).orElseThrow(() -> field35695.create(var5));
+      return (IRecipe<?>)var4.method1035(var5).orElseThrow(() -> field35695.create(var5));
    }
 
    public static ILootCondition method29034(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {

@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.network.play.server.SChangeGameStatePacket;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 
@@ -51,7 +53,7 @@ public class Class1106 extends Class1105 {
    public void method4258() {
       super.method4258();
       short var3 = 1200;
-      if ((this.ticksExisted + this.method3205()) % 1200 == 0) {
+      if ((this.ticksExisted + this.getEntityId()) % 1200 == 0) {
          Effect var4 = Effects.MINING_FATIGUE;
          List<ServerPlayerEntity> var5 = ((ServerWorld)this.world).method6914(var1 -> this.getDistanceSq(var1) < 2500.0 && var1.field4857.method33865());
 

@@ -4,12 +4,16 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -98,7 +102,7 @@ public class Class1088 extends Class1018 {
       var1.method102("HomePosX", this.method5042().getX());
       var1.method102("HomePosY", this.method5042().getY());
       var1.method102("HomePosZ", this.method5042().getZ());
-      var1.method115("HasEgg", this.method5045());
+      var1.putBoolean("HasEgg", this.method5045());
       var1.method102("TravelPosX", this.method5044().getX());
       var1.method102("TravelPosY", this.method5044().getY());
       var1.method102("TravelPosZ", this.method5044().getZ());
@@ -111,7 +115,7 @@ public class Class1088 extends Class1018 {
       int var6 = var1.method122("HomePosZ");
       this.method5041(new BlockPos(var4, var5, var6));
       super.method2723(var1);
-      this.method5046(var1.method132("HasEgg"));
+      this.method5046(var1.getBoolean("HasEgg"));
       int var7 = var1.method122("TravelPosX");
       int var8 = var1.method122("TravelPosY");
       int var9 = var1.method122("TravelPosZ");

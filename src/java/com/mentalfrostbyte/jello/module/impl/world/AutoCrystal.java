@@ -14,10 +14,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import org.lwjgl.opengl.GL11;
 
 import java.util.*;

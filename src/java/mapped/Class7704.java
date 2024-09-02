@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.primitives.Floats;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.ArrayList;

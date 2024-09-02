@@ -3,6 +3,7 @@ package net.minecraft.network.play.client;
 import mapped.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
@@ -61,15 +62,15 @@ public class CUpdateStructureBlockPacket implements Packet<IServerPlayNetHandler
    @Override
    public void readPacketData(PacketBuffer buf) throws IOException {
       this.pos = buf.readBlockPos();
-      this.field_210392_b = buf.method35712(Class1897.class);
-      this.mode = buf.method35712(Class104.class);
+      this.field_210392_b = buf.readEnumValue(Class1897.class);
+      this.mode = buf.readEnumValue(Class104.class);
       this.name = buf.readString(32767);
       int i = 48;
       this.field_210395_e = new BlockPos(MathHelper.method37775(buf.readByte(), -48, 48), MathHelper.method37775(buf.readByte(), -48, 48), MathHelper.method37775(buf.readByte(), -48, 48));
       int j = 48;
       this.size = new BlockPos(MathHelper.method37775(buf.readByte(), 0, 48), MathHelper.method37775(buf.readByte(), 0, 48), MathHelper.method37775(buf.readByte(), 0, 48));
-      this.mirror = buf.method35712(Class2089.class);
-      this.rotation = buf.method35712(Class80.class);
+      this.mirror = buf.readEnumValue(Class2089.class);
+      this.rotation = buf.readEnumValue(Class80.class);
       this.field_210399_i = buf.readString(12);
       this.integrity = MathHelper.clamp(buf.readFloat(), 0.0F, 1.0F);
       this.seed = buf.method35715();
@@ -82,8 +83,8 @@ public class CUpdateStructureBlockPacket implements Packet<IServerPlayNetHandler
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeBlockPos(this.pos);
-      var1.method35713(this.field_210392_b);
-      var1.method35713(this.mode);
+      var1.writeEnumValue(this.field_210392_b);
+      var1.writeEnumValue(this.mode);
       var1.writeString(this.name);
       var1.writeByte(this.field_210395_e.getX());
       var1.writeByte(this.field_210395_e.getY());
@@ -91,8 +92,8 @@ public class CUpdateStructureBlockPacket implements Packet<IServerPlayNetHandler
       var1.writeByte(this.size.getX());
       var1.writeByte(this.size.getY());
       var1.writeByte(this.size.getZ());
-      var1.method35713(this.mirror);
-      var1.method35713(this.rotation);
+      var1.writeEnumValue(this.mirror);
+      var1.writeEnumValue(this.rotation);
       var1.writeString(this.field_210399_i);
       var1.writeFloat(this.integrity);
       var1.method35719(this.seed);

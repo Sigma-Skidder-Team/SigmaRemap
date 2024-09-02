@@ -2,12 +2,14 @@ package mapped;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
@@ -187,7 +189,7 @@ public class Class1052 extends Class1050 {
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
-      if (var5 != null && var5.method119("BucketVariantTag", 3)) {
+      if (var5 != null && var5.contains("BucketVariantTag", 3)) {
          this.method4817(var5.method122("BucketVariantTag"));
          return var4;
       } else {

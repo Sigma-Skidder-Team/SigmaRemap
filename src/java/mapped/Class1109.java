@@ -5,7 +5,9 @@ import net.minecraft.particles.IParticleData;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
 
 import java.util.Random;
 

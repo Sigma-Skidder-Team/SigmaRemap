@@ -9,6 +9,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;

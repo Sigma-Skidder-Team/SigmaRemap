@@ -22,7 +22,7 @@ public abstract class Class932 extends TileEntity implements Class920, Class949,
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.field5279 = Class7969.method27093(var2);
-      if (var2.method119("CustomName", 8)) {
+      if (var2.contains("CustomName", 8)) {
          this.field5280 = ITextComponent$Serializer.func_240643_a_(var2.method126("CustomName"));
       }
    }

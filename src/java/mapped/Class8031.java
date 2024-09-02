@@ -16,6 +16,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class8031 {
    private static final Dynamic2CommandExceptionType field34511 = new Dynamic2CommandExceptionType(
@@ -138,7 +139,7 @@ public class Class8031 {
                   TileEntity var14 = var9.getTileEntity(var12);
                   Class946.method3802(var14);
                   if (var13.method496(var9, var12, 2)) {
-                     var8.add(var12.method8353());
+                     var8.add(var12.toImmutable());
                      var10++;
                   }
                }

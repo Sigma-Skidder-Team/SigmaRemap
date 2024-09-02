@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class3266 extends Item {
    private static String[] field18759;
    private final Class2283 field18760;

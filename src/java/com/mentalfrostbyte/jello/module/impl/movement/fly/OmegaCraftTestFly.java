@@ -120,7 +120,7 @@ public class OmegaCraftTestFly extends Module {
             if (packet instanceof CPlayerPacket) {
                 CPlayerPacket var5 = (CPlayerPacket) packet;
                 if (this.field23854 == -1) {
-                    var5.field24883 = true;
+                    var5.onGround = true;
                 }
             }
         }

@@ -2,10 +2,12 @@ package mapped;
 
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 import org.apache.commons.lang3.Validate;
 
 public class Class3301 extends Class3298 {

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 
 public class Class5949 extends Class5942<Class948> {
    private static String[] field25944;

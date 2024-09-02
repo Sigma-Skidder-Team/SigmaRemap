@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 
 public class Class4897 extends Class4874<Class4485> {
@@ -16,7 +17,7 @@ public class Class4897 extends Class4874<Class4485> {
       return new Class4485(var2, var6);
    }
 
-   public void method15130(ServerPlayerEntity var1, Class4843<?> var2) {
+   public void method15130(ServerPlayerEntity var1, IRecipe<?> var2) {
       this.method15053(var1, var1x -> var1x.method14151(var2));
    }
 

@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -20,13 +22,13 @@ public class Class4202 extends Class4194 {
 
    public Class4202(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33448, var2);
-      this.field20509 = var2.method132("Tall");
+      this.field20509 = var2.getBoolean("Tall");
    }
 
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method115("Tall", this.field20509);
+      var1.putBoolean("Tall", this.field20509);
    }
 
    public static Class4202 method12995(List<Class4178> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {
@@ -42,7 +44,7 @@ public class Class4202 extends Class4194 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       byte var10 = 11;
       if (!this.field20509) {
          var10 = 6;

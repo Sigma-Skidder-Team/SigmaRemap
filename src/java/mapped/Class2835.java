@@ -7,6 +7,7 @@ import java.util.function.Consumer;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 public class Class2835 implements Consumer<Consumer<Class7952>> {
    private static final List<RegistryKey<Biome>> field17626 = ImmutableList.of(

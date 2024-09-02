@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Collections;
@@ -16,7 +17,7 @@ public class Class1263 extends AbstractGui implements Class1190, Class1152 {
    private int field6681;
    private Minecraft field6682;
    private RecipeList field6683;
-   private Class4843<?> field6684;
+   private IRecipe<?> field6684;
    private float field6685;
    private boolean field6686;
 
@@ -60,7 +61,7 @@ public class Class1263 extends AbstractGui implements Class1190, Class1152 {
 
       for (int var24 = 0; var24 < var14; var24++) {
          boolean var25 = var24 < var13;
-         Class4843 var26 = !var25 ? (Class4843)var12.get(var24 - var13) : (Class4843)var11.get(var24);
+         IRecipe var26 = !var25 ? (IRecipe)var12.get(var24 - var13) : (IRecipe)var11.get(var24);
          int var27 = this.field6680 + 4 + 25 * (var24 % var15);
          int var28 = this.field6681 + 5 + 25 * (var24 / var15);
          if (!this.field6686) {
@@ -82,7 +83,7 @@ public class Class1263 extends AbstractGui implements Class1190, Class1152 {
       return this.field6683;
    }
 
-   public Class4843<?> method5903() {
+   public IRecipe<?> method5903() {
       return this.field6684;
    }
 

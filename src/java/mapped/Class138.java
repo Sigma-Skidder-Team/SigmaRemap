@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;

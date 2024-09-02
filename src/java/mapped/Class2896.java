@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
+import net.minecraft.util.HandSide;
 
 public class Class2896 extends Class2797<Class1100> {
    private static String[] field17431;
@@ -31,7 +32,7 @@ public class Class2896 extends Class2797<Class1100> {
       super.method10998(var1, var2, var3, var4, var5, var6);
       if (var1.method5275()) {
          if (!var1.method3090().isEmpty()) {
-            if (var1.method2967() != Class2205.field14418) {
+            if (var1.method2967() != HandSide.field14418) {
                this.field17436.field31035 = 3.7699115F;
             } else {
                this.field17435.field31035 = 3.7699115F;

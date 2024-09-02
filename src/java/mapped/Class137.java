@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
@@ -63,7 +64,7 @@ public class Class137 extends Class128 {
       }
 
       CompoundNBT var6;
-      if (!var5.method119("display", 10)) {
+      if (!var5.contains("display", 10)) {
          if (!var2) {
             return null;
          }
@@ -74,7 +75,7 @@ public class Class137 extends Class128 {
          var6 = var5.getCompound("display");
       }
 
-      if (!var6.method119("Lore", 9)) {
+      if (!var6.contains("Lore", 9)) {
          if (!var2) {
             return null;
          } else {

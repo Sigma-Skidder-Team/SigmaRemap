@@ -2,15 +2,16 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.BitSet;
 
 public class Class9010 {
    private static String[] field41214;
-   private final Class1658 field41215;
+   private final ISeedReader field41215;
    private final ChunkGenerator field41216;
 
-   public Class9010(Class1658 var1, ChunkGenerator var2) {
+   public Class9010(ISeedReader var1, ChunkGenerator var2) {
       this.field41215 = var1;
       this.field41216 = var2;
    }

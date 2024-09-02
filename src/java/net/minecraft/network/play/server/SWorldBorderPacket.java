@@ -38,7 +38,7 @@ public class SWorldBorderPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24305 = var1.<Class1864>method35712(Class1864.class);
+      this.field24305 = var1.<Class1864>readEnumValue(Class1864.class);
       switch (Class6602.field29038[this.field24305.ordinal()]) {
          case 1:
             this.field24309 = var1.readDouble();
@@ -72,7 +72,7 @@ public class SWorldBorderPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.field24305);
+      var1.writeEnumValue(this.field24305);
       switch (Class6602.field29038[this.field24305.ordinal()]) {
          case 1:
             var1.writeDouble(this.field24309);

@@ -4,7 +4,9 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -25,7 +27,7 @@ public class Class7141 extends Class7139 {
    }
 
    @Override
-   public void method22269(Class1658 var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6) {
+   public void method22269(ISeedReader var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6) {
       if (!(var2.nextFloat() >= this.field30701)) {
          Direction var9 = Class3366.method11951(var2);
          int var10 = var4.isEmpty()

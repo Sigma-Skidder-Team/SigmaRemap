@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.World;
 
 public abstract class Class1047 extends Class1046 {
    public Class1047(EntityType<? extends Class1047> var1, World var2) {

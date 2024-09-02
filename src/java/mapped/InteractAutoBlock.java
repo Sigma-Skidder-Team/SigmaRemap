@@ -13,6 +13,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.play.client.CUseEntityPacket;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.ArrayList;
 import java.util.Collections;

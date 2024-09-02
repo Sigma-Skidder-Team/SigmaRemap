@@ -10,6 +10,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

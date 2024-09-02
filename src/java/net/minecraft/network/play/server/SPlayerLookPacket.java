@@ -2,8 +2,8 @@ package net.minecraft.network.play.server;
 
 import mapped.Class2062;
 import net.minecraft.network.PacketBuffer;
-import mapped.Vector3d;
-import mapped.World;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
@@ -33,7 +33,7 @@ public class SPlayerLookPacket implements Packet<IClientPlayNetHandler> {
 
    public SPlayerLookPacket(Class2062 var1, Entity var2, Class2062 var3) {
       this.field24874 = var1;
-      this.field24873 = var2.method3205();
+      this.field24873 = var2.getEntityId();
       this.field24875 = var3;
       Vector3d var6 = var3.method8711(var2);
       this.field24870 = var6.x;
@@ -44,27 +44,27 @@ public class SPlayerLookPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24874 = var1.<Class2062>method35712(Class2062.class);
+      this.field24874 = var1.<Class2062>readEnumValue(Class2062.class);
       this.field24870 = var1.readDouble();
       this.field24871 = var1.readDouble();
       this.field24872 = var1.readDouble();
       if (var1.readBoolean()) {
          this.field24876 = true;
          this.field24873 = var1.readVarInt();
-         this.field24875 = var1.<Class2062>method35712(Class2062.class);
+         this.field24875 = var1.<Class2062>readEnumValue(Class2062.class);
       }
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.field24874);
+      var1.writeEnumValue(this.field24874);
       var1.writeDouble(this.field24870);
       var1.writeDouble(this.field24871);
       var1.writeDouble(this.field24872);
       var1.writeBoolean(this.field24876);
       if (this.field24876) {
          var1.writeVarInt(this.field24873);
-         var1.method35713(this.field24875);
+         var1.writeEnumValue(this.field24875);
       }
    }
 

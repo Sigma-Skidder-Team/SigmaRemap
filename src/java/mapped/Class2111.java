@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.server.ServerWorld;
 
 public enum Class2111 {
    field13770 {

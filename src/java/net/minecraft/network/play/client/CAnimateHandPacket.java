@@ -1,7 +1,7 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.util.Hand;
-import mapped.IServerPlayNetHandler;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 
@@ -19,12 +19,12 @@ public class CAnimateHandPacket implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.hand = var1.<Hand>method35712(Hand.class);
+      this.hand = var1.readEnumValue(Hand.class);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.hand);
+      var1.writeEnumValue(this.hand);
    }
 
    public void processPacket(IServerPlayNetHandler var1) {

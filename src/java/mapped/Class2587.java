@@ -7,11 +7,11 @@ import net.minecraft.network.PacketBuffer;
 
 public class Class2587 implements Class2586<StringArgumentType> {
    public void method10796(StringArgumentType var1, PacketBuffer var2) {
-      var2.method35713(var1.getType());
+      var2.writeEnumValue(var1.getType());
    }
 
    public StringArgumentType method10795(PacketBuffer var1) {
-      StringType var4 = var1.<StringType>method35712(StringType.class);
+      StringType var4 = var1.<StringType>readEnumValue(StringType.class);
       switch (Class6599.field29036[var4.ordinal()]) {
          case 1:
             return StringArgumentType.word();

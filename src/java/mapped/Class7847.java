@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 

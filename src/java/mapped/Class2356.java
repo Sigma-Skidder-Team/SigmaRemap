@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ForwardingList;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 
 import java.util.List;

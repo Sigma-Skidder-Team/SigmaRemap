@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.*;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 

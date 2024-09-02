@@ -5,12 +5,16 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
@@ -59,7 +63,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       this.method4885(var1.method122("Strength"));
       super.method2723(var1);
       this.method4890(var1.method122("Variant"));
-      if (var1.method119("DecorItem", 10)) {
+      if (var1.contains("DecorItem", 10)) {
          this.field5890.method3621(1, ItemStack.method32104(var1.getCompound("DecorItem")));
       }
 

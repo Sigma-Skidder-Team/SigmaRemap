@@ -11,11 +11,15 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import mapped.*;
+import net.minecraft.inventory.container.ClickType;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class MineplexSpeed extends Module {
     private int field23552;
@@ -179,7 +183,7 @@ public class MineplexSpeed extends Module {
                 }
             }
 
-            Class7789.method25870(mc.player.field4904.field25471, 42, 0, Class2259.field14695, mc.player, true);
+            Class7789.method25870(mc.player.field4904.field25471, 42, 0, ClickType.field14695, mc.player, true);
             if (mc.player.field4904.method18131(42).method18265().isEmpty()
                     && mc.player.inventory.currentItem != 6
                     && this.field23554 != 6) {

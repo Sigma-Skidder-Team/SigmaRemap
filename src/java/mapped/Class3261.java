@@ -7,13 +7,16 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntityPickupStatus;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -127,18 +130,18 @@ public class Class3261 extends Class3262 implements Class3260 {
 
    public static boolean method11755(ItemStack var0) {
       CompoundNBT var3 = var0.method32142();
-      return var3 != null && var3.method132("Charged");
+      return var3 != null && var3.getBoolean("Charged");
    }
 
    public static void method11756(ItemStack var0, boolean var1) {
       CompoundNBT var4 = var0.getOrCreateTag();
-      var4.method115("Charged", var1);
+      var4.putBoolean("Charged", var1);
    }
 
    private static void method11757(ItemStack var0, ItemStack var1) {
       CompoundNBT var4 = var0.getOrCreateTag();
       ListNBT var5;
-      if (!var4.method119("ChargedProjectiles", 9)) {
+      if (!var4.contains("ChargedProjectiles", 9)) {
          var5 = new ListNBT();
       } else {
          var5 = var4.method131("ChargedProjectiles", 10);
@@ -153,7 +156,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    private static List<ItemStack> method11758(ItemStack var0) {
       ArrayList var3 = Lists.newArrayList();
       CompoundNBT var4 = var0.method32142();
-      if (var4 != null && var4.method119("ChargedProjectiles", 9)) {
+      if (var4 != null && var4.contains("ChargedProjectiles", 9)) {
          ListNBT var5 = var4.method131("ChargedProjectiles", 10);
          if (var5 != null) {
             for (int var6 = 0; var6 < var5.size(); var6++) {

@@ -5,9 +5,9 @@ import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.BooleanSetting;
-import mapped.Class5605;
 import mapped.ModeSetting;
 import mapped.NumberSetting;
+import net.minecraft.network.play.client.CPlayerPacket;
 
 public class TPDisabler extends Module {
     private int field23517;
@@ -56,7 +56,7 @@ public class TPDisabler extends Module {
                 this.field23517 = 0;
                 boolean var8 = this.getBooleanValueFromSetttingName("OnGround");
                 if (this.getBooleanValueFromSetttingName("More Packets")) {
-                    mc.getConnection().sendPacket(new Class5605(mc.player.getPosX(), var4, mc.player.getPosX(), var8));
+                    mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), var4, mc.player.getPosX(), var8));
                 } else {
                     var1.method13912(var4);
                     var1.method13920(var8);

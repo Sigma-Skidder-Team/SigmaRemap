@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class5683 extends Class5651<Class1057, Class2887<Class1057>> {
    public static final ResourceLocation field25048 = new ResourceLocation("textures/" +Class8624.field38782.method26197().getPath()  + ".png");

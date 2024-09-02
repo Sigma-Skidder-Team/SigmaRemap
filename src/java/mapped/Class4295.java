@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.GL11;
 
 public class Class4295 extends Class4278 {

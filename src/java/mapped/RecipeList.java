@@ -4,19 +4,22 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 public class RecipeList {
    private static String[] field42624;
-   private final List<Class4843<?>> field42625;
+   private final List<IRecipe<?>> field42625;
    private final boolean field42626;
-   private final Set<Class4843<?>> field42627 = Sets.newHashSet();
-   private final Set<Class4843<?>> field42628 = Sets.newHashSet();
-   private final Set<Class4843<?>> field42629 = Sets.newHashSet();
+   private final Set<IRecipe<?>> field42627 = Sets.newHashSet();
+   private final Set<IRecipe<?>> field42628 = Sets.newHashSet();
+   private final Set<IRecipe<?>> field42629 = Sets.newHashSet();
 
-   public RecipeList(List<Class4843<?>> var1) {
+   public RecipeList(List<IRecipe<?>> var1) {
       this.field42625 = ImmutableList.copyOf(var1);
       if (var1.size() > 1) {
          this.field42626 = method34885(var1);
@@ -25,12 +28,12 @@ public class RecipeList {
       }
    }
 
-   private static boolean method34885(List<Class4843<?>> var0) {
+   private static boolean method34885(List<IRecipe<?>> var0) {
       int var3 = var0.size();
-      ItemStack var4 = ((Class4843)var0.get(0)).getRecipeOutput();
+      ItemStack var4 = ((IRecipe)var0.get(0)).getRecipeOutput();
 
       for (int var5 = 1; var5 < var3; var5++) {
-         ItemStack var6 = ((Class4843)var0.get(var5)).getRecipeOutput();
+         ItemStack var6 = ((IRecipe)var0.get(var5)).getRecipeOutput();
          if (!ItemStack.method32130(var4, var6) || !ItemStack.method32127(var4, var6)) {
             return false;
          }
@@ -44,7 +47,7 @@ public class RecipeList {
    }
 
    public void method34887(Class6941 var1) {
-      for (Class4843 var5 : this.field42625) {
+      for (IRecipe var5 : this.field42625) {
          if (var1.method21360(var5)) {
             this.field42629.add(var5);
          }
@@ -52,7 +55,7 @@ public class RecipeList {
    }
 
    public void method34888(Class6207 var1, int var2, int var3, Class6941 var4) {
-      for (Class4843 var8 : this.field42625) {
+      for (IRecipe var8 : this.field42625) {
          boolean var9 = var8.method14960(var2, var3) && var4.method21360(var8);
          if (!var9) {
             this.field42628.remove(var8);
@@ -68,7 +71,7 @@ public class RecipeList {
       }
    }
 
-   public boolean method34889(Class4843<?> var1) {
+   public boolean method34889(IRecipe<?> var1) {
       return this.field42627.contains(var1);
    }
 
@@ -80,15 +83,15 @@ public class RecipeList {
       return !this.field42628.isEmpty();
    }
 
-   public List<Class4843<?>> getRecipes() {
+   public List<IRecipe<?>> getRecipes() {
       return this.field42625;
    }
 
-   public List<Class4843<?>> method34893(boolean var1) {
+   public List<IRecipe<?>> method34893(boolean var1) {
       ArrayList var4 = Lists.newArrayList();
       Set var5 = !var1 ? this.field42628 : this.field42627;
 
-      for (Class4843 var7 : this.field42625) {
+      for (IRecipe var7 : this.field42625) {
          if (var5.contains(var7)) {
             var4.add(var7);
          }
@@ -97,10 +100,10 @@ public class RecipeList {
       return var4;
    }
 
-   public List<Class4843<?>> method34894(boolean var1) {
+   public List<IRecipe<?>> method34894(boolean var1) {
       ArrayList var4 = Lists.newArrayList();
 
-      for (Class4843 var6 : this.field42625) {
+      for (IRecipe var6 : this.field42625) {
          if (this.field42628.contains(var6) && this.field42627.contains(var6) == var1) {
             var4.add(var6);
          }

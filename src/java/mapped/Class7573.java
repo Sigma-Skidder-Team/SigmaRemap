@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class Class7573 extends Class7574 {
    private static String[] field32513;

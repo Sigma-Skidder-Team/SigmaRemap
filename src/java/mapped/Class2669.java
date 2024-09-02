@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class2669 extends Class2595 {
    private final Class1076 field17046;

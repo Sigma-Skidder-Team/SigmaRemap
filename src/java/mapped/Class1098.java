@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -12,6 +13,8 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Map;
@@ -128,7 +131,7 @@ public class Class1098 extends Class1013 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method5251(var1.method122("CatType"));
-      if (var1.method119("CollarColor", 99)) {
+      if (var1.contains("CollarColor", 99)) {
          this.method5257(Class112.method315(var1.method122("CollarColor")));
       }
    }

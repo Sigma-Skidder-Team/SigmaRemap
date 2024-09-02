@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.function.BiPredicate;
 

@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Hand;
+import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.function.Function;
@@ -130,7 +131,7 @@ public class Class2797<T extends LivingEntity> extends Class2855<T> implements C
 
       this.field17435.field31036 = 0.0F;
       this.field17436.field31036 = 0.0F;
-      boolean var12 = var1.method2967() == Class2205.field14418;
+      boolean var12 = var1.method2967() == HandSide.field14418;
       boolean var13 = !var12 ? this.field17440.method9003() : this.field17439.method9003();
       if (var12 == var13) {
          this.method11003((T)var1);
@@ -168,9 +169,9 @@ public class Class2797<T extends LivingEntity> extends Class2855<T> implements C
       Class7972.method27108(this.field17435, this.field17436, var4);
       if (this.field17442 > 0.0F) {
          float var14 = var2 % 26.0F;
-         Class2205 var15 = this.method11013((T)var1);
-         float var16 = var15 == Class2205.field14418 && this.field17600 > 0.0F ? 0.0F : this.field17442;
-         float var17 = var15 == Class2205.field14417 && this.field17600 > 0.0F ? 0.0F : this.field17442;
+         HandSide var15 = this.method11013((T)var1);
+         float var16 = var15 == HandSide.field14418 && this.field17600 > 0.0F ? 0.0F : this.field17442;
+         float var17 = var15 == HandSide.field14417 && this.field17600 > 0.0F ? 0.0F : this.field17442;
          if (!(var14 < 14.0F)) {
             if (var14 >= 14.0F && var14 < 22.0F) {
                float var22 = (var14 - 14.0F) / 8.0F;
@@ -282,11 +283,11 @@ public class Class2797<T extends LivingEntity> extends Class2855<T> implements C
 
    public void method11005(T var1, float var2) {
       if (!(this.field17600 <= 0.0F)) {
-         Class2205 var5 = this.method11013((T)var1);
+         HandSide var5 = this.method11013((T)var1);
          Class7219 var6 = this.method11011(var5);
          float var7 = this.field17600;
          this.field17434.field31036 = MathHelper.sin(MathHelper.method37765(var7) * (float) (Math.PI * 2)) * 0.2F;
-         if (var5 == Class2205.field14417) {
+         if (var5 == HandSide.field14417) {
             this.field17434.field31036 *= -1.0F;
          }
 
@@ -351,12 +352,12 @@ public class Class2797<T extends LivingEntity> extends Class2855<T> implements C
    }
 
    @Override
-   public void method11010(Class2205 var1, MatrixStack var2) {
+   public void method11010(HandSide var1, MatrixStack var2) {
       this.method11011(var1).method22682(var2);
    }
 
-   public Class7219 method11011(Class2205 var1) {
-      return var1 != Class2205.field14417 ? this.field17435 : this.field17436;
+   public Class7219 method11011(HandSide var1) {
+      return var1 != HandSide.field14417 ? this.field17435 : this.field17436;
    }
 
    @Override
@@ -364,8 +365,8 @@ public class Class2797<T extends LivingEntity> extends Class2855<T> implements C
       return this.field17432;
    }
 
-   public Class2205 method11013(T var1) {
-      Class2205 var4 = var1.method2967();
+   public HandSide method11013(T var1) {
+      HandSide var4 = var1.method2967();
       return var1.field4948 != Hand.MAIN_HAND ? var4.method8920() : var4;
    }
 }

@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.Collection;

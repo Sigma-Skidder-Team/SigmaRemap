@@ -1,20 +1,19 @@
 package net.minecraft.network.play.client;
 
-import mapped.IServerPlayNetHandler;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
 public class CKeepAlivePacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24852;
-   private long field24853;
+    private long key;
 
    public CKeepAlivePacket() {
    }
 
    public CKeepAlivePacket(long var1) {
-      this.field24853 = var1;
+      this.key = var1;
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
@@ -23,15 +22,15 @@ public class CKeepAlivePacket implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24853 = var1.readLong();
+      this.key = var1.readLong();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeLong(this.field24853);
+      var1.writeLong(this.key);
    }
 
-   public long method17608() {
-      return this.field24853;
+   public long getKey() {
+      return this.key;
    }
 }

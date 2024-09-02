@@ -77,7 +77,7 @@ public class AACAntiKB extends Module {
                 }
 
                 SEntityVelocityPacket var5 = (SEntityVelocityPacket) var4;
-                if (var5.method17565() == mc.player.method3205() && (var5.field24801 != 0 || var5.field24803 != 0)) {
+                if (var5.method17565() == mc.player.getEntityId() && (var5.field24801 != 0 || var5.field24803 != 0)) {
                     this.field23909 = (float) (Math.sqrt(var5.field24801 * var5.field24801 + var5.field24803 * var5.field24803) / 1000.0);
                     this.field23908 = (float) (Math.atan2(var5.field24801 / 1000, var5.field24803 / 1000) * 180.0 / Math.PI) - 90.0F;
                     field23907 = 0;

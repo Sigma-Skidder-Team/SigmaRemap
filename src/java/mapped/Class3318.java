@@ -5,13 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 public class Class3318 extends Item {
    public Class3318(Class5643 var1) {
@@ -61,7 +65,7 @@ public class Class3318 extends Item {
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       CompoundNBT var7 = var1.method32145("Fireworks");
       if (var7 != null) {
-         if (var7.method119("Flight", 99)) {
+         if (var7.contains("Flight", 99)) {
             var3.add(
                new TranslationTextComponent("item.minecraft.firework_rocket.flight")
                   .appendString(" ")

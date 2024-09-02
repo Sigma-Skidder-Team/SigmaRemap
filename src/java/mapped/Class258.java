@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 public class Class258 extends Class219<Class1074, Class2856<Class1074>> {
    private static String[] field917;
    private final Class2856<Class1074> field918 = new Class2856<Class1074>(0.1F);

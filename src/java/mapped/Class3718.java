@@ -1,6 +1,9 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ServerWorld;
+
 import java.util.Optional;
 
 public class Class3718 extends Class3676<Class1046> {

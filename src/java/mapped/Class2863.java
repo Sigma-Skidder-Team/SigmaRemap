@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class2863<T extends LivingEntity> extends Class2855<T> {
    private static String[] field17746;

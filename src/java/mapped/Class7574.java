@@ -12,6 +12,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -130,7 +132,7 @@ public abstract class Class7574 {
                            continue;
                         }
 
-                        if (this.field32518.method20414().method98() == 1 && this.field32518.method20414().method119("id", 8)) {
+                        if (this.field32518.method20414().method98() == 1 && this.field32518.method20414().contains("id", 8)) {
                            ((Class1006)var24).method4276(var23, var3.method6807(var24.getPosition()), Class2202.field14393, (Class5093)null, (CompoundNBT)null);
                         }
                      }
@@ -189,7 +191,7 @@ public abstract class Class7574 {
    public void method24794(CompoundNBT var1) {
       this.field32516 = var1.method121("Delay");
       this.field32517.clear();
-      if (var1.method119("SpawnPotentials", 9)) {
+      if (var1.contains("SpawnPotentials", 9)) {
          ListNBT var4 = var1.method131("SpawnPotentials", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
@@ -197,7 +199,7 @@ public abstract class Class7574 {
          }
       }
 
-      if (!var1.method119("SpawnData", 10)) {
+      if (!var1.contains("SpawnData", 10)) {
          if (!this.field32517.isEmpty()) {
             this.method24788(Class8879.<Class6693>method32314(this.method24786().rand, this.field32517));
          }
@@ -205,18 +207,18 @@ public abstract class Class7574 {
          this.method24788(new Class6693(1, var1.getCompound("SpawnData")));
       }
 
-      if (var1.method119("MinSpawnDelay", 99)) {
+      if (var1.contains("MinSpawnDelay", 99)) {
          this.field32521 = var1.method121("MinSpawnDelay");
          this.field32522 = var1.method121("MaxSpawnDelay");
          this.field32523 = var1.method121("SpawnCount");
       }
 
-      if (var1.method119("MaxNearbyEntities", 99)) {
+      if (var1.contains("MaxNearbyEntities", 99)) {
          this.field32525 = var1.method121("MaxNearbyEntities");
          this.field32526 = var1.method121("RequiredPlayerRange");
       }
 
-      if (var1.method119("SpawnRange", 99)) {
+      if (var1.contains("SpawnRange", 99)) {
          this.field32527 = var1.method121("SpawnRange");
       }
 
@@ -256,7 +258,7 @@ public abstract class Class7574 {
    public Entity method24796() {
       if (this.field32524 == null) {
          this.field32524 = EntityType.method33223(this.field32518.method20414(), this.method24786(), Function.<Entity>identity());
-         if (this.field32518.method20414().method98() == 1 && this.field32518.method20414().method119("id", 8) && !(this.field32524 instanceof Class1006)) {
+         if (this.field32518.method20414().method98() == 1 && this.field32518.method20414().contains("id", 8) && !(this.field32524 instanceof Class1006)) {
          }
       }
 

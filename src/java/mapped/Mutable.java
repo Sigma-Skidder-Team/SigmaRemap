@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 public class Mutable extends BlockPos {
@@ -17,27 +18,27 @@ public class Mutable extends BlockPos {
 
    @Override
    public BlockPos method8335(double var1, double var3, double var5) {
-      return super.method8335(var1, var3, var5).method8353();
+      return super.method8335(var1, var3, var5).toImmutable();
    }
 
    @Override
    public BlockPos method8336(int var1, int var2, int var3) {
-      return super.method8336(var1, var2, var3).method8353();
+      return super.method8336(var1, var2, var3).toImmutable();
    }
 
    @Override
    public BlockPos method8350(Direction var1, int var2) {
-      return super.method8350(var1, var2).method8353();
+      return super.method8350(var1, var2).toImmutable();
    }
 
    @Override
    public BlockPos method8351(Class113 var1, int var2) {
-      return super.method8351(var1, var2).method8353();
+      return super.method8351(var1, var2).toImmutable();
    }
 
    @Override
    public BlockPos method8352(Class80 var1) {
-      return super.method8352(var1).method8353();
+      return super.method8352(var1).toImmutable();
    }
 
    public Mutable method8372(int var1, int var2, int var3) {
@@ -122,7 +123,7 @@ public class Mutable extends BlockPos {
    }
 
    @Override
-   public BlockPos method8353() {
+   public BlockPos toImmutable() {
       return new BlockPos(this);
    }
 }

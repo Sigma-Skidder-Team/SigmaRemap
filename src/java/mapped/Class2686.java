@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.EnumSet;
 import java.util.List;
@@ -60,7 +62,7 @@ public class Class2686 extends Class2595 {
                   if (!var6.isPresent()) {
                      return false;
                   } else {
-                     this.field17106 = ((BlockPos)var6.get()).method8353();
+                     this.field17106 = ((BlockPos)var6.get()).toImmutable();
                      Class6991 var7 = (Class6991)this.field17103.method4230();
                      boolean var8 = var7.method21683();
                      var7.method21682(this.field17110.getAsBoolean());

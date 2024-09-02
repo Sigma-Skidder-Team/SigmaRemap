@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 public class Class6997 extends Class6990 {
    private static String[] field30271;

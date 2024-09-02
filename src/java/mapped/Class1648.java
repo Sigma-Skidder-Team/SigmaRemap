@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.datafixers.DataFixer;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.io.File;
@@ -23,7 +24,7 @@ public class Class1648 implements AutoCloseable {
       short var7 = 1493;
       if (var6 < 1493) {
          var3 = Class8354.method29290(this.field8948, Class2108.field13750, var3, var6, 1493);
-         if (var3.getCompound("Level").method132("hasLegacyStructureData")) {
+         if (var3.getCompound("Level").getBoolean("hasLegacyStructureData")) {
             if (this.field8949 == null) {
                this.field8949 = Class8418.method29580(var1, (Class8250)var2.get());
             }
@@ -41,7 +42,7 @@ public class Class1648 implements AutoCloseable {
    }
 
    public static int method6530(CompoundNBT var0) {
-      return !var0.method119("DataVersion", 99) ? -1 : var0.method122("DataVersion");
+      return !var0.contains("DataVersion", 99) ? -1 : var0.method122("DataVersion");
    }
 
    @Nullable

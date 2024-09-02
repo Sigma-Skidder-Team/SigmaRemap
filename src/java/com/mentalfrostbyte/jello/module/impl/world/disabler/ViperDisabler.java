@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SConfirmTransactionPacket;
 import net.minecraft.network.play.server.SKeepAlivePacket;
 
@@ -42,7 +43,7 @@ public class ViperDisabler extends Module {
                 for (int var5 = 0; var5 < 10; var5++) {
                     boolean var6 = var5 > 2 && var5 < 8;
                     double var7 = !var6 ? -0.2 : 0.2;
-                    Class5605 var9 = new Class5605(
+                    CPlayerPacket.PositionPacket var9 = new CPlayerPacket.PositionPacket(
                             mc.player.getPosX(), mc.player.getPosY() + var7, mc.player.getPosZ(), true
                     );
                     mc.getConnection().sendPacket(var9);

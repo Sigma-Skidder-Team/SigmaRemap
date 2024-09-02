@@ -6,10 +6,17 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.play.client.*;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -90,12 +97,12 @@ public class PlayerController {
             if (!this.field31366.method8157()) {
                if (!this.field31365 || !this.method23137(var1)) {
                   if (this.field31365) {
-                     this.method23160(CPlayerDiggingPacket.Action.field13485, this.field31360, var2);
+                     this.method23160(CPlayerDiggingPacket.Action.ABORT_DESTROY_BLOCK, this.field31360, var2);
                   }
 
                   BlockState var5 = this.field31358.world.getBlockState(var1);
                   this.field31358.getTutorial().method37026(this.field31358.world, var1, var5, 0.0F);
-                  this.method23160(CPlayerDiggingPacket.Action.field13484, var1, var2);
+                  this.method23160(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var1, var2);
                   boolean var6 = !var5.isAir();
                   if (var6 && this.field31362 == 0.0F) {
                      var5.method23436(this.field31358.world, var1, this.field31358.player);
@@ -109,13 +116,13 @@ public class PlayerController {
                      this.field31361 = this.field31358.player.method3090();
                      this.field31362 = 0.0F;
                      this.field31363 = 0.0F;
-                     this.field31358.world.method6803(this.field31358.player.method3205(), this.field31360, (int)(this.field31362 * 10.0F) - 1);
+                     this.field31358.world.method6803(this.field31358.player.getEntityId(), this.field31360, (int)(this.field31362 * 10.0F) - 1);
                   }
                }
             } else {
                BlockState var7 = this.field31358.world.getBlockState(var1);
                this.field31358.getTutorial().method37026(this.field31358.world, var1, var7, 1.0F);
-               this.method23160(CPlayerDiggingPacket.Action.field13484, var1, var2);
+               this.method23160(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var1, var2);
                this.method23131(var1);
                this.field31364 = 5;
             }
@@ -131,10 +138,10 @@ public class PlayerController {
       if (this.field31365) {
          BlockState var3 = this.field31358.world.getBlockState(this.field31360);
          this.field31358.getTutorial().method37026(this.field31358.world, this.field31360, var3, -1.0F);
-         this.method23160(CPlayerDiggingPacket.Action.field13485, this.field31360, Direction.DOWN);
+         this.method23160(CPlayerDiggingPacket.Action.ABORT_DESTROY_BLOCK, this.field31360, Direction.DOWN);
          this.field31365 = false;
          this.field31362 = 0.0F;
-         this.field31358.world.method6803(this.field31358.player.method3205(), this.field31360, -1);
+         this.field31358.world.method6803(this.field31358.player.getEntityId(), this.field31360, -1);
          this.field31358.player.resetCooldown();
       }
    }
@@ -146,7 +153,7 @@ public class PlayerController {
             this.field31364 = 5;
             BlockState var7 = this.field31358.world.getBlockState(var1);
             this.field31358.getTutorial().method37026(this.field31358.world, var1, var7, 1.0F);
-            this.method23160(CPlayerDiggingPacket.Action.field13484, var1, var2);
+            this.method23160(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var1, var2);
             this.method23131(var1);
             return true;
          } else if (!this.method23137(var1)) {
@@ -166,14 +173,14 @@ public class PlayerController {
                this.field31358.getTutorial().method37026(this.field31358.world, var1, var5, MathHelper.clamp(this.field31362, 0.0F, 1.0F));
                if (this.field31362 >= 1.0F) {
                   this.field31365 = false;
-                  this.method23160(CPlayerDiggingPacket.Action.field13486, var1, var2);
+                  this.method23160(CPlayerDiggingPacket.Action.STOP_DESTROY_BLOCK, var1, var2);
                   this.method23131(var1);
                   this.field31362 = 0.0F;
                   this.field31363 = 0.0F;
                   this.field31364 = 5;
                }
 
-               this.field31358.world.method6803(this.field31358.player.method3205(), this.field31360, (int)(this.field31362 * 10.0F) - 1);
+               this.field31358.world.method6803(this.field31358.player.getEntityId(), this.field31360, (int)(this.field31362 * 10.0F) - 1);
                return true;
             } else {
                this.field31365 = false;
@@ -312,11 +319,11 @@ public class PlayerController {
       return this.field31366 != Class1894.field11105 ? var2.applyPlayerInteraction(var1, var7, var4) : ActionResultType.field14820;
    }
 
-   public ItemStack method23144(int var1, int var2, int var3, Class2259 var4, PlayerEntity var5) {
+   public ItemStack method23144(int var1, int var2, int var3, ClickType var4, PlayerEntity var5) {
       return Class7789.method25869(var1, var2, var3, var4, var5);
    }
 
-   public void method23145(int var1, Class4843<?> var2, boolean var3) {
+   public void method23145(int var1, IRecipe<?> var2, boolean var3) {
       this.field31359.sendPacket(new CPlaceRecipePacket(var1, var2, var3));
    }
 
@@ -338,7 +345,7 @@ public class PlayerController {
 
    public void onStoppedUsingItem(PlayerEntity var1) {
       this.method23138();
-      this.field31359.sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13489, BlockPos.ZERO, Direction.DOWN));
+      this.field31359.sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.RELEASE_USE_ITEM, BlockPos.ZERO, Direction.DOWN));
       var1.method3161();
    }
 
@@ -391,7 +398,7 @@ public class PlayerController {
    public void method23161(ClientWorld var1, BlockPos var2, BlockState var3, CPlayerDiggingPacket.Action var4, boolean var5) {
       Vector3d var8 = (Vector3d)this.field31368.remove(Pair.of(var2, var4));
       BlockState var9 = var1.getBlockState(var2);
-      if ((var8 == null || !var5 || var4 != CPlayerDiggingPacket.Action.field13484 && var9 != var3) && var9 != var3) {
+      if ((var8 == null || !var5 || var4 != CPlayerDiggingPacket.Action.START_DESTROY_BLOCK && var9 != var3) && var9 != var3) {
          var1.method6851(var2, var3);
          ClientPlayerEntity var10 = this.field31358.player;
          if (var8 != null && var1 == var10.world && var10.func_242278_a(var2, var3)) {

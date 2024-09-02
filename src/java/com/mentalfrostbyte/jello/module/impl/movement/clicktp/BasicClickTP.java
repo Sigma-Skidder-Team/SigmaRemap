@@ -7,8 +7,10 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
@@ -73,7 +75,7 @@ public class BasicClickTP extends Module {
                     double var37 = 0.3;
                     AxisAlignedBB var39 = new AxisAlignedBB(var30 - var37, var34, var32 - var37, var30 + var37, var34 + 1.9, var32 + var37);
                     if (mc.world.method7055(mc.player, var39).count() == 0L) {
-                        mc.getConnection().sendPacket(new Class5605(var30, var34, var32, true));
+                        mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var30, var34, var32, true));
                     }
 
                     this.field23589.add(new Class8472(var30, var34, var32));

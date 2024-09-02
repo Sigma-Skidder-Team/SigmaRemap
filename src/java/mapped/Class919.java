@@ -3,10 +3,13 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
@@ -134,7 +137,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field5236 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
-      if (!var1.method119("LootTable", 8)) {
+      if (!var1.contains("LootTable", 8)) {
          Class7920.method26567(var1, this.field5236);
       } else {
          this.field5238 = new ResourceLocation(var1.method126("LootTable"));

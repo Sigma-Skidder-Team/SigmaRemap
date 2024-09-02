@@ -2,7 +2,9 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Map;
 import java.util.Random;

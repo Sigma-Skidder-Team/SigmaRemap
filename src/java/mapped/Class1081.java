@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -10,6 +11,8 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Collection;
 
@@ -73,27 +76,27 @@ public class Class1081 extends Class1009 implements Class1080 {
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.dataManager.<Boolean>method35445(field5939)) {
-         var1.method115("powered", true);
+         var1.putBoolean("powered", true);
       }
 
       var1.method101("Fuse", (short)this.field5943);
       var1.method100("ExplosionRadius", (byte)this.field5944);
-      var1.method115("ignited", this.method5024());
+      var1.putBoolean("ignited", this.method5024());
    }
 
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.dataManager.method35446(field5939, var1.method132("powered"));
-      if (var1.method119("Fuse", 99)) {
+      this.dataManager.method35446(field5939, var1.getBoolean("powered"));
+      if (var1.contains("Fuse", 99)) {
          this.field5943 = var1.method121("Fuse");
       }
 
-      if (var1.method119("ExplosionRadius", 99)) {
+      if (var1.contains("ExplosionRadius", 99)) {
          this.field5944 = var1.method120("ExplosionRadius");
       }
 
-      if (var1.method132("ignited")) {
+      if (var1.getBoolean("ignited")) {
          this.method5025();
       }
    }

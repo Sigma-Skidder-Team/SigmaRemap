@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.World;
+
 public final class Class320 extends Class318<Runnable> {
    public final Class1703 field1383;
 

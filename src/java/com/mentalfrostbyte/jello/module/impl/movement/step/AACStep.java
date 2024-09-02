@@ -6,9 +6,9 @@ import com.mentalfrostbyte.jello.event.impl.Class4434;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class5605;
 import mapped.ColorUtils;
 import mapped.Class9567;
+import net.minecraft.network.play.client.CPlayerPacket;
 
 public class AACStep extends Module {
     public AACStep() {
@@ -31,7 +31,7 @@ public class AACStep extends Module {
                         double[] var12 = new double[]{0.41999998688698 * var4, 0.754 * var4};
 
                         for (double var16 : var12) {
-                            mc.getConnection().sendPacket(new Class5605(var6, var8 + var16, var10, false));
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var6, var8 + var16, var10, false));
                         }
                     }
                 }

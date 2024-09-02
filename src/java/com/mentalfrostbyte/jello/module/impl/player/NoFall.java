@@ -144,7 +144,7 @@ public class NoFall extends Module {
 
                             if (!this.field23507 && mc.player.fallDistance > 3.0F && this.getStringSettingValueByName("Mode").equals("AAC")) {
                                 this.field23507 = !this.field23507;
-                                Class5605 var7 = new Class5605(mc.player.getPosX(), Double.NaN, mc.player.getPosZ(), true);
+                                CPlayerPacket.PositionPacket var7 = new CPlayerPacket.PositionPacket(mc.player.getPosX(), Double.NaN, mc.player.getPosZ(), true);
                                 mc.getConnection().sendPacket(var7);
                             }
                         }
@@ -167,9 +167,9 @@ public class NoFall extends Module {
                             double var12 = mc.player.getPosX();
                             double var14 = mc.player.getPosY();
                             double var16 = mc.player.getPosZ();
-                            mc.getConnection().sendPacket(new Class5605(var12, var14 + 3.01, var16, false));
-                            mc.getConnection().sendPacket(new Class5605(var12, var14, var16, false));
-                            mc.getConnection().sendPacket(new Class5605(var12, var14, var16, true));
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var12, var14 + 3.01, var16, false));
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var12, var14, var16, false));
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var12, var14, var16, true));
                             System.out.println("sent");
                             this.field23510 = false;
                         }

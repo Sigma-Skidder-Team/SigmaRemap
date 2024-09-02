@@ -7,6 +7,7 @@ import com.google.gson.JsonSyntaxException;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import javax.annotation.Nullable;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
@@ -125,8 +126,8 @@ public class Class9272 {
    public void method34946(PacketBuffer var1) {
       var1.writeTextComponent(this.field42646);
       var1.writeTextComponent(this.field42647);
-      var1.method35724(this.field42648);
-      var1.method35713(this.field42650);
+      var1.writeItemStack(this.field42648);
+      var1.writeEnumValue(this.field42650);
       int var4 = 0;
       if (this.field42649 != null) {
          var4 |= 1;
@@ -152,8 +153,8 @@ public class Class9272 {
    public static Class9272 method34947(PacketBuffer var0) {
       ITextComponent var3 = var0.method35710();
       ITextComponent var4 = var0.method35710();
-      ItemStack var5 = var0.method35726();
-      Class1965 var6 = var0.<Class1965>method35712(Class1965.class);
+      ItemStack var5 = var0.readItemStack();
+      Class1965 var6 = var0.<Class1965>readEnumValue(Class1965.class);
       int var7 = var0.readInt();
       Object var8 = null;
       boolean var9 = false;

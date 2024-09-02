@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Collections;
@@ -27,7 +28,7 @@ public class Class2916 extends Class2914 {
          var7.method8379(Direction.field673);
       }
 
-      BlockPos var17 = var7.method8353();
+      BlockPos var17 = var7.toImmutable();
       int var10 = var2.nextInt(3) + 2;
       List<Direction> var11 = Lists.newArrayList(Class76.field161);
       Collections.shuffle(var11, var2);

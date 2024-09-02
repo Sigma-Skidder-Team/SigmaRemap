@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.util.Supplier;
@@ -32,7 +33,7 @@ public abstract class TileEntity {
 
    public void method3769(World var1, BlockPos var2) {
       this.field5324 = var1;
-      this.field5325 = var2.method8353();
+      this.field5325 = var2.toImmutable();
    }
 
    public boolean method3770() {
@@ -148,7 +149,7 @@ public abstract class TileEntity {
    }
 
    public void method3782(BlockPos var1) {
-      this.field5325 = var1.method8353();
+      this.field5325 = var1.toImmutable();
    }
 
    public boolean method3783() {

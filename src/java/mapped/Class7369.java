@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 
 import javax.annotation.Nullable;
 
@@ -59,7 +60,7 @@ public class Class7369 extends Class7361 {
          }
 
          if (var7 != null
-            && !var7.abilities.field29606
+            && !var7.abilities.disableDamage
             && (this.field31519.method3013().nextInt(MathHelper.method37772((int)var5) + 2) == 0 || this.field31519.method3013().nextInt(var4 + 2) == 0)) {
             this.method23374(var7);
             return;
@@ -123,7 +124,7 @@ public class Class7369 extends Class7361 {
 
    @Override
    public void method23361(EnderCrystalEntity var1, BlockPos var2, Class8654 var3, PlayerEntity var4) {
-      if (var4 != null && !var4.abilities.field29606) {
+      if (var4 != null && !var4.abilities.disableDamage) {
          this.method23374(var4);
       }
    }

@@ -19,13 +19,17 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SPlaySoundEffectPacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class7699 {
    private static final ITextComponent field32968 = new TranslationTextComponent("event.minecraft.raid");
@@ -68,19 +72,19 @@ public class Class7699 {
    public Class7699(ServerWorld var1, CompoundNBT var2) {
       this.field32978 = var1;
       this.field32980 = var2.method122("Id");
-      this.field32979 = var2.method132("Started");
-      this.field32983 = var2.method132("Active");
+      this.field32979 = var2.getBoolean("Started");
+      this.field32983 = var2.getBoolean("Active");
       this.field32976 = var2.method123("TicksActive");
       this.field32982 = var2.method122("BadOmenLevel");
       this.field32984 = var2.method122("GroupsSpawned");
       this.field32987 = var2.method122("PreRaidTicks");
       this.field32986 = var2.method122("PostRaidTicks");
-      this.field32981 = var2.method124("TotalHealth");
+      this.field32981 = var2.getFloat("TotalHealth");
       this.field32977 = new BlockPos(var2.method122("CX"), var2.method122("CY"), var2.method122("CZ"));
       this.field32989 = var2.method122("NumGroups");
       this.field32990 = Class2305.method9075(var2.method126("Status"));
       this.field32975.clear();
-      if (var2.method119("HeroesOfTheVillage", 9)) {
+      if (var2.contains("HeroesOfTheVillage", 9)) {
          ListNBT var5 = var2.method131("HeroesOfTheVillage", 11);
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
@@ -306,7 +310,7 @@ public class Class7699 {
                   this.field32990 = Class2305.field15740;
 
                   for (UUID var8 : this.field32975) {
-                     Entity var9 = this.field32978.method6942(var8);
+                     Entity var9 = this.field32978.getEntityByUuid(var8);
                      if (var9 instanceof LivingEntity && !var9.isSpectator()) {
                         LivingEntity var10 = (LivingEntity)var9;
                         var10.method3035(new Class2023(Effects.HERO_OF_THE_VILLAGE, 48000, this.field32982 - 1, false, false, true));
@@ -378,7 +382,7 @@ public class Class7699 {
             if (var7.removed || var7.world.getDimensionKey() != this.field32978.getDimensionKey() || this.field32977.method8318(var8) >= 12544.0) {
                var4.add(var7);
             } else if (var7.ticksExisted > 600) {
-               if (this.field32978.method6942(var7.getUniqueID()) == null) {
+               if (this.field32978.getEntityByUuid(var7.getUniqueID()) == null) {
                   var4.add(var7);
                }
 
@@ -686,14 +690,14 @@ public class Class7699 {
 
    public CompoundNBT method25434(CompoundNBT var1) {
       var1.method102("Id", this.field32980);
-      var1.method115("Started", this.field32979);
-      var1.method115("Active", this.field32983);
+      var1.putBoolean("Started", this.field32979);
+      var1.putBoolean("Active", this.field32983);
       var1.method103("TicksActive", this.field32976);
       var1.method102("BadOmenLevel", this.field32982);
       var1.method102("GroupsSpawned", this.field32984);
       var1.method102("PreRaidTicks", this.field32987);
       var1.method102("PostRaidTicks", this.field32986);
-      var1.method107("TotalHealth", this.field32981);
+      var1.putFloat("TotalHealth", this.field32981);
       var1.method102("NumGroups", this.field32989);
       var1.method109("Status", this.field32990.method9074());
       var1.method102("CX", this.field32977.getX());

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public interface Class9668 {
    default Class1677 method37723(World var1, BlockPos var2, BlockPos var3, int var4) {

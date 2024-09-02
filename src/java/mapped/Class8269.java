@@ -18,7 +18,7 @@ public class Class8269<T> {
 
    public Class8269(BlockPos var1, T var2, long var3, Class2199 var5) {
       this.field35559 = field35554++;
-      this.field35556 = var1.method8353();
+      this.field35556 = var1.toImmutable();
       this.field35555 = (T)var2;
       this.field35557 = var3;
       this.field35558 = var5;

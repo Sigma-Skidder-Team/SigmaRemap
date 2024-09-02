@@ -1,8 +1,11 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.World;
 
 public class Class3302 extends Class3292 {
    private static String[] field18808;

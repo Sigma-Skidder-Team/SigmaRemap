@@ -11,8 +11,10 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 public class Class9561 {
    public static Object field44532 = Class9299.method35071(Class9299.field42815);

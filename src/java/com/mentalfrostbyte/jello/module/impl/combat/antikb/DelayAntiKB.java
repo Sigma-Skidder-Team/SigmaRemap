@@ -37,7 +37,7 @@ public class DelayAntiKB extends Module {
 
             if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
                 SEntityVelocityPacket var5 = (SEntityVelocityPacket) var1.getPacket();
-                if (var5.method17565() == mc.player.method3205()) {
+                if (var5.method17565() == mc.player.getEntityId()) {
                     this.field23518.add(var5);
                     var1.method13900(true);
                     if (this.field23519 == 0) {

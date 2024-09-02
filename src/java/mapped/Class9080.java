@@ -1,12 +1,17 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.network.play.server.SChangeGameStatePacket;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class9080 extends Class9081 {
    private boolean field41565;

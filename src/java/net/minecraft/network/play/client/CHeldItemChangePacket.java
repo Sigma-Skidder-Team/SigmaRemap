@@ -1,37 +1,36 @@
 package net.minecraft.network.play.client;
 
-import mapped.IServerPlayNetHandler;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
 public class CHeldItemChangePacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24592;
-   private int field24593;
+    private int slotId;
 
    public CHeldItemChangePacket() {
    }
 
-   public CHeldItemChangePacket(int var1) {
-      this.field24593 = var1;
+   public CHeldItemChangePacket(int slotIn) {
+      this.slotId = slotIn;
    }
 
    @Override
-   public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24593 = var1.readShort();
+   public void readPacketData(PacketBuffer buf) throws IOException {
+      this.slotId = buf.readShort();
    }
 
    @Override
-   public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeShort(this.field24593);
+   public void writePacketData(PacketBuffer buf) throws IOException {
+      buf.writeShort(this.slotId);
    }
 
-   public void processPacket(IServerPlayNetHandler var1) {
-      var1.processHeldItemChange(this);
+   public void processPacket(IServerPlayNetHandler handler) {
+      handler.processHeldItemChange(this);
    }
 
-   public int method17416() {
-      return this.field24593;
+   public int getSlotId() {
+      return this.slotId;
    }
 }

@@ -4,8 +4,10 @@ import java.util.List;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 public class Class3323 extends Item {
    public Class3323(Class5643 var1) {

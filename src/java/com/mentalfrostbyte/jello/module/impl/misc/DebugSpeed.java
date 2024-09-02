@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.ColorUtils;
-import mapped.Vector3d;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.io.FileWriter;
 import java.math.BigDecimal;
@@ -49,7 +49,7 @@ public class DebugSpeed extends Module {
                 }
 
                 ColorUtils.method17678(
-                        Client.getInstance().getCommandManager().method30235() + "(" + var15 + "x faster " + (!var7 ? "jumping" : "walking") + ")  Speed: " + var5
+                        Client.getInstance().getCommandManager().getPrefix() + "(" + var15 + "x faster " + (!var7 ? "jumping" : "walking") + ")  Speed: " + var5
                 );
             }
 

@@ -1,7 +1,7 @@
 package net.minecraft.network.play.client;
 
-import mapped.IServerPlayNetHandler;
-import mapped.ItemStack;
+import net.minecraft.network.play.IServerPlayNetHandler;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 
@@ -24,14 +24,14 @@ public class CEditBookPacket implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24649 = var1.method35726();
+      this.field24649 = var1.readItemStack();
       this.field24650 = var1.readBoolean();
       this.field24651 = var1.readVarInt();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35724(this.field24649);
+      var1.writeItemStack(this.field24649);
       var1.writeBoolean(this.field24650);
       var1.writeVarInt(this.field24651);
    }

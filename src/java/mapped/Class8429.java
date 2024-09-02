@@ -13,8 +13,10 @@ import java.util.function.Predicate;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.TextComponentUtils;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class8429 {
    private static String[] field36108;
@@ -126,7 +128,7 @@ public class Class8429 {
          }
       } else {
          for (ServerWorld var5 : var1.method20177().method1320()) {
-            Entity var6 = var5.method6942(this.field36119);
+            Entity var6 = var5.getEntityByUuid(this.field36119);
             if (var6 != null) {
                return Lists.newArrayList(new Entity[]{var6});
             }

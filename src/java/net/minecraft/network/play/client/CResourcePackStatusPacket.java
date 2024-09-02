@@ -1,34 +1,39 @@
 package net.minecraft.network.play.client;
 
-import mapped.Class2066;
-import mapped.IServerPlayNetHandler;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
 public class CResourcePackStatusPacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24666;
-   private Class2066 field24667;
+    private Action action;
 
    public CResourcePackStatusPacket() {
    }
 
-   public CResourcePackStatusPacket(Class2066 var1) {
-      this.field24667 = var1;
+   public CResourcePackStatusPacket(Action var1) {
+      this.action = var1;
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24667 = var1.<Class2066>method35712(Class2066.class);
+      this.action = var1.readEnumValue(Action.class);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.field24667);
+      var1.writeEnumValue(this.action);
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
       var1.handleResourcePackStatus(this);
+   }
+
+   public enum Action {
+      SUCCESSFULLY_LOADED,
+      DECLINED,
+      FAILED_DOWNLOAD,
+      ACCEPTED;
    }
 }

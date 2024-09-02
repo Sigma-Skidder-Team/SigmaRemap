@@ -6,6 +6,8 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.ItemStack;
 
 public class AutoTotem extends Module {
     public int field23503 = -1;
@@ -37,9 +39,9 @@ public class AutoTotem extends Module {
             if (var3.getItem() != Items.field38126) {
                 int var4 = Class7789.method25822(Items.field38126);
                 if (var4 != -1) {
-                    mc.playerController.method23144(0, var4 >= 9 ? var4 : var4 + 36, 0, Class2259.field14694, mc.player);
-                    mc.playerController.method23144(0, 45, 0, Class2259.field14694, mc.player);
-                    mc.playerController.method23144(0, var4 >= 9 ? var4 : var4 + 36, 0, Class2259.field14694, mc.player);
+                    mc.playerController.method23144(0, var4 >= 9 ? var4 : var4 + 36, 0, ClickType.field14694, mc.player);
+                    mc.playerController.method23144(0, 45, 0, ClickType.field14694, mc.player);
+                    mc.playerController.method23144(0, var4 >= 9 ? var4 : var4 + 36, 0, ClickType.field14694, mc.player);
                 }
             }
         }

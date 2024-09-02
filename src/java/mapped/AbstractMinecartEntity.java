@@ -9,14 +9,18 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -657,7 +661,7 @@ public abstract class AbstractMinecartEntity extends Entity {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      if (var1.method132("CustomDisplayTile")) {
+      if (var1.getBoolean("CustomDisplayTile")) {
          this.method3607(Class8354.method29285(var1.getCompound("DisplayState")));
          this.method3608(var1.method122("DisplayOffset"));
       }
@@ -666,7 +670,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    @Override
    public void method2724(CompoundNBT var1) {
       if (this.method3609()) {
-         var1.method115("CustomDisplayTile", true);
+         var1.putBoolean("CustomDisplayTile", true);
          var1.put("DisplayState", Class8354.method29287(this.method3603()));
          var1.method102("DisplayOffset", this.method3605());
       }

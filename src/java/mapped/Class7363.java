@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class7363 extends Class7362 {
    private static String[] field31520;

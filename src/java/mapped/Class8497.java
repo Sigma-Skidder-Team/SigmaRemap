@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
+import net.minecraft.world.server.ServerWorld;
+
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 

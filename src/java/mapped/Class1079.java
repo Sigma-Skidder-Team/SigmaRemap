@@ -13,8 +13,10 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -233,9 +235,9 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
                      LivingEntity var31 = (LivingEntity)var27.get(this.rand.nextInt(var27.size()));
                      if (var31 != this && var31.isAlive() && this.method3135(var31)) {
                         if (!(var31 instanceof PlayerEntity)) {
-                           this.method5015(var3, var31.method3205());
-                        } else if (!((PlayerEntity)var31).abilities.field29606) {
-                           this.method5015(var3, var31.method3205());
+                           this.method5015(var3, var31.getEntityId());
+                        } else if (!((PlayerEntity)var31).abilities.disableDamage) {
+                           this.method5015(var3, var31.getEntityId());
                         }
                         break;
                      }
@@ -246,7 +248,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
                   Entity var26 = this.world.getEntityByID(var23);
                   if (var26 == null || !var26.isAlive() || this.getDistanceSq(var26) > 900.0 || !this.method3135(var26)) {
                      this.method5015(var3, 0);
-                  } else if (var26 instanceof PlayerEntity && ((PlayerEntity)var26).abilities.field29606) {
+                  } else if (var26 instanceof PlayerEntity && ((PlayerEntity)var26).abilities.disableDamage) {
                      this.method5015(var3, 0);
                   } else {
                      this.method5008(var3 + 1, (LivingEntity)var26);
@@ -260,7 +262,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
          if (this.method4232() == null) {
             this.method5015(0, 0);
          } else {
-            this.method5015(0, this.method4232().method3205());
+            this.method5015(0, this.method4232().getEntityId());
          }
 
          if (this.field5934 > 0) {

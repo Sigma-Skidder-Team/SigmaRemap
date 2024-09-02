@@ -43,7 +43,7 @@ public class PacketCriticals extends Module {
                 for (int var6 = 0; var6 < var5.length; var6++) {
                     mc.getConnection()
                             .sendPacket(
-                                    new Class5605(mc.player.getPosX(), mc.player.getPosY() + var5[var6], mc.player.getPosZ(), false)
+                                    new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY() + var5[var6], mc.player.getPosZ(), false)
                             );
                 }
 

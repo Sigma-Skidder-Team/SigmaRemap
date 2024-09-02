@@ -42,11 +42,14 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.play.client.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.world.World;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
@@ -659,7 +662,7 @@ public class ColorUtils {
    }
 
    public static void method17734() {
-      field24949.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13489, new BlockPos(0, 0, 0), Direction.DOWN));
+      field24949.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.RELEASE_USE_ITEM, new BlockPos(0, 0, 0), Direction.DOWN));
    }
 
    public static void method17735(Entity var0, boolean var1) {
@@ -1037,12 +1040,12 @@ public class ColorUtils {
 
       for (int var10 = 0; var10 < var9; var10++) {
          double var11 = !var0 ? 0.0 : method17750();
-         field24949.getConnection().sendPacket(new Class5605(var3 + var11, var5 + 0.06248 + method17750(), var7 + var11, false));
+         field24949.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3 + var11, var5 + 0.06248 + method17750(), var7 + var11, false));
          if (method17716()) {
-            field24949.getConnection().sendPacket(new Class5605(var3 + var11, var5 + 0.05 + method17750(), var7 + var11, false));
+            field24949.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3 + var11, var5 + 0.05 + method17750(), var7 + var11, false));
          }
 
-         field24949.getConnection().sendPacket(new Class5605(var3 + var11, var5, var7 + var11, false));
+         field24949.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3 + var11, var5, var7 + var11, false));
       }
 
       field24949.getConnection().sendPacket(new CPlayerPacket(true));

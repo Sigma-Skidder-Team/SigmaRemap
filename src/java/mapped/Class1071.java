@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.vector.Vector3d;
 
 public interface Class1071 {
    boolean method4982();

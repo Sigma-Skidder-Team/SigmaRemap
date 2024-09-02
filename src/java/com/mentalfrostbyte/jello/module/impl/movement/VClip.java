@@ -9,9 +9,9 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.network.play.client.CChatMessagePacket;
-import mapped.Class5605;
 import mapped.ColorUtils;
 import mapped.MathHelper;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.BlockPos;
 
 public class VClip extends Module {
@@ -44,7 +44,7 @@ public class VClip extends Module {
     private void method16290(SendPacketEvent var1) {
         if (var1.method13932() instanceof CChatMessagePacket) {
             CChatMessagePacket var4 = (CChatMessagePacket) var1.method13932();
-            String var5 = var4.method17359();
+            String var5 = var4.getMessage();
             String var6 = "hclip";
             if (!var5.startsWith("/" + var6)) {
                 return;
@@ -105,7 +105,7 @@ public class VClip extends Module {
         } else {
             mc.getConnection()
                     .sendPacket(
-                            new Class5605(mc.player.getPosX(), mc.player.getPosY() + (double) var1, mc.player.getPosZ(), false)
+                            new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY() + (double) var1, mc.player.getPosZ(), false)
                     );
             mc.player
                     .setPosition(mc.player.getPosX(), mc.player.getPosY() + (double) var1, mc.player.getPosZ());

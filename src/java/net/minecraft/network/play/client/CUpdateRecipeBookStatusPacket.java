@@ -1,7 +1,7 @@
 package net.minecraft.network.play.client;
 
 import mapped.Class1939;
-import mapped.IServerPlayNetHandler;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 
@@ -24,14 +24,14 @@ public class CUpdateRecipeBookStatusPacket implements Packet<IServerPlayNetHandl
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24718 = var1.<Class1939>method35712(Class1939.class);
+      this.field24718 = var1.<Class1939>readEnumValue(Class1939.class);
       this.field24719 = var1.readBoolean();
       this.field24720 = var1.readBoolean();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.field24718);
+      var1.writeEnumValue(this.field24718);
       var1.writeBoolean(this.field24719);
       var1.writeBoolean(this.field24720);
    }

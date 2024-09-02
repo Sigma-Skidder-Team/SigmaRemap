@@ -32,7 +32,7 @@ public class Class1327 extends Class1325 {
    public void method6308(Class911 var1) {
       if (var1 instanceof Class912) {
          Class912 var4 = (Class912)var1;
-         this.mc.getConnection().sendPacket(new CUpdateMinecartCommandBlockPacket(var4.method3577().method3205(), this.field7010.getText(), var1.method3571()));
+         this.mc.getConnection().sendPacket(new CUpdateMinecartCommandBlockPacket(var4.method3577().getEntityId(), this.field7010.getText(), var1.method3571()));
       }
    }
 }

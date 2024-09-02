@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
 
@@ -11,14 +12,14 @@ public class Class2902 extends Class2898<Class4701> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4701 var5) {
+   public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4701 var5) {
       for (BlockPos var9 : BlockPos.method8359(var4.method8336(-1, -2, -1), var4.method8336(1, 2, 1))) {
          boolean var10 = var9.getX() == var4.getX();
          boolean var11 = var9.getY() == var4.getY();
          boolean var12 = var9.getZ() == var4.getZ();
          boolean var13 = Math.abs(var9.getY() - var4.getY()) == 2;
          if (var10 && var11 && var12) {
-            BlockPos var14 = var9.method8353();
+            BlockPos var14 = var9.toImmutable();
             this.method11217(var1, var14, Blocks.field36886.method11579());
             var5.method14747().ifPresent(var3x -> {
                TileEntity var6 = var1.getTileEntity(var14);

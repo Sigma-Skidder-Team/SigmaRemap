@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector3d;
+
 public abstract class Class4586 extends Class4587 {
    public float field22035 = 0.1F * (this.field22054.nextFloat() * 0.5F + 0.5F) * 2.0F;
 

@@ -11,25 +11,28 @@ import com.mojang.datafixers.util.Either;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.network.play.client.PlayerAbilities;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.JigsawTileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.nio.charset.StandardCharsets;
@@ -71,7 +74,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public double field4916;
    private int field4917;
    public boolean field4918;
-   public final Class6799 abilities = new Class6799();
+   public final PlayerAbilities abilities = new PlayerAbilities();
    public int field4920;
    public int field4921;
    public float field4922;
@@ -280,7 +283,7 @@ public abstract class PlayerEntity extends LivingEntity {
             if (!this.isSleeping()) {
                if (!this.method2951()) {
                   if (!this.method3130()) {
-                     if (this.method3331() && !this.abilities.field29607) {
+                     if (this.method3331() && !this.abilities.isFlying) {
                         var3 = Pose.field13624;
                      } else {
                         var3 = Pose.STANDING;
@@ -313,7 +316,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public int method2858() {
-      return !this.abilities.field29606 ? 80 : 1;
+      return !this.abilities.disableDamage ? 80 : 1;
    }
 
    @Override
@@ -472,13 +475,13 @@ public abstract class PlayerEntity extends LivingEntity {
 
       this.method2872(this.method2969());
       this.method2872(this.method2971());
-      if (!this.world.isRemote && (this.fallDistance > 0.5F || this.method3250()) || this.abilities.field29607 || this.isSleeping()) {
+      if (!this.world.isRemote && (this.fallDistance > 0.5F || this.method3250()) || this.abilities.isFlying || this.isSleeping()) {
          this.method2949();
       }
    }
 
    private void method2872(CompoundNBT var1) {
-      if (var1 != null && (!var1.contains("Silent") || !var1.method132("Silent")) && this.world.rand.nextInt(200) == 0) {
+      if (var1 != null && (!var1.contains("Silent") || !var1.getBoolean("Silent")) && this.world.rand.nextInt(200) == 0) {
          String var4 = var1.method126("id");
          EntityType.method33199(var4)
             .filter(var0 -> var0 == EntityType.field41062)
@@ -691,7 +694,7 @@ public abstract class PlayerEntity extends LivingEntity {
       this.inventory.method4051(var4);
       this.inventory.currentItem = var1.method122("SelectedItemSlot");
       this.field4917 = var1.method121("SleepTimer");
-      this.field4922 = var1.method124("XpP");
+      this.field4922 = var1.getFloat("XpP");
       this.field4920 = var1.method122("XpLevel");
       this.field4921 = var1.method122("XpTotal");
       this.field4923 = var1.method122("XpSeed");
@@ -701,17 +704,17 @@ public abstract class PlayerEntity extends LivingEntity {
 
       this.method2875(var1.method122("Score"));
       this.field4906.method37572(var1);
-      this.abilities.method20713(var1);
-      this.method3085(Attributes.MOVEMENT_SPEED).method38661((double)this.abilities.method20716());
-      if (var1.method119("EnderItems", 9)) {
+      this.abilities.read(var1);
+      this.method3085(Attributes.MOVEMENT_SPEED).method38661((double)this.abilities.getWalkSpeed());
+      if (var1.contains("EnderItems", 9)) {
          this.field4903.method3682(var1.method131("EnderItems", 10));
       }
 
-      if (var1.method119("ShoulderEntityLeft", 10)) {
+      if (var1.contains("ShoulderEntityLeft", 10)) {
          this.method2970(var1.getCompound("ShoulderEntityLeft"));
       }
 
-      if (var1.method119("ShoulderEntityRight", 10)) {
+      if (var1.contains("ShoulderEntityRight", 10)) {
          this.method2972(var1.getCompound("ShoulderEntityRight"));
       }
    }
@@ -723,7 +726,7 @@ public abstract class PlayerEntity extends LivingEntity {
       var1.put("Inventory", this.inventory.method4050(new ListNBT()));
       var1.method102("SelectedItemSlot", this.inventory.currentItem);
       var1.method101("SleepTimer", (short)this.field4917);
-      var1.method107("XpP", this.field4922);
+      var1.putFloat("XpP", this.field4922);
       var1.method102("XpLevel", this.field4920);
       var1.method102("XpTotal", this.field4921);
       var1.method102("XpSeed", this.field4923);
@@ -760,7 +763,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.method2760(var1)) {
-         if (this.abilities.field29606 && !var1.method31135()) {
+         if (this.abilities.disableDamage && !var1.method31135()) {
             return false;
          } else {
             this.field4973 = 0;
@@ -864,7 +867,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public boolean method2889() {
-      return !this.abilities.field29607 && super.method2889();
+      return !this.abilities.isFlying && super.method2889();
    }
 
    public void method2764(Class954 var1) {
@@ -951,7 +954,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public boolean method2897() {
-      return !this.abilities.field29607;
+      return !this.abilities.isFlying;
    }
 
    @Override
@@ -959,7 +962,7 @@ public abstract class PlayerEntity extends LivingEntity {
       SafeWalkEvent event = new SafeWalkEvent(true);
       Client.getInstance().getEventManager().call(event);
       if (event.method13965() == Class1893.field11098
-         || !this.abilities.field29607 && (var2 == Class2107.field13742 || var2 == Class2107.field13743) && this.method2853() && this.method2899()) {
+         || !this.abilities.isFlying && (var2 == Class2107.field13742 || var2 == Class2107.field13743) && this.method2853() && this.method2899()) {
          double var6 = var1.x;
          double var8 = var1.z;
          double var10 = 0.05;
@@ -1322,14 +1325,14 @@ public abstract class PlayerEntity extends LivingEntity {
    public void method2777(Class9007<?> var1) {
    }
 
-   public int method2778(Collection<Class4843<?>> var1) {
+   public int method2778(Collection<IRecipe<?>> var1) {
       return 0;
    }
 
    public void method2779(ResourceLocation[] var1) {
    }
 
-   public int method2780(Collection<Class4843<?>> var1) {
+   public int method2780(Collection<IRecipe<?>> var1) {
       return 0;
    }
 
@@ -1360,10 +1363,10 @@ public abstract class PlayerEntity extends LivingEntity {
          }
       }
 
-      if (this.abilities.field29607 && !this.isPassenger()) {
+      if (this.abilities.isFlying && !this.isPassenger()) {
          double var17 = this.method3433().y;
          float var15 = this.field4969;
-         this.field4969 = this.abilities.method20714() * (float)(!this.method3337() ? 1 : 2);
+         this.field4969 = this.abilities.getFlySpeed() * (float)(!this.method3337() ? 1 : 2);
          super.method2915(var1);
          Vector3d var16 = this.method3433();
          this.method3435(var16.x, var17 * 0.6, var16.z);
@@ -1379,7 +1382,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public void method2916() {
-      if (!this.abilities.field29607) {
+      if (!this.abilities.isFlying) {
          super.method2916();
       } else {
          this.method3339(false);
@@ -1536,7 +1539,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public void method2928(BlockState var1, Vector3d var2) {
-      if (!this.abilities.field29607) {
+      if (!this.abilities.isFlying) {
          super.method2928(var1, var2);
       }
    }
@@ -1604,7 +1607,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public void method2931(float var1) {
-      if (!this.abilities.field29606 && !this.world.isRemote) {
+      if (!this.abilities.disableDamage && !this.world.isRemote) {
          this.field4906.method37576(var1);
       }
    }
@@ -1614,7 +1617,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public boolean method2933(boolean var1) {
-      return this.abilities.field29606 || var1 || this.field4906.method37575();
+      return this.abilities.disableDamage || var1 || this.field4906.method37575();
    }
 
    public boolean method2934() {
@@ -1622,11 +1625,11 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public boolean method2935() {
-      return this.abilities.field29610;
+      return this.abilities.allowEdit;
    }
 
    public boolean method2936(BlockPos var1, Direction var2, ItemStack var3) {
-      if (!this.abilities.field29610) {
+      if (!this.abilities.allowEdit) {
          BlockPos var6 = var1.method8349(var2.method536());
          Class9632 var7 = new Class9632(this.world, var6, false);
          return var3.method32176(this.world.method6817(), var7);
@@ -1657,7 +1660,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public boolean method2940() {
-      return !this.abilities.field29607 && (!this.onGround || !this.method3334());
+      return !this.abilities.isFlying && (!this.onGround || !this.method3334());
    }
 
    public void method2797() {
@@ -1764,14 +1767,14 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public boolean method2951() {
-      return !this.abilities.field29607 && !this.isSpectator() && super.method2951();
+      return !this.abilities.isFlying && !this.isSpectator() && super.method2951();
    }
 
    public abstract boolean isCreative();
 
    @Override
    public boolean method2952() {
-      return !this.abilities.field29607;
+      return !this.abilities.isFlying;
    }
 
    public Class6886 method2953() {
@@ -1911,16 +1914,16 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public void method2966(int var1) {
-      super.method2966(!this.abilities.field29606 ? var1 : Math.min(var1, 1));
+      super.method2966(!this.abilities.disableDamage ? var1 : Math.min(var1, 1));
    }
 
    @Override
-   public Class2205 method2967() {
-      return this.dataManager.<Byte>method35445(field4898) != 0 ? Class2205.field14418 : Class2205.field14417;
+   public HandSide method2967() {
+      return this.dataManager.<Byte>method35445(field4898) != 0 ? HandSide.field14418 : HandSide.field14417;
    }
 
-   public void method2968(Class2205 var1) {
-      this.dataManager.method35446(field4898, (byte)(var1 != Class2205.field14417 ? 1 : 0));
+   public void method2968(HandSide var1) {
+      this.dataManager.method35446(field4898, (byte)(var1 != HandSide.field14417 ? 1 : 0));
    }
 
    public CompoundNBT method2969() {
@@ -1957,7 +1960,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public float method2977() {
-      return !this.abilities.field29607 && !this.method3165() ? super.method2977() : 1.0F;
+      return !this.abilities.isFlying && !this.method3165() ? super.method2977() : 1.0F;
    }
 
    public float method2978() {
@@ -2031,12 +2034,12 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public boolean method2985(BlockState var1) {
-      return this.abilities.field29607 || super.method2985(var1);
+      return this.abilities.isFlying || super.method2985(var1);
    }
 
    @Override
    public Vector3d method2986(float var1) {
-      double var4 = 0.22 * (this.method2967() != Class2205.field14418 ? 1.0 : -1.0);
+      double var4 = 0.22 * (this.method2967() != HandSide.field14418 ? 1.0 : -1.0);
       float var6 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.prevRotationPitch) * (float) (Math.PI / 180.0);
       float var7 = MathHelper.lerp(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
       if (this.method3165() || this.method3130()) {

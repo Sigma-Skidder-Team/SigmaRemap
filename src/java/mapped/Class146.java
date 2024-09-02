@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 
 import java.util.List;

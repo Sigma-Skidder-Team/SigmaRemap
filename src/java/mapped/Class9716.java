@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4424;
 import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 

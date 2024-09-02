@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;

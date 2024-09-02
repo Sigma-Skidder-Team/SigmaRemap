@@ -100,7 +100,7 @@ public class CompoundNBT implements Class30 {
       return var4 != null && var4.method75() == Class28.field52 && ((Class28)var4).method77().length == 4;
    }
 
-   public void method107(String var1, float var2) {
+   public void putFloat(String var1, float var2) {
       this.field83.put(var1, Class32.method90(var2));
    }
 
@@ -132,7 +132,7 @@ public class CompoundNBT implements Class30 {
       this.field83.put(var1, new Class42(var2));
    }
 
-   public void method115(String var1, boolean var2) {
+   public void putBoolean(String var1, boolean var2) {
       this.field83.put(var1, Class33.method92(var2));
    }
 
@@ -150,7 +150,7 @@ public class CompoundNBT implements Class30 {
       return this.field83.containsKey(var1);
    }
 
-   public boolean method119(String var1, int var2) {
+   public boolean contains(String var1, int var2) {
       byte var5 = this.method117(var1);
       if (var5 != var2) {
          return var2 != 99 ? false : var5 == 1 || var5 == 2 || var5 == 3 || var5 == 4 || var5 == 5 || var5 == 6;
@@ -161,7 +161,7 @@ public class CompoundNBT implements Class30 {
 
    public byte method120(String var1) {
       try {
-         if (this.method119(var1, 99)) {
+         if (this.contains(var1, 99)) {
             return ((Class31)this.field83.get(var1)).method86();
          }
       } catch (ClassCastException var5) {
@@ -172,7 +172,7 @@ public class CompoundNBT implements Class30 {
 
    public short method121(String var1) {
       try {
-         if (this.method119(var1, 99)) {
+         if (this.contains(var1, 99)) {
             return ((Class31)this.field83.get(var1)).method85();
          }
       } catch (ClassCastException var5) {
@@ -183,7 +183,7 @@ public class CompoundNBT implements Class30 {
 
    public int method122(String var1) {
       try {
-         if (this.method119(var1, 99)) {
+         if (this.contains(var1, 99)) {
             return ((Class31)this.field83.get(var1)).method84();
          }
       } catch (ClassCastException var5) {
@@ -194,7 +194,7 @@ public class CompoundNBT implements Class30 {
 
    public long method123(String var1) {
       try {
-         if (this.method119(var1, 99)) {
+         if (this.contains(var1, 99)) {
             return ((Class31)this.field83.get(var1)).method83();
          }
       } catch (ClassCastException var5) {
@@ -203,9 +203,9 @@ public class CompoundNBT implements Class30 {
       return 0L;
    }
 
-   public float method124(String var1) {
+   public float getFloat(String var1) {
       try {
-         if (this.method119(var1, 99)) {
+         if (this.contains(var1, 99)) {
             return ((Class31)this.field83.get(var1)).method88();
          }
       } catch (ClassCastException var5) {
@@ -216,7 +216,7 @@ public class CompoundNBT implements Class30 {
 
    public double method125(String var1) {
       try {
-         if (this.method119(var1, 99)) {
+         if (this.contains(var1, 99)) {
             return ((Class31)this.field83.get(var1)).method87();
          }
       } catch (ClassCastException var5) {
@@ -227,7 +227,7 @@ public class CompoundNBT implements Class30 {
 
    public String method126(String var1) {
       try {
-         if (this.method119(var1, 8)) {
+         if (this.contains(var1, 8)) {
             return this.field83.get(var1).method81();
          }
       } catch (ClassCastException var5) {
@@ -238,7 +238,7 @@ public class CompoundNBT implements Class30 {
 
    public byte[] method127(String var1) {
       try {
-         if (this.method119(var1, 7)) {
+         if (this.contains(var1, 7)) {
             return ((Class29)this.field83.get(var1)).method80();
          }
       } catch (ClassCastException var5) {
@@ -250,7 +250,7 @@ public class CompoundNBT implements Class30 {
 
    public int[] method128(String var1) {
       try {
-         if (this.method119(var1, 11)) {
+         if (this.contains(var1, 11)) {
             return ((Class28)this.field83.get(var1)).method77();
          }
       } catch (ClassCastException var5) {
@@ -262,7 +262,7 @@ public class CompoundNBT implements Class30 {
 
    public long[] method129(String var1) {
       try {
-         if (this.method119(var1, 12)) {
+         if (this.contains(var1, 12)) {
             return ((Class42)this.field83.get(var1)).method162();
          }
       } catch (ClassCastException var5) {
@@ -274,7 +274,7 @@ public class CompoundNBT implements Class30 {
 
    public CompoundNBT getCompound(String var1) {
       try {
-         if (this.method119(var1, 10)) {
+         if (this.contains(var1, 10)) {
             return (CompoundNBT)this.field83.get(var1);
          }
       } catch (ClassCastException var5) {
@@ -301,7 +301,7 @@ public class CompoundNBT implements Class30 {
       return new ListNBT();
    }
 
-   public boolean method132(String var1) {
+   public boolean getBoolean(String var1) {
       return this.method120(var1) != 0;
    }
 
@@ -391,7 +391,7 @@ public class CompoundNBT implements Class30 {
          Class30 var6 = var1.field83.get(var5);
          if (var6.method74() != 10) {
             this.put(var5, var6.method79());
-         } else if (!this.method119(var5, 10)) {
+         } else if (!this.contains(var5, 10)) {
             this.put(var5, var6.method79());
          } else {
             CompoundNBT var7 = this.getCompound(var5);

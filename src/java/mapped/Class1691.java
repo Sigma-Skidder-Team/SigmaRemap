@@ -11,16 +11,20 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class1691 implements Class1658 {
+public class Class1691 implements ISeedReader {
    private static final Logger field9200 = LogManager.getLogger();
    private final List<IChunk> field9201;
    private final int field9202;

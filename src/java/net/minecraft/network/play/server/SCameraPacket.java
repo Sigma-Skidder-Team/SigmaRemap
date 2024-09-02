@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
-import mapped.World;
+import net.minecraft.world.World;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
@@ -17,7 +17,7 @@ public class SCameraPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SCameraPacket(Entity var1) {
-      this.field24674 = var1.method3205();
+      this.field24674 = var1.getEntityId();
    }
 
    @Override

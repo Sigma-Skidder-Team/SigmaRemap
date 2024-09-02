@@ -25,7 +25,7 @@ public class Class9343 {
    }
 
    private Class9343(BlockPos var1, Class4913 var2, int var3, Runnable var4) {
-      this.field43375 = var1.method8353();
+      this.field43375 = var1.toImmutable();
       this.field43376 = var2;
       this.field43377 = var3;
       this.field43378 = var4;

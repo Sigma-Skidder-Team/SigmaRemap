@@ -2,8 +2,8 @@ package net.minecraft.network.play.client;
 
 import mapped.Class911;
 import mapped.Class918;
-import mapped.IServerPlayNetHandler;
-import mapped.World;
+import net.minecraft.network.play.IServerPlayNetHandler;
+import net.minecraft.world.World;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;

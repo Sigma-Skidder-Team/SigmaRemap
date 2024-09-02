@@ -63,7 +63,7 @@ public class Class2806<T extends Entity> extends Class2803<T> {
 
    @Override
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
-      float var9 = ((float)(var1.method3205() * 3) + var4) * 0.13F;
+      float var9 = ((float)(var1.getEntityId() * 3) + var4) * 0.13F;
       float var10 = 16.0F;
       this.field17466.field31037 = MathHelper.cos(var9) * 16.0F * (float) (Math.PI / 180.0);
       this.field17467.field31037 = MathHelper.cos(var9) * 16.0F * (float) (Math.PI / 180.0);

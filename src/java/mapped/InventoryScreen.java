@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.ClickType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -157,7 +158,7 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
    }
 
    @Override
-   public void method2626(Class5839 var1, int var2, int var3, Class2259 var4) {
+   public void method2626(Class5839 var1, int var2, int var3, ClickType var4) {
       super.method2626(var1, var2, var3, var4);
       this.field4768.method5841(var1);
    }

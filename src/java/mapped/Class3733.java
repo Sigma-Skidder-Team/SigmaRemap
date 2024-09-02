@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Optional;
 import java.util.function.Function;

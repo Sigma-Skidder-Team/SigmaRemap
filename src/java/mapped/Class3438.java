@@ -5,8 +5,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 public class Class3438 extends Block {
    private static final ITextComponent field19237 = new TranslationTextComponent("container.crafting");

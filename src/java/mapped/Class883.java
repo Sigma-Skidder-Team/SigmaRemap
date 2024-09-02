@@ -6,6 +6,9 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 public class Class883 extends ProjectileEntity {
    private static String[] field5096;

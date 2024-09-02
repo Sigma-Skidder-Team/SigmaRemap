@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
@@ -12,6 +13,9 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import java.util.OptionalInt;
 
@@ -48,7 +52,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
 
    public Class888(World var1, ItemStack var2, LivingEntity var3) {
       this(var1, var3, var3.getPosX(), var3.getPosY(), var3.getPosZ(), var2);
-      this.dataManager.method35446(field5121, OptionalInt.of(var3.method3205()));
+      this.dataManager.method35446(field5121, OptionalInt.of(var3.getEntityId()));
       this.field5125 = var3;
    }
 
@@ -269,7 +273,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
          var1.put("FireworksItem", var4.method32112(new CompoundNBT()));
       }
 
-      var1.method115("ShotAtAngle", this.dataManager.<Boolean>method35445(field5122));
+      var1.putBoolean("ShotAtAngle", this.dataManager.<Boolean>method35445(field5122));
    }
 
    @Override
@@ -283,7 +287,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
       }
 
       if (var1.contains("ShotAtAngle")) {
-         this.dataManager.method35446(field5122, var1.method132("ShotAtAngle"));
+         this.dataManager.method35446(field5122, var1.getBoolean("ShotAtAngle"));
       }
    }
 

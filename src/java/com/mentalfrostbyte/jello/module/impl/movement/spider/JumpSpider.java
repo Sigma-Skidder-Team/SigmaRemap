@@ -7,6 +7,8 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class JumpSpider extends Module {
     private boolean field23832 = false;

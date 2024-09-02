@@ -2,7 +2,10 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class5738 extends Class5715<Class904> {
    private static final ResourceLocation field25159 = new ResourceLocation("textures/entity/fishing_hook.png");
@@ -29,7 +32,7 @@ public class Class5738 extends Class5715<Class904> {
          method17922(var13, var11, var12, var6, 1.0F, 1, 1, 0);
          method17922(var13, var11, var12, var6, 0.0F, 1, 0, 0);
          var4.pop();
-         int var14 = var9.method2967() != Class2205.field14418 ? -1 : 1;
+         int var14 = var9.method2967() != HandSide.field14418 ? -1 : 1;
          ItemStack var15 = var9.method3090();
          if (var15.getItem() != Items.field37906) {
             var14 = -var14;

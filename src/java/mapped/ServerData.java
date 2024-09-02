@@ -38,10 +38,10 @@ public class ServerData {
 
       if (this.field33197 != Class2168.field14234) {
          if (this.field33197 == Class2168.field14235) {
-            var3.method115("acceptTextures", false);
+            var3.putBoolean("acceptTextures", false);
          }
       } else {
-         var3.method115("acceptTextures", true);
+         var3.putBoolean("acceptTextures", true);
       }
 
       return var3;
@@ -57,13 +57,13 @@ public class ServerData {
 
    public static ServerData method25579(CompoundNBT var0) {
       ServerData var3 = new ServerData(var0.method126("name"), var0.method126("ip"), false);
-      if (var0.method119("icon", 8)) {
+      if (var0.contains("icon", 8)) {
          var3.method25581(var0.method126("icon"));
       }
 
-      if (!var0.method119("acceptTextures", 1)) {
+      if (!var0.contains("acceptTextures", 1)) {
          var3.method25578(Class2168.field14236);
-      } else if (!var0.method132("acceptTextures")) {
+      } else if (!var0.getBoolean("acceptTextures")) {
          var3.method25578(Class2168.field14235);
       } else {
          var3.method25578(Class2168.field14234);

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -10,6 +11,7 @@ import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;

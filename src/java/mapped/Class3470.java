@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class Class3470 extends Class3468 {
    private static String[] field19319;

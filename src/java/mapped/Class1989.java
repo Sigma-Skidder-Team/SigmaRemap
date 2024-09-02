@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.World;
+
 public enum Class1989 {
    field12984,
    field12985,

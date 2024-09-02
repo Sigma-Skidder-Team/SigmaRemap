@@ -14,17 +14,19 @@ import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.*;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -235,7 +237,7 @@ public abstract class LivingEntity extends Entity {
          this.method3223();
       }
 
-      boolean var8 = var3 && ((PlayerEntity)this).abilities.field29606;
+      boolean var8 = var3 && ((PlayerEntity)this).abilities.disableDamage;
       if (this.isAlive()) {
          if (this.method3263(Class8953.field40469)
             && !this.world.getBlockState(new BlockPos(this.getPosX(), this.method3442(), this.getPosZ())).method23448(Blocks.field37013)) {
@@ -526,11 +528,11 @@ public abstract class LivingEntity extends Entity {
 
    @Override
    public void method2724(CompoundNBT var1) {
-      var1.method107("Health", this.getHealth());
+      var1.putFloat("Health", this.getHealth());
       var1.method101("HurtTime", (short)this.field4952);
       var1.method102("HurtByTimestamp", this.field4995);
       var1.method101("DeathTime", (short)this.field4955);
-      var1.method107("AbsorptionAmount", this.method2959());
+      var1.putFloat("AbsorptionAmount", this.method2959());
       var1.put("Attributes", this.method3088().method33389());
       if (!this.field4944.isEmpty()) {
          ListNBT var4 = new ListNBT();
@@ -542,7 +544,7 @@ public abstract class LivingEntity extends Entity {
          var1.put("ActiveEffects", var4);
       }
 
-      var1.method115("FallFlying", this.method3165());
+      var1.putBoolean("FallFlying", this.method3165());
       this.method3173().ifPresent(var1x -> {
          var1.method102("SleepingX", var1x.getX());
          var1.method102("SleepingY", var1x.getY());
@@ -554,12 +556,12 @@ public abstract class LivingEntity extends Entity {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      this.method2958(var1.method124("AbsorptionAmount"));
-      if (var1.method119("Attributes", 9) && this.world != null && !this.world.isRemote) {
+      this.method2958(var1.getFloat("AbsorptionAmount"));
+      if (var1.contains("Attributes", 9) && this.world != null && !this.world.isRemote) {
          this.method3088().method33390(var1.method131("Attributes", 10));
       }
 
-      if (var1.method119("ActiveEffects", 9)) {
+      if (var1.contains("ActiveEffects", 9)) {
          ListNBT var4 = var1.method131("ActiveEffects", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
@@ -571,14 +573,14 @@ public abstract class LivingEntity extends Entity {
          }
       }
 
-      if (var1.method119("Health", 99)) {
-         this.method3043(var1.method124("Health"));
+      if (var1.contains("Health", 99)) {
+         this.method3043(var1.getFloat("Health"));
       }
 
       this.field4952 = var1.method121("HurtTime");
       this.field4955 = var1.method121("DeathTime");
       this.field4995 = var1.method122("HurtByTimestamp");
-      if (var1.method119("Team", 8)) {
+      if (var1.contains("Team", 8)) {
          String var8 = var1.method126("Team");
          Class8218 var10 = this.world.method6805().method20990(var8);
          boolean var11 = var10 != null && this.world.method6805().method20993(this.method3376(), var10);
@@ -587,11 +589,11 @@ public abstract class LivingEntity extends Entity {
          }
       }
 
-      if (var1.method132("FallFlying")) {
+      if (var1.getBoolean("FallFlying")) {
          this.method3349(7, true);
       }
 
-      if (var1.method119("SleepingX", 99) && var1.method119("SleepingY", 99) && var1.method119("SleepingZ", 99)) {
+      if (var1.contains("SleepingX", 99) && var1.contains("SleepingY", 99) && var1.contains("SleepingZ", 99)) {
          BlockPos var9 = new BlockPos(var1.method122("SleepingX"), var1.method122("SleepingY"), var1.method122("SleepingZ"));
          this.method3174(var9);
          this.dataManager.method35446(POSE, Pose.field13621);
@@ -600,7 +602,7 @@ public abstract class LivingEntity extends Entity {
          }
       }
 
-      if (var1.method119("Brain", 10)) {
+      if (var1.contains("Brain", 10)) {
          this.field5011 = this.method2994(new Dynamic(NBTDynamicOps.INSTANCE, var1.method116("Brain")));
       }
    }
@@ -2267,7 +2269,7 @@ public abstract class LivingEntity extends Entity {
                this.method3120(var2, var6);
          }
       });
-      ((ServerWorld)this.world).getChunkProvider().method7380(this, new SEntityEquipmentPacket(this.method3205(), var4));
+      ((ServerWorld)this.world).getChunkProvider().method7380(this, new SEntityEquipmentPacket(this.getEntityId(), var4));
    }
 
    private ItemStack method3119(Class2106 var1) {
@@ -2562,7 +2564,7 @@ public abstract class LivingEntity extends Entity {
 
    public void method2751(Entity var1, int var2) {
       if (!var1.removed && !this.world.isRemote && (var1 instanceof ItemEntity || var1 instanceof AbstractArrowEntity || var1 instanceof ExperienceOrbEntity)) {
-         ((ServerWorld)this.world).getChunkProvider().method7380(var1, new SCollectItemPacket(var1.method3205(), this.method3205(), var2));
+         ((ServerWorld)this.world).getChunkProvider().method7380(var1, new SCollectItemPacket(var1.getEntityId(), this.getEntityId(), var2));
       }
    }
 
@@ -2651,7 +2653,7 @@ public abstract class LivingEntity extends Entity {
       this.field4993 = true;
    }
 
-   public abstract Class2205 method2967();
+   public abstract HandSide method2967();
 
    public boolean isHandActive() {
       return (this.dataManager.<Byte>method35445(field4934) & 1) > 0;

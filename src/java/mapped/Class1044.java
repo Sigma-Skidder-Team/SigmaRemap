@@ -2,11 +2,14 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
@@ -116,7 +119,7 @@ public class Class1044 extends Class1043 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("DespawnDelay", 99)) {
+      if (var1.contains("DespawnDelay", 99)) {
          this.field5799 = var1.method122("DespawnDelay");
       }
 

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;

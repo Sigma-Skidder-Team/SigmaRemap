@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Iterator;

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
@@ -46,7 +47,7 @@ public class Class9065 {
    }
 
    static {
-      method33750(new ResourceLocation("lefthanded"), (var0, var1, var2) -> var2 != null && var2.method2967() != Class2205.field14418 ? 1.0F : 0.0F);
+      method33750(new ResourceLocation("lefthanded"), (var0, var1, var2) -> var2 != null && var2.method2967() != HandSide.field14418 ? 1.0F : 0.0F);
       method33750(
          new ResourceLocation("cooldown"),
          (var0, var1, var2) -> !(var2 instanceof PlayerEntity) ? 0.0F : ((PlayerEntity)var2).method2976().method19636(var0.getItem(), 0.0F)

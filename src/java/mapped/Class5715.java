@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 
 public abstract class Class5715<T extends Entity> {

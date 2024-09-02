@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.world.server.ServerWorld;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;

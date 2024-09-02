@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 
@@ -44,7 +45,7 @@ public class Class6506 implements Class6504<Class4854> {
          var7.set(var8, Class120.method343(var2));
       }
 
-      ItemStack var9 = var2.method35726();
+      ItemStack var9 = var2.readItemStack();
       return new Class4854(var1, var5, var9, var7);
    }
 
@@ -56,6 +57,6 @@ public class Class6506 implements Class6504<Class4854> {
          var6.method335(var1);
       }
 
-      var1.method35724(Class4854.method15000(var2));
+      var1.writeItemStack(Class4854.method15000(var2));
    }
 }

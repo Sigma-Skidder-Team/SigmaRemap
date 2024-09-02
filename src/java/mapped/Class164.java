@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Set;
 import java.util.function.Predicate;

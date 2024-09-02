@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.Direction;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.function.Predicate;

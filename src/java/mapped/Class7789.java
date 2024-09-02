@@ -4,6 +4,8 @@ import com.mentalfrostbyte.jello.unmapped.Class8005;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClickWindowPacket;
 
 import java.util.ArrayList;
@@ -139,11 +141,11 @@ public class Class7789 {
 
    public static void method25826(int var0, int var1, boolean var2) {
       field33419.playerController
-         .method23144(field33419.player.field4904.field25471, var0, var1, !var2 ? Class2259.field14698 : Class2259.field14695, field33419.player);
+         .method23144(field33419.player.field4904.field25471, var0, var1, !var2 ? ClickType.field14698 : ClickType.field14695, field33419.player);
    }
 
    public static void method25827(int var0) {
-      field33419.playerController.method23144(field33419.player.field4904.field25471, var0, 1, Class2259.field14696, field33419.player);
+      field33419.playerController.method23144(field33419.player.field4904.field25471, var0, 1, ClickType.field14696, field33419.player);
    }
 
    public static boolean method25828(Class3279 var0, byte var1) {
@@ -525,7 +527,7 @@ public class Class7789 {
 
    public static int method25857(int var0) {
       int var3 = method25856();
-      method25869(field33419.player.field4904.field25471, var0, var3, Class2259.field14696, field33419.player);
+      method25869(field33419.player.field4904.field25471, var0, var3, ClickType.field14696, field33419.player);
       return var3;
    }
 
@@ -669,11 +671,11 @@ public class Class7789 {
       }
    }
 
-   public static ItemStack method25869(int var0, int var1, int var2, Class2259 var3, PlayerEntity var4) {
+   public static ItemStack method25869(int var0, int var1, int var2, ClickType var3, PlayerEntity var4) {
       return method25870(var0, var1, var2, var3, var4, false);
    }
 
-   public static ItemStack method25870(int var0, int var1, int var2, Class2259 var3, PlayerEntity var4, boolean var5) {
+   public static ItemStack method25870(int var0, int var1, int var2, ClickType var3, PlayerEntity var4, boolean var5) {
       ItemStack var8 = null;
       if (var1 >= 0) {
          var8 = var4.field4905.method18131(var1).method18265().copy();
@@ -681,7 +683,7 @@ public class Class7789 {
 
       short var9 = var4.field4905.method18139(field33419.player.inventory);
       ItemStack var10 = var4.field4905.method18132(var1, var2, var3, var4);
-      if (var8 == null || Class8005.method27372().method18582() > Class5989.field26137.method18582() && !var5 || var3 == Class2259.field14696) {
+      if (var8 == null || Class8005.method27372().method18582() > Class5989.field26137.method18582() && !var5 || var3 == ClickType.field14696) {
          var8 = var10;
       }
 
@@ -690,7 +692,7 @@ public class Class7789 {
    }
 
    public static void method25871(int var0) {
-      field33419.playerController.method23144(field33419.player.field4904.field25471, var0, 1, Class2259.field14698, field33419.player);
+      field33419.playerController.method23144(field33419.player.field4904.field25471, var0, 1, ClickType.field14698, field33419.player);
    }
 
    public static boolean method25872(ItemStack var0) {
@@ -717,7 +719,7 @@ public class Class7789 {
    }
 
    public static void method25873(int var0, int var1) {
-      field33419.playerController.method23144(field33419.player.field4904.field25471, var0, var1, Class2259.field14696, field33419.player);
+      field33419.playerController.method23144(field33419.player.field4904.field25471, var0, var1, ClickType.field14696, field33419.player);
    }
 
    public static boolean method25874(ItemStack var0) {

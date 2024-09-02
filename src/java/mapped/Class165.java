@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 
 import java.util.function.Predicate;
 

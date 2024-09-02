@@ -9,8 +9,13 @@ import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -61,7 +66,7 @@ public class Class905 extends ProjectileEntity {
       }
 
       if (this.field5164 != null) {
-         var1.method102("Dir", this.field5164.method533());
+         var1.method102("Dir", this.field5164.getIndex());
       }
 
       var1.method102("Steps", this.field5165);
@@ -77,8 +82,8 @@ public class Class905 extends ProjectileEntity {
       this.field5166 = var1.method125("TXD");
       this.field5167 = var1.method125("TYD");
       this.field5168 = var1.method125("TZD");
-      if (var1.method119("Dir", 99)) {
-         this.field5164 = Direction.method546(var1.method122("Dir"));
+      if (var1.contains("Dir", 99)) {
+         this.field5164 = Direction.byIndex(var1.method122("Dir"));
       }
 
       if (var1.method106("Target")) {
@@ -180,7 +185,7 @@ public class Class905 extends ProjectileEntity {
       super.tick();
       if (!this.world.isRemote) {
          if (this.field5163 == null && this.field5169 != null) {
-            this.field5163 = ((ServerWorld)this.world).method6942(this.field5169);
+            this.field5163 = ((ServerWorld)this.world).getEntityByUuid(this.field5169);
             if (this.field5163 == null) {
                this.field5169 = null;
             }

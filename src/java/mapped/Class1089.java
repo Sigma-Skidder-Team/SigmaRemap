@@ -3,9 +3,13 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class1089 extends Class1018 {
    private static final Class120 field5964 = Class120.method339(Items.field37841, Items.field37960, Items.field37959, Items.field38112);
@@ -110,7 +114,7 @@ public class Class1089 extends Class1018 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.field5971 = var1.method132("IsChickenJockey");
+      this.field5971 = var1.getBoolean("IsChickenJockey");
       if (var1.contains("EggLayTime")) {
          this.field5970 = var1.method122("EggLayTime");
       }
@@ -119,7 +123,7 @@ public class Class1089 extends Class1018 {
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method115("IsChickenJockey", this.field5971);
+      var1.putBoolean("IsChickenJockey", this.field5971);
       var1.method102("EggLayTime", this.field5970);
    }
 

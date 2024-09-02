@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Sets;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.Collection;
 import java.util.List;
@@ -28,12 +29,12 @@ public class Class8998 {
 
    @Override
    public boolean equals(Object var1) {
-      return !(var1 instanceof Class8998) ? false : ((Class8998)var1).field41148.method3205() == this.field41148.method3205();
+      return !(var1 instanceof Class8998) ? false : ((Class8998)var1).field41148.getEntityId() == this.field41148.getEntityId();
    }
 
    @Override
    public int hashCode() {
-      return this.field41148.method3205();
+      return this.field41148.getEntityId();
    }
 
    public void method33239(Packet<?> var1) {

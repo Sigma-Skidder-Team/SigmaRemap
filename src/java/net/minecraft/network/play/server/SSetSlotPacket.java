@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.ItemStack;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -30,14 +30,14 @@ public class SSetSlotPacket implements Packet<IClientPlayNetHandler> {
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24424 = var1.readByte();
       this.field24425 = var1.readShort();
-      this.field24426 = var1.method35726();
+      this.field24426 = var1.readItemStack();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeByte(this.field24424);
       var1.writeShort(this.field24425);
-      var1.method35724(this.field24426);
+      var1.writeItemStack(this.field24426);
    }
 
    public int method17303() {

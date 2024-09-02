@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Optional;
 

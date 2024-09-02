@@ -8,6 +8,9 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 public abstract class Class893 extends ProjectileEntity {
    public Class893(EntityType<? extends Class893> var1, World var2) {

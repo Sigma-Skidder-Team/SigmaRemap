@@ -27,10 +27,13 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -96,7 +99,7 @@ public abstract class Class6395 {
          "{}[{}] logged in with entity id {} at ({}, {}, {})",
          var2.getName().getString(),
          var13,
-         var2.method3205(),
+         var2.getEntityId(),
          var2.getPosX(),
          var2.getPosY(),
          var2.getPosZ()
@@ -109,7 +112,7 @@ public abstract class Class6395 {
       boolean var18 = var16.method17135(Class5462.field24237);
       var15.sendPacket(
          new SJoinGamePacket(
-            var2.method3205(),
+            var2.getEntityId(),
             var2.field4857.method33863(),
             var2.field4857.method33864(),
             BiomeManager.method20321(var12.method6967()),
@@ -162,10 +165,10 @@ public abstract class Class6395 {
       }
 
       for (Class2023 var21 : var2.method3031()) {
-         var15.sendPacket(new SPlayEntityEffectPacket(var2.method3205(), var21));
+         var15.sendPacket(new SPlayEntityEffectPacket(var2.getEntityId(), var21));
       }
 
-      if (var9 != null && var9.method119("RootVehicle", 10)) {
+      if (var9 != null && var9.contains("RootVehicle", 10)) {
          CompoundNBT var26 = var9.getCompound("RootVehicle");
          Entity var27 = EntityType.method33223(var26.getCompound("Entity"), var12, var1x -> var12.method6917(var1x) ? var1x : null);
          if (var27 != null) {
@@ -374,7 +377,7 @@ public abstract class Class6395 {
       ServerPlayerEntity var12 = new ServerPlayerEntity(this.field27990, var10, var1.getGameProfile(), (Class9081)var11);
       var12.field4855 = var1.field4855;
       var12.method2789(var1, var2);
-      var12.method3206(var1.method3205());
+      var12.method3206(var1.getEntityId());
       var12.method2968(var1.method2967());
 
       for (String var14 : var1.method3207()) {

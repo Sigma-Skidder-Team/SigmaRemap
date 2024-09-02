@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.LinkedList;
 import java.util.Random;
@@ -47,7 +48,7 @@ public class Class5450 extends Class5444<Class4712> {
    }
 
    @Override
-   public void method17112(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6) {
+   public void method17112(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6) {
       super.method17112(var1, var2, var3, var4, var5, var6);
       int var9 = this.field24197.field45679;
 

@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.Class4843;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
@@ -16,9 +16,9 @@ public class SPlaceGhostRecipePacket implements Packet<IClientPlayNetHandler> {
    public SPlaceGhostRecipePacket() {
    }
 
-   public SPlaceGhostRecipePacket(int var1, Class4843<?> var2) {
+   public SPlaceGhostRecipePacket(int var1, IRecipe<?> var2) {
       this.field24797 = var1;
-      this.field24798 = var2.method14964();
+      this.field24798 = var2.getId();
    }
 
    public ResourceLocation method17563() {

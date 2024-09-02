@@ -28,9 +28,9 @@ public class Derp extends Module {
         if (this.isEnabled() && var1.method13921()) {
             if (this.getBooleanValueFromSetttingName("Sneak")) {
                 if (this.field23435) {
-                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10041));
+                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.RELEASE_SHIFT_KEY));
                 } else {
-                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10040));
+                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.PRESS_SHIFT_KEY));
                 }
             }
 

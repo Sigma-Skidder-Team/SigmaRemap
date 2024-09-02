@@ -12,6 +12,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -24,6 +25,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -414,29 +417,29 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       var1.method103("LastGossipDecay", this.field5785);
       var1.method102("RestocksToday", this.field5788);
       if (this.field5790) {
-         var1.method115("AssignProfessionWhenSpawned", true);
+         var1.putBoolean("AssignProfessionWhenSpawned", true);
       }
    }
 
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("VillagerData", 10)) {
+      if (var1.contains("VillagerData", 10)) {
          DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, var1.method116("VillagerData")));
          var4.resultOrPartial(LOGGER::error).ifPresent(this::method4695);
       }
 
-      if (var1.method119("Offers", 10)) {
+      if (var1.contains("Offers", 10)) {
          this.field5796 = new Class46(var1.getCompound("Offers"));
       }
 
-      if (var1.method119("FoodLevel", 1)) {
+      if (var1.contains("FoodLevel", 1)) {
          this.field5782 = var1.method120("FoodLevel");
       }
 
       ListNBT var5 = var1.method131("Gossips", 10);
       this.field5783.method25529(new Dynamic(NBTDynamicOps.INSTANCE, var5));
-      if (var1.method119("Xp", 3)) {
+      if (var1.contains("Xp", 3)) {
          this.field5786 = var1.method122("Xp");
       }
 
@@ -449,7 +452,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
       this.field5788 = var1.method122("RestocksToday");
       if (var1.contains("AssignProfessionWhenSpawned")) {
-         this.field5790 = var1.method132("AssignProfessionWhenSpawned");
+         this.field5790 = var1.getBoolean("AssignProfessionWhenSpawned");
       }
    }
 

@@ -13,7 +13,7 @@ public class Class6693 extends Class6691 {
    }
 
    public Class6693(CompoundNBT var1) {
-      this(!var1.method119("Weight", 99) ? 1 : var1.method122("Weight"), var1.getCompound("Entity"));
+      this(!var1.contains("Weight", 99) ? 1 : var1.method122("Weight"), var1.getCompound("Entity"));
    }
 
    public Class6693(int var1, CompoundNBT var2) {

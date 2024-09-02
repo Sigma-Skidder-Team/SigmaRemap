@@ -2,8 +2,10 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.impl.movement.blockfly.BlockFlyNCPMode;
 import com.mentalfrostbyte.jello.module.impl.world.AutoCrystal;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 
 public class Class335 implements Runnable {
    private static String[] field1458;

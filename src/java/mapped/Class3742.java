@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 import java.util.Optional;

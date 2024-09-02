@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector3d;
+
 public class Class8816 {
    private static String[] field39661;
    private Vector3d field39662 = null;

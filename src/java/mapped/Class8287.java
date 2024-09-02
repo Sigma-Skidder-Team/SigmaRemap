@@ -78,23 +78,23 @@ public class Class8287 extends Class8286 {
             JsonElement var7 = Streams.parse(var5);
             if (!var7.isJsonNull()) {
                CompoundNBT var8 = method28966(var7.getAsJsonObject());
-               if (!var8.method119("DataVersion", 99)) {
+               if (!var8.contains("DataVersion", 99)) {
                   var8.method102("DataVersion", 1343);
                }
 
                var8 = Class8354.method29289(var1, Class2108.field13754, var8, var8.method122("DataVersion"));
-               if (var8.method119("stats", 10)) {
+               if (var8.contains("stats", 10)) {
                   CompoundNBT var9 = var8.getCompound("stats");
 
                   for (String var11 : var9.method97()) {
-                     if (var9.method119(var11, 10)) {
+                     if (var9.contains(var11, 10)) {
                         Util.<Class49<?>>acceptOrElse(
                            Registry.field16088.method9187(new ResourceLocation(var11)),
                            var3 -> {
                               CompoundNBT var6x = var9.getCompound(var11);
 
                               for (String var8x : var6x.method97()) {
-                                 if (!var6x.method119(var8x, 99)) {
+                                 if (!var6x.contains(var8x, 99)) {
                                     field35591.warn(
                                        "Invalid statistic value in {}: Don't know what {} is for key {}", this.field35593, var6x.method116(var8x), var8x
                                     );

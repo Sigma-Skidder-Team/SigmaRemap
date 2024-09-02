@@ -6,6 +6,8 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.network.play.server.SJoinGamePacket;
 import net.minecraft.network.play.server.SRespawnPacket;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

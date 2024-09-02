@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector3d;
+
 public class Class7365 extends Class7362 {
    private static String[] field31526;
    private int field31527;

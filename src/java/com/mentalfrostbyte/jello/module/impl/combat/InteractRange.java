@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockRayTraceResult;
 
 public class InteractRange extends Module {
     public InteractRange() {

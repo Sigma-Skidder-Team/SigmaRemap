@@ -23,6 +23,7 @@ import joptsimple.OptionSpecBuilder;
 import net.minecraft.client.util.Util;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

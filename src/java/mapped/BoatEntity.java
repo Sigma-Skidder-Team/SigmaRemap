@@ -12,10 +12,13 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.client.CSteerBoatPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -673,7 +676,7 @@ public class BoatEntity extends Entity {
          var1.method3143(var1.method3142() + this.field5534);
          this.method4160(var1);
          if (var1 instanceof Class1018 && this.method3408().size() > 1) {
-            int var7 = var1.method3205() % 2 != 0 ? 270 : 90;
+            int var7 = var1.getEntityId() % 2 != 0 ? 270 : 90;
             var1.method3144(((Class1018)var1).field4965 + (float)var7);
             var1.method3143(var1.method3142() + (float)var7);
          }
@@ -732,7 +735,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      if (var1.method119("Type", 8)) {
+      if (var1.contains("Type", 8)) {
          this.method4171(Class2099.method8764(var1.method126("Type")));
       }
    }

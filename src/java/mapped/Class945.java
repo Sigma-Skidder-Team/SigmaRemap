@@ -1,10 +1,13 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -103,12 +106,12 @@ public class Class945 extends TileEntity implements Class946, Class935 {
       super.method3645(var1, var2);
       this.field5329.clear();
       Class7920.method26567(var2, this.field5329);
-      if (var2.method119("CookingTimes", 11)) {
+      if (var2.contains("CookingTimes", 11)) {
          int[] var5 = var2.method128("CookingTimes");
          System.arraycopy(var5, 0, this.field5330, 0, Math.min(this.field5331.length, var5.length));
       }
 
-      if (var2.method119("CookingTotalTimes", 11)) {
+      if (var2.contains("CookingTotalTimes", 11)) {
          int[] var6 = var2.method128("CookingTotalTimes");
          System.arraycopy(var6, 0, this.field5331, 0, Math.min(this.field5331.length, var6.length));
       }

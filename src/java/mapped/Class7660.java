@@ -12,7 +12,7 @@ public class Class7660 {
       var5.field41304 = new Class9074(var0.method127("SkyLight"), 7);
       var5.field41303 = new Class9074(var0.method127("BlockLight"), 7);
       var5.field41302 = var0.method127("HeightMap");
-      var5.field41301 = var0.method132("TerrainPopulated");
+      var5.field41301 = var0.getBoolean("TerrainPopulated");
       var5.field41307 = var0.method131("Entities", 10);
       var5.field41308 = var0.method131("TileEntities", 10);
       var5.field41309 = var0.method131("TileTicks", 10);
@@ -37,7 +37,7 @@ public class Class7660 {
       }
 
       var2.method111("HeightMap", var6);
-      var2.method115("TerrainPopulated", var1.field41301);
+      var2.putBoolean("TerrainPopulated", var1.field41301);
       ListNBT var19 = new ListNBT();
 
       for (int var8 = 0; var8 < 8; var8++) {
@@ -95,6 +95,6 @@ public class Class7660 {
          var2.put("TileTicks", var1.field41309);
       }
 
-      var2.method115("convertedFromAlphaFormat", true);
+      var2.putBoolean("convertedFromAlphaFormat", true);
    }
 }

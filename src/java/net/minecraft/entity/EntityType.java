@@ -11,12 +11,15 @@ import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -475,7 +478,7 @@ public class EntityType<T extends Entity> {
    }
 
    public static void method33204(World var0, PlayerEntity var1, Entity var2, CompoundNBT var3) {
-      if (var3 != null && var3.method119("EntityTag", 10)) {
+      if (var3 != null && var3.contains("EntityTag", 10)) {
          MinecraftServer var6 = var0.getServer();
          if (var6 != null && var2 != null && (var0.isRemote || !var2.method3404() || var1 != null && var6.getPlayerList().canSendCommands(var1.getGameProfile()))) {
             CompoundNBT var7 = var2.method3294(new CompoundNBT());
@@ -598,7 +601,7 @@ public class EntityType<T extends Entity> {
    @Nullable
    public static Entity method33223(CompoundNBT var0, World var1, Function<Entity, Entity> var2) {
       return method33224(var0, var1).<Entity>map(var2).<Entity>map(var3 -> {
-         if (var0.method119("Passengers", 9)) {
+         if (var0.contains("Passengers", 9)) {
             ListNBT var6 = var0.method131("Passengers", 10);
 
             for (int var7 = 0; var7 < var6.size(); var7++) {

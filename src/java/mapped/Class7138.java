@@ -2,7 +2,9 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -22,7 +24,7 @@ public class Class7138 extends Class7139 {
    }
 
    @Override
-   public void method22269(Class1658 var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6) {
+   public void method22269(ISeedReader var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6) {
       if (!(var2.nextFloat() >= this.field30695)) {
          int var9 = ((BlockPos)var3.get(0)).getY();
          var3.stream()

@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -216,7 +217,7 @@ public class Class962 extends TileEntity implements Class935 {
       while (var3.hasNext()) {
          Class9327 var5 = (Class9327)var3.next();
          if (Class9327.method35246(var5) > Class9327.method35248(var5)) {
-            Class2084 var6 = !Class9327.method35245(var5).method132("HasNectar") ? Class2084.field13572 : Class2084.field13571;
+            Class2084 var6 = !Class9327.method35245(var5).getBoolean("HasNectar") ? Class2084.field13572 : Class2084.field13571;
             if (this.method3923(var4, var5, (List<Entity>)null, var6)) {
                var3.remove();
             }

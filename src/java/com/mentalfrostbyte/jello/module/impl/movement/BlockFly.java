@@ -15,6 +15,8 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
+import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
@@ -263,7 +265,7 @@ public class BlockFly extends ModuleWithModuleSettings {
     }
 
     public void method16740(int var1, int var2) {
-        mc.playerController.method23144(mc.player.field4904.field25471, var1, var2, Class2259.field14696, mc.player);
+        mc.playerController.method23144(mc.player.field4904.field25471, var1, var2, ClickType.field14696, mc.player);
     }
 
     public void method16741(Class4435 var1) {

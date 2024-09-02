@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
 
@@ -16,6 +17,6 @@ public final class Class6866 implements IParticleData.IDeserializer<Class7438> {
    }
 
    public Class7438 read(ParticleType<Class7438> var1, PacketBuffer var2) {
-      return new Class7438(var1, var2.method35726());
+      return new Class7438(var1, var2.readItemStack());
    }
 }

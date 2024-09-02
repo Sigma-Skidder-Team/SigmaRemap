@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class Class6996 extends Class6995 {
    private static String[] field30269;

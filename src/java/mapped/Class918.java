@@ -11,6 +11,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.world.World;
 
 public class Class918 extends AbstractMinecartEntity {
    private static final DataParameter<String> field5232 = EntityDataManager.<String>createKey(Class918.class, DataSerializers.field33393);

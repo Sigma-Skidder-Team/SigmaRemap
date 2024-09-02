@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.util.math.vector.Vector3d;
+
 import java.util.Objects;
 
 public class Class7330 implements Class7329 {

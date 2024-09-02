@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
@@ -23,9 +24,9 @@ public class Class969 extends TileEntity {
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
       this.field5433.method3560(var1);
-      var1.method115("powered", this.method4011());
-      var1.method115("conditionMet", this.method4016());
-      var1.method115("auto", this.method4012());
+      var1.putBoolean("powered", this.method4011());
+      var1.putBoolean("conditionMet", this.method4016());
+      var1.putBoolean("auto", this.method4012());
       return var1;
    }
 
@@ -33,9 +34,9 @@ public class Class969 extends TileEntity {
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.field5433.method3561(var2);
-      this.field5429 = var2.method132("powered");
-      this.field5431 = var2.method132("conditionMet");
-      this.method4013(var2.method132("auto"));
+      this.field5429 = var2.getBoolean("powered");
+      this.field5431 = var2.getBoolean("conditionMet");
+      this.method4013(var2.getBoolean("auto"));
    }
 
    @Nullable

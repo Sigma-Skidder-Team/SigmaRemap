@@ -3,6 +3,8 @@ package net.minecraft.util.math;
 import com.mojang.serialization.Codec;
 import mapped.*;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.vector.Vector3d;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -202,7 +204,7 @@ public class BlockPos extends Class1998 {
       );
    }
 
-   public BlockPos method8353() {
+   public BlockPos toImmutable() {
       return this;
    }
 

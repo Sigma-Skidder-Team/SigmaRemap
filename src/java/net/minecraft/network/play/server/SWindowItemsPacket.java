@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.ItemStack;
+import net.minecraft.item.ItemStack;
 import mapped.NonNullList;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
@@ -33,7 +33,7 @@ public class SWindowItemsPacket implements Packet<IClientPlayNetHandler> {
       this.field24915 = NonNullList.<ItemStack>method68(var4, ItemStack.EMPTY);
 
       for (int var5 = 0; var5 < var4; var5++) {
-         this.field24915.set(var5, var1.method35726());
+         this.field24915.set(var5, var1.readItemStack());
       }
    }
 
@@ -43,7 +43,7 @@ public class SWindowItemsPacket implements Packet<IClientPlayNetHandler> {
       var1.writeShort(this.field24915.size());
 
       for (ItemStack var5 : this.field24915) {
-         var1.method35724(var5);
+         var1.writeItemStack(var5);
       }
    }
 

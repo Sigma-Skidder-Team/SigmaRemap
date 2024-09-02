@@ -14,8 +14,11 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.*;
 import org.apache.commons.lang3.StringUtils;
 
@@ -439,7 +442,7 @@ public class IngameGui extends AbstractGui {
             RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6716.getTextureManager().bindTexture(field6712);
             ItemStack var6 = var5.method3091();
-            Class2205 var7 = var5.method2967().method8920();
+            HandSide var7 = var5.method2967().method8920();
             int var8 = this.field6741 / 2;
             int var9 = this.method5702();
             short var10 = 182;
@@ -448,7 +451,7 @@ public class IngameGui extends AbstractGui {
             this.method5696(var2, var8 - 91, this.field6742 - 22, 0, 0, 182, 22);
             this.method5696(var2, var8 - 91 - 1 + var5.inventory.currentItem * 20, this.field6742 - 22 - 1, 0, 22, 24, 22);
             if (!var6.isEmpty()) {
-                if (var7 != Class2205.field14417) {
+                if (var7 != HandSide.field14417) {
                     this.method5696(var2, var8 + 91, this.field6742 - 23, 53, 22, 29, 24);
                 } else {
                     this.method5696(var2, var8 - 91 - 29, this.field6742 - 23, 24, 22, 29, 24);
@@ -470,7 +473,7 @@ public class IngameGui extends AbstractGui {
             if (!var6.isEmpty()) {
                 Class7992.method27282(true);
                 int var16 = this.field6742 - 16 - 3;
-                if (var7 != Class2205.field14417) {
+                if (var7 != HandSide.field14417) {
                     this.method5982(var8 + 91 + 10, var16, var1, var5, var6);
                 } else {
                     this.method5982(var8 - 91 - 26, var16, var1, var5, var6);
@@ -484,7 +487,7 @@ public class IngameGui extends AbstractGui {
                 if (var17 < 1.0F) {
                     int var18 = this.field6742 - 20;
                     int var19 = var8 + 91 + 6;
-                    if (var7 == Class2205.field14418) {
+                    if (var7 == HandSide.field14418) {
                         var19 = var8 - 91 - 22;
                     }
 

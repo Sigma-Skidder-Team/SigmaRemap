@@ -3,8 +3,11 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -218,7 +221,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
 
    public void method3753(CompoundNBT var1) {
       this.field5305 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
-      if (!this.method3741(var1) && var1.method119("Items", 9)) {
+      if (!this.method3741(var1) && var1.contains("Items", 9)) {
          Class7920.method26567(var1, this.field5305);
       }
    }

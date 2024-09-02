@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.Set;
 

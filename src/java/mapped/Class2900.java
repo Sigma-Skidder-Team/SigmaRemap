@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
 
@@ -11,7 +12,7 @@ public class Class2900 extends Class2899 {
    }
 
    @Override
-   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4699 var5) {
+   public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4699 var5) {
       while (var1.method7007(var4) && var4.getY() > 2) {
          var4 = var4.down();
       }

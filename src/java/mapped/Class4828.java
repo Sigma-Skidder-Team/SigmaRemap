@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.gson.JsonObject;
+import net.minecraft.item.ItemStack;
+
 import java.util.ArrayList;
 import java.util.Collection;
 

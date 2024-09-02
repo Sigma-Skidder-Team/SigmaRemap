@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.vector.Vector3d;
 
 public abstract class RayTraceResult {
    public final Vector3d field39316;

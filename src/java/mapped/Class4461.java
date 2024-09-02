@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.item.ItemStack;
 
 public class Class4461 extends Class4457 {
    private final Class9587 field21640;

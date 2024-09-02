@@ -8,10 +8,13 @@ import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.datafixers.DataFixer;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.filter.ChatFilterClient;
 import net.minecraft.util.text.filter.IChatFilter;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

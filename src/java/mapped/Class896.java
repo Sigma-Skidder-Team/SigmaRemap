@@ -5,9 +5,13 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -146,7 +150,7 @@ public class Class896 extends Class890 implements Class889 {
       }
 
       CompoundNBT var9 = var1.method32142();
-      if (var9 != null && var9.method119("CustomPotionColor", 99)) {
+      if (var9 != null && var9.contains("CustomPotionColor", 99)) {
          var5.method4103(var9.method122("CustomPotionColor"));
       }
 

@@ -2,7 +2,7 @@ package net.minecraft.network.play.client;
 
 import mapped.Class2238;
 import mapped.Class7952;
-import mapped.IServerPlayNetHandler;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
@@ -32,7 +32,7 @@ public class CSeenAdvancementsPacket implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24262 = var1.<Class2238>method35712(Class2238.class);
+      this.field24262 = var1.<Class2238>readEnumValue(Class2238.class);
       if (this.field24262 == Class2238.field14644) {
          this.field24263 = var1.readResourceLocation();
       }
@@ -40,7 +40,7 @@ public class CSeenAdvancementsPacket implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.field24262);
+      var1.writeEnumValue(this.field24262);
       if (this.field24262 == Class2238.field14644) {
          var1.writeResourceLocation(this.field24263);
       }

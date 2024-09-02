@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 public class Class2841 implements Consumer<Consumer<Class7952>> {
    public void accept(Consumer<Class7952> var1) {

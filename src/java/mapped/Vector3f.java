@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
+import net.minecraft.util.math.vector.Vector3d;
 
 public final class Vector3f {
    public static Vector3f field32897 = new Vector3f(-1.0F, 0.0F, 0.0F);

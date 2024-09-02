@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.item.ItemStack;
 
 public class Class1167 extends Class1155<Class1167> {
    private static String[] field6331;

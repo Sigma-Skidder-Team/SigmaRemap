@@ -6,12 +6,16 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntityPickupStatus;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
@@ -162,11 +166,11 @@ public class Class886 extends AbstractArrowEntity {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("Trident", 10)) {
+      if (var1.contains("Trident", 10)) {
          this.field5113 = ItemStack.method32104(var1.getCompound("Trident"));
       }
 
-      this.field5114 = var1.method132("DealtDamage");
+      this.field5114 = var1.getBoolean("DealtDamage");
       this.dataManager.method35446(field5111, (byte)Class7858.method26336(this.field5113));
    }
 
@@ -174,7 +178,7 @@ public class Class886 extends AbstractArrowEntity {
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.put("Trident", this.field5113.method32112(new CompoundNBT()));
-      var1.method115("DealtDamage", this.field5114);
+      var1.putBoolean("DealtDamage", this.field5114);
    }
 
    @Override

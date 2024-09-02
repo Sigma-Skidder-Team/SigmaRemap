@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.vector.Vector3d;
 import org.lwjgl.opengl.GL11;
 
 public class Tracers extends Module {

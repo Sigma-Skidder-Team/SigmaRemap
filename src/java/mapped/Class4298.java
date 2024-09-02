@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
 
 import java.io.IOException;

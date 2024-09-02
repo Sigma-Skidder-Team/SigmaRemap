@@ -5,6 +5,7 @@ import net.minecraft.client.network.login.IClientLoginNetHandler;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.login.server.*;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
 
@@ -133,9 +134,9 @@ public enum ProtocolType {
                .method23905(CJigsawBlockGeneratePacket.class, CJigsawBlockGeneratePacket::new)
                .method23905(CKeepAlivePacket.class, CKeepAlivePacket::new)
                .method23905(CLockDifficultyPacket.class, CLockDifficultyPacket::new)
-               .method23905(Class5605.class, Class5605::new)
-               .method23905(Class5604.class, Class5604::new)
-               .method23905(Class5606.class, Class5606::new)
+               .method23905(CPlayerPacket.PositionPacket.class, CPlayerPacket.PositionPacket::new)
+               .method23905(CPlayerPacket.PositionRotationPacket.class, CPlayerPacket.PositionRotationPacket::new)
+               .method23905(CPlayerPacket.RotationPacket.class, CPlayerPacket.RotationPacket::new)
                .method23905(CPlayerPacket.class, CPlayerPacket::new)
                .method23905(CMoveVehiclePacket.class, CMoveVehiclePacket::new)
                .method23905(CSteerBoatPacket.class, CSteerBoatPacket::new)

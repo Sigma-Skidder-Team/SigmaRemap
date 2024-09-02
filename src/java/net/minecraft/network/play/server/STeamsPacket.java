@@ -68,7 +68,7 @@ public class STeamsPacket implements Packet<IClientPlayNetHandler> {
          this.field24758 = var1.readByte();
          this.field24753 = var1.readString(40);
          this.field24754 = var1.readString(40);
-         this.field24755 = var1.<TextFormatting>method35712(TextFormatting.class);
+         this.field24755 = var1.<TextFormatting>readEnumValue(TextFormatting.class);
          this.field24751 = var1.method35710();
          this.field24752 = var1.method35710();
       }
@@ -91,7 +91,7 @@ public class STeamsPacket implements Packet<IClientPlayNetHandler> {
          var1.writeByte(this.field24758);
          var1.writeString(this.field24753);
          var1.writeString(this.field24754);
-         var1.method35713(this.field24755);
+         var1.writeEnumValue(this.field24755);
          var1.writeTextComponent(this.field24751);
          var1.writeTextComponent(this.field24752);
       }

@@ -6,6 +6,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.List;
 import java.util.Random;
@@ -20,13 +21,13 @@ public class Class2944 extends Class2898<Class4707> {
       super(var1);
    }
 
-   public static List<Class9648> method11286(Class1658 var0) {
+   public static List<Class9648> method11286(ISeedReader var0) {
       Random var3 = new Random(var0.method6967());
       long var4 = var3.nextLong() & 65535L;
       return (List<Class9648>)field18007.getUnchecked(var4);
    }
 
-   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4707 var5) {
+   public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4707 var5) {
       List<Class9648> var8 = var5.method14776();
       if (var8.isEmpty()) {
          var8 = method11286(var1);

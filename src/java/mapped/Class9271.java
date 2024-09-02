@@ -19,6 +19,7 @@ import java.util.Random;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class9271 {
    private static final Dynamic4CommandExceptionType field42644 = new Dynamic4CommandExceptionType(

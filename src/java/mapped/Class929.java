@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 public class Class929 extends Class927 implements Class930 {

@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import mapped.Class3263;
 import net.minecraft.network.play.client.CPlayerPacket;
-import mapped.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 public class FastBow extends Module {
@@ -27,7 +27,7 @@ public class FastBow extends Module {
                     mc.getConnection().sendPacket(new CPlayerPacket(true));
                 }
 
-                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13489, BlockPos.ZERO, Direction.DOWN));
+                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.RELEASE_USE_ITEM, BlockPos.ZERO, Direction.DOWN));
             }
         }
     }

@@ -2,11 +2,13 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.*;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -17,9 +19,9 @@ public class Class3285 extends Item {
 
    public static boolean method11817(CompoundNBT var0) {
       if (Class3291.method11833(var0)) {
-         if (var0.method119("title", 8)) {
+         if (var0.contains("title", 8)) {
             String var3 = var0.method126("title");
-            return var3.length() <= 32 ? var0.method119("author", 8) : false;
+            return var3.length() <= 32 ? var0.contains("author", 8) : false;
          } else {
             return false;
          }
@@ -85,8 +87,8 @@ public class Class3285 extends Item {
 
    public static boolean method11820(ItemStack var0, Class6619 var1, PlayerEntity var2) {
       CompoundNBT var5 = var0.method32142();
-      if (var5 != null && !var5.method132("resolved")) {
-         var5.method115("resolved", true);
+      if (var5 != null && !var5.getBoolean("resolved")) {
+         var5.putBoolean("resolved", true);
          if (!method11817(var5)) {
             return false;
          } else {

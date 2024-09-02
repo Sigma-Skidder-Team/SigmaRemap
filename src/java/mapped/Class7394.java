@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class7394 {
    private static String[] field31653;
    public final Class8161[] field31654;

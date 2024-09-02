@@ -6,6 +6,7 @@ import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
@@ -17,6 +18,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -286,7 +290,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
             return;
          }
 
-         this.field5108.add(var4.method3205());
+         this.field5108.add(var4.getEntityId());
       }
 
       if (this.method3487()) {
@@ -408,7 +412,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
 
    @Override
    public boolean method3467(Entity var1) {
-      return super.method3467(var1) && (this.field5108 == null || !this.field5108.contains(var1.method3205()));
+      return super.method3467(var1) && (this.field5108 == null || !this.field5108.contains(var1.getEntityId()));
    }
 
    @Override
@@ -420,44 +424,44 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       }
 
       var1.method100("shake", (byte)this.field5103);
-      var1.method115("inGround", this.field5100);
+      var1.putBoolean("inGround", this.field5100);
       var1.method100("pickup", (byte)this.pickupStatus.ordinal());
       var1.method108("damage", this.field5105);
-      var1.method115("crit", this.method3487());
+      var1.putBoolean("crit", this.method3487());
       var1.method100("PierceLevel", this.method3489());
       var1.method109("SoundEvent", Registry.field16069.getKey(this.hitSound).toString());
-      var1.method115("ShotFromCrossbow", this.method3488());
+      var1.putBoolean("ShotFromCrossbow", this.method3488());
    }
 
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.ticksInGround = var1.method121("life");
-      if (var1.method119("inBlockState", 10)) {
+      if (var1.contains("inBlockState", 10)) {
          this.field5099 = Class8354.method29285(var1.getCompound("inBlockState"));
       }
 
       this.field5103 = var1.method120("shake") & 255;
-      this.field5100 = var1.method132("inGround");
-      if (var1.method119("damage", 99)) {
+      this.field5100 = var1.getBoolean("inGround");
+      if (var1.contains("damage", 99)) {
          this.field5105 = var1.method125("damage");
       }
 
-      if (!var1.method119("pickup", 99)) {
-         if (var1.method119("player", 99)) {
-            this.pickupStatus = !var1.method132("player") ? AbstractArrowEntityPickupStatus.DISALLOWED : AbstractArrowEntityPickupStatus.ALLOWED;
+      if (!var1.contains("pickup", 99)) {
+         if (var1.contains("player", 99)) {
+            this.pickupStatus = !var1.getBoolean("player") ? AbstractArrowEntityPickupStatus.DISALLOWED : AbstractArrowEntityPickupStatus.ALLOWED;
          }
       } else {
          this.pickupStatus = AbstractArrowEntityPickupStatus.method8902(var1.method120("pickup"));
       }
 
-      this.method3484(var1.method132("crit"));
+      this.method3484(var1.getBoolean("crit"));
       this.method3485(var1.method120("PierceLevel"));
-      if (var1.method119("SoundEvent", 8)) {
+      if (var1.contains("SoundEvent", 8)) {
          this.hitSound = Registry.field16069.method9187(new ResourceLocation(var1.method126("SoundEvent"))).orElse(this.getHitEntitySound());
       }
 
-      this.method3494(var1.method132("ShotFromCrossbow"));
+      this.method3494(var1.getBoolean("ShotFromCrossbow"));
    }
 
    @Override
@@ -582,6 +586,6 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    @Override
    public Packet<?> method2835() {
       Entity var3 = this.method3460();
-      return new SSpawnObjectPacket(this, var3 != null ? var3.method3205() : 0);
+      return new SSpawnObjectPacket(this, var3 != null ? var3.getEntityId() : 0);
    }
 }

@@ -5,6 +5,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
@@ -21,14 +25,14 @@ public abstract class ProjectileEntity extends Entity {
    public void setShooter(Entity var1) {
       if (var1 != null) {
          this.field5093 = var1.getUniqueID();
-         this.field5094 = var1.method3205();
+         this.field5094 = var1.getEntityId();
       }
    }
 
    @Nullable
    public Entity method3460() {
       if (this.field5093 != null && this.world instanceof ServerWorld) {
-         return ((ServerWorld)this.world).method6942(this.field5093);
+         return ((ServerWorld)this.world).getEntityByUuid(this.field5093);
       } else {
          return this.field5094 == 0 ? null : this.world.getEntityByID(this.field5094);
       }
@@ -41,7 +45,7 @@ public abstract class ProjectileEntity extends Entity {
       }
 
       if (this.field5095) {
-         var1.method115("LeftOwner", true);
+         var1.putBoolean("LeftOwner", true);
       }
    }
 
@@ -51,7 +55,7 @@ public abstract class ProjectileEntity extends Entity {
          this.field5093 = var1.method105("Owner");
       }
 
-      this.field5095 = var1.method132("LeftOwner");
+      this.field5095 = var1.getBoolean("LeftOwner");
    }
 
    @Override

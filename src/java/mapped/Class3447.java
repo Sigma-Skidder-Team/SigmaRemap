@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public class Class3447 extends Class3445 {
    private static String[] field19261;
    public static final VoxelShape field19262 = Block.method11539(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);

@@ -7,6 +7,7 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -16,6 +17,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -223,14 +226,14 @@ public class Class1019 extends Class1018 implements Class1020 {
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method115("Sheared", this.method4519());
+      var1.putBoolean("Sheared", this.method4519());
       var1.method100("Color", (byte)this.method4517().method309());
    }
 
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4520(var1.method132("Sheared"));
+      this.method4520(var1.getBoolean("Sheared"));
       this.method4518(Class112.method315(var1.method120("Color")));
    }
 

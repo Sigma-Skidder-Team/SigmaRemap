@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.world.Difficulty;
 
@@ -72,19 +73,19 @@ public class Class9640 {
    }
 
    public void method37572(CompoundNBT var1) {
-      if (var1.method119("foodLevel", 99)) {
+      if (var1.contains("foodLevel", 99)) {
          this.field45071 = var1.method122("foodLevel");
          this.field45074 = var1.method122("foodTickTimer");
-         this.field45072 = var1.method124("foodSaturationLevel");
-         this.field45073 = var1.method124("foodExhaustionLevel");
+         this.field45072 = var1.getFloat("foodSaturationLevel");
+         this.field45073 = var1.getFloat("foodExhaustionLevel");
       }
    }
 
    public void method37573(CompoundNBT var1) {
       var1.method102("foodLevel", this.field45071);
       var1.method102("foodTickTimer", this.field45074);
-      var1.method107("foodSaturationLevel", this.field45072);
-      var1.method107("foodExhaustionLevel", this.field45073);
+      var1.putFloat("foodSaturationLevel", this.field45072);
+      var1.putFloat("foodExhaustionLevel", this.field45073);
    }
 
    public int method37574() {

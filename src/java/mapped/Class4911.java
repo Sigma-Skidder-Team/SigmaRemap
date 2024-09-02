@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public class Class4911 extends Class4874<Class4489> {

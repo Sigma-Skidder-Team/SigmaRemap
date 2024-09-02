@@ -62,7 +62,7 @@ public abstract class Class6896 {
          return false;
       } else {
          method21067(var0, var2, var5.field22411.method20424(var1, var2), var4);
-         var3.add(var2.method8353());
+         var3.add(var2.toImmutable());
          return true;
       }
    }

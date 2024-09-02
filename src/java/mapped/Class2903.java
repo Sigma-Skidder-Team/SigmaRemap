@@ -4,7 +4,9 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.*;
 
@@ -121,7 +123,7 @@ public class Class2903 extends Class2898<Class4733> {
       method11232(var1, var2, var3);
    }
 
-   public final boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4733 var5) {
+   public final boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4733 var5) {
       HashSet var8 = Sets.newHashSet();
       HashSet var9 = Sets.newHashSet();
       HashSet var10 = Sets.newHashSet();
@@ -171,7 +173,7 @@ public class Class2903 extends Class2898<Class4733> {
             if (!var3.contains(var23)) {
                BlockState var17 = var1.getBlockState(var23);
                if (var17.method23462(Class8820.field39747)) {
-                  ((Set)var7.get(0)).add(var23.method8353());
+                  ((Set)var7.get(0)).add(var23.toImmutable());
                   method11232(var1, var23, var17.method23465(Class8820.field39747, Integer.valueOf(1)));
                   if (var2.method38396(var23)) {
                      var8.method26718(
@@ -207,7 +209,7 @@ public class Class2903 extends Class2898<Class4733> {
                            );
                         }
 
-                        var28.add(var23.method8353());
+                        var28.add(var23.toImmutable());
                      }
                   }
                }

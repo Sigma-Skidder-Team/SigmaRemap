@@ -9,6 +9,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
+import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;
 import net.minecraft.network.play.client.CEntityActionPacket;
@@ -125,11 +127,11 @@ public class AutoArmor extends Module {
                                 Class7789.method25826(8 - var7.method8773(), 0, true);
                             }
 
-                            Class7789.method25870(mc.player.field4904.field25471, var12, 0, Class2259.field14695, mc.player, true);
+                            Class7789.method25870(mc.player.field4904.field25471, var12, 0, ClickType.field14695, mc.player, true);
                             this.timer.method27120();
                             field23798 = true;
                             if (this.getStringSettingValueByName("Elytra").equals("On Use")) {
-                                mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10048));
+                                mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.START_FALL_FLYING));
                                 mc.player.method3349(7, true);
                             }
 
@@ -156,7 +158,7 @@ public class AutoArmor extends Module {
                                 Class7789.method25826(8 - var7.method8773(), 0, true);
                             }
 
-                            Class7789.method25870(mc.player.field4904.field25471, var12, 0, Class2259.field14695, mc.player, true);
+                            Class7789.method25870(mc.player.field4904.field25471, var12, 0, ClickType.field14695, mc.player, true);
                             this.timer.method27120();
                             field23798 = true;
                             if (Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getNumberValueBySettingName("Delay") > 0.0F) {

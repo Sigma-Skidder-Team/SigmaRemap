@@ -1,8 +1,10 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.OptionalInt;

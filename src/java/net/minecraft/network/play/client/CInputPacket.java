@@ -1,79 +1,72 @@
 package net.minecraft.network.play.client;
 
-import mapped.IServerPlayNetHandler;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
 public class CInputPacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24281;
-   private float field24282;
-   private float field24283;
-   private boolean field24284;
-   private boolean field24285;
+   private float strafeSpeed;
+   private float forwardSpeed;
+   private boolean jumping;
+   private boolean sneaking;
 
    public CInputPacket() {
    }
 
    public CInputPacket(float var1, float var2, boolean var3, boolean var4) {
-      this.field24282 = var1;
-      this.field24283 = var2;
-      this.field24284 = var3;
-      this.field24285 = var4;
+      this.strafeSpeed = var1;
+      this.forwardSpeed = var2;
+      this.jumping = var3;
+      this.sneaking = var4;
    }
 
    @Override
-   public void readPacketData(PacketBuffer var1) throws IOException {
-      int var2 = 345771719;
-      this.field24282 = var1.readFloat();
-      this.field24283 = var1.readFloat();
-      byte var4 = var1.readByte();
-      CInputPacket var10000 = this;
-
-      do {
-         if ((var2 & 512) != 0) {
-            var10000.field24284 = false;
-            var10000 = this;
-         }
-      } while ((var2 & 32768) != 0);
-
-      var10000.field24285 = false;
+   public void readPacketData(PacketBuffer buf) throws IOException {
+      this.strafeSpeed = buf.readFloat();
+      this.forwardSpeed = buf.readFloat();
+      byte b0 = buf.readByte();
+      this.jumping = (b0 & 1) > 0;
+      this.sneaking = (b0 & 2) > 0;
    }
 
    @Override
-   public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeFloat(this.field24282);
-      var1.writeFloat(this.field24283);
-      byte var4 = 0;
-      if (this.field24284) {
-         var4 = (byte)(var4 | 1);
+   public void writePacketData(PacketBuffer buf) throws IOException {
+      buf.writeFloat(this.strafeSpeed);
+      buf.writeFloat(this.forwardSpeed);
+      byte b0 = 0;
+
+      if (this.jumping)
+      {
+         b0 = (byte)(b0 | 1);
       }
 
-      if (this.field24285) {
-         var4 = (byte)(var4 | 2);
+      if (this.sneaking)
+      {
+         b0 = (byte)(b0 | 2);
       }
 
-      var1.writeByte(var4);
+      buf.writeByte(b0);
    }
 
    public void processPacket(IServerPlayNetHandler var1) {
       var1.processInput(this);
    }
 
-   public float method17199() {
-      return this.field24282;
+   public float getStrafeSpeed() {
+      return this.strafeSpeed;
    }
 
-   public float method17200() {
-      return this.field24283;
+   public float getForwardSpeed() {
+      return this.forwardSpeed;
    }
 
-   public boolean method17201() {
-      return this.field24284;
+   public boolean isJumping() {
+      return this.jumping;
    }
 
-   public boolean method17202() {
-      return this.field24285;
+   public boolean isSneaking() {
+      return this.sneaking;
    }
 }

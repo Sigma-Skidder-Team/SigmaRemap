@@ -3,7 +3,7 @@ package net.minecraft.network.play.server;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
 import mapped.Class2106;
-import mapped.ItemStack;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -31,7 +31,7 @@ public class SEntityEquipmentPacket implements Packet<IClientPlayNetHandler> {
       Class2106[] var4 = Class2106.values();
       byte var5 = var1.readByte();
       Class2106 var6 = var4[var5 & 127];
-      ItemStack var7 = var1.method35726();
+      ItemStack var7 = var1.readItemStack();
       this.field24795.add(Pair.of(var6, var7));
    }
 
@@ -46,7 +46,7 @@ public class SEntityEquipmentPacket implements Packet<IClientPlayNetHandler> {
          boolean var8 = var5 != var4 - 1;
          int var9 = var7.ordinal();
          var1.writeByte(!var8 ? var9 : var9 | -128);
-         var1.method35724((ItemStack)var6.getSecond());
+         var1.writeItemStack((ItemStack)var6.getSecond());
       }
    }
 

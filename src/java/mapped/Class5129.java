@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class Class5129 implements Class5119 {
    private static String[] field23318;

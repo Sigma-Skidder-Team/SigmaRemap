@@ -1,6 +1,10 @@
 package mapped;
 
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 public abstract class Class6217 extends Class6218 {
    @Override

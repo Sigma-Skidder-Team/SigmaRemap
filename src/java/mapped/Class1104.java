@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -69,14 +70,14 @@ public class Class1104 extends Class1009 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field6063 = var1.method122("Lifetime");
-      this.field6064 = var1.method132("PlayerSpawned");
+      this.field6064 = var1.getBoolean("PlayerSpawned");
    }
 
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("Lifetime", this.field6063);
-      var1.method115("PlayerSpawned", this.field6064);
+      var1.putBoolean("PlayerSpawned", this.field6064);
    }
 
    @Override

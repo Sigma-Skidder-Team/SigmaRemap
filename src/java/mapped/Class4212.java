@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
 
@@ -19,23 +21,23 @@ public class Class4212 extends Class4209 {
 
    public Class4212(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33457, var2);
-      this.field20523 = var2.method132("placedMainChest");
-      this.field20524 = var2.method132("placedHiddenChest");
-      this.field20525 = var2.method132("placedTrap1");
-      this.field20526 = var2.method132("placedTrap2");
+      this.field20523 = var2.getBoolean("placedMainChest");
+      this.field20524 = var2.getBoolean("placedHiddenChest");
+      this.field20525 = var2.getBoolean("placedTrap1");
+      this.field20526 = var2.getBoolean("placedTrap2");
    }
 
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method115("placedMainChest", this.field20523);
-      var1.method115("placedHiddenChest", this.field20524);
-      var1.method115("placedTrap1", this.field20525);
-      var1.method115("placedTrap2", this.field20526);
+      var1.putBoolean("placedMainChest", this.field20523);
+      var1.putBoolean("placedHiddenChest", this.field20524);
+      var1.putBoolean("placedTrap1", this.field20525);
+      var1.putBoolean("placedTrap2", this.field20526);
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       if (!this.method13002(var1, var5, 0)) {
          return false;
       } else {

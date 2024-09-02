@@ -1,6 +1,8 @@
 package mapped;
 
-public final class Class7208<T extends Class4843<?>> implements Class7207<T> {
+import net.minecraft.item.crafting.IRecipe;
+
+public final class Class7208<T extends IRecipe<?>> implements Class7207<T> {
    public final String field30943;
 
    public Class7208(String var1) {

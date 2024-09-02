@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -10,6 +11,8 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.Optional;
@@ -190,11 +193,11 @@ public class Class1086 extends Class1087 implements Class1020 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method5036(Class2210.method8938(var1.method126("Type")));
-      if (var1.method119("EffectId", 1)) {
+      if (var1.contains("EffectId", 1)) {
          this.field5952 = Effect.method22287(var1.method120("EffectId"));
       }
 
-      if (var1.method119("EffectDuration", 3)) {
+      if (var1.contains("EffectDuration", 3)) {
          this.field5953 = var1.method122("EffectDuration");
       }
    }

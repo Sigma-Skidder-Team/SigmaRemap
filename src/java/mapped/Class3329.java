@@ -4,6 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class Class3329 extends Item {
    private static String[] field18837;

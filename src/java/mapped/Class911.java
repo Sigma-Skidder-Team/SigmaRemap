@@ -3,9 +3,12 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -38,12 +41,12 @@ public abstract class Class911 implements ICommandSource {
       var1.method109("Command", this.field5198);
       var1.method102("SuccessCount", this.field5195);
       var1.method109("CustomName", ITextComponent$Serializer.toJson(this.field5199));
-      var1.method115("TrackOutput", this.field5196);
+      var1.putBoolean("TrackOutput", this.field5196);
       if (this.field5197 != null && this.field5196) {
          var1.method109("LastOutput", ITextComponent$Serializer.toJson(this.field5197));
       }
 
-      var1.method115("UpdateLastExecution", this.field5194);
+      var1.putBoolean("UpdateLastExecution", this.field5194);
       if (this.field5194 && this.field5193 > 0L) {
          var1.method103("LastExecution", this.field5193);
       }
@@ -54,15 +57,15 @@ public abstract class Class911 implements ICommandSource {
    public void method3561(CompoundNBT var1) {
       this.field5198 = var1.method126("Command");
       this.field5195 = var1.method122("SuccessCount");
-      if (var1.method119("CustomName", 8)) {
+      if (var1.contains("CustomName", 8)) {
          this.method3566(ITextComponent$Serializer.func_240643_a_(var1.method126("CustomName")));
       }
 
-      if (var1.method119("TrackOutput", 1)) {
-         this.field5196 = var1.method132("TrackOutput");
+      if (var1.contains("TrackOutput", 1)) {
+         this.field5196 = var1.getBoolean("TrackOutput");
       }
 
-      if (var1.method119("LastOutput", 8) && this.field5196) {
+      if (var1.contains("LastOutput", 8) && this.field5196) {
          try {
             this.field5197 = ITextComponent$Serializer.func_240643_a_(var1.method126("LastOutput"));
          } catch (Throwable var5) {
@@ -73,7 +76,7 @@ public abstract class Class911 implements ICommandSource {
       }
 
       if (var1.contains("UpdateLastExecution")) {
-         this.field5194 = var1.method132("UpdateLastExecution");
+         this.field5194 = var1.getBoolean("UpdateLastExecution");
       }
 
       if (this.field5194 && var1.contains("LastExecution")) {

@@ -92,7 +92,7 @@ public class TestSpeed extends Module {
         if (this.isEnabled()) {
             if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
                 SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();
-                if (var4.method17565() != mc.player.method3205()) {
+                if (var4.method17565() != mc.player.getEntityId()) {
                 }
             }
         }

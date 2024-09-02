@@ -53,7 +53,7 @@ public class Class2643 extends Class2642 {
    @Override
    public void method10807() {
       super.method10807();
-      this.field16974.world.method6803(this.field16974.method3205(), this.field16975, -1);
+      this.field16974.world.method6803(this.field16974.getEntityId(), this.field16975, -1);
    }
 
    @Override
@@ -69,7 +69,7 @@ public class Class2643 extends Class2642 {
       this.field16982++;
       int var3 = (int)((float)this.field16982 / (float)this.method10852() * 10.0F);
       if (var3 != this.field16983) {
-         this.field16974.world.method6803(this.field16974.method3205(), this.field16975, var3);
+         this.field16974.world.method6803(this.field16974.getEntityId(), this.field16975, var3);
          this.field16983 = var3;
       }
 

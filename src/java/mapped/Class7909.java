@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -40,7 +41,7 @@ public class Class7909<FC extends Class4698, F extends Class2898<FC>> implements
       return new Class7758(this, var1);
    }
 
-   public boolean method26521(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4) {
+   public boolean method26521(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4) {
       return this.field33886.method11213(var1, var2, var3, var4, this.field33887);
    }
 

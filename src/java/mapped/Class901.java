@@ -8,6 +8,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 public abstract class Class901 extends ProjectileEntity {
    public double field5141;
@@ -124,7 +126,7 @@ public abstract class Class901 extends ProjectileEntity {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("power", 9)) {
+      if (var1.contains("power", 9)) {
          ListNBT var4 = var1.method131("power", 6);
          if (var4.size() == 3) {
             this.field5141 = var4.method158(0);
@@ -173,9 +175,9 @@ public abstract class Class901 extends ProjectileEntity {
    @Override
    public Packet<?> method2835() {
       Entity var3 = this.method3460();
-      int var4 = var3 != null ? var3.method3205() : 0;
+      int var4 = var3 != null ? var3.getEntityId() : 0;
       return new SSpawnObjectPacket(
-         this.method3205(),
+         this.getEntityId(),
          this.getUniqueID(),
          this.getPosX(),
          this.getPosY(),

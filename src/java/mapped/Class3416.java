@@ -7,8 +7,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 public class Class3416 extends Block {
    private static final ITextComponent field19119 = new TranslationTextComponent("container.cartography_table");

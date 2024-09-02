@@ -4,6 +4,7 @@ import com.google.common.base.Predicate;
 import com.mentalfrostbyte.jello.Client;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class167 implements Predicate<Entity> {
    private static String[] field537;

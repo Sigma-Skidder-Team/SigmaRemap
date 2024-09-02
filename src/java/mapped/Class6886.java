@@ -347,7 +347,7 @@ public class Class6886 {
                var4.method109("Name", var1x.method36054());
                var4.method109("Objective", var1x.method36053().method29336());
                var4.method102("Score", var1x.method36050());
-               var4.method115("Locked", var1x.method36056());
+               var4.putBoolean("Locked", var1x.method36056());
                var3.add(var4);
             }));
       return var3;
@@ -365,7 +365,7 @@ public class Class6886 {
          Class9411 var8 = this.method20980(var7, var6);
          var8.method36052(var5.method122("Score"));
          if (var5.contains("Locked")) {
-            var8.method36057(var5.method132("Locked"));
+            var8.method36057(var5.getBoolean("Locked"));
          }
       }
    }

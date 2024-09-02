@@ -15,11 +15,14 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.network.play.server.SPlaySoundPacket;
 import net.minecraft.network.play.server.SPlaySoundEffectPacket;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import org.lwjgl.opengl.GL11;
 
 import java.io.File;
@@ -116,8 +119,8 @@ public class NoteblockPlayer extends PremiumModule {
                                                 var9 = Class9217.method34542(var8.field28401, Direction.DOWN);
                                             }
 
-                                            mc.getConnection().sendPacket(new Class5606(var9[0], var9[1], mc.player.onGround));
-                                            mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, var8.field28401, Direction.field673));
+                                            mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var9[0], var9[1], mc.player.onGround));
+                                            mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var8.field28401, Direction.field673));
                                             mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
                                             this.field23642.add(var8.field28401);
                                         }
@@ -148,8 +151,8 @@ public class NoteblockPlayer extends PremiumModule {
         for (Class6463 var5 : var1) {
             if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.method23135()) {
                 float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
-                mc.getConnection().sendPacket(new Class5606(var6[0], var6[1], mc.player.onGround));
-                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, var5.field28401, Direction.field673));
+                mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
+                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var5.field28401, Direction.field673));
                 this.field23642.clear();
                 this.field23642.add(var5.field28401);
                 return true;
@@ -166,7 +169,7 @@ public class NoteblockPlayer extends PremiumModule {
                 if (0 == 0) {
                     float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
                     mc.player.swingArm(Hand.MAIN_HAND);
-                    mc.getConnection().sendPacket(new Class5606(var6[0], var6[1], mc.player.onGround));
+                    mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
                     mc.getConnection()
                             .sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, Class9217.method34567(var6[0], var6[1], mc.playerController.method23135() + 1.0F)));
                     this.field23642.clear();

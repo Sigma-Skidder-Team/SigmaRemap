@@ -7,6 +7,9 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
+import net.minecraft.network.play.client.CPlayerPacket;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class MinemenSpider extends Module {
     private boolean field23813 = false;
@@ -50,7 +53,7 @@ public class MinemenSpider extends Module {
                     && mc.world.method7055(mc.player, mc.player.boundingBox.method19667(0.0, -2.8, 0.0)).count() == 0L) {
                 mc.getConnection()
                         .sendPacket(
-                                new Class5605(
+                                new CPlayerPacket.PositionPacket(
                                         mc.player.getPositionVec().x,
                                         mc.player.getPositionVec().y - 1.0E-14,
                                         mc.player.getPositionVec().z,

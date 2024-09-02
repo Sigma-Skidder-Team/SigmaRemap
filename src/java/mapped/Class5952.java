@@ -8,6 +8,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;

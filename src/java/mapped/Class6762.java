@@ -5,8 +5,10 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.EnumSet;
 import javax.annotation.Nullable;

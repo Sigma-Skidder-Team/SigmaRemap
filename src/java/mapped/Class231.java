@@ -16,7 +16,7 @@ public abstract class Class231<T extends LivingEntity, M extends Class2894<T>> e
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       int var13 = this.method835((T)var4);
-      Random var14 = new Random((long)var4.method3205());
+      Random var14 = new Random((long)var4.getEntityId());
       if (var13 > 0) {
          for (int var15 = 0; var15 < var13; var15++) {
             var1.push();

@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import net.minecraft.world.server.ServerWorld;
+
 import java.util.Collection;
 import java.util.Map;
 import java.util.Optional;

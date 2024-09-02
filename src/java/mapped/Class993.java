@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public class Class993 extends AbstractMinecartEntity {
    private int field5480 = -1;
@@ -153,7 +154,7 @@ public class Class993 extends AbstractMinecartEntity {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method119("TNTFuse", 99)) {
+      if (var1.contains("TNTFuse", 99)) {
          this.field5480 = var1.method122("TNTFuse");
       }
    }

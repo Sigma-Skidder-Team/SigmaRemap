@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.List;

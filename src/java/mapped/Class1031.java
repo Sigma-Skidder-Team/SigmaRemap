@@ -6,6 +6,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
 
 public abstract class Class1031 extends Class1025 {
    private static final DataParameter<Byte> field5733 = EntityDataManager.<Byte>createKey(Class1031.class, DataSerializers.field33390);

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.network.play.client.PlayerAbilities;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -31,26 +32,26 @@ public enum Class1894 {
       return new TranslationTextComponent("gameMode." + this.field11107);
    }
 
-   public void method8155(Class6799 var1) {
+   public void method8155(PlayerAbilities var1) {
       if (this != field11103) {
          if (this != field11105) {
             var1.allowFlying = false;
             var1.isCreativeMode = false;
-            var1.field29606 = false;
-            var1.field29607 = false;
+            var1.disableDamage = false;
+            var1.isFlying = false;
          } else {
             var1.allowFlying = true;
             var1.isCreativeMode = false;
-            var1.field29606 = true;
-            var1.field29607 = true;
+            var1.disableDamage = true;
+            var1.isFlying = true;
          }
       } else {
          var1.allowFlying = true;
          var1.isCreativeMode = true;
-         var1.field29606 = true;
+         var1.disableDamage = true;
       }
 
-      var1.field29610 = !this.method8156();
+      var1.allowEdit = !this.method8156();
    }
 
    public boolean method8156() {

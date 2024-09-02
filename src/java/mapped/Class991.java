@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
 
 public class Class991 extends Class919 {
    private static String[] field5477;

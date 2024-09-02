@@ -7,6 +7,8 @@ import com.mojang.authlib.minecraft.MinecraftSessionService;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

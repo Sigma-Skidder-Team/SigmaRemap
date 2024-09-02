@@ -19,6 +19,7 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.*;
 
@@ -226,7 +227,7 @@ public class Test extends Module {
                                         }
                                     } else {
                                         CPlayerDiggingPacket var13 = (CPlayerDiggingPacket) var4;
-                                        if (var13.method17274() != CPlayerDiggingPacket.Action.field13489) {
+                                        if (var13.getAction() != CPlayerDiggingPacket.Action.RELEASE_USE_ITEM) {
                                         }
                                     }
                                 } else {
@@ -235,7 +236,7 @@ public class Test extends Module {
                             }
                         } else {
                             CPlayerTryUseItemPacket var15 = (CPlayerTryUseItemPacket) var4;
-                            if (var15.method17472() != Hand.field183) {
+                            if (var15.getHand() != Hand.field183) {
                             }
                         }
                     } else {
@@ -243,8 +244,8 @@ public class Test extends Module {
                     }
                 } else {
                     CPlayerPacket var17 = (CPlayerPacket) var4;
-                    double var8 = var17.method17626(0.0);
-                    String var10 = !var17.method17630() ? "§c" : "§a";
+                    double var8 = var17.getY(0.0);
+                    String var10 = !var17.isOnGround() ? "§c" : "§a";
                     Class8906.method32487(var10 + var8);
                 }
             } else {
@@ -284,7 +285,7 @@ public class Test extends Module {
                                         }
                                     } else {
                                         SEntityVelocityPacket var8 = (SEntityVelocityPacket) var1.getPacket();
-                                        if (var8.method17565() != mc.player.method3205()) {
+                                        if (var8.method17565() != mc.player.getEntityId()) {
                                         }
                                     }
                                 } else {

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.cache.LoadingCache;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 public class Class9086 {

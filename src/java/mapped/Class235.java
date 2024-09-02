@@ -3,7 +3,9 @@ package mapped;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.UUID;
@@ -50,8 +52,8 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & Class2824
             GameProfile var22 = null;
             if (var13.method32141()) {
                CompoundNBT var18 = var13.method32142();
-               if (!var18.method119("SkullOwner", 10)) {
-                  if (var18.method119("SkullOwner", 8)) {
+               if (!var18.contains("SkullOwner", 10)) {
+                  if (var18.contains("SkullOwner", 8)) {
                      String var19 = var18.method126("SkullOwner");
                      if (!StringUtils.isBlank(var19)) {
                         var22 = SkullTileEntity.method4008(new GameProfile((UUID)null, var19));

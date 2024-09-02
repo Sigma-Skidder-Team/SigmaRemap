@@ -5,6 +5,9 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
@@ -27,7 +30,7 @@ public class Class1055 extends Class1047 {
 
    public Class1055(EntityType<? extends Class1055> var1, World var2) {
       super(var1, var2);
-      this.rand.setSeed((long)this.method3205());
+      this.rand.setSeed((long)this.getEntityId());
       this.field5834 = 1.0F / (this.rand.nextFloat() + 1.0F) * 0.2F;
    }
 

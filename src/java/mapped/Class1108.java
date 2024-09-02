@@ -10,8 +10,11 @@ import net.minecraft.particles.IParticleData;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.ISeedReader;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -69,7 +72,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("Size", this.method5319() - 1);
-      var1.method115("wasOnGround", this.field6085);
+      var1.putBoolean("wasOnGround", this.field6085);
    }
 
    @Override
@@ -81,7 +84,7 @@ public class Class1108 extends Class1006 implements Class1008 {
 
       this.method5318(var4 + 1, false);
       super.method2723(var1);
-      this.field6085 = var1.method132("wasOnGround");
+      this.field6085 = var1.getBoolean("wasOnGround");
    }
 
    public boolean method5320() {
@@ -261,12 +264,12 @@ public class Class1108 extends Class1006 implements Class1008 {
             return method4264(var0, var1, var2, var3, var4);
          }
 
-         if (!(var1 instanceof Class1658)) {
+         if (!(var1 instanceof ISeedReader)) {
             return false;
          }
 
          Class7481 var7 = new Class7481(var3);
-         boolean var8 = Class2420.method10375(var7.field32174, var7.field32175, ((Class1658)var1).method6967(), 987234911L).nextInt(10) == 0;
+         boolean var8 = Class2420.method10375(var7.field32174, var7.field32175, ((ISeedReader)var1).method6967(), 987234911L).nextInt(10) == 0;
          if (var4.nextInt(10) == 0 && var8 && var3.getY() < 40) {
             return method4264(var0, var1, var2, var3, var4);
          }

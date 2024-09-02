@@ -4,14 +4,20 @@ import com.google.common.collect.UnmodifiableIterator;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
+import net.minecraft.util.HandSide;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -723,10 +729,10 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Override
    public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method115("EatingHaystack", this.method4938());
-      var1.method115("Bred", this.method4940());
+      var1.putBoolean("EatingHaystack", this.method4938());
+      var1.putBoolean("Bred", this.method4940());
       var1.method102("Temper", this.method4944());
-      var1.method115("Tame", this.method4932());
+      var1.putBoolean("Tame", this.method4932());
       if (this.method4933() != null) {
          var1.method104("Owner", this.method4933());
       }
@@ -739,10 +745,10 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4956(var1.method132("EatingHaystack"));
-      this.method4941(var1.method132("Bred"));
+      this.method4956(var1.getBoolean("EatingHaystack"));
+      this.method4941(var1.getBoolean("Bred"));
       this.method4945(var1.method122("Temper"));
-      this.method4936(var1.method132("Tame"));
+      this.method4936(var1.getBoolean("Tame"));
       UUID var5;
       if (!var1.method106("Owner")) {
          String var4 = var1.method126("Owner");
@@ -755,7 +761,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          this.method4934(var5);
       }
 
-      if (var1.method119("SaddleItem", 10)) {
+      if (var1.contains("SaddleItem", 10)) {
          ItemStack var6 = ItemStack.method32104(var1.getCompound("SaddleItem"));
          if (var6.getItem() == Items.field37886) {
             this.field5890.method3621(0, var6);
@@ -990,12 +996,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Override
    public Vector3d method3420(LivingEntity var1) {
       Vector3d var4 = method3419(
-         (double)this.method3429(), (double)var1.method3429(), this.rotationYaw + (var1.method2967() != Class2205.field14418 ? -90.0F : 90.0F)
+         (double)this.method3429(), (double)var1.method3429(), this.rotationYaw + (var1.method2967() != HandSide.field14418 ? -90.0F : 90.0F)
       );
       Vector3d var5 = this.method4974(var4, var1);
       if (var5 == null) {
          Vector3d var6 = method3419(
-            (double)this.method3429(), (double)var1.method3429(), this.rotationYaw + (var1.method2967() != Class2205.field14417 ? -90.0F : 90.0F)
+            (double)this.method3429(), (double)var1.method3429(), this.rotationYaw + (var1.method2967() != HandSide.field14417 ? -90.0F : 90.0F)
          );
          Vector3d var7 = this.method4974(var6, var1);
          return var7 == null ? this.getPositionVec() : var7;

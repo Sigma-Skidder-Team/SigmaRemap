@@ -26,9 +26,13 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 import mapped.*;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 
@@ -176,11 +180,11 @@ public class PacketBuffer extends ByteBuf {
       return this.writeString(ITextComponent$Serializer.toJson(var1), 262144);
    }
 
-   public <T extends Enum<T>> T method35712(Class<T> var1) {
+   public <T extends Enum<T>> T readEnumValue(Class<T> var1) {
       return (T)var1.getEnumConstants()[this.readVarInt()];
    }
 
-   public PacketBuffer method35713(Enum<?> var1) {
+   public PacketBuffer writeEnumValue(Enum<?> var1) {
       return this.writeVarInt(var1.ordinal());
    }
 
@@ -216,13 +220,13 @@ public class PacketBuffer extends ByteBuf {
       return var3;
    }
 
-   public PacketBuffer method35716(UUID var1) {
+   public PacketBuffer writeUniqueId(UUID var1) {
       this.writeLong(var1.getMostSignificantBits());
       this.writeLong(var1.getLeastSignificantBits());
       return this;
    }
 
-   public UUID method35717() {
+   public UUID readUniqueId() {
       return new UUID(this.readLong(), this.readLong());
    }
 
@@ -287,7 +291,7 @@ public class PacketBuffer extends ByteBuf {
       }
    }
 
-   public PacketBuffer method35724(ItemStack var1) {
+   public PacketBuffer writeItemStack(ItemStack var1) {
       return this.method35725(var1, true);
    }
 
@@ -314,7 +318,7 @@ public class PacketBuffer extends ByteBuf {
       return this;
    }
 
-   public ItemStack method35726() {
+   public ItemStack readItemStack() {
       if (this.readBoolean()) {
          int var3 = this.readVarInt();
          byte var4 = this.readByte();
@@ -387,9 +391,9 @@ public class PacketBuffer extends ByteBuf {
       return this;
    }
 
-   public BlockRayTraceResult method35735() {
+   public BlockRayTraceResult readBlockRay() {
       BlockPos var3 = this.readBlockPos();
-      Direction var4 = this.<Direction>method35712(Direction.class);
+      Direction var4 = this.<Direction>readEnumValue(Direction.class);
       float var5 = this.readFloat();
       float var6 = this.readFloat();
       float var7 = this.readFloat();
@@ -402,10 +406,10 @@ public class PacketBuffer extends ByteBuf {
       );
    }
 
-   public void method35736(BlockRayTraceResult var1) {
+   public void writeBlockRay(BlockRayTraceResult var1) {
       BlockPos var4 = var1.getPos();
       this.writeBlockPos(var4);
-      this.method35713(var1.getFace());
+      this.writeEnumValue(var1.getFace());
       Vector3d var5 = var1.method31419();
       this.writeFloat((float)(var5.x - (double)var4.getX()));
       this.writeFloat((float)(var5.y - (double)var4.getY()));

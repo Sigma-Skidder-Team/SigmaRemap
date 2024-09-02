@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.text.StringTextComponent;
 
 import java.util.Iterator;
@@ -9,12 +11,12 @@ import java.util.List;
 
 public class Class1251 extends Widget implements Class1253<Class120> {
    private static String[] field6623;
-   private final Class4843<?> field6624;
+   private final IRecipe<?> field6624;
    private final boolean field6625;
    public final List<Class8834> field6626;
    public final Class1263 field6627;
 
-   public Class1251(Class1263 var0, int var1, int var2, Class4843<?> var3, boolean var4) {
+   public Class1251(Class1263 var0, int var1, int var2, IRecipe<?> var3, boolean var4) {
       super(var1, var2, 200, 20, StringTextComponent.EMPTY);
       this.field6627 = var0;
       this.field6626 = Lists.newArrayList();
@@ -25,7 +27,7 @@ public class Class1251 extends Widget implements Class1253<Class120> {
       this.method5829(var3);
    }
 
-   public void method5829(Class4843<?> var1) {
+   public void method5829(IRecipe<?> var1) {
       this.method5832(3, 3, -1, var1, var1.method14969().iterator(), 0);
    }
 
@@ -69,7 +71,7 @@ public class Class1251 extends Widget implements Class1253<Class120> {
    }
 
    // $VF: synthetic method
-   public static Class4843 method5831(Class1251 var0) {
+   public static IRecipe method5831(Class1251 var0) {
       return var0.field6624;
    }
 }

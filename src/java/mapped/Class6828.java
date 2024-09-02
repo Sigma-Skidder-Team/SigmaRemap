@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector3d;
+
 public class Class6828 extends Class6829 {
    private static String[] field29704;
    private final Class1105 field29705;
@@ -25,10 +27,10 @@ public class Class6828 extends Class6829 {
          float var13 = (float)(this.field29711 * this.field29705.method3086(Attributes.MOVEMENT_SPEED));
          float var14 = MathHelper.lerp(0.125F, this.field29705.method2918(), var13);
          this.field29705.method3113(var14);
-         double var15 = Math.sin((double)(this.field29705.ticksExisted + this.field29705.method3205()) * 0.5) * 0.05;
+         double var15 = Math.sin((double)(this.field29705.ticksExisted + this.field29705.getEntityId()) * 0.5) * 0.05;
          double var17 = Math.cos((double)(this.field29705.rotationYaw * (float) (Math.PI / 180.0)));
          double var19 = Math.sin((double)(this.field29705.rotationYaw * (float) (Math.PI / 180.0)));
-         double var21 = Math.sin((double)(this.field29705.ticksExisted + this.field29705.method3205()) * 0.75) * 0.05;
+         double var21 = Math.sin((double)(this.field29705.ticksExisted + this.field29705.getEntityId()) * 0.75) * 0.05;
          this.field29705
             .method3434(this.field29705.method3433().method11339(var15 * var17, var21 * (var19 + var17) * 0.25 + (double)var14 * var8 * 0.1, var15 * var19));
          Class8092 var23 = this.field29705.method4227();

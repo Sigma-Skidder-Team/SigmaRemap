@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.module.impl.movement.LongJump;
 import com.mentalfrostbyte.jello.module.impl.player.NoFall;
 import mapped.*;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.BlockPos;
 
 public class NCPLongJump extends Module {
@@ -153,15 +154,15 @@ public class NCPLongJump extends Module {
 
                 mc.getConnection()
                         .sendPacket(
-                                new Class5605(mc.player.getPosX(), mc.player.getPosY() + 0.425, mc.player.getPosZ(), false)
+                                new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY() + 0.425, mc.player.getPosZ(), false)
                         );
                 mc.getConnection()
                         .sendPacket(
-                                new Class5605(mc.player.getPosX(), mc.player.getPosY() + 0.425 + 0.396, mc.player.getPosZ(), false)
+                                new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY() + 0.425 + 0.396, mc.player.getPosZ(), false)
                         );
                 mc.getConnection()
                         .sendPacket(
-                                new Class5605(
+                                new CPlayerPacket.PositionPacket(
                                         mc.player.getPosX(), mc.player.getPosY() + 0.425 + 0.396 - 0.122, mc.player.getPosZ(), false
                                 )
                         );

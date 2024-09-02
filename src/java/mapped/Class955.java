@@ -4,8 +4,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.Iterator;
 import java.util.List;
@@ -297,21 +299,21 @@ public class Class955 extends TileEntity implements Class935 {
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.field5361 = Class8354.method29285(var2.getCompound("blockState"));
-      this.field5362 = Direction.method546(var2.method122("facing"));
-      this.field5366 = var2.method124("progress");
+      this.field5362 = Direction.byIndex(var2.method122("facing"));
+      this.field5366 = var2.getFloat("progress");
       this.field5367 = this.field5366;
-      this.field5363 = var2.method132("extending");
-      this.field5364 = var2.method132("source");
+      this.field5363 = var2.getBoolean("extending");
+      this.field5364 = var2.getBoolean("source");
    }
 
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
       var1.put("blockState", Class8354.method29287(this.field5361));
-      var1.method102("facing", this.field5362.method533());
-      var1.method107("progress", this.field5367);
-      var1.method115("extending", this.field5363);
-      var1.method115("source", this.field5364);
+      var1.method102("facing", this.field5362.getIndex());
+      var1.putFloat("progress", this.field5367);
+      var1.putBoolean("extending", this.field5363);
+      var1.putBoolean("source", this.field5364);
       return var1;
    }
 

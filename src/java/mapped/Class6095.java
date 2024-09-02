@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.Random;
 
 public class Class6095 extends Class6069 {

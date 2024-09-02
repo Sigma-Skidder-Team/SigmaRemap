@@ -22,7 +22,7 @@ public class Class2620 extends Class2595 {
          if (!var3.isAlive()) {
             return false;
          } else {
-            return var3 instanceof PlayerEntity && ((PlayerEntity)var3).abilities.field29606 ? false : this.field16905.method4228() instanceof Class6841;
+            return var3 instanceof PlayerEntity && ((PlayerEntity)var3).abilities.disableDamage ? false : this.field16905.method4228() instanceof Class6841;
          }
       } else {
          return false;
@@ -40,7 +40,7 @@ public class Class2620 extends Class2595 {
       LivingEntity var3 = this.field16905.method4232();
       if (var3 != null) {
          if (var3.isAlive()) {
-            return var3 instanceof PlayerEntity && ((PlayerEntity)var3).abilities.field29606 ? false : --this.field16906 > 0;
+            return var3 instanceof PlayerEntity && ((PlayerEntity)var3).abilities.disableDamage ? false : --this.field16906 > 0;
          } else {
             return false;
          }

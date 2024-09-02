@@ -12,6 +12,7 @@ import mapped.*;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 
 public class AutoTools extends Module {
     public int field23511 = -1;

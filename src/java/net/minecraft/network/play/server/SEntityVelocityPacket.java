@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import mapped.MathHelper;
 import net.minecraft.network.PacketBuffer;
-import mapped.Vector3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
@@ -20,7 +20,7 @@ public class SEntityVelocityPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SEntityVelocityPacket(Entity var1) {
-      this(var1.method3205(), var1.method3433());
+      this(var1.getEntityId(), var1.method3433());
    }
 
    public SEntityVelocityPacket(int var1, Vector3d var2) {

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class7863 implements Class7864 {
    private final BlockPos field33675;

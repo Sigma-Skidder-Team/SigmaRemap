@@ -4,6 +4,7 @@ import com.google.gson.*;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntComparators;
 import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 
@@ -75,7 +76,7 @@ public final class Class120 implements Predicate<ItemStack> {
       var1.writeVarInt(this.field429.length);
 
       for (int var4 = 0; var4 < this.field429.length; var4++) {
-         var1.method35724(this.field429[var4]);
+         var1.writeItemStack(this.field429[var4]);
       }
    }
 
@@ -120,7 +121,7 @@ public final class Class120 implements Predicate<ItemStack> {
 
    public static Class120 method343(PacketBuffer var0) {
       int var3 = var0.readVarInt();
-      return method338(Stream.<Class4826>generate(() -> new Class4827(var0.method35726())).limit(var3));
+      return method338(Stream.<Class4826>generate(() -> new Class4827(var0.readItemStack())).limit(var3));
    }
 
    public static Class120 method344(JsonElement var0) {

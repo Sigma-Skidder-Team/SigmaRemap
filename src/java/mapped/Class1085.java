@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
 
 public class Class1085 extends Class1082 {
    private static String[] field5950;

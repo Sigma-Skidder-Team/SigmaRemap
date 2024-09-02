@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 
@@ -23,7 +24,7 @@ public class ItemColors {
             return -1;
          } else {
             CompoundNBT var4 = var0x.method32145("Explosion");
-            int[] var5x = var4 != null && var4.method119("Colors", 11) ? var4.method128("Colors") : null;
+            int[] var5x = var4 != null && var4.contains("Colors", 11) ? var4.method128("Colors") : null;
             if (var5x != null && var5x.length != 0) {
                if (var5x.length == 1) {
                   return var5x[0];

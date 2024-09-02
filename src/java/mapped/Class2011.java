@@ -7,6 +7,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.*;
 import java.util.concurrent.CancellationException;
@@ -73,7 +74,7 @@ public class Class2011 extends Class2009 {
 
    private Set<TileEntity> method8532(float var1, float var2, float var3, Class7457 var4, Class7828 var5) {
       boolean var8 = true;
-      BlockPos var9 = Class8066.method27754(this.field13078).method8353();
+      BlockPos var9 = Class8066.method27754(this.field13078).toImmutable();
       BlockPos var10 = var9.method8336(15, 15, 15);
       Class7212 var11 = new Class7212();
       HashSet var12 = Sets.newHashSet();

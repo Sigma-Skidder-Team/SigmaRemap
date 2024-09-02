@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.module.impl.render.XRay;
 import it.unimi.dsi.fastutil.objects.ObjectArraySet;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 
 import java.util.BitSet;
 import java.util.List;

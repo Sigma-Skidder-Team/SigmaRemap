@@ -3,7 +3,9 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class3679 extends Class3676<LivingEntity> {
    private static String[] field19691;

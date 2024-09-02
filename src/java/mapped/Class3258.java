@@ -2,9 +2,11 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,7 +28,7 @@ public class Class3258 extends Item {
          var2.method3095(var3, ItemStack.EMPTY);
       }
 
-      if (var7 != null && var7.method119("Recipes", 9)) {
+      if (var7 != null && var7.contains("Recipes", 9)) {
          if (!var1.isRemote) {
             ListNBT var8 = var7.method131("Recipes", 8);
             ArrayList var9 = Lists.newArrayList();

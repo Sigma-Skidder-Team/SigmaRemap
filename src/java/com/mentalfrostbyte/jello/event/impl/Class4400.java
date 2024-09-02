@@ -1,8 +1,8 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 import com.mentalfrostbyte.jello.event.CancellableEvent;
-import mapped.Class2205;
-import mapped.ItemStack;
+import net.minecraft.util.HandSide;
+import net.minecraft.item.ItemStack;
 import mapped.MatrixStack;
 
 public class Class4400 extends CancellableEvent {
@@ -11,11 +11,11 @@ public class Class4400 extends CancellableEvent {
     private boolean field21505;
     private final float field21506;
     private final float field21507;
-    private final Class2205 field21508;
+    private final HandSide field21508;
     private final ItemStack field21509;
     private final MatrixStack field21510;
 
-    public Class4400(boolean var1, float var2, float var3, Class2205 var4, ItemStack var5, MatrixStack var6) {
+    public Class4400(boolean var1, float var2, float var3, HandSide var4, ItemStack var5, MatrixStack var6) {
         this.field21504 = var1;
         this.field21506 = var2;
         this.field21507 = var3;
@@ -37,7 +37,7 @@ public class Class4400 extends CancellableEvent {
         return this.field21504;
     }
 
-    public Class2205 method13927() {
+    public HandSide method13927() {
         return this.field21508;
     }
 

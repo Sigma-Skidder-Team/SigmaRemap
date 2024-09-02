@@ -168,8 +168,8 @@ public class MouseHelper {
                         if (!this.field44285.player.isSpectator()) {
                            this.field44285.player.inventory.method4039((double)var16);
                         } else if (!this.field44285.ingameGUI.getSpectatorGui().method5725()) {
-                           float var17 = MathHelper.clamp(this.field44285.player.abilities.method20714() + var16 * 0.005F, 0.0F, 0.2F);
-                           this.field44285.player.abilities.method20715(var17);
+                           float var17 = MathHelper.clamp(this.field44285.player.abilities.getFlySpeed() + var16 * 0.005F, 0.0F, 0.2F);
+                           this.field44285.player.abilities.setFlySpeed(var17);
                         } else {
                            this.field44285.ingameGUI.getSpectatorGui().method5726((double)(-var16));
                         }

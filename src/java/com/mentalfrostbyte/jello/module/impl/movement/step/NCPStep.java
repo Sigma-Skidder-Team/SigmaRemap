@@ -56,7 +56,7 @@ public class NCPStep extends Module {
                                 this.field23992 = var24 + (1.0F - var24) * this.getNumberValueBySettingName("Timer");
 
                                 for (double var36 : var21) {
-                                    this.field23993.add(new Class5605(var6, var8 + var36, var10, false));
+                                    this.field23993.add(new CPlayerPacket.PositionPacket(var6, var8 + var36, var10, false));
                                 }
                             } else {
                                 double[] var20 = new double[]{0.425, 0.821, 0.699, 0.599, 1.022, 1.372, 1.652, 1.869};
@@ -65,7 +65,7 @@ public class NCPStep extends Module {
 
                                 for (double var35 : var20) {
                                     if (var35 - 0.027 <= var4) {
-                                        this.field23993.add(new Class5605(var6, var8 + var35, var10, false));
+                                        this.field23993.add(new CPlayerPacket.PositionPacket(var6, var8 + var35, var10, false));
                                     }
                                 }
                             }
@@ -75,7 +75,7 @@ public class NCPStep extends Module {
                             this.field23992 = var22 + (1.0F - var22) * this.getNumberValueBySettingName("Timer");
 
                             for (double var34 : var19) {
-                                this.field23993.add(new Class5605(var6, var8 + var34, var10, false));
+                                this.field23993.add(new CPlayerPacket.PositionPacket(var6, var8 + var34, var10, false));
                             }
                         }
                     } else {
@@ -84,7 +84,7 @@ public class NCPStep extends Module {
                         this.field23992 = var13 + (1.0F - var13) * this.getNumberValueBySettingName("Timer");
 
                         for (double var17 : var12) {
-                            this.field23993.add(new Class5605(var6, var8 + var17, var10, false));
+                            this.field23993.add(new CPlayerPacket.PositionPacket(var6, var8 + var17, var10, false));
                         }
                     }
 

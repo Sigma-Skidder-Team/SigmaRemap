@@ -2,7 +2,9 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class4486 extends Class4457 {
    private final Block field21682;

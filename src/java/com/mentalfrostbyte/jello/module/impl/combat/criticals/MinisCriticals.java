@@ -7,8 +7,8 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import mapped.BooleanSetting;
-import mapped.Class5605;
 import mapped.ModeSetting;
+import net.minecraft.network.play.client.CPlayerPacket;
 
 public class MinisCriticals extends Module {
     public MinisCriticals() {
@@ -22,7 +22,7 @@ public class MinisCriticals extends Module {
         if (this.isEnabled()) {
             if (KillAura.field23937) {
                 mc.getConnection()
-                        .sendPacket(new Class5605(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ(), true));
+                        .sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ(), true));
             }
         }
     }

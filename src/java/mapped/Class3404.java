@@ -2,7 +2,11 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Collections;
 import java.util.List;

@@ -9,6 +9,8 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -80,8 +82,8 @@ public class Class1110 extends Class1111 implements Class1008 {
    public void tick() {
       super.tick();
       if (this.world.isRemote) {
-         float var3 = MathHelper.cos((float)(this.method3205() * 3 + this.ticksExisted) * 0.13F + (float) Math.PI);
-         float var4 = MathHelper.cos((float)(this.method3205() * 3 + this.ticksExisted + 1) * 0.13F + (float) Math.PI);
+         float var3 = MathHelper.cos((float)(this.getEntityId() * 3 + this.ticksExisted) * 0.13F + (float) Math.PI);
+         float var4 = MathHelper.cos((float)(this.getEntityId() * 3 + this.ticksExisted + 1) * 0.13F + (float) Math.PI);
          if (var3 > 0.0F && var4 <= 0.0F) {
             this.world
                .method6745(

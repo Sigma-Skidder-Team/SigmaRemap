@@ -1,7 +1,7 @@
 package net.minecraft.network.play.client;
 
 import mapped.CClientStatusPacketState;
-import mapped.IServerPlayNetHandler;
+import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 
@@ -20,12 +20,12 @@ public class CClientStatusPacket implements Packet<IServerPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24691 = var1.<CClientStatusPacketState>method35712(CClientStatusPacketState.class);
+      this.field24691 = var1.<CClientStatusPacketState>readEnumValue(CClientStatusPacketState.class);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35713(this.field24691);
+      var1.writeEnumValue(this.field24691);
    }
 
    public void processPacket(IServerPlayNetHandler var1) {

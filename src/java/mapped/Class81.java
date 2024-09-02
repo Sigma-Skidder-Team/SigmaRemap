@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 public enum Class81 {
    field191(Direction.DOWN, false),
    field192(Direction.field673, false),
@@ -20,7 +22,7 @@ public enum Class81 {
    };
 
    private Class81(Direction var3, boolean var4) {
-      this.field203 = var3.method533() + (!var4 ? 0 : Direction.values().length);
+      this.field203 = var3.getIndex() + (!var4 ? 0 : Direction.values().length);
    }
 
    // $VF: synthetic method

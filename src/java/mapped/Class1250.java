@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class Class1250 extends Class1249 {
       List<RecipeList> var5 = var4.method21387(this.field6621);
       if (var1.player.field4905 instanceof Class5828) {
          for (RecipeList var7 : var5) {
-            for (Class4843 var9 : var7.method34893(var4.method21370((Class5828<?>)var1.player.field4905))) {
+            for (IRecipe var9 : var7.method34893(var4.method21370((Class5828<?>)var1.player.field4905))) {
                if (var4.method21364(var9)) {
                   this.field6622 = 15.0F;
                   return;

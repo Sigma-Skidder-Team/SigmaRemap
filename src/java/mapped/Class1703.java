@@ -8,6 +8,8 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.io.File;
 import java.io.IOException;

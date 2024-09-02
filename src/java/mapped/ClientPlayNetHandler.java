@@ -34,6 +34,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
@@ -42,13 +44,16 @@ import net.minecraft.network.play.server.*;
 import net.minecraft.realms.RealmsScreen;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -139,7 +144,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23272.playerController.method23129(var1.method17290());
       this.field23272.playerController.method23128(var1.method17291());
       this.field23272.gameSettings.method37149();
-      this.field23269.sendPacket(new CCustomPayloadPacket(CCustomPayloadPacket.field24523, new PacketBuffer(Unpooled.buffer()).writeString(ClientBrandRetriever.getClientModName())));
+      this.field23269.sendPacket(new CCustomPayloadPacket(CCustomPayloadPacket.BRAND, new PacketBuffer(Unpooled.buffer()).writeString(ClientBrandRetriever.getClientModName())));
       this.field23272.getMinecraftGame().method28908();
    }
 
@@ -299,7 +304,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                                    var11 = new LeashKnotEntity(this.field23273, new BlockPos(var4, var6, var8));
                                                 }
                                              } else {
-                                                var11 = new ItemFrameEntity(this.field23273, new BlockPos(var4, var6, var8), Direction.method546(var1.method17267()));
+                                                var11 = new ItemFrameEntity(this.field23273, new BlockPos(var4, var6, var8), Direction.byIndex(var1.method17267()));
                                              }
                                           } else {
                                              var11 = new Class883(this.field23273, var4, var6, var8, var1.method17261(), var1.method17262(), var1.method17263());
@@ -567,7 +572,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
       var4.method3269(var11, var15, var19, var21, var22);
       this.field23269.sendPacket(new CConfirmTeleportPacket(var1.method17219()));
-      this.field23269.sendPacket(new Class5604(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch, false));
+      this.field23269.sendPacket(new CPlayerPacket.PositionRotationPacket(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch, false));
       if (!this.field23275) {
          this.field23275 = true;
          this.field23272.displayGuiScreen((Screen)null);
@@ -882,7 +887,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       RegistryKey var4 = var1.method17433();
       DimensionType var5 = var1.method17432();
       ClientPlayerEntity var6 = this.field23272.player;
-      int var7 = var6.method3205();
+      int var7 = var6.getEntityId();
       this.field23275 = false;
       if (var4 != var6.world.getDimensionKey()) {
          Class6886 var8 = this.field23273.method6805();
@@ -1362,9 +1367,9 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          case 3:
             for (ResourceLocation var7 : var1.method17499()) {
                this.field23284.method1035(var7).ifPresent(var2 -> {
-                  var4.method21358((Class4843<?>)var2);
-                  var4.method21366((Class4843<?>)var2);
-                  Class7602.method24901(this.field23272.getToastGui(), (Class4843<?>)var2);
+                  var4.method21358((IRecipe<?>)var2);
+                  var4.method21366((IRecipe<?>)var2);
+                  Class7602.method24901(this.field23272.getToastGui(), (IRecipe<?>)var2);
                });
             }
       }
@@ -1531,12 +1536,12 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handlePlayerAbilities(SPlayerAbilitiesPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.player;
-      var4.abilities.field29607 = var1.method17603();
+      var4.abilities.isFlying = var1.method17603();
       var4.abilities.isCreativeMode = var1.method17605();
-      var4.abilities.field29606 = var1.method17602();
+      var4.abilities.disableDamage = var1.method17602();
       var4.abilities.allowFlying = var1.method17604();
-      var4.abilities.method20715(var1.method17606());
-      var4.abilities.method20717(var1.method17607());
+      var4.abilities.setFlySpeed(var1.method17606());
+      var4.abilities.setWalkSpeed(var1.method17607());
    }
 
    @Override
@@ -1598,7 +1603,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                File var7 = new File(this.field23272.gameDir, "saves");
                File var8 = new File(var7, var6);
                if (var8.isFile()) {
-                  this.method15788(Class2066.field13467);
+                  this.method15788(CResourcePackStatusPacket.Action.ACCEPTED);
                   CompletableFuture var9 = this.field23272.getPackFinder().method25153(var8, IPackNameDecorator.WORLD);
                   this.method15787(var9);
                   return;
@@ -1606,14 +1611,14 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             } catch (UnsupportedEncodingException var10) {
             }
 
-            this.method15788(Class2066.field13466);
+            this.method15788(CResourcePackStatusPacket.Action.FAILED_DOWNLOAD);
          } else {
             ServerData var11 = this.field23272.getCurrentServerData();
             if (var11 != null && var11.method25577() == Class2168.field14234) {
-               this.method15788(Class2066.field13467);
+               this.method15788(CResourcePackStatusPacket.Action.ACCEPTED);
                this.method15787(this.field23272.getPackFinder().method25148(var4, var5));
             } else if (var11 != null && var11.method25577() != Class2168.field14236) {
-               this.method15788(Class2066.field13465);
+               this.method15788(CResourcePackStatusPacket.Action.DECLINED);
             } else {
                this.field23272.execute(() -> this.field23272.displayGuiScreen(new ConfirmScreen(var3 -> {
                      this.field23272 = Minecraft.getInstance();
@@ -1623,13 +1628,13 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                            var6x.method25578(Class2168.field14235);
                         }
 
-                        this.method15788(Class2066.field13465);
+                        this.method15788(CResourcePackStatusPacket.Action.DECLINED);
                      } else {
                         if (var6x != null) {
                            var6x.method25578(Class2168.field14234);
                         }
 
-                        this.method15788(Class2066.field13467);
+                        this.method15788(CResourcePackStatusPacket.Action.ACCEPTED);
                         this.method15787(this.field23272.getPackFinder().method25148(var4, var5));
                      }
 
@@ -1654,19 +1659,19 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             return true;
          }
       } catch (URISyntaxException var7) {
-         this.method15788(Class2066.field13466);
+         this.method15788(CResourcePackStatusPacket.Action.FAILED_DOWNLOAD);
          return false;
       }
    }
 
    private void method15787(CompletableFuture<?> var1) {
-      var1.thenRun(() -> this.method15788(Class2066.field13464)).exceptionally(var1x -> {
-         this.method15788(Class2066.field13466);
+      var1.thenRun(() -> this.method15788(CResourcePackStatusPacket.Action.SUCCESSFULLY_LOADED)).exceptionally(var1x -> {
+         this.method15788(CResourcePackStatusPacket.Action.FAILED_DOWNLOAD);
          return null;
       });
    }
 
-   private void method15788(Class2066 var1) {
+   private void method15788(CResourcePackStatusPacket.Action var1) {
       this.field23269.sendPacket(new CResourcePackStatusPacket(var1));
    }
 
@@ -1805,7 +1810,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             double var16 = var5.readDouble();
             double var18 = var5.readDouble();
             Class2959 var83 = new Class2959(var71, var16, var18);
-            UUID var85 = var5.method35717();
+            UUID var85 = var5.readUniqueId();
             int var20 = var5.readInt();
             String var21 = var5.method35727();
             String var22 = var5.method35727();
@@ -1871,7 +1876,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             double var87 = var5.readDouble();
             double var88 = var5.readDouble();
             Class2959 var84 = new Class2959(var72, var87, var88);
-            UUID var86 = var5.method35717();
+            UUID var86 = var5.readUniqueId();
             int var89 = var5.readInt();
             boolean var90 = var5.readBoolean();
             BlockPos var91 = null;
@@ -2104,7 +2109,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          this.field23284.method1035(var1.method17563()).ifPresent(var2 -> {
             if (this.field23272.currentScreen instanceof Class854) {
                Class1254 var5 = ((Class854)this.field23272.currentScreen).method2632();
-               var5.method5858((Class4843<?>)var2, var4.field25468);
+               var5.method5858((IRecipe<?>)var2, var4.field25468);
             }
          });
       }

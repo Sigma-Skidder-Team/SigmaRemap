@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
 
@@ -23,7 +24,7 @@ public class Class4181 extends Class4180 {
    public Class4181(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33478, var2);
       this.field20456 = new ResourceLocation(var2.method126("Template"));
-      this.field20457 = var2.method132("isBeached");
+      this.field20457 = var2.getBoolean("isBeached");
       this.field20447 = Class80.valueOf(var2.method126("Rot"));
       this.method12945(var1);
    }
@@ -32,7 +33,7 @@ public class Class4181 extends Class4180 {
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method109("Template", this.field20456.toString());
-      var1.method115("isBeached", this.field20457);
+      var1.putBoolean("isBeached", this.field20457);
       var1.method109("Rot", this.field20447.name());
    }
 
@@ -62,7 +63,7 @@ public class Class4181 extends Class4180 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       int var10 = 256;
       int var11 = 0;
       BlockPos var12 = this.field20453.method32886();

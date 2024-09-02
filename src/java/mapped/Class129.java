@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 
 import java.util.Set;
@@ -32,7 +33,7 @@ public class Class129 extends Class128 {
       if (var5 != null) {
          CompoundNBT var6 = var1.getOrCreateTag();
          CompoundNBT var7;
-         if (!var6.method119("BlockStateTag", 10)) {
+         if (!var6.contains("BlockStateTag", 10)) {
             var7 = new CompoundNBT();
             var6.put("BlockStateTag", var7);
          } else {

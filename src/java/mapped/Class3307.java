@@ -2,8 +2,10 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
 
 public class Class3307 extends Item {
    private static String[] field18814;

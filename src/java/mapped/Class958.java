@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.BlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
@@ -35,7 +36,7 @@ public class Class958 extends TileEntity implements INameable {
    public static ListNBT method3886(ItemStack var0) {
       ListNBT var3 = null;
       CompoundNBT var4 = var0.method32145("BlockEntityTag");
-      if (var4 != null && var4.method119("Patterns", 9)) {
+      if (var4 != null && var4.contains("Patterns", 9)) {
          var3 = var4.method131("Patterns", 10).method79();
       }
 
@@ -82,7 +83,7 @@ public class Class958 extends TileEntity implements INameable {
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      if (var2.method119("CustomName", 8)) {
+      if (var2.contains("CustomName", 8)) {
          this.field5376 = ITextComponent$Serializer.func_240643_a_(var2.method126("CustomName"));
       }
 
@@ -140,7 +141,7 @@ public class Class958 extends TileEntity implements INameable {
 
    public static void method3892(ItemStack var0) {
       CompoundNBT var3 = var0.method32145("BlockEntityTag");
-      if (var3 != null && var3.method119("Patterns", 9)) {
+      if (var3 != null && var3.contains("Patterns", 9)) {
          ListNBT var4 = var3.method131("Patterns", 10);
          if (!var4.isEmpty()) {
             var4.remove(var4.size() - 1);

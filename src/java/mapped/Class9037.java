@@ -24,6 +24,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.Style;
@@ -32,6 +33,7 @@ import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$Action;
+import net.minecraft.world.server.ServerWorld;
 import org.apache.commons.io.IOUtils;
 
 public class Class9037 {

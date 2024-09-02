@@ -5,6 +5,8 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.Util;
+import net.minecraft.inventory.container.ClickType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -306,21 +308,21 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                         }
                      } else {
                         if (this.mc.gameSettings.keyBindPickBlock.matchesMouseKey(var5)) {
-                           this.method2626(var9, var15, var5, Class2259.field14697);
+                           this.method2626(var9, var15, var5, ClickType.field14697);
                         } else {
                            boolean var16 = var15 != -999
                               && (
                                  InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 340)
                                     || InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 344)
                               );
-                           Class2259 var17 = Class2259.field14694;
+                           ClickType var17 = ClickType.field14694;
                            if (!var16) {
                               if (var15 == -999) {
-                                 var17 = Class2259.field14698;
+                                 var17 = ClickType.field14698;
                               }
                            } else {
                               this.field4752 = var9 != null && var9.method18266() ? var9.method18265().copy() : ItemStack.EMPTY;
-                              var17 = Class2259.field14695;
+                              var17 = ClickType.field14695;
                            }
 
                            this.method2626(var9, var15, var5, var17);
@@ -349,13 +351,13 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    private void method2622(int var1) {
       if (this.field4729 != null && this.mc.player.inventory.method4057().isEmpty()) {
          if (this.mc.gameSettings.keyBindSwapHands.matchesMouseKey(var1)) {
-            this.method2626(this.field4729, this.field4729.field25579, 40, Class2259.field14696);
+            this.method2626(this.field4729, this.field4729.field25579, 40, ClickType.field14696);
             return;
          }
 
          for (int var4 = 0; var4 < 9; var4++) {
             if (this.mc.gameSettings.keyBindsHotbar[var4].matchesMouseKey(var1)) {
-               this.method2626(this.field4729, this.field4729.field25579, var4, Class2259.field14696);
+               this.method2626(this.field4729, this.field4729.field25579, var4, ClickType.field14696);
             }
          }
       }
@@ -378,9 +380,9 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                      this.field4732 = var12;
                      this.field4742 = var14;
                   } else if (var14 - this.field4742 > 500L) {
-                     this.method2626(this.field4730, this.field4730.field25579, 0, Class2259.field14694);
-                     this.method2626(var12, var12.field25579, 1, Class2259.field14694);
-                     this.method2626(this.field4730, this.field4730.field25579, 0, Class2259.field14694);
+                     this.method2626(this.field4730, this.field4730.field25579, 0, ClickType.field14694);
+                     this.method2626(var12, var12.field25579, 1, ClickType.field14694);
+                     this.method2626(this.field4730, this.field4730.field25579, 0, ClickType.field14694);
                      this.field4742 = var14 + 750L;
                      this.field4737.method32182(1);
                   }
@@ -420,7 +422,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
       if (this.field4751 && var8 != null && var5 == 0 && this.field4727.method18111(ItemStack.EMPTY, var8)) {
          if (!method2476()) {
-            this.method2626(var8, var12, var5, Class2259.field14700);
+            this.method2626(var8, var12, var5, ClickType.field14700);
          } else if (!this.field4752.isEmpty()) {
             for (Class5839 var18 : this.field4727.field25468) {
                if (var18 != null
@@ -428,7 +430,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                   && var18.method18266()
                   && var18.field25578 == var8.field25578
                   && Class5812.method18148(var18, this.field4752, true)) {
-                  this.method2626(var18, var18.field25579, var5, Class2259.field14695);
+                  this.method2626(var18, var18.field25579, var5, ClickType.field14695);
                }
             }
          }
@@ -456,10 +458,10 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
                boolean var16 = Class5812.method18148(var8, this.field4737, false);
                if (var12 != -1 && !this.field4737.isEmpty() && var16) {
-                  this.method2626(this.field4730, this.field4730.field25579, var5, Class2259.field14694);
-                  this.method2626(var8, var12, 0, Class2259.field14694);
+                  this.method2626(this.field4730, this.field4730.field25579, var5, ClickType.field14694);
+                  this.method2626(var8, var12, 0, ClickType.field14694);
                   if (!this.mc.player.inventory.method4057().isEmpty()) {
-                     this.method2626(this.field4730, this.field4730.field25579, var5, Class2259.field14694);
+                     this.method2626(this.field4730, this.field4730.field25579, var5, ClickType.field14694);
                      this.field4738 = MathHelper.floor(var1 - (double)var9);
                      this.field4739 = MathHelper.floor(var3 - (double)var10);
                      this.field4731 = this.field4730;
@@ -480,13 +482,13 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                this.field4730 = null;
             }
          } else if (this.field4744 && !this.field4743.isEmpty()) {
-            this.method2626((Class5839)null, -999, Class5812.method18145(0, this.field4745), Class2259.field14699);
+            this.method2626((Class5839)null, -999, Class5812.method18145(0, this.field4745), ClickType.field14699);
 
             for (Class5839 var14 : this.field4743) {
-               this.method2626(var14, var14.field25579, Class5812.method18145(1, this.field4745), Class2259.field14699);
+               this.method2626(var14, var14.field25579, Class5812.method18145(1, this.field4745), ClickType.field14699);
             }
 
-            this.method2626((Class5839)null, -999, Class5812.method18145(2, this.field4745), Class2259.field14699);
+            this.method2626((Class5839)null, -999, Class5812.method18145(2, this.field4745), ClickType.field14699);
          } else if (!this.mc.player.inventory.method4057().isEmpty()) {
             if (!this.mc.gameSettings.keyBindPickBlock.matchesMouseKey(var5)) {
                boolean var13 = var12 != -999
@@ -498,9 +500,9 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                   this.field4752 = var8 != null && var8.method18266() ? var8.method18265().copy() : ItemStack.EMPTY;
                }
 
-               this.method2626(var8, var12, var5, !var13 ? Class2259.field14694 : Class2259.field14695);
+               this.method2626(var8, var12, var5, !var13 ? ClickType.field14694 : ClickType.field14695);
             } else {
-               this.method2626(var8, var12, var5, Class2259.field14697);
+               this.method2626(var8, var12, var5, ClickType.field14697);
             }
          }
       }
@@ -525,7 +527,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       return var5 >= (double)(var1 - 1) && var5 < (double)(var1 + var3 + 1) && var7 >= (double)(var2 - 1) && var7 < (double)(var2 + var4 + 1);
    }
 
-   public void method2626(Class5839 var1, int var2, int var3, Class2259 var4) {
+   public void method2626(Class5839 var1, int var2, int var3, ClickType var4) {
       if (var1 != null) {
          var2 = var1.field25579;
       }
@@ -541,10 +543,10 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
             if (this.field4729 != null && this.field4729.method18266()) {
                if (!this.mc.gameSettings.keyBindPickBlock.matchesKey(var1, var2)) {
                   if (this.mc.gameSettings.keyBindDrop.matchesKey(var1, var2)) {
-                     this.method2626(this.field4729, this.field4729.field25579, ! hasControlDown() ? 0 : 1, Class2259.field14698);
+                     this.method2626(this.field4729, this.field4729.field25579, ! hasControlDown() ? 0 : 1, ClickType.field14698);
                   }
                } else {
-                  this.method2626(this.field4729, this.field4729.field25579, 0, Class2259.field14697);
+                  this.method2626(this.field4729, this.field4729.field25579, 0, ClickType.field14697);
                }
             }
 
@@ -561,13 +563,13 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    public boolean method2627(int var1, int var2) {
       if (this.mc.player.inventory.method4057().isEmpty() && this.field4729 != null) {
          if (this.mc.gameSettings.keyBindSwapHands.matchesKey(var1, var2)) {
-            this.method2626(this.field4729, this.field4729.field25579, 40, Class2259.field14696);
+            this.method2626(this.field4729, this.field4729.field25579, 40, ClickType.field14696);
             return true;
          }
 
          for (int var5 = 0; var5 < 9; var5++) {
             if (this.mc.gameSettings.keyBindsHotbar[var5].matchesKey(var1, var2)) {
-               this.method2626(this.field4729, this.field4729.field25579, var5, Class2259.field14696);
+               this.method2626(this.field4729, this.field4729.field25579, var5, ClickType.field14696);
                return true;
             }
          }

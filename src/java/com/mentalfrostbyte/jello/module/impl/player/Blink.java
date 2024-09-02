@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.*;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.ArrayList;
 import java.util.List;

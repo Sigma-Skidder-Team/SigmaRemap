@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.world.server.ServerWorld;
 
 public class Class3691 extends Class3676<Class1006> {
    private static String[] field19718;

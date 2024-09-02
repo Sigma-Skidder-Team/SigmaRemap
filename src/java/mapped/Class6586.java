@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Direction;
+
 import java.util.Random;
 
 public class Class6586 implements Class6580 {

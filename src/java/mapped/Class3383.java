@@ -3,7 +3,10 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.block.BlockState;
 import net.minecraft.particles.RedstoneParticleData;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 import java.util.Map;
@@ -102,7 +105,7 @@ public class Class3383 extends Class3381 {
    private static boolean method11982(World var0, BlockPos var1, boolean var2) {
       List var5 = field18988.computeIfAbsent(var0, var0x -> Lists.newArrayList());
       if (var2) {
-         var5.add(new Class9018(var1.method8353(), var0.method6783()));
+         var5.add(new Class9018(var1.toImmutable(), var0.method6783()));
       }
 
       int var6 = 0;

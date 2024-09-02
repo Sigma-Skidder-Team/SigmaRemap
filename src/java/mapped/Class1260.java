@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import it.unimi.dsi.fastutil.ints.IntListIterator;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.play.server.SPlaceGhostRecipePacket;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,7 +23,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
       this.field6661 = var1;
    }
 
-   public void method5868(ServerPlayerEntity var1, Class4843<C> var2, boolean var3) {
+   public void method5868(ServerPlayerEntity var1, IRecipe<C> var2, boolean var3) {
       if (var2 != null && var1.method2810().method21360(var2)) {
          this.field6660 = var1.inventory;
          if (this.method5874() || var1.isCreative()) {
@@ -68,7 +70,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
       }
    }
 
-   public void method5871(Class4843<C> var1, boolean var2) {
+   public void method5871(IRecipe<C> var1, boolean var2) {
       boolean var5 = this.field6661.method18222(var1);
       int var6 = this.field6659.method19125(var1, (IntList)null);
       if (var5) {

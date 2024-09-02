@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class Cubecraft2Fly extends PremiumModule {
@@ -52,7 +53,7 @@ public class Cubecraft2Fly extends PremiumModule {
             double var3 = mc.player.getPosX();
             double var5 = mc.player.getPosY();
             double var7 = mc.player.getPosZ();
-            mc.getConnection().sendPacket(new Class5605(var3, -150.0, var7, false));
+            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3, -150.0, var7, false));
             Class9567.method37090(0.0);
             ColorUtils.method17725(0.0);
             this.field23696 = -3;

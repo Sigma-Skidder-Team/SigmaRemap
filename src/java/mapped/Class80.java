@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Direction;
 
 import java.util.ArrayList;
 import java.util.Collections;

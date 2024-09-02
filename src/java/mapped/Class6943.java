@@ -5,6 +5,9 @@ import com.google.common.collect.ImmutableList.Builder;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.util.Supplier;
@@ -14,8 +17,8 @@ public class Class6943 extends Class6941 {
    private Map<Class1896, List<RecipeList>> field30094 = ImmutableMap.of();
    private List<RecipeList> field30095 = ImmutableList.of();
 
-   public void method21383(Iterable<Class4843<?>> var1) {
-      Map<Class1896, List<List<Class4843<?>>>> var4 = method21384(var1);
+   public void method21383(Iterable<IRecipe<?>> var1) {
+      Map<Class1896, List<List<IRecipe<?>>>> var4 = method21384(var1);
       Map<Class1896, ImmutableList<RecipeList>> var5 = Maps.newHashMap();
       Builder<RecipeList> var6 = ImmutableList.builder();
       var4.forEach((var2, var3) -> {
@@ -34,16 +37,16 @@ public class Class6943 extends Class6941 {
       this.field30095 = var6.build();
    }
 
-   private static Map<Class1896, List<List<Class4843<?>>>> method21384(Iterable<Class4843<?>> var0) {
-      Map<Class1896, List<List<Class4843<?>>>> var3 = Maps.newHashMap();
-      Table<Class1896, String, List<Class4843<?>>> var4 = HashBasedTable.create();
+   private static Map<Class1896, List<List<IRecipe<?>>>> method21384(Iterable<IRecipe<?>> var0) {
+      Map<Class1896, List<List<IRecipe<?>>>> var3 = Maps.newHashMap();
+      Table<Class1896, String, List<IRecipe<?>>> var4 = HashBasedTable.create();
 
-      for (Class4843<?> var6 : var0) {
+      for (IRecipe<?> var6 : var0) {
          if (!var6.method14965()) {
             Class1896 var7 = method21385(var6);
             String var8 = var6.method14970();
             if (!var8.isEmpty()) {
-               List<Class4843<?>> var9 = var4.get(var7, var8);
+               List<IRecipe<?>> var9 = var4.get(var7, var8);
                if (var9 == null) {
                   var9 = Lists.newArrayList();
                   var4.put(var7, var8, var9);
@@ -60,7 +63,7 @@ public class Class6943 extends Class6941 {
       return var3;
    }
 
-   private static Class1896 method21385(Class4843<?> var0) {
+   private static Class1896 method21385(IRecipe<?> var0) {
       Class7207 var3 = var0.method14967();
       if (var3 != Class7207.field30935) {
          if (var3 != Class7207.field30936) {
@@ -70,7 +73,7 @@ public class Class6943 extends Class6941 {
                      if (var3 != Class7207.field30939) {
                         if (var3 != Class7207.field30941) {
                            field30093.warn(
-                              "Unknown recipe category: {}/{}", new Supplier[]{() -> Registry.field16085.getKey(var0.method14967()), var0::method14964}
+                              "Unknown recipe category: {}/{}", new Supplier[]{() -> Registry.field16085.getKey(var0.method14967()), var0::getId}
                            );
                            return Class1896.field11130;
                         } else {

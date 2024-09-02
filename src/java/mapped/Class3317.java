@@ -3,7 +3,9 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
+import net.minecraft.world.World;
 
 public class Class3317<T extends Entity & Class1071> extends Item {
    private static String[] field18825;

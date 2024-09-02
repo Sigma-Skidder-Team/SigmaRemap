@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 
@@ -28,7 +29,7 @@ public class Class6507 implements Class6504<Class4852> {
          var8.set(var9, Class120.method343(var2));
       }
 
-      ItemStack var10 = var2.method35726();
+      ItemStack var10 = var2.readItemStack();
       return new Class4852(var1, var7, var5, var6, var8, var10);
    }
 
@@ -41,6 +42,6 @@ public class Class6507 implements Class6504<Class4852> {
          var6.method335(var1);
       }
 
-      var1.method35724(Class4852.method14996(var2));
+      var1.writeItemStack(Class4852.method14996(var2));
    }
 }

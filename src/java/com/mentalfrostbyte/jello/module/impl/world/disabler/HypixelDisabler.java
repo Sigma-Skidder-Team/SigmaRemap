@@ -10,7 +10,6 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import mapped.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
@@ -36,8 +35,8 @@ public class HypixelDisabler extends Module {
             double var5 = mc.player.getPosY();
             double var7 = mc.player.getPosZ();
             this.field23984 = false;
-            mc.getConnection().sendPacket(new Class5605(var3, var5 + 0.2, var7, false));
-            mc.getConnection().sendPacket(new Class5605(var3, var5 + 0.1, var7, false));
+            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3, var5 + 0.2, var7, false));
+            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3, var5 + 0.1, var7, false));
             this.field23984 = true;
             this.field23985.method27120();
             this.field23985.start();
@@ -140,7 +139,7 @@ public class HypixelDisabler extends Module {
                         SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();
                         var1.method13900(true);
                         mc.getConnection()
-                                .sendPacket(new Class5604(var4.field24297, var4.field24298, var4.field24299, var4.field24300, var4.field24301, false));
+                                .sendPacket(new CPlayerPacket.PositionRotationPacket(var4.field24297, var4.field24298, var4.field24299, var4.field24300, var4.field24301, false));
                         int var5 = this.field23983.size();
 
                         for (int var6 = 0; var6 < var5; var6++) {

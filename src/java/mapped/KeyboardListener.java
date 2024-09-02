@@ -16,6 +16,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -228,7 +230,7 @@ public class KeyboardListener {
                ResourceLocation var9 = Registry.ENTITY_TYPE.getKey(var8.getType());
                if (var1) {
                   if (var2) {
-                     this.field43915.player.connection.method15799().method14178(var8.method3205(), var3 -> {
+                     this.field43915.player.connection.method15799().method14178(var8.getEntityId(), var3 -> {
                         this.method36344(var9, var8.getPositionVec(), var3);
                         this.method36339("debug.inspect.server.entity");
                      });

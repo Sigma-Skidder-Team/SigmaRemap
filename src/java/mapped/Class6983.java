@@ -3,7 +3,10 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.server.ServerWorld;
 
 import java.util.Comparator;
 import java.util.List;
@@ -119,7 +122,7 @@ public class Class6983 {
 
    public static Optional<LivingEntity> method21586(LivingEntity var0, Class8830<UUID> var1) {
       Optional<UUID> var4 = var0.method2992().method21410(var1);
-      return var4.map(var1x -> (LivingEntity)((ServerWorld)var0.world).method6942(var1x));
+      return var4.map(var1x -> (LivingEntity)((ServerWorld)var0.world).getEntityByUuid(var1x));
    }
 
    public static Stream<Class1042> method21587(Class1042 var0, Predicate<Class1042> var1) {

@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.longs.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Arrays;

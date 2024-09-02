@@ -6,6 +6,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
@@ -42,7 +44,7 @@ public class Class915 extends Entity {
    @Nullable
    public LivingEntity method3582() {
       if (this.field5211 == null && this.field5212 != null && this.world instanceof ServerWorld) {
-         Entity var3 = ((ServerWorld)this.world).method6942(this.field5212);
+         Entity var3 = ((ServerWorld)this.world).getEntityByUuid(this.field5212);
          if (var3 instanceof LivingEntity) {
             this.field5211 = (LivingEntity)var3;
          }

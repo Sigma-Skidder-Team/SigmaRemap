@@ -12,6 +12,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -109,7 +110,7 @@ public class Class1672 implements IChunk {
    }
 
    public void method7105(BlockPos var1) {
-      this.field9099.add(var1.method8353());
+      this.field9099.add(var1.toImmutable());
    }
 
    @Nullable

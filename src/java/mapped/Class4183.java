@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
 
@@ -31,9 +32,9 @@ public class Class4183 extends Class4180 {
       super(Class7792.field33458, var2);
       this.field20462 = new ResourceLocation(var2.method126("Template"));
       this.field20463 = Class80.valueOf(var2.method126("Rot"));
-      this.field20461 = var2.method124("Integrity");
+      this.field20461 = var2.getFloat("Integrity");
       this.field20460 = Class110.valueOf(var2.method126("BiomeType"));
-      this.field20464 = var2.method132("IsLarge");
+      this.field20464 = var2.getBoolean("IsLarge");
       this.method12947(var1);
    }
 
@@ -48,9 +49,9 @@ public class Class4183 extends Class4180 {
       super.method12897(var1);
       var1.method109("Template", this.field20462.toString());
       var1.method109("Rot", this.field20463.name());
-      var1.method107("Integrity", this.field20461);
+      var1.putFloat("Integrity", this.field20461);
       var1.method109("BiomeType", this.field20460.toString());
-      var1.method115("IsLarge", this.field20464);
+      var1.putBoolean("IsLarge", this.field20464);
    }
 
    @Override
@@ -82,7 +83,7 @@ public class Class4183 extends Class4180 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       this.field20454.method36433().method36434(new Class7094(this.field20461)).method36434(Class7095.field30528);
       int var10 = var1.method6736(Class101.field297, this.field20455.getX(), this.field20455.getZ());
       this.field20455 = new BlockPos(this.field20455.getX(), var10, this.field20455.getZ());

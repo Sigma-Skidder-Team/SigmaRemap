@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.vector.Vector3d;
 
 public class Class2820 extends Class2803<Class1105> {
    private static String[] field17565;

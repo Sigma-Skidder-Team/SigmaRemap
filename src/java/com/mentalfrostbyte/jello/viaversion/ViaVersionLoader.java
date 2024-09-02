@@ -13,6 +13,7 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CTabCompletePacket;
@@ -168,7 +169,7 @@ public class ViaVersionLoader {
    @EventTarget
    public void method23348(SendPacketEvent var1) {
       if (var1.method13932() instanceof CHeldItemChangePacket) {
-         int var4 = ((CHeldItemChangePacket)var1.method13932()).method17416();
+         int var4 = ((CHeldItemChangePacket)var1.method13932()).getSlotId();
          if (PlayerInventory.isHotbar(var4)) {
             field31494 = var4;
          }

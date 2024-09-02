@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -29,8 +30,8 @@ public abstract class Class1028 extends Class1009 {
          var1.put("PatrolTarget", Class8354.method29284(this.field5724));
       }
 
-      var1.method115("PatrolLeader", this.field5725);
-      var1.method115("Patrolling", this.field5726);
+      var1.putBoolean("PatrolLeader", this.field5725);
+      var1.putBoolean("Patrolling", this.field5726);
    }
 
    @Override
@@ -40,8 +41,8 @@ public abstract class Class1028 extends Class1009 {
          this.field5724 = Class8354.method29283(var1.getCompound("PatrolTarget"));
       }
 
-      this.field5725 = var1.method132("PatrolLeader");
-      this.field5726 = var1.method132("Patrolling");
+      this.field5725 = var1.getBoolean("PatrolLeader");
+      this.field5726 = var1.getBoolean("Patrolling");
    }
 
    @Override

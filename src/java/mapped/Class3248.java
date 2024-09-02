@@ -4,8 +4,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -28,7 +31,7 @@ public class Class3248 extends Class3247 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (var4.abilities.field29610) {
+      if (var4.abilities.allowEdit) {
          var2.setBlockState(var3, var1.method23459(field18711), 3);
          return ActionResultType.method9002(var2.isRemote);
       } else {

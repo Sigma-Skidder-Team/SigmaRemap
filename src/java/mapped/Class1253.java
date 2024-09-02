@@ -1,9 +1,11 @@
 package mapped;
 
+import net.minecraft.item.crafting.IRecipe;
+
 import java.util.Iterator;
 
 public interface Class1253<T> {
-   default void method5832(int var1, int var2, int var3, Class4843<?> var4, Iterator<T> var5, int var6) {
+   default void method5832(int var1, int var2, int var3, IRecipe<?> var4, Iterator<T> var5, int var6) {
       int var9 = var1;
       int var10 = var2;
       if (var4 instanceof Class4852) {

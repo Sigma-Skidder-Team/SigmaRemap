@@ -6,7 +6,6 @@ import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.client.CEntityActionPacket;
-import mapped.Class1865;
 
 public class NormalWTap extends Module {
    public NormalWTap() {
@@ -17,7 +16,7 @@ public class NormalWTap extends Module {
    @HigherPriority
    private void method16967(Class4403 var1) {
       if (this.isEnabled() && var1.method13937()) {
-         mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10043));
+         mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.START_SPRINTING));
       }
    }
 }

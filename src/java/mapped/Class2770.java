@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.EnumSet;
 import java.util.function.Predicate;
