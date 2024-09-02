@@ -931,11 +931,11 @@ public class RenderUtil {
       }
    }
 
-   public static void method11461(Class9388 var0, int var1) {
-      method11462(var0, 2.8F, var1);
+   public static void renderWireframeBox(Class9388 var0, int var1) {
+      renderWireframeBox(var0, 2.8F, var1);
    }
 
-   public static void method11462(Class9388 var0, float var1, int var2) {
+   public static void renderWireframeBox(Class9388 var0, float var1, int var2) {
       if (var0 != null) {
          float var5 = (float)(var2 >> 24 & 0xFF) / 255.0F;
          float var6 = (float)(var2 >> 16 & 0xFF) / 255.0F;

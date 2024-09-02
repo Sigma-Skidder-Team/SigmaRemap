@@ -64,7 +64,7 @@ public class OutlineChestESP extends Module {
                var8.method3775().method23412(mc.world, var8.getPos()).method19514().method19667(var12, var14, var16)
             );
             if (var1) {
-               RenderUtil.method11462(var19, 3.0F, var18);
+               RenderUtil.renderWireframeBox(var19, 3.0F, var18);
             } else {
                RenderUtil.render3DColoredBox(var19, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             }

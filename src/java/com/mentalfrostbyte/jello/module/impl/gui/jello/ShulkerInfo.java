@@ -76,7 +76,7 @@ public class ShulkerInfo extends Module {
                                 ),
                                 ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F)
                         );
-                        RenderUtil.method11462(
+                        RenderUtil.renderWireframeBox(
                                 new Class9388(
                                         var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
                                 ),

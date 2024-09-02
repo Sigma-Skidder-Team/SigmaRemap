@@ -57,7 +57,7 @@ public class JelloEdit extends Module {
     }
 
     private Block method16071(int var1) {
-        return Block.method11536(this.field23440.getDataPackets().get(var1).method17096()).getBlock();
+        return Block.method11536(this.field23440.getDataPackets().get(var1).getShortValue()).getBlock();
     }
 
     private BlockPos method16072() {
@@ -114,7 +114,7 @@ public class JelloEdit extends Module {
                     Class9388 var13 = new Class9388(var7, var9, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
                     RenderUtil.render3DColoredBox(var13, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.02F));
                     GL11.glEnable(2848);
-                    RenderUtil.method11461(var13, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.03F));
+                    RenderUtil.renderWireframeBox(var13, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.03F));
                     GL11.glColor3f(1.0F, 1.0F, 1.0F);
                 }
             }
@@ -126,7 +126,7 @@ public class JelloEdit extends Module {
                 double var19 = (double) var16.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                 Class9388 var20 = new Class9388(var17, var18, var19, var17 + 1.0, var18 + 1.0, var19 + 1.0);
                 RenderUtil.render3DColoredBox(var20, ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
-                RenderUtil.method11461(var20, ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.2F));
+                RenderUtil.renderWireframeBox(var20, ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.2F));
                 GL11.glColor3f(1.0F, 1.0F, 1.0F);
             }
         }

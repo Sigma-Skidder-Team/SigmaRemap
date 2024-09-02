@@ -53,7 +53,7 @@ public class BoxChestESP extends Module {
                 );
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderUtil.render3DColoredBox(var18, var17);
-                RenderUtil.method11462(var18, 2.0F, var17);
+                RenderUtil.renderWireframeBox(var18, 2.0F, var17);
                 GL11.glDisable(3042);
             }
         }

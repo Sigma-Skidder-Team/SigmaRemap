@@ -101,7 +101,7 @@ public class BoxOutlineESP extends Module {
                     double var15 = (var5.getPosZ() - var5.lastTickPosZ) * (double) mc.timer.renderPartialTicks - (var5.getPosZ() - var5.lastTickPosZ);
                     Class9388 var17 = new Class9388(var5.getBoundingBox().method19667(var11, var13, var15)).method35648(0.1F);
                     if (var1) {
-                        RenderUtil.method11462(var17, 3.0F, ColorUtils.applyAlpha(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
+                        RenderUtil.renderWireframeBox(var17, 3.0F, ColorUtils.applyAlpha(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
                     } else {
                         RenderUtil.render3DColoredBox(var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     }

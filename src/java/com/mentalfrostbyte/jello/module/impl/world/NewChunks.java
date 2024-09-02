@@ -54,7 +54,7 @@ public class NewChunks extends Module {
                     GL11.glDisable(2929);
                     Class9388 var13 = new Class9388(var7, var11, var9, var7 + 16.0, var11, var9 + 16.0);
                     RenderUtil.render3DColoredBox(var13, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
-                    RenderUtil.method11461(var13, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
+                    RenderUtil.renderWireframeBox(var13, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
                     GL11.glColor3f(1.0F, 1.0F, 1.0F);
                     GL11.glEnable(2929);
                     int var14 = mc.player.chunkCoordX - var6.field32174;

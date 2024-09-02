@@ -4,8 +4,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 public class Class9238 {
-   private static String[] field42515;
-   public BlockPos field42516;
+    public BlockPos field42516;
    public Direction field42517;
 
    public Class9238(BlockPos var1, Direction var2) {
