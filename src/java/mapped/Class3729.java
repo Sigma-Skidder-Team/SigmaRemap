@@ -65,7 +65,7 @@ public class Class3729 extends Class3676<Class1042> {
 
    private void method12641(LivingEntity var1, Class1042 var2) {
       boolean var5 = false;
-      ItemStack var6 = var1.method3090();
+      ItemStack var6 = var1.getHeldItemMainhand();
       if (this.field19828 == null || !ItemStack.method32130(this.field19828, var6)) {
          this.field19828 = var6;
          var5 = true;

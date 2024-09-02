@@ -222,10 +222,10 @@ public class KillAura extends Module {
     public void method16820(StopUseItemEvent var1) {
         if (this.isEnabled()) {
             if (!this.getStringSettingValueByName("Autoblock Mode").equals("None")
-                    && (mc.player.method3090().getItem() instanceof ItemSword || this.field23943 != mc.player.inventory.currentItem)
+                    && (mc.player.getHeldItemMainhand().getItem() instanceof ItemSword || this.field23943 != mc.player.inventory.currentItem)
                     && field23948 != null) {
                 var1.method13900(true);
-            } else if (mc.player.method3090().getItem() instanceof ItemSword) {
+            } else if (mc.player.getHeldItemMainhand().getItem() instanceof ItemSword) {
                 this.field23945 = 2;
             }
         }
@@ -249,7 +249,7 @@ public class KillAura extends Module {
                     this.field23938.method36816();
                 }
 
-                if (this.field23938.method36813() && (!(mc.player.method3090().getItem() instanceof ItemSword) || field23948 == null)) {
+                if (this.field23938.method36813() && (!(mc.player.getHeldItemMainhand().getItem() instanceof ItemSword) || field23948 == null)) {
                     this.field23938.method36814(false);
                 }
 
@@ -470,8 +470,8 @@ public class KillAura extends Module {
 
     public boolean method16827() {
         return field23948 != null
-                && mc.player.method3090() != null
-                && mc.player.method3090().getItem() instanceof ItemSword
+                && mc.player.getHeldItemMainhand() != null
+                && mc.player.getHeldItemMainhand().getItem() instanceof ItemSword
                 && !this.getStringSettingValueByName("Autoblock Mode").equals("None");
     }
 

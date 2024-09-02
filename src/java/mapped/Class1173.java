@@ -59,7 +59,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
       this.field6351.fontRenderer.method38801(var1, var13, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
       this.field6351.fontRenderer.method38801(var1, var14, (float)(var4 + 32 + 3), (float)(var3 + 9 + 3), 8421504);
       this.field6351.fontRenderer.func_243248_b(var1, var15, (float)(var4 + 32 + 3), (float)(var3 + 9 + 9 + 3), 8421504);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.field6351.getTextureManager().bindTexture(this.field6356 == null ? Class1276.method6071() : this.field6354);
       RenderSystem.enableBlend();
       AbstractGui.method5699(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
@@ -67,7 +67,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
       if (this.field6351.gameSettings.touchscreen || var9) {
          this.field6351.getTextureManager().bindTexture(Class1276.method6072());
          AbstractGui.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var16 = var7 - var4;
          boolean var17 = var16 < 32;
          int var18 = !var17 ? 0 : 32;

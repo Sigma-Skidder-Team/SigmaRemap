@@ -240,7 +240,7 @@ public class AutoCrystal extends PremiumModule {
             double var9 = (double) var6.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
             double var11 = (double) var6.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
             Class9388 var13 = new Class9388(var7, var9 + 1.0, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
-            RenderUtil.method11459(var13, var4);
+            RenderUtil.render3DColoredBox(var13, var4);
         }
 
         var4 = ColorUtils.applyAlpha(9000000, 1.0F);
@@ -250,7 +250,7 @@ public class AutoCrystal extends PremiumModule {
             double var20 = this.field23633.getPosZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
             float var16 = 0.3F;
             Class9388 var17 = new Class9388(var14 - (double) var16, var19 + 0.9, var20 - (double) var16, var14 + (double) var16, var19 + 1.0, var20 + (double) var16);
-            RenderUtil.method11459(var17, var4);
+            RenderUtil.render3DColoredBox(var17, var4);
         }
 
         GL11.glEnable(2929);

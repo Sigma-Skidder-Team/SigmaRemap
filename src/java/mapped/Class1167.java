@@ -44,7 +44,7 @@ public class Class1167 extends Class1155<Class1167> {
    }
 
    private void method5571(MatrixStack var1, int var2, int var3) {
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       Class1281.method6097(this.field6332).getTextureManager().bindTexture(AbstractGui.field6452);
       AbstractGui.method5697(var1, var2, var3, this.field6332.field6836.method5702(), 0.0F, 0.0F, 18, 18, 128, 128);
    }

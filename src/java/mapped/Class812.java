@@ -161,7 +161,7 @@ public class Class812 extends RealmsScreen {
    private void method2237(MatrixStack var1) {
       double var4 = Math.min((double)this.field4364.field30735 / (double)this.field4364.field30736, 1.0);
       this.field4367 = String.format(Locale.ROOT, "%.1f", var4 * 100.0);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.disableTexture();
       Tessellator var6 = Tessellator.getInstance();
       BufferBuilder var7 = var6.getBuffer();

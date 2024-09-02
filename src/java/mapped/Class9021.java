@@ -118,7 +118,7 @@ public class Class9021 {
                   }
                } else {
                   var4.remove();
-                  var5.method30713();
+                  var5.handleDisconnection();
                }
             }
          }

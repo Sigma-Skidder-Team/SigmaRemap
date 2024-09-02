@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class Class5120 implements Class5119 {
 
    @Override
    public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
-      Class9624 var11 = this.field23291.gameRenderer.getActiveRenderInfo();
+      ActiveRenderInfo var11 = this.field23291.gameRenderer.getActiveRenderInfo();
       ClientWorld var12 = this.field23291.world;
       DimensionType var13 = var12.method6812();
       BlockPos var14 = new BlockPos(var11.method37504().x, 0.0, var11.method37504().z);

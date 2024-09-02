@@ -47,7 +47,7 @@ public class Class1308 extends Screen {
    @Override
    public void renderBackground(MatrixStack var1) {
       super.renderBackground(var1);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field6913);
       int var4 = (this.width - 248) / 2;
       int var5 = (this.height - 166) / 2;

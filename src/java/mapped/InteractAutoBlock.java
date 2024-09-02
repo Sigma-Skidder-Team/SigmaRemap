@@ -66,7 +66,7 @@ public class InteractAutoBlock {
 
    public boolean method36817() {
       return !this.parent.getStringSettingValueByName("Autoblock Mode").equals("None")
-         && this.field44347.player.method3090().getItem() instanceof ItemSword
+         && this.field44347.player.getHeldItemMainhand().getItem() instanceof ItemSword
          && !this.method36813();
    }
 

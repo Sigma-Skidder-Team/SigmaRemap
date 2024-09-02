@@ -37,7 +37,7 @@ public class OldHitting extends Module {
     private void method16020(Class4399 var1) {
         if (this.isEnabled() || Class8005.method27372() == Class5989.field26129) {
             if (var1.method13921()) {
-                boolean var4 = mc.player.method3090() != null && mc.player.method3090().getItem() instanceof ItemSword;
+                boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof ItemSword;
                 boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
                 boolean var6 = true;
                 if (!mc.player.method3331()

@@ -194,7 +194,7 @@ public class FirstPersonRenderer {
       boolean var11 = true;
       boolean var12 = true;
       if (!var4.isHandActive()) {
-         ItemStack var13 = var4.method3090();
+         ItemStack var13 = var4.getHeldItemMainhand();
          ItemStack var14 = var4.method3091();
          if (var13.getItem() instanceof Class3261 && Class3261.method11755(var13)) {
             var12 = !var11;
@@ -403,7 +403,7 @@ public class FirstPersonRenderer {
       this.field45082 = this.field45081;
       this.field45084 = this.field45083;
       ClientPlayerEntity var3 = this.field45078.player;
-      ItemStack var4 = var3.method3090();
+      ItemStack var4 = var3.getHeldItemMainhand();
       ItemStack var5 = var3.method3091();
       if (ItemStack.method32128(this.field45079, var4)) {
          this.field45079 = var4;

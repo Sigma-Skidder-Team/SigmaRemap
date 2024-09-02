@@ -113,7 +113,7 @@ public class NoteblockPlayer extends PremiumModule {
                                     for (Class6463 var8 : this.field23641) {
                                         if ((var6.method28780() != 3 && this.method16414(var8) == 0 || var8.method19640() == var6.method28780())
                                                 && Class2121.method8807(var8.field28402) == (float) (var6.method28782() - 33)
-                                                && Math.sqrt(mc.player.getPosition().method8318(var8.field28401)) < (double) mc.playerController.method23135()) {
+                                                && Math.sqrt(mc.player.getPosition().method8318(var8.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
                                             float[] var9 = Class9217.method34542(var8.field28401, Direction.field673);
                                             if ((double) var8.field28401.getY() > mc.player.getPosY() + 1.0) {
                                                 var9 = Class9217.method34542(var8.field28401, Direction.DOWN);
@@ -139,7 +139,7 @@ public class NoteblockPlayer extends PremiumModule {
     public boolean method16406(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if ((var5.field28402 == -1.0F || this.method16411(var5.field28402, var5.field28403))
-                    && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.method23135()) {
+                    && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
                 return false;
             }
         }
@@ -149,7 +149,7 @@ public class NoteblockPlayer extends PremiumModule {
 
     public boolean method16407(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
-            if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.method23135()) {
+            if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
                 float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
                 mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
                 mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var5.field28401, Direction.field673));
@@ -165,13 +165,13 @@ public class NoteblockPlayer extends PremiumModule {
     public boolean method16408(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if (this.method16411(var5.field28402, var5.field28403)
-                    && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.method23135()) {
+                    && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
                 if (0 == 0) {
                     float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
                     mc.player.swingArm(Hand.MAIN_HAND);
                     mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
                     mc.getConnection()
-                            .sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, Class9217.method34567(var6[0], var6[1], mc.playerController.method23135() + 1.0F)));
+                            .sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, Class9217.method34567(var6[0], var6[1], mc.playerController.getBlockReachDistance() + 1.0F)));
                     this.field23642.clear();
                     this.field23642.add(var5.field28401);
                 }
@@ -308,7 +308,7 @@ public class NoteblockPlayer extends PremiumModule {
             this.field23638 = 0;
             this.field23641.clear();
 
-            for (BlockPos var4 : Class9217.method34561(mc.playerController.method23135())) {
+            for (BlockPos var4 : Class9217.method34561(mc.playerController.getBlockReachDistance())) {
                 BlockState var5 = mc.world.getBlockState(var4);
                 if (var5.getBlock() instanceof Class3426) {
                     Class6463 var6 = new Class6463(var4);

@@ -1,6 +1,6 @@
 package mapped;
 
-public enum Class1981 {
+public enum DestFactor {
    field12923(32771),
    field12924(32769),
    field12925(772),
@@ -17,7 +17,7 @@ public enum Class1981 {
    field12936(0);
 
    public final int field12937;
-   private static final Class1981[] field12938 = new Class1981[]{
+   private static final DestFactor[] field12938 = new DestFactor[]{
       field12923,
       field12924,
       field12925,
@@ -34,7 +34,7 @@ public enum Class1981 {
       field12936
    };
 
-   private Class1981(int var3) {
+   private DestFactor(int var3) {
       this.field12937 = var3;
    }
 }

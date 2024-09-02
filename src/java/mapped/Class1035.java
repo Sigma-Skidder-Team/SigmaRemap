@@ -106,7 +106,7 @@ public abstract class Class1035 extends Class1009 {
    }
 
    public boolean method4636() {
-      return this.method3090().getItem() instanceof Class3266;
+      return this.getHeldItemMainhand().getItem() instanceof Class3266;
    }
 
    @Override

@@ -31,9 +31,9 @@ public abstract class Class290 implements AutoCloseable {
             var7 = 9729;
          }
 
-         Class7414.method23814(this.getGlTextureId());
-         Class7414.method23808(3553, 10241, var6);
-         Class7414.method23808(3553, 10240, var7);
+         GlStateManager.method23814(this.getGlTextureId());
+         GlStateManager.method23808(3553, 10241, var6);
+         GlStateManager.method23808(3553, 10240, var7);
       }
    }
 
@@ -70,9 +70,9 @@ public abstract class Class290 implements AutoCloseable {
 
    public void method1133() {
       if (RenderSystem.method27804()) {
-         Class7414.method23814(this.getGlTextureId());
+         GlStateManager.method23814(this.getGlTextureId());
       } else {
-         RenderSystem.method27810(() -> Class7414.method23814(this.getGlTextureId()));
+         RenderSystem.method27810(() -> GlStateManager.method23814(this.getGlTextureId()));
       }
    }
 

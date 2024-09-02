@@ -52,7 +52,7 @@ public class PathFinder extends Module {
                 double var8 = (double) var5.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
                 double var10 = (double) var5.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                 Class9388 var12 = new Class9388(var6, var8, var10, var6 + 1.0, var8 + 1.0, var10 + 1.0);
-                RenderUtil.method11459(var12, var4);
+                RenderUtil.render3DColoredBox(var12, var4);
                 GL11.glEnable(2929);
                 GL11.glPopMatrix();
             }

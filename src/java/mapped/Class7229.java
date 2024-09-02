@@ -45,7 +45,7 @@ public class Class7229 implements Class7222 {
    @Override
    public void method22699(MatrixStack var1, float var2, int var3) {
       Minecraft.getInstance().getTextureManager().bindTexture(this.field31071);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, (float)var3 / 255.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, (float)var3 / 255.0F);
       AbstractGui.method5698(var1, 2, 2, 12, 12, 8.0F, 8.0F, 8, 8, 64, 64);
       AbstractGui.method5698(var1, 2, 2, 12, 12, 40.0F, 8.0F, 8, 8, 64, 64);
    }

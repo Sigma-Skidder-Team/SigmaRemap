@@ -77,12 +77,12 @@ public class Class7156 {
    }
 
    public void method22328(int var1, int var2) {
-      Class7414.method23699();
-      Class7414.method23780();
+      GlStateManager.method23699();
+      GlStateManager.method23780();
       Tessellator var5 = Tessellator.getInstance();
       BufferBuilder var6 = var5.getBuffer();
       Class7944.method26861().bindTexture(this.field30738);
-      Class7414.method23843(1.0F, 1.0F, 1.0F, 1.0F);
+      GlStateManager.method23843(1.0F, 1.0F, 1.0F, 1.0F);
       float var7 = (float)(16 * this.field30740);
       float var8 = (float)var1 / var7;
       float var9 = (float)var2 / var7;

@@ -11,11 +11,11 @@ public class Class7314 extends PlayerController {
 
    @Override
    public ClientPlayerEntity createPlayer(ClientWorld var1, Class8286 var2, Class6943 var3) {
-      return new HookedClientPlayerEntity(this.field31358, var1, this.field31359, var2, var3, false, false);
+      return new HookedClientPlayerEntity(this.mc, var1, this.connection, var2, var3, false, false);
    }
 
    @Override
    public ClientPlayerEntity func_239167_a_(ClientWorld var1, Class8286 var2, Class6943 var3, boolean var4, boolean var5) {
-      return new HookedClientPlayerEntity(this.field31358, var1, this.field31359, var2, var3, var4, var5);
+      return new HookedClientPlayerEntity(this.mc, var1, this.connection, var2, var3, var4, var5);
    }
 }

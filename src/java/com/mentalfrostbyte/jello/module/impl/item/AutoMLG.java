@@ -74,7 +74,7 @@ public class AutoMLG extends PremiumModule {
                 if (mc.player.inventory.currentItem != this.field23647) {
                     this.field23648 = mc.player.inventory.currentItem;
                     mc.player.inventory.currentItem = this.field23647;
-                    mc.playerController.method23138();
+                    mc.playerController.syncCurrentPlayItem();
                 }
 
                 mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
@@ -98,7 +98,7 @@ public class AutoMLG extends PremiumModule {
                         if (var7 != mc.player.inventory.currentItem) {
                             this.field23648 = mc.player.inventory.currentItem;
                             mc.player.inventory.currentItem = var7;
-                            mc.playerController.method23138();
+                            mc.playerController.syncCurrentPlayItem();
                         }
 
                         this.field23647 = var7;

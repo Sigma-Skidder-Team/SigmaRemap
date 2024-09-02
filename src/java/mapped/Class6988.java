@@ -61,66 +61,66 @@ public class Class6988 {
    public static void method21638(int var0, float var1) {
       switch (var0) {
          case 0:
-            Class7414.method23695();
-            Class7414.method23715();
-            Class7414.method23716(770, 771);
-            Class7414.method23843(1.0F, 1.0F, 1.0F, var1);
+            GlStateManager.method23695();
+            GlStateManager.method23715();
+            GlStateManager.method23716(770, 771);
+            GlStateManager.method23843(1.0F, 1.0F, 1.0F, var1);
             break;
          case 1:
-            Class7414.method23695();
-            Class7414.method23715();
-            Class7414.method23716(770, 1);
-            Class7414.method23843(1.0F, 1.0F, 1.0F, var1);
+            GlStateManager.method23695();
+            GlStateManager.method23715();
+            GlStateManager.method23716(770, 1);
+            GlStateManager.method23843(1.0F, 1.0F, 1.0F, var1);
             break;
          case 2:
-            Class7414.method23695();
-            Class7414.method23715();
-            Class7414.method23716(775, 0);
-            Class7414.method23843(var1, var1, var1, 1.0F);
+            GlStateManager.method23695();
+            GlStateManager.method23715();
+            GlStateManager.method23716(775, 0);
+            GlStateManager.method23843(var1, var1, var1, 1.0F);
             break;
          case 3:
-            Class7414.method23695();
-            Class7414.method23715();
-            Class7414.method23716(774, 771);
-            Class7414.method23843(var1, var1, var1, var1);
+            GlStateManager.method23695();
+            GlStateManager.method23715();
+            GlStateManager.method23716(774, 771);
+            GlStateManager.method23843(var1, var1, var1, var1);
             break;
          case 4:
-            Class7414.method23695();
-            Class7414.method23715();
-            Class7414.method23716(1, 1);
-            Class7414.method23843(var1, var1, var1, 1.0F);
+            GlStateManager.method23695();
+            GlStateManager.method23715();
+            GlStateManager.method23716(1, 1);
+            GlStateManager.method23843(var1, var1, var1, 1.0F);
             break;
          case 5:
-            Class7414.method23695();
-            Class7414.method23715();
-            Class7414.method23716(0, 769);
-            Class7414.method23843(var1, var1, var1, 1.0F);
+            GlStateManager.method23695();
+            GlStateManager.method23715();
+            GlStateManager.method23716(0, 769);
+            GlStateManager.method23843(var1, var1, var1, 1.0F);
             break;
          case 6:
-            Class7414.method23695();
-            Class7414.method23715();
-            Class7414.method23716(1, 769);
-            Class7414.method23843(var1, var1, var1, 1.0F);
+            GlStateManager.method23695();
+            GlStateManager.method23715();
+            GlStateManager.method23716(1, 769);
+            GlStateManager.method23843(var1, var1, var1, 1.0F);
             break;
          case 7:
-            Class7414.method23695();
-            Class7414.method23715();
-            Class7414.method23716(774, 768);
-            Class7414.method23843(var1, var1, var1, 1.0F);
+            GlStateManager.method23695();
+            GlStateManager.method23715();
+            GlStateManager.method23716(774, 768);
+            GlStateManager.method23843(var1, var1, var1, 1.0F);
             break;
          case 8:
-            Class7414.method23696();
-            Class7414.method23714();
-            Class7414.method23843(1.0F, 1.0F, 1.0F, var1);
+            GlStateManager.method23696();
+            GlStateManager.method23714();
+            GlStateManager.method23843(1.0F, 1.0F, 1.0F, var1);
       }
 
-      Class7414.method23804();
+      GlStateManager.method23804();
    }
 
    public static void method21639(float var0) {
-      Class7414.method23695();
-      Class7414.method23715();
-      Class7414.method23716(770, 1);
-      Class7414.method23843(1.0F, 1.0F, 1.0F, var0);
+      GlStateManager.method23695();
+      GlStateManager.method23715();
+      GlStateManager.method23716(770, 1);
+      GlStateManager.method23843(1.0F, 1.0F, 1.0F, var0);
    }
 }

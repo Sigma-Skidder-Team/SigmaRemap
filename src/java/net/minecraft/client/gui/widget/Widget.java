@@ -93,7 +93,7 @@ public abstract class Widget extends AbstractGui implements Class1190, Class1152
       Minecraft var7 = Minecraft.getInstance();
       FontRenderer var8 = var7.fontRenderer;
       var7.getTextureManager().bindTexture(field6474);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, this.field6484);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, this.field6484);
       int var9 = this.method5729(this.method5737());
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();

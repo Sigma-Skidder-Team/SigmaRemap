@@ -22,19 +22,19 @@ public class Class8535 {
    public static int method30366() {
       RenderSystem.assertThread(RenderSystem::method27804);
       if (!SharedConstants.developmentMode) {
-         return Class7414.method23810();
+         return GlStateManager.method23810();
       } else {
          int[] var2 = new int[ThreadLocalRandom.current().nextInt(15) + 1];
-         Class7414.method23811(var2);
-         int var3 = Class7414.method23810();
-         Class7414.method23813(var2);
+         GlStateManager.method23811(var2);
+         int var3 = GlStateManager.method23810();
+         GlStateManager.method23813(var2);
          return var3;
       }
    }
 
    public static void method30367(int var0) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      Class7414.method23812(var0);
+      GlStateManager.method23812(var0);
    }
 
    public static void method30368(int var0, int var1, int var2) {
@@ -53,20 +53,20 @@ public class Class8535 {
       RenderSystem.assertThread(RenderSystem::method27804);
       method30372(var1);
       if (var2 >= 0) {
-         Class7414.method23808(3553, 33085, var2);
-         Class7414.method23808(3553, 33082, 0);
-         Class7414.method23808(3553, 33083, var2);
-         Class7414.method23807(3553, 34049, 0.0F);
+         GlStateManager.method23808(3553, 33085, var2);
+         GlStateManager.method23808(3553, 33082, 0);
+         GlStateManager.method23808(3553, 33083, var2);
+         GlStateManager.method23807(3553, 34049, 0.0F);
       }
 
       for (int var7 = 0; var7 <= var2; var7++) {
-         Class7414.method23815(3553, var7, var0.method8738(), var3 >> var7, var4 >> var7, 0, 6408, 5121, (IntBuffer)null);
+         GlStateManager.method23815(3553, var7, var0.method8738(), var3 >> var7, var4 >> var7, 0, 6408, 5121, (IntBuffer)null);
       }
    }
 
    private static void method30372(int var0) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      Class7414.method23814(var0);
+      GlStateManager.method23814(var0);
    }
 
    public static ByteBuffer method30373(InputStream var0) throws IOException {

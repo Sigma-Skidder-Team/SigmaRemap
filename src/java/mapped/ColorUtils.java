@@ -449,7 +449,7 @@ public class ColorUtils {
       );
       Entity var8 = field24949.getRenderViewEntity();
       if (var8 != null && field24949.world != null) {
-         double var9 = (double)field24949.playerController.method23135();
+         double var9 = (double)field24949.playerController.getBlockReachDistance();
          if (var2 != 0.0F) {
             var9 = (double)var2;
          }

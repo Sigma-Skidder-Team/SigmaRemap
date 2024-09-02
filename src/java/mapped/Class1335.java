@@ -75,7 +75,7 @@ public class Class1335 extends Screen {
       this.field7091.method17133(var2.method32431(), (MinecraftServer)null);
       if (!var2.method32428()) {
          if (!var2.method32427().method8158()) {
-            if (var2.method32427().method8157()) {
+            if (var2.method32427().isCreative()) {
                this.field7070 = Class2079.field13541;
             }
          } else {

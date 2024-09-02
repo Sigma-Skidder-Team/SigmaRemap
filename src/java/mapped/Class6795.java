@@ -71,7 +71,7 @@ public class Class6795 {
                }
             } else {
                LivingEntity var9 = (LivingEntity)var8;
-               ItemStack var10 = var9.method3090();
+               ItemStack var10 = var9.getHeldItemMainhand();
                if (var10.isEmpty()) {
                   if (var1.size() == 1) {
                      throw field29599.create(var9.getName().getString());

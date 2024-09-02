@@ -36,7 +36,7 @@ public class Class1708 extends Class1709 implements AutoCloseable {
    }
 
    public static int method7430(int var0, CharSequence var1) {
-      return Class7414.method23732(var0, var1);
+      return GlStateManager.method23732(var0, var1);
    }
 
    public static void method7431(int var0, int var1) {
@@ -44,7 +44,7 @@ public class Class1708 extends Class1709 implements AutoCloseable {
    }
 
    public static int method7432(int var0, CharSequence var1) {
-      return Class7414.method23745(var0, var1);
+      return GlStateManager.method23745(var0, var1);
    }
 
    @Override

@@ -109,10 +109,10 @@ public class Class8069 {
 
    public void method27786() {
       if (this.field34645) {
-         Class7414.method23715();
-         Class7414.method23717(this.field34646, this.field34647, this.field34648, this.field34649);
+         GlStateManager.method23715();
+         GlStateManager.method23717(this.field34646, this.field34647, this.field34648, this.field34649);
       } else {
-         Class7414.method23714();
+         GlStateManager.method23714();
       }
    }
 }

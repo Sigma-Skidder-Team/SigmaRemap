@@ -179,7 +179,7 @@ public class Class1194 extends AbstractGui {
 
       int var18 = this.field6461 - var14;
       this.field6463.getTextureManager().bindTexture(field6455);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.enableBlend();
       int var19 = var3 + this.field6468;
       int var20;

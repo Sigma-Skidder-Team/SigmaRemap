@@ -301,7 +301,7 @@ public class Class9446 {
                            }
                         } else {
                            LivingEntity var15 = (LivingEntity)var0;
-                           ItemStack var17 = var15.method3090();
+                           ItemStack var17 = var15.getHeldItemMainhand();
                            int var5 = method36318(var17);
                            ItemStack var6 = var15.method3091();
                            int var7 = method36318(var6);

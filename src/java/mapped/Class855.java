@@ -55,7 +55,7 @@ public abstract class Class855<T extends Class5831> extends Class851<T> implemen
 
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(this.field4761);
       int var7 = this.field4734;
       int var8 = this.field4735;

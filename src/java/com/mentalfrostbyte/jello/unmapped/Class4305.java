@@ -189,7 +189,7 @@ public class Class4305 implements Class4328 {
     }
 
     public final void method13226(float var1) {
-        Class7414.method23696();
+        GlStateManager.method23696();
         GL11.glAlphaFunc(519, 0.0F);
         GL11.glTranslatef((float) this.method13263(), (float) this.method13265(), 0.0F);
 

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.*;
 import net.minecraft.client.GameSettings;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.vector.Vector3d;
@@ -358,7 +359,7 @@ public class Class4386 {
       this.field21415.put(var1, this.field21411 + var2);
    }
 
-   public void method13778(Class9624 var1) {
+   public void method13778(ActiveRenderInfo var1) {
       if (this.field21405 && var1.method37510()) {
          Vector3d var4 = var1.method37504();
          Vector3f var5 = var1.method37516();

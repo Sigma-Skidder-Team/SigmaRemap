@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.base.Charsets;
 import com.google.common.collect.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.Entity;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.Direction;
@@ -302,11 +303,11 @@ public class ParticleManager implements Class268 {
       }
    }
 
-   public void method1203(MatrixStack var1, Class7735 var2, Class1699 var3, Class9624 var4, float var5) {
+   public void method1203(MatrixStack var1, Class7735 var2, Class1699 var3, ActiveRenderInfo var4, float var5) {
       this.method1204(var1, var2, var3, var4, var5, (Class7647)null);
    }
 
-   public void method1204(MatrixStack var1, Class7735 var2, Class1699 var3, Class9624 var4, float var5, Class7647 var6) {
+   public void method1204(MatrixStack var1, Class7735 var2, Class1699 var3, ActiveRenderInfo var4, float var5, Class7647 var6) {
       var3.method7317();
       Runnable var9 = () -> {
          RenderSystem.disableAlphaTest();
@@ -333,7 +334,7 @@ public class ParticleManager implements Class268 {
             var9.run();
             Iterable<Class4587> var15 = this.field1169.get(var14);
             if (var15 != null) {
-               RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+               RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                Tessellator var16 = Tessellator.getInstance();
                BufferBuilder var17 = var16.getBuffer();
                var14.method20824(var17, this.field1171);

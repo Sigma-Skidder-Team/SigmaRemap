@@ -4,6 +4,7 @@ import java.nio.IntBuffer;
 import java.util.List;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
@@ -61,7 +62,7 @@ public class Class5463 {
       }
    }
 
-   public static void method17154(GameRenderer var0, MatrixStack var1, Class9624 var2, float var3) {
+   public static void method17154(GameRenderer var0, MatrixStack var1, ActiveRenderInfo var2, float var3) {
       if (! Shaders.field40609) {
          boolean var6 = Shaders.method33149();
          boolean var7 = Shaders.method33150();
@@ -78,10 +79,10 @@ public class Class5463 {
       }
    }
 
-   public static void method17155(GameRenderer var0, MatrixStack var1, Class9624 var2, float var3) {
+   public static void method17155(GameRenderer var0, MatrixStack var1, ActiveRenderInfo var2, float var3) {
       if (! Shaders.field40609 && ! Shaders.method33151()) {
          Shaders.method33097();
-         Class7414.method23715();
+         GlStateManager.method23715();
          Shaders.method33105(var1, true);
          GL30.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          Shaders.method33155(Shaders.method33157(), Shaders.method33158());
@@ -93,9 +94,9 @@ public class Class5463 {
    }
 
    public static void method17156(FirstPersonRenderer var0, float var1, MatrixStack var2, Class7735 var3, ClientPlayerEntity var4, int var5, boolean var6) {
-      Class7414.method23713(true);
+      GlStateManager.method23713(true);
       if (var6) {
-         Class7414.method23712(519);
+         GlStateManager.method23712(519);
          var2.push();
          IntBuffer var9 = Shaders.field40852;
          Shaders.method33020(Shaders.field40978);
@@ -106,12 +107,12 @@ public class Class5463 {
          var2.pop();
       }
 
-      Class7414.method23712(515);
+      GlStateManager.method23712(515);
       GL30.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       var0.method37590(var1, var2, var3, var4, var5);
    }
 
-   public static void method17157(GameRenderer var0, MatrixStack var1, Class9624 var2, float var3) {
+   public static void method17157(GameRenderer var0, MatrixStack var1, ActiveRenderInfo var2, float var3) {
       if (! Shaders.field40609) {
          Shaders.method33107();
          var0.method747(var1, var2, var3, false, true, false);
@@ -124,19 +125,19 @@ public class Class5463 {
          Shaders.method33021(Shaders.field40827);
          if (Shaders.field40827.method26485() == Shaders.field40823.method26485()) {
             Shaders.method33020(Shaders.field40979);
-            Class7414.method23713(false);
+            GlStateManager.method23713(false);
          }
       }
    }
 
    public static void method17159() {
       if (Shaders.field40605) {
-         Class7414.method23713(true);
+         GlStateManager.method23713(true);
          Shaders.method33021(Shaders.field40819);
       }
    }
 
-   public static void method17160(GameRenderer var0, Class9624 var1, int var2, float var3, long var4) {
+   public static void method17160(GameRenderer var0, ActiveRenderInfo var1, int var2, float var3, long var4) {
       if (Shaders.field40804 > 0 && -- Shaders.field40793 <= 0) {
          Minecraft var8 = Minecraft.getInstance();
          var8.getProfiler().endStartSection("shadow pass");
@@ -175,13 +176,13 @@ public class Class5463 {
          var8.getProfiler().endStartSection("shadow culling");
          Vector3d var12 = var1.method37504();
          var11.method25119(var12.x, var12.y, var12.z);
-         Class7414.method23818(7425);
-         Class7414.method23711();
-         Class7414.method23712(515);
-         Class7414.method23713(true);
-         Class7414.method23822(true, true, true, true);
-         Class7414.method23878(new Class9816(false));
-         Class7414.method23874(new Class8069(false));
+         GlStateManager.method23818(7425);
+         GlStateManager.method23711();
+         GlStateManager.method23712(515);
+         GlStateManager.method23713(true);
+         GlStateManager.method23822(true, true, true, true);
+         GlStateManager.method23878(new Class9816(false));
+         GlStateManager.method23874(new Class8069(false));
          var8.getProfiler().endStartSection("shadow prepareterrain");
          var8.getTextureManager().bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
          var8.getProfiler().endStartSection("shadow setupterrain");
@@ -192,23 +193,23 @@ public class Class5463 {
          double var14 = var12.method11320();
          double var16 = var12.method11321();
          double var18 = var12.method11322();
-         Class7414.method23830(5888);
-         Class7414.method23832();
-         Class7414.method23695();
+         GlStateManager.method23830(5888);
+         GlStateManager.method23832();
+         GlStateManager.method23695();
          var9.method880(Class9025.field41288, var10, var14, var16, var18);
          Shaders.method32984("shadow terrain solid");
-         Class7414.method23696();
+         GlStateManager.method23696();
          var9.method880(Class9025.field41289, var10, var14, var16, var18);
          Shaders.method32984("shadow terrain cutoutmipped");
          var8.getTextureManager().getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1130(false, false);
          var9.method880(Class9025.field41290, var10, var14, var16, var18);
          Shaders.method32984("shadow terrain cutout");
          var8.getTextureManager().getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1137();
-         Class7414.method23818(7424);
-         Class7414.method23697(516, 0.1F);
-         Class7414.method23830(5888);
-         Class7414.method23833();
-         Class7414.method23832();
+         GlStateManager.method23818(7424);
+         GlStateManager.method23697(516, 0.1F);
+         GlStateManager.method23830(5888);
+         GlStateManager.method23833();
+         GlStateManager.method23832();
          var8.getProfiler().endStartSection("shadow entities");
          WorldRenderer var20 = var8.worldRenderer;
          EntityRendererManager var21 = var8.getRenderManager();
@@ -279,26 +280,26 @@ public class Class5463 {
          var22.method25602();
          Shaders.method33093();
          Shaders.method32984("shadow entities");
-         Class7414.method23830(5888);
-         Class7414.method23833();
-         Class7414.method23713(true);
-         Class7414.method23714();
-         Class7414.method23879();
-         Class7414.method23787();
-         Class7414.method23717(770, 771, 1, 0);
-         Class7414.method23697(516, 0.1F);
+         GlStateManager.method23830(5888);
+         GlStateManager.method23833();
+         GlStateManager.method23713(true);
+         GlStateManager.method23714();
+         GlStateManager.method23879();
+         GlStateManager.method23787();
+         GlStateManager.method23717(770, 771, 1, 0);
+         GlStateManager.method23697(516, 0.1F);
          if (Shaders.field40804 >= 2) {
-            Class7414.method23803(33989);
+            GlStateManager.method23803(33989);
             Shaders.method32984("pre copy shadow depth");
             GL11.glCopyTexSubImage2D(3553, 0, 0, 0, 0, 0, Shaders.field40785, Shaders.field40786);
             Shaders.method32984("copy shadow depth");
-            Class7414.method23803(33984);
+            GlStateManager.method23803(33984);
          }
 
-         Class7414.method23714();
-         Class7414.method23713(true);
+         GlStateManager.method23714();
+         GlStateManager.method23713(true);
          var8.getTextureManager().bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
-         Class7414.method23818(7425);
+         GlStateManager.method23818(7425);
          Shaders.method32984("shadow pre-translucent");
          GL30.glDrawBuffers(Shaders.field40977);
          Shaders.method32984("shadow drawbuffers pre-translucent");
@@ -309,11 +310,11 @@ public class Class5463 {
             Shaders.method32984("shadow translucent");
          }
 
-         Class7414.method23875();
-         Class7414.method23818(7424);
-         Class7414.method23713(true);
-         Class7414.method23787();
-         Class7414.method23714();
+         GlStateManager.method23875();
+         GlStateManager.method23818(7424);
+         GlStateManager.method23713(true);
+         GlStateManager.method23787();
+         GlStateManager.method23714();
          GL30.glFlush();
          Shaders.method32984("shadow flush");
          Shaders.field40609 = false;
@@ -321,38 +322,38 @@ public class Class5463 {
          if (Shaders.field40599) {
             if (Shaders.field40804 >= 1) {
                if (Shaders.field40858[0]) {
-                  Class7414.method23803(33988);
-                  Class7414.method23814(Shaders.field40975.get(0));
+                  GlStateManager.method23803(33988);
+                  GlStateManager.method23814(Shaders.field40975.get(0));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, ! Shaders.field40859[0] ? 9987 : 9984);
                }
 
                if (Shaders.field40804 >= 2 && Shaders.field40858[1]) {
-                  Class7414.method23803(33989);
-                  Class7414.method23814(Shaders.field40975.get(1));
+                  GlStateManager.method23803(33989);
+                  GlStateManager.method23814(Shaders.field40975.get(1));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, ! Shaders.field40859[1] ? 9987 : 9984);
                }
 
-               Class7414.method23803(33984);
+               GlStateManager.method23803(33984);
             }
 
             if (Shaders.field40803 >= 1) {
                if (Shaders.field40860[0]) {
-                  Class7414.method23803(33997);
-                  Class7414.method23814(Shaders.field40974.get(0));
+                  GlStateManager.method23803(33997);
+                  GlStateManager.method23814(Shaders.field40974.get(0));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, ! Shaders.field40861[0] ? 9987 : 9984);
                }
 
                if (Shaders.field40803 >= 2 && Shaders.field40860[1]) {
-                  Class7414.method23803(33998);
-                  Class7414.method23814(Shaders.field40974.get(1));
+                  GlStateManager.method23803(33998);
+                  GlStateManager.method23814(Shaders.field40974.get(1));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, ! Shaders.field40861[1] ? 9987 : 9984);
                }
 
-               Class7414.method23803(33984);
+               GlStateManager.method23803(33984);
             }
          }
 
@@ -371,7 +372,7 @@ public class Class5463 {
       }
    }
 
-   public static void method17161(Class9624 var0, Minecraft var1, float var2) {
+   public static void method17161(ActiveRenderInfo var0, Minecraft var1, float var2) {
       var0.method37497(
          var1.world,
          (Entity)(var1.getRenderViewEntity() != null ? var1.getRenderViewEntity() : var1.player),
@@ -399,7 +400,7 @@ public class Class5463 {
       }
 
       if (Shaders.method33001(var0)) {
-         Class7414.method23788();
+         GlStateManager.method23788();
       }
 
       if (Class8157.method28310()) {
@@ -417,7 +418,7 @@ public class Class5463 {
       }
 
       if (Shaders.method33001(var0)) {
-         Class7414.method23787();
+         GlStateManager.method23787();
       }
    }
 
@@ -482,7 +483,7 @@ public class Class5463 {
    }
 
    public static void method17171() {
-      Class7414.method23714();
+      GlStateManager.method23714();
    }
 
    public static void method17172() {
@@ -503,7 +504,7 @@ public class Class5463 {
       if (! Shaders.field40609 && Shaders.field40848.method26485() == 0) {
          return false;
       } else {
-         Class7414.method23699();
+         GlStateManager.method23699();
          Class8892 var9 = var3.getLast();
          Matrix4f var10 = var9.getMatrix();
          Class8967 var11 = var9.method32362();
@@ -746,7 +747,7 @@ public class Class5463 {
                .endVertex();
          }
 
-         Class7414.method23698();
+         GlStateManager.method23698();
          return true;
       }
    }

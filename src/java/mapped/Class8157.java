@@ -40,7 +40,7 @@ public class Class8157 {
    public static String method28295() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GLFW.glfwGetCurrentContext() != 0L
-         ? Class7414.method23860(7937) + " GL version " + Class7414.method23860(7938) + ", " + Class7414.method23860(7936)
+         ? GlStateManager.method23860(7937) + " GL version " + GlStateManager.method23860(7938) + ", " + GlStateManager.method23860(7936)
          : "NO CONTEXT";
    }
 
@@ -97,11 +97,11 @@ public class Class8157 {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (GL.getCapabilities().GL_NV_fog_distance) {
          if (Class7944.method26804()) {
-            Class7414.method23786(34138, 34139);
+            GlStateManager.method23786(34138, 34139);
          }
 
          if (Class7944.method26805()) {
-            Class7414.method23786(34138, 34140);
+            GlStateManager.method23786(34138, 34140);
          }
       }
    }
@@ -109,7 +109,7 @@ public class Class8157 {
    public static void method28302(int var0, boolean var1) {
       RenderSystem.assertThread(RenderSystem::isInInitPhase);
       GLCapabilities var4 = GL.getCapabilities();
-      field35102 = "Using framebuffer using " + Class7414.method23720(var4);
+      field35102 = "Using framebuffer using " + GlStateManager.method23720(var4);
 
       try {
          Processor[] var5 = new SystemInfo().getHardware().getProcessors();
@@ -130,8 +130,8 @@ public class Class8157 {
 
    public static void method28305(int var0, boolean var1, boolean var2, boolean var3) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      Class7414.method23805();
-      Class7414.method23713(false);
+      GlStateManager.method23805();
+      GlStateManager.method23713(false);
       Tessellator var6 = RenderSystem.method27937();
       BufferBuilder var7 = var6.getBuffer();
       GL11.glLineWidth(4.0F);
@@ -171,8 +171,8 @@ public class Class8157 {
 
       var6.draw();
       GL11.glLineWidth(1.0F);
-      Class7414.method23713(true);
-      Class7414.method23804();
+      GlStateManager.method23713(true);
+      GlStateManager.method23804();
    }
 
    public static String method28306(int var0) {

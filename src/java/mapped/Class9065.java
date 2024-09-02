@@ -86,9 +86,9 @@ public class Class9065 {
       method33751(Items.field38120, new ResourceLocation("broken"), (var0, var1, var2) -> !Class3256.method11698(var0) ? 1.0F : 0.0F);
       method33751(Items.field37906, new ResourceLocation("cast"), (var0, var1, var2) -> {
          if (var2 != null) {
-            boolean var5 = var2.method3090() == var0;
+            boolean var5 = var2.getHeldItemMainhand() == var0;
             boolean var6 = var2.method3091() == var0;
-            if (var2.method3090().getItem() instanceof Class3259) {
+            if (var2.getHeldItemMainhand().getItem() instanceof Class3259) {
                var6 = false;
             }
 

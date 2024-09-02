@@ -63,7 +63,7 @@ public class Class9118 {
                var5.tick();
             } else {
                var4.remove();
-               var5.method30713();
+               var5.handleDisconnection();
             }
          }
       }

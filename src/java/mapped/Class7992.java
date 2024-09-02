@@ -753,19 +753,19 @@ public class Class7992 {
                            float var14 = var13.method28030(var8);
                            if (!var7) {
                               var7 = true;
-                              Class7414.method23713(false);
-                              Class7414.method23712(514);
-                              Class7414.method23699();
-                              Class7414.method23830(5890);
+                              GlStateManager.method23713(false);
+                              GlStateManager.method23712(514);
+                              GlStateManager.method23699();
+                              GlStateManager.method23830(5890);
                            }
 
                            Class6988.method21638(var13.field34784, 1.0F);
-                           Class7414.method23832();
-                           Class7414.method23837(var14, var14, var14);
+                           GlStateManager.method23832();
+                           GlStateManager.method23837(var14, var14, var14);
                            float var15 = var13.field34785 * (float)(Util.milliTime() % 3000L) / 3000.0F / 8.0F;
-                           Class7414.method23839(var15, 0.0F, 0.0F);
-                           Class7414.method23836(var13.field34786, 0.0F, 0.0F, 1.0F);
-                           Class7414.method23833();
+                           GlStateManager.method23839(var15, 0.0F, 0.0F);
+                           GlStateManager.method23836(var13.field34786, 0.0F, 0.0F, 1.0F);
+                           GlStateManager.method23833();
                         }
                      }
                   }
@@ -773,14 +773,14 @@ public class Class7992 {
             }
 
             if (var7) {
-               Class7414.method23696();
-               Class7414.method23715();
-               Class7414.method23716(770, 771);
-               Class7414.method23843(1.0F, 1.0F, 1.0F, 1.0F);
-               Class7414.method23830(5888);
-               Class7414.method23698();
-               Class7414.method23712(515);
-               Class7414.method23713(true);
+               GlStateManager.method23696();
+               GlStateManager.method23715();
+               GlStateManager.method23716(770, 771);
+               GlStateManager.method23843(1.0F, 1.0F, 1.0F, 1.0F);
+               GlStateManager.method23830(5888);
+               GlStateManager.method23698();
+               GlStateManager.method23712(515);
+               GlStateManager.method23713(true);
                var8.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
             }
 
@@ -827,21 +827,21 @@ public class Class7992 {
                                  Class5463.method17172();
                               }
 
-                              Class7414.method23715();
-                              Class7414.method23712(514);
-                              Class7414.method23713(false);
+                              GlStateManager.method23715();
+                              GlStateManager.method23712(514);
+                              GlStateManager.method23713(false);
                            }
 
                            Class6988.method21638(var20.field34784, 1.0F);
-                           Class7414.method23699();
-                           Class7414.method23830(5890);
-                           Class7414.method23831();
-                           Class7414.method23836(var20.field34786, 0.0F, 0.0F, 1.0F);
+                           GlStateManager.method23699();
+                           GlStateManager.method23830(5890);
+                           GlStateManager.method23831();
+                           GlStateManager.method23836(var20.field34786, 0.0F, 0.0F, 1.0F);
                            float var22 = var21 / 8.0F;
-                           Class7414.method23837(var22, var22 / 2.0F, var22);
+                           GlStateManager.method23837(var22, var22 / 2.0F, var22);
                            float var23 = var20.field34785 * (float)(Util.milliTime() % 3000L) / 3000.0F / 8.0F;
-                           Class7414.method23839(0.0F, var23, 0.0F);
-                           Class7414.method23830(5888);
+                           GlStateManager.method23839(0.0F, var23, 0.0F);
+                           GlStateManager.method23830(5888);
                         }
                      }
                   }
@@ -849,17 +849,17 @@ public class Class7992 {
             }
 
             if (var14) {
-               Class7414.method23696();
-               Class7414.method23715();
-               Class7414.method23716(770, 771);
-               Class7414.method23843(1.0F, 1.0F, 1.0F, 1.0F);
-               Class7414.method23830(5890);
-               Class7414.method23831();
-               Class7414.method23830(5888);
-               Class7414.method23698();
-               Class7414.method23713(true);
-               Class7414.method23712(515);
-               Class7414.method23714();
+               GlStateManager.method23696();
+               GlStateManager.method23715();
+               GlStateManager.method23716(770, 771);
+               GlStateManager.method23843(1.0F, 1.0F, 1.0F, 1.0F);
+               GlStateManager.method23830(5890);
+               GlStateManager.method23831();
+               GlStateManager.method23830(5888);
+               GlStateManager.method23698();
+               GlStateManager.method23713(true);
+               GlStateManager.method23712(515);
+               GlStateManager.method23714();
                if (Class7944.method26921()) {
                   Class5463.method17173();
                }

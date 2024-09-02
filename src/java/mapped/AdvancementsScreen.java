@@ -121,7 +121,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    }
 
    public void method5446(MatrixStack var1, int var2, int var3) {
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.enableBlend();
       this.mc.getTextureManager().bindTexture(field6179);
       this.method5696(var1, var2, var3, 0, 0, 252, 140);
@@ -146,7 +146,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    }
 
    private void method5447(MatrixStack var1, int var2, int var3, int var4, int var5) {
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       if (this.field6186 != null) {
          RenderSystem.pushMatrix();
          RenderSystem.enableDepthTest();

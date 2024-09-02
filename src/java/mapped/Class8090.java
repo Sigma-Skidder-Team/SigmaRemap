@@ -811,10 +811,10 @@ public class Class8090 {
          if (this.field34790 != null) {
             Class290 var4 = var1.getTexture(this.field34790);
             int var5 = var4.getGlTextureId();
-            int var6 = Class7414.method23865();
-            Class7414.method23814(var5);
+            int var6 = GlStateManager.method23865();
+            GlStateManager.method23814(var5);
             this.field34798 = GL11.glGetTexLevelParameteri(3553, 0, 4096);
-            Class7414.method23814(var6);
+            GlStateManager.method23814(var6);
          }
 
          if (this.field34798 <= 0) {
@@ -830,10 +830,10 @@ public class Class8090 {
          if (this.field34790 != null) {
             Class290 var4 = var1.getTexture(this.field34790);
             int var5 = var4.getGlTextureId();
-            int var6 = Class7414.method23865();
-            Class7414.method23814(var5);
+            int var6 = GlStateManager.method23865();
+            GlStateManager.method23814(var5);
             this.field34799 = GL11.glGetTexLevelParameteri(3553, 0, 4097);
-            Class7414.method23814(var6);
+            GlStateManager.method23814(var6);
          }
 
          if (this.field34799 <= 0) {

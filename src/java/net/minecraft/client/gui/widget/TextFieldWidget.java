@@ -440,7 +440,7 @@ public class TextFieldWidget extends Widget implements Class1190, Class1152 {
 
       Tessellator var10 = Tessellator.getInstance();
       BufferBuilder var8 = var10.getBuffer();
-      RenderSystem.method27889(0.0F, 0.0F, 255.0F, 255.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 255.0F, 255.0F);
       RenderSystem.disableTexture();
       RenderSystem.method27857();
       RenderSystem.method27859(Class2270.field14769);

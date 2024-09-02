@@ -64,7 +64,7 @@ public class AutoPotion extends Module {
                 if (this.field23811 != 1) {
                     if (this.field23811 >= 2) {
                         mc.player.inventory.currentItem = this.field23810;
-                        mc.playerController.method23138();
+                        mc.playerController.syncCurrentPlayItem();
                         this.field23811 = 0;
                     }
 
@@ -181,7 +181,7 @@ public class AutoPotion extends Module {
                         && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).getStringSettingValueByName("Type").equalsIgnoreCase("NoGround");
                 float[] var9 = this.method16630();
                 mc.player.inventory.currentItem = var6 - 36;
-                mc.playerController.method23138();
+                mc.playerController.syncCurrentPlayItem();
                 if (!this.getBooleanValueFromSetttingName("Instant")) {
                     this.field23811 = 1;
                     var1.method13918(var9[0]);
@@ -191,7 +191,7 @@ public class AutoPotion extends Module {
                     mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                     mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.field183));
                     mc.player.inventory.currentItem = var7;
-                    mc.playerController.method23138();
+                    mc.playerController.syncCurrentPlayItem();
                     KillAura.field23954 = 1;
                 }
 

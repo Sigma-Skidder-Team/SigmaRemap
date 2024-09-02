@@ -567,7 +567,7 @@ public class CreativeScreen extends Class860<Class5820> {
          this.method2459(var1, field4775, var2, var3);
       }
 
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.method2615(var1, var2, var3);
    }
 
@@ -609,7 +609,7 @@ public class CreativeScreen extends Class860<Class5820> {
 
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       ItemGroup var7 = ItemGroup.field31664[field4776];
 
       for (ItemGroup var11 : ItemGroup.field31664) {
@@ -622,7 +622,7 @@ public class CreativeScreen extends Class860<Class5820> {
       this.mc.getTextureManager().bindTexture(new ResourceLocation("textures/gui/container/creative_inventory/tab_" + var7.method23645()));
       this.method5696(var1, this.field4734, this.field4735, 0, 0, this.field4721, this.field4722);
       this.field4779.render(var1, var3, var4, var2);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       int var12 = this.field4734 + 175;
       int var13 = this.field4735 + 18;
       int var14 = var13 + 112;

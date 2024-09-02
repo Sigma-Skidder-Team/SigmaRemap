@@ -65,7 +65,7 @@ public class Class8480 {
             field36351.method6525(mc.framebuffer.field35732, mc.framebuffer.field35733);
          }
 
-         RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
          RenderSystem.enableBlend();
          GL11.glDisable(2929);
          GL11.glDisable(3008);

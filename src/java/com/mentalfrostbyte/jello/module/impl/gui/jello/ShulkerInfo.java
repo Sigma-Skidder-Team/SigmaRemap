@@ -70,7 +70,7 @@ public class ShulkerInfo extends Module {
                         GL11.glEnable(3042);
                         GL11.glAlphaFunc(516, 0.0F);
                         GL11.glEnable(2848);
-                        RenderUtil.method11459(
+                        RenderUtil.render3DColoredBox(
                                 new Class9388(
                                         var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
                                 ),
@@ -181,7 +181,7 @@ public class ShulkerInfo extends Module {
                     int var14 = (int) (mc.mouseHelper.method36739() * (double) GuiManager.field41348 - 33.0);
                     this.method16676(var13, var14, var7, var6.method32149().getString(), true);
                     GL11.glPopMatrix();
-                    RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+                    RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                     RenderSystem.enableCull();
                     RenderSystem.disableDepthTest();
                     RenderSystem.enableBlend();

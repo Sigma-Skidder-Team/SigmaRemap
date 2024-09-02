@@ -197,7 +197,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void disconnect(ITextComponent var1) {
       this.netManager.method30694(new SDisconnectPacket(var1), var2 -> this.netManager.method30701(var1));
       this.netManager.method30711();
-      this.server.method1635(this.netManager::method30713);
+      this.server.method1635(this.netManager::handleDisconnection);
    }
 
    private <T> void method15659(T var1, Consumer<T> var2, BiFunction<IChatFilter, T, CompletableFuture<Optional<T>>> var3) {

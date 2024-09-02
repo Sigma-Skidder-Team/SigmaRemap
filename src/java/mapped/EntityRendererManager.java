@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -26,7 +27,7 @@ public class EntityRendererManager {
    private final FontRenderer field40014;
    public final TextureManager field40015;
    private World field40016;
-   public Class9624 field40017;
+   public ActiveRenderInfo field40017;
    private Class8661 field40018;
    public Entity field40019;
    public final GameSettings field40020;
@@ -186,7 +187,7 @@ public class EntityRendererManager {
       }
    }
 
-   public void method32213(World var1, Class9624 var2, Entity var3) {
+   public void method32213(World var1, ActiveRenderInfo var2, Entity var3) {
       this.field40016 = var1;
       this.field40017 = var2;
       this.field40018 = var2.method37508();
@@ -377,7 +378,7 @@ public class EntityRendererManager {
 
       if (var16) {
          var15.method17044((RenderType)null);
-         Class7414.method23864();
+         GlStateManager.method23864();
       }
 
       var1.pop();

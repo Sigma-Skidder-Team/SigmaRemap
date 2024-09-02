@@ -436,7 +436,7 @@ public class Class7789 {
    public static float method25852(PlayerEntity var0) {
       float var3 = (float)method25851(var0);
       float var4 = 0.0F;
-      float var5 = method25853(var0.method3090());
+      float var5 = method25853(var0.getHeldItemMainhand());
       return var5 * (1.0F - Math.min(20.0F, Math.max(var3 / 5.0F, var3 - var5 / (var4 / 4.0F + 2.0F))) / 25.0F);
    }
 

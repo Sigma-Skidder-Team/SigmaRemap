@@ -85,7 +85,7 @@ public class BasicAutoGapple extends Module {
                     } else {
                         this.field23550 = mc.player.inventory.currentItem;
                         mc.player.inventory.currentItem = var4;
-                        mc.playerController.method23138();
+                        mc.playerController.syncCurrentPlayItem();
                         mc.playerController.processRightClick(mc.player, mc.world, Hand.MAIN_HAND);
                     }
                 }

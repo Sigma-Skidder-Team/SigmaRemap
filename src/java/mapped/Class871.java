@@ -52,7 +52,7 @@ public class Class871 extends Class851<Class5822> {
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       Class7516.method24502();
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4829);
       int var7 = (this.width - this.field4721) / 2;
       int var8 = (this.height - this.field4722) / 2;
@@ -111,7 +111,7 @@ public class Class871 extends Class851<Class5822> {
       RenderSystem.popMatrix();
       RenderSystem.matrixMode(5888);
       Class7516.method24503();
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       Class6577.method19915().method19917((long)this.field4727.method18185());
       int var18 = this.field4727.method18184();
 
@@ -121,7 +121,7 @@ public class Class871 extends Class851<Class5822> {
          this.method5703(0);
          this.mc.getTextureManager().bindTexture(field4829);
          int var22 = this.field4727.field25509[var19];
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          if (var22 != 0) {
             String var23 = "" + var22;
             int var24 = 86 - this.fontRenderer.getStringWidth(var23);

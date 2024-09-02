@@ -219,7 +219,7 @@ public class Class904 extends ProjectileEntity {
    }
 
    private boolean method3534(PlayerEntity var1) {
-      ItemStack var4 = var1.method3090();
+      ItemStack var4 = var1.getHeldItemMainhand();
       ItemStack var5 = var1.method3091();
       boolean var6 = var4.getItem() == Items.field37906;
       boolean var7 = var5.getItem() == Items.field37906;

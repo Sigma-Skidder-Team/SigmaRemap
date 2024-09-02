@@ -133,7 +133,7 @@ public class BasicClickTP extends Module {
                         var12.method29877() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321() + 1.6F,
                         var8 + 0.3F
                 );
-                RenderUtil.method11459(var10, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.2F));
+                RenderUtil.render3DColoredBox(var10, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.2F));
             }
 
             GL11.glPushMatrix();

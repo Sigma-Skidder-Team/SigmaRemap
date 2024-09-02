@@ -312,7 +312,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
       Tessellator var4 = Tessellator.getInstance();
       BufferBuilder var5 = var4.getBuffer();
       this.mc.getTextureManager().bindTexture(field6451);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var6 = 32.0F;
       var5.begin(7, DefaultVertexFormats.field43346);
       var5.pos(0.0, (double)this.height, 0.0)

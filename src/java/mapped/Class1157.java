@@ -115,7 +115,7 @@ public class Class1157 extends Class1156 {
          var20 = this.field6298.field33196;
       }
 
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.field6297.getTextureManager().bindTexture(AbstractGui.field6453);
       AbstractGui.method5699(var1, var4 + var5 - 15, var3, (float)(var17 * 10), (float)(176 + var18 * 8), 10, 8, 256, 256);
       String var21 = this.field6298.method25580();
@@ -145,7 +145,7 @@ public class Class1157 extends Class1156 {
       if (this.field6297.gameSettings.touchscreen || var9) {
          this.field6297.getTextureManager().bindTexture(Class1279.method6090());
          AbstractGui.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var24 = var7 - var4;
          int var25 = var8 - var3;
          if (this.method5548()) {

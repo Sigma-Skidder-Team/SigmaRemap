@@ -161,7 +161,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
       BufferBuilder var10 = var9.getBuffer();
       if (this.field6798) {
          this.field6782.getTextureManager().bindTexture(AbstractGui.field6451);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          float var11 = 32.0F;
          var10.begin(7, DefaultVertexFormats.field43346);
          var10.pos((double)this.field6790, (double)this.field6788, 0.0)
@@ -230,7 +230,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
          RenderSystem.depthFunc(515);
          RenderSystem.disableDepthTest();
          RenderSystem.enableBlend();
-         RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field16000, Class1981.field12927);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field16000, DestFactor.field12927);
          RenderSystem.method27817();
          RenderSystem.method27866(7425);
          RenderSystem.disableTexture();
@@ -465,14 +465,14 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
                int var20 = this.field6790 + this.field6785 / 2 + var18 / 2;
                RenderSystem.disableTexture();
                float var21 = !this.method6057() ? 0.5F : 1.0F;
-               RenderSystem.method27889(var21, var21, var21, 1.0F);
+               RenderSystem.color4f(var21, var21, var21, 1.0F);
                var11.begin(7, DefaultVertexFormats.field43341);
                var11.pos((double)var19, (double)(var15 + var16 + 2), 0.0).endVertex();
                var11.pos((double)var20, (double)(var15 + var16 + 2), 0.0).endVertex();
                var11.pos((double)var20, (double)(var15 - 2), 0.0).endVertex();
                var11.pos((double)var19, (double)(var15 - 2), 0.0).endVertex();
                var10.draw();
-               RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
+               RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
                var11.begin(7, DefaultVertexFormats.field43341);
                var11.pos((double)(var19 + 1), (double)(var15 + var16 + 1), 0.0).endVertex();
                var11.pos((double)(var20 - 1), (double)(var15 + var16 + 1), 0.0).endVertex();

@@ -1694,7 +1694,7 @@ public abstract class LivingEntity extends Entity {
       return Class7809.field33505;
    }
 
-   public ItemStack method3090() {
+   public ItemStack getHeldItemMainhand() {
       return this.method2943(Class2106.field13731);
    }
 
@@ -1707,7 +1707,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public boolean method3093(Predicate<Item> var1) {
-      return var1.test(this.method3090().getItem()) || var1.test(this.method3091().getItem());
+      return var1.test(this.getHeldItemMainhand().getItem()) || var1.test(this.method3091().getItem());
    }
 
    public ItemStack getHeldItem(Hand var1) {

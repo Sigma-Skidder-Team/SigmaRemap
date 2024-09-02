@@ -275,7 +275,7 @@ public class Class4388 {
       if (!var0.method4635()) {
          boolean var5 = var0.method4247(var4);
          if (!var5) {
-            ItemStack var6 = var0.method3090();
+            ItemStack var6 = var0.getHeldItemMainhand();
             if (!method13827(var6.getItem())) {
                method13820(var0, Collections.<ItemStack>singletonList(var6));
             } else {

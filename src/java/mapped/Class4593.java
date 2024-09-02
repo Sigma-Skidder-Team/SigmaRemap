@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -33,7 +34,7 @@ public class Class4593 extends Class4587 {
    }
 
    @Override
-   public void method14510(Class5422 var1, Class9624 var2, float var3) {
+   public void method14510(Class5422 var1, ActiveRenderInfo var2, float var3) {
       Class7906 var6 = null;
       if (Class7944.method26921()) {
          var6 = Shaders.field40848;

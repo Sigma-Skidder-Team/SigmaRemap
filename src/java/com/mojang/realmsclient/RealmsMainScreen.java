@@ -603,7 +603,7 @@ public class RealmsMainScreen extends RealmsScreen {
 
       if (this.field4287 && !this.field4288 && this.method2012()) {
          this.mc.getTextureManager().bindTexture(field4240);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          byte var10 = 8;
          byte var8 = 8;
          byte var9 = 0;
@@ -627,7 +627,7 @@ public class RealmsMainScreen extends RealmsScreen {
 
    private void method2039(MatrixStack var1, int var2, int var3) {
       this.mc.getTextureManager().bindTexture(field4233);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.pushMatrix();
       RenderSystem.scalef(0.5F, 0.5F, 0.5F);
       AbstractGui.method5699(var1, var2 * 2, var3 * 2 - 5, 0.0F, 0.0F, 200, 50, 200, 50);
@@ -673,19 +673,19 @@ public class RealmsMainScreen extends RealmsScreen {
          this.field4289 = true;
       }
 
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 0.7F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 0.7F);
       RenderSystem.enableBlend();
       this.mc.getTextureManager().bindTexture(field4238);
       boolean var10 = false;
       byte var9 = 32;
       AbstractGui.method5699(var1, 0, 32, 0.0F, 0.0F, this.width, this.height - 40 - 32, 310, 166);
       RenderSystem.disableBlend();
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var6, var7, 0.0F, 0.0F, 310, 166, 310, 166);
       this.mc.getTextureManager().bindTexture(field4237);
       if (!field4261.isEmpty()) {
          this.mc.getTextureManager().bindTexture(field4261.get(this.field4292));
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          AbstractGui.method5699(var1, var6 + 7, var7 + 7, 0.0F, 0.0F, 195, 152, 195, 152);
          if (this.field4293 % 95 >= 5) {
             this.field4294 = false;
@@ -722,7 +722,7 @@ public class RealmsMainScreen extends RealmsScreen {
       }
 
       this.mc.getTextureManager().bindTexture(field4231);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       boolean var20 = var7 && var6;
       float var22 = !var20 ? 0.0F : 16.0F;
       AbstractGui.method5699(var1, var4, var5 - 6, var22, 0.0F, 15, 25, 31, 25);
@@ -733,7 +733,7 @@ public class RealmsMainScreen extends RealmsScreen {
             Math.max(0.0F, Math.max(MathHelper.sin((float)(10 + this.field4283) * 0.57F), MathHelper.cos((float)this.field4283 * 0.35F))) * -6.0F
          );
          this.mc.getTextureManager().bindTexture(field4230);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          float var18 = !var11 ? 0.0F : 8.0F;
          AbstractGui.method5699(var1, var4 + 4, var5 + 4 + var17, (float)var16, var18, 8, 8, 48, 16);
       }
@@ -792,7 +792,7 @@ public class RealmsMainScreen extends RealmsScreen {
 
    private void method2049(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.mc.getTextureManager().bindTexture(field4227);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.height - 40 && var5 > 32 && !this.method2012()) {
          this.method2062(field4252);
@@ -801,7 +801,7 @@ public class RealmsMainScreen extends RealmsScreen {
 
    private void method2050(MatrixStack var1, int var2, int var3, int var4, int var5, int var6) {
       this.mc.getTextureManager().bindTexture(field4228);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       if (this.field4283 % 20 >= 10) {
          AbstractGui.method5699(var1, var2, var3, 10.0F, 0.0F, 10, 28, 20, 28);
       } else {
@@ -823,7 +823,7 @@ public class RealmsMainScreen extends RealmsScreen {
 
    private void method2051(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.mc.getTextureManager().bindTexture(field4225);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.height - 40 && var5 > 32 && !this.method2012()) {
          this.method2062(field4255);
@@ -832,7 +832,7 @@ public class RealmsMainScreen extends RealmsScreen {
 
    private void method2052(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.mc.getTextureManager().bindTexture(field4226);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.height - 40 && var5 > 32 && !this.method2012()) {
          this.method2062(field4256);
@@ -846,7 +846,7 @@ public class RealmsMainScreen extends RealmsScreen {
       }
 
       this.mc.getTextureManager().bindTexture(field4229);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 28.0F;
       AbstractGui.method5699(var1, var2, var3, var9, 0.0F, 28, 28, 56, 28);
       if (var8) {
@@ -862,7 +862,7 @@ public class RealmsMainScreen extends RealmsScreen {
       }
 
       this.mc.getTextureManager().bindTexture(field4234);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 28.0F;
       AbstractGui.method5699(var1, var2, var3, var9, 0.0F, 28, 28, 56, 28);
       if (var8) {
@@ -905,7 +905,7 @@ public class RealmsMainScreen extends RealmsScreen {
       }
 
       this.mc.getTextureManager().bindTexture(field4235);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var10 = !var6 ? 0.0F : 20.0F;
       AbstractGui.method5699(var1, var4, var5, var10, 0.0F, 20, 20, 40, 20);
       if (var9) {
@@ -921,9 +921,9 @@ public class RealmsMainScreen extends RealmsScreen {
 
       this.mc.getTextureManager().bindTexture(field4236);
       if (!var8) {
-         RenderSystem.method27889(0.5F, 0.5F, 0.5F, 1.0F);
+         RenderSystem.color4f(0.5F, 0.5F, 0.5F, 1.0F);
       } else {
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       }
 
       boolean var12 = var8 && var7;
@@ -941,14 +941,14 @@ public class RealmsMainScreen extends RealmsScreen {
             )
             : 0;
          this.mc.getTextureManager().bindTexture(field4230);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          AbstractGui.method5699(var1, var5 + 10, var6 + 2 + var14, 40.0F, 0.0F, 8, 8, 48, 16);
       }
    }
 
    private void method2058(MatrixStack var1) {
       String var4 = "LOCAL!";
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.pushMatrix();
       RenderSystem.translatef((float)(this.width / 2 - 25), 20.0F, 0.0F);
       RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
@@ -959,7 +959,7 @@ public class RealmsMainScreen extends RealmsScreen {
 
    private void method2059(MatrixStack var1) {
       String var4 = "STAGE!";
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.pushMatrix();
       RenderSystem.translatef((float)(this.width / 2 - 25), 20.0F, 0.0F);
       RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);

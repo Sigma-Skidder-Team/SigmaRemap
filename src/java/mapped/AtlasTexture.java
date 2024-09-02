@@ -113,13 +113,13 @@ public class AtlasTexture extends Class290 implements Class288 {
             }
          }
 
-         Class7414.method23814(this.getGlTextureId());
+         GlStateManager.method23814(this.getGlTextureId());
       }
 
       if (Class7944.method26921()) {
          List<TextureAtlasSprite> var12 = var1.field35338;
          if (Shaders.field40874) {
-            Class7414.method23814(this.method1135().field45440);
+            GlStateManager.method23814(this.method1135().field45440);
 
             for (TextureAtlasSprite var16 : var12) {
                TextureAtlasSprite var18 = var16.field9349;
@@ -130,7 +130,7 @@ public class AtlasTexture extends Class290 implements Class288 {
          }
 
          if (Shaders.field40875) {
-            Class7414.method23814(this.method1135().field45441);
+            GlStateManager.method23814(this.method1135().field45441);
 
             for (TextureAtlasSprite var17 : var12) {
                TextureAtlasSprite var19 = var17.field9350;
@@ -140,7 +140,7 @@ public class AtlasTexture extends Class290 implements Class288 {
             }
          }
 
-         Class7414.method23814(this.getGlTextureId());
+         GlStateManager.method23814(this.getGlTextureId());
       }
 
       Class9299.method35055(Class9299.field42892, this);
@@ -171,7 +171,7 @@ public class AtlasTexture extends Class290 implements Class288 {
                );
             }
 
-            Class7414.method23814(this.getGlTextureId());
+            GlStateManager.method23814(this.getGlTextureId());
          }
       }
    }
@@ -414,12 +414,12 @@ public class AtlasTexture extends Class290 implements Class288 {
             }
          }
 
-         Class7414.method23814(this.getGlTextureId());
+         GlStateManager.method23814(this.getGlTextureId());
       }
 
       if (Class7944.method26921()) {
          if (var3) {
-            Class7414.method23814(this.method1135().field45440);
+            GlStateManager.method23814(this.method1135().field45440);
 
             for (TextureAtlasSprite var14 : this.field1104) {
                if (var14.field9349 != null && this.method1108(var14) && var14.method7479()) {
@@ -432,7 +432,7 @@ public class AtlasTexture extends Class290 implements Class288 {
          }
 
          if (var4) {
-            Class7414.method23814(this.method1135().field45441);
+            GlStateManager.method23814(this.method1135().field45441);
 
             for (TextureAtlasSprite var15 : this.field1104) {
                if (var15.field9350 != null && this.method1108(var15) && var15.method7479()) {
@@ -445,7 +445,7 @@ public class AtlasTexture extends Class290 implements Class288 {
          }
 
          if (var3 || var4) {
-            Class7414.method23814(this.getGlTextureId());
+            GlStateManager.method23814(this.getGlTextureId());
          }
       }
 
@@ -649,7 +649,7 @@ public class AtlasTexture extends Class290 implements Class288 {
    }
 
    public boolean method1114() {
-      int var3 = Class7414.method23865();
+      int var3 = GlStateManager.method23865();
       int var4 = this.getGlTextureId();
       return var3 == var4;
    }

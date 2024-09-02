@@ -48,17 +48,17 @@ public class Class8683 {
       if (var16) {
          var10.guiScale = var14 * var15;
          var9.method8052(var11 * var15, var12 * var15);
-         Class7414.method23832();
-         Class7414.method23883(16640);
+         GlStateManager.method23832();
+         GlStateManager.method23883(16640);
          var8.getFramebuffer().bindFramebuffer(true);
-         Class7414.method23804();
+         GlStateManager.method23804();
          var8.gameRenderer.updateCameraAndRender(var8.getRenderPartialTicks(), System.nanoTime(), true);
       }
 
       Class1806 var17 = method31254(var2, var3, var4);
       if (var16) {
          var8.getFramebuffer().unbindFramebuffer();
-         Class7414.method23833();
+         GlStateManager.method23833();
          Class7944.method26928().guiScale = var13;
          var9.method8052(var11, var12);
       }

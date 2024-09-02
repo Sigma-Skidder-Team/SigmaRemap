@@ -128,7 +128,7 @@ public class Class7858 {
       }
 
       if (var1 instanceof PlayerEntity) {
-         method26315(var4, var0.method3090());
+         method26315(var4, var0.getHeldItemMainhand());
       }
    }
 
@@ -139,7 +139,7 @@ public class Class7858 {
       }
 
       if (var0 instanceof PlayerEntity) {
-         method26315(var4, var0.method3090());
+         method26315(var4, var0.getHeldItemMainhand());
       }
    }
 

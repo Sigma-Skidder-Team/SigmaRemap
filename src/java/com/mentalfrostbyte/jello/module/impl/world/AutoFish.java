@@ -22,8 +22,8 @@ public class AutoFish extends Module {
     public void method16364(RecievePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlaySoundEffectPacket || var1.getPacket() instanceof SPlaySoundPacket) {
-                if (mc.player.method3090() != null) {
-                    if (mc.player.method3090().getItem() instanceof Class3259) {
+                if (mc.player.getHeldItemMainhand() != null) {
+                    if (mc.player.getHeldItemMainhand().getItem() instanceof Class3259) {
                         if (!(var1.getPacket() instanceof SPlaySoundEffectPacket)) {
                             if (var1.getPacket() instanceof SPlaySoundPacket && !((SPlaySoundPacket) var1.getPacket()).field24315.equals("entity.bobber.splash")) {
                                 return;

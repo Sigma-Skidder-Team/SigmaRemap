@@ -253,8 +253,8 @@ public class InfiniteAura extends Module {
 
     public boolean method16776() {
         return this.field23898
-                && Minecraft.getInstance().player.method3090() != null
-                && Minecraft.getInstance().player.method3090().getItem() instanceof ItemSword;
+                && Minecraft.getInstance().player.getHeldItemMainhand() != null
+                && Minecraft.getInstance().player.getHeldItemMainhand().getItem() instanceof ItemSword;
     }
 
     @Override

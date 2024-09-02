@@ -113,7 +113,7 @@ public class Class1263 extends AbstractGui implements Class1190, Class1152 {
       if (this.field6679) {
          this.field6685 += var4;
          RenderSystem.enableBlend();
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.field6682.getTextureManager().bindTexture(field6677);
          RenderSystem.pushMatrix();
          RenderSystem.translatef(0.0F, 0.0F, 170.0F);

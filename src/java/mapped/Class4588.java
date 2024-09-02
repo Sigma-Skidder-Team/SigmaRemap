@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.renderer.ActiveRenderInfo;
+
 public class Class4588 extends Class4587 {
    private static String[] field22065;
 
@@ -12,7 +14,7 @@ public class Class4588 extends Class4587 {
    }
 
    @Override
-   public final void method14510(Class5422 var1, Class9624 var2, float var3) {
+   public final void method14510(Class5422 var1, ActiveRenderInfo var2, float var3) {
    }
 
    @Override

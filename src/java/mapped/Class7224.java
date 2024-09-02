@@ -58,7 +58,7 @@ public class Class7224 implements Class7222 {
       }
 
       Minecraft.getInstance().getTextureManager().bindTexture(this.field31057);
-      RenderSystem.method27889(var2, var2, var2, (float)var3 / 255.0F);
+      RenderSystem.color4f(var2, var2, var2, (float)var3 / 255.0F);
       AbstractGui.method5698(var1, 2, 2, 12, 12, 8.0F, 8.0F, 8, 8, 64, 64);
       AbstractGui.method5698(var1, 2, 2, 12, 12, 40.0F, 8.0F, 8, 8, 64, 64);
    }

@@ -60,7 +60,7 @@ public class Class1250 extends Class1249 {
          var10 -= 2;
       }
 
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.method5696(var1, var10, this.field6478, var8, var9, this.field6475, this.field6476);
       RenderSystem.enableDepthTest();
       this.method5826(var11.getItemRenderer());

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -16,7 +17,7 @@ public class FogRenderer {
    private static long field40353 = -1L;
    public static boolean field40354 = false;
 
-   public static void method32584(Class9624 var0, float var1, ClientWorld var2, int var3, float var4) {
+   public static void method32584(ActiveRenderInfo var0, float var1, ClientWorld var2, int var3, float var4) {
       FluidState var7 = var0.method37512();
       if (!var7.method23486(Class8953.field40469)) {
          if (!var7.method23486(Class8953.field40470)) {
@@ -205,11 +206,11 @@ public class FogRenderer {
       RenderSystem.method27842(Class2135.field13986);
    }
 
-   public static void method32586(Class9624 var0, Class2040 var1, float var2, boolean var3) {
+   public static void method32586(ActiveRenderInfo var0, Class2040 var1, float var2, boolean var3) {
       method32587(var0, var1, var2, var3, 0.0F);
    }
 
-   public static void method32587(Class9624 var0, Class2040 var1, float var2, boolean var3, float var4) {
+   public static void method32587(ActiveRenderInfo var0, Class2040 var1, float var2, boolean var3, float var4) {
       field40354 = false;
       FluidState var7 = var0.method37512();
       Entity var8 = var0.method37509();
@@ -279,7 +280,7 @@ public class FogRenderer {
             RenderSystem.method27842(Class2135.field13986);
          }
       } else {
-         Class7414.method23782(var9);
+         GlStateManager.method23782(var9);
       }
    }
 

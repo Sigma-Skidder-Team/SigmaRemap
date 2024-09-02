@@ -86,7 +86,7 @@ public class Class8087 {
          RenderSystem.method27864(Class7275.method22907(var4));
          var5 = Class7275.method22907(var4);
       } else {
-         var5 = Class7414.method23810();
+         var5 = GlStateManager.method23810();
       }
 
       IntBuffer var15 = null;

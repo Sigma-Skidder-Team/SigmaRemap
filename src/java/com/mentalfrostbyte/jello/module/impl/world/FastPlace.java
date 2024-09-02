@@ -17,8 +17,8 @@ public class FastPlace extends Module {
     @EventTarget
     private void method16186(TickEvent var1) {
         if (this.isEnabled()) {
-            if (mc.player.method3090() != null) {
-                if (mc.player.method3090().getItem() instanceof Class3292) {
+            if (mc.player.getHeldItemMainhand() != null) {
+                if (mc.player.getHeldItemMainhand().getItem() instanceof Class3292) {
                     if (mc.objectMouseOver instanceof BlockRayTraceResult) {
                         if (!this.getBooleanValueFromSetttingName("Reduce Delay")) {
                             mc.rightClickDelayTimer = 0;

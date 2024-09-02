@@ -28,14 +28,14 @@ public class Class9267 {
       this.field42632 = true;
       if (this.field42633 != null && this.field42633.isChannelOpen()) {
          this.field42633.method30701(new TranslationTextComponent("disconnect.genericReason"));
-         this.field42633.method30713();
+         this.field42633.handleDisconnection();
       }
    }
 
    public void method34898() {
       if (this.field42633 != null) {
          if (!this.field42633.isChannelOpen()) {
-            this.field42633.method30713();
+            this.field42633.handleDisconnection();
          } else {
             this.field42633.tick();
          }

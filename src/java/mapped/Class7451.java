@@ -25,7 +25,7 @@ public class Class7451 {
       RenderSystem.matrixMode(5888);
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.method27883(180.0F, 1.0F, 0.0F, 0.0F);
       RenderSystem.enableBlend();
       RenderSystem.method27817();

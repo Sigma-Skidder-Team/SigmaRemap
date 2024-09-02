@@ -151,17 +151,17 @@ public class RealmsResetWorldScreen extends Class813 {
    private void method2249(MatrixStack var1, int var2, int var3, ITextComponent var4, ResourceLocation var5, boolean var6, boolean var7) {
       this.mc.getTextureManager().bindTexture(var5);
       if (!var6) {
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       } else {
-         RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
+         RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
       }
 
       AbstractGui.method5699(var1, var2 + 2, var3 + 14, 0.0F, 0.0F, 56, 56, 56, 56);
       this.mc.getTextureManager().bindTexture(field4389);
       if (!var6) {
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       } else {
-         RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
+         RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
       }
 
       AbstractGui.method5699(var1, var2, var3 + 12, 0.0F, 0.0F, 60, 60, 60, 60);

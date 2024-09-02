@@ -151,7 +151,7 @@ public class Class822 extends RealmsScreen {
    private void method2364(MatrixStack var1) {
       double var4 = Math.min((double)this.field4487.field31909 / (double)this.field4487.field31910, 1.0);
       this.field4491 = String.format(Locale.ROOT, "%.1f", var4 * 100.0);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.disableTexture();
       double var6 = (double)(this.width / 2 - 100);
       double var8 = 0.5;

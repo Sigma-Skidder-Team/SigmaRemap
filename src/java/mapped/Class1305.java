@@ -133,7 +133,7 @@ public class Class1305 extends Screen implements Class1306 {
    }
 
    private void method6187(MatrixStack var1, int var2, int var3, int var4, int var5) {
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field6452);
       method5697(var1, var2, var3, this.method5702(), (float)var4, (float)var5, 18, 18, 128, 128);
    }

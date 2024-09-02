@@ -161,7 +161,7 @@ public class RearView extends PremiumModule {
         RenderSystem.method27817();
         RenderSystem.disableBlend();
         RenderSystem.method27822();
-        RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         var1.method29110();
         float var10 = (float) var2;
         float var11 = (float) var3;

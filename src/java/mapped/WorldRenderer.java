@@ -13,6 +13,7 @@ import it.unimi.dsi.fastutil.objects.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.AbstractOption;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -207,7 +208,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          RenderSystem.depthMask(Minecraft.isFabulousGraphicsEnabled());
          int var17 = -1;
          float var18 = (float)this.field955 + var2;
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          Mutable var19 = new Mutable();
 
          for (int var20 = var13 - var16; var20 <= var13 + var16; var20++) {
@@ -339,7 +340,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       }
    }
 
-   public void method856(Class9624 var1) {
+   public void method856(ActiveRenderInfo var1) {
       float var2 = this.field939.world.method6792(1.0F) / (Minecraft.isFancyGraphicsEnabled() ? 1.0F : 2.0F);
       if (!Class7944.method26820()) {
          var2 /= 2.0F;
@@ -504,7 +505,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
    public void method860() {
       if (this.method861()) {
          RenderSystem.enableBlend();
-         RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field16000, Class1981.field12927);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field16000, DestFactor.field12927);
          this.field959.method29117(this.field939.getMainWindow().getFramebufferWidth(), this.field939.getMainWindow().getFramebufferHeight(), false);
          RenderSystem.disableBlend();
       }
@@ -754,7 +755,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       return "E: " + this.field986 + "/" + this.field943.method6844() + ", B: " + this.field987 + ", " + Class7944.method26778();
    }
 
-   public void method874(Class9624 var1, Class7647 var2, boolean var3, int var4, boolean var5) {
+   public void method874(ActiveRenderInfo var1, Class7647 var2, boolean var3, int var4, boolean var5) {
       Vector3d var6 = var1.method37504();
       if (this.field939.gameSettings.field44574 != this.field985) {
          this.loadRenderers();
@@ -1064,7 +1065,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       }
    }
 
-   public void updateCameraAndRender(MatrixStack matrixStackIn, float var2, long var3, boolean var5, Class9624 var6, GameRenderer var7, Class1699 var8, Matrix4f var9) {
+   public void updateCameraAndRender(MatrixStack matrixStackIn, float var2, long var3, boolean var5, ActiveRenderInfo var6, GameRenderer var7, Class1699 var8, Matrix4f var9) {
       TileEntityRendererDispatcher.instance.method27961(this.field943, this.field939.getTextureManager(), this.field939.fontRenderer, var6, this.field939.objectMouseOver);
       this.field941.method32213(this.field943, var6, this.field939.pointedEntity);
       IProfiler var10 = this.field943.getProfiler();
@@ -1126,7 +1127,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             Shaders.method33072();
          }
       } else {
-         Class7414.method23714();
+         GlStateManager.method23714();
       }
 
       var10.endStartSection("fog");
@@ -1161,7 +1162,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       }
 
       if (Class7944.method26806() && FogRenderer.field40354) {
-         Class7414.method23889(false);
+         GlStateManager.method23889(false);
       }
 
       this.method880(RenderType.method14300(), matrixStackIn, var12, var14, var16);
@@ -1428,10 +1429,10 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
       RenderSystem.pushMatrix();
       RenderSystem.method27888(matrixStackIn.getLast().getMatrix());
-      boolean var70 = Class7414.method23868();
-      Class7414.method23780();
+      boolean var70 = GlStateManager.method23868();
+      GlStateManager.method23780();
       this.field939.debugRenderer.method27453(matrixStackIn, irendertypebuffer$impl, var12, var14, var16);
-      Class7414.method23869(var70);
+      GlStateManager.method23869(var70);
       RenderSystem.popMatrix();
       irendertypebuffer$impl.finish(Class8624.method30909());
       irendertypebuffer$impl.finish(Class8624.method30900());
@@ -1493,7 +1494,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          }
       }
 
-      Class7414.method23889(true);
+      GlStateManager.method23889(true);
       RenderSystem.pushMatrix();
       RenderSystem.method27888(matrixStackIn.getLast().getMatrix());
       if (this.field939.gameSettings.method37153() != CloudOption.OFF) {
@@ -1520,7 +1521,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       } else {
          RenderSystem.depthMask(false);
          if (Class7944.method26921()) {
-            Class7414.method23713(Shaders.method33002());
+            GlStateManager.method23713(Shaders.method33002());
          }
 
          var10.endStartSection("weather");
@@ -1658,18 +1659,18 @@ public class WorldRenderer implements Class215, AutoCloseable {
             Class8066 var32 = var13.field30281;
             if (!var32.method27715().method24110(var1)) {
                Class1698 var15 = var32.method27711(var1);
-               Class7414.method23832();
+               GlStateManager.method23832();
                BlockPos var35 = var32.method27718();
-               Class7414.method23840((double)var35.getX() - var3, (double)var35.getY() - var5, (double)var35.getZ() - var7);
+               GlStateManager.method23840((double)var35.getX() - var3, (double)var35.getY() - var5, (double)var35.getZ() - var7);
                var15.method7302();
                DefaultVertexFormats.field43334.method26218(0L);
-               Class7414.method23890();
+               GlStateManager.method23890();
                if (var9) {
                   Class5463.method17166();
                }
 
                var15.method7307(7);
-               Class7414.method23833();
+               GlStateManager.method23833();
                if (var29) {
                   BitSet var37 = var32.method27715().method24112(var1);
                   if (var37 != null) {
@@ -1680,7 +1681,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          }
       }
 
-      Class7414.method23891();
+      GlStateManager.method23891();
       RenderSystem.popMatrix();
       Class1698.method7308();
       RenderSystem.method27891();
@@ -1694,14 +1695,14 @@ public class WorldRenderer implements Class215, AutoCloseable {
    }
 
    private void method881(int var1, int var2, int var3, double var4, double var6, double var8, Class8836 var10) {
-      Class7414.method23832();
-      Class7414.method23840((double)var1 - var4, (double)var2 - var6, (double)var3 - var8);
+      GlStateManager.method23832();
+      GlStateManager.method23840((double)var1 - var4, (double)var2 - var6, (double)var3 - var8);
       var10.method31986();
-      Class7414.method23890();
-      Class7414.method23833();
+      GlStateManager.method23890();
+      GlStateManager.method23833();
    }
 
-   private void method882(Class9624 var1) {
+   private void method882(ActiveRenderInfo var1) {
       Tessellator var2 = Tessellator.getInstance();
       BufferBuilder var3 = var2.getBuffer();
       if (this.field939.debugWireframe || this.field939.debugChunkPath) {
@@ -1823,7 +1824,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          var2.draw();
          RenderSystem.depthMask(false);
          var3.begin(1, DefaultVertexFormats.field43341);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.method883(var3, 0);
          this.method883(var3, 1);
          this.method883(var3, 1);
@@ -2069,10 +2070,10 @@ public class WorldRenderer implements Class215, AutoCloseable {
             Shaders.method33115();
          }
 
-         RenderSystem.method27836(Class2339.field15997, Class1981.field12927, Class2339.field15990, Class1981.field12936);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12927, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
          var1.push();
          float var22 = 1.0F - this.field943.method6792(var2);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, var22);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, var22);
          var1.rotate(Vector3f.YP.rotationDegrees(-90.0F));
          Class8862.method32263(this.field943, this.field940, var1, var2);
          if (var20) {
@@ -2123,7 +2124,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
          float var27 = this.field943.method6875(var2) * var22;
          if (var27 > 0.0F && Class7944.method26884() && !Class8862.method32264(this.field943)) {
-            RenderSystem.method27889(var27, var27, var27, var27);
+            RenderSystem.color4f(var27, var27, var27, var27);
             this.field949.method7302();
             this.field948.method26218(0L);
             this.field949.method7306(var1.getLast().getMatrix(), 7);
@@ -2131,7 +2132,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             this.field948.method26219();
          }
 
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.disableBlend();
          RenderSystem.disableAlphaTest();
          RenderSystem.method27840();
@@ -2193,7 +2194,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             RenderSystem.disableAlphaTest();
             RenderSystem.enableDepthTest();
             RenderSystem.method27939();
-            RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12932);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12932);
             RenderSystem.method27840();
             RenderSystem.depthMask(true);
             float var10 = 12.0F;
@@ -2263,7 +2264,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             }
 
             var1.pop();
-            RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.method27817();
             RenderSystem.enableCull();
             RenderSystem.disableBlend();
@@ -2543,7 +2544,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       }
    }
 
-   private void method892(Class9624 var1) {
+   private void method892(ActiveRenderInfo var1) {
       BufferBuilder var2 = Tessellator.getInstance().getBuffer();
       WorldBorder var3 = this.field943.method6810();
       double var4 = (double)(this.field939.gameSettings.field44574 * 16);
@@ -2563,7 +2564,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          double var12 = var1.method37504().z;
          RenderSystem.enableBlend();
          RenderSystem.enableDepthTest();
-         RenderSystem.method27836(Class2339.field15997, Class1981.field12927, Class2339.field15990, Class1981.field12936);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12927, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
          this.field940.bindTexture(field935);
          RenderSystem.depthMask(Minecraft.isFabulousGraphicsEnabled());
          RenderSystem.pushMatrix();
@@ -2571,7 +2572,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          float var15 = (float)(var14 >> 16 & 0xFF) / 255.0F;
          float var16 = (float)(var14 >> 8 & 0xFF) / 255.0F;
          float var17 = (float)(var14 & 0xFF) / 255.0F;
-         RenderSystem.method27889(var15, var16, var17, (float)var6);
+         RenderSystem.color4f(var15, var16, var17, (float)var6);
          RenderSystem.method27856(-3.0F, -3.0F);
          RenderSystem.method27852();
          RenderSystem.method27939();
@@ -2649,7 +2650,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          RenderSystem.method27856(0.0F, 0.0F);
          RenderSystem.method27853();
          RenderSystem.disableAlphaTest();
-         RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
          RenderSystem.disableBlend();
          RenderSystem.popMatrix();
          RenderSystem.depthMask(true);
@@ -2938,7 +2939,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
    @Nullable
    private Class4587 method915(IParticleData var1, boolean var2, boolean var3, double var4, double var6, double var8, double var10, double var12, double var14) {
-      Class9624 var16 = this.field939.gameRenderer.getActiveRenderInfo();
+      ActiveRenderInfo var16 = this.field939.gameRenderer.getActiveRenderInfo();
       if (this.field939 != null && var16.method37510() && this.field939.particles != null) {
          Class2294 var17 = this.method916(var3);
          if (var1 == ParticleTypes.field34069 && !Class7944.method26842()) {
@@ -3046,7 +3047,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          case 1023:
          case 1028:
          case 1038:
-            Class9624 var4 = this.field939.gameRenderer.getActiveRenderInfo();
+            ActiveRenderInfo var4 = this.field939.gameRenderer.getActiveRenderInfo();
             if (var4.method37510()) {
                double var5 = (double)var2.getX() - var4.method37504().x;
                double var7 = (double)var2.getY() - var4.method37504().y;
@@ -3567,7 +3568,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       return this.renderInfosTileEntities;
    }
 
-   private void method940(Class9624 var1, Class7647 var2, boolean var3) {
+   private void method940(ActiveRenderInfo var1, Class7647 var2, boolean var3) {
       if (this.field1023 == 0) {
          this.method941(var1, var2, var3);
          this.field939.ingameGUI.getChatGUI().method5941(201435902);
@@ -3578,7 +3579,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       }
    }
 
-   private void method941(Class9624 var1, Class7647 var2, boolean var3) {
+   private void method941(ActiveRenderInfo var1, Class7647 var2, boolean var3) {
       int var4 = this.field939.gameSettings.field44705;
       boolean var5 = this.field939.gameSettings.field44684;
 

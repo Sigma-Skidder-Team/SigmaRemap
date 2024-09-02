@@ -112,8 +112,8 @@ public class ShadowESP extends Module {
                 MatrixStack var18 = new MatrixStack();
                 boolean var19 = mc.gameSettings.field44616;
                 RenderSystem.method27821();
-                RenderSystem.method27889(0.0F, 0.0F, 1.0F, 0.5F);
-                RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
+                RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
+                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
                 RenderSystem.enableBlend();
                 mc.gameSettings.field44616 = false;
                 int var20 = var10.method3222();

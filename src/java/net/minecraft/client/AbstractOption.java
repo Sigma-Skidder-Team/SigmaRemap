@@ -235,7 +235,7 @@ public abstract class AbstractOption {
          var5.method976();
       } else {
          var0.graphicFanciness = var0.graphicFanciness.method8745();
-         if (var0.graphicFanciness == GraphicsFanciness.FABULOUS && (Class7944.method26921() || !Class7414.method23862() || var5.method980())) {
+         if (var0.graphicFanciness == GraphicsFanciness.FABULOUS && (Class7944.method26921() || !GlStateManager.method23862() || var5.method980())) {
             var0.graphicFanciness = GraphicsFanciness.field13603;
          }
 

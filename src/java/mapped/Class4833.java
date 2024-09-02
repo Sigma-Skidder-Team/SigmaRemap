@@ -26,7 +26,7 @@ public class Class4833 implements ISelectionContext {
       this(
          var1.method3335(),
          var1.getPosY(),
-         !(var1 instanceof LivingEntity) ? Items.field37222 : ((LivingEntity)var1).method3090().getItem(),
+         !(var1 instanceof LivingEntity) ? Items.field37222 : ((LivingEntity)var1).getHeldItemMainhand().getItem(),
          !(var1 instanceof LivingEntity) ? var0 -> false : ((LivingEntity)var1)::method3107
       );
    }

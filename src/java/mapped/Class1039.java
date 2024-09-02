@@ -50,7 +50,7 @@ public class Class1039 extends Class1038 {
    @Override
    public boolean method3114(Entity var1) {
       boolean var4 = super.method3114(var1);
-      if (var4 && this.method3090().isEmpty() && var1 instanceof LivingEntity) {
+      if (var4 && this.getHeldItemMainhand().isEmpty() && var1 instanceof LivingEntity) {
          float var5 = this.world.method6807(this.getPosition()).method38328();
          ((LivingEntity)var1).method3035(new Class2023(Effects.HUNGER, 140 * (int)var5));
       }

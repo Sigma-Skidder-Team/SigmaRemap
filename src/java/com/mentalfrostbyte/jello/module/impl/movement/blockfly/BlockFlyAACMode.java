@@ -200,7 +200,7 @@ public class BlockFlyAACMode extends Module {
     }
 
     public List<Class9238> method16208(Block var1, BlockPos var2) {
-        return Class9291.method35030(var1, var2, (int) mc.playerController.method23135());
+        return Class9291.method35030(var1, var2, (int) mc.playerController.getBlockReachDistance());
     }
 
     @EventTarget

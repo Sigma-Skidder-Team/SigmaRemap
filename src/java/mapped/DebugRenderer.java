@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -106,7 +107,7 @@ public class DebugRenderer {
    }
 
    public static void method27455(BlockPos var0, BlockPos var1, float var2, float var3, float var4, float var5) {
-      Class9624 var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
+      ActiveRenderInfo var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
       if (var8.method37510()) {
          Vector3d var9 = var8.method37504().method11345();
          AxisAlignedBB var10 = new AxisAlignedBB(var0, var1).method19669(var9);
@@ -115,7 +116,7 @@ public class DebugRenderer {
    }
 
    public static void method27456(BlockPos var0, float var1, float var2, float var3, float var4, float var5) {
-      Class9624 var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
+      ActiveRenderInfo var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
       if (var8.method37510()) {
          Vector3d var9 = var8.method37504().method11345();
          AxisAlignedBB var10 = new AxisAlignedBB(var0).method19669(var9).method19664((double)var1);
@@ -151,7 +152,7 @@ public class DebugRenderer {
 
    public static void method27462(String var0, double var1, double var3, double var5, int var7, float var8, boolean var9, float var10, boolean var11) {
       Minecraft var14 = Minecraft.getInstance();
-      Class9624 var15 = var14.gameRenderer.getActiveRenderInfo();
+      ActiveRenderInfo var15 = var14.gameRenderer.getActiveRenderInfo();
       if (var15.method37510() && var14.getRenderManager().field40020 != null) {
          FontRenderer var16 = var14.fontRenderer;
          double var17 = var15.method37504().x;
@@ -177,7 +178,7 @@ public class DebugRenderer {
          Class7735 var24 = Class7733.method25595(Tessellator.getInstance().getBuffer());
          var16.method38810(var0, var23, 0.0F, var7, false, Class6979.method21542().method21548(), var24, var11, 0, 15728880);
          var24.method25602();
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.enableDepthTest();
          RenderSystem.popMatrix();
       }

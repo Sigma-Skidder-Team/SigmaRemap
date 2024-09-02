@@ -135,7 +135,7 @@ public class Class9200 {
                if (var5 + var9 <= this.field42261.limit()) {
                   if (!this.field42257 || var4.field45090 <= 0) {
                      ((Buffer)this.field42261).position(var5);
-                     Class7414.method23814(this.field42250);
+                     GlStateManager.method23814(this.field42250);
                      Class8684.method31292();
                      GL11.glTexSubImage2D(3553, 0, this.field42251, this.field42252, this.field42253, this.field42254, 6408, 5121, this.field42261);
                   } else if (this.field42258 <= 1 || var4.field45090 % this.field42258 == 0) {
@@ -166,7 +166,7 @@ public class Class9200 {
             }
 
             ((Buffer)this.field42259).flip();
-            Class7414.method23814(this.field42250);
+            GlStateManager.method23814(this.field42250);
             Class8684.method31292();
             GL11.glTexSubImage2D(3553, 0, this.field42251, this.field42252, this.field42253, this.field42254, 6408, 5121, this.field42259);
          }

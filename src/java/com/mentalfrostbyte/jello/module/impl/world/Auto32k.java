@@ -41,7 +41,7 @@ public class Auto32k extends Module {
     public void onEnable() {
         this.field23870 = null;
 
-        for (BlockPos var4 : Class9217.method34545(Class9217.method34561(mc.playerController.method23135()))) {
+        for (BlockPos var4 : Class9217.method34545(Class9217.method34561(mc.playerController.getBlockReachDistance()))) {
             if (!(Class9217.method34550(mc.player, var4) < 2.0F)
                     && Class9217.method34535(mc.player, var4)
                     && (double) var4.getY() >= mc.player.getPosY() - 2.0
@@ -135,7 +135,7 @@ public class Auto32k extends Module {
                 double var5 = (double) var4.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
                 double var7 = (double) var4.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
                 double var9 = (double) var4.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
-                RenderUtil.method11459(
+                RenderUtil.render3DColoredBox(
                         new Class9388(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.3F)
                 );
                 GL11.glColor3f(1.0F, 1.0F, 1.0F);

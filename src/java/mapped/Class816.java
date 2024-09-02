@@ -77,7 +77,7 @@ public class Class816 extends RealmsScreen {
       byte var11 = 0;
       if (field4444) {
          this.mc.getTextureManager().bindTexture(field4438);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.pushMatrix();
          RenderSystem.scalef(0.4F, 0.4F, 0.4F);
          AbstractGui.method5699(var1, (int)((double)(var9 + 2 - var11) * 2.5), (int)((double)var10 * 2.5), 0.0F, 0.0F, 40, 40, 40, 40);
@@ -87,14 +87,14 @@ public class Class816 extends RealmsScreen {
 
       if (var6 != 0) {
          this.mc.getTextureManager().bindTexture(field4436);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          AbstractGui.method5699(var1, var9 - var11, var10 - 6, 0.0F, 0.0F, 15, 25, 31, 25);
          var11 += 16;
       }
 
       if (field4442) {
          this.mc.getTextureManager().bindTexture(field4437);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          byte var12 = 0;
          if ((Util.milliTime() / 800L & 1L) == 1L) {
             var12 = 8;

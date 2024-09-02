@@ -67,7 +67,7 @@ public class Class862 extends Class851<Class5826> {
 
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4786);
       int var7 = (this.width - this.field4721) / 2;
       int var8 = (this.height - this.field4722) / 2;
@@ -82,7 +82,7 @@ public class Class862 extends Class851<Class5826> {
          Class9346 var11 = var9.get(var10);
          if (var11.method35382()) {
             this.mc.getTextureManager().bindTexture(field4786);
-            RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             method5697(var1, this.field4734 + 83 + 99, this.field4735 + 35, this.method5702(), 311.0F, 0.0F, 28, 21, 256, 512);
          }
       }

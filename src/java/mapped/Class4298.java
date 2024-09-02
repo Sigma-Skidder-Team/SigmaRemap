@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
@@ -86,7 +87,7 @@ public class Class4298 extends Class4278 {
          RenderSystem.enableDepthTest();
          GL11.glLightModelfv(2899, new float[]{0.7F, 0.7F, 0.7F, 1.0F});
          if (this.field20824.getRenderManager().field40017 == null) {
-            this.field20824.getRenderManager().field40017 = new Class9624();
+            this.field20824.getRenderManager().field40017 = new ActiveRenderInfo();
          }
 
          this.field20828.field4960 = var10 * 0.5F;

@@ -16,7 +16,7 @@ public class Class1125 extends Class851<Class5827> {
 
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field6161);
       int var7 = (this.width - this.field4721) / 2;
       int var8 = (this.height - this.field4722) / 2;

@@ -213,7 +213,7 @@ public class Class824 extends RealmsScreen {
       Tessellator var8 = Tessellator.getInstance();
       BufferBuilder var9 = var8.getBuffer();
       this.mc.getTextureManager().bindTexture(field4521);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var10 = 32.0F;
       var9.begin(7, DefaultVertexFormats.field43346);
       var9.pos(0.0, (double)this.height, 0.0)
@@ -264,7 +264,7 @@ public class Class824 extends RealmsScreen {
    private void method2417(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 9 && var5 < method1929(12) + 20 && var5 > method1929(1);
       this.mc.getTextureManager().bindTexture(field4520);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 7.0F;
       AbstractGui.method5699(var1, var2, var3, 0.0F, var9, 8, 7, 8, 14);
       if (var8) {
@@ -276,7 +276,7 @@ public class Class824 extends RealmsScreen {
    private void method2418(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 9 && var5 < method1929(12) + 20 && var5 > method1929(1);
       this.mc.getTextureManager().bindTexture(field4518);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 8.0F;
       AbstractGui.method5699(var1, var2, var3, 0.0F, var9, 8, 8, 8, 16);
       if (var8) {
@@ -288,7 +288,7 @@ public class Class824 extends RealmsScreen {
    private void method2419(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 9 && var5 < method1929(12) + 20 && var5 > method1929(1);
       this.mc.getTextureManager().bindTexture(field4519);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 8.0F;
       AbstractGui.method5699(var1, var2, var3, 0.0F, var9, 8, 8, 8, 16);
       if (var8) {

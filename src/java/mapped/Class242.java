@@ -14,8 +14,8 @@ public class Class242<T extends LivingEntity, M extends Class2827<T> & Class2825
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       boolean var13 = var4.method2967() == HandSide.field14418;
-      ItemStack var14 = !var13 ? var4.method3090() : var4.method3091();
-      ItemStack var15 = !var13 ? var4.method3091() : var4.method3090();
+      ItemStack var14 = !var13 ? var4.getHeldItemMainhand() : var4.method3091();
+      ItemStack var15 = !var13 ? var4.method3091() : var4.getHeldItemMainhand();
       if (!var14.isEmpty() || !var15.isEmpty()) {
          var1.push();
          if (this.method825().field17602) {

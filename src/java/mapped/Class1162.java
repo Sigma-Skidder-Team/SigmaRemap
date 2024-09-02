@@ -79,10 +79,10 @@ public class Class1162 extends Class1161 {
          }
 
          if (RealmsMainScreen.method2129(this.field6317, var1) && var1.field27452) {
-            RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.enableBlend();
             RealmsMainScreen.method2139(this.field6317).getTextureManager().bindTexture(RealmsMainScreen.method2138());
-            RenderSystem.method27834(Class2339.field15997, Class1981.field12932);
+            RenderSystem.method27834(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
             ITextComponent var23;
             ITextComponent var24;
             if (!var1.field27453) {
@@ -134,13 +134,13 @@ public class Class1162 extends Class1161 {
 
          RealmsMainScreen.method2155(this.field6317).method38801(var2, var1.method18907(), (float)(var3 + 2), (float)(var4 + 1), 16777215);
          Class8087.method27973(var1.field27449, () -> {
-            RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             AbstractGui.method5698(var2, var3 - 36, var4, 32, 32, 8.0F, 8.0F, 8, 8, 64, 64);
             AbstractGui.method5698(var2, var3 - 36, var4, 32, 32, 40.0F, 8.0F, 8, 8, 64, 64);
          });
       } else {
          RealmsMainScreen.method2123(this.field6317).getTextureManager().bindTexture(RealmsMainScreen.method2122());
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.disableAlphaTest();
          AbstractGui.method5699(var2, var3 + 10, var4 + 6, 0.0F, 0.0F, 40, 20, 40, 20);
          float var21 = 0.5F + (1.0F + MathHelper.sin((float) RealmsMainScreen.method2124(this.field6317) * 0.25F)) * 0.25F;

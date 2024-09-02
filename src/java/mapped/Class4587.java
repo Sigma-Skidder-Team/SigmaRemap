@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -111,7 +112,7 @@ public abstract class Class4587 {
       }
    }
 
-   public abstract void method14510(Class5422 var1, Class9624 var2, float var3);
+   public abstract void method14510(Class5422 var1, ActiveRenderInfo var2, float var3);
 
    public abstract Class6843 method14501();
 

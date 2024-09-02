@@ -357,7 +357,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
      // this.field38660.method27373().method34157(this.field38648);
    }
 
-   public void method30713() {
+   public void handleDisconnection() {
       if (this.field38648 != null && !this.field38648.isOpen()) {
          if (!this.field38653) {
             this.field38653 = true;

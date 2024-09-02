@@ -304,7 +304,7 @@ public class Class8684 {
    }
 
    public static void method31277(int var0) {
-      Class7414.method23814(var0);
+      GlStateManager.method23814(var0);
    }
 
    public static boolean method31278(int var0) {
@@ -468,9 +468,9 @@ public class Class8684 {
 
    private static int method31289() {
       for (int var2 = 65536; var2 > 0; var2 >>= 1) {
-         Class7414.method23815(32868, 0, 6408, var2, var2, 0, 6408, 5121, (IntBuffer)null);
+         GlStateManager.method23815(32868, 0, 6408, var2, var2, 0, 6408, 5121, (IntBuffer)null);
          int var3 = GL11.glGetError();
-         int var4 = Class7414.method23809(32868, 0, 4096);
+         int var4 = GlStateManager.method23809(32868, 0, 4096);
          if (var4 != 0) {
             return var2;
          }
@@ -504,9 +504,9 @@ public class Class8684 {
    }
 
    public static void method31292() {
-      Class7414.method23856(3314, 0);
-      Class7414.method23856(3316, 0);
-      Class7414.method23856(3315, 0);
-      Class7414.method23856(3317, 4);
+      GlStateManager.method23856(3314, 0);
+      GlStateManager.method23856(3316, 0);
+      GlStateManager.method23856(3315, 0);
+      GlStateManager.method23856(3317, 4);
    }
 }

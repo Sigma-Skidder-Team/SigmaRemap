@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.util.ResourceLocation;
 
 public class Class5956 extends Class5942<Class959> {
@@ -59,7 +60,7 @@ public class Class5956 extends Class5942<Class959> {
          var3.rotate(Vector3f.field32902.rotationDegrees(180.0F));
          this.field25975.method22680(var3, var14, var5, var6);
          var3.pop();
-         Class9624 var15 = this.field25928.field34748;
+         ActiveRenderInfo var15 = this.field25928.field34748;
          var3.push();
          var3.translate(0.5, (double)(0.3F + var11 * 0.2F), 0.5);
          var3.method35292(0.5F, 0.5F, 0.5F);

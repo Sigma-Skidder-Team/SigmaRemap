@@ -123,7 +123,7 @@ public class Class1265 extends AbstractGui {
          int var26 = var17 + var49 * var16 + var49 * 5;
          int var27 = var18 + var25 * 9;
          method5686(var1, var26, var27, var26 + var16, var27 + 8, var45);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.disableAlphaTest();
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
@@ -176,7 +176,7 @@ public class Class1265 extends AbstractGui {
    }
 
    public void method5921(MatrixStack var1, int var2, int var3, int var4, Class6589 var5) {
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.field6692.getTextureManager().bindTexture(field6453);
       boolean var8 = false;
       byte var9;

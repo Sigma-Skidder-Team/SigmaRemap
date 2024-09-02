@@ -366,7 +366,7 @@ public class Class828 extends Screen {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
       this.method5534((Class1152)null);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(Class870.field4820);
       int var7 = (this.width - 192) / 2;
       byte var8 = 2;
@@ -411,7 +411,7 @@ public class Class828 extends Screen {
    private void method2512(Class9518[] var1) {
       Tessellator var4 = Tessellator.getInstance();
       BufferBuilder var5 = var4.getBuffer();
-      RenderSystem.method27889(0.0F, 0.0F, 255.0F, 255.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 255.0F, 255.0F);
       RenderSystem.disableTexture();
       RenderSystem.method27857();
       RenderSystem.method27859(Class2270.field14769);

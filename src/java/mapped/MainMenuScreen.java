@@ -258,7 +258,7 @@ public class MainMenuScreen extends Screen {
       }
 
       float var7 = !this.field4717 ? 1.0F : (float)(Util.milliTime() - this.field4718) / 1000.0F;
-      Class7414.method23710();
+      GlStateManager.method23710();
       method5686(var1, 0, 0, this.width, this.height, -1);
       this.field4716.method13754(var4, MathHelper.clamp(var7, 0.0F, 1.0F));
       short var8 = 274;
@@ -266,14 +266,14 @@ public class MainMenuScreen extends Screen {
       byte var10 = 30;
       this.mc.getTextureManager().bindTexture(field4705);
       RenderSystem.enableBlend();
-      RenderSystem.method27834(Class2339.field15997, Class1981.field12932);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, !this.field4717 ? 1.0F : (float) MathHelper.method37773(MathHelper.clamp(var7, 0.0F, 1.0F)));
+      RenderSystem.method27834(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, !this.field4717 ? 1.0F : (float) MathHelper.method37773(MathHelper.clamp(var7, 0.0F, 1.0F)));
       method5698(var1, 0, 0, this.width, this.height, 0.0F, 0.0F, 16, 128, 16, 128);
       float var11 = !this.field4717 ? 1.0F : MathHelper.clamp(var7 - 1.0F, 0.0F, 1.0F);
       int var12 = MathHelper.method37773(var11 * 255.0F) << 24;
       if ((var12 & -67108864) != 0) {
          this.mc.getTextureManager().bindTexture(field4710);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, var11);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, var11);
          if (!this.field4707) {
             this.method5694(var9, 30, (var2x, var3x) -> {
                this.method5696(var1, var2x + 0, var3x, 0, 0, 155, 44);

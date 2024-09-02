@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Collection;
@@ -237,7 +238,7 @@ public class Class5125 implements Class5119 {
       DebugRenderer.method27462(var2, var12, var14, var16, var3, var4, false, 0.5F, true);
    }
 
-   private Class9624 method15841() {
+   private ActiveRenderInfo method15841() {
       return this.field23306.gameRenderer.getActiveRenderInfo();
    }
 

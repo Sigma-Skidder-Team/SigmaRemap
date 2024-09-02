@@ -118,7 +118,7 @@ public final class Class9456 {
    }
 
    public static Hand method36389(LivingEntity var0, Item var1) {
-      return var0.method3090().getItem() != var1 ? Hand.field183 : Hand.MAIN_HAND;
+      return var0.getHeldItemMainhand().getItem() != var1 ? Hand.field183 : Hand.MAIN_HAND;
    }
 
    public static AbstractArrowEntity method36390(LivingEntity var0, ItemStack var1, float var2) {

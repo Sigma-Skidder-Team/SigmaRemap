@@ -284,18 +284,18 @@ public class Class819 extends RealmsScreen {
       if (var6) {
          if (var6) {
             float var15 = 0.9F + 0.1F * MathHelper.cos((float)this.field4472 * 0.2F);
-            RenderSystem.method27889(var15, var15, var15, 1.0F);
+            RenderSystem.color4f(var15, var15, var15, 1.0F);
          }
       } else {
-         RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
+         RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
       }
 
       AbstractGui.method5699(var1, var2 + 3, var3 + 3, 0.0F, 0.0F, 74, 74, 74, 74);
       this.mc.getTextureManager().bindTexture(Class1218.field6535);
       if (!var6) {
-         RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
+         RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
       } else {
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       }
 
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 80, 80, 80, 80);

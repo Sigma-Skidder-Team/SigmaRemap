@@ -76,7 +76,7 @@ public class ActiveMods extends Module {
     private void method16354(Class4407 var1) {
         if (this.isEnabled() && mc.player != null) {
             if (!var1.method13939()) {
-                Class7414.method23839(0.0F, (float) (-this.field23614), 0.0F);
+                GlStateManager.method23839(0.0F, (float) (-this.field23614), 0.0F);
             } else {
                 Class6886 var4 = mc.world.method6805();
                 Class8375 var5 = null;
@@ -106,7 +106,7 @@ public class ActiveMods extends Module {
                     this.field23614 = 0;
                 } else {
                     this.field23614 = (var15 - var13) / 2;
-                    Class7414.method23839(0.0F, (float) this.field23614, 0.0F);
+                    GlStateManager.method23839(0.0F, (float) this.field23614, 0.0F);
                 }
             }
         }

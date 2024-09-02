@@ -23,7 +23,7 @@ public class Class259 extends Class219<Class1048, Class2805<Class1048>> {
          var1.translate(0.0, (double)(1.0F - var16 * 0.5F), (double)(-1.0F + var16 * 0.5F));
       }
 
-      ItemStack var17 = !var13 ? var4.method3091() : var4.method3090();
+      ItemStack var17 = !var13 ? var4.method3091() : var4.getHeldItemMainhand();
       Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var17, Class2327.field15931, false, var1, var2, var3);
       var1.pop();
    }

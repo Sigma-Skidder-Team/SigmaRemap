@@ -387,7 +387,7 @@ public class Class815 extends Class813 {
 
    private void method2284(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.mc.getTextureManager().bindTexture(field4410);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
          this.field4420 = field4415;
@@ -396,7 +396,7 @@ public class Class815 extends Class813 {
 
    private void method2285(MatrixStack var1, int var2, int var3, int var4, int var5, int var6) {
       this.mc.getTextureManager().bindTexture(field4411);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       if (this.field4434 % 20 >= 10) {
          AbstractGui.method5699(var1, var2, var3, 10.0F, 0.0F, 10, 28, 20, 28);
       } else {
@@ -418,7 +418,7 @@ public class Class815 extends Class813 {
 
    private void method2286(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.mc.getTextureManager().bindTexture(field4408);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
          this.field4420 = field4418;
@@ -427,7 +427,7 @@ public class Class815 extends Class813 {
 
    private void method2287(MatrixStack var1, int var2, int var3, int var4, int var5) {
       this.mc.getTextureManager().bindTexture(field4409);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
          this.field4420 = field4419;

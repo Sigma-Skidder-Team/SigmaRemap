@@ -52,7 +52,7 @@ public class Class1195 extends AbstractGui implements Class1196 {
       RenderSystem.method27867();
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, var2);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, var2);
       this.field6471.getTextureManager().bindTexture(field6469);
       this.method5696(var1, var3 - 91, var4, 0, 0, 182, 22);
       if (var5.method30462() >= 0) {
@@ -74,7 +74,7 @@ public class Class1195 extends AbstractGui implements Class1196 {
          RenderSystem.pushMatrix();
          RenderSystem.translatef((float)var3, var4, 0.0F);
          float var10 = !var6.method22700() ? 0.25F : 1.0F;
-         RenderSystem.method27889(var10, var10, var10, var5);
+         RenderSystem.color4f(var10, var10, var10, var5);
          var6.method22699(var1, var10, var9);
          RenderSystem.popMatrix();
          if (var9 > 3 && var6.method22700()) {

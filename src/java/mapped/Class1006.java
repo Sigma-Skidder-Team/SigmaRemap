@@ -952,9 +952,9 @@ public abstract class Class1006 extends LivingEntity {
    }
 
    public void method4274(float var1) {
-      if (!this.method3090().isEmpty() && this.rand.nextFloat() < 0.25F * var1) {
+      if (!this.getHeldItemMainhand().isEmpty() && this.rand.nextFloat() < 0.25F * var1) {
          this.method2944(
-            Class2106.field13731, Class7858.method26342(this.rand, this.method3090(), (int)(5.0F + var1 * (float)this.rand.nextInt(18)), false)
+            Class2106.field13731, Class7858.method26342(this.rand, this.getHeldItemMainhand(), (int)(5.0F + var1 * (float)this.rand.nextInt(18)), false)
          );
       }
    }
@@ -1336,7 +1336,7 @@ public abstract class Class1006 extends LivingEntity {
       float var4 = (float)this.method3086(Attributes.field42110);
       float var5 = (float)this.method3086(Attributes.field42111);
       if (var1 instanceof LivingEntity) {
-         var4 += Class7858.method26318(this.method3090(), ((LivingEntity)var1).method3089());
+         var4 += Class7858.method26318(this.getHeldItemMainhand(), ((LivingEntity)var1).method3089());
          var5 += (float)Class7858.method26323(this);
       }
 
@@ -1359,7 +1359,7 @@ public abstract class Class1006 extends LivingEntity {
 
          if (var1 instanceof PlayerEntity) {
             PlayerEntity var8 = (PlayerEntity)var1;
-            this.method4309(var8, this.method3090(), !var8.isHandActive() ? ItemStack.EMPTY : var8.method3158());
+            this.method4309(var8, this.getHeldItemMainhand(), !var8.isHandActive() ? ItemStack.EMPTY : var8.method3158());
          }
 
          this.method3399(this, var1);

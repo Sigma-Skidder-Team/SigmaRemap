@@ -210,7 +210,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
          RenderSystem.pushMatrix();
          RenderSystem.translatef(0.0F, 0.0F, 100.0F);
          this.field6642.getTextureManager().bindTexture(field6630);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var7 = (this.field6635 - 147) / 2 - this.field6634;
          int var8 = (this.field6636 - 166) / 2;
          this.method5696(var1, var7, var8, 1, 1, 147, 166);

@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import net.minecraft.client.GameSettings;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
@@ -131,7 +132,7 @@ public class SoundHandler extends Class269<Class8657> {
       this.field1056.method13777(var1, var2);
    }
 
-   public void updateListener(Class9624 var1) {
+   public void updateListener(ActiveRenderInfo var1) {
       this.field1056.method13778(var1);
    }
 

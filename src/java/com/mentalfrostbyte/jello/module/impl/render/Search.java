@@ -192,7 +192,7 @@ public class Search extends Module {
                 double var10 = (double) var7.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
                 double var12 = (double) var7.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                 Class9388 var14 = new Class9388(var8, var10, var12, var8 + 1.0, var10 + 1.0, var12 + 1.0);
-                RenderUtil.method11459(var14, var3);
+                RenderUtil.render3DColoredBox(var14, var3);
             }
         }
 

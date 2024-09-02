@@ -203,7 +203,7 @@ public class MineplexFly extends PremiumModule {
     }
 
     private int method16461() {
-        if (mc.player.method3090().isEmpty()) {
+        if (mc.player.getHeldItemMainhand().isEmpty()) {
             this.field23670 = mc.player.inventory.currentItem;
             return this.field23670;
         } else {

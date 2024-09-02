@@ -62,10 +62,10 @@ public class Class7675 {
 
    public void method25216() {
       if (this.field32881) {
-         Class7414.method23696();
-         Class7414.method23697(this.field32882, this.field32883);
+         GlStateManager.method23696();
+         GlStateManager.method23697(this.field32882, this.field32883);
       } else {
-         Class7414.method23695();
+         GlStateManager.method23695();
       }
    }
 

@@ -24,7 +24,7 @@ public class Class335 implements Runnable {
       BlockRayTraceResult var3 = new BlockRayTraceResult(BlockFlyNCPMode.method16814(this.field1459, Direction.field673), Direction.field673, this.field1459, false);
       int var4 = AutoCrystal.method16395().player.inventory.currentItem;
       AutoCrystal.method16396().player.inventory.currentItem = this.field1460;
-      AutoCrystal.method16397().playerController.method23138();
+      AutoCrystal.method16397().playerController.syncCurrentPlayItem();
       AutoCrystal.method16400().playerController.func_217292_a(AutoCrystal.method16398().player, AutoCrystal.method16399().world, Hand.MAIN_HAND, var3);
       AutoCrystal.method16401().player.swingArm(Hand.MAIN_HAND);
       AutoCrystal.method16402().player.inventory.currentItem = var4;

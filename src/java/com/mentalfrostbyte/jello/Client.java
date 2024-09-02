@@ -200,12 +200,12 @@ public class Client {
         RenderSystem.translatef(0.0F, 0.0F, 1000.0F);
         RenderSystem.method27819(519, 0.0F);
         RenderSystem.enableBlend();
-        RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glDisable(2896);
-        RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
+        RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
         ResourcesDecrypter.gingerbreadIconPNG.bind();
         getInstance().getEventManager().call(new Class4413());
-        RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.enableCull();
         RenderSystem.disableDepthTest();
         RenderSystem.enableBlend();

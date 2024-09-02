@@ -20,7 +20,7 @@ public class AutoFarm extends Module {
     public void method16865(Class4399 var1) {
         if (this.isEnabled()) {
             if (mc.player != null && mc.world != null) {
-                for (BlockPos var5 : Class9217.method34545(Class9217.method34561(mc.playerController.method23135()))) {
+                for (BlockPos var5 : Class9217.method34545(Class9217.method34561(mc.playerController.getBlockReachDistance()))) {
                     if (Class9217.method34535(mc.player, var5)) {
                         BlockState var6 = mc.world.getBlockState(var5);
                         if (var6.getBlock() instanceof Class3480 || var6.getBlock() instanceof Class3481 || var6.getBlock() instanceof Class3483) {

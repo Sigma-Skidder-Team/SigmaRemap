@@ -11,7 +11,7 @@ public class Class5708 extends Class5651<Class1027, Class2891<Class1027>> {
    }
 
    public void method17853(Class1027 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      this.field25086.method11207(!var1.method3090().isEmpty());
+      this.field25086.method11207(!var1.getHeldItemMainhand().isEmpty());
       super.method17853(var1, var2, var3, var4, var5, var6);
    }
 

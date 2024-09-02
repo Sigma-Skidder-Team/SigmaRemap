@@ -26,7 +26,7 @@ public class Class1267 extends AbstractGui {
 
          for (Class3626 var7 : this.field6710.values()) {
             int var8 = var4 / 2 - 91;
-            RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6709.getTextureManager().bindTexture(field6708);
             this.method5954(var1, var8, var5, var7);
             ITextComponent var9 = var7.method12290();

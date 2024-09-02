@@ -65,7 +65,7 @@ public class ItemRenderer implements Class215 {
       this.method787(var5, var6, var1.method22619((BlockState)null, (Direction)null, var11), var2, var3, var4);
       if (var10) {
          var6.method17044((RenderType)null);
-         Class7414.method23864();
+         GlStateManager.method23864();
       }
    }
 
@@ -282,8 +282,8 @@ public class ItemRenderer implements Class215 {
       RenderSystem.disableAlphaTest();
       RenderSystem.method27939();
       RenderSystem.enableBlend();
-      RenderSystem.method27834(Class2339.field15997, Class1981.field12932);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.method27834(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.translatef((float)var2, (float)var3, 100.0F + this.field847);
       RenderSystem.translatef(8.0F, 8.0F, 0.0F);
       RenderSystem.scalef(1.0F, -1.0F, 1.0F);

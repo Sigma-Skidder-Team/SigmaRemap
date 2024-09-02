@@ -67,7 +67,7 @@ public class Class1699 implements AutoCloseable {
          RenderSystem.method27863(3553, 10240, 9729);
          RenderSystem.method27863(3553, 10242, 33071);
          RenderSystem.method27863(3553, 10243, 33071);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.enableTexture();
          RenderSystem.method27860(33984);
          if (Class7944.method26921()) {

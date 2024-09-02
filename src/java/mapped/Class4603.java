@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.renderer.ActiveRenderInfo;
+
 public class Class4603 extends Class4601 {
    private static String[] field22095;
    private boolean field22104;
@@ -30,7 +32,7 @@ public class Class4603 extends Class4601 {
    }
 
    @Override
-   public void method14510(Class5422 var1, Class9624 var2, float var3) {
+   public void method14510(Class5422 var1, ActiveRenderInfo var2, float var3) {
       if (!this.field22105 || this.field22055 < this.field22056 / 3 || (this.field22055 + this.field22056) / 3 % 2 == 0) {
          super.method14510(var1, var2, var3);
       }

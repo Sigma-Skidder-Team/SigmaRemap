@@ -54,7 +54,7 @@ public class ConnectingScreen extends Screen {
    public void tick() {
       if (this.field6936 != null) {
          if (!this.field6936.isChannelOpen()) {
-            this.field6936.method30713();
+            this.field6936.handleDisconnection();
          } else {
             this.field6936.tick();
          }

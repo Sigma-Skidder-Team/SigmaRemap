@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.RenderFireEvent;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -93,7 +94,7 @@ public class GameRenderer implements Class215, AutoCloseable {
    public static final int field830 = field829.length;
    public int field831 = field830;
    private boolean field832;
-   private final Class9624 field833 = new Class9624();
+   private final ActiveRenderInfo activeRender = new ActiveRenderInfo();
    private boolean field834 = false;
    private World field835 = null;
    private float field836 = 128.0F;
@@ -203,10 +204,10 @@ public class GameRenderer implements Class215, AutoCloseable {
          this.field802.setRenderViewEntity(this.field802.player);
       }
 
-      this.field833.method37498();
+      this.activeRender.method37498();
       this.field809++;
       this.itemRenderer.method37592();
-      this.field802.worldRenderer.method856(this.field833);
+      this.field802.worldRenderer.method856(this.activeRender);
       this.field813 = this.field812;
       if (!this.field802.ingameGUI.getBossOverlay().method5958()) {
          if (this.field812 > 0.0F) {
@@ -245,7 +246,7 @@ public class GameRenderer implements Class215, AutoCloseable {
       if (var4 != null && this.field802.world != null) {
          this.field802.getProfiler().startSection("pick");
          this.field802.pointedEntity = null;
-         double var5 = (double)this.field802.playerController.method23135();
+         double var5 = (double)this.field802.playerController.getBlockReachDistance();
          this.field802.objectMouseOver = var4.method3289(var5, var1, false);
          Vector3d var7 = var4.method3286(var1);
          boolean var8 = false;
@@ -310,7 +311,7 @@ public class GameRenderer implements Class215, AutoCloseable {
       }
    }
 
-   private double method743(Class9624 var1, float var2, boolean var3) {
+   private double method743(ActiveRenderInfo var1, float var2, boolean var3) {
       if (!this.field820) {
          double var6 = 70.0;
          if (var3) {
@@ -398,11 +399,11 @@ public class GameRenderer implements Class215, AutoCloseable {
       }
    }
 
-   private void method746(MatrixStack var1, Class9624 var2, float var3) {
+   private void method746(MatrixStack var1, ActiveRenderInfo var2, float var3) {
       this.method747(var1, var2, var3, true, true, false);
    }
 
-   public void method747(MatrixStack var1, Class9624 var2, float var3, boolean var4, boolean var5, boolean var6) {
+   public void method747(MatrixStack var1, ActiveRenderInfo var2, float var3, boolean var4, boolean var5, boolean var6) {
       if (!this.field820) {
          Shaders.method33160(true);
          this.method748(this.method749(var2, var3, false));
@@ -472,7 +473,7 @@ public class GameRenderer implements Class215, AutoCloseable {
       RenderSystem.matrixMode(5888);
    }
 
-   public Matrix4f method749(Class9624 var1, float var2, boolean var3) {
+   public Matrix4f method749(ActiveRenderInfo var1, float var2, boolean var3) {
       MatrixStack var6 = new MatrixStack();
       var6.getLast().getMatrix().method35503();
       if (Class7944.method26921() && Shaders.method33161()) {
@@ -706,7 +707,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          Entity var3 = this.field802.getRenderViewEntity();
          boolean var4 = var3 instanceof PlayerEntity && !this.field802.gameSettings.hideGUI;
          if (var4 && !((PlayerEntity)var3).abilities.allowEdit) {
-            ItemStack var5 = ((LivingEntity)var3).method3090();
+            ItemStack var5 = ((LivingEntity)var3).getHeldItemMainhand();
             RayTraceResult var6 = this.field802.objectMouseOver;
             if (var6 != null && var6.getType() == RayTraceResult.Type.BLOCK) {
                BlockPos var7 = ((BlockRayTraceResult)var6).getPos();
@@ -733,7 +734,7 @@ public class GameRenderer implements Class215, AutoCloseable {
 
       this.getMouseOver(var1);
       if (Class7944.method26921()) {
-         Shaders.method33041(this.field802, this.field833, var1, var2);
+         Shaders.method33041(this.field802, this.activeRender, var1, var2);
       }
 
       this.field802.getProfiler().startSection("center");
@@ -744,7 +745,7 @@ public class GameRenderer implements Class215, AutoCloseable {
 
       boolean var8 = this.method753();
       this.field802.getProfiler().endStartSection("camera");
-      Class9624 var9 = this.field833;
+      ActiveRenderInfo var9 = this.activeRender;
       this.field805 = (float)(this.field802.gameSettings.field44574 * 16);
       if (Class7944.method26804()) {
          this.field805 *= 0.95F;
@@ -839,7 +840,7 @@ public class GameRenderer implements Class215, AutoCloseable {
    public void resetData() {
       this.field824 = null;
       this.field807.method596();
-      this.field833.method37518();
+      this.activeRender.method37518();
    }
 
    public Class194 method756() {
@@ -961,7 +962,7 @@ public class GameRenderer implements Class215, AutoCloseable {
 
    private void method759() {
       if (this.field802.world != null && Class7944.method26981() && Class4379.method13743("CheckGlErrorFrameFinish", 10000L)) {
-         int var3 = Class7414.method23859();
+         int var3 = GlStateManager.method23859();
          if (var3 != 0 && Class9084.method33877(var3)) {
             String var4 = Class7944.method26985(var3);
             StringTextComponent var5 = new StringTextComponent(I18n.format("of.message.openglError", var3, var4));
@@ -1083,18 +1084,18 @@ public class GameRenderer implements Class215, AutoCloseable {
       RenderSystem.disableDepthTest();
       RenderSystem.depthMask(false);
       RenderSystem.enableBlend();
-      RenderSystem.method27836(Class2339.field15990, Class1981.field12927, Class2339.field15990, Class1981.field12927);
-      RenderSystem.method27889(var8, var9, var10, 1.0F);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15990, DestFactor.field12927, GlStateManager.SourceFactor.field15990, DestFactor.field12927);
+      RenderSystem.color4f(var8, var9, var10, 1.0F);
       this.field802.getTextureManager().bindTexture(field800);
-      Tessellator var19 = Tessellator.getInstance();
-      BufferBuilder var20 = var19.getBuffer();
-      var20.begin(7, DefaultVertexFormats.field43344);
-      var20.pos(var15, var17 + var13, -90.0).tex(0.0F, 1.0F).endVertex();
-      var20.pos(var15 + var11, var17 + var13, -90.0).tex(1.0F, 1.0F).endVertex();
-      var20.pos(var15 + var11, var17, -90.0).tex(1.0F, 0.0F).endVertex();
-      var20.pos(var15, var17, -90.0).tex(0.0F, 0.0F).endVertex();
-      var19.draw();
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      Tessellator tessellator = Tessellator.getInstance();
+      BufferBuilder bufferbuilder = tessellator.getBuffer();
+      bufferbuilder.begin(7, DefaultVertexFormats.field43344);
+      bufferbuilder.pos(var15, var17 + var13, -90.0).tex(0.0F, 1.0F).endVertex();
+      bufferbuilder.pos(var15 + var11, var17 + var13, -90.0).tex(1.0F, 1.0F).endVertex();
+      bufferbuilder.pos(var15 + var11, var17, -90.0).tex(1.0F, 0.0F).endVertex();
+      bufferbuilder.pos(var15, var17, -90.0).tex(0.0F, 0.0F).endVertex();
+      tessellator.draw();
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.defaultBlendFunc();
       RenderSystem.disableBlend();
       RenderSystem.depthMask(true);
@@ -1109,8 +1110,8 @@ public class GameRenderer implements Class215, AutoCloseable {
       return this.field805;
    }
 
-   public Class9624 getActiveRenderInfo() {
-      return this.field833;
+   public ActiveRenderInfo getActiveRenderInfo() {
+      return this.activeRender;
    }
 
    public Class1699 method769() {

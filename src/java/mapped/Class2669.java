@@ -65,7 +65,7 @@ public class Class2669 extends Class2595 {
       var5.method2944(
          Class2106.field13731,
          Class7858.method26342(
-            var5.method3013(), this.method10888(var5.method3090()), (int)(5.0F + var1.method38330() * (float)var5.method3013().nextInt(18)), false
+            var5.method3013(), this.method10888(var5.getHeldItemMainhand()), (int)(5.0F + var1.method38330() * (float)var5.method3013().nextInt(18)), false
          )
       );
       var5.method2944(

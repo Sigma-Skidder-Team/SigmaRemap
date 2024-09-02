@@ -94,7 +94,7 @@ public class CakeEater extends Module {
                     mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, var7));
                 }
             } else {
-                List var8 = this.method16321(!this.getBooleanValueFromSetttingName("Mineplex") ? mc.playerController.method23135() : 6.0F);
+                List var8 = this.method16321(!this.getBooleanValueFromSetttingName("Mineplex") ? mc.playerController.getBlockReachDistance() : 6.0F);
                 if (var8.isEmpty()) {
                     field23588 = null;
                 } else {

@@ -183,10 +183,10 @@ public class Class1218 extends Button implements Class1219 {
       }
 
       if (!var6) {
-         RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
+         RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
       } else {
          float var21 = 0.85F + 0.15F * MathHelper.cos((float)this.field6546 * 0.2F);
-         RenderSystem.method27889(var21, var21, var21, 1.0F);
+         RenderSystem.color4f(var21, var21, var21, 1.0F);
       }
 
       method5699(var1, var2 + 3, var3 + 3, 0.0F, 0.0F, 74, 74, 74, 74);
@@ -194,12 +194,12 @@ public class Class1218 extends Button implements Class1219 {
       boolean var22 = var18 && var14 != Class2194.field14338;
       if (!var22) {
          if (!var6) {
-            RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
+            RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
          } else {
-            RenderSystem.method27889(0.8F, 0.8F, 0.8F, 1.0F);
+            RenderSystem.color4f(0.8F, 0.8F, 0.8F, 1.0F);
          }
       } else {
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       }
 
       method5699(var1, var2, var3, 0.0F, 0.0F, 80, 80, 80, 80);

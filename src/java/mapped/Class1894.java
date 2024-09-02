@@ -58,7 +58,7 @@ public enum Class1894 {
       return this == field11104 || this == field11105;
    }
 
-   public boolean method8157() {
+   public boolean isCreative() {
       return this == field11103;
    }
 

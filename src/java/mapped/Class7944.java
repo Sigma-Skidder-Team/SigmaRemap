@@ -1103,7 +1103,7 @@ public class Class7944 {
    }
 
    public static void method26908(String var0) {
-      int var3 = Class7414.method23859();
+      int var3 = GlStateManager.method23859();
       if (var3 != 0 && Class9084.method33877(var3)) {
          String var4 = method26985(var3);
          String var5 = String.format("OpenGL error: %s (%s), at: %s", var3, var4, var0);
@@ -1635,7 +1635,7 @@ public class Class7944 {
    }
 
    public static boolean method26977() {
-      return field34156.field44685 && Class7414.field31759;
+      return field34156.field44685 && GlStateManager.field31759;
    }
 
    public static boolean method26978() {

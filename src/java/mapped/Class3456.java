@@ -65,7 +65,7 @@ public class Class3456 extends Class3194 {
    public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       if (!var1.isRemote) {
          if (!var4.isCreative()) {
-            spawnDrops(var3, var1, var2, (TileEntity)null, var4, var4.method3090());
+            spawnDrops(var3, var1, var2, (TileEntity)null, var4, var4.getHeldItemMainhand());
          } else {
             method12130(var1, var2, var3, var4);
          }

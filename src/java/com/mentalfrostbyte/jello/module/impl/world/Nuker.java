@@ -119,7 +119,7 @@ public class Nuker extends Module {
                     var7 + var11.field28453,
                     var9 + var11.field28454
             );
-            RenderUtil.method11459(var12, var4);
+            RenderUtil.render3DColoredBox(var12, var4);
             GL11.glEnable(2929);
             GL11.glPopMatrix();
         }

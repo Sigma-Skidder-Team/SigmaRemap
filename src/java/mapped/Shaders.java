@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -1251,11 +1252,11 @@ public class Shaders {
         if (var0 != null) {
             for (int var1 = 0; var1 < var0.length; var1++) {
                 Class6627 var2 = var0[var1];
-                Class7414.method23803(33984 + var2.method20208());
+                GlStateManager.method23803(33984 + var2.method20208());
                 int var3 = var2.method20207();
                 int var4 = var2.method20209();
                 if (var4 == 3553) {
-                    Class7414.method23814(var3);
+                    GlStateManager.method23814(var3);
                 } else {
                     GL11.glBindTexture(var4, var3);
                 }
@@ -1530,7 +1531,7 @@ public class Shaders {
     }
 
     public static int method32984(String var0) {
-        int var1 = Class7414.method23859();
+        int var1 = GlStateManager.method23859();
         if (var1 != 0 && Class9084.method33877(var1)) {
             String var2 = Class7944.method26985(var1);
             String var3 = method32985(var1, var0);
@@ -2673,7 +2674,7 @@ public class Shaders {
                         method33023(field40701, 15);
                 }
 
-                ItemStack var3 = field40591.player != null ? field40591.player.method3090() : null;
+                ItemStack var3 = field40591.player != null ? field40591.player.getHeldItemMainhand() : null;
                 Item var4 = var3 != null ? var3.getItem() : null;
                 int var5 = -1;
                 Block var6 = null;
@@ -2773,21 +2774,21 @@ public class Shaders {
 
     private static void method33022(Class7906 var0, Class7906 var1) {
         if (var0.method26492() != null) {
-            Class7414.method23871();
+            GlStateManager.method23871();
         }
 
         if (var0.method26493() != null) {
-            Class7414.method23875();
+            GlStateManager.method23875();
         }
 
         Class7675 var2 = var1.method26492();
         if (var2 != null) {
-            Class7414.method23870(var2);
+            GlStateManager.method23870(var2);
         }
 
         Class8069 var3 = var1.method26493();
         if (var3 != null) {
-            Class7414.method23874(var3);
+            GlStateManager.method23874(var3);
         }
     }
 
@@ -2946,25 +2947,25 @@ public class Shaders {
             }
 
             if (field40973 != null) {
-                Class7414.method23867(field40973);
+                GlStateManager.method23867(field40973);
                 method33032(field40973);
                 method32984("del dfbDepthTextures");
             }
 
             if (field40972 != null) {
-                Class7414.method23867(field40972);
+                GlStateManager.method23867(field40972);
                 method33032(field40972);
                 method32984("del dfbTextures");
             }
 
             if (field40975 != null) {
-                Class7414.method23867(field40975);
+                GlStateManager.method23867(field40975);
                 method33032(field40975);
                 method32984("del shadow depth");
             }
 
             if (field40974 != null) {
-                Class7414.method23867(field40974);
+                GlStateManager.method23867(field40974);
                 method33032(field40974);
                 method32984("del shadow color");
             }
@@ -3012,8 +3013,8 @@ public class Shaders {
     private static void method33038() {
         if (field40807 != 0) {
             EXTFramebufferObject.glDeleteFramebuffersEXT(field40807);
-            Class7414.method23867(field40973);
-            Class7414.method23867(field40972);
+            GlStateManager.method23867(field40973);
+            GlStateManager.method23867(field40972);
         }
 
         field40807 = EXTFramebufferObject.glGenFramebuffersEXT();
@@ -3026,7 +3027,7 @@ public class Shaders {
         GL32.glReadBuffer(0);
 
         for (int var0 = 0; var0 < field40802; var0++) {
-            Class7414.method23814(field40973.get(var0));
+            GlStateManager.method23814(field40973.get(var0));
             GL32.glTexParameteri(3553, 10242, 33071);
             GL32.glTexParameteri(3553, 10243, 33071);
             GL32.glTexParameteri(3553, 10241, 9728);
@@ -3041,7 +3042,7 @@ public class Shaders {
         method32984("FT d");
 
         for (int var2 = 0; var2 < field40801; var2++) {
-            Class7414.method23814(field40980.method38905(var2));
+            GlStateManager.method23814(field40980.method38905(var2));
             GL32.glTexParameteri(3553, 10242, 33071);
             GL32.glTexParameteri(3553, 10243, 33071);
             GL32.glTexParameteri(3553, 10241, 9729);
@@ -3052,7 +3053,7 @@ public class Shaders {
         }
 
         for (int var3 = 0; var3 < field40801; var3++) {
-            Class7414.method23814(field40980.method38906(var3));
+            GlStateManager.method23814(field40980.method38906(var3));
             GL32.glTexParameteri(3553, 10242, 33071);
             GL32.glTexParameteri(3553, 10243, 33071);
             GL32.glTexParameteri(3553, 10241, 9729);
@@ -3066,7 +3067,7 @@ public class Shaders {
             method32989("[Shaders] Error: Failed framebuffer incomplete formats");
 
             for (int var1 = 0; var1 < field40801; var1++) {
-                Class7414.method23814(field40980.method38905(var1));
+                GlStateManager.method23814(field40980.method38905(var1));
                 GL32.glTexImage2D(3553, 0, 6408, field40603, field40604, 0, 32993, 33639, (ByteBuffer) null);
                 EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064 + var1, 3553, field40980.method38905(var1), 0);
                 method32984("FT c");
@@ -3078,7 +3079,7 @@ public class Shaders {
             }
         }
 
-        Class7414.method23814(0);
+        GlStateManager.method23814(0);
         if (var4 != 36053) {
             method32989("[Shaders] Error: Failed creating framebuffer! (Status " + var4 + ")");
         } else {
@@ -3106,8 +3107,8 @@ public class Shaders {
         if (field40804 != 0) {
             if (field40808 != 0) {
                 EXTFramebufferObject.glDeleteFramebuffersEXT(field40808);
-                Class7414.method23867(field40975);
-                Class7414.method23867(field40974);
+                GlStateManager.method23867(field40975);
+                GlStateManager.method23867(field40974);
             }
 
             field40808 = EXTFramebufferObject.glGenFramebuffersEXT();
@@ -3120,7 +3121,7 @@ public class Shaders {
             ((Buffer) field40974).position(0);
 
             for (int var0 = 0; var0 < field40804; var0++) {
-                Class7414.method23814(field40975.get(var0));
+                GlStateManager.method23814(field40975.get(var0));
                 GL32.glTexParameterf(3553, 10242, 33071.0F);
                 GL32.glTexParameterf(3553, 10243, 33071.0F);
                 int var1 = field40859[var0] ? 9728 : 9729;
@@ -3137,7 +3138,7 @@ public class Shaders {
             method32984("FT sd");
 
             for (int var2 = 0; var2 < field40803; var2++) {
-                Class7414.method23814(field40974.get(var2));
+                GlStateManager.method23814(field40974.get(var2));
                 GL32.glTexParameterf(3553, 10242, 33071.0F);
                 GL32.glTexParameterf(3553, 10243, 33071.0F);
                 int var4 = field40861[var2] ? 9728 : 9729;
@@ -3148,7 +3149,7 @@ public class Shaders {
                 method32984("FT sc");
             }
 
-            Class7414.method23814(0);
+            GlStateManager.method23814(0);
             if (field40803 > 0) {
                 GL32.glDrawBuffers(field40977);
             }
@@ -3162,7 +3163,7 @@ public class Shaders {
         }
     }
 
-    public static void method33041(Minecraft var0, Class9624 var1, float var2, long var3) {
+    public static void method33041(Minecraft var0, ActiveRenderInfo var1, float var2, long var3) {
         method32984("pre beginRender");
         method33043(field40591.world);
         field40591 = var0;
@@ -3204,9 +3205,9 @@ public class Shaders {
         field40646 = (float) field40644 / 1000.0F;
         field40647 = field40647 + field40646;
         field40647 %= 3600.0F;
-        Class7414.method23832();
+        GlStateManager.method23832();
         Class5463.method17161(var1, var0, var2);
-        Class7414.method23833();
+        GlStateManager.method23833();
         ClientWorld var5 = field40591.world;
         if (var5 != null) {
             field40635 = var5.method6784();
@@ -3297,55 +3298,55 @@ public class Shaders {
 
     private static void method33042() {
         if (field40804 >= 1) {
-            Class7414.method23803(33988);
-            Class7414.method23814(field40975.get(0));
+            GlStateManager.method23803(33988);
+            GlStateManager.method23814(field40975.get(0));
             if (field40804 >= 2) {
-                Class7414.method23803(33989);
-                Class7414.method23814(field40975.get(1));
+                GlStateManager.method23803(33989);
+                GlStateManager.method23814(field40975.get(1));
             }
         }
 
-        Class7414.method23803(33984);
+        GlStateManager.method23803(33984);
 
         for (int var0 = 0; var0 < field40801; var0++) {
-            Class7414.method23814(field40980.method38905(var0));
+            GlStateManager.method23814(field40980.method38905(var0));
             GL11.glTexParameteri(3553, 10240, 9729);
             GL11.glTexParameteri(3553, 10241, 9729);
-            Class7414.method23814(field40980.method38906(var0));
+            GlStateManager.method23814(field40980.method38906(var0));
             GL11.glTexParameteri(3553, 10240, 9729);
             GL11.glTexParameteri(3553, 10241, 9729);
         }
 
-        Class7414.method23814(0);
+        GlStateManager.method23814(0);
 
         for (int var1 = 0; var1 < 4 && 4 + var1 < field40801; var1++) {
-            Class7414.method23803(33991 + var1);
-            Class7414.method23814(field40980.method38905(4 + var1));
+            GlStateManager.method23803(33991 + var1);
+            GlStateManager.method23814(field40980.method38905(4 + var1));
         }
 
-        Class7414.method23803(33990);
-        Class7414.method23814(field40973.get(0));
+        GlStateManager.method23803(33990);
+        GlStateManager.method23814(field40973.get(0));
         if (field40802 >= 2) {
-            Class7414.method23803(33995);
-            Class7414.method23814(field40973.get(1));
+            GlStateManager.method23803(33995);
+            GlStateManager.method23814(field40973.get(1));
             if (field40802 >= 3) {
-                Class7414.method23803(33996);
-                Class7414.method23814(field40973.get(2));
+                GlStateManager.method23803(33996);
+                GlStateManager.method23814(field40973.get(2));
             }
         }
 
         for (int var2 = 0; var2 < field40803; var2++) {
-            Class7414.method23803(33997 + var2);
-            Class7414.method23814(field40974.get(var2));
+            GlStateManager.method23803(33997 + var2);
+            GlStateManager.method23814(field40974.get(var2));
         }
 
         if (field40947) {
-            Class7414.method23803(33984 + field40946.method20208());
-            Class7414.method23814(field40946.method20207());
+            GlStateManager.method23803(33984 + field40946.method20208());
+            GlStateManager.method23814(field40946.method20207());
         }
 
         method32965(field40920);
-        Class7414.method23803(33984);
+        GlStateManager.method23803(33984);
     }
 
     public static void method33043(ClientWorld var0) {
@@ -3379,15 +3380,15 @@ public class Shaders {
     }
 
     public static void method33045(int var0, int var1, int var2, int var3) {
-        Class7414.method23822(true, true, true, true);
+        GlStateManager.method23822(true, true, true, true);
         if (field40609) {
             GL11.glViewport(0, 0, field40785, field40786);
         } else {
             GL11.glViewport(0, 0, field40603, field40604);
             EXTFramebufferObject.glBindFramebufferEXT(36160, field40807);
             field40608 = true;
-            Class7414.method23787();
-            Class7414.method23711();
+            GlStateManager.method23787();
+            GlStateManager.method23711();
             method33020(field40978);
             method33021(field40818);
             method32984("beginRenderPass");
@@ -3486,7 +3487,7 @@ public class Shaders {
         }
     }
 
-    public static void method33050(MatrixStack var0, Class9624 var1, float var2) {
+    public static void method33050(MatrixStack var0, ActiveRenderInfo var1, float var2) {
         Entity var3 = var1.method37509();
         Vector3d var4 = var1.method37504();
         double var5 = var4.x;
@@ -3532,7 +3533,7 @@ public class Shaders {
         }
     }
 
-    public static void method33053(MatrixStack var0, Class9624 var1, float var2) {
+    public static void method33053(MatrixStack var0, ActiveRenderInfo var1, float var2) {
         Entity var3 = var1.method37509();
         Vector3d var4 = var1.method37504();
         double var5 = var4.x;
@@ -3548,7 +3549,7 @@ public class Shaders {
         if (field40791) {
             GL32.glOrtho((double) (-field40790), (double) field40790, (double) (-field40790), (double) field40790, 0.05F, 256.0);
         } else {
-            Class7414.method23842(Matrix4f.method35511((double) field40789, (float) field40785 / (float) field40786, 0.05F, 256.0F));
+            GlStateManager.method23842(Matrix4f.method35511((double) field40789, (float) field40785 / (float) field40786, 0.05F, 256.0F));
         }
 
         var0.translate(0.0, 0.0, -100.0);
@@ -3651,13 +3652,13 @@ public class Shaders {
         if (field40599) {
             for (int var0 = 0; var0 < field40801; var0++) {
                 if ((field40853 & 1 << var0) != 0) {
-                    Class7414.method23803(33984 + field40949[var0]);
+                    GlStateManager.method23803(33984 + field40949[var0]);
                     GL32.glTexParameteri(3553, 10241, 9987);
                     GL32.glGenerateMipmap(3553);
                 }
             }
 
-            Class7414.method23803(33984);
+            GlStateManager.method23803(33984);
         }
     }
 
@@ -3723,7 +3724,7 @@ public class Shaders {
                     method33020(field40976);
                 }
 
-                Class7414.method23803(33984);
+                GlStateManager.method23803(33984);
                 field40591.getTextureManager().bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
             }
         }
@@ -3760,46 +3761,46 @@ public class Shaders {
             GL32.glLoadIdentity();
             GL32.glOrtho(0.0, 1.0, 0.0, 1.0, 0.0, 1.0);
             GL32.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-            Class7414.method23804();
-            Class7414.method23695();
-            Class7414.method23714();
-            Class7414.method23711();
-            Class7414.method23712(519);
-            Class7414.method23713(false);
-            Class7414.method23699();
+            GlStateManager.method23804();
+            GlStateManager.method23695();
+            GlStateManager.method23714();
+            GlStateManager.method23711();
+            GlStateManager.method23712(519);
+            GlStateManager.method23713(false);
+            GlStateManager.method23699();
             if (field40804 >= 1) {
-                Class7414.method23803(33988);
-                Class7414.method23814(field40975.get(0));
+                GlStateManager.method23803(33988);
+                GlStateManager.method23814(field40975.get(0));
                 if (field40804 >= 2) {
-                    Class7414.method23803(33989);
-                    Class7414.method23814(field40975.get(1));
+                    GlStateManager.method23803(33989);
+                    GlStateManager.method23814(field40975.get(1));
                 }
             }
 
             for (int var2 = 0; var2 < field40801; var2++) {
-                Class7414.method23803(33984 + field40949[var2]);
-                Class7414.method23814(field40980.method38905(var2));
+                GlStateManager.method23803(33984 + field40949[var2]);
+                GlStateManager.method23814(field40980.method38905(var2));
             }
 
-            Class7414.method23803(33990);
-            Class7414.method23814(field40973.get(0));
+            GlStateManager.method23803(33990);
+            GlStateManager.method23814(field40973.get(0));
             if (field40802 >= 2) {
-                Class7414.method23803(33995);
-                Class7414.method23814(field40973.get(1));
+                GlStateManager.method23803(33995);
+                GlStateManager.method23814(field40973.get(1));
                 if (field40802 >= 3) {
-                    Class7414.method23803(33996);
-                    Class7414.method23814(field40973.get(2));
+                    GlStateManager.method23803(33996);
+                    GlStateManager.method23814(field40973.get(2));
                 }
             }
 
             for (int var5 = 0; var5 < field40803; var5++) {
-                Class7414.method23803(33997 + var5);
-                Class7414.method23814(field40974.get(var5));
+                GlStateManager.method23803(33997 + var5);
+                GlStateManager.method23814(field40974.get(var5));
             }
 
             if (field40947) {
-                Class7414.method23803(33984 + field40946.method20208());
-                Class7414.method23814(field40946.method20207());
+                GlStateManager.method23803(33984 + field40946.method20208());
+                GlStateManager.method23814(field40946.method20207());
             }
 
             if (var1) {
@@ -3808,7 +3809,7 @@ public class Shaders {
                 method32965(field40922);
             }
 
-            Class7414.method23803(33984);
+            GlStateManager.method23803(33984);
 
             for (int var6 = 0; var6 < field40801; var6++) {
                 EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064 + var6, 3553, field40980.method38906(var6), 0);
@@ -3834,13 +3835,13 @@ public class Shaders {
                     for (int var4 = 0; var4 < field40801; var4++) {
                         if (var3.method26496()[var4]) {
                             field40980.method38908(var4);
-                            Class7414.method23803(33984 + field40949[var4]);
-                            Class7414.method23814(field40980.method38905(var4));
+                            GlStateManager.method23803(33984 + field40949[var4]);
+                            GlStateManager.method23814(field40980.method38905(var4));
                             EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064 + var4, 3553, field40980.method38906(var4), 0);
                         }
                     }
 
-                    Class7414.method23803(33984);
+                    GlStateManager.method23803(33984);
                 }
             }
 
@@ -3850,12 +3851,12 @@ public class Shaders {
                 field40607 = true;
             }
 
-            Class7414.method23698();
-            Class7414.method23804();
-            Class7414.method23696();
-            Class7414.method23715();
-            Class7414.method23712(515);
-            Class7414.method23713(true);
+            GlStateManager.method23698();
+            GlStateManager.method23804();
+            GlStateManager.method23696();
+            GlStateManager.method23715();
+            GlStateManager.method23712(515);
+            GlStateManager.method23713(true);
             GL32.glPopMatrix();
             GL32.glMatrixMode(5888);
             GL32.glPopMatrix();
@@ -3884,18 +3885,18 @@ public class Shaders {
     private static void method33066() {
         field40608 = false;
         field40591.getFramebuffer().bindFramebuffer(true);
-        Class7414.method23757(Class8821.field39775, Class8821.field39777, 3553, field40591.getFramebuffer().method29120(), 0);
+        GlStateManager.method23757(Class8821.field39775, Class8821.field39777, 3553, field40591.getFramebuffer().method29120(), 0);
         GL32.glViewport(0, 0, field40591.getMainWindow().getFramebufferWidth(), field40591.getMainWindow().getFramebufferHeight());
-        Class7414.method23713(true);
+        GlStateManager.method23713(true);
         GL32.glClearColor(field40629, field40630, field40631, 1.0F);
         GL32.glClear(16640);
         GL32.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        Class7414.method23804();
-        Class7414.method23695();
-        Class7414.method23714();
-        Class7414.method23711();
-        Class7414.method23712(519);
-        Class7414.method23713(false);
+        GlStateManager.method23804();
+        GlStateManager.method23695();
+        GlStateManager.method23714();
+        GlStateManager.method23711();
+        GlStateManager.method23712(519);
+        GlStateManager.method23713(false);
         method32984("pre-final");
         method33021(field40845);
         method32984("final");
@@ -3916,7 +3917,7 @@ public class Shaders {
             }
 
             field40605 = false;
-            Class7414.method23822(true, true, true, true);
+            GlStateManager.method23822(true, true, true, true);
             method33021(field40813);
             Class7516.method24499();
             method32984("endRender end");
@@ -3951,8 +3952,8 @@ public class Shaders {
             var13 = -4.0;
         }
 
-        Class7414.method23832();
-        Class7414.method23842(var0.getLast().getMatrix());
+        GlStateManager.method23832();
+        GlStateManager.method23842(var0.getLast().getMatrix());
         var1.begin(7, DefaultVertexFormats.field43341);
         var1.pos(var7, var13, var9).endVertex();
         var1.pos(var7, var11, var9).endVertex();
@@ -3991,7 +3992,7 @@ public class Shaders {
         var1.pos(var3, var13, var3).endVertex();
         var1.pos(var3, var13, var9).endVertex();
         Tessellator.getInstance().draw();
-        Class7414.method23833();
+        GlStateManager.method23833();
     }
 
     public static void method33071(MatrixStack var0) {
@@ -4080,16 +4081,16 @@ public class Shaders {
     public static void method33081() {
         if (field40605 && field40834.method26485() != field40813.method26485()) {
             method33021(field40834);
-            Class7414.method23696();
-            Class7414.method23697(516, 0.0F);
-            Class7414.method23716(770, 771);
+            GlStateManager.method23696();
+            GlStateManager.method23697(516, 0.0F);
+            GlStateManager.method23716(770, 771);
         }
     }
 
     public static void method33082() {
         if (field40605 && field40834.method26485() != field40813.method26485()) {
             method33021(field40831);
-            Class7414.method23695();
+            GlStateManager.method23695();
         }
     }
 
@@ -4198,34 +4199,34 @@ public class Shaders {
 
     public static void method33098() {
         if (!field40609) {
-            Class7414.method23711();
-            Class7414.method23715();
-            Class7414.method23716(770, 771);
-            Class7414.method23696();
+            GlStateManager.method23711();
+            GlStateManager.method23715();
+            GlStateManager.method23716(770, 771);
+            GlStateManager.method23696();
             method33021(field40836);
         }
     }
 
     public static void method33099() {
-        Class7414.method23714();
+        GlStateManager.method23714();
         method33021(field40819);
     }
 
     public static void method33100() {
         if (!field40609 && field40802 >= 3) {
-            Class7414.method23803(33996);
+            GlStateManager.method23803(33996);
             GL32.glCopyTexSubImage2D(3553, 0, 0, 0, 0, 0, field40603, field40604);
-            Class7414.method23803(33984);
+            GlStateManager.method23803(33984);
         }
     }
 
     public static void method33101() {
         if (field40802 >= 2) {
-            Class7414.method23803(33995);
+            GlStateManager.method23803(33995);
             method32984("pre copy depth");
             GL32.glCopyTexSubImage2D(3553, 0, 0, 0, 0, 0, field40603, field40604);
             method32984("copy depth");
-            Class7414.method23803(33984);
+            GlStateManager.method23803(33984);
         }
 
         Class9336.method35312(field40856.method1135());
@@ -4236,10 +4237,10 @@ public class Shaders {
             if (!field40609) {
                 method33060();
                 method33021(field40840);
-                Class7414.method23715();
-                Class7414.method23713(true);
+                GlStateManager.method23715();
+                GlStateManager.method23713(true);
             } else {
-                Class7414.method23713(true);
+                GlStateManager.method23713(true);
             }
         }
     }
@@ -4284,13 +4285,13 @@ public class Shaders {
         GL32.glPopMatrix();
         GL32.glMatrixMode(5888);
         GL32.glPopMatrix();
-        Class7414.method23716(770, 771);
+        GlStateManager.method23716(770, 771);
         method32984("endHand");
     }
 
     public static void method33107() {
-        Class7414.method23699();
-        Class7414.method23714();
+        GlStateManager.method23699();
+        GlStateManager.method23714();
     }
 
     public static void method33108() {

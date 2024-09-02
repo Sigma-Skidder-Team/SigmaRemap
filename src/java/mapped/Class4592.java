@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 
 public class Class4592 extends Class4587 {
    private static String[] field22077;
@@ -19,7 +20,7 @@ public class Class4592 extends Class4587 {
    }
 
    @Override
-   public void method14510(Class5422 var1, Class9624 var2, float var3) {
+   public void method14510(Class5422 var1, ActiveRenderInfo var2, float var3) {
       float var6 = ((float)this.field22055 + var3) / (float)this.field22056;
       float var7 = 0.05F + 0.5F * MathHelper.sin(var6 * (float) Math.PI);
       MatrixStack var8 = new MatrixStack();

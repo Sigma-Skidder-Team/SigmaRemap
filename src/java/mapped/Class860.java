@@ -41,7 +41,7 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
       int var4 = this.field4734 - 124;
       Collection var5 = this.mc.player.method3031();
       if (!var5.isEmpty()) {
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var6 = 33;
          if (var5.size() > 5) {
             var6 = 132 / (var5.size() - 1);
@@ -59,7 +59,7 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
       int var7 = this.field4735;
 
       for (Class2023 var9 : var4) {
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.method5696(var1, var2, var7, 0, 166, 140, 32);
          var7 += var3;
       }

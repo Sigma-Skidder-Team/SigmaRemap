@@ -167,7 +167,7 @@ public class MineplexSpeed extends Module {
     }
 
     private int method16254() {
-        if (mc.player.method3090().isEmpty()) {
+        if (mc.player.getHeldItemMainhand().isEmpty()) {
             this.field23554 = mc.player.inventory.currentItem;
             return this.field23554;
         } else {

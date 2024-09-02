@@ -27,7 +27,7 @@ public abstract class Class1236 extends Widget {
    @Override
    public void method5731(MatrixStack var1, Minecraft var2, int var3, int var4) {
       var2.getTextureManager().bindTexture(field6474);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       int var7 = (!this.method5737() ? 1 : 2) * 20;
       this.method5696(var1, this.field6477 + (int)(this.field6584 * (double)(this.field6475 - 8)), this.field6478, 0, 46 + var7, 4, 20);
       this.method5696(var1, this.field6477 + (int)(this.field6584 * (double)(this.field6475 - 8)) + 4, this.field6478, 196, 46 + var7, 4, 20);

@@ -81,7 +81,7 @@ public class Class3425 extends Block {
 
    @Override
    public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
-      if (!var1.isRemote && !var4.method3090().isEmpty() && var4.method3090().getItem() == Items.field37956) {
+      if (!var1.isRemote && !var4.getHeldItemMainhand().isEmpty() && var4.getHeldItemMainhand().getItem() == Items.field37956) {
          var1.setBlockState(var2, var3.method23465(field19165, Boolean.valueOf(true)), 4);
       }
 

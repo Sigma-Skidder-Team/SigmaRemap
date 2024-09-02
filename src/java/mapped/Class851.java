@@ -77,13 +77,13 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       super.render(var1, var2, var3, var4);
       RenderSystem.pushMatrix();
       RenderSystem.translatef((float)var7, (float)var8, 0.0F);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.method27867();
       this.field4729 = null;
       short var9 = 240;
       short var10 = 240;
       RenderSystem.method27905(33986, 240.0F, 240.0F);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 
       for (int var11 = 0; var11 < this.field4727.field25468.size(); var11++) {
          Class5839 var12 = this.field4727.field25468.get(var11);

@@ -37,7 +37,7 @@ public class LockIconButton extends Button {
    @Override
    public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       Minecraft.getInstance().getTextureManager().bindTexture(Button.field6474);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       Class2105 var7;
       if (this.active) {
          if (!this.method5737()) {

@@ -63,7 +63,7 @@ public class Class9081 {
    }
 
    public boolean method33866() {
-      return this.field41572.method8157();
+      return this.field41572.isCreative();
    }
 
    public void method33867(Class1894 var1) {
@@ -228,7 +228,7 @@ public class Class9081 {
 
    public boolean method33870(BlockPos var1) {
       BlockState var4 = this.field41570.getBlockState(var1);
-      if (!this.field41571.method3090().getItem().method11706(var4, this.field41570, var1, this.field41571)) {
+      if (!this.field41571.getHeldItemMainhand().getItem().method11706(var4, this.field41570, var1, this.field41571)) {
          return false;
       } else {
          TileEntity var5 = this.field41570.getTileEntity(var1);
@@ -244,7 +244,7 @@ public class Class9081 {
             }
 
             if (!this.method33866()) {
-               ItemStack var8 = this.field41571.method3090();
+               ItemStack var8 = this.field41571.getHeldItemMainhand();
                ItemStack var9 = var8.copy();
                boolean var10 = this.field41571.method2884(var4);
                var8.method32123(this.field41570, var4, var1, this.field41571);
@@ -312,7 +312,7 @@ public class Class9081 {
             return ActionResultType.field14818;
          }
       } else {
-         boolean var10 = !var1.method3090().isEmpty() || !var1.method3091().isEmpty();
+         boolean var10 = !var1.getHeldItemMainhand().isEmpty() || !var1.method3091().isEmpty();
          boolean var11 = var1.method2851() && var10;
          ItemStack var12 = var3.copy();
          if (!var11) {

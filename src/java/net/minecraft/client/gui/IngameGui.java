@@ -10,6 +10,7 @@ import com.mojang.datafixers.util.Pair;
 import mapped.*;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -121,17 +122,17 @@ public class IngameGui extends AbstractGui {
         }
 
         if (!this.field6716.gameSettings.hideGUI) {
-            RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6716.getTextureManager().bindTexture(field6453);
             RenderSystem.enableBlend();
             RenderSystem.disableAlphaTest();
             this.method5963(var1);
-            Class7414.method23696();
+            GlStateManager.method23696();
             RenderSystem.defaultBlendFunc();
             this.field6716.getProfiler().startSection("bossHealth");
             this.field6730.method5953(var1);
             this.field6716.getProfiler().endSection();
-            RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6716.getTextureManager().bindTexture(field6453);
             if (this.field6716.playerController.method23130()) {
                 this.method5976(var1);
@@ -170,7 +171,7 @@ public class IngameGui extends AbstractGui {
             RenderSystem.disableAlphaTest();
             RenderSystem.enableDepthTest();
             this.field6716.getProfiler().endSection();
-            RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         }
 
         if (this.field6716.isDemo()) {
@@ -297,7 +298,7 @@ public class IngameGui extends AbstractGui {
             }
         }
 
-        RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.disableAlphaTest();
     }
 
@@ -315,14 +316,14 @@ public class IngameGui extends AbstractGui {
             if (var4.showDebugInfo && !var4.hideGUI && !this.field6716.player.hasReducedDebug() && !var4.reducedDebugInfo) {
                 RenderSystem.pushMatrix();
                 RenderSystem.translatef((float) (this.field6741 / 2), (float) (this.field6742 / 2), (float) this.method5702());
-                Class9624 var11 = this.field6716.gameRenderer.getActiveRenderInfo();
+                ActiveRenderInfo var11 = this.field6716.gameRenderer.getActiveRenderInfo();
                 RenderSystem.method27883(var11.method37506(), -1.0F, 0.0F, 0.0F);
                 RenderSystem.method27883(var11.method37507(), 0.0F, 1.0F, 0.0F);
                 RenderSystem.scalef(-1.0F, -1.0F, -1.0F);
                 RenderSystem.method27903(10);
                 RenderSystem.popMatrix();
             } else {
-                RenderSystem.method27836(Class2339.field15994, Class1981.field12933, Class2339.field15990, Class1981.field12936);
+                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15994, DestFactor.field12933, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
                 byte var5 = 15;
                 this.method5696(var1, (this.field6741 - 15) / 2, (this.field6742 - 15) / 2, 0, 0, 15, 15);
                 if (this.field6716.gameSettings.field44603 == Class2207.field14426) {
@@ -403,7 +404,7 @@ public class IngameGui extends AbstractGui {
                         var12 -= 25 * var5;
                     }
 
-                    RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+                    RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                     float var14 = 1.0F;
                     if (!var10.method8630()) {
                         this.method5696(var1, var12, var13, 141, 166, 24, 24);
@@ -423,7 +424,7 @@ public class IngameGui extends AbstractGui {
                     float var18 = var14;
                     var8.add(() -> {
                         this.field6716.getTextureManager().bindTexture(var20.getAtlasTexture().getTextureLocation());
-                        RenderSystem.method27889(1.0F, 1.0F, 1.0F, var18);
+                        RenderSystem.color4f(1.0F, 1.0F, 1.0F, var18);
                         method5695(var1, var16 + 3, var17 + 3, this.method5702(), 18, 18, var20);
                     });
                     if (Class9299.field42936.method20214()) {
@@ -439,7 +440,7 @@ public class IngameGui extends AbstractGui {
     public void method5966(float var1, MatrixStack var2) {
         PlayerEntity var5 = this.method5972();
         if (var5 != null) {
-            RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6716.getTextureManager().bindTexture(field6712);
             ItemStack var6 = var5.method3091();
             HandSide var7 = var5.method2967().method8920();
@@ -493,7 +494,7 @@ public class IngameGui extends AbstractGui {
 
                     this.field6716.getTextureManager().bindTexture(AbstractGui.field6453);
                     int var15 = (int) (var17 * 19.0F);
-                    RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+                    RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                     this.method5696(var2, var19, var18, 0, 94, 18, 18);
                     this.method5696(var2, var19, var18 + 18 - var15, 18, 112 - var15, 18, var15);
                 }
@@ -919,7 +920,7 @@ public class IngameGui extends AbstractGui {
         RenderSystem.disableDepthTest();
         RenderSystem.depthMask(false);
         RenderSystem.defaultBlendFunc();
-        RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.method27817();
         this.field6716.getTextureManager().bindTexture(field6713);
         Tessellator var3 = Tessellator.getInstance();
@@ -933,7 +934,7 @@ public class IngameGui extends AbstractGui {
         RenderSystem.depthMask(true);
         RenderSystem.enableDepthTest();
         RenderSystem.disableAlphaTest();
-        RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
     private void method5979(Entity var1) {
@@ -957,11 +958,11 @@ public class IngameGui extends AbstractGui {
 
             RenderSystem.disableDepthTest();
             RenderSystem.depthMask(false);
-            RenderSystem.method27836(Class2339.field16000, Class1981.field12933, Class2339.field15990, Class1981.field12936);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field16000, DestFactor.field12933, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
             if (!(var5 > 0.0F)) {
-                RenderSystem.method27889(this.field6723, this.field6723, this.field6723, 1.0F);
+                RenderSystem.color4f(this.field6723, this.field6723, this.field6723, 1.0F);
             } else {
-                RenderSystem.method27889(0.0F, var5, var5, 1.0F);
+                RenderSystem.color4f(0.0F, var5, var5, 1.0F);
             }
 
             this.field6716.getTextureManager().bindTexture(field6711);
@@ -975,11 +976,11 @@ public class IngameGui extends AbstractGui {
             var10.draw();
             RenderSystem.depthMask(true);
             RenderSystem.enableDepthTest();
-            RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.defaultBlendFunc();
         } else {
             RenderSystem.enableDepthTest();
-            RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
         }
     }
 
@@ -994,7 +995,7 @@ public class IngameGui extends AbstractGui {
         RenderSystem.disableDepthTest();
         RenderSystem.depthMask(false);
         RenderSystem.defaultBlendFunc();
-        RenderSystem.method27889(1.0F, 1.0F, 1.0F, var1);
+        RenderSystem.color4f(1.0F, 1.0F, 1.0F, var1);
         this.field6716.getTextureManager().bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
         TextureAtlasSprite var4 = this.field6716.getBlockRendererDispatcher().getBlockModelShapes().getTexture(Blocks.field36588.method11579());
         float var5 = var4.getMinU();
@@ -1012,7 +1013,7 @@ public class IngameGui extends AbstractGui {
         RenderSystem.depthMask(true);
         RenderSystem.enableDepthTest();
         RenderSystem.disableAlphaTest();
-        RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
     private void method5982(int var1, int var2, float var3, PlayerEntity var4, ItemStack var5) {

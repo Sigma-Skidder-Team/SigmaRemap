@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -16,7 +17,7 @@ public class TileEntityRendererDispatcher {
    private FontRenderer field34745;
    public TextureManager field34746;
    public World field34747;
-   public Class9624 field34748;
+   public ActiveRenderInfo field34748;
    public RayTraceResult field34749;
    public TileEntity field34750;
 
@@ -51,7 +52,7 @@ public class TileEntityRendererDispatcher {
       return (Class5942<E>)this.field34742.get(var1.method3786());
    }
 
-   public void method27961(World var1, TextureManager var2, FontRenderer var3, Class9624 var4, RayTraceResult var5) {
+   public void method27961(World var1, TextureManager var2, FontRenderer var3, ActiveRenderInfo var4, RayTraceResult var5) {
       if (this.field34747 != var1) {
          this.setWorld(var1);
       }

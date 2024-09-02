@@ -79,7 +79,7 @@ public class Class6983 {
    }
 
    public static boolean method21580(Class1006 var0, LivingEntity var1, int var2) {
-      Item var5 = var0.method3090().getItem();
+      Item var5 = var0.getHeldItemMainhand().getItem();
       if (var5 instanceof Class3262 && var0.method4234((Class3262)var5)) {
          int var6 = ((Class3262)var5).method11771() - var2;
          return var0.isEntityInRange(var1, (double)var6);

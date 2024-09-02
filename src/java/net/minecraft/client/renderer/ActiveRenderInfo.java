@@ -1,7 +1,8 @@
-package mapped;
+package net.minecraft.client.renderer;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.impl.render.CameraNoClip;
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -10,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 
-public class Class9624 {
+public class ActiveRenderInfo {
    private static String[] field45004;
    private boolean field45005;
    private Class1665 field45006;

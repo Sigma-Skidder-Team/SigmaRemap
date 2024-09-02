@@ -12,7 +12,7 @@ public class Class240<T extends LivingEntity> extends Class239<T, Class2891<T>> 
 
    @Override
    public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      ItemStack var13 = var4.method3090();
+      ItemStack var13 = var4.getHeldItemMainhand();
       var1.push();
       if (var13.getItem() == Items.field37971) {
          this.method825().method11012().method22682(var1);

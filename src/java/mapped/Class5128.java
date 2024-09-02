@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Collection;
@@ -41,7 +42,7 @@ public class Class5128 implements Class5119 {
       DebugRenderer.method27462(var0, var5, var7, var9, var2, 0.04F, true, 0.0F, true);
    }
 
-   private Class9624 method15866() {
+   private ActiveRenderInfo method15866() {
       return this.field23316.gameRenderer.getActiveRenderInfo();
    }
 }

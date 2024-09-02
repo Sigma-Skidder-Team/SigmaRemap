@@ -136,7 +136,7 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
             this.field17593.field31036 = 0.0F;
             this.field17594.field31036 = 0.0F;
          }
-      } else if (!var1.method3090().isEmpty()) {
+      } else if (!var1.getHeldItemMainhand().isEmpty()) {
          Class7972.method27107(this.field17593, this.field17594, var1, this.field17600, var4);
       } else {
          Class7972.method27109(this.field17594, this.field17593, true, this.field17600, var4);

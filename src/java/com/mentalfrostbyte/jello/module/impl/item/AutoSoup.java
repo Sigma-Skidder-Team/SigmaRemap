@@ -163,7 +163,7 @@ public class AutoSoup extends Module {
                 }
 
                 mc.player.inventory.currentItem = this.field23430;
-                mc.playerController.method23138();
+                mc.playerController.syncCurrentPlayItem();
                 this.field23428 = 0;
                 this.field23430 = -1;
             } else {
@@ -173,7 +173,7 @@ public class AutoSoup extends Module {
 
                 this.field23430 = mc.player.inventory.currentItem;
                 mc.player.inventory.currentItem = var3;
-                mc.playerController.method23138();
+                mc.playerController.syncCurrentPlayItem();
                 mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.field183));
                 mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
             }

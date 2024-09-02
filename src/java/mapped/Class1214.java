@@ -34,7 +34,7 @@ public class Class1214 extends Class1213 {
          }
 
          var2.getTextureManager().bindTexture(field6474);
-         Class7414.method23843(1.0F, 1.0F, 1.0F, 1.0F);
+         GlStateManager.method23843(1.0F, 1.0F, 1.0F, 1.0F);
          int var7 = (!this.method5737() ? 1 : 2) * 20;
          this.method5696(var1, this.field6477 + (int)(this.field6527 * (float)(this.field6475 - 8)), this.field6478, 0, 46 + var7, 4, 20);
          this.method5696(var1, this.field6477 + (int)(this.field6527 * (float)(this.field6475 - 8)) + 4, this.field6478, 196, 46 + var7, 4, 20);

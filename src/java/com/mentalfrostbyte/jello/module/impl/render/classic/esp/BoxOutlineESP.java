@@ -103,7 +103,7 @@ public class BoxOutlineESP extends Module {
                     if (var1) {
                         RenderUtil.method11462(var17, 3.0F, ColorUtils.applyAlpha(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
                     } else {
-                        RenderUtil.method11459(var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                        RenderUtil.render3DColoredBox(var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     }
 
                     GL11.glDisable(3042);

@@ -304,7 +304,7 @@ public class Class9217 {
    }
 
    public static float method34560() {
-      return field42414.playerController.method23135();
+      return field42414.playerController.getBlockReachDistance();
    }
 
    public static List<BlockPos> method34561(float var0) {
@@ -418,7 +418,7 @@ public class Class9217 {
       float var7 = -MathHelper.sin(var1);
       float var8 = MathHelper.cos(var0) * MathHelper.cos(var1);
       if (var2 == 0.0F) {
-         var2 = field42414.playerController.method23135();
+         var2 = field42414.playerController.getBlockReachDistance();
       }
 
       Vector3d var9 = new Vector3d(
@@ -438,7 +438,7 @@ public class Class9217 {
       float var8 = -MathHelper.sin(var1);
       float var9 = MathHelper.cos(var0) * MathHelper.cos(var1);
       if (var2 == 0.0F) {
-         var2 = field42414.playerController.method23135();
+         var2 = field42414.playerController.getBlockReachDistance();
       }
 
       Vector3d var10 = new Vector3d(
@@ -464,7 +464,7 @@ public class Class9217 {
       float var12 = -MathHelper.sin(var1);
       float var13 = MathHelper.cos(var0) * MathHelper.cos(var1);
       if (var2 == 0.0F) {
-         var2 = field42414.playerController.method23135();
+         var2 = field42414.playerController.getBlockReachDistance();
       }
 
       Vector3d var14 = new Vector3d(
@@ -497,7 +497,7 @@ public class Class9217 {
       float var7 = -MathHelper.sin(var2) * MathHelper.cos(var3);
       float var8 = -MathHelper.sin(var3);
       float var9 = MathHelper.cos(var2) * MathHelper.cos(var3);
-      float var10 = field42414.playerController.method23135();
+      float var10 = field42414.playerController.getBlockReachDistance();
       Vector3d var11 = new Vector3d(
          field42414.player.getPosX() + (double)(var7 * var10),
          field42414.player.getPosY() + (double)(var8 * var10) + (double)field42414.player.method3393(),
@@ -603,7 +603,7 @@ public class Class9217 {
    }
 
    public static float[] method34579(float var0, float var1, Class7843 var2) {
-      BlockRayTraceResult var5 = method34567(var0, var1, field42414.playerController.method23135());
+      BlockRayTraceResult var5 = method34567(var0, var1, field42414.playerController.getBlockReachDistance());
       if (var5 != null && var5.getPos().equals(var2.field33646)) {
          return new float[]{var0, var1};
       } else {

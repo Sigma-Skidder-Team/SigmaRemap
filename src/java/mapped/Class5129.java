@@ -19,7 +19,7 @@ public class Class5129 implements Class5119 {
       World var12 = this.field23319.player.world;
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
-      RenderSystem.method27889(0.0F, 1.0F, 0.0F, 0.75F);
+      RenderSystem.color4f(0.0F, 1.0F, 0.0F, 0.75F);
       RenderSystem.disableTexture();
       RenderSystem.lineWidth(6.0F);
 

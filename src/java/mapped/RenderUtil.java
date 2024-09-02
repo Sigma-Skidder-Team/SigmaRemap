@@ -188,8 +188,8 @@ public class RenderUtil {
       BufferBuilder var12 = var11.getBuffer();
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
-      RenderSystem.method27889(var8, var9, var10, var14);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
+      RenderSystem.color4f(var8, var9, var10, var14);
       var12.begin(7, DefaultVertexFormats.field43341);
       var12.pos((double)var0, (double)var3, 0.0).endVertex();
       var12.pos((double)var2, (double)var3, 0.0).endVertex();
@@ -215,7 +215,7 @@ public class RenderUtil {
 
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
       var4.bindFramebuffer(true);
       var4.framebufferRender((int)var0 - (int)var2, (int)var1 - (int)var3);
       RenderSystem.enableTexture();
@@ -253,7 +253,7 @@ public class RenderUtil {
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.method27817();
-      RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
       RenderSystem.method27866(7425);
       Tessellator var16 = Tessellator.getInstance();
       BufferBuilder var17 = var16.getBuffer();
@@ -289,7 +289,7 @@ public class RenderUtil {
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.method27817();
-      RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
       RenderSystem.method27866(7425);
       Tessellator var26 = Tessellator.getInstance();
       BufferBuilder var27 = var26.getBuffer();
@@ -306,7 +306,7 @@ public class RenderUtil {
    }
 
    public static void method11433(float var0, float var1, float var2, float var3, int var4, float var5) {
-      RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       GL11.glLineWidth(var5);
       float var8 = (float)(var4 >> 24 & 0xFF) / 255.0F;
@@ -318,7 +318,7 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
-      RenderSystem.method27889(var9, var10, var11, var8);
+      RenderSystem.color4f(var9, var10, var11, var8);
       GL11.glEnable(2848);
       var13.begin(1, DefaultVertexFormats.POSITION_COLOR);
       var13.pos((double)var0, (double)var1, 0.0);
@@ -330,7 +330,7 @@ public class RenderUtil {
    }
 
    public static void method11434(float var0, float var1, float var2, float var3, float var4, float var5, int var6) {
-      RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       float var9 = (float)(var6 >> 24 & 0xFF) / 255.0F;
       float var10 = (float)(var6 >> 16 & 0xFF) / 255.0F;
@@ -341,7 +341,7 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
-      RenderSystem.method27889(var10, var11, var12, var9);
+      RenderSystem.color4f(var10, var11, var12, var9);
       GL11.glBegin(6);
       GL11.glVertex2f(var0, var1);
       GL11.glVertex2f(var4, var5);
@@ -353,7 +353,7 @@ public class RenderUtil {
    }
 
    public static void method11435(float var0, float var1, float var2, int var3, int var4) {
-      RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       Tessellator var7 = Tessellator.getInstance();
       BufferBuilder var8 = var7.getBuffer();
@@ -395,7 +395,7 @@ public class RenderUtil {
    }
 
    public static void method11438(float var0, float var1, float var2, int var3) {
-      RenderSystem.method27889(0.0F, 0.0F, 0.0F, 0.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 0.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       float var6 = (float)(var3 >> 24 & 0xFF) / 255.0F;
       float var7 = (float)(var3 >> 16 & 0xFF) / 255.0F;
@@ -405,7 +405,7 @@ public class RenderUtil {
       BufferBuilder var11 = var10.getBuffer();
       RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
-      RenderSystem.method27889(var7, var8, var9, var6);
+      RenderSystem.color4f(var7, var8, var9, var6);
       GL11.glEnable(2832);
       GL11.glEnable(3042);
       GL11.glPointSize(var2 * GuiManager.field41348);
@@ -427,7 +427,7 @@ public class RenderUtil {
    }
 
    public static void method11441(ClientResource var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6, boolean var7) {
-      RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       int var10 = 0;
       int var11 = 0;
@@ -509,7 +509,7 @@ public class RenderUtil {
    }
 
    public static void method11444(Class7431 var0, float var1, float var2, String var3, int var4, Class2218 var5, Class2218 var6, boolean var7) {
-      RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       int var10 = 0;
       int var11 = 0;
@@ -545,7 +545,7 @@ public class RenderUtil {
    }
 
    public static void method11446(float var0, float var1, float var2, float var3, float var4, float var5, int var6) {
-      RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       float var9 = 0.0F;
       if (var2 > var3) {
@@ -563,7 +563,7 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
-      RenderSystem.method27889(var11, var12, var13, var10);
+      RenderSystem.color4f(var11, var12, var13, var10);
       if (var10 > 0.5F) {
          GL11.glEnable(2848);
          GL11.glLineWidth(2.0F);
@@ -593,7 +593,7 @@ public class RenderUtil {
    }
 
    public static void method11447(float var0, float var1, float[] var2, float[] var3, int var4) {
-      RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       float var7 = (float)(var4 >> 24 & 0xFF) / 255.0F;
       float var8 = (float)(var4 >> 16 & 0xFF) / 255.0F;
@@ -604,7 +604,7 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
-      RenderSystem.method27889(var8, var9, var10, var7);
+      RenderSystem.color4f(var8, var9, var10, var7);
       GL11.glBegin(6);
 
       for (int var13 = var2.length - 1; var13 >= 0; var13--) {
@@ -641,7 +641,7 @@ public class RenderUtil {
            float var0, float var1, float var2, float var3, Texture var4, int var5, float var6, float var7, float var8, float var9, boolean var10
    ) {
       if (var4 != null) {
-         RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
+         RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
          GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
          var0 = (float)Math.round(var0);
          var2 = (float)Math.round(var2);
@@ -654,7 +654,7 @@ public class RenderUtil {
          RenderSystem.enableBlend();
          RenderSystem.disableTexture();
          RenderSystem.method27837(770, 771, 1, 0);
-         RenderSystem.method27889(var14, var15, var16, var13);
+         RenderSystem.color4f(var14, var15, var16, var13);
          GL11.glEnable(3042);
          GL11.glEnable(3553);
          var4.bind();
@@ -691,7 +691,7 @@ public class RenderUtil {
       float var0, float var1, float var2, float var3, ByteBuffer var4, int var5, float var6, float var7, float var8, float var9, boolean var10, boolean var11
    ) {
       if (var4 != null) {
-         RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
+         RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
          GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
          var0 = (float)Math.round(var0);
          var2 = (float)Math.round(var2);
@@ -704,7 +704,7 @@ public class RenderUtil {
          RenderSystem.enableBlend();
          RenderSystem.disableTexture();
          RenderSystem.method27837(770, 771, 1, 0);
-         RenderSystem.method27889(var15, var16, var17, var14);
+         RenderSystem.color4f(var15, var16, var17, var14);
          GL11.glEnable(3042);
          GL11.glEnable(3553);
          GL11.glPixelStorei(3312, 0);
@@ -755,7 +755,7 @@ public class RenderUtil {
    }
 
    public static void method11457(float var0, float var1, float var2, float var3, int var4, float var5, float var6, float var7, float var8) {
-      RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       var0 = (float)Math.round(var0);
       var2 = (float)Math.round(var2);
@@ -768,7 +768,7 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
-      RenderSystem.method27889(var12, var13, var14, var11);
+      RenderSystem.color4f(var12, var13, var14, var11);
       GL11.glEnable(3042);
       GL11.glEnable(3553);
       GL11.glPixelStorei(3312, 0);
@@ -808,7 +808,7 @@ public class RenderUtil {
       }
    }
 
-   public static void method11459(Class9388 var0, int var1) {
+   public static void render3DColoredBox(Class9388 var0, int var1) {
       if (var0 != null) {
          float var4 = (float)(var1 >> 24 & 0xFF) / 255.0F;
          float var5 = (float)(var1 >> 16 & 0xFF) / 255.0F;

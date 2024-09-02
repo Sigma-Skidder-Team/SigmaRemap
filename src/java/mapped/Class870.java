@@ -127,7 +127,7 @@ public class Class870 extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4820);
       int var7 = (this.width - 192) / 2;
       this.method5696(var1, var7, 2, 0, 0, 192, 192);

@@ -38,13 +38,13 @@ public class Framebuffer {
 
    private void method29104(int var1, int var2, boolean var3) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      Class7414.method23711();
+      GlStateManager.method23711();
       if (this.field35735 >= 0) {
          this.method29105();
       }
 
       this.method29107(var1, var2, var3);
-      Class7414.method23751(Class8821.field39775, 0);
+      GlStateManager.method23751(Class8821.field39775, 0);
    }
 
    public void method29105() {
@@ -62,31 +62,31 @@ public class Framebuffer {
       }
 
       if (this.field35735 > -1) {
-         Class7414.method23751(Class8821.field39775, 0);
-         Class7414.method23754(this.field35735);
+         GlStateManager.method23751(Class8821.field39775, 0);
+         GlStateManager.method23754(this.field35735);
          this.field35735 = -1;
       }
    }
 
    public void method29106(Framebuffer var1) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      if (!Class7414.method23862()) {
-         Class7414.method23751(Class8821.field39775, this.field35735);
-         int var4 = Class7414.method23752();
+      if (!GlStateManager.method23862()) {
+         GlStateManager.method23751(Class8821.field39775, this.field35735);
+         int var4 = GlStateManager.method23752();
          if (var4 != 0) {
-            int var5 = Class7414.method23758();
-            Class7414.method23814(var4);
-            Class7414.method23751(Class8821.field39775, var1.field35735);
-            Class7414.method23750(3553, 0, 0, 0, 0, 0, Math.min(this.field35730, var1.field35730), Math.min(this.field35731, var1.field35731));
-            Class7414.method23814(var5);
+            int var5 = GlStateManager.method23758();
+            GlStateManager.method23814(var4);
+            GlStateManager.method23751(Class8821.field39775, var1.field35735);
+            GlStateManager.method23750(3553, 0, 0, 0, 0, 0, Math.min(this.field35730, var1.field35730), Math.min(this.field35731, var1.field35731));
+            GlStateManager.method23814(var5);
          }
       } else {
-         Class7414.method23751(36008, var1.field35735);
-         Class7414.method23751(36009, this.field35735);
-         Class7414.method23753(0, 0, var1.field35730, var1.field35731, 0, 0, this.field35730, this.field35731, 256, 9728);
+         GlStateManager.method23751(36008, var1.field35735);
+         GlStateManager.method23751(36009, this.field35735);
+         GlStateManager.method23753(0, 0, var1.field35730, var1.field35731, 0, 0, this.field35730, this.field35731, 256, 9728);
       }
 
-      Class7414.method23751(Class8821.field39775, 0);
+      GlStateManager.method23751(Class8821.field39775, 0);
    }
 
    public void method29107(int var1, int var2, boolean var3) {
@@ -95,26 +95,26 @@ public class Framebuffer {
       this.field35733 = var2;
       this.field35730 = var1;
       this.field35731 = var2;
-      this.field35735 = Class7414.method23755();
+      this.field35735 = GlStateManager.method23755();
       this.field35736 = Class8535.method30366();
       if (this.field35734) {
          this.field35737 = Class8535.method30366();
-         Class7414.method23814(this.field35737);
-         Class7414.method23808(3553, 10241, 9728);
-         Class7414.method23808(3553, 10240, 9728);
-         Class7414.method23808(3553, 10242, 10496);
-         Class7414.method23808(3553, 10243, 10496);
-         Class7414.method23808(3553, 34892, 0);
-         Class7414.method23815(3553, 0, 6402, this.field35730, this.field35731, 0, 6402, 5126, (IntBuffer)null);
+         GlStateManager.method23814(this.field35737);
+         GlStateManager.method23808(3553, 10241, 9728);
+         GlStateManager.method23808(3553, 10240, 9728);
+         GlStateManager.method23808(3553, 10242, 10496);
+         GlStateManager.method23808(3553, 10243, 10496);
+         GlStateManager.method23808(3553, 34892, 0);
+         GlStateManager.method23815(3553, 0, 6402, this.field35730, this.field35731, 0, 6402, 5126, (IntBuffer)null);
       }
 
       this.method29108(9728);
-      Class7414.method23814(this.field35736);
-      Class7414.method23815(3553, 0, 32856, this.field35730, this.field35731, 0, 6408, 5121, (IntBuffer)null);
-      Class7414.method23751(Class8821.field39775, this.field35735);
-      Class7414.method23757(Class8821.field39775, Class8821.field39777, 3553, this.field35736, 0);
+      GlStateManager.method23814(this.field35736);
+      GlStateManager.method23815(3553, 0, 32856, this.field35730, this.field35731, 0, 6408, 5121, (IntBuffer)null);
+      GlStateManager.method23751(Class8821.field39775, this.field35735);
+      GlStateManager.method23757(Class8821.field39775, Class8821.field39777, 3553, this.field35736, 0);
       if (this.field35734) {
-         Class7414.method23757(Class8821.field39775, Class8821.field39778, 3553, this.field35737, 0);
+         GlStateManager.method23757(Class8821.field39775, Class8821.field39778, 3553, this.field35737, 0);
       }
 
       this.method29109();
@@ -125,17 +125,17 @@ public class Framebuffer {
    public void method29108(int var1) {
       RenderSystem.assertThread(RenderSystem::method27804);
       this.field35739 = var1;
-      Class7414.method23814(this.field35736);
-      Class7414.method23808(3553, 10241, var1);
-      Class7414.method23808(3553, 10240, var1);
-      Class7414.method23808(3553, 10242, 10496);
-      Class7414.method23808(3553, 10243, 10496);
-      Class7414.method23814(0);
+      GlStateManager.method23814(this.field35736);
+      GlStateManager.method23808(3553, 10241, var1);
+      GlStateManager.method23808(3553, 10240, var1);
+      GlStateManager.method23808(3553, 10242, 10496);
+      GlStateManager.method23808(3553, 10243, 10496);
+      GlStateManager.method23814(0);
    }
 
    public void method29109() {
       RenderSystem.assertThread(RenderSystem::method27804);
-      int var3 = Class7414.method23756(Class8821.field39775);
+      int var3 = GlStateManager.method23756(Class8821.field39775);
       if (var3 != Class8821.field39779) {
          if (var3 != Class8821.field39780) {
             if (var3 != Class8821.field39781) {
@@ -159,12 +159,12 @@ public class Framebuffer {
 
    public void method29110() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      Class7414.method23814(this.field35736);
+      GlStateManager.method23814(this.field35736);
    }
 
    public void method29111() {
       RenderSystem.assertThread(RenderSystem::method27804);
-      Class7414.method23814(0);
+      GlStateManager.method23814(0);
    }
 
    public void bindFramebuffer(boolean var1) {
@@ -177,17 +177,17 @@ public class Framebuffer {
 
    private void method29113(boolean var1) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      Class7414.method23751(Class8821.field39775, this.field35735);
+      GlStateManager.method23751(Class8821.field39775, this.field35735);
       if (var1) {
-         Class7414.method23821(0, 0, this.field35732, this.field35733);
+         GlStateManager.method23821(0, 0, this.field35732, this.field35733);
       }
    }
 
    public void unbindFramebuffer() {
       if (RenderSystem.isOnRenderThread()) {
-         Class7414.method23751(Class8821.field39775, 0);
+         GlStateManager.method23751(Class8821.field39775, 0);
       } else {
-         RenderSystem.method27810(() -> Class7414.method23751(Class8821.field39775, 0));
+         RenderSystem.method27810(() -> GlStateManager.method23751(Class8821.field39775, 0));
       }
    }
 
@@ -213,25 +213,25 @@ public class Framebuffer {
 
    private void method29118(int var1, int var2, boolean var3) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      Class7414.method23822(true, true, true, false);
-      Class7414.method23710();
-      Class7414.method23713(false);
-      Class7414.method23830(5889);
-      Class7414.method23831();
-      Class7414.method23835(0.0, (double)var1, (double)var2, 0.0, 1000.0, 3000.0);
-      Class7414.method23830(5888);
-      Class7414.method23831();
-      Class7414.method23839(0.0F, 0.0F, -2000.0F);
-      Class7414.method23821(0, 0, var1, var2);
-      Class7414.method23804();
-      Class7414.method23699();
-      Class7414.method23695();
+      GlStateManager.method23822(true, true, true, false);
+      GlStateManager.method23710();
+      GlStateManager.method23713(false);
+      GlStateManager.method23830(5889);
+      GlStateManager.method23831();
+      GlStateManager.method23835(0.0, (double)var1, (double)var2, 0.0, 1000.0, 3000.0);
+      GlStateManager.method23830(5888);
+      GlStateManager.method23831();
+      GlStateManager.method23839(0.0F, 0.0F, -2000.0F);
+      GlStateManager.method23821(0, 0, var1, var2);
+      GlStateManager.method23804();
+      GlStateManager.method23699();
+      GlStateManager.method23695();
       if (var3) {
-         Class7414.method23714();
-         Class7414.method23701();
+         GlStateManager.method23714();
+         GlStateManager.method23701();
       }
 
-      Class7414.method23843(1.0F, 1.0F, 1.0F, 1.0F);
+      GlStateManager.method23843(1.0F, 1.0F, 1.0F, 1.0F);
       this.method29110();
       float var6 = (float)var1;
       float var7 = (float)var2;
@@ -246,21 +246,21 @@ public class Framebuffer {
       var11.pos(0.0, 0.0, 0.0).tex(0.0F, var9).color(255, 255, 255, 255).endVertex();
       var10.draw();
       this.method29111();
-      Class7414.method23713(true);
-      Class7414.method23822(true, true, true, true);
+      GlStateManager.method23713(true);
+      GlStateManager.method23822(true, true, true, true);
    }
 
    public void method29119(boolean var1) {
       RenderSystem.assertThread(RenderSystem::method27804);
       this.bindFramebuffer(true);
-      Class7414.method23827(this.field35738[0], this.field35738[1], this.field35738[2], this.field35738[3]);
+      GlStateManager.method23827(this.field35738[0], this.field35738[1], this.field35738[2], this.field35738[3]);
       short var4 = 16384;
       if (this.field35734) {
-         Class7414.method23826(1.0);
+         GlStateManager.method23826(1.0);
          var4 |= 256;
       }
 
-      Class7414.method23829(var4, var1);
+      GlStateManager.method23829(var4, var1);
       this.unbindFramebuffer();
    }
 

@@ -43,7 +43,7 @@ public class Class5135 implements Class5119 {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
-      RenderSystem.method27889(0.0F, 1.0F, 0.0F, 0.75F);
+      RenderSystem.color4f(0.0F, 1.0F, 0.0F, 0.75F);
       RenderSystem.disableTexture();
       RenderSystem.lineWidth(6.0F);
       method15904(var0, var1, var2, var3, var4, var6, var8);

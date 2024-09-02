@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.util.math.vector.Vector3d;
 
 public abstract class Class4586 extends Class4587 {
@@ -14,7 +15,7 @@ public abstract class Class4586 extends Class4587 {
    }
 
    @Override
-   public void method14510(Class5422 var1, Class9624 var2, float var3) {
+   public void method14510(Class5422 var1, ActiveRenderInfo var2, float var3) {
       Vector3d var6 = var2.method37504();
       float var7 = (float)(MathHelper.method37822((double)var3, this.field22038, this.field22041) - var6.method11320());
       float var8 = (float)(MathHelper.method37822((double)var3, this.field22039, this.field22042) - var6.method11321());

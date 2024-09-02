@@ -108,7 +108,7 @@ public class Class1027 extends Class1026 implements Class1022 {
 
             if (var7 != null) {
                this.method2944(Class2106.field13731, Class9741.method38187(new ItemStack(Items.field37971), var7));
-               this.field5721 = this.method3090().method32137();
+               this.field5721 = this.getHeldItemMainhand().method32137();
                this.method4567(true);
                if (!this.method3245()) {
                   this.world
@@ -130,7 +130,7 @@ public class Class1027 extends Class1026 implements Class1022 {
             }
          } else if (this.field5721-- <= 0) {
             this.method4567(false);
-            ItemStack var3 = this.method3090();
+            ItemStack var3 = this.getHeldItemMainhand();
             this.method2944(Class2106.field13731, ItemStack.EMPTY);
             if (var3.getItem() == Items.field37971) {
                List<Class2023> var4 = Class9741.method38176(var3);

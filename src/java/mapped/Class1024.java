@@ -148,7 +148,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    public void method4274(float var1) {
       super.method4274(var1);
       if (this.rand.nextInt(300) == 0) {
-         ItemStack var4 = this.method3090();
+         ItemStack var4 = this.getHeldItemMainhand();
          if (var4.getItem() == Items.field38148) {
             Map var5 = Class7858.method26312(var4);
             var5.putIfAbsent(Class8122.field34931, 1);

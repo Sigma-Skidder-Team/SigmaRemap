@@ -382,7 +382,7 @@ public class Class8795 {
                      double var12 = (double)var9.getY() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11321();
                      double var14 = (double)var9.getZ() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11322();
                      Class9388 var16 = new Class9388(var10, var12, var14, var10 + 1.0, var12 + 1.0, var14 + 1.0);
-                     RenderUtil.method11459(var16, var18);
+                     RenderUtil.render3DColoredBox(var16, var18);
                   }
                }
 
@@ -393,7 +393,7 @@ public class Class8795 {
                      double var23 = (double)var21.getY() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11321();
                      double var24 = (double)var21.getZ() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11322();
                      Class9388 var25 = new Class9388(var22, var23, var24, var22 + 1.0, var23 + 1.0, var24 + 1.0);
-                     RenderUtil.method11459(var25, var6);
+                     RenderUtil.render3DColoredBox(var25, var6);
                   }
                }
 

@@ -35,10 +35,10 @@ public class Class1248 extends Class1200 {
       var7.getTextureManager().bindTexture(field6611);
       RenderSystem.enableDepthTest();
       FontRenderer var8 = var7.fontRenderer;
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, this.field6484);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, this.field6484);
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
-      RenderSystem.method27834(Class2339.field15997, Class1981.field12932);
+      RenderSystem.method27834(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
       method5699(var1, this.field6477, this.field6478, !this.method5746() ? 0.0F : 20.0F, !this.field6612 ? 0.0F : 20.0F, 20, this.field6476, 64, 64);
       this.method5731(var1, var7, var2, var3);
       if (this.field6613) {

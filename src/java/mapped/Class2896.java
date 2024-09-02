@@ -31,7 +31,7 @@ public class Class2896 extends Class2797<Class1100> {
    public void method10998(Class1100 var1, float var2, float var3, float var4, float var5, float var6) {
       super.method10998(var1, var2, var3, var4, var5, var6);
       if (var1.method5275()) {
-         if (!var1.method3090().isEmpty()) {
+         if (!var1.getHeldItemMainhand().isEmpty()) {
             if (var1.method2967() != HandSide.field14418) {
                this.field17436.field31035 = 3.7699115F;
             } else {

@@ -13,35 +13,35 @@ public abstract class Class4510 {
    });
    public static final Class4525 field21738 = new Class4525("additive_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.method27834(Class2339.field15990, Class1981.field12927);
+      RenderSystem.method27834(GlStateManager.SourceFactor.field15990, DestFactor.field12927);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21739 = new Class4525("lightning_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.method27834(Class2339.field15997, Class1981.field12927);
+      RenderSystem.method27834(GlStateManager.SourceFactor.field15997, DestFactor.field12927);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21740 = new Class4525("glint_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.method27836(Class2339.field15999, Class1981.field12927, Class2339.field16000, Class1981.field12927);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15999, DestFactor.field12927, GlStateManager.SourceFactor.field16000, DestFactor.field12927);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21741 = new Class4525("crumbling_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.method27836(Class2339.field15989, Class1981.field12935, Class2339.field15990, Class1981.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15989, DestFactor.field12935, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21742 = new Class4525("translucent_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12932);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12932);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();

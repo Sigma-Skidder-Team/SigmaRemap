@@ -143,11 +143,11 @@ public final class Class1806 implements AutoCloseable {
    public static void method7883(boolean var0) {
       RenderSystem.assertThread(RenderSystem::method27804);
       if (!var0) {
-         Class7414.method23808(3553, 10242, 10497);
-         Class7414.method23808(3553, 10243, 10497);
+         GlStateManager.method23808(3553, 10242, 10497);
+         GlStateManager.method23808(3553, 10243, 10497);
       } else {
-         Class7414.method23808(3553, 10242, 33071);
-         Class7414.method23808(3553, 10243, 33071);
+         GlStateManager.method23808(3553, 10242, 33071);
+         GlStateManager.method23808(3553, 10243, 33071);
       }
    }
 
@@ -155,11 +155,11 @@ public final class Class1806 implements AutoCloseable {
       RenderSystem.assertThread(RenderSystem::method27804);
       if (!var0) {
          int var4 = Class7944.method26801();
-         Class7414.method23808(3553, 10241, !var1 ? 9728 : var4);
-         Class7414.method23808(3553, 10240, 9728);
+         GlStateManager.method23808(3553, 10241, !var1 ? 9728 : var4);
+         GlStateManager.method23808(3553, 10240, 9728);
       } else {
-         Class7414.method23808(3553, 10241, !var1 ? 9729 : 9987);
-         Class7414.method23808(3553, 10240, 9729);
+         GlStateManager.method23808(3553, 10241, !var1 ? 9729 : 9987);
+         GlStateManager.method23808(3553, 10240, 9729);
       }
    }
 
@@ -283,15 +283,15 @@ public final class Class1806 implements AutoCloseable {
       method7884(var8, var10);
       method7883(var9);
       if (var6 != this.method7886()) {
-         Class7414.method23856(3314, this.method7886());
+         GlStateManager.method23856(3314, this.method7886());
       } else {
-         Class7414.method23856(3314, 0);
+         GlStateManager.method23856(3314, 0);
       }
 
-      Class7414.method23856(3316, var4);
-      Class7414.method23856(3315, var5);
+      GlStateManager.method23856(3316, var4);
+      GlStateManager.method23856(3315, var5);
       this.field9724.method8975();
-      Class7414.method23816(3553, var1, var2, var3, var6, var7, this.field9724.method8976(), 5121, this.field9728);
+      GlStateManager.method23816(3553, var1, var2, var3, var6, var7, this.field9724.method8976(), 5121, this.field9728);
       if (var11) {
          this.close();
       }
@@ -301,7 +301,7 @@ public final class Class1806 implements AutoCloseable {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       this.method7885();
       this.field9724.method8974();
-      Class7414.method23817(3553, var1, this.field9724.method8976(), 5121, this.field9728);
+      GlStateManager.method23817(3553, var1, this.field9724.method8976(), 5121, this.field9728);
       if (var2 && this.field9724.method8977()) {
          for (int var5 = 0; var5 < this.method7887(); var5++) {
             for (int var6 = 0; var6 < this.method7886(); var6++) {

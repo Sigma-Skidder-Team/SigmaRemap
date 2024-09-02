@@ -150,7 +150,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
          Tessellator var9 = Tessellator.getInstance();
          BufferBuilder var10 = var9.getBuffer();
          this.field6870.getTextureManager().bindTexture(AbstractGui.field6451);
-         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          float var11 = 32.0F;
          var10.begin(7, DefaultVertexFormats.field43346);
          var10.pos((double)this.field6876, (double)this.field6874, 0.0)
@@ -181,7 +181,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
          this.method6171(0, this.field6873, 255, 255);
          this.method6171(this.field6874, this.field6872, 255, 255);
          RenderSystem.enableBlend();
-         RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field16000, Class1981.field12927);
+         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field16000, DestFactor.field12927);
          RenderSystem.method27817();
          RenderSystem.method27866(7425);
          RenderSystem.disableTexture();
@@ -377,14 +377,14 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
             int var16 = this.field6876 + this.field6871 / 2 + this.method6167() / 2;
             RenderSystem.disableTexture();
             float var17 = !this.method6169() ? 0.5F : 1.0F;
-            RenderSystem.method27889(var17, var17, var17, 1.0F);
+            RenderSystem.color4f(var17, var17, var17, 1.0F);
             var11.begin(7, DefaultVertexFormats.field43341);
             var11.pos((double)var15, (double)(var13 + var14 + 2), 0.0).endVertex();
             var11.pos((double)var16, (double)(var13 + var14 + 2), 0.0).endVertex();
             var11.pos((double)var16, (double)(var13 - 2), 0.0).endVertex();
             var11.pos((double)var15, (double)(var13 - 2), 0.0).endVertex();
             var10.draw();
-            RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
+            RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
             var11.begin(7, DefaultVertexFormats.field43341);
             var11.pos((double)(var15 + 1), (double)(var13 + var14 + 1), 0.0).endVertex();
             var11.pos((double)(var16 - 1), (double)(var13 + var14 + 1), 0.0).endVertex();
@@ -412,7 +412,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
       Tessellator var7 = Tessellator.getInstance();
       BufferBuilder var8 = var7.getBuffer();
       this.field6870.getTextureManager().bindTexture(AbstractGui.field6451);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = 32.0F;
       var8.begin(7, DefaultVertexFormats.field43346);
       var8.pos((double)this.field6876, (double)var2, 0.0).tex(0.0F, (float)var2 / 32.0F).color(64, 64, 64, var4).endVertex();

@@ -19,7 +19,7 @@ public class Class1698 implements AutoCloseable {
    }
 
    public void method7302() {
-      Class7414.method23747(34962, this.field9242);
+      GlStateManager.method23747(34962, this.field9242);
    }
 
    public void method7303(BufferBuilder var1) {
@@ -91,7 +91,7 @@ public class Class1698 implements AutoCloseable {
    }
 
    public static void method7308() {
-      Class7414.method23747(34962, 0);
+      GlStateManager.method23747(34962, 0);
    }
 
    @Override

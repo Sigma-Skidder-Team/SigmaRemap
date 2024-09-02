@@ -20,8 +20,8 @@ public class FastBow extends Module {
     @EventTarget
     private void method16373(TickEvent var1) {
         if (this.isEnabled()) {
-            if (mc.player.method3090() != null
-                    && mc.player.method3090().getItem() instanceof Class3263
+            if (mc.player.getHeldItemMainhand() != null
+                    && mc.player.getHeldItemMainhand().getItem() instanceof Class3263
                     && mc.player.onGround) {
                 for (int var4 = 0; var4 < 25; var4++) {
                     mc.getConnection().sendPacket(new CPlayerPacket(true));

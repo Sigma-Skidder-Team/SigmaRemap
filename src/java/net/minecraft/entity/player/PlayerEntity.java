@@ -104,7 +104,7 @@ public abstract class PlayerEntity extends LivingEntity {
          if (this.method2935()) {
             return false;
          } else {
-            ItemStack var6 = this.method3090();
+            ItemStack var6 = this.getHeldItemMainhand();
             return var6.isEmpty() || !var6.method32175(var1.method6817(), new Class9632(var1, var2, false));
          }
       } else {
@@ -191,7 +191,7 @@ public abstract class PlayerEntity extends LivingEntity {
       }
 
       this.field4958++;
-      ItemStack var8 = this.method3090();
+      ItemStack var8 = this.getHeldItemMainhand();
       if (!ItemStack.method32128(this.field4928, var8)) {
          if (!ItemStack.method32131(this.field4928, var8)) {
             this.resetCooldown();
@@ -641,7 +641,7 @@ public abstract class PlayerEntity extends LivingEntity {
       float var4 = this.inventory.method4049(var1);
       if (var4 > 1.0F) {
          int var5 = Class7858.method26327(this);
-         ItemStack var6 = this.method3090();
+         ItemStack var6 = this.getHeldItemMainhand();
          if (var5 > 0 && !var6.isEmpty()) {
             var4 += (float)(var5 * var5 + 1);
          }
@@ -796,7 +796,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public void method2885(LivingEntity var1) {
       super.method2885(var1);
-      if (var1.method3090().getItem() instanceof Class3265) {
+      if (var1.getHeldItemMainhand().getItem() instanceof Class3265) {
          this.method2901(true);
       }
    }
@@ -1024,9 +1024,9 @@ public abstract class PlayerEntity extends LivingEntity {
          float var4 = (float)this.method3086(Attributes.field42110);
          float var5;
          if (!(var1 instanceof LivingEntity)) {
-            var5 = Class7858.method26318(this.method3090(), Class7809.field33505);
+            var5 = Class7858.method26318(this.getHeldItemMainhand(), Class7809.field33505);
          } else {
-            var5 = Class7858.method26318(this.method3090(), ((LivingEntity)var1).method3089());
+            var5 = Class7858.method26318(this.getHeldItemMainhand(), ((LivingEntity)var1).method3089());
          }
 
          float var6 = this.method2974(0.5F);
@@ -1167,7 +1167,7 @@ public abstract class PlayerEntity extends LivingEntity {
                }
 
                Class7858.method26321(this, var1);
-               ItemStack var29 = this.method3090();
+               ItemStack var29 = this.getHeldItemMainhand();
                Object var30 = var1;
                if (var1 instanceof Class908) {
                   var30 = ((Class908)var1).field5186;
@@ -1716,7 +1716,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public Iterable<ItemStack> method2946() {
-      return Lists.newArrayList(new ItemStack[]{this.method3090(), this.method3091()});
+      return Lists.newArrayList(new ItemStack[]{this.getHeldItemMainhand(), this.method3091()});
    }
 
    @Override

@@ -142,8 +142,8 @@ public class Projectiles extends Module {
     @EventTarget
     public void method16523(Render3DEvent var1) {
         if (this.isEnabled()) {
-            if (mc.player.method3090() != null) {
-                Class2309 var4 = Class2309.method9085(mc.player.method3090().getItem());
+            if (mc.player.getHeldItemMainhand() != null) {
+                Class2309 var4 = Class2309.method9085(mc.player.getHeldItemMainhand().getItem());
                 if (var4 != null) {
                     float var5 = (float) Math.toRadians(mc.player.rotationYaw - 25.0F);
                     float var6 = (float) Math.toRadians(mc.player.rotationPitch);
@@ -222,7 +222,7 @@ public class Projectiles extends Module {
                             double var47 = var4.field15832.method3429() / 2.0F + 0.2F;
                             double var35 = var4.field15832.method3430() + 0.1F;
                             Class9388 var37 = new Class9388(var31 - var47, var41, var44 - var47, var31 + var47, var41 + var35, var44 + var47);
-                            RenderUtil.method11459(var37, ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
+                            RenderUtil.render3DColoredBox(var37, ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
                             RenderUtil.method11461(var37, ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
                         }
                     } else {
@@ -246,7 +246,7 @@ public class Projectiles extends Module {
                         );
                         GL11.glTranslatef(-0.5F, 0.0F, -0.5F);
                         Class9388 var34 = new Class9388(0.0, 0.0, 0.0, 1.0, 0.0, 1.0);
-                        RenderUtil.method11459(var34, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
+                        RenderUtil.render3DColoredBox(var34, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
                         RenderUtil.method11461(var34, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
                         GL11.glPopMatrix();
                     }

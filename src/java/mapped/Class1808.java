@@ -227,9 +227,9 @@ public class Class1808 implements Class1809, AutoCloseable {
 
       for (int var3 = 0; var3 < this.field9748.size(); var3++) {
          if (this.field9746.get(this.field9747.get(var3)) != null) {
-            Class7414.method23803(33984 + var3);
-            Class7414.method23805();
-            Class7414.method23814(0);
+            GlStateManager.method23803(33984 + var3);
+            GlStateManager.method23805();
+            GlStateManager.method23814(0);
          }
       }
    }

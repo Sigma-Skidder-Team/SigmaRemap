@@ -235,10 +235,10 @@ public class Class7720 {
       float var12 = var9 * var10 * var11;
       var12 = Class7944.method26832(var12, 0.0F, 1.0F);
       if (!(var12 < 1.0E-4F)) {
-         Class7414.method23814(this.field33147);
+         GlStateManager.method23814(this.field33147);
          Class6988.method21638(this.field33134, var12);
-         Class7414.method23832();
-         Class7414.method23842(var2.getLast().getMatrix());
+         GlStateManager.method23832();
+         GlStateManager.method23842(var2.getLast().getMatrix());
          if (this.field33135) {
             float var13 = 0.0F;
             if (this.field33136 != (float)Math.round(this.field33136)) {
@@ -248,28 +248,28 @@ public class Class7720 {
                var13 = (float)(var18 % 1.0);
             }
 
-            Class7414.method23836(360.0F * (var13 + var4 * this.field33136), this.field33137[0], this.field33137[1], this.field33137[2]);
+            GlStateManager.method23836(360.0F * (var13 + var4 * this.field33136), this.field33137[0], this.field33137[1], this.field33137[2]);
          }
 
          Tessellator var21 = Tessellator.getInstance();
-         Class7414.method23836(90.0F, 1.0F, 0.0F, 0.0F);
-         Class7414.method23836(-90.0F, 0.0F, 0.0F, 1.0F);
+         GlStateManager.method23836(90.0F, 1.0F, 0.0F, 0.0F);
+         GlStateManager.method23836(-90.0F, 0.0F, 0.0F, 1.0F);
          this.method25518(var21, 4);
-         Class7414.method23832();
-         Class7414.method23836(90.0F, 1.0F, 0.0F, 0.0F);
+         GlStateManager.method23832();
+         GlStateManager.method23836(90.0F, 1.0F, 0.0F, 0.0F);
          this.method25518(var21, 1);
-         Class7414.method23833();
-         Class7414.method23832();
-         Class7414.method23836(-90.0F, 1.0F, 0.0F, 0.0F);
+         GlStateManager.method23833();
+         GlStateManager.method23832();
+         GlStateManager.method23836(-90.0F, 1.0F, 0.0F, 0.0F);
          this.method25518(var21, 0);
-         Class7414.method23833();
-         Class7414.method23836(90.0F, 0.0F, 0.0F, 1.0F);
+         GlStateManager.method23833();
+         GlStateManager.method23836(90.0F, 0.0F, 0.0F, 1.0F);
          this.method25518(var21, 5);
-         Class7414.method23836(90.0F, 0.0F, 0.0F, 1.0F);
+         GlStateManager.method23836(90.0F, 0.0F, 0.0F, 1.0F);
          this.method25518(var21, 2);
-         Class7414.method23836(90.0F, 0.0F, 0.0F, 1.0F);
+         GlStateManager.method23836(90.0F, 0.0F, 0.0F, 1.0F);
          this.method25518(var21, 3);
-         Class7414.method23833();
+         GlStateManager.method23833();
       }
    }
 

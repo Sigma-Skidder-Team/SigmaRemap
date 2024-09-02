@@ -278,7 +278,7 @@ public class Class1038 extends Class1009 {
       boolean var4 = super.method3114(var1);
       if (var4) {
          float var5 = this.world.method6807(this.getPosition()).method38328();
-         if (this.method3090().isEmpty() && this.method3327() && this.rand.nextFloat() < var5 * 0.3F) {
+         if (this.getHeldItemMainhand().isEmpty() && this.method3327() && this.rand.nextFloat() < var5 * 0.3F) {
             var1.method3221(2 * (int)var5);
          }
       }

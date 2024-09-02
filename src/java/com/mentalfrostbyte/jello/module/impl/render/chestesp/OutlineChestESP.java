@@ -66,7 +66,7 @@ public class OutlineChestESP extends Module {
             if (var1) {
                RenderUtil.method11462(var19, 3.0F, var18);
             } else {
-               RenderUtil.method11459(var19, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+               RenderUtil.render3DColoredBox(var19, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             }
 
             GL11.glDisable(3042);

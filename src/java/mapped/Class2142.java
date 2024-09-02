@@ -4,37 +4,37 @@ import java.util.function.IntConsumer;
 
 public enum Class2142 {
    field14018("Position", (var0, var1, var2, var3, var5) -> {
-      Class7414.method23847(var0, var1, var2, var3);
-      Class7414.method23850(32884);
-   }, var0 -> Class7414.method23851(32884)),
+      GlStateManager.method23847(var0, var1, var2, var3);
+      GlStateManager.method23850(32884);
+   }, var0 -> GlStateManager.method23851(32884)),
    field14019("Normal", (var0, var1, var2, var3, var5) -> {
-      Class7414.method23845(var1, var2, var3);
-      Class7414.method23850(32885);
-   }, var0 -> Class7414.method23851(32885)),
+      GlStateManager.method23845(var1, var2, var3);
+      GlStateManager.method23850(32885);
+   }, var0 -> GlStateManager.method23851(32885)),
    field14020("Vertex Color", (var0, var1, var2, var3, var5) -> {
-      Class7414.method23848(var0, var1, var2, var3);
-      Class7414.method23850(32886);
+      GlStateManager.method23848(var0, var1, var2, var3);
+      GlStateManager.method23850(32886);
    }, var0 -> {
-      Class7414.method23851(32886);
-      Class7414.method23844();
+      GlStateManager.method23851(32886);
+      GlStateManager.method23844();
    }),
    field14021("UV", (var0, var1, var2, var3, var5) -> {
-      Class7414.method23760(33984 + var5);
-      Class7414.method23846(var0, var1, var2, var3);
-      Class7414.method23850(32888);
-      Class7414.method23760(33984);
+      GlStateManager.method23760(33984 + var5);
+      GlStateManager.method23846(var0, var1, var2, var3);
+      GlStateManager.method23850(32888);
+      GlStateManager.method23760(33984);
    }, var0 -> {
-      Class7414.method23760(33984 + var0);
-      Class7414.method23851(32888);
-      Class7414.method23760(33984);
+      GlStateManager.method23760(33984 + var0);
+      GlStateManager.method23851(32888);
+      GlStateManager.method23760(33984);
    }),
    field14022("Padding", (var0, var1, var2, var3, var5) -> {
    }, var0 -> {
    }),
    field14023("Generic", (var0, var1, var2, var3, var5) -> {
-      Class7414.method23852(var5);
-      Class7414.method23849(var5, var0, var1, false, var2, var3);
-   }, Class7414::method23853);
+      GlStateManager.method23852(var5);
+      GlStateManager.method23849(var5, var0, var1, false, var2, var3);
+   }, GlStateManager::method23853);
 
    private final String field14024;
    private final Class7673 field14025;
