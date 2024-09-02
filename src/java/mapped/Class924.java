@@ -35,7 +35,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    private final Object2IntOpenHashMap<ResourceLocation> field5253 = new Object2IntOpenHashMap();
    public final Class7207<? extends Class4847> field5254;
 
-   public Class924(Class4387<?> var1, Class7207<? extends Class4847> var2) {
+   public Class924(TileEntityType<?> var1, Class7207<? extends Class4847> var2) {
       super(var1);
       this.field5254 = var2;
    }
@@ -141,14 +141,14 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       super.method3645(var1, var2);
       this.field5247 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       Class7920.method26567(var2, this.field5247);
-      this.field5248 = var2.method121("BurnTime");
-      this.field5250 = var2.method121("CookTime");
-      this.field5251 = var2.method121("CookTimeTotal");
+      this.field5248 = var2.getShort("BurnTime");
+      this.field5250 = var2.getShort("CookTime");
+      this.field5251 = var2.getShort("CookTimeTotal");
       this.field5249 = this.method3650(this.field5247.get(1));
       CompoundNBT var5 = var2.getCompound("RecipesUsed");
 
       for (String var7 : var5.method97()) {
-         this.field5253.put(new ResourceLocation(var7), var5.method122(var7));
+         this.field5253.put(new ResourceLocation(var7), var5.getInt(var7));
       }
    }
 

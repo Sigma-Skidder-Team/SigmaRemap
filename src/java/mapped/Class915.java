@@ -55,7 +55,7 @@ public class Class915 extends Entity {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      this.field5207 = var1.method122("Warmup");
+      this.field5207 = var1.getInt("Warmup");
       if (var1.method106("Owner")) {
          this.field5212 = var1.method105("Owner");
       }

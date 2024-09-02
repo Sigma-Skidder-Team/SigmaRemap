@@ -1,7 +1,6 @@
 package net.minecraft.network.play.client;
 
-import mapped.Class2238;
-import mapped.Class7952;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
@@ -10,39 +9,38 @@ import net.minecraft.util.ResourceLocation;
 import java.io.IOException;
 
 public class CSeenAdvancementsPacket implements Packet<IServerPlayNetHandler> {
-   private static String[] field24261;
-   private Class2238 field24262;
-   private ResourceLocation field24263;
+   private Action action;
+   private ResourceLocation tab;
 
    public CSeenAdvancementsPacket() {
    }
 
-   public CSeenAdvancementsPacket(Class2238 var1, ResourceLocation var2) {
-      this.field24262 = var1;
-      this.field24263 = var2;
+   public CSeenAdvancementsPacket(Action var1, ResourceLocation var2) {
+      this.action = var1;
+      this.tab = var2;
    }
 
-   public static CSeenAdvancementsPacket method17182(Class7952 var0) {
-      return new CSeenAdvancementsPacket(Class2238.field14644, var0.method27033());
+   public static CSeenAdvancementsPacket openedTab(Advancement var0) {
+      return new CSeenAdvancementsPacket(Action.OPENED_TAB, var0.getId());
    }
 
-   public static CSeenAdvancementsPacket method17183() {
-      return new CSeenAdvancementsPacket(Class2238.field14645, (ResourceLocation)null);
+   public static CSeenAdvancementsPacket closedScreen() {
+      return new CSeenAdvancementsPacket(Action.CLOSED_SCREEN, (ResourceLocation)null);
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24262 = var1.<Class2238>readEnumValue(Class2238.class);
-      if (this.field24262 == Class2238.field14644) {
-         this.field24263 = var1.readResourceLocation();
+      this.action = var1.<Action>readEnumValue(Action.class);
+      if (this.action == Action.OPENED_TAB) {
+         this.tab = var1.readResourceLocation();
       }
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeEnumValue(this.field24262);
-      if (this.field24262 == Class2238.field14644) {
-         var1.writeResourceLocation(this.field24263);
+      var1.writeEnumValue(this.action);
+      if (this.action == Action.OPENED_TAB) {
+         var1.writeResourceLocation(this.tab);
       }
    }
 
@@ -50,11 +48,16 @@ public class CSeenAdvancementsPacket implements Packet<IServerPlayNetHandler> {
       var1.handleSeenAdvancements(this);
    }
 
-   public Class2238 method17184() {
-      return this.field24262;
+   public Action getAction() {
+      return this.action;
    }
 
-   public ResourceLocation method17185() {
-      return this.field24263;
+   public ResourceLocation getTab() {
+      return this.tab;
+   }
+
+   public enum Action {
+      OPENED_TAB,
+      CLOSED_SCREEN;
    }
 }

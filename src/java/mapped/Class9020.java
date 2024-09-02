@@ -110,7 +110,7 @@ public class Class9020 {
    public void method33390(ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          CompoundNBT var5 = var1.method153(var4);
-         String var6 = var5.method126("Name");
+         String var6 = var5.getString("Name");
          Util.<Class4869>acceptOrElse(Registry.field16087.method9187(ResourceLocation.method8289(var6)), var2 -> {
             Class9805 var5x = this.method33380(var2);
             if (var5x != null) {

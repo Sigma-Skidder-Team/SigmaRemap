@@ -17,9 +17,9 @@ public abstract class Class4586 extends Class4587 {
    @Override
    public void method14510(Class5422 var1, ActiveRenderInfo var2, float var3) {
       Vector3d var6 = var2.method37504();
-      float var7 = (float)(MathHelper.method37822((double)var3, this.field22038, this.field22041) - var6.method11320());
-      float var8 = (float)(MathHelper.method37822((double)var3, this.field22039, this.field22042) - var6.method11321());
-      float var9 = (float)(MathHelper.method37822((double)var3, this.field22040, this.field22043) - var6.method11322());
+      float var7 = (float)(MathHelper.lerp((double)var3, this.field22038, this.field22041) - var6.method11320());
+      float var8 = (float)(MathHelper.lerp((double)var3, this.field22039, this.field22042) - var6.method11321());
+      float var9 = (float)(MathHelper.lerp((double)var3, this.field22040, this.field22043) - var6.method11322());
       Class8661 var10;
       if (this.field22062 != 0.0F) {
          var10 = new Class8661(var2.method37508());

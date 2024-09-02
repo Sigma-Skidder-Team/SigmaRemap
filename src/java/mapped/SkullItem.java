@@ -23,11 +23,11 @@ public class SkullItem extends Class3298 {
             if (var5.contains("SkullOwner", 10)) {
                CompoundNBT var6 = var5.getCompound("SkullOwner");
                if (var6.contains("Name", 8)) {
-                  var4 = var6.method126("Name");
+                  var4 = var6.getString("Name");
                }
             }
          } else {
-            var4 = var5.method126("SkullOwner");
+            var4 = var5.getString("SkullOwner");
          }
 
          if (var4 != null) {
@@ -41,8 +41,8 @@ public class SkullItem extends Class3298 {
    @Override
    public boolean method11705(CompoundNBT var1) {
       super.method11705(var1);
-      if (var1.contains("SkullOwner", 8) && !StringUtils.isBlank(var1.method126("SkullOwner"))) {
-         GameProfile var4 = new GameProfile((UUID)null, var1.method126("SkullOwner"));
+      if (var1.contains("SkullOwner", 8) && !StringUtils.isBlank(var1.getString("SkullOwner"))) {
+         GameProfile var4 = new GameProfile((UUID)null, var1.getString("SkullOwner"));
          var4 = SkullTileEntity.method4008(var4);
          var1.put("SkullOwner", Class8354.method29279(new CompoundNBT(), var4));
          return true;

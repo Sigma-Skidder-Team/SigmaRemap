@@ -2,14 +2,15 @@ package mapped;
 
 import java.util.function.Consumer;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
-public class Class2841 implements Consumer<Consumer<Class7952>> {
-   public void accept(Consumer<Class7952> var1) {
-      Class7952 var4 = Class7999.method27304()
+public class Class2841 implements Consumer<Consumer<Advancement>> {
+   public void accept(Consumer<Advancement> var1) {
+      Advancement var4 = Class7999.method27304()
          .method27308(
             Blocks.field36651,
             new TranslationTextComponent("advancements.end.root.title"),
@@ -22,7 +23,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("entered_end", Class4488.method14156(World.THE_END))
          .method27317(var1, "end/root");
-      Class7952 var5 = Class7999.method27304()
+      Advancement var5 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Blocks.field36711,
@@ -36,7 +37,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("killed_dragon", Class4476.method14134(Class7552.method24700().method24701(EntityType.field41024)))
          .method27317(var1, "end/kill_dragon");
-      Class7952 var6 = Class7999.method27304()
+      Advancement var6 = Class7999.method27304()
          .method27305(var5)
          .method27308(
             Items.field37966,
@@ -64,7 +65,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("summoned_dragon", Class4456.method14090(Class7552.method24700().method24701(EntityType.field41024)))
          .method27317(var1, "end/respawn_dragon");
-      Class7952 var7 = Class7999.method27304()
+      Advancement var7 = Class7999.method27304()
          .method27305(var6)
          .method27308(
             Blocks.field36880,

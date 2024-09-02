@@ -13,6 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.World;
 
 import java.util.Optional;
@@ -21,21 +22,21 @@ import java.util.Random;
 public class Class3389 extends Block {
    private static String[] field18999;
    public static final Class8554 field19000 = Class8820.field39762;
-   private static final ImmutableList<Class1998> field19001 = ImmutableList.of(
-      new Class1998(0, 0, -1),
-      new Class1998(-1, 0, 0),
-      new Class1998(0, 0, 1),
-      new Class1998(1, 0, 0),
-      new Class1998(-1, 0, -1),
-      new Class1998(1, 0, -1),
-      new Class1998(-1, 0, 1),
-      new Class1998(1, 0, 1)
+   private static final ImmutableList<Vector3i> field19001 = ImmutableList.of(
+      new Vector3i(0, 0, -1),
+      new Vector3i(-1, 0, 0),
+      new Vector3i(0, 0, 1),
+      new Vector3i(1, 0, 0),
+      new Vector3i(-1, 0, -1),
+      new Vector3i(1, 0, -1),
+      new Vector3i(-1, 0, 1),
+      new Vector3i(1, 0, 1)
    );
-   private static final ImmutableList<Class1998> field19002 = new Builder()
+   private static final ImmutableList<Vector3i> field19002 = new Builder()
       .addAll(field19001)
-      .addAll(field19001.stream().<Class1998>map(Class1998::method8312).iterator())
-      .addAll(field19001.stream().<Class1998>map(Class1998::method8310).iterator())
-      .add(new Class1998(0, 1, 0))
+      .addAll(field19001.stream().<Vector3i>map(Vector3i::method8312).iterator())
+      .addAll(field19001.stream().<Vector3i>map(Vector3i::method8310).iterator())
+      .add(new Vector3i(0, 1, 0))
       .build();
 
    public Class3389(AbstractBlock var1) {
@@ -204,7 +205,7 @@ public class Class3389 extends Block {
       UnmodifiableIterator var7 = field19002.iterator();
 
       while (var7.hasNext()) {
-         Class1998 var8 = (Class1998)var7.next();
+         Vector3i var8 = (Vector3i)var7.next();
          var6.method8374(var2).method8382(var8);
          Vector3d var9 = Class4527.method14428(var0, var1, var6, var3);
          if (var9 != null) {

@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.client.CSeenAdvancementsPacket;
 import net.minecraft.network.play.server.SAdvancementInfoPacket;
@@ -15,9 +16,9 @@ public class Class8730 {
    private static final Logger field39376 = LogManager.getLogger();
    private final Minecraft field39377;
    private final Class8220 field39378 = new Class8220();
-   private final Map<Class7952, Class2006> field39379 = Maps.newHashMap();
+   private final Map<Advancement, Class2006> field39379 = Maps.newHashMap();
    private Class1131 field39380;
-   private Class7952 field39381;
+   private Advancement field39381;
 
    public Class8730(Minecraft var1) {
       this.field39377 = var1;
@@ -33,7 +34,7 @@ public class Class8730 {
       this.field39378.method28595(var1.method17487());
 
       for (Entry var5 : var1.method17489().entrySet()) {
-         Class7952 var6 = this.field39378.method28599((ResourceLocation)var5.getKey());
+         Advancement var6 = this.field39378.method28599((ResourceLocation)var5.getKey());
          if (var6 == null) {
             field39376.warn("Server informed client about progress for unknown advancement {}", var5.getKey());
          } else {
@@ -55,10 +56,10 @@ public class Class8730 {
       return this.field39378;
    }
 
-   public void method31510(Class7952 var1, boolean var2) {
+   public void method31510(Advancement var1, boolean var2) {
       ClientPlayNetHandler var5 = this.field39377.getConnection();
       if (var5 != null && var1 != null && var2) {
-         var5.sendPacket(CSeenAdvancementsPacket.method17182(var1));
+         var5.sendPacket(CSeenAdvancementsPacket.openedTab(var1));
       }
 
       if (this.field39381 != var1) {
@@ -74,7 +75,7 @@ public class Class8730 {
       this.field39378.method28600(var1);
       if (var1 != null) {
          for (Entry var5 : this.field39379.entrySet()) {
-            var1.method5452((Class7952)var5.getKey(), (Class2006)var5.getValue());
+            var1.method5452((Advancement)var5.getKey(), (Class2006)var5.getValue());
          }
 
          var1.method5453(this.field39381);

@@ -66,7 +66,7 @@ public class Class8418 {
 
    public CompoundNBT method29575(CompoundNBT var1) {
       CompoundNBT var4 = var1.getCompound("Level");
-      Class7481 var5 = new Class7481(var4.method122("xPos"), var4.method122("zPos"));
+      Class7481 var5 = new Class7481(var4.getInt("xPos"), var4.getInt("zPos"));
       if (this.method29577(var5.field32174, var5.field32175)) {
          var1 = this.method29578(var1, var5);
       }
@@ -169,17 +169,17 @@ public class Class8418 {
 
             for (String var8 : var6.method97()) {
                CompoundNBT var9 = var6.getCompound(var8);
-               long var10 = Class7481.method24353(var9.method122("ChunkX"), var9.method122("ChunkZ"));
+               long var10 = Class7481.method24353(var9.getInt("ChunkX"), var9.getInt("ChunkZ"));
                ListNBT var12 = var9.method131("Children", 10);
                if (!var12.isEmpty()) {
-                  String var13 = var12.method153(0).method126("id");
+                  String var13 = var12.method153(0).getString("id");
                   String var14 = field36089.get(var13);
                   if (var14 != null) {
                      var9.method109("id", var14);
                   }
                }
 
-               String var22 = var9.method126("id");
+               String var22 = var9.getString("id");
                this.field36091.computeIfAbsent(var22, var0 -> new Long2ObjectOpenHashMap()).put(var10, var9);
             }
 
@@ -193,7 +193,7 @@ public class Class8418 {
 
                for (String var16 : var6.method97()) {
                   CompoundNBT var21 = var6.getCompound(var16);
-                  var20.method24619(Class7481.method24353(var21.method122("ChunkX"), var21.method122("ChunkZ")));
+                  var20.method24619(Class7481.method24353(var21.getInt("ChunkX"), var21.getInt("ChunkZ")));
                }
 
                var20.method24605();

@@ -5,31 +5,31 @@ import net.minecraft.entity.EntityType;
 import java.util.ArrayList;
 
 public abstract class Class4057 {
-   private Class4862<EntityType, Class4387> field20386;
+   private Class4862<EntityType, TileEntityType> field20386;
    private String field20387;
    private float field20388;
    private String[] field20389;
 
    public Class4057(EntityType var1, String var2, float var3) {
-      this(Class4862.<EntityType, Class4387>method15005(var1), var2, var3, (String[])null);
+      this(Class4862.<EntityType, TileEntityType>method15005(var1), var2, var3, (String[])null);
    }
 
    public Class4057(EntityType var1, String var2, float var3, String[] var4) {
-      this(Class4862.<EntityType, Class4387>method15005(var1), var2, var3, var4);
+      this(Class4862.<EntityType, TileEntityType>method15005(var1), var2, var3, var4);
    }
 
-   public Class4057(Class4387 var1, String var2, float var3) {
+   public Class4057(TileEntityType var1, String var2, float var3) {
       this(Class4862.method15006(var1), var2, var3, (String[])null);
    }
 
-   public Class4057(Class4862<EntityType, Class4387> var1, String var2, float var3, String[] var4) {
+   public Class4057(Class4862<EntityType, TileEntityType> var1, String var2, float var3, String[] var4) {
       this.field20386 = var1;
       this.field20387 = var2;
       this.field20388 = var3;
       this.field20389 = var4;
    }
 
-   public Class4862<EntityType, Class4387> method12826() {
+   public Class4862<EntityType, TileEntityType> method12826() {
       return this.field20386;
    }
 

@@ -11,6 +11,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3i;
 import org.apache.commons.lang3.RandomUtils;
 
 import java.util.ArrayList;
@@ -529,8 +530,8 @@ public class Class9217 {
    }
 
    public static Class7843 method34575(BlockPos var0, boolean var1) {
-      Class1998[] var4 = new Class1998[]{
-         new Class1998(0, 0, 0), new Class1998(-1, 0, 0), new Class1998(1, 0, 0), new Class1998(0, 0, 1), new Class1998(0, 0, -1)
+      Vector3i[] var4 = new Vector3i[]{
+         new Vector3i(0, 0, 0), new Vector3i(-1, 0, 0), new Vector3i(1, 0, 0), new Vector3i(0, 0, 1), new Vector3i(0, 0, -1)
       };
       Class7306[] var5 = new Class7306[]{
          new Class7306(1, 1, 1, false),
@@ -541,10 +542,10 @@ public class Class9217 {
       };
 
       for (Class7306 var9 : var5) {
-         for (Class1998 var13 : var4) {
-            Class1998 var14 = !var9.field31325
-               ? new Class1998(var13.getX() * var9.field31322, var13.getY() * var9.field31323, var13.getZ() * var9.field31324)
-               : new Class1998(var13.getX() + var9.field31322, var13.getY() + var9.field31323, var13.getZ() + var9.field31324);
+         for (Vector3i var13 : var4) {
+            Vector3i var14 = !var9.field31325
+               ? new Vector3i(var13.getX() * var9.field31322, var13.getY() * var9.field31323, var13.getZ() * var9.field31324)
+               : new Vector3i(var13.getX() + var9.field31322, var13.getY() + var9.field31323, var13.getZ() + var9.field31324);
 
             for (Direction var18 : Direction.values()) {
                if ((var18 != Direction.DOWN || !var1) && method34578(var0.method8337(var14).method8350(var18, -1))) {

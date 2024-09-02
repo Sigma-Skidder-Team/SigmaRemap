@@ -20,7 +20,7 @@ public class Class4171 extends Class4167 {
 
    public Class4171(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33430, var2);
-      this.field20433 = var2.method122("Seed");
+      this.field20433 = var2.getInt("Seed");
    }
 
    public static Class4171 method12908(List<Class4178> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {

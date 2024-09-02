@@ -27,6 +27,7 @@ import java.util.function.IntFunction;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -353,12 +354,12 @@ public class Class6137 {
       }, field27534);
    }
 
-   private static Class6619 method18962(Class6619 var0, Class7151 var1, Class9670 var2, IntFunction<Class30> var3, boolean var4) {
+   private static Class6619 method18962(Class6619 var0, Class7151 var1, Class9670 var2, IntFunction<INBT> var3, boolean var4) {
       return var0.method20161((var4x, var5, var6) -> {
          try {
             CompoundNBT var9 = var1.method22312();
             int var10 = var4 ? var6 : (var5 ? 1 : 0);
-            var2.method37730(var9, () -> (Class30)var3.apply(var10));
+            var2.method37730(var9, () -> (INBT)var3.apply(var10));
             var1.method22311(var9);
          } catch (CommandSyntaxException var11) {
          }

@@ -1,6 +1,8 @@
 package mapped;
 
-public final class Class8466 extends Class8465 {
+import net.minecraft.nbt.NBTSizeTracker;
+
+public final class Class8466 extends NBTSizeTracker {
    public Class8466(long var1) {
       super(var1);
    }

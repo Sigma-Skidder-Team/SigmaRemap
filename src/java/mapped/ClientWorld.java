@@ -436,9 +436,9 @@ public class ClientWorld extends World {
    private void method6856(double var1, double var3, double var5, double var7, double var9, IParticleData var11) {
       this.method6746(
          var11,
-         MathHelper.method37822(this.rand.nextDouble(), var1, var3),
+         MathHelper.lerp(this.rand.nextDouble(), var1, var3),
          var9,
-         MathHelper.method37822(this.rand.nextDouble(), var5, var7),
+         MathHelper.lerp(this.rand.nextDouble(), var5, var7),
          0.0,
          0.0,
          0.0

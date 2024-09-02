@@ -25,6 +25,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.CompletableFuture;
 import javax.annotation.Nullable;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
@@ -42,6 +43,7 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
 import net.minecraft.realms.RealmsScreen;
+import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
@@ -604,7 +606,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       }
 
       for (CompoundNBT var9 : var1.method17383()) {
-         BlockPos var10 = new BlockPos(var9.method122("x"), var9.method122("y"), var9.method122("z"));
+         BlockPos var10 = new BlockPos(var9.getInt("x"), var9.getInt("y"), var9.getInt("z"));
          TileEntity var11 = this.field23273.getTileEntity(var10);
          if (var11 != null) {
             var11.method3645(this.field23273.getBlockState(var10), var9);
@@ -1051,7 +1053,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       BlockPos var4 = var1.method17636();
       TileEntity var5 = this.field23272.world.getTileEntity(var4);
       int var6 = var1.method17637();
-      boolean var7 = var6 == 2 && var5 instanceof Class969;
+      boolean var7 = var6 == 2 && var5 instanceof CommandBlockTileEntity;
       if (var6 == 1 && var5 instanceof Class960
          || var7
          || var6 == 3 && var5 instanceof Class950
@@ -1274,10 +1276,10 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       ResourceLocation var4 = var1.method17335();
       if (var4 != null) {
-         Class7952 var5 = this.field23277.method31509().method28599(var4);
+         Advancement var5 = this.field23277.method31509().method28599(var4);
          this.field23277.method31510(var5, false);
       } else {
-         this.field23277.method31510((Class7952)null, false);
+         this.field23277.method31510((Advancement)null, false);
       }
    }
 

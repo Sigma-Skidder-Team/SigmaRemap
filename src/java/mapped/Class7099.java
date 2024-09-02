@@ -21,7 +21,7 @@ public class Class7099 extends Class7092 {
    public Class8266 method22068(Class1662 var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
       BlockState var9 = var5.field35531;
       if (var9.method23448(Blocks.field37114)) {
-         String var10 = var5.field35532.method126("final_state");
+         String var10 = var5.field35532.getString("final_state");
          Class8268 var11 = new Class8268(new StringReader(var10), false);
 
          try {

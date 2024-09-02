@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.google.gson.*;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,7 +37,7 @@ public class Class285 extends Class281 {
       Class8220 var7 = new Class8220();
       var7.method28595(var6);
 
-      for (Class7952 var9 : var7.method28597()) {
+      for (Advancement var9 : var7.method28597()) {
          if (var9.method27027() != null) {
             Class8874.method32293(var9);
          }
@@ -46,11 +47,11 @@ public class Class285 extends Class281 {
    }
 
    @Nullable
-   public Class7952 method1065(ResourceLocation var1) {
+   public Advancement method1065(ResourceLocation var1) {
       return this.field1086.method28599(var1);
    }
 
-   public Collection<Class7952> method1066() {
+   public Collection<Advancement> method1066() {
       return this.field1086.method28598();
    }
 }

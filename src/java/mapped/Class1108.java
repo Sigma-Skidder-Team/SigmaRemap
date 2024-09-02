@@ -77,7 +77,7 @@ public class Class1108 extends Class1006 implements Class1008 {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      int var4 = var1.method122("Size");
+      int var4 = var1.getInt("Size");
       if (var4 < 0) {
          var4 = 0;
       }

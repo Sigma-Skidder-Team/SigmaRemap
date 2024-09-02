@@ -23,7 +23,7 @@ public class Class4191 extends Class4188 {
       this.field20483 = var2.getBoolean("hr");
       this.field20484 = var2.getBoolean("sc");
       this.field20485 = var2.getBoolean("hps");
-      this.field20486 = var2.method122("Num");
+      this.field20486 = var2.getInt("Num");
    }
 
    @Override

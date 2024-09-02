@@ -12,6 +12,7 @@ import java.util.Map.Entry;
 import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
@@ -418,7 +419,7 @@ public class Class9748 {
                      Class285 var6x = var4x.method3396().method1396();
 
                      for (Entry var8x : var4.entrySet()) {
-                        Class7952 var9x = var6x.method1065((ResourceLocation)var8x.getKey());
+                        Advancement var9x = var6x.method1065((ResourceLocation)var8x.getKey());
                         if (var9x == null || !((Predicate)var8x.getValue()).test(var5x.method27416(var9x))) {
                            return false;
                         }

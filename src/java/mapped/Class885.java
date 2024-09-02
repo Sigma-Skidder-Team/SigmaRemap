@@ -46,7 +46,7 @@ public class Class885 extends AbstractArrowEntity {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.contains("Duration")) {
-         this.field5110 = var1.method122("Duration");
+         this.field5110 = var1.getInt("Duration");
       }
    }
 

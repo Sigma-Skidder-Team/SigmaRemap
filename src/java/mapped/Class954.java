@@ -26,7 +26,7 @@ public class Class954 extends TileEntity {
    private Class112 field5360 = Class112.field401;
 
    public Class954() {
-      super(Class4387.field21428);
+      super(TileEntityType.field21428);
    }
 
    @Override
@@ -46,10 +46,10 @@ public class Class954 extends TileEntity {
    public void method3645(BlockState var1, CompoundNBT var2) {
       this.field5357 = false;
       super.method3645(var1, var2);
-      this.field5360 = Class112.method316(var2.method126("Color"), Class112.field401);
+      this.field5360 = Class112.method316(var2.getString("Color"), Class112.field401);
 
       for (int var5 = 0; var5 < 4; var5++) {
-         String var6 = var2.method126("Text" + (var5 + 1));
+         String var6 = var2.getString("Text" + (var5 + 1));
          IFormattableTextComponent var7 = ITextComponent$Serializer.func_240643_a_(var6.isEmpty() ? "\"\"" : var6);
          if (this.field5324 instanceof ServerWorld) {
             try {

@@ -8,6 +8,7 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import java.util.Arrays;
 import java.util.Collection;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -29,9 +30,9 @@ public class Class8303 implements ArgumentType<ResourceLocation> {
       return new Class8303();
    }
 
-   public static Class7952 method29032(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Advancement method29032(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       ResourceLocation var4 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
-      Class7952 var5 = ((Class6619)var0.getSource()).method20177().method1396().method1065(var4);
+      Advancement var5 = ((Class6619)var0.getSource()).method20177().method1396().method1065(var4);
       if (var5 != null) {
          return var5;
       } else {

@@ -25,10 +25,10 @@ public abstract class Class4209 extends Class4178 {
 
    public Class4209(Class7792 var1, CompoundNBT var2) {
       super(var1, var2);
-      this.field20516 = var2.method122("Width");
-      this.field20517 = var2.method122("Height");
-      this.field20518 = var2.method122("Depth");
-      this.field20519 = var2.method122("HPos");
+      this.field20516 = var2.getInt("Width");
+      this.field20517 = var2.getInt("Height");
+      this.field20518 = var2.getInt("Depth");
+      this.field20519 = var2.getInt("HPos");
    }
 
    @Override

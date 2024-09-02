@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.advancements;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -7,6 +7,10 @@ import java.util.Map;
 import java.util.Set;
 import javax.annotation.Nullable;
 
+import mapped.Class7999;
+import mapped.Class8588;
+import mapped.Class9181;
+import mapped.Class9272;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -17,17 +21,17 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$Action;
 
-public class Class7952 {
-   private final Class7952 field34186;
+public class Advancement {
+   private final Advancement field34186;
    private final Class9272 field34187;
    private final Class8588 field34188;
    private final ResourceLocation field34189;
    private final Map<String, Class9181> field34190;
    private final String[][] field34191;
-   private final Set<Class7952> field34192 = Sets.newLinkedHashSet();
+   private final Set<Advancement> field34192 = Sets.newLinkedHashSet();
    private final ITextComponent field34193;
 
-   public Class7952(ResourceLocation var1, Class7952 var2, Class9272 var3, Class8588 var4, Map<String, Class9181> var5, String[][] var6) {
+   public Advancement(ResourceLocation var1, Advancement var2, Class9272 var3, Class8588 var4, Map<String, Class9181> var5, String[][] var6) {
       this.field34189 = var1;
       this.field34187 = var3;
       this.field34190 = ImmutableMap.copyOf(var5);
@@ -53,12 +57,12 @@ public class Class7952 {
 
    public Class7999 method27025() {
       return new Class7999(
-         this.field34186 != null ? this.field34186.method27033() : null, this.field34187, this.field34188, this.field34190, this.field34191
+         this.field34186 != null ? this.field34186.getId() : null, this.field34187, this.field34188, this.field34190, this.field34191
       );
    }
 
    @Nullable
-   public Class7952 method27026() {
+   public Advancement method27026() {
       return this.field34186;
    }
 
@@ -74,9 +78,9 @@ public class Class7952 {
    @Override
    public String toString() {
       return "SimpleAdvancement{id="
-         + this.method27033()
+         + this.getId()
          + ", parent="
-         + (this.field34186 != null ? this.field34186.method27033() : "null")
+         + (this.field34186 != null ? this.field34186.getId() : "null")
          + ", display="
          + this.field34187
          + ", rewards="
@@ -88,7 +92,7 @@ public class Class7952 {
          + '}';
    }
 
-   public Iterable<Class7952> method27029() {
+   public Iterable<Advancement> method27029() {
       return this.field34192;
    }
 
@@ -100,19 +104,19 @@ public class Class7952 {
       return this.field34191.length;
    }
 
-   public void method27032(Class7952 var1) {
+   public void method27032(Advancement var1) {
       this.field34192.add(var1);
    }
 
-   public ResourceLocation method27033() {
+   public ResourceLocation getId() {
       return this.field34189;
    }
 
    @Override
    public boolean equals(Object var1) {
       if (this != var1) {
-         if (var1 instanceof Class7952) {
-            Class7952 var4 = (Class7952)var1;
+         if (var1 instanceof Advancement) {
+            Advancement var4 = (Advancement)var1;
             return this.field34189.equals(var4.field34189);
          } else {
             return false;

@@ -138,7 +138,7 @@ public class Class9250 {
          }
 
          if (var6.method15004().isPresent()) {
-            var5 = "" + Class4387.method13793((Class4387<?>)var6.method15004().get());
+            var5 = "" + TileEntityType.method13793((TileEntityType<?>)var6.method15004().get());
          }
 
          Class7944.method26811("Model adapter already registered for id: " + var2 + ", type: " + var5);

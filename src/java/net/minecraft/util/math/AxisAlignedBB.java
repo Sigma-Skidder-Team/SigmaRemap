@@ -515,9 +515,9 @@ public class AxisAlignedBB {
 
    public Vector3d method19685() {
       return new Vector3d(
-         MathHelper.method37822(0.5, this.field28449, this.field28452),
-         MathHelper.method37822(0.5, this.field28450, this.field28453),
-         MathHelper.method37822(0.5, this.field28451, this.field28454)
+         MathHelper.lerp(0.5, this.field28449, this.field28452),
+         MathHelper.lerp(0.5, this.field28450, this.field28453),
+         MathHelper.lerp(0.5, this.field28451, this.field28454)
       );
    }
 

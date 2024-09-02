@@ -322,11 +322,11 @@ public class Class999 extends Entity {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      this.ticksExisted = var1.method122("Age");
-      this.field5505 = var1.method122("Duration");
-      this.field5506 = var1.method122("WaitTime");
-      this.field5507 = var1.method122("ReapplicationDelay");
-      this.field5509 = var1.method122("DurationOnUse");
+      this.ticksExisted = var1.getInt("Age");
+      this.field5505 = var1.getInt("Duration");
+      this.field5506 = var1.getInt("WaitTime");
+      this.field5507 = var1.getInt("ReapplicationDelay");
+      this.field5509 = var1.getInt("DurationOnUse");
       this.field5510 = var1.getFloat("RadiusOnUse");
       this.field5511 = var1.getFloat("RadiusPerTick");
       this.method4097(var1.getFloat("Radius"));
@@ -336,14 +336,14 @@ public class Class999 extends Entity {
 
       if (var1.contains("Particle", 8)) {
          try {
-            this.method4105(Class8050.method27650(new StringReader(var1.method126("Particle"))));
+            this.method4105(Class8050.method27650(new StringReader(var1.getString("Particle"))));
          } catch (CommandSyntaxException var7) {
-            field5497.warn("Couldn't load custom particle {}", var1.method126("Particle"), var7);
+            field5497.warn("Couldn't load custom particle {}", var1.getString("Particle"), var7);
          }
       }
 
       if (var1.contains("Color", 99)) {
-         this.method4103(var1.method122("Color"));
+         this.method4103(var1.getInt("Color"));
       }
 
       if (var1.contains("Potion", 8)) {

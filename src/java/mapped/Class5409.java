@@ -8,6 +8,7 @@ import io.netty.buffer.Unpooled;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 
 import java.io.IOException;
 
@@ -44,7 +45,7 @@ public class Class5409 extends Class5408 {
          var4.resetWriterIndex();
 
          try {
-            Class8799.method31773(var1, new ByteBufOutputStream(var4));
+            CompressedStreamTools.method31773(var1, new ByteBufOutputStream(var4));
             var4.writeByte(0);
             ByteBufInputStream var5 = new ByteBufInputStream(var4);
             return (Class72)Class8275.method28919(var5, false);

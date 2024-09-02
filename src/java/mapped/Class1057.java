@@ -102,15 +102,15 @@ public class Class1057 extends Class1056 implements Class1008 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.dataManager.method35446(field5841, Direction.byIndex(var1.method120("AttachFace")));
-      this.dataManager.method35446(field5843, var1.method120("Peek"));
-      this.dataManager.method35446(field5844, var1.method120("Color"));
+      this.dataManager.method35446(field5841, Direction.byIndex(var1.getByte("AttachFace")));
+      this.dataManager.method35446(field5843, var1.getByte("Peek"));
+      this.dataManager.method35446(field5844, var1.getByte("Color"));
       if (!var1.contains("APX")) {
          this.dataManager.method35446(field5842, Optional.<BlockPos>empty());
       } else {
-         int var4 = var1.method122("APX");
-         int var5 = var1.method122("APY");
-         int var6 = var1.method122("APZ");
+         int var4 = var1.getInt("APX");
+         int var5 = var1.getInt("APY");
+         int var6 = var1.getInt("APZ");
          this.dataManager.method35446(field5842, Optional.<BlockPos>of(new BlockPos(var4, var5, var6)));
       }
    }

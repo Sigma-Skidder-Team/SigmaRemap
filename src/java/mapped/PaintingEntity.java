@@ -70,8 +70,8 @@ public class PaintingEntity extends Class995 {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      this.field5496 = Registry.field16079.method9184(ResourceLocation.method8289(var1.method126("Motive")));
-      this.field5489 = Direction.method547(var1.method120("Facing"));
+      this.field5496 = Registry.field16079.method9184(ResourceLocation.method8289(var1.getString("Motive")));
+      this.field5489 = Direction.method547(var1.getByte("Facing"));
       super.method2723(var1);
       this.method4077(this.field5489);
    }

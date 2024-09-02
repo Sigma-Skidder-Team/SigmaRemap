@@ -30,10 +30,10 @@ public class Class4183 extends Class4180 {
 
    public Class4183(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33458, var2);
-      this.field20462 = new ResourceLocation(var2.method126("Template"));
-      this.field20463 = Class80.valueOf(var2.method126("Rot"));
+      this.field20462 = new ResourceLocation(var2.getString("Template"));
+      this.field20463 = Class80.valueOf(var2.getString("Rot"));
       this.field20461 = var2.getFloat("Integrity");
-      this.field20460 = Class110.valueOf(var2.method126("BiomeType"));
+      this.field20460 = Class110.valueOf(var2.getString("BiomeType"));
       this.field20464 = var2.getBoolean("IsLarge");
       this.method12947(var1);
    }

@@ -3,7 +3,7 @@ package mapped;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class912 extends Class911 {
+public class Class912 extends CommandBlockLogic {
    private static String[] field5200;
    public final Class918 field5201;
 

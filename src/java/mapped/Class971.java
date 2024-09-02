@@ -13,12 +13,12 @@ public class Class971 extends Class939 {
    private static final Random field5435 = new Random();
    private NonNullList<ItemStack> field5436 = NonNullList.<ItemStack>method68(9, ItemStack.EMPTY);
 
-   public Class971(Class4387<?> var1) {
+   public Class971(TileEntityType<?> var1) {
       super(var1);
    }
 
    public Class971() {
-      this(Class4387.field21426);
+      this(TileEntityType.field21426);
    }
 
    @Override

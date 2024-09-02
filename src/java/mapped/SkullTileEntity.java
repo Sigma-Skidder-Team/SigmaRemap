@@ -20,7 +20,7 @@ public class SkullTileEntity extends TileEntity implements Class935 {
    private boolean field5428;
 
    public SkullTileEntity() {
-      super(Class4387.field21435);
+      super(TileEntityType.field21435);
    }
 
    public static void setProfileCache(PlayerProfileCache var0) {
@@ -48,7 +48,7 @@ public class SkullTileEntity extends TileEntity implements Class935 {
       super.method3645(var1, var2);
       if (!var2.contains("SkullOwner", 10)) {
          if (var2.contains("ExtraType", 8)) {
-            String var5 = var2.method126("ExtraType");
+            String var5 = var2.getString("ExtraType");
             if (!Class9001.method33256(var5)) {
                this.method4006(new GameProfile((UUID)null, var5));
             }

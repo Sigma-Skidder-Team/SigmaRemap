@@ -9,6 +9,7 @@ import com.google.gson.JsonParseException;
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
@@ -83,7 +84,7 @@ public class Class9281 {
                Class285 var16 = var4.method3396().method1396();
 
                for (Entry var10 : this.field42702.entrySet()) {
-                  Class7952 var11 = var16.method1065((ResourceLocation)var10.getKey());
+                  Advancement var11 = var16.method1065((ResourceLocation)var10.getKey());
                   if (var11 == null || !((Class172)var10.getValue()).test(var14.method27416(var11))) {
                      return false;
                   }

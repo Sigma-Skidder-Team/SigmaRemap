@@ -29,10 +29,10 @@ public class Class959 extends TileEntity implements Class935 {
    private long field5389;
 
    public Class959() {
-      this(Class4387.field21445);
+      this(TileEntityType.field21445);
    }
 
-   public Class959(Class4387<?> var1) {
+   public Class959(TileEntityType<?> var1) {
       super(var1);
    }
 

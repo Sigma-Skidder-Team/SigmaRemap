@@ -4,12 +4,13 @@ import com.google.common.collect.ImmutableList;
 import java.util.List;
 import java.util.function.Consumer;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
-public class Class2835 implements Consumer<Consumer<Class7952>> {
+public class Class2835 implements Consumer<Consumer<Advancement>> {
    private static final List<RegistryKey<Biome>> field17626 = ImmutableList.of(
       Class9495.field44129, Class9495.field44196, Class9495.field44198, Class9495.field44197, Class9495.field44199
    );
@@ -44,8 +45,8 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
          .method24517()
    );
 
-   public void accept(Consumer<Class7952> var1) {
-      Class7952 var4 = Class7999.method27304()
+   public void accept(Consumer<Advancement> var1) {
+      Advancement var4 = Class7999.method27304()
          .method27308(
             Blocks.field36892,
             new TranslationTextComponent("advancements.nether.root.title"),
@@ -58,7 +59,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("entered_nether", Class4488.method14156(World.THE_NETHER))
          .method27317(var1, "nether/root");
-      Class7952 var5 = Class7999.method27304()
+      Advancement var5 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Items.field38046,
@@ -79,7 +80,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
             )
          )
          .method27317(var1, "nether/return_to_sender");
-      Class7952 var6 = Class7999.method27304()
+      Advancement var6 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Blocks.NETHER_BRICKS,
@@ -126,7 +127,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
             Class4476.method14134(Class7552.method24700().method24701(EntityType.field41034).method24706(Class8576.method30648(World.OVERWORLD)))
          )
          .method27317(var1, "nether/uneasy_alliance");
-      Class7952 var7 = Class7999.method27304()
+      Advancement var7 = Class7999.method27304()
          .method27305(var6)
          .method27308(
             Blocks.field36703,
@@ -140,7 +141,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("wither_skull", Class4491.method14164(Blocks.field36703))
          .method27317(var1, "nether/get_wither_skull");
-      Class7952 var8 = Class7999.method27304()
+      Advancement var8 = Class7999.method27304()
          .method27305(var7)
          .method27308(
             Items.field38066,
@@ -154,7 +155,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("summoned", Class4456.method14090(Class7552.method24700().method24701(EntityType.field41102)))
          .method27317(var1, "nether/summon_wither");
-      Class7952 var9 = Class7999.method27304()
+      Advancement var9 = Class7999.method27304()
          .method27305(var6)
          .method27308(
             Items.field37967,
@@ -168,7 +169,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("blaze_rod", Class4491.method14164(Items.field37967))
          .method27317(var1, "nether/obtain_blaze_rod");
-      Class7952 var10 = Class7999.method27304()
+      Advancement var10 = Class7999.method27304()
          .method27305(var8)
          .method27308(
             Blocks.BEACON,
@@ -196,7 +197,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("beacon", Class4471.method14124(Class8840.method32013(4)))
          .method27317(var1, "nether/create_full_beacon");
-      Class7952 var11 = Class7999.method27304()
+      Advancement var11 = Class7999.method27304()
          .method27305(var9)
          .method27308(
             Items.field37971,
@@ -210,7 +211,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("potion", Class4470.method14122())
          .method27317(var1, "nether/brew_potion");
-      Class7952 var12 = Class7999.method27304()
+      Advancement var12 = Class7999.method27304()
          .method27305(var11)
          .method27308(
             Items.field37891,
@@ -289,7 +290,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
             )
          )
          .method27317(var1, "nether/all_effects");
-      Class7952 var13 = Class7999.method27304()
+      Advancement var13 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Items.field38182,
@@ -338,7 +339,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
             )
          )
          .method27317(var1, "nether/use_lodestone");
-      Class7952 var14 = Class7999.method27304()
+      Advancement var14 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Items.field38184,
@@ -378,7 +379,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
             )
          )
          .method27317(var1, "nether/charge_respawn_anchor");
-      Class7952 var15 = Class7999.method27304()
+      Advancement var15 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Items.field38065,
@@ -413,7 +414,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
          )
          .method27310(Class9182.method34343(500))
          .method27317(var1, "nether/explore_nether");
-      Class7952 var16 = Class7999.method27304()
+      Advancement var16 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Items.field38193,

@@ -6,6 +6,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -50,13 +51,13 @@ public abstract class NBTTextComponent extends TextComponent implements ITargete
    @Override
    public IFormattableTextComponent func_230535_a_(Class6619 p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
       if (p_230535_1_ != null && this.field_218680_d != null) {
-         Stream<String> var6 = this.func_218673_a(p_230535_1_).<Class30>flatMap(p_218675_1_ -> {
+         Stream<String> var6 = this.func_218673_a(p_230535_1_).<INBT>flatMap(p_218675_1_ -> {
             try {
                return this.field_218680_d.method37725(p_218675_1_).stream();
             } catch (CommandSyntaxException var5) {
                return Stream.empty();
             }
-         }).<String>map(Class30::method81);
+         }).<String>map(INBT::getString);
          return (IFormattableTextComponent)(this.field_218678_b
             ? var6.<IFormattableTextComponent>flatMap(p_223137_3_ -> {
                try {

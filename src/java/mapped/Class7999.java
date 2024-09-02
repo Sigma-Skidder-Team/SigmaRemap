@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
@@ -18,7 +19,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 public class Class7999 {
    private ResourceLocation field34392;
-   private Class7952 field34393;
+   private Advancement field34393;
    private Class9272 field34394;
    private Class8588 field34395 = Class8588.field38664;
    private Map<String, Class9181> field34396 = Maps.newLinkedHashMap();
@@ -40,7 +41,7 @@ public class Class7999 {
       return new Class7999();
    }
 
-   public Class7999 method27305(Class7952 var1) {
+   public Class7999 method27305(Advancement var1) {
       this.field34393 = var1;
       return this;
    }
@@ -94,10 +95,10 @@ public class Class7999 {
       return this;
    }
 
-   public boolean method27315(Function<ResourceLocation, Class7952> var1) {
+   public boolean method27315(Function<ResourceLocation, Advancement> var1) {
       if (this.field34392 != null) {
          if (this.field34393 == null) {
-            this.field34393 = (Class7952)var1.apply(this.field34392);
+            this.field34393 = (Advancement)var1.apply(this.field34392);
          }
 
          return this.field34393 != null;
@@ -106,20 +107,20 @@ public class Class7999 {
       }
    }
 
-   public Class7952 method27316(ResourceLocation var1) {
+   public Advancement method27316(ResourceLocation var1) {
       if (this.method27315(var0 -> null)) {
          if (this.field34397 == null) {
             this.field34397 = this.field34398.method33310(this.field34396.keySet());
          }
 
-         return new Class7952(var1, this.field34393, this.field34394, this.field34395, this.field34396, this.field34397);
+         return new Advancement(var1, this.field34393, this.field34394, this.field34395, this.field34396, this.field34397);
       } else {
          throw new IllegalStateException("Tried to build incomplete advancement!");
       }
    }
 
-   public Class7952 method27317(Consumer<Class7952> var1, String var2) {
-      Class7952 var5 = this.method27316(new ResourceLocation(var2));
+   public Advancement method27317(Consumer<Advancement> var1, String var2) {
+      Advancement var5 = this.method27316(new ResourceLocation(var2));
       var1.accept(var5);
       return var5;
    }
@@ -135,7 +136,7 @@ public class Class7999 {
             var3.addProperty("parent", this.field34392.toString());
          }
       } else {
-         var3.addProperty("parent", this.field34393.method27033().toString());
+         var3.addProperty("parent", this.field34393.getId().toString());
       }
 
       if (this.field34394 != null) {

@@ -15,14 +15,14 @@ import javax.annotation.Nullable;
 
 public abstract class TileEntity {
    private static final Logger field5322 = LogManager.getLogger();
-   private final Class4387<?> field5323;
+   private final TileEntityType<?> field5323;
    public World field5324;
    public BlockPos field5325 = BlockPos.ZERO;
    public boolean field5326;
    private BlockState field5327;
    private boolean field5328;
 
-   public TileEntity(Class4387<?> var1) {
+   public TileEntity(TileEntityType<?> var1) {
       this.field5323 = var1;
    }
 
@@ -41,7 +41,7 @@ public abstract class TileEntity {
    }
 
    public void method3645(BlockState var1, CompoundNBT var2) {
-      this.field5325 = new BlockPos(var2.method122("x"), var2.method122("y"), var2.method122("z"));
+      this.field5325 = new BlockPos(var2.getInt("x"), var2.getInt("y"), var2.getInt("z"));
    }
 
    public CompoundNBT write(CompoundNBT var1) {
@@ -49,7 +49,7 @@ public abstract class TileEntity {
    }
 
    private CompoundNBT method3771(CompoundNBT var1) {
-      ResourceLocation var4 = Class4387.method13793(this.method3786());
+      ResourceLocation var4 = TileEntityType.method13793(this.method3786());
       if (var4 != null) {
          var1.method109("id", var4.toString());
          var1.method102("x", this.field5325.getX());
@@ -63,7 +63,7 @@ public abstract class TileEntity {
 
    @Nullable
    public static TileEntity method3772(BlockState var0, CompoundNBT var1) {
-      String var4 = var1.method126("id");
+      String var4 = var1.getString("id");
       return Registry.field16078.method9187(new ResourceLocation(var4)).<TileEntity>map(var1x -> {
          try {
             return var1x.method13795();
@@ -162,7 +162,7 @@ public abstract class TileEntity {
    public void method3785(Class2089 var1) {
    }
 
-   public Class4387<?> method3786() {
+   public TileEntityType<?> method3786() {
       return this.field5323;
    }
 

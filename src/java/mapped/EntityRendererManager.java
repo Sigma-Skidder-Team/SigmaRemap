@@ -286,15 +286,15 @@ public class EntityRendererManager {
          float var7 = var3.method3429() / 2.0F;
          this.method32221(var1, var2, var3, 1.0F, 1.0F, 1.0F);
          if (var3 instanceof Class1007) {
-            double var10 = -MathHelper.method37822((double)var4, var3.lastTickPosX, var3.getPosX());
-            double var12 = -MathHelper.method37822((double)var4, var3.lastTickPosY, var3.getPosY());
-            double var14 = -MathHelper.method37822((double)var4, var3.lastTickPosZ, var3.getPosZ());
+            double var10 = -MathHelper.lerp((double)var4, var3.lastTickPosX, var3.getPosX());
+            double var12 = -MathHelper.lerp((double)var4, var3.lastTickPosY, var3.getPosY());
+            double var14 = -MathHelper.lerp((double)var4, var3.lastTickPosZ, var3.getPosZ());
 
             for (Class908 var19 : ((Class1007)var3).method4332()) {
                var1.push();
-               double var20 = var10 + MathHelper.method37822((double)var4, var19.lastTickPosX, var19.getPosX());
-               double var22 = var12 + MathHelper.method37822((double)var4, var19.lastTickPosY, var19.getPosY());
-               double var24 = var14 + MathHelper.method37822((double)var4, var19.lastTickPosZ, var19.getPosZ());
+               double var20 = var10 + MathHelper.lerp((double)var4, var19.lastTickPosX, var19.getPosX());
+               double var22 = var12 + MathHelper.lerp((double)var4, var19.lastTickPosY, var19.getPosY());
+               double var24 = var14 + MathHelper.lerp((double)var4, var19.lastTickPosZ, var19.getPosZ());
                var1.translate(var20, var22, var24);
                this.method32221(var1, var2, var19, 0.25F, 1.0F, 0.0F);
                var1.pop();
@@ -404,9 +404,9 @@ public class EntityRendererManager {
             }
          }
 
-         double var10 = MathHelper.method37822((double)var4, var2.lastTickPosX, var2.getPosX());
-         double var12 = MathHelper.method37822((double)var4, var2.lastTickPosY, var2.getPosY());
-         double var14 = MathHelper.method37822((double)var4, var2.lastTickPosZ, var2.getPosZ());
+         double var10 = MathHelper.lerp((double)var4, var2.lastTickPosX, var2.getPosX());
+         double var12 = MathHelper.lerp((double)var4, var2.lastTickPosY, var2.getPosY());
+         double var14 = MathHelper.lerp((double)var4, var2.lastTickPosZ, var2.getPosZ());
          int var16 = MathHelper.floor(var10 - (double)var9);
          int var17 = MathHelper.floor(var10 + (double)var9);
          int var18 = MathHelper.floor(var12 - (double)var9);

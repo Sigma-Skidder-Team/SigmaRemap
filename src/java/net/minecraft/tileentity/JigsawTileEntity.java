@@ -23,12 +23,12 @@ public class JigsawTileEntity extends TileEntity {
    private OrientationType field5412 = OrientationType.ROLLABLE;
    private String field5413 = "minecraft:air";
 
-   public JigsawTileEntity(Class4387<?> var1) {
+   public JigsawTileEntity(TileEntityType<?> var1) {
       super(var1);
    }
 
    public JigsawTileEntity() {
-      this(Class4387.field21451);
+      this(TileEntityType.field21451);
    }
 
    public ResourceLocation method3978() {
@@ -85,11 +85,11 @@ public class JigsawTileEntity extends TileEntity {
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5409 = new ResourceLocation(var2.method126("name"));
-      this.field5410 = new ResourceLocation(var2.method126("target"));
-      this.field5411 = new ResourceLocation(var2.method126("pool"));
-      this.field5413 = var2.method126("final_state");
-      this.field5412 = OrientationType.method269(var2.method126("joint"))
+      this.field5409 = new ResourceLocation(var2.getString("name"));
+      this.field5410 = new ResourceLocation(var2.getString("target"));
+      this.field5411 = new ResourceLocation(var2.getString("pool"));
+      this.field5413 = var2.getString("final_state");
+      this.field5412 = OrientationType.method269(var2.getString("joint"))
          .orElseGet(() -> !Class3249.method11675(var1).method544().method324() ? OrientationType.ROLLABLE : OrientationType.ALIGNED);
    }
 

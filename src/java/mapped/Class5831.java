@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.world.World;
 
 public abstract class Class5831 extends Class5828<Class920> {
@@ -10,13 +11,13 @@ public abstract class Class5831 extends Class5828<Class920> {
    private final Class8202 field25552;
    public final World field25553;
    private final Class7207<? extends Class4847> field25554;
-   private final Class1939 field25555;
+   private final RecipeBookCategory field25555;
 
-   public Class5831(Class8298<?> var1, Class7207<? extends Class4847> var2, Class1939 var3, int var4, PlayerInventory var5) {
+   public Class5831(Class8298<?> var1, Class7207<? extends Class4847> var2, RecipeBookCategory var3, int var4, PlayerInventory var5) {
       this(var1, var2, var3, var4, var5, new Class927(3), new Class8206(4));
    }
 
-   public Class5831(Class8298<?> var1, Class7207<? extends Class4847> var2, Class1939 var3, int var4, PlayerInventory var5, Class920 var6, Class8202 var7) {
+   public Class5831(Class8298<?> var1, Class7207<? extends Class4847> var2, RecipeBookCategory var3, int var4, PlayerInventory var5, Class920 var6, Class8202 var7) {
       super(var1, var4);
       this.field25554 = var2;
       this.field25555 = var3;
@@ -168,7 +169,7 @@ public abstract class Class5831 extends Class5828<Class920> {
    }
 
    @Override
-   public Class1939 method18227() {
+   public RecipeBookCategory method18227() {
       return this.field25555;
    }
 }

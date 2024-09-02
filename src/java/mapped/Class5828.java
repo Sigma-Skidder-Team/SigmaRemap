@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.RecipeBookCategory;
 
 public abstract class Class5828<C extends Class920> extends Class5812 {
    public Class5828(Class8298<?> var1, int var2) {
@@ -25,5 +26,5 @@ public abstract class Class5828<C extends Class920> extends Class5812 {
 
    public abstract int method18226();
 
-   public abstract Class1939 method18227();
+   public abstract RecipeBookCategory method18227();
 }

@@ -192,13 +192,13 @@ public class Class1086 extends Class1087 implements Class1020 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method5036(Class2210.method8938(var1.method126("Type")));
+      this.method5036(Class2210.method8938(var1.getString("Type")));
       if (var1.contains("EffectId", 1)) {
-         this.field5952 = Effect.method22287(var1.method120("EffectId"));
+         this.field5952 = Effect.method22287(var1.getByte("EffectId"));
       }
 
       if (var1.contains("EffectDuration", 3)) {
-         this.field5953 = var1.method122("EffectDuration");
+         this.field5953 = var1.getInt("EffectDuration");
       }
    }
 

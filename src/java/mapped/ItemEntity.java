@@ -265,10 +265,10 @@ public class ItemEntity extends Entity {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      this.field5517 = var1.method121("Health");
-      this.field5515 = var1.method121("Age");
+      this.field5517 = var1.getShort("Health");
+      this.field5515 = var1.getShort("Age");
       if (var1.contains("PickupDelay")) {
-         this.field5516 = var1.method121("PickupDelay");
+         this.field5516 = var1.getShort("PickupDelay");
       }
 
       if (var1.method106("Owner")) {

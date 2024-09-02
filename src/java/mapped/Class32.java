@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.nbt.NumberNBT;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -7,7 +8,7 @@ import net.minecraft.util.text.StringTextComponent;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class Class32 extends Class31 {
+public class Class32 extends NumberNBT {
    public static final Class32 field60 = new Class32(0.0F);
    public static final Class7052<Class32> field61 = new Class7056();
    private final float field62;
@@ -21,12 +22,12 @@ public class Class32 extends Class31 {
    }
 
    @Override
-   public void method73(DataOutput var1) throws IOException {
+   public void write(DataOutput var1) throws IOException {
       var1.writeFloat(this.field62);
    }
 
    @Override
-   public byte method74() {
+   public byte getId() {
       return 5;
    }
 
@@ -61,32 +62,32 @@ public class Class32 extends Class31 {
    }
 
    @Override
-   public long method83() {
+   public long getLong() {
       return (long)this.field62;
    }
 
    @Override
-   public int method84() {
+   public int getInt() {
       return MathHelper.method37767(this.field62);
    }
 
    @Override
-   public short method85() {
+   public short getShort() {
       return (short)(MathHelper.method37767(this.field62) & 65535);
    }
 
    @Override
-   public byte method86() {
+   public byte getByte() {
       return (byte)(MathHelper.method37767(this.field62) & 0xFF);
    }
 
    @Override
-   public double method87() {
+   public double getDouble() {
       return (double)this.field62;
    }
 
    @Override
-   public float method88() {
+   public float getFloat() {
       return this.field62;
    }
 

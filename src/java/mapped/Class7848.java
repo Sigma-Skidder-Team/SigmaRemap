@@ -9,12 +9,14 @@ import com.mojang.brigadier.suggestion.SuggestionProvider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+import net.minecraft.advancements.Advancement;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7848 {
    private static final SuggestionProvider<Class6619> field33657 = (var0, var1) -> {
-      Collection<Class7952> var4 = var0.getSource().method20177().method1396().method1066();
-      return Class6618.method20143(var4.stream().map(Class7952::method27033), var1);
+      Collection<Advancement> var4 = var0.getSource().method20177().method1396().method1066();
+      return Class6618.method20143(var4.stream().map(Advancement::getId), var1);
    };
 
    public static void method26285(CommandDispatcher<Class6619> var0) {
@@ -215,7 +217,7 @@ public class Class7848 {
       );
    }
 
-   private static int method26286(Class6619 var0, Collection<ServerPlayerEntity> var1, Class2289 var2, Collection<Class7952> var3) {
+   private static int method26286(Class6619 var0, Collection<ServerPlayerEntity> var1, Class2289 var2, Collection<Advancement> var3) {
       int var6 = 0;
 
       for (ServerPlayerEntity var8 : var1) {
@@ -233,12 +235,12 @@ public class Class7848 {
             }
          } else if (var1.size() != 1) {
             var0.method20179(
-               new TranslationTextComponent(var2.method9040() + ".one.to.many.success", ((Class7952)var3.iterator().next()).method27035(), var1.size()), true
+               new TranslationTextComponent(var2.method9040() + ".one.to.many.success", ((Advancement)var3.iterator().next()).method27035(), var1.size()), true
             );
          } else {
             var0.method20179(
                new TranslationTextComponent(
-                  var2.method9040() + ".one.to.one.success", ((Class7952)var3.iterator().next()).method27035(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
+                  var2.method9040() + ".one.to.one.success", ((Advancement)var3.iterator().next()).method27035(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
                ),
                true
             );
@@ -255,18 +257,18 @@ public class Class7848 {
          }
       } else if (var1.size() != 1) {
          throw new Class2468(
-            new TranslationTextComponent(var2.method9040() + ".one.to.many.failure", ((Class7952)var3.iterator().next()).method27035(), var1.size())
+            new TranslationTextComponent(var2.method9040() + ".one.to.many.failure", ((Advancement)var3.iterator().next()).method27035(), var1.size())
          );
       } else {
          throw new Class2468(
             new TranslationTextComponent(
-               var2.method9040() + ".one.to.one.failure", ((Class7952)var3.iterator().next()).method27035(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
+               var2.method9040() + ".one.to.one.failure", ((Advancement)var3.iterator().next()).method27035(), ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()
             )
          );
       }
    }
 
-   private static int method26287(Class6619 var0, Collection<ServerPlayerEntity> var1, Class2289 var2, Class7952 var3, String var4) {
+   private static int method26287(Class6619 var0, Collection<ServerPlayerEntity> var1, Class2289 var2, Advancement var3, String var4) {
       int var7 = 0;
       if (var3.method27030().containsKey(var4)) {
          for (ServerPlayerEntity var9 : var1) {
@@ -302,10 +304,10 @@ public class Class7848 {
       }
    }
 
-   private static List<Class7952> method26288(Class7952 var0, Class2028 var1) {
+   private static List<Advancement> method26288(Advancement var0, Class2028 var1) {
       ArrayList var4 = Lists.newArrayList();
       if (Class2028.method8661(var1)) {
-         for (Class7952 var5 = var0.method27026(); var5 != null; var5 = var5.method27026()) {
+         for (Advancement var5 = var0.method27026(); var5 != null; var5 = var5.method27026()) {
             var4.add(var5);
          }
       }
@@ -318,8 +320,8 @@ public class Class7848 {
       return var4;
    }
 
-   private static void method26289(Class7952 var0, List<Class7952> var1) {
-      for (Class7952 var5 : var0.method27029()) {
+   private static void method26289(Advancement var0, List<Advancement> var1) {
+      for (Advancement var5 : var0.method27029()) {
          var1.add(var5);
          method26289(var5, var1);
       }

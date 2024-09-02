@@ -1241,9 +1241,9 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public final Vector3d method3286(float var1) {
       if (var1 != 1.0F) {
-         double var4 = MathHelper.method37822((double)var1, this.prevPosX, this.getPosX());
-         double var6 = MathHelper.method37822((double)var1, this.prevPosY, this.getPosY()) + (double)this.method3393();
-         double var8 = MathHelper.method37822((double)var1, this.prevPosZ, this.getPosZ());
+         double var4 = MathHelper.lerp((double)var1, this.prevPosX, this.getPosX());
+         double var6 = MathHelper.lerp((double)var1, this.prevPosY, this.getPosY()) + (double)this.method3393();
+         double var8 = MathHelper.lerp((double)var1, this.prevPosZ, this.getPosZ());
          return new Vector3d(var4, var6, var8);
       } else {
          return new Vector3d(this.getPosX(), this.method3442(), this.getPosZ());
@@ -1255,9 +1255,9 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public final Vector3d method3288(float var1) {
-      double var4 = MathHelper.method37822((double)var1, this.prevPosX, this.getPosX());
-      double var6 = MathHelper.method37822((double)var1, this.prevPosY, this.getPosY());
-      double var8 = MathHelper.method37822((double)var1, this.prevPosZ, this.getPosZ());
+      double var4 = MathHelper.lerp((double)var1, this.prevPosX, this.getPosX());
+      double var6 = MathHelper.lerp((double)var1, this.prevPosY, this.getPosY());
+      double var8 = MathHelper.lerp((double)var1, this.prevPosZ, this.getPosZ());
       return new Vector3d(var4, var6, var8);
    }
 
@@ -1406,11 +1406,11 @@ public abstract class Entity implements INameable, ICommandSource {
          this.method3143(this.rotationYaw);
          this.method3144(this.rotationYaw);
          this.fallDistance = var1.getFloat("FallDistance");
-         this.fire = var1.method121("Fire");
-         this.method3352(var1.method121("Air"));
+         this.fire = var1.getShort("Fire");
+         this.method3352(var1.getShort("Air"));
          this.onGround = var1.getBoolean("OnGround");
          this.invulnerable = var1.getBoolean("Invulnerable");
-         this.field_242273_aw = var1.method122("PortalCooldown");
+         this.field_242273_aw = var1.getInt("PortalCooldown");
          if (var1.method106("UUID")) {
             this.entityUniqueID = var1.method105("UUID");
             this.cachedUniqueIdString = this.entityUniqueID.toString();
@@ -1422,7 +1422,7 @@ public abstract class Entity implements INameable, ICommandSource {
             this.method3216();
             this.setRotation(this.rotationYaw, this.rotationPitch);
             if (var1.contains("CustomName", 8)) {
-               String var13 = var1.method126("CustomName");
+               String var13 = var1.getString("CustomName");
 
                try {
                   this.method3379(ITextComponent$Serializer.func_240643_a_(var13));

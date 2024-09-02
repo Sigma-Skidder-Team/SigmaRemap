@@ -46,7 +46,7 @@ public class Class3288 extends Class3287 {
       if (this.field18799 == EntityType.field41095) {
          CompoundNBT var7 = var1.method32142();
          if (var7 != null && var7.contains("BucketVariantTag", 3)) {
-            int var8 = var7.method122("BucketVariantTag");
+            int var8 = var7.getInt("BucketVariantTag");
             TextFormatting[] var9 = new TextFormatting[]{TextFormatting.ITALIC, TextFormatting.GRAY};
             String var10 = "color.minecraft." + Class1052.method4814(var8);
             String var11 = "color.minecraft." + Class1052.method4815(var8);

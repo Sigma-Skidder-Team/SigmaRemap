@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -20,7 +21,7 @@ public class Class3285 extends Item {
    public static boolean method11817(CompoundNBT var0) {
       if (Class3291.method11833(var0)) {
          if (var0.contains("title", 8)) {
-            String var3 = var0.method126("title");
+            String var3 = var0.getString("title");
             return var3.length() <= 32 ? var0.contains("author", 8) : false;
          } else {
             return false;
@@ -31,7 +32,7 @@ public class Class3285 extends Item {
    }
 
    public static int method11818(ItemStack var0) {
-      return var0.method32142().method122("generation");
+      return var0.method32142().getInt("generation");
    }
 
    public static int method11819(ItemStack var0) {
@@ -43,7 +44,7 @@ public class Class3285 extends Item {
    public ITextComponent method11731(ItemStack var1) {
       if (var1.method32141()) {
          CompoundNBT var4 = var1.method32142();
-         String var5 = var4.method126("title");
+         String var5 = var4.getString("title");
          if (!Class9001.method33256(var5)) {
             return new StringTextComponent(var5);
          }
@@ -56,12 +57,12 @@ public class Class3285 extends Item {
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       if (var1.method32141()) {
          CompoundNBT var7 = var1.method32142();
-         String var8 = var7.method126("author");
+         String var8 = var7.getString("author");
          if (!Class9001.method33256(var8)) {
             var3.add(new TranslationTextComponent("book.byAuthor", var8).mergeStyle(TextFormatting.GRAY));
          }
 
-         var3.add(new TranslationTextComponent("book.generation." + var7.method122("generation")).mergeStyle(TextFormatting.GRAY));
+         var3.add(new TranslationTextComponent("book.generation." + var7.getInt("generation")).mergeStyle(TextFormatting.GRAY));
       }
    }
 
@@ -105,7 +106,7 @@ public class Class3285 extends Item {
                   var9 = new StringTextComponent(var8);
                }
 
-               var6.set(var7, (Class30) StringNBT.valueOf(ITextComponent$Serializer.toJson((ITextComponent)var9)));
+               var6.set(var7, (INBT) StringNBT.valueOf(ITextComponent$Serializer.toJson((ITextComponent)var9)));
             }
 
             var5.put("pages", var6);

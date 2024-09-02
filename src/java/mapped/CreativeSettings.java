@@ -4,6 +4,7 @@ import com.mojang.datafixers.DataFixer;
 import java.io.File;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,7 +26,7 @@ public class CreativeSettings {
 
    private void method27627() {
       try {
-         CompoundNBT var3 = Class8799.method31770(this.field34554);
+         CompoundNBT var3 = CompressedStreamTools.method31770(this.field34554);
          if (var3 == null) {
             return;
          }
@@ -34,7 +35,7 @@ public class CreativeSettings {
             var3.method102("DataVersion", 1343);
          }
 
-         var3 = Class8354.method29289(this.field34555, Class2108.field13751, var3, var3.method122("DataVersion"));
+         var3 = Class8354.method29289(this.field34555, Class2108.field13751, var3, var3.getInt("DataVersion"));
 
          for (int var4 = 0; var4 < 9; var4++) {
             this.field34556[var4].method9285(var3.method131(String.valueOf(var4), 10));
@@ -53,7 +54,7 @@ public class CreativeSettings {
             var3.put(String.valueOf(var4), this.method27629(var4).method9284());
          }
 
-         Class8799.method31769(var3, this.field34554);
+         CompressedStreamTools.write(var3, this.field34554);
       } catch (Exception var5) {
          field34553.error("Failed to save creative mode options", var5);
       }

@@ -3,6 +3,7 @@ package net.minecraft.network.play.server;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import mapped.*;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
@@ -24,12 +25,12 @@ public class SAdvancementInfoPacket implements Packet<IClientPlayNetHandler> {
    public SAdvancementInfoPacket() {
    }
 
-   public SAdvancementInfoPacket(boolean var1, Collection<Class7952> var2, Set<ResourceLocation> var3, Map<ResourceLocation, Class2006> var4) {
+   public SAdvancementInfoPacket(boolean var1, Collection<Advancement> var2, Set<ResourceLocation> var3, Map<ResourceLocation, Class2006> var4) {
       this.field24686 = var1;
       this.field24687 = Maps.newHashMap();
 
-      for (Class7952 var8 : var2) {
-         this.field24687.put(var8.method27033(), var8.method27025());
+      for (Advancement var8 : var2) {
+         this.field24687.put(var8.getId(), var8.method27025());
       }
 
       this.field24688 = var3;

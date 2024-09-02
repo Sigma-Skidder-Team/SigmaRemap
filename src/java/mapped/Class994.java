@@ -136,9 +136,9 @@ public class Class994 extends AbstractMinecartEntity {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.field5483 = var1.method125("PushX");
-      this.field5484 = var1.method125("PushZ");
-      this.field5482 = var1.method121("Fuel");
+      this.field5483 = var1.getDouble("PushX");
+      this.field5484 = var1.getDouble("PushZ");
+      this.field5482 = var1.getShort("Fuel");
    }
 
    public boolean method4075() {

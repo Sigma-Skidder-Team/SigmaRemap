@@ -184,8 +184,8 @@ public class Class1097 extends Class1018 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method5201(Class2293.method9047(var1.method126("MainGene")));
-      this.method5203(Class2293.method9047(var1.method126("HiddenGene")));
+      this.method5201(Class2293.method9047(var1.getString("MainGene")));
+      this.method5203(Class2293.method9047(var1.getString("HiddenGene")));
    }
 
    @Nullable

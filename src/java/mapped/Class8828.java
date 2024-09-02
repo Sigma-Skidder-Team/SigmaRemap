@@ -1,10 +1,6 @@
 package mapped;
 
 public class Class8828 {
-   public static final Class8828 field39801 = new Class8828(0, 0);
-   public static final Class8828 field39802 = new Class8828(1, 0);
-   public static final Class8828 field39803 = new Class8828(0, 1);
-   public static final Class8828 field39804 = new Class8828(1, 1);
    public final double field39805;
    public final double field39806;
 
@@ -270,12 +266,12 @@ public class Class8828 {
       return new Class8829(this);
    }
 
-   public Class2020 method31922() {
-      return new Class2020(this.field39805, 0.0, this.field39806);
+   public Vector3m method31922() {
+      return new Vector3m(this.field39805, 0.0, this.field39806);
    }
 
-   public Class2020 method31923(double var1) {
-      return new Class2020(this.field39805, var1, this.field39806);
+   public Vector3m method31923(double var1) {
+      return new Vector3m(this.field39805, var1, this.field39806);
    }
 
    @Override

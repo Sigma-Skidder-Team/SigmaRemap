@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.network.play.client.CSeenAdvancementsPacket;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +18,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    private static final ITextComponent field6182 = new TranslationTextComponent("advancements.empty");
    private static final ITextComponent field6183 = new TranslationTextComponent("gui.advancements");
    private final Class8730 field6184;
-   private final Map<Class7952, Class1271> field6185 = Maps.newLinkedHashMap();
+   private final Map<Advancement, Class1271> field6185 = Maps.newLinkedHashMap();
    private Class1271 field6186;
    private boolean field6187;
 
@@ -43,7 +44,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
       this.field6184.method31511((Class1131)null);
       ClientPlayNetHandler var3 = this.mc.getConnection();
       if (var3 != null) {
-         var3.sendPacket(CSeenAdvancementsPacket.method17183());
+         var3.sendPacket(CSeenAdvancementsPacket.closedScreen());
       }
    }
 
@@ -166,7 +167,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    }
 
    @Override
-   public void method5448(Class7952 var1) {
+   public void method5448(Advancement var1) {
       Class1271 var4 = Class1271.method6008(this.mc, this, this.field6185.size(), var1);
       if (var4 != null) {
          this.field6185.put(var1, var4);
@@ -174,11 +175,11 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    }
 
    @Override
-   public void method5449(Class7952 var1) {
+   public void method5449(Advancement var1) {
    }
 
    @Override
-   public void method5450(Class7952 var1) {
+   public void method5450(Advancement var1) {
       Class1271 var4 = this.method5456(var1);
       if (var4 != null) {
          var4.method6010(var1);
@@ -186,11 +187,11 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    }
 
    @Override
-   public void method5451(Class7952 var1) {
+   public void method5451(Advancement var1) {
    }
 
    @Override
-   public void method5452(Class7952 var1, Class2006 var2) {
+   public void method5452(Advancement var1, Class2006 var2) {
       Class1194 var5 = this.method5455(var1);
       if (var5 != null) {
          var5.method5709(var2);
@@ -198,7 +199,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    }
 
    @Override
-   public void method5453(Class7952 var1) {
+   public void method5453(Advancement var1) {
       this.field6186 = this.field6185.get(var1);
    }
 
@@ -209,13 +210,13 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    }
 
    @Nullable
-   public Class1194 method5455(Class7952 var1) {
+   public Class1194 method5455(Advancement var1) {
       Class1271 var4 = this.method5456(var1);
       return var4 != null ? var4.method6012(var1) : null;
    }
 
    @Nullable
-   private Class1271 method5456(Class7952 var1) {
+   private Class1271 method5456(Advancement var1) {
       while (var1.method27026() != null) {
          var1 = var1.method27026();
       }

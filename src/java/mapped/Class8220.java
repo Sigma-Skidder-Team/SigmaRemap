@@ -11,24 +11,25 @@ import java.util.Set;
 import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Class8220 {
    private static final Logger field35308 = LogManager.getLogger();
-   private final Map<ResourceLocation, Class7952> field35309 = Maps.newHashMap();
-   private final Set<Class7952> field35310 = Sets.newLinkedHashSet();
-   private final Set<Class7952> field35311 = Sets.newLinkedHashSet();
+   private final Map<ResourceLocation, Advancement> field35309 = Maps.newHashMap();
+   private final Set<Advancement> field35310 = Sets.newLinkedHashSet();
+   private final Set<Advancement> field35311 = Sets.newLinkedHashSet();
    private Class1132 field35312;
 
-   private void method28593(Class7952 var1) {
-      for (Class7952 var5 : var1.method27029()) {
+   private void method28593(Advancement var1) {
+      for (Advancement var5 : var1.method27029()) {
          this.method28593(var5);
       }
 
-      field35308.info("Forgot about advancement {}", var1.method27033());
-      this.field35309.remove(var1.method27033());
+      field35308.info("Forgot about advancement {}", var1.getId());
+      this.field35309.remove(var1.getId());
       if (var1.method27026() != null) {
          this.field35311.remove(var1);
          if (this.field35312 != null) {
@@ -44,7 +45,7 @@ public class Class8220 {
 
    public void method28594(Set<ResourceLocation> var1) {
       for (ResourceLocation var5 : var1) {
-         Class7952 var6 = this.field35309.get(var5);
+         Advancement var6 = this.field35309.get(var5);
          if (var6 != null) {
             this.method28593(var6);
          } else {
@@ -54,7 +55,7 @@ public class Class8220 {
    }
 
    public void method28595(Map<ResourceLocation, Class7999> var1) {
-      Function var4 = Functions.forMap(this.field35309, (Class7952)null);
+      Function var4 = Functions.forMap(this.field35309, (Advancement)null);
 
       while (!var1.isEmpty()) {
          boolean var5 = false;
@@ -65,7 +66,7 @@ public class Class8220 {
             ResourceLocation var8 = (ResourceLocation)var7.getKey();
             Class7999 var9 = (Class7999)var7.getValue();
             if (var9.method27315(var4)) {
-               Class7952 var10 = var9.method27316(var8);
+               Advancement var10 = var9.method27316(var8);
                this.field35309.put(var8, var10);
                var5 = true;
                var6.remove();
@@ -103,27 +104,27 @@ public class Class8220 {
       }
    }
 
-   public Iterable<Class7952> method28597() {
+   public Iterable<Advancement> method28597() {
       return this.field35310;
    }
 
-   public Collection<Class7952> method28598() {
+   public Collection<Advancement> method28598() {
       return this.field35309.values();
    }
 
    @Nullable
-   public Class7952 method28599(ResourceLocation var1) {
+   public Advancement method28599(ResourceLocation var1) {
       return this.field35309.get(var1);
    }
 
    public void method28600(Class1132 var1) {
       this.field35312 = var1;
       if (var1 != null) {
-         for (Class7952 var5 : this.field35310) {
+         for (Advancement var5 : this.field35310) {
             var1.method5448(var5);
          }
 
-         for (Class7952 var7 : this.field35311) {
+         for (Advancement var7 : this.field35311) {
             var1.method5450(var7);
          }
       }

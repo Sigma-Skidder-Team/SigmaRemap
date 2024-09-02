@@ -64,7 +64,7 @@ public class Class1054 extends Class1049 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4829(var1.method122("PuffState"));
+      this.method4829(var1.getInt("PuffState"));
    }
 
    @Override

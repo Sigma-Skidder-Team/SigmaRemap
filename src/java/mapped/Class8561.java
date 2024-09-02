@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3i;
 
 import java.util.Comparator;
 
@@ -13,7 +14,7 @@ public class Class8561<T> {
    public static final Class8561<Class7481> field38482 = method30544("player", Comparator.<Class7481>comparingLong(Class7481::method24352));
    public static final Class8561<Class7481> field38483 = method30544("forced", Comparator.<Class7481>comparingLong(Class7481::method24352));
    public static final Class8561<Class7481> field38484 = method30544("light", Comparator.<Class7481>comparingLong(Class7481::method24352));
-   public static final Class8561<BlockPos> field38485 = method30545("portal", Class1998::compareTo, 300);
+   public static final Class8561<BlockPos> field38485 = method30545("portal", Vector3i::compareTo, 300);
    public static final Class8561<Integer> field38486 = method30545("post_teleport", Integer::compareTo, 5);
    public static final Class8561<Class7481> field38487 = method30545("unknown", Comparator.<Class7481>comparingLong(Class7481::method24352), 1);
 

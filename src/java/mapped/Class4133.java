@@ -2,7 +2,7 @@ package mapped;
 
 public class Class4133 extends Class4057 {
    public Class4133() {
-      super(Class4387.field21424, "ender_chest", 0.0F);
+      super(TileEntityType.field21424, "ender_chest", 0.0F);
    }
 
    @Override
@@ -36,7 +36,7 @@ public class Class4133 extends Class4057 {
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
       TileEntityRendererDispatcher var5 = TileEntityRendererDispatcher.instance;
-      Object var6 = var5.method27968(Class4387.field21424);
+      Object var6 = var5.method27968(TileEntityType.field21424);
       if (var6 instanceof Class5953) {
          if (((Class5942)var6).method18463() == null) {
             var6 = new Class5953(var5);

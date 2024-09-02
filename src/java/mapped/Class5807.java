@@ -45,7 +45,7 @@ public class Class5807 extends AbstractOption {
    }
 
    public double method18084(double var1) {
-      return this.method18085(MathHelper.method37822(MathHelper.method37778(var1, 0.0, 1.0), this.field25450, this.field25451));
+      return this.method18085(MathHelper.lerp(MathHelper.method37778(var1, 0.0, 1.0), this.field25450, this.field25451));
    }
 
    private double method18085(double var1) {

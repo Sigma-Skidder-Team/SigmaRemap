@@ -21,7 +21,7 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
    private static final ITextComponent field18863 = new TranslationTextComponent("container.enderchest");
 
    public Class3347(AbstractBlock var1) {
-      super(var1, () -> Class4387.field21424);
+      super(var1, () -> TileEntityType.field21424);
       this.method11578(this.field18612.method35393().method23465(field18860, Direction.NORTH).method23465(field18861, Boolean.valueOf(false)));
    }
 

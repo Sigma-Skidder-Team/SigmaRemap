@@ -11,7 +11,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 public class TileEntityRendererDispatcher {
-   public final Map<Class4387<?>, Class5942<?>> field34742 = Maps.newHashMap();
+   public final Map<TileEntityType<?>, Class5942<?>> field34742 = Maps.newHashMap();
    public static final TileEntityRendererDispatcher instance = new TileEntityRendererDispatcher();
    private final BufferBuilder field34744 = new BufferBuilder(256);
    private FontRenderer field34745;
@@ -22,28 +22,28 @@ public class TileEntityRendererDispatcher {
    public TileEntity field34750;
 
    private TileEntityRendererDispatcher() {
-      this.method27959(Class4387.field21428, new Class5947(this));
-      this.method27959(Class4387.field21429, new Class5943(this));
-      this.method27959(Class4387.field21430, new Class5945(this));
-      this.method27959(Class4387.field21422, new Class5953<Class941>(this));
-      this.method27959(Class4387.field21424, new Class5953<Class943>(this));
-      this.method27959(Class4387.field21423, new Class5953<Class970>(this));
-      this.method27959(Class4387.field21432, new Class5951(this));
-      this.method27959(Class4387.field21449, new Class5949(this));
-      this.method27959(Class4387.field21433, new Class5957<Class956>(this));
-      this.method27959(Class4387.field21441, new Class5958(this));
-      this.method27959(Class4387.field21434, new Class5946(this));
-      this.method27959(Class4387.field21435, new Class5952(this));
-      this.method27959(Class4387.field21439, new Class5948(this));
-      this.method27959(Class4387.field21440, new Class5941(this));
-      this.method27959(Class4387.field21443, new Class5954(new Class2887(), this));
-      this.method27959(Class4387.field21444, new Class5950(this));
-      this.method27959(Class4387.field21445, new Class5956(this));
-      this.method27959(Class4387.field21450, new Class5944(this));
-      this.method27959(Class4387.field21452, new Class5955(this));
+      this.method27959(TileEntityType.field21428, new Class5947(this));
+      this.method27959(TileEntityType.field21429, new Class5943(this));
+      this.method27959(TileEntityType.field21430, new Class5945(this));
+      this.method27959(TileEntityType.field21422, new Class5953<Class941>(this));
+      this.method27959(TileEntityType.field21424, new Class5953<Class943>(this));
+      this.method27959(TileEntityType.field21423, new Class5953<Class970>(this));
+      this.method27959(TileEntityType.field21432, new Class5951(this));
+      this.method27959(TileEntityType.field21449, new Class5949(this));
+      this.method27959(TileEntityType.field21433, new Class5957<Class956>(this));
+      this.method27959(TileEntityType.field21441, new Class5958(this));
+      this.method27959(TileEntityType.field21434, new Class5946(this));
+      this.method27959(TileEntityType.field21435, new Class5952(this));
+      this.method27959(TileEntityType.field21439, new Class5948(this));
+      this.method27959(TileEntityType.field21440, new Class5941(this));
+      this.method27959(TileEntityType.field21443, new Class5954(new Class2887(), this));
+      this.method27959(TileEntityType.field21444, new Class5950(this));
+      this.method27959(TileEntityType.field21445, new Class5956(this));
+      this.method27959(TileEntityType.field21450, new Class5944(this));
+      this.method27959(TileEntityType.field21452, new Class5955(this));
    }
 
-   private <E extends TileEntity> void method27959(Class4387<E> var1, Class5942<E> var2) {
+   private <E extends TileEntity> void method27959(TileEntityType<E> var1, Class5942<E> var2) {
       this.field34742.put(var1, var2);
    }
 
@@ -147,11 +147,11 @@ public class TileEntityRendererDispatcher {
       return this.field34745;
    }
 
-   public Class5942 method27968(Class4387 var1) {
+   public Class5942 method27968(TileEntityType var1) {
       return this.field34742.get(var1);
    }
 
-   public synchronized <T extends TileEntity> void method27969(Class4387<T> var1, Class5942<? super T> var2) {
+   public synchronized <T extends TileEntity> void method27969(TileEntityType<T> var1, Class5942<? super T> var2) {
       this.field34742.put(var1, var2);
    }
 }

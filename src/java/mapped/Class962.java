@@ -19,7 +19,7 @@ public class Class962 extends TileEntity implements Class935 {
    private BlockPos field5393 = null;
 
    public Class962() {
-      super(Class4387.field21453);
+      super(TileEntityType.field21453);
    }
 
    @Override
@@ -251,7 +251,7 @@ public class Class962 extends TileEntity implements Class935 {
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
          CompoundNBT var7 = var5.method153(var6);
-         Class9327 var8 = new Class9327(var7.getCompound("EntityData"), var7.method122("TicksInHive"), var7.method122("MinOccupationTicks"));
+         Class9327 var8 = new Class9327(var7.getCompound("EntityData"), var7.getInt("TicksInHive"), var7.getInt("MinOccupationTicks"));
          this.field5392.add(var8);
       }
 

@@ -436,15 +436,15 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.ticksInGround = var1.method121("life");
+      this.ticksInGround = var1.getShort("life");
       if (var1.contains("inBlockState", 10)) {
          this.field5099 = Class8354.method29285(var1.getCompound("inBlockState"));
       }
 
-      this.field5103 = var1.method120("shake") & 255;
+      this.field5103 = var1.getByte("shake") & 255;
       this.field5100 = var1.getBoolean("inGround");
       if (var1.contains("damage", 99)) {
-         this.field5105 = var1.method125("damage");
+         this.field5105 = var1.getDouble("damage");
       }
 
       if (!var1.contains("pickup", 99)) {
@@ -452,13 +452,13 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
             this.pickupStatus = !var1.getBoolean("player") ? AbstractArrowEntityPickupStatus.DISALLOWED : AbstractArrowEntityPickupStatus.ALLOWED;
          }
       } else {
-         this.pickupStatus = AbstractArrowEntityPickupStatus.method8902(var1.method120("pickup"));
+         this.pickupStatus = AbstractArrowEntityPickupStatus.method8902(var1.getByte("pickup"));
       }
 
       this.method3484(var1.getBoolean("crit"));
-      this.method3485(var1.method120("PierceLevel"));
+      this.method3485(var1.getByte("PierceLevel"));
       if (var1.contains("SoundEvent", 8)) {
-         this.hitSound = Registry.field16069.method9187(new ResourceLocation(var1.method126("SoundEvent"))).orElse(this.getHitEntitySound());
+         this.hitSound = Registry.field16069.method9187(new ResourceLocation(var1.getString("SoundEvent"))).orElse(this.getHitEntitySound());
       }
 
       this.method3494(var1.getBoolean("ShotFromCrossbow"));

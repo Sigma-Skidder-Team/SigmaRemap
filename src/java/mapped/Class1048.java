@@ -99,13 +99,13 @@ public class Class1048 extends Class1047 {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      int var4 = var1.method122("TreasurePosX");
-      int var5 = var1.method122("TreasurePosY");
-      int var6 = var1.method122("TreasurePosZ");
+      int var4 = var1.getInt("TreasurePosX");
+      int var5 = var1.getInt("TreasurePosY");
+      int var6 = var1.getInt("TreasurePosZ");
       this.method4776(new BlockPos(var4, var5, var6));
       super.method2723(var1);
       this.method4779(var1.getBoolean("GotFish"));
-      this.method4781(var1.method122("Moistness"));
+      this.method4781(var1.getInt("Moistness"));
    }
 
    @Override

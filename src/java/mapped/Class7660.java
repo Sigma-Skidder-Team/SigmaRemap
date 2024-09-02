@@ -4,23 +4,23 @@ import net.minecraft.nbt.CompoundNBT;
 
 public class Class7660 {
    public static Class9028 method25180(CompoundNBT var0) {
-      int var3 = var0.method122("xPos");
-      int var4 = var0.method122("zPos");
+      int var3 = var0.getInt("xPos");
+      int var4 = var0.getInt("zPos");
       Class9028 var5 = new Class9028(var3, var4);
-      var5.field41306 = var0.method127("Blocks");
-      var5.field41305 = new Class9074(var0.method127("Data"), 7);
-      var5.field41304 = new Class9074(var0.method127("SkyLight"), 7);
-      var5.field41303 = new Class9074(var0.method127("BlockLight"), 7);
-      var5.field41302 = var0.method127("HeightMap");
+      var5.field41306 = var0.getByteArray("Blocks");
+      var5.field41305 = new Class9074(var0.getByteArray("Data"), 7);
+      var5.field41304 = new Class9074(var0.getByteArray("SkyLight"), 7);
+      var5.field41303 = new Class9074(var0.getByteArray("BlockLight"), 7);
+      var5.field41302 = var0.getByteArray("HeightMap");
       var5.field41301 = var0.getBoolean("TerrainPopulated");
       var5.field41307 = var0.method131("Entities", 10);
       var5.field41308 = var0.method131("TileEntities", 10);
       var5.field41309 = var0.method131("TileTicks", 10);
 
       try {
-         var5.field41300 = var0.method123("LastUpdate");
+         var5.field41300 = var0.getLong("LastUpdate");
       } catch (ClassCastException var7) {
-         var5.field41300 = (long)var0.method122("LastUpdate");
+         var5.field41300 = (long)var0.getInt("LastUpdate");
       }
 
       return var5;

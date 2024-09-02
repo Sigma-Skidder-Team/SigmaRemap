@@ -95,7 +95,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.contains("CollarColor", 99)) {
-         this.method4383(Class112.method315(var1.method122("CollarColor")));
+         this.method4383(Class112.method315(var1.getInt("CollarColor")));
       }
 
       this.method4365((ServerWorld)this.world, var1);

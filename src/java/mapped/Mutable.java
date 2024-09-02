@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3i;
 
 public class Mutable extends BlockPos {
    public Mutable() {
@@ -52,7 +53,7 @@ public class Mutable extends BlockPos {
       return this.method8372(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5));
    }
 
-   public Mutable method8374(Class1998 var1) {
+   public Mutable method8374(Vector3i var1) {
       return this.method8372(var1.getX(), var1.getY(), var1.getZ());
    }
 
@@ -68,11 +69,11 @@ public class Mutable extends BlockPos {
       );
    }
 
-   public Mutable method8377(Class1998 var1, Direction var2) {
+   public Mutable method8377(Vector3i var1, Direction var2) {
       return this.method8372(var1.getX() + var2.method539(), var1.getY() + var2.method540(), var1.getZ() + var2.method541());
    }
 
-   public Mutable method8378(Class1998 var1, int var2, int var3, int var4) {
+   public Mutable method8378(Vector3i var1, int var2, int var3, int var4) {
       return this.method8372(var1.getX() + var2, var1.getY() + var3, var1.getZ() + var4);
    }
 
@@ -90,7 +91,7 @@ public class Mutable extends BlockPos {
       return this.method8372(this.getX() + var1, this.getY() + var2, this.getZ() + var3);
    }
 
-   public Mutable method8382(Class1998 var1) {
+   public Mutable method8382(Vector3i var1) {
       return this.method8372(this.getX() + var1.getX(), this.getY() + var1.getY(), this.getZ() + var1.getZ());
    }
 

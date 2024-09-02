@@ -562,7 +562,7 @@ public class EntityType<T extends Entity> {
       return Util.<Entity>acceptOrElse(
          method33222(var0).<Entity>map(var1x -> var1x.method33215(var1)),
          var1x -> var1x.method3295(var0),
-         () -> field41004.warn("Skipping Entity with id {}", var0.method126("id"))
+         () -> field41004.warn("Skipping Entity with id {}", var0.getString("id"))
       );
    }
 
@@ -595,7 +595,7 @@ public class EntityType<T extends Entity> {
    }
 
    public static Optional<EntityType<?>> method33222(CompoundNBT var0) {
-      return Registry.ENTITY_TYPE.method9187(new ResourceLocation(var0.method126("id")));
+      return Registry.ENTITY_TYPE.method9187(new ResourceLocation(var0.getString("id")));
    }
 
    @Nullable

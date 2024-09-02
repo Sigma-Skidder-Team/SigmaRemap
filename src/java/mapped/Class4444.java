@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
@@ -79,7 +80,7 @@ public class Class4444 implements Class4442 {
          String var7 = IOUtils.toString(var5);
          CompoundNBT var8 = this.method14022(var2, Class7671.method25188(var7));
          ByteArrayOutputStream var9 = new ByteArrayOutputStream();
-         Class8799.method31768(var8, var9);
+         CompressedStreamTools.writeCompressed(var8, var9);
          byte[] var10 = var9.toByteArray();
          String var11 = field21602.hashBytes(var10).toString();
          String var12;

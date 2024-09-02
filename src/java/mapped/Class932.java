@@ -14,7 +14,7 @@ public abstract class Class932 extends TileEntity implements Class920, Class949,
    private Class7969 field5279 = Class7969.field34259;
    private ITextComponent field5280;
 
-   public Class932(Class4387<?> var1) {
+   public Class932(TileEntityType<?> var1) {
       super(var1);
    }
 
@@ -23,7 +23,7 @@ public abstract class Class932 extends TileEntity implements Class920, Class949,
       super.method3645(var1, var2);
       this.field5279 = Class7969.method27093(var2);
       if (var2.contains("CustomName", 8)) {
-         this.field5280 = ITextComponent$Serializer.func_240643_a_(var2.method126("CustomName"));
+         this.field5280 = ITextComponent$Serializer.func_240643_a_(var2.getString("CustomName"));
       }
    }
 

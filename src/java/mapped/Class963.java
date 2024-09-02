@@ -8,7 +8,7 @@ public class Class963 extends TileEntity {
    private int field5394;
 
    public Class963() {
-      super(Class4387.field21438);
+      super(TileEntityType.field21438);
    }
 
    @Override
@@ -21,7 +21,7 @@ public class Class963 extends TileEntity {
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5394 = var2.method122("OutputSignal");
+      this.field5394 = var2.getInt("OutputSignal");
    }
 
    public int method3930() {

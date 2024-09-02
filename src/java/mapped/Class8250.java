@@ -12,6 +12,7 @@ import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -83,14 +84,14 @@ public class Class8250 {
       ) {
          CompoundNBT var10;
          if (this.method28772(var8)) {
-            var10 = Class8799.method31766(var8);
+            var10 = CompressedStreamTools.readCompressed(var8);
          } else {
             try (DataInputStream var11 = new DataInputStream(var8)) {
-               var10 = Class8799.method31771(var11);
+               var10 = CompressedStreamTools.read(var11);
             }
          }
 
-         int var63 = var10.contains("DataVersion", 99) ? var10.method122("DataVersion") : 1343;
+         int var63 = var10.contains("DataVersion", 99) ? var10.getInt("DataVersion") : 1343;
          var16 = Class8354.method29290(this.field35447, Class2108.field13755, var10, var63, var2);
       }
 

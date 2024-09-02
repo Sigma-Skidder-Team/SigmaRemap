@@ -49,7 +49,7 @@ public abstract class Class1013 extends Class1018 {
       if (var1.method106("Owner")) {
          var4 = var1.method105("Owner");
       } else {
-         String var5 = var1.method126("Owner");
+         String var5 = var1.getString("Owner");
          var4 = Class9061.method33732(this.method3396(), var5);
       }
 

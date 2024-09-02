@@ -464,23 +464,23 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
                   }
 
                   double var44 = (double)var40 / (double)this.field24967;
-                  double var46 = MathHelper.method37822(var44, var24, var32);
-                  double var48 = MathHelper.method37822(var44, var28, var36);
-                  double var50 = MathHelper.method37822(var44, var26, var34);
-                  double var52 = MathHelper.method37822(var44, var30, var38);
+                  double var46 = MathHelper.lerp(var44, var24, var32);
+                  double var48 = MathHelper.lerp(var44, var28, var36);
+                  double var50 = MathHelper.lerp(var44, var26, var34);
+                  double var52 = MathHelper.lerp(var44, var30, var38);
 
                   for (int var54 = 0; var54 < this.field24968; var54++) {
                      int var55 = var11 + var20 * this.field24968 + var54;
                      int var56 = var55 & 15;
                      double var57 = (double)var54 / (double)this.field24968;
-                     double var59 = MathHelper.method37822(var57, var46, var48);
-                     double var61 = MathHelper.method37822(var57, var50, var52);
+                     double var59 = MathHelper.lerp(var57, var46, var48);
+                     double var61 = MathHelper.lerp(var57, var50, var52);
 
                      for (int var63 = 0; var63 < this.field24968; var63++) {
                         int var64 = var12 + var80 * this.field24968 + var63;
                         int var65 = var64 & 15;
                         double var66 = (double)var63 / (double)this.field24968;
-                        double var68 = MathHelper.method37822(var66, var59, var61);
+                        double var68 = MathHelper.lerp(var66, var59, var61);
                         double var70 = MathHelper.method37778(var68 / 200.0, -1.0, 1.0);
                         var70 = var70 / 2.0 - var70 * var70 * var70 / 24.0;
 

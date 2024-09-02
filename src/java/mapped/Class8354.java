@@ -14,6 +14,8 @@ import javax.annotation.Nullable;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.IntArrayNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.math.BlockPos;
@@ -28,7 +30,7 @@ public final class Class8354 {
       String var3 = null;
       UUID var4 = null;
       if (var0.contains("Name", 8)) {
-         var3 = var0.method126("Name");
+         var3 = var0.getString("Name");
       }
 
       if (var0.method106("Id")) {
@@ -45,9 +47,9 @@ public final class Class8354 {
 
                for (int var10 = 0; var10 < var9.size(); var10++) {
                   CompoundNBT var11 = var9.method153(var10);
-                  String var12 = var11.method126("Value");
+                  String var12 = var11.getString("Value");
                   if (var11.contains("Signature", 8)) {
-                     var5.getProperties().put(var8, new Property(var8, var12, var11.method126("Signature")));
+                     var5.getProperties().put(var8, new Property(var8, var12, var11.getString("Signature")));
                   } else {
                      var5.getProperties().put(var8, new Property(var8, var12));
                   }
@@ -96,7 +98,7 @@ public final class Class8354 {
    }
 
    @VisibleForTesting
-   public static boolean method29280(Class30 var0, Class30 var1, boolean var2) {
+   public static boolean method29280(INBT var0, INBT var1, boolean var2) {
       if (var0 == var1) {
          return true;
       } else if (var0 == null) {
@@ -113,7 +115,7 @@ public final class Class8354 {
                return var12.isEmpty();
             } else {
                for (int var13 = 0; var13 < var11.size(); var13++) {
-                  Class30 var14 = var11.get(var13);
+                  INBT var14 = var11.get(var13);
                   boolean var15 = false;
 
                   for (int var10 = 0; var10 < var12.size(); var10++) {
@@ -138,7 +140,7 @@ public final class Class8354 {
          CompoundNBT var6 = (CompoundNBT)var1;
 
          for (String var8 : var5.method97()) {
-            Class30 var9 = var5.method116(var8);
+            INBT var9 = var5.method116(var8);
             if (!method29280(var9, var6.method116(var8), var2)) {
                return false;
             }
@@ -148,13 +150,13 @@ public final class Class8354 {
       }
    }
 
-   public static Class28 method29281(UUID var0) {
-      return new Class28(UUIDCodec.encodeUUID(var0));
+   public static IntArrayNBT method29281(UUID var0) {
+      return new IntArrayNBT(UUIDCodec.encodeUUID(var0));
    }
 
-   public static UUID method29282(Class30 var0) {
-      if (var0.method75() == Class28.field52) {
-         int[] var3 = ((Class28)var0).method77();
+   public static UUID method29282(INBT var0) {
+      if (var0.method75() == IntArrayNBT.field52) {
+         int[] var3 = ((IntArrayNBT)var0).getIntArray();
          if (var3.length == 4) {
             return UUIDCodec.decodeUUID(var3);
          } else {
@@ -162,13 +164,13 @@ public final class Class8354 {
          }
       } else {
          throw new IllegalArgumentException(
-            "Expected UUID-Tag to be of type " + Class28.field52.method21975() + ", but found " + var0.method75().method21975() + "."
+            "Expected UUID-Tag to be of type " + IntArrayNBT.field52.method21975() + ", but found " + var0.method75().method21975() + "."
          );
       }
    }
 
    public static BlockPos method29283(CompoundNBT var0) {
-      return new BlockPos(var0.method122("X"), var0.method122("Y"), var0.method122("Z"));
+      return new BlockPos(var0.getInt("X"), var0.getInt("Y"), var0.getInt("Z"));
    }
 
    public static CompoundNBT method29284(BlockPos var0) {
@@ -183,7 +185,7 @@ public final class Class8354 {
       if (!var0.contains("Name", 8)) {
          return Blocks.AIR.method11579();
       } else {
-         Block var3 = Registry.BLOCK.method9184(new ResourceLocation(var0.method126("Name")));
+         Block var3 = Registry.BLOCK.method9184(new ResourceLocation(var0.getString("Name")));
          BlockState var4 = var3.method11579();
          if (var0.contains("Properties", 10)) {
             CompoundNBT var5 = var0.getCompound("Properties");
@@ -202,9 +204,9 @@ public final class Class8354 {
    }
 
    private static <S extends Class7378<?, S>, T extends Comparable<T>> S method29286(S var0, Class8550<T> var1, String var2, CompoundNBT var3, CompoundNBT var4) {
-      Optional<T> var7 = var1.method30476(var3.method126(var2));
+      Optional<T> var7 = var1.method30476(var3.getString(var2));
       if (!var7.isPresent()) {
-         field35896.warn("Unable to read property: {} with value: {} for blockstate: {}", var2, var3.method126(var2), var4.toString());
+         field35896.warn("Unable to read property: {} with value: {} for blockstate: {}", var2, var3.getString(var2), var4.toString());
          return var0;
       } else {
          return var0.method23465(var1, var7.get());

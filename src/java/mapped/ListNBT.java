@@ -5,7 +5,10 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.bytes.ByteOpenHashSet;
 import it.unimi.dsi.fastutil.bytes.ByteSet;
+import net.minecraft.nbt.NBTTypes;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.IntArrayNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -16,13 +19,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-public class ListNBT extends Class27<Class30> {
+public class ListNBT extends Class27<INBT> {
    public static final Class7052<ListNBT> field87 = new Class7064();
    private static final ByteSet field88 = new ByteOpenHashSet(Arrays.<Byte>asList((byte)1, (byte)2, (byte)3, (byte)4, (byte)5, (byte)6));
-   private final List<Class30> field89;
+   private final List<INBT> field89;
    private byte field90;
 
-   private ListNBT(List<Class30> var1, byte var2) {
+   private ListNBT(List<INBT> var1, byte var2) {
       this.field89 = var1;
       this.field90 = var2;
    }
@@ -32,9 +35,9 @@ public class ListNBT extends Class27<Class30> {
    }
 
    @Override
-   public void method73(DataOutput var1) throws IOException {
+   public void write(DataOutput var1) throws IOException {
       if (!this.field89.isEmpty()) {
-         this.field90 = this.field89.get(0).method74();
+         this.field90 = this.field89.get(0).getId();
       } else {
          this.field90 = 0;
       }
@@ -42,13 +45,13 @@ public class ListNBT extends Class27<Class30> {
       var1.writeByte(this.field90);
       var1.writeInt(this.field89.size());
 
-      for (Class30 var5 : this.field89) {
-         var5.method73(var1);
+      for (INBT var5 : this.field89) {
+         var5.write(var1);
       }
    }
 
    @Override
-   public byte method74() {
+   public byte getId() {
       return 9;
    }
 
@@ -79,8 +82,8 @@ public class ListNBT extends Class27<Class30> {
    }
 
    @Override
-   public Class30 remove(int var1) {
-      Class30 var4 = this.field89.remove(var1);
+   public INBT remove(int var1) {
+      INBT var4 = this.field89.remove(var1);
       this.method152();
       return var4;
    }
@@ -92,8 +95,8 @@ public class ListNBT extends Class27<Class30> {
 
    public CompoundNBT method153(int var1) {
       if (var1 >= 0 && var1 < this.field89.size()) {
-         Class30 var4 = this.field89.get(var1);
-         if (var4.method74() == 10) {
+         INBT var4 = this.field89.get(var1);
+         if (var4.getId() == 10) {
             return (CompoundNBT)var4;
          }
       }
@@ -103,8 +106,8 @@ public class ListNBT extends Class27<Class30> {
 
    public ListNBT method154(int var1) {
       if (var1 >= 0 && var1 < this.field89.size()) {
-         Class30 var4 = this.field89.get(var1);
-         if (var4.method74() == 9) {
+         INBT var4 = this.field89.get(var1);
+         if (var4.getId() == 9) {
             return (ListNBT)var4;
          }
       }
@@ -114,9 +117,9 @@ public class ListNBT extends Class27<Class30> {
 
    public short method155(int var1) {
       if (var1 >= 0 && var1 < this.field89.size()) {
-         Class30 var4 = this.field89.get(var1);
-         if (var4.method74() == 2) {
-            return ((Class37)var4).method85();
+         INBT var4 = this.field89.get(var1);
+         if (var4.getId() == 2) {
+            return ((Class37)var4).getShort();
          }
       }
 
@@ -125,9 +128,9 @@ public class ListNBT extends Class27<Class30> {
 
    public int method156(int var1) {
       if (var1 >= 0 && var1 < this.field89.size()) {
-         Class30 var4 = this.field89.get(var1);
-         if (var4.method74() == 3) {
-            return ((Class36)var4).method84();
+         INBT var4 = this.field89.get(var1);
+         if (var4.getId() == 3) {
+            return ((Class36)var4).getInt();
          }
       }
 
@@ -136,9 +139,9 @@ public class ListNBT extends Class27<Class30> {
 
    public int[] method157(int var1) {
       if (var1 >= 0 && var1 < this.field89.size()) {
-         Class30 var4 = this.field89.get(var1);
-         if (var4.method74() == 11) {
-            return ((Class28)var4).method77();
+         INBT var4 = this.field89.get(var1);
+         if (var4.getId() == 11) {
+            return ((IntArrayNBT)var4).getIntArray();
          }
       }
 
@@ -147,9 +150,9 @@ public class ListNBT extends Class27<Class30> {
 
    public double method158(int var1) {
       if (var1 >= 0 && var1 < this.field89.size()) {
-         Class30 var4 = this.field89.get(var1);
-         if (var4.method74() == 6) {
-            return ((Class34)var4).method87();
+         INBT var4 = this.field89.get(var1);
+         if (var4.getId() == 6) {
+            return ((Class34)var4).getDouble();
          }
       }
 
@@ -158,9 +161,9 @@ public class ListNBT extends Class27<Class30> {
 
    public float method159(int var1) {
       if (var1 >= 0 && var1 < this.field89.size()) {
-         Class30 var4 = this.field89.get(var1);
-         if (var4.method74() == 5) {
-            return ((Class32)var4).method88();
+         INBT var4 = this.field89.get(var1);
+         if (var4.getId() == 5) {
+            return ((Class32)var4).getFloat();
          }
       }
 
@@ -169,8 +172,8 @@ public class ListNBT extends Class27<Class30> {
 
    public String method160(int var1) {
       if (var1 >= 0 && var1 < this.field89.size()) {
-         Class30 var4 = this.field89.get(var1);
-         return var4.method74() != 8 ? var4.toString() : var4.method81();
+         INBT var4 = this.field89.get(var1);
+         return var4.getId() != 8 ? var4.toString() : var4.getString();
       } else {
          return "";
       }
@@ -181,29 +184,29 @@ public class ListNBT extends Class27<Class30> {
       return this.field89.size();
    }
 
-   public Class30 get(int var1) {
+   public INBT get(int var1) {
       return this.field89.get(var1);
    }
 
    @Override
-   public Class30 set(int var1, Class30 var2) {
-      Class30 var5 = this.get(var1);
+   public INBT set(int var1, INBT var2) {
+      INBT var5 = this.get(var1);
       if (this.method70(var1, var2)) {
          return var5;
       } else {
-         throw new UnsupportedOperationException(String.format("Trying to add tag of type %d to list of %d", var2.method74(), this.field90));
+         throw new UnsupportedOperationException(String.format("Trying to add tag of type %d to list of %d", var2.getId(), this.field90));
       }
    }
 
    @Override
-   public void add(int var1, Class30 var2) {
+   public void add(int var1, INBT var2) {
       if (!this.method71(var1, var2)) {
-         throw new UnsupportedOperationException(String.format("Trying to add tag of type %d to list of %d", var2.method74(), this.field90));
+         throw new UnsupportedOperationException(String.format("Trying to add tag of type %d to list of %d", var2.getId(), this.field90));
       }
    }
 
    @Override
-   public boolean method70(int var1, Class30 var2) {
+   public boolean method70(int var1, INBT var2) {
       if (!this.method161(var2)) {
          return false;
       } else {
@@ -213,7 +216,7 @@ public class ListNBT extends Class27<Class30> {
    }
 
    @Override
-   public boolean method71(int var1, Class30 var2) {
+   public boolean method71(int var1, INBT var2) {
       if (!this.method161(var2)) {
          return false;
       } else {
@@ -222,12 +225,12 @@ public class ListNBT extends Class27<Class30> {
       }
    }
 
-   private boolean method161(Class30 var1) {
-      if (var1.method74() != 0) {
+   private boolean method161(INBT var1) {
+      if (var1.getId() != 0) {
          if (this.field90 != 0) {
-            return this.field90 == var1.method74();
+            return this.field90 == var1.getId();
          } else {
-            this.field90 = var1.method74();
+            this.field90 = var1.getId();
             return true;
          }
       } else {
@@ -236,7 +239,7 @@ public class ListNBT extends Class27<Class30> {
    }
 
    public ListNBT method79() {
-      Object var3 = !Class3571.method12200(this.field90).method21977() ? Iterables.transform(this.field89, Class30::method79) : this.field89;
+      Object var3 = !NBTTypes.getGetTypeByID(this.field90).method21977() ? Iterables.transform(this.field89, INBT::method79) : this.field89;
       ArrayList var4 = Lists.newArrayList((Iterable)var3);
       return new ListNBT(var4, this.field90);
    }

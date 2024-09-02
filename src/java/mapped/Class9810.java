@@ -20,7 +20,7 @@ import java.util.Set;
 public class Class9810 {
    private static boolean field45853 = false;
    private static Map<EntityType, Class5715> field45854 = null;
-   private static Map<Class4387, Class5942> field45855 = null;
+   private static Map<TileEntityType, Class5942> field45855 = null;
    private static Map<Class2137, Class2828> field45856 = null;
 
    public static void method38688() {
@@ -81,10 +81,10 @@ public class Class9810 {
       }
    }
 
-   private static Map<Class4387, Class5942> method38690() {
+   private static Map<TileEntityType, Class5942> method38690() {
       Map var2 = TileEntityRendererDispatcher.instance.field34742;
       if (field45855 == null) {
-         field45855 = new HashMap<Class4387, Class5942>(var2);
+         field45855 = new HashMap<TileEntityType, Class5942>(var2);
       }
 
       return var2;

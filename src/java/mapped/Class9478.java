@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
@@ -304,10 +305,10 @@ public class Class9478 {
    private static void method36594(File var0) {
       if (var0.exists()) {
          try {
-            CompoundNBT var3 = Class8799.method31765(var0);
+            CompoundNBT var3 = CompressedStreamTools.readCompressed(var0);
             CompoundNBT var4 = var3.getCompound("Data");
             var4.method133("Player");
-            Class8799.method31767(var3, var0);
+            CompressedStreamTools.writeCompressed(var3, var0);
          } catch (Exception var5) {
             var5.printStackTrace();
          }

@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
+import net.minecraft.util.math.vector.Vector3i;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class Class4251 extends Class4247 {
       this.method13230(this.field20615 = new Class4340(this, "waypointList", 0, 65, this.field20616, this.field20898 - 65));
 
       for (Class8351 var10 : Client.getInstance().getWaypointsManager().method29989()) {
-         this.field20615.method13519(var10.field35889, new Class1998(var10.field35890, 64, var10.field35891), var10.field35892);
+         this.field20615.method13519(var10.field35889, new Vector3i(var10.field35890, 64, var10.field35891), var10.field35892);
       }
 
       this.method13230(this.field20614 = new Class4259(this, "mapFrame", this.field20616, 0, this.field20897 - this.field20616, this.field20898));
@@ -114,7 +115,7 @@ public class Class4251 extends Class4247 {
       this.field20617.add(var1);
    }
 
-   public final void method13044(int var1, int var2, Class2020 var3) {
+   public final void method13044(int var1, int var2, Vector3m var3) {
       for (Class9514 var7 : this.field20617) {
          var7.method36764(this, var1, var2, var3);
       }

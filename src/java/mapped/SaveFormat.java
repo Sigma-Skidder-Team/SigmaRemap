@@ -32,6 +32,8 @@ import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
@@ -173,11 +175,11 @@ public class SaveFormat {
    @Nullable
    private static DatapackCodec method38461(File var0, DataFixer var1) {
       try {
-         CompoundNBT var4 = Class8799.method31765(var0);
+         CompoundNBT var4 = CompressedStreamTools.readCompressed(var0);
          CompoundNBT var5 = var4.getCompound("Data");
          var5.method133("Player");
-         int var6 = var5.contains("DataVersion", 99) ? var5.method122("DataVersion") : -1;
-         Dynamic<Class30> var7 = var1.update(Class2108.field13748.method8778(), new Dynamic(NBTDynamicOps.INSTANCE, var5), var6, SharedConstants.getVersion().getWorldVersion());
+         int var6 = var5.contains("DataVersion", 99) ? var5.getInt("DataVersion") : -1;
+         Dynamic<INBT> var7 = var1.update(Class2108.field13748.method8778(), new Dynamic(NBTDynamicOps.INSTANCE, var5), var6, SharedConstants.getVersion().getWorldVersion());
          return var7.get("DataPacks").result().map(SaveFormat::method38457).orElse(DatapackCodec.field33531);
       } catch (Exception var8) {
          field45713.error("Exception reading {}", var0, var8);
@@ -185,14 +187,14 @@ public class SaveFormat {
       }
    }
 
-   private static BiFunction<File, DataFixer, ServerWorldInfo> method38462(DynamicOps<Class30> var0, DatapackCodec var1) {
+   private static BiFunction<File, DataFixer, ServerWorldInfo> method38462(DynamicOps<INBT> var0, DatapackCodec var1) {
       return (var2, var3) -> {
          try {
-            CompoundNBT var6 = Class8799.method31765(var2);
+            CompoundNBT var6 = CompressedStreamTools.readCompressed(var2);
             CompoundNBT var7 = var6.getCompound("Data");
             CompoundNBT var8 = var7.contains("Player", 10) ? var7.getCompound("Player") : null;
             var7.method133("Player");
-            int var9 = var7.contains("DataVersion", 99) ? var7.method122("DataVersion") : -1;
+            int var9 = var7.contains("DataVersion", 99) ? var7.getInt("DataVersion") : -1;
             Dynamic var10 = var3.update(Class2108.field13748.method8778(), new Dynamic(var0, var7), var9, SharedConstants.getVersion().getWorldVersion());
             Pair var11 = method38456(var10, var3, var9);
             Class8519 var12 = Class8519.method30181(var10);
@@ -208,11 +210,11 @@ public class SaveFormat {
    private BiFunction<File, DataFixer, Class2024> method38463(File var1, boolean var2) {
       return (var3, var4) -> {
          try {
-            CompoundNBT var7 = Class8799.method31765(var3);
+            CompoundNBT var7 = CompressedStreamTools.readCompressed(var3);
             CompoundNBT var8 = var7.getCompound("Data");
             var8.method133("Player");
-            int var9 = var8.contains("DataVersion", 99) ? var8.method122("DataVersion") : -1;
-            Dynamic<Class30> var10 = var4.update(
+            int var9 = var8.contains("DataVersion", 99) ? var8.getInt("DataVersion") : -1;
+            Dynamic<INBT> var10 = var4.update(
                Class2108.field13748.method8778(), new Dynamic(NBTDynamicOps.INSTANCE, var8), var9, SharedConstants.getVersion().getWorldVersion()
             );
             Class8519 var11 = Class8519.method30181(var10);
@@ -360,7 +362,7 @@ public class SaveFormat {
       }
 
       @Nullable
-      public IServerConfiguration readServerConfiguration(DynamicOps<Class30> var1, DatapackCodec var2) {
+      public IServerConfiguration readServerConfiguration(DynamicOps<INBT> var1, DatapackCodec var2) {
          this.method7993();
          return (IServerConfiguration) method38479(this.field9783, this.field9780.toFile(), method38480(var1, var2));
       }
@@ -383,7 +385,7 @@ public class SaveFormat {
 
          try {
             File var9 = File.createTempFile("level", ".dat", var6);
-            Class8799.method31767(var8, var9);
+            CompressedStreamTools.writeCompressed(var8, var9);
             File var10 = new File(var6, "level.dat_old");
             File var11 = new File(var6, "level.dat");
             Util.method38526(var11, var9, var10);
@@ -423,10 +425,10 @@ public class SaveFormat {
          if (var4.exists()) {
             File var5 = new File(var4, "level.dat");
             if (var5.exists()) {
-               CompoundNBT var6 = Class8799.method31765(var5);
+               CompoundNBT var6 = CompressedStreamTools.readCompressed(var5);
                CompoundNBT var7 = var6.getCompound("Data");
                var7.method109("LevelName", var1);
-               Class8799.method31767(var6, var5);
+               CompressedStreamTools.writeCompressed(var6, var5);
             }
          }
       }

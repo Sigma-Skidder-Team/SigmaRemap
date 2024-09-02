@@ -4,7 +4,7 @@ public class Class970 extends Class941 {
    private static String[] field5434;
 
    public Class970() {
-      super(Class4387.field21423);
+      super(TileEntityType.field21423);
    }
 
    @Override

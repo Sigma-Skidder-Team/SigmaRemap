@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Set;
@@ -63,11 +64,11 @@ public class Class6941 {
       this.field30090.add(var1);
    }
 
-   public boolean method21368(Class1939 var1) {
+   public boolean method21368(RecipeBookCategory var1) {
       return this.field30091.method34686(var1);
    }
 
-   public void method21369(Class1939 var1, boolean var2) {
+   public void method21369(RecipeBookCategory var1, boolean var2) {
       this.field30091.method34687(var1, var2);
    }
 
@@ -75,11 +76,11 @@ public class Class6941 {
       return this.method21371(var1.method18227());
    }
 
-   public boolean method21371(Class1939 var1) {
+   public boolean method21371(RecipeBookCategory var1) {
       return this.field30091.method34688(var1);
    }
 
-   public void method21372(Class1939 var1, boolean var2) {
+   public void method21372(RecipeBookCategory var1, boolean var2) {
       this.field30091.method34689(var1, var2);
    }
 
@@ -91,7 +92,7 @@ public class Class6941 {
       return this.field30091.method34694();
    }
 
-   public void method21375(Class1939 var1, boolean var2, boolean var3) {
+   public void method21375(RecipeBookCategory var1, boolean var2, boolean var3) {
       this.field30091.method34687(var1, var2);
       this.field30091.method34689(var1, var3);
    }

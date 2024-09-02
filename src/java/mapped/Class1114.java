@@ -195,7 +195,7 @@ public class Class1114 extends Class1113 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.dataManager.method35446(field6093, var1.method120("BatFlags"));
+      this.dataManager.method35446(field6093, var1.getByte("BatFlags"));
    }
 
    @Override

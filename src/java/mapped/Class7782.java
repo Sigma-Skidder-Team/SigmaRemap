@@ -89,9 +89,9 @@ public class Class7782 {
          for (float var17 = 0.0F; var17 <= 1.0F; var17 = (float)((double)var17 + var5)) {
             for (float var18 = 0.0F; var18 <= 1.0F; var18 = (float)((double)var18 + var7)) {
                for (float var19 = 0.0F; var19 <= 1.0F; var19 = (float)((double)var19 + var9)) {
-                  double var20 = MathHelper.method37822((double)var17, var4.field28449, var4.field28452);
-                  double var22 = MathHelper.method37822((double)var18, var4.field28450, var4.field28453);
-                  double var24 = MathHelper.method37822((double)var19, var4.field28451, var4.field28454);
+                  double var20 = MathHelper.lerp((double)var17, var4.field28449, var4.field28452);
+                  double var22 = MathHelper.lerp((double)var18, var4.field28450, var4.field28453);
+                  double var24 = MathHelper.lerp((double)var19, var4.field28451, var4.field28454);
                   Vector3d var26 = new Vector3d(var20 + var11, var22, var24 + var13);
                   if (var1.world.method7036(new Class6809(var26, var0, Class2271.field14774, Class1985.field12962, var1)).getType()
                      == RayTraceResult.Type.MISS) {

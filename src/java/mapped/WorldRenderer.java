@@ -1553,9 +1553,9 @@ public class WorldRenderer implements Class215, AutoCloseable {
    }
 
    public void method879(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9, Class7733 var10) {
-      double var11 = MathHelper.method37822((double)var8, var1.lastTickPosX, var1.getPosX());
-      double var13 = MathHelper.method37822((double)var8, var1.lastTickPosY, var1.getPosY());
-      double var15 = MathHelper.method37822((double)var8, var1.lastTickPosZ, var1.getPosZ());
+      double var11 = MathHelper.lerp((double)var8, var1.lastTickPosX, var1.getPosX());
+      double var13 = MathHelper.lerp((double)var8, var1.lastTickPosY, var1.getPosY());
+      double var15 = MathHelper.lerp((double)var8, var1.lastTickPosZ, var1.getPosZ());
       float var17 = MathHelper.lerp(var8, var1.prevRotationYaw, var1.rotationYaw);
       this.field941.method32219(var1, var11 - var2, var13 - var4, var15 - var6, var17, var8, var9, var10, this.field941.method32208(var1, var8));
    }

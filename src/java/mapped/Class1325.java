@@ -30,7 +30,7 @@ public abstract class Class1325 extends Screen {
       this.field7010.method5633();
    }
 
-   public abstract Class911 method6304();
+   public abstract CommandBlockLogic method6304();
 
    public abstract int method6305();
 
@@ -45,7 +45,7 @@ public abstract class Class1325 extends Screen {
       );
       this.field7014 = this.<Button>addButton(
          new Button(this.width / 2 + 150 - 20, this.method6305(), 20, 20, new StringTextComponent("O"), var1 -> {
-            Class911 var4 = this.method6304();
+            CommandBlockLogic var4 = this.method6304();
             var4.method3570(!var4.method3571());
             this.method6306();
          })
@@ -87,7 +87,7 @@ public abstract class Class1325 extends Screen {
    }
 
    public void method6307() {
-      Class911 var3 = this.method6304();
+      CommandBlockLogic var3 = this.method6304();
       this.method6308(var3);
       if (!var3.method3571()) {
          var3.method3569((ITextComponent)null);
@@ -101,7 +101,7 @@ public abstract class Class1325 extends Screen {
       this.mc.keyboardListener.enableRepeatEvents(false);
    }
 
-   public abstract void method6308(Class911 var1);
+   public abstract void method6308(CommandBlockLogic var1);
 
    @Override
    public void method1945() {

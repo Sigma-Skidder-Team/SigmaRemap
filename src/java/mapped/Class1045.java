@@ -100,8 +100,8 @@ public abstract class Class1045 extends Class1046 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4770(var1.method122("Age"));
-      this.field5802 = var1.method122("ForcedAge");
+      this.method4770(var1.getInt("Age"));
+      this.field5802 = var1.getInt("ForcedAge");
    }
 
    @Override

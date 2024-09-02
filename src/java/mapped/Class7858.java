@@ -30,9 +30,9 @@ public class Class7858 {
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
             CompoundNBT var7 = var5.method153(var6);
-            ResourceLocation var8 = ResourceLocation.method8289(var7.method126("id"));
+            ResourceLocation var8 = ResourceLocation.method8289(var7.getString("id"));
             if (var8 != null && var8.equals(var4)) {
-               return MathHelper.method37775(var7.method122("lvl"), 0, 255);
+               return MathHelper.method37775(var7.getInt("lvl"), 0, 255);
             }
          }
 
@@ -52,8 +52,8 @@ public class Class7858 {
 
       for (int var4 = 0; var4 < var0.size(); var4++) {
          CompoundNBT var5 = var0.method153(var4);
-         Registry.field16073.method9187(ResourceLocation.method8289(var5.method126("id"))).ifPresent(var2 -> {
-            Integer var5x = var3.put(var2, var5.method122("lvl"));
+         Registry.field16073.method9187(ResourceLocation.method8289(var5.getString("id"))).ifPresent(var2 -> {
+            Integer var5x = var3.put(var2, var5.getInt("lvl"));
          });
       }
 
@@ -91,8 +91,8 @@ public class Class7858 {
          ListNBT var4 = var1.method32147();
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            String var6 = var4.method153(var5).method126("id");
-            int var7 = var4.method153(var5).method122("lvl");
+            String var6 = var4.method153(var5).getString("id");
+            int var7 = var4.method153(var5).getInt("lvl");
             Registry.field16073.method9187(ResourceLocation.method8289(var6)).ifPresent(var2 -> var0.method30078(var2, var7));
          }
       }

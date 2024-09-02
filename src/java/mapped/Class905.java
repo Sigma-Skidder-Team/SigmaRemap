@@ -78,12 +78,12 @@ public class Class905 extends ProjectileEntity {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.field5165 = var1.method122("Steps");
-      this.field5166 = var1.method125("TXD");
-      this.field5167 = var1.method125("TYD");
-      this.field5168 = var1.method125("TZD");
+      this.field5165 = var1.getInt("Steps");
+      this.field5166 = var1.getDouble("TXD");
+      this.field5167 = var1.getDouble("TYD");
+      this.field5168 = var1.getDouble("TZD");
       if (var1.contains("Dir", 99)) {
-         this.field5164 = Direction.byIndex(var1.method122("Dir"));
+         this.field5164 = Direction.byIndex(var1.getInt("Dir"));
       }
 
       if (var1.method106("Target")) {

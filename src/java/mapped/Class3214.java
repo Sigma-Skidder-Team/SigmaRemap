@@ -49,9 +49,9 @@ public class Class3214 extends Class3213 {
                   float var11 = (var2.rand.nextFloat() - 0.5F) * 0.2F;
                   float var12 = (var2.rand.nextFloat() - 0.5F) * 0.2F;
                   float var13 = (var2.rand.nextFloat() - 0.5F) * 0.2F;
-                  double var14 = MathHelper.method37822(var9, (double)var7.getX(), (double)var3.getX()) + (var2.rand.nextDouble() - 0.5) + 0.5;
-                  double var16 = MathHelper.method37822(var9, (double)var7.getY(), (double)var3.getY()) + var2.rand.nextDouble() - 0.5;
-                  double var18 = MathHelper.method37822(var9, (double)var7.getZ(), (double)var3.getZ()) + (var2.rand.nextDouble() - 0.5) + 0.5;
+                  double var14 = MathHelper.lerp(var9, (double)var7.getX(), (double)var3.getX()) + (var2.rand.nextDouble() - 0.5) + 0.5;
+                  double var16 = MathHelper.lerp(var9, (double)var7.getY(), (double)var3.getY()) + var2.rand.nextDouble() - 0.5;
+                  double var18 = MathHelper.lerp(var9, (double)var7.getZ(), (double)var3.getZ()) + (var2.rand.nextDouble() - 0.5) + 0.5;
                   var2.method6746(ParticleTypes.field34090, var14, var16, var18, (double)var11, (double)var12, (double)var13);
                }
             }

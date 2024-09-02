@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.util.world.schematics.SchematicFile;
 import mapped.*;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
@@ -16,7 +17,7 @@ import java.util.List;
 
 public class JelloEdit extends Module {
     private List<Class9238> field23439;
-    private Class8817 field23440;
+    private SchematicFile field23440;
     private BlockPos field23441;
     private BlockPos field23442;
     private Block field23443;
@@ -49,14 +50,14 @@ public class JelloEdit extends Module {
 
     private BlockPos method16070(int var1) {
         return new BlockPos(
-                this.field23441.getX() + this.field23440.method31843().get(var1).method17098().method8553(),
-                this.field23441.getY() + this.field23440.method31843().get(var1).method17098().method8557(),
-                this.field23441.getZ() + this.field23440.method31843().get(var1).method17098().method8561()
+                this.field23441.getX() + this.field23440.getDataPackets().get(var1).getIntegerVector().getRoundedX(),
+                this.field23441.getY() + this.field23440.getDataPackets().get(var1).getIntegerVector().getRoundedY(),
+                this.field23441.getZ() + this.field23440.getDataPackets().get(var1).getIntegerVector().getRoundedZ()
         );
     }
 
     private Block method16071(int var1) {
-        return Block.method11536(this.field23440.method31843().get(var1).method17096()).getBlock();
+        return Block.method11536(this.field23440.getDataPackets().get(var1).method17096()).getBlock();
     }
 
     private BlockPos method16072() {
@@ -76,13 +77,13 @@ public class JelloEdit extends Module {
         }
         File var3 = new File(Client.getInstance().getFile() + "/shematics/" + (String) this.getSettingValueBySettingName("Shematics"));
         if (var3.exists()) {
-            this.field23440 = new Class8817(var3);
-            if (this.field23440.method31836() && this.field23440.method31843().size() > 0) {
-                ColorUtils.method17678(this.field23440.method31843().size() + " blocks loaded from schematic");
+            this.field23440 = new SchematicFile(var3);
+            if (this.field23440.method31836() && this.field23440.getDataPackets().size() > 0) {
+                ColorUtils.method17678(this.field23440.getDataPackets().size() + " blocks loaded from schematic");
                 this.field23441 = new BlockPos(
-                        mc.player.getPosX() + this.field23440.method31842().method8552() * 0.0,
-                        mc.player.getPosY() + this.field23440.method31842().method8556() * 0.0,
-                        mc.player.getPosZ() + this.field23440.method31842().method8560() * 0.0
+                        mc.player.getPosX() + this.field23440.getVectorCore().getX() * 0.0,
+                        mc.player.getPosY() + this.field23440.getVectorCore().getY() * 0.0,
+                        mc.player.getPosZ() + this.field23440.getVectorCore().getZ() * 0.0
                 );
                 this.method16072();
             } else {
@@ -100,11 +101,11 @@ public class JelloEdit extends Module {
         if (this.isEnabled()) {
             GL11.glAlphaFunc(516, 0.0F);
 
-            for (Class5432 var5 : this.field23440.method31843()) {
+            for (DataPacket var5 : this.field23440.getDataPackets()) {
                 BlockPos var6 = new BlockPos(
-                        (double) this.field23441.getX() + var5.method17098().method8552(),
-                        (double) this.field23441.getY() + var5.method17098().method8556(),
-                        (double) this.field23441.getZ() + var5.method17098().method8560()
+                        (double) this.field23441.getX() + var5.getIntegerVector().getX(),
+                        (double) this.field23441.getY() + var5.getIntegerVector().getY(),
+                        (double) this.field23441.getZ() + var5.getIntegerVector().getZ()
                 );
                 if (Class9217.method34536(var6) == Blocks.AIR) {
                     double var7 = (double) var6.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();

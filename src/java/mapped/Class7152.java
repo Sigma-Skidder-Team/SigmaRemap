@@ -6,6 +6,7 @@ import java.util.function.Function;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -46,7 +47,7 @@ public class Class7152 implements Class7151 {
    }
 
    @Override
-   public ITextComponent method22314(Class30 var1) {
+   public ITextComponent method22314(INBT var1) {
       return new TranslationTextComponent(
          "commands.data.block.query", this.field30726.getX(), this.field30726.getY(), this.field30726.getZ(), var1.method82()
       );

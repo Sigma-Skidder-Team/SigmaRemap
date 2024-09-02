@@ -20,12 +20,12 @@ public class Class941 extends Class939 implements Class942, Class935 {
    public int field5315;
    private int field5316;
 
-   public Class941(Class4387<?> var1) {
+   public Class941(TileEntityType<?> var1) {
       super(var1);
    }
 
    public Class941() {
-      this(Class4387.field21422);
+      this(TileEntityType.field21422);
    }
 
    @Override

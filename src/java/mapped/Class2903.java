@@ -6,6 +6,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.ISeedReader;
 
 import java.util.*;
@@ -133,8 +134,8 @@ public class Class2903 extends Class2898<Class4733> {
          if (!var5.field22413.isEmpty()) {
             ArrayList var13 = Lists.newArrayList(var8);
             ArrayList var14 = Lists.newArrayList(var9);
-            var13.sort(Comparator.comparingInt(Class1998::getY));
-            var14.sort(Comparator.comparingInt(Class1998::getY));
+            var13.sort(Comparator.comparingInt(Vector3i::getY));
+            var14.sort(Comparator.comparingInt(Vector3i::getY));
             var5.field22413.forEach(var6 -> var6.method22269(var1, var3, var13, var14, var10, var11));
          }
 

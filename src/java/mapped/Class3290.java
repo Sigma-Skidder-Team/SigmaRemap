@@ -41,9 +41,9 @@ public class Class3290 extends Item {
 
       for (int var7 = 0; var7 < var4.size(); var7++) {
          CompoundNBT var8 = var4.method153(var7);
-         ResourceLocation var9 = ResourceLocation.method8289(var8.method126("id"));
+         ResourceLocation var9 = ResourceLocation.method8289(var8.getString("id"));
          if (var9 != null && var9.equals(var6)) {
-            if (var8.method122("lvl") < var1.field29317) {
+            if (var8.getInt("lvl") < var1.field29317) {
                var8.method101("lvl", (short)var1.field29317);
             }
 

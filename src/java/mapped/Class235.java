@@ -54,7 +54,7 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & Class2824
                CompoundNBT var18 = var13.method32142();
                if (!var18.contains("SkullOwner", 10)) {
                   if (var18.contains("SkullOwner", 8)) {
-                     String var19 = var18.method126("SkullOwner");
+                     String var19 = var18.getString("SkullOwner");
                      if (!StringUtils.isBlank(var19)) {
                         var22 = SkullTileEntity.method4008(new GameProfile((UUID)null, var19));
                         var18.put("SkullOwner", Class8354.method29279(new CompoundNBT(), var22));

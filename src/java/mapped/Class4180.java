@@ -24,7 +24,7 @@ public abstract class Class4180 extends Class4178 {
 
    public Class4180(Class7792 var1, CompoundNBT var2) {
       super(var1, var2);
-      this.field20455 = new BlockPos(var2.method122("TPX"), var2.method122("TPY"), var2.method122("TPZ"));
+      this.field20455 = new BlockPos(var2.getInt("TPX"), var2.getInt("TPY"), var2.getInt("TPZ"));
    }
 
    public void method12943(Class8969 var1, BlockPos var2, Class9463 var3) {
@@ -49,16 +49,16 @@ public abstract class Class4180 extends Class4178 {
       if (this.field20453.method32899(var1, this.field20455, var7, this.field20454, var4, 2)) {
          for (Class8266 var11 : this.field20453.method32893(this.field20455, this.field20454, Blocks.field37113)) {
             if (var11.field35532 != null) {
-               Class104 var12 = Class104.valueOf(var11.field35532.method126("mode"));
+               Class104 var12 = Class104.valueOf(var11.field35532.getString("mode"));
                if (var12 == Class104.field321) {
-                  this.method12944(var11.field35532.method126("metadata"), var11.field35530, var1, var4, var5);
+                  this.method12944(var11.field35532.getString("metadata"), var11.field35530, var1, var4, var5);
                }
             }
          }
 
          for (Class8266 var18 : this.field20453.method32893(this.field20455, this.field20454, Blocks.field37114)) {
             if (var18.field35532 != null) {
-               String var19 = var18.field35532.method126("final_state");
+               String var19 = var18.field35532.getString("final_state");
                Class8268 var13 = new Class8268(new StringReader(var19), false);
                BlockState var14 = Blocks.AIR.method11579();
 

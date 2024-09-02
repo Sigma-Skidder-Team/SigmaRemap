@@ -7,6 +7,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.ISeedReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,10 +36,10 @@ public class Class4184 extends Class4180 {
 
    public Class4184(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33460, var2);
-      this.field20466 = new ResourceLocation(var2.method126("Template"));
-      this.field20467 = Class80.valueOf(var2.method126("Rotation"));
-      this.field20468 = Class2089.valueOf(var2.method126("Mirror"));
-      this.field20469 = Class2219.method8946(var2.method126("VerticalPlacement"));
+      this.field20466 = new ResourceLocation(var2.getString("Template"));
+      this.field20467 = Class80.valueOf(var2.getString("Rotation"));
+      this.field20468 = Class2089.valueOf(var2.getString("Mirror"));
+      this.field20469 = Class2219.method8946(var2.getString("VerticalPlacement"));
       this.field20470 = (Class8299)Class8299.field35673
          .parse(new Dynamic(NBTDynamicOps.INSTANCE, var2.method116("Properties")))
          .getOrThrow(true, field20465::error);
@@ -166,7 +167,7 @@ public class Class4184 extends Class4180 {
 
    private void method12955(Random var1, Class1660 var2) {
       boolean var5 = this.field20469 == Class2219.field14494 || this.field20469 == Class2219.field14496;
-      Class1998 var6 = this.field20444.method38401();
+      Vector3i var6 = this.field20444.method38401();
       int var7 = var6.getX();
       int var8 = var6.getZ();
       float[] var9 = new float[]{1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.9F, 0.9F, 0.8F, 0.7F, 0.6F, 0.4F, 0.2F};

@@ -110,15 +110,15 @@ public class Class1088 extends Class1018 {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      int var4 = var1.method122("HomePosX");
-      int var5 = var1.method122("HomePosY");
-      int var6 = var1.method122("HomePosZ");
+      int var4 = var1.getInt("HomePosX");
+      int var5 = var1.getInt("HomePosY");
+      int var6 = var1.getInt("HomePosZ");
       this.method5041(new BlockPos(var4, var5, var6));
       super.method2723(var1);
       this.method5046(var1.getBoolean("HasEgg"));
-      int var7 = var1.method122("TravelPosX");
-      int var8 = var1.method122("TravelPosY");
-      int var9 = var1.method122("TravelPosZ");
+      int var7 = var1.getInt("TravelPosX");
+      int var8 = var1.getInt("TravelPosY");
+      int var9 = var1.getInt("TravelPosZ");
       this.method5043(new BlockPos(var7, var8, var9));
    }
 

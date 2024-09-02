@@ -71,9 +71,9 @@ public class Class3249 extends Block implements Class3245 {
       Direction var5 = method11675(var1.field35531);
       Direction var6 = method11676(var0.field35531);
       Direction var7 = method11676(var1.field35531);
-      JigsawTileEntity.OrientationType var8 = JigsawTileEntity.OrientationType.method269(var0.field35532.method126("joint")).orElseGet(() -> !var4.method544().method324() ? JigsawTileEntity.OrientationType.ROLLABLE : JigsawTileEntity.OrientationType.ALIGNED);
+      JigsawTileEntity.OrientationType var8 = JigsawTileEntity.OrientationType.method269(var0.field35532.getString("joint")).orElseGet(() -> !var4.method544().method324() ? JigsawTileEntity.OrientationType.ROLLABLE : JigsawTileEntity.OrientationType.ALIGNED);
       boolean var9 = var8 == JigsawTileEntity.OrientationType.ROLLABLE;
-      return var4 == var5.method536() && (var9 || var6 == var7) && var0.field35532.method126("target").equals(var1.field35532.method126("name"));
+      return var4 == var5.method536() && (var9 || var6 == var7) && var0.field35532.getString("target").equals(var1.field35532.getString("name"));
    }
 
    public static Direction method11675(BlockState var0) {

@@ -131,7 +131,7 @@ public class Class938 extends Class919 implements Class937 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.field5300 = var1.method122("TransferCooldown");
+      this.field5300 = var1.getInt("TransferCooldown");
       this.field5299 = !var1.contains("Enabled") ? true : var1.getBoolean("Enabled");
    }
 

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -8,7 +9,7 @@ import java.io.DataOutput;
 import java.io.IOException;
 import java.util.Objects;
 
-public class StringNBT implements Class30 {
+public class StringNBT implements INBT {
    public static final Class7052<StringNBT> field84 = new Class7062();
    private static final StringNBT field85 = new StringNBT("");
    private final String field86;
@@ -23,12 +24,12 @@ public class StringNBT implements Class30 {
    }
 
    @Override
-   public void method73(DataOutput var1) throws IOException {
+   public void write(DataOutput var1) throws IOException {
       var1.writeUTF(this.field86);
    }
 
    @Override
-   public byte method74() {
+   public byte getId() {
       return 8;
    }
 
@@ -57,7 +58,7 @@ public class StringNBT implements Class30 {
    }
 
    @Override
-   public String method81() {
+   public String getString() {
       return this.field86;
    }
 

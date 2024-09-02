@@ -5,6 +5,7 @@ import java.util.UUID;
 import java.util.function.IntPredicate;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.util.math.vector.Vector3i;
 import org.apache.commons.lang3.math.NumberUtils;
 
 public class MathHelper {
@@ -120,7 +121,7 @@ public class MathHelper {
 
    public static double method37779(double var0, double var2, double var4) {
       if (!(var4 < 0.0)) {
-         return !(var4 > 1.0) ? method37822(var4, var0, var2) : var2;
+         return !(var4 > 1.0) ? lerp(var4, var0, var2) : var2;
       } else {
          return var0;
       }
@@ -308,7 +309,7 @@ public class MathHelper {
       return var0 - (double)method37770(var0);
    }
 
-   public static long method37809(Class1998 var0) {
+   public static long method37809(Vector3i var0) {
       return method37810(var0.getX(), var0.getY(), var0.getZ());
    }
 
@@ -484,18 +485,18 @@ public class MathHelper {
       return var1 + var0 * (var2 - var1);
    }
 
-   public static double method37822(double var0, double var2, double var4) {
+   public static double lerp(double var0, double var2, double var4) {
       return var2 + var0 * (var4 - var2);
    }
 
    public static double method37823(double var0, double var2, double var4, double var6, double var8, double var10) {
-      return method37822(var2, method37822(var0, var4, var6), method37822(var0, var8, var10));
+      return lerp(var2, lerp(var0, var4, var6), lerp(var0, var8, var10));
    }
 
    public static double method37824(
       double var0, double var2, double var4, double var6, double var8, double var10, double var12, double var14, double var16, double var18, double var20
    ) {
-      return method37822(var4, method37823(var0, var2, var6, var8, var10, var12), method37823(var0, var2, var14, var16, var18, var20));
+      return lerp(var4, method37823(var0, var2, var6, var8, var10, var12), method37823(var0, var2, var14, var16, var18, var20));
    }
 
    public static double method37825(double var0) {

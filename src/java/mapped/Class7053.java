@@ -1,10 +1,13 @@
 package mapped;
 
+import net.minecraft.nbt.IntArrayNBT;
+import net.minecraft.nbt.NBTSizeTracker;
+
 import java.io.DataInput;
 import java.io.IOException;
 
-public final class Class7053 implements Class7052<Class28> {
-   public Class28 method21978(DataInput var1, int var2, Class8465 var3) throws IOException {
+public final class Class7053 implements Class7052<IntArrayNBT> {
+   public IntArrayNBT readNBT(DataInput var1, int var2, NBTSizeTracker var3) throws IOException {
       var3.method29769(192L);
       int var6 = var1.readInt();
       var3.method29769(32L * (long)var6);
@@ -14,7 +17,7 @@ public final class Class7053 implements Class7052<Class28> {
          var7[var8] = var1.readInt();
       }
 
-      return new Class28(var7);
+      return new IntArrayNBT(var7);
    }
 
    @Override

@@ -1,59 +1,59 @@
 package net.minecraft.network.play.client;
 
-import mapped.Class2037;
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 
 public class CUpdateCommandBlockPacket implements Packet<IServerPlayNetHandler> {
-   private BlockPos field24738;
-   private String field24739;
-   private boolean field24740;
-   private boolean field24741;
-   private boolean field24742;
-   private Class2037 field24743;
+   private BlockPos pos;
+   private String command;
+   private boolean trackOutput;
+   private boolean conditional;
+   private boolean auto;
+   private CommandBlockTileEntity.Mode mode;
 
    public CUpdateCommandBlockPacket() {
    }
 
-   public CUpdateCommandBlockPacket(BlockPos var1, String var2, Class2037 var3, boolean var4, boolean var5, boolean var6) {
-      this.field24738 = var1;
-      this.field24739 = var2;
-      this.field24740 = var4;
-      this.field24741 = var5;
-      this.field24742 = var6;
-      this.field24743 = var3;
+   public CUpdateCommandBlockPacket(BlockPos var1, String var2, CommandBlockTileEntity.Mode var3, boolean var4, boolean var5, boolean var6) {
+      this.pos = var1;
+      this.command = var2;
+      this.trackOutput = var4;
+      this.conditional = var5;
+      this.auto = var6;
+      this.mode = var3;
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24738 = var1.readBlockPos();
-      this.field24739 = var1.readString(32767);
-      this.field24743 = var1.readEnumValue(Class2037.class);
+      this.pos = var1.readBlockPos();
+      this.command = var1.readString(32767);
+      this.mode = var1.readEnumValue(CommandBlockTileEntity.Mode.class);
       int i = var1.readByte();
-      this.field24740  =  (i & 1) != 0;
-      this.field24741  = (i & 2) != 0;
-      this.field24742  = (i & 4) != 0;
+      this.trackOutput =  (i & 1) != 0;
+      this.conditional = (i & 2) != 0;
+      this.auto = (i & 4) != 0;
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeBlockPos(this.field24738);
-      var1.writeString(this.field24739);
-      var1.writeEnumValue(this.field24743);
+      var1.writeBlockPos(this.pos);
+      var1.writeString(this.command);
+      var1.writeEnumValue(this.mode);
       byte var4 = 0;
-      if (this.field24740) {
+      if (this.trackOutput) {
          var4 |= 1;
       }
 
-      if (this.field24741) {
+      if (this.conditional) {
          var4 |= 2;
       }
 
-      if (this.field24742) {
+      if (this.auto) {
          var4 |= 4;
       }
 
@@ -64,27 +64,27 @@ public class CUpdateCommandBlockPacket implements Packet<IServerPlayNetHandler> 
       var1.processUpdateCommandBlock(this);
    }
 
-   public BlockPos method17516() {
-      return this.field24738;
+   public BlockPos getPos() {
+      return this.pos;
    }
 
-   public String method17517() {
-      return this.field24739;
+   public String getCommand() {
+      return this.command;
    }
 
-   public boolean method17518() {
-      return this.field24740;
+   public boolean shouldTrackOutput() {
+      return this.trackOutput;
    }
 
-   public boolean method17519() {
-      return this.field24741;
+   public boolean isConditional() {
+      return this.conditional;
    }
 
-   public boolean method17520() {
-      return this.field24742;
+   public boolean isAuto() {
+      return this.auto;
    }
 
-   public Class2037 method17521() {
-      return this.field24743;
+   public CommandBlockTileEntity.Mode getMode() {
+      return this.mode;
    }
 }

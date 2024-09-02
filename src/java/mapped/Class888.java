@@ -38,7 +38,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
       byte var11 = 1;
       if (!var8.isEmpty() && var8.method32141()) {
          this.dataManager.method35446(field5120, var8.copy());
-         var11 += var8.method32144("Fireworks").method120("Flight");
+         var11 += var8.method32144("Fireworks").getByte("Flight");
       }
 
       this.method3435(this.rand.nextGaussian() * 0.001, 0.05, this.rand.nextGaussian() * 0.001);
@@ -279,8 +279,8 @@ public class Class888 extends ProjectileEntity implements Class889 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.field5123 = var1.method122("Life");
-      this.field5124 = var1.method122("LifeTime");
+      this.field5123 = var1.getInt("Life");
+      this.field5124 = var1.getInt("LifeTime");
       ItemStack var4 = ItemStack.method32104(var1.getCompound("FireworksItem"));
       if (!var4.isEmpty()) {
          this.dataManager.method35446(field5120, var4);

@@ -19,7 +19,7 @@ public class Class948 extends TileEntity implements Class946, Class949 {
    private int field5337;
 
    public Class948() {
-      super(Class4387.field21449);
+      super(TileEntityType.field21449);
    }
 
    public ItemStack method3805() {
@@ -106,7 +106,7 @@ public class Class948 extends TileEntity implements Class946, Class949 {
       }
 
       this.field5337 = Class3285.method11819(this.field5335);
-      this.field5336 = MathHelper.method37775(var2.method122("Page"), 0, this.field5337 - 1);
+      this.field5336 = MathHelper.method37775(var2.getInt("Page"), 0, this.field5337 - 1);
    }
 
    @Override

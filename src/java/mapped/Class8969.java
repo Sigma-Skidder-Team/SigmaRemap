@@ -663,7 +663,7 @@ public class Class8969 {
          CompoundNBT var10 = var2.method153(var9);
          ListNBT var11 = var10.method131("pos", 3);
          BlockPos var12 = new BlockPos(var11.method156(0), var11.method156(1), var11.method156(2));
-         BlockState var13 = var5.method9282(var10.method122("state"));
+         BlockState var13 = var5.method9282(var10.getInt("state"));
          CompoundNBT var14;
          if (!var10.contains("nbt")) {
             var14 = null;

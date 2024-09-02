@@ -42,7 +42,7 @@ public class Class1648 implements AutoCloseable {
    }
 
    public static int method6530(CompoundNBT var0) {
-      return !var0.contains("DataVersion", 99) ? -1 : var0.method122("DataVersion");
+      return !var0.contains("DataVersion", 99) ? -1 : var0.getInt("DataVersion");
    }
 
    @Nullable

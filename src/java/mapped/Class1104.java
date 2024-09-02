@@ -69,7 +69,7 @@ public class Class1104 extends Class1009 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.field6063 = var1.method122("Lifetime");
+      this.field6063 = var1.getInt("Lifetime");
       this.field6064 = var1.getBoolean("PlayerSpawned");
    }
 

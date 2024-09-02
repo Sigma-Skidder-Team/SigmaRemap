@@ -1,11 +1,13 @@
-package mapped;
+package net.minecraft.nbt;
 
-public class Class8465 {
-   public static final Class8465 field36284 = new Class8466(0L);
+import mapped.Class8466;
+
+public class NBTSizeTracker {
+   public static final NBTSizeTracker INFINITE = new Class8466(0L);
    private final long field36285;
    private long field36286;
 
-   public Class8465(long var1) {
+   public NBTSizeTracker(long var1) {
       this.field36285 = var1;
    }
 

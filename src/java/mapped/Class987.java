@@ -6,7 +6,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class987 extends Class924 {
    public Class987() {
-      super(Class4387.field21448, Class7207.field30937);
+      super(TileEntityType.field21448, Class7207.field30937);
    }
 
    @Override

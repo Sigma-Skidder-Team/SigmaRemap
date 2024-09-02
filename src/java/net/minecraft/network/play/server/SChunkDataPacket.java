@@ -6,6 +6,7 @@ import io.netty.buffer.Unpooled;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.LongArrayNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
@@ -41,7 +42,7 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
 
       for (Entry var7 : var1.method7068()) {
          if (((Class101)var7.getKey()).method284()) {
-            this.field24517.put(((Class101)var7.getKey()).method283(), new Class42(((Class7527)var7.getValue()).method24583()));
+            this.field24517.put(((Class101)var7.getKey()).method283(), new LongArrayNBT(((Class7527)var7.getValue()).method24583()));
          }
       }
 

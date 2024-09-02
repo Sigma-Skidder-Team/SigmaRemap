@@ -32,7 +32,7 @@ public class FogRenderer {
             BiomeManager var14 = var2.getBiomeManager();
             Vector3d var15 = var0.method37504().method11337(2.0, 2.0, 2.0).method11344(0.25);
             Vector3d var16 = Class8430.method29626(
-               var15, (var3x, var4x, var5) -> var2.method6830().method19299(Vector3d.method11327(var14.method20326(var3x, var4x, var5).method32509()), var13)
+               var15, (var3x, var4x, var5) -> var2.method6830().method19299(Vector3d.unpack(var14.method20326(var3x, var4x, var5).method32509()), var13)
             );
             var16 = Class9680.method37876(var16, var2, var0.method37509(), var1);
             field40348 = (float)var16.method11320();

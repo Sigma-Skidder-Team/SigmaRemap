@@ -153,9 +153,9 @@ public class ExperienceOrbEntity extends Entity {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      this.field5558 = var1.method121("Health");
-      this.field5556 = var1.method121("Age");
-      this.field5559 = var1.method121("Value");
+      this.field5558 = var1.getShort("Health");
+      this.field5556 = var1.getShort("Age");
+      this.field5559 = var1.getShort("Value");
    }
 
    @Override

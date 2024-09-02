@@ -37,9 +37,9 @@ public class ActiveRenderInfo {
       this.field45017 = var4;
       this.method37501(var2.method3136(var5), var2.method3282(var5));
       this.method37502(
-         MathHelper.method37822((double)var5, var2.prevPosX, var2.getPosX()),
-         MathHelper.method37822((double)var5, var2.prevPosY, var2.getPosY()) + (double) MathHelper.lerp(var5, this.field45019, this.field45018),
-         MathHelper.method37822((double)var5, var2.prevPosZ, var2.getPosZ())
+         MathHelper.lerp((double)var5, var2.prevPosX, var2.getPosX()),
+         MathHelper.lerp((double)var5, var2.prevPosY, var2.getPosY()) + (double) MathHelper.lerp(var5, this.field45019, this.field45018),
+         MathHelper.lerp((double)var5, var2.prevPosZ, var2.getPosZ())
       );
       if (!var3) {
          if (var2 instanceof LivingEntity && ((LivingEntity)var2).isSleeping()) {

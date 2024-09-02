@@ -15,12 +15,12 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
          if (var13.getItem() != Items.field38120) {
             var1.push();
             var1.translate(0.0, 0.0, 0.125);
-            double var14 = MathHelper.method37822((double)var7, var4.field4911, var4.field4914)
-               - MathHelper.method37822((double)var7, var4.prevPosX, var4.getPosX());
-            double var16 = MathHelper.method37822((double)var7, var4.field4912, var4.field4915)
-               - MathHelper.method37822((double)var7, var4.prevPosY, var4.getPosY());
-            double var18 = MathHelper.method37822((double)var7, var4.field4913, var4.field4916)
-               - MathHelper.method37822((double)var7, var4.prevPosZ, var4.getPosZ());
+            double var14 = MathHelper.lerp((double)var7, var4.field4911, var4.field4914)
+               - MathHelper.lerp((double)var7, var4.prevPosX, var4.getPosX());
+            double var16 = MathHelper.lerp((double)var7, var4.field4912, var4.field4915)
+               - MathHelper.lerp((double)var7, var4.prevPosY, var4.getPosY());
+            double var18 = MathHelper.lerp((double)var7, var4.field4913, var4.field4916)
+               - MathHelper.lerp((double)var7, var4.prevPosZ, var4.getPosZ());
             float var20 = var4.field4966 + (var4.field4965 - var4.field4966);
             double var21 = (double) MathHelper.sin(var20 * (float) (Math.PI / 180.0));
             double var23 = (double)(-MathHelper.cos(var20 * (float) (Math.PI / 180.0)));

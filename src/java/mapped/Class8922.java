@@ -34,12 +34,12 @@ public class Class8922 {
          for (int var5 = 0; var5 < this.field40391.length; var5++) {
             String var6 = String.valueOf(var5);
             if (var4.contains(var6, 11)) {
-               this.field40391[var5] = var4.method128(var6);
+               this.field40391[var5] = var4.getIntArray(var6);
             }
          }
       }
 
-      int var9 = var1.method122("Sides");
+      int var9 = var1.getInt("Sides");
 
       for (Class1976 var8 : Class1976.values()) {
          if ((var9 & 1 << var8.ordinal()) != 0) {

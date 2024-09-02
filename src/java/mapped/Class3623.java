@@ -153,12 +153,12 @@ public class Class3623 extends Class3624 {
    }
 
    public static Class3623 method12274(CompoundNBT var0, ResourceLocation var1) {
-      Class3623 var4 = new Class3623(var1, ITextComponent$Serializer.func_240643_a_(var0.method126("Name")));
+      Class3623 var4 = new Class3623(var1, ITextComponent$Serializer.func_240643_a_(var0.getString("Name")));
       var4.method12287(var0.getBoolean("Visible"));
-      var4.method12269(var0.method122("Value"));
-      var4.method12270(var0.method122("Max"));
-      var4.method12279(Class2303.method9071(var0.method126("Color")));
-      var4.method12280(Class2300.method9068(var0.method126("Overlay")));
+      var4.method12269(var0.getInt("Value"));
+      var4.method12270(var0.getInt("Max"));
+      var4.method12279(Class2303.method9071(var0.getString("Color")));
+      var4.method12280(Class2300.method9068(var0.getString("Overlay")));
       var4.method12281(var0.getBoolean("DarkenScreen"));
       var4.method12282(var0.getBoolean("PlayBossMusic"));
       var4.method12283(var0.getBoolean("CreateWorldFog"));

@@ -1,13 +1,15 @@
 package mapped;
 
+import net.minecraft.advancements.Advancement;
+
 import java.util.List;
 
 public class Class7604 implements Class7601 {
    private static String[] field32643;
-   private final Class7952 field32644;
+   private final Advancement field32644;
    private boolean field32645;
 
-   public Class7604(Class7952 var1) {
+   public Class7604(Advancement var1) {
       this.field32644 = var1;
    }
 

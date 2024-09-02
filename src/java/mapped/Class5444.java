@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.ISeedReader;
 
 import java.util.Iterator;
@@ -43,7 +44,7 @@ public abstract class Class5444<C extends Class4698> {
       synchronized (this.field24196) {
          if (!this.field24196.isEmpty()) {
             Class9764 var10 = this.field24196.get(0).field20444;
-            Class1998 var11 = var10.method38401();
+            Vector3i var11 = var10.method38401();
             BlockPos var12 = new BlockPos(var11.getX(), var10.field45679, var11.getZ());
             Iterator var13 = this.field24196.iterator();
 

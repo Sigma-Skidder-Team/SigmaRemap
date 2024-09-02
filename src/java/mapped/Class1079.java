@@ -74,7 +74,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method5013(var1.method122("Invul"));
+      this.method5013(var1.getInt("Invul"));
       if (this.method3381()) {
          this.field5935.method12284(this.getDisplayName());
       }

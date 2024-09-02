@@ -426,7 +426,7 @@ public abstract class World implements Class1660, AutoCloseable {
             BlockPos var6 = var5.getPos();
             if (this.getChunkProvider().method7353(var6) && this.method6810().method24523(var6)) {
                try {
-                  var3.method22504(() -> String.valueOf(Class4387.method13793(var5.method3786())));
+                  var3.method22504(() -> String.valueOf(TileEntityType.method13793(var5.method3786())));
                   if (var5.method3786().method13796(this.getBlockState(var6).getBlock())) {
                      ((Class935)var5).method3647();
                   } else {

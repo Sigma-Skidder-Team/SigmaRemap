@@ -47,7 +47,7 @@ public class Class4591 extends Class4588 {
          } else {
             for (int var5 = 0; var5 < this.field22075.size(); var5++) {
                CompoundNBT var6 = this.field22075.method153(var5);
-               if (Class2119.method8802(var6.method120("Type")) == Class2119.field13808) {
+               if (Class2119.method8802(var6.getByte("Type")) == Class2119.field13808) {
                   var4 = true;
                   break;
                }
@@ -68,11 +68,11 @@ public class Class4591 extends Class4588 {
       if (this.field22073 % 2 == 0 && this.field22075 != null && this.field22073 / 2 < this.field22075.size()) {
          int var15 = this.field22073 / 2;
          CompoundNBT var17 = this.field22075.method153(var15);
-         Class2119 var20 = Class2119.method8802(var17.method120("Type"));
+         Class2119 var20 = Class2119.method8802(var17.getByte("Type"));
          boolean var21 = var17.getBoolean("Trail");
          boolean var7 = var17.getBoolean("Flicker");
-         int[] var8 = var17.method128("Colors");
-         int[] var9 = var17.method128("FadeColors");
+         int[] var8 = var17.getIntArray("Colors");
+         int[] var9 = var17.getIntArray("FadeColors");
          if (var8.length == 0) {
             var8 = new int[]{Class112.field401.method313()};
          }
@@ -211,8 +211,8 @@ public class Class4591 extends Class4588 {
             double var28 = var3[var25][1];
 
             for (double var30 = 0.25; var30 <= 1.0; var30 += 0.25) {
-               double var32 = MathHelper.method37822(var30, var21, var26) * var1;
-               double var34 = MathHelper.method37822(var30, var23, var28) * var1;
+               double var32 = MathHelper.lerp(var30, var21, var26) * var1;
+               double var34 = MathHelper.lerp(var30, var23, var28) * var1;
                double var36 = var32 * Math.sin(var19);
                var32 *= Math.cos(var19);
 

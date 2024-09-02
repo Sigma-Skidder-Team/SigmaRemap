@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.play.client.*;
+import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -526,12 +527,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method2890(Class911 var1) {
+   public void method2890(CommandBlockLogic var1) {
       this.field6132.displayGuiScreen(new Class1327(var1));
    }
 
    @Override
-   public void method2770(Class969 var1) {
+   public void method2770(CommandBlockTileEntity var1) {
       this.field6132.displayGuiScreen(new Class1326(var1));
    }
 

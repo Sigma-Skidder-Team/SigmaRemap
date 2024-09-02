@@ -60,9 +60,9 @@ public class Class1064 extends Class1066 implements Class1022 {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      this.method4885(var1.method122("Strength"));
+      this.method4885(var1.getInt("Strength"));
       super.method2723(var1);
-      this.method4890(var1.method122("Variant"));
+      this.method4890(var1.getInt("Variant"));
       if (var1.contains("DecorItem", 10)) {
          this.field5890.method3621(1, ItemStack.method32104(var1.getCompound("DecorItem")));
       }

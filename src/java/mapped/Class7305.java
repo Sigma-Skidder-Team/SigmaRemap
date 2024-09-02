@@ -5,6 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import org.apache.commons.lang3.StringEscapeUtils;
 
 public class Class7305 {
@@ -80,27 +81,27 @@ public class Class7305 {
 
          for (int var5 = 0; var5 < this.field31301.length; var5++) {
             String var6 = this.field31301[var5];
-            var4 = method23082((Class30)var4, var6);
+            var4 = method23082((INBT)var4, var6);
             if (var4 == null) {
                return false;
             }
          }
 
          if (!this.field31302.equals("*")) {
-            Class30 var7 = method23082((Class30)var4, this.field31302);
+            INBT var7 = method23082((INBT)var4, this.field31302);
             return var7 != null ? this.method23083(var7) : false;
          } else {
-            return this.method23081((Class30)var4);
+            return this.method23081((INBT)var4);
          }
       }
    }
 
-   private boolean method23081(Class30 var1) {
+   private boolean method23081(INBT var1) {
       if (var1 instanceof CompoundNBT) {
          CompoundNBT var4 = (CompoundNBT)var1;
 
          for (String var6 : var4.method97()) {
-            Class30 var7 = var4.method116(var6);
+            INBT var7 = var4.method116(var6);
             if (this.method23083(var7)) {
                return true;
             }
@@ -112,7 +113,7 @@ public class Class7305 {
          int var9 = var8.size();
 
          for (int var10 = 0; var10 < var9; var10++) {
-            Class30 var11 = var8.get(var10);
+            INBT var11 = var8.get(var10);
             if (this.method23083(var11)) {
                return true;
             }
@@ -122,7 +123,7 @@ public class Class7305 {
       return false;
    }
 
-   private static Class30 method23082(Class30 var0, String var1) {
+   private static INBT method23082(INBT var0, String var1) {
       if (var0 instanceof CompoundNBT) {
          CompoundNBT var6 = (CompoundNBT)var0;
          return var6.method116(var1);
@@ -139,7 +140,7 @@ public class Class7305 {
       }
    }
 
-   public boolean method23083(Class30 var1) {
+   public boolean method23083(INBT var1) {
       if (var1 != null) {
          String var4 = method23087(var1, this.field31306);
          return this.method23084(var4);
@@ -177,7 +178,7 @@ public class Class7305 {
       return var1.matches(var2);
    }
 
-   private static String method23087(Class30 var0, int var1) {
+   private static String method23087(INBT var0, int var1) {
       if (var0 != null) {
          if (!(var0 instanceof StringNBT)) {
             if (!(var0 instanceof Class36)) {
@@ -189,31 +190,31 @@ public class Class7305 {
                               return var0.toString();
                            } else {
                               Class34 var12 = (Class34)var0;
-                              return Double.toString(var12.method87());
+                              return Double.toString(var12.getDouble());
                            }
                         } else {
                            Class32 var11 = (Class32)var0;
-                           return Float.toString(var11.method88());
+                           return Float.toString(var11.getFloat());
                         }
                      } else {
                         Class35 var10 = (Class35)var0;
-                        return Long.toString(var10.method83());
+                        return Long.toString(var10.getLong());
                      }
                   } else {
                      Class37 var9 = (Class37)var0;
-                     return Short.toString(var9.method85());
+                     return Short.toString(var9.getShort());
                   }
                } else {
                   Class33 var8 = (Class33)var0;
-                  return Byte.toString(var8.method86());
+                  return Byte.toString(var8.getByte());
                }
             } else {
                Class36 var7 = (Class36)var0;
-               return var1 != 1 ? Integer.toString(var7.method84()) : "#" + Class9402.method35758(Integer.toHexString(var7.method84()), 6, '0');
+               return var1 != 1 ? Integer.toString(var7.getInt()) : "#" + Class9402.method35758(Integer.toHexString(var7.getInt()), 6, '0');
             }
          } else {
             StringNBT var4 = (StringNBT)var0;
-            String var5 = var4.method81();
+            String var5 = var4.getString();
             if (var5.startsWith("{")) {
                Matcher var6 = field31320.matcher(var5);
                if (var6.matches()) {

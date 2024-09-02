@@ -1,8 +1,10 @@
 package mapped;
 
 import com.google.common.base.MoreObjects;
+import net.minecraft.nbt.IntArrayNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3i;
 
 public class Class9764 {
    public int field45678;
@@ -71,7 +73,7 @@ public class Class9764 {
       this.field45683 = var6;
    }
 
-   public Class9764(Class1998 var1, Class1998 var2) {
+   public Class9764(Vector3i var1, Vector3i var2) {
       this.field45678 = Math.min(var1.getX(), var2.getX());
       this.field45679 = Math.min(var1.getY(), var2.getY());
       this.field45680 = Math.min(var1.getZ(), var2.getZ());
@@ -126,11 +128,11 @@ public class Class9764 {
       );
    }
 
-   public void method38395(Class1998 var1) {
+   public void method38395(Vector3i var1) {
       this.method38393(var1.getX(), var1.getY(), var1.getZ());
    }
 
-   public boolean method38396(Class1998 var1) {
+   public boolean method38396(Vector3i var1) {
       return var1.getX() >= this.field45678
          && var1.getX() <= this.field45681
          && var1.getZ() >= this.field45680
@@ -139,8 +141,8 @@ public class Class9764 {
          && var1.getY() <= this.field45682;
    }
 
-   public Class1998 method38397() {
-      return new Class1998(this.field45681 - this.field45678, this.field45682 - this.field45679, this.field45683 - this.field45680);
+   public Vector3i method38397() {
+      return new Vector3i(this.field45681 - this.field45678, this.field45682 - this.field45679, this.field45683 - this.field45680);
    }
 
    public int method38398() {
@@ -155,7 +157,7 @@ public class Class9764 {
       return this.field45683 - this.field45680 + 1;
    }
 
-   public Class1998 method38401() {
+   public Vector3i method38401() {
       return new BlockPos(
          this.field45678 + (this.field45681 - this.field45678 + 1) / 2,
          this.field45679 + (this.field45682 - this.field45679 + 1) / 2,
@@ -175,7 +177,7 @@ public class Class9764 {
          .toString();
    }
 
-   public Class28 method38402() {
-      return new Class28(new int[]{this.field45678, this.field45679, this.field45680, this.field45681, this.field45682, this.field45683});
+   public IntArrayNBT method38402() {
+      return new IntArrayNBT(new int[]{this.field45678, this.field45679, this.field45680, this.field45681, this.field45682, this.field45683});
    }
 }

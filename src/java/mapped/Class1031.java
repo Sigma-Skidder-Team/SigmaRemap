@@ -26,7 +26,7 @@ public abstract class Class1031 extends Class1025 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.field5734 = var1.method122("SpellTicks");
+      this.field5734 = var1.getInt("SpellTicks");
    }
 
    @Override

@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,7 +26,7 @@ public class Class8716 {
       try {
          CompoundNBT var4 = var1.method3294(new CompoundNBT());
          File var5 = File.createTempFile(var1.method3376() + "-", ".dat", this.field39330);
-         Class8799.method31767(var4, var5);
+         CompressedStreamTools.writeCompressed(var4, var5);
          File var6 = new File(this.field39330, var1.method3376() + ".dat");
          File var7 = new File(this.field39330, var1.method3376() + ".dat_old");
          Util.method38526(var6, var5, var7);
@@ -41,14 +42,14 @@ public class Class8716 {
       try {
          File var5 = new File(this.field39330, var1.method3376() + ".dat");
          if (var5.exists() && var5.isFile()) {
-            var4 = Class8799.method31765(var5);
+            var4 = CompressedStreamTools.readCompressed(var5);
          }
       } catch (Exception var6) {
          field39329.warn("Failed to load player data for {}", var1.getName().getString());
       }
 
       if (var4 != null) {
-         int var7 = var4.contains("DataVersion", 3) ? var4.method122("DataVersion") : -1;
+         int var7 = var4.contains("DataVersion", 3) ? var4.getInt("DataVersion") : -1;
          var1.method3295(Class8354.method29289(this.field39331, Class2108.field13749, var4, var7));
       }
 

@@ -52,7 +52,7 @@ public class Class9065 {
          new ResourceLocation("cooldown"),
          (var0, var1, var2) -> !(var2 instanceof PlayerEntity) ? 0.0F : ((PlayerEntity)var2).method2976().method19636(var0.getItem(), 0.0F)
       );
-      method33750(new ResourceLocation("custom_model_data"), (var0, var1, var2) -> !var0.method32141() ? 0.0F : (float)var0.method32142().method122("CustomModelData"));
+      method33750(new ResourceLocation("custom_model_data"), (var0, var1, var2) -> !var0.method32141() ? 0.0F : (float)var0.method32142().getInt("CustomModelData"));
       method33751(Items.BOW, new ResourceLocation("pull"), (var0, var1, var2) -> {
          if (var2 != null) {
             return var2.method3158() == var0 ? (float)(var0.method32137() - var2.method3159()) / 20.0F : 0.0F;

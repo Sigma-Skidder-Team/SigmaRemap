@@ -257,7 +257,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method5085(var1.getBoolean("IsImmuneToZombification"));
-      this.field5978 = var1.method122("TimeInOverworld");
+      this.field5978 = var1.getInt("TimeInOverworld");
       this.method5088(var1.getBoolean("CannotBeHunted"));
    }
 

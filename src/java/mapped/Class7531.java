@@ -130,8 +130,8 @@ public class Class7531 extends Class7530 {
 
    @Override
    public void method24591(CompoundNBT var1) {
-      this.field32334 = var1.method122("NextAvailableID");
-      this.field32335 = var1.method122("Tick");
+      this.field32334 = var1.getInt("NextAvailableID");
+      this.field32335 = var1.getInt("Tick");
       ListNBT var4 = var1.method131("Raids", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {

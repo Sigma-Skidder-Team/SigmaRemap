@@ -155,7 +155,7 @@ public class Class993 extends AbstractMinecartEntity {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.contains("TNTFuse", 99)) {
-         this.field5480 = var1.method122("TNTFuse");
+         this.field5480 = var1.getInt("TNTFuse");
       }
    }
 

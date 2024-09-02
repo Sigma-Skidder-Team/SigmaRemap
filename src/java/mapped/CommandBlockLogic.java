@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-public abstract class Class911 implements ICommandSource {
+public abstract class CommandBlockLogic implements ICommandSource {
    private static final SimpleDateFormat field5191 = new SimpleDateFormat("HH:mm:ss");
    private static final ITextComponent field5192 = new StringTextComponent("@");
    private long field5193 = -1L;
@@ -55,10 +55,10 @@ public abstract class Class911 implements ICommandSource {
    }
 
    public void method3561(CompoundNBT var1) {
-      this.field5198 = var1.method126("Command");
-      this.field5195 = var1.method122("SuccessCount");
+      this.field5198 = var1.getString("Command");
+      this.field5195 = var1.getInt("SuccessCount");
       if (var1.contains("CustomName", 8)) {
-         this.method3566(ITextComponent$Serializer.func_240643_a_(var1.method126("CustomName")));
+         this.method3566(ITextComponent$Serializer.func_240643_a_(var1.getString("CustomName")));
       }
 
       if (var1.contains("TrackOutput", 1)) {
@@ -67,7 +67,7 @@ public abstract class Class911 implements ICommandSource {
 
       if (var1.contains("LastOutput", 8) && this.field5196) {
          try {
-            this.field5197 = ITextComponent$Serializer.func_240643_a_(var1.method126("LastOutput"));
+            this.field5197 = ITextComponent$Serializer.func_240643_a_(var1.getString("LastOutput"));
          } catch (Throwable var5) {
             this.field5197 = new StringTextComponent(var5.getMessage());
          }
@@ -80,7 +80,7 @@ public abstract class Class911 implements ICommandSource {
       }
 
       if (this.field5194 && var1.contains("LastExecution")) {
-         this.field5193 = var1.method123("LastExecution");
+         this.field5193 = var1.getLong("LastExecution");
       } else {
          this.field5193 = -1L;
       }

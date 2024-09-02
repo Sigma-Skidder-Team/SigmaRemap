@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3i;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -91,7 +92,7 @@ public interface Class5422 extends Class5421 {
       int[] var13 = !this.method17024() ? var2.method30511() : var2.method30517();
       this.method17042(var2.method30516());
       boolean var14 = Class7551.method24696();
-      Class1998 var15 = var2.method30514().method556();
+      Vector3i var15 = var2.method30514().method556();
       float var16 = (float)var15.getX();
       float var17 = (float)var15.getY();
       float var18 = (float)var15.getZ();

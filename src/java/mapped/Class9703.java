@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.network.play.client.CEntityActionPacket;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
+import net.minecraft.tileentity.CommandBlockTileEntity;
 
 // $VF: synthetic class
 public class Class9703 {
@@ -106,20 +107,20 @@ public class Class9703 {
       } catch (NoSuchFieldError var6) {
       }
 
-      field45356 = new int[Class2037.values().length];
+      field45356 = new int[CommandBlockTileEntity.Mode.values().length];
 
       try {
-         field45356[Class2037.field13323.ordinal()] = 1;
+         field45356[CommandBlockTileEntity.Mode.field13323.ordinal()] = 1;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field45356[Class2037.field13324.ordinal()] = 2;
+         field45356[CommandBlockTileEntity.Mode.field13324.ordinal()] = 2;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field45356[Class2037.field13325.ordinal()] = 3;
+         field45356[CommandBlockTileEntity.Mode.field13325.ordinal()] = 3;
       } catch (NoSuchFieldError var3) {
       }
    }

@@ -24,7 +24,7 @@ public class Class955 extends TileEntity implements Class935 {
    private int field5369;
 
    public Class955() {
-      super(Class4387.field21430);
+      super(TileEntityType.field21430);
    }
 
    public Class955(BlockState var1, Direction var2, boolean var3, boolean var4) {
@@ -299,7 +299,7 @@ public class Class955 extends TileEntity implements Class935 {
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.field5361 = Class8354.method29285(var2.getCompound("blockState"));
-      this.field5362 = Direction.byIndex(var2.method122("facing"));
+      this.field5362 = Direction.byIndex(var2.getInt("facing"));
       this.field5366 = var2.getFloat("progress");
       this.field5367 = this.field5366;
       this.field5363 = var2.getBoolean("extending");

@@ -12,7 +12,7 @@ public class Class9324 {
    private static String[] field43282;
 
    public static <S extends TileEntity> Class7995<S> method35243(
-      Class4387<S> var0,
+      TileEntityType<S> var0,
       Function<BlockState, Class1895> var1,
       Function<BlockState, Direction> var2,
       Class8553 var3,

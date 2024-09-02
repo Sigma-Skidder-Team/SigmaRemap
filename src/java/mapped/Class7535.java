@@ -43,19 +43,19 @@ public class Class7535 extends Class7530 {
    public void method24630(ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          CompoundNBT var5 = var1.method153(var4);
-         String var6 = var5.method126("Name");
+         String var6 = var5.getString("Name");
          if (var6.length() > 16) {
             var6 = var6.substring(0, 16);
          }
 
          Class8218 var7 = this.field32341.method20991(var6);
-         IFormattableTextComponent var8 = ITextComponent$Serializer.func_240643_a_(var5.method126("DisplayName"));
+         IFormattableTextComponent var8 = ITextComponent$Serializer.func_240643_a_(var5.getString("DisplayName"));
          if (var8 != null) {
             var7.method28570(var8);
          }
 
          if (var5.contains("TeamColor", 8)) {
-            var7.method28590(TextFormatting.getValueByName(var5.method126("TeamColor")));
+            var7.method28590(TextFormatting.getValueByName(var5.getString("TeamColor")));
          }
 
          if (var5.contains("AllowFriendlyFire", 99)) {
@@ -67,35 +67,35 @@ public class Class7535 extends Class7530 {
          }
 
          if (var5.contains("MemberNamePrefix", 8)) {
-            IFormattableTextComponent var9 = ITextComponent$Serializer.func_240643_a_(var5.method126("MemberNamePrefix"));
+            IFormattableTextComponent var9 = ITextComponent$Serializer.func_240643_a_(var5.getString("MemberNamePrefix"));
             if (var9 != null) {
                var7.method28571(var9);
             }
          }
 
          if (var5.contains("MemberNameSuffix", 8)) {
-            IFormattableTextComponent var10 = ITextComponent$Serializer.func_240643_a_(var5.method126("MemberNameSuffix"));
+            IFormattableTextComponent var10 = ITextComponent$Serializer.func_240643_a_(var5.getString("MemberNameSuffix"));
             if (var10 != null) {
                var7.method28573(var10);
             }
          }
 
          if (var5.contains("NameTagVisibility", 8)) {
-            Class2225 var11 = Class2225.method8958(var5.method126("NameTagVisibility"));
+            Class2225 var11 = Class2225.method8958(var5.getString("NameTagVisibility"));
             if (var11 != null) {
                var7.method28584(var11);
             }
          }
 
          if (var5.contains("DeathMessageVisibility", 8)) {
-            Class2225 var12 = Class2225.method8958(var5.method126("DeathMessageVisibility"));
+            Class2225 var12 = Class2225.method8958(var5.getString("DeathMessageVisibility"));
             if (var12 != null) {
                var7.method28585(var12);
             }
          }
 
          if (var5.contains("CollisionRule", 8)) {
-            Class2212 var13 = Class2212.method8939(var5.method126("CollisionRule"));
+            Class2212 var13 = Class2212.method8939(var5.getString("CollisionRule"));
             if (var13 != null) {
                var7.method28587(var13);
             }
@@ -114,7 +114,7 @@ public class Class7535 extends Class7530 {
    public void method24632(CompoundNBT var1) {
       for (int var4 = 0; var4 < 19; var4++) {
          if (var1.contains("slot_" + var4, 8)) {
-            String var5 = var1.method126("slot_" + var4);
+            String var5 = var1.getString("slot_" + var4);
             Class8375 var6 = this.field32341.method20976(var5);
             this.field32341.method20988(var4, var6);
          }
@@ -124,14 +124,14 @@ public class Class7535 extends Class7530 {
    public void method24633(ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          CompoundNBT var5 = var1.method153(var4);
-         Class9008.method33278(var5.method126("CriteriaName")).ifPresent(var2 -> {
-            String var5x = var5.method126("Name");
+         Class9008.method33278(var5.getString("CriteriaName")).ifPresent(var2 -> {
+            String var5x = var5.getString("Name");
             if (var5x.length() > 16) {
                var5x = var5x.substring(0, 16);
             }
 
-            IFormattableTextComponent var6 = ITextComponent$Serializer.func_240643_a_(var5.method126("DisplayName"));
-            Class2316 var7 = Class2316.method9089(var5.method126("RenderType"));
+            IFormattableTextComponent var6 = ITextComponent$Serializer.func_240643_a_(var5.getString("DisplayName"));
+            Class2316 var7 = Class2316.method9089(var5.getString("RenderType"));
             this.field32341.method20977(var5x, var2, var6, var7);
          });
       }

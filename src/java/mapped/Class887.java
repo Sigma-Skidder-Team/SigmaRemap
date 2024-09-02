@@ -59,7 +59,7 @@ public class Class887 extends AbstractArrowEntity {
 
    public static int method3498(ItemStack var0) {
       CompoundNBT var3 = var0.method32142();
-      return var3 != null && var3.contains("CustomPotionColor", 99) ? var3.method122("CustomPotionColor") : -1;
+      return var3 != null && var3.contains("CustomPotionColor", 99) ? var3.getInt("CustomPotionColor") : -1;
    }
 
    private void method3499() {
@@ -157,7 +157,7 @@ public class Class887 extends AbstractArrowEntity {
       if (!var1.contains("Color", 99)) {
          this.method3499();
       } else {
-         this.method3503(var1.method122("Color"));
+         this.method3503(var1.getInt("Color"));
       }
    }
 

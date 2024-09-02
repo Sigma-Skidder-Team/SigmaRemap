@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.RecipeBookCategory;
 
 import java.util.List;
 import java.util.Map;
@@ -67,7 +68,7 @@ public enum Class1896 {
       this.field11136 = ImmutableList.copyOf(var3);
    }
 
-   public static List<Class1896> method8163(Class1939 var0) {
+   public static List<Class1896> method8163(RecipeBookCategory var0) {
       switch (Class8964.field40488[var0.ordinal()]) {
          case 1:
             return field11134;

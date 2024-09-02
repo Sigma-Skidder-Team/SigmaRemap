@@ -119,7 +119,7 @@ public class Class1112 extends Class1111 implements Class1008 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.contains("ExplosionPower", 99)) {
-         this.field6092 = var1.method122("ExplosionPower");
+         this.field6092 = var1.getInt("ExplosionPower");
       }
    }
 

@@ -9,6 +9,7 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongLinkedOpenHashSet;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -131,7 +132,7 @@ public class Class1652<R> implements AutoCloseable {
 
    private void method6649(Class7481 var1) {
       Dynamic var4 = this.method6650(var1, NBTDynamicOps.INSTANCE);
-      Class30 var5 = (Class30)var4.getValue();
+      INBT var5 = (INBT)var4.getValue();
       if (!(var5 instanceof CompoundNBT)) {
          field8979.error("Expected compound tag, got {}", var5);
       } else {

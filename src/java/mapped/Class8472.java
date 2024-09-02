@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3i;
 
 public class Class8472 {
    public double field36296;
@@ -49,8 +50,8 @@ public class Class8472 {
       return this.method29879(var1.method29876(), var1.method29877(), var1.method29878());
    }
 
-   public Class1998 method29883() {
-      return new Class1998(this.field36296, this.field36297, this.field36298);
+   public Vector3i method29883() {
+      return new Vector3i(this.field36296, this.field36297, this.field36298);
    }
 
    @Override

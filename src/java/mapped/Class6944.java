@@ -13,7 +13,7 @@ public class Class6944 extends Class6945<MinecraftServer, Class6860> {
    }
 
    public Class6860 method21396(CompoundNBT var1) {
-      ResourceLocation var4 = new ResourceLocation(var1.method126("Name"));
+      ResourceLocation var4 = new ResourceLocation(var1.getString("Name"));
       return new Class6860(var4);
    }
 }

@@ -49,7 +49,7 @@ public class Class6828 extends Class6829 {
          this.field29705
             .method4227()
             .method28042(
-               MathHelper.method37822(0.125, var30, var24), MathHelper.method37822(0.125, var32, var26), MathHelper.method37822(0.125, var34, var28), 10.0F, 40.0F
+               MathHelper.lerp(0.125, var30, var24), MathHelper.lerp(0.125, var32, var26), MathHelper.lerp(0.125, var34, var28), 10.0F, 40.0F
             );
          Class1105.method5313(this.field29705, true);
       } else {

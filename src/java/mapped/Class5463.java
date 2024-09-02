@@ -13,6 +13,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3i;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
@@ -520,7 +521,7 @@ public class Class5463 {
          float var21 = 0.0F;
          float var22 = 0.0F;
          if (var0.method3870(Direction.SOUTH)) {
-            Class1998 var23 = Direction.SOUTH.method556();
+            Vector3i var23 = Direction.SOUTH.method556();
             float var24 = (float)var23.getX();
             float var25 = (float)var23.getY();
             float var26 = (float)var23.getZ();
@@ -558,7 +559,7 @@ public class Class5463 {
          }
 
          if (var0.method3870(Direction.NORTH)) {
-            Class1998 var30 = Direction.NORTH.method556();
+            Vector3i var30 = Direction.NORTH.method556();
             float var35 = (float)var30.getX();
             float var40 = (float)var30.getY();
             float var45 = (float)var30.getZ();
@@ -596,7 +597,7 @@ public class Class5463 {
          }
 
          if (var0.method3870(Direction.EAST)) {
-            Class1998 var31 = Direction.EAST.method556();
+            Vector3i var31 = Direction.EAST.method556();
             float var36 = (float)var31.getX();
             float var41 = (float)var31.getY();
             float var46 = (float)var31.getZ();
@@ -634,7 +635,7 @@ public class Class5463 {
          }
 
          if (var0.method3870(Direction.WEST)) {
-            Class1998 var32 = Direction.WEST.method556();
+            Vector3i var32 = Direction.WEST.method556();
             float var37 = (float)var32.getX();
             float var42 = (float)var32.getY();
             float var47 = (float)var32.getZ();
@@ -672,7 +673,7 @@ public class Class5463 {
          }
 
          if (var0.method3870(Direction.DOWN)) {
-            Class1998 var33 = Direction.DOWN.method556();
+            Vector3i var33 = Direction.DOWN.method556();
             float var38 = (float)var33.getX();
             float var43 = (float)var33.getY();
             float var48 = (float)var33.getZ();
@@ -710,7 +711,7 @@ public class Class5463 {
          }
 
          if (var0.method3870(Direction.field673)) {
-            Class1998 var34 = Direction.field673.method556();
+            Vector3i var34 = Direction.field673.method556();
             float var39 = (float)var34.getX();
             float var44 = (float)var34.getY();
             float var49 = (float)var34.getZ();

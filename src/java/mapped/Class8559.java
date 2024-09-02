@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,7 +28,7 @@ public class Class8559<T> {
       return Comparator.<Class8959<T>>comparingLong(var0 -> var0.field40476).thenComparing(var0 -> var0.field40477);
    }
 
-   public Class8559(Class6062<T> var1, Stream<Dynamic<Class30>> var2) {
+   public Class8559(Class6062<T> var1, Stream<Dynamic<INBT>> var2) {
       this(var1);
       this.field38468.clear();
       this.field38470.clear();
@@ -83,8 +84,8 @@ public class Class8559<T> {
       CompoundNBT var4 = var1.getCompound("Callback");
       Class6861 var5 = this.field38467.method18798(var4);
       if (var5 != null) {
-         String var6 = var1.method126("Name");
-         long var7 = var1.method123("TriggerTime");
+         String var6 = var1.getString("Name");
+         long var7 = var1.getLong("TriggerTime");
          this.method30535(var6, var7, var5);
       }
    }

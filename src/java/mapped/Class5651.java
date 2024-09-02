@@ -38,9 +38,9 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
          Vector3d var11 = var1.method3394();
          double var12 = Math.cos(var9) * var11.z + Math.sin(var9) * var11.x;
          double var14 = Math.sin(var9) * var11.z - Math.cos(var9) * var11.x;
-         double var16 = MathHelper.method37822((double)var2, var1.prevPosX, var1.getPosX()) + var12;
-         double var18 = MathHelper.method37822((double)var2, var1.prevPosY, var1.getPosY()) + var11.y;
-         double var20 = MathHelper.method37822((double)var2, var1.prevPosZ, var1.getPosZ()) + var14;
+         double var16 = MathHelper.lerp((double)var2, var1.prevPosX, var1.getPosX()) + var12;
+         double var18 = MathHelper.lerp((double)var2, var1.prevPosY, var1.getPosY()) + var11.y;
+         double var20 = MathHelper.lerp((double)var2, var1.prevPosZ, var1.getPosZ()) + var14;
          var3.translate(var12, var11.y, var14);
          float var22 = (float)(var8.x - var16);
          float var23 = (float)(var8.y - var18);

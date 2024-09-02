@@ -416,7 +416,7 @@ public class PlayerInventory implements Class920, INameable {
 
       for (int var4 = 0; var4 < var1.size(); var4++) {
          CompoundNBT var5 = var1.method153(var4);
-         int var6 = var5.method120("Slot") & 255;
+         int var6 = var5.getByte("Slot") & 255;
          ItemStack var7 = ItemStack.method32104(var5);
          if (!var7.isEmpty()) {
             if (var6 >= 0 && var6 < this.field5439.size()) {

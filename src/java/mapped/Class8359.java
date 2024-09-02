@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -14,9 +15,9 @@ public class Class8359 implements Class8356 {
    }
 
    @Override
-   public void method29291(Class30 var1, List<Class30> var2) {
+   public void method29291(INBT var1, List<INBT> var2) {
       if (var1 instanceof CompoundNBT) {
-         Class30 var5 = ((CompoundNBT)var1).method116(this.field35906);
+         INBT var5 = ((CompoundNBT)var1).method116(this.field35906);
          if (var5 != null) {
             var2.add(var5);
          }
@@ -24,12 +25,12 @@ public class Class8359 implements Class8356 {
    }
 
    @Override
-   public void method29292(Class30 var1, Supplier<Class30> var2, List<Class30> var3) {
+   public void method29292(INBT var1, Supplier<INBT> var2, List<INBT> var3) {
       if (var1 instanceof CompoundNBT) {
          CompoundNBT var6 = (CompoundNBT)var1;
-         Class30 var7;
+         INBT var7;
          if (!var6.contains(this.field35906)) {
-            var7 = (Class30)var2.get();
+            var7 = (INBT)var2.get();
             var6.put(this.field35906, var7);
          } else {
             var7 = var6.method116(this.field35906);
@@ -40,16 +41,16 @@ public class Class8359 implements Class8356 {
    }
 
    @Override
-   public Class30 method29293() {
+   public INBT method29293() {
       return new CompoundNBT();
    }
 
    @Override
-   public int method29294(Class30 var1, Supplier<Class30> var2) {
+   public int method29294(INBT var1, Supplier<INBT> var2) {
       if (var1 instanceof CompoundNBT) {
          CompoundNBT var5 = (CompoundNBT)var1;
-         Class30 var6 = (Class30)var2.get();
-         Class30 var7 = var5.put(this.field35906, var6);
+         INBT var6 = (INBT)var2.get();
+         INBT var7 = var5.put(this.field35906, var6);
          if (!var6.equals(var7)) {
             return 1;
          }
@@ -59,7 +60,7 @@ public class Class8359 implements Class8356 {
    }
 
    @Override
-   public int method29295(Class30 var1) {
+   public int method29295(INBT var1) {
       if (var1 instanceof CompoundNBT) {
          CompoundNBT var4 = (CompoundNBT)var1;
          if (var4.contains(this.field35906)) {

@@ -69,7 +69,7 @@ public class Class3318 extends Item {
             var3.add(
                new TranslationTextComponent("item.minecraft.firework_rocket.flight")
                   .appendString(" ")
-                  .appendString(String.valueOf(var7.method120("Flight")))
+                  .appendString(String.valueOf(var7.getByte("Flight")))
                   .mergeStyle(TextFormatting.GRAY)
             );
          }

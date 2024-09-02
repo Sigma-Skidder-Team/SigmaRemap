@@ -6,6 +6,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.World;
 
 import java.util.Set;
@@ -21,7 +22,7 @@ public abstract class Class6990 {
    public int field30247;
    public int field30248;
    public Vector3d field30249 = Vector3d.ZERO;
-   public Class1998 field30250 = Class1998.field13026;
+   public Vector3i field30250 = Vector3i.field13026;
    public long field30251;
    public long field30252;
    public double field30253;
@@ -280,7 +281,7 @@ public abstract class Class6990 {
    }
 
    private void method21663() {
-      this.field30250 = Class1998.field13026;
+      this.field30250 = Vector3i.field13026;
       this.field30251 = 0L;
       this.field30253 = 0.0;
       this.field30262 = false;

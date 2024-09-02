@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.*;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7671 {
@@ -64,7 +64,7 @@ public class Class7671 {
       }
    }
 
-   public Class30 method25191() throws CommandSyntaxException {
+   public INBT method25191() throws CommandSyntaxException {
       this.field32876.skipWhitespace();
       int var3 = this.field32876.getCursor();
       if (!StringReader.isQuotedStringStart(this.field32876.peek())) {
@@ -80,7 +80,7 @@ public class Class7671 {
       }
    }
 
-   private Class30 method25192(String var1) {
+   private INBT method25192(String var1) {
       try {
          if (field32871.matcher(var1).matches()) {
             return Class32.method90(Float.parseFloat(var1.substring(0, var1.length() - 1)));
@@ -123,7 +123,7 @@ public class Class7671 {
       return StringNBT.valueOf(var1);
    }
 
-   public Class30 method25193() throws CommandSyntaxException {
+   public INBT method25193() throws CommandSyntaxException {
       this.field32876.skipWhitespace();
       if (this.field32876.canRead()) {
          char var3 = this.field32876.peek();
@@ -137,7 +137,7 @@ public class Class7671 {
       }
    }
 
-   public Class30 method25194() throws CommandSyntaxException {
+   public INBT method25194() throws CommandSyntaxException {
       return this.field32876.canRead(3) && !StringReader.isQuotedStringStart(this.field32876.peek(1)) && this.field32876.peek(2) == ';'
          ? this.method25197()
          : this.method25196();
@@ -171,7 +171,7 @@ public class Class7671 {
       return var3;
    }
 
-   private Class30 method25196() throws CommandSyntaxException {
+   private INBT method25196() throws CommandSyntaxException {
       this.method25200('[');
       this.field32876.skipWhitespace();
       if (!this.field32876.canRead()) {
@@ -182,7 +182,7 @@ public class Class7671 {
 
          while (this.field32876.peek() != ']') {
             int var5 = this.field32876.getCursor();
-            Class30 var6 = this.method25193();
+            INBT var6 = this.method25193();
             Class7052 var7 = var6.method75();
             if (var4 != null) {
                if (var7 != var4) {
@@ -208,7 +208,7 @@ public class Class7671 {
       }
    }
 
-   private Class30 method25197() throws CommandSyntaxException {
+   private INBT method25197() throws CommandSyntaxException {
       this.method25200('[');
       int var3 = this.field32876.getCursor();
       char var4 = this.field32876.read();
@@ -221,13 +221,13 @@ public class Class7671 {
                   this.field32876.setCursor(var3);
                   throw field32868.createWithContext(this.field32876, String.valueOf(var4));
                } else {
-                  return new Class28(this.<Integer>method25198(Class28.field52, Class36.field73));
+                  return new IntArrayNBT(this.<Integer>method25198(IntArrayNBT.field52, Class36.field73));
                }
             } else {
-               return new Class42(this.<Long>method25198(Class42.field91, Class35.field70));
+               return new LongArrayNBT(this.<Long>method25198(LongArrayNBT.field91, Class35.field70));
             }
          } else {
-            return new Class29(this.<Byte>method25198(Class29.field54, Class33.field63));
+            return new ByteArrayNBT(this.<Byte>method25198(ByteArrayNBT.field54, Class33.field63));
          }
       } else {
          throw field32865.createWithContext(this.field32876);
@@ -239,7 +239,7 @@ public class Class7671 {
 
       while (this.field32876.peek() != ']') {
          int var6 = this.field32876.getCursor();
-         Class30 var7 = this.method25193();
+         INBT var7 = this.method25193();
          Class7052 var8 = var7.method75();
          if (var8 != var2) {
             this.field32876.setCursor(var6);
@@ -248,12 +248,12 @@ public class Class7671 {
 
          if (var2 != Class33.field63) {
             if (var2 != Class35.field70) {
-               var5.add(((Class31)var7).method84());
+               var5.add(((NumberNBT)var7).getInt());
             } else {
-               var5.add(((Class31)var7).method83());
+               var5.add(((NumberNBT)var7).getLong());
             }
          } else {
-            var5.add(((Class31)var7).method86());
+            var5.add(((NumberNBT)var7).getByte());
          }
 
          if (!this.method25199()) {

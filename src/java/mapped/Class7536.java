@@ -13,7 +13,7 @@ public class Class7536 extends Class7530 {
 
    @Override
    public void method24591(CompoundNBT var1) {
-      this.field32343 = new LongOpenHashSet(var1.method129("Forced"));
+      this.field32343 = new LongOpenHashSet(var1.getLongArray("Forced"));
    }
 
    @Override

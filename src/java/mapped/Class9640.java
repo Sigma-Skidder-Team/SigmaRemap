@@ -74,8 +74,8 @@ public class Class9640 {
 
    public void method37572(CompoundNBT var1) {
       if (var1.contains("foodLevel", 99)) {
-         this.field45071 = var1.method122("foodLevel");
-         this.field45074 = var1.method122("foodTickTimer");
+         this.field45071 = var1.getInt("foodLevel");
+         this.field45074 = var1.getInt("foodTickTimer");
          this.field45072 = var1.getFloat("foodSaturationLevel");
          this.field45073 = var1.getFloat("foodExhaustionLevel");
       }

@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -87,7 +88,7 @@ public class Class8761 {
    }
 
    private Class8969 method31608(InputStream var1) throws IOException {
-      CompoundNBT var4 = Class8799.method31766(var1);
+      CompoundNBT var4 = CompressedStreamTools.readCompressed(var1);
       return this.method31609(var4);
    }
 
@@ -97,7 +98,7 @@ public class Class8761 {
       }
 
       Class8969 var4 = new Class8969();
-      var4.method32913(Class8354.method29289(this.field39443, Class2108.field13753, var1, var1.method122("DataVersion")));
+      var4.method32913(Class8354.method29289(this.field39443, Class2108.field13753, var1, var1.getInt("DataVersion")));
       return var4;
    }
 
@@ -121,7 +122,7 @@ public class Class8761 {
             CompoundNBT var7 = var4.method32912(new CompoundNBT());
 
             try (FileOutputStream var8 = new FileOutputStream(var5.toFile())) {
-               Class8799.method31768(var7, var8);
+               CompressedStreamTools.writeCompressed(var7, var8);
                return true;
             } catch (Throwable var24) {
                return false;

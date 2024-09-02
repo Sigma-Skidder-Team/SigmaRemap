@@ -17,6 +17,7 @@ import java.util.Map.Entry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.LongArrayNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -31,13 +32,13 @@ public class Class9725 {
       ChunkGenerator var7 = var0.getChunkProvider().method7370();
       Class1685 var8 = var7.method17824();
       CompoundNBT var9 = var4.getCompound("Level");
-      Class7481 var10 = new Class7481(var9.method122("xPos"), var9.method122("zPos"));
+      Class7481 var10 = new Class7481(var9.getInt("xPos"), var9.getInt("zPos"));
       if (!Objects.equals(var3, var10)) {
          field45421.error("Chunk file at {} is in the wrong location; relocating. (Expected {}, got {})", var3, var3, var10);
       }
 
       Class1684 var11 = new Class1684(
-         var0.method6867().<Biome>getRegistry(Registry.BIOME_KEY), var3, var8, !var9.contains("Biomes", 11) ? null : var9.method128("Biomes")
+         var0.method6867().<Biome>getRegistry(Registry.BIOME_KEY), var3, var8, !var9.contains("Biomes", 11) ? null : var9.getIntArray("Biomes")
       );
       Class8922 var12 = !var9.contains("UpgradeData", 10) ? Class8922.field40388 : new Class8922(var9.getCompound("UpgradeData"));
       Class6806 var13 = new Class6806<Block>(var0x -> var0x == null || var0x.method11579().isAir(), var3, var9.method131("ToBeTicked", 9));
@@ -55,10 +56,10 @@ public class Class9725 {
 
       for (int var22 = 0; var22 < var16.size(); var22++) {
          CompoundNBT var30 = var16.method153(var22);
-         byte var25 = var30.method120("Y");
+         byte var25 = var30.getByte("Y");
          if (var30.contains("Palette", 9) && var30.contains("BlockStates", 12)) {
             Class7038 var27 = new Class7038(var25 << 4);
-            var27.method21865().method30502(var30.method131("Palette", 10), var30.method129("BlockStates"));
+            var27.method21865().method30502(var30.method131("Palette", 10), var30.getLongArray("BlockStates"));
             var27.method21864();
             if (!var27.method21858()) {
                var18[var25] = var27;
@@ -69,16 +70,16 @@ public class Class9725 {
 
          if (var15) {
             if (var30.contains("BlockLight", 7)) {
-               var21.method606(Class1977.field12882, Class2002.method8391(var3, var25), new Class6785(var30.method127("BlockLight")), true);
+               var21.method606(Class1977.field12882, Class2002.method8391(var3, var25), new Class6785(var30.getByteArray("BlockLight")), true);
             }
 
             if (var19 && var30.contains("SkyLight", 7)) {
-               var21.method606(Class1977.field12881, Class2002.method8391(var3, var25), new Class6785(var30.method127("SkyLight")), true);
+               var21.method606(Class1977.field12881, Class2002.method8391(var3, var25), new Class6785(var30.getByteArray("SkyLight")), true);
             }
          }
       }
 
-      long var23 = var9.method123("InhabitedTime");
+      long var23 = var9.getLong("InhabitedTime");
       Class2076 var40 = method38089(var4);
       Object var43;
       if (var40 != Class2076.field13525) {
@@ -86,7 +87,7 @@ public class Class9725 {
          var26.method7110(var11);
          var43 = var26;
          var26.method7092(var23);
-         var26.method7111(ChunkStatus.method34304(var9.method126("Status")));
+         var26.method7111(ChunkStatus.method34304(var9.getString("Status")));
          if (var26.method7080().method34306(ChunkStatus.field42141)) {
             var26.method7119(var21);
          }
@@ -127,7 +128,7 @@ public class Class9725 {
          if (!var42.contains(var32, 12)) {
             var45.add(var31);
          } else {
-            ((IChunk)var43).method7069(var31, var42.method129(var32));
+            ((IChunk)var43).method7069(var31, var42.getLongArray(var32));
          }
       }
 
@@ -180,7 +181,7 @@ public class Class9725 {
 
          for (String var58 : var56.method97()) {
             Class97 var39 = Class97.valueOf(var58);
-            var50.method7118(var39, BitSet.valueOf(var56.method127(var58)));
+            var50.method7118(var39, BitSet.valueOf(var56.getByteArray(var58)));
          }
 
          return var50;
@@ -313,7 +314,7 @@ public class Class9725 {
 
       for (Entry var40 : var1.method7068()) {
          if (var1.method7080().method34305().contains(var40.getKey())) {
-            var36.put(((Class101)var40.getKey()).method283(), new Class42(((Class7527)var40.getValue()).method24583()));
+            var36.put(((Class101)var40.getKey()).method283(), new LongArrayNBT(((Class7527)var40.getValue()).method24583()));
          }
       }
 
@@ -324,7 +325,7 @@ public class Class9725 {
 
    public static Class2076 method38089(CompoundNBT var0) {
       if (var0 != null) {
-         ChunkStatus var3 = ChunkStatus.method34304(var0.getCompound("Level").method126("Status"));
+         ChunkStatus var3 = ChunkStatus.method34304(var0.getCompound("Level").getString("Status"));
          if (var3 != null) {
             return var3.method34303();
          }
@@ -352,7 +353,7 @@ public class Class9725 {
          CompoundNBT var8 = var12.method153(var13);
          boolean var9 = var8.getBoolean("keepPacked");
          if (!var9) {
-            BlockPos var10 = new BlockPos(var8.method122("x"), var8.method122("y"), var8.method122("z"));
+            BlockPos var10 = new BlockPos(var8.getInt("x"), var8.getInt("y"), var8.getInt("z"));
             TileEntity var11 = TileEntity.method3772(var1.getBlockState(var10), var8);
             if (var11 != null) {
                var1.method7135(var11);
@@ -375,7 +376,7 @@ public class Class9725 {
       CompoundNBT var10 = new CompoundNBT();
 
       for (Entry var9 : var2.entrySet()) {
-         var10.put(((Structure)var9.getKey()).method11373(), new Class42((LongSet)var9.getValue()));
+         var10.put(((Structure)var9.getKey()).method11373(), new LongArrayNBT((LongSet)var9.getValue()));
       }
 
       var5.put("References", var10);
@@ -407,7 +408,7 @@ public class Class9725 {
       CompoundNBT var5 = var1.getCompound("References");
 
       for (String var7 : var5.method97()) {
-         var4.put(Structure.field_236365_a_.get(var7.toLowerCase(Locale.ROOT)), new LongOpenHashSet(Arrays.stream(var5.method129(var7)).filter(var2 -> {
+         var4.put(Structure.field_236365_a_.get(var7.toLowerCase(Locale.ROOT)), new LongOpenHashSet(Arrays.stream(var5.getLongArray(var7)).filter(var2 -> {
             Class7481 var6 = new Class7481(var2);
             if (var6.method24365(var0) <= 8) {
                return true;

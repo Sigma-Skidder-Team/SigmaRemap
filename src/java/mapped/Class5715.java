@@ -119,11 +119,11 @@ public abstract class Class5715<T extends Entity> {
       return this.field25097;
    }
 
-   public Class4862<EntityType, Class4387> method17898() {
-      return this.field25100 != null ? Class4862.<EntityType, Class4387>method15005(this.field25100) : null;
+   public Class4862<EntityType, TileEntityType> method17898() {
+      return this.field25100 != null ? Class4862.<EntityType, TileEntityType>method15005(this.field25100) : null;
    }
 
-   public void method17899(Class4862<EntityType, Class4387> var1) {
+   public void method17899(Class4862<EntityType, TileEntityType> var1) {
       this.field25100 = (EntityType)var1.method15003().get();
    }
 

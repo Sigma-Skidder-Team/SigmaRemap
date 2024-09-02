@@ -329,7 +329,7 @@ public class Class1095 extends Class1018 {
       }
 
       this.method5135(var1.getBoolean("Sleeping"));
-      this.method5126(Class186.method569(var1.method126("Type")));
+      this.method5126(Class186.method569(var1.getString("Type")));
       this.method5130(var1.getBoolean("Sitting"));
       this.method5143(var1.getBoolean("Crouching"));
       if (this.world instanceof ServerWorld) {

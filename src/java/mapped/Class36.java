@@ -1,12 +1,13 @@
 package mapped;
 
+import net.minecraft.nbt.NumberNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class Class36 extends Class31 {
+public class Class36 extends NumberNBT {
    private static String[] field72;
    public static final Class7052<Class36> field73 = new Class7065();
    private final int field74;
@@ -20,12 +21,12 @@ public class Class36 extends Class31 {
    }
 
    @Override
-   public void method73(DataOutput var1) throws IOException {
+   public void write(DataOutput var1) throws IOException {
       var1.writeInt(this.field74);
    }
 
    @Override
-   public byte method74() {
+   public byte getId() {
       return 3;
    }
 
@@ -59,32 +60,32 @@ public class Class36 extends Class31 {
    }
 
    @Override
-   public long method83() {
+   public long getLong() {
       return (long)this.field74;
    }
 
    @Override
-   public int method84() {
+   public int getInt() {
       return this.field74;
    }
 
    @Override
-   public short method85() {
+   public short getShort() {
       return (short)(this.field74 & 65535);
    }
 
    @Override
-   public byte method86() {
+   public byte getByte() {
       return (byte)(this.field74 & 0xFF);
    }
 
    @Override
-   public double method87() {
+   public double getDouble() {
       return (double)this.field74;
    }
 
    @Override
-   public float method88() {
+   public float getFloat() {
       return (float)this.field74;
    }
 

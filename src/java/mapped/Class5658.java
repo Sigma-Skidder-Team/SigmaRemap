@@ -38,9 +38,9 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
    }
 
    private Vector3d method17861(LivingEntity var1, double var2, float var4) {
-      double var7 = MathHelper.method37822((double)var4, var1.lastTickPosX, var1.getPosX());
-      double var9 = MathHelper.method37822((double)var4, var1.lastTickPosY, var1.getPosY()) + var2;
-      double var11 = MathHelper.method37822((double)var4, var1.lastTickPosZ, var1.getPosZ());
+      double var7 = MathHelper.lerp((double)var4, var1.lastTickPosX, var1.getPosX());
+      double var9 = MathHelper.lerp((double)var4, var1.lastTickPosY, var1.getPosY()) + var2;
+      double var11 = MathHelper.lerp((double)var4, var1.lastTickPosZ, var1.getPosZ());
       return new Vector3d(var7, var9, var11);
    }
 

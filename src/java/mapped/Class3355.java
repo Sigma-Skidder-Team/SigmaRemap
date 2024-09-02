@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
@@ -29,7 +30,7 @@ public class Class3355 extends Class3241 {
 
    @Override
    public TileEntity method11646(Class1665 var1) {
-      Class969 var4 = new Class969();
+      CommandBlockTileEntity var4 = new CommandBlockTileEntity();
       var4.method4013(this == Blocks.field36888);
       return var4;
    }
@@ -38,12 +39,12 @@ public class Class3355 extends Class3241 {
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.isRemote) {
          TileEntity var9 = var2.getTileEntity(var3);
-         if (var9 instanceof Class969) {
-            Class969 var10 = (Class969)var9;
+         if (var9 instanceof CommandBlockTileEntity) {
+            CommandBlockTileEntity var10 = (CommandBlockTileEntity)var9;
             boolean var11 = var2.method6780(var3);
-            boolean var12 = var10.method4011();
+            boolean var12 = var10.isPowered();
             var10.method4010(var11);
-            if (!var12 && !var10.method4012() && var10.method4020() != Class2037.field13323 && var11) {
+            if (!var12 && !var10.isAuto() && var10.method4020() != CommandBlockTileEntity.Mode.field13323 && var11) {
                var10.method4017();
                var2.method6860().method20726(var3, this, 1);
             }
@@ -54,14 +55,14 @@ public class Class3355 extends Class3241 {
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       TileEntity var7 = var2.getTileEntity(var3);
-      if (var7 instanceof Class969) {
-         Class969 var8 = (Class969)var7;
-         Class911 var9 = var8.method4009();
+      if (var7 instanceof CommandBlockTileEntity) {
+         CommandBlockTileEntity var8 = (CommandBlockTileEntity)var7;
+         CommandBlockLogic var9 = var8.method4009();
          boolean var10 = !Class9001.method33256(var9.method3563());
-         Class2037 var11 = var8.method4020();
-         boolean var12 = var8.method4016();
-         if (var11 != Class2037.field13324) {
-            if (var11 == Class2037.field13325) {
+         CommandBlockTileEntity.Mode var11 = var8.method4020();
+         boolean var12 = var8.isConditionMet();
+         if (var11 != CommandBlockTileEntity.Mode.field13324) {
+            if (var11 == CommandBlockTileEntity.Mode.field13325) {
                if (!var12) {
                   if (var8.method4021()) {
                      var9.method3558(0);
@@ -80,7 +81,7 @@ public class Class3355 extends Class3241 {
                this.method11927(var1, var2, var3, var9, var10);
             }
 
-            if (var8.method4011() || var8.method4012()) {
+            if (var8.isPowered() || var8.isAuto()) {
                var2.method6860().method20726(var3, this, 1);
             }
          }
@@ -89,7 +90,7 @@ public class Class3355 extends Class3241 {
       }
    }
 
-   private void method11927(BlockState var1, World var2, BlockPos var3, Class911 var4, boolean var5) {
+   private void method11927(BlockState var1, World var2, BlockPos var3, CommandBlockLogic var4, boolean var5) {
       if (!var5) {
          var4.method3558(0);
       } else {
@@ -102,8 +103,8 @@ public class Class3355 extends Class3241 {
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       TileEntity var9 = var2.getTileEntity(var3);
-      if (var9 instanceof Class969 && var4.method2979()) {
-         var4.method2770((Class969)var9);
+      if (var9 instanceof CommandBlockTileEntity && var4.method2979()) {
+         var4.method2770((CommandBlockTileEntity)var9);
          return ActionResultType.method9002(var2.isRemote);
       } else {
          return ActionResultType.field14820;
@@ -118,15 +119,15 @@ public class Class3355 extends Class3241 {
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
       TileEntity var6 = var2.getTileEntity(var3);
-      return !(var6 instanceof Class969) ? 0 : ((Class969)var6).method4009().method3557();
+      return !(var6 instanceof CommandBlockTileEntity) ? 0 : ((CommandBlockTileEntity)var6).method4009().method3557();
    }
 
    @Override
    public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
       TileEntity var8 = var1.getTileEntity(var2);
-      if (var8 instanceof Class969) {
-         Class969 var9 = (Class969)var8;
-         Class911 var10 = var9.method4009();
+      if (var8 instanceof CommandBlockTileEntity) {
+         CommandBlockTileEntity var9 = (CommandBlockTileEntity)var8;
+         CommandBlockLogic var10 = var9.method4009();
          if (var5.method32152()) {
             var10.method3566(var5.method32149());
          }
@@ -137,7 +138,7 @@ public class Class3355 extends Class3241 {
                var9.method4013(this == Blocks.field36888);
             }
 
-            if (var9.method4020() == Class2037.field13323) {
+            if (var9.method4020() == CommandBlockTileEntity.Mode.field13323) {
                boolean var11 = var1.method6780(var2);
                var9.method4010(var11);
             }
@@ -184,17 +185,17 @@ public class Class3355 extends Class3241 {
          }
 
          TileEntity var10 = var0.getTileEntity(var5);
-         if (!(var10 instanceof Class969)) {
+         if (!(var10 instanceof CommandBlockTileEntity)) {
             break;
          }
 
-         Class969 var11 = (Class969)var10;
-         if (var11.method4020() != Class2037.field13323) {
+         CommandBlockTileEntity var11 = (CommandBlockTileEntity)var10;
+         if (var11.method4020() != CommandBlockTileEntity.Mode.field13323) {
             break;
          }
 
-         if (var11.method4011() || var11.method4012()) {
-            Class911 var12 = var11.method4009();
+         if (var11.isPowered() || var11.isAuto()) {
+            CommandBlockLogic var12 = var11.method4009();
             if (!var11.method4017()) {
                if (var11.method4021()) {
                   var12.method3558(0);

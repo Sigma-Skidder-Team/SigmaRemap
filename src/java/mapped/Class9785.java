@@ -21,8 +21,8 @@ public final class Class9785<T extends TileEntity> {
       return new Class9785<T>(var0, ImmutableSet.copyOf(var1));
    }
 
-   public Class4387<T> method38570(Type<?> var1) {
-      return new Class4387<T>(this.field45752, this.field45753, var1);
+   public TileEntityType<T> method38570(Type<?> var1) {
+      return new TileEntityType<T>(this.field45752, this.field45753, var1);
    }
 
    // $VF: synthetic method

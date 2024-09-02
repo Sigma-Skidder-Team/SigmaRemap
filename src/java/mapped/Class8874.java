@@ -1,11 +1,13 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.advancements.Advancement;
+
 import java.util.List;
 import javax.annotation.Nullable;
 
 public class Class8874 {
-   private final Class7952 field40082;
+   private final Advancement field40082;
    private final Class8874 field40083;
    private final Class8874 field40084;
    private final int field40085;
@@ -18,7 +20,7 @@ public class Class8874 {
    private float field40092;
    private float field40093;
 
-   public Class8874(Class7952 var1, Class8874 var2, Class8874 var3, int var4, int var5) {
+   public Class8874(Advancement var1, Class8874 var2, Class8874 var3, int var4, int var5) {
       if (var1.method27027() == null) {
          throw new IllegalArgumentException("Can't position an invisible advancement!");
       } else {
@@ -31,16 +33,16 @@ public class Class8874 {
          this.field40090 = -1.0F;
          Class8874 var8 = null;
 
-         for (Class7952 var10 : var1.method27029()) {
+         for (Advancement var10 : var1.method27029()) {
             var8 = this.method32282(var10, var8);
          }
       }
    }
 
    @Nullable
-   private Class8874 method32282(Class7952 var1, Class8874 var2) {
+   private Class8874 method32282(Advancement var1, Class8874 var2) {
       if (var1.method27027() == null) {
-         for (Class7952 var6 : var1.method27029()) {
+         for (Advancement var6 : var1.method27029()) {
             var2 = this.method32282(var6, var2);
          }
       } else {
@@ -203,7 +205,7 @@ public class Class8874 {
       }
    }
 
-   public static void method32293(Class7952 var0) {
+   public static void method32293(Advancement var0) {
       if (var0.method27027() != null) {
          Class8874 var3 = new Class8874(var0, (Class8874)null, (Class8874)null, 1, 0);
          var3.method32283();

@@ -398,7 +398,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4415(var1.method122("Variant"));
+      this.method4415(var1.getInt("Variant"));
    }
 
    public boolean method4416() {

@@ -119,7 +119,7 @@ public class Class1076 extends AbstractHorseEntity {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method5001(var1.getBoolean("SkeletonTrap"));
-      this.field5921 = var1.method122("SkeletonTrapTime");
+      this.field5921 = var1.getInt("SkeletonTrapTime");
    }
 
    @Override

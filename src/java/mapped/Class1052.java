@@ -101,7 +101,7 @@ public class Class1052 extends Class1050 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4817(var1.method122("Variant"));
+      this.method4817(var1.getInt("Variant"));
    }
 
    public void method4817(int var1) {
@@ -190,7 +190,7 @@ public class Class1052 extends Class1050 {
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (var5 != null && var5.contains("BucketVariantTag", 3)) {
-         this.method4817(var5.method122("BucketVariantTag"));
+         this.method4817(var5.getInt("BucketVariantTag"));
          return var4;
       } else {
          int var8;

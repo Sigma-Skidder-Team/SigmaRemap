@@ -65,12 +65,12 @@ public class Nametags extends Module {
                             for (int var22 = 0; var22 < var20.size(); var22++) {
                                 CompoundNBT var23 = var20.method153(var22);
                                 int var24 = var22 * 8 + 10;
-                                Registry.field16073.method9187(ResourceLocation.method8289(var23.method126("id"))).ifPresent(var1x -> {
+                                Registry.field16073.method9187(ResourceLocation.method8289(var23.getString("id"))).ifPresent(var1x -> {
                                     String var4x = var1x.method18820(1).getUnformattedComponentText();
                                     String var5x = "§f" + var4x.substring(0, Math.min(2, var4x.length()));
                                     int var6 = 0;
                                     if (var23.contains("lvl")) {
-                                        var6 = var23.method122("lvl");
+                                        var6 = var23.getInt("lvl");
                                     }
 
                                     String var7x = "§a";

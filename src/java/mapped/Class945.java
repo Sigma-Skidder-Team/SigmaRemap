@@ -19,7 +19,7 @@ public class Class945 extends TileEntity implements Class946, Class935 {
    private final int[] field5331 = new int[4];
 
    public Class945() {
-      super(Class4387.field21452);
+      super(TileEntityType.field21452);
    }
 
    @Override
@@ -107,12 +107,12 @@ public class Class945 extends TileEntity implements Class946, Class935 {
       this.field5329.clear();
       Class7920.method26567(var2, this.field5329);
       if (var2.contains("CookingTimes", 11)) {
-         int[] var5 = var2.method128("CookingTimes");
+         int[] var5 = var2.getIntArray("CookingTimes");
          System.arraycopy(var5, 0, this.field5330, 0, Math.min(this.field5331.length, var5.length));
       }
 
       if (var2.contains("CookingTotalTimes", 11)) {
-         int[] var6 = var2.method128("CookingTotalTimes");
+         int[] var6 = var2.getIntArray("CookingTotalTimes");
          System.arraycopy(var6, 0, this.field5331, 0, Math.min(this.field5331.length, var6.length));
       }
    }

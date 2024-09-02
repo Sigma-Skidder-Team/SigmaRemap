@@ -34,7 +34,7 @@ public abstract class Class7574 {
 
    @Nullable
    private ResourceLocation method24789() {
-      String var3 = this.field32518.method20414().method126("id");
+      String var3 = this.field32518.method20414().getString("id");
 
       try {
          return Class9001.method33256(var3) ? null : new ResourceLocation(var3);
@@ -189,7 +189,7 @@ public abstract class Class7574 {
    }
 
    public void method24794(CompoundNBT var1) {
-      this.field32516 = var1.method121("Delay");
+      this.field32516 = var1.getShort("Delay");
       this.field32517.clear();
       if (var1.contains("SpawnPotentials", 9)) {
          ListNBT var4 = var1.method131("SpawnPotentials", 10);
@@ -208,18 +208,18 @@ public abstract class Class7574 {
       }
 
       if (var1.contains("MinSpawnDelay", 99)) {
-         this.field32521 = var1.method121("MinSpawnDelay");
-         this.field32522 = var1.method121("MaxSpawnDelay");
-         this.field32523 = var1.method121("SpawnCount");
+         this.field32521 = var1.getShort("MinSpawnDelay");
+         this.field32522 = var1.getShort("MaxSpawnDelay");
+         this.field32523 = var1.getShort("SpawnCount");
       }
 
       if (var1.contains("MaxNearbyEntities", 99)) {
-         this.field32525 = var1.method121("MaxNearbyEntities");
-         this.field32526 = var1.method121("RequiredPlayerRange");
+         this.field32525 = var1.getShort("MaxNearbyEntities");
+         this.field32526 = var1.getShort("RequiredPlayerRange");
       }
 
       if (var1.contains("SpawnRange", 99)) {
-         this.field32527 = var1.method121("SpawnRange");
+         this.field32527 = var1.getShort("SpawnRange");
       }
 
       if (this.method24786() != null) {

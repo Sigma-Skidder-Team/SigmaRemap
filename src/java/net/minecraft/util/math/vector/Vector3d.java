@@ -5,31 +5,31 @@ import mapped.*;
 import java.util.EnumSet;
 
 public class Vector3d implements Class2955 {
-   public static final Vector3d ZERO = new Vector3d(0.0, 0.0, 0.0);
+   public static final Vector3d ZERO = new Vector3d(0.0D, 0.0D, 0.0D);
    public double x;
    public double y;
    public double z;
 
-   public static Vector3d method11327(int var0) {
+   public static Vector3d unpack(int var0) {
       double var3 = (double)(var0 >> 16 & 0xFF) / 255.0;
       double var5 = (double)(var0 >> 8 & 0xFF) / 255.0;
       double var7 = (double)(var0 & 0xFF) / 255.0;
       return new Vector3d(var3, var5, var7);
    }
 
-   public static Vector3d method11328(Class1998 var0) {
+   public static Vector3d method11328(Vector3i var0) {
       return new Vector3d((double)var0.getX() + 0.5, (double)var0.getY() + 0.5, (double)var0.getZ() + 0.5);
    }
 
-   public static Vector3d method11329(Class1998 var0) {
+   public static Vector3d method11329(Vector3i var0) {
       return new Vector3d((double)var0.getX(), (double)var0.getY(), (double)var0.getZ());
    }
 
-   public static Vector3d method11330(Class1998 var0) {
+   public static Vector3d method11330(Vector3i var0) {
       return new Vector3d((double)var0.getX() + 0.5, (double)var0.getY(), (double)var0.getZ() + 0.5);
    }
 
-   public static Vector3d method11331(Class1998 var0, double var1) {
+   public static Vector3d method11331(Vector3i var0, double var1) {
       return new Vector3d((double)var0.getX() + 0.5, (double)var0.getY() + var1, (double)var0.getZ() + 0.5);
    }
 

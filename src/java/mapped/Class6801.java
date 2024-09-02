@@ -65,10 +65,10 @@ public class Class6801<T> implements Class6802<T> {
 
       for (int var6 = 0; var6 < var0.size(); var6++) {
          CompoundNBT var7 = var0.method153(var6);
-         Object var8 = var2.apply(new ResourceLocation(var7.method126("i")));
+         Object var8 = var2.apply(new ResourceLocation(var7.getString("i")));
          if (var8 != null) {
-            BlockPos var9 = new BlockPos(var7.method122("x"), var7.method122("y"), var7.method122("z"));
-            var5.add(new Class6575(var8, var9, var7.method122("t"), Class2199.method8913(var7.method122("p"))));
+            BlockPos var9 = new BlockPos(var7.getInt("x"), var7.getInt("y"), var7.getInt("z"));
+            var5.add(new Class6575(var8, var9, var7.getInt("t"), Class2199.method8913(var7.getInt("p"))));
          }
       }
 

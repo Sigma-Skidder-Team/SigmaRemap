@@ -26,7 +26,7 @@ public class Class934 extends TileEntity implements INameable, Class935 {
    private ITextComponent field5292;
 
    public Class934() {
-      super(Class4387.field21432);
+      super(TileEntityType.field21432);
    }
 
    @Override
@@ -43,7 +43,7 @@ public class Class934 extends TileEntity implements INameable, Class935 {
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       if (var2.contains("CustomName", 8)) {
-         this.field5292 = ITextComponent$Serializer.func_240643_a_(var2.method126("CustomName"));
+         this.field5292 = ITextComponent$Serializer.func_240643_a_(var2.getString("CustomName"));
       }
    }
 

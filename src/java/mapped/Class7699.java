@@ -71,18 +71,18 @@ public class Class7699 {
 
    public Class7699(ServerWorld var1, CompoundNBT var2) {
       this.field32978 = var1;
-      this.field32980 = var2.method122("Id");
+      this.field32980 = var2.getInt("Id");
       this.field32979 = var2.getBoolean("Started");
       this.field32983 = var2.getBoolean("Active");
-      this.field32976 = var2.method123("TicksActive");
-      this.field32982 = var2.method122("BadOmenLevel");
-      this.field32984 = var2.method122("GroupsSpawned");
-      this.field32987 = var2.method122("PreRaidTicks");
-      this.field32986 = var2.method122("PostRaidTicks");
+      this.field32976 = var2.getLong("TicksActive");
+      this.field32982 = var2.getInt("BadOmenLevel");
+      this.field32984 = var2.getInt("GroupsSpawned");
+      this.field32987 = var2.getInt("PreRaidTicks");
+      this.field32986 = var2.getInt("PostRaidTicks");
       this.field32981 = var2.getFloat("TotalHealth");
-      this.field32977 = new BlockPos(var2.method122("CX"), var2.method122("CY"), var2.method122("CZ"));
-      this.field32989 = var2.method122("NumGroups");
-      this.field32990 = Class2305.method9075(var2.method126("Status"));
+      this.field32977 = new BlockPos(var2.getInt("CX"), var2.getInt("CY"), var2.getInt("CZ"));
+      this.field32989 = var2.getInt("NumGroups");
+      this.field32990 = Class2305.method9075(var2.getString("Status"));
       this.field32975.clear();
       if (var2.contains("HeroesOfTheVillage", 9)) {
          ListNBT var5 = var2.method131("HeroesOfTheVillage", 11);

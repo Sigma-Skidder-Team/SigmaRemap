@@ -120,8 +120,8 @@ public class Class9809 {
             if (var1.method32141()) {
                CompoundNBT var16 = var1.method32142();
                if (!var16.contains("SkullOwner", 10)) {
-                  if (var16.contains("SkullOwner", 8) && !StringUtils.isBlank(var16.method126("SkullOwner"))) {
-                     GameProfile var19 = new GameProfile((UUID)null, var16.method126("SkullOwner"));
+                  if (var16.contains("SkullOwner", 8) && !StringUtils.isBlank(var16.getString("SkullOwner"))) {
+                     GameProfile var19 = new GameProfile((UUID)null, var16.getString("SkullOwner"));
                      var18 = SkullTileEntity.method4008(var19);
                      var16.method133("SkullOwner");
                      var16.put("SkullOwner", Class8354.method29279(new CompoundNBT(), var18));

@@ -24,6 +24,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
@@ -96,8 +97,8 @@ public final class ItemStack {
    }
 
    private ItemStack(CompoundNBT var1) {
-      this.field39978 = Registry.ITEM.method9184(new ResourceLocation(var1.method126("id")));
-      this.field39976 = var1.method120("Count");
+      this.field39978 = Registry.ITEM.method9184(new ResourceLocation(var1.getString("id")));
+      this.field39976 = var1.getByte("Count");
       if (var1.contains("tag", 10)) {
          this.field39979 = var1.getCompound("tag");
          this.getItem().method11705(var1);
@@ -201,7 +202,7 @@ public final class ItemStack {
    }
 
    public int method32117() {
-      return this.field39979 != null ? this.field39979.method122("Damage") : 0;
+      return this.field39979 != null ? this.field39979.getInt("Damage") : 0;
    }
 
    public void method32118(int var1) {
@@ -442,7 +443,7 @@ public final class ItemStack {
       CompoundNBT var3 = this.method32145("display");
       if (var3 != null && var3.contains("Name", 8)) {
          try {
-            IFormattableTextComponent var4 = ITextComponent$Serializer.func_240643_a_(var3.method126("Name"));
+            IFormattableTextComponent var4 = ITextComponent$Serializer.func_240643_a_(var3.getString("Name"));
             if (var4 != null) {
                return var4;
             }
@@ -512,13 +513,13 @@ public final class ItemStack {
             CompoundNBT var8 = this.field39979.getCompound("display");
             if (method32154(var7, Class2304.field15736) && var8.contains("color", 99)) {
                if (var2.method8944()) {
-                  var5.add(new TranslationTextComponent("item.color", String.format("#%06X", var8.method122("color"))).mergeStyle(TextFormatting.GRAY));
+                  var5.add(new TranslationTextComponent("item.color", String.format("#%06X", var8.getInt("color"))).mergeStyle(TextFormatting.GRAY));
                } else {
                   var5.add(new TranslationTextComponent("item.dyed").mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC}));
                }
             }
 
-            if (var8.method117("Lore") == 9) {
+            if (var8.getTagId("Lore") == 9) {
                ListNBT var9 = var8.method131("Lore", 8);
 
                for (int var10 = 0; var10 < var9.size(); var10++) {
@@ -654,18 +655,18 @@ public final class ItemStack {
    }
 
    private int method32155() {
-      return this.method32141() && this.field39979.contains("HideFlags", 99) ? this.field39979.method122("HideFlags") : 0;
+      return this.method32141() && this.field39979.contains("HideFlags", 99) ? this.field39979.getInt("HideFlags") : 0;
    }
 
    public void method32156(Class2304 var1) {
       CompoundNBT var4 = this.getOrCreateTag();
-      var4.method102("HideFlags", var4.method122("HideFlags") | var1.method9072());
+      var4.method102("HideFlags", var4.getInt("HideFlags") | var1.method9072());
    }
 
    public static void method32157(List<ITextComponent> var0, ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          CompoundNBT var5 = var1.method153(var4);
-         Registry.field16073.method9187(ResourceLocation.method8289(var5.method126("id"))).ifPresent(var2 -> var0.add(var2.method18820(var5.method122("lvl"))));
+         Registry.field16073.method9187(ResourceLocation.method8289(var5.getString("id"))).ifPresent(var2 -> var0.add(var2.method18820(var5.getInt("lvl"))));
       }
    }
 
@@ -727,7 +728,7 @@ public final class ItemStack {
       return this.field39979 != null && this.field39979.contains("Enchantments", 9) ? !this.field39979.method131("Enchantments", 10).isEmpty() : false;
    }
 
-   public void setTagInfo(String var1, Class30 var2) {
+   public void setTagInfo(String var1, INBT var2) {
       this.getOrCreateTag().put(var1, var2);
    }
 
@@ -750,7 +751,7 @@ public final class ItemStack {
    }
 
    public int method32169() {
-      return this.method32141() && this.field39979.contains("RepairCost", 3) ? this.field39979.method122("RepairCost") : 0;
+      return this.method32141() && this.field39979.contains("RepairCost", 3) ? this.field39979.getInt("RepairCost") : 0;
    }
 
    public void method32170(int var1) {
@@ -765,8 +766,8 @@ public final class ItemStack {
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
             CompoundNBT var7 = var5.method153(var6);
-            if (!var7.contains("Slot", 8) || var7.method126("Slot").equals(var1.method8775())) {
-               Optional<Class4869> var8 = Registry.field16087.method9187(ResourceLocation.method8289(var7.method126("AttributeName")));
+            if (!var7.contains("Slot", 8) || var7.getString("Slot").equals(var1.method8775())) {
+               Optional<Class4869> var8 = Registry.field16087.method9187(ResourceLocation.method8289(var7.getString("AttributeName")));
                if (var8.isPresent()) {
                   Class9689 var9 = Class9689.method37935(var7);
                   if (var9 != null && var9.method37930().getLeastSignificantBits() != 0L && var9.method37930().getMostSignificantBits() != 0L) {

@@ -60,7 +60,7 @@ public class Class7488 extends Class7487 {
 
       for (Class8266 var11 : var8) {
          if (var11.field35532 != null) {
-            Class104 var12 = Class104.valueOf(var11.field35532.method126("mode"));
+            Class104 var12 = Class104.valueOf(var11.field35532.getString("mode"));
             if (var12 == Class104.field321) {
                var9.add(var11);
             }

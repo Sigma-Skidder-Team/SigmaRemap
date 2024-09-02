@@ -1,6 +1,6 @@
-package mapped;
+package net.minecraft.nbt;
 
-import net.minecraft.nbt.CompoundNBT;
+import mapped.*;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -18,38 +18,38 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 import javax.annotation.Nullable;
 
-public class Class8799 {
-   public static CompoundNBT method31765(File var0) throws IOException {
+public class CompressedStreamTools {
+   public static CompoundNBT readCompressed(File var0) throws IOException {
       CompoundNBT var5;
       try (FileInputStream var3 = new FileInputStream(var0)) {
-         var5 = method31766(var3);
+         var5 = readCompressed(var3);
       }
 
       return var5;
    }
 
-   public static CompoundNBT method31766(InputStream var0) throws IOException {
+   public static CompoundNBT readCompressed(InputStream var0) throws IOException {
       CompoundNBT var5;
       try (DataInputStream var3 = new DataInputStream(new BufferedInputStream(new GZIPInputStream(var0)))) {
-         var5 = method31772(var3, Class8465.field36284);
+         var5 = read(var3, NBTSizeTracker.INFINITE);
       }
 
       return var5;
    }
 
-   public static void method31767(CompoundNBT var0, File var1) throws IOException {
+   public static void writeCompressed(CompoundNBT var0, File var1) throws IOException {
       try (FileOutputStream var4 = new FileOutputStream(var1)) {
-         method31768(var0, var4);
+         writeCompressed(var0, var4);
       }
    }
 
-   public static void method31768(CompoundNBT var0, OutputStream var1) throws IOException {
+   public static void writeCompressed(CompoundNBT var0, OutputStream var1) throws IOException {
       try (DataOutputStream var4 = new DataOutputStream(new BufferedOutputStream(new GZIPOutputStream(var1)))) {
          method31773(var0, var4);
       }
    }
 
-   public static void method31769(CompoundNBT var0, File var1) throws IOException {
+   public static void write(CompoundNBT var0, File var1) throws IOException {
       try (
          FileOutputStream var4 = new FileOutputStream(var1);
          DataOutputStream var6 = new DataOutputStream(var4);
@@ -68,19 +68,19 @@ public class Class8799 {
             FileInputStream var3 = new FileInputStream(var0);
             DataInputStream var5 = new DataInputStream(var3);
          ) {
-            var7 = method31772(var5, Class8465.field36284);
+            var7 = read(var5, NBTSizeTracker.INFINITE);
          }
 
          return var7;
       }
    }
 
-   public static CompoundNBT method31771(DataInput var0) throws IOException {
-      return method31772(var0, Class8465.field36284);
+   public static CompoundNBT read(DataInput var0) throws IOException {
+      return read(var0, NBTSizeTracker.INFINITE);
    }
 
-   public static CompoundNBT method31772(DataInput var0, Class8465 var1) throws IOException {
-      Class30 var4 = method31775(var0, 0, var1);
+   public static CompoundNBT read(DataInput var0, NBTSizeTracker var1) throws IOException {
+      INBT var4 = read(var0, 0, var1);
       if (!(var4 instanceof CompoundNBT)) {
          throw new IOException("Root tag must be a named compound tag");
       } else {
@@ -89,26 +89,26 @@ public class Class8799 {
    }
 
    public static void method31773(CompoundNBT var0, DataOutput var1) throws IOException {
-      method31774(var0, var1);
+      writeTag(var0, var1);
    }
 
-   private static void method31774(Class30 var0, DataOutput var1) throws IOException {
-      var1.writeByte(var0.method74());
-      if (var0.method74() != 0) {
+   private static void writeTag(INBT var0, DataOutput var1) throws IOException {
+      var1.writeByte(var0.getId());
+      if (var0.getId() != 0) {
          var1.writeUTF("");
-         var0.method73(var1);
+         var0.write(var1);
       }
    }
 
-   private static Class30 method31775(DataInput var0, int var1, Class8465 var2) throws IOException {
+   private static INBT read(DataInput var0, int var1, NBTSizeTracker var2) throws IOException {
       byte var5 = var0.readByte();
       if (var5 == 0) {
-         return Class38.field78;
+         return EndNBT.INSTANCE;
       } else {
          var0.readUTF();
 
          try {
-            return Class3571.method12200(var5).method21978(var0, var1, var2);
+            return NBTTypes.getGetTypeByID(var5).readNBT(var0, var1, var2);
          } catch (IOException var9) {
             CrashReport var7 = CrashReport.makeCrashReport(var9, "Loading NBT data");
             CrashReportCategory var8 = var7.makeCategory("NBT Tag");

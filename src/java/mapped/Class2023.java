@@ -240,14 +240,14 @@ public class Class2023 implements Comparable<Class2023> {
    }
 
    public static Class2023 method8639(CompoundNBT var0) {
-      byte var3 = var0.method120("Id");
+      byte var3 = var0.getByte("Id");
       Effect var4 = Effect.method22287(var3);
       return var4 != null ? method8640(var4, var0) : null;
    }
 
    private static Class2023 method8640(Effect var0, CompoundNBT var1) {
-      byte var4 = var1.method120("Amplifier");
-      int var5 = var1.method122("Duration");
+      byte var4 = var1.getByte("Amplifier");
+      int var5 = var1.getInt("Duration");
       boolean var6 = var1.getBoolean("Ambient");
       boolean var7 = true;
       if (var1.contains("ShowParticles", 1)) {

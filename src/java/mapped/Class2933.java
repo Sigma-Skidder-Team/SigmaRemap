@@ -63,9 +63,9 @@ public class Class2933 extends Class2898<Class4734> {
 
       for (int var28 = 0; var28 < var26; var28++) {
          float var29 = (float)var28 / (float)var26;
-         double var30 = MathHelper.method37822((double)var29, var4, var6);
-         double var32 = MathHelper.method37822((double)var29, var12, var14);
-         double var34 = MathHelper.method37822((double)var29, var8, var10);
+         double var30 = MathHelper.lerp((double)var29, var4, var6);
+         double var32 = MathHelper.lerp((double)var29, var12, var14);
+         double var34 = MathHelper.lerp((double)var29, var8, var10);
          double var36 = var2.nextDouble() * (double)var26 / 16.0;
          double var38 = ((double)(MathHelper.sin((float) Math.PI * var29) + 1.0F) * var36 + 1.0) / 2.0;
          var27[var28 * 4 + 0] = var30;

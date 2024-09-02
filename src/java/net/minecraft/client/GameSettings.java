@@ -343,7 +343,7 @@ public class GameSettings {
 
          CompoundNBT var23 = this.method37144(var1);
          if (!var23.contains("graphicsMode") && var23.contains("fancyGraphics")) {
-            if ("true".equals(var23.method126("fancyGraphics"))) {
+            if ("true".equals(var23.getString("fancyGraphics"))) {
                this.graphicFanciness = GraphicsFanciness.FANCY;
             } else {
                this.graphicFanciness = GraphicsFanciness.field13603;
@@ -351,7 +351,7 @@ public class GameSettings {
          }
 
          for (String var4 : var23.method97()) {
-            String var5 = var23.method126(var4);
+            String var5 = var23.getString(var4);
 
             try {
                if ("autoJump".equals(var4)) {
@@ -707,7 +707,7 @@ public class GameSettings {
       int var2 = 0;
 
       try {
-         var2 = Integer.parseInt(var1.method126("version"));
+         var2 = Integer.parseInt(var1.getString("version"));
       } catch (RuntimeException var4) {
       }
 

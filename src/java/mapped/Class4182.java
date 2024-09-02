@@ -21,8 +21,8 @@ public class Class4182 extends Class4180 {
 
    public Class4182(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33479, var2);
-      this.field20458 = new ResourceLocation(var2.method126("Template"));
-      this.field20459 = Class80.valueOf(var2.method126("Rot"));
+      this.field20458 = new ResourceLocation(var2.getString("Template"));
+      this.field20459 = Class80.valueOf(var2.getString("Rot"));
       this.method12946(var1);
    }
 

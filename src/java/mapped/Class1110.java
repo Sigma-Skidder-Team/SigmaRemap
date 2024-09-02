@@ -138,10 +138,10 @@ public class Class1110 extends Class1111 implements Class1008 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.contains("AX")) {
-         this.field6089 = new BlockPos(var1.method122("AX"), var1.method122("AY"), var1.method122("AZ"));
+         this.field6089 = new BlockPos(var1.getInt("AX"), var1.getInt("AY"), var1.getInt("AZ"));
       }
 
-      this.method5336(var1.method122("Size"));
+      this.method5336(var1.getInt("Size"));
    }
 
    @Override

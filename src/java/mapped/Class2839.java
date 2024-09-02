@@ -2,13 +2,14 @@ package mapped;
 
 import java.util.function.Consumer;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
-public class Class2839 implements Consumer<Consumer<Class7952>> {
-   public void accept(Consumer<Class7952> var1) {
-      Class7952 var4 = Class7999.method27304()
+public class Class2839 implements Consumer<Consumer<Advancement>> {
+   public void accept(Consumer<Advancement> var1) {
+      Advancement var4 = Class7999.method27304()
          .method27308(
             Blocks.field36395,
             new TranslationTextComponent("advancements.story.root.title"),
@@ -21,7 +22,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("crafting_table", Class4491.method14164(Blocks.CRAFTING_TABLE))
          .method27317(var1, "story/root");
-      Class7952 var5 = Class7999.method27304()
+      Advancement var5 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Items.field37807,
@@ -35,7 +36,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("get_stone", Class4491.method14163(Class9735.method38146().method38148(Class5985.field26122).method38151()))
          .method27317(var1, "story/mine_stone");
-      Class7952 var6 = Class7999.method27304()
+      Advancement var6 = Class7999.method27304()
          .method27305(var5)
          .method27308(
             Items.field37812,
@@ -49,7 +50,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("stone_pickaxe", Class4491.method14164(Items.field37812))
          .method27317(var1, "story/upgrade_tools");
-      Class7952 var7 = Class7999.method27304()
+      Advancement var7 = Class7999.method27304()
          .method27305(var6)
          .method27308(
             Items.field37801,
@@ -63,7 +64,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("iron", Class4491.method14164(Items.field37801))
          .method27317(var1, "story/smelt_iron");
-      Class7952 var8 = Class7999.method27304()
+      Advancement var8 = Class7999.method27304()
          .method27305(var7)
          .method27308(
             Items.field37822,
@@ -77,7 +78,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("iron_pickaxe", Class4491.method14164(Items.field37822))
          .method27317(var1, "story/iron_tools");
-      Class7952 var9 = Class7999.method27304()
+      Advancement var9 = Class7999.method27304()
          .method27305(var8)
          .method27308(
             Items.field37800,
@@ -91,7 +92,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("diamond", Class4491.method14164(Items.field37800))
          .method27317(var1, "story/mine_diamond");
-      Class7952 var10 = Class7999.method27304()
+      Advancement var10 = Class7999.method27304()
          .method27305(var7)
          .method27308(
             Items.field37884,
@@ -105,7 +106,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("lava_bucket", Class4491.method14164(Items.field37884))
          .method27317(var1, "story/lava_bucket");
-      Class7952 var11 = Class7999.method27304()
+      Advancement var11 = Class7999.method27304()
          .method27305(var7)
          .method27308(
             Items.field37853,
@@ -137,7 +138,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("enchanted_item", Class4465.method14111())
          .method27317(var1, "story/enchant_item");
-      Class7952 var12 = Class7999.method27304()
+      Advancement var12 = Class7999.method27304()
          .method27305(var10)
          .method27308(
             Blocks.field36527,
@@ -185,7 +186,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
          .method27312("diamond_leggings", Class4491.method14164(Items.field37858))
          .method27312("diamond_boots", Class4491.method14164(Items.field37859))
          .method27317(var1, "story/shiny_gear");
-      Class7952 var13 = Class7999.method27304()
+      Advancement var13 = Class7999.method27304()
          .method27305(var12)
          .method27308(
             Items.field37794,
@@ -213,7 +214,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("cured_zombie", Class4495.method14174())
          .method27317(var1, "story/cure_zombie_villager");
-      Class7952 var14 = Class7999.method27304()
+      Advancement var14 = Class7999.method27304()
          .method27305(var13)
          .method27308(
             Items.field37979,

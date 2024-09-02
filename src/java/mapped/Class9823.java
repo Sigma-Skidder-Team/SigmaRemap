@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3i;
 
 import java.util.*;
 
@@ -13,7 +14,7 @@ public class Class9823 {
    public int field45893 = 150;
    public Class7859 field45894;
    private static Minecraft field45895 = Minecraft.getInstance();
-   public Class1998 field45896;
+   public Vector3i field45896;
    public Class9110 field45897;
    public Class9510 field45898;
    public Class7267 field45899;

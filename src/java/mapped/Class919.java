@@ -140,8 +140,8 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
       if (!var1.contains("LootTable", 8)) {
          Class7920.method26567(var1, this.field5236);
       } else {
-         this.field5238 = new ResourceLocation(var1.method126("LootTable"));
-         this.field5239 = var1.method123("LootTableSeed");
+         this.field5238 = new ResourceLocation(var1.getString("LootTable"));
+         this.field5239 = var1.getLong("LootTableSeed");
       }
    }
 

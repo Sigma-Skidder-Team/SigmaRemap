@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.vector.Vector3i;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
@@ -16,13 +17,13 @@ public class Class4276 extends Class4247 {
    private final Date field20724;
    private boolean field20725 = false;
    private Date field20726;
-   public Class1998 field20727;
+   public Vector3i field20727;
    public Class4281 field20728;
    public Class4281 field20729;
    public Class4356 field20730;
    private final List<Class9073> field20731 = new ArrayList<Class9073>();
 
-   public Class4276(Class4305 var1, String var2, int var3, int var4, Class1998 var5) {
+   public Class4276(Class4305 var1, String var2, int var3, int var4, Vector3i var5) {
       super(var1, var2, var3 - 107, var4 + 10, 214, 170, Class6387.field27961, "", false);
       this.field20727 = var5;
       if (this.field20896 + this.field20898 <= Minecraft.getInstance().mainWindow.getHeight()) {
@@ -71,13 +72,13 @@ public class Class4276 extends Class4247 {
       this.field20728.method13306(ResourceRegistry.JelloLightFont18);
    }
 
-   public Class1998 method13130() {
+   public Vector3i method13130() {
       if (this.field20728.method13303() != null && this.field20728.method13303().contains(" ")) {
          String[] var3 = this.field20728.method13303().split(" ");
          if (var3.length == 2 && var3[0].matches("-?\\d+") && var3[1].matches("-?\\d+")) {
             int var4 = Integer.valueOf(var3[0]);
             int var5 = Integer.valueOf(var3[1]);
-            return new Class1998(var4, 0, var5);
+            return new Vector3i(var4, 0, var5);
          }
       }
 
@@ -136,7 +137,7 @@ public class Class4276 extends Class4247 {
       this.field20731.add(var1);
    }
 
-   public final void method13132(String var1, Class1998 var2, int var3) {
+   public final void method13132(String var1, Vector3i var2, int var3) {
       for (Class9073 var7 : this.field20731) {
          var7.method33814(this, var1, var2, var3);
       }

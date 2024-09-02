@@ -82,7 +82,7 @@ public class Class8287 extends Class8286 {
                   var8.method102("DataVersion", 1343);
                }
 
-               var8 = Class8354.method29289(var1, Class2108.field13754, var8, var8.method122("DataVersion"));
+               var8 = Class8354.method29289(var1, Class2108.field13754, var8, var8.getInt("DataVersion"));
                if (var8.contains("stats", 10)) {
                   CompoundNBT var9 = var8.getCompound("stats");
 
@@ -101,7 +101,7 @@ public class Class8287 extends Class8286 {
                                  } else {
                                     Util.acceptOrElse(
                                        this.method28965(var3, var8x),
-                                       var3x -> this.field35590.put(var3x, var6x.method122(var8x)),
+                                       var3x -> this.field35590.put(var3x, var6x.getInt(var8x)),
                                        () -> field35591.warn("Invalid statistic in {}: Don't know what {} is", this.field35593, var8x)
                                     );
                                  }

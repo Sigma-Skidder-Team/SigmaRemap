@@ -32,10 +32,10 @@ public class Class3284 extends Item {
             int var10 = 160;
             CompoundNBT var11 = var8.method153(var9);
             if (var11.contains("EffectDuration", 3)) {
-               var10 = var11.method122("EffectDuration");
+               var10 = var11.getInt("EffectDuration");
             }
 
-            Effect var12 = Effect.method22287(var11.method120("EffectId"));
+            Effect var12 = Effect.method22287(var11.getByte("EffectId"));
             if (var12 != null) {
                var3.method3035(new Class2023(var12, var10));
             }

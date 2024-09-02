@@ -4,14 +4,14 @@ import net.minecraft.network.play.client.CUpdateMinecartCommandBlockPacket;
 
 public class Class1327 extends Class1325 {
    private static String[] field7024;
-   private final Class911 field7025;
+   private final CommandBlockLogic field7025;
 
-   public Class1327(Class911 var1) {
+   public Class1327(CommandBlockLogic var1) {
       this.field7025 = var1;
    }
 
    @Override
-   public Class911 method6304() {
+   public CommandBlockLogic method6304() {
       return this.field7025;
    }
 
@@ -29,7 +29,7 @@ public class Class1327 extends Class1325 {
    }
 
    @Override
-   public void method6308(Class911 var1) {
+   public void method6308(CommandBlockLogic var1) {
       if (var1 instanceof Class912) {
          Class912 var4 = (Class912)var1;
          this.mc.getConnection().sendPacket(new CUpdateMinecartCommandBlockPacket(var4.method3577().getEntityId(), this.field7010.getText(), var1.method3571()));

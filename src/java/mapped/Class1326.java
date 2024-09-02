@@ -3,24 +3,25 @@ package mapped;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.network.play.client.CUpdateCommandBlockPacket;
+import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1326 extends Class1325 {
-   private final Class969 field7017;
+   private final CommandBlockTileEntity field7017;
    private Button field7018;
    private Button field7019;
    private Button field7020;
-   private Class2037 field7021 = Class2037.field13325;
+   private CommandBlockTileEntity.Mode field7021 = CommandBlockTileEntity.Mode.field13325;
    private boolean field7022;
    private boolean field7023;
 
-   public Class1326(Class969 var1) {
+   public Class1326(CommandBlockTileEntity var1) {
       this.field7017 = var1;
    }
 
    @Override
-   public Class911 method6304() {
+   public CommandBlockLogic method6304() {
       return this.field7017.method4009();
    }
 
@@ -58,12 +59,12 @@ public class Class1326 extends Class1325 {
    }
 
    public void method6314() {
-      Class911 var3 = this.field7017.method4009();
+      CommandBlockLogic var3 = this.field7017.method4009();
       this.field7010.method5635(var3.method3563());
       this.field7015 = var3.method3571();
       this.field7021 = this.field7017.method4020();
       this.field7022 = this.field7017.method4021();
-      this.field7023 = this.field7017.method4012();
+      this.field7023 = this.field7017.isAuto();
       this.method6306();
       this.method6315();
       this.method6317();
@@ -90,7 +91,7 @@ public class Class1326 extends Class1325 {
    }
 
    @Override
-   public void method6308(Class911 var1) {
+   public void method6308(CommandBlockLogic var1) {
       this.mc
          .getConnection()
          .sendPacket(
@@ -114,13 +115,13 @@ public class Class1326 extends Class1325 {
    private void method6316() {
       switch (Class8046.field34562[this.field7021.ordinal()]) {
          case 1:
-            this.field7021 = Class2037.field13324;
+            this.field7021 = CommandBlockTileEntity.Mode.field13324;
             break;
          case 2:
-            this.field7021 = Class2037.field13325;
+            this.field7021 = CommandBlockTileEntity.Mode.field13325;
             break;
          case 3:
-            this.field7021 = Class2037.field13323;
+            this.field7021 = CommandBlockTileEntity.Mode.field13323;
       }
    }
 

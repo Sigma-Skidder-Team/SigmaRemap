@@ -26,7 +26,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
    private boolean field5311;
 
    public Class940(Class112 var1) {
-      super(Class4387.field21443);
+      super(TileEntityType.field21443);
       this.field5310 = var1;
    }
 

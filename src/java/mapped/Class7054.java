@@ -1,14 +1,17 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.nbt.NBTTypes;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.NBTSizeTracker;
 
 import java.io.DataInput;
 import java.io.IOException;
 import java.util.HashMap;
 
 public final class Class7054 implements Class7052<CompoundNBT> {
-   public CompoundNBT method21978(DataInput var1, int var2, Class8465 var3) throws IOException {
+   public CompoundNBT readNBT(DataInput var1, int var2, NBTSizeTracker var3) throws IOException {
       var3.method29769(384L);
       if (var2 <= 512) {
          HashMap var6 = Maps.newHashMap();
@@ -17,7 +20,7 @@ public final class Class7054 implements Class7052<CompoundNBT> {
          while ((var7 = CompoundNBT.method147(var1, var3)) != 0) {
             String var8 = CompoundNBT.method148(var1, var3);
             var3.method29769((long)(224 + 16 * var8.length()));
-            Class30 var9 = CompoundNBT.method149(Class3571.method12200(var7), var8, var1, var2 + 1, var3);
+            INBT var9 = CompoundNBT.method149(NBTTypes.getGetTypeByID(var7), var8, var1, var2 + 1, var3);
             if (var6.put(var8, var9) != null) {
                var3.method29769(288L);
             }

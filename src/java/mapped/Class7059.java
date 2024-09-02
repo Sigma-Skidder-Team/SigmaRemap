@@ -1,10 +1,12 @@
 package mapped;
 
+import net.minecraft.nbt.NBTSizeTracker;
+
 import java.io.DataInput;
 import java.io.IOException;
 
 public final class Class7059 implements Class7052<Class37> {
-   public Class37 method21978(DataInput var1, int var2, Class8465 var3) throws IOException {
+   public Class37 readNBT(DataInput var1, int var2, NBTSizeTracker var3) throws IOException {
       var3.method29769(80L);
       return Class37.method96(var1.readShort());
    }

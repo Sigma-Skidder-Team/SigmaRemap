@@ -23,9 +23,9 @@ public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
       float var12 = (((float)(var9 >> 20 & 7L) + 0.5F) / 8.0F - 0.5F) * 0.004F;
       float var13 = (((float)(var9 >> 24 & 7L) + 0.5F) / 8.0F - 0.5F) * 0.004F;
       var4.translate((double)var11, (double)var12, (double)var13);
-      double var14 = MathHelper.method37822((double)var3, var1.lastTickPosX, var1.getPosX());
-      double var16 = MathHelper.method37822((double)var3, var1.lastTickPosY, var1.getPosY());
-      double var18 = MathHelper.method37822((double)var3, var1.lastTickPosZ, var1.getPosZ());
+      double var14 = MathHelper.lerp((double)var3, var1.lastTickPosX, var1.getPosX());
+      double var16 = MathHelper.lerp((double)var3, var1.lastTickPosY, var1.getPosY());
+      double var18 = MathHelper.lerp((double)var3, var1.lastTickPosZ, var1.getPosZ());
       double var20 = 0.3F;
       Vector3d var22 = var1.method3595(var14, var16, var18);
       float var23 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);

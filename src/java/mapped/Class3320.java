@@ -25,14 +25,14 @@ public class Class3320 extends Item {
    }
 
    public static void method11873(CompoundNBT var0, List<ITextComponent> var1) {
-      Class2119 var4 = Class2119.method8802(var0.method120("Type"));
+      Class2119 var4 = Class2119.method8802(var0.getByte("Type"));
       var1.add(new TranslationTextComponent("item.minecraft.firework_star.shape." + var4.method8801()).mergeStyle(TextFormatting.GRAY));
-      int[] var5 = var0.method128("Colors");
+      int[] var5 = var0.getIntArray("Colors");
       if (var5.length > 0) {
          var1.add(method11874(new StringTextComponent("").mergeStyle(TextFormatting.GRAY), var5));
       }
 
-      int[] var6 = var0.method128("FadeColors");
+      int[] var6 = var0.getIntArray("FadeColors");
       if (var6.length > 0) {
          var1.add(method11874(new TranslationTextComponent("item.minecraft.firework_star.fade_to").appendString(" ").mergeStyle(TextFormatting.GRAY), var6));
       }

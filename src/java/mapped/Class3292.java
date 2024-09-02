@@ -100,7 +100,7 @@ public class Class3292 extends Item {
          for (String var12 : var9.method97()) {
             Class8550 var13 = var10.method35396(var12);
             if (var13 != null) {
-               String var14 = var9.method116(var12).method81();
+               String var14 = var9.method116(var12).getString();
                var7 = method11840(var7, var13, var14);
             }
          }

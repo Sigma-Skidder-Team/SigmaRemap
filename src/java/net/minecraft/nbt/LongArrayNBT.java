@@ -1,6 +1,7 @@
-package mapped;
+package net.minecraft.nbt;
 
 import it.unimi.dsi.fastutil.longs.LongSet;
+import mapped.*;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -11,19 +12,19 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class Class42 extends Class27<Class35> {
-   public static final Class7052<Class42> field91 = new Class7061();
+public class LongArrayNBT extends Class27<Class35> {
+   public static final Class7052<LongArrayNBT> field91 = new Class7061();
    private long[] field92;
 
-   public Class42(long[] var1) {
+   public LongArrayNBT(long[] var1) {
       this.field92 = var1;
    }
 
-   public Class42(LongSet var1) {
+   public LongArrayNBT(LongSet var1) {
       this.field92 = var1.toLongArray();
    }
 
-   public Class42(List<Long> var1) {
+   public LongArrayNBT(List<Long> var1) {
       this(toArray(var1));
    }
 
@@ -39,7 +40,7 @@ public class Class42 extends Class27<Class35> {
    }
 
    @Override
-   public void method73(DataOutput var1) throws IOException {
+   public void write(DataOutput var1) throws IOException {
       var1.writeInt(this.field92.length);
 
       for (long var7 : this.field92) {
@@ -48,12 +49,12 @@ public class Class42 extends Class27<Class35> {
    }
 
    @Override
-   public byte method74() {
+   public byte getId() {
       return 12;
    }
 
    @Override
-   public Class7052<Class42> method75() {
+   public Class7052<LongArrayNBT> method75() {
       return field91;
    }
 
@@ -72,15 +73,15 @@ public class Class42 extends Class27<Class35> {
       return var3.append(']').toString();
    }
 
-   public Class42 method79() {
+   public LongArrayNBT method79() {
       long[] var3 = new long[this.field92.length];
       System.arraycopy(this.field92, 0, var3, 0, this.field92.length);
-      return new Class42(var3);
+      return new LongArrayNBT(var3);
    }
 
    @Override
    public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof Class42 && Arrays.equals(this.field92, ((Class42)var1).field92);
+      return this == var1 ? true : var1 instanceof LongArrayNBT && Arrays.equals(this.field92, ((LongArrayNBT)var1).field92);
    }
 
    @Override
@@ -105,7 +106,7 @@ public class Class42 extends Class27<Class35> {
       return var6;
    }
 
-   public long[] method162() {
+   public long[] getLongArray() {
       return this.field92;
    }
 
@@ -120,30 +121,30 @@ public class Class42 extends Class27<Class35> {
 
    public Class35 set(int var1, Class35 var2) {
       long var5 = this.field92[var1];
-      this.field92[var1] = var2.method83();
+      this.field92[var1] = var2.getLong();
       return Class35.method94(var5);
    }
 
    public void add(int var1, Class35 var2) {
-      this.field92 = ArrayUtils.add(this.field92, var1, var2.method83());
+      this.field92 = ArrayUtils.add(this.field92, var1, var2.getLong());
    }
 
    @Override
-   public boolean method70(int var1, Class30 var2) {
-      if (!(var2 instanceof Class31)) {
+   public boolean method70(int var1, INBT var2) {
+      if (!(var2 instanceof NumberNBT)) {
          return false;
       } else {
-         this.field92[var1] = ((Class31)var2).method83();
+         this.field92[var1] = ((NumberNBT)var2).getLong();
          return true;
       }
    }
 
    @Override
-   public boolean method71(int var1, Class30 var2) {
-      if (!(var2 instanceof Class31)) {
+   public boolean method71(int var1, INBT var2) {
+      if (!(var2 instanceof NumberNBT)) {
          return false;
       } else {
-         this.field92 = ArrayUtils.add(this.field92, var1, ((Class31)var2).method83());
+         this.field92 = ArrayUtils.add(this.field92, var1, ((NumberNBT)var2).getLong());
          return true;
       }
    }

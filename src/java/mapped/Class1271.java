@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.item.ItemStack;
@@ -16,12 +17,12 @@ public class Class1271 extends AbstractGui {
    private final AdvancementsScreen field6749;
    private final Class2166 field6750;
    private final int field6751;
-   private final Class7952 field6752;
+   private final Advancement field6752;
    private final Class9272 field6753;
    private final ItemStack field6754;
    private final ITextComponent field6755;
    private final Class1194 field6756;
-   private final Map<Class7952, Class1194> field6757 = Maps.newLinkedHashMap();
+   private final Map<Advancement, Class1194> field6757 = Maps.newLinkedHashMap();
    private double field6758;
    private double field6759;
    private int field6760 = Integer.MAX_VALUE;
@@ -31,7 +32,7 @@ public class Class1271 extends AbstractGui {
    private float field6764;
    private boolean field6765;
 
-   public Class1271(Minecraft var1, AdvancementsScreen var2, Class2166 var3, int var4, Class7952 var5, Class9272 var6) {
+   public Class1271(Minecraft var1, AdvancementsScreen var2, Class2166 var3, int var4, Advancement var5, Class9272 var6) {
       this.field6748 = var1;
       this.field6749 = var2;
       this.field6750 = var3;
@@ -44,7 +45,7 @@ public class Class1271 extends AbstractGui {
       this.method6011(this.field6756, var5);
    }
 
-   public Class7952 method6001() {
+   public Advancement method6001() {
       return this.field6752;
    }
 
@@ -138,7 +139,7 @@ public class Class1271 extends AbstractGui {
    }
 
    @Nullable
-   public static Class1271 method6008(Minecraft var0, AdvancementsScreen var1, int var2, Class7952 var3) {
+   public static Class1271 method6008(Minecraft var0, AdvancementsScreen var1, int var2, Advancement var3) {
       if (var3.method27027() == null) {
          return null;
       } else {
@@ -164,14 +165,14 @@ public class Class1271 extends AbstractGui {
       }
    }
 
-   public void method6010(Class7952 var1) {
+   public void method6010(Advancement var1) {
       if (var1.method27027() != null) {
          Class1194 var4 = new Class1194(this, this.field6748, var1, var1.method27027());
          this.method6011(var4, var1);
       }
    }
 
-   private void method6011(Class1194 var1, Class7952 var2) {
+   private void method6011(Class1194 var1, Advancement var2) {
       this.field6757.put(var2, var1);
       int var5 = var1.method5717();
       int var6 = var5 + 28;
@@ -188,7 +189,7 @@ public class Class1271 extends AbstractGui {
    }
 
    @Nullable
-   public Class1194 method6012(Class7952 var1) {
+   public Class1194 method6012(Advancement var1) {
       return this.field6757.get(var1);
    }
 

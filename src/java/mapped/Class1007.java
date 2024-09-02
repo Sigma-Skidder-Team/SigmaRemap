@@ -102,7 +102,7 @@ public class Class1007 extends Class1006 implements Class1008 {
       var8 = this.field5621[var5][1];
       var10 = this.field5621[var6][1] - var8;
       var7[1] = var8 + var10 * (double)var2;
-      var7[2] = MathHelper.method37822((double)var2, this.field5621[var5][2], this.field5621[var6][2]);
+      var7[2] = MathHelper.lerp((double)var2, this.field5621[var5][2], this.field5621[var6][2]);
       return var7;
    }
 
@@ -748,7 +748,7 @@ public class Class1007 extends Class1006 implements Class1008 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.contains("DragonPhase")) {
-         this.field5639.method32671(Class9598.method37260(var1.method122("DragonPhase")));
+         this.field5639.method32671(Class9598.method37260(var1.getInt("DragonPhase")));
       }
    }
 

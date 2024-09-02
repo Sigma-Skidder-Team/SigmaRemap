@@ -185,11 +185,11 @@ public abstract class Class1026 extends Class1028 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.field5715 = var1.method122("Wave");
+      this.field5715 = var1.getInt("Wave");
       this.field5716 = var1.getBoolean("CanJoinRaid");
       if (var1.contains("RaidId", 3)) {
          if (this.world instanceof ServerWorld) {
-            this.field5714 = ((ServerWorld)this.world).method6956().method24610(var1.method122("RaidId"));
+            this.field5714 = ((ServerWorld)this.world).method6956().method24610(var1.getInt("RaidId"));
          }
 
          if (this.field5714 != null) {

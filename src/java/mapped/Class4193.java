@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 import org.apache.logging.log4j.LogManager;
@@ -33,13 +34,13 @@ public class Class4193 extends Class4178 {
    public Class4193(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33480, var2);
       this.field20494 = var1;
-      this.field20490 = new BlockPos(var2.method122("PosX"), var2.method122("PosY"), var2.method122("PosZ"));
-      this.field20491 = var2.method122("ground_level_delta");
+      this.field20490 = new BlockPos(var2.getInt("PosX"), var2.getInt("PosY"), var2.getInt("PosZ"));
+      this.field20491 = var2.getInt("ground_level_delta");
       this.field20489 = Class7487.field32183
          .parse(NBTDynamicOps.INSTANCE, var2.getCompound("pool_element"))
          .resultOrPartial(field20488::error)
          .orElse(Class7486.field32182);
-      this.field20492 = Class80.valueOf(var2.method126("rotation"));
+      this.field20492 = Class80.valueOf(var2.getString("rotation"));
       this.field20444 = this.field20489.method24375(var1, this.field20490, this.field20492);
       ListNBT var5 = var2.method131("junctions", 10);
       this.field20493.clear();
@@ -60,7 +61,7 @@ public class Class4193 extends Class4178 {
       ListNBT var4 = new ListNBT();
 
       for (Class3637 var6 : this.field20493) {
-         var4.add((Class30)var6.method12348(NBTDynamicOps.INSTANCE).getValue());
+         var4.add((INBT)var6.method12348(NBTDynamicOps.INSTANCE).getValue());
       }
 
       var1.put("junctions", var4);

@@ -20,6 +20,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -37,16 +38,16 @@ public abstract class AbstractMinecartEntity extends Entity {
       Pose.STANDING, ImmutableList.of(0, 1, -1), Pose.field13624, ImmutableList.of(0, 1, -1), Pose.field13622, ImmutableList.of(0, 1)
    );
    private boolean field5220;
-   private static final Map<Class96, Pair<Class1998, Class1998>> field5221 = Util.<Map<Class96, Pair<Class1998, Class1998>>>make(
+   private static final Map<Class96, Pair<Vector3i, Vector3i>> field5221 = Util.<Map<Class96, Pair<Vector3i, Vector3i>>>make(
       Maps.newEnumMap(Class96.class), var0 -> {
-         Class1998 var3 = Direction.WEST.method556();
-         Class1998 var4 = Direction.EAST.method556();
-         Class1998 var5 = Direction.NORTH.method556();
-         Class1998 var6 = Direction.SOUTH.method556();
-         Class1998 var7 = var3.method8312();
-         Class1998 var8 = var4.method8312();
-         Class1998 var9 = var5.method8312();
-         Class1998 var10 = var6.method8312();
+         Vector3i var3 = Direction.WEST.method556();
+         Vector3i var4 = Direction.EAST.method556();
+         Vector3i var5 = Direction.NORTH.method556();
+         Vector3i var6 = Direction.SOUTH.method556();
+         Vector3i var7 = var3.method8312();
+         Vector3i var8 = var4.method8312();
+         Vector3i var9 = var5.method8312();
+         Vector3i var10 = var6.method8312();
          var0.put(Class96.field247, Pair.of(var5, var6));
          var0.put(Class96.field248, Pair.of(var3, var4));
          var0.put(Class96.field249, Pair.of(var7, var4));
@@ -253,7 +254,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       return !this.removed;
    }
 
-   private static Pair<Class1998, Class1998> method3587(Class96 var0) {
+   private static Pair<Vector3i, Vector3i> method3587(Class96 var0) {
       return field5221.get(var0);
    }
 
@@ -424,8 +425,8 @@ public abstract class AbstractMinecartEntity extends Entity {
 
       var17 = this.method3433();
       Pair var19 = method3587(var18);
-      Class1998 var20 = (Class1998)var19.getFirst();
-      Class1998 var21 = (Class1998)var19.getSecond();
+      Vector3i var20 = (Vector3i)var19.getFirst();
+      Vector3i var21 = (Vector3i)var19.getSecond();
       double var22 = (double)(var21.getX() - var20.getX());
       double var24 = (double)(var21.getZ() - var20.getZ());
       double var26 = Math.sqrt(var22 * var22 + var24 * var24);
@@ -578,8 +579,8 @@ public abstract class AbstractMinecartEntity extends Entity {
          }
 
          Pair var16 = method3587(var15);
-         Class1998 var17 = (Class1998)var16.getFirst();
-         Class1998 var18 = (Class1998)var16.getSecond();
+         Vector3i var17 = (Vector3i)var16.getFirst();
+         Vector3i var18 = (Vector3i)var16.getSecond();
          double var19 = (double)(var18.getX() - var17.getX());
          double var21 = (double)(var18.getZ() - var17.getZ());
          double var23 = Math.sqrt(var19 * var19 + var21 * var21);
@@ -614,8 +615,8 @@ public abstract class AbstractMinecartEntity extends Entity {
       } else {
          Class96 var13 = var12.<Class96>method23463(((Class3429)var12.getBlock()).method12093());
          Pair var14 = method3587(var13);
-         Class1998 var15 = (Class1998)var14.getFirst();
-         Class1998 var16 = (Class1998)var14.getSecond();
+         Vector3i var15 = (Vector3i)var14.getFirst();
+         Vector3i var16 = (Vector3i)var14.getSecond();
          double var17 = (double)var9 + 0.5 + (double)var15.getX() * 0.5;
          double var19 = (double)var10 + 0.0625 + (double)var15.getY() * 0.5;
          double var21 = (double)var11 + 0.5 + (double)var15.getZ() * 0.5;
@@ -663,7 +664,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    public void method2723(CompoundNBT var1) {
       if (var1.getBoolean("CustomDisplayTile")) {
          this.method3607(Class8354.method29285(var1.getCompound("DisplayState")));
-         this.method3608(var1.method122("DisplayOffset"));
+         this.method3608(var1.getInt("DisplayOffset"));
       }
    }
 

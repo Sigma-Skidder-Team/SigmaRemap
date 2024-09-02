@@ -89,11 +89,11 @@ public class Class1081 extends Class1009 implements Class1080 {
       super.method2723(var1);
       this.dataManager.method35446(field5939, var1.getBoolean("powered"));
       if (var1.contains("Fuse", 99)) {
-         this.field5943 = var1.method121("Fuse");
+         this.field5943 = var1.getShort("Fuse");
       }
 
       if (var1.contains("ExplosionRadius", 99)) {
-         this.field5944 = var1.method120("ExplosionRadius");
+         this.field5944 = var1.getByte("ExplosionRadius");
       }
 
       if (var1.getBoolean("ignited")) {

@@ -13,6 +13,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -149,13 +150,13 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
    }
 
    public static ServerWorldInfo method20079(
-           Dynamic<Class30> var0, DataFixer var1, int var2, CompoundNBT var3, WorldSettings var4, Class8519 var5, DimensionGeneratorSettings var6, Lifecycle var7
+           Dynamic<INBT> var0, DataFixer var1, int var2, CompoundNBT var3, WorldSettings var4, Class8519 var5, DimensionGeneratorSettings var6, Lifecycle var7
    ) {
       long var10 = var0.get("Time").asLong(0L);
       CompoundNBT var12 = (CompoundNBT)var0.get("DragonFight")
          .result()
-         .<Class30>map(Dynamic::getValue)
-         .orElseGet(() -> (Class30)var0.get("DimensionData").get("1").get("DragonFight").orElseEmptyMap().getValue());
+         .<INBT>map(Dynamic::getValue)
+         .orElseGet(() -> (INBT)var0.get("DimensionData").get("1").get("DragonFight").orElseEmptyMap().getValue());
       return new ServerWorldInfo(
          var1,
          var2,
@@ -220,7 +221,7 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
       var7.putBoolean("Snapshot", !SharedConstants.getVersion().isStable());
       var2.put("Version", var7);
       var2.method102("DataVersion", SharedConstants.getVersion().getWorldVersion());
-      WorldGenSettingsExport<Class30> var8 = WorldGenSettingsExport.create(NBTDynamicOps.INSTANCE, var1);
+      WorldGenSettingsExport<INBT> var8 = WorldGenSettingsExport.create(NBTDynamicOps.INSTANCE, var1);
       DimensionGeneratorSettings.field_236201_a_
          .encodeStart(var8, this.field29065)
          .resultOrPartial(Util.func_240982_a_("WorldGenSettings: ", field29063::error))

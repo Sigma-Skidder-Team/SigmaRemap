@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -23,7 +24,7 @@ public class Class1040 extends Class1038 implements Class1041 {
    private static final DataParameter<Class7921> field5770 = EntityDataManager.<Class7921>createKey(Class1040.class, DataSerializers.field33406);
    private int field5771;
    private UUID field5772;
-   private Class30 field5773;
+   private INBT field5773;
    private CompoundNBT field5774;
    private int field5775;
 
@@ -78,12 +79,12 @@ public class Class1040 extends Class1038 implements Class1041 {
          this.field5773 = var1.method131("Gossips", 10);
       }
 
-      if (var1.contains("ConversionTime", 99) && var1.method122("ConversionTime") > -1) {
-         this.method4668(!var1.method106("ConversionPlayer") ? null : var1.method105("ConversionPlayer"), var1.method122("ConversionTime"));
+      if (var1.contains("ConversionTime", 99) && var1.getInt("ConversionTime") > -1) {
+         this.method4668(!var1.method106("ConversionPlayer") ? null : var1.method105("ConversionPlayer"), var1.getInt("ConversionTime"));
       }
 
       if (var1.contains("Xp", 3)) {
-         this.field5775 = var1.method122("Xp");
+         this.field5775 = var1.getInt("Xp");
       }
    }
 
@@ -265,7 +266,7 @@ public class Class1040 extends Class1038 implements Class1041 {
       this.field5774 = var1;
    }
 
-   public void method4672(Class30 var1) {
+   public void method4672(INBT var1) {
       this.field5773 = var1;
    }
 

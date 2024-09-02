@@ -13,13 +13,13 @@ public class Class6693 extends Class6691 {
    }
 
    public Class6693(CompoundNBT var1) {
-      this(!var1.contains("Weight", 99) ? 1 : var1.method122("Weight"), var1.getCompound("Entity"));
+      this(!var1.contains("Weight", 99) ? 1 : var1.getInt("Weight"), var1.getCompound("Entity"));
    }
 
    public Class6693(int var1, CompoundNBT var2) {
       super(var1);
       this.field29314 = var2;
-      ResourceLocation var5 = ResourceLocation.method8289(var2.method126("id"));
+      ResourceLocation var5 = ResourceLocation.method8289(var2.getString("id"));
       if (var5 == null) {
          var2.method109("id", "minecraft:pig");
       } else {

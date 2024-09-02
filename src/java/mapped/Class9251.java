@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -96,7 +97,7 @@ public class Class9251 {
                         continue;
                      }
 
-                     var20 = Class8799.method31771(var17);
+                     var20 = CompressedStreamTools.read(var17);
                   } catch (IOException var109) {
                      field42556.warn("Failed to read data for chunk {}", var16, var109);
                      continue;
@@ -110,7 +111,7 @@ public class Class9251 {
                   Class7660.method25181(var0, var118, var21, var3);
 
                   try (DataOutputStream var22 = var12.method7258(var16)) {
-                     Class8799.method31773(var19, var22);
+                     CompressedStreamTools.method31773(var19, var22);
                   }
                }
             }

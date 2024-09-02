@@ -29,9 +29,9 @@ public class Class4187 extends Class4180 {
 
    public Class4187(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33476, var2);
-      this.field20476 = var2.method126("Template");
-      this.field20477 = Class80.valueOf(var2.method126("Rot"));
-      this.field20478 = Class2089.valueOf(var2.method126("Mi"));
+      this.field20476 = var2.getString("Template");
+      this.field20477 = Class80.valueOf(var2.getString("Rot"));
+      this.field20478 = Class2089.valueOf(var2.getString("Mi"));
       this.method12966(var1);
    }
 

@@ -181,7 +181,7 @@ public class Class1691 implements ISeedReader {
          CompoundNBT var6 = var4.method7086(var1);
          BlockState var7 = var4.getBlockState(var1);
          if (var6 != null) {
-            if (!"DUMMY".equals(var6.method126("id"))) {
+            if (!"DUMMY".equals(var6.getString("id"))) {
                var5 = TileEntity.method3772(var7, var6);
             } else {
                Block var8 = var7.getBlock();

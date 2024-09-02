@@ -19,6 +19,8 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.NumberNBT;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8158 {
@@ -101,13 +103,13 @@ public class Class8158 {
                         .then(Class6099.method18839("append").then(var1.method25731((var0xx, var1x, var2, var3x) -> method28316(-1, var1x, var2, var3x))))
                         .then(
                            Class6099.method18839("set")
-                              .then(var1.method25731((var0xx, var1x, var2, var3x) -> var2.method37730(var1x, ((Class30)Iterables.getLast(var3x))::method79)))
+                              .then(var1.method25731((var0xx, var1x, var2, var3x) -> var2.method37730(var1x, ((INBT)Iterables.getLast(var3x))::method79)))
                         )
                         .then(Class6099.method18839("merge").then(var1.method25731((var0xx, var1x, var2, var3x) -> {
-                           List<Class30> var6 = var2.method37728(var1x, CompoundNBT::new);
+                           List<INBT> var6 = var2.method37728(var1x, CompoundNBT::new);
                            int var7 = 0;
 
-                           for (Class30 var9 : var6) {
+                           for (INBT var9 : var6) {
                               if (!(var9 instanceof CompoundNBT)) {
                                  throw field35110.create(var9);
                               }
@@ -115,7 +117,7 @@ public class Class8158 {
                               CompoundNBT var10 = (CompoundNBT)var9;
                               CompoundNBT var11 = var10.method79();
 
-                              for (Class30 var13 : var3x) {
+                              for (INBT var13 : var3x) {
                                  if (!(var13 instanceof CompoundNBT)) {
                                     throw field35110.create(var13);
                                  }
@@ -135,11 +137,11 @@ public class Class8158 {
       var0.register(var3);
    }
 
-   private static int method28316(int var0, CompoundNBT var1, Class9670 var2, List<Class30> var3) throws CommandSyntaxException {
-      List<Class30> var6 = var2.method37728(var1, ListNBT::new);
+   private static int method28316(int var0, CompoundNBT var1, Class9670 var2, List<INBT> var3) throws CommandSyntaxException {
+      List<INBT> var6 = var2.method37728(var1, ListNBT::new);
       int var7 = 0;
 
-      for (Class30 var9 : var6) {
+      for (INBT var9 : var6) {
          if (!(var9 instanceof Class27)) {
             throw field35109.create(var9);
          }
@@ -148,7 +150,7 @@ public class Class8158 {
          Class27 var11 = (Class27)var9;
          int var12 = var0 < 0 ? var11.size() + var0 + 1 : var0;
 
-         for (Class30 var14 : var3) {
+         for (INBT var14 : var3) {
             try {
                if (var11.method71(var12, var14.method79())) {
                   var12++;
@@ -185,7 +187,7 @@ public class Class8158 {
             }
 
             var0.accept(var5x, var1x -> Class6099.method18839("value").then(Class6099.method18840("value", Class8780.method31660()).executes(var2x -> {
-                  List var5xx = Collections.<Class30>singletonList(Class8780.method31661(var2x, "value"));
+                  List var5xx = Collections.<INBT>singletonList(Class8780.method31661(var2x, "value"));
                   return method28318(var2x, var5, var1x, var5xx);
                })));
             return var2.then(var5x);
@@ -195,7 +197,7 @@ public class Class8158 {
       return var3;
    }
 
-   private static int method28318(CommandContext<Class6619> var0, Class8196 var1, Class7823 var2, List<Class30> var3) throws CommandSyntaxException {
+   private static int method28318(CommandContext<Class6619> var0, Class8196 var1, Class7823 var2, List<INBT> var3) throws CommandSyntaxException {
       Class7151 var6 = var1.method28503(var0);
       Class9670 var7 = Class8320.method29129(var0, "targetPath");
       CompoundNBT var8 = var6.method22312();
@@ -221,10 +223,10 @@ public class Class8158 {
       }
    }
 
-   private static Class30 method28320(Class9670 var0, Class7151 var1) throws CommandSyntaxException {
+   private static INBT method28320(Class9670 var0, Class7151 var1) throws CommandSyntaxException {
       List var4 = var0.method37725(var1.method22312());
       Iterator var5 = var4.iterator();
-      Class30 var6 = (Class30)var5.next();
+      INBT var6 = (INBT)var5.next();
       if (!var5.hasNext()) {
          return var6;
       } else {
@@ -233,16 +235,16 @@ public class Class8158 {
    }
 
    private static int method28321(Class6619 var0, Class7151 var1, Class9670 var2) throws CommandSyntaxException {
-      Class30 var5 = method28320(var2, var1);
+      INBT var5 = method28320(var2, var1);
       int var6;
-      if (!(var5 instanceof Class31)) {
+      if (!(var5 instanceof NumberNBT)) {
          if (!(var5 instanceof Class27)) {
             if (!(var5 instanceof CompoundNBT)) {
                if (!(var5 instanceof StringNBT)) {
                   throw field35107.create(var2.toString());
                }
 
-               var6 = var5.method81().length();
+               var6 = var5.getString().length();
             } else {
                var6 = ((CompoundNBT)var5).method98();
             }
@@ -250,7 +252,7 @@ public class Class8158 {
             var6 = ((Class27)var5).size();
          }
       } else {
-         var6 = MathHelper.floor(((Class31)var5).method87());
+         var6 = MathHelper.floor(((NumberNBT)var5).getDouble());
       }
 
       var0.method20179(var1.method22314(var5), false);
@@ -258,9 +260,9 @@ public class Class8158 {
    }
 
    private static int method28322(Class6619 var0, Class7151 var1, Class9670 var2, double var3) throws CommandSyntaxException {
-      Class30 var7 = method28320(var2, var1);
-      if (var7 instanceof Class31) {
-         int var8 = MathHelper.floor(((Class31)var7).method87() * var3);
+      INBT var7 = method28320(var2, var1);
+      if (var7 instanceof NumberNBT) {
+         int var8 = MathHelper.floor(((NumberNBT)var7).getDouble() * var3);
          var0.method20179(var1.method22315(var2, var3, var8), false);
          return var8;
       } else {

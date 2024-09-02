@@ -1,13 +1,15 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Vector3i;
+
 public class Class774 implements Runnable {
    public final Class4315 field4039;
    public final int field4040;
    public final int field4041;
-   public final Class1998 field4042;
+   public final Vector3i field4042;
    public final Class4315 field4043;
 
-   public Class774(Class4315 var1, Class4315 var2, int var3, int var4, Class1998 var5) {
+   public Class774(Class4315 var1, Class4315 var2, int var3, int var4, Vector3i var5) {
       this.field4043 = var1;
       this.field4039 = var2;
       this.field4040 = var3;

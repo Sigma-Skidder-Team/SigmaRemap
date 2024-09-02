@@ -24,8 +24,8 @@ public class Class3301 extends Class3298 {
 
          for (int var6 = 0; var6 < var5.size() && var6 < 6; var6++) {
             CompoundNBT var7 = var5.method153(var6);
-            Class112 var8 = Class112.method315(var7.method122("Color"));
-            Class2154 var9 = Class2154.method8872(var7.method126("Pattern"));
+            Class112 var8 = Class112.method315(var7.getInt("Color"));
+            Class2154 var9 = Class2154.method8872(var7.getString("Pattern"));
             if (var9 != null) {
                var1.add(new TranslationTextComponent("block.minecraft.banner." + var9.method8870() + '.' + var8.method310()).mergeStyle(TextFormatting.GRAY));
             }

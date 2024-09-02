@@ -35,7 +35,7 @@ public class Class6062<C> {
 
    @Nullable
    public Class6861<C> method18798(CompoundNBT var1) {
-      ResourceLocation var4 = ResourceLocation.method8289(var1.method126("Type"));
+      ResourceLocation var4 = ResourceLocation.method8289(var1.getString("Type"));
       Class6945 var5 = this.field26301.get(var4);
       if (var5 == null) {
          field26299.error("Failed to deserialize timer callback: " + var1);

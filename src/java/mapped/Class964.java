@@ -37,7 +37,7 @@ public class Class964 extends TileEntity {
    private long field5408;
 
    public Class964() {
-      super(Class4387.field21440);
+      super(TileEntityType.field21440);
    }
 
    @Override
@@ -72,32 +72,32 @@ public class Class964 extends TileEntity {
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.method3937(var2.method126("name"));
-      this.field5396 = var2.method126("author");
-      this.field5397 = var2.method126("metadata");
-      int var5 = MathHelper.method37775(var2.method122("posX"), -48, 48);
-      int var6 = MathHelper.method37775(var2.method122("posY"), -48, 48);
-      int var7 = MathHelper.method37775(var2.method122("posZ"), -48, 48);
+      this.method3937(var2.getString("name"));
+      this.field5396 = var2.getString("author");
+      this.field5397 = var2.getString("metadata");
+      int var5 = MathHelper.method37775(var2.getInt("posX"), -48, 48);
+      int var6 = MathHelper.method37775(var2.getInt("posY"), -48, 48);
+      int var7 = MathHelper.method37775(var2.getInt("posZ"), -48, 48);
       this.field5398 = new BlockPos(var5, var6, var7);
-      int var8 = MathHelper.method37775(var2.method122("sizeX"), 0, 48);
-      int var9 = MathHelper.method37775(var2.method122("sizeY"), 0, 48);
-      int var10 = MathHelper.method37775(var2.method122("sizeZ"), 0, 48);
+      int var8 = MathHelper.method37775(var2.getInt("sizeX"), 0, 48);
+      int var9 = MathHelper.method37775(var2.getInt("sizeY"), 0, 48);
+      int var10 = MathHelper.method37775(var2.getInt("sizeZ"), 0, 48);
       this.field5399 = new BlockPos(var8, var9, var10);
 
       try {
-         this.field5401 = Class80.valueOf(var2.method126("rotation"));
+         this.field5401 = Class80.valueOf(var2.getString("rotation"));
       } catch (IllegalArgumentException var14) {
          this.field5401 = Class80.field185;
       }
 
       try {
-         this.field5400 = Class2089.valueOf(var2.method126("mirror"));
+         this.field5400 = Class2089.valueOf(var2.getString("mirror"));
       } catch (IllegalArgumentException var13) {
          this.field5400 = Class2089.field13614;
       }
 
       try {
-         this.field5402 = Class104.valueOf(var2.method126("mode"));
+         this.field5402 = Class104.valueOf(var2.getString("mode"));
       } catch (IllegalArgumentException var12) {
          this.field5402 = Class104.field321;
       }
@@ -112,7 +112,7 @@ public class Class964 extends TileEntity {
          this.field5407 = 1.0F;
       }
 
-      this.field5408 = var2.method123("seed");
+      this.field5408 = var2.getLong("seed");
       this.method3932();
    }
 

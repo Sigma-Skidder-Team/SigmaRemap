@@ -16,6 +16,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CClientSettingsPacket;
 import net.minecraft.network.play.server.*;
+import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -137,8 +138,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          if (!this.method3396().method1380()) {
             this.field4857
                .method33862(
-                  Class1894.method8159(var1.method122("playerGameType")),
-                  !var1.contains("previousPlayerGameType", 3) ? Class1894.field11101 : Class1894.method8159(var1.method122("previousPlayerGameType"))
+                  Class1894.method8159(var1.getInt("playerGameType")),
+                  !var1.contains("previousPlayerGameType", 3) ? Class1894.field11101 : Class1894.method8159(var1.getInt("previousPlayerGameType"))
                );
          } else {
             this.field4857.method33862(this.method3396().method1286(), Class1894.field11101);
@@ -147,7 +148,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
       if (var1.contains("enteredNetherPosition", 10)) {
          CompoundNBT var4 = var1.getCompound("enteredNetherPosition");
-         this.field4882 = new Vector3d(var4.method125("x"), var4.method125("y"), var4.method125("z"));
+         this.field4882 = new Vector3d(var4.getDouble("x"), var4.getDouble("y"), var4.getDouble("z"));
       }
 
       this.field4877 = var1.getBoolean("seenCredits");
@@ -160,7 +161,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       }
 
       if (var1.contains("SpawnX", 99) && var1.contains("SpawnY", 99) && var1.contains("SpawnZ", 99)) {
-         this.field4885 = new BlockPos(var1.method122("SpawnX"), var1.method122("SpawnY"), var1.method122("SpawnZ"));
+         this.field4885 = new BlockPos(var1.getInt("SpawnX"), var1.getInt("SpawnY"), var1.getInt("SpawnZ"));
          this.field4886 = var1.getBoolean("SpawnForced");
          this.field4887 = var1.getFloat("SpawnAngle");
          if (var1.contains("SpawnDimension")) {
@@ -869,7 +870,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2770(Class969 var1) {
+   public void method2770(CommandBlockTileEntity var1) {
       var1.method4019(true);
       this.method2750(var1);
    }

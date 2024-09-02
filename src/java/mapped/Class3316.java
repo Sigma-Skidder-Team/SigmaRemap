@@ -49,7 +49,7 @@ public class Class3316 extends Class3314 {
 
    public static int method11862(ItemStack var0) {
       CompoundNBT var3 = var0.method32142();
-      return var3 != null && var3.contains("map", 99) ? var3.method122("map") : 0;
+      return var3 != null && var3.contains("map", 99) ? var3.getInt("map") : 0;
    }
 
    private static Class7529 method11863(ItemStack var0, World var1, int var2, int var3, int var4, boolean var5, boolean var6, RegistryKey<World> var7) {
@@ -327,7 +327,7 @@ public class Class3316 extends Class3314 {
    public void method11725(ItemStack var1, World var2, PlayerEntity var3) {
       CompoundNBT var6 = var1.method32142();
       if (var6 != null && var6.contains("map_scale_direction", 99)) {
-         method11869(var1, var2, var6.method122("map_scale_direction"));
+         method11869(var1, var2, var6.getInt("map_scale_direction"));
          var6.method133("map_scale_direction");
       } else if (var6 != null && var6.contains("map_to_lock", 1) && var6.getBoolean("map_to_lock")) {
          method11870(var2, var1);
@@ -380,7 +380,7 @@ public class Class3316 extends Class3314 {
    public static int method11871(ItemStack var0) {
       CompoundNBT var3 = var0.method32145("display");
       if (var3 != null && var3.contains("MapColor", 99)) {
-         int var4 = var3.method122("MapColor");
+         int var4 = var3.getInt("MapColor");
          return 0xFF000000 | var4 & 16777215;
       } else {
          return -12173266;

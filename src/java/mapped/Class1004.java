@@ -86,7 +86,7 @@ public class Class1004 extends Entity {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      this.method4182(var1.method121("Fuse"));
+      this.method4182(var1.getShort("Fuse"));
    }
 
    @Nullable

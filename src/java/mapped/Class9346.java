@@ -19,11 +19,11 @@ public class Class9346 {
       this.field43384 = ItemStack.method32104(var1.getCompound("buy"));
       this.field43385 = ItemStack.method32104(var1.getCompound("buyB"));
       this.field43386 = ItemStack.method32104(var1.getCompound("sell"));
-      this.field43387 = var1.method122("uses");
+      this.field43387 = var1.getInt("uses");
       if (!var1.contains("maxUses", 99)) {
          this.field43388 = 4;
       } else {
-         this.field43388 = var1.method122("maxUses");
+         this.field43388 = var1.getInt("maxUses");
       }
 
       if (var1.contains("rewardExp", 1)) {
@@ -31,15 +31,15 @@ public class Class9346 {
       }
 
       if (var1.contains("xp", 3)) {
-         this.field43393 = var1.method122("xp");
+         this.field43393 = var1.getInt("xp");
       }
 
       if (var1.contains("priceMultiplier", 5)) {
          this.field43392 = var1.getFloat("priceMultiplier");
       }
 
-      this.field43390 = var1.method122("specialPrice");
-      this.field43391 = var1.method122("demand");
+      this.field43390 = var1.getInt("specialPrice");
+      this.field43391 = var1.getInt("demand");
    }
 
    public Class9346(ItemStack var1, ItemStack var2, int var3, int var4, float var5) {

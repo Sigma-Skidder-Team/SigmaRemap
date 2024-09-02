@@ -120,7 +120,7 @@ public class Class1044 extends Class1043 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.contains("DespawnDelay", 99)) {
-         this.field5799 = var1.method122("DespawnDelay");
+         this.field5799 = var1.getInt("DespawnDelay");
       }
 
       if (var1.contains("WanderTarget")) {

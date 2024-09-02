@@ -747,11 +747,11 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       super.method2723(var1);
       this.method4956(var1.getBoolean("EatingHaystack"));
       this.method4941(var1.getBoolean("Bred"));
-      this.method4945(var1.method122("Temper"));
+      this.method4945(var1.getInt("Temper"));
       this.method4936(var1.getBoolean("Tame"));
       UUID var5;
       if (!var1.method106("Owner")) {
-         String var4 = var1.method126("Owner");
+         String var4 = var1.getString("Owner");
          var5 = Class9061.method33732(this.method3396(), var4);
       } else {
          var5 = var1.method105("Owner");

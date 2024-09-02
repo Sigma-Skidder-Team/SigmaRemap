@@ -38,7 +38,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
    private final Class8202 field5348 = new Class8201(this);
 
    public Class950() {
-      super(Class4387.field21434);
+      super(TileEntityType.field21434);
    }
 
    @Override
@@ -224,10 +224,10 @@ public class Class950 extends TileEntity implements Class949, Class935 {
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5344 = method3825(var2.method122("Primary"));
-      this.field5345 = method3825(var2.method122("Secondary"));
+      this.field5344 = method3825(var2.getInt("Primary"));
+      this.field5345 = method3825(var2.getInt("Secondary"));
       if (var2.contains("CustomName", 8)) {
-         this.field5346 = ITextComponent$Serializer.func_240643_a_(var2.method126("CustomName"));
+         this.field5346 = ITextComponent$Serializer.func_240643_a_(var2.getString("CustomName"));
       }
 
       this.field5347 = Class7969.method27093(var2);

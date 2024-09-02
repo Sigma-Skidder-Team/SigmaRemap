@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 public class Class918 extends AbstractMinecartEntity {
    private static final DataParameter<String> field5232 = EntityDataManager.<String>createKey(Class918.class, DataSerializers.field33393);
    private static final DataParameter<ITextComponent> field5233 = EntityDataManager.<ITextComponent>createKey(Class918.class, DataSerializers.field33394);
-   private final Class911 field5234 = new Class912(this);
+   private final CommandBlockLogic field5234 = new Class912(this);
    private int field5235;
 
    public Class918(EntityType<? extends Class918> var1, World var2) {
@@ -58,7 +58,7 @@ public class Class918 extends AbstractMinecartEntity {
       return Blocks.COMMAND_BLOCK.method11579();
    }
 
-   public Class911 method3614() {
+   public CommandBlockLogic method3614() {
       return this.field5234;
    }
 

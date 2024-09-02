@@ -9,6 +9,7 @@ import java.util.function.Function;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -43,7 +44,7 @@ public class Class7154 implements Class7151 {
    }
 
    @Override
-   public ITextComponent method22314(Class30 var1) {
+   public ITextComponent method22314(INBT var1) {
       return new TranslationTextComponent("commands.data.entity.query", this.field30733.getDisplayName(), var1.method82());
    }
 

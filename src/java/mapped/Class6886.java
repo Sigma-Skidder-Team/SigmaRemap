@@ -356,14 +356,14 @@ public class Class6886 {
    public void method21013(ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          CompoundNBT var5 = var1.method153(var4);
-         Class8375 var6 = this.method20975(var5.method126("Objective"));
-         String var7 = var5.method126("Name");
+         Class8375 var6 = this.method20975(var5.getString("Objective"));
+         String var7 = var5.getString("Name");
          if (var7.length() > 40) {
             var7 = var7.substring(0, 40);
          }
 
          Class9411 var8 = this.method20980(var7, var6);
-         var8.method36052(var5.method122("Score"));
+         var8.method36052(var5.getInt("Score"));
          if (var5.contains("Locked")) {
             var8.method36057(var5.getBoolean("Locked"));
          }

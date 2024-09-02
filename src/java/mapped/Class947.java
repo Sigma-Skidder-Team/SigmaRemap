@@ -9,7 +9,7 @@ public class Class947 extends TileEntity implements Class946 {
    private ItemStack field5332 = ItemStack.EMPTY;
 
    public Class947() {
-      super(Class4387.field21425);
+      super(TileEntityType.field21425);
    }
 
    @Override

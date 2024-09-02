@@ -634,7 +634,7 @@ public class Class7992 {
    private static int method27275(ItemStack var0) {
       CompoundNBT var3 = var0.method32142();
       if (var3 != null) {
-         String var4 = var3.method126("Potion");
+         String var4 = var3.getString("Potion");
          if (var4 != null && !var4.equals("")) {
             Integer var5 = field34366.get(var4);
             if (var5 != null) {
@@ -707,8 +707,8 @@ public class Class7992 {
 
          for (int var7 = 0; var7 < var13.size(); var7++) {
             CompoundNBT var8 = var13.method153(var7);
-            String var9 = var8.method126("id");
-            int var10 = var8.method122("lvl");
+            String var9 = var8.getString("id");
+            int var10 = var8.getInt("lvl");
             Class6069 var11 = Class7849.method26306(var9);
             if (var11 != null) {
                int var12 = Registry.field16073.getId(var11);

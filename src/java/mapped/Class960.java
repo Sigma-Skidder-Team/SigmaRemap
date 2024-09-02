@@ -11,7 +11,7 @@ public class Class960 extends TileEntity implements Class935 {
    private final Class7574 field5390 = new Class7573(this);
 
    public Class960() {
-      super(Class4387.field21429);
+      super(TileEntityType.field21429);
    }
 
    @Override

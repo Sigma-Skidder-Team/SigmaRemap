@@ -23,7 +23,7 @@ public class Class980 extends Class927 {
 
       for (int var7 = 0; var7 < var1.size(); var7++) {
          CompoundNBT var5 = var1.method153(var7);
-         int var6 = var5.method120("Slot") & 255;
+         int var6 = var5.getByte("Slot") & 255;
          if (var6 >= 0 && var6 < this.method3629()) {
             this.method3621(var6, ItemStack.method32104(var5));
          }

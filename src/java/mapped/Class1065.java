@@ -35,7 +35,7 @@ public class Class1065 extends Class1064 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.contains("DespawnDelay", 99)) {
-         this.field5876 = var1.method122("DespawnDelay");
+         this.field5876 = var1.getInt("DespawnDelay");
       }
    }
 

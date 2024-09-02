@@ -24,7 +24,7 @@ public class ItemColors {
             return -1;
          } else {
             CompoundNBT var4 = var0x.method32145("Explosion");
-            int[] var5x = var4 != null && var4.contains("Colors", 11) ? var4.method128("Colors") : null;
+            int[] var5x = var4 != null && var4.contains("Colors", 11) ? var4.getIntArray("Colors") : null;
             if (var5x != null && var5x.length != 0) {
                if (var5x.length == 1) {
                   return var5x[0];

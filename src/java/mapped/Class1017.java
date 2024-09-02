@@ -119,9 +119,9 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       super.method2723(var1);
       this.method4439(var1.getBoolean("HasNectar"));
       this.method4441(var1.getBoolean("HasStung"));
-      this.field5691 = var1.method122("TicksSincePollination");
-      this.field5692 = var1.method122("CannotEnterHiveTicks");
-      this.field5693 = var1.method122("CropsGrownSincePollination");
+      this.field5691 = var1.getInt("TicksSincePollination");
+      this.field5692 = var1.getInt("CannotEnterHiveTicks");
+      this.field5693 = var1.getInt("CropsGrownSincePollination");
       this.method4365((ServerWorld)this.world, var1);
    }
 
@@ -177,9 +177,9 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    private void method4419(World var1, double var2, double var4, double var6, double var8, double var10, IParticleData var12) {
       var1.method6746(
          var12,
-         MathHelper.method37822(var1.rand.nextDouble(), var2, var4),
+         MathHelper.lerp(var1.rand.nextDouble(), var2, var4),
          var10,
-         MathHelper.method37822(var1.rand.nextDouble(), var6, var8),
+         MathHelper.lerp(var1.rand.nextDouble(), var6, var8),
          0.0,
          0.0,
          0.0
@@ -385,7 +385,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
          return false;
       } else {
          TileEntity var3 = this.world.getTileEntity(this.field5697);
-         return var3 != null && var3.method3786() == Class4387.field21453;
+         return var3 != null && var3.method3786() == TileEntityType.field21453;
       }
    }
 

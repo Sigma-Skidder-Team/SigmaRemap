@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -13,12 +14,12 @@ public class Class973 extends Class939 {
    private NonNullList<ItemStack> field5437 = NonNullList.<ItemStack>method68(27, ItemStack.EMPTY);
    private int field5438;
 
-   private Class973(Class4387<?> var1) {
+   private Class973(TileEntityType<?> var1) {
       super(var1);
    }
 
    public Class973() {
-      this(Class4387.field21446);
+      this(TileEntityType.field21446);
    }
 
    @Override
@@ -122,7 +123,7 @@ public class Class973 extends Class939 {
    }
 
    private void method4027(BlockState var1, SoundEvent var2) {
-      Class1998 var5 = var1.<Direction>method23463(Class3242.field18693).method556();
+      Vector3i var5 = var1.<Direction>method23463(Class3242.field18693).method556();
       double var6 = (double)this.field5325.getX() + 0.5 + (double)var5.getX() / 2.0;
       double var8 = (double)this.field5325.getY() + 0.5 + (double)var5.getY() / 2.0;
       double var10 = (double)this.field5325.getZ() + 0.5 + (double)var5.getZ() / 2.0;

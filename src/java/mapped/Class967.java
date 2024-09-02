@@ -8,7 +8,7 @@ public class Class967 extends TileEntity {
    private Class112 field5423;
 
    public Class967() {
-      super(Class4387.field21444);
+      super(TileEntityType.field21444);
    }
 
    public Class967(Class112 var1) {

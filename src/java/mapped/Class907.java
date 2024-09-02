@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -155,7 +156,7 @@ public class Class907 extends Entity {
                                  CompoundNBT var14 = var13.write(new CompoundNBT());
 
                                  for (String var16 : this.field5183.method97()) {
-                                    Class30 var17 = this.field5183.method116(var16);
+                                    INBT var17 = this.field5183.method116(var16);
                                     if (!"x".equals(var16) && !"y".equals(var16) && !"z".equals(var16)) {
                                        var14.put(var16, var17.method79());
                                     }
@@ -223,7 +224,7 @@ public class Class907 extends Entity {
    @Override
    public void method2723(CompoundNBT var1) {
       this.field5176 = Class8354.method29285(var1.getCompound("BlockState"));
-      this.field5177 = var1.method122("Time");
+      this.field5177 = var1.getInt("Time");
       if (!var1.contains("HurtEntities", 99)) {
          if (this.field5176.method23446(BlockTags.field32765)) {
             this.field5180 = true;
@@ -231,7 +232,7 @@ public class Class907 extends Entity {
       } else {
          this.field5180 = var1.getBoolean("HurtEntities");
          this.field5182 = var1.getFloat("FallHurtAmount");
-         this.field5181 = var1.method122("FallHurtMax");
+         this.field5181 = var1.getInt("FallHurtMax");
       }
 
       if (var1.contains("DropItem", 99)) {

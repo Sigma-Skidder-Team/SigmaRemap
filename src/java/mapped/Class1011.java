@@ -32,7 +32,7 @@ public interface Class1011 {
    }
 
    default void method4365(ServerWorld var1, CompoundNBT var2) {
-      this.method4347(var2.method122("AngerTime"));
+      this.method4347(var2.getInt("AngerTime"));
       if (var2.method106("AngryAt")) {
          UUID var5 = var2.method105("AngryAt");
          this.method4349(var5);

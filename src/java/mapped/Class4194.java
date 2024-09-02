@@ -17,7 +17,7 @@ public abstract class Class4194 extends Class4178 {
 
    public Class4194(Class7792 var1, CompoundNBT var2) {
       super(var1, var2);
-      this.field20495 = Class2213.valueOf(var2.method126("EntryDoor"));
+      this.field20495 = Class2213.valueOf(var2.getString("EntryDoor"));
    }
 
    @Override

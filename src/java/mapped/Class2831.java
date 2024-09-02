@@ -4,11 +4,12 @@ import com.google.common.collect.ImmutableList;
 import java.util.List;
 import java.util.function.Consumer;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class2831 implements Consumer<Consumer<Class7952>> {
+public class Class2831 implements Consumer<Consumer<Advancement>> {
    private static final List<RegistryKey<Biome>> field17610 = ImmutableList.of(
       Class9495.field44149,
       Class9495.field44128,
@@ -92,8 +93,8 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
       EntityType.field41110
    };
 
-   public void accept(Consumer<Class7952> var1) {
-      Class7952 var4 = Class7999.method27304()
+   public void accept(Consumer<Advancement> var1) {
+      Advancement var4 = Class7999.method27304()
          .method27308(
             Items.field38056,
             new TranslationTextComponent("advancements.adventure.root.title"),
@@ -108,7 +109,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
          .method27312("killed_something", Class4476.method14135())
          .method27312("killed_by_something", Class4476.method14137())
          .method27317(var1, "adventure/root");
-      Class7952 var5 = Class7999.method27304()
+      Advancement var5 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Blocks.RED_BED,
@@ -136,7 +137,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
          )
          .method27310(Class9182.method34343(500))
          .method27317(var1, "adventure/adventuring_time");
-      Class7952 var6 = Class7999.method27304()
+      Advancement var6 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Items.field38049,
@@ -150,7 +151,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("traded", Class4461.method14102())
          .method27317(var1, "adventure/trade");
-      Class7952 var7 = this.method11030(Class7999.method27304())
+      Advancement var7 = this.method11030(Class7999.method27304())
          .method27305(var4)
          .method27308(
             Items.field37820,
@@ -178,7 +179,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
          )
          .method27310(Class9182.method34343(100))
          .method27317(var1, "adventure/kill_all_mobs");
-      Class7952 var8 = Class7999.method27304()
+      Advancement var8 = Class7999.method27304()
          .method27305(var7)
          .method27308(
             Items.BOW,
@@ -198,7 +199,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
             )
          )
          .method27317(var1, "adventure/shoot_arrow");
-      Class7952 var9 = Class7999.method27304()
+      Advancement var9 = Class7999.method27304()
          .method27305(var7)
          .method27308(
             Items.field38144,
@@ -281,7 +282,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("used_totem", Class4472.method14126(Items.field38126))
          .method27317(var1, "adventure/totem_of_undying");
-      Class7952 var10 = Class7999.method27304()
+      Advancement var10 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Items.field38148,
@@ -342,7 +343,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
          .method27310(Class9182.method34343(85))
          .method27312("arbalistic", Class4467.method14116(Class8840.method32013(5)))
          .method27317(var1, "adventure/arbalistic");
-      Class7952 var11 = Class7999.method27304()
+      Advancement var11 = Class7999.method27304()
          .method27305(var4)
          .method27307(
             Class7699.method25421(),

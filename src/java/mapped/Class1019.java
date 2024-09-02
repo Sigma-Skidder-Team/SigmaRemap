@@ -234,7 +234,7 @@ public class Class1019 extends Class1018 implements Class1020 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method4520(var1.getBoolean("Sheared"));
-      this.method4518(Class112.method315(var1.method120("Color")));
+      this.method4518(Class112.method315(var1.getByte("Color")));
    }
 
    @Override

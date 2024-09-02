@@ -43,7 +43,7 @@ public class Class8118 implements WorldBorderIBorderInfo {
    @Override
    public double getSize() {
       double var3 = (double)(Util.milliTime() - this.field34890) / this.field34891;
-      return !(var3 < 1.0) ? this.field34888 : MathHelper.method37822(var3, this.field34887, this.field34888);
+      return !(var3 < 1.0) ? this.field34888 : MathHelper.lerp(var3, this.field34887, this.field34888);
    }
 
    @Override

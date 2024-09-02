@@ -14,6 +14,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -411,7 +412,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          .resultOrPartial(LOGGER::error)
          .ifPresent(var1x -> var1.put("VillagerData", var1x));
       var1.method100("FoodLevel", this.field5782);
-      var1.put("Gossips", (Class30)this.field5783.method25528(NBTDynamicOps.INSTANCE).getValue());
+      var1.put("Gossips", (INBT)this.field5783.method25528(NBTDynamicOps.INSTANCE).getValue());
       var1.method102("Xp", this.field5786);
       var1.method103("LastRestock", this.field5787);
       var1.method103("LastGossipDecay", this.field5785);
@@ -434,23 +435,23 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       }
 
       if (var1.contains("FoodLevel", 1)) {
-         this.field5782 = var1.method120("FoodLevel");
+         this.field5782 = var1.getByte("FoodLevel");
       }
 
       ListNBT var5 = var1.method131("Gossips", 10);
       this.field5783.method25529(new Dynamic(NBTDynamicOps.INSTANCE, var5));
       if (var1.contains("Xp", 3)) {
-         this.field5786 = var1.method122("Xp");
+         this.field5786 = var1.getInt("Xp");
       }
 
-      this.field5787 = var1.method123("LastRestock");
-      this.field5785 = var1.method123("LastGossipDecay");
+      this.field5787 = var1.getLong("LastRestock");
+      this.field5785 = var1.getLong("LastGossipDecay");
       this.method4281(true);
       if (this.world instanceof ServerWorld) {
          this.method4677((ServerWorld)this.world);
       }
 
-      this.field5788 = var1.method122("RestocksToday");
+      this.field5788 = var1.getInt("RestocksToday");
       if (var1.contains("AssignProfessionWhenSpawned")) {
          this.field5790 = var1.getBoolean("AssignProfessionWhenSpawned");
       }
@@ -897,7 +898,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       return this.field5783;
    }
 
-   public void method4725(Class30 var1) {
+   public void method4725(INBT var1) {
       this.field5783.method25529(new Dynamic(NBTDynamicOps.INSTANCE, var1));
    }
 

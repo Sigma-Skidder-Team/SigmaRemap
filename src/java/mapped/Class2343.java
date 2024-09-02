@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.nbt.INBT;
+
 import java.util.function.Function;
 
 public enum Class2343 {
@@ -10,15 +12,15 @@ public enum Class2343 {
 
    public final String field16022;
    public final Class9821<?> field16023;
-   public final Function<LootContext, Class30> field16024;
+   public final Function<LootContext, INBT> field16024;
    private static final Class2343[] field16025 = new Class2343[]{field16018, field16019, field16020, field16021};
 
-   private <T> Class2343(String var3, Class9821<T> var4, Function<? super T, Class30> var5) {
+   private <T> Class2343(String var3, Class9821<T> var4, Function<? super T, INBT> var5) {
       this.field16022 = var3;
       this.field16023 = var4;
       this.field16024 = var2x -> {
          T var5x = var2x.method26081(var4);
-         return var5x == null ? null : (Class30)var5.apply(var5x);
+         return var5x == null ? null : (INBT)var5.apply(var5x);
       };
    }
 

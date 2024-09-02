@@ -7,7 +7,7 @@ public class Class961 extends TileEntity implements Class935 {
    private static String[] field5391;
 
    public Class961() {
-      super(Class4387.field21436);
+      super(TileEntityType.field21436);
    }
 
    @Override

@@ -65,7 +65,7 @@ public class Class9741 {
    public static int method38182(ItemStack var0) {
       CompoundNBT var3 = var0.method32142();
       if (var3 != null && var3.contains("CustomPotionColor", 99)) {
-         return var3.method122("CustomPotionColor");
+         return var3.getInt("CustomPotionColor");
       } else {
          return method38185(var0) != Class8137.field34976 ? method38184(method38176(var0)) : 16253176;
       }
@@ -116,7 +116,7 @@ public class Class9741 {
    }
 
    public static Class8812 method38186(CompoundNBT var0) {
-      return var0 != null ? Class8812.method31814(var0.method126("Potion")) : Class8137.field34976;
+      return var0 != null ? Class8812.method31814(var0.getString("Potion")) : Class8137.field34976;
    }
 
    public static ItemStack method38187(ItemStack var0, Class8812 var1) {

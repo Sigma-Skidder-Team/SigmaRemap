@@ -1,5 +1,6 @@
-package mapped;
+package net.minecraft.nbt;
 
+import mapped.*;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -10,15 +11,15 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class Class28 extends Class27<Class36> {
-   public static final Class7052<Class28> field52 = new Class7053();
+public class IntArrayNBT extends Class27<Class36> {
+   public static final Class7052<IntArrayNBT> field52 = new Class7053();
    private int[] field53;
 
-   public Class28(int[] var1) {
+   public IntArrayNBT(int[] var1) {
       this.field53 = var1;
    }
 
-   public Class28(List<Integer> var1) {
+   public IntArrayNBT(List<Integer> var1) {
       this(toArray(var1));
    }
 
@@ -34,7 +35,7 @@ public class Class28 extends Class27<Class36> {
    }
 
    @Override
-   public void method73(DataOutput var1) throws IOException {
+   public void write(DataOutput var1) throws IOException {
       var1.writeInt(this.field53.length);
 
       for (int var7 : this.field53) {
@@ -43,12 +44,12 @@ public class Class28 extends Class27<Class36> {
    }
 
    @Override
-   public byte method74() {
+   public byte getId() {
       return 11;
    }
 
    @Override
-   public Class7052<Class28> method75() {
+   public Class7052<IntArrayNBT> method75() {
       return field52;
    }
 
@@ -67,15 +68,15 @@ public class Class28 extends Class27<Class36> {
       return var3.append(']').toString();
    }
 
-   public Class28 method79() {
+   public IntArrayNBT method79() {
       int[] var3 = new int[this.field53.length];
       System.arraycopy(this.field53, 0, var3, 0, this.field53.length);
-      return new Class28(var3);
+      return new IntArrayNBT(var3);
    }
 
    @Override
    public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof Class28 && Arrays.equals(this.field53, ((Class28)var1).field53);
+      return this == var1 ? true : var1 instanceof IntArrayNBT && Arrays.equals(this.field53, ((IntArrayNBT)var1).field53);
    }
 
    @Override
@@ -83,7 +84,7 @@ public class Class28 extends Class27<Class36> {
       return Arrays.hashCode(this.field53);
    }
 
-   public int[] method77() {
+   public int[] getIntArray() {
       return this.field53;
    }
 
@@ -114,30 +115,30 @@ public class Class28 extends Class27<Class36> {
 
    public Class36 set(int var1, Class36 var2) {
       int var5 = this.field53[var1];
-      this.field53[var1] = var2.method84();
+      this.field53[var1] = var2.getInt();
       return Class36.method95(var5);
    }
 
    public void add(int var1, Class36 var2) {
-      this.field53 = ArrayUtils.add(this.field53, var1, var2.method84());
+      this.field53 = ArrayUtils.add(this.field53, var1, var2.getInt());
    }
 
    @Override
-   public boolean method70(int var1, Class30 var2) {
-      if (!(var2 instanceof Class31)) {
+   public boolean method70(int var1, INBT var2) {
+      if (!(var2 instanceof NumberNBT)) {
          return false;
       } else {
-         this.field53[var1] = ((Class31)var2).method84();
+         this.field53[var1] = ((NumberNBT)var2).getInt();
          return true;
       }
    }
 
    @Override
-   public boolean method71(int var1, Class30 var2) {
-      if (!(var2 instanceof Class31)) {
+   public boolean method71(int var1, INBT var2) {
+      if (!(var2 instanceof NumberNBT)) {
          return false;
       } else {
-         this.field53 = ArrayUtils.add(this.field53, var1, ((Class31)var2).method84());
+         this.field53 = ArrayUtils.add(this.field53, var1, ((NumberNBT)var2).getInt());
          return true;
       }
    }

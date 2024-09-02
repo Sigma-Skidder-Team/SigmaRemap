@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
+import net.minecraft.nbt.NBTSizeTracker;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -255,7 +257,7 @@ public class PacketBuffer extends ByteBuf {
          this.writeByte(0);
       } else {
          try {
-            Class8799.method31773(var1, new ByteBufOutputStream(this));
+            CompressedStreamTools.method31773(var1, new ByteBufOutputStream(this));
          } catch (IOException var5) {
             throw new EncoderException(var5);
          }
@@ -266,16 +268,16 @@ public class PacketBuffer extends ByteBuf {
 
    @Nullable
    public CompoundNBT method35721() {
-      return this.method35723(new Class8465(2097152L));
+      return this.method35723(new NBTSizeTracker(2097152L));
    }
 
    @Nullable
    public CompoundNBT method35722() {
-      return this.method35723(Class8465.field36284);
+      return this.method35723(NBTSizeTracker.INFINITE);
    }
 
    @Nullable
-   public CompoundNBT method35723(Class8465 var1) {
+   public CompoundNBT method35723(NBTSizeTracker var1) {
       int var4 = this.readerIndex();
       byte var5 = this.readByte();
       if (var5 == 0) {
@@ -284,7 +286,7 @@ public class PacketBuffer extends ByteBuf {
          this.readerIndex(var4);
 
          try {
-            return Class8799.method31772(new ByteBufInputStream(this), var1);
+            return CompressedStreamTools.read(new ByteBufInputStream(this), var1);
          } catch (IOException var7) {
             throw new EncoderException(var7);
          }

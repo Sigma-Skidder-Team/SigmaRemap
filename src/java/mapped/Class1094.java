@@ -221,8 +221,8 @@ public class Class1094 extends Class1018 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method5115(var1.method122("RabbitType"));
-      this.field5992 = var1.method122("MoreCarrotTicks");
+      this.method5115(var1.getInt("RabbitType"));
+      this.field5992 = var1.getInt("MoreCarrotTicks");
    }
 
    public SoundEvent method5112() {

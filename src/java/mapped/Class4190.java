@@ -16,7 +16,7 @@ public class Class4190 extends Class4188 {
    public Class4190(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33426, var2);
       this.field20482 = var2.getBoolean("tf");
-      this.field20481 = Direction.method547(var2.method122("D"));
+      this.field20481 = Direction.method547(var2.getInt("D"));
    }
 
    @Override

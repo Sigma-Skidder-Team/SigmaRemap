@@ -230,7 +230,7 @@ public class ArmorStandEntity extends LivingEntity {
       this.method3347(var1.getBoolean("Invisible"));
       this.method4196(var1.getBoolean("Small"));
       this.method4198(var1.getBoolean("ShowArms"));
-      this.field5585 = var1.method122("DisabledSlots");
+      this.field5585 = var1.getInt("DisabledSlots");
       this.method4200(var1.getBoolean("NoBasePlate"));
       this.method4202(var1.getBoolean("Marker"));
       this.noClip = !this.method4185();

@@ -56,9 +56,9 @@ public class ServerData {
    }
 
    public static ServerData method25579(CompoundNBT var0) {
-      ServerData var3 = new ServerData(var0.method126("name"), var0.method126("ip"), false);
+      ServerData var3 = new ServerData(var0.getString("name"), var0.getString("ip"), false);
       if (var0.contains("icon", 8)) {
-         var3.method25581(var0.method126("icon"));
+         var3.method25581(var0.getString("icon"));
       }
 
       if (!var0.contains("acceptTextures", 1)) {

@@ -94,8 +94,8 @@ public class Class9689 {
    public static Class9689 method37935(CompoundNBT var0) {
       try {
          UUID var3 = var0.method105("UUID");
-         AttributeModifierOperation var4 = AttributeModifierOperation.method8686(var0.method122("Operation"));
-         return new Class9689(var3, var0.method126("Name"), var0.method125("Amount"), var4);
+         AttributeModifierOperation var4 = AttributeModifierOperation.method8686(var0.getInt("Operation"));
+         return new Class9689(var3, var0.getString("Name"), var0.getDouble("Amount"), var4);
       } catch (Exception var5) {
          field45301.warn("Unable to create attribute: {}", var5.getMessage());
          return null;

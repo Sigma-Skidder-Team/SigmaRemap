@@ -16,7 +16,7 @@ public abstract class Class939 extends Class932 {
    public ResourceLocation field5302;
    public long field5303;
 
-   public Class939(Class4387<?> var1) {
+   public Class939(TileEntityType<?> var1) {
       super(var1);
    }
 
@@ -31,8 +31,8 @@ public abstract class Class939 extends Class932 {
       if (!var1.contains("LootTable", 8)) {
          return false;
       } else {
-         this.field5302 = new ResourceLocation(var1.method126("LootTable"));
-         this.field5303 = var1.method123("LootTableSeed");
+         this.field5302 = new ResourceLocation(var1.getString("LootTable"));
+         this.field5303 = var1.getLong("LootTableSeed");
          return true;
       }
    }

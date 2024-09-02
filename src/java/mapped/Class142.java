@@ -7,6 +7,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.tileentity.TileEntity;
 
 import java.util.List;
@@ -16,8 +17,8 @@ import java.util.function.Function;
 public class Class142 extends Class128 {
    private final Class2343 field479;
    private final List<Class9603> field480;
-   private static final Function<Entity, Class30> field481 = Class8811::method31813;
-   private static final Function<TileEntity, Class30> field482 = var0 -> var0.write(new CompoundNBT());
+   private static final Function<Entity, INBT> field481 = Class8811::method31813;
+   private static final Function<TileEntity, INBT> field482 = var0 -> var0.write(new CompoundNBT());
 
    public Class142(ILootCondition[] var1, Class2343 var2, List<Class9603> var3) {
       super(var1);
@@ -45,7 +46,7 @@ public class Class142 extends Class128 {
 
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
-      Class30 var5 = this.field479.field16024.apply(var2);
+      INBT var5 = this.field479.field16024.apply(var2);
       if (var5 != null) {
          this.field480.forEach(var2x -> var2x.method37313(var1::getOrCreateTag, var5));
       }

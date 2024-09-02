@@ -2,11 +2,12 @@ package mapped;
 
 import java.util.function.Consumer;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class2833 implements Consumer<Consumer<Class7952>> {
+public class Class2833 implements Consumer<Consumer<Advancement>> {
    private static final EntityType<?>[] field17615 = new EntityType[]{
       EntityType.field41038,
       EntityType.field41019,
@@ -71,8 +72,8 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
       Items.field38177
    };
 
-   public void accept(Consumer<Class7952> var1) {
-      Class7952 var4 = Class7999.method27304()
+   public void accept(Consumer<Advancement> var1) {
+      Advancement var4 = Class7999.method27304()
          .method27308(
             Blocks.field36777,
             new TranslationTextComponent("advancements.husbandry.root.title"),
@@ -85,7 +86,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
          )
          .method27312("consumed_item", Class4489.method14158())
          .method27317(var1, "husbandry/root");
-      Class7952 var5 = Class7999.method27304()
+      Advancement var5 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Items.field37842,
@@ -104,7 +105,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
          .method27312("beetroots", Class4486.method14152(Blocks.field36884))
          .method27312("nether_wart", Class4486.method14152(Blocks.NETHER_WART))
          .method27317(var1, "husbandry/plant_seed");
-      Class7952 var6 = Class7999.method27304()
+      Advancement var6 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Items.field37842,
@@ -148,7 +149,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
          .method27310(Class9182.method34343(100))
          .method27312("netherite_hoe", Class4491.method14164(Items.field37834))
          .method27317(var1, "husbandry/obtain_netherite_hoe");
-      Class7952 var7 = Class7999.method27304()
+      Advancement var7 = Class7999.method27304()
          .method27305(var4)
          .method27308(
             Items.LEAD,
@@ -176,7 +177,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
          )
          .method27310(Class9182.method34343(100))
          .method27317(var1, "husbandry/bred_all_animals");
-      Class7952 var8 = this.method11039(Class7999.method27304())
+      Advancement var8 = this.method11039(Class7999.method27304())
          .method27305(var4)
          .method27314(Class9014.field41221)
          .method27308(

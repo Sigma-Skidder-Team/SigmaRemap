@@ -16,8 +16,8 @@ public class Class6674 {
 
    public static Class6674 method20349(CompoundNBT var0) {
       BlockPos var3 = Class8354.method29283(var0.getCompound("Pos"));
-      int var4 = var0.method122("Rotation");
-      int var5 = var0.method122("EntityId");
+      int var4 = var0.getInt("Rotation");
+      int var5 = var0.getInt("EntityId");
       return new Class6674(var3, var4, var5);
    }
 

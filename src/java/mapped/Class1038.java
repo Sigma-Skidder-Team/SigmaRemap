@@ -5,6 +5,7 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -342,9 +343,9 @@ public class Class1038 extends Class1009 {
       super.method2723(var1);
       this.method4308(var1.getBoolean("IsBaby"));
       this.method4656(var1.getBoolean("CanBreakDoors"));
-      this.field5766 = var1.method122("InWaterTime");
-      if (var1.contains("DrownedConversionTime", 99) && var1.method122("DrownedConversionTime") > -1) {
-         this.method4657(var1.method122("DrownedConversionTime"));
+      this.field5766 = var1.getInt("InWaterTime");
+      if (var1.contains("DrownedConversionTime", 99) && var1.getInt("DrownedConversionTime") > -1) {
+         this.method4657(var1.getInt("DrownedConversionTime"));
       }
    }
 
@@ -360,7 +361,7 @@ public class Class1038 extends Class1009 {
          Class1040 var6 = var5.<Class1040>method4292(EntityType.field41109, false);
          var6.method4276(var1, var1.method6807(var6.getPosition()), Class2202.field14399, new Class5096(false, true), (CompoundNBT)null);
          var6.method4673(var5.method4674());
-         var6.method4672((Class30)var5.method4724().method25528(NBTDynamicOps.INSTANCE).getValue());
+         var6.method4672((INBT)var5.method4724().method25528(NBTDynamicOps.INSTANCE).getValue());
          var6.method4671(var5.method4742().method166());
          var6.method4675(var5.method4721());
          if (!this.method3245()) {

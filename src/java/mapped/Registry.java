@@ -35,7 +35,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Item>> field16042 = createKey("item");
    public static final RegistryKey<Registry<Class8812>> field16043 = createKey("potion");
    public static final RegistryKey<Registry<ParticleType<?>>> field16044 = createKey("particle_type");
-   public static final RegistryKey<Registry<Class4387<?>>> field16045 = createKey("block_entity_type");
+   public static final RegistryKey<Registry<TileEntityType<?>>> field16045 = createKey("block_entity_type");
    public static final RegistryKey<Registry<Class9078>> field16046 = createKey("motive");
    public static final RegistryKey<Registry<ResourceLocation>> field16047 = createKey("custom_stat");
    public static final RegistryKey<Registry<ChunkStatus>> field16048 = createKey("chunk_status");
@@ -68,7 +68,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Class2351<Item> ITEM = method9176(field16042, "air", () -> Items.field37222);
    public static final Class2351<Class8812> field16076 = method9176(field16043, "empty", () -> Class8137.field34976);
    public static final Registry<ParticleType<?>> PARTICLE_TYPE = method9175(field16044, () -> ParticleTypes.field34051);
-   public static final Registry<Class4387<?>> field16078 = method9175(field16045, () -> Class4387.field21421);
+   public static final Registry<TileEntityType<?>> field16078 = method9175(field16045, () -> TileEntityType.field21421);
    public static final Class2351<Class9078> field16079 = method9176(field16046, "kebab", () -> Class9078.field41530);
    public static final Registry<ResourceLocation> field16080 = method9175(field16047, () -> Class8876.field40125);
    public static final Class2351<ChunkStatus> field16081 = method9176(field16048, "empty", () -> ChunkStatus.field42133);

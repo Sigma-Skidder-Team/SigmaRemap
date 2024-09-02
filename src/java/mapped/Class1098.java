@@ -130,9 +130,9 @@ public class Class1098 extends Class1013 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method5251(var1.method122("CatType"));
+      this.method5251(var1.getInt("CatType"));
       if (var1.contains("CollarColor", 99)) {
-         this.method5257(Class112.method315(var1.method122("CollarColor")));
+         this.method5257(Class112.method315(var1.getInt("CollarColor")));
       }
    }
 

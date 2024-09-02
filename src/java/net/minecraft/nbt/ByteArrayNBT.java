@@ -1,5 +1,6 @@
-package mapped;
+package net.minecraft.nbt;
 
+import mapped.*;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -10,15 +11,15 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-public class Class29 extends Class27<Class33> {
-   public static final Class7052<Class29> field54 = new Class7058();
+public class ByteArrayNBT extends Class27<Class33> {
+   public static final Class7052<ByteArrayNBT> field54 = new Class7058();
    private byte[] field55;
 
-   public Class29(byte[] var1) {
+   public ByteArrayNBT(byte[] var1) {
       this.field55 = var1;
    }
 
-   public Class29(List<Byte> var1) {
+   public ByteArrayNBT(List<Byte> var1) {
       this(toArray(var1));
    }
 
@@ -34,18 +35,18 @@ public class Class29 extends Class27<Class33> {
    }
 
    @Override
-   public void method73(DataOutput var1) throws IOException {
+   public void write(DataOutput var1) throws IOException {
       var1.writeInt(this.field55.length);
       var1.write(this.field55);
    }
 
    @Override
-   public byte method74() {
+   public byte getId() {
       return 7;
    }
 
    @Override
-   public Class7052<Class29> method75() {
+   public Class7052<ByteArrayNBT> method75() {
       return field54;
    }
 
@@ -65,15 +66,15 @@ public class Class29 extends Class27<Class33> {
    }
 
    @Override
-   public Class30 method79() {
+   public INBT method79() {
       byte[] var3 = new byte[this.field55.length];
       System.arraycopy(this.field55, 0, var3, 0, this.field55.length);
-      return new Class29(var3);
+      return new ByteArrayNBT(var3);
    }
 
    @Override
    public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof Class29 && Arrays.equals(this.field55, ((Class29)var1).field55);
+      return this == var1 ? true : var1 instanceof ByteArrayNBT && Arrays.equals(this.field55, ((ByteArrayNBT)var1).field55);
    }
 
    @Override
@@ -98,7 +99,7 @@ public class Class29 extends Class27<Class33> {
       return var6;
    }
 
-   public byte[] method80() {
+   public byte[] getByteArray() {
       return this.field55;
    }
 
@@ -113,30 +114,30 @@ public class Class29 extends Class27<Class33> {
 
    public Class33 set(int var1, Class33 var2) {
       byte var5 = this.field55[var1];
-      this.field55[var1] = var2.method86();
+      this.field55[var1] = var2.getByte();
       return Class33.method91(var5);
    }
 
    public void add(int var1, Class33 var2) {
-      this.field55 = ArrayUtils.add(this.field55, var1, var2.method86());
+      this.field55 = ArrayUtils.add(this.field55, var1, var2.getByte());
    }
 
    @Override
-   public boolean method70(int var1, Class30 var2) {
-      if (!(var2 instanceof Class31)) {
+   public boolean method70(int var1, INBT var2) {
+      if (!(var2 instanceof NumberNBT)) {
          return false;
       } else {
-         this.field55[var1] = ((Class31)var2).method86();
+         this.field55[var1] = ((NumberNBT)var2).getByte();
          return true;
       }
    }
 
    @Override
-   public boolean method71(int var1, Class30 var2) {
-      if (!(var2 instanceof Class31)) {
+   public boolean method71(int var1, INBT var2) {
+      if (!(var2 instanceof NumberNBT)) {
          return false;
       } else {
-         this.field55 = ArrayUtils.add(this.field55, var1, ((Class31)var2).method86());
+         this.field55 = ArrayUtils.add(this.field55, var1, ((NumberNBT)var2).getByte());
          return true;
       }
    }

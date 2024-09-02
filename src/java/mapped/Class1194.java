@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +14,7 @@ public class Class1194 extends AbstractGui {
    private static final ResourceLocation field6455 = new ResourceLocation("textures/gui/advancements/widgets.png");
    private static final int[] field6456 = new int[]{0, 10, -10, 25, -25};
    private final Class1271 field6457;
-   private final Class7952 field6458;
+   private final Advancement field6458;
    private final Class9272 field6459;
    private final Class9125 field6460;
    private final int field6461;
@@ -25,7 +26,7 @@ public class Class1194 extends AbstractGui {
    private final int field6467;
    private final int field6468;
 
-   public Class1194(Class1271 var1, Minecraft var2, Class7952 var3, Class9272 var4) {
+   public Class1194(Class1271 var1, Minecraft var2, Advancement var3, Class9272 var4) {
       this.field6457 = var1;
       this.field6458 = var3;
       this.field6459 = var4;
@@ -75,7 +76,7 @@ public class Class1194 extends AbstractGui {
    }
 
    @Nullable
-   private Class1194 method5706(Class7952 var1) {
+   private Class1194 method5706(Advancement var1) {
       do {
          var1 = var1.method27026();
       } while (var1 != null && var1.method27027() == null);

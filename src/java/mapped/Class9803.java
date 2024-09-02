@@ -4,6 +4,7 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.LoadingCache;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3i;
 
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
@@ -84,9 +85,9 @@ public class Class9803 {
 
    public static BlockPos method38658(BlockPos var0, Direction var1, Direction var2, int var3, int var4, int var5) {
       if (var1 != var2 && var1 != var2.method536()) {
-         Class1998 var8 = new Class1998(var1.method539(), var1.method540(), var1.method541());
-         Class1998 var9 = new Class1998(var2.method539(), var2.method540(), var2.method541());
-         Class1998 var10 = var8.method8315(var9);
+         Vector3i var8 = new Vector3i(var1.method539(), var1.method540(), var1.method541());
+         Vector3i var9 = new Vector3i(var2.method539(), var2.method540(), var2.method541());
+         Vector3i var10 = var8.method8315(var9);
          return var0.method8336(
             var9.getX() * -var4 + var10.getX() * var3 + var8.getX() * var5,
             var9.getY() * -var4 + var10.getY() * var3 + var8.getY() * var5,

@@ -14,8 +14,8 @@ public class Class7533 extends Class7530 {
 
    @Override
    public void method24591(CompoundNBT var1) {
-      this.field32337 = new LongOpenHashSet(var1.method129("All"));
-      this.field32338 = new LongOpenHashSet(var1.method129("Remaining"));
+      this.field32337 = new LongOpenHashSet(var1.getLongArray("All"));
+      this.field32338 = new LongOpenHashSet(var1.getLongArray("Remaining"));
    }
 
    @Override

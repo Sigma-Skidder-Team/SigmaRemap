@@ -25,8 +25,8 @@ public class Class4186 extends Class4180 {
 
    public Class4186(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33475, var2);
-      this.field20473 = var2.method126("Template");
-      this.field20474 = Class80.valueOf(var2.method126("Rot"));
+      this.field20473 = var2.getString("Template");
+      this.field20474 = Class80.valueOf(var2.getString("Rot"));
       this.field20475 = var2.getBoolean("OW");
       this.method12965(var1);
    }

@@ -42,12 +42,12 @@ public abstract class Class4178 {
    }
 
    public Class4178(Class7792 var1, CompoundNBT var2) {
-      this(var1, var2.method122("GD"));
+      this(var1, var2.getInt("GD"));
       if (var2.contains("BB")) {
-         this.field20444 = new Class9764(var2.method128("BB"));
+         this.field20444 = new Class9764(var2.getIntArray("BB"));
       }
 
-      int var5 = var2.method122("O");
+      int var5 = var2.getInt("O");
       this.method12939(var5 != -1 ? Direction.method547(var5) : null);
    }
 

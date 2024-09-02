@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3i;
 
 public class Class5454 extends Class5444<Class4726> {
    private static String[] field24213;
@@ -71,7 +72,7 @@ public class Class5454 extends Class5444<Class4726> {
       BlockPos var16 = new BlockPos(var13.method32886().getX() / 2, 0, var13.method32886().getZ() / 2);
       BlockPos var17 = new Class7481(var4, var5).method24364();
       Class9764 var18 = var13.method32910(var17, var14, var16, var15);
-      Class1998 var19 = var18.method38401();
+      Vector3i var19 = var18.method38401();
       int var20 = var19.getX();
       int var21 = var19.getZ();
       int var22 = var2.method17797(var20, var21, Class4184.method12959(var11)) - 1;

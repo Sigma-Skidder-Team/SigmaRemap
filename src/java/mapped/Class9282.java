@@ -1,12 +1,14 @@
 package mapped;
 
+import net.minecraft.advancements.Advancement;
+
 public class Class9282<T extends Class4477> {
    private static String[] field42703;
    private final T field42704;
-   private final Class7952 field42705;
+   private final Advancement field42705;
    private final String field42706;
 
-   public Class9282(T var1, Class7952 var2, String var3) {
+   public Class9282(T var1, Advancement var2, String var3) {
       this.field42704 = (T)var1;
       this.field42705 = var2;
       this.field42706 = var3;

@@ -19,6 +19,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -61,7 +62,7 @@ public class Class7803 {
    public static void method26054(BlockPos var0, BlockPos var1, Class80 var2, ServerWorld var3) {
       BlockPos var6 = Class8969.method32905(var0.method8337(var1), Class2089.field13614, var2, var0);
       var3.setBlockState(var6, Blocks.COMMAND_BLOCK.method11579());
-      Class969 var7 = (Class969)var3.getTileEntity(var6);
+      CommandBlockTileEntity var7 = (CommandBlockTileEntity)var3.getTileEntity(var6);
       var7.method4009().method3562("test runthis");
       BlockPos var8 = Class8969.method32905(var6.method8336(0, 0, -1), Class2089.field13614, var2, var6);
       var3.setBlockState(var8, Blocks.STONE_BUTTON.method11579().method23395(var2));

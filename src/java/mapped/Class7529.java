@@ -61,13 +61,13 @@ public class Class7529 extends Class7530 {
       this.field32318 = (RegistryKey<World>) DimensionType.decodeWorldKey(new Dynamic(NBTDynamicOps.INSTANCE, var1.method116("dimension")))
          .resultOrPartial(field32315::error)
          .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + var1.method116("dimension")));
-      this.field32316 = var1.method122("xCenter");
-      this.field32317 = var1.method122("zCenter");
-      this.field32321 = (byte) MathHelper.method37775(var1.method120("scale"), 0, 4);
+      this.field32316 = var1.getInt("xCenter");
+      this.field32317 = var1.getInt("zCenter");
+      this.field32321 = (byte) MathHelper.method37775(var1.getByte("scale"), 0, 4);
       this.field32319 = !var1.contains("trackingPosition", 1) || var1.getBoolean("trackingPosition");
       this.field32320 = var1.getBoolean("unlimitedTracking");
       this.field32323 = var1.getBoolean("locked");
-      this.field32322 = var1.method127("colors");
+      this.field32322 = var1.getByteArray("colors");
       if (this.field32322.length != 16384) {
          this.field32322 = new byte[16384];
       }
@@ -205,14 +205,14 @@ public class Class7529 extends Class7530 {
 
          for (int var15 = 0; var15 < var13.size(); var15++) {
             CompoundNBT var16 = var13.method153(var15);
-            if (!this.field32327.containsKey(var16.method126("id"))) {
+            if (!this.field32327.containsKey(var16.getString("id"))) {
                this.method24596(
-                  MapDecorationType.method8957(var16.method120("type")),
+                  MapDecorationType.method8957(var16.getByte("type")),
                   var1.world,
-                  var16.method126("id"),
-                  var16.method125("x"),
-                  var16.method125("z"),
-                  var16.method125("rot"),
+                  var16.getString("id"),
+                  var16.getDouble("x"),
+                  var16.getDouble("z"),
+                  var16.getDouble("rot"),
                   (ITextComponent)null
                );
             }

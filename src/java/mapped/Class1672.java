@@ -399,7 +399,7 @@ public class Class1672 implements IChunk {
 
    @Override
    public void method7085(CompoundNBT var1) {
-      this.field9096.put(new BlockPos(var1.method122("x"), var1.method122("y"), var1.method122("z")), var1);
+      this.field9096.put(new BlockPos(var1.getInt("x"), var1.getInt("y"), var1.getInt("z")), var1);
    }
 
    public Map<BlockPos, CompoundNBT> method7115() {

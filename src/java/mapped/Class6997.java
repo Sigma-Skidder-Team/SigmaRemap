@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.World;
 
 public class Class6997 extends Class6990 {
@@ -112,7 +113,7 @@ public class Class6997 extends Class6990 {
          }
 
          if (this.field30253 > 0.0 && (double)this.field30251 > this.field30253 * 2.0) {
-            this.field30250 = Class1998.field13026;
+            this.field30250 = Vector3i.field13026;
             this.field30251 = 0L;
             this.field30253 = 0.0;
             this.method21666();

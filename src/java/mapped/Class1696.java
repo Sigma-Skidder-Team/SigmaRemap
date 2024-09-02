@@ -3,6 +3,7 @@ package mapped;
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -52,7 +53,7 @@ public final class Class1696 implements AutoCloseable {
             return (CompoundNBT)var9;
          }
 
-         var7 = Class8799.method31771(var5);
+         var7 = CompressedStreamTools.read(var5);
       }
 
       return var7;
@@ -62,7 +63,7 @@ public final class Class1696 implements AutoCloseable {
       Class1692 var5 = this.method7295(var1);
 
       try (DataOutputStream var6 = var5.method7258(var1)) {
-         Class8799.method31773(var2, var6);
+         CompressedStreamTools.method31773(var2, var6);
       }
    }
 

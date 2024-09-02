@@ -319,13 +319,13 @@ public class ItemFrameEntity extends Class995 {
          }
 
          this.method4092(var5, false);
-         this.method4095(var1.method120("ItemRotation"), false);
+         this.method4095(var1.getByte("ItemRotation"), false);
          if (var1.contains("ItemDropChance", 99)) {
             this.field5494 = var1.getFloat("ItemDropChance");
          }
       }
 
-      this.method4077(Direction.byIndex(var1.method120("Facing")));
+      this.method4077(Direction.byIndex(var1.getByte("Facing")));
       this.method3347(var1.getBoolean("Invisible"));
       this.field5495 = var1.getBoolean("Fixed");
    }

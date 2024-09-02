@@ -23,7 +23,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
    public final Class8202 field5278 = new Class8203(this);
 
    public Class931() {
-      super(Class4387.field21431);
+      super(TileEntityType.field21431);
    }
 
    @Override
@@ -162,8 +162,8 @@ public class Class931 extends Class932 implements Class930, Class935 {
       super.method3645(var1, var2);
       this.field5273 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       Class7920.method26567(var2, this.field5273);
-      this.field5274 = var2.method121("BrewTime");
-      this.field5277 = var2.method120("Fuel");
+      this.field5274 = var2.getShort("BrewTime");
+      this.field5277 = var2.getByte("Fuel");
    }
 
    @Override

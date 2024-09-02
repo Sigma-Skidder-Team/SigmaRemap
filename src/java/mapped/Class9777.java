@@ -52,7 +52,7 @@ public final class Class9777 {
          BlockPos var20 = var19.method8349(var18);
          int var21 = var19.getY() - var15;
          int var22 = -1;
-         ResourceLocation var23 = new ResourceLocation(var17.field35532.method126("pool"));
+         ResourceLocation var23 = new ResourceLocation(var17.field35532.getString("pool"));
          Optional<Class9369> var24 = this.field45733.method9187(var23);
          if (!var24.isPresent() || ((Class9369)var24.get()).method35538() == 0 && !Objects.equals(var23, Class9837.field45937.getLocation())) {
             Class8814.method31822().warn("Empty or none existent pool: {}", var23);
@@ -93,7 +93,7 @@ public final class Class9777 {
                      if (var5 && var36.method38399() <= 16) {
                         var37 = var35.stream().mapToInt(var2x -> {
                            if (var36.method38396(var2x.field35530.method8349(Class3249.method11675(var2x.field35531)))) {
-                              ResourceLocation var5x = new ResourceLocation(var2x.field35532.method126("pool"));
+                              ResourceLocation var5x = new ResourceLocation(var2x.field35532.getString("pool"));
                               Optional<Class9369> var6 = this.field45733.method9187(var5x);
                               Optional<Class9369> var7 = var6.<Class9369>flatMap(var1xx -> this.field45733.method9187(var1xx.method35534()));
                               int var8x = var6.<Integer>map(var1xx -> var1xx.method35533(this.field45737)).orElse(0);

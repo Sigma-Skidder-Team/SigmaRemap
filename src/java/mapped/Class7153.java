@@ -6,6 +6,7 @@ import java.util.Locale;
 import java.util.function.Function;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -41,7 +42,7 @@ public class Class7153 implements Class7151 {
    }
 
    @Override
-   public ITextComponent method22314(Class30 var1) {
+   public ITextComponent method22314(INBT var1) {
       return new TranslationTextComponent("commands.data.storage.query", this.field30730, var1.method82());
    }
 

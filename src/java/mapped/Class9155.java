@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3i;
 
 public class Class9155 {
    private static final float field42034 = 1.0F / (float)Math.cos((float) (Math.PI / 8)) - 1.0F;
@@ -194,7 +195,7 @@ public class Class9155 {
       float var12 = 0.0F;
 
       for (Direction var16 : Direction.values()) {
-         Class1998 var17 = var16.method556();
+         Vector3i var17 = var16.method556();
          Vector3f var18 = new Vector3f((float)var17.getX(), (float)var17.getY(), (float)var17.getZ());
          float var19 = var10.method25279(var18);
          if (var19 >= 0.0F && var19 > var12) {

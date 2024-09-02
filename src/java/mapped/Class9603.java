@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.nbt.INBT;
+
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -20,11 +22,11 @@ public class Class9603 {
       this.field44922 = var3;
    }
 
-   public void method37313(Supplier<Class30> var1, Class30 var2) {
+   public void method37313(Supplier<INBT> var1, INBT var2) {
       try {
          List var5 = this.field44919.method37725(var2);
          if (!var5.isEmpty()) {
-            this.field44922.method8068((Class30)var1.get(), this.field44921, var5);
+            this.field44922.method8068((INBT)var1.get(), this.field44921, var5);
          }
       } catch (CommandSyntaxException var6) {
       }

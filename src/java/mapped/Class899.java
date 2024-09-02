@@ -63,7 +63,7 @@ public class Class899 extends Class898 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.contains("ExplosionPower", 99)) {
-         this.field5139 = var1.method122("ExplosionPower");
+         this.field5139 = var1.getInt("ExplosionPower");
       }
    }
 }

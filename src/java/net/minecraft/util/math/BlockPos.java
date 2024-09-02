@@ -5,6 +5,7 @@ import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.vector.Vector3i;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,7 +19,7 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 @Immutable
-public class BlockPos extends Class1998 {
+public class BlockPos extends Vector3i {
    public static final Codec<BlockPos> field13030 = Codec.INT_STREAM
       .comapFlatMap(
          var0 -> Util.method38530(var0, 3).map(var0x -> new BlockPos(var0x[0], var0x[1], var0x[2])),
@@ -52,7 +53,7 @@ public class BlockPos extends Class1998 {
       this(var1.method11320(), var1.method11321(), var1.method11322());
    }
 
-   public BlockPos(Class1998 var1) {
+   public BlockPos(Vector3i var1) {
       this(var1.getX(), var1.getY(), var1.getZ());
    }
 
@@ -105,11 +106,11 @@ public class BlockPos extends Class1998 {
       return var1 == 0 && var2 == 0 && var3 == 0 ? this : new BlockPos(this.getX() + var1, this.getY() + var2, this.getZ() + var3);
    }
 
-   public BlockPos method8337(Class1998 var1) {
+   public BlockPos method8337(Vector3i var1) {
       return this.method8336(var1.getX(), var1.getY(), var1.getZ());
    }
 
-   public BlockPos method8338(Class1998 var1) {
+   public BlockPos method8338(Vector3i var1) {
       return this.method8336(-var1.getX(), -var1.getY(), -var1.getZ());
    }
 
@@ -196,7 +197,7 @@ public class BlockPos extends Class1998 {
       }
    }
 
-   public BlockPos method8315(Class1998 var1) {
+   public BlockPos method8315(Vector3i var1) {
       return new BlockPos(
          this.getY() * var1.getZ() - this.getZ() * var1.getY(),
          this.getZ() * var1.getX() - this.getX() * var1.getZ(),

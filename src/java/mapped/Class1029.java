@@ -72,9 +72,9 @@ public class Class1029 extends Class1026 {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.field5728 = var1.method122("AttackTick");
-      this.field5729 = var1.method122("StunTick");
-      this.field5730 = var1.method122("RoarTick");
+      this.field5728 = var1.getInt("AttackTick");
+      this.field5729 = var1.getInt("StunTick");
+      this.field5730 = var1.getInt("RoarTick");
    }
 
    @Override
@@ -115,7 +115,7 @@ public class Class1029 extends Class1026 {
          if (!this.method2896()) {
             double var3 = this.method4232() == null ? 0.3 : 0.35;
             double var5 = this.method3085(Attributes.MOVEMENT_SPEED).method38660();
-            this.method3085(Attributes.MOVEMENT_SPEED).method38661(MathHelper.method37822(0.1, var5, var3));
+            this.method3085(Attributes.MOVEMENT_SPEED).method38661(MathHelper.lerp(0.1, var5, var3));
          } else {
             this.method3085(Attributes.MOVEMENT_SPEED).method38661(0.0);
          }

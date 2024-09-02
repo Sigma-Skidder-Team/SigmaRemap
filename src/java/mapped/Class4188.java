@@ -13,7 +13,7 @@ public abstract class Class4188 extends Class4178 {
 
    public Class4188(Class7792 var1, CompoundNBT var2) {
       super(var1, var2);
-      this.field20479 = Class102.method293(var2.method122("MST"));
+      this.field20479 = Class102.method293(var2.getInt("MST"));
    }
 
    @Override

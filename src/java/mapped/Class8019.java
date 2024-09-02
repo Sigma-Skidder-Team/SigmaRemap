@@ -31,6 +31,7 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.client.util.Util;
 import net.minecraft.network.play.server.SSelectAdvancementsTabPacket;
 import net.minecraft.network.play.server.SAdvancementInfoPacket;
@@ -51,12 +52,12 @@ public class Class8019 {
    private final DataFixer field34448;
    private final Class6395 field34449;
    private final File field34450;
-   private final Map<Class7952, Class2006> field34451 = Maps.newLinkedHashMap();
-   private final Set<Class7952> field34452 = Sets.newLinkedHashSet();
-   private final Set<Class7952> field34453 = Sets.newLinkedHashSet();
-   private final Set<Class7952> field34454 = Sets.newLinkedHashSet();
+   private final Map<Advancement, Class2006> field34451 = Maps.newLinkedHashMap();
+   private final Set<Advancement> field34452 = Sets.newLinkedHashSet();
+   private final Set<Advancement> field34453 = Sets.newLinkedHashSet();
+   private final Set<Advancement> field34454 = Sets.newLinkedHashSet();
    private ServerPlayerEntity field34455;
-   private Class7952 field34456;
+   private Advancement field34456;
    private boolean field34457 = true;
 
    public Class8019(DataFixer var1, Class6395 var2, Class285 var3, File var4, ServerPlayerEntity var5) {
@@ -89,28 +90,28 @@ public class Class8019 {
    }
 
    private void method27405(Class285 var1) {
-      for (Class7952 var5 : var1.method1066()) {
+      for (Advancement var5 : var1.method1066()) {
          this.method27412(var5);
       }
    }
 
    private void method27406() {
-      List<Class7952> var3 = Lists.newArrayList();
+      List<Advancement> var3 = Lists.newArrayList();
 
-      for (Entry<Class7952, Class2006> var5 : this.field34451.entrySet()) {
+      for (Entry<Advancement, Class2006> var5 : this.field34451.entrySet()) {
          if (((Class2006)var5.getValue()).method8489()) {
             var3.add(var5.getKey());
-            this.field34454.add((Class7952)var5.getKey());
+            this.field34454.add((Advancement)var5.getKey());
          }
       }
 
-      for (Class7952 var7 : var3) {
+      for (Advancement var7 : var3) {
          this.method27418(var7);
       }
    }
 
    private void method27407(Class285 var1) {
-      for (Class7952 var5 : var1.method1066()) {
+      for (Advancement var5 : var1.method1066()) {
          if (var5.method27030().isEmpty()) {
             this.method27410(var5, "");
             var5.method27028().method30722(this.field34455);
@@ -142,7 +143,7 @@ public class Class8019 {
                Stream<Entry<ResourceLocation, Class2006>>  var8 = var7.entrySet().stream().sorted(Comparator.comparing(Entry::getValue));
 
                for (Entry var10 : var8.collect(Collectors.toList())) {
-                  Class7952 var11 = var1.method1065((ResourceLocation)var10.getKey());
+                  Advancement var11 = var1.method1065((ResourceLocation)var10.getKey());
                   if (var11 == null) {
                      field34445.warn("Ignored advancement '{}' in progress file {} - it doesn't exist anymore?", var10.getKey(), this.field34450);
                   } else {
@@ -183,7 +184,7 @@ public class Class8019 {
       for (Entry var5 : this.field34451.entrySet()) {
          Class2006 var6 = (Class2006)var5.getValue();
          if (var6.method8490()) {
-            var3.put(((Class7952)var5.getKey()).method27033(), var6);
+            var3.put(((Advancement)var5.getKey()).getId(), var6);
          }
       }
 
@@ -204,7 +205,7 @@ public class Class8019 {
       }
    }
 
-   public boolean method27410(Class7952 var1, String var2) {
+   public boolean method27410(Advancement var1, String var2) {
       boolean var5 = false;
       Class2006 var6 = this.method27416(var1);
       boolean var7 = var6.method8489();
@@ -234,7 +235,7 @@ public class Class8019 {
       return var5;
    }
 
-   public boolean method27411(Class7952 var1, String var2) {
+   public boolean method27411(Advancement var1, String var2) {
       boolean var5 = false;
       Class2006 var6 = this.method27416(var1);
       if (var6.method8492(var2)) {
@@ -250,7 +251,7 @@ public class Class8019 {
       return var5;
    }
 
-   private void method27412(Class7952 var1) {
+   private void method27412(Advancement var1) {
       Class2006 var4 = this.method27416(var1);
       if (!var4.method8489()) {
          for (Entry var6 : var1.method27030().entrySet()) {
@@ -268,7 +269,7 @@ public class Class8019 {
       }
    }
 
-   private void method27413(Class7952 var1) {
+   private void method27413(Advancement var1) {
       Class2006 var4 = this.method27416(var1);
 
       for (Entry var6 : var1.method27030().entrySet()) {
@@ -291,15 +292,15 @@ public class Class8019 {
          LinkedHashSet var5 = Sets.newLinkedHashSet();
          LinkedHashSet var6 = Sets.newLinkedHashSet();
 
-         for (Class7952 var8 : this.field34454) {
+         for (Advancement var8 : this.field34454) {
             if (this.field34452.contains(var8)) {
-               var4.put(var8.method27033(), this.field34451.get(var8));
+               var4.put(var8.getId(), this.field34451.get(var8));
             }
          }
 
-         for (Class7952 var10 : this.field34453) {
+         for (Advancement var10 : this.field34453) {
             if (!this.field34452.contains(var10)) {
-               var6.add(var10.method27033());
+               var6.add(var10.getId());
             } else {
                var5.add(var10);
             }
@@ -315,8 +316,8 @@ public class Class8019 {
       this.field34457 = false;
    }
 
-   public void method27415(Class7952 var1) {
-      Class7952 var4 = this.field34456;
+   public void method27415(Advancement var1) {
+      Advancement var4 = this.field34456;
       if (var1 != null && var1.method27026() == null && var1.method27027() != null) {
          this.field34456 = var1;
       } else {
@@ -324,11 +325,11 @@ public class Class8019 {
       }
 
       if (var4 != this.field34456) {
-         this.field34455.field4855.sendPacket(new SSelectAdvancementsTabPacket(this.field34456 != null ? this.field34456.method27033() : null));
+         this.field34455.field4855.sendPacket(new SSelectAdvancementsTabPacket(this.field34456 != null ? this.field34456.getId() : null));
       }
    }
 
-   public Class2006 method27416(Class7952 var1) {
+   public Class2006 method27416(Advancement var1) {
       Class2006 var4 = this.field34451.get(var1);
       if (var4 == null) {
          var4 = new Class2006();
@@ -338,12 +339,12 @@ public class Class8019 {
       return var4;
    }
 
-   private void method27417(Class7952 var1, Class2006 var2) {
+   private void method27417(Advancement var1, Class2006 var2) {
       var2.method8488(var1.method27030(), var1.method27034());
       this.field34451.put(var1, var2);
    }
 
-   private void method27418(Class7952 var1) {
+   private void method27418(Advancement var1) {
       boolean var4 = this.method27419(var1);
       boolean var5 = this.field34452.contains(var1);
       if (var4 && !var5) {
@@ -361,12 +362,12 @@ public class Class8019 {
          this.method27418(var1.method27026());
       }
 
-      for (Class7952 var7 : var1.method27029()) {
+      for (Advancement var7 : var1.method27029()) {
          this.method27418(var7);
       }
    }
 
-   private boolean method27419(Class7952 var1) {
+   private boolean method27419(Advancement var1) {
       for (int var4 = 0; var1 != null && var4 <= 2; var4++) {
          if (var4 == 0 && this.method27420(var1)) {
             return true;
@@ -391,12 +392,12 @@ public class Class8019 {
       return false;
    }
 
-   private boolean method27420(Class7952 var1) {
+   private boolean method27420(Advancement var1) {
       Class2006 var4 = this.method27416(var1);
       if (var4.method8489()) {
          return true;
       } else {
-         for (Class7952 var6 : var1.method27029()) {
+         for (Advancement var6 : var1.method27029()) {
             if (this.method27420(var6)) {
                return true;
             }

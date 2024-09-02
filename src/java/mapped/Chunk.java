@@ -413,7 +413,7 @@ public class Chunk implements IChunk {
 
    @Override
    public void method7085(CompoundNBT var1) {
-      this.field9114.put(new BlockPos(var1.method122("x"), var1.method122("y"), var1.method122("z")), var1);
+      this.field9114.put(new BlockPos(var1.getInt("x"), var1.getInt("y"), var1.getInt("z")), var1);
    }
 
    @Nullable
@@ -551,7 +551,7 @@ public class Chunk implements IChunk {
       for (Class101 var12 : Class101.values()) {
          String var13 = var12.method283();
          if (var3.contains(var13, 12)) {
-            this.method7069(var12, var3.method129(var13));
+            this.method7069(var12, var3.getLongArray(var13));
          }
       }
 
@@ -716,7 +716,7 @@ public class Chunk implements IChunk {
    private TileEntity method7149(BlockPos var1, CompoundNBT var2) {
       BlockState var5 = this.getBlockState(var1);
       TileEntity var6;
-      if (!"DUMMY".equals(var2.method126("id"))) {
+      if (!"DUMMY".equals(var2.getString("id"))) {
          var6 = TileEntity.method3772(var5, var2);
       } else {
          Block var7 = var5.getBlock();

@@ -120,7 +120,7 @@ public class Class7958 {
                         int var37 = Class1648.method6530(var20);
                         CompoundNBT var22 = var17.method6529(var15, () -> this.field34222, var20);
                         CompoundNBT var23 = var22.getCompound("Level");
-                        Class7481 var24 = new Class7481(var23.method122("xPos"), var23.method122("zPos"));
+                        Class7481 var24 = new Class7481(var23.getInt("xPos"), var23.getInt("zPos"));
                         if (!var24.equals(var18)) {
                            field34206.warn("Chunk {} has invalid position {}", var18, var24);
                         }

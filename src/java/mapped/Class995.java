@@ -183,7 +183,7 @@ public abstract class Class995 extends Entity {
 
    @Override
    public void method2723(CompoundNBT var1) {
-      this.field5488 = new BlockPos(var1.method122("TileX"), var1.method122("TileY"), var1.method122("TileZ"));
+      this.field5488 = new BlockPos(var1.getInt("TileX"), var1.getInt("TileY"), var1.getInt("TileZ"));
    }
 
    public abstract int method4081();

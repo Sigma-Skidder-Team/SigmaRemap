@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -43,7 +44,7 @@ public abstract class Class7530 {
          var4.method102("DataVersion", SharedConstants.getVersion().getWorldVersion());
 
          try {
-            Class8799.method31767(var4, var1);
+            CompressedStreamTools.writeCompressed(var4, var1);
          } catch (IOException var6) {
             field32329.error("Could not save data {}", this, var6);
          }

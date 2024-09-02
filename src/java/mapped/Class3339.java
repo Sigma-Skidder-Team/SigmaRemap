@@ -54,7 +54,7 @@ public class Class3339 extends Item {
          String var12 = Registry.BLOCK.getKey(var9).toString();
          if (!var11.isEmpty()) {
             CompoundNBT var13 = var6.method32144("DebugProperty");
-            String var14 = var13.method126(var12);
+            String var14 = var13.getString(var12);
             Class8550 var15 = var10.method35396(var14);
             if (!var5) {
                var15 = method11888(var11, var15, var1.method2851());

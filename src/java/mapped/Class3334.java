@@ -47,6 +47,6 @@ public class Class3334 extends Item {
    }
 
    public static Class112 method11882(ItemStack var0) {
-      return Class112.method315(var0.method32144("BlockEntityTag").method122("Base"));
+      return Class112.method315(var0.method32144("BlockEntityTag").getInt("Base"));
    }
 }

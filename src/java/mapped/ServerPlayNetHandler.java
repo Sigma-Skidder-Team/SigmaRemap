@@ -20,6 +20,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
@@ -32,6 +33,7 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
+import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
@@ -355,15 +357,15 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    @Override
    public void func_241831_a(CUpdateRecipeBookStatusPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
-      this.player.method2810().method21375(var1.method17503(), var1.method17504(), var1.method17505());
+      this.player.method2810().method21375(var1.func_244317_b(), var1.func_244318_c(), var1.func_244319_d());
    }
 
    @Override
    public void handleSeenAdvancements(CSeenAdvancementsPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
-      if (var1.method17184() == Class2238.field14644) {
-         ResourceLocation var4 = var1.method17185();
-         Class7952 var5 = this.server.method1396().method1065(var4);
+      if (var1.getAction() == CSeenAdvancementsPacket.Action.OPENED_TAB) {
+         ResourceLocation var4 = var1.getTab();
+         Advancement var5 = this.server.method1396().method1065(var4);
          if (var5 != null) {
             this.player.method2823().method27415(var5);
          }
@@ -394,39 +396,39 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       } else if (!this.player.method2979()) {
          this.player.sendMessage(new TranslationTextComponent("advMode.notAllowed"), Util.DUMMY_UUID);
       } else {
-         Class911 var4 = null;
-         Class969 var5 = null;
-         BlockPos var6 = var1.method17516();
+         CommandBlockLogic var4 = null;
+         CommandBlockTileEntity var5 = null;
+         BlockPos var6 = var1.getPos();
          TileEntity var7 = this.player.world.getTileEntity(var6);
-         if (var7 instanceof Class969) {
-            var5 = (Class969)var7;
+         if (var7 instanceof CommandBlockTileEntity) {
+            var5 = (CommandBlockTileEntity)var7;
             var4 = var5.method4009();
          }
 
-         String var8 = var1.method17517();
-         boolean var9 = var1.method17518();
+         String var8 = var1.getCommand();
+         boolean var9 = var1.shouldTrackOutput();
          if (var4 != null) {
-            Class2037 var10 = var5.method4020();
+            CommandBlockTileEntity.Mode var10 = var5.method4020();
             Direction var11 = this.player.world.getBlockState(var6).<Direction>method23463(Class3355.field18893);
-            switch (Class9703.field45356[var1.method17521().ordinal()]) {
+            switch (Class9703.field45356[var1.getMode().ordinal()]) {
                case 1:
                   BlockState var12 = Blocks.field36888.method11579();
                   this.player
                      .world
-                     .setBlockState(var6, var12.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
+                     .setBlockState(var6, var12.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.isConditional())), 2);
                   break;
                case 2:
                   BlockState var13 = Blocks.field36887.method11579();
                   this.player
                      .world
-                     .setBlockState(var6, var13.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
+                     .setBlockState(var6, var13.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.isConditional())), 2);
                   break;
                case 3:
                default:
                   BlockState var14 = Blocks.COMMAND_BLOCK.method11579();
                   this.player
                      .world
-                     .setBlockState(var6, var14.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
+                     .setBlockState(var6, var14.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.isConditional())), 2);
             }
 
             var7.method3779();
@@ -437,8 +439,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                var4.method3569((ITextComponent)null);
             }
 
-            var5.method4013(var1.method17520());
-            if (var10 != var1.method17521()) {
+            var5.method4013(var1.isAuto());
+            if (var10 != var1.getMode()) {
                var5.method4014();
             }
 
@@ -455,7 +457,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.server.method1361()) {
          if (this.player.method2979()) {
-            Class911 var4 = var1.method17387(this.player.world);
+            CommandBlockLogic var4 = var1.method17387(this.player.world);
             if (var4 != null) {
                var4.method3562(var1.method17388());
                var4.method3570(var1.method17389());
@@ -615,7 +617,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             ArrayList var6 = Lists.newArrayList();
             boolean var7 = var1.method17466();
             if (var7) {
-               var6.add(var5.method126("title"));
+               var6.add(var5.getString("title"));
             }
 
             ListNBT var8 = var5.method131("pages", 8);
@@ -1291,7 +1293,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          ItemStack var5 = var1.getStack();
          CompoundNBT var6 = var5.method32145("BlockEntityTag");
          if (!var5.isEmpty() && var6 != null && var6.contains("x") && var6.contains("y") && var6.contains("z")) {
-            BlockPos var7 = new BlockPos(var6.method122("x"), var6.method122("y"), var6.method122("z"));
+            BlockPos var7 = new BlockPos(var6.getInt("x"), var6.getInt("y"), var6.getInt("z"));
             TileEntity var8 = this.player.world.getTileEntity(var7);
             if (var8 != null) {
                CompoundNBT var9 = var8.write(new CompoundNBT());

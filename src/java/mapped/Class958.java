@@ -24,7 +24,7 @@ public class Class958 extends TileEntity implements INameable {
    private List<Pair<Class2154, Class112>> field5380;
 
    public Class958() {
-      super(Class4387.field21439);
+      super(TileEntityType.field21439);
    }
 
    public Class958(Class112 var1) {
@@ -84,7 +84,7 @@ public class Class958 extends TileEntity implements INameable {
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       if (var2.contains("CustomName", 8)) {
-         this.field5376 = ITextComponent$Serializer.func_240643_a_(var2.method126("CustomName"));
+         this.field5376 = ITextComponent$Serializer.func_240643_a_(var2.getString("CustomName"));
       }
 
       if (!this.method3770()) {
@@ -128,9 +128,9 @@ public class Class958 extends TileEntity implements INameable {
       if (var1 != null) {
          for (int var5 = 0; var5 < var1.size(); var5++) {
             CompoundNBT var6 = var1.method153(var5);
-            Class2154 var7 = Class2154.method8872(var6.method126("Pattern"));
+            Class2154 var7 = Class2154.method8872(var6.getString("Pattern"));
             if (var7 != null) {
-               int var8 = var6.method122("Color");
+               int var8 = var6.getInt("Color");
                var4.add(Pair.of(var7, Class112.method315(var8)));
             }
          }

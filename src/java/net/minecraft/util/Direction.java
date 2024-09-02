@@ -6,18 +6,19 @@ import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3i;
 
 import javax.annotation.Nullable;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public enum Direction implements IStringSerializable {
-   DOWN(0, 1, -1, "down", Class1892.field11093, Class113.field414, new Class1998(0, -1, 0)),
-   field673(1, 0, -1, "up", Class1892.field11092, Class113.field414, new Class1998(0, 1, 0)),
-   NORTH(2, 3, 2, "north", Class1892.field11093, Class113.field415, new Class1998(0, 0, -1)),
-   SOUTH(3, 2, 0, "south", Class1892.field11092, Class113.field415, new Class1998(0, 0, 1)),
-   WEST(4, 5, 1, "west", Class1892.field11093, Class113.field413, new Class1998(-1, 0, 0)),
-   EAST(5, 4, 3, "east", Class1892.field11092, Class113.field413, new Class1998(1, 0, 0));
+   DOWN(0, 1, -1, "down", Class1892.field11093, Class113.field414, new Vector3i(0, -1, 0)),
+   field673(1, 0, -1, "up", Class1892.field11092, Class113.field414, new Vector3i(0, 1, 0)),
+   NORTH(2, 3, 2, "north", Class1892.field11093, Class113.field415, new Vector3i(0, 0, -1)),
+   SOUTH(3, 2, 0, "south", Class1892.field11092, Class113.field415, new Vector3i(0, 0, 1)),
+   WEST(4, 5, 1, "west", Class1892.field11093, Class113.field413, new Vector3i(-1, 0, 0)),
+   EAST(5, 4, 3, "east", Class1892.field11092, Class113.field413, new Vector3i(1, 0, 0));
 
    private final int field678;
    private final int field679;
@@ -25,7 +26,7 @@ public enum Direction implements IStringSerializable {
    private final String field681;
    private final Class113 field682;
    private final Class1892 field683;
-   private final Class1998 field684;
+   private final Vector3i field684;
    public static final Direction[] field685 = values();
    private static final Map<String, Direction> field686 = Arrays.<Direction>stream(field685)
       .collect(Collectors.toMap(Direction::method543, var0 -> (Direction)var0));
@@ -42,7 +43,7 @@ public enum Direction implements IStringSerializable {
       }, Long2ObjectOpenHashMap::new));
    private static final Direction[] field690 = new Direction[]{DOWN, field673, NORTH, SOUTH, WEST, EAST};
 
-   private Direction(int var3, int var4, int var5, String var6, Class1892 var7, Class113 var8, Class1998 var9) {
+   private Direction(int var3, int var4, int var5, String var6, Class1892 var7, Class113 var8, Vector3i var9) {
       this.field678 = var3;
       this.field680 = var5;
       this.field679 = var4;
@@ -88,7 +89,7 @@ public enum Direction implements IStringSerializable {
    }
 
    public static Direction method531(Matrix4f var0, Direction var1) {
-      Class1998 var4 = var1.method556();
+      Vector3i var4 = var1.method556();
       Class7755 var5 = new Class7755((float)var4.getX(), (float)var4.getY(), (float)var4.getZ(), 0.0F);
       var5.method25709(var0);
       return method554(var5.method25701(), var5.method25702(), var5.method25703());
@@ -267,7 +268,7 @@ public enum Direction implements IStringSerializable {
       throw new IllegalArgumentException("No such direction: " + var0 + " " + var1);
    }
 
-   public Class1998 method556() {
+   public Vector3i method556() {
       return this.field684;
    }
 

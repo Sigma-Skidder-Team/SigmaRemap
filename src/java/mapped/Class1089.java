@@ -116,7 +116,7 @@ public class Class1089 extends Class1018 {
       super.method2723(var1);
       this.field5971 = var1.getBoolean("IsChickenJockey");
       if (var1.contains("EggLayTime")) {
-         this.field5970 = var1.method122("EggLayTime");
+         this.field5970 = var1.getInt("EggLayTime");
       }
    }
 

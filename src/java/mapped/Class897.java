@@ -113,7 +113,7 @@ public class Class897 extends Entity implements Class889 {
          double var14 = this.field5135 - var8;
          float var16 = (float)Math.sqrt(var12 * var12 + var14 * var14);
          float var17 = (float) MathHelper.method37814(var14, var12);
-         double var18 = MathHelper.method37822(0.0025, (double)var10, (double)var16);
+         double var18 = MathHelper.lerp(0.0025, (double)var10, (double)var16);
          double var20 = var3.y;
          if (var16 < 1.0F) {
             var18 *= 0.8;

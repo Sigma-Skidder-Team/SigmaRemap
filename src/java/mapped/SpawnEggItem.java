@@ -135,7 +135,7 @@ public class SpawnEggItem extends Item {
       if (var1 != null && var1.contains("EntityTag", 10)) {
          CompoundNBT var4 = var1.getCompound("EntityTag");
          if (var4.contains("id", 8)) {
-            return EntityType.method33199(var4.method126("id")).orElse(this.field18820);
+            return EntityType.method33199(var4.getString("id")).orElse(this.field18820);
          }
       }
 

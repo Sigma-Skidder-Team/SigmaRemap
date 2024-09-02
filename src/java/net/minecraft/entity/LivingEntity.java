@@ -16,6 +16,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -551,7 +552,7 @@ public abstract class LivingEntity extends Entity {
          var1.method102("SleepingZ", var1x.getZ());
       });
       DataResult var7 = this.field5011.method21402(NBTDynamicOps.INSTANCE);
-      var7.resultOrPartial(LOGGER::error).ifPresent(var1x -> var1.put("Brain", (Class30) var1x));
+      var7.resultOrPartial(LOGGER::error).ifPresent(var1x -> var1.put("Brain", (INBT) var1x));
    }
 
    @Override
@@ -577,11 +578,11 @@ public abstract class LivingEntity extends Entity {
          this.method3043(var1.getFloat("Health"));
       }
 
-      this.field4952 = var1.method121("HurtTime");
-      this.field4955 = var1.method121("DeathTime");
-      this.field4995 = var1.method122("HurtByTimestamp");
+      this.field4952 = var1.getShort("HurtTime");
+      this.field4955 = var1.getShort("DeathTime");
+      this.field4995 = var1.getInt("HurtByTimestamp");
       if (var1.contains("Team", 8)) {
-         String var8 = var1.method126("Team");
+         String var8 = var1.getString("Team");
          Class8218 var10 = this.world.method6805().method20990(var8);
          boolean var11 = var10 != null && this.world.method6805().method20993(this.method3376(), var10);
          if (!var11) {
@@ -594,7 +595,7 @@ public abstract class LivingEntity extends Entity {
       }
 
       if (var1.contains("SleepingX", 99) && var1.contains("SleepingY", 99) && var1.contains("SleepingZ", 99)) {
-         BlockPos var9 = new BlockPos(var1.method122("SleepingX"), var1.method122("SleepingY"), var1.method122("SleepingZ"));
+         BlockPos var9 = new BlockPos(var1.getInt("SleepingX"), var1.getInt("SleepingY"), var1.getInt("SleepingZ"));
          this.method3174(var9);
          this.dataManager.method35446(POSE, Pose.field13621);
          if (!this.firstUpdate) {
@@ -1613,10 +1614,10 @@ public abstract class LivingEntity extends Entity {
                float var15 = (this.rand.nextFloat() - 0.5F) * 0.2F;
                float var16 = (this.rand.nextFloat() - 0.5F) * 0.2F;
                float var17 = (this.rand.nextFloat() - 0.5F) * 0.2F;
-               double var18 = MathHelper.method37822(var13, this.prevPosX, this.getPosX())
+               double var18 = MathHelper.lerp(var13, this.prevPosX, this.getPosX())
                   + (this.rand.nextDouble() - 0.5) * (double)this.method3429() * 2.0;
-               double var20 = MathHelper.method37822(var13, this.prevPosY, this.getPosY()) + this.rand.nextDouble() * (double)this.method3430();
-               double var22 = MathHelper.method37822(var13, this.prevPosZ, this.getPosZ())
+               double var20 = MathHelper.lerp(var13, this.prevPosY, this.getPosY()) + this.rand.nextDouble() * (double)this.method3430();
+               double var22 = MathHelper.lerp(var13, this.prevPosZ, this.getPosZ())
                   + (this.rand.nextDouble() - 0.5) * (double)this.method3429() * 2.0;
                this.world.method6746(ParticleTypes.field34090, var18, var20, var22, (double)var15, (double)var16, (double)var17);
             }

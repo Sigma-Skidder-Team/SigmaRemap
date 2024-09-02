@@ -20,15 +20,15 @@ public class Class8430 {
       Vector3d var15 = Vector3d.ZERO;
 
       for (int var16 = 0; var16 < 6; var16++) {
-         double var17 = MathHelper.method37822(var7, field36123[var16 + 1], field36123[var16]);
+         double var17 = MathHelper.lerp(var7, field36123[var16 + 1], field36123[var16]);
          int var19 = var4 - 2 + var16;
 
          for (int var20 = 0; var20 < 6; var20++) {
-            double var21 = MathHelper.method37822(var9, field36123[var20 + 1], field36123[var20]);
+            double var21 = MathHelper.lerp(var9, field36123[var20 + 1], field36123[var20]);
             int var23 = var5 - 2 + var20;
 
             for (int var24 = 0; var24 < 6; var24++) {
-               double var25 = MathHelper.method37822(var11, field36123[var24 + 1], field36123[var24]);
+               double var25 = MathHelper.lerp(var11, field36123[var24 + 1], field36123[var24]);
                int var27 = var6 - 2 + var24;
                double var28 = var17 * var21 * var25;
                var13 += var28;

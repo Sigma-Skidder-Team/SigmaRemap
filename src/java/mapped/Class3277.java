@@ -13,7 +13,7 @@ public interface Class3277 {
 
    default int method11800(ItemStack var1) {
       CompoundNBT var4 = var1.method32145("display");
-      return var4 != null && var4.contains("color", 99) ? var4.method122("color") : 10511680;
+      return var4 != null && var4.contains("color", 99) ? var4.getInt("color") : 10511680;
    }
 
    default void method11801(ItemStack var1) {

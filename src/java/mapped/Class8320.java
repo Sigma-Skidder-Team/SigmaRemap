@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.function.Predicate;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8320 implements ArgumentType<Class9670> {
@@ -119,7 +120,7 @@ public class Class8320 implements ArgumentType<Class9670> {
       return var0 != ' ' && var0 != '"' && var0 != '[' && var0 != ']' && var0 != '.' && var0 != '{' && var0 != '}';
    }
 
-   private static Predicate<Class30> method29134(CompoundNBT var0) {
+   private static Predicate<INBT> method29134(CompoundNBT var0) {
       return var1 -> Class8354.method29280(var0, var1, true);
    }
 

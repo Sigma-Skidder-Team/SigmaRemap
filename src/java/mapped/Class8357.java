@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -10,7 +11,7 @@ public class Class8357 implements Class8356 {
    private static String[] field35899;
    private final String field35900;
    private final CompoundNBT field35901;
-   private final Predicate<Class30> field35902;
+   private final Predicate<INBT> field35902;
 
    public Class8357(String var1, CompoundNBT var2) {
       this.field35900 = var1;
@@ -19,9 +20,9 @@ public class Class8357 implements Class8356 {
    }
 
    @Override
-   public void method29291(Class30 var1, List<Class30> var2) {
+   public void method29291(INBT var1, List<INBT> var2) {
       if (var1 instanceof CompoundNBT) {
-         Class30 var5 = ((CompoundNBT)var1).method116(this.field35900);
+         INBT var5 = ((CompoundNBT)var1).method116(this.field35900);
          if (this.field35902.test(var5)) {
             var2.add(var5);
          }
@@ -29,10 +30,10 @@ public class Class8357 implements Class8356 {
    }
 
    @Override
-   public void method29292(Class30 var1, Supplier<Class30> var2, List<Class30> var3) {
+   public void method29292(INBT var1, Supplier<INBT> var2, List<INBT> var3) {
       if (var1 instanceof CompoundNBT) {
          CompoundNBT var6 = (CompoundNBT)var1;
-         Class30 var7 = var6.method116(this.field35900);
+         INBT var7 = var6.method116(this.field35900);
          if (var7 != null) {
             if (this.field35902.test(var7)) {
                var3.add(var7);
@@ -46,17 +47,17 @@ public class Class8357 implements Class8356 {
    }
 
    @Override
-   public Class30 method29293() {
+   public INBT method29293() {
       return new CompoundNBT();
    }
 
    @Override
-   public int method29294(Class30 var1, Supplier<Class30> var2) {
+   public int method29294(INBT var1, Supplier<INBT> var2) {
       if (var1 instanceof CompoundNBT) {
          CompoundNBT var5 = (CompoundNBT)var1;
-         Class30 var6 = var5.method116(this.field35900);
+         INBT var6 = var5.method116(this.field35900);
          if (this.field35902.test(var6)) {
-            Class30 var7 = (Class30)var2.get();
+            INBT var7 = (INBT)var2.get();
             if (!var7.equals(var6)) {
                var5.put(this.field35900, var7);
                return 1;
@@ -68,10 +69,10 @@ public class Class8357 implements Class8356 {
    }
 
    @Override
-   public int method29295(Class30 var1) {
+   public int method29295(INBT var1) {
       if (var1 instanceof CompoundNBT) {
          CompoundNBT var4 = (CompoundNBT)var1;
-         Class30 var5 = var4.method116(this.field35900);
+         INBT var5 = var4.method116(this.field35900);
          if (this.field35902.test(var5)) {
             var4.method133(this.field35900);
             return 1;

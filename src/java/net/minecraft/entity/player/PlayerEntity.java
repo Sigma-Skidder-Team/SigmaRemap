@@ -20,6 +20,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.client.PlayerAbilities;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -482,7 +483,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    private void method2872(CompoundNBT var1) {
       if (var1 != null && (!var1.contains("Silent") || !var1.getBoolean("Silent")) && this.world.rand.nextInt(200) == 0) {
-         String var4 = var1.method126("id");
+         String var4 = var1.getString("id");
          EntityType.method33199(var4)
             .filter(var0 -> var0 == EntityType.field41062)
             .ifPresent(
@@ -692,17 +693,17 @@ public abstract class PlayerEntity extends LivingEntity {
       this.method3374(method2960(this.field4926));
       ListNBT var4 = var1.method131("Inventory", 10);
       this.inventory.method4051(var4);
-      this.inventory.currentItem = var1.method122("SelectedItemSlot");
-      this.field4917 = var1.method121("SleepTimer");
+      this.inventory.currentItem = var1.getInt("SelectedItemSlot");
+      this.field4917 = var1.getShort("SleepTimer");
       this.field4922 = var1.getFloat("XpP");
-      this.field4920 = var1.method122("XpLevel");
-      this.field4921 = var1.method122("XpTotal");
-      this.field4923 = var1.method122("XpSeed");
+      this.field4920 = var1.getInt("XpLevel");
+      this.field4921 = var1.getInt("XpTotal");
+      this.field4923 = var1.getInt("XpSeed");
       if (this.field4923 == 0) {
          this.field4923 = this.rand.nextInt();
       }
 
-      this.method2875(var1.method122("Score"));
+      this.method2875(var1.getInt("Score"));
       this.field4906.method37572(var1);
       this.abilities.read(var1);
       this.method3085(Attributes.MOVEMENT_SPEED).method38661((double)this.abilities.getWalkSpeed());
@@ -873,10 +874,10 @@ public abstract class PlayerEntity extends LivingEntity {
    public void method2764(Class954 var1) {
    }
 
-   public void method2890(Class911 var1) {
+   public void method2890(CommandBlockLogic var1) {
    }
 
-   public void method2770(Class969 var1) {
+   public void method2770(CommandBlockTileEntity var1) {
    }
 
    public void method2891(Class964 var1) {

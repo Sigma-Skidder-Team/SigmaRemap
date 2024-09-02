@@ -8,6 +8,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.network.play.client.CUpdateRecipeBookStatusPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
@@ -322,7 +323,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    }
 
    private boolean method5851() {
-      Class1939 var3 = this.field6641.method18227();
+      RecipeBookCategory var3 = this.field6641.method18227();
       boolean var4 = !this.field6645.method21371(var3);
       this.field6645.method21372(var3, var4);
       return var4;
@@ -447,7 +448,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
 
    public void method5859() {
       if (this.field6642.getConnection() != null) {
-         Class1939 var3 = this.field6641.method18227();
+         RecipeBookCategory var3 = this.field6641.method18227();
          boolean var4 = this.field6645.method21374().method34686(var3);
          boolean var5 = this.field6645.method21374().method34688(var3);
          this.field6642.getConnection().sendPacket(new CUpdateRecipeBookStatusPacket(var3, var4, var5));

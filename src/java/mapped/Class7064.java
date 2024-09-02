@@ -1,12 +1,15 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.nbt.NBTTypes;
+import net.minecraft.nbt.NBTSizeTracker;
+
 import java.io.DataInput;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public final class Class7064 implements Class7052<ListNBT> {
-   public ListNBT method21978(DataInput var1, int var2, Class8465 var3) throws IOException {
+   public ListNBT readNBT(DataInput var1, int var2, NBTSizeTracker var3) throws IOException {
       var3.method29769(296L);
       if (var2 > 512) {
          throw new RuntimeException("Tried to read NBT tag with too high complexity, depth > 512");
@@ -17,11 +20,11 @@ public final class Class7064 implements Class7052<ListNBT> {
             throw new RuntimeException("Missing type on ListTag");
          } else {
             var3.method29769(32L * (long)var7);
-            Class7052 var8 = Class3571.method12200(var6);
+            Class7052 var8 = NBTTypes.getGetTypeByID(var6);
             ArrayList var9 = Lists.newArrayListWithCapacity(var7);
 
             for (int var10 = 0; var10 < var7; var10++) {
-               var9.add(var8.method21978(var1, var2 + 1, var3));
+               var9.add(var8.readNBT(var1, var2 + 1, var3));
             }
 
             return new ListNBT(var9, var6, null);

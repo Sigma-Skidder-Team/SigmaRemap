@@ -25,7 +25,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
    private long field5295;
 
    public Class936() {
-      super(Class4387.field21437);
+      super(TileEntityType.field21437);
    }
 
    @Override
@@ -36,7 +36,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
          Class7920.method26567(var2, this.field5293);
       }
 
-      this.field5294 = var2.method122("TransferCooldown");
+      this.field5294 = var2.getInt("TransferCooldown");
    }
 
    @Override

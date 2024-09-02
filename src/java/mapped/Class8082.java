@@ -3,11 +3,12 @@ package mapped;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.MapLike;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
-public class Class8082 implements MapLike<Class30> {
+public class Class8082 implements MapLike<INBT> {
    public final CompoundNBT field34734;
    public final NBTDynamicOps field34735;
 
@@ -17,17 +18,17 @@ public class Class8082 implements MapLike<Class30> {
    }
 
    @Nullable
-   public Class30 get(Class30 var1) {
-      return this.field34734.method116(var1.method81());
+   public INBT get(INBT var1) {
+      return this.field34734.method116(var1.getString());
    }
 
    @Nullable
-   public Class30 get(String var1) {
+   public INBT get(String var1) {
       return this.field34734.method116(var1);
    }
 
-   public Stream<Pair<Class30, Class30>> entries() {
-      return this.field34734.method97().stream().<Pair<Class30, Class30>>map(var2 -> Pair.of(this.field34735.createString(var2), this.field34734.method116(var2)));
+   public Stream<Pair<INBT, INBT>> entries() {
+      return this.field34734.method97().stream().<Pair<INBT, INBT>>map(var2 -> Pair.of(this.field34735.createString(var2), this.field34734.method116(var2)));
    }
 
    @Override

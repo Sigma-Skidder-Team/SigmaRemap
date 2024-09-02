@@ -3,20 +3,21 @@ package mapped;
 import com.google.common.collect.Iterables;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 
 import java.util.List;
 
 public enum Class1819 {
    field9817("replace") {
       @Override
-      public void method8068(Class30 class30, Class9670 class9670, List<Class30> list) throws CommandSyntaxException {
+      public void method8068(INBT class30, Class9670 class9670, List<INBT> list) throws CommandSyntaxException {
          class9670.method37730(class30, Iterables.getLast(list)::method79);
       }
    },
    field9818("append") {
       @Override
-      public void method8068(Class30 var1, Class9670 var2, List<Class30> var3) throws CommandSyntaxException {
-         List<Class30> var6 = var2.method37728(var1, ListNBT::new);
+      public void method8068(INBT var1, Class9670 var2, List<INBT> var3) throws CommandSyntaxException {
+         List<INBT> var6 = var2.method37728(var1, ListNBT::new);
          var6.forEach(var1x -> {
             if (var1x instanceof ListNBT) {
                var3.forEach(var1xx -> ((ListNBT)var1x).add(var1xx.method79()));
@@ -25,8 +26,8 @@ public enum Class1819 {
       }
    },
    field9819("merge") {
-      public void method8068(Class30 var1, Class9670 var2, List<Class30> var3) throws CommandSyntaxException {
-         List<Class30> var6 = var2.method37728(var1, CompoundNBT::new);
+      public void method8068(INBT var1, Class9670 var2, List<INBT> var3) throws CommandSyntaxException {
+         List<INBT> var6 = var2.method37728(var1, CompoundNBT::new);
          var6.forEach(var1x -> {
             if (var1x instanceof CompoundNBT) {
                var3.forEach(var1xx -> {
@@ -42,7 +43,7 @@ public enum Class1819 {
    private final String field9820;
    private static final Class1819[] field9821 = new Class1819[]{field9817, field9818, field9819};
 
-   public abstract void method8068(Class30 var1, Class9670 var2, List<Class30> var3) throws CommandSyntaxException;
+   public abstract void method8068(INBT var1, Class9670 var2, List<INBT> var3) throws CommandSyntaxException;
 
    private Class1819(String var3) {
       this.field9820 = var3;

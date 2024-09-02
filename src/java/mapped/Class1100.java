@@ -73,11 +73,11 @@ public class Class1100 extends Class1009 {
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.contains("BoundX")) {
-         this.field6053 = new BlockPos(var1.method122("BoundX"), var1.method122("BoundY"), var1.method122("BoundZ"));
+         this.field6053 = new BlockPos(var1.getInt("BoundX"), var1.getInt("BoundY"), var1.getInt("BoundZ"));
       }
 
       if (var1.contains("LifeTicks")) {
-         this.method5278(var1.method122("LifeTicks"));
+         this.method5278(var1.getInt("LifeTicks"));
       }
    }
 

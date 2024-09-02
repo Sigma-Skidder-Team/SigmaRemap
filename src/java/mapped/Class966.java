@@ -22,7 +22,7 @@ public class Class966 extends TileEntity implements Class935 {
    private int field5421;
 
    public Class966() {
-      super(Class4387.field21450);
+      super(TileEntityType.field21450);
    }
 
    @Override

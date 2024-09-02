@@ -25,6 +25,6 @@ public class Class7969 {
    }
 
    public static Class7969 method27093(CompoundNBT var0) {
-      return !var0.contains("Lock", 8) ? field34259 : new Class7969(var0.method126("Lock"));
+      return !var0.contains("Lock", 8) ? field34259 : new Class7969(var0.getString("Lock"));
    }
 }

@@ -25,7 +25,7 @@ public class Class957 extends Class956 implements Class935 {
    private boolean field5375;
 
    public Class957() {
-      super(Class4387.field21441);
+      super(TileEntityType.field21441);
    }
 
    @Override
@@ -46,7 +46,7 @@ public class Class957 extends Class956 implements Class935 {
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5372 = var2.method123("Age");
+      this.field5372 = var2.getLong("Age");
       if (var2.contains("ExitPortal", 10)) {
          this.field5374 = Class8354.method29283(var2.getCompound("ExitPortal"));
       }

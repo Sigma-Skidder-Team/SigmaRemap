@@ -21,10 +21,12 @@ import java.util.stream.Collectors;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.Style;
@@ -243,7 +245,7 @@ public class Class9037 {
 
       if (var7.isPresent()) {
          Class964 var8 = (Class964)var6.getTileEntity((BlockPos)var7.get());
-         BlockPos var9 = var5.method8338((Class1998)var7.get());
+         BlockPos var9 = var5.method8338((Vector3i)var7.get());
          String var10 = var9.getX() + ", " + var9.getY() + ", " + var9.getZ();
          String var11 = var8.method3935();
          IFormattableTextComponent var12 = new StringTextComponent(var10)
@@ -455,7 +457,7 @@ public class Class9037 {
          Files.createDirectories(var6.getParent());
 
          try (OutputStream var9 = Files.newOutputStream(var6)) {
-            Class8799.method31768(Class7671.method25188(var8), var9);
+            CompressedStreamTools.writeCompressed(Class7671.method25188(var8), var9);
          }
 
          method33503(var0, "Imported to " + var6.toAbsolutePath());

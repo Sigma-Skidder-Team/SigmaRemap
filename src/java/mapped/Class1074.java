@@ -59,7 +59,7 @@ public class Class1074 extends AbstractHorseEntity {
    @Override
    public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4992(var1.method122("Variant"));
+      this.method4992(var1.getInt("Variant"));
       if (var1.contains("ArmorItem", 10)) {
          ItemStack var4 = ItemStack.method32104(var1.getCompound("ArmorItem"));
          if (!var4.isEmpty() && this.method4900(var4)) {

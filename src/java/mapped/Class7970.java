@@ -7,6 +7,7 @@ import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +24,7 @@ public class Class7970 {
    public void method27094() {
       try {
          this.field34263.clear();
-         CompoundNBT var3 = Class8799.method31770(new File(this.field34262.gameDir, "servers.dat"));
+         CompoundNBT var3 = CompressedStreamTools.method31770(new File(this.field34262.gameDir, "servers.dat"));
          if (var3 == null) {
             return;
          }
@@ -49,7 +50,7 @@ public class Class7970 {
          CompoundNBT var9 = new CompoundNBT();
          var9.put("servers", var3);
          File var10 = File.createTempFile("servers", ".dat", this.field34262.gameDir);
-         Class8799.method31769(var9, var10);
+         CompressedStreamTools.write(var9, var10);
          File var6 = new File(this.field34262.gameDir, "servers.dat_old");
          File var7 = new File(this.field34262.gameDir, "servers.dat");
          Util.method38526(var7, var10, var6);

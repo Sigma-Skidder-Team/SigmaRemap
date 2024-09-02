@@ -407,8 +407,8 @@ public abstract class Class1006 extends LivingEntity {
 
       this.method4303(var1.getBoolean("LeftHanded"));
       if (var1.contains("DeathLootTable", 8)) {
-         this.field5611 = new ResourceLocation(var1.method126("DeathLootTable"));
-         this.field5612 = var1.method123("DeathLootTableSeed");
+         this.field5611 = new ResourceLocation(var1.getString("DeathLootTable"));
+         this.field5612 = var1.getLong("DeathLootTableSeed");
       }
 
       this.method4302(var1.getBoolean("NoAI"));
@@ -1219,7 +1219,7 @@ public abstract class Class1006 extends LivingEntity {
       if (this.field5615 != null && this.world instanceof ServerWorld) {
          if (!this.field5615.method106("UUID")) {
             if (this.field5615.contains("X", 99) && this.field5615.contains("Y", 99) && this.field5615.contains("Z", 99)) {
-               BlockPos var3 = new BlockPos(this.field5615.method122("X"), this.field5615.method122("Y"), this.field5615.method122("Z"));
+               BlockPos var3 = new BlockPos(this.field5615.getInt("X"), this.field5615.getInt("Y"), this.field5615.getInt("Z"));
                this.method4298(LeashKnotEntity.method4087(this.world, var3), true);
                return;
             }

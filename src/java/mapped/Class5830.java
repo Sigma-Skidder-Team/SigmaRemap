@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.util.ResourceLocation;
 
 public class Class5830 extends Class5828<Class926> {
@@ -178,8 +179,8 @@ public class Class5830 extends Class5828<Class926> {
    }
 
    @Override
-   public Class1939 method18227() {
-      return Class1939.field12599;
+   public RecipeBookCategory method18227() {
+      return RecipeBookCategory.field12599;
    }
 
    // $VF: synthetic method

@@ -736,7 +736,7 @@ public class BoatEntity extends Entity {
    @Override
    public void method2723(CompoundNBT var1) {
       if (var1.contains("Type", 8)) {
-         this.method4171(Class2099.method8764(var1.method126("Type")));
+         this.method4171(Class2099.method8764(var1.getString("Type")));
       }
    }
 

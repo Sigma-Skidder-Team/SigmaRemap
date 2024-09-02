@@ -144,9 +144,9 @@ public class ShadowESP extends Module {
     }
 
     public void method16608(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9, Class7733 var10) {
-        double var13 = MathHelper.method37822(var8, var1.lastTickPosX, var1.getPosX());
-        double var15 = MathHelper.method37822(var8, var1.lastTickPosY, var1.getPosY());
-        double var17 = MathHelper.method37822(var8, var1.lastTickPosZ, var1.getPosZ());
+        double var13 = MathHelper.lerp(var8, var1.lastTickPosX, var1.getPosX());
+        double var15 = MathHelper.lerp(var8, var1.lastTickPosY, var1.getPosY());
+        double var17 = MathHelper.lerp(var8, var1.lastTickPosZ, var1.getPosZ());
         float var19 = MathHelper.lerp(var8, var1.prevRotationYaw, var1.rotationYaw);
         mc.worldRenderer.field941.method32219(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
     }
