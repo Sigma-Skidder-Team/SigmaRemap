@@ -114,18 +114,23 @@ public class TargetHUD extends PremiumModule {
                                                             if (!(this.entity instanceof SquidEntity)) {
                                                                 if (this.entity instanceof SalmonEntity) {
                                                                     uuidForSkin = UUID.fromString("0fd952e4-e895-4bb0-a12b-48f24cac1231");
+                                                                    //salmon skin
                                                                 }
                                                             } else {
                                                                 uuidForSkin = UUID.fromString("655b9804-f385-4e11-8966-d1555bedffc6");
+                                                                //squid skin
                                                             }
                                                         } else {
                                                             uuidForSkin = UUID.fromString("14430053-bbf4-4141-9d3d-08ff8ec631a4");
+                                                            //doge skin
                                                         }
                                                     } else {
                                                         uuidForSkin = UUID.fromString("241d6e54-d289-4db3-999f-1d51593aca81");
+                                                        //mouse skin - probably for silverfish
                                                     }
                                                 } else {
                                                     uuidForSkin = UUID.fromString("1b90edcf-393d-4e93-a0d6-cf737dc80999");
+                                                    //bat skin???
                                                 }
                                             } else {
                                                 uuidForSkin = UUID.fromString("6a5b3d5e-07cd-449a-bf1d-c29383d1ae47");
