@@ -83,7 +83,7 @@ public class CubecraftSpeed extends Module {
                     Class9567.method37088(var1, this.field23619);
                     break;
                 case "Hop":
-                    if (!mc.player.collidedVertically || !ColorUtils.method17730(mc.player, 0.001F) || !Class9567.method37087()) {
+                    if (!mc.player.collidedVertically || !ColorUtils.method17730(mc.player, 0.001F) || !Class9567.isMoving()) {
                         this.field23618++;
                         if (this.field23618 == 1) {
                             this.field23619 = 0.4 + (double) Class9567.method37078() * 0.1;
@@ -141,7 +141,7 @@ public class CubecraftSpeed extends Module {
             mc.player.lastTickPosY = this.field23620;
             mc.player.field4915 = this.field23620;
             mc.player.prevPosY = this.field23620;
-            if (Class9567.method37087()) {
+            if (Class9567.isMoving()) {
                 mc.player.field4909 = 0.099999994F;
             }
         }

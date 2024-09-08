@@ -60,7 +60,7 @@ public class InvMove extends Module {
                 }
             }
 
-            if (mc.currentScreen instanceof Class851 || Client.getInstance().method19939().method31332() <= 1) {
+            if (mc.currentScreen instanceof Class851 || Client.getInstance().method19939().focusGameTicks() <= 1) {
                 if (mc.currentScreen instanceof ChatScreen) {
                     return;
                 }

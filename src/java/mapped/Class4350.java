@@ -120,8 +120,8 @@ public class Class4350 extends Class4278 {
    }
 
    @Override
-   public void method13150(char var1) {
-      super.method13150(var1);
+   public void charTyped(char var1) {
+      super.charTyped(var1);
       if (this.method13297() && Class8906.method32486(var1) && ResourceRegistry.JelloLightFont18.method23942(Character.toString(var1)) > 1) {
          this.field20912 = Class8906.method32492(this.field20912, Character.toString(var1), this.field21260);
          this.field21260++;
@@ -129,8 +129,8 @@ public class Class4350 extends Class4278 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       String var4 = System.getProperty("line.separator");
    }
 

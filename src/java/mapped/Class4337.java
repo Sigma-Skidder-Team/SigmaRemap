@@ -2,11 +2,10 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.LanguageScreen;
 import net.minecraft.client.gui.screen.OptionsScreen;
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.SoundEvents;
 
 public class Class4337 extends Class4305 {
@@ -43,12 +42,12 @@ public class Class4337 extends Class4305 {
       this.field21187.method13251((var0, var1x) -> Minecraft.getInstance().shutdown());
    }
 
-   public void method13493(Screen var1) {
+   public void method13493(net.minecraft.client.gui.screen.Screen var1) {
       Minecraft.getInstance().displayGuiScreen(var1);
       this.method13495();
    }
 
-   public void method13494(Class4307 var1) {
+   public void method13494(Screen var1) {
       Client.getInstance().getGuiManager().method33482(var1);
       this.method13495();
    }

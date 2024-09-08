@@ -47,17 +47,17 @@ public class Class4270 extends Class4247 {
    }
 
    @Override
-   public void method13065(int var1) {
+   public void keyPressed(int var1) {
       for (Class2287 var7 : Class2287.values()) {
          if (var7.field15204 == var1) {
-            super.method13065(var1);
+            super.keyPressed(var1);
             return;
          }
       }
 
       this.field20696 = var1;
       this.method13037();
-      super.method13065(var1);
+      super.keyPressed(var1);
    }
 
    public void method13104() {

@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ImageUtil;
@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4313 extends Class4307 {
+public class Class4313 extends Screen {
    private int field21005;
    private float field21006;
    private float field21007 = 0.75F;
@@ -441,8 +441,8 @@ public class Class4313 extends Class4307 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 256) {
          Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
       }

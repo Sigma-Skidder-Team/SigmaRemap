@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.module.impl.gui.classic.ActiveMods;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
-import com.mentalfrostbyte.jello.unmapped.Class6000;
+import com.mentalfrostbyte.jello.unmapped.SpeedRampSetting;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -57,7 +57,7 @@ public abstract class Module {
 
     public float[] method15975(String settingName) {
         Setting settingNameValue = (Setting) this.getSettingValueBySettingName(settingName);
-        return !(settingNameValue instanceof Class6000) ? null : ((Class6000) settingNameValue).method18613();
+        return !(settingNameValue instanceof SpeedRampSetting) ? null : ((SpeedRampSetting) settingNameValue).method18613();
     }
 
     public int parseSettingValueToIntBySettingName(String settingName) {

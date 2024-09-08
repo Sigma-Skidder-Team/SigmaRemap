@@ -394,7 +394,7 @@ public class BlockFlyNCPMode extends Module {
                         mc.player.lastTickPosY = this.field23931;
                         mc.player.field4915 = this.field23931;
                         mc.player.prevPosY = this.field23931;
-                        if (Class9567.method37087()) {
+                        if (Class9567.isMoving()) {
                             mc.player.field4909 = 0.099999994F;
                         }
                     }

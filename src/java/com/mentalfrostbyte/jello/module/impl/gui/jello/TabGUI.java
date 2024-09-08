@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class8480;
+import com.mentalfrostbyte.jello.unmapped.BlurUtil;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -68,9 +68,9 @@ public class TabGUI extends Module {
             if (Client.getInstance().getGuiManager().method33472()) {
                 if (! Minecraft.getInstance().gameSettings.showDebugInfo) {
                     if (!Minecraft.getInstance().gameSettings.hideGUI) {
-                        Class8480.method29971(this.field23768, this.field23769, this.field23770, this.field23771);
+                        BlurUtil.method29971(this.field23768, this.field23769, this.field23770, this.field23771);
                         if (this.field23781) {
-                            Class8480.method29971(170, this.field23769, this.field23786, this.field23783);
+                            BlurUtil.method29971(170, this.field23769, this.field23786, this.field23783);
                         }
                     }
                 }
@@ -391,7 +391,7 @@ public class TabGUI extends Module {
             RenderUtil.method11431(var1, var2, var1 + var3, var2 + var4, var14, var15);
         } else {
             RenderUtil.method11419((float) var1, (float) var2, (float) var3, (float) var4);
-            Class8480.method29974();
+            BlurUtil.method29974();
             RenderUtil.endScissor();
             RenderUtil.method11426((float) var1, (float) var2, (float) (var1 + var3), (float) (var2 + var4), this.field23793);
         }

@@ -1,9 +1,9 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import net.minecraft.client.Minecraft;
 
-public class Class4324 extends Class4307 {
+public class Class4324 extends Screen {
    private static Minecraft field21107 = Minecraft.getInstance();
    public Class4257 field21108;
 
@@ -15,8 +15,8 @@ public class Class4324 extends Class4307 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 256) {
          field21107.displayGuiScreen(null);
       }

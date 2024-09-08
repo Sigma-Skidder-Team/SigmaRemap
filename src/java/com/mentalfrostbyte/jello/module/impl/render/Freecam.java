@@ -72,7 +72,7 @@ public class Freecam extends Module {
             mc.player.lastTickPosZ = var9;
             mc.player.field4916 = var9;
             mc.player.prevPosZ = var9;
-            if (Class9567.method37087()) {
+            if (Class9567.isMoving()) {
                 mc.player.field4909 = 0.099999994F;
             }
         }

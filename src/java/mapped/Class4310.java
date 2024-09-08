@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -18,7 +18,7 @@ import java.util.Locale;
 import java.util.Locale.Category;
 import java.util.Random;
 
-public class Class4310 extends Class4307 {
+public class Class4310 extends Screen {
    public static long field20965 = 0L;
    private int field20966 = 0;
    private int field20967 = 0;
@@ -285,8 +285,8 @@ public class Class4310 extends Class4307 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 256) {
          this.method13340();
       }

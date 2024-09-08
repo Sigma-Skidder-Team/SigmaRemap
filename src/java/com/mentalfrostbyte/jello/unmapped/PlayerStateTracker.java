@@ -10,42 +10,42 @@ import net.minecraft.network.play.client.CClickWindowPacket;
 import mapped.Class9567;
 import net.minecraft.client.Minecraft;
 
-public class Class8696 {
+public class PlayerStateTracker {
    private static String[] field39247;
-   private int field39248 = 0;
-   private int field39249 = 0;
-   private int field39250 = 0;
+   private int focusGameTicks = 0;
+   private int groundTicks = 0;
+   private int moveTicks = 0;
    private int field39251 = 0;
-   private boolean field39252 = false;
-   private long field39253 = System.currentTimeMillis();
-   private float field39254 = 1.0F;
+   private boolean alive = false;
+   private long lastMilis = System.currentTimeMillis();
+   private float ping = 1.0F;
    private Minecraft mc = Minecraft.getInstance();
 
-   public void method31323() {
+   public void REGISSTER() {
       Client.getInstance().getEventManager().register(this);
    }
 
    @EventTarget
    private void method31324(TickEvent var1) {
-      this.field39248++;
-      this.field39249++;
-      this.field39250++;
+      this.focusGameTicks++;
+      this.groundTicks++;
+      this.moveTicks++;
       this.field39251++;
       if (!this.mc.player.onGround) {
-         this.field39249 = 0;
+         this.groundTicks = 0;
       }
 
       if (this.mc.currentScreen != null) {
-         this.field39248 = 0;
+         this.focusGameTicks = 0;
       }
 
-      if (!Class9567.method37087()) {
-         this.field39250 = 0;
-         this.field39252 = true;
+      if (!Class9567.isMoving()) {
+         this.moveTicks = 0;
+         this.alive = true;
       }
 
       if (this.mc.player.ticksExisted <= 1) {
-         this.field39252 = false;
+         this.alive = false;
       }
    }
 
@@ -59,34 +59,34 @@ public class Class8696 {
    @EventTarget
    private void method31326(RecievePacketEvent var1) {
       if (var1.getPacket() instanceof SKeepAlivePacket) {
-         long var4 = System.currentTimeMillis() - this.field39253;
-         this.field39254 = Math.min(1.05F, Math.max(0.0F, 15000.0F / (float)var4));
-         this.field39253 = System.currentTimeMillis();
+         long var4 = System.currentTimeMillis() - this.lastMilis;
+         this.ping = Math.min(1.05F, Math.max(0.0F, 15000.0F / (float)var4));
+         this.lastMilis = System.currentTimeMillis();
       }
    }
 
-   public float method31327() {
-      return this.field39254;
+   public float getPing() {
+      return this.ping;
    }
 
    public float method31328() {
-      return this.method31327() * 20.0F;
+      return this.getPing() * 20.0F;
    }
 
-   public int method31329() {
-      return this.field39249;
+   public int getgroundTicks() {
+      return this.groundTicks;
    }
 
-   public boolean method31330() {
-      return this.field39252;
+   public boolean isalive() {
+      return this.alive;
    }
 
    public int method31331() {
-      return this.field39249;
+      return this.groundTicks;
    }
 
-   public int method31332() {
-      return this.field39248;
+   public int focusGameTicks() {
+      return this.focusGameTicks;
    }
 
    public int method31333() {
@@ -94,7 +94,7 @@ public class Class8696 {
    }
 
    public void method31334() {
-      this.field39249 = 0;
-      this.field39248 = 0;
+      this.groundTicks = 0;
+      this.focusGameTicks = 0;
    }
 }

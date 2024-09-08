@@ -11,7 +11,7 @@ import net.minecraft.client.util.Util;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class GuiSwitch extends Class4307 {
+public class GuiSwitch extends Screen {
     public static Animation field21069 = new Animation(300, 200, Direction.BACKWARDS);
     public static float field21070;
     public static float field21071;
@@ -125,8 +125,8 @@ public class GuiSwitch extends Class4307 {
     }
 
     @Override
-    public void method13065(int var1) {
-        super.method13065(var1);
+    public void keyPressed(int var1) {
+        super.keyPressed(var1);
         if (var1 == 256) {
             Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
         }

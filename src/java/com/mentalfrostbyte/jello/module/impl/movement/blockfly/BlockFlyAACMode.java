@@ -134,7 +134,7 @@ public class BlockFlyAACMode extends Module {
     @EventTarget
     private void method16206(Class4423 var1) {
         if (this.isEnabled() && mc.world != null && mc.player != null) {
-            if (this.getBooleanValueFromSetttingName("Haphe (AACAP)") && Class9567.method37087() && !mc.player.method3337()) {
+            if (this.getBooleanValueFromSetttingName("Haphe (AACAP)") && Class9567.isMoving() && !mc.player.method3337()) {
                 var1.field21557 *= 1.14F;
             }
         }
@@ -217,7 +217,7 @@ public class BlockFlyAACMode extends Module {
     private void method16210(Class4399 var1) {
         if (this.isEnabled()) {
             if (!var1.method13921()) {
-                if (Class9567.method37087() && mc.player.onGround && this.getBooleanValueFromSetttingName("Haphe (AACAP)") && !mc.player.field4981) {
+                if (Class9567.isMoving() && mc.player.onGround && this.getBooleanValueFromSetttingName("Haphe (AACAP)") && !mc.player.field4981) {
                     mc.player.method2914();
                 }
 

@@ -4,9 +4,9 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class6000;
+import com.mentalfrostbyte.jello.unmapped.SpeedRampSetting;
 import com.mentalfrostbyte.jello.unmapped.Setting;
-import com.mentalfrostbyte.jello.unmapped.Class6002;
+import com.mentalfrostbyte.jello.unmapped.TextBoxSetting;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.lwjgl.opengl.GL11;
@@ -151,7 +151,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             Class4305 var17 = new Class4305(var1, var2.getName() + "view", var3, var4, var1.method13267(), 0);
             int var25 = 0;
 
-            for (Setting var41 : ((Class6007)var2).method18635()) {
+            for (Setting var41 : ((SubOptionSetting)var2).method18635()) {
                var25 = this.method13531(var17, var41, 0, var25, var5);
             }
 
@@ -165,7 +165,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             byte var24 = 27;
             Class4287 var32 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 27, Class4287.field20778, var2.getName());
             Class4377 var40 = new Class4377(
-               var1, var2.getName() + "btn", var1.method13267() - var5, var4 + 6, 123, 27, ((Class6002)var2).method18627(), (Integer)var2.getCurrentValue()
+               var1, var2.getName() + "btn", var1.method13267() - var5, var4 + 6, 123, 27, ((TextBoxSetting)var2).method18627(), (Integer)var2.getCurrentValue()
             );
             this.field21223.put(var32, var2);
             var2.method18616(var1x -> {
@@ -190,8 +190,8 @@ public class Class4343 extends Class4339 implements Class4342 {
                var4 + 5,
                175,
                200,
-               ((Class6003)var2).method18628(),
-               ((Class6003)var2).getCurrentValue().<String>toArray(new String[0])
+               ((BooleanSetting2)var2).method18628(),
+               ((BooleanSetting2)var2).getCurrentValue().<String>toArray(new String[0])
             );
             this.field21223.put(var31, var2);
             var39.method13036(var2x -> var2.method18620(var39.method13072()));
@@ -245,7 +245,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                var12.method13041(var5x.field43257, var5x.field43258, var5x.field43259, var5x.field43260);
             });
             var12.method13036(
-               var2x -> ((Class6000)var2).method18612(var12.method13040()[0], var12.method13040()[1], var12.method13040()[2], var12.method13040()[3])
+               var2x -> ((SpeedRampSetting)var2).method18612(var12.method13040()[0], var12.method13040()[1], var12.method13040()[2], var12.method13040()[3])
             );
             var1.method13230(var11);
             var1.method13230(var12);

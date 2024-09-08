@@ -403,7 +403,7 @@ public class BlockFlyHypixelMode extends Module {
                         mc.player.lastTickPosY = this.field23476;
                         mc.player.field4915 = this.field23476;
                         mc.player.prevPosY = this.field23476;
-                        if (Class9567.method37087()) {
+                        if (Class9567.isMoving()) {
                             mc.player.field4909 = 0.099999994F;
                         }
                     }

@@ -44,7 +44,7 @@ public class WaypointsManager {
    public HashMap<Long, ByteBuffer> field36375 = new HashMap<Long, ByteBuffer>();
    public ByteBuffer field36376 = BufferUtils.createByteBuffer(this.field36370 * 16 * this.field36370 * 16 * 3);
 
-   public void method29988() {
+   public void register() {
       Client.getInstance().getEventManager().register(this);
       int var3 = -7687425;
 

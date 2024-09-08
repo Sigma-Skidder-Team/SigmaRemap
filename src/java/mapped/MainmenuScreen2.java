@@ -5,12 +5,11 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.OptionsScreen;
-import net.minecraft.client.gui.screen.Screen;
 
 public class MainmenuScreen2 extends Class4305 {
    private final Class4240 field21123;
@@ -211,12 +210,12 @@ public class MainmenuScreen2 extends Class4305 {
       Client.getInstance().getSoundManager().play("clicksound");
    }
 
-   public void method13445(Screen var1) {
+   public void method13445(net.minecraft.client.gui.screen.Screen var1) {
       Minecraft.getInstance().displayGuiScreen(var1);
       this.method13444();
    }
 
-   public void method13446(Class4307 var1) {
+   public void method13446(Screen var1) {
       Client.getInstance().getGuiManager().method33482(var1);
       this.method13444();
    }

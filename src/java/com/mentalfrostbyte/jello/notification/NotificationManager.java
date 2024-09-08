@@ -150,7 +150,7 @@ public class NotificationManager {
         }
     }
 
-    public void method31999() {
+    public void init() {
         Client.getInstance().getEventManager().register(this);
     }
 }

@@ -8,7 +8,6 @@ import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.FileUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screen.Screen;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.opengl.GL11;
@@ -24,8 +23,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class GuiManager {
-    public static final Map<Class<? extends Screen>, String> field41338 = new HashMap<Class<? extends Screen>, String>();
-    private static final Map<Class<? extends Screen>, Class<? extends Class4307>> field41337 = new HashMap<Class<? extends Screen>, Class<? extends Class4307>>();
+    public static final Map<Class<? extends net.minecraft.client.gui.screen.Screen>, String> field41338 = new HashMap<Class<? extends net.minecraft.client.gui.screen.Screen>, String>();
+    private static final Map<Class<? extends net.minecraft.client.gui.screen.Screen>, Class<? extends Screen>> field41337 = new HashMap<Class<? extends net.minecraft.client.gui.screen.Screen>, Class<? extends Screen>>();
     public static long field41344;
     public static long field41345;
     public static long field41346;
@@ -60,7 +59,7 @@ public class GuiManager {
     private final List<Integer> field41343 = new ArrayList<Integer>();
     private boolean field41349 = true;
     private boolean field41350 = true;
-    private Class4307 field41352;
+    private Screen field41352;
     private GLFWKeyCallback field41353;
     private long field41355;
     private long field41356;
@@ -75,7 +74,7 @@ public class GuiManager {
         field41348 = (float) (Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.getHeight());
     }
 
-    public static boolean method33457(Screen var0) {
+    public static boolean method33457(net.minecraft.client.gui.screen.Screen var0) {
         if (var0 instanceof MultiplayerScreen && !(var0 instanceof JelloPortalScreen)) {
             Minecraft.getInstance().currentScreen = null;
             Minecraft.getInstance().displayGuiScreen(new JelloPortalScreen(((MultiplayerScreen) var0).field6948));
@@ -93,7 +92,7 @@ public class GuiManager {
         }
     }
 
-    public static Class4307 method33458(Screen var0) {
+    public static Screen method33458(net.minecraft.client.gui.screen.Screen var0) {
         if (var0 == null) {
             return null;
         } else if (Client.getInstance().getClientMode() == ClientMode.PREMIUM) {
@@ -133,7 +132,7 @@ public class GuiManager {
 
     public void method33452() {
         field41337.clear();
-        field41337.put(MainMenuScreen.class, Class4323.class);
+        field41337.put(MainMenuScreen.class, ClassicMainScreen.class);
         field41337.put(Class1145.class, Class4321.class);
     }
 
@@ -220,13 +219,13 @@ public class GuiManager {
 
     public void method33462(char var1) {
         if (this.field41352 != null) {
-            this.field41352.method13150(var1);
+            this.field41352.charTyped(var1);
         }
     }
 
     public void method33463(int var1) {
         if (this.field41352 != null) {
-            this.field41352.method13065(var1);
+            this.field41352.keyPressed(var1);
         }
     }
 
@@ -344,17 +343,17 @@ public class GuiManager {
         }
     }
 
-    public Class<? extends Screen> method33477(String var1) {
+    public Class<? extends net.minecraft.client.gui.screen.Screen> method33477(String var1) {
         for (Entry var5 : field41338.entrySet()) {
             if (var1.equals(var5.getValue())) {
-                return (Class<? extends Screen>) var5.getKey();
+                return (Class<? extends net.minecraft.client.gui.screen.Screen>) var5.getKey();
             }
         }
 
         return null;
     }
 
-    public String method33478(Class<? extends Screen> var1) {
+    public String method33478(Class<? extends net.minecraft.client.gui.screen.Screen> var1) {
         if (var1 == null) {
             return "";
         } else {
@@ -391,7 +390,7 @@ public class GuiManager {
         RenderUtil.method11411(Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight());
     }
 
-    public Class4307 method33480() {
+    public Screen method33480() {
         return this.field41352;
     }
 
@@ -399,7 +398,7 @@ public class GuiManager {
         this.method33482(method33458(Minecraft.getInstance().currentScreen));
     }
 
-    public void method33482(Class4307 var1) {
+    public void method33482(Screen var1) {
         if (this.field41352 != null) {
             this.method33468(Client.getInstance().getConfig());
         }
@@ -416,14 +415,14 @@ public class GuiManager {
         }
     }
 
-    public void method33483(Screen var1) {
+    public void method33483(net.minecraft.client.gui.screen.Screen var1) {
         if (var1 != null) {
             Minecraft.getInstance().currentScreen = null;
             Minecraft.getInstance().displayGuiScreen(var1);
         }
     }
 
-    public boolean method33484(Screen var1) {
+    public boolean method33484(net.minecraft.client.gui.screen.Screen var1) {
         return field41337.containsKey(var1.getClass());
     }
 }

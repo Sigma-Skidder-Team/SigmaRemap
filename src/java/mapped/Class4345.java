@@ -4,10 +4,10 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class2314;
+import com.mentalfrostbyte.jello.unmapped.SettingType;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.Setting;
-import com.mentalfrostbyte.jello.unmapped.Class6002;
+import com.mentalfrostbyte.jello.unmapped.TextBoxSetting;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
@@ -122,7 +122,7 @@ public class Class4345 extends Class4339 {
             byte var10 = 123;
             byte var11 = 27;
             Class4377 var12 = new Class4377(
-               var1, var2.getName() + "btn", var1.method13267() - var5, var4 + 6, 123, 27, ((Class6002)var2).method18627(), (Integer)var2.getCurrentValue()
+               var1, var2.getName() + "btn", var1.method13267() - var5, var4 + 6, 123, 27, ((TextBoxSetting)var2).method18627(), (Integer)var2.getCurrentValue()
             );
             var2.method18616(var1x -> {
                if (var12.method13720() != (Integer)var1x.getCurrentValue()) {
@@ -151,7 +151,7 @@ public class Class4345 extends Class4339 {
       int var6 = 35;
 
       for (Setting var8 : this.field21229.getSettingMap().values()) {
-         if (var8.method18618() != Class2314.field15860 && var8.method18618() != Class2314.field15859) {
+         if (var8.method18618() != SettingType.SPEEDRAMP && var8.method18618() != SettingType.COLOR) {
             var6 = this.method13555(this, var8, 30, var6, 20);
          }
       }

@@ -373,7 +373,7 @@ public class BlockFlySmoothMode extends Module {
                         mc.player.lastTickPosY = this.field23979;
                         mc.player.field4915 = this.field23979;
                         mc.player.prevPosY = this.field23979;
-                        if (Class9567.method37087()) {
+                        if (Class9567.isMoving()) {
                             mc.player.field4909 = 0.099999994F;
                         }
                     }

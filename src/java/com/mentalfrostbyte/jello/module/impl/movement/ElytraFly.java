@@ -164,7 +164,7 @@ public class ElytraFly extends Module {
 
     @Override
     public void onDisable() {
-        if (!Class9567.method37087()) {
+        if (!Class9567.isMoving()) {
             ColorUtils.method17724(0.0);
             ColorUtils.method17726(0.0);
         }

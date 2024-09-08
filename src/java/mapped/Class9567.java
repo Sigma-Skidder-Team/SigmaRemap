@@ -181,7 +181,7 @@ public class Class9567 {
       return var4;
    }
 
-   public static boolean method37087() {
+   public static boolean isMoving() {
       boolean var2 = mc.gameSettings.keyBindForward.isKeyDown();
       boolean var3 = mc.gameSettings.keyBindLeft.isKeyDown();
       boolean var4 = mc.gameSettings.keyBindRight.isKeyDown();

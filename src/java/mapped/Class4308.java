@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.gui.jello.BrainFreeze;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Class4308 extends Class4307 {
+public class Class4308 extends Screen {
    public Class4353 field20940;
    private static Minecraft field20941 = Minecraft.getInstance();
    private static Animation field20942;
@@ -206,14 +206,14 @@ public class Class4308 extends Class4307 {
       if (var3 <= 1) {
          return super.method13078(var1, var2, var3);
       } else {
-         this.method13065(var3);
+         this.keyPressed(var3);
          return false;
       }
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       int var4 = Client.getInstance().getModuleManager().method14668().method13728(Class1145.class);
       if (var1 == 256 || var1 == var4 && this.field20949 == null && !this.method13227()) {
          if (field20944) {

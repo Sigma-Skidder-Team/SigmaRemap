@@ -59,8 +59,8 @@ public class Class4297 extends Class4278 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 != this.field20817.gameSettings.keyBindForward.keycode.keyCode) {
          if (var1 != this.field20817.gameSettings.keyBindBack.keycode.keyCode) {
             if (var1 != this.field20817.gameSettings.keyBindLeft.keycode.keyCode) {

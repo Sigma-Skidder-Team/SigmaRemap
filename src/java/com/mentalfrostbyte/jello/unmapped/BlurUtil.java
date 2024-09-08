@@ -15,7 +15,7 @@ import net.minecraft.network.play.server.SCloseWindowPacket;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
-public class Class8480 {
+public class BlurUtil {
    private static Minecraft mc = Minecraft.getInstance();
    private static Class1647 field36351;
    public static Framebuffer field36352;

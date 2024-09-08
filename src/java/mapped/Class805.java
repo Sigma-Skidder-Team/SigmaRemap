@@ -68,7 +68,7 @@ public class Class805 extends RealmsScreen {
             RealmsServer var4 = var3.method14557(this.field4220.field27443, this.field4219.getText().trim());
             if (var4 != null) {
                this.field4220.field27450 = var4.field27450;
-               this.mc.displayGuiScreen(new Class824(this.field4221, this.field4220));
+               this.mc.displayGuiScreen(new RealmGUI(this.field4221, this.field4220));
             } else {
                this.method2008(field4218);
             }

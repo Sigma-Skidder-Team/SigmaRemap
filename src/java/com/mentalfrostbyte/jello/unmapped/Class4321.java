@@ -7,7 +7,7 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import totalcross.json.JSONObject;
 
-public class Class4321 extends Class4307 {
+public class Class4321 extends Screen {
     private static final Minecraft field21078 = Minecraft.getInstance();
     private static Animation field21079;
     private static final boolean field21080 = true;
@@ -64,8 +64,8 @@ public class Class4321 extends Class4307 {
     }
 
     @Override
-    public void method13065(int var1) {
-        super.method13065(var1);
+    public void keyPressed(int var1) {
+        super.keyPressed(var1);
         if (var1 == 256) {
             field21078.displayGuiScreen(null);
         }

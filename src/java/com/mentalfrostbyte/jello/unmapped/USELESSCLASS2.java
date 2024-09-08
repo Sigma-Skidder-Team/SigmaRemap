@@ -11,7 +11,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
-public class Class6812 {
+public class USELESSCLASS2 {
     public static String method20754() {
         Class7067 var2 = method20759();
         return var2 != null ? var2.method21980() : "Unknown";

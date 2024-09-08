@@ -1,13 +1,13 @@
 package com.mentalfrostbyte.jello.gui;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 
-public class BirdGameScreen extends Class4307 {
+public class BirdGameScreen extends Screen {
    public Minecraft field21044 = Minecraft.getInstance();
    public TimerUtil field21045 = new TimerUtil();
    public Class4299 field21046;
@@ -75,8 +75,8 @@ public class BirdGameScreen extends Class4307 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 256) {
          ColorUtils.method17742();
          Minecraft.getInstance().displayGuiScreen(null);

@@ -259,6 +259,6 @@ public class InfiniteAura extends Module {
 
     @Override
     public boolean method15988() {
-        return this.isEnabled() && this.method16776() && Client.getInstance().method19939().method31330();
+        return this.isEnabled() && this.method16776() && Client.getInstance().method19939().isalive();
     }
 }

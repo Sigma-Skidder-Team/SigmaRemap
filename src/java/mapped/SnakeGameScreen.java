@@ -1,12 +1,12 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 
-public class SnakeGameScreen extends Class4307 {
+public class SnakeGameScreen extends Screen {
    public Minecraft field21044 = Minecraft.getInstance();
    public TimerUtil field21045 = new TimerUtil();
    public Class4297 field21046;
@@ -74,8 +74,8 @@ public class SnakeGameScreen extends Class4307 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 256) {
          ColorUtils.method17742();
          Minecraft.getInstance().displayGuiScreen(null);

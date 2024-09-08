@@ -5,14 +5,14 @@ import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import net.minecraft.client.Minecraft;
 import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4317 extends Class4307 {
+public class Class4317 extends Screen {
    private int field21050;
    private float field21051;
    private float field21052 = 0.75F;
@@ -175,8 +175,8 @@ public class Class4317 extends Class4307 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 256) {
          Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
       }

@@ -1,14 +1,14 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.Base64;
 
-public class Class4320 extends Class4307 {
+public class Class4320 extends Screen {
    public Animation field21076 = new Animation(300, 300);
    public ArrayList<String> field21077 = new ArrayList<String>();
 
@@ -55,8 +55,8 @@ public class Class4320 extends Class4307 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 256) {
          Minecraft.getInstance().displayGuiScreen(new Class1309());
       }

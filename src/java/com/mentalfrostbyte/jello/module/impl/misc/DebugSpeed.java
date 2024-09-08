@@ -28,7 +28,7 @@ public class DebugSpeed extends Module {
             if (mc.player.onGround && this.field23558 != null) {
                 double var5 = var4.method11341(this.field23558) / (double) this.field23557;
                 var5 *= mc.timer.timerSpeed;
-                boolean var7 = Client.getInstance().method19939().method31329() > 1 && mc.player.field4999 == 0;
+                boolean var7 = Client.getInstance().method19939().getgroundTicks() > 1 && mc.player.field4999 == 0;
                 double var8 = !var7 ? 0.312948 : 0.280616;
                 double var10 = var5 / var8;
                 BigDecimal var12 = new BigDecimal(var10);

@@ -2,12 +2,12 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class CreditsScreen extends Class4307 {
+public class CreditsScreen extends Screen {
    private float field21072 = 0.0F;
    private int field21073 = 0;
    private int field21074 = 0;
@@ -94,8 +94,8 @@ public class CreditsScreen extends Class4307 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 256) {
          Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
       }

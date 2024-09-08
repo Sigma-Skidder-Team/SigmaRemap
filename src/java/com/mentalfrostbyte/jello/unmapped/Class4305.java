@@ -13,7 +13,7 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.List;
 
-public class Class4305 implements Class4328 {
+public class Class4305 implements IGuiEventListener {
     private final List<Class4305> field20893 = new ArrayList<Class4305>();
     private final List<Class6664> field20894 = new ArrayList<Class6664>();
     private final List<Class4305> field20916 = new ArrayList<Class4305>();
@@ -225,10 +225,10 @@ public class Class4305 implements Class4328 {
     }
 
     @Override
-    public void method13150(char var1) {
+    public void charTyped(char var1) {
         for (Class4305 var5 : this.field20893) {
             if (var5.isHovered() && var5.method13287()) {
-                var5.method13150(var1);
+                var5.charTyped(var1);
             }
         }
 
@@ -236,10 +236,10 @@ public class Class4305 implements Class4328 {
     }
 
     @Override
-    public void method13065(int var1) {
+    public void keyPressed(int var1) {
         for (Class4305 var5 : this.field20893) {
             if (var5.isHovered() && var5.method13287()) {
-                var5.method13065(var1);
+                var5.keyPressed(var1);
             }
         }
 

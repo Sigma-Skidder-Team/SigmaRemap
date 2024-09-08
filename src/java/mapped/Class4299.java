@@ -53,8 +53,8 @@ public class Class4299 extends Class4278 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 32) {
          this.field20836 = 0.045F;
       }

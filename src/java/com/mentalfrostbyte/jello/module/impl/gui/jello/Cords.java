@@ -32,7 +32,7 @@ public class Cords extends Module {
                 this.field23755--;
             }
 
-            boolean var4 = Class9567.method37087() || mc.player.field4981 || mc.player.method3331();
+            boolean var4 = Class9567.isMoving() || mc.player.field4981 || mc.player.method3331();
             if (!var4) {
                 if (this.field23756.calcPercent() == 1.0F && this.field23756.getDirection() == Direction.FORWARDS) {
                     this.field23756.changeDirection(Direction.BACKWARDS);

@@ -1,12 +1,12 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class2314;
+import com.mentalfrostbyte.jello.unmapped.SettingType;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import totalcross.json.JSONObject;
 
 public class InputSetting extends Setting<String> {
    public InputSetting(String var1, String var2, String var3) {
-      super(var1, var2, Class2314.field15853, var3);
+      super(var1, var2, SettingType.INPUT, var3);
    }
 
    @Override

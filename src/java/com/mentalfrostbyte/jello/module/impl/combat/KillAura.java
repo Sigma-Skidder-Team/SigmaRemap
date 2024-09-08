@@ -245,7 +245,7 @@ public class KillAura extends Module {
                     this.field23945--;
                 }
 
-                if (field23948 != null && this.field23938.method36813() && Class9567.method37087() && this.getStringSettingValueByName("Autoblock Mode").equals("NCP")) {
+                if (field23948 != null && this.field23938.method36813() && Class9567.isMoving() && this.getStringSettingValueByName("Autoblock Mode").equals("NCP")) {
                     this.field23938.method36816();
                 }
 

@@ -7,13 +7,12 @@ import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screen.Screen;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Class4323 extends Class4307 {
+public class ClassicMainScreen extends Screen {
     private static final long field21106 = System.nanoTime();
     public final Class4278 field21094;
     public final Class4278 field21095;
@@ -28,7 +27,7 @@ public class Class4323 extends Class4307 {
     private float field21104;
     private float field21105;
 
-    public Class4323() {
+    public ClassicMainScreen() {
         super("Main Screen");
         this.method13300(false);
         this.field21100 = new Animation(175, 325);
@@ -101,12 +100,12 @@ public class Class4323 extends Class4307 {
         return this.method13269() / 2 - 100;
     }
 
-    public void method13434(Screen var1) {
+    public void method13434(net.minecraft.client.gui.screen.Screen var1) {
         Minecraft.getInstance().displayGuiScreen(var1);
         this.method13436();
     }
 
-    public void method13435(Class4307 var1) {
+    public void method13435(Screen var1) {
         Client.getInstance().getGuiManager().method33482(var1);
         this.method13436();
     }

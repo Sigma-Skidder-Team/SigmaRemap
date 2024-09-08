@@ -55,7 +55,7 @@ public class YPortSpeed extends Module {
                 String var4 = this.getStringSettingValueByName("Mode");
                 switch (var4) {
                     case "NCP":
-                        if (Class9567.method37087() && mc.player.onGround) {
+                        if (Class9567.isMoving() && mc.player.onGround) {
                             mc.player.method2914();
                             var1.method13995(mc.player.getVec().y);
                             Class9567.method37088(var1, 0.461);
@@ -153,7 +153,7 @@ public class YPortSpeed extends Module {
             mc.player.lastTickPosY = this.field23542;
             mc.player.field4915 = this.field23542;
             mc.player.prevPosY = this.field23542;
-            if (Class9567.method37087()) {
+            if (Class9567.isMoving()) {
                 mc.player.field4909 = 0.099999994F;
             }
         }

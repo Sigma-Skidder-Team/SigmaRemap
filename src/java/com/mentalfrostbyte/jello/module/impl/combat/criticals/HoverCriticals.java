@@ -40,7 +40,7 @@ public class HoverCriticals extends Module {
         if (this.isEnabled() && var1.method13921()) {
             boolean var4 = mc.objectMouseOver != null && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK;
             boolean var5 = mc.playerController.getIsHittingBlock() || mc.gameSettings.keyBindAttack.isKeyDown() && var4;
-            if (Client.getInstance().method19939().method31329() > 0 && !var5) {
+            if (Client.getInstance().method19939().getgroundTicks() > 0 && !var5) {
                 this.field23997 -= 1.0E-14;
                 if (this.field23997 < 0.0 || Step.field23887 == 0) {
                     this.field23997 = 1.0E-11;

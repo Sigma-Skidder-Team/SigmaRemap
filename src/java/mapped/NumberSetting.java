@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class2314;
+import com.mentalfrostbyte.jello.unmapped.SettingType;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import totalcross.json.JSONObject;
 
@@ -11,7 +11,7 @@ public class NumberSetting<T extends Number> extends Setting<Float> {
    private float increment;
 
    public NumberSetting(String name, String description, float defaultValue, Class<? extends T> type, float minimum, float maximum, float increment) {
-      super(name, description, Class2314.field15852, defaultValue);
+      super(name, description, SettingType.NUMBER, defaultValue);
       this.type = type;
       this.minimum = minimum;
       this.maximum = maximum;

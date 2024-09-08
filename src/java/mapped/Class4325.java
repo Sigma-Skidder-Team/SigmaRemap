@@ -1,20 +1,19 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screen.Screen;
 import org.lwjgl.opengl.GL11;
 
-public class Class4325 extends Class4307 {
+public class Class4325 extends Screen {
    private int field21109 = 0;
    private int field21110 = 0;
    private boolean field21111 = true;
    public static Animation field21112 = new Animation(300, 200);
    private Texture field21113;
    private Class4331 field21114;
-   public static Screen field21115 = null;
+   public static net.minecraft.client.gui.screen.Screen field21115 = null;
 
    public Class4325() {
       super("options");
@@ -89,14 +88,14 @@ public class Class4325 extends Class4307 {
       }
    }
 
-   public static void method13438(Screen var0) {
+   public static void method13438(net.minecraft.client.gui.screen.Screen var0) {
       field21115 = var0;
       field21112.changeDirection(Direction.BACKWARDS);
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 256) {
          Minecraft.getInstance().displayGuiScreen(null);
       }

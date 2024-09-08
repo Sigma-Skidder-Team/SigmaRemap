@@ -180,7 +180,7 @@ public class NoFall extends Module {
                                 this.field23508 = true;
                             }
 
-                            if (this.field23508 && Client.getInstance().method19939().method31329() == 0 && mc.player.onGround) {
+                            if (this.field23508 && Client.getInstance().method19939().getgroundTicks() == 0 && mc.player.onGround) {
                                 var1.method13912(var1.method13911() - 11.0);
                                 this.field23508 = false;
                             }

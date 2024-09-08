@@ -131,8 +131,8 @@ public class Class4281 extends Class4278 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (this.field20905) {
          switch (var1) {
             case 65:
@@ -310,8 +310,8 @@ public class Class4281 extends Class4278 {
    }
 
    @Override
-   public void method13150(char var1) {
-      super.method13150(var1);
+   public void charTyped(char var1) {
+      super.charTyped(var1);
       if (this.method13297() && Class8906.method32486(var1)) {
          if (this.field20750 == this.field20751) {
             this.field20912 = Class8906.method32492(this.field20912, Character.toString(var1), this.field20749);

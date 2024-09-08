@@ -233,7 +233,7 @@ public class HypixelFly extends Module {
                 }
 
                 var1.method13999(var18);
-                if (!var21 && mc.player.getPosY() % 1.0 > 0.1F && Class9567.method37087()) {
+                if (!var21 && mc.player.getPosY() % 1.0 > 0.1F && Class9567.isMoving()) {
                     for (Vector3d var25 : var22) {
                         var25.x = var25.x * this.field23560;
                         var25.z = var25.z * this.field23560;

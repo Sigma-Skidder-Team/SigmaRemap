@@ -26,7 +26,7 @@ public class BoatFly extends PremiumModule {
                 float var5 = this.getNumberValueBySettingName("Speed");
                 double var6 = Math.cos(Math.toRadians(var4)) * (double) var5;
                 double var8 = Math.sin(Math.toRadians(var4)) * (double) var5;
-                if (!Class9567.method37087()) {
+                if (!Class9567.isMoving()) {
                     var6 = 0.0;
                     var8 = 0.0;
                 }

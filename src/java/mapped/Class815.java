@@ -66,7 +66,7 @@ public class Class815 extends Class813 {
             100,
             20,
             new TranslationTextComponent("mco.configure.world.buttons.players"),
-            var1 -> this.mc.displayGuiScreen(new Class824(this, this.field4422))
+            var1 -> this.mc.displayGuiScreen(new RealmGUI(this, this.field4422))
          )
       );
       this.field4427 = this.<Button>addButton(

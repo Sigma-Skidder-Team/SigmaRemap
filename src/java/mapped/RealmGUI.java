@@ -14,7 +14,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class824 extends RealmsScreen {
+public class RealmGUI extends RealmsScreen {
    private static final Logger field4517 = LogManager.getLogger();
    private static final ResourceLocation field4518 = new ResourceLocation("realms", "textures/gui/realms/op_icon.png");
    private static final ResourceLocation field4519 = new ResourceLocation("realms", "textures/gui/realms/user_icon.png");
@@ -40,7 +40,7 @@ public class Class824 extends RealmsScreen {
    private RealmsLabel field4539;
    private Class2162 field4540 = Class2162.field14182;
 
-   public Class824(Class815 var1, RealmsServer var2) {
+   public RealmGUI(Class815 var1, RealmsServer var2) {
       this.field4527 = var1;
       this.field4528 = var2;
    }
@@ -298,32 +298,32 @@ public class Class824 extends RealmsScreen {
    }
 
    // $VF: synthetic method
-   public static int method2425(Class824 var0) {
+   public static int method2425(RealmGUI var0) {
       return var0.field4530;
    }
 
    // $VF: synthetic method
-   public static FontRenderer method2426(Class824 var0) {
+   public static FontRenderer method2426(RealmGUI var0) {
       return var0.fontRenderer;
    }
 
    // $VF: synthetic method
-   public static int method2427(Class824 var0) {
+   public static int method2427(RealmGUI var0) {
       return var0.field4531;
    }
 
    // $VF: synthetic method
-   public static void method2428(Class824 var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
+   public static void method2428(RealmGUI var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
       var0.method2418(var1, var2, var3, var4, var5);
    }
 
    // $VF: synthetic method
-   public static void method2429(Class824 var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
+   public static void method2429(RealmGUI var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
       var0.method2419(var1, var2, var3, var4, var5);
    }
 
    // $VF: synthetic method
-   public static void method2430(Class824 var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
+   public static void method2430(RealmGUI var0, MatrixStack var1, int var2, int var3, int var4, int var5) {
       var0.method2417(var1, var2, var3, var4, var5);
    }
 
@@ -343,37 +343,37 @@ public class Class824 extends RealmsScreen {
    }
 
    // $VF: synthetic method
-   public static RealmsServer method2434(Class824 var0) {
+   public static RealmsServer method2434(RealmGUI var0) {
       return var0.field4528;
    }
 
    // $VF: synthetic method
-   public static Class2162 method2435(Class824 var0) {
+   public static Class2162 method2435(RealmGUI var0) {
       return var0.field4540;
    }
 
    // $VF: synthetic method
-   public static void method2436(Class824 var0, int var1) {
+   public static void method2436(RealmGUI var0, int var1) {
       var0.method2412(var1);
    }
 
    // $VF: synthetic method
-   public static void method2437(Class824 var0, int var1) {
+   public static void method2437(RealmGUI var0, int var1) {
       var0.method2411(var1);
    }
 
    // $VF: synthetic method
-   public static void method2438(Class824 var0, int var1) {
+   public static void method2438(RealmGUI var0, int var1) {
       var0.method2414(var1);
    }
 
    // $VF: synthetic method
-   public static int method2439(Class824 var0, int var1) {
+   public static int method2439(RealmGUI var0, int var1) {
       return var0.field4537 = var1;
    }
 
    // $VF: synthetic method
-   public static void method2440(Class824 var0) {
+   public static void method2440(RealmGUI var0) {
       var0.method2408();
    }
 }

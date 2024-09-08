@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class8480;
+import com.mentalfrostbyte.jello.unmapped.BlurUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 
@@ -125,8 +125,8 @@ public class KeyStrokes extends Module {
                                     this.field23585 + var8.field42635 + var9.field42635,
                                     this.field23586 + var8.field42636 + var9.field42636
                             );
-                            Class8480.method29971(this.field23585 + var8.field42635, this.field23586 + var8.field42636, var9.field42635, var9.field42636);
-                            Class8480.method29974();
+                            BlurUtil.method29971(this.field23585 + var8.field42635, this.field23586 + var8.field42636, var9.field42635, var9.field42636);
+                            BlurUtil.method29974();
                             RenderUtil.endScissor();
                         }
                     }

@@ -239,7 +239,7 @@ public class MineplexFly extends PremiumModule {
             mc.player.lastTickPosY = this.field23673;
             mc.player.field4915 = this.field23673;
             mc.player.prevPosY = this.field23673;
-            if (Class9567.method37087()) {
+            if (Class9567.isMoving()) {
                 mc.player.field4909 = 0.099999994F;
             }
         }

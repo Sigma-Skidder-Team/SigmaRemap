@@ -165,12 +165,12 @@ public class Class4268 extends Class4247 {
    }
 
    @Override
-   public void method13065(int var1) {
+   public void keyPressed(int var1) {
       if (var1 == this.field20690) {
          this.field20692 = true;
       }
 
-      super.method13065(var1);
+      super.keyPressed(var1);
    }
 
    @Override

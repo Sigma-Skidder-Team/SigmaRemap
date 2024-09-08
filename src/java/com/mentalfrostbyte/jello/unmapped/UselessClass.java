@@ -7,10 +7,10 @@ import com.mentalfrostbyte.jello.network.NetworkManager;
 /**
  * what
  */
-public class Class1550 implements Runnable {
+public class UselessClass implements Runnable {
     private static String[] field8409;
 
-    public Class1550(boolean var1) {
+    public UselessClass(boolean var1) {
 
     }
 

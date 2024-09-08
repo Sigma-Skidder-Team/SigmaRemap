@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Setting<T> {
-    public final Class2314 field26178;
+    public final SettingType field26178;
     public final String name;
     public final String field26182;
     private final List<Class9792> field26183 = new ArrayList<Class9792>();
     public T currentValue;
     public T field26180;
 
-    public Setting(String var1, String var2, Class2314 var3, T var4) {
+    public Setting(String var1, String var2, SettingType var3, T var4) {
         this.field26178 = var3;
         this.currentValue = this.field26180 = var4;
         this.name = var1;
@@ -44,7 +44,7 @@ public abstract class Setting<T> {
         }
     }
 
-    public Class2314 method18618() {
+    public SettingType method18618() {
         return this.field26178;
     }
 

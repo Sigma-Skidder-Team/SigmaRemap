@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.unmapped.Class2314;
+import com.mentalfrostbyte.jello.unmapped.SettingType;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import totalcross.json.JSONObject;
 
@@ -10,7 +10,7 @@ public class BooleanSetting extends Setting<Boolean> {
    public boolean field26186 = false;
 
    public BooleanSetting(String name, String description, boolean value) {
-      super(name, description, Class2314.field15851, value);
+      super(name, description, SettingType.BOOLEAN, value);
    }
 
    public BooleanSetting method18630() {

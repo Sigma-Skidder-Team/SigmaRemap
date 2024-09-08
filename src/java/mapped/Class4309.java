@@ -5,15 +5,14 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screen.Screen;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map.Entry;
 
-public class Class4309 extends Class4307 {
+public class Class4309 extends Screen {
    private static Minecraft field20953 = Minecraft.getInstance();
    private Texture field20954;
    public Date field20955;
@@ -71,7 +70,7 @@ public class Class4309 extends Class4307 {
       }
 
       for (Entry var6 : GuiManager.field41338.entrySet()) {
-         var2.add(new Class6984((Class<? extends Screen>)var6.getKey()));
+         var2.add(new Class6984((Class<? extends net.minecraft.client.gui.screen.Screen>)var6.getKey()));
       }
 
       return var2;
@@ -123,8 +122,8 @@ public class Class4309 extends Class4307 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 256) {
          ColorUtils.method17742();
          field20953.displayGuiScreen(null);

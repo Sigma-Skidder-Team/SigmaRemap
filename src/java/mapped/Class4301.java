@@ -28,7 +28,7 @@ public class Class4301 extends Class4278 {
    }
 
    @Override
-   public void method13065(int var1) {
+   public void keyPressed(int var1) {
       if (var1 == 257 && this.field20841.method13297()) {
          this.field20841.method13145(false);
          new Thread(
@@ -73,6 +73,6 @@ public class Class4301 extends Class4278 {
             .start();
       }
 
-      super.method13065(var1);
+      super.keyPressed(var1);
    }
 }

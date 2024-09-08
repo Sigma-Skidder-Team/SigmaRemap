@@ -54,9 +54,9 @@ public class Client {
     private CombatManager combatManager;
     private ViaVersionLoader viaversionLoader;
     private MusicManager musicManager;
-    private Class8696 field28979;
+    private PlayerStateTracker playerStateTracker;
     private AccountManager accountManager;
-    private Class8480 field28981;
+    private BlurUtil field28981;
     private Class8402 field28982;
     private NetworkManager networkManager;
     private SoundManager soundManager;
@@ -108,8 +108,8 @@ public class Client {
         this.combatManager.method29345();
         this.viaversionLoader = new ViaVersionLoader();
      //   this.field28977.method23341();
-        this.field28979 = new Class8696();
-        this.field28979.method31323();
+        this.playerStateTracker = new PlayerStateTracker();
+        this.playerStateTracker.REGISSTER();
         this.field28987 = new Class8996();
         this.field28987.method33236();
         this.musicManager = new MusicManager();
@@ -117,12 +117,12 @@ public class Client {
         this.soundManager = new SoundManager();
         this.soundManager.init();
         this.notificationManager = new NotificationManager();
-        this.notificationManager.method31999();
+        this.notificationManager.init();
         this.accountManager = new AccountManager();
         this.accountManager.registerEvents();
         this.waypointsManager = new WaypointsManager();
-        this.waypointsManager.method29988();
-        this.field28981 = new Class8480();
+        this.waypointsManager.register();
+        this.field28981 = new BlurUtil();
         this.field28981.method29970();
         this.field28989 = new Class8795();
         this.field28989.method31737();
@@ -298,8 +298,8 @@ public class Client {
         return this.guiManager;
     }
 
-    public Class8696 method19939() {
-        return this.field28979;
+    public PlayerStateTracker method19939() {
+        return this.playerStateTracker;
     }
 
     public Class8996 method19940() {

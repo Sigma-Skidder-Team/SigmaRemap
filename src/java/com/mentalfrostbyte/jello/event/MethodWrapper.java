@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.event;
 import com.mentalfrostbyte.jello.event.priority.Priority;
 import com.mentalfrostbyte.jello.module.impl.movement.phase.NCPPhase;
 import com.mentalfrostbyte.jello.unmapped.Class8733;
-import mapped.Class8756;
+import mapped.ReflectionUtils;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
@@ -23,7 +23,7 @@ public class MethodWrapper {
         this.field35681 = var1;
         this.field35682 = var2;
         this.field35683 = var3;
-        this.field35684 = Class8756.method31586(var3);
+        this.field35684 = ReflectionUtils.createLambdaForMethod(var3);
 
         try {
             this.field35685 = MethodHandles.lookup().unreflect(var3);

@@ -34,7 +34,7 @@ public class Class7070 {
          && this.field30455 != null
          && this.field30455.field39976 < 64;
       if (this.field30450 < this.field30449 && var4 && var5 && this.field30452 > 0) {
-         this.field30450 = this.field30450 + Client.getInstance().method19939().method31327();
+         this.field30450 = this.field30450 + Client.getInstance().method19939().getPing();
       }
 
       if (this.field30452 > 0) {

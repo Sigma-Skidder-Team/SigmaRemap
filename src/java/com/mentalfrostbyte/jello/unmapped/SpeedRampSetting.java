@@ -4,9 +4,9 @@ import mapped.Class8000;
 import mapped.Class9318;
 import totalcross.json.JSONObject;
 
-public class Class6000 extends Setting<Class9318> {
-    public Class6000(String var1, String var2, float var3, float var4, float var5, float var6) {
-        super(var1, var2, Class2314.field15860, new Class9318(var3, var4, var5, var6));
+public class SpeedRampSetting extends Setting<Class9318> {
+    public SpeedRampSetting(String var1, String var2, float var3, float var4, float var5, float var6) {
+        super(var1, var2, SettingType.SPEEDRAMP, new Class9318(var3, var4, var5, var6));
     }
 
     @Override

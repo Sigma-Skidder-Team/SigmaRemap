@@ -29,8 +29,8 @@ public class Class4269 extends Class4247 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 257) {
          ((Class4312)this.method13258()).method13359(this.field20694.method13303());
          Client.getInstance().getNetworkManager().field38429.method29515("SF4FSERFERF", this.field20694.method13303());

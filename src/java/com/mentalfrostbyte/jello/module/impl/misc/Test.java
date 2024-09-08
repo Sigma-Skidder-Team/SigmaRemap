@@ -7,8 +7,8 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.unmapped.Class6000;
-import com.mentalfrostbyte.jello.unmapped.Class6002;
+import com.mentalfrostbyte.jello.unmapped.SpeedRampSetting;
+import com.mentalfrostbyte.jello.unmapped.TextBoxSetting;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
@@ -46,7 +46,7 @@ public class Test extends Module {
 
     public Test() {
         super(ModuleCategory.MISC, "Test", "A mod for testing things");
-        this.registerSetting(new Class6000("Bezier", "ey", 0.57F, -0.035F, 0.095F, -0.0F));
+        this.registerSetting(new SpeedRampSetting("Bezier", "ey", 0.57F, -0.035F, 0.095F, -0.0F));
         this.registerSetting(
                 new BooleanSetting("Test Checkbox", "A test checkbox", true)
                         .method18616(var0 -> Client.getInstance().getLogger().info("Changed checkbox: " + var0.getCurrentValue()))
@@ -56,11 +56,11 @@ public class Test extends Module {
                         .method18616(var0 -> Client.getInstance().getLogger().info("Changed slider: " + var0.getCurrentValue()))
         );
         this.registerSetting(
-                new Class6002("Test Type", "A test type button", 0, "hello", "goodbye")
+                new TextBoxSetting("Test Type", "A test type button", 0, "hello", "goodbye")
                         .method18616(var0 -> Client.getInstance().getLogger().info("Changed type: " + var0.getCurrentValue()))
         );
         this.registerSetting(
-                new Class6007(
+                new SubOptionSetting(
                         "Test Suboptions",
                         "A test suboption",
                         false,

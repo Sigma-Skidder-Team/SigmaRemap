@@ -27,7 +27,7 @@ public class Strafe extends Module {
             double var7 = Math.cos(Math.toRadians(var6));
             double var9 = Math.sin(Math.toRadians(var6));
             double var11 = Math.sqrt(var1.method13992() * var1.method13992() + var1.method13996() * var1.method13996());
-            if (!Class9567.method37087()) {
+            if (!Class9567.isMoving()) {
                 var11 = 0.0;
             }
 
@@ -40,7 +40,7 @@ public class Strafe extends Module {
 
                 var1.method13993(var1.method13992() * (double) (1.0F - var13) + var11 * var7 * (double) var13);
                 var1.method13997(var1.method13996() * (double) (1.0F - var13) + var11 * var9 * (double) var13);
-                if (Class9567.method37087()) {
+                if (Class9567.isMoving()) {
                 }
             } else {
                 this.field23936 = var11;

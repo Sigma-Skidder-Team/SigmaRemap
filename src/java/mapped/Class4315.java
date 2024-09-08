@@ -2,12 +2,12 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 import net.minecraft.client.Minecraft;
 
 import java.util.Date;
 
-public class Class4315 extends Class4307 {
+public class Class4315 extends Screen {
    private static Minecraft field21033 = Minecraft.getInstance();
    private Texture field21034;
    public Date field21035;
@@ -62,8 +62,8 @@ public class Class4315 extends Class4307 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 256) {
          ColorUtils.method17742();
          field21033.displayGuiScreen(null);

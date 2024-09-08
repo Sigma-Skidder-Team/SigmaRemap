@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class2314;
+import com.mentalfrostbyte.jello.unmapped.SettingType;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import totalcross.json.JSONObject;
 
@@ -10,12 +10,12 @@ public class ColorSetting extends Setting<Integer> {
    public boolean field26196 = false;
 
    public ColorSetting(String var1, String var2, int var3, boolean var4) {
-      super(var1, var2, Class2314.field15859, var3);
+      super(var1, var2, SettingType.COLOR, var3);
       this.field26196 = var4;
    }
 
    public ColorSetting(String name, String description, int defaultColor) {
-      super(name, description, Class2314.field15859, defaultColor);
+      super(name, description, SettingType.COLOR, defaultColor);
    }
 
    @Override

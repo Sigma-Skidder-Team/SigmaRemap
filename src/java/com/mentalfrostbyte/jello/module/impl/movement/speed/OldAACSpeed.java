@@ -28,7 +28,7 @@ public class OldAACSpeed extends Module {
 
     @Override
     public void onEnable() {
-        this.field23537 = Client.getInstance().method19939().method31329() <= 0 ? 1 : 0;
+        this.field23537 = Client.getInstance().method19939().getgroundTicks() <= 0 ? 1 : 0;
         this.field23534 = Class9567.method37075();
         this.field23535 = Class9567.method37083()[0];
     }

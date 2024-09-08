@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.unmapped.Class2314;
+import com.mentalfrostbyte.jello.unmapped.SettingType;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import net.minecraft.client.Minecraft;
 import totalcross.json.JSONObject;
@@ -16,12 +16,12 @@ public class ModeSetting extends Setting<String> {
    private List<String> field26188 = new ArrayList<String>();
 
    public ModeSetting(String name, String defaultValue, int index, String... modes) {
-      super(name, defaultValue, Class2314.field15854, modes[index]);
+      super(name, defaultValue, SettingType.MODE, modes[index]);
       this.modes = Arrays.<String>asList(modes);
    }
 
    public ModeSetting(String var1, String var2, String var3, String... var4) {
-      super(var1, var2, Class2314.field15854, var3);
+      super(var1, var2, SettingType.MODE, var3);
       this.modes = Arrays.<String>asList(var4);
    }
 

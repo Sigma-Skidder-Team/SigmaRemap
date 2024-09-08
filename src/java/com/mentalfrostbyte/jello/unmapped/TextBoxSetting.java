@@ -3,11 +3,11 @@ package com.mentalfrostbyte.jello.unmapped;
 import mapped.Class8000;
 import totalcross.json.JSONObject;
 
-public class Class6002 extends Setting<Integer> {
+public class TextBoxSetting extends Setting<Integer> {
     private final String[] field26184;
 
-    public Class6002(String var1, String var2, Integer var3, String... var4) {
-        super(var1, var2, Class2314.field15857, var3);
+    public TextBoxSetting(String var1, String var2, Integer var3, String... var4) {
+        super(var1, var2, SettingType.TEXTBOX, var3);
         this.field26184 = var4;
     }
 

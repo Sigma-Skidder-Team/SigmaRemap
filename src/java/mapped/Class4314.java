@@ -4,9 +4,9 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4307;
+import com.mentalfrostbyte.jello.unmapped.Screen;
 
-public class Class4314 extends Class4307 {
+public class Class4314 extends Screen {
    public Class4282 field21027;
    public Class4282 field21028;
    public Class4300 field21029;
@@ -66,8 +66,8 @@ public class Class4314 extends Class4307 {
    }
 
    @Override
-   public void method13065(int var1) {
-      super.method13065(var1);
+   public void keyPressed(int var1) {
+      super.keyPressed(var1);
       if (var1 == 256) {
          Client.getInstance().getGuiManager().method33482(new Class4317());
       }
