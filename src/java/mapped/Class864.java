@@ -95,7 +95,7 @@ public class Class864 extends Class851<Class5811> {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       this.field4798 = false;
       if (this.field4800) {
          int var8 = this.field4734 + 52;
@@ -120,11 +120,11 @@ public class Class864 extends Class851<Class5811> {
          }
       }
 
-      return super.method1958(var1, var3, var5);
+      return super.mouseClicked(var1, var3, var5);
    }
 
    @Override
-   public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
+   public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
       if (this.field4798 && this.method2674()) {
          int var12 = this.field4735 + 14;
          int var13 = var12 + 54;
@@ -133,12 +133,12 @@ public class Class864 extends Class851<Class5811> {
          this.field4799 = (int)((double)(this.field4797 * (float)this.method2675()) + 0.5) * 4;
          return true;
       } else {
-         return super.method2516(var1, var3, var5, var6, var8);
+         return super.mouseDragged(var1, var3, var5, var6, var8);
       }
    }
 
    @Override
-   public boolean method2649(double var1, double var3, double var5) {
+   public boolean mouseScrolled(double var1, double var3, double var5) {
       if (this.method2674()) {
          int var9 = this.method2675();
          this.field4797 = (float)((double)this.field4797 - var5 / (double)var9);

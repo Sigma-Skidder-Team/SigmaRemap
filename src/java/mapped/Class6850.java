@@ -90,7 +90,7 @@ public class Class6850 {
    public boolean method20830(int var1, int var2, int var3) {
       if (this.field29762 != null && this.field29762.method29311(var1, var2, var3)) {
          return true;
-      } else if (this.field29748.method5533() == this.field29749 && var1 == 258) {
+      } else if (this.field29748.getListener() == this.field29749 && var1 == 258) {
          this.method20833(true);
          return true;
       } else {

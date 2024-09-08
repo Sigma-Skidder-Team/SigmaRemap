@@ -49,9 +49,9 @@ public class ControlsScreen extends Class1135 {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (this.field6199 == null) {
-         return super.method1958(var1, var3, var5);
+         return super.mouseClicked(var1, var3, var5);
       } else {
          this.field6193.method37142(this.field6199, InputMappingsType.MOUSE.method8197(var5));
          this.field6199 = null;

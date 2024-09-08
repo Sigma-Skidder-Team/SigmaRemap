@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import mapped.*;
 import net.minecraft.item.Items;
 import net.minecraft.network.play.server.SEntityEquipmentPacket;
@@ -36,7 +36,7 @@ public class OldHitting extends Module {
     @HigherPriority
     @Class5631
     private void method16020(Class4399 var1) {
-        if (this.isEnabled() || Class8005.method27372() == Class5989.field26129) {
+        if (this.isEnabled() || JelloPortal.method27372() == ViaVerList.field26129) {
             if (var1.method13921()) {
                 boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof ItemSword;
                 boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
@@ -103,7 +103,7 @@ public class OldHitting extends Module {
     @LowerPriority
     @Class5631
     private void method16021(RecievePacketEvent var1) {
-        if (this.isEnabled() || Class8005.method27372() == Class5989.field26129) {
+        if (this.isEnabled() || JelloPortal.method27372() == ViaVerList.field26129) {
             if (mc.player != null) {
                 if (var1.getPacket() instanceof SEntityEquipmentPacket) {
                     SEntityEquipmentPacket var4 = (SEntityEquipmentPacket) var1.getPacket();
@@ -121,7 +121,7 @@ public class OldHitting extends Module {
     @LowerPriority
     @Class5631
     private void method16022(Class4400 var1) {
-        if (this.isEnabled() || Class8005.method27372() == Class5989.field26129) {
+        if (this.isEnabled() || JelloPortal.method27372() == ViaVerList.field26129) {
             float var4 = var1.method13924();
             if (var1.method13926() && var1.method13927() == HandSide.field14417 && var1.method13928().getItem() instanceof Class3334) {
                 var1.method13931(false);

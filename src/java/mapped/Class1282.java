@@ -167,7 +167,7 @@ public class Class1282 extends Class1274<Class1171> {
                return;
             }
 
-            Item var8 = this.field6842.get(this.method2468().indexOf(var6));
+            Item var8 = this.field6842.get(this.getEventListeners().indexOf(var6));
             this.method6100(var1, this.method6101(var8), var2, var3);
          }
       }

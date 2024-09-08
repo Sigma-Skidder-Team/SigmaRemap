@@ -1,15 +1,15 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 
 public class Class4273 extends Class4247 {
    private static String[] field20708;
    public float field20709;
    public String field20710;
 
-   public Class4273(Class4305 var1, String var2, int var3, int var4, int var5, int var6, String var7, String var8) {
-      super(var1, var2, var3, var4, var5, var6, Class6387.field27961, var7, false);
+   public Class4273(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7, String var8) {
+      super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
       this.field20710 = var8;
    }
 

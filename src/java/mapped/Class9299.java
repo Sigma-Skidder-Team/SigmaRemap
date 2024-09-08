@@ -254,7 +254,7 @@ public class Class9299 {
    public static Class6636 field42975 = new Class6636("net.minecraftforge.fml.client.gui.screen.ModListScreen");
    public static Class6634 field42976 = new Class6634(field42975, new Class[]{Screen.class});
    public static Class6636 field42977 = new Class6636("net.minecraftforge.client.gui.NotificationModUpdateScreen");
-   public static Class6631 field42978 = new Class6631(field42977, "init", new Class[]{MainMenuScreen.class, Button.class});
+   public static Class6631 field42978 = new Class6631(field42977, "init", new Class[]{VanillaMainMenuScreen.class, Button.class});
    public static Class6636 field42979 = new Class6636("net.minecraftforge.event.entity.PlaySoundAtEntityEvent");
    public static Class6631 field42980 = new Class6631(field42979, "getSound");
    public static Class6631 field42981 = new Class6631(field42979, "getCategory");
@@ -292,7 +292,7 @@ public class Class9299 {
    public static Class6633 field43007 = new Class6633(field43006, DataParameter.class);
    public static Class6636 field43008 = new Class6636(Class5718.class);
    public static Class6633 field43009 = new Class6633(field43008, Class2875.class);
-   public static Class6636 field43010 = new Class6636(MainMenuScreen.class);
+   public static Class6636 field43010 = new Class6636(VanillaMainMenuScreen.class);
    public static Class6633 field43011 = new Class6633(field43010, String.class);
    public static Class6636 field43012 = new Class6636(Class7781.class);
    public static Class6633 field43013 = new Class6633(field43012, Map.class);

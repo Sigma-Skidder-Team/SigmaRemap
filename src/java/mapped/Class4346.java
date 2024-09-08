@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,7 +20,7 @@ public class Class4346 extends Class4339 {
    private boolean field21241 = false;
    private static final String field21242 = "\n";
 
-   public Class4346(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4346(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.method13300(false);
    }
@@ -39,7 +39,7 @@ public class Class4346 extends Class4339 {
 
       int var6 = this.method13517().method13269() - this.method13269();
       this.method13517()
-         .method13230(
+         .addToList(
             new Class4289(this.method13517(), "message" + this.field21237, 0, this.field21238, this.method13267(), var1.method34192() + field21240, var1)
          );
       this.field21238 = this.field21238 + var1.method34192();

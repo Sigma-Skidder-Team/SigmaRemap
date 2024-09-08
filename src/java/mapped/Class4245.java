@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.lwjgl.opengl.GL11;
@@ -11,7 +11,7 @@ public class Class4245 extends Class4240 {
    public boolean field20598;
    public Animation field20599;
 
-   public Class4245(Class4305 var1, String var2, int var3, int var4, Class2060 var5) {
+   public Class4245(IconPanel var1, String var2, int var3, int var4, Class2060 var5) {
       super(var1, var2, var3, var4, 18, 18);
       this.field20597 = var5;
       this.field20599 = new Animation(250, 250);

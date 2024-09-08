@@ -223,7 +223,7 @@ public class Class1157 extends Class1156 {
    public boolean keyPressed(int var1, int var2, int var3) {
       if (Screen.method2476()) {
          Class1279 var6 = this.field6296.field6949;
-         int var7 = var6.method2468().indexOf(this);
+         int var7 = var6.getEventListeners().indexOf(this);
          if (var1 == 264 && var7 < this.field6296.method6242().method27099() - 1 || var1 == 265 && var7 > 0) {
             this.method5550(var7, var1 != 264 ? var7 - 1 : var7 + 1);
             return true;
@@ -236,15 +236,15 @@ public class Class1157 extends Class1156 {
    private void method5550(int var1, int var2) {
       this.field6296.method6242().method27100(var1, var2);
       this.field6296.field6949.method6081(this.field6296.method6242());
-      Class1156 var5 = this.field6296.field6949.method2468().get(var2);
+      Class1156 var5 = this.field6296.field6949.getEventListeners().get(var2);
       this.field6296.field6949.method6024(var5);
       Class1279.method6092(this.field6303, var5);
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       double var8 = var1 - (double)this.field6303.method6053();
-      double var10 = var3 - (double)Class1279.method6093(this.field6303, this.field6303.method2468().indexOf(this));
+      double var10 = var3 - (double)Class1279.method6093(this.field6303, this.field6303.getEventListeners().indexOf(this));
       if (var8 <= 32.0) {
          if (var8 < 32.0 && var8 > 16.0 && this.method5548()) {
             this.field6296.method6238(this);
@@ -252,7 +252,7 @@ public class Class1157 extends Class1156 {
             return true;
          }
 
-         int var12 = this.field6296.field6949.method2468().indexOf(this);
+         int var12 = this.field6296.field6949.getEventListeners().indexOf(this);
          if (var8 < 16.0 && var10 < 16.0 && var12 > 0) {
             this.method5550(var12, var12 - 1);
             return true;

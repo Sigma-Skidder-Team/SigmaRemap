@@ -23,7 +23,7 @@ public class Class1160 extends Class1155<Class1160> {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       Class6065.method18805(Class823.method2390(this.field6314), this, this.field6313, var5, var1, var3);
       return true;
    }

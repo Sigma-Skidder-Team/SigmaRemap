@@ -1,30 +1,30 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import org.lwjgl.opengl.GL11;
 
 public class Class4235 extends Class4240 {
    private static String[] field20573;
-   public static final Class6387 field20574 = new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor, ColorUtils.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.1F));
+   public static final ColorHelper field20574 = new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, ColorUtils.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.1F));
    public Texture field20575;
 
-   public Class4235(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Texture var7, Class6387 var8, String var9, ClientResource var10) {
+   public Class4235(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Texture var7, ColorHelper var8, String var9, ClientResource var10) {
       super(var1, var2, var3, var4, var5, var6, var8, var9, var10);
       this.field20575 = var7;
    }
 
-   public Class4235(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Texture var7, Class6387 var8, String var9) {
+   public Class4235(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Texture var7, ColorHelper var8, String var9) {
       super(var1, var2, var3, var4, var5, var6, var8, var9);
       this.field20575 = var7;
    }
 
-   public Class4235(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Texture var7, Class6387 var8) {
+   public Class4235(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Texture var7, ColorHelper var8) {
       super(var1, var2, var3, var4, var5, var6, var8);
       this.field20575 = var7;
    }
 
-   public Class4235(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
+   public Class4235(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
       super(var1, var2, var3, var4, var5, var6, field20574);
       this.field20575 = var7;
    }

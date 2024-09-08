@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
@@ -17,11 +17,11 @@ public class Class4341 extends Class4339 implements Class4342 {
    private boolean field21217;
    private float field21218 = 1.0F;
 
-   public Class4341(Class4305 var1, String var2, int var3, int var4, int var5, int var6, ModuleCategory var7) {
+   public Class4341(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ModuleCategory var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field21214 = var7;
       this.field21217 = true;
-      ((Class4338)var1).field21195 = 1.0F;
+      ((JelloClickGUIPanels)var1).field21195 = 1.0F;
       this.field21217 = true;
       this.method13300(false);
       this.method13511();
@@ -32,12 +32,12 @@ public class Class4341 extends Class4339 implements Class4342 {
 
       for (Module var5 : Client.getInstance().getModuleManager().getModulesByCategory(this.field21214)) {
          int var9 = ColorUtils.applyAlpha(-3487030, 0.0F);
-         Class6387 var12 = new Class6387(!var5.isEnabled() ? 1895167477 : -14047489, !var5.isEnabled() ? var9 : -14042881)
+         ColorHelper var12 = new ColorHelper(!var5.isEnabled() ? 1895167477 : -14047489, !var5.isEnabled() ? var9 : -14042881)
             .method19410(!var5.isEnabled() ? ClientColors.DEEP_TEAL.getColor : ClientColors.LIGHT_GREYISH_BLUE.getColor);
          var12.method19412(Class2218.field14488);
          Class4240 var13;
          this.method13517()
-            .method13230(
+            .addToList(
                var13 = new Class4240(
                   this.method13517(), var5.getName() + "Button", 0, var3 * 30, this.method13267(), 30, var12, var5.getName(), ResourceRegistry.JelloLightFont20
                )
@@ -49,17 +49,17 @@ public class Class4341 extends Class4339 implements Class4342 {
          }
 
          this.field21215.add(var13);
-         var13.method13251(
+         var13.doThis(
             (var3x, var4) -> {
                Class4240 var7 = (Class4240)var3x;
                if (var4 != 0) {
                   if (var4 == 1) {
-                     Class4338 var8 = (Class4338)this.method13258();
+                     JelloClickGUIPanels var8 = (JelloClickGUIPanels)this.method13258();
                      var8.method13508(var5);
                   }
                } else {
                   var5.method16000();
-                  Class6387 var9x = new Class6387(!var5.isEnabled() ? 1895167477 : -14047489, !var5.isEnabled() ? var9 : -14042881)
+                  ColorHelper var9x = new ColorHelper(!var5.isEnabled() ? 1895167477 : -14047489, !var5.isEnabled() ? var9 : -14042881)
                      .method19410(!var5.isEnabled() ? ClientColors.DEEP_TEAL.getColor : ClientColors.LIGHT_GREYISH_BLUE.getColor);
                   if (!var5.isEnabled()) {
                      var7.method13034(22);
@@ -96,7 +96,7 @@ public class Class4341 extends Class4339 implements Class4342 {
    @Override
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
-      Class4338 var5 = (Class4338)this.field20892;
+      JelloClickGUIPanels var5 = (JelloClickGUIPanels)this.field20892;
       Minecraft.getInstance();
       float var6 = (float)(0.07F * (60.0 / (double) Minecraft.getFps()));
       this.field21218 = this.field21218 + (!this.method13525() ? 0.0F : (!this.field21217 ? var6 : -var6));
@@ -127,7 +127,7 @@ public class Class4341 extends Class4339 implements Class4342 {
    @Override
    public void draw(float var1) {
       this.method13225();
-      super.draw(var1 * ((Class4338)this.field20892).field21195);
+      super.draw(var1 * ((JelloClickGUIPanels)this.field20892).field21195);
    }
 
    @Override

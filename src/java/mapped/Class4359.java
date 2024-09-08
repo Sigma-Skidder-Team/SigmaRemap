@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.music.MusicManager;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 
 public class Class4359 extends Class4247 {
@@ -10,7 +10,7 @@ public class Class4359 extends Class4247 {
    private MusicManager field21314 = Client.getInstance().getMusicManager();
    public float field21315 = -1.0F;
 
-   public Class4359(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4359(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.method13247((var1x, var2x) -> {
          int var5x = (int)this.field21314.method24321();

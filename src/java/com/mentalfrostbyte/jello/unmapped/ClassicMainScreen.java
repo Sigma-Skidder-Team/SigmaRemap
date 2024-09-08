@@ -22,7 +22,7 @@ public class ClassicMainScreen extends Screen {
     private Class4365 field21099;
     private Animation field21100 = new Animation(325, 325);
     private final Animation field21101 = new Animation(800, 800);
-    private final Class4352 field21102;
+    private final ClassicParticleEngine field21102;
     private final Class4337 field21103;
     private float field21104;
     private float field21105;
@@ -40,41 +40,41 @@ public class ClassicMainScreen extends Screen {
         String var11 = "© Sigma Prod";
         StringBuilder var10000 = new StringBuilder().append("Sigma ");
         Client.getInstance();
-        String var12 = var10000.append(Client.VERSION).append(" for Minecraft 1.8 to ").append(Class8005.field34418.method18580()).toString();
-        this.method13230(this.field21102 = new Class4352(this, "particles"));
+        String var12 = var10000.append(Client.VERSION).append(" for Minecraft 1.8 to ").append(JelloPortal.field34418.method18580()).toString();
+        this.addToList(this.field21102 = new ClassicParticleEngine(this, "particles"));
         short var13 = 480;
         short var14 = 480;
-        this.method13230(this.field21103 = new Class4337(this, "group", (this.method13267() - var13) / 2, this.method13269() / 2 - 230, var13, var14));
-        this.method13230(
-                this.field21095 = new Class4287(
-                        this, "Copyright", 10, 8, var9.method23942(var11), 140, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor), var11, ResourceRegistry.JelloLightFont18
+        this.addToList(this.field21103 = new Class4337(this, "group", (this.method13267() - var13) / 2, this.method13269() / 2 - 230, var13, var14));
+        this.addToList(
+                this.field21095 = new StringPanel(
+                        this, "Copyright", 10, 8, var9.method23942(var11), 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), var11, ResourceRegistry.JelloLightFont18
                 )
         );
-        Class6387 var15 = new Class6387(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
+        ColorHelper var15 = new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
         var15.method19410(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
         ArrayList var16 = new ArrayList();
         var16.add("LeakedPvP");
         var16.add("Omikron");
         Collections.shuffle(var16);
         String var17 = "by " + var16.get(0) + ", " + var16.get(1);
-        this.method13230(new Class4287(this, "names", 130, 9, var9.method23942(var11), 140, var15, var17, ClassicDecryption.regular17));
-        this.method13230(
-                this.field21094 = new Class4287(
+        this.addToList(new StringPanel(this, "names", 130, 9, var9.method23942(var11), 140, var15, var17, ClassicDecryption.regular17));
+        this.addToList(
+                this.field21094 = new StringPanel(
                         this,
                         "Version",
                         this.method13267() - var9.method23942(var12) - 9,
                         this.method13269() - 31,
                         114,
                         140,
-                        new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor),
+                        new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor),
                         var12,
                         var9
                 )
         );
-        this.method13230(new Class4287(this, "Hello", 10, this.method13269() - 55, 114, 140, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor), "Hello,", var9));
-        this.method13230(
-                new Class4287(
-                        this, "Latest", 10, this.method13269() - 31, 114, 140, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor), "You are using the latest version", var9
+        this.addToList(new StringPanel(this, "Hello", 10, this.method13269() - 55, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), "Hello,", var9));
+        this.addToList(
+                new StringPanel(
+                        this, "Latest", 10, this.method13269() - 31, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), "You are using the latest version", var9
                 )
         );
         this.field21104 = (float) (this.method13267() / 2);

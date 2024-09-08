@@ -31,7 +31,7 @@ public class Class1320 extends Screen {
 
    @Override
    public boolean keyPressed(int var1, int var2, int var3) {
-      if (this.method5533() == this.field6975 && (var1 == 257 || var1 == 335)) {
+      if (this.getListener() == this.field6975 && (var1 == 257 || var1 == 335)) {
          this.method6263();
          return true;
       } else {
@@ -56,7 +56,7 @@ public class Class1320 extends Screen {
       this.field6975.method5635(this.mc.gameSettings.field44667);
       this.field6975.method5631(var1 -> this.method6264());
       this.field4561.add(this.field6975);
-      this.method5536(this.field6975);
+      this.setFocusedDefault(this.field6975);
       this.method6264();
    }
 

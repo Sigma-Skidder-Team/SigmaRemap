@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 
 public class Class4268 extends Class4247 {
    public final int field20690;
@@ -10,14 +10,14 @@ public class Class4268 extends Class4247 {
    private boolean field20692 = false;
    private boolean field20693 = false;
 
-   public Class4268(Class4305 var1, String var2, int var3, int var4, int var5, int var6, String var7, int var8) {
-      super(var1, var2, var3, var4, var5, var6, Class6387.field27961, var7, false);
+   public Class4268(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7, int var8) {
+      super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
       this.field20690 = var8;
       this.method13102();
    }
 
    public void method13102() {
-      for (Class6984 var4 : Class4309.method13328()) {
+      for (Class6984 var4 : JelloKeyboardScreen.method13328()) {
          int var5 = var4.method21599();
          if (var5 == this.field20690) {
             this.field20693 = true;

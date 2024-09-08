@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.ModuleManager;
 import com.mentalfrostbyte.jello.music.MusicManager;
-import com.mentalfrostbyte.jello.unmapped.Class8402;
+import com.mentalfrostbyte.jello.unmapped.CombatTracker;
 import com.mentalfrostbyte.jello.network.NetworkManager;
 import com.mentalfrostbyte.jello.notification.NotificationManager;
 import com.mentalfrostbyte.jello.sound.SoundManager;
@@ -57,14 +57,14 @@ public class Client {
     private PlayerStateTracker playerStateTracker;
     private AccountManager accountManager;
     private BlurUtil field28981;
-    private Class8402 field28982;
+    private CombatTracker field28982;
     private NetworkManager networkManager;
     private SoundManager soundManager;
     private NotificationManager notificationManager;
-    private Class8996 field28987;
+    private SlotChangeTracker slotChangeTracker;
     private WaypointsManager waypointsManager;
     private Class8795 field28989;
-    private Class8005 field28990;
+    private JelloPortal field28990;
     private ClientMode clientMode = ClientMode.PREMIUM;
 
     private Client() {
@@ -110,8 +110,8 @@ public class Client {
      //   this.field28977.method23341();
         this.playerStateTracker = new PlayerStateTracker();
         this.playerStateTracker.REGISSTER();
-        this.field28987 = new Class8996();
-        this.field28987.method33236();
+        this.slotChangeTracker = new SlotChangeTracker();
+        this.slotChangeTracker.method33236();
         this.musicManager = new MusicManager();
         this.musicManager.method24293();
         this.soundManager = new SoundManager();
@@ -132,7 +132,7 @@ public class Client {
         this.logger.info("Initialized.");
     }
 
-    public void method19921() {
+    public void initRPC() {
         DiscordRPC var3 = DiscordRPC.INSTANCE;
         String var4 = "693493612754763907";
         String var5 = "";
@@ -302,8 +302,8 @@ public class Client {
         return this.playerStateTracker;
     }
 
-    public Class8996 method19940() {
-        return this.field28987;
+    public SlotChangeTracker getSlotChangeTracker() {
+        return this.slotChangeTracker;
     }
 
     public SoundManager getSoundManager() {
@@ -354,7 +354,7 @@ public class Client {
         this.clientMode = mode;
         if (mode != ClientMode.CLASSIC) {
             if (mode == ClientMode.JELLO) {
-                this.method19921();
+                this.initRPC();
                 GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Jello for Sigma 5.0");
             }
         } else {

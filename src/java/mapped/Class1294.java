@@ -41,7 +41,7 @@ public class Class1294 extends Class1293<Class1180> {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       super.render(var1, var2, var3, var4);
-      if (this.method2485(var2, var3)) {
+      if (this.isMouseOver(var2, var3)) {
          Class1180 var7 = this.method6033(var2, var3);
          if (var7 != null) {
             Class1127.method5427(this.field6858, Class1180.method5611(var7));

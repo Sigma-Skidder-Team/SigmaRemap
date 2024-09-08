@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.gui.GuiManager;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.Widget;
@@ -17,7 +17,7 @@ public class JelloPortalScreen extends MultiplayerScreen {
    private Widget field6961;
 
    public JelloPortalScreen() {
-      super(new MainMenuScreen());
+      super(new VanillaMainMenuScreen());
    }
 
    public JelloPortalScreen(Screen var1) {
@@ -33,7 +33,7 @@ public class JelloPortalScreen extends MultiplayerScreen {
          (double)(this.method6251().size() - 1),
          1.0F,
          var1 -> (double)this.method6250(),
-         (var1, var2) -> Class8005.field34417 = this.method6252(var2.intValue()),
+         (var1, var2) -> JelloPortal.field34417 = this.method6252(var2.intValue()),
          (var1, var2) -> {
             int var5 = (int)var2.method18090(var1);
             return new StringTextComponent(this.method6252(var5).method18580());
@@ -58,8 +58,8 @@ public class JelloPortalScreen extends MultiplayerScreen {
    private int method6250() {
       field6960 = 0;
 
-      for (Class5989 var4 : this.method6251()) {
-         if (this.method6252(field6960).equals(Class8005.method27372())) {
+      for (ViaVerList var4 : this.method6251()) {
+         if (this.method6252(field6960).equals(JelloPortal.method27372())) {
             break;
          }
 
@@ -69,11 +69,11 @@ public class JelloPortalScreen extends MultiplayerScreen {
       return field6960;
    }
 
-   private List<Class5989> method6251() {
+   private List<ViaVerList> method6251() {
       ArrayList var3 = new ArrayList();
 
-      for (Class5989 var5 : Class5989.field26128) {
-         if (var5.method18582() >= Class5989.field26129.method18582()) {
+      for (ViaVerList var5 : ViaVerList.field26128) {
+         if (var5.method18582() >= ViaVerList.field26129.method18582()) {
             var3.add(var5);
          }
       }
@@ -81,7 +81,7 @@ public class JelloPortalScreen extends MultiplayerScreen {
       return var3;
    }
 
-   private Class5989 method6252(int var1) {
+   private ViaVerList method6252(int var1) {
       return this.method6251().get(var1);
    }
 

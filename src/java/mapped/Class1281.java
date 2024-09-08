@@ -20,7 +20,7 @@ public class Class1281 extends Class1274<Class1167> {
       if (var1 != null) {
          NarratorChatListener.INSTANCE
             .say(
-               new TranslationTextComponent("narrator.select", ((Class5966)Class1313.method6213().get(this.method2468().indexOf(var1))).method18492())
+               new TranslationTextComponent("narrator.select", ((Class5966)Class1313.method6213().get(this.getEventListeners().indexOf(var1))).method18492())
                   .getString()
             );
       }
@@ -30,7 +30,7 @@ public class Class1281 extends Class1274<Class1167> {
 
    @Override
    public boolean method6057() {
-      return this.field6836.method5533() == this;
+      return this.field6836.getListener() == this;
    }
 
    @Override

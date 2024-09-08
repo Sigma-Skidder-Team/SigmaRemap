@@ -2,13 +2,13 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Class4350 extends Class4278 {
-   public static Class6387 field21259 = new Class6387(
+   public static ColorHelper field21259 = new ColorHelper(
       ClientColors.DEEP_TEAL.getColor,
       ClientColors.DEEP_TEAL.getColor,
       ClientColors.DEEP_TEAL.getColor,
@@ -20,7 +20,7 @@ public class Class4350 extends Class4278 {
    private int field21261;
    private int field21262;
 
-   public Class4350(Class4305 var1, String var2, int var3, int var4, int var5, int var6, String var7) {
+   public Class4350(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7) {
       super(var1, var2, var3, var4, var5, var6, field21259, var7, false);
    }
 

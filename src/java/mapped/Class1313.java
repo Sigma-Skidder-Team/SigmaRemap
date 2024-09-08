@@ -160,8 +160,8 @@ public class Class1313 extends Screen {
    }
 
    @Override
-   public boolean method2649(double var1, double var3, double var5) {
-      return this.field6930.method2649(var1, var3, var5);
+   public boolean mouseScrolled(double var1, double var3, double var5) {
+      return this.field6930.mouseScrolled(var1, var3, var5);
    }
 
    @Override

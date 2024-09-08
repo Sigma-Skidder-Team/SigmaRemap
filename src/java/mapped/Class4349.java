@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 
 import java.awt.image.BufferedImage;
@@ -19,10 +19,10 @@ public class Class4349 extends Class4278 {
    private int field21257 = 0;
    private int field21258 = ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 20.0F);
 
-   public Class4349(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
+   public Class4349(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21249 = var7;
-      this.method13230(this.field21253 = new Class4285(this, "loading", var5 - 50, 35, 30, 30));
+      this.addToList(this.field21253 = new Class4285(this, "loading", var5 - 50, 35, 30, 30));
       this.field21253.method13296(false);
    }
 

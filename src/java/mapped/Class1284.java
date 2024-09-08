@@ -48,7 +48,7 @@ public class Class1284 extends Class1274<Class1164> {
 
    @Override
    public boolean method6057() {
-      return this.field6848.method5533() == this;
+      return this.field6848.getListener() == this;
    }
 
    // $VF: synthetic method

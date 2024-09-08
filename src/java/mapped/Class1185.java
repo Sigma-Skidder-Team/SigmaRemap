@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 
 public class Class1185 extends Class1178<Class1185> {
    private final Minecraft field6388;
-   private final List<Class1152> field6389;
+   private final List<IGuiEventListener2> field6389;
    private final UUID field6390;
    private final String field6391;
    private final Supplier<ResourceLocation> field6392;
@@ -112,7 +112,7 @@ public class Class1185 extends Class1178<Class1185> {
    }
 
    @Override
-   public List<? extends Class1152> method2468() {
+   public List<? extends IGuiEventListener2> getEventListeners() {
       return this.field6389;
    }
 

@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class Class4280 extends Class4278 {
    private Class9715 field20739 = new Class9715();
    public Class2422 field20740 = new Class2422();
 
-   public Class4280(Class4305 var1, String var2) {
+   public Class4280(IconPanel var1, String var2) {
       super(var1, var2, 0, 0, Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight(), false);
       this.method13145(false);
       this.method13296(false);

@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.SpeedRampSetting;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import com.mentalfrostbyte.jello.unmapped.TextBoxSetting;
@@ -19,26 +19,26 @@ public class Class4343 extends Class4339 implements Class4342 {
    private boolean field21220;
    private boolean field21221;
    public int field21222 = 200;
-   private HashMap<Class4287, Setting> field21223 = new HashMap<Class4287, Setting>();
-   public HashMap<Module, Class4305> field21224 = new HashMap<Module, Class4305>();
+   private HashMap<StringPanel, Setting> field21223 = new HashMap<StringPanel, Setting>();
+   public HashMap<Module, IconPanel> field21224 = new HashMap<Module, IconPanel>();
    public Animation field21225 = new Animation(114, 114);
    private String field21226 = "";
    private String field21227 = "";
 
-   public Class4343(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
+   public Class4343(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field21219 = var7;
       this.method13300(false);
       this.method13511();
    }
 
-   private int method13531(Class4305 var1, Setting var2, int var3, int var4, int var5) {
+   private int method13531(IconPanel var1, Setting var2, int var3, int var4, int var5) {
       switch (Class8666.field39049[var2.method18618().ordinal()]) {
          case 1:
             byte var21 = 24;
             byte var29 = 24;
-            Class4287 var37 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, Class4287.field20778, var2.getName());
-            Class4373 var45 = new Class4373(var1, var2.getName() + "checkbox", var1.method13267() - 24 - var5, var4 + 6, 24, 24);
+            StringPanel var37 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, StringPanel.field20778, var2.getName());
+            UICheckBox var45 = new UICheckBox(var1, var2.getName() + "checkbox", var1.method13267() - 24 - var5, var4 + 6, 24, 24);
             this.field21223.put(var37, var2);
             var45.method13705((Boolean)var2.getCurrentValue(), false);
             var2.method18616(var1x -> {
@@ -46,16 +46,16 @@ public class Class4343 extends Class4339 implements Class4342 {
                   var45.method13705((Boolean)var1x.getCurrentValue(), false);
                }
             });
-            var45.method13036(var1x -> var2.method18620(((Class4373)var1x).method13703()));
+            var45.method13036(var1x -> var2.method18620(((UICheckBox)var1x).method13703()));
             var45.method13261((var1x, var2x) -> var1x.method13264(var2x.method13267() - 24 - var5));
-            var1.method13230(var37);
-            var1.method13230(var45);
+            var1.addToList(var37);
+            var1.addToList(var45);
             var4 += 24 + var5;
             break;
          case 2:
             byte var20 = 126;
             byte var28 = 24;
-            Class4287 var36 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, Class4287.field20778, var2.getName());
+            StringPanel var36 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, StringPanel.field20778, var2.getName());
             this.field21223.put(var36, var2);
             NumberSetting var44 = (NumberSetting)var2;
             Class4277 var47 = new Class4277(var1, var2.getName() + "slider", var1.method13267() - 126 - var5, var4 + 6, 126, 24);
@@ -82,20 +82,20 @@ public class Class4343 extends Class4339 implements Class4342 {
                }
             });
             var47.method13261((var1x, var2x) -> var1x.method13264(var2x.method13267() - 126 - var5));
-            var1.method13230(var36);
-            var1.method13230(var47);
+            var1.addToList(var36);
+            var1.addToList(var47);
             var4 += 24 + var5;
             break;
          case 3:
             byte var19 = 114;
             byte var27 = 27;
-            Class4287 var43;
-            this.method13230(
-               var43 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, var27, Class4287.field20778, var2.getName())
+            StringPanel var43;
+            this.addToList(
+               var43 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, this.field21222, var27, StringPanel.field20778, var2.getName())
             );
             this.field21223.put(var43, var2);
             Class4281 var35;
-            this.method13230(
+            this.addToList(
                var35 = new Class4281(
                   var1,
                   var2.getName() + "txt",
@@ -119,7 +119,7 @@ public class Class4343 extends Class4339 implements Class4342 {
          case 4:
             byte var18 = 123;
             byte var26 = 27;
-            Class4287 var34 = new Class4287(var1, var2.getName() + "lbl", var3, var4 + 2, this.field21222, 27, Class4287.field20778, var2.getName());
+            StringPanel var34 = new StringPanel(var1, var2.getName() + "lbl", var3, var4 + 2, this.field21222, 27, StringPanel.field20778, var2.getName());
             Class4363 var42 = new Class4363(
                var1,
                var2.getName() + "btn",
@@ -141,14 +141,14 @@ public class Class4343 extends Class4339 implements Class4342 {
                var42.method13656(((ModeSetting)var2).method18632());
             });
             var42.method13261((var2x, var3x) -> var2x.method13264(var1.method13267() - 123 - var5));
-            var1.method13230(var34);
-            var1.method13230(var42);
+            var1.addToList(var34);
+            var1.addToList(var42);
             var4 += 27 + var5;
          case 5:
          default:
             break;
          case 6:
-            Class4305 var17 = new Class4305(var1, var2.getName() + "view", var3, var4, var1.method13267(), 0);
+            IconPanel var17 = new IconPanel(var1, var2.getName() + "view", var3, var4, var1.method13267(), 0);
             int var25 = 0;
 
             for (Setting var41 : ((SubOptionSetting)var2).method18635()) {
@@ -157,13 +157,13 @@ public class Class4343 extends Class4339 implements Class4342 {
 
             new Class6665().method20320(var17, var1);
             var17.method13261((var1x, var2x) -> var1x.method13268(var2x.method13267() - var5));
-            var1.method13230(var17);
+            var1.addToList(var17);
             var4 += var17.method13269() + var5;
             break;
          case 7:
             byte var16 = 123;
             byte var24 = 27;
-            Class4287 var32 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 27, Class4287.field20778, var2.getName());
+            StringPanel var32 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, this.field21222, 27, StringPanel.field20778, var2.getName());
             Class4377 var40 = new Class4377(
                var1, var2.getName() + "btn", var1.method13267() - var5, var4 + 6, 123, 27, ((TextBoxSetting)var2).method18627(), (Integer)var2.getCurrentValue()
             );
@@ -175,14 +175,14 @@ public class Class4343 extends Class4339 implements Class4342 {
             });
             var40.method13036(var1x -> var2.method18620(((Class4377)var1x).method13720()));
             var40.method13261((var2x, var3x) -> var2x.method13264(var1.method13267() - 123 - var5));
-            var1.method13230(var32);
-            var1.method13230(var40);
+            var1.addToList(var32);
+            var1.addToList(var40);
             var4 += 27 + var5;
             break;
          case 8:
             short var15 = 175;
             short var23 = 200;
-            Class4287 var31 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 200, Class4287.field20778, var2.getName());
+            StringPanel var31 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, this.field21222, 200, StringPanel.field20778, var2.getName());
             Class4258 var39 = new Class4258(
                var1,
                var2.getName() + "picker",
@@ -196,15 +196,15 @@ public class Class4343 extends Class4339 implements Class4342 {
             this.field21223.put(var31, var2);
             var39.method13036(var2x -> var2.method18620(var39.method13072()));
             var39.method13261((var2x, var3x) -> var2x.method13264(var1.method13267() - 175 - var5));
-            var1.method13230(var31);
-            var1.method13230(var39);
+            var1.addToList(var31);
+            var1.addToList(var39);
             var4 += 200 + var5;
             break;
          case 9:
             short var14 = 160;
             byte var22 = 114;
             ColorSetting var30 = (ColorSetting)var2;
-            Class4287 var38 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, Class4287.field20778, var2.getName());
+            StringPanel var38 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, StringPanel.field20778, var2.getName());
             Class4252 var46 = new Class4252(
                var1, var2.getName() + "color", var1.method13267() - 160 - var5 + 10, var4, 160, 114, (Integer)var2.getCurrentValue(), var30.method18643()
             );
@@ -217,15 +217,15 @@ public class Class4343 extends Class4339 implements Class4342 {
                var2.isPremiumSetting(((Class4252)var2x).method13049(), false);
                var30.method18644(((Class4252)var2x).method13047());
             });
-            var1.method13230(var38);
-            var1.method13230(var46);
+            var1.addToList(var38);
+            var1.addToList(var46);
             var4 += 114 + var5 - 10;
             break;
          case 10:
             short var8 = 150;
             short var9 = 150;
             Class9318 var10 = (Class9318)var2.getCurrentValue();
-            Class4287 var11 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, Class4287.field20778, var2.getName());
+            StringPanel var11 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, StringPanel.field20778, var2.getName());
             Class4250 var12 = new Class4250(
                var1,
                var2.getName() + "color",
@@ -247,8 +247,8 @@ public class Class4343 extends Class4339 implements Class4342 {
             var12.method13036(
                var2x -> ((SpeedRampSetting)var2).method18612(var12.method13040()[0], var12.method13040()[1], var12.method13040()[2], var12.method13040()[3])
             );
-            var1.method13230(var11);
-            var1.method13230(var12);
+            var1.addToList(var11);
+            var1.addToList(var12);
             var4 += 150 + var5 - 10;
       }
 
@@ -269,7 +269,7 @@ public class Class4343 extends Class4339 implements Class4342 {
 
          for (Module var10 : var18.moduleArray) {
             int var11 = 0;
-            Class4305 var12 = new Class4305(this, var10.getName() + "SubView", 0, var17, this.field20897, this.field20898 - var4);
+            IconPanel var12 = new IconPanel(this, var10.getName() + "SubView", 0, var17, this.field20897, this.field20898 - var4);
             var12.method13261((var0, var1) -> var0.method13268(var1.method13267()));
 
             for (Setting var14 : var10.getSettingMap().values()) {
@@ -278,7 +278,7 @@ public class Class4343 extends Class4339 implements Class4342 {
 
             var4 = Math.max(var4 + var11, var4);
 
-            for (Class4305 var20 : var12.method13241()) {
+            for (IconPanel var20 : var12.method13241()) {
                if (var20 instanceof Class4363) {
                   Class4363 var15 = (Class4363)var20;
                   int var16 = var15.method13649() + var15.method13265() + var15.method13269() + 14;
@@ -287,7 +287,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             }
 
             var12.method13270(var11);
-            this.method13230(var12);
+            this.addToList(var12);
             this.field21224.put(var10, var12);
          }
 
@@ -295,7 +295,7 @@ public class Class4343 extends Class4339 implements Class4342 {
          var18.method16724();
       }
 
-      this.method13230(new Class4305(this, "extentionhack", 0, var4, 0, 20));
+      this.addToList(new IconPanel(this, "extentionhack", 0, var4, 0, 20));
    }
 
    @Override
@@ -308,7 +308,7 @@ public class Class4343 extends Class4339 implements Class4342 {
       boolean var4 = false;
 
       for (Entry var6 : this.field21223.entrySet()) {
-         Class4287 var7 = (Class4287)var6.getKey();
+         StringPanel var7 = (StringPanel)var6.getKey();
          Setting var8 = (Setting)var6.getValue();
          if (var7.method13298() && var7.method13289()) {
             var4 = true;

@@ -1,14 +1,14 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Screen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.LanguageScreen;
 import net.minecraft.client.gui.screen.OptionsScreen;
 import net.minecraft.util.SoundEvents;
 
-public class Class4337 extends Class4305 {
+public class Class4337 extends IconPanel {
    public final Class4254 field21186;
    public final Class4254 field21187;
    public final Class4254 field21188;
@@ -17,29 +17,29 @@ public class Class4337 extends Class4305 {
    public final Class4254 field21191;
    public final Class4254 field21192;
 
-   public Class4337(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4337(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       int var9 = 0;
-      this.method13230(this.field21186 = new Class4254(this, "Singleplayer", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.singlePlayer));
-      this.method13230(this.field21191 = new Class4254(this, "Multiplayer", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.multiplayer));
-      this.method13230(this.field21189 = new Class4254(this, "Options", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.options));
-      this.method13230(this.field21188 = new Class4254(this, "Language", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.language));
-      this.method13230(
+      this.addToList(this.field21186 = new Class4254(this, "Singleplayer", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.singlePlayer));
+      this.addToList(this.field21191 = new Class4254(this, "Multiplayer", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.multiplayer));
+      this.addToList(this.field21189 = new Class4254(this, "Options", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.options));
+      this.addToList(this.field21188 = new Class4254(this, "Language", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.language));
+      this.addToList(
          this.field21190 = new Class4254(this, "Accounts", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.accounts)
       );
-      this.method13230(this.field21192 = new Class4254(this, "Agora", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.agora));
-      this.method13230(this.field21187 = new Class4254(this, "Exit", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.exit));
-      this.field21186.method13251((var1x, var2x) -> this.method13493(new Class1341(Minecraft.getInstance().currentScreen)));
-      this.field21191.method13251((var1x, var2x) -> this.method13493(new JelloPortalScreen(Minecraft.getInstance().currentScreen)));
-      this.field21189.method13251((var1x, var2x) -> this.method13493(new OptionsScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
-      this.field21190.method13251((var1x, var2x) -> this.method13494(new Class4317()));
+      this.addToList(this.field21192 = new Class4254(this, "Agora", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.agora));
+      this.addToList(this.field21187 = new Class4254(this, "Exit", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.exit));
+      this.field21186.doThis((var1x, var2x) -> this.method13493(new Class1341(Minecraft.getInstance().currentScreen)));
+      this.field21191.doThis((var1x, var2x) -> this.method13493(new JelloPortalScreen(Minecraft.getInstance().currentScreen)));
+      this.field21189.doThis((var1x, var2x) -> this.method13493(new OptionsScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
+      this.field21190.doThis((var1x, var2x) -> this.method13494(new SigmaClassicAltManager()));
       this.field21188
-         .method13251(
+         .doThis(
             (var1x, var2x) -> this.method13493(
                   new LanguageScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings, Minecraft.getInstance().getLanguageManager())
                )
          );
-      this.field21187.method13251((var0, var1x) -> Minecraft.getInstance().shutdown());
+      this.field21187.doThis((var0, var1x) -> Minecraft.getInstance().shutdown());
    }
 
    public void method13493(net.minecraft.client.gui.screen.Screen var1) {

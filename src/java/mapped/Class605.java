@@ -1,14 +1,14 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 
 public class Class605 implements Runnable {
    private static String[] field2986;
-   public final Class4315 field2987;
-   public final Class4305 field2988;
-   public final Class4315 field2989;
+   public final JelloMaps field2987;
+   public final IconPanel field2988;
+   public final JelloMaps field2989;
 
-   public Class605(Class4315 var1, Class4315 var2, Class4305 var3) {
+   public Class605(JelloMaps var1, JelloMaps var2, IconPanel var3) {
       this.field2989 = var1;
       this.field2987 = var2;
       this.field2988 = var3;

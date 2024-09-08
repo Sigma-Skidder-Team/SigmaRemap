@@ -183,7 +183,7 @@ public class Class1335 extends Screen {
       this.field7081.active = !this.field7090.isEmpty();
       this.<Button>addButton(new Button(var4, this.height - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method6361()));
       this.method6359();
-      this.method5536(this.field7068);
+      this.setFocusedDefault(this.field7068);
       this.method6358(this.field7070);
       this.method6355();
    }
@@ -374,7 +374,7 @@ public class Class1335 extends Screen {
    }
 
    @Override
-   public <T extends Class1152> T addListener(T var1) {
+   public <T extends IGuiEventListener2> T addListener(T var1) {
       return super.<T>addListener((T)var1);
    }
 

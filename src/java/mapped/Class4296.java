@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.Ban;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.Minecraft;
 
@@ -17,7 +17,7 @@ public class Class4296 extends Class4278 {
    private List<Class4348> field20814 = new ArrayList<Class4348>();
    private float field20815 = 0.0F;
 
-   public Class4296(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4296(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
    }
 
@@ -45,7 +45,7 @@ public class Class4296 extends Class4278 {
                Class4348 var10 = new Class4348(
                   this, ((Ban)var11.get(var13)).getServerIP(), 40, 100 + var13 * (var14 + var7), this.field20897 - 90, var14, var9
                );
-               this.method13230(var10);
+               this.addToList(var10);
                this.field20814.add(var10);
                var13++;
             }

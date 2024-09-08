@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import net.minecraft.util.math.vector.Vector3i;
@@ -15,7 +15,7 @@ public class Class4355 extends Class4247 {
    public int field21293;
    public int field21294;
 
-   public Class4355(Class4305 var1, String var2, int var3, int var4, int var5, int var6, String var7, Vector3i var8, int var9) {
+   public Class4355(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7, Vector3i var8, int var9) {
       super(var1, var2, var3, var4, var5, var6, true);
       this.field21288 = var4;
       this.field21289 = new Animation(114, 114);

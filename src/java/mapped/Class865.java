@@ -144,7 +144,7 @@ public class Class865 extends Class851<Class5837> {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       this.field4812 = false;
       if (this.field4808) {
          int var8 = this.field4734 + 60;
@@ -169,11 +169,11 @@ public class Class865 extends Class851<Class5837> {
          }
       }
 
-      return super.method1958(var1, var3, var5);
+      return super.mouseClicked(var1, var3, var5);
    }
 
    @Override
-   public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
+   public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
       if (this.field4812 && this.field4808) {
          int var12 = this.field4735 + 13;
          int var13 = var12 + 56;
@@ -188,12 +188,12 @@ public class Class865 extends Class851<Class5837> {
          this.field4813 = 1 + var15 * 4;
          return true;
       } else {
-         return super.method2516(var1, var3, var5, var6, var8);
+         return super.mouseDragged(var1, var3, var5, var6, var8);
       }
    }
 
    @Override
-   public boolean method2649(double var1, double var3, double var5) {
+   public boolean mouseScrolled(double var1, double var3, double var5) {
       if (this.field4808) {
          int var9 = field4802 - 4;
          this.field4811 = (float)((double)this.field4811 - var5 / (double)var9);

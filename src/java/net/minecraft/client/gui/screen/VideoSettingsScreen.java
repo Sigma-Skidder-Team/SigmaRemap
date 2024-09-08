@@ -46,9 +46,9 @@ public class VideoSettingsScreen extends Class838 {
    private GameSettings field4674 = Minecraft.getInstance().gameSettings;
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       int var8 = this.field4674.guiScale;
-      if (!super.method1958(var1, var3, var5)) {
+      if (!super.mouseClicked(var1, var3, var5)) {
          return false;
       } else {
          if (this.field4674.guiScale != var8) {
@@ -91,8 +91,8 @@ public class VideoSettingsScreen extends Class838 {
    }
 
    @Override
-   public boolean method2565(double var1, double var3, int var5) {
-      return super.method2565(var1, var3, var5);
+   public boolean mouseReleased(double var1, double var3, int var5) {
+      return super.mouseReleased(var1, var3, var5);
    }
 
    public VideoSettingsScreen(Screen var1, GameSettings var2) {

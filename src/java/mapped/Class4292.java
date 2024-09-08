@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import totalcross.json.JSONObject;
@@ -14,7 +14,7 @@ public class Class4292 extends Class4278 implements Class4293 {
    public final Class4288 field20796;
    public TimerUtil field20797 = new TimerUtil();
 
-   public Class4292(Class4305 var1, int var2) {
+   public Class4292(IconPanel var1, int var2) {
       super(var1, "verticalScrollBar", var1.method13267() - var2 - 5, 5, var2, var1.method13269() - 10, false);
       this.method13261((var1x, var2x) -> {
          var1x.method13264(var2x.method13267() - var2 - 5);
@@ -22,7 +22,7 @@ public class Class4292 extends Class4278 implements Class4293 {
          var1x.method13268(var2);
          var1x.method13270(var2x.method13269() - 10);
       });
-      this.method13230(this.field20796 = new Class4288(this, this, var2));
+      this.addToList(this.field20796 = new Class4288(this, this, var2));
    }
 
    @Override

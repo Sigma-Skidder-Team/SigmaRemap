@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.blockfly.*;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -211,7 +211,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                 }
 
                 if (var4 >= 0 && mc.player.field4904.method18131(var4).field25579 != var8) {
-                    if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv") && Class8005.method27349() <= Class5989.field26136.method18582()) {
+                    if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv") && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
                         mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 

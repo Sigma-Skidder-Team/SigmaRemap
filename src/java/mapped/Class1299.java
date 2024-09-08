@@ -150,7 +150,7 @@ public class Class1299 extends Class1298 {
    }
 
    @Override
-   public boolean method2649(double var1, double var3, double var5) {
-      return super.method2649(var1, var3, var5 * 3.0);
+   public boolean mouseScrolled(double var1, double var3, double var5) {
+      return super.mouseScrolled(var1, var3, var5 * 3.0);
    }
 }

@@ -38,7 +38,7 @@ public class Class1165 extends Class1155<Class1165> {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       Class811.method2224(this.field6327).method6109(Class811.method2223(this.field6327).indexOf(this.field6323));
       return true;
    }

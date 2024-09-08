@@ -348,7 +348,7 @@ public class KeyboardListener {
             }
          }
 
-         boolean var10 = var15 == null || !(var15.method5533() instanceof TextFieldWidget) || !((TextFieldWidget)var15.method5533()).method5653();
+         boolean var10 = var15 == null || !(var15.getListener() instanceof TextFieldWidget) || !((TextFieldWidget)var15.getListener()).method5653();
          if (var5 != 0 && var3 == 66 && Screen.hasControlDown() && var10) {
             AbstractOption.field25346.method17945(this.field43915.gameSettings, 1);
             if (var15 instanceof Class1140) {
@@ -368,7 +368,7 @@ public class KeyboardListener {
                         }
                      }
 
-                     var11[0] = var15.method2644(var3, var4, var6);
+                     var11[0] = var15.keyReleased(var3, var4, var6);
                      if (Class9299.field42889.method20214() && !var11[0]) {
                         var11[0] = Class9299.method35056(Class9299.field42889, this.field43915.currentScreen, var3, var4, var6);
                      }

@@ -5,7 +5,7 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -71,7 +71,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
    private float field38657;
    private int field38658;
    private boolean field38659;
-   private Class8005 field38660;
+   private JelloPortal field38660;
 
    public NetworkManager(Class1975 var1) {
       this.field38646 = var1;

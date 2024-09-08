@@ -49,7 +49,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (var5 == 0) {
          int var8 = (this.width - 252) / 2;
          int var9 = (this.height - 140) / 2;
@@ -62,7 +62,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
          }
       }
 
-      return super.method1958(var1, var3, var5);
+      return super.mouseClicked(var1, var3, var5);
    }
 
    @Override
@@ -87,7 +87,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    }
 
    @Override
-   public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
+   public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
       if (var5 == 0) {
          if (this.field6187) {
             if (this.field6186 != null) {

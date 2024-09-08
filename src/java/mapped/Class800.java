@@ -45,7 +45,7 @@ public class Class800 extends RealmsScreen {
       );
       this.field4177.method5657(32);
       this.<TextFieldWidget>addListener(this.field4177);
-      this.method5536(this.field4177);
+      this.setFocusedDefault(this.field4177);
       this.<Button>addButton(new Button(this.width / 2 - 102, method1929(4), 205, 20, this.method1939(), var1 -> {
          this.field4179 = (this.field4179 + 1) % field4174.length;
          var1.setMessage(this.method1939());

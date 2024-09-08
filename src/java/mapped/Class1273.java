@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
 
-public abstract class Class1273<E extends Class1154<E>> extends Class1150 implements Class1190 {
+public abstract class Class1273<E extends Class1154<E>> extends FocusableGui implements Class1190 {
    public final Minecraft field6782;
    public final int field6783;
    private final List<E> field6784 = new Class26(this);
@@ -74,12 +74,12 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    }
 
    @Nullable
-   public E method5533() {
-      return (E)super.method5533();
+   public E getListener() {
+      return (E)super.getListener();
    }
 
    @Override
-   public final List<E> method2468() {
+   public final List<E> getEventListeners() {
       return this.field6784;
    }
 
@@ -93,7 +93,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    }
 
    public E method6029(int var1) {
-      return this.method2468().get(var1);
+      return this.getEventListeners().get(var1);
    }
 
    public int method6030(E var1) {
@@ -102,11 +102,11 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    }
 
    public int method6031() {
-      return this.method2468().size();
+      return this.getEventListeners().size();
    }
 
    public boolean method6032(int var1) {
-      return Objects.equals(this.method6023(), this.method2468().get(var1));
+      return Objects.equals(this.method6023(), this.getEventListeners().get(var1));
    }
 
    @Nullable
@@ -118,7 +118,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
       int var11 = MathHelper.floor(var3 - (double)this.field6787) - this.field6795 + (int)this.method6044() - 4;
       int var12 = var11 / this.field6783;
       return var1 < (double)this.method6048() && var1 >= (double)var9 && var1 <= (double)var10 && var12 >= 0 && var11 >= 0 && var12 < this.method6031()
-         ? this.method2468().get(var12)
+         ? this.getEventListeners().get(var12)
          : null;
    }
 
@@ -281,11 +281,11 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    }
 
    public void method6041(E var1) {
-      this.method6045((double)(this.method2468().indexOf(var1) * this.field6783 + this.field6783 / 2 - (this.field6788 - this.field6787) / 2));
+      this.method6045((double)(this.getEventListeners().indexOf(var1) * this.field6783 + this.field6783 / 2 - (this.field6788 - this.field6787) / 2));
    }
 
    public void method6042(E var1) {
-      int var4 = this.method6055(this.method2468().indexOf(var1));
+      int var4 = this.method6055(this.getEventListeners().indexOf(var1));
       int var5 = var4 - this.field6787 - 4 - this.field6783;
       if (var5 < 0) {
          this.method6043(var5);
@@ -322,9 +322,9 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       this.method6047(var1, var3, var5);
-      if (this.method2485(var1, var3)) {
+      if (this.isMouseOver(var1, var3)) {
          Class1154 var8 = this.method6033(var1, var3);
          if (var8 == null) {
             if (var5 == 0) {
@@ -334,9 +334,9 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
                );
                return true;
             }
-         } else if (var8.method1958(var1, var3, var5)) {
-            this.method5534(var8);
-            this.method5532(true);
+         } else if (var8.mouseClicked(var1, var3, var5)) {
+            this.setListener(var8);
+            this.setDragging(true);
             return true;
          }
 
@@ -347,17 +347,17 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    }
 
    @Override
-   public boolean method2565(double var1, double var3, int var5) {
-      if (this.method5533() != null) {
-         this.method5533().method2565(var1, var3, var5);
+   public boolean mouseReleased(double var1, double var3, int var5) {
+      if (this.getListener() != null) {
+         this.getListener().mouseReleased(var1, var3, var5);
       }
 
       return false;
    }
 
    @Override
-   public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
-      if (!super.method2516(var1, var3, var5, var6, var8)) {
+   public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
+      if (!super.mouseDragged(var1, var3, var5, var6, var8)) {
          if (var5 == 0 && this.field6796) {
             if (!(var3 < (double)this.field6787)) {
                if (!(var3 > (double)this.field6788)) {
@@ -383,7 +383,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    }
 
    @Override
-   public boolean method2649(double var1, double var3, double var5) {
+   public boolean mouseScrolled(double var1, double var3, double var5) {
       this.method6045(this.method6044() - var5 * (double)this.field6783 / 2.0);
       return true;
    }
@@ -421,8 +421,8 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
 
    public void method6051(Class2220 var1, Predicate<E> var2) {
       int var5 = var1 != Class2220.field14503 ? 1 : -1;
-      if (!this.method2468().isEmpty()) {
-         int var6 = this.method2468().indexOf(this.method6023());
+      if (!this.getEventListeners().isEmpty()) {
+         int var6 = this.getEventListeners().indexOf(this.method6023());
 
          while (true) {
             int var7 = MathHelper.method37775(var6 + var5, 0, this.method6031() - 1);
@@ -430,7 +430,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
                break;
             }
 
-            E var8 = this.method2468().get(var7);
+            E var8 = this.getEventListeners().get(var7);
             if (var2.test(var8)) {
                this.method6024(var8);
                this.method6042(var8);
@@ -443,7 +443,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    }
 
    @Override
-   public boolean method2485(double var1, double var3) {
+   public boolean isMouseOver(double var1, double var3) {
       return var3 >= (double)this.field6787 && var3 <= (double)this.field6788 && var1 >= (double)this.field6790 && var1 <= (double)this.field6789;
    }
 
@@ -492,7 +492,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
                var16,
                var4,
                var5,
-               this.method2485((double)var4, (double)var5) && Objects.equals(this.method6033((double)var4, (double)var5), var17),
+               this.isMouseOver((double)var4, (double)var5) && Objects.equals(this.method6033((double)var4, (double)var5), var17),
                var6
             );
          }

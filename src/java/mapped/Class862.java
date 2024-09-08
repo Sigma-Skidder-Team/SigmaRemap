@@ -221,7 +221,7 @@ public class Class862 extends Class851<Class5826> {
    }
 
    @Override
-   public boolean method2649(double var1, double var3, double var5) {
+   public boolean mouseScrolled(double var1, double var3, double var5) {
       int var9 = this.field4727.method18217().size();
       if (this.method2666(var9)) {
          int var10 = var9 - 7;
@@ -233,10 +233,10 @@ public class Class862 extends Class851<Class5826> {
    }
 
    @Override
-   public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
+   public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
       int var12 = this.field4727.method18217().size();
       if (!this.field4793) {
-         return super.method2516(var1, var3, var5, var6, var8);
+         return super.mouseDragged(var1, var3, var5, var6, var8);
       } else {
          int var13 = this.field4735 + 18;
          int var14 = var13 + 139;
@@ -249,7 +249,7 @@ public class Class862 extends Class851<Class5826> {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       this.field4793 = false;
       int var8 = (this.width - this.field4721) / 2;
       int var9 = (this.height - this.field4722) / 2;
@@ -261,7 +261,7 @@ public class Class862 extends Class851<Class5826> {
          this.field4793 = true;
       }
 
-      return super.method1958(var1, var3, var5);
+      return super.mouseClicked(var1, var3, var5);
    }
 
    // $VF: synthetic method

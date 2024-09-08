@@ -12,7 +12,7 @@ public class Class4325 extends Screen {
    private boolean field21111 = true;
    public static Animation field21112 = new Animation(300, 200);
    private Texture field21113;
-   private Class4331 field21114;
+   private JelloOptionsMainMenu field21114;
    public static net.minecraft.client.gui.screen.Screen field21115 = null;
 
    public Class4325() {
@@ -20,8 +20,8 @@ public class Class4325 extends Screen {
       this.method13300(false);
       int var3 = Math.max((int)((float)this.field20898 * 0.8F), 420);
       int var4 = (int)((float)this.field20897 * 0.8F);
-      this.method13230(
-         this.field21114 = new Class4331(
+      this.addToList(
+         this.field21114 = new JelloOptionsMainMenu(
             this, "centerBlock", this.method13267() - var4, this.method13269() - var3, var4 - (this.method13267() - var4), var3 - (this.method13269() - var3)
          )
       );

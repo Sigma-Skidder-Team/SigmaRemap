@@ -38,7 +38,7 @@ public class Class1124 extends Class875<Class5824> {
       this.field6160.method5657(35);
       this.field6160.method5631(this::method5420);
       this.field4561.add(this.field6160);
-      this.method5536(this.field6160);
+      this.setFocusedDefault(this.field6160);
    }
 
    @Override
@@ -115,7 +115,7 @@ public class Class1124 extends Class875<Class5824> {
       if (var2 == 0) {
          this.field6160.method5635(!var3.isEmpty() ? var3.method32149().getString() : "");
          this.field6160.method5666(!var3.isEmpty());
-         this.method5534(this.field6160);
+         this.setListener(this.field6160);
       }
    }
 }

@@ -1,12 +1,12 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 
 public class Class4263 extends Class4247 {
    private static String[] field20677;
    public float field20678;
 
-   public Class4263(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4263(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
    }
 

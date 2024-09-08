@@ -63,7 +63,7 @@ public class Class842 extends Class838 {
       this.<Class1212>addButton(new Class1212(210, var10 + var9 - 22 - 1, var11));
       this.<Class1210>addButton(new Class1210(202, var8 / 4 * 3 - var9 / 2, this.height - 25, var9, var4, I18n.format("gui.done")));
       this.<Class1210>addButton(new Class1210(203, var5, this.height - 25, var3, var4, Class8043.method27619("of.options.shaders.shaderOptions")));
-      this.method5534(this.field4645);
+      this.setListener(this.field4645);
       this.method2569();
    }
 

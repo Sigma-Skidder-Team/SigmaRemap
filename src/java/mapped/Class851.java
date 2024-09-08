@@ -259,8 +259,8 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
-      if (super.method1958(var1, var3, var5)) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
+      if (super.mouseClicked(var1, var3, var5)) {
          return true;
       } else {
          boolean var8 = this.mc.gameSettings.keyBindPickBlock.matchesMouseKey(var5);
@@ -368,7 +368,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    @Override
-   public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
+   public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
       Class5839 var12 = this.method2621(var1, var3);
       ItemStack var13 = this.mc.player.inventory.method4057();
       if (this.field4730 != null && this.mc.gameSettings.touchscreen) {
@@ -406,7 +406,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    @Override
-   public boolean method2565(double var1, double var3, int var5) {
+   public boolean mouseReleased(double var1, double var3, int var5) {
       Class5839 var8 = this.method2621(var1, var3);
       int var9 = this.field4734;
       int var10 = this.field4735;

@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import mapped.*;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
@@ -93,7 +93,7 @@ public class AutoSoup extends Module {
         this.field23432 = true;
         if (this.getStringSettingValueByName("Refill mode").equals("FakeInv")
                 && !(mc.currentScreen instanceof InventoryScreen)
-                && Class8005.method27349() <= Class5989.field26136.method18582()) {
+                && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
             mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
             this.field23433 = true;
         }
@@ -150,7 +150,7 @@ public class AutoSoup extends Module {
 
         for (int var4 = 36; var4 < 45; var4++) {
             if (mc.player.field4904.method18131(var4).method18265().getItem() == Items.field37837
-                    && Client.getInstance().method19940().method33238(var4) > 100L) {
+                    && Client.getInstance().getSlotChangeTracker().method33238(var4) > 100L) {
                 var3 = var4 - 36;
                 break;
             }

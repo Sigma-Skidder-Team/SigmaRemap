@@ -47,7 +47,7 @@ public class Class7040 extends Class7039 implements Class7041 {
       for (Entry<String, Object> var6 : new HashSet<>(var4.entrySet())) {
          if (!(var6.getValue() instanceof Integer)) {
             if (var6.getValue() instanceof String) {
-               Class5989 var7 = Class5989.method18572((String)var6.getValue());
+               ViaVerList var7 = ViaVerList.method18572((String)var6.getValue());
                if (var7 != null) {
                   var4.put(var6.getKey(), var7.method18582());
                } else {

@@ -19,7 +19,7 @@ public class MemoryErrorScreen extends Screen {
             150,
             20,
             new TranslationTextComponent("gui.toTitle"),
-            var1 -> this.mc.displayGuiScreen(new MainMenuScreen())
+            var1 -> this.mc.displayGuiScreen(new VanillaMainMenuScreen())
          )
       );
       this.<Button>addButton(
@@ -35,7 +35,7 @@ public class MemoryErrorScreen extends Screen {
    }
 
    @Override
-   public boolean method2454() {
+   public boolean shouldCloseOnEsc() {
       return false;
    }
 

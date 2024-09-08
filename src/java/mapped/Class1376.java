@@ -2,10 +2,10 @@ package mapped;
 
 public class Class1376 implements Runnable {
    private static String[] field7351;
-   public final Class4309 field7352;
-   public final Class4309 field7353;
+   public final JelloKeyboardScreen field7352;
+   public final JelloKeyboardScreen field7353;
 
-   public Class1376(Class4309 var1, Class4309 var2) {
+   public Class1376(JelloKeyboardScreen var1, JelloKeyboardScreen var2) {
       this.field7353 = var1;
       this.field7352 = var2;
    }

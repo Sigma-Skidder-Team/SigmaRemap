@@ -54,7 +54,7 @@ public class RealmsCreateRealmScreen extends RealmsScreen {
                 this.mc.fontRenderer, this.width / 2 - 100, 65, 200, 20, (TextFieldWidget) null, new TranslationTextComponent("mco.configure.world.name")
         );
         this.addListener(this.field4169);
-        this.method5536(this.field4169);
+        this.setFocusedDefault(this.field4169);
         this.field4170 = new TextFieldWidget(
                 this.mc.fontRenderer, this.width / 2 - 100, 115, 200, 20, (TextFieldWidget) null, new TranslationTextComponent("mco.configure.world.description")
         );

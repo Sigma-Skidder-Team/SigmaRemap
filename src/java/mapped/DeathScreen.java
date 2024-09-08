@@ -74,7 +74,7 @@ public class DeathScreen extends Screen {
    }
 
    @Override
-   public boolean method2454() {
+   public boolean shouldCloseOnEsc() {
       return false;
    }
 
@@ -93,7 +93,7 @@ public class DeathScreen extends Screen {
       }
 
       this.mc.unloadWorld(new DirtMessageScreen(new TranslationTextComponent("menu.savingLevel")));
-      this.mc.displayGuiScreen(new MainMenuScreen());
+      this.mc.displayGuiScreen(new VanillaMainMenuScreen());
    }
 
    @Override
@@ -129,7 +129,7 @@ public class DeathScreen extends Screen {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (this.field4571 != null && var3 > 85.0 && var3 < 94.0) {
          Style var8 = this.method2490((int)var1);
          if (var8 != null && var8.getClickEvent() != null && var8.getClickEvent().getAction() == ClickEvent$Action.OPEN_URL) {
@@ -138,7 +138,7 @@ public class DeathScreen extends Screen {
          }
       }
 
-      return super.method1958(var1, var3, var5);
+      return super.mouseClicked(var1, var3, var5);
    }
 
    @Override

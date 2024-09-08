@@ -13,7 +13,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.Objects;
 
-public abstract class Widget extends AbstractGui implements Class1190, Class1152 {
+public abstract class Widget extends AbstractGui implements Class1190, IGuiEventListener2 {
    public static final ResourceLocation field6474 = new ResourceLocation("textures/gui/widgets.png");
    public int field6475;
    public int field6476;
@@ -126,7 +126,7 @@ public abstract class Widget extends AbstractGui implements Class1190, Class1152
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (this.active && this.field6483) {
          if (this.method5735(var5)) {
             boolean var8 = this.method5736(var1, var3);
@@ -144,7 +144,7 @@ public abstract class Widget extends AbstractGui implements Class1190, Class1152
    }
 
    @Override
-   public boolean method2565(double var1, double var3, int var5) {
+   public boolean mouseReleased(double var1, double var3, int var5) {
       if (!this.method5735(var5)) {
          return false;
       } else {
@@ -158,7 +158,7 @@ public abstract class Widget extends AbstractGui implements Class1190, Class1152
    }
 
    @Override
-   public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
+   public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
       if (!this.method5735(var5)) {
          return false;
       } else {
@@ -181,7 +181,7 @@ public abstract class Widget extends AbstractGui implements Class1190, Class1152
    }
 
    @Override
-   public boolean method5538(boolean var1) {
+   public boolean changeFocus(boolean var1) {
       if (this.active && this.field6483) {
          this.field6486 = !this.field6486;
          this.method5664(this.field6486);
@@ -195,7 +195,7 @@ public abstract class Widget extends AbstractGui implements Class1190, Class1152
    }
 
    @Override
-   public boolean method2485(double var1, double var3) {
+   public boolean isMouseOver(double var1, double var3) {
       return this.active
          && this.field6483
          && var1 >= (double)this.field6477

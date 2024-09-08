@@ -101,7 +101,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (!this.field6353.method8656()) {
          this.field6358.method6024(this);
          this.field6352.method6422(this.field6358.method6067().isPresent());

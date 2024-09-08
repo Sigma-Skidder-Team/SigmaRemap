@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import net.minecraft.client.Minecraft;
@@ -23,8 +23,8 @@ public class Class4276 extends Class4247 {
    public Class4356 field20730;
    private final List<Class9073> field20731 = new ArrayList<Class9073>();
 
-   public Class4276(Class4305 var1, String var2, int var3, int var4, Vector3i var5) {
-      super(var1, var2, var3 - 107, var4 + 10, 214, 170, Class6387.field27961, "", false);
+   public Class4276(IconPanel var1, String var2, int var3, int var4, Vector3i var5) {
+      super(var1, var2, var3 - 107, var4 + 10, 214, 170, ColorHelper.field27961, "", false);
       this.field20727 = var5;
       if (this.field20896 + this.field20898 <= Minecraft.getInstance().mainWindow.getHeight()) {
          this.field20896 += 10;
@@ -37,7 +37,7 @@ public class Class4276 extends Class4247 {
       this.method13292(true);
       this.method13300(false);
       UIButton var8;
-      this.method13230(
+      this.addToList(
          var8 = new UIButton(
             this,
             "addButton",
@@ -45,17 +45,17 @@ public class Class4276 extends Class4247 {
             this.field20898 - 60,
             ResourceRegistry.JelloLightFont25.method23942("Add"),
             50,
-            Class6387.field27961,
+            ColorHelper.field27961,
             "Add",
             ResourceRegistry.JelloLightFont25
          )
       );
-      var8.method13251((var1x, var2x) -> this.method13132(this.field20729.method13303(), this.method13130(), this.field20730.field21296));
-      this.method13230(this.field20729 = new Class4281(this, "Name", 20, 7, this.field20897 - 40, 60, Class4281.field20741, "My waypoint", "My waypoint"));
+      var8.doThis((var1x, var2x) -> this.method13132(this.field20729.method13303(), this.method13130(), this.field20730.field21296));
+      this.addToList(this.field20729 = new Class4281(this, "Name", 20, 7, this.field20897 - 40, 60, Class4281.field20741, "My waypoint", "My waypoint"));
       this.field20729.method13148();
       this.field20729.method13156(false);
-      this.method13230(this.field20730 = new Class4356(this, "badgeSelect", 0, 86));
-      this.method13230(
+      this.addToList(this.field20730 = new Class4356(this, "badgeSelect", 0, 86));
+      this.addToList(
          this.field20728 = new Class4281(
             this,
             "Cords",

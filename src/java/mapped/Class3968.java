@@ -36,7 +36,7 @@ public class Class3968 extends Class3758 {
                   Class9019.method33367((Class<? extends Class6355>)((Class6355)var10.method35009()).getClass());
                }
 
-               Class5989 var11 = Class5989.method18569(var6);
+               ViaVerList var11 = ViaVerList.method18569(var6);
                var0.method30558(Class4750.field22544, 0, var11.method18576());
             }
 

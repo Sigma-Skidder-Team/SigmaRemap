@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Class9133;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ImageUtil;
@@ -19,7 +19,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Class4286 extends Class4278 {
-   public static Class6387 field20771 = new Class6387(
+   public static ColorHelper field20771 = new ColorHelper(
       ClientColors.DEEP_TEAL.getColor,
       ClientColors.DEEP_TEAL.getColor,
       ClientColors.DEEP_TEAL.getColor,
@@ -49,7 +49,7 @@ public class Class4286 extends Class4278 {
       }
    }
 
-   public Class4286(Class4305 var1, int var2, int var3, int var4, int var5, Class9133 var6) {
+   public Class4286(IconPanel var1, int var2, int var3, int var4, int var5, Class9133 var6) {
       super(var1, var6.field41970, var2, var3, var4, var5, field20771, var6.field41971, false);
       URL var9 = null;
 
@@ -76,7 +76,7 @@ public class Class4286 extends Class4278 {
 
    public boolean method13157() {
       if (this.method13258() != null && this.method13258().method13258() != null) {
-         Class4305 var3 = this.method13258().method13258();
+         IconPanel var3 = this.method13258().method13258();
          if (var3 instanceof Class4339) {
             Class4339 var4 = (Class4339)var3;
             int var5 = var4.method13513() + var4.method13269() + this.method13269();

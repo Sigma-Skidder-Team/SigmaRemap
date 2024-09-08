@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.world.Timer;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
@@ -231,7 +231,7 @@ public class HypixelSpeed extends Module {
         if (var2 != 0) {
             if (var2 != 1) {
                 if (var2 != 2) {
-                    if (var2 == 3 && Math.abs(var1.method13994()) < 0.1 && Class8005.method27349() == Class5989.field26129.method18582()) {
+                    if (var2 == 3 && Math.abs(var1.method13994()) < 0.1 && JelloPortal.method27349() == ViaVerList.field26129.method18582()) {
                         var1.method13995(0.0300011120129438);
                     }
                 } else {

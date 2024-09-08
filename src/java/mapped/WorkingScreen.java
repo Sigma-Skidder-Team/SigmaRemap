@@ -17,7 +17,7 @@ public class WorkingScreen extends Screen implements Class1339 {
    }
 
    @Override
-   public boolean method2454() {
+   public boolean shouldCloseOnEsc() {
       return false;
    }
 

@@ -225,7 +225,7 @@ public class Class1148 extends Screen {
       this.method5503();
       this.field6254 = this.field6248.method3975();
       this.method5504();
-      this.method5536(this.field6255);
+      this.setFocusedDefault(this.field6255);
    }
 
    @Override

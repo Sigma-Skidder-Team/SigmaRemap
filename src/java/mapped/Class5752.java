@@ -1,15 +1,15 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.unmapped.Class8402;
+import com.mentalfrostbyte.jello.unmapped.CombatTracker;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import io.socket.emitter.Emitter;
 
 public class Class5752 implements Emitter.Listener {
-   public final Class8402 field25190;
+   public final CombatTracker field25190;
 
-   public Class5752(Class8402 var1) {
+   public Class5752(CombatTracker var1) {
       this.field25190 = var1;
    }
 

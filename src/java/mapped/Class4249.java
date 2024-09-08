@@ -1,16 +1,16 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 
 public class Class4249 extends Class4247 {
    private static String[] field20606;
    public Class189 field20607;
 
-   public Class4249(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class189 var7) {
+   public Class4249(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Class189 var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20607 = var7;
-      this.method13251((var1x, var2x) -> {
+      this.doThis((var1x, var2x) -> {
          this.field20607 = this.field20607.method577();
          this.method13037();
       });

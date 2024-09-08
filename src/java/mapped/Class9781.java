@@ -1,7 +1,7 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 
 public interface Class9781 {
-   void method38555(Class4305 var1, int var2);
+   void method38555(IconPanel var1, int var2);
 }

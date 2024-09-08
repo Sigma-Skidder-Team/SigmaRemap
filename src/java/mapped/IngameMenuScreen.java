@@ -118,13 +118,13 @@ public class IngameMenuScreen extends Screen {
 
             if (!var4x) {
                if (!var5x) {
-                  this.mc.displayGuiScreen(new MultiplayerScreen(new MainMenuScreen()));
+                  this.mc.displayGuiScreen(new MultiplayerScreen(new VanillaMainMenuScreen()));
                } else {
                   Class810 var6x = new Class810();
-                  var6x.method2209(new MainMenuScreen());
+                  var6x.method2209(new VanillaMainMenuScreen());
                }
             } else {
-               this.mc.displayGuiScreen(new MainMenuScreen());
+               this.mc.displayGuiScreen(new VanillaMainMenuScreen());
             }
          })
       );

@@ -26,7 +26,7 @@ public class BirdGameScreen extends Screen {
       int var5 = 14;
       int var6 = var3 * var5;
       int var7 = var4 * var5;
-      this.method13230(this.field21046 = new Class4299(this, "bird", (this.field20897 - var6) / 2, (this.method13269() - var7) / 2 + 30, var3, 27, var5));
+      this.addToList(this.field21046 = new Class4299(this, "bird", (this.field20897 - var6) / 2, (this.method13269() - var7) / 2 + 30, var3, 27, var5));
    }
 
    @Override

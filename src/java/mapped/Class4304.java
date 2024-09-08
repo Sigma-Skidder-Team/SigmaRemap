@@ -1,14 +1,14 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4304 extends Class4305 implements Class4347 {
+public class Class4304 extends IconPanel implements Class4347 {
    private static String[] field20875;
    public boolean field20876;
    public boolean field20877;
@@ -26,22 +26,22 @@ public class Class4304 extends Class4305 implements Class4347 {
    public int field20889 = 2;
    private final List<Class6751> field20890 = new ArrayList<Class6751>();
 
-   public Class4304(Class4305 var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
+   public Class4304(IconPanel var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field20876 = var7;
    }
 
-   public Class4304(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, boolean var8) {
+   public Class4304(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, boolean var8) {
       super(var1, var2, var3, var4, var5, var6, var7);
       this.field20876 = var8;
    }
 
-   public Class4304(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8, boolean var9) {
+   public Class4304(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, boolean var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8);
       this.field20876 = var9;
    }
 
-   public Class4304(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8, ClientResource var9, boolean var10) {
+   public Class4304(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9, boolean var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9);
       this.field20876 = var10;
    }

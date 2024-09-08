@@ -61,7 +61,7 @@ public abstract class Class1325 extends Screen {
       this.field7011.method5666(false);
       this.field7011.method5635("-");
       this.field4561.add(this.field7011);
-      this.method5536(this.field7010);
+      this.setFocusedDefault(this.field7010);
       this.field7010.method5654(true);
       this.field7016 = new Class6850(this.mc, this, this.field7010, this.fontRenderer, true, true, 0, 7, false, Integer.MIN_VALUE);
       this.field7016.method20829(true);
@@ -132,13 +132,13 @@ public abstract class Class1325 extends Screen {
    }
 
    @Override
-   public boolean method2649(double var1, double var3, double var5) {
-      return !this.field7016.method20831(var5) ? super.method2649(var1, var3, var5) : true;
+   public boolean mouseScrolled(double var1, double var3, double var5) {
+      return !this.field7016.method20831(var5) ? super.mouseScrolled(var1, var3, var5) : true;
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
-      return !this.field7016.method20832(var1, var3, var5) ? super.method1958(var1, var3, var5) : true;
+   public boolean mouseClicked(double var1, double var3, int var5) {
+      return !this.field7016.method20832(var1, var3, var5) ? super.mouseClicked(var1, var3, var5) : true;
    }
 
    @Override

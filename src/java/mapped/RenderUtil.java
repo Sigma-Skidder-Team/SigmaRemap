@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
@@ -53,11 +53,11 @@ public class RenderUtil {
       return new Rectangle(var13, var14, var9, var10);
    }
 
-   public static Rectangle method11414(Class4305 var0) {
+   public static Rectangle method11414(IconPanel var0) {
       return new Rectangle(var0.method13263(), var0.method13265(), var0.method13267(), var0.method13269());
    }
 
-   public static void method11415(Class4305 var0) {
+   public static void method11415(IconPanel var0) {
       method11421(var0.method13263(), var0.method13265(), var0.method13267() + var0.method13263(), var0.method13269() + var0.method13265(), true);
    }
 

@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class9133;
-import com.mentalfrostbyte.jello.unmapped.Class9578;
+import com.mentalfrostbyte.jello.unmapped.MusicPlayerTrumnaheil;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.sapher.youtubedl.YoutubeDL;
@@ -49,7 +49,7 @@ public class MusicManager {
     public ArrayList<Double> field32165 = new ArrayList<Double>();
     public SourceDataLine field32166;
     private boolean field32144 = false;
-    private Class9578 field32145;
+    private MusicPlayerTrumnaheil field32145;
     private int field32146 = 50;
     private long field32147 = -1L;
     private final Thread field32148 = new Thread();
@@ -562,9 +562,9 @@ public class MusicManager {
         }
     }
 
-    public void method24317(Class9578 var1, Class9133 var2) {
+    public void method24317(MusicPlayerTrumnaheil var1, Class9133 var2) {
         if (var1 == null) {
-            var1 = new Class9578("temp", "temp", Class2125.field13868);
+            var1 = new MusicPlayerTrumnaheil("temp", "temp", Class2125.field13868);
             var1.field44778.add(var2);
         }
 

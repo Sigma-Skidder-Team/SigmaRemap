@@ -324,9 +324,9 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.mainWindow.setLogOnGlError();
       this.updateWindowSize();
       if (s != null) {
-         this.displayGuiScreen(new ConnectingScreen(new MainMenuScreen(), this, s, i));
+         this.displayGuiScreen(new ConnectingScreen(new VanillaMainMenuScreen(), this, s, i));
       } else {
-         this.displayGuiScreen(new MainMenuScreen(true));
+         this.displayGuiScreen(new VanillaMainMenuScreen(true));
       }
 
       ResourceLoadProgressGui.loadLogoTexture(this);
@@ -645,7 +645,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       }
 
       if (guiScreenIn == null && this.world == null) {
-         guiScreenIn = new MainMenuScreen();
+         guiScreenIn = new VanillaMainMenuScreen();
       } else if (guiScreenIn == null && this.player.getShouldBeDead()) {
          if (this.player.isShowDeathScreen()) {
             guiScreenIn = new DeathScreen(null, this.world.getWorldInfo().isHardcore());
@@ -654,7 +654,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          }
       }
 
-      if (guiScreenIn instanceof MainMenuScreen || guiScreenIn instanceof MultiplayerScreen) {
+      if (guiScreenIn instanceof VanillaMainMenuScreen || guiScreenIn instanceof MultiplayerScreen) {
          this.gameSettings.showDebugInfo = false;
          this.ingameGUI.getChatGUI().clearChatMessages(true);
       }

@@ -21,7 +21,7 @@ public class Class1289 extends Class1286<Class1168> {
 
    @Override
    public boolean method6057() {
-      return this.field6853.method5533() == this;
+      return this.field6853.getListener() == this;
    }
 
    @Override
@@ -35,7 +35,7 @@ public class Class1289 extends Class1286<Class1168> {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (var5 == 0) {
          if (var1 < (double)this.method6048() && var3 >= (double)this.field6787 && var3 <= (double)this.field6788) {
             int var8 = this.field6785 / 2 - 92;
@@ -96,7 +96,7 @@ public class Class1289 extends Class1286<Class1168> {
 
    public void method6024(Class1168 var1) {
       super.method6024(var1);
-      Class807.method2192(this.field6853, this.method2468().indexOf(var1));
+      Class807.method2192(this.field6853, this.getEventListeners().indexOf(var1));
       Class807.method2195(this.field6853);
    }
 }

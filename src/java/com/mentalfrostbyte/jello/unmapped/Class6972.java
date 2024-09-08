@@ -21,19 +21,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Class6972 {
-    public static Class7869[] method21516(String var0) {
+    public static YoutubeTrumbNail[] method21516(String var0) {
         return method21520(doSomethingWithAnURL("https://www.google.com/search?client=safari&num=21&gbv=1&tbm=vid&oq=&aqs=&q=site%3Ayoutube.com+" + method21522(var0)));
     }
 
-    public static Class7869[] method21517(String var0) {
+    public static YoutubeTrumbNail[] method21517(String var0) {
         return method21519(doSomethingWithAnURL("https://www.youtube.com/channel/" + var0 + "/videos?disable_polymer=1"));
     }
 
-    public static Class7869[] method21518(String var0) {
+    public static YoutubeTrumbNail[] method21518(String var0) {
         return method21519(doSomethingWithAnURL("https://www.youtube.com/playlist?list=" + var0 + "&disable_polymer=1"));
     }
 
-    public static Class7869[] method21519(String var0) {
+    public static YoutubeTrumbNail[] method21519(String var0) {
         if (var0.startsWith("[")) {
             try {
                 JSONArray var3 = new JSONArray(var0);
@@ -42,26 +42,26 @@ public class Class6972 {
             }
         }
 
-        List<Class7869> var10 = new ArrayList<>();
+        List<YoutubeTrumbNail> var10 = new ArrayList<>();
         String var4 = "r\":\\{\"videoId\":\"(.{11})\"(.*?)\"text\":\"(.{1,100})\"\\}]";
         Pattern var5 = Pattern.compile("r\":\\{\"videoId\":\"(.{11})\"(.*?)\"text\":\"(.{1,100})\"\\}]", 8);
         Matcher var6 = var5.matcher(var0.replace("\n", "").replace("\r", ""));
 
         label36:
         while (var6.find()) {
-            for (Class7869 var8 : var10) {
+            for (YoutubeTrumbNail var8 : var10) {
                 if (var8.field33683.equals(var6.group(1))) {
                     continue label36;
                 }
             }
 
-            var10.add(new Class7869(var6.group(1), method21521(StringEscapeUtils.unescapeJava(var6.group(3)))));
+            var10.add(new YoutubeTrumbNail(var6.group(1), method21521(StringEscapeUtils.unescapeJava(var6.group(3)))));
         }
 
-        return var10.toArray(new Class7869[0]);
+        return var10.toArray(new YoutubeTrumbNail[0]);
     }
 
-    public static Class7869[] method21520(String var0) {
+    public static YoutubeTrumbNail[] method21520(String var0) {
         if (var0.startsWith("[")) {
             try {
                 JSONArray var3 = new JSONArray(var0);
@@ -70,7 +70,7 @@ public class Class6972 {
             }
         }
 
-        List<Class7869> var10 = new ArrayList<>();
+        List<YoutubeTrumbNail> var10 = new ArrayList<>();
         String var4 = "<a(.*?)watch%3Fv%3D(.{11})[\\\"&](.*?)><div (.*?)>(.{1,100}) - YouTube<\\/div><\\/h3>";
         Pattern var5 = Pattern.compile("<a(.*?)watch%3Fv%3D(.{11})[\\\"&](.*?)><div (.*?)>(.{1,100}) - YouTube<\\/div><\\/h3>", 8);
         Matcher var6 = var5.matcher(var0.replace("\n", "").replace("\r", ""));
@@ -78,17 +78,17 @@ public class Class6972 {
         label62:
         while (var6.find()) {
             if (!var6.group(5).contains("</") && !var6.group(5).equals(" ") && var6.group(5).length() != 0 && !var6.group(1).contains("play-all")) {
-                for (Class7869 var8 : var10) {
+                for (YoutubeTrumbNail var8 : var10) {
                     if (var8.field33683.equals(var6.group(2))) {
                         continue label62;
                     }
                 }
 
-                var10.add(new Class7869(var6.group(2), method21521(var6.group(5).replaceAll("<(.*?)>", ""))));
+                var10.add(new YoutubeTrumbNail(var6.group(2), method21521(var6.group(5).replaceAll("<(.*?)>", ""))));
             }
         }
 
-        return var10.toArray(new Class7869[0]);
+        return var10.toArray(new YoutubeTrumbNail[0]);
     }
 
     private static String method21521(String var0) {

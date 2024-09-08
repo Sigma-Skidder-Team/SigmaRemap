@@ -16,7 +16,7 @@ import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class TextFieldWidget extends Widget implements Class1190, Class1152 {
+public class TextFieldWidget extends Widget implements Class1190, IGuiEventListener2 {
    private final FontRenderer field6418;
    private String field6419 = "";
    private int field6420 = 32;
@@ -325,7 +325,7 @@ public class TextFieldWidget extends Widget implements Class1190, Class1152 {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (!this.method5670()) {
          return false;
       } else {
@@ -487,12 +487,12 @@ public class TextFieldWidget extends Widget implements Class1190, Class1152 {
    }
 
    @Override
-   public boolean method5538(boolean var1) {
-      return this.field6483 && this.field6424 ? super.method5538(var1) : false;
+   public boolean changeFocus(boolean var1) {
+      return this.field6483 && this.field6424 ? super.changeFocus(var1) : false;
    }
 
    @Override
-   public boolean method2485(double var1, double var3) {
+   public boolean isMouseOver(double var1, double var3) {
       return this.field6483
          && var1 >= (double)this.field6477
          && var1 < (double)(this.field6477 + this.field6475)

@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import net.minecraft.client.Minecraft;
@@ -21,8 +21,8 @@ public class Class4375 extends Class4247 {
    private final List<Class6601> field21379 = new ArrayList<Class6601>();
    private final List<Class9342> field21380 = new ArrayList<Class9342>();
 
-   public Class4375(Class4305 var1, String var2, int var3, int var4, int var5, String var6) {
-      super(var1, var2, var3 - 125, var4, 250, 330, Class6387.field27961, var6, false);
+   public Class4375(IconPanel var1, String var2, int var3, int var4, int var5, String var6) {
+      super(var1, var2, var3 - 125, var4, 250, 330, ColorHelper.field27961, var6, false);
       if (this.field20896 + this.field20898 <= Minecraft.getInstance().mainWindow.getHeight()) {
          this.field20896 += 10;
       } else {
@@ -36,7 +36,7 @@ public class Class4375 extends Class4247 {
       this.method13300(false);
       this.method13712();
       UIButton var9;
-      this.method13230(
+      this.addToList(
          var9 = new UIButton(
             this,
             "addButton",
@@ -44,12 +44,12 @@ public class Class4375 extends Class4247 {
             this.field20898 - 70,
             ResourceRegistry.JelloLightFont25.method23942("Add"),
             70,
-            Class6387.field27961,
+            ColorHelper.field27961,
             "Add",
             ResourceRegistry.JelloLightFont25
          )
       );
-      var9.method13251((var1x, var2x) -> this.method13714());
+      var9.doThis((var1x, var2x) -> this.method13714());
    }
 
    public void method13711() {
@@ -60,7 +60,7 @@ public class Class4375 extends Class4247 {
       int var3 = 1;
       ArrayList var4 = new ArrayList();
 
-      for (Class4305 var6 : this.method13241()) {
+      for (IconPanel var6 : this.method13241()) {
          if (var6.method13269() != 0) {
             var4.add(var6.method13257());
          }
@@ -70,11 +70,11 @@ public class Class4375 extends Class4247 {
       this.method13145(true);
       this.method13238();
 
-      for (Class6984 var10 : Class4309.method13328()) {
+      for (Class6984 var10 : JelloKeyboardScreen.method13328()) {
          int var7 = var10.method21599();
          if (var7 == this.field21376) {
             Class4253 var8;
-            this.method13230(var8 = new Class4253(this, var10.method21596(), 0, 20 + 55 * var3, this.field20897, 55, var10, var3++));
+            this.addToList(var8 = new Class4253(this, var10.method21596(), 0, 20 + 55 * var3, this.field20897, 55, var10, var3++));
             var8.method13036(var2 -> {
                var10.method21598(0);
                this.method13037();
@@ -90,7 +90,7 @@ public class Class4375 extends Class4247 {
    public void method13028(int var1, int var2) {
       Map<Integer, Class4253> var5 = new HashMap();
 
-      for (Class4305 var7 : this.method13241()) {
+      for (IconPanel var7 : this.method13241()) {
          if (var7 instanceof Class4253) {
              var5.put(((Class4253) var7).field20626, (Class4253) var7);
          }

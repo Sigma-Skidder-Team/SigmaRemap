@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,12 +9,12 @@ public class Class4270 extends Class4247 {
    private List<Class4240> field20695 = new ArrayList<Class4240>();
    public int field20696;
 
-   public Class4270(Class4305 var1, String var2, int var3, int var4) {
+   public Class4270(IconPanel var1, String var2, int var3, int var4) {
       super(var1, var2, var3, var4, 1060, 357, false);
 
       for (Class2287 var10 : Class2287.values()) {
          Class4268 var11;
-         this.method13230(
+         this.addToList(
             var11 = new Class4268(
                this,
                "KEY_" + var10.field15204 + this.method13241().size(),
@@ -26,7 +26,7 @@ public class Class4270 extends Class4247 {
                var10.field15204
             )
          );
-         var11.method13251((var2x, var3x) -> {
+         var11.doThis((var2x, var3x) -> {
             this.field20696 = var11.field20690;
             this.method13037();
          });
@@ -61,7 +61,7 @@ public class Class4270 extends Class4247 {
    }
 
    public void method13104() {
-      for (Class4305 var4 : this.method13241()) {
+      for (IconPanel var4 : this.method13241()) {
          if (var4 instanceof Class4268) {
             Class4268 var5 = (Class4268)var4;
             var5.method13102();

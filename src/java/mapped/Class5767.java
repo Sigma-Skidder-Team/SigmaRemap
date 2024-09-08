@@ -1,14 +1,14 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class8402;
+import com.mentalfrostbyte.jello.unmapped.CombatTracker;
 import io.socket.emitter.Emitter;
 import totalcross.json.JSONObject;
 
 public class Class5767 implements Emitter.Listener {
    private static String[] field25223;
-   public final Class8402 field25224;
+   public final CombatTracker field25224;
 
-   public Class5767(Class8402 var1) {
+   public Class5767(CombatTracker var1) {
       this.field25224 = var1;
    }
 

@@ -304,9 +304,9 @@ public class CreativeScreen extends Class860<Class5820> {
    }
 
    @Override
-   public boolean method2644(int var1, int var2, int var3) {
+   public boolean keyReleased(int var1, int var2, int var3) {
       this.field4783 = false;
-      return super.method2644(var1, var2, var3);
+      return super.keyReleased(var1, var2, var3);
    }
 
    private void method2645() {
@@ -361,7 +361,7 @@ public class CreativeScreen extends Class860<Class5820> {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (var5 == 0) {
          double var8 = var1 - (double)this.field4734;
          double var10 = var3 - (double)this.field4735;
@@ -378,11 +378,11 @@ public class CreativeScreen extends Class860<Class5820> {
          }
       }
 
-      return super.method1958(var1, var3, var5);
+      return super.mouseClicked(var1, var3, var5);
    }
 
    @Override
-   public boolean method2565(double var1, double var3, int var5) {
+   public boolean mouseReleased(double var1, double var3, int var5) {
       if (var5 == 0) {
          double var8 = var1 - (double)this.field4734;
          double var10 = var3 - (double)this.field4735;
@@ -396,7 +396,7 @@ public class CreativeScreen extends Class860<Class5820> {
          }
       }
 
-      return super.method2565(var1, var3, var5);
+      return super.mouseReleased(var1, var3, var5);
    }
 
    private boolean method2647() {
@@ -508,7 +508,7 @@ public class CreativeScreen extends Class860<Class5820> {
    }
 
    @Override
-   public boolean method2649(double var1, double var3, double var5) {
+   public boolean mouseScrolled(double var1, double var3, double var5) {
       if (this.method2647()) {
          int var9 = (this.field4727.field25498.size() + 9 - 1) / 9 - 5;
          this.field4777 = (float)((double)this.field4777 - var5 / (double)var9);
@@ -538,9 +538,9 @@ public class CreativeScreen extends Class860<Class5820> {
    }
 
    @Override
-   public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
+   public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
       if (!this.field4778) {
-         return super.method2516(var1, var3, var5, var6, var8);
+         return super.mouseDragged(var1, var3, var5, var6, var8);
       } else {
          int var12 = this.field4735 + 18;
          int var13 = var12 + 112;

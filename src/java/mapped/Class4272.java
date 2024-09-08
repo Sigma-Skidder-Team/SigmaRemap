@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
@@ -15,18 +15,18 @@ public class Class4272 extends Class4247 {
    public static Class8233 field20706;
    private Class4285 field20707;
 
-   public Class4272(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
-      super(var1, var2, var3, var4, var5, 0, Class6387.field27961, false);
+   public Class4272(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+      super(var1, var2, var3, var4, var5, 0, ColorHelper.field27961, false);
       UIButton var9;
-      this.method13230(
-         var9 = new UIButton(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.method23942("Blank"), 30, Class6387.field27961, "Blank", ResourceRegistry.JelloLightFont20)
+      this.addToList(
+         var9 = new UIButton(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.method23942("Blank"), 30, ColorHelper.field27961, "Blank", ResourceRegistry.JelloLightFont20)
       );
-      var9.method13251((var1x, var2x) -> {
-         Class4357 var5x = (Class4357)this.method13258();
+      var9.doThis((var1x, var2x) -> {
+         ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.method13258();
          var5x.method13612();
       });
       UIButton var10;
-      this.method13230(
+      this.addToList(
          var10 = new UIButton(
             this,
             "dupeButton",
@@ -34,31 +34,31 @@ public class Class4272 extends Class4247 {
             0,
             ResourceRegistry.JelloLightFont20.method23942("Duplicate"),
             30,
-            Class6387.field27961,
+            ColorHelper.field27961,
             "Duplicate",
             ResourceRegistry.JelloLightFont20
          )
       );
-      var10.method13251((var1x, var2x) -> {
-         Class4357 var5x = (Class4357)this.method13258();
+      var10.doThis((var1x, var2x) -> {
+         ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.method13258();
          var5x.method13610();
       });
-      this.method13230(this.field20707 = new Class4285(this, "loading", (var5 - 30) / 2, 100, 30, 30));
-      this.method13230(this.field20705 = new Class4339(this, "defaultProfiles", 0, 40, var5, var6 - 40));
+      this.addToList(this.field20707 = new Class4285(this, "loading", (var5 - 30) / 2, 100, 30, 30));
+      this.addToList(this.field20705 = new Class4339(this, "defaultProfiles", 0, 40, var5, var6 - 40));
       field20706 = new Class8233(
          var2x -> {
             this.field20707.method13288(false);
-            Class4357 var5x = (Class4357)this.method13258();
+            ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.method13258();
 
             for (String var7 : var2x) {
                Class4240 var8;
                this.field20705
-                  .method13230(
+                  .addToList(
                      var8 = new Class4240(
-                        this.field20705, "p_" + var7, 0, 0, var5, 30, new Class6387(-723724, -2039584, 0, -14671840), var7, ResourceRegistry.JelloLightFont18
+                        this.field20705, "p_" + var7, 0, 0, var5, 30, new ColorHelper(-723724, -2039584, 0, -14671840), var7, ResourceRegistry.JelloLightFont18
                      )
                   );
-               var8.method13251((var3x, var4x) -> {
+               var8.doThis((var3x, var4x) -> {
                   this.method13118(true);
                   new Thread(() -> {
                      Client.getInstance();

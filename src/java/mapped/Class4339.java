@@ -1,40 +1,40 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 
 public class Class4339 extends Class4304 {
    private boolean field21201;
    private boolean field21202;
    private boolean field21203 = false;
-   public Class4305 field21204;
+   public IconPanel field21204;
    public Class4292 field21205;
    private boolean field21206 = true;
    public int field21207 = 35;
    public boolean field21208 = false;
 
-   public Class4339(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4339(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.method13511();
    }
 
-   public Class4339(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7) {
+   public Class4339(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
       super(var1, var2, var3, var4, var5, var6, var7, false);
       this.method13511();
    }
 
-   public Class4339(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8) {
+   public Class4339(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.method13511();
    }
 
-   public Class4339(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8, ClientResource var9) {
+   public Class4339(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
       this.method13511();
    }
 
    private final void method13511() {
-      this.method13241().add(this.field21204 = new Class4305(this, "content", 0, 0, this.field20897, this.field20898));
+      this.method13241().add(this.field21204 = new IconPanel(this, "content", 0, 0, this.field20897, this.field20898));
       this.field21204.method13261(new Class6665());
       this.method13241().add(this.field21205 = new Class4292(this, 11));
       this.field21205.method13292(true);
@@ -58,7 +58,7 @@ public class Class4339 extends Class4304 {
          super.method13028(var1, var2);
          this.field21204.method13266(-1 * this.field21205.method13162());
 
-         for (Class4305 var6 : this.method13517().method13241()) {
+         for (IconPanel var6 : this.method13517().method13241()) {
             for (Class6664 var8 : var6.method13260()) {
                var8.method20320(var6, this);
             }
@@ -90,12 +90,12 @@ public class Class4339 extends Class4304 {
    }
 
    @Override
-   public void method13230(Class4305 var1) {
-      this.field21204.method13230(var1);
+   public void addToList(IconPanel var1) {
+      this.field21204.addToList(var1);
    }
 
    @Override
-   public boolean method13239(Class4305 var1) {
+   public boolean method13239(IconPanel var1) {
       return this.field21204.method13239(var1);
    }
 
@@ -104,7 +104,7 @@ public class Class4339 extends Class4304 {
       return this.field21204.method13231(var1);
    }
 
-   public Class4305 method13517() {
+   public IconPanel method13517() {
       return this.field21204;
    }
 

@@ -26,8 +26,8 @@ public class Class838 extends Screen {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
-      boolean var8 = super.method1958(var1, var3, var5);
+   public boolean mouseClicked(double var1, double var3, int var5) {
+      boolean var8 = super.mouseClicked(var1, var3, var5);
       this.field4631 = true;
       Widget var9 = method2566((int)var1, (int)var3, this.field4629);
       if (var9 != null && var9.active) {
@@ -53,19 +53,19 @@ public class Class838 extends Screen {
    }
 
    @Override
-   public boolean method2565(double var1, double var3, int var5) {
+   public boolean mouseReleased(double var1, double var3, int var5) {
       if (!this.field4631) {
          return false;
       } else {
          this.field4631 = false;
-         this.method5532(false);
-         return this.method5533() != null && this.method5533().method2565(var1, var3, var5) ? true : super.method2565(var1, var3, var5);
+         this.setDragging(false);
+         return this.getListener() != null && this.getListener().mouseReleased(var1, var3, var5) ? true : super.mouseReleased(var1, var3, var5);
       }
    }
 
    @Override
-   public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
-      return this.field4631 ? super.method2516(var1, var3, var5, var6, var8) : false;
+   public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
+      return this.field4631 ? super.mouseDragged(var1, var3, var5, var6, var8) : false;
    }
 
    public static Widget method2566(int var0, int var1, List<Widget> var2) {

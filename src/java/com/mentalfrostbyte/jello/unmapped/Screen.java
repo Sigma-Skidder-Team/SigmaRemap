@@ -4,7 +4,7 @@ import totalcross.json.JSONObject;
 import net.minecraft.client.Minecraft;
 
 public abstract class Screen
-        extends Class4305 {
+        extends IconPanel {
     public static int field20939 = 0;
 
     public Screen(String var1) {

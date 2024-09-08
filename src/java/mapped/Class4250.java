@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -15,11 +15,11 @@ public class Class4250 extends Class4247 {
    public int field20610 = 30;
    private Animation field20611 = new Animation(300, 300);
 
-   public Class4250(Class4305 var1, String var2, int var3, int var4, int var5, int var6, int var7, float var8, float var9, float var10, float var11) {
+   public Class4250(IconPanel var1, String var2, int var3, int var4, int var5, int var6, int var7, float var8, float var9, float var10, float var11) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20610 = var7;
-      this.method13230(this.field20608 = new Class4279(this, 10, "pos1"));
-      this.method13230(this.field20609 = new Class4279(this, 10, "pos2"));
+      this.addToList(this.field20608 = new Class4279(this, 10, "pos1"));
+      this.addToList(this.field20609 = new Class4279(this, 10, "pos2"));
       this.method13249((var1x, var2x) -> this.method13037());
       this.method13041(var8, var9, var10, var11);
    }

@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.item.AutoArmor;
 import com.mentalfrostbyte.jello.module.impl.item.AutoMLG;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
@@ -492,7 +492,7 @@ public class InvManager extends PremiumModule {
     }
 
     private void method16446(boolean var1) {
-        if (var1 && this.field23659 && !(mc.currentScreen instanceof InventoryScreen) && Class8005.method27349() <= Class5989.field26136.method18582()) {
+        if (var1 && this.field23659 && !(mc.currentScreen instanceof InventoryScreen) && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
             mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
             this.field23659 = false;
         }

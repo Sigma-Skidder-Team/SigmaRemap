@@ -21,11 +21,11 @@ public class Class1290 extends Class1286<Class1166> {
 
    @Override
    public boolean method6057() {
-      return this.field6854.method5533() == this;
+      return this.field6854.getListener() == this;
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (var5 == 0 && var1 < (double)this.method6048() && var3 >= (double)this.field6787 && var3 <= (double)this.field6788) {
          int var8 = RealmGUI.method2425(this.field6854);
          int var9 = RealmGUI.method2425(this.field6854) + RealmGUI.method2427(this.field6854);
@@ -38,7 +38,7 @@ public class Class1290 extends Class1286<Class1166> {
 
          return true;
       } else {
-         return super.method1958(var1, var3, var5);
+         return super.mouseClicked(var1, var3, var5);
       }
    }
 
@@ -74,7 +74,7 @@ public class Class1290 extends Class1286<Class1166> {
 
    public void method6024(Class1166 var1) {
       super.method6024(var1);
-      RealmGUI.method2439(this.field6854, this.method2468().indexOf(var1));
+      RealmGUI.method2439(this.field6854, this.getEventListeners().indexOf(var1));
       RealmGUI.method2440(this.field6854);
    }
 

@@ -25,50 +25,50 @@ public class GuiSwitch extends Screen {
         int var6 = 61;
         int var7 = (this.method13267() - var3) / 2;
         int var8 = (this.method13269() - var5) / 2 + 14;
-        Class4242 var9 = null;
-        Class4242 var10 = null;
-        Class4242 var11 = null;
-        this.method13230(var9 = new Class4242(this, "pb", var7, var8, var3, var5, ResourcesDecrypter.noaddonsPNG));
-        this.method13230(var11 = new Class4242(this, "pb2", var7, var5 + var8 + 9, var4, var6, ResourcesDecrypter.sigmaLigmaPNG));
-        this.method13230(var10 = new Class4242(this, "pb3", var7 + var4 + 9, var5 + var8 + 9, var4, var6, ResourcesDecrypter.jelloPNG));
-        var9.method13251((var0, var1) -> {
+        RectangleFaded var9 = null;
+        RectangleFaded var10 = null;
+        RectangleFaded var11 = null;
+        this.addToList(var9 = new RectangleFaded(this, "pb", var7, var8, var3, var5, ResourcesDecrypter.noaddonsPNG));
+        this.addToList(var11 = new RectangleFaded(this, "pb2", var7, var5 + var8 + 9, var4, var6, ResourcesDecrypter.sigmaLigmaPNG));
+        this.addToList(var10 = new RectangleFaded(this, "pb3", var7 + var4 + 9, var5 + var8 + 9, var4, var6, ResourcesDecrypter.jelloPNG));
+        var9.doThis((var0, var1) -> {
             Client.getInstance().setupClient(ClientMode.NOADDONS);
-            Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
+            Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen());
         });
-        var10.method13251((var0, var1) -> {
+        var10.doThis((var0, var1) -> {
             Client.getInstance().setupClient(ClientMode.JELLO);
-            Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
+            Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen());
         });
-        var11.method13251((var0, var1) -> {
+        var11.doThis((var0, var1) -> {
             Client.getInstance().setupClient(ClientMode.CLASSIC);
-            Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
+            Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen());
         });
-        Class4305 var12 = new Class4305(this, "socialbtns", (this.method13267() - 174) / 2, this.method13269() - 70, 174, 34);
-        Class4291 var13;
-        var12.method13230(var13 = new Class4291(var12, "youtube", 0, 0, 65, 34, ResourcesDecrypter.youtubePNG));
-        Class4291 var14;
-        var12.method13230(var14 = new Class4291(var12, "reddit", 85, 0, 36, 34, ResourcesDecrypter.redditPNG));
-        Class4291 var15;
-        var12.method13230(var15 = new Class4291(var12, "guilded", 142, 0, 32, 34, ResourcesDecrypter.guildedPNG));
-        var13.method13251((var0, var1) -> {
+        IconPanel var12 = new IconPanel(this, "socialbtns", (this.method13267() - 174) / 2, this.method13269() - 70, 174, 34);
+        ImageQ var13;
+        var12.addToList(var13 = new ImageQ(var12, "youtube", 0, 0, 65, 34, ResourcesDecrypter.youtubePNG));
+        ImageQ var14;
+        var12.addToList(var14 = new ImageQ(var12, "reddit", 85, 0, 36, 34, ResourcesDecrypter.redditPNG));
+        ImageQ var15;
+        var12.addToList(var15 = new ImageQ(var12, "guilded", 142, 0, 32, 34, ResourcesDecrypter.guildedPNG));
+        var13.doThis((var0, var1) -> {
             try {
                 Util.getOSType().openURL(new URL("https://www.youtube.com/@sigmaclient2950"));
             } catch (MalformedURLException var5x) {
             }
         });
-        var14.method13251((var0, var1) -> {
+        var14.doThis((var0, var1) -> {
             try {
                 Util.getOSType().openURL(new URL("https://www.reddit.com/r/SigmaClient/"));
             } catch (MalformedURLException var5x) {
             }
         });
-        var15.method13251((var0, var1) -> {
+        var15.doThis((var0, var1) -> {
             try {
                 Util.getOSType().openURL(new URL("https://discord.gg/KBGX8FTAXa"));
             } catch (MalformedURLException var5x) {
             }
         });
-        this.method13230(var12);
+        this.addToList(var12);
     }
 
     @Override
@@ -128,7 +128,7 @@ public class GuiSwitch extends Screen {
     public void keyPressed(int var1) {
         super.keyPressed(var1);
         if (var1 == 256) {
-            Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
+            Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen());
         }
     }
 }

@@ -177,7 +177,7 @@ public class EditWorldScreen extends Screen {
       this.field7034.method5635(var5);
       this.field7034.method5631(var1 -> this.field7032.active = !var1.trim().isEmpty());
       this.field4561.add(this.field7034);
-      this.method5536(this.field7034);
+      this.setFocusedDefault(this.field7034);
    }
 
    @Override

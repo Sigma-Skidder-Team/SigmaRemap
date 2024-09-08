@@ -42,8 +42,8 @@ public class Class1214 extends Class1213 {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
-      if (!super.method1958(var1, var3, var5)) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
+      if (!super.mouseClicked(var1, var3, var5)) {
          return false;
       } else {
          this.field6527 = (float)(var1 - (double)(this.field6477 + 4)) / (float)(this.field6475 - 8);
@@ -56,7 +56,7 @@ public class Class1214 extends Class1213 {
    }
 
    @Override
-   public boolean method2565(double var1, double var3, int var5) {
+   public boolean mouseReleased(double var1, double var3, int var5) {
       this.field6528 = false;
       return true;
    }

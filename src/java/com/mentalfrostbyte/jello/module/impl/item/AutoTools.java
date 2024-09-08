@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import mapped.*;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;
@@ -65,7 +65,7 @@ public class AutoTools extends Module {
                         return;
                     }
 
-                    if (var6.equals("FakeInv") && Class8005.method27349() <= Class5989.field26136.method18582()) {
+                    if (var6.equals("FakeInv") && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
                         mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 

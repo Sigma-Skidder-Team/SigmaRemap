@@ -24,7 +24,7 @@ public class Class1285 extends Class1274<Class1174> {
       if (var1 != null) {
          Class9537 var4 = Class1324.method6302(this.field6849)
             .method38129()
-            .get(Class1324.method6302(this.field6849).method38129().size() - this.method2468().indexOf(var1) - 1);
+            .get(Class1324.method6302(this.field6849).method38129().size() - this.getEventListeners().indexOf(var1) - 1);
          Item var5 = var4.method36906().getBlock().method11581();
          if (var5 != Items.field37222) {
             NarratorChatListener.INSTANCE.say(new TranslationTextComponent("narrator.select", var5.method11731(new ItemStack(var5))).getString());
@@ -36,7 +36,7 @@ public class Class1285 extends Class1274<Class1174> {
 
    @Override
    public boolean method6057() {
-      return this.field6849.method5533() == this;
+      return this.field6849.getListener() == this;
    }
 
    @Override
@@ -45,14 +45,14 @@ public class Class1285 extends Class1274<Class1174> {
    }
 
    public void method6106() {
-      int var3 = this.method2468().indexOf(this.method6023());
+      int var3 = this.getEventListeners().indexOf(this.method6023());
       this.method6027();
 
       for (int var4 = 0; var4 < Class1324.method6302(this.field6849).method38129().size(); var4++) {
          this.method6030(new Class1174(this));
       }
 
-      List var5 = this.method2468();
+      List var5 = this.getEventListeners();
       if (var3 >= 0 && var3 < var5.size()) {
          this.method6024((Class1174)var5.get(var3));
       }

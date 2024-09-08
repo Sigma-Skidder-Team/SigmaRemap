@@ -2,14 +2,14 @@ package mapped;
 
 import java.util.Objects;
 
-public abstract class Class1154<E extends Class1154<E>> implements Class1152 {
+public abstract class Class1154<E extends Class1154<E>> implements IGuiEventListener2 {
    /** @deprecated */
    private Class1273<E> field6295;
 
    public abstract void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10);
 
    @Override
-   public boolean method2485(double var1, double var3) {
+   public boolean isMouseOver(double var1, double var3) {
       return Objects.equals(this.field6295.method6033(var1, var3), this);
    }
 

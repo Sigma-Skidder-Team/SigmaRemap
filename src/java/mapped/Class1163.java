@@ -19,7 +19,7 @@ public class Class1163 extends Class1161 {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       RealmsMainScreen.method2111(this.field6319, true);
       return true;
    }

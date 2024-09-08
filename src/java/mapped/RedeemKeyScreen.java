@@ -3,25 +3,25 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.network.Class9507;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import totalcross.json.JSONArray;
 
-public class RedeemKeyScreen extends Class4305 {
+public class RedeemKeyScreen extends IconPanel {
    public String field21135 = "";
    public Animation field21136 = new Animation(380, 200, Direction.BACKWARDS);
    private static JSONArray field21137;
    private Class4281 field21138;
 
-   public RedeemKeyScreen(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public RedeemKeyScreen(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.method13300(false);
       Class4281 var9;
-      this.method13230(var9 = new Class4281(this, "redeemBox", 100, 200, 350, 50, Class4281.field20742, "", "Premium Code"));
+      this.addToList(var9 = new Class4281(this, "redeemBox", 100, 200, 350, 50, Class4281.field20742, "", "Premium Code"));
       UIButton var10;
-      this.method13230(
+      this.addToList(
          var10 = new UIButton(
             this,
             "redeembtn",
@@ -29,15 +29,15 @@ public class RedeemKeyScreen extends Class4305 {
             290,
             80,
             30,
-            new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor),
+            new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor),
             "Redeem",
             ResourceRegistry.JelloLightFont20
          )
       );
-      this.method13230(this.field21138 = new Class4281(this, "captcha", 195, 290, 75, 35, Class4281.field20742, "", "Captcha"));
+      this.addToList(this.field21138 = new Class4281(this, "captcha", 195, 290, 75, 35, Class4281.field20742, "", "Captcha"));
       this.field21138.method13306(ResourceRegistry.JelloLightFont18);
       this.field21138.method13288(false);
-      var10.method13251((var2x, var3x) -> new Thread(() -> {
+      var10.doThis((var2x, var3x) -> new Thread(() -> {
             Class9507 var4x = Client.getInstance().getNetworkManager().method30452();
             if (var4x != null) {
                var4x.method36706(this.field21138.method13303());
@@ -49,7 +49,7 @@ public class RedeemKeyScreen extends Class4305 {
             }
 
             if (Client.getInstance().getNetworkManager().isPremium()) {
-               this.method13222(() -> ((Class4310)this.method13258()).method13340());
+               this.method13222(() -> ((JelloMainMenuScreen)this.method13258()).method13340());
             }
          }).start());
    }

@@ -80,9 +80,9 @@ public class Class817 extends RealmsScreen {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (!this.field4452) {
-         return super.method1958(var1, var3, var5);
+         return super.mouseClicked(var1, var3, var5);
       } else {
          this.mc.keyboardListener.method36350("https://aka.ms/MinecraftRealmsTerms");
          Util.getOSType().method8181("https://aka.ms/MinecraftRealmsTerms");

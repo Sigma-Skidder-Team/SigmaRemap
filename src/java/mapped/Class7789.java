@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
@@ -684,7 +684,7 @@ public class Class7789 {
 
       short var9 = var4.field4905.method18139(field33419.player.inventory);
       ItemStack var10 = var4.field4905.method18132(var1, var2, var3, var4);
-      if (var8 == null || Class8005.method27372().method18582() > Class5989.field26137.method18582() && !var5 || var3 == ClickType.field14696) {
+      if (var8 == null || JelloPortal.method27372().method18582() > ViaVerList.field26137.method18582() && !var5 || var3 == ClickType.field14696) {
          var8 = var10;
       }
 

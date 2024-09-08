@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 
 import java.awt.Color;
 
@@ -11,17 +11,17 @@ public class Class4252 extends Class4247 {
    public Class4264 field20621;
    public Class4371 field20622;
 
-   public Class4252(Class4305 var1, String var2, int var3, int var4, int var5, int var6, int var7, boolean var8) {
+   public Class4252(IconPanel var1, String var2, int var3, int var4, int var5, int var6, int var7, boolean var8) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20618 = var7;
       Color var11 = new Color(var7);
       float[] var12 = Color.RGBtoHSB(var11.getRed(), var11.getGreen(), var11.getBlue(), null);
-      this.method13230(this.field20620 = new Class4367(this, "block", 10, 10, var5 - 20, var6 - 50, var12[0], var12[1], var12[2]));
-      this.method13230(this.field20621 = new Class4264(this, "slider", 14, var6 - 25, var5 - 65, 8, var12[0]));
-      this.method13230(this.field20622 = new Class4371(this, "bubble", var5 - 40, var6 - 32, 25, 25, var11.getRGB()));
+      this.addToList(this.field20620 = new Class4367(this, "block", 10, 10, var5 - 20, var6 - 50, var12[0], var12[1], var12[2]));
+      this.addToList(this.field20621 = new Class4264(this, "slider", 14, var6 - 25, var5 - 65, 8, var12[0]));
+      this.addToList(this.field20622 = new Class4371(this, "bubble", var5 - 40, var6 - 32, 25, 25, var11.getRGB()));
       this.field20620.method13036(var1x -> this.method13050());
       this.field20621.method13036(var1x -> this.method13050());
-      this.field20622.method13251((var1x, var2x) -> this.method13045(!this.method13047()));
+      this.field20622.doThis((var1x, var2x) -> this.method13045(!this.method13047()));
       this.field20619 = var8;
    }
 

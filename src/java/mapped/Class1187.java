@@ -28,12 +28,12 @@ public class Class1187 extends Class1186 {
    }
 
    @Override
-   public boolean method5538(boolean var1) {
+   public boolean changeFocus(boolean var1) {
       return false;
    }
 
    @Override
-   public List<? extends Class1152> method2468() {
+   public List<? extends IGuiEventListener2> getEventListeners() {
       return Collections.emptyList();
    }
 }

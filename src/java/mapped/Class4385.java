@@ -5,10 +5,10 @@ import net.minecraft.client.Minecraft;
 public class Class4385 {
    private static String[] field21396;
    private final Minecraft field21397;
-   private final Class7451 field21398;
+   private final RenderSkyboxCube field21398;
    private float field21399;
 
-   public Class4385(Class7451 var1) {
+   public Class4385(RenderSkyboxCube var1) {
       this.field21398 = var1;
       this.field21397 = Minecraft.getInstance();
    }

@@ -19,7 +19,7 @@ public class Class1283 extends Class1274<Class1176> {
 
    @Override
    public boolean method6057() {
-      return this.field6847.method5533() == this;
+      return this.field6847.getListener() == this;
    }
 
    public void method6024(Class1176 var1) {

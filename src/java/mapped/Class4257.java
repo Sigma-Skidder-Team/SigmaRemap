@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.Minecraft;
 
@@ -12,9 +12,9 @@ public class Class4257 extends Class4247 {
    public Class4281 field20639;
    public String field20640;
 
-   public Class4257(Class4305 var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
+   public Class4257(IconPanel var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
       super(var1, var2, var3, var4, var5, var6, var7);
-      this.method13230(this.field20639 = new Class4281(this, "search", 50, 0, var5 - 60, var6 - 2, Class4281.field20741, "", "Search..."));
+      this.addToList(this.field20639 = new Class4281(this, "search", 50, 0, var5 - 60, var6 - 2, Class4281.field20741, "", "Search..."));
       this.field20639.method13156(false);
       this.field20639.method13151(var1x -> this.field20640 = this.field20639.method13303());
    }

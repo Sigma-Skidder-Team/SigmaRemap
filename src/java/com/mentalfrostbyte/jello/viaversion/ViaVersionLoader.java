@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import com.mentalfrostbyte.jello.module.impl.player.Blink;
 import com.mentalfrostbyte.jello.module.impl.player.OldHitting;
 import com.mentalfrostbyte.jello.module.impl.render.Freecam;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mojang.datafixers.util.Pair;
 import com.mentalfrostbyte.jello.Client;
 import mapped.*;
@@ -44,12 +44,12 @@ public class ViaVersionLoader {
 
    public void method23341() {
       Client.getInstance().getEventManager().register(this);
-      new Class8005(null);
+      new JelloPortal(null);
    }
 
    @EventTarget
    public void method23342(StopUseItemEvent var1) {
-      if (Class8005.method27349() == Class5989.field26129.method18582()) {
+      if (JelloPortal.method27349() == ViaVerList.field26129.method18582()) {
          if (this.mc.player.method3160() <= 1) {
             var1.method13900(true);
          }
@@ -58,11 +58,11 @@ public class ViaVersionLoader {
 
    @EventTarget
    public void method23343(Class4430 var1) {
-      if (var1.method13977() == this.mc.gameSettings.keyBindInventory.keycode.getKeyCode() && Class8005.method27349() <= Class5989.field26136.method18582()) {
+      if (var1.method13977() == this.mc.gameSettings.keyBindInventory.keycode.getKeyCode() && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
          this.mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
       }
 
-      if (Class8005.method27349() == Class5989.field26129.method18582()
+      if (JelloPortal.method27349() == ViaVerList.field26129.method18582()
          && var1.method13977() == 258
          && this.field31496 != null
          && this.mc.currentScreen instanceof ChatScreen) {
@@ -83,7 +83,7 @@ public class ViaVersionLoader {
    public void method23345(Class4415 var1) {
       if (this.mc.player != null
          && this.mc.player.method3212() == Pose.field13622
-         && (Class8005.method27349() < Class5989.field26140.method18582() || ColorUtils.method17716())) {
+         && (JelloPortal.method27349() < ViaVerList.field26140.method18582() || ColorUtils.method17716())) {
          this.mc.player.method3211(Pose.STANDING);
       }
    }
@@ -93,12 +93,12 @@ public class ViaVersionLoader {
    public void method23346(Class4398 var1) {
       if (this.mc.world != null && this.mc.player != null) {
          Block var4 = this.mc.world.getBlockState(var1.method13902()).getBlock();
-         if (Class8005.method27349() == Class5989.field26129.method18582() && var4 instanceof Class3411) {
+         if (JelloPortal.method27349() == ViaVerList.field26129.method18582() && var4 instanceof Class3411) {
             VoxelShape var5 = VoxelShapes.create(0.0, 0.0, 0.0, 1.0, 1.0, 1.0);
             var1.method13905(var5);
          }
 
-         if (Class8005.method27349() == Class5989.field26129.method18582()) {
+         if (JelloPortal.method27349() == ViaVerList.field26129.method18582()) {
             if (this.mc.player.boundingBox.maxY - this.mc.player.boundingBox.minY == 1.5) {
                this.mc.player.boundingBox = this.mc.player.boundingBox.method19662(0.0, 0.29999995F, 0.0);
             }
@@ -188,7 +188,7 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23349(RecievePacketEvent var1) {
-      if (!Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled() && Class8005.method27349() != Class5989.field26129.method18582()) {
+      if (!Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled() && JelloPortal.method27349() != ViaVerList.field26129.method18582()) {
          if (!field31493.isEmpty()) {
             field31493.clear();
          }
@@ -200,7 +200,7 @@ public class ViaVersionLoader {
                && var6.getSecond() != null
                && (
                   Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled()
-                     || Class8005.method27349() == Class5989.field26129.method18582()
+                     || JelloPortal.method27349() == ViaVerList.field26129.method18582()
                )) {
                if (!(((ItemStack)var6.getSecond()).getItem() instanceof Class3334)) {
                   Entity var7 = this.mc.world.getEntityByID(var4.method17561());
@@ -252,7 +252,7 @@ public class ViaVersionLoader {
             } else {
                SAnimateHandPacket var11 = (SAnimateHandPacket)var1.getPacket();
                Entity var13 = this.mc.world.getEntityByID(var11.method17192());
-               if (var13 != null && var11.method17193() == 3 && Class8005.method27349() == Class5989.field26129.method18582()) {
+               if (var13 != null && var11.method17193() == 3 && JelloPortal.method27349() == ViaVerList.field26129.method18582()) {
                   var1.method13900(true);
                }
             }
@@ -268,7 +268,7 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23350(Class4435 var1) {
-      if (Class8005.method27349() < Class5989.field26140.method18582() || ColorUtils.method17716()) {
+      if (JelloPortal.method27349() < ViaVerList.field26140.method18582() || ColorUtils.method17716()) {
          if (this.mc.player.method3250()) {
             this.field31498 = true;
             double var4 = this.mc.player.getPosY();
@@ -333,7 +333,7 @@ public class ViaVersionLoader {
          }
       }
 
-      if (Class8005.method27349() == Class5989.field26129.method18582()) {
+      if (JelloPortal.method27349() == ViaVerList.field26129.method18582()) {
          if (Math.abs(var1.method13992()) < 0.005) {
             var1.method13993(0.0);
             ColorUtils.method17724(var1.method13992());
@@ -352,7 +352,7 @@ public class ViaVersionLoader {
    }
 
    public boolean method23351() {
-      return Class8005.method27349() <= Class5989.field26139.method18582();
+      return JelloPortal.method27349() <= ViaVerList.field26139.method18582();
    }
 
    @EventTarget

@@ -31,7 +31,7 @@ public class Class1158 extends Class1156 {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       this.field6306.method6238(this);
       if (Util.milliTime() - this.field6309 < 250L) {
          this.field6306.method6236();

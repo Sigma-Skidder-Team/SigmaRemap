@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class8733;
+import com.mentalfrostbyte.jello.unmapped.Reflection;
 
 import java.lang.invoke.CallSite;
 import java.lang.invoke.LambdaConversionException;
@@ -17,13 +17,13 @@ public class ReflectionUtils {
    private static Field field39435;
    private static final int field39436 = 15;
 
-   public static Class8733 createLambdaForMethod(Method var0) {
+   public static Reflection createLambdaForMethod(Method var0) {
       try {
          Class var3 = var0.getReturnType();
-         String var4 = Class8733.class.getDeclaredMethods()[0].getName();
+         String var4 = Reflection.class.getDeclaredMethods()[0].getName();
          Lookup var5 = MethodHandles.lookup().in(var0.getDeclaringClass());
          setAllowedModes(var5);
-         return invokeMethod(var0, var5, Class8733.class, var4, false);
+         return invokeMethod(var0, var5, Reflection.class, var4, false);
       } catch (Throwable var6) {
          var6.printStackTrace();
          return null;

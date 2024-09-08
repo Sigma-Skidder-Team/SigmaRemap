@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import mapped.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -95,7 +95,7 @@ public class CubecraftFly extends Module {
                         Class9567.method37088(var1, Class9567.method37075());
                         if (this.field23845 != -4) {
                             if (this.field23845 != -1) {
-                                if (Class8005.method27349() > Class5989.field26129.method18582()) {
+                                if (JelloPortal.method27349() > ViaVerList.field26129.method18582()) {
                                     if (mc.gameSettings.keyBindJump.isKeyDown() && !this.field23846) {
                                         var1.method13995(0.0625);
                                         Class9567.method37088(var1, 0.0);
@@ -118,7 +118,7 @@ public class CubecraftFly extends Module {
                             var1.method13995(0.0625);
                         }
                     }
-                } else if (Class8005.method27349() != Class5989.field26129.method18582()) {
+                } else if (JelloPortal.method27349() != ViaVerList.field26129.method18582()) {
                     if (!ColorUtils.method17730(mc.player, 0.001F)) {
                         var1.method13995(0.0);
                         Class9567.method37088(var1, 0.0);
@@ -168,7 +168,7 @@ public class CubecraftFly extends Module {
     public void method16689(Class4399 var1) {
         if (var1.method13921() && ColorUtils.method17718()) {
             var1.method13908(true);
-            if (Class8005.method27349() == Class5989.field26129.method18582() && this.field23845 == 0 && ColorUtils.method17730(mc.player, 0.001F)) {
+            if (JelloPortal.method27349() == ViaVerList.field26129.method18582() && this.field23845 == 0 && ColorUtils.method17730(mc.player, 0.001F)) {
                 var1.method13900(true);
             }
 
@@ -191,7 +191,7 @@ public class CubecraftFly extends Module {
                 }
             } else {
                 SPlayerPositionLookPacket var20 = (SPlayerPositionLookPacket) var4;
-                if (Class8005.method27349() != Class5989.field26129.method18582()) {
+                if (JelloPortal.method27349() != ViaVerList.field26129.method18582()) {
                     float[] var6 = Class9567.method37082();
                     float var7 = var6[1];
                     float var8 = var6[2];

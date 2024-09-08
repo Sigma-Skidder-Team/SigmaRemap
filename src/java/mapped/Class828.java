@@ -365,7 +365,7 @@ public class Class828 extends Screen {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
-      this.method5534((Class1152)null);
+      this.setListener((IGuiEventListener2)null);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(Class870.field4820);
       int var7 = (this.width - 192) / 2;
@@ -442,8 +442,8 @@ public class Class828 extends Screen {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
-      if (super.method1958(var1, var3, var5)) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
+      if (super.mouseClicked(var1, var3, var5)) {
          return true;
       } else {
          if (var5 == 0) {
@@ -476,8 +476,8 @@ public class Class828 extends Screen {
    }
 
    @Override
-   public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
-      if (!super.method2516(var1, var3, var5, var6, var8)) {
+   public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
+      if (!super.mouseDragged(var1, var3, var5, var6, var8)) {
          if (var5 == 0) {
             Class8398 var12 = this.method2517();
             int var13 = var12.method29481(this.fontRenderer, this.method2513(new Class6178((int)var1, (int)var3)));

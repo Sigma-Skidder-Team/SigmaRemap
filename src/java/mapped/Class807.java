@@ -75,7 +75,7 @@ public class Class807 extends RealmsScreen {
       );
       this.<Class1289>addListener(this.field4317);
       this.field4325 = this.<RealmsLabel>addListener(new RealmsLabel(new TranslationTextComponent("mco.configure.world.backup"), this.width / 2, 12, 16777215));
-      this.method5537(this.field4317);
+      this.setListenerDefault(this.field4317);
       this.method2170();
       this.func_231411_u_();
    }

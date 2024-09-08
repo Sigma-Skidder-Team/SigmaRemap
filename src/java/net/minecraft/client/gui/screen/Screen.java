@@ -23,11 +23,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
-public abstract class Screen extends Class1150 implements Class1219, Class1190 {
+public abstract class Screen extends FocusableGui implements IScreen, Class1190 {
    private static final Logger field4558 = LogManager.getLogger();
    private static final Set<String> field4559 = Sets.newHashSet(new String[]{"http", "https"});
    public final ITextComponent title;
-   public final List<Class1152> field4561 = Lists.newArrayList();
+   public final List<IGuiEventListener2> field4561 = Lists.newArrayList();
    public Minecraft mc;
    public ItemRenderer field4563;
    public int width;
@@ -58,22 +58,22 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
 
    @Override
    public boolean keyPressed(int var1, int var2, int var3) {
-      if (var1 == 256 && this.method2454()) {
+      if (var1 == 256 && this.shouldCloseOnEsc()) {
          this.method1945();
          return true;
       } else if (var1 != 258) {
          return super.keyPressed(var1, var2, var3);
       } else {
          boolean var6 = !method2476();
-         if (!this.method5538(var6)) {
-            this.method5538(var6);
+         if (!this.changeFocus(var6)) {
+            this.changeFocus(var6);
          }
 
          return false;
       }
    }
 
-   public boolean method2454() {
+   public boolean shouldCloseOnEsc() {
       return true;
    }
 
@@ -86,7 +86,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
       return this.<T>addListener((T)var1);
    }
 
-   public <T extends Class1152> T addListener(T var1) {
+   public <T extends IGuiEventListener2> T addListener(T var1) {
       this.field4561.add(var1);
       return (T)var1;
    }
@@ -277,12 +277,12 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
       this.height = var3;
       this.field4566.clear();
       this.field4561.clear();
-      this.method5534((Class1152)null);
+      this.setListener((IGuiEventListener2)null);
       this.init();
    }
 
    @Override
-   public List<? extends Class1152> method2468() {
+   public List<? extends IGuiEventListener2> getEventListeners() {
       return this.field4561;
    }
 
@@ -405,7 +405,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
    }
 
    @Override
-   public boolean method2485(double var1, double var3) {
+   public boolean isMouseOver(double var1, double var3) {
       return true;
    }
 

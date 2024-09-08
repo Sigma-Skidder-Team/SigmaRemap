@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4403;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
 import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.player.Blink;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mojang.authlib.Agent;
 import com.mojang.authlib.exceptions.AuthenticationException;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
@@ -665,7 +665,7 @@ public class ColorUtils {
    }
 
    public static void method17735(Entity var0, boolean var1) {
-      boolean var4 = Class8005.method27372().equals(Class5989.field26129);
+      boolean var4 = JelloPortal.method27372().equals(ViaVerList.field26129);
       Class4403 var5 = new Class4403(var0, true);
       Client.getInstance().getEventManager().call(var5);
       if (!var5.isCancelled()) {

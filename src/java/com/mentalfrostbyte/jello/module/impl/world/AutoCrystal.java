@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -378,7 +378,7 @@ public class AutoCrystal extends PremiumModule {
             if (mc.player.field4904.method18131(var5).method18266()) {
                 ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
                 if (var6.getItem() == Items.END_CRYSTAL) {
-                    if (Class8005.method27349() <= Class5989.field26136.method18582()) {
+                    if (JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
                         mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 

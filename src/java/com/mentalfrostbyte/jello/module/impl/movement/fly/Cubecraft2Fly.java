@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.network.Packet;
@@ -34,7 +34,7 @@ public class Cubecraft2Fly extends PremiumModule {
             this.field23699 = true;
         }
 
-        if (ColorUtils.method17718() && Class8005.method27349() == Class5989.field26129.method18582()) {
+        if (ColorUtils.method17718() && JelloPortal.method27349() == ViaVerList.field26129.method18582()) {
             Client.getInstance().getNotificationManager().post(new Notification("Cubecraft2 fly", "This fly was made for 1.9+ only"));
         }
 

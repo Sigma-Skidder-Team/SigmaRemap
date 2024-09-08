@@ -30,7 +30,7 @@ public class Class512 implements Runnable {
                   return Class8042.method27614().method34427().method20574();
                } catch (Exception var8) {
                   var8.printStackTrace();
-                  return Class5989.field26129.method18582();
+                  return ViaVerList.field26129.method18582();
                }
             }
          }

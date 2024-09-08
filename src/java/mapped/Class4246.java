@@ -10,7 +10,7 @@ public class Class4246 extends Class4240 {
    private Animation field20601 = new Animation(125, 125);
 
    public Class4246(Class4277 var1, int var2) {
-      super(var1, "sliderButton", 0, 0, var2, var2, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor));
+      super(var1, "sliderButton", 0, 0, var2, var2, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor));
       this.field20601.changeDirection(Direction.BACKWARDS);
       this.method13215(true);
       this.field20886 = true;

@@ -56,7 +56,7 @@ public class Class6260 extends Class6255 {
       }
 
       for (Entry<Integer, Set<String>> var18 : var16.entrySet()) {
-         this.method19227(var1, "&8[&6%s&8]: &b%s", new Object[]{Class5989.method18569(var18.getKey()).method18580(), var18.getValue()});
+         this.method19227(var1, "&8[&6%s&8]: &b%s", new Object[]{ViaVerList.method18569(var18.getKey()).method18580(), var18.getValue()});
       }
 
       var16.clear();

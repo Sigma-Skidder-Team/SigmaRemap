@@ -43,7 +43,7 @@ public class Class9019 {
    public static void method33354() {
    }
 
-   public static void method33355(Class6355 var0, Class5989 var1, Class5989 var2) {
+   public static void method33355(Class6355 var0, ViaVerList var1, ViaVerList var2) {
       method33356(var0, Collections.<Integer>singletonList(var1.method18573()), var2.method18573());
    }
 
@@ -89,7 +89,7 @@ public class Class9019 {
       field41263.clear();
       field41263.add(field41258);
 
-      for (Class5989 var3 : Class5989.method18571()) {
+      for (ViaVerList var3 : ViaVerList.method18571()) {
          List<Class9284<Integer, Class6355>> var4 = method33363(var3.method18573(), field41258);
          if (var4 != null) {
             field41263.add(var3.method18573());
@@ -277,38 +277,38 @@ public class Class9019 {
       field41268 = new ThreadPoolExecutor(5, 16, 45L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), var4);
       field41268.allowCoreThreadTimeOut(true);
       method33357(field41257, Range.lessThan(Integer.MIN_VALUE));
-      method33357(new Class6374(), Range.lessThan(Class5989.field26151.method18573()));
-      method33357(new Class6375(), Range.atLeast(Class5989.field26151.method18573()));
-      method33355(new Class6363(), Class5989.field26130, Class5989.field26129);
+      method33357(new Class6374(), Range.lessThan(ViaVerList.field26151.method18573()));
+      method33357(new Class6375(), Range.atLeast(ViaVerList.field26151.method18573()));
+      method33355(new Class6363(), ViaVerList.field26130, ViaVerList.field26129);
       method33356(
-         new Class6359(), Arrays.<Integer>asList(Class5989.field26131.method18573(), Class5989.field26132.method18573()), Class5989.field26130.method18573()
+         new Class6359(), Arrays.<Integer>asList(ViaVerList.field26131.method18573(), ViaVerList.field26132.method18573()), ViaVerList.field26130.method18573()
       );
-      method33355(new Class6354(), Class5989.field26133, Class5989.field26132);
-      method33355(new Class6370(), Class5989.field26130, Class5989.field26132);
+      method33355(new Class6354(), ViaVerList.field26133, ViaVerList.field26132);
+      method33355(new Class6370(), ViaVerList.field26130, ViaVerList.field26132);
       method33356(
-         new Class6366(), Arrays.<Integer>asList(Class5989.field26131.method18573(), Class5989.field26132.method18573()), Class5989.field26133.method18573()
+         new Class6366(), Arrays.<Integer>asList(ViaVerList.field26131.method18573(), ViaVerList.field26132.method18573()), ViaVerList.field26133.method18573()
       );
-      method33355(new Class6362(), Class5989.field26134, Class5989.field26133);
-      method33355(new Class6386(), Class5989.field26135, Class5989.field26134);
-      method33355(new Class6383(), Class5989.field26136, Class5989.field26135);
-      method33355(new Class6372(), Class5989.field26137, Class5989.field26136);
-      method33355(new Class6364(), Class5989.field26138, Class5989.field26137);
-      method33355(new Class6360(), Class5989.field26139, Class5989.field26138);
-      method33355(new Class6380(), Class5989.field26140, Class5989.field26139);
-      method33355(new Class6379(), Class5989.field26141, Class5989.field26140);
-      method33355(new Class6365(), Class5989.field26142, Class5989.field26141);
-      method33355(new Class6371(), Class5989.field26143, Class5989.field26142);
-      method33355(new Class6369(), Class5989.field26144, Class5989.field26143);
-      method33355(new Class6367(), Class5989.field26145, Class5989.field26144);
-      method33355(new Class6382(), Class5989.field26146, Class5989.field26145);
-      method33355(new Class6368(), Class5989.field26147, Class5989.field26146);
-      method33355(new Class6384(), Class5989.field26148, Class5989.field26147);
-      method33355(new Class6385(), Class5989.field26149, Class5989.field26148);
-      method33355(new Class6361(), Class5989.field26150, Class5989.field26149);
-      method33355(new Class6356(), Class5989.field26151, Class5989.field26150);
-      method33355(new Class6378(), Class5989.field26152, Class5989.field26151);
-      method33355(new Class6357(), Class5989.field26153, Class5989.field26152);
-      method33355(new Class6381(), Class5989.field26154, Class5989.field26153);
-      method33355(new Class6358(), Class5989.field26155, Class5989.field26154);
+      method33355(new Class6362(), ViaVerList.field26134, ViaVerList.field26133);
+      method33355(new Class6386(), ViaVerList.field26135, ViaVerList.field26134);
+      method33355(new Class6383(), ViaVerList.field26136, ViaVerList.field26135);
+      method33355(new Class6372(), ViaVerList.field26137, ViaVerList.field26136);
+      method33355(new Class6364(), ViaVerList.field26138, ViaVerList.field26137);
+      method33355(new Class6360(), ViaVerList.field26139, ViaVerList.field26138);
+      method33355(new Class6380(), ViaVerList.field26140, ViaVerList.field26139);
+      method33355(new Class6379(), ViaVerList.field26141, ViaVerList.field26140);
+      method33355(new Class6365(), ViaVerList.field26142, ViaVerList.field26141);
+      method33355(new Class6371(), ViaVerList.field26143, ViaVerList.field26142);
+      method33355(new Class6369(), ViaVerList.field26144, ViaVerList.field26143);
+      method33355(new Class6367(), ViaVerList.field26145, ViaVerList.field26144);
+      method33355(new Class6382(), ViaVerList.field26146, ViaVerList.field26145);
+      method33355(new Class6368(), ViaVerList.field26147, ViaVerList.field26146);
+      method33355(new Class6384(), ViaVerList.field26148, ViaVerList.field26147);
+      method33355(new Class6385(), ViaVerList.field26149, ViaVerList.field26148);
+      method33355(new Class6361(), ViaVerList.field26150, ViaVerList.field26149);
+      method33355(new Class6356(), ViaVerList.field26151, ViaVerList.field26150);
+      method33355(new Class6378(), ViaVerList.field26152, ViaVerList.field26151);
+      method33355(new Class6357(), ViaVerList.field26153, ViaVerList.field26152);
+      method33355(new Class6381(), ViaVerList.field26154, ViaVerList.field26153);
+      method33355(new Class6358(), ViaVerList.field26155, ViaVerList.field26154);
    }
 }

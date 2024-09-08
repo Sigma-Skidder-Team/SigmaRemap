@@ -13,7 +13,7 @@ public class Class1312 extends Screen {
    }
 
    @Override
-   public boolean method2454() {
+   public boolean shouldCloseOnEsc() {
       return false;
    }
 

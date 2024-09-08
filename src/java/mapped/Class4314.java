@@ -7,8 +7,8 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Screen;
 
 public class Class4314 extends Screen {
-   public Class4282 field21027;
-   public Class4282 field21028;
+   public SigmaClassicTextBox field21027;
+   public SigmaClassicTextBox field21028;
    public Class4300 field21029;
    public Class4300 field21030;
    public AccountManager field21031 = Client.getInstance().getAccountManager();
@@ -20,16 +20,16 @@ public class Class4314 extends Screen {
       short var4 = 400;
       int var5 = 114;
       int var6 = (this.method13267() - var4) / 2;
-      this.method13230(this.field21027 = new Class4282(this, "username", var6, var5, var4, 45, Class4282.field20741, "", "New name", ResourceRegistry.field38868));
+      this.addToList(this.field21027 = new SigmaClassicTextBox(this, "username", var6, var5, var4, 45, SigmaClassicTextBox.field20741, "", "New name", ResourceRegistry.field38868));
       var5 += 80;
-      this.method13230(this.field21028 = new Class4282(this, "password", var6, var5, var4, 45, Class4282.field20741, "", "New password", ResourceRegistry.field38868));
+      this.addToList(this.field21028 = new SigmaClassicTextBox(this, "password", var6, var5, var4, 45, SigmaClassicTextBox.field20741, "", "New password", ResourceRegistry.field38868));
       var5 += 190;
-      this.method13230(this.field21029 = new Class4300(this, "edit", var6, var5, var4, 40, "Edit", ClientColors.MID_GREY.getColor));
+      this.addToList(this.field21029 = new Class4300(this, "edit", var6, var5, var4, 40, "Edit", ClientColors.MID_GREY.getColor));
       var5 += 50;
-      this.method13230(this.field21030 = new Class4300(this, "back", var6, var5, var4, 40, "Cancel", ClientColors.MID_GREY.getColor));
+      this.addToList(this.field21030 = new Class4300(this, "back", var6, var5, var4, 40, "Cancel", ClientColors.MID_GREY.getColor));
       this.field21028.method13155(true);
       this.field21028.method13147("*");
-      this.field21029.method13251((var2, var3) -> {
+      this.field21029.doThis((var2, var3) -> {
          if (this.field21027.method13303().length() > 0) {
             if (!this.field21027.method13303().equals(var1.getEmail())) {
                var1.setName(this.field21027.method13303());
@@ -41,7 +41,7 @@ public class Class4314 extends Screen {
          var1.setPassword(this.field21028.method13303());
          this.field21032 = "Edited!";
       });
-      this.field21030.method13251((var0, var1x) -> Client.getInstance().getGuiManager().method33482(new Class4317()));
+      this.field21030.doThis((var0, var1x) -> Client.getInstance().getGuiManager().method33482(new SigmaClassicAltManager()));
    }
 
    @Override
@@ -69,7 +69,7 @@ public class Class4314 extends Screen {
    public void keyPressed(int var1) {
       super.keyPressed(var1);
       if (var1 == 256) {
-         Client.getInstance().getGuiManager().method33482(new Class4317());
+         Client.getInstance().getGuiManager().method33482(new SigmaClassicAltManager());
       }
    }
 }

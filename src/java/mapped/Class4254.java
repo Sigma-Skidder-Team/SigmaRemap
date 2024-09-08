@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -11,7 +11,7 @@ public class Class4254 extends Class4247 {
    public Animation field20630 = new Animation(300, 300, Direction.BACKWARDS);
    public Texture field20631;
 
-   public Class4254(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
+   public Class4254(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20631 = var7;
    }

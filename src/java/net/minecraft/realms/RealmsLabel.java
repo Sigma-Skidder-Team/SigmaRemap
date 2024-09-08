@@ -1,12 +1,12 @@
 package net.minecraft.realms;
 
-import mapped.Class1152;
+import mapped.IGuiEventListener2;
 import mapped.MatrixStack;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.ITextComponent;
 
-public class RealmsLabel implements Class1152 {
+public class RealmsLabel implements IGuiEventListener2 {
    private static String[] field6290;
    private final ITextComponent field6291;
    private final int field6292;

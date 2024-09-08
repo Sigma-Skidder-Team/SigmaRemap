@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import net.minecraft.client.gui.screen.Screen;
@@ -28,7 +28,7 @@ public class Class4358 extends Class4247 {
    public boolean field21311 = false;
    private final List<Class7875> field21312 = new ArrayList<Class7875>();
 
-   public Class4358(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4358(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21305 = 500;
       this.field21306 = 600;
@@ -36,7 +36,7 @@ public class Class4358 extends Class4247 {
       this.field21303 = (var6 - this.field21306) / 2;
       byte var9 = 30;
       Class4281 var10;
-      this.method13230(
+      this.addToList(
          var10 = new Class4281(
             this, "search", this.field21304 + var9, this.field21303 + var9 + 50, this.field21305 - var9 * 2, 60, Class4281.field20741, "", "Search..."
          )
@@ -46,7 +46,7 @@ public class Class4358 extends Class4247 {
          this.field21308.method13512(0);
       });
       var10.method13242();
-      this.method13230(
+      this.addToList(
          this.field21308 = new Class4339(
             this, "mods", this.field21304 + var9, this.field21303 + var9 + 120, this.field21305 - var9 * 2, this.field21306 - var9 * 2 - 120
          )
@@ -55,15 +55,15 @@ public class Class4358 extends Class4247 {
 
       for (Entry var13 : GuiManager.field41338.entrySet()) {
          Class6984 var14 = new Class6984((Class<? extends Screen>)var13.getKey());
-         Class6387 var15 = new Class6387(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.02F), -986896)
+         ColorHelper var15 = new ColorHelper(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.02F), -986896)
             .method19410(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F))
             .method19412(Class2218.field14492);
          Class4240 var16;
          this.field21308
-            .method13230(
+            .addToList(
                var16 = new Class4240(this.field21308, var14.method21596(), 0, var11++ * 55, this.field21308.method13267(), 55, var15, var14.method21596())
             );
-         var16.method13251((var2x, var3x) -> {
+         var16.doThis((var2x, var3x) -> {
             for (Entry var7 : GuiManager.field41338.entrySet()) {
                Class6984 var8 = new Class6984((Class<? extends Screen>)var7.getKey());
                if (var8.method21596().equals(var16.method13257()) && !this.field21311) {
@@ -78,16 +78,16 @@ public class Class4358 extends Class4247 {
       var11 += 50;
 
       for (Module var19 : Client.getInstance().getModuleManager().getModuleMap().values()) {
-         Class6387 var20 = new Class6387(16777215, -986896).method19410(ClientColors.DEEP_TEAL.getColor).method19412(Class2218.field14488);
+         ColorHelper var20 = new ColorHelper(16777215, -986896).method19410(ClientColors.DEEP_TEAL.getColor).method19412(Class2218.field14488);
          Class4240 var21;
          this.field21308
-            .method13230(
+            .addToList(
                var21 = new Class4240(
                   this.field21308, var19.getName(), 0, var11++ * 40, this.field21308.method13267(), 40, var20, new Class6984(var19).method21596()
                )
             );
          var21.method13034(10);
-         var21.method13251((var2x, var3x) -> {
+         var21.doThis((var2x, var3x) -> {
             for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
                if (var7.getName().equals(var21.method13303()) && !this.field21311) {
                   this.field21309 = new Class6984(var7);
@@ -115,9 +115,9 @@ public class Class4358 extends Class4247 {
       Map<String, Class4240> var7 = new TreeMap();
       List<Class4240> var8 = new ArrayList();
 
-      for (Class4305 var10 : this.field21308.method13241()) {
+      for (IconPanel var10 : this.field21308.method13241()) {
          if (!(var10 instanceof Class4292)) {
-            for (Class4305 var12 : var10.method13241()) {
+            for (IconPanel var12 : var10.method13241()) {
                if (var12 instanceof Class4240) {
                   Class4240 var13 = (Class4240)var12;
                   boolean var14 = var13.method13269() != 40;

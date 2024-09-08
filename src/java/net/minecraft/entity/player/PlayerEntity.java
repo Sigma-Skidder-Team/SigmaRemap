@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.SafeWalkEvent;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mojang.authlib.GameProfile;
 import com.mojang.datafixers.util.Either;
 import mapped.*;
@@ -604,7 +604,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Nullable
    public ItemEntity method2836(ItemStack var1, boolean var2, boolean var3) {
       if (!var1.isEmpty()) {
-         if (this.world.isRemote && Class8005.method27372().method18582() >= Class5989.field26151.method18582()) {
+         if (this.world.isRemote && JelloPortal.method27372().method18582() >= ViaVerList.field26151.method18582()) {
             this.swingArm(Hand.MAIN_HAND);
          }
 

@@ -27,7 +27,7 @@ public class Class1164 extends Class1155<Class1164> {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (var5 != 0) {
          return false;
       } else {

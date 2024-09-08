@@ -122,7 +122,7 @@ public class Class1321 extends Screen {
       }));
       this.field6991 = this.<Button>addButton(new Button(this.width / 2 - 4 - 150, 210, 150, 20, DialogTexts.field30658, var1 -> this.method6268()));
       this.<Button>addButton(new Button(this.width / 2 + 4, 210, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method6269()));
-      this.method5536(this.field6986);
+      this.setFocusedDefault(this.field6986);
       this.method6272();
    }
 

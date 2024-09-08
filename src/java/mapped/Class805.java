@@ -45,7 +45,7 @@ public class Class805 extends RealmsScreen {
          new TranslationTextComponent("mco.configure.world.invite.profile.name")
       );
       this.<TextFieldWidget>addListener(this.field4219);
-      this.method5536(this.field4219);
+      this.setFocusedDefault(this.field4219);
       this.<Button>addButton(
          new Button(
             this.width / 2 - 100, method1929(10), 200, 20, new TranslationTextComponent("mco.configure.world.buttons.invite"), var1 -> this.method2007()

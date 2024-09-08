@@ -1,9 +1,9 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import net.minecraft.client.Minecraft;
 
-public class Class4306 extends Class4305 {
+public class Class4306 extends IconPanel {
    private static String[] field20927;
    public float field20928;
    public float field20929;
@@ -17,7 +17,7 @@ public class Class4306 extends Class4305 {
    public int field20937;
    public int field20938 = 114;
 
-   public Class4306(Class4305 var1, String var2, int var3, int var4, int var5, int var6, int var7) {
+   public Class4306(IconPanel var1, String var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, var5, var5);
       this.field20928 = this.field20930 = (float)var6;
       this.field20929 = this.field20931 = (float)var7;
@@ -32,8 +32,8 @@ public class Class4306 extends Class4305 {
          this.field20933 = (float)this.field20896;
       }
 
-      this.field20932 = this.field20932 + this.field20928 * Class4310.field20982;
-      this.field20933 = this.field20933 + this.field20929 * Class4310.field20982;
+      this.field20932 = this.field20932 + this.field20928 * JelloMainMenuScreen.field20982;
+      this.field20933 = this.field20933 + this.field20929 * JelloMainMenuScreen.field20982;
       this.field20895 = Math.round(this.field20932);
       this.field20896 = Math.round(this.field20933);
       if (!(this.field20932 + (float)this.field20897 < 0.0F)) {
@@ -56,8 +56,8 @@ public class Class4306 extends Class4305 {
       float var6 = (float)(var2 - this.method13272());
       this.field20934 = (float)(1.0 - Math.sqrt((double)(var5 * var5 + var6 * var6)) / (double)this.field20938);
       if (!(Math.sqrt((double)(var5 * var5 + var6 * var6)) < (double)this.field20938)) {
-         this.field20928 = this.field20928 - (this.field20928 - this.field20930) * 0.05F * Class4310.field20982;
-         this.field20929 = this.field20929 - (this.field20929 - this.field20931) * 0.05F * Class4310.field20982;
+         this.field20928 = this.field20928 - (this.field20928 - this.field20930) * 0.05F * JelloMainMenuScreen.field20982;
+         this.field20929 = this.field20929 - (this.field20929 - this.field20931) * 0.05F * JelloMainMenuScreen.field20982;
       } else {
          float var7 = this.field20932 - (float)var1;
          float var8 = this.field20933 - (float)var2;
@@ -65,8 +65,8 @@ public class Class4306 extends Class4305 {
          float var10 = var9 / 2.0F;
          float var11 = var7 / var10;
          float var12 = var8 / var10;
-         this.field20928 = this.field20928 + var11 / (1.0F + this.field20934) * Class4310.field20982;
-         this.field20929 = this.field20929 + var12 / (1.0F + this.field20934) * Class4310.field20982;
+         this.field20928 = this.field20928 + var11 / (1.0F + this.field20934) * JelloMainMenuScreen.field20982;
+         this.field20929 = this.field20929 + var12 / (1.0F + this.field20934) * JelloMainMenuScreen.field20982;
       }
 
       this.field20936 = var1;

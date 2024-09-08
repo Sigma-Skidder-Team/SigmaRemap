@@ -648,7 +648,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void method15588(ITextComponent var1) {
       this.field23272.unloadWorld();
       if (this.field23271 == null) {
-         this.field23272.displayGuiScreen(new Class832(new MultiplayerScreen(new MainMenuScreen()), field23268, var1));
+         this.field23272.displayGuiScreen(new Class832(new MultiplayerScreen(new VanillaMainMenuScreen()), field23268, var1));
       } else if (!(this.field23271 instanceof RealmsScreen)) {
          this.field23272.displayGuiScreen(new Class832(this.field23271, field23268, var1));
       } else {

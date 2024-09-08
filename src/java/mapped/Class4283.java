@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
@@ -10,7 +10,7 @@ import java.net.URL;
 
 public class Class4283 extends Class4278 {
    private static String[] field20736;
-   public static Class6387 field20760 = new Class6387(
+   public static ColorHelper field20760 = new ColorHelper(
       ClientColors.DEEP_TEAL.getColor,
       ClientColors.DEEP_TEAL.getColor,
       ClientColors.DEEP_TEAL.getColor,
@@ -25,7 +25,7 @@ public class Class4283 extends Class4278 {
    private Texture field20765;
    private Animation field20766;
 
-   public Class4283(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4283(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, field20760, var2, false);
    }
 

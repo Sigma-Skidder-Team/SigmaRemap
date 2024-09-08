@@ -9,8 +9,8 @@ import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 
 public class Class4326 extends Screen {
-   public Class4282 field21116;
-   public Class4282 field21117;
+   public SigmaClassicTextBox field21116;
+   public SigmaClassicTextBox field21117;
    public Class4300 field21118;
    public Class4300 field21119;
    public Class4300 field21120;
@@ -23,20 +23,20 @@ public class Class4326 extends Screen {
       short var3 = 400;
       int var4 = 114;
       int var5 = (this.method13267() - var3) / 2;
-      this.method13230(
-         this.field21116 = new Class4282(this, "username", var5, var4, var3, 45, Class4282.field20741, "", "Username / E-Mail", ResourceRegistry.field38868)
+      this.addToList(
+         this.field21116 = new SigmaClassicTextBox(this, "username", var5, var4, var3, 45, SigmaClassicTextBox.field20741, "", "Username / E-Mail", ResourceRegistry.field38868)
       );
       var4 += 80;
-      this.method13230(this.field21117 = new Class4282(this, "password", var5, var4, var3, 45, Class4282.field20741, "", "Password", ResourceRegistry.field38868));
+      this.addToList(this.field21117 = new SigmaClassicTextBox(this, "password", var5, var4, var3, 45, SigmaClassicTextBox.field20741, "", "Password", ResourceRegistry.field38868));
       var4 += 190;
-      this.method13230(this.field21118 = new Class4300(this, "login", var5, var4, var3, 40, "Login", ClientColors.MID_GREY.getColor));
+      this.addToList(this.field21118 = new Class4300(this, "login", var5, var4, var3, 40, "Login", ClientColors.MID_GREY.getColor));
       var4 += 50;
-      this.method13230(this.field21119 = new Class4300(this, "back", var5, var4, var3, 40, "Back", ClientColors.MID_GREY.getColor));
+      this.addToList(this.field21119 = new Class4300(this, "back", var5, var4, var3, 40, "Back", ClientColors.MID_GREY.getColor));
       var4 += 50;
-      this.method13230(this.field21120 = new Class4300(this, "import", var5, var4, var3, 40, "Import user:pass", ClientColors.MID_GREY.getColor));
+      this.addToList(this.field21120 = new Class4300(this, "import", var5, var4, var3, 40, "Import user:pass", ClientColors.MID_GREY.getColor));
       this.field21117.method13155(true);
       this.field21117.method13147("*");
-      this.field21118.method13251((var1, var2) -> {
+      this.field21118.doThis((var1, var2) -> {
          this.field21122 = "§bLogging in...";
          new Thread(() -> {
             Account var3x = new Account(this.field21116.method13303(), this.field21117.method13303());
@@ -48,8 +48,8 @@ public class Class4326 extends Screen {
             }
          }).start();
       });
-      this.field21119.method13251((var0, var1) -> Client.getInstance().getGuiManager().method33482(new Class4317()));
-      this.field21120.method13251((var1, var2) -> {
+      this.field21119.doThis((var0, var1) -> Client.getInstance().getGuiManager().method33482(new SigmaClassicAltManager()));
+      this.field21120.doThis((var1, var2) -> {
          String var5x = "";
 
          try {
@@ -92,7 +92,7 @@ public class Class4326 extends Screen {
    public void keyPressed(int var1) {
       super.keyPressed(var1);
       if (var1 == 256) {
-         Client.getInstance().getGuiManager().method33482(new Class4317());
+         Client.getInstance().getGuiManager().method33482(new SigmaClassicAltManager());
       }
    }
 }

@@ -1,7 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import io.netty.channel.ChannelInitializer;
 import java.lang.reflect.Method;
 
@@ -26,7 +26,7 @@ public class Class6750 implements Class6749 {
    }
 
    public static int method20579() {
-      return Class8005.method27349();
+      return JelloPortal.method27349();
    }
 
    @Override

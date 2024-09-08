@@ -33,7 +33,7 @@ import java.util.OptionalLong;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-public class Class1221 implements Class1219, Class1190 {
+public class Class1221 implements IScreen, Class1190 {
    private static final Logger field6549 = LogManager.getLogger();
    private static final ITextComponent field6550 = new TranslationTextComponent("generator.custom");
    private static final ITextComponent field6551 = new TranslationTextComponent("generator.amplified.info");

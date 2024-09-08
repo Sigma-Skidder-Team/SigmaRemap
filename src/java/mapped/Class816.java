@@ -49,7 +49,7 @@ public class Class816 extends RealmsScreen {
    }
 
    private boolean method2320() {
-      return this.mc.currentScreen instanceof MainMenuScreen;
+      return this.mc.currentScreen instanceof VanillaMainMenuScreen;
    }
 
    private void method2321() {

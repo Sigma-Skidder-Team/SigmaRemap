@@ -64,7 +64,7 @@ public class Class818 extends RealmsScreen {
       this.field4460.method5657(32);
       this.field4460.method5635(this.field4457.method18907());
       this.<TextFieldWidget>addListener(this.field4460);
-      this.method5537(this.field4460);
+      this.setListenerDefault(this.field4460);
       this.field4459 = new TextFieldWidget(
          this.mc.fontRenderer, var3, method1929(8), 212, 20, (TextFieldWidget)null, new TranslationTextComponent("mco.configure.world.description")
       );

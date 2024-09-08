@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.common.collect.UnmodifiableIterator;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mojang.datafixers.DataFixUtils;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import it.unimi.dsi.fastutil.longs.LongSets;
@@ -230,7 +230,7 @@ public class Class1262 extends AbstractGui {
       BlockPos var8 = this.field6665.getRenderViewEntity().getPosition();
       String var9 = SharedConstants.getVersion().getName();
       if (!this.field6665.isSingleplayer()) {
-         var9 = Class5989.method18569(Class8005.method27349()).method18580();
+         var9 = ViaVerList.method18569(JelloPortal.method27349()).method18580();
       }
 
       if (this.field6665.isReducedDebug()) {

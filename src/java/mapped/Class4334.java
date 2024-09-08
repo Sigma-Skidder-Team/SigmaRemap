@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Class4321;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.Minecraft;
@@ -42,25 +42,25 @@ public class Class4334 extends Class4333 {
    public static Texture field21179;
    public static Texture field21180;
 
-   public Class4334(Class4305 var1, String var2, int var3, int var4) {
+   public Class4334(IconPanel var1, String var2, int var3, int var4) {
       super(var1, var2, var3 - 198, var4 - 298, 396, 596);
       method13477();
-      this.method13230(this.field21152 = new Class4255(this, "combat", 24, 58, 170, 130, "Combat", field21160, field21161));
-      this.method13230(this.field21153 = new Class4255(this, "movement", 24, 208, 170, 130, "Movement", field21165, field21166));
-      this.method13230(this.field21157 = new Class4255(this, "world", 24, 358, 170, 130, "World", field21179, field21180));
-      this.method13230(this.field21155 = new Class4255(this, "player", 201, 58, 170, 130, "Player", field21171, field21172));
-      this.method13230(this.field21156 = new Class4255(this, "visuals", 201, 208, 170, 130, "Visuals", field21175, field21176));
-      this.method13230(this.field21154 = new Class4255(this, "other", 201, 358, 170, 130, "Others", field21169, field21170));
+      this.addToList(this.field21152 = new Class4255(this, "combat", 24, 58, 170, 130, "Combat", field21160, field21161));
+      this.addToList(this.field21153 = new Class4255(this, "movement", 24, 208, 170, 130, "Movement", field21165, field21166));
+      this.addToList(this.field21157 = new Class4255(this, "world", 24, 358, 170, 130, "World", field21179, field21180));
+      this.addToList(this.field21155 = new Class4255(this, "player", 201, 58, 170, 130, "Player", field21171, field21172));
+      this.addToList(this.field21156 = new Class4255(this, "visuals", 201, 208, 170, 130, "Visuals", field21175, field21176));
+      this.addToList(this.field21154 = new Class4255(this, "other", 201, 358, 170, 130, "Others", field21169, field21170));
       Class4361 var7;
-      this.method13230(var7 = new Class4361(this, "exit", this.method13267() - 41, 9));
-      var7.method13251((var0, var1x) -> Minecraft.getInstance().displayGuiScreen(null));
+      this.addToList(var7 = new Class4361(this, "exit", this.method13267() - 41, 9));
+      var7.doThis((var0, var1x) -> Minecraft.getInstance().displayGuiScreen(null));
       Class4321 var8 = (Class4321)this.method13258();
-      this.field21152.method13251((var1x, var2x) -> var8.method13418("Combat", ModuleCategory.COMBAT));
-      this.field21153.method13251((var1x, var2x) -> var8.method13418("Movement", ModuleCategory.MOVEMENT));
-      this.field21157.method13251((var1x, var2x) -> var8.method13418("World", ModuleCategory.WORLD));
-      this.field21155.method13251((var1x, var2x) -> var8.method13418("Player", ModuleCategory.PLAYER));
-      this.field21156.method13251((var1x, var2x) -> var8.method13418("Visuals", ModuleCategory.RENDER, ModuleCategory.GUI));
-      this.field21154.method13251((var1x, var2x) -> var8.method13418("Others", ModuleCategory.MISC));
+      this.field21152.doThis((var1x, var2x) -> var8.method13418("Combat", ModuleCategory.COMBAT));
+      this.field21153.doThis((var1x, var2x) -> var8.method13418("Movement", ModuleCategory.MOVEMENT));
+      this.field21157.doThis((var1x, var2x) -> var8.method13418("World", ModuleCategory.WORLD));
+      this.field21155.doThis((var1x, var2x) -> var8.method13418("Player", ModuleCategory.PLAYER));
+      this.field21156.doThis((var1x, var2x) -> var8.method13418("Visuals", ModuleCategory.RENDER, ModuleCategory.GUI));
+      this.field21154.doThis((var1x, var2x) -> var8.method13418("Others", ModuleCategory.MISC));
       this.method13300(false);
    }
 

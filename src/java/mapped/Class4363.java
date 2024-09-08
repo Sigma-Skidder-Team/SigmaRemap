@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.lwjgl.opengl.GL11;
@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class Class4363 extends Class4247 {
-   public static final Class6387 field21325 = new Class6387(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.getColor).method19414(Class2218.field14492);
+   public static final ColorHelper field21325 = new ColorHelper(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.getColor).method19414(Class2218.field14492);
    public List<String> field21326 = new ArrayList<String>();
    public int field21327 = 0;
    public boolean field21328;
@@ -22,21 +22,21 @@ public class Class4363 extends Class4247 {
    private Animation field21330 = new Animation(220, 220);
    private Map<Integer, Class4362> field21331 = new HashMap<Integer, Class4362>();
 
-   public Class4363(Class4305 var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8) {
+   public Class4363(IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, field21325, false);
       this.field21326 = var7;
       this.field21327 = var8;
       this.method13646();
    }
 
-   public Class4363(Class4305 var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, Class6387 var9) {
+   public Class4363(IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, ColorHelper var9) {
       super(var1, var2, var3, var4, var5, var6, var9, false);
       this.field21326 = var7;
       this.field21327 = var8;
       this.method13646();
    }
 
-   public Class4363(Class4305 var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, Class6387 var9, String var10) {
+   public Class4363(IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, ColorHelper var9, String var10) {
       super(var1, var2, var3, var4, var5, var6, var9, var10, false);
       this.field21326 = var7;
       this.field21327 = var8;
@@ -44,7 +44,7 @@ public class Class4363 extends Class4247 {
    }
 
    public Class4363(
-      Class4305 var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, Class6387 var9, String var10, ClientResource var11
+           IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, ColorHelper var9, String var10, ClientResource var11
    ) {
       super(var1, var2, var3, var4, var5, var6, var9, var10, var11, false);
       this.field21326 = var7;
@@ -61,7 +61,7 @@ public class Class4363 extends Class4247 {
          this.method13658(false);
          this.method13037();
       });
-      this.method13230(var5);
+      this.addToList(var5);
    }
 
    public int method13644(int var1) {
@@ -83,18 +83,18 @@ public class Class4363 extends Class4247 {
       this.method13241().clear();
       this.field20913 = ResourceRegistry.JelloLightFont18;
       Class4240 var3;
-      this.method13230(var3 = new Class4240(this, "dropdownButton", 0, 0, this.method13269(), this.method13269(), this.field20914));
+      this.addToList(var3 = new Class4240(this, "dropdownButton", 0, 0, this.method13269(), this.method13269(), this.field20914));
       var3.method13261((var1, var2) -> {
          var1.method13264(0);
          var1.method13266(0);
          var1.method13268(this.method13267());
          var1.method13270(this.method13269());
       });
-      var3.method13251((var1, var2) -> this.method13658(!this.method13657()));
+      var3.doThis((var1, var2) -> this.method13658(!this.method13657()));
 
       for (String var5 : this.field21326) {
          Class4240 var6;
-         this.method13230(
+         this.addToList(
             var6 = new Class4240(
                this,
                var5,
@@ -102,7 +102,7 @@ public class Class4363 extends Class4247 {
                this.method13269(),
                this.method13267(),
                this.method13269(),
-               new Class6387(
+               new ColorHelper(
                   ClientColors.LIGHT_GREYISH_BLUE.getColor,
                   -1381654,
                   this.field20914.method19405(),
@@ -115,7 +115,7 @@ public class Class4363 extends Class4247 {
             )
          );
          var6.method13034(10);
-         var6.method13251((var2, var3x) -> {
+         var6.doThis((var2, var3x) -> {
             int var6x = this.method13655();
             this.method13656(this.field21326.indexOf(var5));
             this.method13658(false);

@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -74,7 +74,7 @@ public class VanillaFly extends Module {
         if (this.isEnabled()) {
             if (!mc.player.onGround && this.getBooleanValueFromSetttingName("Kick bypass")) {
                 if (this.field23996 > 0 && this.field23996 % 30 == 0 && !ColorUtils.method17730(mc.player, 0.01F)) {
-                    if (Class8005.method27349() != Class5989.field26129.method18582()) {
+                    if (JelloPortal.method27349() != ViaVerList.field26129.method18582()) {
                         var1.method13912(var1.method13911() - 0.04);
                     } else {
                         double var4 = this.method16920();

@@ -7,7 +7,7 @@ import java.util.List;
 
 public abstract class Class1182 extends Class1180 {
    private final List<Class9125> field6381;
-   public final List<Class1152> field6382;
+   public final List<IGuiEventListener2> field6382;
 
    public Class1182(Class1127 class1127, List<Class9125> var1, ITextComponent var2) {
       super(class1127, var1);
@@ -16,7 +16,7 @@ public abstract class Class1182 extends Class1180 {
    }
 
    @Override
-   public List<? extends Class1152> method2468() {
+   public List<? extends IGuiEventListener2> getEventListeners() {
       return this.field6382;
    }
 

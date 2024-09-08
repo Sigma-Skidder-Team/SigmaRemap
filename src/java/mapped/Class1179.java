@@ -33,7 +33,7 @@ public class Class1179 extends Class1178<Class1179> {
    }
 
    @Override
-   public List<? extends Class1152> method2468() {
+   public List<? extends IGuiEventListener2> getEventListeners() {
       return this.field6376;
    }
 

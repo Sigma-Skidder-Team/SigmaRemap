@@ -97,7 +97,7 @@ public class CreditsScreen extends Screen {
    public void keyPressed(int var1) {
       super.keyPressed(var1);
       if (var1 == 256) {
-         Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
+         Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen());
       }
    }
 }

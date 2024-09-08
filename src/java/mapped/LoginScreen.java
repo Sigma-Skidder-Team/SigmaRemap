@@ -3,12 +3,12 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.network.Class9507;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.util.Util;
 
 public class LoginScreen extends Class4247 {
-   private Class4287 field21352;
+   private StringPanel field21352;
    private Class4281 field21353;
    private Class4281 field21354;
    private Class4281 field21355;
@@ -19,32 +19,32 @@ public class LoginScreen extends Class4247 {
    public static int field21360 = 334;
    public static int field21361 = 571;
 
-   public LoginScreen(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public LoginScreen(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
-      this.method13230(
-         this.field21352 = new Class4287(
+      this.addToList(
+         this.field21352 = new StringPanel(
             this,
             "Login",
             228,
             43,
             ResourceRegistry.JelloMediumFont40.method23942("Login"),
             50,
-            new Class6387(ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, -7631989),
+            new ColorHelper(ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, -7631989),
             "Login",
             ResourceRegistry.JelloMediumFont40
          )
       );
-      this.method13230(
+      this.addToList(
          this.field21356 = new UIButton(
-            this, "LoginButton", 468, 238, ResourceRegistry.JelloLightFont25.method23942("Login"), 70, Class6387.field27961, "Login", ResourceRegistry.JelloLightFont25
+            this, "LoginButton", 468, 238, ResourceRegistry.JelloLightFont25.method23942("Login"), 70, ColorHelper.field27961, "Login", ResourceRegistry.JelloLightFont25
          )
       );
-      this.method13230(
+      this.addToList(
          this.field21357 = new UIButton(
-            this, "RegisterButton", 88, 250, ResourceRegistry.JelloLightFont14.method23942("Register"), 14, Class6387.field27961, "Register", ResourceRegistry.JelloLightFont14
+            this, "RegisterButton", 88, 250, ResourceRegistry.JelloLightFont14.method23942("Register"), 14, ColorHelper.field27961, "Register", ResourceRegistry.JelloLightFont14
          )
       );
-      this.method13230(
+      this.addToList(
          this.field21358 = new UIButton(
             this,
             "ForgotButton",
@@ -52,32 +52,32 @@ public class LoginScreen extends Class4247 {
             275,
             ResourceRegistry.JelloLightFont14.method23942("Forgot password?"),
             14,
-            Class6387.field27961,
+            ColorHelper.field27961,
             "Forgot password?",
             ResourceRegistry.JelloLightFont14
          )
       );
-      this.method13230(this.field21359 = new Class4285(this, "loading", 511, 260, 30, 30));
+      this.addToList(this.field21359 = new Class4285(this, "loading", 511, 260, 30, 30));
       this.field21359.method13296(false);
       this.field21359.method13294(true);
       int var9 = 50;
       int var10 = 300;
       int var11 = 106;
-      Class6387 var12 = new Class6387(-892679478, -892679478, -892679478, ClientColors.MID_GREY.getColor, Class2218.field14488, Class2218.field14492);
-      this.method13230(this.field21353 = new Class4281(this, "Username", 228, var11, var10, var9, var12, "", "Username"));
-      this.method13230(this.field21354 = new Class4281(this, "Password", 228, var11 + 53, var10, var9, var12, "", "Password"));
+      ColorHelper var12 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.MID_GREY.getColor, Class2218.field14488, Class2218.field14492);
+      this.addToList(this.field21353 = new Class4281(this, "Username", 228, var11, var10, var9, var12, "", "Username"));
+      this.addToList(this.field21354 = new Class4281(this, "Password", 228, var11 + 53, var10, var9, var12, "", "Password"));
       this.field21353.method13306(ResourceRegistry.JelloLightFont20);
       this.field21354.method13306(ResourceRegistry.JelloLightFont20);
       this.field21354.method13155(true);
-      this.method13230(this.field21355 = new Class4281(this, "CaptchaBox", 228, var11 + 135, 84, var9, var12, "", "Captcha"));
+      this.addToList(this.field21355 = new Class4281(this, "CaptchaBox", 228, var11 + 135, 84, var9, var12, "", "Captcha"));
       this.field21355.method13306(ResourceRegistry.JelloLightFont20);
       this.field21355.method13288(false);
-      this.field21356.method13251((var1x, var2x) -> this.method13688());
-      this.field21357.method13251((var1x, var2x) -> {
+      this.field21356.doThis((var1x, var2x) -> this.method13688());
+      this.field21357.doThis((var1x, var2x) -> {
          Class4322 var5x = (Class4322)this.method13258();
          var5x.method13422();
       });
-      this.field21358.method13251((var0, var1x) -> Util.getOSType().method8181("https://sigma-web-alpha.vercel.app/"));
+      this.field21358.doThis((var0, var1x) -> Util.getOSType().method8181("https://sigma-web-alpha.vercel.app/"));
    }
 
    @Override

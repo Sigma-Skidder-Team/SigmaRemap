@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -9,10 +9,10 @@ import totalcross.json.JSONArray;
 import org.lwjgl.opengl.GL11;
 import totalcross.json.JSONObject;
 
-public class Class4330 extends Class4305 {
+public class Class4330 extends IconPanel {
    public Animation animation2 = new Animation(370, 150, Direction.BACKWARDS);
 
-   public Class4330(Class4305 var1, String var2, JSONObject var3) {
+   public Class4330(IconPanel var1, String var2, JSONObject var3) {
       super(var1, var2);
       this.method13268(this.method13258().method13267());
       int var6 = 0;
@@ -22,20 +22,20 @@ public class Class4330 extends Class4305 {
 
       String var7 = var3.getString("title");
       JSONArray var8 = var3.getJSONArray("changes");
-      this.method13230(new Class4287(this, "title", 0, var6, 0, 0, Class6387.field27961, var7, ResourceRegistry.JelloMediumFont40));
+      this.addToList(new StringPanel(this, "title", 0, var6, 0, 0, ColorHelper.field27961, var7, ResourceRegistry.JelloMediumFont40));
       var6 += 55;
 
       for (int var9 = 0; var9 < var8.length(); var9++) {
          String var10 = " - " + var8.getString(var9);
-         this.method13230(
-            new Class4287(
+         this.addToList(
+            new StringPanel(
                this,
                "change" + var9,
                0,
                var6,
                0,
                0,
-               new Class6387(0, 0, 0, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)),
+               new ColorHelper(0, 0, 0, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)),
                var10,
                ResourceRegistry.JelloLightFont20
             )

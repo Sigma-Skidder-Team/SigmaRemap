@@ -30,7 +30,7 @@ public class ChatScreen extends Screen {
       this.field4561.add(this.field7048);
       this.field7050 = new Class6850(this.mc, this, this.field7048, this.fontRenderer, false, false, 1, 10, true, -805306368);
       this.field7050.method20835();
-      this.method5536(this.field7048);
+      this.setFocusedDefault(this.field7048);
    }
 
    @Override
@@ -99,7 +99,7 @@ public class ChatScreen extends Screen {
    }
 
    @Override
-   public boolean method2649(double var1, double var3, double var5) {
+   public boolean mouseScrolled(double var1, double var3, double var5) {
       if (var5 > 1.0) {
          var5 = 1.0;
       }
@@ -121,7 +121,7 @@ public class ChatScreen extends Screen {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (!this.field7050.method20832((double)((int)var1), (double)((int)var3), var5)) {
          if (var5 == 0) {
             Class1266 var8 = this.mc.ingameGUI.getChatGUI();
@@ -135,7 +135,7 @@ public class ChatScreen extends Screen {
             }
          }
 
-         return !this.field7048.method1958(var1, var3, var5) ? super.method1958(var1, var3, var5) : true;
+         return !this.field7048.mouseClicked(var1, var3, var5) ? super.mouseClicked(var1, var3, var5) : true;
       } else {
          return true;
       }
@@ -172,7 +172,7 @@ public class ChatScreen extends Screen {
 
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
-      this.method5534(this.field7048);
+      this.setListener(this.field7048);
       this.field7048.method5654(true);
       method5686(var1, 2, this.height - 14, this.width - 2, this.height - 2, this.mc.gameSettings.method37141(Integer.MIN_VALUE));
       this.field7048.render(var1, var2, var3, var4);

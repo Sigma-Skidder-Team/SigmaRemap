@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class Class1218 extends Button implements Class1219 {
+public class Class1218 extends Button implements IScreen {
    public static final ResourceLocation field6535 = new ResourceLocation("realms", "textures/gui/realms/slot_frame.png");
    public static final ResourceLocation field6536 = new ResourceLocation("realms", "textures/gui/realms/empty_frame.png");
    public static final ResourceLocation field6537 = new ResourceLocation("minecraft", "textures/gui/title/background/panorama_0.png");
@@ -154,7 +154,7 @@ public class Class1218 extends Button implements Class1219 {
       ITextComponent var15
    ) {
       boolean var18 = this.method5737();
-      if (this.method2485((double)var4, (double)var5) && var15 != null) {
+      if (this.isMouseOver((double)var4, (double)var5) && var15 != null) {
          this.field6544.accept(var15);
       }
 

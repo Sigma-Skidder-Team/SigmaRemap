@@ -48,7 +48,7 @@ public abstract class Class6065 {
 
    public static void method18805(Class1286<?> var0, Class1155<?> var1, List<Class6065> var2, int var3, double var4, double var6) {
       if (var3 == 0) {
-         int var10 = var0.method2468().indexOf(var1);
+         int var10 = var0.getEventListeners().indexOf(var1);
          if (var10 > -1) {
             var0.method6109(var10);
             int var11 = var0.method6053();

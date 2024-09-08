@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
@@ -9,11 +9,11 @@ import java.util.List;
 
 public class Class4362 extends Class4247 {
    private static String[] field20602;
-   public static final Class6387 field21322 = new Class6387(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.getColor).method19414(Class2218.field14492);
+   public static final ColorHelper field21322 = new ColorHelper(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.getColor).method19414(Class2218.field14492);
    public List<String> field21323 = new ArrayList<String>();
    public int field21324 = 0;
 
-   public Class4362(Class4305 var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8) {
+   public Class4362(IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, field21322, false);
       this.field21323 = var7;
       this.field21324 = var8;
@@ -26,7 +26,7 @@ public class Class4362 extends Class4247 {
 
       for (String var4 : this.field21323) {
          Class4240 var5;
-         this.method13230(
+         this.addToList(
             var5 = new Class4240(
                this,
                var4,
@@ -34,7 +34,7 @@ public class Class4362 extends Class4247 {
                0,
                this.method13267(),
                this.method13269(),
-               new Class6387(
+               new ColorHelper(
                   ClientColors.LIGHT_GREYISH_BLUE.getColor,
                   -1381654,
                   this.field20914.method19405(),
@@ -47,7 +47,7 @@ public class Class4362 extends Class4247 {
             )
          );
          var5.method13034(10);
-         var5.method13251((var2, var3) -> {
+         var5.doThis((var2, var3) -> {
             this.method13641(this.field21323.indexOf(var4));
             this.method13037();
          });

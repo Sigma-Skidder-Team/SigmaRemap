@@ -112,7 +112,7 @@ public class Class9561 {
       return !Class9299.field42925.method20214() ? var0.getItem() == Items.field38119 : Class9299.method35064(var0, Class9299.field42925, var1);
    }
 
-   public static Button method37053(MainMenuScreen var0, int var1, int var2) {
+   public static Button addDemoButtons(VanillaMainMenuScreen var0, int var1, int var2) {
       return Class9299.field42976.method20241()
          ? new Button(var0.width / 2 - 100, var1 + var2 * 2, 98, 20, new TranslationTextComponent("fml.menu.mods"), var1x -> {
             Screen var4 = (Screen)Class9299.field42976.method20243(var0);

@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import org.lwjgl.opengl.GL11;
 
 public class Class4255 extends Class4247 {
@@ -8,8 +8,8 @@ public class Class4255 extends Class4247 {
    public Texture field20633;
    public Texture field20634;
 
-   public Class4255(Class4305 var1, String var2, int var3, int var4, int var5, int var6, String var7, Texture var8, Texture var9) {
-      super(var1, var2, var3, var4, var5, var6, Class6387.field27961, var7, false);
+   public Class4255(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7, Texture var8, Texture var9) {
+      super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
       this.field20633 = var8;
       this.field20634 = var9;
    }

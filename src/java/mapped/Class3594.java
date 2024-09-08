@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Comparator;
 
-public class Class3594 implements Comparator<Class5989> {
+public class Class3594 implements Comparator<ViaVerList> {
    private static String[] field19541;
    public final Class6259 field19542;
 
@@ -10,7 +10,7 @@ public class Class3594 implements Comparator<Class5989> {
       this.field19542 = var1;
    }
 
-   public int compare(Class5989 var1, Class5989 var2) {
-      return Class5989.method18570(var2) - Class5989.method18570(var1);
+   public int compare(ViaVerList var1, ViaVerList var2) {
+      return ViaVerList.method18570(var2) - ViaVerList.method18570(var1);
    }
 }

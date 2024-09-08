@@ -33,7 +33,7 @@ public class Class871 extends Class851<Class5822> {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       int var8 = (this.width - this.field4721) / 2;
       int var9 = (this.height - this.field4722) / 2;
 
@@ -46,7 +46,7 @@ public class Class871 extends Class851<Class5822> {
          }
       }
 
-      return super.method1958(var1, var3, var5);
+      return super.mouseClicked(var1, var3, var5);
    }
 
    @Override

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class4281 extends Class4278 {
-   public static final Class6387 field20741 = new Class6387(
+   public static final ColorHelper field20741 = new ColorHelper(
       -892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488, Class2218.field14492
    );
-   public static final Class6387 field20742 = new Class6387(-1, -1, -1, ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14488, Class2218.field14492);
+   public static final ColorHelper field20742 = new ColorHelper(-1, -1, -1, ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14488, Class2218.field14492);
    private String field20743 = "";
    private float field20744;
    private final float field20745 = 2.0F;
@@ -34,28 +34,28 @@ public class Class4281 extends Class4278 {
    private final List<Class7902> field20757 = new ArrayList<Class7902>();
    private boolean field20758 = true;
 
-   public Class4281(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4281(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, field20741, "", false);
       this.field20756.start();
    }
 
-   public Class4281(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7) {
+   public Class4281(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
       super(var1, var2, var3, var4, var5, var6, var7, "", false);
       this.field20756.start();
    }
 
-   public Class4281(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8) {
+   public Class4281(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.field20756.start();
    }
 
-   public Class4281(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8, String var9) {
+   public Class4281(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, String var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, ResourceRegistry.JelloLightFont25, false);
       this.field20743 = var9;
       this.field20756.start();
    }
 
-   public Class4281(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8, String var9, ClientResource var10) {
+   public Class4281(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, String var9, ClientResource var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.field20743 = var9;
       this.field20756.start();

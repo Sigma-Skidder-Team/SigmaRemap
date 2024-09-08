@@ -41,7 +41,7 @@ public class Class3058 implements Class2982 {
          }
 
          if (Class9019.field41258 == -1) {
-            Class9019.field41258 = Class5989.method18569(var7).method18573();
+            Class9019.field41258 = ViaVerList.method18569(var7).method18573();
          }
 
          Class5417 var9 = Class8042.method27614().method34424().<Class5417>method31084(Class5417.class);
@@ -58,7 +58,7 @@ public class Class3058 implements Class2982 {
 
          if (var11 != null) {
             if (var7 == var10 || var7 == 0) {
-               Class5989 var12 = Class5989.method18569(var4.method18675());
+               ViaVerList var12 = ViaVerList.method18569(var4.method18675());
                var8.addProperty("protocol", var12.method18576());
             }
          } else {

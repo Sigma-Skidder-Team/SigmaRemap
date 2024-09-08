@@ -20,7 +20,7 @@ public class Class1222 extends Button {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var7 = !this.method5737() ? 0.0F : 12.0F;
       method5699(var1, this.field6477, this.field6478, 0.0F, var7, 12, 12, 12, 24);
-      if (this.method2485((double)var2, (double)var3)) {
+      if (this.isMouseOver((double)var2, (double)var3)) {
          RealmsMainScreen.method2108(this.field6566, new ITextComponent[]{this.method5745()});
       }
    }

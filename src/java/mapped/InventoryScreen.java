@@ -41,7 +41,7 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
          this.field4769 = true;
          this.field4734 = this.field4768.method5837(this.field4770, this.width, this.field4721);
          this.field4561.add(this.field4768);
-         this.method5536(this.field4768);
+         this.setFocusedDefault(this.field4768);
          this.<Class1243>addButton(new Class1243(this.field4734 + 104, this.height / 2 - 22, 20, 18, 0, 0, 19, field4765, var1 -> {
             this.field4768.method5834(this.field4770);
             this.field4768.method5838();
@@ -133,19 +133,19 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
-      if (this.field4768.method1958(var1, var3, var5)) {
-         this.method5534(this.field4768);
+   public boolean mouseClicked(double var1, double var3, int var5) {
+      if (this.field4768.mouseClicked(var1, var3, var5)) {
+         this.setListener(this.field4768);
          return true;
       } else {
-         return this.field4770 && this.field4768.method5839() ? false : super.method1958(var1, var3, var5);
+         return this.field4770 && this.field4768.method5839() ? false : super.mouseClicked(var1, var3, var5);
       }
    }
 
    @Override
-   public boolean method2565(double var1, double var3, int var5) {
+   public boolean mouseReleased(double var1, double var3, int var5) {
       if (!this.field4771) {
-         return super.method2565(var1, var3, var5);
+         return super.mouseReleased(var1, var3, var5);
       } else {
          this.field4771 = false;
          return true;

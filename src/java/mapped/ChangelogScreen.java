@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -13,17 +13,16 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 import totalcross.json.JSONArray;
-import totalcross.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-public class ChangelogScreen extends Class4305 {
+public class ChangelogScreen extends IconPanel {
    public Animation animation = new Animation(380, 200, Direction.BACKWARDS);
    public Class4339 field21184;
    private static JSONArray cachedChangelog;
 
-   public ChangelogScreen(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public ChangelogScreen(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.method13300(false);
       this.field21184 = new Class4339(this, "scroll", 100, 200, var5 - 200, var6 - 200);
@@ -43,7 +42,7 @@ public class ChangelogScreen extends Class4305 {
       super.method13028(var1, var2);
       if (this.field21184 != null) {
          if (this.isHovered() && this.method13287()) {
-            for (Class4305 var9 : this.field21184.method13517().method13241()) {
+            for (IconPanel var9 : this.field21184.method13517().method13241()) {
                Class4330 var10 = (Class4330)var9;
                var10.animation2.changeDirection(Direction.FORWARDS);
                if ((double)var10.animation2.calcPercent() < 0.5) {
@@ -51,7 +50,7 @@ public class ChangelogScreen extends Class4305 {
                }
             }
          } else {
-            for (Class4305 var6 : this.field21184.method13517().method13241()) {
+            for (IconPanel var6 : this.field21184.method13517().method13241()) {
                Class4330 var7 = (Class4330)var6;
                var7.animation2.changeDirection(Direction.BACKWARDS);
             }

@@ -69,17 +69,17 @@ public class Class1188 extends Class1186 {
    }
 
    @Override
-   public List<? extends Class1152> method2468() {
+   public List<? extends IGuiEventListener2> getEventListeners() {
       return ImmutableList.of(this.field6415, this.field6416);
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
-      return !this.field6415.method1958(var1, var3, var5) ? this.field6416.method1958(var1, var3, var5) : true;
+   public boolean mouseClicked(double var1, double var3, int var5) {
+      return !this.field6415.mouseClicked(var1, var3, var5) ? this.field6416.mouseClicked(var1, var3, var5) : true;
    }
 
    @Override
-   public boolean method2565(double var1, double var3, int var5) {
-      return this.field6415.method2565(var1, var3, var5) || this.field6416.method2565(var1, var3, var5);
+   public boolean mouseReleased(double var1, double var3, int var5) {
+      return this.field6415.mouseReleased(var1, var3, var5) || this.field6416.mouseReleased(var1, var3, var5);
    }
 }

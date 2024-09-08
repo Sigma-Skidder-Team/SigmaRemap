@@ -27,7 +27,7 @@ public class AutoLog extends Module {
                 mc.unloadWorld();
                 mc.displayGuiScreen(
                         new Class832(
-                                new MultiplayerScreen(new MainMenuScreen()),
+                                new MultiplayerScreen(new VanillaMainMenuScreen()),
                                 new TranslationTextComponent("disconnect.lost"),
                                 new StringTextComponent(
                                         "AutoLog disconnected you. " + (!var5 ? "Disable it in a singleplayer world to reconnect." : "The mod now disabled for you to reconnect.")

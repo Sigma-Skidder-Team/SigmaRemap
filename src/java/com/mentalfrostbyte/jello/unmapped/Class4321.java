@@ -30,7 +30,7 @@ public class Class4321 extends Screen {
                 this.method13236(this.field21081);
             }
 
-            this.method13230(this.field21081 = new Class4335(this, var1, this.method13267() / 2, this.method13269() / 2, var2));
+            this.addToList(this.field21081 = new Class4335(this, var1, this.method13267() / 2, this.method13269() / 2, var2));
         });
     }
 
@@ -39,7 +39,7 @@ public class Class4321 extends Screen {
             this.method13236(this.field21081);
         }
 
-        this.method13230(this.field21081 = new Class4334(this, "Sigma", this.method13267() / 2, this.method13269() / 2));
+        this.addToList(this.field21081 = new Class4334(this, "Sigma", this.method13267() / 2, this.method13269() / 2));
     }
 
     @Override

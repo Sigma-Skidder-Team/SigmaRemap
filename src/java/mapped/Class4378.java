@@ -30,7 +30,7 @@ public class Class4378 {
    public Class4378() {
       Client.getInstance().getEventManager().register(this);
       if (FileUtil.field25727) {
-         this.field21387.add(new Class7957(344, Class1145.class));
+         this.field21387.add(new Class7957(344, ClickGui.class));
       }
    }
 

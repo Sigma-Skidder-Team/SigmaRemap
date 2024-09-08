@@ -70,11 +70,11 @@ public abstract class Class855<T extends Class5831> extends Class851<T> implemen
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
-      if (this.field4759.method1958(var1, var3, var5)) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
+      if (this.field4759.mouseClicked(var1, var3, var5)) {
          return true;
       } else {
-         return this.field4760 && this.field4759.method5839() ? true : super.method1958(var1, var3, var5);
+         return this.field4760 && this.field4759.method5839() ? true : super.mouseClicked(var1, var3, var5);
       }
    }
 

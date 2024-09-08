@@ -6,7 +6,7 @@ import net.minecraft.client.gui.AbstractGui;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class Class1298 extends Class1150 implements Class1190 {
+public abstract class Class1298 extends FocusableGui implements Class1190 {
    public static final int field6868 = -1;
    public static final int field6869 = -2;
    public final Minecraft field6870;
@@ -69,7 +69,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    public abstract int method6147();
 
    @Override
-   public List<? extends Class1152> method2468() {
+   public List<? extends IGuiEventListener2> getEventListeners() {
       return Collections.emptyList();
    }
 
@@ -240,7 +240,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       this.method6165(var1, var3, var5);
       if (this.method6146() && this.method6162(var1, var3)) {
          int var8 = this.method6157(var1, var3);
@@ -251,11 +251,11 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
             );
             return true;
          } else if (var8 != -1 && this.method6148(var8, var5, var1, var3)) {
-            if (this.method2468().size() > var8) {
-               this.method5534(this.method2468().get(var8));
+            if (this.getEventListeners().size() > var8) {
+               this.setListener(this.getEventListeners().get(var8));
             }
 
-            this.method5532(true);
+            this.setDragging(true);
             return true;
          } else {
             return this.field6885;
@@ -266,17 +266,17 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    }
 
    @Override
-   public boolean method2565(double var1, double var3, int var5) {
-      if (this.method5533() != null) {
-         this.method5533().method2565(var1, var3, var5);
+   public boolean mouseReleased(double var1, double var3, int var5) {
+      if (this.getListener() != null) {
+         this.getListener().mouseReleased(var1, var3, var5);
       }
 
       return false;
    }
 
    @Override
-   public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
-      if (!super.method2516(var1, var3, var5, var6, var8)) {
+   public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
+      if (!super.mouseDragged(var1, var3, var5, var6, var8)) {
          if (this.method6146() && var5 == 0 && this.field6885) {
             if (!(var3 < (double)this.field6873)) {
                if (!(var3 > (double)this.field6874)) {
@@ -311,7 +311,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    }
 
    @Override
-   public boolean method2649(double var1, double var3, double var5) {
+   public boolean mouseScrolled(double var1, double var3, double var5) {
       if (this.method6146()) {
          this.field6880 = this.field6880 - var5 * (double)this.field6877 / 2.0;
          return true;
@@ -352,7 +352,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    }
 
    @Override
-   public boolean method2485(double var1, double var3) {
+   public boolean isMouseOver(double var1, double var3) {
       return this.method6162(var1, var3);
    }
 

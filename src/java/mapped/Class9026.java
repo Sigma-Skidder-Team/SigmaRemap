@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import io.netty.buffer.ByteBuf;
 import java.util.Map;
 import java.util.SortedSet;
@@ -10,7 +10,7 @@ import java.util.UUID;
 public class Class9026 implements Class9027<ClientPlayerEntity> {
    public int method33426(ClientPlayerEntity var1) {
       if (var1 != null) {
-         return Class8005.method27348();
+         return JelloPortal.method27348();
       } else {
          throw new NullPointerException("player is marked non-null but is null");
       }
@@ -19,7 +19,7 @@ public class Class9026 implements Class9027<ClientPlayerEntity> {
    @Override
    public int method33415(UUID var1) {
       if (var1 != null) {
-         return Class8005.method27348();
+         return JelloPortal.method27348();
       } else {
          throw new NullPointerException("uuid is marked non-null but is null");
       }

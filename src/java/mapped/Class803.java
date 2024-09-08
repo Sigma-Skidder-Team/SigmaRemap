@@ -34,7 +34,7 @@ public class Class803 extends RealmsScreen {
       );
       this.field4193 = new Class1278(this, this.mc);
       this.<Class1278>addListener(this.field4193);
-      this.method5537(this.field4193);
+      this.setListenerDefault(this.field4193);
    }
 
    @Override

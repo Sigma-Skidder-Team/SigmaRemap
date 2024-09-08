@@ -26,7 +26,7 @@ public class Class1242 extends Button {
          this.method5745(),
          this.field6593,
          this.method5737(),
-         this.method2485((double)var2, (double)var3)
+         this.isMouseOver((double)var2, (double)var3)
       );
    }
 }

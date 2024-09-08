@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
@@ -9,7 +9,7 @@ public class Class4265 extends Class4247 {
    private boolean field20682 = true;
    private Animation field20683 = new Animation(100, 100);
 
-   public Class4265(Class4305 var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
+   public Class4265(IconPanel var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20682 = var7;
    }

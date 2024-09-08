@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.SoundEvents;
 
@@ -9,10 +9,10 @@ public class Class4300 extends Class4278 {
    private static String[] field20838;
    public int field20839;
 
-   public Class4300(Class4305 var1, String var2, int var3, int var4, int var5, int var6, String var7, int var8) {
+   public Class4300(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.method13304(var7);
-      this.method13251((var0, var1x) -> Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F)));
+      this.doThis((var0, var1x) -> Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F)));
       this.field20839 = var8;
    }
 

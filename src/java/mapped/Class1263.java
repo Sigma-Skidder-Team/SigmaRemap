@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import java.util.Collections;
 import java.util.List;
 
-public class Class1263 extends AbstractGui implements Class1190, Class1152 {
+public class Class1263 extends AbstractGui implements Class1190, IGuiEventListener2 {
    private static final ResourceLocation field6677 = new ResourceLocation("textures/gui/recipe_book.png");
    private final List<Class1251> field6678 = Lists.newArrayList();
    private boolean field6679;
@@ -75,7 +75,7 @@ public class Class1263 extends AbstractGui implements Class1190, Class1152 {
    }
 
    @Override
-   public boolean method5538(boolean var1) {
+   public boolean changeFocus(boolean var1) {
       return false;
    }
 
@@ -88,12 +88,12 @@ public class Class1263 extends AbstractGui implements Class1190, Class1152 {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (var5 != 0) {
          return false;
       } else {
          for (Class1251 var9 : this.field6678) {
-            if (var9.method1958(var1, var3, var5)) {
+            if (var9.mouseClicked(var1, var3, var5)) {
                this.field6684 = Class1251.method5831(var9);
                return true;
             }
@@ -104,7 +104,7 @@ public class Class1263 extends AbstractGui implements Class1190, Class1152 {
    }
 
    @Override
-   public boolean method2485(double var1, double var3) {
+   public boolean isMouseOver(double var1, double var3) {
       return false;
    }
 

@@ -24,7 +24,7 @@ public class Class1162 extends Class1161 {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (this.field6316.field27447 != Class2261.field14708) {
          RealmsMainScreen.method2120(this.field6317, this.field6316.field27443);
       } else {

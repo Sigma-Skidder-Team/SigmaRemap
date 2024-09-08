@@ -27,7 +27,7 @@ public class Class1287 extends Class1286<Class1161> {
 
    @Override
    public boolean method6057() {
-      return this.field6851.method5533() == this;
+      return this.field6851.getListener() == this;
    }
 
    @Override
@@ -36,12 +36,12 @@ public class Class1287 extends Class1286<Class1161> {
          return super.keyPressed(var1, var2, var3);
       } else {
          Class1155 var6 = this.method6023();
-         return var6 != null ? var6.method1958(0.0, 0.0, 0) : super.keyPressed(var1, var2, var3);
+         return var6 != null ? var6.mouseClicked(0.0, 0.0, 0) : super.keyPressed(var1, var2, var3);
       }
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (var5 == 0 && var1 < (double)this.method6048() && var3 >= (double)this.field6787 && var3 <= (double)this.field6788) {
          int var8 = RealmsMainScreen.method2156(this.field6851).method6053();
          int var9 = this.method6048();
@@ -55,7 +55,7 @@ public class Class1287 extends Class1286<Class1161> {
 
          return true;
       } else {
-         return super.method1958(var1, var3, var5);
+         return super.mouseClicked(var1, var3, var5);
       }
    }
 
@@ -100,7 +100,7 @@ public class Class1287 extends Class1286<Class1161> {
 
    public void method6024(Class1161 var1) {
       super.method6024(var1);
-      int var4 = this.method2468().indexOf(var1);
+      int var4 = this.getEventListeners().indexOf(var1);
       if (this.field6850 && var4 == 0) {
          Class9229.method34713(I18n.format("mco.trial.message.line1"), I18n.format("mco.trial.message.line2"));
       } else if (!this.field6850 || var4 > 0) {

@@ -32,21 +32,21 @@ public class GuiManager {
     private static boolean field41351 = true;
 
     static {
-        field41337.put(MainMenuScreen.class, Class4310.class);
-        field41337.put(Class1145.class, Class4308.class);
-        field41337.put(Class1144.class, Class4309.class);
-        field41337.put(Class1319.class, Class4315.class);
-        field41337.put(Class836.class, SnakeGameScreen.class);
-        field41337.put(BirdGui.class, BirdGameScreen.class);
-        field41337.put(Class833.class, Class4324.class);
+        field41337.put(VanillaMainMenuScreen.class, JelloMainMenuScreen.class);
+        field41337.put(ClickGui.class, JelloClickGUI.class);
+        field41337.put(Class1144.class, JelloKeyboardScreen.class);
+        field41337.put(Maps.class, JelloMaps.class);
+        field41337.put(Snake.class, SnakeGameScreen.class);
+        field41337.put(Bird.class, BirdGameScreen.class);
+        field41337.put(SpotLight.class, SearchBar.class);
         field41337.put(Class1309.class, Class4325.class);
-        field41337.put(Class1133.class, Class4320.class);
-        field41338.put(Class1145.class, "Click GUI");
+        field41337.put(Class1133.class, CreditsToCreators.class);
+        field41338.put(ClickGui.class, "Click GUI");
         field41338.put(Class1144.class, "Keybind Manager");
-        field41338.put(Class1319.class, "Jello Maps");
-        field41338.put(Class836.class, "Snake");
-        field41338.put(BirdGui.class, "Bird");
-        field41338.put(Class833.class, "Spotlight");
+        field41338.put(Maps.class, "Jello Maps");
+        field41338.put(Snake.class, "Snake");
+        field41338.put(Bird.class, "Bird");
+        field41338.put(SpotLight.class, "Spotlight");
     }
 
     public double field41347;
@@ -79,20 +79,20 @@ public class GuiManager {
             Minecraft.getInstance().currentScreen = null;
             Minecraft.getInstance().displayGuiScreen(new JelloPortalScreen(((MultiplayerScreen) var0).field6948));
             return true;
-        } else if (var0 instanceof IngameMenuScreen && !(var0 instanceof Class835)) {
+        } else if (var0 instanceof IngameMenuScreen && !(var0 instanceof JelloForSigmaOptions)) {
             Minecraft.getInstance().currentScreen = null;
-            Minecraft.getInstance().displayGuiScreen(new Class835());
+            Minecraft.getInstance().displayGuiScreen(new JelloForSigmaOptions());
             return true;
-        } else if (Client.getInstance().getClientMode() == ClientMode.NOADDONS && var0 instanceof MainMenuScreen && !(var0 instanceof Class850)) {
+        } else if (Client.getInstance().getClientMode() == ClientMode.NOADDONS && var0 instanceof VanillaMainMenuScreen && !(var0 instanceof NoAddOnnScreenMenu)) {
             Minecraft.getInstance().currentScreen = null;
-            Minecraft.getInstance().displayGuiScreen(new Class850());
+            Minecraft.getInstance().displayGuiScreen(new NoAddOnnScreenMenu());
             return true;
         } else {
             return false;
         }
     }
 
-    public static Screen method33458(net.minecraft.client.gui.screen.Screen var0) {
+    public static Screen handleScreen(net.minecraft.client.gui.screen.Screen var0) {
         if (var0 == null) {
             return null;
         } else if (Client.getInstance().getClientMode() == ClientMode.PREMIUM) {
@@ -132,8 +132,8 @@ public class GuiManager {
 
     public void method33452() {
         field41337.clear();
-        field41337.put(MainMenuScreen.class, ClassicMainScreen.class);
-        field41337.put(Class1145.class, Class4321.class);
+        field41337.put(VanillaMainMenuScreen.class, ClassicMainScreen.class);
+        field41337.put(ClickGui.class, Class4321.class);
     }
 
     public void method33453(int var1, int var2) {
@@ -395,7 +395,7 @@ public class GuiManager {
     }
 
     public void method33481() {
-        this.method33482(method33458(Minecraft.getInstance().currentScreen));
+        this.method33482(handleScreen(Minecraft.getInstance().currentScreen));
     }
 
     public void method33482(Screen var1) {

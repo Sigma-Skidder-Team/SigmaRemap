@@ -1,16 +1,14 @@
 package com.mentalfrostbyte.jello.network;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.unmapped.Class8402;
-import org.apache.http.client.HttpClient;
-import org.apache.http.impl.client.HttpClients;
+import com.mentalfrostbyte.jello.unmapped.CombatTracker;
 
 public class NetworkManager {
     public static boolean premium = true;
     public Class9507 field38418;
     public Account account;
     public String field38425;
-    public Class8402 field38429;
+    public CombatTracker field38429;
 
     public NetworkManager() {
 
@@ -18,7 +16,7 @@ public class NetworkManager {
 
     public void init() {
         Client.getInstance().getEventManager().register(this);
-        this.field38429 = new Class8402(this);
+        this.field38429 = new CombatTracker(this);
     }
 
     public String method30447(String var1, String var2, Class9507 var3) {

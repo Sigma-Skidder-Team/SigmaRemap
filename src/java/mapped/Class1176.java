@@ -30,7 +30,7 @@ public class Class1176 extends Class1155<Class1176> {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (var5 != 0) {
          return false;
       } else {

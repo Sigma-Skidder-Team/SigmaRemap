@@ -28,12 +28,12 @@ public class Class4312 extends Screen {
 
    public Class4312() {
       super("JelloChat");
-      this.method13230(
+      this.addToList(
          this.field20995 = new Class4269(
             this, "input", this.field20998, this.method13269() - this.field21001 - this.field20998, this.field20999, this.field21001
          )
       );
-      this.method13230(
+      this.addToList(
          this.field20996 = new Class4339(
             this,
             "navbar",
@@ -43,7 +43,7 @@ public class Class4312 extends Screen {
             this.field21000 - 90
          )
       );
-      this.method13230(
+      this.addToList(
          this.field20997 = new Class4267(
             this,
             "chatView",
@@ -59,7 +59,7 @@ public class Class4312 extends Screen {
       for (Entry var5 : Client.getInstance().getNetworkManager().field38429.method29510().entrySet()) {
          System.out.println("added " + ((Class8433)var5.getValue()).field36143);
          this.field20996
-            .method13230(
+            .addToList(
                new Class4273(
                   this.field20996,
                   ((Class8433)var5.getValue()).field36142 + "_" + this.field20996.method13241().size(),

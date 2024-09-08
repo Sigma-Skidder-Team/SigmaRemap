@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.item.ItemStack;
@@ -133,7 +133,7 @@ public class AutoMLG extends PremiumModule {
                 if (mc.player.field4904.method18131(var5).method18266()) {
                     ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
                     if (var6.getItem() == Items.field37883) {
-                        if (Class8005.method27349() <= Class5989.field26136.method18582()) {
+                        if (JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
                             mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                         }
 

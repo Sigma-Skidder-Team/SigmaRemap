@@ -126,7 +126,7 @@ public class Class1343 extends RealmsScreen {
       );
       this.field7138.method5657(10);
       this.field7138.method5635(this.field7143.method18901(this.field7145));
-      this.method5537(this.field7138);
+      this.setListenerDefault(this.field7138);
       this.field7155 = this.<Button>addButton(new Button(this.field7142, method1929(1), this.field7141, 20, this.method6437(), var1 -> {
          this.field7148 = !this.field7148;
          var1.setMessage(this.method6437());

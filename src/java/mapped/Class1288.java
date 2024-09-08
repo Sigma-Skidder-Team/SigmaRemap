@@ -23,7 +23,7 @@ public class Class1288 extends Class1286<Class1165> {
 
    @Override
    public boolean method6057() {
-      return this.field6852.method5533() == this;
+      return this.field6852.getListener() == this;
    }
 
    @Override
@@ -44,7 +44,7 @@ public class Class1288 extends Class1286<Class1165> {
 
    public void method6024(Class1165 var1) {
       super.method6024(var1);
-      Class811.method2230(this.field6852, this.method2468().indexOf(var1));
+      Class811.method2230(this.field6852, this.getEventListeners().indexOf(var1));
       Class811.method2231(this.field6852).active = Class811.method2232(this.field6852) >= 0
          && Class811.method2232(this.field6852) < this.method6031()
          && !((Class2024)Class811.method2223(this.field6852).get(Class811.method2232(this.field6852))).method8649();

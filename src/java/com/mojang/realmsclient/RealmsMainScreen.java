@@ -194,7 +194,7 @@ public class RealmsMainScreen extends RealmsScreen {
          }
 
          this.<Class1287>addListener(this.field4273);
-         this.method5537(this.field4273);
+         this.setListenerDefault(this.field4273);
          this.field4298 = Class5991.method18584(this.fontRenderer, field4251, 100);
       } else {
          this.mc.displayGuiScreen(field4268);
@@ -529,7 +529,7 @@ public class RealmsMainScreen extends RealmsScreen {
    private void method2036(RealmsServer var1) {
       field4262.method36030(var1);
       this.field4281.remove(var1);
-      this.field4273.method2468().removeIf(var1x -> var1x instanceof Class1162 && Class1162.method5562((Class1162)var1x).field27443 == this.field4274);
+      this.field4273.getEventListeners().removeIf(var1x -> var1x instanceof Class1162 && Class1162.method5562((Class1162)var1x).field27443 == this.field4274);
       this.field4273.method6024((Class1161)null);
       this.method2015((RealmsServer)null);
       this.field4274 = -1L;
@@ -635,13 +635,13 @@ public class RealmsMainScreen extends RealmsScreen {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (this.method2040(var1, var3) && this.field4285) {
          this.field4285 = false;
          this.field4286 = true;
          return true;
       } else {
-         return super.method1958(var1, var3, var5);
+         return super.mouseClicked(var1, var3, var5);
       }
    }
 

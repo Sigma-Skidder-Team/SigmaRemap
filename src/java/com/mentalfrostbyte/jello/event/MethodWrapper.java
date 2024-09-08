@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.event;
 
 import com.mentalfrostbyte.jello.event.priority.Priority;
 import com.mentalfrostbyte.jello.module.impl.movement.phase.NCPPhase;
-import com.mentalfrostbyte.jello.unmapped.Class8733;
+import com.mentalfrostbyte.jello.unmapped.Reflection;
 import mapped.ReflectionUtils;
 
 import java.lang.invoke.MethodHandle;
@@ -14,7 +14,7 @@ public class MethodWrapper {
     private final Object field35681;
     private final Class<?> field35682;
     private final Method field35683;
-    private final Class8733 field35684;
+    private final Reflection field35684;
     private MethodHandle field35685;
     private final Priority field35686;
     private final boolean field35687;
@@ -43,7 +43,7 @@ public class MethodWrapper {
         return this.field35685;
     }
 
-    public Class8733 method29024() {
+    public Reflection method29024() {
         return this.field35684;
     }
 

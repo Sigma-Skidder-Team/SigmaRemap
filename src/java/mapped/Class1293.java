@@ -8,10 +8,10 @@ public abstract class Class1293<E extends Class1178<E>> extends Class1273<E> {
    }
 
    @Override
-   public boolean method5538(boolean var1) {
-      boolean var4 = super.method5538(var1);
+   public boolean changeFocus(boolean var1) {
+      boolean var4 = super.changeFocus(var1);
       if (var4) {
-         this.method6042(this.method5533());
+         this.method6042(this.getListener());
       }
 
       return var4;

@@ -939,8 +939,8 @@ public class GameRenderer implements Class215, AutoCloseable {
          }
       }
 
-      if (this.mc.currentScreen instanceof MainMenuScreen) {
-         this.method760((MainMenuScreen)this.mc.currentScreen);
+      if (this.mc.currentScreen instanceof VanillaMainMenuScreen) {
+         this.method760((VanillaMainMenuScreen)this.mc.currentScreen);
       }
 
       if (this.field835 != var3) {
@@ -971,7 +971,7 @@ public class GameRenderer implements Class215, AutoCloseable {
       }
    }
 
-   private void method760(MainMenuScreen var1) {
+   private void method760(VanillaMainMenuScreen var1) {
       try {
          String var4 = null;
          Calendar var5 = Calendar.getInstance();

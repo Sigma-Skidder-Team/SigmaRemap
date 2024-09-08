@@ -22,7 +22,7 @@ public class Class1181 extends Class1180 {
    }
 
    @Override
-   public List<? extends Class1152> method2468() {
+   public List<? extends IGuiEventListener2> getEventListeners() {
       return ImmutableList.of();
    }
 }

@@ -2,35 +2,35 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 
 public class Class4377 extends Class4235 {
    private String[] field21384;
    private int field21385;
 
-   public Class4377(Class4305 var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, Class6387 var9, String var10, ClientResource var11) {
+   public Class4377(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, ColorHelper var9, String var10, ClientResource var11) {
       super(var1, var2, var3, var4, var5, var6, ResourcesDecrypter.skinPNG, var9, var10, var11);
       this.field21384 = var7;
       this.field21385 = var8;
       this.method13719();
    }
 
-   public Class4377(Class4305 var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, Class6387 var9, String var10) {
+   public Class4377(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, ColorHelper var9, String var10) {
       super(var1, var2, var3, var4, var5, var6, ResourcesDecrypter.skinPNG, var9, var10);
       this.field21384 = var7;
       this.field21385 = var8;
       this.method13719();
    }
 
-   public Class4377(Class4305 var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, Class6387 var9) {
+   public Class4377(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, ColorHelper var9) {
       super(var1, var2, var3, var4, var5, var6, ResourcesDecrypter.skinPNG, var9);
       this.field21384 = var7;
       this.field21385 = var8;
       this.method13719();
    }
 
-   public Class4377(Class4305 var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8) {
+   public Class4377(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, ResourcesDecrypter.skinPNG);
       this.field21384 = var7;
       this.field21385 = var8;

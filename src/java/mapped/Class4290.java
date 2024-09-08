@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class Class4290 extends Class4278 {
    public final List<Class4240> field20790 = new ArrayList<Class4240>();
    private Texture field20791;
 
-   public Class4290(Class4305 var1, String var2) {
+   public Class4290(IconPanel var1, String var2) {
       super(var1, var2, 0, Minecraft.getInstance().mainWindow.getHeight() - 70, Minecraft.getInstance().mainWindow.getWidth(), 110, false);
       this.method13292(true);
       this.method13300(false);
@@ -30,7 +30,7 @@ public class Class4290 extends Class4278 {
       int var5 = 20;
       if (this.field20788 == Class2059.field13418
          && Math.abs(Minecraft.getInstance().mainWindow.getHeight() - var2) < var5
-         && !this.field20892.method13239(((Class4308)this.field20892).field20940)) {
+         && !this.field20892.method13239(((JelloClickGUI)this.field20892).field20940)) {
          this.field20788 = Class2059.field13416;
       }
 

@@ -20,7 +20,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-public class Class1254 extends AbstractGui implements Class1190, Class1152, Class1259, Class1253<Class120> {
+public class Class1254 extends AbstractGui implements Class1190, IGuiEventListener2, Class1259, Class1253<Class120> {
    public static final ResourceLocation field6630 = new ResourceLocation("textures/gui/recipe_book.png");
    private static final ITextComponent field6631 = new TranslationTextComponent("gui.recipebook.search_hint")
       .mergeStyle(TextFormatting.ITALIC)
@@ -97,7 +97,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    }
 
    @Override
-   public boolean method5538(boolean var1) {
+   public boolean changeFocus(boolean var1) {
       return false;
    }
 
@@ -275,7 +275,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (this.method5839() && !this.field6642.player.isSpectator()) {
          if (this.field6646.method11316(var1, var3, var5, (this.field6635 - 147) / 2 - this.field6634, (this.field6636 - 166) / 2, 147, 166)) {
             IRecipe var11 = this.field6646.method11313();
@@ -293,9 +293,9 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
             }
 
             return true;
-         } else if (this.field6643.method1958(var1, var3, var5)) {
+         } else if (this.field6643.mouseClicked(var1, var3, var5)) {
             return true;
-         } else if (this.field6640.method1958(var1, var3, var5)) {
+         } else if (this.field6640.mouseClicked(var1, var3, var5)) {
             boolean var10 = this.method5851();
             this.field6640.method5822(var10);
             this.method5859();
@@ -303,7 +303,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
             return true;
          } else {
             for (Class1250 var9 : this.field6638) {
-               if (var9.method1958(var1, var3, var5)) {
+               if (var9.mouseClicked(var1, var3, var5)) {
                   if (this.field6639 != var9) {
                      this.field6639.method5822(false);
                      this.field6639 = var9;
@@ -362,9 +362,9 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    }
 
    @Override
-   public boolean method2644(int var1, int var2, int var3) {
+   public boolean keyReleased(int var1, int var2, int var3) {
       this.field6649 = false;
-      return Class1152.super.method2644(var1, var2, var3);
+      return IGuiEventListener2.super.keyReleased(var1, var2, var3);
    }
 
    @Override
@@ -373,7 +373,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
          if (!this.method5839() || this.field6642.player.isSpectator()) {
             return false;
          } else if (!this.field6643.charTyped(var1, var2)) {
-            return Class1152.super.charTyped(var1, var2);
+            return IGuiEventListener2.super.charTyped(var1, var2);
          } else {
             this.method5853();
             return true;
@@ -384,7 +384,7 @@ public class Class1254 extends AbstractGui implements Class1190, Class1152, Clas
    }
 
    @Override
-   public boolean method2485(double var1, double var3) {
+   public boolean isMouseOver(double var1, double var3) {
       return false;
    }
 

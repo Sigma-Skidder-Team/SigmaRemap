@@ -10,7 +10,7 @@ public abstract class Class1274<E extends Class1154<E>> extends Class1273<E> {
    }
 
    @Override
-   public boolean method5538(boolean var1) {
+   public boolean changeFocus(boolean var1) {
       if (!this.field6800 && this.method6031() == 0) {
          return false;
       } else {

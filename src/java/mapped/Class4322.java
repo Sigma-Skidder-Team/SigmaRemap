@@ -21,7 +21,7 @@ public class Class4322 extends Screen {
    private Texture field21087;
    private LoginScreen field21088;
    private Class4275 field21089;
-   private Class4354 field21090;
+   private AlertPanel field21090;
    private UIButton field21091;
    private boolean field21092 = false;
    private Animation field21093 = new Animation(250, 250, Direction.BACKWARDS);
@@ -30,7 +30,7 @@ public class Class4322 extends Screen {
       super("Credits");
       this.method13300(false);
       this.field21087 = ResourcesDecrypter.createScaledAndProcessedTexture2("com/mentalfrostbyte/gui/resources/" + ResourcesDecrypter.getPanoramaPNG(), 0.075F, 8);
-      this.method13230(
+      this.addToList(
          this.field21088 = new LoginScreen(
             this,
             "login",
@@ -40,7 +40,7 @@ public class Class4322 extends Screen {
             LoginScreen.field21360
          )
       );
-      this.method13230(
+      this.addToList(
          this.field21089 = new Class4275(
             this,
             "register",
@@ -51,7 +51,7 @@ public class Class4322 extends Screen {
          )
       );
       this.method13423();
-      this.method13230(
+      this.addToList(
          this.field21091 = new UIButton(
             this,
             "continue",
@@ -59,7 +59,7 @@ public class Class4322 extends Screen {
             this.field20898 / 2 + 120,
             240,
             60,
-            new Class6387(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F)),
+            new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F)),
             "Continue",
             ResourceRegistry.JelloLightFont25
          )
@@ -69,7 +69,7 @@ public class Class4322 extends Screen {
          this.field21092 = true;
          this.field21091.method13288(true);
       });
-      this.field21091.method13251((var0, var1) -> Minecraft.getInstance().displayGuiScreen(new MainMenuScreen()));
+      this.field21091.doThis((var0, var1) -> Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen()));
    }
 
    public void method13422() {
@@ -85,16 +85,16 @@ public class Class4322 extends Screen {
    public void method13424(String var1, String var2) {
       if (this.field21090 == null) {
          this.method13222(() -> {
-            ArrayList<Class9577> var5 = new ArrayList();
-            var5.add(new Class9577(Class2189.field14314, var1, 45));
+            ArrayList<MiniAlert> var5 = new ArrayList();
+            var5.add(new MiniAlert(AlertType.HEADER, var1, 45));
             String[] var6 = ColorUtils.method17745(var2, 240, ResourceRegistry.JelloLightFont20);
 
             for (int var7 = 0; var7 < var6.length; var7++) {
-               var5.add(new Class9577(Class2189.field14311, var6[var7], var7 != var6.length - 1 ? 14 : 35));
+               var5.add(new MiniAlert(AlertType.FIRSTLINE, var6[var7], var7 != var6.length - 1 ? 14 : 35));
             }
 
-            var5.add(new Class9577(Class2189.field14313, "Ok", 55));
-            this.method13233(this.field21090 = new Class4354(this, "modal", true, "", var5.toArray(new Class9577[0])));
+            var5.add(new MiniAlert(AlertType.BUTTON, "Ok", 55));
+            this.method13233(this.field21090 = new AlertPanel(this, "modal", true, "", var5.toArray(new MiniAlert[0])));
             this.field21090.method13604(var1xx -> new Thread(() -> {
                 this.method13222(() -> {
                    this.method13236(this.field21090);
@@ -214,7 +214,7 @@ public class Class4322 extends Screen {
    public void keyPressed(int var1) {
       super.keyPressed(var1);
       if (var1 == 256) {
-         Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
+         Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen());
       }
    }
 }

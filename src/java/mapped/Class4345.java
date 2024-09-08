@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.SettingType;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import com.mentalfrostbyte.jello.unmapped.TextBoxSetting;
 import com.mentalfrostbyte.jello.util.animation.Animation;
@@ -17,20 +17,20 @@ public class Class4345 extends Class4339 {
    private Module field21229;
    public ClientResource field21230 = ClassicDecryption.regular20;
    public Animation field21231 = new Animation(150, 150);
-   public HashMap<Module, Class4305> field21232 = new HashMap<Module, Class4305>();
+   public HashMap<Module, IconPanel> field21232 = new HashMap<Module, IconPanel>();
 
-   public Class4345(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
+   public Class4345(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field21229 = var7;
       this.method13300(false);
       this.method13511();
    }
 
-   private int method13555(Class4305 var1, Setting var2, int var3, int var4, int var5) {
-      Class4287 var8 = new Class4287(var1, var2.getName() + "lbl", var3, var4, 0, 0, Class4287.field20778, var2.getName(), this.field21230);
+   private int method13555(IconPanel var1, Setting var2, int var3, int var4, int var5) {
+      StringPanel var8 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, 0, 0, StringPanel.field20778, var2.getName(), this.field21230);
       Class4248 var9 = new Class4248(var1, var2.getName() + "desc", var3 + 195, var4 + 4, 330, 18, var2);
-      var1.method13230(var8);
-      var1.method13230(var9);
+      var1.addToList(var8);
+      var1.addToList(var9);
       switch (Class9820.field45882[var2.method18618().ordinal()]) {
          case 1:
             Class4262 var26 = new Class4262(var1, var2.getName() + "checkbox", var3 + 135, var4 + 4, 40, 18);
@@ -41,7 +41,7 @@ public class Class4345 extends Class4339 {
                }
             });
             var26.method13036(var1x -> var2.method18620(((Class4262)var1x).method13092()));
-            var1.method13230(var26);
+            var1.addToList(var26);
             var4 += 18 + var5;
             break;
          case 2:
@@ -73,15 +73,15 @@ public class Class4345 extends Class4339 {
 
                var8.method13304(var2.getName() + ": " + Float.toString((Float)var2.getCurrentValue()));
             });
-            var1.method13230(var13);
+            var1.addToList(var13);
             var4 += 54;
             break;
          case 3:
             int var16 = 114;
             int var20 = 27;
-            Class4282 var24;
-            this.method13230(
-               var24 = new Class4282(
+            SigmaClassicTextBox var24;
+            this.addToList(
+               var24 = new SigmaClassicTextBox(
                   var1,
                   var2.getName() + "txt",
                   var3,
@@ -115,7 +115,7 @@ public class Class4345 extends Class4339 {
                }
             });
             var23.method13036(var1x -> ((ModeSetting)var2).method18633(((Class4366)var1x).method13671()));
-            var1.method13230(var23);
+            var1.addToList(var23);
             var4 += 65;
             break;
          case 5:
@@ -131,7 +131,7 @@ public class Class4345 extends Class4339 {
             });
             var12.method13036(var1x -> var2.method18620(((Class4377)var1x).method13720()));
             var12.method13261((var2x, var3x) -> var2x.method13264(var1.method13267() - 123 - var5));
-            var1.method13230(var12);
+            var1.addToList(var12);
             var4 += 27 + var5;
          case 6:
          case 7:
@@ -142,10 +142,10 @@ public class Class4345 extends Class4339 {
    }
 
    private void method13511() {
-      Class4287 var3 = new Class4287(
-         this, "settingsname", 12, 2, this.field20897, 20, Class4287.field20778, this.field21229.getSuffix() + " Settings", this.field21230
+      StringPanel var3 = new StringPanel(
+         this, "settingsname", 12, 2, this.field20897, 20, StringPanel.field20778, this.field21229.getSuffix() + " Settings", this.field21230
       );
-      this.method13230(var3);
+      this.addToList(var3);
       byte var4 = 20;
       byte var5 = 30;
       int var6 = 35;
@@ -161,14 +161,14 @@ public class Class4345 extends Class4339 {
 
          for (Module var11 : var16.moduleArray) {
             int var12 = 10;
-            Class4305 var13 = new Class4305(this, var11.getName() + "SubView", 0, var6, this.field20897, this.field20898 - var6);
+            IconPanel var13 = new IconPanel(this, var11.getName() + "SubView", 0, var6, this.field20897, this.field20898 - var6);
             var13.method13261((var0, var1) -> var0.method13268(var1.method13267()));
 
             for (Setting var15 : var11.getSettingMap().values()) {
                var12 = this.method13555(var13, var15, 30, var12, 20);
             }
 
-            this.method13230(var13);
+            this.addToList(var13);
             this.field21232.put(var11, var13);
          }
 
@@ -176,7 +176,7 @@ public class Class4345 extends Class4339 {
          var16.method16724();
       }
 
-      this.method13230(new Class4287(this, "lbl", 5, 200, 0, 33, Class4287.field20778, this.field20912));
+      this.addToList(new StringPanel(this, "lbl", 5, 200, 0, 33, StringPanel.field20778, this.field20912));
    }
 
    public void method13556() {

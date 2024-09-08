@@ -5,7 +5,7 @@ import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class1220 extends Button implements Class1219 {
+public class Class1220 extends Button implements IScreen {
    public final RealmsMainScreen field6548;
 
    public Class1220(RealmsMainScreen var1) {

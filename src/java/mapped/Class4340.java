@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -19,7 +19,7 @@ public class Class4340 extends Class4339 {
    public boolean field21212;
    public Class4355 field21213;
 
-   public Class4340(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4340(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.field21211.changeDirection(Direction.BACKWARDS);
       this.field20883 = true;
@@ -40,8 +40,8 @@ public class Class4340 extends Class4339 {
          );
          var7.field21288 = var7.method13265();
          this.field21209.add(var7);
-         this.method13230(var7);
-         var7.method13251((var2x, var3x) -> {
+         this.addToList(var7);
+         var7.doThis((var2x, var3x) -> {
             Class4251 var6x = (Class4251)this.method13258();
             var6x.field20614.method13077(var7.field21292.getX(), var7.field21292.getZ());
          });

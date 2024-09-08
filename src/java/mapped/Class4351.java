@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.util.animation.Direction;
 import java.io.IOException;
 
 public class Class4351 extends Class4278 {
-   public Class4305 field21263;
+   public IconPanel field21263;
    public Animation field21264;
    public Animation field21265;
    public Animation field21266;
@@ -24,27 +24,27 @@ public class Class4351 extends Class4278 {
    public final int field21271;
    public boolean field21272 = false;
 
-   public Class4351(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class7286 var7, int var8) {
+   public Class4351(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Class7286 var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21270 = (int)((float)var5 * 0.8F);
       this.field21267 = var7;
       this.field21271 = var6;
-      Class6387 var11 = Class6387.field27961.method19415();
+      ColorHelper var11 = ColorHelper.field27961.method19415();
       var11.method19406(-11371052);
       var11.method19404(-12096331);
       var11.method19410(ClientColors.LIGHT_GREYISH_BLUE.getColor);
-      Class6387 var12 = Class6387.field27961.method19415();
+      ColorHelper var12 = ColorHelper.field27961.method19415();
       var12.method19406(-3254955);
       var12.method19404(-4700859);
       var12.method19410(ClientColors.LIGHT_GREYISH_BLUE.getColor);
-      this.method13230(this.field21263 = new Class4284(this, "edit", var5 - this.field21270, 0, this.field21270, var6));
+      this.addToList(this.field21263 = new Class4284(this, "edit", var5 - this.field21270, 0, this.field21270, var6));
       Class4243 var13;
-      this.field21263.method13230(var13 = new Class4243(this.field21263, "rename", 0, 0, this.field21270 / 2, var6, var11, "Rename"));
+      this.field21263.addToList(var13 = new Class4243(this.field21263, "rename", 0, 0, this.field21270 / 2, var6, var11, "Rename"));
       Class4243 var14;
-      this.field21263.method13230(var14 = new Class4243(this.field21263, "remove", this.field21270 / 2, 0, this.field21270 / 2, var6, var12, "Delete"));
+      this.field21263.addToList(var14 = new Class4243(this.field21263, "remove", this.field21270 / 2, 0, this.field21270 / 2, var6, var12, "Delete"));
       this.field21263.method13296(false);
-      Class6387 var15 = new Class6387(-892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488, Class2218.field14492);
-      this.method13230(this.field21268 = new Class4281(this, "profileName", 16, 8, this.method13267() - 60, 50, var15, var7.field31263));
+      ColorHelper var15 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488, Class2218.field14492);
+      this.addToList(this.field21268 = new Class4281(this, "profileName", 16, 8, this.method13267() - 60, 50, var15, var7.field31263));
       this.field21268.method13156(false);
       this.field21268.method13306(ResourceRegistry.JelloLightFont24);
       this.field21268.method13288(false);
@@ -71,8 +71,8 @@ public class Class4351 extends Class4278 {
          var0.method13264(Math.round((float)var1x.method13267() / 2.0F));
          var0.method13268(Math.round((float)var1x.method13267() / 2.0F));
       });
-      var14.method13251((var1x, var2x) -> this.field21266.changeDirection(Direction.FORWARDS));
-      var13.method13251((var1x, var2x) -> {
+      var14.doThis((var1x, var2x) -> this.field21266.changeDirection(Direction.FORWARDS));
+      var13.doThis((var1x, var2x) -> {
          this.field21265.changeDirection(Direction.BACKWARDS);
          this.field21268.method13288(true);
          this.field21268.method13148();
@@ -82,13 +82,13 @@ public class Class4351 extends Class4278 {
       this.field21264 = new Animation(100, 100, Direction.BACKWARDS);
       this.field21265 = new Animation(290, 290, Direction.BACKWARDS);
       this.field21266 = new Animation(200, 100, Direction.BACKWARDS);
-      this.method13251((var1x, var2x) -> {
+      this.doThis((var1x, var2x) -> {
          if (var2x != 1) {
             this.field21265.changeDirection(Direction.BACKWARDS);
             if (this.field21265.calcPercent() == 0.0F) {
                Client.getInstance().getModuleManager().method14667().method20771(this.field21267);
                Client.getInstance().getSoundManager().play("switch");
-               Class4357 var5x = (Class4357)this.method13258().method13258().method13258();
+               ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.method13258().method13258().method13258();
                var5x.method13222(() -> var5x.method13615());
 
                for (Module var7x : Client.getInstance().getModuleManager().getModuleMap().values()) {
@@ -128,7 +128,7 @@ public class Class4351 extends Class4278 {
    public void draw(float var1) {
       if (this.field21266.calcPercent() == 1.0F && !this.field21272) {
          this.field21272 = true;
-         Class4357 var4 = (Class4357)this.method13258().method13258().method13258();
+         ConfigButtonOnClickGui var4 = (ConfigButtonOnClickGui)this.method13258().method13258().method13258();
          Client.getInstance().getModuleManager().method14667().method20764(this.field21267);
          var4.method13222(() -> var4.method13615());
       }

@@ -124,7 +124,7 @@ public class Class2954 {
       this.field18042 = null;
       this.field18043 = null;
       if (this.field18033.method5906()) {
-         if (!this.field18033.method1958(var1, var3, var5)) {
+         if (!this.field18033.mouseClicked(var1, var3, var5)) {
             this.field18033.method5905(false);
          } else {
             this.field18042 = this.field18033.method5903();
@@ -132,17 +132,17 @@ public class Class2954 {
          }
 
          return true;
-      } else if (this.field18037.method1958(var1, var3, var5)) {
+      } else if (this.field18037.mouseClicked(var1, var3, var5)) {
          this.field18040++;
          this.method11309();
          return true;
-      } else if (this.field18038.method1958(var1, var3, var5)) {
+      } else if (this.field18038.mouseClicked(var1, var3, var5)) {
          this.field18040--;
          this.method11309();
          return true;
       } else {
          for (Class1199 var13 : this.field18031) {
-            if (var13.method1958(var1, var3, var5)) {
+            if (var13.mouseClicked(var1, var3, var5)) {
                if (var5 != 0) {
                   if (var5 == 1 && !this.field18033.method5906() && !var13.method5756()) {
                      this.field18033

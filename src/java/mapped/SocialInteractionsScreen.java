@@ -211,12 +211,12 @@ public class SocialInteractionsScreen extends Screen {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (this.field6228.method5746()) {
-         this.field6228.method1958(var1, var3, var5);
+         this.field6228.mouseClicked(var1, var3, var5);
       }
 
-      return super.method1958(var1, var3, var5) || this.field6227.method1958(var1, var3, var5);
+      return super.mouseClicked(var1, var3, var5) || this.field6227.mouseClicked(var1, var3, var5);
    }
 
    @Override

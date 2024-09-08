@@ -108,9 +108,9 @@ public class Class1175 extends Class1155<Class1175> {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       double var8 = var1 - (double)this.field6360.method6053();
-      double var10 = var3 - (double)this.field6360.method6055(this.field6360.method2468().indexOf(this));
+      double var10 = var3 - (double)this.field6360.method6055(this.field6360.getEventListeners().indexOf(this));
       if (this.method5600() && var8 <= 32.0) {
          if (this.field6363.method14691()) {
             Class2064 var12 = this.field6363.method14678();

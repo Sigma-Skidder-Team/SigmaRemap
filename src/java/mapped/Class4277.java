@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
@@ -23,28 +23,28 @@ public class Class4277 extends Class4247 {
       return (float)Math.round((double)var8 * Math.pow(10.0, (double)var4)) / (float)Math.pow(10.0, (double)var4);
    }
 
-   public Class4277(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4277(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.method13136();
    }
 
-   public Class4277(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7) {
+   public Class4277(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
       super(var1, var2, var3, var4, var5, var6, var7, false);
       this.method13136();
    }
 
-   public Class4277(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8) {
+   public Class4277(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.method13136();
    }
 
-   public Class4277(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8, ClientResource var9) {
+   public Class4277(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
       this.method13136();
    }
 
    private void method13136() {
-      this.method13230(this.field20734 = new Class4246(this, this.method13269()));
+      this.addToList(this.field20734 = new Class4246(this, this.method13269()));
       this.field20732 = -1.0F;
       this.field20735 = new Animation(114, 114, Direction.BACKWARDS);
    }

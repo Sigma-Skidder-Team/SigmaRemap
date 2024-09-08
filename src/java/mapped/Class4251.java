@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import net.minecraft.util.math.vector.Vector3i;
 import org.lwjgl.opengl.GL11;
 
@@ -17,16 +17,16 @@ public class Class4251 extends Class4247 {
    public int field20616;
    private final List<Class9514> field20617 = new ArrayList<Class9514>();
 
-   public Class4251(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4251(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20616 = 260;
-      this.method13230(this.field20615 = new Class4340(this, "waypointList", 0, 65, this.field20616, this.field20898 - 65));
+      this.addToList(this.field20615 = new Class4340(this, "waypointList", 0, 65, this.field20616, this.field20898 - 65));
 
       for (Class8351 var10 : Client.getInstance().getWaypointsManager().method29989()) {
          this.field20615.method13519(var10.field35889, new Vector3i(var10.field35890, 64, var10.field35891), var10.field35892);
       }
 
-      this.method13230(this.field20614 = new Class4259(this, "mapFrame", this.field20616, 0, this.field20897 - this.field20616, this.field20898));
+      this.addToList(this.field20614 = new Class4259(this, "mapFrame", this.field20616, 0, this.field20897 - this.field20616, this.field20898));
       this.method13300(false);
    }
 

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class4305;
+import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
@@ -28,8 +28,8 @@ public class Class4313 extends Screen {
    public UIButton field21009;
    private Class4339 field21010;
    private Class4339 field21011;
-   private Class4354 field21012;
-   private Class4354 field21013;
+   private AlertPanel field21012;
+   private AlertPanel field21013;
    private float field21014 = 0.65F;
    private float field21015 = 1.0F - this.field21014;
    private int field21016 = 30;
@@ -67,7 +67,7 @@ public class Class4313 extends Screen {
 
       this.method13362();
       this.method13363();
-      this.method13230(
+      this.addToList(
          this.field21010 = new Class4339(
             this,
             "alts",
@@ -77,7 +77,7 @@ public class Class4313 extends Screen {
             Minecraft.getInstance().mainWindow.getHeight() - 119 - this.field21016
          )
       );
-      this.method13230(
+      this.addToList(
          this.field21011 = new Class4339(
             this,
             "altView",
@@ -91,7 +91,7 @@ public class Class4313 extends Screen {
       this.field21011.method13300(false);
       this.field21010.method13515(false);
       this.field21011
-         .method13230(
+         .addToList(
             this.field21017 = new Class4298(
                this.field21011,
                "",
@@ -108,7 +108,7 @@ public class Class4313 extends Screen {
             )
          );
       this.field21011
-         .method13230(
+         .addToList(
             this.field21018 = new Class4296(
                this.field21011,
                "info",
@@ -126,7 +126,7 @@ public class Class4313 extends Screen {
       Class4363 var9 = new Class4363(this, "drop", (int)((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014) - 220, 44, 200, 32, var3, 0);
       var9.method13643(var4, 1);
       var9.method13656(2);
-      this.method13230(var9);
+      this.addToList(var9);
       var9.method13036(var2 -> {
          switch (var9.method13655()) {
             case 0:
@@ -148,7 +148,7 @@ public class Class4313 extends Screen {
 
          this.method13372(false);
       });
-      this.method13230(
+      this.addToList(
          this.field21026 = new Class4281(
             this,
             "textbox",
@@ -164,9 +164,9 @@ public class Class4313 extends Screen {
       );
       this.field21026.method13306(ResourceRegistry.JelloLightFont18);
       this.field21026.method13151(var1 -> this.method13372(false));
-      this.method13230(this.field21022 = new UIButton(this, "btnt", this.method13267() - 90, 43, 70, 30, Class6387.field27961, "Add +", ResourceRegistry.JelloLightFont25));
+      this.addToList(this.field21022 = new UIButton(this, "btnt", this.method13267() - 90, 43, 70, 30, ColorHelper.field27961, "Add +", ResourceRegistry.JelloLightFont25));
       this.field21010.method13242();
-      this.field21022.method13251((var1, var2) -> {
+      this.field21022.doThis((var1, var2) -> {
          if (this.method13369()) {
             this.field21012.method13603(!this.field21012.isHovered());
          }
@@ -176,7 +176,7 @@ public class Class4313 extends Screen {
    private void method13360(Account var1, boolean var2) {
       Class4294 var5;
       this.field21010
-         .method13230(
+         .addToList(
             var5 = new Class4294(
                this.field21010,
                var1.getEmail(),
@@ -215,9 +215,9 @@ public class Class4313 extends Screen {
             this.field21017.method13181(var5.selectedAccount);
             this.field21018.method13178(var5.selectedAccount);
 
-            for (Class4305 var7 : this.field21010.method13241()) {
+            for (IconPanel var7 : this.field21010.method13241()) {
                if (!(var7 instanceof Class4292)) {
-                  for (Class4305 var9 : var7.method13241()) {
+                  for (IconPanel var9 : var7.method13241()) {
                      ((Class4294)var9).method13166(false);
                   }
                }
@@ -251,14 +251,14 @@ public class Class4313 extends Screen {
    }
 
    private void method13362() {
-      Class9577 var3 = new Class9577(Class2189.field14314, "Add Alt", 50);
-      Class9577 var4 = new Class9577(Class2189.field14311, "Login with your minecraft", 15);
-      Class9577 var5 = new Class9577(Class2189.field14311, "account here!", 25);
-      Class9577 var6 = new Class9577(Class2189.field14312, "Email", 50);
-      Class9577 var7 = new Class9577(Class2189.field14312, "Password", 50);
-      Class9577 var8 = new Class9577(Class2189.field14315, "", 15);
-      Class9577 var9 = new Class9577(Class2189.field14313, "Add alt", 50);
-      this.method13230(this.field21012 = new Class4354(this, "Testt", true, "Add Alt", var3, var4, var5, var6, var7, var8, var9));
+      MiniAlert var3 = new MiniAlert(AlertType.HEADER, "Add Alt", 50);
+      MiniAlert var4 = new MiniAlert(AlertType.FIRSTLINE, "Login with your minecraft", 15);
+      MiniAlert var5 = new MiniAlert(AlertType.FIRSTLINE, "account here!", 25);
+      MiniAlert var6 = new MiniAlert(AlertType.SEKONDLINE, "Email", 50);
+      MiniAlert var7 = new MiniAlert(AlertType.SEKONDLINE, "Password", 50);
+      MiniAlert var8 = new MiniAlert(AlertType.TEXTBOX, "", 15);
+      MiniAlert var9 = new MiniAlert(AlertType.BUTTON, "Add alt", 50);
+      this.addToList(this.field21012 = new AlertPanel(this, "Testt", true, "Add Alt", var3, var4, var5, var6, var7, var8, var9));
       this.field21012.method13036(var1 -> {
          if (!this.field21012.method13600().get("Email").contains(":")) {
             Account var11 = new Account(this.field21012.method13600().get("Email"), this.field21012.method13600().get("Password"));
@@ -286,11 +286,11 @@ public class Class4313 extends Screen {
    }
 
    private void method13363() {
-      Class9577 var3 = new Class9577(Class2189.field14314, "Delete?", 50);
-      Class9577 var4 = new Class9577(Class2189.field14311, "Are you sure you want", 15);
-      Class9577 var5 = new Class9577(Class2189.field14311, "to delete this alt?", 40);
-      Class9577 var6 = new Class9577(Class2189.field14313, "Delete", 50);
-      this.method13230(this.field21013 = new Class4354(this, "delete", true, "Delete", var3, var4, var5, var6));
+      MiniAlert var3 = new MiniAlert(AlertType.HEADER, "Delete?", 50);
+      MiniAlert var4 = new MiniAlert(AlertType.FIRSTLINE, "Are you sure you want", 15);
+      MiniAlert var5 = new MiniAlert(AlertType.FIRSTLINE, "to delete this alt?", 40);
+      MiniAlert var6 = new MiniAlert(AlertType.BUTTON, "Delete", 50);
+      this.addToList(this.field21013 = new AlertPanel(this, "delete", true, "Delete", var3, var4, var5, var6));
    }
 
    @Override
@@ -350,9 +350,9 @@ public class Class4313 extends Screen {
    private void method13367() {
       float var3 = 1.0F;
 
-      for (Class4305 var5 : this.field21010.method13241()) {
+      for (IconPanel var5 : this.field21010.method13241()) {
          if (!(var5 instanceof Class4292)) {
-            for (Class4305 var7 : var5.method13241()) {
+            for (IconPanel var7 : var5.method13241()) {
                if (var7 instanceof Class4294) {
                   Class4294 var8 = (Class4294)var7;
                   if (var7.method13265() <= Minecraft.getInstance().mainWindow.getHeight() && this.field21010.method13513() == 0) {
@@ -376,9 +376,9 @@ public class Class4313 extends Screen {
    private void method13368() {
       boolean var3 = false;
 
-      for (Class4305 var5 : this.field21010.method13241()) {
+      for (IconPanel var5 : this.field21010.method13241()) {
          if (!(var5 instanceof Class4292)) {
-            for (Class4305 var7 : var5.method13241()) {
+            for (IconPanel var7 : var5.method13241()) {
                Class4294 var8 = (Class4294)var7;
                var8.method13172(false);
             }
@@ -389,9 +389,9 @@ public class Class4313 extends Screen {
    private boolean method13369() {
       boolean var3 = false;
 
-      for (Class4305 var5 : this.field21010.method13241()) {
+      for (IconPanel var5 : this.field21010.method13241()) {
          if (!(var5 instanceof Class4292)) {
-            for (Class4305 var7 : var5.method13241()) {
+            for (IconPanel var7 : var5.method13241()) {
                if (var7.method13280() != 0 && var7.method13263() > this.field20897) {
                   return false;
                }
@@ -405,9 +405,9 @@ public class Class4313 extends Screen {
    private int method13370() {
       int var3 = 0;
 
-      for (Class4305 var5 : this.field21010.method13241()) {
+      for (IconPanel var5 : this.field21010.method13241()) {
          if (!(var5 instanceof Class4292)) {
-            for (Class4305 var7 : var5.method13241()) {
+            for (IconPanel var7 : var5.method13241()) {
                var3++;
             }
          }
@@ -444,7 +444,7 @@ public class Class4313 extends Screen {
    public void keyPressed(int var1) {
       super.keyPressed(var1);
       if (var1 == 256) {
-         Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
+         Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen());
       }
    }
 
@@ -456,9 +456,9 @@ public class Class4313 extends Screen {
 
    @Override
    public void method13161(JSONObject var1) {
-      for (Class4305 var5 : this.field21010.method13241()) {
+      for (IconPanel var5 : this.field21010.method13241()) {
          if (!(var5 instanceof Class4292)) {
-            for (Class4305 var7 : var5.method13241()) {
+            for (IconPanel var7 : var5.method13241()) {
                this.field21010.method13234(var7);
             }
          }

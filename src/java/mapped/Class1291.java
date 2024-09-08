@@ -27,7 +27,7 @@ public class Class1291 extends Class1286<Class1177> {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (var5 == 0 && var3 >= (double)this.field6787 && var3 <= (double)this.field6788) {
          int var8 = this.field6785 / 2 - 150;
          if (Class804.method2001(this.field6855) != null) {
@@ -48,11 +48,11 @@ public class Class1291 extends Class1286<Class1177> {
                return true;
             }
 
-            return super.method1958(var1, var3, var5);
+            return super.mouseClicked(var1, var3, var5);
          }
       }
 
-      return super.method1958(var1, var3, var5);
+      return super.mouseClicked(var1, var3, var5);
    }
 
    @Override
@@ -70,7 +70,7 @@ public class Class1291 extends Class1286<Class1177> {
 
    public void method6024(Class1177 var1) {
       super.method6024(var1);
-      Class804.method2005(this.field6855, this.method2468().indexOf(var1));
+      Class804.method2005(this.field6855, this.getEventListeners().indexOf(var1));
       Class804.method2006(this.field6855);
    }
 
@@ -91,7 +91,7 @@ public class Class1291 extends Class1286<Class1177> {
 
    @Override
    public boolean method6057() {
-      return this.field6855.method5533() == this;
+      return this.field6855.getListener() == this;
    }
 
    public boolean method6119() {
@@ -99,10 +99,10 @@ public class Class1291 extends Class1286<Class1177> {
    }
 
    public Class6130 method6120(int var1) {
-      return Class1177.method5606(this.method2468().get(var1));
+      return Class1177.method5606(this.getEventListeners().get(var1));
    }
 
    public List<Class6130> method6121() {
-      return this.method2468().stream().<Class6130>map(var0 -> Class1177.method5606(var0)).collect(Collectors.<Class6130>toList());
+      return this.getEventListeners().stream().<Class6130>map(var0 -> Class1177.method5606(var0)).collect(Collectors.<Class6130>toList());
    }
 }

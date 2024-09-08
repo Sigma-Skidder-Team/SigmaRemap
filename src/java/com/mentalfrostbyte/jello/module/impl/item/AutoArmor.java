@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.inventory.container.ClickType;
@@ -120,7 +120,7 @@ public class AutoArmor extends Module {
                         if (Class2106.field13735 == var7
                                 && (
                                 !Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSetttingName("Fake Items")
-                                        || Client.getInstance().method19940().method33238(var12) >= 1500L
+                                        || Client.getInstance().getSlotChangeTracker().method33238(var12) >= 1500L
                         )) {
                             this.method16617(var1);
                             if (!(mc.player.inventory.method3618(36 + var7.method8773()).getItem() instanceof Class3280)) {
@@ -146,7 +146,7 @@ public class AutoArmor extends Module {
                                 && Class7789.method25850(var9) > 0
                                 && (
                                 !Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSetttingName("Fake Items")
-                                        || Client.getInstance().method19940().method33238(var12) >= 1500L
+                                        || Client.getInstance().getSlotChangeTracker().method33238(var12) >= 1500L
                         )) {
                             this.method16617(var1);
                             Item var11 = mc.player.inventory.method3618(36 + var10.method11805().method8773()).getItem();
@@ -172,7 +172,7 @@ public class AutoArmor extends Module {
     }
 
     private void method16617(boolean var1) {
-        if (var1 && this.isInventoryOpen && !(mc.currentScreen instanceof InventoryScreen) && Class8005.method27349() <= Class5989.field26136.method18582()) {
+        if (var1 && this.isInventoryOpen && !(mc.currentScreen instanceof InventoryScreen) && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
             mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
             this.isInventoryOpen = false;
         }

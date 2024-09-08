@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4425;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import mapped.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3d;
@@ -21,7 +21,7 @@ public class VanillaPhase extends Module {
         if (this.isEnabled()) {
             if (mc.player.collidedHorizontally) {
                 Class9629 var4 = ColorUtils.method17760(1.0E-4);
-                double var5 = Class8005.method27349() != Class5989.field26129.method18582() ? 1.0E-6 : 0.0625;
+                double var5 = JelloPortal.method27349() != ViaVerList.field26129.method18582() ? 1.0E-6 : 0.0625;
                 if (((Direction) var4.method37538()).method544() != Class113.field413) {
                     var1.method13914(
                             (double) Math.round((((Vector3d) var4.method37539()).z + 1.1921022E-8) * 10000.0) / 10000.0

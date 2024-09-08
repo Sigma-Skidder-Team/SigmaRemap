@@ -156,7 +156,7 @@ public class Class870 extends Screen {
    }
 
    @Override
-   public boolean method1958(double var1, double var3, int var5) {
+   public boolean mouseClicked(double var1, double var3, int var5) {
       if (var5 == 0) {
          Style var8 = this.method2695(var1, var3);
          if (var8 != null && this.method2464(var8)) {
@@ -164,7 +164,7 @@ public class Class870 extends Screen {
          }
       }
 
-      return super.method1958(var1, var3, var5);
+      return super.mouseClicked(var1, var3, var5);
    }
 
    @Override

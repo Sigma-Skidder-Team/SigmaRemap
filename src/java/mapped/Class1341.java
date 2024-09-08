@@ -24,8 +24,8 @@ public class Class1341 extends Screen {
    }
 
    @Override
-   public boolean method2649(double var1, double var3, double var5) {
-      return super.method2649(var1, var3, var5);
+   public boolean mouseScrolled(double var1, double var3, double var5) {
+      return super.mouseScrolled(var1, var3, var5);
    }
 
    @Override
@@ -97,7 +97,7 @@ public class Class1341 extends Screen {
          new Button(this.width / 2 + 82, this.height - 28, 72, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field7113))
       );
       this.method6422(false);
-      this.method5536(this.field7119);
+      this.setFocusedDefault(this.field7119);
    }
 
    @Override
@@ -141,7 +141,7 @@ public class Class1341 extends Screen {
    @Override
    public void onClose() {
       if (this.field7120 != null) {
-         this.field7120.method2468().forEach(Class1173::close);
+         this.field7120.getEventListeners().forEach(Class1173::close);
       }
    }
 }

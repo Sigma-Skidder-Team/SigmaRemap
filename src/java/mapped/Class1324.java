@@ -44,10 +44,10 @@ public class Class1324 extends Screen {
             this.width / 2 - 155, this.height - 52, 150, 20, new TranslationTextComponent("createWorld.customize.flat.removeLayer"), var1 -> {
                if (this.method6297()) {
                   List var4 = this.field7002.method38129();
-                  int var5 = this.field7005.method2468().indexOf(this.field7005.method6023());
+                  int var5 = this.field7005.getEventListeners().indexOf(this.field7005.method6023());
                   int var6 = var4.size() - var5 - 1;
                   var4.remove(var6);
-                  this.field7005.method6024(!var4.isEmpty() ? this.field7005.method2468().get(Math.min(var5, var4.size() - 1)) : null);
+                  this.field7005.method6024(!var4.isEmpty() ? this.field7005.getEventListeners().get(Math.min(var5, var4.size() - 1)) : null);
                   this.field7002.method38131();
                   this.field7005.method6106();
                   this.method6296();

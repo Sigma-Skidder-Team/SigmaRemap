@@ -116,12 +116,12 @@ public class PackScreen extends Screen {
    private void method6401() {
       this.method6402(this.field7102, this.field7097.method31449());
       this.method6402(this.field7101, this.field7097.method31448());
-      this.field7104.active = !this.field7102.method2468().isEmpty();
+      this.field7104.active = !this.field7102.getEventListeners().isEmpty();
    }
 
    private void method6402(Class1275 var1, Stream<Class4681> var2) {
-      var1.method2468().clear();
-      var2.forEach(var2x -> var1.method2468().add(new Class1175(this.mc, var1, this, var2x)));
+      var1.getEventListeners().clear();
+      var2.forEach(var2x -> var1.getEventListeners().add(new Class1175(this.mc, var1, this, var2x)));
    }
 
    private void method6403() {

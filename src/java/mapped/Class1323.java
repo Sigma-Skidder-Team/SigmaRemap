@@ -45,7 +45,7 @@ public class Class1323 extends Screen {
       );
       this.field6997
          .method6024(
-            this.field6997.method2468().stream().filter(var1 -> Objects.equals(Class1176.method5602(var1), this.field6998)).findFirst().orElse((Class1176)null)
+            this.field6997.getEventListeners().stream().filter(var1 -> Objects.equals(Class1176.method5602(var1), this.field6998)).findFirst().orElse((Class1176)null)
          );
    }
 
