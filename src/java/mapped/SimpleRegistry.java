@@ -36,7 +36,7 @@ public class SimpleRegistry<T> extends MutableRegistry<T> {
       this.field16143.defaultReturnValue(-1);
       this.field16144 = HashBiMap.create();
       this.field16145 = HashBiMap.create();
-      this.field16146 = Maps.newIdentityHashMap();
+      this.field16146 = com.google.common.collect.Maps.newIdentityHashMap();
       this.field16147 = var2;
    }
 

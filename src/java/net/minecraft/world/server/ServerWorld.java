@@ -2,6 +2,7 @@ package net.minecraft.world.server;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.*;
+import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap.Entry;
@@ -55,7 +56,7 @@ public class ServerWorld extends World implements ISeedReader {
    public static final BlockPos field9038 = new BlockPos(100, 50, 0);
    private static final Logger field8997 = LogManager.getLogger();
    private final Int2ObjectMap<Entity> field9039 = new Int2ObjectLinkedOpenHashMap();
-   private final Map<UUID, Entity> field9040 = Maps.newHashMap();
+   private final Map<UUID, Entity> field9040 = com.google.common.collect.Maps.newHashMap();
    private final Queue<Entity> field9041 = Queues.newArrayDeque();
    private final List<ServerPlayerEntity> field9042 = Lists.newArrayList();
    private final Class1703 field9043;

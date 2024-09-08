@@ -36,7 +36,7 @@ public class Class4445 implements Class4442 {
    @Override
    public void method14013(Class8297 var1) {
       Path var4 = this.field21611.method33776();
-      Map<ResourceLocation, Class7318> var5 = Maps.newHashMap();
+      Map<ResourceLocation, Class7318> var5 = com.google.common.collect.Maps.newHashMap();
       this.field21612.forEach(var1x -> var1x.getFirst().get().accept((var2, var3) -> {
             if (var5.put(var2, var3.method18321(var1x.getSecond()).method18322()) != null) {
                throw new IllegalStateException("Duplicate loot table " + var2);

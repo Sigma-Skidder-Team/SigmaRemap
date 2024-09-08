@@ -31,11 +31,11 @@ public class Class4386 {
    private final Class319 field21409 = new Class319();
    private final Class9818 field21410 = new Class9818(this.field21406, this.field21409);
    private int field21411;
-   private final Map<Class6340, Class9617> field21412 = Maps.newHashMap();
+   private final Map<Class6340, Class9617> field21412 = com.google.common.collect.Maps.newHashMap();
    private final Multimap<Class2266, Class6340> field21413 = HashMultimap.create();
    private final List<Class6341> field21414 = Lists.newArrayList();
-   private final Map<Class6340, Integer> field21415 = Maps.newHashMap();
-   private final Map<Class6340, Integer> field21416 = Maps.newHashMap();
+   private final Map<Class6340, Integer> field21415 = com.google.common.collect.Maps.newHashMap();
+   private final Map<Class6340, Integer> field21416 = com.google.common.collect.Maps.newHashMap();
    private final List<Class1270> field21417 = Lists.newArrayList();
    private final List<Class6341> field21418 = Lists.newArrayList();
    private final List<Class6647> field21419 = Lists.newArrayList();

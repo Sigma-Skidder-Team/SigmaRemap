@@ -25,13 +25,13 @@ public class ParticleManager implements Class268 {
       Class6843.field29734, Class6843.field29735, Class6843.field29737, Class6843.field29736, Class6843.field29738
    );
    public ClientWorld field1168;
-   private final Map<Class6843, Queue<Class4587>> field1169 = Maps.newIdentityHashMap();
+   private final Map<Class6843, Queue<Class4587>> field1169 =  com.google.common.collect.Maps.newIdentityHashMap();
    private final Queue<Class4589> field1170 = Queues.newArrayDeque();
    private final TextureManager field1171;
    private final Random field1172 = new Random();
    private final Map<ResourceLocation, Class3499<?>> field1173 = new HashMap<ResourceLocation, Class3499<?>>();
    private final Queue<Class4587> field1174 = Queues.newArrayDeque();
-   private final Map<ResourceLocation, Class8976> field1175 = Maps.newHashMap();
+   private final Map<ResourceLocation, Class8976> field1175 = com.google.common.collect.Maps.newHashMap();
    private final AtlasTexture field1176 = new AtlasTexture(AtlasTexture.field1103);
 
    public ParticleManager(ClientWorld var1, TextureManager var2) {
@@ -128,7 +128,7 @@ public class ParticleManager implements Class268 {
 
    @Override
    public CompletableFuture<Void> method777(Class7121 var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
-      Map<ResourceLocation, List<ResourceLocation>> var9 = Maps.newConcurrentMap();
+      Map<ResourceLocation, List<ResourceLocation>> var9 = com.google.common.collect.Maps.newConcurrentMap();
       CompletableFuture[] var10 = Registry.PARTICLE_TYPE
          .method9190()
          .stream()

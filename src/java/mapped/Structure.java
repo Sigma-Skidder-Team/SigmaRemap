@@ -15,7 +15,7 @@ import java.util.Map;
 
 public abstract class Structure<C extends Class4698> {
    public static final BiMap<String, Structure<?>> field_236365_a_ = HashBiMap.create();
-   private static final Map<Structure<?>, Class1993> field18056 = Maps.newHashMap();
+   private static final Map<Structure<?>, Class1993> field18056 = com.google.common.collect.Maps.newHashMap();
    private static final Logger field18057 = LogManager.getLogger();
    public static final Structure<Class4700> field18058 = method11363("Pillager_Outpost", new Class2968(Class4700.field22296), Class1993.field13002);
    public static final Structure<Class4735> field18059 = method11363("Mineshaft", new Class2972(Class4735.field22425), Class1993.field13001);
