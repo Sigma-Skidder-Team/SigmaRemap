@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 
 public class Class2674 extends Class2672 {
@@ -108,7 +109,7 @@ public class Class2674 extends Class2672 {
 
    @Override
    public SoundEvent method10894() {
-      return Sounds.field26565;
+      return SoundEvents.field26565;
    }
 
    @Override

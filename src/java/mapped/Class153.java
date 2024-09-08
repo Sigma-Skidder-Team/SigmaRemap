@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.Set;
@@ -24,7 +25,7 @@ public class Class153 implements ILootCondition {
    }
 
    public boolean test(LootContext var1) {
-      Class8654 var4 = var1.<Class8654>method26081(Class9525.field44332);
+      DamageSource var4 = var1.<DamageSource>method26081(Class9525.field44332);
       Vector3d var5 = var1.<Vector3d>method26081(Class9525.field44335);
       return var5 != null && var4 != null && this.field502.method36912(var1.method26090(), var5, var4);
    }

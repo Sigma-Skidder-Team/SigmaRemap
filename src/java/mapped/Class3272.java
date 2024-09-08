@@ -10,6 +10,7 @@ import net.minecraft.entity.projectile.AbstractArrowEntityPickupStatus;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -58,7 +59,7 @@ public class Class3272 extends Item implements Class3260 {
                      }
 
                      var2.method6916(var10);
-                     var2.method6744((PlayerEntity)null, var10, Sounds.field27154, Class2266.field14735, 1.0F, 1.0F);
+                     var2.method6744((PlayerEntity)null, var10, SoundEvents.field27154, Class2266.field14735, 1.0F, 1.0F);
                      if (!var7.abilities.isCreativeMode) {
                         var7.inventory.method4048(var1);
                      }
@@ -87,12 +88,12 @@ public class Class3272 extends Item implements Class3260 {
                   SoundEvent var22;
                   if (var9 < 3) {
                      if (var9 != 2) {
-                        var22 = Sounds.field27151;
+                        var22 = SoundEvents.field27151;
                      } else {
-                        var22 = Sounds.field27152;
+                        var22 = SoundEvents.field27152;
                      }
                   } else {
-                     var22 = Sounds.field27153;
+                     var22 = SoundEvents.field27153;
                   }
 
                   var2.method6744((PlayerEntity)null, var7, var22, Class2266.field14735, 1.0F, 1.0F);

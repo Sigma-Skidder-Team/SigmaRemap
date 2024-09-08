@@ -219,12 +219,10 @@ public class PlayerController {
    }
 
    public void syncCurrentPlayItem() {
-      if (this.mc != null && this.mc.player != null && this.connection != null) {
-         int i = this.mc.player.inventory.currentItem;
-         if (i != this.currentPlayerItem) {
-            this.currentPlayerItem = i;
-            this.connection.sendPacket(new CHeldItemChangePacket(this.currentPlayerItem));
-         }
+      int i = this.mc.player.inventory.currentItem;
+      if (i != this.currentPlayerItem) {
+         this.currentPlayerItem = i;
+         this.connection.sendPacket(new CHeldItemChangePacket(this.currentPlayerItem));
       }
    }
 

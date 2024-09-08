@@ -8,8 +8,11 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
@@ -74,7 +77,7 @@ public class Class3389 extends Block {
                      (double)var3.getX() + 0.5,
                      (double)var3.getY() + 0.5,
                      (double)var3.getZ() + 0.5,
-                     Sounds.field27015,
+                     SoundEvents.field27015,
                      Class2266.field14732,
                      1.0F,
                      1.0F
@@ -124,7 +127,7 @@ public class Class3389 extends Block {
       Class5925 var8 = new Class5925(this, var7);
       var2.method6757(
          (Entity)null,
-         Class8654.method31128(),
+         DamageSource.method31128(),
          var8,
          (double)var3.getX() + 0.5,
          (double)var3.getY() + 0.5,
@@ -146,7 +149,7 @@ public class Class3389 extends Block {
          (double)var1.getX() + 0.5,
          (double)var1.getY() + 0.5,
          (double)var1.getZ() + 0.5,
-         Sounds.field27013,
+         SoundEvents.field27013,
          Class2266.field14732,
          1.0F,
          1.0F
@@ -162,7 +165,7 @@ public class Class3389 extends Block {
                (double)var3.getX() + 0.5,
                (double)var3.getY() + 0.5,
                (double)var3.getZ() + 0.5,
-               Sounds.field27012,
+               SoundEvents.field27012,
                Class2266.field14732,
                1.0F,
                1.0F

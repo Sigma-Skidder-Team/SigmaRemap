@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 
 public class Class4905 extends Class4874<Class4476> {
@@ -20,7 +21,7 @@ public class Class4905 extends Class4874<Class4476> {
       return new Class4476(this.field22739, var2, Class9587.method37223(var1, "entity", var3), Class9539.method36913(var1.get("killing_blow")));
    }
 
-   public void method15158(ServerPlayerEntity var1, Entity var2, Class8654 var3) {
+   public void method15158(ServerPlayerEntity var1, Entity var2, DamageSource var3) {
       LootContext var6 = Class6671.method20332(var1, var2);
       this.method15053(var1, var3x -> var3x.method14138(var1, var6, var3));
    }

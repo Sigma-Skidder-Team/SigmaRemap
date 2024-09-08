@@ -9,6 +9,7 @@ import java.util.Collection;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8909 {
@@ -62,7 +63,7 @@ public class Class8909 {
                      var7.getPosX(),
                      var7.getPosY(),
                      var7.getPosZ(),
-                     Sounds.field26714,
+                     SoundEvents.field26714,
                      Class2266.field14735,
                      0.2F,
                      ((var7.method3013().nextFloat() - var7.method3013().nextFloat()) * 0.7F + 1.0F) * 2.0F

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.Difficulty;
 
 import java.util.EnumSet;
@@ -61,8 +62,8 @@ public class Class2724 extends Class2595 {
                   var4 += 2.0F;
                }
 
-               var3.method2741(Class8654.method31124(this.field17217, this.field17217), var4);
-               var3.method2741(Class8654.method31115(this.field17217), (float)this.field17217.method3086(Attributes.field42110));
+               var3.method2741(DamageSource.method31124(this.field17217, this.field17217), var4);
+               var3.method2741(DamageSource.method31115(this.field17217), (float)this.field17217.method3086(Attributes.field42110));
                this.field17217.method4233((LivingEntity)null);
             }
          } else {

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class3731<E extends Class1006 & Class1023, T extends LivingEntity> extends Class3676<E> {

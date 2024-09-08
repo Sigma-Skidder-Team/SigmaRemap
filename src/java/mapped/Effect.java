@@ -10,6 +10,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -45,16 +46,16 @@ public class Effect {
                   }
                } else if ((this != Effects.INSTANT_HEALTH || var1.method3038()) && (this != Effects.INSTANT_DAMAGE || !var1.method3038())) {
                   if (this == Effects.INSTANT_DAMAGE && !var1.method3038() || this == Effects.INSTANT_HEALTH && var1.method3038()) {
-                     var1.method2741(Class8654.field39006, (float)(6 << var2));
+                     var1.method2741(DamageSource.field39006, (float)(6 << var2));
                   }
                } else {
                   var1.method3041((float)Math.max(4 << var2, 0));
                }
             } else {
-               var1.method2741(Class8654.field39007, 1.0F);
+               var1.method2741(DamageSource.field39007, 1.0F);
             }
          } else if (var1.getHealth() > 1.0F) {
-            var1.method2741(Class8654.field39006, 1.0F);
+            var1.method2741(DamageSource.field39006, 1.0F);
          }
       } else if (var1.getHealth() < var1.method3075()) {
          var1.method3041(1.0F);
@@ -66,9 +67,9 @@ public class Effect {
          if (this == Effects.INSTANT_DAMAGE && !var3.method3038() || this == Effects.INSTANT_HEALTH && var3.method3038()) {
             int var10 = (int)(var5 * (double)(6 << var4) + 0.5);
             if (var1 != null) {
-               var3.method2741(Class8654.method31124(var1, var2), (float)var10);
+               var3.method2741(DamageSource.method31124(var1, var2), (float)var10);
             } else {
-               var3.method2741(Class8654.field39006, (float)var10);
+               var3.method2741(DamageSource.field39006, (float)var10);
             }
          } else {
             this.method22289(var3, var4);

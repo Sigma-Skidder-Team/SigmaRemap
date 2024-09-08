@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.Items;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 public class Class892 extends Class890 {
@@ -42,7 +44,7 @@ public class Class892 extends Class890 {
    @Override
    public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
-      var1.getEntity().method2741(Class8654.method31123(this, this.method3460()), 0.0F);
+      var1.getEntity().method2741(DamageSource.method31123(this, this.method3460()), 0.0F);
    }
 
    @Override

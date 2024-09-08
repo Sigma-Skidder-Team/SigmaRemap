@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
@@ -185,7 +186,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
          this.field5324.method6787(this.field5325, this.method3775().getBlock(), 1, this.field5306);
          if (this.field5306 == 1) {
             this.field5324
-               .method6742((PlayerEntity)null, this.field5325, Sounds.field27045, Class2266.field14732, 0.5F, this.field5324.rand.nextFloat() * 0.1F + 0.9F);
+               .method6742((PlayerEntity)null, this.field5325, SoundEvents.field27045, Class2266.field14732, 0.5F, this.field5324.rand.nextFloat() * 0.1F + 0.9F);
          }
       }
    }
@@ -197,7 +198,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
          this.field5324.method6787(this.field5325, this.method3775().getBlock(), 1, this.field5306);
          if (this.field5306 <= 0) {
             this.field5324
-               .method6742((PlayerEntity)null, this.field5325, Sounds.field27044, Class2266.field14732, 0.5F, this.field5324.rand.nextFloat() * 0.1F + 0.9F);
+               .method6742((PlayerEntity)null, this.field5325, SoundEvents.field27044, Class2266.field14732, 0.5F, this.field5324.rand.nextFloat() * 0.1F + 0.9F);
          }
       }
    }

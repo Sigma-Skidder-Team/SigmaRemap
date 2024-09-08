@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -77,7 +78,7 @@ public class Class973 extends Class939 {
          BlockState var4 = this.method3775();
          boolean var5 = var4.<Boolean>method23463(Class3242.field18694);
          if (!var5) {
-            this.method4027(var4, Sounds.field26374);
+            this.method4027(var4, SoundEvents.field26374);
             this.method4026(var4, true);
          }
 
@@ -103,7 +104,7 @@ public class Class973 extends Class939 {
 
          boolean var7 = var6.<Boolean>method23463(Class3242.field18694);
          if (var7) {
-            this.method4027(var6, Sounds.field26373);
+            this.method4027(var6, SoundEvents.field26373);
             this.method4026(var6, false);
          }
       } else {

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundEvents;
 
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class Class2688 extends Class2595 {
          .<ItemEntity>method6772(ItemEntity.class, this.field17115.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1048.field5808);
       if (!var3.isEmpty()) {
          this.field17115.method4230().method21655((Entity)var3.get(0), 1.2F);
-         this.field17115.method2863(Sounds.field26505, 1.0F, 1.0F);
+         this.field17115.method2863(SoundEvents.field26505, 1.0F, 1.0F);
       }
 
       this.field17114 = 0;

@@ -2,12 +2,14 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.util.RangedInteger;
 
 import java.util.EnumSet;
 
 public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Class2595 {
    private static String[] field17123;
-   public static final Class8369 field17124 = new Class8369(20, 40);
+   public static final RangedInteger field17124 = new RangedInteger(20, 40);
    private final T field17125;
    private Class2229 field17126 = Class2229.field14613;
    private final double field17127;

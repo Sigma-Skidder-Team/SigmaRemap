@@ -10,7 +10,9 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -48,18 +50,18 @@ public class Class1114 extends Class1113 {
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
-      return this.method5364() && this.rand.nextInt(4) != 0 ? null : Sounds.field26380;
+   public SoundEvent getAmbientSound() {
+      return this.method5364() && this.rand.nextInt(4) != 0 ? null : SoundEvents.field26380;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26382;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26382;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26381;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26381;
    }
 
    @Override
@@ -180,7 +182,7 @@ public class Class1114 extends Class1113 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          if (!this.world.isRemote && this.method5364()) {
             this.method5365(false);

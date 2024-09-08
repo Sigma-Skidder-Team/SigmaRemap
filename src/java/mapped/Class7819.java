@@ -14,6 +14,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -380,7 +381,7 @@ public class Class7819 {
       return this.field33542;
    }
 
-   public void method26126(EnderCrystalEntity var1, Class8654 var2) {
+   public void method26126(EnderCrystalEntity var1, DamageSource var2) {
       if (this.field33550 != null && this.field33552.contains(var1)) {
          field33535.debug("Aborting respawn sequence");
          this.field33550 = null;

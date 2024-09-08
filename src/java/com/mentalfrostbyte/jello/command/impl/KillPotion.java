@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 import mapped.*;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.client.CCreativeInventoryActionPacket;
 

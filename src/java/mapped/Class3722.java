@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.item.Items;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class3722<E extends Class1034> extends Class3676<E> {

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonElement;
+import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.function.BiConsumer;
@@ -222,7 +223,7 @@ public class Class7810 {
       this.method26074(Items.field37965, Class9756.field45623);
       this.method26074(Items.field37886, Class9756.field45623);
       this.method26074(Items.field37910, Class9756.field45623);
-      this.method26074(Items.field37893, Class9756.field45623);
+      this.method26074(Items.SALMON_BUCKET, Class9756.field45623);
       this.method26074(Items.field37793, Class9756.field45623);
       this.method26074(Items.field37956, Class9756.field45623);
       this.method26074(Items.field38127, Class9756.field45623);

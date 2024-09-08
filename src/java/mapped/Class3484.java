@@ -6,8 +6,11 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
@@ -57,13 +60,13 @@ public class Class3484 extends Class3194 implements Class3196 {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (var4 instanceof LivingEntity && var4.getType() != EntityType.field41033 && var4.getType() != EntityType.field41009) {
+      if (var4 instanceof LivingEntity && var4.getType() != EntityType.FOX && var4.getType() != EntityType.field41009) {
          var4.method2928(var1, new Vector3d(0.8F, 0.75, 0.8F));
          if (!var2.isRemote && var1.<Integer>method23463(field19342) > 0 && (var4.lastTickPosX != var4.getPosX() || var4.lastTickPosZ != var4.getPosZ())) {
             double var7 = Math.abs(var4.getPosX() - var4.lastTickPosX);
             double var9 = Math.abs(var4.getPosZ() - var4.lastTickPosZ);
             if (var7 >= 0.003F || var9 >= 0.003F) {
-               var4.method2741(Class8654.field39012, 1.0F);
+               var4.method2741(DamageSource.field39012, 1.0F);
             }
          }
       }
@@ -80,7 +83,7 @@ public class Class3484 extends Class3194 implements Class3196 {
       } else {
          int var11 = 1 + var2.rand.nextInt(2);
          method11557(var2, var3, new ItemStack(Items.field38170, var11 + (!var10 ? 0 : 1)));
-         var2.method6742((PlayerEntity)null, var3, Sounds.field27144, Class2266.field14732, 1.0F, 0.8F + var2.rand.nextFloat() * 0.4F);
+         var2.method6742((PlayerEntity)null, var3, SoundEvents.field27144, Class2266.field14732, 1.0F, 0.8F + var2.rand.nextFloat() * 0.4F);
          var2.setBlockState(var3, var1.method23465(field19342, Integer.valueOf(1)), 2);
          return ActionResultType.method9002(var2.isRemote);
       }

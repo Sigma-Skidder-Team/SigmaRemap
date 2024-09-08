@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;

@@ -3,8 +3,10 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 public class Class3307 extends Item {
@@ -54,12 +56,12 @@ public class Class3307 extends Item {
 
    @Override
    public SoundEvent method11746() {
-      return Sounds.field26666;
+      return SoundEvents.field26666;
    }
 
    @Override
    public SoundEvent method11747() {
-      return Sounds.field26666;
+      return SoundEvents.field26666;
    }
 
    @Override

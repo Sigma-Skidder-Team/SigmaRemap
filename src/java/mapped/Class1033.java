@@ -6,8 +6,11 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -92,7 +95,7 @@ public class Class1033 extends Class1031 implements Class1022 {
                this.world.method6746(ParticleTypes.field34053, this.method3438(0.5), this.method3441(), this.method3444(0.5), 0.0, 0.0, 0.0);
             }
 
-            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26695, this.method2864(), 1.0F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26695, this.method2864(), 1.0F, 1.0F, false);
          } else if (this.field4952 == this.field4953 - 1) {
             this.field5739 = 3;
 
@@ -106,7 +109,7 @@ public class Class1033 extends Class1031 implements Class1022 {
 
    @Override
    public SoundEvent method4546() {
-      return Sounds.field26691;
+      return SoundEvents.field26691;
    }
 
    public Vector3d[] method4611(float var1) {
@@ -137,23 +140,23 @@ public class Class1033 extends Class1031 implements Class1022 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26691;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26691;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26693;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26693;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26694;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26694;
    }
 
    @Override
    public SoundEvent method4598() {
-      return Sounds.field26692;
+      return SoundEvents.field26692;
    }
 
    @Override
@@ -169,7 +172,7 @@ public class Class1033 extends Class1031 implements Class1022 {
       double var11 = var1.getPosZ() - this.getPosZ();
       double var13 = (double) MathHelper.method37766(var7 * var7 + var11 * var11);
       var6.shoot(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method6997().getId() * 4));
-      this.method2863(Sounds.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
+      this.method2863(SoundEvents.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.world.method6916(var6);
    }
 

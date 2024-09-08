@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.gson.JsonElement;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 

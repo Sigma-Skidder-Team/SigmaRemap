@@ -1,11 +1,15 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
-public class Class1051 extends Class1050 {
+public class Class1051 extends AbstractGroupFishEntity {
    private static String[] field5812;
 
    public Class1051(EntityType<? extends Class1051> var1, World var2) {
@@ -13,27 +17,27 @@ public class Class1051 extends Class1050 {
    }
 
    @Override
-   public ItemStack method4796() {
+   public ItemStack getFishBucket() {
       return new ItemStack(Items.field37894);
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26458;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26458;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26459;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26459;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26461;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26461;
    }
 
    @Override
-   public SoundEvent method4798() {
-      return Sounds.field26460;
+   public SoundEvent getFlopSound() {
+      return SoundEvents.field26460;
    }
 }

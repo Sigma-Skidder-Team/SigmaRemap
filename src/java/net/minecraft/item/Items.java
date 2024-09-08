@@ -1,7 +1,9 @@
-package mapped;
+package net.minecraft.item;
 
+import mapped.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvents;
 
 public class Items {
    public static final Item field37222 = method30156(Blocks.AIR, new Class3280(Blocks.AIR, new Class5643()));
@@ -860,7 +862,7 @@ public class Items {
    public static final Item field37892 = method30157(
       "pufferfish_bucket", new Class3288(EntityType.field41070, Class9479.field44066, new Class5643().method17775(1).method17779(ItemGroup.field31669))
    );
-   public static final Item field37893 = method30157(
+   public static final Item SALMON_BUCKET = method30157(
       "salmon_bucket", new Class3288(EntityType.field41073, Class9479.field44066, new Class5643().method17775(1).method17779(ItemGroup.field31669))
    );
    public static final Item field37894 = method30157(
@@ -1039,7 +1041,7 @@ public class Items {
       "evoker_spawn_egg", new SpawnEggItem(EntityType.field41027, 9804699, 1973274, new Class5643().method17779(ItemGroup.field31669))
    );
    public static final Item field37997 = method30157(
-      "fox_spawn_egg", new SpawnEggItem(EntityType.field41033, 14005919, 13396256, new Class5643().method17779(ItemGroup.field31669))
+      "fox_spawn_egg", new SpawnEggItem(EntityType.FOX, 14005919, 13396256, new Class5643().method17779(ItemGroup.field31669))
    );
    public static final Item field37998 = method30157(
       "ghast_spawn_egg", new SpawnEggItem(EntityType.field41034, 16382457, 12369084, new Class5643().method17779(ItemGroup.field31669))
@@ -1099,7 +1101,7 @@ public class Items {
       "pufferfish_spawn_egg", new SpawnEggItem(EntityType.field41070, 16167425, 3654642, new Class5643().method17779(ItemGroup.field31669))
    );
    public static final Item field38017 = method30157(
-      "rabbit_spawn_egg", new SpawnEggItem(EntityType.field41071, 10051392, 7555121, new Class5643().method17779(ItemGroup.field31669))
+      "rabbit_spawn_egg", new SpawnEggItem(EntityType.RABBIT, 10051392, 7555121, new Class5643().method17779(ItemGroup.field31669))
    );
    public static final Item field38018 = method30157(
       "ravager_spawn_egg", new SpawnEggItem(EntityType.field41072, 7697520, 5984329, new Class5643().method17779(ItemGroup.field31669))
@@ -1108,7 +1110,7 @@ public class Items {
       "salmon_spawn_egg", new SpawnEggItem(EntityType.field41073, 10489616, 951412, new Class5643().method17779(ItemGroup.field31669))
    );
    public static final Item field38020 = method30157(
-      "sheep_spawn_egg", new SpawnEggItem(EntityType.field41074, 15198183, 16758197, new Class5643().method17779(ItemGroup.field31669))
+      "sheep_spawn_egg", new SpawnEggItem(EntityType.SHEEP, 15198183, 16758197, new Class5643().method17779(ItemGroup.field31669))
    );
    public static final Item field38021 = method30157(
       "shulker_spawn_egg", new SpawnEggItem(EntityType.field41075, 9725844, 5060690, new Class5643().method17779(ItemGroup.field31669))
@@ -1382,55 +1384,55 @@ public class Items {
    public static final Item field38130 = method30157("debug_stick", new Class3339(new Class5643().method17775(1)));
    public static final Item field38131 = method30157(
       "music_disc_13",
-      new Class3283(1, Sounds.field26779, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(1, SoundEvents.field26779, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38132 = method30157(
       "music_disc_cat",
-      new Class3283(2, Sounds.field26781, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(2, SoundEvents.field26781, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38133 = method30157(
       "music_disc_blocks",
-      new Class3283(3, Sounds.field26780, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(3, SoundEvents.field26780, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38134 = method30157(
       "music_disc_chirp",
-      new Class3283(4, Sounds.field26782, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(4, SoundEvents.field26782, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38135 = method30157(
       "music_disc_far",
-      new Class3283(5, Sounds.field26783, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(5, SoundEvents.field26783, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38136 = method30157(
       "music_disc_mall",
-      new Class3283(6, Sounds.field26784, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(6, SoundEvents.field26784, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38137 = method30157(
       "music_disc_mellohi",
-      new Class3283(7, Sounds.field26785, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(7, SoundEvents.field26785, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38138 = method30157(
       "music_disc_stal",
-      new Class3283(8, Sounds.field26787, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(8, SoundEvents.field26787, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38139 = method30157(
       "music_disc_strad",
-      new Class3283(9, Sounds.field26788, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(9, SoundEvents.field26788, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38140 = method30157(
       "music_disc_ward",
-      new Class3283(10, Sounds.field26790, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(10, SoundEvents.field26790, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38141 = method30157(
       "music_disc_11",
-      new Class3283(11, Sounds.field26778, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(11, SoundEvents.field26778, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38142 = method30157(
       "music_disc_wait",
-      new Class3283(12, Sounds.field26789, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(12, SoundEvents.field26789, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38143 = method30157(
       "music_disc_pigstep",
-      new Class3283(13, Sounds.field26786, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(13, SoundEvents.field26786, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38144 = method30157("trident", new Class3272(new Class5643().method17777(250).method17779(ItemGroup.field31673)));
    public static final Item field38145 = method30157("phantom_membrane", new Item(new Class5643().method17779(ItemGroup.field31674)));

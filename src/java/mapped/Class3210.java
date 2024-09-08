@@ -4,7 +4,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -21,7 +23,7 @@ public class Class3210 extends Block {
    @Override
    public void method11561(World var1, BlockPos var2, Entity var3) {
       if (!var3.method3249() && var3 instanceof LivingEntity && !Class7858.method26332((LivingEntity)var3)) {
-         var3.method2741(Class8654.field38996, 1.0F);
+         var3.method2741(DamageSource.field38996, 1.0F);
       }
 
       super.method11561(var1, var2, var3);
@@ -46,7 +48,7 @@ public class Class3210 extends Block {
       BlockPos var7 = var3.up();
       if (var2.getFluidState(var3).method23486(Class8953.field40469)) {
          var2.method6742(
-            (PlayerEntity)null, var3, Sounds.field26582, Class2266.field14732, 0.5F, 2.6F + (var2.rand.nextFloat() - var2.rand.nextFloat()) * 0.8F
+            (PlayerEntity)null, var3, SoundEvents.field26582, Class2266.field14732, 0.5F, 2.6F + (var2.rand.nextFloat() - var2.rand.nextFloat()) * 0.8F
          );
          var2.method6939(
             ParticleTypes.field34085, (double)var7.getX() + 0.5, (double)var7.getY() + 0.25, (double)var7.getZ() + 0.5, 8, 0.5, 0.25, 0.5, 0.0

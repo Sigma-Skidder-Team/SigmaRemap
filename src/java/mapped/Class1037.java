@@ -4,8 +4,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
@@ -77,28 +80,28 @@ public class Class1037 extends Class1038 implements Class1022 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return !this.method3250() ? Sounds.field26514 : Sounds.field26515;
+   public SoundEvent getAmbientSound() {
+      return !this.method3250() ? SoundEvents.field26514 : SoundEvents.field26515;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return !this.method3250() ? Sounds.field26518 : Sounds.field26519;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return !this.method3250() ? SoundEvents.field26518 : SoundEvents.field26519;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return !this.method3250() ? Sounds.field26516 : Sounds.field26517;
+   public SoundEvent getDeathSound() {
+      return !this.method3250() ? SoundEvents.field26516 : SoundEvents.field26517;
    }
 
    @Override
    public SoundEvent method4643() {
-      return Sounds.field26521;
+      return SoundEvents.field26521;
    }
 
    @Override
    public SoundEvent method2859() {
-      return Sounds.field26522;
+      return SoundEvents.field26522;
    }
 
    @Override
@@ -206,7 +209,7 @@ public class Class1037 extends Class1038 implements Class1022 {
       double var10 = var1.getPosZ() - this.getPosZ();
       double var12 = (double) MathHelper.method37766(var6 * var6 + var10 * var10);
       var5.shoot(var6, var8 + var12 * 0.2F, var10, 1.6F, (float)(14 - this.world.method6997().getId() * 4));
-      this.method2863(Sounds.field26520, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
+      this.method2863(SoundEvents.field26520, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.world.method6916(var5);
    }
 

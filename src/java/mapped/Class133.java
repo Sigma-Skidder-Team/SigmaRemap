@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 
 import java.util.Map;
 import java.util.Map.Entry;

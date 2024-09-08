@@ -1,8 +1,8 @@
-package mapped;
+package net.minecraft.entity;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
+import mapped.Class1006;
+import mapped.Class5462;
+import mapped.Class8088;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.world.World;
@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 import java.util.Objects;
 import java.util.UUID;
 
-public interface Class1011 {
+public interface IAngerable {
    int method4348();
 
    void method4347(int var1);

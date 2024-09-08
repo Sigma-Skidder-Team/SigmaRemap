@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 

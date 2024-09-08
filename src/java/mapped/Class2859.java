@@ -1,8 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.collect.ImmutableList;
 
-public class Class2859<T extends Class1012> extends Class2858<T> {
+public class Class2859<T extends WolfEntity> extends Class2858<T> {
    private static String[] field17711;
    private final Class7219 field17712;
    private final Class7219 field17713;

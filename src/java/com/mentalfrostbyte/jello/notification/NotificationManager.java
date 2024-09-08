@@ -102,7 +102,7 @@ public class NotificationManager {
                         var5.field43604,
                         var12
                 );
-                RenderUtil.method11422();
+                RenderUtil.endScissor();
                 RenderUtil.method11455(
                         (float) (var7 + this.field39927 / 2),
                         (float) (var8 + this.field39927 / 2),

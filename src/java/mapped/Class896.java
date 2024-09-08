@@ -6,7 +6,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -96,7 +98,7 @@ public class Class896 extends Class890 implements Class889 {
          for (LivingEntity var6 : var4) {
             double var7 = this.getDistanceSq(var6);
             if (var7 < 16.0 && var6.method3124()) {
-               var6.method2741(Class8654.method31124(var6, this.method3460()), 1.0F);
+               var6.method2741(DamageSource.method31124(var6, this.method3460()), 1.0F);
             }
          }
       }

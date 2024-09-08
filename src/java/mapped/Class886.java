@@ -7,11 +7,14 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntityPickupStatus;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -74,7 +77,7 @@ public class Class886 extends AbstractArrowEntity {
             double var6 = 0.05 * (double)var4;
             this.method3434(this.getVec().method11344(0.95).method11338(var5.method11333().method11344(var6)));
             if (this.field5115 == 0) {
-               this.method2863(Sounds.field27150, 10.0F, 1.0F);
+               this.method2863(SoundEvents.field27150, 10.0F, 1.0F);
             }
 
             this.field5115++;
@@ -114,9 +117,9 @@ public class Class886 extends AbstractArrowEntity {
       }
 
       Entity var12 = this.method3460();
-      Class8654 var7 = Class8654.method31119(this, (Entity)(var12 != null ? var12 : this));
+      DamageSource var7 = DamageSource.method31119(this, (Entity)(var12 != null ? var12 : this));
       this.field5114 = true;
-      SoundEvent var8 = Sounds.field27148;
+      SoundEvent var8 = SoundEvents.field27148;
       if (var4.method2741(var7, var5)) {
          if (var4.getType() == EntityType.field41025) {
             return;
@@ -142,7 +145,7 @@ public class Class886 extends AbstractArrowEntity {
             var11.method3271(Vector3d.method11330(var10));
             var11.method3550(!(var12 instanceof ServerPlayerEntity) ? null : (ServerPlayerEntity)var12);
             this.world.method6916(var11);
-            var8 = Sounds.field27155;
+            var8 = SoundEvents.field27155;
             var13 = 5.0F;
          }
       }
@@ -152,7 +155,7 @@ public class Class886 extends AbstractArrowEntity {
 
    @Override
    public SoundEvent getHitEntitySound() {
-      return Sounds.field27149;
+      return SoundEvents.field27149;
    }
 
    @Override

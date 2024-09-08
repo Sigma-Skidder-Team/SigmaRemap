@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.play.client.CClickWindowPacket;
 
 import java.util.ArrayList;

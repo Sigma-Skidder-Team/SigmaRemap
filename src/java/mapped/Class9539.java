@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
 
@@ -36,11 +37,11 @@ public class Class9539 {
       this.field44419 = var10;
    }
 
-   public boolean method36911(ServerPlayerEntity var1, Class8654 var2) {
+   public boolean method36911(ServerPlayerEntity var1, DamageSource var2) {
       return this.method36912(var1.getServerWorld(), var1.getPositionVec(), var2);
    }
 
-   public boolean method36912(ServerWorld var1, Vector3d var2, Class8654 var3) {
+   public boolean method36912(ServerWorld var1, Vector3d var2, DamageSource var3) {
       if (this != field44409) {
          if (this.field44410 != null && this.field44410 != var3.method31129()) {
             return false;
@@ -56,7 +57,7 @@ public class Class9539 {
             return false;
          } else if (this.field44416 != null && this.field44416 != var3.method31144()) {
             return false;
-         } else if (this.field44417 != null && this.field44417 != (var3 == Class8654.field38993)) {
+         } else if (this.field44417 != null && this.field44417 != (var3 == DamageSource.field38993)) {
             return false;
          } else {
             return this.field44418.method20329(var1, var2, var3.method31113()) ? this.field44419.method20329(var1, var2, var3.method31109()) : false;

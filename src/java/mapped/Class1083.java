@@ -3,7 +3,9 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -21,23 +23,23 @@ public class Class1083 extends Class1082 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27138;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27138;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27140;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27140;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27139;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27139;
    }
 
    @Override
    public SoundEvent method5030() {
-      return Sounds.field27141;
+      return SoundEvents.field27141;
    }
 
    @Override

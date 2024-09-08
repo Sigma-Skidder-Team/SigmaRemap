@@ -6,12 +6,14 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
@@ -28,7 +30,7 @@ public class Class904 extends ProjectileEntity {
    private final Random field5148 = new Random();
    private boolean field5149;
    private int field5150;
-   private static final DataParameter<Integer> field5151 = EntityDataManager.<Integer>createKey(Class904.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5151 = EntityDataManager.<Integer>createKey(Class904.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5152 = EntityDataManager.<Boolean>createKey(Class904.class, DataSerializers.field33398);
    private int field5153;
    private int field5154;
@@ -312,7 +314,7 @@ public class Class904 extends ProjectileEntity {
          } else {
             this.field5156 -= var5;
             if (this.field5156 <= 0) {
-               this.method2863(Sounds.field26585, 0.25F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
+               this.method2863(SoundEvents.field26585, 0.25F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
                double var7 = this.getPosY() + 0.5;
                var4.method6939(
                   ParticleTypes.field34052,

@@ -3,9 +3,11 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
@@ -39,7 +41,7 @@ public class Class3287 extends Item {
                   Fluid var16 = ((Class3405)var15.getBlock()).method11533(var1, var9, var15);
                   if (var16 != Class9479.field44064) {
                      var2.method2913(Class8876.field40098.method172(this));
-                     var2.method2863(!var16.method25067(Class8953.field40470) ? Sounds.field26429 : Sounds.field26431, 1.0F, 1.0F);
+                     var2.method2863(!var16.method25067(Class8953.field40470) ? SoundEvents.field26429 : SoundEvents.field26431, 1.0F, 1.0F);
                      ItemStack var14 = Class8482.method29979(var6, var2, new ItemStack(var16.method25050()));
                      if (!var1.isRemote) {
                         CriteriaTriggers.field44474.method15152((ServerPlayerEntity)var2, new ItemStack(var16.method25050()));
@@ -93,7 +95,7 @@ public class Class3287 extends Item {
                int var13 = var3.getY();
                int var14 = var3.getZ();
                var2.method6742(
-                  var1, var3, Sounds.field26582, Class2266.field14732, 0.5F, 2.6F + (var2.rand.nextFloat() - var2.rand.nextFloat()) * 0.8F
+                  var1, var3, SoundEvents.field26582, Class2266.field14732, 0.5F, 2.6F + (var2.rand.nextFloat() - var2.rand.nextFloat()) * 0.8F
                );
 
                for (int var15 = 0; var15 < 8; var15++) {
@@ -126,7 +128,7 @@ public class Class3287 extends Item {
    }
 
    public void method11826(PlayerEntity var1, Class1660 var2, BlockPos var3) {
-      SoundEvent var6 = !this.field18798.method25067(Class8953.field40470) ? Sounds.field26426 : Sounds.field26428;
+      SoundEvent var6 = !this.field18798.method25067(Class8953.field40470) ? SoundEvents.field26426 : SoundEvents.field26428;
       var2.method6742(var1, var3, var6, Class2266.field14732, 1.0F, 1.0F);
    }
 }

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.SoundEvents;
 
 public class Class9413 {
    private static String[] field43675;
@@ -15,8 +16,8 @@ public class Class9413 {
       Class9328 var6 = new Class9328();
       Class8468.method29838(var6);
       var6.method35249(Class179.field624, new Class6692(EntityType.field41105, 8, 4, 4));
-      var6.method35249(Class179.field624, new Class6692(EntityType.field41071, 4, 2, 3));
-      var6.method35249(Class179.field624, new Class6692(EntityType.field41033, 8, 2, 4));
+      var6.method35249(Class179.field624, new Class6692(EntityType.RABBIT, 4, 2, 3));
+      var6.method35249(Class179.field624, new Class6692(EntityType.FOX, 8, 2, 4));
       if (!var3) {
          Class8468.method29839(var6);
          Class8468.method29846(var6, 100, 25, 100);
@@ -842,7 +843,7 @@ public class Class9413 {
    }
 
    public static Biome method36103() {
-      Class9328 var2 = method36101().method35249(Class179.field624, new Class6692(EntityType.field41071, 4, 2, 3));
+      Class9328 var2 = method36101().method35249(Class179.field624, new Class6692(EntityType.RABBIT, 4, 2, 3));
       return method36100(0.1F, 0.4F, true, var2);
    }
 
@@ -850,8 +851,8 @@ public class Class9413 {
       Class9328 var8 = new Class9328();
       Class8468.method29838(var8);
       var8.method35249(Class179.field624, new Class6692(EntityType.field41105, 8, 4, 4))
-         .method35249(Class179.field624, new Class6692(EntityType.field41071, 4, 2, 3))
-         .method35249(Class179.field624, new Class6692(EntityType.field41033, 8, 2, 4));
+         .method35249(Class179.field624, new Class6692(EntityType.RABBIT, 4, 2, 3))
+         .method35249(Class179.field624, new Class6692(EntityType.FOX, 8, 2, 4));
       if (!var2 && !var3) {
          var8.method35252();
       }
@@ -1225,10 +1226,10 @@ public class Class9413 {
                .method34870(329011)
                .method34868(3344392)
                .method34871(method36061(2.0F))
-               .method34876(Sounds.field26321)
-               .method34877(new Class7959(Sounds.field26322, 6000, 8, 2.0))
-               .method34878(new Class8217(Sounds.field26320, 0.0111))
-               .method34879(BackgroundMusicTracks.method25672(Sounds.field26796))
+               .method34876(SoundEvents.field26321)
+               .method34877(new Class7959(SoundEvents.field26322, 6000, 8, 2.0))
+               .method34878(new Class8217(SoundEvents.field26320, 0.0111))
+               .method34879(BackgroundMusicTracks.method25672(SoundEvents.field26796))
                .method34880()
          )
          .method37918(var2)
@@ -1282,10 +1283,10 @@ public class Class9413 {
                .method34868(1787717)
                .method34871(method36061(2.0F))
                .method34875(new Class7737(ParticleTypes.field34112, 0.00625F))
-               .method34876(Sounds.field26324)
-               .method34877(new Class7959(Sounds.field26325, 6000, 8, 2.0))
-               .method34878(new Class8217(Sounds.field26323, 0.0111))
-               .method34879(BackgroundMusicTracks.method25672(Sounds.field26797))
+               .method34876(SoundEvents.field26324)
+               .method34877(new Class7959(SoundEvents.field26325, 6000, 8, 2.0))
+               .method34878(new Class8217(SoundEvents.field26323, 0.0111))
+               .method34879(BackgroundMusicTracks.method25672(SoundEvents.field26797))
                .method34880()
          )
          .method37918(var6)
@@ -1336,10 +1337,10 @@ public class Class9413 {
                .method34868(6840176)
                .method34871(method36061(2.0F))
                .method34875(new Class7737(ParticleTypes.field34119, 0.118093334F))
-               .method34876(Sounds.field26315)
-               .method34877(new Class7959(Sounds.field26316, 6000, 8, 2.0))
-               .method34878(new Class8217(Sounds.field26314, 0.0111))
-               .method34879(BackgroundMusicTracks.method25672(Sounds.field26795))
+               .method34876(SoundEvents.field26315)
+               .method34877(new Class7959(SoundEvents.field26316, 6000, 8, 2.0))
+               .method34878(new Class8217(SoundEvents.field26314, 0.0111))
+               .method34879(BackgroundMusicTracks.method25672(SoundEvents.field26795))
                .method34880()
          )
          .method37918(var2)
@@ -1386,10 +1387,10 @@ public class Class9413 {
                .method34868(3343107)
                .method34871(method36061(2.0F))
                .method34875(new Class7737(ParticleTypes.field34113, 0.025F))
-               .method34876(Sounds.field26318)
-               .method34877(new Class7959(Sounds.field26319, 6000, 8, 2.0))
-               .method34878(new Class8217(Sounds.field26317, 0.0111))
-               .method34879(BackgroundMusicTracks.method25672(Sounds.field26798))
+               .method34876(SoundEvents.field26318)
+               .method34877(new Class7959(SoundEvents.field26319, 6000, 8, 2.0))
+               .method34878(new Class8217(SoundEvents.field26317, 0.0111))
+               .method34879(BackgroundMusicTracks.method25672(SoundEvents.field26798))
                .method34880()
          )
          .method37918(var2)
@@ -1437,10 +1438,10 @@ public class Class9413 {
                .method34868(1705242)
                .method34871(method36061(2.0F))
                .method34875(new Class7737(ParticleTypes.field34114, 0.01428F))
-               .method34876(Sounds.field26327)
-               .method34877(new Class7959(Sounds.field26328, 6000, 8, 2.0))
-               .method34878(new Class8217(Sounds.field26326, 0.0111))
-               .method34879(BackgroundMusicTracks.method25672(Sounds.field26799))
+               .method34876(SoundEvents.field26327)
+               .method34877(new Class7959(SoundEvents.field26328, 6000, 8, 2.0))
+               .method34878(new Class8217(SoundEvents.field26326, 0.0111))
+               .method34879(BackgroundMusicTracks.method25672(SoundEvents.field26799))
                .method34880()
          )
          .method37918(var2)

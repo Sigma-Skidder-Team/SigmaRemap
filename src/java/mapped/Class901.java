@@ -8,6 +8,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
@@ -147,7 +148,7 @@ public abstract class Class901 extends ProjectileEntity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          this.method3141();
          Entity var5 = var1.method31109();

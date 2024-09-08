@@ -7,6 +7,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.LanguageScreen;
 import net.minecraft.client.gui.screen.OptionsScreen;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.util.SoundEvents;
 
 public class Class4337 extends Class4305 {
    public final Class4254 field21186;
@@ -53,7 +54,7 @@ public class Class4337 extends Class4305 {
    }
 
    public void method13495() {
-      Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.field27176, 1.0F));
+      Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
    }
 
    private int method13496() {

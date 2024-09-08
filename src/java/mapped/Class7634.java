@@ -1,9 +1,11 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -35,7 +37,7 @@ public abstract class Class7634 extends Class7633 {
                (double)var2.getX() + 0.5,
                (double)var2.getY() + 0.5,
                (double)var2.getZ() + 0.5,
-               Sounds.field27225,
+               SoundEvents.field27225,
                Class2266.field14732,
                var4.nextFloat() * 0.25F + 0.75F,
                var4.nextFloat() + 0.5F,

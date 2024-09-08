@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.blockfly.BlockFlyAACMode;
 import mapped.*;
+import net.minecraft.item.Items;
 
 public class AutoSprint extends Module {
     private final double[] field23605 = new double[]{0.0, 0.0};

@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
 import mapped.*;
+import net.minecraft.item.Items;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.play.server.SEntityMetadataPacket;

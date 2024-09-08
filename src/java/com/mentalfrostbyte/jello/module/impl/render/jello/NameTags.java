@@ -17,6 +17,7 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClickWindowPacket;
@@ -246,8 +247,8 @@ public class NameTags extends Module {
 
             if (this.getBooleanValueFromSetttingName("Mob Owners")) {
                 for (Entity var12 : mc.world.method6835()) {
-                    if (var12 == mc.player && (var12 instanceof Class1013 || var12 instanceof Class1074)) {
-                        UUID var14 = !(var12 instanceof Class1013) ? ((Class1074) var12).method4933() : ((Class1013) var12).method4397();
+                    if (var12 == mc.player && (var12 instanceof TameableEntity || var12 instanceof Class1074)) {
+                        UUID var14 = !(var12 instanceof TameableEntity) ? ((Class1074) var12).method4933() : ((TameableEntity) var12).method4397();
                         if (var14 != null) {
                             if (!this.field24007.containsKey(var14)) {
                                 this.field24007.put(var14, null);

@@ -8,8 +8,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.Direction;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -20,7 +19,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class Class1010 extends Class1009 implements Class1011 {
+public class Class1010 extends Class1009 implements IAngerable {
    private static final UUID field5645 = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
    private static final Class9689 field5646 = new Class9689(field5645, "Attacking speed boost", 0.15F, AttributeModifierOperation.ADDITION);
    private static final DataParameter<Optional<BlockState>> field5647 = EntityDataManager.<Optional<BlockState>>createKey(Class1010.class, DataSerializers.field33397);
@@ -29,7 +28,7 @@ public class Class1010 extends Class1009 implements Class1011 {
    private static final Predicate<LivingEntity> field5650 = var0 -> var0 instanceof Class1104 && ((Class1104)var0).method5297();
    private int field5651 = Integer.MIN_VALUE;
    private int field5652;
-   private static final Class8369 field5653 = Class8763.method31620(20, 39);
+   private static final RangedInteger field5653 = TickRangeConverter.convertRange(20, 39);
    private int field5654;
    private UUID field5655;
 
@@ -118,7 +117,7 @@ public class Class1010 extends Class1009 implements Class1011 {
       if (this.ticksExisted >= this.field5651 + 400) {
          this.field5651 = this.ticksExisted;
          if (!this.method3245()) {
-            this.world.method6745(this.getPosX(), this.method3442(), this.getPosZ(), Sounds.field26549, this.method2864(), 2.5F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.method3442(), this.getPosZ(), SoundEvents.field26549, this.method2864(), 2.5F, 1.0F, false);
          }
       }
    }
@@ -254,8 +253,8 @@ public class Class1010 extends Class1009 implements Class1011 {
       if (var11 && !var12) {
          boolean var13 = this.method3168(var1, var3, var5, true);
          if (var13 && !this.method3245()) {
-            this.world.method6743((PlayerEntity)null, this.prevPosX, this.prevPosY, this.prevPosZ, Sounds.field26550, this.method2864(), 1.0F, 1.0F);
-            this.method2863(Sounds.field26550, 1.0F, 1.0F);
+            this.world.method6743((PlayerEntity)null, this.prevPosX, this.prevPosY, this.prevPosZ, SoundEvents.field26550, this.method2864(), 1.0F, 1.0F);
+            this.method2863(SoundEvents.field26550, 1.0F, 1.0F);
          }
 
          return var13;
@@ -265,22 +264,22 @@ public class Class1010 extends Class1009 implements Class1011 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return !this.method4358() ? Sounds.field26545 : Sounds.field26548;
+   public SoundEvent getAmbientSound() {
+      return !this.method4358() ? SoundEvents.field26545 : SoundEvents.field26548;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26547;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26547;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26546;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26546;
    }
 
    @Override
-   public void method3054(Class8654 var1, int var2, boolean var3) {
+   public void method3054(DamageSource var1, int var2, boolean var3) {
       super.method3054(var1, var2, var3);
       BlockState var6 = this.method4357();
       if (var6 != null) {
@@ -298,7 +297,7 @@ public class Class1010 extends Class1009 implements Class1011 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (this.method2760(var1)) {
          return false;
       } else if (!(var1 instanceof Class8653)) {

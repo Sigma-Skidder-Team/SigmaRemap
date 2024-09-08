@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.Difficulty;
 
 public class Class9640 {
@@ -64,7 +65,7 @@ public class Class9640 {
          this.field45074++;
          if (this.field45074 >= 80) {
             if (var1.getHealth() > 10.0F || var4 == Difficulty.field14354 || var1.getHealth() > 1.0F && var4 == Difficulty.field14353) {
-               var1.method2741(Class8654.field39000, 1.0F);
+               var1.method2741(DamageSource.field39000, 1.0F);
             }
 
             this.field45074 = 0;

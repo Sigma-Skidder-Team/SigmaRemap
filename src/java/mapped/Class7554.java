@@ -56,7 +56,7 @@ public class Class7554 {
 
       RenderUtil.method11419((float)this.method24720(), (float)this.method24721(), (float)this.method24719() * var4, (float)this.method24725());
       this.method24718(var1);
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
    }
 
    public void method24718(float var1) {

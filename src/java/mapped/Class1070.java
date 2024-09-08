@@ -9,14 +9,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -31,7 +29,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    private static String[] field5902;
    private static final Class120 field5903 = Class120.method339(Items.field37349);
    private static final Class120 field5904 = Class120.method339(Items.field37349, Items.field38065);
-   private static final DataParameter<Integer> field5905 = EntityDataManager.<Integer>createKey(Class1070.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5905 = EntityDataManager.<Integer>createKey(Class1070.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5906 = EntityDataManager.<Boolean>createKey(Class1070.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> field5907 = EntityDataManager.<Boolean>createKey(Class1070.class, DataSerializers.field33398);
    private final Class6500 field5908 = new Class6500(this.dataManager, field5905, field5907);
@@ -100,7 +98,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    public void method4942(Class2266 var1) {
       this.field5908.method19693(true);
       if (var1 != null) {
-         this.world.method6744((PlayerEntity)null, this, Sounds.field27101, var1, 0.5F, 1.0F);
+         this.world.method6744((PlayerEntity)null, this, SoundEvents.field27101, var1, 0.5F, 1.0F);
       }
    }
 
@@ -233,7 +231,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(!this.method3264() ? Sounds.field27098 : Sounds.field27099, 1.0F, 1.0F);
+      this.method2863(!this.method3264() ? SoundEvents.field27098 : SoundEvents.field27099, 1.0F, 1.0F);
    }
 
    @Override
@@ -254,9 +252,9 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    @Override
    public void tick() {
       if (this.method4984() && this.rand.nextInt(140) == 0) {
-         this.method2863(Sounds.field27094, 1.0F, this.method3100());
+         this.method2863(SoundEvents.field27094, 1.0F, this.method3100());
       } else if (this.method4983() && this.rand.nextInt(60) == 0) {
-         this.method2863(Sounds.field27095, 1.0F, this.method3100());
+         this.method2863(SoundEvents.field27095, 1.0F, this.method3100());
       }
 
       BlockState var3 = this.world.getBlockState(this.getPosition());
@@ -298,18 +296,18 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return !this.method4983() && !this.method4984() ? Sounds.field27093 : null;
+   public SoundEvent getAmbientSound() {
+      return !this.method4983() && !this.method4984() ? SoundEvents.field27093 : null;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27097;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27097;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27096;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27096;
    }
 
    @Override
@@ -377,7 +375,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
                      this.getPosX(),
                      this.getPosY(),
                      this.getPosZ(),
-                     Sounds.field27100,
+                     SoundEvents.field27100,
                      this.method2864(),
                      1.0F,
                      1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F

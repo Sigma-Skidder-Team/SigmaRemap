@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -28,7 +29,7 @@ public abstract class Class7361 implements Class7373 {
    }
 
    @Override
-   public void method23361(EnderCrystalEntity var1, BlockPos var2, Class8654 var3, PlayerEntity var4) {
+   public void method23361(EnderCrystalEntity var1, BlockPos var2, DamageSource var3, PlayerEntity var4) {
    }
 
    @Override
@@ -51,7 +52,7 @@ public abstract class Class7361 implements Class7373 {
    }
 
    @Override
-   public float method23366(Class8654 var1, float var2) {
+   public float method23366(DamageSource var1, float var2) {
       return var2;
    }
 

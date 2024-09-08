@@ -42,7 +42,7 @@ public class Class4242 extends Class4240 {
                 (float) (Minecraft.getInstance().mainWindow.getHeight() + var5),
                 CustomResourceLoadProgressGui.field6780
         );
-        RenderUtil.method11422();
+        RenderUtil.endScissor();
         if (this.field20591) {
             RenderUtil.method11424(
                     (float) this.method13263(),

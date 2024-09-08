@@ -16,11 +16,13 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.WaterMobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.*;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -276,7 +278,7 @@ public class ServerWorld extends World implements ISeedReader {
             Entry var18 = (Entry)var15.next();
             Entity var17 = (Entity)var18.getValue();
             Entity var20 = var17.getRidingEntity();
-            if (!this.field9045.method1354() && (var17 instanceof Class1018 || var17 instanceof Class1047)) {
+            if (!this.field9045.method1354() && (var17 instanceof Class1018 || var17 instanceof WaterMobEntity)) {
                var17.method2904();
             }
 
@@ -948,7 +950,7 @@ public class ServerWorld extends World implements ISeedReader {
 
    @Override
    public Class7782 method6757(
-           Entity var1, Class8654 var2, Class5924 var3, double var4, double var6, double var8, float var10, boolean var11, Class2141 var12
+           Entity var1, DamageSource var2, Class5924 var3, double var4, double var6, double var8, float var10, boolean var11, Class2141 var12
    ) {
       Class7782 var15 = new Class7782(this, var1, var2, var3, var4, var6, var8, var10, var11, var12);
       var15.method25784();

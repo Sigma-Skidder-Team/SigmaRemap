@@ -1,10 +1,11 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.world.World;
 
-public abstract class Class1014 extends Class1013 {
+public abstract class Class1014 extends TameableEntity {
    private int field5671;
 
    public Class1014(EntityType<? extends Class1014> var1, World var2) {

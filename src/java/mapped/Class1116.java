@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.UUID;
@@ -25,7 +26,7 @@ public class Class1116 extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       return true;
    }
 

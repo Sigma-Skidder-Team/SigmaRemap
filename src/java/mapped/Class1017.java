@@ -9,7 +9,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
@@ -20,10 +20,10 @@ import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.UUID;
 
-public class Class1017 extends Class1018 implements Class1011, Class1016 {
+public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    private static final DataParameter<Byte> field5684 = EntityDataManager.<Byte>createKey(Class1017.class, DataSerializers.field33390);
-   private static final DataParameter<Integer> field5685 = EntityDataManager.<Integer>createKey(Class1017.class, DataSerializers.field33391);
-   private static final Class8369 field5686 = Class8763.method31620(20, 39);
+   private static final DataParameter<Integer> field5685 = EntityDataManager.<Integer>createKey(Class1017.class, DataSerializers.VARINT);
+   private static final RangedInteger field5686 = TickRangeConverter.convertRange(20, 39);
    private UUID field5687;
    private float field5688;
    private float field5689;
@@ -127,7 +127,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    @Override
    public boolean method3114(Entity var1) {
-      boolean var4 = var1.method2741(Class8654.method31114(this), (float)((int)this.method3086(Attributes.field42110)));
+      boolean var4 = var1.method2741(DamageSource.method31114(this), (float)((int)this.method3086(Attributes.field42110)));
       if (var4) {
          this.method3399(this, var1);
          if (var1 instanceof LivingEntity) {
@@ -148,7 +148,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
          this.method4441(true);
          this.method4372();
-         this.method2863(Sounds.field26393, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field26393, 1.0F, 1.0F);
       }
 
       return var4;
@@ -267,13 +267,13 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       }
 
       if (this.field5701 > 20) {
-         this.method2741(Class8654.field38999, 1.0F);
+         this.method2741(DamageSource.field38999, 1.0F);
       }
 
       if (var3) {
          this.field5690++;
          if (this.field5690 % 5 == 0 && this.rand.nextInt(MathHelper.method37775(1200 - this.field5690, 1, 1200)) == 0) {
-            this.method2741(Class8654.field39005, this.getHealth());
+            this.method2741(DamageSource.field39005, this.getHealth());
          }
       }
 
@@ -465,18 +465,18 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    @Override
-   public SoundEvent method4241() {
+   public SoundEvent getAmbientSound() {
       return null;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26390;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26390;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26389;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26389;
    }
 
    @Override
@@ -513,7 +513,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          Entity var5 = var1.method31109();
          if (!this.world.isRemote) {

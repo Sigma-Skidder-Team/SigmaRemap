@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -162,7 +163,7 @@ public class Class2663 extends Class2661 {
                this.field17026++;
                if (Class1017.method4490(this.field17031).nextFloat() < 0.05F && this.field17026 > this.field17027 + 60) {
                   this.field17027 = this.field17026;
-                  this.field17031.method2863(Sounds.field26394, 1.0F, 1.0F);
+                  this.field17031.method2863(SoundEvents.field26394, 1.0F, 1.0F);
                }
             }
          } else {

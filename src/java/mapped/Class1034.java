@@ -7,13 +7,12 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -105,7 +104,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public void method3054(Class8654 var1, int var2, boolean var3) {
+   public void method3054(DamageSource var1, int var2, boolean var3) {
       super.method3054(var1, var2, var3);
       this.field5746.method3674().forEach(this::method3302);
    }
@@ -318,7 +317,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
       if (!this.world.isRemote) {
          if (var5 && var1.method31109() instanceof LivingEntity) {
@@ -410,23 +409,23 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public SoundEvent method4241() {
+   public SoundEvent getAmbientSound() {
       return !this.world.isRemote ? Class4388.method13837(this).orElse((SoundEvent)null) : null;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26935;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26935;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26933;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26933;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field26937, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field26937, 0.15F, 1.0F);
    }
 
    public void method4629(SoundEvent var1) {
@@ -435,6 +434,6 @@ public class Class1034 extends Class1035 implements Class1023 {
 
    @Override
    public void method4630() {
-      this.method4629(Sounds.field26938);
+      this.method4629(SoundEvents.field26938);
    }
 }

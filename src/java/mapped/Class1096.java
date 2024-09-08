@@ -8,7 +8,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -19,13 +19,13 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class Class1096 extends Class1018 implements Class1011 {
+public class Class1096 extends Class1018 implements IAngerable {
    private static String[] field6009;
    private static final DataParameter<Boolean> field6010 = EntityDataManager.<Boolean>createKey(Class1096.class, DataSerializers.field33398);
    private float field6011;
    private float field6012;
    private int field6013;
-   private static final Class8369 field6014 = Class8763.method31620(20, 39);
+   private static final RangedInteger field6014 = TickRangeConverter.convertRange(20, 39);
    private int field6015;
    private UUID field6016;
 
@@ -114,28 +114,28 @@ public class Class1096 extends Class1018 implements Class1011 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return !this.method3005() ? Sounds.field26970 : Sounds.field26971;
+   public SoundEvent getAmbientSound() {
+      return !this.method3005() ? SoundEvents.field26970 : SoundEvents.field26971;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26973;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26973;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26972;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26972;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field26974, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field26974, 0.15F, 1.0F);
    }
 
    public void method5182() {
       if (this.field6013 <= 0) {
-         this.method2863(Sounds.field26975, 1.0F, this.method3100());
+         this.method2863(SoundEvents.field26975, 1.0F, this.method3100());
          this.field6013 = 40;
       }
    }
@@ -184,7 +184,7 @@ public class Class1096 extends Class1018 implements Class1011 {
 
    @Override
    public boolean method3114(Entity var1) {
-      boolean var4 = var1.method2741(Class8654.method31115(this), (float)((int)this.method3086(Attributes.field42110)));
+      boolean var4 = var1.method2741(DamageSource.method31115(this), (float)((int)this.method3086(Attributes.field42110)));
       if (var4) {
          this.method3399(this, var1);
       }

@@ -85,7 +85,7 @@ public class EntityRendererManager {
       this.method32209(EntityType.field41044, new Class5735(this, var1, 3.0F, true));
       this.method32209(EntityType.field41032, new Class5726(this, var1));
       this.method32209(EntityType.field41112, new Class5738(this));
-      this.method32209(EntityType.field41033, new Class5650(this));
+      this.method32209(EntityType.FOX, new Class5650(this));
       this.method32209(EntityType.field41053, new Class5732(this));
       this.method32209(EntityType.field41034, new Class5684(this));
       this.method32209(EntityType.field41035, new Class5744(this, 6.0F));
@@ -118,10 +118,10 @@ public class EntityRendererManager {
       this.method32209(EntityType.field41068, new Class5700(this));
       this.method32209(EntityType.field41092, new Class5735(this, var1));
       this.method32209(EntityType.field41070, new Class5748(this));
-      this.method32209(EntityType.field41071, new Class5656(this));
+      this.method32209(EntityType.RABBIT, new Class5656(this));
       this.method32209(EntityType.field41072, new Class5701(this));
       this.method32209(EntityType.field41073, new Class5750(this));
-      this.method32209(EntityType.field41074, new Class5749(this));
+      this.method32209(EntityType.SHEEP, new Class5749(this));
       this.method32209(EntityType.field41076, new Class5730(this));
       this.method32209(EntityType.field41075, new Class5683(this));
       this.method32209(EntityType.field41077, new Class5704(this));

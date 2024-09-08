@@ -186,7 +186,7 @@ public class MiniMap extends Module {
                                     true,
                                     false
                             );
-                            RenderUtil.method11422();
+                            RenderUtil.endScissor();
                             GL11.glPopMatrix();
                             GL11.glPushMatrix();
                             int var15 = (int) Class9567.method37083()[0];

@@ -3,8 +3,10 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -52,7 +54,7 @@ public abstract class Class1018 extends Class1045 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          this.field5702 = 0;
          return super.method2741(var1, var2);

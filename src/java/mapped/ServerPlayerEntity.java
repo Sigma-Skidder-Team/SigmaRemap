@@ -5,12 +5,14 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.datafixers.util.Either;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.IAngerable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
@@ -386,7 +388,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2737(Class8654 var1) {
+   public void method2737(DamageSource var1) {
       boolean var4 = this.world.method6789().method17135(Class5462.field24234);
       if (!var4) {
          this.field4855.sendPacket(new SCombatPacket(this.method3073(), Class1900.field11157));
@@ -451,12 +453,12 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       this.world
          .<Class1006>method7183(Class1006.class, var3)
          .stream()
-         .filter(var0 -> var0 instanceof Class1011)
-         .forEach(var1 -> ((Class1011)var1).method4370(this));
+         .filter(var0 -> var0 instanceof IAngerable)
+         .forEach(var1 -> ((IAngerable)var1).method4370(this));
    }
 
    @Override
-   public void method2739(Entity var1, int var2, Class8654 var3) {
+   public void method2739(Entity var1, int var2, DamageSource var3) {
       if (var1 != this) {
          super.method2739(var1, var2, var3);
          this.method2876(var2);
@@ -487,12 +489,12 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (this.method2760(var1)) {
          return false;
       } else {
          boolean var5 = this.field4856.method1348() && this.method2743() && "fall".equals(var1.field39022);
-         if (!var5 && this.field4871 > 0 && var1 != Class8654.field39004) {
+         if (!var5 && this.field4871 > 0 && var1 != DamageSource.field39004) {
             return false;
          } else {
             if (var1 instanceof Class8652) {
@@ -782,8 +784,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public boolean method2760(Class8654 var1) {
-      return super.method2760(var1) || this.method2821() || this.abilities.disableDamage && var1 == Class8654.field39007;
+   public boolean method2760(DamageSource var1) {
+      return super.method2760(var1) || this.method2821() || this.abilities.disableDamage && var1 == DamageSource.field39007;
    }
 
    @Override

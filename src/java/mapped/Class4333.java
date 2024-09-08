@@ -61,6 +61,6 @@ public class Class4333 extends Class4305 {
       }
 
       super.draw(var1);
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
    }
 }

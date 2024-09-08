@@ -1,20 +1,21 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.RangedInteger;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class3702<E extends LivingEntity> extends Class3676<E> {
    private boolean field19757;
    private boolean field19758;
-   private final Class8369 field19759;
+   private final RangedInteger field19759;
    private final Class3676<? super E> field19760;
    private int field19761;
 
-   public Class3702(Class3676<? super E> var1, Class8369 var2) {
+   public Class3702(Class3676<? super E> var1, RangedInteger var2) {
       this(var1, false, var2);
    }
 
-   public Class3702(Class3676<? super E> var1, boolean var2, Class8369 var3) {
+   public Class3702(Class3676<? super E> var1, boolean var2, RangedInteger var3) {
       super(var1.field19684);
       this.field19760 = var1;
       this.field19757 = !var2;

@@ -202,6 +202,6 @@ public class Class4345 extends Class4339 {
       RenderUtil.method11419((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4);
       RenderUtil.method11424((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4, -2631721);
       super.draw(var1);
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
    }
 }

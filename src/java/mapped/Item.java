@@ -9,10 +9,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
@@ -293,18 +292,18 @@ public class Item implements Class3303 {
    }
 
    public SoundEvent method11746() {
-      return Sounds.field26608;
+      return SoundEvents.field26608;
    }
 
    public SoundEvent method11747() {
-      return Sounds.field26609;
+      return SoundEvents.field26609;
    }
 
    public boolean method11748() {
       return this.field18740;
    }
 
-   public boolean method11749(Class8654 var1) {
+   public boolean method11749(DamageSource var1) {
       return !this.field18740 || !var1.method31141();
    }
 }

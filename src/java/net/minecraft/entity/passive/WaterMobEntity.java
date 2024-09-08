@@ -1,11 +1,16 @@
-package mapped;
+package net.minecraft.entity.passive;
 
+import mapped.Class1046;
+import mapped.Class1662;
+import mapped.Class2163;
+import mapped.Class7809;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
-public abstract class Class1047 extends Class1046 {
-   public Class1047(EntityType<? extends Class1047> var1, World var2) {
+public abstract class WaterMobEntity extends Class1046 {
+   public WaterMobEntity(EntityType<? extends WaterMobEntity> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14191, 0.0F);
    }
@@ -40,7 +45,7 @@ public abstract class Class1047 extends Class1046 {
          this.method3352(var1 - 1);
          if (this.method3351() == -20) {
             this.method3352(0);
-            this.method2741(Class8654.field38999, 2.0F);
+            this.method2741(DamageSource.field38999, 2.0F);
          }
       } else {
          this.method3352(300);

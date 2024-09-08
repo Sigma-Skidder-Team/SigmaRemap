@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -15,38 +17,38 @@ public class Class1078 extends Class1066 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      super.method4241();
-      return Sounds.field26770;
+   public SoundEvent getAmbientSound() {
+      super.getAmbientSound();
+      return SoundEvents.field26770;
    }
 
    @Override
    public SoundEvent method4893() {
       super.method4893();
-      return Sounds.field26771;
+      return SoundEvents.field26771;
    }
 
    @Override
-   public SoundEvent method2880() {
-      super.method2880();
-      return Sounds.field26773;
+   public SoundEvent getDeathSound() {
+      super.getDeathSound();
+      return SoundEvents.field26773;
    }
 
    @Nullable
    @Override
    public SoundEvent method4894() {
-      return Sounds.field26774;
+      return SoundEvents.field26774;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      super.method2879(var1);
-      return Sounds.field26775;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      super.getHurtSound(var1);
+      return SoundEvents.field26775;
    }
 
    @Override
    public void method4895() {
-      this.method2863(Sounds.field26772, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+      this.method2863(SoundEvents.field26772, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
    }
 
    @Override

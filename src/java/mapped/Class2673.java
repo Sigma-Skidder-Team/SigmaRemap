@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.Difficulty;
 
 public class Class2673 extends Class2672 {
@@ -51,7 +52,7 @@ public class Class2673 extends Class2672 {
 
    @Override
    public SoundEvent method10894() {
-      return Sounds.field26696;
+      return SoundEvents.field26696;
    }
 
    @Override

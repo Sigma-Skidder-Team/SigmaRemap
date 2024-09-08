@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -73,7 +74,7 @@ public class Class3270 extends Class3264 {
          BlockState var8 = field18770.get(var6.getBlock());
          BlockState var9 = null;
          if (var8 != null && var4.getBlockState(var5.up()).isAir()) {
-            var4.method6742(var7, var5, Sounds.field27042, Class2266.field14732, 1.0F, 1.0F);
+            var4.method6742(var7, var5, SoundEvents.field27042, Class2266.field14732, 1.0F, 1.0F);
             var9 = var8;
          } else if (var6.getBlock() instanceof Class3244 && var6.<Boolean>method23463(Class3244.field18698)) {
             if (!var4.isRemote()) {

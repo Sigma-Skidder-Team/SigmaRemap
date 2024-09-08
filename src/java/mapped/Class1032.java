@@ -5,7 +5,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -54,7 +56,7 @@ public class Class1032 extends Class1031 {
 
    @Override
    public SoundEvent method4546() {
-      return Sounds.field26561;
+      return SoundEvents.field26561;
    }
 
    @Override
@@ -89,18 +91,18 @@ public class Class1032 extends Class1031 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26559;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26559;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26562;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26562;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26564;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26564;
    }
 
    private void method4601(Class1019 var1) {
@@ -114,7 +116,7 @@ public class Class1032 extends Class1031 {
 
    @Override
    public SoundEvent method4598() {
-      return Sounds.field26560;
+      return SoundEvents.field26560;
    }
 
    @Override

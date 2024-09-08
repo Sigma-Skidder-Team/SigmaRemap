@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Class4053 extends Class4051 {
    public Class4053() {
-      super(EntityType.field41074, "sheep_wool", 0.7F);
+      super(EntityType.SHEEP, "sheep_wool", 0.7F);
    }
 
    @Override
@@ -19,7 +19,7 @@ public class Class4053 extends Class4051 {
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
-      Object var6 = var5.method32232().get(EntityType.field41074);
+      Object var6 = var5.method32232().get(EntityType.SHEEP);
       if (var6 instanceof Class5749) {
          if (((Class5715)var6).method17898() == null) {
             Class5749 var7 = new Class5749(var5);

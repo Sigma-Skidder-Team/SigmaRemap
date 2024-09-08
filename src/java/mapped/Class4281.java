@@ -385,7 +385,7 @@ public class Class4281 extends Class4278 {
          var12,
          var13
       );
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
       if (this.field20758) {
          RenderUtil.method11426(
             (float)this.field20895,

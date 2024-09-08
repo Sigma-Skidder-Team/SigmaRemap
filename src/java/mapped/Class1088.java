@@ -5,11 +5,14 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -173,8 +176,8 @@ public class Class1088 extends Class1018 {
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
-      return !this.method3250() && this.onGround && !this.method3005() ? Sounds.field27164 : super.method4241();
+   public SoundEvent getAmbientSound() {
+      return !this.method3250() && this.onGround && !this.method3005() ? SoundEvents.field27164 : super.getAmbientSound();
    }
 
    @Override
@@ -184,24 +187,24 @@ public class Class1088 extends Class1018 {
 
    @Override
    public SoundEvent method2859() {
-      return Sounds.field27175;
+      return SoundEvents.field27175;
    }
 
    @Nullable
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return !this.method3005() ? Sounds.field27170 : Sounds.field27171;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return !this.method3005() ? SoundEvents.field27170 : SoundEvents.field27171;
    }
 
    @Nullable
    @Override
-   public SoundEvent method2880() {
-      return !this.method3005() ? Sounds.field27165 : Sounds.field27166;
+   public SoundEvent getDeathSound() {
+      return !this.method3005() ? SoundEvents.field27165 : SoundEvents.field27166;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      SoundEvent var5 = !this.method3005() ? Sounds.field27173 : Sounds.field27174;
+      SoundEvent var5 = !this.method3005() ? SoundEvents.field27173 : SoundEvents.field27174;
       this.method2863(var5, 0.15F, 1.0F);
    }
 
@@ -285,7 +288,7 @@ public class Class1088 extends Class1018 {
 
    @Override
    public void method3353(ServerWorld var1, Class906 var2) {
-      this.method2741(Class8654.field38993, Float.MAX_VALUE);
+      this.method2741(DamageSource.field38993, Float.MAX_VALUE);
    }
 
    // $VF: synthetic method

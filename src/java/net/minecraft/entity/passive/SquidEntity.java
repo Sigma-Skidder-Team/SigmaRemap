@@ -1,9 +1,12 @@
-package mapped;
+package net.minecraft.entity.passive;
 
+import mapped.*;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -11,27 +14,26 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class1055 extends Class1047 {
-   private static String[] field5824;
-   public float field5825;
-   public float field5826;
-   public float field5827;
-   public float field5828;
-   public float field5829;
-   public float field5830;
-   public float field5831;
-   public float field5832;
-   private float field5833;
-   private float field5834;
-   private float field5835;
-   private float field5836;
-   private float field5837;
-   private float field5838;
+public class SquidEntity extends WaterMobEntity {
+    public float squidPitch;
+   public float prevSquidPitch;
+   public float squidYaw;
+   public float prevSquidYaw;
+   public float squidRotation;
+   public float prevSquidRotation;
+   public float tentacleAngle;
+   public float lastTentacleAngle;
+   private float randomMotionSpeed;
+   private float rotationVelocity;
+   private float rotateSpeed;
+   private float randomMotionVecX;
+   private float randomMotionVecY;
+   private float randomMotionVecZ;
 
-   public Class1055(EntityType<? extends Class1055> var1, World var2) {
+   public SquidEntity(EntityType<? extends SquidEntity> var1, World var2) {
       super(var1, var2);
       this.rand.setSeed((long)this.getEntityId());
-      this.field5834 = 1.0F / (this.rand.nextFloat() + 1.0F) * 0.2F;
+      this.rotationVelocity = 1.0F / (this.rand.nextFloat() + 1.0F) * 0.2F;
    }
 
    @Override
@@ -50,18 +52,18 @@ public class Class1055 extends Class1047 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27125;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27125;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27127;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27127;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27126;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27126;
    }
 
    @Override
@@ -77,26 +79,26 @@ public class Class1055 extends Class1047 {
    @Override
    public void method2871() {
       super.method2871();
-      this.field5826 = this.field5825;
-      this.field5828 = this.field5827;
-      this.field5830 = this.field5829;
-      this.field5832 = this.field5831;
-      this.field5829 = this.field5829 + this.field5834;
-      if ((double)this.field5829 > Math.PI * 2) {
+      this.prevSquidPitch = this.squidPitch;
+      this.prevSquidYaw = this.squidYaw;
+      this.prevSquidRotation = this.squidRotation;
+      this.lastTentacleAngle = this.tentacleAngle;
+      this.squidRotation = this.squidRotation + this.rotationVelocity;
+      if ((double)this.squidRotation > Math.PI * 2) {
          if (!this.world.isRemote) {
-            this.field5829 = (float)((double)this.field5829 - (Math.PI * 2));
+            this.squidRotation = (float)((double)this.squidRotation - (Math.PI * 2));
             if (this.rand.nextInt(10) == 0) {
-               this.field5834 = 1.0F / (this.rand.nextFloat() + 1.0F) * 0.2F;
+               this.rotationVelocity = 1.0F / (this.rand.nextFloat() + 1.0F) * 0.2F;
             }
 
             this.world.method6786(this, (byte)19);
          } else {
-            this.field5829 = (float) (Math.PI * 2);
+            this.squidRotation = (float) (Math.PI * 2);
          }
       }
 
       if (!this.method3255()) {
-         this.field5831 = MathHelper.method37771(MathHelper.sin(this.field5829)) * (float) Math.PI * 0.25F;
+         this.tentacleAngle = MathHelper.method37771(MathHelper.sin(this.squidRotation)) * (float) Math.PI * 0.25F;
          if (!this.world.isRemote) {
             double var5 = this.getVec().y;
             if (!this.method3033(Effects.LEVITATION)) {
@@ -110,25 +112,25 @@ public class Class1055 extends Class1047 {
             this.method3435(0.0, var5 * 0.98F, 0.0);
          }
 
-         this.field5825 = (float)((double)this.field5825 + (double)(-90.0F - this.field5825) * 0.02);
+         this.squidPitch = (float)((double)this.squidPitch + (double)(-90.0F - this.squidPitch) * 0.02);
       } else {
-         if (!(this.field5829 < (float) Math.PI)) {
-            this.field5831 = 0.0F;
-            this.field5833 *= 0.9F;
-            this.field5835 *= 0.99F;
+         if (!(this.squidRotation < (float) Math.PI)) {
+            this.tentacleAngle = 0.0F;
+            this.randomMotionSpeed *= 0.9F;
+            this.rotateSpeed *= 0.99F;
          } else {
-            float var3 = this.field5829 / (float) Math.PI;
-            this.field5831 = MathHelper.sin(var3 * var3 * (float) Math.PI) * (float) Math.PI * 0.25F;
+            float var3 = this.squidRotation / (float) Math.PI;
+            this.tentacleAngle = MathHelper.sin(var3 * var3 * (float) Math.PI) * (float) Math.PI * 0.25F;
             if (!((double)var3 > 0.75)) {
-               this.field5835 *= 0.8F;
+               this.rotateSpeed *= 0.8F;
             } else {
-               this.field5833 = 1.0F;
-               this.field5835 = 1.0F;
+               this.randomMotionSpeed = 1.0F;
+               this.rotateSpeed = 1.0F;
             }
          }
 
          if (!this.world.isRemote) {
-            this.method3435((double)(this.field5836 * this.field5833), (double)(this.field5837 * this.field5833), (double)(this.field5838 * this.field5833));
+            this.method3435((double)(this.randomMotionVecX * this.randomMotionSpeed), (double)(this.randomMotionVecY * this.randomMotionSpeed), (double)(this.randomMotionVecZ * this.randomMotionSpeed));
          }
 
          Vector3d var7 = this.getVec();
@@ -136,13 +138,13 @@ public class Class1055 extends Class1047 {
          this.field4965 = this.field4965
             + (-((float) MathHelper.method37814(var7.x, var7.z)) * (180.0F / (float)Math.PI) - this.field4965) * 0.1F;
          this.rotationYaw = this.field4965;
-         this.field5827 = (float)((double)this.field5827 + Math.PI * (double)this.field5835 * 1.5);
-         this.field5825 = this.field5825 + (-((float) MathHelper.method37814((double)var4, var7.y)) * (180.0F / (float)Math.PI) - this.field5825) * 0.1F;
+         this.squidYaw = (float)((double)this.squidYaw + Math.PI * (double)this.rotateSpeed * 1.5);
+         this.squidPitch = this.squidPitch + (-((float) MathHelper.method37814((double)var4, var7.y)) * (180.0F / (float)Math.PI) - this.squidPitch) * 0.1F;
       }
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (super.method2741(var1, var2) && this.method3014() != null) {
          this.method4838();
          return true;
@@ -152,12 +154,12 @@ public class Class1055 extends Class1047 {
    }
 
    private Vector3d method4837(Vector3d var1) {
-      Vector3d var4 = var1.method11350(this.field5826 * (float) (Math.PI / 180.0));
+      Vector3d var4 = var1.method11350(this.prevSquidPitch * (float) (Math.PI / 180.0));
       return var4.method11351(-this.field4966 * (float) (Math.PI / 180.0));
    }
 
    private void method4838() {
-      this.method2863(Sounds.field27128, this.method3099(), this.method3100());
+      this.method2863(SoundEvents.field27128, this.method3099(), this.method3100());
       Vector3d var3 = this.method4837(new Vector3d(0.0, -1.0, 0.0)).method11339(this.getPosX(), this.getPosY(), this.getPosZ());
 
       for (int var4 = 0; var4 < 30; var4++) {
@@ -175,7 +177,7 @@ public class Class1055 extends Class1047 {
       this.move(Class2107.field13742, this.getVec());
    }
 
-   public static boolean method4839(EntityType<Class1055> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4839(EntityType<SquidEntity> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       return var3.getY() > 45 && var3.getY() < var1.method6776();
    }
 
@@ -184,22 +186,22 @@ public class Class1055 extends Class1047 {
       if (var1 != 19) {
          super.method2866(var1);
       } else {
-         this.field5829 = 0.0F;
+         this.squidRotation = 0.0F;
       }
    }
 
    public void method4840(float var1, float var2, float var3) {
-      this.field5836 = var1;
-      this.field5837 = var2;
-      this.field5838 = var3;
+      this.randomMotionVecX = var1;
+      this.randomMotionVecY = var2;
+      this.randomMotionVecZ = var3;
    }
 
    public boolean method4841() {
-      return this.field5836 != 0.0F || this.field5837 != 0.0F || this.field5838 != 0.0F;
+      return this.randomMotionVecX != 0.0F || this.randomMotionVecY != 0.0F || this.randomMotionVecZ != 0.0F;
    }
 
    // $VF: synthetic method
-   public static boolean method4842(Class1055 var0) {
+   public static boolean method4842(SquidEntity var0) {
       return var0.inWater;
    }
 }

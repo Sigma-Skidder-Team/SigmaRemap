@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Set;
@@ -18,7 +19,7 @@ public class Class7894 extends Class7882<LivingEntity> {
    @Override
    public void method26425(ServerWorld var1, LivingEntity var2) {
       Class6947<?> var5 = var2.method2992();
-      Class8654 var6 = var2.method3047();
+      DamageSource var6 = var2.method3047();
       if (var6 == null) {
          var5.method21405(Class8830.field39835);
       } else {

@@ -3,7 +3,6 @@ package com.mentalfrostbyte.jello.event.impl;
 import com.mentalfrostbyte.jello.event.Event;
 
 public class Class4415 implements Event {
-    private static String[] field21540;
     private int field21541 = 99;
 
     public int method13960() {

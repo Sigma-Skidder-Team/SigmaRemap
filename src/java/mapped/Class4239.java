@@ -64,7 +64,7 @@ public class Class4239 extends Class4240 implements Class4238 {
          );
       }
 
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
       super.method13226(var1);
    }
 

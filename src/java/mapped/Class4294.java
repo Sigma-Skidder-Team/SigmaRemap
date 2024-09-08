@@ -81,7 +81,7 @@ public class Class4294 extends Class4278 {
                }
 
                super.draw(var1 * var7);
-               RenderUtil.method11422();
+               RenderUtil.endScissor();
             }
          }
       } else {

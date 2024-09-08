@@ -3,9 +3,8 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.item.Items;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -33,21 +32,21 @@ public class Class1075 extends AbstractHorseEntity {
    }
 
    @Override
-   public SoundEvent method4241() {
-      super.method4241();
-      return Sounds.field27289;
+   public SoundEvent getAmbientSound() {
+      super.getAmbientSound();
+      return SoundEvents.field27289;
    }
 
    @Override
-   public SoundEvent method2880() {
-      super.method2880();
-      return Sounds.field27290;
+   public SoundEvent getDeathSound() {
+      super.getDeathSound();
+      return SoundEvents.field27290;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      super.method2879(var1);
-      return Sounds.field27291;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      super.getHurtSound(var1);
+      return SoundEvents.field27291;
    }
 
    @Nullable

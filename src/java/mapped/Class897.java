@@ -5,12 +5,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -158,7 +160,7 @@ public class Class897 extends Entity implements Class889 {
          this.setPosition(var4, var6, var8);
          this.field5136++;
          if (this.field5136 > 80 && !this.world.isRemote) {
-            this.method2863(Sounds.field26543, 1.0F, 1.0F);
+            this.method2863(SoundEvents.field26543, 1.0F, 1.0F);
             this.method2904();
             if (!this.field5137) {
                this.world.playEvent(2003, this.getPosition(), 0);

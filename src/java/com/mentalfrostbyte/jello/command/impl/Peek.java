@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.command.CommandException;
 import com.mentalfrostbyte.jello.command.CommandManager;
 import mapped.*;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 
 public class Peek extends Command {

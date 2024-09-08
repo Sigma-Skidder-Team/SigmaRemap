@@ -26,6 +26,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.*;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ChatType;
@@ -440,7 +441,7 @@ public abstract class Class6395 {
          var12.field4855
             .sendPacket(
                new SPlaySoundEffectPacket(
-                  Sounds.field27014, Class2266.field14732, (double)var5.getX(), (double)var5.getY(), (double)var5.getZ(), 1.0F, 1.0F
+                  SoundEvents.field27014, Class2266.field14732, (double)var5.getX(), (double)var5.getY(), (double)var5.getZ(), 1.0F, 1.0F
                )
             );
       }

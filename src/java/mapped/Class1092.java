@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.vector.Vector3d;
 
 public interface Class1092 {
@@ -15,7 +16,7 @@ public interface Class1092 {
          var5 = var4;
       }
 
-      boolean var6 = var1.method2741(Class8654.method31115(var0), var5);
+      boolean var6 = var1.method2741(DamageSource.method31115(var0), var5);
       if (var6) {
          var0.method3399(var0, var1);
          if (!var0.method3005()) {

@@ -36,6 +36,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
@@ -49,6 +50,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
@@ -674,7 +676,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                   var4.getPosX(),
                   var4.getPosY(),
                   var4.getPosZ(),
-                  Sounds.field26714,
+                  SoundEvents.field26714,
                   Class2266.field14735,
                   0.2F,
                   (this.field23282.nextFloat() - this.field23282.nextFloat()) * 1.4F + 2.0F,
@@ -686,7 +688,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                   var4.getPosX(),
                   var4.getPosY(),
                   var4.getPosZ(),
-                  Sounds.field26569,
+                  SoundEvents.field26569,
                   Class2266.field14735,
                   0.1F,
                   (this.field23282.nextFloat() - this.field23282.nextFloat()) * 0.35F + 0.9F,
@@ -858,7 +860,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             } else {
                byte var5 = 40;
                this.field23272.particles.method1196(var4, ParticleTypes.field34097, 30);
-               this.field23273.method6745(var4.getPosX(), var4.getPosY(), var4.getPosZ(), Sounds.field27147, var4.method2864(), 1.0F, 1.0F, false);
+               this.field23273.method6745(var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field27147, var4.method2864(), 1.0F, 1.0F, false);
                if (var4 == this.field23272.player) {
                   this.field23272.gameRenderer.method763(method15785(this.field23272.player));
                }
@@ -1141,7 +1143,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                                 var4.getPosX(),
                                                 var4.getPosY(),
                                                 var4.getPosZ(),
-                                                Sounds.field26526,
+                                                SoundEvents.field26526,
                                                 Class2266.field14733,
                                                 1.0F,
                                                 1.0F
@@ -1151,7 +1153,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                  } else {
                                     this.field23273
                                        .method6743(
-                                          var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), Sounds.field26985, Class2266.field14734, 1.0F, 1.0F
+                                          var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26985, Class2266.field14734, 1.0F, 1.0F
                                        );
                                  }
                               } else {
@@ -1163,7 +1165,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                         } else {
                            this.field23273
                               .method6743(
-                                 var4, var4.getPosX(), var4.method3442(), var4.getPosZ(), Sounds.field26362, Class2266.field14735, 0.18F, 0.45F
+                                 var4, var4.getPosX(), var4.method3442(), var4.getPosZ(), SoundEvents.field26362, Class2266.field14735, 0.18F, 0.45F
                               );
                         }
                      } else {

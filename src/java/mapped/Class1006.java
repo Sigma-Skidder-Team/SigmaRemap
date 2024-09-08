@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -167,7 +168,7 @@ public abstract class Class1006 extends LivingEntity {
    }
 
    public void method4237() {
-      SoundEvent var3 = this.method4241();
+      SoundEvent var3 = this.getAmbientSound();
       if (var3 != null) {
          this.method2863(var3, this.method3099(), this.method3100());
       }
@@ -186,7 +187,7 @@ public abstract class Class1006 extends LivingEntity {
    }
 
    @Override
-   public void method3048(Class8654 var1) {
+   public void method3048(DamageSource var1) {
       this.method4238();
       super.method3048(var1);
    }
@@ -280,7 +281,7 @@ public abstract class Class1006 extends LivingEntity {
    }
 
    @Nullable
-   public SoundEvent method4241() {
+   public SoundEvent getAmbientSound() {
       return null;
    }
 
@@ -415,13 +416,13 @@ public abstract class Class1006 extends LivingEntity {
    }
 
    @Override
-   public void method3056(Class8654 var1, boolean var2) {
+   public void method3056(DamageSource var1, boolean var2) {
       super.method3056(var1, var2);
       this.field5611 = null;
    }
 
    @Override
-   public Class9464 method3057(boolean var1, Class8654 var2) {
+   public Class9464 method3057(boolean var1, DamageSource var2) {
       return super.method3057(var1, var2).method36452(this.field5612, this.rand);
    }
 
@@ -788,7 +789,7 @@ public abstract class Class1006 extends LivingEntity {
    }
 
    @Override
-   public void method3054(Class8654 var1, int var2, boolean var3) {
+   public void method3054(DamageSource var1, int var2, boolean var3) {
       super.method3054(var1, var2, var3);
 
       for (Class2106 var9 : Class2106.values()) {
@@ -1345,7 +1346,7 @@ public abstract class Class1006 extends LivingEntity {
          var1.method3221(var6 * 4);
       }
 
-      boolean var7 = var1.method2741(Class8654.method31115(this), var4);
+      boolean var7 = var1.method2741(DamageSource.method31115(this), var4);
       if (var7) {
          if (var5 > 0.0F && var1 instanceof LivingEntity) {
             ((LivingEntity)var1)

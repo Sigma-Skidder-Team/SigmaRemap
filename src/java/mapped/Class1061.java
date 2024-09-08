@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -70,6 +71,6 @@ public class Class1061 implements Class1060 {
 
    @Override
    public SoundEvent method4748() {
-      return Sounds.field27195;
+      return SoundEvents.field27195;
    }
 }

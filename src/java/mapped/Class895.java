@@ -4,6 +4,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Items;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -32,7 +34,7 @@ public class Class895 extends Class890 {
    @Override
    public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
-      var1.getEntity().method2741(Class8654.method31123(this, this.method3460()), 0.0F);
+      var1.getEntity().method2741(DamageSource.method31123(this, this.method3460()), 0.0F);
    }
 
    @Override
@@ -75,7 +77,7 @@ public class Class895 extends Class890 {
 
                var4.method2793(this.getPosX(), this.getPosY(), this.getPosZ());
                var4.fallDistance = 0.0F;
-               var4.method2741(Class8654.field39002, 5.0F);
+               var4.method2741(DamageSource.field39002, 5.0F);
             }
          }
 

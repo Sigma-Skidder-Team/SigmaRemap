@@ -127,7 +127,7 @@ public class KeyStrokes extends Module {
                             );
                             Class8480.method29971(this.field23585 + var8.field42635, this.field23586 + var8.field42636, var9.field42635, var9.field42636);
                             Class8480.method29974();
-                            RenderUtil.method11422();
+                            RenderUtil.endScissor();
                         }
                     }
 
@@ -212,7 +212,7 @@ public class KeyStrokes extends Module {
                                 (float) (var22.method34904() - 4) * var27 + 4.0F,
                                 var29
                         );
-                        RenderUtil.method11422();
+                        RenderUtil.endScissor();
                         if (var16.field33988.calcPercent() == 1.0F) {
                             var14.remove();
                         }

@@ -2,12 +2,13 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.EnumSet;
 
 public class Class2725 extends Class2595 {
-   private final Class1013 field17220;
+   private final TameableEntity field17220;
    private LivingEntity field17221;
    private final Class1662 field17222;
    private final double field17223;
@@ -18,7 +19,7 @@ public class Class2725 extends Class2595 {
    private float field17228;
    private final boolean field17229;
 
-   public Class2725(Class1013 var1, double var2, float var4, float var5, boolean var6) {
+   public Class2725(TameableEntity var1, double var2, float var4, float var5, boolean var6) {
       this.field17220 = var1;
       this.field17222 = var1.world;
       this.field17223 = var2;

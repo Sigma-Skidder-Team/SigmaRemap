@@ -1,10 +1,12 @@
 package mapped;
 
+import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
@@ -31,7 +33,7 @@ public class Class9614 {
       .put(EntityType.field41026, Class1104.method5296().method21850())
       .put(EntityType.field41024, Class1007.method2997().method21850())
       .put(EntityType.field41027, Class1032.method4600().method21850())
-      .put(EntityType.field41033, Class1095.method5123().method21850())
+      .put(EntityType.FOX, Class1095.method5123().method21850())
       .put(EntityType.field41034, Class1112.method5360().method21850())
       .put(EntityType.field41035, Class1099.method5268().method21850())
       .put(EntityType.field41036, Class1105.method5300().method21850())
@@ -55,10 +57,10 @@ public class Class9614 {
       .put(EntityType.PLAYER, PlayerEntity.method2849().method21850())
       .put(EntityType.field41068, Class1096.method5180().method21850())
       .put(EntityType.field41070, Class1049.method4791().method21850())
-      .put(EntityType.field41071, Class1094.method5111().method21850())
+      .put(EntityType.RABBIT, Class1094.method5111().method21850())
       .put(EntityType.field41072, Class1029.method4581().method21850())
       .put(EntityType.field41073, Class1049.method4791().method21850())
-      .put(EntityType.field41074, Class1019.method4512().method21850())
+      .put(EntityType.SHEEP, Class1019.method4512().method21850())
       .put(EntityType.field41075, Class1057.method4843().method21850())
       .put(EntityType.field41077, Class1107.method5316().method21850())
       .put(EntityType.field41078, Class1082.method5029().method21850())
@@ -66,7 +68,7 @@ public class Class9614 {
       .put(EntityType.field41080, Class1009.method4343().method21850())
       .put(EntityType.field41082, Class1021.method4529().method21850())
       .put(EntityType.field41085, Class1101.method5288().method21850())
-      .put(EntityType.field41086, Class1055.method4836().method21850())
+      .put(EntityType.field41086, SquidEntity.method4836().method21850())
       .put(EntityType.field41087, Class1082.method5029().method21850())
       .put(EntityType.field41088, Class1070.method4986().method21850())
       .put(EntityType.field41094, Class1064.method4888().method21850())
@@ -79,7 +81,7 @@ public class Class9614 {
       .put(EntityType.field41101, Class1027.method4569().method21850())
       .put(EntityType.field41102, Class1079.method2997().method21850())
       .put(EntityType.field41103, Class1082.method5029().method21850())
-      .put(EntityType.field41105, Class1012.method4373().method21850())
+      .put(EntityType.field41105, WolfEntity.method4373().method21850())
       .put(EntityType.field41106, Class1093.method5098().method21850())
       .put(EntityType.field41107, Class1038.method4653().method21850())
       .put(EntityType.field41108, Class1075.method4998().method21850())

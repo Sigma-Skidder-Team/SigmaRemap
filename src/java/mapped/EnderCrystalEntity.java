@@ -8,6 +8,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -79,7 +80,7 @@ public class EnderCrystalEntity extends Entity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          if (!(var1.method31109() instanceof Class1007)) {
             if (!this.removed && !this.world.isRemote) {
@@ -102,11 +103,11 @@ public class EnderCrystalEntity extends Entity {
 
    @Override
    public void method2995() {
-      this.method4141(Class8654.field39005);
+      this.method4141(DamageSource.field39005);
       super.method2995();
    }
 
-   private void method4141(Class8654 var1) {
+   private void method4141(DamageSource var1) {
       if (this.world instanceof ServerWorld) {
          Class7819 var4 = ((ServerWorld)this.world).method6968();
          if (var4 != null) {

@@ -2,15 +2,16 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class Class2726 extends Class2595 {
    private static String[] field17230;
    private int field17231;
-   public final Class1055 field17232;
+   public final SquidEntity field17232;
 
-   public Class2726(Class1055 var1) {
+   public Class2726(SquidEntity var1) {
       this.field17232 = var1;
    }
 

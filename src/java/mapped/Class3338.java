@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 public class Class3338 extends Item {
@@ -30,7 +31,7 @@ public class Class3338 extends Item {
             }
 
             if (var3.method3168(var14, var16, var18, true)) {
-               SoundEvent var20 = !(var3 instanceof Class1095) ? Sounds.field26457 : Sounds.field26598;
+               SoundEvent var20 = !(var3 instanceof Class1095) ? SoundEvents.field26457 : SoundEvents.field26598;
                var2.method6743((PlayerEntity)null, var7, var9, var11, var20, Class2266.field14735, 1.0F, 1.0F);
                var3.method2863(var20, 1.0F, 1.0F);
                break;

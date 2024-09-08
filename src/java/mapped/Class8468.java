@@ -329,7 +329,7 @@ public class Class8468 {
    }
 
    public static void method29838(Class9328 var0) {
-      var0.method35249(Class179.field624, new Class6692(EntityType.field41074, 12, 4, 4));
+      var0.method35249(Class179.field624, new Class6692(EntityType.SHEEP, 12, 4, 4));
       var0.method35249(Class179.field624, new Class6692(EntityType.field41064, 10, 4, 4));
       var0.method35249(Class179.field624, new Class6692(EntityType.field41014, 10, 4, 4));
       var0.method35249(Class179.field624, new Class6692(EntityType.field41016, 8, 4, 4));
@@ -366,7 +366,7 @@ public class Class8468 {
    }
 
    public static void method29844(Class9328 var0) {
-      var0.method35249(Class179.field624, new Class6692(EntityType.field41071, 10, 2, 3));
+      var0.method35249(Class179.field624, new Class6692(EntityType.RABBIT, 10, 2, 3));
       var0.method35249(Class179.field624, new Class6692(EntityType.field41068, 1, 1, 2));
       method29839(var0);
       method29846(var0, 95, 5, 20);
@@ -374,7 +374,7 @@ public class Class8468 {
    }
 
    public static void method29845(Class9328 var0) {
-      var0.method35249(Class179.field624, new Class6692(EntityType.field41071, 4, 2, 3));
+      var0.method35249(Class179.field624, new Class6692(EntityType.RABBIT, 4, 2, 3));
       method29839(var0);
       method29846(var0, 19, 1, 100);
       var0.method35249(Class179.field623, new Class6692(EntityType.field41039, 80, 4, 4));

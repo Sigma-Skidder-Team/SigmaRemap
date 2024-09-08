@@ -72,6 +72,6 @@ public class Class4253 extends Class4247 {
       );
       this.field20628.method13266((int)((float)this.field20898 / 2.0F - 7.5F));
       super.draw(var1);
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
    }
 }

@@ -5,6 +5,7 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.Pose;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
+import net.minecraft.util.DamageSource;
 
 public class Class908 extends Entity {
    private static String[] field5185;
@@ -38,7 +39,7 @@ public class Class908 extends Entity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       return !this.method2760(var1) ? this.field5186.method4325(this, var1, var2) : false;
    }
 

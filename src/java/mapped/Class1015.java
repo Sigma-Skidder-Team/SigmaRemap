@@ -11,13 +11,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
@@ -29,46 +28,46 @@ import java.util.*;
 import java.util.function.Predicate;
 
 public class Class1015 extends Class1014 implements Class1016 {
-   private static final DataParameter<Integer> field5672 = EntityDataManager.<Integer>createKey(Class1015.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5672 = EntityDataManager.<Integer>createKey(Class1015.class, DataSerializers.VARINT);
    private static final Predicate<Class1006> field5673 = new Class119();
    private static final Item field5674 = Items.field37954;
    private static final Set<Item> field5675 = Sets.newHashSet(
       new Item[]{Items.field37841, Items.field37960, Items.field37959, Items.field38112}
    );
    private static final Map<EntityType<?>, SoundEvent> field5676 = Util.<Map<EntityType<?>, SoundEvent>>make(Maps.newHashMap(), var0 -> {
-      var0.put(EntityType.field41010, Sounds.field26885);
-      var0.put(EntityType.field41013, Sounds.field26907);
-      var0.put(EntityType.field41017, Sounds.field26886);
-      var0.put(EntityType.field41021, Sounds.field26887);
-      var0.put(EntityType.field41022, Sounds.field26888);
-      var0.put(EntityType.field41024, Sounds.field26889);
-      var0.put(EntityType.field41026, Sounds.field26890);
-      var0.put(EntityType.field41027, Sounds.field26891);
-      var0.put(EntityType.field41034, Sounds.field26892);
-      var0.put(EntityType.field41036, Sounds.field26893);
-      var0.put(EntityType.field41037, Sounds.field26894);
-      var0.put(EntityType.field41039, Sounds.field26895);
-      var0.put(EntityType.field41040, Sounds.field26896);
-      var0.put(EntityType.field41049, Sounds.field26897);
-      var0.put(EntityType.field41063, Sounds.field26898);
-      var0.put(EntityType.field41065, Sounds.field26899);
-      var0.put(EntityType.field41066, Sounds.field26900);
-      var0.put(EntityType.field41067, Sounds.field26901);
-      var0.put(EntityType.field41072, Sounds.field26902);
-      var0.put(EntityType.field41075, Sounds.field26903);
-      var0.put(EntityType.field41077, Sounds.field26904);
-      var0.put(EntityType.field41078, Sounds.field26905);
-      var0.put(EntityType.field41080, Sounds.field26906);
-      var0.put(EntityType.field41085, Sounds.field26907);
-      var0.put(EntityType.field41087, Sounds.field26908);
-      var0.put(EntityType.field41097, Sounds.field26909);
-      var0.put(EntityType.field41099, Sounds.field26910);
-      var0.put(EntityType.field41101, Sounds.field26911);
-      var0.put(EntityType.field41102, Sounds.field26912);
-      var0.put(EntityType.field41103, Sounds.field26913);
-      var0.put(EntityType.field41106, Sounds.field26914);
-      var0.put(EntityType.field41107, Sounds.field26915);
-      var0.put(EntityType.field41109, Sounds.field26916);
+      var0.put(EntityType.field41010, SoundEvents.field26885);
+      var0.put(EntityType.field41013, SoundEvents.field26907);
+      var0.put(EntityType.field41017, SoundEvents.field26886);
+      var0.put(EntityType.field41021, SoundEvents.field26887);
+      var0.put(EntityType.field41022, SoundEvents.field26888);
+      var0.put(EntityType.field41024, SoundEvents.field26889);
+      var0.put(EntityType.field41026, SoundEvents.field26890);
+      var0.put(EntityType.field41027, SoundEvents.field26891);
+      var0.put(EntityType.field41034, SoundEvents.field26892);
+      var0.put(EntityType.field41036, SoundEvents.field26893);
+      var0.put(EntityType.field41037, SoundEvents.field26894);
+      var0.put(EntityType.field41039, SoundEvents.field26895);
+      var0.put(EntityType.field41040, SoundEvents.field26896);
+      var0.put(EntityType.field41049, SoundEvents.field26897);
+      var0.put(EntityType.field41063, SoundEvents.field26898);
+      var0.put(EntityType.field41065, SoundEvents.field26899);
+      var0.put(EntityType.field41066, SoundEvents.field26900);
+      var0.put(EntityType.field41067, SoundEvents.field26901);
+      var0.put(EntityType.field41072, SoundEvents.field26902);
+      var0.put(EntityType.field41075, SoundEvents.field26903);
+      var0.put(EntityType.field41077, SoundEvents.field26904);
+      var0.put(EntityType.field41078, SoundEvents.field26905);
+      var0.put(EntityType.field41080, SoundEvents.field26906);
+      var0.put(EntityType.field41085, SoundEvents.field26907);
+      var0.put(EntityType.field41087, SoundEvents.field26908);
+      var0.put(EntityType.field41097, SoundEvents.field26909);
+      var0.put(EntityType.field41099, SoundEvents.field26910);
+      var0.put(EntityType.field41101, SoundEvents.field26911);
+      var0.put(EntityType.field41102, SoundEvents.field26912);
+      var0.put(EntityType.field41103, SoundEvents.field26913);
+      var0.put(EntityType.field41106, SoundEvents.field26914);
+      var0.put(EntityType.field41107, SoundEvents.field26915);
+      var0.put(EntityType.field41109, SoundEvents.field26916);
    });
    public float field5677;
    public float field5678;
@@ -212,7 +211,7 @@ public class Class1015 extends Class1014 implements Class1016 {
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),
-                  Sounds.field26882,
+                  SoundEvents.field26882,
                   this.method2864(),
                   1.0F,
                   1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F
@@ -246,7 +245,7 @@ public class Class1015 extends Class1014 implements Class1016 {
 
          this.method3035(new Class2023(Effects.POISON, 900));
          if (var1.isCreative() || !this.method3362()) {
-            this.method2741(Class8654.method31117(var1), Float.MAX_VALUE);
+            this.method2741(DamageSource.method31117(var1), Float.MAX_VALUE);
          }
 
          return ActionResultType.method9002(this.world.isRemote);
@@ -291,12 +290,12 @@ public class Class1015 extends Class1014 implements Class1016 {
 
    @Override
    public boolean method3114(Entity var1) {
-      return var1.method2741(Class8654.method31115(this), 3.0F);
+      return var1.method2741(DamageSource.method31115(this), 3.0F);
    }
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
+   public SoundEvent getAmbientSound() {
       return method4411(this.world, this.world.rand);
    }
 
@@ -305,32 +304,32 @@ public class Class1015 extends Class1014 implements Class1016 {
          ArrayList var4 = Lists.newArrayList(field5676.keySet());
          return method4412((EntityType<?>)var4.get(var1.nextInt(var4.size())));
       } else {
-         return Sounds.field26880;
+         return SoundEvents.field26880;
       }
    }
 
    private static SoundEvent method4412(EntityType<?> var0) {
-      return field5676.getOrDefault(var0, Sounds.field26880);
+      return field5676.getOrDefault(var0, SoundEvents.field26880);
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26884;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26884;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26881;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26881;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field26917, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field26917, 0.15F, 1.0F);
    }
 
    @Override
    public float method3243(float var1) {
-      this.method2863(Sounds.field26883, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field26883, 0.15F, 1.0F);
       return var1 + this.field5678 / 2.0F;
    }
 
@@ -366,7 +365,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          this.method4403(false);
          return super.method2741(var1, var2);

@@ -12,6 +12,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -489,15 +490,15 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    public Class7782 method6755(Entity var1, double var2, double var4, double var6, float var8, Class2141 var9) {
-      return this.method6757(var1, (Class8654)null, (Class5924)null, var2, var4, var6, var8, false, var9);
+      return this.method6757(var1, (DamageSource)null, (Class5924)null, var2, var4, var6, var8, false, var9);
    }
 
    public Class7782 method6756(Entity var1, double var2, double var4, double var6, float var8, boolean var9, Class2141 var10) {
-      return this.method6757(var1, (Class8654)null, (Class5924)null, var2, var4, var6, var8, var9, var10);
+      return this.method6757(var1, (DamageSource)null, (Class5924)null, var2, var4, var6, var8, var9, var10);
    }
 
    public Class7782 method6757(
-           Entity var1, Class8654 var2, Class5924 var3, double var4, double var6, double var8, float var10, boolean var11, Class2141 var12
+           Entity var1, DamageSource var2, Class5924 var3, double var4, double var6, double var8, float var10, boolean var11, Class2141 var12
    ) {
       Class7782 var15 = new Class7782(this, var1, var2, var3, var4, var6, var8, var10, var11, var12);
       var15.method25784();

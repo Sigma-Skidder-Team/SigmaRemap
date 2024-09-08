@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.SoundEvents;
 
 public class Class943 extends TileEntity implements Class942, Class935 {
    private static String[] field5317;
@@ -34,7 +35,7 @@ public class Class943 extends TileEntity implements Class942, Class935 {
                var7,
                (double)var4 + 0.5,
                var9,
-               Sounds.field26535,
+               SoundEvents.field26535,
                Class2266.field14732,
                0.5F,
                this.field5324.rand.nextFloat() * 0.1F + 0.9F
@@ -63,7 +64,7 @@ public class Class943 extends TileEntity implements Class942, Class935 {
                   var15,
                   (double)var4 + 0.5,
                   var13,
-                  Sounds.field26534,
+                  SoundEvents.field26534,
                   Class2266.field14732,
                   0.5F,
                   this.field5324.rand.nextFloat() * 0.1F + 0.9F

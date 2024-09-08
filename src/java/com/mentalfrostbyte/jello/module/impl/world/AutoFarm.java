@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;

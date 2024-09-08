@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -61,7 +62,7 @@ public class Class903 extends Class901 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       return false;
    }
 

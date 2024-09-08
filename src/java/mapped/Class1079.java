@@ -7,11 +7,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
@@ -22,11 +25,11 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class Class1079 extends Class1009 implements Class1080, Class1022 {
-   private static final DataParameter<Integer> field5923 = EntityDataManager.<Integer>createKey(Class1079.class, DataSerializers.field33391);
-   private static final DataParameter<Integer> field5924 = EntityDataManager.<Integer>createKey(Class1079.class, DataSerializers.field33391);
-   private static final DataParameter<Integer> field5925 = EntityDataManager.<Integer>createKey(Class1079.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5923 = EntityDataManager.<Integer>createKey(Class1079.class, DataSerializers.VARINT);
+   private static final DataParameter<Integer> field5924 = EntityDataManager.<Integer>createKey(Class1079.class, DataSerializers.VARINT);
+   private static final DataParameter<Integer> field5925 = EntityDataManager.<Integer>createKey(Class1079.class, DataSerializers.VARINT);
    private static final List<DataParameter<Integer>> field5926 = ImmutableList.of(field5923, field5924, field5925);
-   private static final DataParameter<Integer> field5927 = EntityDataManager.<Integer>createKey(Class1079.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5927 = EntityDataManager.<Integer>createKey(Class1079.class, DataSerializers.VARINT);
    private final float[] field5928 = new float[2];
    private final float[] field5929 = new float[2];
    private final float[] field5930 = new float[2];
@@ -87,18 +90,18 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27239;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27239;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27242;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27242;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27241;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27241;
    }
 
    @Override
@@ -411,12 +414,12 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (this.method2760(var1)) {
          return false;
-      } else if (var1 == Class8654.field38999 || var1.method31109() instanceof Class1079) {
+      } else if (var1 == DamageSource.field38999 || var1.method31109() instanceof Class1079) {
          return false;
-      } else if (this.method5012() > 0 && var1 != Class8654.field39004) {
+      } else if (this.method5012() > 0 && var1 != DamageSource.field39004) {
          return false;
       } else {
          if (this.method5016()) {
@@ -444,7 +447,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    }
 
    @Override
-   public void method3054(Class8654 var1, int var2, boolean var3) {
+   public void method3054(DamageSource var1, int var2, boolean var3) {
       super.method3054(var1, var2, var3);
       ItemEntity var6 = this.method3300(Items.field38066);
       if (var6 != null) {

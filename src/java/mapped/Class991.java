@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
@@ -18,7 +19,7 @@ public class Class991 extends Class919 {
    }
 
    @Override
-   public void method3586(Class8654 var1) {
+   public void method3586(DamageSource var1) {
       super.method3586(var1);
       if (this.world.method6789().method17135(Class5462.field24229)) {
          this.method3300(Blocks.CHEST);

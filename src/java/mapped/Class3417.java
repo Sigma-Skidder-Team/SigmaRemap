@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -20,7 +21,7 @@ public class Class3417 extends Block {
       if (var2.method6812().isUltrawarm()) {
          var2.setBlockState(var3, Blocks.field36452.method11579(), 3);
          var2.playEvent(2009, var3, 0);
-         var2.method6742((PlayerEntity)null, var3, Sounds.field26582, Class2266.field14732, 1.0F, (1.0F + var2.method6814().nextFloat() * 0.2F) * 0.7F);
+         var2.method6742((PlayerEntity)null, var3, SoundEvents.field26582, Class2266.field14732, 1.0F, (1.0F + var2.method6814().nextFloat() * 0.2F) * 0.7F);
       }
    }
 

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;

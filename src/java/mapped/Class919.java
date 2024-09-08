@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -28,7 +29,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
    }
 
    @Override
-   public void method3586(Class8654 var1) {
+   public void method3586(DamageSource var1) {
       super.method3586(var1);
       if (this.world.method6789().method17135(Class5462.field24229)) {
          Class7236.method22722(this.world, this, this);

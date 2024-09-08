@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.EnumSet;
@@ -78,7 +79,7 @@ public class Class2704 extends Class2699 {
             var8 = (Class1006)var7.next();
             if (this.field17153 != var8
                && var8.method4232() == null
-               && (!(this.field17153 instanceof Class1013) || ((Class1013)this.field17153).method4400() == ((Class1013)var8).method4400())
+               && (!(this.field17153 instanceof TameableEntity) || ((TameableEntity)this.field17153).method4400() == ((TameableEntity)var8).method4400())
                && !var8.method3345(this.field17153.method3014())) {
                if (this.field17183 == null) {
                   break;

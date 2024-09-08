@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 
 public class AutoTotem extends Module {
     public int field23503 = -1;

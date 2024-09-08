@@ -7,13 +7,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -73,7 +72,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
          int var4 = MathHelper.floor(this.getPosY());
          int var5 = MathHelper.floor(this.getPosZ());
          if (this.world.getBiome(new BlockPos(var3, 0, var5)).method32503(new BlockPos(var3, var4, var5)) > 1.0F) {
-            this.method2741(Class8654.field38994, 1.0F);
+            this.method2741(DamageSource.field38994, 1.0F);
          }
 
          if (!this.world.method6789().method17135(Class5462.field24224)) {
@@ -105,7 +104,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
       double var12 = var1.getPosZ() - this.getPosZ();
       float var14 = MathHelper.method37766(var8 * var8 + var12 * var12) * 0.2F;
       var5.shoot(var8, var10 + (double)var14, var12, 1.6F, 12.0F);
-      this.method2863(Sounds.field27114, 1.0F, 0.4F / (this.method3013().nextFloat() * 0.4F + 0.8F));
+      this.method2863(SoundEvents.field27114, 1.0F, 0.4F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.world.method6916(var5);
    }
 
@@ -131,7 +130,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
 
    @Override
    public void method4515(Class2266 var1) {
-      this.world.method6744((PlayerEntity)null, this, Sounds.field27115, var1, 1.0F, 1.0F);
+      this.world.method6744((PlayerEntity)null, this, SoundEvents.field27115, var1, 1.0F, 1.0F);
       if (!this.world.isRemote()) {
          this.method4532(false);
          this.method3303(new ItemStack(Items.field37439), 1.7F);
@@ -158,20 +157,20 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27111;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27111;
    }
 
    @Nullable
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27113;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27113;
    }
 
    @Nullable
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27112;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27112;
    }
 
    @Override

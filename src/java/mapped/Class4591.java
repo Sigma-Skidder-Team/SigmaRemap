@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 
 public class Class4591 extends Class4588 {
    private int field22073;
@@ -56,9 +57,9 @@ public class Class4591 extends Class4588 {
 
          SoundEvent var19;
          if (var4) {
-            var19 = var3 ? Sounds.field26576 : Sounds.field26575;
+            var19 = var3 ? SoundEvents.field26576 : SoundEvents.field26575;
          } else {
-            var19 = var3 ? Sounds.field26574 : Sounds.field26573;
+            var19 = var3 ? SoundEvents.field26574 : SoundEvents.field26573;
          }
 
          this.field22037
@@ -143,7 +144,7 @@ public class Class4591 extends Class4588 {
       if (this.field22073 > this.field22056) {
          if (this.field22076) {
             boolean var16 = this.method14527();
-            SoundEvent var18 = var16 ? Sounds.field26580 : Sounds.field26579;
+            SoundEvent var18 = var16 ? SoundEvents.field26580 : SoundEvents.field26579;
             this.field22037
                .method6745(
                   this.field22041, this.field22042, this.field22043, var18, Class2266.field14736, 20.0F, 0.9F + this.field22054.nextFloat() * 0.15F, true

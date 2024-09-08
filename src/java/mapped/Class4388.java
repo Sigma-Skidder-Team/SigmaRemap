@@ -8,9 +8,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.item.Items;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
@@ -20,12 +19,12 @@ import java.util.*;
 public class Class4388 {
    private static String[] field21457;
    public static final Item field21458 = Items.field37802;
-   private static final Class8369 field21459 = Class8763.method31620(30, 120);
-   private static final Class8369 field21460 = Class8763.method31620(10, 40);
-   private static final Class8369 field21461 = Class8763.method31620(10, 30);
-   private static final Class8369 field21462 = Class8763.method31620(5, 20);
-   private static final Class8369 field21463 = Class8763.method31620(5, 7);
-   private static final Class8369 field21464 = Class8763.method31620(5, 7);
+   private static final RangedInteger field21459 = TickRangeConverter.convertRange(30, 120);
+   private static final RangedInteger field21460 = TickRangeConverter.convertRange(10, 40);
+   private static final RangedInteger field21461 = TickRangeConverter.convertRange(10, 30);
+   private static final RangedInteger field21462 = TickRangeConverter.convertRange(5, 20);
+   private static final RangedInteger field21463 = TickRangeConverter.convertRange(5, 7);
+   private static final RangedInteger field21464 = TickRangeConverter.convertRange(5, 7);
    private static final Set<Item> field21465 = ImmutableSet.of(Items.field37869, Items.field37870);
 
    public static Class6947<?> method13798(Class1034 var0, Class6947<Class1034> var1) {
@@ -509,25 +508,25 @@ public class Class4388 {
       if (var1 != Class8890.field40229) {
          if (!var0.method4634()) {
             if (var1 == Class8890.field40232 && method13839(var0)) {
-               return Sounds.field26936;
+               return SoundEvents.field26936;
             } else if (var1 != Class8890.field40231) {
                if (var1 != Class8890.field40230) {
                   if (!method13873(var0)) {
-                     return !method13872(var0) ? Sounds.field26930 : Sounds.field26936;
+                     return !method13872(var0) ? SoundEvents.field26930 : SoundEvents.field26936;
                   } else {
-                     return Sounds.field26934;
+                     return SoundEvents.field26934;
                   }
                } else {
-                  return Sounds.field26932;
+                  return SoundEvents.field26932;
                }
             } else {
-               return Sounds.field26929;
+               return SoundEvents.field26929;
             }
          } else {
-            return Sounds.field26936;
+            return SoundEvents.field26936;
          }
       } else {
-         return Sounds.field26931;
+         return SoundEvents.field26931;
       }
    }
 

@@ -7,15 +7,14 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -27,7 +26,7 @@ import org.apache.logging.log4j.Logger;
 public class ItemFrameEntity extends Class995 {
    private static final Logger field5491 = LogManager.getLogger();
    private static final DataParameter<ItemStack> field5492 = EntityDataManager.<ItemStack>createKey(ItemFrameEntity.class, DataSerializers.field33396);
-   private static final DataParameter<Integer> field5493 = EntityDataManager.<Integer>createKey(ItemFrameEntity.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5493 = EntityDataManager.<Integer>createKey(ItemFrameEntity.class, DataSerializers.VARINT);
    private float field5494 = 1.0F;
    private boolean field5495;
 
@@ -140,13 +139,13 @@ public class ItemFrameEntity extends Class995 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.field5495) {
          if (!this.method2760(var1)) {
             if (!var1.method31131() && !this.method4090().isEmpty()) {
                if (!this.world.isRemote) {
                   this.method4088(var1.method31109(), false);
-                  this.method2863(Sounds.field26711, 1.0F, 1.0F);
+                  this.method2863(SoundEvents.field26711, 1.0F, 1.0F);
                }
 
                return true;
@@ -157,7 +156,7 @@ public class ItemFrameEntity extends Class995 {
             return false;
          }
       } else {
-         return var1 != Class8654.field39004 && !var1.method31146() ? false : super.method2741(var1, var2);
+         return var1 != DamageSource.field39004 && !var1.method31146() ? false : super.method2741(var1, var2);
       }
    }
 
@@ -180,13 +179,13 @@ public class ItemFrameEntity extends Class995 {
 
    @Override
    public void method4083(Entity var1) {
-      this.method2863(Sounds.field26709, 1.0F, 1.0F);
+      this.method2863(SoundEvents.field26709, 1.0F, 1.0F);
       this.method4088(var1, true);
    }
 
    @Override
    public void method4084() {
-      this.method2863(Sounds.field26710, 1.0F, 1.0F);
+      this.method2863(SoundEvents.field26710, 1.0F, 1.0F);
    }
 
    private void method4088(Entity var1, boolean var2) {
@@ -246,7 +245,7 @@ public class ItemFrameEntity extends Class995 {
 
       this.method3210().method35446(field5492, var1);
       if (!var1.isEmpty()) {
-         this.method2863(Sounds.field26708, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field26708, 1.0F, 1.0F);
       }
 
       if (var2 && this.field5488 != null) {
@@ -338,7 +337,7 @@ public class ItemFrameEntity extends Class995 {
       if (!this.field5495) {
          if (!this.world.isRemote) {
             if (var6) {
-               this.method2863(Sounds.field26712, 1.0F, 1.0F);
+               this.method2863(SoundEvents.field26712, 1.0F, 1.0F);
                this.method4094(this.method4093() + 1);
             } else if (var7 && !this.removed) {
                this.method4091(var5);

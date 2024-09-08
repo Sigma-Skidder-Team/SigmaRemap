@@ -127,7 +127,7 @@ public class ActiveMods extends Module {
                                     this.method16856(var16),
                                     new Color(160, 160, 160)
                             );
-                    RenderUtil.method11422();
+                    RenderUtil.endScissor();
                     RenderSystem.disableBlend();
                     var6 += var20;
                     RenderSystem.popMatrix();

@@ -3,16 +3,15 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.*;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -20,12 +19,12 @@ import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.function.Predicate;
 
-public class Class1098 extends Class1013 {
+public class Class1098 extends TameableEntity {
    private static final Class120 field6036 = Class120.method339(Items.field37909, Items.field37910);
-   private static final DataParameter<Integer> field6037 = EntityDataManager.<Integer>createKey(Class1098.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field6037 = EntityDataManager.<Integer>createKey(Class1098.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field6038 = EntityDataManager.<Boolean>createKey(Class1098.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> field6039 = EntityDataManager.<Boolean>createKey(Class1098.class, DataSerializers.field33398);
-   private static final DataParameter<Integer> field6040 = EntityDataManager.<Integer>createKey(Class1098.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field6040 = EntityDataManager.<Integer>createKey(Class1098.class, DataSerializers.VARINT);
    public static final Map<Integer, ResourceLocation> field6041 = Util.<Map<Integer, ResourceLocation>>make(Maps.newHashMap(), var0 -> {
       var0.put(0, new ResourceLocation("textures/entity/cat/tabby.png"));
       var0.put(1, new ResourceLocation("textures/entity/cat/black.png"));
@@ -160,13 +159,13 @@ public class Class1098 extends Class1013 {
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
+   public SoundEvent getAmbientSound() {
       if (!this.method4393()) {
-         return Sounds.field26434;
+         return SoundEvents.field26434;
       } else if (!this.method4507()) {
-         return this.rand.nextInt(4) != 0 ? Sounds.field26433 : Sounds.field26441;
+         return this.rand.nextInt(4) != 0 ? SoundEvents.field26433 : SoundEvents.field26441;
       } else {
-         return Sounds.field26440;
+         return SoundEvents.field26440;
       }
    }
 
@@ -176,17 +175,17 @@ public class Class1098 extends Class1013 {
    }
 
    public void method5258() {
-      this.method2863(Sounds.field26437, this.method3099(), this.method3100());
+      this.method2863(SoundEvents.field26437, this.method3099(), this.method3100());
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26439;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26439;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26435;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26435;
    }
 
    public static Class7037 method5259() {
@@ -201,7 +200,7 @@ public class Class1098 extends Class1013 {
    @Override
    public void method4501(PlayerEntity var1, ItemStack var2) {
       if (this.method4381(var2)) {
-         this.method2863(Sounds.field26436, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field26436, 1.0F, 1.0F);
       }
 
       super.method4501(var1, var2);
@@ -213,14 +212,14 @@ public class Class1098 extends Class1013 {
 
    @Override
    public boolean method3114(Entity var1) {
-      return var1.method2741(Class8654.method31115(this), this.method5260());
+      return var1.method2741(DamageSource.method31115(this), this.method5260());
    }
 
    @Override
    public void tick() {
       super.tick();
       if (this.field6043 != null && this.field6043.method10900() && !this.method4393() && this.ticksExisted % 100 == 0) {
-         this.method2863(Sounds.field26438, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field26438, 1.0F, 1.0F);
       }
 
       this.method5261();
@@ -228,7 +227,7 @@ public class Class1098 extends Class1013 {
 
    private void method5261() {
       if ((this.method5253() || this.method5255()) && this.ticksExisted % 5 == 0) {
-         this.method2863(Sounds.field26440, 0.6F + 0.4F * (this.rand.nextFloat() - this.rand.nextFloat()), 1.0F);
+         this.method2863(SoundEvents.field26440, 0.6F + 0.4F * (this.rand.nextFloat() - this.rand.nextFloat()), 1.0F);
       }
 
       this.method5262();

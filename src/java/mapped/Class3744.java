@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.RangedInteger;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.function.Predicate;
@@ -10,9 +11,9 @@ public class Class3744<E extends Class1006, T> extends Class3676<E> {
    private final Predicate<E> field19880;
    private final Class8830<? extends T> field19881;
    private final Class8830<T> field19882;
-   private final Class8369 field19883;
+   private final RangedInteger field19883;
 
-   public Class3744(Predicate<E> var1, Class8830<? extends T> var2, Class8830<T> var3, Class8369 var4) {
+   public Class3744(Predicate<E> var1, Class8830<? extends T> var2, Class8830<T> var3, RangedInteger var4) {
       super(ImmutableMap.of(var2, Class2217.field14484, var3, Class2217.field14485));
       this.field19880 = var1;
       this.field19881 = var2;

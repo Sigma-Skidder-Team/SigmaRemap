@@ -1,5 +1,6 @@
-package mapped;
+package net.minecraft.entity.passive.fish;
 
+import mapped.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.world.World;
@@ -8,11 +9,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.stream.Stream;
 
-public abstract class Class1050 extends Class1049 {
-   private Class1050 field5810;
+public abstract class AbstractGroupFishEntity extends Class1049 {
+   private AbstractGroupFishEntity field5810;
    private int field5811 = 1;
 
-   public Class1050(EntityType<? extends Class1050> var1, World var2) {
+   public AbstractGroupFishEntity(EntityType<? extends AbstractGroupFishEntity> var1, World var2) {
       super(var1, var2);
    }
 
@@ -24,10 +25,10 @@ public abstract class Class1050 extends Class1049 {
 
    @Override
    public int method4267() {
-      return this.method4799();
+      return this.getMaxGroupSize();
    }
 
-   public int method4799() {
+   public int getMaxGroupSize() {
       return super.method4267();
    }
 
@@ -40,7 +41,7 @@ public abstract class Class1050 extends Class1049 {
       return this.field5810 != null && this.field5810.isAlive();
    }
 
-   public Class1050 method4801(Class1050 var1) {
+   public AbstractGroupFishEntity method4801(AbstractGroupFishEntity var1) {
       this.field5810 = var1;
       var1.method4803();
       return var1;
@@ -60,7 +61,7 @@ public abstract class Class1050 extends Class1049 {
    }
 
    public boolean method4805() {
-      return this.method4806() && this.field5811 < this.method4799();
+      return this.method4806() && this.field5811 < this.getMaxGroupSize();
    }
 
    @Override
@@ -88,8 +89,8 @@ public abstract class Class1050 extends Class1049 {
       }
    }
 
-   public void method4809(Stream<Class1050> var1) {
-      var1.limit((long)(this.method4799() - this.field5811)).filter(var1x -> var1x != this).forEach(var1x -> var1x.method4801(this));
+   public void method4809(Stream<AbstractGroupFishEntity> var1) {
+      var1.limit((long)(this.getMaxGroupSize() - this.field5811)).filter(var1x -> var1x != this).forEach(var1x -> var1x.method4801(this));
    }
 
    @Nullable

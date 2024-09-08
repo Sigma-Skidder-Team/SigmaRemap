@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
 import mapped.*;
+import net.minecraft.item.Items;
 import net.minecraft.network.play.server.SEntityEquipmentPacket;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.math.BlockPos;

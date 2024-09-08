@@ -19,11 +19,13 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -390,9 +392,9 @@ public class WorldRenderer implements Class215, AutoCloseable {
             this.field997 = 0;
             if (var6.getY() > var5.getY() + 1
                && var4.method7006(Class101.field299, var5).getY() > MathHelper.method37767((float)var5.getY())) {
-               this.field939.world.method6858(var6, Sounds.field27227, Class2266.field14731, 0.1F, 0.5F, false);
+               this.field939.world.method6858(var6, SoundEvents.field27227, Class2266.field14731, 0.1F, 0.5F, false);
             } else {
-               this.field939.world.method6858(var6, Sounds.field27226, Class2266.field14731, 0.2F, 1.0F, false);
+               this.field939.world.method6858(var6, SoundEvents.field27226, Class2266.field14731, 0.2F, 1.0F, false);
             }
          }
       }
@@ -3064,11 +3066,11 @@ public class WorldRenderer implements Class215, AutoCloseable {
                }
 
                if (var1 == 1023) {
-                  this.field943.method6745(var13, var15, var17, Sounds.field27248, Class2266.field14733, 1.0F, 1.0F, false);
+                  this.field943.method6745(var13, var15, var17, SoundEvents.field27248, Class2266.field14733, 1.0F, 1.0F, false);
                } else if (var1 == 1038) {
-                  this.field943.method6745(var13, var15, var17, Sounds.field26558, Class2266.field14733, 1.0F, 1.0F, false);
+                  this.field943.method6745(var13, var15, var17, SoundEvents.field26558, Class2266.field14733, 1.0F, 1.0F, false);
                } else {
-                  this.field943.method6745(var13, var15, var17, Sounds.field26537, Class2266.field14733, 5.0F, 1.0F, false);
+                  this.field943.method6745(var13, var15, var17, SoundEvents.field26537, Class2266.field14733, 5.0F, 1.0F, false);
                }
             }
       }
@@ -3078,34 +3080,34 @@ public class WorldRenderer implements Class215, AutoCloseable {
       Random var5 = this.field943.rand;
       switch (var2) {
          case 1000:
-            this.field943.method6858(var3, Sounds.field26495, Class2266.field14732, 1.0F, 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field26495, Class2266.field14732, 1.0F, 1.0F, false);
             break;
          case 1001:
-            this.field943.method6858(var3, Sounds.field26496, Class2266.field14732, 1.0F, 1.2F, false);
+            this.field943.method6858(var3, SoundEvents.field26496, Class2266.field14732, 1.0F, 1.2F, false);
             break;
          case 1002:
-            this.field943.method6858(var3, Sounds.field26497, Class2266.field14732, 1.0F, 1.2F, false);
+            this.field943.method6858(var3, SoundEvents.field26497, Class2266.field14732, 1.0F, 1.2F, false);
             break;
          case 1003:
-            this.field943.method6858(var3, Sounds.field26544, Class2266.field14734, 1.0F, 1.2F, false);
+            this.field943.method6858(var3, SoundEvents.field26544, Class2266.field14734, 1.0F, 1.2F, false);
             break;
          case 1004:
-            this.field943.method6858(var3, Sounds.field26578, Class2266.field14734, 1.0F, 1.2F, false);
+            this.field943.method6858(var3, SoundEvents.field26578, Class2266.field14734, 1.0F, 1.2F, false);
             break;
          case 1005:
-            this.field943.method6858(var3, Sounds.field26699, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field26699, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1006:
-            this.field943.method6858(var3, Sounds.field27259, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field27259, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1007:
-            this.field943.method6858(var3, Sounds.field27261, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field27261, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1008:
-            this.field943.method6858(var3, Sounds.field26571, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field26571, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1009:
-            this.field943.method6858(var3, Sounds.field26582, Class2266.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
+            this.field943.method6858(var3, SoundEvents.field26582, Class2266.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
             break;
          case 1010:
             if (Item.method11702(var4) instanceof Class3283) {
@@ -3119,103 +3121,103 @@ public class WorldRenderer implements Class215, AutoCloseable {
             }
             break;
          case 1011:
-            this.field943.method6858(var3, Sounds.field26698, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field26698, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1012:
-            this.field943.method6858(var3, Sounds.field27258, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field27258, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1013:
-            this.field943.method6858(var3, Sounds.field27260, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field27260, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1014:
-            this.field943.method6858(var3, Sounds.field26570, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field26570, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1015:
-            this.field943.method6858(var3, Sounds.field26621, Class2266.field14733, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field26621, Class2266.field14733, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1016:
-            this.field943.method6858(var3, Sounds.field26620, Class2266.field14733, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field26620, Class2266.field14733, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1017:
-            this.field943.method6858(var3, Sounds.field26542, Class2266.field14733, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field26542, Class2266.field14733, 10.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1018:
-            this.field943.method6858(var3, Sounds.field26406, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field26406, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1019:
-            this.field943.method6858(var3, Sounds.field27283, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field27283, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1020:
-            this.field943.method6858(var3, Sounds.field27284, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field27284, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1021:
-            this.field943.method6858(var3, Sounds.field27285, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field27285, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1022:
-            this.field943.method6858(var3, Sounds.field27240, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field27240, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1024:
-            this.field943.method6858(var3, Sounds.field27243, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field27243, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1025:
-            this.field943.method6858(var3, Sounds.field26384, Class2266.field14734, 0.05F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field26384, Class2266.field14734, 0.05F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1026:
-            this.field943.method6858(var3, Sounds.field27293, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field27293, Class2266.field14733, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1027:
-            this.field943.method6858(var3, Sounds.field27300, Class2266.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field27300, Class2266.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1029:
-            this.field943.method6858(var3, Sounds.field26341, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field26341, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1030:
-            this.field943.method6858(var3, Sounds.field26347, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field26347, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1031:
-            this.field943.method6858(var3, Sounds.field26344, Class2266.field14732, 0.3F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field26344, Class2266.field14732, 0.3F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1032:
-            this.field939.getSoundHandler().method1000(MinecraftSoundManager.method19296(Sounds.field26977, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
+            this.field939.getSoundHandler().method1000(MinecraftSoundManager.method19296(SoundEvents.field26977, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
             break;
          case 1033:
-            this.field943.method6858(var3, Sounds.field26456, Class2266.field14732, 1.0F, 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field26456, Class2266.field14732, 1.0F, 1.0F, false);
             break;
          case 1034:
-            this.field943.method6858(var3, Sounds.field26455, Class2266.field14732, 1.0F, 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field26455, Class2266.field14732, 1.0F, 1.0F, false);
             break;
          case 1035:
-            this.field943.method6858(var3, Sounds.field26420, Class2266.field14732, 1.0F, 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field26420, Class2266.field14732, 1.0F, 1.0F, false);
             break;
          case 1036:
-            this.field943.method6858(var3, Sounds.field26706, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field26706, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1037:
-            this.field943.method6858(var3, Sounds.field26707, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field26707, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1039:
-            this.field943.method6858(var3, Sounds.field26919, Class2266.field14733, 0.3F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field26919, Class2266.field14733, 0.3F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1040:
-            this.field943.method6858(var3, Sounds.field27286, Class2266.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field27286, Class2266.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1041:
-            this.field943.method6858(var3, Sounds.field26687, Class2266.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field26687, Class2266.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1042:
-            this.field943.method6858(var3, Sounds.field26642, Class2266.field14732, 1.0F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field26642, Class2266.field14732, 1.0F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1043:
-            this.field943.method6858(var3, Sounds.field26414, Class2266.field14732, 1.0F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field26414, Class2266.field14732, 1.0F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1044:
-            this.field943.method6858(var3, Sounds.field27106, Class2266.field14732, 1.0F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field27106, Class2266.field14732, 1.0F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1500:
             Class3475.method12164(this.field943, var3, var4 > 0);
             break;
          case 1501:
-            this.field943.method6858(var3, Sounds.field26726, Class2266.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
+            this.field943.method6858(var3, SoundEvents.field26726, Class2266.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
 
             for (int var40 = 0; var40 < 8; var40++) {
                this.field943
@@ -3231,7 +3233,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             }
             break;
          case 1502:
-            this.field943.method6858(var3, Sounds.field27011, Class2266.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
+            this.field943.method6858(var3, SoundEvents.field27011, Class2266.field14732, 0.5F, 2.6F + (var5.nextFloat() - var5.nextFloat()) * 0.8F, false);
 
             for (int var39 = 0; var39 < 5; var39++) {
                double var42 = (double)var3.getX() + var5.nextDouble() * 0.6 + 0.2;
@@ -3241,7 +3243,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             }
             break;
          case 1503:
-            this.field943.method6858(var3, Sounds.field26557, Class2266.field14732, 1.0F, 1.0F, false);
+            this.field943.method6858(var3, SoundEvents.field26557, Class2266.field14732, 1.0F, 1.0F, false);
 
             for (int var38 = 0; var38 < 16; var38++) {
                double var41 = (double)var3.getX() + (5.0 + var5.nextDouble() * 6.0) / 16.0;
@@ -3328,7 +3330,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                }
             }
 
-            this.field943.method6858(var3, Sounds.field27123, Class2266.field14734, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, SoundEvents.field27123, Class2266.field14734, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 2003:
             double var22 = (double)var3.getX() + 0.5;
@@ -3403,7 +3405,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             }
 
             if (var4 == 1) {
-               this.field943.method6858(var3, Sounds.field26538, Class2266.field14733, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
+               this.field943.method6858(var3, SoundEvents.field26538, Class2266.field14733, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             }
             break;
          case 2008:
@@ -3434,7 +3436,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             this.field943
                .method6858(
                   var3,
-                  Sounds.field26556,
+                  SoundEvents.field26556,
                   Class2266.field14732,
                   10.0F,
                   (1.0F + (this.field943.rand.nextFloat() - this.field943.rand.nextFloat()) * 0.2F) * 0.7F,
@@ -3442,7 +3444,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                );
             break;
          case 3001:
-            this.field943.method6858(var3, Sounds.field26540, Class2266.field14733, 64.0F, 0.8F + this.field943.rand.nextFloat() * 0.3F, false);
+            this.field943.method6858(var3, SoundEvents.field26540, Class2266.field14733, 64.0F, 0.8F + this.field943.rand.nextFloat() * 0.3F, false);
       }
    }
 

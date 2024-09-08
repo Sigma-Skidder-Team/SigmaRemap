@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvents;
 
 public class Class6344 extends Class6333 {
    private static String[] field27873;
@@ -9,7 +10,7 @@ public class Class6344 extends Class6333 {
    private final AbstractMinecartEntity field27875;
 
    public Class6344(PlayerEntity var1, AbstractMinecartEntity var2) {
-      super(Sounds.field26763, Class2266.field14734);
+      super(SoundEvents.field26763, Class2266.field14734);
       this.field27874 = var1;
       this.field27875 = var2;
       this.field27863 = Class2279.field14845;

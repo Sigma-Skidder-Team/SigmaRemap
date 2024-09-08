@@ -8,14 +8,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -199,7 +197,7 @@ public class Class1019 extends Class1018 implements Class1020 {
 
    @Override
    public void method4515(Class2266 var1) {
-      this.world.method6744((PlayerEntity)null, this, Sounds.field27033, var1, 1.0F, 1.0F);
+      this.world.method6744((PlayerEntity)null, this, SoundEvents.field27033, var1, 1.0F, 1.0F);
       this.method4520(true);
       int var4 = 1 + this.rand.nextInt(3);
 
@@ -238,23 +236,23 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27030;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27030;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27032;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27032;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27031;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27031;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field27034, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field27034, 0.15F, 1.0F);
    }
 
    public Class112 method4517() {
@@ -302,7 +300,7 @@ public class Class1019 extends Class1018 implements Class1020 {
 
    public Class1019 method4389(ServerWorld var1, Class1045 var2) {
       Class1019 var5 = (Class1019)var2;
-      Class1019 var6 = EntityType.field41074.method33215(var1);
+      Class1019 var6 = EntityType.SHEEP.method33215(var1);
       var6.method4518(this.method4522(this, var5));
       return var6;
    }

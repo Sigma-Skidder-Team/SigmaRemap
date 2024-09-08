@@ -8,11 +8,14 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
@@ -170,18 +173,18 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26945;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26945;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26947;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26947;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26948;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26948;
    }
 
    @Override
@@ -255,6 +258,6 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public SoundEvent method4546() {
-      return Sounds.field26946;
+      return SoundEvents.field26946;
    }
 }

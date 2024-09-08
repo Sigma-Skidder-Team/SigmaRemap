@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundEvents;
 
 public class Class5867 extends Class5839 {
    private static String[] field25638;
@@ -27,7 +28,7 @@ public class Class5867 extends Class5839 {
       this.field25639.method31716((var1x, var2x) -> {
          long var5 = var1x.method6783();
          if (Class5836.method18242(this.field25640) != var5) {
-            var1x.method6742((PlayerEntity)null, var2x, Sounds.field27179, Class2266.field14732, 1.0F, 1.0F);
+            var1x.method6742((PlayerEntity)null, var2x, SoundEvents.field27179, Class2266.field14732, 1.0F, 1.0F);
             Class5836.method18243(this.field25640, var5);
          }
       });

@@ -13,14 +13,13 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -278,7 +277,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    private void method4681() {
       this.method4739(40);
       if (!this.world.isRemote()) {
-         this.method2863(Sounds.field27193, this.method3099(), this.method3100());
+         this.method2863(SoundEvents.field27193, this.method3099(), this.method3100());
       }
    }
 
@@ -464,22 +463,22 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
+   public SoundEvent getAmbientSound() {
       if (!this.isSleeping()) {
-         return !this.method4741() ? Sounds.field27189 : Sounds.field27194;
+         return !this.method4741() ? SoundEvents.field27189 : SoundEvents.field27194;
       } else {
          return null;
       }
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27192;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27192;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27191;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27191;
    }
 
    public void method4694() {
@@ -532,7 +531,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    @Override
-   public void method2737(Class8654 var1) {
+   public void method2737(DamageSource var1) {
       LOGGER.info("Villager {} died, message: '{}'", this, var1.method31110(this).getString());
       Entity var4 = var1.method31109();
       if (var4 != null) {

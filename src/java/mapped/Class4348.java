@@ -109,7 +109,7 @@ public class Class4348 extends Class4278 {
          }
 
          GL11.glPopMatrix();
-         RenderUtil.method11422();
+         RenderUtil.endScissor();
          RenderUtil.method11426(
             (float)this.field20895,
             (float)this.field20896,
@@ -229,7 +229,7 @@ public class Class4348 extends Class4278 {
       }
 
       GL11.glPopMatrix();
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
    }
 
    public static BufferedImage method13578(String var0) {

@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;

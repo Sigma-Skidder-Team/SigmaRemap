@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -11,7 +12,7 @@ import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$Action;
 
-public class Class8655 extends Class8654 {
+public class Class8655 extends DamageSource {
    public Class8655() {
       super("badRespawnPoint");
       this.method31143();

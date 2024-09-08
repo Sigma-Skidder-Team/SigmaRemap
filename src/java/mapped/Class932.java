@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -67,7 +68,7 @@ public abstract class Class932 extends TileEntity implements Class920, Class949,
    public static boolean method3697(PlayerEntity var0, Class7969 var1, ITextComponent var2) {
       if (!var0.isSpectator() && !var1.method27091(var0.getHeldItemMainhand())) {
          var0.sendStatusMessage(new TranslationTextComponent("container.isLocked", var2), true);
-         var0.method2834(Sounds.field26448, Class2266.field14732, 1.0F, 1.0F);
+         var0.method2834(SoundEvents.field26448, Class2266.field14732, 1.0F, 1.0F);
          return false;
       } else {
          return true;

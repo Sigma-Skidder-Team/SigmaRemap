@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -52,7 +53,7 @@ public class Class3441 extends Block {
    }
 
    private void method12113(World var1, BlockPos var2, BlockState var3) {
-      var1.method6742((PlayerEntity)null, var2, Sounds.field27167, Class2266.field14732, 0.7F, 0.9F + var1.rand.nextFloat() * 0.2F);
+      var1.method6742((PlayerEntity)null, var2, SoundEvents.field27167, Class2266.field14732, 0.7F, 0.9F + var1.rand.nextFloat() * 0.2F);
       int var6 = var3.<Integer>method23463(field19244);
       if (var6 > 1) {
          var1.setBlockState(var2, var3.method23465(field19244, Integer.valueOf(var6 - 1)), 2);
@@ -67,7 +68,7 @@ public class Class3441 extends Block {
       if (this.method12116(var2) && method12114(var2, var3)) {
          int var7 = var1.<Integer>method23463(field19243);
          if (var7 >= 2) {
-            var2.method6742((PlayerEntity)null, var3, Sounds.field27169, Class2266.field14732, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
+            var2.method6742((PlayerEntity)null, var3, SoundEvents.field27169, Class2266.field14732, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
             var2.removeBlock(var3, false);
 
             for (int var8 = 0; var8 < var1.<Integer>method23463(field19244); var8++) {
@@ -79,7 +80,7 @@ public class Class3441 extends Block {
                var2.method6916(var9);
             }
          } else {
-            var2.method6742((PlayerEntity)null, var3, Sounds.field27168, Class2266.field14732, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
+            var2.method6742((PlayerEntity)null, var3, SoundEvents.field27168, Class2266.field14732, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
             var2.setBlockState(var3, var1.method23465(field19243, Integer.valueOf(var7 + 1)), 2);
          }
       }

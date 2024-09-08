@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
@@ -18,19 +19,19 @@ public abstract class Class1056 extends Class1046 {
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
+   public SoundEvent getAmbientSound() {
       return null;
    }
 
    @Nullable
    @Override
-   public SoundEvent method2879(Class8654 var1) {
+   public SoundEvent getHurtSound(DamageSource var1) {
       return null;
    }
 
    @Nullable
    @Override
-   public SoundEvent method2880() {
+   public SoundEvent getDeathSound() {
       return null;
    }
 

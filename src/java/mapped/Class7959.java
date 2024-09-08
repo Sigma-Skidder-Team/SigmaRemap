@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 
 public class Class7959 {
    public static final Codec<Class7959> field34223 = RecordCodecBuilder.create(
@@ -14,7 +15,7 @@ public class Class7959 {
             )
             .apply(var0, Class7959::new)
    );
-   public static final Class7959 field34224 = new Class7959(Sounds.field26313, 6000, 8, 2.0);
+   public static final Class7959 field34224 = new Class7959(SoundEvents.field26313, 6000, 8, 2.0);
    private SoundEvent field34225;
    private int field34226;
    private int field34227;

@@ -11,15 +11,13 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.play.client.*;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.HandSide;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -84,7 +82,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       return false;
    }
 
@@ -262,7 +260,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method2888(Class8654 var1, float var2) {
+   public void method2888(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          this.method3043(this.getHealth() - var2);
       }
@@ -290,7 +288,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             this.field4980 = var4;
             this.method3043(this.getHealth());
             this.hurtResistantTime = 20;
-            this.method2888(Class8654.field39005, var4);
+            this.method2888(DamageSource.field39005, var4);
             this.field4953 = 10;
             this.field4952 = this.field4953;
          } else {
@@ -800,7 +798,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
 
          if (this.field6141 == 0.0F) {
-            this.field6132.getSoundHandler().method1000(MinecraftSoundManager.method19296(Sounds.field26978, this.rand.nextFloat() * 0.4F + 0.8F, 0.25F));
+            this.field6132.getSoundHandler().method1000(MinecraftSoundManager.method19296(SoundEvents.field26978, this.rand.nextFloat() * 0.4F + 0.8F, 0.25F));
          }
 
          this.field6141 += 0.0125F;
@@ -995,12 +993,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       boolean var4 = super.method2854();
       if (!this.isSpectator()) {
          if (!var3 && var4) {
-            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26329, Class2266.field14736, 1.0F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26329, Class2266.field14736, 1.0F, 1.0F, false);
             this.field6132.getSoundHandler().method1000(new Class6342(this));
          }
 
          if (var3 && !var4) {
-            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26330, Class2266.field14736, 1.0F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26330, Class2266.field14736, 1.0F, 1.0F, false);
          }
 
          return this.field4918;

@@ -3,7 +3,9 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -42,7 +44,7 @@ public interface Class1023 extends Class1022 {
          var5,
          (float)(14 - var1.world.method6997().getId() * 4)
       );
-      var1.method2863(Sounds.field26494, 1.0F, 1.0F / (var1.method3013().nextFloat() * 0.4F + 0.8F));
+      var1.method2863(SoundEvents.field26494, 1.0F, 1.0F / (var1.method3013().nextFloat() * 0.4F + 0.8F));
    }
 
    default Vector3f method4540(LivingEntity var1, Vector3d var2, float var3) {

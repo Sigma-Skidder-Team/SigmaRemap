@@ -10,12 +10,14 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -28,11 +30,11 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class AbstractMinecartEntity extends Entity {
-   private static final DataParameter<Integer> field5213 = EntityDataManager.<Integer>createKey(AbstractMinecartEntity.class, DataSerializers.field33391);
-   private static final DataParameter<Integer> field5214 = EntityDataManager.<Integer>createKey(AbstractMinecartEntity.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5213 = EntityDataManager.<Integer>createKey(AbstractMinecartEntity.class, DataSerializers.VARINT);
+   private static final DataParameter<Integer> field5214 = EntityDataManager.<Integer>createKey(AbstractMinecartEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Float> field5215 = EntityDataManager.<Float>createKey(AbstractMinecartEntity.class, DataSerializers.field33392);
-   private static final DataParameter<Integer> field5216 = EntityDataManager.<Integer>createKey(AbstractMinecartEntity.class, DataSerializers.field33391);
-   private static final DataParameter<Integer> field5217 = EntityDataManager.<Integer>createKey(AbstractMinecartEntity.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5216 = EntityDataManager.<Integer>createKey(AbstractMinecartEntity.class, DataSerializers.VARINT);
+   private static final DataParameter<Integer> field5217 = EntityDataManager.<Integer>createKey(AbstractMinecartEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5218 = EntityDataManager.<Boolean>createKey(AbstractMinecartEntity.class, DataSerializers.field33398);
    private static final ImmutableMap<Pose, ImmutableList<Integer>> field5219 = ImmutableMap.of(
       Pose.STANDING, ImmutableList.of(0, 1, -1), Pose.field13624, ImmutableList.of(0, 1, -1), Pose.field13622, ImmutableList.of(0, 1)
@@ -200,7 +202,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (this.world.isRemote || this.removed) {
          return true;
       } else if (this.method2760(var1)) {
@@ -230,7 +232,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       return !var3.method23446(BlockTags.field32766) ? super.method2977() : 1.0F;
    }
 
-   public void method3586(Class8654 var1) {
+   public void method3586(DamageSource var1) {
       this.method2904();
       if (this.world.method6789().method17135(Class5462.field24229)) {
          ItemStack var4 = new ItemStack(Items.MINECART);

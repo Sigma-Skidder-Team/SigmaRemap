@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -123,7 +124,7 @@ public class Class7369 extends Class7361 {
    }
 
    @Override
-   public void method23361(EnderCrystalEntity var1, BlockPos var2, Class8654 var3, PlayerEntity var4) {
+   public void method23361(EnderCrystalEntity var1, BlockPos var2, DamageSource var3, PlayerEntity var4) {
       if (var4 != null && !var4.abilities.disableDamage) {
          this.method23374(var4);
       }

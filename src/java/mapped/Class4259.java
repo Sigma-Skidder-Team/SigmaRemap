@@ -166,7 +166,7 @@ public class Class4259 extends Class4247 {
          );
       }
 
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
       int var22 = Math.round((float)(this.field20648.field32174 * 16) - this.field20651 * 16.0F);
       int var23 = Math.round((float)(this.field20648.field32175 * 16) - this.field20650 * 16.0F);
       String var24 = var22 + "  " + var23;

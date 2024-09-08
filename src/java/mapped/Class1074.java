@@ -4,13 +4,12 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -19,7 +18,7 @@ import java.util.UUID;
 
 public class Class1074 extends AbstractHorseEntity {
    private static final UUID field5916 = UUID.fromString("556E1665-8B10-40C8-8F9D-CF9B1667F295");
-   private static final DataParameter<Integer> field5917 = EntityDataManager.<Integer>createKey(Class1074.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5917 = EntityDataManager.<Integer>createKey(Class1074.class, DataSerializers.VARINT);
 
    public Class1074(EntityType<? extends Class1074> var1, World var2) {
       super(var1, var2);
@@ -118,7 +117,7 @@ public class Class1074 extends AbstractHorseEntity {
       super.method4902(var1);
       ItemStack var5 = this.method4990();
       if (this.ticksExisted > 20 && this.method4900(var5) && var4 != var5) {
-         this.method2863(Sounds.field26669, 0.5F, 1.0F);
+         this.method2863(SoundEvents.field26669, 0.5F, 1.0F);
       }
    }
 
@@ -126,38 +125,38 @@ public class Class1074 extends AbstractHorseEntity {
    public void method4950(Class8447 var1) {
       super.method4950(var1);
       if (this.rand.nextInt(10) == 0) {
-         this.method2863(Sounds.field26670, var1.method29710() * 0.6F, var1.method29711());
+         this.method2863(SoundEvents.field26670, var1.method29710() * 0.6F, var1.method29711());
       }
    }
 
    @Override
-   public SoundEvent method4241() {
-      super.method4241();
-      return Sounds.field26667;
+   public SoundEvent getAmbientSound() {
+      super.getAmbientSound();
+      return SoundEvents.field26667;
    }
 
    @Override
-   public SoundEvent method2880() {
-      super.method2880();
-      return Sounds.field26671;
+   public SoundEvent getDeathSound() {
+      super.getDeathSound();
+      return SoundEvents.field26671;
    }
 
    @Nullable
    @Override
    public SoundEvent method4894() {
-      return Sounds.field26672;
+      return SoundEvents.field26672;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      super.method2879(var1);
-      return Sounds.field26674;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      super.getHurtSound(var1);
+      return SoundEvents.field26674;
    }
 
    @Override
    public SoundEvent method4893() {
       super.method4893();
-      return Sounds.field26668;
+      return SoundEvents.field26668;
    }
 
    @Override

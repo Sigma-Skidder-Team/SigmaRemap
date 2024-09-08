@@ -1,9 +1,8 @@
-package mapped;
+package net.minecraft.util;
 
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import mapped.Registry;
 
-public class Sounds {
+public class SoundEvents {
    public static final SoundEvent field26313 = method18806("ambient.cave");
    public static final SoundEvent field26314 = method18806("ambient.basalt_deltas.additions");
    public static final SoundEvent field26315 = method18806("ambient.basalt_deltas.loop");
@@ -707,10 +706,10 @@ public class Sounds {
    public static final SoundEvent field27013 = method18806("block.respawn_anchor.charge");
    public static final SoundEvent field27014 = method18806("block.respawn_anchor.deplete");
    public static final SoundEvent field27015 = method18806("block.respawn_anchor.set_spawn");
-   public static final SoundEvent field27016 = method18806("entity.salmon.ambient");
-   public static final SoundEvent field27017 = method18806("entity.salmon.death");
-   public static final SoundEvent field27018 = method18806("entity.salmon.flop");
-   public static final SoundEvent field27019 = method18806("entity.salmon.hurt");
+   public static final SoundEvent ENTITY_SALMON_AMBIENT = method18806("entity.salmon.ambient");
+   public static final SoundEvent ENTITY_SALMON_DEATH = method18806("entity.salmon.death");
+   public static final SoundEvent ENTITY_SALMON_FLOP = method18806("entity.salmon.flop");
+   public static final SoundEvent ENTITY_SALMON_HURT = method18806("entity.salmon.hurt");
    public static final SoundEvent field27020 = method18806("block.sand.break");
    public static final SoundEvent field27021 = method18806("block.sand.fall");
    public static final SoundEvent field27022 = method18806("block.sand.hit");

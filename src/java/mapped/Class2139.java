@@ -1,10 +1,11 @@
 package mapped;
 
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 
 public enum Class2139 {
-   field14003(Sounds.field27183),
-   field14004(Sounds.field27184);
+   field14003(SoundEvents.field27183),
+   field14004(SoundEvents.field27184);
 
    private final SoundEvent field14005;
    private static final Class2139[] field14006 = new Class2139[]{field14003, field14004};

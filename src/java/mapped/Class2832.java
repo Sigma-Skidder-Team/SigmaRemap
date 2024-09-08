@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 
@@ -24,7 +25,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
    private static Class5888 method11032(Class3303 var0) {
       return Class7318.method23188()
          .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(var0)))
-         .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4687.method14706(EntityType.field41074.method33212())));
+         .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4687.method14706(EntityType.SHEEP.method33212())));
    }
 
    public void accept(BiConsumer<ResourceLocation, Class5888> var1) {
@@ -273,7 +274,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18297(Class163.method492())
             )
       );
-      this.method11033(EntityType.field41033, Class7318.method23188());
+      this.method11033(EntityType.FOX, Class7318.method23188());
       this.method11033(
          EntityType.field41034,
          Class7318.method23188()
@@ -538,7 +539,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41071,
+         EntityType.RABBIT,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
@@ -586,7 +587,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             )
       );
       this.method11033(
-         EntityType.field41074,
+         EntityType.SHEEP,
          Class7318.method23188()
             .method18320(
                Class8894.method32373()

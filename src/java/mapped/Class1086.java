@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -10,6 +11,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -44,7 +46,7 @@ public class Class1086 extends Class1087 implements Class1020 {
       if (!var5.equals(this.field5954)) {
          this.method5036(this.method5037() != Class2210.field14452 ? Class2210.field14452 : Class2210.field14453);
          this.field5954 = var5;
-         this.method2863(Sounds.field26765, 2.0F, 1.0F);
+         this.method2863(SoundEvents.field26765, 2.0F, 1.0F);
       }
    }
 
@@ -74,9 +76,9 @@ public class Class1086 extends Class1087 implements Class1020 {
          var1.method3095(var2, var13);
          SoundEvent var9;
          if (!var11) {
-            var9 = Sounds.field26767;
+            var9 = SoundEvents.field26767;
          } else {
-            var9 = Sounds.field26768;
+            var9 = SoundEvents.field26768;
          }
 
          this.method2863(var9, 1.0F, 1.0F);
@@ -115,7 +117,7 @@ public class Class1086 extends Class1087 implements Class1020 {
 
             this.field5952 = (Effect)var7.getLeft();
             this.field5953 = (Integer)var7.getRight();
-            this.method2863(Sounds.field26766, 2.0F, 1.0F);
+            this.method2863(SoundEvents.field26766, 2.0F, 1.0F);
          } else {
             for (int var10 = 0; var10 < 2; var10++) {
                this.world
@@ -139,7 +141,7 @@ public class Class1086 extends Class1087 implements Class1020 {
 
    @Override
    public void method4515(Class2266 var1) {
-      this.world.method6744((PlayerEntity)null, this, Sounds.field26769, var1, 1.0F, 1.0F);
+      this.world.method6744((PlayerEntity)null, this, SoundEvents.field26769, var1, 1.0F, 1.0F);
       if (!this.world.isRemote()) {
          ((ServerWorld)this.world).method6939(ParticleTypes.field34070, this.getPosX(), this.method3440(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
          this.method2904();

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 
 import javax.annotation.Nullable;
 import java.util.Map;

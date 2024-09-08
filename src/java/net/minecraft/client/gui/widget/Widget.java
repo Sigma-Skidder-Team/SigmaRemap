@@ -6,6 +6,7 @@ import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -207,7 +208,7 @@ public abstract class Widget extends AbstractGui implements Class1190, Class1152
    }
 
    public void method5739(SoundHandler var1) {
-      var1.method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.field27176, 1.0F));
+      var1.method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
    }
 
    public int method5740() {

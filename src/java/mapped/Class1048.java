@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.passive.WaterMobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -11,9 +12,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.particles.IParticleData;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -24,10 +23,10 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.function.Predicate;
 
-public class Class1048 extends Class1047 {
+public class Class1048 extends WaterMobEntity {
    private static final DataParameter<BlockPos> field5804 = EntityDataManager.<BlockPos>createKey(Class1048.class, DataSerializers.field33401);
    private static final DataParameter<Boolean> field5805 = EntityDataManager.<Boolean>createKey(Class1048.class, DataSerializers.field33398);
-   private static final DataParameter<Integer> field5806 = EntityDataManager.<Integer>createKey(Class1048.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5806 = EntityDataManager.<Integer>createKey(Class1048.class, DataSerializers.VARINT);
    private static final Class8522 field5807 = new Class8522().method30203(10.0).method30205().method30204().method30206();
    public static final Predicate<ItemEntity> field5808 = var0 -> !var0.method4135() && var0.isAlive() && var0.method3250();
 
@@ -136,10 +135,10 @@ public class Class1048 extends Class1047 {
 
    @Override
    public boolean method3114(Entity var1) {
-      boolean var4 = var1.method2741(Class8654.method31115(this), (float)((int)this.method3086(Attributes.field42110)));
+      boolean var4 = var1.method2741(DamageSource.method31115(this), (float)((int)this.method3086(Attributes.field42110)));
       if (var4) {
          this.method3399(this, var1);
-         this.method2863(Sounds.field26500, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field26500, 1.0F, 1.0F);
       }
 
       return var4;
@@ -202,7 +201,7 @@ public class Class1048 extends Class1047 {
          if (!this.method3254()) {
             this.method4781(this.method4780() - 1);
             if (this.method4780() <= 0) {
-               this.method2741(Class8654.field39011, 1.0F);
+               this.method2741(DamageSource.field39011, 1.0F);
             }
 
             if (this.onGround) {
@@ -275,7 +274,7 @@ public class Class1048 extends Class1047 {
       ItemStack var5 = var1.getHeldItem(var2);
       if (!var5.isEmpty() && var5.getItem().method11743(Class5985.field26114)) {
          if (!this.world.isRemote) {
-            this.method2863(Sounds.field26502, 1.0F, 1.0F);
+            this.method2863(SoundEvents.field26502, 1.0F, 1.0F);
          }
 
          this.method4779(true);
@@ -303,30 +302,30 @@ public class Class1048 extends Class1047 {
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26503;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26503;
    }
 
    @Nullable
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26501;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26501;
    }
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
-      return !this.method3250() ? Sounds.field26498 : Sounds.field26499;
+   public SoundEvent getAmbientSound() {
+      return !this.method3250() ? SoundEvents.field26498 : SoundEvents.field26499;
    }
 
    @Override
    public SoundEvent method2860() {
-      return Sounds.field26506;
+      return SoundEvents.field26506;
    }
 
    @Override
    public SoundEvent method2859() {
-      return Sounds.field26507;
+      return SoundEvents.field26507;
    }
 
    public boolean method4785() {

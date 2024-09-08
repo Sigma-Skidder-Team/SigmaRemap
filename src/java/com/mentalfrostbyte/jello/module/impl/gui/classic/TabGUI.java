@@ -259,7 +259,7 @@ public class TabGUI extends Module {
          RenderUtil.drawString(
             var8.field32394, (float)(var13 + 4), (float)(var14 + 2), var11, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 1.7F))
          );
-         RenderUtil.method11422();
+         RenderUtil.endScissor();
       }
    }
 

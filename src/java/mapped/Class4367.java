@@ -66,7 +66,7 @@ public class Class4367 extends Class4247 {
          (float)(this.method13265() + this.method13269()),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.25F * var1)
       );
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
       super.draw(var1);
    }
 

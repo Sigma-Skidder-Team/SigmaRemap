@@ -4,12 +4,15 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
@@ -118,7 +121,7 @@ public class ItemEntity extends Entity {
          int var10 = !var9 ? 40 : 2;
          if (this.ticksExisted % var10 == 0) {
             if (this.world.getFluidState(this.getPosition()).method23486(Class8953.field40470) && !this.method3249()) {
-               this.method2863(Sounds.field26606, 0.4F, 2.0F + this.rand.nextFloat() * 0.4F);
+               this.method2863(SoundEvents.field26606, 0.4F, 2.0F + this.rand.nextFloat() * 0.4F);
             }
 
             if (!this.world.isRemote && this.method4118()) {
@@ -225,7 +228,7 @@ public class ItemEntity extends Entity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          if (!this.method4124().isEmpty() && this.method4124().getItem() == Items.field38066 && var1.method31131()) {
             return false;

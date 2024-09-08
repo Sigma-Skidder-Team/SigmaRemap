@@ -94,7 +94,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public boolean firstUpdate = true;
    public final EntityDataManager dataManager;
    public static final DataParameter<Byte> FLAGS = EntityDataManager.<Byte>createKey(Entity.class, DataSerializers.field33390);
-   private static final DataParameter<Integer> AIR = EntityDataManager.<Integer>createKey(Entity.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> AIR = EntityDataManager.<Integer>createKey(Entity.class, DataSerializers.VARINT);
    private static final DataParameter<Optional<ITextComponent>> CUSTOM_NAME = EntityDataManager.<Optional<ITextComponent>>createKey(Entity.class, DataSerializers.field33395);
    public static final DataParameter<Boolean> CUSTOM_NAME_VISIBLE = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> SILENT = EntityDataManager.<Boolean>createKey(Entity.class, DataSerializers.field33398);
@@ -318,7 +318,7 @@ public abstract class Entity implements INameable, ICommandSource {
          if (this.fire > 0) {
             if (!this.method3249()) {
                if (this.fire % 20 == 0 && !this.method3264()) {
-                  this.method2741(Class8654.field38994, 1.0F);
+                  this.method2741(DamageSource.field38994, 1.0F);
                }
 
                this.method2966(this.fire - 1);
@@ -371,7 +371,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public void method3220() {
       if (!this.method3249()) {
          this.method3221(15);
-         this.method2741(Class8654.field38995, 4.0F);
+         this.method2741(DamageSource.field38995, 4.0F);
       }
    }
 
@@ -534,7 +534,7 @@ public abstract class Entity implements INameable, ICommandSource {
          }
 
          if (this.method3254() && this.method3327()) {
-            this.method2863(Sounds.field26611, 0.7F, 1.6F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
+            this.method2863(SoundEvents.field26611, 0.7F, 1.6F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
             this.method2966(-this.getFireImmuneTicks());
          }
 
@@ -760,15 +760,15 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public SoundEvent method2859() {
-      return Sounds.field26615;
+      return SoundEvents.field26615;
    }
 
    public SoundEvent method2860() {
-      return Sounds.field26614;
+      return SoundEvents.field26614;
    }
 
    public SoundEvent method2861() {
-      return Sounds.field26614;
+      return SoundEvents.field26614;
    }
 
    public void method3240() {
@@ -1201,7 +1201,7 @@ public abstract class Entity implements INameable, ICommandSource {
       this.velocityChanged = true;
    }
 
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          this.method3141();
          return false;
@@ -1277,7 +1277,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return false;
    }
 
-   public void method2739(Entity var1, int var2, Class8654 var3) {
+   public void method2739(Entity var1, int var2, DamageSource var3) {
       if (var1 instanceof ServerPlayerEntity) {
          CriteriaTriggers.field44467.method15158((ServerPlayerEntity)var1, this, var3);
       }
@@ -1906,7 +1906,7 @@ public abstract class Entity implements INameable, ICommandSource {
          this.method3221(8);
       }
 
-      this.method2741(Class8654.field38993, 5.0F);
+      this.method2741(DamageSource.field38993, 5.0F);
    }
 
    public void method3354(boolean var1) {
@@ -2034,8 +2034,8 @@ public abstract class Entity implements INameable, ICommandSource {
       );
    }
 
-   public boolean method2760(Class8654 var1) {
-      return this.invulnerable && var1 != Class8654.field39004 && !var1.method31146();
+   public boolean method2760(DamageSource var1) {
+      return this.invulnerable && var1 != DamageSource.field39004 && !var1.method31146();
    }
 
    public boolean method3362() {

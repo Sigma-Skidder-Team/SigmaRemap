@@ -1,7 +1,9 @@
 package mapped;
 
+import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
@@ -9,14 +11,14 @@ import java.util.EnumSet;
 
 public class Class2618 extends Class2595 {
    private static String[] field16893;
-   private final Class1012 field16894;
+   private final WolfEntity field16894;
    private PlayerEntity field16895;
    private final World field16896;
    private final float field16897;
    private int field16898;
    private final Class8522 field16899;
 
-   public Class2618(Class1012 var1, float var2) {
+   public Class2618(WolfEntity var1, float var2) {
       this.field16894 = var1;
       this.field16896 = var1.world;
       this.field16897 = var2;

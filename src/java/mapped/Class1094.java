@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
@@ -7,12 +8,15 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -23,7 +27,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class Class1094 extends Class1018 {
-   private static final DataParameter<Integer> field5986 = EntityDataManager.<Integer>createKey(Class1094.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5986 = EntityDataManager.<Integer>createKey(Class1094.class, DataSerializers.VARINT);
    private static final ResourceLocation field5987 = new ResourceLocation("killer_bunny");
    private int field5988;
    private int field5989;
@@ -45,7 +49,7 @@ public class Class1094 extends Class1018 {
       this.field5600.method20002(2, new Class2785(this, 0.8));
       this.field5600.method20002(3, new Class2680(this, 1.0, Class120.method339(Items.field38052, Items.field38057, Blocks.DANDELION), false));
       this.field5600.method20002(4, new Class2772<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.2, 2.2));
-      this.field5600.method20002(4, new Class2772<Class1012>(this, Class1012.class, 10.0F, 2.2, 2.2));
+      this.field5600.method20002(4, new Class2772<WolfEntity>(this, WolfEntity.class, 10.0F, 2.2, 2.2));
       this.field5600.method20002(4, new Class2772<Class1009>(this, Class1009.class, 4.0F, 2.2, 2.2));
       this.field5600.method20002(5, new Class2634(this));
       this.field5600.method20002(6, new Class2737(this, 0.6));
@@ -226,31 +230,31 @@ public class Class1094 extends Class1018 {
    }
 
    public SoundEvent method5112() {
-      return Sounds.field26991;
+      return SoundEvents.field26991;
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26987;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26987;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26990;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26990;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26989;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26989;
    }
 
    @Override
    public boolean method3114(Entity var1) {
       if (this.method5114() != 99) {
-         return var1.method2741(Class8654.method31115(this), 3.0F);
+         return var1.method2741(DamageSource.method31115(this), 3.0F);
       } else {
-         this.method2863(Sounds.field26988, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-         return var1.method2741(Class8654.method31115(this), 8.0F);
+         this.method2863(SoundEvents.field26988, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+         return var1.method2741(DamageSource.method31115(this), 8.0F);
       }
    }
 
@@ -260,7 +264,7 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       return !this.method2760(var1) ? super.method2741(var1, var2) : false;
    }
 
@@ -269,7 +273,7 @@ public class Class1094 extends Class1018 {
    }
 
    public Class1094 method4389(ServerWorld var1, Class1045 var2) {
-      Class1094 var5 = EntityType.field41071.method33215(var1);
+      Class1094 var5 = EntityType.RABBIT.method33215(var1);
       int var6 = this.method5116(var1);
       if (this.rand.nextInt(20) != 0) {
          if (var2 instanceof Class1094 && this.rand.nextBoolean()) {
@@ -298,7 +302,7 @@ public class Class1094 extends Class1018 {
          this.field5600.method20002(4, new Class2648(this));
          this.field5601.method20002(1, new Class2704(this).method10918());
          this.field5601.method20002(2, new Class2709<PlayerEntity>(this, PlayerEntity.class, true));
-         this.field5601.method20002(2, new Class2709<Class1012>(this, Class1012.class, true));
+         this.field5601.method20002(2, new Class2709<WolfEntity>(this, WolfEntity.class, true));
          if (!this.method3381()) {
             this.method3379(new TranslationTextComponent(Util.method38486("entity", field5987)));
          }

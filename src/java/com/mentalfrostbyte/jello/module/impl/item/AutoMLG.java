@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;

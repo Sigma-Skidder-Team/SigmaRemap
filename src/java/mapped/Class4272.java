@@ -127,7 +127,7 @@ public class Class4272 extends Class4247 {
          }
 
          super.draw(var1);
-         RenderUtil.method11422();
+         RenderUtil.endScissor();
       }
    }
 }

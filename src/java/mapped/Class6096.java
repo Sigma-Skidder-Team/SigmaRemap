@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
 
 public class Class6096 extends Class6069 {
    private static String[] field27340;
@@ -27,13 +28,13 @@ public class Class6096 extends Class6069 {
    }
 
    @Override
-   public int method18814(int var1, Class8654 var2) {
+   public int method18814(int var1, DamageSource var2) {
       if (var2.method31135()) {
          return 0;
       } else if (this.field27341 != Class1957.field12753) {
          if (this.field27341 == Class1957.field12754 && var2.method31141()) {
             return var1 * 2;
-         } else if (this.field27341 == Class1957.field12755 && var2 == Class8654.field39002) {
+         } else if (this.field27341 == Class1957.field12755 && var2 == DamageSource.field39002) {
             return var1 * 3;
          } else if (this.field27341 == Class1957.field12756 && var2.method31131()) {
             return var1 * 2;

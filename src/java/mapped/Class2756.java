@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -81,7 +82,7 @@ public class Class2756 extends Class2754 {
       }
 
       if (this.field17300 && !var3) {
-         this.field17298.method2863(Sounds.field26504, 1.0F, 1.0F);
+         this.field17298.method2863(SoundEvents.field26504, 1.0F, 1.0F);
       }
 
       Vector3d var9 = this.field17298.getVec();

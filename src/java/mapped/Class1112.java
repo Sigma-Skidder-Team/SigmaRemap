@@ -8,7 +8,9 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
@@ -52,7 +54,7 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          if (var1.method31113() instanceof Class899 && var1.method31109() instanceof PlayerEntity) {
             super.method2741(var1, 1000.0F);
@@ -81,18 +83,18 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26616;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26616;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26618;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26618;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26617;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26617;
    }
 
    @Override

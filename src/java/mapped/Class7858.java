@@ -17,7 +17,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.lang3.mutable.MutableFloat;
 import org.apache.commons.lang3.mutable.MutableInt;
@@ -104,7 +106,7 @@ public class Class7858 {
       }
    }
 
-   public static int method26317(Iterable<ItemStack> var0, Class8654 var1) {
+   public static int method26317(Iterable<ItemStack> var0, DamageSource var1) {
       MutableInt var4 = new MutableInt();
       method26316((var2, var3) -> var4.add(var2.method18814(var3, var1)), var0);
       return var4.intValue();

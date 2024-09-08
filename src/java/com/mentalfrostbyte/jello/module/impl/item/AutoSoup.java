@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.unmapped.Class8005;
 import mapped.*;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;

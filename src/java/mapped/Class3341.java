@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
@@ -74,7 +75,7 @@ public class Class3341 extends Item {
                   var2.getPosX(),
                   var2.getPosY(),
                   var2.getPosZ(),
-                  Sounds.field26544,
+                  SoundEvents.field26544,
                   Class2266.field14734,
                   0.5F,
                   0.4F / (field18735.nextFloat() * 0.4F + 0.8F)

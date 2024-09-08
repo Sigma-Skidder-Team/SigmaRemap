@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -100,14 +101,14 @@ public class Class3406 extends Block implements Class3405 {
          );
          if (var4.nextInt(200) == 0) {
             var2.method6745(
-               var7, var9, var11, Sounds.field26422, Class2266.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
+               var7, var9, var11, SoundEvents.field26422, Class2266.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
             );
          }
       } else {
          var2.method6748(ParticleTypes.field34102, var7 + 0.5, var9 + 0.8, var11, 0.0, 0.0, 0.0);
          if (var4.nextInt(200) == 0) {
             var2.method6745(
-               var7, var9, var11, Sounds.field26424, Class2266.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
+               var7, var9, var11, SoundEvents.field26424, Class2266.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
             );
          }
       }

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -13,7 +14,7 @@ public interface Class7373 {
 
    void method23360();
 
-   void method23361(EnderCrystalEntity var1, BlockPos var2, Class8654 var3, PlayerEntity var4);
+   void method23361(EnderCrystalEntity var1, BlockPos var2, DamageSource var3, PlayerEntity var4);
 
    void method23362();
 
@@ -28,5 +29,5 @@ public interface Class7373 {
    @Nullable
    Vector3d method23365();
 
-   float method23366(Class8654 var1, float var2);
+   float method23366(DamageSource var1, float var2);
 }

@@ -10,6 +10,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -55,7 +56,7 @@ public class Class8039 {
       }
    }
 
-   public void method27599(Class8654 var1, float var2, float var3) {
+   public void method27599(DamageSource var1, float var2, float var3) {
       this.method27606();
       this.method27598();
       Class9569 var6 = new Class9569(var1, this.field34542.ticksExisted, var2, var3, this.field34548, this.field34542.fallDistance);
@@ -79,9 +80,9 @@ public class Class8039 {
          ITextComponent var5 = var4.method37105();
          Entity var6 = var4.method37101().method31109();
          Object var7;
-         if (var3 != null && var4.method37101() == Class8654.field39002) {
+         if (var3 != null && var4.method37101() == DamageSource.field39002) {
             ITextComponent var8 = var3.method37105();
-            if (var3.method37101() == Class8654.field39002 || var3.method37101() == Class8654.field39004) {
+            if (var3.method37101() == DamageSource.field39002 || var3.method37101() == DamageSource.field39004) {
                var7 = new TranslationTextComponent("death.fell.accident." + this.method27603(var3), this.field34542.getDisplayName());
             } else if (var8 != null && (var5 == null || !var8.equals(var5))) {
                Entity var11 = var3.method37101().method31109();
@@ -141,7 +142,7 @@ public class Class8039 {
       for (int var7 = 0; var7 < this.field34541.size(); var7++) {
          Class9569 var8 = this.field34541.get(var7);
          Class9569 var9 = var7 <= 0 ? null : this.field34541.get(var7 - 1);
-         if ((var8.method37101() == Class8654.field39002 || var8.method37101() == Class8654.field39004)
+         if ((var8.method37101() == DamageSource.field39002 || var8.method37101() == DamageSource.field39004)
             && var8.method37106() > 0.0F
             && (var3 == null || var8.method37106() > var6)) {
             if (var7 <= 0) {

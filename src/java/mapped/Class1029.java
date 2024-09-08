@@ -6,7 +6,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -79,7 +81,7 @@ public class Class1029 extends Class1026 {
 
    @Override
    public SoundEvent method4546() {
-      return Sounds.field26995;
+      return SoundEvents.field26995;
    }
 
    @Override
@@ -159,7 +161,7 @@ public class Class1029 extends Class1026 {
             this.field5729--;
             this.method4582();
             if (this.field5729 == 0) {
-               this.method2863(Sounds.field27000, 1.0F, 1.0F);
+               this.method2863(SoundEvents.field27000, 1.0F, 1.0F);
                this.field5730 = 20;
             }
          }
@@ -196,7 +198,7 @@ public class Class1029 extends Class1026 {
             this.method4584(var1);
          } else {
             this.field5729 = 40;
-            this.method2863(Sounds.field26999, 1.0F, 1.0F);
+            this.method2863(SoundEvents.field26999, 1.0F, 1.0F);
             this.world.method6786(this, (byte)39);
             var1.method3101(this);
          }
@@ -209,7 +211,7 @@ public class Class1029 extends Class1026 {
       if (this.isAlive()) {
          for (Entity var4 : this.world.<Entity>method6772(LivingEntity.class, this.getBoundingBox().method19664(4.0), field5727)) {
             if (!(var4 instanceof Class1025)) {
-               var4.method2741(Class8654.method31115(this), 6.0F);
+               var4.method2741(DamageSource.method31115(this), 6.0F);
             }
 
             this.method4584(var4);
@@ -241,7 +243,7 @@ public class Class1029 extends Class1026 {
          }
       } else {
          this.field5728 = 10;
-         this.method2863(Sounds.field26994, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field26994, 1.0F, 1.0F);
       }
 
       super.method2866(var1);
@@ -263,29 +265,29 @@ public class Class1029 extends Class1026 {
    public boolean method3114(Entity var1) {
       this.field5728 = 10;
       this.world.method6786(this, (byte)4);
-      this.method2863(Sounds.field26994, 1.0F, 1.0F);
+      this.method2863(SoundEvents.field26994, 1.0F, 1.0F);
       return super.method3114(var1);
    }
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26993;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26993;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26997;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26997;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26996;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26996;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field26998, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field26998, 0.15F, 1.0F);
    }
 
    @Override

@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.math.BlockPos;
@@ -37,7 +38,7 @@ public class Class8830<U> {
    public static final Class8830<List<Class9378>> field39832 = method31928("interactable_doors");
    public static final Class8830<Set<Class9378>> field39833 = method31928("doors_to_close");
    public static final Class8830<BlockPos> field39834 = method31928("nearest_bed");
-   public static final Class8830<Class8654> field39835 = method31928("hurt_by");
+   public static final Class8830<DamageSource> field39835 = method31928("hurt_by");
    public static final Class8830<LivingEntity> field39836 = method31928("hurt_by_entity");
    public static final Class8830<LivingEntity> field39837 = method31928("avoid_target");
    public static final Class8830<LivingEntity> field39838 = method31928("nearest_hostile");

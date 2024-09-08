@@ -4,8 +4,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.passive.WaterMobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -13,13 +15,14 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
 import java.util.Random;
 
-public abstract class Class1049 extends Class1047 {
+public abstract class Class1049 extends WaterMobEntity {
    private static final DataParameter<Boolean> field5809 = EntityDataManager.<Boolean>createKey(Class1049.class, DataSerializers.field33398);
 
    public Class1049(EntityType<? extends Class1049> var1, World var2) {
@@ -117,7 +120,7 @@ public abstract class Class1049 extends Class1047 {
          );
          this.onGround = false;
          this.isAirBorne = true;
-         this.method2863(this.method4798(), this.method3099(), this.method3100());
+         this.method2863(this.getFlopSound(), this.method3099(), this.method3100());
       }
 
       super.method2871();
@@ -127,9 +130,9 @@ public abstract class Class1049 extends Class1047 {
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (var5.getItem() == Items.field37883 && this.isAlive()) {
-         this.method2863(Sounds.field26430, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field26430, 1.0F, 1.0F);
          var5.method32182(1);
-         ItemStack var6 = this.method4796();
+         ItemStack var6 = this.getFishBucket();
          this.method4795(var6);
          if (!this.world.isRemote) {
             CriteriaTriggers.field44474.method15152((ServerPlayerEntity)var1, var6);
@@ -156,17 +159,17 @@ public abstract class Class1049 extends Class1047 {
       }
    }
 
-   public abstract ItemStack method4796();
+   public abstract ItemStack getFishBucket();
 
    public boolean method4797() {
       return true;
    }
 
-   public abstract SoundEvent method4798();
+   public abstract SoundEvent getFlopSound();
 
    @Override
    public SoundEvent method2859() {
-      return Sounds.field26583;
+      return SoundEvents.field26583;
    }
 
    @Override

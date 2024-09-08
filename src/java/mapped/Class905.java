@@ -9,7 +9,9 @@ import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
@@ -279,7 +281,7 @@ public class Class905 extends ProjectileEntity {
       Entity var4 = var1.getEntity();
       Entity var5 = this.method3460();
       LivingEntity var6 = !(var5 instanceof LivingEntity) ? null : (LivingEntity)var5;
-      boolean var7 = var4.method2741(Class8654.method31116(this, var6).method31130(), 4.0F);
+      boolean var7 = var4.method2741(DamageSource.method31116(this, var6).method31130(), 4.0F);
       if (var7) {
          this.method3399(var6, var4);
          if (var4 instanceof LivingEntity) {
@@ -292,7 +294,7 @@ public class Class905 extends ProjectileEntity {
    public void method3466(BlockRayTraceResult var1) {
       super.method3466(var1);
       ((ServerWorld)this.world).method6939(ParticleTypes.field34070, this.getPosX(), this.getPosY(), this.getPosZ(), 2, 0.2, 0.2, 0.2, 0.0);
-      this.method2863(Sounds.field27046, 1.0F, 1.0F);
+      this.method2863(SoundEvents.field27046, 1.0F, 1.0F);
    }
 
    @Override
@@ -307,9 +309,9 @@ public class Class905 extends ProjectileEntity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.world.isRemote) {
-         this.method2863(Sounds.field27047, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field27047, 1.0F, 1.0F);
          ((ServerWorld)this.world).method6939(ParticleTypes.field34054, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
          this.method2904();
       }

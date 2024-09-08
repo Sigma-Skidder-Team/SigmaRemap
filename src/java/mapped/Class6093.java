@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 
 import java.util.Random;
 import java.util.Map.Entry;
@@ -40,7 +41,7 @@ public class Class6093 extends Class6069 {
       Entry var7 = Class7858.method26339(Class8122.field34903, var1);
       if (method18830(var3, var6)) {
          if (var2 != null) {
-            var2.method2741(Class8654.method31125(var1), (float)method18831(var3, var6));
+            var2.method2741(DamageSource.method31125(var1), (float)method18831(var3, var6));
          }
 
          if (var7 != null) {

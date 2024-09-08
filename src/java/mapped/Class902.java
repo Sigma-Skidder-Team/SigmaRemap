@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.IBlockReader;
@@ -51,10 +52,10 @@ public class Class902 extends Class901 {
          Entity var5 = this.method3460();
          boolean var6;
          if (!(var5 instanceof LivingEntity)) {
-            var6 = var4.method2741(Class8654.field39006, 5.0F);
+            var6 = var4.method2741(DamageSource.field39006, 5.0F);
          } else {
             LivingEntity var7 = (LivingEntity)var5;
-            var6 = var4.method2741(Class8654.method31122(this, var7), 8.0F);
+            var6 = var4.method2741(DamageSource.method31122(this, var7), 8.0F);
             if (var6) {
                if (!var4.isAlive()) {
                   var7.method3041(5.0F);
@@ -97,7 +98,7 @@ public class Class902 extends Class901 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       return false;
    }
 

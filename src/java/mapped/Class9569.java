@@ -3,18 +3,19 @@ package mapped;
 import javax.annotation.Nullable;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class9569 {
    private static String[] field44556;
-   private final Class8654 field44557;
+   private final DamageSource field44557;
    private final int field44558;
    private final float field44559;
    private final float field44560;
    private final String field44561;
    private final float field44562;
 
-   public Class9569(Class8654 var1, int var2, float var3, float var4, String var5, float var6) {
+   public Class9569(DamageSource var1, int var2, float var3, float var4, String var5, float var6) {
       this.field44557 = var1;
       this.field44558 = var2;
       this.field44559 = var4;
@@ -23,7 +24,7 @@ public class Class9569 {
       this.field44562 = var6;
    }
 
-   public Class8654 method37101() {
+   public DamageSource method37101() {
       return this.field44557;
    }
 
@@ -46,6 +47,6 @@ public class Class9569 {
    }
 
    public float method37106() {
-      return this.field44557 != Class8654.field39004 ? this.field44562 : Float.MAX_VALUE;
+      return this.field44557 != DamageSource.field39004 ? this.field44562 : Float.MAX_VALUE;
    }
 }

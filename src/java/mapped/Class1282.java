@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.Items;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Comparator;
@@ -124,7 +126,7 @@ public class Class1282 extends Class1274<Class1171> {
 
       if (this.field6841 >= 0) {
          this.method6102(this.method6098(this.field6841));
-         this.field6782.getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.field27176, 1.0F));
+         this.field6782.getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
       }
    }
 

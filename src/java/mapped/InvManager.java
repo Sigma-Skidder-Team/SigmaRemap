@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.unmapped.Class8005;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;
 

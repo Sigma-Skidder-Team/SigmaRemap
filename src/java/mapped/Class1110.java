@@ -7,7 +7,9 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -15,7 +17,7 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 public class Class1110 extends Class1111 implements Class1008 {
-   private static final DataParameter<Integer> field6087 = EntityDataManager.<Integer>createKey(Class1110.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field6087 = EntityDataManager.<Integer>createKey(Class1110.class, DataSerializers.VARINT);
    private Vector3d field6088 = Vector3d.ZERO;
    private BlockPos field6089 = BlockPos.ZERO;
    private Class2143 field6090 = Class2143.field14028;
@@ -90,7 +92,7 @@ public class Class1110 extends Class1111 implements Class1008 {
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),
-                  Sounds.field26921,
+                  SoundEvents.field26921,
                   this.method2864(),
                   0.95F + this.rand.nextFloat() * 0.05F,
                   0.95F + this.rand.nextFloat() * 0.05F,
@@ -164,18 +166,18 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26918;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26918;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26922;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26922;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26920;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26920;
    }
 
    @Override

@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.SoundEvents;
 
 import java.util.List;
 import java.util.Random;
@@ -173,7 +175,7 @@ public class Class5822 extends Class5812 {
                this.field25505.method3622();
                this.field25508.method15235(var1.method2929());
                this.method18106(this.field25505);
-               var6x.method6742((PlayerEntity)null, var7x, Sounds.field26533, Class2266.field14732, 1.0F, var6x.rand.nextFloat() * 0.1F + 0.9F);
+               var6x.method6742((PlayerEntity)null, var7x, SoundEvents.field26533, Class2266.field14732, 1.0F, var6x.rand.nextFloat() * 0.1F + 0.9F);
             }
          });
          return true;

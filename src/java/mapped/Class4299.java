@@ -116,7 +116,7 @@ public class Class4299 extends Class4278 {
       RenderUtil.method11436(
          (float)this.field20895 + (float)var7 / 12.0F, (float)this.field20896 + (float)var8 * (1.0F - this.field20835), 10.0F, ClientColors.PALE_YELLOW.getColor
       );
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
       this.field20837 = System.currentTimeMillis();
       super.draw(var1);
    }

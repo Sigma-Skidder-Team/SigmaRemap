@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.Items;
 import net.minecraft.world.World;
 
 public class Class891 extends Class890 {

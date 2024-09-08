@@ -1,16 +1,17 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.TameableEntity;
 
 import java.util.EnumSet;
 
 public class Class2702 extends Class2699 {
    private static String[] field17170;
-   private final Class1013 field17171;
+   private final TameableEntity field17171;
    private LivingEntity field17172;
    private int field17173;
 
-   public Class2702(Class1013 var1) {
+   public Class2702(TameableEntity var1) {
       super(var1, false);
       this.field17171 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14660));

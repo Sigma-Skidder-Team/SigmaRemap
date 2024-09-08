@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -75,7 +76,7 @@ public class Class883 extends ProjectileEntity {
       super.method3465(var1);
       Entity var4 = this.method3460();
       if (var4 instanceof LivingEntity) {
-         var1.getEntity().method2741(Class8654.method31116(this, (LivingEntity)var4).method31130(), 1.0F);
+         var1.getEntity().method2741(DamageSource.method31116(this, (LivingEntity)var4).method31130(), 1.0F);
       }
    }
 

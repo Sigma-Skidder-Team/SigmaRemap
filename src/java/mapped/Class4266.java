@@ -125,7 +125,7 @@ public class Class4266 extends Class4247 {
                   (float)(var9 * 2 - 4) * var11.field30490 + 4.0F,
                   ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - var11.field30490 * (0.5F + var11.field30490 * 0.5F)) * 0.4F)
                );
-               RenderUtil.method11422();
+               RenderUtil.endScissor();
                var11.field30490 = Math.min(var11.field30490 + 3.0F / (float) Minecraft.getFps(), 1.0F);
                if (var11.field30490 == 1.0F) {
                   var4.remove();

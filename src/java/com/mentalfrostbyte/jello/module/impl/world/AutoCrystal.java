@@ -15,8 +15,10 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CCloseWindowPacket;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -80,7 +82,7 @@ public class AutoCrystal extends PremiumModule {
             return Class8913.method32581(var1, (float) var0.method3070(), (float) var0.method3086(Attributes.field42114));
         } else {
             PlayerEntity var5 = (PlayerEntity) var0;
-            Class8654 var6 = Class8654.method31126(var2);
+            DamageSource var6 = DamageSource.method31126(var2);
             var1 = Class8913.method32581(var1, (float) var5.method3070(), (float) var5.method3086(Attributes.field42114));
             int var7 = Class7858.method26317(var5.method2947(), var6);
             float var8 = MathHelper.clamp((float) var7, 0.0F, 20.0F);

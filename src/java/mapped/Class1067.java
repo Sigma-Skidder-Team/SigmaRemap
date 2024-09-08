@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -15,33 +17,33 @@ public class Class1067 extends Class1066 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      super.method4241();
-      return Sounds.field26508;
+   public SoundEvent getAmbientSound() {
+      super.getAmbientSound();
+      return SoundEvents.field26508;
    }
 
    @Override
    public SoundEvent method4893() {
       super.method4893();
-      return Sounds.field26509;
+      return SoundEvents.field26509;
    }
 
    @Override
-   public SoundEvent method2880() {
-      super.method2880();
-      return Sounds.field26511;
+   public SoundEvent getDeathSound() {
+      super.getDeathSound();
+      return SoundEvents.field26511;
    }
 
    @Nullable
    @Override
    public SoundEvent method4894() {
-      return Sounds.field26512;
+      return SoundEvents.field26512;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      super.method2879(var1);
-      return Sounds.field26513;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      super.getHurtSound(var1);
+      return SoundEvents.field26513;
    }
 
    @Override

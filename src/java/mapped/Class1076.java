@@ -3,10 +3,9 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -35,41 +34,41 @@ public class Class1076 extends AbstractHorseEntity {
    }
 
    @Override
-   public SoundEvent method4241() {
-      super.method4241();
-      return !this.method3263(Class8953.field40469) ? Sounds.field27061 : Sounds.field27065;
+   public SoundEvent getAmbientSound() {
+      super.getAmbientSound();
+      return !this.method3263(Class8953.field40469) ? SoundEvents.field27061 : SoundEvents.field27065;
    }
 
    @Override
-   public SoundEvent method2880() {
-      super.method2880();
-      return Sounds.field27062;
+   public SoundEvent getDeathSound() {
+      super.getDeathSound();
+      return SoundEvents.field27062;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      super.method2879(var1);
-      return Sounds.field27063;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      super.getHurtSound(var1);
+      return SoundEvents.field27063;
    }
 
    @Override
    public SoundEvent method2859() {
       if (this.onGround) {
          if (!this.isBeingRidden()) {
-            return Sounds.field27068;
+            return SoundEvents.field27068;
          }
 
          this.field5901++;
          if (this.field5901 > 5 && this.field5901 % 3 == 0) {
-            return Sounds.field27066;
+            return SoundEvents.field27066;
          }
 
          if (this.field5901 <= 5) {
-            return Sounds.field27068;
+            return SoundEvents.field27068;
          }
       }
 
-      return Sounds.field27064;
+      return SoundEvents.field27064;
    }
 
    @Override
@@ -86,7 +85,7 @@ public class Class1076 extends AbstractHorseEntity {
       if (!this.method3250()) {
          super.method4960();
       } else {
-         this.method2863(Sounds.field27067, 0.4F, 1.0F);
+         this.method2863(SoundEvents.field27067, 0.4F, 1.0F);
       }
    }
 

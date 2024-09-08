@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.SquidEntity;
 
 public class Class4134 extends Class4057 {
    public Class4134() {
@@ -49,7 +50,7 @@ public class Class4134 extends Class4057 {
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5682 var6 = new Class5682(var5);
-      var6.field25086 = (Class2879<Class1055>)var1;
+      var6.field25086 = (Class2879<SquidEntity>)var1;
       var6.field25098 = var2;
       return (Class9492)var6;
    }

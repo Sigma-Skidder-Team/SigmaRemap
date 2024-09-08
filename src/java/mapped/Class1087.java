@@ -6,9 +6,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.item.Items;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -37,23 +36,23 @@ public class Class1087 extends Class1018 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26477;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26477;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26479;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26479;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26478;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26478;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field26481, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field26481, 0.15F, 1.0F);
    }
 
    @Override
@@ -65,7 +64,7 @@ public class Class1087 extends Class1018 {
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (var5.getItem() == Items.field37882 && !this.method3005()) {
-         var1.method2863(Sounds.field26480, 1.0F, 1.0F);
+         var1.method2863(SoundEvents.field26480, 1.0F, 1.0F);
          ItemStack var6 = Class8482.method29979(var5, var1, Items.field37891.method11742());
          var1.method3095(var2, var6);
          return ActionResultType.method9002(this.world.isRemote);

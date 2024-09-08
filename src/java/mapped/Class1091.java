@@ -8,13 +8,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -69,7 +68,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
       if (var1 instanceof LivingEntity) {
          this.field5977 = 10;
          this.world.method6786(this, (byte)4);
-         this.method2863(Sounds.field26654, 1.0F, this.method3100());
+         this.method2863(SoundEvents.field26654, 1.0F, this.method3100());
          Class9069.method33785(this, (LivingEntity)var1);
          return Class1092.method5091(this, (LivingEntity)var1);
       } else {
@@ -85,7 +84,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
       if (!this.world.isRemote) {
          if (var5 && var1.method31109() instanceof LivingEntity) {
@@ -124,7 +123,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
       } else {
          this.field5978++;
          if (this.field5978 > 300) {
-            this.method5090(Sounds.field26655);
+            this.method5090(SoundEvents.field26655);
             this.method5083((ServerWorld)this.world);
          }
       }
@@ -199,7 +198,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
          super.method2866(var1);
       } else {
          this.field5977 = 10;
-         this.method2863(Sounds.field26654, 1.0F, this.method3100());
+         this.method2863(SoundEvents.field26654, 1.0F, this.method3100());
       }
    }
 
@@ -303,33 +302,33 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public SoundEvent method4241() {
+   public SoundEvent getAmbientSound() {
       return !this.world.isRemote ? Class9069.method33798(this).orElse((SoundEvent)null) : null;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26657;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26657;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26656;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26656;
    }
 
    @Override
    public SoundEvent method2859() {
-      return Sounds.field26685;
+      return SoundEvents.field26685;
    }
 
    @Override
    public SoundEvent method2860() {
-      return Sounds.field26684;
+      return SoundEvents.field26684;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field26659, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field26659, 0.15F, 1.0F);
    }
 
    public void method5090(SoundEvent var1) {

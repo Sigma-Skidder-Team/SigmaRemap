@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
@@ -32,7 +34,7 @@ public class Class3328 extends Item {
                }
 
                if (var1.getFluidState(var9).method23486(Class8953.field40469)) {
-                  var1.method6743(var2, var2.getPosX(), var2.getPosY(), var2.getPosZ(), Sounds.field26418, Class2266.field14734, 1.0F, 1.0F);
+                  var1.method6743(var2, var2.getPosX(), var2.getPosY(), var2.getPosZ(), SoundEvents.field26418, Class2266.field14734, 1.0F, 1.0F);
                   return Class6794.<ItemStack>method20700(
                      this.method11878(var7, var2, Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34977)), var1.isRemote()
                   );
@@ -46,7 +48,7 @@ public class Class3328 extends Item {
       } else {
          Class999 var8 = (Class999)var6.get(0);
          var8.method4097(var8.method4098() - 0.5F);
-         var1.method6743((PlayerEntity)null, var2.getPosX(), var2.getPosY(), var2.getPosZ(), Sounds.field26419, Class2266.field14734, 1.0F, 1.0F);
+         var1.method6743((PlayerEntity)null, var2.getPosX(), var2.getPosY(), var2.getPosZ(), SoundEvents.field26419, Class2266.field14734, 1.0F, 1.0F);
          return Class6794.<ItemStack>method20700(this.method11878(var7, var2, new ItemStack(Items.field38114)), var1.isRemote());
       }
    }

@@ -7,6 +7,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnExperienceOrbPacket;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -69,7 +71,7 @@ public class ExperienceOrbEntity extends Entity {
             0.2F,
             (double)((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F)
          );
-         this.method2863(Sounds.field26606, 0.4F, 2.0F + this.rand.nextFloat() * 0.4F);
+         this.method2863(SoundEvents.field26606, 0.4F, 2.0F + this.rand.nextFloat() * 0.4F);
       }
 
       if (!this.world.method7051(this.getBoundingBox())) {
@@ -130,7 +132,7 @@ public class ExperienceOrbEntity extends Entity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          this.method3141();
          this.field5558 = (int)((float)this.field5558 - var2);

@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.Items;
 import net.minecraft.network.play.client.CEntityActionPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;

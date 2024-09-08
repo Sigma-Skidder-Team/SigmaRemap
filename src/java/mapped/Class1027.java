@@ -6,10 +6,13 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
@@ -53,18 +56,18 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27233;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27233;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27237;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27237;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27235;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27235;
    }
 
    public void method4567(boolean var1) {
@@ -117,7 +120,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                         this.getPosX(),
                         this.getPosY(),
                         this.getPosZ(),
-                        Sounds.field27236,
+                        SoundEvents.field27236,
                         this.method2864(),
                         1.0F,
                         0.8F + this.rand.nextFloat() * 0.4F
@@ -154,7 +157,7 @@ public class Class1027 extends Class1026 implements Class1022 {
 
    @Override
    public SoundEvent method4546() {
-      return Sounds.field27234;
+      return SoundEvents.field27234;
    }
 
    @Override
@@ -178,7 +181,7 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    @Override
-   public float method3072(Class8654 var1, float var2) {
+   public float method3072(DamageSource var1, float var2) {
       var2 = super.method3072(var1, var2);
       if (var1.method31109() == this) {
          var2 = 0.0F;
@@ -229,7 +232,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),
-                  Sounds.field27238,
+                  SoundEvents.field27238,
                   this.method2864(),
                   1.0F,
                   0.8F + this.rand.nextFloat() * 0.4F

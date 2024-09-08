@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.item.Items;
+
 import java.util.function.Supplier;
 
 public enum Class2282 implements Class2283 {

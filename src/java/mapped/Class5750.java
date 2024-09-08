@@ -1,19 +1,20 @@
 package mapped;
 
+import net.minecraft.entity.passive.fish.SalmonEntity;
 import net.minecraft.util.ResourceLocation;
 
-public class Class5750 extends Class5651<Class1053, Class2816<Class1053>> {
+public class Class5750 extends Class5651<SalmonEntity, Class2816<SalmonEntity>> {
    private static final ResourceLocation field25178 = new ResourceLocation("textures/entity/fish/salmon.png");
 
    public Class5750(EntityRendererManager var1) {
-      super(var1, new Class2816<Class1053>(), 0.4F);
+      super(var1, new Class2816<SalmonEntity>(), 0.4F);
    }
 
-   public ResourceLocation method17843(Class1053 var1) {
+   public ResourceLocation method17843(SalmonEntity var1) {
       return field25178;
    }
 
-   public void method17842(Class1053 var1, MatrixStack var2, float var3, float var4, float var5) {
+   public void method17842(SalmonEntity var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4, var5);
       float var8 = 1.0F;
       float var9 = 1.0F;

@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
@@ -52,7 +53,7 @@ public class Class3491 extends Class3490 {
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var2.isRemote && var2.method6997() != Difficulty.field14351 && var4 instanceof LivingEntity) {
          LivingEntity var7 = (LivingEntity)var4;
-         if (!var7.method2760(Class8654.field39007)) {
+         if (!var7.method2760(DamageSource.field39007)) {
             var7.method3035(new Class2023(Effects.WITHER, 40));
          }
       }

@@ -1,11 +1,12 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.IAngerable;
 import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.List;
 
-public class Class2779<T extends Class1006 & Class1011> extends Class2595 {
+public class Class2779<T extends Class1006 & IAngerable> extends Class2595 {
    private static String[] field17377;
    private final T field17378;
    private final boolean field17379;
@@ -32,7 +33,7 @@ public class Class2779<T extends Class1006 & Class1011> extends Class2595 {
       this.field17380 = this.field17378.method3015();
       this.field17378.method4371();
       if (this.field17379) {
-         this.method10968().stream().filter(var1 -> var1 != this.field17378).<Class1011>map(var0 -> (Class1011)var0).forEach(Class1011::method4371);
+         this.method10968().stream().filter(var1 -> var1 != this.field17378).<IAngerable>map(var0 -> (IAngerable)var0).forEach(IAngerable::method4371);
       }
 
       super.method10804();

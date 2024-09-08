@@ -6,12 +6,15 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
@@ -135,7 +138,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
       this.method3468();
       if (this.field5123 == 0 && !this.method3245()) {
          this.world
-            .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26577, Class2266.field14736, 3.0F, 1.0F);
+            .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26577, Class2266.field14736, 3.0F, 1.0F);
       }
 
       this.field5123++;
@@ -200,7 +203,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
 
       if (var3 > 0.0F) {
          if (this.field5125 != null) {
-            this.field5125.method2741(Class8654.method31120(this, this.method3460()), 5.0F + (float)(var6.size() * 2));
+            this.field5125.method2741(DamageSource.method31120(this, this.method3460()), 5.0F + (float)(var6.size() * 2));
          }
 
          double var7 = 5.0;
@@ -221,7 +224,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
 
                if (var12) {
                   float var16 = var3 * (float)Math.sqrt((5.0 - (double)this.method3275(var11)) / 5.0);
-                  var11.method2741(Class8654.method31120(this, this.method3460()), var16);
+                  var11.method2741(DamageSource.method31120(this, this.method3460()), var16);
                }
             }
          }

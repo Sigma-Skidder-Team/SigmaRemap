@@ -215,7 +215,7 @@ public class Class4286 extends Class4278 {
                );
             }
 
-            RenderUtil.method11422();
+            RenderUtil.endScissor();
          }
       }
    }

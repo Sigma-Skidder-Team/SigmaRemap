@@ -6,8 +6,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -105,7 +108,7 @@ public class Class1036 extends Class1035 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
       if (!this.world.isRemote) {
          if (var5 && var1.method31109() instanceof LivingEntity) {
@@ -119,31 +122,31 @@ public class Class1036 extends Class1035 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26939;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26939;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26942;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26942;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26941;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26941;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field26943, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field26943, 0.15F, 1.0F);
    }
 
    public void method4638() {
-      this.method2863(Sounds.field26940, 1.0F, this.method3100());
+      this.method2863(SoundEvents.field26940, 1.0F, this.method3100());
    }
 
    @Override
    public void method4630() {
-      this.method2863(Sounds.field26944, 1.0F, this.method3100());
+      this.method2863(SoundEvents.field26944, 1.0F, this.method3100());
    }
 }

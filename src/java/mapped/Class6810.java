@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
@@ -228,8 +229,8 @@ public class Class6810 {
          if (this.field29655 != null && var1 instanceof Class7460) {
             Class7460 var13 = (Class7460)var1;
             Entity var19 = var13.method24131();
-            if (var19 instanceof Class1012) {
-               Class1012 var24 = (Class1012)var19;
+            if (var19 instanceof WolfEntity) {
+               WolfEntity var24 = (WolfEntity)var19;
                if (!var24.method4393()) {
                   return false;
                }

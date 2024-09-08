@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -88,7 +89,7 @@ public class Class3220 extends Block {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      var4.method2741(Class8654.field39001, 1.0F);
+      var4.method2741(DamageSource.field39001, 1.0F);
    }
 
    @Override

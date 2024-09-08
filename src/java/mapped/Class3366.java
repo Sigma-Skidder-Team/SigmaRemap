@@ -6,11 +6,13 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -83,7 +85,7 @@ public class Class3366 extends Class3241 {
          if (var9.getItem() != Items.field37956) {
             if (var9.getItem() == Items.field37972) {
                var9.method32182(1);
-               var2.method6743(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), Sounds.field26418, Class2266.field14734, 1.0F, 1.0F);
+               var2.method6743(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26418, Class2266.field14734, 1.0F, 1.0F);
                if (!var9.isEmpty()) {
                   if (!var4.inventory.method4045(new ItemStack(Items.field38177))) {
                      var4.method2882(new ItemStack(Items.field38177), false);
@@ -95,7 +97,7 @@ public class Class3366 extends Class3241 {
                var11 = true;
             }
          } else {
-            var2.method6743(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), Sounds.field26398, Class2266.field14734, 1.0F, 1.0F);
+            var2.method6743(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26398, Class2266.field14734, 1.0F, 1.0F);
             method11944(var2, var3);
             var9.method32121(1, var4, var1x -> var1x.method3185(var5));
             var11 = true;

@@ -96,7 +96,7 @@ public class Class4271 extends Class4247 {
             this.field20912,
             ColorUtils.applyAlpha(this.field20914.method19405(), var1 * 0.7F)
          );
-         RenderUtil.method11422();
+         RenderUtil.endScissor();
       }
 
       RenderUtil.method11420(
@@ -108,7 +108,7 @@ public class Class4271 extends Class4247 {
       }
 
       GL11.glPopMatrix();
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
       RenderUtil.method11428(
          (float)this.method13263(),
          (float)this.method13265(),

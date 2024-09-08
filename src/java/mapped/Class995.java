@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -133,7 +134,7 @@ public abstract class Class995 extends Entity {
          return false;
       } else {
          PlayerEntity var4 = (PlayerEntity)var1;
-         return this.world.method6785(var4, this.field5488) ? this.method2741(Class8654.method31117(var4), 0.0F) : true;
+         return this.world.method6785(var4, this.field5488) ? this.method2741(DamageSource.method31117(var4), 0.0F) : true;
       }
    }
 
@@ -143,7 +144,7 @@ public abstract class Class995 extends Entity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          if (!this.removed && !this.world.isRemote) {
             this.method2904();

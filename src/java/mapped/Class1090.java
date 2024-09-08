@@ -6,13 +6,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -111,8 +110,8 @@ public class Class1090 extends Class1018 {
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26865;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26865;
    }
 
    @Override
@@ -121,13 +120,13 @@ public class Class1090 extends Class1018 {
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26864;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26864;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26866;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26866;
    }
 
    private float method5075() {
@@ -136,11 +135,11 @@ public class Class1090 extends Class1018 {
 
    @Override
    public boolean method3114(Entity var1) {
-      return var1.method2741(Class8654.method31115(this), this.method5075());
+      return var1.method2741(DamageSource.method31115(this), this.method5075());
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       return !this.method2760(var1) ? super.method2741(var1, var2) : false;
    }
 

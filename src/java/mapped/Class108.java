@@ -3,24 +3,25 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 
 public enum Class108 implements IStringSerializable {
-   field347("harp", Sounds.field26854),
-   field348("basedrum", Sounds.field26848),
-   field349("snare", Sounds.field26857),
-   field350("hat", Sounds.field26855),
-   field351("bass", Sounds.field26849),
-   field352("flute", Sounds.field26852),
-   field353("bell", Sounds.field26850),
-   field354("guitar", Sounds.field26853),
-   field355("chime", Sounds.field26851),
-   field356("xylophone", Sounds.field26858),
-   field357("iron_xylophone", Sounds.field26859),
-   field358("cow_bell", Sounds.field26860),
-   field359("didgeridoo", Sounds.field26861),
-   field360("bit", Sounds.field26862),
-   field361("banjo", Sounds.field26863),
-   field362("pling", Sounds.field26856);
+   field347("harp", SoundEvents.field26854),
+   field348("basedrum", SoundEvents.field26848),
+   field349("snare", SoundEvents.field26857),
+   field350("hat", SoundEvents.field26855),
+   field351("bass", SoundEvents.field26849),
+   field352("flute", SoundEvents.field26852),
+   field353("bell", SoundEvents.field26850),
+   field354("guitar", SoundEvents.field26853),
+   field355("chime", SoundEvents.field26851),
+   field356("xylophone", SoundEvents.field26858),
+   field357("iron_xylophone", SoundEvents.field26859),
+   field358("cow_bell", SoundEvents.field26860),
+   field359("didgeridoo", SoundEvents.field26861),
+   field360("bit", SoundEvents.field26862),
+   field361("banjo", SoundEvents.field26863),
+   field362("pling", SoundEvents.field26856);
 
    private final String field363;
    private final SoundEvent field364;

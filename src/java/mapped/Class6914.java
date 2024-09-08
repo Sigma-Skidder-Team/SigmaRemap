@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Map;
@@ -40,7 +41,7 @@ public class Class6914 {
       method21119(EntityType.field41036, Class2068.field13473, Class101.field300, Class1105::method5311);
       method21119(EntityType.field41070, Class2068.field13473, Class101.field300, Class1049::method4792);
       method21119(EntityType.field41073, Class2068.field13473, Class101.field300, Class1049::method4792);
-      method21119(EntityType.field41086, Class2068.field13473, Class101.field300, Class1055::method4839);
+      method21119(EntityType.field41086, Class2068.field13473, Class101.field300, SquidEntity::method4839);
       method21119(EntityType.field41095, Class2068.field13473, Class101.field300, Class1049::method4792);
       method21119(EntityType.field41008, Class2068.field13472, Class101.field300, Class1114::method5366);
       method21119(EntityType.field41010, Class2068.field13472, Class101.field300, Class1009::method4342);
@@ -68,8 +69,8 @@ public class Class6914 {
       method21119(EntityType.field41065, Class2068.field13472, Class101.field300, Class1034::method4615);
       method21119(EntityType.field41067, Class2068.field13472, Class101.field300, Class1028::method4572);
       method21119(EntityType.field41068, Class2068.field13472, Class101.field300, Class1096::method5181);
-      method21119(EntityType.field41071, Class2068.field13472, Class101.field300, Class1094::method5117);
-      method21119(EntityType.field41074, Class2068.field13472, Class101.field300, Class1018::method4500);
+      method21119(EntityType.RABBIT, Class2068.field13472, Class101.field300, Class1094::method5117);
+      method21119(EntityType.SHEEP, Class2068.field13472, Class101.field300, Class1018::method4500);
       method21119(EntityType.field41077, Class2068.field13472, Class101.field300, Class1107::method5317);
       method21119(EntityType.field41078, Class2068.field13472, Class101.field300, Class1009::method4341);
       method21119(EntityType.field41079, Class2068.field13472, Class101.field300, Class1018::method4500);
@@ -91,7 +92,7 @@ public class Class6914 {
       method21119(EntityType.field41012, Class2068.field13472, Class101.field300, Class1018::method4500);
       method21119(EntityType.field41022, Class2068.field13473, Class101.field300, Class1105::method5311);
       method21119(EntityType.field41027, Class2068.field13474, Class101.field300, Class1009::method4341);
-      method21119(EntityType.field41033, Class2068.field13474, Class101.field300, Class1018::method4500);
+      method21119(EntityType.FOX, Class2068.field13474, Class101.field300, Class1018::method4500);
       method21119(EntityType.field41040, Class2068.field13474, Class101.field300, Class1009::method4341);
       method21119(EntityType.field41061, Class2068.field13474, Class101.field300, Class1018::method4500);
       method21119(EntityType.field41063, Class2068.field13474, Class101.field300, Class1006::method4264);

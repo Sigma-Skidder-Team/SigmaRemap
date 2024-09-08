@@ -116,7 +116,7 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
       var18.method32214(var12);
       var18.method32215(false);
       Class7735 var19 = Minecraft.getInstance().getRenderTypeBuffers().method26536();
-      RenderSystem.method27940(() -> var18.method32219(var5, 0.0, 0.0, 0.0, 0.0F, 1.0F, var10, var19, 15728880));
+      RenderSystem.runAsFancy(() -> var18.method32219(var5, 0.0, 0.0, 0.0, 0.0F, 1.0F, var10, var19, 15728880));
       var19.method25602();
       var18.method32215(true);
       var5.field4965 = var13;

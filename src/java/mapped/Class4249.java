@@ -31,7 +31,7 @@ public class Class4249 extends Class4247 {
          ResourcesDecrypter.repeatPNG,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.35F)
       );
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
       super.draw(var1);
    }
 }

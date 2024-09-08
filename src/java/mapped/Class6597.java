@@ -5,6 +5,7 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.Items;
 
 public class Class6597 {
    public static final Class6597 field29027 = new Class6597(

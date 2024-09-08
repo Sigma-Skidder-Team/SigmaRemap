@@ -9,7 +9,9 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
@@ -67,23 +69,23 @@ public class Class1101 extends Class1009 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27119;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27119;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27121;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27121;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27120;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27120;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field27122, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field27122, 0.15F, 1.0F);
    }
 
    @Override

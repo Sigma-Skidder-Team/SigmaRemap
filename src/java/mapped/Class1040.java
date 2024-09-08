@@ -5,14 +5,13 @@ import com.mojang.serialization.Dynamic;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -155,7 +154,7 @@ public class Class1040 extends Class1038 implements Class1041 {
                this.getPosX(),
                this.method3442(),
                this.getPosZ(),
-               Sounds.field27301,
+               SoundEvents.field27301,
                this.method2864(),
                1.0F + this.rand.nextFloat(),
                this.rand.nextFloat() * 0.7F + 0.3F,
@@ -239,23 +238,23 @@ public class Class1040 extends Class1038 implements Class1041 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27299;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27299;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27303;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27303;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27302;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27302;
    }
 
    @Override
    public SoundEvent method4643() {
-      return Sounds.field27304;
+      return SoundEvents.field27304;
    }
 
    @Override

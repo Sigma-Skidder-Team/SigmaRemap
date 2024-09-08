@@ -79,7 +79,7 @@ public class RedeemKeyScreen extends Class4305 {
                var5.method36701(),
                ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
             );
-            RenderUtil.method11422();
+            RenderUtil.endScissor();
          }
       }
 

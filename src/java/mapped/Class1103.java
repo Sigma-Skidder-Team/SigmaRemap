@@ -6,7 +6,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
@@ -47,18 +49,18 @@ public class Class1103 extends Class1009 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26402;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26402;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26405;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26405;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26404;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26404;
    }
 
    @Override
@@ -79,7 +81,7 @@ public class Class1103 extends Class1009 {
                   this.getPosX() + 0.5,
                   this.getPosY() + 0.5,
                   this.getPosZ() + 0.5,
-                  Sounds.field26403,
+                  SoundEvents.field26403,
                   this.method2864(),
                   1.0F + this.rand.nextFloat(),
                   this.rand.nextFloat() * 0.7F + 0.3F,

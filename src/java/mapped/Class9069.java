@@ -5,7 +5,10 @@ import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.RangedInteger;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.util.TickRangeConverter;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
@@ -13,8 +16,8 @@ import java.util.Optional;
 
 public class Class9069 {
    private static String[] field41499;
-   private static final Class8369 field41500 = Class8763.method31620(5, 20);
-   private static final Class8369 field41501 = Class8369.method29318(5, 16);
+   private static final RangedInteger field41500 = TickRangeConverter.convertRange(5, 20);
+   private static final RangedInteger field41501 = RangedInteger.method29318(5, 16);
 
    public static Class6947<?> method33778(Class6947<Class1091> var0) {
       method33779(var0);
@@ -41,7 +44,7 @@ public class Class9069 {
             Class3690.method12538(Class8830.field39870, 1.0F, 8, true),
             new Class3733<>(Class9069::method33789),
             new Class3740<>(Class1091::method5084, (Class3676<? super Class1046>)Class3690.method12539(Class8830.field39864, 0.4F, 8, false)),
-            new Class3702<LivingEntity>(new Class3738(8.0F), Class8369.method29318(30, 60)),
+            new Class3702<LivingEntity>(new Class3738(8.0F), RangedInteger.method29318(30, 60)),
             new Class3682(field41501, 0.6F),
             method33783()
          )
@@ -72,7 +75,7 @@ public class Class9069 {
          ImmutableList.of(
             Class3690.method12539(Class8830.field39837, 1.3F, 15, false),
             method33783(),
-            new Class3702<LivingEntity>(new Class3738(8.0F), Class8369.method29318(30, 60)),
+            new Class3702<LivingEntity>(new Class3738(8.0F), RangedInteger.method29318(30, 60)),
             new Class3714<Class1091>(Class9069::method33791, Class8830.field39837)
          ),
          Class8830.field39837
@@ -192,11 +195,11 @@ public class Class9069 {
 
    private static SoundEvent method33799(Class1091 var0, Class8890 var1) {
       if (var1 == Class8890.field40232 || var0.method5087()) {
-         return Sounds.field26658;
+         return SoundEvents.field26658;
       } else if (var1 != Class8890.field40229) {
-         return !method33801(var0) ? Sounds.field26652 : Sounds.field26658;
+         return !method33801(var0) ? SoundEvents.field26652 : SoundEvents.field26658;
       } else {
-         return Sounds.field26653;
+         return SoundEvents.field26653;
       }
    }
 

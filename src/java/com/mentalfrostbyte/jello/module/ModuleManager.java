@@ -161,10 +161,10 @@ public class ModuleManager {
                 this.register(new Nametags());
                 this.register(new com.mentalfrostbyte.jello.module.impl.render.classic.ESP());
                 this.register(new com.mentalfrostbyte.jello.module.impl.gui.classic.KeyStrokes());
+                this.register(new TargetHUD());
             }
         } else {
             this.register(new InfoHUD());
-            this.register(new TargetHUD());
             this.register(new TabGUI());
             this.register(new Compass());
             this.register(new Cords());

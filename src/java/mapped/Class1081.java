@@ -4,20 +4,19 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Collection;
 
 public class Class1081 extends Class1009 implements Class1080 {
-   private static final DataParameter<Integer> field5938 = EntityDataManager.<Integer>createKey(Class1081.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5938 = EntityDataManager.<Integer>createKey(Class1081.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5939 = EntityDataManager.<Boolean>createKey(Class1081.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> field5940 = EntityDataManager.<Boolean>createKey(Class1081.class, DataSerializers.field33398);
    private int field5941;
@@ -111,7 +110,7 @@ public class Class1081 extends Class1009 implements Class1080 {
 
          int var3 = this.method5020();
          if (var3 > 0 && this.field5942 == 0) {
-            this.method2863(Sounds.field26484, 1.0F, 0.5F);
+            this.method2863(SoundEvents.field26484, 1.0F, 0.5F);
          }
 
          this.field5942 += var3;
@@ -129,17 +128,17 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26483;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26483;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26482;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26482;
    }
 
    @Override
-   public void method3054(Class8654 var1, int var2, boolean var3) {
+   public void method3054(DamageSource var1, int var2, boolean var3) {
       super.method3054(var1, var2, var3);
       Entity var6 = var1.method31109();
       if (var6 != this && var6 instanceof Class1081) {
@@ -191,7 +190,7 @@ public class Class1081 extends Class1009 implements Class1080 {
                this.getPosX(),
                this.getPosY(),
                this.getPosZ(),
-               Sounds.field26587,
+               SoundEvents.field26587,
                this.method2864(),
                1.0F,
                this.rand.nextFloat() * 0.4F + 0.8F

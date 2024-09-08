@@ -5,14 +5,12 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.HandSide;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -156,7 +154,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public void method4942(Class2266 var1) {
       this.field5890.method3621(0, new ItemStack(Items.field37886));
       if (var1 != null) {
-         this.world.method6744((PlayerEntity)null, this, Sounds.field26677, var1, 0.5F, 1.0F);
+         this.world.method6744((PlayerEntity)null, this, SoundEvents.field26677, var1, 0.5F, 1.0F);
       }
    }
 
@@ -207,17 +205,17 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Override
    public boolean method2921(float var1, float var2) {
       if (var1 > 1.0F) {
-         this.method2863(Sounds.field26676, 0.4F, 1.0F);
+         this.method2863(SoundEvents.field26676, 0.4F, 1.0F);
       }
 
       int var5 = this.method3067(var1, var2);
       if (var5 <= 0) {
          return false;
       } else {
-         this.method2741(Class8654.field39002, (float)var5);
+         this.method2741(DamageSource.field39002, (float)var5);
          if (this.isBeingRidden()) {
             for (Entity var7 : this.method3411()) {
-               var7.method2741(Class8654.field39002, (float)var5);
+               var7.method2741(DamageSource.field39002, (float)var5);
             }
          }
 
@@ -265,7 +263,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       boolean var4 = this.method4943();
       this.method4903();
       if (this.ticksExisted > 20 && !var4 && this.method4943()) {
-         this.method2863(Sounds.field26677, 0.5F, 1.0F);
+         this.method2863(SoundEvents.field26677, 0.5F, 1.0F);
       }
    }
 
@@ -280,13 +278,13 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Nullable
    @Override
-   public SoundEvent method2880() {
+   public SoundEvent getDeathSound() {
       return null;
    }
 
    @Nullable
    @Override
-   public SoundEvent method2879(Class8654 var1) {
+   public SoundEvent getHurtSound(DamageSource var1) {
       if (this.rand.nextInt(3) == 0) {
          this.method4958();
       }
@@ -296,7 +294,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
+   public SoundEvent getAmbientSound() {
       if (this.rand.nextInt(10) == 0 && !this.method2896()) {
          this.method4958();
       }
@@ -324,18 +322,18 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             if (this.field5901 > 5 && this.field5901 % 3 == 0) {
                this.method4950(var6);
             } else if (this.field5901 <= 5) {
-               this.method2863(Sounds.field26679, var6.method29710() * 0.15F, var6.method29711());
+               this.method2863(SoundEvents.field26679, var6.method29710() * 0.15F, var6.method29711());
             }
          } else if (var6 != Class8447.field36200) {
-            this.method2863(Sounds.field26678, var6.method29710() * 0.15F, var6.method29711());
+            this.method2863(SoundEvents.field26678, var6.method29710() * 0.15F, var6.method29711());
          } else {
-            this.method2863(Sounds.field26679, var6.method29710() * 0.15F, var6.method29711());
+            this.method2863(SoundEvents.field26679, var6.method29710() * 0.15F, var6.method29711());
          }
       }
    }
 
    public void method4950(Class8447 var1) {
-      this.method2863(Sounds.field26673, var1.method29710() * 0.15F, var1.method29711());
+      this.method2863(SoundEvents.field26673, var1.method29710() * 0.15F, var1.method29711());
    }
 
    public static Class7037 method4951() {
@@ -723,7 +721,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public void method4960() {
-      this.method2863(Sounds.field26675, 0.4F, 1.0F);
+      this.method2863(SoundEvents.field26675, 0.4F, 1.0F);
    }
 
    @Override

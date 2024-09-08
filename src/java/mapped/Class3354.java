@@ -8,6 +8,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IBlockReader;
@@ -154,7 +155,7 @@ public class Class3354 extends Class3241 {
          Class948 var7 = (Class948)var6;
          var7.method3807(var3.method32106(1));
          method11921(var0, var1, var2, true);
-         var0.method6742((PlayerEntity)null, var1, Sounds.field26415, Class2266.field14732, 1.0F, 1.0F);
+         var0.method6742((PlayerEntity)null, var1, SoundEvents.field26415, Class2266.field14732, 1.0F, 1.0F);
       }
    }
 

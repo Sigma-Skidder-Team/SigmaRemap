@@ -5,6 +5,8 @@ import com.google.common.collect.Lists;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 
@@ -117,7 +119,7 @@ public class Class3749 extends Class3676<Class1042> {
                         (double)this.field19897.getX(),
                         (double)this.field19897.getY(),
                         (double)this.field19897.getZ(),
-                        Sounds.field26486,
+                        SoundEvents.field26486,
                         Class2266.field14732,
                         1.0F,
                         1.0F

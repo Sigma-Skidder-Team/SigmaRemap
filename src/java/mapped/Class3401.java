@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IBlockReader;
@@ -78,7 +79,7 @@ public class Class3401 extends Block {
             (double)var3.getX() + 0.5,
             (double)var3.getY() + 0.5,
             (double)var3.getZ() + 0.5,
-            Sounds.field26976,
+            SoundEvents.field26976,
             Class2266.field14732,
             0.5F,
             var4.nextFloat() * 0.4F + 0.8F,

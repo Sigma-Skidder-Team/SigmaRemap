@@ -136,7 +136,7 @@ public class Class4312 extends Class4307 {
       RenderUtil.method11478();
       RenderUtil.method11420(var7 + this.field21002, var8 - this.field20998, var7 + var9 + this.field20998, var8 + var10 + this.field20998);
       RenderUtil.method11467(var7, var8, var9, var10, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
       RenderUtil.method11420(var7 - this.field20998, var8 - this.field20998, var7 + this.field21002, var8 + var10 + this.field20998);
       RenderUtil.method11467(var7, var8, var9, var10, ColorUtils.applyAlpha(-2236963, var1 * 0.75F));
       RenderUtil.method11426(
@@ -146,7 +146,7 @@ public class Class4312 extends Class4307 {
          (float)(var8 + var10),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F)
       );
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
       super.draw(var1);
    }
 }

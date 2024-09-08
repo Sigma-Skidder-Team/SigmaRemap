@@ -3,7 +3,10 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
@@ -43,32 +46,32 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
 
    @Override
    public SoundEvent method2859() {
-      return Sounds.field26685;
+      return SoundEvents.field26685;
    }
 
    @Override
    public SoundEvent method2860() {
-      return Sounds.field26684;
+      return SoundEvents.field26684;
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       return !this.method2760(var1) ? super.method2741(var1, var2) : false;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26682;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26682;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26681;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26681;
    }
 
    @Override
    public SoundEvent method2926(int var1) {
-      return var1 <= 4 ? Sounds.field26683 : Sounds.field26680;
+      return var1 <= 4 ? SoundEvents.field26683 : SoundEvents.field26680;
    }
 
    @Override

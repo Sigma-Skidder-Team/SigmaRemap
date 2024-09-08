@@ -5,6 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Set;
 
 public class Class887 extends AbstractArrowEntity {
-   private static final DataParameter<Integer> field5116 = EntityDataManager.<Integer>createKey(Class887.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5116 = EntityDataManager.<Integer>createKey(Class887.class, DataSerializers.VARINT);
    private Class8812 field5117 = Class8137.field34976;
    private final Set<Class2023> field5118 = Sets.newHashSet();
    private boolean field5119;

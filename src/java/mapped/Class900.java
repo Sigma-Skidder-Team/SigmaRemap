@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
@@ -31,7 +32,7 @@ public class Class900 extends Class898 {
             Entity var5 = this.method3460();
             int var6 = var4.method3222();
             var4.method3221(5);
-            boolean var7 = var4.method2741(Class8654.method31121(this, var5), 5.0F);
+            boolean var7 = var4.method2741(DamageSource.method31121(this, var5), 5.0F);
             if (var7) {
                if (var5 instanceof LivingEntity) {
                   this.method3399((LivingEntity)var5, var4);
@@ -71,7 +72,7 @@ public class Class900 extends Class898 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       return false;
    }
 }

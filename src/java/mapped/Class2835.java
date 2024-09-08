@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;

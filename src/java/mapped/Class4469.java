@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.DamageSource;
 
 public class Class4469 extends Class4457 {
    private final Class9404 field21657;
@@ -16,7 +17,7 @@ public class Class4469 extends Class4457 {
       return new Class4469(Class9587.field44822, var0.method33413(), Class9587.field44822);
    }
 
-   public boolean method14121(ServerPlayerEntity var1, LootContext var2, Class8654 var3, float var4, float var5, boolean var6) {
+   public boolean method14121(ServerPlayerEntity var1, LootContext var2, DamageSource var3, float var4, float var5, boolean var6) {
       return this.field21657.method35779(var1, var3, var4, var5, var6) ? this.field21658.method37227(var2) : false;
    }
 

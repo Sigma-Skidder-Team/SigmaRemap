@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
@@ -27,7 +28,7 @@ public class Class3379 extends Class3231 {
 
    @Override
    public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
-      var3.method2863(Sounds.field26664, 1.0F, 1.0F);
+      var3.method2863(SoundEvents.field26664, 1.0F, 1.0F);
       if (!var1.isRemote) {
          var1.method6786(var3, (byte)54);
       }
@@ -86,7 +87,7 @@ public class Class3379 extends Class3231 {
    private void method11975(World var1, Entity var2) {
       if (method11971(var2)) {
          if (var1.rand.nextInt(5) == 0) {
-            var2.method2863(Sounds.field26664, 1.0F, 1.0F);
+            var2.method2863(SoundEvents.field26664, 1.0F, 1.0F);
          }
 
          if (!var1.isRemote && var1.rand.nextInt(5) == 0) {

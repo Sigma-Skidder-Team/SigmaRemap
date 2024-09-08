@@ -1,5 +1,6 @@
-package mapped;
+package net.minecraft.entity.passive;
 
+import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -9,18 +10,19 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.UUID;
 
-public abstract class Class1013 extends Class1018 {
-   public static final DataParameter<Byte> field5668 = EntityDataManager.<Byte>createKey(Class1013.class, DataSerializers.field33390);
-   public static final DataParameter<Optional<UUID>> field5669 = EntityDataManager.<Optional<UUID>>createKey(Class1013.class, DataSerializers.field33404);
+public abstract class TameableEntity extends Class1018 {
+   public static final DataParameter<Byte> field5668 = EntityDataManager.<Byte>createKey(TameableEntity.class, DataSerializers.field33390);
+   public static final DataParameter<Optional<UUID>> field5669 = EntityDataManager.<Optional<UUID>>createKey(TameableEntity.class, DataSerializers.field33404);
    private boolean field5670;
 
-   public Class1013(EntityType<? extends Class1013> var1, World var2) {
+   public TameableEntity(EntityType<? extends TameableEntity> var1, World var2) {
       super(var1, var2);
       this.method4394();
    }
@@ -198,7 +200,7 @@ public abstract class Class1013 extends Class1018 {
    }
 
    @Override
-   public void method2737(Class8654 var1) {
+   public void method2737(DamageSource var1) {
       if (!this.world.isRemote && this.world.method6789().method17135(Class5462.field24234) && this.method4400() instanceof ServerPlayerEntity) {
          this.method4400().sendMessage(this.method3073().method27600(), Util.DUMMY_UUID);
       }

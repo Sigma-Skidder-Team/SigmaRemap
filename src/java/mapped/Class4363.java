@@ -234,7 +234,7 @@ public class Class4363 extends Class4247 {
             this.method13303() + var4,
             ColorUtils.applyAlpha(this.field20914.method19405(), var1 * 0.7F)
          );
-         RenderUtil.method11422();
+         RenderUtil.endScissor();
       }
 
       boolean var8 = this.field21330.calcPercent() < 1.0F;
@@ -251,7 +251,7 @@ public class Class4363 extends Class4247 {
 
       GL11.glPopMatrix();
       if (var8) {
-         RenderUtil.method11422();
+         RenderUtil.endScissor();
       }
 
       int var9 = this.method13267() - (int)((float)this.method13269() / 2.0F + 0.5F);

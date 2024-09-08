@@ -12,6 +12,7 @@ import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
 import net.minecraft.network.play.server.SPlaySoundPacket;
 import net.minecraft.network.play.server.SPlaySoundEffectPacket;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 
 public class AutoFish extends Module {
     public AutoFish() {
@@ -28,7 +29,7 @@ public class AutoFish extends Module {
                             if (var1.getPacket() instanceof SPlaySoundPacket && !((SPlaySoundPacket) var1.getPacket()).field24315.equals("entity.bobber.splash")) {
                                 return;
                             }
-                        } else if (!((SPlaySoundEffectPacket) var1.getPacket()).method17549().equals(Sounds.field26585)) {
+                        } else if (!((SPlaySoundEffectPacket) var1.getPacket()).method17549().equals(SoundEvents.field26585)) {
                             return;
                         }
 

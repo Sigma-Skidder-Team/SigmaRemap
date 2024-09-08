@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.EnumSet;
@@ -35,7 +36,7 @@ public class Class2766 extends Class2595 {
       Vector3d var4 = var3.method3286(1.0F);
       Class1100.method5280(this.field17340).method20813(var4.x, var4.y, var4.z, 1.0);
       this.field17340.method5276(true);
-      this.field17340.method2863(Sounds.field27186, 1.0F, 1.0F);
+      this.field17340.method2863(SoundEvents.field27186, 1.0F, 1.0F);
    }
 
    @Override

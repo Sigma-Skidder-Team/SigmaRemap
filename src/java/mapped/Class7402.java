@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 
 public final class Class7402 extends ItemGroup {
    public Class7402(int var1, String var2) {

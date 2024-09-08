@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 
 public class Class2636 extends Class2628 {
@@ -34,7 +36,7 @@ public class Class2636 extends Class2628 {
    public void method10805() {
       if (!this.method10838()) {
          if (!this.method10838() && Class1095.method5164(this.field16957).nextFloat() < 0.05F) {
-            this.field16957.method2863(Sounds.field26596, 1.0F, 1.0F);
+            this.field16957.method2863(SoundEvents.field26596, 1.0F, 1.0F);
          }
       } else if (this.field16956 < 40) {
          this.field16956++;
@@ -62,7 +64,7 @@ public class Class2636 extends Class2628 {
                Block.method11557(this.field16957.world, this.field16933, new ItemStack(Items.field38170, var5));
             }
 
-            this.field16957.method2863(Sounds.field27144, 1.0F, 1.0F);
+            this.field16957.method2863(SoundEvents.field27144, 1.0F, 1.0F);
             this.field16957.world.setBlockState(this.field16933, var3.method23465(Class3484.field19342, Integer.valueOf(1)), 2);
          }
       }

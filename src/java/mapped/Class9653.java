@@ -21,6 +21,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -427,7 +428,7 @@ public class Class9653 {
             var7.method36454(Class9525.field44331, (PlayerEntity)var8);
          }
 
-         var7.method36454(Class9525.field44332, Class8654.field39006);
+         var7.method36454(Class9525.field44332, DamageSource.field39006);
          var7.method36455(Class9525.field44334, var8);
          var7.method36455(Class9525.field44333, var8);
          var7.method36454(Class9525.field44330, var1);

@@ -7,9 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IBlockReader;
@@ -67,7 +65,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var4.method3249() && var1.<Boolean>method23463(field18698) && var4 instanceof LivingEntity && !Class7858.method26332((LivingEntity)var4)) {
-         var4.method2741(Class8654.field38992, (float)this.field18704);
+         var4.method2741(DamageSource.field38992, (float)this.field18704);
       }
 
       super.method11523(var1, var2, var3, var4);
@@ -131,7 +129,7 @@ public class Class3244 extends Class3241 implements Class3207 {
                (double)var3.getX() + 0.5,
                (double)var3.getY() + 0.5,
                (double)var3.getZ() + 0.5,
-               Sounds.field26432,
+               SoundEvents.field26432,
                Class2266.field14732,
                0.5F + var4.nextFloat(),
                var4.nextFloat() * 0.7F + 0.6F,
@@ -174,7 +172,7 @@ public class Class3244 extends Class3241 implements Class3207 {
          boolean var7 = var3.<Boolean>method23463(field18698);
          if (var7) {
             if (!var1.isRemote()) {
-               var1.method6742((PlayerEntity)null, var2, Sounds.field26611, Class2266.field14732, 1.0F, 1.0F);
+               var1.method6742((PlayerEntity)null, var2, SoundEvents.field26611, Class2266.field14732, 1.0F, 1.0F);
             }
 
             method11652(var1, var2, var3);

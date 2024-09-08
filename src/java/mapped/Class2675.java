@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 
@@ -60,7 +61,7 @@ public class Class2675 extends Class2672 {
 
    @Override
    public SoundEvent method10894() {
-      return Sounds.field26566;
+      return SoundEvents.field26566;
    }
 
    @Override

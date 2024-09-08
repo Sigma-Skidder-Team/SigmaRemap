@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.function.Predicate;
@@ -14,6 +15,6 @@ public class Class121 implements Predicate<LivingEntity> {
    }
 
    public boolean test(LivingEntity var1) {
-      return (var1 instanceof PlayerEntity || var1 instanceof Class1055) && var1.getDistanceSq(this.field432) > 9.0;
+      return (var1 instanceof PlayerEntity || var1 instanceof SquidEntity) && var1.getDistanceSq(this.field432) > 9.0;
    }
 }

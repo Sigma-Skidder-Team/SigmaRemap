@@ -9,6 +9,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -63,7 +64,7 @@ public abstract class Class6069 {
       return this.method18807(var1) + 5;
    }
 
-   public int method18814(int var1, Class8654 var2) {
+   public int method18814(int var1, DamageSource var2) {
       return 0;
    }
 

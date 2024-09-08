@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SSetSlotPacket;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -483,7 +484,7 @@ public class PlayerInventory implements Class920, INameable {
       return this.field5440.get(var1);
    }
 
-   public void method4053(Class8654 var1, float var2) {
+   public void method4053(DamageSource var1, float var2) {
       if (!(var2 <= 0.0F)) {
          var2 /= 4.0F;
          if (var2 < 1.0F) {

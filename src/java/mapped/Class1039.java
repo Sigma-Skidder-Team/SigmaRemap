@@ -5,7 +5,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -28,23 +30,23 @@ public class Class1039 extends Class1038 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26686;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26686;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26689;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26689;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26688;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26688;
    }
 
    @Override
    public SoundEvent method4643() {
-      return Sounds.field26690;
+      return SoundEvents.field26690;
    }
 
    @Override

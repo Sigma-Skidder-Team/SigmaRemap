@@ -8,6 +8,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -104,7 +105,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
 
          if (this.field5342 > 0 && !this.field5340.isEmpty()) {
             this.method3821();
-            this.method3822(Sounds.field26386);
+            this.method3822(SoundEvents.field26386);
          }
       }
 
@@ -115,7 +116,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
          if (!this.field5324.isRemote) {
             boolean var16 = this.field5342 > 0;
             if (!var15 && var16) {
-               this.method3822(Sounds.field26385);
+               this.method3822(SoundEvents.field26385);
 
                for (ServerPlayerEntity var13 : this.field5324
                   .<ServerPlayerEntity>method7182(
@@ -125,7 +126,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
                   CriteriaTriggers.field44476.method15096(var13, this);
                }
             } else if (var15 && !var16) {
-               this.method3822(Sounds.field26387);
+               this.method3822(SoundEvents.field26387);
             }
          }
       }
@@ -159,7 +160,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
 
    @Override
    public void method3765() {
-      this.method3822(Sounds.field26387);
+      this.method3822(SoundEvents.field26387);
       super.method3765();
    }
 

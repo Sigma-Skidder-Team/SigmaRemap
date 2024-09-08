@@ -4,7 +4,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 public class Class894 extends Class890 {
@@ -48,7 +50,7 @@ public class Class894 extends Class890 {
       super.method3465(var1);
       Entity var4 = var1.getEntity();
       int var5 = !(var4 instanceof Class1103) ? 0 : 3;
-      var4.method2741(Class8654.method31123(this, this.method3460()), (float)var5);
+      var4.method2741(DamageSource.method31123(this, this.method3460()), (float)var5);
    }
 
    @Override

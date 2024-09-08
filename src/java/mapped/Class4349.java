@@ -102,7 +102,7 @@ public class Class4349 extends Class4278 {
       RenderUtil.method11421(this.field20895, this.field20896, this.field20895 + this.field20897, this.field20896 + this.field20898, true);
       if (this.field21249 != null) {
          this.method13584();
-         RenderUtil.method11422();
+         RenderUtil.endScissor();
          if (this.field21252 > 0.0F && this.field20898 > 55) {
             RenderUtil.method11449(
                (float)(this.field20895 + this.method13267()),

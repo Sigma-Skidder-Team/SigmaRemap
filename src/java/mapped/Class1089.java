@@ -4,8 +4,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -66,7 +69,7 @@ public class Class1089 extends Class1018 {
 
       this.field5965 = this.field5965 + this.field5969 * 2.0F;
       if (!this.world.isRemote && this.isAlive() && !this.method3005() && !this.method5070() && --this.field5970 <= 0) {
-         this.method2863(Sounds.field26452, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+         this.method2863(SoundEvents.field26452, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
          this.method3300(Items.field37904);
          this.field5970 = this.rand.nextInt(6000) + 6000;
       }
@@ -78,23 +81,23 @@ public class Class1089 extends Class1018 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26450;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26450;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26453;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26453;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26451;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26451;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field26454, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field26454, 0.15F, 1.0F);
    }
 
    public Class1089 method4389(ServerWorld var1, Class1045 var2) {

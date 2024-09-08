@@ -3,7 +3,9 @@ package mapped;
 import com.google.common.collect.UnmodifiableIterator;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.entity.passive.WaterMobEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
@@ -11,10 +13,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.client.CSteerBoatPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -24,13 +23,13 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class BoatEntity extends Entity {
-   private static final DataParameter<Integer> field5524 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.field33391);
-   private static final DataParameter<Integer> field5525 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5524 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.VARINT);
+   private static final DataParameter<Integer> field5525 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Float> field5526 = EntityDataManager.<Float>createKey(BoatEntity.class, DataSerializers.field33392);
-   private static final DataParameter<Integer> field5527 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5527 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5528 = EntityDataManager.<Boolean>createKey(BoatEntity.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> field5529 = EntityDataManager.<Boolean>createKey(BoatEntity.class, DataSerializers.field33398);
-   private static final DataParameter<Integer> field5530 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5530 = EntityDataManager.<Integer>createKey(BoatEntity.class, DataSerializers.VARINT);
    private final float[] field5531 = new float[2];
    private float field5532;
    private float field5533;
@@ -121,7 +120,7 @@ public class BoatEntity extends Entity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (this.method2760(var1)) {
          return false;
       } else if (!this.world.isRemote && !this.removed) {
@@ -320,7 +319,7 @@ public class BoatEntity extends Entity {
                   && !var10.isPassenger()
                   && var10.method3429() < this.method3429()
                   && var10 instanceof LivingEntity
-                  && !(var10 instanceof Class1047)
+                  && !(var10 instanceof WaterMobEntity)
                   && !(var10 instanceof PlayerEntity)) {
                   var10.method3311(this);
                } else {
@@ -374,9 +373,9 @@ public class BoatEntity extends Entity {
          case 1:
          case 2:
          case 3:
-            return Sounds.field26408;
+            return SoundEvents.field26408;
          case 4:
-            return Sounds.field26407;
+            return SoundEvents.field26407;
          case 5:
          default:
             return null;

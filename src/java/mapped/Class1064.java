@@ -6,11 +6,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -20,9 +23,9 @@ import javax.annotation.Nullable;
 
 public class Class1064 extends Class1066 implements Class1022 {
    private static final Class120 field5869 = Class120.method339(Items.field37842, Blocks.field36777.method11581());
-   private static final DataParameter<Integer> field5870 = EntityDataManager.<Integer>createKey(Class1064.class, DataSerializers.field33391);
-   private static final DataParameter<Integer> field5871 = EntityDataManager.<Integer>createKey(Class1064.class, DataSerializers.field33391);
-   private static final DataParameter<Integer> field5872 = EntityDataManager.<Integer>createKey(Class1064.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5870 = EntityDataManager.<Integer>createKey(Class1064.class, DataSerializers.VARINT);
+   private static final DataParameter<Integer> field5871 = EntityDataManager.<Integer>createKey(Class1064.class, DataSerializers.VARINT);
+   private static final DataParameter<Integer> field5872 = EntityDataManager.<Integer>createKey(Class1064.class, DataSerializers.VARINT);
    private boolean field5873;
    private Class1064 field5874;
    private Class1064 field5875;
@@ -225,38 +228,38 @@ public class Class1064 extends Class1066 implements Class1022 {
 
    @Override
    public SoundEvent method4893() {
-      return Sounds.field26735;
+      return SoundEvents.field26735;
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26734;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26734;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26739;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26739;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26737;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26737;
    }
 
    @Nullable
    @Override
    public SoundEvent method4894() {
-      return Sounds.field26738;
+      return SoundEvents.field26738;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field26741, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field26741, 0.15F, 1.0F);
    }
 
    @Override
    public void method4895() {
-      this.method2863(Sounds.field26736, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+      this.method2863(SoundEvents.field26736, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
    }
 
    @Override
@@ -299,7 +302,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       super.method4902(var1);
       Class112 var5 = this.method4906();
       if (this.ticksExisted > 20 && var5 != null && var5 != var4) {
-         this.method2863(Sounds.field26742, 0.5F, 1.0F);
+         this.method2863(SoundEvents.field26742, 0.5F, 1.0F);
       }
    }
 
@@ -369,7 +372,7 @@ public class Class1064 extends Class1066 implements Class1022 {
                this.getPosX(),
                this.getPosY(),
                this.getPosZ(),
-               Sounds.field26740,
+               SoundEvents.field26740,
                this.method2864(),
                1.0F,
                1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F
@@ -391,10 +394,10 @@ public class Class1064 extends Class1066 implements Class1022 {
          return false;
       } else {
          if (var1 >= 6.0F) {
-            this.method2741(Class8654.field39002, (float)var5);
+            this.method2741(DamageSource.field39002, (float)var5);
             if (this.isBeingRidden()) {
                for (Entity var7 : this.method3411()) {
-                  var7.method2741(Class8654.field39002, (float)var5);
+                  var7.method2741(DamageSource.field39002, (float)var5);
                }
             }
          }

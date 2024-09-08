@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 
 public class Class240<T extends LivingEntity> extends Class239<T, Class2891<T>> {
    private static String[] field893;

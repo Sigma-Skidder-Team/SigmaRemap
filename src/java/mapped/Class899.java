@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 public class Class899 extends Class898 {
@@ -46,7 +47,7 @@ public class Class899 extends Class898 {
       if (!this.world.isRemote) {
          Entity var4 = var1.getEntity();
          Entity var5 = this.method3460();
-         var4.method2741(Class8654.method31121(this, var5), 6.0F);
+         var4.method2741(DamageSource.method31121(this, var5), 6.0F);
          if (var5 instanceof LivingEntity) {
             this.method3399((LivingEntity)var5, var4);
          }

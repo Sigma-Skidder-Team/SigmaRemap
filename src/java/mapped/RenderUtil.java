@@ -18,12 +18,14 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.Stack;
 
+import static org.lwjgl.opengl.GL11.GL_SCISSOR_TEST;
+
 public class RenderUtil {
    private static String[] field18458;
    private static final boolean field18459 = false;
    private static final Minecraft mc = Minecraft.getInstance();
    public static boolean field18461 = false;
-   private static Stack<IntBuffer> field18462 = new Stack<IntBuffer>();
+   private static Stack<IntBuffer> buffer = new Stack<IntBuffer>();
    private static float field18463 = 1.0F;
    private static float field18464 = 1.0F;
    private static float field18465 = 1.0F;
@@ -104,7 +106,7 @@ public class RenderUtil {
       if (GL11.glIsEnabled(3089)) {
          IntBuffer var17 = BufferUtils.createIntBuffer(16);
          GL11.glGetIntegerv(3088, var17);
-         field18462.push(var17);
+         buffer.push(var17);
          int var18 = var17.get(0);
          int var9 = Minecraft.getInstance().mainWindow.getFramebufferHeight() - var17.get(1) - var17.get(3);
          int var10 = var18 + var17.get(2);
@@ -143,11 +145,11 @@ public class RenderUtil {
       }
    }
 
-   public static void method11422() {
-      if (field18462.isEmpty()) {
-         GL11.glDisable(3089);
+   public static void endScissor() {
+      if (buffer.isEmpty()) {
+         GL11.glDisable(GL_SCISSOR_TEST);
       } else {
-         IntBuffer var2 = field18462.pop();
+         IntBuffer var2 = buffer.pop();
          GL11.glScissor(var2.get(0), var2.get(1), var2.get(2), var2.get(3));
       }
    }
@@ -1033,7 +1035,7 @@ public class RenderUtil {
          method11449((float)(var0 - var11), (float)(var1 + var10 + var12), (float)var9, (float)var9, ResourcesDecrypter.floatingBorderPNG, var4);
       }
 
-      method11422();
+      endScissor();
       method11420(var5, var6 - var11, var5 + var2 - var10, var6 + var10);
 
       for (int var13 = 0; var13 < var2; var13 += var9) {
@@ -1045,7 +1047,7 @@ public class RenderUtil {
          GL11.glPopMatrix();
       }
 
-      method11422();
+      endScissor();
       method11420(var5 + var2 - var10, var6 - var11, var0 + var2 + var11, var6 + var3 - var10);
 
       for (int var14 = 0; var14 < var3; var14 += var9) {
@@ -1057,7 +1059,7 @@ public class RenderUtil {
          GL11.glPopMatrix();
       }
 
-      method11422();
+      endScissor();
       method11420(var5 - var10, var6 - var11 + var3 - var9, var5 + var2 - var10, var6 + var3 + var10 * 2);
 
       for (int var15 = 0; var15 < var2; var15 += var9) {
@@ -1069,7 +1071,7 @@ public class RenderUtil {
          GL11.glPopMatrix();
       }
 
-      method11422();
+      endScissor();
    }
 
    public static void method11467(int var0, int var1, int var2, int var3, int var4) {
@@ -1102,7 +1104,7 @@ public class RenderUtil {
          method11449((float)(var0 - var9), (float)(var1 + var8 + var10) - 0.4F, (float)var7, (float)var7 + 0.4F, ResourcesDecrypter.floatingBorderPNG, var4);
       }
 
-      method11422();
+      endScissor();
       method11421(var0, var1 - var9, var0 + var2 - var8, var1 + var8, true);
 
       for (int var11 = 0; var11 < var2; var11 += var7) {
@@ -1114,7 +1116,7 @@ public class RenderUtil {
          GL11.glPopMatrix();
       }
 
-      method11422();
+      endScissor();
       method11421(var0 + var2 - var8, var1 - var9, var0 + var2 + var9, var1 + var3 - var8, true);
 
       for (int var12 = 0; var12 < var3; var12 += var7) {
@@ -1126,7 +1128,7 @@ public class RenderUtil {
          GL11.glPopMatrix();
       }
 
-      method11422();
+      endScissor();
       method11421(var0 - var8, var1 - var9 + var3 - var7, var0 + var2 - var8, var1 + var3 + var8 * 2, true);
 
       for (int var13 = 0; var13 < var2; var13 += var7) {
@@ -1138,7 +1140,7 @@ public class RenderUtil {
          GL11.glPopMatrix();
       }
 
-      method11422();
+      endScissor();
    }
 
    public static void method11468() {
@@ -1186,16 +1188,16 @@ public class RenderUtil {
       float var8 = var4 * GuiManager.field41348;
       method11418(var0, var1, var0 + var4, var1 + var4);
       method11436(var0 + var4, var1 + var4, var4, var5);
-      method11422();
+      endScissor();
       method11418(var0 + var2 - var4, var1, var0 + var2, var1 + var4);
       method11436(var0 - var4 + var2, var1 + var4, var4, var5);
-      method11422();
+      endScissor();
       method11418(var0, var1 + var3 - var4, var0 + var4, var1 + var3);
       method11436(var0 + var4, var1 - var4 + var3, var4, var5);
-      method11422();
+      endScissor();
       method11418(var0 + var2 - var4, var1 + var3 - var4, var0 + var2, var1 + var3);
       method11436(var0 - var4 + var2, var1 - var4 + var3, var4, var5);
-      method11422();
+      endScissor();
    }
 
    public static void method11474(float var0, float var1, float var2, float var3, float var4, int var5) {
@@ -1216,16 +1218,16 @@ public class RenderUtil {
       method11426(var0 + var4, var1 + var3 - var4, var0 + var2 - var4, var1 + var3, var5);
       method11418(var0, var1, var0 + var4, var1 + var4);
       method11438(var0 + var4, var1 + var4, var4 * 2.0F, var5);
-      method11422();
+      endScissor();
       method11418(var0 + var2 - var4, var1, var0 + var2, var1 + var4);
       method11438(var0 - var4 + var2, var1 + var4, var4 * 2.0F, var5);
-      method11422();
+      endScissor();
       method11418(var0, var1 + var3 - var4, var0 + var4, var1 + var3);
       method11438(var0 + var4, var1 - var4 + var3, var4 * 2.0F, var5);
-      method11422();
+      endScissor();
       method11418(var0 + var2 - var4, var1 + var3 - var4, var0 + var2, var1 + var3);
       method11438(var0 - var4 + var2, var1 - var4 + var3, var4 * 2.0F, var5);
-      method11422();
+      endScissor();
    }
 
    public static void method11476() {

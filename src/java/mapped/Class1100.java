@@ -3,11 +3,14 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -42,7 +45,7 @@ public class Class1100 extends Class1009 {
       this.method3248(true);
       if (this.field6054 && --this.field6055 <= 0) {
          this.field6055 = 20;
-         this.method2741(Class8654.field39000, 1.0F);
+         this.method2741(DamageSource.field39000, 1.0F);
       }
    }
 
@@ -142,18 +145,18 @@ public class Class1100 extends Class1009 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27185;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27185;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27187;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27187;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27188;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27188;
    }
 
    @Override

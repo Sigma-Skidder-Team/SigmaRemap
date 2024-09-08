@@ -14,8 +14,10 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SChangeGameStatePacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -299,14 +301,14 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       }
 
       Entity var7 = this.method3460();
-      Class8654 var8;
+      DamageSource var8;
       if (var7 != null) {
-         var8 = Class8654.method31118(this, var7);
+         var8 = DamageSource.method31118(this, var7);
          if (var7 instanceof LivingEntity) {
             ((LivingEntity)var7).method3020(var4);
          }
       } else {
-         var8 = Class8654.method31118(this, this);
+         var8 = DamageSource.method31118(this, this);
       }
 
       boolean var11 = var4.getType() == EntityType.field41025;
@@ -389,13 +391,13 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       this.field5103 = 7;
       this.method3484(false);
       this.method3485((byte)0);
-      this.setHitSound(Sounds.field26361);
+      this.setHitSound(SoundEvents.field26361);
       this.method3494(false);
       this.method3475();
    }
 
    public SoundEvent getHitEntitySound() {
-      return Sounds.field26361;
+      return SoundEvents.field26361;
    }
 
    public final SoundEvent method3477() {

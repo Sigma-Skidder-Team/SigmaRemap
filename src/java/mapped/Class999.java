@@ -24,7 +24,7 @@ import java.util.Map.Entry;
 public class Class999 extends Entity {
    private static final Logger field5497 = LogManager.getLogger();
    private static final DataParameter<Float> field5498 = EntityDataManager.<Float>createKey(Class999.class, DataSerializers.field33392);
-   private static final DataParameter<Integer> field5499 = EntityDataManager.<Integer>createKey(Class999.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5499 = EntityDataManager.<Integer>createKey(Class999.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5500 = EntityDataManager.<Boolean>createKey(Class999.class, DataSerializers.field33398);
    private static final DataParameter<IParticleData> field5501 = EntityDataManager.<IParticleData>createKey(Class999.class, DataSerializers.field33399);
    private Class8812 field5502 = Class8137.field34976;

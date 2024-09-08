@@ -140,7 +140,7 @@ public class Class4366 extends Class4247 {
             this.method13303(),
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * 0.5F)
          );
-         RenderUtil.method11422();
+         RenderUtil.endScissor();
       }
 
       if (!this.method13673()) {
@@ -149,7 +149,7 @@ public class Class4366 extends Class4247 {
 
       super.draw(var1);
       if (!this.method13673()) {
-         RenderUtil.method11422();
+         RenderUtil.endScissor();
       }
    }
 

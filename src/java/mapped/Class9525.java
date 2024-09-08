@@ -5,13 +5,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class Class9525 {
    public static final Class9821<Entity> field44330 = method36807("this_entity");
    public static final Class9821<PlayerEntity> field44331 = method36807("last_damage_player");
-   public static final Class9821<Class8654> field44332 = method36807("damage_source");
+   public static final Class9821<DamageSource> field44332 = method36807("damage_source");
    public static final Class9821<Entity> field44333 = method36807("killer_entity");
    public static final Class9821<Entity> field44334 = method36807("direct_killer_entity");
    public static final Class9821<Vector3d> field44335 = method36807("origin");

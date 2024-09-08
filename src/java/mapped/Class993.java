@@ -6,6 +6,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -52,7 +54,7 @@ public class Class993 extends AbstractMinecartEntity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       Entity var5 = var1.method31113();
       if (var5 instanceof AbstractArrowEntity) {
          AbstractArrowEntity var6 = (AbstractArrowEntity)var5;
@@ -65,7 +67,7 @@ public class Class993 extends AbstractMinecartEntity {
    }
 
    @Override
-   public void method3586(Class8654 var1) {
+   public void method3586(DamageSource var1) {
       double var4 = method3234(this.getVec());
       if (!var1.method31141() && !var1.method31131() && !(var4 >= 0.01F)) {
          super.method3586(var1);
@@ -125,7 +127,7 @@ public class Class993 extends AbstractMinecartEntity {
          this.world.method6786(this, (byte)10);
          if (!this.method3245()) {
             this.world
-               .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field27146, Class2266.field14732, 1.0F, 1.0F);
+               .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field27146, Class2266.field14732, 1.0F, 1.0F);
          }
       }
    }

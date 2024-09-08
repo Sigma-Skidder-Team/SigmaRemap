@@ -6,6 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -105,7 +106,7 @@ public class Class3246 extends Class3247 implements Class3245 {
       if (var4.abilities.allowEdit) {
          var1 = var1.method23459(field18706);
          float var9 = var1.method23463(field18706) != Class105.field326 ? 0.5F : 0.55F;
-         var2.method6742(var4, var3, Sounds.field26462, Class2266.field14732, 0.3F, var9);
+         var2.method6742(var4, var3, SoundEvents.field26462, Class2266.field14732, 0.3F, var9);
          var2.setBlockState(var3, var1, 2);
          this.method11665(var2, var3, var1);
          return ActionResultType.method9002(var2.isRemote);

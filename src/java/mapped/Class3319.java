@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 public class Class3319 extends Item {
@@ -20,7 +21,7 @@ public class Class3319 extends Item {
          var2.getPosX(),
          var2.getPosY(),
          var2.getPosZ(),
-         Sounds.field26523,
+         SoundEvents.field26523,
          Class2266.field14735,
          0.5F,
          0.4F / (field18735.nextFloat() * 0.4F + 0.8F)

@@ -3,7 +3,9 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -43,7 +45,7 @@ public abstract class AbstractFireBlock extends Block {
             (double)var3.getX() + 0.5,
             (double)var3.getY() + 0.5,
             (double)var3.getZ() + 0.5,
-            Sounds.field26581,
+            SoundEvents.field26581,
             Class2266.field14732,
             1.0F + var4.nextFloat(),
             var4.nextFloat() * 0.7F + 0.3F,
@@ -118,7 +120,7 @@ public abstract class AbstractFireBlock extends Block {
             var4.method3221(8);
          }
 
-         var4.method2741(Class8654.field38992, this.field19034);
+         var4.method2741(DamageSource.field38992, this.field19034);
       }
 
       super.method11523(var1, var2, var3, var4);

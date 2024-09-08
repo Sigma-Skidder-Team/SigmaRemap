@@ -13,6 +13,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -188,7 +189,7 @@ public class Class907 extends Entity {
          if (var5 > 0) {
             List<Entity> var6 = Lists.newArrayList(this.world.method7181(this, this.getBoundingBox()));
             boolean var7 = this.field5176.method23446(BlockTags.field32765);
-            Class8654 var8 = !var7 ? Class8654.field39009 : Class8654.field39008;
+            DamageSource var8 = !var7 ? DamageSource.field39009 : DamageSource.field39008;
 
             for (Entity var10 : var6) {
                var10.method2741(var8, (float)Math.min(MathHelper.method37767((float)var5 * this.field5182), this.field5181));

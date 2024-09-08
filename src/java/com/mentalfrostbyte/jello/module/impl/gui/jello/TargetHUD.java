@@ -1,5 +1,6 @@
 package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
+import net.minecraft.entity.passive.WolfEntity;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
@@ -14,6 +15,8 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.SquidEntity;
+import net.minecraft.entity.passive.fish.SalmonEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.vector.Quaternion;
 import org.lwjgl.opengl.GL11;
@@ -35,10 +38,10 @@ public class TargetHUD extends PremiumModule {
     private final Animation field23690;
     private final Animation field23691;
     private final Animation field23692;
-    private Entity field23693;
+    private Entity entity;
 
     public TargetHUD() {
-        super("TargetHUD", "Shows target info with killaura", ModuleCategory.GUI);
+        super("TargetHUD", "Shows target info with killaura", ModuleCategory.RENDER);
         this.registerSetting(new ModeSetting("Background", "Background", 0, "Blur", "Color", "None"));
         this.registerSetting(new ModeSetting("Position", "HUD Position", 0, "Center", "Bottom"));
         this.registerSetting(new ModeSetting("HealthBar", "Healthbar color", 0, "Health", "White"));
@@ -57,9 +60,9 @@ public class TargetHUD extends PremiumModule {
     @EventTarget
     @HigestPriority
     private void method16473(Render2DEvent var1) {
-        if (this.field23693 != null) {
+        if (this.entity != null) {
             this.field23684 = (this.getBooleanValueFromSetttingName("Head") ? 100 : 0)
-                    + Math.max(95, ResourceRegistry.JelloLightFont20.method23942(this.field23693.getName().getString()))
+                    + Math.max(95, ResourceRegistry.JelloLightFont20.method23942(this.entity.getName().getString()))
                     + (this.getBooleanValueFromSetttingName("Armor") ? 80 : 0)
                     + 20;
             String var4 = this.getStringSettingValueByName("Position");
@@ -74,7 +77,7 @@ public class TargetHUD extends PremiumModule {
             }
 
             this.field23682 -= 100;
-            float var6 = ((LivingEntity) this.field23693).getHealth();
+            float var6 = ((LivingEntity) this.entity).getHealth();
             if (var6 != this.field23688) {
                 this.field23687 = this.field23688;
                 this.field23688 = var6;
@@ -95,65 +98,65 @@ public class TargetHUD extends PremiumModule {
             EntityRendererManager var4 = Minecraft.getInstance().getRenderManager();
             Class5743 var5 = new Class5743(var4);
             short var6 = 150;
-            UUID var7 = this.field23693.getUniqueID();
-            if (!(this.field23693 instanceof Class1087)) {
-                if (!(this.field23693 instanceof Class1038)) {
-                    if (!(this.field23693 instanceof Class1010)) {
-                        if (!(this.field23693 instanceof Class1085)) {
-                            if (!(this.field23693 instanceof Class1085)) {
-                                if (!(this.field23693 instanceof Class1081)) {
-                                    if (!(this.field23693 instanceof Class1072)) {
-                                        if (!(this.field23693 instanceof Class1019)) {
-                                            if (!(this.field23693 instanceof Class1089)) {
-                                                if (!(this.field23693 instanceof Class1074)) {
-                                                    if (!(this.field23693 instanceof Class1098)) {
-                                                        if (!(this.field23693 instanceof Class1012)) {
-                                                            if (!(this.field23693 instanceof Class1055)) {
-                                                                if (this.field23693 instanceof Class1053) {
-                                                                    var7 = UUID.fromString("0fd952e4-e895-4bb0-a12b-48f24cac1231");
+            UUID uuidForSkin = this.entity.getUniqueID();
+            if (!(this.entity instanceof Class1087)) {
+                if (!(this.entity instanceof Class1038)) {
+                    if (!(this.entity instanceof Class1010)) {
+                        if (!(this.entity instanceof Class1085)) {
+                            if (!(this.entity instanceof Class1085)) {
+                                if (!(this.entity instanceof Class1081)) {
+                                    if (!(this.entity instanceof Class1072)) {
+                                        if (!(this.entity instanceof Class1019)) {
+                                            if (!(this.entity instanceof Class1089)) {
+                                                if (!(this.entity instanceof Class1074)) {
+                                                    if (!(this.entity instanceof Class1098)) {
+                                                        if (!(this.entity instanceof WolfEntity)) {
+                                                            if (!(this.entity instanceof SquidEntity)) {
+                                                                if (this.entity instanceof SalmonEntity) {
+                                                                    uuidForSkin = UUID.fromString("0fd952e4-e895-4bb0-a12b-48f24cac1231");
                                                                 }
                                                             } else {
-                                                                var7 = UUID.fromString("655b9804-f385-4e11-8966-d1555bedffc6");
+                                                                uuidForSkin = UUID.fromString("655b9804-f385-4e11-8966-d1555bedffc6");
                                                             }
                                                         } else {
-                                                            var7 = UUID.fromString("14430053-bbf4-4141-9d3d-08ff8ec631a4");
+                                                            uuidForSkin = UUID.fromString("14430053-bbf4-4141-9d3d-08ff8ec631a4");
                                                         }
                                                     } else {
-                                                        var7 = UUID.fromString("241d6e54-d289-4db3-999f-1d51593aca81");
+                                                        uuidForSkin = UUID.fromString("241d6e54-d289-4db3-999f-1d51593aca81");
                                                     }
                                                 } else {
-                                                    var7 = UUID.fromString("1b90edcf-393d-4e93-a0d6-cf737dc80999");
+                                                    uuidForSkin = UUID.fromString("1b90edcf-393d-4e93-a0d6-cf737dc80999");
                                                 }
                                             } else {
-                                                var7 = UUID.fromString("6a5b3d5e-07cd-449a-bf1d-c29383d1ae47");
+                                                uuidForSkin = UUID.fromString("6a5b3d5e-07cd-449a-bf1d-c29383d1ae47");
                                             }
                                         } else {
-                                            var7 = UUID.fromString("edd84e70-3a47-4215-b539-c95bf176d2cd");
+                                            uuidForSkin = UUID.fromString("edd84e70-3a47-4215-b539-c95bf176d2cd");
                                         }
                                     } else {
-                                        var7 = UUID.fromString("5443bbef-0b09-48ea-8b32-744ab646d883");
+                                        uuidForSkin = UUID.fromString("5443bbef-0b09-48ea-8b32-744ab646d883");
                                     }
                                 } else {
-                                    var7 = UUID.fromString("696581df-4256-4028-b55e-9452b4de40b6");
+                                    uuidForSkin = UUID.fromString("696581df-4256-4028-b55e-9452b4de40b6");
                                 }
                             } else {
-                                var7 = UUID.fromString("6d959fcc-e0ca-44ff-8d49-f4a2ae9f8de8");
+                                uuidForSkin = UUID.fromString("6d959fcc-e0ca-44ff-8d49-f4a2ae9f8de8");
                             }
                         } else {
-                            var7 = UUID.fromString("6d959fcc-e0ca-44ff-8d49-f4a2ae9f8de8");
+                            uuidForSkin = UUID.fromString("6d959fcc-e0ca-44ff-8d49-f4a2ae9f8de8");
                         }
                     } else {
-                        var7 = UUID.fromString("b36f9117-5454-43d7-ab15-86f303bf49f9");
+                        uuidForSkin = UUID.fromString("b36f9117-5454-43d7-ab15-86f303bf49f9");
                     }
                 } else {
-                    var7 = UUID.fromString("02b0e86d-c86a-4ae7-bc41-015d21f80c1c");
+                    uuidForSkin = UUID.fromString("02b0e86d-c86a-4ae7-bc41-015d21f80c1c");
                 }
             } else {
-                var7 = UUID.fromString("b1adf2ec-eed6-46d6-a770-40f409651913");
+                uuidForSkin = UUID.fromString("b1adf2ec-eed6-46d6-a770-40f409651913");
             }
 
-            GameProfile var8 = new GameProfile(var7, this.field23693.getName().getString());
-            Class1117 var9 = new Class1117(this, mc.world, var8);
+            GameProfile profile = new GameProfile(uuidForSkin, this.entity.getName().getString());
+            Class1117 var9 = new Class1117(this, mc.world, profile);
             RenderSystem.pushMatrix();
             RenderSystem.translatef((float) var1 + 50.0F, (float) this.field23683 + 295.0F, 1000.0F);
             RenderSystem.scalef(1.0F, 1.0F, -1.0F);
@@ -164,7 +167,7 @@ public class TargetHUD extends PremiumModule {
             var10.rotate(var11);
             var4.method32215(false);
             Class7735 var12 = Minecraft.getInstance().getRenderTypeBuffers().method26536();
-            RenderSystem.method27940(
+            RenderSystem.runAsFancy(
                     () -> var5.method17924(
                             var9, 100.0F, 0.0F, var10, var12, 15728880, Math.min(1.0F, this.field23689.calcPercent() * 4.0F), this.field23691.calcPercent()
                     )
@@ -172,7 +175,7 @@ public class TargetHUD extends PremiumModule {
             var12.method25602();
             var4.method32215(true);
             RenderSystem.popMatrix();
-            RenderUtil.method11422();
+            RenderUtil.endScissor();
             GL11.glPopMatrix();
         }
     }
@@ -244,7 +247,7 @@ public class TargetHUD extends PremiumModule {
     }
 
     private void method16480(int var1) {
-        Iterator var4 = this.field23693.method2947().iterator();
+        Iterator var4 = this.entity.method2947().iterator();
         int var5 = 0;
 
         while (var4.hasNext()) {
@@ -255,5 +258,14 @@ public class TargetHUD extends PremiumModule {
                 var5 -= 2;
             }
         }
+    }
+
+    public static class Class1117 extends AbstractClientPlayerEntity {
+        public final TargetHUD targetHUD;
+
+       public Class1117(TargetHUD var1, ClientWorld var2, GameProfile var3) {
+          super(var2, var3);
+          this.targetHUD = var1;
+       }
     }
 }

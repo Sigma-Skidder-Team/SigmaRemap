@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -59,7 +60,7 @@ public class Class906 extends Entity {
                this.getPosX(),
                this.getPosY(),
                this.getPosZ(),
-               Sounds.field26732,
+               SoundEvents.field26732,
                Class2266.field14731,
                10000.0F,
                0.8F + this.rand.nextFloat() * 0.2F
@@ -70,7 +71,7 @@ public class Class906 extends Entity {
                this.getPosX(),
                this.getPosY(),
                this.getPosZ(),
-               Sounds.field26731,
+               SoundEvents.field26731,
                Class2266.field14731,
                2.0F,
                0.5F + this.rand.nextFloat() * 0.2F

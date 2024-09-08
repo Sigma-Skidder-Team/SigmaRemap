@@ -461,7 +461,7 @@ public class Class4303 extends Class4278 {
          );
       }
 
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
    }
 
    private void method13196(float var1) {

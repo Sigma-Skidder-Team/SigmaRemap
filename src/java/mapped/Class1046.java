@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -35,7 +36,7 @@ public abstract class Class1046 extends Class1006 {
       if (var3 != null && var3.world == this.world) {
          this.method4288(var3.getPosition(), 5);
          float var4 = this.method3275(var3);
-         if (this instanceof Class1013 && ((Class1013)this).method4395()) {
+         if (this instanceof TameableEntity && ((TameableEntity)this).method4395()) {
             if (var4 > 10.0F) {
                this.method4294(true, true);
             }

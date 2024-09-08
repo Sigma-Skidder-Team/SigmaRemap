@@ -13,6 +13,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -38,7 +40,7 @@ public class Class7782 {
    private final double field33376;
    private final Entity field33377;
    private final float field33378;
-   private final Class8654 field33379;
+   private final DamageSource field33379;
    private final Class5924 field33380;
    private final List<BlockPos> field33381 = Lists.newArrayList();
    private final Map<PlayerEntity, Vector3d> field33382 = Maps.newHashMap();
@@ -53,11 +55,11 @@ public class Class7782 {
    }
 
    public Class7782(World var1, Entity var2, double var3, double var5, double var7, float var9, boolean var10, Class2141 var11) {
-      this(var1, var2, (Class8654)null, (Class5924)null, var3, var5, var7, var9, var10, var11);
+      this(var1, var2, (DamageSource)null, (Class5924)null, var3, var5, var7, var9, var10, var11);
    }
 
    public Class7782(
-           World var1, Entity var2, Class8654 var3, Class5924 var4, double var5, double var7, double var9, float var11, boolean var12, Class2141 var13
+           World var1, Entity var2, DamageSource var3, Class5924 var4, double var5, double var7, double var9, float var11, boolean var12, Class2141 var13
    ) {
       this.field33373 = var1;
       this.field33377 = var2;
@@ -67,7 +69,7 @@ public class Class7782 {
       this.field33376 = var9;
       this.field33370 = var12;
       this.field33371 = var13;
-      this.field33379 = var3 != null ? var3 : Class8654.method31126(this);
+      this.field33379 = var3 != null ? var3 : DamageSource.method31126(this);
       this.field33380 = var4 != null ? var4 : this.method25782(var2);
    }
 
@@ -204,7 +206,7 @@ public class Class7782 {
                this.field33374,
                this.field33375,
                this.field33376,
-               Sounds.field26610,
+               SoundEvents.field26610,
                Class2266.field14732,
                4.0F,
                (1.0F + (this.field33373.rand.nextFloat() - this.field33373.rand.nextFloat()) * 0.2F) * 0.7F,
@@ -289,7 +291,7 @@ public class Class7782 {
       var0.add(Pair.of(var1, var2));
    }
 
-   public Class8654 method25787() {
+   public DamageSource method25787() {
       return this.field33379;
    }
 

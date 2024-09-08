@@ -5,7 +5,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
@@ -18,7 +20,7 @@ import java.util.Random;
 public class Class1105 extends Class1009 {
    private static String[] field6065;
    private static final DataParameter<Boolean> field6066 = EntityDataManager.<Boolean>createKey(Class1105.class, DataSerializers.field33398);
-   private static final DataParameter<Integer> field6067 = EntityDataManager.<Integer>createKey(Class1105.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field6067 = EntityDataManager.<Integer>createKey(Class1105.class, DataSerializers.VARINT);
    private float field6068;
    private float field6069;
    private float field6070;
@@ -139,18 +141,18 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return !this.method3255() ? Sounds.field26644 : Sounds.field26643;
+   public SoundEvent getAmbientSound() {
+      return !this.method3255() ? SoundEvents.field26644 : SoundEvents.field26643;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return !this.method3255() ? Sounds.field26650 : Sounds.field26649;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return !this.method3255() ? SoundEvents.field26650 : SoundEvents.field26649;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return !this.method3255() ? Sounds.field26647 : Sounds.field26646;
+   public SoundEvent getDeathSound() {
+      return !this.method3255() ? SoundEvents.field26647 : SoundEvents.field26646;
    }
 
    @Override
@@ -279,7 +281,7 @@ public class Class1105 extends Class1009 {
    }
 
    public SoundEvent method5307() {
-      return Sounds.field26648;
+      return SoundEvents.field26648;
    }
 
    public float method5308(float var1) {
@@ -306,11 +308,11 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method5301() && !var1.method31144() && var1.method31113() instanceof LivingEntity) {
          LivingEntity var5 = (LivingEntity)var1.method31113();
          if (!var1.method31131()) {
-            var5.method2741(Class8654.method31125(this), 2.0F);
+            var5.method2741(DamageSource.method31125(this), 2.0F);
          }
       }
 

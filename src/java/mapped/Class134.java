@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

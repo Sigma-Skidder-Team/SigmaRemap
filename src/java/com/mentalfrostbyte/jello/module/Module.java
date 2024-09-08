@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.unmapped.Class6000;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.SoundEvents;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
@@ -267,7 +268,7 @@ public abstract class Module {
 
                     if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
                             && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSetttingName("Sound")) {
-                        Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.STONE_BUTTON_CLICK_ON, 0.6F));
+                        Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.STONE_BUTTON_CLICK_ON, 0.6F));
                     }
                 }
 
@@ -281,7 +282,7 @@ public abstract class Module {
 
                 if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
                         && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSetttingName("Sound")) {
-                    Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.STONE_BUTTON_CLICK_ON, 0.7F));
+                    Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.STONE_BUTTON_CLICK_ON, 0.7F));
                 }
 
                 this.onEnable();

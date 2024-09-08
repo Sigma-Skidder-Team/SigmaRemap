@@ -71,7 +71,7 @@ public class Class4376 extends Class4235 implements Class4238 {
          );
       }
 
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
       ClientResource var11 = this.method13305();
       if (var4 > 1.0F) {
          float var12 = (var4 - 1.0F) / (this.method13032() - 1.0F);

@@ -1,15 +1,20 @@
 package mapped;
 
+import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.collect.Lists;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -20,7 +25,7 @@ import java.util.*;
 import java.util.function.Predicate;
 
 public class Class1095 extends Class1018 {
-   private static final DataParameter<Integer> field5993 = EntityDataManager.<Integer>createKey(Class1095.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5993 = EntityDataManager.<Integer>createKey(Class1095.class, DataSerializers.VARINT);
    private static final DataParameter<Byte> field5994 = EntityDataManager.<Byte>createKey(Class1095.class, DataSerializers.field33390);
    private static final DataParameter<Optional<UUID>> field5995 = EntityDataManager.<Optional<UUID>>createKey(Class1095.class, DataSerializers.field33404);
    private static final DataParameter<Optional<UUID>> field5996 = EntityDataManager.<Optional<UUID>>createKey(Class1095.class, DataSerializers.field33404);
@@ -66,7 +71,7 @@ public class Class1095 extends Class1018 {
    public void method4219() {
       this.field6001 = new Class2709<Class1018>(this, Class1018.class, 10, false, false, var0 -> var0 instanceof Class1089 || var0 instanceof Class1094);
       this.field6002 = new Class2709<Class1088>(this, Class1088.class, 10, false, false, Class1088.field5963);
-      this.field6003 = new Class2709<Class1049>(this, Class1049.class, 20, false, false, var0 -> var0 instanceof Class1050);
+      this.field6003 = new Class2709<Class1049>(this, Class1049.class, 20, false, false, var0 -> var0 instanceof AbstractGroupFishEntity);
       this.field5600.method20002(0, new Class2604(this));
       this.field5600.method20002(1, new Class2698(this));
       this.field5600.method20002(2, new Class2750(this, 2.2));
@@ -79,7 +84,7 @@ public class Class1095 extends Class1018 {
             )
          );
       this.field5600
-         .method20002(4, new Class2770<Class1012>(this, Class1012.class, 8.0F, 1.6, 1.4, var1 -> !((Class1012)var1).method4393() && !this.method5133()));
+         .method20002(4, new Class2770<WolfEntity>(this, WolfEntity.class, 8.0F, 1.6, 1.4, var1 -> !((WolfEntity)var1).method4393() && !this.method5133()));
       this.field5600.method20002(4, new Class2770<Class1096>(this, Class1096.class, 8.0F, 1.6, 1.4, var1 -> !this.method5133()));
       this.field5600.method20002(5, new Class2729(this));
       this.field5600.method20002(6, new Class2755(this));
@@ -100,7 +105,7 @@ public class Class1095 extends Class1018 {
 
    @Override
    public SoundEvent method3060(ItemStack var1) {
-      return Sounds.field26592;
+      return SoundEvents.field26592;
    }
 
    @Override
@@ -139,7 +144,7 @@ public class Class1095 extends Class1018 {
 
       super.method2871();
       if (this.method5133() && this.rand.nextFloat() < 0.05F) {
-         this.method2863(Sounds.field26588, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field26588, 1.0F, 1.0F);
       }
    }
 
@@ -218,7 +223,7 @@ public class Class1095 extends Class1018 {
    }
 
    public Class1095 method4389(ServerWorld var1, Class1045 var2) {
-      Class1095 var5 = EntityType.field41033.method33215(var1);
+      Class1095 var5 = EntityType.FOX.method33215(var1);
       var5.method5126(!this.rand.nextBoolean() ? ((Class1095)var2).method5125() : this.method5125());
       return var5;
    }
@@ -402,7 +407,7 @@ public class Class1095 extends Class1018 {
          );
          var4.method4134(40);
          var4.method4129(this.getUniqueID());
-         this.method2863(Sounds.field26597, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field26597, 1.0F, 1.0F);
          this.world.method6916(var4);
       }
    }
@@ -549,8 +554,8 @@ public class Class1095 extends Class1018 {
 
    @Override
    public void method4237() {
-      SoundEvent var3 = this.method4241();
-      if (var3 != Sounds.field26594) {
+      SoundEvent var3 = this.getAmbientSound();
+      if (var3 != SoundEvents.field26594) {
          super.method4237();
       } else {
          this.method2863(var3, 2.0F, this.method3100());
@@ -559,31 +564,31 @@ public class Class1095 extends Class1018 {
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
+   public SoundEvent getAmbientSound() {
       if (!this.isSleeping()) {
          if (!this.world.method6740() && this.rand.nextFloat() < 0.1F) {
             List var3 = this.world.<Entity>method6772(PlayerEntity.class, this.getBoundingBox().method19663(16.0, 16.0, 16.0), Class8088.field34763);
             if (var3.isEmpty()) {
-               return Sounds.field26594;
+               return SoundEvents.field26594;
             }
          }
 
-         return Sounds.field26589;
+         return SoundEvents.field26589;
       } else {
-         return Sounds.field26595;
+         return SoundEvents.field26595;
       }
    }
 
    @Nullable
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26593;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26593;
    }
 
    @Nullable
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26591;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26591;
    }
 
    private boolean method5151(UUID var1) {
@@ -591,7 +596,7 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public void method3052(Class8654 var1) {
+   public void method3052(DamageSource var1) {
       ItemStack var4 = this.method2943(Class2106.field13731);
       if (!var4.isEmpty()) {
          this.method3302(var4);
@@ -769,7 +774,7 @@ public class Class1095 extends Class1018 {
             this.field17203 = this.field17202.method3015();
          }
 
-         Class1095.this.method2863(Sounds.field26588, 1.0F, 1.0F);
+         Class1095.this.method2863(SoundEvents.field26588, 1.0F, 1.0F);
          method5175(Class1095.this, true);
          method5176(Class1095.this);
          super.method10804();

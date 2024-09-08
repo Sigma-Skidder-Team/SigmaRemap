@@ -176,6 +176,6 @@ public class Class4351 extends Class4278 {
       }
 
       super.draw(var1);
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
    }
 }

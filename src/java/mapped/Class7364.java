@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.SoundEvents;
+
 public class Class7364 extends Class7362 {
    private static String[] field31524;
    private int field31525;
@@ -16,7 +18,7 @@ public class Class7364 extends Class7362 {
             this.field31519.getPosX(),
             this.field31519.getPosY(),
             this.field31519.getPosZ(),
-            Sounds.field26540,
+            SoundEvents.field26540,
             this.field31519.method2864(),
             2.5F,
             0.8F + this.field31519.method3013().nextFloat() * 0.3F,

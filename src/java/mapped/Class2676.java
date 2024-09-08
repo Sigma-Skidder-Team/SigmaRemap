@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 
 import java.util.List;
 
@@ -80,7 +81,7 @@ public class Class2676 extends Class2672 {
 
    @Override
    public SoundEvent method10894() {
-      return Sounds.field26567;
+      return SoundEvents.field26567;
    }
 
    @Override

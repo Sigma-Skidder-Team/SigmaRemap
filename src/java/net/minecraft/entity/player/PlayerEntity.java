@@ -11,7 +11,9 @@ import com.mojang.datafixers.util.Either;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
@@ -52,7 +54,7 @@ public abstract class PlayerEntity extends LivingEntity {
       .put(Pose.field13625, EntitySize.method32102(0.2F, 0.2F))
       .build();
    private static final DataParameter<Float> field4895 = EntityDataManager.<Float>createKey(PlayerEntity.class, DataSerializers.field33392);
-   private static final DataParameter<Integer> field4896 = EntityDataManager.<Integer>createKey(PlayerEntity.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field4896 = EntityDataManager.<Integer>createKey(PlayerEntity.class, DataSerializers.VARINT);
    public static final DataParameter<Byte> field4897 = EntityDataManager.<Byte>createKey(PlayerEntity.class, DataSerializers.field33390);
    public static final DataParameter<Byte> field4898 = EntityDataManager.<Byte>createKey(PlayerEntity.class, DataSerializers.field33390);
    public static final DataParameter<CompoundNBT> field4899 = EntityDataManager.<CompoundNBT>createKey(PlayerEntity.class, DataSerializers.field33405);
@@ -322,17 +324,17 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public SoundEvent method2859() {
-      return Sounds.field26969;
+      return SoundEvents.field26969;
    }
 
    @Override
    public SoundEvent method2860() {
-      return Sounds.field26967;
+      return SoundEvents.field26967;
    }
 
    @Override
    public SoundEvent method2861() {
-      return Sounds.field26968;
+      return SoundEvents.field26968;
    }
 
    @Override
@@ -524,7 +526,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public void method2737(Class8654 var1) {
+   public void method2737(DamageSource var1) {
       super.method2737(var1);
       this.method3216();
       if (!this.isSpectator()) {
@@ -567,21 +569,21 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      if (var1 != Class8654.field38994) {
-         if (var1 != Class8654.field38999) {
-            return var1 != Class8654.field39012 ? Sounds.field26961 : Sounds.field26964;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      if (var1 != DamageSource.field38994) {
+         if (var1 != DamageSource.field38999) {
+            return var1 != DamageSource.field39012 ? SoundEvents.field26961 : SoundEvents.field26964;
          } else {
-            return Sounds.field26962;
+            return SoundEvents.field26962;
          }
       } else {
-         return Sounds.field26963;
+         return SoundEvents.field26963;
       }
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26960;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26960;
    }
 
    public boolean drop(boolean var1) {
@@ -745,10 +747,10 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public boolean method2760(Class8654 var1) {
+   public boolean method2760(DamageSource var1) {
       if (!super.method2760(var1)) {
-         if (var1 != Class8654.field38999) {
-            if (var1 != Class8654.field39002) {
+         if (var1 != DamageSource.field38999) {
+            if (var1 != DamageSource.field39002) {
                return !var1.method31141() ? false : !this.world.method6789().method17135(Class5462.field24251);
             } else {
                return !this.world.method6789().method17135(Class5462.field24250);
@@ -762,7 +764,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          if (this.abilities.disableDamage && !var1.method31135()) {
             return false;
@@ -813,7 +815,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public void method2886(Class8654 var1, float var2) {
+   public void method2886(DamageSource var1, float var2) {
       this.inventory.method4053(var1, var2);
    }
 
@@ -836,14 +838,14 @@ public abstract class PlayerEntity extends LivingEntity {
                }
 
                this.field5001 = ItemStack.EMPTY;
-               this.method2863(Sounds.field27036, 0.8F, 0.8F + this.world.rand.nextFloat() * 0.4F);
+               this.method2863(SoundEvents.field27036, 0.8F, 0.8F + this.world.rand.nextFloat() * 0.4F);
             }
          }
       }
    }
 
    @Override
-   public void method2888(Class8654 var1, float var2) {
+   public void method2888(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          var2 = this.method3071(var1, var2);
          var2 = this.method3072(var1, var2);
@@ -1041,7 +1043,7 @@ public abstract class PlayerEntity extends LivingEntity {
             var9 += Class7858.method26323(this);
             if (this.method3337() && var7) {
                this.world
-                  .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26952, this.method2864(), 1.0F, 1.0F);
+                  .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26952, this.method2864(), 1.0F, 1.0F);
                var9++;
                var8 = true;
             }
@@ -1081,10 +1083,10 @@ public abstract class PlayerEntity extends LivingEntity {
             }
 
             Vector3d var17 = var1.getVec();
-            boolean var18 = var1.method2741(Class8654.method31117(this), var4);
+            boolean var18 = var1.method2741(DamageSource.method31117(this), var4);
             if (!var18) {
                this.world
-                  .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26953, this.method2864(), 1.0F, 1.0F);
+                  .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26953, this.method2864(), 1.0F, 1.0F);
                if (var15) {
                   var1.method3223();
                }
@@ -1123,12 +1125,12 @@ public abstract class PlayerEntity extends LivingEntity {
                            (double) MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)),
                            (double)(-MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)))
                         );
-                        var21.method2741(Class8654.method31117(this), var19);
+                        var21.method2741(DamageSource.method31117(this), var19);
                      }
                   }
 
                   this.world
-                     .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26955, this.method2864(), 1.0F, 1.0F);
+                     .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26955, this.method2864(), 1.0F, 1.0F);
                   this.method2902();
                }
 
@@ -1140,7 +1142,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
                if (var10) {
                   this.world
-                     .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26951, this.method2864(), 1.0F, 1.0F);
+                     .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26951, this.method2864(), 1.0F, 1.0F);
                   this.method2795(var1);
                }
 
@@ -1148,12 +1150,12 @@ public abstract class PlayerEntity extends LivingEntity {
                   if (!var7) {
                      this.world
                         .method6743(
-                           (PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26956, this.method2864(), 1.0F, 1.0F
+                           (PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26956, this.method2864(), 1.0F, 1.0F
                         );
                   } else {
                      this.world
                         .method6743(
-                           (PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26954, this.method2864(), 1.0F, 1.0F
+                           (PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26954, this.method2864(), 1.0F, 1.0F
                         );
                   }
                }
@@ -1530,7 +1532,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public SoundEvent method2926(int var1) {
-      return var1 <= 4 ? Sounds.field26966 : Sounds.field26957;
+      return var1 <= 4 ? SoundEvents.field26966 : SoundEvents.field26957;
    }
 
    @Override
@@ -1594,7 +1596,7 @@ public abstract class PlayerEntity extends LivingEntity {
       if (var1 > 0 && this.field4920 % 5 == 0 && (float)this.field4925 < (float)this.ticksExisted - 100.0F) {
          float var4 = this.field4920 <= 30 ? (float)this.field4920 / 30.0F : 1.0F;
          this.world
-            .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26965, this.method2864(), var4 * 0.75F, 1.0F);
+            .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26965, this.method2864(), var4 * 0.75F, 1.0F);
          this.field4925 = this.ticksExisted;
       }
    }
@@ -1753,8 +1755,8 @@ public abstract class PlayerEntity extends LivingEntity {
    private void method2950(CompoundNBT var1) {
       if (!this.world.isRemote && !var1.method134()) {
          EntityType.method33217(var1, this.world).ifPresent(var1x -> {
-            if (var1x instanceof Class1013) {
-               ((Class1013)var1x).method4398(this.entityUniqueID);
+            if (var1x instanceof TameableEntity) {
+               ((TameableEntity)var1x).method4398(this.entityUniqueID);
             }
 
             var1x.setPosition(this.getPosX(), this.getPosY() + 0.7F, this.getPosZ());
@@ -2021,7 +2023,7 @@ public abstract class PlayerEntity extends LivingEntity {
          this.getPosX(),
          this.getPosY(),
          this.getPosZ(),
-         Sounds.field26959,
+         SoundEvents.field26959,
          Class2266.field14735,
          0.5F,
          var1.rand.nextFloat() * 0.1F + 0.9F

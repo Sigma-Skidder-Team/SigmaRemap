@@ -1,11 +1,13 @@
 package mapped;
 
+import net.minecraft.entity.IAngerable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
@@ -15,15 +17,15 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import java.util.UUID;
 
-public class Class1063 extends Class1038 implements Class1011 {
+public class Class1063 extends Class1038 implements IAngerable {
    private static final UUID field5860 = UUID.fromString("49455A49-7EC5-45BA-B886-3B90B23A1718");
    private static final Class9689 field5861 = new Class9689(field5860, "Attacking speed boost", 0.05, AttributeModifierOperation.ADDITION);
-   private static final Class8369 field5862 = Class8763.method31620(0, 1);
+   private static final RangedInteger field5862 = TickRangeConverter.convertRange(0, 1);
    private int field5863;
-   private static final Class8369 field5864 = Class8763.method31620(20, 39);
+   private static final RangedInteger field5864 = TickRangeConverter.convertRange(20, 39);
    private int field5865;
    private UUID field5866;
-   private static final Class8369 field5867 = Class8763.method31620(4, 6);
+   private static final RangedInteger field5867 = TickRangeConverter.convertRange(4, 6);
    private int field5868;
 
    public Class1063(EntityType<? extends Class1063> var1, World var2) {
@@ -120,7 +122,7 @@ public class Class1063 extends Class1038 implements Class1011 {
    }
 
    private void method4878() {
-      this.method2863(Sounds.field27295, this.method3099() * 2.0F, this.method3100() * 1.8F);
+      this.method2863(SoundEvents.field27295, this.method3099() * 2.0F, this.method3100() * 1.8F);
    }
 
    @Override
@@ -174,23 +176,23 @@ public class Class1063 extends Class1038 implements Class1011 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       return !this.method2760(var1) ? super.method2741(var1, var2) : false;
    }
 
    @Override
-   public SoundEvent method4241() {
-      return !this.method4369() ? Sounds.field27294 : Sounds.field27295;
+   public SoundEvent getAmbientSound() {
+      return !this.method4369() ? SoundEvents.field27294 : SoundEvents.field27295;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27297;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27297;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27296;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27296;
    }
 
    @Override

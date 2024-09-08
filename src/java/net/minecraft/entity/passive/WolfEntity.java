@@ -1,17 +1,17 @@
-package mapped;
+package net.minecraft.entity.passive;
 
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -22,13 +22,13 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class Class1012 extends Class1013 implements Class1011 {
-   private static final DataParameter<Boolean> field5656 = EntityDataManager.<Boolean>createKey(Class1012.class, DataSerializers.field33398);
-   private static final DataParameter<Integer> field5657 = EntityDataManager.<Integer>createKey(Class1012.class, DataSerializers.field33391);
-   private static final DataParameter<Integer> field5658 = EntityDataManager.<Integer>createKey(Class1012.class, DataSerializers.field33391);
+public class WolfEntity extends TameableEntity implements IAngerable {
+   private static final DataParameter<Boolean> field5656 = EntityDataManager.<Boolean>createKey(WolfEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> field5657 = EntityDataManager.<Integer>createKey(WolfEntity.class, DataSerializers.VARINT);
+   private static final DataParameter<Integer> field5658 = EntityDataManager.<Integer>createKey(WolfEntity.class, DataSerializers.VARINT);
    public static final Predicate<LivingEntity> field5659 = var0 -> {
       EntityType var3 = var0.getType();
-      return var3 == EntityType.field41074 || var3 == EntityType.field41071 || var3 == EntityType.field41033;
+      return var3 == EntityType.SHEEP || var3 == EntityType.RABBIT || var3 == EntityType.FOX;
    };
    private float field5660;
    private float field5661;
@@ -36,10 +36,10 @@ public class Class1012 extends Class1013 implements Class1011 {
    private boolean field5663;
    private float field5664;
    private float field5665;
-   private static final Class8369 field5666 = Class8763.method31620(20, 39);
+   private static final RangedInteger field5666 = TickRangeConverter.convertRange(20, 39);
    private UUID field5667;
 
-   public Class1012(EntityType<? extends Class1012> var1, World var2) {
+   public WolfEntity(EntityType<? extends WolfEntity> var1, World var2) {
       super(var1, var2);
       this.method4379(false);
    }
@@ -64,7 +64,7 @@ public class Class1012 extends Class1013 implements Class1011 {
       this.field5601.method20002(5, new Class2716<Class1018>(this, Class1018.class, false, field5659));
       this.field5601.method20002(6, new Class2716<Class1088>(this, Class1088.class, false, Class1088.field5963));
       this.field5601.method20002(7, new Class2709<Class1082>(this, Class1082.class, false));
-      this.field5601.method20002(8, new Class2779<Class1012>(this, true));
+      this.field5601.method20002(8, new Class2779<WolfEntity>(this, true));
    }
 
    public static Class7037 method4373() {
@@ -81,7 +81,7 @@ public class Class1012 extends Class1013 implements Class1011 {
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field27256, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field27256, 0.15F, 1.0F);
    }
 
    @Override
@@ -102,26 +102,26 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    @Override
-   public SoundEvent method4241() {
+   public SoundEvent getAmbientSound() {
       if (!this.method4369()) {
          if (this.rand.nextInt(3) != 0) {
-            return Sounds.field27249;
+            return SoundEvents.field27249;
          } else {
-            return this.method4393() && this.getHealth() < 10.0F ? Sounds.field27257 : Sounds.field27254;
+            return this.method4393() && this.getHealth() < 10.0F ? SoundEvents.field27257 : SoundEvents.field27254;
          }
       } else {
-         return Sounds.field27251;
+         return SoundEvents.field27251;
       }
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27253;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27253;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27250;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27250;
    }
 
    @Override
@@ -158,7 +158,7 @@ public class Class1012 extends Class1013 implements Class1011 {
          if (!this.method3254()) {
             if ((this.field5662 || this.field5663) && this.field5663) {
                if (this.field5664 == 0.0F) {
-                  this.method2863(Sounds.field27255, this.method3099(), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+                  this.method2863(SoundEvents.field27255, this.method3099(), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                }
 
                this.field5665 = this.field5664;
@@ -208,7 +208,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    @Override
-   public void method2737(Class8654 var1) {
+   public void method2737(DamageSource var1) {
       this.field5662 = false;
       this.field5663 = false;
       this.field5665 = 0.0F;
@@ -252,7 +252,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!this.method2760(var1)) {
          Entity var5 = var1.method31109();
          this.method4403(false);
@@ -268,7 +268,7 @@ public class Class1012 extends Class1013 implements Class1011 {
 
    @Override
    public boolean method3114(Entity var1) {
-      boolean var4 = var1.method2741(Class8654.method31115(this), (float)((int)this.method3086(Attributes.field42110)));
+      boolean var4 = var1.method2741(DamageSource.method31115(this), (float)((int)this.method3086(Attributes.field42110)));
       if (var4) {
          this.method3399(this, var1);
       }
@@ -421,8 +421,8 @@ public class Class1012 extends Class1013 implements Class1011 {
       this.dataManager.method35446(field5657, var1.method309());
    }
 
-   public Class1012 method4389(ServerWorld var1, Class1045 var2) {
-      Class1012 var5 = EntityType.field41105.method33215(var1);
+   public WolfEntity method4389(ServerWorld var1, Class1045 var2) {
+      WolfEntity var5 = EntityType.field41105.method33215(var1);
       UUID var6 = this.method4397();
       if (var6 != null) {
          var5.method4398(var6);
@@ -441,10 +441,10 @@ public class Class1012 extends Class1013 implements Class1011 {
       if (var1 == this) {
          return false;
       } else if (this.method4393()) {
-         if (!(var1 instanceof Class1012)) {
+         if (!(var1 instanceof WolfEntity)) {
             return false;
          } else {
-            Class1012 var4 = (Class1012)var1;
+            WolfEntity var4 = (WolfEntity)var1;
             if (var4.method4393()) {
                return var4.method4395() ? false : this.method4507() && var4.method4507();
             } else {
@@ -464,14 +464,14 @@ public class Class1012 extends Class1013 implements Class1011 {
    public boolean method4388(LivingEntity var1, LivingEntity var2) {
       if (var1 instanceof Class1081 || var1 instanceof Class1112) {
          return false;
-      } else if (!(var1 instanceof Class1012)) {
+      } else if (!(var1 instanceof WolfEntity)) {
          if (var1 instanceof PlayerEntity && var2 instanceof PlayerEntity && !((PlayerEntity)var2).method2742((PlayerEntity)var1)) {
             return false;
          } else {
-            return var1 instanceof AbstractHorseEntity && ((AbstractHorseEntity)var1).method4932() ? false : !(var1 instanceof Class1013) || !((Class1013)var1).method4393();
+            return var1 instanceof AbstractHorseEntity && ((AbstractHorseEntity)var1).method4932() ? false : !(var1 instanceof TameableEntity) || !((TameableEntity)var1).method4393();
          }
       } else {
-         Class1012 var5 = (Class1012)var1;
+         WolfEntity var5 = (WolfEntity)var1;
          return !var5.method4393() || var5.method4400() != var2;
       }
    }
@@ -487,14 +487,14 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    // $VF: synthetic method
-   public static Random method4391(Class1012 var0) {
+   public static Random method4391(WolfEntity var0) {
       return var0.rand;
    }
 
    public class Class2773<T extends LivingEntity> extends Class2770<T> {
-      private final Class1012 field17362;
+      private final WolfEntity field17362;
 
-      public Class2773(Class1012 var1, Class<T> var2, float var3, double var4, double var5) {
+      public Class2773(WolfEntity var1, Class<T> var2, float var3, double var4, double var5) {
          super(var1, var2, var3, var4, var5);
          this.field17362 = var1;
       }
@@ -507,18 +507,18 @@ public class Class1012 extends Class1013 implements Class1011 {
       }
 
       private boolean method10966(Class1064 var1) {
-         return var1.method4887() >= method4391(Class1012.this).nextInt(5);
+         return var1.method4887() >= method4391(WolfEntity.this).nextInt(5);
       }
 
       @Override
       public void method10804() {
-         Class1012.this.method4233(null);
+         WolfEntity.this.method4233(null);
          super.method10804();
       }
 
       @Override
       public void method10805() {
-         Class1012.this.method4233(null);
+         WolfEntity.this.method4233(null);
          super.method10805();
       }
    }

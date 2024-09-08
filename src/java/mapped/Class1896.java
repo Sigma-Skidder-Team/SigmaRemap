@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.RecipeBookCategory;
 
 import java.util.List;

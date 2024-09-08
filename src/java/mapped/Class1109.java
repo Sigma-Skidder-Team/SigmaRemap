@@ -2,8 +2,10 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
@@ -101,22 +103,22 @@ public class Class1109 extends Class1108 {
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return !this.method5320() ? Sounds.field26751 : Sounds.field26752;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return !this.method5320() ? SoundEvents.field26751 : SoundEvents.field26752;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return !this.method5320() ? Sounds.field26750 : Sounds.field26743;
+   public SoundEvent getDeathSound() {
+      return !this.method5320() ? SoundEvents.field26750 : SoundEvents.field26743;
    }
 
    @Override
    public SoundEvent method5327() {
-      return !this.method5320() ? Sounds.field26754 : Sounds.field26755;
+      return !this.method5320() ? SoundEvents.field26754 : SoundEvents.field26755;
    }
 
    @Override
    public SoundEvent method5331() {
-      return Sounds.field26753;
+      return SoundEvents.field26753;
    }
 }

@@ -7,7 +7,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -80,12 +82,12 @@ public class Class959 extends TileEntity implements Class935 {
       }
 
       if (var3 % 80L == 0L && this.method3903()) {
-         this.method3908(Sounds.field26468);
+         this.method3908(SoundEvents.field26468);
       }
 
       if (var3 > this.field5389 && this.method3903()) {
          this.field5389 = var3 + 60L + (long)this.field5324.method6814().nextInt(40);
-         this.method3908(Sounds.field26469);
+         this.method3908(SoundEvents.field26469);
       }
 
       if (this.field5324.isRemote) {
@@ -183,12 +185,12 @@ public class Class959 extends TileEntity implements Class935 {
                this.field5387.getPosX(),
                this.field5387.getPosY(),
                this.field5387.getPosZ(),
-               Sounds.field26470,
+               SoundEvents.field26470,
                Class2266.field14732,
                1.0F,
                1.0F
             );
-         this.field5387.method2741(Class8654.field39006, 4.0F);
+         this.field5387.method2741(DamageSource.field39006, 4.0F);
       }
 
       if (var3 != this.field5387) {
@@ -265,7 +267,7 @@ public class Class959 extends TileEntity implements Class935 {
 
    private void method3905(boolean var1) {
       if (var1 != this.field5384) {
-         this.method3908(!var1 ? Sounds.field26471 : Sounds.field26467);
+         this.method3908(!var1 ? SoundEvents.field26471 : SoundEvents.field26467);
       }
 
       this.field5384 = var1;

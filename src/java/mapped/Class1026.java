@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -9,6 +10,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -85,7 +87,7 @@ public abstract class Class1026 extends Class1028 {
    }
 
    @Override
-   public void method2737(Class8654 var1) {
+   public void method2737(DamageSource var1) {
       if (this.world instanceof ServerWorld) {
          Entity var4 = var1.method31109();
          Class7699 var5 = this.method4551();
@@ -105,8 +107,8 @@ public abstract class Class1026 extends Class1028 {
             ItemStack var6 = this.method2943(Class2106.field13736);
             PlayerEntity var7 = null;
             if (!(var4 instanceof PlayerEntity)) {
-               if (var4 instanceof Class1012) {
-                  Class1012 var8 = (Class1012)var4;
+               if (var4 instanceof WolfEntity) {
+                  WolfEntity var8 = (WolfEntity)var4;
                   LivingEntity var9 = var8.method4400();
                   if (var8.method4393() && var9 instanceof PlayerEntity) {
                      var7 = (PlayerEntity)var9;
@@ -243,7 +245,7 @@ public abstract class Class1026 extends Class1028 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (this.method4552()) {
          this.method4551().method25415();
       }

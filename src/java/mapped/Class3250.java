@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -84,7 +85,7 @@ public class Class3250 extends Class3198 implements Class3245 {
 
             var2.method6757(
                (Entity)null,
-               Class8654.method31128(),
+               DamageSource.method31128(),
                (Class5924)null,
                (double)var3.getX() + 0.5,
                (double)var3.getY() + 0.5,

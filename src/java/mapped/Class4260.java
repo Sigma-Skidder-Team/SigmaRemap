@@ -99,7 +99,7 @@ public class Class4260 extends Class4247 {
          this.field20669.getDescription(),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.7F)
       );
-      RenderUtil.method11422();
+      RenderUtil.endScissor();
       super.draw(var1);
    }
 }

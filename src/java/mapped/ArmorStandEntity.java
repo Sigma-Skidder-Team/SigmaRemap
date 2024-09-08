@@ -4,14 +4,12 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.HandSide;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -389,10 +387,10 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (this.world.isRemote || this.removed) {
          return false;
-      } else if (Class8654.field39004.equals(var1)) {
+      } else if (DamageSource.field39004.equals(var1)) {
          this.method2904();
          return false;
       } else if (this.method2760(var1) || this.field5583 || this.method4203()) {
@@ -401,8 +399,8 @@ public class ArmorStandEntity extends LivingEntity {
          this.method4194(var1);
          this.method2904();
          return false;
-      } else if (!Class8654.field38992.equals(var1)) {
-         if (Class8654.field38994.equals(var1) && this.getHealth() > 0.5F) {
+      } else if (!DamageSource.field38992.equals(var1)) {
+         if (DamageSource.field38994.equals(var1) && this.getHealth() > 0.5F) {
             this.method4192(var1, 4.0F);
             return false;
          } else {
@@ -448,7 +446,7 @@ public class ArmorStandEntity extends LivingEntity {
       if (var1 != 32) {
          super.method2866(var1);
       } else if (this.world.isRemote) {
-         this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26359, this.method2864(), 0.3F, 1.0F, false);
+         this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26359, this.method2864(), 0.3F, 1.0F, false);
          this.field5584 = this.world.method6783();
       }
    }
@@ -481,7 +479,7 @@ public class ArmorStandEntity extends LivingEntity {
       }
    }
 
-   private void method4192(Class8654 var1, float var2) {
+   private void method4192(DamageSource var1, float var2) {
       float var5 = this.getHealth();
       var5 -= var2;
       if (!(var5 <= 0.5F)) {
@@ -492,12 +490,12 @@ public class ArmorStandEntity extends LivingEntity {
       }
    }
 
-   private void method4193(Class8654 var1) {
+   private void method4193(DamageSource var1) {
       Block.method11557(this.world, this.getPosition(), new ItemStack(Items.ARMOR_STAND));
       this.method4194(var1);
    }
 
-   private void method4194(Class8654 var1) {
+   private void method4194(DamageSource var1) {
       this.method4195();
       this.method3052(var1);
 
@@ -519,7 +517,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    private void method4195() {
-      this.world.method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26357, this.method2864(), 1.0F, 1.0F);
+      this.world.method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26357, this.method2864(), 1.0F, 1.0F);
    }
 
    @Override
@@ -736,19 +734,19 @@ public class ArmorStandEntity extends LivingEntity {
 
    @Override
    public SoundEvent method2926(int var1) {
-      return Sounds.field26358;
+      return SoundEvents.field26358;
    }
 
    @Nullable
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26359;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26359;
    }
 
    @Nullable
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26357;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26357;
    }
 
    @Override

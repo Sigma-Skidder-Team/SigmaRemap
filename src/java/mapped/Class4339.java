@@ -84,7 +84,7 @@ public class Class4339 extends Class4304 {
 
          super.draw(var1);
          if (this.field21206) {
-            RenderUtil.method11422();
+            RenderUtil.endScissor();
          }
       }
    }

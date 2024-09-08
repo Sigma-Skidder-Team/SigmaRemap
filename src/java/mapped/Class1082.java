@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntitySize;
@@ -8,8 +9,10 @@ import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
@@ -31,7 +34,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    public void method4219() {
       this.field5600.method20002(2, new Class2617(this));
       this.field5600.method20002(3, new Class2640(this, 1.0));
-      this.field5600.method20002(3, new Class2770<Class1012>(this, Class1012.class, 6.0F, 1.0, 1.2));
+      this.field5600.method20002(3, new Class2770<WolfEntity>(this, WolfEntity.class, 6.0F, 1.0, 1.2));
       this.field5600.method20002(5, new Class2737(this, 1.0));
       this.field5600.method20002(6, new Class2612(this, PlayerEntity.class, 8.0F));
       this.field5600.method20002(6, new Class2668(this));
@@ -146,7 +149,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
       double var11 = var1.getPosZ() - this.getPosZ();
       double var13 = (double) MathHelper.method37766(var7 * var7 + var11 * var11);
       var6.shoot(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method6997().getId() * 4));
-      this.method2863(Sounds.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
+      this.method2863(SoundEvents.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.world.method6916(var6);
    }
 

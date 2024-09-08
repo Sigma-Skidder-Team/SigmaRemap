@@ -806,7 +806,7 @@ public class RenderSystem {
    }
 
    @Deprecated
-   public static void method27940(Runnable var0) {
+   public static void runAsFancy(Runnable var0) {
       boolean var3 = Minecraft.isFabulousGraphicsEnabled();
       if (var3) {
          GameSettings var4 = Minecraft.getInstance().gameSettings;

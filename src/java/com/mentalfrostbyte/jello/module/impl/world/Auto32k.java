@@ -12,6 +12,7 @@ import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.network.play.server.SCloseWindowPacket;

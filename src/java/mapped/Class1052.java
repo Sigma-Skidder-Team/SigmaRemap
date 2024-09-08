@@ -2,19 +2,23 @@ package mapped;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class Class1052 extends Class1050 {
-   private static final DataParameter<Integer> field5813 = EntityDataManager.<Integer>createKey(Class1052.class, DataSerializers.field33391);
+public class Class1052 extends AbstractGroupFishEntity {
+   private static final DataParameter<Integer> field5813 = EntityDataManager.<Integer>createKey(Class1052.class, DataSerializers.VARINT);
    private static final ResourceLocation[] field5814 = new ResourceLocation[]{
       new ResourceLocation("textures/entity/fish/tropical_a.png"), new ResourceLocation("textures/entity/fish/tropical_b.png")
    };
@@ -125,28 +129,28 @@ public class Class1052 extends Class1050 {
    }
 
    @Override
-   public ItemStack method4796() {
+   public ItemStack getFishBucket() {
       return new ItemStack(Items.field37895);
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27160;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27160;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27161;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27161;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27163;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27163;
    }
 
    @Override
-   public SoundEvent method4798() {
-      return Sounds.field27162;
+   public SoundEvent getFlopSound() {
+      return SoundEvents.field27162;
    }
 
    private static int method4819(int var0) {

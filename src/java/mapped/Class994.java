@@ -4,11 +4,13 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -68,7 +70,7 @@ public class Class994 extends AbstractMinecartEntity {
    }
 
    @Override
-   public void method3586(Class8654 var1) {
+   public void method3586(DamageSource var1) {
       super.method3586(var1);
       if (!var1.method31131() && this.world.method6789().method17135(Class5462.field24229)) {
          this.method3300(Blocks.FURNACE);

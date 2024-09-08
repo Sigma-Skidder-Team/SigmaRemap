@@ -8,8 +8,10 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -60,8 +62,8 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27043;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27043;
    }
 
    @Override
@@ -72,13 +74,13 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27049;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27049;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return !this.method4847() ? Sounds.field27050 : Sounds.field27051;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return !this.method4847() ? SoundEvents.field27050 : SoundEvents.field27051;
    }
 
    @Override
@@ -287,7 +289,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                Direction var6 = this.method4844(var5);
                if (var6 != null) {
                   this.dataManager.method35446(field5841, var6);
-                  this.method2863(Sounds.field27054, 1.0F, 1.0F);
+                  this.method2863(SoundEvents.field27054, 1.0F, 1.0F);
                   this.dataManager.method35446(field5842, Optional.<BlockPos>of(var5));
                   this.dataManager.method35446(field5843, (byte)0);
                   this.method4233((LivingEntity)null);
@@ -336,7 +338,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (this.method4847()) {
          Entity var5 = var1.method31113();
          if (var5 instanceof AbstractArrowEntity) {
@@ -385,10 +387,10 @@ public class Class1057 extends Class1056 implements Class1008 {
       if (!this.world.isRemote) {
          this.method3085(Attributes.field42113).method38670(field5840);
          if (var1 != 0) {
-            this.method2863(Sounds.field27052, 1.0F, 1.0F);
+            this.method2863(SoundEvents.field27052, 1.0F, 1.0F);
          } else {
             this.method3085(Attributes.field42113).method38668(field5840);
-            this.method2863(Sounds.field27048, 1.0F, 1.0F);
+            this.method2863(SoundEvents.field27048, 1.0F, 1.0F);
          }
       }
 

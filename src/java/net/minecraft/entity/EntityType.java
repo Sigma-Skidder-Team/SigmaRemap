@@ -1,5 +1,6 @@
 package net.minecraft.entity;
 
+import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.collect.ImmutableSet;
 import java.util.Optional;
 import java.util.UUID;
@@ -10,6 +11,8 @@ import javax.annotation.Nullable;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.passive.SquidEntity;
+import net.minecraft.entity.passive.fish.SalmonEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -110,7 +113,7 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class888> field41032 = method33197(
       "firework_rocket", Class8878.<Class888>method32299(Class888::new, Class179.field628).method32301(0.25F, 0.25F).method32307(4).method32308(10)
    );
-   public static final EntityType<Class1095> field41033 = method33197(
+   public static final EntityType<Class1095> FOX = method33197(
       "fox", Class8878.<Class1095>method32299(Class1095::new, Class179.field624).method32301(0.6F, 0.7F).method32307(8).method32305(Blocks.field37069)
    );
    public static final EntityType<Class1112> field41034 = method33197(
@@ -226,16 +229,16 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class1054> field41070 = method33197(
       "pufferfish", Class8878.<Class1054>method32299(Class1054::new, Class179.field627).method32301(0.7F, 0.7F).method32307(4)
    );
-   public static final EntityType<Class1094> field41071 = method33197(
+   public static final EntityType<Class1094> RABBIT = method33197(
       "rabbit", Class8878.<Class1094>method32299(Class1094::new, Class179.field624).method32301(0.4F, 0.5F).method32307(8)
    );
    public static final EntityType<Class1029> field41072 = method33197(
       "ravager", Class8878.<Class1029>method32299(Class1029::new, Class179.field623).method32301(1.95F, 2.2F).method32307(10)
    );
-   public static final EntityType<Class1053> field41073 = method33197(
-      "salmon", Class8878.<Class1053>method32299(Class1053::new, Class179.field627).method32301(0.7F, 0.4F).method32307(4)
+   public static final EntityType<SalmonEntity> field41073 = method33197(
+      "salmon", Class8878.<SalmonEntity>method32299(SalmonEntity::new, Class179.field627).method32301(0.7F, 0.4F).method32307(4)
    );
-   public static final EntityType<Class1019> field41074 = method33197(
+   public static final EntityType<Class1019> SHEEP = method33197(
       "sheep", Class8878.<Class1019>method32299(Class1019::new, Class179.field624).method32301(0.9F, 1.3F).method32307(10)
    );
    public static final EntityType<Class1057> field41075 = method33197(
@@ -271,8 +274,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class1101> field41085 = method33197(
       "spider", Class8878.<Class1101>method32299(Class1101::new, Class179.field623).method32301(1.4F, 0.9F).method32307(8)
    );
-   public static final EntityType<Class1055> field41086 = method33197(
-      "squid", Class8878.<Class1055>method32299(Class1055::new, Class179.field626).method32301(0.8F, 0.8F).method32307(8)
+   public static final EntityType<SquidEntity> field41086 = method33197(
+      "squid", Class8878.<SquidEntity>method32299(SquidEntity::new, Class179.field626).method32301(0.8F, 0.8F).method32307(8)
    );
    public static final EntityType<Class1083> field41087 = method33197(
       "stray", Class8878.<Class1083>method32299(Class1083::new, Class179.field623).method32301(0.6F, 1.99F).method32307(8)
@@ -338,8 +341,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class902> field41104 = method33197(
       "wither_skull", Class8878.<Class902>method32299(Class902::new, Class179.field628).method32301(0.3125F, 0.3125F).method32307(4).method32308(10)
    );
-   public static final EntityType<Class1012> field41105 = method33197(
-      "wolf", Class8878.<Class1012>method32299(Class1012::new, Class179.field624).method32301(0.6F, 0.85F).method32307(10)
+   public static final EntityType<WolfEntity> field41105 = method33197(
+      "wolf", Class8878.<WolfEntity>method32299(WolfEntity::new, Class179.field624).method32301(0.6F, 0.85F).method32307(10)
    );
    public static final EntityType<Class1093> field41106 = method33197(
       "zoglin", Class8878.<Class1093>method32299(Class1093::new, Class179.field623).method32304().method32301(1.3964844F, 1.4F).method32307(8)

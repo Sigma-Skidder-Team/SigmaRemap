@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 
 public class Class1004 extends Entity {
-   private static final DataParameter<Integer> field5562 = EntityDataManager.<Integer>createKey(Class1004.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5562 = EntityDataManager.<Integer>createKey(Class1004.class, DataSerializers.VARINT);
    private LivingEntity field5563;
    private int field5564 = 80;
 

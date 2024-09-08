@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 
 import javax.annotation.Nullable;
 
@@ -36,7 +37,7 @@ public class Class2677 extends Class2672 {
    @Nullable
    @Override
    public SoundEvent method10894() {
-      return Sounds.field26697;
+      return SoundEvents.field26697;
    }
 
    @Override

@@ -4,6 +4,7 @@ import java.util.function.Consumer;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -12,24 +13,24 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
       EntityType.field41038,
       EntityType.field41019,
       EntityType.field41057,
-      EntityType.field41074,
+      EntityType.SHEEP,
       EntityType.field41016,
       EntityType.field41058,
       EntityType.field41064,
       EntityType.field41014,
       EntityType.field41105,
       EntityType.field41059,
-      EntityType.field41071,
+      EntityType.RABBIT,
       EntityType.field41047,
       EntityType.field41012,
       EntityType.field41061,
-      EntityType.field41033,
+      EntityType.FOX,
       EntityType.field41009,
       EntityType.field41037,
       EntityType.field41088
    };
    private static final Item[] field17616 = new Item[]{Items.field37909, Items.field37911, Items.field37912, Items.field37910};
-   private static final Item[] field17617 = new Item[]{Items.field37894, Items.field37895, Items.field37892, Items.field37893};
+   private static final Item[] field17617 = new Item[]{Items.field37894, Items.field37895, Items.field37892, Items.SALMON_BUCKET};
    private static final Item[] field17618 = new Item[]{
       Items.field37795,
       Items.field37837,

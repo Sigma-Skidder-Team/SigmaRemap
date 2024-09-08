@@ -6,18 +6,21 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SChangeGameStatePacket;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 import java.util.function.Predicate;
 
 public class Class1054 extends Class1049 {
-   private static final DataParameter<Integer> field5820 = EntityDataManager.<Integer>createKey(Class1054.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5820 = EntityDataManager.<Integer>createKey(Class1054.class, DataSerializers.VARINT);
    private int field5821;
    private int field5822;
    private static final Predicate<LivingEntity> field5823 = var0 -> {
@@ -68,7 +71,7 @@ public class Class1054 extends Class1049 {
    }
 
    @Override
-   public ItemStack method4796() {
+   public ItemStack getFishBucket() {
       return new ItemStack(Items.field37892);
    }
 
@@ -84,10 +87,10 @@ public class Class1054 extends Class1049 {
          if (this.field5821 <= 0) {
             if (this.method4828() != 0) {
                if (this.field5822 > 60 && this.method4828() == 2) {
-                  this.method2863(Sounds.field26980, this.method3099(), this.method3100());
+                  this.method2863(SoundEvents.field26980, this.method3099(), this.method3100());
                   this.method4829(1);
                } else if (this.field5822 > 100 && this.method4828() == 1) {
-                  this.method2863(Sounds.field26980, this.method3099(), this.method3100());
+                  this.method2863(SoundEvents.field26980, this.method3099(), this.method3100());
                   this.method4829(0);
                }
 
@@ -96,11 +99,11 @@ public class Class1054 extends Class1049 {
          } else {
             if (this.method4828() != 0) {
                if (this.field5821 > 40 && this.method4828() == 1) {
-                  this.method2863(Sounds.field26981, this.method3099(), this.method3100());
+                  this.method2863(SoundEvents.field26981, this.method3099(), this.method3100());
                   this.method4829(2);
                }
             } else {
-               this.method2863(Sounds.field26981, this.method3099(), this.method3100());
+               this.method2863(SoundEvents.field26981, this.method3099(), this.method3100());
                this.method4829(1);
             }
 
@@ -125,16 +128,16 @@ public class Class1054 extends Class1049 {
 
    private void method4830(Class1006 var1) {
       int var4 = this.method4828();
-      if (var1.method2741(Class8654.method31115(this), (float)(1 + var4))) {
+      if (var1.method2741(DamageSource.method31115(this), (float)(1 + var4))) {
          var1.method3035(new Class2023(Effects.POISON, 60 * var4, 0));
-         this.method2863(Sounds.field26985, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field26985, 1.0F, 1.0F);
       }
    }
 
    @Override
    public void method3279(PlayerEntity var1) {
       int var4 = this.method4828();
-      if (var1 instanceof ServerPlayerEntity && var4 > 0 && var1.method2741(Class8654.method31115(this), (float)(1 + var4))) {
+      if (var1 instanceof ServerPlayerEntity && var4 > 0 && var1.method2741(DamageSource.method31115(this), (float)(1 + var4))) {
          if (!this.method3245()) {
             ((ServerPlayerEntity)var1).field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24569, 0.0F));
          }
@@ -144,23 +147,23 @@ public class Class1054 extends Class1049 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26979;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26979;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26982;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26982;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26984;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26984;
    }
 
    @Override
-   public SoundEvent method4798() {
-      return Sounds.field26983;
+   public SoundEvent getFlopSound() {
+      return SoundEvents.field26983;
    }
 
    @Override

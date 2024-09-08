@@ -8,14 +8,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -28,7 +26,7 @@ import javax.annotation.Nullable;
 public class Class1072 extends Class1018 implements Class1071, Class1069 {
    private static String[] field5911;
    private static final DataParameter<Boolean> field5912 = EntityDataManager.<Boolean>createKey(Class1072.class, DataSerializers.field33398);
-   private static final DataParameter<Integer> field5913 = EntityDataManager.<Integer>createKey(Class1072.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5913 = EntityDataManager.<Integer>createKey(Class1072.class, DataSerializers.VARINT);
    private static final Class120 field5914 = Class120.method339(Items.field38052, Items.field38053, Items.field38111);
    private final Class6500 field5915 = new Class6500(this.dataManager, field5913, field5912);
 
@@ -99,23 +97,23 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field26924;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field26924;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26926;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26926;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26925;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26925;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field26928, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field26928, 0.15F, 1.0F);
    }
 
    @Override
@@ -160,7 +158,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    public void method4942(Class2266 var1) {
       this.field5915.method19693(true);
       if (var1 != null) {
-         this.world.method6744((PlayerEntity)null, this, Sounds.field26927, var1, 0.5F, 1.0F);
+         this.world.method6744((PlayerEntity)null, this, SoundEvents.field26927, var1, 0.5F, 1.0F);
       }
    }
 

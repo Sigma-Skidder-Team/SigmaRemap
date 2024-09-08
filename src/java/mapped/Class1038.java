@@ -4,12 +4,15 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
@@ -27,7 +30,7 @@ public class Class1038 extends Class1009 {
    private static final UUID field5758 = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
    private static final Class9689 field5759 = new Class9689(field5758, "Baby speed boost", 0.5, AttributeModifierOperation.field13353);
    private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>createKey(Class1038.class, DataSerializers.field33398);
-   private static final DataParameter<Integer> field5761 = EntityDataManager.<Integer>createKey(Class1038.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field5761 = EntityDataManager.<Integer>createKey(Class1038.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5762 = EntityDataManager.<Boolean>createKey(Class1038.class, DataSerializers.field33398);
    private static final Predicate<Difficulty> field5763 = var0 -> var0 == Difficulty.field14354;
    private final Class2643 field5764 = new Class2643(this, field5763);
@@ -224,7 +227,7 @@ public class Class1038 extends Class1009 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       if (!super.method2741(var1, var2)) {
          return false;
       } else if (this.world instanceof ServerWorld) {
@@ -288,22 +291,22 @@ public class Class1038 extends Class1009 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27282;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27282;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27292;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27292;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27287;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27287;
    }
 
    public SoundEvent method4643() {
-      return Sounds.field27298;
+      return SoundEvents.field27298;
    }
 
    @Override
@@ -464,7 +467,7 @@ public class Class1038 extends Class1009 {
    }
 
    @Override
-   public void method3054(Class8654 var1, int var2, boolean var3) {
+   public void method3054(DamageSource var1, int var2, boolean var3) {
       super.method3054(var1, var2, var3);
       Entity var6 = var1.method31109();
       if (var6 instanceof Class1081) {

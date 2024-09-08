@@ -5,13 +5,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -22,9 +21,9 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public class Class1097 extends Class1018 {
-   private static final DataParameter<Integer> field6017 = EntityDataManager.<Integer>createKey(Class1097.class, DataSerializers.field33391);
-   private static final DataParameter<Integer> field6018 = EntityDataManager.<Integer>createKey(Class1097.class, DataSerializers.field33391);
-   private static final DataParameter<Integer> field6019 = EntityDataManager.<Integer>createKey(Class1097.class, DataSerializers.field33391);
+   private static final DataParameter<Integer> field6017 = EntityDataManager.<Integer>createKey(Class1097.class, DataSerializers.VARINT);
+   private static final DataParameter<Integer> field6018 = EntityDataManager.<Integer>createKey(Class1097.class, DataSerializers.VARINT);
+   private static final DataParameter<Integer> field6019 = EntityDataManager.<Integer>createKey(Class1097.class, DataSerializers.VARINT);
    private static final DataParameter<Byte> field6020 = EntityDataManager.<Byte>createKey(Class1097.class, DataSerializers.field33390);
    private static final DataParameter<Byte> field6021 = EntityDataManager.<Byte>createKey(Class1097.class, DataSerializers.field33390);
    private static final DataParameter<Byte> field6022 = EntityDataManager.<Byte>createKey(Class1097.class, DataSerializers.field33390);
@@ -257,7 +256,7 @@ public class Class1097 extends Class1018 {
 
    @Override
    public boolean method3114(Entity var1) {
-      this.method2863(Sounds.field26879, 1.0F, 1.0F);
+      this.method2863(SoundEvents.field26879, 1.0F, 1.0F);
       if (!this.method4307()) {
          this.field6025 = true;
       }
@@ -288,7 +287,7 @@ public class Class1097 extends Class1018 {
          }
 
          if (this.method5186() == 29 || this.method5186() == 14) {
-            this.method2863(Sounds.field26875, 1.0F, 1.0F);
+            this.method2863(SoundEvents.field26875, 1.0F, 1.0F);
          }
 
          this.method5187(this.method5186() - 1);
@@ -298,7 +297,7 @@ public class Class1097 extends Class1018 {
          this.method5199(this.method5198() + 1);
          if (this.method5198() <= 20) {
             if (this.method5198() == 1) {
-               this.method2863(Sounds.field26869, 1.0F, 1.0F);
+               this.method2863(SoundEvents.field26869, 1.0F, 1.0F);
             }
          } else {
             this.method5197(false);
@@ -359,7 +358,7 @@ public class Class1097 extends Class1018 {
    private void method5216() {
       if (this.method5195() % 5 == 0) {
          this.method2863(
-            Sounds.field26873, 0.5F + 0.5F * (float)this.rand.nextInt(2), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F
+            SoundEvents.field26873, 0.5F + 0.5F * (float)this.rand.nextInt(2), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F
          );
 
          for (int var3 = 0; var3 < 6; var3++) {
@@ -462,7 +461,7 @@ public class Class1097 extends Class1018 {
             0.0,
             var3.z
          );
-      this.method2863(Sounds.field26870, 1.0F, 1.0F);
+      this.method2863(SoundEvents.field26870, 1.0F, 1.0F);
 
       for (Class1097 var5 : this.world.<Class1097>method7182(Class1097.class, this.getBoundingBox().method19664(10.0))) {
          if (!var5.method3005() && var5.onGround && !var5.method3250() && var5.method5230()) {
@@ -488,7 +487,7 @@ public class Class1097 extends Class1018 {
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       this.method5190(false);
       return super.method2741(var1, var2);
    }
@@ -601,17 +600,17 @@ public class Class1097 extends Class1018 {
 
    @Nullable
    @Override
-   public SoundEvent method4241() {
+   public SoundEvent getAmbientSound() {
       if (!this.method4307()) {
-         return !this.method5211() ? Sounds.field26871 : Sounds.field26877;
+         return !this.method5211() ? SoundEvents.field26871 : SoundEvents.field26877;
       } else {
-         return Sounds.field26876;
+         return SoundEvents.field26876;
       }
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field26874, 0.15F, 1.0F);
+      this.method2863(SoundEvents.field26874, 0.15F, 1.0F);
    }
 
    @Override
@@ -625,14 +624,14 @@ public class Class1097 extends Class1018 {
 
    @Nullable
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26872;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26872;
    }
 
    @Nullable
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26878;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26878;
    }
 
    public boolean method5230() {

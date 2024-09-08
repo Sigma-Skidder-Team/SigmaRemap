@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 
 public interface Class6226 {
@@ -59,7 +60,7 @@ public interface Class6226 {
       Class6229 var11 = new Class6229();
       Class3357.method11931(Items.field37884, var11);
       Class3357.method11931(Items.field37883, var11);
-      Class3357.method11931(Items.field37893, var11);
+      Class3357.method11931(Items.SALMON_BUCKET, var11);
       Class3357.method11931(Items.field37894, var11);
       Class3357.method11931(Items.field37892, var11);
       Class3357.method11931(Items.field37895, var11);

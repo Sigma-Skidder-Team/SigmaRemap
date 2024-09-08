@@ -6,6 +6,7 @@ import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IBlockReader;
@@ -76,7 +77,7 @@ public class Class3201 extends Class3200 {
       if (!var2.isRemote) {
          BlockState var11 = this.method11510(var1, var2, var3);
          float var10 = !var11.<Boolean>method23463(field18501) ? 0.5F : 0.6F;
-         var2.method6742((PlayerEntity)null, var3, Sounds.field26730, Class2266.field14732, 0.3F, var10);
+         var2.method6742((PlayerEntity)null, var3, SoundEvents.field26730, Class2266.field14732, 0.3F, var10);
          return ActionResultType.field14819;
       } else {
          BlockState var9 = var1.method23459(field18501);

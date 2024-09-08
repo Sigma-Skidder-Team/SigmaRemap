@@ -6,6 +6,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -113,9 +115,9 @@ public class Class915 extends Entity {
                return;
             }
 
-            var1.method2741(Class8654.method31124(this, var4), 6.0F);
+            var1.method2741(DamageSource.method31124(this, var4), 6.0F);
          } else {
-            var1.method2741(Class8654.field39006, 6.0F);
+            var1.method2741(DamageSource.field39006, 6.0F);
          }
       }
    }
@@ -131,7 +133,7 @@ public class Class915 extends Entity {
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),
-                  Sounds.field26563,
+                  SoundEvents.field26563,
                   this.method2864(),
                   1.0F,
                   this.rand.nextFloat() * 0.2F + 0.85F,

@@ -3,8 +3,11 @@ package mapped;
 import net.minecraft.entity.*;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -24,27 +27,27 @@ public class Class1084 extends Class1082 {
    }
 
    @Override
-   public SoundEvent method4241() {
-      return Sounds.field27244;
+   public SoundEvent getAmbientSound() {
+      return SoundEvents.field27244;
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field27246;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field27246;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field27245;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field27245;
    }
 
    @Override
    public SoundEvent method5030() {
-      return Sounds.field27247;
+      return SoundEvents.field27247;
    }
 
    @Override
-   public void method3054(Class8654 var1, int var2, boolean var3) {
+   public void method3054(DamageSource var1, int var2, boolean var3) {
       super.method3054(var1, var2, var3);
       Entity var6 = var1.method31109();
       if (var6 instanceof Class1081) {

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 
 import java.util.List;
 import java.util.function.Predicate;

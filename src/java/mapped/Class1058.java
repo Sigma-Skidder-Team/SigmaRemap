@@ -1,18 +1,18 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.IAngerable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -20,11 +20,11 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.UUID;
 
-public class Class1058 extends Class1056 implements Class1011 {
+public class Class1058 extends Class1056 implements IAngerable {
    public static final DataParameter<Byte> field5849 = EntityDataManager.<Byte>createKey(Class1058.class, DataSerializers.field33390);
    private int field5850;
    private int field5851;
-   private static final Class8369 field5852 = Class8763.method31620(20, 39);
+   private static final RangedInteger field5852 = TickRangeConverter.convertRange(20, 39);
    private int field5853;
    private UUID field5854;
 
@@ -171,22 +171,22 @@ public class Class1058 extends Class1056 implements Class1011 {
       this.world.method6786(this, (byte)4);
       float var4 = this.method4864();
       float var5 = (int)var4 <= 0 ? var4 : var4 / 2.0F + (float)this.rand.nextInt((int)var4);
-      boolean var6 = var1.method2741(Class8654.method31115(this), var5);
+      boolean var6 = var1.method2741(DamageSource.method31115(this), var5);
       if (var6) {
          var1.method3434(var1.getVec().method11339(0.0, 0.4F, 0.0));
          this.method3399(this, var1);
       }
 
-      this.method2863(Sounds.field26700, 1.0F, 1.0F);
+      this.method2863(SoundEvents.field26700, 1.0F, 1.0F);
       return var6;
    }
 
    @Override
-   public boolean method2741(Class8654 var1, float var2) {
+   public boolean method2741(DamageSource var1, float var2) {
       Class2286 var5 = this.method4865();
       boolean var6 = super.method2741(var1, var2);
       if (var6 && this.method4865() != var5) {
-         this.method2863(Sounds.field26701, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field26701, 1.0F, 1.0F);
       }
 
       return var6;
@@ -210,7 +210,7 @@ public class Class1058 extends Class1056 implements Class1011 {
          }
       } else {
          this.field5850 = 10;
-         this.method2863(Sounds.field26700, 1.0F, 1.0F);
+         this.method2863(SoundEvents.field26700, 1.0F, 1.0F);
       }
    }
 
@@ -229,13 +229,13 @@ public class Class1058 extends Class1056 implements Class1011 {
    }
 
    @Override
-   public SoundEvent method2879(Class8654 var1) {
-      return Sounds.field26703;
+   public SoundEvent getHurtSound(DamageSource var1) {
+      return SoundEvents.field26703;
    }
 
    @Override
-   public SoundEvent method2880() {
-      return Sounds.field26702;
+   public SoundEvent getDeathSound() {
+      return SoundEvents.field26702;
    }
 
    @Override
@@ -247,7 +247,7 @@ public class Class1058 extends Class1056 implements Class1011 {
          this.method3041(25.0F);
          if (this.getHealth() != var7) {
             float var8 = 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F;
-            this.method2863(Sounds.field26704, 1.0F, var8);
+            this.method2863(SoundEvents.field26704, 1.0F, var8);
             if (!var1.abilities.isCreativeMode) {
                var5.method32182(1);
             }
@@ -263,7 +263,7 @@ public class Class1058 extends Class1056 implements Class1011 {
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Sounds.field26705, 1.0F, 1.0F);
+      this.method2863(SoundEvents.field26705, 1.0F, 1.0F);
    }
 
    public int method4868() {
@@ -284,7 +284,7 @@ public class Class1058 extends Class1056 implements Class1011 {
    }
 
    @Override
-   public void method2737(Class8654 var1) {
+   public void method2737(DamageSource var1) {
       super.method2737(var1);
    }
 

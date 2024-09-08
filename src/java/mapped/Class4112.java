@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.fish.SalmonEntity;
 
 public class Class4112 extends Class4057 {
    public Class4112() {
@@ -69,7 +70,7 @@ public class Class4112 extends Class4057 {
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5750 var6 = new Class5750(var5);
-      var6.field25086 = (Class2816<Class1053>)var1;
+      var6.field25086 = (Class2816<SalmonEntity>)var1;
       var6.field25098 = var2;
       return (Class9492)var6;
    }

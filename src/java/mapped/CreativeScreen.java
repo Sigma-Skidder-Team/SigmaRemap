@@ -8,6 +8,7 @@ import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;

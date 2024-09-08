@@ -11,6 +11,7 @@ import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -80,7 +81,7 @@ public class LeashKnotEntity extends Class995 {
 
    @Override
    public void method4083(Entity var1) {
-      this.method2863(Sounds.field26728, 1.0F, 1.0F);
+      this.method2863(SoundEvents.field26728, 1.0F, 1.0F);
    }
 
    @Override
@@ -159,7 +160,7 @@ public class LeashKnotEntity extends Class995 {
 
    @Override
    public void method4084() {
-      this.method2863(Sounds.field26729, 1.0F, 1.0F);
+      this.method2863(SoundEvents.field26729, 1.0F, 1.0F);
    }
 
    @Override

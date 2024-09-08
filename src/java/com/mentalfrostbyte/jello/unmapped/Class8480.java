@@ -92,7 +92,7 @@ public class Class8480 {
          int var4 = 35;
          RenderUtil.method11420(field36354, field36355 - var4, field36356, field36357 + var4);
          field36351.method6526(mc.timer.renderPartialTicks);
-         RenderUtil.method11422();
+         RenderUtil.endScissor();
          GL11.glEnable(3008);
          field36352.bindFramebuffer(true);
          mc.framebuffer.bindFramebuffer(true);
