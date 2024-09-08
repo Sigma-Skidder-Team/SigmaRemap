@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.SafeWalk;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
@@ -207,10 +208,10 @@ public class BlockFlyNCPMode extends Module {
                     var6 = var10[1];
                 }
 
-                if (mc.player.method3433().y < 0.0
+                if (mc.player.getVec().y < 0.0
                         && mc.player.fallDistance > 1.0F
-                        && Class9217.method34567(0.0F, 90.0F, 3.0F).getType() == RayTraceResult.Type.MISS) {
-                    var8 += Math.min(mc.player.method3433().y * 2.0, 4.0);
+                        && BlockUtil.method34567(0.0F, 90.0F, 3.0F).getType() == RayTraceResult.Type.MISS) {
+                    var8 += Math.min(mc.player.getVec().y * 2.0, 4.0);
                 } else if (this.field23929 && this.getBooleanValueFromSetttingName("Downwards")) {
                     var8--;
                 } else if ((this.getStringSettingValueByName("Speed Mode").equals("Jump") || this.getStringSettingValueByName("Speed Mode").equals("Cubecraft"))
@@ -218,23 +219,23 @@ public class BlockFlyNCPMode extends Module {
                     var8 = this.field23931;
                 }
 
-                if (!Class9217.method34578(
+                if (!BlockUtil.method34578(
                         new BlockPos(
-                                mc.player.getPositionVec().method11320(),
-                                mc.player.getPositionVec().method11321() - 1.0,
-                                mc.player.getPositionVec().method11322()
+                                mc.player.getPositionVec().getX(),
+                                mc.player.getPositionVec().getY() - 1.0,
+                                mc.player.getPositionVec().getZ()
                         )
                 )) {
-                    var4 = mc.player.getPositionVec().method11320();
-                    var6 = mc.player.getPositionVec().method11322();
+                    var4 = mc.player.getPositionVec().getX();
+                    var6 = mc.player.getPositionVec().getZ();
                 }
 
                 BlockPos var15 = new BlockPos(var4, var8 - 1.0, var6);
-                if (!Class9217.method34578(var15) && this.field23928.method16739(this.field23927)) {
-                    Class7843 var11 = Class9217.method34575(var15, !this.field23929 && this.getBooleanValueFromSetttingName("Downwards"));
+                if (!BlockUtil.method34578(var15) && this.field23928.method16739(this.field23927)) {
+                    Class7843 var11 = BlockUtil.method34575(var15, !this.field23929 && this.getBooleanValueFromSetttingName("Downwards"));
                     this.field23923 = var11;
                     if (var11 != null) {
-                        float[] var12 = Class9217.method34542(this.field23923.field33646, this.field23923.field33647);
+                        float[] var12 = BlockUtil.method34542(this.field23923.field33646, this.field23923.field33647);
                         this.field23922 = var12[0];
                         this.field23921 = var12[1];
                         var1.method13918(this.field23922);
@@ -286,9 +287,9 @@ public class BlockFlyNCPMode extends Module {
                         mc.player.method2914();
                         ((Speed) Client.getInstance().getModuleManager().getModuleByClass(Speed.class)).method16764();
                         this.field23930 = true;
-                        var1.method13995(mc.player.method3433().y);
-                        var1.method13993(mc.player.method3433().x);
-                        var1.method13997(mc.player.method3433().z);
+                        var1.method13995(mc.player.getVec().y);
+                        var1.method13993(mc.player.getVec().x);
+                        var1.method13997(mc.player.getVec().z);
                     }
                     break;
                 case "AAC":
@@ -414,7 +415,7 @@ public class BlockFlyNCPMode extends Module {
         double var17 = 0.0;
 
         for (double var19 = this.getNumberValueBySettingName("Extend") * 2.0F;
-             Class9217.method34578(var12);
+             BlockUtil.method34578(var12);
              var12 = new BlockPos(var13, mc.player.getPosY() - 1.0, var15)
         ) {
             if (++var17 > var19) {

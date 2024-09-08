@@ -32,12 +32,12 @@ public class Class5118 implements Class5119 {
 
             for (AxisAlignedBB var18 : var16.method19521()) {
                AxisAlignedBB var19 = var18.method19668(var14).method19664(0.002).method19667(-var3, -var5, -var7);
-               double var20 = var19.field28449;
-               double var22 = var19.field28450;
-               double var24 = var19.field28451;
-               double var26 = var19.field28452;
-               double var28 = var19.field28453;
-               double var30 = var19.field28454;
+               double var20 = var19.minX;
+               double var22 = var19.minY;
+               double var24 = var19.minZ;
+               double var26 = var19.maxX;
+               double var28 = var19.maxY;
+               double var30 = var19.maxZ;
                float var32 = 1.0F;
                float var33 = 0.0F;
                float var34 = 0.0F;

@@ -64,7 +64,7 @@ public class Class2727 extends Class2595 {
    public void method10805() {
       this.method10938();
       this.field17234.method3265(0.02F, new Vector3d((double)this.field17234.field4982, (double)this.field17234.field4983, (double)this.field17234.field4984));
-      this.field17234.move(Class2107.field13742, this.field17234.method3433());
+      this.field17234.move(Class2107.field13742, this.field17234.getVec());
    }
 
    private boolean method10939(Class1662 var1, BlockPos var2) {

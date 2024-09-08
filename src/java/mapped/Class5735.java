@@ -28,7 +28,7 @@ public class Class5735<T extends Entity & Class889> extends Class5715<T> {
 
    @Override
    public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      if (var1.ticksExisted >= 2 || !(this.field25097.field40017.method37509().getDistanceSq(var1) < 12.25)) {
+      if (var1.ticksExisted >= 2 || !(this.field25097.field40017.getRenderViewEntity().getDistanceSq(var1) < 12.25)) {
          var4.push();
          var4.method35292(this.field25151, this.field25151, this.field25151);
          var4.rotate(this.field25097.method32230());

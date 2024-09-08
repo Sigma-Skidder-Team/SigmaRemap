@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
@@ -16,7 +17,7 @@ public class Class5405 extends Class5404 {
          return 0;
       } else {
          BlockState var7 = this.field24090.world.getBlockState(new BlockPos(var2, var3, var4));
-         return var7 != null ? Class9217.method34574(var7.getBlock()) << 4 | Class9217.method34573(var7) : 0;
+         return var7 != null ? BlockUtil.method34574(var7.getBlock()) << 4 | BlockUtil.method34573(var7) : 0;
       }
    }
 

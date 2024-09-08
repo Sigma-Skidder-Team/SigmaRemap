@@ -10,6 +10,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.HashSet;
@@ -27,8 +28,8 @@ public class Class8066 {
    public AxisAlignedBB field34614;
    private int field34615;
    private boolean field34616;
-   private final Mutable field34617;
-   private final Mutable[] field34618;
+   private final BlockPos.Mutable field34617;
+   private final BlockPos.Mutable[] field34618;
    private boolean field34619;
    private final boolean field34620;
    private final boolean field34621;
@@ -56,10 +57,10 @@ public class Class8066 {
       this.field34613 = RenderType.method14349().stream().collect(Collectors.toMap(var0 -> (RenderType)var0, var0 -> new Class1698(DefaultVertexFormats.field43334)));
       this.field34615 = -1;
       this.field34616 = true;
-      this.field34617 = new Mutable(-1, -1, -1);
-      this.field34618 = Util.<Mutable[]>make(new Mutable[6], var0 -> {
+      this.field34617 = new BlockPos.Mutable(-1, -1, -1);
+      this.field34618 = Util.<BlockPos.Mutable[]>make(new BlockPos.Mutable[6], var0 -> {
          for (int var3 = 0; var3 < var0.length; var3++) {
-            var0[var3] = new Mutable();
+            var0[var3] = new BlockPos.Mutable();
          }
       });
       this.field34620 = Class7944.method26799();
@@ -141,9 +142,9 @@ public class Class8066 {
 
    public double method27713() {
       ActiveRenderInfo var3 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
-      double var4 = this.field34614.field28449 + 8.0 - var3.method37504().x;
-      double var6 = this.field34614.field28450 + 8.0 - var3.method37504().y;
-      double var8 = this.field34614.field28451 + 8.0 - var3.method37504().z;
+      double var4 = this.field34614.minX + 8.0 - var3.getPos().x;
+      double var6 = this.field34614.minY + 8.0 - var3.getPos().y;
+      double var8 = this.field34614.minZ + 8.0 - var3.getPos().z;
       return var4 * var4 + var6 * var6 + var8 * var8;
    }
 
@@ -294,7 +295,7 @@ public class Class8066 {
       }
    }
 
-   private RenderType method27734(Class1665 var1, BlockState var2, BlockPos var3, RenderType var4) {
+   private RenderType method27734(IBlockReader var1, BlockState var2, BlockPos var3, RenderType var4) {
       if (Class7031.method21828()) {
          RenderType var7 = Class7031.method21824(var1, var2, var3);
          if (var7 != null) {
@@ -439,7 +440,7 @@ public class Class8066 {
          int var10 = var6 >> var7 << var7;
          if (var8 != var4 || var9 != var5 || var10 != var6) {
             Class6487 var11 = Class9016.method33346(this.field34637).method929(new BlockPos(var8, var9, var10)).method27749();
-            if (var11 != null && var11.field28449 == (double)var8 && var11.field28450 == (double)var9 && var11.field28451 == (double)var10) {
+            if (var11 != null && var11.minX == (double)var8 && var11.minY == (double)var9 && var11.minZ == (double)var10) {
                this.field34636 = var11;
             }
          }
@@ -464,7 +465,7 @@ public class Class8066 {
    }
 
    // $VF: synthetic method
-   public static Mutable method27754(Class8066 var0) {
+   public static BlockPos.Mutable method27754(Class8066 var0) {
       return var0.field34617;
    }
 
@@ -494,7 +495,7 @@ public class Class8066 {
    }
 
    // $VF: synthetic method
-   public static RenderType method27760(Class8066 var0, Class1665 var1, BlockState var2, BlockPos var3, RenderType var4) {
+   public static RenderType method27760(Class8066 var0, IBlockReader var1, BlockState var2, BlockPos var3, RenderType var4) {
       return var0.method27734(var1, var2, var3, var4);
    }
 

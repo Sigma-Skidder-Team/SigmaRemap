@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.IBlockReader;
 
 public abstract class Class4188 extends Class4178 {
    public Class102 field20479;
@@ -41,7 +42,7 @@ public abstract class Class4188 extends Class4178 {
       }
    }
 
-   public boolean method12969(Class1665 var1, Class9764 var2, int var3, int var4, int var5, int var6) {
+   public boolean method12969(IBlockReader var1, Class9764 var2, int var3, int var4, int var5, int var6) {
       for (int var9 = var3; var9 <= var4; var9++) {
          if (this.method12924(var1, var9, var5 + 1, var6, var2).isAir()) {
             return false;

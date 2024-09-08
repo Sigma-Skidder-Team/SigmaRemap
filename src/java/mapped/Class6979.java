@@ -5,6 +5,7 @@ import java.util.Objects;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.util.math.vector.Quaternion;
 import org.apache.commons.lang3.tuple.Triple;
 
 public final class Class6979 {
@@ -12,9 +13,9 @@ public final class Class6979 {
    private final Matrix4f field30194;
    private boolean field30195;
    private Vector3f field30196;
-   private Class8661 field30197;
+   private Quaternion field30197;
    private Vector3f field30198;
-   private Class8661 field30199;
+   private Quaternion field30199;
    private static final Class6979 field30200 = Util.<Class6979>method38507(() -> {
       Matrix4f var2 = new Matrix4f();
       var2.method35503();
@@ -31,12 +32,12 @@ public final class Class6979 {
       }
    }
 
-   public Class6979(Vector3f var1, Class8661 var2, Vector3f var3, Class8661 var4) {
+   public Class6979(Vector3f var1, Quaternion var2, Vector3f var3, Quaternion var4) {
       this.field30194 = method21546(var1, var2, var3, var4);
       this.field30196 = var1 == null ? new Vector3f() : var1;
-      this.field30197 = var2 == null ? Class8661.field39030.method31189() : var2;
+      this.field30197 = var2 == null ? Quaternion.field39030.method31189() : var2;
       this.field30198 = var3 == null ? new Vector3f(1.0F, 1.0F, 1.0F) : var3;
-      this.field30199 = var4 == null ? Class8661.field39030.method31189() : var4;
+      this.field30199 = var4 == null ? Quaternion.field39030.method31189() : var4;
       this.field30195 = true;
    }
 
@@ -65,14 +66,14 @@ public final class Class6979 {
          Pair var3 = method21547(this.field30194);
          Triple var4 = ((Class8967)var3.getFirst()).method32822();
          this.field30196 = (Vector3f)var3.getSecond();
-         this.field30197 = (Class8661)var4.getLeft();
+         this.field30197 = (Quaternion)var4.getLeft();
          this.field30198 = (Vector3f)var4.getMiddle();
-         this.field30199 = (Class8661)var4.getRight();
+         this.field30199 = (Quaternion)var4.getRight();
          this.field30195 = true;
       }
    }
 
-   private static Matrix4f method21546(Vector3f var0, Class8661 var1, Vector3f var2, Class8661 var3) {
+   private static Matrix4f method21546(Vector3f var0, Quaternion var1, Vector3f var2, Quaternion var3) {
       Matrix4f var6 = new Matrix4f();
       var6.method35503();
       if (var1 != null) {
@@ -107,7 +108,7 @@ public final class Class6979 {
       return this.field30194.method35514();
    }
 
-   public Class8661 method21549() {
+   public Quaternion method21549() {
       this.method21545();
       return this.field30197.method31189();
    }

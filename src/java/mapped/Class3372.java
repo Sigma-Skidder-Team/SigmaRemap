@@ -8,6 +8,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3372 extends Class3241 {
@@ -22,7 +23,7 @@ public class Class3372 extends Class3241 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18965;
    }
 
@@ -32,7 +33,7 @@ public class Class3372 extends Class3241 {
    }
 
    @Override
-   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return var1.<Integer>method23463(field18963);
    }
 
@@ -83,7 +84,7 @@ public class Class3372 extends Class3241 {
    }
 
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return new Class961();
    }
 

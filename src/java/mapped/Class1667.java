@@ -5,13 +5,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class Class1667 implements Class1665, Class1668 {
+public class Class1667 implements IBlockReader, Class1668 {
    private static String[] field9080;
    public final int field9081;
    public final int field9082;
@@ -67,7 +68,7 @@ public class Class1667 implements Class1665, Class1668 {
    }
 
    @Override
-   public Class1665 method6769(int var1, int var2) {
+   public IBlockReader method6769(int var1, int var2) {
       return this.method7045(var1, var2);
    }
 

@@ -16,7 +16,7 @@ public class Class9701 {
    private int field45350 = 0;
    private long field45351 = 0L;
    private Set<BlockPos> field45352 = new HashSet<BlockPos>();
-   private Mutable field45353 = new Mutable();
+   private BlockPos.Mutable field45353 = new BlockPos.Mutable();
 
    public Class9701(Entity var1) {
       this.field45345 = var1;

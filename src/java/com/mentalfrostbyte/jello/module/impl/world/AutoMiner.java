@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.server.SChangeBlockPacket;
@@ -210,7 +211,7 @@ public class AutoMiner extends Module {
          var4.addAll(var6.field27685);
       }
 
-      Class9217.method34545(var4);
+      BlockUtil.method34545(var4);
       return var4.size() <= 0 ? null : (BlockPos)var4.get(0);
    }
 
@@ -221,7 +222,7 @@ public class AutoMiner extends Module {
          var3.addAll(var5.field27685);
       }
 
-      Class9217.method34545(var3);
+      BlockUtil.method34545(var3);
       if (var3.size() > 1) {
          List<BlockPos> var10 = new ArrayList<>();
          var10.add(var3.get(0));
@@ -357,18 +358,18 @@ public class AutoMiner extends Module {
             double var9 = var6.method33970() + (var5.method33970() - var6.method33970());
             double var11 = var6.method33971() + (var5.method33971() - var6.method33971());
             GL11.glVertex3d(
-               var7 - mc.gameRenderer.getActiveRenderInfo().method37504().method11320() + 0.5,
-               var9 - mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
-               var11 - mc.gameRenderer.getActiveRenderInfo().method37504().method11322() + 0.5
+               var7 - mc.gameRenderer.getActiveRenderInfo().getPos().getX() + 0.5,
+               var9 - mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+               var11 - mc.gameRenderer.getActiveRenderInfo().getPos().getZ() + 0.5
             );
          }
 
          GL11.glEnd();
          GL11.glPushMatrix();
          GL11.glTranslated(
-            mc.gameRenderer.getActiveRenderInfo().method37504().method11320(),
-            mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
-            mc.gameRenderer.getActiveRenderInfo().method37504().method11322()
+            mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
+            mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+            mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
          );
          GL11.glPopMatrix();
          GL11.glDisable(3042);

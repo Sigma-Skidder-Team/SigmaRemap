@@ -15,6 +15,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -92,7 +93,7 @@ public final class Class8170 {
       int var10 = var3.getY();
       BlockState var11 = var2.getBlockState(var3);
       if (!var11.method23400(var2, var3)) {
-         Mutable var12 = new Mutable();
+         BlockPos.Mutable var12 = new BlockPos.Mutable();
          int var13 = 0;
 
          for (int var14 = 0; var14 < 3; var14++) {
@@ -152,7 +153,7 @@ public final class Class8170 {
       }
    }
 
-   private static boolean method28420(ServerWorld var0, IChunk var1, Mutable var2, double var3) {
+   private static boolean method28420(ServerWorld var0, IChunk var1, BlockPos.Mutable var2, double var3) {
       if (!(var3 <= 576.0)) {
          if (var0.method6947().method8317(new Vector3d((double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5), 24.0)) {
             return false;
@@ -165,7 +166,7 @@ public final class Class8170 {
       }
    }
 
-   private static boolean method28421(ServerWorld var0, Class179 var1, Class7480 var2, ChunkGenerator var3, Class6692 var4, Mutable var5, double var6) {
+   private static boolean method28421(ServerWorld var0, Class179 var1, Class7480 var2, ChunkGenerator var3, Class6692 var4, BlockPos.Mutable var5, double var6) {
       EntityType var10 = var4.field29311;
       if (var10.method33209() != Class179.field628) {
          if (!var10.method33208() && var6 > (double)(var10.method33209().method522() * var10.method33209().method522())) {
@@ -240,7 +241,7 @@ public final class Class8170 {
       return new BlockPos(var5, var8, var6);
    }
 
-   public static boolean method28428(Class1665 var0, BlockPos var1, BlockState var2, FluidState var3, EntityType<?> var4) {
+   public static boolean method28428(IBlockReader var0, BlockPos var1, BlockState var2, FluidState var3, EntityType<?> var4) {
       if (!var2.method23456(var0, var1)) {
          if (!var2.method23401()) {
             if (var3.method23474()) {
@@ -350,7 +351,7 @@ public final class Class8170 {
 
    private static BlockPos method28431(Class1662 var0, EntityType<?> var1, int var2, int var3) {
       int var6 = var0.method6736(Class6914.method21121(var1), var2, var3);
-      Mutable var7 = new Mutable(var2, var6, var3);
+      BlockPos.Mutable var7 = new BlockPos.Mutable(var2, var6, var3);
       if (var0.method6812().getHasCeiling()) {
          do {
             var7.method8379(Direction.DOWN);

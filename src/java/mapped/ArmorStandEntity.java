@@ -798,7 +798,7 @@ public class ArmorStandEntity extends LivingEntity {
          int var6 = Integer.MIN_VALUE;
 
          for (BlockPos var8 : BlockPos.method8359(
-            new BlockPos(var4.field28449, var4.field28450, var4.field28451), new BlockPos(var4.field28452, var4.field28453, var4.field28454)
+            new BlockPos(var4.minX, var4.minY, var4.minZ), new BlockPos(var4.maxX, var4.maxY, var4.maxZ)
          )) {
             int var9 = Math.max(this.world.method7020(Class1977.field12882, var8), this.world.method7020(Class1977.field12881, var8));
             if (var9 == 15) {

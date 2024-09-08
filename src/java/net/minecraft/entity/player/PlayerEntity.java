@@ -450,7 +450,7 @@ public abstract class PlayerEntity extends LivingEntity {
       this.method3113((float)this.method3086(Attributes.MOVEMENT_SPEED));
       float var3;
       if (this.onGround && !this.getShouldBeDead() && !this.method2951()) {
-         var3 = Math.min(0.1F, MathHelper.method37766(method3234(this.method3433())));
+         var3 = Math.min(0.1F, MathHelper.method37766(method3234(this.getVec())));
       } else {
          var3 = 0.0F;
       }
@@ -1080,7 +1080,7 @@ public abstract class PlayerEntity extends LivingEntity {
                }
             }
 
-            Vector3d var17 = var1.method3433();
+            Vector3d var17 = var1.getVec();
             boolean var18 = var1.method2741(Class8654.method31117(this), var4);
             if (!var18) {
                this.world
@@ -1105,7 +1105,7 @@ public abstract class PlayerEntity extends LivingEntity {
                         );
                   }
 
-                  this.method3434(this.method3433().method11347(0.6, 1.0, 0.6));
+                  this.method3434(this.getVec().method11347(0.6, 1.0, 0.6));
                   this.setSprinting(false);
                }
 
@@ -1359,17 +1359,17 @@ public abstract class PlayerEntity extends LivingEntity {
          if (var10 <= 0.0
             || this.field4981
             || !this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() + 1.0 - 0.1, this.getPosZ())).method23449().method23474()) {
-            Vector3d var14 = this.method3433();
+            Vector3d var14 = this.getVec();
             this.method3434(var14.method11339(0.0, (var10 - var14.y) * var12, 0.0));
          }
       }
 
       if (this.abilities.isFlying && !this.isPassenger()) {
-         double var17 = this.method3433().y;
+         double var17 = this.getVec().y;
          float var15 = this.field4969;
          this.field4969 = this.abilities.getFlySpeed() * (float)(!this.method3337() ? 1 : 2);
          super.method2915(var1);
-         Vector3d var16 = this.method3433();
+         Vector3d var16 = this.getVec();
          this.method3435(var16.x, var17 * 0.6, var16.z);
          this.field4969 = var15;
          this.fallDistance = 0.0F;
@@ -2045,7 +2045,7 @@ public abstract class PlayerEntity extends LivingEntity {
       float var7 = MathHelper.lerp(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
       if (this.method3165() || this.method3130()) {
          Vector3d var8 = this.method3281(var1);
-         Vector3d var9 = this.method3433();
+         Vector3d var9 = this.getVec();
          double var21 = Entity.method3234(var9);
          double var12 = Entity.method3234(var8);
          float var14;

@@ -692,7 +692,7 @@ public abstract class Class1006 extends LivingEntity {
       double var8 = var1.getPosZ() - this.getPosZ();
       double var10;
       if (!(var1 instanceof LivingEntity)) {
-         var10 = (var1.getBoundingBox().field28450 + var1.getBoundingBox().field28453) / 2.0 - this.method3442();
+         var10 = (var1.getBoundingBox().minY + var1.getBoundingBox().maxY) / 2.0 - this.method3442();
       } else {
          LivingEntity var12 = (LivingEntity)var1;
          var10 = var12.method3442() - this.method3442();
@@ -1354,7 +1354,7 @@ public abstract class Class1006 extends LivingEntity {
                   (double) MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)),
                   (double)(-MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)))
                );
-            this.method3434(this.method3433().method11347(0.6, 1.0, 0.6));
+            this.method3434(this.getVec().method11347(0.6, 1.0, 0.6));
          }
 
          if (var1 instanceof PlayerEntity) {
@@ -1396,7 +1396,7 @@ public abstract class Class1006 extends LivingEntity {
    @Override
    public void method3105(ITag<Fluid> var1) {
       if (!this.method4230().method21675()) {
-         this.method3434(this.method3433().method11339(0.0, 0.3, 0.0));
+         this.method3434(this.getVec().method11339(0.0, 0.3, 0.0));
       } else {
          super.method3105(var1);
       }

@@ -11,6 +11,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3362 extends Class3241 {
@@ -38,7 +39,7 @@ public class Class3362 extends Class3241 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       switch (Class9391.field43583[var1.<Direction>method23463(field18913).ordinal()]) {
          case 1:
             return field18919;
@@ -56,7 +57,7 @@ public class Class3362 extends Class3241 {
    }
 
    @Override
-   public VoxelShape method11938(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11938(BlockState var1, IBlockReader var2, BlockPos var3) {
       switch (Class9391.field43583[var1.<Direction>method23463(field18913).ordinal()]) {
          case 1:
             return field18924;
@@ -82,7 +83,7 @@ public class Class3362 extends Class3241 {
    }
 
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return new Class936();
    }
 
@@ -182,7 +183,7 @@ public class Class3362 extends Class3241 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

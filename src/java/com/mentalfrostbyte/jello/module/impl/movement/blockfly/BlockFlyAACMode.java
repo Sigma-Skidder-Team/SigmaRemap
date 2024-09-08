@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.SafeWalk;
 import com.mentalfrostbyte.jello.module.impl.movement.speed.AACSpeed;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CAnimateHandPacket;
@@ -140,7 +141,7 @@ public class BlockFlyAACMode extends Module {
     }
 
     private boolean method16207() {
-        BlockRayTraceResult var3 = (BlockRayTraceResult) Class9217.method34569(mc.player.field6122, mc.player.field6123, Class9217.method34560(), 0.0F);
+        BlockRayTraceResult var3 = (BlockRayTraceResult) BlockUtil.method34569(mc.player.field6122, mc.player.field6123, BlockUtil.method34560(), 0.0F);
         boolean var4 = false;
         if (var3 != null && var3.getType() == RayTraceResult.Type.BLOCK) {
             if (this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
@@ -162,7 +163,7 @@ public class BlockFlyAACMode extends Module {
 
             if (var3.getFace() == Direction.field673
                     && (double) (var3.getPos().getY() + 2) > mc.player.getPosY()
-                    && Class9217.method34578(var3.getPos())) {
+                    && BlockUtil.method34578(var3.getPos())) {
                 return false;
             }
 
@@ -199,7 +200,7 @@ public class BlockFlyAACMode extends Module {
         return var4;
     }
 
-    public List<Class9238> method16208(Block var1, BlockPos var2) {
+    public List<PositionFacing> method16208(Block var1, BlockPos var2) {
         return Class9291.method35030(var1, var2, (int) mc.playerController.getBlockReachDistance());
     }
 
@@ -240,12 +241,12 @@ public class BlockFlyAACMode extends Module {
                 BlockPos var6 = new BlockPos(mc.player.getPosX(), (double) Math.round(var4 - 1.0), mc.player.getPosZ());
                 List var7 = this.method16208(Blocks.STONE, var6);
                 if (!var7.isEmpty()) {
-                    Class9238 var8 = (Class9238) var7.get(var7.size() - 1);
-                    BlockRayTraceResult var9 = Class9217.method34567(this.field23520, this.field23521, 5.0F);
-                    if (!var9.getPos().equals(var8.field42516) || !var9.getFace().equals(var8.field42517)) {
-                        float[] var10 = Class9217.method34543(var8.field42516, var8.field42517);
-                        this.field23520 = Class9217.method34543(var8.field42516, var8.field42517)[0];
-                        this.field23521 = Class9217.method34543(var8.field42516, var8.field42517)[1];
+                    PositionFacing var8 = (PositionFacing) var7.get(var7.size() - 1);
+                    BlockRayTraceResult var9 = BlockUtil.method34567(this.field23520, this.field23521, 5.0F);
+                    if (!var9.getPos().equals(var8.blockPos) || !var9.getFace().equals(var8.direction)) {
+                        float[] var10 = BlockUtil.method34543(var8.blockPos, var8.direction);
+                        this.field23520 = BlockUtil.method34543(var8.blockPos, var8.direction)[0];
+                        this.field23521 = BlockUtil.method34543(var8.blockPos, var8.direction)[1];
                     }
                 }
 

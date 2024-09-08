@@ -6,6 +6,7 @@ import com.mojang.serialization.MapCodec;
 import mapped.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -53,7 +54,7 @@ public class BlockState extends Class7377 {
       return this.field31589;
    }
 
-   public int method23494(Class1665 var1, BlockPos var2) {
+   public int method23494(IBlockReader var1, BlockPos var2) {
       return this.getLightValue();
    }
 

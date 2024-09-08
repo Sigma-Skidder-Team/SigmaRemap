@@ -50,7 +50,7 @@ public class Class2756 extends Class2754 {
 
    @Override
    public boolean method10806() {
-      double var3 = this.field17298.method3433().y;
+      double var3 = this.field17298.getVec().y;
       return (!(var3 * var3 < 0.03F) || this.field17298.rotationPitch == 0.0F || !(Math.abs(this.field17298.rotationPitch) < 10.0F) || !this.field17298.method3250())
          && !this.field17298.method3226();
    }
@@ -63,7 +63,7 @@ public class Class2756 extends Class2754 {
    @Override
    public void method10804() {
       Direction var3 = this.field17298.method3387();
-      this.field17298.method3434(this.field17298.method3433().method11339((double)var3.method539() * 0.6, 0.7, (double)var3.method541() * 0.6));
+      this.field17298.method3434(this.field17298.getVec().method11339((double)var3.method539() * 0.6, 0.7, (double)var3.method541() * 0.6));
       this.field17298.method4230().method21666();
    }
 
@@ -84,7 +84,7 @@ public class Class2756 extends Class2754 {
          this.field17298.method2863(Sounds.field26504, 1.0F, 1.0F);
       }
 
-      Vector3d var9 = this.field17298.method3433();
+      Vector3d var9 = this.field17298.getVec();
       if (var9.y * var9.y < 0.03F && this.field17298.rotationPitch != 0.0F) {
          this.field17298.rotationPitch = MathHelper.method37828(this.field17298.rotationPitch, 0.0F, 0.2F);
       } else {

@@ -88,9 +88,9 @@ public interface Class6226 {
 
    static void method19201(Class2956 var0, Entity var1, Direction var2) {
       var1.setPosition(
-         var0.method11320() + (double)var2.method539() * (0.5000099999997474 - (double)var1.method3429() / 2.0),
-         var0.method11321() + (double)var2.method540() * (0.5000099999997474 - (double)var1.method3430() / 2.0) - (double)var1.method3430() / 2.0,
-         var0.method11322() + (double)var2.method541() * (0.5000099999997474 - (double)var1.method3429() / 2.0)
+         var0.getX() + (double)var2.method539() * (0.5000099999997474 - (double)var1.method3429() / 2.0),
+         var0.getY() + (double)var2.method540() * (0.5000099999997474 - (double)var1.method3430() / 2.0) - (double)var1.method3430() / 2.0,
+         var0.getZ() + (double)var2.method541() * (0.5000099999997474 - (double)var1.method3429() / 2.0)
       );
    }
 }

@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -18,7 +19,7 @@ public class Class3491 extends Class3490 {
    }
 
    @Override
-   public boolean method11490(BlockState var1, Class1665 var2, BlockPos var3) {
+   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
       return super.method11490(var1, var2, var3)
          || var1.method23448(Blocks.NETHERRACK)
          || var1.method23448(Blocks.SOUL_SAND)

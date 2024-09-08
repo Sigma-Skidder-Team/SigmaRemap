@@ -71,7 +71,7 @@ public abstract class ProjectileEntity extends Entity {
       Entity var3 = this.method3460();
       if (var3 != null) {
          for (Entity var5 : this.world
-            .method6770(this, this.getBoundingBox().method19661(this.method3433()).method19664(1.0), var0 -> !var0.isSpectator() && var0.method3139())) {
+            .method6770(this, this.getBoundingBox().method19661(this.getVec()).method19664(1.0), var0 -> !var0.isSpectator() && var0.method3139())) {
             if (var5.method3415() == var3.method3415()) {
                return false;
             }
@@ -103,8 +103,8 @@ public abstract class ProjectileEntity extends Entity {
       float var10 = -MathHelper.sin((var2 + var4) * (float) (Math.PI / 180.0));
       float var11 = MathHelper.cos(var3 * (float) (Math.PI / 180.0)) * MathHelper.cos(var2 * (float) (Math.PI / 180.0));
       this.shoot((double)var9, (double)var10, (double)var11, var5, var6);
-      Vector3d var12 = var1.method3433();
-      this.method3434(this.method3433().method11339(var12.x, !var1.method3226() ? var12.y : 0.0, var12.z));
+      Vector3d var12 = var1.getVec();
+      this.method3434(this.getVec().method11339(var12.x, !var1.method3226() ? var12.y : 0.0, var12.z));
    }
 
    public void method3464(RayTraceResult var1) {
@@ -149,7 +149,7 @@ public abstract class ProjectileEntity extends Entity {
    }
 
    public void method3468() {
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       float var4 = MathHelper.method37766(method3234(var3));
       this.rotationPitch = method3469(this.prevRotationPitch, (float)(MathHelper.method37814(var3.y, (double)var4) * 180.0F / (float)Math.PI));
       this.rotationYaw = method3469(this.prevRotationYaw, (float)(MathHelper.method37814(var3.x, var3.z) * 180.0F / (float)Math.PI));

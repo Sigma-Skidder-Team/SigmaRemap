@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 
 public class Class7632 extends Fluid {
    private static String[] field32711;
@@ -14,12 +15,12 @@ public class Class7632 extends Fluid {
    }
 
    @Override
-   public boolean method25055(FluidState var1, Class1665 var2, BlockPos var3, Fluid var4, Direction var5) {
+   public boolean method25055(FluidState var1, IBlockReader var2, BlockPos var3, Fluid var4, Direction var5) {
       return true;
    }
 
    @Override
-   public Vector3d method25056(Class1665 var1, BlockPos var2, FluidState var3) {
+   public Vector3d method25056(IBlockReader var1, BlockPos var2, FluidState var3) {
       return Vector3d.ZERO;
    }
 
@@ -39,7 +40,7 @@ public class Class7632 extends Fluid {
    }
 
    @Override
-   public float method25061(FluidState var1, Class1665 var2, BlockPos var3) {
+   public float method25061(FluidState var1, IBlockReader var2, BlockPos var3) {
       return 0.0F;
    }
 
@@ -64,7 +65,7 @@ public class Class7632 extends Fluid {
    }
 
    @Override
-   public VoxelShape method25068(FluidState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method25068(FluidState var1, IBlockReader var2, BlockPos var3) {
       return VoxelShapes.method27425();
    }
 }

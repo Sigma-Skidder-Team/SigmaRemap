@@ -24,9 +24,9 @@ public class Class6218 implements Class6226 {
    }
 
    public static void method19197(World var0, ItemStack var1, int var2, Direction var3, Class2955 var4) {
-      double var7 = var4.method11320();
-      double var9 = var4.method11321();
-      double var11 = var4.method11322();
+      double var7 = var4.getX();
+      double var9 = var4.getY();
+      double var11 = var4.getZ();
       if (var3.method544() != Class113.field414) {
          var9 -= 0.15625;
       } else {

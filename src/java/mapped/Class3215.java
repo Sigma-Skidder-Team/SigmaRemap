@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public class Class3215 extends Class3213 {
    private static String[] field18622;
@@ -11,7 +12,7 @@ public class Class3215 extends Class3213 {
    }
 
    @Override
-   public int method11601(BlockState var1, Class1665 var2, BlockPos var3) {
+   public int method11601(BlockState var1, IBlockReader var2, BlockPos var3) {
       return -8356741;
    }
 }

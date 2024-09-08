@@ -66,7 +66,7 @@ public class Class6997 extends Class6990 {
          Vector3d var3 = this.method21667();
          float var4 = this.field30243.method3429();
          float var5 = !(var4 > 0.75F) ? 0.75F - var4 / 2.0F : var4 / 2.0F;
-         Vector3d var6 = this.field30243.method3433();
+         Vector3d var6 = this.field30243.getVec();
          if (Math.abs(var6.x) > 0.2 || Math.abs(var6.z) > 0.2) {
             var5 = (float)((double)var5 * var6.method11348() * 6.0);
          }

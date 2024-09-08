@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
@@ -23,12 +24,12 @@ public class Class3489 extends Class3194 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19355[var1.<Integer>method23463(field19354)];
    }
 
    @Override
-   public boolean method11490(BlockState var1, Class1665 var2, BlockPos var3) {
+   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
       return var1.method23448(Blocks.SOUL_SAND);
    }
 
@@ -47,7 +48,7 @@ public class Class3489 extends Class3194 {
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       return new ItemStack(Items.field37970);
    }
 

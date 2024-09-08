@@ -15,6 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -43,7 +44,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Nullable
-   public static Direction method11678(Class1665 var0, BlockPos var1) {
+   public static Direction method11678(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
       return !(var4.getBlock() instanceof Class3250) ? null : var4.<Direction>method23463(field18484);
    }
@@ -119,7 +120,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public void method11568(Class1665 var1, Entity var2) {
+   public void method11568(IBlockReader var1, Entity var2) {
       if (!var2.method3333()) {
          this.method11681(var2);
       } else {
@@ -128,7 +129,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    private void method11681(Entity var1) {
-      Vector3d var4 = var1.method3433();
+      Vector3d var4 = var1.getVec();
       if (var4.y < 0.0) {
          double var5 = !(var1 instanceof LivingEntity) ? 0.8 : 1.0;
          var1.method3435(var4.x, -var4.y * 0.66F * var5, var4.z);
@@ -177,7 +178,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       Direction var7 = method11683(var1).method536();
       switch (Class8903.field40297[var7.ordinal()]) {
          case 1:
@@ -201,7 +202,7 @@ public class Class3250 extends Class3198 implements Class3245 {
       return var3 != Class82.HEAD ? Class1895.field11111 : Class1895.field11110;
    }
 
-   private static boolean method11685(Class1665 var0, BlockPos var1) {
+   private static boolean method11685(IBlockReader var0, BlockPos var1) {
       return var0.getBlockState(var1.down()).getBlock() instanceof Class3250;
    }
 
@@ -247,7 +248,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    private static Optional<Vector3d> method11688(EntityType<?> var0, Class1668 var1, BlockPos var2, int[][] var3, boolean var4) {
-      Mutable var7 = new Mutable();
+      BlockPos.Mutable var7 = new BlockPos.Mutable();
 
       for (int[] var11 : var3) {
          var7.method8372(var2.getX() + var11[0], var2.getY(), var2.getZ() + var11[1]);
@@ -276,7 +277,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return new Class967(this.field18724);
    }
 
@@ -302,7 +303,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 

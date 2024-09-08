@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
@@ -29,7 +30,7 @@ public class Class3393 extends Class3392 {
       return this.method12004(var1.method18360(), var1.method18345());
    }
 
-   public BlockState method12004(Class1665 var1, BlockPos var2) {
+   public BlockState method12004(IBlockReader var1, BlockPos var2) {
       Block var5 = var1.getBlockState(var2.down()).getBlock();
       Block var6 = var1.getBlockState(var2.up()).getBlock();
       Block var7 = var1.getBlockState(var2.north()).getBlock();
@@ -95,7 +96,7 @@ public class Class3393 extends Class3392 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

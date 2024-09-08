@@ -16,7 +16,7 @@ public class Class6835 extends Class6829 {
       LivingEntity var3 = this.field29722.method4232();
       if (Class1037.method4651(this.field29722) && this.field29722.method3250()) {
          if (var3 != null && var3.getPosY() > this.field29722.getPosY() || Class1037.method4652(this.field29722)) {
-            this.field29722.method3434(this.field29722.method3433().method11339(0.0, 0.002, 0.0));
+            this.field29722.method3434(this.field29722.getVec().method11339(0.0, 0.002, 0.0));
          }
 
          if (this.field29714 != Class2335.field15967 || this.field29722.method4230().method21664()) {
@@ -36,10 +36,10 @@ public class Class6835 extends Class6829 {
          float var14 = MathHelper.lerp(0.125F, this.field29722.method2918(), var13);
          this.field29722.method3113(var14);
          this.field29722
-            .method3434(this.field29722.method3433().method11339((double)var14 * var4 * 0.005, (double)var14 * var6 * 0.1, (double)var14 * var8 * 0.005));
+            .method3434(this.field29722.getVec().method11339((double)var14 * var4 * 0.005, (double)var14 * var6 * 0.1, (double)var14 * var8 * 0.005));
       } else {
          if (!this.field29722.onGround) {
-            this.field29722.method3434(this.field29722.method3433().method11339(0.0, -0.008, 0.0));
+            this.field29722.method3434(this.field29722.getVec().method11339(0.0, -0.008, 0.0));
          }
 
          super.method20810();

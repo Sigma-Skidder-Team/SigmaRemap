@@ -4,10 +4,10 @@ import com.google.common.collect.AbstractIterator;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
-public final class Class4556 extends AbstractIterator<Mutable> {
+public final class Class4556 extends AbstractIterator<BlockPos.Mutable> {
    private static String[] field21968;
    private final Direction[] field21969;
-   private final Mutable field21970;
+   private final BlockPos.Mutable field21970;
    private final int field21971;
    private int field21972;
    private int field21973;
@@ -34,14 +34,14 @@ public final class Class4556 extends AbstractIterator<Mutable> {
       this.field21977 = this.field21970.getZ();
    }
 
-   public Mutable computeNext() {
+   public BlockPos.Mutable computeNext() {
       this.field21970.method8372(this.field21975, this.field21976, this.field21977).method8379(this.field21969[(this.field21972 + 4) % 4]);
       this.field21975 = this.field21970.getX();
       this.field21976 = this.field21970.getY();
       this.field21977 = this.field21970.getZ();
       if (this.field21974 >= this.field21973) {
          if (this.field21972 >= this.field21971) {
-            return (Mutable)this.endOfData();
+            return (BlockPos.Mutable)this.endOfData();
          }
 
          this.field21972++;

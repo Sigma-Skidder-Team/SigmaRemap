@@ -22,7 +22,7 @@ public class Class5721 extends Class5715<Class907> {
          World var10 = var1.method3554();
          if (var9 != var10.getBlockState(var1.getPosition()) && var9.getRenderType() != BlockRenderType.field9885) {
             var4.push();
-            BlockPos var11 = new BlockPos(var1.getPosX(), var1.getBoundingBox().field28453, var1.getPosZ());
+            BlockPos var11 = new BlockPos(var1.getPosX(), var1.getBoundingBox().maxY, var1.getPosZ());
             var4.translate(-0.5, 0.0, -0.5);
             BlockRendererDispatcher var12 = Minecraft.getInstance().getBlockRendererDispatcher();
             var12.method812()

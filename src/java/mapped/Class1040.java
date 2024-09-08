@@ -13,6 +13,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -209,7 +210,7 @@ public class Class1040 extends Class1038 implements Class1041 {
       int var3 = 1;
       if (this.rand.nextFloat() < 0.01F) {
          int var4 = 0;
-         Mutable var5 = new Mutable();
+         BlockPos.Mutable var5 = new BlockPos.Mutable();
 
          for (int var6 = (int)this.getPosX() - 4; var6 < (int)this.getPosX() + 4 && var4 < 14; var6++) {
             for (int var7 = (int)this.getPosY() - 4; var7 < (int)this.getPosY() + 4 && var4 < 14; var7++) {

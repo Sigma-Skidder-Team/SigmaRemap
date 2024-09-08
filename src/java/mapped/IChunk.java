@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import org.apache.logging.log4j.LogManager;
 
 import javax.annotation.Nullable;
@@ -16,7 +17,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Stream;
 
-public interface IChunk extends Class1665, Class1671 {
+public interface IChunk extends IBlockReader, Class1671 {
    @Nullable
    BlockState setBlockState(BlockPos var1, BlockState var2, boolean var3);
 

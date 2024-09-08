@@ -62,7 +62,7 @@ public class Class2805<T extends Entity> extends Class2803<T> {
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
       this.field17461.field31035 = var6 * (float) (Math.PI / 180.0);
       this.field17461.field31036 = var5 * (float) (Math.PI / 180.0);
-      if (Entity.method3234(var1.method3433()) > 1.0E-7) {
+      if (Entity.method3234(var1.getVec()) > 1.0E-7) {
          this.field17461.field31035 = this.field17461.field31035 + -0.05F + -0.05F * MathHelper.cos(var4 * 0.3F);
          this.field17462.field31035 = -0.1F * MathHelper.cos(var4 * 0.3F);
          this.field17463.field31035 = -0.2F * MathHelper.cos(var4 * 0.3F);

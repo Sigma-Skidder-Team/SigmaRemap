@@ -13,6 +13,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -81,7 +82,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (var1.<Class111>method23463(field18866) == Class111.field379) {
          return field18872;
       } else {
@@ -217,7 +218,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return new Class941();
    }
 
@@ -225,7 +226,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
       return method11914(var0, var1) || method11915(var0, var1);
    }
 
-   private static boolean method11914(Class1665 var0, BlockPos var1) {
+   private static boolean method11914(IBlockReader var0, BlockPos var1) {
       BlockPos var4 = var1.up();
       return var0.getBlockState(var4).method23400(var0, var4);
    }
@@ -279,7 +280,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

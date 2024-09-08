@@ -3,12 +3,13 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public final class Class201 extends Class200<Class7585, Class209> {
    private static String[] field753;
    private static final Direction[] field745 = Direction.values();
-   private final Mutable field750 = new Mutable();
+   private final BlockPos.Mutable field750 = new BlockPos.Mutable();
 
    public Class201(Class1704 var1) {
       super(var1, Class1977.field12882, new Class209(var1));
@@ -18,7 +19,7 @@ public final class Class201 extends Class200<Class7585, Class209> {
       int var5 = BlockPos.method8328(var1);
       int var6 = BlockPos.method8329(var1);
       int var7 = BlockPos.method8330(var1);
-      Class1665 var8 = this.field746.method7344(var5 >> 4, var7 >> 4);
+      IBlockReader var8 = this.field746.method7344(var5 >> 4, var7 >> 4);
       return var8 == null ? 0 : var8.method7032(this.field750.method8372(var5, var6, var7));
    }
 

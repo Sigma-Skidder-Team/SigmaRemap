@@ -32,8 +32,8 @@ public class Class2949 extends Class2898<Class4712> {
 
    private void method11289(Class1660 var1, Random var2, BlockPos var3) {
       var1.setBlockState(var3, Blocks.field36891.method11579(), 2);
-      Mutable var6 = new Mutable();
-      Mutable var7 = new Mutable();
+      BlockPos.Mutable var6 = new BlockPos.Mutable();
+      BlockPos.Mutable var7 = new BlockPos.Mutable();
 
       for (int var8 = 0; var8 < 200; var8++) {
          var6.method8378(var3, var2.nextInt(6) - var2.nextInt(6), var2.nextInt(2) - var2.nextInt(5), var2.nextInt(6) - var2.nextInt(6));
@@ -59,7 +59,7 @@ public class Class2949 extends Class2898<Class4712> {
    }
 
    private void method11290(Class1660 var1, Random var2, BlockPos var3) {
-      Mutable var6 = new Mutable();
+      BlockPos.Mutable var6 = new BlockPos.Mutable();
 
       for (int var7 = 0; var7 < 100; var7++) {
          var6.method8378(var3, var2.nextInt(8) - var2.nextInt(8), var2.nextInt(2) - var2.nextInt(7), var2.nextInt(8) - var2.nextInt(8));
@@ -82,7 +82,7 @@ public class Class2949 extends Class2898<Class4712> {
       }
    }
 
-   public static void method11291(Class1660 var0, Random var1, Mutable var2, int var3, int var4, int var5) {
+   public static void method11291(Class1660 var0, Random var1, BlockPos.Mutable var2, int var3, int var4, int var5) {
       for (int var8 = 0; var8 <= var3; var8++) {
          if (var0.method7007(var2)) {
             if (var8 == var3 || !var0.method7007(var2.down())) {

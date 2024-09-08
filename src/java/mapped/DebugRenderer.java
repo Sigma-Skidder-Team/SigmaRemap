@@ -109,7 +109,7 @@ public class DebugRenderer {
    public static void method27455(BlockPos var0, BlockPos var1, float var2, float var3, float var4, float var5) {
       ActiveRenderInfo var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
       if (var8.method37510()) {
-         Vector3d var9 = var8.method37504().method11345();
+         Vector3d var9 = var8.getPos().method11345();
          AxisAlignedBB var10 = new AxisAlignedBB(var0, var1).method19669(var9);
          method27457(var10, var2, var3, var4, var5);
       }
@@ -118,14 +118,14 @@ public class DebugRenderer {
    public static void method27456(BlockPos var0, float var1, float var2, float var3, float var4, float var5) {
       ActiveRenderInfo var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
       if (var8.method37510()) {
-         Vector3d var9 = var8.method37504().method11345();
+         Vector3d var9 = var8.getPos().method11345();
          AxisAlignedBB var10 = new AxisAlignedBB(var0).method19669(var9).method19664((double)var1);
          method27457(var10, var2, var3, var4, var5);
       }
    }
 
    public static void method27457(AxisAlignedBB var0, float var1, float var2, float var3, float var4) {
-      method27458(var0.field28449, var0.field28450, var0.field28451, var0.field28452, var0.field28453, var0.field28454, var1, var2, var3, var4);
+      method27458(var0.minX, var0.minY, var0.minZ, var0.maxX, var0.maxY, var0.maxZ, var1, var2, var3, var4);
    }
 
    public static void method27458(
@@ -155,13 +155,13 @@ public class DebugRenderer {
       ActiveRenderInfo var15 = var14.gameRenderer.getActiveRenderInfo();
       if (var15.method37510() && var14.getRenderManager().field40020 != null) {
          FontRenderer var16 = var14.fontRenderer;
-         double var17 = var15.method37504().x;
-         double var19 = var15.method37504().y;
-         double var21 = var15.method37504().z;
+         double var17 = var15.getPos().x;
+         double var19 = var15.getPos().y;
+         double var21 = var15.getPos().z;
          RenderSystem.pushMatrix();
          RenderSystem.translatef((float)(var1 - var17), (float)(var3 - var19) + 0.07F, (float)(var5 - var21));
          RenderSystem.method27825(0.0F, 1.0F, 0.0F);
-         RenderSystem.method27888(new Matrix4f(var15.method37508()));
+         RenderSystem.method27888(new Matrix4f(var15.getRotation()));
          RenderSystem.scalef(var8, -var8, var8);
          RenderSystem.enableTexture();
          if (!var11) {

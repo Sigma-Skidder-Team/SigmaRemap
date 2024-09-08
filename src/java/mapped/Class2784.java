@@ -101,7 +101,7 @@ public class Class2784 extends Class2595 {
 
    private void method10975() {
       Random var3 = this.field17401.method3013();
-      Mutable var4 = new Mutable();
+      BlockPos.Mutable var4 = new BlockPos.Mutable();
       var4.method8374(this.field17401.getPosition());
       this.field17401
          .method3168(

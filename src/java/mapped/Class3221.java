@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -47,7 +48,7 @@ public class Class3221 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18645;
    }
 
@@ -91,7 +92,7 @@ public class Class3221 extends Block {
       var1.setBlockState(var2, method11538(var0, Blocks.field36396.method11579(), var1, var2));
    }
 
-   private static boolean method11611(Class1665 var0, BlockPos var1) {
+   private static boolean method11611(IBlockReader var0, BlockPos var1) {
       Block var4 = var0.getBlockState(var1.up()).getBlock();
       return var4 instanceof Class3480 || var4 instanceof Class3486 || var4 instanceof Class3493;
    }
@@ -112,7 +113,7 @@ public class Class3221 extends Block {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

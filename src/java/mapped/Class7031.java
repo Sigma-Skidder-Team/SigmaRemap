@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ public class Class7031 {
    private static RenderType[] field30343 = null;
    public static boolean field30344 = false;
 
-   public static RenderType method21824(Class1665 var0, BlockState var1, BlockPos var2) {
+   public static RenderType method21824(IBlockReader var0, BlockState var1, BlockPos var2) {
       if (field30343 != null) {
          if (var1.method23409(var0, var2)) {
             return null;

@@ -35,7 +35,7 @@ public class Class1149 extends Screen {
                var5 = new TranslationTextComponent("commands.publish.started", var4);
             }
 
-            this.mc.ingameGUI.getChatGUI().method5930(var5);
+            this.mc.ingameGUI.getChatGUI().sendChatMessage(var5);
             this.mc.setDefaultMinecraftTitle();
          })
       );

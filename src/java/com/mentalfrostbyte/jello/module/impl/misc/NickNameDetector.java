@@ -18,7 +18,7 @@ public class NickNameDetector extends Module {
         if (this.isEnabled()) {
             for (Entity var5 : ColorUtils.method17680()) {
                 if (!Client.getInstance().getCombatManager().method29346(var5) && var5.ticksExisted > 30 && var5.method3381()) {
-                    ColorUtils.method17678(var5.getName().getUnformattedComponentText() + " might have a custom nametag");
+                    ColorUtils.addChatMessage(var5.getName().getUnformattedComponentText() + " might have a custom nametag");
                 }
             }
         }

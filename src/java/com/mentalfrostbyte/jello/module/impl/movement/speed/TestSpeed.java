@@ -48,9 +48,9 @@ public class TestSpeed extends Module {
                     && (mc.player.field4984 != 0.0F || mc.player.field4982 != 0.0F)
                     && this.getBooleanValueFromSetttingName("AutoJump")) {
                 mc.player.method2914();
-                var1.method13993(mc.player.method3433().x);
-                var1.method13995(mc.player.method3433().y);
-                var1.method13997(mc.player.method3433().z);
+                var1.method13993(mc.player.getVec().x);
+                var1.method13995(mc.player.getVec().y);
+                var1.method13997(mc.player.getVec().z);
             }
 
             double var4 = var1.method13998().y;

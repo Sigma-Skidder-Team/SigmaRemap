@@ -67,7 +67,7 @@ public abstract class Class6896 {
       }
    }
 
-   public static void method21071(Class1679 var0, Random var1, Mutable var2, Set<BlockPos> var3, Class9764 var4, Class4733 var5) {
+   public static void method21071(Class1679 var0, Random var1, BlockPos.Mutable var2, Set<BlockPos> var3, Class9764 var4, Class4733 var5) {
       if (Class2903.method11226(var0, var2)) {
          method21070(var0, var1, var2, var3, var4, var5);
       }

@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class8433;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
@@ -106,7 +107,7 @@ public class NameTags extends Module {
 
             this.field24005.clear();
 
-            for (Entity var7 : Class9217.method34549(ColorUtils.method17680())) {
+            for (Entity var7 : BlockUtil.method34549(ColorUtils.method17680())) {
                 if (var7 != mc.player
                         && var7 != Freecam.field23814
                         && var7 != Blink.field23863
@@ -314,9 +315,9 @@ public class NameTags extends Module {
             var7 = var2.field30453.field39976 + " " + var2.field30453.method32149();
         }
 
-        float var8 = (float) ((double) var1.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320() + 0.5);
-        float var9 = (float) ((double) var1.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321() + 1.0);
-        float var10 = (float) ((double) var1.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322() + 0.5);
+        float var8 = (float) ((double) var1.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX() + 0.5);
+        float var9 = (float) ((double) var1.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY() + 1.0);
+        float var10 = (float) ((double) var1.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ() + 0.5);
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -330,8 +331,8 @@ public class NameTags extends Module {
         GL11.glPushMatrix();
         GL11.glAlphaFunc(519, 0.0F);
         GL11.glTranslated(var8, var9 + 0.6F - 0.33333334F * (1.0F - var3), var10);
-        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37507(), 0.0F, -1.0F, 0.0F);
-        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37506(), 1.0F, 0.0F, 0.0F);
+        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
+        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
         GL11.glPushMatrix();
         float var14 = 0.008F;
         GL11.glScalef(-var14 * var3, -var14 * var3, -var14 * var3);
@@ -385,9 +386,9 @@ public class NameTags extends Module {
         }
 
         if (var13.length() != 0) {
-            float var14 = (float) (var1 - mc.gameRenderer.getActiveRenderInfo().method37504().method11320());
-            float var15 = (float) (var3 - mc.gameRenderer.getActiveRenderInfo().method37504().method11321());
-            float var16 = (float) (var5 - mc.gameRenderer.getActiveRenderInfo().method37504().method11322());
+            float var14 = (float) (var1 - mc.gameRenderer.getActiveRenderInfo().getPos().getX());
+            float var15 = (float) (var3 - mc.gameRenderer.getActiveRenderInfo().getPos().getY());
+            float var16 = (float) (var5 - mc.gameRenderer.getActiveRenderInfo().getPos().getZ());
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(3042);
             GL11.glEnable(2848);
@@ -399,8 +400,8 @@ public class NameTags extends Module {
             GL11.glPushMatrix();
             GL11.glAlphaFunc(519, 0.0F);
             GL11.glTranslated(var14, var15 + 0.6F - 0.33333334F * (1.0F - var8), var16);
-            GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37507(), 0.0F, -1.0F, 0.0F);
-            GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37506(), 1.0F, 0.0F, 0.0F);
+            GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
+            GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
             GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
             int var19 = this.field24008;
             if (!Client.getInstance().getFriendManager().method26997(var7)) {

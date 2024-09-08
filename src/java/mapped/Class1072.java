@@ -172,7 +172,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
       } else {
          int[][] var5 = Class4527.method14422(var4);
          BlockPos var6 = this.getPosition();
-         Mutable var7 = new Mutable();
+         BlockPos.Mutable var7 = new BlockPos.Mutable();
          UnmodifiableIterator var8 = var1.method2982().iterator();
 
          while (var8.hasNext()) {

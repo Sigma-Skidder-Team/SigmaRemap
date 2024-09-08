@@ -68,7 +68,7 @@ public abstract class Class901 extends ProjectileEntity {
          }
 
          this.method3240();
-         Vector3d var5 = this.method3433();
+         Vector3d var5 = this.getVec();
          double var6 = this.getPosX() + var5.x;
          double var8 = this.getPosY() + var5.y;
          double var10 = this.getPosZ() + var5.z;

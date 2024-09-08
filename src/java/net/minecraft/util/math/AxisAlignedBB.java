@@ -8,46 +8,36 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 public class AxisAlignedBB {
-   public final double field28449;
-   public final double field28450;
-   public final double field28451;
-   public final double field28452;
-   public final double field28453;
-   public final double field28454;
+   public final double minX;
+   public final double minY;
+   public final double minZ;
+   public final double maxX;
+   public final double maxY;
+   public final double maxZ;
 
-   public AxisAlignedBB(double var1, double var3, double var5, double var7, double var9, double var11) {
-      this.field28449 = Math.min(var1, var7);
-      this.field28450 = Math.min(var3, var9);
-      this.field28451 = Math.min(var5, var11);
-      this.field28452 = Math.max(var1, var7);
-      this.field28453 = Math.max(var3, var9);
-      this.field28454 = Math.max(var5, var11);
+   public AxisAlignedBB(double x1, double y1, double z1, double x2, double y2, double z2)
+   {
+      this.minX = Math.min(x1, x2);
+      this.minY = Math.min(y1, y2);
+      this.minZ = Math.min(z1, z2);
+      this.maxX = Math.max(x1, x2);
+      this.maxY = Math.max(y1, y2);
+      this.maxZ = Math.max(z1, z2);
    }
 
-   public AxisAlignedBB(BlockPos var1) {
-      this(
-         (double)var1.getX(),
-         (double)var1.getY(),
-         (double)var1.getZ(),
-         (double)(var1.getX() + 1),
-         (double)(var1.getY() + 1),
-         (double)(var1.getZ() + 1)
-      );
+   public AxisAlignedBB(BlockPos pos)
+   {
+      this((double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), (double)(pos.getX() + 1), (double)(pos.getY() + 1), (double)(pos.getZ() + 1));
    }
 
-   public AxisAlignedBB(BlockPos var1, BlockPos var2) {
-      this(
-         (double)var1.getX(),
-         (double)var1.getY(),
-         (double)var1.getZ(),
-         (double)var2.getX(),
-         (double)var2.getY(),
-         (double)var2.getZ()
-      );
+   public AxisAlignedBB(BlockPos pos1, BlockPos pos2)
+   {
+      this((double)pos1.getX(), (double)pos1.getY(), (double)pos1.getZ(), (double)pos2.getX(), (double)pos2.getY(), (double)pos2.getZ());
    }
 
-   public AxisAlignedBB(Vector3d var1, Vector3d var2) {
-      this(var1.x, var1.y, var1.z, var2.x, var2.y, var2.z);
+   public AxisAlignedBB(Vector3d min, Vector3d max)
+   {
+      this(min.x, min.y, min.z, max.x, max.y, max.z);
    }
 
    public static AxisAlignedBB method19656(Class9764 var0) {
@@ -66,11 +56,11 @@ public class AxisAlignedBB {
    }
 
    public double method19658(Class113 var1) {
-      return var1.method328(this.field28449, this.field28450, this.field28451);
+      return var1.method328(this.minX, this.minY, this.minZ);
    }
 
    public double method19659(Class113 var1) {
-      return var1.method328(this.field28452, this.field28453, this.field28454);
+      return var1.method328(this.maxX, this.maxY, this.maxZ);
    }
 
    @Override
@@ -78,11 +68,11 @@ public class AxisAlignedBB {
       if (this != var1) {
          if (var1 instanceof AxisAlignedBB) {
             AxisAlignedBB var4 = (AxisAlignedBB)var1;
-            if (Double.compare(var4.field28449, this.field28449) == 0) {
-               if (Double.compare(var4.field28450, this.field28450) == 0) {
-                  if (Double.compare(var4.field28451, this.field28451) == 0) {
-                     if (Double.compare(var4.field28452, this.field28452) == 0) {
-                        return Double.compare(var4.field28453, this.field28453) == 0 ? Double.compare(var4.field28454, this.field28454) == 0 : false;
+            if (Double.compare(var4.minX, this.minX) == 0) {
+               if (Double.compare(var4.minY, this.minY) == 0) {
+                  if (Double.compare(var4.minZ, this.minZ) == 0) {
+                     if (Double.compare(var4.maxX, this.maxX) == 0) {
+                        return Double.compare(var4.maxY, this.maxY) == 0 ? Double.compare(var4.maxZ, this.maxZ) == 0 : false;
                      } else {
                         return false;
                      }
@@ -105,27 +95,27 @@ public class AxisAlignedBB {
 
    @Override
    public int hashCode() {
-      long var3 = Double.doubleToLongBits(this.field28449);
+      long var3 = Double.doubleToLongBits(this.minX);
       int var5 = (int)(var3 ^ var3 >>> 32);
-      var3 = Double.doubleToLongBits(this.field28450);
+      var3 = Double.doubleToLongBits(this.minY);
       var5 = 31 * var5 + (int)(var3 ^ var3 >>> 32);
-      var3 = Double.doubleToLongBits(this.field28451);
+      var3 = Double.doubleToLongBits(this.minZ);
       var5 = 31 * var5 + (int)(var3 ^ var3 >>> 32);
-      var3 = Double.doubleToLongBits(this.field28452);
+      var3 = Double.doubleToLongBits(this.maxX);
       var5 = 31 * var5 + (int)(var3 ^ var3 >>> 32);
-      var3 = Double.doubleToLongBits(this.field28453);
+      var3 = Double.doubleToLongBits(this.maxY);
       var5 = 31 * var5 + (int)(var3 ^ var3 >>> 32);
-      var3 = Double.doubleToLongBits(this.field28454);
+      var3 = Double.doubleToLongBits(this.maxZ);
       return 31 * var5 + (int)(var3 ^ var3 >>> 32);
    }
 
    public AxisAlignedBB method19660(double var1, double var3, double var5) {
-      double var9 = this.field28449;
-      double var11 = this.field28450;
-      double var13 = this.field28451;
-      double var15 = this.field28452;
-      double var17 = this.field28453;
-      double var19 = this.field28454;
+      double var9 = this.minX;
+      double var11 = this.minY;
+      double var13 = this.minZ;
+      double var15 = this.maxX;
+      double var17 = this.maxY;
+      double var19 = this.maxZ;
       if (!(var1 < 0.0)) {
          if (var1 > 0.0) {
             var15 -= var1;
@@ -158,12 +148,12 @@ public class AxisAlignedBB {
    }
 
    public AxisAlignedBB method19662(double var1, double var3, double var5) {
-      double var9 = this.field28449;
-      double var11 = this.field28450;
-      double var13 = this.field28451;
-      double var15 = this.field28452;
-      double var17 = this.field28453;
-      double var19 = this.field28454;
+      double var9 = this.minX;
+      double var11 = this.minY;
+      double var13 = this.minZ;
+      double var15 = this.maxX;
+      double var17 = this.maxY;
+      double var19 = this.maxZ;
       if (!(var1 < 0.0)) {
          if (var1 > 0.0) {
             var15 += var1;
@@ -192,12 +182,12 @@ public class AxisAlignedBB {
    }
 
    public AxisAlignedBB method19663(double var1, double var3, double var5) {
-      double var9 = this.field28449 - var1;
-      double var11 = this.field28450 - var3;
-      double var13 = this.field28451 - var5;
-      double var15 = this.field28452 + var1;
-      double var17 = this.field28453 + var3;
-      double var19 = this.field28454 + var5;
+      double var9 = this.minX - var1;
+      double var11 = this.minY - var3;
+      double var13 = this.minZ - var5;
+      double var15 = this.maxX + var1;
+      double var17 = this.maxY + var3;
+      double var19 = this.maxZ + var5;
       return new AxisAlignedBB(var9, var11, var13, var15, var17, var19);
    }
 
@@ -206,39 +196,39 @@ public class AxisAlignedBB {
    }
 
    public AxisAlignedBB method19665(AxisAlignedBB var1) {
-      double var4 = Math.max(this.field28449, var1.field28449);
-      double var6 = Math.max(this.field28450, var1.field28450);
-      double var8 = Math.max(this.field28451, var1.field28451);
-      double var10 = Math.min(this.field28452, var1.field28452);
-      double var12 = Math.min(this.field28453, var1.field28453);
-      double var14 = Math.min(this.field28454, var1.field28454);
+      double var4 = Math.max(this.minX, var1.minX);
+      double var6 = Math.max(this.minY, var1.minY);
+      double var8 = Math.max(this.minZ, var1.minZ);
+      double var10 = Math.min(this.maxX, var1.maxX);
+      double var12 = Math.min(this.maxY, var1.maxY);
+      double var14 = Math.min(this.maxZ, var1.maxZ);
       return new AxisAlignedBB(var4, var6, var8, var10, var12, var14);
    }
 
    public AxisAlignedBB method19666(AxisAlignedBB var1) {
-      double var4 = Math.min(this.field28449, var1.field28449);
-      double var6 = Math.min(this.field28450, var1.field28450);
-      double var8 = Math.min(this.field28451, var1.field28451);
-      double var10 = Math.max(this.field28452, var1.field28452);
-      double var12 = Math.max(this.field28453, var1.field28453);
-      double var14 = Math.max(this.field28454, var1.field28454);
+      double var4 = Math.min(this.minX, var1.minX);
+      double var6 = Math.min(this.minY, var1.minY);
+      double var8 = Math.min(this.minZ, var1.minZ);
+      double var10 = Math.max(this.maxX, var1.maxX);
+      double var12 = Math.max(this.maxY, var1.maxY);
+      double var14 = Math.max(this.maxZ, var1.maxZ);
       return new AxisAlignedBB(var4, var6, var8, var10, var12, var14);
    }
 
    public AxisAlignedBB method19667(double var1, double var3, double var5) {
       return new AxisAlignedBB(
-         this.field28449 + var1, this.field28450 + var3, this.field28451 + var5, this.field28452 + var1, this.field28453 + var3, this.field28454 + var5
+         this.minX + var1, this.minY + var3, this.minZ + var5, this.maxX + var1, this.maxY + var3, this.maxZ + var5
       );
    }
 
    public AxisAlignedBB method19668(BlockPos var1) {
       return new AxisAlignedBB(
-         this.field28449 + (double)var1.getX(),
-         this.field28450 + (double)var1.getY(),
-         this.field28451 + (double)var1.getZ(),
-         this.field28452 + (double)var1.getX(),
-         this.field28453 + (double)var1.getY(),
-         this.field28454 + (double)var1.getZ()
+         this.minX + (double)var1.getX(),
+         this.minY + (double)var1.getY(),
+         this.minZ + (double)var1.getZ(),
+         this.maxX + (double)var1.getX(),
+         this.maxY + (double)var1.getY(),
+         this.maxZ + (double)var1.getZ()
       );
    }
 
@@ -247,16 +237,16 @@ public class AxisAlignedBB {
    }
 
    public boolean method19670(AxisAlignedBB var1) {
-      return this.method19671(var1.field28449, var1.field28450, var1.field28451, var1.field28452, var1.field28453, var1.field28454);
+      return this.method19671(var1.minX, var1.minY, var1.minZ, var1.maxX, var1.maxY, var1.maxZ);
    }
 
    public boolean method19671(double var1, double var3, double var5, double var7, double var9, double var11) {
-      return this.field28449 < var7
-         && this.field28452 > var1
-         && this.field28450 < var9
-         && this.field28453 > var3
-         && this.field28451 < var11
-         && this.field28454 > var5;
+      return this.minX < var7
+         && this.maxX > var1
+         && this.minY < var9
+         && this.maxY > var3
+         && this.minZ < var11
+         && this.maxZ > var5;
    }
 
    public boolean method19672(Vector3d var1, Vector3d var2) {
@@ -275,12 +265,12 @@ public class AxisAlignedBB {
    }
 
    public boolean method19674(double var1, double var3, double var5) {
-      return var1 >= this.field28449
-         && var1 < this.field28452
-         && var3 >= this.field28450
-         && var3 < this.field28453
-         && var5 >= this.field28451
-         && var5 < this.field28454;
+      return var1 >= this.minX
+         && var1 < this.maxX
+         && var3 >= this.minY
+         && var3 < this.maxY
+         && var5 >= this.minZ
+         && var5 < this.maxZ;
    }
 
    public double getAverageEdgeLength() {
@@ -291,15 +281,15 @@ public class AxisAlignedBB {
    }
 
    public double method19676() {
-      return this.field28452 - this.field28449;
+      return this.maxX - this.minX;
    }
 
    public double method19677() {
-      return this.field28453 - this.field28450;
+      return this.maxY - this.minY;
    }
 
    public double method19678() {
-      return this.field28454 - this.field28451;
+      return this.maxZ - this.minZ;
    }
 
    public AxisAlignedBB method19679(double var1) {
@@ -350,11 +340,11 @@ public class AxisAlignedBB {
                var4,
                var6,
                var8,
-               var0.field28452,
-               var0.field28450,
-               var0.field28453,
-               var0.field28451,
-               var0.field28454,
+               var0.maxX,
+               var0.minY,
+               var0.maxY,
+               var0.minZ,
+               var0.maxZ,
                Direction.EAST,
                var1.x,
                var1.y,
@@ -368,11 +358,11 @@ public class AxisAlignedBB {
             var4,
             var6,
             var8,
-            var0.field28449,
-            var0.field28450,
-            var0.field28453,
-            var0.field28451,
-            var0.field28454,
+            var0.minX,
+            var0.minY,
+            var0.maxY,
+            var0.minZ,
+            var0.maxZ,
             Direction.WEST,
             var1.x,
             var1.y,
@@ -388,11 +378,11 @@ public class AxisAlignedBB {
                var6,
                var8,
                var4,
-               var0.field28453,
-               var0.field28451,
-               var0.field28454,
-               var0.field28449,
-               var0.field28452,
+               var0.maxY,
+               var0.minZ,
+               var0.maxZ,
+               var0.minX,
+               var0.maxX,
                Direction.field673,
                var1.y,
                var1.z,
@@ -406,11 +396,11 @@ public class AxisAlignedBB {
             var6,
             var8,
             var4,
-            var0.field28450,
-            var0.field28451,
-            var0.field28454,
-            var0.field28449,
-            var0.field28452,
+            var0.minY,
+            var0.minZ,
+            var0.maxZ,
+            var0.minX,
+            var0.maxX,
             Direction.DOWN,
             var1.y,
             var1.z,
@@ -426,11 +416,11 @@ public class AxisAlignedBB {
                var8,
                var4,
                var6,
-               var0.field28454,
-               var0.field28449,
-               var0.field28452,
-               var0.field28450,
-               var0.field28453,
+               var0.maxZ,
+               var0.minX,
+               var0.maxX,
+               var0.minY,
+               var0.maxY,
                Direction.SOUTH,
                var1.z,
                var1.x,
@@ -444,11 +434,11 @@ public class AxisAlignedBB {
             var8,
             var4,
             var6,
-            var0.field28451,
-            var0.field28449,
-            var0.field28452,
-            var0.field28450,
-            var0.field28453,
+            var0.minZ,
+            var0.minX,
+            var0.maxX,
+            var0.minY,
+            var0.maxY,
             Direction.NORTH,
             var1.z,
             var1.x,
@@ -490,34 +480,34 @@ public class AxisAlignedBB {
    @Override
    public String toString() {
       return "AABB["
-         + this.field28449
+         + this.minX
          + ", "
-         + this.field28450
+         + this.minY
          + ", "
-         + this.field28451
+         + this.minZ
          + "] -> ["
-         + this.field28452
+         + this.maxX
          + ", "
-         + this.field28453
+         + this.maxY
          + ", "
-         + this.field28454
+         + this.maxZ
          + "]";
    }
 
    public boolean method19684() {
-      return Double.isNaN(this.field28449)
-         || Double.isNaN(this.field28450)
-         || Double.isNaN(this.field28451)
-         || Double.isNaN(this.field28452)
-         || Double.isNaN(this.field28453)
-         || Double.isNaN(this.field28454);
+      return Double.isNaN(this.minX)
+         || Double.isNaN(this.minY)
+         || Double.isNaN(this.minZ)
+         || Double.isNaN(this.maxX)
+         || Double.isNaN(this.maxY)
+         || Double.isNaN(this.maxZ);
    }
 
    public Vector3d method19685() {
       return new Vector3d(
-         MathHelper.lerp(0.5, this.field28449, this.field28452),
-         MathHelper.lerp(0.5, this.field28450, this.field28453),
-         MathHelper.lerp(0.5, this.field28451, this.field28454)
+         MathHelper.lerp(0.5, this.minX, this.maxX),
+         MathHelper.lerp(0.5, this.minY, this.maxY),
+         MathHelper.lerp(0.5, this.minZ, this.maxZ)
       );
    }
 

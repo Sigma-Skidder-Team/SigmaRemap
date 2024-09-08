@@ -26,7 +26,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
       var4.push();
       Direction var9 = var1.method3386();
       Vector3d var10 = this.method17867(var1, var3);
-      var4.translate(-var10.method11320(), -var10.method11321(), -var10.method11322());
+      var4.translate(-var10.getX(), -var10.getY(), -var10.getZ());
       double var11 = 0.46875;
       var4.translate((double)var9.method539() * 0.46875, (double)var9.method540() * 0.46875, (double)var9.method541() * 0.46875);
       var4.rotate(Vector3f.field32898.rotationDegrees(var1.rotationPitch));

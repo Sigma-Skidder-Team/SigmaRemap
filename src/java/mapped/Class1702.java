@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.io.IOException;
 import javax.annotation.Nullable;
@@ -19,7 +20,7 @@ public abstract class Class1702 implements Class1704, AutoCloseable {
 
    @Nullable
    @Override
-   public Class1665 method7344(int var1, int var2) {
+   public IBlockReader method7344(int var1, int var2) {
       return this.method7346(var1, var2, ChunkStatus.field42133, false);
    }
 

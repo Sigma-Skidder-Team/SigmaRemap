@@ -10,7 +10,7 @@ public final class Class6246 extends Class6217 {
 
    @Override
    public ProjectileEntity method19191(World var1, Class2955 var2, ItemStack var3) {
-      Class887 var6 = new Class887(var1, var2.method11320(), var2.method11321(), var2.method11322());
+      Class887 var6 = new Class887(var1, var2.getX(), var2.getY(), var2.getZ());
       var6.pickupStatus = AbstractArrowEntityPickupStatus.ALLOWED;
       return var6;
    }

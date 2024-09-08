@@ -14,7 +14,7 @@ public class Class2939 extends Class2898<Class4734> {
 
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4734 var5) {
       int var8 = var3.nextInt(var5.field22423 + 1);
-      Mutable var9 = new Mutable();
+      BlockPos.Mutable var9 = new BlockPos.Mutable();
 
       for (int var10 = 0; var10 < var8; var10++) {
          this.method11282(var9, var3, var4, Math.min(var10, 7));
@@ -26,7 +26,7 @@ public class Class2939 extends Class2898<Class4734> {
       return true;
    }
 
-   private void method11282(Mutable var1, Random var2, BlockPos var3, int var4) {
+   private void method11282(BlockPos.Mutable var1, Random var2, BlockPos var3, int var4) {
       int var7 = this.method11283(var2, var4);
       int var8 = this.method11283(var2, var4);
       int var9 = this.method11283(var2, var4);
@@ -38,7 +38,7 @@ public class Class2939 extends Class2898<Class4734> {
    }
 
    private boolean method11284(Class1660 var1, BlockPos var2) {
-      Mutable var5 = new Mutable();
+      BlockPos.Mutable var5 = new BlockPos.Mutable();
 
       for (Direction var9 : Direction.values()) {
          var5.method8377(var2, var9);

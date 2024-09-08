@@ -9,6 +9,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,7 +27,7 @@ public class Class9716 {
       }
    );
 
-   public static boolean method38063(BlockState var0, Class1665 var1, BlockPos var2, Direction var3, Class8391 var4) {
+   public static boolean method38063(BlockState var0, IBlockReader var1, BlockPos var2, Direction var3, Class8391 var4) {
       Class4424 var7 = new Class4424(var0);
       Client.getInstance().getEventManager().call(var7);
       if (!var7.method13971()) {
@@ -50,7 +51,7 @@ public class Class9716 {
       }
    }
 
-   public static boolean method38064(BlockState var0, Class1665 var1, BlockPos var2, Direction var3, Class8391 var4, BlockState var5, BlockPos var6) {
+   public static boolean method38064(BlockState var0, IBlockReader var1, BlockPos var2, Direction var3, Class8391 var4, BlockState var5, BlockPos var6) {
       long var9 = (long)var0.method23493() << 36 | (long)var5.method23493() << 4 | (long)var3.ordinal();
       Long2ByteLinkedOpenHashMap var11 = var4.method29439();
       byte var12 = var11.getAndMoveToFirst(var9);
@@ -101,7 +102,7 @@ public class Class9716 {
       return var3.getValidStates();
    }
 
-   public static boolean method38071(BlockState var0, Class1665 var1, BlockPos var2) {
+   public static boolean method38071(BlockState var0, IBlockReader var1, BlockPos var2) {
       return var0.method23496();
    }
 

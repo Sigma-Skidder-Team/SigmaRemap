@@ -22,7 +22,7 @@ public class Class5127 implements Class5119 {
          RenderSystem.method27866(7425);
          RenderSystem.disableAlphaTest();
          RenderSystem.method27939();
-         Entity var11 = this.field23315.gameRenderer.getActiveRenderInfo().method37509();
+         Entity var11 = this.field23315.gameRenderer.getActiveRenderInfo().getRenderViewEntity();
          Tessellator var12 = Tessellator.getInstance();
          BufferBuilder var13 = var12.getBuffer();
          double var14 = 0.0 - var5;

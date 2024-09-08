@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4436;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
-import mapped.Class9217;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.Class9567;
 import mapped.ColorUtils;
 import net.minecraft.util.math.BlockPos;
@@ -106,9 +106,9 @@ public class MineplexLongJump extends Module {
                 this.field23807 = ColorUtils.method17686();
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (ColorUtils.method17686()
-                        && (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var4) || this.method16004().getBooleanValueFromSetttingName("Auto Jump"))) {
+                        && (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var4) || this.method16004().getBooleanValueFromSetttingName("Auto Jump"))) {
                     mc.player.method2914();
-                    var1.method13995(mc.player.method3433().y);
+                    var1.method13995(mc.player.getVec().y);
                     Class9567.method37088(var1, 0.0);
                 }
             }

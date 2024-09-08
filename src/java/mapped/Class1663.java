@@ -2,8 +2,9 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
-public interface Class1663 extends Class1665 {
+public interface Class1663 extends IBlockReader {
    float method6877(Direction var1, boolean var2);
 
    Class196 method6737();

@@ -13,7 +13,7 @@ public class Class4593 extends Class4587 {
    private final EntityRendererManager field22085;
 
    public Class4593(EntityRendererManager var1, RenderTypeBuffers var2, ClientWorld var3, Entity var4, Entity var5) {
-      this(var1, var2, var3, var4, var5, var4.method3433());
+      this(var1, var2, var3, var4, var5, var4.getVec());
    }
 
    private Class4593(EntityRendererManager var1, RenderTypeBuffers var2, ClientWorld var3, Entity var4, Entity var5, Vector3d var6) {
@@ -50,13 +50,13 @@ public class Class4593 extends Class4587 {
       double var16 = MathHelper.lerp((double)var7, this.field22082.getPosY(), var10);
       double var18 = MathHelper.lerp((double)var7, this.field22082.getPosZ(), var12);
       Class7735 var20 = this.field22081.method26536();
-      Vector3d var21 = var2.method37504();
+      Vector3d var21 = var2.getPos();
       this.field22085
          .method32219(
             this.field22082,
-            var14 - var21.method11320(),
-            var16 - var21.method11321(),
-            var18 - var21.method11322(),
+            var14 - var21.getX(),
+            var16 - var21.getY(),
+            var18 - var21.getZ(),
             this.field22082.rotationYaw,
             var3,
             new MatrixStack(),

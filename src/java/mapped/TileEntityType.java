@@ -7,6 +7,7 @@ import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -207,7 +208,7 @@ public class TileEntityType<T extends TileEntity> {
    }
 
    @Nullable
-   public T method13797(Class1665 var1, BlockPos var2) {
+   public T method13797(IBlockReader var1, BlockPos var2) {
       TileEntity var5 = var1.getTileEntity(var2);
       return (T)(var5 != null && var5.method3786() == this ? var5 : null);
    }

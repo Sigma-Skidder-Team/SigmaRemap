@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -84,11 +85,11 @@ public class Class3441 extends Block {
       }
    }
 
-   public static boolean method12114(Class1665 var0, BlockPos var1) {
+   public static boolean method12114(IBlockReader var0, BlockPos var1) {
       return method12115(var0, var1.down());
    }
 
-   public static boolean method12115(Class1665 var0, BlockPos var1) {
+   public static boolean method12115(IBlockReader var0, BlockPos var1) {
       return var0.getBlockState(var1).method23446(BlockTags.field32761);
    }
 
@@ -125,7 +126,7 @@ public class Class3441 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return var1.<Integer>method23463(field19244) <= 1 ? field19241 : field19242;
    }
 

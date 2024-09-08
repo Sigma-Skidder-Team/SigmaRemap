@@ -110,27 +110,27 @@ public class Class940 extends Class939 implements Class930, Class935 {
                   switch (Class9671.field45163[var4.method544().ordinal()]) {
                      case 1:
                         if (var4.method535() == Class1892.field11092) {
-                           var9 = var5.field28452 - var15.field28449;
+                           var9 = var5.maxX - var15.minX;
                         } else {
-                           var9 = var15.field28452 - var5.field28449;
+                           var9 = var15.maxX - var5.minX;
                         }
 
                         var9 += 0.01;
                         break;
                      case 2:
                         if (var4.method535() == Class1892.field11092) {
-                           var11 = var5.field28453 - var15.field28450;
+                           var11 = var5.maxY - var15.minY;
                         } else {
-                           var11 = var15.field28453 - var5.field28450;
+                           var11 = var15.maxY - var5.minY;
                         }
 
                         var11 += 0.01;
                         break;
                      case 3:
                         if (var4.method535() == Class1892.field11092) {
-                           var13 = var5.field28454 - var15.field28451;
+                           var13 = var5.maxZ - var15.minZ;
                         } else {
-                           var13 = var15.field28454 - var5.field28451;
+                           var13 = var15.maxZ - var5.minZ;
                         }
 
                         var13 += 0.01;

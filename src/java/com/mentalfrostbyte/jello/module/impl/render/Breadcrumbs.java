@@ -47,9 +47,9 @@ public class Breadcrumbs extends Module {
     public Vector3d method16770(Vector3d var1) {
         return var1.method11338(
                 new Vector3d(
-                        - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320(),
-                        -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321(),
-                        -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322()
+                        - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX(),
+                        -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY(),
+                        -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ()
                 )
         );
     }

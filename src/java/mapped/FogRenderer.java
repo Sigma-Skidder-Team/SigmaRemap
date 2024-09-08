@@ -23,21 +23,21 @@ public class FogRenderer {
          if (!var7.method23486(Class8953.field40470)) {
             float var8 = 0.25F + 0.75F * (float)var3 / 32.0F;
             var8 = 1.0F - (float)Math.pow((double)var8, 0.25);
-            Vector3d var9 = var2.method6873(var0.method37505(), var1);
-            var9 = Class9680.method37877(var9, var2, var0.method37509(), var1);
+            Vector3d var9 = var2.method6873(var0.getBlockPos(), var1);
+            var9 = Class9680.method37877(var9, var2, var0.getRenderViewEntity(), var1);
             float var10 = (float)var9.x;
             float var11 = (float)var9.y;
             float var12 = (float)var9.z;
             float var13 = MathHelper.clamp(MathHelper.cos(var2.method7001(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
             BiomeManager var14 = var2.getBiomeManager();
-            Vector3d var15 = var0.method37504().method11337(2.0, 2.0, 2.0).method11344(0.25);
+            Vector3d var15 = var0.getPos().method11337(2.0, 2.0, 2.0).method11344(0.25);
             Vector3d var16 = Class8430.method29626(
                var15, (var3x, var4x, var5) -> var2.method6830().method19299(Vector3d.unpack(var14.method20326(var3x, var4x, var5).method32509()), var13)
             );
-            var16 = Class9680.method37876(var16, var2, var0.method37509(), var1);
-            field40348 = (float)var16.method11320();
-            field40349 = (float)var16.method11321();
-            field40350 = (float)var16.method11322();
+            var16 = Class9680.method37876(var16, var2, var0.getRenderViewEntity(), var1);
+            field40348 = (float)var16.getX();
+            field40349 = (float)var16.getY();
+            field40350 = (float)var16.getZ();
             if (var3 >= 4) {
                float var17 = !(MathHelper.sin(var2.method6750(var1)) > 0.0F) ? 1.0F : -1.0F;
                Vector3f var18 = new Vector3f(var17, 0.0F, 0.0F);
@@ -86,7 +86,7 @@ public class FogRenderer {
          }
       } else {
          long var19 = Util.milliTime();
-         int var25 = var2.getBiome(new BlockPos(var0.method37504())).method32521();
+         int var25 = var2.getBiome(new BlockPos(var0.getPos())).method32521();
          if (field40353 < 0L) {
             field40351 = var25;
             field40352 = var25;
@@ -113,9 +113,9 @@ public class FogRenderer {
          }
       }
 
-      double var49 = var0.method37504().y * var2.getWorldInfo().method20053();
-      if (var0.method37509() instanceof LivingEntity && ((LivingEntity)var0.method37509()).method3033(Effects.BLINDNESS)) {
-         int var26 = ((LivingEntity)var0.method37509()).method3034(Effects.BLINDNESS).method8628();
+      double var49 = var0.getPos().y * var2.getWorldInfo().method20053();
+      if (var0.getRenderViewEntity() instanceof LivingEntity && ((LivingEntity)var0.getRenderViewEntity()).method3033(Effects.BLINDNESS)) {
+         int var26 = ((LivingEntity)var0.getRenderViewEntity()).method3034(Effects.BLINDNESS).method8628();
          if (var26 >= 20) {
             var49 = 0.0;
          } else {
@@ -141,8 +141,8 @@ public class FogRenderer {
       }
 
       if (!var7.method23486(Class8953.field40469)) {
-         if (var0.method37509() instanceof LivingEntity && ((LivingEntity)var0.method37509()).method3033(Effects.NIGHT_VISION)) {
-            float var27 = GameRenderer.method750((LivingEntity)var0.method37509(), var1);
+         if (var0.getRenderViewEntity() instanceof LivingEntity && ((LivingEntity)var0.getRenderViewEntity()).method3033(Effects.NIGHT_VISION)) {
+            float var27 = GameRenderer.method750((LivingEntity)var0.getRenderViewEntity(), var1);
             float var33 = Math.min(1.0F / field40348, Math.min(1.0F / field40349, 1.0F / field40350));
             if (Float.isInfinite(var33)) {
                var33 = Math.nextAfter(var33, 0.0);
@@ -154,8 +154,8 @@ public class FogRenderer {
          }
       } else {
          float var28 = 0.0F;
-         if (var0.method37509() instanceof ClientPlayerEntity) {
-            ClientPlayerEntity var34 = (ClientPlayerEntity)var0.method37509();
+         if (var0.getRenderViewEntity() instanceof ClientPlayerEntity) {
+            ClientPlayerEntity var34 = (ClientPlayerEntity)var0.getRenderViewEntity();
             var28 = var34.method5416();
          }
 
@@ -171,7 +171,7 @@ public class FogRenderer {
 
       if (!var7.method23486(Class8953.field40469)) {
          if (var7.method23486(Class8953.field40470)) {
-            Entity var29 = var0.method37509();
+            Entity var29 = var0.getRenderViewEntity();
             Vector3d var36 = Class9680.method37872(var2, var29.getPosX(), var29.getPosY() + 1.0, var29.getPosZ());
             if (var36 != null) {
                field40348 = (float)var36.x;
@@ -180,7 +180,7 @@ public class FogRenderer {
             }
          }
       } else {
-         Entity var30 = var0.method37509();
+         Entity var30 = var0.getRenderViewEntity();
          Vector3d var37 = Class9680.method37871(var2, var30.getPosX(), var30.getPosY() + 1.0, var30.getPosZ());
          if (var37 != null) {
             field40348 = (float)var37.x;
@@ -213,7 +213,7 @@ public class FogRenderer {
    public static void method32587(ActiveRenderInfo var0, Class2040 var1, float var2, boolean var3, float var4) {
       field40354 = false;
       FluidState var7 = var0.method37512();
-      Entity var8 = var0.method37509();
+      Entity var8 = var0.getRenderViewEntity();
       float var9 = -1.0F;
       if (Class9299.field42876.method20214()) {
          var9 = Class9299.method35059(Class9299.field42876, var1, var0, var4, 0.1F);

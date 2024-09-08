@@ -17,7 +17,7 @@ public final class Class9456 {
    private static String[] field43938;
 
    public static RayTraceResult method36385(Entity var0, Predicate<Entity> var1) {
-      Vector3d var4 = var0.method3433();
+      Vector3d var4 = var0.getVec();
       World var5 = var0.world;
       Vector3d var6 = var0.getPositionVec();
       Vector3d var7 = var6.method11338(var4);
@@ -26,7 +26,7 @@ public final class Class9456 {
          var7 = ((RayTraceResult)var8).method31419();
       }
 
-      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.getBoundingBox().method19661(var0.method3433()).method19664(1.0), var1);
+      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.getBoundingBox().method19661(var0.getVec()).method19664(1.0), var1);
       if (var9 != null) {
          var8 = var9;
       }
@@ -90,7 +90,7 @@ public final class Class9456 {
    }
 
    public static final void method36388(Entity var0, float var1) {
-      Vector3d var4 = var0.method3433();
+      Vector3d var4 = var0.getVec();
       if (var4.method11349() != 0.0) {
          float var5 = MathHelper.method37766(Entity.method3234(var4));
          var0.rotationYaw = (float)(MathHelper.method37814(var4.z, var4.x) * 180.0F / (float)Math.PI) + 90.0F;

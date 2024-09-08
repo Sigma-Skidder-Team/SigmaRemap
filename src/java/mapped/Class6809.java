@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 
 public class Class6809 {
    private static String[] field29635;
@@ -29,11 +30,11 @@ public class Class6809 {
       return this.field29636;
    }
 
-   public VoxelShape method20746(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method20746(BlockState var1, IBlockReader var2, BlockPos var3) {
       return this.field29638.method8998(var1, var2, var3, this.field29640);
    }
 
-   public VoxelShape method20747(FluidState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method20747(FluidState var1, IBlockReader var2, BlockPos var3) {
       return !this.field29639.method8273(var1) ? VoxelShapes.method27425() : var1.method23489(var2, var3);
    }
 }

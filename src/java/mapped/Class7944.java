@@ -1111,7 +1111,7 @@ public class Class7944 {
          method26813(var5);
          if (method26981() && Class4379.method13743("ShowGlError", 10000L)) {
             String var6 = I18n.format("of.message.openglError", var3, var4);
-            field34157.ingameGUI.getChatGUI().method5930(new StringTextComponent(var6));
+            field34157.ingameGUI.getChatGUI().sendChatMessage(new StringTextComponent(var6));
          }
       }
    }

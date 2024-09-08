@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -66,7 +67,7 @@ public class Class3213 extends Block {
       }
    }
 
-   public int method11601(BlockState var1, Class1665 var2, BlockPos var3) {
+   public int method11601(BlockState var1, IBlockReader var2, BlockPos var3) {
       return -16777216;
    }
 }

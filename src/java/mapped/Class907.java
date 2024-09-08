@@ -93,15 +93,15 @@ public class Class907 extends Entity {
          }
 
          if (!this.method3247()) {
-            this.method3434(this.method3433().method11339(0.0, -0.04, 0.0));
+            this.method3434(this.getVec().method11339(0.0, -0.04, 0.0));
          }
 
-         this.move(Class2107.field13742, this.method3433());
+         this.move(Class2107.field13742, this.getVec());
          if (!this.world.isRemote) {
             BlockPos var18 = this.getPosition();
             boolean var5 = this.field5176.getBlock() instanceof Class3217;
             boolean var6 = var5 && this.world.getFluidState(var18).method23486(Class8953.field40469);
-            double var7 = this.method3433().method11349();
+            double var7 = this.getVec().method11349();
             if (var5 && var7 > 1.0) {
                BlockRayTraceResult var9 = this.world
                   .method7036(
@@ -125,7 +125,7 @@ public class Class907 extends Entity {
                }
             } else {
                BlockState var19 = this.world.getBlockState(var18);
-               this.method3434(this.method3433().method11347(0.7, -0.5, 0.7));
+               this.method3434(this.getVec().method11347(0.7, -0.5, 0.7));
                if (!var19.method23448(Blocks.MOVING_PISTON)) {
                   this.method2904();
                   if (this.field5179) {
@@ -175,7 +175,7 @@ public class Class907 extends Entity {
             }
          }
 
-         this.method3434(this.method3433().method11344(0.98));
+         this.method3434(this.getVec().method11344(0.98));
       } else {
          this.method2904();
       }

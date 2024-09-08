@@ -207,7 +207,7 @@ public class Class1019 extends Class1018 implements Class1020 {
          ItemEntity var6 = this.method3301(field5705.get(this.method4517()), 1);
          if (var6 != null) {
             var6.method3434(
-               var6.method3433()
+               var6.getVec()
                   .method11339(
                      (double)((this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F),
                      (double)(this.rand.nextFloat() * 0.05F),

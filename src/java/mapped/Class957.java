@@ -8,6 +8,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -203,7 +204,7 @@ public class Class957 extends Class956 implements Class935 {
       this.method3622();
    }
 
-   private static BlockPos method3880(Class1665 var0, BlockPos var1, int var2, boolean var3) {
+   private static BlockPos method3880(IBlockReader var0, BlockPos var1, int var2, boolean var3) {
       BlockPos var6 = null;
 
       for (int var7 = -var2; var7 <= var2; var7++) {

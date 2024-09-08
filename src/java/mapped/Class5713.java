@@ -170,7 +170,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
          }
 
          Vector3d var11 = var1.method3281(var5);
-         Vector3d var12 = var1.method3433();
+         Vector3d var12 = var1.getVec();
          double var13 = Entity.method3234(var12);
          double var15 = Entity.method3234(var11);
          if (var13 > 0.0 && var15 > 0.0) {

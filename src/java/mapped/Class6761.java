@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 
@@ -32,9 +33,9 @@ public class Class6761 extends Class6762 {
    @Override
    public Class7176 method20615() {
       return this.method20641(
-         MathHelper.floor(this.field29476.getBoundingBox().field28449),
-         MathHelper.floor(this.field29476.getBoundingBox().field28450 + 0.5),
-         MathHelper.floor(this.field29476.getBoundingBox().field28451)
+         MathHelper.floor(this.field29476.getBoundingBox().minX),
+         MathHelper.floor(this.field29476.getBoundingBox().minY + 0.5),
+         MathHelper.floor(this.field29476.getBoundingBox().minZ)
       );
    }
 
@@ -211,7 +212,7 @@ public class Class6761 extends Class6762 {
    }
 
    @Override
-   public Class2163 method20620(Class1665 var1, boolean var2, boolean var3, BlockPos var4, Class2163 var5) {
+   public Class2163 method20620(IBlockReader var1, boolean var2, boolean var3, BlockPos var4, Class2163 var5) {
       if (var5 == Class2163.field14193
          && !(var1.getBlockState(var4).getBlock() instanceof Class3429)
          && !(var1.getBlockState(var4.down()).getBlock() instanceof Class3429)) {
@@ -230,8 +231,8 @@ public class Class6761 extends Class6762 {
    }
 
    @Override
-   public Class2163 method20621(Class1665 var1, int var2, int var3, int var4) {
-      Mutable var7 = new Mutable();
+   public Class2163 method20621(IBlockReader var1, int var2, int var3, int var4) {
+      BlockPos.Mutable var7 = new BlockPos.Mutable();
       Class2163 var8 = method20635(var1, var7.method8372(var2, var3, var4));
       if (var8 != Class2163.field14191) {
          if (var8 == Class2163.field14185 && var3 >= 1) {

@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -20,7 +21,7 @@ public abstract class Class3468 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.method12158(var1) <= 0 ? field19314 : field19313;
    }
 
@@ -107,12 +108,12 @@ public abstract class Class3468 extends Block {
    }
 
    @Override
-   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return this.method12158(var1);
    }
 
    @Override
-   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return var4 != Direction.field673 ? 0 : this.method12158(var1);
    }
 

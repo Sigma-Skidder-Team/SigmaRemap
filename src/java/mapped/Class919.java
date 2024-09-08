@@ -164,7 +164,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
          var3 += (float)var4 * 0.001F;
       }
 
-      this.method3434(this.method3433().method11347((double)var3, 0.0, (double)var3));
+      this.method3434(this.getVec().method11347((double)var3, 0.0, (double)var3));
    }
 
    public void method3624(PlayerEntity var1) {

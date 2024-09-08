@@ -294,7 +294,7 @@ public class Class1108 extends Class1006 implements Class1008 {
 
    @Override
    public void method2914() {
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       this.method3435(var3.x, (double)this.method3103(), var3.z);
       this.isAirBorne = true;
    }

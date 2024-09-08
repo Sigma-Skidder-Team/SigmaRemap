@@ -51,13 +51,13 @@ public class Class1004 extends Entity {
    @Override
    public void tick() {
       if (!this.method3247()) {
-         this.method3434(this.method3433().method11339(0.0, -0.04, 0.0));
+         this.method3434(this.getVec().method11339(0.0, -0.04, 0.0));
       }
 
-      this.move(Class2107.field13742, this.method3433());
-      this.method3434(this.method3433().method11344(0.98));
+      this.move(Class2107.field13742, this.getVec());
+      this.method3434(this.getVec().method11344(0.98));
       if (this.onGround) {
-         this.method3434(this.method3433().method11347(0.7, -0.5, 0.7));
+         this.method3434(this.getVec().method11347(0.7, -0.5, 0.7));
       }
 
       this.field5564--;

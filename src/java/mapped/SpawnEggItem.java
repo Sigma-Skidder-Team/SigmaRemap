@@ -154,7 +154,7 @@ public class SpawnEggItem extends Item {
          if (var9 != null) {
             ((Class1006)var9).method4308(true);
             if (((Class1006)var9).method3005()) {
-               ((Class1006)var9).method3273(var5.method11320(), var5.method11321(), var5.method11322(), 0.0F, 0.0F);
+               ((Class1006)var9).method3273(var5.getX(), var5.getY(), var5.getZ(), 0.0F, 0.0F);
                var4.method6995((Entity)var9);
                if (var6.method32152()) {
                   ((Class1006)var9).method3379(var6.method32149());

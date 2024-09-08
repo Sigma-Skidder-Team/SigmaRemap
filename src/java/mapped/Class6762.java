@@ -9,6 +9,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 
 import java.util.EnumSet;
 import javax.annotation.Nullable;
@@ -35,7 +36,7 @@ public class Class6762 extends Class6764 {
 
    @Override
    public Class7176 method20615() {
-      Mutable var3 = new Mutable();
+      BlockPos.Mutable var3 = new BlockPos.Mutable();
       int var4 = MathHelper.floor(this.field29476.getPosY());
       BlockState var5 = this.field29475.getBlockState(var3.method8373(this.field29476.getPosX(), (double)var4, this.field29476.getPosZ()));
       if (!this.field29476.method3107(var5.method23449().method23472())) {
@@ -74,10 +75,10 @@ public class Class6762 extends Class6764 {
       Class2163 var7 = this.method20632(this.field29476, var11.getX(), var4, var11.getZ());
       if (this.field29476.method4223(var7) < 0.0F) {
          AxisAlignedBB var8 = this.field29476.getBoundingBox();
-         if (this.method20622(var3.method8373(var8.field28449, (double)var4, var8.field28451))
-            || this.method20622(var3.method8373(var8.field28449, (double)var4, var8.field28454))
-            || this.method20622(var3.method8373(var8.field28452, (double)var4, var8.field28451))
-            || this.method20622(var3.method8373(var8.field28452, (double)var4, var8.field28454))) {
+         if (this.method20622(var3.method8373(var8.minX, (double)var4, var8.minZ))
+            || this.method20622(var3.method8373(var8.minX, (double)var4, var8.maxZ))
+            || this.method20622(var3.method8373(var8.maxX, (double)var4, var8.minZ))
+            || this.method20622(var3.method8373(var8.maxX, (double)var4, var8.maxZ))) {
             Class7176 var9 = this.method20643(var3);
             var9.field30859 = this.method20631(this.field29476, var9.method22531());
             var9.field30858 = this.field29476.method4223(var9.field30859);
@@ -196,7 +197,7 @@ public class Class6762 extends Class6764 {
       return true;
    }
 
-   public static double method20626(Class1665 var0, BlockPos var1) {
+   public static double method20626(IBlockReader var0, BlockPos var1) {
       BlockPos var4 = var1.down();
       VoxelShape var5 = var0.getBlockState(var4).method23414(var0, var4);
       return (double)var4.getY() + (!var5.method19516() ? var5.method19513(Class113.field414) : 0.0);
@@ -205,7 +206,7 @@ public class Class6762 extends Class6764 {
    @Nullable
    private Class7176 method20627(int var1, int var2, int var3, int var4, double var5, Direction var7, Class2163 var8) {
       Class7176 var11 = null;
-      Mutable var12 = new Mutable();
+      BlockPos.Mutable var12 = new BlockPos.Mutable();
       double var13 = method20626(this.field29475, var12.method8372(var1, var2, var3));
       if (!(var13 - var5 > 1.125)) {
          Class2163 var15 = this.method20632(this.field29476, var1, var2, var3);
@@ -324,7 +325,7 @@ public class Class6762 extends Class6764 {
    }
 
    @Override
-   public Class2163 method20629(Class1665 var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
+   public Class2163 method20629(IBlockReader var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
       EnumSet<Class2163> var13 = EnumSet.noneOf(Class2163.class);
       Class2163 var14 = Class2163.field14184;
       BlockPos var15 = var5.getPosition();
@@ -351,7 +352,7 @@ public class Class6762 extends Class6764 {
    }
 
    public Class2163 method20630(
-      Class1665 var1,
+      IBlockReader var1,
       int var2,
       int var3,
       int var4,
@@ -384,7 +385,7 @@ public class Class6762 extends Class6764 {
       return var11;
    }
 
-   public Class2163 method20620(Class1665 var1, boolean var2, boolean var3, BlockPos var4, Class2163 var5) {
+   public Class2163 method20620(IBlockReader var1, boolean var2, boolean var3, BlockPos var4, Class2163 var5) {
       if (var5 == Class2163.field14202 && var2 && var3) {
          var5 = Class2163.field14187;
       }
@@ -421,11 +422,11 @@ public class Class6762 extends Class6764 {
    }
 
    @Override
-   public Class2163 method20621(Class1665 var1, int var2, int var3, int var4) {
-      return method20633(var1, new Mutable(var2, var3, var4));
+   public Class2163 method20621(IBlockReader var1, int var2, int var3, int var4) {
+      return method20633(var1, new BlockPos.Mutable(var2, var3, var4));
    }
 
-   public static Class2163 method20633(Class1665 var0, Mutable var1) {
+   public static Class2163 method20633(IBlockReader var0, BlockPos.Mutable var1) {
       int var4 = var1.getX();
       int var5 = var1.getY();
       int var6 = var1.getZ();
@@ -459,7 +460,7 @@ public class Class6762 extends Class6764 {
       return var7;
    }
 
-   public static Class2163 method20634(Class1665 var0, Mutable var1, Class2163 var2) {
+   public static Class2163 method20634(IBlockReader var0, BlockPos.Mutable var1, Class2163 var2) {
       int var5 = var1.getX();
       int var6 = var1.getY();
       int var7 = var1.getZ();
@@ -493,7 +494,7 @@ public class Class6762 extends Class6764 {
       return var2;
    }
 
-   public static Class2163 method20635(Class1665 var0, BlockPos var1) {
+   public static Class2163 method20635(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
       Block var5 = var4.getBlock();
       Class8649 var6 = var4.method23384();

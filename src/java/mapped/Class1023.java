@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
 
 import javax.annotation.Nullable;
@@ -51,10 +52,10 @@ public interface Class1023 extends Class1022 {
          var7 = var6.method11335(var1.method3284(1.0F));
       }
 
-      Class8661 var8 = new Class8661(new Vector3f(var7), 90.0F, true);
+      Quaternion var8 = new Quaternion(new Vector3f(var7), 90.0F, true);
       Vector3f var9 = new Vector3f(var6);
       var9.method25283(var8);
-      Class8661 var10 = new Class8661(var9, var3, true);
+      Quaternion var10 = new Quaternion(var9, var3, true);
       Vector3f var11 = new Vector3f(var6);
       var11.method25283(var10);
       return var11;

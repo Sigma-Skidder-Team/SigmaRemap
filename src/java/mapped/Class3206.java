@@ -7,6 +7,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3206 extends Class3198 implements Class3207 {
@@ -36,7 +37,7 @@ public class Class3206 extends Class3198 implements Class3207 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (!var1.<Boolean>method23463(field18594)) {
          return var1.method23463(field18595) == Class99.field270 ? field18603 : field18602;
       } else {
@@ -55,7 +56,7 @@ public class Class3206 extends Class3198 implements Class3207 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       switch (Class8826.field39791[var4.ordinal()]) {
          case 1:
             return var1.<Boolean>method23463(field18594);

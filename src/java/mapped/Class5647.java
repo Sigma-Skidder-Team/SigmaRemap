@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -51,7 +53,7 @@ public class Class5647 extends ChunkGenerator {
 
    @Override
    public void method17821(Class1691 var1, Class7480 var2) {
-      Mutable var5 = new Mutable();
+      BlockPos.Mutable var5 = new BlockPos.Mutable();
       int var6 = var1.method7241();
       int var7 = var1.method7242();
 
@@ -78,7 +80,7 @@ public class Class5647 extends ChunkGenerator {
    }
 
    @Override
-   public Class1665 method17798(int var1, int var2) {
+   public IBlockReader method17798(int var1, int var2) {
       return new Class1669(new BlockState[0]);
    }
 

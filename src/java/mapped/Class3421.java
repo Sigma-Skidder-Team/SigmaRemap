@@ -8,6 +8,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -87,7 +88,7 @@ public class Class3421 extends Block implements Class3207 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return (var1.method23463(field19132) != Class99.field270 ? field19146 : field19145)[field19147[this.method12071(var1)]];
    }
 
@@ -188,7 +189,7 @@ public class Class3421 extends Block implements Class3207 {
          : var1.method23465(field19133, method12072(var1, var4, var5));
    }
 
-   public static Class106 method12072(BlockState var0, Class1665 var1, BlockPos var2) {
+   public static Class106 method12072(BlockState var0, IBlockReader var1, BlockPos var2) {
       Direction var5 = var0.<Direction>method23463(field19131);
       BlockState var6 = var1.getBlockState(var2.method8349(var5));
       if (method12074(var6) && var0.<Class99>method23463(field19132) == var6.<Class99>method23463(field19132)) {
@@ -217,7 +218,7 @@ public class Class3421 extends Block implements Class3207 {
       return Class106.field329;
    }
 
-   private static boolean method12073(BlockState var0, Class1665 var1, BlockPos var2, Direction var3) {
+   private static boolean method12073(BlockState var0, IBlockReader var1, BlockPos var2, Direction var3) {
       BlockState var6 = var1.getBlockState(var2.method8349(var3));
       return !method12074(var6)
          || var6.<Direction>method23463(field19131) != var0.<Direction>method23463(field19131)
@@ -285,7 +286,7 @@ public class Class3421 extends Block implements Class3207 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

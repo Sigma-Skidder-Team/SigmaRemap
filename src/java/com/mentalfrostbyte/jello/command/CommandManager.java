@@ -73,8 +73,8 @@ public class CommandManager {
     }
 
     public void method30234(String var1) {
-        ColorUtils.method17678(this.getPrefix() + " Invalid command \"" + "." + var1 + "\"");
-        ColorUtils.method17678(this.getPrefix() + " Use \"" + "." + "help\" for a list of commands.");
+        ColorUtils.addChatMessage(this.getPrefix() + " Invalid command \"" + "." + var1 + "\"");
+        ColorUtils.addChatMessage(this.getPrefix() + " Use \"" + "." + "help\" for a list of commands.");
     }
 
     public String getPrefix() {
@@ -132,19 +132,19 @@ public class CommandManager {
                         var8.add(new Class8623(var6[var9]));
                     }
 
-                    ColorUtils.method17678(" ");
+                    ColorUtils.addChatMessage(" ");
 
                     try {
-                        var7.run(var5, (Class8623[]) var8.<Class8623>toArray(new Class8623[0]), var1x -> ColorUtils.method17678(this.getPrefix() + " " + var1x));
+                        var7.run(var5, (Class8623[]) var8.<Class8623>toArray(new Class8623[0]), var1x -> ColorUtils.addChatMessage(this.getPrefix() + " " + var1x));
                     } catch (CommandException var10) {
                         if (var10.field16621.length() > 0) {
-                            ColorUtils.method17678(this.getPrefix() + " Error: " + var10.field16621);
+                            ColorUtils.addChatMessage(this.getPrefix() + " Error: " + var10.field16621);
                         }
 
-                        ColorUtils.method17678(this.getPrefix() + " Usage: " + "." + var7.getName() + " " + var7.method18326());
+                        ColorUtils.addChatMessage(this.getPrefix() + " Usage: " + "." + var7.getName() + " " + var7.method18326());
                     }
 
-                    ColorUtils.method17678(" ");
+                    ColorUtils.addChatMessage(" ");
                 }
             }
 

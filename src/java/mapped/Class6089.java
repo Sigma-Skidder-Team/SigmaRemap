@@ -36,7 +36,7 @@ public class Class6089 extends Class6069 {
       if (var0.method3226()) {
          BlockState var6 = Blocks.field36889.method11579();
          float var7 = (float)Math.min(16, 2 + var3);
-         Mutable var8 = new Mutable();
+         BlockPos.Mutable var8 = new BlockPos.Mutable();
 
          for (BlockPos var10 : BlockPos.method8359(var2.method8335((double)(-var7), -1.0, (double)(-var7)), var2.method8335((double)var7, -1.0, (double)var7))) {
             if (var10.method8317(var0.getPositionVec(), (double)var7)) {

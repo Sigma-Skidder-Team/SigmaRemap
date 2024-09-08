@@ -10,6 +10,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -53,7 +54,7 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       Direction var7 = var1.<Direction>method23463(field18484);
       boolean var8 = var1.<Boolean>method23463(field18510);
       switch (Class6392.field27980[var1.<Class103>method23463(field18500).ordinal()]) {
@@ -120,12 +121,12 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return !var1.<Boolean>method23463(field18510) ? 0 : 15;
    }
 
    @Override
-   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return var1.<Boolean>method23463(field18510) && method11509(var1) == var4 ? 15 : 0;
    }
 

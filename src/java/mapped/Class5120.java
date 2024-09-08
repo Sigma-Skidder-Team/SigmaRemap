@@ -25,7 +25,7 @@ public class Class5120 implements Class5119 {
       ActiveRenderInfo var11 = this.field23291.gameRenderer.getActiveRenderInfo();
       ClientWorld var12 = this.field23291.world;
       DimensionType var13 = var12.method6812();
-      BlockPos var14 = new BlockPos(var11.method37504().x, 0.0, var11.method37504().z);
+      BlockPos var14 = new BlockPos(var11.getPos().x, 0.0, var11.getPos().z);
       Class5422 var15 = var2.method25597(RenderType.method14345());
       if (this.field23292.containsKey(var13)) {
          for (Class9764 var17 : this.field23292.get(var13).values()) {

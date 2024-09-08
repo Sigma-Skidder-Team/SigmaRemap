@@ -23,7 +23,7 @@ public class Class5121 implements Class5119 {
       double var11 = (double) Util.nanoTime();
       if (var11 - this.field23297 > 1.0E8) {
          this.field23297 = var11;
-         Entity var13 = this.field23296.gameRenderer.getActiveRenderInfo().method37509();
+         Entity var13 = this.field23296.gameRenderer.getActiveRenderInfo().getRenderViewEntity();
          this.field23298 = var13.world.method7047(var13, var13.getBoundingBox().method19664(6.0), var0 -> true).collect(Collectors.<VoxelShape>toList());
       }
 

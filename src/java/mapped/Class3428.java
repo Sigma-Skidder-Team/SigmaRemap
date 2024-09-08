@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -35,7 +36,7 @@ public class Class3428 extends Block implements Class3207 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (var4.method14951(var1.getBlock().method11581())) {
          return VoxelShapes.method27426();
       } else {
@@ -44,7 +45,7 @@ public class Class3428 extends Block implements Class3207 {
    }
 
    @Override
-   public VoxelShape method11938(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11938(BlockState var1, IBlockReader var2, BlockPos var3) {
       return VoxelShapes.method27426();
    }
 
@@ -113,7 +114,7 @@ public class Class3428 extends Block implements Class3207 {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (var4.method14950(VoxelShapes.method27426(), var3, true) && !var4.method14949()) {
          return field19180;
       } else {
@@ -128,12 +129,12 @@ public class Class3428 extends Block implements Class3207 {
       return !var1.<Boolean>method23463(field19185) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
-   private boolean method12084(Class1665 var1, BlockPos var2, int var3) {
+   private boolean method12084(IBlockReader var1, BlockPos var2, int var3) {
       return var3 > 0 && !var1.getBlockState(var2.down()).method23448(this);
    }
 
-   public static int method12085(Class1665 var0, BlockPos var1) {
-      Mutable var4 = var1.method8354().method8379(Direction.DOWN);
+   public static int method12085(IBlockReader var0, BlockPos var1) {
+      BlockPos.Mutable var4 = var1.method8354().method8379(Direction.DOWN);
       BlockState var5 = var0.getBlockState(var4);
       int var6 = 7;
       if (!var5.method23448(Blocks.field37053)) {

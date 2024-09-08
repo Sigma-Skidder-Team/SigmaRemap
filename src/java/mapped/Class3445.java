@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -37,12 +38,12 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       return new ItemStack(this.method12124());
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
+   public boolean method11486(IBlockReader var1, BlockPos var2, BlockState var3, boolean var4) {
       Optional var7 = this.method12126(var1, var2, var3);
       return var7.isPresent() && this.method12124().method12127(var1.getBlockState(((BlockPos)var7.get()).method8349(this.field19256)));
    }
@@ -61,7 +62,7 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
       }
    }
 
-   private Optional<BlockPos> method12126(Class1665 var1, BlockPos var2, BlockState var3) {
+   private Optional<BlockPos> method12126(IBlockReader var1, BlockPos var2, BlockState var3) {
       BlockPos var6 = var2;
 
       Block var7;

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public class Class7880 {
    private static String[] field33822;
@@ -20,14 +21,14 @@ public class Class7880 {
    }
 
    public static boolean method26421(Class1663 var0, BlockState var1, BlockPos var2) {
-      if (var0 instanceof Class1665) {
+      if (var0 instanceof IBlockReader) {
          return method26423(var0, var1, var2) ? method26422(var0, var2) : false;
       } else {
          return false;
       }
    }
 
-   private static boolean method26422(Class1665 var0, BlockPos var1) {
+   private static boolean method26422(IBlockReader var0, BlockPos var1) {
       Block var4 = Blocks.SNOW;
       if (var0.getBlockState(var1.north()).getBlock() == var4
          || var0.getBlockState(var1.south()).getBlock() == var4
@@ -51,7 +52,7 @@ public class Class7880 {
       return false;
    }
 
-   private static boolean method26423(Class1665 var0, BlockState var1, BlockPos var2) {
+   private static boolean method26423(IBlockReader var0, BlockState var1, BlockPos var2) {
       if (!var1.method23409(var0, var2)) {
          Block var5 = var1.getBlock();
          if (var5 == Blocks.SNOW_BLOCK) {

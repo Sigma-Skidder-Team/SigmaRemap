@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.inventory.container.ClickType;
@@ -41,9 +42,9 @@ public class Auto32k extends Module {
     public void onEnable() {
         this.field23870 = null;
 
-        for (BlockPos var4 : Class9217.method34545(Class9217.method34561(mc.playerController.getBlockReachDistance()))) {
-            if (!(Class9217.method34550(mc.player, var4) < 2.0F)
-                    && Class9217.method34535(mc.player, var4)
+        for (BlockPos var4 : BlockUtil.method34545(BlockUtil.method34561(mc.playerController.getBlockReachDistance()))) {
+            if (!(BlockUtil.method34550(mc.player, var4) < 2.0F)
+                    && BlockUtil.method34535(mc.player, var4)
                     && (double) var4.getY() >= mc.player.getPosY() - 2.0
                     && (double) var4.getY() <= mc.player.getPosY() - 1.0
                     && this.method16717(var4)) {
@@ -132,11 +133,11 @@ public class Auto32k extends Module {
             if (this.field23870 != null) {
                 GL11.glAlphaFunc(516, 0.0F);
                 BlockPos var4 = this.field23870;
-                double var5 = (double) var4.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
-                double var7 = (double) var4.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-                double var9 = (double) var4.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
+                double var5 = (double) var4.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+                double var7 = (double) var4.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
+                double var9 = (double) var4.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
                 RenderUtil.render3DColoredBox(
-                        new Class9388(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.3F)
+                        new Box3D(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.3F)
                 );
                 GL11.glColor3f(1.0F, 1.0F, 1.0F);
                 GL11.glBlendFunc(770, 771);
@@ -221,13 +222,13 @@ public class Auto32k extends Module {
                     if (this.field23870 != null) {
                         if (this.field23873 != 0) {
                             if (this.field23873 == 1) {
-                                float var4 = Class9217.method34543(this.field23870.up(), Direction.field673)[0];
-                                float var5 = Class9217.method34543(this.field23870.up(), Direction.field673)[1];
+                                float var4 = BlockUtil.method34543(this.field23870.up(), Direction.field673)[0];
+                                float var5 = BlockUtil.method34543(this.field23870.up(), Direction.field673)[1];
                                 var1.method13918(var4);
                                 var1.method13916(var5);
                                 int var6 = mc.player.inventory.currentItem;
                                 mc.player.inventory.currentItem = this.field23871;
-                                Vector3d var7 = Class9217.method34572(Direction.field673, this.field23870);
+                                Vector3d var7 = BlockUtil.method34572(Direction.field673, this.field23870);
                                 BlockRayTraceResult var8 = new BlockRayTraceResult(var7, Direction.field673, this.field23870, false);
                                 ActionResultType var9 = mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var8);
                                 mc.player.swingArm(Hand.MAIN_HAND);
@@ -236,7 +237,7 @@ public class Auto32k extends Module {
                                     mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.PRESS_SHIFT_KEY));
                                     mc.player.field6131.field43914 = true;
                                     mc.player.inventory.currentItem = this.field23872;
-                                    Vector3d var10 = Class9217.method34572(Direction.field673, this.field23870.up());
+                                    Vector3d var10 = BlockUtil.method34572(Direction.field673, this.field23870.up());
                                     BlockRayTraceResult var11 = new BlockRayTraceResult(var10, Direction.field673, this.field23870.up(), false);
                                     mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var11);
                                     mc.player.swingArm(Hand.MAIN_HAND);
@@ -246,8 +247,8 @@ public class Auto32k extends Module {
                                 }
                             }
                         } else {
-                            float var12 = Class9217.method34543(this.field23870, Direction.field673)[0];
-                            float var13 = Class9217.method34543(this.field23870, Direction.field673)[1];
+                            float var12 = BlockUtil.method34543(this.field23870, Direction.field673)[0];
+                            float var13 = BlockUtil.method34543(this.field23870, Direction.field673)[1];
                             var1.method13918(var12);
                             var1.method13916(var13);
                             this.field23873++;
@@ -314,8 +315,8 @@ public class Auto32k extends Module {
             }
 
             if (var1.method13932() instanceof CUseEntityPacket) {
-                float var4 = Class9217.method34543(this.field23870.up(), Direction.field673)[0];
-                float var5 = Class9217.method34543(this.field23870.up(), Direction.field673)[1];
+                float var4 = BlockUtil.method34543(this.field23870.up(), Direction.field673)[0];
+                float var5 = BlockUtil.method34543(this.field23870.up(), Direction.field673)[1];
             }
 
             if (var1.method13932() instanceof CPlayerPacket) {

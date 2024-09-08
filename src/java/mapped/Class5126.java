@@ -36,7 +36,7 @@ public class Class5126 implements Class5119 {
          RenderSystem.disableTexture();
          RenderSystem.depthMask(false);
          Map var26 = (Map)Class8497.method30086(this.field23313).getNow((Map)null);
-         double var14 = this.field23310.gameRenderer.getActiveRenderInfo().method37504().y * 0.85;
+         double var14 = this.field23310.gameRenderer.getActiveRenderInfo().getPos().y * 0.85;
 
          for (Entry var17 : Class8497.method30087(this.field23313).entrySet()) {
             Class7481 var18 = (Class7481)var17.getKey();

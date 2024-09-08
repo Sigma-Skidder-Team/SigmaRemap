@@ -52,7 +52,7 @@ public class Class2927 extends Class2898<Class4709> {
    }
 
    private void method11258(Class1660 var1, Random var2, Class4709 var3, BlockPos var4, int var5, boolean var6) {
-      Mutable var9 = new Mutable();
+      BlockPos.Mutable var9 = new BlockPos.Mutable();
       BlockState var10 = var3.field22338;
       int var11 = !var6 ? 0 : 1;
 
@@ -83,7 +83,7 @@ public class Class2927 extends Class2898<Class4709> {
    }
 
    private void method11259(Class1660 var1, Random var2, Class4709 var3, BlockPos var4, int var5, boolean var6) {
-      Mutable var9 = new Mutable();
+      BlockPos.Mutable var9 = new BlockPos.Mutable();
       boolean var10 = var3.field22339.method23448(Blocks.field36891);
       int var11 = Math.min(var2.nextInt(1 + var5 / 3) + 5, var5);
       int var12 = var5 - var11;
@@ -130,7 +130,7 @@ public class Class2927 extends Class2898<Class4709> {
       }
    }
 
-   private void method11260(Class1660 var1, Random var2, Class4709 var3, Mutable var4, float var5, float var6, float var7) {
+   private void method11260(Class1660 var1, Random var2, Class4709 var3, BlockPos.Mutable var4, float var5, float var6, float var7) {
       if (!(var2.nextFloat() < var5)) {
          if (var2.nextFloat() < var6) {
             this.method11217(var1, var4, var3.field22339);
@@ -157,7 +157,7 @@ public class Class2927 extends Class2898<Class4709> {
    }
 
    private static void method11262(BlockPos var0, Class1660 var1, Random var2) {
-      Mutable var5 = var0.method8354().method8379(Direction.DOWN);
+      BlockPos.Mutable var5 = var0.method8354().method8379(Direction.DOWN);
       if (var1.method7007(var5)) {
          int var6 = MathHelper.method37782(var2, 1, 5);
          if (var2.nextInt(7) == 0) {

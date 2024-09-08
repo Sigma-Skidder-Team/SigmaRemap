@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.Arrays;
@@ -73,7 +74,7 @@ public class Class3436 extends Class3433 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return (!var1.<Boolean>method23463(field19212) ? field19232 : field19231)[var1.<Direction>method23463(field19198).ordinal()];
    }
 
@@ -130,7 +131,7 @@ public class Class3436 extends Class3433 {
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       return new ItemStack(var3.method23463(field19211) != Class180.field639 ? Blocks.PISTON : Blocks.STICKY_PISTON);
    }
 
@@ -150,7 +151,7 @@ public class Class3436 extends Class3433 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

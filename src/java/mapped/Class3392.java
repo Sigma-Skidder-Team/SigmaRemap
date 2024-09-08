@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.Map;
 
@@ -70,12 +71,12 @@ public class Class3392 extends Block {
    }
 
    @Override
-   public boolean method11493(BlockState var1, Class1665 var2, BlockPos var3) {
+   public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
       return false;
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field19026[this.method12002(var1)];
    }
 

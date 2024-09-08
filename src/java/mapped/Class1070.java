@@ -48,7 +48,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    public static boolean method4976(EntityType<Class1070> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      Mutable var7 = var3.method8354();
+      BlockPos.Mutable var7 = var3.method8354();
 
       do {
          var7.method8379(Direction.field673);
@@ -171,9 +171,9 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
          method3419((double)this.method3429(), (double)var1.method3429(), var1.rotationYaw + 45.0F)
       };
       LinkedHashSet<BlockPos> var5 = Sets.newLinkedHashSet();
-      double var6 = this.getBoundingBox().field28453;
-      double var8 = this.getBoundingBox().field28450 - 0.5;
-      Mutable var10 = new Mutable();
+      double var6 = this.getBoundingBox().maxY;
+      double var8 = this.getBoundingBox().minY - 0.5;
+      BlockPos.Mutable var10 = new BlockPos.Mutable();
 
       for (Vector3d var14 : var4) {
          var10.method8373(this.getPosX() + var14.x, var6, this.getPosZ() + var14.z);
@@ -203,7 +203,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
          }
       }
 
-      return new Vector3d(this.getPosX(), this.getBoundingBox().field28453, this.getPosZ());
+      return new Vector3d(this.getPosX(), this.getBoundingBox().maxY, this.getPosZ());
    }
 
    @Override
@@ -288,7 +288,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
             && !this.world.getFluidState(this.getPosition().up()).method23486(Class8953.field40470)) {
             this.onGround = true;
          } else {
-            this.method3434(this.method3433().method11344(0.5).method11339(0.0, 0.05, 0.0));
+            this.method3434(this.getVec().method11344(0.5).method11339(0.0, 0.05, 0.0));
          }
       }
    }

@@ -6,6 +6,7 @@ import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3i;
 
 import javax.annotation.Nullable;
@@ -95,13 +96,13 @@ public enum Direction implements IStringSerializable {
       return method554(var5.method25701(), var5.method25702(), var5.method25703());
    }
 
-   public Class8661 method532() {
-      Class8661 var3 = Vector3f.field32898.rotationDegrees(90.0F);
+   public Quaternion method532() {
+      Quaternion var3 = Vector3f.field32898.rotationDegrees(90.0F);
       switch (Class7747.field33265[this.ordinal()]) {
          case 1:
             return Vector3f.field32898.rotationDegrees(180.0F);
          case 2:
-            return Class8661.field39030.method31189();
+            return Quaternion.field39030.method31189();
          case 3:
             var3.method31182(Vector3f.field32902.rotationDegrees(180.0F));
             return var3;

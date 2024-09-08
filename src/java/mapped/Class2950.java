@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
@@ -216,7 +217,7 @@ public class Class2950 extends Class2898<Class4705> {
       return var1 == Blocks.PACKED_ICE || var1 == Blocks.SNOW_BLOCK || var1 == Blocks.field37006;
    }
 
-   private boolean method11304(Class1665 var1, BlockPos var2) {
+   private boolean method11304(IBlockReader var1, BlockPos var2) {
       return var1.getBlockState(var2.down()).method23384() == Class8649.field38932;
    }
 

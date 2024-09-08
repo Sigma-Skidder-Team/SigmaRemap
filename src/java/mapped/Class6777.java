@@ -7,6 +7,7 @@ import com.google.common.collect.ImmutableMap.Builder;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Comparator;
 import java.util.Random;
@@ -54,7 +55,7 @@ public abstract class Class6777 extends Class6768<Class8278> {
          .max(Comparator.comparing(var3x -> ((Class7689)var3x.getValue()).method25310((double)var4, (double)var11, (double)var5)))
          .get()
          .getKey();
-      Mutable var27 = new Mutable();
+      BlockPos.Mutable var27 = new BlockPos.Mutable();
       BlockState var28 = var2.getBlockState(var27.method8372(var18, 128, var19));
 
       for (int var29 = 127; var29 >= 0; var29--) {

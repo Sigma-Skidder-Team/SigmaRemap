@@ -33,7 +33,7 @@ public class CubecraftSpeed extends Module {
     public void onDisable() {
         mc.timer.timerSpeed = 1.0F;
         Class9567.method37090(0.2);
-        if (mc.player.method3433().y > 0.0) {
+        if (mc.player.getVec().y > 0.0) {
             ColorUtils.method17725(-0.078);
         }
     }
@@ -52,7 +52,7 @@ public class CubecraftSpeed extends Module {
                     if (ColorUtils.method17730(mc.player, 0.01F)) {
                         if (this.getBooleanValueFromSetttingName("AutoJump")) {
                             mc.player.method2914();
-                            var1.method13995(mc.player.method3433().y);
+                            var1.method13995(mc.player.getVec().y);
                             Class9567.method37088(var1, this.field23619);
                         }
 
@@ -98,7 +98,7 @@ public class CubecraftSpeed extends Module {
                         Class9567.method37088(var1, this.field23619);
                     } else if (this.getBooleanValueFromSetttingName("AutoJump")) {
                         mc.player.method2914();
-                        var1.method13995(mc.player.method3433().y);
+                        var1.method13995(mc.player.getVec().y);
                         Class9567.method37088(var1, this.field23619);
                     }
                     break;

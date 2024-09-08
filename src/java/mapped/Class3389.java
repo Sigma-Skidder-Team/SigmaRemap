@@ -14,6 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3i;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.Optional;
@@ -201,7 +202,7 @@ public class Class3389 extends Block {
    }
 
    private static Optional<Vector3d> method11992(EntityType<?> var0, Class1668 var1, BlockPos var2, boolean var3) {
-      Mutable var6 = new Mutable();
+      BlockPos.Mutable var6 = new BlockPos.Mutable();
       UnmodifiableIterator var7 = field19002.iterator();
 
       while (var7.hasNext()) {
@@ -217,7 +218,7 @@ public class Class3389 extends Block {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

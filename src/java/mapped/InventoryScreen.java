@@ -5,6 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class InventoryScreen extends Class860<Class5830> implements Class854 {
@@ -96,8 +97,8 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
       MatrixStack var10 = new MatrixStack();
       var10.translate(0.0, 0.0, 1000.0);
       var10.method35292((float)var2, (float)var2, (float)var2);
-      Class8661 var11 = Vector3f.field32902.rotationDegrees(180.0F);
-      Class8661 var12 = Vector3f.field32898.rotationDegrees(var9 * 20.0F);
+      Quaternion var11 = Vector3f.field32902.rotationDegrees(180.0F);
+      Quaternion var12 = Vector3f.field32898.rotationDegrees(var9 * 20.0F);
       var11.method31182(var12);
       var10.rotate(var11);
       float var13 = var5.field4965;

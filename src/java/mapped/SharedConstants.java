@@ -39,7 +39,7 @@ public class SharedConstants {
       return field42547;
    }
 
-   public static int method34774() {
+   public static int getProtocolVersion() {
       return 754;
    }
 

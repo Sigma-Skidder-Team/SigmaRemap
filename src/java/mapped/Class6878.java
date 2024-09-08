@@ -11,7 +11,7 @@ public class Class6878 {
 
    @Nullable
    public static BlockPos method20940(ServerWorld var0, int var1, int var2, boolean var3) {
-      Mutable var6 = new Mutable(var1, 0, var2);
+      BlockPos.Mutable var6 = new BlockPos.Mutable(var1, 0, var2);
       Biome var7 = var0.getBiome(var6);
       boolean var8 = var0.method6812().getHasCeiling();
       BlockState var9 = var7.method32507().method24283().method28934();

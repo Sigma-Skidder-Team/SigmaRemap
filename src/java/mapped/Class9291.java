@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
@@ -7,24 +8,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class9291 {
-   private static String[] field42732;
 
-   public static boolean method35028(List<Class9238> var0) {
+    public static boolean method35028(List<PositionFacing> var0) {
       if (var0.size() <= 0) {
          return false;
       } else {
-         BlockPos var3 = ((Class9238)var0.get(0)).field42516;
-         Class9238[] var4 = new Class9238[]{
-            new Class9238(var3.north(), Direction.SOUTH),
-            new Class9238(var3.east(), Direction.WEST),
-            new Class9238(var3.south(), Direction.NORTH),
-            new Class9238(var3.west(), Direction.EAST),
-            new Class9238(var3.down(), Direction.field673),
-            new Class9238(var3.up(), Direction.DOWN)
+         BlockPos blockPos = ((PositionFacing)var0.get(0)).blockPos;
+         PositionFacing[] var4 = new PositionFacing[]{
+            new PositionFacing(blockPos.north(), Direction.SOUTH),
+            new PositionFacing(blockPos.east(), Direction.WEST),
+            new PositionFacing(blockPos.south(), Direction.NORTH),
+            new PositionFacing(blockPos.west(), Direction.EAST),
+            new PositionFacing(blockPos.down(), Direction.field673),
+            new PositionFacing(blockPos.up(), Direction.DOWN)
          };
 
-         for (Class9238 var8 : var4) {
-            if (Class9217.method34536(var8.field42516) != Blocks.AIR) {
+         for (PositionFacing var8 : var4) {
+            if (BlockUtil.getBlockFromPosition(var8.blockPos) != Blocks.AIR) {
                return true;
             }
          }
@@ -33,7 +33,7 @@ public class Class9291 {
       }
    }
 
-   public static List<Class9238> method35029(List<Class9238> var0) {
+   public static List<PositionFacing> method35029(List<PositionFacing> var0) {
       ArrayList var3 = new ArrayList();
 
       for (int var4 = var0.size() - 1; var4 >= 0; var4--) {
@@ -43,34 +43,34 @@ public class Class9291 {
       return var3;
    }
 
-   public static List<Class9238> method35030(Block var0, BlockPos var1, int var2) {
+   public static List<PositionFacing> method35030(Block var0, BlockPos var1, int var2) {
       ArrayList var5 = new ArrayList();
       if (var1 != null && var2 >= 0) {
-         if (!Class9217.method34538(var0, var1)) {
+         if (!BlockUtil.method34538(var0, var1)) {
             return var5;
          } else {
-            Class9238[] var6 = new Class9238[]{
-               new Class9238(var1.up(), Direction.DOWN),
-               new Class9238(var1.north(), Direction.SOUTH),
-               new Class9238(var1.east(), Direction.WEST),
-               new Class9238(var1.south(), Direction.NORTH),
-               new Class9238(var1.west(), Direction.EAST),
-               new Class9238(var1.down(), Direction.field673)
+            PositionFacing[] var6 = new PositionFacing[]{
+               new PositionFacing(var1.up(), Direction.DOWN),
+               new PositionFacing(var1.north(), Direction.SOUTH),
+               new PositionFacing(var1.east(), Direction.WEST),
+               new PositionFacing(var1.south(), Direction.NORTH),
+               new PositionFacing(var1.west(), Direction.EAST),
+               new PositionFacing(var1.down(), Direction.field673)
             };
 
-            for (Class9238 var10 : var6) {
-               if (!Class9217.method34538(var0, var10.field42516)) {
+            for (PositionFacing var10 : var6) {
+               if (!BlockUtil.method34538(var0, var10.blockPos)) {
                   var5.add(var10);
                   return var5;
                }
             }
 
             for (int var13 = 1; var13 < var2; var13++) {
-               for (Class9238 var11 : var6) {
-                  List var12 = method35030(var0, var11.field42516, var13);
+               for (PositionFacing var11 : var6) {
+                  List var12 = method35030(var0, var11.blockPos, var13);
                   if (method35028(method35029(var12))) {
                      var5.addAll(var12);
-                     return (List<Class9238>)(var5.size() <= 1 ? var5 : method35029(var5));
+                     return (List<PositionFacing>)(var5.size() <= 1 ? var5 : method35029(var5));
                   }
                }
             }

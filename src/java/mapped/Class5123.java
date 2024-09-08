@@ -33,7 +33,7 @@ public class Class5123 implements Class5119 {
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
       RenderSystem.disableTexture();
-      BlockPos var12 = new BlockPos(var11.method37504().x, 0.0, var11.method37504().z);
+      BlockPos var12 = new BlockPos(var11.getPos().x, 0.0, var11.getPos().z);
       this.field23303.forEach((var1x, var2x) -> {
          for (int var5x = 0; var5x < var2x.size(); var5x++) {
             Class4231 var6 = var2x.get(var5x);

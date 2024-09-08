@@ -33,17 +33,17 @@ public class Class9647 {
    public static Class9425 method37623(Entity var0) {
       Class9425 var3 = method37622(var0);
       return new Class9425(
-         var3.field43722 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320(),
-         var3.field43723 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321(),
-         var3.field43724 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322()
+         var3.field43722 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX(),
+         var3.field43723 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY(),
+         var3.field43724 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ()
       );
    }
 
    public static Class9425 method37624(BlockPos var0) {
       return new Class9425(
-         (double)var0.getX() - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320(),
-         (double)var0.getY() - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321(),
-         (double)var0.getZ() - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322()
+         (double)var0.getX() - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX(),
+         (double)var0.getY() - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY(),
+         (double)var0.getZ() - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ()
       );
    }
 }

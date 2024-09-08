@@ -39,7 +39,7 @@ public class KeyboardListener {
       this.field43915
          .ingameGUI
          .getChatGUI()
-         .method5930(
+         .sendChatMessage(
             new StringTextComponent("")
                .append(new TranslationTextComponent("debug.prefix").mergeStyle(new TextFormatting[]{TextFormatting.YELLOW, TextFormatting.BOLD}))
                .appendString(" ")
@@ -51,7 +51,7 @@ public class KeyboardListener {
       this.field43915
          .ingameGUI
          .getChatGUI()
-         .method5930(
+         .sendChatMessage(
             new StringTextComponent("")
                .append(new TranslationTextComponent("debug.prefix").mergeStyle(new TextFormatting[]{TextFormatting.RED, TextFormatting.BOLD}))
                .appendString(" ")
@@ -161,20 +161,20 @@ public class KeyboardListener {
             case 81:
                this.method36339("debug.help.message");
                Class1266 var8 = this.field43915.ingameGUI.getChatGUI();
-               var8.method5930(new TranslationTextComponent("debug.reload_chunks.help"));
-               var8.method5930(new TranslationTextComponent("debug.show_hitboxes.help"));
-               var8.method5930(new TranslationTextComponent("debug.copy_location.help"));
-               var8.method5930(new TranslationTextComponent("debug.clear_chat.help"));
-               var8.method5930(new TranslationTextComponent("debug.cycle_renderdistance.help"));
-               var8.method5930(new TranslationTextComponent("debug.chunk_boundaries.help"));
-               var8.method5930(new TranslationTextComponent("debug.advanced_tooltips.help"));
-               var8.method5930(new TranslationTextComponent("debug.inspect.help"));
-               var8.method5930(new TranslationTextComponent("debug.creative_spectator.help"));
-               var8.method5930(new TranslationTextComponent("debug.pause_focus.help"));
-               var8.method5930(new TranslationTextComponent("debug.help.help"));
-               var8.method5930(new TranslationTextComponent("debug.reload_resourcepacks.help"));
-               var8.method5930(new TranslationTextComponent("debug.pause.help"));
-               var8.method5930(new TranslationTextComponent("debug.gamemodes.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.reload_chunks.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.show_hitboxes.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.copy_location.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.clear_chat.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.cycle_renderdistance.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.chunk_boundaries.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.advanced_tooltips.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.inspect.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.creative_spectator.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.pause_focus.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.help.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.reload_resourcepacks.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.pause.help"));
+               var8.sendChatMessage(new TranslationTextComponent("debug.gamemodes.help"));
                return true;
             case 82:
                if (Class7944.method26921()) {
@@ -341,7 +341,7 @@ public class KeyboardListener {
                      this.field43915.getMainWindow().getFramebufferWidth(),
                      this.field43915.getMainWindow().getFramebufferHeight(),
                      this.field43915.getFramebuffer(),
-                     var1x -> this.field43915.execute(() -> this.field43915.ingameGUI.getChatGUI().method5930(var1x))
+                     var1x -> this.field43915.execute(() -> this.field43915.ingameGUI.getChatGUI().sendChatMessage(var1x))
                   );
                   return;
                }

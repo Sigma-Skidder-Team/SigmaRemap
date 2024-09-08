@@ -34,7 +34,7 @@ public class Class6345 extends Class6333 {
          this.field27858 = (double)((float)this.field27877.getPosX());
          this.field27859 = (double)((float)this.field27877.getPosY());
          this.field27860 = (double)((float)this.field27877.getPosZ());
-         float var3 = MathHelper.method37766(Entity.method3234(this.field27877.method3433()));
+         float var3 = MathHelper.method37766(Entity.method3234(this.field27877.getVec()));
          if (!((double)var3 >= 0.01)) {
             this.field27878 = 0.0F;
             this.field27856 = 0.0F;

@@ -64,7 +64,7 @@ public class TileEntityRendererDispatcher {
    }
 
    public <E extends TileEntity> void method27962(E var1, float var2, MatrixStack var3, Class7733 var4) {
-      if (Vector3d.method11328(var1.getPos()).method11340(this.field34748.method37504(), var1.method3773())) {
+      if (Vector3d.method11328(var1.getPos()).method11340(this.field34748.getPos(), var1.method3773())) {
          Class5942 var7 = this.<TileEntity>method27960(var1);
          if (var7 != null && var1.method3770() && var1.method3786().method13796(var1.method3775().getBlock())) {
             method27965(var1, () -> method27963(var7, var1, var2, var3, var4));

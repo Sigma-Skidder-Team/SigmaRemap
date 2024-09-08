@@ -59,7 +59,7 @@ public class Class1089 extends Class1018 {
       }
 
       this.field5969 = (float)((double)this.field5969 * 0.9);
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       if (!this.onGround && var3.y < 0.0) {
          this.method3434(var3.method11347(1.0, 0.6, 1.0));
       }

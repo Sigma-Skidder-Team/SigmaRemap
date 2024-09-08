@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 
@@ -22,7 +23,7 @@ public class Class3224 extends Block implements Class3207 {
       }
    }
 
-   public static boolean method11633(BlockState var0, Class1665 var1, BlockPos var2) {
+   public static boolean method11633(BlockState var0, IBlockReader var1, BlockPos var2) {
       if (var0.<Boolean>method23463(field18663)) {
          return true;
       } else {
@@ -44,7 +45,7 @@ public class Class3224 extends Block implements Class3207 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18664;
    }
 

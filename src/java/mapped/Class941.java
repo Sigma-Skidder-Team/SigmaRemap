@@ -11,6 +11,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class941 extends Class939 implements Class942, Class935 {
@@ -196,7 +197,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
       return MathHelper.lerp(var1, this.field5314, this.field5313);
    }
 
-   public static int method3763(Class1665 var0, BlockPos var1) {
+   public static int method3763(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
       if (var4.getBlock().isTileEntityProvider()) {
          TileEntity var5 = var0.getTileEntity(var1);

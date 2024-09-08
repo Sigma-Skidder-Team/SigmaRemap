@@ -13,7 +13,7 @@ public class Class6487 extends AxisAlignedBB {
 
    public boolean method19655(Class7624 var1, int var2) {
       if (this.field28447 != var2) {
-         this.field28448 = var1.method24981(this.field28449, this.field28450, this.field28451, this.field28452, this.field28453, this.field28454);
+         this.field28448 = var1.method24981(this.minX, this.minY, this.minZ, this.maxX, this.maxY, this.maxZ);
          this.field28447 = var2;
       }
 

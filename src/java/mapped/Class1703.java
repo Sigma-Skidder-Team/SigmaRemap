@@ -8,6 +8,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -221,7 +222,7 @@ public class Class1703 extends Class1702 {
    }
 
    @Override
-   public Class1665 method7344(int var1, int var2) {
+   public IBlockReader method7344(int var1, int var2) {
       long var5 = Class7481.method24353(var1, var2);
       Class8641 var7 = this.method7354(var5);
       if (var7 != null) {
@@ -231,7 +232,7 @@ public class Class1703 extends Class1702 {
             ChunkStatus var9 = field9272.get(var8);
             Optional var10 = var7.method31038(var9).getNow(Class8641.field38893).left();
             if (var10.isPresent()) {
-               return (Class1665)var10.get();
+               return (IBlockReader)var10.get();
             }
 
             if (var9 == ChunkStatus.field42142.method34299()) {

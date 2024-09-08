@@ -269,7 +269,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             double var20 = var12 - this.field23241;
             double var22 = var14 - this.field23242;
             double var24 = var16 - this.field23243;
-            double var26 = var4.method3433().method11349();
+            double var26 = var4.getVec().method11349();
             double var28 = var20 * var20 + var22 * var22 + var24 * var24;
             if (var28 - var26 > 100.0 && !this.method15657()) {
                LOGGER.warn(
@@ -716,7 +716,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                   double var21 = var13 - this.field23234;
                   double var23 = var15 - this.field23235;
                   double var25 = var17 - this.field23236;
-                  double var27 = this.player.method3433().method11349();
+                  double var27 = this.player.getVec().method11349();
                   double var29 = var21 * var21 + var23 * var23 + var25 * var25;
                   if (!this.player.isSleeping()) {
                      this.field23254++;

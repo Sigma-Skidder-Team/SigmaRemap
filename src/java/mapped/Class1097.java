@@ -429,7 +429,7 @@ public class Class1097 extends Class1018 {
       this.field6026++;
       if (this.field6026 <= 32) {
          if (!this.world.isRemote) {
-            Vector3d var3 = this.method3433();
+            Vector3d var3 = this.getVec();
             if (this.field6026 != 1) {
                if ((float)this.field6026 != 7.0F && (float)this.field6026 != 15.0F && (float)this.field6026 != 23.0F) {
                   this.method3435(this.field6027.x, var3.y, this.field6027.z);
@@ -451,7 +451,7 @@ public class Class1097 extends Class1018 {
    }
 
    private void method5224() {
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       this.world
          .method6746(
             ParticleTypes.field34093,

@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -199,7 +200,7 @@ public class Class3261 extends Class3262 implements Class3260 {
 
          if (!(var1 instanceof Class1023)) {
             Vector3d var14 = var1.method3284(1.0F);
-            Class8661 var15 = new Class8661(new Vector3f(var14), var9, true);
+            Quaternion var15 = new Quaternion(new Vector3f(var14), var9, true);
             Vector3d var16 = var1.method3281(1.0F);
             Vector3f var17 = new Vector3f(var16);
             var17.method25283(var15);

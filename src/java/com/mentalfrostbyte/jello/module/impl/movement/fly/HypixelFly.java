@@ -204,7 +204,7 @@ public class HypixelFly extends Module {
                 }
             }
 
-            Vector3d var18 = mc.player.method3233(var1.method13998().method11339(0.0, -var1.method13998().method11321(), 0.0));
+            Vector3d var18 = mc.player.method3233(var1.method13998().method11339(0.0, -var1.method13998().getY(), 0.0));
             double var19 = Math.abs(Math.sqrt(var18.method11349()) - this.field23560);
             boolean var21 = var19 < 1.0E-4;
             if (this.getBooleanValueFromSetttingName("No Collision") && this.field23560 > var10) {

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
@@ -47,7 +48,7 @@ public abstract class Class7661 extends Class7665 {
       }
    }
 
-   public static boolean method25185(BlockState var0, Class1665 var1, BlockPos var2, int var3, int var4) {
+   public static boolean method25185(BlockState var0, IBlockReader var1, BlockPos var2, int var3, int var4) {
       Block var7 = var0.getBlock();
       return var7 == var1.getBlockState(var2.method8336(var3, 0, var4)).getBlock()
          && var7 == var1.getBlockState(var2.method8336(var3 + 1, 0, var4)).getBlock()

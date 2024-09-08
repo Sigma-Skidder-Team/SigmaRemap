@@ -150,8 +150,8 @@ public class VanillaFly extends Module {
 
                 while (var4.hasNext()) {
                     VoxelShape var7 = (VoxelShape) var4.next();
-                    if (var7.method19514().field28453 > var5) {
-                        var5 = var7.method19514().field28453;
+                    if (var7.method19514().maxY > var5) {
+                        var5 = var7.method19514().maxY;
                     }
                 }
 

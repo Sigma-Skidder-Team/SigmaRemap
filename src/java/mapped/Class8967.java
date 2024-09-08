@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.datafixers.util.Pair;
 import java.util.Random;
+
+import net.minecraft.util.math.vector.Quaternion;
 import org.apache.commons.lang3.tuple.Triple;
 
 public final class Class8967 {
@@ -22,7 +24,7 @@ public final class Class8967 {
    public Class8967() {
    }
 
-   public Class8967(Class8661 var1) {
+   public Class8967(Quaternion var1) {
       float var4 = var1.method31178();
       float var5 = var1.method31179();
       float var6 = var1.method31180();
@@ -105,14 +107,14 @@ public final class Class8967 {
       return Pair.of(var5, var6);
    }
 
-   private static Class8661 method32820(Class8967 var0) {
+   private static Quaternion method32820(Class8967 var0) {
       Class8967 var3 = new Class8967();
-      Class8661 var4 = Class8661.field39030.method31189();
+      Quaternion var4 = Quaternion.field39030.method31189();
       if (var0.field40500 * var0.field40500 + var0.field40502 * var0.field40502 > 1.0E-6F) {
          Pair var5 = method32818(var0.field40499, 0.5F * (var0.field40500 + var0.field40502), var0.field40503);
          Float var6 = (Float)var5.getFirst();
          Float var7 = (Float)var5.getSecond();
-         Class8661 var8 = new Class8661(0.0F, 0.0F, var6, var7);
+         Quaternion var8 = new Quaternion(0.0F, 0.0F, var6, var7);
          float var9 = var7 * var7 - var6 * var6;
          float var10 = -2.0F * var6 * var7;
          float var11 = var7 * var7 + var6 * var6;
@@ -133,7 +135,7 @@ public final class Class8967 {
          Pair var12 = method32818(var0.field40499, 0.5F * (var0.field40501 + var0.field40505), var0.field40507);
          float var14 = -(Float)var12.getFirst();
          Float var16 = (Float)var12.getSecond();
-         Class8661 var18 = new Class8661(0.0F, var14, 0.0F, var16);
+         Quaternion var18 = new Quaternion(0.0F, var14, 0.0F, var16);
          float var20 = var16 * var16 - var14 * var14;
          float var22 = -2.0F * var14 * var16;
          float var24 = var16 * var16 + var14 * var14;
@@ -154,7 +156,7 @@ public final class Class8967 {
          Pair var13 = method32818(var0.field40503, 0.5F * (var0.field40504 + var0.field40506), var0.field40507);
          Float var15 = (Float)var13.getFirst();
          Float var17 = (Float)var13.getSecond();
-         Class8661 var19 = new Class8661(var15, 0.0F, 0.0F, var17);
+         Quaternion var19 = new Quaternion(var15, 0.0F, 0.0F, var17);
          float var21 = var17 * var17 - var15 * var15;
          float var23 = -2.0F * var15 * var17;
          float var25 = var17 * var17 + var15 * var15;
@@ -186,9 +188,9 @@ public final class Class8967 {
       this.field40506 = var3;
    }
 
-   public Triple<Class8661, Vector3f, Class8661> method32822() {
-      Class8661 var3 = Class8661.field39030.method31189();
-      Class8661 var4 = Class8661.field39030.method31189();
+   public Triple<Quaternion, Vector3f, Quaternion> method32822() {
+      Quaternion var3 = Quaternion.field39030.method31189();
+      Quaternion var4 = Quaternion.field39030.method31189();
       Class8967 var5 = this.method32831();
       var5.method32821();
       var5.method32828(this);
@@ -207,7 +209,7 @@ public final class Class8967 {
       float var11 = var10 * var10 - var9 * var9;
       float var12 = -2.0F * var9 * var10;
       float var13 = var10 * var10 + var9 * var9;
-      Class8661 var14 = new Class8661(0.0F, 0.0F, var9, var10);
+      Quaternion var14 = new Quaternion(0.0F, 0.0F, var9, var10);
       var3.method31182(var14);
       Class8967 var15 = new Class8967();
       var15.method32824();
@@ -224,7 +226,7 @@ public final class Class8967 {
       float var18 = var17 * var17 - var16 * var16;
       float var19 = -2.0F * var16 * var17;
       float var20 = var17 * var17 + var16 * var16;
-      Class8661 var21 = new Class8661(0.0F, var16, 0.0F, var17);
+      Quaternion var21 = new Quaternion(0.0F, var16, 0.0F, var17);
       var3.method31182(var21);
       Class8967 var22 = new Class8967();
       var22.method32824();
@@ -241,7 +243,7 @@ public final class Class8967 {
       float var25 = var24 * var24 - var23 * var23;
       float var26 = -2.0F * var23 * var24;
       float var27 = var24 * var24 + var23 * var23;
-      Class8661 var28 = new Class8661(var23, 0.0F, 0.0F, var24);
+      Quaternion var28 = new Quaternion(var23, 0.0F, 0.0F, var24);
       var3.method31182(var28);
       Class8967 var29 = new Class8967();
       var29.method32824();
@@ -426,7 +428,7 @@ public final class Class8967 {
       this.field40507 = var12;
    }
 
-   public void method32829(Class8661 var1) {
+   public void method32829(Quaternion var1) {
       float var4 = var1.method31178();
       float var5 = var1.method31179();
       float var6 = var1.method31180();

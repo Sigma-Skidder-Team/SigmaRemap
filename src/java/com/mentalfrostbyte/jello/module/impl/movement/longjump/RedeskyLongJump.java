@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.util.math.BlockPos;
 
@@ -41,7 +42,7 @@ public class RedeskyLongJump extends Module {
                 }
             } else {
                 BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var6) && ColorUtils.method17686()
+                if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var6) && ColorUtils.method17686()
                         || this.method16004().getBooleanValueFromSetttingName("Auto Jump") && ColorUtils.method17686()
                         || var1.method13994() == Class9567.method37080()) {
                     this.field23981 = 1;

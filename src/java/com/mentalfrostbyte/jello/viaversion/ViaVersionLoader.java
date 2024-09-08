@@ -99,7 +99,7 @@ public class ViaVersionLoader {
          }
 
          if (Class8005.method27349() == Class5989.field26129.method18582()) {
-            if (this.mc.player.boundingBox.field28453 - this.mc.player.boundingBox.field28450 == 1.5) {
+            if (this.mc.player.boundingBox.maxY - this.mc.player.boundingBox.minY == 1.5) {
                this.mc.player.boundingBox = this.mc.player.boundingBox.method19662(0.0, 0.29999995F, 0.0);
             }
 
@@ -321,14 +321,14 @@ public class ViaVersionLoader {
             var1.method13995(Class9140.field42006);
             var1.method13997(Class9140.field42007);
          } else {
-            Class9140.field42006 = this.mc.player.method3433().y;
+            Class9140.field42006 = this.mc.player.getVec().y;
             if (this.field31498 && Class9140.method34129()) {
                Class9140.field42006 = 0.2F;
                ColorUtils.method17725(Class9140.field42006);
             }
 
-            Class9140.field42005 = this.mc.player.method3433().x;
-            Class9140.field42007 = this.mc.player.method3433().z;
+            Class9140.field42005 = this.mc.player.getVec().x;
+            Class9140.field42007 = this.mc.player.getVec().z;
             this.field31498 = false;
          }
       }

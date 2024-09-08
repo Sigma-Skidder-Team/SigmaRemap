@@ -11,6 +11,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -28,12 +29,12 @@ public class Class3484 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       return new ItemStack(Items.field38170);
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (var1.<Integer>method23463(field19342) != 0) {
          return var1.<Integer>method23463(field19342) >= 3 ? super.method11483(var1, var2, var3, var4) : field19344;
       } else {
@@ -91,7 +92,7 @@ public class Class3484 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
+   public boolean method11486(IBlockReader var1, BlockPos var2, BlockState var3, boolean var4) {
       return var3.<Integer>method23463(field19342) < 3;
    }
 

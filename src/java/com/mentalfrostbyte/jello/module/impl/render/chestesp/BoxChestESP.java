@@ -48,7 +48,7 @@ public class BoxChestESP extends Module {
                     var17 = var4;
                 }
 
-                Class9388 var18 = new Class9388(
+                Box3D var18 = new Box3D(
                         var7.method3775().method23412(mc.world, var7.getPos()).method19514().method19667(var11, var13, var15)
                 );
                 GL11.glAlphaFunc(519, 0.0F);

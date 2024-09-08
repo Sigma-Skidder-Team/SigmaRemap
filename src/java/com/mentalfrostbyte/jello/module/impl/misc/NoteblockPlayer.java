@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
@@ -57,9 +58,9 @@ public class NoteblockPlayer extends PremiumModule {
     }
 
     public static void method16410(BlockPos var0) {
-        double var3 = (double) ((float) var0.getX() + 0.5F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320();
-        double var5 = (double) ((float) var0.getY() + 1.0F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321();
-        double var7 = (double) ((float) var0.getZ() + 0.5F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322();
+        double var3 = (double) ((float) var0.getX() + 0.5F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX();
+        double var5 = (double) ((float) var0.getY() + 1.0F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY();
+        double var7 = (double) ((float) var0.getZ() + 0.5F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ();
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -92,7 +93,7 @@ public class NoteblockPlayer extends PremiumModule {
         if (this.isEnabled()) {
             if (this.field23639 != null) {
                 if (mc.playerController.isInCreativeMode()) {
-                    ColorUtils.method17678("§cNoteBlockPlayer isn't available in creative mode!");
+                    ColorUtils.addChatMessage("§cNoteBlockPlayer isn't available in creative mode!");
                     this.method15999(false);
                 } else {
                     if (!this.method16407(this.field23641) && mc.player.ticksExisted % 4 == 0) {
@@ -114,9 +115,9 @@ public class NoteblockPlayer extends PremiumModule {
                                         if ((var6.method28780() != 3 && this.method16414(var8) == 0 || var8.method19640() == var6.method28780())
                                                 && Class2121.method8807(var8.field28402) == (float) (var6.method28782() - 33)
                                                 && Math.sqrt(mc.player.getPosition().method8318(var8.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
-                                            float[] var9 = Class9217.method34542(var8.field28401, Direction.field673);
+                                            float[] var9 = BlockUtil.method34542(var8.field28401, Direction.field673);
                                             if ((double) var8.field28401.getY() > mc.player.getPosY() + 1.0) {
-                                                var9 = Class9217.method34542(var8.field28401, Direction.DOWN);
+                                                var9 = BlockUtil.method34542(var8.field28401, Direction.DOWN);
                                             }
 
                                             mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var9[0], var9[1], mc.player.onGround));
@@ -150,7 +151,7 @@ public class NoteblockPlayer extends PremiumModule {
     public boolean method16407(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
-                float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
+                float[] var6 = BlockUtil.method34542(var5.field28401, Direction.field673);
                 mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
                 mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var5.field28401, Direction.field673));
                 this.field23642.clear();
@@ -167,11 +168,11 @@ public class NoteblockPlayer extends PremiumModule {
             if (this.method16411(var5.field28402, var5.field28403)
                     && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
                 if (0 == 0) {
-                    float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
+                    float[] var6 = BlockUtil.method34542(var5.field28401, Direction.field673);
                     mc.player.swingArm(Hand.MAIN_HAND);
                     mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var6[0], var6[1], mc.player.onGround));
                     mc.getConnection()
-                            .sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, Class9217.method34567(var6[0], var6[1], mc.playerController.getBlockReachDistance() + 1.0F)));
+                            .sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, BlockUtil.method34567(var6[0], var6[1], mc.playerController.getBlockReachDistance() + 1.0F)));
                     this.field23642.clear();
                     this.field23642.add(var5.field28401);
                 }
@@ -249,13 +250,13 @@ public class NoteblockPlayer extends PremiumModule {
         GL11.glDepthMask(false);
         GL11.glPushMatrix();
         GL11.glTranslated(
-                var1 - mc.gameRenderer.getActiveRenderInfo().method37504().method11320() + 0.5,
-                var3 - mc.gameRenderer.getActiveRenderInfo().method37504().method11321() + 1.0,
-                var5 - mc.gameRenderer.getActiveRenderInfo().method37504().method11322() + 0.5
+                var1 - mc.gameRenderer.getActiveRenderInfo().getPos().getX() + 0.5,
+                var3 - mc.gameRenderer.getActiveRenderInfo().getPos().getY() + 1.0,
+                var5 - mc.gameRenderer.getActiveRenderInfo().getPos().getZ() + 0.5
         );
         GL11.glAlphaFunc(519, 0.0F);
-        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37507(), 0.0F, -1.0F, 0.0F);
-        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37506(), 1.0F, 0.0F, 0.0F);
+        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
+        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
         ClientResource var10 = ResourceRegistry.JelloLightFont25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.01F, -0.01F, -0.01F);
@@ -281,11 +282,11 @@ public class NoteblockPlayer extends PremiumModule {
     public void onEnable() {
         if (!mc.playerController.isInCreativeMode()) {
             if (this.field23640.isEmpty()) {
-                ColorUtils.method17678("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
-                ColorUtils.method17678("§cPlaying the only integrated demo song!");
+                ColorUtils.addChatMessage("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
+                ColorUtils.addChatMessage("§cPlaying the only integrated demo song!");
                 this.field23639 = Class8471.method29870(ResourcesDecrypter.readInputStream("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
                 if (this.field23639 == null) {
-                    ColorUtils.method17678("§cError loading included song, wtf!");
+                    ColorUtils.addChatMessage("§cError loading included song, wtf!");
                     this.method15999(false);
                     return;
                 }
@@ -293,22 +294,22 @@ public class NoteblockPlayer extends PremiumModule {
                 File var3 = new File(Client.getInstance().getFile() + "/nbs/" + this.getStringSettingValueByName("Song"));
                 this.field23639 = Class8471.method29869(var3);
                 if (this.field23639 == null) {
-                    ColorUtils.method17678("§cError loading song! Make sure song is saved as <= V3 format");
+                    ColorUtils.addChatMessage("§cError loading song! Make sure song is saved as <= V3 format");
                     this.method15999(false);
                     return;
                 }
             }
 
             System.out.println(this.field23639.method9953());
-            ColorUtils.method17678("Now Playing: " + this.field23639.method9953());
+            ColorUtils.addChatMessage("Now Playing: " + this.field23639.method9953());
             if (Math.floor(20.0F / this.field23639.method9958()) != (double) (20.0F / this.field23639.method9958())) {
-                ColorUtils.method17678("§cNBS Error! Invalid tempo! (" + this.field23639.method9958() + ") Unpredictable results!");
+                ColorUtils.addChatMessage("§cNBS Error! Invalid tempo! (" + this.field23639.method9958() + ") Unpredictable results!");
             }
 
             this.field23638 = 0;
             this.field23641.clear();
 
-            for (BlockPos var4 : Class9217.method34561(mc.playerController.getBlockReachDistance())) {
+            for (BlockPos var4 : BlockUtil.method34561(mc.playerController.getBlockReachDistance())) {
                 BlockState var5 = mc.world.getBlockState(var4);
                 if (var5.getBlock() instanceof Class3426) {
                     Class6463 var6 = new Class6463(var4);
@@ -321,7 +322,7 @@ public class NoteblockPlayer extends PremiumModule {
             this.method16407(this.field23641);
             this.method16408(this.field23641);
         } else {
-            ColorUtils.method17678("§cNoteBlockPlayer isn't available in creative mode!");
+            ColorUtils.addChatMessage("§cNoteBlockPlayer isn't available in creative mode!");
             this.method15999(false);
         }
     }

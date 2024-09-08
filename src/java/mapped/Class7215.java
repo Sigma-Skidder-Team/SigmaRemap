@@ -12,7 +12,7 @@ public class Class7215 {
    private static String[] field31023;
 
    public static Class9502 method22658(BlockPos var0, Class113 var1, int var2, Class113 var3, int var4, Predicate<BlockPos> var5) {
-      Mutable var8 = var0.method8354();
+      BlockPos.Mutable var8 = var0.method8354();
       Direction var9 = Direction.method555(Class1892.field11093, var1);
       Direction var10 = var9.method536();
       Direction var11 = Direction.method555(Class1892.field11093, var3);
@@ -69,7 +69,7 @@ public class Class7215 {
       return new Class9502(var0.method8351(var1, var29 - var15).method8351(var3, var31 - var17), var20, var21);
    }
 
-   private static int method22659(Predicate<BlockPos> var0, Mutable var1, Direction var2, int var3) {
+   private static int method22659(Predicate<BlockPos> var0, BlockPos.Mutable var1, Direction var2, int var3) {
       int var6 = 0;
 
       while (var6 < var3 && var0.test(var1.method8379(var2))) {

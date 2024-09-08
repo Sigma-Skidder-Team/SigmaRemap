@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.Random;
 
@@ -57,8 +58,8 @@ public class Class9169 {
       return var11;
    }
 
-   public int method34250(Class1665 var1, int var2) {
-      Mutable var5 = new Mutable(this.field42089, (double)(var2 + 1), this.field42090);
+   public int method34250(IBlockReader var1, int var2) {
+      BlockPos.Mutable var5 = new BlockPos.Mutable(this.field42089, (double)(var2 + 1), this.field42090);
       boolean var6 = var1.getBlockState(var5).isAir();
       var5.method8379(Direction.DOWN);
       boolean var7 = var1.getBlockState(var5).isAir();
@@ -77,7 +78,7 @@ public class Class9169 {
       return var2 + 1;
    }
 
-   public boolean method34251(Class1665 var1, int var2) {
+   public boolean method34251(IBlockReader var1, int var2) {
       BlockPos var5 = new BlockPos(this.field42089, (double)(this.method34250(var1, var2) - 1), this.field42090);
       BlockState var6 = var1.getBlockState(var5);
       Class8649 var7 = var6.method23384();

@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Map;
@@ -72,7 +73,7 @@ public class Class3402 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field19075.get(var1);
    }
 
@@ -97,7 +98,7 @@ public class Class3402 extends Block {
       return var4;
    }
 
-   private boolean method12033(Class1665 var1, BlockPos var2, Direction var3) {
+   private boolean method12033(IBlockReader var1, BlockPos var2, Direction var3) {
       if (var3 == Direction.DOWN) {
          return false;
       } else {
@@ -116,12 +117,12 @@ public class Class3402 extends Block {
       }
    }
 
-   public static boolean method12034(Class1665 var0, BlockPos var1, Direction var2) {
+   public static boolean method12034(IBlockReader var0, BlockPos var1, Direction var2) {
       BlockState var5 = var0.getBlockState(var1);
       return Block.method11549(var5.method23414(var0, var1), var2.method536());
    }
 
-   private BlockState method12035(BlockState var1, Class1665 var2, BlockPos var3) {
+   private BlockState method12035(BlockState var1, IBlockReader var2, BlockPos var3) {
       BlockPos var6 = var3.up();
       if (var1.<Boolean>method23463(field19064)) {
          var1 = var1.method23465(field19064, Boolean.valueOf(method12034(var2, var6, Direction.DOWN)));
@@ -257,7 +258,7 @@ public class Class3402 extends Block {
          || var1.<Boolean>method23463(field19068);
    }
 
-   private boolean method12038(Class1665 var1, BlockPos var2) {
+   private boolean method12038(IBlockReader var1, BlockPos var2) {
       Iterable<BlockPos> var6 = BlockPos.method8364(
          var2.getX() - 4, var2.getY() - 1, var2.getZ() - 4, var2.getX() + 4, var2.getY() + 1, var2.getZ() + 4
       );

@@ -5,6 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3379 extends Class3231 {
@@ -20,7 +21,7 @@ public class Class3379 extends Class3231 {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18980;
    }
 
@@ -51,7 +52,7 @@ public class Class3379 extends Class3231 {
       if (var2.method3226()) {
          return false;
       } else if (!(var2.getPosY() > (double)var1.getY() + 0.9375 - 1.0E-7)) {
-         if (var2.method3433().y >= -0.08) {
+         if (var2.getVec().y >= -0.08) {
             return false;
          } else {
             double var5 = Math.abs((double)var1.getX() + 0.5 - var2.getPosX());
@@ -71,7 +72,7 @@ public class Class3379 extends Class3231 {
    }
 
    private void method11974(Entity var1) {
-      Vector3d var4 = var1.method3433();
+      Vector3d var4 = var1.getVec();
       if (!(var4.y < -0.13)) {
          var1.method3434(new Vector3d(var4.x, -0.05, var4.z));
       } else {

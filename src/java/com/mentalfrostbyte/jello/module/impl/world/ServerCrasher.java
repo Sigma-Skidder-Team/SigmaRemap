@@ -109,7 +109,7 @@ public class ServerCrasher extends PremiumModule {
                                 .sendPacket(
                                         new CPlayerPacket.PositionPacket(
                                                 mc.player.getPosX(),
-                                                mc.player.getBoundingBox().field28450,
+                                                mc.player.getBoundingBox().minY,
                                                 mc.player.getPosZ() + 9999.0,
                                                 mc.player.onGround
                                         )

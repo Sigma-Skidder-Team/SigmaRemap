@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -18,7 +19,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import org.lwjgl.opengl.GL11;
 
 public class Class8795 {
-   private Minecraft field39612 = Minecraft.getInstance();
+   private Minecraft mc = Minecraft.getInstance();
    private List<Class9510> field39613 = new ArrayList<Class9510>();
    public float field39614 = -999.0F;
    public float field39615 = -999.0F;
@@ -73,14 +74,14 @@ public class Class8795 {
       if (this.method31743()) {
          if (this.field39616 == null) {
             double var4 = Math.sqrt(
-               this.field39612.player.method3433().x * this.field39612.player.method3433().x
-                  + this.field39612.player.method3433().z * this.field39612.player.method3433().z
+               this.mc.player.getVec().x * this.mc.player.getVec().x
+                  + this.mc.player.getVec().z * this.mc.player.getVec().z
             );
-            boolean var6 = ColorUtils.method17730(this.field39612.player, 0.02F);
+            boolean var6 = ColorUtils.method17730(this.mc.player, 0.02F);
             int var7 = this.field39613.size() - 1;
             Class9510 var8 = this.field39613.get(var7);
             Class2317 var9 = var8.field44279;
-            double var10 = var8.field44271.method33973(this.field39612.player.getPositionVec());
+            double var10 = var8.field44271.method33973(this.mc.player.getPositionVec());
             double var12 = 0.25;
             boolean var14 = false;
             if (this.field39618 != null) {
@@ -88,17 +89,17 @@ public class Class8795 {
                var14 |= var9 == Class2317.field15874 || var9 == Class2317.field15875;
             }
 
-            BlockPos var15 = this.field39612.player.getPosition();
-            if (this.field39612.player.positionVec.y % 1.0 >= 0.93) {
+            BlockPos var15 = this.mc.player.getPosition();
+            if (this.mc.player.positionVec.y % 1.0 >= 0.93) {
                var15 = var15.up();
             }
 
             boolean var16 = var8.field44271.method33979().equals(var15);
-            if (var14 && this.field39612.player.fallDistance < 2.0F) {
+            if (var14 && this.mc.player.fallDistance < 2.0F) {
                var16 |= var8.field44271.method33979().up().equals(var15);
             }
 
-            if (this.field39612.player.onGround || this.field39618 != null && this.field39618.field44279 == Class2317.field15874) {
+            if (this.mc.player.onGround || this.field39618 != null && this.field39618.field44279 == Class2317.field15874) {
                if (this.method31751() != null && this.method31751().field44282.size() > 0) {
                   var16 &= var10 < 0.1;
                }
@@ -112,7 +113,7 @@ public class Class8795 {
                }
             }
 
-            if (var9 == Class2317.field15876 && this.field39612.world.getBlockState(var8.field44271.method33979().down()).isAir()) {
+            if (var9 == Class2317.field15876 && this.mc.world.getBlockState(var8.field44271.method33979().down()).isAir()) {
                var16 = false;
             }
 
@@ -124,8 +125,8 @@ public class Class8795 {
                this.field39618 = this.field39613.get(var7);
                this.field39613.remove(var7);
                if (this.field39613.size() == 0) {
-                  ColorUtils.method17724(this.field39612.player.method3433().x * 0.5);
-                  ColorUtils.method17726(this.field39612.player.method3433().z * 0.5);
+                  ColorUtils.method17724(this.mc.player.getVec().x * 0.5);
+                  ColorUtils.method17726(this.mc.player.getVec().z * 0.5);
                   this.method31738();
                   return;
                }
@@ -133,80 +134,80 @@ public class Class8795 {
                var7 = this.field39613.size() - 1;
                var8 = this.field39613.get(var7);
                var9 = var8.field44279;
-               float var18 = Class9142.method34145(this.field39612.player.getPositionVec(), var8.field44271.method33972())[0];
-               float var19 = Class9142.method34145(new Vector3d(0.0, 0.0, 0.0), this.field39612.player.method3433().method11333())[0];
+               float var18 = Class9142.method34145(this.mc.player.getPositionVec(), var8.field44271.method33972())[0];
+               float var19 = Class9142.method34145(new Vector3d(0.0, 0.0, 0.0), this.mc.player.getVec().method11333())[0];
                float var20 = Math.abs(ColorUtils.method17756(var19, var18));
-               if (!this.field39612.player.onGround && var20 > 60.0F
-                  || !this.field39612.player.onGround && var20 > 45.0F && this.field39612.player.method3433().method11348() > 0.24
+               if (!this.mc.player.onGround && var20 > 60.0F
+                  || !this.mc.player.onGround && var20 > 45.0F && this.mc.player.getVec().method11348() > 0.24
                   || var20 > 110.0F) {
-                  ColorUtils.method17724(this.field39612.player.method3433().x * 0.25);
-                  ColorUtils.method17726(this.field39612.player.method3433().z * 0.25);
+                  ColorUtils.method17724(this.mc.player.getVec().x * 0.25);
+                  ColorUtils.method17726(this.mc.player.getVec().z * 0.25);
                }
             }
 
             if (var10 < var12
-               && (var14 || var8.field44281.size() > 0 && (double)this.field39612.player.position.field13028 > var8.field44271.method33970())) {
-               ColorUtils.method17724(this.field39612.player.method3433().x * 0.5);
-               ColorUtils.method17726(this.field39612.player.method3433().z * 0.5);
+               && (var14 || var8.field44281.size() > 0 && (double)this.mc.player.position.field13028 > var8.field44271.method33970())) {
+               ColorUtils.method17724(this.mc.player.getVec().x * 0.5);
+               ColorUtils.method17726(this.mc.player.getVec().z * 0.5);
             }
 
-            float var43 = Class9142.method34145(this.field39612.player.getPositionVec(), var8.field44271.method33972())[0];
+            float var43 = Class9142.method34145(this.mc.player.getPositionVec(), var8.field44271.method33972())[0];
             this.field39614 = var43;
-            double var21 = Math.cos(Math.toRadians((double)(this.field39612.player.rotationYaw - var43)));
-            double var23 = Math.sin(Math.toRadians((double)(this.field39612.player.rotationYaw - var43)));
+            double var21 = Math.cos(Math.toRadians((double)(this.mc.player.rotationYaw - var43)));
+            double var23 = Math.sin(Math.toRadians((double)(this.mc.player.rotationYaw - var43)));
             boolean var25 = Class8627.method30924(var8);
-            this.field39612.player.setSprinting(var8.field44281.isEmpty());
+            this.mc.player.setSprinting(var8.field44281.isEmpty());
             double var26 = Math.min(1.0 / Math.abs(var21), 1.0 / Math.abs(var23));
-            boolean var28 = !this.field39612.player.onGround && this.field39612.player.collidedHorizontally && var9 == Class2317.field15874;
+            boolean var28 = !this.mc.player.onGround && this.mc.player.collidedHorizontally && var9 == Class2317.field15874;
             if (!var28) {
-               this.field39612.player.field4984 = (float)(var21 * var26);
-               this.field39612.player.field4982 = (float)(var23 * var26);
+               this.mc.player.field4984 = (float)(var21 * var26);
+               this.mc.player.field4982 = (float)(var23 * var26);
             } else {
-               if (this.field39612.player.method3337()) {
-                  ColorUtils.method17724(this.field39612.player.method3433().x * 0.9);
-                  ColorUtils.method17726(this.field39612.player.method3433().z * 0.9);
+               if (this.mc.player.method3337()) {
+                  ColorUtils.method17724(this.mc.player.getVec().x * 0.9);
+                  ColorUtils.method17726(this.mc.player.getVec().z * 0.9);
                }
 
-               this.field39612.player.field4984 = 0.0F;
-               this.field39612.player.field4982 = 0.0F;
+               this.mc.player.field4984 = 0.0F;
+               this.mc.player.field4982 = 0.0F;
             }
 
             double var29 = Math.cos(Math.toRadians((double)(var43 + 90.0F))) * var4;
             double var31 = Math.sin(Math.toRadians((double)(var43 + 90.0F))) * var4;
             boolean var33 = Class8627.method30925();
-            boolean var34 = this.field39612
+            boolean var34 = this.mc
                   .world
-                  .method7055(this.field39612.player, this.field39612.player.getBoundingBox().method19667(var29, -1.0, var31))
+                  .method7055(this.mc.player, this.mc.player.getBoundingBox().method19667(var29, -1.0, var31))
                   .count()
                == 0L;
             boolean var35 = false;
             boolean var36 = false;
-            float var37 = this.field39612.player.rotationYaw;
-            this.field39612.player.rotationYaw = var43;
+            float var37 = this.mc.player.rotationYaw;
+            this.mc.player.rotationYaw = var43;
             switch (Class8612.field38732[var9.ordinal()]) {
                case 1:
                   boolean var38 = true;
                   if (var8.field44280 == Class2285.field15126) {
                      var38 = var10 < 1.14;
                      if (this.field39618 != null) {
-                        var38 &= (double)this.field39612.player.position.field13028 - var8.field44271.method33970() != 0.0;
+                        var38 &= (double)this.mc.player.position.field13028 - var8.field44271.method33970() != 0.0;
                      }
                   }
 
                   if (var25 && var33 && var10 > 0.75 && var38) {
-                     if (this.field39612.world.getBlockState(var8.field44271.method33979().down()).getBlock() instanceof Class3421 && var10 < 1.1) {
-                        ColorUtils.method17678("YA" + var10);
+                     if (this.mc.world.getBlockState(var8.field44271.method33979().down()).getBlock() instanceof Class3421 && var10 < 1.1) {
+                        ColorUtils.addChatMessage("YA" + var10);
                      } else {
-                        this.field39612.player.method2914();
+                        this.mc.player.method2914();
                      }
 
                      var9 = Class2317.field15873;
                   }
                   break;
                case 2:
-                  this.field39612.player.setSprinting(true);
+                  this.mc.player.setSprinting(true);
                   if (var25 && var33 && var34) {
-                     this.field39612.player.method2914();
+                     this.mc.player.method2914();
                      var9 = Class2317.field15873;
                   }
                   break;
@@ -218,49 +219,25 @@ public class Class8795 {
                case 5:
             }
 
-            this.field39612.player.rotationYaw = var37;
-            if (var36 && !this.field39612.player.onGround && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+            this.mc.player.rotationYaw = var37;
+            if (var36 && !this.mc.player.onGround && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
                ColorUtils.method17724(0.0);
                ColorUtils.method17726(0.0);
             } else {
-               if (Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled() && !ColorUtils.method17730(this.field39612.player, 5.0F)) {
+               if (Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled() && !ColorUtils.method17730(this.mc.player, 5.0F)) {
                   var36 = true;
                }
 
                Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).setState(var35);
                Client.getInstance().getModuleManager().getModuleByClass(Fly.class).setState(var36);
                if (!var17 || !var16) {
-                  if (var8.field44271.method33972().method11341(this.field39612.player.getPositionVec()) > 10.0) {
+                  if (var8.field44271.method33972().method11341(this.mc.player.getPositionVec()) > 10.0) {
                      this.method31738();
                   }
                }
             }
          }
       }
-   }
-
-   public boolean method31746(BlockPos var1) {
-      float var4 = (float)var1.getX() + 0.5F;
-      float var5 = (float)var1.getZ() + 0.5F;
-      double var6 = this.field39612.player.method3433().x;
-      double var8 = this.field39612.player.method3433().z;
-      double var10 = this.field39612.player.getPosX();
-      double var12 = this.field39612.player.getPosZ();
-
-      while (Math.abs(var6) + Math.abs(var8) > 0.05) {
-         var6 *= 0.9F;
-         var8 *= 0.9F;
-         var10 += var6;
-         var12 += var8;
-         double var14 = Math.abs(var10 - (double)var4);
-         double var16 = Math.abs(var12 - (double)var5);
-         double var18 = Math.sqrt(var14 + var16);
-         if (var14 <= 0.3 && var16 <= 0.3) {
-            return true;
-         }
-      }
-
-      return false;
    }
 
    @EventTarget
@@ -275,20 +252,20 @@ public class Class8795 {
 
             for (long var8 : var6.field44281) {
                BlockPos var10 = BlockPos.method8331(var8);
-               if (this.field39612.player.getPositionVec().method11343((double)var10.getX(), (double)var10.getY(), (double)var10.getZ()) < 9.0
+               if (this.mc.player.getPositionVec().method11343((double)var10.getX(), (double)var10.getY(), (double)var10.getZ()) < 9.0
                   && !Class9110.method33985(var10)
-                  && !this.field39612.world.getBlockState(var10).isAir()) {
+                  && !this.mc.world.getBlockState(var10).isAir()) {
                   var4.add(var10);
                }
             }
 
-            Class9217.method34545(var4);
+            BlockUtil.method34545(var4);
             if (var4.isEmpty()) {
                this.field39616 = null;
             } else if (this.field39616 != null) {
-               if (this.field39612.world.getBlockState(this.field39616).isAir()
+               if (this.mc.world.getBlockState(this.field39616).isAir()
                   || Math.sqrt(
-                        this.field39612
+                        this.mc
                            .player
                            .method3276(
                               (double)this.field39616.getX() + 0.5,
@@ -300,16 +277,16 @@ public class Class8795 {
                   this.field39616 = (BlockPos)var4.get(0);
                }
 
-               Direction var13 = Class9217.method34580(this.field39616);
-               float[] var11 = Class9217.method34542(this.field39616, var13);
+               Direction var13 = BlockUtil.method34580(this.field39616);
+               float[] var11 = BlockUtil.method34542(this.field39616, var13);
                var1.method13918(var11[0]);
                var1.method13916(var11[1]);
-               this.field39612.player.swingArm(Hand.MAIN_HAND);
-               this.field39612.playerController.onPlayerDamageBlock(this.field39616, Class9217.method34580(this.field39616));
+               this.mc.player.swingArm(Hand.MAIN_HAND);
+               this.mc.playerController.onPlayerDamageBlock(this.field39616, BlockUtil.method34580(this.field39616));
             } else {
                this.field39616 = (BlockPos)var4.get(0);
-               Direction var14 = Class9217.method34580(this.field39616);
-               float[] var15 = Class9217.method34542(this.field39616, var14);
+               Direction var14 = BlockUtil.method34580(this.field39616);
+               float[] var15 = BlockUtil.method34542(this.field39616, var14);
                var1.method13918(var15[0]);
                var1.method13916(var15[1]);
                Class4430 var12 = new Class4430(0, false, this.field39616);
@@ -338,7 +315,7 @@ public class Class8795 {
 
    @EventTarget
    public void method31749(SafeWalkEvent var1) {
-      if (this.method31743() && this.field39612.player.onGround) {
+      if (this.method31743() && this.mc.player.onGround) {
          int var4 = this.field39613.size() - 1;
          Class9510 var5 = this.field39613.get(var4);
          if (var5.field44279 == Class2317.field15876) {
@@ -367,7 +344,7 @@ public class Class8795 {
             }
          }
 
-         BlockPos var17 = Class9217.method34564(this.field39612.player.rotationYaw, this.field39612.player.rotationPitch, 100.0F);
+         BlockPos var17 = BlockUtil.method34564(this.mc.player.rotationYaw, this.mc.player.rotationPitch, 100.0F);
          if (var17 != null) {
             if (this.field39613 != null && this.field39613.size() > 0) {
                int var18 = ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.02F);
@@ -377,22 +354,22 @@ public class Class8795 {
 
                for (Long var8 : this.field39613.get(0).field44283) {
                   BlockPos var9 = BlockPos.method8331(var8);
-                  if (!this.field39612.world.getBlockState(var9).isAir()) {
-                     double var10 = (double)var9.getX() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11320();
-                     double var12 = (double)var9.getY() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11321();
-                     double var14 = (double)var9.getZ() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11322();
-                     Class9388 var16 = new Class9388(var10, var12, var14, var10 + 1.0, var12 + 1.0, var14 + 1.0);
+                  if (!this.mc.world.getBlockState(var9).isAir()) {
+                     double var10 = (double)var9.getX() - this.mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+                     double var12 = (double)var9.getY() - this.mc.gameRenderer.getActiveRenderInfo().getPos().getY();
+                     double var14 = (double)var9.getZ() - this.mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
+                     Box3D var16 = new Box3D(var10, var12, var14, var10 + 1.0, var12 + 1.0, var14 + 1.0);
                      RenderUtil.render3DColoredBox(var16, var18);
                   }
                }
 
                for (Long var20 : this.field39613.get(0).field44284) {
                   BlockPos var21 = BlockPos.method8331(var20);
-                  if (this.field39612.world.getBlockState(var21).isAir()) {
-                     double var22 = (double)var21.getX() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11320();
-                     double var23 = (double)var21.getY() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11321();
-                     double var24 = (double)var21.getZ() - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11322();
-                     Class9388 var25 = new Class9388(var22, var23, var24, var22 + 1.0, var23 + 1.0, var24 + 1.0);
+                  if (this.mc.world.getBlockState(var21).isAir()) {
+                     double var22 = (double)var21.getX() - this.mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+                     double var23 = (double)var21.getY() - this.mc.gameRenderer.getActiveRenderInfo().getPos().getY();
+                     double var24 = (double)var21.getZ() - this.mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
+                     Box3D var25 = new Box3D(var22, var23, var24, var22 + 1.0, var23 + 1.0, var24 + 1.0);
                      RenderUtil.render3DColoredBox(var25, var6);
                   }
                }
@@ -415,13 +392,13 @@ public class Class8795 {
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glPushMatrix();
       GL11.glTranslated(
-         var1 - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11320() + 0.5,
-         var3 - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11321(),
-         var5 - this.field39612.gameRenderer.getActiveRenderInfo().method37504().method11322() + 0.5
+         var1 - this.mc.gameRenderer.getActiveRenderInfo().getPos().getX() + 0.5,
+         var3 - this.mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+         var5 - this.mc.gameRenderer.getActiveRenderInfo().getPos().getZ() + 0.5
       );
       GL11.glAlphaFunc(519, 0.0F);
-      GL11.glRotatef(this.field39612.gameRenderer.getActiveRenderInfo().method37507(), 0.0F, -1.0F, 0.0F);
-      GL11.glRotatef(this.field39612.gameRenderer.getActiveRenderInfo().method37506(), 1.0F, 0.0F, 0.0F);
+      GL11.glRotatef(this.mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
+      GL11.glRotatef(this.mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
       ClientResource var10 = ResourceRegistry.JelloLightFont25;
       GL11.glPushMatrix();
       GL11.glScalef(-0.01F, -0.01F, -0.01F);

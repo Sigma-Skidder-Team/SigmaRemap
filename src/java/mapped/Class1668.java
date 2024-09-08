@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 import java.util.function.BiPredicate;
@@ -11,11 +12,11 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public interface Class1668 extends Class1665 {
+public interface Class1668 extends IBlockReader {
    WorldBorder method6810();
 
    @Nullable
-   Class1665 method6769(int var1, int var2);
+   IBlockReader method6769(int var1, int var2);
 
    default boolean method7048(Entity var1, VoxelShape var2) {
       return true;

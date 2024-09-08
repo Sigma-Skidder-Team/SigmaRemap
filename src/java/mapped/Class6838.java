@@ -15,7 +15,7 @@ public class Class6838 extends Class6829 {
             this.field29726.method3113(Math.max(this.field29726.method2918() / 2.0F, 0.06F));
          }
       } else {
-         this.field29726.method3434(this.field29726.method3433().method11339(0.0, 0.005, 0.0));
+         this.field29726.method3434(this.field29726.getVec().method11339(0.0, 0.005, 0.0));
          if (!Class1088.method5056(this.field29726).method8317(this.field29726.getPositionVec(), 16.0)) {
             this.field29726.method3113(Math.max(this.field29726.method2918() / 2.0F, 0.08F));
          }
@@ -40,7 +40,7 @@ public class Class6838 extends Class6829 {
          this.field29726.field4965 = this.field29726.rotationYaw;
          float var12 = (float)(this.field29711 * this.field29726.method3086(Attributes.MOVEMENT_SPEED));
          this.field29726.method3113(MathHelper.lerp(0.125F, this.field29726.method2918(), var12));
-         this.field29726.method3434(this.field29726.method3433().method11339(0.0, (double)this.field29726.method2918() * var5 * 0.1, 0.0));
+         this.field29726.method3434(this.field29726.getVec().method11339(0.0, (double)this.field29726.method2918() * var5 * 0.1, 0.0));
       } else {
          this.field29726.method3113(0.0F);
       }

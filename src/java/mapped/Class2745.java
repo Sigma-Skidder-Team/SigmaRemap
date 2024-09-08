@@ -43,7 +43,7 @@ public class Class2745 extends Class2595 {
 
    @Override
    public void method10804() {
-      Vector3d var3 = this.field17274.method3433();
+      Vector3d var3 = this.field17274.getVec();
       Vector3d var4 = new Vector3d(
          this.field17275.getPosX() - this.field17274.getPosX(), 0.0, this.field17275.getPosZ() - this.field17274.getPosZ()
       );

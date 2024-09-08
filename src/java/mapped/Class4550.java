@@ -5,7 +5,7 @@ import net.minecraft.util.math.BlockPos;
 
 public final class Class4550 extends AbstractIterator<BlockPos> {
    private static String[] field21922;
-   private final Mutable field21923;
+   private final BlockPos.Mutable field21923;
    private int field21924;
    private int field21925;
    private int field21926;
@@ -28,12 +28,12 @@ public final class Class4550 extends AbstractIterator<BlockPos> {
       this.field21934 = var5;
       this.field21935 = var6;
       this.field21936 = var7;
-      this.field21923 = new Mutable();
+      this.field21923 = new BlockPos.Mutable();
    }
 
    public BlockPos computeNext() {
       if (!this.field21929) {
-         Mutable var3;
+         BlockPos.Mutable var3;
          for (var3 = null; var3 == null; this.field21928++) {
             if (this.field21928 > this.field21926) {
                this.field21927++;

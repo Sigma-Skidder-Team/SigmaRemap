@@ -111,7 +111,7 @@ public enum Class2230 implements Class2234 {
 
       @Override
       public void method8971(Class1660 var1) {
-         Mutable var4 = new Mutable();
+         BlockPos.Mutable var4 = new BlockPos.Mutable();
          List<ObjectSet<BlockPos>> var5 = this.field14625.get();
 
          for(int var6 = 2; var6 < var5.size(); ++var6) {

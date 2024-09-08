@@ -44,9 +44,9 @@ public class Class3634 {
       BlockPos var11 = null;
       WorldBorder var12 = this.field19668.method6810();
       int var13 = this.field19668.method6998() - 1;
-      Mutable var14 = var1.method8354();
+      BlockPos.Mutable var14 = var1.method8354();
 
-      for (Mutable var16 : BlockPos.method8365(var1, 16, Direction.EAST, Direction.SOUTH)) {
+      for (BlockPos.Mutable var16 : BlockPos.method8365(var1, 16, Direction.EAST, Direction.SOUTH)) {
          int var17 = Math.min(var13, this.field19668.method6736(Class101.field299, var16.getX(), var16.getZ()));
          boolean var18 = true;
          if (var12.method24523(var16) && var12.method24523(var16.method8380(var5, 1))) {
@@ -129,7 +129,7 @@ public class Class3634 {
       return Optional.<Class9502>of(new Class9502(var8.toImmutable(), 2, 3));
    }
 
-   private boolean method12333(BlockPos var1, Mutable var2, Direction var3, int var4) {
+   private boolean method12333(BlockPos var1, BlockPos.Mutable var2, Direction var3, int var4) {
       Direction var7 = var3.method537();
 
       for (int var8 = -1; var8 < 3; var8++) {

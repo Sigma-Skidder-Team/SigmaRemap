@@ -627,7 +627,7 @@ public class MusicManager {
                 this.method24332();
             }
         } catch (MalformedURLException var10) {
-            ColorUtils.method17678("URL E " + var10.toString());
+            ColorUtils.addChatMessage("URL E " + var10.toString());
             var10.printStackTrace();
         }
 

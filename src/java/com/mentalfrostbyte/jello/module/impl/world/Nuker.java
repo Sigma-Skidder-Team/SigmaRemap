@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
@@ -66,7 +67,7 @@ public class Nuker extends Module {
                     var1.method13916(var4[1]);
                     Class4430 var5 = new Class4430(0, false, this.field23566);
                     Client.getInstance().getEventManager().call(var5);
-                    mc.playerController.onPlayerDamageBlock(this.field23566, Class9217.method34580(this.field23566));
+                    mc.playerController.onPlayerDamageBlock(this.field23566, BlockUtil.method34580(this.field23566));
                     if (!this.getBooleanValueFromSetttingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {
@@ -81,7 +82,7 @@ public class Nuker extends Module {
                     var1.method13916(var6[1]);
                     Class4430 var8 = new Class4430(0, false, this.field23566);
                     Client.getInstance().getEventManager().call(var8);
-                    mc.playerController.onPlayerDamageBlock(this.field23566, Class9217.method34580(this.field23566));
+                    mc.playerController.onPlayerDamageBlock(this.field23566, BlockUtil.method34580(this.field23566));
                     if (!this.getBooleanValueFromSetttingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {
@@ -90,7 +91,7 @@ public class Nuker extends Module {
                 }
             } else {
                 for (BlockPos var9 : this.field23567) {
-                    mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var9, Class9217.method34580(var9)));
+                    mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var9, BlockUtil.method34580(var9)));
                     if (!this.getBooleanValueFromSetttingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {
@@ -107,17 +108,17 @@ public class Nuker extends Module {
             int var4 = ColorUtils.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), 0.4F);
             GL11.glPushMatrix();
             GL11.glDisable(2929);
-            double var5 = (double) this.field23566.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
-            double var7 = (double) this.field23566.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-            double var9 = (double) this.field23566.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
+            double var5 = (double) this.field23566.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+            double var7 = (double) this.field23566.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
+            double var9 = (double) this.field23566.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
             AxisAlignedBB var11 = mc.world.getBlockState(this.field23566).method23414(mc.world, this.field23566).method19514();
-            Class9388 var12 = new Class9388(
-                    var5 + var11.field28449,
-                    var7 + var11.field28450,
-                    var9 + var11.field28451,
-                    var5 + var11.field28452,
-                    var7 + var11.field28453,
-                    var9 + var11.field28454
+            Box3D var12 = new Box3D(
+                    var5 + var11.minX,
+                    var7 + var11.minY,
+                    var9 + var11.minZ,
+                    var5 + var11.maxX,
+                    var7 + var11.maxY,
+                    var9 + var11.maxZ
             );
             RenderUtil.render3DColoredBox(var12, var4);
             GL11.glEnable(2929);

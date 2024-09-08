@@ -33,7 +33,7 @@ public class PlayerController {
    private Class1894 currentGameType = Class1894.field11102;
    private Class1894 field31367 = Class1894.field11101;
    private final Object2ObjectLinkedOpenHashMap<Pair<BlockPos, CPlayerDiggingPacket.Action>, Vector3d> field31368 = new Object2ObjectLinkedOpenHashMap();
-   private int field31369;
+   private int currentPlayerItem;
 
    public PlayerController(Minecraft var1, ClientPlayNetHandler var2) {
       this.mc = var1;
@@ -219,10 +219,12 @@ public class PlayerController {
    }
 
    public void syncCurrentPlayItem() {
-      int var3 = this.mc.player.inventory.currentItem;
-      if (var3 != this.field31369) {
-         this.field31369 = var3;
-         this.connection.sendPacket(new CHeldItemChangePacket(this.field31369));
+      if (this.mc != null && this.mc.player != null && this.connection != null) {
+         int i = this.mc.player.inventory.currentItem;
+         if (i != this.currentPlayerItem) {
+            this.currentPlayerItem = i;
+            this.connection.sendPacket(new CHeldItemChangePacket(this.currentPlayerItem));
+         }
       }
    }
 

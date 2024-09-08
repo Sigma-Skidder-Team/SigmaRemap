@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3i;
 
 public class Class9155 {
@@ -146,7 +147,7 @@ public class Class9155 {
                throw new IllegalArgumentException("There are only 3 axes");
          }
 
-         Class8661 var7 = new Class8661(var5, var2.field31517, true);
+         Quaternion var7 = new Quaternion(var5, var2.field31517, true);
          if (var2.field31518) {
             if (Math.abs(var2.field31517) == 22.5F) {
                var6.method25272(field42034);

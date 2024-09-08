@@ -89,10 +89,10 @@ public class Class888 extends ProjectileEntity implements Class889 {
       if (!this.method3507()) {
          if (!this.method3508()) {
             double var9 = !this.collidedHorizontally ? 1.15 : 1.0;
-            this.method3434(this.method3433().method11347(var9, 1.0, var9).method11339(0.0, 0.04, 0.0));
+            this.method3434(this.getVec().method11347(var9, 1.0, var9).method11339(0.0, 0.04, 0.0));
          }
 
-         Vector3d var3 = this.method3433();
+         Vector3d var3 = this.getVec();
          this.move(Class2107.field13742, var3);
          this.method3434(var3);
       } else {
@@ -110,7 +110,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
                Vector3d var11 = this.field5125.method3320();
                double var4 = 1.5;
                double var6 = 0.1;
-               Vector3d var8 = this.field5125.method3433();
+               Vector3d var8 = this.field5125.getVec();
                this.field5125
                   .method3434(
                      var8.method11339(
@@ -122,7 +122,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
             }
 
             this.setPosition(this.field5125.getPosX(), this.field5125.getPosY(), this.field5125.getPosZ());
-            this.method3434(this.field5125.method3433());
+            this.method3434(this.field5125.getVec());
          }
       }
 
@@ -147,7 +147,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
                this.getPosY() - 0.3,
                this.getPosZ(),
                this.rand.nextGaussian() * 0.05,
-               -this.method3433().y * 0.5,
+               -this.getVec().y * 0.5,
                this.rand.nextGaussian() * 0.05
             );
       }
@@ -242,7 +242,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
          if (this.method3505()) {
             ItemStack var4 = this.dataManager.<ItemStack>method35445(field5120);
             CompoundNBT var5 = !var4.isEmpty() ? var4.method32145("Fireworks") : null;
-            Vector3d var6 = this.method3433();
+            Vector3d var6 = this.getVec();
             this.world.method6804(this.getPosX(), this.getPosY(), this.getPosZ(), var6.x, var6.y, var6.z, var5);
          } else {
             for (int var7 = 0; var7 < this.rand.nextInt(3) + 2; var7++) {

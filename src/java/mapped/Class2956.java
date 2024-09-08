@@ -7,13 +7,13 @@ import net.minecraft.world.server.ServerWorld;
 
 public interface Class2956 extends Class2955 {
    @Override
-   double method11320();
+   double getX();
 
    @Override
-   double method11321();
+   double getY();
 
    @Override
-   double method11322();
+   double getZ();
 
    BlockPos method11323();
 

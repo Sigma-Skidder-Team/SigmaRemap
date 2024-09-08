@@ -15,8 +15,8 @@ public class Class2907 extends Class2898<Class4712> {
 
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
       if (var1.method7007(var4) && !var1.method7007(var4.up())) {
-         Mutable var8 = var4.method8354();
-         Mutable var9 = var4.method8354();
+         BlockPos.Mutable var8 = var4.method8354();
+         BlockPos.Mutable var9 = var4.method8354();
          boolean var10 = true;
          boolean var11 = true;
          boolean var12 = true;
@@ -41,7 +41,7 @@ public class Class2907 extends Class2898<Class4712> {
          this.method11245(var1, var3, var9.method8377(var8, Direction.WEST));
          this.method11245(var1, var3, var9.method8377(var8, Direction.EAST));
          var8.method8379(Direction.DOWN);
-         Mutable var14 = new Mutable();
+         BlockPos.Mutable var14 = new BlockPos.Mutable();
 
          for (int var15 = -3; var15 < 4; var15++) {
             for (int var16 = -3; var16 < 4; var16++) {

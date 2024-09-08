@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.function.ToIntFunction;
 
@@ -2865,15 +2866,15 @@ public class Blocks {
       return var1 -> !var1.<Boolean>method23463(Class8820.field39699) ? 0 : var0;
    }
 
-   private static Boolean method30012(BlockState var0, Class1665 var1, BlockPos var2, EntityType<?> var3) {
+   private static Boolean method30012(BlockState var0, IBlockReader var1, BlockPos var2, EntityType<?> var3) {
       return false;
    }
 
-   private static Boolean method30013(BlockState var0, Class1665 var1, BlockPos var2, EntityType<?> var3) {
+   private static Boolean method30013(BlockState var0, IBlockReader var1, BlockPos var2, EntityType<?> var3) {
       return true;
    }
 
-   private static Boolean method30014(BlockState var0, Class1665 var1, BlockPos var2, EntityType<?> var3) {
+   private static Boolean method30014(BlockState var0, IBlockReader var1, BlockPos var2, EntityType<?> var3) {
       return var3 == EntityType.field41059 || var3 == EntityType.field41062;
    }
 
@@ -2901,11 +2902,11 @@ public class Blocks {
       return new Class3386(AbstractBlock.method26612(Class8649.field38957, var1 -> var0).method26623(2.0F).method26619(Class8447.field36225));
    }
 
-   private static boolean method30018(BlockState var0, Class1665 var1, BlockPos var2) {
+   private static boolean method30018(BlockState var0, IBlockReader var1, BlockPos var2) {
       return true;
    }
 
-   private static boolean method30019(BlockState var0, Class1665 var1, BlockPos var2) {
+   private static boolean method30019(BlockState var0, IBlockReader var1, BlockPos var2) {
       return false;
    }
 

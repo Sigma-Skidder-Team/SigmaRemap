@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 
@@ -17,9 +18,9 @@ public class Class6765 extends Class6764 {
    @Override
    public Class7176 method20615() {
       return super.method20641(
-         MathHelper.floor(this.field29476.getBoundingBox().field28449),
-         MathHelper.floor(this.field29476.getBoundingBox().field28450 + 0.5),
-         MathHelper.floor(this.field29476.getBoundingBox().field28451)
+         MathHelper.floor(this.field29476.getBoundingBox().minX),
+         MathHelper.floor(this.field29476.getBoundingBox().minY + 0.5),
+         MathHelper.floor(this.field29476.getBoundingBox().minZ)
       );
    }
 
@@ -49,12 +50,12 @@ public class Class6765 extends Class6764 {
    }
 
    @Override
-   public Class2163 method20629(Class1665 var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
+   public Class2163 method20629(IBlockReader var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
       return this.method20621(var1, var2, var3, var4);
    }
 
    @Override
-   public Class2163 method20621(Class1665 var1, int var2, int var3, int var4) {
+   public Class2163 method20621(IBlockReader var1, int var2, int var3, int var4) {
       BlockPos var7 = new BlockPos(var2, var3, var4);
       FluidState var8 = var1.getFluidState(var7);
       BlockState var9 = var1.getBlockState(var7);
@@ -90,7 +91,7 @@ public class Class6765 extends Class6764 {
    }
 
    private Class2163 method20652(int var1, int var2, int var3) {
-      Mutable var6 = new Mutable();
+      BlockPos.Mutable var6 = new BlockPos.Mutable();
 
       for (int var7 = var1; var7 < var1 + this.field29478; var7++) {
          for (int var8 = var2; var8 < var2 + this.field29479; var8++) {

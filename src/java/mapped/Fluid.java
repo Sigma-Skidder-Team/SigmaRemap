@@ -5,6 +5,7 @@ import net.minecraft.particles.IParticleData;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -53,9 +54,9 @@ public abstract class Fluid {
       return null;
    }
 
-   public abstract boolean method25055(FluidState var1, Class1665 var2, BlockPos var3, Fluid var4, Direction var5);
+   public abstract boolean method25055(FluidState var1, IBlockReader var2, BlockPos var3, Fluid var4, Direction var5);
 
-   public abstract Vector3d method25056(Class1665 var1, BlockPos var2, FluidState var3);
+   public abstract Vector3d method25056(IBlockReader var1, BlockPos var2, FluidState var3);
 
    public abstract int method25057(Class1662 var1);
 
@@ -69,7 +70,7 @@ public abstract class Fluid {
 
    public abstract float method25060();
 
-   public abstract float method25061(FluidState var1, Class1665 var2, BlockPos var3);
+   public abstract float method25061(FluidState var1, IBlockReader var2, BlockPos var3);
 
    public abstract float method25062(FluidState var1);
 
@@ -87,5 +88,5 @@ public abstract class Fluid {
       return var1.method24917(this);
    }
 
-   public abstract VoxelShape method25068(FluidState var1, Class1665 var2, BlockPos var3);
+   public abstract VoxelShape method25068(FluidState var1, IBlockReader var2, BlockPos var3);
 }

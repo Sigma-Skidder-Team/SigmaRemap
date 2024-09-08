@@ -60,7 +60,7 @@ public class OutlineChestESP extends Module {
                var18 = var5;
             }
 
-            Class9388 var19 = new Class9388(
+            Box3D var19 = new Box3D(
                var8.method3775().method23412(mc.world, var8.getPos()).method19514().method19667(var12, var14, var16)
             );
             if (var1) {

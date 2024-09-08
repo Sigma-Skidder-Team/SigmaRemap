@@ -68,8 +68,8 @@ public class Class1103 extends Class1009 {
 
    @Override
    public void method2871() {
-      if (!this.onGround && this.method3433().y < 0.0) {
-         this.method3434(this.method3433().method11347(1.0, 0.6, 1.0));
+      if (!this.onGround && this.getVec().y < 0.0) {
+         this.method3434(this.getVec().method11347(1.0, 0.6, 1.0));
       }
 
       if (this.world.isRemote) {
@@ -110,8 +110,8 @@ public class Class1103 extends Class1009 {
 
       LivingEntity var3 = this.method4232();
       if (var3 != null && var3.method3442() > this.method3442() + (double)this.field6060 && this.method3026(var3)) {
-         Vector3d var4 = this.method3433();
-         this.method3434(this.method3433().method11339(0.0, (0.3F - var4.y) * 0.3F, 0.0));
+         Vector3d var4 = this.getVec();
+         this.method3434(this.getVec().method11339(0.0, (0.3F - var4.y) * 0.3F, 0.0));
          this.isAirBorne = true;
       }
 

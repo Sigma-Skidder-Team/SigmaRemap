@@ -99,7 +99,7 @@ public class Class2797<T extends LivingEntity> extends Class2855<T> implements C
       this.field17436.field31032 = 5.0F;
       float var11 = 1.0F;
       if (var9) {
-         var11 = (float)var1.method3433().method11349();
+         var11 = (float)var1.getVec().method11349();
          var11 /= 0.2F;
          var11 = var11 * var11 * var11;
       }

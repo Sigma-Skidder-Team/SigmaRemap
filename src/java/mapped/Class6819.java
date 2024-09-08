@@ -64,7 +64,7 @@ public abstract class Class6819 {
 
    public void method20796(Class1679 var1, Random var2, Class4733 var3, BlockPos var4, int var5, Set<BlockPos> var6, int var7, boolean var8, Class9764 var9) {
       int var12 = !var8 ? 0 : 1;
-      Mutable var13 = new Mutable();
+      BlockPos.Mutable var13 = new BlockPos.Mutable();
 
       for (int var14 = -var5; var14 <= var5 + var12; var14++) {
          for (int var15 = -var5; var15 <= var5 + var12; var15++) {

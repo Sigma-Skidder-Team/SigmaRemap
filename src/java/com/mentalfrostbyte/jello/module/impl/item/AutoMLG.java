@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.unmapped.Class8005;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CAnimateHandPacket;
@@ -149,9 +150,9 @@ public class AutoMLG extends PremiumModule {
     }
 
     private BlockPos method16425() {
-        double var3 = mc.player.method3433().x;
-        double var5 = mc.player.method3433().y;
-        double var7 = mc.player.method3433().z;
+        double var3 = mc.player.getVec().x;
+        double var5 = mc.player.getVec().y;
+        double var7 = mc.player.getVec().z;
         AxisAlignedBB var9 = mc.player.boundingBox.method19662(var3, 0.0, var7).method19667(0.0, var5, 0.0);
         Stream var10 = mc.world.method7055(mc.player, var9);
         Iterator var11 = var10.iterator();
@@ -161,7 +162,7 @@ public class AutoMLG extends PremiumModule {
             VoxelShape var13 = (VoxelShape) var11.next();
             AxisAlignedBB var14 = var13.method19514();
             BlockPos var15 = new BlockPos(var14.method19685());
-            if (Class9217.method34578(var15)
+            if (BlockUtil.method34578(var15)
                     && (double) (var15.getY() + 1) < mc.player.getPosY()
                     && (
                     var12 == null
@@ -177,7 +178,7 @@ public class AutoMLG extends PremiumModule {
         if (var12 != null) {
             return var12;
         } else {
-            var5 = mc.player.method3433().y - 1.0;
+            var5 = mc.player.getVec().y - 1.0;
             var9 = mc.player.boundingBox.method19662(var3, 0.0, var7).method19667(0.0, var5, 0.0);
             var10 = mc.world.method7055(mc.player, var9);
             var11 = var10.iterator();
@@ -186,7 +187,7 @@ public class AutoMLG extends PremiumModule {
                 VoxelShape var20 = (VoxelShape) var11.next();
                 AxisAlignedBB var21 = var20.method19514();
                 BlockPos var22 = new BlockPos(var21.method19685());
-                if (Class9217.method34578(var22)
+                if (BlockUtil.method34578(var22)
                         && (double) (var22.getY() + 1) < mc.player.getPosY()
                         && (
                         var12 == null

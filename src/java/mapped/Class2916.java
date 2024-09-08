@@ -17,7 +17,7 @@ public class Class2916 extends Class2914 {
 
    @Override
    public boolean method11249(Class1660 var1, Random var2, BlockPos var3, BlockState var4) {
-      Mutable var7 = var3.method8354();
+      BlockPos.Mutable var7 = var3.method8354();
       int var8 = var2.nextInt(3) + 1;
 
       for (int var9 = 0; var9 < var8; var9++) {

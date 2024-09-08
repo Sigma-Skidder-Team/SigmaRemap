@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
@@ -67,7 +68,7 @@ public class ChestStealer extends Module {
 
                 this.method16370();
                 if (this.field23625 != null && mc.currentScreen == null && this.field23624.method27121() > 1000L) {
-                    BlockRayTraceResult var4 = (BlockRayTraceResult) Class9217.method34570(this.field23625.getPos());
+                    BlockRayTraceResult var4 = (BlockRayTraceResult) BlockUtil.method34570(this.field23625.getPos());
                     if (var4.getPos().getX() == this.field23625.getPos().getX()
                             && var4.getPos().getY() == this.field23625.getPos().getY()
                             && var4.getPos().getZ() == this.field23625.getPos().getZ()) {
@@ -96,7 +97,7 @@ public class ChestStealer extends Module {
                             && Math.sqrt(mc.player.method3276(var9, var10, var11)) < 5.0
                             && this.field23624.method27121() > 1000L
                             && mc.currentScreen == null) {
-                        BlockRayTraceResult var12 = (BlockRayTraceResult) Class9217.method34570(var7.getPos());
+                        BlockRayTraceResult var12 = (BlockRayTraceResult) BlockUtil.method34570(var7.getPos());
                         if (var12.getPos().getX() == var7.getPos().getX()
                                 && var12.getPos().getY() == var7.getPos().getY()
                                 && var12.getPos().getZ() == var7.getPos().getZ()) {
@@ -258,7 +259,7 @@ public class ChestStealer extends Module {
                         "modalidades"
                 )
         );
-        List<BlockPos> var5 = Class9217.method34561(8.0F);
+        List<BlockPos> var5 = BlockUtil.method34561(8.0F);
         String var6 = var1.getNarrationMessage().replaceAll("§.", "").toLowerCase();
 
         for (String var8 : var4) {
@@ -269,7 +270,7 @@ public class ChestStealer extends Module {
         }
 
         for (BlockPos var11 : var5) {
-            if (Class9217.method34536(var11) instanceof Class3348 || Class9217.method34536(var11) instanceof Class3467) {
+            if (BlockUtil.getBlockFromPosition(var11) instanceof Class3348 || BlockUtil.getBlockFromPosition(var11) instanceof Class3467) {
                 return true;
             }
         }

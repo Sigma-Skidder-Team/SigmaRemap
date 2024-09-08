@@ -37,7 +37,7 @@ public class Class3725 extends Class3676<Class1042> {
    }
 
    private Optional<BlockPos> method12625(ServerWorld var1, Class1042 var2) {
-      Mutable var5 = new Mutable();
+      BlockPos.Mutable var5 = new BlockPos.Mutable();
       Optional var6 = Optional.empty();
       int var7 = 0;
 

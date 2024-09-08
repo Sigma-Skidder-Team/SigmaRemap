@@ -7,7 +7,7 @@ import java.util.Random;
 
 public final class Class4551 extends AbstractIterator<BlockPos> {
    private static String[] field21937;
-   public final Mutable field21938;
+   public final BlockPos.Mutable field21938;
    public int field21939;
    public final int field21940;
    public final int field21941;
@@ -27,13 +27,13 @@ public final class Class4551 extends AbstractIterator<BlockPos> {
       this.field21945 = var6;
       this.field21946 = var7;
       this.field21947 = var8;
-      this.field21938 = new Mutable();
+      this.field21938 = new BlockPos.Mutable();
       this.field21939 = this.field21940;
    }
 
    public BlockPos computeNext() {
       if (this.field21939 > 0) {
-         Mutable var3 = this.field21938
+         BlockPos.Mutable var3 = this.field21938
             .method8372(
                this.field21941 + this.field21942.nextInt(this.field21943),
                this.field21944 + this.field21942.nextInt(this.field21945),

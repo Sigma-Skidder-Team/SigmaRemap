@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.server.ServerWorld;
 
@@ -125,7 +126,7 @@ public abstract class ChunkGenerator {
             this.method17817();
             BlockPos var8 = null;
             double var9 = Double.MAX_VALUE;
-            Mutable var11 = new Mutable();
+            BlockPos.Mutable var11 = new BlockPos.Mutable();
 
             for (Class7481 var13 : this.field24989) {
                var11.method8372((var13.field32174 << 4) + 8, 32, (var13.field32175 << 4) + 8);
@@ -251,7 +252,7 @@ public abstract class ChunkGenerator {
 
    public abstract int method17797(int var1, int var2, Class101 var3);
 
-   public abstract Class1665 method17798(int var1, int var2);
+   public abstract IBlockReader method17798(int var1, int var2);
 
    public int method17828(int var1, int var2, Class101 var3) {
       return this.method17797(var1, var2, var3);

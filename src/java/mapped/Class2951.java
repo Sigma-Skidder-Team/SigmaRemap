@@ -25,8 +25,8 @@ public class Class2951 extends Class2898<Class4728> {
 
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4728 var5) {
       int var8 = 0;
-      Mutable var9 = var4.method8354();
-      Mutable var10 = var4.method8354();
+      BlockPos.Mutable var9 = var4.method8354();
+      BlockPos.Mutable var10 = var4.method8354();
       if (var1.method7007(var9)) {
          if (Blocks.field37009.method11579().method23443(var1, var9)) {
             int var11 = var3.nextInt(12) + 5;

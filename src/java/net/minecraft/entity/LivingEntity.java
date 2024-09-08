@@ -246,7 +246,7 @@ public abstract class LivingEntity extends Entity {
                this.method3352(this.method3011(this.method3351()));
                if (this.method3351() == -20) {
                   this.method3352(0);
-                  Vector3d var9 = this.method3433();
+                  Vector3d var9 = this.getVec();
 
                   for (int var10 = 0; var10 < 8; var10++) {
                      double var11 = this.rand.nextDouble() - this.rand.nextDouble();
@@ -331,15 +331,15 @@ public abstract class LivingEntity extends Entity {
 
    public boolean method3001() {
       return this.ticksExisted % 5 == 0
-         && this.method3433().x != 0.0
-         && this.method3433().z != 0.0
+         && this.getVec().x != 0.0
+         && this.getVec().z != 0.0
          && !this.isSpectator()
          && Class7858.method26333(this)
          && this.method2889();
    }
 
    public void method3002() {
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       this.world
          .method6746(
             ParticleTypes.field34076,
@@ -1245,7 +1245,7 @@ public abstract class LivingEntity extends Entity {
       var1 = (float)((double)var1 * (1.0 - this.method3086(Attributes.field42107)));
       if (!(var1 <= 0.0F)) {
          this.isAirBorne = true;
-         Vector3d var8 = this.method3433();
+         Vector3d var8 = this.getVec();
          Vector3d var9 = new Vector3d(var2, 0.0, var4).method11333().method11344((double)var1);
          this.method3435(
             var8.x / 2.0 - var9.x,
@@ -1823,7 +1823,7 @@ public abstract class LivingEntity extends Entity {
          var3 += 0.1F * (float)(this.method3034(Effects.JUMP_BOOST).method8629() + 1);
       }
 
-      Vector3d var4 = this.method3433();
+      Vector3d var4 = this.getVec();
       Class4436 var5 = new Class4436(new Vector3d(var4.x, (double)var3, var4.z));
       if (this instanceof ClientPlayerEntity) {
          Client.getInstance().getEventManager().call(var5);
@@ -1833,7 +1833,7 @@ public abstract class LivingEntity extends Entity {
          this.method3434(var5.method14001());
          if (this.method3337() && !var5.method14000()) {
             float var6 = this.rotationYaw * (float) (Math.PI / 180.0);
-            this.method3434(this.method3433().method11339((double)(-MathHelper.sin(var6) * 0.2F), 0.0, (double)(MathHelper.cos(var6) * 0.2F)));
+            this.method3434(this.getVec().method11339((double)(-MathHelper.sin(var6) * 0.2F), 0.0, (double)(MathHelper.cos(var6) * 0.2F)));
          }
 
          this.isAirBorne = true;
@@ -1841,11 +1841,11 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void method3104() {
-      this.method3434(this.method3433().method11339(0.0, -0.04F, 0.0));
+      this.method3434(this.getVec().method11339(0.0, -0.04F, 0.0));
    }
 
    public void method3105(ITag<Fluid> var1) {
-      this.method3434(this.method3433().method11339(0.0, 0.04F, 0.0));
+      this.method3434(this.getVec().method11339(0.0, 0.04F, 0.0));
    }
 
    public float method3106() {
@@ -1859,7 +1859,7 @@ public abstract class LivingEntity extends Entity {
    public void method2915(Vector3d var1) {
       if (this.method3138() || this.method3418()) {
          double var4 = 0.08;
-         boolean var6 = this.method3433().y <= 0.0;
+         boolean var6 = this.getVec().y <= 0.0;
          if (var6 && this.method3033(Effects.SLOW_FALLING)) {
             var4 = 0.01;
             this.fallDistance = 0.0F;
@@ -1889,14 +1889,14 @@ public abstract class LivingEntity extends Entity {
             }
 
             this.method3265(var39, var1);
-            this.move(Class2107.field13742, this.method3433());
-            Vector3d var15 = this.method3433();
+            this.move(Class2107.field13742, this.getVec());
+            Vector3d var15 = this.getVec();
             if (this.collidedHorizontally && this.method3063()) {
                var15 = new Vector3d(var15.x, 0.2, var15.z);
             }
 
             this.method3434(var15.method11347((double)var38, 0.8F, (double)var38));
-            Vector3d var16 = this.method3110(var4, var6, this.method3433());
+            Vector3d var16 = this.method3110(var4, var6, this.getVec());
             this.method3434(var16);
             if (this.collidedHorizontally && this.method3224(var16.x, var16.y + 0.6F - this.getPosY() + var34, var16.z)) {
                this.method3435(var16.x, 0.3F, var16.z);
@@ -1904,20 +1904,20 @@ public abstract class LivingEntity extends Entity {
          } else if (this.method3264() && this.method2897() && !this.method3107(var7.method23472())) {
             double var10 = this.getPosY();
             this.method3265(0.02F, var1);
-            this.move(Class2107.field13742, this.method3433());
+            this.move(Class2107.field13742, this.getVec());
             if (!(this.method3427(Class8953.field40470) <= this.method3428())) {
-               this.method3434(this.method3433().method11344(0.5));
+               this.method3434(this.getVec().method11344(0.5));
             } else {
-               this.method3434(this.method3433().method11347(0.5, 0.8F, 0.5));
-               Vector3d var36 = this.method3110(var4, var6, this.method3433());
+               this.method3434(this.getVec().method11347(0.5, 0.8F, 0.5));
+               Vector3d var36 = this.method3110(var4, var6, this.getVec());
                this.method3434(var36);
             }
 
             if (!this.method3247()) {
-               this.method3434(this.method3433().method11339(0.0, -var4 / 4.0, 0.0));
+               this.method3434(this.getVec().method11339(0.0, -var4 / 4.0, 0.0));
             }
 
-            Vector3d var37 = this.method3433();
+            Vector3d var37 = this.getVec();
             if (this.collidedHorizontally && this.method3224(var37.x, var37.y + 0.6F - this.getPosY() + var10, var37.z)) {
                this.method3435(var37.x, 0.3F, var37.z);
             }
@@ -1944,7 +1944,7 @@ public abstract class LivingEntity extends Entity {
 
             this.method3435(var13.x * (double)var12, var29 * 0.98F, var13.z * (double)var12);
          } else {
-            Vector3d var31 = this.method3433();
+            Vector3d var31 = this.getVec();
             if (var31.y > -0.5) {
                this.fallDistance = 1.0F;
             }
@@ -1956,7 +1956,7 @@ public abstract class LivingEntity extends Entity {
             double var21 = var33.method11348();
             float var23 = MathHelper.cos(var35);
             var23 = (float)((double)var23 * (double)var23 * Math.min(1.0, var21 / 0.4));
-            var31 = this.method3433().method11339(0.0, var4 * (-1.0 + (double)var23 * 0.75), 0.0);
+            var31 = this.getVec().method11339(0.0, var4 * (-1.0 + (double)var23 * 0.75), 0.0);
             if (var31.y < 0.0 && var17 > 0.0) {
                double var24 = var31.y * -0.1 * (double)var23;
                var31 = var31.method11339(var33.x * var24 / var17, var24, var33.z * var24 / var17);
@@ -1974,9 +1974,9 @@ public abstract class LivingEntity extends Entity {
             }
 
             this.method3434(var31.method11347(0.99F, 0.98F, 0.99F));
-            this.move(Class2107.field13742, this.method3433());
+            this.move(Class2107.field13742, this.getVec());
             if (this.collidedHorizontally && !this.world.isRemote) {
-               double var42 = Math.sqrt(method3234(this.method3433()));
+               double var42 = Math.sqrt(method3234(this.getVec()));
                double var26 = var19 - var42;
                float var28 = (float)(var26 * 10.0 - 3.0);
                if (var28 > 0.0F) {
@@ -2010,9 +2010,9 @@ public abstract class LivingEntity extends Entity {
 
    public Vector3d method3109(Vector3d var1, float var2) {
       this.method3265(this.method3112(var2), var1);
-      this.method3434(this.method3111(this.method3433()));
-      this.move(Class2107.field13742, this.method3433());
-      Vector3d var5 = this.method3433();
+      this.method3434(this.method3111(this.getVec()));
+      this.move(Class2107.field13742, this.getVec());
+      Vector3d var5 = this.getVec();
       if ((this.collidedHorizontally || this.field4981) && this.method3063()) {
          var5 = new Vector3d(var5.x, 0.2, var5.z);
       }
@@ -2326,7 +2326,7 @@ public abstract class LivingEntity extends Entity {
 
       if (this.field4985 <= 0) {
          if (!this.method3138()) {
-            this.method3434(this.method3433().method11344(0.98));
+            this.method3434(this.getVec().method11344(0.98));
          }
       } else {
          double var10 = this.getPosX() + (this.field4986 - this.getPosX()) / (double)this.field4985;
@@ -2345,7 +2345,7 @@ public abstract class LivingEntity extends Entity {
          this.field4992--;
       }
 
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       double var4 = var3.x;
       double var6 = var3.y;
       double var8 = var3.z;
@@ -2490,7 +2490,7 @@ public abstract class LivingEntity extends Entity {
             if (var8 instanceof LivingEntity) {
                this.method2900((LivingEntity)var8);
                this.field5008 = 0;
-               this.method3434(this.method3433().method11344(-0.2));
+               this.method3434(this.getVec().method11344(-0.2));
                break;
             }
          }

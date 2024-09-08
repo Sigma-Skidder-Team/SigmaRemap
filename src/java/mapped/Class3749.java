@@ -28,7 +28,7 @@ public class Class3749 extends Class3676<Class1042> {
       } else if (var2.method4674().method26571() != Class8395.field36016) {
          return false;
       } else {
-         Mutable var5 = var2.getPosition().method8354();
+         BlockPos.Mutable var5 = var2.getPosition().method8354();
          this.field19900.clear();
 
          for (int var6 = -1; var6 <= 1; var6++) {

@@ -24,9 +24,9 @@ public class Class155 implements ILootCondition {
          && this.field507
             .method30650(
                var1.method26090(),
-               var4.method11320() + (double)this.field508.getX(),
-               var4.method11321() + (double)this.field508.getY(),
-               var4.method11322() + (double)this.field508.getZ()
+               var4.getX() + (double)this.field508.getX(),
+               var4.getY() + (double)this.field508.getY(),
+               var4.getZ() + (double)this.field508.getZ()
             );
    }
 

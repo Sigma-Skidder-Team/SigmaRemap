@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
 
 public abstract class Class4586 extends Class4587 {
@@ -16,17 +17,17 @@ public abstract class Class4586 extends Class4587 {
 
    @Override
    public void method14510(Class5422 var1, ActiveRenderInfo var2, float var3) {
-      Vector3d var6 = var2.method37504();
-      float var7 = (float)(MathHelper.lerp((double)var3, this.field22038, this.field22041) - var6.method11320());
-      float var8 = (float)(MathHelper.lerp((double)var3, this.field22039, this.field22042) - var6.method11321());
-      float var9 = (float)(MathHelper.lerp((double)var3, this.field22040, this.field22043) - var6.method11322());
-      Class8661 var10;
+      Vector3d var6 = var2.getPos();
+      float var7 = (float)(MathHelper.lerp((double)var3, this.field22038, this.field22041) - var6.getX());
+      float var8 = (float)(MathHelper.lerp((double)var3, this.field22039, this.field22042) - var6.getY());
+      float var9 = (float)(MathHelper.lerp((double)var3, this.field22040, this.field22043) - var6.getZ());
+      Quaternion var10;
       if (this.field22062 != 0.0F) {
-         var10 = new Class8661(var2.method37508());
+         var10 = new Quaternion(var2.getRotation());
          float var11 = MathHelper.lerp(var3, this.field22063, this.field22062);
          var10.method31182(Vector3f.field32902.method25285(var11));
       } else {
-         var10 = var2.method37508();
+         var10 = var2.getRotation();
       }
 
       Vector3f var19 = new Vector3f(-1.0F, -1.0F, 0.0F);

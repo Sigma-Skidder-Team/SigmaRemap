@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3217 extends Class3213 {
@@ -29,13 +30,13 @@ public class Class3217 extends Class3213 {
       return !method11604(var4, var5, var6) ? super.method11495(var1) : this.field18626;
    }
 
-   private static boolean method11604(Class1665 var0, BlockPos var1, BlockState var2) {
+   private static boolean method11604(IBlockReader var0, BlockPos var1, BlockState var2) {
       return method11606(var2) || method11605(var0, var1);
    }
 
-   private static boolean method11605(Class1665 var0, BlockPos var1) {
+   private static boolean method11605(IBlockReader var0, BlockPos var1) {
       boolean var4 = false;
-      Mutable var5 = var1.method8354();
+      BlockPos.Mutable var5 = var1.method8354();
 
       for (Direction var9 : Direction.values()) {
          BlockState var10 = var0.getBlockState(var5);
@@ -62,7 +63,7 @@ public class Class3217 extends Class3213 {
    }
 
    @Override
-   public int method11601(BlockState var1, Class1665 var2, BlockPos var3) {
+   public int method11601(BlockState var1, IBlockReader var2, BlockPos var3) {
       return var1.method23394(var2, var3).field31006;
    }
 }

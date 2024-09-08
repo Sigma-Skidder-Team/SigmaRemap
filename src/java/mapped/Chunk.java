@@ -457,8 +457,8 @@ public class Chunk implements IChunk {
    }
 
    public void method7138(Entity var1, AxisAlignedBB var2, List<Entity> var3, Predicate<? super Entity> var4) {
-      int var7 = MathHelper.floor((var2.field28450 - 2.0) / 16.0);
-      int var8 = MathHelper.floor((var2.field28453 + 2.0) / 16.0);
+      int var7 = MathHelper.floor((var2.minY - 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.maxY + 2.0) / 16.0);
       var7 = MathHelper.method37775(var7, 0, this.field9120.length - 1);
       var8 = MathHelper.method37775(var8, 0, this.field9120.length - 1);
 
@@ -487,8 +487,8 @@ public class Chunk implements IChunk {
    }
 
    public <T extends Entity> void method7139(EntityType<?> var1, AxisAlignedBB var2, List<? super T> var3, Predicate<? super T> var4) {
-      int var7 = MathHelper.floor((var2.field28450 - 2.0) / 16.0);
-      int var8 = MathHelper.floor((var2.field28453 + 2.0) / 16.0);
+      int var7 = MathHelper.floor((var2.minY - 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.maxY + 2.0) / 16.0);
       var7 = MathHelper.method37775(var7, 0, this.field9120.length - 1);
       var8 = MathHelper.method37775(var8, 0, this.field9120.length - 1);
 
@@ -502,8 +502,8 @@ public class Chunk implements IChunk {
    }
 
    public <T extends Entity> void method7140(Class<? extends T> var1, AxisAlignedBB var2, List<T> var3, Predicate<? super T> var4) {
-      int var7 = MathHelper.floor((var2.field28450 - 2.0) / 16.0);
-      int var8 = MathHelper.floor((var2.field28453 + 2.0) / 16.0);
+      int var7 = MathHelper.floor((var2.minY - 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.maxY + 2.0) / 16.0);
       var7 = MathHelper.method37775(var7, 0, this.field9120.length - 1);
       var8 = MathHelper.method37775(var8, 0, this.field9120.length - 1);
 

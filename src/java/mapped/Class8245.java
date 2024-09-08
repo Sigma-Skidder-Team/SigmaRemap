@@ -29,7 +29,7 @@ public class Class8245 implements GameVersion {
       this.field35426 = "1.16.4";
       this.field35427 = true;
       this.field35428 = 2584;
-      this.field35429 = SharedConstants.method34774();
+      this.field35429 = SharedConstants.getProtocolVersion();
       this.field35430 = 6;
       this.field35431 = new Date();
       this.field35432 = "1.16.4";

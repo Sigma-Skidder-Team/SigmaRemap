@@ -58,9 +58,9 @@ public class OldAACSpeed extends Module {
             } else if (this.getBooleanValueFromSetttingName("Auto Jump") && ColorUtils.method17686()) {
                 this.field23536 = 0;
                 mc.player.method2914();
-                var1.method13993(mc.player.method3433().x);
-                var1.method13995(mc.player.method3433().y);
-                var1.method13997(mc.player.method3433().z);
+                var1.method13993(mc.player.getVec().x);
+                var1.method13995(mc.player.getVec().y);
+                var1.method13997(mc.player.getVec().z);
             } else if (var1.method13994() != 0.4 + (double) Class9567.method37079() * 0.1) {
                 this.field23537 = 0;
             } else {

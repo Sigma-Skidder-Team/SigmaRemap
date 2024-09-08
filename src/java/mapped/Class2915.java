@@ -18,7 +18,7 @@ public class Class2915 extends Class2914 {
       int var8 = var2.nextInt(3) + 3;
       int var9 = var2.nextInt(3) + 3;
       int var10 = var2.nextInt(3) + 1;
-      Mutable var11 = var3.method8354();
+      BlockPos.Mutable var11 = var3.method8354();
 
       for (int var12 = 0; var12 <= var8; var12++) {
          for (int var13 = 0; var13 <= var7; var13++) {

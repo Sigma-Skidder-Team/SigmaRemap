@@ -1615,12 +1615,12 @@ public class Shaders {
     }
 
     private static void method32988(String var0) {
-        field40591.ingameGUI.getChatGUI().method5930(new StringTextComponent(var0));
+        field40591.ingameGUI.getChatGUI().sendChatMessage(new StringTextComponent(var0));
     }
 
     private static void method32989(String var0) {
         Class7399.method23632(var0);
-        field40591.ingameGUI.getChatGUI().method5930(new StringTextComponent(var0));
+        field40591.ingameGUI.getChatGUI().sendChatMessage(new StringTextComponent(var0));
     }
 
     public static void method32990(String var0, IntBuffer var1) {
@@ -3222,10 +3222,10 @@ public class Shaders {
             float var6 = (float) field40644 * 0.01F;
             float var7 = (float) Math.exp(Math.log(0.5) * (double) var6 / (double) (field40650 < field40649 ? field40652 : field40651));
             field40650 = field40650 * var7 + field40649 * (1.0F - var7);
-            Entity var8 = var1.method37509();
+            Entity var8 = var1.getRenderViewEntity();
             if (var8 != null) {
                 field40611 = var8 instanceof LivingEntity && ((LivingEntity) var8).isSleeping();
-                field40659 = (float) var1.method37504().method11321();
+                field40659 = (float) var1.getPos().getY();
                 field40656 = field40591.getRenderManager().method32208(var8, var2);
                 float var9 = (float) field40644 * 0.01F;
                 float var10 = (float) Math.exp(Math.log(0.5) * (double) var9 / (double) field40653);
@@ -3488,8 +3488,8 @@ public class Shaders {
     }
 
     public static void method33050(MatrixStack var0, ActiveRenderInfo var1, float var2) {
-        Entity var3 = var1.method37509();
-        Vector3d var4 = var1.method37504();
+        Entity var3 = var1.getRenderViewEntity();
+        Vector3d var4 = var1.getPos();
         double var5 = var4.x;
         double var7 = var4.y;
         double var9 = var4.z;
@@ -3534,8 +3534,8 @@ public class Shaders {
     }
 
     public static void method33053(MatrixStack var0, ActiveRenderInfo var1, float var2) {
-        Entity var3 = var1.method37509();
-        Vector3d var4 = var1.method37504();
+        Entity var3 = var1.getRenderViewEntity();
+        Vector3d var4 = var1.getPos();
         double var5 = var4.x;
         double var7 = var4.y;
         double var9 = var4.z;

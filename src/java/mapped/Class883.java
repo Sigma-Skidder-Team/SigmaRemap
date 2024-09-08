@@ -42,7 +42,7 @@ public class Class883 extends ProjectileEntity {
    @Override
    public void tick() {
       super.tick();
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       RayTraceResult var4 = Class9456.method36385(this, this::method3467);
       if (var4 != null) {
          this.method3464(var4);
@@ -58,7 +58,7 @@ public class Class883 extends ProjectileEntity {
          if (!this.method3255()) {
             this.method3434(var3.method11344(0.99F));
             if (!this.method3247()) {
-               this.method3434(this.method3433().method11339(0.0, -0.06F, 0.0));
+               this.method3434(this.getVec().method11339(0.0, -0.06F, 0.0));
             }
 
             this.setPosition(var5, var7, var9);

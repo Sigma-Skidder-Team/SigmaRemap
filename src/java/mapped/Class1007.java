@@ -147,7 +147,7 @@ public class Class1007 extends Class1006 implements Class1008 {
       this.field5632 = this.field5633;
       if (!this.getShouldBeDead()) {
          this.method4320();
-         Vector3d var42 = this.method3433();
+         Vector3d var42 = this.getVec();
          float var44 = 0.2F / (MathHelper.method37766(method3234(var42)) * 10.0F + 1.0F);
          var44 *= (float)Math.pow(2.0, var42.y);
          if (!this.field5639.method32672().method23358()) {
@@ -195,7 +195,7 @@ public class Class1007 extends Class1006 implements Class1008 {
                      var11 = MathHelper.method37778(var11 / var18, (double)(-var17), (double)var17);
                   }
 
-                  this.method3434(this.method3433().method11339(0.0, var11 * 0.01, 0.0));
+                  this.method3434(this.getVec().method11339(0.0, var11 * 0.01, 0.0));
                   this.rotationYaw = MathHelper.method37792(this.rotationYaw);
                   double var20 = MathHelper.method37778(
                      MathHelper.method37793(180.0 - MathHelper.method37814(var9, var13) * 180.0F / (float)Math.PI - (double)this.rotationYaw), -50.0, 50.0
@@ -203,7 +203,7 @@ public class Class1007 extends Class1006 implements Class1008 {
                   Vector3d var22 = var6.method11337(this.getPosX(), this.getPosY(), this.getPosZ()).method11333();
                   Vector3d var23 = new Vector3d(
                         (double) MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)),
-                        this.method3433().y,
+                        this.getVec().y,
                         (double)(-MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)))
                      )
                      .method11333();
@@ -215,14 +215,14 @@ public class Class1007 extends Class1006 implements Class1008 {
                   float var26 = 0.06F;
                   this.method3265(0.06F * (var24 * var25 + (1.0F - var25)), new Vector3d(0.0, 0.0, -1.0));
                   if (!this.field5634) {
-                     this.move(Class2107.field13742, this.method3433());
+                     this.move(Class2107.field13742, this.getVec());
                   } else {
-                     this.move(Class2107.field13742, this.method3433().method11344(0.8F));
+                     this.move(Class2107.field13742, this.getVec().method11344(0.8F));
                   }
 
-                  Vector3d var27 = this.method3433().method11333();
+                  Vector3d var27 = this.getVec().method11333();
                   double var28 = 0.8 + 0.15 * (var27.method11334(var23) + 1.0) / 2.0;
-                  this.method3434(this.method3433().method11347(var28, 0.91F, var28));
+                  this.method3434(this.getVec().method11347(var28, 0.91F, var28));
                }
             } else {
                if (this.field4985 > 0) {
@@ -382,8 +382,8 @@ public class Class1007 extends Class1006 implements Class1008 {
    }
 
    private void method4321(List<Entity> var1) {
-      double var4 = (this.field5626.getBoundingBox().field28449 + this.field5626.getBoundingBox().field28452) / 2.0;
-      double var6 = (this.field5626.getBoundingBox().field28451 + this.field5626.getBoundingBox().field28454) / 2.0;
+      double var4 = (this.field5626.getBoundingBox().minX + this.field5626.getBoundingBox().maxX) / 2.0;
+      double var6 = (this.field5626.getBoundingBox().minZ + this.field5626.getBoundingBox().maxZ) / 2.0;
 
       for (Entity var9 : var1) {
          if (var9 instanceof LivingEntity) {
@@ -413,12 +413,12 @@ public class Class1007 extends Class1006 implements Class1008 {
    }
 
    private boolean method4324(AxisAlignedBB var1) {
-      int var4 = MathHelper.floor(var1.field28449);
-      int var5 = MathHelper.floor(var1.field28450);
-      int var6 = MathHelper.floor(var1.field28451);
-      int var7 = MathHelper.floor(var1.field28452);
-      int var8 = MathHelper.floor(var1.field28453);
-      int var9 = MathHelper.floor(var1.field28454);
+      int var4 = MathHelper.floor(var1.minX);
+      int var5 = MathHelper.floor(var1.minY);
+      int var6 = MathHelper.floor(var1.minZ);
+      int var7 = MathHelper.floor(var1.maxX);
+      int var8 = MathHelper.floor(var1.maxY);
+      int var9 = MathHelper.floor(var1.maxZ);
       boolean var10 = false;
       boolean var11 = false;
 

@@ -103,7 +103,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
 
    @Override
    public void method2871() {
-      Vector3d var3 = this.method3433().method11347(1.0, 0.6, 1.0);
+      Vector3d var3 = this.getVec().method11347(1.0, 0.6, 1.0);
       if (!this.world.isRemote && this.method5014(0) > 0) {
          Entity var4 = this.world.getEntityByID(this.method5014(0));
          if (var4 != null) {

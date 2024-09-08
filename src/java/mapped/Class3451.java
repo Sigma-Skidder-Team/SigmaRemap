@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -31,7 +32,7 @@ public class Class3451 extends Class3452 implements Class3449 {
    }
 
    @Override
-   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Fluid var4) {
+   public boolean method11531(IBlockReader var1, BlockPos var2, BlockState var3, Fluid var4) {
       return false;
    }
 

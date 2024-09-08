@@ -61,8 +61,8 @@ public class AntiVoid extends Module {
                     var8 = true;
                 }
 
-                if (mc.player.method3433().y < -0.08 && !var8) {
-                    this.field23837 = this.field23837 - mc.player.method3433().y;
+                if (mc.player.getVec().y < -0.08 && !var8) {
+                    this.field23837 = this.field23837 - mc.player.getVec().y;
                 } else if (mc.player.onGround) {
                     this.field23837 = 0.0;
                 }
@@ -116,9 +116,9 @@ public class AntiVoid extends Module {
     }
 
     private void method16668(String var1, Class4435 var2) {
-        double var5 = mc.player.getPositionVec().method11320();
-        double var7 = mc.player.getPositionVec().method11321();
-        double var9 = mc.player.getPositionVec().method11322();
+        double var5 = mc.player.getPositionVec().getX();
+        double var7 = mc.player.getPositionVec().getY();
+        double var9 = mc.player.getPositionVec().getZ();
         if (var1.equals("Cubecraft") && !ColorUtils.method17718()) {
             var1 = "Motion";
         }

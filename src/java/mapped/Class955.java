@@ -8,6 +8,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 
 import java.util.Iterator;
 import java.util.List;
@@ -112,7 +113,7 @@ public class Class955 extends TileEntity implements Class935 {
                      }
 
                      if (!(var13 instanceof ServerPlayerEntity)) {
-                        Vector3d var14 = var13.method3433();
+                        Vector3d var14 = var13.getVec();
                         double var15 = var14.x;
                         double var17 = var14.y;
                         double var19 = var14.z;
@@ -182,10 +183,10 @@ public class Class955 extends TileEntity implements Class935 {
    private static boolean method3858(AxisAlignedBB var0, Entity var1) {
       return var1.method3422() == Class2315.field15862
          && var1.method3226()
-         && var1.getPosX() >= var0.field28449
-         && var1.getPosX() <= var0.field28452
-         && var1.getPosZ() >= var0.field28451
-         && var1.getPosZ() <= var0.field28454;
+         && var1.getPosX() >= var0.minX
+         && var1.getPosX() <= var0.maxX
+         && var1.getPosZ() >= var0.minZ
+         && var1.getPosZ() <= var0.maxZ;
    }
 
    private boolean method3859() {
@@ -199,18 +200,18 @@ public class Class955 extends TileEntity implements Class935 {
    private static double method3861(AxisAlignedBB var0, Direction var1, AxisAlignedBB var2) {
       switch (Class8024.field34487[var1.ordinal()]) {
          case 1:
-            return var0.field28452 - var2.field28449;
+            return var0.maxX - var2.minX;
          case 2:
-            return var2.field28452 - var0.field28449;
+            return var2.maxX - var0.minX;
          case 3:
          default:
-            return var0.field28453 - var2.field28450;
+            return var0.maxY - var2.minY;
          case 4:
-            return var2.field28453 - var0.field28450;
+            return var2.maxY - var0.minY;
          case 5:
-            return var0.field28454 - var2.field28451;
+            return var0.maxZ - var2.minZ;
          case 6:
-            return var2.field28454 - var0.field28451;
+            return var2.maxZ - var0.minZ;
       }
    }
 
@@ -317,7 +318,7 @@ public class Class955 extends TileEntity implements Class935 {
       return var1;
    }
 
-   public VoxelShape method3866(Class1665 var1, BlockPos var2) {
+   public VoxelShape method3866(IBlockReader var1, BlockPos var2) {
       VoxelShape var5;
       if (!this.field5363 && this.field5364) {
          var5 = this.field5361.method23465(Class3435.field19202, Boolean.valueOf(true)).method23414(var1, var2);

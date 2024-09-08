@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -17,7 +18,7 @@ public class Class3353 extends Class3350 {
    }
 
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return new Class986();
    }
 

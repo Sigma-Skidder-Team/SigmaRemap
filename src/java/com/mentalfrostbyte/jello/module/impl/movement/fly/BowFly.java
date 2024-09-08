@@ -61,8 +61,8 @@ public class BowFly extends Module {
                 double var13 = Math.sin(Math.toRadians(var10));
                 var1.method13993((double) var8 * var6 * var11 + (double) var9 * var6 * var13);
                 var1.method13997((double) var8 * var6 * var13 - (double) var9 * var6 * var11);
-                mc.player.method3433().x = var1.method13992();
-                mc.player.method3433().y = var1.method13994();
+                mc.player.getVec().x = var1.method13992();
+                mc.player.getVec().y = var1.method13994();
             } else {
                 var1.method13993(0.0);
                 var1.method13997(0.0);
@@ -103,7 +103,7 @@ public class BowFly extends Module {
                         var5 -= 180.0F;
                     }
 
-                    if (mc.player.method3433().y < -0.1) {
+                    if (mc.player.getVec().y < -0.1) {
                         var6 = 90.0F;
                     }
 
@@ -111,7 +111,7 @@ public class BowFly extends Module {
                     var1.method13918(var5);
                     if (mc.player.onGround && mc.player.collidedVertically) {
                         mc.player.method2914();
-                    } else if (!(mc.player.method3433().y < 0.0)) {
+                    } else if (!(mc.player.getVec().y < 0.0)) {
                         if (mc.timer.timerSpeed == 0.1F) {
                             mc.timer.timerSpeed = 1.0F;
                         }

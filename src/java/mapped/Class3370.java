@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class3370 extends Class3241 {
@@ -14,7 +15,7 @@ public class Class3370 extends Class3241 {
    }
 
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return new Class960();
    }
 
@@ -31,7 +32,7 @@ public class Class3370 extends Class3241 {
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       return ItemStack.EMPTY;
    }
 }

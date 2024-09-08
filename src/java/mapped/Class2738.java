@@ -31,8 +31,8 @@ public class Class2738 extends Class2737 {
    @Nullable
    private Vector3d method10946() {
       BlockPos var3 = this.field17258.getPosition();
-      Mutable var4 = new Mutable();
-      Mutable var5 = new Mutable();
+      BlockPos.Mutable var4 = new BlockPos.Mutable();
+      BlockPos.Mutable var5 = new BlockPos.Mutable();
 
       for (BlockPos var7 : BlockPos.method8364(
          MathHelper.floor(this.field17258.getPosX() - 3.0),

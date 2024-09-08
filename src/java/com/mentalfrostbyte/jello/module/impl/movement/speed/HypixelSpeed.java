@@ -45,7 +45,7 @@ public class HypixelSpeed extends Module {
 
     @Override
     public void onDisable() {
-        if (this.field23418 == Class2094.field13641 && mc.player.method3433().y > 0.0 && this.field23414 == 0) {
+        if (this.field23418 == Class2094.field13641 && mc.player.getVec().y > 0.0 && this.field23414 == 0) {
             ColorUtils.method17725(-Class9567.method37080() - 1.0E-5 - 0.0625);
         }
 

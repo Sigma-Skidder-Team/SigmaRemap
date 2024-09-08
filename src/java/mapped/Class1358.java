@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.impl.world.AutoFarm;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.util.Hand;
@@ -17,7 +18,7 @@ public class Class1358 implements Runnable {
 
    @Override
    public void run() {
-      AutoFarm.mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, Class9217.method34567(this.field7245[0], this.field7245[1], 4.5F)));
+      AutoFarm.mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, BlockUtil.method34567(this.field7245[0], this.field7245[1], 4.5F)));
       AutoFarm.mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
    }
 }

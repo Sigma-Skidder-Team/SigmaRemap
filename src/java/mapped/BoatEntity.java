@@ -182,10 +182,10 @@ public class BoatEntity extends Entity {
    @Override
    public void method3101(Entity var1) {
       if (!(var1 instanceof BoatEntity)) {
-         if (var1.getBoundingBox().field28450 <= this.getBoundingBox().field28450) {
+         if (var1.getBoundingBox().minY <= this.getBoundingBox().minY) {
             super.method3101(var1);
          }
-      } else if (var1.getBoundingBox().field28450 < this.getBoundingBox().field28453) {
+      } else if (var1.getBoundingBox().minY < this.getBoundingBox().maxY) {
          super.method3101(var1);
       }
    }
@@ -272,7 +272,7 @@ public class BoatEntity extends Entity {
             this.world.method6811(new CSteerBoatPacket(this.method4161(0), this.method4161(1)));
          }
 
-         this.move(Class2107.field13742, this.method3433());
+         this.move(Class2107.field13742, this.getVec());
       }
 
       this.method4148();
@@ -343,7 +343,7 @@ public class BoatEntity extends Entity {
             int var4 = 60 - var3 - 1;
             if (var4 > 0 && var3 == 0) {
                this.method4166(0);
-               Vector3d var5 = this.method3433();
+               Vector3d var5 = this.getVec();
                if (!this.field5551) {
                   this.method3435(var5.x, !this.method3410(PlayerEntity.class) ? 0.6 : 2.7, var5.z);
                } else {
@@ -428,20 +428,20 @@ public class BoatEntity extends Entity {
             return Class2096.field13655;
          }
       } else {
-         this.field5545 = this.getBoundingBox().field28453;
+         this.field5545 = this.getBoundingBox().maxY;
          return var3;
       }
    }
 
    public float method4154() {
       AxisAlignedBB var3 = this.getBoundingBox();
-      int var4 = MathHelper.floor(var3.field28449);
-      int var5 = MathHelper.method37774(var3.field28452);
-      int var6 = MathHelper.floor(var3.field28453);
-      int var7 = MathHelper.method37774(var3.field28453 - this.field5549);
-      int var8 = MathHelper.floor(var3.field28451);
-      int var9 = MathHelper.method37774(var3.field28454);
-      Mutable var10 = new Mutable();
+      int var4 = MathHelper.floor(var3.minX);
+      int var5 = MathHelper.method37774(var3.maxX);
+      int var6 = MathHelper.floor(var3.maxY);
+      int var7 = MathHelper.method37774(var3.maxY - this.field5549);
+      int var8 = MathHelper.floor(var3.minZ);
+      int var9 = MathHelper.method37774(var3.maxZ);
+      BlockPos.Mutable var10 = new BlockPos.Mutable();
 
       label45:
       for (int var11 = var6; var11 < var7; var11++) {
@@ -471,17 +471,17 @@ public class BoatEntity extends Entity {
 
    public float method4155() {
       AxisAlignedBB var3 = this.getBoundingBox();
-      AxisAlignedBB var4 = new AxisAlignedBB(var3.field28449, var3.field28450 - 0.001, var3.field28451, var3.field28452, var3.field28450, var3.field28454);
-      int var5 = MathHelper.floor(var4.field28449) - 1;
-      int var6 = MathHelper.method37774(var4.field28452) + 1;
-      int var7 = MathHelper.floor(var4.field28450) - 1;
-      int var8 = MathHelper.method37774(var4.field28453) + 1;
-      int var9 = MathHelper.floor(var4.field28451) - 1;
-      int var10 = MathHelper.method37774(var4.field28454) + 1;
+      AxisAlignedBB var4 = new AxisAlignedBB(var3.minX, var3.minY - 0.001, var3.minZ, var3.maxX, var3.minY, var3.maxZ);
+      int var5 = MathHelper.floor(var4.minX) - 1;
+      int var6 = MathHelper.method37774(var4.maxX) + 1;
+      int var7 = MathHelper.floor(var4.minY) - 1;
+      int var8 = MathHelper.method37774(var4.maxY) + 1;
+      int var9 = MathHelper.floor(var4.minZ) - 1;
+      int var10 = MathHelper.method37774(var4.maxZ) + 1;
       VoxelShape var11 = VoxelShapes.create(var4);
       float var12 = 0.0F;
       int var13 = 0;
-      Mutable var14 = new Mutable();
+      BlockPos.Mutable var14 = new BlockPos.Mutable();
 
       for (int var15 = var5; var15 < var6; var15++) {
          for (int var16 = var9; var16 < var10; var16++) {
@@ -509,15 +509,15 @@ public class BoatEntity extends Entity {
 
    private boolean method4156() {
       AxisAlignedBB var3 = this.getBoundingBox();
-      int var4 = MathHelper.floor(var3.field28449);
-      int var5 = MathHelper.method37774(var3.field28452);
-      int var6 = MathHelper.floor(var3.field28450);
-      int var7 = MathHelper.method37774(var3.field28450 + 0.001);
-      int var8 = MathHelper.floor(var3.field28451);
-      int var9 = MathHelper.method37774(var3.field28454);
+      int var4 = MathHelper.floor(var3.minX);
+      int var5 = MathHelper.method37774(var3.maxX);
+      int var6 = MathHelper.floor(var3.minY);
+      int var7 = MathHelper.method37774(var3.minY + 0.001);
+      int var8 = MathHelper.floor(var3.minZ);
+      int var9 = MathHelper.method37774(var3.maxZ);
       boolean var10 = false;
       this.field5545 = Double.MIN_VALUE;
-      Mutable var11 = new Mutable();
+      BlockPos.Mutable var11 = new BlockPos.Mutable();
 
       for (int var12 = var4; var12 < var5; var12++) {
          for (int var13 = var6; var13 < var7; var13++) {
@@ -527,7 +527,7 @@ public class BoatEntity extends Entity {
                if (var15.method23486(Class8953.field40469)) {
                   float var16 = (float)var13 + var15.method23475(this.world, var11);
                   this.field5545 = Math.max((double)var16, this.field5545);
-                  var10 |= var3.field28450 < (double)var16;
+                  var10 |= var3.minY < (double)var16;
                }
             }
          }
@@ -539,15 +539,15 @@ public class BoatEntity extends Entity {
    @Nullable
    private Class2096 method4157() {
       AxisAlignedBB var3 = this.getBoundingBox();
-      double var4 = var3.field28453 + 0.001;
-      int var6 = MathHelper.floor(var3.field28449);
-      int var7 = MathHelper.method37774(var3.field28452);
-      int var8 = MathHelper.floor(var3.field28453);
+      double var4 = var3.maxY + 0.001;
+      int var6 = MathHelper.floor(var3.minX);
+      int var7 = MathHelper.method37774(var3.maxX);
+      int var8 = MathHelper.floor(var3.maxY);
       int var9 = MathHelper.method37774(var4);
-      int var10 = MathHelper.floor(var3.field28451);
-      int var11 = MathHelper.method37774(var3.field28454);
+      int var10 = MathHelper.floor(var3.minZ);
+      int var11 = MathHelper.method37774(var3.maxZ);
       boolean var12 = false;
-      Mutable var13 = new Mutable();
+      BlockPos.Mutable var13 = new BlockPos.Mutable();
 
       for (int var14 = var6; var14 < var7; var14++) {
          for (int var15 = var8; var15 < var9; var15++) {
@@ -576,7 +576,7 @@ public class BoatEntity extends Entity {
       if (this.field5548 == Class2096.field13659 && this.field5547 != Class2096.field13659 && this.field5547 != Class2096.field13658) {
          this.field5545 = this.method3440(1.0);
          this.setPosition(this.getPosX(), (double)(this.method4154() - this.method3430()) + 0.101, this.getPosZ());
-         this.method3434(this.method3433().method11347(1.0, 0.0, 1.0));
+         this.method3434(this.getVec().method11347(1.0, 0.0, 1.0));
          this.field5549 = 0.0;
          this.field5547 = Class2096.field13655;
       } else {
@@ -606,11 +606,11 @@ public class BoatEntity extends Entity {
             this.field5532 = 0.9F;
          }
 
-         Vector3d var9 = this.method3433();
+         Vector3d var9 = this.getVec();
          this.method3435(var9.x * (double)this.field5532, var9.y + var5, var9.z * (double)this.field5532);
          this.field5534 = this.field5534 * this.field5532;
          if (var7 > 0.0) {
-            Vector3d var10 = this.method3433();
+            Vector3d var10 = this.getVec();
             this.method3435(var10.x, (var10.y + var7 * 0.06153846016296973) * 0.75, var10.z);
          }
       }
@@ -641,7 +641,7 @@ public class BoatEntity extends Entity {
          }
 
          this.method3434(
-            this.method3433()
+            this.getVec()
                .method11339(
                   (double)(MathHelper.sin(-this.rotationYaw * (float) (Math.PI / 180.0)) * var3),
                   0.0,
@@ -688,7 +688,7 @@ public class BoatEntity extends Entity {
       Vector3d var4 = method3419((double)(this.method3429() * MathHelper.field45205), (double)var1.method3429(), this.rotationYaw);
       double var5 = this.getPosX() + var4.x;
       double var7 = this.getPosZ() + var4.z;
-      BlockPos var9 = new BlockPos(var5, this.getBoundingBox().field28453, var7);
+      BlockPos var9 = new BlockPos(var5, this.getBoundingBox().maxY, var7);
       BlockPos var10 = var9.down();
       if (!this.world.method7013(var10)) {
          double var11 = (double)var9.getY() + this.world.method7039(var9);
@@ -757,7 +757,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public void method2761(double var1, boolean var3, BlockState var4, BlockPos var5) {
-      this.field5549 = this.method3433().y;
+      this.field5549 = this.getVec().y;
       if (!this.isPassenger()) {
          if (!var3) {
             if (!this.world.getFluidState(this.getPosition().down()).method23486(Class8953.field40469) && var1 < 0.0) {

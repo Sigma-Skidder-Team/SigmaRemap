@@ -12,7 +12,7 @@ public class Class6830 extends Class6829 {
    @Override
    public void method20810() {
       if (this.field29715.method3263(Class8953.field40469)) {
-         this.field29715.method3434(this.field29715.method3433().method11339(0.0, 0.005, 0.0));
+         this.field29715.method3434(this.field29715.getVec().method11339(0.0, 0.005, 0.0));
       }
 
       if (this.field29714 == Class2335.field15967 && !this.field29715.method4230().method21664()) {
@@ -23,7 +23,7 @@ public class Class6830 extends Class6829 {
          double var8 = this.field29710 - this.field29715.getPosZ();
          if (var6 != 0.0) {
             double var11 = (double) MathHelper.method37766(var4 * var4 + var6 * var6 + var8 * var8);
-            this.field29715.method3434(this.field29715.method3433().method11339(0.0, (double)this.field29715.method2918() * (var6 / var11) * 0.1, 0.0));
+            this.field29715.method3434(this.field29715.getVec().method11339(0.0, (double)this.field29715.method2918() * (var6 / var11) * 0.1, 0.0));
          }
 
          if (var4 != 0.0 || var8 != 0.0) {

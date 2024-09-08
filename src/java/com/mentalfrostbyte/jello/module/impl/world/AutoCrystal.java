@@ -236,20 +236,20 @@ public class AutoCrystal extends PremiumModule {
         GL11.glDisable(2929);
 
         for (BlockPos var6 : this.field23637) {
-            double var7 = (double) var6.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
-            double var9 = (double) var6.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-            double var11 = (double) var6.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
-            Class9388 var13 = new Class9388(var7, var9 + 1.0, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
+            double var7 = (double) var6.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+            double var9 = (double) var6.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
+            double var11 = (double) var6.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
+            Box3D var13 = new Box3D(var7, var9 + 1.0, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
             RenderUtil.render3DColoredBox(var13, var4);
         }
 
         var4 = ColorUtils.applyAlpha(9000000, 1.0F);
         if (this.field23633 != null) {
-            double var14 = this.field23633.getPosX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
-            double var19 = this.field23633.getPosY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321() + 0.5;
-            double var20 = this.field23633.getPosZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
+            double var14 = this.field23633.getPosX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+            double var19 = this.field23633.getPosY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY() + 0.5;
+            double var20 = this.field23633.getPosZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
             float var16 = 0.3F;
-            Class9388 var17 = new Class9388(var14 - (double) var16, var19 + 0.9, var20 - (double) var16, var14 + (double) var16, var19 + 1.0, var20 + (double) var16);
+            Box3D var17 = new Box3D(var14 - (double) var16, var19 + 0.9, var20 - (double) var16, var14 + (double) var16, var19 + 1.0, var20 + (double) var16);
             RenderUtil.render3DColoredBox(var17, var4);
         }
 

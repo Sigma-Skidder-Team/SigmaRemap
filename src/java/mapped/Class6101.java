@@ -25,7 +25,7 @@ public class Class6101 {
    private final List<Pair<Class8363, Collection<Class8262>>> field27354 = Lists.newArrayList();
    private Class9494 field27355;
    private int field27356 = 0;
-   private Mutable field27357;
+   private BlockPos.Mutable field27357;
 
    public Class6101(Collection<Class8363> var1, BlockPos var2, Class80 var3, ServerWorld var4, Class7879 var5, int var6) {
       this.field27357 = var2.method8354();

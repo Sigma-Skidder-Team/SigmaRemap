@@ -9,36 +9,37 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 
 public class ActiveRenderInfo {
-   private static String[] field45004;
-   private boolean field45005;
-   private Class1665 field45006;
-   private Entity field45007;
-   private Vector3d field45008 = Vector3d.ZERO;
-   private final Mutable field45009 = new Mutable();
-   private final Vector3f field45010 = new Vector3f(0.0F, 0.0F, 1.0F);
-   private final Vector3f field45011 = new Vector3f(0.0F, 1.0F, 0.0F);
-   private final Vector3f field45012 = new Vector3f(1.0F, 0.0F, 0.0F);
-   private float field45013;
-   private float field45014;
-   private final Class8661 field45015 = new Class8661(0.0F, 0.0F, 0.0F, 1.0F);
-   private boolean field45016;
-   private boolean field45017;
-   private float field45018;
-   private float field45019;
+   private boolean valid;
+   private IBlockReader world;
+   private Entity renderViewEntity;
+   private Vector3d pos = Vector3d.ZERO;
+   private final BlockPos.Mutable blockPos = new BlockPos.Mutable();
+   private final Vector3f look = new Vector3f(0.0F, 0.0F, 1.0F);
+   private final Vector3f up = new Vector3f(0.0F, 1.0F, 0.0F);
+   private final Vector3f left = new Vector3f(1.0F, 0.0F, 0.0F);
+   private float pitch;
+   private float yaw;
+   private final Quaternion rotation = new Quaternion(0.0F, 0.0F, 0.0F, 1.0F);
+   private boolean thirdPerson;
+   private boolean thirdPersonReverse;
+   private float height;
+   private float previousHeight;
 
-   public void method37497(Class1665 var1, Entity var2, boolean var3, boolean var4, float var5) {
-      this.field45005 = true;
-      this.field45006 = var1;
-      this.field45007 = var2;
-      this.field45016 = var3;
-      this.field45017 = var4;
+   public void method37497(IBlockReader var1, Entity var2, boolean var3, boolean var4, float var5) {
+      this.valid = true;
+      this.world = var1;
+      this.renderViewEntity = var2;
+      this.thirdPerson = var3;
+      this.thirdPersonReverse = var4;
       this.method37501(var2.method3136(var5), var2.method3282(var5));
       this.method37502(
          MathHelper.lerp((double)var5, var2.prevPosX, var2.getPosX()),
-         MathHelper.lerp((double)var5, var2.prevPosY, var2.getPosY()) + (double) MathHelper.lerp(var5, this.field45019, this.field45018),
+         MathHelper.lerp((double)var5, var2.prevPosY, var2.getPosY()) + (double) MathHelper.lerp(var5, this.previousHeight, this.height),
          MathHelper.lerp((double)var5, var2.prevPosZ, var2.getPosZ())
       );
       if (!var3) {
@@ -49,7 +50,7 @@ public class ActiveRenderInfo {
          }
       } else {
          if (var4) {
-            this.method37501(this.field45014 + 180.0F, -this.field45013);
+            this.method37501(this.yaw + 180.0F, -this.pitch);
          }
 
          this.method37500(-this.method37499(4.0), 0.0, 0.0);
@@ -57,9 +58,9 @@ public class ActiveRenderInfo {
    }
 
    public void method37498() {
-      if (this.field45007 != null) {
-         this.field45019 = this.field45018;
-         this.field45018 = this.field45018 + (this.field45007.method3393() - this.field45018) * 0.5F;
+      if (this.renderViewEntity != null) {
+         this.previousHeight = this.height;
+         this.height = this.height + (this.renderViewEntity.method3393() - this.height) * 0.5F;
       }
    }
 
@@ -71,15 +72,15 @@ public class ActiveRenderInfo {
          var6 *= 0.1F;
          var7 *= 0.1F;
          var8 *= 0.1F;
-         Vector3d var9 = this.field45008.method11339((double)var6, (double)var7, (double)var8);
+         Vector3d var9 = this.pos.method11339((double)var6, (double)var7, (double)var8);
          Vector3d var10 = new Vector3d(
-            this.field45008.x - (double)this.field45010.method25269() * var1 + (double)var6 + (double)var8,
-            this.field45008.y - (double)this.field45010.method25270() * var1 + (double)var7,
-            this.field45008.z - (double)this.field45010.method25271() * var1 + (double)var8
+            this.pos.x - (double)this.look.method25269() * var1 + (double)var6 + (double)var8,
+            this.pos.y - (double)this.look.method25270() * var1 + (double)var7,
+            this.pos.z - (double)this.look.method25271() * var1 + (double)var8
          );
-         BlockRayTraceResult var11 = this.field45006.method7036(new Class6809(var9, var10, Class2271.field14776, Class1985.field12962, this.field45007));
+         BlockRayTraceResult var11 = this.world.method7036(new Class6809(var9, var10, Class2271.field14776, Class1985.field12962, this.renderViewEntity));
          if (var11.getType() != RayTraceResult.Type.MISS) {
-            double var12 = var11.method31419().method11341(this.field45008);
+            double var12 = var11.method31419().method11341(this.pos);
             if (var12 < var1 && !Client.getInstance().getModuleManager().getModuleByClass(CameraNoClip.class).isEnabled()) {
                var1 = var12;
             }
@@ -90,24 +91,24 @@ public class ActiveRenderInfo {
    }
 
    public void method37500(double var1, double var3, double var5) {
-      double var9 = (double)this.field45010.method25269() * var1 + (double)this.field45011.method25269() * var3 + (double)this.field45012.method25269() * var5;
-      double var11 = (double)this.field45010.method25270() * var1 + (double)this.field45011.method25270() * var3 + (double)this.field45012.method25270() * var5;
-      double var13 = (double)this.field45010.method25271() * var1 + (double)this.field45011.method25271() * var3 + (double)this.field45012.method25271() * var5;
-      this.method37503(new Vector3d(this.field45008.x + var9, this.field45008.y + var11, this.field45008.z + var13));
+      double var9 = (double)this.look.method25269() * var1 + (double)this.up.method25269() * var3 + (double)this.left.method25269() * var5;
+      double var11 = (double)this.look.method25270() * var1 + (double)this.up.method25270() * var3 + (double)this.left.method25270() * var5;
+      double var13 = (double)this.look.method25271() * var1 + (double)this.up.method25271() * var3 + (double)this.left.method25271() * var5;
+      this.method37503(new Vector3d(this.pos.x + var9, this.pos.y + var11, this.pos.z + var13));
    }
 
    public void method37501(float var1, float var2) {
-      this.field45013 = var2;
-      this.field45014 = var1;
-      this.field45015.method31185(0.0F, 0.0F, 0.0F, 1.0F);
-      this.field45015.method31182(Vector3f.YP.rotationDegrees(-var1));
-      this.field45015.method31182(Vector3f.field32898.rotationDegrees(var2));
-      this.field45010.method25275(0.0F, 0.0F, 1.0F);
-      this.field45010.method25283(this.field45015);
-      this.field45011.method25275(0.0F, 1.0F, 0.0F);
-      this.field45011.method25283(this.field45015);
-      this.field45012.method25275(1.0F, 0.0F, 0.0F);
-      this.field45012.method25283(this.field45015);
+      this.pitch = var2;
+      this.yaw = var1;
+      this.rotation.method31185(0.0F, 0.0F, 0.0F, 1.0F);
+      this.rotation.method31182(Vector3f.YP.rotationDegrees(-var1));
+      this.rotation.method31182(Vector3f.field32898.rotationDegrees(var2));
+      this.look.method25275(0.0F, 0.0F, 1.0F);
+      this.look.method25283(this.rotation);
+      this.up.method25275(0.0F, 1.0F, 0.0F);
+      this.up.method25283(this.rotation);
+      this.left.method25275(1.0F, 0.0F, 0.0F);
+      this.left.method25283(this.rotation);
    }
 
    public void method37502(double var1, double var3, double var5) {
@@ -115,68 +116,68 @@ public class ActiveRenderInfo {
    }
 
    public void method37503(Vector3d var1) {
-      this.field45008 = var1;
-      this.field45009.method8373(var1.x, var1.y, var1.z);
+      this.pos = var1;
+      this.blockPos.method8373(var1.x, var1.y, var1.z);
    }
 
-   public Vector3d method37504() {
-      return this.field45008;
+   public Vector3d getPos() {
+      return this.pos;
    }
 
-   public BlockPos method37505() {
-      return this.field45009;
+   public BlockPos getBlockPos() {
+      return this.blockPos;
    }
 
-   public float method37506() {
-      return this.field45013;
+   public float getPitch() {
+      return this.pitch;
    }
 
-   public float method37507() {
-      return this.field45014;
+   public float getYaw() {
+      return this.yaw;
    }
 
-   public Class8661 method37508() {
-      return this.field45015;
+   public Quaternion getRotation() {
+      return this.rotation;
    }
 
-   public Entity method37509() {
-      return this.field45007;
+   public Entity getRenderViewEntity() {
+      return this.renderViewEntity;
    }
 
    public boolean method37510() {
-      return this.field45005;
+      return this.valid;
    }
 
    public boolean method37511() {
-      return this.field45016;
+      return this.thirdPerson;
    }
 
    public FluidState method37512() {
-      if (!this.field45005) {
+      if (!this.valid) {
          return Class9479.field44064.method25049();
       } else {
-         FluidState var3 = this.field45006.getFluidState(this.field45009);
+         FluidState var3 = this.world.getFluidState(this.blockPos);
          return !var3.method23474()
-               && this.field45008.y >= (double)((float)this.field45009.getY() + var3.method23475(this.field45006, this.field45009))
+               && this.pos.y >= (double)((float)this.blockPos.getY() + var3.method23475(this.world, this.blockPos))
             ? Class9479.field44064.method25049()
             : var3;
       }
    }
 
    public BlockState method37513() {
-      return this.field45005 ? this.field45006.getBlockState(this.field45009) : Blocks.AIR.method11579();
+      return this.valid ? this.world.getBlockState(this.blockPos) : Blocks.AIR.method11579();
    }
 
    public void method37514(float var1, float var2) {
-      this.field45014 = var1;
-      this.field45013 = var2;
+      this.yaw = var1;
+      this.pitch = var2;
    }
 
    public BlockState method37515() {
-      if (this.field45005) {
-         BlockState var3 = this.field45006.getBlockState(this.field45009);
+      if (this.valid) {
+         BlockState var3 = this.world.getBlockState(this.blockPos);
          if (Class9299.field42828.method20214()) {
-            var3 = (BlockState)Class9299.method35070(var3, Class9299.field42828, this.field45006, this.field45009, this.field45008);
+            var3 = (BlockState)Class9299.method35070(var3, Class9299.field42828, this.world, this.blockPos, this.pos);
          }
 
          return var3;
@@ -186,16 +187,16 @@ public class ActiveRenderInfo {
    }
 
    public final Vector3f method37516() {
-      return this.field45010;
+      return this.look;
    }
 
    public final Vector3f method37517() {
-      return this.field45011;
+      return this.up;
    }
 
    public void method37518() {
-      this.field45006 = null;
-      this.field45007 = null;
-      this.field45005 = false;
+      this.world = null;
+      this.renderViewEntity = null;
+      this.valid = false;
    }
 }

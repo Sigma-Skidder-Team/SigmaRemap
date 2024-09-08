@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -29,12 +30,12 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19335[var1.<Integer>method23463(this.method12175())];
    }
 
    @Override
-   public boolean method11490(BlockState var1, Class1665 var2, BlockPos var3) {
+   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
       return var1.method23448(Blocks.FARMLAND);
    }
 
@@ -90,7 +91,7 @@ public class Class3480 extends Class3194 implements Class3196 {
       return MathHelper.method37782(var1.rand, 2, 5);
    }
 
-   public static float method12182(Block var0, Class1665 var1, BlockPos var2) {
+   public static float method12182(Block var0, IBlockReader var1, BlockPos var2) {
       float var5 = 1.0F;
       BlockPos var6 = var2.down();
 
@@ -153,12 +154,12 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       return new ItemStack(this.method12183());
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
+   public boolean method11486(IBlockReader var1, BlockPos var2, BlockState var3, boolean var4) {
       return !this.method12179(var3);
    }
 

@@ -160,7 +160,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    public void onUpdateWalkingPlayer() {
       AxisAlignedBB var3 = this.getBoundingBox();
-      Class4399 var4 = new Class4399(this.getPosX(), var3.field28450, this.getPosZ(), this.rotationPitch, this.rotationYaw, this.onGround);
+      Class4399 var4 = new Class4399(this.getPosX(), var3.minY, this.getPosZ(), this.rotationPitch, this.rotationYaw, this.onGround);
       Client.getInstance().getEventManager().call(var4);
       if (!var4.isCancelled()) {
          boolean var5 = this.method3337();
@@ -207,7 +207,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   this.connection.sendPacket(new CPlayerPacket.PositionPacket(var8, var10, var12, var16));
                }
             } else {
-               Vector3d var29 = this.method3433();
+               Vector3d var29 = this.getVec();
                this.connection.sendPacket(new CPlayerPacket.PositionRotationPacket(var29.x, -999.0, var29.z, var15, var14, var16));
                var27 = false;
             }
@@ -370,7 +370,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    @Override
    public void sendStatusMessage(ITextComponent var1, boolean var2) {
       if (!var2) {
-         this.field6132.ingameGUI.getChatGUI().method5930(var1);
+         this.field6132.ingameGUI.getChatGUI().sendChatMessage(var1);
       } else {
          this.field6132.ingameGUI.method5985(var1, false);
       }
@@ -395,7 +395,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
 
          if (var12 != null) {
-            Vector3d var24 = this.method3433();
+            Vector3d var24 = this.getVec();
             if (var12.method544() != Class113.field413) {
                this.method3435(var24.x, var24.y, 0.1 * (double)var12.method541());
             } else {
@@ -409,10 +409,10 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       AxisAlignedBB var4 = this.getBoundingBox();
       AxisAlignedBB var5 = new AxisAlignedBB(
             (double)var1.getX(),
-            var4.field28450,
+            var4.minY,
             (double)var1.getZ(),
             (double)var1.getX() + 1.0,
-            var4.field28453,
+            var4.maxY,
             (double)var1.getZ() + 1.0
          )
          .method19679(1.0E-7);
@@ -433,7 +433,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void sendMessage(ITextComponent var1, UUID var2) {
-      this.field6132.ingameGUI.getChatGUI().method5930(var1);
+      this.field6132.ingameGUI.getChatGUI().sendChatMessage(var1);
    }
 
    @Override
@@ -734,7 +734,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
 
          if (var14 != 0) {
-            this.method3434(this.method3433().method11339(0.0, (double)((float)var14 * this.abilities.getFlySpeed() * 3.0F), 0.0));
+            this.method3434(this.getVec().method11339(0.0, (double)((float)var14 * this.abilities.getFlySpeed() * 3.0F), 0.0));
          }
       }
 
@@ -878,7 +878,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          float var45 = (float)(var44.x * var43.x + var44.z * var43.z);
          if (!(var45 < -0.15F)) {
             ISelectionContext var46 = ISelectionContext.forEntity(this);
-            BlockPos var15 = new BlockPos(this.getPosX(), this.getBoundingBox().field28453, this.getPosZ());
+            BlockPos var15 = new BlockPos(this.getPosX(), this.getBoundingBox().maxY, this.getPosZ());
             BlockState var16 = this.world.getBlockState(var15);
             if (var16.getCollisionShape(this.world, var15, var46).method19516()) {
                var15 = var15.up();
@@ -909,7 +909,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   while (var32.hasNext()) {
                      AxisAlignedBB var34 = (AxisAlignedBB)var32.next();
                      if (var34.method19672(var28, var29) || var34.method19672(var30, var31)) {
-                        var33 = (float)var34.field28453;
+                        var33 = (float)var34.maxY;
                         Vector3d var35 = var34.method19685();
                         BlockPos var36 = new BlockPos(var35);
 

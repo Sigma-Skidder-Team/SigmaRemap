@@ -74,7 +74,7 @@ public class Class1094 extends Class1018 {
       super.method2914();
       double var3 = this.field5596.method20812();
       if (var3 > 0.0) {
-         double var5 = method3234(this.method3433());
+         double var5 = method3234(this.getVec());
          if (var5 < 0.01) {
             this.method3265(0.1F, new Vector3d(0.0, 0.0, 1.0));
          }

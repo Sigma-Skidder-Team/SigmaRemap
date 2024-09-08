@@ -13,17 +13,17 @@ public class Class2959 implements Class2955 {
    }
 
    @Override
-   public double method11320() {
+   public double getX() {
       return this.field18052;
    }
 
    @Override
-   public double method11321() {
+   public double getY() {
       return this.field18053;
    }
 
    @Override
-   public double method11322() {
+   public double getZ() {
       return this.field18054;
    }
 }

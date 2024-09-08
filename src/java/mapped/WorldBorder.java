@@ -35,10 +35,10 @@ public class WorldBorder {
    }
 
    public boolean method24525(AxisAlignedBB var1) {
-      return var1.field28452 > this.method24530()
-         && var1.field28449 < this.method24532()
-         && var1.field28454 > this.method24531()
-         && var1.field28451 < this.method24533();
+      return var1.maxX > this.method24530()
+         && var1.minX < this.method24532()
+         && var1.maxZ > this.method24531()
+         && var1.minZ < this.method24533();
    }
 
    public double method24526(Entity var1) {

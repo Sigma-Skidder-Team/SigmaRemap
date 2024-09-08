@@ -1,5 +1,6 @@
-package mapped;
+package net.minecraft.world;
 
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
@@ -14,7 +15,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-public interface Class1665 {
+public interface IBlockReader {
    @Nullable
    TileEntity getTileEntity(BlockPos var1);
 
@@ -105,7 +106,7 @@ public interface Class1665 {
          int var19 = MathHelper.floor(var13);
          int var20 = MathHelper.floor(var15);
          int var21 = MathHelper.floor(var17);
-         Mutable var22 = new Mutable(var19, var20, var21);
+         BlockPos.Mutable var22 = new BlockPos.Mutable(var19, var20, var21);
          Object var23 = var1.apply(var0, var22);
          if (var23 == null) {
             double var24 = var7 - var13;

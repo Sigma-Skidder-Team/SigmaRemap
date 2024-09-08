@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -19,12 +20,12 @@ public class Class3485 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19345;
    }
 
    @Override
-   public boolean method11490(BlockState var1, Class1665 var2, BlockPos var3) {
+   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
       return var1.method23446(BlockTags.field32799)
          || var1.method23448(Blocks.MYCELIUM)
          || var1.method23448(Blocks.SOUL_SOIL)
@@ -32,7 +33,7 @@ public class Class3485 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
+   public boolean method11486(IBlockReader var1, BlockPos var2, BlockState var3, boolean var4) {
       Block var7 = ((Class4709)this.field19346.get().field33887).field22337.getBlock();
       Block var8 = var1.getBlockState(var2.down()).getBlock();
       return var8 == var7;

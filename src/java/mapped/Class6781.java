@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
 import java.util.stream.IntStream;
@@ -38,7 +39,7 @@ public class Class6781 extends Class6768<Class8278> {
       boolean var22 = this.field29576.method25310((double)var4 * 0.03125, (double)var5 * 0.03125, 0.0) * 75.0 + var1.nextDouble() > 0.0;
       boolean var23 = this.field29576.method25310((double)var4 * 0.03125, 109.0, (double)var5 * 0.03125) * 75.0 + var1.nextDouble() > 0.0;
       int var24 = (int)(var7 / 3.0 + 3.0 + var1.nextDouble() * 0.25);
-      Mutable var25 = new Mutable();
+      BlockPos.Mutable var25 = new BlockPos.Mutable();
       int var26 = -1;
       BlockState var27 = var14.method28934();
       BlockState var28 = var14.method28935();

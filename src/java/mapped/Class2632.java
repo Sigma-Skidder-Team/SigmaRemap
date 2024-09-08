@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -72,7 +73,7 @@ public class Class2632 extends Class2628 {
       Random var6 = this.field16946.method3013();
       if (this.method10838() && var5 != null) {
          if (this.field16947 > 0) {
-            Vector3d var7 = this.field16946.method3433();
+            Vector3d var7 = this.field16946.getVec();
             this.field16946.method3435(var7.x, 0.3, var7.z);
             if (!var3.isRemote) {
                double var8 = 0.08;
@@ -92,7 +93,7 @@ public class Class2632 extends Class2628 {
          }
 
          if (this.field16947 % 2 == 0) {
-            Vector3d var14 = this.field16946.method3433();
+            Vector3d var14 = this.field16946.getVec();
             this.field16946.method3435(var14.x, -0.3, var14.z);
             if (this.field16947 % 6 == 0) {
                this.method10842(var3, this.field16933);
@@ -129,7 +130,7 @@ public class Class2632 extends Class2628 {
    }
 
    @Nullable
-   private BlockPos method10844(BlockPos var1, Class1665 var2) {
+   private BlockPos method10844(BlockPos var1, IBlockReader var2) {
       if (var2.getBlockState(var1).method23448(this.field16945)) {
          return var1;
       } else {

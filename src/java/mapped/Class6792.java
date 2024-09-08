@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Quaternion;
+
 public class Class6792 {
    private static String[] field29587;
    public static final Class6792 field29588 = new Class6792(new Vector3f(), new Vector3f(), new Vector3f(1.0F, 1.0F, 1.0F));
@@ -25,7 +27,7 @@ public class Class6792 {
 
          int var8 = !var1 ? 1 : -1;
          var2.translate((double)((float)var8 * this.field29590.method25269()), (double)this.field29590.method25270(), (double)this.field29590.method25271());
-         var2.rotate(new Class8661(var5, var6, var7, true));
+         var2.rotate(new Quaternion(var5, var6, var7, true));
          var2.method35292(this.field29591.method25269(), this.field29591.method25270(), this.field29591.method25271());
       }
    }

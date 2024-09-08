@@ -394,9 +394,9 @@ public class KillAura extends Module {
                 var1.lastTickPosZ + (var1.getPosZ() - var1.lastTickPosZ) * var4
         );
         GL11.glTranslated(
-                -mc.gameRenderer.getActiveRenderInfo().method37504().method11320(),
-                -mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
-                -mc.gameRenderer.getActiveRenderInfo().method37504().method11322()
+                -mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
+                -mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+                -mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
         );
         GL11.glEnable(32823);
         GL11.glEnable(3008);
@@ -411,9 +411,9 @@ public class KillAura extends Module {
         this.method16826(var8, 0.45F * var9, 0.6F, 0.35F * var9, this.field23961.get(var1).calcPercent());
         GL11.glPushMatrix();
         GL11.glTranslated(
-                mc.gameRenderer.getActiveRenderInfo().method37504().method11320(),
-                mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
-                mc.gameRenderer.getActiveRenderInfo().method37504().method11322()
+                mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
+                mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+                mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
         );
         GL11.glPopMatrix();
         GL11.glEnable(3553);
@@ -493,7 +493,7 @@ public class KillAura extends Module {
         } else if (this.field23940 == 1) {
             this.field23940 = 0;
             var8 = false;
-            if (var2.equals("Hypixel") && this.field23960 != null && mc.player.method3433().y < 0.0) {
+            if (var2.equals("Hypixel") && this.field23960 != null && mc.player.getVec().y < 0.0) {
                 mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(this.field23960[0], this.field23960[1], this.field23960[2], false));
                 this.field23960 = null;
             }

@@ -151,7 +151,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       } else {
          int[][] var5 = Class4527.method14422(var4);
          BlockPos var6 = this.getPosition();
-         Mutable var7 = new Mutable();
+         BlockPos.Mutable var7 = new BlockPos.Mutable();
          ImmutableList var8 = var1.method2982();
          UnmodifiableIterator var9 = var8.iterator();
 
@@ -180,7 +180,7 @@ public abstract class AbstractMinecartEntity extends Entity {
             }
          }
 
-         double var10 = this.getBoundingBox().field28453;
+         double var10 = this.getBoundingBox().maxY;
          var7.method8373((double)var6.getX(), var10, (double)var6.getZ());
          UnmodifiableIterator var29 = var8.iterator();
 
@@ -280,7 +280,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       this.method3324();
       if (!this.world.isRemote) {
          if (!this.method3247()) {
-            this.method3434(this.method3433().method11339(0.0, -0.04, 0.0));
+            this.method3434(this.getVec().method11339(0.0, -0.04, 0.0));
          }
 
          int var3 = MathHelper.floor(this.getPosX());
@@ -319,7 +319,7 @@ public abstract class AbstractMinecartEntity extends Entity {
          }
 
          this.setRotation(this.rotationYaw, this.rotationPitch);
-         if (this.getMinecartType() == MinecartType.MINECART && method3234(this.method3433()) > 0.01) {
+         if (this.getMinecartType() == MinecartType.MINECART && method3234(this.getVec()) > 0.01) {
             List var25 = this.world.method6770(this, this.getBoundingBox().method19663(0.2F, 0.0, 0.2F), Class8088.method27981(this));
             if (!var25.isEmpty()) {
                for (int var26 = 0; var26 < var25.size(); var26++) {
@@ -375,15 +375,15 @@ public abstract class AbstractMinecartEntity extends Entity {
 
    public void method3590() {
       double var3 = this.method3588();
-      Vector3d var5 = this.method3433();
+      Vector3d var5 = this.getVec();
       this.method3435(MathHelper.method37778(var5.x, -var3, var3), var5.y, MathHelper.method37778(var5.z, -var3, var3));
       if (this.onGround) {
-         this.method3434(this.method3433().method11344(0.5));
+         this.method3434(this.getVec().method11344(0.5));
       }
 
-      this.move(Class2107.field13742, this.method3433());
+      this.move(Class2107.field13742, this.getVec());
       if (!this.onGround) {
-         this.method3434(this.method3433().method11344(0.95));
+         this.method3434(this.getVec().method11344(0.95));
       }
    }
 
@@ -403,7 +403,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       }
 
       double var15 = 0.0078125;
-      Vector3d var17 = this.method3433();
+      Vector3d var17 = this.getVec();
       Class96 var18 = var2.<Class96>method23463(var14.method12093());
       switch (Class9345.field43383[var18.ordinal()]) {
          case 1:
@@ -423,7 +423,7 @@ public abstract class AbstractMinecartEntity extends Entity {
             var7++;
       }
 
-      var17 = this.method3433();
+      var17 = this.getVec();
       Pair var19 = method3587(var18);
       Vector3i var20 = (Vector3i)var19.getFirst();
       Vector3i var21 = (Vector3i)var19.getSecond();
@@ -441,21 +441,21 @@ public abstract class AbstractMinecartEntity extends Entity {
       this.method3434(var17);
       Entity var32 = this.method3408().isEmpty() ? null : this.method3408().get(0);
       if (var32 instanceof PlayerEntity) {
-         Vector3d var33 = var32.method3433();
+         Vector3d var33 = var32.getVec();
          double var34 = method3234(var33);
-         double var36 = method3234(this.method3433());
+         double var36 = method3234(this.getVec());
          if (var34 > 1.0E-4 && var36 < 0.01) {
-            this.method3434(this.method3433().method11339(var33.x * 0.1, 0.0, var33.z * 0.1));
+            this.method3434(this.getVec().method11339(var33.x * 0.1, 0.0, var33.z * 0.1));
             var13 = false;
          }
       }
 
       if (var13) {
-         double var38 = Math.sqrt(method3234(this.method3433()));
+         double var38 = Math.sqrt(method3234(this.getVec()));
          if (var38 < 0.03) {
             this.method3434(Vector3d.ZERO);
          } else {
-            this.method3434(this.method3433().method11347(0.5, 0.0, 0.5));
+            this.method3434(this.getVec().method11347(0.5, 0.0, 0.5));
          }
       }
 
@@ -481,7 +481,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       this.setPosition(var5, var7, var9);
       double var76 = this.isBeingRidden() ? 0.75 : 1.0;
       double var77 = this.method3588();
-      var17 = this.method3433();
+      var17 = this.getVec();
       this.move(
          Class2107.field13742,
          new Vector3d(MathHelper.method37778(var76 * var17.x, -var77, var77), 0.0, MathHelper.method37778(var76 * var17.z, -var77, var77))
@@ -500,7 +500,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       Vector3d var52 = this.method3595(this.getPosX(), this.getPosY(), this.getPosZ());
       if (var52 != null && var11 != null) {
          double var53 = (var11.y - var52.y) * 0.05;
-         Vector3d var55 = this.method3433();
+         Vector3d var55 = this.getVec();
          double var56 = Math.sqrt(method3234(var55));
          if (var56 > 0.0) {
             this.method3434(var55.method11347((var56 + var53) / var56, 1.0, (var56 + var53) / var56));
@@ -512,19 +512,19 @@ public abstract class AbstractMinecartEntity extends Entity {
       int var58 = MathHelper.floor(this.getPosX());
       int var59 = MathHelper.floor(this.getPosZ());
       if (var58 != var1.getX() || var59 != var1.getZ()) {
-         Vector3d var78 = this.method3433();
+         Vector3d var78 = this.getVec();
          double var80 = Math.sqrt(method3234(var78));
          this.method3435(var80 * (double)(var58 - var1.getX()), var78.y, var80 * (double)(var59 - var1.getZ()));
       }
 
       if (var12) {
-         Vector3d var79 = this.method3433();
+         Vector3d var79 = this.getVec();
          double var81 = Math.sqrt(method3234(var79));
          if (var81 > 0.01) {
             double var60 = 0.06;
             this.method3434(var79.method11339(var79.x / var81 * 0.06, 0.0, var79.z / var81 * 0.06));
          } else {
-            Vector3d var62 = this.method3433();
+            Vector3d var62 = this.getVec();
             double var63 = var62.x;
             double var65 = var62.z;
             if (var18 == Class96.field248) {
@@ -556,7 +556,7 @@ public abstract class AbstractMinecartEntity extends Entity {
 
    public void method3593() {
       double var3 = !this.isBeingRidden() ? 0.96 : 0.997;
-      this.method3434(this.method3433().method11347(var3, 0.0, var3));
+      this.method3434(this.getVec().method11347(var3, 0.0, var3));
    }
 
    @Nullable
@@ -718,8 +718,8 @@ public abstract class AbstractMinecartEntity extends Entity {
                   return;
                }
 
-               Vector3d var20 = this.method3433();
-               Vector3d var21 = var1.method3433();
+               Vector3d var20 = this.getVec();
+               Vector3d var21 = var1.getVec();
                if (((AbstractMinecartEntity)var1).getMinecartType() == MinecartType.FURNACE && this.getMinecartType() != MinecartType.FURNACE) {
                   this.method3434(var20.method11347(0.2, 1.0, 0.2));
                   this.method3280(var21.x - var4, 0.0, var21.z - var6);

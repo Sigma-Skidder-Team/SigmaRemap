@@ -164,9 +164,9 @@ public class Class7803 {
       AxisAlignedBB var6 = new AxisAlignedBB(var0);
       var6 = var6.method19664((double)var1);
 
-      for (int var7 = (int)var6.field28449; var7 <= (int)var6.field28452; var7++) {
-         for (int var8 = (int)var6.field28450; var8 <= (int)var6.field28453; var8++) {
-            for (int var9 = (int)var6.field28451; var9 <= (int)var6.field28454; var9++) {
+      for (int var7 = (int)var6.minX; var7 <= (int)var6.maxX; var7++) {
+         for (int var8 = (int)var6.minY; var8 <= (int)var6.maxY; var8++) {
+            for (int var9 = (int)var6.minZ; var9 <= (int)var6.maxZ; var9++) {
                BlockPos var10 = new BlockPos(var7, var8, var9);
                BlockState var11 = var2.getBlockState(var10);
                if (var11.method23448(Blocks.field37113)) {

@@ -16,6 +16,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -72,25 +73,25 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.field31567;
    }
 
-   public boolean method23385(Class1665 var1, BlockPos var2, EntityType<?> var3) {
+   public boolean method23385(IBlockReader var1, BlockPos var2, EntityType<?> var3) {
       return AbstractBlock.method26664(this.getBlock().field19013).method38752(this.method23457(), var1, var2, var3);
    }
 
-   public boolean method23386(Class1665 var1, BlockPos var2) {
+   public boolean method23386(IBlockReader var1, BlockPos var2) {
       return this.field31577 == null ? this.getBlock().method11493(this.method23457(), var1, var2) : Class6486.method19652(this.field31577);
    }
 
-   public int getOpacity(Class1665 var1, BlockPos var2) {
+   public int getOpacity(IBlockReader var1, BlockPos var2) {
       return this.field31577 == null ? this.getBlock().method11996(this.method23457(), var1, var2) : Class6486.method19653(this.field31577);
    }
 
-   public VoxelShape method23388(Class1665 var1, BlockPos var2, Direction var3) {
+   public VoxelShape method23388(IBlockReader var1, BlockPos var2, Direction var3) {
       return this.field31577 != null && Class6486.method19654(this.field31577) != null
          ? Class6486.method19654(this.field31577)[var3.ordinal()]
          : VoxelShapes.method27442(this.method23389(var1, var2), var3);
    }
 
-   public VoxelShape method23389(Class1665 var1, BlockPos var2) {
+   public VoxelShape method23389(IBlockReader var1, BlockPos var2) {
       return this.getBlock().method11503(this.method23457(), var1, var2);
    }
 
@@ -112,7 +113,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.field31566;
    }
 
-   public Class7210 method23394(Class1665 var1, BlockPos var2) {
+   public Class7210 method23394(IBlockReader var1, BlockPos var2) {
       return this.field31568;
    }
 
@@ -128,15 +129,15 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11526(this.method23457());
    }
 
-   public boolean method23398(Class1665 var1, BlockPos var2) {
+   public boolean method23398(IBlockReader var1, BlockPos var2) {
       return this.field31576.method30847(this.method23457(), var1, var2);
    }
 
-   public float method23399(Class1665 var1, BlockPos var2) {
+   public float method23399(IBlockReader var1, BlockPos var2) {
       return this.getBlock().method11636(this.method23457(), var1, var2);
    }
 
-   public boolean method23400(Class1665 var1, BlockPos var2) {
+   public boolean method23400(IBlockReader var1, BlockPos var2) {
       return this.field31572.method30847(this.method23457(), var1, var2);
    }
 
@@ -144,7 +145,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11516(this.method23457());
    }
 
-   public int method23402(Class1665 var1, BlockPos var2, Direction var3) {
+   public int method23402(IBlockReader var1, BlockPos var2, Direction var3) {
       return this.getBlock().method11514(this.method23457(), var1, var2, var3);
    }
 
@@ -156,15 +157,15 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11649(this.method23457(), var1, var2);
    }
 
-   public float method23405(Class1665 var1, BlockPos var2) {
+   public float method23405(IBlockReader var1, BlockPos var2) {
       return this.field31569;
    }
 
-   public float method23406(PlayerEntity var1, Class1665 var2, BlockPos var3) {
+   public float method23406(PlayerEntity var1, IBlockReader var2, BlockPos var3) {
       return this.getBlock().method11997(this.method23457(), var1, var2, var3);
    }
 
-   public int method23407(Class1665 var1, BlockPos var2, Direction var3) {
+   public int method23407(IBlockReader var1, BlockPos var2, Direction var3) {
       return this.getBlock().method11515(this.method23457(), var1, var2, var3);
    }
 
@@ -172,7 +173,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11689(this.method23457());
    }
 
-   public boolean method23409(Class1665 var1, BlockPos var2) {
+   public boolean method23409(IBlockReader var1, BlockPos var2) {
       if (this.field31577 == null) {
          BlockState var5 = this.method23457();
          return !var5.method23410() ? false : Block.method11550(var5.method23389(var1, var2));
@@ -189,43 +190,43 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11634(this.method23457(), var1, var2);
    }
 
-   public VoxelShape method23412(Class1665 var1, BlockPos var2) {
+   public VoxelShape method23412(IBlockReader var1, BlockPos var2) {
       return this.method23413(var1, var2, ISelectionContext.method14947());
    }
 
-   public VoxelShape method23413(Class1665 var1, BlockPos var2, ISelectionContext var3) {
+   public VoxelShape method23413(IBlockReader var1, BlockPos var2, ISelectionContext var3) {
       return this.getBlock().method11483(this.method23457(), var1, var2, var3);
    }
 
-   public VoxelShape method23414(Class1665 var1, BlockPos var2) {
+   public VoxelShape method23414(IBlockReader var1, BlockPos var2) {
       return this.field31577 == null ? this.getCollisionShape(var1, var2, ISelectionContext.method14947()) : this.field31577.field28442;
    }
 
-   public VoxelShape getCollisionShape(Class1665 var1, BlockPos var2, ISelectionContext var3) {
+   public VoxelShape getCollisionShape(IBlockReader var1, BlockPos var2, ISelectionContext var3) {
       return this.getBlock().method11502(this.method23457(), var1, var2, var3);
    }
 
-   public VoxelShape method23416(Class1665 var1, BlockPos var2) {
+   public VoxelShape method23416(IBlockReader var1, BlockPos var2) {
       return this.getBlock().method11995(this.method23457(), var1, var2);
    }
 
-   public VoxelShape method23417(Class1665 var1, BlockPos var2, ISelectionContext var3) {
+   public VoxelShape method23417(IBlockReader var1, BlockPos var2, ISelectionContext var3) {
       return this.getBlock().method11635(this.method23457(), var1, var2, var3);
    }
 
-   public VoxelShape method23418(Class1665 var1, BlockPos var2) {
+   public VoxelShape method23418(IBlockReader var1, BlockPos var2) {
       return this.getBlock().method11938(this.method23457(), var1, var2);
    }
 
-   public final boolean method23419(Class1665 var1, BlockPos var2, Entity var3) {
+   public final boolean method23419(IBlockReader var1, BlockPos var2, Entity var3) {
       return this.method23420(var1, var2, var3, Direction.field673);
    }
 
-   public final boolean method23420(Class1665 var1, BlockPos var2, Entity var3, Direction var4) {
+   public final boolean method23420(IBlockReader var1, BlockPos var2, Entity var3, Direction var4) {
       return Block.method11549(this.getCollisionShape(var1, var2, ISelectionContext.forEntity(var3)), var4);
    }
 
-   public Vector3d method23421(Class1665 var1, BlockPos var2) {
+   public Vector3d method23421(IBlockReader var1, BlockPos var2) {
       Class2260 var5 = this.getBlock().method11994();
       if (var5 != Class2260.field14702) {
          long var6 = MathHelper.method37810(var2.getX(), 0, var2.getZ());
@@ -253,7 +254,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
 
    public final void updateNeighbours(Class1660 var1, BlockPos var2, int var3, int var4) {
       this.getBlock();
-      Mutable var7 = new Mutable();
+      BlockPos.Mutable var7 = new BlockPos.Mutable();
 
       for (Direction var11 : Class3390.field19003) {
          var7.method8377(var2, var11);
@@ -307,11 +308,11 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       this.getBlock().method11602(this.method23457(), var1, var2, var3);
    }
 
-   public boolean method23437(Class1665 var1, BlockPos var2) {
+   public boolean method23437(IBlockReader var1, BlockPos var2) {
       return this.field31573.method30847(this.method23457(), var1, var2);
    }
 
-   public boolean method23438(Class1665 var1, BlockPos var2) {
+   public boolean method23438(IBlockReader var1, BlockPos var2) {
       return this.field31574.method30847(this.method23457(), var1, var2);
    }
 
@@ -319,7 +320,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11491(this.method23457(), var1, var2, var3, var4, var5);
    }
 
-   public boolean method23440(Class1665 var1, BlockPos var2, Class1947 var3) {
+   public boolean method23440(IBlockReader var1, BlockPos var2, Class1947 var3) {
       return this.getBlock().method11494(this.method23457(), var1, var2, var3);
    }
 
@@ -335,7 +336,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11492(this.method23457(), var1, var2);
    }
 
-   public boolean method23444(Class1665 var1, BlockPos var2) {
+   public boolean method23444(IBlockReader var1, BlockPos var2) {
       return this.field31575.method30847(this.method23457(), var1, var2);
    }
 
@@ -376,15 +377,15 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       this.getBlock().method11595(var1, var2, var3, var4);
    }
 
-   public boolean method23454(Class1665 var1, BlockPos var2, Direction var3) {
+   public boolean method23454(IBlockReader var1, BlockPos var2, Direction var3) {
       return this.method23455(var1, var2, var3, Class2156.field14140);
    }
 
-   public boolean method23455(Class1665 var1, BlockPos var2, Direction var3, Class2156 var4) {
+   public boolean method23455(IBlockReader var1, BlockPos var2, Direction var3, Class2156 var4) {
       return this.field31577 == null ? var4.method8876(this.method23457(), var1, var2, var3) : this.field31577.method19649(var3, var4);
    }
 
-   public boolean method23456(Class1665 var1, BlockPos var2) {
+   public boolean method23456(IBlockReader var1, BlockPos var2) {
       return this.field31577 == null ? Block.method11550(this.method23414(var1, var2)) : this.field31577.field28445;
    }
 

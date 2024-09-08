@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Quaternion;
+
 public class Class7755 {
    private float field33317;
    private float field33318;
@@ -109,10 +111,10 @@ public class Class7755 {
       this.field33320 = var1.field43483 * var4 + var1.field43484 * var5 + var1.field43485 * var6 + var1.field43486 * var7;
    }
 
-   public void method25710(Class8661 var1) {
-      Class8661 var4 = new Class8661(var1);
-      var4.method31182(new Class8661(this.method25701(), this.method25702(), this.method25703(), 0.0F));
-      Class8661 var5 = new Class8661(var1);
+   public void method25710(Quaternion var1) {
+      Quaternion var4 = new Quaternion(var1);
+      var4.method31182(new Quaternion(this.method25701(), this.method25702(), this.method25703(), 0.0F));
+      Quaternion var5 = new Quaternion(var1);
       var5.method31184();
       var4.method31182(var5);
       this.method25706(var4.method31178(), var4.method31179(), var4.method31180(), this.method25704());

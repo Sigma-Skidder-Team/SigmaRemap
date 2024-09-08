@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -42,12 +43,12 @@ public class Class3431 extends Class3429 {
    }
 
    @Override
-   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return !var1.<Boolean>method23463(field19194) ? 0 : 15;
    }
 
    @Override
-   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       if (var1.<Boolean>method23463(field19194)) {
          return var4 != Direction.field673 ? 0 : 15;
       } else {

@@ -40,7 +40,7 @@ public class Class6290 extends Class6272<Class4715> {
    }
 
    private static int method19253(Class9010 var0, int var1, int var2, int var3, int var4) {
-      Mutable var7 = new Mutable(var1, var2, var3);
+      BlockPos.Mutable var7 = new BlockPos.Mutable(var1, var2, var3);
       int var8 = 0;
       BlockState var9 = var0.method33300(var7);
 

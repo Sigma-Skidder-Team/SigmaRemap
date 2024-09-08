@@ -15,6 +15,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.vector.Quaternion;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;
@@ -159,7 +160,7 @@ public class TargetHUD extends PremiumModule {
             MatrixStack var10 = new MatrixStack();
             var10.translate(0.0, 0.0, 1500.0);
             var10.method35292(var6, var6, var6);
-            Class8661 var11 = Vector3f.field32902.rotationDegrees(180.0F);
+            Quaternion var11 = Vector3f.field32902.rotationDegrees(180.0F);
             var10.rotate(var11);
             var4.method32215(false);
             Class7735 var12 = Minecraft.getInstance().getRenderTypeBuffers().method26536();

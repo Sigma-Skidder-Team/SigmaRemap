@@ -12,7 +12,7 @@ public class Class2910 extends Class2898<Class4732> {
    }
 
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4732 var5) {
-      Mutable var8 = new Mutable();
+      BlockPos.Mutable var8 = new BlockPos.Mutable();
 
       for (int var9 = 0; var9 < 16; var9++) {
          for (int var10 = 0; var10 < 16; var10++) {

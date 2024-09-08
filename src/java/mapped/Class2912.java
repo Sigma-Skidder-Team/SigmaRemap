@@ -23,7 +23,7 @@ public class Class2912 extends Class2898<Class4712> {
       if (method11248(var8.field32174, var8.field32175, field17997.field32174, field17997.field32175) > 1) {
          return true;
       } else {
-         Mutable var9 = new Mutable();
+         BlockPos.Mutable var9 = new BlockPos.Mutable();
 
          for (int var10 = var8.method24357(); var10 <= var8.method24359(); var10++) {
             for (int var11 = var8.method24356(); var11 <= var8.method24358(); var11++) {

@@ -32,7 +32,7 @@ public class AACAntiKB extends Module {
             if (this.method16790()) {
                 if (field23907 == 0 && !mc.player.onGround && mc.player.field4952 > 0 && mc.player.fallDistance < 2.0F) {
                     mc.player.method3280(0.0, -1.0, 0.0);
-                    ColorUtils.method17725(mc.player.method3433().method11321());
+                    ColorUtils.method17725(mc.player.getVec().getY());
                     mc.player.onGround = true;
                     field23907 = 20;
                 }

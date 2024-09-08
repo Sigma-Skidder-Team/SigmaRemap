@@ -55,7 +55,7 @@ public class Step extends ModuleWithModuleSettings {
         double var8 = 0.41;
         double var10 = var1.method13988() - var1.method13990();
         AxisAlignedBB var12 = new AxisAlignedBB(
-                var4 - var8, mc.player.boundingBox.field28450, var6 - var8, var4 + var8, mc.player.boundingBox.field28450 + var10, var6 + var8
+                var4 - var8, mc.player.boundingBox.minY, var6 - var8, var4 + var8, mc.player.boundingBox.minY + var10, var6 + var8
         );
         Object[] var13 = mc.world.method7055(mc.player, var12).toArray();
         int var14 = var13.length;
@@ -67,10 +67,10 @@ public class Step extends ModuleWithModuleSettings {
             VoxelShape var20 = (VoxelShape) var13[var19];
             BlockPos var21 = new BlockPos(var20.method19512(Class113.field413), var20.method19512(Class113.field414), var20.method19512(Class113.field415));
             BlockState var22 = mc.world.getBlockState(var21);
-            if (var15 == null || var20.method19514().field28453 > var17) {
+            if (var15 == null || var20.method19514().maxY > var17) {
                 var15 = var22;
                 var16 = var21;
-                var17 = var20.method19514().field28453;
+                var17 = var20.method19514().maxY;
             }
         }
 
@@ -79,7 +79,7 @@ public class Step extends ModuleWithModuleSettings {
                 if (!mc.player.onGround) {
                     if (var15.getBlock() instanceof Class3208) {
                         VoxelShape var24 = var15.method23412(mc.world, var16);
-                        if (var24.method19514().field28453 == 1.0) {
+                        if (var24.method19514().maxY == 1.0) {
                             return Class2131.field13904;
                         }
                     }
@@ -98,7 +98,7 @@ public class Step extends ModuleWithModuleSettings {
                         }
                     } else {
                         VoxelShape var23 = var15.method23412(mc.world, var16);
-                        if (var23.method19514().field28453 == 1.0) {
+                        if (var23.method19514().maxY == 1.0) {
                             return Class2131.field13906;
                         }
                     }

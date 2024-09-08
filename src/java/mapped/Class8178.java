@@ -32,7 +32,7 @@ public final class Class8178 implements Class8176 {
          if (var7 != null
             && !(
                ((Entity)var6).getPositionVec()
-                     .method11343((double)var7.getX() + 0.5, ((Entity)var6).getPositionVec().method11321(), (double)var7.getZ() + 0.5)
+                     .method11343((double)var7.getX() + 0.5, ((Entity)var6).getPositionVec().getY(), (double)var7.getZ() + 0.5)
                   < 1.0E-5F
             )) {
             boolean var12 = var3 instanceof PlayerEntity && ((PlayerEntity)var3).method2905();
@@ -104,6 +104,6 @@ public final class Class8178 implements Class8176 {
    }
 
    private double method28472(Vector3d var1, Entity var2) {
-      return Math.atan2(var1.method11322() - var2.getPosZ(), var1.method11320() - var2.getPosX());
+      return Math.atan2(var1.getZ() - var2.getPosZ(), var1.getX() - var2.getPosX());
    }
 }

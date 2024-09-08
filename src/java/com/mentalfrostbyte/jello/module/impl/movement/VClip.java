@@ -101,7 +101,7 @@ public class VClip extends Module {
 
     private void method16294(int var1) {
         if (var1 == 0) {
-            ColorUtils.method17678("§cCouldn't VClip");
+            ColorUtils.addChatMessage("§cCouldn't VClip");
         } else {
             mc.getConnection()
                     .sendPacket(

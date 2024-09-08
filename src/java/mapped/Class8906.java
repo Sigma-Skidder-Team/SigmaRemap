@@ -18,7 +18,7 @@ public class Class8906 {
    }
 
    public static void method32487(String var0) {
-      Minecraft.getInstance().ingameGUI.getChatGUI().method5930(new StringTextComponent(var0));
+      Minecraft.getInstance().ingameGUI.getChatGUI().sendChatMessage(new StringTextComponent(var0));
    }
 
    public static boolean method32488(String var0) {

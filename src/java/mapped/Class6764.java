@@ -3,6 +3,7 @@ package mapped;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public abstract class Class6764 {
    public Class1667 field29475;
@@ -44,10 +45,10 @@ public abstract class Class6764 {
    public abstract int method20617(Class7176[] var1, Class7176 var2);
 
    public abstract Class2163 method20629(
-      Class1665 var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10
+           IBlockReader var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10
    );
 
-   public abstract Class2163 method20621(Class1665 var1, int var2, int var3, int var4);
+   public abstract Class2163 method20621(IBlockReader var1, int var2, int var3, int var4);
 
    public void method20644(boolean var1) {
       this.field29481 = var1;

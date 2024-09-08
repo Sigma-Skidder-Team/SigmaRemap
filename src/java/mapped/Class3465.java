@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -19,7 +20,7 @@ public class Class3465 extends Block {
    }
 
    @Override
-   public VoxelShape method11995(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11995(BlockState var1, IBlockReader var2, BlockPos var3) {
       return VoxelShapes.method27425();
    }
 
@@ -42,7 +43,7 @@ public class Class3465 extends Block {
    }
 
    @Override
-   public int method11996(BlockState var1, Class1665 var2, BlockPos var3) {
+   public int method11996(BlockState var1, IBlockReader var2, BlockPos var3) {
       return 1;
    }
 
@@ -58,7 +59,7 @@ public class Class3465 extends Block {
 
    private static BlockState method12149(BlockState var0, Class1660 var1, BlockPos var2) {
       int var5 = 7;
-      Mutable var6 = new Mutable();
+      BlockPos.Mutable var6 = new BlockPos.Mutable();
 
       for (Direction var10 : Direction.values()) {
          var6.method8377(var2, var10);

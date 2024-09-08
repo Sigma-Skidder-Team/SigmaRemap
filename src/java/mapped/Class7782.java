@@ -77,9 +77,9 @@ public class Class7782 {
 
    public static float method25783(Vector3d var0, Entity var1) {
       AxisAlignedBB var4 = var1.getBoundingBox();
-      double var5 = 1.0 / ((var4.field28452 - var4.field28449) * 2.0 + 1.0);
-      double var7 = 1.0 / ((var4.field28453 - var4.field28450) * 2.0 + 1.0);
-      double var9 = 1.0 / ((var4.field28454 - var4.field28451) * 2.0 + 1.0);
+      double var5 = 1.0 / ((var4.maxX - var4.minX) * 2.0 + 1.0);
+      double var7 = 1.0 / ((var4.maxY - var4.minY) * 2.0 + 1.0);
+      double var9 = 1.0 / ((var4.maxZ - var4.minZ) * 2.0 + 1.0);
       double var11 = (1.0 - Math.floor(1.0 / var5) * var5) / 2.0;
       double var13 = (1.0 - Math.floor(1.0 / var9) * var9) / 2.0;
       if (!(var5 < 0.0) && !(var7 < 0.0) && !(var9 < 0.0)) {
@@ -89,9 +89,9 @@ public class Class7782 {
          for (float var17 = 0.0F; var17 <= 1.0F; var17 = (float)((double)var17 + var5)) {
             for (float var18 = 0.0F; var18 <= 1.0F; var18 = (float)((double)var18 + var7)) {
                for (float var19 = 0.0F; var19 <= 1.0F; var19 = (float)((double)var19 + var9)) {
-                  double var20 = MathHelper.lerp((double)var17, var4.field28449, var4.field28452);
-                  double var22 = MathHelper.lerp((double)var18, var4.field28450, var4.field28453);
-                  double var24 = MathHelper.lerp((double)var19, var4.field28451, var4.field28454);
+                  double var20 = MathHelper.lerp((double)var17, var4.minX, var4.maxX);
+                  double var22 = MathHelper.lerp((double)var18, var4.minY, var4.maxY);
+                  double var24 = MathHelper.lerp((double)var19, var4.minZ, var4.maxZ);
                   Vector3d var26 = new Vector3d(var20 + var11, var22, var24 + var13);
                   if (var1.world.method7036(new Class6809(var26, var0, Class2271.field14774, Class1985.field12962, var1)).getType()
                      == RayTraceResult.Type.MISS) {
@@ -184,7 +184,7 @@ public class Class7782 {
                      var50 = Class6096.method18835((LivingEntity)var35, var48);
                   }
 
-                  var35.method3434(var35.method3433().method11339(var38 * var50, var40 * var50, var42 * var50));
+                  var35.method3434(var35.getVec().method11339(var38 * var50, var40 * var50, var42 * var50));
                   if (var35 instanceof PlayerEntity) {
                      PlayerEntity var52 = (PlayerEntity)var35;
                      if (!var52.isSpectator() && (!var52.isCreative() || !var52.abilities.isFlying)) {

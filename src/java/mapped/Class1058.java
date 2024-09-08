@@ -89,7 +89,7 @@ public class Class1058 extends Class1056 implements Class1011 {
          this.field5851--;
       }
 
-      if (method3234(this.method3433()) > 2.5000003E-7F && this.rand.nextInt(5) == 0) {
+      if (method3234(this.getVec()) > 2.5000003E-7F && this.rand.nextInt(5) == 0) {
          int var3 = MathHelper.floor(this.getPosX());
          int var4 = MathHelper.floor(this.getPosY() - 0.2F);
          int var5 = MathHelper.floor(this.getPosZ());
@@ -173,7 +173,7 @@ public class Class1058 extends Class1056 implements Class1011 {
       float var5 = (int)var4 <= 0 ? var4 : var4 / 2.0F + (float)this.rand.nextInt((int)var4);
       boolean var6 = var1.method2741(Class8654.method31115(this), var5);
       if (var6) {
-         var1.method3434(var1.method3433().method11339(0.0, 0.4F, 0.0));
+         var1.method3434(var1.getVec().method11339(0.0, 0.4F, 0.0));
          this.method3399(this, var1);
       }
 

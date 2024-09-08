@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -42,24 +43,24 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public boolean method11493(BlockState var1, Class1665 var2, BlockPos var3) {
+   public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
       return true;
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       VoxelShape var7 = var1.method23463(field19126) != Class181.field644 ? field19122 : field19123;
       Vector3d var8 = var1.method23421(var2, var3);
       return var7.withOffset(var8.x, var8.y, var8.z);
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       Vector3d var7 = var1.method23421(var2, var3);
       return field19124.withOffset(var7.x, var7.y, var7.z);
    }
@@ -134,7 +135,7 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
+   public boolean method11486(IBlockReader var1, BlockPos var2, BlockState var3, boolean var4) {
       int var7 = this.method12066(var1, var2);
       int var8 = this.method12067(var1, var2);
       return var7 + var8 + 1 < 16 && var1.getBlockState(var2.method8339(var7)).<Integer>method23463(field19127) != 1;
@@ -166,7 +167,7 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public float method11997(BlockState var1, PlayerEntity var2, Class1665 var3, BlockPos var4) {
+   public float method11997(BlockState var1, PlayerEntity var2, IBlockReader var3, BlockPos var4) {
       return !(var2.getHeldItemMainhand().getItem() instanceof ItemSword) ? super.method11997(var1, var2, var3, var4) : 1.0F;
    }
 
@@ -196,7 +197,7 @@ public class Class3418 extends Block implements Class3196 {
       );
    }
 
-   public int method12066(Class1665 var1, BlockPos var2) {
+   public int method12066(IBlockReader var1, BlockPos var2) {
       int var5 = 0;
 
       while (var5 < 16 && var1.getBlockState(var2.method8339(var5 + 1)).method23448(Blocks.field37009)) {
@@ -206,7 +207,7 @@ public class Class3418 extends Block implements Class3196 {
       return var5;
    }
 
-   public int method12067(Class1665 var1, BlockPos var2) {
+   public int method12067(IBlockReader var1, BlockPos var2) {
       int var5 = 0;
 
       while (var5 < 16 && var1.getBlockState(var2.method8340(var5 + 1)).method23448(Blocks.field37009)) {

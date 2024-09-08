@@ -98,7 +98,7 @@ public class Class1055 extends Class1047 {
       if (!this.method3255()) {
          this.field5831 = MathHelper.method37771(MathHelper.sin(this.field5829)) * (float) Math.PI * 0.25F;
          if (!this.world.isRemote) {
-            double var5 = this.method3433().y;
+            double var5 = this.getVec().y;
             if (!this.method3033(Effects.LEVITATION)) {
                if (!this.method3247()) {
                   var5 -= 0.08;
@@ -131,7 +131,7 @@ public class Class1055 extends Class1047 {
             this.method3435((double)(this.field5836 * this.field5833), (double)(this.field5837 * this.field5833), (double)(this.field5838 * this.field5833));
          }
 
-         Vector3d var7 = this.method3433();
+         Vector3d var7 = this.getVec();
          float var4 = MathHelper.method37766(method3234(var7));
          this.field4965 = this.field4965
             + (-((float) MathHelper.method37814(var7.x, var7.z)) * (180.0F / (float)Math.PI) - this.field4965) * 0.1F;
@@ -172,7 +172,7 @@ public class Class1055 extends Class1047 {
 
    @Override
    public void method2915(Vector3d var1) {
-      this.move(Class2107.field13742, this.method3433());
+      this.move(Class2107.field13742, this.getVec());
    }
 
    public static boolean method4839(EntityType<Class1055> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {

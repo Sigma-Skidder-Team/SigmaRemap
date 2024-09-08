@@ -3,10 +3,11 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 
-public final class Class1669 implements Class1665 {
+public final class Class1669 implements IBlockReader {
    private static String[] field9086;
    private final BlockState[] field9087;
 

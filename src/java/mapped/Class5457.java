@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public class Class5457 extends Class5455<Class4712> {
    private static String[] field24216;
@@ -17,9 +18,9 @@ public class Class5457 extends Class5455<Class4712> {
       int var12 = var10.method24357() + this.field24201.nextInt(16);
       int var13 = var2.method17807();
       int var14 = var13 + this.field24201.nextInt(var2.method17806() - 2 - var13);
-      Class1665 var15 = var2.method17798(var11, var12);
+      IBlockReader var15 = var2.method17798(var11, var12);
 
-      for (Mutable var16 = new Mutable(var11, var14, var12); var14 > var13; var14--) {
+      for (BlockPos.Mutable var16 = new BlockPos.Mutable(var11, var14, var12); var14 > var13; var14--) {
          BlockState var17 = var15.getBlockState(var16);
          var16.method8379(Direction.DOWN);
          BlockState var18 = var15.getBlockState(var16);

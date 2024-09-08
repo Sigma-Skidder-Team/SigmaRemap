@@ -125,12 +125,12 @@ public class Class1029 extends Class1026 {
             AxisAlignedBB var8 = this.getBoundingBox().method19664(0.2);
 
             for (BlockPos var10 : BlockPos.method8364(
-               MathHelper.floor(var8.field28449),
-               MathHelper.floor(var8.field28450),
-               MathHelper.floor(var8.field28451),
-               MathHelper.floor(var8.field28452),
-               MathHelper.floor(var8.field28453),
-               MathHelper.floor(var8.field28454)
+               MathHelper.floor(var8.minX),
+               MathHelper.floor(var8.minY),
+               MathHelper.floor(var8.minZ),
+               MathHelper.floor(var8.maxX),
+               MathHelper.floor(var8.maxY),
+               MathHelper.floor(var8.maxZ)
             )) {
                BlockState var11 = this.world.getBlockState(var10);
                Block var12 = var11.getBlock();

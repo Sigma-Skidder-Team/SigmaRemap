@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.Map;
 
@@ -33,7 +34,7 @@ public class Class3493 extends Class3194 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19363.get(var1.<Direction>method23463(field19361));
    }
 
@@ -45,7 +46,7 @@ public class Class3493 extends Class3194 {
    }
 
    @Override
-   public boolean method11490(BlockState var1, Class1665 var2, BlockPos var3) {
+   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
       return var1.method23448(Blocks.FARMLAND);
    }
 
@@ -58,7 +59,7 @@ public class Class3493 extends Class3194 {
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       return new ItemStack(this.method12188());
    }
 

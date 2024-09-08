@@ -29,6 +29,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -209,7 +210,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          int var17 = -1;
          float var18 = (float)this.field955 + var2;
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-         Mutable var19 = new Mutable();
+         BlockPos.Mutable var19 = new BlockPos.Mutable();
 
          for (int var20 = var13 - var16; var20 <= var13 + var16; var20++) {
             for (int var21 = var11 - var16; var21 <= var11 + var16; var21++) {
@@ -349,7 +350,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       if (!(var2 <= 0.0F) && Class7944.method26847()) {
          Random var3 = new Random((long)this.field955 * 312987231L);
          ClientWorld var4 = this.field939.world;
-         BlockPos var5 = new BlockPos(var1.method37504());
+         BlockPos var5 = new BlockPos(var1.getPos());
          BlockPos var6 = null;
          int var7 = (int)(100.0F * var2 * var2) / (this.field939.gameSettings.field44674 == Class2294.field15247 ? 2 : 1);
 
@@ -756,7 +757,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
    }
 
    public void method874(ActiveRenderInfo var1, Class7647 var2, boolean var3, int var4, boolean var5) {
-      Vector3d var6 = var1.method37504();
+      Vector3d var6 = var1.getPos();
       if (this.field939.gameSettings.field44574 != this.field985) {
          this.loadRenderers();
       }
@@ -785,7 +786,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       this.field983.method33321(var6);
       this.field943.getProfiler().endStartSection("cull");
       this.field939.getProfiler().endStartSection("culling");
-      BlockPos var13 = var1.method37505();
+      BlockPos var13 = var1.getBlockPos();
       Class8066 var14 = this.field947.method34761(var13);
       int var15 = 16;
       BlockPos var16 = new BlockPos(
@@ -793,8 +794,8 @@ public class WorldRenderer implements Class215, AutoCloseable {
          MathHelper.floor(var6.y / 16.0) * 16,
          MathHelper.floor(var6.z / 16.0) * 16
       );
-      float var17 = var1.method37506();
-      float var18 = var1.method37507();
+      float var17 = var1.getPitch();
+      float var18 = var1.getYaw();
       this.field995 = this.field995
          || !this.field944.isEmpty()
          || var6.x != this.field973
@@ -815,7 +816,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          this.field995 = true;
       }
 
-      Entity var20 = var1.method37509();
+      Entity var20 = var1.getRenderViewEntity();
       int var21 = 256;
       if (!Class8597.method30744()) {
          this.field995 = true;
@@ -869,7 +870,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          Deque var41 = this.field1004;
          Entity.method3378(MathHelper.method37778((double)this.field939.gameSettings.field44574 / 8.0, 1.0, 2.5) * (double)this.field939.gameSettings.field44575);
          boolean var43 = this.field939.renderChunksMany;
-         BlockPos var45 = var1.method37505();
+         BlockPos var45 = var1.getBlockPos();
          int var26 = var45.getY();
          int var27 = var26 >> 4 << 4;
          if (var27 > var21) {
@@ -880,7 +881,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                }
 
                Vector3d var28 = new Vector3d((double)var45.getX(), (double)var21, (double)var45.getZ());
-               Vector3d var29 = new Vector3d(var28.method11320(), var28.method11321(), var28.method11322());
+               Vector3d var29 = new Vector3d(var28.getX(), var28.getY(), var28.getZ());
                Vector3f var30 = var1.method37516();
                Vector3f var31 = new Vector3f(var30.method25269(), 0.0F, var30.method25271());
                if (!var31.method25280()) {
@@ -1071,10 +1072,10 @@ public class WorldRenderer implements Class215, AutoCloseable {
       IProfiler var10 = this.field943.getProfiler();
       var10.endStartSection("light_updates");
       this.field939.world.getChunkProvider().getLightManager().method600(Integer.MAX_VALUE, true, true);
-      Vector3d var11 = var6.method37504();
-      double var12 = var11.method11320();
-      double var14 = var11.method11321();
-      double var16 = var11.method11322();
+      Vector3d var11 = var6.getPos();
+      double var12 = var11.getX();
+      double var14 = var11.getY();
+      double var16 = var11.getZ();
       Matrix4f var18 = matrixStackIn.getLast().getMatrix();
       var10.endStartSection("culling");
       boolean var19 = this.field989 != null;
@@ -1218,8 +1219,8 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
          for (Entity var45 : var43.method7146()[var42.method27718().getY() / 16]) {
             if ((this.field941.method32218(var45, var20, var12, var14, var16) || var45.method3417(this.field939.player))
-               && (var45 != var6.method37509() || var6.method37511() || var6.method37509() instanceof LivingEntity && ((LivingEntity)var6.method37509()).isSleeping())
-               && (!(var45 instanceof ClientPlayerEntity) || var6.method37509() == var45)) {
+               && (var45 != var6.getRenderViewEntity() || var6.method37511() || var6.getRenderViewEntity() instanceof LivingEntity && ((LivingEntity)var6.getRenderViewEntity()).isSleeping())
+               && (!(var45 instanceof ClientPlayerEntity) || var6.getRenderViewEntity() == var45)) {
                String var46 = var45.getClass().getName();
                List<Entity> var47 = this.field1026.get(var46);
                if (var47 == null) {
@@ -1417,7 +1418,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
          if (var80) {
             Class5422 var84 = irendertypebuffer$impl.method25597(RenderType.method14345());
-            this.method894(matrixStackIn, var84, var6.method37509(), var12, var14, var16, var69, var75);
+            this.method894(matrixStackIn, var84, var6.getRenderViewEntity(), var12, var14, var16, var69, var75);
          }
 
          if (var21) {
@@ -1706,9 +1707,9 @@ public class WorldRenderer implements Class215, AutoCloseable {
       Tessellator var2 = Tessellator.getInstance();
       BufferBuilder var3 = var2.getBuffer();
       if (this.field939.debugWireframe || this.field939.debugChunkPath) {
-         double var4 = var1.method37504().method11320();
-         double var6 = var1.method37504().method11321();
-         double var8 = var1.method37504().method11322();
+         double var4 = var1.getPos().getX();
+         double var6 = var1.getPos().getY();
+         double var8 = var1.getPos().getZ();
          RenderSystem.depthMask(true);
          RenderSystem.method27850();
          RenderSystem.enableBlend();
@@ -1809,9 +1810,9 @@ public class WorldRenderer implements Class215, AutoCloseable {
          RenderSystem.lineWidth(10.0F);
          RenderSystem.pushMatrix();
          RenderSystem.translatef(
-            (float)(this.field991.field42185 - var1.method37504().x),
-            (float)(this.field991.field42186 - var1.method37504().y),
-            (float)(this.field991.field42187 - var1.method37504().z)
+            (float)(this.field991.field42185 - var1.getPos().x),
+            (float)(this.field991.field42186 - var1.getPos().y),
+            (float)(this.field991.field42187 - var1.getPos().z)
          );
          RenderSystem.depthMask(true);
          var3.begin(7, DefaultVertexFormats.POSITION_COLOR);
@@ -1987,7 +1988,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             Shaders.method33116();
          }
 
-         Vector3d var4 = this.field943.method6873(this.field939.gameRenderer.getActiveRenderInfo().method37505(), var2);
+         Vector3d var4 = this.field943.method6873(this.field939.gameRenderer.getActiveRenderInfo().getBlockPos(), var2);
          var4 = Class9680.method37869(
             var4,
             this.field939.world,
@@ -2548,20 +2549,20 @@ public class WorldRenderer implements Class215, AutoCloseable {
       BufferBuilder var2 = Tessellator.getInstance().getBuffer();
       WorldBorder var3 = this.field943.method6810();
       double var4 = (double)(this.field939.gameSettings.field44574 * 16);
-      if (!(var1.method37504().x < var3.method24532() - var4)
-         || !(var1.method37504().x > var3.method24530() + var4)
-         || !(var1.method37504().z < var3.method24533() - var4)
-         || !(var1.method37504().z > var3.method24531() + var4)) {
+      if (!(var1.getPos().x < var3.method24532() - var4)
+         || !(var1.getPos().x > var3.method24530() + var4)
+         || !(var1.getPos().z < var3.method24533() - var4)
+         || !(var1.getPos().z > var3.method24531() + var4)) {
          if (Class7944.method26921()) {
             Shaders.method33117();
             Shaders.method33021(Shaders.field40819);
          }
 
-         double var6 = 1.0 - var3.method24528(var1.method37504().x, var1.method37504().z) / var4;
+         double var6 = 1.0 - var3.method24528(var1.getPos().x, var1.getPos().z) / var4;
          var6 = Math.pow(var6, 4.0);
-         double var8 = var1.method37504().x;
-         double var10 = var1.method37504().y;
-         double var12 = var1.method37504().z;
+         double var8 = var1.getPos().x;
+         double var10 = var1.getPos().y;
+         double var12 = var1.getPos().z;
          RenderSystem.enableBlend();
          RenderSystem.enableDepthTest();
          RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12927, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
@@ -2710,12 +2711,12 @@ public class WorldRenderer implements Class215, AutoCloseable {
       method899(
          var0,
          var1,
-         var2.field28449,
-         var2.field28450,
-         var2.field28451,
-         var2.field28452,
-         var2.field28453,
-         var2.field28454,
+         var2.minX,
+         var2.minY,
+         var2.minZ,
+         var2.maxX,
+         var2.maxY,
+         var2.maxZ,
          var3,
          var4,
          var5,
@@ -2828,7 +2829,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       var0.pos(var7, var9, var11).color(var13, var14, var15, var16).endVertex();
    }
 
-   public void method901(Class1665 var1, BlockPos var2, BlockState var3, BlockState var4, int var5) {
+   public void method901(IBlockReader var1, BlockPos var2, BlockState var3, BlockState var4, int var5) {
       this.method902(var2, false);
    }
 
@@ -2985,7 +2986,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                   var18 = 38416.0;
                }
 
-               if (var16.method37504().method11343(var4, var6, var8) > var18) {
+               if (var16.getPos().method11343(var4, var6, var8) > var18) {
                   return null;
                }
 
@@ -3049,13 +3050,13 @@ public class WorldRenderer implements Class215, AutoCloseable {
          case 1038:
             ActiveRenderInfo var4 = this.field939.gameRenderer.getActiveRenderInfo();
             if (var4.method37510()) {
-               double var5 = (double)var2.getX() - var4.method37504().x;
-               double var7 = (double)var2.getY() - var4.method37504().y;
-               double var9 = (double)var2.getZ() - var4.method37504().z;
+               double var5 = (double)var2.getX() - var4.getPos().x;
+               double var7 = (double)var2.getY() - var4.getPos().y;
+               double var9 = (double)var2.getZ() - var4.getPos().z;
                double var11 = Math.sqrt(var5 * var5 + var7 * var7 + var9 * var9);
-               double var13 = var4.method37504().x;
-               double var15 = var4.method37504().y;
-               double var17 = var4.method37504().z;
+               double var13 = var4.getPos().x;
+               double var15 = var4.getPos().y;
+               double var17 = var4.getPos().z;
                if (var11 > 0.0) {
                   var13 += var5 / var11 * 2.0;
                   var15 += var7 / var11 * 2.0;
@@ -3663,7 +3664,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          }
 
          int var6 = var3 << 20 | var4 << 4;
-         if (Class7944.method26970() && var0 instanceof Class1665 && (!field1025 || !var1.method23409(var0, var2))) {
+         if (Class7944.method26970() && var0 instanceof IBlockReader && (!field1025 || !var1.method23409(var0, var2))) {
             var6 = Class9446.method36314(var2, var6);
          }
 

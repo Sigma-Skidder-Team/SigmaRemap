@@ -98,6 +98,6 @@ public class Class8092 {
    }
 
    private static double method28050(Entity var0) {
-      return !(var0 instanceof LivingEntity) ? (var0.getBoundingBox().field28450 + var0.getBoundingBox().field28453) / 2.0 : var0.method3442();
+      return !(var0 instanceof LivingEntity) ? (var0.getBoundingBox().minY + var0.getBoundingBox().maxY) / 2.0 : var0.method3442();
    }
 }

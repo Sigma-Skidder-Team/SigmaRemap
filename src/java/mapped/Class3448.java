@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public class Class3448 extends Class3445 implements Class3449 {
    private static String[] field19263;
@@ -22,7 +23,7 @@ public class Class3448 extends Class3445 implements Class3449 {
    }
 
    @Override
-   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Fluid var4) {
+   public boolean method11531(IBlockReader var1, BlockPos var2, BlockState var3, Fluid var4) {
       return false;
    }
 

@@ -1,20 +1,23 @@
-package mapped;
+package net.minecraft.util.math.vector;
 
-public final class Class8661 {
-   public static final Class8661 field39030 = new Class8661(0.0F, 0.0F, 0.0F, 1.0F);
+import mapped.MathHelper;
+import mapped.Vector3f;
+
+public final class Quaternion {
+   public static final Quaternion field39030 = new Quaternion(0.0F, 0.0F, 0.0F, 1.0F);
    private float field39031;
    private float field39032;
    private float field39033;
    private float field39034;
 
-   public Class8661(float var1, float var2, float var3, float var4) {
+   public Quaternion(float var1, float var2, float var3, float var4) {
       this.field39031 = var1;
       this.field39032 = var2;
       this.field39033 = var3;
       this.field39034 = var4;
    }
 
-   public Class8661(Vector3f var1, float var2, boolean var3) {
+   public Quaternion(Vector3f var1, float var2, boolean var3) {
       if (var3) {
          var2 *= (float) (Math.PI / 180.0);
       }
@@ -26,7 +29,7 @@ public final class Class8661 {
       this.field39034 = method31186(var2 / 2.0F);
    }
 
-   public Class8661(float var1, float var2, float var3, boolean var4) {
+   public Quaternion(float var1, float var2, float var3, boolean var4) {
       if (var4) {
          var1 *= (float) (Math.PI / 180.0);
          var2 *= (float) (Math.PI / 180.0);
@@ -45,7 +48,7 @@ public final class Class8661 {
       this.field39034 = var8 * var10 * var12 - var7 * var9 * var11;
    }
 
-   public Class8661(Class8661 var1) {
+   public Quaternion(Quaternion var1) {
       this.field39031 = var1.field39031;
       this.field39032 = var1.field39032;
       this.field39033 = var1.field39033;
@@ -56,7 +59,7 @@ public final class Class8661 {
    public boolean equals(Object var1) {
       if (this != var1) {
          if (var1 != null && this.getClass() == var1.getClass()) {
-            Class8661 var4 = (Class8661)var1;
+            Quaternion var4 = (Quaternion)var1;
             if (Float.compare(var4.field39031, this.field39031) != 0) {
                return false;
             } else if (Float.compare(var4.field39032, this.field39032) != 0) {
@@ -106,7 +109,7 @@ public final class Class8661 {
       return this.field39034;
    }
 
-   public void method31182(Class8661 var1) {
+   public void method31182(Quaternion var1) {
       float var4 = this.method31178();
       float var5 = this.method31179();
       float var6 = this.method31180();
@@ -168,7 +171,7 @@ public final class Class8661 {
       }
    }
 
-   public Class8661 method31189() {
-      return new Class8661(this);
+   public Quaternion method31189() {
+      return new Quaternion(this);
    }
 }

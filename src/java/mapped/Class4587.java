@@ -146,11 +146,11 @@ public abstract class Class4587 {
          this.field22052 = var1;
          this.field22053 = var2;
          AxisAlignedBB var5 = this.method14523();
-         double var6 = (var5.field28449 + var5.field28452 - (double)var1) / 2.0;
-         double var8 = (var5.field28451 + var5.field28454 - (double)var1) / 2.0;
+         double var6 = (var5.minX + var5.maxX - (double)var1) / 2.0;
+         double var8 = (var5.minZ + var5.maxZ - (double)var1) / 2.0;
          this.method14524(
             new AxisAlignedBB(
-               var6, var5.field28450, var8, var6 + (double)this.field22052, var5.field28450 + (double)this.field22053, var8 + (double)this.field22052
+               var6, var5.minY, var8, var6 + (double)this.field22052, var5.minY + (double)this.field22053, var8 + (double)this.field22052
             )
          );
       }
@@ -206,9 +206,9 @@ public abstract class Class4587 {
 
    public void method14521() {
       AxisAlignedBB var3 = this.method14523();
-      this.field22041 = (var3.field28449 + var3.field28452) / 2.0;
-      this.field22042 = var3.field28450;
-      this.field22043 = (var3.field28451 + var3.field28454) / 2.0;
+      this.field22041 = (var3.minX + var3.maxX) / 2.0;
+      this.field22042 = var3.minY;
+      this.field22043 = (var3.minZ + var3.maxZ) / 2.0;
    }
 
    public int method14499(float var1) {
@@ -236,9 +236,9 @@ public abstract class Class4587 {
          this.field22064.method8384(var9, var10, var11);
          BlockState var12 = this.field22037.getBlockState(this.field22064);
          if (var12.isAir()) {
-            double var13 = !(var1 > 0.0) ? (!(var1 < 0.0) ? this.field22041 : this.field22047.field28449) : this.field22047.field28452;
-            double var15 = !(var3 > 0.0) ? (!(var3 < 0.0) ? this.field22042 : this.field22047.field28450) : this.field22047.field28453;
-            double var17 = !(var5 > 0.0) ? (!(var5 < 0.0) ? this.field22043 : this.field22047.field28451) : this.field22047.field28454;
+            double var13 = !(var1 > 0.0) ? (!(var1 < 0.0) ? this.field22041 : this.field22047.minX) : this.field22047.maxX;
+            double var15 = !(var3 > 0.0) ? (!(var3 < 0.0) ? this.field22042 : this.field22047.minY) : this.field22047.maxY;
+            double var17 = !(var5 > 0.0) ? (!(var5 < 0.0) ? this.field22043 : this.field22047.minZ) : this.field22047.maxZ;
             int var19 = MathHelper.floor(var13 + var1);
             int var20 = MathHelper.floor(var15 + var3);
             int var21 = MathHelper.floor(var17 + var5);

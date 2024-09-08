@@ -13,6 +13,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
@@ -28,7 +29,7 @@ public class EntityRendererManager {
    public final TextureManager field40015;
    private World field40016;
    public ActiveRenderInfo field40017;
-   private Class8661 field40018;
+   private Quaternion field40018;
    public Entity field40019;
    public final GameSettings field40020;
    private boolean field40021 = true;
@@ -190,11 +191,11 @@ public class EntityRendererManager {
    public void method32213(World var1, ActiveRenderInfo var2, Entity var3) {
       this.field40016 = var1;
       this.field40017 = var2;
-      this.field40018 = var2.method37508();
+      this.field40018 = var2.getRotation();
       this.field40019 = var3;
    }
 
-   public void method32214(Class8661 var1) {
+   public void method32214(Quaternion var1) {
       this.field40018 = var1;
    }
 
@@ -224,9 +225,9 @@ public class EntityRendererManager {
 
             try {
                Vector3d var16 = var15.method17867(var1, var9);
-               double var17 = var2 + var16.method11320();
-               double var19 = var4 + var16.method11321();
-               double var21 = var6 + var16.method11322();
+               double var17 = var2 + var16.getX();
+               double var19 = var4 + var16.getY();
+               double var21 = var6 + var16.getZ();
                var10.push();
                var10.translate(var17, var19, var21);
                if (Class9810.method38699()) {
@@ -252,7 +253,7 @@ public class EntityRendererManager {
                   this.method32222(var10, var11, var1);
                }
 
-               var10.translate(-var16.method11320(), -var16.method11321(), -var16.method11322());
+               var10.translate(-var16.getX(), -var16.getY(), -var16.getZ());
                if (this.field40020.field44616 && this.field40021 && var15.field25098 > 0.0F && !var1.method3342()) {
                   double var23 = this.method32229(var1.getPosX(), var1.getPosY(), var1.getPosZ());
                   float var25 = (float)((1.0 - var23 / 256.0) * (double)var15.field25099);
@@ -343,7 +344,7 @@ public class EntityRendererManager {
       float var10 = 0.0F;
       float var11 = var3.method3430() / var8;
       float var12 = 0.0F;
-      var1.rotate(Vector3f.YP.rotationDegrees(-this.field40017.method37507()));
+      var1.rotate(Vector3f.YP.rotationDegrees(-this.field40017.getYaw()));
       var1.translate(0.0, 0.0, (double)(-0.3F + (float)((int)var11) * 0.02F));
       float var13 = 0.0F;
       int var14 = 0;
@@ -437,11 +438,11 @@ public class EntityRendererManager {
                }
 
                AxisAlignedBB var18 = var16.method19514();
-               double var19 = (double)var3.getX() + var18.field28449;
-               double var21 = (double)var3.getX() + var18.field28452;
-               double var23 = (double)var3.getY() + var18.field28450;
-               double var25 = (double)var3.getZ() + var18.field28451;
-               double var27 = (double)var3.getZ() + var18.field28454;
+               double var19 = (double)var3.getX() + var18.minX;
+               double var21 = (double)var3.getX() + var18.maxX;
+               double var23 = (double)var3.getY() + var18.minY;
+               double var25 = (double)var3.getZ() + var18.minZ;
+               double var27 = (double)var3.getZ() + var18.maxZ;
                float var29 = (float)(var19 - var4);
                float var30 = (float)(var21 - var4);
                float var31 = (float)(var23 - var6);
@@ -478,14 +479,14 @@ public class EntityRendererManager {
    }
 
    public double method32228(Entity var1) {
-      return this.field40017.method37504().method11342(var1.getPositionVec());
+      return this.field40017.getPos().method11342(var1.getPositionVec());
    }
 
    public double method32229(double var1, double var3, double var5) {
-      return this.field40017.method37504().method11343(var1, var3, var5);
+      return this.field40017.getPos().method11343(var1, var3, var5);
    }
 
-   public Class8661 method32230() {
+   public Quaternion method32230() {
       return this.field40018;
    }
 

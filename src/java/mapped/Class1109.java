@@ -69,7 +69,7 @@ public class Class1109 extends Class1108 {
 
    @Override
    public void method2914() {
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       this.method3435(var3.x, (double)(this.method3103() + (float)this.method5319() * 0.1F), var3.z);
       this.isAirBorne = true;
    }
@@ -79,7 +79,7 @@ public class Class1109 extends Class1108 {
       if (var1 != Class8953.field40470) {
          super.method3105(var1);
       } else {
-         Vector3d var4 = this.method3433();
+         Vector3d var4 = this.getVec();
          this.method3435(var4.x, (double)(0.22F + (float)this.method5319() * 0.05F), var4.z);
          this.isAirBorne = true;
       }

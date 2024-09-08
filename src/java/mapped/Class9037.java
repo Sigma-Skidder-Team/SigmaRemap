@@ -307,7 +307,7 @@ public class Class9037 {
 
       method33498(var7, var0);
       AxisAlignedBB var9 = Class7803.method26052(var5);
-      BlockPos var10 = new BlockPos(var9.field28449, var9.field28450, var9.field28451);
+      BlockPos var10 = new BlockPos(var9.minX, var9.minY, var9.minZ);
       Class7440.method24029(var8, var10, Class7879.field33820);
    }
 

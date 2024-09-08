@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
@@ -40,7 +41,7 @@ public class SpartanClickTP extends Module {
     private void method16104(ClickEvent var1) {
         if (this.isEnabled() && (mc.player.method3331() || !this.method16004().getBooleanValueFromSetttingName("Sneak"))) {
             if (var1.method13976() == ClickEvent.Button.RIGHT) {
-                BlockRayTraceResult var4 = Class9217.method34567(
+                BlockRayTraceResult var4 = BlockUtil.method34567(
                         mc.player.rotationYaw, mc.player.rotationPitch, this.method16004().getNumberValueBySettingName("Maximum range")
                 );
                 BlockPos var5 = null;

@@ -61,7 +61,7 @@ public class Class2944 extends Class2898<Class4707> {
          byte var21 = -2;
          byte var23 = 2;
          byte var10 = 3;
-         Mutable var11 = new Mutable();
+         BlockPos.Mutable var11 = new BlockPos.Mutable();
 
          for (int var12 = -2; var12 <= 2; var12++) {
             for (int var13 = -2; var13 <= 2; var13++) {

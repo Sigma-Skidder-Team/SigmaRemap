@@ -147,12 +147,12 @@ public class Class2663 extends Class2661 {
                      var5 = false;
                   } else {
                      this.field17029 = new Vector3d(
-                        var3.method11320() + (double)this.method10866(), var3.method11321(), var3.method11322() + (double)this.method10866()
+                        var3.getX() + (double)this.method10866(), var3.getY(), var3.getZ() + (double)this.method10866()
                      );
                      Class1017.method4489(this.field17031).method21666();
                   }
 
-                  this.field17031.method4227().method28041(var3.method11320(), var3.method11321(), var3.method11322());
+                  this.field17031.method4227().method28041(var3.getX(), var3.getY(), var3.getZ());
                }
 
                if (var5) {
@@ -175,7 +175,7 @@ public class Class2663 extends Class2661 {
    }
 
    private void method10865() {
-      this.field17031.method4228().method20813(this.field17029.method11320(), this.field17029.method11321(), this.field17029.method11322(), 0.35F);
+      this.field17031.method4228().method20813(this.field17029.getX(), this.field17029.getY(), this.field17029.getZ(), 0.35F);
    }
 
    private float method10866() {
@@ -188,7 +188,7 @@ public class Class2663 extends Class2661 {
 
    private Optional<BlockPos> method10868(Predicate<BlockState> var1, double var2) {
       BlockPos var6 = this.field17031.getPosition();
-      Mutable var7 = new Mutable();
+      BlockPos.Mutable var7 = new BlockPos.Mutable();
 
       for (int var8 = 0; (double)var8 <= var2; var8 = var8 <= 0 ? 1 - var8 : -var8) {
          for (int var9 = 0; (double)var9 < var2; var9++) {

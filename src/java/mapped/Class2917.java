@@ -27,7 +27,7 @@ public class Class2917 extends Class2914 {
          Collections.shuffle(var9, var2);
 
          for (Direction var11 : var9.subList(0, var8)) {
-            Mutable var12 = var3.method8354();
+            BlockPos.Mutable var12 = var3.method8354();
             int var13 = var2.nextInt(2) + 1;
             var12.method8379(var11);
             Direction var15;

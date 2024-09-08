@@ -10,6 +10,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -67,7 +68,7 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public VoxelShape method11503(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11503(BlockState var1, IBlockReader var2, BlockPos var3) {
       return field18885;
    }
 
@@ -94,12 +95,12 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18887;
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       switch (Class7719.field33128[var1.<Direction>method23463(field18880).ordinal()]) {
          case 1:
             return field18889;
@@ -131,7 +132,7 @@ public class Class3354 extends Class3241 {
 
    @Nullable
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return new Class948();
    }
 
@@ -220,12 +221,12 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return !var1.<Boolean>method23463(field18881) ? 0 : 15;
    }
 
    @Override
-   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return var4 == Direction.field673 && var1.<Boolean>method23463(field18881) ? 15 : 0;
    }
 
@@ -275,7 +276,7 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

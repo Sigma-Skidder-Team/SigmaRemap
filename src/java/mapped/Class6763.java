@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Sets;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.EnumSet;
 import java.util.Set;
@@ -28,7 +29,7 @@ public class Class6763 extends Class6762 {
       int var3;
       if (this.method20649() && this.field29476.method3250()) {
          var3 = MathHelper.floor(this.field29476.getPosY());
-         Mutable var4 = new Mutable(this.field29476.getPosX(), (double)var3, this.field29476.getPosZ());
+         BlockPos.Mutable var4 = new BlockPos.Mutable(this.field29476.getPosX(), (double)var3, this.field29476.getPosZ());
 
          for (Block var5 = this.field29475.getBlockState(var4).getBlock();
               var5 == Blocks.WATER;
@@ -44,10 +45,10 @@ public class Class6763 extends Class6762 {
       Class2163 var11 = this.method20642(this.field29476, var10.getX(), var3, var10.getZ());
       if (this.field29476.method4223(var11) < 0.0F) {
          Set<BlockPos> var6 = Sets.newHashSet();
-         var6.add(new BlockPos(this.field29476.getBoundingBox().field28449, (double)var3, this.field29476.getBoundingBox().field28451));
-         var6.add(new BlockPos(this.field29476.getBoundingBox().field28449, (double)var3, this.field29476.getBoundingBox().field28454));
-         var6.add(new BlockPos(this.field29476.getBoundingBox().field28452, (double)var3, this.field29476.getBoundingBox().field28451));
-         var6.add(new BlockPos(this.field29476.getBoundingBox().field28452, (double)var3, this.field29476.getBoundingBox().field28454));
+         var6.add(new BlockPos(this.field29476.getBoundingBox().minX, (double)var3, this.field29476.getBoundingBox().minZ));
+         var6.add(new BlockPos(this.field29476.getBoundingBox().minX, (double)var3, this.field29476.getBoundingBox().maxZ));
+         var6.add(new BlockPos(this.field29476.getBoundingBox().maxX, (double)var3, this.field29476.getBoundingBox().minZ));
+         var6.add(new BlockPos(this.field29476.getBoundingBox().maxX, (double)var3, this.field29476.getBoundingBox().maxZ));
 
          for (BlockPos var8 : var6) {
             Class2163 var9 = this.method20631(this.field29476, var8);
@@ -274,7 +275,7 @@ public class Class6763 extends Class6762 {
    }
 
    @Override
-   public Class2163 method20629(Class1665 var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
+   public Class2163 method20629(IBlockReader var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
       EnumSet<Class2163> var13 = EnumSet.noneOf(Class2163.class);
       Class2163 var14 = Class2163.field14184;
       BlockPos var15 = var5.getPosition();
@@ -299,8 +300,8 @@ public class Class6763 extends Class6762 {
    }
 
    @Override
-   public Class2163 method20621(Class1665 var1, int var2, int var3, int var4) {
-      Mutable var7 = new Mutable();
+   public Class2163 method20621(IBlockReader var1, int var2, int var3, int var4) {
+      BlockPos.Mutable var7 = new BlockPos.Mutable();
       Class2163 var8 = method20635(var1, var7.method8372(var2, var3, var4));
       if (var8 == Class2163.field14185 && var3 >= 1) {
          BlockState var9 = var1.getBlockState(var7.method8372(var2, var3 - 1, var4));

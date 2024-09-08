@@ -60,7 +60,7 @@ public abstract class Class1046 extends Class1006 {
                double var9 = (var3.getPosY() - this.getPosY()) / (double)var4;
                double var11 = (var3.getPosZ() - this.getPosZ()) / (double)var4;
                this.method3434(
-                  this.method3433()
+                  this.getVec()
                      .method11339(Math.copySign(var7 * var7 * 0.4, var7), Math.copySign(var9 * var9 * 0.4, var9), Math.copySign(var11 * var11 * 0.4, var11))
                );
             }

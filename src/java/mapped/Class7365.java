@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class Class7365 extends Class7362 {
@@ -62,7 +63,7 @@ public class Class7365 extends Class7362 {
             double var7 = this.field31519.field5624.getPosZ() + var3.z * 5.0 / 2.0;
             double var9 = this.field31519.field5624.method3440(0.5);
             double var11 = var9;
-            Mutable var13 = new Mutable(var5, var9, var7);
+            BlockPos.Mutable var13 = new BlockPos.Mutable(var5, var9, var7);
 
             while (this.field31519.world.method7007(var13)) {
                if (--var11 < 0.0) {

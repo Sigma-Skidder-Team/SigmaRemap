@@ -101,7 +101,7 @@ public class Class897 extends Entity implements Class889 {
    @Override
    public void tick() {
       super.tick();
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       double var4 = this.getPosX() + var3.x;
       double var6 = this.getPosY() + var3.y;
       double var8 = this.getPosZ() + var3.z;

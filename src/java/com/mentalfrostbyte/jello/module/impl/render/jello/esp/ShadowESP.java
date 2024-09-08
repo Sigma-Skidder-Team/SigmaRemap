@@ -64,7 +64,7 @@ public class ShadowESP extends Module {
                                 GL11.glTranslated(var6, var8, var10);
                                 GL11.glTranslatef(0.0F, var3x.method3430(), 0.0F);
                                 GL11.glTranslatef(0.0F, 0.1F, 0.0F);
-                                GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37507(), 0.0F, -1.0F, 0.0F);
+                                GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
                                 GL11.glScalef(-0.11F, -0.11F, -0.11F);
                                 RenderUtil.method11450(
                                         -var3x.method3429() * 22.0F,
@@ -105,10 +105,10 @@ public class ShadowESP extends Module {
         for (Entity var10 : mc.world.method6835()) {
             if (this.method16611(var10)) {
                 GL11.glPushMatrix();
-                Vector3d var11 = mc.gameRenderer.getActiveRenderInfo().method37504();
-                double var12 = var11.method11320();
-                double var14 = var11.method11321();
-                double var16 = var11.method11322();
+                Vector3d var11 = mc.gameRenderer.getActiveRenderInfo().getPos();
+                double var12 = var11.getX();
+                double var14 = var11.getY();
+                double var16 = var11.getZ();
                 MatrixStack var18 = new MatrixStack();
                 boolean var19 = mc.gameSettings.field44616;
                 RenderSystem.method27821();

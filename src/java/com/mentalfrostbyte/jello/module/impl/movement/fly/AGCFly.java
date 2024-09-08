@@ -58,7 +58,7 @@ public class AGCFly extends Module {
     @Override
     public void onDisable() {
         Class9567.method37090(0.0);
-        if (mc.player.method3433().y > 0.0) {
+        if (mc.player.getVec().y > 0.0) {
             ColorUtils.method17725(-0.0789);
         }
     }
@@ -136,9 +136,9 @@ public class AGCFly extends Module {
 
                 while (var4.hasNext()) {
                     VoxelShape var8 = (VoxelShape) var4.next();
-                    if (var8.method19514().field28453 > var5) {
-                        var5 = var8.method19514().field28453;
-                        var7 = new BlockPos(var8.method19514().field28449, var8.method19514().field28450, var8.method19514().field28451);
+                    if (var8.method19514().maxY > var5) {
+                        var5 = var8.method19514().maxY;
+                        var7 = new BlockPos(var8.method19514().minX, var8.method19514().minY, var8.method19514().minZ);
                     }
                 }
 

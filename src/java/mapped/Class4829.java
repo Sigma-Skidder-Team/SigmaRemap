@@ -5,6 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 
 public class Class4829 {
    private static String[] field22601;
@@ -20,13 +21,13 @@ public class Class4829 {
       this.field22604 = ModelBakery.field40512.getSprite();
    }
 
-   private static boolean method14920(Class1665 var0, BlockPos var1, Direction var2, FluidState var3) {
+   private static boolean method14920(IBlockReader var0, BlockPos var1, Direction var2, FluidState var3) {
       BlockPos var6 = var1.method8349(var2);
       FluidState var7 = var0.getFluidState(var6);
       return var7.method23472().method25066(var3.method23472());
    }
 
-   private static boolean method14921(Class1665 var0, Direction var1, float var2, BlockPos var3, BlockState var4) {
+   private static boolean method14921(IBlockReader var0, Direction var1, float var2, BlockPos var3, BlockState var4) {
       if (!var4.method23410()) {
          return false;
       } else {
@@ -36,13 +37,13 @@ public class Class4829 {
       }
    }
 
-   private static boolean method14922(Class1665 var0, BlockPos var1, Direction var2, float var3) {
+   private static boolean method14922(IBlockReader var0, BlockPos var1, Direction var2, float var3) {
       BlockPos var6 = var1.method8349(var2);
       BlockState var7 = var0.getBlockState(var6);
       return method14921(var0, var2, var3, var6, var7);
    }
 
-   private static boolean method14923(Class1665 var0, BlockPos var1, BlockState var2, Direction var3) {
+   private static boolean method14923(IBlockReader var0, BlockPos var1, BlockState var2, Direction var3) {
       return method14921(var0, var3.method536(), 1.0F, var1, var2);
    }
 
@@ -378,7 +379,7 @@ public class Class4829 {
       return (var7 <= var8 ? var8 : var7) | (var9 <= var10 ? var10 : var9) << 16;
    }
 
-   private float method14929(Class1665 var1, BlockPos var2, Fluid var3) {
+   private float method14929(IBlockReader var1, BlockPos var2, Fluid var3) {
       int var6 = 0;
       float var7 = 0.0F;
 

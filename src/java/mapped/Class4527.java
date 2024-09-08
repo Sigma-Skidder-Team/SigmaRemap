@@ -9,6 +9,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 import java.util.function.Function;
@@ -52,7 +53,7 @@ public class Class4527 {
       return null;
    }
 
-   public static VoxelShape method14426(Class1665 var0, BlockPos var1) {
+   public static VoxelShape method14426(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
       return !var4.method23446(BlockTags.field32804) && (!(var4.getBlock() instanceof Class3206) || !var4.<Boolean>method23463(Class3206.field18594))
          ? var4.method23414(var0, var1)
@@ -60,7 +61,7 @@ public class Class4527 {
    }
 
    public static double method14427(BlockPos var0, int var1, Function<BlockPos, VoxelShape> var2) {
-      Mutable var5 = var0.method8354();
+      BlockPos.Mutable var5 = var0.method8354();
       int var6 = 0;
 
       while (var6 < var1) {

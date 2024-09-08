@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -89,7 +90,7 @@ public class Class3399 extends AbstractFireBlock {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field19050.get(var1.method23465(field19038, Integer.valueOf(0)));
    }
 
@@ -98,7 +99,7 @@ public class Class3399 extends AbstractFireBlock {
       return this.method12016(var1.method18360(), var1.method18345());
    }
 
-   public BlockState method12016(Class1665 var1, BlockPos var2) {
+   public BlockState method12016(IBlockReader var1, BlockPos var2) {
       BlockPos var5 = var2.down();
       BlockState var6 = var1.getBlockState(var5);
       if (!this.method12010(var6) && !var6.method23454(var1, var5, Direction.field673)) {
@@ -167,7 +168,7 @@ public class Class3399 extends AbstractFireBlock {
             this.method12020(var2, var3.up(), 250 + var12, var4, var9);
             this.method12020(var2, var3.north(), 300 + var12, var4, var9);
             this.method12020(var2, var3.south(), 300 + var12, var4, var9);
-            Mutable var13 = new Mutable();
+            BlockPos.Mutable var13 = new BlockPos.Mutable();
 
             for (int var14 = -1; var14 <= 1; var14++) {
                for (int var15 = -1; var15 <= 1; var15++) {
@@ -239,7 +240,7 @@ public class Class3399 extends AbstractFireBlock {
       return !var6.method23448(Blocks.FIRE) ? var6 : var6.method23465(field19038, Integer.valueOf(var3));
    }
 
-   private boolean method12022(Class1665 var1, BlockPos var2) {
+   private boolean method12022(IBlockReader var1, BlockPos var2) {
       for (Direction var8 : Direction.values()) {
          if (this.method12010(var1.getBlockState(var2.method8349(var8)))) {
             return true;

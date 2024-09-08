@@ -35,9 +35,9 @@ public class SkeletonESP extends Module {
                 GL11.glLineWidth(2.0F);
                 GL11.glColor4f((float) (var5.getRed() / 255), (float) (var5.getGreen() / 255), (float) (var5.getBlue() / 255), 1.0F);
                 Class8472 var7 = this.method16090(var1, var2);
-                double var8 = var7.method29876() - mc.getRenderManager().field40017.method37504().x;
-                double var10 = var7.method29877() - mc.getRenderManager().field40017.method37504().y;
-                double var12 = var7.method29878() - mc.getRenderManager().field40017.method37504().z;
+                double var8 = var7.method29876() - mc.getRenderManager().field40017.getPos().x;
+                double var10 = var7.method29877() - mc.getRenderManager().field40017.getPos().y;
+                double var12 = var7.method29878() - mc.getRenderManager().field40017.getPos().z;
                 GL11.glTranslated(var8, var10, var12);
                 float var14 = var2.field4966 + (var2.field4965 - var2.field4966) * mc.getRenderPartialTicks();
                 GL11.glRotatef(-var14, 0.0F, 1.0F, 0.0F);

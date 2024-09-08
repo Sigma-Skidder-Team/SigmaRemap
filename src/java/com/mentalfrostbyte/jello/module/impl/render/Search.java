@@ -188,10 +188,10 @@ public class Search extends Module {
 
         for (Class7871 var5 : this.field23499) {
             for (BlockPos var7 : var5.field33732) {
-                double var8 = (double) var7.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
-                double var10 = (double) var7.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-                double var12 = (double) var7.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
-                Class9388 var14 = new Class9388(var8, var10, var12, var8 + 1.0, var10 + 1.0, var12 + 1.0);
+                double var8 = (double) var7.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+                double var10 = (double) var7.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
+                double var12 = (double) var7.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
+                Box3D var14 = new Box3D(var8, var10, var12, var8 + 1.0, var10 + 1.0, var12 + 1.0);
                 RenderUtil.render3DColoredBox(var14, var3);
             }
         }

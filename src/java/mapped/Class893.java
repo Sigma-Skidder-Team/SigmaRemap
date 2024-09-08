@@ -66,7 +66,7 @@ public abstract class Class893 extends ProjectileEntity {
       }
 
       this.method3240();
-      Vector3d var17 = this.method3433();
+      Vector3d var17 = this.getVec();
       double var6 = this.getPosX() + var17.x;
       double var8 = this.getPosY() + var17.y;
       double var10 = this.getPosZ() + var17.z;
@@ -94,7 +94,7 @@ public abstract class Class893 extends ProjectileEntity {
 
       this.method3434(var17.method11344((double)var12));
       if (!this.method3247()) {
-         Vector3d var18 = this.method3433();
+         Vector3d var18 = this.getVec();
          this.method3435(var18.x, var18.y - (double)this.method3515(), var18.z);
       }
 

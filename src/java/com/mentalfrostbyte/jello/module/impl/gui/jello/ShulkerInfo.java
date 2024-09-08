@@ -63,21 +63,21 @@ public class ShulkerInfo extends Module {
                             0.8F
                     );
                     if (this.method16672(var6)) {
-                        double var7 = Class9647.method37622(var5).field43722 - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
-                        double var9 = Class9647.method37622(var5).field43723 - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-                        double var11 = Class9647.method37622(var5).field43724 - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
+                        double var7 = Class9647.method37622(var5).field43722 - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+                        double var9 = Class9647.method37622(var5).field43723 - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
+                        double var11 = Class9647.method37622(var5).field43724 - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
                         float var13 = 0.3F;
                         GL11.glEnable(3042);
                         GL11.glAlphaFunc(516, 0.0F);
                         GL11.glEnable(2848);
                         RenderUtil.render3DColoredBox(
-                                new Class9388(
+                                new Box3D(
                                         var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
                                 ),
                                 ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F)
                         );
                         RenderUtil.renderWireframeBox(
-                                new Class9388(
+                                new Box3D(
                                         var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
                                 ),
                                 3.0F,
@@ -126,9 +126,9 @@ public class ShulkerInfo extends Module {
     public void method16674(double var1, double var3, double var5, Entity var7, float var8) {
         ClientResource var11 = ResourceRegistry.JelloLightFont25;
         String var12 = var7.getName().getUnformattedComponentText();
-        float var13 = (float) (var1 - mc.gameRenderer.getActiveRenderInfo().method37504().method11320());
-        float var14 = (float) (var3 - mc.gameRenderer.getActiveRenderInfo().method37504().method11321());
-        float var15 = (float) (var5 - mc.gameRenderer.getActiveRenderInfo().method37504().method11322());
+        float var13 = (float) (var1 - mc.gameRenderer.getActiveRenderInfo().getPos().getX());
+        float var14 = (float) (var3 - mc.gameRenderer.getActiveRenderInfo().getPos().getY());
+        float var15 = (float) (var5 - mc.gameRenderer.getActiveRenderInfo().getPos().getZ());
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -139,8 +139,8 @@ public class ShulkerInfo extends Module {
         GL11.glPushMatrix();
         GL11.glAlphaFunc(519, 0.0F);
         GL11.glTranslated(var13, var14 + 0.6F - 0.33333334F * (1.0F - var8), var15);
-        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37507(), 0.0F, -1.0F, 0.0F);
-        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37506(), 1.0F, 0.0F, 0.0F);
+        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
+        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
         GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
         GL11.glTranslated(-var11.method23942(var12) / 2, 0.0, 0.0);
         List var16 = this.method16678(((ItemEntity) var7).method4124());

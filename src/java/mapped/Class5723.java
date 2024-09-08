@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Quaternion;
 
 public class Class5723 extends Class5715<EnderCrystalEntity> {
    private static final ResourceLocation field25122 = new ResourceLocation("textures/entity/end_crystal/end_crystal.png");
@@ -37,15 +38,15 @@ public class Class5723 extends Class5715<EnderCrystalEntity> {
 
       var4.rotate(Vector3f.YP.rotationDegrees(var10));
       var4.translate(0.0, (double)(1.5F + var9 / 2.0F), 0.0);
-      var4.rotate(new Class8661(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
+      var4.rotate(new Quaternion(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
       this.field25126.method22680(var4, var11, var6, var12);
       float var13 = 0.875F;
       var4.method35292(0.875F, 0.875F, 0.875F);
-      var4.rotate(new Class8661(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
+      var4.rotate(new Quaternion(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
       var4.rotate(Vector3f.YP.rotationDegrees(var10));
       this.field25126.method22680(var4, var11, var6, var12);
       var4.method35292(0.875F, 0.875F, 0.875F);
-      var4.rotate(new Class8661(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
+      var4.rotate(new Quaternion(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
       var4.rotate(Vector3f.YP.rotationDegrees(var10));
       this.field25125.method22680(var4, var11, var6, var12);
       var4.pop();

@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.Optional;
@@ -24,14 +25,14 @@ public abstract class AbstractFireBlock extends Block {
       return method12009(var1.method18360(), var1.method18345());
    }
 
-   public static BlockState method12009(Class1665 var0, BlockPos var1) {
+   public static BlockState method12009(IBlockReader var0, BlockPos var1) {
       BlockPos var4 = var1.down();
       BlockState var5 = var0.getBlockState(var4);
       return !Class3398.method12014(var5.getBlock()) ? ((Class3399) Blocks.FIRE).method12016(var0, var1) : Blocks.field36531.method11579();
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19035;
    }
 
@@ -160,7 +161,7 @@ public abstract class AbstractFireBlock extends Block {
       if (!method12011(var0)) {
          return false;
       } else {
-         Mutable var5 = var1.method8354();
+         BlockPos.Mutable var5 = var1.method8354();
          boolean var6 = false;
 
          for (Direction var10 : Direction.values()) {

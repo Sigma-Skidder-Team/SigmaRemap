@@ -72,7 +72,7 @@ public class Class886 extends AbstractArrowEntity {
             }
 
             double var6 = 0.05 * (double)var4;
-            this.method3434(this.method3433().method11344(0.95).method11338(var5.method11333().method11344(var6)));
+            this.method3434(this.getVec().method11344(0.95).method11338(var5.method11333().method11344(var6)));
             if (this.field5115 == 0) {
                this.method2863(Sounds.field27150, 10.0F, 1.0F);
             }
@@ -133,7 +133,7 @@ public class Class886 extends AbstractArrowEntity {
          }
       }
 
-      this.method3434(this.method3433().method11347(-0.01, -0.1, -0.01));
+      this.method3434(this.getVec().method11347(-0.01, -0.1, -0.01));
       float var13 = 1.0F;
       if (this.world instanceof ServerWorld && this.world.method6794() && Class7858.method26338(this.field5113)) {
          BlockPos var10 = var4.getPosition();

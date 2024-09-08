@@ -37,7 +37,7 @@ public class JumpSpider extends Module {
                 }
             } else if (this.getBooleanValueFromSetttingName("AutoJump") || mc.gameSettings.keyBindJump.isKeyDown()) {
                 mc.player.method2914();
-                var1.method13995(mc.player.method3433().y);
+                var1.method13995(mc.player.getVec().y);
             } else if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
                 Class9567.method37088(var1, 0.28 + (double) Class9567.method37078() * 0.05);
                 var1.method13995(0.0);
@@ -46,7 +46,7 @@ public class JumpSpider extends Module {
             }
         } else if (this.getBooleanValueFromSetttingName("AutoJump")) {
             mc.player.method2914();
-            var1.method13995(mc.player.method3433().y);
+            var1.method13995(mc.player.getVec().y);
         }
 
         ColorUtils.method17725(var1.method13994());
@@ -109,7 +109,7 @@ public class JumpSpider extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (var1.method13903() != null
                     && !var1.method13903().method19516()
-                    && var1.method13903().method19514().field28450 > mc.player.boundingBox.field28450 + 1.0) {
+                    && var1.method13903().method19514().minY > mc.player.boundingBox.minY + 1.0) {
                 var1.method13900(true);
             }
         }

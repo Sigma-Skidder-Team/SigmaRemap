@@ -9,6 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
+import net.minecraft.world.IBlockReader;
 
 public class Class7468 {
    private final BlockPos field32104;
@@ -29,7 +30,7 @@ public class Class7468 {
    }
 
    @Nullable
-   public static Class7468 method24184(Class1665 var0, BlockPos var1) {
+   public static Class7468 method24184(IBlockReader var0, BlockPos var1) {
       TileEntity var4 = var0.getTileEntity(var1);
       if (!(var4 instanceof Class958)) {
          return null;

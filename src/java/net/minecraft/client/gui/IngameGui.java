@@ -317,8 +317,8 @@ public class IngameGui extends AbstractGui {
                 RenderSystem.pushMatrix();
                 RenderSystem.translatef((float) (this.field6741 / 2), (float) (this.field6742 / 2), (float) this.method5702());
                 ActiveRenderInfo var11 = this.field6716.gameRenderer.getActiveRenderInfo();
-                RenderSystem.method27883(var11.method37506(), -1.0F, 0.0F, 0.0F);
-                RenderSystem.method27883(var11.method37507(), 0.0F, 1.0F, 0.0F);
+                RenderSystem.method27883(var11.getPitch(), -1.0F, 0.0F, 0.0F);
+                RenderSystem.method27883(var11.getYaw(), 0.0F, 1.0F, 0.0F);
                 RenderSystem.scalef(-1.0F, -1.0F, -1.0F);
                 RenderSystem.method27903(10);
                 RenderSystem.popMatrix();

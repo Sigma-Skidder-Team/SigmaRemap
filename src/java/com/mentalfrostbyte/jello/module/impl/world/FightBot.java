@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
-import mapped.Class9217;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.entity.Entity;
@@ -42,7 +42,7 @@ public class FightBot extends PremiumModule {
             }
         }
 
-        List var6 = Class9217.method34548(var3);
+        List var6 = BlockUtil.method34548(var3);
         return var6.size() <= 1 ? var6 : var6.subList(0, Math.min(3, var6.size() - 1));
     }
 }

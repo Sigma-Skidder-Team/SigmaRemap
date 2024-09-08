@@ -209,9 +209,9 @@ public class TwoDESP extends Module {
     }
 
     private void method16519() {
-        double var3 = mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
-        double var5 = mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-        double var7 = mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
+        double var3 = mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+        double var5 = mc.gameRenderer.getActiveRenderInfo().getPos().getY();
+        double var7 = mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
         field23728.clear();
         field23729.clear();
         float var9 = mc.timer.renderPartialTicks;

@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public abstract class Class3429 extends Block {
@@ -28,7 +29,7 @@ public abstract class Class3429 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       Class96 var7 = !var1.method23448(this) ? null : var1.<Class96>method23463(this.method12093());
       return var7 != null && var7.method275() ? field19188 : field19187;
    }

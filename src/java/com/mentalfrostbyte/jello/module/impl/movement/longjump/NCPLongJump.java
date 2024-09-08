@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.module.impl.movement.LongJump;
 import com.mentalfrostbyte.jello.module.impl.player.NoFall;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.BlockPos;
@@ -55,16 +56,16 @@ public class NCPLongJump extends Module {
 
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (Step.field23887 > 1) {
-                    if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var4) && this.field23477 > 0 && ColorUtils.method17686()) {
+                    if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var4) && this.field23477 > 0 && ColorUtils.method17686()) {
                         mc.player.method2914();
-                        var1.method13993(mc.player.method3433().x);
-                        var1.method13995(mc.player.method3433().y);
-                        var1.method13997(mc.player.method3433().z);
+                        var1.method13993(mc.player.getVec().x);
+                        var1.method13995(mc.player.getVec().y);
+                        var1.method13997(mc.player.getVec().z);
                     } else if (this.method16004().getBooleanValueFromSetttingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && ColorUtils.method17686()) {
                         mc.player.method2914();
-                        var1.method13993(mc.player.method3433().x);
-                        var1.method13995(mc.player.method3433().y);
-                        var1.method13997(mc.player.method3433().z);
+                        var1.method13993(mc.player.getVec().x);
+                        var1.method13995(mc.player.getVec().y);
+                        var1.method13997(mc.player.getVec().z);
                     }
                 }
             } else {
@@ -125,7 +126,7 @@ public class NCPLongJump extends Module {
                     }
                 }
 
-                if (this.field23477 == 1 && mc.player.method3433().y < 0.0 && this.method16004().getBooleanValueFromSetttingName("Auto Jump")) {
+                if (this.field23477 == 1 && mc.player.getVec().y < 0.0 && this.method16004().getBooleanValueFromSetttingName("Auto Jump")) {
                     Class9567.method37088(var1, Class9567.method37076() * 0.2);
                 }
             }

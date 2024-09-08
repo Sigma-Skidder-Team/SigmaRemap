@@ -10,12 +10,12 @@ public class Class8430 {
 
    @Nonnull
    public static Vector3d method29626(Vector3d var0, Class9132 var1) {
-      int var4 = MathHelper.floor(var0.method11320());
-      int var5 = MathHelper.floor(var0.method11321());
-      int var6 = MathHelper.floor(var0.method11322());
-      double var7 = var0.method11320() - (double)var4;
-      double var9 = var0.method11321() - (double)var5;
-      double var11 = var0.method11322() - (double)var6;
+      int var4 = MathHelper.floor(var0.getX());
+      int var5 = MathHelper.floor(var0.getY());
+      int var6 = MathHelper.floor(var0.getZ());
+      double var7 = var0.getX() - (double)var4;
+      double var9 = var0.getY() - (double)var5;
+      double var11 = var0.getZ() - (double)var6;
       double var13 = 0.0;
       Vector3d var15 = Vector3d.ZERO;
 

@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
 
 import java.util.Random;
@@ -98,7 +99,7 @@ public class Class4183 extends Class4180 {
       return super.method12896(var1, var2, var3, var4, var5, var6, var7);
    }
 
-   private int method12948(BlockPos var1, Class1665 var2, BlockPos var3) {
+   private int method12948(BlockPos var1, IBlockReader var2, BlockPos var3) {
       int var6 = var1.getY();
       int var7 = 512;
       int var8 = var6 - 1;
@@ -108,7 +109,7 @@ public class Class4183 extends Class4180 {
          int var12 = var11.getX();
          int var13 = var11.getZ();
          int var14 = var1.getY() - 1;
-         Mutable var15 = new Mutable(var12, var14, var13);
+         BlockPos.Mutable var15 = new BlockPos.Mutable(var12, var14, var13);
          BlockState var16 = var2.getBlockState(var15);
 
          for (FluidState var17 = var2.getFluidState(var15);

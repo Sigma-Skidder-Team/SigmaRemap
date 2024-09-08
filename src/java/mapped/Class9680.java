@@ -15,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
@@ -903,7 +904,7 @@ public class Class9680 {
       }
    }
 
-   private static int method37874(BlockState var0, Class1665 var1, BlockPos var2, Class8391 var3) {
+   private static int method37874(BlockState var0, IBlockReader var1, BlockPos var2, Class8391 var3) {
       Class7448 var6 = field45245;
       Block var7 = var0.getBlock();
       if (var7 == Blocks.PUMPKIN_STEM && field45247 != null) {

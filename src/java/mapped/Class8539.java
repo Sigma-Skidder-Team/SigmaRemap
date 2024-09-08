@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.vector.Quaternion;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,19 +18,19 @@ public class Class8539 {
       var0 -> {
          var0.put(Direction.SOUTH, Class6979.method21542());
          var0.put(
-            Direction.EAST, new Class6979((Vector3f)null, new Class8661(new Vector3f(0.0F, 1.0F, 0.0F), 90.0F, true), (Vector3f)null, (Class8661)null)
+            Direction.EAST, new Class6979((Vector3f)null, new Quaternion(new Vector3f(0.0F, 1.0F, 0.0F), 90.0F, true), (Vector3f)null, (Quaternion)null)
          );
          var0.put(
-            Direction.WEST, new Class6979((Vector3f)null, new Class8661(new Vector3f(0.0F, 1.0F, 0.0F), -90.0F, true), (Vector3f)null, (Class8661)null)
+            Direction.WEST, new Class6979((Vector3f)null, new Quaternion(new Vector3f(0.0F, 1.0F, 0.0F), -90.0F, true), (Vector3f)null, (Quaternion)null)
          );
          var0.put(
-            Direction.NORTH, new Class6979((Vector3f)null, new Class8661(new Vector3f(0.0F, 1.0F, 0.0F), 180.0F, true), (Vector3f)null, (Class8661)null)
+            Direction.NORTH, new Class6979((Vector3f)null, new Quaternion(new Vector3f(0.0F, 1.0F, 0.0F), 180.0F, true), (Vector3f)null, (Quaternion)null)
          );
          var0.put(
-            Direction.field673, new Class6979((Vector3f)null, new Class8661(new Vector3f(1.0F, 0.0F, 0.0F), -90.0F, true), (Vector3f)null, (Class8661)null)
+            Direction.field673, new Class6979((Vector3f)null, new Quaternion(new Vector3f(1.0F, 0.0F, 0.0F), -90.0F, true), (Vector3f)null, (Quaternion)null)
          );
          var0.put(
-            Direction.DOWN, new Class6979((Vector3f)null, new Class8661(new Vector3f(1.0F, 0.0F, 0.0F), 90.0F, true), (Vector3f)null, (Class8661)null)
+            Direction.DOWN, new Class6979((Vector3f)null, new Quaternion(new Vector3f(1.0F, 0.0F, 0.0F), 90.0F, true), (Vector3f)null, (Quaternion)null)
          );
       }
    );
@@ -54,7 +55,7 @@ public class Class8539 {
          return method30383(var7);
       } else {
          field38386.warn((String)var2.get());
-         return new Class6979((Vector3f)null, (Class8661)null, new Vector3f(0.0F, 0.0F, 0.0F), (Class8661)null);
+         return new Class6979((Vector3f)null, (Quaternion)null, new Vector3f(0.0F, 0.0F, 0.0F), (Quaternion)null);
       }
    }
 }

@@ -23,7 +23,7 @@ public class Class2952 extends Class2898<Class4712> {
       Collections.shuffle(var9, var3);
       List<Integer> var10 = IntStream.rangeClosed(var8.method24357(), var8.method24359()).boxed().collect(Collectors.toList());
       Collections.shuffle(var10, var3);
-      Mutable var11 = new Mutable();
+      BlockPos.Mutable var11 = new BlockPos.Mutable();
 
       for (Integer var13 : var9) {
          for (Integer var15 : var10) {

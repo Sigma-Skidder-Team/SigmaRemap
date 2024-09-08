@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.Map;
 
@@ -77,17 +78,17 @@ public class Class3238 extends Block implements Class3207 {
    }
 
    @Override
-   public boolean method11493(BlockState var1, Class1665 var2, BlockPos var3) {
+   public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
       return !var1.<Boolean>method23463(field18684);
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field18687[this.method11641(var1)];
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field18686[this.method11641(var1)];
    }
 
@@ -124,7 +125,7 @@ public class Class3238 extends Block implements Class3207 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 

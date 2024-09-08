@@ -36,7 +36,7 @@ public class Class3294 extends Class3292 {
          }
 
          int var9 = 0;
-         Mutable var10 = var4.method8354().method8379(var8);
+         BlockPos.Mutable var10 = var4.method8354().method8379(var8);
 
          while (var9 < 7) {
             if (!var5.isRemote && !World.isValid(var10)) {

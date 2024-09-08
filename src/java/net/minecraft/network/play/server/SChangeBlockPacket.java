@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import mapped.Block;
-import mapped.Class1665;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
@@ -23,7 +23,7 @@ public class SChangeBlockPacket implements Packet<IClientPlayNetHandler> {
       this.field24888 = var2;
    }
 
-   public SChangeBlockPacket(Class1665 var1, BlockPos var2) {
+   public SChangeBlockPacket(IBlockReader var1, BlockPos var2) {
       this(var2, var1.getBlockState(var2));
    }
 

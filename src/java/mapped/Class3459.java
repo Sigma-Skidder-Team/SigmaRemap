@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -35,7 +36,7 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       switch (Class7594.field32602[var1.<Direction>method23463(field19281).ordinal()]) {
          case 1:
          default:
@@ -201,12 +202,12 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return !var1.<Boolean>method23463(field19282) ? 0 : 15;
    }
 
    @Override
-   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       if (var1.<Boolean>method23463(field19282)) {
          return var1.method23463(field19281) != var4 ? 0 : 15;
       } else {

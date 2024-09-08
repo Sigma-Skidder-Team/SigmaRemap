@@ -173,7 +173,7 @@ public class Class1012 extends Class1013 implements Class1011 {
                if (this.field5664 > 0.4F) {
                   float var3 = (float)this.getPosY();
                   int var4 = (int)(MathHelper.sin((this.field5664 - 0.4F) * (float) Math.PI) * 7.0F);
-                  Vector3d var5 = this.method3433();
+                  Vector3d var5 = this.getVec();
 
                   for (int var6 = 0; var6 < var4; var6++) {
                      float var7 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.method3429() * 0.5F;

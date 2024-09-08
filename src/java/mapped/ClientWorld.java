@@ -339,7 +339,7 @@ public class ClientWorld extends World {
          }
       }
 
-      Mutable var11 = new Mutable();
+      BlockPos.Mutable var11 = new BlockPos.Mutable();
 
       for (int var12 = 0; var12 < 667; var12++) {
          this.method6853(var1, var2, var3, 16, var7, var8, var11);
@@ -347,7 +347,7 @@ public class ClientWorld extends World {
       }
    }
 
-   public void method6853(int var1, int var2, int var3, int var4, Random var5, boolean var6, Mutable var7) {
+   public void method6853(int var1, int var2, int var3, int var4, Random var5, boolean var6, BlockPos.Mutable var7) {
       int var10 = var1 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
       int var11 = var2 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
       int var12 = var3 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
@@ -508,7 +508,7 @@ public class ClientWorld extends World {
 
    @Override
    public void method6745(double var1, double var3, double var5, SoundEvent var7, Class2266 var8, float var9, float var10, boolean var11) {
-      double var14 = this.field9030.gameRenderer.getActiveRenderInfo().method37504().method11343(var1, var3, var5);
+      double var14 = this.field9030.gameRenderer.getActiveRenderInfo().getPos().method11343(var1, var3, var5);
       MinecraftSoundManager var16 = new MinecraftSoundManager(var7, var8, var9, var10, var1, var3, var5);
       if (var11 && var14 > 100.0) {
          double var17 = Math.sqrt(var14) / 40.0;
@@ -838,7 +838,7 @@ public class ClientWorld extends World {
          Class8893 var10 = new Class8893(
             var1.getX() - var5, var1.getY(), var1.getZ() - var5, var1.getX() + var5, var1.getY(), var1.getZ() + var5
          );
-         Mutable var11 = new Mutable();
+         BlockPos.Mutable var11 = new BlockPos.Mutable();
 
          while (var10.method32365()) {
             var11.method8372(var10.method32366(), var10.method32367(), var10.method32368());

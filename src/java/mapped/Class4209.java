@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
 
@@ -45,7 +46,7 @@ public abstract class Class4209 extends Class4178 {
       } else {
          int var6 = 0;
          int var7 = 0;
-         Mutable var8 = new Mutable();
+         BlockPos.Mutable var8 = new BlockPos.Mutable();
 
          for (int var9 = this.field20444.field45680; var9 <= this.field20444.field45683; var9++) {
             for (int var10 = this.field20444.field45678; var10 <= this.field20444.field45681; var10++) {

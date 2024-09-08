@@ -5,6 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public abstract class Class3359 extends Class3241 {
@@ -21,7 +22,7 @@ public abstract class Class3359 extends Class3241 {
    }
 
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return new Class958(this.field18904);
    }
 
@@ -36,7 +37,7 @@ public abstract class Class3359 extends Class3241 {
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       TileEntity var6 = var1.getTileEntity(var2);
       return !(var6 instanceof Class958) ? super.getItem(var1, var2, var3) : ((Class958)var6).method3893(var3);
    }

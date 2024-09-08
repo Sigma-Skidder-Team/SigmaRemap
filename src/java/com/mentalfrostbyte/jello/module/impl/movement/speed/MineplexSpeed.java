@@ -83,7 +83,7 @@ public class MineplexSpeed extends Module {
 
                 if (this.getBooleanValueFromSetttingName("AutoJump") && ColorUtils.method17686()) {
                     mc.player.method2914();
-                    var1.method13995(mc.player.method3433().y);
+                    var1.method13995(mc.player.getVec().y);
                 }
 
                 if (var1.method13994() == 0.4199998) {

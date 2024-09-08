@@ -102,8 +102,8 @@ public class Class3316 extends Class3314 {
                         int var28 = 0;
                         double var29 = 0.0;
                         if (!var1.method6812().getHasCeiling()) {
-                           Mutable var31 = new Mutable();
-                           Mutable var32 = new Mutable();
+                           BlockPos.Mutable var31 = new BlockPos.Mutable();
+                           BlockPos.Mutable var32 = new BlockPos.Mutable();
 
                            for (int var33 = 0; var33 < var6; var33++) {
                               for (int var36 = 0; var36 < var6; var36++) {

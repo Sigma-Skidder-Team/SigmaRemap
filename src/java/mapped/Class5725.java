@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Quaternion;
 
 public class Class5725 extends Class5715<BoatEntity> {
    private static final ResourceLocation[] field25131 = new ResourceLocation[]{
@@ -34,7 +35,7 @@ public class Class5725 extends Class5715<BoatEntity> {
 
       float var11 = var1.method4168(var3);
       if (!MathHelper.method37786(var11, 0.0F)) {
-         var4.rotate(new Class8661(new Vector3f(1.0F, 0.0F, 1.0F), var1.method4168(var3), true));
+         var4.rotate(new Quaternion(new Vector3f(1.0F, 0.0F, 1.0F), var1.method4168(var3), true));
       }
 
       var4.method35292(-1.0F, -1.0F, 1.0F);

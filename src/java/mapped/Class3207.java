@@ -2,10 +2,11 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public interface Class3207 extends Class3405, Class3449 {
    @Override
-   default boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Fluid var4) {
+   default boolean method11531(IBlockReader var1, BlockPos var2, BlockState var3, Fluid var4) {
       return !var3.<Boolean>method23463(Class8820.field39710) && var4 == Class9479.field44066;
    }
 

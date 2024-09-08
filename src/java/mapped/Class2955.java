@@ -1,9 +1,9 @@
 package mapped;
 
 public interface Class2955 {
-   double method11320();
+   double getX();
 
-   double method11321();
+   double getY();
 
-   double method11322();
+   double getZ();
 }

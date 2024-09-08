@@ -22,7 +22,7 @@ public class Class2920 extends Class2898<Class4703> {
       }
 
       int var10 = 0;
-      Mutable var11 = new Mutable();
+      BlockPos.Mutable var11 = new BlockPos.Mutable();
 
       for (int var12 = 0; var12 < var5.field22310; var12++) {
          var11.method8378(

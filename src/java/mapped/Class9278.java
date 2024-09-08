@@ -123,7 +123,7 @@ public class Class9278 {
 
             if ((this.field42670 || this.field42668.isAirBorne || this.field42668 instanceof LivingEntity && ((LivingEntity)this.field42668).method3165())
                && this.field42679 > 0) {
-               Vector3d var18 = this.field42668.method3433();
+               Vector3d var18 = this.field42668.getVec();
                double var19 = var18.method11342(this.field42678);
                if (var19 > 1.0E-7 || var19 > 0.0 && var18.method11349() == 0.0) {
                   this.field42678 = var18;
@@ -212,7 +212,7 @@ public class Class9278 {
          }
       }
 
-      this.field42678 = this.field42668.method3433();
+      this.field42678 = this.field42668.getVec();
       if (var5 && !(var4 instanceof SSpawnMobPacket)) {
          var1.accept(new SEntityVelocityPacket(this.field42668.getEntityId(), this.field42678));
       }

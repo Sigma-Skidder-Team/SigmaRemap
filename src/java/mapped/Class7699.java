@@ -560,7 +560,7 @@ public class Class7699 {
    @Nullable
    private BlockPos method25423(int var1, int var2) {
       int var5 = var1 != 0 ? 2 - var1 : 2;
-      Mutable var6 = new Mutable();
+      BlockPos.Mutable var6 = new BlockPos.Mutable();
 
       for (int var7 = 0; var7 < var2; var7++) {
          float var8 = this.field32978.rand.nextFloat() * (float) (Math.PI * 2);

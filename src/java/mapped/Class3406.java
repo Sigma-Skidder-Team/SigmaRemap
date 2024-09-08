@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -82,7 +83,7 @@ public class Class3406 extends Block implements Class3405 {
       return var0.getBlockState(var1).method23448(Blocks.WATER) && var4.method23477() >= 8 && var4.method23473();
    }
 
-   private static boolean method12047(Class1665 var0, BlockPos var1) {
+   private static boolean method12047(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
       return !var4.method23448(Blocks.field37013) ? !var4.method23448(Blocks.SOUL_SAND) : var4.<Boolean>method23463(field19084);
    }
@@ -137,7 +138,7 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return VoxelShapes.method27425();
    }
 

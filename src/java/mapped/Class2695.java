@@ -1,12 +1,13 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.IBlockReader;
 
 import java.util.EnumSet;
 
 public class Class2695 extends Class2595 {
    private static String[] field17141;
-   private final Class1665 field17142;
+   private final IBlockReader field17142;
    private final Class1006 field17143;
    private LivingEntity field17144;
    private int field17145;

@@ -609,7 +609,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    private void method2746(ServerWorld var1, BlockPos var2) {
-      Mutable var5 = var2.method8354();
+      BlockPos.Mutable var5 = var2.method8354();
 
       for (int var6 = -2; var6 <= 2; var6++) {
          for (int var7 = -2; var7 <= 2; var7++) {
@@ -694,12 +694,12 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
                   .<Class1009>method6772(
                      Class1009.class,
                      new AxisAlignedBB(
-                        var10.method11320() - 8.0,
-                        var10.method11321() - 5.0,
-                        var10.method11322() - 8.0,
-                        var10.method11320() + 8.0,
-                        var10.method11321() + 5.0,
-                        var10.method11322() + 8.0
+                        var10.getX() - 8.0,
+                        var10.getY() - 5.0,
+                        var10.getZ() - 8.0,
+                        var10.getX() + 8.0,
+                        var10.getY() + 5.0,
+                        var10.getZ() + 8.0
                      ),
                      var1x -> var1x.method4344(this)
                   );
@@ -734,9 +734,9 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    private boolean method2755(BlockPos var1) {
       Vector3d var4 = Vector3d.method11330(var1);
-      return Math.abs(this.getPosX() - var4.method11320()) <= 3.0
-         && Math.abs(this.getPosY() - var4.method11321()) <= 2.0
-         && Math.abs(this.getPosZ() - var4.method11322()) <= 3.0;
+      return Math.abs(this.getPosX() - var4.getX()) <= 3.0
+         && Math.abs(this.getPosY() - var4.getY()) <= 2.0
+         && Math.abs(this.getPosZ() - var4.getZ()) <= 3.0;
    }
 
    private boolean method2756(BlockPos var1, Direction var2) {

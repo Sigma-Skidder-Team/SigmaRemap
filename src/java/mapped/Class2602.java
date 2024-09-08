@@ -73,7 +73,7 @@ public class Class2602 extends Class2595 {
       boolean var3 = MathHelper.method37771(this.field16846.field4982) > 0.0F || MathHelper.method37771(this.field16846.field4984) > 0.0F;
       float var4 = this.field16847 != Class1987.field12972 ? 0.015F : (!var3 ? 0.0F : 0.01F);
       this.field16845.method3265(var4, new Vector3d((double)this.field16845.field4982, (double)this.field16845.field4983, (double)this.field16845.field4984));
-      this.field16845.move(Class2107.field13742, this.field16845.method3433());
+      this.field16845.move(Class2107.field13742, this.field16845.getVec());
       if (--this.field16844 <= 0) {
          this.field16844 = 10;
          if (this.field16847 != Class1987.field12971) {

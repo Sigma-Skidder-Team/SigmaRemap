@@ -24,7 +24,7 @@ public class Spammer extends Module {
             if ((float) this.field23438 > this.getNumberValueBySettingName("Messages delay") * 20.0F) {
                 this.field23438 = 0;
                 String var4 = this.getStringSettingValueByName("Message").replaceAll("%r", Integer.toString(Math.round(10.0F + (float) Math.random() * 89.0F)));
-                ColorUtils.method17679(var4);
+                ColorUtils.sendChatMessage(var4);
             }
         }
     }

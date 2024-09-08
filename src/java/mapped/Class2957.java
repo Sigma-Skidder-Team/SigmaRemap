@@ -21,17 +21,17 @@ public class Class2957 implements Class2956 {
    }
 
    @Override
-   public double method11320() {
+   public double getX() {
       return (double)this.field18046.getX() + 0.5;
    }
 
    @Override
-   public double method11321() {
+   public double getY() {
       return (double)this.field18046.getY() + 0.5;
    }
 
    @Override
-   public double method11322() {
+   public double getZ() {
       return (double)this.field18046.getZ() + 0.5;
    }
 

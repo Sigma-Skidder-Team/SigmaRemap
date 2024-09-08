@@ -10,6 +10,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.Collections;
@@ -28,7 +29,7 @@ public class Class3356 extends Class3241 {
 
    @Nullable
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return null;
    }
 
@@ -72,24 +73,24 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return VoxelShapes.method27425();
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       Class955 var7 = this.method11930(var2, var3);
       return var7 == null ? VoxelShapes.method27425() : var7.method3866(var2, var3);
    }
 
    @Nullable
-   private Class955 method11930(Class1665 var1, BlockPos var2) {
+   private Class955 method11930(IBlockReader var1, BlockPos var2) {
       TileEntity var5 = var1.getTileEntity(var2);
       return !(var5 instanceof Class955) ? null : (Class955)var5;
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       return ItemStack.EMPTY;
    }
 
@@ -109,7 +110,7 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

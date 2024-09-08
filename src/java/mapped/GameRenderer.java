@@ -345,8 +345,8 @@ public class GameRenderer implements Class215, AutoCloseable {
             }
          }
 
-         if (var1.method37509() instanceof LivingEntity && ((LivingEntity)var1.method37509()).getShouldBeDead()) {
-            float var9 = Math.min((float)((LivingEntity)var1.method37509()).field4955 + var2, 20.0F);
+         if (var1.getRenderViewEntity() instanceof LivingEntity && ((LivingEntity)var1.getRenderViewEntity()).getShouldBeDead()) {
+            float var9 = Math.min((float)((LivingEntity)var1.getRenderViewEntity()).field4955 + var2, 20.0F);
             var6 /= (double)((1.0F - 500.0F / (var9 + 500.0F)) * 2.0F + 1.0F);
          }
 
@@ -803,8 +803,8 @@ public class GameRenderer implements Class215, AutoCloseable {
          var4.rotate(Vector3f.field32902.rotationDegrees(var17));
       }
 
-      var4.rotate(Vector3f.field32898.rotationDegrees(var9.method37506()));
-      var4.rotate(Vector3f.YP.rotationDegrees(var9.method37507() + 180.0F));
+      var4.rotate(Vector3f.field32898.rotationDegrees(var9.getPitch()));
+      var4.rotate(Vector3f.YP.rotationDegrees(var9.getYaw() + 180.0F));
       this.mc.worldRenderer.updateCameraAndRender(var4, var1, var2, var8, var9, this, this.field818, var18);
       if (Class9299.field42865.method20214()) {
          this.mc.getProfiler().endStartSection("forge_render_last");
@@ -928,14 +928,14 @@ public class GameRenderer implements Class215, AutoCloseable {
             String var5 = var4 + " " + Class7944.method26929();
             StringTextComponent var6 = new StringTextComponent(I18n.format("of.message.newVersion", "§n" + var5 + "§r"));
             var6.setStyle(Style.EMPTY.setClickEvent(new ClickEvent(ClickEvent$Action.OPEN_URL, "https://optifine.net/downloads")));
-            this.mc.ingameGUI.getChatGUI().method5930(var6);
+            this.mc.ingameGUI.getChatGUI().sendChatMessage(var6);
             Class7944.method26930((String)null);
          }
 
          if (Class7944.method26961()) {
             Class7944.method26962(false);
             StringTextComponent var7 = new StringTextComponent(I18n.format("of.message.java64Bit"));
-            this.mc.ingameGUI.getChatGUI().method5930(var7);
+            this.mc.ingameGUI.getChatGUI().sendChatMessage(var7);
          }
       }
 
@@ -966,7 +966,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          if (var3 != 0 && Class9084.method33877(var3)) {
             String var4 = Class7944.method26985(var3);
             StringTextComponent var5 = new StringTextComponent(I18n.format("of.message.openglError", var3, var4));
-            this.mc.ingameGUI.getChatGUI().method5930(var5);
+            this.mc.ingameGUI.getChatGUI().sendChatMessage(var5);
          }
       }
    }

@@ -101,7 +101,7 @@ public class Class2903 extends Class2898<Class4733> {
    }
 
    private int method11235(Class1680 var1, int var2, BlockPos var3, Class4733 var4) {
-      Mutable var7 = new Mutable();
+      BlockPos.Mutable var7 = new BlockPos.Mutable();
 
       for (int var8 = 0; var8 <= var2 + 1; var8++) {
          int var9 = var4.field22417.method24953(var2, var8);
@@ -156,7 +156,7 @@ public class Class2903 extends Class2898<Class4733> {
          var7.add(Sets.newHashSet());
       }
 
-      Mutable var23 = new Mutable();
+      BlockPos.Mutable var23 = new BlockPos.Mutable();
 
       for (BlockPos var12 : Lists.newArrayList(var4)) {
          if (var2.method38396(var12)) {

@@ -37,7 +37,7 @@ public class Class2788 extends Class2785 {
 
    private boolean method10980() {
       BlockPos var3 = this.field17415.getPosition();
-      Mutable var4 = new Mutable();
+      BlockPos.Mutable var4 = new BlockPos.Mutable();
 
       for (int var5 = 0; var5 < 3; var5++) {
          for (int var6 = 0; var6 < 8; var6++) {

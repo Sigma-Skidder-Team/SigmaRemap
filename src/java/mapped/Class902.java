@@ -9,6 +9,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class902 extends Class901 {
@@ -38,7 +39,7 @@ public class Class902 extends Class901 {
    }
 
    @Override
-   public float method3368(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, FluidState var5, float var6) {
+   public float method3368(Class7782 var1, IBlockReader var2, BlockPos var3, BlockState var4, FluidState var5, float var6) {
       return this.method3532() && Class1079.method5002(var4) ? Math.min(0.8F, var6) : var6;
    }
 

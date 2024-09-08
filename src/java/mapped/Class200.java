@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import javax.annotation.Nullable;
@@ -14,9 +15,9 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
    public final Class1977 field747;
    public final S field748;
    private boolean field749;
-   public final Mutable field750 = new Mutable();
+   public final BlockPos.Mutable field750 = new BlockPos.Mutable();
    private final long[] field751 = new long[2];
-   private final Class1665[] field752 = new Class1665[2];
+   private final IBlockReader[] field752 = new IBlockReader[2];
 
    public Class200(Class1704 var1, Class1977 var2, S var3) {
       super(16, 256, 8192);
@@ -35,7 +36,7 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
    }
 
    @Nullable
-   private Class1665 method645(int var1, int var2) {
+   private IBlockReader method645(int var1, int var2) {
       long var5 = Class7481.method24353(var1, var2);
 
       for (int var7 = 0; var7 < 2; var7++) {
@@ -44,7 +45,7 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
          }
       }
 
-      Class1665 var9 = this.field746.method7344(var1, var2);
+      IBlockReader var9 = this.field746.method7344(var1, var2);
 
       for (int var8 = 1; var8 > 0; var8--) {
          this.field751[var8] = this.field751[var8 - 1];
@@ -65,7 +66,7 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
       if (var1 != Long.MAX_VALUE) {
          int var6 = Class2002.method8396(BlockPos.method8328(var1));
          int var7 = Class2002.method8396(BlockPos.method8330(var1));
-         Class1665 var8 = this.method645(var6, var7);
+         IBlockReader var8 = this.method645(var6, var7);
          if (var8 == null) {
             if (var3 != null) {
                var3.setValue(16);
@@ -95,7 +96,7 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
       return !var1.method23410() ? VoxelShapes.method27425() : var1.method23388(this.field746.method7386(), this.field750.method8375(var2), var4);
    }
 
-   public static int method649(Class1665 var0, BlockState var1, BlockPos var2, BlockState var3, BlockPos var4, Direction var5, int var6) {
+   public static int method649(IBlockReader var0, BlockState var1, BlockPos var2, BlockState var3, BlockPos var4, Direction var5, int var6) {
       boolean var9 = var1.method23410() && var1.isTransparent();
       boolean var10 = var3.method23410() && var3.isTransparent();
       if (!var9 && !var10) {

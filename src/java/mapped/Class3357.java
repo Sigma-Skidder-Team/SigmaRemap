@@ -12,6 +12,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -91,7 +92,7 @@ public class Class3357 extends Class3241 {
    }
 
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return new Class971();
    }
 
@@ -125,9 +126,9 @@ public class Class3357 extends Class3241 {
 
    public static Class2955 method11934(Class2956 var0) {
       Direction var3 = var0.method11324().<Direction>method23463(field18899);
-      double var4 = var0.method11320() + 0.7 * (double)var3.method539();
-      double var6 = var0.method11321() + 0.7 * (double)var3.method540();
-      double var8 = var0.method11322() + 0.7 * (double)var3.method541();
+      double var4 = var0.getX() + 0.7 * (double)var3.method539();
+      double var6 = var0.getY() + 0.7 * (double)var3.method540();
+      double var8 = var0.getZ() + 0.7 * (double)var3.method541();
       return new Class2959(var4, var6, var8);
    }
 

@@ -57,7 +57,7 @@ public class ExperienceOrbEntity extends Entity {
       this.prevPosZ = this.getPosZ();
       if (!this.method3263(Class8953.field40469)) {
          if (!this.method3247()) {
-            this.method3434(this.method3433().method11339(0.0, -0.03, 0.0));
+            this.method3434(this.getVec().method11339(0.0, -0.03, 0.0));
          }
       } else {
          this.method4174();
@@ -73,7 +73,7 @@ public class ExperienceOrbEntity extends Entity {
       }
 
       if (!this.world.method7051(this.getBoundingBox())) {
-         this.pushOutOfBlocks(this.getPosX(), (this.getBoundingBox().field28450 + this.getBoundingBox().field28453) / 2.0, this.getPosZ());
+         this.pushOutOfBlocks(this.getPosX(), (this.getBoundingBox().minY + this.getBoundingBox().maxY) / 2.0, this.getPosZ());
       }
 
       double var3 = 8.0;
@@ -98,19 +98,19 @@ public class ExperienceOrbEntity extends Entity {
          double var6 = var5.method11349();
          if (var6 < 64.0) {
             double var8 = 1.0 - Math.sqrt(var6) / 8.0;
-            this.method3434(this.method3433().method11338(var5.method11333().method11344(var8 * var8 * 0.1)));
+            this.method3434(this.getVec().method11338(var5.method11333().method11344(var8 * var8 * 0.1)));
          }
       }
 
-      this.move(Class2107.field13742, this.method3433());
+      this.move(Class2107.field13742, this.getVec());
       float var10 = 0.98F;
       if (this.onGround) {
          var10 = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).getBlock().method11571() * 0.98F;
       }
 
-      this.method3434(this.method3433().method11347((double)var10, 0.98, (double)var10));
+      this.method3434(this.getVec().method11347((double)var10, 0.98, (double)var10));
       if (this.onGround) {
-         this.method3434(this.method3433().method11347(1.0, -0.9, 1.0));
+         this.method3434(this.getVec().method11347(1.0, -0.9, 1.0));
       }
 
       this.field5555++;
@@ -121,7 +121,7 @@ public class ExperienceOrbEntity extends Entity {
    }
 
    private void method4174() {
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       this.method3435(var3.x * 0.99F, Math.min(var3.y + 5.0E-4F, 0.06F), var3.z * 0.99F);
    }
 

@@ -61,7 +61,7 @@ public class SSpawnObjectPacket implements Packet<IClientPlayNetHandler> {
          var1.rotationYaw,
          var1.getType(),
          var2,
-         var1.method3433()
+         var1.getVec()
       );
    }
 
@@ -76,7 +76,7 @@ public class SSpawnObjectPacket implements Packet<IClientPlayNetHandler> {
          var1.rotationYaw,
          var2,
          var3,
-         var1.method3433()
+         var1.getVec()
       );
    }
 

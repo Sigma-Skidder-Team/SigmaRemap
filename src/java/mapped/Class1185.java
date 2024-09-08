@@ -131,7 +131,7 @@ public class Class1185 extends Class1178<Class1185> {
    private void method5618(boolean var1, ITextComponent var2) {
       this.field6395.field6483 = var1;
       this.field6394.field6483 = !var1;
-      this.field6388.ingameGUI.getChatGUI().method5930(var2);
+      this.field6388.ingameGUI.getChatGUI().sendChatMessage(var2);
       NarratorChatListener.INSTANCE.say(var2.getString());
    }
 

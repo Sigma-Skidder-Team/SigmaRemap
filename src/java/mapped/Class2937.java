@@ -28,7 +28,7 @@ public class Class2937 extends Class2898<Class4712> {
    }
 
    private static void method11278(Class1660 var0, Random var1, BlockPos var2, int var3, int var4, int var5) {
-      Mutable var8 = new Mutable();
+      BlockPos.Mutable var8 = new BlockPos.Mutable();
 
       for (int var9 = 0; var9 < var3 * var3; var9++) {
          var8.method8374(var2)
@@ -48,7 +48,7 @@ public class Class2937 extends Class2898<Class4712> {
       }
    }
 
-   private static boolean method11279(Class1660 var0, Mutable var1) {
+   private static boolean method11279(Class1660 var0, BlockPos.Mutable var1) {
       while (true) {
          var1.method8381(0, -1, 0);
          if (!World.isOutsideBuildHeight(var1)) {
@@ -64,7 +64,7 @@ public class Class2937 extends Class2898<Class4712> {
       }
    }
 
-   public static void method11280(Class1660 var0, Random var1, Mutable var2, int var3, int var4, int var5) {
+   public static void method11280(Class1660 var0, Random var1, BlockPos.Mutable var2, int var3, int var4, int var5) {
       for (int var8 = 1; var8 <= var3; var8++) {
          if (var0.method7007(var2)) {
             if (var8 == var3 || !var0.method7007(var2.up())) {

@@ -268,7 +268,7 @@ public class Class9651 {
          }
 
          if (!(var1 instanceof LivingEntity) || !((LivingEntity)var1).method3165()) {
-            var1.method3434(var1.method3433().method11347(1.0, 0.0, 1.0));
+            var1.method3434(var1.getVec().method11347(1.0, 0.0, 1.0));
             var1.method3061(true);
          }
 

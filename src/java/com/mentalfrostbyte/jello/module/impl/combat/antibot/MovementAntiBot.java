@@ -127,12 +127,12 @@ public class MovementAntiBot extends Class7249 {
    public boolean method22756(Entity var1) {
       if (!field31119.world.getBlockState(var1.getPosition()).method23410()) {
          AxisAlignedBB var4 = new AxisAlignedBB(
-            var1.boundingBox.field28449,
-            var1.boundingBox.field28450 - 0.5,
-            var1.boundingBox.field28451,
-            var1.boundingBox.field28452,
-            var1.boundingBox.field28453,
-            var1.boundingBox.field28454
+            var1.boundingBox.minX,
+            var1.boundingBox.minY - 0.5,
+            var1.boundingBox.minZ,
+            var1.boundingBox.maxX,
+            var1.boundingBox.maxY,
+            var1.boundingBox.maxZ
          );
 
          for (BlockPos var6 : method22757(var1)) {

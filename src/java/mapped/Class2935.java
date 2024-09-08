@@ -70,7 +70,7 @@ public class Class2935 extends Class2898<Class4708> {
          if (var12 != null) {
             int var13 = var4 - var11 / 2;
 
-            for (Mutable var14 = var12.method8354(); var13 >= 0; var13--) {
+            for (BlockPos.Mutable var14 = var12.method8354(); var13 >= 0; var13--) {
                if (!method11276(var1, var2, var14)) {
                   if (!var1.getBlockState(var14).method23448(Blocks.BASALT)) {
                      break;
@@ -90,7 +90,7 @@ public class Class2935 extends Class2898<Class4708> {
    }
 
    @Nullable
-   private static BlockPos method11273(Class1660 var0, int var1, Mutable var2, int var3) {
+   private static BlockPos method11273(Class1660 var0, int var1, BlockPos.Mutable var2, int var3) {
       while (var2.getY() > 1 && var3 > 0) {
          var3--;
          if (method11274(var0, var1, var2)) {
@@ -103,7 +103,7 @@ public class Class2935 extends Class2898<Class4708> {
       return null;
    }
 
-   private static boolean method11274(Class1660 var0, int var1, Mutable var2) {
+   private static boolean method11274(Class1660 var0, int var1, BlockPos.Mutable var2) {
       if (!method11276(var0, var1, var2)) {
          return false;
       } else {
@@ -114,7 +114,7 @@ public class Class2935 extends Class2898<Class4708> {
    }
 
    @Nullable
-   private static BlockPos method11275(Class1660 var0, Mutable var1, int var2) {
+   private static BlockPos method11275(Class1660 var0, BlockPos.Mutable var1, int var2) {
       while (var1.getY() < var0.method7034() && var2 > 0) {
          var2--;
          BlockState var5 = var0.getBlockState(var1);

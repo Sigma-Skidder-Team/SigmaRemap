@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.clicktp.BasicClickTP;
 import com.mentalfrostbyte.jello.module.impl.movement.clicktp.SpartanClickTP;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
@@ -23,7 +24,7 @@ public class ClickTP extends ModuleWithModuleSettings {
     @EventTarget
     public void method16752(Render3DEvent var1) {
         if (this.isEnabled() && (mc.player.method3331() || !this.getBooleanValueFromSetttingName("Sneak"))) {
-            BlockRayTraceResult var4 = Class9217.method34567(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Maximum range"));
+            BlockRayTraceResult var4 = BlockUtil.method34567(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Maximum range"));
             BlockPos var5 = null;
             if (var4 != null) {
                 var5 = var4.getPos();
@@ -31,9 +32,9 @@ public class ClickTP extends ModuleWithModuleSettings {
 
             this.method16754(
                     this.method16753(),
-                    (double) var5.getX() + 0.5 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320(),
-                    (double) (var5.getY() + 1) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321(),
-                    (double) var5.getZ() + 0.5 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322()
+                    (double) var5.getX() + 0.5 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX(),
+                    (double) (var5.getY() + 1) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY(),
+                    (double) var5.getZ() + 0.5 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ()
             );
         }
     }

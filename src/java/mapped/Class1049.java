@@ -98,10 +98,10 @@ public abstract class Class1049 extends Class1047 {
    public void method2915(Vector3d var1) {
       if (this.method3138() && this.method3250()) {
          this.method3265(0.01F, var1);
-         this.move(Class2107.field13742, this.method3433());
-         this.method3434(this.method3433().method11344(0.9));
+         this.move(Class2107.field13742, this.getVec());
+         this.method3434(this.getVec().method11344(0.9));
          if (this.method4232() == null) {
-            this.method3434(this.method3433().method11339(0.0, -0.005, 0.0));
+            this.method3434(this.getVec().method11339(0.0, -0.005, 0.0));
          }
       } else {
          super.method2915(var1);
@@ -112,7 +112,7 @@ public abstract class Class1049 extends Class1047 {
    public void method2871() {
       if (!this.method3250() && this.onGround && this.collidedVertically) {
          this.method3434(
-            this.method3433()
+            this.getVec()
                .method11339((double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.05F), 0.4F, (double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.05F))
          );
          this.onGround = false;

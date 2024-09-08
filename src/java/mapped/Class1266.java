@@ -158,7 +158,7 @@ public class Class1266 extends AbstractGui {
       }
    }
 
-   public void method5930(ITextComponent var1) {
+   public void sendChatMessage(ITextComponent var1) {
       this.method5931(var1, 0);
    }
 
@@ -243,7 +243,7 @@ public class Class1266 extends AbstractGui {
          if (var7 <= (double) MathHelper.floor((double)this.method5942() / this.method5944())
             && var9 < 0.0
             && var9 > (double) MathHelper.floor(-9.0 * this.method5944())) {
-            this.method5930(this.field6703.remove());
+            this.sendChatMessage(this.field6703.remove());
             this.field6706 = System.currentTimeMillis();
             return true;
          } else {
@@ -330,7 +330,7 @@ public class Class1266 extends AbstractGui {
       if (!this.field6703.isEmpty()) {
          long var3 = System.currentTimeMillis();
          if (var3 - this.field6706 >= this.method5948()) {
-            this.method5930(this.field6703.remove());
+            this.sendChatMessage(this.field6703.remove());
             this.field6706 = var3;
          }
       }
@@ -342,11 +342,11 @@ public class Class1266 extends AbstractGui {
          if (var4 - this.field6706 < this.method5948()) {
             this.field6703.add(var1);
          } else {
-            this.method5930(var1);
+            this.sendChatMessage(var1);
             this.field6706 = var4;
          }
       } else {
-         this.method5930(var1);
+         this.sendChatMessage(var1);
       }
    }
 }

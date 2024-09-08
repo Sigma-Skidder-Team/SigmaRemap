@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.ColorUtils;
-import mapped.Class9217;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
@@ -74,9 +74,9 @@ public class SimsESP extends Module {
         GL11.glDepthMask(false);
         GL11.glPushMatrix();
         GL11.glTranslated(
-                var0 - mc.gameRenderer.getActiveRenderInfo().method37504().method11320(),
-                var2 - mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
-                var4 - mc.gameRenderer.getActiveRenderInfo().method37504().method11322()
+                var0 - mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
+                var2 - mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+                var4 - mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
         );
         GL11.glRotated(var6.ticksExisted % 180 * 2, 0.0, -1.0, 0.0);
         float var9 = (float) (var6.ticksExisted % 100 - 50);
@@ -98,7 +98,7 @@ public class SimsESP extends Module {
     @EventTarget
     public void method16213(Render3DEvent var1) {
         if (this.isEnabled()) {
-            for (Entity var5 : Class9217.method34549(ColorUtils.method17680())) {
+            for (Entity var5 : BlockUtil.method34549(ColorUtils.method17680())) {
                 if (var5 != mc.player && !Client.getInstance().getCombatManager().method29346(var5)) {
                     method16216(
                             var5.lastTickPosX + (var5.getPosX() - var5.lastTickPosX) * (double) Minecraft.getInstance().timer.renderPartialTicks,

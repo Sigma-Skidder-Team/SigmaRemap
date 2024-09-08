@@ -40,7 +40,7 @@ public class SSpawnMobPacket implements Packet<IClientPlayNetHandler> {
       this.field24770 = (byte)((int)(var1.rotationPitch * 256.0F / 360.0F));
       this.field24771 = (byte)((int)(var1.field4967 * 256.0F / 360.0F));
       double var4 = 3.9;
-      Vector3d var6 = var1.method3433();
+      Vector3d var6 = var1.getVec();
       double var7 = MathHelper.method37778(var6.x, -3.9, 3.9);
       double var9 = MathHelper.method37778(var6.y, -3.9, 3.9);
       double var11 = MathHelper.method37778(var6.z, -3.9, 3.9);

@@ -40,7 +40,7 @@ public class Class7647 {
    }
 
    public boolean method25122(AxisAlignedBB var1) {
-      return this.method25123(var1.field28449, var1.field28450, var1.field28451, var1.field28452, var1.field28453, var1.field28454);
+      return this.method25123(var1.minX, var1.minY, var1.minZ, var1.maxX, var1.maxY, var1.maxZ);
    }
 
    private boolean method25123(double var1, double var3, double var5, double var7, double var9, double var11) {

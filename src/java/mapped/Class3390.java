@@ -11,6 +11,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -54,7 +55,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       switch (Class8735.field39385[var4.ordinal()]) {
          case 1:
             return !var1.method23456(var2, var3);
@@ -176,22 +177,22 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public VoxelShape method11503(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11503(BlockState var1, IBlockReader var2, BlockPos var3) {
       return var1.method23412(var2, var3);
    }
 
    @Deprecated
-   public VoxelShape method11995(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11995(BlockState var1, IBlockReader var2, BlockPos var3) {
       return this.method11502(var1, var2, var3, ISelectionContext.method14947());
    }
 
    @Deprecated
-   public VoxelShape method11938(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11938(BlockState var1, IBlockReader var2, BlockPos var3) {
       return VoxelShapes.method27425();
    }
 
    @Deprecated
-   public int method11996(BlockState var1, Class1665 var2, BlockPos var3) {
+   public int method11996(BlockState var1, IBlockReader var2, BlockPos var3) {
       if (!var1.method23409(var2, var3)) {
          return !var1.method23386(var2, var3) ? 1 : 0;
       } else {
@@ -211,7 +212,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public float method11636(BlockState var1, Class1665 var2, BlockPos var3) {
+   public float method11636(BlockState var1, IBlockReader var2, BlockPos var3) {
       return !var1.method23456(var2, var3) ? 1.0F : 0.2F;
    }
 
@@ -221,17 +222,17 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return VoxelShapes.method27426();
    }
 
    @Deprecated
-   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return !this.field19005 ? VoxelShapes.method27425() : var1.method23412(var2, var3);
    }
 
    @Deprecated
-   public VoxelShape method11635(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11635(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.method11502(var1, var2, var3, var4);
    }
 
@@ -245,7 +246,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public float method11997(BlockState var1, PlayerEntity var2, Class1665 var3, BlockPos var4) {
+   public float method11997(BlockState var1, PlayerEntity var2, IBlockReader var3, BlockPos var4) {
       float var7 = var1.method23405(var3, var4);
       if (var7 != -1.0F) {
          int var8 = !var2.method2884(var1) ? 100 : 30;
@@ -264,7 +265,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return 0;
    }
 
@@ -273,7 +274,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return 0;
    }
 

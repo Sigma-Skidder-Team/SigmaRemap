@@ -38,17 +38,17 @@ public abstract class Class1111 extends Class1006 {
             }
 
             this.method3265(!this.onGround ? 0.02F : 0.1F * var5, var1);
-            this.move(Class2107.field13742, this.method3433());
-            this.method3434(this.method3433().method11344((double)var4));
+            this.move(Class2107.field13742, this.getVec());
+            this.method3434(this.getVec().method11344((double)var4));
          } else {
             this.method3265(0.02F, var1);
-            this.move(Class2107.field13742, this.method3433());
-            this.method3434(this.method3433().method11344(0.5));
+            this.move(Class2107.field13742, this.getVec());
+            this.method3434(this.getVec().method11344(0.5));
          }
       } else {
          this.method3265(0.02F, var1);
-         this.move(Class2107.field13742, this.method3433());
-         this.method3434(this.method3433().method11344(0.8F));
+         this.move(Class2107.field13742, this.getVec());
+         this.method3434(this.getVec().method11344(0.8F));
       }
 
       this.method3108(this, false);

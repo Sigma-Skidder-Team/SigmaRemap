@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -67,7 +68,7 @@ public class Class1705 extends Class1702 {
    }
 
    @Override
-   public Class1665 method7386() {
+   public IBlockReader method7386() {
       return this.field9292;
    }
 

@@ -7,6 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
@@ -20,7 +21,7 @@ public abstract class Class939 extends Class932 {
       super(var1);
    }
 
-   public static void method3740(Class1665 var0, Random var1, BlockPos var2, ResourceLocation var3) {
+   public static void method3740(IBlockReader var0, Random var1, BlockPos var2, ResourceLocation var3) {
       TileEntity var6 = var0.getTileEntity(var2);
       if (var6 instanceof Class939) {
          ((Class939)var6).method3744(var3, var1.nextLong());

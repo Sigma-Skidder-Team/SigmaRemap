@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Quaternion;
+
 import java.util.Random;
 
 public class Class8846 {
@@ -57,7 +59,7 @@ public class Class8846 {
       Matrix4f var2 = new Matrix4f();
       var2.method35523(field39967);
       Matrix4f var3 = var2.method35514();
-      Class8661 var4 = new Class8661(field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat());
+      Quaternion var4 = new Quaternion(field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat());
       var2.method35508(new Matrix4f(var4));
       var3.method35509(var4);
       if (!var3.equals(var2)) {
@@ -71,7 +73,7 @@ public class Class8846 {
       Class8967 var2 = new Class8967();
       var2.method32835(field39967);
       Class8967 var3 = var2.method32831();
-      Class8661 var4 = new Class8661(field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat());
+      Quaternion var4 = new Quaternion(field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat(), field39967.nextFloat());
       var2.method32828(new Class8967(var4));
       var3.method32829(var4);
       if (!var3.equals(var2)) {

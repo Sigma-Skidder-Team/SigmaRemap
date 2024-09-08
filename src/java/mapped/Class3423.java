@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -22,7 +23,7 @@ public class Class3423 extends Block implements Class3207 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       switch (Class9442.field43870[var1.<Direction>method23463(field19154).ordinal()]) {
          case 1:
             return field19159;
@@ -36,7 +37,7 @@ public class Class3423 extends Block implements Class3207 {
       }
    }
 
-   private boolean method12078(Class1665 var1, BlockPos var2, Direction var3) {
+   private boolean method12078(IBlockReader var1, BlockPos var2, Direction var3) {
       BlockState var6 = var1.getBlockState(var2);
       return var6.method23454(var1, var2, var3);
    }

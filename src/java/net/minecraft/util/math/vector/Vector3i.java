@@ -123,7 +123,7 @@ public class Vector3i implements Comparable<Vector3i> {
    }
 
    public boolean method8317(Class2955 var1, double var2) {
-      return this.method8320(var1.method11320(), var1.method11321(), var1.method11322(), true) < var2 * var2;
+      return this.method8320(var1.getX(), var1.getY(), var1.getZ(), true) < var2 * var2;
    }
 
    public double method8318(Vector3i var1) {
@@ -131,7 +131,7 @@ public class Vector3i implements Comparable<Vector3i> {
    }
 
    public double method8319(Class2955 var1, boolean var2) {
-      return this.method8320(var1.method11320(), var1.method11321(), var1.method11322(), var2);
+      return this.method8320(var1.getX(), var1.getY(), var1.getZ(), var2);
    }
 
    public double method8320(double var1, double var3, double var5, boolean var7) {

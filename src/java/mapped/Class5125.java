@@ -67,7 +67,7 @@ public class Class5125 implements Class5119 {
    }
 
    private void method15828() {
-      BlockPos var3 = this.method15841().method37505();
+      BlockPos var3 = this.method15841().getBlockPos();
       this.field23308.values().forEach(var1 -> {
          if (this.method15844(var1)) {
             this.method15837(var1);
@@ -176,9 +176,9 @@ public class Class5125 implements Class5119 {
             0.5F,
             false,
             false,
-            this.method15841().method37504().method11320(),
-            this.method15841().method37504().method11321(),
-            this.method15841().method37504().method11322()
+            this.method15841().getPos().getX(),
+            this.method15841().getPos().getY(),
+            this.method15841().getPos().getZ()
          );
       }
    }
@@ -232,7 +232,7 @@ public class Class5125 implements Class5119 {
       double var9 = 0.25;
       BlockPos var11 = new BlockPos(var0);
       double var12 = (double)var11.getX() + 0.5;
-      double var14 = var0.method11321() + 2.4 + (double)var1 * 0.25;
+      double var14 = var0.getY() + 2.4 + (double)var1 * 0.25;
       double var16 = (double)var11.getZ() + 0.5;
       float var18 = 0.5F;
       DebugRenderer.method27462(var2, var12, var14, var16, var3, var4, false, 0.5F, true);
@@ -243,7 +243,7 @@ public class Class5125 implements Class5119 {
    }
 
    private String method15842(Class6986 var1, BlockPos var2) {
-      float var5 = MathHelper.method37766(var2.method8320(var1.field30221.method11320(), var1.field30221.method11321(), var1.field30221.method11322(), true));
+      float var5 = MathHelper.method37766(var2.method8320(var1.field30221.getX(), var1.field30221.getY(), var1.field30221.getZ(), true));
       double var6 = (double)Math.round(var5 * 10.0F) / 10.0;
       return var2.method8323() + " (dist " + var6 + ")";
    }
@@ -254,7 +254,7 @@ public class Class5125 implements Class5119 {
 
    private boolean method15844(Class6986 var1) {
       ClientPlayerEntity var4 = this.field23306.player;
-      BlockPos var5 = new BlockPos(var4.getPosX(), var1.field30221.method11321(), var4.getPosZ());
+      BlockPos var5 = new BlockPos(var4.getPosX(), var1.field30221.getY(), var4.getPosZ());
       BlockPos var6 = new BlockPos(var1.field30221);
       return var5.method8316(var6, 30.0);
    }

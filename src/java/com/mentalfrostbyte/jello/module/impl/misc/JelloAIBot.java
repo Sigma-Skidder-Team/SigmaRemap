@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -44,7 +45,7 @@ public class JelloAIBot extends Module {
             }
         }
 
-        List var6 = Class9217.method34548(var3);
+        List var6 = BlockUtil.method34548(var3);
         return var6.size() != 0 ? (Entity) var6.get(0) : null;
     }
 
@@ -60,7 +61,7 @@ public class JelloAIBot extends Module {
                 if (this.field23515 == null
                         && (this.field23512 == null || this.field23512.isEmpty() || (var4 != this.field23513 || this.method16194()) && var4 != null)) {
                     this.field23515 = new Thread(() -> {
-                        ColorUtils.method17678("calc");
+                        ColorUtils.addChatMessage("calc");
                         this.field23516 = true;
 
                         try {
@@ -77,7 +78,7 @@ public class JelloAIBot extends Module {
                             this.field23512 = var4x.method38776(var7);
                             Client.getInstance().method19950().method31739(this.field23512);
                             this.field23515 = null;
-                            ColorUtils.method17678("calc" + this.field23512.size());
+                            ColorUtils.addChatMessage("calc" + this.field23512.size());
                         } catch (Exception var8) {
                             var8.printStackTrace();
                             this.field23515 = null;

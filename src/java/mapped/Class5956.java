@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Quaternion;
 
 public class Class5956 extends Class5942<Class959> {
    public static final Class7826 field25968 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("entity/conduit/base"));
@@ -36,7 +37,7 @@ public class Class5956 extends Class5942<Class959> {
          var3.translate(0.5, (double)(0.3F + var11 * 0.2F), 0.5);
          Vector3f var12 = new Vector3f(0.5F, 1.0F, 0.5F);
          var12.method25280();
-         var3.rotate(new Class8661(var12, var10, true));
+         var3.rotate(new Quaternion(var12, var10, true));
          this.field25977.method22680(var3, field25969.method26200(var4, RenderType::getEntityCutoutNoCull), var5, var6);
          var3.pop();
          int var13 = var1.field5382 / 66 % 3;
@@ -64,9 +65,9 @@ public class Class5956 extends Class5942<Class959> {
          var3.push();
          var3.translate(0.5, (double)(0.3F + var11 * 0.2F), 0.5);
          var3.method35292(0.5F, 0.5F, 0.5F);
-         float var16 = -var15.method37507();
+         float var16 = -var15.getYaw();
          var3.rotate(Vector3f.YP.rotationDegrees(var16));
-         var3.rotate(Vector3f.field32898.rotationDegrees(var15.method37506()));
+         var3.rotate(Vector3f.field32898.rotationDegrees(var15.getPitch()));
          var3.rotate(Vector3f.field32902.rotationDegrees(180.0F));
          float var17 = 1.3333334F;
          var3.method35292(1.3333334F, 1.3333334F, 1.3333334F);

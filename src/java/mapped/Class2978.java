@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.List;
 import java.util.Random;
@@ -71,16 +72,16 @@ public class Class2978 extends Structure<Class4726> {
          new BlockPos(var6.field45678, 0, var6.field45683),
          new BlockPos(var6.field45681, 0, var6.field45683)
       );
-      List<Class1665> var11 = var20.stream().map(var1x -> var1.method17798(var1x.getX(), var1x.getZ())).collect(Collectors.toList());
+      List<IBlockReader> var11 = var20.stream().map(var1x -> var1.method17798(var1x.getX(), var1x.getZ())).collect(Collectors.toList());
       Class101 var12 = var2 != Class2219.field14496 ? Class101.field295 : Class101.field297;
-      Mutable var13 = new Mutable();
+      BlockPos.Mutable var13 = new BlockPos.Mutable();
 
       int var14;
       for (var14 = var9; var14 > 15; var14--) {
          int var15 = 0;
          var13.method8372(0, var14, 0);
 
-         for (Class1665 var17 : var11) {
+         for (IBlockReader var17 : var11) {
             BlockState var18 = var17.getBlockState(var13);
             if (var18 != null && var12.method287().test(var18)) {
                if (++var15 == 3) {

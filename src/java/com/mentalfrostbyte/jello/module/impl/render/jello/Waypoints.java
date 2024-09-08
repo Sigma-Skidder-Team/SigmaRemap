@@ -139,9 +139,9 @@ public class Waypoints extends Module {
                         }
                     }
 
-                    float var13 = (float) ((double) var5.field35893 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321());
-                    float var14 = (float) ((double) var5.field35890 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320());
-                    float var15 = (float) ((double) var5.field35891 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322());
+                    float var13 = (float) ((double) var5.field35893 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY());
+                    float var14 = (float) ((double) var5.field35890 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX());
+                    float var15 = (float) ((double) var5.field35891 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getZ());
                     if (var5.field35890 < 0) {
                         var14--;
                     }
@@ -258,8 +258,8 @@ public class Waypoints extends Module {
         GL11.glPushMatrix();
         GL11.glAlphaFunc(519, 0.0F);
         GL11.glTranslated((double) var1 + 0.5, (double) var2 + 1.9, (double) var3 + 0.5);
-        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37507(), 0.0F, -1.0F, 0.0F);
-        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37506(), 1.0F, 0.0F, 0.0F);
+        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
+        GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
         ClientResource var9 = ResourceRegistry.JelloLightFont25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.009F * var6, -0.009F * var6, -0.009F * var6);

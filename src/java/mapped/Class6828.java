@@ -32,7 +32,7 @@ public class Class6828 extends Class6829 {
          double var19 = Math.sin((double)(this.field29705.rotationYaw * (float) (Math.PI / 180.0)));
          double var21 = Math.sin((double)(this.field29705.ticksExisted + this.field29705.getEntityId()) * 0.75) * 0.05;
          this.field29705
-            .method3434(this.field29705.method3433().method11339(var15 * var17, var21 * (var19 + var17) * 0.25 + (double)var14 * var8 * 0.1, var15 * var19));
+            .method3434(this.field29705.getVec().method11339(var15 * var17, var21 * (var19 + var17) * 0.25 + (double)var14 * var8 * 0.1, var15 * var19));
          Class8092 var23 = this.field29705.method4227();
          double var24 = this.field29705.getPosX() + var6 * 2.0;
          double var26 = this.field29705.method3442() + var8 / var4;

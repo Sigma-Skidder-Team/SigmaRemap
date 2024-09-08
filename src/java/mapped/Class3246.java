@@ -9,6 +9,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -37,7 +38,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    }
 
    @Override
-   public int method11659(Class1665 var1, BlockPos var2, BlockState var3) {
+   public int method11659(IBlockReader var1, BlockPos var2, BlockState var3) {
       TileEntity var6 = var1.getTileEntity(var2);
       return !(var6 instanceof Class963) ? 0 : ((Class963)var6).method3930();
    }
@@ -162,7 +163,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    }
 
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return new Class963();
    }
 

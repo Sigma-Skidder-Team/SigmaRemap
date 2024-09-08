@@ -133,7 +133,7 @@ public class MinemenSpider extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (var1.method13903() != null
                     && !var1.method13903().method19516()
-                    && var1.method13903().method19514().field28450 > mc.player.boundingBox.field28450 + 1.0) {
+                    && var1.method13903().method19514().minY > mc.player.boundingBox.minY + 1.0) {
                 var1.method13900(true);
             }
         }

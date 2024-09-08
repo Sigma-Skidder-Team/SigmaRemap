@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
 import java.util.stream.IntStream;
@@ -37,7 +38,7 @@ public class Class6771 extends Class6768<Class8278> {
    ) {
       double var17 = 0.0;
       double var19 = 0.0;
-      Mutable var21 = new Mutable();
+      BlockPos.Mutable var21 = new BlockPos.Mutable();
       float var22 = var3.method32503(var21.method8372(var4, 63, var5));
       double var23 = Math.min(Math.abs(var7), this.field29543.method25315((double)var4 * 0.1, (double)var5 * 0.1, false) * 15.0);
       if (var23 > 1.8) {

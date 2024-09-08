@@ -10,6 +10,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -241,7 +242,7 @@ public class Class1010 extends Class1009 implements Class1011 {
    }
 
    private boolean method4355(double var1, double var3, double var5) {
-      Mutable var9 = new Mutable(var1, var3, var5);
+      BlockPos.Mutable var9 = new BlockPos.Mutable(var1, var3, var5);
 
       while (var9.getY() > 0 && !this.world.getBlockState(var9).method23384().method31087()) {
          var9.method8379(Direction.DOWN);

@@ -16,7 +16,7 @@ public class Class4589 extends Class4588 {
    }
 
    public Class4589(ClientWorld var1, Entity var2, IParticleData var3, int var4) {
-      this(var1, var2, var3, var4, var2.method3433());
+      this(var1, var2, var3, var4, var2.getVec());
    }
 
    private Class4589(ClientWorld var1, Entity var2, IParticleData var3, int var4, Vector3d var5) {

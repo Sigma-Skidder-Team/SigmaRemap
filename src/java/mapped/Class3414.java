@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
@@ -33,7 +34,7 @@ public class Class3414 extends Block {
       return super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
-   public boolean method12052(Class1665 var1, BlockPos var2) {
+   public boolean method12052(IBlockReader var1, BlockPos var2) {
       for (Direction var8 : Direction.values()) {
          FluidState var9 = var1.getFluidState(var2.method8349(var8));
          if (var9.method23486(Class8953.field40469)) {

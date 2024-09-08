@@ -104,7 +104,7 @@ public abstract class Class995 extends Entity {
          int var4 = Math.max(1, this.method4082() / 16);
          BlockPos var5 = this.field5488.method8349(this.field5489.method536());
          Direction var6 = this.field5489.method538();
-         Mutable var7 = new Mutable();
+         BlockPos.Mutable var7 = new BlockPos.Mutable();
 
          for (int var8 = 0; var8 < var3; var8++) {
             for (int var9 = 0; var9 < var4; var9++) {

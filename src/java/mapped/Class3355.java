@@ -13,6 +13,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -29,7 +30,7 @@ public class Class3355 extends Class3241 {
    }
 
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       CommandBlockTileEntity var4 = new CommandBlockTileEntity();
       var4.method4013(this == Blocks.field36888);
       return var4;
@@ -172,7 +173,7 @@ public class Class3355 extends Class3241 {
    }
 
    private static void method11928(World var0, BlockPos var1, Direction var2) {
-      Mutable var5 = var1.method8354();
+      BlockPos.Mutable var5 = var1.method8354();
       Class5462 var6 = var0.method6789();
       int var7 = var6.method17136(Class5462.field24244);
 

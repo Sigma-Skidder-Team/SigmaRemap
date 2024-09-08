@@ -175,7 +175,7 @@ public class Class5463 {
          var8.getProfiler().endStartSection("shadow frustum");
          Class7649 var11 = new Class7649();
          var8.getProfiler().endStartSection("shadow culling");
-         Vector3d var12 = var1.method37504();
+         Vector3d var12 = var1.getPos();
          var11.method25119(var12.x, var12.y, var12.z);
          GlStateManager.method23818(7425);
          GlStateManager.method23711();
@@ -191,9 +191,9 @@ public class Class5463 {
          var9.method874(var1, var11, false, var13, var8.player.isSpectator());
          var8.getProfiler().endStartSection("shadow updatechunks");
          var8.getProfiler().endStartSection("shadow terrain");
-         double var14 = var12.method11320();
-         double var16 = var12.method11321();
-         double var18 = var12.method11322();
+         double var14 = var12.getX();
+         double var16 = var12.getY();
+         double var18 = var12.getZ();
          GlStateManager.method23830(5888);
          GlStateManager.method23832();
          GlStateManager.method23695();
@@ -224,12 +224,12 @@ public class Class5463 {
             for (Entity var29 : var27.method7146()[var26.method27718().getY() / 16]) {
                if ((var21.method32218(var29, var11, var14, var16, var18) || var29.method3417(var8.player))
                   && (
-                     var29 != var1.method37509()
+                     var29 != var1.getRenderViewEntity()
                         || var23
                         || var1.method37511()
-                        || var1.method37509() instanceof LivingEntity && ((LivingEntity)var1.method37509()).isSleeping()
+                        || var1.getRenderViewEntity() instanceof LivingEntity && ((LivingEntity)var1.getRenderViewEntity()).isSleeping()
                   )
-                  && (!(var29 instanceof ClientPlayerEntity) || var1.method37509() == var29)) {
+                  && (!(var29 instanceof ClientPlayerEntity) || var1.getRenderViewEntity() == var29)) {
                   var20.field1000 = var29;
                   Shaders.method33079(var29);
                   var20.method879(var29, var14, var16, var18, var3, var10, var22);

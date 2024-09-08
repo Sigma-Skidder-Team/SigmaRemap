@@ -8,6 +8,7 @@ import net.minecraft.particles.IParticleData;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -33,7 +34,7 @@ public final class FluidState extends Class7378<Fluid, FluidState> {
       return this.method23472().method25059();
    }
 
-   public float method23475(Class1665 var1, BlockPos var2) {
+   public float method23475(IBlockReader var1, BlockPos var2) {
       return this.method23472().method25061(this, var1, var2);
    }
 
@@ -45,7 +46,7 @@ public final class FluidState extends Class7378<Fluid, FluidState> {
       return this.method23472().method25065(this);
    }
 
-   public boolean method23478(Class1665 var1, BlockPos var2) {
+   public boolean method23478(IBlockReader var1, BlockPos var2) {
       for (int var5 = -1; var5 <= 1; var5++) {
          for (int var6 = -1; var6 <= 1; var6++) {
             BlockPos var7 = var2.method8336(var5, 0, var6);
@@ -75,7 +76,7 @@ public final class FluidState extends Class7378<Fluid, FluidState> {
       this.method23472().method25053(var1, var2, this, var3);
    }
 
-   public Vector3d method23483(Class1665 var1, BlockPos var2) {
+   public Vector3d method23483(IBlockReader var1, BlockPos var2) {
       return this.method23472().method25056(var1, var2, this);
    }
 
@@ -96,11 +97,11 @@ public final class FluidState extends Class7378<Fluid, FluidState> {
       return this.method23472().method25060();
    }
 
-   public boolean method23488(Class1665 var1, BlockPos var2, Fluid var3, Direction var4) {
+   public boolean method23488(IBlockReader var1, BlockPos var2, Fluid var3, Direction var4) {
       return this.method23472().method25055(this, var1, var2, var3, var4);
    }
 
-   public VoxelShape method23489(Class1665 var1, BlockPos var2) {
+   public VoxelShape method23489(IBlockReader var1, BlockPos var2) {
       return this.method23472().method25068(this, var1, var2);
    }
 }

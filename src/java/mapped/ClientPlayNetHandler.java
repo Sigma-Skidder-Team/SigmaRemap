@@ -482,7 +482,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             var4.func_242277_a(var8);
             float var9 = !var1.isRotating() ? var4.rotationYaw : (float)(var1.getYaw() * 360) / 256.0F;
             float var7 = !var1.isRotating() ? var4.rotationPitch : (float)(var1.getPitch() * 360) / 256.0F;
-            var4.setPositionAndRotationDirect(var8.method11320(), var8.method11321(), var8.method11322(), var9, var7, 3, false);
+            var4.setPositionAndRotationDirect(var8.getX(), var8.getY(), var8.getZ(), var9, var7, 3, false);
          }
 
          var4.method3061(var1.getOnGround());
@@ -513,7 +513,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handlePlayerPosLook(SPlayerPositionLookPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.player;
-      Vector3d var5 = var4.method3433();
+      Vector3d var5 = var4.getVec();
       boolean var6 = var1.method17220().contains(Class2033.field13198);
       boolean var7 = var1.method17220().contains(Class2033.field13199);
       boolean var8 = var1.method17220().contains(Class2033.field13200);
@@ -524,7 +524,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          var11 = var1.method17214();
          var4.lastTickPosX = var11;
       } else {
-         var9 = var5.method11320();
+         var9 = var5.getX();
          var11 = var4.getPosX() + var1.method17214();
          var4.lastTickPosX = var4.lastTickPosX + var1.method17214();
       }
@@ -536,7 +536,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          var15 = var1.method17215();
          var4.lastTickPosY = var15;
       } else {
-         var13 = var5.method11321();
+         var13 = var5.getY();
          var15 = var4.getPosY() + var1.method17215();
          var4.lastTickPosY = var4.lastTickPosY + var1.method17215();
       }
@@ -548,7 +548,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          var19 = var1.method17216();
          var4.lastTickPosZ = var19;
       } else {
-         var17 = var5.method11322();
+         var17 = var5.getZ();
          var19 = var4.getPosZ() + var1.method17216();
          var4.lastTickPosZ = var4.lastTickPosZ + var1.method17216();
       }
@@ -946,7 +946,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       var4.method25785(true);
       this.field23272
          .player
-         .method3434(this.field23272.player.method3433().method11339((double)var1.method17338(), (double)var1.method17339(), (double)var1.method17340()));
+         .method3434(this.field23272.player.getVec().method11339((double)var1.method17338(), (double)var1.method17339(), (double)var1.method17340()));
    }
 
    @Override
@@ -1176,25 +1176,25 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                        this.field23272
                                           .ingameGUI
                                           .getChatGUI()
-                                          .method5930(new TranslationTextComponent("demo.day.6", var8.keyBindScreenshot.func_238171_j_()));
+                                          .sendChatMessage(new TranslationTextComponent("demo.day.6", var8.keyBindScreenshot.func_238171_j_()));
                                     }
                                  } else {
                                     this.field23272
                                        .ingameGUI
                                        .getChatGUI()
-                                       .method5930(new TranslationTextComponent("demo.help.inventory", var8.keyBindInventory.func_238171_j_()));
+                                       .sendChatMessage(new TranslationTextComponent("demo.help.inventory", var8.keyBindInventory.func_238171_j_()));
                                  }
                               } else {
                                  this.field23272
                                     .ingameGUI
                                     .getChatGUI()
-                                    .method5930(new TranslationTextComponent("demo.help.jump", var8.keyBindJump.func_238171_j_()));
+                                    .sendChatMessage(new TranslationTextComponent("demo.help.jump", var8.keyBindJump.func_238171_j_()));
                               }
                            } else {
                               this.field23272
                                  .ingameGUI
                                  .getChatGUI()
-                                 .method5930(
+                                 .sendChatMessage(
                                     new TranslationTextComponent(
                                        "demo.help.movement",
                                        var8.keyBindForward.func_238171_j_(),

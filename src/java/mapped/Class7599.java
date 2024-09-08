@@ -4,9 +4,10 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.world.IBlockReader;
 
 public class Class7599 {
-   public static String method24888(Class1665 var0, BlockPos var1) {
+   public static String method24888(IBlockReader var0, BlockPos var1) {
       TileEntity var4 = var0.getTileEntity(var1);
       return method24889(var4);
    }

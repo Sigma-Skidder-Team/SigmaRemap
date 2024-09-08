@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -25,7 +26,7 @@ public class Class3424 extends Block implements Class3196 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       Vector3d var7 = var1.method23421(var2, var3);
       return field19161.withOffset(var7.x, var7.y, var7.z);
    }
@@ -56,12 +57,12 @@ public class Class3424 extends Block implements Class3196 {
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       return new ItemStack(Items.field37357);
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
+   public boolean method11486(IBlockReader var1, BlockPos var2, BlockState var3, boolean var4) {
       return var1.getBlockState(var2.up()).isAir();
    }
 
@@ -76,7 +77,7 @@ public class Class3424 extends Block implements Class3196 {
    }
 
    @Override
-   public float method11997(BlockState var1, PlayerEntity var2, Class1665 var3, BlockPos var4) {
+   public float method11997(BlockState var1, PlayerEntity var2, IBlockReader var3, BlockPos var4) {
       return !(var2.getHeldItemMainhand().getItem() instanceof ItemSword) ? super.method11997(var1, var2, var3, var4) : 1.0F;
    }
 

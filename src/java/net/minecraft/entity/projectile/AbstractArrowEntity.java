@@ -101,7 +101,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    public void tick() {
       super.tick();
       boolean var3 = this.method3493();
-      Vector3d var4 = this.method3433();
+      Vector3d var4 = this.getVec();
       if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F) {
          float var5 = MathHelper.method37766(method3234(var4));
          this.rotationYaw = (float)(MathHelper.method37814(var4.x, var4.z) * 180.0F / (float)Math.PI);
@@ -178,7 +178,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
             var35 = null;
          }
 
-         var4 = this.method3433();
+         var4 = this.getVec();
          double var10 = var4.x;
          double var12 = var4.y;
          double var14 = var4.z;
@@ -223,7 +223,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
 
          this.method3434(var4.method11344((double)var27));
          if (!this.method3247() && !var3) {
-            Vector3d var37 = this.method3433();
+            Vector3d var37 = this.getVec();
             this.method3435(var37.x, var37.y - 0.05F, var37.z);
          }
 
@@ -238,7 +238,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
 
    private void method3473() {
       this.field5100 = false;
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       this.method3434(
          var3.method11347((double)(this.rand.nextFloat() * 0.2F), (double)(this.rand.nextFloat() * 0.2F), (double)(this.rand.nextFloat() * 0.2F))
       );
@@ -274,7 +274,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
       Entity var4 = var1.getEntity();
-      float var5 = (float)this.method3433().method11348();
+      float var5 = (float)this.getVec().method11348();
       int var6 = MathHelper.method37774(MathHelper.method37778((double)var5 * this.field5105, 0.0, 2.147483647E9));
       if (this.method3489() > 0) {
          if (this.field5108 == null) {
@@ -317,10 +317,10 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
 
       if (!var4.method2741(var8, (float)var6)) {
          var4.method2966(var12);
-         this.method3434(this.method3433().method11344(-0.1));
+         this.method3434(this.getVec().method11344(-0.1));
          this.rotationYaw += 180.0F;
          this.prevRotationYaw += 180.0F;
-         if (!this.world.isRemote && this.method3433().method11349() < 1.0E-7) {
+         if (!this.world.isRemote && this.getVec().method11349() < 1.0E-7) {
             if (this.pickupStatus == AbstractArrowEntityPickupStatus.ALLOWED) {
                this.method3303(this.method3480(), 0.1F);
             }
@@ -339,7 +339,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
             }
 
             if (this.field5106 > 0) {
-               Vector3d var14 = this.method3433().method11347(1.0, 0.0, 1.0).method11333().method11344((double)this.field5106 * 0.6);
+               Vector3d var14 = this.getVec().method11347(1.0, 0.0, 1.0).method11333().method11344((double)this.field5106 * 0.6);
                if (var14.method11349() > 0.0) {
                   var13.method3280(var14.x, 0.1, var14.z);
                }
@@ -407,7 +407,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
 
    @Nullable
    public EntityRayTraceResult method3479(Vector3d var1, Vector3d var2) {
-      return Class9456.method36387(this.world, this, var1, var2, this.getBoundingBox().method19661(this.method3433()).method19664(1.0), this::method3467);
+      return Class9456.method36387(this.world, this, var1, var2, this.getBoundingBox().method19661(this.getVec()).method19664(1.0), this::method3467);
    }
 
    @Override

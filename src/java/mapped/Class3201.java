@@ -8,6 +8,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -36,7 +37,7 @@ public class Class3201 extends Class3200 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       switch (Class6596.field29026[var1.<Class103>method23463(field18500).ordinal()]) {
          case 1:
             switch (Class6596.field29024[var1.<Direction>method23463(field18484).method544().ordinal()]) {
@@ -122,12 +123,12 @@ public class Class3201 extends Class3200 {
    }
 
    @Override
-   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return !var1.<Boolean>method23463(field18501) ? 0 : 15;
    }
 
    @Override
-   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return var1.<Boolean>method23463(field18501) && method11509(var1) == var4 ? 15 : 0;
    }
 

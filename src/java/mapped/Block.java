@@ -18,6 +18,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -88,7 +89,7 @@ public class Block extends Class3390 implements Class3303 {
 
    public static BlockState method11542(BlockState var0, Class1660 var1, BlockPos var2) {
       BlockState var5 = var0;
-      Mutable var6 = new Mutable();
+      BlockPos.Mutable var6 = new BlockPos.Mutable();
 
       for (Direction var10 : field19003) {
          var6.method8377(var2, var10);
@@ -134,7 +135,7 @@ public class Block extends Class3390 implements Class3303 {
       return this.field19007;
    }
 
-   public static boolean method11546(BlockState var0, Class1665 var1, BlockPos var2, Direction var3) {
+   public static boolean method11546(BlockState var0, IBlockReader var1, BlockPos var2, Direction var3) {
       BlockPos var6 = var2.method8349(var3);
       BlockState var7 = var1.getBlockState(var6);
       Class4424 var8 = new Class4424(var0);
@@ -173,7 +174,7 @@ public class Block extends Class3390 implements Class3303 {
       }
    }
 
-   public static boolean method11547(Class1665 var0, BlockPos var1) {
+   public static boolean method11547(IBlockReader var0, BlockPos var1) {
       return var0.getBlockState(var1).method23455(var0, var1, Direction.field673, Class2156.field14142);
    }
 
@@ -191,7 +192,7 @@ public class Block extends Class3390 implements Class3303 {
       return (Boolean)field18611.getUnchecked(var0);
    }
 
-   public boolean method11493(BlockState var1, Class1665 var2, BlockPos var3) {
+   public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
       return !method11550(var1.method23412(var2, var3)) && var1.method23449().method23474();
    }
 
@@ -307,11 +308,11 @@ public class Block extends Class3390 implements Class3303 {
       var3.method2921(var4, 1.0F);
    }
 
-   public void method11568(Class1665 var1, Entity var2) {
-      var2.method3434(var2.method3433().method11347(1.0, 0.0, 1.0));
+   public void method11568(IBlockReader var1, Entity var2) {
+      var2.method3434(var2.getVec().method11347(1.0, 0.0, 1.0));
    }
 
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       return new ItemStack(this);
    }
 
@@ -382,7 +383,7 @@ public class Block extends Class3390 implements Class3303 {
       return "Block{" + Registry.BLOCK.getKey(this) + "}";
    }
 
-   public void method11583(ItemStack var1, Class1665 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11583(ItemStack var1, IBlockReader var2, List<ITextComponent> var3, Class2216 var4) {
    }
 
    @Override

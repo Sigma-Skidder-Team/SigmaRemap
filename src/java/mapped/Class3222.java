@@ -12,6 +12,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.Map;
@@ -102,7 +103,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field18656.get(var1.method23465(field18651, Integer.valueOf(0)));
    }
 
@@ -111,7 +112,7 @@ public class Class3222 extends Block {
       return this.method11614(var1.method18360(), this.field18658, var1.method18345());
    }
 
-   private BlockState method11614(Class1665 var1, BlockState var2, BlockPos var3) {
+   private BlockState method11614(IBlockReader var1, BlockState var2, BlockPos var3) {
       boolean var6 = method11617(var2);
       var2 = this.method11615(var1, this.method11579().method23465(field18651, var2.<Integer>method23463(field18651)), var3);
       if (var6 && method11617(var2)) {
@@ -143,7 +144,7 @@ public class Class3222 extends Block {
       }
    }
 
-   private BlockState method11615(Class1665 var1, BlockState var2, BlockPos var3) {
+   private BlockState method11615(IBlockReader var1, BlockState var2, BlockPos var3) {
       boolean var6 = !var1.getBlockState(var3.up()).method23400(var1, var3);
 
       for (Direction var8 : Class76.field161) {
@@ -190,7 +191,7 @@ public class Class3222 extends Block {
 
    @Override
    public void method11618(BlockState var1, Class1660 var2, BlockPos var3, int var4, int var5) {
-      Mutable var8 = new Mutable();
+      BlockPos.Mutable var8 = new BlockPos.Mutable();
 
       for (Direction var10 : Class76.field161) {
          Class98 var11 = var1.<Class98>method23463(field18652.get(var10));
@@ -214,11 +215,11 @@ public class Class3222 extends Block {
       }
    }
 
-   private Class98 method11619(Class1665 var1, BlockPos var2, Direction var3) {
+   private Class98 method11619(IBlockReader var1, BlockPos var2, Direction var3) {
       return this.method11620(var1, var2, var3, !var1.getBlockState(var2.up()).method23400(var1, var2));
    }
 
-   private Class98 method11620(Class1665 var1, BlockPos var2, Direction var3, boolean var4) {
+   private Class98 method11620(IBlockReader var1, BlockPos var2, Direction var3, boolean var4) {
       BlockPos var7 = var2.method8349(var3);
       BlockState var8 = var1.getBlockState(var7);
       if (var4) {
@@ -244,7 +245,7 @@ public class Class3222 extends Block {
       return this.method11621(var2, var6, var7);
    }
 
-   private boolean method11621(Class1665 var1, BlockPos var2, BlockState var3) {
+   private boolean method11621(IBlockReader var1, BlockPos var2, BlockState var3) {
       return var3.method23454(var1, var2, Direction.field673) || var3.method23448(Blocks.field36723);
    }
 
@@ -360,12 +361,12 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return this.field18659 ? var1.method23402(var2, var3, var4) : 0;
    }
 
    @Override
-   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       if (this.field18659 && var4 != Direction.DOWN) {
          int var7 = var1.<Integer>method23463(field18651);
          if (var7 == 0) {

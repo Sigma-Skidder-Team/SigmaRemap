@@ -112,9 +112,9 @@ public abstract class Class7195<C extends Class4729> {
             return false;
          } else {
             boolean var32 = false;
-            Mutable var33 = new Mutable();
-            Mutable var34 = new Mutable();
-            Mutable var35 = new Mutable();
+            BlockPos.Mutable var33 = new BlockPos.Mutable();
+            BlockPos.Mutable var34 = new BlockPos.Mutable();
+            BlockPos.Mutable var35 = new BlockPos.Mutable();
 
             for (int var36 = var26; var36 < var27; var36++) {
                int var37 = var36 + var6 * 16;
@@ -148,9 +148,9 @@ public abstract class Class7195<C extends Class4729> {
       Function<BlockPos, Biome> var2,
       BitSet var3,
       Random var4,
-      Mutable var5,
-      Mutable var6,
-      Mutable var7,
+      BlockPos.Mutable var5,
+      BlockPos.Mutable var6,
+      BlockPos.Mutable var7,
       int var8,
       int var9,
       int var10,
@@ -209,7 +209,7 @@ public abstract class Class7195<C extends Class4729> {
    }
 
    public boolean method22611(IChunk var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
-      Mutable var12 = new Mutable();
+      BlockPos.Mutable var12 = new BlockPos.Mutable();
 
       for (int var13 = var4; var13 < var5; var13++) {
          for (int var14 = var8; var14 < var9; var14++) {

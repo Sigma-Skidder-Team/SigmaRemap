@@ -80,7 +80,7 @@ public class Class994 extends AbstractMinecartEntity {
       double var5 = 1.0E-4;
       double var7 = 0.001;
       super.method3591(var1, var2);
-      Vector3d var9 = this.method3433();
+      Vector3d var9 = this.getVec();
       double var10 = method3234(var9);
       double var12 = this.field5483 * this.field5483 + this.field5484 * this.field5484;
       if (var12 > 1.0E-4 && var10 > 0.001) {
@@ -95,12 +95,12 @@ public class Class994 extends AbstractMinecartEntity {
    public void method3593() {
       double var3 = this.field5483 * this.field5483 + this.field5484 * this.field5484;
       if (!(var3 > 1.0E-7)) {
-         this.method3434(this.method3433().method11347(0.98, 0.0, 0.98));
+         this.method3434(this.getVec().method11347(0.98, 0.0, 0.98));
       } else {
          var3 = (double) MathHelper.method37766(var3);
          this.field5483 /= var3;
          this.field5484 /= var3;
-         this.method3434(this.method3433().method11347(0.8, 0.0, 0.8).method11339(this.field5483, 0.0, this.field5484));
+         this.method3434(this.getVec().method11347(0.8, 0.0, 0.8).method11339(this.field5483, 0.0, this.field5484));
       }
 
       super.method3593();

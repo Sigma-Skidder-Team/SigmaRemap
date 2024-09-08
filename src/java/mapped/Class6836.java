@@ -12,7 +12,7 @@ public class Class6836 extends Class6829 {
    @Override
    public void method20810() {
       if (this.field29723.method3250()) {
-         this.field29723.method3434(this.field29723.method3433().method11339(0.0, 0.005, 0.0));
+         this.field29723.method3434(this.field29723.getVec().method11339(0.0, 0.005, 0.0));
       }
 
       if (this.field29714 == Class2335.field15967 && !this.field29723.method4230().method21664()) {

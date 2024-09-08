@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public enum Class2271 implements Class2272 {
    field14774(Class7377::getCollisionShape),
@@ -16,7 +17,7 @@ public enum Class2271 implements Class2272 {
    }
 
    @Override
-   public VoxelShape method8998(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method8998(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field14777.method8998(var1, var2, var3, var4);
    }
 }

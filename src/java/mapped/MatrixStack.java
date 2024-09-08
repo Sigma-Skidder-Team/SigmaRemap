@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Queues;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.math.vector.Quaternion;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -40,7 +41,7 @@ public class MatrixStack {
       Class8892.method32364(var6).method32828(Class8967.method32817(var10 * var7, var10 * var8, var10 * var9));
    }
 
-   public void rotate(Class8661 var1) {
+   public void rotate(Quaternion var1) {
       Class8892 var4 = this.field43311.getLast();
       Class8892.method32363(var4).method35509(var1);
       Class8892.method32364(var4).method32829(var1);

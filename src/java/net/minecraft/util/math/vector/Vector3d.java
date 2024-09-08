@@ -81,7 +81,7 @@ public class Vector3d implements Class2955 {
    }
 
    public boolean method11340(Class2955 var1, double var2) {
-      return this.method11343(var1.method11320(), var1.method11321(), var1.method11322()) < var2 * var2;
+      return this.method11343(var1.getX(), var1.getY(), var1.getZ()) < var2 * var2;
    }
 
    public double method11341(Vector3d var1) {
@@ -213,17 +213,17 @@ public class Vector3d implements Class2955 {
    }
 
    @Override
-   public final double method11320() {
+   public final double getX() {
       return this.x;
    }
 
    @Override
-   public final double method11321() {
+   public final double getY() {
       return this.y;
    }
 
    @Override
-   public final double method11322() {
+   public final double getZ() {
       return this.z;
    }
 }

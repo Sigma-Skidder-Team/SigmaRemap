@@ -48,11 +48,11 @@ public class NewChunks extends Module {
             while (var18.hasNext()) {
                 Class7481 var6 = (Class7481) var18.next();
                 if (var6 != null) {
-                    double var7 = (double) var6.method24356() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
-                    double var9 = (double) var6.method24357() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
-                    double var11 = -mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
+                    double var7 = (double) var6.method24356() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+                    double var9 = (double) var6.method24357() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
+                    double var11 = -mc.gameRenderer.getActiveRenderInfo().getPos().getY();
                     GL11.glDisable(2929);
-                    Class9388 var13 = new Class9388(var7, var11, var9, var7 + 16.0, var11, var9 + 16.0);
+                    Box3D var13 = new Box3D(var7, var11, var9, var7 + 16.0, var11, var9 + 16.0);
                     RenderUtil.render3DColoredBox(var13, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
                     RenderUtil.renderWireframeBox(var13, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.1F));
                     GL11.glColor3f(1.0F, 1.0F, 1.0F);

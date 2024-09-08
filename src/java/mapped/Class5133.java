@@ -231,7 +231,7 @@ public class Class5133 implements Class5119 {
       double var9 = 0.25;
       BlockPos var11 = new BlockPos(var0);
       double var12 = (double)var11.getX() + 0.5;
-      double var14 = var0.method11321() + 2.4 + (double)var1 * 0.25;
+      double var14 = var0.getY() + 2.4 + (double)var1 * 0.25;
       double var16 = (double)var11.getZ() + 0.5;
       float var18 = 0.5F;
       DebugRenderer.method27462(var2, var12, var14, var16, var3, var4, false, 0.5F, true);
@@ -251,7 +251,7 @@ public class Class5133 implements Class5119 {
 
    private boolean method15888(Class8918 var1) {
       ClientPlayerEntity var4 = this.field23330.player;
-      BlockPos var5 = new BlockPos(var4.getPosX(), var1.field40369.method11321(), var4.getPosZ());
+      BlockPos var5 = new BlockPos(var4.getPosX(), var1.field40369.getY(), var4.getPosZ());
       BlockPos var6 = new BlockPos(var1.field40369);
       return var5.method8316(var6, 30.0);
    }

@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 
@@ -17,17 +18,17 @@ public class Class3455 extends Class3456 implements Class3449 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19275;
    }
 
    @Override
-   public boolean method11490(BlockState var1, Class1665 var2, BlockPos var3) {
+   public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
       return var1.method23454(var2, var3, Direction.field673) && !var1.method23448(Blocks.field36890);
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       return new ItemStack(Blocks.SEAGRASS);
    }
 
@@ -62,7 +63,7 @@ public class Class3455 extends Class3456 implements Class3449 {
    }
 
    @Override
-   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Fluid var4) {
+   public boolean method11531(IBlockReader var1, BlockPos var2, BlockState var3, Fluid var4) {
       return false;
    }
 

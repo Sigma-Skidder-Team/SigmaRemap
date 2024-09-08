@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class993 extends AbstractMinecartEntity {
@@ -35,7 +36,7 @@ public class Class993 extends AbstractMinecartEntity {
       super.tick();
       if (this.field5480 <= 0) {
          if (this.field5480 == 0) {
-            this.method4071(method3234(this.method3433()));
+            this.method4071(method3234(this.getVec()));
          }
       } else {
          this.field5480--;
@@ -43,7 +44,7 @@ public class Class993 extends AbstractMinecartEntity {
       }
 
       if (this.collidedHorizontally) {
-         double var3 = method3234(this.method3433());
+         double var3 = method3234(this.getVec());
          if (var3 >= 0.01F) {
             this.method4071(var3);
          }
@@ -56,7 +57,7 @@ public class Class993 extends AbstractMinecartEntity {
       if (var5 instanceof AbstractArrowEntity) {
          AbstractArrowEntity var6 = (AbstractArrowEntity)var5;
          if (var6.method3327()) {
-            this.method4071(var6.method3433().method11349());
+            this.method4071(var6.getVec().method11349());
          }
       }
 
@@ -65,7 +66,7 @@ public class Class993 extends AbstractMinecartEntity {
 
    @Override
    public void method3586(Class8654 var1) {
-      double var4 = method3234(this.method3433());
+      double var4 = method3234(this.getVec());
       if (!var1.method31141() && !var1.method31131() && !(var4 >= 0.01F)) {
          super.method3586(var1);
          if (!var1.method31131() && this.world.method6789().method17135(Class5462.field24229)) {
@@ -138,14 +139,14 @@ public class Class993 extends AbstractMinecartEntity {
    }
 
    @Override
-   public float method3368(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, FluidState var5, float var6) {
+   public float method3368(Class7782 var1, IBlockReader var2, BlockPos var3, BlockState var4, FluidState var5, float var6) {
       return this.method4074() && (var4.method23446(BlockTags.field32766) || var2.getBlockState(var3.up()).method23446(BlockTags.field32766))
          ? 0.0F
          : super.method3368(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public boolean method3369(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, float var5) {
+   public boolean method3369(Class7782 var1, IBlockReader var2, BlockPos var3, BlockState var4, float var5) {
       return this.method4074() && (var4.method23446(BlockTags.field32766) || var2.getBlockState(var3.up()).method23446(BlockTags.field32766))
          ? false
          : super.method3369(var1, var2, var3, var4, var5);

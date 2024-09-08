@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.Objects;
 import java.util.Spliterators.AbstractSpliterator;
@@ -20,7 +21,7 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
    private final AxisAlignedBB field35187;
    private final ISelectionContext field35188;
    private final Class8893 field35189;
-   private final Mutable field35190;
+   private final BlockPos.Mutable field35190;
    private final VoxelShape field35191;
    private final Class1668 field35192;
    private boolean field35193;
@@ -33,19 +34,19 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
    public Class8181(Class1668 var1, Entity var2, AxisAlignedBB var3, BiPredicate<BlockState, BlockPos> var4) {
       super(Long.MAX_VALUE, 1280);
       this.field35188 = var2 != null ? ISelectionContext.forEntity(var2) : ISelectionContext.method14947();
-      this.field35190 = new Mutable();
+      this.field35190 = new BlockPos.Mutable();
       this.field35191 = VoxelShapes.create(var3);
       this.field35192 = var1;
       this.field35193 = var2 != null;
       this.field35186 = var2;
       this.field35187 = var3;
       this.field35194 = var4;
-      int var7 = MathHelper.floor(var3.field28449 - 1.0E-7) - 1;
-      int var8 = MathHelper.floor(var3.field28452 + 1.0E-7) + 1;
-      int var9 = MathHelper.floor(var3.field28450 - 1.0E-7) - 1;
-      int var10 = MathHelper.floor(var3.field28453 + 1.0E-7) + 1;
-      int var11 = MathHelper.floor(var3.field28451 - 1.0E-7) - 1;
-      int var12 = MathHelper.floor(var3.field28454 + 1.0E-7) + 1;
+      int var7 = MathHelper.floor(var3.minX - 1.0E-7) - 1;
+      int var8 = MathHelper.floor(var3.maxX + 1.0E-7) + 1;
+      int var9 = MathHelper.floor(var3.minY - 1.0E-7) - 1;
+      int var10 = MathHelper.floor(var3.maxY + 1.0E-7) + 1;
+      int var11 = MathHelper.floor(var3.minZ - 1.0E-7) - 1;
+      int var12 = MathHelper.floor(var3.maxZ + 1.0E-7) + 1;
       this.field35189 = new Class8893(var7, var9, var11, var8, var10, var12);
    }
 
@@ -61,7 +62,7 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
          int var6 = this.field35189.method32368();
          int var7 = this.field35189.method32369();
          if (var7 != 3) {
-            Class1665 var8 = this.method28474(var4, var6);
+            IBlockReader var8 = this.method28474(var4, var6);
             if (var8 != null) {
                this.field35190.method8372(var4, var5, var6);
                BlockState var9 = var8.getBlockState(this.field35190);
@@ -95,7 +96,7 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
    }
 
    @Nullable
-   private Class1665 method28474(int var1, int var2) {
+   private IBlockReader method28474(int var1, int var2) {
       int var5 = var1 >> 4;
       int var6 = var2 >> 4;
       return this.field35192.method6769(var5, var6);
@@ -130,13 +131,13 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
       double var6 = (double) MathHelper.floor(var0.method24531());
       double var8 = (double) MathHelper.method37774(var0.method24532());
       double var10 = (double) MathHelper.method37774(var0.method24533());
-      return var1.field28449 > var4
-         && var1.field28449 < var8
-         && var1.field28451 > var6
-         && var1.field28451 < var10
-         && var1.field28452 > var4
-         && var1.field28452 < var8
-         && var1.field28454 > var6
-         && var1.field28454 < var10;
+      return var1.minX > var4
+         && var1.minX < var8
+         && var1.minZ > var6
+         && var1.minZ < var10
+         && var1.maxX > var4
+         && var1.maxX < var8
+         && var1.maxZ > var6
+         && var1.maxZ < var10;
    }
 }

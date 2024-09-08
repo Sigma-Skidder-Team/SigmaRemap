@@ -3,6 +3,7 @@ package mapped;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Set;
 import java.util.function.Predicate;
@@ -25,7 +26,7 @@ public class Class7527 {
       ObjectArrayList var5 = new ObjectArrayList(var4);
       ObjectListIterator var6 = var5.iterator();
       int var7 = var0.method7065() + 16;
-      Mutable var8 = new Mutable();
+      BlockPos.Mutable var8 = new BlockPos.Mutable();
 
       for (int var9 = 0; var9 < 16; var9++) {
          for (int var10 = 0; var10 < 16; var10++) {
@@ -63,7 +64,7 @@ public class Class7527 {
       } else {
          if (!this.field32311.test(var4)) {
             if (var7 - 1 == var2) {
-               Mutable var8 = new Mutable();
+               BlockPos.Mutable var8 = new BlockPos.Mutable();
 
                for (int var9 = var2 - 1; var9 >= 0; var9--) {
                   var8.method8372(var1, var9, var3);

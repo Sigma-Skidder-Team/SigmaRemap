@@ -20,6 +20,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3368 extends Class3241 {
@@ -34,7 +35,7 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return new Class940(this.field18941);
    }
 
@@ -151,7 +152,7 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public void method11583(ItemStack var1, Class1665 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11583(ItemStack var1, IBlockReader var2, List<ITextComponent> var3, Class2216 var4) {
       super.method11583(var1, var2, var3, var4);
       CompoundNBT var7 = var1.method32145("BlockEntityTag");
       if (var7 != null) {
@@ -190,7 +191,7 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       TileEntity var7 = var2.getTileEntity(var3);
       return !(var7 instanceof Class940) ? VoxelShapes.method27426() : VoxelShapes.create(((Class940)var7).method3747(var1));
    }
@@ -206,7 +207,7 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       ItemStack var6 = super.getItem(var1, var2, var3);
       Class940 var7 = (Class940)var1.getTileEntity(var2);
       CompoundNBT var8 = var7.method3754(new CompoundNBT());

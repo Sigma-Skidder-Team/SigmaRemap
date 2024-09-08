@@ -31,7 +31,7 @@ public class Class2757 extends Class2595 {
             this.field17302.field4965 = this.field17302.rotationYaw;
          }
       } else {
-         Vector3d var10 = this.field17302.method3433();
+         Vector3d var10 = this.field17302.getVec();
          this.field17302.rotationYaw = -((float) MathHelper.method37814(var10.x, var10.z)) * (180.0F / (float)Math.PI);
          this.field17302.field4965 = this.field17302.rotationYaw;
       }

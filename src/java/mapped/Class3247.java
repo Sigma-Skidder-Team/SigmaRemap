@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -20,7 +21,7 @@ public abstract class Class3247 extends Class3198 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18707;
    }
 
@@ -46,12 +47,12 @@ public abstract class Class3247 extends Class3198 {
    }
 
    @Override
-   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return var1.method23402(var2, var3, var4);
    }
 
    @Override
-   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       if (var1.<Boolean>method23463(field18708)) {
          return var1.method23463(field18484) != var4 ? 0 : this.method11659(var2, var3, var1);
       } else {
@@ -172,7 +173,7 @@ public abstract class Class3247 extends Class3198 {
       return var1.method23401();
    }
 
-   public int method11659(Class1665 var1, BlockPos var2, BlockState var3) {
+   public int method11659(IBlockReader var1, BlockPos var2, BlockState var3) {
       return 15;
    }
 
@@ -180,7 +181,7 @@ public abstract class Class3247 extends Class3198 {
       return var0.getBlock() instanceof Class3247;
    }
 
-   public boolean method11673(Class1665 var1, BlockPos var2, BlockState var3) {
+   public boolean method11673(IBlockReader var1, BlockPos var2, BlockState var3) {
       Direction var6 = var3.<Direction>method23463(field18484).method536();
       BlockState var7 = var1.getBlockState(var2.method8349(var6));
       return method11672(var7) && var7.<Direction>method23463(field18484) != var6;

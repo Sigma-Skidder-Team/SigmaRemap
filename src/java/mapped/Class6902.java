@@ -31,7 +31,7 @@ public class Class6902 extends Class6896 {
       Direction var11 = Class76.field161.method247(var2);
       int var12 = var3 - var2.nextInt(4) - 1;
       int var13 = 3 - var2.nextInt(3);
-      Mutable var14 = new Mutable();
+      BlockPos.Mutable var14 = new BlockPos.Mutable();
       int var15 = var4.getX();
       int var16 = var4.getZ();
       int var17 = 0;

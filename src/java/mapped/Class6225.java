@@ -18,9 +18,9 @@ public class Class6225 extends Class6218 {
    public ItemStack method19192(Class2956 var1, ItemStack var2) {
       Direction var5 = var1.method11324().<Direction>method23463(Class3357.field18899);
       ServerWorld var6 = var1.method11326();
-      double var7 = var1.method11320() + (double)((float)var5.method539() * 1.125F);
-      double var9 = var1.method11321() + (double)((float)var5.method540() * 1.125F);
-      double var11 = var1.method11322() + (double)((float)var5.method541() * 1.125F);
+      double var7 = var1.getX() + (double)((float)var5.method539() * 1.125F);
+      double var9 = var1.getY() + (double)((float)var5.method540() * 1.125F);
+      double var11 = var1.getZ() + (double)((float)var5.method541() * 1.125F);
       BlockPos var13 = var1.method11323().method8349(var5);
       double var14;
       if (!var6.getFluidState(var13).method23486(Class8953.field40469)) {

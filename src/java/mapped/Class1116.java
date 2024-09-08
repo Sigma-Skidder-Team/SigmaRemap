@@ -57,13 +57,13 @@ public class Class1116 extends AbstractClientPlayerEntity {
       this.method3084();
       float var3;
       if (this.onGround && !this.getShouldBeDead()) {
-         var3 = Math.min(0.1F, MathHelper.method37766(method3234(this.method3433())));
+         var3 = Math.min(0.1F, MathHelper.method37766(method3234(this.getVec())));
       } else {
          var3 = 0.0F;
       }
 
       if (!this.onGround && !this.getShouldBeDead()) {
-         float var11 = (float)Math.atan(-this.method3433().y * 0.2F) * 15.0F;
+         float var11 = (float)Math.atan(-this.getVec().y * 0.2F) * 15.0F;
       } else {
          float var10 = 0.0F;
       }
@@ -82,7 +82,7 @@ public class Class1116 extends AbstractClientPlayerEntity {
    public void sendMessage(ITextComponent var1, UUID var2) {
       Minecraft var5 = Minecraft.getInstance();
       if (!var5.cannotSendChatMessages(var2)) {
-         var5.ingameGUI.getChatGUI().method5930(var1);
+         var5.ingameGUI.getChatGUI().sendChatMessage(var1);
       }
    }
 }

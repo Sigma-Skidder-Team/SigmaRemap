@@ -72,7 +72,7 @@ public class Class7473 {
    }
 
    private int method24198(BlockPos var1, Direction var2) {
-      Mutable var5 = new Mutable();
+      BlockPos.Mutable var5 = new BlockPos.Mutable();
 
       for (int var6 = 0; var6 <= 21; var6++) {
          var5.method8374(var1).method8380(var2, var6);
@@ -94,14 +94,14 @@ public class Class7473 {
    }
 
    private int method24199() {
-      Mutable var3 = new Mutable();
+      BlockPos.Mutable var3 = new BlockPos.Mutable();
       int var4 = this.method24201(var3);
       return var4 >= 3 && var4 <= 21 && this.method24200(var3, var4) ? var4 : 0;
    }
 
-   private boolean method24200(Mutable var1, int var2) {
+   private boolean method24200(BlockPos.Mutable var1, int var2) {
       for (int var5 = 0; var5 < this.field32118; var5++) {
-         Mutable var6 = var1.method8374(this.field32116).method8380(Direction.field673, var2).method8380(this.field32114, var5);
+         BlockPos.Mutable var6 = var1.method8374(this.field32116).method8380(Direction.field673, var2).method8380(this.field32114, var5);
          if (!field32111.method30847(this.field32112.getBlockState(var6), this.field32112, var6)) {
             return false;
          }
@@ -110,7 +110,7 @@ public class Class7473 {
       return true;
    }
 
-   private int method24201(Mutable var1) {
+   private int method24201(BlockPos.Mutable var1) {
       for (int var4 = 0; var4 < 21; var4++) {
          var1.method8374(this.field32116).method8380(Direction.field673, var4).method8380(this.field32114, -1);
          if (!field32111.method30847(this.field32112.getBlockState(var1), this.field32112, var1)) {
@@ -189,9 +189,9 @@ public class Class7473 {
       double var15 = (double)var1.field44255;
       int var17 = var2 != var12 ? 90 : 0;
       Vector3d var18 = var2 != var12 ? new Vector3d(var5.z, var5.y, -var5.x) : var5;
-      double var19 = (double)var4.field39968 / 2.0 + (var13 - (double)var4.field39968) * var3.method11320();
-      double var21 = (var15 - (double)var4.field39969) * var3.method11321();
-      double var23 = 0.5 + var3.method11322();
+      double var19 = (double)var4.field39968 / 2.0 + (var13 - (double)var4.field39968) * var3.getX();
+      double var21 = (var15 - (double)var4.field39969) * var3.getY();
+      double var23 = 0.5 + var3.getZ();
       boolean var25 = var12 == Class113.field413;
       Vector3d var26 = new Vector3d(
          (double)var10.getX() + (!var25 ? var23 : var19), (double)var10.getY() + var21, (double)var10.getZ() + (!var25 ? var19 : var23)

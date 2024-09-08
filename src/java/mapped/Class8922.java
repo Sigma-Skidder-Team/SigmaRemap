@@ -76,7 +76,7 @@ public class Class8922 {
          int var16 = var13.method24357() + (!var12 || !var8 && !var9 ? (!var11 ? 15 : 0) : 1);
          int var17 = var13.method24357() + (!var12 || !var8 && !var9 ? (!var11 ? 15 : 0) : 14);
          Direction[] var18 = Direction.values();
-         Mutable var19 = new Mutable();
+         BlockPos.Mutable var19 = new BlockPos.Mutable();
 
          for (BlockPos var21 : BlockPos.method8364(var14, 0, var16, var15, var4.method7034() - 1, var17)) {
             BlockState var22 = var4.getBlockState(var21);
@@ -97,8 +97,8 @@ public class Class8922 {
    }
 
    private void method32606(Chunk var1) {
-      Mutable var4 = new Mutable();
-      Mutable var5 = new Mutable();
+      BlockPos.Mutable var4 = new BlockPos.Mutable();
+      BlockPos.Mutable var5 = new BlockPos.Mutable();
       Class7481 var6 = var1.method7072();
       World var7 = var1.method7144();
 

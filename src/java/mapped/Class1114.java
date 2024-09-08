@@ -96,7 +96,7 @@ public class Class1114 extends Class1113 {
    public void tick() {
       super.tick();
       if (!this.method5364()) {
-         this.method3434(this.method3433().method11347(1.0, 0.6, 1.0));
+         this.method3434(this.getVec().method11347(1.0, 0.6, 1.0));
       } else {
          this.method3434(Vector3d.ZERO);
          this.method3446(this.getPosX(), (double) MathHelper.floor(this.getPosY()) + 1.0 - (double)this.method3430(), this.getPosZ());
@@ -124,7 +124,7 @@ public class Class1114 extends Class1113 {
          double var6 = (double)this.field6095.getX() + 0.5 - this.getPosX();
          double var8 = (double)this.field6095.getY() + 0.1 - this.getPosY();
          double var10 = (double)this.field6095.getZ() + 0.5 - this.getPosZ();
-         Vector3d var12 = this.method3433();
+         Vector3d var12 = this.getVec();
          Vector3d var13 = var12.method11339(
             (Math.signum(var6) * 0.5 - var12.x) * 0.1F,
             (Math.signum(var8) * 0.7F - var12.y) * 0.1F,

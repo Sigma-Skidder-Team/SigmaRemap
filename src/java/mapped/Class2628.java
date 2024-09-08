@@ -104,7 +104,7 @@ public abstract class Class2628 extends Class2595 {
       int var3 = this.field16935;
       int var4 = this.field16936;
       BlockPos var5 = this.field16928.getPosition();
-      Mutable var6 = new Mutable();
+      BlockPos.Mutable var6 = new BlockPos.Mutable();
 
       for (int var7 = this.field16937; var7 <= var4; var7 = var7 <= 0 ? 1 - var7 : -var7) {
          for (int var8 = 0; var8 < var3; var8++) {

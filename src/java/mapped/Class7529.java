@@ -15,6 +15,7 @@ import net.minecraft.network.Packet;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -297,7 +298,7 @@ public class Class7529 extends Class7530 {
    }
 
    @Nullable
-   public Packet<?> method24597(ItemStack var1, Class1665 var2, PlayerEntity var3) {
+   public Packet<?> method24597(ItemStack var1, IBlockReader var2, PlayerEntity var3) {
       Class8541 var6 = this.field32325.get(var3);
       return var6 != null ? var6.method30388(var1) : null;
    }
@@ -355,7 +356,7 @@ public class Class7529 extends Class7530 {
       }
    }
 
-   public void method24601(Class1665 var1, int var2, int var3) {
+   public void method24601(IBlockReader var1, int var2, int var3) {
       Iterator var6 = this.field32326.values().iterator();
 
       while (var6.hasNext()) {

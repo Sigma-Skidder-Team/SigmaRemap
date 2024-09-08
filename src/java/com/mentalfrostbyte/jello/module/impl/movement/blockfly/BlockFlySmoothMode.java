@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.SafeWalk;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CAnimateHandPacket;
@@ -136,7 +137,7 @@ public class BlockFlySmoothMode extends Module {
                 if (this.field23970 != 999.0F) {
                     this.field23976.method16736();
                     if (this.field23971 != null) {
-                        BlockRayTraceResult var13 = Class9217.method34568(this.field23970, this.field23969, 5.0F, var1);
+                        BlockRayTraceResult var13 = BlockUtil.method34568(this.field23970, this.field23969, 5.0F, var1);
                         if (var13.getType() == RayTraceResult.Type.MISS) {
                             return;
                         }
@@ -190,31 +191,31 @@ public class BlockFlySmoothMode extends Module {
                     var6 = var10[1];
                 }
 
-                if (mc.player.method3433().y < 0.0
+                if (mc.player.getVec().y < 0.0
                         && mc.player.fallDistance > 1.0F
-                        && Class9217.method34567(0.0F, 90.0F, 3.0F).getType() == RayTraceResult.Type.MISS) {
-                    var8 += Math.min(mc.player.method3433().y * 2.0, 4.0);
+                        && BlockUtil.method34567(0.0F, 90.0F, 3.0F).getType() == RayTraceResult.Type.MISS) {
+                    var8 += Math.min(mc.player.getVec().y * 2.0, 4.0);
                 } else if ((this.getStringSettingValueByName("Speed Mode").equals("Jump") || this.getStringSettingValueByName("Speed Mode").equals("Cubecraft"))
                         && !mc.gameSettings.keyBindJump.isKeyDown()) {
                     var8 = this.field23979;
                 }
 
-                if (!Class9217.method34578(
+                if (!BlockUtil.method34578(
                         new BlockPos(
-                                mc.player.getPositionVec().method11320(),
-                                mc.player.getPositionVec().method11321() - 1.0,
-                                mc.player.getPositionVec().method11322()
+                                mc.player.getPositionVec().getX(),
+                                mc.player.getPositionVec().getY() - 1.0,
+                                mc.player.getPositionVec().getZ()
                         )
                 )) {
-                    var4 = mc.player.getPositionVec().method11320();
-                    var6 = mc.player.getPositionVec().method11322();
+                    var4 = mc.player.getPositionVec().getX();
+                    var6 = mc.player.getPositionVec().getZ();
                 }
 
                 BlockPos var18 = new BlockPos(var4, var8 - 1.0, var6);
-                if (!Class9217.method34578(var18) && this.field23976.method16739(this.field23975) && this.field23980 <= 0) {
-                    Class7843 var11 = Class9217.method34575(var18, false);
+                if (!BlockUtil.method34578(var18) && this.field23976.method16739(this.field23975) && this.field23980 <= 0) {
+                    Class7843 var11 = BlockUtil.method34575(var18, false);
                     this.field23971 = var11;
-                    float[] var12 = Class9217.method34565();
+                    float[] var12 = BlockUtil.method34565();
                     if (var11 != null && var12 != null) {
                         this.field23970 = var12[0];
                         this.field23969 = var12[1];
@@ -265,9 +266,9 @@ public class BlockFlySmoothMode extends Module {
                         mc.player.method2914();
                         ((Speed) Client.getInstance().getModuleManager().getModuleByClass(Speed.class)).method16764();
                         this.field23978 = true;
-                        var1.method13995(mc.player.method3433().y);
-                        var1.method13993(mc.player.method3433().x);
-                        var1.method13997(mc.player.method3433().z);
+                        var1.method13995(mc.player.getVec().y);
+                        var1.method13993(mc.player.getVec().x);
+                        var1.method13997(mc.player.getVec().z);
                     }
                     break;
                 case "AAC":
@@ -393,7 +394,7 @@ public class BlockFlySmoothMode extends Module {
         double var17 = 0.0;
 
         for (double var19 = this.getNumberValueBySettingName("Extend") * 2.0F;
-             Class9217.method34578(var12);
+             BlockUtil.method34578(var12);
              var12 = new BlockPos(var13, mc.player.getPosY() - 1.0, var15)
         ) {
             if (++var17 > var19) {

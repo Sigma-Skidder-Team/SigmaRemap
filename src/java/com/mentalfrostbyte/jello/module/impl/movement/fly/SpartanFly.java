@@ -102,7 +102,7 @@ public class SpartanFly extends Module {
                         }
                     } else {
                         mc.player.method2914();
-                        var1.method13995(mc.player.method3433().y);
+                        var1.method13995(mc.player.getVec().y);
                         this.field23569 = !mc.gameSettings.keyBindJump.isKeyDown()
                                 ? (!this.field23571 ? mc.player.getPositionVec().y : mc.player.getPositionVec().y - 1.0)
                                 : (!this.field23571 ? mc.player.getPositionVec().y + 1.0 : mc.player.getPositionVec().y);
@@ -111,7 +111,7 @@ public class SpartanFly extends Module {
                 }
             } else {
                 mc.player.method2914();
-                var1.method13995(mc.player.method3433().y);
+                var1.method13995(mc.player.getVec().y);
                 Class9567.method37088(var1, 0.35);
                 this.field23569 = !mc.gameSettings.keyBindJump.isKeyDown()
                         ? (!this.field23571 ? mc.player.getPositionVec().y : mc.player.getPositionVec().y - 1.0)

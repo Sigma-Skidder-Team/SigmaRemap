@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
@@ -74,14 +75,14 @@ public class Class2747 extends Class2595 {
    }
 
    @Nullable
-   public BlockPos method10957(Class1665 var1, Entity var2, int var3, int var4) {
+   public BlockPos method10957(IBlockReader var1, Entity var2, int var3, int var4) {
       BlockPos var7 = var2.getPosition();
       int var8 = var7.getX();
       int var9 = var7.getY();
       int var10 = var7.getZ();
       float var11 = (float)(var3 * var3 * var4 * 2);
       BlockPos var12 = null;
-      Mutable var13 = new Mutable();
+      BlockPos.Mutable var13 = new BlockPos.Mutable();
 
       for (int var14 = var8 - var3; var14 <= var8 + var3; var14++) {
          for (int var15 = var9 - var4; var15 <= var9 + var4; var15++) {

@@ -58,10 +58,10 @@ public class FillESP extends Module {
         for (Entity var9 : mc.world.method6835()) {
             if (this.method16138(var9)) {
                 GL11.glPushMatrix();
-                Vector3d var10 = mc.gameRenderer.getActiveRenderInfo().method37504();
-                double var11 = var10.method11320();
-                double var13 = var10.method11321();
-                double var15 = var10.method11322();
+                Vector3d var10 = mc.gameRenderer.getActiveRenderInfo().getPos();
+                double var11 = var10.getX();
+                double var13 = var10.getY();
+                double var15 = var10.getZ();
                 MatrixStack var17 = new MatrixStack();
                 boolean var18 = mc.gameSettings.field44616;
                 RenderSystem.method27821();

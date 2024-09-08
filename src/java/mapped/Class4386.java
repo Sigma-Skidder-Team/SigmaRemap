@@ -361,7 +361,7 @@ public class Class4386 {
 
    public void method13778(ActiveRenderInfo var1) {
       if (this.field21405 && var1.method37510()) {
-         Vector3d var4 = var1.method37504();
+         Vector3d var4 = var1.getPos();
          Vector3f var5 = var1.method37516();
          Vector3f var6 = var1.method37517();
          this.field21409.execute(() -> {

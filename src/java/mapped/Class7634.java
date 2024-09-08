@@ -5,6 +5,7 @@ import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -97,7 +98,7 @@ public abstract class Class7634 extends Class7633 {
    }
 
    @Override
-   public boolean method25055(FluidState var1, Class1665 var2, BlockPos var3, Fluid var4, Direction var5) {
+   public boolean method25055(FluidState var1, IBlockReader var2, BlockPos var3, Fluid var4, Direction var5) {
       return var5 == Direction.DOWN && !var4.method25067(Class8953.field40469);
    }
 

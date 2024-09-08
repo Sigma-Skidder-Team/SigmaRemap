@@ -436,31 +436,31 @@ public class ParticleManager implements Class268 {
          int var8 = var1.getZ();
          float var9 = 0.1F;
          AxisAlignedBB var10 = var5.method23412(this.field1168, var1).method19514();
-         double var11 = (double)var6 + this.field1172.nextDouble() * (var10.field28452 - var10.field28449 - 0.2F) + 0.1F + var10.field28449;
-         double var13 = (double)var7 + this.field1172.nextDouble() * (var10.field28453 - var10.field28450 - 0.2F) + 0.1F + var10.field28450;
-         double var15 = (double)var8 + this.field1172.nextDouble() * (var10.field28454 - var10.field28451 - 0.2F) + 0.1F + var10.field28451;
+         double var11 = (double)var6 + this.field1172.nextDouble() * (var10.maxX - var10.minX - 0.2F) + 0.1F + var10.minX;
+         double var13 = (double)var7 + this.field1172.nextDouble() * (var10.maxY - var10.minY - 0.2F) + 0.1F + var10.minY;
+         double var15 = (double)var8 + this.field1172.nextDouble() * (var10.maxZ - var10.minZ - 0.2F) + 0.1F + var10.minZ;
          if (var2 == Direction.DOWN) {
-            var13 = (double)var7 + var10.field28450 - 0.1F;
+            var13 = (double)var7 + var10.minY - 0.1F;
          }
 
          if (var2 == Direction.field673) {
-            var13 = (double)var7 + var10.field28453 + 0.1F;
+            var13 = (double)var7 + var10.maxY + 0.1F;
          }
 
          if (var2 == Direction.NORTH) {
-            var15 = (double)var8 + var10.field28451 - 0.1F;
+            var15 = (double)var8 + var10.minZ - 0.1F;
          }
 
          if (var2 == Direction.SOUTH) {
-            var15 = (double)var8 + var10.field28454 + 0.1F;
+            var15 = (double)var8 + var10.maxZ + 0.1F;
          }
 
          if (var2 == Direction.WEST) {
-            var11 = (double)var6 + var10.field28449 - 0.1F;
+            var11 = (double)var6 + var10.minX - 0.1F;
          }
 
          if (var2 == Direction.EAST) {
-            var11 = (double)var6 + var10.field28452 + 0.1F;
+            var11 = (double)var6 + var10.maxX + 0.1F;
          }
 
          this.method1199(new Class4609(this.field1168, var11, var13, var15, 0.0, 0.0, 0.0, var5).method14540(var1).method14513(0.2F).method14512(0.6F));

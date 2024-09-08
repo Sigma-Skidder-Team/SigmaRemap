@@ -42,7 +42,7 @@ public class Class7018 implements Class7016 {
                   } else {
                      int var11 = (24 + var6.nextInt(24)) * (!var6.nextBoolean() ? 1 : -1);
                      int var12 = (24 + var6.nextInt(24)) * (!var6.nextBoolean() ? 1 : -1);
-                     Mutable var13 = var10.getPosition().method8354().method8381(var11, 0, var12);
+                     BlockPos.Mutable var13 = var10.getPosition().method8354().method8381(var11, 0, var12);
                      if (!var1.method7019(
                         var13.getX() - 10,
                         var13.getY() - 10,

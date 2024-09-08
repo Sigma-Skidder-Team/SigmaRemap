@@ -57,7 +57,7 @@ public class Class2933 extends Class2898<Class4734> {
    ) {
       int var23 = 0;
       BitSet var24 = new BitSet(var19 * var20 * var19);
-      Mutable var25 = new Mutable();
+      BlockPos.Mutable var25 = new BlockPos.Mutable();
       int var26 = var3.field22423;
       double[] var27 = new double[var26 * 4];
 

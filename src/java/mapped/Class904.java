@@ -100,7 +100,7 @@ public class Class904 extends ProjectileEntity {
       if (field5152.equals(var1)) {
          this.field5149 = this.method3210().<Boolean>method35445(field5152);
          if (this.field5149) {
-            this.method3435(this.method3433().x, (double)(-0.4F * MathHelper.method37783(this.field5148, 0.6F, 1.0F)), this.method3433().z);
+            this.method3435(this.getVec().x, (double)(-0.4F * MathHelper.method37783(this.field5148, 0.6F, 1.0F)), this.getVec().z);
          }
       }
 
@@ -157,7 +157,7 @@ public class Class904 extends ProjectileEntity {
                }
 
                if (this.field5160 == Class2152.field14073) {
-                  Vector3d var10 = this.method3433();
+                  Vector3d var10 = this.getVec();
                   double var11 = this.getPosY() + var10.y - (double)var5.getY() - (double)var4;
                   if (Math.abs(var11) < 0.01) {
                      var11 += Math.signum(var11) * 0.1;
@@ -175,7 +175,7 @@ public class Class904 extends ProjectileEntity {
                   } else {
                      this.field5150 = Math.max(0, this.field5150 - 1);
                      if (this.field5149) {
-                        this.method3434(this.method3433().method11339(0.0, -0.1 * (double)this.field5148.nextFloat() * (double)this.field5148.nextFloat(), 0.0));
+                        this.method3434(this.getVec().method11339(0.0, -0.1 * (double)this.field5148.nextFloat() * (double)this.field5148.nextFloat(), 0.0));
                      }
 
                      if (!this.world.isRemote) {
@@ -191,7 +191,7 @@ public class Class904 extends ProjectileEntity {
                }
 
                if (var7) {
-                  this.method3434(this.method3433().method11347(0.3, 0.2, 0.3));
+                  this.method3434(this.getVec().method11347(0.3, 0.2, 0.3));
                   this.field5160 = Class2152.field14073;
                   return;
                }
@@ -200,17 +200,17 @@ public class Class904 extends ProjectileEntity {
             }
 
             if (!var6.method23486(Class8953.field40469)) {
-               this.method3434(this.method3433().method11339(0.0, -0.03, 0.0));
+               this.method3434(this.getVec().method11339(0.0, -0.03, 0.0));
             }
 
-            this.move(Class2107.field13742, this.method3433());
+            this.move(Class2107.field13742, this.getVec());
             this.method3468();
             if (this.field5160 == Class2152.field14071 && (this.onGround || this.collidedHorizontally)) {
                this.method3434(Vector3d.ZERO);
             }
 
             double var8 = 0.92;
-            this.method3434(this.method3433().method11344(0.92));
+            this.method3434(this.getVec().method11344(0.92));
             this.method3216();
          }
       } else {
@@ -253,7 +253,7 @@ public class Class904 extends ProjectileEntity {
    @Override
    public void method3466(BlockRayTraceResult var1) {
       super.method3466(var1);
-      this.method3434(this.method3433().method11333().method11344(var1.method31418(this)));
+      this.method3434(this.getVec().method11333().method11344(var1.method31418(this)));
    }
 
    private void method3536() {
@@ -492,7 +492,7 @@ public class Class904 extends ProjectileEntity {
       if (var3 != null) {
          Vector3d var4 = new Vector3d(var3.getPosX() - this.getPosX(), var3.getPosY() - this.getPosY(), var3.getPosZ() - this.getPosZ())
             .method11344(0.1);
-         this.field5159.method3434(this.field5159.method3433().method11338(var4));
+         this.field5159.method3434(this.field5159.getVec().method11338(var4));
       }
    }
 

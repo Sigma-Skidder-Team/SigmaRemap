@@ -14,6 +14,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class9561 {
@@ -96,7 +97,7 @@ public class Class9561 {
       }
    }
 
-   public static boolean method37050(BlockState var0, Class1665 var1, BlockPos var2) {
+   public static boolean method37050(BlockState var0, IBlockReader var1, BlockPos var2) {
       return !Class9299.field42830.method20214() ? var0.isAir() : Class9299.method35064(var0, Class9299.field42830, var1, var2);
    }
 

@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
 
@@ -41,7 +42,7 @@ public class Class6775 extends Class6773 {
       int var26 = -1;
       boolean var27 = false;
       int var28 = 0;
-      Mutable var29 = new Mutable();
+      BlockPos.Mutable var29 = new BlockPos.Mutable();
 
       for (int var30 = var6; var30 >= 0; var30--) {
          if (var28 < 15) {

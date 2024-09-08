@@ -70,7 +70,7 @@ public class SMultiBlockChangePacket implements Packet<IClientPlayNetHandler> {
    }
 
    public void method17461(BiConsumer<BlockPos, BlockState> var1) {
-      Mutable var4 = new Mutable();
+      BlockPos.Mutable var4 = new BlockPos.Mutable();
 
       for (int var5 = 0; var5 < this.field24643.length; var5++) {
          short var6 = this.field24643[var5];

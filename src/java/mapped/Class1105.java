@@ -183,7 +183,7 @@ public class Class1105 extends Class1009 {
                }
             } else {
                this.field6070 = 2.0F;
-               Vector3d var3 = this.method3433();
+               Vector3d var3 = this.getVec();
                if (var3.y > 0.0 && this.field6075 && !this.method3245()) {
                   this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), this.method5307(), this.method2864(), 1.0F, 1.0F, false);
                }
@@ -259,7 +259,7 @@ public class Class1105 extends Class1009 {
          if (!this.method3255()) {
             if (this.onGround) {
                this.method3434(
-                  this.method3433()
+                  this.getVec()
                      .method11339((double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.4F), 0.5, (double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.4F))
                );
                this.rotationYaw = this.rand.nextFloat() * 360.0F;
@@ -330,10 +330,10 @@ public class Class1105 extends Class1009 {
    public void method2915(Vector3d var1) {
       if (this.method3138() && this.method3250()) {
          this.method3265(0.1F, var1);
-         this.move(Class2107.field13742, this.method3433());
-         this.method3434(this.method3433().method11344(0.9));
+         this.move(Class2107.field13742, this.getVec());
+         this.method3434(this.getVec().method11344(0.9));
          if (!this.method5301() && this.method4232() == null) {
-            this.method3434(this.method3433().method11339(0.0, -0.005, 0.0));
+            this.method3434(this.getVec().method11339(0.0, -0.005, 0.0));
          }
       } else {
          super.method2915(var1);

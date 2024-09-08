@@ -76,36 +76,36 @@ public class ItemEntity extends Entity {
          this.prevPosX = this.getPosX();
          this.prevPosY = this.getPosY();
          this.prevPosZ = this.getPosZ();
-         Vector3d var3 = this.method3433();
+         Vector3d var3 = this.getVec();
          float var4 = this.method3393() - 0.11111111F;
          if (this.method3250() && this.method3427(Class8953.field40469) > (double)var4) {
             this.method4115();
          } else if (this.method3264() && this.method3427(Class8953.field40470) > (double)var4) {
             this.method4116();
          } else if (!this.method3247()) {
-            this.method3434(this.method3433().method11339(0.0, -0.04, 0.0));
+            this.method3434(this.getVec().method11339(0.0, -0.04, 0.0));
          }
 
          if (!this.world.isRemote) {
             this.noClip = !this.world.method7052(this);
             if (this.noClip) {
-               this.pushOutOfBlocks(this.getPosX(), (this.getBoundingBox().field28450 + this.getBoundingBox().field28453) / 2.0, this.getPosZ());
+               this.pushOutOfBlocks(this.getPosX(), (this.getBoundingBox().minY + this.getBoundingBox().maxY) / 2.0, this.getPosZ());
             }
          } else {
             this.noClip = false;
          }
 
-         if (!this.onGround || method3234(this.method3433()) > 1.0E-5F || (this.ticksExisted + this.getEntityId()) % 4 == 0) {
-            this.move(Class2107.field13742, this.method3433());
+         if (!this.onGround || method3234(this.getVec()) > 1.0E-5F || (this.ticksExisted + this.getEntityId()) % 4 == 0) {
+            this.move(Class2107.field13742, this.getVec());
             float var5 = 0.98F;
             if (this.onGround) {
                var5 = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).getBlock().method11571()
                   * 0.98F;
             }
 
-            this.method3434(this.method3433().method11347((double)var5, 0.98, (double)var5));
+            this.method3434(this.getVec().method11347((double)var5, 0.98, (double)var5));
             if (this.onGround) {
-               Vector3d var6 = this.method3433();
+               Vector3d var6 = this.getVec();
                if (var6.y < 0.0) {
                   this.method3434(var6.method11347(1.0, -0.5, 1.0));
                }
@@ -132,7 +132,7 @@ public class ItemEntity extends Entity {
 
          this.isAirBorne = this.isAirBorne | this.method3257();
          if (!this.world.isRemote) {
-            double var7 = this.method3433().method11336(var3).method11349();
+            double var7 = this.getVec().method11336(var3).method11349();
             if (var7 > 0.01) {
                this.isAirBorne = true;
             }
@@ -147,12 +147,12 @@ public class ItemEntity extends Entity {
    }
 
    private void method4115() {
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       this.method3435(var3.x * 0.99F, var3.y + (double)(!(var3.y < 0.06F) ? 0.0F : 5.0E-4F), var3.z * 0.99F);
    }
 
    private void method4116() {
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       this.method3435(var3.x * 0.95F, var3.y + (double)(!(var3.y < 0.06F) ? 0.0F : 5.0E-4F), var3.z * 0.95F);
    }
 

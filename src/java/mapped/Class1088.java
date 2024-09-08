@@ -268,10 +268,10 @@ public class Class1088 extends Class1018 {
    public void method2915(Vector3d var1) {
       if (this.method3138() && this.method3250()) {
          this.method3265(0.1F, var1);
-         this.move(Class2107.field13742, this.method3433());
-         this.method3434(this.method3433().method11344(0.9));
+         this.move(Class2107.field13742, this.getVec());
+         this.method3434(this.getVec().method11344(0.9));
          if (this.method4232() == null && (!this.method5049() || !this.method5042().method8317(this.getPositionVec(), 20.0))) {
-            this.method3434(this.method3433().method11339(0.0, -0.005, 0.0));
+            this.method3434(this.getVec().method11339(0.0, -0.005, 0.0));
          }
       } else {
          super.method2915(var1);

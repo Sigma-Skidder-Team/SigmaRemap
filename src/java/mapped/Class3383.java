@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -16,7 +17,7 @@ import java.util.WeakHashMap;
 public class Class3383 extends Class3381 {
    private static String[] field18982;
    public static final Class8551 field18987 = Class8820.field39699;
-   private static final Map<Class1665, List<Class9018>> field18988 = new WeakHashMap<Class1665, List<Class9018>>();
+   private static final Map<IBlockReader, List<Class9018>> field18988 = new WeakHashMap<IBlockReader, List<Class9018>>();
 
    public Class3383(AbstractBlock var1) {
       super(var1, RedstoneParticleData.REDSTONE_DUST);
@@ -40,7 +41,7 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return var1.<Boolean>method23463(field18987) && Direction.field673 != var4 ? 15 : 0;
    }
 
@@ -78,7 +79,7 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
       return var4 != Direction.DOWN ? 0 : var1.method23402(var2, var3, var4);
    }
 

@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public abstract class Class3251 extends Class3241 implements Class3255 {
    private final Class2137 field18725;
@@ -13,7 +14,7 @@ public abstract class Class3251 extends Class3241 implements Class3255 {
    }
 
    @Override
-   public TileEntity method11646(Class1665 var1) {
+   public TileEntity method11646(IBlockReader var1) {
       return new SkullTileEntity();
    }
 
@@ -22,7 +23,7 @@ public abstract class Class3251 extends Class3241 implements Class3255 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

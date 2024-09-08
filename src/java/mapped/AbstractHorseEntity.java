@@ -686,14 +686,14 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                   var9 = var7 + (double)((float)(this.method3034(Effects.JUMP_BOOST).method8629() + 1) * 0.1F);
                }
 
-               Vector3d var11 = this.method3433();
+               Vector3d var11 = this.getVec();
                this.method3435(var11.x, var9, var11.z);
                this.method4937(true);
                this.isAirBorne = true;
                if (var6 > 0.0F) {
                   float var12 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0));
                   float var13 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0));
-                  this.method3434(this.method3433().method11339((double)(-0.4F * var12 * this.field5892), 0.0, (double)(0.4F * var13 * this.field5892)));
+                  this.method3434(this.getVec().method11339((double)(-0.4F * var12 * this.field5892), 0.0, (double)(0.4F * var13 * this.field5892)));
                }
 
                this.field5892 = 0.0F;
@@ -961,15 +961,15 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Nullable
    private Vector3d method4974(Vector3d var1, LivingEntity var2) {
       double var5 = this.getPosX() + var1.x;
-      double var7 = this.getBoundingBox().field28450;
+      double var7 = this.getBoundingBox().minY;
       double var9 = this.getPosZ() + var1.z;
-      Mutable var11 = new Mutable();
+      BlockPos.Mutable var11 = new BlockPos.Mutable();
       UnmodifiableIterator var12 = var2.method2982().iterator();
 
       while (var12.hasNext()) {
          Pose var13 = (Pose)var12.next();
          var11.method8373(var5, var7, var9);
-         double var14 = this.getBoundingBox().field28453 + 0.75;
+         double var14 = this.getBoundingBox().maxY + 0.75;
 
          do {
             double var16 = this.world.method7039(var11);

@@ -12,18 +12,18 @@ public class Class7769 {
       double var10 = Math.max(var6, 0.0);
       switch (Class8712.field39323[var1.ordinal()]) {
          case 1:
-            return new AxisAlignedBB(var0.field28449 + var8, var0.field28450, var0.field28451, var0.field28449 + var10, var0.field28453, var0.field28454);
+            return new AxisAlignedBB(var0.minX + var8, var0.minY, var0.minZ, var0.minX + var10, var0.maxY, var0.maxZ);
          case 2:
-            return new AxisAlignedBB(var0.field28452 + var8, var0.field28450, var0.field28451, var0.field28452 + var10, var0.field28453, var0.field28454);
+            return new AxisAlignedBB(var0.maxX + var8, var0.minY, var0.minZ, var0.maxX + var10, var0.maxY, var0.maxZ);
          case 3:
-            return new AxisAlignedBB(var0.field28449, var0.field28450 + var8, var0.field28451, var0.field28452, var0.field28450 + var10, var0.field28454);
+            return new AxisAlignedBB(var0.minX, var0.minY + var8, var0.minZ, var0.maxX, var0.minY + var10, var0.maxZ);
          case 4:
          default:
-            return new AxisAlignedBB(var0.field28449, var0.field28453 + var8, var0.field28451, var0.field28452, var0.field28453 + var10, var0.field28454);
+            return new AxisAlignedBB(var0.minX, var0.maxY + var8, var0.minZ, var0.maxX, var0.maxY + var10, var0.maxZ);
          case 5:
-            return new AxisAlignedBB(var0.field28449, var0.field28450, var0.field28451 + var8, var0.field28452, var0.field28453, var0.field28451 + var10);
+            return new AxisAlignedBB(var0.minX, var0.minY, var0.minZ + var8, var0.maxX, var0.maxY, var0.minZ + var10);
          case 6:
-            return new AxisAlignedBB(var0.field28449, var0.field28450, var0.field28454 + var8, var0.field28452, var0.field28453, var0.field28454 + var10);
+            return new AxisAlignedBB(var0.minX, var0.minY, var0.maxZ + var8, var0.maxX, var0.maxY, var0.maxZ + var10);
       }
    }
 }

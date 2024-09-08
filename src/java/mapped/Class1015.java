@@ -169,7 +169,7 @@ public class Class1015 extends Class1014 implements Class1016 {
       }
 
       this.field5681 = (float)((double)this.field5681 * 0.9);
-      Vector3d var3 = this.method3433();
+      Vector3d var3 = this.getVec();
       if (!this.onGround && var3.y < 0.0) {
          this.method3434(var3.method11347(1.0, 0.6, 1.0));
       }

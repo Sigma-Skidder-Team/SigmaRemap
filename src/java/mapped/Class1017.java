@@ -533,7 +533,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    @Override
    public void method3105(ITag<Fluid> var1) {
-      this.method3434(this.method3433().method11339(0.0, 0.01, 0.0));
+      this.method3434(this.getVec().method11339(0.0, 0.01, 0.0));
    }
 
    @Override

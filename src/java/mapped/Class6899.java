@@ -29,7 +29,7 @@ public class Class6899 extends Class6896 {
       method21069(var1, var10.east());
       method21069(var1, var10.south());
       method21069(var1, var10.south().east());
-      Mutable var11 = new Mutable();
+      BlockPos.Mutable var11 = new BlockPos.Mutable();
 
       for (int var12 = 0; var12 < var3; var12++) {
          method21084(var1, var2, var11, var5, var6, var7, var4, 0, var12, 0);
@@ -44,7 +44,7 @@ public class Class6899 extends Class6896 {
    }
 
    private static void method21084(
-           Class1679 var0, Random var1, Mutable var2, Set<BlockPos> var3, Class9764 var4, Class4733 var5, BlockPos var6, int var7, int var8, int var9
+           Class1679 var0, Random var1, BlockPos.Mutable var2, Set<BlockPos> var3, Class9764 var4, Class4733 var5, BlockPos var6, int var7, int var8, int var9
    ) {
       var2.method8378(var6, var7, var8, var9);
       method21071(var0, var1, var2, var3, var4, var5);

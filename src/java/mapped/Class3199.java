@@ -7,6 +7,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3199 extends Class3198 {
@@ -45,7 +46,7 @@ public class Class3199 extends Class3198 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (!var1.<Boolean>method23463(field18488)) {
          return var1.<Direction>method23463(field18484).method544() != Class113.field413 ? field18489 : field18490;
       } else {
@@ -65,7 +66,7 @@ public class Class3199 extends Class3198 {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (!var1.<Boolean>method23463(field18486)) {
          return var1.<Direction>method23463(field18484).method544() != Class113.field415 ? field18494 : field18493;
       } else {
@@ -74,7 +75,7 @@ public class Class3199 extends Class3198 {
    }
 
    @Override
-   public VoxelShape method11503(BlockState var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method11503(BlockState var1, IBlockReader var2, BlockPos var3) {
       if (!var1.<Boolean>method23463(field18488)) {
          return var1.<Direction>method23463(field18484).method544() != Class113.field413 ? field18495 : field18496;
       } else {
@@ -83,7 +84,7 @@ public class Class3199 extends Class3198 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       switch (Class9845.field45949[var4.ordinal()]) {
          case 1:
             return var1.<Boolean>method23463(field18486);

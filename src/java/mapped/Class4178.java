@@ -7,6 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
 
 import javax.annotation.Nullable;
@@ -93,14 +94,14 @@ public abstract class Class4178 {
       return null;
    }
 
-   public boolean method12919(Class1665 var1, Class9764 var2) {
+   public boolean method12919(IBlockReader var1, Class9764 var2) {
       int var5 = Math.max(this.field20444.field45678 - 1, var2.field45678);
       int var6 = Math.max(this.field20444.field45679 - 1, var2.field45679);
       int var7 = Math.max(this.field20444.field45680 - 1, var2.field45680);
       int var8 = Math.min(this.field20444.field45681 + 1, var2.field45681);
       int var9 = Math.min(this.field20444.field45682 + 1, var2.field45682);
       int var10 = Math.min(this.field20444.field45683 + 1, var2.field45683);
-      Mutable var11 = new Mutable();
+      BlockPos.Mutable var11 = new BlockPos.Mutable();
 
       for (int var12 = var5; var12 <= var8; var12++) {
          for (int var13 = var7; var13 <= var10; var13++) {
@@ -206,7 +207,7 @@ public abstract class Class4178 {
       }
    }
 
-   public BlockState method12924(Class1665 var1, int var2, int var3, int var4, Class9764 var5) {
+   public BlockState method12924(IBlockReader var1, int var2, int var3, int var4, Class9764 var5) {
       int var8 = this.method12920(var2, var4);
       int var9 = this.method12921(var3);
       int var10 = this.method12922(var2, var4);
@@ -351,7 +352,7 @@ public abstract class Class4178 {
       return this.method12935(var1, var2, var3, var10, var7, (BlockState)null);
    }
 
-   public static BlockState method12934(Class1665 var0, BlockPos var1, BlockState var2) {
+   public static BlockState method12934(IBlockReader var0, BlockPos var1, BlockState var2) {
       Direction var5 = null;
 
       for (Direction var7 : Class76.field161) {

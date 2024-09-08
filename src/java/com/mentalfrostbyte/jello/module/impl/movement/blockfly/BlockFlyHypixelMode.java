@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.SafeWalk;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
@@ -203,10 +204,10 @@ public class BlockFlyHypixelMode extends Module {
                     double var5 = var1.method13909();
                     double var7 = var1.method13913();
                     double var9 = var1.method13911();
-                    if (mc.player.method3433().y < 0.0
+                    if (mc.player.getVec().y < 0.0
                             && mc.player.fallDistance > 1.0F
-                            && Class9217.method34567(0.0F, 90.0F, 3.0F).getType() == RayTraceResult.Type.MISS) {
-                        var9 += Math.min(mc.player.method3433().y * 2.0, 4.0);
+                            && BlockUtil.method34567(0.0F, 90.0F, 3.0F).getType() == RayTraceResult.Type.MISS) {
+                        var9 += Math.min(mc.player.getVec().y * 2.0, 4.0);
                     } else if (this.field23474 && this.getBooleanValueFromSetttingName("Downwards")) {
                         var9--;
                     } else if ((this.getStringSettingValueByName("Speed Mode").equals("Jump") || this.getStringSettingValueByName("Speed Mode").equals("Cubecraft"))
@@ -214,23 +215,23 @@ public class BlockFlyHypixelMode extends Module {
                         var9 = this.field23476;
                     }
 
-                    if (!Class9217.method34578(
+                    if (!BlockUtil.method34578(
                             new BlockPos(
-                                    mc.player.getPositionVec().method11320(),
-                                    mc.player.getPositionVec().method11321() - 1.0,
-                                    mc.player.getPositionVec().method11322()
+                                    mc.player.getPositionVec().getX(),
+                                    mc.player.getPositionVec().getY() - 1.0,
+                                    mc.player.getPositionVec().getZ()
                             )
                     )) {
-                        var5 = mc.player.getPositionVec().method11320();
-                        var7 = mc.player.getPositionVec().method11322();
+                        var5 = mc.player.getPositionVec().getX();
+                        var7 = mc.player.getPositionVec().getZ();
                     }
 
                     BlockPos var11 = new BlockPos(var5, var9 - 1.0, var7);
-                    if (!Class9217.method34578(var11) && this.field23473.method16739(this.field23472)) {
-                        Class7843 var12 = Class9217.method34575(var11, !this.field23474 && this.getBooleanValueFromSetttingName("Downwards"));
+                    if (!BlockUtil.method34578(var11) && this.field23473.method16739(this.field23472)) {
+                        Class7843 var12 = BlockUtil.method34575(var11, !this.field23474 && this.getBooleanValueFromSetttingName("Downwards"));
                         this.field23468 = var12;
                         if (var12 != null) {
-                            float[] var13 = Class9217.method34542(this.field23468.field33646, this.field23468.field33647);
+                            float[] var13 = BlockUtil.method34542(this.field23468.field33646, this.field23468.field33647);
                             if ((double) var12.field33646.field13028 - mc.player.getPosY() < 0.0) {
                                 double var14 = mc.player.getPosX()
                                         - ((double) var12.field33646.field13027 + 0.5 + (double) var12.field33647.method539() / 2.0);
@@ -295,9 +296,9 @@ public class BlockFlyHypixelMode extends Module {
                         mc.player.method2914();
                         ((Speed) Client.getInstance().getModuleManager().getModuleByClass(Speed.class)).method16764();
                         this.field23475 = true;
-                        var1.method13995(mc.player.method3433().y);
-                        var1.method13993(mc.player.method3433().x);
-                        var1.method13997(mc.player.method3433().z);
+                        var1.method13995(mc.player.getVec().y);
+                        var1.method13993(mc.player.getVec().x);
+                        var1.method13997(mc.player.getVec().z);
                     }
                     break;
                 case "AAC":

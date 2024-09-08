@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -28,7 +29,7 @@ public class Class3378 extends Class3377 {
       if ((var4.nextInt(3) == 0 || this.method11970(var2, var3, 4))
          && var2.method7015(var3) > 11 - var1.<Integer>method23463(field18978) - var1.getOpacity(var2, var3)
          && this.method11969(var1, var2, var3)) {
-         Mutable var7 = new Mutable();
+         BlockPos.Mutable var7 = new BlockPos.Mutable();
 
          for (Direction var11 : Direction.values()) {
             var7.method8377(var3, var11);
@@ -62,9 +63,9 @@ public class Class3378 extends Class3377 {
       super.method11506(var1, var2, var3, var4, var5, var6);
    }
 
-   private boolean method11970(Class1665 var1, BlockPos var2, int var3) {
+   private boolean method11970(IBlockReader var1, BlockPos var2, int var3) {
       int var6 = 0;
-      Mutable var7 = new Mutable();
+      BlockPos.Mutable var7 = new BlockPos.Mutable();
 
       for (Direction var11 : Direction.values()) {
          var7.method8377(var2, var11);
@@ -84,7 +85,7 @@ public class Class3378 extends Class3377 {
    }
 
    @Override
-   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+   public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
       return ItemStack.EMPTY;
    }
 }

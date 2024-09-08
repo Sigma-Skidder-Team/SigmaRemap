@@ -163,18 +163,18 @@ public class InfiniteAura extends Module {
 
                 for (Class8472 var7 : var5) {
                     GL11.glVertex3d(
-                            var7.method29876() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320(),
-                            var7.method29877() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
-                            var7.method29878() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322()
+                            var7.method29876() - mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
+                            var7.method29877() - mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+                            var7.method29878() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
                     );
                 }
 
                 GL11.glEnd();
                 GL11.glPushMatrix();
                 GL11.glTranslated(
-                        mc.gameRenderer.getActiveRenderInfo().method37504().method11320(),
-                        mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
-                        mc.gameRenderer.getActiveRenderInfo().method37504().method11322()
+                        mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
+                        mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+                        mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
                 );
                 GL11.glPopMatrix();
                 GL11.glDisable(3042);

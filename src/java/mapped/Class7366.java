@@ -27,7 +27,7 @@ public class Class7366 extends Class7361 {
          double var12 = var4 + var11.nextGaussian() / 2.0;
          double var14 = var6 + var11.nextGaussian() / 2.0;
          double var16 = var8 + var11.nextGaussian() / 2.0;
-         Vector3d var18 = this.field31519.method3433();
+         Vector3d var18 = this.field31519.getVec();
          this.field31519
             .world
             .method6746(
@@ -62,7 +62,7 @@ public class Class7366 extends Class7361 {
 
    @Override
    public float method23367() {
-      float var3 = MathHelper.method37766(Entity.method3234(this.field31519.method3433())) + 1.0F;
+      float var3 = MathHelper.method37766(Entity.method3234(this.field31519.getVec())) + 1.0F;
       float var4 = Math.min(var3, 40.0F);
       return var4 / var3;
    }

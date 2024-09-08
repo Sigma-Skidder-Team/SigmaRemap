@@ -48,7 +48,7 @@ public class DebugSpeed extends Module {
                     var15 = var15 + "0";
                 }
 
-                ColorUtils.method17678(
+                ColorUtils.addChatMessage(
                         Client.getInstance().getCommandManager().getPrefix() + "(" + var15 + "x faster " + (!var7 ? "jumping" : "walking") + ")  Speed: " + var5
                 );
             }

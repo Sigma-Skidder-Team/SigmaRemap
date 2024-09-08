@@ -20,7 +20,7 @@ public class SEntityVelocityPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SEntityVelocityPacket(Entity var1) {
-      this(var1.getEntityId(), var1.method3433());
+      this(var1.getEntityId(), var1.getVec());
    }
 
    public SEntityVelocityPacket(int var1, Vector3d var2) {

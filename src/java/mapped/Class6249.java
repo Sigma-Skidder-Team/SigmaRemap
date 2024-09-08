@@ -10,6 +10,6 @@ public final class Class6249 extends Class6217 {
 
    @Override
    public ProjectileEntity method19191(World var1, Class2955 var2, ItemStack var3) {
-      return Util.make(new Class894(var1, var2.method11320(), var2.method11321(), var2.method11322()), var1x -> var1x.method3511(var3));
+      return Util.make(new Class894(var1, var2.getX(), var2.getY(), var2.getZ()), var1x -> var1x.method3511(var3));
    }
 }

@@ -60,7 +60,7 @@ public class BoxOutlineESP extends Module {
                                     GL11.glTranslated(var7, var9, var11);
                                     GL11.glTranslatef(0.0F, var2.method3430(), 0.0F);
                                     GL11.glTranslatef(0.0F, 0.1F, 0.0F);
-                                    GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().method37507(), 0.0F, -1.0F, 0.0F);
+                                    GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
                                     GL11.glScalef(-0.11F, -0.11F, -0.11F);
                                     RenderUtil.method11450(
                                             -var2.method3429() * 22.0F,
@@ -89,9 +89,9 @@ public class BoxOutlineESP extends Module {
                 if ((var7 || var6 || var8) && var9 && var5 != mc.player) {
                     GL11.glPushMatrix();
                     GL11.glTranslated(
-                            -mc.gameRenderer.getActiveRenderInfo().method37504().method11320(),
-                            -mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
-                            -mc.gameRenderer.getActiveRenderInfo().method37504().method11322()
+                            -mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
+                            -mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+                            -mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
                     );
                     GL11.glDisable(2929);
                     GL11.glEnable(3042);
@@ -99,7 +99,7 @@ public class BoxOutlineESP extends Module {
                     double var11 = (var5.getPosX() - var5.lastTickPosX) * (double) mc.timer.renderPartialTicks - (var5.getPosX() - var5.lastTickPosX);
                     double var13 = (var5.getPosY() - var5.lastTickPosY) * (double) mc.timer.renderPartialTicks - (var5.getPosY() - var5.lastTickPosY);
                     double var15 = (var5.getPosZ() - var5.lastTickPosZ) * (double) mc.timer.renderPartialTicks - (var5.getPosZ() - var5.lastTickPosZ);
-                    Class9388 var17 = new Class9388(var5.getBoundingBox().method19667(var11, var13, var15)).method35648(0.1F);
+                    Box3D var17 = new Box3D(var5.getBoundingBox().method19667(var11, var13, var15)).expand(0.1F);
                     if (var1) {
                         RenderUtil.renderWireframeBox(var17, 3.0F, ColorUtils.applyAlpha(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
                     } else {

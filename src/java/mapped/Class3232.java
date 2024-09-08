@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public abstract class Class3232 extends Class3231 {
    public Class3232(AbstractBlock var1) {
@@ -9,17 +10,17 @@ public abstract class Class3232 extends Class3231 {
    }
 
    @Override
-   public VoxelShape method11635(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11635(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return VoxelShapes.method27425();
    }
 
    @Override
-   public float method11636(BlockState var1, Class1665 var2, BlockPos var3) {
+   public float method11636(BlockState var1, IBlockReader var2, BlockPos var3) {
       return 1.0F;
    }
 
    @Override
-   public boolean method11493(BlockState var1, Class1665 var2, BlockPos var3) {
+   public boolean method11493(BlockState var1, IBlockReader var2, BlockPos var3) {
       return true;
    }
 }

@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 import java.util.stream.Stream;
@@ -26,12 +27,12 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
    }
 
    default Stream<BlockState> method7004(AxisAlignedBB var1) {
-      int var4 = MathHelper.floor(var1.field28449);
-      int var5 = MathHelper.floor(var1.field28452);
-      int var6 = MathHelper.floor(var1.field28450);
-      int var7 = MathHelper.floor(var1.field28453);
-      int var8 = MathHelper.floor(var1.field28451);
-      int var9 = MathHelper.floor(var1.field28454);
+      int var4 = MathHelper.floor(var1.minX);
+      int var5 = MathHelper.floor(var1.maxX);
+      int var6 = MathHelper.floor(var1.minY);
+      int var7 = MathHelper.floor(var1.maxY);
+      int var8 = MathHelper.floor(var1.minZ);
+      int var9 = MathHelper.floor(var1.maxZ);
       return !this.method7019(var4, var6, var8, var5, var7, var9) ? Stream.<BlockState>empty() : this.method7035(var1);
    }
 
@@ -106,7 +107,7 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
 
    @Nullable
    @Override
-   default Class1665 method6769(int var1, int var2) {
+   default IBlockReader method6769(int var1, int var2) {
       return this.getChunk(var1, var2, ChunkStatus.field42133, false);
    }
 
@@ -115,13 +116,13 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
    }
 
    default boolean method7014(AxisAlignedBB var1) {
-      int var4 = MathHelper.floor(var1.field28449);
-      int var5 = MathHelper.method37774(var1.field28452);
-      int var6 = MathHelper.floor(var1.field28450);
-      int var7 = MathHelper.method37774(var1.field28453);
-      int var8 = MathHelper.floor(var1.field28451);
-      int var9 = MathHelper.method37774(var1.field28454);
-      Mutable var10 = new Mutable();
+      int var4 = MathHelper.floor(var1.minX);
+      int var5 = MathHelper.method37774(var1.maxX);
+      int var6 = MathHelper.floor(var1.minY);
+      int var7 = MathHelper.method37774(var1.maxY);
+      int var8 = MathHelper.floor(var1.minZ);
+      int var9 = MathHelper.method37774(var1.maxZ);
+      BlockPos.Mutable var10 = new BlockPos.Mutable();
 
       for (int var11 = var4; var11 < var5; var11++) {
          for (int var12 = var6; var12 < var7; var12++) {

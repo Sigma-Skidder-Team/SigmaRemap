@@ -630,7 +630,7 @@ public abstract class World implements Class1660, AutoCloseable {
 
    @Nullable
    @Override
-   public Class1665 method6769(int var1, int var2) {
+   public IBlockReader method6769(int var1, int var2) {
       return this.getChunk(var1, var2, ChunkStatus.FULL, false);
    }
 
@@ -638,10 +638,10 @@ public abstract class World implements Class1660, AutoCloseable {
    public List<Entity> method6770(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3) {
       this.getProfiler().func_230035_c_("getEntities");
       ArrayList var6 = Lists.newArrayList();
-      int var7 = MathHelper.floor((var2.field28449 - 2.0) / 16.0);
-      int var8 = MathHelper.floor((var2.field28452 + 2.0) / 16.0);
-      int var9 = MathHelper.floor((var2.field28451 - 2.0) / 16.0);
-      int var10 = MathHelper.floor((var2.field28454 + 2.0) / 16.0);
+      int var7 = MathHelper.floor((var2.minX - 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.maxX + 2.0) / 16.0);
+      int var9 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
+      int var10 = MathHelper.floor((var2.maxZ + 2.0) / 16.0);
       Class1702 var11 = this.getChunkProvider();
 
       for (int var12 = var7; var12 <= var8; var12++) {
@@ -658,10 +658,10 @@ public abstract class World implements Class1660, AutoCloseable {
 
    public <T extends Entity> List<T> method6771(EntityType<T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.getProfiler().func_230035_c_("getEntities");
-      int var6 = MathHelper.floor((var2.field28449 - 2.0) / 16.0);
-      int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
-      int var8 = MathHelper.floor((var2.field28451 - 2.0) / 16.0);
-      int var9 = MathHelper.method37774((var2.field28454 + 2.0) / 16.0);
+      int var6 = MathHelper.floor((var2.minX - 2.0) / 16.0);
+      int var7 = MathHelper.method37774((var2.maxX + 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
+      int var9 = MathHelper.method37774((var2.maxZ + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
 
       for (int var11 = var6; var11 < var7; var11++) {
@@ -679,10 +679,10 @@ public abstract class World implements Class1660, AutoCloseable {
    @Override
    public <T extends Entity> List<T> method6772(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.getProfiler().func_230035_c_("getEntities");
-      int var6 = MathHelper.floor((var2.field28449 - 2.0) / 16.0);
-      int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
-      int var8 = MathHelper.floor((var2.field28451 - 2.0) / 16.0);
-      int var9 = MathHelper.method37774((var2.field28454 + 2.0) / 16.0);
+      int var6 = MathHelper.floor((var2.minX - 2.0) / 16.0);
+      int var7 = MathHelper.method37774((var2.maxX + 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
+      int var9 = MathHelper.method37774((var2.maxZ + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
       Class1702 var11 = this.getChunkProvider();
 
@@ -701,10 +701,10 @@ public abstract class World implements Class1660, AutoCloseable {
    @Override
    public <T extends Entity> List<T> method6773(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.getProfiler().func_230035_c_("getLoadedEntities");
-      int var6 = MathHelper.floor((var2.field28449 - 2.0) / 16.0);
-      int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
-      int var8 = MathHelper.floor((var2.field28451 - 2.0) / 16.0);
-      int var9 = MathHelper.method37774((var2.field28454 + 2.0) / 16.0);
+      int var6 = MathHelper.floor((var2.minX - 2.0) / 16.0);
+      int var7 = MathHelper.method37774((var2.maxX + 2.0) / 16.0);
+      int var8 = MathHelper.floor((var2.minZ - 2.0) / 16.0);
+      int var9 = MathHelper.method37774((var2.maxZ + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
       Class1702 var11 = this.getChunkProvider();
 

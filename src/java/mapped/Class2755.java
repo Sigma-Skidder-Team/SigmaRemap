@@ -41,7 +41,7 @@ public class Class2755 extends Class2754 {
    public boolean method10806() {
       LivingEntity var3 = this.field17295.method4232();
       if (var3 != null && var3.isAlive()) {
-         double var4 = this.field17295.method3433().y;
+         double var4 = this.field17295.getVec().y;
          return (!(var4 * var4 < 0.05F) || !(Math.abs(this.field17295.rotationPitch) < 15.0F) || !this.field17295.onGround) && !this.field17295.method5131();
       } else {
          return false;
@@ -66,7 +66,7 @@ public class Class2755 extends Class2754 {
             var3.getPosZ() - this.field17295.getPosZ()
          )
          .method11333();
-      this.field17295.method3434(this.field17295.method3433().method11339(var4.x * 0.8, 0.9, var4.z * 0.8));
+      this.field17295.method3434(this.field17295.getVec().method11339(var4.x * 0.8, 0.9, var4.z * 0.8));
       this.field17295.method4230().method21666();
    }
 
@@ -87,7 +87,7 @@ public class Class2755 extends Class2754 {
       }
 
       if (!this.field17295.method5131()) {
-         Vector3d var4 = this.field17295.method3433();
+         Vector3d var4 = this.field17295.getVec();
          if (var4.y * var4.y < 0.03F && this.field17295.rotationPitch != 0.0F) {
             this.field17295.rotationPitch = MathHelper.method37828(this.field17295.rotationPitch, 0.0F, 0.2F);
          } else {
@@ -101,7 +101,7 @@ public class Class2755 extends Class2754 {
          this.field17295.method3114(var3);
       } else if (this.field17295.rotationPitch > 0.0F
          && this.field17295.onGround
-         && (float)this.field17295.method3433().y != 0.0F
+         && (float)this.field17295.getVec().y != 0.0F
          && this.field17295.world.getBlockState(this.field17295.getPosition()).method23448(Blocks.SNOW)) {
          this.field17295.rotationPitch = 60.0F;
          this.field17295.method4233((LivingEntity)null);

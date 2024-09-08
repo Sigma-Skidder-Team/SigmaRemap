@@ -57,7 +57,7 @@ public class OverlayRenderer {
    }
 
    private static Pair<BlockState, BlockPos> method18791(PlayerEntity var0) {
-      Mutable var3 = new Mutable();
+      BlockPos.Mutable var3 = new BlockPos.Mutable();
 
       for (int var4 = 0; var4 < 8; var4++) {
          double var5 = var0.getPosX() + (double)(((float)((var4 >> 0) % 2) - 0.5F) * var0.method3429() * 0.8F);

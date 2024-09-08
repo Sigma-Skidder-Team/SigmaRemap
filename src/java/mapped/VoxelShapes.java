@@ -11,6 +11,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -49,9 +50,9 @@ public final class VoxelShapes {
    }
 
    public static VoxelShape create(AxisAlignedBB var0) {
-      int var3 = method27429(var0.field28449, var0.field28452);
-      int var4 = method27429(var0.field28450, var0.field28453);
-      int var5 = method27429(var0.field28451, var0.field28454);
+      int var3 = method27429(var0.minX, var0.maxX);
+      int var4 = method27429(var0.minY, var0.maxY);
+      int var5 = method27429(var0.minZ, var0.maxZ);
       if (var3 >= 0 && var4 >= 0 && var5 >= 0) {
          if (var3 == 0 && var4 == 0 && var5 == 0) {
             return !var0.method19674(0.5, 0.5, 0.5) ? method27425() : method27426();
@@ -59,12 +60,12 @@ public final class VoxelShapes {
             int var6 = 1 << var3;
             int var7 = 1 << var4;
             int var8 = 1 << var5;
-            int var9 = (int)Math.round(var0.field28449 * (double)var6);
-            int var10 = (int)Math.round(var0.field28452 * (double)var6);
-            int var11 = (int)Math.round(var0.field28450 * (double)var7);
-            int var12 = (int)Math.round(var0.field28453 * (double)var7);
-            int var13 = (int)Math.round(var0.field28451 * (double)var8);
-            int var14 = (int)Math.round(var0.field28454 * (double)var8);
+            int var9 = (int)Math.round(var0.minX * (double)var6);
+            int var10 = (int)Math.round(var0.maxX * (double)var6);
+            int var11 = (int)Math.round(var0.minY * (double)var7);
+            int var12 = (int)Math.round(var0.maxY * (double)var7);
+            int var13 = (int)Math.round(var0.minZ * (double)var8);
+            int var14 = (int)Math.round(var0.maxZ * (double)var8);
             Class7937 var15 = new Class7937(var6, var7, var8, var9, var11, var13, var10, var12, var14);
 
             for (long var16 = (long)var9; var16 < (long)var10; var16++) {
@@ -80,9 +81,9 @@ public final class VoxelShapes {
       } else {
          return new Class6409(
             field34462.field28033,
-            new double[]{var0.field28449, var0.field28452},
-            new double[]{var0.field28450, var0.field28453},
-            new double[]{var0.field28451, var0.field28454}
+            new double[]{var0.minX, var0.maxX},
+            new double[]{var0.minY, var0.maxY},
+            new double[]{var0.minZ, var0.maxZ}
          );
       }
    }
@@ -229,7 +230,7 @@ public final class VoxelShapes {
          Class113 var11 = var10.method9099(Class113.field413);
          Class113 var12 = var10.method9099(Class113.field414);
          Class113 var13 = var10.method9099(Class113.field415);
-         Mutable var14 = new Mutable();
+         BlockPos.Mutable var14 = new BlockPos.Mutable();
          int var15 = MathHelper.floor(var0.method19658(var11) - 1.0E-7) - 1;
          int var16 = MathHelper.floor(var0.method19659(var11) + 1.0E-7) + 1;
          int var17 = MathHelper.floor(var0.method19658(var12) - 1.0E-7) - 1;

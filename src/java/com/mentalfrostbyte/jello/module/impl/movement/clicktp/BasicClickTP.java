@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -38,7 +39,7 @@ public class BasicClickTP extends Module {
     private void method16324(ClickEvent var1) {
         if (this.isEnabled() && (mc.player.method3331() || !this.method16004().getBooleanValueFromSetttingName("Sneak"))) {
             if (var1.method13976() == ClickEvent.Button.RIGHT) {
-                BlockRayTraceResult var4 = Class9217.method34567(
+                BlockRayTraceResult var4 = BlockUtil.method34567(
                         mc.player.rotationYaw, mc.player.rotationPitch, this.method16004().getNumberValueBySettingName("Maximum range")
                 );
                 BlockPos var5 = null;
@@ -114,23 +115,23 @@ public class BasicClickTP extends Module {
 
             for (Class8472 var5 : this.field23589) {
                 GL11.glVertex3d(
-                        var5.method29876() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320(),
-                        var5.method29877() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
-                        var5.method29878() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322()
+                        var5.method29876() - mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
+                        var5.method29877() - mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+                        var5.method29878() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
                 );
             }
 
             GL11.glEnd();
 
             for (Class8472 var12 : this.field23589) {
-                double var6 = var12.method29876() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
-                double var8 = var12.method29878() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
-                Class9388 var10 = new Class9388(
+                double var6 = var12.method29876() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+                double var8 = var12.method29878() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
+                Box3D var10 = new Box3D(
                         var6 - 0.3F,
-                        var12.method29877() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
+                        var12.method29877() - mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
                         var8 - 0.3F,
                         var6 + 0.3F,
-                        var12.method29877() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321() + 1.6F,
+                        var12.method29877() - mc.gameRenderer.getActiveRenderInfo().getPos().getY() + 1.6F,
                         var8 + 0.3F
                 );
                 RenderUtil.render3DColoredBox(var10, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.2F));
@@ -138,9 +139,9 @@ public class BasicClickTP extends Module {
 
             GL11.glPushMatrix();
             GL11.glTranslated(
-                    mc.gameRenderer.getActiveRenderInfo().method37504().method11320(),
-                    mc.gameRenderer.getActiveRenderInfo().method37504().method11321(),
-                    mc.gameRenderer.getActiveRenderInfo().method37504().method11322()
+                    mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
+                    mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+                    mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
             );
             GL11.glPopMatrix();
             GL11.glDisable(3042);

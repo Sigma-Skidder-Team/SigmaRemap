@@ -167,7 +167,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                .method6746(
                   ParticleTypes.field34100,
                   this.getPosX() + this.rand.nextGaussian() * 0.13F,
-                  this.getBoundingBox().field28453 + 0.5 + this.rand.nextGaussian() * 0.13F,
+                  this.getBoundingBox().maxY + 0.5 + this.rand.nextGaussian() * 0.13F,
                   this.getPosZ() + this.rand.nextGaussian() * 0.13F,
                   0.0,
                   0.0,
@@ -194,7 +194,7 @@ public class Class1027 extends Class1026 implements Class1022 {
    @Override
    public void method4530(LivingEntity var1, float var2) {
       if (!this.method4568()) {
-         Vector3d var5 = var1.method3433();
+         Vector3d var5 = var1.getVec();
          double var6 = var1.getPosX() + var5.x - this.getPosX();
          double var8 = var1.method3442() - 1.1F - this.getPosY();
          double var10 = var1.getPosZ() + var5.z - this.getPosZ();

@@ -154,7 +154,7 @@ public class Class4184 extends Class4180 {
    }
 
    private void method12954(Random var1, Class1660 var2, BlockPos var3) {
-      Mutable var6 = var3.method8354();
+      BlockPos.Mutable var6 = var3.method8354();
       this.method12957(var1, var2, var6);
       int var7 = 8;
 
@@ -175,7 +175,7 @@ public class Class4184 extends Class4180 {
       int var11 = (this.field20444.method38398() + this.field20444.method38400()) / 2;
       int var12 = var1.nextInt(Math.max(1, 8 - var11 / 2));
 
-      Mutable var14 = BlockPos.ZERO.method8354();
+      BlockPos.Mutable var14 = BlockPos.ZERO.method8354();
 
       for (int var15 = var7 - var10; var15 <= var7 + var10; var15++) {
          for (int var16 = var8 - var10; var16 <= var8 + var10; var16++) {

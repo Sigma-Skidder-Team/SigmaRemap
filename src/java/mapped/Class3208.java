@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 
@@ -30,7 +31,7 @@ public class Class3208 extends Block implements Class3207 {
    }
 
    @Override
-   public VoxelShape method11483(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       Class86 var7 = var1.<Class86>method23463(field18605);
       switch (Class3497.field19372[var7.ordinal()]) {
          case 1:
@@ -89,7 +90,7 @@ public class Class3208 extends Block implements Class3207 {
    }
 
    @Override
-   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Fluid var4) {
+   public boolean method11531(IBlockReader var1, BlockPos var2, BlockState var3, Fluid var4) {
       return var3.method23463(field18605) == Class86.field220 ? false : Class3207.super.method11531(var1, var2, var3, var4);
    }
 
@@ -103,7 +104,7 @@ public class Class3208 extends Block implements Class3207 {
    }
 
    @Override
-   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
       switch (Class3497.field19373[var4.ordinal()]) {
          case 1:
             return false;

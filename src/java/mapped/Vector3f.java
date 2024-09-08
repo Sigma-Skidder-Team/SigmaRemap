@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
+import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
 
 public final class Vector3f {
@@ -144,10 +145,10 @@ public final class Vector3f {
       this.field32905 = var1.field40505 * var4 + var1.field40506 * var5 + var1.field40507 * var6;
    }
 
-   public void method25283(Class8661 var1) {
-      Class8661 var4 = new Class8661(var1);
-      var4.method31182(new Class8661(this.method25269(), this.method25270(), this.method25271(), 0.0F));
-      Class8661 var5 = new Class8661(var1);
+   public void method25283(Quaternion var1) {
+      Quaternion var4 = new Quaternion(var1);
+      var4.method31182(new Quaternion(this.method25269(), this.method25270(), this.method25271(), 0.0F));
+      Quaternion var5 = new Quaternion(var1);
       var5.method31184();
       var4.method31182(var5);
       this.method25275(var4.method31178(), var4.method31179(), var4.method31180());
@@ -160,12 +161,12 @@ public final class Vector3f {
       this.field32905 = this.field32905 * var5 + var1.field32905 * var2;
    }
 
-   public Class8661 method25285(float var1) {
-      return new Class8661(this, var1, false);
+   public Quaternion method25285(float var1) {
+      return new Quaternion(this, var1, false);
    }
 
-   public Class8661 rotationDegrees(float var1) {
-      return new Class8661(this, var1, true);
+   public Quaternion rotationDegrees(float var1) {
+      return new Quaternion(this, var1, true);
    }
 
    public Vector3f method25287() {

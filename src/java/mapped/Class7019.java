@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class7019 implements Class7016 {
@@ -136,7 +137,7 @@ public class Class7019 implements Class7016 {
       return var6;
    }
 
-   private boolean method21753(Class1665 var1, BlockPos var2) {
+   private boolean method21753(IBlockReader var1, BlockPos var2) {
       for (BlockPos var6 : BlockPos.method8359(var2, var2.method8336(1, 2, 1))) {
          if (!var1.getBlockState(var6).method23414(var1, var6).method19516()) {
             return false;

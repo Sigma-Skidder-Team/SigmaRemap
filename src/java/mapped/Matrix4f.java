@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.vector.Quaternion;
+
 import java.nio.FloatBuffer;
 import java.util.Random;
 
@@ -43,7 +45,7 @@ public final class Matrix4f {
       this.field43486 = var1.field43486;
    }
 
-   public Matrix4f(Class8661 var1) {
+   public Matrix4f(Quaternion var1) {
       float var4 = var1.method31178();
       float var5 = var1.method31179();
       float var6 = var1.method31180();
@@ -378,7 +380,7 @@ public final class Matrix4f {
       this.field43486 = var19;
    }
 
-   public void method35509(Class8661 var1) {
+   public void method35509(Quaternion var1) {
       float var4 = var1.method31178();
       float var5 = var1.method31179();
       float var6 = var1.method31180();

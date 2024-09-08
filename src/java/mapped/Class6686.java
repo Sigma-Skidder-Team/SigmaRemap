@@ -19,7 +19,7 @@ public class Class6686 implements Class6687 {
       if (var1 == ChatType.CHAT) {
          this.field29299.ingameGUI.getChatGUI().method5950(var2);
       } else {
-         this.field29299.ingameGUI.getChatGUI().method5930(var2);
+         this.field29299.ingameGUI.getChatGUI().sendChatMessage(var2);
       }
    }
 }

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -52,7 +53,7 @@ public class Class6773 extends Class6768<Class8278> {
       int var26 = -1;
       boolean var27 = false;
       int var28 = 0;
-      Mutable var29 = new Mutable();
+      BlockPos.Mutable var29 = new BlockPos.Mutable();
 
       for (int var30 = var6; var30 >= 0; var30--) {
          if (var28 < 15) {

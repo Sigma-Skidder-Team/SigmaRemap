@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.List;
 import java.util.Random;
@@ -265,7 +266,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    }
 
    @Override
-   public Class1665 method17798(int var1, int var2) {
+   public IBlockReader method17798(int var1, int var2) {
       BlockState[] var5 = new BlockState[this.field24970 * this.field24967];
       this.method17799(var1, var2, var5, (Predicate<BlockState>)null);
       return new Class1669(var5);
@@ -336,7 +337,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       int var10 = var9.method24356();
       int var11 = var9.method24357();
       double var12 = 0.0625;
-      Mutable var14 = new Mutable();
+      BlockPos.Mutable var14 = new BlockPos.Mutable();
 
       for (int var15 = 0; var15 < 16; var15++) {
          for (int var16 = 0; var16 < 16; var16++) {
@@ -353,7 +354,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    }
 
    private void method17802(IChunk var1, Random var2) {
-      Mutable var5 = new Mutable();
+      BlockPos.Mutable var5 = new BlockPos.Mutable();
       int var6 = var1.method7072().method24356();
       int var7 = var1.method7072().method24357();
       DimensionSettings var8 = this.field24982.get();
@@ -430,7 +431,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       Class1672 var79 = (Class1672)var3;
       Class7527 var15 = var79.method7070(Class101.field297);
       Class7527 var16 = var79.method7070(Class101.field295);
-      Mutable var17 = new Mutable();
+      BlockPos.Mutable var17 = new BlockPos.Mutable();
       ObjectListIterator var18 = var6.iterator();
       ObjectListIterator var19 = var7.iterator();
 
